@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-18T22:14:36Z">
+  <archive_summary>
+    <title>Literature and Assets</title>
+    <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
+    <use_case>Method discussion, resource selection, and related-work chats.</use_case>
+    <section_count>8</section_count>
+    <char_count>11261</char_count>
+    <byte_count>11274</byte_count>
+    <estimated_tokens>2815</estimated_tokens>
+    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+  </archive_summary>
+  <included_content>
+    <item>project description</item>
+    <item>completed task summaries</item>
+    <item>planned tasks</item>
+    <item>question and short-answer coverage</item>
+    <item>paper summaries</item>
+    <item>datasets</item>
+    <item>libraries</item>
+    <item>metrics</item>
+  </included_content>
+  <sections>
+    <section id="project-description" source_kind="file">
+      <title>Project Description</title>
+      <source_name>project/description.md</source_name>
+      <repo_paths>
+        <path>project/description.md</path>
+      </repo_paths>
+      <content>
+# Electrophysiological Basis of Retinal Direction Selectivity
+
+## Goal
+
+Investigate how the internal electrophysiological properties of a single neuron shape its
+direction-selective function. Using a compartmental model of a direction-selective retinal ganglion
+cell, vary morphology, synaptic input density (AMPA and GABA), EPSP and IPSP amplitude and kinetics,
+combinations of somatic voltage-gated sodium and potassium conductances, and the presence or absence
+of voltage-gated conductances in the dendrites, then optimise these parameters against a target
+relationship between the angle of a spreading excitatory/inhibitory wave and the cell&#x27;s action
+potential (AP) frequency.
+
+## Scope
+
+### In Scope
+
+* Single-cell compartmental simulation (NEURON or equivalent) of a direction-selective retinal
+  ganglion cell
+* Parametric variation of morphology, input density, EPSP and IPSP amplitude and kinetics, and
+  combinations of voltage-gated sodium and potassium conductances
+* Comparison of active vs passive dendrites (presence or absence of voltage-gated conductances in
+  the dendritic tree)
+* Wave stimulus protocols that sweep excitatory and inhibitory activation across the dendritic arbor
+  at controlled angles
+* Optimisation of the Na/K conductance combination to match a target angle-to-AP-frequency tuning
+  curve
+* In vitro patch-clamp data as validation ground truth
+
+### Out of Scope
+
+* Synaptic plasticity, learning, and developmental changes
+* In vivo electrophysiological recordings (only patch-clamp data are acceptable)
+* Network-level simulations beyond the single target cell
+* Non-retinal direction-selective systems (visual cortex, vestibular, etc.)
+
+## Research Questions
+
+1. Which combinations of somatic voltage-gated sodium and potassium conductances maximise AP
+   frequency for a preferred-direction wave while suppressing firing in the null direction?
+2. How sensitive is directional AP tuning to morphological parameters such as dendritic branching
+   pattern and compartment length and diameter?
+3. What effect do the ratio and spatial distribution of AMPA vs GABA input density have on the
+   sharpness of directional tuning?
+4. Do active dendritic voltage-gated conductances improve, degrade, or have no effect on the match
+   to the target angle-frequency curve compared with passive dendrites?
+5. How closely can the optimised single-cell model reproduce the target tuning curve, and what
+   residual error remains?
+
+## Success Criteria
+
+* A modifiable compartmental model in which morphology, input density, EPSP and IPSP amplitude and
+  dynamics, somatic Na/K conductances, and dendritic active conductances can each be varied
+  independently
+* Identification of a Na/K conductance combination that reproduces the target angle-to-AP-frequency
+  relationship within a defined error tolerance
+* Systematic comparison of active vs passive dendritic configurations on directional tuning
+  sharpness
+* Reproducible simulation pipeline (seedable, scripted) that runs end-to-end on the researcher&#x27;s
+  local machine
+
+## Key References
+
+* Barlow &amp; Levick (1965) — &quot;The mechanism of directionally selective units in rabbit&#x27;s retina&quot;, *J
+  Physiol* (foundational paper defining retinal direction selectivity)
+* Hines &amp; Carnevale (1997) — &quot;The NEURON Simulation Environment&quot;, *Neural Computation* (canonical
+  reference for the simulator used in this project)
+* Vaney, Sivyer &amp; Taylor (2012) — &quot;Direction selectivity in the retina: symmetry and asymmetry in
+  structure and function&quot;, *Nature Reviews Neuroscience* (standard review of DS mechanisms)
+* Poleg-Polsky &amp; Diamond (2016) — multi-compartmental NEURON model of an ON-OFF DSGC with
+  distributed excitatory and inhibitory inputs (directly matches this project&#x27;s modelling approach)
+* Oesch, Euler &amp; Taylor (2005) — &quot;Direction-selective dendritic action potentials in rabbit
+  retina&quot;, *Neuron* (evidence for the functional role of active dendritic conductances in DSGCs)
+* Branco, Clark &amp; Häusser (2010) — &quot;Dendritic Discrimination of Temporal Input Sequences in
+  Cortical Neurons&quot;, *Science* (cable-theory account of sequence-direction selectivity via dendritic
+  impedance gradients and NMDA-receptor nonlinearities)
+
+## Current Phase
+
+The project is just starting. The next step is a literature survey of compartmental models of
+direction-selective retinal ganglion cells, together with selection of a published morphology and a
+target angle-to-AP-frequency tuning curve to use as the optimisation reference.
+      </content>
+    </section>
+    <section id="completed-task-summaries" source_kind="aggregator">
+      <title>Completed Tasks and Results</title>
+      <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0001_brainstorm_results_1</id>
+      </source_ids>
+      <content>
+Completed tasks: 1
+
+## Brainstorm results session 1
+ID: t0001_brainstorm_results_1
+Completed: 2026-04-18
+Short description: Kickoff brainstorm: plan the first wave of tasks for the neuron-channels project.
+Result summary: Results Summary: Brainstorm Session 1 Summary First brainstorming session for the neuron-channels project. Produced four first-wave task folders (t0002-t0005) covering literature survey, simulator-library comparison, canonical target tuning curve generation, and DSGC morphology download. No suggestions were rejected, reprioritized, or created. Session Overview * **Date**: 2026-04-18 * **Context**: Run immediately after `/setup-project` completed. Project state was empty: no tasks, no suggestions, no answers, no costs, zero budget with no paid services. * **Prompt**: Phase 7 of `/setup-project` automatically chains `/human-brainstorm` to plan the first tasks. Decisions 1. **Create t0002...
+      </content>
+    </section>
+    <section id="planned-tasks" source_kind="aggregator">
+      <title>Planned Tasks</title>
+      <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0002_literature_survey_dsgc_compartmental_models</id>
+        <id>t0003_simulator_library_survey</id>
+        <id>t0004_generate_target_tuning_curve</id>
+        <id>t0005_download_dsgc_morphology</id>
+      </source_ids>
+      <content>
+Planned or active tasks: 4
+
+## Literature survey: compartmental models of DS retinal ganglion cells
+ID: t0002_literature_survey_dsgc_compartmental_models
+Status: not_started
+Effective date: unknown
+Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
+
+## Simulator library survey for DSGC compartmental modelling
+ID: t0003_simulator_library_survey
+Status: not_started
+Effective date: unknown
+Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+
+## Generate canonical target angle-to-AP-rate tuning curve
+ID: t0004_generate_target_tuning_curve
+Status: not_started
+Effective date: unknown
+Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+
+## Download candidate DSGC morphology
+ID: t0005_download_dsgc_morphology
+Status: not_started
+Effective date: unknown
+Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
+Dependencies: t0002_literature_survey_dsgc_compartmental_models
+      </content>
+    </section>
+    <section id="questions-and-answers" source_kind="aggregator">
+      <title>Questions and Answers</title>
+      <source_name>aggregate_answers_full</source_name>
+      <content>
+Answers: 0
+      </content>
+    </section>
+    <section id="paper-summaries" source_kind="aggregator">
+      <title>Paper Summaries</title>
+      <source_name>aggregate_papers_full</source_name>
+      <content>
+Papers: 0
+      </content>
+    </section>
+    <section id="datasets" source_kind="aggregator">
+      <title>Datasets</title>
+      <source_name>aggregate_datasets_full</source_name>
+      <content>
+Datasets: 0
+      </content>
+    </section>
+    <section id="libraries" source_kind="aggregator">
+      <title>Libraries</title>
+      <source_name>aggregate_libraries_full</source_name>
+      <content>
+Libraries: 0
+      </content>
+    </section>
+    <section id="metrics" source_kind="aggregator">
+      <title>Metrics</title>
+      <source_name>aggregate_metrics_full</source_name>
+      <source_ids>
+        <id>direction_selectivity_index</id>
+        <id>tuning_curve_hwhm_deg</id>
+        <id>tuning_curve_reliability</id>
+        <id>tuning_curve_rmse</id>
+      </source_ids>
+      <content>
+Metrics: 4
+
+## Direction Selectivity Index
+Key: direction_selectivity_index
+Unit: ratio
+Value type: float
+Classic DSI = (R_pref - R_null) / (R_pref + R_null), where R_pref and R_null are AP rates in the preferred and null directions. Scalar summary of directional tuning strength, reported per simulation condition.
+
+## Tuning Curve Half-Width at Half-Max (degrees)
+Key: tuning_curve_hwhm_deg
+Unit: none
+Value type: float
+Angular half-width in degrees at which the AP rate drops to half of the peak rate. Measures the sharpness of the directional tuning curve; lower values indicate steeper, more selective tuning.
+
+## Tuning Curve Reliability
+Key: tuning_curve_reliability
+Unit: ratio
+Value type: float
+Pearson correlation coefficient of the angle-to-AP-rate tuning curve across repeated noisy trials. Measures robustness of directional tuning to stochastic synaptic or membrane noise; 1.0 means perfectly reproducible across trials, 0 means noise-dominated.
+
+## Tuning Curve RMSE (Hz)
+Key: tuning_curve_rmse
+Unit: none
+Value type: float
+Root-mean-square error in Hz between the simulated angle-to-AP-rate tuning curve and the target tuning curve. Primary optimisation objective; captures absolute rates, preferred angle, and curve shape in one scalar.
+      </content>
+    </section>
+  </sections>
+</llm_context_archive>

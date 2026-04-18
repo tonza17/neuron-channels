@@ -1,0 +1,7 @@
+{
+  "spec_version": 1,
+  "name": "Direction Selectivity Index",
+  "description": "Classic DSI = (R_pref - R_null) / (R_pref + R_null), where R_pref and R_null are AP rates in the preferred and null directions. Scalar summary of directional tuning strength, reported per simulation condition.",
+  "unit": "ratio",
+  "value_type": "float"
+}

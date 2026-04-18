@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-18T22:14:36Z">
+  <archive_summary>
+    <title>Roadmap</title>
+    <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
+    <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
+    <section_count>5</section_count>
+    <char_count>18334</char_count>
+    <byte_count>18376</byte_count>
+    <estimated_tokens>4583</estimated_tokens>
+    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+  </archive_summary>
+  <included_content>
+    <item>project description</item>
+    <item>completed task summaries</item>
+    <item>planned tasks with long descriptions</item>
+    <item>question and short-answer coverage</item>
+    <item>open suggestions</item>
+  </included_content>
+  <sections>
+    <section id="project-description" source_kind="file">
+      <title>Project Description</title>
+      <source_name>project/description.md</source_name>
+      <repo_paths>
+        <path>project/description.md</path>
+      </repo_paths>
+      <content>
+# Electrophysiological Basis of Retinal Direction Selectivity
+
+## Goal
+
+Investigate how the internal electrophysiological properties of a single neuron shape its
+direction-selective function. Using a compartmental model of a direction-selective retinal ganglion
+cell, vary morphology, synaptic input density (AMPA and GABA), EPSP and IPSP amplitude and kinetics,
+combinations of somatic voltage-gated sodium and potassium conductances, and the presence or absence
+of voltage-gated conductances in the dendrites, then optimise these parameters against a target
+relationship between the angle of a spreading excitatory/inhibitory wave and the cell&#x27;s action
+potential (AP) frequency.
+
+## Scope
+
+### In Scope
+
+* Single-cell compartmental simulation (NEURON or equivalent) of a direction-selective retinal
+  ganglion cell
+* Parametric variation of morphology, input density, EPSP and IPSP amplitude and kinetics, and
+  combinations of voltage-gated sodium and potassium conductances
+* Comparison of active vs passive dendrites (presence or absence of voltage-gated conductances in
+  the dendritic tree)
+* Wave stimulus protocols that sweep excitatory and inhibitory activation across the dendritic arbor
+  at controlled angles
+* Optimisation of the Na/K conductance combination to match a target angle-to-AP-frequency tuning
+  curve
+* In vitro patch-clamp data as validation ground truth
+
+### Out of Scope
+
+* Synaptic plasticity, learning, and developmental changes
+* In vivo electrophysiological recordings (only patch-clamp data are acceptable)
+* Network-level simulations beyond the single target cell
+* Non-retinal direction-selective systems (visual cortex, vestibular, etc.)
+
+## Research Questions
+
+1. Which combinations of somatic voltage-gated sodium and potassium conductances maximise AP
+   frequency for a preferred-direction wave while suppressing firing in the null direction?
+2. How sensitive is directional AP tuning to morphological parameters such as dendritic branching
+   pattern and compartment length and diameter?
+3. What effect do the ratio and spatial distribution of AMPA vs GABA input density have on the
+   sharpness of directional tuning?
+4. Do active dendritic voltage-gated conductances improve, degrade, or have no effect on the match
+   to the target angle-frequency curve compared with passive dendrites?
+5. How closely can the optimised single-cell model reproduce the target tuning curve, and what
+   residual error remains?
+
+## Success Criteria
+
+* A modifiable compartmental model in which morphology, input density, EPSP and IPSP amplitude and
+  dynamics, somatic Na/K conductances, and dendritic active conductances can each be varied
+  independently
+* Identification of a Na/K conductance combination that reproduces the target angle-to-AP-frequency
+  relationship within a defined error tolerance
+* Systematic comparison of active vs passive dendritic configurations on directional tuning
+  sharpness
+* Reproducible simulation pipeline (seedable, scripted) that runs end-to-end on the researcher&#x27;s
+  local machine
+
+## Key References
+
+* Barlow &amp; Levick (1965) — &quot;The mechanism of directionally selective units in rabbit&#x27;s retina&quot;, *J
+  Physiol* (foundational paper defining retinal direction selectivity)
+* Hines &amp; Carnevale (1997) — &quot;The NEURON Simulation Environment&quot;, *Neural Computation* (canonical
+  reference for the simulator used in this project)
+* Vaney, Sivyer &amp; Taylor (2012) — &quot;Direction selectivity in the retina: symmetry and asymmetry in
+  structure and function&quot;, *Nature Reviews Neuroscience* (standard review of DS mechanisms)
+* Poleg-Polsky &amp; Diamond (2016) — multi-compartmental NEURON model of an ON-OFF DSGC with
+  distributed excitatory and inhibitory inputs (directly matches this project&#x27;s modelling approach)
+* Oesch, Euler &amp; Taylor (2005) — &quot;Direction-selective dendritic action potentials in rabbit
+  retina&quot;, *Neuron* (evidence for the functional role of active dendritic conductances in DSGCs)
+* Branco, Clark &amp; Häusser (2010) — &quot;Dendritic Discrimination of Temporal Input Sequences in
+  Cortical Neurons&quot;, *Science* (cable-theory account of sequence-direction selectivity via dendritic
+  impedance gradients and NMDA-receptor nonlinearities)
+
+## Current Phase
+
+The project is just starting. The next step is a literature survey of compartmental models of
+direction-selective retinal ganglion cells, together with selection of a published morphology and a
+target angle-to-AP-frequency tuning curve to use as the optimisation reference.
+      </content>
+    </section>
+    <section id="completed-task-summaries" source_kind="aggregator">
+      <title>Completed Tasks and Results</title>
+      <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0001_brainstorm_results_1</id>
+      </source_ids>
+      <content>
+Completed tasks: 1
+
+## Brainstorm results session 1
+ID: t0001_brainstorm_results_1
+Completed: 2026-04-18
+Short description: Kickoff brainstorm: plan the first wave of tasks for the neuron-channels project.
+Result summary: Results Summary: Brainstorm Session 1 Summary First brainstorming session for the neuron-channels project. Produced four first-wave task folders (t0002-t0005) covering literature survey, simulator-library comparison, canonical target tuning curve generation, and DSGC morphology download. No suggestions were rejected, reprioritized, or created. Session Overview * **Date**: 2026-04-18 * **Context**: Run immediately after `/setup-project` completed. Project state was empty: no tasks, no suggestions, no answers, no costs, zero budget with no paid services. * **Prompt**: Phase 7 of `/setup-project` automatically chains `/human-brainstorm` to plan the first tasks. Decisions 1. **Create t0002...
+      </content>
+    </section>
+    <section id="planned-tasks" source_kind="aggregator">
+      <title>Planned Tasks</title>
+      <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0002_literature_survey_dsgc_compartmental_models</id>
+        <id>t0003_simulator_library_survey</id>
+        <id>t0004_generate_target_tuning_curve</id>
+        <id>t0005_download_dsgc_morphology</id>
+      </source_ids>
+      <content>
+Planned or active tasks: 4
+
+## Literature survey: compartmental models of DS retinal ganglion cells
+ID: t0002_literature_survey_dsgc_compartmental_models
+Status: not_started
+Effective date: unknown
+Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
+
+#### Motivation
+
+This is the project&#x27;s first research task. Before building any simulation we need a shared knowledge
+base of what prior compartmental modelling work has done on direction-selective retinal ganglion
+cells (DSGCs) and what each of the project&#x27;s five research questions (RQs) looks like in the
+literature. The survey feeds every downstream task: the target tuning curve generator (t0004) needs
+published tuning-curve shapes, the morphology download (t0005) needs a shortlist of reconstructed
+DSGCs, and the later Na/K optimisation and active-vs-passive dendrite experiments need candidate
+channel models and parameter ranges.
+
+#### Scope
+
+Cover all five project research questions at survey level:
+
+1. **RQ1 Na/K combinations** — how published DSGC and related RGC models parameterise somatic
+   sodium and potassium conductances, and what combinations reproduce directional AP firing.
+2. **RQ2 morphology sensitivity** — how branching pattern, dendritic diameter, and compartment
+   length have been shown to affect DS tuning.
+3. **RQ3 AMPA/GABA balance** — ratio and spatial distribution of excitatory and inhibitory inputs,
+   and their measured effect on DS sharpness.
+4. **RQ4 active vs passive dendrites** — evidence for dendritic voltage-gated conductances in
+   DSGCs, and modelling studies that compare active with passive dendrites.
+5. **RQ5 angle-to-AP-frequency tuning curves** — reported tuning-curve shapes, peak rates,
+   half-widths, and null-direction suppression levels that can serve as optimisation targets.
+
+Minimum breadth:
+
+* Include the six references already listed in `project/description.md` (Barlow &amp; Levick 1965, Hines
+  &amp; Carnevale 1997, Vaney/Sivyer/Taylor 2012, Poleg-Polsky &amp; Diamond 2016, Oesch/Euler/Taylor 2005,
+  Branco/Clark/Häusser 2010).
+* Add at least 14 more papers found by internet search, spread across the five research questions.
+* Prefer papers with a clearly described compartmental model, published morphology, or quantitative
+  angle-to-rate measurements.
+
+#### Approach
+
+1. Run `/research-papers` using the six seed references to build initial paper assets.
+2. Run `/research-internet` to find additional compartmental DSGC modelling papers and any
+   patch-clamp studies that report tuning curves.
+3. Download each selected paper via `/download-paper` so every cited paper becomes a paper asset
+   with a summary.
+4. Produce one answer asset that synthesises, across all five RQs, what the existing literature says
+   about how to structure the DSGC modelling problem and what numbers to aim for.
+
+#### Expected Outputs
+
+* ~20 paper assets under `assets/paper/` (each with `details.json`, `summary.md`, and the paper file
+  under `files/`).
+* One answer asset under `assets/answer/` summarising how existing compartmental DSGC models
+  structure the five research questions and what numerical targets they provide.
+
+#### Compute and Budget
+
+No external cost. Local LLM CLI only; no paid APIs or remote machines.
+
+#### Dependencies
+
+None. This is the first research task.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and explicitly addresses each of the five
+  research questions.
+* `compare_literature.md` is not required for a pure literature survey.
+
+## Simulator library survey for DSGC compartmental modelling
+ID: t0003_simulator_library_survey
+Status: not_started
+Effective date: unknown
+Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+
+#### Motivation
+
+`project/description.md` mentions NEURON as the canonical simulator but the researcher wants to
+evaluate several libraries before committing. A bad simulator choice locks the project into poor
+cable-model fidelity, slow parameter sweeps, or brittle tooling for months. A short survey up front
+prevents this.
+
+#### Scope
+
+Evaluate the following candidate libraries:
+
+* NEURON (plus NEURON+Python bindings)
+* NetPyNE (higher-level NEURON wrapper)
+* Brian2 with cable-model extensions
+* MOOSE
+* Arbor
+
+For each library, collect:
+
+1. **Cable-model fidelity** — does it solve the full compartmental cable equation, support
+   voltage-gated conductances in arbitrary compartments, and handle reconstructed morphologies (SWC,
+   HOC, NeuroML)?
+2. **Python ergonomics** — pure Python vs wrapped C++/MOD files, packaging on `uv`, quality of
+   current documentation and examples.
+3. **Speed and parallelism** — single-cell simulation speed and support for running large
+   parameter sweeps.
+4. **DSGC examples available** — whether any published DSGC or broader RGC compartmental model has
+   been released in that library.
+5. **Long-term maintenance** — last release, community activity, active maintainers.
+
+#### Approach
+
+1. Run `/research-internet` to gather documentation, benchmarks, and user reports for each library.
+2. Build a comparison table covering the five axes above.
+3. Produce a single answer asset that recommends a **primary** simulator plus one **backup**, with
+   explicit rationale.
+
+#### Expected Outputs
+
+* One answer asset under `assets/answer/` summarising the library comparison and stating the primary
+  plus backup recommendation.
+
+#### Compute and Budget
+
+No external cost. Local LLM CLI and internet search only.
+
+#### Dependencies
+
+None. Runs in parallel with t0002 and t0004.
+
+#### Verification Criteria
+
+* The answer asset passes `verify_answer_asset.py`.
+* The `## Answer` section states the primary and backup simulator in one or two sentences.
+* The full answer includes the five-axis comparison table for every candidate library.
+
+## Generate canonical target angle-to-AP-rate tuning curve
+ID: t0004_generate_target_tuning_curve
+Status: not_started
+Effective date: unknown
+Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+
+#### Motivation
+
+The key project metric `tuning_curve_rmse` compares a simulated angle-to-AP-rate tuning curve
+against a target. The researcher chose to **simulate** a canonical target curve rather than digitise
+one from a paper. This task generates that canonical target and registers it as a dataset asset so
+all later optimisation tasks share one fixed reference.
+
+#### Scope
+
+Produce a single dataset asset containing:
+
+* A cosine-like target tuning curve sampled at 12 or 24 angles around 360°.
+* Explicit generator parameters: preferred direction (deg), baseline rate (Hz), peak rate (Hz),
+  tuning half-width (deg or von Mises κ), and random seed.
+* Per-angle mean rates plus a small number of synthetic noisy trial replicates so the
+  `tuning_curve_reliability` metric has a well-defined ground-truth value.
+
+Suggested functional form:
+
+```
+r(θ) = r_base + (r_peak - r_base) * ((1 + cos(θ - θ_pref)) / 2) ** n
+```
+
+with `n` controlling sharpness. Any equivalent von Mises formulation is fine. The exact values of
+`r_base`, `r_peak`, `θ_pref`, and `n` should be chosen to give a biologically plausible DSI
+(roughly 0.6-0.9) and reported in the dataset&#x27;s `details.json`.
+
+#### Approach
+
+1. Write a small Python script under `code/` that generates the curve, saves it to `data/` as CSV or
+   JSON, and writes the dataset asset folder under `assets/dataset/`.
+2. Include both a mean-rate table and a per-trial table (e.g., 20 synthetic trials) so
+   `tuning_curve_reliability` has a real reference value.
+3. Plot the curve and save to `results/images/target_tuning_curve.png`.
+
+#### Expected Outputs
+
+* One dataset asset under `assets/dataset/target_tuning_curve/` containing the CSV/JSON tables,
+  metadata, and description.
+* A plot of the target curve in `results/images/`.
+
+#### Compute and Budget
+
+Trivial. Runs locally in seconds; no external cost.
+
+#### Dependencies
+
+None. Runs in parallel with t0002 and t0003. This task is the reference any later optimisation task
+will compare against.
+
+#### Verification Criteria
+
+* Dataset asset passes `verify_dataset_asset.py`.
+* `details.json` records the generator parameters and random seed explicitly.
+* The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10 trials per
+  angle.
+
+## Download candidate DSGC morphology
+ID: t0005_download_dsgc_morphology
+Status: not_started
+Effective date: unknown
+Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
+Dependencies: t0002_literature_survey_dsgc_compartmental_models
+
+#### Motivation
+
+Every downstream simulation task needs a concrete reconstructed morphology to load. Rather than
+generating a synthetic branching structure, we want a published DSGC (or DSGC-like RGC)
+reconstruction used by prior modelling work. The literature survey (t0002) produces the shortlist;
+this task commits to one file.
+
+#### Scope
+
+Download one reconstructed DSGC morphology in SWC format (or HOC / NeuroML if SWC is not available)
+from a public source such as NeuroMorpho.org, ModelDB, or a paper&#x27;s supplementary materials. The
+morphology should be one of those flagged as suitable in t0002&#x27;s answer asset.
+
+#### Approach
+
+1. Read t0002&#x27;s answer asset to pick the recommended morphology.
+2. Download the file and verify it loads as a valid SWC / HOC structure.
+3. Record its provenance (source URL, paper DOI, reconstruction protocol) in the dataset asset
+   metadata.
+
+#### Expected Outputs
+
+* One dataset asset under `assets/dataset/dsgc_baseline_morphology/` containing the morphology
+  file(s) and metadata.
+
+#### Compute and Budget
+
+No external cost.
+
+#### Dependencies
+
+`t0002_literature_survey_dsgc_compartmental_models` — the literature survey produces the
+morphology shortlist and rationale.
+
+#### Verification Criteria
+
+* Dataset asset passes `verify_dataset_asset.py`.
+* The asset&#x27;s `details.json` links back to the source paper or NeuroMorpho record.
+* The downloaded file loads without errors in at least one candidate simulator library.
+      </content>
+    </section>
+    <section id="questions-and-answers" source_kind="aggregator">
+      <title>Questions and Answers</title>
+      <source_name>aggregate_answers_full</source_name>
+      <content>
+Answers: 0
+      </content>
+    </section>
+    <section id="open-suggestions" source_kind="aggregator">
+      <title>Open Suggestions</title>
+      <source_name>aggregate_suggestions_full</source_name>
+      <content>
+Open suggestions: 0
+      </content>
+    </section>
+  </sections>
+</llm_context_archive>

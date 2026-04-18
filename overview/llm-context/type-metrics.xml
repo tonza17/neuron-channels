@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<llm_context_archive type_id="metrics" generated_at_utc="2026-04-18T22:14:36Z">
+  <archive_summary>
+    <title>All Metrics</title>
+    <description>Complete metric definitions with full descriptions, units, and associated datasets.</description>
+    <section_count>1</section_count>
+    <char_count>2379</char_count>
+    <byte_count>2379</byte_count>
+    <estimated_tokens>594</estimated_tokens>
+    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+  </archive_summary>
+  <included_content>
+    <item>all metrics with full descriptions</item>
+  </included_content>
+  <sections>
+    <section id="full-metrics" source_kind="aggregator">
+      <title>All Metrics (Full Detail)</title>
+      <source_name>aggregate_metrics_full</source_name>
+      <source_ids>
+        <id>direction_selectivity_index</id>
+        <id>tuning_curve_hwhm_deg</id>
+        <id>tuning_curve_reliability</id>
+        <id>tuning_curve_rmse</id>
+      </source_ids>
+      <content>
+Metrics: 4
+
+## Direction Selectivity Index
+Key: direction_selectivity_index
+Unit: ratio
+Value type: float
+Version: 1
+
+Classic DSI = (R_pref - R_null) / (R_pref + R_null), where R_pref and R_null are AP rates in the preferred and null directions. Scalar summary of directional tuning strength, reported per simulation condition.
+
+## Tuning Curve Half-Width at Half-Max (degrees)
+Key: tuning_curve_hwhm_deg
+Unit: none
+Value type: float
+Version: 1
+
+Angular half-width in degrees at which the AP rate drops to half of the peak rate. Measures the sharpness of the directional tuning curve; lower values indicate steeper, more selective tuning.
+
+## Tuning Curve Reliability
+Key: tuning_curve_reliability
+Unit: ratio
+Value type: float
+Version: 1
+
+Pearson correlation coefficient of the angle-to-AP-rate tuning curve across repeated noisy trials. Measures robustness of directional tuning to stochastic synaptic or membrane noise; 1.0 means perfectly reproducible across trials, 0 means noise-dominated.
+
+## Tuning Curve RMSE (Hz)
+Key: tuning_curve_rmse
+Unit: none
+Value type: float
+Version: 1
+
+Root-mean-square error in Hz between the simulated angle-to-AP-rate tuning curve and the target tuning curve. Primary optimisation objective; captures absolute rates, preferred angle, and curve shape in one scalar.
+      </content>
+    </section>
+  </sections>
+</llm_context_archive>
