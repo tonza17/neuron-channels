@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<llm_context_archive type_id="categories" generated_at_utc="2026-04-18T22:14:36Z">
+  <archive_summary>
+    <title>All Categories</title>
+    <description>Complete category definitions with full detailed descriptions.</description>
+    <section_count>1</section_count>
+    <char_count>4425</char_count>
+    <byte_count>4429</byte_count>
+    <estimated_tokens>1106</estimated_tokens>
+    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+  </archive_summary>
+  <included_content>
+    <item>all categories with detailed descriptions</item>
+  </included_content>
+  <sections>
+    <section id="full-categories" source_kind="aggregator">
+      <title>All Categories (Full Detail)</title>
+      <source_name>aggregate_categories</source_name>
+      <source_ids>
+        <id>cable-theory</id>
+        <id>compartmental-modeling</id>
+        <id>dendritic-computation</id>
+        <id>direction-selectivity</id>
+        <id>patch-clamp</id>
+        <id>retinal-ganglion-cell</id>
+        <id>synaptic-integration</id>
+        <id>voltage-gated-channels</id>
+      </source_ids>
+      <content>
+Categories: 8
+
+## Cable Theory
+ID: cable-theory
+Version: 1
+
+Cable theory describes how voltage propagates along dendrites and axons as a function of geometry, passive membrane properties, and active conductances. The project uses it to reason about dendritic impedance gradients and sequence-direction selectivity, following the Rall and Branco-Clark-Hausser line of analysis.
+
+## Compartmental Modeling
+ID: compartmental-modeling
+Version: 1
+
+Compartmental modeling represents a neuron as a set of connected cable compartments with membrane capacitance, axial resistance, and voltage-gated conductances. This project&#x27;s central methodology uses compartmental simulation (NEURON or an equivalent solver) to link morphology, channel distribution, and synaptic inputs to the cell&#x27;s spiking output.
+
+## Dendritic Computation
+ID: dendritic-computation
+Version: 1
+
+Dendritic computation covers how dendritic morphology, cable properties, and active conductances transform synaptic inputs before they reach the soma. This project uses the category to tag work on active vs passive dendrites, dendritic spike contributions, and the cable-theory account of direction-selective input integration.
+
+## Direction Selectivity
+ID: direction-selectivity
+Version: 1
+
+Direction selectivity is a functional property in which a neuron&#x27;s firing rate depends on the direction of a moving stimulus or the spatial sequence of synaptic activation. This project studies how the internal electrophysiological properties of a single retinal ganglion cell shape its direction-selective response, with the goal of matching a target angle-to-AP-frequency tuning curve.
+
+## Patch Clamp
+ID: patch-clamp
+Version: 1
+
+Patch-clamp electrophysiology measures ionic currents and membrane potentials in single cells using a glass pipette sealed to the membrane. This project treats published patch-clamp data as the validation ground truth for its compartmental model, and this is the sole exception to the project&#x27;s in-vivo-out-of-scope rule.
+
+## Retinal Ganglion Cell
+ID: retinal-ganglion-cell
+Version: 1
+
+Retinal ganglion cells (RGCs) are the output neurons of the retina, carrying visual information to the brain. This project targets direction-selective RGCs as the cell type to model, using their published morphology and electrophysiology as the substrate for parametric exploration of morphology, synaptic inputs, and voltage-gated conductances.
+
+## Synaptic Integration
+ID: synaptic-integration
+Version: 1
+
+Synaptic integration covers how excitatory (AMPA) and inhibitory (GABA) inputs combine across space and time to drive the post-synaptic neuron. In this project the category tags work on AMPA/GABA input density, EPSP and IPSP amplitude and kinetics, and the spatiotemporal structure of wave stimuli used to probe directional tuning.
+
+## Voltage-Gated Channels
+ID: voltage-gated-channels
+Version: 1
+
+Voltage-gated channels — principally sodium and potassium species in this project — shape action potential generation at the soma and, when present in dendrites, shape local dendritic processing. The project optimises combinations of Na and K voltage-gated conductances to match a target angle-to-AP-frequency relationship.
+      </content>
+    </section>
+  </sections>
+</llm_context_archive>
