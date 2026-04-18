@@ -1,0 +1,7 @@
+{
+  "spec_version": 1,
+  "name": "Tuning Curve Reliability",
+  "description": "Pearson correlation coefficient of the angle-to-AP-rate tuning curve across repeated noisy trials. Measures robustness of directional tuning to stochastic synaptic or membrane noise; 1.0 means perfectly reproducible across trials, 0 means noise-dominated.",
+  "unit": "ratio",
+  "value_type": "float"
+}

@@ -1,0 +1,7 @@
+{
+  "spec_version": 1,
+  "name": "Tuning Curve Half-Width at Half-Max (degrees)",
+  "description": "Angular half-width in degrees at which the AP rate drops to half of the peak rate. Measures the sharpness of the directional tuning curve; lower values indicate steeper, more selective tuning.",
+  "unit": "none",
+  "value_type": "float"
+}

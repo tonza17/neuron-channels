@@ -1,0 +1,8 @@
+{
+  "spec_version": 1,
+  "name": "Tuning Curve RMSE (Hz)",
+  "description": "Root-mean-square error in Hz between the simulated angle-to-AP-rate tuning curve and the target tuning curve. Primary optimisation objective; captures absolute rates, preferred angle, and curve shape in one scalar.",
+  "unit": "none",
+  "value_type": "float",
+  "is_key": true
+}
