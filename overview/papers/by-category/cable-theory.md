@@ -1,18 +1,16 @@
-# Category: Cable Theory
+# Papers: `cable-theory` (3)
 
-Mathematical framework describing voltage spread in passive and active cables.
+3 papers across 2 year(s).
 
-[Back to Dashboard](../README.md)
-
-**Detail pages**: [Papers (3)](../papers/by-category/cable-theory.md)
+[Back to all papers](../README.md)
 
 ---
 
-## Papers (3)
+## 2010 (2)
 
 <details>
-<summary>📖 <strong>Dendritic Discrimination of Temporal Input Sequences in Cortical
-Neurons</strong> — Branco et al., 2010</summary>
+<summary>📖 Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons
+— Branco et al., 2010</summary>
 
 | Field | Value |
 |---|---|
@@ -22,9 +20,9 @@ Neurons</strong> — Branco et al., 2010</summary>
 | **DOI** | `10.1126/science.1189664` |
 | **URL** | https://www.science.org/doi/10.1126/science.1189664 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`cable-theory`](../../meta/categories/cable-theory/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/summary.md) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/summary.md) |
 
 Branco, Clark, and Häusser ask whether individual cortical dendrites can detect the temporal
 order of their synaptic inputs — a computation previously assumed to require networks of
@@ -66,9 +64,9 @@ model.
 </details>
 
 <details>
-<summary>📖 <strong>Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection
-of Motion in a Simulation of the Direction-Selective Ganglion Cell</strong>
-— Schachter et al., 2010</summary>
+<summary>📖 Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of
+Motion in a Simulation of the Direction-Selective Ganglion Cell — Schachter
+et al., 2010</summary>
 
 | Field | Value |
 |---|---|
@@ -78,9 +76,9 @@ of Motion in a Simulation of the Direction-Selective Ganglion Cell</strong>
 | **DOI** | `10.1371/journal.pcbi.1000899` |
 | **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`cable-theory`](../../meta/categories/cable-theory/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/summary.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/summary.md) |
 
 Schachter, Oesch, Smith & Taylor (2010) ask how the rabbit On-Off direction-selective ganglion
 cell converts weakly directionally tuned synaptic input (PSP DSI ~0.2) into strongly tuned
@@ -120,9 +118,10 @@ for use in simulation.
 
 </details>
 
+## 1997 (1)
+
 <details>
-<summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
-1997</summary>
+<summary>📖 The NEURON Simulation Environment — Hines & Carnevale, 1997</summary>
 
 | Field | Value |
 |---|---|
@@ -132,9 +131,9 @@ for use in simulation.
 | **DOI** | `10.1162/neco.1997.9.6.1179` |
 | **URL** | https://direct.mit.edu/neco/article/9/6/1179-1209/6087 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`cable-theory`](../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md) |
 
 This paper describes the NEURON simulation environment, a domain-specific software system for
 building biophysically detailed compartmental models of individual neurons and small networks.
@@ -170,17 +169,3 @@ updates) set the floor for how faithfully any DSGC compartmental model can repro
 dendritic transients.
 
 </details>
-
-## Tasks (1)
-
-| # | Task | Status | Completed |
-|---|------|--------|-----------|
-| 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
-
-## Answers (0)
-
-No answers in this category.
-
-## Suggestions (0 open, 0 closed)
-
-No open suggestions in this category.

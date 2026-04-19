@@ -1,6 +1,6 @@
 # Project Tasks
 
-5 tasks. ⏹ **4 not_started**, ✅ **1 completed**.
+5 tasks. ⏹ **3 not_started**, ✅ **2 completed**.
 
 **Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
 `completed`](by-status/completed.md); [By date added](by-date-added/README.md)
@@ -11,7 +11,7 @@
 
 ```mermaid
 graph LR
-    t0002_literature_survey_dsgc_compartmental_models["⏹ t0002_literature_survey_dsgc_compartmental_models"]
+    t0002_literature_survey_dsgc_compartmental_models["✅ t0002_literature_survey_dsgc_compartmental_models"]
     t0003_simulator_library_survey["⏹ t0003_simulator_library_survey"]
     t0004_generate_target_tuning_curve["⏹ t0004_generate_target_tuning_curve"]
     t0005_download_dsgc_morphology["⏹ t0005_download_dsgc_morphology"]
@@ -30,7 +30,7 @@ graph LR
 |---|---|
 | **ID** | `t0005_download_dsgc_morphology` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-18 |
 | **Dependencies** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
 | **Expected assets** | 1 dataset |
 | **Source suggestion** | — |
@@ -90,7 +90,7 @@ curve</strong></summary>
 |---|---|
 | **ID** | `t0004_generate_target_tuning_curve` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-18 |
 | **Dependencies** | — |
 | **Expected assets** | 1 dataset |
 | **Source suggestion** | — |
@@ -167,7 +167,7 @@ modelling</strong></summary>
 |---|---|
 | **ID** | `t0003_simulator_library_survey` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-18 |
 | **Dependencies** | — |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | — |
@@ -236,21 +236,27 @@ None. Runs in parallel with t0002 and t0004.
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⏹ 0002 — <strong>Literature survey: compartmental models of DS retinal
+<summary>✅ 0002 — <strong>Literature survey: compartmental models of DS retinal
 ganglion cells</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0002_literature_survey_dsgc_compartmental_models` |
-| **Status** | not_started |
-| **Effective date** | — |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
 | **Dependencies** | — |
 | **Expected assets** | 20 paper, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/) |
+| **Start time** | 2026-04-18T22:28:59Z |
+| **End time** | 2026-04-19T01:35:00Z |
+| **Step progress** | 9/15 |
 | **Task page** | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
 | **Task folder** | [`t0002_literature_survey_dsgc_compartmental_models/`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md) |
 
 # Literature survey: compartmental models of DS retinal ganglion cells
 
@@ -322,9 +328,36 @@ None. This is the first research task.
   research questions.
 * `compare_literature.md` is not required for a pure literature survey.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Literature Survey of Compartmental Models of DS Retinal Ganglion Cells**
+>
+> **Summary**
+>
+> Produced a 20-paper survey of compartmental models of direction-selective retinal ganglion
+> cells
+> (DSGCs) covering all five project research questions, plus one synthesis answer asset that
+> integrates the findings with per-RQ quantitative targets. The corpus includes all six seed
+> references from `project/description.md` and 14 additional peer-reviewed papers spread
+> across the
+> five RQs, and it establishes concrete numerical targets (DSI **0.7-0.85**, preferred peak
+> **40-80
+> Hz**, null residual **< 10 Hz**, half-width **60-90 deg**, **177 AMPA + 177 GABA** synapses,
+> g_Na
+> **0.04-0.10 S/cm^2**) that downstream compartmental-modelling tasks must reproduce.
+>
+> **Metrics**
+>
+> * **Paper assets produced**: **20** (6 seeds + 14 additional, matches
+>   `expected_assets.paper=20`)
+> * **Answer assets produced**: **1** (matches `expected_assets.answer=1`)
+> * **Papers with downloaded full text**: **17** (PDF/XML/markdown)
+> * **Papers with metadata-only assets**: **3** (Chen2009, Sivyer2010, Sethuramanujam2016, all
+> paywalled, `download_status: "failed"` per spec v3)
+> * **RQ coverage by non-seed papers**: RQ1 **2**, RQ2 **3**, RQ3 **7**, RQ4 **3**, RQ5 **4**
+>   — every
+
+</details>
 
 <details>
 <summary>✅ 0001 — <strong>Brainstorm results session 1</strong></summary>

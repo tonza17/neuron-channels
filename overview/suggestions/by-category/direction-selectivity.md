@@ -1,16 +1,10 @@
-# Research Suggestions Backlog
+# Suggestions: `direction-selectivity`
 
-10 suggestions **10 open** (5 high, 5 medium).
+9 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **9 open** (4 high,
+5 medium).
 
-**Browse by view**: By category:
-[`compartmental-modeling`](by-category/compartmental-modeling.md),
-[`dendritic-computation`](by-category/dendritic-computation.md),
-[`direction-selectivity`](by-category/direction-selectivity.md),
-[`patch-clamp`](by-category/patch-clamp.md),
-[`retinal-ganglion-cell`](by-category/retinal-ganglion-cell.md),
-[`synaptic-integration`](by-category/synaptic-integration.md),
-[`voltage-gated-channels`](by-category/voltage-gated-channels.md); [By date
-added](by-date-added/README.md)
+[Back to all suggestions](../README.md)
 
 ---
 
@@ -25,9 +19,9 @@ to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 | **ID** | `S-0002-01` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1152_jn.00123.2009`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
-| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1152_jn.00123.2009`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
 
 No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
 Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
@@ -41,30 +35,6 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
-segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1523_ENEURO.0261-21.2021`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/) |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic
-E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the
-three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky
-177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch
-orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM
-per point, and test whether segment diameter has the largest effect (as cable theory
-predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
-currently lacks. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>📚 <strong>Implement the tuning-curve scoring loss combining DSI, peak rate,
 null residual, and HWHM targets</strong> (S-0002-09)</summary>
 
@@ -73,9 +43,9 @@ null residual, and HWHM targets</strong> (S-0002-09)</summary>
 | **ID** | `S-0002-09` |
 | **Kind** | library |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
 
 The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI
 0.7-0.85, preferred peak 40-80 Hz, null residual < 10 Hz, HWHM 60-90 deg), and the project has
@@ -98,9 +68,9 @@ Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
 | **ID** | `S-0002-02` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
 
 Schachter2010 reports that switching DSGC dendrites from passive to active (adding
 Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
@@ -123,9 +93,9 @@ Recommended task types: experiment-run, comparative-analysis.
 | **ID** | `S-0002-03` |
 | **Kind** | technique |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
 
 PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
 project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
@@ -149,9 +119,9 @@ budget (Sivyer2017, Euler2002, Enciso2010, Webvision)</strong> (S-0002-07)</summ
 | **ID** | `S-0002-07` |
 | **Kind** | dataset |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
 | **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
 
 research_internet.md catalogues 22 peer-reviewed candidates but only 20 became paper assets.
 The held-back items are Sivyer2017 (dendro-dendritic cholinergic control of dendritic spike
@@ -173,9 +143,9 @@ asymmetry</strong> (S-0002-05)</summary>
 | **ID** | `S-0002-05` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
 
 PolegPolsky2016 sets GABA/AMPA at 1:1 (177/177), while Park2014 and Taylor2002 constrain the
 null/preferred IPSC ratio to 3-5x but not the total GABA density. Scan the GABA/AMPA density
@@ -197,9 +167,9 @@ to DSI</strong> (S-0002-06)</summary>
 | **ID** | `S-0002-06` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
 
 PolegPolsky2016 reports that NMDA receptors multiplicatively scale excitatory drive by ~2x and
 sharpen directional discrimination, but the survey did not find a published ablation that
@@ -220,9 +190,9 @@ DSGC input construction</strong> (S-0002-08)</summary>
 | **ID** | `S-0002-08` |
 | **Kind** | library |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1038_nature09818`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature09818/) |
-| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1038_nature09818`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature09818/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
 
 Briggman2011 (SBEM wiring) and Ding2016 (cross-species comparison) supply the structural E/I
 bias; Park2014 and Taylor2002 supply the 3-5x null/preferred IPSC amplitudes;
@@ -245,9 +215,9 @@ as a validation benchmark</strong> (S-0002-10)</summary>
 | **ID** | `S-0002-10` |
 | **Kind** | dataset |
 | **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
-| **Categories** | [`patch-clamp`](../../meta/categories/patch-clamp/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
 
 Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper
 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets

@@ -1,20 +1,17 @@
-# Category: Patch Clamp
+# Papers: `patch-clamp` (12)
 
-Electrophysiological recording technique for measuring ionic currents in cells.
+12 papers across 11 year(s).
 
-[Back to Dashboard](../README.md)
-
-**Detail pages**: [Papers (12)](../papers/by-category/patch-clamp.md) | [Suggestions
-(1)](../suggestions/by-category/patch-clamp.md)
+[Back to all papers](../README.md)
 
 ---
 
-## Papers (12)
+## 2021 (1)
 
 <details>
-<summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
-Distribution of Excitation and Inhibition in Retinal Direction-Selective
-Ganglion Cells</strong> — El-Quessny & Feller, 2021</summary>
+<summary>📖 Dendrite Morphology Minimally Influences the Synaptic Distribution of
+Excitation and Inhibition in Retinal Direction-Selective Ganglion Cells
+— El-Quessny & Feller, 2021</summary>
 
 | Field | Value |
 |---|---|
@@ -24,9 +21,9 @@ Ganglion Cells</strong> — El-Quessny & Feller, 2021</summary>
 | **DOI** | `10.1523/ENEURO.0261-21.2021` |
 | **URL** | https://www.eneuro.org/content/8/5/ENEURO.0261-21.2021 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/summary.md) |
 
 El-Quessny and Feller test whether the global shape of a DSGC’s dendritic arbor determines how
 its excitatory and inhibitory synaptic inputs are spatially organized. They exploit a natural
@@ -70,10 +67,11 @@ the project’s DSGC compartmental model.
 
 </details>
 
+## 2020 (1)
+
 <details>
-<summary>📖 <strong>The functional organization of excitation and inhibition in the
-dendrites of mouse direction-selective ganglion cells</strong> — Jain et
-al., 2020</summary>
+<summary>📖 The functional organization of excitation and inhibition in the dendrites
+of mouse direction-selective ganglion cells — Jain et al., 2020</summary>
 
 | Field | Value |
 |---|---|
@@ -83,9 +81,9 @@ al., 2020</summary>
 | **DOI** | `10.7554/eLife.52949` |
 | **URL** | https://elifesciences.org/articles/52949 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/summary.md) |
 
 This eLife paper asks a specific question about retinal direction selectivity: at what spatial
 scale is the direction-selective computation actually performed inside the dendrites of an
@@ -127,9 +125,11 @@ configurations against.
 
 </details>
 
+## 2019 (1)
+
 <details>
-<summary>📖 <strong>Retinal direction selectivity in the absence of asymmetric
-starburst amacrine cell responses</strong> — Hanson et al., 2019</summary>
+<summary>📖 Retinal direction selectivity in the absence of asymmetric starburst
+amacrine cell responses — Hanson et al., 2019</summary>
 
 | Field | Value |
 |---|---|
@@ -139,9 +139,9 @@ starburst amacrine cell responses</strong> — Hanson et al., 2019</summary>
 | **DOI** | `10.7554/eLife.42392` |
 | **URL** | https://elifesciences.org/articles/42392 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/summary.md) |
 
 Hanson et al. revisit one of the most entrenched assumptions in retinal neuroscience: that
 direction selectivity in direction-selective retinal ganglion cells (DSGCs) is inherited from
@@ -185,9 +185,11 @@ is to fit mouse DSGC behaviour rather than a generic ON-OFF ganglion cell.
 
 </details>
 
+## 2017 (1)
+
 <details>
-<summary>📖 <strong>Cross-compartmental Modulation of Dendritic Signals for Retinal
-Direction Selectivity</strong> — Koren et al., 2017</summary>
+<summary>📖 Cross-compartmental Modulation of Dendritic Signals for Retinal Direction
+Selectivity — Koren et al., 2017</summary>
 
 | Field | Value |
 |---|---|
@@ -197,9 +199,9 @@ Direction Selectivity</strong> — Koren et al., 2017</summary>
 | **DOI** | `10.1016/j.neuron.2017.07.020` |
 | **URL** | https://doi.org/10.1016/j.neuron.2017.07.020 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md) |
 
 Koren, Grove, and Wei address a gap in the mechanistic understanding of retinal direction
 selectivity: how the starburst amacrine cell (SAC) maintains the required balance between
@@ -240,9 +242,11 @@ in the DSGC dendrites.
 
 </details>
 
+## 2016 (1)
+
 <details>
-<summary>📖 <strong>A Central Role for Mixed Acetylcholine/GABA Transmission in
-Direction Coding in the Retina</strong> — Sethuramanujam et al., 2016</summary>
+<summary>📖 A Central Role for Mixed Acetylcholine/GABA Transmission in Direction
+Coding in the Retina — Sethuramanujam et al., 2016</summary>
 
 | Field | Value |
 |---|---|
@@ -252,9 +256,9 @@ Direction Coding in the Retina</strong> — Sethuramanujam et al., 2016</summary
 | **DOI** | `10.1016/j.neuron.2016.04.041` |
 | **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(16)30155-6 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.04.041/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.04.041/summary.md) |
 
 Sethuramanujam et al. (2016) investigate the computational function of co-transmission of ACh
 and GABA from SACs onto DSGCs, asking whether the excitatory/inhibitory transmitter mixture at
@@ -284,9 +288,11 @@ dendritic arbor, and their directional weight asymmetries in the compartmental s
 
 </details>
 
+## 2014 (1)
+
 <details>
-<summary>📖 <strong>Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective
-Retinal Ganglion Cells Lack Direction Tuning</strong> — Park et al., 2014</summary>
+<summary>📖 Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal
+Ganglion Cells Lack Direction Tuning — Park et al., 2014</summary>
 
 | Field | Value |
 |---|---|
@@ -296,9 +302,9 @@ Retinal Ganglion Cells Lack Direction Tuning</strong> — Park et al., 2014</sum
 | **DOI** | `10.1523/JNEUROSCI.5017-13.2014` |
 | **URL** | https://www.jneurosci.org/content/34/11/3976 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/summary.md) |
 
 Park et al. (2014) investigate the synaptic basis of direction selectivity in mouse On-Off
 DSGCs, asking whether acetylcholine and glutamate inputs are genuinely directionally tuned
@@ -331,9 +337,11 @@ parameter.
 
 </details>
 
+## 2011 (1)
+
 <details>
-<summary>📖 <strong>Two distinct types of ON directionally selective ganglion cells
-in the rabbit retina</strong> — Hoshi et al., 2011</summary>
+<summary>📖 Two distinct types of ON directionally selective ganglion cells in the
+rabbit retina — Hoshi et al., 2011</summary>
 
 | Field | Value |
 |---|---|
@@ -343,9 +351,9 @@ in the rabbit retina</strong> — Hoshi et al., 2011</summary>
 | **DOI** | `10.1002/cne.22678` |
 | **URL** | https://onlinelibrary.wiley.com/doi/10.1002/cne.22678 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1002_cne.22678/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1002_cne.22678/summary.md) |
 
 Hoshi et al. (2011) demonstrate that the rabbit ON DS ganglion cell population, treated as a
 single type for decades, actually comprises two distinct subtypes separable on six independent
@@ -383,10 +391,11 @@ compartmental simulation.
 
 </details>
 
+## 2010 (2)
+
 <details>
-<summary>📖 <strong>Mechanisms and Distribution of Ion Channels in Retinal Ganglion
-Cells: Using Temperature as an Independent Variable</strong> — Fohlmeister
-et al., 2010</summary>
+<summary>📖 Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells:
+Using Temperature as an Independent Variable — Fohlmeister et al., 2010</summary>
 
 | Field | Value |
 |---|---|
@@ -396,9 +405,9 @@ et al., 2010</summary>
 | **DOI** | `10.1152/jn.00123.2009` |
 | **URL** | https://journals.physiology.org/doi/10.1152/jn.00123.2009 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/summary.md) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/summary.md) |
 
 Fohlmeister, Cohen, and Newman ask how ion channels are distributed across the dendrites,
 soma, initial segment, and axon of rat and cat retinal ganglion cells, and how that
@@ -435,9 +444,8 @@ calibrate DSGC compartmental models against future whole-cell recordings.
 </details>
 
 <details>
-<summary>📖 <strong>Synaptic inputs and timing underlying the velocity tuning of
-direction-selective ganglion cells in rabbit retina</strong> — Sivyer et
-al., 2010</summary>
+<summary>📖 Synaptic inputs and timing underlying the velocity tuning of
+direction-selective ganglion cells in rabbit retina — Sivyer et al., 2010</summary>
 
 | Field | Value |
 |---|---|
@@ -447,9 +455,9 @@ al., 2010</summary>
 | **DOI** | `10.1113/jphysiol.2010.192716` |
 | **URL** | https://doi.org/10.1113/jphysiol.2010.192716 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2010.192716/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2010.192716/summary.md) |
 
 The paper asks why two morphologically distinct direction-selective ganglion cells in the
 rabbit retina, the bistratified ON-OFF DSGC and the monostratified ON DSGC, have different
@@ -486,9 +494,11 @@ comparison framework against which the model velocity-tuning output can be valid
 
 </details>
 
+## 2009 (1)
+
 <details>
-<summary>📖 <strong>Physiological properties of direction-selective ganglion cells in
-early postnatal and adult mouse retina</strong> — Chen et al., 2009</summary>
+<summary>📖 Physiological properties of direction-selective ganglion cells in early
+postnatal and adult mouse retina — Chen et al., 2009</summary>
 
 | Field | Value |
 |---|---|
@@ -498,9 +508,9 @@ early postnatal and adult mouse retina</strong> — Chen et al., 2009</summary>
 | **DOI** | `10.1113/jphysiol.2008.161240` |
 | **URL** | https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.2008.161240 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/summary.md) |
 
 Chen et al. (2009) investigate the electrophysiology of ON-OFF direction-selective retinal
 ganglion cells across postnatal development in the C57BL/6N mouse, asking when directional
@@ -531,9 +541,11 @@ collapse.
 
 </details>
 
+## 2005 (1)
+
 <details>
-<summary>📖 <strong>Direction-Selective Dendritic Action Potentials in Rabbit
-Retina</strong> — Oesch et al., 2005</summary>
+<summary>📖 Direction-Selective Dendritic Action Potentials in Rabbit Retina — Oesch
+et al., 2005</summary>
 
 | Field | Value |
 |---|---|
@@ -543,9 +555,9 @@ Retina</strong> — Oesch et al., 2005</summary>
 | **DOI** | `10.1016/j.neuron.2005.06.036` |
 | **URL** | https://www.sciencedirect.com/science/article/pii/S089662730500646X |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md) |
 
 Oesch, Euler, and Taylor address a central unresolved question in retinal direction
 selectivity: why does a ganglion cell whose somatic subthreshold EPSPs are only weakly
@@ -583,9 +595,11 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 
 </details>
 
+## 2002 (1)
+
 <details>
-<summary>📖 <strong>Diverse Synaptic Mechanisms Generate Direction Selectivity in
-the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
+<summary>📖 Diverse Synaptic Mechanisms Generate Direction Selectivity in the Rabbit
+Retina — Taylor & Vaney, 2002</summary>
 
 | Field | Value |
 |---|---|
@@ -595,9 +609,9 @@ the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
 | **DOI** | `10.1523/JNEUROSCI.22-17-07712.2002` |
 | **URL** | https://www.jneurosci.org/content/22/17/7712 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.22-17-07712.2002/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.22-17-07712.2002/summary.md) |
 
 Taylor and Vaney (2002) ask whether direction selectivity in rabbit On-Off DSGCs arises from
 directional upstream circuitry (presynaptic), from local postsynaptic E/I interactions in the
@@ -630,35 +644,5 @@ inhibitory synapse placement. The push-pull E/I structure implies both excitator
 inhibitory conductances must be directionally modulated. The large cell-to-cell variability
 justifies treating E/I ratios as free parameters in the optimisation, bounded by the reported
 means and standard deviations.
-
-</details>
-
-## Tasks (1)
-
-| # | Task | Status | Completed |
-|---|------|--------|-----------|
-| 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
-
-## Answers (0)
-
-No answers in this category.
-
-## Suggestions (1 open, 0 closed)
-
-<details>
-<summary>📂 <strong>Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset
-as a validation benchmark</strong> (S-0002-10)</summary>
-
-**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
-
-Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper
-10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets
-(DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the
-published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate
-in Hz, error bars, cell counts) so the model can be scored against measured data rather than
-only against the analytic target in t0004. This gives the project a literature-grounded
-validation benchmark distinct from the canonical analytic target. Recommended task types:
-download-dataset, data-analysis.
 
 </details>

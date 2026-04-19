@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-18T22:14:36Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-19T01:44:52Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>18334</char_count>
-    <byte_count>18376</byte_count>
-    <estimated_tokens>4583</estimated_tokens>
+    <char_count>26375</char_count>
+    <byte_count>26412</byte_count>
+    <estimated_tokens>6593</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -113,105 +113,39 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0001_brainstorm_results_1</id>
+        <id>t0002_literature_survey_dsgc_compartmental_models</id>
       </source_ids>
       <content>
-Completed tasks: 1
+Completed tasks: 2
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
 Completed: 2026-04-18
 Short description: Kickoff brainstorm: plan the first wave of tasks for the neuron-channels project.
 Result summary: Results Summary: Brainstorm Session 1 Summary First brainstorming session for the neuron-channels project. Produced four first-wave task folders (t0002-t0005) covering literature survey, simulator-library comparison, canonical target tuning curve generation, and DSGC morphology download. No suggestions were rejected, reprioritized, or created. Session Overview * **Date**: 2026-04-18 * **Context**: Run immediately after `/setup-project` completed. Project state was empty: no tasks, no suggestions, no answers, no costs, zero budget with no paid services. * **Prompt**: Phase 7 of `/setup-project` automatically chains `/human-brainstorm` to plan the first tasks. Decisions 1. **Create t0002...
+
+## Literature survey: compartmental models of DS retinal ganglion cells
+ID: t0002_literature_survey_dsgc_compartmental_models
+Completed: 2026-04-19
+Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
+Result summary: Results Summary: Literature Survey of Compartmental Models of DS Retinal Ganglion Cells Summary Produced a 20-paper survey of compartmental models of direction-selective retinal ganglion cells (DSGCs) covering all five project research questions, plus one synthesis answer asset that integrates the findings with per-RQ quantitative targets. The corpus includes all six seed references from `project/description.md` and 14 additional peer-reviewed papers spread across the five RQs, and it establishes concrete numerical targets (DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **&lt; 10 Hz**, half-width **60-90 deg**, **177 AMPA + 177 GABA** synapses, g_Na **0.04-0.10 S/cm^2**) that...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0002_literature_survey_dsgc_compartmental_models</id>
         <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
-
-## Literature survey: compartmental models of DS retinal ganglion cells
-ID: t0002_literature_survey_dsgc_compartmental_models
-Status: not_started
-Effective date: unknown
-Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
-
-#### Motivation
-
-This is the project&#x27;s first research task. Before building any simulation we need a shared knowledge
-base of what prior compartmental modelling work has done on direction-selective retinal ganglion
-cells (DSGCs) and what each of the project&#x27;s five research questions (RQs) looks like in the
-literature. The survey feeds every downstream task: the target tuning curve generator (t0004) needs
-published tuning-curve shapes, the morphology download (t0005) needs a shortlist of reconstructed
-DSGCs, and the later Na/K optimisation and active-vs-passive dendrite experiments need candidate
-channel models and parameter ranges.
-
-#### Scope
-
-Cover all five project research questions at survey level:
-
-1. **RQ1 Na/K combinations** — how published DSGC and related RGC models parameterise somatic
-   sodium and potassium conductances, and what combinations reproduce directional AP firing.
-2. **RQ2 morphology sensitivity** — how branching pattern, dendritic diameter, and compartment
-   length have been shown to affect DS tuning.
-3. **RQ3 AMPA/GABA balance** — ratio and spatial distribution of excitatory and inhibitory inputs,
-   and their measured effect on DS sharpness.
-4. **RQ4 active vs passive dendrites** — evidence for dendritic voltage-gated conductances in
-   DSGCs, and modelling studies that compare active with passive dendrites.
-5. **RQ5 angle-to-AP-frequency tuning curves** — reported tuning-curve shapes, peak rates,
-   half-widths, and null-direction suppression levels that can serve as optimisation targets.
-
-Minimum breadth:
-
-* Include the six references already listed in `project/description.md` (Barlow &amp; Levick 1965, Hines
-  &amp; Carnevale 1997, Vaney/Sivyer/Taylor 2012, Poleg-Polsky &amp; Diamond 2016, Oesch/Euler/Taylor 2005,
-  Branco/Clark/Häusser 2010).
-* Add at least 14 more papers found by internet search, spread across the five research questions.
-* Prefer papers with a clearly described compartmental model, published morphology, or quantitative
-  angle-to-rate measurements.
-
-#### Approach
-
-1. Run `/research-papers` using the six seed references to build initial paper assets.
-2. Run `/research-internet` to find additional compartmental DSGC modelling papers and any
-   patch-clamp studies that report tuning curves.
-3. Download each selected paper via `/download-paper` so every cited paper becomes a paper asset
-   with a summary.
-4. Produce one answer asset that synthesises, across all five RQs, what the existing literature says
-   about how to structure the DSGC modelling problem and what numbers to aim for.
-
-#### Expected Outputs
-
-* ~20 paper assets under `assets/paper/` (each with `details.json`, `summary.md`, and the paper file
-  under `files/`).
-* One answer asset under `assets/answer/` summarising how existing compartmental DSGC models
-  structure the five research questions and what numerical targets they provide.
-
-#### Compute and Budget
-
-No external cost. Local LLM CLI only; no paid APIs or remote machines.
-
-#### Dependencies
-
-None. This is the first research task.
-
-#### Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and explicitly addresses each of the five
-  research questions.
-* `compare_literature.md` is not required for a pure literature survey.
+Planned or active tasks: 3
 
 ## Simulator library survey for DSGC compartmental modelling
 ID: t0003_simulator_library_survey
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-18
 Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
 
 #### Motivation
@@ -273,7 +207,7 @@ None. Runs in parallel with t0002 and t0004.
 ## Generate canonical target angle-to-AP-rate tuning curve
 ID: t0004_generate_target_tuning_curve
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-18
 Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
 
 #### Motivation
@@ -336,7 +270,7 @@ will compare against.
 ## Download candidate DSGC morphology
 ID: t0005_download_dsgc_morphology
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-18
 Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
 Dependencies: t0002_literature_survey_dsgc_compartmental_models
 
@@ -384,15 +318,108 @@ morphology shortlist and rationale.
     <section id="questions-and-answers" source_kind="aggregator">
       <title>Questions and Answers</title>
       <source_name>aggregate_answers_full</source_name>
+      <source_ids>
+        <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
+      </source_ids>
       <content>
-Answers: 0
+Answers: 1
+
+## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
+ID: how-does-dsgc-literature-structure-the-five-research-questions
+Created by: t0002_literature_survey_dsgc_compartmental_models on 2026-04-18
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell, dendritic-computation, synaptic-integration, voltage-gated-channels
+
+The literature structures the five questions around a small set of quantitative targets that the project must hit. For Na/K conductances the Fohlmeister-Miller parameter set (peak somatic g_Na around 0.04-0.10 S/cm^2, delayed-rectifier g_K around 0.012 S/cm^2) is the standard starting point, and no published paper reports a factorial (g_Na, g_K) grid for DSGCs. For morphology the asymmetric ON-OFF DSGC dendrite is sharply wired in the null direction through SAC-mediated inhibition, yet global dendrite shape only minimally changes the synaptic map while local electrotonic compartments still matter. For AMPA/GABA balance the canonical counts on a reconstructed mouse DSGC are 177 AMPA and 177...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
       <title>Open Suggestions</title>
       <source_name>aggregate_suggestions_full</source_name>
+      <source_ids>
+        <id>S-0002-01</id>
+        <id>S-0002-02</id>
+        <id>S-0002-03</id>
+        <id>S-0002-04</id>
+        <id>S-0002-09</id>
+        <id>S-0002-05</id>
+        <id>S-0002-06</id>
+        <id>S-0002-07</id>
+        <id>S-0002-08</id>
+        <id>S-0002-10</id>
+      </source_ids>
       <content>
-Open suggestions: 0
+Open suggestions: 10
+
+## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
+ID: S-0002-01
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null &lt; 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.
+
+## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
+ID: S-0002-02
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Schachter2010 reports that switching DSGC dendrites from passive to active (adding Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and isolates the dendritic-conductance contribution from morphology and synaptic effects. Recommended task types: experiment-run, comparative-analysis.
+
+## Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347 as the project&#x27;s starting compartmental simulation
+ID: S-0002-03
+Priority: high
+Kind: technique
+Source task: t0002_literature_survey_dsgc_compartmental_models
+PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this project&#x27;s goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the ModelDB code, run the original published stimulus, and verify the reproduced tuning curve lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null &lt; 10 Hz / HWHM 60-90 deg envelope. This creates the reference implementation the later parameter-variation tasks (Na/K grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types: code-reproduction.
+
+## Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
+ID: S-0002-04
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.
+
+## Implement the tuning-curve scoring loss combining DSI, peak rate, null residual, and HWHM targets
+ID: S-0002-09
+Priority: high
+Kind: library
+Source task: t0002_literature_survey_dsgc_compartmental_models
+The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI 0.7-0.85, preferred peak 40-80 Hz, null residual &lt; 10 Hz, HWHM 60-90 deg), and the project has four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single scalar loss combining all four targets with documented weights (e.g., weighted Euclidean distance in normalised space), plus per-metric residuals. This is the tool every downstream optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will...
+
+## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
+ID: S-0002-05
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+PolegPolsky2016 sets GABA/AMPA at 1:1 (177/177), while Park2014 and Taylor2002 constrain the null/preferred IPSC ratio to 3-5x but not the total GABA density. Scan the GABA/AMPA density ratio from 0.5 to 4.0 (keeping the 3-5x null asymmetry fixed, the 40-80 Hz preferred peak fixed by the Na/K ridge, and the morphology and dendritic conductances fixed) and report how tuning-curve HWHM and preferred peak rate co-vary. The expected pattern (sharper tuning at the cost of lower peak rate) is stated in research_internet.md as hypothesis H4 but is not yet tested in the literature. This directly refines the RQ3 answer. Recommended task types: experiment-run.
+
+## NMDA multiplicative-gain ablation to isolate its contribution to DSI
+ID: S-0002-06
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+PolegPolsky2016 reports that NMDA receptors multiplicatively scale excitatory drive by ~2x and sharpen directional discrimination, but the survey did not find a published ablation that isolates the NMDA contribution independently of the AMPA+GABA core. Run three configurations on the reproduced DSGC baseline (AMPA+GABA only, AMPA+GABA+NMDA with PolegPolsky2016 NMDA parameters, AMPA+GABA+NMDA with NMDA_gain swept 1-4x) and report the DSI, peak rate, and HWHM trajectories. This answers a specific open RQ3/RQ4-adjacent question that the literature states but does not isolate experimentally. Recommended task types: experiment-run.
+
+## Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision)
+ID: S-0002-07
+Priority: medium
+Kind: dataset
+Source task: t0002_literature_survey_dsgc_compartmental_models
+research_internet.md catalogues 22 peer-reviewed candidates but only 20 became paper assets. The held-back items are Sivyer2017 (dendro-dendritic cholinergic control of dendritic spike initiation, Nat Commun), Euler2002 (SAC dendritic Ca signals are themselves directional, Nature), Enciso2010 (SAC-network compartmental model, J Comp Neurosci), and the Webvision-DSGC review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic drive for RQ3, and Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA input for the DSGC model. Download them via /add-paper in a dedicated task and extend the corpus to 24 papers. Recommended task types...
+
+## Register SAC presynaptic drive model as an asset for downstream DSGC input construction
+ID: S-0002-08
+Priority: medium
+Kind: library
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Briggman2011 (SBEM wiring) and Ding2016 (cross-species comparison) supply the structural E/I bias; Park2014 and Taylor2002 supply the 3-5x null/preferred IPSC amplitudes; Sethuramanujam2016 adds ACh/GABA co-release; Hanson2019 challenges the pure SAC-asymmetry model. Consolidate these findings into a pre-built SAC presynaptic drive asset (a reusable library or dataset: angle-dependent GABA conductance time courses, AMPA time courses, and their spatial distributions on a DSGC) so downstream DSGC simulation tasks do not each re-implement the presynaptic waveform construction. The asset should expose a pure-function API that takes (stimulus angle, velocity, asymmetry parameter) and returns...
+
+## Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark
+ID: S-0002-10
+Priority: medium
+Kind: dataset
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.
       </content>
     </section>
   </sections>

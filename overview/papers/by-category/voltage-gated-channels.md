@@ -1,20 +1,16 @@
-# Category: Voltage-Gated Channels
+# Papers: `voltage-gated-channels` (5)
 
-Ion channels whose opening probability depends on membrane voltage.
+5 papers across 4 year(s).
 
-[Back to Dashboard](../README.md)
-
-**Detail pages**: [Papers (5)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(1)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(2)](../suggestions/by-category/voltage-gated-channels.md)
+[Back to all papers](../README.md)
 
 ---
 
-## Papers (5)
+## 2017 (1)
 
 <details>
-<summary>📖 <strong>Cross-compartmental Modulation of Dendritic Signals for Retinal
-Direction Selectivity</strong> — Koren et al., 2017</summary>
+<summary>📖 Cross-compartmental Modulation of Dendritic Signals for Retinal Direction
+Selectivity — Koren et al., 2017</summary>
 
 | Field | Value |
 |---|---|
@@ -24,9 +20,9 @@ Direction Selectivity</strong> — Koren et al., 2017</summary>
 | **DOI** | `10.1016/j.neuron.2017.07.020` |
 | **URL** | https://doi.org/10.1016/j.neuron.2017.07.020 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md) |
 
 Koren, Grove, and Wei address a gap in the mechanistic understanding of retinal direction
 selectivity: how the starburst amacrine cell (SAC) maintains the required balance between
@@ -67,61 +63,12 @@ in the DSGC dendrites.
 
 </details>
 
+## 2010 (2)
+
 <details>
-<summary>📖 <strong>Mechanisms and Distribution of Ion Channels in Retinal Ganglion
-Cells: Using Temperature as an Independent Variable</strong> — Fohlmeister
+<summary>📖 Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of
+Motion in a Simulation of the Direction-Selective Ganglion Cell — Schachter
 et al., 2010</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1152_jn.00123.2009` |
-| **Authors** | Jürgen F. Fohlmeister, Ethan D. Cohen, Eric A. Newman |
-| **Venue** | Journal of Neurophysiology (journal) |
-| **DOI** | `10.1152/jn.00123.2009` |
-| **URL** | https://journals.physiology.org/doi/10.1152/jn.00123.2009 |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/summary.md) |
-
-Fohlmeister, Cohen, and Newman ask how ion channels are distributed across the dendrites,
-soma, initial segment, and axon of rat and cat retinal ganglion cells, and how that
-distribution must be scaled with temperature to reproduce whole-cell action-potential trains
-across 7-37 C. The question matters because single-compartment or under-constrained
-multicompartment models of RGCs have historically suffered from parameter degeneracy: many
-G-bar maps can fit a recording at one temperature, and the community lacked a principled,
-temperature-transferable channel set.
-
-Methodologically, the authors record repetitive spiking in anatomically reconstructed rat Type
-I and Type II and cat alpha and beta RGCs at multiple temperatures, then fit phase plots
-(dV/dt versus V) of each cell with NEURON multicompartment simulations of the
-Fohlmeister-Miller Five-channel model (Na, K(DR), Ca, K(A), K(Ca)). The crucial design choice
-is to demand that a single G-bar map fit every temperature simultaneously, so temperature
-becomes an identifiability lever, and to separate gating-kinetic Q10s from ion-permeability
-Q10s in a GHK-style current equation.
-
-They find that the voltage dependence of rate constants is constant within 7-23 C and within
-30-37 C with a sharp transition at 23-30 C; that gating Q10s are ~1.9-1.95 and permeability
-Q10s are ~1.5-1.65 above 23 C but climb toward ~8 below 10 C; and that Na channels become
-non-Arrhenius below 8 C, with spike failure below 7 C. Peak Na conductance is concentrated on
-a thin axonal segment 50-130 um distal to the soma (up to 448 mS/cm^2 in cat alpha), and the
-temperature dependence of the IS-SD phase-plot break confirms this localization. A single
-cell-type-specific channel map fits all temperatures.
-
-For this project, which is building DSGC compartmental models, this paper is foundational: it
-provides a fully calibrated, temperature-scaled Five-channel parameter set for retinal
-ganglion cells in rat and cat, including the Na hotspot location, the dendritic Na+K(A) safety
-factor, and the two-plateau temperature-scaling scheme. The G-bar tables and Q10 values should
-be adopted as the default channel-density prior for DSGC models, modified only where
-DSGC-specific evidence demands it, and the phase-plot fitting methodology should be used to
-calibrate DSGC compartmental models against future whole-cell recordings.
-
-</details>
-
-<details>
-<summary>📖 <strong>Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection
-of Motion in a Simulation of the Direction-Selective Ganglion Cell</strong>
-— Schachter et al., 2010</summary>
 
 | Field | Value |
 |---|---|
@@ -131,9 +78,9 @@ of Motion in a Simulation of the Direction-Selective Ganglion Cell</strong>
 | **DOI** | `10.1371/journal.pcbi.1000899` |
 | **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`cable-theory`](../../meta/categories/cable-theory/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/summary.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/summary.md) |
 
 Schachter, Oesch, Smith & Taylor (2010) ask how the rabbit On-Off direction-selective ganglion
 cell converts weakly directionally tuned synaptic input (PSP DSI ~0.2) into strongly tuned
@@ -174,8 +121,60 @@ for use in simulation.
 </details>
 
 <details>
-<summary>📖 <strong>Direction-Selective Dendritic Action Potentials in Rabbit
-Retina</strong> — Oesch et al., 2005</summary>
+<summary>📖 Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells:
+Using Temperature as an Independent Variable — Fohlmeister et al., 2010</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1152_jn.00123.2009` |
+| **Authors** | Jürgen F. Fohlmeister, Ethan D. Cohen, Eric A. Newman |
+| **Venue** | Journal of Neurophysiology (journal) |
+| **DOI** | `10.1152/jn.00123.2009` |
+| **URL** | https://journals.physiology.org/doi/10.1152/jn.00123.2009 |
+| **Date added** | 2026-04-19 |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/summary.md) |
+
+Fohlmeister, Cohen, and Newman ask how ion channels are distributed across the dendrites,
+soma, initial segment, and axon of rat and cat retinal ganglion cells, and how that
+distribution must be scaled with temperature to reproduce whole-cell action-potential trains
+across 7-37 C. The question matters because single-compartment or under-constrained
+multicompartment models of RGCs have historically suffered from parameter degeneracy: many
+G-bar maps can fit a recording at one temperature, and the community lacked a principled,
+temperature-transferable channel set.
+
+Methodologically, the authors record repetitive spiking in anatomically reconstructed rat Type
+I and Type II and cat alpha and beta RGCs at multiple temperatures, then fit phase plots
+(dV/dt versus V) of each cell with NEURON multicompartment simulations of the
+Fohlmeister-Miller Five-channel model (Na, K(DR), Ca, K(A), K(Ca)). The crucial design choice
+is to demand that a single G-bar map fit every temperature simultaneously, so temperature
+becomes an identifiability lever, and to separate gating-kinetic Q10s from ion-permeability
+Q10s in a GHK-style current equation.
+
+They find that the voltage dependence of rate constants is constant within 7-23 C and within
+30-37 C with a sharp transition at 23-30 C; that gating Q10s are ~1.9-1.95 and permeability
+Q10s are ~1.5-1.65 above 23 C but climb toward ~8 below 10 C; and that Na channels become
+non-Arrhenius below 8 C, with spike failure below 7 C. Peak Na conductance is concentrated on
+a thin axonal segment 50-130 um distal to the soma (up to 448 mS/cm^2 in cat alpha), and the
+temperature dependence of the IS-SD phase-plot break confirms this localization. A single
+cell-type-specific channel map fits all temperatures.
+
+For this project, which is building DSGC compartmental models, this paper is foundational: it
+provides a fully calibrated, temperature-scaled Five-channel parameter set for retinal
+ganglion cells in rat and cat, including the Na hotspot location, the dendritic Na+K(A) safety
+factor, and the two-plateau temperature-scaling scheme. The G-bar tables and Q10 values should
+be adopted as the default channel-density prior for DSGC models, modified only where
+DSGC-specific evidence demands it, and the phase-plot fitting methodology should be used to
+calibrate DSGC compartmental models against future whole-cell recordings.
+
+</details>
+
+## 2005 (1)
+
+<details>
+<summary>📖 Direction-Selective Dendritic Action Potentials in Rabbit Retina — Oesch
+et al., 2005</summary>
 
 | Field | Value |
 |---|---|
@@ -185,9 +184,9 @@ Retina</strong> — Oesch et al., 2005</summary>
 | **DOI** | `10.1016/j.neuron.2005.06.036` |
 | **URL** | https://www.sciencedirect.com/science/article/pii/S089662730500646X |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md) |
 
 Oesch, Euler, and Taylor address a central unresolved question in retinal direction
 selectivity: why does a ganglion cell whose somatic subthreshold EPSPs are only weakly
@@ -225,9 +224,10 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 
 </details>
 
+## 1997 (1)
+
 <details>
-<summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
-1997</summary>
+<summary>📖 The NEURON Simulation Environment — Hines & Carnevale, 1997</summary>
 
 | Field | Value |
 |---|---|
@@ -237,9 +237,9 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 | **DOI** | `10.1162/neco.1997.9.6.1179` |
 | **URL** | https://direct.mit.edu/neco/article/9/6/1179-1209/6087 |
 | **Date added** | 2026-04-19 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`cable-theory`](../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md) |
 
 This paper describes the NEURON simulation environment, a domain-specific software system for
 building biophysically detailed compartmental models of individual neurons and small networks.
@@ -273,76 +273,5 @@ reading, replicating, and critiquing those models. The paper also defines the nu
 methods whose accuracy limits (first-order backward Euler, fixed-timestep analytical gating
 updates) set the floor for how faithfully any DSGC compartmental model can reproduce fast
 dendritic transients.
-
-</details>
-
-## Tasks (1)
-
-| # | Task | Status | Completed |
-|---|------|--------|-----------|
-| 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
-
-## Answers (1)
-
-<details>
-<summary><strong>How does the existing peer-reviewed literature on compartmental
-models of direction-selective retinal ganglion cells structure the five
-project research questions (Na/K conductances, morphology sensitivity,
-AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency
-tuning curves), and what quantitative targets does it provide?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-18 | **Full answer**:
-[`how-does-dsgc-literature-structure-the-five-research-questions`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/answer/how-does-dsgc-literature-structure-the-five-research-questions/)
-
-The literature structures the five questions around a small set of quantitative targets that
-the project must hit. For Na/K conductances the Fohlmeister-Miller parameter set (peak somatic
-g_Na around 0.04-0.10 S/cm^2, delayed-rectifier g_K around 0.012 S/cm^2) is the standard
-starting point, and no published paper reports a factorial (g_Na, g_K) grid for DSGCs. For
-morphology the asymmetric ON-OFF DSGC dendrite is sharply wired in the null direction through
-SAC-mediated inhibition, yet global dendrite shape only minimally changes the synaptic map
-while local electrotonic compartments still matter. For AMPA/GABA balance the canonical counts
-on a reconstructed mouse DSGC are 177 AMPA and 177 GABA synapses, with null-direction
-inhibition running three to five times larger than preferred inhibition. Active dendrites with
-Fohlmeister-like channel densities roughly double the direction-selectivity index versus
-passive trees, and the target mouse ON-OFF DSGC tuning curve should hit DSI 0.7-0.85,
-preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 degrees.
-
-</details>
-
-## Suggestions (2 open, 0 closed)
-
-<details>
-<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
-to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
-
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
-Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
-the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
-S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
-morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
-tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
-with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
-Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
-
-Schachter2010 reports that switching DSGC dendrites from passive to active (adding
-Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
-synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data
-that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs
-Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and
-report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
-isolates the dendritic-conductance contribution from morphology and synaptic effects.
-Recommended task types: experiment-run, comparative-analysis.
 
 </details>

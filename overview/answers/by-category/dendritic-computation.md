@@ -1,12 +1,10 @@
-# Answers by Date Added
+# Answers: `dendritic-computation` (1)
 
-1 answer(s) grouped by creation date.
+1 answer(s).
 
 [Back to all answers](../README.md)
 
 ---
-
-## 2026-04-18 (1)
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental

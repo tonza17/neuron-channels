@@ -1,12 +1,12 @@
-# Suggestions by Date Added
+# Suggestions: `compartmental-modeling`
 
-10 suggestion(s) grouped by derived added date.
+8 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **8 open** (5
+high, 3 medium).
 
 [Back to all suggestions](../README.md)
 
 ---
-
-## 2026-04-19 (10)
 
 ## High Priority
 
@@ -135,30 +135,6 @@ code-reproduction.
 ## Medium Priority
 
 <details>
-<summary>📂 <strong>Download the four discovered papers not included in the 20-paper
-budget (Sivyer2017, Euler2002, Enciso2010, Webvision)</strong> (S-0002-07)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-07` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-research_internet.md catalogues 22 peer-reviewed candidates but only 20 became paper assets.
-The held-back items are Sivyer2017 (dendro-dendritic cholinergic control of dendritic spike
-initiation, Nat Commun), Euler2002 (SAC dendritic Ca signals are themselves directional,
-Nature), Enciso2010 (SAC-network compartmental model, J Comp Neurosci), and the Webvision-DSGC
-review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic drive for RQ3, and
-Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
-input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
-corpus to 24 papers. Recommended task types: download-paper, literature-survey.
-
-</details>
-
-<details>
 <summary>🧪 <strong>GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC
 asymmetry</strong> (S-0002-05)</summary>
 
@@ -227,29 +203,5 @@ their spatial distributions on a DSGC) so downstream DSGC simulation tasks do no
 re-implement the presynaptic waveform construction. The asset should expose a pure-function
 API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse
 conductance time courses. Recommended task types: write-library, feature-engineering.
-
-</details>
-
-<details>
-<summary>📂 <strong>Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset
-as a validation benchmark</strong> (S-0002-10)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-10` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
-| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper
-10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets
-(DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the
-published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate
-in Hz, error bars, cell counts) so the model can be scored against measured data rather than
-only against the analytic target in t0004. This gives the project a literature-grounded
-validation benchmark distinct from the canonical analytic target. Recommended task types:
-download-dataset, data-analysis.
 
 </details>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T01:44:52Z">
+  <archive_summary>
+    <title>All Suggestions</title>
+    <description>Complete suggestion list with full descriptions, priority, and status.</description>
+    <section_count>1</section_count>
+    <char_count>11849</char_count>
+    <byte_count>11855</byte_count>
+    <estimated_tokens>2962</estimated_tokens>
+    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+  </archive_summary>
+  <included_content>
+    <item>all suggestions with full descriptions</item>
+  </included_content>
+  <sections>
+    <section id="full-suggestions" source_kind="aggregator">
+      <title>All Suggestions (Full Detail)</title>
+      <source_name>aggregate_suggestions_full</source_name>
+      <source_ids>
+        <id>S-0002-01</id>
+        <id>S-0002-02</id>
+        <id>S-0002-03</id>
+        <id>S-0002-04</id>
+        <id>S-0002-05</id>
+        <id>S-0002-06</id>
+        <id>S-0002-07</id>
+        <id>S-0002-08</id>
+        <id>S-0002-09</id>
+        <id>S-0002-10</id>
+      </source_ids>
+      <content>
+Suggestions: 10
+
+## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
+ID: S-0002-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1152_jn.00123.2009
+Categories: voltage-gated-channels, compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null &lt; 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.
+
+## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
+ID: S-0002-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1371_journal.pcbi.1000899
+Categories: dendritic-computation, voltage-gated-channels, compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+Schachter2010 reports that switching DSGC dendrites from passive to active (adding Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and isolates the dendritic-conductance contribution from morphology and synaptic effects. Recommended task types: experiment-run, comparative-analysis.
+
+## Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347 as the project&#x27;s starting compartmental simulation
+ID: S-0002-03
+Status: active
+Priority: high
+Kind: technique
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: compartmental-modeling, direction-selectivity, synaptic-integration
+Date added: 2026-04-19
+
+PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this project&#x27;s goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the ModelDB code, run the original published stimulus, and verify the reproduced tuning curve lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null &lt; 10 Hz / HWHM 60-90 deg envelope. This creates the reference implementation the later parameter-variation tasks (Na/K grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types: code-reproduction.
+
+## Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
+ID: S-0002-04
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1523_ENEURO.0261-21.2021
+Categories: compartmental-modeling, dendritic-computation, retinal-ganglion-cell
+Date added: 2026-04-19
+
+ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.
+
+## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
+ID: S-0002-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: synaptic-integration, compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+PolegPolsky2016 sets GABA/AMPA at 1:1 (177/177), while Park2014 and Taylor2002 constrain the null/preferred IPSC ratio to 3-5x but not the total GABA density. Scan the GABA/AMPA density ratio from 0.5 to 4.0 (keeping the 3-5x null asymmetry fixed, the 40-80 Hz preferred peak fixed by the Na/K ridge, and the morphology and dendritic conductances fixed) and report how tuning-curve HWHM and preferred peak rate co-vary. The expected pattern (sharper tuning at the cost of lower peak rate) is stated in research_internet.md as hypothesis H4 but is not yet tested in the literature. This directly refines the RQ3 answer. Recommended task types: experiment-run.
+
+## NMDA multiplicative-gain ablation to isolate its contribution to DSI
+ID: S-0002-06
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: synaptic-integration, dendritic-computation, compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+PolegPolsky2016 reports that NMDA receptors multiplicatively scale excitatory drive by ~2x and sharpen directional discrimination, but the survey did not find a published ablation that isolates the NMDA contribution independently of the AMPA+GABA core. Run three configurations on the reproduced DSGC baseline (AMPA+GABA only, AMPA+GABA+NMDA with PolegPolsky2016 NMDA parameters, AMPA+GABA+NMDA with NMDA_gain swept 1-4x) and report the DSI, peak rate, and HWHM trajectories. This answers a specific open RQ3/RQ4-adjacent question that the literature states but does not isolate experimentally. Recommended task types: experiment-run.
+
+## Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision)
+ID: S-0002-07
+Status: active
+Priority: medium
+Kind: dataset
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Categories: direction-selectivity, synaptic-integration, dendritic-computation
+Date added: 2026-04-19
+
+research_internet.md catalogues 22 peer-reviewed candidates but only 20 became paper assets. The held-back items are Sivyer2017 (dendro-dendritic cholinergic control of dendritic spike initiation, Nat Commun), Euler2002 (SAC dendritic Ca signals are themselves directional, Nature), Enciso2010 (SAC-network compartmental model, J Comp Neurosci), and the Webvision-DSGC review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic drive for RQ3, and Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA input for the DSGC model. Download them via /add-paper in a dedicated task and extend the corpus to 24 papers. Recommended task types: download-paper, literature-survey.
+
+## Register SAC presynaptic drive model as an asset for downstream DSGC input construction
+ID: S-0002-08
+Status: active
+Priority: medium
+Kind: library
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1038_nature09818
+Categories: synaptic-integration, compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+Briggman2011 (SBEM wiring) and Ding2016 (cross-species comparison) supply the structural E/I bias; Park2014 and Taylor2002 supply the 3-5x null/preferred IPSC amplitudes; Sethuramanujam2016 adds ACh/GABA co-release; Hanson2019 challenges the pure SAC-asymmetry model. Consolidate these findings into a pre-built SAC presynaptic drive asset (a reusable library or dataset: angle-dependent GABA conductance time courses, AMPA time courses, and their spatial distributions on a DSGC) so downstream DSGC simulation tasks do not each re-implement the presynaptic waveform construction. The asset should expose a pure-function API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse conductance time courses. Recommended task types: write-library, feature-engineering.
+
+## Implement the tuning-curve scoring loss combining DSI, peak rate, null residual, and HWHM targets
+ID: S-0002-09
+Status: active
+Priority: high
+Kind: library
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1113_jphysiol.2008.161240
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-19
+
+The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI 0.7-0.85, preferred peak 40-80 Hz, null residual &lt; 10 Hz, HWHM 60-90 deg), and the project has four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single scalar loss combining all four targets with documented weights (e.g., weighted Euclidean distance in normalised space), plus per-metric residuals. This is the tool every downstream optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended task types: write-library.
+
+## Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark
+ID: S-0002-10
+Status: active
+Priority: medium
+Kind: dataset
+Source task: t0002_literature_survey_dsgc_compartmental_models
+Source paper: 10.1523_JNEUROSCI.5017-13.2014
+Categories: patch-clamp, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-04-19
+
+Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.
+      </content>
+    </section>
+  </sections>
+</llm_context_archive>
