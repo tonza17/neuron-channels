@@ -5,9 +5,9 @@
   "name": "Literature survey: cable theory and dendritic filtering",
   "short_description": "Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [],
-  "start_time": null,
+  "start_time": "2026-04-19T23:38:43Z",
   "end_time": null,
   "expected_assets": {
     "paper": 25,
