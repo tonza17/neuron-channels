@@ -1,12 +1,31 @@
 # Brainstorm session 3 — Detailed Results
 
-## Session Context
+## Summary
 
-Third brainstorm in the project. Called by the researcher after the t0007 NEURON/NetPyNE install
-task merged, while t0009 was in progress on a separate worktree. The researcher asked for eight new
-literature-survey tasks, twenty papers each, one per project category.
+Third brainstorm in the project. Planned a five-task literature-survey wave (t0015-t0019) to broaden
+the paper corpus beyond DSGC-specific modelling. Dropped three already-saturated categories, reduced
+the researcher's original ask from 8 × 20 to 5 × ~25 papers, and deferred the required
+`project/budget.json` bump to a direct commit on `main` after merge (task branches cannot modify
+`project/budget.json`). Locked in the paywalled-paper workflow: each survey emits
+`intervention/paywalled_papers.md` so the researcher can manually retrieve PDFs from their
+institutional account.
 
-## State of the Project at Session Start
+## Methodology
+
+### Session Flow
+
+The brainstorm followed the four canonical phases defined by `human-brainstorm` skill v8:
+
+1. **Review project state** — ran `aggregate_tasks`, `aggregate_suggestions`, `aggregate_costs`;
+   enumerated the 20-DOI t0002 corpus; read `meta/task_types/literature-survey/description.json`.
+2. **Discuss decisions** — surfaced category overlap, saturation, budget-gate, and paywalled-paper
+   concerns; offered researcher three scope options; confirmed option (b) with dropped categories.
+3. **Apply decisions** — scaffolded the t0014 folder, wrote 5 suggestions, created 5 child task
+   folders, and (attempted) a budget bump that later had to be reverted for verificator scope
+   reasons.
+4. **Finalize** — wrote results documents, captured sessions, ran verificators, opened PR, merged.
+
+### State of the Project at Session Start
 
 * Tasks: 13 total — 7 completed (t0001 to t0007), 1 in-progress (t0009), 5 not-started (t0008,
   t0010, t0011, t0012, t0013).
@@ -17,7 +36,7 @@ literature-survey tasks, twenty papers each, one per project category.
   `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/`. Categories are heavily
   overlapping — most papers carry two to four category tags.
 
-## Concerns Surfaced
+### Concerns Surfaced
 
 1. **Category overlap across existing papers** — the 20 t0002 papers each carry 2-4 category tags,
    so eight surveys at 20 papers each would generate heavy duplication.
@@ -28,22 +47,26 @@ literature-survey tasks, twenty papers each, one per project category.
 4. **Paywalled papers** — many relevant papers are behind institutional paywalls. The agent cannot
    download them. The researcher can, from their university account.
 
-## Resolution
+### Resolution
 
-### Scope Cut
+#### Scope Cut
 
 Drop the three saturated categories. Keep five: `cable-theory`, `dendritic-computation`,
 `patch-clamp`, `synaptic-integration`, `voltage-gated-channels`. Target ~25 papers per survey
 instead of 20 — extra headroom for dedup against the t0002 corpus and for papers that fail quality
 filters mid-task. Total target: ~125 papers, expected ~80-100 unique after dedup across tasks.
 
-### Budget Bump
+#### Budget Bump — Deferred to Main
 
 Raise `project/budget.json` `total_budget` from 0.0 to 1.0 USD. This is nominal — the budget field
 tracks paid third-party services, not Claude Code tokens, and the planned surveys use no paid APIs.
 The bump exists only to clear the mechanical gate on `literature-survey`.
 
-### Paywalled-Paper Workflow
+Applied as a **separate direct commit on `main`** after this PR merges, because `verify_pr_premerge`
+(check `PM-E003`) forbids a task branch from modifying `project/budget.json` — it is not in the
+`ALLOWED_OUTSIDE_FILES` list in `arf/scripts/verificators/common/constants.py`.
+
+#### Paywalled-Paper Workflow
 
 Each survey task writes an `intervention/paywalled_papers.md` listing DOIs for papers it could not
 download. The researcher retrieves these from their institutional account. A follow-up correction
@@ -51,23 +74,40 @@ pass then upgrades each affected paper asset's `download_status` from `"failed"`
 places the PDF under `files/`. The paper-asset specification v3 supports this failure-then-retrieval
 pattern natively.
 
-## File Manifest
+## Verification
 
-### Created or Modified in This Task
+* `verify_task_file t0014_brainstorm_results_3` passed (1 warning TF-W005 for empty
+  `expected_assets`; brainstorm tasks produce no assets).
+* `verify_suggestions t0014_brainstorm_results_3` passed, 0 errors, 0 warnings.
+* `verify_logs t0014_brainstorm_results_3` passed, 0 errors (warnings about missing session captures
+  resolved by running `capture_task_sessions`; one residual non-zero-exit warning from a mis-invoked
+  capture call kept in the log history).
+* `verify_task_file` passed with 0 errors on each of t0015-t0019.
 
-* `tasks/t0014_brainstorm_results_3/` — full brainstorm task folder (scaffolded Phase 4, written
-  Phase 5, finalised Phase 6)
+## Limitations
+
+* Budget bump deferred to post-merge main commit; this PR alone does not enable t0015-t0019 to
+  start. The researcher must run the main-branch commit before the child tasks can execute.
+* Paper overlap between surveys is allowed by design (same DOI may appear in e.g. both t0015 and
+  t0018 paper folders). A later deduplication task will apply corrections.
+* Surveys are capped at ~25 papers each to keep per-task scope manageable; coverage of any given
+  category is not guaranteed exhaustive.
+
+## Files Created
+
+### This Task
+
+* `tasks/t0014_brainstorm_results_3/` — full brainstorm task folder.
 * `tasks/t0014_brainstorm_results_3/results/suggestions.json` — 5 suggestions S-0014-01 through
-  S-0014-05
-* `project/budget.json` — `total_budget` 0.0 → 1.0
+  S-0014-05.
 
 ### Child Tasks Created
 
-* `tasks/t0015_literature_survey_cable_theory/` — S-0014-01
-* `tasks/t0016_literature_survey_dendritic_computation/` — S-0014-02
-* `tasks/t0017_literature_survey_patch_clamp/` — S-0014-03
-* `tasks/t0018_literature_survey_synaptic_integration/` — S-0014-04
-* `tasks/t0019_literature_survey_voltage_gated_channels/` — S-0014-05
+* `tasks/t0015_literature_survey_cable_theory/` — S-0014-01.
+* `tasks/t0016_literature_survey_dendritic_computation/` — S-0014-02.
+* `tasks/t0017_literature_survey_patch_clamp/` — S-0014-03.
+* `tasks/t0018_literature_survey_synaptic_integration/` — S-0014-04.
+* `tasks/t0019_literature_survey_voltage_gated_channels/` — S-0014-05.
 
 Each child task has `task_types: ["literature-survey"]`, no dependencies,
 `expected_assets: {"paper": 25, "answer": 1}`, and `source_suggestion` pointing back to its
@@ -103,12 +143,3 @@ Each child survey must exclude the 20 DOIs in
 
 Cross-task duplicates (same DOI appearing in e.g. both t0015 and t0018) are allowed — each task
 keeps its own copy. A later deduplication task will apply corrections.
-
-## Verification
-
-* `verify_task_file t0014_brainstorm_results_3` — passed (1 warning TF-W005 for empty
-  `expected_assets`; brainstorm tasks produce no assets).
-* `verify_suggestions t0014_brainstorm_results_3` — passed, 0 errors, 0 warnings.
-* `verify_logs t0014_brainstorm_results_3` — passed, 0 errors (warnings about missing session
-  captures resolved by running `capture_task_sessions`).
-* `verify_task_file` — passed with 0 errors on each of t0015-t0019.
