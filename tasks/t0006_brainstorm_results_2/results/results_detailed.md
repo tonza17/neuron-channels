@@ -1,5 +1,26 @@
 # Detailed Results: Brainstorm Session 2
 
+## Summary
+
+Second brainstorming session for the neuron-channels project. Produced seven second-wave task
+folders (t0007-t0013) and filed two suggestion corrections (reject S-0004-03, demote S-0005-04). No
+assets produced directly by this task; children task folders are tracked via the tasks aggregator,
+not as assets.
+
+## Methodology
+
+* **Session flow**: four sequential steps — review-project-state, discuss-decisions,
+  apply-decisions, finalize — run end-to-end in a single interactive session.
+* **Duration**: 2026-04-19T09:30:00Z to 2026-04-19T11:00:00Z (approximately 90 minutes).
+* **Model**: Claude Opus 4.7 via Claude Code CLI.
+* **Tools used**: `aggregate_tasks`, `aggregate_suggestions`, `aggregate_costs`,
+  `aggregate_categories`, filesystem Glob on `tasks/*/assets/answer/*/details.json` (as a workaround
+  because `aggregate_answers` is not available in this fork), `overview/materialize`.
+* **Runtime**: session is planning-only; no CPU-bound computation, no remote compute, no paid API
+  calls. Cost $0.
+* **Reproducibility**: the four step logs in `logs/steps/` and `logs/session_log.md` capture the
+  dialogue and decisions; `results/results_summary.md` captures the final decision list.
+
 ## Session Flow
 
 ### Phase 1: Project State Review
@@ -159,6 +180,17 @@ clear enough to design it meaningfully.
 * `tasks/t0013_resolve_morphology_provenance/` — child task.
 * `tasks/t0006_brainstorm_results_2/corrections/suggestion_S-0004-03.json` — rejection.
 * `tasks/t0006_brainstorm_results_2/corrections/suggestion_S-0005-04.json` — reprioritisation.
+
+## Verification
+
+| Verificator | Result |
+| --- | --- |
+| `verify_task_file.py` (t0006) | PASSED (1 warning TF-W005: expected_assets empty, expected for brainstorm) |
+| `verify_task_file.py` (t0007-t0013) | PASSED (no errors, no warnings) |
+| `verify_corrections.py` (t0006) | PASSED |
+| `verify_suggestions.py` (t0006) | PASSED |
+| `verify_logs.py` (t0006) | PASSED (3 warnings LG-W005/W007/W008: expected for brainstorm with no CLI / session capture) |
+| `verify_pr_premerge.py` | PASSED |
 
 ## Limitations
 
