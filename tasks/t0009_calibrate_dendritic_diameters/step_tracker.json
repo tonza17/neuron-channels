@@ -95,9 +95,9 @@
       "step": 11,
       "name": "creative-thinking",
       "description": "Explore alternative taper models (polynomial fits, branch-order vs path-distance), edge cases (ghost children, zero-length segments), and failure modes of the chosen mapping.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T23:48:51Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T23:56:50Z",
       "log_file": "logs\\steps\\011_creative-thinking/"
     },
     {
