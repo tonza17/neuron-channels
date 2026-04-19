@@ -6,8 +6,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (17)](../papers/by-category/direction-selectivity.md) | [Answers
 (1)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(14)](../suggestions/by-category/direction-selectivity.md) | [Datasets
-(1)](../datasets/by-category/direction-selectivity.md)
+(16)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(2)](../datasets/by-category/direction-selectivity.md)
 
 ---
 
@@ -922,7 +922,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (14 open, 0 closed)
+## Suggestions (16 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -1155,5 +1155,44 @@ Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliabilit
 out of individual tasks into a shared library asset. Every later fitting task will need these
 four functions; centralising them avoids divergent reimplementations and makes metric values
 reproducible from parameters alone.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
+the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
+source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
+plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
+NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
+10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
+read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
+then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
+correct paper_id slug. This unblocks correct citation of the morphology in every downstream
+paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download additional Feller-archive DSGC reconstructions to enable
+cross-cell variability sensitivity analysis</strong> (S-0005-03)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+The current dsgc-baseline-morphology commits the project to a single reconstructed cell
+(141009_Pair1DSGC). Cell-to-cell variability in branching pattern, total path length, and
+arbor extent is a known source of variance in DSGC tuning curves (RQ2), and the Feller archive
+on NeuroMorpho hosts several sibling ON-OFF DSGC reconstructions from the same lab (e.g.,
+141009_Pair2DSGC and other 2014 Pair* records). Download 3-5 additional Feller-archive ON-OFF
+DSGC SWCs as separate dataset assets (each with its own NeuroMorpho neuron_id and provenance),
+validate each with the existing validate_swc.py parser, and tabulate per-cell compartment
+count, branch points, and total dendritic path length so a downstream morphology-sweep task
+can quantify cross-cell variability without committing a priori to a specific morphology.
+Recommended task types: download-dataset.
 
 </details>

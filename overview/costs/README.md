@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.00) |
 | Stop threshold | 100% ($0.00) |
 | Default per-task limit | $0.00 USD |
-| Tasks with cost records | 4 |
+| Tasks with cost records | 5 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 1 |
+| Skipped tasks | 0 |
 
 ## Service Totals
 
@@ -27,14 +27,8 @@ No entries found.
 
 No entries found.
 
-4 task cost record(s) are zero-cost and omitted from the main spend table.
+5 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
 No task cost records found.
-
-## Skipped Tasks
-
-| Task ID | Reason |
-|---------|--------|
-| `t0005_download_dsgc_morphology` | results/costs.json is missing or invalid |

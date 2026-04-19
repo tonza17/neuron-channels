@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-19T08:48:58Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-19T09:32:04Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>33895</char_count>
-    <byte_count>33937</byte_count>
-    <estimated_tokens>8473</estimated_tokens>
+    <char_count>35285</char_count>
+    <byte_count>35329</byte_count>
+    <estimated_tokens>8821</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -119,9 +119,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
         <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
+        <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Completed tasks: 4
+Completed tasks: 5
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -146,23 +147,19 @@ ID: t0004_generate_target_tuning_curve
 Completed: 2026-04-19
 Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
 Result summary: Results Summary: Generate Canonical Target Tuning Curve Summary Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`, `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset is registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters and a diagnostic plot. Metrics * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve * **Sampled directions**: **12** angles at 30° spacing (0° to 330°) * **Trials...
+
+## Download candidate DSGC morphology
+ID: t0005_download_dsgc_morphology
+Completed: 2026-04-19
+Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
+Result summary: Results Summary: Download candidate DSGC morphology Summary Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho neuron 102976\) from Morrie &amp; Feller-associated archives as a CNG-curated SWC, validated the compartment tree with a stdlib Python parser, and registered it as the project&#x27;s baseline DSGC dataset asset `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single reconstructed cell that every downstream compartmental-modelling task in this project will load. Metrics * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon) * **Branch points (≥2 children)**: **129** * **Leaf tips**: **131** * **Total dendritic path...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0005_download_dsgc_morphology</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Download candidate DSGC morphology
-ID: t0005_download_dsgc_morphology
-Status: not_started
-Effective date: 2026-04-18
-Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
-Dependencies: t0002_literature_survey_dsgc_compartmental_models
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -365,10 +362,19 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
       <title>Datasets</title>
       <source_name>aggregate_datasets_full</source_name>
       <source_ids>
+        <id>dsgc-baseline-morphology</id>
         <id>target-tuning-curve</id>
       </source_ids>
       <content>
-Datasets: 1
+Datasets: 2
+
+## DSGC Baseline Morphology (Feller 141009_Pair1DSGC)
+ID: dsgc-baseline-morphology
+Year: 2018
+Access: public
+Added by task: t0005_download_dsgc_morphology
+Size: 6,736 compartments (19 soma, 6,717 dendrite, 0 axon) with 129 branch points and 131 leaves; ~1.54 mm total dendritic path length. CNG-standardized SWC, ~227 KB.
+This asset registers a single CNG-curated SWC reconstruction of the Feller-lab mouse ON-OFF DSGC `141009_Pair1DSGC` (NeuroMorpho.org neuron 102976) as the project&#x27;s baseline morphology. The cell was patched in a paired SAC-DSGC experiment on a whole-mount `Sema6+/-` adult mouse retina, filled with Alexa Fluor 488, imaged confocally, traced in Simple Neurite Tracer, re-rendered in Neurolucida, and then standardized by...
 
 ## Target Direction Tuning Curve (synthetic)
 ID: target-tuning-curve

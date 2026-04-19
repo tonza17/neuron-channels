@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-20-4169E1" alt="Papers"></a>
-  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-1-2E8B57" alt="Datasets"></a>
+  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-2-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-0-20B2AA" alt="Libraries"></a>
@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-5-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-18-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-23-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-2-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (3K) |
-[full](llm-context/full.xml) (28K) | [roadmap](llm-context/roadmap.xml) (7K) |
-[results](llm-context/results-deep-dive.xml) (14K) |
-[assets](llm-context/literature-and-assets.xml) (8K)
+[full](llm-context/full.xml) (30K) | [roadmap](llm-context/roadmap.xml) (8K) |
+[results](llm-context/results-deep-dive.xml) (17K) |
+[assets](llm-context/literature-and-assets.xml) (9K)
 
-*Last updated: 2026-04-19 08:48 UTC*
+*Last updated: 2026-04-19 09:32 UTC*
 
 * **Budget**: **$0** spent of $0
 * **Remaining**: **$0**
@@ -53,11 +53,9 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (1)](tasks/by-status/not_started.md)
+## [Ready to Start (0)](tasks/by-status/not_started.md)
 
-| # | Task | Description | Date Added |
-|---|------|-------------|------------|
-| 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`description`](../tasks/t0005_download_dsgc_morphology/task_description.md) | 2026-04-18 |
+No tasks ready to start.
 
 ---
 
@@ -67,10 +65,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (4 total)](tasks/by-status/completed.md)
+## [Recently Completed (5 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`results`](../tasks/t0005_download_dsgc_morphology/results/results_detailed.md) | 2026-04-19 09:28 |
 | 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`results`](../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) | 2026-04-19 08:42 |
 | 0003 | [Simulator library survey for DSGC compartmental modelling](../overview/tasks/task_pages/t0003_simulator_library_survey.md) | [`results`](../tasks/t0003_simulator_library_survey/results/results_detailed.md) | 2026-04-19 08:05 |
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | [`results`](../tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md) | 2026-04-19 01:35 |
@@ -78,7 +77,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (18 open)](suggestions/)
+## [Recent Suggestions (23 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -262,11 +261,11 @@ download-dataset, data-analysis.
 
 </details>
 
-*8 more open suggestions → [open suggestions](suggestions/)*
+*13 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (8)](suggestions/)
+## [High Priority Suggestions (11)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -402,6 +401,49 @@ four functions; centralising them avoids divergent reimplementations and makes m
 reproducible from parameters alone.
 
 </details>
+
+<details>
+<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
+the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../tasks/t0005_download_dsgc_morphology/)
+
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
+source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
+plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
+NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
+10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
+read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
+then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
+correct paper_id slug. This unblocks correct citation of the morphology in every downstream
+paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate realistic dendritic diameters for
+dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
+(S-0005-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../tasks/t0005_download_dsgc_morphology/)
+
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
+the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
+predicts segment diameter is the single most influential local-electrotonic knob (see
+S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
+biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
+diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
+(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
+distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
+as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
+diameter distribution against the original placeholder. Recommended task types:
+feature-engineering, data-analysis.
+
+</details>
+
+*1 more high-priority suggestion → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -977,11 +1019,12 @@ configurations against.
 
 ---
 
-## [Latest Datasets (1 total)](datasets/)
+## [Latest Datasets (2 total)](datasets/)
 
 | Name | Size | Source | Added |
 |------|------|--------|-------|
 | [Target Direction Tuning Curve (synthetic)](../tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\description.md) | 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates. | [4](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | 2026-04-19 |
+| [DSGC Baseline Morphology (Feller 141009_Pair1DSGC)](../tasks\t0005_download_dsgc_morphology\assets\dataset\dsgc-baseline-morphology\description.md) | 6,736 compartments (19 soma, 6,717 dendrite, 0 axon) with 129 branch points and 131 leaves; ~1.54 mm total dendritic path length. CNG-standardized SWC, ~227 KB. | [5](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | 2026-04-19 |
 
 ---
 

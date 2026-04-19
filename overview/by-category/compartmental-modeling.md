@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (8)](../papers/by-category/compartmental-modeling.md) | [Answers
 (2)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(13)](../suggestions/by-category/compartmental-modeling.md)
+(17)](../suggestions/by-category/compartmental-modeling.md)
 
 ---
 
@@ -488,7 +488,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (13 open, 0 closed)
+## Suggestions (17 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -707,5 +707,90 @@ into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003
 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any
 behavioural differences. This decides whether the project should upgrade before or after the
 first round of tuning-curve experiments.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate realistic dendritic diameters for
+dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
+(S-0005-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
+the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
+predicts segment diameter is the single most influential local-electrotonic knob (see
+S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
+biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
+diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
+(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
+distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
+as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
+diameter distribution against the original placeholder. Recommended task types:
+feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download additional Feller-archive DSGC reconstructions to enable
+cross-cell variability sensitivity analysis</strong> (S-0005-03)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+The current dsgc-baseline-morphology commits the project to a single reconstructed cell
+(141009_Pair1DSGC). Cell-to-cell variability in branching pattern, total path length, and
+arbor extent is a known source of variance in DSGC tuning curves (RQ2), and the Feller archive
+on NeuroMorpho hosts several sibling ON-OFF DSGC reconstructions from the same lab (e.g.,
+141009_Pair2DSGC and other 2014 Pair* records). Download 3-5 additional Feller-archive ON-OFF
+DSGC SWCs as separate dataset assets (each with its own NeuroMorpho neuron_id and provenance),
+validate each with the existing validate_swc.py parser, and tabulate per-cell compartment
+count, branch points, and total dendritic path length so a downstream morphology-sweep task
+can quantify cross-cell variability without committing a priori to a specific morphology.
+Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
+library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+Every downstream compartmental-modelling task in this project will need to load the
+dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by
+SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d
+handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs)
+and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology
+builder). Write a small library asset that exposes a pure-function
+load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent
+loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and
+compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
+bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
+write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Render and QA-check 2D/3D visualisations of
+dsgc-baseline-morphology for documentation and synapse placement</strong>
+(S-0005-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+The dsgc-baseline-morphology asset is currently described only by tabulated statistics (6,736
+compartments, 129 branch points, 1,536.25 um path length). Downstream tasks that place
+AMPA/GABA synapses by spatial rule (e.g., Park2014 3-5x null/preferred IPSC asymmetry,
+S-0002-05 GABA/AMPA density scan) need a visual reference for the dendritic arbor,
+branch-order map, and soma orientation; reviewers also need a figure for any project paper.
+Render three QA visualisations (2D top-down dendrogram coloured by Strahler order, 2D xy
+projection coloured by path distance from soma, 3D rotating xyz scatter) using neurom +
+matplotlib (or NEURON's PlotShape) and register the figures plus the rendering script as an
+answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling
+branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types:
+data-analysis, answer-question.
 
 </details>

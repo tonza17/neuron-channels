@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T08:48:58Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T09:32:04Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>47790</char_count>
-    <byte_count>47838</byte_count>
-    <estimated_tokens>11947</estimated_tokens>
+    <char_count>51774</char_count>
+    <byte_count>51824</byte_count>
+    <estimated_tokens>12943</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -120,9 +120,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
         <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
+        <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Completed tasks: 4
+Completed tasks: 5
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -147,23 +148,19 @@ ID: t0004_generate_target_tuning_curve
 Completed: 2026-04-19
 Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
 Result summary: Results Summary: Generate Canonical Target Tuning Curve Summary Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`, `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset is registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters and a diagnostic plot. Metrics * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve * **Sampled directions**: **12** angles at 30° spacing (0° to 330°) * **Trials...
+
+## Download candidate DSGC morphology
+ID: t0005_download_dsgc_morphology
+Completed: 2026-04-19
+Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
+Result summary: Results Summary: Download candidate DSGC morphology Summary Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho neuron 102976\) from Morrie &amp; Feller-associated archives as a CNG-curated SWC, validated the compartment tree with a stdlib Python parser, and registered it as the project&#x27;s baseline DSGC dataset asset `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single reconstructed cell that every downstream compartmental-modelling task in this project will load. Metrics * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon) * **Branch points (≥2 children)**: **129** * **Leaf tips**: **131** * **Total dendritic path...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0005_download_dsgc_morphology</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Download candidate DSGC morphology
-ID: t0005_download_dsgc_morphology
-Status: not_started
-Effective date: 2026-04-18
-Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
-Dependencies: t0002_literature_survey_dsgc_compartmental_models
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -205,6 +202,9 @@ Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parame
         <id>S-0003-01</id>
         <id>S-0003-02</id>
         <id>S-0004-03</id>
+        <id>S-0005-01</id>
+        <id>S-0005-02</id>
+        <id>S-0005-04</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -213,11 +213,10 @@ Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parame
         <id>S-0003-03</id>
         <id>S-0003-04</id>
         <id>S-0004-01</id>
-        <id>S-0003-05</id>
-        <id>S-0004-02</id>
+        <id>S-0005-03</id>
       </source_ids>
       <content>
-Open suggestions: 18
+Open suggestions: 20
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -275,6 +274,27 @@ Kind: library
 Source task: t0004_generate_target_tuning_curve
 Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations out of individual tasks into a shared library asset. Every later fitting task will need these four functions; centralising them avoids divergent reimplementations and makes metric values reproducible from parameters alone.
 
+## Download both candidate Feller-lab 2018 source papers to resolve the dsgc-baseline-morphology provenance ambiguity
+ID: S-0005-01
+Priority: high
+Kind: dataset
+Source task: t0005_download_dsgc_morphology
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the plan-nominated Morrie &amp; Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the NeuroMorpho-reported Murphy-Baum &amp; Feller 2018 Current Biology (DOI 10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task, read each paper&#x27;s Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction, then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the correct paper_id slug. This unblocks correct citation of the morphology in every...
+
+## Calibrate realistic dendritic diameters for dsgc-baseline-morphology to replace the 0.125 um placeholder radii
+ID: S-0005-02
+Priority: high
+Kind: technique
+Source task: t0005_download_dsgc_morphology
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory predicts segment diameter is the single most influential local-electrotonic knob (see S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper (e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016 distribution) keyed on Strahler order or path distance from the soma...
+
+## Build a reusable SWC -&gt; NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology
+ID: S-0005-04
+Priority: high
+Kind: library
+Source task: t0005_download_dsgc_morphology
+Every downstream compartmental-modelling task in this project will need to load the dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by SWC compartment id, soma reference, and per-section parent links. NEURON&#x27;s built-in Import3d handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs) and other simulators have their own quirks (NetPyNE&#x27;s netParams.cellParams, Arbor&#x27;s morphology builder). Write a small library asset that exposes a pure-function load_dsgc_morphology(simulator: str) -&gt; SimulatorMorphology API with verified-equivalent loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path...
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -331,19 +351,12 @@ Kind: dataset
 Source task: t0004_generate_target_tuning_curve
 Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi, target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at ~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is robust across the 0.6-0.9 band instead of only the upper end.
 
-## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
-ID: S-0003-05
-Priority: low
-Kind: evaluation
-Source task: t0003_simulator_library_survey
-NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.
-
-## Add a Poisson-noise variant of the target trials
-ID: S-0004-02
-Priority: low
+## Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis
+ID: S-0005-03
+Priority: medium
 Kind: dataset
-Source task: t0004_generate_target_tuning_curve
-Replace the current Gaussian-noise trial replicates with Poisson counts converted to rates (Fano factor ~1) and register it as a separate dataset asset. This would give tuning_curve_reliability a noise model closer to real spike statistics while keeping the closed-form mean curve unchanged.
+Source task: t0005_download_dsgc_morphology
+The current dsgc-baseline-morphology commits the project to a single reconstructed cell (141009_Pair1DSGC). Cell-to-cell variability in branching pattern, total path length, and arbor extent is a known source of variance in DSGC tuning curves (RQ2), and the Feller archive on NeuroMorpho hosts several sibling ON-OFF DSGC reconstructions from the same lab (e.g., 141009_Pair2DSGC and other 2014 Pair* records). Download 3-5 additional Feller-archive ON-OFF DSGC SWCs as separate dataset assets (each with its own NeuroMorpho neuron_id and provenance), validate each with the existing validate_swc.py parser, and tabulate per-cell compartment count, branch points, and total dendritic path length so a...
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
@@ -519,10 +532,19 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
       <title>Datasets</title>
       <source_name>aggregate_datasets_full</source_name>
       <source_ids>
+        <id>dsgc-baseline-morphology</id>
         <id>target-tuning-curve</id>
       </source_ids>
       <content>
-Datasets: 1
+Datasets: 2
+
+## DSGC Baseline Morphology (Feller 141009_Pair1DSGC)
+ID: dsgc-baseline-morphology
+Year: 2018
+Access: public
+Added by task: t0005_download_dsgc_morphology
+Size: 6,736 compartments (19 soma, 6,717 dendrite, 0 axon) with 129 branch points and 131 leaves; ~1.54 mm total dendritic path length. CNG-standardized SWC, ~227 KB.
+This asset registers a single CNG-curated SWC reconstruction of the Feller-lab mouse ON-OFF DSGC `141009_Pair1DSGC` (NeuroMorpho.org neuron 102976) as the project&#x27;s baseline morphology. The cell was patched in a paired SAC-DSGC experiment on a whole-mount `Sema6+/-` adult mouse retina, filled with Alexa Fluor 488, imaged confocally, traced in Simple Neurite Tracer, re-rendered in Neurolucida, and then standardized by...
 
 ## Target Direction Tuning Curve (synthetic)
 ID: target-tuning-curve

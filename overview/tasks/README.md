@@ -1,40 +1,38 @@
 # Project Tasks
 
-5 tasks. ⏹ **1 not_started**, ✅ **4 completed**.
+5 tasks. ✅ **5 completed**.
 
-**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
-`completed`](by-status/completed.md); [By date added](by-date-added/README.md)
+**Browse by view**: By status: [✅ `completed`](by-status/completed.md); [By date
+added](by-date-added/README.md)
 
 ---
 
 ## Dependency Graph
 
-```mermaid
-graph LR
-    t0002_literature_survey_dsgc_compartmental_models["✅ t0002_literature_survey_dsgc_compartmental_models"]
-    t0005_download_dsgc_morphology["⏹ t0005_download_dsgc_morphology"]
-
-    t0002_literature_survey_dsgc_compartmental_models --> t0005_download_dsgc_morphology
-```
+All tasks completed.
 
 ---
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0005 — <strong>Download candidate DSGC morphology</strong></summary>
+<summary>✅ 0005 — <strong>Download candidate DSGC morphology</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0005_download_dsgc_morphology` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-18 |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
 | **Dependencies** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
 | **Expected assets** | 1 dataset |
 | **Source suggestion** | — |
 | **Task types** | [`download-dataset`](../../meta/task_types/download-dataset/) |
+| **Start time** | 2026-04-19T08:50:24Z |
+| **End time** | 2026-04-19T09:28:00Z |
+| **Step progress** | 8/15 |
 | **Task page** | [Download candidate DSGC morphology](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
 | **Task folder** | [`t0005_download_dsgc_morphology/`](../../tasks/t0005_download_dsgc_morphology/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0005_download_dsgc_morphology/results/results_detailed.md) |
 
 # Download candidate DSGC morphology
 
@@ -78,9 +76,34 @@ morphology shortlist and rationale.
 * The asset's `details.json` links back to the source paper or NeuroMorpho record.
 * The downloaded file loads without errors in at least one candidate simulator library.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Download candidate DSGC morphology**
+>
+> **Summary**
+>
+> Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho
+> neuron
+> 102976\) from Morrie & Feller-associated archives as a CNG-curated SWC, validated the
+> compartment
+> tree with a stdlib Python parser, and registered it as the project's baseline DSGC dataset
+> asset
+> `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single
+> reconstructed cell
+> that every downstream compartmental-modelling task in this project will load.
+>
+> **Metrics**
+>
+> * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon)
+> * **Branch points (≥2 children)**: **129**
+> * **Leaf tips**: **131**
+> * **Total dendritic path length**: **1,536.25 µm**
+> * **SWC file size**: **232,470 bytes** (CNG-curated)
+> * **Download cost**: **$0** (CC-BY-4.0 public data)
+>
+> **Verification**
+
+</details>
 
 <details>
 <summary>✅ 0004 — <strong>Generate canonical target angle-to-AP-rate tuning

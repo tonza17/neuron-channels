@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T08:48:58Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T09:32:04Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>21387</char_count>
-    <byte_count>21482</byte_count>
-    <estimated_tokens>5346</estimated_tokens>
+    <char_count>23011</char_count>
+    <byte_count>23125</byte_count>
+    <estimated_tokens>5752</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -435,11 +435,13 @@ diagnostic plot.
 
 ## Download candidate DSGC morphology
 ID: t0005_download_dsgc_morphology
-Status: not_started
-Effective date: 2026-04-18
+Status: completed
+Effective date: 2026-04-19
 Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
 Dependencies: t0002_literature_survey_dsgc_compartmental_models
 Task types: download-dataset
+Start time: 2026-04-19T08:50:24Z
+End time: 2026-04-19T09:28:00Z
 
 #### Motivation
 
@@ -480,6 +482,37 @@ morphology shortlist and rationale.
 * Dataset asset passes `verify_dataset_asset.py`.
 * The asset&#x27;s `details.json` links back to the source paper or NeuroMorpho record.
 * The downloaded file loads without errors in at least one candidate simulator library.
+
+### Results Summary
+
+#### Summary
+
+Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho neuron
+102976\) from Morrie &amp; Feller-associated archives as a CNG-curated SWC, validated the compartment
+tree with a stdlib Python parser, and registered it as the project&#x27;s baseline DSGC dataset asset
+`dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single reconstructed cell
+that every downstream compartmental-modelling task in this project will load.
+
+#### Metrics
+
+* **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon)
+* **Branch points (≥2 children)**: **129**
+* **Leaf tips**: **131**
+* **Total dendritic path length**: **1,536.25 µm**
+* **SWC file size**: **232,470 bytes** (CNG-curated)
+* **Download cost**: **$0** (CC-BY-4.0 public data)
+
+#### Verification
+
+* `verify_task_folder.py` — PASSED (0 errors, 1 warning: `FD-W002` empty `logs/searches/` —
+  expected for a download-dataset task).
+* `verify_plan.py` — PASSED (0 errors, 0 warnings).
+* `verify_task_dependencies.py` — PASSED (0 errors, 0 warnings) during check-deps.
+* Manual `DA-*` spec-v2 check on `assets/dataset/dsgc-baseline-morphology/` — PASSED (0 errors, 0
+  warnings). The framework&#x27;s `verify_dataset_asset.py` script is not implemented, so the check was
+  done by applying each rule from `meta/asset_types/dataset/specification.md` directly.
+* Stdlib SWC tree check in `code/validate_swc.py` — emitted `VALID` (single root, connected tree,
+  non-negative radii, ≥1 soma, 6,717 ≥ 100 dendrite compartments).
       </content>
     </section>
   </sections>

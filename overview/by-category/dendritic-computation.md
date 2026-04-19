@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (11)](../papers/by-category/dendritic-computation.md) | [Answers
 (1)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(4)](../suggestions/by-category/dendritic-computation.md)
+(6)](../suggestions/by-category/dendritic-computation.md)
 
 ---
 
@@ -647,7 +647,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (4 open, 0 closed)
+## Suggestions (6 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
@@ -717,5 +717,49 @@ review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic driv
 Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
 input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
 corpus to 24 papers. Recommended task types: download-paper, literature-survey.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate realistic dendritic diameters for
+dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
+(S-0005-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
+the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
+predicts segment diameter is the single most influential local-electrotonic knob (see
+S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
+biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
+diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
+(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
+distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
+as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
+diameter distribution against the original placeholder. Recommended task types:
+feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Render and QA-check 2D/3D visualisations of
+dsgc-baseline-morphology for documentation and synapse placement</strong>
+(S-0005-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
+
+The dsgc-baseline-morphology asset is currently described only by tabulated statistics (6,736
+compartments, 129 branch points, 1,536.25 um path length). Downstream tasks that place
+AMPA/GABA synapses by spatial rule (e.g., Park2014 3-5x null/preferred IPSC asymmetry,
+S-0002-05 GABA/AMPA density scan) need a visual reference for the dendritic arbor,
+branch-order map, and soma orientation; reviewers also need a figure for any project paper.
+Render three QA visualisations (2D top-down dendrogram coloured by Strahler order, 2D xy
+projection coloured by path distance from soma, 3D rotating xyz scatter) using neurom +
+matplotlib (or NEURON's PlotShape) and register the figures plus the rendering script as an
+answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling
+branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types:
+data-analysis, answer-question.
 
 </details>

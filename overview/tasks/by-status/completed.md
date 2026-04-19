@@ -1,12 +1,102 @@
 # ✅ Tasks: Completed
 
-4 tasks. ✅ **4 completed**.
+5 tasks. ✅ **5 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0005 — <strong>Download candidate DSGC morphology</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0005_download_dsgc_morphology` |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
+| **Dependencies** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Expected assets** | 1 dataset |
+| **Source suggestion** | — |
+| **Task types** | [`download-dataset`](../../../meta/task_types/download-dataset/) |
+| **Start time** | 2026-04-19T08:50:24Z |
+| **End time** | 2026-04-19T09:28:00Z |
+| **Step progress** | 8/15 |
+| **Task page** | [Download candidate DSGC morphology](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Task folder** | [`t0005_download_dsgc_morphology/`](../../../tasks/t0005_download_dsgc_morphology/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0005_download_dsgc_morphology/results/results_detailed.md) |
+
+# Download candidate DSGC morphology
+
+## Motivation
+
+Every downstream simulation task needs a concrete reconstructed morphology to load. Rather
+than generating a synthetic branching structure, we want a published DSGC (or DSGC-like RGC)
+reconstruction used by prior modelling work. The literature survey (t0002) produces the
+shortlist; this task commits to one file.
+
+## Scope
+
+Download one reconstructed DSGC morphology in SWC format (or HOC / NeuroML if SWC is not
+available) from a public source such as NeuroMorpho.org, ModelDB, or a paper's supplementary
+materials. The morphology should be one of those flagged as suitable in t0002's answer asset.
+
+## Approach
+
+1. Read t0002's answer asset to pick the recommended morphology.
+2. Download the file and verify it loads as a valid SWC / HOC structure.
+3. Record its provenance (source URL, paper DOI, reconstruction protocol) in the dataset asset
+   metadata.
+
+## Expected Outputs
+
+* One dataset asset under `assets/dataset/dsgc_baseline_morphology/` containing the morphology
+  file(s) and metadata.
+
+## Compute and Budget
+
+No external cost.
+
+## Dependencies
+
+`t0002_literature_survey_dsgc_compartmental_models` — the literature survey produces the
+morphology shortlist and rationale.
+
+## Verification Criteria
+
+* Dataset asset passes `verify_dataset_asset.py`.
+* The asset's `details.json` links back to the source paper or NeuroMorpho record.
+* The downloaded file loads without errors in at least one candidate simulator library.
+
+**Results summary:**
+
+> **Results Summary: Download candidate DSGC morphology**
+>
+> **Summary**
+>
+> Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho
+> neuron
+> 102976\) from Morrie & Feller-associated archives as a CNG-curated SWC, validated the
+> compartment
+> tree with a stdlib Python parser, and registered it as the project's baseline DSGC dataset
+> asset
+> `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single
+> reconstructed cell
+> that every downstream compartmental-modelling task in this project will load.
+>
+> **Metrics**
+>
+> * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon)
+> * **Branch points (≥2 children)**: **129**
+> * **Leaf tips**: **131**
+> * **Total dendritic path length**: **1,536.25 µm**
+> * **SWC file size**: **232,470 bytes** (CNG-curated)
+> * **Download cost**: **$0** (CC-BY-4.0 public data)
+>
+> **Verification**
+
+</details>
 
 <details>
 <summary>✅ 0004 — <strong>Generate canonical target angle-to-AP-rate tuning
