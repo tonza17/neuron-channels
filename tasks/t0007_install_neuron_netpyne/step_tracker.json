@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review prior task code and run_with_logs utility conventions relevant to shelling out uv pip and nrnivmodl.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T20:39:31Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
