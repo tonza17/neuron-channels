@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0015_literature_survey_cable_theory",
+  "command": "uv run python -m arf.scripts.verificators.verify_research_internet t0015_literature_survey_cable_theory",
+  "exit_code": 0,
+  "duration_seconds": 0.424,
+  "started_at": "2026-04-19T23:56:04Z",
+  "completed_at": "2026-04-19T23:56:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0015_literature_survey_cable_theory",
+  "stdout_file": "004_20260419T235604Z_uv-run-python.stdout.txt",
+  "stderr_file": "004_20260419T235604Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

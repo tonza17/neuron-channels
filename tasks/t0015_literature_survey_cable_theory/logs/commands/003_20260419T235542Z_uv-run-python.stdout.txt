@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\tasks\t0015_literature_survey_cable_theory\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Schachter2010] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 33 entries but frontmatter says sources_cited=28[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)
