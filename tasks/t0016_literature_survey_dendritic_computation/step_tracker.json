@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search the internet for ~25 new papers on dendritic computation across six themes.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:53:02Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
