@@ -1,0 +1,22 @@
+{
+  "spec_version": 4,
+  "task_id": "t0009_calibrate_dendritic_diameters",
+  "task_index": 9,
+  "name": "Calibrate dendritic diameters for dsgc-baseline-morphology",
+  "short_description": "Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0005_download_dsgc_morphology"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "dataset": 1
+  },
+  "task_types": [
+    "feature-engineering",
+    "data-analysis"
+  ],
+  "source_suggestion": "S-0005-02"
+}

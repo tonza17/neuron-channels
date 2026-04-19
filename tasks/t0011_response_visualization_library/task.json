@@ -1,0 +1,22 @@
+{
+  "spec_version": 4,
+  "task_id": "t0011_response_visualization_library",
+  "task_index": 11,
+  "name": "Response-visualisation library (firing rate vs angle graphs)",
+  "short_description": "Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0004_generate_target_tuning_curve",
+    "t0008_port_modeldb_189347"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "library": 1
+  },
+  "task_types": [
+    "write-library"
+  ],
+  "source_suggestion": null
+}
