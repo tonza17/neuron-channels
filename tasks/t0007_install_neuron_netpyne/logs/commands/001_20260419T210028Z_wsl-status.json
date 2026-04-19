@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0007_install_neuron_netpyne",
+  "command": "wsl --status",
+  "exit_code": 50,
+  "duration_seconds": 0.076,
+  "started_at": "2026-04-19T21:00:28Z",
+  "completed_at": "2026-04-19T21:00:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0007_install_neuron_netpyne",
+  "stdout_file": "001_20260419T210028Z_wsl-status.stdout.txt",
+  "stderr_file": "001_20260419T210028Z_wsl-status.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
