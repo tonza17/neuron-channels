@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0004_generate_target_tuning_curve branch from main and plan the step list.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T08:13:43Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T08:16:32Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
