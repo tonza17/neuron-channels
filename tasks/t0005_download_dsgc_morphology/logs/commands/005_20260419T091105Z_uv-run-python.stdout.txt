@@ -1,0 +1,11 @@
+File: tasks\t0005_download_dsgc_morphology\assets\dataset\dsgc-baseline-morphology\files\141009_Pair1DSGC.CNG.swc
+Total compartments: 6736
+  Soma: 19
+  Dendrite: 6717
+  Axon: 0
+  Other: 0
+Branch points: 129
+Leaf points: 131
+Total dendritic length: 1536.25 um
+Secondary check: neurom not installed; secondary check skipped
+VALID

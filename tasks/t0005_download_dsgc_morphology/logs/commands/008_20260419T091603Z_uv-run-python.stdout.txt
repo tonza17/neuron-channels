@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0005_download_dsgc_morphology\tasks\t0005_download_dsgc_morphology
+
+[31m[1mERRORS:[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/searches/[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/sessions/[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)
