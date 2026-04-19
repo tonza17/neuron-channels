@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Final reporting, session capture, and verification pass.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T08:04:53Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T08:06:36Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
