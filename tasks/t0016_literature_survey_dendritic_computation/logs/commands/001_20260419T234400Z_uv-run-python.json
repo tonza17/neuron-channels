@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0016_literature_survey_dendritic_computation",
+  "command": "uv run python -m arf.scripts.utils.init_task_folders t0016_literature_survey_dendritic_computation --step-log-dir tasks/t0016_literature_survey_dendritic_computation/logs/steps/003_init-folders/",
+  "exit_code": 1,
+  "duration_seconds": 0.383,
+  "started_at": "2026-04-19T23:44:00Z",
+  "completed_at": "2026-04-19T23:44:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0016_literature_survey_dendritic_computation",
+  "stdout_file": "001_20260419T234400Z_uv-run-python.stdout.txt",
+  "stderr_file": "001_20260419T234400Z_uv-run-python.stderr.txt",
+  "stdout_lines": 16,
+  "stderr_lines": 1,
+  "truncated": false
+}
