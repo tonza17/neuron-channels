@@ -1,0 +1,19 @@
+{
+  "total_surface_area_placeholder_um2": 1213.4332814703957,
+  "total_surface_area_calibrated_um2": 9700.097521453416,
+  "surface_area_ratio": 7.993927370855675,
+  "total_dendritic_axial_resistance_placeholder_ohm": 31296305233.77359,
+  "total_dendritic_axial_resistance_calibrated_ohm": 1500576954.4462156,
+  "axial_resistance_ratio": 0.047947415621025426,
+  "proximal_input_resistance_placeholder_ohm": 90803447.236848,
+  "proximal_input_resistance_calibrated_ohm": 519307.983263872,
+  "distal_input_resistance_placeholder_ohm": 1967334122.3954499,
+  "distal_input_resistance_calibrated_ohm": 54238207.72144736,
+  "n_distinct_radii_calibrated": 3,
+  "terminal_radius_um_calibrated": 0.439453,
+  "mid_radius_um_calibrated": 1.652908,
+  "primary_radius_um_calibrated": 3.694062,
+  "max_strahler_order": 5,
+  "soma_radius_um": 4.117503999999999,
+  "total_dendritic_length_um": 1536.2537907332328
+}

@@ -1,0 +1,43 @@
+{
+  "spec_version": "2",
+  "dataset_id": "dsgc-baseline-morphology-calibrated",
+  "name": "DSGC Baseline Morphology (141009_Pair1DSGC), Diameter-Calibrated",
+  "version": "1",
+  "short_description": "Diameter-calibrated mouse ON-OFF DSGC morphology: topology from dsgc-baseline-morphology, per-Strahler-order radii from Poleg-Polsky & Diamond 2016.",
+  "description_path": "description.md",
+  "source_paper_id": "10.1016_j.neuron.2016.02.013",
+  "url": null,
+  "download_url": null,
+  "year": 2026,
+  "date_published": "2026-04-19",
+  "authors": [
+    {
+      "name": "t0009_calibrate_dendritic_diameters",
+      "country": "GB",
+      "institution": "Glite ARF project",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Glite ARF project",
+      "country": "GB"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "access_kind": "public",
+  "size_description": "6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leaves, 1,536.25 um total dendritic length; Strahler-order-calibrated diameters from Poleg-Polsky & Diamond 2016 ModelDB 189347 (Hanson geoffder/Spatial-Offset-DSGC-NEURON-Model mirror). Four distinct radii: soma 4.118 um, primary 3.694 um, mid 1.653 um, terminal 0.439 um.",
+  "files": [
+    {
+      "path": "files/141009_Pair1DSGC_calibrated.CNG.swc",
+      "description": "Diameter-calibrated SWC. Topology (ids, parents, xyz, compartment count, branch points, leaves, total dendritic length) copied verbatim from dsgc-baseline-morphology. Radii assigned from Poleg-Polsky & Diamond 2016 by Horton-Strahler order with max-child tie-break: soma 4.118 um (mean of non-endpoint pt3dadd soma diameters / 2, clamped to 0.5 um floor), primary 3.694 um (order==max_order=5), mid 1.653 um (intermediate orders), terminal 0.439 um (order==1). Terminal radius floor 0.15 um.",
+      "format": "swc"
+    }
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "dendritic-computation",
+    "cable-theory",
+    "retinal-ganglion-cell"
+  ]
+}

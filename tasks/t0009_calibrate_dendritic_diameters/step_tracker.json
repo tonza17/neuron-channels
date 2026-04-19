@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Implement the calibration pipeline, produce assets/dataset/dsgc-baseline-morphology-calibrated/, and compute before/after morphometrics.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:24:56Z",
       "completed_at": null,
-      "log_file": "logs/steps/009_implementation/"
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,
