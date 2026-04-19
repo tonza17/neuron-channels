@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Design the calibration pipeline: SWC parser, Strahler/path-distance computation, taper mapping, floor clamp, output SWC, sanity checks, answer-asset deliverables.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T23:16:01Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T23:24:10Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
