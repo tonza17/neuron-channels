@@ -5,7 +5,7 @@
   "name": "Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain",
   "short_description": "Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.",
   "long_description_file": "task_description.md",
-  "status": "intervention_blocked",
+  "status": "in_progress",
   "dependencies": [],
   "start_time": "2026-04-19T18:20:22Z",
   "end_time": null,
