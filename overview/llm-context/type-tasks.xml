@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T08:11:25Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T08:48:58Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>19978</char_count>
-    <byte_count>20052</byte_count>
-    <estimated_tokens>4994</estimated_tokens>
+    <char_count>21387</char_count>
+    <byte_count>21482</byte_count>
+    <estimated_tokens>5346</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -342,10 +342,12 @@ embeds a 5-row × 5-column comparison table backed by 20 indexed internet source
 
 ## Generate canonical target angle-to-AP-rate tuning curve
 ID: t0004_generate_target_tuning_curve
-Status: not_started
-Effective date: 2026-04-18
+Status: completed
+Effective date: 2026-04-19
 Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
 Task types: feature-engineering
+Start time: 2026-04-19T08:12:46Z
+End time: 2026-04-19T08:42:30Z
 
 #### Motivation
 
@@ -403,6 +405,33 @@ will compare against.
 * `details.json` records the generator parameters and random seed explicitly.
 * The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10 trials per
   angle.
+
+### Results Summary
+
+#### Summary
+
+Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form
+half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`,
+`r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset is
+registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters and a
+diagnostic plot.
+
+#### Metrics
+
+* **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band
+* **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve
+* **Sampled directions**: **12** angles at 30° spacing (0° to 330°)
+* **Trials per direction**: **20** (240 rows total in `curve_trials.csv`)
+* **Mean absolute bias (sample vs closed form)**: **0.419 Hz** (max 1.063 Hz)
+
+#### Verification
+
+* `verify_task_folder.py` — PASSED (0 errors, 1 warning FD-W002 on empty `logs/searches/`)
+* `verify_task_dependencies.py` — PASSED (0 errors, 0 warnings; no dependencies)
+* `verify_plan.py` — PASSED (0 errors, 0 warnings)
+* `verify_task_metrics.py` — to be run in the reporting step together with `verify_task_results`
+* `verify_dataset_asset.py` — **not available** in this repository; the dataset asset structure is
+  checked by `verify_task_folder` and re-checked by `verify_pr_premerge` at merge time
 
 ## Download candidate DSGC morphology
 ID: t0005_download_dsgc_morphology

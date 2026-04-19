@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T08:11:25Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T08:48:58Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>15325</char_count>
-    <byte_count>15331</byte_count>
-    <estimated_tokens>3831</estimated_tokens>
+    <char_count>17007</char_count>
+    <byte_count>17013</byte_count>
+    <estimated_tokens>4251</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -32,9 +32,12 @@
         <id>S-0003-03</id>
         <id>S-0003-04</id>
         <id>S-0003-05</id>
+        <id>S-0004-01</id>
+        <id>S-0004-02</id>
+        <id>S-0004-03</id>
       </source_ids>
       <content>
-Suggestions: 15
+Suggestions: 18
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -209,6 +212,39 @@ Categories: compartmental-modeling
 Date added: 2026-04-19
 
 NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.
+
+## Generate weaker-DSI variant target tuning curves
+ID: S-0004-01
+Status: active
+Priority: medium
+Kind: dataset
+Source task: t0004_generate_target_tuning_curve
+Categories: direction-selectivity
+Date added: 2026-04-19
+
+Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi, target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at ~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is robust across the 0.6-0.9 band instead of only the upper end.
+
+## Add a Poisson-noise variant of the target trials
+ID: S-0004-02
+Status: active
+Priority: low
+Kind: dataset
+Source task: t0004_generate_target_tuning_curve
+Categories: direction-selectivity
+Date added: 2026-04-19
+
+Replace the current Gaussian-noise trial replicates with Poisson counts converted to rates (Fano factor ~1) and register it as a separate dataset asset. This would give tuning_curve_reliability a noise model closer to real spike statistics while keeping the closed-form mean curve unchanged.
+
+## Build a small reusable library for target-vs-simulated tuning curve metrics
+ID: S-0004-03
+Status: active
+Priority: high
+Kind: library
+Source task: t0004_generate_target_tuning_curve
+Categories: direction-selectivity
+Date added: 2026-04-19
+
+Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations out of individual tasks into a shared library asset. Every later fitting task will need these four functions; centralising them avoids divergent reimplementations and makes metric values reproducible from parameters alone.
       </content>
     </section>
   </sections>

@@ -1,12 +1,10 @@
-# Datasets by Date Added
+# Datasets: `direction-selectivity`
 
-1 dataset(s) grouped by project added date.
+1 dataset(s).
 
 [Back to all datasets](../README.md)
 
 ---
-
-## 2026-04-19 (1)
 
 <details>
 <summary>📂 <strong>Target Direction Tuning Curve (synthetic) v1.0.0</strong></summary>

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-20-4169E1" alt="Papers"></a>
-  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-0-2E8B57" alt="Datasets"></a>
+  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-1-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-0-20B2AA" alt="Libraries"></a>
@@ -12,10 +12,10 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-5-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-15-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-18-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
-  <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-0-DC143C" alt="Results"></a>
+  <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-2-DC143C" alt="Results"></a>
   <a href="task-types/"><img src="https://img.shields.io/badge/Task%20Types-17-708090" alt="Task%20Types"></a>
 </p>
 
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (3K) |
-[full](llm-context/full.xml) (25K) | [roadmap](llm-context/roadmap.xml) (7K) |
-[results](llm-context/results-deep-dive.xml) (11K) |
+[full](llm-context/full.xml) (28K) | [roadmap](llm-context/roadmap.xml) (7K) |
+[results](llm-context/results-deep-dive.xml) (14K) |
 [assets](llm-context/literature-and-assets.xml) (8K)
 
-*Last updated: 2026-04-19 08:11 UTC*
+*Last updated: 2026-04-19 08:48 UTC*
 
 * **Budget**: **$0** spent of $0
 * **Remaining**: **$0**
@@ -53,11 +53,10 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (1)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`description`](../tasks/t0004_generate_target_tuning_curve/task_description.md) | 2026-04-18 |
 | 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`description`](../tasks/t0005_download_dsgc_morphology/task_description.md) | 2026-04-18 |
 
 ---
@@ -68,17 +67,18 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (3 total)](tasks/by-status/completed.md)
+## [Recently Completed (4 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`results`](../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) | 2026-04-19 08:42 |
 | 0003 | [Simulator library survey for DSGC compartmental modelling](../overview/tasks/task_pages/t0003_simulator_library_survey.md) | [`results`](../tasks/t0003_simulator_library_survey/results/results_detailed.md) | 2026-04-19 08:05 |
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | [`results`](../tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md) | 2026-04-19 01:35 |
 | 0001 | [Brainstorm results session 1](../overview/tasks/task_pages/t0001_brainstorm_results_1.md) | [`results`](../tasks/t0001_brainstorm_results_1/results/results_detailed.md) | 2026-04-18 00:00 |
 
 ---
 
-## [Recent Suggestions (15 open)](suggestions/)
+## [Recent Suggestions (18 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -262,11 +262,11 @@ download-dataset, data-analysis.
 
 </details>
 
-*5 more open suggestions → [open suggestions](suggestions/)*
+*8 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (7)](suggestions/)
+## [High Priority Suggestions (8)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -386,6 +386,20 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a small reusable library for target-vs-simulated tuning
+curve metrics</strong> (S-0004-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0004_generate_target_tuning_curve](../tasks/t0004_generate_target_tuning_curve/)
+
+Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations
+out of individual tasks into a shared library asset. Every later fitting task will need these
+four functions; centralising them avoids divergent reimplementations and makes metric values
+reproducible from parameters alone.
 
 </details>
 
@@ -963,9 +977,11 @@ configurations against.
 
 ---
 
-## [Latest Datasets (0 total)](datasets/)
+## [Latest Datasets (1 total)](datasets/)
 
-No datasets yet.
+| Name | Size | Source | Added |
+|------|------|--------|-------|
+| [Target Direction Tuning Curve (synthetic)](../tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\description.md) | 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates. | [4](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | 2026-04-19 |
 
 ---
 

@@ -1,12 +1,118 @@
 # ✅ Tasks: Completed
 
-3 tasks. ✅ **3 completed**.
+4 tasks. ✅ **4 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0004 — <strong>Generate canonical target angle-to-AP-rate tuning
+curve</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0004_generate_target_tuning_curve` |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
+| **Dependencies** | — |
+| **Expected assets** | 1 dataset |
+| **Source suggestion** | — |
+| **Task types** | [`feature-engineering`](../../../meta/task_types/feature-engineering/) |
+| **Start time** | 2026-04-19T08:12:46Z |
+| **End time** | 2026-04-19T08:42:30Z |
+| **Step progress** | 8/15 |
+| **Task page** | [Generate canonical target angle-to-AP-rate tuning curve](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
+| **Task folder** | [`t0004_generate_target_tuning_curve/`](../../../tasks/t0004_generate_target_tuning_curve/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) |
+
+# Generate canonical target angle-to-AP-rate tuning curve
+
+## Motivation
+
+The key project metric `tuning_curve_rmse` compares a simulated angle-to-AP-rate tuning curve
+against a target. The researcher chose to **simulate** a canonical target curve rather than
+digitise one from a paper. This task generates that canonical target and registers it as a
+dataset asset so all later optimisation tasks share one fixed reference.
+
+## Scope
+
+Produce a single dataset asset containing:
+
+* A cosine-like target tuning curve sampled at 12 or 24 angles around 360°.
+* Explicit generator parameters: preferred direction (deg), baseline rate (Hz), peak rate
+  (Hz), tuning half-width (deg or von Mises κ), and random seed.
+* Per-angle mean rates plus a small number of synthetic noisy trial replicates so the
+  `tuning_curve_reliability` metric has a well-defined ground-truth value.
+
+Suggested functional form:
+
+```
+r(θ) = r_base + (r_peak - r_base) * ((1 + cos(θ - θ_pref)) / 2) ** n
+```
+
+with `n` controlling sharpness. Any equivalent von Mises formulation is fine. The exact values
+of `r_base`, `r_peak`, `θ_pref`, and `n` should be chosen to give a biologically plausible DSI
+(roughly 0.6-0.9) and reported in the dataset's `details.json`.
+
+## Approach
+
+1. Write a small Python script under `code/` that generates the curve, saves it to `data/` as
+   CSV or JSON, and writes the dataset asset folder under `assets/dataset/`.
+2. Include both a mean-rate table and a per-trial table (e.g., 20 synthetic trials) so
+   `tuning_curve_reliability` has a real reference value.
+3. Plot the curve and save to `results/images/target_tuning_curve.png`.
+
+## Expected Outputs
+
+* One dataset asset under `assets/dataset/target_tuning_curve/` containing the CSV/JSON
+  tables, metadata, and description.
+* A plot of the target curve in `results/images/`.
+
+## Compute and Budget
+
+Trivial. Runs locally in seconds; no external cost.
+
+## Dependencies
+
+None. Runs in parallel with t0002 and t0003. This task is the reference any later optimisation
+task will compare against.
+
+## Verification Criteria
+
+* Dataset asset passes `verify_dataset_asset.py`.
+* `details.json` records the generator parameters and random seed explicitly.
+* The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10
+  trials per angle.
+
+**Results summary:**
+
+> **Results Summary: Generate Canonical Target Tuning Curve**
+>
+> **Summary**
+>
+> Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form
+> half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`,
+> `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset
+> is
+> registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters
+> and a
+> diagnostic plot.
+>
+> **Metrics**
+>
+> * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band
+> * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve
+> * **Sampled directions**: **12** angles at 30° spacing (0° to 330°)
+> * **Trials per direction**: **20** (240 rows total in `curve_trials.csv`)
+> * **Mean absolute bias (sample vs closed form)**: **0.419 Hz** (max 1.063 Hz)
+>
+> **Verification**
+>
+
+</details>
 
 <details>
 <summary>✅ 0003 — <strong>Simulator library survey for DSGC compartmental

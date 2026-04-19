@@ -6,7 +6,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (17)](../papers/by-category/direction-selectivity.md) | [Answers
 (1)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(11)](../suggestions/by-category/direction-selectivity.md)
+(14)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(1)](../datasets/by-category/direction-selectivity.md)
 
 ---
 
@@ -921,7 +922,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (11 open, 0 closed)
+## Suggestions (14 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -1112,5 +1113,47 @@ Build a small library that wraps NetPyNE's `Batch` class with the project's pref
 axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
 `assets/library/` entry plus a one-page usage example. This unblocks every downstream
 tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+<details>
+<summary>📂 <strong>Generate weaker-DSI variant target tuning curves</strong>
+(S-0004-01)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0004_generate_target_tuning_curve](../../tasks/t0004_generate_target_tuning_curve/)
+
+Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi,
+target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at
+~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is
+robust across the 0.6-0.9 band instead of only the upper end.
+
+</details>
+
+<details>
+<summary>📂 <strong>Add a Poisson-noise variant of the target trials</strong>
+(S-0004-02)</summary>
+
+**Kind**: dataset | **Priority**: low | **Date**: 2026-04-19 | **Source**:
+[t0004_generate_target_tuning_curve](../../tasks/t0004_generate_target_tuning_curve/)
+
+Replace the current Gaussian-noise trial replicates with Poisson counts converted to rates
+(Fano factor ~1) and register it as a separate dataset asset. This would give
+tuning_curve_reliability a noise model closer to real spike statistics while keeping the
+closed-form mean curve unchanged.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a small reusable library for target-vs-simulated tuning
+curve metrics</strong> (S-0004-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0004_generate_target_tuning_curve](../../tasks/t0004_generate_target_tuning_curve/)
+
+Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations
+out of individual tasks into a shared library asset. Every later fitting task will need these
+four functions; centralising them avoids divergent reimplementations and makes metric values
+reproducible from parameters alone.
 
 </details>

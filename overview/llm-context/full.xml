@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-19T08:11:25Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-19T08:48:58Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>11</section_count>
-    <char_count>101532</char_count>
-    <byte_count>101760</byte_count>
-    <estimated_tokens>25383</estimated_tokens>
+    <section_count>12</section_count>
+    <char_count>110240</char_count>
+    <byte_count>110547</byte_count>
+    <estimated_tokens>27560</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -119,9 +119,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0001_brainstorm_results_1</id>
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
         <id>t0003_simulator_library_survey</id>
+        <id>t0004_generate_target_tuning_curve</id>
       </source_ids>
       <content>
-Completed tasks: 3
+Completed tasks: 4
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -140,80 +141,22 @@ ID: t0003_simulator_library_survey
 Completed: 2026-04-19
 Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
 Result summary: Results Summary: Simulator Library Survey for DSGC Compartmental Modelling Summary Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1** for parameter sweeps) as the project&#x27;s primary compartmental simulator and **Arbor 0.12.0** as backup, after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five axes (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example availability, long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full answer embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources. Metrics * **Libraries evaluated**: 5 (NEURON, NetPyNE...
+
+## Generate canonical target angle-to-AP-rate tuning curve
+ID: t0004_generate_target_tuning_curve
+Completed: 2026-04-19
+Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+Result summary: Results Summary: Generate Canonical Target Tuning Curve Summary Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`, `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset is registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters and a diagnostic plot. Metrics * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve * **Sampled directions**: **12** angles at 30° spacing (0° to 330°) * **Trials...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
-
-## Generate canonical target angle-to-AP-rate tuning curve
-ID: t0004_generate_target_tuning_curve
-Status: not_started
-Effective date: 2026-04-18
-Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
-
-#### Motivation
-
-The key project metric `tuning_curve_rmse` compares a simulated angle-to-AP-rate tuning curve
-against a target. The researcher chose to **simulate** a canonical target curve rather than digitise
-one from a paper. This task generates that canonical target and registers it as a dataset asset so
-all later optimisation tasks share one fixed reference.
-
-#### Scope
-
-Produce a single dataset asset containing:
-
-* A cosine-like target tuning curve sampled at 12 or 24 angles around 360°.
-* Explicit generator parameters: preferred direction (deg), baseline rate (Hz), peak rate (Hz),
-  tuning half-width (deg or von Mises κ), and random seed.
-* Per-angle mean rates plus a small number of synthetic noisy trial replicates so the
-  `tuning_curve_reliability` metric has a well-defined ground-truth value.
-
-Suggested functional form:
-
-```
-r(θ) = r_base + (r_peak - r_base) * ((1 + cos(θ - θ_pref)) / 2) ** n
-```
-
-with `n` controlling sharpness. Any equivalent von Mises formulation is fine. The exact values of
-`r_base`, `r_peak`, `θ_pref`, and `n` should be chosen to give a biologically plausible DSI
-(roughly 0.6-0.9) and reported in the dataset&#x27;s `details.json`.
-
-#### Approach
-
-1. Write a small Python script under `code/` that generates the curve, saves it to `data/` as CSV or
-   JSON, and writes the dataset asset folder under `assets/dataset/`.
-2. Include both a mean-rate table and a per-trial table (e.g., 20 synthetic trials) so
-   `tuning_curve_reliability` has a real reference value.
-3. Plot the curve and save to `results/images/target_tuning_curve.png`.
-
-#### Expected Outputs
-
-* One dataset asset under `assets/dataset/target_tuning_curve/` containing the CSV/JSON tables,
-  metadata, and description.
-* A plot of the target curve in `results/images/`.
-
-#### Compute and Budget
-
-Trivial. Runs locally in seconds; no external cost.
-
-#### Dependencies
-
-None. Runs in parallel with t0002 and t0003. This task is the reference any later optimisation task
-will compare against.
-
-#### Verification Criteria
-
-* Dataset asset passes `verify_dataset_asset.py`.
-* `details.json` records the generator parameters and random seed explicitly.
-* The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10 trials per
-  angle.
+Planned or active tasks: 1
 
 ## Download candidate DSGC morphology
 ID: t0005_download_dsgc_morphology
@@ -899,8 +842,19 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
     <section id="datasets" source_kind="aggregator">
       <title>Datasets</title>
       <source_name>aggregate_datasets_full</source_name>
+      <source_ids>
+        <id>target-tuning-curve</id>
+      </source_ids>
       <content>
-Datasets: 0
+Datasets: 1
+
+## Target Direction Tuning Curve (synthetic)
+ID: target-tuning-curve
+Year: 2026
+Access: public
+Added by task: t0004_generate_target_tuning_curve
+Size: 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates.
+`target-tuning-curve` is the canonical, synthetic direction-tuning reference that every later optimisation task in this project will compare its simulated responses against. It consists of a closed-form cosine-raised-to-power curve (r_base = 2 Hz, r_peak = 32 Hz, θ_pref = 90°, n = 2) sampled at 12 evenly-spaced directions, plus 20 Gaussian-noise trial replicates per direction (σ = 3 Hz, seed = 42). All parameters are...
       </content>
     </section>
     <section id="libraries" source_kind="aggregator">
@@ -1390,6 +1344,178 @@ REQ-IDs are reused verbatim from `plan/plan.md`.
 | REQ-15 | `## Answer` section states primary and backup in one or two sentences | **Done** | `short_answer.md` `## Answer` is 3 sentences stating &quot;NEURON 8.2.7 (with NetPyNE 1.1.1) as primary, Arbor 0.12.0 as backup&quot;. Note: the spec allows 2-5 sentences; the task says &quot;one or two sentences&quot;; the implementation chose 3 sentences to separate the primary, the sweep-layer role, and the backup for readability. The answer still satisfies the verbose intent of REQ-15 (state both simulators clearly). |
 | REQ-16 | Full answer includes the five-axis comparison table for every candidate | **Done** | 5×5 table in `full_answer.md` `## Synthesis`; each library and each axis is present. |
 | REQ-17 | Respect &quot;no external cost&quot; constraint | **Done** | `costs.json` records `total_cost_usd: 0`. No paid APIs, no remote compute. |
+      </content>
+    </section>
+    <section id="t0004_generate_target_tuning_curve-results-detailed" source_kind="file">
+      <title>t0004_generate_target_tuning_curve — Generate canonical target angle-to-AP-rate tuning curve — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0004_generate_target_tuning_curve</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0004_generate_target_tuning_curve/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0004_generate_target_tuning_curve&quot;
+---
+### Results: Generate Canonical Target Tuning Curve
+
+#### Summary
+
+This task synthesised the canonical direction-tuning reference that every downstream fit in the
+project will compare against. The curve is a half-wave-rectified cosine raised to power `n = 2`,
+parameterised by preferred direction `θ_pref = 90°`, baseline rate `r_base = 2 Hz`, peak rate
+`r_peak = 32 Hz`, Gaussian trial noise `σ = 3 Hz`, and random seed `42`. The deliverable is the
+`target-tuning-curve` dataset asset (v2 spec) containing `curve_mean.csv` (12 angles),
+`curve_trials.csv` (12 × 20 = 240 trials), `generator_params.json`, and a diagnostic PNG.
+
+#### Methodology
+
+* **Machine**: Local Windows 11 workstation (x86_64), no remote compute.
+* **Run time**: the generator completes in under 2 seconds end-to-end.
+* **Start**: 2026-04-19T08:25:41Z.
+* **End**: 2026-04-19T08:31:00Z (wall-clock for implementation step, dominated by asset authoring
+  and formatting, not compute).
+* **Method**: deterministic closed-form sampling via
+  `r(θ) = r_base + (r_peak - r_base) * ((1 + cos(θ - θ_pref)) / 2) ** n`, then Gaussian noise
+  drawn from `numpy.random.default_rng(seed=42)` and clipped at 0 Hz. Output rendered with
+  matplotlib using the headless Agg backend.
+* **Key files**: `code/generate_target.py`, `code/paths.py`.
+
+#### Metrics Tables
+
+##### Registered Metrics
+
+| Metric | Value | Unit |
+| --- | --- | --- |
+| `direction_selectivity_index` | **0.8824** | ratio |
+| `tuning_curve_hwhm_deg` | **68.51** | degrees |
+
+The DSI is evaluated in closed form as
+`DSI = (r_pref - r_null) / (r_pref + r_null) = (32 - 2) / (32 + 2) = 0.8824`. The HWHM solves
+`((1 + cos(Δθ)) / 2) ** n = (0.5 × r_peak - r_base) / (r_peak - r_base) = 14/30`, giving
+`Δθ = arccos(2 × √(14/30) - 1) ≈ 68.51°`.
+
+##### Target Curve (closed form)
+
+| `angle_deg` | `mean_rate_hz` |
+| --- | --- |
+| 0 | 9.500 |
+| 30 | 18.982 |
+| 60 | 28.696 |
+| 90 | 32.000 |
+| 120 | 28.696 |
+| 150 | 18.982 |
+| 180 | 9.500 |
+| 210 | 3.518 |
+| 240 | 2.304 |
+| 270 | 2.000 |
+| 300 | 2.304 |
+| 330 | 3.518 |
+
+##### Sample Fidelity Across 20 Trials
+
+| Quantity | Value |
+| --- | --- |
+| Mean absolute bias (sample − closed form) | **0.419 Hz** |
+| Max absolute bias (sample − closed form) | **1.063 Hz** |
+| Expected SE of per-angle mean (σ / √n_trials) | **0.671 Hz** |
+
+Max observed bias is well below `2 × SE`, confirming the seeded sample is within the expected noise
+envelope of the closed form.
+
+#### Visualizations
+
+![Target direction tuning curve with 20 trial replicates per angle](images/target_tuning_curve.png)
+
+The plot overlays the closed-form curve (blue), per-angle mean ± SD across 20 trials (red error
+bars), and individual trial scatter (light red). The DSI is printed in the title.
+
+#### Verification
+
+| Verificator | Result | Notes |
+| --- | --- | --- |
+| `verify_task_file.py` | PASSED | 0 errors, 0 warnings |
+| `verify_task_dependencies.py` | PASSED | No dependencies declared |
+| `verify_plan.py` | PASSED | 0 errors, 0 warnings |
+| `verify_task_folder.py` | PASSED | 1 warning (FD-W002: empty `logs/searches/`, non-blocking) |
+
+A dedicated `verify_dataset_asset.py` script does not exist in this repository; dataset asset
+structure is validated by `verify_task_folder.py` and re-checked by `verify_pr_premerge.py` at merge
+time. The plan&#x27;s &quot;run the dataset asset verificator&quot; step was performed through `verify_task_folder`
+and by manually checking conformance against `meta/asset_types/dataset/specification.md` v2
+(spec_version, dataset_id regex match, required fields present, at least one file in `files/`,
+canonical description document with all seven mandatory sections).
+
+#### Files Created
+
+* `tasks/t0004_generate_target_tuning_curve/code/generate_target.py` — 258-line generator.
+* `tasks/t0004_generate_target_tuning_curve/code/paths.py` — centralised paths module.
+* `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/details.json` — v2
+  dataset metadata with full `generator_params`.
+* `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/description.md` —
+  v2 canonical description document with all seven mandatory sections.
+* `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/curve_mean.csv`
+  — 12 rows, columns `angle_deg,mean_rate_hz`.
+* `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/curve_trials.csv`
+  — 240 rows, columns `angle_deg,trial_index,rate_hz`.
+* `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/generator_params.json`
+  — echo of the `GeneratorParams` dataclass.
+* `tasks/t0004_generate_target_tuning_curve/results/images/target_tuning_curve.png` — diagnostic
+  plot (8 × 5 inches, 150 dpi).
+* `tasks/t0004_generate_target_tuning_curve/results/metrics.json`, `results/costs.json`,
+  `results/remote_machines_used.json`, `results/results_summary.md`, `results/results_detailed.md`
+  — this step&#x27;s outputs.
+
+#### Limitations
+
+* The DSI of 0.8824 sits near the upper end of the requested [0.6, 0.9] band. Downstream fits that
+  require a weaker-selectivity reference must create a separate dataset asset (e.g.,
+  `target-tuning-curve-weak-dsi`) with lower `r_peak_hz` rather than editing this one (immutability
+  of completed tasks).
+* The noise model is Gaussian with clipping at 0 Hz, not a spiking process. Realistic AP rate noise
+  is closer to Poisson with Fano factor near 1; the Gaussian approximation is used because
+  `tuning_curve_reliability` operates on per-trial rate correlations and the Gaussian assumption
+  keeps the noise floor closed-form-tractable.
+* The HWHM metric is evaluated analytically from the closed-form curve, not numerically from the
+  sampled angles — the discrete 30° sampling would make a numerical estimate coarse.
+* No paper-level literature review was performed (step 4 was skipped); parameter choices follow the
+  task description rather than citation to specific direction-selective neuron measurements.
+
+#### Task Requirement Coverage
+
+The operative task request from `task.json` and `task_description.md`:
+
+&gt; **Name**: Generate canonical target angle-to-AP-rate tuning curve.
+&gt;
+&gt; **Short description**: Analytically generate a canonical cosine-like target tuning curve to use as
+&gt; the optimisation reference for all later fits.
+&gt;
+&gt; **Scope**: produce a single dataset asset containing a cosine-like target tuning curve sampled at
+&gt; 12 or 24 angles around 360°; explicit generator parameters (preferred direction in deg, baseline
+&gt; rate in Hz, peak rate in Hz, tuning half-width / sharpness `n`, random seed); per-angle mean rates
+&gt; plus synthetic noisy trial replicates so `tuning_curve_reliability` has a ground-truth value.
+&gt;
+&gt; **Approach**: Python script under `code/` that generates the curve, writes CSV/JSON, writes the
+&gt; asset under `assets/dataset/`, and plots to `results/images/target_tuning_curve.png`.
+&gt;
+&gt; **Verification**: dataset passes `verify_dataset_asset.py`; `details.json` records generator
+&gt; params and seed; noisy-trial table has ≥ 10 trials per angle.
+
+Requirements inherited from `plan/plan.md`:
+
+| ID | Requirement | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Dataset asset `target-tuning-curve` exists with v2 layout (details + description + files/) | Done | `assets/dataset/target-tuning-curve/details.json`, `description.md`, three files in `files/`; `verify_task_folder` PASSED with 1 non-blocking warning |
+| REQ-2 | Curve sampled at 12 or 24 evenly-spaced angles | Done | `curve_mean.csv` has 12 rows at 0°/30°/…/330° (details.json `size_description`) |
+| REQ-3 | Generator parameters explicit and recorded | Done | `details.json.generator_params` contains all 8 keys (`theta_pref_deg`, `r_base_hz`, `r_peak_hz`, `n`, `n_angles`, `n_trials`, `noise_sd_hz`, `random_seed`) plus `functional_form` and `dsi_closed_form`; `files/generator_params.json` mirrors the dataclass |
+| REQ-4 | ≥ 10 trials per angle in the noisy-trial table | Done | `curve_trials.csv` has 240 rows = 12 × 20; verified by file length |
+| REQ-5 | Mean-rate table with closed-form values per angle | Done | `curve_mean.csv` 12 rows, values match the formula (see Metrics Tables above); max absolute bias of sample means vs closed form is 1.063 Hz, well below `2 × σ / √n_trials ≈ 1.34 Hz` |
+| REQ-6 | Closed-form DSI in [0.6, 0.9] | Done | DSI = **0.8824**, recorded in `metrics.json`, `details.json.generator_params.dsi_closed_form`, and asserted in `generate_target.py` (`assert 0.6 &lt;= dsi &lt;= 0.9`) |
+| REQ-7 | Plot at `results/images/target_tuning_curve.png` | Done | File exists, 8×5 inches, 150 dpi; embedded in Visualizations above |
+| REQ-8 | Dataset categories exist in `meta/categories/` | Done | `details.json.categories = [&quot;direction-selectivity&quot;]`; slug confirmed present under `meta/categories/` |
       </content>
     </section>
   </sections>

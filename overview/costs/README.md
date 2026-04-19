@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.00) |
 | Stop threshold | 100% ($0.00) |
 | Default per-task limit | $0.00 USD |
-| Tasks with cost records | 3 |
+| Tasks with cost records | 4 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 2 |
+| Skipped tasks | 1 |
 
 ## Service Totals
 
@@ -27,7 +27,7 @@ No entries found.
 
 No entries found.
 
-3 task cost record(s) are zero-cost and omitted from the main spend table.
+4 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -37,5 +37,4 @@ No task cost records found.
 
 | Task ID | Reason |
 |---------|--------|
-| `t0004_generate_target_tuning_curve` | results/costs.json is missing or invalid |
 | `t0005_download_dsgc_morphology` | results/costs.json is missing or invalid |

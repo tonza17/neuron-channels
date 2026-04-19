@@ -1,6 +1,6 @@
 # Project Tasks
 
-5 tasks. ⏹ **2 not_started**, ✅ **3 completed**.
+5 tasks. ⏹ **1 not_started**, ✅ **4 completed**.
 
 **Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
 `completed`](by-status/completed.md); [By date added](by-date-added/README.md)
@@ -12,7 +12,6 @@
 ```mermaid
 graph LR
     t0002_literature_survey_dsgc_compartmental_models["✅ t0002_literature_survey_dsgc_compartmental_models"]
-    t0004_generate_target_tuning_curve["⏹ t0004_generate_target_tuning_curve"]
     t0005_download_dsgc_morphology["⏹ t0005_download_dsgc_morphology"]
 
     t0002_literature_survey_dsgc_compartmental_models --> t0005_download_dsgc_morphology
@@ -81,21 +80,27 @@ morphology shortlist and rationale.
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⏹ 0004 — <strong>Generate canonical target angle-to-AP-rate tuning
+<summary>✅ 0004 — <strong>Generate canonical target angle-to-AP-rate tuning
 curve</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0004_generate_target_tuning_curve` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-18 |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
 | **Dependencies** | — |
 | **Expected assets** | 1 dataset |
 | **Source suggestion** | — |
 | **Task types** | [`feature-engineering`](../../meta/task_types/feature-engineering/) |
+| **Start time** | 2026-04-19T08:12:46Z |
+| **End time** | 2026-04-19T08:42:30Z |
+| **Step progress** | 8/15 |
 | **Task page** | [Generate canonical target angle-to-AP-rate tuning curve](../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
 | **Task folder** | [`t0004_generate_target_tuning_curve/`](../../tasks/t0004_generate_target_tuning_curve/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) |
 
 # Generate canonical target angle-to-AP-rate tuning curve
 
@@ -156,9 +161,32 @@ task will compare against.
 * The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10
   trials per angle.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Generate Canonical Target Tuning Curve**
+>
+> **Summary**
+>
+> Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form
+> half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`,
+> `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset
+> is
+> registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters
+> and a
+> diagnostic plot.
+>
+> **Metrics**
+>
+> * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band
+> * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve
+> * **Sampled directions**: **12** angles at 30° spacing (0° to 330°)
+> * **Trials per direction**: **20** (240 rows total in `curve_trials.csv`)
+> * **Mean absolute bias (sample vs closed form)**: **0.419 Hz** (max 1.063 Hz)
+>
+> **Verification**
+>
+
+</details>
 
 <details>
 <summary>✅ 0003 — <strong>Simulator library survey for DSGC compartmental

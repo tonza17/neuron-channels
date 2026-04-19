@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-19T08:11:25Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-19T08:48:58Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>32439</char_count>
-    <byte_count>32467</byte_count>
-    <estimated_tokens>8109</estimated_tokens>
+    <char_count>33895</char_count>
+    <byte_count>33937</byte_count>
+    <estimated_tokens>8473</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0001_brainstorm_results_1</id>
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
         <id>t0003_simulator_library_survey</id>
+        <id>t0004_generate_target_tuning_curve</id>
       </source_ids>
       <content>
-Completed tasks: 3
+Completed tasks: 4
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -139,23 +140,22 @@ ID: t0003_simulator_library_survey
 Completed: 2026-04-19
 Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
 Result summary: Results Summary: Simulator Library Survey for DSGC Compartmental Modelling Summary Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1** for parameter sweeps) as the project&#x27;s primary compartmental simulator and **Arbor 0.12.0** as backup, after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five axes (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example availability, long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full answer embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources. Metrics * **Libraries evaluated**: 5 (NEURON, NetPyNE...
+
+## Generate canonical target angle-to-AP-rate tuning curve
+ID: t0004_generate_target_tuning_curve
+Completed: 2026-04-19
+Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+Result summary: Results Summary: Generate Canonical Target Tuning Curve Summary Synthesised the canonical direction tuning curve `target-tuning-curve` from a closed-form half-wave-rectified cosine raised to power `n = 2` with `θ_pref = 90°`, `r_base = 2 Hz`, `r_peak = 32 Hz`, and 20 Gaussian-noise trials per angle (`σ = 3 Hz`, seed `42`). The asset is registered under `assets/dataset/target-tuning-curve/` with explicit generator parameters and a diagnostic plot. Metrics * **Direction Selectivity Index (DSI)**: **0.8824** — inside the required [0.6, 0.9] band * **Tuning curve HWHM**: **68.5°** — computed from the closed-form curve * **Sampled directions**: **12** angles at 30° spacing (0° to 330°) * **Trials...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
-
-## Generate canonical target angle-to-AP-rate tuning curve
-ID: t0004_generate_target_tuning_curve
-Status: not_started
-Effective date: 2026-04-18
-Short description: Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+Planned or active tasks: 1
 
 ## Download candidate DSGC morphology
 ID: t0005_download_dsgc_morphology
@@ -364,8 +364,19 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
     <section id="datasets" source_kind="aggregator">
       <title>Datasets</title>
       <source_name>aggregate_datasets_full</source_name>
+      <source_ids>
+        <id>target-tuning-curve</id>
+      </source_ids>
       <content>
-Datasets: 0
+Datasets: 1
+
+## Target Direction Tuning Curve (synthetic)
+ID: target-tuning-curve
+Year: 2026
+Access: public
+Added by task: t0004_generate_target_tuning_curve
+Size: 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates.
+`target-tuning-curve` is the canonical, synthetic direction-tuning reference that every later optimisation task in this project will compare its simulated responses against. It consists of a closed-form cosine-raised-to-power curve (r_base = 2 Hz, r_peak = 32 Hz, θ_pref = 90°, n = 2) sampled at 12 evenly-spaced directions, plus 20 Gaussian-noise trial replicates per direction (σ = 3 Hz, seed = 42). All parameters are...
       </content>
     </section>
     <section id="libraries" source_kind="aggregator">

@@ -1,14 +1,34 @@
 # Suggestions: `direction-selectivity`
 
-11 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **11 open** (5
-high, 6 medium).
+14 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **14 open** (6
+high, 7 medium, 1 low).
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>📚 <strong>Build a small reusable library for target-vs-simulated tuning
+curve metrics</strong> (S-0004-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0004-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations
+out of individual tasks into a shared library asset. Every later fitting task will need these
+four functions; centralising them avoids divergent reimplementations and makes metric values
+reproducible from parameters alone.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -179,6 +199,26 @@ experiment-run.
 </details>
 
 <details>
+<summary>📂 <strong>Generate weaker-DSI variant target tuning curves</strong>
+(S-0004-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0004-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi,
+target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at
+~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is
+robust across the 0.6-0.9 band instead of only the upper end.
+
+</details>
+
+<details>
 <summary>🧪 <strong>NMDA multiplicative-gain ablation to isolate its contribution
 to DSI</strong> (S-0002-06)</summary>
 
@@ -267,5 +307,27 @@ Build a small library that wraps NetPyNE's `Batch` class with the project's pref
 axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
 `assets/library/` entry plus a one-page usage example. This unblocks every downstream
 tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>📂 <strong>Add a Poisson-noise variant of the target trials</strong>
+(S-0004-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0004-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Replace the current Gaussian-noise trial replicates with Poisson counts converted to rates
+(Fano factor ~1) and register it as a separate dataset asset. This would give
+tuning_curve_reliability a noise model closer to real spike statistics while keeping the
+closed-form mean curve unchanged.
 
 </details>
