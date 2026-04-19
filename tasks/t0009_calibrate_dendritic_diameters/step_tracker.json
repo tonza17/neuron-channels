@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0005 SWC ingestion, prior morphology utilities in code/, and any existing diameter-edit helpers in the library/ registry.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:09:52Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
