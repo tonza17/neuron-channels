@@ -1,0 +1,8 @@
+{
+  "neuron": "8.2.7+",
+  "netpyne": "1.1.1",
+  "hoc_about": "8.2.7",
+  "hoc_long": "NEURON -- VERSION 8.2.7+ HEAD (34cf696+) 2025-05-21",
+  "hoc_build_date": "VERSION 8.2.7+ HEAD (34cf696+)",
+  "python": "3.13.13"
+}

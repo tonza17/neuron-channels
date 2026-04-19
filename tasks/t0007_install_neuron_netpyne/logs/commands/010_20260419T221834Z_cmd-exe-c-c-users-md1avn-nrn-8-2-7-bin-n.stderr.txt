@@ -1,0 +1,5 @@
+mod_func.c:2:10: fatal error: hocdec.h: No such file or directory
+    2 | #include "hocdec.h"
+      |          ^~~~~~~~~~
+compilation terminated.
+make: *** [/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../lib/mknrndll.mak:65: mod_func.o] Error 1

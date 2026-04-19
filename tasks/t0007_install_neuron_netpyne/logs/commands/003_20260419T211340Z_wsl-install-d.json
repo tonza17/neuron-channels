@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0007_install_neuron_netpyne",
+  "command": "wsl --install -d Ubuntu",
+  "exit_code": 0,
+  "duration_seconds": 151.441,
+  "started_at": "2026-04-19T21:13:40Z",
+  "completed_at": "2026-04-19T21:16:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0007_install_neuron_netpyne",
+  "stdout_file": "003_20260419T211340Z_wsl-install-d.stdout.txt",
+  "stderr_file": "003_20260419T211340Z_wsl-install-d.stderr.txt",
+  "stdout_lines": 220,
+  "stderr_lines": 0,
+  "truncated": false
+}

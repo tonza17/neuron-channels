@@ -1,0 +1,2 @@
+Translating khhchan.mod into khhchan.c
+Thread Safe

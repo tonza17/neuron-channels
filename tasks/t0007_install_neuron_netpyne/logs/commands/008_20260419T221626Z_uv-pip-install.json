@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0007_install_neuron_netpyne",
+  "command": "uv pip install netpyne==1.1.1",
+  "exit_code": 0,
+  "duration_seconds": 13.941,
+  "started_at": "2026-04-19T22:16:26Z",
+  "completed_at": "2026-04-19T22:16:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0007_install_neuron_netpyne",
+  "stdout_file": "008_20260419T221626Z_uv-pip-install.stdout.txt",
+  "stderr_file": "008_20260419T221626Z_uv-pip-install.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 20,
+  "truncated": false
+}

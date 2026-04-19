@@ -1,0 +1,13 @@
+{
+  "n_samples": 3201,
+  "v_max_mv": 42.00255109412462,
+  "v_min_mv": -75.96756492313492,
+  "crossed_threshold": true,
+  "wall_clock_setup_s": 0.006723099999362603,
+  "wall_clock_run_s": 0.004439599986653775,
+  "vthreshold_mv": 20.0,
+  "sim_tstop_ms": 80.0,
+  "stim_amp_na": 0.5,
+  "stim_dur_ms": 50.0,
+  "mechanism": "hh (NEURON built-in)"
+}

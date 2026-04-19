@@ -1,0 +1,13 @@
+{
+  "n_samples": 3201,
+  "v_max_mv": 42.002551094124044,
+  "v_min_mv": -75.9675649231349,
+  "crossed_threshold": true,
+  "wall_clock_setup_s": 0.03868159998091869,
+  "wall_clock_run_s": 0.004846600000746548,
+  "vthreshold_mv": 20.0,
+  "sim_tstop_ms": 80.0,
+  "stim_amp_na": 0.5,
+  "stim_dur_ms": 50.0,
+  "framework": "netpyne specs + createSimulate harness"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0007_install_neuron_netpyne",
+  "command": "C:\\Users\\md1avn\\nrn-8.2.7\\mingw\\usr\\bin\\sh.exe C:/Users/md1avn/nrn-8.2.7/lib/mknrndll.sh C:/Users/md1avn/nrn-8.2.7 --OUTPUTDIR=C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0007_install_neuron_netpyne/tasks/t0007_install_neuron_netpyne/files/mod",
+  "exit_code": 0,
+  "duration_seconds": 2.546,
+  "started_at": "2026-04-19T22:19:53Z",
+  "completed_at": "2026-04-19T22:19:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0007_install_neuron_netpyne",
+  "stdout_file": "011_20260419T221953Z_c-users-md1avn-nrn-8-2-7-mingw-usr-bin-s.stdout.txt",
+  "stderr_file": "011_20260419T221953Z_c-users-md1avn-nrn-8-2-7-mingw-usr-bin-s.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 1,
+  "truncated": false
+}

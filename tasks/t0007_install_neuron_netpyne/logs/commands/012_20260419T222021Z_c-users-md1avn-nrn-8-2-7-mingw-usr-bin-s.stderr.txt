@@ -1,0 +1,1 @@
+C:/Users/md1avn/nrn-8.2.7/lib/mknrndl2.sh: line 75: make: command not found

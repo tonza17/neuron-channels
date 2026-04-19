@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0007_install_neuron_netpyne",
+  "command": "uv run python -u tasks/t0007_install_neuron_netpyne/code/sanity_raw_neuron.py",
+  "exit_code": 0,
+  "duration_seconds": 1.173,
+  "started_at": "2026-04-19T22:22:44Z",
+  "completed_at": "2026-04-19T22:22:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0007_install_neuron_netpyne",
+  "stdout_file": "014_20260419T222244Z_uv-run-python.stdout.txt",
+  "stderr_file": "014_20260419T222244Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
