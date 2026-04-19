@@ -1,0 +1,47 @@
+{
+  "spec_version": "2",
+  "dataset_id": "dsgc-baseline-morphology",
+  "name": "DSGC Baseline Morphology (Feller 141009_Pair1DSGC)",
+  "version": "1.0",
+  "short_description": "CNG-curated SWC reconstruction of a mouse ON-OFF direction-selective retinal ganglion cell from the Feller-lab NeuroMorpho.org archive (neuron 102976, 141009_Pair1DSGC), used as the baseline morphology for all downstream DSGC compartmental-modeling tasks in this project.",
+  "description_path": "description.md",
+  "source_paper_id": null,
+  "url": "https://neuromorpho.org/neuron_info.jsp?neuron_name=141009_Pair1DSGC",
+  "download_url": "https://neuromorpho.org/dableFiles/feller/CNG%20version/141009_Pair1DSGC.CNG.swc",
+  "year": 2018,
+  "date_published": "2018-11-10",
+  "authors": [
+    {
+      "name": "Benjamin L. Murphy-Baum",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0003-1717-0616"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "access_kind": "public",
+  "size_description": "6,736 compartments (19 soma, 6,717 dendrite, 0 axon) with 129 branch points and 131 leaves; ~1.54 mm total dendritic path length. CNG-standardized SWC, ~227 KB.",
+  "files": [
+    {
+      "path": "files/141009_Pair1DSGC.CNG.swc",
+      "description": "CNG-curated SWC reconstruction of the 141009_Pair1DSGC mouse ON-OFF DSGC: dendrite and soma compartments only (no axon), Neurolucida-traced from confocal stacks and standardized by NeuroMorpho.org.",
+      "format": "swc"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ]
+}

@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0005_download_dsgc_morphology\tasks\t0005_download_dsgc_morphology\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0005_download_dsgc_morphology\tasks\t0005_download_dsgc_morphology\logs\sessions\capture_report.json.

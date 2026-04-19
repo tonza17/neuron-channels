@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0005_download_dsgc_morphology",
+  "command": "uv run python -m arf.scripts.utils.capture_task_sessions --task-id t0005_download_dsgc_morphology",
+  "exit_code": 0,
+  "duration_seconds": 0.635,
+  "started_at": "2026-04-19T09:28:20Z",
+  "completed_at": "2026-04-19T09:28:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0005_download_dsgc_morphology",
+  "stdout_file": "019_20260419T092820Z_uv-run-python.stdout.txt",
+  "stderr_file": "019_20260419T092820Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

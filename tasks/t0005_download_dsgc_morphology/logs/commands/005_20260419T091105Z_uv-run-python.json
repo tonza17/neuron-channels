@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0005_download_dsgc_morphology",
+  "command": "uv run python -u -m tasks.t0005_download_dsgc_morphology.code.validate_swc tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc",
+  "exit_code": 0,
+  "duration_seconds": 0.282,
+  "started_at": "2026-04-19T09:11:05Z",
+  "completed_at": "2026-04-19T09:11:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0005_download_dsgc_morphology",
+  "stdout_file": "005_20260419T091105Z_uv-run-python.stdout.txt",
+  "stderr_file": "005_20260419T091105Z_uv-run-python.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 0,
+  "truncated": false
+}

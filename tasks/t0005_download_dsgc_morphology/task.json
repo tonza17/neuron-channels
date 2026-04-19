@@ -5,12 +5,12 @@
   "name": "Download candidate DSGC morphology",
   "short_description": "Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project's baseline cell.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0002_literature_survey_dsgc_compartmental_models"
   ],
   "start_time": "2026-04-19T08:50:24Z",
-  "end_time": null,
+  "end_time": "2026-04-19T09:28:00Z",
   "expected_assets": {
     "dataset": 1
   },

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0005_download_dsgc_morphology",
+  "command": "curl -fL -o tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc https://neuromorpho.org/dableFiles/feller/CNG%20version/141009_Pair1DSGC.CNG.swc",
+  "exit_code": 0,
+  "duration_seconds": 2.911,
+  "started_at": "2026-04-19T09:09:58Z",
+  "completed_at": "2026-04-19T09:10:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0005_download_dsgc_morphology",
+  "stdout_file": "004_20260419T090958Z_curl-fl-o.stdout.txt",
+  "stderr_file": "004_20260419T090958Z_curl-fl-o.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 7,
+  "truncated": false
+}
