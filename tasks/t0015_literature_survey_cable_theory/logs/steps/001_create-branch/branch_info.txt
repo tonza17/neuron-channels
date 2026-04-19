@@ -1,0 +1,5 @@
+branch: task/t0015_literature_survey_cable_theory
+base_branch: main
+base_commit: 64bd76b1507b604c6b603ed7eb450cdf93ef758a
+worktree_path: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0015_literature_survey_cable_theory
+created_at: 2026-04-19T23:39:25Z
