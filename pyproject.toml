@@ -5,7 +5,7 @@ description = "Glite Autonomous Research Framework (Glite ARF) — a file-based,
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE"]
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 authors = [
     { name = "Glite Tech Ltd", email = "info@glite.ai" },
 ]
