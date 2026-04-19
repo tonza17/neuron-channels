@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Install NEURON 8.2.7 + NetPyNE 1.1.1, compile HH MOD files, run sanity simulations, produce neuron-netpyne-install-report answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T21:00:11Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T22:34:58Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
