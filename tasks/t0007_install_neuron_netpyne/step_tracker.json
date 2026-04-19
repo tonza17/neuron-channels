@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Survey Windows install gotchas for NEURON 8.2.7 + NetPyNE 1.1.1 and nrnivmodl C-compiler requirements.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T20:31:34Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T20:39:01Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
