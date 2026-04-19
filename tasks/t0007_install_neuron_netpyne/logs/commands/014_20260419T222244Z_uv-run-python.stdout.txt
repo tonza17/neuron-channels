@@ -1,0 +1,1 @@
+raw_neuron: v_max=42.003 mV, v_min=-75.968 mV, samples=3201, setup=0.007s, run=0.004s

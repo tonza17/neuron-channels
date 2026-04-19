@@ -1,0 +1,8 @@
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c mod_func.c
+nocmodl khhchan
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c khhchan.c
+x86_64-w64-mingw32-gcc.exe  -shared mod_func.o khhchan.o \
+  -L/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../bin -lnrniv -lpthread -o 941.nrnmech.dll
+#rebase -b 0x64000000 -v nrnmech.dll
+
+nrnmech.dll was built successfully.

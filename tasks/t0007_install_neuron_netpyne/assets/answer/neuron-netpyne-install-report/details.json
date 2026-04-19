@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "neuron-netpyne-install-report",
+  "question": "Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on the project's Windows 11 workstation?",
+  "short_title": "NEURON 8.2.7 + NetPyNE 1.1.1 install report",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [
+    "https://github.com/neuronsimulator/nrn/releases/tag/8.2.7",
+    "https://www.neuron.yale.edu/neuron/download",
+    "https://netpyne.org/install.html",
+    "https://pypi.org/project/netpyne/1.1.1/"
+  ],
+  "source_task_ids": [
+    "t0007_install_neuron_netpyne"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0007_install_neuron_netpyne",
+  "date_created": "2026-04-19"
+}

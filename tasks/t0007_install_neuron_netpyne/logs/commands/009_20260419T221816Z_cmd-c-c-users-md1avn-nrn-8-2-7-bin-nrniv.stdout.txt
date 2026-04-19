@@ -1,0 +1,4 @@
+Microsoft Windows [Version 10.0.22631.6936]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0007_install_neuron_netpyne>
