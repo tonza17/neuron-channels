@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0014_brainstorm_results_3",
+  "command": "uv run python -u -m arf.scripts.utils.capture_task_sessions --task-id t0014_brainstorm_results_3",
+  "exit_code": 0,
+  "duration_seconds": 0.652,
+  "started_at": "2026-04-19T23:26:46Z",
+  "completed_at": "2026-04-19T23:26:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels",
+  "stdout_file": "010_20260419T232646Z_uv-run-python.stdout.txt",
+  "stderr_file": "010_20260419T232646Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

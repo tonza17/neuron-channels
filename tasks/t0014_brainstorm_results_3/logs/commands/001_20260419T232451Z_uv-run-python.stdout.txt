@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels\tasks\t0014_brainstorm_results_3\task.json
+
+[33m[1mWARNINGS:[0m
+[33m  TF-W005 warning: expected_assets is empty (task produces no assets)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
