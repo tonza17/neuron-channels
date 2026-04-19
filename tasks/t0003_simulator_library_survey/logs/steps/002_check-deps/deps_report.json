@@ -1,0 +1,11 @@
+{
+  "task_id": "t0003_simulator_library_survey",
+  "declared_dependencies": [],
+  "verified_dependencies": [],
+  "missing_dependencies": [],
+  "verificator": "verify_task_dependencies.py",
+  "verificator_result": "passed",
+  "errors": 0,
+  "warnings": 0,
+  "checked_at": "2026-04-19T07:25:30Z"
+}
