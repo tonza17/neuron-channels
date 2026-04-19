@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-3 suggestion(s) in category
+4 suggestion(s) in category
 [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **3 open** (3
-high).
+high), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -76,5 +76,31 @@ a smoke test but its biophysics are never run. Add a short task that inserts khh
 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
 against the built-in hh to confirm the custom mechanism produces physiologically plausible
 spikes before downstream retinal tasks depend on it.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Literature survey: voltage-gated channels in retinal ganglion cells
+(target ~25 papers)</s> — covered by <a
+href="../../../tasks/t0019_literature_survey_voltage_gated_channels/"><code>t0019_literature_survey_voltage_gated_channels</code></a>
+(S-0014-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target
+~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family
+kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and
+Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output:
+paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC
+tuning-curve fits.
 
 </details>

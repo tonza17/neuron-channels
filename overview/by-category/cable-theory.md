@@ -5,7 +5,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (3)](../papers/by-category/cable-theory.md) | [Suggestions
-(1)](../suggestions/by-category/cable-theory.md)
+(2)](../suggestions/by-category/cable-theory.md)
 
 ---
 
@@ -182,6 +182,6 @@ dendritic transients.
 
 No answers in this category.
 
-## Suggestions (0 open, 1 closed)
+## Suggestions (0 open, 2 closed)
 
 No open suggestions in this category.

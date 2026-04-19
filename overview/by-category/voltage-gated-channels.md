@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (5)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (1)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(3)](../suggestions/by-category/voltage-gated-channels.md)
+(4)](../suggestions/by-category/voltage-gated-channels.md)
 
 ---
 
@@ -309,7 +309,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (3 open, 0 closed)
+## Suggestions (3 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model

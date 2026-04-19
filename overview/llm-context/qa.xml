@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-19T22:48:18Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-19T23:35:21Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>63218</char_count>
-    <byte_count>63340</byte_count>
-    <estimated_tokens>15804</estimated_tokens>
+    <char_count>66030</char_count>
+    <byte_count>66154</byte_count>
+    <estimated_tokens>16507</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 7
+Completed tasks: 8
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -163,6 +164,12 @@ ID: t0007_install_neuron_netpyne
 Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
+
+## Brainstorm results session 3
+ID: t0014_brainstorm_results_3
+Completed: 2026-04-19
+Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
+Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -175,9 +182,14 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neu
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
+        <id>t0015_literature_survey_cable_theory</id>
+        <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 11
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -220,6 +232,36 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
+
+## Literature survey: dendritic computation beyond DSGCs
+ID: t0016_literature_survey_dendritic_computation
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

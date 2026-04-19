@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-5 suggestion(s) in category
+6 suggestion(s) in category
 [`synaptic-integration`](../../../meta/categories/synaptic-integration/) **4 open** (4
-medium), **1 closed**.
+medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -107,6 +107,30 @@ conductance time courses. Recommended task types: write-library, feature-enginee
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>Literature survey: synaptic integration in RGC-adjacent systems
+(target ~25 papers)</s> — covered by <a
+href="../../../tasks/t0018_literature_survey_synaptic_integration/"><code>t0018_literature_survey_synaptic_integration</code></a>
+(S-0014-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-04` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25
+category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I
+balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and
+SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper
+assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in
+later optimisation tasks.
+
+</details>
 
 <details>
 <summary>✅ <s>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347

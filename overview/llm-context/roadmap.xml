@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-19T22:48:18Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-19T23:35:21Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>66501</char_count>
-    <byte_count>66614</byte_count>
-    <estimated_tokens>16625</estimated_tokens>
+    <char_count>86159</char_count>
+    <byte_count>86336</byte_count>
+    <estimated_tokens>21539</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -119,9 +119,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 7
+Completed tasks: 8
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -164,6 +165,12 @@ ID: t0007_install_neuron_netpyne
 Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
+
+## Brainstorm results session 3
+ID: t0014_brainstorm_results_3
+Completed: 2026-04-19
+Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
+Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -176,9 +183,14 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neu
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
+        <id>t0015_literature_survey_cable_theory</id>
+        <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 11
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -704,6 +716,313 @@ Covers suggestion **S-0005-01**.
 * **Both papers cite it**: pick the earlier publication date and document the tie-break.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
+
+#### Motivation
+
+The t0002 corpus concentrates on direction-selective retinal ganglion cell (DSGC) compartmental
+models. Downstream calibration and optimisation tasks (segment discretisation, morphology-sensitive
+tuning, dendritic attenuation) need a deeper grounding in classical cable theory and passive
+dendritic filtering than t0002 provides. This task broadens the corpus into the foundational theory.
+Source suggestion: S-0014-01 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Rall-era foundations — passive cable equation, equivalent cylinder, classical Rall papers.
+2. Segment discretisation guidelines — `d_lambda` rule, spatial-frequency constraints on `nseg`.
+3. Branched-tree impedance — transfer impedance, voltage attenuation in branched dendrites.
+4. Frequency-domain analyses — input impedance, synaptic-event filtering, chirp / ZAP analyses.
+5. Transmission in thin dendrites — space constant, propagation failure, passive integration
+   limits.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus (20 DOIs under
+`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/`). Duplicates discovered mid
+task must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` with search terms targeting each of the five themes above.
+2. For each shortlisted paper, invoke `/download-paper` — the skill produces a v3-compliant paper
+   asset (`details.json`, summary document, files). Papers behind institutional paywalls are
+   recorded as `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the
+   researcher to retrieve manually from their institutional account.
+3. After the paper set is assembled, write one answer asset that synthesises the corpus by theme and
+   maps each paper to its relevance for the project&#x27;s direction-selectivity modelling work.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant). Some may have
+  `download_status: &quot;failed&quot;` pending manual retrieval.
+* One answer asset under `assets/answer/` synthesising the five themes and identifying the
+  cable-theory parameters most directly useful for downstream DSGC tasks.
+* `intervention/paywalled_papers.md` listing DOIs the researcher must download manually.
+
+#### Compute and Budget
+
+No paid services required for the automated pass. The task type `literature-survey` is gated on the
+project budget — the brainstorm session set `project/budget.json` `total_budget` to $1 to clear
+the gate; no actual spend is expected.
+
+#### Dependencies
+
+None. This task is independent of the t0002 corpus (beyond the deduplication constraint).
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py` (accounting for some paywalled failures).
+* The answer asset passes `verify_answer_asset.py`.
+* `intervention/paywalled_papers.md` exists with a DOI list if any downloads failed.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: dendritic computation beyond DSGCs
+ID: t0016_literature_survey_dendritic_computation
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+
+#### Motivation
+
+Research question RQ4 (active vs passive dendrites) needs evidence from computational neuroscience
+beyond the retinal literature. Cortical and cerebellar dendrites have been studied far more
+extensively than DSGC dendrites, and the mechanisms and modelling conventions developed there (NMDA
+spikes, Ca/Na plateaus, branch-level nonlinearities) are the natural reference for whether active
+dendrites plausibly shape DSGC tuning curves. Source suggestion: S-0014-02 from
+t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. NMDA spikes — thresholds, amplitudes, distance-dependence, supralinear integration.
+2. Na+ and Ca2+ dendritic spikes — backpropagation, forward propagation, local spikes.
+3. Plateau potentials — in-vivo evidence, role in coincidence detection, duration scaling.
+4. Branch-level nonlinearities — independent subunits, clustered-vs-distributed input summation.
+5. Sublinear-to-supralinear integration regimes — what controls the transition, which conditions
+   make dendrites behave passively in practice.
+6. Active-vs-passive modelling comparisons — cortical, cerebellar, hippocampal studies that built
+   matched active and passive compartmental models and quantified the difference.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each of the six themes above with preference for review
+   articles plus 2-4 primary studies per theme.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the researcher to
+   retrieve manually.
+3. Write one answer asset synthesising which dendritic-computation mechanisms plausibly transfer to
+   DSGC dendrites, with explicit caveats about anatomical and biophysical differences.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant), some possibly with
+  `download_status: &quot;failed&quot;`.
+* One answer asset under `assets/answer/` synthesising the six themes and flagging mechanisms most
+  plausible for DSGC dendrites.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and explicitly addresses transferability to DSGC
+  dendrites.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+
+#### Motivation
+
+The DSGC model needs validation against real electrophysiology. Patch-clamp recordings of retinal
+ganglion cells provide the quantitative targets that optimisation and tuning-curve scoring tasks
+(t0004, t0012) must match: somatic action-potential rates, EPSP/IPSC kinetics, null/preferred
+response ratios. This survey assembles the experimental-data landscape separately from the modelling
+corpus in t0002. Source suggestion: S-0014-03 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Somatic whole-cell recordings of RGCs — firing-rate statistics, spike-threshold distributions.
+2. Voltage-clamp conductance dissections — separating AMPA/NMDA/GABA currents during DS responses.
+3. Space-clamp error analyses — how much of published conductance asymmetry is real vs an artefact
+   of imperfect voltage clamp in extended dendrites.
+4. Spike-train tuning-curve measurements — angle-resolved AP rates and their variability.
+5. In-vitro stimulus protocols — moving bars, drifting gratings, and spots used to probe DS.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, giving weight to papers that publish raw
+   conductance traces or tabulated tuning-curve peak rates.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset mapping each paper to the model-validation targets it provides (AP rate,
+   IPSC asymmetry, EPSP kinetics, null/preferred ratios) with explicit numerical values.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a validation-target table keyed by paper DOI.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and contains a validation-target table with at
+  least five numerical rows.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+
+#### Motivation
+
+Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
+distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The modelling
+literature in t0002 touches these parameters but does not systematically cover the synaptic-
+integration experimental and theoretical work that underpins them. Source suggestion: S-0014-04 from
+t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
+2. Shunting inhibition — location-dependent vetoing, input resistance changes.
+3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
+4. Temporal summation — how closely spaced inputs integrate vs saturate.
+5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
+   initiation zone.
+6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
+7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in the
+   preferred vs null directions.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, preferring studies that publish fitted kinetic
+   parameters or conductance-ratio measurements rather than qualitative reports.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior distributions
+   for later optimisation tasks.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
+  ratios, keyed by paper DOI and region.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution table.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
+
+#### Motivation
+
+Research question RQ1 (Na/K combinations) drives the project&#x27;s main optimisation experiment. Good
+priors on which Nav and Kv subunits are expressed in RGCs, their kinetic parameters, and their
+conductance densities are needed to constrain the search space before optimisation begins. The t0002
+corpus provides DSGC modelling context but does not systematically cover channel-expression or
+channel-kinetics literature. Source suggestion: S-0014-05 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Nav subunit expression in RGCs — Nav1.1, Nav1.2, Nav1.6 distributions across soma, AIS,
+   dendrite.
+2. Kv subunit expression in RGCs — Kv1, Kv2, Kv3, Kv4, BK, SK distributions.
+3. HH-family kinetic models — published rate functions, activation/inactivation curves, time
+   constants.
+4. Subunit co-expression patterns — Nav + Kv combinations reported in specific RGC types.
+5. ModelDB MOD-file provenance — which published MOD files implement which Nav/Kv kinetics.
+6. Nav/Kv conductance-density estimates — somatic vs AIS vs dendritic densities.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, including explicit ModelDB searches for
+   RGC-relevant Nav and Kv MOD files.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset mapping candidate Nav/Kv combinations to published DSGC tuning-curve fits,
+   with a row per combination giving the subunits, their densities, and the source paper.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` mapping Nav/Kv combinations to DSGC tuning-curve fits.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and contains a combination table with at least
+  five rows keyed by Nav/Kv subunits and source paper DOI.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -756,6 +1075,11 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0005-01</id>
         <id>S-0005-02</id>
         <id>S-0007-01</id>
+        <id>S-0014-01</id>
+        <id>S-0014-02</id>
+        <id>S-0014-03</id>
+        <id>S-0014-04</id>
+        <id>S-0014-05</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -773,7 +1097,7 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0004-02</id>
       </source_ids>
       <content>
-Open suggestions: 25
+Open suggestions: 30
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -844,6 +1168,41 @@ Priority: high
 Kind: experiment
 Source task: t0007_install_neuron_netpyne
 The t0007 sanity sims only exercise NEURON&#x27;s built-in hh mechanism. khhchan.mod is compiled as a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace against the built-in hh to confirm the custom mechanism produces physiologically plausible spikes before downstream retinal tasks depend on it.
+
+## Literature survey: cable theory and dendritic filtering (target ~25 papers)
+ID: S-0014-01
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey cable-theory and passive dendritic-filtering literature relevant to direction-selective retinal ganglion cells. Target ~25 category-relevant papers spanning Rall-era foundations, modern compartmental treatments, impedance / space-constant analyses, and segment-discretisation guidelines. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis document organised by theme (classical cable theory, segment discretisation, branched-tree impedance, frequency-domain analyses, transmission in thin dendrites).
+
+## Literature survey: dendritic computation outside DSGCs (target ~25 papers)
+ID: S-0014-02
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25 category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials, branch-level nonlinearities, sublinear-to-supralinear integration regimes, and active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly transfer to DSGC dendrites.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs (target ~25 papers)
+ID: S-0014-03
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey patch-clamp recording literature relevant to validating DSGC compartmental models. Target ~25 category-relevant papers covering somatic whole-cell recordings of RGCs, voltage-clamp conductance dissections, space-clamp error analyses, spike-train tuning-curve measurements, and in-vitro stimulus protocols. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping each paper to the model validation targets (AP rate, IPSC asymmetry, EPSP kinetics, null/preferred ratios).
+
+## Literature survey: synaptic integration in RGC-adjacent systems (target ~25 papers)
+ID: S-0014-04
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25 category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in later optimisation tasks.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells (target ~25 papers)
+ID: S-0014-05
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target ~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC tuning-curve fits.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05

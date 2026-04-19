@@ -1,12 +1,124 @@
 # ✅ Tasks: Completed
 
-7 tasks. ✅ **7 completed**.
+8 tasks. ✅ **8 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0014 — <strong>Brainstorm results session 3</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0014_brainstorm_results_3` |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-19T23:10:00Z |
+| **End time** | 2026-04-19T23:45:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 3](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Task folder** | [`t0014_brainstorm_results_3/`](../../../tasks/t0014_brainstorm_results_3/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0014_brainstorm_results_3/results/results_detailed.md) |
+
+# Brainstorm Session 3 — Per-Category Literature-Survey Wave
+
+## Context
+
+The project has completed its first two task waves:
+
+* **Wave 1** (t0001-t0005): foundational brainstorm, DSGC-focused compartmental-model
+  literature survey, simulator survey, canonical target tuning curve, baseline DSGC morphology
+  download.
+* **Wave 2** (t0007-t0013, planned by t0006): NEURON install (t0007 done), plus calibration,
+  porting, visualisation, scoring, and provenance tasks (t0008-t0013 still in-flight or not
+  started).
+
+The paper corpus contains 20 DOIs from t0002 (DSGC compartmental models). Categories
+`direction-selectivity`, `compartmental-modeling`, and `retinal-ganglion-cell` are already
+well-covered by that survey. Five remaining categories are under-covered: `cable-theory`,
+`dendritic-computation`, `patch-clamp`, `synaptic-integration`, `voltage-gated-channels`.
+
+## Session Goal
+
+Plan a per-category literature-survey wave (Wave 3) that broadens the paper corpus so the
+project's research questions about Na/K conductance combinations, active-vs-passive dendrites,
+and synaptic kinetics can be grounded in the wider neuroscience literature rather than only
+DSGC-specific work.
+
+## Decisions
+
+1. **Drop the 3 saturated categories** (direction-selectivity, compartmental-modeling,
+   retinal-ganglion-cell). The existing t0002 corpus + queued t0010 (hunt missed DSGC models)
+   cover them adequately.
+
+2. **Create 5 new literature-survey tasks** (t0015-t0019), one per remaining category, each
+   targeting ~25 category-relevant papers with cross-category overlap accepted (option (b)
+   from the brainstorm discussion). Total attempted: ~125 papers, expected unique ~80-100
+   after cross-task dedup (addressed by a later dedup-checkpoint task).
+
+3. **Exclude the 20-DOI t0002 corpus** from each new task's search to avoid wasting download
+   budget on already-owned papers.
+
+4. **Bump `project/budget.json` `total_budget` from $0 to $1** so the mechanical
+   `has_external_costs: true` gate on the `literature-survey` task type does not block
+   execution. Literal expected spend remains $0 (arXiv, PubMed Central, ModelDB, and
+   open-access sources are free; summarisation is done in-session).
+
+5. **Paywalled paper protocol**: each task lists paywalled DOIs in
+   `intervention/paywalled_papers.md`; the researcher downloads PDFs manually from their
+   institutional account into `assets/paper/<paper_id>/files/` and the task then upgrades
+   `download_status` to `"success"` with a full summary in a follow-up pass.
+
+## New Suggestions Produced
+
+Five dataset-kind suggestions (S-0014-01 through S-0014-05), each `priority: high`, one per
+new task. These are recorded in `results/suggestions.json` and become the `source_suggestion`
+for their respective child task.
+
+## Out of Scope
+
+* No experiments this session — this is a planning-only brainstorm.
+* No corrections — t0002 corpus is correct; we are extending, not correcting.
+* No new asset types or task types — `literature-survey` already exists.
+
+**Results summary:**
+
+> **Brainstorm session 3 — Summary**
+>
+> **Summary**
+>
+> Planned a five-task literature-survey wave (t0015-t0019) to broaden the project's paper
+> corpus
+> beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be
+> applied
+> directly on `main` as a follow-up commit, since task branches cannot modify
+> `project/budget.json`)
+> so `literature-survey` tasks clear the project budget gate without incurring real spend.
+> Confirmed a
+> paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the
+> researcher resolves from their institutional account.
+>
+> **Decisions**
+>
+> * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation,
+> patch-clamp, synaptic-integration, voltage-gated-channels. Dropped `direction-selectivity`,
+> `compartmental-modeling`, and `retinal-ganglion-cell` because t0002 plus t0010 already
+> saturate
+> them.
+> * **Target ~25 category-relevant papers per task** (not 20). Extra headroom compensates for
+>   the
+> deduplication constraint and for papers that ultimately fail quality filters.
+> * **Exclude the 20 DOIs already in the t0002 corpus** from each survey. Duplicate hits must
+>   be
+
+</details>
 
 <details>
 <summary>✅ 0007 — <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1

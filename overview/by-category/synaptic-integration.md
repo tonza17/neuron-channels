@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (15)](../papers/by-category/synaptic-integration.md) | [Answers
 (1)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(5)](../suggestions/by-category/synaptic-integration.md)
+(6)](../suggestions/by-category/synaptic-integration.md)
 
 ---
 
@@ -827,7 +827,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (4 open, 1 closed)
+## Suggestions (4 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC

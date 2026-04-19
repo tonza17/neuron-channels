@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (11)](../papers/by-category/dendritic-computation.md) | [Answers
 (1)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(6)](../suggestions/by-category/dendritic-computation.md)
+(7)](../suggestions/by-category/dendritic-computation.md)
 
 ---
 
@@ -647,7 +647,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (5 open, 1 closed)
+## Suggestions (5 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the

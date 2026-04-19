@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T22:48:18Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T23:35:21Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>68165</char_count>
-    <byte_count>68429</byte_count>
-    <estimated_tokens>17041</estimated_tokens>
+    <char_count>90297</char_count>
+    <byte_count>90631</byte_count>
+    <estimated_tokens>22574</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -30,9 +30,15 @@
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
+        <id>t0014_brainstorm_results_3</id>
+        <id>t0015_literature_survey_cable_theory</id>
+        <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Total tasks: 13
+Total tasks: 19
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -1343,6 +1349,447 @@ Covers suggestion **S-0005-01**.
 * **Both papers cite it**: pick the earlier publication date and document the tie-break.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
+
+## Brainstorm results session 3
+ID: t0014_brainstorm_results_3
+Status: completed
+Effective date: 2026-04-19
+Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
+Dependencies: t0001_brainstorm_results_1, t0002_literature_survey_dsgc_compartmental_models, t0003_simulator_library_survey, t0004_generate_target_tuning_curve, t0005_download_dsgc_morphology, t0006_brainstorm_results_2, t0007_install_neuron_netpyne
+Task types: brainstorming
+Start time: 2026-04-19T23:10:00Z
+End time: 2026-04-19T23:45:00Z
+
+#### Context
+
+The project has completed its first two task waves:
+
+* **Wave 1** (t0001-t0005): foundational brainstorm, DSGC-focused compartmental-model literature
+  survey, simulator survey, canonical target tuning curve, baseline DSGC morphology download.
+* **Wave 2** (t0007-t0013, planned by t0006): NEURON install (t0007 done), plus calibration,
+  porting, visualisation, scoring, and provenance tasks (t0008-t0013 still in-flight or not
+  started).
+
+The paper corpus contains 20 DOIs from t0002 (DSGC compartmental models). Categories
+`direction-selectivity`, `compartmental-modeling`, and `retinal-ganglion-cell` are already
+well-covered by that survey. Five remaining categories are under-covered: `cable-theory`,
+`dendritic-computation`, `patch-clamp`, `synaptic-integration`, `voltage-gated-channels`.
+
+#### Session Goal
+
+Plan a per-category literature-survey wave (Wave 3) that broadens the paper corpus so the project&#x27;s
+research questions about Na/K conductance combinations, active-vs-passive dendrites, and synaptic
+kinetics can be grounded in the wider neuroscience literature rather than only DSGC-specific work.
+
+#### Decisions
+
+1. **Drop the 3 saturated categories** (direction-selectivity, compartmental-modeling,
+   retinal-ganglion-cell). The existing t0002 corpus + queued t0010 (hunt missed DSGC models) cover
+   them adequately.
+
+2. **Create 5 new literature-survey tasks** (t0015-t0019), one per remaining category, each
+   targeting ~25 category-relevant papers with cross-category overlap accepted (option (b) from the
+   brainstorm discussion). Total attempted: ~125 papers, expected unique ~80-100 after cross-task
+   dedup (addressed by a later dedup-checkpoint task).
+
+3. **Exclude the 20-DOI t0002 corpus** from each new task&#x27;s search to avoid wasting download budget
+   on already-owned papers.
+
+4. **Bump `project/budget.json` `total_budget` from $0 to $1** so the mechanical
+   `has_external_costs: true` gate on the `literature-survey` task type does not block execution.
+   Literal expected spend remains $0 (arXiv, PubMed Central, ModelDB, and open-access sources are
+   free; summarisation is done in-session).
+
+5. **Paywalled paper protocol**: each task lists paywalled DOIs in
+   `intervention/paywalled_papers.md`; the researcher downloads PDFs manually from their
+   institutional account into `assets/paper/&lt;paper_id&gt;/files/` and the task then upgrades
+   `download_status` to `&quot;success&quot;` with a full summary in a follow-up pass.
+
+#### New Suggestions Produced
+
+Five dataset-kind suggestions (S-0014-01 through S-0014-05), each `priority: high`, one per new
+task. These are recorded in `results/suggestions.json` and become the `source_suggestion` for their
+respective child task.
+
+#### Out of Scope
+
+* No experiments this session — this is a planning-only brainstorm.
+* No corrections — t0002 corpus is correct; we are extending, not correcting.
+* No new asset types or task types — `literature-survey` already exists.
+
+### Results Summary
+
+#### Summary
+
+Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus
+beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied
+directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`)
+so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a
+paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the
+researcher resolves from their institutional account.
+
+#### Decisions
+
+* **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation,
+  patch-clamp, synaptic-integration, voltage-gated-channels. Dropped `direction-selectivity`,
+  `compartmental-modeling`, and `retinal-ganglion-cell` because t0002 plus t0010 already saturate
+  them.
+* **Target ~25 category-relevant papers per task** (not 20). Extra headroom compensates for the
+  deduplication constraint and for papers that ultimately fail quality filters.
+* **Exclude the 20 DOIs already in the t0002 corpus** from each survey. Duplicate hits must be
+  dropped and recorded in the task log.
+* **Budget bump to $1** — nominal, only to clear the `has_external_costs: true` gate on
+  `literature-survey`; no paid service is expected to bill. Applied as a separate direct commit on
+  `main` (not in this PR) because `verify_pr_premerge` forbids task branches from modifying
+  `project/budget.json`.
+* **Paywalled papers**: each survey task writes `intervention/paywalled_papers.md` with DOIs; the
+  researcher downloads manually from their institutional account; a follow-up pass upgrades
+  `download_status` from `&quot;failed&quot;` to `&quot;success&quot;` for each file retrieved.
+
+#### Metrics
+
+Brainstorm tasks do not produce numerical metrics. Session metrics: 5 suggestions emitted, 5 child
+tasks created, 0 corrections, 0 paper assets, 0 remote machines, $0.00 direct cost.
+
+#### Verification
+
+* `verify_task_file t0014_brainstorm_results_3` passed (1 warning TF-W005 for empty
+  `expected_assets`).
+* `verify_suggestions t0014_brainstorm_results_3` passed, 0 errors, 0 warnings.
+* `verify_logs t0014_brainstorm_results_3` passed, 0 errors.
+* `verify_task_file` passed with 0 errors on each of t0015-t0019.
+
+#### Outputs
+
+* Five suggestions (S-0014-01 to S-0014-05) recorded in `results/suggestions.json`, one per
+  surviving category.
+* Five not-started child tasks created: `t0015_literature_survey_cable_theory`,
+  `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`,
+  `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`.
+
+#### Next Steps
+
+After this PR merges, bump `project/budget.json` `total_budget` to 1.0 USD on `main` directly, then
+execute t0015-t0019 in parallel (up to three worktrees concurrent). After execution, a follow-up
+correction task resolves any paywalled-paper failures using manually retrieved PDFs from the
+researcher.
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
+Task types: literature-survey
+Source suggestion: S-0014-01
+
+#### Motivation
+
+The t0002 corpus concentrates on direction-selective retinal ganglion cell (DSGC) compartmental
+models. Downstream calibration and optimisation tasks (segment discretisation, morphology-sensitive
+tuning, dendritic attenuation) need a deeper grounding in classical cable theory and passive
+dendritic filtering than t0002 provides. This task broadens the corpus into the foundational theory.
+Source suggestion: S-0014-01 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Rall-era foundations — passive cable equation, equivalent cylinder, classical Rall papers.
+2. Segment discretisation guidelines — `d_lambda` rule, spatial-frequency constraints on `nseg`.
+3. Branched-tree impedance — transfer impedance, voltage attenuation in branched dendrites.
+4. Frequency-domain analyses — input impedance, synaptic-event filtering, chirp / ZAP analyses.
+5. Transmission in thin dendrites — space constant, propagation failure, passive integration
+   limits.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus (20 DOIs under
+`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/`). Duplicates discovered mid
+task must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` with search terms targeting each of the five themes above.
+2. For each shortlisted paper, invoke `/download-paper` — the skill produces a v3-compliant paper
+   asset (`details.json`, summary document, files). Papers behind institutional paywalls are
+   recorded as `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the
+   researcher to retrieve manually from their institutional account.
+3. After the paper set is assembled, write one answer asset that synthesises the corpus by theme and
+   maps each paper to its relevance for the project&#x27;s direction-selectivity modelling work.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant). Some may have
+  `download_status: &quot;failed&quot;` pending manual retrieval.
+* One answer asset under `assets/answer/` synthesising the five themes and identifying the
+  cable-theory parameters most directly useful for downstream DSGC tasks.
+* `intervention/paywalled_papers.md` listing DOIs the researcher must download manually.
+
+#### Compute and Budget
+
+No paid services required for the automated pass. The task type `literature-survey` is gated on the
+project budget — the brainstorm session set `project/budget.json` `total_budget` to $1 to clear
+the gate; no actual spend is expected.
+
+#### Dependencies
+
+None. This task is independent of the t0002 corpus (beyond the deduplication constraint).
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py` (accounting for some paywalled failures).
+* The answer asset passes `verify_answer_asset.py`.
+* `intervention/paywalled_papers.md` exists with a DOI list if any downloads failed.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: dendritic computation beyond DSGCs
+ID: t0016_literature_survey_dendritic_computation
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+Task types: literature-survey
+Source suggestion: S-0014-02
+
+#### Motivation
+
+Research question RQ4 (active vs passive dendrites) needs evidence from computational neuroscience
+beyond the retinal literature. Cortical and cerebellar dendrites have been studied far more
+extensively than DSGC dendrites, and the mechanisms and modelling conventions developed there (NMDA
+spikes, Ca/Na plateaus, branch-level nonlinearities) are the natural reference for whether active
+dendrites plausibly shape DSGC tuning curves. Source suggestion: S-0014-02 from
+t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. NMDA spikes — thresholds, amplitudes, distance-dependence, supralinear integration.
+2. Na+ and Ca2+ dendritic spikes — backpropagation, forward propagation, local spikes.
+3. Plateau potentials — in-vivo evidence, role in coincidence detection, duration scaling.
+4. Branch-level nonlinearities — independent subunits, clustered-vs-distributed input summation.
+5. Sublinear-to-supralinear integration regimes — what controls the transition, which conditions
+   make dendrites behave passively in practice.
+6. Active-vs-passive modelling comparisons — cortical, cerebellar, hippocampal studies that built
+   matched active and passive compartmental models and quantified the difference.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each of the six themes above with preference for review
+   articles plus 2-4 primary studies per theme.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the researcher to
+   retrieve manually.
+3. Write one answer asset synthesising which dendritic-computation mechanisms plausibly transfer to
+   DSGC dendrites, with explicit caveats about anatomical and biophysical differences.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant), some possibly with
+  `download_status: &quot;failed&quot;`.
+* One answer asset under `assets/answer/` synthesising the six themes and flagging mechanisms most
+  plausible for DSGC dendrites.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and explicitly addresses transferability to DSGC
+  dendrites.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+Task types: literature-survey
+Source suggestion: S-0014-03
+
+#### Motivation
+
+The DSGC model needs validation against real electrophysiology. Patch-clamp recordings of retinal
+ganglion cells provide the quantitative targets that optimisation and tuning-curve scoring tasks
+(t0004, t0012) must match: somatic action-potential rates, EPSP/IPSC kinetics, null/preferred
+response ratios. This survey assembles the experimental-data landscape separately from the modelling
+corpus in t0002. Source suggestion: S-0014-03 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Somatic whole-cell recordings of RGCs — firing-rate statistics, spike-threshold distributions.
+2. Voltage-clamp conductance dissections — separating AMPA/NMDA/GABA currents during DS responses.
+3. Space-clamp error analyses — how much of published conductance asymmetry is real vs an artefact
+   of imperfect voltage clamp in extended dendrites.
+4. Spike-train tuning-curve measurements — angle-resolved AP rates and their variability.
+5. In-vitro stimulus protocols — moving bars, drifting gratings, and spots used to probe DS.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, giving weight to papers that publish raw
+   conductance traces or tabulated tuning-curve peak rates.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset mapping each paper to the model-validation targets it provides (AP rate,
+   IPSC asymmetry, EPSP kinetics, null/preferred ratios) with explicit numerical values.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a validation-target table keyed by paper DOI.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and contains a validation-target table with at
+  least five numerical rows.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+Task types: literature-survey
+Source suggestion: S-0014-04
+
+#### Motivation
+
+Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
+distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The modelling
+literature in t0002 touches these parameters but does not systematically cover the synaptic-
+integration experimental and theoretical work that underpins them. Source suggestion: S-0014-04 from
+t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
+2. Shunting inhibition — location-dependent vetoing, input resistance changes.
+3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
+4. Temporal summation — how closely spaced inputs integrate vs saturate.
+5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
+   initiation zone.
+6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
+7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in the
+   preferred vs null directions.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, preferring studies that publish fitted kinetic
+   parameters or conductance-ratio measurements rather than qualitative reports.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior distributions
+   for later optimisation tasks.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
+  ratios, keyed by paper DOI and region.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution table.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
+Task types: literature-survey
+Source suggestion: S-0014-05
+
+#### Motivation
+
+Research question RQ1 (Na/K combinations) drives the project&#x27;s main optimisation experiment. Good
+priors on which Nav and Kv subunits are expressed in RGCs, their kinetic parameters, and their
+conductance densities are needed to constrain the search space before optimisation begins. The t0002
+corpus provides DSGC modelling context but does not systematically cover channel-expression or
+channel-kinetics literature. Source suggestion: S-0014-05 from t0014_brainstorm_results_3.
+
+#### Scope
+
+Target ~25 category-relevant papers covering:
+
+1. Nav subunit expression in RGCs — Nav1.1, Nav1.2, Nav1.6 distributions across soma, AIS,
+   dendrite.
+2. Kv subunit expression in RGCs — Kv1, Kv2, Kv3, Kv4, BK, SK distributions.
+3. HH-family kinetic models — published rate functions, activation/inactivation curves, time
+   constants.
+4. Subunit co-expression patterns — Nav + Kv combinations reported in specific RGC types.
+5. ModelDB MOD-file provenance — which published MOD files implement which Nav/Kv kinetics.
+6. Nav/Kv conductance-density estimates — somatic vs AIS vs dendritic densities.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
+must be dropped and the exclusion recorded in the task log.
+
+#### Approach
+
+1. Run `/research-internet` targeting each theme, including explicit ModelDB searches for
+   RGC-relevant Nav and Kv MOD files.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset mapping candidate Nav/Kv combinations to published DSGC tuning-curve fits,
+   with a row per combination giving the subunits, their densities, and the source paper.
+
+#### Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` mapping Nav/Kv combinations to DSGC tuning-curve fits.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+#### Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+#### Dependencies
+
+None.
+
+#### Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and contains a combination table with at least
+  five rows keyed by Nav/Kv subunits and source paper DOI.
+* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
       </content>
     </section>
   </sections>

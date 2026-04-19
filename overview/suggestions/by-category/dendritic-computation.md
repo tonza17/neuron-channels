@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-6 suggestion(s) in category
+7 suggestion(s) in category
 [`dendritic-computation`](../../../meta/categories/dendritic-computation/) **5 open** (2 high,
-3 medium), **1 closed**.
+3 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -163,5 +163,29 @@ distribution) keyed on Strahler order or path distance from the soma, write the 
 as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
 diameter distribution against the original placeholder. Recommended task types:
 feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: dendritic computation outside DSGCs (target ~25
+papers)</s> — covered by <a
+href="../../../tasks/t0016_literature_survey_dendritic_computation/"><code>t0016_literature_survey_dendritic_computation</code></a>
+(S-0014-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25
+category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials,
+branch-level nonlinearities, sublinear-to-supralinear integration regimes, and
+active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already
+in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly
+transfer to DSGC dendrites.
 
 </details>

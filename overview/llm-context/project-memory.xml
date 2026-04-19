@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T22:48:18Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T23:35:21Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>57801</char_count>
-    <byte_count>57852</byte_count>
-    <estimated_tokens>14450</estimated_tokens>
+    <char_count>60601</char_count>
+    <byte_count>60654</byte_count>
+    <estimated_tokens>15150</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -123,9 +123,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 7
+Completed tasks: 8
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -168,6 +169,12 @@ ID: t0007_install_neuron_netpyne
 Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
+
+## Brainstorm results session 3
+ID: t0014_brainstorm_results_3
+Completed: 2026-04-19
+Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
+Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -180,9 +187,14 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neu
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
+        <id>t0015_literature_survey_cable_theory</id>
+        <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 11
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -225,6 +237,36 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
+
+## Literature survey: dendritic computation beyond DSGCs
+ID: t0016_literature_survey_dendritic_computation
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Status: not_started
+Effective date: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -277,16 +319,16 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0005-01</id>
         <id>S-0005-02</id>
         <id>S-0007-01</id>
+        <id>S-0014-01</id>
+        <id>S-0014-02</id>
+        <id>S-0014-03</id>
+        <id>S-0014-04</id>
+        <id>S-0014-05</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
         <id>S-0002-08</id>
         <id>S-0002-10</id>
-        <id>S-0003-03</id>
-        <id>S-0003-04</id>
-        <id>S-0004-01</id>
-        <id>S-0005-03</id>
-        <id>S-0005-04</id>
       </source_ids>
       <content>
 Open suggestions: 20
@@ -361,6 +403,41 @@ Kind: experiment
 Source task: t0007_install_neuron_netpyne
 The t0007 sanity sims only exercise NEURON&#x27;s built-in hh mechanism. khhchan.mod is compiled as a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace against the built-in hh to confirm the custom mechanism produces physiologically plausible spikes before downstream retinal tasks depend on it.
 
+## Literature survey: cable theory and dendritic filtering (target ~25 papers)
+ID: S-0014-01
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey cable-theory and passive dendritic-filtering literature relevant to direction-selective retinal ganglion cells. Target ~25 category-relevant papers spanning Rall-era foundations, modern compartmental treatments, impedance / space-constant analyses, and segment-discretisation guidelines. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis document organised by theme (classical cable theory, segment discretisation, branched-tree impedance, frequency-domain analyses, transmission in thin dendrites).
+
+## Literature survey: dendritic computation outside DSGCs (target ~25 papers)
+ID: S-0014-02
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25 category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials, branch-level nonlinearities, sublinear-to-supralinear integration regimes, and active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly transfer to DSGC dendrites.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs (target ~25 papers)
+ID: S-0014-03
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey patch-clamp recording literature relevant to validating DSGC compartmental models. Target ~25 category-relevant papers covering somatic whole-cell recordings of RGCs, voltage-clamp conductance dissections, space-clamp error analyses, spike-train tuning-curve measurements, and in-vitro stimulus protocols. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping each paper to the model validation targets (AP rate, IPSC asymmetry, EPSP kinetics, null/preferred ratios).
+
+## Literature survey: synaptic integration in RGC-adjacent systems (target ~25 papers)
+ID: S-0014-04
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25 category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in later optimisation tasks.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells (target ~25 papers)
+ID: S-0014-05
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target ~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC tuning-curve fits.
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -395,41 +472,6 @@ Priority: medium
 Kind: dataset
 Source task: t0002_literature_survey_dsgc_compartmental_models
 Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.
-
-## Benchmark NEURON vs Arbor on the project&#x27;s actual DSGC morphology
-ID: S-0003-03
-Priority: medium
-Kind: experiment
-Source task: t0003_simulator_library_survey
-Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to Arbor 0.12.0 and measure single-cell simulation wall-clock on the project&#x27;s workstation. Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged as the main Arbor adoption risk.
-
-## Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies
-ID: S-0003-04
-Priority: medium
-Kind: library
-Source task: t0003_simulator_library_survey
-Build a small library that wraps NetPyNE&#x27;s `Batch` class with the project&#x27;s preferred sweep axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an `assets/library/` entry plus a one-page usage example. This unblocks every downstream tuning-curve experiment that needs to run more than one parameter combination.
-
-## Generate weaker-DSI variant target tuning curves
-ID: S-0004-01
-Priority: medium
-Kind: dataset
-Source task: t0004_generate_target_tuning_curve
-Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi, target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at ~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is robust across the 0.6-0.9 band instead of only the upper end.
-
-## Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis
-ID: S-0005-03
-Priority: medium
-Kind: dataset
-Source task: t0005_download_dsgc_morphology
-The current dsgc-baseline-morphology commits the project to a single reconstructed cell (141009_Pair1DSGC). Cell-to-cell variability in branching pattern, total path length, and arbor extent is a known source of variance in DSGC tuning curves (RQ2), and the Feller archive on NeuroMorpho hosts several sibling ON-OFF DSGC reconstructions from the same lab (e.g., 141009_Pair2DSGC and other 2014 Pair* records). Download 3-5 additional Feller-archive ON-OFF DSGC SWCs as separate dataset assets (each with its own NeuroMorpho neuron_id and provenance), validate each with the existing validate_swc.py parser, and tabulate per-cell compartment count, branch points, and total dendritic path length so a...
-
-## Build a reusable SWC -&gt; NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology
-ID: S-0005-04
-Priority: medium
-Kind: library
-Source task: t0005_download_dsgc_morphology
-Every downstream compartmental-modelling task in this project will need to load the dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by SWC compartment id, soma reference, and per-section parent links. NEURON&#x27;s built-in Import3d handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs) and other simulators have their own quirks (NetPyNE&#x27;s netParams.cellParams, Arbor&#x27;s morphology builder). Write a small library asset that exposes a pure-function load_dsgc_morphology(simulator: str) -&gt; SimulatorMorphology API with verified-equivalent loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path...
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">

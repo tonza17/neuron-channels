@@ -1,12 +1,12 @@
 # Suggestions by Date Added
 
-26 suggestion(s) grouped by derived added date.
+31 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-04-19 (26)
+## 2026-04-19 (31)
 
 ## High Priority
 
@@ -599,6 +599,127 @@ virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs
 1-compartment sanity simulation, and records the installed versions, install-time warnings,
 and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
 but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: cable theory and dendritic filtering (target ~25
+papers)</s> — covered by <a
+href="../../../tasks/t0015_literature_survey_cable_theory/"><code>t0015_literature_survey_cable_theory</code></a>
+(S-0014-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+Systematically survey cable-theory and passive dendritic-filtering literature relevant to
+direction-selective retinal ganglion cells. Target ~25 category-relevant papers spanning
+Rall-era foundations, modern compartmental treatments, impedance / space-constant analyses,
+and segment-discretisation guidelines. Exclude the 20 DOIs already in the t0002 corpus.
+Output: paper assets + synthesis document organised by theme (classical cable theory, segment
+discretisation, branched-tree impedance, frequency-domain analyses, transmission in thin
+dendrites).
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: dendritic computation outside DSGCs (target ~25
+papers)</s> — covered by <a
+href="../../../tasks/t0016_literature_survey_dendritic_computation/"><code>t0016_literature_survey_dendritic_computation</code></a>
+(S-0014-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25
+category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials,
+branch-level nonlinearities, sublinear-to-supralinear integration regimes, and
+active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already
+in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly
+transfer to DSGC dendrites.
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: patch-clamp recordings of RGCs and DSGCs (target
+~25 papers)</s> — covered by <a
+href="../../../tasks/t0017_literature_survey_patch_clamp/"><code>t0017_literature_survey_patch_clamp</code></a>
+(S-0014-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-03` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Systematically survey patch-clamp recording literature relevant to validating DSGC
+compartmental models. Target ~25 category-relevant papers covering somatic whole-cell
+recordings of RGCs, voltage-clamp conductance dissections, space-clamp error analyses,
+spike-train tuning-curve measurements, and in-vitro stimulus protocols. Exclude the 20 DOIs
+already in the t0002 corpus. Output: paper assets + synthesis mapping each paper to the model
+validation targets (AP rate, IPSC asymmetry, EPSP kinetics, null/preferred ratios).
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: synaptic integration in RGC-adjacent systems
+(target ~25 papers)</s> — covered by <a
+href="../../../tasks/t0018_literature_survey_synaptic_integration/"><code>t0018_literature_survey_synaptic_integration</code></a>
+(S-0014-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-04` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25
+category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I
+balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and
+SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper
+assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in
+later optimisation tasks.
+
+</details>
+
+<details>
+<summary>✅ <s>Literature survey: voltage-gated channels in retinal ganglion cells
+(target ~25 papers)</s> — covered by <a
+href="../../../tasks/t0019_literature_survey_voltage_gated_channels/"><code>t0019_literature_survey_voltage_gated_channels</code></a>
+(S-0014-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0014-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target
+~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family
+kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and
+Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output:
+paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC
+tuning-curve fits.
 
 </details>
 

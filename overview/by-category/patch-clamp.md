@@ -5,7 +5,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (12)](../papers/by-category/patch-clamp.md) | [Suggestions
-(1)](../suggestions/by-category/patch-clamp.md)
+(2)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -643,7 +643,7 @@ means and standard deviations.
 
 No answers in this category.
 
-## Suggestions (1 open, 0 closed)
+## Suggestions (1 open, 1 closed)
 
 <details>
 <summary>📂 <strong>Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset

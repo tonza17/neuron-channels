@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T22:48:18Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T23:35:21Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>25329</char_count>
-    <byte_count>25336</byte_count>
-    <estimated_tokens>6332</estimated_tokens>
+    <char_count>29173</char_count>
+    <byte_count>29180</byte_count>
+    <estimated_tokens>7293</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -43,9 +43,14 @@
         <id>S-0007-01</id>
         <id>S-0007-02</id>
         <id>S-0007-03</id>
+        <id>S-0014-01</id>
+        <id>S-0014-02</id>
+        <id>S-0014-03</id>
+        <id>S-0014-04</id>
+        <id>S-0014-05</id>
       </source_ids>
       <content>
-Suggestions: 26
+Suggestions: 31
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -341,6 +346,61 @@ Categories: compartmental-modeling
 Date added: 2026-04-19
 
 At the single-compartment size, NetPyNE&#x27;s setup is ~6× slower than raw NEURON (38.7 ms vs 6.7 ms) but runtime is indistinguishable. Scan both harnesses across realistic retinal network sizes (1, 10, 100, 1000 cells; dense and sparse connectivity) to quantify where NetPyNE&#x27;s cost becomes significant for downstream t0008 / t0010 / t0011 runs, and decide whether any hot-loop experiments should stay in raw NEURON.
+
+## Literature survey: cable theory and dendritic filtering (target ~25 papers)
+ID: S-0014-01
+Status: active
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Categories: cable-theory
+Date added: 2026-04-19
+
+Systematically survey cable-theory and passive dendritic-filtering literature relevant to direction-selective retinal ganglion cells. Target ~25 category-relevant papers spanning Rall-era foundations, modern compartmental treatments, impedance / space-constant analyses, and segment-discretisation guidelines. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis document organised by theme (classical cable theory, segment discretisation, branched-tree impedance, frequency-domain analyses, transmission in thin dendrites).
+
+## Literature survey: dendritic computation outside DSGCs (target ~25 papers)
+ID: S-0014-02
+Status: active
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Categories: dendritic-computation
+Date added: 2026-04-19
+
+Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25 category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials, branch-level nonlinearities, sublinear-to-supralinear integration regimes, and active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly transfer to DSGC dendrites.
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs (target ~25 papers)
+ID: S-0014-03
+Status: active
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Categories: patch-clamp
+Date added: 2026-04-19
+
+Systematically survey patch-clamp recording literature relevant to validating DSGC compartmental models. Target ~25 category-relevant papers covering somatic whole-cell recordings of RGCs, voltage-clamp conductance dissections, space-clamp error analyses, spike-train tuning-curve measurements, and in-vitro stimulus protocols. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping each paper to the model validation targets (AP rate, IPSC asymmetry, EPSP kinetics, null/preferred ratios).
+
+## Literature survey: synaptic integration in RGC-adjacent systems (target ~25 papers)
+ID: S-0014-04
+Status: active
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Categories: synaptic-integration
+Date added: 2026-04-19
+
+Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25 category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in later optimisation tasks.
+
+## Literature survey: voltage-gated channels in retinal ganglion cells (target ~25 papers)
+ID: S-0014-05
+Status: active
+Priority: high
+Kind: dataset
+Source task: t0014_brainstorm_results_3
+Categories: voltage-gated-channels
+Date added: 2026-04-19
+
+Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target ~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC tuning-curve fits.
       </content>
     </section>
   </sections>
