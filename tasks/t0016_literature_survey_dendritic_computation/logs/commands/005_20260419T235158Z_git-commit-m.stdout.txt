@@ -1,0 +1,8 @@
+[task/t0016_literature_survey_dendritic_computation e4a51da] t0016_literature_survey_dendritic_computation [research-papers]: add command logs
+ 6 files changed, 41 insertions(+)
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/002_20260419T235122Z_git-add-tasks-t0016-literature-survey-de.json
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/002_20260419T235122Z_git-add-tasks-t0016-literature-survey-de.stderr.txt
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/002_20260419T235122Z_git-add-tasks-t0016-literature-survey-de.stdout.txt
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/003_20260419T235130Z_git-commit-m.json
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/003_20260419T235130Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0016_literature_survey_dendritic_computation/logs/commands/003_20260419T235130Z_git-commit-m.stdout.txt
