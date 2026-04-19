@@ -1,0 +1,42 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsgc-compartmental-simulator-choice",
+  "question": "Which compartmental simulator should the direction-selective ganglion cell (DSGC) project use as its primary simulator, and which should it keep as a backup?",
+  "short_title": "DSGC compartmental simulator choice",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "internet"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9272742/",
+    "https://elifesciences.org/articles/47314",
+    "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013926",
+    "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899",
+    "https://modeldb.science/189347",
+    "https://github.com/neuronsimulator/nrn/blob/master/docs/changelog.md",
+    "https://github.com/neuronsimulator/nrn/issues/3595",
+    "https://github.com/arbor-sim/arbor/releases",
+    "https://docs.arbor-sim.org/en/latest/install/python.html",
+    "https://docs.arbor-sim.org/en/latest/index.html",
+    "https://docs.arbor-sim.org/en/latest/fileformat/nmodl.html",
+    "http://doc.netpyne.org/",
+    "https://github.com/suny-downstate-medical-center/netpyne",
+    "https://brian2.readthedocs.io/en/stable/user/multicompartmental.html",
+    "https://github.com/brian-team/brian2",
+    "https://github.com/BhallaLab/moose",
+    "https://github.com/BhallaLab/moose/releases",
+    "https://moose.ncbs.res.in/readthedocs/user/py/rdesigneur/rdes.html",
+    "https://github.com/jzlab/dsg",
+    "https://github.com/berenslab/rgc_dendrites"
+  ],
+  "source_task_ids": [],
+  "confidence": "high",
+  "created_by_task": "t0003_simulator_library_survey",
+  "date_created": "2026-04-19"
+}
