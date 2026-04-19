@@ -1,0 +1,60 @@
+{
+  "spec_version": "1",
+  "suggestions": [
+    {
+      "id": "S-0014-01",
+      "title": "Literature survey: cable theory and dendritic filtering (target ~25 papers)",
+      "description": "Systematically survey cable-theory and passive dendritic-filtering literature relevant to direction-selective retinal ganglion cells. Target ~25 category-relevant papers spanning Rall-era foundations, modern compartmental treatments, impedance / space-constant analyses, and segment-discretisation guidelines. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis document organised by theme (classical cable theory, segment discretisation, branched-tree impedance, frequency-domain analyses, transmission in thin dendrites).",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0014_brainstorm_results_3",
+      "source_paper": null,
+      "categories": ["cable-theory"],
+      "status": "active"
+    },
+    {
+      "id": "S-0014-02",
+      "title": "Literature survey: dendritic computation outside DSGCs (target ~25 papers)",
+      "description": "Systematically survey dendritic-computation literature beyond DSGC-specific work. Target ~25 category-relevant papers covering NMDA spikes, Na+/Ca2+ dendritic spikes, plateau potentials, branch-level nonlinearities, sublinear-to-supralinear integration regimes, and active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly transfer to DSGC dendrites.",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0014_brainstorm_results_3",
+      "source_paper": null,
+      "categories": ["dendritic-computation"],
+      "status": "active"
+    },
+    {
+      "id": "S-0014-03",
+      "title": "Literature survey: patch-clamp recordings of RGCs and DSGCs (target ~25 papers)",
+      "description": "Systematically survey patch-clamp recording literature relevant to validating DSGC compartmental models. Target ~25 category-relevant papers covering somatic whole-cell recordings of RGCs, voltage-clamp conductance dissections, space-clamp error analyses, spike-train tuning-curve measurements, and in-vitro stimulus protocols. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping each paper to the model validation targets (AP rate, IPSC asymmetry, EPSP kinetics, null/preferred ratios).",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0014_brainstorm_results_3",
+      "source_paper": null,
+      "categories": ["patch-clamp"],
+      "status": "active"
+    },
+    {
+      "id": "S-0014-04",
+      "title": "Literature survey: synaptic integration in RGC-adjacent systems (target ~25 papers)",
+      "description": "Systematically survey synaptic-integration literature relevant to DSGC dendrites. Target ~25 category-relevant papers covering AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance, temporal summation, dendritic-location dependence, synaptic-density scaling, and SAC/DSGC inhibitory asymmetry. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis of kinetics parameters and E-I ratios usable as prior distributions in later optimisation tasks.",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0014_brainstorm_results_3",
+      "source_paper": null,
+      "categories": ["synaptic-integration"],
+      "status": "active"
+    },
+    {
+      "id": "S-0014-05",
+      "title": "Literature survey: voltage-gated channels in retinal ganglion cells (target ~25 papers)",
+      "description": "Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target ~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC tuning-curve fits.",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0014_brainstorm_results_3",
+      "source_paper": null,
+      "categories": ["voltage-gated-channels"],
+      "status": "active"
+    }
+  ]
+}
