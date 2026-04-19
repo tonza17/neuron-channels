@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search the internet for ~25 cable-theory papers across five themes (Rall foundations, d_lambda rule, branched-tree impedance, frequency-domain, thin-dendrite transmission).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T23:47:13Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T23:57:44Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
