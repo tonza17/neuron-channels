@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing papers in the corpus to establish the exclusion set and context.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:44:59Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,

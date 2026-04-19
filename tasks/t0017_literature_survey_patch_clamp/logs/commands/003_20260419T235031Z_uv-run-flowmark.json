@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0017_literature_survey_patch_clamp",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0017_literature_survey_patch_clamp/research/research_papers.md",
+  "exit_code": 0,
+  "duration_seconds": 0.572,
+  "started_at": "2026-04-19T23:50:31Z",
+  "completed_at": "2026-04-19T23:50:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0017_literature_survey_patch_clamp",
+  "stdout_file": "003_20260419T235031Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "003_20260419T235031Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

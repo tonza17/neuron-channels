@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0017_literature_survey_patch_clamp\tasks\t0017_literature_survey_patch_clamp\research\research_papers.md
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W002 warning: Paper Index entry [Fried2002] has DOI '10.1038/nature01179` (corpus ID: `10.1523_JNEUROSCI.22-17-07712.2002`)' but no paper asset folder '10.1038_nature01179` (corpus ID: `10.1523_JNEUROSCI.22-17-07712.2002`)' was found[0m
+[33m  RP-W002 warning: Paper Index entry [Sivyer2013] has DOI '10.1038/nn.3565` (corpus ID: `10.1113_jphysiol.2010.192716`)' but no paper asset folder '10.1038_nn.3565` (corpus ID: `10.1113_jphysiol.2010.192716`)' was found[0m
+
+[33m[1mPASSED[0m — 0 error(s), 2 warning(s)
