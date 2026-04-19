@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0006-01",
+  "correcting_task": "t0006_brainstorm_results_2",
+  "target_task": "t0004_generate_target_tuning_curve",
+  "target_kind": "suggestion",
+  "target_id": "S-0004-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "Redundant with S-0002-09, which covers the same target-vs-simulated tuning-curve scoring plus the envelope-compliance framing (DSI 0.7-0.85, peak 40-80 Hz, null < 10 Hz, HWHM 60-90 deg). S-0002-09 is implemented by t0012_tuning_curve_scoring_loss_library. Keeping both would risk two parallel library implementations with drift; the envelope-based framing in S-0002-09 is strictly more useful for optimisation tasks than the residual-only framing in S-0004-03."
+}

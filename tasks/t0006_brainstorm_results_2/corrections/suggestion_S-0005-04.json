@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0006-02",
+  "correcting_task": "t0006_brainstorm_results_2",
+  "target_task": "t0005_download_dsgc_morphology",
+  "target_kind": "suggestion",
+  "target_id": "S-0005-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "A reusable SWC -> NEURON/NetPyNE/Arbor section-translator library is premature until at least one port demonstrates which cross-simulator behaviours actually matter. Today, NEURON 8.2.7 + NetPyNE 1.1.1 is the sole pipeline; Brian2/MOOSE/Arbor were surveyed in t0003 but deprioritised. After t0008 (ModelDB 189347 port) and t0010 (additional model ports) land, the shape of this abstraction will be clear enough to design it meaningfully. Demoted from HIGH to MEDIUM pending that evidence."
+}
