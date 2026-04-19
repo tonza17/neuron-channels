@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Survey corpus papers (from t0002) for DSGC dendritic diameter measurements, Strahler-order taper, and calibration methodology.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T22:53:04Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T23:00:31Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
