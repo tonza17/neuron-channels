@@ -59,10 +59,10 @@
       "step": 7,
       "name": "planning",
       "description": "Select the SWC morphology source from t0002 shortlist and document download + verification plan.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T09:03:17Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\007_planning/"
     },
     {
       "step": 8,
