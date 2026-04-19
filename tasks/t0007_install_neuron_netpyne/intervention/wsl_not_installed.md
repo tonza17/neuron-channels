@@ -15,27 +15,43 @@ any version, and the project plan selected WSL-based installation (Option A) ove
 
 ## Evidence
 
-* `wsl --status` exit code: `50` (no default distro)
-* `wsl -l -v` returned the usage help banner instead of a distro list
-* Command log: `logs/commands/001_20260419T210028Z_wsl-status.json`
+* `wsl --status` exit code: `50` (no default distro) —
+  `logs/commands/001_20260419T210028Z_wsl-status.json`
+* `wsl -l -v` returned the usage help banner instead of a distro list —
+  `logs/commands/002_20260419T210047Z_wsl-l-v.*`
+* `wsl --install -d Ubuntu` (non-elevated, 2026-04-19T21:13:40Z, exit 0, 151s) —
+  `logs/commands/003_20260419T211340Z_wsl-install-d.*`. Ubuntu was downloaded, but output ended
+  with: `"The requested operation requires elevation."` — the Virtual Machine Platform feature
+  could not be enabled.
+* Follow-up `wsl --status` reported:
+  * `WSL1 is not supported with your current machine configuration.`
+  * `WSL2 is not supported with your current machine configuration.`
+  * `Please enable the "Virtual Machine Platform" optional component and ensure virtualisation is enabled in the BIOS.`
 
 ## What the User Must Do
 
-Run the following command **in an elevated (Administrator) PowerShell window** and reboot when
-prompted:
+The non-elevated `wsl --install -d Ubuntu` already downloaded Ubuntu, but could not enable the
+underlying Windows features because that step requires administrator privileges.
 
-```powershell
-wsl --install -d Ubuntu
-```
+1. **Check BIOS virtualization is enabled.** Reboot, enter UEFI/BIOS (typically F2/F10/Del at POST),
+   enable "Intel VT-x" / "AMD-V" / "SVM", save, and boot back into Windows. If unsure whether it's
+   already on, open Task Manager → Performance → CPU and confirm "Virtualization: Enabled".
 
-This will:
+2. **Open an elevated PowerShell** (Start menu → search "PowerShell" → right-click → Run as
+   administrator) and run:
 
-1. Enable the Virtual Machine Platform and WSL2 Windows features.
-2. Install the WSL2 kernel.
-3. Download and register Ubuntu as the default distribution.
-4. Prompt for a reboot.
+   ```powershell
+   wsl.exe --install --no-distribution
+   ```
 
-After reboot, launch Ubuntu once (Start menu → Ubuntu) and set a UNIX username and password.
+   This is the exact command `wsl --status` suggested. It enables the Virtual Machine Platform and
+   Windows Subsystem for Linux features and installs the WSL2 kernel.
+
+3. **Reboot** when prompted.
+
+4. After reboot, launch **Ubuntu** once from the Start menu. First launch will finalize the
+   distribution setup and prompt for a UNIX username and password (not required to match Windows
+   credentials).
 
 ## Verification After Intervention
 
