@@ -1,9 +1,10 @@
 # Project Tasks
 
-13 tasks. ⏹ **7 not_started**, ✅ **6 completed**.
+13 tasks. ⏳ **1 in_progress**, ⏹ **5 not_started**, ✅ **7 completed**.
 
-**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
-`completed`](by-status/completed.md); [By date added](by-date-added/README.md)
+**Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
+`not_started`](by-status/not_started.md), [✅ `completed`](by-status/completed.md); [By date
+added](by-date-added/README.md)
 
 ---
 
@@ -13,9 +14,9 @@
 graph LR
     t0004_generate_target_tuning_curve["✅ t0004_generate_target_tuning_curve"]
     t0005_download_dsgc_morphology["✅ t0005_download_dsgc_morphology"]
-    t0007_install_neuron_netpyne["⏹ t0007_install_neuron_netpyne"]
+    t0007_install_neuron_netpyne["✅ t0007_install_neuron_netpyne"]
     t0008_port_modeldb_189347["⏹ t0008_port_modeldb_189347"]
-    t0009_calibrate_dendritic_diameters["⏹ t0009_calibrate_dendritic_diameters"]
+    t0009_calibrate_dendritic_diameters["⏳ t0009_calibrate_dendritic_diameters"]
     t0010_hunt_missed_dsgc_models["⏹ t0010_hunt_missed_dsgc_models"]
     t0011_response_visualization_library["⏹ t0011_response_visualization_library"]
     t0012_tuning_curve_scoring_loss_library["⏹ t0012_tuning_curve_scoring_loss_library"]
@@ -34,6 +35,107 @@ graph LR
 ```
 
 ---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0009 — <strong>Calibrate dendritic diameters for
+dsgc-baseline-morphology</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0009_calibrate_dendritic_diameters` |
+| **Status** | in_progress |
+| **Effective date** | 2026-04-19 |
+| **Dependencies** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Expected assets** | 1 dataset |
+| **Source suggestion** | `S-0005-02` |
+| **Task types** | [`feature-engineering`](../../meta/task_types/feature-engineering/), [`data-analysis`](../../meta/task_types/data-analysis/) |
+| **Start time** | 2026-04-19T21:37:04Z |
+| **Task page** | [Calibrate dendritic diameters for dsgc-baseline-morphology](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Task folder** | [`t0009_calibrate_dendritic_diameters/`](../../tasks/t0009_calibrate_dendritic_diameters/) |
+
+# Calibrate dendritic diameters for dsgc-baseline-morphology
+
+## Motivation
+
+Every compartment in the downloaded `dsgc-baseline-morphology` CNG-curated SWC (NeuroMorpho
+neuron 102976, 141009_Pair1DSGC) carries the placeholder radius **0.125 µm** because the
+original Simple Neurite Tracer reconstruction did not record diameters. Cable theory predicts
+that segment diameter is the single most influential *local-electrotonic* knob on axial
+resistance, spatial attenuation and spike-initiation threshold, so leaving a uniform
+placeholder in place will silently bias every downstream biophysical simulation. This task
+replaces the placeholder with a literature-derived order-dependent taper keyed on Strahler
+order or path distance from the soma, and registers the calibrated morphology as a new dataset
+asset that downstream tasks (t0008 reproduction, t0011 visualisation smoke-test, and the
+experiment tasks) will load instead of the raw placeholder SWC.
+
+Covers suggestion **S-0005-02**.
+
+## Scope
+
+1. **Research stage**: survey the published mouse ON-OFF DSGC morphometric literature for a
+   defensible diameter taper rule. Candidate sources explicitly identified as plausible:
+   * Vaney / Sivyer / Taylor 2012 review + original figures
+   * Poleg-Polsky & Diamond 2016 (ModelDB 189347) per-order diameter profile
+   * Other published Feller-lab / Briggman-lineage DSGC reconstructions with diameters
+     recorded. Pick one primary source and one fallback source; document the choice and the
+     per-order distribution in `research/research_papers.md`.
+2. **Implementation**:
+   * Parse the CNG-curated SWC with a stdlib parser (can reuse
+     `tasks/t0005_download_dsgc_morphology/code/validate_swc.py` approach).
+   * Compute per-compartment Strahler order and path distance from the soma.
+   * Apply the chosen taper rule to assign a realistic radius to every dendritic compartment.
+     Preserve the 19 soma compartments' original (non-placeholder) radii.
+   * Write the new SWC to `assets/dataset/dsgc-baseline-morphology-calibrated/files/`.
+3. **Register** the calibrated morphology as a v2 dataset asset
+   (`assets/dataset/dsgc-baseline-morphology-calibrated/`) with a `details.json`, a
+   `description.md`, and the calibrated SWC file. The `details.json` must reference
+   `dsgc-baseline-morphology` as the raw source and cite the chosen taper-source paper.
+4. **Validation**:
+   * Plot per-Strahler-order radius distributions (original placeholder vs calibrated) and
+     save as PNG to `results/images/`.
+   * Recompute total surface area and axial resistance per branch; report the change vs the
+     placeholder baseline.
+   * Confirm compartment count, branch points and connectivity are unchanged from the source
+     SWC.
+
+## Dependencies
+
+* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology` raw SWC and the
+  stdlib parser.
+
+## Expected Outputs
+
+* **1 dataset asset** (`assets/dataset/dsgc-baseline-morphology-calibrated/`) — calibrated
+  SWC.
+* Per-order diameter distribution plots in `results/images/` (original vs calibrated).
+* Brief answer-style report embedded in `results/results_detailed.md` summarising the chosen
+  taper rule, the rationale, and the change in surface area / axial resistance vs the
+  placeholder.
+
+## Questions the task answers
+
+1. Which published taper source is most faithful for mouse ON-OFF DSGCs of the
+   141009_Pair1DSGC lineage?
+2. What is the Strahler-order-to-radius (or path-distance-to-radius) mapping used in the
+   calibration?
+3. How does total dendritic surface area change from the placeholder baseline to the
+   calibrated morphology?
+4. How does axial resistance along the preferred-to-null dendritic axis change, and what does
+   that predict for spike-attenuation at the soma?
+
+## Risks and Fallbacks
+
+* **No published source gives a cell-matched per-order taper**: fall back to the Poleg-Polsky
+  ModelDB distribution and clearly label the calibrated asset as "Poleg-Polsky-profile
+  calibrated" rather than "literature-grounded".
+* **The chosen taper makes distal tips implausibly thin (< 0.1 µm)**: clamp the radius floor
+  at 0.15 µm and document the clamp.
+* **Calibration collapses spatial detail (uniform assignment)**: treat as a bug, not a
+  feature; re-derive the taper until per-order variability survives.
+
+</details>
 
 ## ⏹ Not Started
 
@@ -436,104 +538,6 @@ stdout/stderr under `logs/` so reviewers can audit the call.
 </details>
 
 <details>
-<summary>⏹ 0009 — <strong>Calibrate dendritic diameters for
-dsgc-baseline-morphology</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0009_calibrate_dendritic_diameters` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-19 |
-| **Dependencies** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Expected assets** | 1 dataset |
-| **Source suggestion** | `S-0005-02` |
-| **Task types** | [`feature-engineering`](../../meta/task_types/feature-engineering/), [`data-analysis`](../../meta/task_types/data-analysis/) |
-| **Task page** | [Calibrate dendritic diameters for dsgc-baseline-morphology](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Task folder** | [`t0009_calibrate_dendritic_diameters/`](../../tasks/t0009_calibrate_dendritic_diameters/) |
-
-# Calibrate dendritic diameters for dsgc-baseline-morphology
-
-## Motivation
-
-Every compartment in the downloaded `dsgc-baseline-morphology` CNG-curated SWC (NeuroMorpho
-neuron 102976, 141009_Pair1DSGC) carries the placeholder radius **0.125 µm** because the
-original Simple Neurite Tracer reconstruction did not record diameters. Cable theory predicts
-that segment diameter is the single most influential *local-electrotonic* knob on axial
-resistance, spatial attenuation and spike-initiation threshold, so leaving a uniform
-placeholder in place will silently bias every downstream biophysical simulation. This task
-replaces the placeholder with a literature-derived order-dependent taper keyed on Strahler
-order or path distance from the soma, and registers the calibrated morphology as a new dataset
-asset that downstream tasks (t0008 reproduction, t0011 visualisation smoke-test, and the
-experiment tasks) will load instead of the raw placeholder SWC.
-
-Covers suggestion **S-0005-02**.
-
-## Scope
-
-1. **Research stage**: survey the published mouse ON-OFF DSGC morphometric literature for a
-   defensible diameter taper rule. Candidate sources explicitly identified as plausible:
-   * Vaney / Sivyer / Taylor 2012 review + original figures
-   * Poleg-Polsky & Diamond 2016 (ModelDB 189347) per-order diameter profile
-   * Other published Feller-lab / Briggman-lineage DSGC reconstructions with diameters
-     recorded. Pick one primary source and one fallback source; document the choice and the
-     per-order distribution in `research/research_papers.md`.
-2. **Implementation**:
-   * Parse the CNG-curated SWC with a stdlib parser (can reuse
-     `tasks/t0005_download_dsgc_morphology/code/validate_swc.py` approach).
-   * Compute per-compartment Strahler order and path distance from the soma.
-   * Apply the chosen taper rule to assign a realistic radius to every dendritic compartment.
-     Preserve the 19 soma compartments' original (non-placeholder) radii.
-   * Write the new SWC to `assets/dataset/dsgc-baseline-morphology-calibrated/files/`.
-3. **Register** the calibrated morphology as a v2 dataset asset
-   (`assets/dataset/dsgc-baseline-morphology-calibrated/`) with a `details.json`, a
-   `description.md`, and the calibrated SWC file. The `details.json` must reference
-   `dsgc-baseline-morphology` as the raw source and cite the chosen taper-source paper.
-4. **Validation**:
-   * Plot per-Strahler-order radius distributions (original placeholder vs calibrated) and
-     save as PNG to `results/images/`.
-   * Recompute total surface area and axial resistance per branch; report the change vs the
-     placeholder baseline.
-   * Confirm compartment count, branch points and connectivity are unchanged from the source
-     SWC.
-
-## Dependencies
-
-* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology` raw SWC and the
-  stdlib parser.
-
-## Expected Outputs
-
-* **1 dataset asset** (`assets/dataset/dsgc-baseline-morphology-calibrated/`) — calibrated
-  SWC.
-* Per-order diameter distribution plots in `results/images/` (original vs calibrated).
-* Brief answer-style report embedded in `results/results_detailed.md` summarising the chosen
-  taper rule, the rationale, and the change in surface area / axial resistance vs the
-  placeholder.
-
-## Questions the task answers
-
-1. Which published taper source is most faithful for mouse ON-OFF DSGCs of the
-   141009_Pair1DSGC lineage?
-2. What is the Strahler-order-to-radius (or path-distance-to-radius) mapping used in the
-   calibration?
-3. How does total dendritic surface area change from the placeholder baseline to the
-   calibrated morphology?
-4. How does axial resistance along the preferred-to-null dendritic axis change, and what does
-   that predict for spike-attenuation at the soma?
-
-## Risks and Fallbacks
-
-* **No published source gives a cell-matched per-order taper**: fall back to the Poleg-Polsky
-  ModelDB distribution and clearly label the calibrated asset as "Poleg-Polsky-profile
-  calibrated" rather than "literature-grounded".
-* **The chosen taper makes distal tips implausibly thin (< 0.1 µm)**: clamp the radius floor
-  at 0.15 µm and document the clamp.
-* **Calibration collapses spatial detail (uniform assignment)**: treat as a bug, not a
-  feature; re-derive the taper until per-order variability survives.
-
-</details>
-
-<details>
 <summary>⏹ 0008 — <strong>Port ModelDB 189347 and similar DSGC compartmental models
 to NEURON</strong></summary>
 
@@ -655,21 +659,27 @@ this workstation. Budget remains `$0.00`.
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⏹ 0007 — <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1
+<summary>✅ 0007 — <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1
 toolchain</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0007_install_neuron_netpyne` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-19 |
 | **Dependencies** | — |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | `S-0003-01` |
 | **Task types** | [`infrastructure-setup`](../../meta/task_types/infrastructure-setup/) |
+| **Start time** | 2026-04-19T18:20:22Z |
+| **End time** | 2026-04-19T22:43:38Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
 | **Task folder** | [`t0007_install_neuron_netpyne/`](../../tasks/t0007_install_neuron_netpyne/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) |
 
 # Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
 
@@ -741,9 +751,33 @@ answer asset also serves as a "hello world" reference for downstream tasks.
 * If `nrnivmodl` needs `gcc`/`clang` that is not on PATH, create an intervention file
   requesting the compiler toolchain instead of silently skipping MOD compilation.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "1"
+> task_id: "t0007_install_neuron_netpyne"
+> date_completed: "2026-04-19"
+> ---
+> **Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install**
+>
+> **Summary**
+>
+> The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a
+> single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project's Windows 11
+> workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max =
+> 42.003 mV**,
+> confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011).
+>
+> **Metrics**
+>
+> * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples,
+>   setup **6.7
+> ms**, run **4.4 ms**.
+> * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup
+>   **38.7
+> ms**, run **4.8 ms**.
+
+</details>
 
 <details>
 <summary>✅ 0006 — <strong>Brainstorm results session 2</strong></summary>

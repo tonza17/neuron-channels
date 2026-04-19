@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (8)](../papers/by-category/compartmental-modeling.md) | [Answers
-(2)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(17)](../suggestions/by-category/compartmental-modeling.md)
+(3)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(20)](../suggestions/by-category/compartmental-modeling.md)
 
 ---
 
@@ -445,7 +445,7 @@ dendritic transients.
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 
-## Answers (2)
+## Answers (3)
 
 <details>
 <summary><strong>Which compartmental simulator should the direction-selective
@@ -460,6 +460,24 @@ optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x sin
 speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
 are rejected because Brian2's own authors describe its multicompartment support as immature
 and MOOSE shows the weakest maintenance signal of the five candidates.
+
+</details>
+
+<details>
+<summary><strong>Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile
+MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on
+the project's Windows 11 workstation?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
+[`neuron-netpyne-install-report`](../../tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/)
+
+Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary
+wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl`
+compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw
+NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (> **+20 mV** threshold)
+under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time
+is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011
+tasks.
 
 </details>
 
@@ -488,7 +506,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (13 open, 4 closed)
+## Suggestions (16 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -717,5 +735,51 @@ matplotlib (or NEURON's PlotShape) and register the figures plus the rendering s
 answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling
 branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types:
 data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
+simulation</strong> (S-0007-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0007_install_neuron_netpyne](../../tasks/t0007_install_neuron_netpyne/)
+
+The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
+a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
+1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
+against the built-in hh to confirm the custom mechanism produces physiologically plausible
+spikes before downstream retinal tasks depend on it.
+
+</details>
+
+<details>
+<summary>📚 <strong>Script the full NEURON + NetPyNE install for clean-machine
+reproduction</strong> (S-0007-02)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0007_install_neuron_netpyne](../../tasks/t0007_install_neuron_netpyne/)
+
+The NSIS installer's /S flag ignored the /D= prefix, forcing an interactive GUI step. Ship a
+PowerShell / bash installer script that (a) downloads nrn-8.2.7-setup.exe to a known path, (b)
+drives the install with the correct prefix (either by default-install-then-move or by a
+chocolatey recipe), (c) writes the .pth file into the uv venv, and (d) runs nrnivmodl + both
+sanity sims end-to-end. This unblocks automated reproduction on a fresh Windows machine and
+Linux / macOS CI runners.
+
+</details>
+
+<details>
+<summary>📊 <strong>Benchmark NetPyNE harness overhead vs raw NEURON across problem
+sizes</strong> (S-0007-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0007_install_neuron_netpyne](../../tasks/t0007_install_neuron_netpyne/)
+
+At the single-compartment size, NetPyNE's setup is ~6× slower than raw NEURON (38.7 ms vs 6.7
+ms) but runtime is indistinguishable. Scan both harnesses across realistic retinal network
+sizes (1, 10, 100, 1000 cells; dense and sparse connectivity) to quantify where NetPyNE's cost
+becomes significant for downstream t0008 / t0010 / t0011 runs, and decide whether any hot-loop
+experiments should stay in raw NEURON.
 
 </details>

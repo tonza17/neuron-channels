@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T17:46:58Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T22:48:18Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>65866</char_count>
-    <byte_count>66114</byte_count>
-    <estimated_tokens>16466</estimated_tokens>
+    <char_count>68165</char_count>
+    <byte_count>68429</byte_count>
+    <estimated_tokens>17041</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -689,11 +689,13 @@ dependencies). t0008 waits on t0005, t0007, t0009, t0012. t0010 waits on t0008.
 
 ## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
 ID: t0007_install_neuron_netpyne
-Status: not_started
+Status: completed
 Effective date: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Task types: infrastructure-setup
 Source suggestion: S-0003-01
+Start time: 2026-04-19T18:20:22Z
+End time: 2026-04-19T22:43:38Z
 
 #### Motivation
 
@@ -759,6 +761,52 @@ serves as a &quot;hello world&quot; reference for downstream tasks.
 * If NetPyNE pins an older NEURON release, use the NetPyNE-required version and record the override.
 * If `nrnivmodl` needs `gcc`/`clang` that is not on PATH, create an intervention file requesting the
   compiler toolchain instead of silently skipping MOD compilation.
+
+### Results Summary
+
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0007_install_neuron_netpyne&quot;
+date_completed: &quot;2026-04-19&quot;
+---
+### Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install
+
+#### Summary
+
+The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a
+single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11
+workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**,
+confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011).
+
+#### Metrics
+
+* Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7
+  ms**, run **4.4 ms**.
+* NetPyNE sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **38.7
+  ms**, run **4.8 ms**.
+* Raw-NEURON and NetPyNE traces agree on `v_max` to **machine precision** (1e-15 mV).
+* `nrnivmodl` compiled `khhchan.mod` into **132 KB** `nrnmech.dll` in under **5 seconds** with no
+  warnings or errors.
+* Total third-party cost: **$0.00** (local workstation, no remote compute, no paid APIs).
+
+#### Verification
+
+* `uv run ruff check tasks/t0007_install_neuron_netpyne/code/` — PASSED (all checks).
+* `uv run ruff format tasks/t0007_install_neuron_netpyne/code/` — PASSED (no changes).
+* `uv run mypy -p tasks.t0007_install_neuron_netpyne.code` — PASSED (no issues).
+* Raw NEURON sanity sim exit code 0 with `v_max &gt; +20 mV` assertion satisfied.
+* NetPyNE sanity sim exit code 0 with `v_max &gt; +20 mV` assertion satisfied.
+* Compiled `nrnmech.dll` loads successfully via `h.nrn_load_dll` with no error.
+
+#### Assets Produced
+
+* `assets/answer/neuron-netpyne-install-report/` — answer asset with `short_answer.md`,
+  `full_answer.md`, and `details.json`.
+* `data/mod/nrnmech.dll` — compiled HH mechanism library, reusable by downstream tasks.
+* `data/images/raw_neuron_trace.png`, `data/images/netpyne_trace.png` — sanity traces.
+* `data/csv/raw_neuron_trace.csv`, `data/csv/netpyne_trace.csv` — raw sample data.
+* `data/json/raw_neuron_timings.json`, `data/json/netpyne_timings.json`, `data/json/versions.json`
+  — wall-clock and version provenance.
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -872,12 +920,13 @@ workstation. Budget remains `$0.00`.
 
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-19
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Dependencies: t0005_download_dsgc_morphology
 Task types: feature-engineering, data-analysis
 Source suggestion: S-0005-02
+Start time: 2026-04-19T21:37:04Z
 
 #### Motivation
 

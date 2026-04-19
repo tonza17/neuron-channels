@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (5)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (1)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(2)](../suggestions/by-category/voltage-gated-channels.md)
+(3)](../suggestions/by-category/voltage-gated-channels.md)
 
 ---
 
@@ -309,7 +309,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (2 open, 0 closed)
+## Suggestions (3 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -344,5 +344,20 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
+simulation</strong> (S-0007-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0007_install_neuron_netpyne](../../tasks/t0007_install_neuron_netpyne/)
+
+The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
+a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
+1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
+against the built-in hh to confirm the custom mechanism produces physiologically plausible
+spikes before downstream retinal tasks depend on it.
 
 </details>

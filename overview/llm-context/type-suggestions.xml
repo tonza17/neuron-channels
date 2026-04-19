@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T17:46:58Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T22:48:18Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>23165</char_count>
-    <byte_count>23171</byte_count>
-    <estimated_tokens>5791</estimated_tokens>
+    <char_count>25329</char_count>
+    <byte_count>25336</byte_count>
+    <estimated_tokens>6332</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -40,9 +40,12 @@
         <id>S-0005-03</id>
         <id>S-0005-04</id>
         <id>S-0005-05</id>
+        <id>S-0007-01</id>
+        <id>S-0007-02</id>
+        <id>S-0007-03</id>
       </source_ids>
       <content>
-Suggestions: 23
+Suggestions: 26
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -305,6 +308,39 @@ Categories: retinal-ganglion-cell, compartmental-modeling, dendritic-computation
 Date added: 2026-04-19
 
 The dsgc-baseline-morphology asset is currently described only by tabulated statistics (6,736 compartments, 129 branch points, 1,536.25 um path length). Downstream tasks that place AMPA/GABA synapses by spatial rule (e.g., Park2014 3-5x null/preferred IPSC asymmetry, S-0002-05 GABA/AMPA density scan) need a visual reference for the dendritic arbor, branch-order map, and soma orientation; reviewers also need a figure for any project paper. Render three QA visualisations (2D top-down dendrogram coloured by Strahler order, 2D xy projection coloured by path distance from soma, 3D rotating xyz scatter) using neurom + matplotlib (or NEURON&#x27;s PlotShape) and register the figures plus the rendering script as an answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types: data-analysis, answer-question.
+
+## Validate custom khhchan.mod biophysics with a dedicated sanity simulation
+ID: S-0007-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0007_install_neuron_netpyne
+Categories: voltage-gated-channels, compartmental-modeling
+Date added: 2026-04-19
+
+The t0007 sanity sims only exercise NEURON&#x27;s built-in hh mechanism. khhchan.mod is compiled as a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace against the built-in hh to confirm the custom mechanism produces physiologically plausible spikes before downstream retinal tasks depend on it.
+
+## Script the full NEURON + NetPyNE install for clean-machine reproduction
+ID: S-0007-02
+Status: active
+Priority: medium
+Kind: library
+Source task: t0007_install_neuron_netpyne
+Categories: compartmental-modeling
+Date added: 2026-04-19
+
+The NSIS installer&#x27;s /S flag ignored the /D= prefix, forcing an interactive GUI step. Ship a PowerShell / bash installer script that (a) downloads nrn-8.2.7-setup.exe to a known path, (b) drives the install with the correct prefix (either by default-install-then-move or by a chocolatey recipe), (c) writes the .pth file into the uv venv, and (d) runs nrnivmodl + both sanity sims end-to-end. This unblocks automated reproduction on a fresh Windows machine and Linux / macOS CI runners.
+
+## Benchmark NetPyNE harness overhead vs raw NEURON across problem sizes
+ID: S-0007-03
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0007_install_neuron_netpyne
+Categories: compartmental-modeling
+Date added: 2026-04-19
+
+At the single-compartment size, NetPyNE&#x27;s setup is ~6× slower than raw NEURON (38.7 ms vs 6.7 ms) but runtime is indistinguishable. Scan both harnesses across realistic retinal network sizes (1, 10, 100, 1000 cells; dense and sparse connectivity) to quantify where NetPyNE&#x27;s cost becomes significant for downstream t0008 / t0010 / t0011 runs, and decide whether any hot-loop experiments should stay in raw NEURON.
       </content>
     </section>
   </sections>

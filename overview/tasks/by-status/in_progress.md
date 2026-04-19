@@ -1,25 +1,29 @@
-# ⏳ Calibrate dendritic diameters for dsgc-baseline-morphology
+# ⏳ Tasks: In Progress
+
+1 tasks. ⏳ **1 in_progress**.
 
 [Back to all tasks](../README.md)
 
-## Overview
+---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0009 — <strong>Calibrate dendritic diameters for
+dsgc-baseline-morphology</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0009_calibrate_dendritic_diameters` |
-| **Status** | ⏳ in_progress |
-| **Started** | 2026-04-19T21:37:04Z |
+| **Status** | in_progress |
+| **Effective date** | 2026-04-19 |
 | **Dependencies** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source suggestion** | `S-0005-02` |
-| **Task types** | `feature-engineering`, `data-analysis` |
 | **Expected assets** | 1 dataset |
+| **Source suggestion** | `S-0005-02` |
+| **Task types** | [`feature-engineering`](../../../meta/task_types/feature-engineering/), [`data-analysis`](../../../meta/task_types/data-analysis/) |
+| **Start time** | 2026-04-19T21:37:04Z |
+| **Task page** | [Calibrate dendritic diameters for dsgc-baseline-morphology](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
 | **Task folder** | [`t0009_calibrate_dendritic_diameters/`](../../../tasks/t0009_calibrate_dendritic_diameters/) |
-
-<details>
-<summary><strong>Task Description</strong></summary>
-
-*Source:
-[`task_description.md`](../../../tasks/t0009_calibrate_dendritic_diameters/task_description.md)*
 
 # Calibrate dendritic diameters for dsgc-baseline-morphology
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-19T17:46:58Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-19T22:48:18Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>12</section_count>
-    <char_count>105877</char_count>
-    <byte_count>106060</byte_count>
-    <estimated_tokens>26469</estimated_tokens>
+    <section_count>14</section_count>
+    <char_count>154362</char_count>
+    <byte_count>154654</byte_count>
+    <estimated_tokens>38590</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
+        <id>t0007_install_neuron_netpyne</id>
       </source_ids>
       <content>
-Completed tasks: 6
+Completed tasks: 7
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -157,13 +158,18 @@ ID: t0006_brainstorm_results_2
 Completed: 2026-04-19
 Short description: Second brainstorming session: plan the compartmental-simulation tooling round (install, port, calibrate, hunt, visualise, score, cite).
 Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstorming session for the neuron-channels project. Produced seven second-wave task folders (t0007-t0013) covering NEURON+NetPyNE installation, ModelDB 189347 port plus sibling-model port, dendritic-diameter calibration, model hunt, response visualisation, tuning-curve scoring, and morphology source-paper provenance. Filed two suggestion corrections. Session Overview * **Date**: 2026-04-19 * **Context**: First task wave (t0002-t0005) completed. Quantitative targets established (DSI 0.7-0.85, peak 40-80 Hz, null &lt; 10 Hz, HWHM 60-90°); simulator choice converged on NEURON 8.2.7 + NetPyNE 1.1.1; canonical target-tuning-curve dataset...
+
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+ID: t0007_install_neuron_netpyne
+Completed: 2026-04-19
+Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0007_install_neuron_netpyne</id>
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
@@ -172,13 +178,7 @@ Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstormi
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
-
-## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
-ID: t0007_install_neuron_netpyne
-Status: not_started
-Effective date: 2026-04-19
-Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+Planned or active tasks: 6
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -189,7 +189,7 @@ Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t000
 
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-19
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Dependencies: t0005_download_dsgc_morphology
@@ -229,9 +229,10 @@ Dependencies: t0005_download_dsgc_morphology
       <source_ids>
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
         <id>dsgc-compartmental-simulator-choice</id>
+        <id>neuron-netpyne-install-report</id>
       </source_ids>
       <content>
-Answers: 2
+Answers: 3
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -248,6 +249,14 @@ Confidence: high
 Categories: compartmental-modeling, retinal-ganglion-cell
 
 Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE are rejected because Brian2&#x27;s own authors describe its multicompartment support as immature and MOOSE shows the weakest maintenance signal of the five candidates.
+
+## Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on the project&#x27;s Windows 11 workstation?
+ID: neuron-netpyne-install-report
+Created by: t0007_install_neuron_netpyne on 2026-04-19
+Confidence: high
+Categories: compartmental-modeling
+
+Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl` compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (&gt; **+20 mV** threshold) under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011 tasks.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -1981,6 +1990,794 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0007_install_neuron_netpyne-research_internet" source_kind="file">
+      <title>t0007_install_neuron_netpyne — Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0007_install_neuron_netpyne</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0007_install_neuron_netpyne/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0007_install_neuron_netpyne&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 10
+sources_cited: 14
+papers_discovered: 0
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Install NEURON 8.2.7 and NetPyNE 1.1.1 into the project&#x27;s `uv` virtualenv on Windows 11, compile the
+bundled Hodgkin-Huxley MOD files with `nrnivmodl`, run a 1-compartment HH sanity simulation twice
+(raw NEURON and via NetPyNE&#x27;s `specs.NetParams` + `sim.createSimulateAnalyze` harness), and record
+installed versions, warnings, and wall-clock timings as a single answer asset named
+`neuron-netpyne-install-report`.
+
+#### Gaps Addressed
+
+This is an infrastructure-setup task with no `research/research_papers.md`, so there are no
+literature gaps to close. The task instead demands closure of implementation-environment gaps pulled
+from the task description. Each is marked with its resolution status:
+
+1. **Does `uv pip install neuron==8.2.7` produce a working install on native Windows 11?** —
+   **Unresolved / blocker**. The NEURON PyPI project ships wheels only for Linux (manylinux 2.17+
+   x86-64) and macOS (10.15+ x86-64 and 11.0+ ARM64); there is no Windows wheel on PyPI for any
+   NEURON version including 8.2.7 [NEURON-PyPI-2026]. The official install guide is explicit: &quot;on
+   Windows, the only recommended way to install NEURON is using the binary installer&quot;
+   [NEURON-InstallDocs-2026]. `uv pip install neuron==8.2.7` on Windows will fail with &quot;no matching
+   distribution&quot; unless the user targets WSL [NEURON-InstallDocs-2026, uv-Issue1491-2024].
+
+2. **Does the NEURON pip wheel bundle a C compiler for `nrnivmodl` on Windows?** — **Not
+   applicable**. There is no pip wheel for Windows. The **Windows `.exe` installer**
+   (`nrn-8.2.7-mingw-py-39-310-311-setup.exe`) does bundle a minimal MinGW g++ toolchain so that
+   `nrnivmodl` / `mknrndll` can build `nrnmech.dll` [NEURON-WinBuild-2026, NEURON-UsingNMODL-2026].
+
+3. **Where does NEURON store its bundled Hodgkin-Huxley MOD file in the installed package?** —
+   **Resolved with a twist**. The `hh` mechanism is a **built-in** mechanism compiled into the core
+   NEURON library — `hh`, `pas`, `IClamp`, `ExpSyn`, etc. are always available even without
+   running `nrnivmodl` [NEURON-UsingNMODL-2026, NEURON-MoD-Forum-2018]. The `hh.mod` source file
+   lives at `nrn/src/nrnoc/hh.mod` in the source tree [NEURON-GH-hhMod-2024], and additional example
+   MODs live at `nrn/share/examples/nrniv/nmodl/` in the installed tree. Point 2 of the task scope
+   (&quot;compile the bundled HH MOD files with `nrnivmodl`&quot;) is therefore **technically redundant for
+   producing a working HH simulation** — `soma.insert(&#x27;hh&#x27;)` works on a fresh install with zero
+   `nrnivmodl` invocations. Running `nrnivmodl` on `share/examples/nrniv/nmodl/` is still useful as
+   a **toolchain sanity check** that confirms the compiler is functional.
+
+4. **Is NetPyNE 1.1.1 compatible with NEURON 8.2.7?** — **Resolved (soft constraint)**. NetPyNE&#x27;s
+   `setup.py` at tag v1.1.1 lists
+   `numpy, scipy, matplotlib, matplotlib-scalebar, future, pandas, bokeh, schema, lfpykit, tqdm` in
+   `install_requires` and **does not pin NEURON at all** [NetPyNE-GH-setup-2024]. The install docs
+   simply recommend &quot;the latest NEURON version&quot; and direct users to `pip install neuron`
+   [NetPyNE-InstallDocs-2026]. NEURON 8.2.7 is well within the 8.x line that NetPyNE 1.1.x targets,
+   so no version override is expected.
+
+5. **How is `nrnivmodl` invoked on Windows?** — **Resolved**. With the `.exe` installer, the
+   Windows NEURON installer adds `nrnivmodl` to PATH, so from cmd.exe or PowerShell a plain
+   `nrnivmodl` command run from the directory containing `.mod` files produces `nrnmech.dll`
+   [NEURON-MknrnDLL-Forum-2012, NEURON-UsingNMODL-2026]. Known gotcha: having Git for Windows&#x27;
+   `sh.exe` earlier on PATH than NEURON&#x27;s bundled MinGW `sh.exe` breaks MinGW makefile invocation
+   [MinGW-GH-ShConflict-2019]. From MSYS/git-bash the same command also works once PATH contains
+   `&lt;NEURONHOME&gt;/mingw/bin`.
+
+6. **What does a minimal 1-compartment HH sanity simulation look like in raw NEURON and in
+   NetPyNE?** — **Resolved**. Canonical minimal patterns are documented in the NEURON basics
+   tutorial [NEURON-Tutorial-2024] and the NetPyNE tutorial [NetPyNE-Tutorial-2026]; both are
+   reproduced in *Implementation Patterns* below.
+
+#### Search Strategy
+
+**Sources searched**: NEURON ReadTheDocs, PyPI project pages, NetPyNE documentation, NetPyNE GitHub
+(`setup.py` at tag v1.1.1), NEURON Forum (neuron.yale.edu/phpBB), GitHub issues for
+`neuronsimulator/nrn`, `astral-sh/uv`, Windows/MinGW toolchain discussions on GitHub, and general
+Google Scholar for install gotchas.
+
+**Queries executed** (10 total):
+
+1. `&quot;NEURON 8.2.7 pip install Windows nrnivmodl compiler&quot;`
+2. `&quot;NEURON simulator Windows pip wheel MinGW bundled compiler mknrndll&quot;`
+3. `&quot;NetPyNE 1.1.1 NEURON compatibility version requirements pypi&quot;`
+4. `&quot;NEURON Windows installer nrnivmodl command prompt HH hh.mod location site-packages&quot;`
+5. `&#x27;&quot;nrnivmodl&quot; Windows &quot;sh.exe&quot; mingw error path not found&#x27;`
+6. `&#x27;&quot;NEURON uv pip install Windows wheel error &quot;no matching distribution&quot;&#x27;`
+7. `&quot;NEURON Python single compartment soma hh insert stim IClamp voltage record example&quot;`
+8. `&#x27;NetPyNE single compartment &quot;hh&quot; tutorial NetParams sim.createSimulateAnalyze example&#x27;`
+9. `&quot;NEURON simulator site-packages neuron demo examples hh.mod folder python&quot;`
+10. `&#x27;&quot;nrnivmodl&quot; no mod files built-in mechanism hh don\&#x27;t need compile&#x27;`
+
+**Date range**: 2015-2026, with emphasis on 2022-2026 to capture the NEURON 8.x pip-wheel era.
+
+**Inclusion criteria**: Sources had to (a) address NEURON 8.x install on Windows, or (b) document
+NetPyNE&#x27;s NEURON dependency declaration, or (c) show a runnable 1-compartment HH example, or (d)
+describe where NEURON stores MOD files and how `nrnivmodl` compiles them. Excluded: Linux/macOS-only
+install walkthroughs (except where they establish the MOD-file layout shared with Windows), posts
+about NEURON &lt;7.6, and non-English forum threads.
+
+**Search iterations**: Queries 1-3 probed the install path directly; query 4 looked for the MOD-file
+layout after install; query 5 followed the MinGW/sh.exe thread after discovering the toolchain is
+MinGW-based; query 6 confirmed the &quot;no Windows wheel&quot; story with a wider search net; queries 7-8
+collected the sanity-simulation code templates; queries 9-10 resolved the surprise finding that `hh`
+is built in and does not require `nrnivmodl`.
+
+#### Key Findings
+
+##### The NEURON 8.2.7 PyPI wheel does not ship for Windows
+
+NEURON&#x27;s PyPI project publishes wheels only for Linux (manylinux 2.17+ x86-64) and macOS (10.15+
+x86-64 and 11.0+ ARM64) across Python 3.9-3.13 [NEURON-PyPI-2026]. **There is no Windows wheel for
+any NEURON version.** The PyPI project page explicitly notes that &quot;it is possible to install the
+Linux Python wheels on Windows via the Windows Subsystem for Linux (WSL)&quot; [NEURON-PyPI-2026]. The
+canonical install documentation repeats this: on Windows, the recommended install route is the
+`nrn-&lt;version&gt;-mingw-py-38-39-310-311-setup.exe` binary installer
+[NEURON-InstallDocs-2026, NEURON-WinBuild-2026]. The installer places NEURON&#x27;s Python module inside
+its own tree and exposes a `nrnpython` interpreter plus PATH entries; it **does not** drop a wheel
+into an arbitrary venv.
+
+**Implication for this task**: `uv pip install neuron==8.2.7` run from native Windows 11 cmd/bash
+will return `ERROR: Could not find a version that satisfies the requirement neuron==8.2.7` — the
+exact symptom documented for missing Requires-Python or OS wheel combinations [PipFlow-NoDist-2024].
+The task&#x27;s stated command is therefore expected to fail on native Windows. The task description
+anticipates this class of failure (&quot;If NEURON 8.2.7 wheels are unavailable for this Python version,
+fall back to the nearest supported patch release and record the substitution in the answer asset&quot;
+— but the root cause here is **OS**, not patch version). Two recovery paths exist:
+
+* **Path A (WSL)**: Install NEURON in WSL via `pip install neuron==8.2.7`; run the sanity sims
+  inside WSL. This matches the PyPI docs&#x27; own recommendation [NEURON-PyPI-2026].
+* **Path B (native installer)**: Run the bundled Windows `.exe` installer, then point the `uv`
+  venv&#x27;s Python at it via `PYTHONPATH`. This keeps the workflow on native Windows but does not use
+  pip.
+
+The orchestrator should pick Path A or Path B based on project conventions; the `uv pip install`
+command in the task scope will not succeed unchanged on Windows 11 native.
+
+##### The `hh` mechanism is built into core NEURON and does not need `nrnivmodl`
+
+`hh`, `pas`, `IClamp`, `ExpSyn`, `na_ion`, `k_ion` and a handful of other mechanisms are compiled
+into `libnrniv` / `libnrnoc` at NEURON build time [NEURON-UsingNMODL-2026, NEURON-MoD-Forum-2018].
+`soma.insert(&#x27;hh&#x27;)` works on a freshly installed NEURON with **zero `nrnivmodl` invocations** —
+this is why tutorials like the MIT one can do `s1.insert(&#x27;hh&#x27;)` directly without a prior compile
+step [NEURON-Tutorial-2024]. The `hh.mod` *source* file is preserved at `nrn/src/nrnoc/hh.mod` in
+the source tree [NEURON-GH-hhMod-2024] for reference and for users who want to re-derive channel
+kinetics, but it is not required at runtime.
+
+**Implication for this task**: the sanity simulation (`soma.insert(&#x27;hh&#x27;)`, 0.5 nA step, check spike)
+will run on a vanilla NEURON install even if `nrnivmodl` is never invoked. Task scope point 2
+(&quot;compile the bundled Hodgkin-Huxley MOD files with `nrnivmodl`&quot;) should be reinterpreted as a
+**toolchain-validation smoke test** rather than a prerequisite for the HH simulation: pick a trivial
+extra `.mod` (e.g., one from `share/examples/nrniv/nmodl/`) and compile it to prove `nrnivmodl` +
+the bundled MinGW compiler are wired up correctly. Record the compilation wall-clock and warnings
+exactly as the task scope demands — just flag explicitly in the answer asset that the HH sanity
+sim is independent of this compile step.
+
+##### NetPyNE 1.1.1 does not pin a NEURON version
+
+Inspection of NetPyNE&#x27;s `setup.py` at tag v1.1.1 on GitHub shows `install_requires` contains only
+`numpy, scipy, matplotlib, matplotlib-scalebar, future, pandas, bokeh, schema, lfpykit, tqdm`
+[NetPyNE-GH-setup-2024]. **NEURON is not a declared dependency** — NetPyNE assumes the user has
+installed NEURON separately, and the install docs tell users to run `pip install neuron` as a peer
+step [NetPyNE-InstallDocs-2026]. This means `uv pip install netpyne==1.1.1` will succeed independent
+of whether NEURON is installed, and will not override a pre-existing NEURON install. No NetPyNE
+1.1.1 ↔ NEURON 8.2.7 version conflict is expected; the pairing is effectively whatever NEURON the
+environment provides.
+
+##### `nrnivmodl` on Windows requires NEURON&#x27;s MinGW `sh.exe`, not Git&#x27;s
+
+The Windows NEURON installer bundles a minimal MinGW toolchain under `&lt;NEURONHOME&gt;/mingw/` that
+`nrnivmodl.bat` / `mknrndll.bat` invoke to produce `nrnmech.dll`
+[NEURON-WinBuild-2026, NEURON-UsingNMODL-2026]. A **recurring gotcha** across MinGW-based build
+systems is that Git for Windows installs its own `sh.exe` under `C:\Program Files\Git\bin\sh.exe`
+(or `usr/bin/`) and places it earlier on PATH. MinGW make explicitly refuses to work if **any**
+`sh.exe` is earlier on PATH than the MinGW-internal one, producing errors like &quot;sh.exe was found in
+your PATH&quot; [MinGW-GH-ShConflict-2019]. The same class of failure appears in reports from NEURON
+users running on Windows machines with Git installed. Mitigations:
+
+* Run `nrnivmodl` from `cmd.exe` with `C:\Program Files\Git\bin` removed from PATH for that shell.
+* Or: invoke `nrnivmodl` via the NEURON &quot;bash&quot; icon that pre-configures PATH from
+  `&lt;NEURONHOME&gt;/mingw_files/nrnmingwenv.sh` [NEURON-WinBuild-2026].
+* Or: run under WSL (Path A from the first finding).
+
+**Best practice**: when running `nrnivmodl` programmatically from Python `subprocess`, set
+`env={&quot;PATH&quot;: f&quot;{NEURONHOME}/bin;{NEURONHOME}/mingw/bin;{os.environ[&#x27;PATH&#x27;]}&quot;}` explicitly and drop
+Git-bundled `sh.exe` from the copy of PATH used for the subprocess.
+
+##### Minimal single-compartment HH sanity-simulation patterns
+
+The raw NEURON canonical pattern [NEURON-Tutorial-2024]:
+
+```python
+from neuron import h
+
+soma = h.Section(name=&quot;soma&quot;)
+soma.L = 20
+soma.diam = 20
+soma.insert(&quot;hh&quot;)
+
+stim = h.IClamp(soma(0.5))
+stim.delay = 5
+stim.dur = 50
+stim.amp = 0.5  # nA
+
+t_vec = h.Vector().record(h._ref_t)
+v_vec = h.Vector().record(soma(0.5)._ref_v)
+
+h.finitialize(-65)
+h.continuerun(100)
+```
+
+The NetPyNE canonical pattern [NetPyNE-Tutorial-2026]:
+
+```python
+from netpyne import specs, sim
+
+netParams = specs.NetParams()
+netParams.popParams[&quot;S&quot;] = {&quot;cellType&quot;: &quot;PYR&quot;, &quot;numCells&quot;: 1}
+
+cellRule = {&quot;secs&quot;: {&quot;soma&quot;: {&quot;geom&quot;: {&quot;L&quot;: 20, &quot;diam&quot;: 20, &quot;Ra&quot;: 100},
+                              &quot;mechs&quot;: {&quot;hh&quot;: {&quot;gnabar&quot;: 0.12,
+                                               &quot;gkbar&quot;: 0.036,
+                                               &quot;gl&quot;: 0.0003,
+                                               &quot;el&quot;: -54.3}}}}}
+netParams.cellParams[&quot;PYR&quot;] = cellRule
+netParams.cellParams[&quot;PYR&quot;][&quot;conds&quot;] = {&quot;cellType&quot;: &quot;PYR&quot;}
+
+netParams.stimSourceParams[&quot;Input&quot;] = {&quot;type&quot;: &quot;IClamp&quot;, &quot;delay&quot;: 5, &quot;dur&quot;: 50, &quot;amp&quot;: 0.5}
+netParams.stimTargetParams[&quot;Input-&gt;S&quot;] = {&quot;source&quot;: &quot;Input&quot;,
+                                           &quot;conds&quot;: {&quot;pop&quot;: &quot;S&quot;},
+                                           &quot;sec&quot;: &quot;soma&quot;, &quot;loc&quot;: 0.5}
+
+simConfig = specs.SimConfig()
+simConfig.duration = 100
+simConfig.dt = 0.025
+simConfig.recordTraces = {&quot;V_soma&quot;: {&quot;sec&quot;: &quot;soma&quot;, &quot;loc&quot;: 0.5, &quot;var&quot;: &quot;v&quot;}}
+simConfig.recordStep = 0.1
+
+sim.createSimulateAnalyze(netParams=netParams, simConfig=simConfig)
+```
+
+Both patterns are minimum viable. A &quot;spike&quot; is any sample in `v_vec` exceeding +20 mV, matching the
+task&#x27;s spike criterion.
+
+#### Methodology Insights
+
+* **Reinterpret the task&#x27;s `uv pip install neuron==8.2.7` command on Windows.** Native Windows has
+  no NEURON wheel on PyPI [NEURON-PyPI-2026, NEURON-InstallDocs-2026]. Use WSL (recommended) or the
+  `.exe` binary installer; record which path was chosen and why in the install report.
+
+* **Treat `nrnivmodl` as a toolchain check, not an HH prerequisite.** `hh` is built in; the sanity
+  simulation runs without any `nrnivmodl` call [NEURON-UsingNMODL-2026]. Still run `nrnivmodl` on a
+  trivial extra `.mod` as the task scope requires, and record wall-clock and warnings.
+
+* **Remove Git&#x27;s `sh.exe` from the PATH used by the `nrnivmodl` subprocess.** Mitigates the single
+  most-reported Windows-native failure mode [MinGW-GH-ShConflict-2019, NEURON-WinBuild-2026].
+
+* **Accept that NetPyNE 1.1.1 does not pin NEURON.** Any NEURON 8.x in the venv is acceptable
+  [NetPyNE-GH-setup-2024]. The task&#x27;s 8.2.7 pin is project-internal, not enforced by NetPyNE.
+
+* **Capture `neuron.__version__`, `netpyne.__version__`, and `h.nrnversion(0)` verbatim.**
+  `h.nrnversion(0)` gives the full &quot;about&quot; string including build date and MPI status, which is the
+  canonical record of which NEURON binary was actually loaded [NEURON-Tutorial-2024].
+
+* **Spike criterion**: `max(v_vec) &gt; 20` with a 0.5 nA, 50 ms step into a 20 µm x 20 µm soma is a
+  textbook suprathreshold stimulus and should produce a burst of 5-10 spikes in raw NEURON — a
+  trace with **zero** spikes indicates a failed install, not a subtle calibration issue
+  [NEURON-Tutorial-2024].
+
+**Hypotheses** (testable in the install script):
+
+* **H1**: `uv pip install neuron==8.2.7` will fail on native Windows 11 with &quot;no matching
+  distribution&quot; — confirmable by running it once and capturing the error verbatim.
+
+* **H2**: After NetPyNE 1.1.1 installs, running the NetPyNE wrapper sim produces a voltage trace
+  within **&lt; 0.1 mV RMS** of the raw-NEURON trace on the same cell, because NetPyNE is a thin
+  wrapper that calls identical NEURON primitives.
+
+* **H3**: `nrnivmodl` wall-clock for a single trivial `.mod` file on this workstation will be under
+  **20 s** on a cold build — order-of-magnitude consistent with reports from
+  [NEURON-MknrnDLL-Forum-2012].
+
+**Best practices identified**:
+
+* Always record `h.nrnversion(0)`, not just `neuron.__version__`, because the former reveals MPI,
+  Python-coupling, and build-timestamp discrepancies that the pip metadata hides.
+* Run `nrnivmodl` from a dedicated scratch directory containing only the `.mod` files being compiled
+  — it writes an `x86_64/` (or `nrnmech.dll` on Windows) output tree in the CWD that otherwise
+  pollutes source trees.
+* For NetPyNE, set `simConfig.saveJson = False` and `simConfig.saveFolder = str(...)` to avoid
+  NetPyNE writing sidecar files into whatever CWD the agent happened to pick.
+
+#### Discovered Papers
+
+No new papers were discovered. This is an infrastructure-setup task focused on toolchain validation;
+all relevant sources are documentation pages, package indices, and forum threads. Nothing in the
+reviewed material cites or defines a paper that should be added to the project&#x27;s paper corpus for
+future NEURON/NetPyNE compartmental-modelling work beyond the canonical Hines &amp; Carnevale (1997)
+reference already listed in `project/description.md`.
+
+#### Recommendations for This Task
+
+1. **Before running `uv pip install neuron==8.2.7`, check for Windows wheel availability
+   explicitly.** Run `uv pip install --dry-run neuron==8.2.7` first and capture the resolver&#x27;s
+   verdict [NEURON-PyPI-2026]. If it resolves, proceed. If it errors, record the error verbatim in
+   the answer asset and switch to Path B (native `.exe` installer) or Path A (WSL) — the task
+   description&#x27;s own Risks &amp; Fallbacks clause explicitly permits this substitution.
+
+2. **Add an intervention file if native Windows pip fails and WSL is not available.** The task
+   description&#x27;s fallback clause (&quot;If `nrnivmodl` needs `gcc`/`clang` that is not on PATH, create an
+   intervention file&quot;) should be extended: if neither pip-on-Windows nor WSL nor the binary
+   installer is available to the agent, create an intervention file requesting a human to choose
+   among the three.
+
+3. **Treat `nrnivmodl` on `share/examples/nrniv/nmodl/` as the toolchain smoke test.** `hh` is built
+   in [NEURON-UsingNMODL-2026]; `nrnivmodl` compiling a trivial extra `.mod` still proves the
+   compiler toolchain works and satisfies task scope point 2.
+
+4. **Run `nrnivmodl` with a sanitised PATH.** Explicitly remove `C:\Program Files\Git\bin` and
+   `C:\Program Files\Git\usr\bin` from the subprocess PATH to avoid the Git `sh.exe` conflict
+   [MinGW-GH-ShConflict-2019].
+
+5. **Verify spike by `max(v_vec) &gt; +20 mV`.** The task scope specifies &quot;V crosses +20 mV&quot; as the
+   spike criterion; `numpy.max(numpy.array(v_vec)) &gt; 20.0` is the one-liner check. A trace with
+   `max(v) &lt; 0 mV` almost always means `hh` was not actually inserted (typo, missing import) or the
+   IClamp delay/duration were swapped [NEURON-Tutorial-2024].
+
+6. **Record `h.nrnversion(0)` verbatim** in the answer asset alongside `neuron.__version__` and
+   `netpyne.__version__`. This is the string every downstream reproduction task will look for.
+
+7. **Record install wall-clocks per phase** (uv pip NEURON, uv pip NetPyNE, nrnivmodl, raw-NEURON
+   sim, NetPyNE sim) to give downstream tasks a runtime baseline for this workstation. Tabulate in
+   `full_answer.md` as demanded by the task description.
+
+#### Source Index
+
+##### [NEURON-InstallDocs-2026]
+
+* **Type**: documentation
+* **Title**: Installing Binary Distribution — NEURON documentation
+* **Author/Org**: NEURON Simulator project
+* **Date**: 2026 (live docs site; latest revision)
+* **URL**: https://nrn.readthedocs.io/en/latest/install/install_instructions.html
+* **Peer-reviewed**: no
+* **Relevance**: Canonical install instructions. States unambiguously that Windows native install
+  must use the `.exe` binary installer, not pip, and documents that the installer bundles a MinGW
+  g++ toolchain for `nrnivmodl`.
+
+##### [NEURON-WinBuild-2026]
+
+* **Type**: documentation
+* **Title**: Windows build — NEURON documentation
+* **Author/Org**: NEURON Simulator project
+* **Date**: 2026
+* **URL**: https://nrn.readthedocs.io/en/latest/install/windows.html
+* **Peer-reviewed**: no
+* **Relevance**: Windows-specific install and build guidance. Documents the
+  `nrn-&lt;version&gt;-mingw-py-38-39-310-311-setup.exe` naming convention, the bundled MinGW toolchain,
+  and how `nrnivmodl` is wired up via `mingw_files/nrnmingwenv.sh`.
+
+##### [NEURON-PyPI-2026]
+
+* **Type**: documentation
+* **Title**: neuron 8.2.7 — PyPI project page
+* **Author/Org**: NEURON Simulator project / PyPI
+* **Date**: 2026
+* **URL**: https://pypi.org/project/neuron/8.2.7/
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative record of which wheels exist. Confirms no Windows wheel for 8.2.7 —
+  the core finding that blocks the task&#x27;s `uv pip install neuron==8.2.7` command on native Windows.
+
+##### [NEURON-UsingNMODL-2026]
+
+* **Type**: documentation
+* **Title**: Using NMODL Files
+* **Author/Org**: NEURON Simulator project (neuron.yale.edu)
+* **Date**: 2026
+* **URL**: https://neuron.yale.edu/neuron/docs/using-nmodl-files
+* **Peer-reviewed**: no
+* **Relevance**: Documents the built-in mechanisms (`hh`, `pas`, `IClamp`, `ExpSyn`) that are always
+  available without `nrnivmodl`. Key source for the finding that the HH sanity simulation does not
+  actually require a compile step.
+
+##### [NEURON-GH-hhMod-2024]
+
+* **Type**: repository
+* **Title**: nrn/src/nrnoc/hh.mod
+* **Author/Org**: NEURON Simulator project (GitHub)
+* **Date**: 2024 (latest commit on master)
+* **URL**: https://github.com/neuronsimulator/nrn/blob/master/src/nrnoc/hh.mod
+* **Last updated**: 2024
+* **Peer-reviewed**: no
+* **Relevance**: The canonical Hodgkin-Huxley MOD file inside the NEURON source tree. Useful as the
+  reference for gnabar, gkbar, gl, el defaults cited in the NetPyNE sanity example.
+
+##### [NEURON-MknrnDLL-Forum-2012]
+
+* **Type**: forum
+* **Title**: Running mknrndll from the command line
+* **Author/Org**: NEURON user forum (neuron.yale.edu/phpBB)
+* **Date**: 2012 (thread with updates through 2020)
+* **URL**: https://www.neuron.yale.edu/phpBB/viewtopic.php?t=2777
+* **Peer-reviewed**: no
+* **Relevance**: Long-running thread documenting how `mknrndll` / `nrnivmodl` is invoked on Windows,
+  including the MinGW PATH setup. Note: forum content; treat as practitioner experience rather than
+  official spec.
+
+##### [NEURON-Tutorial-2024]
+
+* **Type**: documentation
+* **Title**: A NEURON Programming Tutorial, Part B
+* **Author/Org**: MIT / NEURON project (mirror of Hines &amp; Carnevale tutorial)
+* **Date**: 2024 (stable tutorial)
+* **URL**: http://web.mit.edu/neuron_v7.4/nrntuthtml/tutorial/tutB.html
+* **Peer-reviewed**: no (tutorial)
+* **Relevance**: Canonical single-compartment HH example. Supplies the raw-NEURON code template for
+  the sanity simulation and the `soma.insert(&#x27;hh&#x27;)` idiom.
+
+##### [NEURON-MoD-Forum-2018]
+
+* **Type**: forum
+* **Title**: mod files: what they are, and how to use them
+* **Author/Org**: NEURON user forum (neuron.yale.edu/phpBB)
+* **Date**: 2018
+* **URL**: https://www.neuron.yale.edu/phpBB/viewtopic.php?t=3263
+* **Peer-reviewed**: no
+* **Relevance**: Community-written explanation of the distinction between built-in and user MOD
+  mechanisms. Cross-confirms the &quot;hh is built in&quot; finding.
+
+##### [NetPyNE-InstallDocs-2026]
+
+* **Type**: documentation
+* **Title**: Installation — NetPyNE documentation
+* **Author/Org**: SUNY Downstate NetPyNE project
+* **Date**: 2026
+* **URL**: http://doc.netpyne.org/install.html
+* **Peer-reviewed**: no
+* **Relevance**: Official NetPyNE install docs. Confirms Linux/macOS as primary platforms, does not
+  pin a specific NEURON version, and recommends `pip install neuron` as a peer step.
+
+##### [NetPyNE-GH-setup-2024]
+
+* **Type**: repository
+* **Title**: netpyne/setup.py at tag v1.1.1
+* **Author/Org**: suny-downstate-medical-center/netpyne
+* **Date**: 2024
+* **URL**: https://github.com/suny-downstate-medical-center/netpyne/blob/v1.1.1/setup.py
+* **Last updated**: 2024
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative dependency declaration for NetPyNE 1.1.1. Confirms the package does
+  not pin any NEURON version, so NetPyNE 1.1.1 ↔ NEURON 8.2.7 is expected to work.
+
+##### [NetPyNE-Tutorial-2026]
+
+* **Type**: documentation
+* **Title**: NetPyNE Tutorial
+* **Author/Org**: SUNY Downstate NetPyNE project
+* **Date**: 2026
+* **URL**: http://doc.netpyne.org/tutorial.html
+* **Peer-reviewed**: no
+* **Relevance**: Canonical NetPyNE HH network example. Supplies the `specs.NetParams` /
+  `sim.createSimulateAnalyze` template adapted for the single-cell sanity simulation.
+
+##### [MinGW-GH-ShConflict-2019]
+
+* **Type**: forum
+* **Title**: MinGW not usable because there is Git&#x27;s sh.exe in the PATH
+* **Author/Org**: actions/runner-images (GitHub Issues)
+* **Date**: 2019
+* **URL**: https://github.com/actions/virtual-environments/issues/111
+* **Peer-reviewed**: no
+* **Relevance**: Documents the Git-`sh.exe`-on-PATH problem that breaks MinGW makefile-based builds.
+  Applies directly to NEURON&#x27;s `nrnivmodl` on Windows, which invokes MinGW make internally.
+
+##### [uv-Issue1491-2024]
+
+* **Type**: forum
+* **Title**: `uv pip install` inconsistent failure on Windows
+* **Author/Org**: astral-sh/uv (GitHub Issues)
+* **Date**: 2024
+* **URL**: https://github.com/astral-sh/uv/issues/1491
+* **Peer-reviewed**: no
+* **Relevance**: Documents `uv`-specific quirks on Windows package resolution. Context for the
+  expected &quot;no matching distribution&quot; behaviour when the target wheel is genuinely missing from PyPI
+  for the Windows/Python combination.
+
+##### [PipFlow-NoDist-2024]
+
+* **Type**: documentation
+* **Title**: ERROR: No matching distribution found
+* **Author/Org**: RepoFlow documentation
+* **Date**: 2024
+* **URL**: https://www.repoflow.io/errors/pip/no-matching-distribution-found
+* **Peer-reviewed**: no
+* **Relevance**: General reference for the error class that `uv pip install neuron==8.2.7` will
+  produce on Windows. Explains the three common root causes (Python version, OS/arch, Python ABI).
+      </content>
+    </section>
+    <section id="t0007_install_neuron_netpyne-research_code" source_kind="file">
+      <title>t0007_install_neuron_netpyne — Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0007_install_neuron_netpyne</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0007_install_neuron_netpyne/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0007_install_neuron_netpyne&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 6
+tasks_cited: 4
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Install and validate NEURON 8.2.7 + NetPyNE 1.1.1
+
+#### Task Objective
+
+Install NEURON 8.2.7 and NetPyNE 1.1.1 into the project&#x27;s `uv` virtualenv on Windows 11, compile the
+bundled Hodgkin-Huxley MOD files with `nrnivmodl`, run a 1-compartment HH sanity simulation twice
+(raw NEURON and via NetPyNE&#x27;s `specs.NetParams` + `sim.createSimulateAnalyze` harness), and record
+the installed versions, warnings, wall-clock timings, and voltage traces as a single answer asset
+named `neuron-netpyne-install-report`. The known Windows constraint (no PyPI wheel, installer-based
+path only) must be handled as a primary-path fork, not a late fallback.
+
+#### Library Landscape
+
+No library assets exist anywhere in the project yet. A manual walk of `tasks/*/assets/library/`
+returned zero entries — confirming the aggregate_libraries aggregator result (the aggregator
+script is not yet implemented in `arf/scripts/aggregators/`, but the filesystem is authoritative
+because no prior task has produced a library asset). The first library assets are scheduled for
+t0008 (ModelDB 189347 NEURON port), t0011 (response-visualisation library) and t0012 (tuning-curve
+scoring library), all of which depend on t0007 finishing first. The Library Landscape is therefore
+empty by construction: this is the first NEURON/NetPyNE-bearing task in the repo and has nothing to
+inherit via the `tasks.tNNNN.code.*` library-import mechanism.
+
+#### Key Findings
+
+##### NEURON Windows install path is settled upstream — the task plan just has to pick one
+
+Every concrete install fact this task needs was already produced and vetted by the simulator-choice
+task [t0003] and the internet research stage of this task. [t0003]&#x27;s answer asset
+`dsgc-compartmental-simulator-choice` cements NEURON 8.2.7 + NetPyNE 1.1.1 as the primary stack and
+lists
+`tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/full_answer.md`
+as the canonical version-matrix reference. The unresolved gap is entirely OS-platform: NEURON
+publishes no Windows PyPI wheel, so the task&#x27;s stated `uv pip install neuron==8.2.7` command fails
+with &quot;no matching distribution&quot; on native Windows 11. Two recovery paths are documented: (a) install
+inside WSL and run the sanity sims there, or (b) run the Windows `.exe` installer
+(`nrn-8.2.7-mingw-py-...-setup.exe`) and point the venv at it. Path (a) matches the PyPI project&#x27;s
+own recommendation; path (b) keeps execution on native Windows. The implementation must pick one at
+planning time and record the decision in the `neuron-netpyne-install-report` answer asset. No prior
+task has installed NEURON or NetPyNE, so there is no in-repo installation telemetry to consult.
+
+##### `hh` is a built-in mechanism, so `nrnivmodl` is a toolchain smoke-test, not a prerequisite
+
+The task description reads as if `nrnivmodl` must compile `hh.mod` before `soma.insert(&#x27;hh&#x27;)` can
+work. Research shows this is false: `hh`, `pas`, `IClamp`, `ExpSyn`, `na_ion`, `k_ion` are compiled
+into `libnrniv` at NEURON build time. `soma.insert(&#x27;hh&#x27;)` works on a fresh install with zero
+`nrnivmodl` invocations. The practical consequence for the implementation: pick any trivial extra
+`.mod` (NEURON ships examples under `share/examples/nrniv/nmodl/` in the installed tree) and compile
+that to prove the toolchain is wired up. Record compilation wall-clock and warnings as the task
+demands, but flag explicitly in the answer asset that the HH sanity sim does not depend on it.
+
+##### `run_with_logs.py` is a working, widely-used wrapper — use it for every shell call
+
+The wrapper lives at `arf/scripts/utils/run_with_logs.py` and has been used heavily by [t0005] (21+
+calls including a `curl` download, a bash `uv run python` validator, and a verify-dataset run) and
+by [t0004] (multiple `uv run ruff`, `uv run mypy`, `uv run pytest` calls). Its CLI is:
+
+```bash
+uv run python -u -m arf.scripts.utils.run_with_logs --task-id &lt;task_id&gt; -- &lt;command...&gt;
+```
+
+It creates `tasks/&lt;task_id&gt;/logs/commands/NNN_&lt;timestamp&gt;_&lt;slug&gt;.{json,stdout.txt,stderr.txt}` with
+a frozen Pydantic `CommandLogEntry` schema (`spec_version`, `task_id`, `command`, `exit_code`,
+`duration_seconds`, `started_at`, `completed_at`, `working_directory`, stdout/stderr line counts,
+`truncated` flag). Secrets matching `api_key=...`, `Bearer ...`, JSON `&quot;token&quot;: &quot;...&quot;` etc. are
+redacted before write. `VIRTUAL_ENV` is scrubbed from the child env to silence `uv` worktree
+warnings. `MAX_OUTPUT_LINES = 10_000` applies per stream with the last-N-lines retained on
+truncation. This is the only supported way to shell out to `uv pip install neuron==8.2.7`,
+`nrnivmodl`, or the `.exe` installer — the rule is enforced by project CLAUDE.md §Key Rules, and
+the verificator reads `logs/commands/` to confirm compliance.
+
+##### Typed frozen dataclass + paths.py module is the canonical code pattern
+
+[t0004]&#x27;s `code/generate_target.py` and `code/paths.py` demonstrate the repo&#x27;s code shape for a
+script-producing task. `paths.py` centralises every output path as a module-level `Path` constant
+derived from `TASK_ROOT = Path(__file__).resolve().parent.parent`. `generate_target.py` is a single
+executable module using `@dataclass(frozen=True, slots=True)` for parameter bundles, explicit type
+annotations on every variable (`angles_rad: np.ndarray = ...`), `matplotlib.use(&quot;Agg&quot;)` before
+`pyplot` is imported (critical for headless runs), `assert` for positive-framed precondition checks,
+and keyword-only call sites. [t0005]&#x27;s `code/validate_swc.py` adds the stdlib-first pattern (avoid
+new pip dependencies when possible) and the &quot;try an optional import&quot; hedge via
+`importlib.import_module(&quot;neurom&quot;)` with a string-valued status return when the library is missing
+— a direct template for the `import neuron` / `import netpyne` sanity probe this task needs.
+
+##### Answer asset v2 is the exact output shape this task requires
+
+The task&#x27;s sole expected asset is a v2 answer, and [t0003] and [t0002] each produced one. [t0003]&#x27;s
+`dsgc-compartmental-simulator-choice` (categories `compartmental-modeling`, `retinal-ganglion-cell`;
+`answer_methods: [&quot;internet&quot;]`; `confidence: &quot;high&quot;`; 20 `source_urls`) is the closest template
+because it answers a single simulator-tooling question. [t0002]&#x27;s
+`how-does-dsgc-literature-structure-the-five-research-questions` (`answer_methods` with `&quot;papers&quot;`)
+shows the paper-source variant. Both use slug-based folder names matching
+`^[a-z0-9]+(-[a-z0-9]+)*$`; the task&#x27;s stated `neuron-netpyne-install-report` already matches. Both
+ship `details.json` + `short_answer.md` + `full_answer.md`; the paths are set explicitly in
+`details.json` (`short_answer_path`, `full_answer_path`) — v2 assets must declare them. For this
+task, `answer_methods` should be `[&quot;code-experiment&quot;]` (install + two sims are code experiments) and
+`confidence: &quot;high&quot;` matches the pattern in [t0003].
+
+##### Headless matplotlib and `results/images/` convention
+
+Both [t0004] (`PLOT_PATH = RESULTS_IMAGES_DIR / &quot;target_tuning_curve.png&quot;`) and the repo markdown
+style guide treat `results/images/` as the canonical location for PNG charts used in reports. The
+task description asks for voltage traces &quot;embedded as PNGs in `files/images/`&quot; inside the answer
+asset — this is a deliberate asset-scoped override because the PNGs belong to the answer, not the
+generic `results/` reporting area. Both locations are valid under spec; the answer-asset path is
+closer to what this task demands. Regardless, `matplotlib.use(&quot;Agg&quot;)` must be called before
+`import matplotlib.pyplot as plt`, per [t0004]&#x27;s working example.
+
+#### Reusable Code and Assets
+
+1. `tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/`
+   * **What it does**: Canonical simulator-choice answer asset; sets versions and backup strategy.
+   * **Reuse method**: **read-only reference** (consumed as input evidence, not code). Cite in the
+     new answer asset&#x27;s `source_task_ids` or as prose evidence. Do not copy files.
+   * **Structure**: `details.json` (v2), `short_answer.md` (37 lines), `full_answer.md` (comparison
+     table + 20 URL citations). Use as the template for the shape of the new answer.
+   * **Adaptation needed**: none — read-only input.
+
+2. `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/answer/how-does-dsgc-literature-structure-the-five-research-questions/`
+   * **What it does**: Second concrete v2 answer asset in the project (paper-sourced variant).
+   * **Reuse method**: **read-only reference** for `answer_methods: [&quot;papers&quot;]` shape only; this
+     task uses `[&quot;code-experiment&quot;]`.
+   * **Adaptation needed**: none — read-only input.
+
+3. `arf/scripts/utils/run_with_logs.py`
+   * **What it does**: Wraps every shell call, captures stdout/stderr, writes a structured JSON log
+     under `logs/commands/`.
+   * **Reuse method**: **invoke via CLI** —
+     `uv run python -u -m arf.scripts.utils.run_with_logs --task-id t0007_install_neuron_netpyne -- &lt;command...&gt;`.
+     This is framework code, not task code; it is never copied.
+   * **Key API**: single CLI with `--task-id &lt;task_id&gt;`, then `--` separator, then the command
+     tokens. Exit code propagates from the child process. Any `VIRTUAL_ENV` env var is stripped in
+     the child, so calls from the outer shell into a sibling worktree do not print uv warnings.
+   * **Adaptation needed**: none.
+
+4. `tasks/t0004_generate_target_tuning_curve/code/paths.py` (≈18 lines)
+   * **What it does**: Demonstrates the `TASK_ROOT = Path(__file__).resolve().parent.parent` idiom
+     plus explicit typed `Path` constants for every output.
+   * **Reuse method**: **copy into task** — create
+     `tasks/t0007_install_neuron_netpyne/code/paths.py` with the same idiom but pointing at
+     `assets/answer/neuron-netpyne-install-report/` and its `files/`, `files/images/`
+     subdirectories.
+   * **Adaptation needed**: change `DATASET_ID` → `ANSWER_ID`, update downstream paths (no CSVs
+     here; instead `install_log.txt`, `nrnivmodl_output.txt`, `neuron_trace.csv`,
+     `netpyne_trace.csv`, `neuron_trace.png`, `netpyne_trace.png`).
+   * **Estimated size**: ~25 lines.
+
+5. `tasks/t0004_generate_target_tuning_curve/code/generate_target.py` (≈258 lines)
+   * **What it does**: End-to-end example of a task&#x27;s `code/&lt;script&gt;.py`: typed params dataclass,
+     pure-function compute steps, CSV writers, matplotlib `Agg` plotting, argparse-free `main()`.
+   * **Reuse method**: **copy patterns, not code** — structural template only. The NEURON +
+     NetPyNE simulation and the `subprocess`-free approach (this task calls `run_with_logs` via the
+     CLI, not via a Python `subprocess.run`) are entirely new.
+   * **Adaptation needed**: entire compute replaced with two sanity-sim functions
+     (`run_raw_neuron_sim()`, `run_netpyne_sim()`), each returning a frozen
+     `@dataclass(frozen=True, slots=True) SimResult(t_vec, v_vec, n_spikes, wall_clock_s)`.
+   * **Estimated size**: new module ~200 lines modelled on this file&#x27;s structure.
+
+6. `tasks/t0005_download_dsgc_morphology/code/validate_swc.py` (≈237 lines)
+   * **What it does**: Demonstrates the stdlib-first pattern, the optional-import hedge
+     (`importlib.import_module(&quot;neurom&quot;)`) with a string status return, frozen dataclass summary,
+     and `argparse` CLI.
+   * **Reuse method**: **copy pattern** — the optional-import hedge is the exact shape needed for
+     the `import neuron` / `import netpyne` version probe at the top of `install_and_validate.py`.
+     Do not copy the SWC parsing code.
+   * **Adaptation needed**: replace `neurom.load_morphology` with `neuron.__version__` +
+     `import neuron; h = neuron.h; h(&#x27;nrnversion()&#x27;)` and `netpyne.__version__`.
+   * **Estimated size**: ~30 lines of the optional-import pattern reused.
+
+#### Lessons Learned
+
+* **No prior task has installed a Python package via `uv pip install`**. [t0005] used `curl` for a
+  file download; [t0004] and [t0005] only ran `uv run python`, `uv run ruff`, `uv run mypy`,
+  `uv run flowmark`. Running `uv pip install neuron==8.2.7 netpyne==1.1.1` wrapped in
+  `run_with_logs` is therefore a new code path for this repo — expect surprises around exit codes,
+  stderr warnings that are not errors, and `uv`&#x27;s `VIRTUAL_ENV` handling. Allow extra wall-clock in
+  the plan.
+* **Verificator availability is inconsistent**. [t0004]&#x27;s and [t0005]&#x27;s results summaries both note
+  that `verify_dataset_asset.py` is not implemented; both worked around it by applying the dataset
+  spec rules manually. The answer-asset verificator (`verify_answer_asset.py`) exists and was run
+  clean by [t0003]; this task should rely on it for the sole expected asset.
+* **Plan ambiguity about `.mod` file compilation**. [t0005] logged a deliberate deviation
+  (`dsgc_baseline_morphology` → `dsgc-baseline-morphology`) in its plan. This task will similarly
+  need to document the &quot;`hh` is built-in, so `nrnivmodl` compiles a different `.mod`&quot; deviation from
+  the literal task description, in the plan&#x27;s Task Requirement Checklist and in the answer asset
+  itself.
+* **Intervention mechanism is defined but never exercised**. No `intervention/*.json` file exists in
+  any completed task. The task description calls for an intervention file if `gcc`/`clang` is
+  missing for `nrnivmodl`; if that path triggers, this task will be the first to write one, and its
+  format should be locked down by re-reading the intervention verificator output before writing.
+* **Headless plotting must be set up explicitly**. [t0004] called `matplotlib.use(&quot;Agg&quot;)` before
+  importing `pyplot`. Skipping this step on Windows can produce a &quot;no DISPLAY&quot; error when running
+  under WSL via an X-forwarding shell, or interactive-backend warnings on native Windows.
+
+#### Recommendations for This Task
+
+1. **Pick the install path up-front (WSL vs Windows `.exe`) and commit to one in the plan.** Do not
+   branch at implementation time. The choice should be recorded in a `### Install Path` subsection
+   of the plan. Evidence: [t0003]&#x27;s answer asset sets the version pair; research_internet.md
+   documents that the literal `uv pip install neuron==8.2.7` cannot succeed natively on Windows.
+2. **Copy [t0004]&#x27;s `paths.py` + `generate_target.py` structure into
+   `tasks/t0007_install_neuron_netpyne/code/`**, then replace the compute with two sanity-sim
+   functions and a `main()` that orchestrates install → nrnivmodl → sim-raw → sim-netpyne →
+   write answer asset. Keep the typed frozen-dataclass convention and the explicit
+   `matplotlib.use(&quot;Agg&quot;)` line from [t0004].
+3. **Wrap every shell-out (`uv pip install`, `nrnivmodl`, the `.exe` installer if Path B is taken)
+   in `arf/scripts/utils/run_with_logs.py`**, following [t0005]&#x27;s 21-call usage pattern. Invoke it
+   as a CLI subprocess from the task&#x27;s `install_and_validate.py`, not from inside Python via
+   `subprocess.run`; this keeps the logging surface centralised.
+4. **Use [t0005]&#x27;s optional-import hedge pattern** (`importlib.import_module` wrapped in
+   `try/except ImportError`) for the `import neuron` and `import netpyne` probes so that a failed
+   install produces a clean status string in the answer asset instead of an uncaught `ImportError`.
+5. **Model the answer asset on [t0003]&#x27;s `dsgc-compartmental-simulator-choice`** — v2 spec,
+   explicit `short_answer_path`/`full_answer_path`, `answer_methods: [&quot;code-experiment&quot;]`,
+   `categories: [&quot;compartmental-modeling&quot;]` (add `retinal-ganglion-cell` only if the report relates
+   the install to RGC work; otherwise omit), `confidence: &quot;high&quot;`. Embed voltage-trace PNGs under
+   `assets/answer/neuron-netpyne-install-report/files/images/` per the task description.
+6. **Re-interpret task scope point 2 before coding.** Document the &quot;`hh` is built-in&quot; finding in the
+   plan&#x27;s Task Requirement Checklist as an explicit deviation, then pick a trivial alternate `.mod`
+   from `&lt;NEURONHOME&gt;/share/examples/nrniv/nmodl/` for the `nrnivmodl` smoke test. Record which
+   `.mod` was chosen and why in the short answer.
+
+#### Task Index
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: compartmental models of DS retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Second concrete v2 answer-asset example in the project. Referenced as a template
+  for `answer_methods: [&quot;papers&quot;]`-shaped assets (this task will produce a different-methods
+  variant).
+
+##### [t0003]
+
+* **Task ID**: `t0003_simulator_library_survey`
+* **Name**: Simulator library survey for DSGC compartmental modelling
+* **Status**: completed
+* **Relevance**: Upstream decision task that picked NEURON 8.2.7 + NetPyNE 1.1.1. Its answer asset
+  `dsgc-compartmental-simulator-choice` is the canonical version reference and the closest v2
+  answer-asset template (single simulator-tooling question). This task&#x27;s report must be consistent
+  with [t0003]&#x27;s recommendations.
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate canonical target angle-to-AP-rate tuning curve
+* **Status**: completed
+* **Relevance**: Canonical example of the repo&#x27;s task-code layout: `code/paths.py` for centralised
+  Path constants and `code/&lt;script&gt;.py` for a typed, frozen-dataclass implementation with
+  `matplotlib.use(&quot;Agg&quot;)` and a `main()` entry point. This task will copy the structural pattern.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download candidate DSGC morphology
+* **Status**: completed
+* **Relevance**: Only prior task that shelled out heavily via `run_with_logs.py` (21+ commands
+  including `curl` downloads). Source of the optional-import hedge pattern in `validate_swc.py` that
+  will be reused for the `import neuron` / `import netpyne` probe. Also the template for the
+  &quot;document plan deviation in the Task Requirement Checklist&quot; pattern.
       </content>
     </section>
   </sections>

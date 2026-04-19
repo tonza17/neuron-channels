@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-0-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-2-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-3-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-13-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-23-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-26-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-2-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (5K) |
-[full](llm-context/full.xml) (41K) | [roadmap](llm-context/roadmap.xml) (17K) |
-[results](llm-context/results-deep-dive.xml) (20K) |
+[full](llm-context/full.xml) (46K) | [roadmap](llm-context/roadmap.xml) (17K) |
+[results](llm-context/results-deep-dive.xml) (23K) |
 [assets](llm-context/literature-and-assets.xml) (10K)
 
-*Last updated: 2026-04-19 17:46 UTC*
+*Last updated: 2026-04-19 22:48 UTC*
 
 * **Budget**: **$0** spent of $0
 * **Remaining**: **$0**
@@ -47,18 +47,18 @@ No daily news yet.
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | 2026-04-19 21:37 |
 
 ---
 
-## [Ready to Start (4)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`description`](../tasks/t0007_install_neuron_netpyne/task_description.md) | 2026-04-19 |
-| 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`description`](../tasks/t0009_calibrate_dendritic_diameters/task_description.md) | 2026-04-19 |
 | 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`description`](../tasks/t0012_tuning_curve_scoring_loss_library/task_description.md) | 2026-04-19 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`description`](../tasks/t0013_resolve_morphology_provenance/task_description.md) | 2026-04-19 |
 
@@ -68,16 +68,17 @@ No tasks in progress.
 
 | # | Task | Blocked By |
 |---|------|------------|
-| 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`t0007_install_neuron_netpyne`](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`t0009_calibrate_dendritic_diameters`](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`t0008_port_modeldb_189347`](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`t0008_port_modeldb_189347`](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
 
 ---
 
-## [Recently Completed (6 total)](tasks/by-status/completed.md)
+## [Recently Completed (7 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`results`](../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) | 2026-04-19 22:43 |
 | 0006 | [Brainstorm results session 2](../overview/tasks/task_pages/t0006_brainstorm_results_2.md) | [`results`](../tasks/t0006_brainstorm_results_2/results/results_detailed.md) | 2026-04-19 11:00 |
 | 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`results`](../tasks/t0005_download_dsgc_morphology/results/results_detailed.md) | 2026-04-19 09:28 |
 | 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`results`](../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) | 2026-04-19 08:42 |
@@ -87,7 +88,7 @@ No tasks in progress.
 
 ---
 
-## [Recent Suggestions (18 open)](suggestions/)
+## [Recent Suggestions (21 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -262,11 +263,11 @@ as the main Arbor adoption risk.
 
 </details>
 
-*8 more open suggestions → [open suggestions](suggestions/)*
+*11 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (5)](suggestions/)
+## [High Priority Suggestions (6)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -350,9 +351,24 @@ reproducible from parameters alone.
 
 </details>
 
+<details>
+<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
+simulation</strong> (S-0007-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0007_install_neuron_netpyne](../tasks/t0007_install_neuron_netpyne/)
+
+The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
+a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
+1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
+against the built-in hh to confirm the custom mechanism produces physiologically plausible
+spikes before downstream retinal tasks depend on it.
+
+</details>
+
 ---
 
-## [Recent Answers (2 total)](answers/)
+## [Recent Answers (3 total)](answers/)
 
 <details>
 <summary><strong>Which compartmental simulator should the direction-selective
@@ -367,6 +383,24 @@ optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x sin
 speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
 are rejected because Brian2's own authors describe its multicompartment support as immature
 and MOOSE shows the weakest maintenance signal of the five candidates.
+
+</details>
+
+<details>
+<summary><strong>Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile
+MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on
+the project's Windows 11 workstation?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
+[`neuron-netpyne-install-report`](../tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/)
+
+Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary
+wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl`
+compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw
+NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (> **+20 mV** threshold)
+under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time
+is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011
+tasks.
 
 </details>
 

@@ -1,12 +1,43 @@
 # Answers by Date Added
 
-2 answer(s) grouped by creation date.
+3 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-04-19 (1)
+## 2026-04-19 (2)
+
+<details>
+<summary><strong>Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile
+MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on
+the project's Windows 11 workstation?</strong></summary>
+
+**Confidence**: high
+
+Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary
+wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl`
+compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw
+NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (> **+20 mV** threshold)
+under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time
+is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011
+tasks.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/full_answer.md) |
+| **ID** | [`neuron-netpyne-install-report`](../../../tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/) |
+| **Question** | Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on the project's Windows 11 workstation? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-04-19 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
+| **URL sources** | [url 1](https://github.com/neuronsimulator/nrn/releases/tag/8.2.7), [url 2](https://www.neuron.yale.edu/neuron/download), [url 3](https://netpyne.org/install.html), [url 4](https://pypi.org/project/netpyne/1.1.1/) |
+| **Created by** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
+
+</details>
 
 <details>
 <summary><strong>Which compartmental simulator should the direction-selective

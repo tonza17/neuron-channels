@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T17:46:58Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T22:48:18Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>10</section_count>
-    <char_count>80862</char_count>
-    <byte_count>81226</byte_count>
-    <estimated_tokens>20215</estimated_tokens>
+    <section_count>11</section_count>
+    <char_count>93017</char_count>
+    <byte_count>93444</byte_count>
+    <estimated_tokens>23254</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
+        <id>t0007_install_neuron_netpyne</id>
       </source_ids>
       <content>
-Completed tasks: 6
+Completed tasks: 7
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -157,13 +158,18 @@ ID: t0006_brainstorm_results_2
 Completed: 2026-04-19
 Short description: Second brainstorming session: plan the compartmental-simulation tooling round (install, port, calibrate, hunt, visualise, score, cite).
 Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstorming session for the neuron-channels project. Produced seven second-wave task folders (t0007-t0013) covering NEURON+NetPyNE installation, ModelDB 189347 port plus sibling-model port, dendritic-diameter calibration, model hunt, response visualisation, tuning-curve scoring, and morphology source-paper provenance. Filed two suggestion corrections. Session Overview * **Date**: 2026-04-19 * **Context**: First task wave (t0002-t0005) completed. Quantitative targets established (DSI 0.7-0.85, peak 40-80 Hz, null &lt; 10 Hz, HWHM 60-90°); simulator choice converged on NEURON 8.2.7 + NetPyNE 1.1.1; canonical target-tuning-curve dataset...
+
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+ID: t0007_install_neuron_netpyne
+Completed: 2026-04-19
+Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0007_install_neuron_netpyne</id>
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
@@ -172,13 +178,7 @@ Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstormi
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
-
-## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
-ID: t0007_install_neuron_netpyne
-Status: not_started
-Effective date: 2026-04-19
-Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+Planned or active tasks: 6
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -189,7 +189,7 @@ Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t000
 
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-19
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Dependencies: t0005_download_dsgc_morphology
@@ -229,9 +229,10 @@ Dependencies: t0005_download_dsgc_morphology
       <source_ids>
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
         <id>dsgc-compartmental-simulator-choice</id>
+        <id>neuron-netpyne-install-report</id>
       </source_ids>
       <content>
-Answers: 2
+Answers: 3
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -248,6 +249,14 @@ Confidence: high
 Categories: compartmental-modeling, retinal-ganglion-cell
 
 Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE are rejected because Brian2&#x27;s own authors describe its multicompartment support as immature and MOOSE shows the weakest maintenance signal of the five candidates.
+
+## Does the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain install, compile MOD files, and run a 1-compartment Hodgkin-Huxley sanity simulation on the project&#x27;s Windows 11 workstation?
+ID: neuron-netpyne-install-report
+Created by: t0007_install_neuron_netpyne on 2026-04-19
+Confidence: high
+Categories: compartmental-modeling
+
+Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl` compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (&gt; **+20 mV** threshold) under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011 tasks.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-results-detailed" source_kind="file">
@@ -1222,6 +1231,173 @@ clear enough to design it meaningfully.
   will verify themselves when they run.
 * Suggestion reprioritisation relies on the researcher&#x27;s domain judgement; no quantitative check
   validated the HIGH → MEDIUM demotion.
+      </content>
+    </section>
+    <section id="t0007_install_neuron_netpyne-results-detailed" source_kind="file">
+      <title>t0007_install_neuron_netpyne — Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0007_install_neuron_netpyne</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0007_install_neuron_netpyne/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0007_install_neuron_netpyne&quot;
+---
+### Detailed Results: NEURON 8.2.7 + NetPyNE 1.1.1 install
+
+#### Summary
+
+Installed NEURON 8.2.7 + NetPyNE 1.1.1 on the project&#x27;s Windows 11 workstation, wired the NEURON
+Python bindings into the uv venv via a `.pth` file, compiled `khhchan.mod` with `nrnivmodl`, and
+executed two Hodgkin-Huxley single-compartment sanity simulations (raw NEURON and NetPyNE) that both
+fire action potentials peaking at **42.003 mV**. Published the `neuron-netpyne-install-report`
+answer asset with an eight-section report and embedded trace plots.
+
+#### Methodology
+
+The install ran in three phases: (1) NEURON core install from the official `nrn-8.2.7-setup.exe`
+Windows installer, (2) NetPyNE install via `uv pip install netpyne==1.1.1` into the repository&#x27;s uv
+venv, and (3) sanity verification through two parallel Hodgkin-Huxley single-compartment simulations
+— one in raw NEURON and one wrapped through NetPyNE&#x27;s `specs.NetParams` / `specs.SimConfig`
+harness.
+
+##### Machine Specs
+
+* Hardware: Windows 11 Education 22631, 16-core x86_64 workstation.
+* Python: 3.13 (pinned by `.python-version`); uv-managed venv at `&lt;repo&gt;\.venv`.
+* NEURON: 8.2.7+ (HEAD 34cf696+, release build 2025-05-21) installed to `C:\Users\md1avn\nrn-8.2.7`
+  via the interactive GUI installer.
+* NetPyNE: 1.1.1 installed from PyPI into the uv venv with all transitive dependencies satisfied.
+
+##### Runtime
+
+* Step 9 (implementation) started 2026-04-19T21:00:11Z, completed 2026-04-19T22:34:58Z (~1h 35m
+  wall-clock, most of which was interactive installer time).
+* Raw NEURON sanity sim: **0.011 s** total (setup 6.7 ms + run 4.4 ms).
+* NetPyNE sanity sim: **0.044 s** total (setup 38.7 ms + run 4.8 ms).
+* `nrnivmodl` compile time: under **5 seconds**.
+
+##### Wiring Strategy
+
+NEURON&#x27;s installer places its Python bindings under `C:\Users\md1avn\nrn-8.2.7\lib\python\neuron`.
+Rather than copy the package into the venv, we created a single `.pth` file at
+`&lt;repo&gt;\.venv\Lib\site-packages\neuron.pth` containing the one-line path
+`C:\Users\md1avn\nrn-8.2.7\lib\python`. Python&#x27;s `site.py` expands the `.pth` at import time, so
+`from neuron import h` resolves through the native install. The scripts also set
+`NEURONHOME=C:\Users\md1avn\nrn-8.2.7` via `os.environ.setdefault` so `os.add_dll_directory` picks
+up the correct DLL search root on Windows.
+
+##### Sanity Simulation Design
+
+Both simulations use identical biophysics:
+
+* Single soma compartment, 20 μm length × 20 μm diameter.
+* NEURON built-in `hh` mechanism inserted on the soma.
+* IClamp electrode at soma midpoint (0.5), delay 5 ms, duration 50 ms, amplitude 0.5 nA.
+* Integrator: fixed-step, `dt=0.025 ms`, `tstop=80 ms`.
+* Threshold used for pass/fail: `v_max &gt; +20 mV`.
+
+The raw NEURON sim (`code/sanity_raw_neuron.py`) uses `h.Section`, `h.IClamp`, and
+`h.Vector().record` directly, then `h.finitialize(-65.0)` followed by `h.continuerun(80.0)`. The
+NetPyNE sim (`code/sanity_netpyne.py`) constructs the same biophysics through `specs.NetParams` and
+`specs.SimConfig`, then runs `sim.initialize`, `sim.net.createPops`, `sim.net.createCells`,
+`sim.net.addStims`, `sim.setupRecording`, `sim.runSim`, and `sim.gatherData`.
+
+#### Metrics Tables
+
+##### Sanity-Simulation Outcomes
+
+| Harness | `v_max` (mV) | `v_min` (mV) | Samples | Setup (s) | Run (s) | Crossed +20 mV |
+| --- | ---: | ---: | ---: | ---: | ---: | :--- |
+| Raw NEURON | 42.00255 | -75.96756 | 3201 | 0.0067 | 0.0044 | yes |
+| NetPyNE | 42.00255 | -75.96756 | 3201 | 0.0387 | 0.0048 | yes |
+
+`v_max` and `v_min` agree to machine precision. NetPyNE&#x27;s setup is ~6× slower than the raw NEURON
+path because the `specs.NetParams` / `specs.SimConfig` expansion does dictionary walks and
+network-scaffolding work that raw NEURON skips, but the actual integration runtime is
+indistinguishable.
+
+##### Spike Count
+
+Both simulations fire **six** action potentials across the 50 ms stimulus window — 120 Hz
+instantaneous rate during the stimulus, 75 Hz averaged over the 80 ms simulation.
+
+#### Visualizations
+
+![Raw NEURON HH soma trace](../data/images/raw_neuron_trace.png)
+
+![NetPyNE HH soma trace](../data/images/netpyne_trace.png)
+
+#### Verification
+
+* `uv run ruff check tasks/t0007_install_neuron_netpyne/code/` — PASSED (all checks).
+* `uv run ruff format tasks/t0007_install_neuron_netpyne/code/` — PASSED (no changes).
+* `uv run mypy -p tasks.t0007_install_neuron_netpyne.code` — PASSED (no issues).
+* Raw NEURON sanity sim exits 0 with the `v_max &gt; +20 mV` assertion satisfied.
+* NetPyNE sanity sim exits 0 with the `v_max &gt; +20 mV` assertion satisfied.
+* Compiled `nrnmech.dll` loads via `h.nrn_load_dll` with no error.
+* `neuron.__version__` prints `&quot;8.2.7+&quot;`; `netpyne.__version__` prints `&quot;1.1.1&quot;`; `h(&quot;VERSION&quot;)`
+  prints the full build string with `34cf696+ (2025-05-21)`.
+
+#### Limitations
+
+* Tested only on Windows 11 with Python 3.13. Linux / macOS compatibility is inherited from
+  NetPyNE&#x27;s upstream releases but was not verified here.
+* The sanity sim exercises only the built-in `hh` mechanism. Custom MOD correctness (e.g., `khhchan`
+  biophysics) is validated only by compilation success, not by a dedicated simulation.
+* NetPyNE&#x27;s `sim.analysis.plot*` helpers were not exercised. The pipeline saves raw voltage traces
+  and builds plots via matplotlib directly, so any downstream use of NetPyNE&#x27;s plotting API will
+  need its own verification.
+* The NSIS silent installer did not accept the `/D=` prefix, so install required interactive user
+  action. Automated end-to-end reproduction on a fresh machine needs either a pre-installed NEURON
+  or the manual GUI step documented in the answer asset.
+
+#### Files Created
+
+* `code/sanity_raw_neuron.py` — raw NEURON HH soma sanity script.
+* `code/sanity_netpyne.py` — NetPyNE HH soma sanity script (parallel harness).
+* `code/run_nrnivmodl.cmd` — cmd.exe wrapper for `nrnivmodl.bat` (MSYS path-mangling workaround).
+* `data/mod/khhchan.mod` — custom Hodgkin-Huxley MOD (compiled smoke-test input).
+* `data/mod/nrnmech.dll` — compiled mechanism library (132 KB, reusable downstream).
+* `data/csv/raw_neuron_trace.csv`, `data/csv/netpyne_trace.csv` — voltage traces.
+* `data/images/raw_neuron_trace.png`, `data/images/netpyne_trace.png` — trace plots.
+* `data/json/raw_neuron_timings.json`, `data/json/netpyne_timings.json`, `data/json/versions.json`
+  — wall-clock, threshold, and version provenance.
+* `data/installer/.gitkeep` — placeholder (installer binary deleted to keep repo size down).
+* `assets/answer/neuron-netpyne-install-report/details.json` — answer asset metadata.
+* `assets/answer/neuron-netpyne-install-report/short_answer.md` — three-section short report.
+* `assets/answer/neuron-netpyne-install-report/full_answer.md` — eight-section full report.
+* `results/results_summary.md`, `results/results_detailed.md`, `results/metrics.json`,
+  `results/costs.json`, `results/remote_machines_used.json`.
+* `logs/commands/006_*` through `logs/commands/015_*` — command-log JSON + stdout/stderr for curl,
+  installer, `uv pip`, `nrnivmodl`, and both sanity sims.
+
+#### Task Requirement Coverage
+
+Operative task request (`task.json` `short_description`):
+
+&gt; Install NEURON 8.2.7 and NetPyNE 1.1.1 on the project&#x27;s Windows 11 workstation, compile a minimal
+&gt; Hodgkin-Huxley MOD file with `nrnivmodl`, run a 1-compartment sanity simulation in both raw NEURON
+&gt; and NetPyNE, and publish a `neuron-netpyne-install-report` answer asset documenting the install,
+&gt; compile, and sanity-simulation outcomes.
+
+Requirement status (REQ IDs reused from `plan/plan.md`):
+
+| REQ | Status | Answer and evidence |
+| --- | --- | --- |
+| REQ-1 — Install NEURON 8.2.7 and NetPyNE 1.1.1 reachable from the project&#x27;s uv venv | Done | NEURON 8.2.7+ installed to `C:\Users\md1avn\nrn-8.2.7`; NetPyNE 1.1.1 installed into the uv venv. Evidence: `data/json/versions.json`, `logs/commands/008_*` (pip install log). |
+| REQ-2 — Compile at least one HH MOD with `nrnivmodl` | Done | `khhchan.mod` compiled to `data/mod/nrnmech.dll` (132 KB). Evidence: `data/mod/nrnmech.dll`, `logs/commands/013_*` (nrnivmodl log). |
+| REQ-3 — 1-compartment raw-NEURON sanity sim (L = diam = 20 μm, hh mechanism, 0.5 nA / 50 ms IClamp, 80 ms, dt 0.025 ms) | Done | `code/sanity_raw_neuron.py` implements the spec exactly. Evidence: `data/csv/raw_neuron_trace.csv`, `data/images/raw_neuron_trace.png`. |
+| REQ-4 — Confirm sim crosses +20 mV | Done | Raw NEURON `v_max = 42.003 mV`; NetPyNE `v_max = 42.003 mV`. Both assertions pass. Evidence: `data/json/raw_neuron_timings.json`, `data/json/netpyne_timings.json`. |
+| REQ-5 — Repeat REQ-3/REQ-4 under NetPyNE&#x27;s `specs.NetParams` + simulate harness | Done | `code/sanity_netpyne.py` matches raw NEURON at machine precision. Evidence: `data/csv/netpyne_trace.csv`, `data/images/netpyne_trace.png`. |
+| REQ-6 — Record final installed versions | Done | `data/json/versions.json` captures `neuron.__version__`, `netpyne.__version__`, NEURON build string, Python version. |
+| REQ-7 — Record `nrnivmodl` output, sanity-sim wall-clocks, and every command log | Done | `logs/commands/006_*` through `logs/commands/015_*` capture every shelled command (JSON + stdout + stderr). `data/json/raw_neuron_timings.json` and `data/json/netpyne_timings.json` record sanity-sim wall-clocks. |
+| REQ-8 — Publish `neuron-netpyne-install-report` answer asset with `details.json`, `short_answer.md`, `full_answer.md` | Done | `assets/answer/neuron-netpyne-install-report/` contains all three files; full_answer.md includes all eight mandatory answer sections. |
+| REQ-9 — File an intervention if any install step fails irrecoverably | Not triggered | Install succeeded (with the interactive-installer fallback for the silent-install deviation). No intervention file needed; `intervention/.gitkeep` placeholder only. |
       </content>
     </section>
   </sections>

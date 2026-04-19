@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.00) |
 | Stop threshold | 100% ($0.00) |
 | Default per-task limit | $0.00 USD |
-| Tasks with cost records | 6 |
+| Tasks with cost records | 7 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 7 |
+| Skipped tasks | 6 |
 
 ## Service Totals
 
@@ -27,7 +27,7 @@ No entries found.
 
 No entries found.
 
-6 task cost record(s) are zero-cost and omitted from the main spend table.
+7 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -37,7 +37,6 @@ No task cost records found.
 
 | Task ID | Reason |
 |---------|--------|
-| `t0007_install_neuron_netpyne` | results/costs.json is missing or invalid |
 | `t0008_port_modeldb_189347` | results/costs.json is missing or invalid |
 | `t0009_calibrate_dendritic_diameters` | results/costs.json is missing or invalid |
 | `t0010_hunt_missed_dsgc_models` | results/costs.json is missing or invalid |
