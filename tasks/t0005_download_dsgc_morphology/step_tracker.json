@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Download the SWC morphology, register the dataset asset, and verify it loads in at least one simulator library.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T09:08:06Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T09:17:30Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
