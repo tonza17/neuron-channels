@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators, capture task sessions, flip task.json status to completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T22:41:22Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T22:45:10Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
