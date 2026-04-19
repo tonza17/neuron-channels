@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Find external sources (ModelDB, Poleg-Polsky & Diamond 2016, Vaney/Sivyer/Taylor 2012) with diameter-vs-distance or diameter-vs-Strahler data we can use to set target tapers.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:00:42Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_research-internet/"
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
