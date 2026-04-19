@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create worktree and branch task/t0009_calibrate_dendritic_diameters, plan full step list.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T21:40:09Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T21:43:02Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
