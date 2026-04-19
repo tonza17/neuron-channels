@@ -1,39 +1,12 @@
 # Suggestions: `synaptic-integration`
 
 5 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **5 open** (1 high, 4
-medium).
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **4 open** (4
+medium), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
-
-## High Priority
-
-<details>
-<summary>🔧 <strong>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB
-189347 as the project's starting compartmental simulation</strong>
-(S-0002-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
-project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
-synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
-ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
-lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
-envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
-grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
-code-reproduction.
-
-</details>
 
 ## Medium Priority
 
@@ -130,5 +103,33 @@ their spatial distributions on a DSGC) so downstream DSGC simulation tasks do no
 re-implement the presynaptic waveform construction. The asset should expose a pure-function
 API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse
 conductance time courses. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347
+as the project's starting compartmental simulation</s> — covered by <a
+href="../../../tasks/t0008_port_modeldb_189347/"><code>t0008_port_modeldb_189347</code></a>
+(S-0002-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
+project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
+synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
+ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
+lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
+envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
+grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
+code-reproduction.
 
 </details>

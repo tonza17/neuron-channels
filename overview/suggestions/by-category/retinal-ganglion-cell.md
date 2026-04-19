@@ -1,94 +1,14 @@
 # Suggestions: `retinal-ganglion-cell`
 
 10 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **10 open** (6
-high, 4 medium).
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **7 open** (2 high,
+5 medium), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
-library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-04` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Every downstream compartmental-modelling task in this project will need to load the
-dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by
-SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d
-handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs)
-and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology
-builder). Write a small library asset that exposes a pure-function
-load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent
-loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and
-compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
-bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
-write-library.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Calibrate realistic dendritic diameters for
-dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
-(S-0005-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
-the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
-predicts segment diameter is the single most influential local-electrotonic knob (see
-S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
-biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
-diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
-(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
-distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
-as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
-diameter distribution against the original placeholder. Recommended task types:
-feature-engineering, data-analysis.
-
-</details>
-
-<details>
-<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
-the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-01` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
-source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
-plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
-NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
-10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
-read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
-then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
-correct paper_id slug. This unblocks correct citation of the morphology in every downstream
-paper-comparison task. Recommended task types: download-paper.
-
-</details>
 
 <details>
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
@@ -111,27 +31,6 @@ orders, mean segment length, mean segment diameter) on an orthogonal grid, recor
 per point, and test whether segment diameter has the largest effect (as cable theory
 predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
 currently lacks. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
-the local workstation</strong> (S-0003-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0003-01` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
-virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
-1-compartment sanity simulation, and records the installed versions, install-time warnings,
-and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
-but did not install it; the next simulation task needs a validated environment.
 
 </details>
 
@@ -175,6 +74,33 @@ Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's work
 Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
 actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
 as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
+library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Every downstream compartmental-modelling task in this project will need to load the
+dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by
+SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d
+handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs)
+and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology
+builder). Write a small library asset that exposes a pure-function
+load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent
+loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and
+compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
+bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
+write-library.
 
 </details>
 
@@ -253,5 +179,86 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Calibrate realistic dendritic diameters for dsgc-baseline-morphology
+to replace the 0.125 um placeholder radii</s> — covered by <a
+href="../../../tasks/t0009_calibrate_dendritic_diameters/"><code>t0009_calibrate_dendritic_diameters</code></a>
+(S-0005-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
+the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
+predicts segment diameter is the single most influential local-electrotonic knob (see
+S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
+biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
+diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
+(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
+distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
+as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
+diameter distribution against the original placeholder. Recommended task types:
+feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Download both candidate Feller-lab 2018 source papers to resolve the
+dsgc-baseline-morphology provenance ambiguity</s> — covered by <a
+href="../../../tasks/t0013_resolve_morphology_provenance/"><code>t0013_resolve_morphology_provenance</code></a>
+(S-0005-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
+source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
+plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
+NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
+10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
+read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
+then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
+correct paper_id slug. This unblocks correct citation of the morphology in every downstream
+paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on the
+local workstation</s> — covered by <a
+href="../../../tasks/t0007_install_neuron_netpyne/"><code>t0007_install_neuron_netpyne</code></a>
+(S-0003-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
 
 </details>

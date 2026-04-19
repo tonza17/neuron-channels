@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-19T09:32:04Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-19T17:46:58Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>46153</char_count>
-    <byte_count>46247</byte_count>
-    <estimated_tokens>11538</estimated_tokens>
+    <char_count>50412</char_count>
+    <byte_count>50507</byte_count>
+    <estimated_tokens>12603</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -116,9 +116,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
+        <id>t0006_brainstorm_results_2</id>
       </source_ids>
       <content>
-Completed tasks: 5
+Completed tasks: 6
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -149,13 +150,76 @@ ID: t0005_download_dsgc_morphology
 Completed: 2026-04-19
 Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
 Result summary: Results Summary: Download candidate DSGC morphology Summary Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho neuron 102976\) from Morrie &amp; Feller-associated archives as a CNG-curated SWC, validated the compartment tree with a stdlib Python parser, and registered it as the project&#x27;s baseline DSGC dataset asset `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single reconstructed cell that every downstream compartmental-modelling task in this project will load. Metrics * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon) * **Branch points (≥2 children)**: **129** * **Leaf tips**: **131** * **Total dendritic path...
+
+## Brainstorm results session 2
+ID: t0006_brainstorm_results_2
+Completed: 2026-04-19
+Short description: Second brainstorming session: plan the compartmental-simulation tooling round (install, port, calibrate, hunt, visualise, score, cite).
+Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstorming session for the neuron-channels project. Produced seven second-wave task folders (t0007-t0013) covering NEURON+NetPyNE installation, ModelDB 189347 port plus sibling-model port, dendritic-diameter calibration, model hunt, response visualisation, tuning-curve scoring, and morphology source-paper provenance. Filed two suggestion corrections. Session Overview * **Date**: 2026-04-19 * **Context**: First task wave (t0002-t0005) completed. Quantitative targets established (DSI 0.7-0.85, peak 40-80 Hz, null &lt; 10 Hz, HWHM 60-90°); simulator choice converged on NEURON 8.2.7 + NetPyNE 1.1.1; canonical target-tuning-curve dataset...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0007_install_neuron_netpyne</id>
+        <id>t0008_port_modeldb_189347</id>
+        <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0010_hunt_missed_dsgc_models</id>
+        <id>t0011_response_visualization_library</id>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
+      </source_ids>
       <content>
-Planned or active tasks: 0
+Planned or active tasks: 7
+
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+ID: t0007_install_neuron_netpyne
+Status: not_started
+Effective date: 2026-04-19
+Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+
+## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+ID: t0008_port_modeldb_189347
+Status: not_started
+Effective date: 2026-04-19
+Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
+Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
+
+## Calibrate dendritic diameters for dsgc-baseline-morphology
+ID: t0009_calibrate_dendritic_diameters
+Status: not_started
+Effective date: 2026-04-19
+Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
+Dependencies: t0005_download_dsgc_morphology
+
+## Hunt DSGC compartmental models missed by prior survey; port runnable ones
+ID: t0010_hunt_missed_dsgc_models
+Status: not_started
+Effective date: 2026-04-19
+Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
+Dependencies: t0008_port_modeldb_189347
+
+## Response-visualisation library (firing rate vs angle graphs)
+ID: t0011_response_visualization_library
+Status: not_started
+Effective date: 2026-04-19
+Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
+
+## Tuning-curve scoring loss library
+ID: t0012_tuning_curve_scoring_loss_library
+Status: not_started
+Effective date: 2026-04-19
+Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+Dependencies: t0004_generate_target_tuning_curve
+
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Status: not_started
+Effective date: 2026-04-19
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Dependencies: t0005_download_dsgc_morphology
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

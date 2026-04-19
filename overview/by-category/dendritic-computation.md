@@ -647,7 +647,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (6 open, 0 closed)
+## Suggestions (5 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
@@ -717,28 +717,6 @@ review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic driv
 Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
 input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
 corpus to 24 papers. Recommended task types: download-paper, literature-survey.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Calibrate realistic dendritic diameters for
-dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
-(S-0005-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
-
-Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
-the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
-predicts segment diameter is the single most influential local-electrotonic knob (see
-S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
-biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
-diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
-(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
-distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
-as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
-diameter distribution against the original placeholder. Recommended task types:
-feature-engineering, data-analysis.
 
 </details>
 

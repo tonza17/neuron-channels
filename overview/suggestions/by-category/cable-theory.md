@@ -1,17 +1,18 @@
 # Suggestions: `cable-theory`
 
 1 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **1
-open** (1 high).
+closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## High Priority
+## Closed
 
 <details>
-<summary>🔧 <strong>Calibrate realistic dendritic diameters for
-dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
+<summary>✅ <s>Calibrate realistic dendritic diameters for dsgc-baseline-morphology
+to replace the 0.125 um placeholder radii</s> — covered by <a
+href="../../../tasks/t0009_calibrate_dendritic_diameters/"><code>t0009_calibrate_dendritic_diameters</code></a>
 (S-0005-02)</summary>
 
 | Field | Value |

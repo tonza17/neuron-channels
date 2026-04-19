@@ -827,26 +827,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (5 open, 0 closed)
-
-<details>
-<summary>🔧 <strong>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB
-189347 as the project's starting compartmental simulation</strong>
-(S-0002-03)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
-
-PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
-project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
-synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
-ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
-lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
-envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
-grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
-code-reproduction.
-
-</details>
+## Suggestions (4 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC

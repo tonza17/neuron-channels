@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T09:32:04Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T17:46:58Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>23161</char_count>
-    <byte_count>23167</byte_count>
-    <estimated_tokens>5790</estimated_tokens>
+    <char_count>23165</char_count>
+    <byte_count>23171</byte_count>
+    <estimated_tokens>5791</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -242,7 +242,7 @@ Replace the current Gaussian-noise trial replicates with Poisson counts converte
 
 ## Build a small reusable library for target-vs-simulated tuning curve metrics
 ID: S-0004-03
-Status: active
+Status: rejected
 Priority: high
 Kind: library
 Source task: t0004_generate_target_tuning_curve
@@ -287,7 +287,7 @@ The current dsgc-baseline-morphology commits the project to a single reconstruct
 ## Build a reusable SWC -&gt; NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology
 ID: S-0005-04
 Status: active
-Priority: high
+Priority: medium
 Kind: library
 Source task: t0005_download_dsgc_morphology
 Categories: compartmental-modeling, retinal-ganglion-cell

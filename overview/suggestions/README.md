@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-23 suggestions **23 open** (11 high, 10 medium, 2 low).
+23 suggestions **18 open** (5 high, 11 medium, 2 low), **5 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -15,33 +15,6 @@ added](by-date-added/README.md)
 ---
 
 ## High Priority
-
-<details>
-<summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
-library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-04` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-Every downstream compartmental-modelling task in this project will need to load the
-dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by
-SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d
-handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs)
-and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology
-builder). Write a small library asset that exposes a pure-function
-load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent
-loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and
-compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
-bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
-write-library.
-
-</details>
 
 <details>
 <summary>📚 <strong>Build a small reusable library for target-vs-simulated tuning
@@ -60,59 +33,6 @@ Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliabilit
 out of individual tasks into a shared library asset. Every later fitting task will need these
 four functions; centralising them avoids divergent reimplementations and makes metric values
 reproducible from parameters alone.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Calibrate realistic dendritic diameters for
-dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
-(S-0005-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`cable-theory`](../../meta/categories/cable-theory/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
-the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
-predicts segment diameter is the single most influential local-electrotonic knob (see
-S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
-biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
-diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
-(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
-distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
-as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
-diameter distribution against the original placeholder. Recommended task types:
-feature-engineering, data-analysis.
-
-</details>
-
-<details>
-<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
-the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-01` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
-source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
-plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
-NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
-10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
-read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
-then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
-correct paper_id slug. This unblocks correct citation of the morphology in every downstream
-paper-comparison task. Recommended task types: download-paper.
 
 </details>
 
@@ -165,52 +85,6 @@ currently lacks. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>📚 <strong>Implement the tuning-curve scoring loss combining DSI, peak rate,
-null residual, and HWHM targets</strong> (S-0002-09)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-09` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
-
-The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI
-0.7-0.85, preferred peak 40-80 Hz, null residual < 10 Hz, HWHM 60-90 deg), and the project has
-four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg,
-tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated
-angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single
-scalar loss combining all four targets with documented weights (e.g., weighted Euclidean
-distance in normalised space), plus per-metric residuals. This is the tool every downstream
-optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended
-task types: write-library.
-
-</details>
-
-<details>
-<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
-the local workstation</strong> (S-0003-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0003-01` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0003_simulator_library_survey`](../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
-virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
-1-compartment sanity simulation, and records the installed versions, install-time warnings,
-and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
-but did not install it; the next simulation task needs a validated environment.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
 Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
 
@@ -254,31 +128,6 @@ re-download.
 
 </details>
 
-<details>
-<summary>🔧 <strong>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB
-189347 as the project's starting compartmental simulation</strong>
-(S-0002-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
-
-PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
-project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
-synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
-ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
-lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
-envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
-grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
-code-reproduction.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -299,6 +148,33 @@ Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's work
 Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
 actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
 as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
+library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Every downstream compartmental-modelling task in this project will need to load the
+dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by
+SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d
+handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs)
+and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology
+builder). Write a small library asset that exposes a pure-function
+load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent
+loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and
+compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
+bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
+write-library.
 
 </details>
 
@@ -557,5 +433,139 @@ into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003
 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any
 behavioural differences. This decides whether the project should upgrade before or after the
 first round of tuning-curve experiments.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Calibrate realistic dendritic diameters for dsgc-baseline-morphology
+to replace the 0.125 um placeholder radii</s> — covered by <a
+href="../../tasks/t0009_calibrate_dendritic_diameters/"><code>t0009_calibrate_dendritic_diameters</code></a>
+(S-0005-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`cable-theory`](../../meta/categories/cable-theory/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
+the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
+predicts segment diameter is the single most influential local-electrotonic knob (see
+S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
+biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
+diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
+(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
+distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
+as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
+diameter distribution against the original placeholder. Recommended task types:
+feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Download both candidate Feller-lab 2018 source papers to resolve the
+dsgc-baseline-morphology provenance ambiguity</s> — covered by <a
+href="../../tasks/t0013_resolve_morphology_provenance/"><code>t0013_resolve_morphology_provenance</code></a>
+(S-0005-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
+source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
+plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
+NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
+10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
+read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
+then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
+correct paper_id slug. This unblocks correct citation of the morphology in every downstream
+paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Implement the tuning-curve scoring loss combining DSI, peak rate, null
+residual, and HWHM targets</s> — covered by <a
+href="../../tasks/t0012_tuning_curve_scoring_loss_library/"><code>t0012_tuning_curve_scoring_loss_library</code></a>
+(S-0002-09)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-09` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI
+0.7-0.85, preferred peak 40-80 Hz, null residual < 10 Hz, HWHM 60-90 deg), and the project has
+four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated
+angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single
+scalar loss combining all four targets with documented weights (e.g., weighted Euclidean
+distance in normalised space), plus per-metric residuals. This is the tool every downstream
+optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended
+task types: write-library.
+
+</details>
+
+<details>
+<summary>✅ <s>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on the
+local workstation</s> — covered by <a
+href="../../tasks/t0007_install_neuron_netpyne/"><code>t0007_install_neuron_netpyne</code></a>
+(S-0003-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>✅ <s>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347
+as the project's starting compartmental simulation</s> — covered by <a
+href="../../tasks/t0008_port_modeldb_189347/"><code>t0008_port_modeldb_189347</code></a>
+(S-0002-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
+project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
+synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
+ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
+lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
+envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
+grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
+code-reproduction.
 
 </details>

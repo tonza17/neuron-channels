@@ -989,7 +989,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (10 open, 0 closed)
+## Suggestions (7 open, 3 closed)
 
 <details>
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
@@ -1028,21 +1028,6 @@ download-dataset, data-analysis.
 </details>
 
 <details>
-<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
-the local workstation</strong> (S-0003-01)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
-
-Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
-virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
-1-compartment sanity simulation, and records the installed versions, install-time warnings,
-and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
-but did not install it; the next simulation task needs a validated environment.
-
-</details>
-
-<details>
 <summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
 the project as a library asset</strong> (S-0003-02)</summary>
 
@@ -1072,47 +1057,6 @@ as the main Arbor adoption risk.
 </details>
 
 <details>
-<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
-the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
-
-**Kind**: dataset | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
-
-The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
-source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
-plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
-NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
-10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
-read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
-then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
-correct paper_id slug. This unblocks correct citation of the morphology in every downstream
-paper-comparison task. Recommended task types: download-paper.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Calibrate realistic dendritic diameters for
-dsgc-baseline-morphology to replace the 0.125 um placeholder radii</strong>
-(S-0005-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
-
-Every compartment in the downloaded CNG SWC carries the placeholder radius 0.125 um because
-the original Simple Neurite Tracer reconstruction did not record diameters. Cable-theory
-predicts segment diameter is the single most influential local-electrotonic knob (see
-S-0002-04), so leaving the uniform placeholder in place will silently bias every downstream
-biophysical simulation (axial resistance, attenuation, spike initiation threshold). Build a
-diameter-calibration pipeline that applies a literature-derived order-dependent diameter taper
-(e.g., Vaney/Sivyer/Taylor 2012 mouse ON-OFF DSGC profile, or the Poleg-Polsky 2016
-distribution) keyed on Strahler order or path distance from the soma, write the calibrated SWC
-as a new dataset asset (e.g., dsgc-baseline-morphology-calibrated), and report the per-order
-diameter distribution against the original placeholder. Recommended task types:
-feature-engineering, data-analysis.
-
-</details>
-
-<details>
 <summary>📂 <strong>Download additional Feller-archive DSGC reconstructions to enable
 cross-cell variability sensitivity analysis</strong> (S-0005-03)</summary>
 
@@ -1136,7 +1080,7 @@ Recommended task types: download-dataset.
 <summary>📚 <strong>Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator
 library for dsgc-baseline-morphology</strong> (S-0005-04)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0005_download_dsgc_morphology](../../tasks/t0005_download_dsgc_morphology/)
 
 Every downstream compartmental-modelling task in this project will need to load the

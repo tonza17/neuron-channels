@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-19T09:32:04Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-19T17:46:58Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>1186</char_count>
-    <byte_count>1186</byte_count>
-    <estimated_tokens>296</estimated_tokens>
+    <char_count>1222</char_count>
+    <byte_count>1222</byte_count>
+    <estimated_tokens>305</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -29,6 +29,7 @@ Spent: 0.0%
 * t0003_simulator_library_survey: $0.00
 * t0004_generate_target_tuning_curve: $0.00
 * t0005_download_dsgc_morphology: $0.00
+* t0006_brainstorm_results_2: $0.00
       </content>
     </section>
   </sections>

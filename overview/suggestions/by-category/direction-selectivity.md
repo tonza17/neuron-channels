@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
 16 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **16 open** (7
-high, 8 medium, 1 low).
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **13 open** (4
+high, 8 medium, 1 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -31,31 +31,6 @@ reproducible from parameters alone.
 </details>
 
 <details>
-<summary>📂 <strong>Download both candidate Feller-lab 2018 source papers to resolve
-the dsgc-baseline-morphology provenance ambiguity</strong> (S-0005-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0005-01` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
-source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
-plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
-NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
-10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
-read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
-then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
-correct paper_id slug. This unblocks correct citation of the morphology in every downstream
-paper-comparison task. Recommended task types: download-paper.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
@@ -76,31 +51,6 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Implement the tuning-curve scoring loss combining DSI, peak rate,
-null residual, and HWHM targets</strong> (S-0002-09)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-09` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI
-0.7-0.85, preferred peak 40-80 Hz, null residual < 10 Hz, HWHM 60-90 deg), and the project has
-four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg,
-tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated
-angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single
-scalar loss combining all four targets with documented weights (e.g., weighted Euclidean
-distance in normalised space), plus per-metric residuals. This is the tool every downstream
-optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended
-task types: write-library.
 
 </details>
 
@@ -145,31 +95,6 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB
-189347 as the project's starting compartmental simulation</strong>
-(S-0002-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
-project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
-synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
-ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
-lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
-envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
-grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
-code-reproduction.
 
 </details>
 
@@ -380,5 +305,87 @@ Replace the current Gaussian-noise trial replicates with Poisson counts converte
 (Fano factor ~1) and register it as a separate dataset asset. This would give
 tuning_curve_reliability a noise model closer to real spike statistics while keeping the
 closed-form mean curve unchanged.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Download both candidate Feller-lab 2018 source papers to resolve the
+dsgc-baseline-morphology provenance ambiguity</s> — covered by <a
+href="../../../tasks/t0013_resolve_morphology_provenance/"><code>t0013_resolve_morphology_provenance</code></a>
+(S-0005-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0005-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The dsgc-baseline-morphology asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently has
+source_paper_id=null because two Feller-lab papers from 2018 are plausibly the source: the
+plan-nominated Morrie & Feller 2018 Neuron (DOI 10.1016/j.neuron.2018.05.028) and the
+NeuroMorpho-reported Murphy-Baum & Feller 2018 Current Biology (DOI
+10.1016/j.cub.2018.03.001). Run /add-paper for both DOIs in a dedicated download-paper task,
+read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC reconstruction,
+then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
+correct paper_id slug. This unblocks correct citation of the morphology in every downstream
+paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Implement the tuning-curve scoring loss combining DSI, peak rate, null
+residual, and HWHM targets</s> — covered by <a
+href="../../../tasks/t0012_tuning_curve_scoring_loss_library/"><code>t0012_tuning_curve_scoring_loss_library</code></a>
+(S-0002-09)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-09` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1113_jphysiol.2008.161240`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI
+0.7-0.85, preferred peak 40-80 Hz, null residual < 10 Hz, HWHM 60-90 deg), and the project has
+four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated
+angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single
+scalar loss combining all four targets with documented weights (e.g., weighted Euclidean
+distance in normalised space), plus per-metric residuals. This is the tool every downstream
+optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended
+task types: write-library.
+
+</details>
+
+<details>
+<summary>✅ <s>Reproduce the PolegPolsky2016 baseline DSGC model from ModelDB 189347
+as the project's starting compartmental simulation</s> — covered by <a
+href="../../../tasks/t0008_port_modeldb_189347/"><code>t0008_port_modeldb_189347</code></a>
+(S-0002-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this
+project's goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA
+synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the
+ModelDB code, run the original published stimulus, and verify the reproduced tuning curve
+lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null < 10 Hz / HWHM 60-90 deg
+envelope. This creates the reference implementation the later parameter-variation tasks (Na/K
+grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types:
+code-reproduction.
 
 </details>

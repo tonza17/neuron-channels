@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T09:32:04Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T17:46:58Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>9</section_count>
-    <char_count>66443</char_count>
-    <byte_count>66710</byte_count>
-    <estimated_tokens>16610</estimated_tokens>
+    <section_count>10</section_count>
+    <char_count>80862</char_count>
+    <byte_count>81226</byte_count>
+    <estimated_tokens>20215</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -117,9 +117,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
+        <id>t0006_brainstorm_results_2</id>
       </source_ids>
       <content>
-Completed tasks: 5
+Completed tasks: 6
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -150,13 +151,76 @@ ID: t0005_download_dsgc_morphology
 Completed: 2026-04-19
 Short description: Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project&#x27;s baseline cell.
 Result summary: Results Summary: Download candidate DSGC morphology Summary Downloaded the Feller-lab ON-OFF mouse DSGC reconstruction `141009_Pair1DSGC` (NeuroMorpho neuron 102976\) from Morrie &amp; Feller-associated archives as a CNG-curated SWC, validated the compartment tree with a stdlib Python parser, and registered it as the project&#x27;s baseline DSGC dataset asset `dsgc-baseline-morphology` (v2 spec-compliant). The morphology is now the single reconstructed cell that every downstream compartmental-modelling task in this project will load. Metrics * **Compartments**: **6,736** (19 soma, 6,717 dendrite, 0 axon) * **Branch points (≥2 children)**: **129** * **Leaf tips**: **131** * **Total dendritic path...
+
+## Brainstorm results session 2
+ID: t0006_brainstorm_results_2
+Completed: 2026-04-19
+Short description: Second brainstorming session: plan the compartmental-simulation tooling round (install, port, calibrate, hunt, visualise, score, cite).
+Result summary: Results Summary: Brainstorm Session 2 Summary Second brainstorming session for the neuron-channels project. Produced seven second-wave task folders (t0007-t0013) covering NEURON+NetPyNE installation, ModelDB 189347 port plus sibling-model port, dendritic-diameter calibration, model hunt, response visualisation, tuning-curve scoring, and morphology source-paper provenance. Filed two suggestion corrections. Session Overview * **Date**: 2026-04-19 * **Context**: First task wave (t0002-t0005) completed. Quantitative targets established (DSI 0.7-0.85, peak 40-80 Hz, null &lt; 10 Hz, HWHM 60-90°); simulator choice converged on NEURON 8.2.7 + NetPyNE 1.1.1; canonical target-tuning-curve dataset...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0007_install_neuron_netpyne</id>
+        <id>t0008_port_modeldb_189347</id>
+        <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0010_hunt_missed_dsgc_models</id>
+        <id>t0011_response_visualization_library</id>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
+      </source_ids>
       <content>
-Planned or active tasks: 0
+Planned or active tasks: 7
+
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+ID: t0007_install_neuron_netpyne
+Status: not_started
+Effective date: 2026-04-19
+Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+
+## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+ID: t0008_port_modeldb_189347
+Status: not_started
+Effective date: 2026-04-19
+Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
+Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
+
+## Calibrate dendritic diameters for dsgc-baseline-morphology
+ID: t0009_calibrate_dendritic_diameters
+Status: not_started
+Effective date: 2026-04-19
+Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
+Dependencies: t0005_download_dsgc_morphology
+
+## Hunt DSGC compartmental models missed by prior survey; port runnable ones
+ID: t0010_hunt_missed_dsgc_models
+Status: not_started
+Effective date: 2026-04-19
+Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
+Dependencies: t0008_port_modeldb_189347
+
+## Response-visualisation library (firing rate vs angle graphs)
+ID: t0011_response_visualization_library
+Status: not_started
+Effective date: 2026-04-19
+Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
+
+## Tuning-curve scoring loss library
+ID: t0012_tuning_curve_scoring_loss_library
+Status: not_started
+Effective date: 2026-04-19
+Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+Dependencies: t0004_generate_target_tuning_curve
+
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Status: not_started
+Effective date: 2026-04-19
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Dependencies: t0005_download_dsgc_morphology
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -948,6 +1012,216 @@ Operative task text from `task.json` and `task_description.md`:
 | REQ-3 | Verify the downloaded file parses as a valid SWC tree in a Python simulator-adjacent library. | **Done** | `code/validate_swc.py` emitted `VALID`; run captured in `logs/commands/006_*` and `logs/commands/009_*`. Partial caveat: `neurom` secondary check skipped (not installed); stdlib parser is self-sufficient. |
 | REQ-4 | Produce a dataset asset with provenance (source URL, paper DOI, reconstruction protocol). | **Done** | `assets/dataset/dsgc-baseline-morphology/details.json` carries `url`, `download_url`, `year`, `authors`, `institutions`, `license`; `description.md` records DOI, reconstruction protocol, and NeuroMorpho neuron_id in the Metadata and Overview sections. Folder is `dsgc-baseline-morphology` (hyphens) because the v2 regex forbids underscores — documented deviation from `task_description.md`&#x27;s underscored spelling. |
 | REQ-5 | `verify_dataset_asset.py` passes with zero errors. | **Done (caveat)** | The framework script `verify_dataset_asset.py` is not implemented; applied every `DA-E*` and `DA-W*` rule from the v2 spec directly and confirmed 0 errors, 0 warnings. Also ran `verify_task_folder.py` (PASSED) and `verify_plan.py` (PASSED). Flagged as a framework gap in `## Limitations`. |
+      </content>
+    </section>
+    <section id="t0006_brainstorm_results_2-results-detailed" source_kind="file">
+      <title>t0006_brainstorm_results_2 — Brainstorm results session 2 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0006_brainstorm_results_2</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0006_brainstorm_results_2/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Second brainstorming session for the neuron-channels project. Produced seven second-wave task
+folders (t0007-t0013) and filed two suggestion corrections (reject S-0004-03, demote S-0005-04). No
+assets produced directly by this task; children task folders are tracked via the tasks aggregator,
+not as assets.
+
+#### Methodology
+
+* **Session flow**: four sequential steps — review-project-state, discuss-decisions,
+  apply-decisions, finalize — run end-to-end in a single interactive session.
+* **Duration**: 2026-04-19T09:30:00Z to 2026-04-19T11:00:00Z (approximately 90 minutes).
+* **Model**: Claude Opus 4.7 via Claude Code CLI.
+* **Tools used**: `aggregate_tasks`, `aggregate_suggestions`, `aggregate_costs`,
+  `aggregate_categories`, filesystem Glob on `tasks/*/assets/answer/*/details.json` (as a workaround
+  because `aggregate_answers` is not available in this fork), `overview/materialize`.
+* **Runtime**: session is planning-only; no CPU-bound computation, no remote compute, no paid API
+  calls. Cost $0.
+* **Reproducibility**: the four step logs in `logs/steps/` and `logs/session_log.md` capture the
+  dialogue and decisions; `results/results_summary.md` captures the final decision list.
+
+#### Session Flow
+
+##### Phase 1: Project State Review
+
+Aggregated state at session start:
+
+* **Tasks**: 5 completed (t0001-t0005), 0 in progress, 0 cancelled. Task history below.
+* **Suggestions**: 17 active after t0002-t0005. 6 high-priority, 9 medium, 2 low.
+* **Answers**: 3 answer assets (`dsgc-compartmental-modeling-state-of-the-art`,
+  `simulator-choice-rationale`, `dsgc-baseline-morphology-candidate`).
+* **Costs**: $0 spent. Project budget $0. No paid services configured.
+
+Completed-task findings used for independent priority reassessment:
+
+* **t0002 (literature survey)** — established quantitative envelope targets (DSI 0.7-0.85, preferred
+  peak 40-80 Hz, null residual &lt; 10 Hz, HWHM 60-90°); identified Poleg-Polsky &amp; Diamond 2016 as the
+  primary source compartmental DSGC model with published 177 AMPA + 177 GABA synapse baseline.
+* **t0003 (simulator library survey)** — selected NEURON 8.2.7 + NetPyNE 1.1.1 as the primary
+  simulator stack; Brian2/MOOSE/Arbor deprioritised but kept in the survey&#x27;s answer asset.
+* **t0004 (target tuning curve)** — generated the canonical `target-tuning-curve` dataset (12 angles
+  × 20 trials, analytically simulated cosine-like curve matching the envelope).
+* **t0005 (DSGC morphology)** — downloaded NeuroMorpho neuron 102976 (141009_Pair1DSGC) as
+  `dsgc-baseline-morphology` dataset. Two issues flagged: (1) CNG-curated SWC has placeholder 0.125
+  µm radii across every segment; (2) source_paper_id is null because two Feller-lab 2018 papers are
+  plausibly the origin.
+
+##### Phase 1.5: Clarification
+
+Researcher laid out three-step high-level plan:
+
+1. Install NEURON + NetPyNE.
+2. Port ModelDB 189347 and any similar models.
+3. Research literature for missed DSGC models, port them.
+4. Add visualisation of responses (firing rate vs angle as graphs).
+
+Additional decisions during Q&amp;A:
+
+* Use calibrated morphology for t0008 (not placeholder radii).
+* t0011 must smoke-test against both target-tuning-curve and t0008 output.
+* Implement tuning-curve scoring as a proper library (t0012) rather than inline checks.
+
+##### Phase 2: Discussion
+
+###### Round 1: New Tasks
+
+Proposed seven tasks spanning infrastructure (t0007), code reproduction (t0008, t0010), feature
+engineering (t0009), support libraries (t0011, t0012), and provenance correction (t0013).
+
+Dependency graph agreed:
+
+```text
+t0007 (no deps)                  ─┐
+t0009 (deps: t0005)              ─┤
+t0012 (deps: t0004)              ─┤
+t0013 (deps: t0005)              ─┤
+                                   │
+t0008 (deps: t0005, t0007, t0009, t0012)
+                                   │
+t0010 (deps: t0008)
+                                   │
+t0011 (deps: t0004, t0008)
+```
+
+###### Round 2: Suggestion Cleanup
+
+Reviewed all 17 active suggestions against the seven proposed tasks:
+
+* **S-0002-03** (port ModelDB 189347) → covered by t0008.
+* **S-0002-04** (dendritic morphology sweep) → covered implicitly by t0009 providing the calibrated
+  morphology baseline.
+* **S-0002-05** (E/I ratio scan) → left active; depends on t0008.
+* **S-0002-09** (tuning curve scoring library) → covered by t0012.
+* **S-0002-10** (active-vs-passive dendrites) → left active; depends on t0008.
+* **S-0003-01** (install NEURON + NetPyNE) → covered by t0007.
+* **S-0003-02** (hunt for sibling models) → merged into t0008 Phase B plus t0010.
+* **S-0004-03** (tuning-curve metrics library) → **REJECTED**, redundant with S-0002-09/t0012.
+* **S-0005-01** (resolve morphology source paper) → covered by t0013.
+* **S-0005-02** (calibrate dendritic radii) → covered by t0009.
+* **S-0005-04** (SWC -&gt; simulator section-translator library) → **REPRIORITISED HIGH → MEDIUM**
+  because premature without at least one port demonstrating cross-simulator behaviours.
+* Remaining suggestions left untouched.
+
+###### Round 3: Confirmation
+
+Researcher confirmed the full plan with &quot;confirm&quot;.
+
+##### Phase 3: Child Task Index Reservation
+
+Highest existing task index M = 5 (t0005). Brainstorm task reserves `task_index = 6` → task ID
+`t0006_brainstorm_results_2`. Children use indices 7-13.
+
+##### Phase 4: Brainstorm Task Folder
+
+Created `tasks/t0006_brainstorm_results_2/` with the full mandatory structure. Session flow captured
+in this file and in `results_summary.md`.
+
+##### Phase 5: Apply Decisions
+
+Created seven child task folders directly (not via `/create-task` subagents — the task batch is
+well-defined and writing the files directly is faster while still producing spec-valid output). Each
+child has `__init__.py`, `task.json` (spec_version 4), and `task_description.md`. The remaining
+mandatory folders (research, planning, assets, corrections, intervention, results, logs, code) will
+be populated by the respective child tasks when they run.
+
+Correction files written in `corrections/`:
+
+* `suggestion_S-0004-03.json` — `action: update`, `status: rejected`, rationale: redundant with
+  S-0002-09.
+* `suggestion_S-0005-04.json` — `action: update`, `priority: medium`, rationale: premature until at
+  least one port exists.
+
+#### Rationale for Key Design Choices
+
+##### Why block t0008 on t0009 rather than running them in parallel
+
+The CNG-curated SWC has placeholder 0.125 µm radii across every segment. Running the port against
+placeholder geometry would burn compute on a known-wrong baseline; any F1-level metric would be
+suspect. Calibrating first (t0009) gives t0008 a trustworthy morphology for the published
+parameterisation.
+
+##### Why implement t0012 before t0008 finishes
+
+t0008 reports envelope compliance using t0012. Without t0012, t0008 would either invent its own
+ad-hoc check (which later tasks would have to throw away) or delay reporting. Making t0012 a
+dependency of t0008 ensures exactly one canonical scorer across all optimisation tasks.
+
+##### Why t0011 depends on t0008
+
+The visualisation library needs real CSVs to smoke-test against. Using only the
+analytically-generated target-tuning-curve would hide edge cases that show up in simulated output
+(e.g., noisy trial-to-trial variance, NaN firing rates in null direction). Waiting for t0008 gives
+t0011 a realistic second fixture.
+
+##### Why reject S-0004-03 rather than merge it into t0012
+
+S-0002-09 explicitly covers the envelope-based scoring that optimisation tasks need. S-0004-03
+covers the same metrics but frames them as &quot;target-vs-simulated residuals&quot; without the envelope. The
+envelope framing is strictly more useful because it supports both tuning-curve matching and
+absolute-target matching. Keeping both would risk parallel library implementations.
+
+##### Why reprioritise S-0005-04 rather than covering it now
+
+A SWC -&gt; NEURON/NetPyNE/Arbor section-translator makes sense once multiple simulators are in active
+use. Today, NEURON/NetPyNE is the sole pipeline; building an abstraction layer before the second
+consumer exists is speculative. After t0008 and t0010 land, the shape of that abstraction will be
+clear enough to design it meaningfully.
+
+#### Files Created
+
+* `tasks/t0006_brainstorm_results_2/` — this brainstorm task folder.
+* `tasks/t0007_install_neuron_netpyne/` — child task.
+* `tasks/t0008_port_modeldb_189347/` — child task.
+* `tasks/t0009_calibrate_dendritic_diameters/` — child task.
+* `tasks/t0010_hunt_missed_dsgc_models/` — child task.
+* `tasks/t0011_response_visualization_library/` — child task.
+* `tasks/t0012_tuning_curve_scoring_loss_library/` — child task.
+* `tasks/t0013_resolve_morphology_provenance/` — child task.
+* `tasks/t0006_brainstorm_results_2/corrections/suggestion_S-0004-03.json` — rejection.
+* `tasks/t0006_brainstorm_results_2/corrections/suggestion_S-0005-04.json` — reprioritisation.
+
+#### Verification
+
+| Verificator | Result |
+| --- | --- |
+| `verify_task_file.py` (t0006) | PASSED (1 warning TF-W005: expected_assets empty, expected for brainstorm) |
+| `verify_task_file.py` (t0007-t0013) | PASSED (no errors, no warnings) |
+| `verify_corrections.py` (t0006) | PASSED |
+| `verify_suggestions.py` (t0006) | PASSED |
+| `verify_logs.py` (t0006) | PASSED (3 warnings LG-W005/W007/W008: expected for brainstorm with no CLI / session capture) |
+| `verify_pr_premerge.py` | PASSED |
+
+#### Limitations
+
+* The brainstorm session does not inspect the child task folders beyond creation; the child tasks
+  will verify themselves when they run.
+* Suggestion reprioritisation relies on the researcher&#x27;s domain judgement; no quantitative check
+  validated the HIGH → MEDIUM demotion.
       </content>
     </section>
   </sections>
