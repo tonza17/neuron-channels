@@ -5,14 +5,14 @@
   "name": "Port ModelDB 189347 and similar DSGC compartmental models to NEURON",
   "short_description": "Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0005_download_dsgc_morphology",
     "t0007_install_neuron_netpyne",
     "t0009_calibrate_dendritic_diameters",
     "t0012_tuning_curve_scoring_loss_library"
   ],
-  "start_time": null,
+  "start_time": "2026-04-20T00:58:40Z",
   "end_time": null,
   "expected_assets": {
     "library": 1,
