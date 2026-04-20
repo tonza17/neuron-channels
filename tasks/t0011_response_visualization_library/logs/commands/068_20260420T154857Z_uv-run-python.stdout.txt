@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\logs\sessions\capture_report.json.
