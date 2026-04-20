@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Three-pass search: (a) full ModelDB sweep; (b) GitHub/OSF/Zenodo code hunt; (c) Google Scholar + bioRxiv forward citations of Poleg-Polsky, Schachter, Park, Sethuramanujam, Hanson.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T12:48:32Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_research-internet/"
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
