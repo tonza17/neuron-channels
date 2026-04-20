@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\tasks\t0012_tuning_curve_scoring_loss_library
+
+[31m[1mERRORS:[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/searches/[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/sessions/[0m
+
+[33m[1mWARNINGS:[0m
+[33m  FD-W006 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[31m[1mFAILED[0m — 2 error(s), 1 warning(s)

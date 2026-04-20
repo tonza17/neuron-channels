@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\tasks\t0012_tuning_curve_scoring_loss_library\task.json
+
+[31m[1mERRORS:[0m
+[31m  TC-E004 error: Step 'reporting' has status 'in_progress', not finished[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

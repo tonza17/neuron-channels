@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0012_tuning_curve_scoring_loss_library",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0012_tuning_curve_scoring_loss_library/logs/steps/015_reporting/step_log.md",
+  "exit_code": 0,
+  "duration_seconds": 0.469,
+  "started_at": "2026-04-20T10:00:37Z",
+  "completed_at": "2026-04-20T10:00:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0012_tuning_curve_scoring_loss_library",
+  "stdout_file": "036_20260420T100037Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "036_20260420T100037Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
