@@ -1,11 +1,11 @@
 ---
-spec_version: "2"
+spec_version: "3"
 task_id: "t0018_literature_survey_synaptic_integration"
+step_number: 12
 step_name: "results"
-step_id: "012_results"
-started_at: "2026-04-20T12:02:49Z"
-completed_at: "2026-04-20T13:05:00Z"
 status: "completed"
+started_at: "2026-04-20T12:02:49Z"
+completed_at: "2026-04-20T12:08:37Z"
 ---
 # Step 012 Results - Log
 
