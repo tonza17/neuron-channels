@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Inspect t0004 target-curve generator to match DSI and HWHM formulas exactly, so score(target, target) == 0.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T09:15:29Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T09:19:13Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
