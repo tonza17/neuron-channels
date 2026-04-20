@@ -1,0 +1,57 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1126_science.289.5488.2347",
+  "doi": "10.1126/science.289.5488.2347",
+  "title": "Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells",
+  "url": "https://www.science.org/doi/10.1126/science.289.5488.2347",
+  "pdf_url": null,
+  "date_published": "2000-09-29",
+  "year": 2000,
+  "authors": [
+    {
+      "name": "W. Rowland Taylor",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    },
+    {
+      "name": "Shigang He",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    },
+    {
+      "name": "William R. Levick",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    },
+    {
+      "name": "David I. Vaney",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Australian National University",
+      "country": "AU"
+    }
+  ],
+  "journal": "Science",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cells",
+    "dendritic-computation"
+  ],
+  "abstract": "Direction-selective ganglion cells (DSGCs) in the retina respond strongly when stimulated by image motion in a preferred direction but are only weakly excited by image motion in the opposite null direction. Such coding represents an early manifestation of complex information processing in the visual system, but the cellular locus and the synaptic mechanisms have yet to be elucidated. We recorded the synaptic activity of DSGCs using strategies to observe the asymmetric inhibitory inputs that underlie the generation of direction selectivity. The critical nonlinear interactions between the excitatory and inhibitory inputs took place postsynaptically within the dendrites of the DSGCs.",
+  "citation_key": "Taylor2000",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Science magazine article is paywalled behind AAAS; OpenAlex reports is_oa: false with no open-access location. Added to intervention/paywalled_papers.md for institutional retrieval.",
+  "added_by_task": "t0015_literature_survey_cable_theory",
+  "date_added": "2026-04-20"
+}
