@@ -1,5 +1,82 @@
 {
   "spec_version": "2",
   "source_task": "t0011_response_visualization_library",
-  "suggestions": []
+  "suggestions": [
+    {
+      "id": "S-0011-01",
+      "title": "Record per-trial soma spike times from modeldb_189347_dsgc to exercise plot_angle_raster_psth on real data",
+      "description": "The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008 Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s) alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a correction, replacing the synthetic fixture outputs. Recommended task types: feature-engineering, code-reproduction.",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0011-02",
+      "title": "Add strict angle-grid validation mode to tuning_curve_viz.loaders.validate_angle_grid",
+      "description": "The current validate_angle_grid is permissive: it accepts 8/12/16 uniformly-spaced angle counts and only warns on non-uniform grids. Downstream optimisation and scoring tasks (e.g., S-0002-01 g_Na/g_K grid search, S-0012-03 tuning_curve_loss integration) need hard guarantees that every CSV is on the project-canonical 12-angle 30-degree grid before plots are compared. Add a strict_mode=False parameter to validate_angle_grid that, when True, raises ValueError unless angles exactly match np.arange(0, 360, 30.0) to within 1e-6 degree. Add a matching --strict-angle-grid CLI flag to tuning_curve_viz.cli. Ship unit tests covering: strict+canonical (pass), strict+8-angle (raise), strict+12-angle-shifted-by-1-degree (raise), permissive (current behaviour preserved). Recommended task types: write-library.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0011-03",
+      "title": "Add combined-report function that renders all four plot types into one multi-page PDF/HTML per model",
+      "description": "The four tuning_curve_viz functions currently produce seven standalone PNGs per model. A combined per-model report (one PDF with matplotlib.backends.backend_pdf.PdfPages or an HTML file embedding the PNGs plus a parameter header) would give a single shareable artefact for reviewers, brainstorm sessions, and any future project paper draft. Add tuning_curve_viz.report.build_model_report(curve_csv, out_path, *, target_csv=None, spike_times_csv=None, title=None, params=None) that collects the existing four plots plus a header block of model metadata (name, git SHA, DSI, peak, null, HWHM from tuning_curve_loss) and emits either PDF (default) or HTML (--format html). Exercise in the smoke test by rendering a report for the target curve and for t0008. Recommended task types: write-library.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0011-04",
+      "title": "Add statistical-comparison overlays (paired bootstrap, DSI/HWHM annotations) to multi-model plots",
+      "description": "plot_multi_model_overlay currently draws every model as a coloured line with a shared legend but provides no quantitative comparison on the figure itself. Extend the overlay to optionally annotate each model with its DSI, peak rate, null rate, and HWHM (computed via tuning_curve_loss.metrics) in the legend, and add a plot_model_comparison(model_a_csv, model_b_csv, target_csv, out_png) function that computes a paired bootstrap difference-of-means between two models at every angle, draws the difference curve with a shaded 95 percent CI, and shades angles where the CI excludes zero. This turns qualitative overlay comparisons into formally comparable figures suitable for the headline DSI-residual reporting in S-0002-01 / S-0008-04 calibration sweeps. Recommended task types: write-library.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0011-05",
+      "title": "Port additional DSGC models from t0010 hunt and exercise plot_multi_model_overlay with >2 models",
+      "description": "plot_multi_model_overlay caps at 6 models and was smoke-tested with only two (t0004 target + t0008 ModelDB 189347). The t0010 hunt identified Hanson 2019 Spatial-Offset-DSGC, deRosenroll 2026 ds-circuit-ei, and other DSGC compartmental models but none have been ported to runnable headless form yet. Run the headless-port scaffold proposed in S-0010-05 to produce tuning-curve CSVs for 3-5 additional DSGC models, then regenerate the multi-model overlay smoke test. This will surface any layout bugs (legend clipping, colour collisions, preferred-direction arrow overlap) that single- or double-model overlays never exercise and will give the project a real cross-model comparison figure. Recommended task types: code-reproduction, write-library.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0011-06",
+      "title": "Add PNG regression testing for tuning_curve_viz via pixel-level image diff in CI",
+      "description": "The seven smoke-test PNGs currently ship as committed fixtures under assets/library/tuning_curve_viz/files/ but no test guards against silent regressions when matplotlib versions, rcParams defaults, or the Okabe-Ito palette change. Add a pytest module code/tuning_curve_viz/test_image_regression.py that regenerates each of the seven PNGs into a tmp_path, loads both the fixture and the regenerated image with Pillow, and asserts that the per-pixel RMS difference is below a tight tolerance (e.g., 2.0 on 0-255 greyscale, masking anti-aliased text regions). Wire the test into the ARF CI hook so any unintended figure-style change fails loudly. Recommended task types: write-library, infrastructure-setup.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": []
+    }
+  ]
 }
