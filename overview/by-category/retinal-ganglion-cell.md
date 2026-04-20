@@ -6,8 +6,8 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (18)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (2)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(10)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
-(1)](../datasets/by-category/retinal-ganglion-cell.md)
+(16)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(2)](../datasets/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -989,7 +989,122 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (7 open, 3 closed)
+## Suggestions (13 open, 3 closed)
+
+<details>
+<summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
+proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
+2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature
+Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid /
+terminal) structure but treat the three radii as free parameters; fit them in a NEURON
+passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in
+150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means
+(3.694/1.653/0.439 um) and emit a corrections file that overrides
+dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
+against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Interpolate soma pt3dadd diameters along the principal axis to
+replace the uniform 4.118 um soma radius</strong> (S-0009-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the
+bell-shaped taper (~3.07 um to 5.31 um) visible in the five central Poleg-Polsky pt3dadd soma
+contour points. Run PCA on the 19 soma xyz coordinates, project each row onto the first
+principal component, and assign a radius by linear interpolation over the 7 Poleg-Polsky
+pt3dadd values mapped onto the same axis. Emit a corrections file that overrides the 19
+soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current-density
+distribution for downstream spike-initiation simulations without changing the mean soma radius
+or any dendritic row. Creative_thinking.md section F4. Recommended task types:
+feature-engineering, correction.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
+2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
+passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like
+Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so
+that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches
+Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at
+distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct
+from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation):
+it tunes channel densities against single-cell electrophysiological waveforms, not tuning
+curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
+experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section
+diameter lookup to drop Strahler binning entirely</strong> (S-0009-04)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+Our three-bin heuristic collapses 170 Poleg-Polsky mid-role sections into one 1.653 um radius
+(section F1 of creative_thinking.md). A lossless alternative is to Procrustes-align the CNG
+xyz points with the Poleg-Polsky RGCmodel.hoc pt3dadd points, then for each CNG compartment
+copy the diameter of the nearest registered source section. Preserves all 350 source diameters
+and eliminates both the tie-break-induced primary bin boundary (section F3) and the
+bin-collapse interior variability. Deliverable: a sibling dataset asset
+dsgc-baseline-morphology-registered with a registration-quality report (residual xyz distance
+per compartment). Emit corrections if registration succeeds with sub-micron residuals.
+Recommended task types: feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Re-type SWC by section role (soma / primary / mid / terminal)
+as a sibling dataset asset</strong> (S-0009-06)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+The calibrated SWC uses only SWC type codes 1 (soma) and 3 (dendrite); downstream NEURON tasks
+that set section-specific conductance densities (e.g., Na 150/150/30 mS/cm^2, K 70/70/35) must
+re-derive Strahler order every time. Produce a sibling dataset asset
+dsgc-baseline-morphology-calibrated-typed that re-types each row to 1 (soma), 5 (primary), 3
+(mid), or 6 (terminal) using the calibration's bin labels. Topology, xyz, and parent_id are
+preserved; only type_code changes. Add a conversion script and a smoke test that confirms
+NEURON's Import3d loader accepts the extended type codes. Cuts duplicated Strahler
+recomputation from every downstream channel-placement task. Creative_thinking.md section A3.
+Recommended task types: feature-engineering.
+
+</details>
+
+<details>
+<summary>📂 <strong>Per-cell ex-vivo two-photon image segmentation of
+141009_Pair1DSGC to produce a cell-specific diameter ground truth</strong>
+(S-0009-07)</summary>
+
+**Kind**: dataset | **Priority**: low | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
+
+The calibration imposes a nearby cell's diameters on our topology; a cell-specific ground
+truth would validate or refute the transfer. The 141009_Pair1DSGC reconstruction came from the
+Murphy-Baum / Feller two-photon rig; contact the original authors to obtain the raw image
+stack and run a segmentation + radius-estimation pipeline (e.g., Vaa3D or neuTube) to recover
+per-compartment diameters. Register the result as dsgc-baseline-morphology-imaged and use it
+as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external
+data availability; likely requires an intervention for author contact. Recommended task types:
+download-dataset, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,

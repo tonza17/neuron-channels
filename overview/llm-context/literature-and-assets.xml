@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-19T23:35:21Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-20T00:17:50Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>44018</char_count>
-    <byte_count>44065</byte_count>
-    <estimated_tokens>11004</estimated_tokens>
+    <char_count>45687</char_count>
+    <byte_count>45745</byte_count>
+    <estimated_tokens>11421</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,10 +122,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 8
+Completed tasks: 9
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -169,6 +170,12 @@ Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
 
+## Calibrate dendritic diameters for dsgc-baseline-morphology
+ID: t0009_calibrate_dendritic_diameters
+Completed: 2026-04-20
+Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
+Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -181,7 +188,6 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0008_port_modeldb_189347</id>
-        <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
@@ -193,7 +199,7 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 11
+Planned or active tasks: 10
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -201,13 +207,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
 Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
-
-## Calibrate dendritic diameters for dsgc-baseline-morphology
-ID: t0009_calibrate_dendritic_diameters
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
-Dependencies: t0005_download_dsgc_morphology
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -239,20 +238,20 @@ Dependencies: t0005_download_dsgc_morphology
 
 ## Literature survey: cable theory and dendritic filtering
 ID: t0015_literature_survey_cable_theory
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
 
 ## Literature survey: dendritic computation beyond DSGCs
 ID: t0016_literature_survey_dendritic_computation
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
 
 ## Literature survey: patch-clamp recordings of RGCs and DSGCs
 ID: t0017_literature_survey_patch_clamp
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
@@ -479,9 +478,10 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
       <source_ids>
         <id>dsgc-baseline-morphology</id>
         <id>target-tuning-curve</id>
+        <id>dsgc-baseline-morphology-calibrated</id>
       </source_ids>
       <content>
-Datasets: 2
+Datasets: 3
 
 ## DSGC Baseline Morphology (Feller 141009_Pair1DSGC)
 ID: dsgc-baseline-morphology
@@ -498,6 +498,14 @@ Access: public
 Added by task: t0004_generate_target_tuning_curve
 Size: 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates.
 `target-tuning-curve` is the canonical, synthetic direction-tuning reference that every later optimisation task in this project will compare its simulated responses against. It consists of a closed-form cosine-raised-to-power curve (r_base = 2 Hz, r_peak = 32 Hz, θ_pref = 90°, n = 2) sampled at 12 evenly-spaced directions, plus 20 Gaussian-noise trial replicates per direction (σ = 3 Hz, seed = 42). All parameters are...
+
+## DSGC Baseline Morphology (141009_Pair1DSGC), Diameter-Calibrated
+ID: dsgc-baseline-morphology-calibrated
+Year: 2026
+Access: public
+Added by task: t0009_calibrate_dendritic_diameters
+Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leaves, 1,536.25 um total dendritic length; Strahler-order-calibrated diameters from Poleg-Polsky &amp; Diamond 2016 ModelDB 189347 (Hanson geoffder/Spatial-Offset-DSGC-NEURON-Model mirror). Four distinct radii: soma 4.118 um, primary 3.694 um, mid 1.653 um, terminal 0.439 um.
+`dsgc-baseline-morphology-calibrated` is a literature-grounded diameter calibration of the t0005 mouse ON-OFF DSGC SWC. It preserves the full 6,736-compartment topology of the CNG source while replacing the uniform 0.125 µm placeholder radius with a per-Strahler-order taper harvested from the Poleg-Polsky &amp; Diamond 2016 NEURON model. The resulting morphology has four distinct radii — soma 4.118 µm, primary dendrite...
       </content>
     </section>
     <section id="libraries" source_kind="aggregator">

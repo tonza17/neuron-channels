@@ -1,4 +1,4 @@
-# ⏹ Literature survey: patch-clamp recordings of RGCs and DSGCs
+# ⏳ Literature survey: patch-clamp recordings of RGCs and DSGCs
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0017_literature_survey_patch_clamp` |
-| **Status** | ⏹ not_started |
+| **Status** | ⏳ in_progress |
+| **Started** | 2026-04-19T23:39:05Z |
 | **Source suggestion** | `S-0014-03` |
 | **Task types** | `literature-survey` |
 | **Expected assets** | 25 paper, 1 answer |

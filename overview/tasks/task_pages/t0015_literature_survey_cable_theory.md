@@ -1,4 +1,4 @@
-# ⏹ Literature survey: cable theory and dendritic filtering
+# ⏳ Literature survey: cable theory and dendritic filtering
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0015_literature_survey_cable_theory` |
-| **Status** | ⏹ not_started |
+| **Status** | ⏳ in_progress |
+| **Started** | 2026-04-19T23:38:43Z |
 | **Source suggestion** | `S-0014-01` |
 | **Task types** | `literature-survey` |
 | **Expected assets** | 25 paper, 1 answer |

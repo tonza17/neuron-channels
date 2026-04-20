@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-19T23:35:21Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T00:17:50Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>17</section_count>
-    <char_count>160003</char_count>
-    <byte_count>160309</byte_count>
-    <estimated_tokens>40000</estimated_tokens>
+    <section_count>20</section_count>
+    <char_count>235148</char_count>
+    <byte_count>235764</byte_count>
+    <estimated_tokens>58787</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -119,10 +119,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 8
+Completed tasks: 9
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -166,6 +167,12 @@ Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
 
+## Calibrate dendritic diameters for dsgc-baseline-morphology
+ID: t0009_calibrate_dendritic_diameters
+Completed: 2026-04-20
+Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
+Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -178,7 +185,6 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0008_port_modeldb_189347</id>
-        <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
@@ -190,7 +196,7 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 11
+Planned or active tasks: 10
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -198,13 +204,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
 Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
-
-## Calibrate dendritic diameters for dsgc-baseline-morphology
-ID: t0009_calibrate_dendritic_diameters
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
-Dependencies: t0005_download_dsgc_morphology
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -236,20 +235,20 @@ Dependencies: t0005_download_dsgc_morphology
 
 ## Literature survey: cable theory and dendritic filtering
 ID: t0015_literature_survey_cable_theory
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
 
 ## Literature survey: dendritic computation beyond DSGCs
 ID: t0016_literature_survey_dendritic_computation
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
 
 ## Literature survey: patch-clamp recordings of RGCs and DSGCs
 ID: t0017_literature_survey_patch_clamp
-Status: not_started
-Effective date: 2026-04-20
+Status: in_progress
+Effective date: 2026-04-19
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
@@ -2820,6 +2819,1239 @@ closer to what this task demands. Regardless, `matplotlib.use(&quot;Agg&quot;)` 
   including `curl` downloads). Source of the optional-import hedge pattern in `validate_swc.py` that
   will be reused for the `import neuron` / `import netpyne` probe. Also the template for the
   &quot;document plan deviation in the Task Requirement Checklist&quot; pattern.
+      </content>
+    </section>
+    <section id="t0009_calibrate_dendritic_diameters-research_papers" source_kind="file">
+      <title>t0009_calibrate_dendritic_diameters — Calibrate dendritic diameters for dsgc-baseline-morphology — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0009_calibrate_dendritic_diameters</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0009_calibrate_dendritic_diameters/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0009_calibrate_dendritic_diameters&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 10
+papers_cited: 9
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;cable-theory&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;retinal-ganglion-cell&quot;
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Replace the uniform 0.125 µm placeholder radii in the CNG-curated SWC of mouse ON-OFF DSGC
+`141009_Pair1DSGC` (NeuroMorpho neuron 102976, the project&#x27;s `dsgc-baseline-morphology` dataset)
+with a literature-derived diameter taper keyed on Strahler order or path distance from the soma,
+preserving topology and the non-placeholder 19 soma compartments, and register the result as
+`dsgc-baseline-morphology-calibrated` [t0005Asset]. The review below identifies which papers in the
+project corpus supply defensible per-order or per-location DSGC dendritic diameters and how their
+reported morphometric or compartmental-model values should be mapped onto our CNG tree.
+
+#### Category Selection Rationale
+
+I consulted five `meta/categories/` slugs: `compartmental-modeling` (the taper rule must produce a
+geometry that cable-theory simulators can use and is cited by previously published NEURON/NeuronC
+DSGC models), `cable-theory` (the diameter distribution drives axial resistance and electrotonic
+length constants directly), `dendritic-computation` (DSGC direction selectivity depends on
+dendritic-subunit electrotonic isolation, which is a direct function of segment diameter),
+`direction-selectivity` (the target cell type is the mouse ON-OFF DSGC so every paper with DSGC
+morphometric or biophysical-model data must be consulted), and `retinal-ganglion-cell` (broader RGC
+morphometric and passive-property constraints when DSGC-specific numbers are unavailable). The
+entire project paper corpus is deposited in `t0002_literature_survey_dsgc_compartmental_models`; no
+other task folder holds papers. I excluded `voltage-gated-channels`, `synaptic-integration`, and
+`patch-clamp`-only papers unless they also reported dendritic diameter or compartmental geometry.
+`project/description.md` calls out Poleg-Polsky &amp; Diamond 2016 (ModelDB 189347) and the
+Vaney/Sivyer/Taylor 2012 review as the primary candidate sources; both were reviewed in full.
+
+#### Key Findings
+
+##### No DSGC-specific per-order diameter taper is published in the corpus
+
+None of the reviewed papers reports a numeric per-Strahler-order or per-path-distance diameter table
+for the mouse ON-OFF DSGC of this lineage. `dsgc-baseline-morphology`&#x27;s own description states
+plainly that the Simple Neurite Tracer source &quot;did not record diameters&quot; and that all CNG SWC radii
+are a default 0.125 µm that &quot;should not be used as biophysical inputs without re-measurement&quot;
+[t0005Asset]. The foundational review [Vaney2012] fixes DSGC geometry qualitatively — bistratified
+dendrites, ~150-200 µm arbor radius per sublamina, ~40 µm subunit spacing — but does not
+enumerate segment diameters. Oesch, Euler &amp; Taylor 2005 [Oesch2005] give the one scalar anchor I
+found for DSGC dendritic calibre: &quot;~0.5 µm dendritic diameters&quot; (cited to justify why distal
+dendritic patch is impractical in DSGCs). This ~0.5 µm figure is substantially thicker than the
+0.25 µm diameter (0.125 µm radius) placeholder in the CNG SWC, so any re-calibration will thicken,
+not thin, the model.
+
+##### Poleg-Polsky &amp; Diamond 2016 (ModelDB 189347) is the primary per-compartment source
+
+The most directly reusable diameter profile in the corpus is the multicompartmental NEURON model of
+Poleg-Polsky &amp; Diamond 2016 [PolegPolsky2016], distributed on ModelDB under accession 189347. The
+paper documents a &quot;morphologically realistic reconstruction of one DRD4 DSGC&quot; that the model&#x27;s .hoc
+geometry files list explicitly: somatic, primary-dendrite, and terminal-dendrite diameters are
+specified per section, not uniformly 0.25 µm. Subsequent NEURON studies have reused this exact
+geometry: Hanson et al. 2019 [Hanson2019] built on the Poleg-Polsky morphology, parametrised it at
+Cm = 1 µF/cm², Ra = 100 Ω·cm, and reported distinct soma/primary/terminal conductance densities
+(Na 150/150/30 mS/cm², K rectifier 70/70/35 mS/cm², delayed rectifier 3/0.8/0.4 mS/cm²) — a
+partition that only makes physiological sense if the three compartments have distinct diameters.
+Jain et al. 2020 [Jain2020] likewise re-used &quot;the Poleg-Polsky &amp; Diamond 2016&quot; reconstruction,
+quoting soma/primary/terminal Na = 150/200/30 mS/cm², K rectifier = 35/35/25 mS/cm², and 700
+recorded dendritic compartments in its NEURON build.
+
+##### Three-compartment partition is the community convention for mouse ON-OFF DSGCs
+
+Every NEURON DSGC model in the corpus that predates this project uses the same coarse dendritic
+partition: soma, primary (proximal) dendrite, and terminal (distal) dendrite
+[PolegPolsky2016, Hanson2019, Jain2020]. The Schachter et al. 2010 NeuronC model for rabbit DSGC
+uses the same three-bin structure (soma, proximal, distal), quotes Ra = 110 Ω·cm, Rm = 10-22
+kΩ·cm², and reports that the partition yields input resistances of &quot;~150-200 MΩ on proximal
+dendrites&quot; and &quot;&gt;1 GΩ at distal tips&quot; [Schachter2010]. That dendritic input-resistance gradient is
+the key electrotonic property the taper rule must reproduce — since input resistance scales with
+d^(-3/2) for a cylindrical cable, the ~5-10x Rin ratio (proximal to distal) is consistent with a
+diameter ratio on the order of 3-4x between primary and terminal dendrites.
+
+##### Strahler order is a stable mapping onto the three-compartment convention
+
+Strahler order on a CNG-curated tree cleanly separates terminal dendrites (order 1), mid-branch
+dendrites, and primary dendrites (highest order, adjacent to soma). Because the corpus models
+describe only three dendritic bins, we can apply a Strahler-order-based rule with: order 1 =
+terminal (thinnest), intermediate orders = mid (graded), maximum order = primary (thickest). This
+preserves topology (required by the task&#x27;s &quot;connectivity unchanged&quot; validation criterion) and
+matches the soma/primary/terminal split that every reusable community model assumes
+[PolegPolsky2016, Hanson2019, Jain2020, Schachter2010]. The alternative — keying on path distance
+from the soma — gives a continuous taper but is more sensitive to sparse-branch artefacts in the
+CNG tree (1,536 µm total path length distributed over 6,717 dendritic compartments).
+
+##### Fohlmeister 2010 provides broader RGC passive-property baselines
+
+For sanity-checking the post-calibration passive properties, Fohlmeister et al. 2010
+[Fohlmeister2010] fits compartmental channel-density maps to several RGC types (rat Type I / Type
+II, cat alpha / beta) under Rm = 40 kΩ·cm², Cm = 1 µF/cm², Ri = 100 Ω·cm. Note that this Rm
+value is higher than Schachter2010&#x27;s DSGC-specific 10-22 kΩ·cm², so any reuse of Fohlmeister&#x27;s
+numbers should be restricted to the Ri = 100 Ω·cm axial-resistivity anchor, which agrees with
+every DSGC model in the corpus [PolegPolsky2016, Hanson2019, Schachter2010].
+
+##### SAC-model precedent for &quot;measured dendritic diameters + multiplicative scaling&quot;
+
+Ding et al. 2016 [Ding2016] — the Helmstaedter-lab mouse vs. rabbit SAC connectomics paper —
+used a Neuron-C network model with &quot;a digitized SAC morphology with multiplicative diameter factors
+from EM measurements&quot;. This is the strongest cross-task precedent for the approach this task should
+adopt: take a morphology with reliable topology, keep the topology, and impose diameters from an
+external source (literature or EM) using a multiplicative factor per compartment class. We should
+copy that pattern, substituting Strahler-order class for the SAC&#x27;s proximal/medial/distal class.
+
+#### Methodology Insights
+
+* **Use the Poleg-Polsky &amp; Diamond 2016 ModelDB 189347 .hoc geometry as the primary per-compartment
+  diameter source** [PolegPolsky2016]. The community convention is to partition DSGC dendrites into
+  three classes (soma/primary/terminal), and Poleg-Polsky &amp; Diamond is the canonical mouse ON-OFF
+  DSGC NEURON model. Extract the primary-dendrite and terminal-dendrite radii from the public .hoc
+  files and record them in `research/research_code.md` when inspected. Fallback order: if ModelDB
+  189347 is unavailable or ambiguous, fall back to the Hanson 2019 extended model
+  (`github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model` [Hanson2019]), which uses the same
+  morphology.
+
+* **Preserve the 19 soma compartments verbatim.** The task description explicitly requires this, and
+  the corpus agrees: every model quotes a per-section soma diameter in the 10-15 µm class (e.g.
+  Schachter2010 lists &quot;soma ~15 µm&quot;). The CNG soma contour encodes these diameters already and they
+  are not placeholders.
+
+* **Key the taper on Strahler order, not on path distance.** Strahler order on a CNG-curated tree
+  cleanly recovers the three-compartment (soma/primary/terminal) partition that every corpus NEURON
+  model uses [PolegPolsky2016, Hanson2019, Jain2020, Schachter2010], is insensitive to sparse-branch
+  artefacts, and preserves topology. Map: order 1 = terminal radius, order 2..(max-1) = interpolated
+  mid-dendrite radius, max order = primary radius. Document the exact per-order radii in the
+  calibrated dataset&#x27;s `description.md`.
+
+* **Clamp the terminal (order 1) radius at a floor.** The task&#x27;s risk section specifies a 0.15 µm
+  floor. Literature supports this: Oesch2005 reports ~0.5 µm &quot;dendritic diameters&quot; as the
+  justification for avoiding dendritic patch (i.e. a typical value, not a minimum) [Oesch2005], and
+  Schachter2010 achieves the required &gt;1 GΩ distal input resistance with dendrites sized so that
+  &quot;each dendritic segment is &lt;0.1 lambda&quot; — floors below ~0.1 µm diameter (0.05 µm radius) would
+  produce unphysiological input impedances.
+
+* **Validate against three electrotonic targets.** After calibration, (i) compute dendritic input
+  resistance at representative proximal and distal nodes using Ra = 100 Ω·cm and Rm = 10-22
+  kΩ·cm²; it should fall in the ~150-200 MΩ (proximal) to &gt;1 GΩ (distal) range reported by
+  Schachter2010 [Schachter2010]. (ii) Check that total dendritic surface area scales up from the
+  placeholder baseline (surface area is 2π r L; a ~2-4x mean radius increase implies ~2-4x surface
+  area). (iii) Confirm compartment count, branch-point count (129), and leaf count (131) match the
+  source SWC exactly [t0005Asset].
+
+* **Hypothesis to test in implementation.** If the Poleg-Polsky primary-to-terminal diameter ratio
+  is approximately 3-4x, the resulting axial-resistance profile along the preferred-to-null
+  dendritic axis should match the Schachter2010 ~150-200 MΩ proximal vs. &gt;1 GΩ distal input-
+  resistance gradient within 50%. If it does not, the taper rule is likely wrong.
+
+* **Best practice: document the taper source paper in the calibrated dataset&#x27;s `details.json`.** The
+  community precedent from Ding2016 is &quot;multiplicative diameter factors from EM measurements&quot; with
+  the source explicitly cited [Ding2016]. `details.json` `source_paper_id` must point to
+  PolegPolsky2016 (or Hanson2019 as fallback), not be `null`.
+
+#### Gaps and Limitations
+
+* **No EM-grade per-compartment DSGC diameter table is published in the corpus or — to the best of
+  the reviewed literature — anywhere else.** The Briggman et al. 2011 SBEM DSGC reconstructions
+  cited by [Vaney2012] do carry diameters, but the original data were not included in the project
+  paper corpus and are not downloadable with the review paper alone.
+
+* **Shrinkage correction is not applied.** The CNG SWC carries a documented ~10-20% confocal
+  under-estimation bias in lengths [t0005Asset]; diameters copied from other reconstructions that
+  were or were not shrinkage-corrected cannot be transferred without acknowledging this residual
+  systematic error.
+
+* **Per-sublamina diameter differences (ON vs OFF arbor) are not reported.** Bistratified DSGCs have
+  two sublaminar arbors that may have different calibres, but [Vaney2012], [PolegPolsky2016],
+  [Hanson2019], and [Jain2020] all treat them with identical diameter profiles. This forces the
+  taper rule to be symmetric across ON/OFF sublaminae, which may bias ON vs OFF axial conductance in
+  the same direction.
+
+* **The Poleg-Polsky morphology is one cell, not a population.** Reusing its diameter profile on
+  `141009_Pair1DSGC` assumes between-cell morphological similarity within the mouse ON-OFF DSGC
+  class; this assumption is explicit in [Jain2020] which re-uses the Poleg-Polsky tree for all its
+  NEURON simulations, but no literature quantifies the within-class spread of primary or terminal
+  diameters.
+
+* **Strahler order is not unique for CNG-curated trees with three-way branch points.** The CNG SWC
+  has 129 branch points and 131 leaves; if any branch point has more than two children, Strahler
+  order definitions diverge. The calibrated dataset must document which Strahler variant was used.
+
+#### Recommendations for This Task
+
+1. **Adopt Poleg-Polsky &amp; Diamond 2016 (ModelDB 189347) as the primary taper source** for the
+   soma/primary/terminal three-bin partition [PolegPolsky2016]. Cite it as `source_paper_id` in
+   `details.json`.
+
+2. **Use Hanson 2019 (`geoffder/Spatial-Offset-DSGC-NEURON-Model`) as the fallback** if the ModelDB
+   189347 `.hoc` numbers are ambiguous or unavailable [Hanson2019].
+
+3. **Key the taper on Strahler order**, not path distance. Map order 1 to &quot;terminal&quot;, max order to
+   &quot;primary&quot;, interior orders to a log-linear interpolation. Preserve the 19 soma compartments
+   verbatim.
+
+4. **Clamp the terminal radius at 0.15 µm** per the task&#x27;s risk section and document the clamp
+   count in the calibrated asset&#x27;s `description.md`.
+
+5. **Validate with three targets**: (a) Rin gradient 150-200 MΩ proximal to &gt;1 GΩ distal
+   [Schachter2010]; (b) compartment count, branch-point count, leaf count unchanged from source
+   [t0005Asset]; (c) per-order radius histograms documented as PNGs in `results/images/`.
+
+6. **If the Poleg-Polsky diameter profile produces an Rin gradient more than 50% off the Schachter
+   target, flag a fallback in `corrections/`** and re-run with Hanson 2019 numbers; mark the asset
+   as &quot;Poleg-Polsky-profile calibrated, Hanson-fallback&quot; per the task&#x27;s risk section.
+
+#### Paper Index
+
+##### [PolegPolsky2016]
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`,
+  `dendritic-computation`, `retinal-ganglion-cell`
+* **Relevance**: Primary per-compartment diameter source. Public NEURON model on ModelDB 189347 with
+  a reconstructed mouse DRD4 ON-OFF DSGC morphology whose .hoc geometry files list per- section
+  diameters for soma, primary, and terminal dendrites — the taper rule this task adopts.
+
+##### [Vaney2012]
+
+* **Title**: Direction selectivity in the retina: symmetry and asymmetry in structure and function
+* **Authors**: Vaney, D. I., Sivyer, B., Taylor, W. R.
+* **Year**: 2012
+* **DOI**: `10.1038/nrn3165`
+* **Asset**: `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nrn3165/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`,
+  `synaptic-integration`
+* **Relevance**: Decadal review of DSGC morphology and function. Fixes the qualitative geometric
+  frame (bistratified, 150-200 µm dendritic field per sublamina, ~40 µm subunit spacing) that the
+  calibrated morphology must remain consistent with, even though it does not quote per-segment
+  diameters directly.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `cable-theory`
+* **Relevance**: Rabbit-DSGC compartmental model with explicit Rm = 10-22 kΩ·cm², Ra = 110
+  Ω·cm, and reported dendritic input resistances (~150-200 MΩ proximal to &gt;1 GΩ distal).
+  Supplies the electrotonic validation targets for the calibrated SWC.
+
+##### [Hanson2019]
+
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, L., Sethuramanujam, S., deRosenroll, G., Jain, V., Awatramani, G. B.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`,
+  `compartmental-modeling`, `dendritic-computation`, `patch-clamp`
+* **Relevance**: Fallback taper source. Re-uses the Poleg-Polsky morphology in a public GitHub
+  NEURON model (`geoffder/Spatial-Offset-DSGC-NEURON-Model`) with explicit soma/primary/terminal
+  conductance-density partition (Na 150/150/30, K rectifier 70/70/35, delayed rectifier 3/0.8/0.4
+  mS/cm²) that only makes sense with a three-diameter partition.
+
+##### [Jain2020]
+
+* **Title**: The functional organization of excitation and inhibition in the dendrites of mouse
+  direction-selective ganglion cells
+* **Authors**: Jain, V., Murphy-Baum, B. L., deRosenroll, G., Sethuramanujam, S., Delsey, M.,
+  Delaney, K. R., Awatramani, G. B.
+* **Year**: 2020
+* **DOI**: `10.7554/eLife.52949`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`,
+  `synaptic-integration`, `compartmental-modeling`, `patch-clamp`
+* **Relevance**: Another independent re-use of the Poleg-Polsky &amp; Diamond 2016 DSGC morphology with
+  the same soma/primary/terminal three-bin convention (Na 150/200/30, K rect 35/35/25, K delayed
+  0.8/0.8/0.8 mS/cm²), confirming the three-bin partition is the community standard.
+
+##### [Oesch2005]
+
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `voltage-gated-channels`,
+  `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Gives the only scalar DSGC dendritic-calibre anchor in the corpus: &quot;~0.5 µm
+  dendritic diameters&quot; cited as the reason dendritic patch is impractical. Provides an
+  order-of-magnitude sanity check that any calibrated profile must span.
+
+##### [Ding2016]
+
+* **Title**: Species-specific wiring for direction selectivity in the mammalian retina
+* **Authors**: Ding, H., Smith, R. G., Poleg-Polsky, A., Diamond, J. S., Briggman, K. L.
+* **Year**: 2016
+* **DOI**: `10.1038/nature18609`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `compartmental-modeling`,
+  `synaptic-integration`
+* **Relevance**: Methodological precedent — the SAC network model uses &quot;a digitized SAC morphology
+  with multiplicative diameter factors from EM measurements&quot;, exactly the class of approach proposed
+  here (known topology + external diameter factors). Cited as the cross-cell-type analogue for the
+  taper strategy.
+
+##### [Fohlmeister2010]
+
+* **Title**: Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using
+  Temperature as an Independent Variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00123.2009`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/`
+* **Categories**: `retinal-ganglion-cell`, `compartmental-modeling`, `voltage-gated-channels`,
+  `patch-clamp`
+* **Relevance**: General-RGC passive-property reference (Rm = 40 kΩ·cm², Cm = 1 µF/cm², Ri =
+  100 Ω·cm). Supplies the Ri anchor shared with every DSGC model; its Rm differs from
+  DSGC-specific values and should not be transferred.
+
+##### [t0005Asset]
+
+* **Title**: DSGC Baseline Morphology (Feller 141009_Pair1DSGC) dataset asset
+* **Authors**: t0005_download_dsgc_morphology task
+* **Year**: 2026
+* **DOI**: `no-doi_t0005_dsgc-baseline-morphology`
+* **Note**: Internal project dataset asset, not a publication
+* **Asset**: `tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/`
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+* **Relevance**: The calibration input. Documents the 0.125 µm placeholder-radius problem (6,736
+  compartments, 19 soma / 6,717 dendrite, 129 branch points, 131 leaves, 1,536 µm total path
+  length) and explicitly states that all radii are placeholders requiring re-calibration.
+      </content>
+    </section>
+    <section id="t0009_calibrate_dendritic_diameters-research_internet" source_kind="file">
+      <title>t0009_calibrate_dendritic_diameters — Calibrate dendritic diameters for dsgc-baseline-morphology — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0009_calibrate_dendritic_diameters</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0009_calibrate_dendritic_diameters/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0009_calibrate_dendritic_diameters&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 12
+sources_cited: 14
+papers_discovered: 2
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Complement the in-corpus paper review [ResearchPapers-t0009] by searching the public internet for
+the specific artefacts the calibration pipeline must consume: the Poleg-Polsky &amp; Diamond 2016 NEURON
+.hoc morphology on ModelDB 189347 [ModelDB-189347], its Hanson-lab re-use on GitHub
+[geoffder-SODSGC-GH], Python libraries capable of computing Strahler order and writing SWC files
+[BlueBrain-NeuroM-GH, DaisukeMiyamoto-pyswc-GH, nGauge-2022], NeuroMorpho.Org&#x27;s CNG standardization
+policy for missing diameters [NeuroMorpho-StdSwc-2024], and any 2023-2026 EM-grade DSGC
+reconstructions that might displace Poleg-Polsky as the primary taper source. The goal is a
+shovel-ready list of concrete per-compartment diameter numbers, library choices, and code patterns
+that the implementation step can adopt without further search.
+
+#### Gaps Addressed
+
+From the Gaps and Limitations section of `research/research_papers.md` [ResearchPapers-t0009]:
+
+1. **No EM-grade per-compartment DSGC diameter table published in the corpus** — **Partially
+   resolved**. Internet search confirms the Poleg-Polsky &amp; Diamond 2016 `RGCmodel.hoc` on ModelDB
+   189347 is the richest per-section diameter source on the public web [ModelDB-189347]. The same
+   morphology is re-used verbatim by the Hanson 2019 `geoffder/Spatial-Offset-DSGC-NEURON-Model`
+   repository [geoffder-SODSGC-GH]; inspection of the raw .hoc file shows per-section geometry
+   defined by ~350 `dend` array blocks, each built from explicit `pt3dadd(x, y, z, diam)` calls,
+   with soma `diam` values 0.88-10.6 µm at different 3D points [geoffder-SODSGC-GH]. Neither
+   ModelDB 189347 nor its GitHub mirror distributes an .swc file — the morphology is hard-coded in
+   the .hoc. An ON-type DSGC primate reconstruction was published in 2023 [Patterson2023] but is not
+   a mouse ON-OFF DSGC of our lineage.
+
+2. **Shrinkage correction is not applied** — **Unresolved**. No public source offers a
+   mouse-DSGC-specific shrinkage factor for the Feller-lab 141009_Pair1DSGC lineage. The best
+   available approach remains to document the residual bias, as originally planned.
+
+3. **Per-sublamina diameter differences (ON vs OFF arbor) are not reported** — **Unresolved**. The
+   ModelDB 189347 morphology is bistratified but does not tag sections by sublamina; published
+   NEURON DSGC models uniformly treat both arbors with identical diameter profiles
+   [ResearchPapers-t0009].
+
+4. **Poleg-Polsky morphology is one cell, not a population** — **Unresolved**. Public 2023-2026
+   literature adds no within-class morphometric distribution for mouse ON-OFF DSGC dendrite
+   diameters. The community still treats one cell as representative
+   [geoffder-SODSGC-GH, Patterson2023].
+
+5. **Strahler order is not unique on three-way branch points** — **Resolved**. NeuroM&#x27;s
+   `section_strahler_orders` implements the standard Horton-Strahler rule with a deterministic
+   tie-break (maximum-child rule) [BlueBrain-NeuroM-Docs]. The library will be adopted as the
+   authoritative Strahler implementation and the calibrated dataset&#x27;s `description.md` will cite the
+   NeuroM version.
+
+#### Search Strategy
+
+Queries were executed via the WebSearch tool against Google&#x27;s index and the specific web corpora
+listed below. Targeted pages were then retrieved via WebFetch for verbatim extraction.
+
+**Sources searched**: Google (via WebSearch), ModelDB (modeldb.science and
+senselab.med.yale.edu/ModelDB), GitHub (ModelDBRepository, geoffder, BlueBrain/NeuroM,
+DaisukeMiyamoto/pyswc, openbraininstitute/NeuroM), NeuroMorpho.Org (standardization policy), PubMed
+Central, PLOS Computational Biology, eLife, treestoolbox.org, NEURON simulator documentation
+(nrn.readthedocs.io).
+
+**Queries executed (12 total)**:
+
+1. `&quot;ModelDB 189347 Poleg-Polsky Diamond DSGC NEURON hoc morphology diameter&quot;`
+2. `&quot;geoffder Spatial-Offset-DSGC-NEURON-Model github morphology diameter hoc&quot;`
+3. `&quot;NeuroMorpho.org CNG curated SWC placeholder radius 0.125 missing diameter reconstruction&quot;`
+4. `&quot;NeuroM Python library Strahler order dendrite morphology analysis BlueBrain&quot;`
+5. `&quot;NEURON simulator h.define_shape SWC diameter calibration compartment&quot;`
+6. `&quot;DSGC direction selective ganglion cell dendrite diameter EM reconstruction 2024 2025&quot;`
+7. `&quot;Cuntz TREES toolbox dendrite diameter taper rall 3/2 power assign radius&quot;`
+8. `&quot;NeuroMorpho SWC radius undefined missing Simple Neurite Tracer default value&quot;`
+9. `&quot;python SWC morphology library edit diameter modify radius save 2024 2025 pip&quot;`
+10. `&quot;retinal ganglion cell dendrite diameter taper Strahler primary terminal µm measured&quot;`
+11. `&quot;&quot;NeuroMorpho&quot; &quot;radius&quot; &quot;0.125&quot; default placeholder CNG standardization&quot;`
+12. `&quot;&quot;on-type&quot; direction selective ganglion cell mouse dendrite diameter Bleckert Sümbül 2014&quot;`
+
+Deep fetches were performed on the raw .hoc file
+(`https://raw.githubusercontent.com/geoffder/Spatial-Offset-DSGC-NEURON-Model/master/RGCmodel.hoc`),
+the ModelDB 189347 landing and files pages, the NeuroMorpho.Org StdSwc1.21 standardization page, the
+NeuroM GitHub README, and the pyswc repository page. Seven additional WebFetch calls were
+exploratory and did not produce citable content.
+
+**Date range**: No restriction for foundational tools and models. For DSGC reconstructions,
+prioritised 2023-2026.
+
+**Inclusion criteria**: (a) concrete per-section DSGC diameter numbers, (b) Python tooling that can
+compute Strahler order on CNG-curated SWCs, (c) conventions for handling missing diameters, or (d)
+recent DSGC reconstructions that improve on Poleg-Polsky. Excluded: non-mammalian DSGCs,
+non-direction-selective RGC morphologies (unless used as a fallback taper reference), and
+listening/speaking test analogues returned by low-quality search results.
+
+**Iterations**: Queries 11 and 12 were follow-ups prompted by: (11) the NeuroMorpho standardization
+page explicitly not documenting a &quot;0.125 µm default&quot; (this convention is idiosyncratic to the
+`141009_Pair1DSGC` dataset rather than a NeuroMorpho-wide policy), and (12) searching for an
+independent mouse-DSGC dendrite-diameter paper that might provide a population distribution.
+
+#### Key Findings
+
+##### ModelDB 189347 distributes morphology as a .hoc template, not as an .swc
+
+The Poleg-Polsky &amp; Diamond 2016 package on ModelDB 189347 contains no .swc file. Morphology is
+defined inside `RGCmodel.hoc` via a sequence of `pt3dclear() { pt3dadd(...) }` blocks inside
+`proc shape3d_N()` procedures that build ~350 `dend` array sections plus one `soma` section
+[ModelDB-189347, geoffder-SODSGC-GH]. Peer-reviewed: yes (ModelDB peer review of the code).
+
+The list of distributed files on ModelDB is: `main.hoc`, `mosinit.hoc`, `RGCmodel.hoc`, `model.ses`,
+and the mechanism files `bipolarNMDA.mod`, `HHst.mod`, `SAC2RGCexc.mod`, `SAC2RGCinhib.mod`,
+`spike.mod`, `SquareInput.mod` [ModelDB-189347]. `RGCmodel.hoc` is the only file containing
+morphology.
+
+This has a direct engineering implication for this task: diameter values must be harvested by
+**parsing `pt3dadd` calls**, not by reading an .swc file. The cleanest route is to clone
+`geoffder/Spatial-Offset-DSGC-NEURON-Model` (which re-hosts the identical .hoc with an MIT license
+[geoffder-SODSGC-GH]) and either (a) regex-parse `pt3dadd` into a Python dictionary
+`{section_name: [(x, y, z, diam), ...]}`, or (b) load the .hoc in NEURON, instantiate the cell, and
+iterate `for sec in h.allsec(): for i in range(sec.n3d()): sec.diam3d(i)` [NEURON-Geometry-Docs].
+
+##### The geoffder .hoc exposes a soma/primary/terminal diameter gradient via pt3dadd
+
+Direct extraction from the raw .hoc file shows:
+
+* **Soma contour**: `pt3dadd(104.59, 123.486, 50, 0.878906)` through
+  `pt3dadd(105.518, 119.897, 47.1442, 10.6233)` — seven 3D points with diameters 0.88, 6.14, 7.74,
+  8.32, 8.35, 10.62, 0.88 µm respectively, yielding a maximum soma cross-section of ~10.6 µm
+  (diameter) at the equator [geoffder-SODSGC-GH].
+
+* **dend[1] (primary)**: `pt3dadd(103.845, 118.294, 46.9907, 11.5426)` and
+  `pt3dadd(103.378, 117.803, 47.6241, 11.0034)` — primary dendritic diameter ~11.0-11.5 µm at the
+  attachment point, tapering rapidly [geoffder-SODSGC-GH].
+
+* **dend[10]**: pt3dadd calls carry diameter 0 at several points, consistent with the Poleg-Polsky
+  reconstruction treating some segments as zero-diameter interpolation nodes [geoffder-SODSGC-GH].
+  These will need to be filtered when computing per-section mean radii.
+
+* **Terminal sections** (e.g., `dend[175]`, `dend[340]`): pt3dadd diameter is 0 in some sampled
+  terminal points and ~0.5-1.0 µm in others [geoffder-SODSGC-GH].
+
+**Hypothesis (testable in implementation)**: Aggregating `pt3dadd` diameters per section (ignoring
+diam=0 interpolation nodes) and keying the mean by Strahler order will yield a three-bin
+distribution approximating {primary ≈ 4-11 µm, mid ≈ 0.5-2 µm, terminal ≈ 0.3-1 µm} —
+i.e., a ~10× diameter ratio between primary and terminal. This matches the ~150-200 MΩ to &gt;1 GΩ
+proximal-distal input resistance gradient quoted by Schachter et al. 2010 [ResearchPapers-t0009]
+under a d^(-3/2) Rin scaling (2^(-1.5) ≈ 0.35, so the factor of ~5-10 Rin gradient requires a
+~3-4× diameter ratio; a ~10× diameter ratio overshoots, giving &gt;50× Rin, which suggests the
+pt3dadd diameters include some implausibly thin tip points that should be clamped).
+
+##### NeuroMorpho.Org does not apply a universal default diameter for missing SWC radii
+
+The NeuroMorpho.Org StdSwc1.21 standardization page documents specific **irregularity codes** for
+radii (zero-radius, extreme-taper, large-terminal-radius) but no universal default value for
+reconstructions that lack diameter data entirely [NeuroMorpho-StdSwc-2024]. Radii ≤ 0.05 µm are
+flagged as type B1 irregularities and &quot;adjusted by hand or changed to B2 if warranted&quot;
+[NeuroMorpho-StdSwc-2024]. Peer-reviewed: no (the standardization page is non-peer-reviewed
+documentation).
+
+**Implication**: The 0.125 µm placeholder in `141009_Pair1DSGC`&#x27;s CNG SWC is a property of the
+original Simple Neurite Tracer export for this one neuron, not a NeuroMorpho-wide convention. The
+calibrated-dataset&#x27;s `description.md` should state this explicitly to avoid implying the calibration
+is correcting a NeuroMorpho-level bug.
+
+##### NeuroM is the most suitable Python library for Strahler order and SWC output
+
+NeuroM v4.0.4 (BlueBrain Project, archived December 2024, active development at
+`openbraininstitute/NeuroM`) is a Python 3 library for neuron morphology analysis
+[BlueBrain-NeuroM-GH]. The documentation lists per-section features including section lengths,
+section volumes, branch orders, and partition asymmetry [BlueBrain-NeuroM-Docs]. Peer-reviewed: no
+(BlueBrain accompanying publication is peer-reviewed but the library itself is open-source code).
+
+Alternative Python SWC editors identified:
+
+* **pyswc** (Daisuke Miyamoto, Apache-2.0): minimal, advertises &quot;read, write and modify SWC neuron
+  morphology file&quot; and installs via `pip install pyswc` [DaisukeMiyamoto-pyswc-GH].
+
+* **nGauge** (biorxiv 2022): extensible Python morphology toolkit; supports SWC read/write and
+  custom morphometrics [nGauge-2022]. Peer-reviewed: yes (Frontiers in Neuroinformatics 2022).
+
+* **hoc2swc** (JustasB, GitHub): converts NEURON .hoc morphology to SWC — relevant if we choose to
+  load the Poleg-Polsky .hoc in NEURON first, then export as SWC for harvesting diameters
+  [hoc2swc-GH]. Peer-reviewed: no.
+
+**Best practice**: Given that the task description pins the stdlib-only parser reuse from t0005
+[ResearchPapers-t0009], the minimum library footprint is NeuroM (Strahler order) +
+`neuron`-simulator Python bindings (to load `RGCmodel.hoc` and harvest `pt3dadd` diameters).
+Currently, the project&#x27;s `pyproject.toml` contains neither — a dependency addition will be needed
+(the project&#x27;s CLAUDE.md rule 3 permits `pyproject.toml` modifications as an exception to the
+task-folder immutability rule).
+
+##### No 2023-2026 public DSGC reconstruction supersedes Poleg-Polsky as a mouse ON-OFF DSGC source
+
+An ON-type (not ON-OFF) primate DSGC was reconstructed and published in 2023 [Patterson2023], but
+(a) it is primate, not mouse, and (b) it is a physiologically distinct cell type (ON only, not
+bistratified). The Jain 2020 eLife paper [ResearchPapers-t0009] remains the most recent public mouse
+ON-OFF DSGC compartmental-model re-use of Poleg-Polsky&#x27;s geometry.
+
+The `pmc.ncbi.nlm.nih.gov` search surfaced a 2021 paper Kim, Hamid, Holkar, et al. titled &quot;Dendrite
+Morphology Minimally Influences the Synaptic Distribution of Excitation and Inhibition in Retinal
+Direction-Selective Ganglion Cells&quot; [Kim2021]. Peer-reviewed: yes (J Neurosci). The paper evaluates
+how morphology affects E/I distribution but does not publish a separate per-compartment diameter
+table — its NEURON model uses the Poleg-Polsky morphology.
+
+##### Cuntz TREES toolbox offers a principled diameter-from-topology fallback
+
+The TREES toolbox [treestoolbox-2010, Cuntz2020-bioRxiv] implements a **quadratic diameter taper**
+rule that assigns per-compartment diameters from topology alone, under a Rall 3/2-power branch-point
+constraint [treestoolbox-2010]. Peer-reviewed: yes (Cuntz et al., PLOS Computational Biology 2010).
+Cuntz 2020 [Cuntz2020-bioRxiv] (peer-reviewed: no — bioRxiv preprint) proposes a
+narrowing-at-nodes scaling law that is cleaner than Rall&#x27;s 3/2 law for many cell types.
+
+**Implication**: If the extracted Poleg-Polsky diameters produce Rin values outside the
+Schachter2010 target window, TREES&#x27;s `quaddiameter` function is a principled synthetic fallback that
+preserves topology while assigning a defensible taper. However, its MATLAB-only distribution makes
+it less attractive than a hand-rolled Strahler-binned rule in Python.
+
+#### Methodology Insights
+
+##### Recommended pipeline
+
+1. **Clone `geoffder/Spatial-Offset-DSGC-NEURON-Model`** [geoffder-SODSGC-GH] and either parse
+   `RGCmodel.hoc` with a regex on `pt3dadd`, or load the .hoc via the `neuron` Python bindings and
+   iterate `h.allsec()` with `sec.diam3d(i)` [NEURON-Geometry-Docs]. The regex route is simpler and
+   avoids adding a heavyweight dependency.
+
+2. **Bin the extracted Poleg-Polsky diameters by Strahler order** on the Poleg-Polsky tree, computed
+   via `neurom.section_strahler_orders` [BlueBrain-NeuroM-Docs]. Produce a three-entry table
+   `{order_1: terminal_mean, order_2_to_max_minus_1: mid_mean, order_max: primary_mean}`.
+
+3. **Compute Strahler order on the `141009_Pair1DSGC` CNG tree** with the same NeuroM function, and
+   assign each dendritic compartment the Poleg-Polsky bin mean. This is the &quot;multiplicative factor
+   by compartment class&quot; pattern established by Ding et al. 2016 for SACs [ResearchPapers-t0009].
+
+4. **Clamp terminal radii at 0.15 µm** per the task&#x27;s risk-section floor, logging the clamp count
+   in the dataset&#x27;s `description.md`.
+
+5. **Write the calibrated SWC** using pyswc [DaisukeMiyamoto-pyswc-GH] or a custom stdlib writer
+   (reusing t0005&#x27;s `validate_swc.py` [ResearchPapers-t0009] pattern), preserving the 19 soma rows
+   verbatim.
+
+##### Hypotheses to test in implementation
+
+* **H1**: Aggregating `pt3dadd` diameters per section (filtering diam=0 nodes) and keying on
+  Strahler order will produce a three-bin distribution with primary:terminal ratio in the range
+  4-10×.
+
+* **H2**: Applying the Poleg-Polsky taper to the `141009_Pair1DSGC` tree will increase total
+  dendritic surface area by a factor of 2-5× over the 0.125 µm placeholder baseline (at
+  placeholder mean diameter 0.25 µm, scaling to a ~1-2 µm calibrated mean yields 4-8× surface
+  area).
+
+* **H3**: Post-calibration dendritic Rin will span ~100-200 MΩ proximal to 0.5-2 GΩ distal, within
+  50% of Schachter2010&#x27;s rabbit-DSGC target [ResearchPapers-t0009]. Values outside this band
+  indicate the taper rule is wrong and the Cuntz quadratic-diameter fallback should be considered.
+
+##### Best practices from the community
+
+* **Filter diam=0 interpolation nodes** in Poleg-Polsky&#x27;s .hoc before averaging — they are
+  reconstruction artefacts, not biological zero-diameter points [geoffder-SODSGC-GH].
+
+* **Document NeuroM&#x27;s Strahler tie-break convention** in `description.md` — the Horton-Strahler
+  rule with maximum-child tie-break is not universal, and re-analysis with a different convention
+  could give different per-order bins [BlueBrain-NeuroM-Docs].
+
+* **Never copy diameters by pt3d position — always by section mean**. The Poleg-Polsky tree has
+  n3d(i) points per section while `141009_Pair1DSGC`&#x27;s CNG tree has a different per-section point
+  count, so point-wise copying is ill-defined. Bin by Strahler order, then assign section-wise.
+
+* **Report per-section diameter values as a CSV** alongside the calibrated SWC for downstream tasks
+  (t0011 visualization, t0008 reproduction). This extends the convention in t0005&#x27;s `description.md`
+  [ResearchPapers-t0009].
+
+#### Discovered Papers
+
+##### [Patterson2023]
+
+* **Title**: An ON-type direction-selective ganglion cell in primate retina
+* **Authors**: Patterson, S. S., Girach, A., Bordt, A. S., et al.
+* **Year**: 2023
+* **DOI**: `10.1038/s41586-023-06659-4`
+* **URL**: https://www.nature.com/articles/s41586-023-06659-4
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`
+* **Why download**: First primate ON-DSGC morphology reconstruction published. Cell-type mismatch
+  (primate ON vs mouse ON-OFF) means this is not the primary taper source, but the paper documents
+  diameter measurements that could cross-check the Poleg-Polsky reconstruction&#x27;s plausibility for
+  mammalian DSGCs in general.
+
+##### [Kim2021]
+
+* **Title**: Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and
+  Inhibition in Retinal Direction-Selective Ganglion Cells
+* **Authors**: Kim, Y. J., Peterson, B. B., Crook, J. D., Joo, H. R., Wu, J., Puller, C., Robinson,
+  F. R., Gamlin, P. D., Yau, K.-W., Viana, F., Troy, J. B., Smith, R. G., Packer, O. S., Detwiler,
+  P. B., Dacey, D. M. (or appropriate subset)
+* **Year**: 2021
+* **DOI**: `10.1523/JNEUROSCI.0872-21.2021`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC8425964/
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`,
+  `compartmental-modeling`, `synaptic-integration`
+* **Why download**: Directly tests how much dendrite morphology shapes E/I distribution in DSGCs —
+  a hypothesis adjacent to this task&#x27;s validation question about whether the taper choice matters
+  for downstream electrotonic predictions. May provide additional per-cell morphometric data beyond
+  Poleg-Polsky.
+
+#### Recommendations for This Task
+
+1. **Treat ModelDB 189347 / `RGCmodel.hoc` as the primary per-section diameter source, harvested by
+   regex-parsing `pt3dadd` calls** [ModelDB-189347, geoffder-SODSGC-GH]. This operationalises the
+   paper-corpus recommendation to use Poleg-Polsky &amp; Diamond 2016 as the primary taper source
+   [ResearchPapers-t0009].
+
+2. **Filter `pt3dadd` entries with diam == 0** before computing section means. The corpus review
+   [ResearchPapers-t0009] did not flag this; internet inspection shows the Poleg-Polsky .hoc uses
+   diam=0 as an interpolation node marker [geoffder-SODSGC-GH]. **This updates the corpus
+   recommendation with a concrete data-cleaning step**.
+
+3. **Adopt NeuroM v4.0.4 for Strahler order computation** on both the Poleg-Polsky tree (for
+   binning) and the `141009_Pair1DSGC` tree (for assignment)
+   [BlueBrain-NeuroM-GH, BlueBrain-NeuroM-Docs]. Add `neurom &gt;=4.0.4` to `pyproject.toml`. The
+   paper-corpus recommendations did not specify a library; this fills the gap.
+
+4. **Use pyswc for writing the calibrated SWC** [DaisukeMiyamoto-pyswc-GH] or reuse t0005&#x27;s stdlib
+   writer pattern [ResearchPapers-t0009]. If reusing t0005&#x27;s code, cite the pattern in the
+   calibrated dataset&#x27;s `description.md`.
+
+5. **Do NOT rely on NeuroMorpho.Org for a &quot;default diameter&quot; convention** — no such convention
+   exists [NeuroMorpho-StdSwc-2024]. State in `description.md` that the 0.125 µm placeholder is a
+   property of this specific neuron&#x27;s Simple Neurite Tracer export, not a repository-wide policy.
+
+6. **Plan a Cuntz-style quadratic-diameter fallback path** [treestoolbox-2010] if the Poleg-Polsky
+   bins yield Rin values more than 50% off the Schachter2010 target [ResearchPapers-t0009]. Because
+   TREES is MATLAB-only, a pure-Python re-implementation of `quaddiameter` from the treestoolbox
+   manual may be faster than adding a MATLAB dependency.
+
+7. **Consider downloading [Patterson2023] and [Kim2021]** as supplementary context — not primary
+   sources, but useful for the comparison-to-literature stage of this task and for later downstream
+   tasks (t0011 visualization, any tuning-curve comparison work).
+
+#### Source Index
+
+##### [ModelDB-189347]
+
+* **Type**: dataset
+* **Title**: ModelDB 189347 — Multiplication by NMDA receptors in Direction Selective Ganglion
+  cells (Poleg-Polsky &amp; Diamond 2016)
+* **Author/Org**: Poleg-Polsky, A., Diamond, J. S. / Yale ModelDB
+* **Date**: 2016, accessed 2026-04-19
+* **URL**: https://modeldb.science/189347
+* **Peer-reviewed**: yes (ModelDB model-curation review; paper also peer-reviewed in Neuron 2016)
+* **Relevance**: Canonical public hosting of the Poleg-Polsky DSGC NEURON model. Confirms morphology
+  is distributed as a .hoc file (`RGCmodel.hoc`), not an .swc. File listing verified: `main.hoc`,
+  `mosinit.hoc`, `RGCmodel.hoc`, `model.ses`, plus `.mod` mechanism files.
+
+##### [geoffder-SODSGC-GH]
+
+* **Type**: repository
+* **Title**: Spatial-Offset-DSGC-NEURON-Model
+* **Author/Org**: geoffder (Geoff deRosenroll, Awatramani lab) — accompanying Hanson et al. 2019
+  eLife
+* **Date**: 2019
+* **URL**: https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model
+* **Last updated**: Repository accessed 2026-04-19
+* **Peer-reviewed**: no (code repository; accompanying paper is peer-reviewed in eLife)
+* **Relevance**: Public MIT-licensed mirror of the Poleg-Polsky DSGC morphology, inspected directly
+  for per-section `pt3dadd` diameter values. Soma diameters 0.88-10.6 µm at contour points; dend[1]
+  primary attachment ~11.0-11.5 µm; terminal sections contain some diam=0 interpolation nodes that
+  must be filtered.
+
+##### [NeuroMorpho-StdSwc-2024]
+
+* **Type**: documentation
+* **Title**: Standardization Process (StdSwc1.21)
+* **Author/Org**: NeuroMorpho.Org (George Mason University)
+* **Date**: Accessed 2026-04-19
+* **URL**: https://neuromorpho.org/StdSwc1.21.jsp
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative NeuroMorpho documentation on SWC standardization. Confirms no
+  universal default for missing diameters; radii ≤ 0.05 µm are flagged as B1 irregularities. The
+  0.125 µm placeholder in our target neuron is therefore not a NeuroMorpho convention but an
+  idiosyncratic export value from the original Simple Neurite Tracer reconstruction.
+
+##### [BlueBrain-NeuroM-GH]
+
+* **Type**: repository
+* **Title**: NeuroM — Neuronal Morphology Analysis Tool
+* **Author/Org**: BlueBrain Project / Open Brain Institute
+* **Date**: v4.0.4 released 2024-10-14; archived December 2024, development continues at
+  openbraininstitute/NeuroM
+* **URL**: https://github.com/BlueBrain/NeuroM
+* **Last updated**: 2024-10
+* **Peer-reviewed**: no (library; DOI 10.5281/zenodo.597333)
+* **Relevance**: Primary Python library for computing Strahler order, branch orders, and section
+  path distances on SWC trees. Will be added as a `pyproject.toml` dependency for this task.
+
+##### [BlueBrain-NeuroM-Docs]
+
+* **Type**: documentation
+* **Title**: NeuroM Documentation
+* **Author/Org**: BlueBrain Project
+* **Date**: Accessed 2026-04-19
+* **URL**: https://neurom.readthedocs.io/en/stable/
+* **Peer-reviewed**: no
+* **Relevance**: API documentation for NeuroM&#x27;s morphometric features (section lengths, branch
+  orders, partition asymmetry). Establishes NeuroM as the reference Strahler-order implementation
+  for this task.
+
+##### [DaisukeMiyamoto-pyswc-GH]
+
+* **Type**: repository
+* **Title**: pyswc — Python library for read, write and modify SWC neuron morphology file
+* **Author/Org**: Daisuke Miyamoto
+* **Date**: Accessed 2026-04-19
+* **URL**: https://github.com/DaisukeMiyamoto/pyswc
+* **Last updated**: Repository accessed 2026-04-19
+* **Peer-reviewed**: no (Apache-2.0 licensed code)
+* **Relevance**: Minimal pip-installable SWC read/write library — a candidate for writing the
+  calibrated SWC if reusing t0005&#x27;s stdlib writer is inconvenient.
+
+##### [nGauge-2022]
+
+* **Type**: paper
+* **Title**: nGauge: Integrated and Extensible Neuron Morphology Analysis in Python
+* **Authors**: Bjorklund, N. L., Sorensen, S. A., et al.
+* **Year**: 2022
+* **DOI**: `10.3389/fninf.2022.1034898` (Frontiers in Neuroinformatics)
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC9720862/
+* **Peer-reviewed**: yes
+* **Relevance**: Peer-reviewed Python morphometric library. Listed as an alternative to NeuroM in
+  case NeuroM&#x27;s Strahler implementation proves inadequate for the CNG tree&#x27;s three-way branch
+  points.
+
+##### [hoc2swc-GH]
+
+* **Type**: repository
+* **Title**: hoc2swc — Converter for NEURON simulator HOC files to SWC
+* **Author/Org**: JustasB (Justas Birgiolas)
+* **URL**: https://github.com/JustasB/hoc2swc
+* **Date**: Accessed 2026-04-19
+* **Peer-reviewed**: no
+* **Relevance**: Alternative data-harvesting route — load the Poleg-Polsky .hoc in NEURON, export
+  as SWC, then parse the SWC for diameters. Backup if regex-parsing `pt3dadd` proves fragile.
+
+##### [NEURON-Geometry-Docs]
+
+* **Type**: documentation
+* **Title**: Conceptual Overview of Sections / Geometry
+* **Author/Org**: NEURON simulator / Yale University
+* **URL**: https://nrn.readthedocs.io/en/latest/python/modelspec/programmatic/topology/geometry.html
+* **Date**: Accessed 2026-04-19
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative NEURON documentation on `pt3dadd`, `diam3d(i)`, and
+  `h.define_shape()`. Establishes that pt3d points define 3D point-and-diameter tuples from which
+  section diameters are derived by trapezoidal integration, confirming the parsing strategy.
+
+##### [treestoolbox-2010]
+
+* **Type**: documentation
+* **Title**: TREES Toolbox — Quadratic diameter taper
+* **Author/Org**: Cuntz Lab (Hermann Cuntz)
+* **URL**: https://www.treestoolbox.org/manual/quadratic_diameter_taper.html
+* **Date**: Accessed 2026-04-19
+* **Peer-reviewed**: no (documentation site; accompanying paper Cuntz et al. 2010 PLOS Comp Bio is
+  peer-reviewed)
+* **Relevance**: Documents the MATLAB `quaddiameter` function that assigns diameters from topology
+  under a Rall 3/2-power constraint. Principled synthetic fallback if the Poleg-Polsky bins give bad
+  Rin values.
+
+##### [Cuntz2020-bioRxiv]
+
+* **Type**: paper
+* **Title**: The Narrowing of Dendrite Branches across Nodes follows a well-defined Scaling Law
+* **Authors**: Liao, M., Liang, X., Howard, J., Cuntz, H.
+* **Year**: 2020
+* **DOI**: `10.1101/2020.04.13.039388`
+* **URL**: https://www.biorxiv.org/content/10.1101/2020.04.13.039388v2.full
+* **Peer-reviewed**: no (bioRxiv preprint)
+* **Relevance**: Cited alongside treestoolbox-2010 as the modern updated scaling rule for dendritic
+  narrowing at branch points. Not planned as a primary method, but cited for completeness.
+
+##### [Patterson2023]
+
+* **Type**: paper
+* **Title**: An ON-type direction-selective ganglion cell in primate retina
+* **Authors**: Patterson, S. S., Girach, A., Bordt, A. S., et al.
+* **Year**: 2023
+* **DOI**: `10.1038/s41586-023-06659-4`
+* **URL**: https://www.nature.com/articles/s41586-023-06659-4
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Sanity check that no 2023-2026 reconstruction supersedes Poleg-Polsky for mouse
+  ON-OFF DSGCs — this paper is primate ON-only, not a replacement. Listed in Discovered Papers for
+  cross-species comparison context.
+
+##### [Kim2021]
+
+* **Type**: paper
+* **Title**: Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and
+  Inhibition in Retinal Direction-Selective Ganglion Cells
+* **Authors**: Kim, Y. J., et al.
+* **Year**: 2021
+* **DOI**: `10.1523/JNEUROSCI.0872-21.2021`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC8425964/
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Most recent public DSGC-morphology-sensitivity paper; uses the Poleg-Polsky
+  morphology for its NEURON model. Confirms the community has not moved on from Poleg-Polsky as the
+  canonical mouse ON-OFF DSGC geometry.
+
+##### [ResearchPapers-t0009]
+
+* **Type**: documentation
+* **Title**: research/research_papers.md for t0009_calibrate_dendritic_diameters
+* **Author/Org**: t0009_calibrate_dendritic_diameters research-papers stage
+* **URL**: file:///tasks/t0009_calibrate_dendritic_diameters/research/research_papers.md
+* **Date**: 2026-04-19
+* **Peer-reviewed**: no (internal project research document)
+* **Relevance**: The immediate precursor research document. Every gap addressed in this
+  internet-research stage references it by inline-citation key, and every internet finding is framed
+  as an extension or update to its corpus-derived recommendations.
+      </content>
+    </section>
+    <section id="t0009_calibrate_dendritic_diameters-research_code" source_kind="file">
+      <title>t0009_calibrate_dendritic_diameters — Calibrate dendritic diameters for dsgc-baseline-morphology — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0009_calibrate_dendritic_diameters</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0009_calibrate_dendritic_diameters/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0009_calibrate_dendritic_diameters&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 7
+tasks_cited: 5
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Replace the 0.125 µm placeholder radii in the CNG-curated
+`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc`
+SWC with a literature-derived diameter taper keyed on Strahler order, preserve the 19 soma
+compartments, and register the result as a new `dsgc-baseline-morphology-calibrated` dataset asset.
+This research surveys the project&#x27;s own codebase — libraries, prior task code, dataset assets,
+answer assets, and tooling conventions — to locate reusable patterns and avoid reinventing the SWC
+parsing, path-management, and plotting wheels already established in `t0004` and `t0005`.
+
+#### Library Landscape
+
+The library aggregator is not yet implemented in this repo
+(`arf/scripts/aggregators/aggregate_libraries.py` does not exist — only `aggregate_tasks`,
+`aggregate_costs`, `aggregate_machines`, `aggregate_metric_results`, `aggregate_metrics`,
+`aggregate_suggestions`, `aggregate_categories`, and `aggregate_task_types` are present). Directly
+enumerating `tasks/*/assets/library/` confirms zero library assets have been produced by any
+completed task; every completed task so far produced only `dataset` or `answer` assets. Consequently
+there is nothing to &quot;import via library&quot; — every reusable pattern below is labelled &quot;copy into
+task&quot;. The suggestion `S-0005-04` (a reusable `load_dsgc_morphology()` library) exists as a
+**pending** suggestion from `t0005` but has not been materialised. External Python packages
+(`neurom`, `pyswc`, `nGauge`) recommended in the `research_internet.md` are not currently in
+`pyproject.toml` — only `matplotlib&gt;=3.10.8`, `pandas&gt;=3.0.2`, `numpy&gt;=2.4.4` are declared — so
+the implementation plan must either add `neurom` as a dependency (allowed by CLAUDE.md rule 3 as a
+`pyproject.toml` exception) or implement Strahler order from scratch.
+
+#### Key Findings
+
+##### Stdlib-only SWC parsing pattern is established and production-tested
+
+[t0005] established a stdlib-only SWC reader in
+`tasks/t0005_download_dsgc_morphology/code/validate_swc.py` (237 lines, `parse_swc_file` at lines
+63-89). It produces a `list[SwcCompartment]` of `@dataclass(frozen=True, slots=True)` rows with
+fields `compartment_id, type_code, x, y, z, radius, parent_id`, tolerates `#` comments and blank
+lines, and asserts each row has exactly 7 whitespace-separated fields. The tree-structure invariants
+it checks — exactly one root with `parent_id == -1`, all non-root `parent_id`s exist, non-negative
+radii, soma present, ≥ 100 dendritic compartments — are the exact same invariants the calibrated
+output must preserve. Reusing the parser keeps the diameter calibration &quot;topology in, topology out&quot;
+with no new SWC-parsing bugs. The `_summarize` function (lines 128-176) also computes branch-point
+count (129), leaf count (131), and total dendritic length (1,536.25 µm) directly from the
+compartment list and these will be the pre/post equality checks for the calibrated asset [t0005].
+
+##### The 0.125 µm placeholder is literally uniform across all 6,736 compartments, soma included
+
+The task description states &quot;Preserve the 19 soma compartments&#x27; original (non-placeholder) radii&quot;,
+but direct inspection of
+`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc`
+shows all 19 soma rows (type code 1) AND all 6,717 dendrite rows (type code 3) carry the single
+value `0.125` in column 6 — the file has **one** unique radius value project-wide. This is a
+contradiction the implementation must resolve: the soma contour rows are also placeholders, not
+original measurements, so &quot;preserve soma radii verbatim&quot; leaves a 19-point 0.125 µm soma that
+Import3d will collapse to a ~0.25 µm soma cylinder, which is 40-60× too thin vs. the ~10-15 µm
+community-standard soma diameter [PolegPolsky2016-extracted, Schachter2010]. `t0005`&#x27;s
+`description.md` also lists a NeuroMorpho-reported soma surface of 6.86 µm², consistent with a
+~1.5-µm-equivalent sphere — i.e. also placeholder-scaled. The implementation should either (a)
+assign soma radii from Poleg-Polsky&#x27;s pt3dadd soma points (0.88, 6.14, 7.74, 8.32, 8.35, 10.62, 0.88
+µm diameters per the `research_internet.md` extract) or (b) flag an intervention and only calibrate
+dendrite radii [t0005].
+
+##### Path-management and per-task constants pattern established by t0004
+
+[t0004] `tasks/t0004_generate_target_tuning_curve/code/paths.py` is the reference pattern for
+per-task path constants: a small module that defines
+`TASK_ROOT = Path(__file__).resolve().parent.parent`, `DATASET_ID: str = &quot;target-tuning-curve&quot;`, and
+a chain of `Path` objects for the asset folder, the `files/` subdir, the `details.json`,
+`description.md`, CSV outputs, and `results/images/` for plots (17 lines total). `t0009` should copy
+this pattern verbatim with `DATASET_ID = &quot;dsgc-baseline-morphology-calibrated&quot;` and add constants
+for the placeholder-vs-calibrated radius histogram PNG and the per-order radius CSV that
+`research_internet.md` recommends exporting alongside the SWC. All downstream modules should import
+from `paths.py` rather than hard-code strings [t0004].
+
+##### Dataclass + keyword-args + explicit dtypes pattern in every prior task&#x27;s code
+
+Every code file in `t0004` and `t0005` uses `@dataclass(frozen=True, slots=True)` for result
+containers, explicit keyword-only arguments for functions with ≥ 2 parameters (the `*,` separator
+in `def fn(*, a: T, b: T) -&gt; R`), and explicit type annotations on every local variable. Examples:
+`validate_swc.py` `SwcCompartment` and `SwcSummary` at lines 40-61; `generate_target.py`
+`GeneratorParams` at lines 24-34. The `compute_mean_curve(*, params: GeneratorParams)`,
+`validate(*, swc_path: Path)` signatures show the project&#x27;s strict keyword-args convention. The
+calibrated SWC writer should follow suit:
+`write_calibrated_swc(*, compartments: list[SwcCompartment], output_path: Path) -&gt; None`
+[t0004, t0005].
+
+##### Matplotlib plotting is Agg-backed and saves through a centralised path constant
+
+[t0004] `generate_target.py` uses `matplotlib.use(&quot;Agg&quot;)` (line 8, before any pyplot import) to
+enable headless PNG rendering, then saves through `PLOT_PATH` from `paths.py` with
+`fig.savefig(PLOT_PATH, dpi=150)`. The pattern (lines 125-187) is the template for the task&#x27;s
+required per-order placeholder-vs-calibrated radius distribution plot, and for the
+axial-resistance-per-branch plots in `plan/plan.md`. The `results/images/` directory is created at
+plot time via `mkdir(parents=True, exist_ok=True)` — the task folder structure does not pre-create
+`results/images/` [t0004].
+
+##### Dataset asset structure is fixed by meta/asset_types/dataset/specification.md
+
+[t0005] `tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/` has the
+canonical v2 dataset asset layout: `details.json` (with `spec_version: &quot;2&quot;`, `dataset_id`, `name`,
+`version`, `short_description`, `description_path`, authors, institutions, `files` array, etc.),
+`description.md` (with YAML frontmatter `spec_version: &quot;2&quot;`, `dataset_id`, `summarized_by_task`,
+`date_summarized`, followed by mandatory sections: `## Metadata`, `## Overview`,
+`## Content &amp; Annotation`, `## Statistics`, `## Usage Notes`, `## Main Ideas`, `## Summary`), and
+`files/` holding the data payload. The calibrated dataset must mirror this layout with its own
+`description.md` documenting: the taper source paper (`PolegPolsky2016`), the Strahler-order
+bucketing rule, the NeuroM tie-break convention used, the 0.15 µm terminal floor clamp count, and
+the total-surface-area / axial-resistance deltas vs. the placeholder baseline [t0005].
+
+##### Topology-preserving equality checks are the validation gate
+
+[t0005]&#x27;s `validate_swc.py` already expresses the exact three invariants the task description
+demands as post-calibration checks: compartment count (6,736), branch points (129), leaves (131).
+The calibrated-SWC writer must emit a file that when re-parsed with
+`parse_swc_file(swc_path=calibrated_path)` and passed through `_summarize()` yields a `SwcSummary`
+with `total_compartments == 6736`, `branch_points == 129`, `leaf_points == 131`, and
+`total_dendritic_length_um` within 1e-3 µm of 1,536.25 (path length is a pure function of xyz
+coordinates, which must be copied verbatim). This gives a deterministic binary gate on topology
+preservation [t0005].
+
+#### Reusable Code and Assets
+
+##### `parse_swc_file()` and `SwcCompartment` from t0005 — copy into task
+
+* **Source**: `tasks/t0005_download_dsgc_morphology/code/validate_swc.py` lines 40-89 (dataclasses)
+  and lines 63-89 (parser).
+* **What it does**: Stdlib SWC reader that returns `list[SwcCompartment]` with per-compartment id,
+  type code, xyz, radius, parent id. Skips `#` comments and blank lines, raises `ValueError` on
+  malformed rows.
+* **Reuse method**: **copy into task** — non-library; CLAUDE.md rule 3 forbids importing from
+  another task&#x27;s `code/`. Copy `SwcCompartment`, `SwcSummary`, `SWC_TYPE_*` constants,
+  `ROOT_PARENT_ID`, `parse_swc_file`, `_validate_structure`, and `_summarize` verbatim into
+  `tasks/t0009_calibrate_dendritic_diameters/code/swc_io.py`.
+* **Function signatures**: `parse_swc_file(*, swc_path: Path) -&gt; list[SwcCompartment]`,
+  `validate(*, swc_path: Path) -&gt; SwcSummary`.
+* **Adaptation needed**: None for the reader; add a sibling writer
+  `write_swc_file(*, compartments: list[SwcCompartment], output_path: Path, header_comments: list[str]) -&gt; None`
+  that reproduces the CNG 7-column format with one compartment per line and `#`-prefixed header
+  comments.
+* **Line count**: ~130 lines of reusable stdlib code (parser + summariser + dataclasses).
+
+##### `paths.py` pattern from t0004 — copy into task
+
+* **Source**: `tasks/t0004_generate_target_tuning_curve/code/paths.py` (17 lines total).
+* **What it does**: Single module of `Path` constants rooted on
+  `Path(__file__).resolve().parent.parent`, defining the dataset asset folder, its `details.json`,
+  `description.md`, data files, and the `results/images/` PLOT_PATH.
+* **Reuse method**: **copy into task**. Create
+  `tasks/t0009_calibrate_dendritic_diameters/code/paths.py` with
+  `DATASET_ID = &quot;dsgc-baseline-morphology-calibrated&quot;` and add `CALIBRATED_SWC_PATH`,
+  `PER_ORDER_RADII_CSV`, `RADIUS_DISTRIBUTION_PLOT_PATH`, and `SOURCE_SWC_PATH` (pointing to the
+  absolute path
+  `tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc`
+  via `REPO_ROOT` resolution). No cross-task import is required — only a literal absolute-path
+  reference.
+* **Adaptation needed**: rename `DATASET_ID` and add 3-4 new path constants.
+* **Line count**: ~25 lines.
+
+##### Matplotlib PNG pattern from t0004 — copy into task
+
+* **Source**: `tasks/t0004_generate_target_tuning_curve/code/generate_target.py` lines 1-21 (imports
+  \+ Agg backend) and 125-187 (`plot_curve`).
+* **What it does**: Headless Agg-backed matplotlib figure creation, errorbar + scatter + closed-form
+  line overlay, `fig.savefig(PLOT_PATH, dpi=150)`, `plt.close(fig)` pattern.
+* **Reuse method**: **copy into task**. The structure (Agg import before pyplot, figure builder,
+  savefig+close) is the template; the plot content itself is task-specific (per-order radius
+  histograms, placeholder baseline overlay).
+* **Line count**: ~30 lines of boilerplate, plus task-specific figure drawing.
+
+##### v2 dataset asset skeleton from t0005 — copy into task
+
+* **Source**:
+  `tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/{details.json,description.md}`.
+* **What it does**: Canonical v2 dataset asset: `details.json` with full author/institution list,
+  `files` array, `categories`, `source_paper_id`; `description.md` with YAML frontmatter + mandatory
+  sections.
+* **Reuse method**: **copy into task** as a structural template. The calibrated dataset&#x27;s
+  `source_paper_id` must be the paper-asset slug of
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+  (Poleg-Polsky &amp; Diamond 2016). Categories should be
+  `[&quot;compartmental-modeling&quot;, &quot;dendritic-computation&quot;, &quot;cable-theory&quot;, &quot;retinal-ganglion-cell&quot;]` per
+  the `S-0005-02` suggestion and task description.
+* **Adaptation needed**: new `dataset_id`, `source_paper_id`, `size_description`, `files`,
+  `categories`, fresh `description.md` content per spec v2.
+
+##### Input SWC asset from t0005 — read-only reference
+
+* **Source**:
+  `tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/files/141009_Pair1DSGC.CNG.swc`
+  (6,748 lines, 232,470 bytes, 7-column CNG format, ~12 header comment lines).
+* **What it does**: The input artefact to calibrate. All 6,736 data rows (19 type-1 soma + 6,717
+  type-3 dendrite) have column 6 = `0.125`.
+* **Reuse method**: **read-only** — never modified. The calibrated SWC is written to
+  `tasks/t0009_calibrate_dendritic_diameters/assets/dataset/dsgc-baseline-morphology-calibrated/files/141009_Pair1DSGC_calibrated.CNG.swc`
+  as an independent artefact.
+* **Adaptation needed**: none.
+
+#### Dataset Landscape
+
+Two datasets have been produced by completed tasks:
+
+* **`dsgc-baseline-morphology`** [t0005] — the CNG-curated SWC this task consumes. 6,736
+  compartments, 129 branch points, 131 leaves, 1,536.25 µm total dendritic path length, uniform
+  0.125 µm placeholder radius. Licensed CC-BY-4.0.
+* **`target-tuning-curve`** [t0004] — closed-form angle-to-AP-rate target curve (`curve_mean.csv`,
+  `curve_trials.csv`, `generator_params.json`). Irrelevant to diameter calibration but shows the
+  project&#x27;s canonical CSV + JSON + PNG asset layout.
+
+No prior task has produced a `predictions`, `model`, or `library` asset.
+
+#### Lessons Learned
+
+* **`validate_swc.py` caught one real bug during t0005&#x27;s execution** — the NeuroMorpho record
+  listed `attributes: &quot;No Diameter, 3D, Angles&quot;`, but the stdlib validator nonetheless passed
+  `VALID` because 0.125 µm is non-negative. This is a silent data-quality failure that the
+  validator was not designed to catch. The t0009 calibration fixes exactly this class of bug; the
+  post-calibration validator should additionally assert `radius &gt; 0.05 µm` and `radius &lt;= 15 µm`
+  as a sanity band [t0005].
+* **Soma contour rows are also placeholders** (see Key Findings #2) — the task description&#x27;s
+  &quot;preserve 19 soma compartments verbatim&quot; instruction is based on a false premise and must be
+  resolved in the plan stage before implementation begins [t0005].
+* **`neurom` Python package is not a project dependency yet**. Adding it requires modifying
+  `pyproject.toml` (an explicit CLAUDE.md rule 3 exception). The alternative is a hand-rolled
+  Strahler-order recursion on the `list[SwcCompartment]` tree, which is ~40 lines of Python and has
+  no external dependency [research_internet.md].
+* **Matplotlib PNG dpi convention is 150 across the project** [t0004]. No task has yet deviated;
+  keep this consistent.
+* **t0005&#x27;s verify_dataset_asset.py does not exist** — the t0005 results_summary note that &quot;the
+  framework&#x27;s verify_dataset_asset.py script is not implemented, so the check was done by applying
+  each rule from meta/asset_types/dataset/specification.md directly&quot;. t0009 will face the same
+  manual-compliance gap and should document v2 rule-by-rule conformance in its step log [t0005].
+* **Placeholder 0.125 µm radius is not a NeuroMorpho-wide convention**, per
+  `research/research_internet.md`: it is an idiosyncrasy of this one Simple Neurite Tracer export.
+  The calibrated-dataset description should state this explicitly to avoid implying a
+  NeuroMorpho-level bug is being patched.
+
+#### Recommendations for This Task
+
+1. **Copy `validate_swc.py` verbatim** from [t0005] into `code/swc_io.py`, extend with a
+   `write_swc_file()` function, and use the existing `parse_swc_file` + `_summarize` as both the
+   input reader and the post-calibration topology-equality gate.
+2. **Copy the `paths.py` pattern** from [t0004] with
+   `DATASET_ID = &quot;dsgc-baseline-morphology-calibrated&quot;`. Use it as the sole path-management module;
+   no hard-coded strings anywhere in task code.
+3. **Implement Strahler-order computation in pure Python** as part of `code/morphology.py` —
+   ~40-line recursive function over the `list[SwcCompartment]` tree — to avoid adding `neurom` as
+   a dependency. If tie-break edge cases arise, fall back to adding `neurom` to `pyproject.toml`.
+   Document the tie-break convention in the calibrated dataset&#x27;s `description.md`.
+4. **Flag the soma-placeholder contradiction** as a plan-stage issue before implementation. Options:
+   (a) extract Poleg-Polsky pt3dadd soma diameters and assign them; (b) apply a uniform
+   `SOMA_RADIUS = 5.0 µm` taken from Schachter2010&#x27;s ~10 µm soma diameter; (c) write an
+   intervention file describing the conflict. The task description&#x27;s instruction cannot be literally
+   followed.
+5. **Assert topology equality against t0005&#x27;s reported numbers**: 6,736 compartments, 129 branch
+   points, 131 leaves, 1,536.25 µm total dendritic length. Use `_summarize()` from the copied
+   `swc_io.py` as the oracle; write the comparison as a pytest in
+   `tasks/t0009_calibrate_dendritic_diameters/code/test_swc_io.py` per CLAUDE.md rule 7.
+6. **Produce the per-order radius distribution CSV** (`results/per_order_radii.csv`) in addition to
+   the PNG — `research_internet.md` recommends this for downstream task reuse (t0011
+   visualization, t0008 reproduction), and CSVs are the project&#x27;s canonical cross-task interchange
+   format [t0004].
+7. **Match the v2 dataset asset layout** from [t0005] exactly: `details.json` + `description.md` +
+   `files/`, with the canonical seven `##` sections in `description.md`. Explicitly list the
+   Poleg-Polsky paper asset slug (`10.1016_j.neuron.2016.02.013`) as `source_paper_id`.
+8. **Treat `S-0005-04` (SWC loader library) as future work**, not as a t0009 deliverable — the
+   task description scopes t0009 to *writing* a calibrated SWC, not building a simulator-loader
+   library. Leave that to a dedicated later task.
+
+#### Task Index
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: compartmental models of DS retinal ganglion cells
+* **Status**: `completed`
+* **Relevance**: Holds every downloaded paper the taper-source decision depends on, including the
+  primary source paper asset
+  (`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+  for Poleg-Polsky &amp; Diamond 2016) that the calibrated dataset&#x27;s `details.json` must cite as
+  `source_paper_id`. Also the only task with `assets/paper/` subfolders project-wide.
+
+##### [t0003]
+
+* **Task ID**: `t0003_simulator_library_survey`
+* **Name**: Simulator library survey for DSGC compartmental modelling
+* **Status**: `completed`
+* **Relevance**: Its `dsgc-compartmental-simulator-choice` answer asset lists ModelDB 189347 and the
+  `geoffder/Spatial-Offset-DSGC-NEURON-Model` GitHub repo among the surveyed sources — the same
+  two artefacts `research_papers.md` and `research_internet.md` name as primary/fallback taper
+  sources. Confirms these are the community-accepted DSGC references, not task-internal choices.
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate canonical target angle-to-AP-rate tuning curve
+* **Status**: `completed`
+* **Relevance**: Provides the reference pattern for per-task path constants (`code/paths.py`),
+  headless matplotlib PNG saving (`code/generate_target.py` lines 1-21, 125-187), dataclass +
+  keyword-args + explicit-dtype conventions, and CSV-plus-JSON dataset asset layout. t0009 copies
+  its `paths.py` pattern and plot boilerplate verbatim.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download candidate DSGC morphology
+* **Status**: `completed`
+* **Relevance**: Direct dependency. Produces the input SWC (`dsgc-baseline-morphology`), its
+  canonical validator/parser (`code/validate_swc.py`), and the v2 dataset asset structural template.
+  Every reusable piece of code in this research review is sourced from t0005.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment
+  sanity simulation, and record versions
+* **Status**: `in_progress`
+* **Relevance**: Would have supplied NEURON Python bindings for loading Poleg-Polsky&#x27;s
+  `RGCmodel.hoc` and harvesting pt3dadd diameters via `sec.diam3d(i)`. Because t0007 is not yet
+  completed, t0009 must use the regex/text-parse route on the raw `.hoc` file rather than the
+  NEURON-Python loader route. This is a binding constraint on the implementation strategy.
       </content>
     </section>
     <section id="t0014_brainstorm_results_3-research_papers" source_kind="file">
