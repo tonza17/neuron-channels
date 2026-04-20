@@ -1,0 +1,5 @@
+branch: task/t0013_resolve_morphology_provenance
+base_branch: main
+base_commit: 104b6bbd2464a973e247ec6f1ddf0a9f08049ae1
+worktree_path: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0013_resolve_morphology_provenance
+created_at: 2026-04-20T16:26:37Z
