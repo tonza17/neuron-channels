@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions for scoring/weights/envelope exploration.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T09:50:14Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T09:56:44Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
