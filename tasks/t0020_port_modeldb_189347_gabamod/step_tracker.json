@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0008 library asset modeldb_189347_dsgc and its run_one_trial driver, plus t0012 tuning_curve_loss scorer API, to plan the gabaMOD-swap refactor.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T19:24:27Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T19:30:40Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
