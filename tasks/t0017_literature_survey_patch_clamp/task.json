@@ -5,10 +5,10 @@
   "name": "Literature survey: patch-clamp recordings of RGCs and DSGCs",
   "short_description": "Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-04-19T23:39:05Z",
-  "end_time": null,
+  "end_time": "2026-04-20T11:08:30Z",
   "expected_assets": {
     "paper": 25,
     "answer": 1

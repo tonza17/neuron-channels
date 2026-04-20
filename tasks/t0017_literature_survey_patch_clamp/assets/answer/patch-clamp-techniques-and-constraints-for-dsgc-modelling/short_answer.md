@@ -14,15 +14,16 @@ and (d) modelling of maintained activity and intrinsic pacemaker properties?
 
 ## Answer
 
-DSGC compartmental models must (a) treat published somatic voltage-clamp Ge/Gi traces as lower
-bounds on distal dendritic conductances rather than ground truth, with up to ~80% signal loss on
-thin distal dendrites expected even in passive cables and additional error from active dendritic
-channels, so the modelling pipeline must include a somatic voltage-clamp block that mimics the
-experiment; (b) include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the
-somatic Na+ density, with AIS length as a named tunable parameter constrained by
-immunohistochemistry; (c) include NMDARs with proper Mg2+ block kinetics on DSGC dendrites and fit
-to AMPA/NMDA charge ratios during preferred and null motion rather than peak-AMPA-current alone; (d)
-decide explicitly whether to include intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold
+DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on
+distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is
+lost on thin distal dendrites even in passive cables and active dendritic channels add further
+error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics
+the experimental amplifier so simulation and experiment are compared on the same footing. The model
+must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+
+density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and
+NMDARs with standard Mg2+ block kinetics on DSGC dendrites, fit to AMPA/NMDA charge ratios during
+preferred and null motion rather than peak-AMPA-current alone. Finally the modeller must decide
+explicitly whether to include intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold
 oscillations) based on the target DSGC subtype, validated by
 maintained-activity-under-synaptic-blockade traces.
 
