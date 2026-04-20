@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\assets\library\tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz
+
+[31m[1mERRORS:[0m
+[31m  LA-E001 error: details.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\assets\library\tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\details.json[0m
+[31m  LA-E002 error: description.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\assets\library\tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

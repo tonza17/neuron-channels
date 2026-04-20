@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\logs\steps\003_init-folders
+
+[31m[1mERRORS:[0m
+[31m  SV-E002 error: Required file missing: folders_created.txt[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

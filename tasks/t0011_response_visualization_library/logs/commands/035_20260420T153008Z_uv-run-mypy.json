@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0011_response_visualization_library",
+  "command": "uv run mypy --explicit-package-bases --ignore-missing-imports tasks/t0011_response_visualization_library/code/tuning_curve_viz/cartesian.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/polar.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/overlay.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/raster_psth.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/loaders.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/stats.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/constants.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/paths.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/cli.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/test_smoke.py tasks/t0011_response_visualization_library/code/tuning_curve_viz/__init__.py",
+  "exit_code": 1,
+  "duration_seconds": 5.295,
+  "started_at": "2026-04-20T15:30:08Z",
+  "completed_at": "2026-04-20T15:30:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0011_response_visualization_library",
+  "stdout_file": "035_20260420T153008Z_uv-run-mypy.stdout.txt",
+  "stderr_file": "035_20260420T153008Z_uv-run-mypy.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

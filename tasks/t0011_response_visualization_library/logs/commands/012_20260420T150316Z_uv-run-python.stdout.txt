@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E004 error: Missing mandatory section: '## Task Objective'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Gaps Addressed'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Search Strategy'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Methodology Insights'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Discovered Papers'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Recommendations for This Task'[0m
+[31m  RI-E004 error: Missing mandatory section: '## Source Index'[0m
+[31m  RI-E007 error: Frontmatter is missing or has non-integer 'sources_cited'[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RI-W003 warning: '## Key Findings' section contains no ### subsections[0m
+
+[31m[1mFAILED[0m — 8 error(s), 1 warning(s)

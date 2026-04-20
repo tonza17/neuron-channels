@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W001 warning: suggestions[2]: title is 130 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[4]: title is 121 characters, exceeds 120[0m
+
+[33m[1mPASSED[0m — 0 error(s), 2 warning(s)
