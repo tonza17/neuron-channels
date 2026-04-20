@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create canonical task folder tree (code, data, results, research, plan, assets, intervention, logs).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T12:32:27Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T12:33:54Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
