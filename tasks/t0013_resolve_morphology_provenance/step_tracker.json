@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0005_download_dsgc_morphology to understand dsgc-baseline-morphology asset structure and the source_paper_id field being corrected.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T16:34:55Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T16:38:47Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
