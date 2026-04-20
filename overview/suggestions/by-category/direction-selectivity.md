@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-45 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **42 open** (16
-high, 23 medium, 3 low), **3 closed**.
+47 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **44 open** (16
+high, 24 medium, 4 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -544,6 +544,33 @@ corpus to 24 papers. Recommended task types: download-paper, literature-survey.
 </details>
 
 <details>
+<summary>📂 <strong>Download the Morrie & Feller 2018 SAC reconstructions from
+NeuroMorpho and build a paired SAC+DSGC morphology asset</strong>
+(S-0013-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-03` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | [`10.1016_j.cub.2018.03.001`](../../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+This task attributed the dsgc-baseline-morphology reconstruction (NeuroMorpho neuron 102976,
+141009_Pair1DSGC) to Morrie & Feller 2018 Current Biology (PMID 29606419). That paper's
+Methods describe paired SAC-DSGC patch recordings with 2-photon stacks of both cells
+post-recording, and the SAC partner of the 141009_Pair1 recording is likely deposited in
+NeuroMorpho alongside the DSGC. Search NeuroMorpho by reference_pmid=29606419 to list all
+reconstructions linked to the paper, download the 141009_Pair1SAC companion SWC (and any
+neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and register them as
+dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
+anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
+S-0002-08. Recommended task types: download-dataset.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Extend DSGC model corpus to Arbor and NetPyNE
 reimplementations</strong> (S-0010-04)</summary>
 
@@ -984,6 +1011,33 @@ t0004's trials.csv and downstream simulated trials, and write an answer asset do
 where the estimates agree or diverge. If a variant is systematically preferred for our
 approximately 20 trials per angle, promote it to the default via a corrections-aware revision.
 Recommended task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Email the Feller lab to map the 141009_Pair1DSGC session to a
+specific pair in Morrie & Feller 2018 CB</strong> (S-0013-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | [`10.1016_j.cub.2018.03.001`](../../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The provenance decision in this task (source_paper_id = 10.1016_j.cub.2018.03.001) is grounded
+in methodological consistency plus the NeuroMorpho.org curated attribution, not in an
+exact-quote match: Morrie & Feller 2018 CB does not literally print 141009, Pair1DSGC,
+biocytin, or Neurolucida in its Methods, and the paper publishes only SAC (not DSGC)
+reconstructions. A downstream task should email the Feller lab (Murphy-Baum at
+murphy-baum@berkeley.edu or Morrie at rmorrie@berkeley.edu) asking which specific paired
+recording in the paper's Figure 2 cohort (n = 12 Control + 9 Sema6A-/- null + 6 Sema6A-/-
+preferred) produced the 141009_Pair1DSGC reconstruction, and whether the companion SAC
+reconstruction is deposited at NeuroMorpho. A one-sentence email-reply quote converts the
+current 'methodologically consistent' attribution into a citeable exact-quote provenance, and
+directly informs S-0013-03. Recommended task types: answer-question.
 
 </details>
 

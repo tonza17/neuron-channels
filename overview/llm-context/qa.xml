@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>179828</char_count>
-    <byte_count>180015</byte_count>
-    <estimated_tokens>44957</estimated_tokens>
+    <char_count>180468</char_count>
+    <byte_count>180655</byte_count>
+    <estimated_tokens>45117</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -123,6 +123,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -131,7 +132,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 18
+Completed tasks: 19
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -205,6 +206,12 @@ Completed: 2026-04-20
 Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
 Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
 
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Completed: 2026-04-20
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Result summary: Results Summary: Resolve DSGC Morphology Provenance Summary Closed the provenance gap on `dsgc-baseline-morphology.source_paper_id`. Registered both candidate Feller-lab 2018 papers as v3 paper assets, read their Methods sections, applied the pre-specified decision procedure, and filed a single correction that sets `source_paper_id` to `10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018 *Current Biology*, &quot;A Dense Starburst Plexus Is Critical for Generating Direction Selectivity&quot;). Discovered along the way that the t0005 plan&#x27;s &quot;Morrie &amp; Feller 2018 *Neuron*&quot; DOI nomination was an error: `10.1016/j.neuron.2018.05.028` resolves to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -245,18 +252,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0013_resolve_morphology_provenance</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Resolve dsgc-baseline-morphology source-paper provenance
-ID: t0013_resolve_morphology_provenance
-Status: not_started
-Effective date: 2026-04-19
-Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
-Dependencies: t0005_download_dsgc_morphology
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>522141</char_count>
-    <byte_count>522931</byte_count>
-    <estimated_tokens>130535</estimated_tokens>
-    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+    <char_count>551234</char_count>
+    <byte_count>552082</byte_count>
+    <estimated_tokens>137808</estimated_tokens>
+    <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
     <item>all papers with full summaries and metadata</item>
@@ -21,6 +21,8 @@
         <id>10.1016_j.celrep.2025.116833</id>
         <id>10.1016_j.neuroscience.2021.08.024</id>
         <id>10.1126_sciadv.abb6642</id>
+        <id>10.1016_j.neuron.2018.05.028</id>
+        <id>10.1016_j.cub.2018.03.001</id>
         <id>10.1126_science.aan3846</id>
         <id>10.1016_j.neuron.2017.09.058</id>
         <id>10.1371_journal.pone.0019463</id>
@@ -65,7 +67,7 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 46
+Papers: 48
 
 ## Machine learning discovers numerous new computational principles underlying direction selectivity in the retina
 ID: 10.1038_s41467-026-70288-4
@@ -738,6 +740,433 @@ AIS compartment with Nav1.6 enrichment at the reported density ratio, AIS length
 tunable parameter constrained by immunohistochemistry rather than a fixed value, and
 depolarisation-block behaviour must be used as a fitting constraint. Ignoring the AIS will produce a
 DSGC model that cannot correctly reproduce high-firing-rate and strong-contrast responses.
+
+## A Viral Receptor Complementation Strategy to Overcome CAV-2 Tropism for Efficient Retrograde Targeting of Neurons
+ID: 10.1016_j.neuron.2018.05.028
+Year: 2018
+Authors: Shu-Jing Li, Alexander Vaughan, James Fitzhugh Sturgill, Adam Kepecs
+Venue: Neuron
+Venue type: journal
+DOI: 10.1016/j.neuron.2018.05.028
+URL: https://www.cell.com/neuron/fulltext/S0896-6273(18)30426-4
+Added by task: t0013_resolve_morphology_provenance
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: Download failed — paywalled Neuron paper; see `details.json` `download_failure_reason`.
+* **Published**: 2018-06-06
+* **Authors**: Shu-Jing Li 🇺🇸, Alexander Vaughan 🇺🇸, James Fitzhugh Sturgill 🇺🇸,
+  Adam Kepecs 🇺🇸
+* **Venue**: Neuron, Vol. 98, Issue 5, pp. 905-917.e5
+* **DOI**: `10.1016/j.neuron.2018.05.028`
+
+#### Abstract
+
+Retrogradely transported neurotropic viruses enable genetic access to neurons based on their
+long-range projections and have become indispensable tools for linking neural connectivity with
+function. A major limitation of viral techniques is that they rely on cell-type-specific molecules
+for uptake and transport. Consequently, viruses fail to infect variable subsets of neurons depending
+on the complement of surface receptors expressed (viral tropism). We report a receptor
+complementation strategy to overcome this by potentiating neurons for the infection of the virus of
+interest-in this case, canine adenovirus type-2 (CAV-2). We designed AAV vectors for expressing the
+coxsackievirus and adenovirus receptor (CAR) throughout candidate projection neurons. CAR expression
+greatly increased retrograde-labeling rates, which we demonstrate for several long-range
+projections, including some resistant to other retrograde-labeling techniques. Our results
+demonstrate a receptor complementation strategy to abrogate endogenous viral tropism and thereby
+facilitate efficient retrograde targeting for functional analysis of neural circuits.
+
+#### Overview
+
+This summary is based on the abstract and publicly available information only; the full paper could
+not be downloaded. The DOI `10.1016/j.neuron.2018.05.028` is paywalled on ScienceDirect and
+`cell.com`, and the paper (PMID 29879392) has no open-access copy in PubMed Central, Europe PMC, or
+bioRxiv. Metadata was collected from the CrossRef and PubMed records, the Cold Spring Harbor
+Laboratory press release, ScienceDaily, EurekAlert, and the Kepecs Lab publications page.
+
+The paper is a neural-circuit methods paper from the Kepecs laboratory at Cold Spring Harbor
+Laboratory. It tackles a well-known limitation of retrograde viral tracing: canine adenovirus
+type-2 (CAV-2) is widely used for axon-terminal uptake but infects only neurons that express its
+natural receptor, the coxsackievirus and adenovirus receptor (CAR). Neurons lacking CAR are
+systematically missed, distorting reconstructed circuits. The authors propose forcing CAR
+expression in candidate projection neurons with a conventional AAV vector, so that CAR-negative
+neurons become permissive to CAV-2 entry. They demonstrate the approach in rats and mice for
+multiple long-range projections; the CSHL press release highlights the basolateral
+amygdala-to-medial prefrontal cortex projection as a prominent example of a pathway recovered by
+the method.
+
+**This paper is not about retinal direction selectivity, starburst amacrine cells (SACs), or
+direction-selective ganglion cells (DSGCs).** It does not describe paired SAC-DSGC recordings,
+biocytin-filled morphological reconstructions, Neurolucida tracing, or NeuroMorpho deposition, and
+it is therefore not the source paper for the `141009_Pair1DSGC` DSGC morphology used by the
+`dsgc-baseline-morphology` asset. This is almost certainly a task-input error: the orchestrator
+described this DOI as &quot;Morrie &amp; Feller 2018 Neuron,&quot; but CrossRef and PubMed confirm the DOI
+belongs to Li et al. 2018 on CAV-2 retrograde tracing. The Morrie &amp; Feller &quot;A Dense Starburst
+Plexus Is Critical for Generating Direction Selectivity&quot; paper is actually in *Current Biology*
+(DOI `10.1016/j.cub.2018.03.001`, PMID 29606419), which is also the second candidate DOI listed in
+the task description.
+
+#### Architecture, Models and Methods
+
+Full methodology not available — paper not downloaded. The abstract and secondary sources identify
+the following methodological elements:
+
+* **Species**: rats and mice (CSHL press release; abstract states &quot;neurons&quot; without species, but
+  corroborating coverage from ScienceDaily and EurekAlert confirms both rats and mice).
+* **Brain regions / projections**: multiple long-range projections, with the press release
+  explicitly naming the basolateral amygdala to medial prefrontal cortex projection as a flagship
+  test case. Additional projections resistant to standard retrograde labeling are also evaluated
+  per the abstract.
+* **Key reagents**:
+  * Canine adenovirus type-2 (CAV-2) as the retrograde virus of interest.
+  * Custom AAV vectors expressing the coxsackievirus and adenovirus receptor (CAR) in candidate
+    projection neurons to complement the missing CAR receptor.
+  * Addgene-deposited plasmids for the CAR-expressing AAV constructs (Addgene browse page
+    catalogues the deposits from this paper).
+* **Experimental design**: pair CAV-2 injection at the projection target with AAV-CAR at the
+  projection source, then quantify retrograde labeling density in CAR-complemented animals versus
+  CAV-2-only controls.
+* **Quantification**: retrograde-labeling rates are compared across conditions and projections;
+  the abstract states CAR expression &quot;greatly increased retrograde-labeling rates,&quot; but the
+  specific labeling efficiency values, cell counts, titers, injection volumes, and microscopy
+  parameters are not reported in the abstract or public summaries and cannot be quoted here
+  without the full paper.
+* **Not present**: the paper does not describe retinal preparations, whole-cell patch-clamp
+  recordings from retinal neurons, paired SAC-DSGC recordings, biocytin intracellular fills,
+  Neurolucida dendrite tracing, or NeuroMorpho deposition. It does not mention recording dates
+  such as `141009` or October 9 2014, nor the `Pair1DSGC` cell identifier, nor the Sema6A knockout
+  mouse line used in DSGC plexus-density studies.
+
+#### Results
+
+Results not available — paper not downloaded. The abstract reports only qualitative outcomes
+(&quot;greatly increased retrograde-labeling rates,&quot; &quot;some resistant to other retrograde-labeling
+techniques&quot;). The following bullets record what is and is not reported in the accessible materials:
+
+* **Retrograde labeling efficiency**: CAR complementation &quot;greatly increased&quot; CAV-2 retrograde
+  labeling, per the abstract. Specific fold-change values, absolute neuron counts, and statistical
+  comparisons are not reported in the abstract.
+* **Projections tested**: multiple long-range projections were evaluated, with the
+  basolateral-amygdala-to-medial-prefrontal-cortex pathway as a named example (CSHL press
+  release). Exact projection-by-projection labeling efficiencies are not reported in accessible
+  materials.
+* **Failure-mode recovery**: projections &quot;resistant to other retrograde-labeling techniques&quot; were
+  successfully labeled (abstract); the identity and number of these projections are not reported
+  in accessible materials.
+* **Species cross-validation**: the method is reported to work in both rats and mice (CSHL press
+  release); per-species efficiency numbers are not reported in accessible materials.
+* **Retinal / DSGC results**: none — the paper does not include any retinal work. No F1 scores,
+  tuning indices, direction-selectivity indices, SAC dendrite lengths, or DSGC reconstructions
+  are reported.
+
+#### Innovations
+
+##### Receptor-Complementation Paradigm for Viral Tracing
+
+The paper&#x27;s central novelty is framing viral tropism as an engineerable property: rather than
+selecting a virus whose natural receptor matches the target cell, the authors install the virus&#x27;s
+receptor in the target cell via an AAV vector. The Kepecs-lab quote from the CSHL press release —
+&quot;It&#x27;s a little like we&#x27;re going around changing the locks on all the doors. They&#x27;re still locked,
+but now we have all the keys&quot; — captures the conceptual shift.
+
+##### CAR-AAV Vector Toolkit for CAV-2 Retrograde Tracing
+
+A practical contribution is a set of AAV constructs for expressing the coxsackievirus and
+adenovirus receptor (CAR) that are deposited on Addgene (see Addgene browse article 28193439).
+These reagents are what made CAV-2 retrograde tracing tractable in CAR-negative projections after
+2018.
+
+##### Rescue of Circuits Lost to Conventional Tracing
+
+The demonstration that CAR complementation recovers projections previously resistant to
+retrograde labeling is an empirical innovation: it converts a categorical failure (virus does not
+infect neuron type X) into a quantitative gain (labeling rates are recoverable with
+pre-treatment).
+
+#### Datasets
+
+This paper reports primary experimental data (viral labeling in rat and mouse brains). It does not
+use any public neuronal morphology repository such as NeuroMorpho.Org, the Allen Brain Atlas
+cell-type database, or DANDI. No public dataset is deposited with the paper according to the
+materials consulted; the AAV-CAR plasmids are distributed through Addgene rather than as a
+dataset.
+
+Not reported in the accessible materials: injection volumes, AAV and CAV-2 titers, number of
+animals per projection, or per-projection labeling counts. These would be in the STAR Methods and
+figure legends of the full paper.
+
+#### Main Ideas
+
+* **This DOI is not the source paper for the DSGC `141009_Pair1DSGC` morphology.** The Li et al.
+  paper is a viral-tracing methods paper about brain projection neurons; it contains no retinal
+  work, no paired SAC-DSGC recordings, and no NeuroMorpho deposition. The task should record this
+  as strong evidence that Morrie &amp; Feller 2018 *Neuron* (as the orchestrator labels this DOI)
+  does not exist — the correct Morrie &amp; Feller paper is DOI `10.1016/j.cub.2018.03.001`
+  (*Current Biology*).
+* **Task-input sanity check**: before adding a paper asset, verify that the CrossRef `title`
+  returned for the DOI matches the orchestrator&#x27;s declared paper title. A mismatch indicates a
+  transcription error in the task setup that must be surfaced rather than silently corrected.
+* **Morphology provenance resolution path**: since this DOI is unrelated to DSGC morphology, the
+  task&#x27;s `dsgc-baseline-morphology` correction should evaluate only the Murphy-Baum &amp; Feller 2018
+  *Current Biology* paper (`10.1016/j.cub.2018.03.001`) — which is in fact the Morrie &amp; Feller
+  Dense Starburst Plexus paper — against NeuroMorpho&#x27;s metadata attribution. If NeuroMorpho
+  attributes neuron 102976 to Murphy-Baum &amp; Feller, then the conflict is between NeuroMorpho&#x27;s
+  attribution and Morrie &amp; Feller&#x27;s Methods; if NeuroMorpho attributes to Morrie &amp; Feller, then
+  the apparent &quot;two-paper&quot; conflict collapses into a single candidate.
+* **CAV-2 / CAR toolkit is irrelevant to this project**: the project studies single-RGC
+  electrophysiology and cable-theoretic modelling; retrograde viral tracing of brain projections
+  is out of scope and does not inform the direction-selectivity modelling work.
+
+#### Summary
+
+Li, Vaughan, Sturgill, and Kepecs (2018) report a receptor-complementation strategy that enables
+canine adenovirus type-2 (CAV-2) to retrogradely infect neurons that lack its natural receptor, the
+coxsackievirus and adenovirus receptor (CAR). Their motivating question is methodological: how can
+neuroscientists access all neurons projecting to a target region when the standard retrograde virus
+misses CAR-negative cell types? The scope is brain-wide retrograde tracing in rodents, with the
+basolateral-amygdala-to-medial-prefrontal-cortex projection named as a worked example.
+
+The method pairs an AAV vector that delivers CAR transgene expression to candidate source regions
+with a subsequent CAV-2 injection at the projection target. Previously CAR-negative neurons become
+permissive to CAV-2 entry, and the virus is transported retrogradely to the source where it can
+drive Cre, fluorophores, or other payloads. The team tested the approach in both rats and mice
+across several long-range pathways, including projections that had previously failed to label with
+conventional retrograde techniques. AAV-CAR plasmids were deposited on Addgene for community use.
+
+The headline finding, as reported in the abstract, is that CAR complementation &quot;greatly increased
+retrograde-labeling rates&quot; and recovered projections &quot;resistant to other retrograde-labeling
+techniques.&quot; Specific fold-change numbers, per-projection labeling efficiencies, cell counts, and
+titers cannot be quoted here because the full paper could not be downloaded from the worktree.
+Secondary sources (CSHL press release, ScienceDaily, EurekAlert) corroborate the qualitative claim
+but do not provide quantitative results.
+
+For this project, the paper&#x27;s practical relevance is approximately zero. The DSGC morphology
+provenance task requires paired SAC-DSGC recordings, biocytin fills, and Neurolucida
+reconstructions deposited on NeuroMorpho — none of which appear in this paper. The key takeaway is
+a metadata-integrity finding: the orchestrator&#x27;s task input pairs a paper title (&quot;Morrie &amp; Feller
+2018 *Neuron*, A Dense Starburst Plexus Is Critical...&quot;) with a DOI that does not resolve to that
+title. The correct Morrie &amp; Feller paper is `10.1016/j.cub.2018.03.001` (*Current Biology*), which
+is separately listed as the &quot;Murphy-Baum &amp; Feller 2018&quot; candidate in the task description — so the
+two supposed candidate papers likely collapse to one paper mis-labelled twice. The provenance
+resolution should therefore focus on whether NeuroMorpho&#x27;s attribution matches the Morrie &amp; Feller
+*Current Biology* Methods, not on adjudicating between two distinct Feller-lab 2018 papers.
+
+## A Dense Starburst Plexus Is Critical for Generating Direction Selectivity
+ID: 10.1016_j.cub.2018.03.001
+Year: 2018
+Authors: Ryan D. Morrie, Marla B. Feller
+Venue: Current Biology
+Venue type: journal
+DOI: 10.1016/j.cub.2018.03.001
+URL: https://doi.org/10.1016/j.cub.2018.03.001
+Categories: direction-selectivity, retinal-ganglion-cell, dendritic-computation, synaptic-integration, patch-clamp
+Added by task: t0013_resolve_morphology_provenance
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: `files/morrie_2018_dense-starburst-plexus.pdf`
+* **Published**: 2018-04-23 (Curr Biol 28(8): 1204-1212.e5)
+* **Authors**: Ryan D. Morrie 🇺🇸, Marla B. Feller 🇺🇸
+* **Venue**: Current Biology (Elsevier)
+* **DOI**: `10.1016/j.cub.2018.03.001`
+* **PMID**: 29606419; PMCID: PMC5916530
+
+#### Abstract
+
+Starburst amacrine cell (SAC) morphology is considered central to retinal direction selectivity. In
+Sema6A-/- mice, SAC dendritic arbors are smaller and no longer radially symmetric, leading to a
+reduction in SAC dendritic plexus density. Sema6A-/- mice also have a dramatic reduction in the
+directional tuning of retinal direction-selective ganglion cells (DSGCs). Here we show that the loss
+of DSGC tuning in Sema6A-/- mice is due to reduced null direction inhibition, even though strong
+asymmetric SAC-DSGC connectivity and SAC dendritic direction selectivity are maintained. Hence, the
+reduced coverage factor of SAC dendrites leads specifically to a loss of null direction inhibition.
+Moreover, SAC dendrites are no longer strictly tuned to centrifugal motion, indicating that SAC
+morphology is critical in coordinating synaptic connectivity and dendritic integration to generate
+direction selectivity.
+
+#### Overview
+
+The paper dissects which components of the starburst amacrine cell (SAC) to direction-selective
+ganglion cell (DSGC) circuit are degraded when SAC morphology is experimentally truncated. Using the
+Sema6A-/- mouse, in which SACs develop with smaller, radially asymmetric arbors and therefore a ~50%
+reduction in SAC plexus coverage factor, the authors separately probe DSGC directional tuning,
+paired SAC-DSGC inhibitory conductances, SAC varicosity Ca2+ directional tuning, and the geometry of
+SAC dendrites around each imaged release site. The headline result is a dissociation: asymmetric
+SAC-to-DSGC wiring and subcellular SAC varicosity direction selectivity are preserved, yet DSGC
+directional tuning collapses because null-direction inhibition is weaker.
+
+Mechanistically, the authors show that SAC varicosities in Sema6A-/- mice are no longer strictly
+tuned to centrifugal motion; their directional preference instead follows the orientation of a short
+(~10-40 micrometres) distal neurite segment bearing glutamate receptors. The tortuous, misaligned
+Sema6A-/- dendrites therefore produce a population of SAC release sites whose preferred directions
+are partly misaligned with the SAC-DSGC wiring axis. An IPSC simulation using each reconstructed
+SAC&#x27;s varicosity geometry reproduces the observed IPSC tuning loss, supporting the morphology-driven
+explanation.
+
+For the Feller-lab DSGC morphology provenance question, the relevant operational details sit in the
+Methods. The paper uses paired SAC-DSGC patch recordings with AlexaFluor-filled cells, 2-photon
+imaging of SAC varicosities in CNT (ChAT-Cre/nGFP/TrHr) mice aged p25-120, and manual SAC
+reconstruction in FIJI Simple Neurite Tracer exported to SWC and analysed in the TREES toolbox.
+Notably, the Methods do NOT describe biocytin fills, Neurolucida reconstruction, a NeuroMorpho.Org
+deposition, a cell labelled `141009` or `Pair1DSGC`, or recordings dated 9 October 2014; only SAC
+morphologies (not DSGC morphologies) are reconstructed, and the archived data policy is &quot;available
+from the corresponding author on request.&quot;
+
+#### Architecture, Models and Methods
+
+**Animals**: Mice aged p25-120, both sexes. Three crossed lines defined the CNT (ChAT-Cre/nGFP/TrHr)
+reporter used to visualise SACs and ON-OFF DSGCs under 2-photon. Sema6A-/- (B6;129P2-Sema6Atm1Ddg/J)
+mice were genotyped per Jackson Laboratories. Retinas were dark-adapted 30 min, isolated in
+oxygenated Ames&#x27; medium at 32-34 degrees C.
+
+**Electrophysiology**: Whole-cell voltage clamp used a CsMeSO4-based internal (110 CsMeSO4, 2.8
+NaCl, 20 HEPES, 4 EGTA, 5 TEA-Cl, 4 Mg-ATP, 0.3 Na3GTP, 10 Na2Phosphocreatine, 0.025 mM
+AlexaFluor488; pH 7.2, 290 mOsm, ECl- = -74 mV) for DSGCs, with 0.1 mM EGTA and AlexaFluor594 for
+SACs. Spiking DSGC responses used standard ACSF. Light stimuli were moving bars in eight directions
+and full-field flashes from a PICO projector.
+
+**Paired SAC-DSGC recordings**: Inhibitory conductance was reconstructed from SAC-DSGC pairs
+following the algorithm of Miller and Lisberger (2013). DSGCs were held from -100 to +20 mV while
+SACs were depolarized three times from -70 mV to 0 mV for 50 ms. Putative synaptic sites were
+counted by colocalization of SAC and DSGC volumes in Imaris 9 (Bitplane), with a &quot;Spots&quot; overlap
+metric applied to the outer third of the SAC arbor within plus or minus 67 degrees of the null
+direction.
+
+**SAC morphology reconstruction**: After recording, 2-photon 1024x1024 stacks (0.5 micrometre step,
+780 nm or 930 nm excitation) of AlexaFluor-filled SACs were acquired, then manually traced in FIJI
+Simple Neurite Tracer, exported as SWC, and imported into the TREES toolbox in MATLAB for analysis
+of branch length, tortuosity and distal-segment orientation. Imaged Ca2+ varicosities were labeled
+on the SWC trace. **No DSGC morphology reconstruction, biocytin fill, Neurolucida reconstruction, or
+NeuroMorpho.Org deposition is described.**
+
+**IPSC simulation**: Directional SAC-DSGC IPSCs were simulated by placing release sites on the null
+half of each reconstructed SAC, weighting by each site&#x27;s measured Ca2+ tuning curve and preferred
+direction, and summing across sites under varying SAC-DSGC wiring misalignment assumptions.
+
+**Data &amp; Software Availability**: &quot;Datasets generated... and all custom scripts and functions
+generated or used... are available from the corresponding author on request.&quot; (Morrie &amp; Feller 2018,
+Methods, p. 15.)
+
+**Sample sizes**: Fig 1 DSGC tuning n = 12 Control / 15 Sema6A-/- cells; Fig 2 paired SAC-DSGC n =
+12 Control / 9 Sema6A-/- null-pairs / 6 Sema6A-/- preferred-pairs; Fig 3 Ca2+ imaging n = 6 Control
+SACs / 7 Sema6A-/- SACs with 50-100 varicosities per cell; Fig 4 distal-segment analysis used the
+same SACs.
+
+#### Results
+
+* DSGC ON-direction vector sum magnitude is reduced from **0.40** in Control to **0.10** in
+  Sema6A-/- mice (Fig 1B, D; 1-way ANOVA p &lt; 0.001), with no change in OFF tuning.
+* Peak ON inhibitory conductance to DSGCs collapses from ~**4 nS** in Control null-direction to
+  ~**1.5 nS** in Sema6A-/- null-direction (Fig 1F), with loss of the null-preferred asymmetry.
+* Paired SAC-DSGC peak inhibitory conductance in null-oriented pairs is preserved per synapse:
+  Control = ~**0.8 nS**, Sema6A-/- null = ~**0.6 nS**, Sema6A-/- preferred = ~**0.25 nS** (Fig 2E;
+  1-way ANOVA p = 0.0135, Tukey-Kramer Control vs Sema6A-/- preferred p = 0.014).
+* Per-synapse conductance scales linearly with the number of putative synaptic sites in both Control
+  and Sema6A-/- pairs (Fig 2F), confirming preserved wiring rule.
+* SAC varicosity Ca2+ direction selectivity index (DSI) is comparable between Control and Sema6A-/-
+  (Fig 3C; mean DSI Control ~**0.35**, Sema6A-/- ~**0.32**), i.e. intrinsic SAC DS is unaffected.
+* **~30-40%** of Sema6A-/- SAC varicosities are no longer tuned to centrifugal motion and instead
+  follow local distal-segment orientation (Fig 4C,D), compared to &lt;10% in Controls.
+* Varicosity preferred direction correlates with the orientation of the distal **10-40 micrometres**
+  of dendrite proximal to the release site, independent of soma-to-varicosity vector (Fig 4F).
+* IPSC simulation with measured Sema6A-/- varicosity preferred directions reproduces the observed
+  DSGC IPSC tuning loss only when SAC coverage is also reduced to the Sema6A-/- level (Fig 5E,F).
+
+#### Innovations
+
+##### Morphology-only genetic dissection of the SAC-DSGC motif
+
+Exploits Sema6A-/- as a targeted morphology perturbation: SAC arbors are smaller and asymmetric
+while SAC-SAC GABA transmission, ChAT cholinergic output, and DSGC cell-intrinsic properties are
+spared, so the loss of directional tuning is unambiguously attributable to SAC morphology, not to
+altered excitatory input, altered DSGC intrinsic excitability, or altered SAC release machinery.
+
+##### Dissociation of circuit wiring from circuit function
+
+First demonstration that strongly asymmetric SAC-DSGC wiring and subcellular SAC varicosity DS can
+coexist with a collapsed DSGC directional tuning. This constrains which elements of the canonical
+&quot;asymmetric inhibition&quot; model are sufficient, and shows that dense SAC plexus coverage is a
+separate, necessary ingredient.
+
+##### Distal-segment rule for SAC varicosity directionality
+
+Each SAC varicosity preferred direction is set by the orientation of a short (10-40 micrometres)
+distal neurite segment bearing glutamate receptors, not by the soma-to-varicosity vector. This is a
+concrete cable-level rule that downstream compartmental models can implement directly.
+
+#### Datasets
+
+* **Electrophysiology and 2-photon imaging dataset**: paired SAC-DSGC recordings and Ca2+ imaging of
+  SAC varicosities from Control (CNT) and Sema6A-/- mice. Not publicly archived; per the Methods
+  &quot;available from the corresponding author on request.&quot;
+* **SAC morphology SWC files**: Manually traced SAC dendritic arbors from 2-photon image stacks,
+  used as input to the TREES toolbox IPSC simulation. Not deposited on NeuroMorpho.Org as of the
+  paper&#x27;s publication (no deposition statement in the Methods); the NeuroMorpho LinkOut for this
+  PMID resolves to SACs (and not the DSGC reconstructions this project&#x27;s task is chasing).
+* **No DSGC morphology reconstruction dataset** is produced or referenced; the paired-recording
+  figures (Fig 2A-C) show SAC traces with putative synaptic sites annotated, but the DSGCs
+  themselves are not reconstructed in this paper.
+
+#### Main Ideas
+
+* **This paper does not, anywhere in its text, reference a DSGC labelled `141009`, a pair identifier
+  `Pair1DSGC`, biocytin fills, Neurolucida reconstruction, or an October 2014 recording date.** The
+  NeuroMorpho.org record for neuron 102976 (`141009_Pair1DSGC`) lists this DOI as its single
+  reference, but the paper&#x27;s Methods only describe SAC reconstructions via FIJI Simple Neurite
+  Tracer. This is direct evidence that the NeuroMorpho linkage is either incorrect, inherited from
+  an unpublished lab dataset, or points to an unreported companion DSGC reconstruction produced by
+  the Feller lab and deposited separately.
+* The paper is strong evidence that dense SAC dendritic overlap (not individual SAC connectivity or
+  subcellular Ca2+ DS) is the critical determinant of DSGC directional tuning. Our compartmental
+  model must therefore treat SAC coverage/overlap density (not just per-synapse weight) as a
+  first-class parameter when generating null-direction inhibition.
+* The &quot;distal 10-40 micrometre rule&quot; for varicosity preferred direction gives a concrete spatial
+  scale for the directionally tuned GABAergic inputs that our DSGC model should receive: inhibition
+  on each null-oriented dendrite segment should be computed from the orientation of the presynaptic
+  SAC distal neurite, not from a global centrifugal prior.
+* The IPSC simulation framework (null-half SAC release sites, Ca2+-weighted preferred directions,
+  TREES toolbox geometry) is a directly reusable template if this project needs to generate
+  angle-dependent GABAergic drive for the single-DSGC compartmental model without simulating a full
+  SAC population.
+
+#### Summary
+
+Morrie and Feller ask which morphological feature of the starburst amacrine cell plexus is necessary
+for direction-selective tuning in retinal ganglion cells. Prior work established that asymmetric
+SAC-to-DSGC inhibition is central to DS, and that SAC dendrites themselves are tuned to centrifugal
+motion, but it was unknown whether loss of DS in morphology-mutant mice reflected broken wiring,
+broken subcellular computation, or a broken circuit geometry. The Sema6A-/- mouse offers a clean
+dissection because it preserves SAC cell number and GABAergic identity but reduces arbor size and
+plexus overlap.
+
+The authors combine cell-attached DSGC spike recordings, whole-cell voltage-clamp IPSC measurements,
+paired SAC-DSGC patch recordings with dye fills (AlexaFluor488 for DSGCs, AlexaFluor594 for SACs),
+2-photon OGB1 Ca2+ imaging of SAC varicosities, manual morphology tracing in FIJI Simple Neurite
+Tracer exported as SWC files to the TREES toolbox, and a custom IPSC simulation in MATLAB. Mice were
+p25-120 CNT (ChAT-Cre/nGFP/TrHr) reporter crosses. The experimental design cleanly separates wiring
+(paired recordings), subcellular computation (Ca2+ imaging), and geometric arrangement
+(reconstructed SAC arbors with varicosity positions and distal-segment orientations).
+
+Three findings carry the paper. First, DSGC directional tuning collapses in Sema6A-/- because
+null-direction inhibition is halved (~4 nS to ~1.5 nS) while preferred-direction inhibition is
+unchanged. Second, paired SAC-DSGC recordings show that asymmetric wiring and per-synapse
+conductance are preserved. Third, Ca2+ imaging shows that SAC varicosity-level DS is preserved but
+that ~30-40% of Sema6A-/- varicosities are not tuned to centrifugal motion; instead their preferred
+direction follows the orientation of a short distal (10-40 micrometre) neurite segment, and a
+TREES-toolbox-based IPSC simulation with each SAC&#x27;s measured varicosity geometry reproduces the
+observed DSGC IPSC tuning loss.
+
+For this project the paper&#x27;s relevance is both scientific and operational. Scientifically, it
+establishes that our compartmental DSGC model must couple SAC plexus coverage and local
+distal-segment orientation to the amplitude and preferred direction of each GABAergic input; a model
+that only varies per-synapse weight will miss the dominant mechanism of null-direction inhibition.
+Operationally, for task t0013 the paper provides decisive negative evidence: its Methods describe
+only SAC reconstructions (FIJI to SWC to TREES), never DSGC reconstructions, biocytin fills,
+Neurolucida tracings, a `141009` or `Pair1DSGC` identifier, or a NeuroMorpho deposition statement.
+The NeuroMorpho.org linkage of neuron 102976 to this DOI is therefore not supported by the paper
+itself and must be resolved by inspecting a different Feller-lab source (lab repository, earlier
+paired-recording paper, or unpublished deposition metadata).
 
 ## Behavioral time scale synaptic plasticity underlies CA1 place fields
 ID: 10.1126_science.aan3846

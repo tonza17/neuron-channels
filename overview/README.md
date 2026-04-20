@@ -1,7 +1,7 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-46-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-48-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-82-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-87-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (10K)
-| [full](llm-context/full.xml) (123K) | [roadmap](llm-context/roadmap.xml) (27K) |
-[results](llm-context/results-deep-dive.xml) (74K) |
+| [full](llm-context/full.xml) (127K) | [roadmap](llm-context/roadmap.xml) (27K) |
+[results](llm-context/results-deep-dive.xml) (79K) |
 [assets](llm-context/literature-and-assets.xml) (22K)
 
-*Last updated: 2026-04-20 16:24 UTC*
+*Last updated: 2026-04-20 17:30 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -53,11 +53,9 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (1)](tasks/by-status/not_started.md)
+## [Ready to Start (0)](tasks/by-status/not_started.md)
 
-| # | Task | Description | Date Added |
-|---|------|-------------|------------|
-| 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`description`](../tasks/t0013_resolve_morphology_provenance/task_description.md) | 2026-04-19 |
+No tasks ready to start.
 
 ---
 
@@ -67,10 +65,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (18 total)](tasks/by-status/completed.md)
+## [Recently Completed (19 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`results`](../tasks/t0013_resolve_morphology_provenance/results/results_detailed.md) | 2026-04-20 17:21 |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`results`](../tasks/t0011_response_visualization_library/results/results_detailed.md) | 2026-04-20 15:50 |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
@@ -80,9 +79,8 @@ No blocked tasks.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | [`results`](../tasks/t0016_literature_survey_dendritic_computation/results/results_detailed.md) | 2026-04-20 10:36 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | [`results`](../tasks/t0015_literature_survey_cable_theory/results/results_detailed.md) | 2026-04-20 10:00 |
 | 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
-| 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
 
-*8 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*9 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -96,7 +94,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (72 open)](suggestions/)
+## [Recent Suggestions (77 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -275,11 +273,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*62 more open suggestions → [open suggestions](suggestions/)*
+*67 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (27)](suggestions/)
+## [High Priority Suggestions (29)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -457,7 +455,7 @@ re-run it against existing library assets. Recommended task types: infrastructur
 
 </details>
 
-*17 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*19 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -685,7 +683,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 ---
 
-## [Latest Papers (46 total)](papers/)
+## [Latest Papers (48 total)](papers/)
 
 <details>
 <summary>📖 <strong>Uncovering the “hidden” synaptic microarchitecture of the retinal
@@ -1140,7 +1138,7 @@ and comparing the somatic response to the distributed-input control.
 
 </details>
 
-*36 more papers → [papers](papers/)*
+*38 more papers → [papers](papers/)*
 
 ---
 

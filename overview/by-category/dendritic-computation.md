@@ -4,14 +4,14 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (26)](../papers/by-category/dendritic-computation.md) | [Answers
+**Detail pages**: [Papers (27)](../papers/by-category/dendritic-computation.md) | [Answers
 (4)](../answers/by-category/dendritic-computation.md) | [Suggestions
 (12)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (26)
+## Papers (27)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -278,6 +278,61 @@ establishes that any realistic DSGC model in this project must treat excitation 
 distinct populations (bipolar AMPA and starburst ACh) with different spatial offsets, because
 their differential timing is itself a DS mechanism that must be represented if the optimiser
 is to fit mouse DSGC behaviour rather than a generic ON-OFF ganglion cell.
+
+</details>
+
+<details>
+<summary>📖 <strong>A Dense Starburst Plexus Is Critical for Generating Direction
+Selectivity</strong> — Morrie & Feller, 2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.cub.2018.03.001` |
+| **Authors** | Ryan D. Morrie, Marla B. Feller |
+| **Venue** | Current Biology (journal) |
+| **DOI** | `10.1016/j.cub.2018.03.001` |
+| **URL** | https://doi.org/10.1016/j.cub.2018.03.001 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0013_resolve_morphology_provenance`](../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/summary.md) |
+
+Morrie and Feller ask which morphological feature of the starburst amacrine cell plexus is
+necessary for direction-selective tuning in retinal ganglion cells. Prior work established
+that asymmetric SAC-to-DSGC inhibition is central to DS, and that SAC dendrites themselves are
+tuned to centrifugal motion, but it was unknown whether loss of DS in morphology-mutant mice
+reflected broken wiring, broken subcellular computation, or a broken circuit geometry. The
+Sema6A-/- mouse offers a clean dissection because it preserves SAC cell number and GABAergic
+identity but reduces arbor size and plexus overlap.
+
+The authors combine cell-attached DSGC spike recordings, whole-cell voltage-clamp IPSC
+measurements, paired SAC-DSGC patch recordings with dye fills (AlexaFluor488 for DSGCs,
+AlexaFluor594 for SACs), 2-photon OGB1 Ca2+ imaging of SAC varicosities, manual morphology
+tracing in FIJI Simple Neurite Tracer exported as SWC files to the TREES toolbox, and a custom
+IPSC simulation in MATLAB. Mice were p25-120 CNT (ChAT-Cre/nGFP/TrHr) reporter crosses. The
+experimental design cleanly separates wiring (paired recordings), subcellular computation
+(Ca2+ imaging), and geometric arrangement (reconstructed SAC arbors with varicosity positions
+and distal-segment orientations).
+
+Three findings carry the paper. First, DSGC directional tuning collapses in Sema6A-/- because
+null-direction inhibition is halved (~4 nS to ~1.5 nS) while preferred-direction inhibition is
+unchanged. Second, paired SAC-DSGC recordings show that asymmetric wiring and per-synapse
+conductance are preserved. Third, Ca2+ imaging shows that SAC varicosity-level DS is preserved
+but that ~30-40% of Sema6A-/- varicosities are not tuned to centrifugal motion; instead their
+preferred direction follows the orientation of a short distal (10-40 micrometre) neurite
+segment, and a TREES-toolbox-based IPSC simulation with each SAC's measured varicosity
+geometry reproduces the observed DSGC IPSC tuning loss.
+
+For this project the paper's relevance is both scientific and operational. Scientifically, it
+establishes that our compartmental DSGC model must couple SAC plexus coverage and local
+distal-segment orientation to the amplitude and preferred direction of each GABAergic input; a
+model that only varies per-synapse weight will miss the dominant mechanism of null-direction
+inhibition. Operationally, for task t0013 the paper provides decisive negative evidence: its
+Methods describe only SAC reconstructions (FIJI to SWC to TREES), never DSGC reconstructions,
+biocytin fills, Neurolucida tracings, a `141009` or `Pair1DSGC` identifier, or a NeuroMorpho
+deposition statement. The NeuroMorpho.org linkage of neuron 102976 to this DOI is therefore
+not supported by the paper itself and must be resolved by inspecting a different Feller-lab
+source (lab repository, earlier paired-recording paper, or unpublished deposition metadata).
 
 </details>
 
@@ -1300,12 +1355,13 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (6)
+## Tasks (7)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | completed | 2026-04-20 14:42 |
+| 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | completed | 2026-04-20 17:21 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |

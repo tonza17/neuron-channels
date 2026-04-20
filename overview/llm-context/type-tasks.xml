@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>119720</char_count>
-    <byte_count>120160</byte_count>
-    <estimated_tokens>29930</estimated_tokens>
+    <char_count>121536</char_count>
+    <byte_count>121983</byte_count>
+    <estimated_tokens>30384</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1464,12 +1464,14 @@ pytest tests pass, ruff and mypy are clean, and the library asset is registered 
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
-Status: not_started
-Effective date: 2026-04-19
+Status: completed
+Effective date: 2026-04-20
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 Task types: download-paper, correction
 Source suggestion: S-0005-01
+Start time: 2026-04-20T16:26:01Z
+End time: 2026-04-20T17:21:30Z
 
 #### Motivation
 
@@ -1542,6 +1544,36 @@ Covers suggestion **S-0005-01**.
 * **Both papers cite it**: pick the earlier publication date and document the tie-break.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
+
+### Results Summary
+
+#### Summary
+
+Closed the provenance gap on `dsgc-baseline-morphology.source_paper_id`. Registered both candidate
+Feller-lab 2018 papers as v3 paper assets, read their Methods sections, applied the pre-specified
+decision procedure, and filed a single correction that sets `source_paper_id` to
+`10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018 *Current Biology*, &quot;A Dense Starburst Plexus Is
+Critical for Generating Direction Selectivity&quot;). Discovered along the way that the t0005 plan&#x27;s
+&quot;Morrie &amp; Feller 2018 *Neuron*&quot; DOI nomination was an error: `10.1016/j.neuron.2018.05.028` resolves
+to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL viral-tracing paper.
+
+#### Metrics
+
+* **Paper assets registered**: **2** (expected: 2)
+* **Correction assets produced**: **1** (`C-0013-01`)
+* **Winning source paper**: `10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018, *Current Biology*)
+* **Decision branch taken**: criterion 1 (&quot;exactly one paper&#x27;s Methods cites the reconstruction&quot;)
+* **PDFs successfully downloaded**: **1/2** (CB open-access on eScholarship; Neuron DOI paywalled
+  and metadata-only per v3 spec)
+* **Verificator pass rate**: **3/3** (`verify_paper_asset` × 2 + `verify_correction_asset`)
+
+#### Verification
+
+* `verify_paper_asset 10.1016_j.neuron.2018.05.028` — **PASSED** (0 errors, 0 warnings)
+* `verify_paper_asset 10.1016_j.cub.2018.03.001` — **PASSED** (0 errors, 0 warnings)
+* `verify_correction_asset dataset_dsgc-baseline-morphology` — **PASSED** (0 errors, 0 warnings)
+* Asset-count check: `assets/paper/` contains exactly the two expected folders.
+* Correction-count check: `corrections/` contains exactly `dataset_dsgc-baseline-morphology.json`.
 
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3

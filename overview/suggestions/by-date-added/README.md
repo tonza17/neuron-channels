@@ -1,14 +1,41 @@
 # Suggestions by Date Added
 
-82 suggestion(s) grouped by derived added date.
+87 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-04-20 (51)
+## 2026-04-20 (56)
 
 ## High Priority
+
+<details>
+<summary>📚 <strong>Add a plan-stage DOI-nomination verificator that checks each
+candidate DOI matches its human-written label</strong> (S-0013-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+The Neuron-vs-CB mix-up in the t0005 plan (DOI 10.1016/j.neuron.2018.05.028 labelled 'Morrie &
+Feller 2018 Neuron' when it actually belongs to Li et al. 2018 CSHL viral tracing) made it
+through planning and into the t0005 implementation, triggering an entire follow-up task (this
+one) to correct the downstream impact. Build a verificator under
+arf/scripts/verificators/verify_plan_dois.py that scans plan/plan.md for every DOI-like
+string, resolves each via the arf.scripts.utils.resolve_doi helper (S-0013-01), and
+cross-checks the returned first-author last name, year, and venue against the label the plan
+uses near the DOI. Report a warning when the label and resolved metadata disagree on author,
+year, or venue, and an error when the DOI itself fails to resolve. Wire this verificator into
+the planning-stage check so subsequent plans cannot silently mis-cite a DOI. Recommended task
+types: write-library, experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
@@ -525,6 +552,32 @@ before adopting them as tight compartmental-model fitting targets.
 
 </details>
 
+<details>
+<summary>📚 <strong>Write a shared arf.scripts.utils.resolve_doi helper that returns
+title, authors, venue, year, PMID, and PMCID</strong> (S-0013-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+This task discovered that the t0005 plan nominated DOI 10.1016/j.neuron.2018.05.028 as 'Morrie
+& Feller 2018 Neuron' but that DOI actually resolves to Li, Vaughan, Sturgill & Kepecs (2018),
+an unrelated CSHL viral-tracing paper. The /add-paper skill already performs DOI resolution
+internally via CrossRef and PubMed, but that logic is not exposed as a reusable utility, so
+planning-stage agents have no cheap way to sanity-check a candidate DOI before locking it into
+a plan. Build arf.scripts.utils.resolve_doi as a thin wrapper over CrossRef and PubMed
+E-utilities that returns a typed dataclass with title, first-author last name, venue, year,
+PMID, and PMCID; wire it into /add-paper to replace the inline resolution; and document the
+callable interface so the verificator in S-0013-02 and other planning-time validators can
+import it. Recommended task types: write-library.
+
+</details>
+
 ## Medium Priority
 
 <details>
@@ -626,6 +679,33 @@ synthetic inputs used by test_envelope.py. Once downstream grid searches (S-0002
 S-0002-04, S-0002-05) have produced O(1000) points, compare how each loss norm ranks the top-k
 configurations and whether ranking changes meaningfully. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download the Morrie & Feller 2018 SAC reconstructions from
+NeuroMorpho and build a paired SAC+DSGC morphology asset</strong>
+(S-0013-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-03` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | [`10.1016_j.cub.2018.03.001`](../../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+This task attributed the dsgc-baseline-morphology reconstruction (NeuroMorpho neuron 102976,
+141009_Pair1DSGC) to Morrie & Feller 2018 Current Biology (PMID 29606419). That paper's
+Methods describe paired SAC-DSGC patch recordings with 2-photon stacks of both cells
+post-recording, and the SAC partner of the 141009_Pair1 recording is likely deposited in
+NeuroMorpho alongside the DSGC. Search NeuroMorpho by reference_pmid=29606419 to list all
+reconstructions linked to the paper, download the 141009_Pair1SAC companion SWC (and any
+neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and register them as
+dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
+anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
+S-0002-08. Recommended task types: download-dataset.
 
 </details>
 
@@ -865,6 +945,33 @@ Strahler-calibrated asset by per-branch axial resistance, total surface area, an
 per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the
 measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-audit all existing dataset and library assets' source_paper_id
+fields against resolved DOI metadata</strong> (S-0013-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+The t0005 nomination error that this task corrected was not caught by any automated check; it
+was caught only because a follow-up task specifically downloaded both candidate papers and
+inspected their Methods. Other already-registered dataset and library assets across the
+project (e.g., under t0004, t0008, t0009, t0011, t0012) may carry similarly silent
+source_paper_id errors that no downstream task has yet tripped over. Run a one-off audit task
+that iterates over every registered dataset and library asset with a non-null source_paper_id,
+resolves the referenced paper asset's DOI via arf.scripts.utils.resolve_doi (S-0013-01), and
+flags any asset where the source_paper_id slug does not match what the asset's description.md
+or originating plan claims as the source (wrong author, wrong year, wrong venue). File one
+correction per disagreement following the corrections_specification.md pattern used by this
+task. Recommended task types: data-analysis, correction.
 
 </details>
 
@@ -1126,6 +1233,33 @@ t0004's trials.csv and downstream simulated trials, and write an answer asset do
 where the estimates agree or diverge. If a variant is systematically preferred for our
 approximately 20 trials per angle, promote it to the default via a corrections-aware revision.
 Recommended task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Email the Feller lab to map the 141009_Pair1DSGC session to a
+specific pair in Morrie & Feller 2018 CB</strong> (S-0013-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | [`10.1016_j.cub.2018.03.001`](../../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The provenance decision in this task (source_paper_id = 10.1016_j.cub.2018.03.001) is grounded
+in methodological consistency plus the NeuroMorpho.org curated attribution, not in an
+exact-quote match: Morrie & Feller 2018 CB does not literally print 141009, Pair1DSGC,
+biocytin, or Neurolucida in its Methods, and the paper publishes only SAC (not DSGC)
+reconstructions. A downstream task should email the Feller lab (Murphy-Baum at
+murphy-baum@berkeley.edu or Morrie at rmorrie@berkeley.edu) asking which specific paired
+recording in the paper's Figure 2 cohort (n = 12 Control + 9 Sema6A-/- null + 6 Sema6A-/-
+preferred) produced the 141009_Pair1DSGC reconstruction, and whether the companion SAC
+reconstruction is deposited at NeuroMorpho. A one-sentence email-reply quote converts the
+current 'methodologically consistent' attribution into a citeable exact-quote provenance, and
+directly informs S-0013-03. Recommended task types: answer-question.
 
 </details>
 

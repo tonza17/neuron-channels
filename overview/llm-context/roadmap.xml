@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>108424</char_count>
-    <byte_count>108484</byte_count>
-    <estimated_tokens>27106</estimated_tokens>
+    <char_count>109924</char_count>
+    <byte_count>109978</byte_count>
+    <estimated_tokens>27481</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -124,6 +124,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -132,7 +133,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 18
+Completed tasks: 19
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -206,6 +207,12 @@ Completed: 2026-04-20
 Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
 Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
 
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Completed: 2026-04-20
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Result summary: Results Summary: Resolve DSGC Morphology Provenance Summary Closed the provenance gap on `dsgc-baseline-morphology.source_paper_id`. Registered both candidate Feller-lab 2018 papers as v3 paper assets, read their Methods sections, applied the pre-specified decision procedure, and filed a single correction that sets `source_paper_id` to `10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018 *Current Biology*, &quot;A Dense Starburst Plexus Is Critical for Generating Direction Selectivity&quot;). Discovered along the way that the t0005 plan&#x27;s &quot;Morrie &amp; Feller 2018 *Neuron*&quot; DOI nomination was an error: `10.1016/j.neuron.2018.05.028` resolves to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -246,90 +253,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0013_resolve_morphology_provenance</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Resolve dsgc-baseline-morphology source-paper provenance
-ID: t0013_resolve_morphology_provenance
-Status: not_started
-Effective date: 2026-04-19
-Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
-Dependencies: t0005_download_dsgc_morphology
-
-#### Motivation
-
-The `dsgc-baseline-morphology` dataset asset (NeuroMorpho neuron 102976, 141009_Pair1DSGC) currently
-has `source_paper_id = null` because two Feller-lab 2018 papers are plausibly the source:
-
-* Morrie &amp; Feller 2018 Neuron (DOI `10.1016/j.neuron.2018.05.028`) — nominated in the t0005 download
-  plan.
-* Murphy-Baum &amp; Feller 2018 Current Biology (DOI `10.1016/j.cub.2018.03.001`) — reported as the
-  source by NeuroMorpho&#x27;s metadata.
-
-Until this is resolved, every downstream paper that uses the morphology will cite it incorrectly or
-omit a citation entirely. This task downloads both candidate papers, reads their Methods sections,
-confirms which one introduced the 141009_Pair1DSGC reconstruction, and files a corrections asset
-that updates `dsgc-baseline-morphology.source_paper_id` to the correct slug.
-
-Covers suggestion **S-0005-01**.
-
-#### Scope
-
-1. Download Morrie &amp; Feller 2018 Neuron via `/add-paper`. Register as a v3 paper asset under
-   `assets/paper/10.1016_j.neuron.2018.05.028/`.
-2. Download Murphy-Baum &amp; Feller 2018 Current Biology via `/add-paper`. Register as a v3 paper asset
-   under `assets/paper/10.1016_j.cub.2018.03.001/`.
-3. Read both papers&#x27; Methods sections. Look specifically for:
-   * The recording date `141009` (October 9, 2014) or neighbouring dates.
-   * The `Pair1DSGC` / `Pair 1 DSGC` / `paired recording` language matching the NeuroMorpho
-     reconstruction metadata.
-   * An explicit citation of the 141009_Pair1DSGC reconstruction or its deposit to NeuroMorpho.
-4. If one paper is unambiguously the source, file a correction asset
-   (`corrections/dataset_dsgc-baseline-morphology.json`) that sets `source_paper_id` to the winning
-   paper&#x27;s DOI-slug. If neither is an unambiguous match, file a correction that records both DOIs
-   under a new `candidate_source_paper_ids` field and opens an intervention file explaining that
-   Feller-lab contact is required.
-5. Record the full reasoning in `results/results_detailed.md` so the provenance decision is
-   auditable.
-
-#### Dependencies
-
-* **t0005_download_dsgc_morphology** — owns the `dsgc-baseline-morphology` asset this task corrects.
-
-#### Expected Outputs
-
-* **2 paper assets** (Morrie &amp; Feller 2018 Neuron, Murphy-Baum &amp; Feller 2018 Current Biology), both
-  v3-spec-compliant with full summaries.
-* **1 correction asset** in `corrections/dataset_dsgc-baseline-morphology.json` setting
-  `source_paper_id` to the resolved winner (or documenting ambiguity).
-* A provenance-reasoning section in `results/results_detailed.md`.
-
-#### Approach
-
-1. Run `/add-paper` twice, once per DOI, following the paper-asset spec v3.
-2. Read both full PDFs and extract the Methods paragraphs that describe the paired recording(s) from
-   which 141009_Pair1DSGC was reconstructed.
-3. If both papers cite the same recording session, pick the earlier one (lower DOI publication
-   date). If only one paper cites the recording session, pick that one. If neither paper cites it,
-   treat as ambiguous and flag for human review.
-
-#### Questions the task answers
-
-1. Which Feller-lab 2018 paper introduced the 141009_Pair1DSGC reconstruction?
-2. Does NeuroMorpho&#x27;s metadata attribution (Murphy-Baum &amp; Feller 2018) match the paper&#x27;s Methods
-   section, or does it disagree?
-3. If both papers plausibly cite the recording, what are the tie-breakers?
-
-#### Risks and Fallbacks
-
-* **Neither paper explicitly cites the 141009 reconstruction**: file an intervention asking the
-  researcher to email the Feller lab. Do not silently pick one.
-* **Both papers cite it**: pick the earlier publication date and document the tie-break.
-* **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
-  `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -461,6 +386,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0011-01</id>
         <id>S-0012-01</id>
         <id>S-0012-03</id>
+        <id>S-0013-01</id>
+        <id>S-0013-02</id>
         <id>S-0015-01</id>
         <id>S-0015-04</id>
         <id>S-0016-01</id>
@@ -499,6 +426,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0012-02</id>
         <id>S-0012-04</id>
         <id>S-0012-05</id>
+        <id>S-0013-03</id>
+        <id>S-0013-04</id>
         <id>S-0015-02</id>
         <id>S-0015-03</id>
         <id>S-0016-02</id>
@@ -513,12 +442,13 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0010-06</id>
         <id>S-0011-06</id>
         <id>S-0012-06</id>
+        <id>S-0013-05</id>
         <id>S-0017-04</id>
         <id>S-0018-04</id>
         <id>S-0019-04</id>
       </source_ids>
       <content>
-Open suggestions: 81
+Open suggestions: 86
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -701,6 +631,20 @@ Priority: high
 Kind: experiment
 Source task: t0012_tuning_curve_scoring_loss_library
 t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008&#x27;s verification step so the Poleg-Polsky reproduction&#x27;s simulated curve is scored against the t0004 target and the resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008&#x27;s simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and produces a side-by-side overlay plot (simulated vs target). This is the...
+
+## Write a shared arf.scripts.utils.resolve_doi helper that returns title, authors, venue, year, PMID, and PMCID
+ID: S-0013-01
+Priority: high
+Kind: library
+Source task: t0013_resolve_morphology_provenance
+This task discovered that the t0005 plan nominated DOI 10.1016/j.neuron.2018.05.028 as &#x27;Morrie &amp; Feller 2018 Neuron&#x27; but that DOI actually resolves to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL viral-tracing paper. The /add-paper skill already performs DOI resolution internally via CrossRef and PubMed, but that logic is not exposed as a reusable utility, so planning-stage agents have no cheap way to sanity-check a candidate DOI before locking it into a plan. Build arf.scripts.utils.resolve_doi as a thin wrapper over CrossRef and PubMed E-utilities that returns a typed dataclass with title, first-author last name, venue, year, PMID, and PMCID; wire it into /add-paper to replace...
+
+## Add a plan-stage DOI-nomination verificator that checks each candidate DOI matches its human-written label
+ID: S-0013-02
+Priority: high
+Kind: library
+Source task: t0013_resolve_morphology_provenance
+The Neuron-vs-CB mix-up in the t0005 plan (DOI 10.1016/j.neuron.2018.05.028 labelled &#x27;Morrie &amp; Feller 2018 Neuron&#x27; when it actually belongs to Li et al. 2018 CSHL viral tracing) made it through planning and into the t0005 implementation, triggering an entire follow-up task (this one) to correct the downstream impact. Build a verificator under arf/scripts/verificators/verify_plan_dois.py that scans plan/plan.md for every DOI-like string, resolves each via the arf.scripts.utils.resolve_doi helper (S-0013-01), and cross-checks the returned first-author last name, year, and venue against the label the plan uses near the DOI. Report a warning when the label and resolved metadata disagree on...
 
 ## Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims
 ID: S-0015-01
@@ -968,6 +912,20 @@ Kind: evaluation
 Source task: t0012_tuning_curve_scoring_loss_library
 REQ-7 was satisfied by widening two envelope bounds away from the t0002 literature values: DSI upper raised from 0.85 to 0.9 to admit t0004&#x27;s DSI 0.8824, and peak lower lowered from 40 Hz to 30 Hz to admit t0004&#x27;s 32 Hz peak. This is explicit but anchored to the t0004 generator, not to measured DSGC variability. After t0008 (ModelDB 189347) and the Na/K grid search (S-0002-01) produce real simulated curves, re-evaluate: (a) re-parameterise t0004 so its curve lands inside the literature envelope (reducing DSI_MAX from 0.9 to 0.83 would drop DSI to 0.8 and peak to about 37 Hz), or (b) formally widen the envelope with a citation justifying the wider bounds. Deliverable: an answer asset...
 
+## Download the Morrie &amp; Feller 2018 SAC reconstructions from NeuroMorpho and build a paired SAC+DSGC morphology asset
+ID: S-0013-03
+Priority: medium
+Kind: dataset
+Source task: t0013_resolve_morphology_provenance
+This task attributed the dsgc-baseline-morphology reconstruction (NeuroMorpho neuron 102976, 141009_Pair1DSGC) to Morrie &amp; Feller 2018 Current Biology (PMID 29606419). That paper&#x27;s Methods describe paired SAC-DSGC patch recordings with 2-photon stacks of both cells post-recording, and the SAC partner of the 141009_Pair1 recording is likely deposited in NeuroMorpho alongside the DSGC. Search NeuroMorpho by reference_pmid=29606419 to list all reconstructions linked to the paper, download the 141009_Pair1SAC companion SWC (and any neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and register them as dataset assets so downstream modelling tasks can drive...
+
+## Re-audit all existing dataset and library assets&#x27; source_paper_id fields against resolved DOI metadata
+ID: S-0013-04
+Priority: medium
+Kind: evaluation
+Source task: t0013_resolve_morphology_provenance
+The t0005 nomination error that this task corrected was not caught by any automated check; it was caught only because a follow-up task specifically downloaded both candidate papers and inspected their Methods. Other already-registered dataset and library assets across the project (e.g., under t0004, t0008, t0009, t0011, t0012) may carry similarly silent source_paper_id errors that no downstream task has yet tripped over. Run a one-off audit task that iterates over every registered dataset and library asset with a non-null source_paper_id, resolves the referenced paper asset&#x27;s DOI via arf.scripts.utils.resolve_doi (S-0013-01), and flags any asset where the source_paper_id slug does not match...
+
 ## Extend cable-theory survey to frequency-domain and thin-dendrite transmission
 ID: S-0015-02
 Priority: medium
@@ -1065,6 +1023,13 @@ Priority: low
 Kind: evaluation
 Source task: t0012_tuning_curve_scoring_loss_library
 compute_reliability implements one split-half estimator: partition trials into even/odd indices, per-angle means, Pearson r, clamped to [0, 1]. Canonical alternatives differ in defensible ways: (a) random-draw split rather than parity, (b) Spearman-Brown prophecy correction to project split-half r back to full-length reliability, (c) Spearman rank correlation for ordinal robustness, (d) bootstrap resampling to produce a confidence interval. Build compute_reliability_variants returning all four on the same TuningCurve, run it on t0004&#x27;s trials.csv and downstream simulated trials, and write an answer asset documenting where the estimates agree or diverge. If a variant is systematically...
+
+## Email the Feller lab to map the 141009_Pair1DSGC session to a specific pair in Morrie &amp; Feller 2018 CB
+ID: S-0013-05
+Priority: low
+Kind: evaluation
+Source task: t0013_resolve_morphology_provenance
+The provenance decision in this task (source_paper_id = 10.1016_j.cub.2018.03.001) is grounded in methodological consistency plus the NeuroMorpho.org curated attribution, not in an exact-quote match: Morrie &amp; Feller 2018 CB does not literally print 141009, Pair1DSGC, biocytin, or Neurolucida in its Methods, and the paper publishes only SAC (not DSGC) reconstructions. A downstream task should email the Feller lab (Murphy-Baum at murphy-baum@berkeley.edu or Morrie at rmorrie@berkeley.edu) asking which specific paired recording in the paper&#x27;s Figure 2 cohort (n = 12 Control + 9 Sema6A-/- null + 6 Sema6A-/- preferred) produced the 141009_Pair1DSGC reconstruction, and whether the companion SAC...
 
 ## Register patch-clamp and compartmental-modeling categories if not already present
 ID: S-0017-04

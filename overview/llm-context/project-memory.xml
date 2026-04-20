@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>80312</char_count>
-    <byte_count>80377</byte_count>
-    <estimated_tokens>20078</estimated_tokens>
+    <char_count>80984</char_count>
+    <byte_count>81049</byte_count>
+    <estimated_tokens>20246</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -128,6 +128,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -136,7 +137,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 18
+Completed tasks: 19
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -210,6 +211,12 @@ Completed: 2026-04-20
 Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
 Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
 
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Completed: 2026-04-20
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Result summary: Results Summary: Resolve DSGC Morphology Provenance Summary Closed the provenance gap on `dsgc-baseline-morphology.source_paper_id`. Registered both candidate Feller-lab 2018 papers as v3 paper assets, read their Methods sections, applied the pre-specified decision procedure, and filed a single correction that sets `source_paper_id` to `10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018 *Current Biology*, &quot;A Dense Starburst Plexus Is Critical for Generating Direction Selectivity&quot;). Discovered along the way that the t0005 plan&#x27;s &quot;Morrie &amp; Feller 2018 *Neuron*&quot; DOI nomination was an error: `10.1016/j.neuron.2018.05.028` resolves to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -250,18 +257,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0013_resolve_morphology_provenance</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Resolve dsgc-baseline-morphology source-paper provenance
-ID: t0013_resolve_morphology_provenance
-Status: not_started
-Effective date: 2026-04-19
-Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
-Dependencies: t0005_download_dsgc_morphology
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -540,6 +537,8 @@ Geometry alone does not recover the Schachter Rin targets; the residual gap need
         <id>10.1016_j.celrep.2025.116833</id>
         <id>10.1016_j.neuroscience.2021.08.024</id>
         <id>10.1126_sciadv.abb6642</id>
+        <id>10.1016_j.neuron.2018.05.028</id>
+        <id>10.1016_j.cub.2018.03.001</id>
         <id>10.1126_science.aan3846</id>
         <id>10.1016_j.neuron.2017.09.058</id>
         <id>10.1371_journal.pone.0019463</id>
@@ -554,8 +553,6 @@ Geometry alone does not recover the Schachter Rin targets; the residual gap need
         <id>no-doi_HausserMel2003_s0959-4388-03-00075-8</id>
         <id>10.1038_nature02116</id>
         <id>10.1038_nature00931</id>
-        <id>10.1126_science.289.5488.2347</id>
-        <id>10.1038_35005094</id>
       </source_ids>
       <content>
 Papers: 20
@@ -587,6 +584,20 @@ Year: 2020
 Authors: Paul Werginz, Vineeth Raghuram, Shelley I. Fried
 Added by task: t0017_literature_survey_patch_clamp
 Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites shapes the spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is that the AIS is specialised to match the synaptic input that each cell type receives. Using a combined experimental and computational approach (patch-clamp current-clamp recordings, Nav1.6 and ankyrin-G immunohistochemistry, and NEURON compartmental modelling) they show that AIS morphology and sodium channel density are the primary determinants of maximum firing rate and...
+
+## A Viral Receptor Complementation Strategy to Overcome CAV-2 Tropism for Efficient Retrograde Targeting of Neurons
+ID: 10.1016_j.neuron.2018.05.028
+Year: 2018
+Authors: Shu-Jing Li, Alexander Vaughan, James Fitzhugh Sturgill, Adam Kepecs
+Added by task: t0013_resolve_morphology_provenance
+Li, Vaughan, Sturgill, and Kepecs (2018) report a receptor-complementation strategy that enables canine adenovirus type-2 (CAV-2) to retrogradely infect neurons that lack its natural receptor, the coxsackievirus and adenovirus receptor (CAR). Their motivating question is methodological: how can neuroscientists access all neurons projecting to a target region when the standard retrograde virus misses CAR-negative cell types? The scope is brain-wide retrograde tracing in rodents, with the basolateral-amygdala-to-medial-prefrontal-cortex projection named as...
+
+## A Dense Starburst Plexus Is Critical for Generating Direction Selectivity
+ID: 10.1016_j.cub.2018.03.001
+Year: 2018
+Authors: Ryan D. Morrie, Marla B. Feller
+Added by task: t0013_resolve_morphology_provenance
+Morrie and Feller ask which morphological feature of the starburst amacrine cell plexus is necessary for direction-selective tuning in retinal ganglion cells. Prior work established that asymmetric SAC-to-DSGC inhibition is central to DS, and that SAC dendrites themselves are tuned to centrifugal motion, but it was unknown whether loss of DS in morphology-mutant mice reflected broken wiring, broken subcellular computation, or a broken circuit geometry. The Sema6A-/- mouse offers a clean dissection because it preserves SAC cell number and GABAergic...
 
 ## Behavioral time scale synaptic plasticity underlies CA1 place fields
 ID: 10.1126_science.aan3846
@@ -685,20 +696,6 @@ Year: 2002
 Authors: Thomas Euler, Peter B. Detwiler, Winfried Denk
 Added by task: t0018_literature_survey_synaptic_integration
 Thomas Euler and colleagues (2002) published &quot;Directionally selective calcium signals in dendrites of starburst amacrine cells&quot; in Nature. The paper is included in this task&#x27;s survey because it contributes to the &quot;SAC-to-DSGC inhibitory asymmetry&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC model-fitting...
-
-## Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
-ID: 10.1126_science.289.5488.2347
-Year: 2000
-Authors: W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney
-Added by task: t0015_literature_survey_cable_theory
-Taylor et al.&#x27;s 2000 Science paper resolves a decades-long question about where in the retinal circuit the direction-selectivity computation actually happens. By combining whole-cell patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and that the nonlinear interaction between excitation and inhibition responsible for the observed...
-
-## NMDA spikes in basal dendrites of cortical pyramidal neurons
-ID: 10.1038_35005094
-Year: 2000
-Authors: Jackie Schiller, Guy Major, Helmut J. Koester, Yitzhak Schiller
-Added by task: t0016_literature_survey_dendritic_computation
-Schiller, Major, Koester and Schiller (2000) report the discovery of NMDA spikes in the thin basal and oblique dendrites of layer-5 neocortical pyramidal neurons. Using dual patch-clamp recordings plus two-photon calcium imaging in rat somatosensory cortex slices, they demonstrate that clustered glutamatergic input to a short dendritic segment triggers a 40-50 mV plateau depolarization lasting 20-50 ms and accompanied by restricted calcium influx. The plateau is blocked by NMDA antagonists (APV, 7-CK) but is insensitive to TTX and L-type calcium channel...
       </content>
     </section>
     <section id="datasets" source_kind="aggregator">

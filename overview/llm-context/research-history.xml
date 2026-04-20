@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T16:24:19Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T17:30:12Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>46</section_count>
-    <char_count>772723</char_count>
-    <byte_count>774440</byte_count>
-    <estimated_tokens>193180</estimated_tokens>
+    <section_count>47</section_count>
+    <char_count>783122</char_count>
+    <byte_count>784857</byte_count>
+    <estimated_tokens>195780</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -124,6 +124,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
+        <id>t0013_resolve_morphology_provenance</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -132,7 +133,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 18
+Completed tasks: 19
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -206,6 +207,12 @@ Completed: 2026-04-20
 Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
 Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
 
+## Resolve dsgc-baseline-morphology source-paper provenance
+ID: t0013_resolve_morphology_provenance
+Completed: 2026-04-20
+Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+Result summary: Results Summary: Resolve DSGC Morphology Provenance Summary Closed the provenance gap on `dsgc-baseline-morphology.source_paper_id`. Registered both candidate Feller-lab 2018 papers as v3 paper assets, read their Methods sections, applied the pre-specified decision procedure, and filed a single correction that sets `source_paper_id` to `10.1016_j.cub.2018.03.001` (Morrie &amp; Feller 2018 *Current Biology*, &quot;A Dense Starburst Plexus Is Critical for Generating Direction Selectivity&quot;). Discovered along the way that the t0005 plan&#x27;s &quot;Morrie &amp; Feller 2018 *Neuron*&quot; DOI nomination was an error: `10.1016/j.neuron.2018.05.028` resolves to Li, Vaughan, Sturgill &amp; Kepecs (2018), an unrelated CSHL...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -246,18 +253,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
-      <source_ids>
-        <id>t0013_resolve_morphology_provenance</id>
-      </source_ids>
       <content>
-Planned or active tasks: 1
-
-## Resolve dsgc-baseline-morphology source-paper provenance
-ID: t0013_resolve_morphology_provenance
-Status: not_started
-Effective date: 2026-04-19
-Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
-Dependencies: t0005_download_dsgc_morphology
+Planned or active tasks: 0
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -8358,6 +8355,182 @@ null-direction rate in the target is only ~2 Hz.
 * **Relevance**: Provides the SWC morphology that downstream simulation tasks will feed into this
   scorer&#x27;s inputs; confirms the library&#x27;s input contract must be a 12-angle firing-rate vector (not
   raw voltage traces), since morphology-level work is several tasks away.
+      </content>
+    </section>
+    <section id="t0013_resolve_morphology_provenance-research_code" source_kind="file">
+      <title>t0013_resolve_morphology_provenance — Resolve dsgc-baseline-morphology source-paper provenance — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0013_resolve_morphology_provenance</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0013_resolve_morphology_provenance/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0013_resolve_morphology_provenance&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 1
+tasks_cited: 1
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Morphology Asset Provenance Correction
+
+#### Task Objective
+
+This task resolves a known provenance gap in the `dsgc-baseline-morphology` dataset asset registered
+by the dependency task [t0005]. That asset&#x27;s `details.json` currently sets `source_paper_id: null`
+because the planning document nominated DOI `10.1016/j.neuron.2018.05.028` (Morrie &amp; Feller 2018
+*Neuron*) while the NeuroMorpho.org REST payload archived alongside the asset reports
+`reference_doi: [&quot;10.1016/j.cub.2018.03.001&quot;]` (Murphy-Baum &amp; Feller 2018 *Current Biology*). This
+task downloads both candidate papers as paper assets, reads their Methods sections, applies the
+decision procedure fixed in `task_description.md`, and files a correction that replaces
+`source_paper_id: null` with the canonical paper&#x27;s ID slug. The purpose of this code-research file
+is to confirm exactly which field must be corrected and to capture the full archived evidence before
+implementation.
+
+#### Library Landscape
+
+No libraries are registered under `assets/library/` at this point in the project. The library
+aggregator is not yet implemented in `arf/scripts/aggregators/`, and a direct filesystem check of
+`assets/library/` confirms it is empty. There is therefore no library to import or reuse for this
+task.
+
+This task writes no production code: its deliverables are paper assets (produced by `/add-paper`), a
+correction JSON (written by hand per `arf/specifications/corrections_specification.md`), and
+analysis markdown. No library landscape exists to survey beyond that absence, and no library is
+relevant here.
+
+#### Key Findings
+
+##### Correction target is a single scalar field on the existing dataset asset
+
+`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/details.json` encodes
+source-paper provenance in exactly one field:
+
+```json
+&quot;source_paper_id&quot;: null
+```
+
+Dataset-asset spec v2 (`meta/asset_types/dataset/specification.md`) defines this field as a
+paper-asset ID slug (DOI-derived, slashes replaced with underscores) when the source paper is known.
+The correction must replace `null` with the slug of whichever paper asset this task identifies as
+canonical. No other field on the dataset asset needs to change — authors, year, URL, compartment
+counts, file paths and description text are all independent of which paper first reported the
+reconstruction. Source [t0005].
+
+##### NeuroMorpho.org machine-readable attribution
+
+The archived REST payload at
+`tasks/t0005_download_dsgc_morphology/logs/steps/009_implementation/neuromorpho_metadata.json`
+records, for neuron 102976 (`141009_Pair1DSGC`):
+
+```json
+&quot;reference_pmid&quot;: [&quot;29606419&quot;],
+&quot;reference_doi&quot;: [&quot;10.1016/j.cub.2018.03.001&quot;]
+```
+
+PMID `29606419` resolves to Murphy-Baum &amp; Feller, *Current Biology* **28**(8):1217-1223.e2 (2018).
+This is the single authoritative machine-readable attribution the Feller lab (via NeuroMorpho
+curation) has assigned to the reconstruction. The description file for the asset already notes this
+conflict explicitly in its `## Provenance note on DOI` block. Source [t0005].
+
+##### Both candidate papers must still be downloaded and their Methods inspected
+
+Relying on the NeuroMorpho REST attribution alone is insufficient: the t0005 plan nominated
+`10.1016/j.neuron.2018.05.028` (Morrie &amp; Feller 2018 *Neuron*) on independent grounds, and the task
+description explicitly instructs this task to validate attribution against each paper&#x27;s Methods
+section before committing. Finding `141009` or `Pair1DSGC` referenced in either paper&#x27;s Methods — or
+a matching paired SAC-DSGC recording description — is the intended primary evidence. NeuroMorpho&#x27;s
+REST attribution is corroborating, not decisive. Source [t0005].
+
+##### Decision procedure is fully specified in `task_description.md`
+
+`task_description.md` for this task fixes the tie-breaking logic:
+
+1. If exactly one paper&#x27;s Methods cites the reconstruction (`141009`, `Pair1DSGC`, or a paired
+   SAC-DSGC recording matching the deposition date), that paper is the source.
+2. If both papers cite it, the earlier-published paper is the source.
+3. If neither cites it, write an intervention file requesting the Feller lab resolve the
+   attribution.
+
+No separate planning decision about the procedure is needed: implementation follows it mechanically.
+Source [t0005].
+
+#### Reusable Code and Assets
+
+No code or library reuse applies. The task writes no Python and imports from no prior task.
+
+Reusable project artefacts that this task *reads* (not copies):
+
+* **`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/details.json`**
+  (~48 lines). **Reuse method: read-only reference**. Identifies the correction target field
+  (`source_paper_id`) and the asset slug (`dsgc-baseline-morphology`). Not copied — this task must
+  not modify the completed dependency&#x27;s files. No adaptation needed.
+* **`tasks/t0005_download_dsgc_morphology/logs/steps/009_implementation/neuromorpho_metadata.json`**
+  (~1 line, ~2 KB JSON payload). **Reuse method: read-only reference**. Provides the archived
+  NeuroMorpho REST attribution (`reference_doi`, `reference_pmid`) that this task validates. Not
+  copied — the archived payload in the dependency is the single source of truth.
+* **`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/description.md`**
+  (~180 lines). **Reuse method: read-only reference**. Confirms the `## Provenance note on DOI`
+  block acknowledging the conflict this task resolves.
+
+No `/add-paper`-produced helper, DOI slugger, or correction-writer needs to be copied: the canonical
+DOI-to-slug converter `arf.scripts.utils.doi_to_slug` is a framework module invoked via `uv run` and
+does not require copying into `code/`.
+
+#### Lessons Learned
+
+The dependency task [t0005] registered the morphology asset with `source_paper_id: null` and a
+hand-written `## Provenance note on DOI` block rather than blocking to resolve the attribution in
+line. That deferral was the right call because it kept t0005 scoped to its single deliverable (a
+verified SWC morphology) and produced an explicit, auditable provenance gap that a later task (this
+one) could close via the corrections mechanism. The lesson is that provenance conflicts between a
+planning document&#x27;s nomination and an asset-provider&#x27;s metadata should be surfaced as an explicit
+note and a `null` field rather than being silently split-the-difference. Source [t0005].
+
+A second lesson: archiving the full REST payload at a known path
+(`logs/steps/009_implementation/neuromorpho_metadata.json`) made this task trivially verifiable. Any
+future asset whose provenance depends on a third-party database should preserve the raw API response
+the same way — without it, this correction would have required a fresh NeuroMorpho fetch and carried
+the risk of silent schema changes.
+
+#### Recommendations for This Task
+
+Derived directly from the findings above:
+
+1. **Do not write any Python.** The deliverables are a correction JSON file, two paper assets, and
+   markdown analysis; no `code/` module is warranted. This matches the correction task type pattern.
+2. **Read-only references to [t0005] artefacts.** Never modify any file under
+   `tasks/t0005_download_dsgc_morphology/`. All changes flow through a single correction file at
+   `tasks/t0013_resolve_morphology_provenance/corrections/dataset_dsgc-baseline-morphology.json`.
+3. **Invoke `/add-paper` twice.** Once for `10.1016/j.neuron.2018.05.028` and once for
+   `10.1016/j.cub.2018.03.001`. Use the full `/add-paper` skill end-to-end so each paper asset
+   passes `verify_paper_asset` with a v3-compliant summary that actually reflects having read the
+   Methods.
+4. **Grep Methods for `141009`, `Pair1DSGC`, `paired SAC-DSGC`, and `Sema6`.** These are the strings
+   that unambiguously link a paper to the reconstruction. Record the exact quote(s) used.
+5. **Apply the pre-specified decision procedure verbatim.** Do not introduce extra criteria. Record
+   the mapping (evidence → chosen paper) in `results/results_detailed.md`.
+6. **Write one correction file.** Per `corrections_specification.md`: `action: &quot;update&quot;`, target
+   `dataset/dsgc-baseline-morphology`, `changes: {&quot;source_paper_id&quot;: &quot;&lt;slug&gt;&quot;}`, and a rationale
+   that cites the exact Methods quote(s).
+
+#### Task Index
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download DSGC Baseline Morphology
+* **Status**: completed
+* **Relevance**: Produced the `dsgc-baseline-morphology` dataset asset whose `source_paper_id` field
+  is the sole target of this task&#x27;s correction. Also archived the NeuroMorpho REST payload providing
+  the machine-readable attribution that corroborates the Methods-based decision, and documented the
+  pre-existing DOI conflict in its description file.
       </content>
     </section>
     <section id="t0014_brainstorm_results_3-research_papers" source_kind="file">

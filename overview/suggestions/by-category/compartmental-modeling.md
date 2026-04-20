@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-50 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **46 open** (19
-high, 24 medium, 3 low), **4 closed**.
+51 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **47 open** (19
+high, 25 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -612,6 +612,33 @@ validate each with the existing validate_swc.py parser, and tabulate per-cell co
 count, branch points, and total dendritic path length so a downstream morphology-sweep task
 can quantify cross-cell variability without committing a priori to a specific morphology.
 Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download the Morrie & Feller 2018 SAC reconstructions from
+NeuroMorpho and build a paired SAC+DSGC morphology asset</strong>
+(S-0013-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-03` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | [`10.1016_j.cub.2018.03.001`](../../../tasks/t0013_resolve_morphology_provenance/assets/paper/10.1016_j.cub.2018.03.001/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+This task attributed the dsgc-baseline-morphology reconstruction (NeuroMorpho neuron 102976,
+141009_Pair1DSGC) to Morrie & Feller 2018 Current Biology (PMID 29606419). That paper's
+Methods describe paired SAC-DSGC patch recordings with 2-photon stacks of both cells
+post-recording, and the SAC partner of the 141009_Pair1 recording is likely deposited in
+NeuroMorpho alongside the DSGC. Search NeuroMorpho by reference_pmid=29606419 to list all
+reconstructions linked to the paper, download the 141009_Pair1SAC companion SWC (and any
+neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and register them as
+dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
+anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
+S-0002-08. Recommended task types: download-dataset.
 
 </details>
 
