@@ -1,0 +1,67 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1126_science.aan3846",
+  "doi": "10.1126/science.aan3846",
+  "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+  "url": "https://www.science.org/doi/10.1126/science.aan3846",
+  "pdf_url": null,
+  "date_published": "2017-09-08",
+  "year": 2017,
+  "authors": [
+    {
+      "name": "Katie C. Bittner",
+      "country": "US",
+      "institution": "HHMI Janelia Research Campus",
+      "orcid": null
+    },
+    {
+      "name": "Aaron D. Milstein",
+      "country": "US",
+      "institution": "HHMI Janelia Research Campus",
+      "orcid": null
+    },
+    {
+      "name": "Christine Grienberger",
+      "country": "US",
+      "institution": "HHMI Janelia Research Campus",
+      "orcid": null
+    },
+    {
+      "name": "Sandro Romani",
+      "country": "US",
+      "institution": "HHMI Janelia Research Campus",
+      "orcid": null
+    },
+    {
+      "name": "Jeffrey C. Magee",
+      "country": "US",
+      "institution": "HHMI Janelia Research Campus",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "HHMI Janelia Research Campus",
+      "country": "US"
+    },
+    {
+      "name": "Stanford University School of Medicine",
+      "country": "US"
+    }
+  ],
+  "journal": "Science",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "synaptic-integration",
+    "compartmental-modeling"
+  ],
+  "abstract": "Learning is primarily mediated by activity-dependent modifications of synaptic strength within neuronal circuits. We discovered that place fields in hippocampal area CA1 are produced by a synaptic potentiation notable for its driving signal, a dendritic plateau potential, and the temporal scale of its synaptic eligibility trace, which is seconds in duration. The dendritic plateau potentials were produced by input from entorhinal cortex and could be triggered naturalistically or artificially to rapidly form place fields. This behavioral time scale synaptic plasticity is a non-Hebbian form of plasticity that efficiently stores entire behavioral sequences within the synaptic weights of hippocampal neurons to provide a potential substrate for rapid learning of episodes and navigational routes.",
+  "citation_key": "Bittner2017",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Publisher (AAAS) requires subscription; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.",
+  "added_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_added": "2026-04-20"
+}

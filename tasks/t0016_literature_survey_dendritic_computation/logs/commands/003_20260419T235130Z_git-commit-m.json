@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0016_literature_survey_dendritic_computation",
+  "command": "git commit -m t0016_literature_survey_dendritic_computation [research-papers]: Review existing corpus for dendritic-computation coverage\n\nSynthesised by-topic findings from 20 t0002 papers (10 cited) covering\nDSGC dendritic spikes, NMDA multiplicative gain, sub-10 um inhibition\nscale, and quantitative anchors. Identified gaps for the internet\nsearch: NMDA biophysics outside retina, plateau potentials, and\nactive-vs-passive ablation studies.",
+  "exit_code": 0,
+  "duration_seconds": 7.474,
+  "started_at": "2026-04-19T23:51:30Z",
+  "completed_at": "2026-04-19T23:51:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0016_literature_survey_dendritic_computation",
+  "stdout_file": "003_20260419T235130Z_git-commit-m.stdout.txt",
+  "stderr_file": "003_20260419T235130Z_git-commit-m.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 7,
+  "truncated": false
+}

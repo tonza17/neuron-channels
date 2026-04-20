@@ -5,10 +5,10 @@
   "name": "Literature survey: dendritic computation beyond DSGCs",
   "short_description": "Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-04-19T23:38:58Z",
-  "end_time": null,
+  "end_time": "2026-04-20T10:36:25Z",
   "expected_assets": {
     "paper": 25,
     "answer": 1

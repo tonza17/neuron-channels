@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0016_literature_survey_dendritic_computation",
+  "command": "git commit -m t0016_literature_survey_dendritic_computation [research-papers]: add command logs",
+  "exit_code": 0,
+  "duration_seconds": 8.235,
+  "started_at": "2026-04-19T23:51:58Z",
+  "completed_at": "2026-04-19T23:52:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0016_literature_survey_dendritic_computation",
+  "stdout_file": "005_20260419T235158Z_git-commit-m.stdout.txt",
+  "stderr_file": "005_20260419T235158Z_git-commit-m.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 7,
+  "truncated": false
+}

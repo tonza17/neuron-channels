@@ -1,0 +1,55 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn1253",
+  "doi": "10.1038/nn1253",
+  "title": "Computational subunits in thin dendrites of pyramidal cells",
+  "url": "https://www.nature.com/articles/nn1253",
+  "pdf_url": null,
+  "date_published": "2004-05-30",
+  "year": 2004,
+  "authors": [
+    {
+      "name": "Alon Polsky",
+      "country": "IL",
+      "institution": "Technion",
+      "orcid": null
+    },
+    {
+      "name": "Bartlett W. Mel",
+      "country": "US",
+      "institution": "University of Southern California",
+      "orcid": null
+    },
+    {
+      "name": "Jackie Schiller",
+      "country": "IL",
+      "institution": "Technion",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Technion - Israel Institute of Technology",
+      "country": "IL"
+    },
+    {
+      "name": "University of Southern California",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "synaptic-integration",
+    "compartmental-modeling"
+  ],
+  "abstract": "Thin basal and apical oblique dendrites of neocortical pyramidal neurons act as sigmoidal integrative subunits. Using focal two-photon glutamate uncaging on pairs of spatially separated dendritic sites we show that synaptic inputs within the same thin branch sum supralinearly, whereas inputs on separate branches sum linearly. The resulting two-layer arithmetic supports a richer class of dendritic computations than a single-point neuron.",
+  "citation_key": "Polsky2004",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Publisher (Nature Publishing Group) requires subscription for full text; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.",
+  "added_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_added": "2026-04-20"
+}

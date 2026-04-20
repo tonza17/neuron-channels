@@ -1,0 +1,24 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0016_literature_survey_dendritic_computation\tasks\t0016_literature_survey_dendritic_computation\assets\paper\10.1038_18686
+
+[32m[1mPASSED[0m — no errors or warnings
+
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0016_literature_survey_dendritic_computation\tasks\t0016_literature_survey_dendritic_computation\assets\paper\10.1038_35005094
+
+[32m[1mPASSED[0m — no errors or warnings
+
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0016_literature_survey_dendritic_computation\tasks\t0016_literature_survey_dendritic_computation\assets\paper\10.1038_nn1253
+
+[32m[1mPASSED[0m — no errors or warnings
+
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0016_literature_survey_dendritic_computation\tasks\t0016_literature_survey_dendritic_computation\assets\paper\10.1126_science.aan3846
+
+[32m[1mPASSED[0m — no errors or warnings
+
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0016_literature_survey_dendritic_computation\tasks\t0016_literature_survey_dendritic_computation\assets\paper\10.1146_annurev.neuro.28.061604.135703
+
+[32m[1mPASSED[0m — no errors or warnings

@@ -1,0 +1,51 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_18686",
+  "doi": "10.1038/18686",
+  "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+  "url": "https://www.nature.com/articles/18686",
+  "pdf_url": null,
+  "date_published": "1999-03-25",
+  "year": 1999,
+  "authors": [
+    {
+      "name": "Matthew E. Larkum",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    },
+    {
+      "name": "J. Julius Zhu",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    },
+    {
+      "name": "Bert Sakmann",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Max Planck Institute for Medical Research",
+      "country": "DE"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "voltage-gated-channels",
+    "synaptic-integration"
+  ],
+  "abstract": "Abstract not available in Crossref or OpenAlex public metadata for this 1999 paper. The paper reports that coincident excitatory input to the apical tuft and basal dendrites of layer 5 neocortical pyramidal neurons triggers a calcium-dependent dendritic spike in the distal apical dendrite which, when combined with a backpropagating action potential, produces a high-frequency burst of somatic action potentials. This BAC (backpropagating-action-potential-activated Ca2+ spike) firing mechanism couples inputs arriving at different cortical layers into a single, compact output burst.",
+  "citation_key": "Larkum1999",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Publisher (Nature Publishing Group) requires subscription; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.",
+  "added_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_added": "2026-04-20"
+}

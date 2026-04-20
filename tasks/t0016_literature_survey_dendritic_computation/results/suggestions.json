@@ -1,0 +1,65 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0016-01",
+      "title": "Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims",
+      "description": "Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London & Hausser 2005) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset's download_status to 'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the actual papers.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-02",
+      "title": "Extend dendritic-computation survey to cerebellar Purkinje and STDP papers",
+      "description": "The scoped-down 5-paper survey covers cortical and hippocampal dendritic-computation motifs (NMDA spike, BAC firing, BTSP, branch-level integration, canonical review) but does not cover cerebellar Purkinje-cell branch-specific computation or cortical / hippocampal spike-timing-dependent plasticity. A follow-up survey task should add approximately 5 papers on cerebellar Purkinje branch-strength (Llinas & Sugimori 1980, Rancz & Hausser 2006, Brunel 2016) and cortical / hippocampal STDP (Bi & Poo 1998, Markram 1997, Sjostrom 2008 review) to close the gap.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-03",
+      "title": "Experimentally test NMDA-spike contribution to DSGC direction selectivity via compartmental simulation",
+      "description": "The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0) and test whether spatially-clustered co-directional bipolar-cell input produces supralinear summation during preferred-direction motion and is suppressed by asymmetric inhibition during null-direction motion. Compare the resulting DSI (direction selectivity index) against the no-NMDA baseline to quantify the NMDA-spike contribution to DS.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": "10.1038_35005094",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-04",
+      "title": "Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees",
+      "description": "The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone compartments, then test whether asymmetric inhibition at principal-branch bifurcations can selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during null-direction motion. Report preferred-direction burst firing rate versus null-direction burst rate and compare with published DSGC spiking statistics.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": "10.1038_18686",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    }
+  ]
+}
