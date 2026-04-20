@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write suggestions for downstream tasks that consume the library.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T15:42:22Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T15:47:34Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
