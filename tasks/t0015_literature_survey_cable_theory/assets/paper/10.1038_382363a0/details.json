@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_382363a0",
+  "doi": "10.1038/382363a0",
+  "title": "Influence of dendritic structure on firing pattern in model neocortical neurons",
+  "url": "https://www.nature.com/articles/382363a0",
+  "pdf_url": null,
+  "date_published": "1996-07-25",
+  "year": 1996,
+  "authors": [
+    {
+      "name": "Zachary F. Mainen",
+      "country": "US",
+      "institution": "Salk Institute for Biological Studies",
+      "orcid": null
+    },
+    {
+      "name": "Terrence J. Sejnowski",
+      "country": "US",
+      "institution": "Salk Institute for Biological Studies",
+      "orcid": "0000-0002-0622-7391"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Salk Institute for Biological Studies",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "cable-theory",
+    "dendritic-computation",
+    "compartmental-modelling"
+  ],
+  "abstract": "Abstract not provided by Crossref. The paper demonstrates that dendritic morphology alone is sufficient to determine firing pattern (regular-spiking, bursting, fast-spiking) in biophysically realistic compartmental models of neocortical pyramidal and non-pyramidal neurons when the same set of ionic conductances is distributed across all morphologies. This establishes that spike initiation in the axon coupled to active backpropagation into a large vs. small dendritic tree produces distinct firing patterns via dendro-somatic current flow alone, with no need to change channel densities between cell types.",
+  "citation_key": "Mainen1996",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Nature 1996 article is paywalled behind Springer Nature; OpenAlex reports is_oa: false with no open-access location. Added to intervention/paywalled_papers.md for institutional retrieval.",
+  "added_by_task": "t0015_literature_survey_cable_theory",
+  "date_added": "2026-04-20"
+}
