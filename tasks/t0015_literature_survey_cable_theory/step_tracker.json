@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up task suggestions (e.g., remaining category surveys, paywalled-paper retrieval).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T09:58:26Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T09:59:30Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
