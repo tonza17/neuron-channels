@@ -5,11 +5,11 @@
   "name": "Tuning-curve scoring loss library",
   "short_description": "Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0004_generate_target_tuning_curve"
   ],
-  "start_time": null,
+  "start_time": "2026-04-20T01:02:11Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
