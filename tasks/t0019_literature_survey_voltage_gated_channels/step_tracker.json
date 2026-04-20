@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for voltage-gated channel papers and list them under Discovered Papers.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T12:31:40Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_research-internet/"
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
