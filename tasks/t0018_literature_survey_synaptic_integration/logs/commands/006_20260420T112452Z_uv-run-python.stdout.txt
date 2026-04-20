@@ -1,0 +1,2 @@
+PRESTEP: Created step folder: tasks\t0018_literature_survey_synaptic_integration\logs\steps\002_check-deps
+PRESTEP: Step 'check-deps' is now in_progress (started_at: 2026-04-20T11:24:54Z)
