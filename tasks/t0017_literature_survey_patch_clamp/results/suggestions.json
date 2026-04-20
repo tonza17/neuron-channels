@@ -1,0 +1,64 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0017-01",
+      "title": "Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims",
+      "description": "Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al. 2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset's download_status to 'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of OFF-cell maintained activity that survives synaptic blockade) against the actual papers.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "patch-clamp",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-02",
+      "title": "Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN biophysics, and AIS measurements",
+      "description": "The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identified in the plan (space-clamp, AIS, NMDARs, maintained activity) but leaves several high-priority follow-on topics uncovered: (a) DSGC-specific dynamic-clamp studies that use injected conductance waveforms to test direction selectivity mechanisms, (b) DSGC Ih/HCN biophysics and resonance properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-alpha T cells, not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the gap.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "patch-clamp",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-03",
+      "title": "Implement AIS compartment, NMDARs, and simulated voltage-clamp block in the downstream DSGC model build task",
+      "description": "The answer asset patch-clamp-techniques-and-constraints-for-dsgc-modelling produces a 7-point specification for DSGC modelling in NEURON extending the cable-theory and dendritic-computation specifications from t0015 and t0016. The downstream DSGC compartmental-model build task must implement: (1) an explicit AIS compartment with Nav1.6 at 7x the somatic Na+ density, with AIS length as a tunable parameter; (2) NMDARs with standard Mg2+ block kinetics on DSGC dendrites alongside AMPARs; (3) a simulated somatic voltage-clamp block (SEClamp) so experimental and simulated voltage-clamp readouts can be compared on the same footing; (4) depolarisation-block threshold and AMPA/NMDA charge ratio during preferred and null motion as named fitting objectives. Validation must include DSI reduction under simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the target DSGC subtype.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "patch-clamp"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-04",
+      "title": "Register patch-clamp and compartmental-modeling categories if not already present",
+      "description": "The paper assets in this task use category slugs `patch-clamp`, `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`, and `synaptic-integration`. Verify that all six categories exist in meta/categories/; register any that are missing so that category-based asset aggregators (aggregate_papers --categories patch-clamp) return the expected results. This is analogous to the S-0015-03 suggestion registered by t0015 for retinal-ganglion-cells and compartmental-modelling but may now be satisfied by category-registration tasks executed between t0015 and t0017.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    }
+  ]
+}

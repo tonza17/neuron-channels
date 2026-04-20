@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuroscience.2021.08.024",
+  "doi": "10.1016/j.neuroscience.2021.08.024",
+  "title": "Voltage Clamp Errors During Estimation of Concurrent Excitatory and Inhibitory Synaptic Input to Neurons with Dendrites",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306452221004322",
+  "pdf_url": "https://www.sciencedirect.com/science/article/abs/pii/S0306452221004322/pdfft",
+  "date_published": "2022-05",
+  "year": 2022,
+  "authors": [
+    {
+      "name": "Minh-Son To",
+      "country": "AU",
+      "institution": "Flinders University",
+      "orcid": null
+    },
+    {
+      "name": "Suraj Honnuraiah",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    },
+    {
+      "name": "Greg J. Stuart",
+      "country": "AU",
+      "institution": "Australian National University",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Flinders University",
+      "country": "AU"
+    },
+    {
+      "name": "Australian National University",
+      "country": "AU"
+    }
+  ],
+  "journal": "Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "patch-clamp",
+    "compartmental-modeling"
+  ],
+  "abstract": "Crossref returned no abstract for this Elsevier Neuroscience article. The paper extends the Poleg-Polsky & Diamond 2011 analysis by quantifying voltage-clamp errors in compartmental models that include active dendritic conductances (voltage-gated Na+ and K+ channels) in addition to passive cable properties. Using realistic neuron morphologies, the authors simulate concurrent excitatory and inhibitory synaptic input and evaluate how well somatic voltage clamp can recover the ground-truth Ge and Gi waveforms. They show that active dendritic channels substantially worsen the estimation error and can produce spurious negative inhibitory conductance estimates during distal inhibition, particularly when the holding potential is far from the inhibitory reversal.",
+  "citation_key": "To2022",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Elsevier ScienceDirect article is paywalled; automated PDF fetch from sciencedirect.com returns a cookie wall / bot challenge rather than the article PDF. Added to intervention/paywalled_papers.md for Sheffield institutional retrieval.",
+  "added_by_task": "t0017_literature_survey_patch_clamp",
+  "date_added": "2026-04-20"
+}

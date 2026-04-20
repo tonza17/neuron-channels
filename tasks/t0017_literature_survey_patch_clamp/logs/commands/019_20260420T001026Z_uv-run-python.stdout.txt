@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0017_literature_survey_patch_clamp\tasks\t0017_literature_survey_patch_clamp\plan\plan.md
+
+[32m[1mPASSED[0m — no errors or warnings

@@ -1,0 +1,14 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0017_literature_survey_patch_clamp\tasks\t0017_literature_survey_patch_clamp\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Briggman2011] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Cl-] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Jain2020] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Litke2004] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Pang2010] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Poleg-Polsky2011] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Zenisek2020-preprint] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 26 entries but frontmatter says sources_cited=25[0m
+
+[31m[1mFAILED[0m — 8 error(s), 0 warning(s)

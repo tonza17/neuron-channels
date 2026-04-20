@@ -1,0 +1,79 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2017.09.058",
+  "doi": "10.1016/j.neuron.2017.09.058",
+  "title": "\"Silent\" NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal Circuit",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(17)30927-3",
+  "pdf_url": "https://www.cell.com/neuron/pdf/S0896-6273(17)30927-3.pdf",
+  "date_published": "2017-12",
+  "year": 2017,
+  "authors": [
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Xiaoyang Yao",
+      "country": "US",
+      "institution": "Duke University",
+      "orcid": null
+    },
+    {
+      "name": "Geoff deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Kevin L. Briggman",
+      "country": "DE",
+      "institution": "Max Planck Institute for Neurobiology of Behavior (caesar)",
+      "orcid": null
+    },
+    {
+      "name": "Greg D. Field",
+      "country": "US",
+      "institution": "Duke University",
+      "orcid": null
+    },
+    {
+      "name": "Gautam B. Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    },
+    {
+      "name": "Duke University",
+      "country": "US"
+    },
+    {
+      "name": "Max Planck Institute for Neurobiology of Behavior (caesar)",
+      "country": "DE"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "voltage-gated-channels",
+    "retinal-ganglion-cell",
+    "patch-clamp",
+    "synaptic-integration"
+  ],
+  "abstract": "Crossref returned no abstract for this Cell Press Neuron article. Based on the published paper, Sethuramanujam and colleagues use whole-cell voltage-clamp recordings from ON-OFF direction-selective ganglion cells (DSGCs) in adult mouse retina combined with pharmacology to demonstrate a functionally silent population of NMDA receptors on DSGC dendrites. At rest and under standard somatic recording conditions, these NMDARs contribute very little to the excitatory current, but during directional-motion stimuli that efficiently depolarise dendrites, the NMDAR population is recruited and multiplicatively enhances motion sensitivity. The study provides quantitative measurements of AMPA/NMDA ratios during preferred- and null-direction motion and pairs them with pharmacological block to isolate each component.",
+  "citation_key": "Sethuramanujam2017",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Elsevier/Cell Press Neuron article is paywalled. Automated PDF fetch from cell.com returns a cookie wall. Added to intervention/paywalled_papers.md for Sheffield institutional retrieval.",
+  "added_by_task": "t0017_literature_survey_patch_clamp",
+  "date_added": "2026-04-20"
+}

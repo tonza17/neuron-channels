@@ -1,0 +1,64 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1126_sciadv.abb6642",
+  "doi": "10.1126/sciadv.abb6642",
+  "title": "Tailoring of the axon initial segment shapes the conversion of synaptic inputs into spiking output in OFF-alpha T retinal ganglion cells",
+  "url": "https://www.science.org/doi/10.1126/sciadv.abb6642",
+  "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.abb6642",
+  "date_published": "2020-09-11",
+  "year": 2020,
+  "authors": [
+    {
+      "name": "Paul Werginz",
+      "country": "US",
+      "institution": "Massachusetts General Hospital, Harvard Medical School",
+      "orcid": null
+    },
+    {
+      "name": "Vineeth Raghuram",
+      "country": "US",
+      "institution": "Massachusetts General Hospital, Harvard Medical School",
+      "orcid": null
+    },
+    {
+      "name": "Shelley I. Fried",
+      "country": "US",
+      "institution": "Massachusetts General Hospital, Harvard Medical School",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Massachusetts General Hospital, Harvard Medical School",
+      "country": "US"
+    },
+    {
+      "name": "Vienna University of Technology",
+      "country": "AT"
+    },
+    {
+      "name": "Boston VA Healthcare System",
+      "country": "US"
+    },
+    {
+      "name": "Tufts University",
+      "country": "US"
+    }
+  ],
+  "journal": "Science Advances",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "retinal-ganglion-cell",
+    "compartmental-modeling",
+    "patch-clamp"
+  ],
+  "abstract": "Intrinsic properties of retinal ganglion cells are tailored to their synaptic inputs to ensure reliable spiking output. Werginz, Raghuram and Fried combine patch-clamp recordings, immunohistochemistry and compartmental modelling of OFF-alpha transient (OFF-alphaT) retinal ganglion cells to show that the axon initial segment (AIS) is a key biophysical site tuning the input-output transformation. Dorsal-retina OFF-alphaT cells have longer AISs with higher Nav1.6 density and can sustain high firing rates without depolarization block, while ventral cells with shorter AISs enter depolarization block at lower input strengths. The AIS-to-soma Na+ density ratio is approximately 7x, and AIS length variability is the dominant morphological factor controlling maximum firing rate.",
+  "citation_key": "Werginz2020",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "AAAS Science Advances is nominally open access but the publisher PDF URL is protected by an AAAS/Cloudflare bot challenge that returns an interstitial HTML page to automated fetchers. Manual browser download via Sheffield institutional access should succeed. Added to intervention/paywalled_papers.md.",
+  "added_by_task": "t0017_literature_survey_patch_clamp",
+  "date_added": "2026-04-20"
+}

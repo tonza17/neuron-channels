@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0017_literature_survey_patch_clamp",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0017_literature_survey_patch_clamp",
+  "exit_code": 0,
+  "duration_seconds": 0.54,
+  "started_at": "2026-04-20T00:10:26Z",
+  "completed_at": "2026-04-20T00:10:27Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0017_literature_survey_patch_clamp",
+  "stdout_file": "019_20260420T001026Z_uv-run-python.stdout.txt",
+  "stderr_file": "019_20260420T001026Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
