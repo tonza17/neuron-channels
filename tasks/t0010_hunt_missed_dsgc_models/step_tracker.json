@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Plan the three-pass search, candidate triage, port-attempt criteria, downloaded-paper inclusion bar, and answer-asset structure. Budget $0.00, local-only.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T13:22:47Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T13:31:35Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
