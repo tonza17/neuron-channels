@@ -5,9 +5,9 @@
   "name": "Literature survey: synaptic integration in RGC-adjacent systems",
   "short_description": "Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [],
-  "start_time": null,
+  "start_time": "2026-04-20T11:18:49Z",
   "end_time": null,
   "expected_assets": {
     "paper": 25,
