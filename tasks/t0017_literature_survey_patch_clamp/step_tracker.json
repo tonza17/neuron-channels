@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for ~25 patch-clamp papers on RGC/DSGC recordings and list them under Discovered Papers.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T23:52:18Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T00:04:46Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
