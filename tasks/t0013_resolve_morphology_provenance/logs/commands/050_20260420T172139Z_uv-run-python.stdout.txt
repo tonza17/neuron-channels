@@ -1,0 +1,15 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0013_resolve_morphology_provenance\tasks\t0013_resolve_morphology_provenance\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260420T164521Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260420T164611Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260420T165001Z_curl-l-f.json has non-zero exit code: 22[0m
+[33m  LG-W004 warning: Command log 011_20260420T165027Z_curl-l-s.json has non-zero exit code: 6[0m
+[33m  LG-W004 warning: Command log 039_20260420T171801Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 041_20260420T171811Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 043_20260420T171827Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 047_20260420T172036Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[33m[1mPASSED[0m — 0 error(s), 9 warning(s)
