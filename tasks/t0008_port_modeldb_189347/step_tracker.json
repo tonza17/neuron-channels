@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate 4-6 follow-up suggestions based on port outcome and Phase B survey.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T11:59:25Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T12:04:18Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
