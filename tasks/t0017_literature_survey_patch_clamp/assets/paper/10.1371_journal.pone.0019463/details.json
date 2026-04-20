@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pone.0019463",
+  "doi": "10.1371/journal.pone.0019463",
+  "title": "Imperfect Space Clamp Permits Electrotonic Interactions between Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp Recordings",
+  "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019463",
+  "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0019463&type=printable",
+  "date_published": "2011-04-29",
+  "year": 2011,
+  "authors": [
+    {
+      "name": "Alon Poleg-Polsky",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": null
+    },
+    {
+      "name": "Jeffrey S. Diamond",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "National Institute of Neurological Disorders and Stroke, NIH",
+      "country": "US"
+    }
+  ],
+  "journal": "PLoS ONE",
+  "venue_type": "journal",
+  "categories": [
+    "patch-clamp",
+    "compartmental-modeling",
+    "synaptic-integration"
+  ],
+  "abstract": "Crossref returned no abstract for this open-access PLoS ONE article. Based on the full paper (accessible publicly), the study uses detailed NEURON compartmental simulations of realistic retinal ganglion cell morphologies to quantify the errors made when excitatory and inhibitory synaptic conductances are estimated from somatic voltage-clamp recordings in cells with extended dendrites. The authors show that imperfect space clamp allows electrotonic interactions between co-active synaptic conductances, producing systematic distortions of the reconstructed conductance waveforms. On thin distal dendrites up to ~80% of the synaptic signal is lost, and inhibitory conductance estimates carry larger errors than excitatory estimates even when clamping at the inhibitory reversal.",
+  "citation_key": "PolegPolsky2011",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Automated PDF download not attempted in this scale-down run; Crossref returned structured metadata without an abstract and the publisher PDF endpoint was not retrieved in the same pipeline used for the other four paywalled papers in this task. Open-access on PLoS ONE but needs manual fetch to complete the local copy; logged in intervention/paywalled_papers.md for retrieval.",
+  "added_by_task": "t0017_literature_survey_patch_clamp",
+  "date_added": "2026-04-20"
+}

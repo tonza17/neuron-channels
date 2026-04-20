@@ -1,0 +1,31 @@
+{
+  "spec_version": "2",
+  "answer_id": "patch-clamp-techniques-and-constraints-for-dsgc-modelling",
+  "question": "What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?",
+  "short_title": "Patch-clamp techniques and constraints for DSGC modelling",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "patch-clamp",
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels",
+    "synaptic-integration"
+  ],
+  "answer_methods": [
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pone.0019463",
+    "10.1016_j.neuroscience.2021.08.024",
+    "10.1126_sciadv.abb6642",
+    "10.1016_j.neuron.2017.09.058",
+    "10.1523_jneurosci.0130-07.2007"
+  ],
+  "source_urls": [],
+  "source_task_ids": [],
+  "confidence": "medium",
+  "created_by_task": "t0017_literature_survey_patch_clamp",
+  "date_created": "2026-04-20"
+}

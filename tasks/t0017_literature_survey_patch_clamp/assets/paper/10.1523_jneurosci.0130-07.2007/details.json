@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_jneurosci.0130-07.2007",
+  "doi": "10.1523/jneurosci.0130-07.2007",
+  "title": "Different Mechanisms Generate Maintained Activity in ON and OFF Retinal Ganglion Cells",
+  "url": "https://www.jneurosci.org/content/27/22/5994",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/27/22/5994.full.pdf",
+  "date_published": "2007-05-30",
+  "year": 2007,
+  "authors": [
+    {
+      "name": "David J. Margolis",
+      "country": "US",
+      "institution": "University of Washington",
+      "orcid": null
+    },
+    {
+      "name": "Peter B. Detwiler",
+      "country": "US",
+      "institution": "University of Washington",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Washington",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "retinal-ganglion-cell",
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "Neuronal discharge is driven by either synaptic input or cell-autonomous intrinsic pacemaker activity. It is commonly assumed that the resting spike activity of retinal ganglion cells (RGCs), the output cells of the retina, is driven synaptically, because retinal photoreceptors and second-order cells tonically release neurotransmitter. Here we show that ON and OFF RGCs generate maintained activity through different mechanisms: ON cells depend on tonic excitatory input to drive resting activity, whereas OFF cells continue to fire in the absence of synaptic input. In addition to spontaneous activity, OFF cells exhibit other properties of pacemaker neurons, including subthreshold oscillations, burst firing, and rebound excitation. Thus, variable weighting of synaptic mechanisms and intrinsic properties underlies differences in the generation of maintained activity in these parallel retinal pathways.",
+  "citation_key": "MargolisDetwiler2007",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Journal of Neuroscience publisher PDF is protected by a Cloudflare bot challenge that returns an interstitial HTML page to automated fetchers. Manual browser download via Sheffield institutional access should succeed. Added to intervention/paywalled_papers.md.",
+  "added_by_task": "t0017_literature_survey_patch_clamp",
+  "date_added": "2026-04-20"
+}
