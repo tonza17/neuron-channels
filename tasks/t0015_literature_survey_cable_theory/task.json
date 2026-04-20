@@ -3,14 +3,14 @@
   "task_id": "t0015_literature_survey_cable_theory",
   "task_index": 15,
   "name": "Literature survey: cable theory and dendritic filtering",
-  "short_description": "Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.",
+  "short_description": "Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.",
   "long_description_file": "task_description.md",
   "status": "in_progress",
   "dependencies": [],
   "start_time": "2026-04-19T23:38:43Z",
   "end_time": null,
   "expected_assets": {
-    "paper": 25,
+    "paper": 5,
     "answer": 1
   },
   "task_types": [
