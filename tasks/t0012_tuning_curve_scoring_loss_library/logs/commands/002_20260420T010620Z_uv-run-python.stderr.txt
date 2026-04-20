@@ -1,0 +1,2 @@
+usage: verify_task_dependencies.py [-h] task_id
+verify_task_dependencies.py: error: unrecognized arguments: --json-output tasks/t0012_tuning_curve_scoring_loss_library/logs/steps/002_check-deps/deps_report.json
