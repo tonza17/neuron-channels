@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T20:38:07Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T22:24:44Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>39817</char_count>
-    <byte_count>39863</byte_count>
-    <estimated_tokens>9954</estimated_tokens>
+    <char_count>42473</char_count>
+    <byte_count>42521</byte_count>
+    <estimated_tokens>10618</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -131,9 +131,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
         <id>t0020_port_modeldb_189347_gabamod</id>
+        <id>t0021_brainstorm_results_4</id>
       </source_ids>
       <content>
-Completed tasks: 20
+Completed tasks: 21
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -254,13 +255,45 @@ ID: t0020_port_modeldb_189347_gabamod
 Completed: 2026-04-20
 Short description: Reproduce Poleg-Polsky &amp; Diamond 2016 DSGC direction selectivity using the paper&#x27;s native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.
 Result summary: Results Summary: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol Summary Built a new sibling library asset `modeldb_189347_dsgc_gabamod` that drives the Poleg-Polsky &amp; Diamond 2016 DSGC under the paper&#x27;s native two-condition `gabaMOD` swap protocol (PD = 0.33, ND = 0.99) instead of t0008&#x27;s spatial-rotation proxy. The canonical 2 × 20 = 40-trial sweep reproduces the direction-selectivity contrast (**DSI 0.7838** inside the literature envelope **[0.70, 0.85]**) but the absolute firing rates remain depressed (**peak 14.85 Hz** vs envelope **[40, 80] Hz**), so the combined two-point gate fails. This matches the Risk-3 scenario anticipated in the plan and is recorded as a...
+
+## Brainstorm Session 4: DSGC Model Channel Testbed
+ID: t0021_brainstorm_results_4
+Completed: 2026-04-20
+Short description: Strategic planning session to create a DSGC model for channel-mechanism testing via dendritic-computation DS.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0021_brainstorm_results_4&quot; --- Brainstorm Session 4 — Summary Summary Fourth brainstorm of the project. Authorised three new tasks: t0022 (active) modifies the existing `modeldb_189347_dsgc` library asset into a channel-modular DSGC testbed that produces dendritic-computation DS over 12 bar angles, while t0023 (Hanson 2019 port) and t0024 (de Rosenroll 2026 port) are created `intervention_blocked` and deferred pending t0022 results. No suggestion cleanup this round. Session Overview * **Date**: 2026-04-20 * **Duration**: 4 hours (10:00-14:00 UTC) * **Prompt**: the researcher asked for a DSGC model suitable for channel-mechanism testing, triggered by the t0020...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0022_modify_dsgc_channel_testbed</id>
+        <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
+      </source_ids>
       <content>
-Planned or active tasks: 0
+Planned or active tasks: 3
+
+## Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+ID: t0022_modify_dsgc_channel_testbed
+Status: not_started
+Effective date: 2026-04-20
+Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels
+
+## Port Hanson 2019 DSGC model
+ID: t0023_port_hanson_2019_dsgc
+Status: intervention_blocked
+Effective date: 2026-04-20
+Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## Port de Rosenroll 2026 DSGC model
+ID: t0024_port_de_rosenroll_2026_dsgc
+Status: intervention_blocked
+Effective date: 2026-04-20
+Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

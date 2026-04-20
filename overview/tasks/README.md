@@ -1,19 +1,440 @@
 # Project Tasks
 
-20 tasks. ✅ **20 completed**.
+24 tasks. ⏹ **1 not_started**, ⚠️ **2 intervention_blocked**, ✅ **21 completed**.
 
-**Browse by view**: By status: [✅ `completed`](by-status/completed.md); [By date
-added](by-date-added/README.md)
+**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [⚠️
+`intervention_blocked`](by-status/intervention_blocked.md), [✅
+`completed`](by-status/completed.md); [By date added](by-date-added/README.md)
 
 ---
 
 ## Dependency Graph
 
-All tasks completed.
+```mermaid
+graph LR
+    t0008_port_modeldb_189347["✅ t0008_port_modeldb_189347"]
+    t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
+    t0015_literature_survey_cable_theory["✅ t0015_literature_survey_cable_theory"]
+    t0016_literature_survey_dendritic_computation["✅ t0016_literature_survey_dendritic_computation"]
+    t0017_literature_survey_patch_clamp["✅ t0017_literature_survey_patch_clamp"]
+    t0018_literature_survey_synaptic_integration["✅ t0018_literature_survey_synaptic_integration"]
+    t0019_literature_survey_voltage_gated_channels["✅ t0019_literature_survey_voltage_gated_channels"]
+    t0022_modify_dsgc_channel_testbed["⏹ t0022_modify_dsgc_channel_testbed"]
+    t0023_port_hanson_2019_dsgc["⚠️ t0023_port_hanson_2019_dsgc"]
+    t0024_port_de_rosenroll_2026_dsgc["⚠️ t0024_port_de_rosenroll_2026_dsgc"]
+
+    t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
+    t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
+    t0012_tuning_curve_scoring_loss_library --> t0022_modify_dsgc_channel_testbed
+    t0015_literature_survey_cable_theory --> t0022_modify_dsgc_channel_testbed
+    t0016_literature_survey_dendritic_computation --> t0022_modify_dsgc_channel_testbed
+    t0017_literature_survey_patch_clamp --> t0022_modify_dsgc_channel_testbed
+    t0018_literature_survey_synaptic_integration --> t0022_modify_dsgc_channel_testbed
+    t0019_literature_survey_voltage_gated_channels --> t0022_modify_dsgc_channel_testbed
+    t0008_port_modeldb_189347 --> t0023_port_hanson_2019_dsgc
+    t0012_tuning_curve_scoring_loss_library --> t0023_port_hanson_2019_dsgc
+    t0022_modify_dsgc_channel_testbed --> t0023_port_hanson_2019_dsgc
+    t0008_port_modeldb_189347 --> t0024_port_de_rosenroll_2026_dsgc
+    t0012_tuning_curve_scoring_loss_library --> t0024_port_de_rosenroll_2026_dsgc
+    t0022_modify_dsgc_channel_testbed --> t0024_port_de_rosenroll_2026_dsgc
+```
 
 ---
 
+## ⏹ Not Started
+
+<details>
+<summary>⏹ 0022 — <strong>Modify DSGC port with spatially-asymmetric inhibition
+for channel testbed</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0022_modify_dsgc_channel_testbed` |
+| **Status** | not_started |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | — |
+| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
+| **Task page** | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Task folder** | [`t0022_modify_dsgc_channel_testbed/`](../../tasks/t0022_modify_dsgc_channel_testbed/) |
+
+# Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed
+
+## Motivation
+
+The project now has two ports of the Poleg-Polsky & Diamond 2016 ModelDB 189347 DSGC model,
+and neither demonstrates direction selectivity through the biologically meaningful mechanism
+of postsynaptic dendritic integration of asymmetric synaptic input. Task t0008 produced
+`modeldb_189347_dsgc` with DSI 0.316 and peak 18.1 Hz using a spatial-rotation proxy driver
+that rotates BIP synapse coordinates per angle. Task t0020 produced
+`modeldb_189347_dsgc_gabamod` with DSI 0.7838 (inside the paper's envelope [0.70, 0.85]) and
+peak 14.85 Hz using the paper's native gabaMOD parameter-swap protocol, which toggles a single
+global GABA scalar between PD (0.33) and ND (0.99) conditions. Both are valid scientific
+reproductions, but neither produces DS via the cell's own integration of spatio-temporally
+asymmetric inputs — a requirement for any downstream channel experiment that asks "does this
+channel combination preserve the dendritic-computation mechanism?" Literature priors from
+t0015 through t0019 provide concrete blueprints for on-the-path shunting inhibition, AIS
+channel split (Nav1.6/Nav1.2 at ~7x somatic density), and E-I temporal co-tuning. This task
+consolidates those priors into a channel-testbed model.
+
+## Scope
+
+Produce a new sibling library asset (proposed slug `modeldb_189347_dsgc_dendritic`) derived
+from `modeldb_189347_dsgc`. The asset shares MOD files (HHst.mod, spike.mod) and the
+RGCmodel.hoc skeleton with the two prior ports but replaces the rotation and gabaMOD drivers
+with a dendritic-computation driver based on spatially-asymmetric inhibition. The driver
+sweeps a moving bar across the cell in 12 directions (30 degree spacing) at a fixed biological
+velocity; direction selectivity arises because inhibitory synapses are positioned or timed so
+that bars moving in the null direction see inhibition arriving before excitation on any given
+dendrite (shunting veto) while bars moving in the preferred direction see excitation arriving
+first (pass-through). The AIS/soma/ dendrite compartments are organized into explicit `forsec`
+channel-insertion blocks so follow-up tasks can add, remove, or replace channels without
+editing the driver.
+
+## Requirements
+
+1. **Dendritic-computation DS**: stimulus is a moving bar in 12 directions (0, 30, ..., 330);
+   no per-condition gabaMOD swaps or per-angle BIP coordinate rotation. DS arises from
+   spatially-asymmetric inhibition (Koch-Poggio-Torre / Barlow-Levick on-the-path shunting).
+2. **12-angle coverage**: `tuning_curves.csv` with columns `(angle_deg, trial_seed,
+   firing_rate_hz)`, at least 10 trials per angle, >=120 rows total.
+3. **Dendritic-computation only**: a single fixed mechanism set across all 12 angles; only the
+   stimulus direction changes. No parameter swaps, no driver tricks.
+4. **Spike output**: somatic spikes detectable at least in the preferred direction. Peak
+   firing rate
+   >=10 Hz target; DSI >=0.5 acceptable (hitting the paper's [40, 80] Hz peak envelope is not
+   required).
+5. **Channel-modular AIS**: AIS, soma, and dendrite regions in separate `forsec` blocks with
+   explicit channel-insertion points. `description.md` documents how to add/remove channels
+   and how to swap the spike.mod channel set.
+6. **Metrics**: use t0012's `tuning_curve_loss` scorer to compute DSI, HWHM, peak firing rate,
+   and per-angle reliability. Produce `score_report.json`.
+7. **Comparison**: `results_detailed.md` includes a comparison table vs t0008 (rotation proxy:
+   DSI 0.316, peak 18.1 Hz) and t0020 (gabaMOD swap: DSI 0.7838, peak 14.85 Hz) covering DSI,
+   peak, HWHM, and reliability.
+
+## Deliverables
+
+* New library asset `modeldb_189347_dsgc_dendritic` (sibling to the two existing ports) with
+  spatially-asymmetric-inhibition driver, channel-modular AIS, and documentation in
+  `description.md`.
+* `tuning_curves.csv` with 12 angles x >=10 trials = >=120 rows.
+* `score_report.json` from the t0012 scorer with DSI, HWHM, peak, per-angle reliability.
+* Comparison note in `results_detailed.md` quantifying differences vs t0008 and t0020.
+* Channel-modularity documentation inside the new library asset's `description.md` explaining
+  how to add, remove, or replace channels in each compartment without touching the driver.
+
+## Dependencies
+
+* `t0008_port_modeldb_189347` — source HOC/MOD files and library-asset skeleton to fork.
+* `t0012_tuning_curve_scoring_loss_library` — DSI / HWHM / reliability scorer.
+* `t0015_literature_survey_cable_theory` — cable-theory priors constraining dendritic geometry
+  and space constants.
+* `t0016_literature_survey_dendritic_computation` — on-the-path shunting prior that motivates
+  the spatially-asymmetric inhibition mechanism.
+* `t0017_literature_survey_patch_clamp` — AIS channel-density priors (Nav1.6/Nav1.2 ~7x
+  somatic).
+* `t0018_literature_survey_synaptic_integration` — E-I temporal co-tuning priors for driver
+  design.
+* `t0019_literature_survey_voltage_gated_channels` — Kv1/Kv3 AIS placement priors for the
+  channel- modular AIS layout.
+
+## Out of Scope
+
+* No remote GPU compute — runs on the local Windows workstation.
+* No channel-swap experiments in this task. This task delivers the testbed; follow-up tasks
+  will use it to evaluate specific channel combinations (Nav1.6-only, Nav1.2-only, +Ih, Kv1 vs
+  Kv3).
+* No attempt to match the paper's peak firing envelope [40, 80] Hz — closing the peak gap is a
+  separate investigation.
+* No modifications to t0008 or t0020 assets; both ports remain intact for comparison.
+
+</details>
+
+## ⚠️ Intervention Blocked
+
+<details>
+<summary>⚠️ 0023 — <strong>Port Hanson 2019 DSGC model</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0023_port_hanson_2019_dsgc` |
+| **Status** | intervention_blocked |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Expected assets** | 1 library, 1 paper |
+| **Source suggestion** | — |
+| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
+| **Task page** | [Port Hanson 2019 DSGC model](../../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
+| **Task folder** | [`t0023_port_hanson_2019_dsgc/`](../../tasks/t0023_port_hanson_2019_dsgc/) |
+
+# Port Hanson 2019 DSGC Model
+
+## Motivation
+
+The project currently has two direction-selective retinal ganglion cell (DSGC) ports, both
+derived from the same underlying ModelDB 189347 (Poleg-Polsky & Diamond 2016) codebase. Task
+t0008 produced the initial port `modeldb_189347_dsgc` using a spatial-rotation proxy driver
+(DSI 0.316, peak 18.1 Hz), and task t0020 produced the sibling port
+`modeldb_189347_dsgc_gabamod` using the paper's native gabaMOD scalar swap (DSI 0.7838, peak
+14.85 Hz). Both share the same morphology, channel densities, and synaptic topology — so any
+channel-mechanism finding drawn from them is a claim about one model, not about DSGCs in
+general.
+
+Hanson et al. 2019 published an independent DSGC implementation with distinct channel
+densities, morphology detail, and synaptic placement patterns. Task t0010 identified this
+model as a high-value alternative. Porting it adds a second, genuinely independent NEURON DSGC
+that supports cross-model comparison of direction-selectivity mechanisms, channel
+sensitivities, and dendritic computation patterns — the pattern of agreement (or disagreement)
+between the two models is what makes any downstream claim robust.
+
+## Scope
+
+Port the Hanson et al. 2019 DSGC model into NEURON as a new library asset sibling to
+`modeldb_189347_dsgc`. Reproduce the model's published direction-selective response under a
+12-angle moving-bar sweep, reusing task t0022's driver infrastructure if compatible (soft
+dependency) or copying from t0020 otherwise. Produce a tuning curve and score report directly
+comparable to the existing ports.
+
+## Deferred Status
+
+This task is deferred. It is reserved and planned but must NOT be executed by the execute-task
+loop until a human decision is made after reviewing t0022's outcomes. Upon creation, the
+orchestrator will add an intervention file that blocks execute-task. The `status` field
+remains `not_started`; the intervention file, not the status, is what suspends execution.
+
+## Deliverables
+
+1. New library asset (proposed slug `hanson_2019_dsgc`) containing the model's
+   HOC/MOD/morphology files, `details.json`, and `description.md`, following the same layout
+   as `modeldb_189347_dsgc`.
+2. Source paper (Hanson et al. 2019) downloaded and registered as a paper asset, if not
+   already present in the project.
+3. A 12-angle moving-bar tuning curve producing `tuning_curves.csv` and `score_report.json`,
+   using t0022's driver if compatible or a port of t0020's driver otherwise.
+4. Comparison section in `results/results_detailed.md` reporting DSI, peak firing rate, HWHM,
+   and reliability against t0008, t0020, and t0022.
+
+## Dependencies
+
+* `t0008_port_modeldb_189347` — reference HOC/MOD/asset layout for a NEURON DSGC library port.
+* `t0012_tuning_curve_scoring_loss_library` — tuning-curve scorer applied to the new model.
+* `t0022_modify_dsgc_channel_testbed` — soft dependency providing the 12-angle driver
+  infrastructure; reuse if available, otherwise fall back to t0020's driver.
+
+## Risks and Unknowns
+
+* Simulator mismatch: Hanson et al. 2019 may use NEST, Brian, custom Python, or another
+  simulator instead of NEURON. A non-NEURON source increases effort from roughly 1-2 days to
+  up to a week.
+* Morphology provenance: the model's morphology may come from NeuroMorpho.Org or another
+  external repository and may require a separate retrieval step before porting can proceed.
+* Channel mechanisms: the paper may rely on ion-channel MOD mechanisms not currently present
+  in this project, requiring new `.mod` files and compilation into the existing mechanism set.
+
+## Out of Scope
+
+No analyses beyond the basic 12-angle tuning curve and score report. Channel-sensitivity
+sweeps, parameter-space exploration, dendritic-computation decomposition,
+optogenetic/pharmacological perturbation studies, or other downstream analyses belong to
+follow-up tasks and must not be performed here.
+
+</details>
+
+<details>
+<summary>⚠️ 0024 — <strong>Port de Rosenroll 2026 DSGC model</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0024_port_de_rosenroll_2026_dsgc` |
+| **Status** | intervention_blocked |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Expected assets** | 1 library, 1 paper |
+| **Source suggestion** | — |
+| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
+| **Task page** | [Port de Rosenroll 2026 DSGC model](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Task folder** | [`t0024_port_de_rosenroll_2026_dsgc/`](../../tasks/t0024_port_de_rosenroll_2026_dsgc/) |
+
+# Port de Rosenroll 2026 DSGC Model
+
+## Motivation
+
+The project currently has DSGC compartmental model ports derived from a single lineage: t0008
+and t0020 both port ModelDB 189347 (Poleg-Polsky & Diamond 2016), and t0022 modifies that same
+port for dendritic-computation DS. A sibling port of Hanson et al. 2019 is reserved in t0023.
+Adding de Rosenroll et al. 2026 as an independent third implementation provides a third
+structurally independent comparison point and, because the paper is recent, is the port most
+likely to incorporate modern methodology and channel mechanisms. In particular, it may include
+an explicit Nav1.6 / Nav1.2 split at the axon initial segment consistent with the patch-clamp
+priors reviewed in t0017, and may use more recent Kv and Cav formulations than the older
+Poleg-Polsky and Hanson models. This makes it especially relevant to the project's
+channel-testbed goal of evaluating how specific channel combinations shape direction
+selectivity.
+
+## Scope
+
+Port the de Rosenroll et al. 2026 DSGC model into the project as a new library asset (proposed
+slug `de_rosenroll_2026_dsgc`) following the HOC/MOD/morphology layout established by t0008.
+Fetch the paper as a paper asset if it is not already present. Run the standard 12-angle
+moving-bar tuning-curve protocol using the driver infrastructure from t0022 where compatible,
+producing `tuning_curves.csv` and a `score_report.json` against the target tuning curve from
+t0004. Compare results against the Poleg-Polsky lineage (t0008, t0020, t0022) and the Hanson
+port (t0023) in `results_detailed.md`.
+
+## Deferred Status
+
+This task is deferred. It is created and reserved now but must NOT be executed by the
+execute-task loop until t0022 completes and the researcher explicitly reviews its outcomes.
+After task-folder creation the orchestrator will write an intervention file to block
+execution. The decision to proceed depends on what t0022 reveals about the channel-testbed
+framework and whether a third independent implementation adds value.
+
+## Deliverables
+
+* New library asset `de_rosenroll_2026_dsgc` with HOC, MOD, and morphology files,
+  `details.json`, and `description.md`.
+* Source paper downloaded and registered as a paper asset if not already in the corpus.
+* 12-angle moving-bar tuning curve: `tuning_curves.csv` and `score_report.json`.
+* Cross-model comparison in `results_detailed.md` against t0008, t0020, t0022, and t0023.
+
+## Dependencies
+
+* `t0008_port_modeldb_189347` — reference HOC/MOD library-asset skeleton.
+* `t0012_tuning_curve_scoring_loss_library` — scorer used for `score_report.json`.
+* `t0022_modify_dsgc_channel_testbed` — driver infrastructure (soft dependency; reuse if
+  compatible, otherwise adapt).
+
+## Risks and Unknowns
+
+* The 2026 paper may have restricted full-text access or be paywalled at porting time,
+  limiting methodological detail.
+* Original source code may not be publicly released or may not target NEURON, forcing partial
+  reimplementation from the paper.
+* Morphology may live in a different repository with different conventions.
+* The model may rely on MOD mechanisms (Nav1.6, Nav1.2, modern Kv1, updated Cav) not yet in
+  the project's MOD set, requiring new mechanism files and validation.
+* Rough effort estimate: 1-2 days if source is NEURON and openly available; 3-5 days if
+  partial reimplementation is needed.
+
+## Out of Scope
+
+* Parameter fitting or channel-density sweeps on the ported model (future task).
+* Cross-simulator porting (e.g., NetPyNE, Brian) beyond the NEURON target.
+* Re-running t0022's channel-testbed modifications on this model (future task if justified by
+  t0022 outcomes).
+* Executing this task now — execution is blocked pending t0022 review.
+
+</details>
+
 ## ✅ Completed
+
+<details>
+<summary>✅ 0021 — <strong>Brainstorm Session 4: DSGC Model Channel Testbed</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0021_brainstorm_results_4` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Start time** | 2026-04-20T10:00:00Z |
+| **End time** | 2026-04-20T14:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm Session 4: DSGC Model Channel Testbed](../../overview/tasks/task_pages/t0021_brainstorm_results_4.md) |
+| **Task folder** | [`t0021_brainstorm_results_4/`](../../tasks/t0021_brainstorm_results_4/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0021_brainstorm_results_4/results/results_detailed.md) |
+
+# Brainstorm Session 4 — DSGC Model Channel Testbed
+
+## Context
+
+The project has completed three task waves and reached a pivotal diagnostic milestone:
+
+* **Wave 1** (t0001-t0005): foundational brainstorm, DSGC-focused compartmental-model
+  literature survey, simulator survey, canonical target tuning curve, baseline DSGC morphology
+  download.
+* **Wave 2** (t0007-t0013, planned by t0006): NEURON install, a first port of ModelDB 189347
+  (t0008), calibration, visualisation, scoring, and provenance tasks.
+* **Wave 3** (t0015-t0019, planned by t0014): five category-scoped literature surveys
+  producing five answer-asset blueprints covering AIS compartment, Nav1.6/Nav1.2/Kv1 channels,
+  NMDARs with Mg2+ block, GABA_A shunting, E-I temporal co-tuning, and SAC asymmetric
+  inhibition.
+* **Diagnostic task** (t0020): reproduced Poleg-Polsky 2016 DSGC under the native `gabaMOD`
+  swap protocol and confirmed DSI 0.7838 (inside the envelope [0.70, 0.85]), while the peak
+  firing rate 14.85 Hz sits below the [40, 80] Hz envelope. This confirmed the t0008
+  `S-0008-02` hypothesis that the earlier low DSI was a protocol mismatch rather than a port
+  bug.
+
+The project now holds 20 tasks, 82 active suggestions (29 high, 41 medium, 12 low), and $0
+spent against a $1 dev-phase budget. The literature blueprints and a working (if under-firing)
+native port are in place, but the project still lacks a DSGC model suitable for
+channel-mechanism testing.
+
+## Session Goal
+
+Decide the next experimental wave. The researcher framed the core gap: "we still lack a decent
+DSGC model for testing different channels. It must (1) show DS via internal dendritic
+computation, (2) cover 8-12 directions (not just PD/ND), (3) turn local activation+inhibition
+into spikes." A DSI threshold of at least 0.5 is acceptable; peak firing rate need not match
+the Poleg-Polsky envelope. The strategic question is whether to modify an existing model or
+port a new one.
+
+## Decisions
+
+1. **Create t0022** — modify the existing `modeldb_189347_dsgc` library asset produced by
+   t0008 to produce dendritic-computation DS via spatially-asymmetric inhibition across a
+   12-angle moving-bar sweep, with a channel-modular AIS so future tasks can swap Nav/Kv
+   variants. Status: `not_started`, runs immediately after this PR merges.
+
+2. **Create t0023** — port the Hanson 2019 DSGC model as a comparison implementation alongside
+   t0022. Status: `intervention_blocked`; an intervention file explains the task is deferred
+   pending t0022 results before the porting effort is justified.
+
+3. **Create t0024** — port the de Rosenroll 2026 DSGC model as a second comparison
+   implementation. Status: `intervention_blocked`; an intervention file explains the same
+   deferral rationale.
+
+4. **No suggestion cleanup this round.** The researcher steered the session to model-building;
+   suggestion backlog pruning is deferred to the next brainstorm.
+
+## Out of Scope
+
+* No experiments this session — planning-only brainstorm.
+* No corrections — no prior task produced an outcome that needs correcting.
+* No new asset types, task types, metrics, or categories.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0021_brainstorm_results_4"
+> ---
+> **Brainstorm Session 4 — Summary**
+>
+> **Summary**
+>
+> Fourth brainstorm of the project. Authorised three new tasks: t0022 (active) modifies the
+> existing
+> `modeldb_189347_dsgc` library asset into a channel-modular DSGC testbed that produces
+> dendritic-computation DS over 12 bar angles, while t0023 (Hanson 2019 port) and t0024 (de
+> Rosenroll
+> 2026 port) are created `intervention_blocked` and deferred pending t0022 results. No
+> suggestion
+> cleanup this round.
+>
+> **Session Overview**
+>
+> * **Date**: 2026-04-20
+> * **Duration**: 4 hours (10:00-14:00 UTC)
+> * **Prompt**: the researcher asked for a DSGC model suitable for channel-mechanism testing,
+> triggered by the t0020 diagnostic (DSI 0.7838 in-envelope, peak 14.85 Hz below envelope,
+> confirmed
+
+</details>
 
 <details>
 <summary>✅ 0020 — <strong>Port ModelDB 189347 DSGC under native gabaMOD

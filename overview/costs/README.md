@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.80) |
 | Stop threshold | 100% ($1.00) |
 | Default per-task limit | $1.00 USD |
-| Tasks with cost records | 20 |
+| Tasks with cost records | 21 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 0 |
+| Skipped tasks | 3 |
 
 ## Service Totals
 
@@ -27,8 +27,16 @@ No entries found.
 
 No entries found.
 
-20 task cost record(s) are zero-cost and omitted from the main spend table.
+21 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
 No task cost records found.
+
+## Skipped Tasks
+
+| Task ID | Reason |
+|---------|--------|
+| `t0022_modify_dsgc_channel_testbed` | results/costs.json is missing or invalid |
+| `t0023_port_hanson_2019_dsgc` | results/costs.json is missing or invalid |
+| `t0024_port_de_rosenroll_2026_dsgc` | results/costs.json is missing or invalid |

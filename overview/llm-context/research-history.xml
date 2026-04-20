@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T20:38:07Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T22:24:44Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>48</section_count>
-    <char_count>794954</char_count>
-    <byte_count>796722</byte_count>
-    <estimated_tokens>198738</estimated_tokens>
-    <compatibility>200k-class, 1M-class</compatibility>
+    <section_count>51</section_count>
+    <char_count>801026</char_count>
+    <byte_count>802808</byte_count>
+    <estimated_tokens>200256</estimated_tokens>
+    <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
     <item>project description</item>
@@ -132,9 +132,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
         <id>t0020_port_modeldb_189347_gabamod</id>
+        <id>t0021_brainstorm_results_4</id>
       </source_ids>
       <content>
-Completed tasks: 20
+Completed tasks: 21
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -255,13 +256,45 @@ ID: t0020_port_modeldb_189347_gabamod
 Completed: 2026-04-20
 Short description: Reproduce Poleg-Polsky &amp; Diamond 2016 DSGC direction selectivity using the paper&#x27;s native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.
 Result summary: Results Summary: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol Summary Built a new sibling library asset `modeldb_189347_dsgc_gabamod` that drives the Poleg-Polsky &amp; Diamond 2016 DSGC under the paper&#x27;s native two-condition `gabaMOD` swap protocol (PD = 0.33, ND = 0.99) instead of t0008&#x27;s spatial-rotation proxy. The canonical 2 × 20 = 40-trial sweep reproduces the direction-selectivity contrast (**DSI 0.7838** inside the literature envelope **[0.70, 0.85]**) but the absolute firing rates remain depressed (**peak 14.85 Hz** vs envelope **[40, 80] Hz**), so the combined two-point gate fails. This matches the Risk-3 scenario anticipated in the plan and is recorded as a...
+
+## Brainstorm Session 4: DSGC Model Channel Testbed
+ID: t0021_brainstorm_results_4
+Completed: 2026-04-20
+Short description: Strategic planning session to create a DSGC model for channel-mechanism testing via dendritic-computation DS.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0021_brainstorm_results_4&quot; --- Brainstorm Session 4 — Summary Summary Fourth brainstorm of the project. Authorised three new tasks: t0022 (active) modifies the existing `modeldb_189347_dsgc` library asset into a channel-modular DSGC testbed that produces dendritic-computation DS over 12 bar angles, while t0023 (Hanson 2019 port) and t0024 (de Rosenroll 2026 port) are created `intervention_blocked` and deferred pending t0022 results. No suggestion cleanup this round. Session Overview * **Date**: 2026-04-20 * **Duration**: 4 hours (10:00-14:00 UTC) * **Prompt**: the researcher asked for a DSGC model suitable for channel-mechanism testing, triggered by the t0020...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
+      <source_ids>
+        <id>t0022_modify_dsgc_channel_testbed</id>
+        <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
+      </source_ids>
       <content>
-Planned or active tasks: 0
+Planned or active tasks: 3
+
+## Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+ID: t0022_modify_dsgc_channel_testbed
+Status: not_started
+Effective date: 2026-04-20
+Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels
+
+## Port Hanson 2019 DSGC model
+ID: t0023_port_hanson_2019_dsgc
+Status: intervention_blocked
+Effective date: 2026-04-20
+Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## Port de Rosenroll 2026 DSGC model
+ID: t0024_port_de_rosenroll_2026_dsgc
+Status: intervention_blocked
+Effective date: 2026-04-20
+Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -14280,6 +14313,118 @@ computes DSI by formula `(mean_PD - mean_ND) / (mean_PD + mean_ND)` — the same
 * **Relevance**: Provides the reference DSI/peak/null/HWHM formulas and the four-metric envelope
   conventions. The new scorer borrows the DSI formula but cannot use the high-level `score()` entry
   point because the two-point CSV does not satisfy the 12-angle loader contract.
+      </content>
+    </section>
+    <section id="t0021_brainstorm_results_4-research_papers" source_kind="file">
+      <title>t0021_brainstorm_results_4 — Brainstorm Session 4: DSGC Model Channel Testbed — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0021_brainstorm_results_4</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0021_brainstorm_results_4/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+Brainstorm-only tasks do not perform literature review. This session drew on the five
+literature-survey answer assets produced by t0015-t0019, which themselves aggregate ~125 papers
+covering cable theory, dendritic computation, patch-clamp, synaptic integration, and voltage-gated
+channels.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0021_brainstorm_results_4-research_internet" source_kind="file">
+      <title>t0021_brainstorm_results_4 — Brainstorm Session 4: DSGC Model Channel Testbed — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0021_brainstorm_results_4</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0021_brainstorm_results_4/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+Brainstorm-only tasks do not conduct internet research. Any internet-scoped investigation for the
+new DSGC channel-testbed task (t0022) and the deferred comparison ports (t0023, t0024) will happen
+in those tasks&#x27; own research stages.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0021_brainstorm_results_4-research_code" source_kind="file">
+      <title>t0021_brainstorm_results_4 — Brainstorm Session 4: DSGC Model Channel Testbed — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0021_brainstorm_results_4</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0021_brainstorm_results_4/research/research_code.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+Brainstorm-only tasks do not perform code or library research. The t0022 task that follows will
+review the `modeldb_189347_dsgc` library asset produced by t0008 and consumed by t0020, plus the
+existing `response-visualization` and `tuning-curve-scoring` libraries from t0011 and t0012.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
       </content>
     </section>
   </sections>

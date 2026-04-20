@@ -1,12 +1,118 @@
 # ✅ Tasks: Completed
 
-20 tasks. ✅ **20 completed**.
+21 tasks. ✅ **21 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0021 — <strong>Brainstorm Session 4: DSGC Model Channel Testbed</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0021_brainstorm_results_4` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Start time** | 2026-04-20T10:00:00Z |
+| **End time** | 2026-04-20T14:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm Session 4: DSGC Model Channel Testbed](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md) |
+| **Task folder** | [`t0021_brainstorm_results_4/`](../../../tasks/t0021_brainstorm_results_4/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0021_brainstorm_results_4/results/results_detailed.md) |
+
+# Brainstorm Session 4 — DSGC Model Channel Testbed
+
+## Context
+
+The project has completed three task waves and reached a pivotal diagnostic milestone:
+
+* **Wave 1** (t0001-t0005): foundational brainstorm, DSGC-focused compartmental-model
+  literature survey, simulator survey, canonical target tuning curve, baseline DSGC morphology
+  download.
+* **Wave 2** (t0007-t0013, planned by t0006): NEURON install, a first port of ModelDB 189347
+  (t0008), calibration, visualisation, scoring, and provenance tasks.
+* **Wave 3** (t0015-t0019, planned by t0014): five category-scoped literature surveys
+  producing five answer-asset blueprints covering AIS compartment, Nav1.6/Nav1.2/Kv1 channels,
+  NMDARs with Mg2+ block, GABA_A shunting, E-I temporal co-tuning, and SAC asymmetric
+  inhibition.
+* **Diagnostic task** (t0020): reproduced Poleg-Polsky 2016 DSGC under the native `gabaMOD`
+  swap protocol and confirmed DSI 0.7838 (inside the envelope [0.70, 0.85]), while the peak
+  firing rate 14.85 Hz sits below the [40, 80] Hz envelope. This confirmed the t0008
+  `S-0008-02` hypothesis that the earlier low DSI was a protocol mismatch rather than a port
+  bug.
+
+The project now holds 20 tasks, 82 active suggestions (29 high, 41 medium, 12 low), and $0
+spent against a $1 dev-phase budget. The literature blueprints and a working (if under-firing)
+native port are in place, but the project still lacks a DSGC model suitable for
+channel-mechanism testing.
+
+## Session Goal
+
+Decide the next experimental wave. The researcher framed the core gap: "we still lack a decent
+DSGC model for testing different channels. It must (1) show DS via internal dendritic
+computation, (2) cover 8-12 directions (not just PD/ND), (3) turn local activation+inhibition
+into spikes." A DSI threshold of at least 0.5 is acceptable; peak firing rate need not match
+the Poleg-Polsky envelope. The strategic question is whether to modify an existing model or
+port a new one.
+
+## Decisions
+
+1. **Create t0022** — modify the existing `modeldb_189347_dsgc` library asset produced by
+   t0008 to produce dendritic-computation DS via spatially-asymmetric inhibition across a
+   12-angle moving-bar sweep, with a channel-modular AIS so future tasks can swap Nav/Kv
+   variants. Status: `not_started`, runs immediately after this PR merges.
+
+2. **Create t0023** — port the Hanson 2019 DSGC model as a comparison implementation alongside
+   t0022. Status: `intervention_blocked`; an intervention file explains the task is deferred
+   pending t0022 results before the porting effort is justified.
+
+3. **Create t0024** — port the de Rosenroll 2026 DSGC model as a second comparison
+   implementation. Status: `intervention_blocked`; an intervention file explains the same
+   deferral rationale.
+
+4. **No suggestion cleanup this round.** The researcher steered the session to model-building;
+   suggestion backlog pruning is deferred to the next brainstorm.
+
+## Out of Scope
+
+* No experiments this session — planning-only brainstorm.
+* No corrections — no prior task produced an outcome that needs correcting.
+* No new asset types, task types, metrics, or categories.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0021_brainstorm_results_4"
+> ---
+> **Brainstorm Session 4 — Summary**
+>
+> **Summary**
+>
+> Fourth brainstorm of the project. Authorised three new tasks: t0022 (active) modifies the
+> existing
+> `modeldb_189347_dsgc` library asset into a channel-modular DSGC testbed that produces
+> dendritic-computation DS over 12 bar angles, while t0023 (Hanson 2019 port) and t0024 (de
+> Rosenroll
+> 2026 port) are created `intervention_blocked` and deferred pending t0022 results. No
+> suggestion
+> cleanup this round.
+>
+> **Session Overview**
+>
+> * **Date**: 2026-04-20
+> * **Duration**: 4 hours (10:00-14:00 UTC)
+> * **Prompt**: the researcher asked for a DSGC model suitable for channel-mechanism testing,
+> triggered by the t0020 diagnostic (DSI 0.7838 in-envelope, peak 14.85 Hz below envelope,
+> confirmed
+
+</details>
 
 <details>
 <summary>✅ 0020 — <strong>Port ModelDB 189347 DSGC under native gabaMOD
