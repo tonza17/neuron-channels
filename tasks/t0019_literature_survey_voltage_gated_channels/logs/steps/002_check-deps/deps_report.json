@@ -1,0 +1,8 @@
+{
+  "task_id": "t0019_literature_survey_voltage_gated_channels",
+  "dependencies": [],
+  "verificator": "verify_task_dependencies",
+  "errors": 0,
+  "warnings": 0,
+  "status": "passed"
+}

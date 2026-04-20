@@ -1,0 +1,63 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn2040",
+  "doi": "10.1038/nn2040",
+  "title": "Action potential generation requires a high sodium channel density in the axon initial segment",
+  "url": "https://doi.org/10.1038/nn2040",
+  "pdf_url": null,
+  "date_published": "2008-02",
+  "year": 2008,
+  "authors": [
+    {
+      "name": "Maarten H P Kole",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Susanne U Ilschner",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Björn M Kampa",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Stephen R Williams",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Peter C Ruben",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Greg J Stuart",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "",
+  "citation_key": "Kole2008",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0019_literature_survey_voltage_gated_channels",
+  "date_added": "2026-04-20"
+}

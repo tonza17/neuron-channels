@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2007.07.031",
+  "doi": "10.1016/j.neuron.2007.07.031",
+  "title": "Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic Efficacy",
+  "url": "https://doi.org/10.1016/j.neuron.2007.07.031",
+  "pdf_url": null,
+  "date_published": "2007-08",
+  "year": 2007,
+  "authors": [
+    {
+      "name": "Maarten H.P. Kole",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Johannes J. Letzkus",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Greg J. Stuart",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "dendritic-computation"
+  ],
+  "abstract": "",
+  "citation_key": "KoleLetzkus2007",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0019_literature_survey_voltage_gated_channels",
+  "date_added": "2026-04-20"
+}

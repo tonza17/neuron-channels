@@ -1,0 +1,63 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn.2359",
+  "doi": "10.1038/nn.2359",
+  "title": "Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and backpropagation",
+  "url": "https://doi.org/10.1038/nn.2359",
+  "pdf_url": null,
+  "date_published": "2009-08",
+  "year": 2009,
+  "authors": [
+    {
+      "name": "Wenqin Hu",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Cuiping Tian",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Tun Li",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Mingpo Yang",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Han Hou",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Yousheng Shu",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "",
+  "citation_key": "Hu2009",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0019_literature_survey_voltage_gated_channels",
+  "date_added": "2026-04-20"
+}
