@@ -1,0 +1,57 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 47 items
+
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_cli.py::test_cli_runs_on_t0004_curves PASSED [  2%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_cli.py::test_cli_missing_simulated_exits_1 PASSED [  4%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_cli.py::test_cli_json_output_parses PASSED [  6%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_cli.py::test_cli_default_target_uses_t0004 PASSED [  8%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_cli.py::test_cli_custom_weights_json PASSED [ 10%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_all_in_range_passes PASSED [ 12%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_dsi_below_lower_fails PASSED [ 14%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_dsi_at_lower_boundary_passes PASSED [ 17%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_dsi_above_upper_fails PASSED [ 19%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_peak_below_lower_fails PASSED [ 21%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_peak_above_upper_fails PASSED [ 23%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_null_above_max_fails PASSED [ 25%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_null_at_max_passes PASSED [ 27%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_hwhm_below_lower_fails PASSED [ 29%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_hwhm_above_upper_fails PASSED [ 31%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_envelope.py::test_default_envelope_admits_t0004_target PASSED [ 34%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_target_curve_from_t0004 PASSED [ 36%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_with_trials_csv_from_t0004 PASSED [ 38%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_canonical_trials_schema PASSED [ 40%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_missing_file_raises PASSED [ 42%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_malformed_csv_raises PASSED [ 44%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_loader.py::test_load_non_uniform_grid_raises PASSED [ 46%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_peak_and_null_match_target PASSED [ 48%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_dsi_matches_t0004_formula PASSED [ 51%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_dsi_zero_denominator_returns_zero PASSED [ 53%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_hwhm_symmetric_cosine_squared PASSED [ 55%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_hwhm_flat_curve_returns_flat_sentinel PASSED [ 57%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_hwhm_peak_not_at_index_6_rotates_correctly PASSED [ 59%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_reliability_none_when_trials_absent PASSED [ 61%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_reliability_one_for_identical_halves PASSED [ 63%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_reliability_zero_variance_returns_none PASSED [ 65%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_reliability_separates_high_vs_low_noise PASSED [ 68%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_metrics.py::test_angle_step_is_30_deg PASSED [ 70%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_identity_score_zero PASSED [ 72%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_identity_score_all_residuals_zero PASSED [ 74%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_to_metrics_dict_uses_registered_keys PASSED [ 76%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_higher_dsi_candidate_has_positive_dsi_residual PASSED [ 78%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_custom_weights_change_loss PASSED [ 80%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_weights_sum_zero_raises PASSED [ 82%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_weights_wrong_keys_raises PASSED [ 85%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_weights_negative_raises PASSED [ 87%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_weights_from_json PASSED [ 89%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_default_weights_are_equal_quarters PASSED [ 91%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_rmse_vs_target_is_zero_on_identity PASSED [ 93%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_rmse_increases_with_perturbation PASSED [ 95%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_score_report_carries_candidate_and_target_metrics PASSED [ 97%]
+tasks/t0012_tuning_curve_scoring_loss_library/code/test_scoring.py::test_score_accepts_perturbed_candidate_with_shape_preserved PASSED [100%]
+
+============================= 47 passed in 4.95s ==============================

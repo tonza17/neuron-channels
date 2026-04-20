@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0012_tuning_curve_scoring_loss_library",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_task_complete t0012_tuning_curve_scoring_loss_library",
+  "exit_code": 1,
+  "duration_seconds": 3.523,
+  "started_at": "2026-04-20T10:00:02Z",
+  "completed_at": "2026-04-20T10:00:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0012_tuning_curve_scoring_loss_library",
+  "stdout_file": "035_20260420T100002Z_uv-run-python.stdout.txt",
+  "stderr_file": "035_20260420T100002Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

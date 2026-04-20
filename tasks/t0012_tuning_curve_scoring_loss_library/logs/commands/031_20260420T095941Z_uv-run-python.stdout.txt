@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\tasks\t0012_tuning_curve_scoring_loss_library\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260420T010620Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 007_20260420T093422Z_uv-run-pytest.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260420T093502Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260420T093517Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260420T095909Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[33m[1mPASSED[0m — 0 error(s), 6 warning(s)
