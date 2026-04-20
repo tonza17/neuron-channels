@@ -1,0 +1,30 @@
+{
+  "spec_version": "2",
+  "answer_id": "cable-theory-implications-for-dsgc-modelling",
+  "question": "What does the classical cable-theory and dendritic-computation literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON?",
+  "short_title": "Cable-theory implications for DSGC modelling",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "cable-theory",
+    "dendritic-computation",
+    "direction-selectivity",
+    "retinal-ganglion-cells",
+    "compartmental-modelling"
+  ],
+  "answer_methods": [
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1152_jn.1967.30.5.1138",
+    "10.1098_rstb.1982.0084",
+    "10.1038_382363a0",
+    "10.1126_science.289.5488.2347",
+    "10.1523_jneurosci.5346-03.2004"
+  ],
+  "source_urls": [],
+  "source_task_ids": [],
+  "confidence": "medium",
+  "created_by_task": "t0015_literature_survey_cable_theory",
+  "date_created": "2026-04-20"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0015_literature_survey_cable_theory",
+  "command": "uv run python -m arf.scripts.utils.prestep t0015_literature_survey_cable_theory research-code",
+  "exit_code": 0,
+  "duration_seconds": 1.522,
+  "started_at": "2026-04-19T23:58:05Z",
+  "completed_at": "2026-04-19T23:58:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0015_literature_survey_cable_theory",
+  "stdout_file": "008_20260419T235805Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260419T235805Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

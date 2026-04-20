@@ -1,0 +1,55 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1098_rstb.1982.0084",
+  "doi": "10.1098/rstb.1982.0084",
+  "title": "Retinal ganglion cells: a functional interpretation of dendritic morphology",
+  "url": "https://royalsocietypublishing.org/doi/10.1098/rstb.1982.0084",
+  "pdf_url": null,
+  "date_published": "1982-07-27",
+  "year": 1982,
+  "authors": [
+    {
+      "name": "Christof Koch",
+      "country": "DE",
+      "institution": "Max-Planck-Institut fuer biologische Kybernetik",
+      "orcid": null
+    },
+    {
+      "name": "Tomaso Poggio",
+      "country": "DE",
+      "institution": "Max-Planck-Institut fuer biologische Kybernetik",
+      "orcid": null
+    },
+    {
+      "name": "Vincent Torre",
+      "country": "IT",
+      "institution": "Universita di Genova",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Max-Planck-Institut fuer biologische Kybernetik",
+      "country": "DE"
+    },
+    {
+      "name": "Universita di Genova",
+      "country": "IT"
+    }
+  ],
+  "journal": "Philosophical Transactions of the Royal Society B",
+  "venue_type": "journal",
+  "categories": [
+    "cable-theory",
+    "retinal-ganglion-cells",
+    "dendritic-computation"
+  ],
+  "abstract": "The electrical properties of the different anatomical types of retinal ganglion cells in the cat were calculated on the basis of passive cable theory from measurements made on histological material. Standard values for the electrical parameters were assumed (R_i = 70 Ohm cm, C_m = 2 uF/cm^2, R_m = 2500 Ohm cm^2). We conclude that these neurons need not be equipotential despite their small dimensions, mainly because of their extensive branching. The paper proposes that nonlinear dendritic interactions between excitatory and shunting inhibitory synapses on the dendritic tree can compute direction selectivity and motion discrimination, giving a biophysical mechanism for these retinal computations.",
+  "citation_key": "KochPoggio1982",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Philosophical Transactions of the Royal Society B is paywalled for 1982 content; OpenAlex reports no open-access version (is_oa: false). Added to intervention/paywalled_papers.md for institutional retrieval.",
+  "added_by_task": "t0015_literature_survey_cable_theory",
+  "date_added": "2026-04-20"
+}

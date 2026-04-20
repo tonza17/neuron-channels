@@ -1,0 +1,39 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1152_jn.1967.30.5.1138",
+  "doi": "10.1152/jn.1967.30.5.1138",
+  "title": "Distinguishing theoretical synaptic potentials computed for different soma-dendritic distributions of synaptic input",
+  "url": "https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138",
+  "pdf_url": "https://www.physiology.org/doi/pdf/10.1152/jn.1967.30.5.1138",
+  "date_published": "1967-09-01",
+  "year": 1967,
+  "authors": [
+    {
+      "name": "Wilfrid Rall",
+      "country": "US",
+      "institution": "National Institutes of Health",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "National Institutes of Health",
+      "country": "US"
+    }
+  ],
+  "journal": "Journal of Neurophysiology",
+  "venue_type": "journal",
+  "categories": [
+    "cable-theory",
+    "synaptic-integration",
+    "dendritic-computation"
+  ],
+  "abstract": "Abstract not available in Crossref or OpenAlex public metadata for this 1967 paper. The paper analytically computes EPSP waveforms at the soma as a function of synaptic input location along the soma-dendritic axis of a Rall equivalent-cylinder neuron model, and proposes shape-index measurements (rise time and half-width) as empirical diagnostics of synaptic input location.",
+  "citation_key": "Rall1967",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Journal of Neurophysiology (APS) full text is paywalled; the DOI landing page returns the abstract only. Unpaywall and OpenAlex report no open-access version. Added to intervention/paywalled_papers.md for institutional retrieval.",
+  "added_by_task": "t0015_literature_survey_cable_theory",
+  "date_added": "2026-04-20"
+}

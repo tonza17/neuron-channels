@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\assets\answer\tasks\t0015_literature_survey_cable_theory\assets\answer\cable-theory-implications-for-dsgc-modelling
+
+[31m[1mERRORS:[0m
+[31m  AA-E001 error: details.json does not exist or is not valid JSON: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\assets\answer\tasks\t0015_literature_survey_cable_theory\assets\answer\cable-theory-implications-for-dsgc-modelling\details.json[0m
+[31m  AA-E002 error: short_answer.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\assets\answer\tasks\t0015_literature_survey_cable_theory\assets\answer\cable-theory-implications-for-dsgc-modelling\short_answer.md[0m
+[31m  AA-E002 error: full_answer.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\assets\answer\tasks\t0015_literature_survey_cable_theory\assets\answer\cable-theory-implications-for-dsgc-modelling\full_answer.md[0m
+
+[31m[1mFAILED[0m — 3 error(s), 0 warning(s)

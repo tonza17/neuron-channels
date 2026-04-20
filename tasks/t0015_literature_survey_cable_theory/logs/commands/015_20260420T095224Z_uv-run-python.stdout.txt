@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0015_literature_survey_cable_theory\tasks\t0015_literature_survey_cable_theory\assets\answer\cable-theory-implications-for-dsgc-modelling
+
+[31m[1mERRORS:[0m
+[31m  AA-E012 error: confidence is missing from full answer document frontmatter[0m
+
+[33m[1mWARNINGS:[0m
+[33m  AA-W001 warning: Category 'retinal-ganglion-cells' does not exist in meta/categories/[0m
+[33m  AA-W001 warning: Category 'compartmental-modelling' does not exist in meta/categories/[0m
+
+[31m[1mFAILED[0m — 1 error(s), 2 warning(s)
