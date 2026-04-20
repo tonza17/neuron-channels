@@ -9,12 +9,12 @@ status: "completed"
 ---
 # Step 012 Results - Log
 
-## Purpose
+## Summary
 
 Write the mandatory results artefacts for the task: `results_summary.md`, `results_detailed.md`,
 `metrics.json`, `costs.json`, `remote_machines_used.json`, and the `results/images/` placeholder.
 
-## Actions
+## Actions Taken
 
 ### Action 1: Write metrics.json, costs.json, remote_machines_used.json
 
