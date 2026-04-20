@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare newly ported models' tuning curves (if any) against t0008 Poleg-Polsky reproduction and the canonical target curve; flag systematic disagreements.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T14:37:39Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T14:39:49Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
