@@ -6,9 +6,9 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (25)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (7)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(27)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(29)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
-(2)](../libraries/by-category/retinal-ganglion-cell.md)
+(3)](../libraries/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -1448,7 +1448,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 3 closed)
+## Suggestions (26 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1767,6 +1767,44 @@ priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_
 -45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
 Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
 before adopting them as tight compartmental-model fitting targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
+the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
+PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
+shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
+{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
+{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
+config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
+Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
+protocol); this is excitation-only under the native driver, addressable only now that t0020
+localised the gap. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extend t0011 response-visualisation library with a
+condition-based (PD/ND) raster+PSTH plot</strong> (S-0020-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+t0011's tuning_curve_viz library supports angle-based rasters (one column per angle) but the
+two-condition CSV produced by t0020 has no angle axis; only the bar chart (plot_pd_vs_nd.py,
+t0020 local code) currently visualises it. Extend t0011 with
+plot_condition_raster_psth(spike_times_df, *, conditions=('PD','ND'), out_png) that draws a
+two-column raster (one per condition) above a PSTH panel. Requires t0020 (or a follow-up) to
+first record per-trial spike times (not just rates) from run_gabamod_sweep.py. Complements
+S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
+analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
+produce a publication-quality raster. Recommended task types: write-library, experiment-run.
 
 </details>
 

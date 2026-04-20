@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-27 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **24 open** (12
-high, 9 medium, 3 low), **3 closed**.
+29 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **26 open** (13
+high, 9 medium, 4 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -33,6 +33,31 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
+the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
+PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
+shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
+{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
+{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
+config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
+Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
+protocol); this is excitation-only under the native driver, addressable only now that t0020
+localised the gap. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -557,6 +582,31 @@ preferred) produced the 141009_Pair1DSGC reconstruction, and whether the compani
 reconstruction is deposited at NeuroMorpho. A one-sentence email-reply quote converts the
 current 'methodologically consistent' attribution into a citeable exact-quote provenance, and
 directly informs S-0013-03. Recommended task types: answer-question.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extend t0011 response-visualisation library with a
+condition-based (PD/ND) raster+PSTH plot</strong> (S-0020-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-07` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0011's tuning_curve_viz library supports angle-based rasters (one column per angle) but the
+two-condition CSV produced by t0020 has no angle axis; only the bar chart (plot_pd_vs_nd.py,
+t0020 local code) currently visualises it. Extend t0011 with
+plot_condition_raster_psth(spike_times_df, *, conditions=('PD','ND'), out_png) that draws a
+two-column raster (one per condition) above a PSTH panel. Requires t0020 (or a follow-up) to
+first record per-trial spike times (not just rates) from run_gabamod_sweep.py. Complements
+S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
+analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
+produce a publication-quality raster. Recommended task types: write-library, experiment-run.
 
 </details>
 

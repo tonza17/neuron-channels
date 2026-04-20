@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-87 suggestions **77 open** (29 high, 37 medium, 11 low), **10 closed**.
+94 suggestions **83 open** (30 high, 41 medium, 12 low), **11 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -157,6 +157,31 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
+the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
+PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
+shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
+{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
+{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
+config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
+Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
+protocol); this is excitation-only under the native driver, addressable only now that t0020
+localised the gap. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -327,28 +352,6 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Implement gabaMOD parameter-swap protocol for ModelDB
-189347</strong> (S-0008-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0008-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0008_port_modeldb_189347/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
-
-Re-run the ModelDB 189347 port under the paper's native DS protocol: sweep gabaMOD between PD
-(0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to
-reproduce the paper's headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based
-proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in
-run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the
-rotation protocol. Recommended task types: code-reproduction.
 
 </details>
 
@@ -551,6 +554,32 @@ feature-engineering, code-reproduction.
 </details>
 
 <details>
+<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
+targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+compare_literature.md flags that the paper reports concrete subthreshold validation targets
+that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
+2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
+additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
+traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
+amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
+over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
+intervals. This turns a single spike-output check into a multi-level subthreshold validation
+that exercises the cell's passive and NMDA-block biophysics independently of spike
+thresholding. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
 verify numerical claims</strong> (S-0015-01)</summary>
 
@@ -720,6 +749,32 @@ import it. Recommended task types: write-library.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📊 <strong>Add a per-trial spike-count floor to the two-point envelope gate
+to catch biologically implausible passes</strong> (S-0020-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+Plan Risks & Fallbacks explicitly anticipated this scenario: DSI can land inside the envelope
+while absolute firing rates stay unrealistically low (t0020 recorded DSI 0.7838 / peak 14.85
+Hz exactly here). The current gate checks (mean_PD in [40, 80] Hz, DSI in [0.70, 0.85]) but
+does not enforce biological plausibility at the trial level: the gate could pass with, say,
+one trial firing 80 Hz and nineteen firing 0 Hz. Extend the envelope gate (in
+tuning_curve_loss or the t0020 scorer) to add a trial-level floor: require that at least
+N_pd_pass PD trials fire above a biological minimum threshold (e.g., 5 Hz). Report the
+per-trial floor result alongside the mean-based envelope. Rerun scoring over t0020's existing
+40-trial CSV to verify the new gate flags the current run as failed on the floor (baseline
+expectation). Recommended task types: write-library, experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Add combined-report function that renders all four plot types
@@ -1085,6 +1140,32 @@ Sivyer). This closes the gap between canonical theory and DSGC-specific paramete
 </details>
 
 <details>
+<summary>📚 <strong>Extend tuning_curve_loss with a two-point (PD/ND) scoring API to
+make t0012 usable under the native protocol</strong> (S-0020-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+research_code.md records that t0012's high-level score() entry point rejects the two-condition
+CSV because its loader's _validate_angle_grid requires exactly 12 angles on a 30-degree
+spacing. t0020 worked around this by re-implementing the DSI formula inline in
+score_envelope.py. Every future gabaMOD-swap task (including S-0020-01 and S-0020-03 above)
+will hit the same wall. Add a score_two_point(pd_rates: np.ndarray, nd_rates: np.ndarray, *,
+dsi_envelope, peak_envelope) -> TwoPointScore API to tuning_curve_loss that returns DSI, mean
+PD, mean ND, per-condition stderr, gate.passed, plus optional per-trial CIs via bootstrap.
+Keep the 12-angle score() untouched; the new API is an additional entry point. Register it in
+the tuning_curve_loss library details.json entry_points. Recommended task types:
+write-library.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Extend voltage-gated-channel survey with recent DSGC-specific
 Nav/Kv patch-clamp and super-resolution AIS microdomain papers</strong>
 (S-0019-02)</summary>
@@ -1151,6 +1232,32 @@ Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi,
 target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at
 ~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is
 robust across the 0.6-0.9 band instead of only the upper end.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Intermediate-gabaMOD sensitivity sweep to map the PD-ND
+transition curve</strong> (S-0020-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+The canonical protocol uses only the two endpoints gabaMOD = 0.33 (PD) and 0.99 (ND).
+Task_description Scope explicitly deferred intermediate values as follow-up work. Run 20
+trials per condition at gabaMOD in {0.20, 0.33, 0.50, 0.66, 0.83, 0.99} and plot firing rate
+vs gabaMOD plus DSI computed as (rate_at_0.33 - rate_at_X)/(rate_at_0.33 + rate_at_X).
+Outputs: (1) a firing-rate-vs-gabaMOD curve that shows whether the 0.33 -> 0.99 transition is
+sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DSI crosses 0.5
+(useful for later calibration); (3) a CSV with schema (gabamod, trial_seed, firing_rate_hz).
+Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
+the inhibition axis, directly informing the inhibition-strength free parameter for later
+optimisation. Recommended task types: experiment-run.
 
 </details>
 
@@ -1589,6 +1696,31 @@ burst rate and compare with published DSGC spiking statistics.
 </details>
 
 <details>
+<summary>📊 <strong>Trial-count power analysis for the PD/ND DSI estimator (bootstrap
+CI vs N_trials)</strong> (S-0020-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0020 reports DSI 0.7838 from 20 trials per condition but quotes no confidence interval.
+Before launching sensitivity sweeps (S-0020-01, S-0020-03), future tasks need to know how many
+trials per condition are needed to resolve, say, a 0.05-DSI difference at 95% CI. Compute
+bootstrap 95% CIs on DSI for N_trials per condition in {5, 10, 20, 40, 80} by resampling with
+replacement (10,000 resamples) from a single long run (80 trials per condition, reusing
+run_gabamod_sweep.py with --n-trials 80). Output: (1) a CSV
+trial_count,dsi_mean,dsi_ci_low,dsi_ci_high,peak_mean,peak_ci_low,peak_ci_high; (2) a plot of
+DSI CI width vs trial count; (3) a recommended N_trials for each sensitivity-analysis budget
+tier. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Write forward-only driver for PolegPolsky2026 DS-mechanisms model
 and pursue LICENSE</strong> (S-0010-03)</summary>
 
@@ -1748,6 +1880,31 @@ into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003
 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any
 behavioural differences. This decides whether the project should upgrade before or after the
 first round of tuning-curve experiments.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extend t0011 response-visualisation library with a
+condition-based (PD/ND) raster+PSTH plot</strong> (S-0020-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-07` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0011's tuning_curve_viz library supports angle-based rasters (one column per angle) but the
+two-condition CSV produced by t0020 has no angle axis; only the bar chart (plot_pd_vs_nd.py,
+t0020 local code) currently visualises it. Extend t0011 with
+plot_condition_raster_psth(spike_times_df, *, conditions=('PD','ND'), out_png) that draws a
+two-column raster (one per condition) above a PSTH panel. Requires t0020 (or a follow-up) to
+first record per-trial spike times (not just rates) from run_gabamod_sweep.py. Complements
+S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
+analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
+produce a publication-quality raster. Recommended task types: write-library, experiment-run.
 
 </details>
 
@@ -1921,6 +2078,30 @@ read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC r
 then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
 correct paper_id slug. This unblocks correct citation of the morphology in every downstream
 paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Implement gabaMOD parameter-swap protocol for ModelDB 189347</s> —
+covered by <a
+href="../../tasks/t0020_port_modeldb_189347_gabamod/"><code>t0020_port_modeldb_189347_gabamod</code></a>
+(S-0008-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0008-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0008_port_modeldb_189347/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+Re-run the ModelDB 189347 port under the paper's native DS protocol: sweep gabaMOD between PD
+(0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to
+reproduce the paper's headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based
+proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in
+run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the
+rotation protocol. Recommended task types: code-reproduction.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T17:30:12Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T20:38:07Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>180468</char_count>
-    <byte_count>180655</byte_count>
-    <estimated_tokens>45117</estimated_tokens>
+    <char_count>181594</char_count>
+    <byte_count>181782</byte_count>
+    <estimated_tokens>45398</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -130,9 +130,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
+        <id>t0020_port_modeldb_189347_gabamod</id>
       </source_ids>
       <content>
-Completed tasks: 19
+Completed tasks: 20
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -247,6 +248,12 @@ ID: t0019_literature_survey_voltage_gated_channels
 Completed: 2026-04-20
 Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot; --- Results Summary: Voltage-Gated-Channel Literature Survey Summary Surveyed **5** high-leverage voltage-gated-channel papers covering the five canonical themes (Nav subunit localisation at RGC AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2 co-expression kinetics, AIS Nav conductance density) and produced one answer asset tabulating a Nav/Kv combination per DOI and theme. All **5** PDFs were paywalled (Wiley, Elsevier, American Physiological Society, Nature Neuroscience x2); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in...
+
+## Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+ID: t0020_port_modeldb_189347_gabamod
+Completed: 2026-04-20
+Short description: Reproduce Poleg-Polsky &amp; Diamond 2016 DSGC direction selectivity using the paper&#x27;s native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.
+Result summary: Results Summary: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol Summary Built a new sibling library asset `modeldb_189347_dsgc_gabamod` that drives the Poleg-Polsky &amp; Diamond 2016 DSGC under the paper&#x27;s native two-condition `gabaMOD` swap protocol (PD = 0.33, ND = 0.99) instead of t0008&#x27;s spatial-rotation proxy. The canonical 2 × 20 = 40-trial sweep reproduces the direction-selectivity contrast (**DSI 0.7838** inside the literature envelope **[0.70, 0.85]**) but the absolute firing rates remain depressed (**peak 14.85 Hz** vs envelope **[40, 80] Hz**), so the combined two-point gate fails. This matches the Risk-3 scenario anticipated in the plan and is recorded as a...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

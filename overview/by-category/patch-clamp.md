@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (20)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(5)](../suggestions/by-category/patch-clamp.md)
+(6)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1062,7 +1062,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (4 open, 1 closed)
+## Suggestions (5 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
@@ -1119,6 +1119,26 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
+targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+compare_literature.md flags that the paper reports concrete subthreshold validation targets
+that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
+2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
+additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
+traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
+amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
+over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
+intervals. This turns a single spike-output check into a multi-level subthreshold validation
+that exercises the cell's passive and NMDA-block biophysics independently of spike
+thresholding. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 

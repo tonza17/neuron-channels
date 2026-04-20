@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-20T17:30:12Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-20T20:38:07Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>1811</char_count>
-    <byte_count>1811</byte_count>
-    <estimated_tokens>452</estimated_tokens>
+    <char_count>1854</char_count>
+    <byte_count>1854</byte_count>
+    <estimated_tokens>463</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -43,6 +43,7 @@ Spent: 0.0%
 * t0017_literature_survey_patch_clamp: $0.00
 * t0018_literature_survey_synaptic_integration: $0.00
 * t0019_literature_survey_voltage_gated_channels: $0.00
+* t0020_port_modeldb_189347_gabamod: $0.00
       </content>
     </section>
   </sections>

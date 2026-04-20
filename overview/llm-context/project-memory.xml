@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T17:30:12Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T20:38:07Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>80984</char_count>
-    <byte_count>81049</byte_count>
-    <estimated_tokens>20246</estimated_tokens>
+    <char_count>83050</char_count>
+    <byte_count>83116</byte_count>
+    <estimated_tokens>20762</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -135,9 +135,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
+        <id>t0020_port_modeldb_189347_gabamod</id>
       </source_ids>
       <content>
-Completed tasks: 19
+Completed tasks: 20
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -252,6 +253,12 @@ ID: t0019_literature_survey_voltage_gated_channels
 Completed: 2026-04-20
 Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot; --- Results Summary: Voltage-Gated-Channel Literature Survey Summary Surveyed **5** high-leverage voltage-gated-channel papers covering the five canonical themes (Nav subunit localisation at RGC AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2 co-expression kinetics, AIS Nav conductance density) and produced one answer asset tabulating a Nav/Kv combination per DOI and theme. All **5** PDFs were paywalled (Wiley, Elsevier, American Physiological Society, Nature Neuroscience x2); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in...
+
+## Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+ID: t0020_port_modeldb_189347_gabamod
+Completed: 2026-04-20
+Short description: Reproduce Poleg-Polsky &amp; Diamond 2016 DSGC direction selectivity using the paper&#x27;s native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.
+Result summary: Results Summary: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol Summary Built a new sibling library asset `modeldb_189347_dsgc_gabamod` that drives the Poleg-Polsky &amp; Diamond 2016 DSGC under the paper&#x27;s native two-condition `gabaMOD` swap protocol (PD = 0.33, ND = 0.99) instead of t0008&#x27;s spatial-rotation proxy. The canonical 2 × 20 = 40-trial sweep reproduces the direction-selectivity contrast (**DSI 0.7838** inside the literature envelope **[0.70, 0.85]**) but the absolute firing rates remain depressed (**peak 14.85 Hz** vs envelope **[40, 80] Hz**), so the combined two-point gate fails. This matches the Risk-3 scenario anticipated in the plan and is recorded as a...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -739,11 +746,12 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
       <source_name>aggregate_libraries_full</source_name>
       <source_ids>
         <id>modeldb_189347_dsgc</id>
+        <id>modeldb_189347_dsgc_gabamod</id>
         <id>tuning_curve_loss</id>
         <id>tuning_curve_viz</id>
       </source_ids>
       <content>
-Libraries: 3
+Libraries: 4
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -751,6 +759,13 @@ Version: 0.1.0
 Created by task: t0008_port_modeldb_189347
 Module paths: tasks\t0008_port_modeldb_189347\code\build_cell.py, tasks\t0008_port_modeldb_189347\code\constants.py, tasks\t0008_port_modeldb_189347\code\paths.py, tasks\t0008_port_modeldb_189347\code\run_tuning_curve.py, tasks\t0008_port_modeldb_189347\code\score_envelope.py, tasks\t0008_port_modeldb_189347\code\report_morphology.py, tasks\t0008_port_modeldb_189347\code\swc_io.py, tasks\t0008_port_modeldb_189347\code\run_nrnivmodl.cmd
 This library ports ModelDB 189347 into a headless Python-driven simulation pipeline, executing at the canonical parameters of Poleg-Polsky &amp; Diamond 2016 and producing the four metrics that the t0012 `tuning_curve_loss` library registers (`direction_selectivity_index`, `tuning_curve_hwhm_deg`, `tuning_curve_reliability`, `tuning_curve_rmse`). The entire pipeline from MOD compile through envelope scoring runs on a...
+
+## ModelDB 189347 DSGC Port -- gabaMOD-swap protocol
+ID: modeldb_189347_dsgc_gabamod
+Version: 0.1.0
+Created by task: t0020_port_modeldb_189347_gabamod
+Module paths: tasks\t0020_port_modeldb_189347_gabamod\code\constants.py, tasks\t0020_port_modeldb_189347_gabamod\code\paths.py, tasks\t0020_port_modeldb_189347_gabamod\code\run_gabamod_sweep.py, tasks\t0020_port_modeldb_189347_gabamod\code\score_envelope.py, tasks\t0020_port_modeldb_189347_gabamod\code\plot_pd_vs_nd.py
+This library provides a second direction-selectivity protocol for the ModelDB 189347 DSGC cell. The cell, mechanisms, and canonical parameters are reused from t0008&#x27;s `modeldb_189347_dsgc` library asset; only the per-trial driver and a small scorer are new. The driver holds BIP synapse coordinates fixed at their baseline values and swaps the inhibitory `h.gabaMOD` scalar between 0.33 (preferred direction, weak...
 
 ## Tuning Curve Loss
 ID: tuning_curve_loss

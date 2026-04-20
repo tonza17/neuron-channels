@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (30)](../papers/by-category/synaptic-integration.md) | [Answers
 (4)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(10)](../suggestions/by-category/synaptic-integration.md)
+(13)](../suggestions/by-category/synaptic-integration.md)
 
 ---
 
@@ -1575,7 +1575,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (8 open, 2 closed)
+## Suggestions (11 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
@@ -1652,6 +1652,65 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
+the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
+PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
+shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
+{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
+{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
+config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
+Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
+protocol); this is excitation-only under the native driver, addressable only now that t0020
+localised the gap. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
+targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+compare_literature.md flags that the paper reports concrete subthreshold validation targets
+that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
+2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
+additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
+traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
+amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
+over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
+intervals. This turns a single spike-output check into a multi-level subthreshold validation
+that exercises the cell's passive and NMDA-block biophysics independently of spike
+thresholding. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Intermediate-gabaMOD sensitivity sweep to map the PD-ND
+transition curve</strong> (S-0020-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
+
+The canonical protocol uses only the two endpoints gabaMOD = 0.33 (PD) and 0.99 (ND).
+Task_description Scope explicitly deferred intermediate values as follow-up work. Run 20
+trials per condition at gabaMOD in {0.20, 0.33, 0.50, 0.66, 0.83, 0.99} and plot firing rate
+vs gabaMOD plus DSI computed as (rate_at_0.33 - rate_at_X)/(rate_at_0.33 + rate_at_X).
+Outputs: (1) a firing-rate-vs-gabaMOD curve that shows whether the 0.33 -> 0.99 transition is
+sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DSI crosses 0.5
+(useful for later calibration); (3) a CSV with schema (gabamod, trial_seed, firing_rate_hz).
+Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
+the inhibition axis, directly informing the inhibition-strength free parameter for later
+optimisation. Recommended task types: experiment-run.
 
 </details>
 

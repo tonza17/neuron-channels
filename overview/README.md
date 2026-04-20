@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-3-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-4-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-10-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-87-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-20-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-94-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (10K)
-| [full](llm-context/full.xml) (127K) | [roadmap](llm-context/roadmap.xml) (27K) |
-[results](llm-context/results-deep-dive.xml) (79K) |
-[assets](llm-context/literature-and-assets.xml) (22K)
+| [full](llm-context/full.xml) (132K) | [roadmap](llm-context/roadmap.xml) (29K) |
+[results](llm-context/results-deep-dive.xml) (84K) |
+[assets](llm-context/literature-and-assets.xml) (23K)
 
-*Last updated: 2026-04-20 17:30 UTC*
+*Last updated: 2026-04-20 20:38 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -65,10 +65,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (19 total)](tasks/by-status/completed.md)
+## [Recently Completed (20 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0020 | [Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | [`results`](../tasks/t0020_port_modeldb_189347_gabamod/results/results_detailed.md) | 2026-04-20 20:35 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`results`](../tasks/t0013_resolve_morphology_provenance/results/results_detailed.md) | 2026-04-20 17:21 |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`results`](../tasks/t0011_response_visualization_library/results/results_detailed.md) | 2026-04-20 15:50 |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
@@ -78,9 +79,8 @@ No blocked tasks.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | [`results`](../tasks/t0017_literature_survey_patch_clamp/results/results_detailed.md) | 2026-04-20 11:08 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | [`results`](../tasks/t0016_literature_survey_dendritic_computation/results/results_detailed.md) | 2026-04-20 10:36 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | [`results`](../tasks/t0015_literature_survey_cable_theory/results/results_detailed.md) | 2026-04-20 10:00 |
-| 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
 
-*9 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*10 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -94,7 +94,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (77 open)](suggestions/)
+## [Recent Suggestions (83 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -111,22 +111,6 @@ mechanism that matches the rotation-based protocol used in t0008 more directly t
 Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
 asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
 task types: code-reproduction, write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Implement gabaMOD parameter-swap protocol for ModelDB
-189347</strong> (S-0008-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0008_port_modeldb_189347](../tasks/t0008_port_modeldb_189347/)
-
-Re-run the ModelDB 189347 port under the paper's native DS protocol: sweep gabaMOD between PD
-(0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to
-reproduce the paper's headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based
-proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in
-run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the
-rotation protocol. Recommended task types: code-reproduction.
 
 </details>
 
@@ -273,11 +257,30 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*67 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>📂 <strong>Re-type SWC by section role (soma / primary / mid / terminal)
+as a sibling dataset asset</strong> (S-0009-06)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../tasks/t0009_calibrate_dendritic_diameters/)
+
+The calibrated SWC uses only SWC type codes 1 (soma) and 3 (dendrite); downstream NEURON tasks
+that set section-specific conductance densities (e.g., Na 150/150/30 mS/cm^2, K 70/70/35) must
+re-derive Strahler order every time. Produce a sibling dataset asset
+dsgc-baseline-morphology-calibrated-typed that re-types each row to 1 (soma), 5 (primary), 3
+(mid), or 6 (terminal) using the calibration's bin labels. Topology, xyz, and parent_id are
+preserved; only type_code changes. Add a conversion script and a smoke test that confirms
+NEURON's Import3d loader accepts the extended type codes. Cuts duplicated Strahler
+recomputation from every downstream channel-placement task. Creative_thinking.md section A3.
+Recommended task types: feature-engineering.
+
+</details>
+
+*73 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (29)](suggestions/)
+## [High Priority Suggestions (30)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -294,22 +297,6 @@ mechanism that matches the rotation-based protocol used in t0008 more directly t
 Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
 asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
 task types: code-reproduction, write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Implement gabaMOD parameter-swap protocol for ModelDB
-189347</strong> (S-0008-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0008_port_modeldb_189347](../tasks/t0008_port_modeldb_189347/)
-
-Re-run the ModelDB 189347 port under the paper's native DS protocol: sweep gabaMOD between PD
-(0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to
-reproduce the paper's headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based
-proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in
-run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the
-rotation protocol. Recommended task types: code-reproduction.
 
 </details>
 
@@ -455,7 +442,27 @@ re-run it against existing library assets. Recommended task types: infrastructur
 
 </details>
 
-*19 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
+reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
+simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
+so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
+resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
+under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
+simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
+produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
+validation that the scorer library does what it promises on a non-trivial candidate.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+*20 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1164,12 +1171,13 @@ No predictions yet.
 
 ---
 
-## [Latest Libraries (3 total)](libraries/)
+## [Latest Libraries (4 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
 | [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |
 | [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |
+| [ModelDB 189347 DSGC Port -- gabaMOD-swap protocol](../tasks\t0020_port_modeldb_189347_gabamod\assets\library\modeldb_189347_dsgc_gabamod\description.md) | [20](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | 2026-04-20 |
 | [ModelDB 189347 DSGC Port](../tasks\t0008_port_modeldb_189347\assets\library\modeldb_189347_dsgc\description.md) | [8](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | 2026-04-20 |
 
 ---

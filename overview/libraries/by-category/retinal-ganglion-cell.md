@@ -1,6 +1,6 @@
 # Libraries: `retinal-ganglion-cell`
 
-2 librar(y/ies).
+3 librar(y/ies).
 
 [Back to all libraries](../README.md)
 
@@ -39,6 +39,40 @@
 Python-driven port of ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC) with a
 NEURON/HOC back-end, 12-angle drifting-bar tuning-curve runner, and t0012-based envelope
 scoring.
+
+</details>
+
+<details>
+<summary>📦 <strong>ModelDB 189347 DSGC Port -- gabaMOD-swap protocol</strong>
+(<code>modeldb_189347_dsgc_gabamod</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `modeldb_189347_dsgc_gabamod` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0020_port_modeldb_189347_gabamod\code\constants.py`, `tasks\t0020_port_modeldb_189347_gabamod\code\paths.py`, `tasks\t0020_port_modeldb_189347_gabamod\code\run_gabamod_sweep.py`, `tasks\t0020_port_modeldb_189347_gabamod\code\score_envelope.py`, `tasks\t0020_port_modeldb_189347_gabamod\code\plot_pd_vs_nd.py` |
+| **Dependencies** | neuron, numpy, pandas, pydantic, tqdm, matplotlib |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Created by** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0020_port_modeldb_189347_gabamod\assets\library\modeldb_189347_dsgc_gabamod\description.md) |
+
+**Entry points:**
+
+* `run_one_trial_gabamod` (function) — Apply canonical parameters, override h.gabaMOD to the
+  condition-specific scalar (0.33 for PD, 0.99 for ND), assert BIP synapse positions stay at
+  their baseline values, and return the somatic firing rate in Hz for a single trial.
+* `main` (script) — Build the DSGC once, iterate over (condition, trial_seed) pairs for PD and
+  ND, and emit data/tuning_curves.csv with schema (condition, trial_seed, firing_rate_hz).
+* `main` (script) — Read data/tuning_curves.csv, compute DSI = (mean_PD - mean_ND) / (mean_PD
+  + mean_ND) and peak = mean_PD, gate against the literature envelope (DSI 0.70-0.85, peak
+  40-80 Hz), and write results/score_report.json and results/metrics.json.
+* `main` (script) — Generate a PD vs ND mean firing-rate bar chart with per-trial scatter
+  overlay and save it to results/images/pd_vs_nd_firing_rate.png.
+
+Sibling port of ModelDB 189347 (Poleg-Polsky & Diamond 2016 DSGC) that implements direction
+selectivity via the paper's native gabaMOD parameter swap (PD=0.33, ND=0.99) instead of the
+t0008 spatial-rotation proxy.
 
 </details>
 

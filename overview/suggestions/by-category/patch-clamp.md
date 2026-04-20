@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-5 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **4 open**
-(2 high, 2 medium), **1 closed**.
+6 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **5 open**
+(3 high, 2 medium), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,32 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
+targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+compare_literature.md flags that the paper reports concrete subthreshold validation targets
+that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
+2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
+additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
+traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
+amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
+over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
+intervals. This turns a single spike-output check into a multi-level subthreshold validation
+that exercises the cell's passive and NMDA-block biophysics independently of spike
+thresholding. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
