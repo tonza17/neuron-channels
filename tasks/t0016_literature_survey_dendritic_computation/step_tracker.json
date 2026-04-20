@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review prior task outputs (papers, answers, libraries) relevant to dendritic modelling.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T23:58:05Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T00:03:44Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
