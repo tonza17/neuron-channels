@@ -1,0 +1,9 @@
+	0
+	1
+	1
+	1
+build took 0.4s
+angle=   0.0  rate=15.00 Hz  took 2.2s
+angle=  90.0  rate=14.00 Hz  took 2.0s
+angle= 180.0  rate=14.00 Hz  took 2.0s
+angle= 270.0  rate=17.00 Hz  took 2.0s

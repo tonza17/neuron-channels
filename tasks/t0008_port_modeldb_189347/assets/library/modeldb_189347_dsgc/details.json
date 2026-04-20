@@ -1,0 +1,65 @@
+{
+  "spec_version": "2",
+  "library_id": "modeldb_189347_dsgc",
+  "name": "ModelDB 189347 DSGC Port",
+  "version": "0.1.0",
+  "short_description": "Python-driven port of ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC) with a NEURON/HOC back-end, 12-angle drifting-bar tuning-curve runner, and t0012-based envelope scoring.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/build_cell.py",
+    "code/constants.py",
+    "code/paths.py",
+    "code/run_tuning_curve.py",
+    "code/score_envelope.py",
+    "code/report_morphology.py",
+    "code/swc_io.py",
+    "code/run_nrnivmodl.cmd"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc",
+      "kind": "function",
+      "module": "code/build_cell.py",
+      "description": "Load the compiled nrnmech.dll, source RGCmodel.hoc and the GUI-free dsgc_model.hoc, and return a fully-initialised NEURON h-handle with RGC.numsyn point processes placed on ON dendrites."
+    },
+    {
+      "name": "run_one_trial",
+      "kind": "function",
+      "module": "code/build_cell.py",
+      "description": "Apply per-trial seed and angle, rotate BIP synapse coords, rerun placeBIP(), finitialize and continuerun to tstop, and return the soma firing rate in Hz."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/run_tuning_curve.py",
+      "description": "Sweep 12 angles x 20 trials on the bundled DSGC and emit a canonical-schema tuning curve CSV consumable by tuning_curve_loss."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/score_envelope.py",
+      "description": "Score the emitted tuning curve against the t0004 target via tuning_curve_loss and write results/metrics.json plus data/score_report.json."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/report_morphology.py",
+      "description": "Compare the bundled Poleg-Polsky morphology with the calibrated t0009 SWC and write data/morphology_swap_report.md."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "tqdm"
+  ],
+  "test_paths": [
+    "code/test_smoke_single_angle.py",
+    "code/test_scoring_pipeline.py"
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0008_port_modeldb_189347",
+  "date_created": "2026-04-20"
+}

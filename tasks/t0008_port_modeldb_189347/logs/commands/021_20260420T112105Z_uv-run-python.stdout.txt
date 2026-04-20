@@ -1,0 +1,8 @@
+	0
+	1
+	1
+	1
+angle=   0.0  rate=15.00 Hz  (2.0s)
+angle=  90.0  rate=9.00 Hz  (2.0s)
+angle= 180.0  rate=8.00 Hz  (2.1s)
+angle= 270.0  rate=18.00 Hz  (2.0s)

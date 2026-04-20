@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Download ModelDB 189347, port as library asset, compile MOD files, swap in calibrated morphology, run 12-angle 20-trial tuning curve, score against envelope via t0012, then Phase B sibling-model survey.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T11:03:11Z",
       "completed_at": null,
-      "log_file": "logs/steps/009_implementation/"
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0008_port_modeldb_189347",
+  "command": "python -c from neuron import h; print('OK:', h.nrnversion())",
+  "exit_code": 1,
+  "duration_seconds": 0.077,
+  "started_at": "2026-04-20T11:17:17Z",
+  "completed_at": "2026-04-20T11:17:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0008_port_modeldb_189347",
+  "stdout_file": "015_20260420T111717Z_python-c-from-neuron-import-h-print-ok-h.stdout.txt",
+  "stderr_file": "015_20260420T111717Z_python-c-from-neuron-import-h-print-ok-h.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}
