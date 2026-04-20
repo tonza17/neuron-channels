@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Record follow-up suggestions (e.g., active channel calibration, soma/dendritic impedance check, alternative morphology calibration).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T00:07:40Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T00:12:12Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
