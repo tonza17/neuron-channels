@@ -1,0 +1,5 @@
+usage: tuning_curve_viz.cli [-h] --curve-csv CURVE_CSV --out-dir OUT_DIR
+                            [--target-csv TARGET_CSV]
+                            [--spike-times-csv SPIKE_TIMES_CSV]
+                            [--curve-label CURVE_LABEL]
+tuning_curve_viz.cli: error: curve-csv does not exist: tasks\t0008_fit_tuning_curve_with_scoring_loss\assets\dataset\t0008_simulated_tuning_curve\files\simulated_tuning_curve.csv

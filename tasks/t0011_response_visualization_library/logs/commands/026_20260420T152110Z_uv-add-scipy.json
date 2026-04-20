@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0011_response_visualization_library",
+  "command": "uv add scipy",
+  "exit_code": 0,
+  "duration_seconds": 21.464,
+  "started_at": "2026-04-20T15:21:10Z",
+  "completed_at": "2026-04-20T15:21:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0011_response_visualization_library",
+  "stdout_file": "026_20260420T152110Z_uv-add-scipy.stdout.txt",
+  "stderr_file": "026_20260420T152110Z_uv-add-scipy.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 10,
+  "truncated": false
+}

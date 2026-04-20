@@ -1,0 +1,66 @@
+{
+  "spec_version": "2",
+  "library_id": "tuning_curve_viz",
+  "name": "Tuning Curve Visualizer",
+  "version": "0.1.0",
+  "short_description": "Matplotlib library that turns tuning-curve CSVs and spike-time CSVs into Cartesian, polar, multi-model overlay, and per-angle raster+PSTH PNGs.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/tuning_curve_viz/__init__.py",
+    "code/tuning_curve_viz/cartesian.py",
+    "code/tuning_curve_viz/cli.py",
+    "code/tuning_curve_viz/constants.py",
+    "code/tuning_curve_viz/loaders.py",
+    "code/tuning_curve_viz/overlay.py",
+    "code/tuning_curve_viz/paths.py",
+    "code/tuning_curve_viz/polar.py",
+    "code/tuning_curve_viz/raster_psth.py",
+    "code/tuning_curve_viz/stats.py"
+  ],
+  "entry_points": [
+    {
+      "name": "plot_cartesian_tuning_curve",
+      "kind": "function",
+      "module": "code/tuning_curve_viz/cartesian.py",
+      "description": "Cartesian firing-rate-vs-direction plot with optional per-trial scatter, 95 percent bootstrap CI band, and an optional dashed target overlay."
+    },
+    {
+      "name": "plot_polar_tuning_curve",
+      "kind": "function",
+      "module": "code/tuning_curve_viz/polar.py",
+      "description": "Polar firing-rate-vs-direction plot with a preferred-direction arrow and an optional dashed target overlay."
+    },
+    {
+      "name": "plot_multi_model_overlay",
+      "kind": "function",
+      "module": "code/tuning_curve_viz/overlay.py",
+      "description": "Side-by-side Cartesian + polar overlay for up to six models (Okabe-Ito palette) with an optional dashed target overlay."
+    },
+    {
+      "name": "plot_angle_raster_psth",
+      "kind": "function",
+      "module": "code/tuning_curve_viz/raster_psth.py",
+      "description": "Per-angle spike raster above a PSTH histogram from a (angle_deg, trial_index, spike_time_s) CSV."
+    },
+    {
+      "name": "tuning_curve_viz.cli",
+      "kind": "script",
+      "module": "code/tuning_curve_viz/cli.py",
+      "description": "Command-line wrapper that renders Cartesian, polar, overlay, and raster+PSTH PNGs into --out-dir."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scipy"
+  ],
+  "test_paths": [
+    "code/tuning_curve_viz/test_smoke.py"
+  ],
+  "categories": [
+    "direction-selectivity"
+  ],
+  "created_by_task": "t0011_response_visualization_library",
+  "date_created": "2026-04-20"
+}

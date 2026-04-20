@@ -1,0 +1,8 @@
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py:9: error: Library stubs not installed for "pandas"  [import-untyped]
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py:9: note: Hint: "python3 -m pip install pandas-stubs"
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py:9: note: (or run "mypy --install-types" to install all missing stub packages)
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py:9: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py:122: error: Argument "lineoffsets" to "eventplot" of "Axes" has incompatible type "ndarray[tuple[int], dtype[float64]]"; expected "float | Sequence[float]"  [arg-type]
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\test_smoke.py:31: error: Library stubs not installed for "pandas"  [import-untyped]
+tasks\t0011_response_visualization_library\code\tuning_curve_viz\cli.py:20: error: Library stubs not installed for "pandas"  [import-untyped]
+Found 4 errors in 3 files (checked 11 source files)
