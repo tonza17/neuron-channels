@@ -1,0 +1,2 @@
+PRESTEP: Created step folder: tasks\t0011_response_visualization_library\logs\steps\002_check-deps
+PRESTEP: Step 'check-deps' is now in_progress (started_at: 2026-04-20T14:56:15Z)

@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0004 and t0008 are completed and available for import.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T14:56:15Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
