@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_jneurosci.5346-03.2004",
+  "doi": "10.1523/jneurosci.5346-03.2004",
+  "title": "Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell",
+  "url": "https://www.jneurosci.org/content/24/12/2914",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/24/12/2914.full.pdf",
+  "date_published": "2004-03-24",
+  "year": 2004,
+  "authors": [
+    {
+      "name": "Narender K. Dhingra",
+      "country": "US",
+      "institution": "University of Pennsylvania School of Medicine",
+      "orcid": null
+    },
+    {
+      "name": "Robert G. Smith",
+      "country": "US",
+      "institution": "University of Pennsylvania School of Medicine",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Pennsylvania School of Medicine",
+      "country": "US"
+    }
+  ],
+  "journal": "Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "retinal-ganglion-cells",
+    "voltage-gated-channels",
+    "compartmental-modelling"
+  ],
+  "abstract": "The quality of the signal a retinal ganglion cell transmits to the brain is important for perception because it sets the minimum detectable stimulus. The ganglion cell converts graded potentials into a spike train with a selective filter but in the process adds noise. To explore how efficiently information is transferred to spikes, we measured contrast detection threshold and increment threshold from graded potential and spike responses of brisk-transient ganglion cells. Intracellular responses to a spot flashed over the receptive field center of the cell were recorded in an intact mammalian retina maintained in vitro at 37C. Thresholds were measured in a single-interval forced-choice procedure with an ideal observer. The graded potential gave a detection threshold of 1.5% contrast, whereas spikes gave 3.8%. The graded potential also gave increment thresholds approximately twofold lower and carried approximately 60% more gray levels. Increment threshold dipped below the detection threshold at a low contrast (<5%) but increased rapidly at higher contrasts. The magnitude of the dipper for both graded potential and spikes could be predicted from a threshold nonlinearity in the responses. Depolarization of the cell by current injection reduced the detection threshold for spikes but also reduced the range of contrasts they can transmit. This suggests that contrast sensitivity and dynamic range are related in an essential trade-off.",
+  "citation_key": "Dhingra2004",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Paper is OA-flagged by OpenAlex (is_oa: true) but the Journal of Neuroscience PDF URL is protected by a Cloudflare bot challenge; automated curl download returns the Cloudflare interstitial HTML rather than the PDF. Added to intervention/paywalled_papers.md for manual browser retrieval.",
+  "added_by_task": "t0015_literature_survey_cable_theory",
+  "date_added": "2026-04-20"
+}
