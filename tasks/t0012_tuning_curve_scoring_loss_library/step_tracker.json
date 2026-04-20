@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Review conventions used in public DSGC / direction-selectivity scoring code for DSI definitions, peak-at-preferred, null residual, and HWHM computation edge cases.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T01:09:23Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T09:15:07Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
