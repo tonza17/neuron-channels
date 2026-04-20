@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0008 port pattern, t0011 visualization library (if present), t0007 NEURON helpers, and t0012 scoring API to know the target interface any newly ported model must conform to.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T13:13:44Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T13:22:35Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
