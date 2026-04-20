@@ -1,0 +1,14 @@
+{
+  "task_id": "t0013_resolve_morphology_provenance",
+  "checked_at": "2026-04-20T16:30:19Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0005_download_dsgc_morphology",
+      "status": "completed",
+      "satisfied": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 0
+}
