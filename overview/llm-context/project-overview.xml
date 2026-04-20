@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T10:40:33Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T11:18:13Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>27556</char_count>
-    <byte_count>27593</byte_count>
-    <estimated_tokens>6889</estimated_tokens>
+    <char_count>29768</char_count>
+    <byte_count>29805</byte_count>
+    <estimated_tokens>7442</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -123,9 +123,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
       </source_ids>
       <content>
-Completed tasks: 12
+Completed tasks: 13
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -198,6 +199,12 @@ ID: t0016_literature_survey_dendritic_computation
 Completed: 2026-04-20
 Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
 Result summary: Results Summary: Dendritic-Computation Literature Survey Summary Surveyed 5 foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London &amp; Hausser 2005) and produced a single answer asset synthesising which dendritic-computation motifs plausibly transfer to DSGC dendrites and the biophysical caveats on each transfer. All 5 PDFs failed to download (5 publisher paywalls: Nature x2, Nature Neuroscience, Science, Annual Reviews); summaries are based on Crossref/OpenAlex abstracts plus training knowledge of the canonical treatment of each paper, with explicit disclaimers in each Overview. Objective Survey the foundational dendritic-computation...
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Completed: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -208,12 +215,11 @@ Result summary: Results Summary: Dendritic-Computation Literature Survey Summary
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
+Planned or active tasks: 6
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -243,12 +249,6 @@ Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 
-## Literature survey: patch-clamp recordings of RGCs and DSGCs
-ID: t0017_literature_survey_patch_clamp
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
-
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
 Status: not_started
@@ -271,9 +271,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 5
+Answers: 6
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -314,6 +315,14 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, synaptic-integration, compartmental-modeling
 
 Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
+
+## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
+ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling
+Created by: t0017_literature_survey_patch_clamp on 2026-04-20
+Confidence: medium
+Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
+
+DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic channels add further error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics the experimental amplifier so simulation and experiment are compared on the same footing. The model must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and NMDARs...
       </content>
     </section>
   </sections>

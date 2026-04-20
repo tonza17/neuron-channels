@@ -1,7 +1,7 @@
 # Suggestions: `retinal-ganglion-cell`
 
-17 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **14 open** (6
+18 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **15 open** (7
 high, 7 medium, 1 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
@@ -153,6 +153,30 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
+verify numerical claims</strong> (S-0017-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0017-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
+2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are
+documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs
+through Sheffield institutional access, update each paper asset's download_status to
+'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the
+numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
+Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
+OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
 
 </details>
 

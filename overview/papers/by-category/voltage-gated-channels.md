@@ -1,12 +1,108 @@
-# Papers: `voltage-gated-channels` (8)
+# Papers: `voltage-gated-channels` (11)
 
-8 papers across 7 year(s).
+11 papers across 9 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2017 (1)
+## 2020 (1)
+
+<details>
+<summary>📖 Tailoring of the axon initial segment shapes the conversion of synaptic
+inputs into spiking output in OFF-alpha T retinal ganglion cells — Werginz
+et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_sciadv.abb6642` |
+| **Authors** | Paul Werginz, Vineeth Raghuram, Shelley I. Fried |
+| **Venue** | Science Advances (journal) |
+| **DOI** | `10.1126/sciadv.abb6642` |
+| **URL** | https://www.science.org/doi/10.1126/sciadv.abb6642 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1126_sciadv.abb6642/summary.md) |
+
+Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites
+shapes the spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is
+that the AIS is specialised to match the synaptic input that each cell type receives. Using a
+combined experimental and computational approach (patch-clamp current-clamp recordings, Nav1.6
+and ankyrin-G immunohistochemistry, and NEURON compartmental modelling) they show that AIS
+morphology and sodium channel density are the primary determinants of maximum firing rate and
+depolarisation-block threshold.
+
+The methodology is carefully matched: the same OFF-alphaT cell population is characterised
+electrophysiologically, anatomically, and computationally. Dorsal and ventral retinal
+locations are compared because prior work showed that OFF-alphaT cells receive different
+synaptic drive in these regions; the intrinsic-biophysics question is whether the output side
+is also tuned. The compartmental model serves as a mechanistic bridge, varying only AIS
+parameters while holding dendritic and somatic properties constant, to test whether AIS alone
+can explain the observed firing-rate differences.
+
+The headline quantitative results are a 7x AIS-to-soma Na+ density ratio, a systematic
+AIS-length difference between dorsal and ventral OFF-alphaT cells, and the demonstration that
+AIS length alone is sufficient to reproduce the firing-rate and depolarisation-block
+differences in the compartmental model. Dorsal cells have longer AISs and sustain higher
+firing rates; ventral cells have shorter AISs and enter depolarisation block at lower input
+currents.
+
+For this project, the implications are direct. DSGC compartmental models must include an
+explicit AIS compartment with Nav1.6 enrichment at the reported density ratio, AIS length
+should be a named tunable parameter constrained by immunohistochemistry rather than a fixed
+value, and depolarisation-block behaviour must be used as a fitting constraint. Ignoring the
+AIS will produce a DSGC model that cannot correctly reproduce high-firing-rate and
+strong-contrast responses.
+
+</details>
+
+## 2017 (2)
+
+<details>
+<summary>📖 "Silent" NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal
+Circuit — Sethuramanujam et al., 2017</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2017.09.058` |
+| **Authors** | Santhosh Sethuramanujam, Xiaoyang Yao, Geoff deRosenroll, Kevin L. Briggman, Greg D. Field, Gautam B. Awatramani |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2017.09.058` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(17)30927-3 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1016_j.neuron.2017.09.058/summary.md) |
+
+Sethuramanujam and colleagues address a gap in the DSGC direction-selectivity literature: is
+the AMPAR-and-inhibition picture of DS generation complete, or do NMDARs also play a
+functional role in the adult circuit? Using whole-cell patch-clamp recordings from ON-OFF
+DSGCs in mouse retinal wholemount, combined with drifting-grating and moving-bar motion
+stimuli and pharmacological block of AMPARs and NMDARs, they answer the question by directly
+measuring each receptor component during preferred and null motion.
+
+The methodology combines voltage-clamp at multiple holding potentials to isolate excitatory
+and inhibitory components, pharmacological dissection to isolate AMPA and NMDA contributions
+within the excitatory component, and matched current-clamp recordings to confirm the
+spike-output consequences. The design lets the authors quantify the AMPA/NMDA ratio, its
+direction dependence, and the effect of NMDAR block on direction selectivity index separately
+at the synaptic-current and spike levels.
+
+The headline result is that DSGCs contain a substantial but functionally silent NMDAR
+population that is recruited preferentially during preferred-direction motion and
+multiplicatively enhances DS. NMDAR block reduces DSI significantly at both the current and
+spike level. The paper also provides quantitative AMPA/NMDA charge ratios that can be used
+directly as model-fitting targets.
+
+For this project, the implications are central. DSGC compartmental models in NEURON must
+include NMDARs with proper Mg2+ block kinetics on DSGC dendrites; the AMPA-only baseline is
+inadequate. NMDAR recruitment depends on dendritic depolarisation, so space-clamp corrections
+from Poleg-Polsky and To-Honnuraiah-Stuart apply. Fitting objectives should include the
+AMPA/NMDA charge ratio during preferred and null motion, not just peak AMPA current. The
+Sethuramanujam measurements provide the quantitative targets our model must hit.
+
+</details>
 
 <details>
 <summary>📖 Cross-compartmental Modulation of Dendritic Signals for Retinal Direction
@@ -167,6 +263,54 @@ factor, and the two-plateau temperature-scaling scheme. The G-bar tables and Q10
 be adopted as the default channel-density prior for DSGC models, modified only where
 DSGC-specific evidence demands it, and the phase-plot fitting methodology should be used to
 calibrate DSGC compartmental models against future whole-cell recordings.
+
+</details>
+
+## 2007 (1)
+
+<details>
+<summary>📖 Different Mechanisms Generate Maintained Activity in ON and OFF Retinal
+Ganglion Cells — Margolis & Detwiler, 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_jneurosci.0130-07.2007` |
+| **Authors** | David J. Margolis, Peter B. Detwiler |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/jneurosci.0130-07.2007` |
+| **URL** | https://www.jneurosci.org/content/27/22/5994 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1523_jneurosci.0130-07.2007/summary.md) |
+
+Margolis and Detwiler take a direct experimental approach to the question of whether retinal
+ganglion cell maintained activity is synaptically driven or intrinsically generated. Using
+whole-cell and cell-attached patch-clamp recordings from morphologically identified ON and OFF
+RGCs in rabbit retinal wholemount, they compare maintained firing under control conditions to
+firing after pharmacological blockade of ionotropic glutamate receptors. The design cleanly
+separates synaptic drive from intrinsic biophysics in the same cells.
+
+The methodology is careful about cell identification and blockade efficacy, and the follow-up
+experiments extend the comparison beyond maintained firing to other signatures of pacemaker
+activity: subthreshold oscillations, burst firing, and rebound excitation. Each signature is a
+distinct testable claim about the cell intrinsic biophysics, not a single measurement.
+
+The headline finding is that ON and OFF RGCs use qualitatively different strategies. ON cells
+require synaptic input to fire at rest; OFF cells fire autonomously and additionally show the
+full suite of pacemaker properties. The difference is not explained by passive properties but
+by different voltage-gated channel complements, a conclusion supported by the pattern of
+intrinsic responses.
+
+For this project, the implications matter even though the paper is about pure ON and OFF cells
+rather than DSGCs directly. ON-OFF DSGCs integrate both input streams, and the biophysics of
+the OFF input pathway may bring some of the intrinsic-pacemaker machinery into the DSGC soma
+and dendrites. DSGC compartmental models should consider whether burst firing, rebound
+excitation, and subthreshold oscillations are expected behaviours of the target cell and
+include or exclude the relevant voltage-gated channels (T-type Ca2+, HCN) accordingly. Using
+maintained-activity-under-synaptic-blockade as a model validation target cleanly separates the
+intrinsic biophysics from the synaptic drive, and that separation should be part of our
+modelling workflow.
 
 </details>
 

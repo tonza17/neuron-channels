@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T10:40:33Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T11:18:13Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>52323</char_count>
-    <byte_count>52332</byte_count>
-    <estimated_tokens>13080</estimated_tokens>
+    <char_count>56559</char_count>
+    <byte_count>56568</byte_count>
+    <estimated_tokens>14139</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -70,9 +70,13 @@
         <id>S-0016-02</id>
         <id>S-0016-03</id>
         <id>S-0016-04</id>
+        <id>S-0017-01</id>
+        <id>S-0017-02</id>
+        <id>S-0017-03</id>
+        <id>S-0017-04</id>
       </source_ids>
       <content>
-Suggestions: 53
+Suggestions: 57
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -669,6 +673,49 @@ Categories: dendritic-computation, direction-selectivity, voltage-gated-channels
 Date added: 2026-04-20
 
 The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone compartments, then test whether asymmetric inhibition at principal-branch bifurcations can selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during null-direction motion. Report preferred-direction burst firing rate versus null-direction burst rate and compare with published DSGC spiking statistics.
+
+## Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims
+ID: S-0017-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0017_literature_survey_patch_clamp
+Categories: patch-clamp, retinal-ganglion-cell
+Date added: 2026-04-20
+
+Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky &amp; Diamond 2011, To et al. 2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis &amp; Detwiler 2007) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset&#x27;s download_status to &#x27;success&#x27;, replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
+
+## Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN biophysics, and AIS measurements
+ID: S-0017-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0017_literature_survey_patch_clamp
+Categories: patch-clamp, direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identified in the plan (space-clamp, AIS, NMDARs, maintained activity) but leaves several high-priority follow-on topics uncovered: (a) DSGC-specific dynamic-clamp studies that use injected conductance waveforms to test direction selectivity mechanisms, (b) DSGC Ih/HCN biophysics and resonance properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-alpha T cells, not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the gap.
+
+## Implement AIS compartment, NMDARs, and simulated voltage-clamp block in the downstream DSGC model build task
+ID: S-0017-03
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0017_literature_survey_patch_clamp
+Categories: compartmental-modeling, direction-selectivity, patch-clamp
+Date added: 2026-04-20
+
+The answer asset patch-clamp-techniques-and-constraints-for-dsgc-modelling produces a 7-point specification for DSGC modelling in NEURON extending the cable-theory and dendritic-computation specifications from t0015 and t0016. The downstream DSGC compartmental-model build task must implement: (1) an explicit AIS compartment with Nav1.6 at 7x the somatic Na+ density, with AIS length as a tunable parameter; (2) NMDARs with standard Mg2+ block kinetics on DSGC dendrites alongside AMPARs; (3) a simulated somatic voltage-clamp block (SEClamp) so experimental and simulated voltage-clamp readouts can be compared on the same footing; (4) depolarisation-block threshold and AMPA/NMDA charge ratio during preferred and null motion as named fitting objectives. Validation must include DSI reduction under simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the target DSGC subtype.
+
+## Register patch-clamp and compartmental-modeling categories if not already present
+ID: S-0017-04
+Status: active
+Priority: low
+Kind: evaluation
+Source task: t0017_literature_survey_patch_clamp
+Date added: 2026-04-20
+
+The paper assets in this task use category slugs `patch-clamp`, `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`, and `synaptic-integration`. Verify that all six categories exist in meta/categories/; register any that are missing so that category-based asset aggregators (aggregate_papers --categories patch-clamp) return the expected results. This is analogous to the S-0015-03 suggestion registered by t0015 for retinal-ganglion-cells and compartmental-modelling but may now be satisfied by category-registration tasks executed between t0015 and t0017.
       </content>
     </section>
   </sections>

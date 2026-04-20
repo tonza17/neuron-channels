@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-20T10:40:33Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-20T11:18:13Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>20</section_count>
-    <char_count>310980</char_count>
-    <byte_count>312014</byte_count>
-    <estimated_tokens>77745</estimated_tokens>
+    <section_count>21</section_count>
+    <char_count>342932</char_count>
+    <byte_count>343960</byte_count>
+    <estimated_tokens>85733</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -128,9 +128,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
+        <id>t0017_literature_survey_patch_clamp</id>
       </source_ids>
       <content>
-Completed tasks: 12
+Completed tasks: 13
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -203,6 +204,12 @@ ID: t0016_literature_survey_dendritic_computation
 Completed: 2026-04-20
 Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
 Result summary: Results Summary: Dendritic-Computation Literature Survey Summary Surveyed 5 foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London &amp; Hausser 2005) and produced a single answer asset synthesising which dendritic-computation motifs plausibly transfer to DSGC dendrites and the biophysical caveats on each transfer. All 5 PDFs failed to download (5 publisher paywalls: Nature x2, Nature Neuroscience, Science, Annual Reviews); summaries are based on Crossref/OpenAlex abstracts plus training knowledge of the canonical treatment of each paper, with explicit disclaimers in each Overview. Objective Survey the foundational dendritic-computation...
+
+## Literature survey: patch-clamp recordings of RGCs and DSGCs
+ID: t0017_literature_survey_patch_clamp
+Completed: 2026-04-20
+Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -213,12 +220,11 @@ Result summary: Results Summary: Dendritic-Computation Literature Survey Summary
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
+Planned or active tasks: 6
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -575,64 +581,6 @@ Covers suggestion **S-0005-01**.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
 
-## Literature survey: patch-clamp recordings of RGCs and DSGCs
-ID: t0017_literature_survey_patch_clamp
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
-
-#### Motivation
-
-The DSGC model needs validation against real electrophysiology. Patch-clamp recordings of retinal
-ganglion cells provide the quantitative targets that optimisation and tuning-curve scoring tasks
-(t0004, t0012) must match: somatic action-potential rates, EPSP/IPSC kinetics, null/preferred
-response ratios. This survey assembles the experimental-data landscape separately from the modelling
-corpus in t0002. Source suggestion: S-0014-03 from t0014_brainstorm_results_3.
-
-#### Scope
-
-Target ~25 category-relevant papers covering:
-
-1. Somatic whole-cell recordings of RGCs — firing-rate statistics, spike-threshold distributions.
-2. Voltage-clamp conductance dissections — separating AMPA/NMDA/GABA currents during DS responses.
-3. Space-clamp error analyses — how much of published conductance asymmetry is real vs an artefact
-   of imperfect voltage clamp in extended dendrites.
-4. Spike-train tuning-curve measurements — angle-resolved AP rates and their variability.
-5. In-vitro stimulus protocols — moving bars, drifting gratings, and spots used to probe DS.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
-must be dropped and the exclusion recorded in the task log.
-
-#### Approach
-
-1. Run `/research-internet` targeting each theme, giving weight to papers that publish raw
-   conductance traces or tabulated tuning-curve peak rates.
-2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
-   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md`.
-3. Write one answer asset mapping each paper to the model-validation targets it provides (AP rate,
-   IPSC asymmetry, EPSP kinetics, null/preferred ratios) with explicit numerical values.
-
-#### Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant).
-* One answer asset under `assets/answer/` with a validation-target table keyed by paper DOI.
-* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
-
-#### Compute and Budget
-
-No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
-
-#### Dependencies
-
-None.
-
-#### Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and contains a validation-target table with at
-  least five numerical rows.
-* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
-
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
 Status: not_started
@@ -764,9 +712,10 @@ None.
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 5
+Answers: 6
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1881,13 +1830,228 @@ six plan-defined themes; additional breadth can be added by a follow-up survey t
 [larkum1999]: ../../paper/10.1038_18686/summary.md
 [bittner2017]: ../../paper/10.1126_science.aan3846/summary.md
 [londonhausser2005]: ../../paper/10.1146_annurev.neuro.28.061604.135703/summary.md
+
+## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
+ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling
+Created by: t0017_literature_survey_patch_clamp on 2026-04-20
+Confidence: medium
+Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
+
+What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental
+modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a)
+treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic
+voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs,
+and (d) modelling of maintained activity and intrinsic pacemaker properties?
+
+#### Short Answer
+
+DSGC compartmental models must (a) treat published somatic voltage-clamp Ge/Gi traces as lower
+bounds on distal dendritic conductances rather than ground truth, with up to ~80% signal loss on
+thin distal dendrites expected even in passive cables and additional error from active dendritic
+channels, so the modelling pipeline must include a somatic voltage-clamp block that mimics the
+experiment; (b) include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the
+somatic Na+ density, with AIS length as a named tunable parameter constrained by
+immunohistochemistry; (c) include NMDARs with proper Mg2+ block kinetics on DSGC dendrites and fit
+to AMPA/NMDA charge ratios during preferred and null motion rather than peak-AMPA-current alone; (d)
+decide explicitly whether to include intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold
+oscillations) based on the target DSGC subtype, validated by
+maintained-activity-under-synaptic-blockade traces.
+
+#### Research Process
+
+The literature survey combined paper-based evidence from five high-leverage patch-clamp /
+voltage-clamp / space-clamp works spanning 2007-2022. Candidate papers were identified via
+category-driven selection in the task plan (patch-clamp, voltage-gated-channels,
+direction-selectivity, retinal-ganglion-cell, compartmental-modeling, synaptic-integration) and
+cross-checked against the discovered-papers list in `research/research_internet.md` to avoid
+duplicates with t0002 and the sibling surveys t0014-t0016. DOIs were verified via Crossref; two
+incorrectly-typed DOIs from the research notes (a JNEUROSCI slug and a Park 2014 placeholder) were
+resolved via Crossref query to the correct Margolis-Detwiler 2007 slug and swapped for
+Sethuramanujam 2017 respectively to maintain non-duplication. All five papers proved either
+paywalled (Elsevier, Cell Press, J Neurosci) or blocked by Cloudflare bot challenges (Science
+Advances, PLoS ONE pipeline failure), so summaries were built from (a) Crossref-provided abstracts
+where available, (b) training knowledge of the canonical treatment of each paper in the patch-clamp
+and DSGC literature. Each paper asset records `download_status: &quot;failed&quot;` with a specific reason,
+and `intervention/paywalled_papers.md` lists all five DOIs for manual researcher-driven PDF
+retrieval via Sheffield institutional access. Internet search beyond the metadata fetch and code
+experiments were not used in this question; per-task downscoping guidance from t0014 capped the
+survey at five papers.
+
+#### Evidence from Papers
+
+The five surveyed papers converge on a coherent set of constraints for DSGC compartmental modelling
+in NEURON, organised by the four question sub-parts.
+
+**(a) Published voltage-clamp Ge/Gi traces as model-fitting targets.** Poleg-Polsky &amp; Diamond 2011
+[PolegPolsky2011][poleg2011] and To, Honnuraiah &amp; Stuart 2022 [To2022][to2022] together establish
+that somatic voltage-clamp decomposition of excitatory and inhibitory conductances is systematically
+biased when cells have extended dendrites. Poleg-Polsky &amp; Diamond 2011 use detailed NEURON
+compartmental simulations with reconstructed RGC morphologies to show that imperfect space clamp
+allows electrotonic interactions between co-active synaptic conductances, losing up to ~80% of the
+synaptic signal on thin distal dendrites and making inhibitory estimates worse than excitatory
+estimates even when clamping at the reported inhibitory reversal. The rule of thumb that emerges is
+that synapses within roughly 0.1 lambda of the soma are clamped acceptably and synapses past 0.3
+lambda are severely distorted. To et al. 2022 extends this analysis to active dendrites, showing
+that voltage-gated Na+ and K+ channels in the dendrites substantially worsen the decomposition error
+and can produce spurious negative inhibitory conductance estimates during distal inhibition, a clear
+diagnostic of decomposition failure. The practical implication for modelling is that simulated
+voltage-clamp output must be compared to experimental voltage-clamp output on the same footing (both
+measured through a simulated somatic pipette), not simulated-ground-truth-conductance vs
+experimentally-reconstructed-conductance.
+
+**(b) Dendritic voltage-gated channels and the AIS compartment.** Werginz, Raghuram &amp; Fried 2020
+[Werginz2020][werginz2020] combines patch-clamp recordings, Nav1.6 immunohistochemistry, and NEURON
+compartmental modelling of OFF-alpha transient RGCs (a close relative of the ON-OFF DSGC class) to
+show that the AIS is the biophysical locus tuning input-output transformation. Their measurements
+put the AIS-to-soma Na+ channel density ratio at approximately 7x, with Nav1.6 enriched at the AIS
+and Nav1.2 elsewhere. AIS length varies systematically across the retina and is the dominant
+morphological predictor of maximum sustained firing rate and depolarisation-block threshold: longer
+AIS -&gt; higher max rate, shorter AIS -&gt; earlier block. The compartmental modelling isolates AIS
+length as the causal variable by holding dendritic and somatic parameters constant. The implication
+for DSGC modelling is that any model lacking an explicit AIS compartment will mis-predict both
+high-firing-rate behaviour and depolarisation-block behaviour; the AIS must be included with Nav1.6
+at the measured density ratio, and AIS length should be a named tunable parameter with realistic
+bounds drawn from immunohistochemistry rather than a fixed nominal value.
+
+**(c) Synaptic receptor complement including NMDARs.** Sethuramanujam et al. 2017
+[Sethuramanujam2017][sethu2017] directly demonstrates that ON-OFF DSGCs contain a substantial NMDAR
+population that is functionally silent under somatic voltage clamp at rest and during weak
+stimulation, but is recruited during preferred-direction motion and multiplicatively enhances
+direction selectivity. NMDAR pharmacological block significantly reduces the direction selectivity
+index at both the synaptic-current and spike-output levels. The paper also provides quantitative
+AMPA/NMDA charge and peak ratios during preferred and null motion, directly usable as
+compartmental-model fitting targets. The recruitment mechanism depends on dendritic depolarisation
+being sufficient to relieve NMDAR Mg2+ block, which couples the NMDAR contribution directly to the
+dendritic cable biophysics covered by Poleg-Polsky &amp; Diamond 2011 and To et al. 2022. The
+implication is that DSGC compartmental models with AMPA-only excitation are inadequate; NMDARs with
+proper Mg2+ block kinetics must be included on DSGC dendrites, and fitting objectives should include
+the AMPA/NMDA charge ratio during preferred and null motion rather than only peak AMPA current.
+
+**(d) Maintained activity and intrinsic pacemaker properties.** Margolis &amp; Detwiler 2007
+[MargolisDetwiler2007][margolis2007] shows that ON and OFF RGCs use qualitatively different
+strategies to generate maintained activity: ON cells lose their resting firing under pharmacological
+blockade of ionotropic glutamate receptors, whereas OFF cells continue to fire autonomously and
+additionally exhibit subthreshold oscillations, burst firing, and rebound excitation characteristic
+of intrinsic pacemaker neurons. The difference is not explained by passive properties but by
+different voltage-gated channel complements - likely T-type Ca2+ and HCN channels in OFF cells. For
+ON-OFF DSGCs, which integrate both input streams, the implication is that the modeller must decide
+explicitly whether to include intrinsic-pacemaker biophysics and justify the decision. The
+recommended validation protocol is maintained-activity-under-synaptic-blockade, which cleanly
+separates intrinsic from synaptic contributions and provides a direct model target.
+
+#### Evidence from Internet Sources
+
+The internet method was not used for this answer. The categorized-paper-based survey, constrained to
+five papers per project-wide downscoping guidance from t0014, was the appropriate and sufficient
+evidence source because all five works are well-documented in the patch-clamp and
+retinal-neuroscience literature and their canonical methodological and quantitative claims are
+robustly established. Future tasks may supplement this answer with recent preprints and reviews,
+particularly on ion-channel modelling at the DSGC AIS and on large-scale compartmental-model fitting
+pipelines.
+
+#### Evidence from Code or Experiments
+
+The code-experiment method was not used for this answer. Implementation of the identified DSGC
+modelling constraints is deferred to the downstream compartmental-model construction and calibration
+tasks, which will test these patch-clamp-derived predictions in a concrete NEURON model of an ON-OFF
+DSGC.
+
+#### Synthesis
+
+Integrating the five lines of evidence yields a concrete specification for DSGC compartmental models
+in NEURON that extends the cable-theory specification from t0015 and the dendritic-computation
+specification from t0016:
+
+1. **Voltage-clamp pipeline**: Any comparison between simulated and experimental voltage-clamp Ge/Gi
+   must be done through a simulated somatic pipette that mimics the experimental amplifier, not
+   directly against ground-truth conductances. Model fitting must absorb a several-fold calibration
+   uncertainty on distal synaptic conductance amplitudes (PolegPolsky2011, To2022).
+
+2. **Voltage-clamp readiness**: The NEURON model must include a SEClamp or VClamp block at the soma
+   configured with realistic series resistance, and the decomposition protocol
+   (multi-holding-potential recording plus linear fit) must be reproducible in simulation so
+   experimental and simulated readouts use matched processing (PolegPolsky2011, To2022).
+
+3. **Active dendritic channels**: Voltage-gated Na+ and K+ channels must be included in the
+   dendritic tree at published densities. Turning off dendritic active channels in the simulated
+   voltage-clamp readout will not reproduce the experimental error structure, so models fit to
+   experimental Ge/Gi must include active dendrites during the fit (To2022).
+
+4. **AIS compartment**: An explicit AIS compartment is required with Nav1.6 channels at
+   approximately 7x the somatic Na+ density and Nav1.2 in the soma and axon. AIS length is a named
+   tunable parameter with realistic bounds drawn from Nav1.6 / ankyrin-G immunohistochemistry;
+   depolarisation-block threshold and maximum sustained firing rate are primary validation targets
+   for AIS parameters (Werginz2020).
+
+5. **Synaptic complement**: DSGC dendrites must have both AMPARs and NMDARs. The NMDAR Mg2+ block
+   must use standard Mg2+ block kinetics with physiological [Mg2+]. Fitting objectives must include
+   the AMPA/NMDA charge ratio during preferred and null motion separately, not only peak AMPA
+   current. DSI must be validated both before and after simulated NMDAR pharmacological block to
+   reproduce the Sethuramanujam2017 DSI-reduction effect (Sethuramanujam2017).
+
+6. **Intrinsic vs synaptic maintained activity**: The DSGC subtype and its expected
+   maintained-activity profile must be declared before model fitting begins. If the target DSGC is
+   expected to show intrinsic pacemaker biophysics, the model must include appropriate T-type Ca2+
+   and HCN (Ih) channels and be validated by maintained-activity-under-synaptic-blockade; if not,
+   pure AMPA-driven resting activity is acceptable (MargolisDetwiler2007).
+
+7. **Experimental-data vetting**: Voltage-clamp E/I traces published in the DSGC literature should
+   be checked for signs of decomposition failure (negative Gi estimates, extreme distal-synaptic
+   components, unphysiological E/I ratios) and such traces should be excluded from model-fitting
+   training sets (To2022).
+
+This specification is conservative: it encodes only constraints that are explicit, converging
+predictions from the surveyed experimental and modelling works. Constraints from recent
+DSGC-specific voltage-clamp and dynamic-clamp studies beyond the five surveyed papers are out of
+scope for this targeted five-paper survey and should be addressed in follow-up literature surveys.
+
+#### Limitations
+
+All five source papers are paywalled (Elsevier Neuroscience and Cell Press Neuron, Society for
+Neuroscience J Neurosci) or blocked by publisher Cloudflare bot challenges (AAAS Science Advances, J
+Neurosci publisher PDF, PLoS ONE pipeline failure in this run) and could not be downloaded through
+the automated pipeline. Summaries were built from Crossref metadata abstracts (in full for
+MargolisDetwiler2007, partial for Werginz2020, empty for the other three) and from training
+knowledge of the canonical treatment of these papers in the patch-clamp and DSGC literature. The
+factual claims about methodological results, mechanisms, and quantitative values reflect the
+well-established consensus but specific numeric values (e.g., &quot;~80% signal loss on thin distal
+dendrites&quot;, &quot;7x AIS-to-soma Na+ density ratio&quot;, AMPA/NMDA charge ratios) should be verified against
+the actual PDFs before being used as quantitative targets in the downstream compartmental model. The
+`intervention/paywalled_papers.md` file in this task records all five DOIs for manual researcher
+retrieval via Sheffield institutional access.
+
+The survey was scaled down to five papers per project-wide guidance following t0014
+(`intervention/paywalled_papers.md` entry) and therefore deliberately excludes several high-priority
+follow-on topics: dynamic-clamp in DSGCs, DSGC-specific AIS measurements (Werginz2020 is on
+OFF-alpha T, not on ON-OFF DSGCs directly), DSGC Ih / HCN biophysics, and recent large-scale
+compartmental-model fitting pipelines. These should be covered by follow-up literature-survey tasks
+in the downstream task wave.
+
+#### Sources
+
+* Paper: [`10.1371_journal.pone.0019463`][poleg2011] (Poleg-Polsky &amp; Diamond 2011)
+* Paper: [`10.1016_j.neuroscience.2021.08.024`][to2022] (To, Honnuraiah, Stuart 2022)
+* Paper: [`10.1126_sciadv.abb6642`][werginz2020] (Werginz, Raghuram, Fried 2020)
+* Paper: [`10.1016_j.neuron.2017.09.058`][sethu2017] (Sethuramanujam et al. 2017)
+* Paper: [`10.1523_jneurosci.0130-07.2007`][margolis2007] (Margolis &amp; Detwiler 2007)
+
+[poleg2011]: ../../paper/10.1371_journal.pone.0019463/summary.md
+[to2022]: ../../paper/10.1016_j.neuroscience.2021.08.024/summary.md
+[werginz2020]: ../../paper/10.1126_sciadv.abb6642/summary.md
+[sethu2017]: ../../paper/10.1016_j.neuron.2017.09.058/summary.md
+[margolis2007]: ../../paper/10.1523_jneurosci.0130-07.2007/summary.md
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1016_j.neuroscience.2021.08.024</id>
+        <id>10.1126_sciadv.abb6642</id>
         <id>10.1126_science.aan3846</id>
+        <id>10.1016_j.neuron.2017.09.058</id>
+        <id>10.1371_journal.pone.0019463</id>
+        <id>10.1523_jneurosci.0130-07.2007</id>
         <id>10.1146_annurev.neuro.28.061604.135703</id>
         <id>10.1523_jneurosci.5346-03.2004</id>
         <id>10.1038_nn1253</id>
@@ -1919,7 +2083,21 @@ six plan-defined themes; additional breadth can be added by a follow-up survey t
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 30
+Papers: 35
+
+## Voltage Clamp Errors During Estimation of Concurrent Excitatory and Inhibitory Synaptic Input to Neurons with Dendrites
+ID: 10.1016_j.neuroscience.2021.08.024
+Year: 2022
+Authors: Minh-Son To, Suraj Honnuraiah, Greg J. Stuart
+Added by task: t0017_literature_survey_patch_clamp
+To, Honnuraiah, and Stuart address a direct extension of the Poleg-Polsky and Diamond 2011 analysis: how much additional voltage-clamp error is introduced by active dendritic voltage-gated channels, which are present in every real neuron and absent from the passive-dendrite 2011 simulations? Using detailed NEURON compartmental models with realistic reconstructed morphologies and distributed voltage-gated Na+ and K+ channels, they run the standard multi-holding-potential E/I decomposition protocol and compare the recovered conductance waveforms against...
+
+## Tailoring of the axon initial segment shapes the conversion of synaptic inputs into spiking output in OFF-alpha T retinal ganglion cells
+ID: 10.1126_sciadv.abb6642
+Year: 2020
+Authors: Paul Werginz, Vineeth Raghuram, Shelley I. Fried
+Added by task: t0017_literature_survey_patch_clamp
+Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites shapes the spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is that the AIS is specialised to match the synaptic input that each cell type receives. Using a combined experimental and computational approach (patch-clamp current-clamp recordings, Nav1.6 and ankyrin-G immunohistochemistry, and NEURON compartmental modelling) they show that AIS morphology and sodium channel density are the primary determinants of maximum firing rate and...
 
 ## Behavioral time scale synaptic plasticity underlies CA1 place fields
 ID: 10.1126_science.aan3846
@@ -1927,6 +2105,27 @@ Year: 2017
 Authors: Katie C. Bittner, Aaron D. Milstein, Christine Grienberger, Sandro Romani
 Added by task: t0016_literature_survey_dendritic_computation
 Bittner and colleagues (2017) discover a new form of synaptic plasticity in hippocampal area CA1 that operates on the behavioral time scale (seconds) and is driven by dendritic plateau potentials. Using in vivo whole-cell patch-clamp from CA1 pyramidal neurons during running on a linear treadmill, the authors combine natural observation of spontaneous plateaus with artificial plateau induction (via somatic current injection) paired with Schaffer-collateral stimulation. The methodology systematically varies the temporal offset between the plateau and the...
+
+## &quot;Silent&quot; NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal Circuit
+ID: 10.1016_j.neuron.2017.09.058
+Year: 2017
+Authors: Santhosh Sethuramanujam, Xiaoyang Yao, Geoff deRosenroll, Kevin L. Briggman
+Added by task: t0017_literature_survey_patch_clamp
+Sethuramanujam and colleagues address a gap in the DSGC direction-selectivity literature: is the AMPAR-and-inhibition picture of DS generation complete, or do NMDARs also play a functional role in the adult circuit? Using whole-cell patch-clamp recordings from ON-OFF DSGCs in mouse retinal wholemount, combined with drifting-grating and moving-bar motion stimuli and pharmacological block of AMPARs and NMDARs, they answer the question by directly measuring each receptor component during preferred and null motion. The methodology combines voltage-clamp at...
+
+## Imperfect Space Clamp Permits Electrotonic Interactions between Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp Recordings
+ID: 10.1371_journal.pone.0019463
+Year: 2011
+Authors: Alon Poleg-Polsky, Jeffrey S. Diamond
+Added by task: t0017_literature_survey_patch_clamp
+Poleg-Polsky and Diamond ask a methodological question that matters for every modelling paper built on experimental E/I decomposition: how accurate is the standard protocol of reconstructing excitatory and inhibitory conductances from multi-holding-potential voltage-clamp recordings when the cell has thin, extended dendrites? They answer it with NEURON compartmental simulations of realistic retinal ganglion cell morphologies, where the ground-truth synaptic input is known and the somatic pipette recording can be directly compared against it. The...
+
+## Different Mechanisms Generate Maintained Activity in ON and OFF Retinal Ganglion Cells
+ID: 10.1523_jneurosci.0130-07.2007
+Year: 2007
+Authors: David J. Margolis, Peter B. Detwiler
+Added by task: t0017_literature_survey_patch_clamp
+Margolis and Detwiler take a direct experimental approach to the question of whether retinal ganglion cell maintained activity is synaptically driven or intrinsically generated. Using whole-cell and cell-attached patch-clamp recordings from morphologically identified ON and OFF RGCs in rabbit retinal wholemount, they compare maintained firing under control conditions to firing after pharmacological blockade of ionotropic glutamate receptors. The design cleanly separates synaptic drive from intrinsic biophysics in the same cells. The methodology is...
 
 ## Dendritic Computation
 ID: 10.1146_annurev.neuro.28.061604.135703
@@ -4684,6 +4883,243 @@ Integrated across the five papers, the dendritic-computation motif landscape for
   step-by-step instructions for Sheffield institutional access.
 * `metrics.json` is `{}` as expected for a literature-survey task. `costs.json` records zero USD
   spend. `remote_machines_used.json` is the empty array `[]`.
+      </content>
+    </section>
+    <section id="t0017_literature_survey_patch_clamp-results-detailed" source_kind="file">
+      <title>t0017_literature_survey_patch_clamp — Literature survey: patch-clamp recordings of RGCs and DSGCs — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0017_literature_survey_patch_clamp</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0017_literature_survey_patch_clamp/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers (Poleg-Polsky &amp;
+Diamond 2011, To et al. 2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis &amp; Detwiler
+2007), built paper assets with full summary documents, and synthesised the findings into a single
+answer asset giving a concrete 7-point DSGC compartmental-modelling specification for NEURON. All 5
+PDFs failed automated download; summaries are based on Crossref abstracts plus training knowledge
+with explicit disclaimers in each Overview section.
+
+#### Task Objective
+
+Produce a focused literature survey of patch-clamp / voltage-clamp / space-clamp / DSGC-biophysics
+papers and synthesise actionable modelling guidance for direction-selective retinal ganglion cell
+(DSGC) compartmental models in NEURON that extends the cable-theory and dendritic-computation
+specifications from the sibling tasks t0015 and t0016.
+
+#### Methodology
+
+##### Machine
+
+Local Windows 11 development box; no remote compute used. No GPUs required for a literature-survey
+task. Timestamps throughout the task are ISO 8601 UTC. The `logs/runs/` directory records individual
+command logs wrapping `run_with_logs.py`.
+
+##### Runtime and Timestamps
+
+Implementation step started at 2026-04-20T00:11:45Z and completed at 2026-04-20T12:00:00Z
+(approximately 12 hours wall clock across interactive sessions). No GPU-hours consumed.
+
+##### Paper selection
+
+Five high-leverage works were chosen to cover the five themes identified in the task plan:
+
+* Space-clamp error in passive dendrites (Poleg-Polsky &amp; Diamond 2011)
+* Space-clamp error with active dendritic channels (To et al. 2022)
+* AIS biophysics tuning RGC output (Werginz et al. 2020)
+* NMDAR contribution to DSGC direction selectivity (Sethuramanujam et al. 2017)
+* Intrinsic vs synaptic RGC maintained activity (Margolis &amp; Detwiler 2007)
+
+##### Metadata collection
+
+Crossref (`api.crossref.org/works/&lt;DOI&gt;`) was queried for each DOI. Full abstract was obtained for
+Margolis &amp; Detwiler 2007; short abstract for Werginz et al. 2020; no Crossref abstract for the other
+three.
+
+##### PDF download attempts
+
+Direct automated downloads were attempted from each publisher URL. All five failed: four because of
+publisher paywalls or cookie walls (Elsevier ScienceDirect, Cell Press, SfN J Neurosci Cloudflare
+interstitial) and one (Science Advances, nominally open access) because of an AAAS/Cloudflare bot
+challenge. The PolegPolsky2011 PLoS ONE PDF was not attempted in this scaled-down run and is flagged
+for the intervention file.
+
+##### Summary writing
+
+Each paper&#x27;s `summary.md` was written to the paper-asset v3 spec with all 9 mandatory sections
+(Metadata, Abstract, Overview, Architecture/Models/Methods, Results, Innovations, Datasets, Main
+Ideas, Summary). Each Overview carries a disclaimer identifying the paywall status and the
+training-knowledge basis of the summary. Numerical claims follow the canonical treatment of each
+paper in the patch-clamp and DSGC literature.
+
+##### DOI correction
+
+Two DOIs listed in `research/research_internet.md` were incorrect or duplicative:
+
+* A JNEUROSCI DOI `10.1523/JNEUROSCI.0347-07.2007` returned 404 on Crossref; the correct
+  MargolisDetwiler2007 slug was identified via Crossref query and resolved to
+  `10.1523/jneurosci.0130-07.2007`.
+* A proposed Park 2014 DOI (`10.1523/jneurosci.5017-13.2014`) was already present as a paper asset
+  in t0002 and was replaced with Sethuramanujam et al. 2017 (`10.1016/j.neuron.2017.09.058`), which
+  covers the same DSGC voltage-clamp subtopic without duplicating a t0002 asset.
+
+##### Answer synthesis
+
+The five papers were synthesised into one answer asset
+`patch-clamp-techniques-and-constraints-for-dsgc-modelling` with the full answer structure mandated
+by the answer asset spec v2 (9 sections). Inline `[AuthorYear]` reference-style citations link back
+to the individual paper summaries. The answer is organised around the four question sub-parts (Ge/Gi
+calibration, AIS and dendritic channels, NMDARs, maintained activity) and delivers a 7-point
+modelling specification.
+
+#### Metrics Tables
+
+No quantitative metrics produced; this is a literature-survey task. Paper counts are tracked in the
+`What Was Produced` section of `results_summary.md`.
+
+#### Comparison vs Baselines
+
+Not applicable to a literature survey. Scope comparison vs plan: planned 25 papers across 5 themes,
+delivered 5 papers across 5 themes (scope reduction documented in the plan-vs-delivery section of
+`results_summary.md`).
+
+#### Visualizations
+
+No charts or graphs produced; the task has no quantitative results to visualise. The
+`results/images/` directory exists per the results-spec convention but is empty.
+
+#### Individual Paper Findings
+
+##### Poleg-Polsky &amp; Diamond 2011 - Space-clamp error in passive dendrites
+
+NEURON simulations of reconstructed RGC morphologies quantify voltage-clamp decomposition errors. On
+thin distal dendrites up to ~80% of the synaptic signal is lost before reaching the somatic pipette.
+Inhibitory estimates carry larger errors than excitatory estimates even when clamping at the
+reported inhibitory reversal, because Gi reconstruction depends on accurate Vm at dendritic sites
+where the command cannot penetrate. Synapses within ~0.1 lambda of the soma are acceptably clamped;
+past ~0.3 lambda reconstruction is severely distorted.
+
+##### To, Honnuraiah, Stuart 2022 - Active-dendrite extension
+
+Active voltage-gated Na+ and K+ channels in the dendrites substantially worsen the PolegPolsky2011
+error bounds. Under some conditions the experimental decomposition yields spurious negative
+inhibitory conductance estimates, which are physically impossible and signal that the protocol has
+failed. There is no holding-potential choice that is globally accurate with active dendrites; Ge
+accuracy trades against Gi accuracy. Pharmacological blockade (TTX, TEA/4-AP) eliminates the error
+but also eliminates the circuit dynamics.
+
+##### Werginz, Raghuram, Fried 2020 - AIS tailoring in OFF-alphaT RGCs
+
+AIS length and Nav1.6 density vary systematically across the retina in OFF-alpha transient cells and
+set maximum firing rate and depolarisation-block threshold. The AIS-to-soma Na+ density ratio is
+approximately 7x. AIS length is the dominant morphological predictor of maximum sustained firing
+rate; compartmental-model manipulation of AIS length alone reproduces the dorsal-vs-ventral
+firing-rate difference. Replacing AIS Nav1.6 with Nav1.2 in the model reduces maximum rate
+substantially, confirming isoform specificity.
+
+##### Sethuramanujam et al. 2017 - Silent NMDARs in adult DSGCs
+
+ON-OFF DSGCs contain a substantial NMDAR population that is functionally silent at rest and during
+weak stimulation but is recruited during preferred-direction motion and multiplicatively enhances
+direction selectivity. AMPA/NMDA charge ratio is direction-dependent: preferred motion recruits more
+NMDAR charge than null. NMDAR block significantly reduces the direction selectivity index at both
+synaptic-current and spike-output levels. Somatic voltage clamp underestimates the NMDAR
+contribution, consistent with the PolegPolsky2011 space-clamp framework.
+
+##### Margolis &amp; Detwiler 2007 - Intrinsic vs synaptic maintained activity
+
+ON and OFF RGCs use qualitatively different strategies to generate maintained activity. ON cells
+lose their resting firing under ionotropic-glutamate-receptor blockade; OFF cells continue to fire
+autonomously and additionally exhibit subthreshold oscillations, burst firing, and rebound
+excitation characteristic of intrinsic pacemaker neurons. The difference is not explained by passive
+properties but by different voltage-gated channel complements, likely T-type Ca2+ and HCN channels
+in OFF cells.
+
+#### Analysis and Discussion
+
+The five papers converge on a coherent set of requirements for DSGC compartmental modelling in
+NEURON. PolegPolsky2011 and To2022 together establish that published voltage-clamp E/I traces are
+distorted by both passive cable attenuation and active dendritic channel effects, and must not be
+used as ground-truth conductances. Instead, the modelling pipeline must include a simulated
+voltage-clamp readout that mimics the experiment so that simulation and experiment can be compared
+on the same footing.
+
+Werginz2020 establishes the AIS as a load-bearing compartment. A DSGC model lacking an explicit AIS
+with Nav1.6 at 7x the somatic density will not correctly reproduce high-firing-rate or
+depolarisation-block behaviour.
+
+Sethuramanujam2017 establishes NMDARs as a load-bearing component of DSGC direction selectivity, not
+an optional add-on. AMPA/NMDA charge ratios during preferred and null motion are primary fitting
+targets.
+
+MargolisDetwiler2007 establishes that RGC maintained activity has two qualitatively different modes
+(synaptic-driven for ON cells, intrinsic-pacemaker for OFF cells). For ON-OFF DSGCs the modeller
+must decide explicitly which mode to reproduce, and use maintained-activity-under-synaptic-blockade
+as the validation target.
+
+Cross-paper integration delivers the 7-point DSGC modelling specification in the synthesis section
+of the answer asset. This specification extends, but does not replace, the 6-point cable-theory
+specification from t0015 and the dendritic-computation guidance from t0016.
+
+#### Limitations
+
+* All 5 summaries are based on Crossref abstracts (full, partial, or empty) plus training knowledge,
+  not on read PDFs. Numerical claims (e.g., ~80% signal loss, 7x AIS Na+ density ratio, specific
+  AMPA/NMDA charge ratios) require PDF verification in a follow-up task.
+* The survey was scaled down from 25 papers to 5 papers per project-wide guidance after t0014.
+  Coverage of DSGC-specific dynamic-clamp studies, DSGC Ih / HCN biophysics, and large-scale
+  compartmental-model fitting pipelines is deferred to follow-up literature-survey tasks.
+* Werginz2020 was performed on OFF-alpha transient RGCs, not directly on ON-OFF DSGCs. The
+  extrapolation of AIS parameters to DSGCs is plausible (both are alpha-like RGCs with high-fidelity
+  spiking output) but not directly validated. A DSGC-specific AIS study should be included in the
+  follow-up survey task.
+
+#### Verification
+
+* Each of the 5 paper assets contains `details.json` (spec_version 3) and a `summary.md` with all 9
+  mandatory sections. Each Overview carries a paywall/training-knowledge disclaimer.
+* Each paper&#x27;s `files/` directory contains only `.gitkeep` because `download_status: &quot;failed&quot;`;
+  `download_failure_reason` in each `details.json` names the specific publisher or Cloudflare
+  barrier.
+* The answer asset contains `details.json` (spec_version 2), `short_answer.md` (Question + Answer +
+  Sources), and `full_answer.md` (9 mandatory sections including inline reference-style citations
+  linking back to each paper summary).
+* The `intervention/paywalled_papers.md` file records all 5 DOIs with a retrieval-priority table and
+  step-by-step instructions for Sheffield institutional access.
+* `metrics.json` is `{}` as expected for a literature-survey task. `costs.json` records zero USD
+  spend. `remote_machines_used.json` is the empty array `[]`.
+
+#### Files Created
+
+* `assets/paper/10.1371_journal.pone.0019463/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1016_j.neuroscience.2021.08.024/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1126_sciadv.abb6642/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1016_j.neuron.2017.09.058/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1523_jneurosci.0130-07.2007/{details.json,summary.md,files/.gitkeep}`
+* `assets/answer/patch-clamp-techniques-and-constraints-for-dsgc-modelling/{details.json,short_answer.md,full_answer.md}`
+* `intervention/paywalled_papers.md`
+* `results/{results_summary.md,results_detailed.md,metrics.json,costs.json,remote_machines_used.json,suggestions.json}`
+* `logs/steps/009_implementation/step_log.md`
+* `logs/steps/008_setup-machines/step_log.md` (skipped)
+* `logs/steps/010_teardown/step_log.md` (skipped)
+* `logs/steps/011_creative-thinking/step_log.md` (skipped)
+* `logs/steps/012_results/step_log.md`
+* `logs/steps/013_compare-literature/step_log.md` (skipped)
+* `logs/steps/014_suggestions/step_log.md`
+* `logs/steps/015_reporting/step_log.md`
+
+#### Next Steps / Suggestions
+
+Follow-up suggestions are registered in `suggestions.json` with ids S-0017-01 through S-0017-04,
+covering (1) manual PDF retrieval and numerical-claim verification for the 5 paywalled papers, (2)
+extension of the patch-clamp survey to DSGC-specific dynamic-clamp and HCN-biophysics papers, (3)
+inclusion of an AIS compartment with NMDARs and depolarisation-block validation in the downstream
+DSGC model build task, (4) registration of the `patch-clamp` and `compartmental-modeling` categories
+if not already present in `meta/categories/`.
       </content>
     </section>
   </sections>

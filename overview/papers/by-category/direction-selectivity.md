@@ -1,6 +1,6 @@
-# Papers: `direction-selectivity` (18)
+# Papers: `direction-selectivity` (19)
 
-18 papers across 14 year(s).
+19 papers across 14 year(s).
 
 [Back to all papers](../README.md)
 
@@ -185,7 +185,52 @@ is to fit mouse DSGC behaviour rather than a generic ON-OFF ganglion cell.
 
 </details>
 
-## 2017 (1)
+## 2017 (2)
+
+<details>
+<summary>📖 "Silent" NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal
+Circuit — Sethuramanujam et al., 2017</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2017.09.058` |
+| **Authors** | Santhosh Sethuramanujam, Xiaoyang Yao, Geoff deRosenroll, Kevin L. Briggman, Greg D. Field, Gautam B. Awatramani |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2017.09.058` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(17)30927-3 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1016_j.neuron.2017.09.058/summary.md) |
+
+Sethuramanujam and colleagues address a gap in the DSGC direction-selectivity literature: is
+the AMPAR-and-inhibition picture of DS generation complete, or do NMDARs also play a
+functional role in the adult circuit? Using whole-cell patch-clamp recordings from ON-OFF
+DSGCs in mouse retinal wholemount, combined with drifting-grating and moving-bar motion
+stimuli and pharmacological block of AMPARs and NMDARs, they answer the question by directly
+measuring each receptor component during preferred and null motion.
+
+The methodology combines voltage-clamp at multiple holding potentials to isolate excitatory
+and inhibitory components, pharmacological dissection to isolate AMPA and NMDA contributions
+within the excitatory component, and matched current-clamp recordings to confirm the
+spike-output consequences. The design lets the authors quantify the AMPA/NMDA ratio, its
+direction dependence, and the effect of NMDAR block on direction selectivity index separately
+at the synaptic-current and spike levels.
+
+The headline result is that DSGCs contain a substantial but functionally silent NMDAR
+population that is recruited preferentially during preferred-direction motion and
+multiplicatively enhances DS. NMDAR block reduces DSI significantly at both the current and
+spike level. The paper also provides quantitative AMPA/NMDA charge ratios that can be used
+directly as model-fitting targets.
+
+For this project, the implications are central. DSGC compartmental models in NEURON must
+include NMDARs with proper Mg2+ block kinetics on DSGC dendrites; the AMPA-only baseline is
+inadequate. NMDAR recruitment depends on dendritic depolarisation, so space-clamp corrections
+from Poleg-Polsky and To-Honnuraiah-Stuart apply. Fitting objectives should include the
+AMPA/NMDA charge ratio during preferred and null motion, not just peak AMPA current. The
+Sethuramanujam measurements provide the quantitative targets our model must hit.
+
+</details>
 
 <details>
 <summary>📖 Cross-compartmental Modulation of Dendritic Signals for Retinal Direction

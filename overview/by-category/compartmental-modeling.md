@@ -4,14 +4,60 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (11)](../papers/by-category/compartmental-modeling.md) | [Answers
-(4)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(30)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+**Detail pages**: [Papers (14)](../papers/by-category/compartmental-modeling.md) | [Answers
+(5)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(32)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md)
 
 ---
 
-## Papers (11)
+## Papers (14)
+
+<details>
+<summary>📖 <strong>Voltage Clamp Errors During Estimation of Concurrent Excitatory
+and Inhibitory Synaptic Input to Neurons with Dendrites</strong> — To et
+al., 2022</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuroscience.2021.08.024` |
+| **Authors** | Minh-Son To, Suraj Honnuraiah, Greg J. Stuart |
+| **Venue** | Neuroscience (journal) |
+| **DOI** | `10.1016/j.neuroscience.2021.08.024` |
+| **URL** | https://www.sciencedirect.com/science/article/abs/pii/S0306452221004322 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1016_j.neuroscience.2021.08.024/summary.md) |
+
+To, Honnuraiah, and Stuart address a direct extension of the Poleg-Polsky and Diamond 2011
+analysis: how much additional voltage-clamp error is introduced by active dendritic
+voltage-gated channels, which are present in every real neuron and absent from the
+passive-dendrite 2011 simulations? Using detailed NEURON compartmental models with realistic
+reconstructed morphologies and distributed voltage-gated Na+ and K+ channels, they run the
+standard multi-holding-potential E/I decomposition protocol and compare the recovered
+conductance waveforms against ground truth.
+
+The design systematically isolates the contribution of active channels by comparing matched
+models with and without the voltage-gated conductances. Synaptic placement, timing, and
+holding-potential range are varied to map which experimental conditions drive the largest
+errors. The paper quantifies what prior work had identified as a qualitative caveat.
+
+The results are unambiguous: active dendritic channels substantially worsen the decomposition
+error beyond the passive case, and under some conditions produce physically impossible
+negative inhibitory conductance estimates. There is no holding-potential choice that is
+globally accurate; the experimenter is forced to trade Ge accuracy against Gi accuracy. The
+recommended mitigation (blocking active channels with TTX and K+ blockers) has its own cost
+because it removes the circuit dynamics being studied.
+
+For this project, the implication is cumulative with the Poleg-Polsky result. Every published
+DSGC voltage-clamp E/I trace we will use to calibrate our NEURON model has been distorted by
+both passive cable attenuation and active dendritic processing. Our modelling pipeline must
+model both: the simulated voltage-clamp block must include dendritic active channels, and we
+must expect substantially larger calibration uncertainty on distal synaptic conductance
+amplitudes than the Poleg-Polsky bounds alone would suggest.
+
+</details>
 
 <details>
 <summary>📖 <strong>The functional organization of excitation and inhibition in the
@@ -67,6 +113,55 @@ dendritic Na⁺/K⁺ channels are expected to sharpen tuning — that we will te
 of our active-vs-passive dendrite experiment. The measured DSI distribution, angular SD of
 ~32°, and 5–10 µm compartment scale give us quantitative benchmarks to score candidate model
 configurations against.
+
+</details>
+
+<details>
+<summary>📖 <strong>Tailoring of the axon initial segment shapes the conversion of
+synaptic inputs into spiking output in OFF-alpha T retinal ganglion
+cells</strong> — Werginz et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_sciadv.abb6642` |
+| **Authors** | Paul Werginz, Vineeth Raghuram, Shelley I. Fried |
+| **Venue** | Science Advances (journal) |
+| **DOI** | `10.1126/sciadv.abb6642` |
+| **URL** | https://www.science.org/doi/10.1126/sciadv.abb6642 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1126_sciadv.abb6642/summary.md) |
+
+Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites
+shapes the spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is
+that the AIS is specialised to match the synaptic input that each cell type receives. Using a
+combined experimental and computational approach (patch-clamp current-clamp recordings, Nav1.6
+and ankyrin-G immunohistochemistry, and NEURON compartmental modelling) they show that AIS
+morphology and sodium channel density are the primary determinants of maximum firing rate and
+depolarisation-block threshold.
+
+The methodology is carefully matched: the same OFF-alphaT cell population is characterised
+electrophysiologically, anatomically, and computationally. Dorsal and ventral retinal
+locations are compared because prior work showed that OFF-alphaT cells receive different
+synaptic drive in these regions; the intrinsic-biophysics question is whether the output side
+is also tuned. The compartmental model serves as a mechanistic bridge, varying only AIS
+parameters while holding dendritic and somatic properties constant, to test whether AIS alone
+can explain the observed firing-rate differences.
+
+The headline quantitative results are a 7x AIS-to-soma Na+ density ratio, a systematic
+AIS-length difference between dorsal and ventral OFF-alphaT cells, and the demonstration that
+AIS length alone is sufficient to reproduce the firing-rate and depolarisation-block
+differences in the compartmental model. Dorsal cells have longer AISs and sustain higher
+firing rates; ventral cells have shorter AISs and enter depolarisation block at lower input
+currents.
+
+For this project, the implications are direct. DSGC compartmental models must include an
+explicit AIS compartment with Nav1.6 enrichment at the reported density ratio, AIS length
+should be a named tunable parameter constrained by immunohistochemistry rather than a fixed
+value, and depolarisation-block behaviour must be used as a fitting constraint. Ignoring the
+AIS will produce a DSGC model that cannot correctly reproduce high-firing-rate and
+strong-contrast responses.
 
 </details>
 
@@ -273,6 +368,54 @@ directly match the planned implementation. Available on ModelDB (accession 18934
 validates passive- dendrite sufficiency for project RQ4, constrains NMDAR conductance
 Mg2+-block parameters, and establishes ROC accuracy-curve area as the appropriate metric for
 comparing DS tuning fidelity across model variants.
+
+</details>
+
+<details>
+<summary>📖 <strong>Imperfect Space Clamp Permits Electrotonic Interactions between
+Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp
+Recordings</strong> — Poleg-Polsky & Diamond, 2011</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pone.0019463` |
+| **Authors** | Alon Poleg-Polsky, Jeffrey S. Diamond |
+| **Venue** | PLoS ONE (journal) |
+| **DOI** | `10.1371/journal.pone.0019463` |
+| **URL** | https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019463 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1371_journal.pone.0019463/summary.md) |
+
+Poleg-Polsky and Diamond ask a methodological question that matters for every modelling paper
+built on experimental E/I decomposition: how accurate is the standard protocol of
+reconstructing excitatory and inhibitory conductances from multi-holding-potential
+voltage-clamp recordings when the cell has thin, extended dendrites? They answer it with
+NEURON compartmental simulations of realistic retinal ganglion cell morphologies, where the
+ground-truth synaptic input is known and the somatic pipette recording can be directly
+compared against it.
+
+The methodology is careful: the authors systematically vary dendritic diameter, synaptic
+distance, E/I relative timing, and holding-potential range, and compare each reconstruction
+against the known inputs. They also test what happens when voltage-gated dendritic channels
+are added. The design isolates space-clamp error from other confounds (series resistance,
+filtering, ionic non-stationarity) and lets the reader see exactly which experimental choices
+drive the largest distortions.
+
+The headline result is that imperfect space clamp is not a second-order concern: on thin
+distal dendrites up to 80% of the synaptic signal is lost, inhibitory estimates are
+systematically worse than excitatory ones, and co-active E and I interact electrotonically so
+that reconstructing one requires correctly modelling the other. Active dendritic channels make
+everything worse. The paper practical guidance (proximal-only reconstruction,
+compartmental-model validation of each experiment) is now standard.
+
+For this project, the implication is direct. DSGC models will be calibrated against published
+Ge and Gi traces from somatic voltage-clamp recordings, and those traces are lower bounds on
+the true dendritic conductances, not ground truth. Our NEURON pipeline must include a somatic
+voltage-clamp block so that simulated recordings can be compared to experimental recordings on
+the same footing, and we must plan parameter-fitting procedures to absorb a several-fold
+calibration uncertainty on distal synaptic conductance amplitudes.
 
 </details>
 
@@ -585,14 +728,15 @@ dendritic transients.
 
 </details>
 
-## Tasks (2)
+## Tasks (3)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
+| 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (4)
+## Answers (5)
 
 <details>
 <summary><strong>Which dendritic-computation motifs observed in cortical,
@@ -609,6 +753,33 @@ and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-pl
 firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
 short and unipolar rather than tufted. All transferred numbers must be treated as targets to
 falsify rather than to assume, pending DSGC-specific patch validation.
+
+</details>
+
+<details>
+<summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
+imply for the compartmental modelling of direction-selective retinal
+ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of
+published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic
+voltage-gated channels and the AIS compartment, (c) synaptic receptor
+complement including NMDARs, and (d) modelling of maintained activity and
+intrinsic pacemaker properties?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`patch-clamp-techniques-and-constraints-for-dsgc-modelling`](../../tasks/t0017_literature_survey_patch_clamp/assets/answer/patch-clamp-techniques-and-constraints-for-dsgc-modelling/)
+
+DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower
+bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the
+synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic
+channels add further error. The modelling pipeline therefore needs a simulated somatic
+voltage-clamp block that mimics the experimental amplifier so simulation and experiment are
+compared on the same footing. The model must include an explicit AIS compartment with Nav1.6
+enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable
+parameter constrained by immunohistochemistry, and NMDARs with standard Mg2+ block kinetics on
+DSGC dendrites, fit to AMPA/NMDA charge ratios during preferred and null motion rather than
+peak-AMPA-current alone. Finally the modeller must decide explicitly whether to include
+intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold oscillations) based on the
+target DSGC subtype, validated by maintained-activity-under-synaptic-blockade traces.
 
 </details>
 
@@ -671,7 +842,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (26 open, 4 closed)
+## Suggestions (28 open, 4 closed)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -861,6 +1032,46 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN
+biophysics, and AIS measurements</strong> (S-0017-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
+
+The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identified in the plan
+(space-clamp, AIS, NMDARs, maintained activity) but leaves several high-priority follow-on
+topics uncovered: (a) DSGC-specific dynamic-clamp studies that use injected conductance
+waveforms to test direction selectivity mechanisms, (b) DSGC Ih/HCN biophysics and resonance
+properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-alpha T cells,
+not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
+RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
+gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
+block in the downstream DSGC model build task</strong> (S-0017-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
+
+The answer asset patch-clamp-techniques-and-constraints-for-dsgc-modelling produces a 7-point
+specification for DSGC modelling in NEURON extending the cable-theory and
+dendritic-computation specifications from t0015 and t0016. The downstream DSGC
+compartmental-model build task must implement: (1) an explicit AIS compartment with Nav1.6 at
+7x the somatic Na+ density, with AIS length as a tunable parameter; (2) NMDARs with standard
+Mg2+ block kinetics on DSGC dendrites alongside AMPARs; (3) a simulated somatic voltage-clamp
+block (SEClamp) so experimental and simulated voltage-clamp readouts can be compared on the
+same footing; (4) depolarisation-block threshold and AMPA/NMDA charge ratio during preferred
+and null motion as named fitting objectives. Validation must include DSI reduction under
+simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
+synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
+target DSGC subtype.
 
 </details>
 

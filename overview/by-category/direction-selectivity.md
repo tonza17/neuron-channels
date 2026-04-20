@@ -4,15 +4,15 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (18)](../papers/by-category/direction-selectivity.md) | [Answers
-(3)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(24)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+**Detail pages**: [Papers (19)](../papers/by-category/direction-selectivity.md) | [Answers
+(4)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(26)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (1)](../libraries/by-category/direction-selectivity.md)
 
 ---
 
-## Papers (18)
+## Papers (19)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -240,6 +240,51 @@ conductance combination that preserves somatic excitability will suffice. Active
 conductances in the DSGC (RQ4) can be evaluated against this framework, but the primary
 directional signal arrives pre-shaped by SAC compartmental computation, not generated locally
 in the DSGC dendrites.
+
+</details>
+
+<details>
+<summary>📖 <strong>"Silent" NMDA Synapses Enhance Motion Sensitivity in a Mature
+Retinal Circuit</strong> — Sethuramanujam et al., 2017</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2017.09.058` |
+| **Authors** | Santhosh Sethuramanujam, Xiaoyang Yao, Geoff deRosenroll, Kevin L. Briggman, Greg D. Field, Gautam B. Awatramani |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2017.09.058` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(17)30927-3 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1016_j.neuron.2017.09.058/summary.md) |
+
+Sethuramanujam and colleagues address a gap in the DSGC direction-selectivity literature: is
+the AMPAR-and-inhibition picture of DS generation complete, or do NMDARs also play a
+functional role in the adult circuit? Using whole-cell patch-clamp recordings from ON-OFF
+DSGCs in mouse retinal wholemount, combined with drifting-grating and moving-bar motion
+stimuli and pharmacological block of AMPARs and NMDARs, they answer the question by directly
+measuring each receptor component during preferred and null motion.
+
+The methodology combines voltage-clamp at multiple holding potentials to isolate excitatory
+and inhibitory components, pharmacological dissection to isolate AMPA and NMDA contributions
+within the excitatory component, and matched current-clamp recordings to confirm the
+spike-output consequences. The design lets the authors quantify the AMPA/NMDA ratio, its
+direction dependence, and the effect of NMDAR block on direction selectivity index separately
+at the synaptic-current and spike levels.
+
+The headline result is that DSGCs contain a substantial but functionally silent NMDAR
+population that is recruited preferentially during preferred-direction motion and
+multiplicatively enhances DS. NMDAR block reduces DSI significantly at both the current and
+spike level. The paper also provides quantitative AMPA/NMDA charge ratios that can be used
+directly as model-fitting targets.
+
+For this project, the implications are central. DSGC compartmental models in NEURON must
+include NMDARs with proper Mg2+ block kinetics on DSGC dendrites; the AMPA-only baseline is
+inadequate. NMDAR recruitment depends on dendritic depolarisation, so space-clamp corrections
+from Poleg-Polsky and To-Honnuraiah-Stuart apply. Fitting objectives should include the
+AMPA/NMDA charge ratio during preferred and null motion, not just peak AMPA current. The
+Sethuramanujam measurements provide the quantitative targets our model must hit.
 
 </details>
 
@@ -938,14 +983,15 @@ simulation.
 
 </details>
 
-## Tasks (2)
+## Tasks (3)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
+| 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (3)
+## Answers (4)
 
 <details>
 <summary><strong>What does the classical cable-theory and dendritic-computation
@@ -984,6 +1030,33 @@ falsify rather than to assume, pending DSGC-specific patch validation.
 </details>
 
 <details>
+<summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
+imply for the compartmental modelling of direction-selective retinal
+ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of
+published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic
+voltage-gated channels and the AIS compartment, (c) synaptic receptor
+complement including NMDARs, and (d) modelling of maintained activity and
+intrinsic pacemaker properties?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`patch-clamp-techniques-and-constraints-for-dsgc-modelling`](../../tasks/t0017_literature_survey_patch_clamp/assets/answer/patch-clamp-techniques-and-constraints-for-dsgc-modelling/)
+
+DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower
+bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the
+synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic
+channels add further error. The modelling pipeline therefore needs a simulated somatic
+voltage-clamp block that mimics the experimental amplifier so simulation and experiment are
+compared on the same footing. The model must include an explicit AIS compartment with Nav1.6
+enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable
+parameter constrained by immunohistochemistry, and NMDARs with standard Mg2+ block kinetics on
+DSGC dendrites, fit to AMPA/NMDA charge ratios during preferred and null motion rather than
+peak-AMPA-current alone. Finally the modeller must decide explicitly whether to include
+intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold oscillations) based on the
+target DSGC subtype, validated by maintained-activity-under-synaptic-blockade traces.
+
+</details>
+
+<details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
 models of direction-selective retinal ganglion cells structure the five
 project research questions (Na/K conductances, morphology sensitivity,
@@ -1008,7 +1081,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (21 open, 3 closed)
+## Suggestions (23 open, 3 closed)
 
 <details>
 <summary>🔧 <strong>Parametric curve fitting (von Mises / wrapped Gaussian) for
@@ -1157,6 +1230,46 @@ compartments, then test whether asymmetric inhibition at principal-branch bifurc
 selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
 null-direction motion. Report preferred-direction burst firing rate versus null-direction
 burst rate and compare with published DSGC spiking statistics.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN
+biophysics, and AIS measurements</strong> (S-0017-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
+
+The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identified in the plan
+(space-clamp, AIS, NMDARs, maintained activity) but leaves several high-priority follow-on
+topics uncovered: (a) DSGC-specific dynamic-clamp studies that use injected conductance
+waveforms to test direction selectivity mechanisms, (b) DSGC Ih/HCN biophysics and resonance
+properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-alpha T cells,
+not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
+RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
+gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
+block in the downstream DSGC model build task</strong> (S-0017-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
+
+The answer asset patch-clamp-techniques-and-constraints-for-dsgc-modelling produces a 7-point
+specification for DSGC modelling in NEURON extending the cable-theory and
+dendritic-computation specifications from t0015 and t0016. The downstream DSGC
+compartmental-model build task must implement: (1) an explicit AIS compartment with Nav1.6 at
+7x the somatic Na+ density, with AIS length as a tunable parameter; (2) NMDARs with standard
+Mg2+ block kinetics on DSGC dendrites alongside AMPARs; (3) a simulated somatic voltage-clamp
+block (SEClamp) so experimental and simulated voltage-clamp readouts can be compared on the
+same footing; (4) depolarisation-block threshold and AMPA/NMDA charge ratio during preferred
+and null motion as named fitting objectives. Validation must include DSI reduction under
+simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
+synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
+target DSGC subtype.
 
 </details>
 

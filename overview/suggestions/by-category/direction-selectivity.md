@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-24 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **21 open** (7
-high, 12 medium, 2 low), **3 closed**.
+26 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **23 open** (8
+high, 13 medium, 2 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -96,6 +96,34 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
+block in the downstream DSGC model build task</strong> (S-0017-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0017-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+The answer asset patch-clamp-techniques-and-constraints-for-dsgc-modelling produces a 7-point
+specification for DSGC modelling in NEURON extending the cable-theory and
+dendritic-computation specifications from t0015 and t0016. The downstream DSGC
+compartmental-model build task must implement: (1) an explicit AIS compartment with Nav1.6 at
+7x the somatic Na+ density, with AIS length as a tunable parameter; (2) NMDARs with standard
+Mg2+ block kinetics on DSGC dendrites alongside AMPARs; (3) a simulated somatic voltage-clamp
+block (SEClamp) so experimental and simulated voltage-clamp readouts can be compared on the
+same footing; (4) depolarisation-block threshold and AMPA/NMDA charge ratio during preferred
+and null motion as named fitting objectives. Validation must include DSI reduction under
+simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
+synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
+target DSGC subtype.
 
 </details>
 
@@ -245,6 +273,30 @@ review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic driv
 Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
 input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
 corpus to 24 papers. Recommended task types: download-paper, literature-survey.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN
+biophysics, and AIS measurements</strong> (S-0017-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0017-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identified in the plan
+(space-clamp, AIS, NMDARs, maintained activity) but leaves several high-priority follow-on
+topics uncovered: (a) DSGC-specific dynamic-clamp studies that use injected conductance
+waveforms to test direction selectivity mechanisms, (b) DSGC Ih/HCN biophysics and resonance
+properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-alpha T cells,
+not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
+RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
+gap.
 
 </details>
 
