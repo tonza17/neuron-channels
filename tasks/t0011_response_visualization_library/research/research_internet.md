@@ -4,14 +4,13 @@ task_id: "t0011_response_visualization_library"
 research_stage: "internet"
 date_completed: "2026-04-20"
 ---
-
 # Research Internet
 
 ## Objective
 
-Collect best-practice references for building the matplotlib-based tuning-curve visualization library
-(`tuning_curve_viz`), including polar-axis conventions, colour-blind-safe palettes, confidence-band
-bootstrapping, and raster/PSTH layout.
+Collect best-practice references for building the matplotlib-based tuning-curve visualization
+library (`tuning_curve_viz`), including polar-axis conventions, colour-blind-safe palettes,
+confidence-band bootstrapping, and raster/PSTH layout.
 
 ## Background
 
@@ -26,25 +25,26 @@ Placeholder for internet-sourced technique review; see Key Findings for actionab
 
 ## Key Findings
 
-* **Polar-axis convention**: matplotlib polar axes default to `theta_direction=1` (counter-clockwise)
-  and `theta_offset=0` (0° at east). The task description fixes this convention — we keep the
-  defaults and document that `angle_deg` in the input CSV is the mathematical convention
-  (0° = east, 90° = north, positive = CCW).
+* **Polar-axis convention**: matplotlib polar axes default to `theta_direction=1`
+  (counter-clockwise) and `theta_offset=0` (0° at east). The task description fixes this convention
+  — we keep the defaults and document that `angle_deg` in the input CSV is the mathematical
+  convention (0° = east, 90° = north, positive = CCW).
 * **Okabe-Ito palette (8 colour-blind-safe hex codes)**: `#000000` (black), `#E69F00` (orange),
-  `#56B4E9` (sky blue), `#009E73` (bluish green), `#F0E442` (yellow), `#0072B2` (blue),
-  `#D55E00` (vermillion), `#CC79A7` (reddish purple). Cap the multi-model overlay at 6 models to
-  stay within visually distinct entries; reserve black for the target curve dashed overlay.
-* **Bootstrap 95 % CI**: `scipy.stats.bootstrap(data, statistic=np.mean, confidence_level=0.95,
-  n_resamples=1000, method="percentile")` is available from SciPy 1.7+. The project already depends
-  on SciPy, so no extra dependency is needed. For robustness against unlikely environments we keep
-  a short NumPy fallback that resamples with replacement and reports the 2.5/97.5 percentiles.
+  `#56B4E9` (sky blue), `#009E73` (bluish green), `#F0E442` (yellow), `#0072B2` (blue), `#D55E00`
+  (vermillion), `#CC79A7` (reddish purple). Cap the multi-model overlay at 6 models to stay within
+  visually distinct entries; reserve black for the target curve dashed overlay.
+* **Bootstrap 95 % CI**:
+  `scipy.stats.bootstrap(data, statistic=np.mean, confidence_level=0.95, n_resamples=1000, method="percentile")`
+  is available from SciPy 1.7+. The project already depends on SciPy, so no extra dependency is
+  needed. For robustness against unlikely environments we keep a short NumPy fallback that resamples
+  with replacement and reports the 2.5/97.5 percentiles.
 * **Raster + PSTH layout**: `matplotlib.gridspec.GridSpec(2, 1, height_ratios=[3, 1])` gives a
   raster on top and a histogram below, sharing the x-axis (time in seconds).
-  `ax.eventplot(spike_times_by_trial, colors="black")` is the standard raster primitive.
-  PSTH bin width defaults to 10 ms (0.010 s); this matches the t0008 spike output resolution.
+  `ax.eventplot(spike_times_by_trial, colors="black")` is the standard raster primitive. PSTH bin
+  width defaults to 10 ms (0.010 s); this matches the t0008 spike output resolution.
 * **Preferred direction annotation**: on polar axes, draw a red arrow from the origin to the radius
-  equal to the maximum firing rate at the angle of peak mean response; compute via
-  `numpy.argmax` on the per-angle mean. Label with the angle in degrees.
+  equal to the maximum firing rate at the angle of peak mean response; compute via `numpy.argmax` on
+  the per-angle mean. Label with the angle in degrees.
 
 ## Recommended Approach
 

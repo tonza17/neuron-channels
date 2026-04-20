@@ -4,7 +4,6 @@ task_id: "t0011_response_visualization_library"
 research_stage: "code"
 date_completed: "2026-04-20"
 ---
-
 # Research Code
 
 ## Objective
@@ -15,8 +14,8 @@ on-disk schemas and the smoke tests plot real project data.
 ## Background
 
 t0011 depends on two completed tasks that each produce angle-resolved firing-rate data in slightly
-different CSV layouts. The library must settle a canonical schema and provide a small loader to
-read each upstream format.
+different CSV layouts. The library must settle a canonical schema and provide a small loader to read
+each upstream format.
 
 ## Methodology Review
 
@@ -32,14 +31,13 @@ Two files in `assets/dataset/target-tuning-curve/files/`:
 * `curve_mean.csv` — columns `(angle_deg, mean_rate_hz)`. Mean response per angle, no trial
   information. This is the canonical "target curve" overlay for every later experiment.
 * `curve_trials.csv` — columns `(angle_deg, trial_index, rate_hz)`. Per-trial samples that feed the
-  bootstrap CI band. Column names differ from t0008's (`trial_index` vs `trial_seed`,
-  `rate_hz` vs `firing_rate_hz`).
+  bootstrap CI band. Column names differ from t0008's (`trial_index` vs `trial_seed`, `rate_hz` vs
+  `firing_rate_hz`).
 
 ### t0008_port_modeldb_189347
 
-* `data/tuning_curves/curve_modeldb_189347.csv` — columns
-  `(angle_deg, trial_seed, firing_rate_hz)`. 8 angles × 8 trials = 64 rows. This matches the task
-  description's canonical schema exactly.
+* `data/tuning_curves/curve_modeldb_189347.csv` — columns `(angle_deg, trial_seed, firing_rate_hz)`.
+  8 angles × 8 trials = 64 rows. This matches the task description's canonical schema exactly.
 * `data/smoke_test_single_angle.csv` — same schema, one angle only; not useful as a full tuning
   curve.
 * No raster/spike-time CSV. The t0008 port emits firing rates but not per-trial spike times, so the
@@ -59,12 +57,12 @@ Two files in `assets/dataset/target-tuning-curve/files/`:
 
 ## Recommended Approach
 
-1. Put the loader helpers in `code/tuning_curve_viz/loaders.py` with an explicit conversion from
-   the t0004 layout to the canonical schema.
+1. Put the loader helpers in `code/tuning_curve_viz/loaders.py` with an explicit conversion from the
+   t0004 layout to the canonical schema.
 2. Use the t0008 curve (`curve_modeldb_189347.csv`) verbatim for the multi-model-overlay smoke test.
 3. Generate a small synthetic spike-time fixture (Poisson with lambda depending on `angle_deg`) in
-   the smoke-test script. Store it under `code/tuning_curve_viz/smoke_data/` so the raster
-   smoke test has a deterministic input.
+   the smoke-test script. Store it under `code/tuning_curve_viz/smoke_data/` so the raster smoke
+   test has a deterministic input.
 
 ## References
 

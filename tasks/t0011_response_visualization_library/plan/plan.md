@@ -3,14 +3,13 @@ spec_version: "3"
 task_id: "t0011_response_visualization_library"
 date_created: "2026-04-20"
 ---
-
 # Plan
 
 ## Objective
 
 Build `tuning_curve_viz`, a reusable matplotlib library that turns standard tuning-curve CSVs into
-Cartesian, polar, multi-model overlay, and per-angle raster+PSTH PNG plots for every downstream
-DSGC experiment in the project.
+Cartesian, polar, multi-model overlay, and per-angle raster+PSTH PNG plots for every downstream DSGC
+experiment in the project.
 
 ## Approach
 
@@ -21,8 +20,8 @@ DSGC experiment in the project.
 * 95 % bootstrap CI band via `scipy.stats.bootstrap` with 1 000 resamples.
 * Polar axis uses matplotlib defaults (`theta_direction=1`, `theta_offset=0`); preferred direction
   annotated with a red arrow at the peak mean.
-* Multi-model overlay caps at 6 models (Okabe-Ito minus black); target curve always drawn as a
-  black dashed line.
+* Multi-model overlay caps at 6 models (Okabe-Ito minus black); target curve always drawn as a black
+  dashed line.
 * Raster+PSTH uses `GridSpec(2, 1, height_ratios=[3, 1])`; raster via `ax.eventplot`, PSTH via
   `ax.hist` with 10 ms bins.
 * Smoke tests live in `code/tuning_curve_viz/test_smoke.py` and write PNG outputs to the library
@@ -38,8 +37,8 @@ cost: **$0.00**.
 1. Write `code/tuning_curve_viz/__init__.py` exposing the 4 plotting functions and the palette.
 2. Write `code/tuning_curve_viz/constants.py` — Okabe-Ito hex codes, default DPI (150), max overlay
    models (6), PSTH bin width (0.010 s).
-3. Write `code/tuning_curve_viz/paths.py` — repository-relative paths to the t0004 target curve
-   and the t0008 tuning curve (used only by smoke tests).
+3. Write `code/tuning_curve_viz/paths.py` — repository-relative paths to the t0004 target curve and
+   the t0008 tuning curve (used only by smoke tests).
 4. Write `code/tuning_curve_viz/loaders.py` — `load_canonical_curve`, `load_target_mean_curve`,
    `load_t0004_trials`. Each returns a typed pandas DataFrame.
 5. Write `code/tuning_curve_viz/stats.py` — `bootstrap_ci` using scipy; small NumPy fallback
@@ -48,13 +47,13 @@ cost: **$0.00**.
    plotting function each. Each function takes paths and saves a PNG.
 7. Write `code/tuning_curve_viz/cli.py` with `argparse`: `--curve-csv`, `--target-csv`,
    `--spike-times-csv`, `--out-dir`.
-8. Write `code/tuning_curve_viz/test_smoke.py` — runs all four plot functions on both the target
-   and t0008 curves, plus an overlay combining them, and writes outputs into the library asset's
+8. Write `code/tuning_curve_viz/test_smoke.py` — runs all four plot functions on both the target and
+   t0008 curves, plus an overlay combining them, and writes outputs into the library asset's
    `files/` folder.
 9. Run `uv run ruff check --fix . && uv run ruff format .` and
    `uv run mypy -p tasks.t0011_response_visualization_library.code`.
-10. Run the smoke test: `uv run python -u -m
-    tasks.t0011_response_visualization_library.code.tuning_curve_viz.test_smoke`.
+10. Run the smoke test:
+    `uv run python -u -m tasks.t0011_response_visualization_library.code.tuning_curve_viz.test_smoke`.
 11. Assemble the library asset (`details.json` + `description.md`) and run `verify_library_asset`.
 
 ## Remote Machines
