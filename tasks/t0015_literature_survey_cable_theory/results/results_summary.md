@@ -1,5 +1,12 @@
 # Results Summary: Cable-Theory Literature Survey
 
+## Summary
+
+Surveyed 5 foundational cable-theory and DSGC-biophysics papers and produced a single answer asset
+giving a concrete 6-point compartmental-modelling specification for DSGCs in NEURON. All 5 PDFs
+failed to download (4 paywalls + 1 Cloudflare block); summaries are based on Crossref/OpenAlex
+abstracts plus training knowledge with explicit disclaimers.
+
 ## Objective
 
 Survey foundational cable-theory and dendritic-computation literature and synthesize concrete
@@ -61,3 +68,15 @@ No quantitative metrics produced; this is a literature-survey task. `metrics.jso
 ## Costs
 
 No API or compute costs. `costs.json` records `total_cost_usd: 0.00`.
+
+## Verification
+
+* 5 paper assets present in `assets/paper/` with `details.json` and `summary.md` each; `files/`
+  contains `.gitkeep` (downloads failed).
+* 1 answer asset present in `assets/answer/cable-theory-implications-for-dsgc-modelling/` with
+  `details.json`, `short_answer.md`, `full_answer.md`.
+* Answer asset verificator (`meta.asset_types.answer.verificator`): PASSED (0 errors, 2 non-blocking
+  category warnings).
+* All 5 paywalled DOIs documented in `intervention/paywalled_papers.md` with retrieval priority.
+* `metrics.json` empty `{}` (expected — literature survey produces no quantitative metrics).
+* `costs.json` and `remote_machines_used.json` record zero cost and no remote machines used.

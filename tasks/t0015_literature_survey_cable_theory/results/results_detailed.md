@@ -1,5 +1,14 @@
 # Results Detailed: Cable-Theory Literature Survey
 
+## Summary
+
+Surveyed 5 foundational cable-theory and DSGC-biophysics papers (Rall 1967, Koch-Poggio-Torre 1982,
+Mainen-Sejnowski 1996, Taylor 2000, Dhingra-Smith 2004), built paper assets with full summary
+documents, and synthesized the findings into a single answer asset giving a concrete 6-point DSGC
+compartmental-modelling specification for NEURON. All 5 PDFs failed automated download; summaries
+are based on Crossref/OpenAlex abstracts plus training knowledge with explicit disclaimers in each
+Overview section.
+
 ## Task Objective
 
 Produce a focused literature survey of foundational cable-theory and dendritic-computation papers
@@ -136,3 +145,23 @@ Integrated across the five papers, a faithful DSGC compartmental model in NEURON
   * `assets/paper/10.1523_jneurosci.5346-03.2004/` (Dhingra & Smith 2004)
 * Answer asset: `assets/answer/cable-theory-implications-for-dsgc-modelling/`
 * Intervention: `intervention/paywalled_papers.md`
+
+## Verification
+
+* Each of the 5 paper assets contains `details.json` (spec_version 3) and a `summary.md` with all 9
+  mandatory sections (Metadata, Abstract, Overview, Architecture/Models/Methods, Results,
+  Innovations, Datasets, Main Ideas, Summary). Each Overview carries a paywall/training-knowledge
+  disclaimer.
+* Each paper's `files/` directory contains only `.gitkeep` because `download_status: "failed"`;
+  `download_failure_reason` in each `details.json` names the specific publisher or Cloudflare
+  barrier.
+* The answer asset contains `details.json` (spec_version 2), `short_answer.md` (Question + Answer +
+  Sources), and `full_answer.md` (9 mandatory sections including inline reference-style citations
+  linking back to each paper summary).
+* The answer asset verificator (`python -m meta.asset_types.answer.verificator`) PASSED with 0
+  errors and 2 non-blocking category warnings (`retinal-ganglion-cells`, `compartmental-modelling`
+  not yet registered in `meta/categories/`).
+* The `intervention/paywalled_papers.md` file records all 5 DOIs with a retrieval-priority table and
+  step-by-step instructions for Sheffield institutional access.
+* `metrics.json` is `{}` as expected for a literature-survey task. `costs.json` records zero USD
+  spend. `remote_machines_used.json` is the empty array `[]`.
