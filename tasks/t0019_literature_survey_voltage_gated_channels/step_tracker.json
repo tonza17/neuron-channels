@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0019_literature_survey_voltage_gated_channels branch and worktree.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T12:21:37Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T12:23:09Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
