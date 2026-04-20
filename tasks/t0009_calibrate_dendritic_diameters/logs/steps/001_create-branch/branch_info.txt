@@ -1,0 +1,5 @@
+branch: task/t0009_calibrate_dendritic_diameters
+base_branch: main
+base_commit: 9599683cbbfd811a892b571288a52ed8991721d1
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters
+created_at: 2026-04-19T21:40:09Z

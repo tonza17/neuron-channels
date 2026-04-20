@@ -1,0 +1,21 @@
+{
+  "source_url": "https://raw.githubusercontent.com/geoffder/Spatial-Offset-DSGC-NEURON-Model/master/RGCmodel.hoc",
+  "source_sha256": "161923438b63750136e26baeca4a96791ff4d3cb8923c74aa40e94584e59609b",
+  "n_pt3dadd_total": 10649,
+  "n_pt3dadd_nonzero": 31,
+  "soma_raw_diameters_um": [
+    0.878906,
+    6.14065,
+    7.7364,
+    8.31975,
+    8.35494,
+    10.6233,
+    0.878906
+  ],
+  "primary_radius_um": 3.694062181818182,
+  "mid_radius_um": 1.652907888888889,
+  "terminal_radius_um": 0.439453,
+  "n_primary_sections": 3,
+  "n_mid_sections": 170,
+  "n_terminal_sections": 177
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0009_calibrate_dendritic_diameters",
+  "command": "uv run mypy --explicit-package-bases C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\analyze_calibration.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\calibrate_diameters.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\constants.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\harvest_poleg_polsky.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\morphology.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\paths.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\swc_io.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\test_swc_io.py C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters\\tasks\\t0009_calibrate_dendritic_diameters\\code\\__init__.py",
+  "exit_code": 1,
+  "duration_seconds": 11.228,
+  "started_at": "2026-04-19T23:40:04Z",
+  "completed_at": "2026-04-19T23:40:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0009_calibrate_dendritic_diameters",
+  "stdout_file": "013_20260419T234004Z_uv-run-mypy.stdout.txt",
+  "stderr_file": "013_20260419T234004Z_uv-run-mypy.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

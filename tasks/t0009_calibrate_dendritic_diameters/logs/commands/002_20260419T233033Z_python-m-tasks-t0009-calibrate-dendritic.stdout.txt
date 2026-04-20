@@ -1,0 +1,8 @@
+Fetched https://raw.githubusercontent.com/geoffder/Spatial-Offset-DSGC-NEURON-Model/master/RGCmodel.hoc sha256=161923438b63750136e26baeca4a96791ff4d3cb8923c74aa40e94584e59609b
+pt3dadd total=10649 nonzero=31
+soma raw diameters (um): [0.878906, 6.14065, 7.7364, 8.31975, 8.35494, 10.6233, 0.878906]
+primary radius=3.6941 um (n_sections=3)
+mid     radius=1.6529 um (n_sections=170)
+terminal radius=0.4395 um (n_sections=177)
+primary / terminal diameter ratio = 8.41
+bins JSON written to: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters\tasks\t0009_calibrate_dendritic_diameters\data\poleg_polsky_bins.json

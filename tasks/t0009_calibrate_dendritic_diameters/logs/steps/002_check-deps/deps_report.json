@@ -1,0 +1,14 @@
+{
+  "task_id": "t0009_calibrate_dendritic_diameters",
+  "checked_at": "2026-04-19T21:44:00Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0005_download_dsgc_morphology",
+      "status": "completed"
+    }
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "notes": "verify_task_dependencies.py passed with no errors or warnings. Dependency t0005 produced dataset dsgc-baseline-morphology (SWC file 141009_Pair1DSGC.CNG.swc) which is the calibration input."
+}

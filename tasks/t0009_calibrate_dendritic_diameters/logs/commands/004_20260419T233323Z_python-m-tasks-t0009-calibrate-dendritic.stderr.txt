@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters\tasks\t0009_calibrate_dendritic_diameters\code\analyze_calibration.py", line 28, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'

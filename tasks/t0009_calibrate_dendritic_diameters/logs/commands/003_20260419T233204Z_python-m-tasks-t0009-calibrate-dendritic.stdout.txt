@@ -1,0 +1,5 @@
+Loaded 6736 compartments from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters\tasks\t0005_download_dsgc_morphology\assets\dataset\dsgc-baseline-morphology\files\141009_Pair1DSGC.CNG.swc
+Bins: primary=3.6941 um, mid=1.6529 um, terminal=0.4395 um
+Calibrated: soma_radius=4.1175 um, max_strahler_order=5, n_clamped_dendrites=0, n_distinct_radii=4
+Wrote 6736 compartments to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+Wrote 6736 calibration records to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0009_calibrate_dendritic_diameters\tasks\t0009_calibrate_dendritic_diameters\data\calibration_records.json

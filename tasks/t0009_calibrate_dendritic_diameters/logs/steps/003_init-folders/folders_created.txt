@@ -1,0 +1,12 @@
+research/
+plan/
+assets/
+code/
+corrections/
+intervention/
+results/
+results/images/
+logs/commands/
+logs/searches/
+logs/sessions/
+logs/steps/
