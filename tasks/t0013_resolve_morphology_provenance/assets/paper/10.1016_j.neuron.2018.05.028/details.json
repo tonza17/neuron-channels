@@ -1,0 +1,53 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2018.05.028",
+  "doi": "10.1016/j.neuron.2018.05.028",
+  "title": "A Viral Receptor Complementation Strategy to Overcome CAV-2 Tropism for Efficient Retrograde Targeting of Neurons",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(18)30426-4",
+  "pdf_url": "https://www.cell.com/action/showPdf?pii=S0896-6273%2818%2930426-4",
+  "date_published": "2018-06-06",
+  "year": 2018,
+  "authors": [
+    {
+      "name": "Shu-Jing Li",
+      "country": "US",
+      "institution": "Cold Spring Harbor Laboratory",
+      "orcid": null
+    },
+    {
+      "name": "Alexander Vaughan",
+      "country": "US",
+      "institution": "Cold Spring Harbor Laboratory",
+      "orcid": null
+    },
+    {
+      "name": "James Fitzhugh Sturgill",
+      "country": "US",
+      "institution": "Cold Spring Harbor Laboratory",
+      "orcid": null
+    },
+    {
+      "name": "Adam Kepecs",
+      "country": "US",
+      "institution": "Cold Spring Harbor Laboratory",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Cold Spring Harbor Laboratory",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [],
+  "abstract": "Retrogradely transported neurotropic viruses enable genetic access to neurons based on their long-range projections and have become indispensable tools for linking neural connectivity with function. A major limitation of viral techniques is that they rely on cell-type-specific molecules for uptake and transport. Consequently, viruses fail to infect variable subsets of neurons depending on the complement of surface receptors expressed (viral tropism). We report a receptor complementation strategy to overcome this by potentiating neurons for the infection of the virus of interest-in this case, canine adenovirus type-2 (CAV-2). We designed AAV vectors for expressing the coxsackievirus and adenovirus receptor (CAR) throughout candidate projection neurons. CAR expression greatly increased retrograde-labeling rates, which we demonstrate for several long-range projections, including some resistant to other retrograde-labeling techniques. Our results demonstrate a receptor complementation strategy to abrogate endogenous viral tropism and thereby facilitate efficient retrograde targeting for functional analysis of neural circuits.",
+  "citation_key": "Li2018",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "The paper is published in Neuron (Elsevier/Cell Press) behind a paywall. Tried: (1) https://doi.org/10.1016/j.neuron.2018.05.028 returned an HTML interstitial from ScienceDirect (not a PDF); (2) https://www.cell.com/action/showPdf?pii=S0896-6273%2818%2930426-4 returned 403 (bot-block); (3) https://pmc.ncbi.nlm.nih.gov search returned no PMC ID for PMID 29879392 (paper is not deposited in PubMed Central); (4) https://europepmc.org/article/med/29879392 listed the record but had no open-access full text. The paper is not available via institutional free access from this worktree. Metadata and abstract were obtained from CrossRef and PubMed (PMID 29879392). Note: This DOI (10.1016/j.neuron.2018.05.028) resolves to Li, Vaughan, Sturgill, Kepecs (2018) \"A Viral Receptor Complementation Strategy to Overcome CAV-2 Tropism for Efficient Retrograde Targeting of Neurons,\" which is unrelated to DSGC morphology; the task orchestrator's label \"Morrie & Feller 2018 Neuron\" does not match this DOI — the Morrie & Feller 2018 Dense Starburst Plexus paper is actually in Current Biology with DOI 10.1016/j.cub.2018.03.001.",
+  "added_by_task": "t0013_resolve_morphology_provenance",
+  "date_added": "2026-04-20"
+}
