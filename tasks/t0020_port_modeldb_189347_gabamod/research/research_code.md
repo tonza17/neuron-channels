@@ -1,142 +1,167 @@
+---
+spec_version: "1"
+task_id: "t0020_port_modeldb_189347_gabamod"
+research_stage: "code"
+tasks_reviewed: 2
+tasks_cited: 2
+libraries_found: 2
+libraries_relevant: 2
+date_completed: "2026-04-20"
+status: "complete"
+---
 # Research: Code Review of t0008 and t0012
 
-## Objective
+## Task Objective
 
-Identify exactly which functions, constants, and conventions from `t0008_port_modeldb_189347` and
-`t0012_tuning_curve_scoring_loss_library` can be reused for the gabaMOD-swap protocol, and which
-pieces must be written anew. The purpose is to keep the new library asset as thin a refactor over
-the t0008 driver as possible: the cell, mechanisms, HOC sourcing, parameter application, and
-spike-counting tail of `run_one_trial` are all shared; only the per-trial-condition setup and the
-scoring-and-CSV layer change.
+Implement suggestion S-0008-02 by building a new sibling library asset `modeldb_189347_dsgc_gabamod`
+that drives the same NEURON DSGC cell as t0008's `modeldb_189347_dsgc` but uses the Poleg-Polsky &
+Diamond 2016 native protocol — swapping the inhibitory `gabaMOD` scalar between PD (0.33) and ND
+(0.99) — instead of t0008's spatial-rotation proxy. Identify reusable code and surface anything
+new that must be written.
 
-## Background
+## Library Landscape
 
-Suggestion S-0008-02 (raised by t0008's analysis step) flagged that the rotation-proxy DSI of
-**0.316 / 18.1 Hz** falls well below the Poleg-Polsky & Diamond 2016 envelope (DSI 0.70-0.85, peak
-40-80 Hz). The shortfall is not a porting bug — it is the consequence of substituting a spatial
-BIP-coordinate rotation for the paper's native protocol, which holds geometry fixed and instead
-swaps the inhibitory `gabaMOD` scalar between PD (0.33) and ND (0.99). This task implements a new
-sibling library asset that drives the same NEURON cell under that native protocol so the project can
-quote a fair reproduction number.
+Two libraries were found via the library aggregator and both are directly relevant:
 
-## Methodology Review
-
-Reviewed five files in `tasks/t0008_port_modeldb_189347/code/` and four files in
-`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/`. Read the t0008 library
-asset's `details.json` to understand the canonical entry-point layout. No code execution; this is a
-static review.
+* **`modeldb_189347_dsgc`** (version 0.1.0) created by `[t0008]` — the Python-driven port of
+  ModelDB 189347 with NEURON/HOC back-end, 12-angle drifting-bar tuning-curve runner, and envelope
+  scoring. No corrections recorded. Import path: `tasks.t0008_port_modeldb_189347.code.build_cell`
+  for cell-construction helpers and `tasks.t0008_port_modeldb_189347.code.constants` for the
+  canonical paper parameters. Critical for this task — the new library reuses `build_dsgc`,
+  `apply_params`, `read_synapse_coords`, and the spike-counting tail of `run_one_trial`.
+* **`tuning_curve_loss`** created by `[t0012]` — DSI/peak/null/HWHM/RMSE scoring library with a
+  4-metric envelope check. No corrections recorded. Import path:
+  `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss`. Relevant as a reference
+  implementation for the DSI formula and envelope conventions, but the high-level `score()` entry
+  point cannot be invoked on the two-condition CSV produced by this task because its loader's
+  `_validate_angle_grid` requires 12 angles on a 30-degree grid.
 
 ## Key Findings
 
-### Reuse from t0008
+### Cell construction and HOC sourcing are fully reusable
 
-* `build_cell.py:build_dsgc()` — loads `nrnmech.dll`, sources `RGCmodel.hoc` and `dsgc_model.hoc`,
-  places synapses via the HOC `placeBIP()` proc, and returns a fully initialized `h` handle. Reused
-  verbatim by importing from `tasks.t0008_port_modeldb_189347.code.build_cell`.
-* `build_cell.py:read_synapse_coords()` and `apply_params()` — read baseline coords (only needed
-  to assert BIP `locx` does not change across PD/ND trials, per the Risks & Fallbacks section of the
-  task description) and apply per-trial seed plus all canonical paper parameters. The existing
-  `apply_params` already writes `h.gabaMOD = GABA_MOD` (= 0.33). The new driver overrides this
-  Python-side global per condition.
-* `build_cell.py:run_one_trial()` — cannot be reused as-is because it calls
-  `rotate_synapse_coords_in_place()` and `reset_synapse_coords()`. The new driver inlines the
-  spike-counting tail (vector recording, `finitialize` + `continuerun`, threshold-crossing count)
-  and skips the rotation calls.
-* `constants.py` — `TSTOP_MS=1000.0`, `AP_THRESHOLD_MV`, `V_INIT_MV`, `GABA_MOD=0.33`,
-  `N_TRIALS=20` are all reused. Only one new constant is needed: `GABA_MOD_ND = 0.99`. The new
-  library asset will not redefine the canonical paper parameters; it imports them.
-* `paths.py` — the new task's `paths.py` will mirror the t0008 layout (TASK_ROOT, DATA_DIR,
-  RESULTS_DIR, LIBRARY_ASSET_DIR pointing at `assets/library/modeldb_189347_dsgc_gabamod/`). No need
-  to add new global constants.
+`[t0008]` `build_cell.py:build_dsgc()` (47 lines) loads the compiled `nrnmech.dll`, sources
+`RGCmodel.hoc` and `dsgc_model.hoc`, calls `init_sim() / init_active() / update()`, and resets
+celsius/dt/tstop/v_init to the canonical values. The function returns a fully initialized `h` handle
+with all three synapse arrays (`BIPsyn`, `SACinhibsyn`, `SACexcsyn`) populated by the HOC
+`placeBIP()` proc. The new library imports it as-is — no change is needed because the gabaMOD-swap
+protocol uses the same cell, the same mechanisms, and the same synapse layout as the rotation-proxy
+port.
 
-### Reuse from t0012
+### `gabaMOD` is already exposed at the Python level
 
-* `tuning_curve_loss.compute_dsi()` and `compute_peak_hz()` — these operate on the `TuningCurve`
-  dataclass (a 12-angle grid). Cannot be called directly because the gabaMOD-swap protocol produces
-  only 2 conditions, not a 12-angle grid; the loader's `_validate_angle_grid` would reject the new
-  CSV schema. Instead, the new scorer computes DSI by formula:
-  `DSI = (mean_PD - mean_ND) / (mean_PD + mean_ND)` and `peak = mean_PD`.
-* `tuning_curve_loss.envelope.check_envelope()` — could be invoked, but it expects the four-
-  metric envelope (DSI, peak, null, HWHM). The two-point protocol has no null-direction angle and no
-  HWHM. The new scorer implements its own two-point envelope check instead, with thresholds DSI in
-  [0.70, 0.85] and peak in [40, 80] Hz, copied from the canonical published ranges (these are the
-  same numerical bounds used by t0012's `DSI_ENVELOPE` and `PEAK_ENVELOPE_HZ` before t0012 widened
-  them for its own identity test).
-* `score_envelope.py` from t0008 — referenced as a layout template, not imported. The new scorer
-  is small enough to live in a single file (`code/score_two_point.py`).
+`[t0008]` `build_cell.py:apply_params()` writes `h.gabaMOD = GABA_MOD` (= 0.33) on every trial along
+with the other paper parameters. This means the new driver can override `gabaMOD` per condition
+simply by mutating the `h.gabaMOD` global between trials, with no need for a HOC patch. The Risks &
+Fallbacks section of the task description anticipated this might require reaching into each
+`inh_syn` object — that turns out to be unnecessary. The HOC point processes read the global on
+every `placeBIP()` call.
 
-### What must be written
+### The rotation logic must be removed, not just bypassed
 
-1. New library asset folder under
-   `tasks/t0020_port_modeldb_189347_gabamod/assets/library/modeldb_189347_dsgc_gabamod/` with
-   `details.json` (spec_version 2, library_id `modeldb_189347_dsgc_gabamod`, module_paths pointing
-   at the new code/ files) and `description.md` (the canonical description document referenced via
-   `description_path`).
-2. `code/paths.py` — task-local path constants (TASK_ROOT, DATA_DIR, RESULTS_DIR, the new library
-   asset dir, the new tuning_curves CSV path under `data/`, the score_report path).
-3. `code/constants.py` — `GABA_MOD_PD = 0.33` and `GABA_MOD_ND = 0.99`,
-   `N_TRIALS_PER_CONDITION = 20`, the two condition labels `CONDITION_PD = "PD"` and
-   `CONDITION_ND = "ND"`, the two-point envelope bounds (`DSI_MIN`, `DSI_MAX`, `PEAK_MIN_HZ`,
-   `PEAK_MAX_HZ`).
-4. `code/run_gabamod_sweep.py` — top-level driver that builds the DSGC once, loops over
-   `(condition, trial_seed)` pairs, sets `h.gabaMOD` to the condition's value, asserts BIP `locx`
-   did not drift from its baseline, calls `apply_params` + `placeBIP` + `finitialize` +
-   `continuerun`, counts spikes, and writes `data/tuning_curves.csv` with the new schema.
-5. `code/score_two_point.py` — reads the CSV, computes mean firing rate per condition, derives DSI
-   and peak, applies the two-point envelope gate, and writes `results/score_report.json` plus the
-   comparison table fragment for `results_detailed.md`.
-6. `code/generate_charts.py` — bar chart of mean firing rate by condition with per-trial scatter,
-   saved to `results/images/firing_rate_by_condition.png`.
-7. The new library asset's `description.md` — explains the gabaMOD-swap protocol, references t0008
-   as the parent port, lists the new constants, and quotes the entry points.
+`[t0008]` `run_one_trial()` calls `rotate_synapse_coords_in_place()` and `reset_synapse_coords()`
+around the spike-counting body. The new driver inlines the spike- counting body (vector recording,
+`finitialize` + `continuerun`, threshold-crossing count) and omits both rotation calls. To make this
+guarantee explicit and survive future refactors of t0008, the new driver also asserts on every trial
+that `h.RGC.BIPsyn[i].locx == baseline[i].bip_locx_um` for all `i`. If the assertion ever fires, the
+new protocol has been silently re-mixed with the rotation proxy.
 
-### Cross-task import constraint
+### t0012 envelope numbers were widened; use literature values directly
 
-Per `CLAUDE.md` rule "tasks must not import from other tasks' `code/` directories ... the only
-cross-task import mechanism is libraries (registered in `assets/library/`)". The t0008
-`build_cell.py` is registered in t0008's library asset (`module_paths` in `details.json` lists
-`code/build_cell.py`), so importing it as `tasks.t0008_port_modeldb_189347.code.build_cell` is
-allowed — it goes through the registered library. The same applies to t0012's `tuning_curve_loss`
-package.
+`[t0012]` `envelope.py` documents that `DSI_ENVELOPE = (0.7, 0.9)` and
+`PEAK_ENVELOPE_HZ = (30.0, 80.0)` are *widened* from the literature `(0.7, 0.85)` and `(40, 80)` so
+that t0012's identity test `score(target, target).passes_envelope is True` holds on the canonical
+t0004 target. This task's two-point gate uses the unwidened literature values `DSI in [0.70, 0.85]`
+and `peak in [40, 80] Hz` directly, matching the Poleg-Polsky paper's quoted ranges. This decision
+is documented in the new library's `description.md`.
 
-## Recommended Approach
+### t0012 loader cannot consume the two-point CSV
 
-* Build a single new library asset `modeldb_189347_dsgc_gabamod` whose code is a thin wrapper over
-  t0008's `build_dsgc()` + `apply_params()` + spike-counting tail. Write the new driver
-  (`run_gabamod_sweep.py`), the new scorer (`score_two_point.py`), and the new charts
-  (`generate_charts.py`) under `tasks/t0020_port_modeldb_189347_gabamod/code/`.
-* Do not vendor a second copy of the HOC/MOD sources. The t0008 library asset's `sources/` directory
-  and compiled `nrnmech.dll` under t0008's `build/` are reused via the path constants imported from
-  t0008's `paths.py` (specifically, `MODELDB_BUILD_DIR` and `MODELDB_SOURCES_DIR` via the chain of
-  imports inside t0008's `build_cell`).
-* Compute DSI and peak in the new scorer by direct formula, avoiding the t0012 `score()` entry point
-  because its loader requires a 12-angle grid that the two-point protocol does not produce. The DSI
-  formula `(mean_PD - mean_ND) / (mean_PD + mean_ND)` is identical to what t0012's `compute_dsi`
-  does internally.
-* Add an explicit assertion in the driver that `h.RGC.BIPsyn[i].locx` equals
-  `baseline[i].bip_locx_um` for every synapse on every trial — this guards against any latent
-  reuse of the rotation logic if the imports drift.
+`[t0012]` `loader.py:_validate_angle_grid` requires exactly 12 angles with 30-degree spacing and
+raises `ValueError` otherwise. The new CSV has 2 rows of `(condition, trial_seed, firing_rate_hz)`
+aggregated to 2 means; the loader would reject it on column-name detection alone (`condition` is not
+in any supported schema). The new scorer therefore reads the CSV with `pandas.read_csv` directly and
+computes DSI by formula `(mean_PD - mean_ND) / (mean_PD + mean_ND)` — the same formula t0012's
+`compute_dsi` evaluates internally on the 12-angle grid.
 
-## References
+## Reusable Code and Assets
 
-* `tasks/t0008_port_modeldb_189347/code/build_cell.py` — `build_dsgc`, `apply_params`,
-  `run_one_trial`, `read_synapse_coords`, `rotate_synapse_coords_in_place`, `reset_synapse_coords`.
-* `tasks/t0008_port_modeldb_189347/code/run_tuning_curve.py` — top-level driver template.
-* `tasks/t0008_port_modeldb_189347/code/score_envelope.py` — scoring layer template.
-* `tasks/t0008_port_modeldb_189347/code/constants.py` — `GABA_MOD`, `TSTOP_MS`, `AP_THRESHOLD_MV`,
-  `N_TRIALS`.
-* `tasks/t0008_port_modeldb_189347/code/paths.py` — `MODELDB_BUILD_DIR`, `MODELDB_SOURCES_DIR`,
-  `DATA_DIR`, `RESULTS_DIR` layout.
-* `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/details.json` — library
-  asset layout to mirror.
-* `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/__init__.py` — public API
-  of the scorer library.
-* `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/envelope.py` —
-  `DSI_ENVELOPE`, `PEAK_ENVELOPE_HZ`, `check_envelope` reference; not directly invoked by the new
-  scorer because the two-point protocol has no null/HWHM.
-* `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/loader.py` —
-  `_validate_angle_grid` confirms the 12-angle restriction that prevents direct use of the scorer's
-  CSV path on the two-point CSV.
-* `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/metrics.py` —
-  `compute_dsi`, `compute_peak_hz` reference formulas (re-implemented inline in the new scorer for
-  the two-point case).
+* **Source**: `tasks/t0008_port_modeldb_189347/code/build_cell.py` (~360 lines). **What it does**:
+  builds the DSGC cell and exposes per-trial helpers. **Reuse method**: import via library
+  (registered in `modeldb_189347_dsgc` `details.json` `module_paths`). **Function signatures**:
+  * `build_dsgc() -> h_handle` — sources HOC and returns initialized NEURON handle.
+  * `read_synapse_coords(h) -> list[SynapseCoords]` — returns BIP/SACinhib/SACexc baseline coords.
+  * `apply_params(h, *, seed: int) -> None` — applies canonical paper parameters and seeds the rNG
+    streams.
+  * `get_cell_summary(h) -> CellSummary` — returns `numsyn` and section counts for sanity logging.
+    **Adaptation needed**: none for `build_dsgc`/`read_synapse_coords`/`get_cell_summary`. For
+    `apply_params`, the new driver calls it as-is then overrides `h.gabaMOD` to the
+    condition-specific value (PD=0.33 or ND=0.99) before `placeBIP()`. **Line count**: ~360 lines
+    imported wholesale, no copy.
+* **Source**: `tasks/t0008_port_modeldb_189347/code/constants.py`. **What it does**: canonical paper
+  parameters (TSTOP_MS, V_INIT_MV, AP_THRESHOLD_MV, GABA_MOD, ACH_MOD, etc.). **Reuse method**:
+  import via library. **Adaptation needed**: none. The new task's own `constants.py` adds two values
+  (`GABA_MOD_ND = 0.99` and `N_TRIALS_PER_CONDITION = 20`) and the two-point envelope bounds,
+  importing the rest from t0008.
+* **Source**:
+  `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/metrics.py:compute_dsi`.
+  **What it does**: reference DSI formula on a 12-angle TuningCurve. **Reuse method**: not imported
+  (CSV schema mismatch). Used as a formula reference; the new scorer re-implements
+  `(mean_PD - mean_ND) / (mean_PD + mean_ND)` inline (5 lines).
+
+## Lessons Learned
+
+* `[t0008]` reached **DSI 0.316 / peak 18.1 Hz** under the rotation-proxy protocol — well below
+  the published envelope. The post-mortem (recorded in suggestion S-0008-02) attributes this to the
+  rotation substituting for the native gabaMOD swap; the cell, mechanisms, and parameters are
+  otherwise correct. Lesson: when a port misses an envelope, distinguish between a porting bug (HOC
+  sourcing, parameter mismatch) and a protocol mismatch (the wrong stimulus is being applied). The
+  current task is the protocol fix.
+* `[t0008]` `apply_params` re-seeds the RNG streams via `seed2` before every trial. Lesson:
+  trial-level seed control must happen *before* `placeBIP()` so the synaptic-noise streams pick it
+  up; the new driver follows the same ordering.
+* `[t0012]` had to widen its envelope to make the identity test pass on the canonical target.
+  Lesson: when borrowing envelope thresholds, distinguish between literature values and
+  test-conformant values; this task uses literature values because the test does not need to pass
+  the t0004 target.
+
+## Recommendations for This Task
+
+1. **Import `build_dsgc`, `read_synapse_coords`, `apply_params`, and `get_cell_summary` from
+   `[t0008]`** via the registered library path. Do not copy them.
+2. **Inline the spike-counting tail** of `run_one_trial` (vector recording, finitialize +
+   continuerun, threshold-crossing count) into the new driver's per-trial body. Skip the rotation
+   calls.
+3. **Set `h.gabaMOD` per-condition immediately after `apply_params(h, seed=...)`** and before
+   `placeBIP()` so the inhibitory point processes pick up the new scalar. Use 0.33 for PD, 0.99 for
+   ND.
+4. **Add a per-trial assertion** `h.RGC.BIPsyn[i].locx == baseline[i].bip_locx_um` to guarantee the
+   rotation logic is not silently re-engaged.
+5. **Compute DSI and peak by direct formula** in the new scorer; do not attempt to feed the
+   two-condition CSV through `[t0012]` `score()`. Use literature envelope values DSI in
+   `[0.70, 0.85]` and peak in `[40, 80]` Hz.
+6. **Keep the new library asset's `details.json`** structurally identical to `[t0008]`'s
+   (spec_version 2, module_paths, entry_points), substituting the new module names.
+7. **Run 20 trials per condition** (40 total) for the canonical sweep — matches `[t0008]`'s
+   `N_TRIALS = 20` and gives a per-condition standard error small enough to make the DSI estimate
+   stable.
+
+## Task Index
+
+### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DSGC)
+* **Status**: completed
+* **Relevance**: Provides the source HOC/MOD layout, the `build_dsgc` / `apply_params` /
+  `run_one_trial` helpers, the canonical paper parameters, and the rotation-proxy baseline numbers
+  used in this task's comparison note.
+
+### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Build the tuning_curve_loss scoring library
+* **Status**: completed
+* **Relevance**: Provides the reference DSI/peak/null/HWHM formulas and the four-metric envelope
+  conventions. The new scorer borrows the DSI formula but cannot use the high-level `score()` entry
+  point because the two-point CSV does not satisfy the 12-angle loader contract.
