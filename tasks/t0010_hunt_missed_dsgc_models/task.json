@@ -5,11 +5,11 @@
   "name": "Hunt DSGC compartmental models missed by prior survey; port runnable ones",
   "short_description": "Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0008_port_modeldb_189347"
   ],
-  "start_time": null,
+  "start_time": "2026-04-20T12:25:27Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1
