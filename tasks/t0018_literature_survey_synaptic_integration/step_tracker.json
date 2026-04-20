@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for synaptic-integration papers and list them under Discovered Papers.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T11:31:44Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T11:40:40Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
