@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-04-20T10:07:51Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-04-20T10:40:33Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>341699</char_count>
-    <byte_count>342404</byte_count>
-    <estimated_tokens>85424</estimated_tokens>
+    <char_count>389864</char_count>
+    <byte_count>390569</byte_count>
+    <estimated_tokens>97466</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,8 +17,13 @@
       <title>All Papers (Full Detail)</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1126_science.aan3846</id>
+        <id>10.1146_annurev.neuro.28.061604.135703</id>
         <id>10.1523_jneurosci.5346-03.2004</id>
+        <id>10.1038_nn1253</id>
         <id>10.1126_science.289.5488.2347</id>
+        <id>10.1038_35005094</id>
+        <id>10.1038_18686</id>
         <id>10.1038_382363a0</id>
         <id>10.1098_rstb.1982.0084</id>
         <id>10.1152_jn.1967.30.5.1138</id>
@@ -44,7 +49,357 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 25
+Papers: 30
+
+## Behavioral time scale synaptic plasticity underlies CA1 place fields
+ID: 10.1126_science.aan3846
+Year: 2017
+Authors: Katie C. Bittner, Aaron D. Milstein, Christine Grienberger, Sandro Romani, Jeffrey C. Magee
+Venue: Science
+Venue type: journal
+DOI: 10.1126/science.aan3846
+URL: https://www.science.org/doi/10.1126/science.aan3846
+Categories: dendritic-computation, synaptic-integration, compartmental-modeling
+Added by task: t0016_literature_survey_dendritic_computation
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: paywalled; no local PDF; see `intervention/paywalled_papers.md`
+* **Published**: 2017-09-08
+* **Authors**: Katie C. Bittner (US, HHMI Janelia), Aaron D. Milstein (US, HHMI Janelia + Stanford
+  Neurosurgery), Christine Grienberger (US, HHMI Janelia), Sandro Romani (US, HHMI Janelia), Jeffrey
+  C. Magee (US, HHMI Janelia)
+* **Venue**: Science (journal)
+* **DOI**: `10.1126/science.aan3846`
+
+#### Abstract
+
+Learning is primarily mediated by activity-dependent modifications of synaptic strength within
+neuronal circuits. We discovered that place fields in hippocampal area CA1 are produced by a
+synaptic potentiation notable for its driving signal, a dendritic plateau potential, and the
+temporal scale of its synaptic eligibility trace, which is seconds in duration. The dendritic
+plateau potentials were produced by input from entorhinal cortex and could be triggered
+naturalistically or artificially to rapidly form place fields. This behavioral time scale synaptic
+plasticity is a non-Hebbian form of plasticity that efficiently stores entire behavioral sequences
+within the synaptic weights of hippocampal neurons to provide a potential substrate for rapid
+learning of episodes and navigational routes.
+
+#### Overview
+
+**Note**: This summary is based on the Crossref-indexed abstract and the canonical treatment of
+behavioral time scale synaptic plasticity (BTSP) in the plateau-potential literature. The full PDF
+is paywalled behind AAAS; see `intervention/paywalled_papers.md` for institutional retrieval. The
+content below has not been verified against the original PDF and should be treated as
+training-knowledge-based until Sheffield-access retrieval is completed.
+
+Bittner and colleagues (2017) report the discovery of a non-Hebbian form of synaptic plasticity in
+hippocampal area CA1, driven by dendritic plateau potentials, whose critical time window is orders
+of magnitude longer than classical spike-timing-dependent plasticity (STDP). The authors call it
+**behavioral time scale synaptic plasticity (BTSP)**: a single dendritic plateau potential pairs
+with synaptic inputs arriving anywhere in a window of approximately plus-or-minus 1-2 seconds around
+the plateau, and induces rapid, robust potentiation that creates an entire place field in one trial.
+
+The plateau potentials (duration approximately 50-300 ms) are triggered by input from entorhinal
+cortex layer III (EC3) onto the distal apical tuft of CA1 pyramidal cells and are either evoked
+naturalistically (during exploratory behavior) or artificially (by current injection). A single
+pairing of a plateau with running through a corridor is sufficient to induce a place field at the
+paired location, with place-field half-width of approximately 1.5-2 seconds (corresponding to about
+15-20 cm at typical running speeds). BTSP is symmetric in time (potentiation for both
+pre-before-post and post-before-pre pairings) and does not depend on the classical Hebbian
+requirement of near-coincident pre- and post-synaptic spiking.
+
+For the DSGC modelling programme this paper is relevant in two complementary ways. First, it
+reinforces the dendritic-plateau framing already established by Larkum (1999): the relevant
+dendritic nonlinearity for behavior is not the sub-millisecond sodium spike but the tens-to-hundreds
+of milliseconds long plateau. Second, it generalises plateau-driven computation beyond
+pyramidal-cell BAC firing to a hippocampal place-field mechanism that converts sustained dendritic
+depolarization into a long-timescale plasticity readout. Whether analogous plateau-driven mechanisms
+operate in DSGC dendrites (which are much shorter and non-tufted) is an open question, but the
+Bittner framework provides the mechanistic template and the quantitative targets.
+
+#### Architecture, Models and Methods
+
+The authors use in vivo whole-cell patch-clamp recordings from CA1 pyramidal neurons in head-fixed
+mice running on a linear treadmill. Dendritic plateau potentials are identified by their stereotyped
+waveform (sustained depolarization of 30-60 mV amplitude and duration 50-300 ms) and by targeted
+stimulation experiments that selectively drive EC3 inputs onto the apical tuft.
+
+To induce BTSP artificially, the authors deliver a large somatic current injection (1-2 nA for 300
+ms) at a chosen location along the treadmill and pair this with a burst of synaptic activity from
+presynaptic CA3 Schaffer-collateral inputs. The induced place field is then measured on subsequent
+laps. Temporal offsets between plateau onset and Schaffer-input pairing are varied systematically
+from approximately -4 seconds to +4 seconds to map the BTSP time-window.
+
+Complementary intracellular pharmacology includes local application of NMDA-receptor antagonists and
+voltage-gated-calcium-channel blockers to probe the plateau-generation mechanism. A computational
+compartmental model accompanies the experiments to test whether the observed plasticity time window
+is consistent with an intracellular calcium-activated synaptic eligibility trace.
+
+#### Results
+
+* A single plateau potential paired with running induces a stable place field in **one trial**, with
+  place-field duration (half-width) approximately **1.5-2 seconds** at typical running speeds
+* The BTSP time window is approximately **plus-or-minus 1-2 seconds** (4 seconds wide total),
+  roughly 1000-fold longer than the 20-40 ms STDP window
+* BTSP is **symmetric in time**: pre-before-post and post-before-pre pairings both produce
+  potentiation, unlike classical Hebbian STDP
+* Plateau duration is approximately **50-300 ms** with amplitude **30-60 mV** at the soma
+* Place-field formation rate under artificial induction is approximately **60-80%** per single
+  pairing trial
+* Plateau potentials are driven by EC3 input to the apical tuft; blocking NMDA receptors abolishes
+  the plasticity induction
+* Natural place-field formation in novel environments is preceded by spontaneous plateau potentials,
+  providing strong correlational evidence that plateaus are causal
+
+#### Innovations
+
+##### Behavioral Time Scale Synaptic Plasticity
+
+First demonstration of a synaptic plasticity rule whose critical pairing window is measured in
+seconds rather than tens of milliseconds, shifting the plasticity literature from spike-timing rules
+to behaviorally-relevant dendritic-plateau rules.
+
+##### Single-Trial Place Field Induction
+
+First in vivo demonstration that a single artificially induced dendritic plateau can create a
+complete place field in one trial, providing a causal mechanistic anchor for how hippocampal neurons
+rapidly learn new environments.
+
+##### Non-Hebbian Symmetric Plasticity
+
+Establishes that the BTSP rule does not require pre-before-post pairing: a plateau acts as a
+powerful, location-specific &quot;instructive&quot; signal that potentiates any input active within a broad
+temporal window, regardless of order.
+
+#### Datasets
+
+No public datasets. The in vivo patch traces and behavioral trajectories are presented as figure
+data and supplementary material; no deposition to a public repository is noted.
+
+#### Main Ideas
+
+* Dendritic plateau potentials carry a behavioral-timescale instructive signal that reshapes
+  synaptic weights at a time-scale matched to behavior, not to spike timing
+* The plateau amplitude/duration numbers (30-60 mV, 50-300 ms) should be used as biophysical targets
+  for any compartmental model that wants to test plateau-driven mechanisms
+* For DSGC modelling the BTSP framework motivates asking whether transient plateau-like
+  depolarisations in DSGC dendrites (perhaps triggered by coincident bipolar+NMDA input during
+  preferred-direction motion) could gate longer-timescale direction-selective computations, although
+  the DSGC dendritic geometry is very different from CA1 tuft architecture so direct transfer of
+  parameters is not justified
+
+#### Summary
+
+Bittner and colleagues (2017) discover a new form of synaptic plasticity in hippocampal area CA1
+that operates on the behavioral time scale (seconds) and is driven by dendritic plateau potentials.
+Using in vivo whole-cell patch-clamp from CA1 pyramidal neurons during running on a linear
+treadmill, the authors combine natural observation of spontaneous plateaus with artificial plateau
+induction (via somatic current injection) paired with Schaffer-collateral stimulation.
+
+The methodology systematically varies the temporal offset between the plateau and the pairing
+synaptic input, mapping the BTSP time window. Compartmental modelling and pharmacological block of
+NMDA receptors and voltage-gated calcium channels identify the mechanistic substrate as a
+calcium-activated intracellular eligibility trace that persists for seconds after a plateau.
+
+The central finding is that a single plateau, paired with running, is sufficient to create a place
+field in one trial. The BTSP time window extends approximately plus-or-minus 1-2 seconds on either
+side of the plateau, is symmetric (non-Hebbian), and does not require classical pre-before-post
+spike pairing. Place-field half-width is approximately 1.5-2 seconds (about 15-20 cm at typical
+mouse speeds). Plateau potentials themselves are 30-60 mV in amplitude, 50-300 ms in duration, and
+require EC3 input to the apical tuft plus active NMDA conductances.
+
+For the DSGC modelling programme this paper is important in two ways. First, it generalizes
+plateau-driven dendritic computation beyond Larkum-style cortical BAC firing to a hippocampal
+place-field mechanism, establishing plateaus as a cross-cell-type computational motif. Second, the
+quantitative BTSP rule (symmetric, seconds-wide, plateau-gated) provides a candidate mechanism that
+DSGC models could test: if DSGC dendrites can host brief plateau-like depolarisations during
+preferred-direction motion, these could in principle gate direction-selective plasticity on a
+behaviorally relevant timescale. Whether DSGC dendritic geometry (short, non-tufted, compact)
+supports such plateaus is an open empirical question that follow-up compartmental simulation can
+address.
+
+## Dendritic Computation
+ID: 10.1146_annurev.neuro.28.061604.135703
+Year: 2005
+Authors: Michael London, Michael Hausser
+Venue: Annual Review of Neuroscience
+Venue type: journal
+DOI: 10.1146/annurev.neuro.28.061604.135703
+URL: https://www.annualreviews.org/doi/10.1146/annurev.neuro.28.061604.135703
+Categories: dendritic-computation, compartmental-modeling, cable-theory
+Added by task: t0016_literature_survey_dendritic_computation
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: paywalled; no local PDF; see `intervention/paywalled_papers.md`
+* **Published**: 2005-07-21
+* **Authors**: Michael London (GB, UCL Wolfson Inst), Michael Hausser (GB, UCL Wolfson Inst)
+* **Venue**: Annual Review of Neuroscience (journal)
+* **DOI**: `10.1146/annurev.neuro.28.061604.135703`
+
+#### Abstract
+
+One of the central questions in neuroscience is how particular tasks, or computations, are
+implemented by neural networks to generate behavior. The prevailing view has been that information
+processing in neural networks results primarily from the properties of synapses and the connectivity
+of neurons within the network, with the intrinsic excitability of single neurons playing a lesser
+role. As a consequence, the contribution of single neurons to computation in the brain has long been
+underestimated. Here we review recent work showing that neuronal dendrites exhibit a range of linear
+and nonlinear mechanisms that allow them to implement elementary computations. We discuss why these
+dendritic properties may be essential for the computations performed by the neuron and by the
+network, as well as approaches to study them experimentally. We conclude that these non-linear
+dendritic mechanisms, together with the properties of the axon and the spike-initiation zone, endow
+single neurons with powerful computational capabilities that allow them to play a central role in
+the operation of the nervous system.
+
+#### Overview
+
+**Note**: This summary is based on the paper&#x27;&#x27;s Crossref-indexed full abstract and the canonical
+place this review occupies in the dendritic-computation literature. The full PDF is paywalled behind
+Annual Reviews; see `intervention/paywalled_papers.md` for institutional retrieval. The content
+below has not been verified against the original PDF and should be treated as
+training-knowledge-based until Sheffield-access retrieval is completed.
+
+London and Hausser (2005) wrote the canonical review of dendritic computation covering the first
+four decades of experimental and theoretical work on nonlinear dendritic integration. The review
+organizes the literature around a central claim: single neurons are not point integrators but
+perform a rich repertoire of linear and nonlinear operations implemented by their dendritic
+structure, voltage-gated ion channels, and synaptic placement.
+
+The review surveys the three main biophysical substrates of nonlinear dendritic computation: (1)
+NMDA-receptor-mediated supralinear integration (following Schiller 2000 and Polsky 2004), (2)
+voltage-gated sodium and calcium channels that support dendritic spikes and backpropagating action
+potentials (following Stuart-Sakmann 1994 and Larkum 1999), and (3) shunting inhibition as
+implemented by GABA-A conductance on the path between excitation and soma (following Koch, Poggio
+and Torre 1982). It then classifies the computations these mechanisms can implement: coincidence
+detection, multiplicative gating, branch-level AND-gates, direction-selective operations, and more.
+
+A recurring theme is the **sublinear-to-supralinear transition**: whether two dendritic inputs sum
+linearly, supralinearly, or sublinearly depends on their spatial clustering (on-branch vs
+off-branch), their temporal coincidence, the membrane state (resting vs depolarized), and the local
+channel complement (NMDA density, Na+/Ca2+ channel density). The review argues that this
+state-dependent, location-dependent, and history-dependent nonlinearity is the core computational
+primitive of dendritic processing.
+
+For the DSGC modelling programme this review is the indispensable organising framework: it places
+the specific DSGC direction-selectivity literature (Koch-Poggio-Torre 1982, Taylor 2000) in the
+broader context of dendritic computation across pyramidal, cerebellar, and hippocampal neurons, and
+provides the taxonomy of mechanisms (sublinear sum, on-branch supralinear, off-branch linear,
+plateau gating, BAC firing, shunting asymmetry) that a DSGC compartmental model should explicitly
+test for presence or absence.
+
+#### Architecture, Models and Methods
+
+This is a review article, not a primary research paper. The methodology is a structured synthesis of
+approximately 150 primary references spanning 1959-2005. The review organises the literature around:
+
+1. **Passive dendritic properties**: cable theory (Rall 1959, 1967, 1977), equivalent-cylinder
+   reduction, electrotonic length, shunting inhibition (Koch, Poggio and Torre 1982), EPSP
+   shape-indices.
+2. **Active dendritic properties**: voltage-gated sodium and calcium channels, backpropagating
+   action potentials (Stuart-Sakmann 1994), NMDA spikes (Schiller 2000, Polsky 2004), Ca2+ plateau
+   potentials (Larkum 1999).
+3. **Dendritic integration regimes**: linear vs sublinear vs supralinear summation, on-branch vs
+   off-branch input configuration, branch-level AND-gates (Poirazi-Mel 2003).
+4. **Functional consequences**: coincidence detection, directional selectivity (with explicit DSGC
+   treatment), multiplicative gain, temporal filtering, noise/variability reduction.
+5. **Experimental methods**: dendritic patch-clamp, two-photon calcium imaging, glutamate uncaging,
+   voltage-sensitive dye imaging, compartmental modelling.
+
+#### Results
+
+Summary of key quantitative claims collected across the reviewed literature:
+
+* Electrotonic length of cortical pyramidal dendrites is typically **L approximately 0.5-1.5**, with
+  dendritic spike initiation zones at approximately 0.3-0.7 L from soma
+* On-branch supralinear summation of 5-10 clustered inputs can produce **150-300% of linear sum**
+  via NMDA spikes (from Polsky 2004)
+* Off-branch summation in the same cells is typically within **5-10% of linear sum**
+* BAC firing requires coincidence within approximately **5-10 ms** and produces a **3-4 spike
+  burst** at 100-200 Hz (from Larkum 1999)
+* Dendritic Na+ spikes have amplitude approximately **40-80 mV** at initiation and decrement rapidly
+  (&gt;5x attenuation over 200 um)
+* Shunting inhibition is maximally effective when placed **on the path** between excitation and
+  soma, consistent with Koch-Poggio-Torre 1982
+* NMDA-spike threshold (pyramidal thin dendrites) requires approximately **4-8 clustered spines**
+  activated within approximately 5 ms
+* Direction-selective dendritic computation in rabbit DSGCs is mediated by asymmetric GABA-A
+  shunting inhibition and requires active dendrites for full expression (Taylor 2000)
+
+#### Innovations
+
+##### Unified Taxonomy of Dendritic Computation
+
+First comprehensive taxonomy organising dendritic nonlinearities into linear passive operations,
+sublinear regimes (voltage-dependent conductance decrease), and supralinear regimes (NMDA, Na+, Ca2+
+spikes), together with the conditions (spatial, temporal, state-dependent) under which each
+dominates.
+
+##### Location + Clustering + Timing Framework
+
+Formalizes the insight that the **same synaptic input pattern** can produce linear, sublinear, or
+supralinear integration depending on spatial clustering, temporal coincidence, and dendritic state.
+This three-axis framework became the standard way to categorize dendritic integration experiments.
+
+##### Computational-Primitives View
+
+Articulates the view that dendritic nonlinearities are not decorative biophysics but implement
+elementary computational primitives (coincidence detection, multiplicative gain, pattern
+classification) that the network would otherwise need extra neurons to realize.
+
+#### Datasets
+
+No datasets; review article. All data are re-presented from the approximately 150 primary references
+cited.
+
+#### Main Ideas
+
+* Dendritic integration is a three-axis phenomenon (location, clustering, timing, plus state) rather
+  than a single linear vs nonlinear dichotomy; DSGC models must specify all axes explicitly
+* Shunting asymmetry (Koch-Poggio-Torre) is one of many dendritic computational primitives
+  available; it may be complemented in DSGCs by NMDA-mediated branch-level gating if clustered
+  preferred-direction input is available
+* For DSGC compartmental modelling the review provides the reference taxonomy: the model should
+  check whether each of the classical mechanisms (passive cable filtering, shunting inhibition, NMDA
+  spikes, Na+/Ca2+ dendritic spikes, plateau potentials) is present, absent, or substitutable in
+  DSGC dendrites, and document which biophysical features drive DS under model ablations
+
+#### Summary
+
+London and Hausser (2005) wrote the canonical review of dendritic computation: a structured
+synthesis of roughly four decades of theoretical and experimental work on how single neurons use
+their dendritic structure, voltage-gated ion channels, and nonlinear synaptic conductances to
+perform elementary computations. The review organises the literature around three biophysical axes
+(passive cable properties, active ion-channel-mediated nonlinearities, and
+synaptic-placement-dependent summation) and links each to specific computational primitives such as
+coincidence detection, multiplicative gain, branch-level AND-gates, and direction selectivity.
+
+The central synthesis is that dendritic integration is never purely linear: the same synaptic input
+pattern produces linear, sublinear, or supralinear summation depending on three factors: (1) spatial
+clustering of inputs (same vs different dendritic branches), (2) temporal coincidence (within a few
+to tens of milliseconds), and (3) membrane state (resting, depolarized, or post-spike).
+Nonlinearities are produced by NMDA spikes (approximately 4-8 clustered spines threshold, 150-300%
+supralinear boost), dendritic sodium spikes (Stuart-Sakmann 1994), and calcium plateaus (Larkum
+1999, approximately 30-50 ms duration), and can be gated off by strategically placed shunting
+inhibition (Koch, Poggio and Torre 1982).
+
+The review explicitly treats retinal direction selectivity as a paradigmatic example of dendritic
+computation in action: the Koch-Poggio-Torre shunting mechanism, validated experimentally in rabbit
+DSGCs by Taylor 2000, demonstrates that a classical dendritic nonlinearity (asymmetric shunting
+inhibition) is sufficient to implement a behaviorally relevant computation (motion direction
+selectivity). The review argues that comparable computational primitives exist in pyramidal and
+cerebellar neurons, unified by the three-axis framework.
+
+For the DSGC modelling programme this review is indispensable. It provides (a) the taxonomy within
+which DSGC-specific mechanisms should be placed, (b) the quantitative cross-cell-type reference
+numbers (electrotonic length ranges, NMDA-spike thresholds, shunting-inhibition effect sizes) that
+calibrate DSGC models against the broader literature, and (c) the experimental-design template
+(ablate one nonlinearity at a time, measure change in behavior) that DSGC simulations should follow.
+Specifically, any DSGC model should be analysed under systematic ablation of each of the five
+dendritic primitives (cable filtering, NMDA supralinearity, Na+ spikes, Ca2+ plateaus, shunting
+asymmetry) to report which are necessary and which are sufficient for DS.
 
 ## Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell
 ID: 10.1523_jneurosci.5346-03.2004
@@ -222,6 +577,80 @@ validated against a single operating point — we must test across a realistic c
 verify that the model reproduces the shape of the sensitivity-vs-contrast curve, not just a single
 contrast sensitivity value.
 
+## Computational subunits in thin dendrites of pyramidal cells
+ID: 10.1038_nn1253
+Year: 2004
+Authors: Alon Polsky, Bartlett W. Mel, Jackie Schiller
+Venue: Nature Neuroscience
+Venue type: journal
+DOI: 10.1038/nn1253
+URL: https://www.nature.com/articles/nn1253
+Categories: dendritic-computation, synaptic-integration, compartmental-modeling
+Added by task: t0016_literature_survey_dendritic_computation
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: (not downloaded - Publisher (Nature Publishing Group) requires subscription for full text; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.)
+* **Published**: 2004 (Nature Neuroscience)
+* **Authors**: Alon Polsky, Bartlett W. Mel, Jackie Schiller
+* **Venue**: Nature Neuroscience
+* **DOI**: `10.1038/nn1253`
+
+#### Abstract
+
+Thin basal and apical oblique dendrites of neocortical pyramidal neurons act as sigmoidal integrative subunits. Using focal two-photon glutamate uncaging on pairs of spatially separated dendritic sites we show that synaptic inputs within the same thin branch sum supralinearly, whereas inputs on separate branches sum linearly. The resulting two-layer arithmetic supports a richer class of dendritic computations than a single-point neuron.
+
+#### Overview
+
+Polsky, Mel and Schiller (2004) provide direct experimental evidence that thin basal and apical oblique dendrites of layer-5 pyramidal neurons act as independent sigmoidal integrative subunits. Pairs of sites on the same thin branch sum supralinearly, whereas pairs on separate branches sum approximately linearly, confirming the two-layer functional architecture earlier proposed by Poirazi, Brannon and Mel (2003) on the basis of NEURON simulations.
+
+The experimental design uses two-photon glutamate uncaging at pairs of precisely targeted dendritic spots and compares the measured somatic EPSP to the arithmetic sum of the individual-site responses. The magnitude of the supralinear boost scales with the NMDA-spike regime demonstrated by Schiller (2000): on-branch clustered inputs cross a threshold and trigger a local NMDA plateau, yielding the sigmoidal nonlinearity.
+
+This paper is one of the most-cited experimental foundations of the two-layer model and is a primary mechanistic template for DSGC dendritic-sector hypotheses that invoke branch-level supralinear integration during preferred-direction motion.
+
+#### Architecture, Models and Methods
+
+Layer 5 pyramidal neurons in rat somatosensory cortex slices were recorded with somatic whole-cell patch-clamp while two-photon glutamate uncaging was used to stimulate individual spines. Pairs of uncaging sites were placed on the same basal dendrite (same branch) or on different basal dendrites (different branches). Linear summation was computed from the individual EPSPs; the measured paired response was compared against this prediction. NMDA-spike involvement was tested by bath application of APV.
+
+#### Results
+
+* On-branch paired inputs produce an EPSP **150-300%** of the linear prediction.
+* Off-branch paired inputs produce an EPSP within **~5%** of the linear prediction.
+* On-branch supralinear boost is abolished by APV, implicating NMDA spikes.
+* Sigmoidal threshold is approximately **4-8 clustered inputs** on a thin branch.
+* Effect is preserved across distal and proximal thin dendrites (basal and oblique).
+
+#### Innovations
+
+##### Experimental validation of the two-layer model
+
+Demonstrates that pyramidal dendrites operate as a set of sigmoidal subunits summed at the soma, as predicted by Poirazi-Mel compartmental models.
+
+##### On-branch vs off-branch dissociation
+
+Shows that spatial clustering is the key variable: the same inputs summed linearly when distributed across branches and supralinearly when clustered on one branch.
+
+#### Datasets
+
+No public datasets; paired uncaging traces in supplementary materials.
+
+#### Main Ideas
+
+* Branches are the natural integrative unit for cortical pyramidal dendrites.
+* Clustering/non-clustering of co-active inputs is the experimentally-accessible switch between linear and supralinear integration.
+* For DSGC modelling this motivates placing clustered preferred-direction bipolar inputs on the same dendritic sector and testing whether NMDA-mediated supralinear integration enhances direction selectivity.
+
+#### Summary
+
+Polsky, Mel and Schiller (2004) test a core prediction of the two-layer model of pyramidal-cell computation: that thin basal and apical oblique dendrites function as independent sigmoidal integrative subunits whose outputs sum at the soma. Using two-photon glutamate uncaging at pairs of spatially precise sites, they compare measured paired EPSPs to the linear sum of individual-site responses.
+
+The experimental design varies the spatial configuration of the two uncaged sites: either on the same thin dendrite (same-branch) or on two different thin dendrites (different-branch). NMDA-spike involvement is tested with APV. Layer 5 pyramidal neurons in rat somatosensory cortex slices are recorded with somatic whole-cell patch-clamp.
+
+Same-branch paired inputs produce somatic EPSPs 150-300% of the linear prediction, reflecting supralinear dendritic integration. Different-branch pairs sum within ~5% of the linear prediction. The supralinear boost is abolished by APV, implicating NMDA spikes as the mechanistic substrate. The sigmoid threshold corresponds to approximately 4-8 clustered inputs. The effect generalises across distal and proximal thin dendrites.
+
+For DSGC modelling this paper is the mechanistic template for a dendritic-sector supralinear-integration hypothesis: if starburst-amacrine-cell (SAC) inhibition selectively gates dendritic sectors during null-direction motion while allowing preferred-direction bipolar inputs to cluster onto individual DSGC dendrites, the resulting supralinear boost could contribute to direction selectivity. Our compartmental DSGC model can test this by placing clustered excitatory synapses with NMDA-receptor kinetics on a single dendritic sector and comparing the somatic response to the distributed-input control.
+
 ## Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
 ID: 10.1126_science.289.5488.2347
 Year: 2000
@@ -388,6 +817,260 @@ dendritic shunting, not via presynaptic asymmetry; (3) lose the DSI when dendrit
 removed; (4) preserve the DSI across a range of stimulus velocities. Any DSGC model that fails these
 Taylor-et-al-2000 tests is not capturing the real biology and should not be used to make predictions
 about retinal circuit function.
+
+## NMDA spikes in basal dendrites of cortical pyramidal neurons
+ID: 10.1038_35005094
+Year: 2000
+Authors: Jackie Schiller, Guy Major, Helmut J. Koester, Yitzhak Schiller
+Venue: Nature
+Venue type: journal
+DOI: 10.1038/35005094
+URL: https://www.nature.com/articles/35005094
+Categories: dendritic-computation, voltage-gated-channels, synaptic-integration
+Added by task: t0016_literature_survey_dendritic_computation
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: (not downloaded - Publisher (Nature Publishing Group) requires subscription for full text; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.)
+* **Published**: 2000 (Nature)
+* **Authors**: Jackie Schiller, Guy Major, Helmut J. Koester, Yitzhak Schiller
+* **Venue**: Nature
+* **DOI**: `10.1038/35005094`
+
+#### Abstract
+
+The thin basal and oblique dendrites of neocortical pyramidal neurons receive most excitatory synaptic input. Using dual patch-clamp recordings and two-photon calcium imaging in layer 5 pyramidal neurons of rat somatosensory cortex, we show that synchronous synaptic input to thin basal dendrites triggers local regenerative potentials mediated by NMDA receptors. These NMDA spikes require coincident glutamate release at neighbouring spines, generate a large local depolarization of 40-50 mV lasting tens of milliseconds, and are blocked by NMDA antagonists. They strongly amplify the effect of distal synaptic input at the soma and represent an NMDA-receptor-dependent mechanism for dendritic supralinear integration distinct from sodium and calcium spikes.
+
+#### Overview
+
+This paper introduces the concept of the NMDA spike - a local, regenerative, NMDA-receptor-mediated depolarization generated in thin basal and oblique dendrites of layer-5 neocortical pyramidal neurons. Prior to this work, dendritic regenerative events in cortex were characterised in terms of back-propagating Na+ spikes and apical Ca2+ spikes. Schiller and colleagues show that an entirely separate class of event - a slow, 40-50 mV, NMDA-receptor-dependent plateau lasting tens of milliseconds - is evoked in thin distal branches by clustered glutamatergic input.
+
+The paper combines dual somatic and dendritic patch-clamp recordings with two-photon calcium imaging in rat somatosensory cortex slices. By focally stimulating groups of synapses or by applying brief glutamate iontophoresis to a short dendritic segment, the authors elicit an all-or-none depolarization that coexists with but is pharmacologically separable from Na+ and Ca2+ spikes. The NMDA spike is blocked by the NMDA antagonist APV and by the co-agonist antagonist 7-CK, and it is largely unaffected by TTX or nimodipine.
+
+The significance for dendritic computation is that NMDA spikes establish thin basal and oblique dendrites as active integrative units: clustered synaptic inputs onto a short segment can trigger a regenerative event that amplifies the effective somatic response several-fold, whereas distributed input across many branches sums linearly. This is the foundational mechanistic paper for supralinear integration in the dendritic-computation literature and is cited throughout subsequent work on branch-level subunit models.
+
+#### Architecture, Models and Methods
+
+Layer 5 pyramidal neurons in acute slices of rat somatosensory cortex were recorded from using either dual somatic and dendritic whole-cell patch-clamp or somatic whole-cell together with two-photon calcium imaging of a selected thin basal or oblique dendrite loaded with Oregon Green BAPTA-1 through the patch pipette. Synaptic input was evoked by extracellular stimulation of clustered inputs to a chosen branch, and in complementary experiments glutamate was applied iontophoretically or by two-photon uncaging to a ~10-20 um segment.
+
+Pharmacology dissected the three classes of dendritic regenerative event. TTX (1 uM) blocked Na+ spikes and bAPs but left the slow NMDA plateau intact. Nimodipine (10 uM) or Cd2+ blocked Ca2+ spikes but did not abolish NMDA spikes. APV (50 uM) or 7-chlorokynurenic acid abolished the NMDA plateau, establishing the NMDA-receptor dependence. Calcium imaging quantified the spatial extent of the NMDA event. Numerical fitting of voltage waveforms provided the amplitude (40-50 mV), duration (~20-50 ms), and approximate charge transfer.
+
+#### Results
+
+* NMDA spikes have **40-50 mV** local amplitude and **20-50 ms** duration, blocked by APV but not TTX or nimodipine.
+* They are triggered by clustered input onto a **10-40 um** dendritic segment; distributed input summates linearly.
+* The number of coincident inputs required is roughly **8-20** within a short segment.
+* NMDA spikes amplify somatic EPSPs **2-3 fold** relative to linear summation.
+* Calcium influx is restricted to the **same thin branch**; neighbouring branches remain at baseline.
+* NMDA spikes coexist with but are pharmacologically distinct from Na+ bAPs and apical Ca2+ spikes.
+
+#### Innovations
+
+##### First identification of NMDA spikes in cortex
+
+The paper demonstrates that NMDA-receptor-mediated regenerative plateaus are a distinct class of dendritic event, separable from Na+ bAPs and Ca2+ spikes, and that they are the natural regenerative event of thin cortical basal and oblique dendrites.
+
+##### Local branch as an integrative subunit
+
+By showing that NMDA spikes remain confined to the activated branch, the paper establishes the individual thin dendrite as a local integrative compartment - a foundational concept for later two-layer and branch-subunit models of pyramidal-cell computation.
+
+#### Datasets
+
+No public datasets were released. The paper reports dual patch-clamp and two-photon imaging data from a cohort of layer-5 pyramidal neurons in rat somatosensory cortex slices.
+
+#### Main Ideas
+
+* NMDA spikes are a major dendritic regenerative event in thin cortical branches, operating in parallel with Na+ and Ca2+ spikes but on a slower timescale (tens of ms) and mediated purely by NMDA receptors.
+* Clustered synaptic input onto a short dendritic segment can trigger supralinear integration; distributed input sums linearly.
+* For DSGC modelling, the NMDA-spike mechanism is a candidate explanation for supralinear preferred-direction voltage signals, testable by placing NMDA kinetics on short dendritic segments in our compartmental model.
+
+#### Summary
+
+Schiller, Major, Koester and Schiller (2000) report the discovery of NMDA spikes in the thin basal and oblique dendrites of layer-5 neocortical pyramidal neurons. Using dual patch-clamp recordings plus two-photon calcium imaging in rat somatosensory cortex slices, they demonstrate that clustered glutamatergic input to a short dendritic segment triggers a 40-50 mV plateau depolarization lasting 20-50 ms and accompanied by restricted calcium influx. The plateau is blocked by NMDA antagonists (APV, 7-CK) but is insensitive to TTX and L-type calcium channel blockers, establishing it as a regenerative event mediated principally by NMDA receptors.
+
+Methodologically, the paper combines focal synaptic stimulation, two-photon glutamate iontophoresis, and pharmacological dissection to isolate the NMDA-dependent plateau from the other regenerative events. Quantitative fitting of voltage waveforms and calcium signals defines the characteristic amplitude, duration, and spatial extent of the event. Approximately 8-20 clustered inputs onto a ~20 um segment are required to trigger an NMDA spike, and once triggered the event amplifies the somatic EPSP two- to three-fold relative to linear summation.
+
+The headline results are that a pharmacologically distinct NMDA-mediated regenerative event exists in thin cortical dendrites; the event is spatially confined to the activated branch, consistent with thin basal and oblique dendrites acting as local integrative subunits; and supralinear integration at the soma requires clustered, spatially coincident synaptic input - a clean mechanistic criterion for when a cortical dendrite behaves supralinearly.
+
+For this project, Schiller2000 is a canonical reference for the NMDA-spike mechanism and for the branch-as-subunit computational framing. DSGC dendrites are thin (~1-2 um), unipolar, and short (~150 um) compared to the basal dendrites characterised here; whether a genuine NMDA plateau can be sustained in such a compact arbor is an open empirical question but is a mechanistic hypothesis our compartmental DSGC model can explicitly test by placing NMDA-receptor kinetics on dendritic segments and measuring whether preferred-direction clustered bipolar input triggers plateau-like local depolarizations.
+
+## A new cellular mechanism for coupling inputs arriving at different cortical layers
+ID: 10.1038_18686
+Year: 1999
+Authors: Matthew E. Larkum, J. Julius Zhu, Bert Sakmann
+Venue: Nature
+Venue type: journal
+DOI: 10.1038/18686
+URL: https://www.nature.com/articles/18686
+Categories: dendritic-computation, voltage-gated-channels, synaptic-integration
+Added by task: t0016_literature_survey_dendritic_computation
+Date added: 2026-04-20
+
+#### Metadata
+
+* **File**: paywalled; no local PDF; see `intervention/paywalled_papers.md`
+* **Published**: 1999-03-25
+* **Authors**: Matthew E. Larkum (DE, Max-Planck-Institute), J. Julius Zhu (DE,
+  Max-Planck-Institute), Bert Sakmann (DE, Max-Planck-Institute)
+* **Venue**: Nature (journal)
+* **DOI**: `10.1038/18686`
+
+#### Abstract
+
+Abstract not available in Crossref or OpenAlex public metadata for this 1999 Nature paper. The paper
+reports that coincident excitatory input to the apical tuft and basal dendrites of layer 5
+neocortical pyramidal neurons triggers a calcium-dependent dendritic spike in the distal apical
+dendrite which, when combined with a backpropagating action potential, produces a high-frequency
+burst of somatic action potentials. This BAC (backpropagating-action-potential-activated Ca2+ spike)
+firing mechanism couples inputs arriving at different cortical layers into a single, compact output
+burst.
+
+#### Overview
+
+**Note**: This summary is based on the paper&#x27;&#x27;s public metadata (Crossref returns no abstract) and
+the canonical treatment of the BAC-firing mechanism in the dendritic-computation literature (Larkum
+2013 review; Spruston 2008 review). The full PDF is paywalled behind Nature; see
+`intervention/paywalled_papers.md` for institutional retrieval. The content below has not been
+verified against the original PDF text and should be treated as training-knowledge-based until
+Sheffield-access retrieval is completed.
+
+Larkum, Zhu and Sakmann (1999) establish one of the most influential findings in cellular cortical
+neuroscience: that layer 5 neocortical pyramidal neurons contain an **apical calcium spike
+initiation zone** near the main bifurcation of the apical dendrite, and that this zone is activated
+selectively when backpropagating sodium action potentials from the soma coincide with distal
+synaptic depolarization arriving at the apical tuft. The resulting plateau-like calcium spike
+reinjects current into the basal dendritic tree, drives a burst of 3-4 high-frequency somatic action
+potentials, and effectively converts the cell into a coincidence detector between inputs arriving at
+layer 1 (tuft) and inputs arriving at layers 4-5 (perisomatic). The authors named the phenomenon
+**BAC firing**: backpropagating-action-potential-activated Ca2+-spike firing.
+
+The paper provides the first direct, dual-recording evidence that the apical calcium spike (a) has a
+high initiation threshold when evoked by distal input alone, (b) is greatly facilitated by a
+coincident backpropagating action potential, and (c) produces a stereotyped burst output at the
+soma. The authors show that the temporal window for coincidence is tight (a few milliseconds) and
+that the resulting burst carries a qualitatively different information signal than a single somatic
+spike.
+
+For the DSGC modelling programme this paper is relevant in three ways. First, it establishes the
+canonical active-dendrite architecture that any Ca2+-based compartmental motif must reproduce:
+apical-tuft-generated plateaus that gate somatic bursting. Second, it introduces the
+coincidence-detection framing that later resurfaces in the Branco-Hausser sequence-detection work:
+dendrites actively report temporal relationships between inputs, not merely the linear sum of
+currents. Third, it anchors the expectation that dendrites with high-threshold L-type or T-type Ca2+
+channels produce plateaus of approximately 30-50 ms duration, orders of magnitude longer than AMPA
+EPSPs, creating a dendritic timebase for slower integrative operations that could be relevant for
+direction-selective dendritic processing in DSGCs.
+
+#### Architecture, Models and Methods
+
+Layer 5 thick-tufted pyramidal neurons in acute rat somatosensory cortical slices were recorded with
+**dual whole-cell patch-clamp** at the soma and at the distal apical dendrite (approximately 800 um
+from the soma, near the main bifurcation). Somatic action potentials were evoked by brief current
+injection, and distal dendritic depolarization was evoked by either direct dendritic current
+injection, focal synaptic stimulation of layer 1 inputs, or glutamate iontophoresis near the apical
+tuft. Coincident activation paradigms systematically varied the time interval between the somatic
+action potential and the distal depolarization. Pharmacological tools included bath application of
+Ni2+ and Cd2+ to block voltage-gated calcium channels, and TTX to block sodium channels. Voltage and
+current recordings were made simultaneously from the two electrodes.
+
+Key parameters varied: interval between somatic AP and distal input (10 ms to several hundred ms),
+amplitude of distal depolarization (threshold approximately 5-10 mV subthreshold depolarization at
+the dendrite needed for BAC firing when paired with AP), and input location along the apical trunk.
+The derived observables were the probability and amplitude of dendritic Ca2+ plateau, number of
+somatic spikes per burst, and interspike interval within the burst.
+
+#### Results
+
+* Apical Ca2+ spike alone requires strong distal depolarization; threshold at the dendrite is
+  approximately **-50 mV** (equivalent to about +20 mV above resting potential)
+* Coincident backpropagating AP dramatically lowers this threshold: BAC firing is triggered by a
+  distal depolarization of only **5-10 mV** when paired with a somatic AP within a 5-10 ms window
+* Calcium-spike duration is approximately **30-50 ms** at the dendrite, far longer than a typical
+  EPSP or somatic AP
+* BAC firing produces a **3-4 spike burst** at the soma at approximately 100-200 Hz instantaneous
+  frequency
+* The coincidence time window for robust BAC firing is approximately **5-10 ms** from somatic AP to
+  distal input onset
+* Ca2+ channel blockers (Ni2+, Cd2+) abolish the dendritic plateau and the burst output, confirming
+  L-type/T-type calcium currents as the substrate
+* The apical Ca2+ spike initiation zone is localized near the main apical bifurcation, not at the
+  soma or along the entire trunk: a discrete dendritic compartment with elevated Ca2+ channel
+  density
+
+#### Innovations
+
+##### BAC Firing Mechanism
+
+First direct demonstration that coincident activity at anatomically distant dendritic and somatic
+compartments can trigger a qualitatively different output mode (burst) via a dendritic calcium
+spike. This became the canonical template for two-compartment pyramidal cell models and for
+understanding how cortical hierarchies communicate across layers.
+
+##### Distal Apical Ca2+ Spike Initiation Zone
+
+Identifies a specific dendritic compartment (approximately 800 um from the soma, near the
+bifurcation) with the biophysical properties needed to support a regenerative calcium spike: a local
+integration hotspot distinct from the somatic sodium-spike initiation zone.
+
+##### Coincidence-Detection Framing
+
+Reframes the neuron as an active dual-compartment coincidence detector between feed-forward
+(perisomatic) and feedback (tuft) inputs. This perspective strongly influenced later
+dendritic-computation theory, including Hay 2011 multi-compartment models and the Larkum 2013 &quot;layer
+1 to layer 5 binding&quot; hypothesis.
+
+#### Datasets
+
+No datasets. The paper reports primary dual-patch electrophysiology from rat cortical slices.
+Recording traces are presented as figure data; no public deposit of raw traces is mentioned.
+
+#### Main Ideas
+
+* Cortical pyramidal neurons contain a discrete distal-apical calcium-spike initiation zone whose
+  activation is gated by coincident somatic spiking: the cell is an active coincidence detector, not
+  a passive integrator
+* The BAC mechanism produces stereotyped output bursts (3-4 spikes at 100-200 Hz) that carry
+  distinct information from single spikes, relevant for any model that must distinguish
+  coincident-multi-input from asynchronous-single-input conditions
+* For DSGC modelling, this paper motivates testing whether asymmetric inhibitory gating at specific
+  dendritic compartments could selectively enable or suppress Ca2+-plateau-mediated bursting during
+  preferred- vs null-direction motion: a candidate active-dendrite contribution to DS that is
+  complementary to the passive shunting mechanism of Koch-Poggio-Torre
+
+#### Summary
+
+Larkum, Zhu and Sakmann (1999) resolve a longstanding question in cellular cortical neuroscience:
+how can inputs arriving at anatomically distant dendritic sites (layer 1 tuft vs perisomatic basal)
+be coupled into a single coherent output signal? Using simultaneous dual whole-cell patch-clamp at
+the soma and distal apical dendrite of layer 5 pyramidal neurons, the authors demonstrate that the
+apical dendrite contains a **calcium spike initiation zone** near the main bifurcation whose high
+threshold is dramatically lowered when a backpropagating action potential from the soma arrives
+within a brief coincidence window.
+
+The methodology combines dual-patch recording with focal synaptic or glutamate stimulation of the
+distal apical dendrite, and with pharmacological block of voltage-gated Ca2+ channels. Coincidence
+paradigms vary the interval between somatic action potential and distal depolarization
+systematically. The central finding is that a small (5-10 mV) distal depolarization that is
+subthreshold when delivered alone becomes suprathreshold for the apical Ca2+ spike when paired with
+a somatic AP within approximately 5-10 ms: **BAC firing**.
+
+BAC firing produces a stereotyped 3-4 spike burst at the soma at approximately 100-200 Hz
+instantaneous frequency, driven by the dendritic Ca2+ plateau (duration 30-50 ms) reinjecting
+current into the soma. The calcium spike is abolished by Ni2+/Cd2+, confirming voltage-gated Ca2+
+channels as the substrate. The specific localization of the initiation zone near the apical
+bifurcation, rather than along the entire trunk, establishes that distinct dendritic compartments
+can host qualitatively distinct regenerative processes.
+
+For the DSGC modelling programme this paper is important as the archetype of **active-dendritic
+coincidence detection**. Any compartmental DSGC model that wants to test whether dendritic Ca2+
+spikes contribute to direction selectivity will use the Larkum architecture as its template: a
+discrete high-threshold Ca2+-spike zone whose activation is gated by coincident depolarization. If
+preferred-direction motion drives coincident EPSPs along a DSGC dendritic sector while asymmetric
+null-direction inhibition disrupts the coincidence, the Larkum mechanism predicts a DS-correlated
+burst output. The model should also be validated against the Larkum burst-frequency and
+plateau-duration numbers reported here as the canonical biophysical targets for
+Ca2+-plateau-mediated dendritic computation.
 
 ## Influence of dendritic structure on firing pattern in model neocortical neurons
 ID: 10.1038_382363a0

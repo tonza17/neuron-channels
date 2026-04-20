@@ -4,13 +4,13 @@ Ion channels whose opening probability depends on membrane voltage.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (6)](../papers/by-category/voltage-gated-channels.md) | [Answers
+**Detail pages**: [Papers (8)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (1)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(5)](../suggestions/by-category/voltage-gated-channels.md)
+(6)](../suggestions/by-category/voltage-gated-channels.md)
 
 ---
 
-## Papers (6)
+## Papers (8)
 
 <details>
 <summary>📖 <strong>Cross-compartmental Modulation of Dendritic Signals for Retinal
@@ -276,6 +276,105 @@ the sensitivity-vs-contrast curve, not just a single contrast sensitivity value.
 </details>
 
 <details>
+<summary>📖 <strong>NMDA spikes in basal dendrites of cortical pyramidal
+neurons</strong> — Schiller et al., 2000</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_35005094` |
+| **Authors** | Jackie Schiller, Guy Major, Helmut J. Koester, Yitzhak Schiller |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/35005094` |
+| **URL** | https://www.nature.com/articles/35005094 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_35005094/summary.md) |
+
+Schiller, Major, Koester and Schiller (2000) report the discovery of NMDA spikes in the thin
+basal and oblique dendrites of layer-5 neocortical pyramidal neurons. Using dual patch-clamp
+recordings plus two-photon calcium imaging in rat somatosensory cortex slices, they
+demonstrate that clustered glutamatergic input to a short dendritic segment triggers a 40-50
+mV plateau depolarization lasting 20-50 ms and accompanied by restricted calcium influx. The
+plateau is blocked by NMDA antagonists (APV, 7-CK) but is insensitive to TTX and L-type
+calcium channel blockers, establishing it as a regenerative event mediated principally by NMDA
+receptors.
+
+Methodologically, the paper combines focal synaptic stimulation, two-photon glutamate
+iontophoresis, and pharmacological dissection to isolate the NMDA-dependent plateau from the
+other regenerative events. Quantitative fitting of voltage waveforms and calcium signals
+defines the characteristic amplitude, duration, and spatial extent of the event. Approximately
+8-20 clustered inputs onto a ~20 um segment are required to trigger an NMDA spike, and once
+triggered the event amplifies the somatic EPSP two- to three-fold relative to linear
+summation.
+
+The headline results are that a pharmacologically distinct NMDA-mediated regenerative event
+exists in thin cortical dendrites; the event is spatially confined to the activated branch,
+consistent with thin basal and oblique dendrites acting as local integrative subunits; and
+supralinear integration at the soma requires clustered, spatially coincident synaptic input -
+a clean mechanistic criterion for when a cortical dendrite behaves supralinearly.
+
+For this project, Schiller2000 is a canonical reference for the NMDA-spike mechanism and for
+the branch-as-subunit computational framing. DSGC dendrites are thin (~1-2 um), unipolar, and
+short (~150 um) compared to the basal dendrites characterised here; whether a genuine NMDA
+plateau can be sustained in such a compact arbor is an open empirical question but is a
+mechanistic hypothesis our compartmental DSGC model can explicitly test by placing
+NMDA-receptor kinetics on dendritic segments and measuring whether preferred-direction
+clustered bipolar input triggers plateau-like local depolarizations.
+
+</details>
+
+<details>
+<summary>📖 <strong>A new cellular mechanism for coupling inputs arriving at
+different cortical layers</strong> — Larkum et al., 1999</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_18686` |
+| **Authors** | Matthew E. Larkum, J. Julius Zhu, Bert Sakmann |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/18686` |
+| **URL** | https://www.nature.com/articles/18686 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_18686/summary.md) |
+
+Larkum, Zhu and Sakmann (1999) resolve a longstanding question in cellular cortical
+neuroscience: how can inputs arriving at anatomically distant dendritic sites (layer 1 tuft vs
+perisomatic basal) be coupled into a single coherent output signal? Using simultaneous dual
+whole-cell patch-clamp at the soma and distal apical dendrite of layer 5 pyramidal neurons,
+the authors demonstrate that the apical dendrite contains a **calcium spike initiation zone**
+near the main bifurcation whose high threshold is dramatically lowered when a backpropagating
+action potential from the soma arrives within a brief coincidence window.
+
+The methodology combines dual-patch recording with focal synaptic or glutamate stimulation of
+the distal apical dendrite, and with pharmacological block of voltage-gated Ca2+ channels.
+Coincidence paradigms vary the interval between somatic action potential and distal
+depolarization systematically. The central finding is that a small (5-10 mV) distal
+depolarization that is subthreshold when delivered alone becomes suprathreshold for the apical
+Ca2+ spike when paired with a somatic AP within approximately 5-10 ms: **BAC firing**.
+
+BAC firing produces a stereotyped 3-4 spike burst at the soma at approximately 100-200 Hz
+instantaneous frequency, driven by the dendritic Ca2+ plateau (duration 30-50 ms) reinjecting
+current into the soma. The calcium spike is abolished by Ni2+/Cd2+, confirming voltage-gated
+Ca2+ channels as the substrate. The specific localization of the initiation zone near the
+apical bifurcation, rather than along the entire trunk, establishes that distinct dendritic
+compartments can host qualitatively distinct regenerative processes.
+
+For the DSGC modelling programme this paper is important as the archetype of
+**active-dendritic coincidence detection**. Any compartmental DSGC model that wants to test
+whether dendritic Ca2+ spikes contribute to direction selectivity will use the Larkum
+architecture as its template: a discrete high-threshold Ca2+-spike zone whose activation is
+gated by coincident depolarization. If preferred-direction motion drives coincident EPSPs
+along a DSGC dendritic sector while asymmetric null-direction inhibition disrupts the
+coincidence, the Larkum mechanism predicts a DS-correlated burst output. The model should also
+be validated against the Larkum burst-frequency and plateau-duration numbers reported here as
+the canonical biophysical targets for Ca2+-plateau-mediated dendritic computation.
+
+</details>
+
+<details>
 <summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
 1997</summary>
 
@@ -326,12 +425,13 @@ dendritic transients.
 
 </details>
 
-## Tasks (2)
+## Tasks (3)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
+| 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 
 ## Answers (1)
 
@@ -360,7 +460,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (4 open, 1 closed)
+## Suggestions (5 open, 1 closed)
 
 <details>
 <summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
@@ -379,6 +479,24 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
+in DSGC dendritic trees</strong> (S-0016-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0016_literature_survey_dendritic_computation](../../tasks/t0016_literature_survey_dendritic_computation/)
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a
+plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal
+two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with
+spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone
+compartments, then test whether asymmetric inhibition at principal-branch bifurcations can
+selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
+null-direction motion. Report preferred-direction burst firing rate versus null-direction
+burst rate and compare with published DSGC spiking statistics.
 
 </details>
 

@@ -1,12 +1,12 @@
 # Answers by Date Added
 
-4 answer(s) grouped by creation date.
+5 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-04-20 (1)
+## 2026-04-20 (2)
 
 <details>
 <summary><strong>What does the classical cable-theory and dendritic-computation
@@ -36,6 +36,37 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+
+</details>
+
+<details>
+<summary><strong>Which dendritic-computation motifs observed in cortical,
+hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites,
+and what are the biophysical caveats?</strong></summary>
+
+**Confidence**: medium
+
+Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and
+cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear
+integration, asymmetric shunting inhibition placed on the path between excitation and soma,
+and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC
+firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
+short and unipolar rather than tufted. All transferred numbers must be treated as targets to
+falsify rather than to assume, pending DSGC-specific patch validation.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/full_answer.md) |
+| **ID** | [`dendritic-computation-motifs-for-dsgc-direction-selectivity`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/) |
+| **Question** | Which dendritic-computation motifs observed in cortical, hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites, and what are the biophysical caveats? |
+| **Methods** | `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | `10.1038_35005094`, `10.1038_nn1253`, `10.1038_18686`, `10.1126_science.aan3846`, `10.1146_annurev.neuro.28.061604.135703` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **URL sources** | — |
+| **Created by** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
 
 </details>
 

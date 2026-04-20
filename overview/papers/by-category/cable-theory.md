@@ -1,6 +1,6 @@
-# Papers: `cable-theory` (6)
+# Papers: `cable-theory` (7)
 
-6 papers across 5 year(s).
+7 papers across 6 year(s).
 
 [Back to all papers](../README.md)
 
@@ -115,6 +115,62 @@ and (iii) the compartmentalized-subunit structure of the tree. It also establish
 presynaptic DS cannot be omitted from a DSGC model intended to match physiological spike
 tuning and gives quantitative guidance on how to calibrate voltage-clamp-derived conductances
 for use in simulation.
+
+</details>
+
+## 2005 (1)
+
+<details>
+<summary>📖 Dendritic Computation — London & Hausser, 2005</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1146_annurev.neuro.28.061604.135703` |
+| **Authors** | Michael London, Michael Hausser |
+| **Venue** | Annual Review of Neuroscience (journal) |
+| **DOI** | `10.1146/annurev.neuro.28.061604.135703` |
+| **URL** | https://www.annualreviews.org/doi/10.1146/annurev.neuro.28.061604.135703 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1146_annurev.neuro.28.061604.135703/summary.md) |
+
+London and Hausser (2005) wrote the canonical review of dendritic computation: a structured
+synthesis of roughly four decades of theoretical and experimental work on how single neurons
+use their dendritic structure, voltage-gated ion channels, and nonlinear synaptic conductances
+to perform elementary computations. The review organises the literature around three
+biophysical axes (passive cable properties, active ion-channel-mediated nonlinearities, and
+synaptic-placement-dependent summation) and links each to specific computational primitives
+such as coincidence detection, multiplicative gain, branch-level AND-gates, and direction
+selectivity.
+
+The central synthesis is that dendritic integration is never purely linear: the same synaptic
+input pattern produces linear, sublinear, or supralinear summation depending on three factors:
+(1) spatial clustering of inputs (same vs different dendritic branches), (2) temporal
+coincidence (within a few to tens of milliseconds), and (3) membrane state (resting,
+depolarized, or post-spike). Nonlinearities are produced by NMDA spikes (approximately 4-8
+clustered spines threshold, 150-300% supralinear boost), dendritic sodium spikes
+(Stuart-Sakmann 1994), and calcium plateaus (Larkum 1999, approximately 30-50 ms duration),
+and can be gated off by strategically placed shunting inhibition (Koch, Poggio and Torre
+1982).
+
+The review explicitly treats retinal direction selectivity as a paradigmatic example of
+dendritic computation in action: the Koch-Poggio-Torre shunting mechanism, validated
+experimentally in rabbit DSGCs by Taylor 2000, demonstrates that a classical dendritic
+nonlinearity (asymmetric shunting inhibition) is sufficient to implement a behaviorally
+relevant computation (motion direction selectivity). The review argues that comparable
+computational primitives exist in pyramidal and cerebellar neurons, unified by the three-axis
+framework.
+
+For the DSGC modelling programme this review is indispensable. It provides (a) the taxonomy
+within which DSGC-specific mechanisms should be placed, (b) the quantitative cross-cell-type
+reference numbers (electrotonic length ranges, NMDA-spike thresholds, shunting-inhibition
+effect sizes) that calibrate DSGC models against the broader literature, and (c) the
+experimental-design template (ablate one nonlinearity at a time, measure change in behavior)
+that DSGC simulations should follow. Specifically, any DSGC model should be analysed under
+systematic ablation of each of the five dendritic primitives (cable filtering, NMDA
+supralinearity, Na+ spikes, Ca2+ plateaus, shunting asymmetry) to report which are necessary
+and which are sufficient for DS.
 
 </details>
 

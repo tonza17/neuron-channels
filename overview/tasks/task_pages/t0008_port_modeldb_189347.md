@@ -1,4 +1,4 @@
-# ⏹ Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+# ⏳ Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0008_port_modeldb_189347` |
-| **Status** | ⏹ not_started |
+| **Status** | ⏳ in_progress |
+| **Started** | 2026-04-20T10:08:09Z |
 | **Dependencies** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | **Source suggestion** | `S-0002-03` |
 | **Task types** | `code-reproduction`, `write-library` |

@@ -1,14 +1,37 @@
 # Suggestions: `dendritic-computation`
 
-8 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **6 open** (2 high,
-4 medium), **2 closed**.
+12 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **10 open** (4
+high, 6 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
+selectivity via compartmental simulation</strong> (S-0016-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_35005094`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_35005094/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA
+spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC
+model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0)
+and test whether spatially-clustered co-directional bipolar-cell input produces supralinear
+summation during preferred-direction motion and is suppressed by asymmetric inhibition during
+null-direction motion. Compare the resulting DSI (direction selectivity index) against the
+no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
@@ -55,6 +78,30 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled dendritic-computation PDFs via Sheffield
+access and verify numerical claims</strong> (S-0016-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999,
+Bittner 2017, London & Hausser 2005) are documented in intervention/paywalled_papers.md but
+were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
+paper asset's download_status to 'success', replace summary Overview disclaimers with
+PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike
+threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
+duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
+actual papers.
 
 </details>
 
@@ -107,6 +154,29 @@ review, Stuart & Spruston 2015 review) to close the gap.
 </details>
 
 <details>
+<summary>🧪 <strong>Extend dendritic-computation survey to cerebellar Purkinje and
+STDP papers</strong> (S-0016-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The scoped-down 5-paper survey covers cortical and hippocampal dendritic-computation motifs
+(NMDA spike, BAC firing, BTSP, branch-level integration, canonical review) but does not cover
+cerebellar Purkinje-cell branch-specific computation or cortical / hippocampal
+spike-timing-dependent plasticity. A follow-up survey task should add approximately 5 papers
+on cerebellar Purkinje branch-strength (Llinas & Sugimori 1980, Rancz & Hausser 2006, Brunel
+2016) and cortical / hippocampal STDP (Bi & Poo 1998, Markram 1997, Sjostrom 2008 review) to
+close the gap.
+
+</details>
+
+<details>
 <summary>🧪 <strong>NMDA multiplicative-gain ablation to isolate its contribution
 to DSI</strong> (S-0002-06)</summary>
 
@@ -154,6 +224,30 @@ matplotlib (or NEURON's PlotShape) and register the figures plus the rendering s
 answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling
 branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types:
 data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
+in DSGC dendritic trees</strong> (S-0016-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_18686`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_18686/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a
+plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal
+two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with
+spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone
+compartments, then test whether asymmetric inhibition at principal-branch bifurcations can
+selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
+null-direction motion. Report preferred-direction burst firing rate versus null-direction
+burst rate and compare with published DSGC spiking statistics.
 
 </details>
 

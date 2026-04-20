@@ -1,6 +1,6 @@
-# Answers (4)
+# Answers (5)
 
-4 answer(s).
+5 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -141,5 +141,36 @@ and MOOSE shows the weakest maintenance signal of the five candidates.
 | **Task sources** | — |
 | **URL sources** | [url 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC9272742/), [url 2](https://elifesciences.org/articles/47314), [url 3](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013926), [url 4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899), [url 5](https://modeldb.science/189347), [url 6](https://github.com/neuronsimulator/nrn/blob/master/docs/changelog.md), [url 7](https://github.com/neuronsimulator/nrn/issues/3595), [url 8](https://github.com/arbor-sim/arbor/releases), [url 9](https://docs.arbor-sim.org/en/latest/install/python.html), [url 10](https://docs.arbor-sim.org/en/latest/index.html), [url 11](https://docs.arbor-sim.org/en/latest/fileformat/nmodl.html), [url 12](http://doc.netpyne.org/), [url 13](https://github.com/suny-downstate-medical-center/netpyne), [url 14](https://brian2.readthedocs.io/en/stable/user/multicompartmental.html), [url 15](https://github.com/brian-team/brian2), [url 16](https://github.com/BhallaLab/moose), [url 17](https://github.com/BhallaLab/moose/releases), [url 18](https://moose.ncbs.res.in/readthedocs/user/py/rdesigneur/rdes.html), [url 19](https://github.com/jzlab/dsg), [url 20](https://github.com/berenslab/rgc_dendrites) |
 | **Created by** | [`t0003_simulator_library_survey`](../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+
+</details>
+
+<details>
+<summary><strong>Which dendritic-computation motifs observed in cortical,
+hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites,
+and what are the biophysical caveats?</strong></summary>
+
+**Confidence**: medium
+
+Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and
+cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear
+integration, asymmetric shunting inhibition placed on the path between excitation and soma,
+and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC
+firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
+short and unipolar rather than tufted. All transferred numbers must be treated as targets to
+falsify rather than to assume, pending DSGC-specific patch validation.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/full_answer.md) |
+| **ID** | [`dendritic-computation-motifs-for-dsgc-direction-selectivity`](../../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/) |
+| **Question** | Which dendritic-computation motifs observed in cortical, hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites, and what are the biophysical caveats? |
+| **Methods** | `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | `10.1038_35005094`, `10.1038_nn1253`, `10.1038_18686`, `10.1126_science.aan3846`, `10.1146_annurev.neuro.28.061604.135703` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **URL sources** | — |
+| **Created by** | [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
 
 </details>

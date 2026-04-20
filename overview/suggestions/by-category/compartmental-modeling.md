@@ -1,7 +1,7 @@
 # Suggestions: `compartmental-modeling`
 
-29 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **25 open** (9
+30 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **26 open** (10
 high, 14 medium, 2 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
@@ -33,6 +33,29 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
+selectivity via compartmental simulation</strong> (S-0016-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_35005094`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_35005094/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA
+spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC
+model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0)
+and test whether spatially-clustered co-directional bipolar-cell input produces supralinear
+summation during preferred-direction motion and is suppressed by asymmetric inhibition during
+null-direction motion. Compare the resulting DSI (direction selectivity index) against the
+no-NMDA baseline to quantify the NMDA-spike contribution to DS.
 
 </details>
 

@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-5 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **4 open** (4
-high), **1 closed**.
+6 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **5 open** (4
+high, 1 medium), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -102,6 +102,32 @@ a smoke test but its biophysics are never run. Add a short task that inserts khh
 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
 against the built-in hh to confirm the custom mechanism produces physiologically plausible
 spikes before downstream retinal tasks depend on it.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
+in DSGC dendritic trees</strong> (S-0016-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_18686`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_18686/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a
+plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal
+two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with
+spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone
+compartments, then test whether asymmetric inhibition at principal-branch bifurcations can
+selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
+null-direction motion. Report preferred-direction burst firing rate versus null-direction
+burst rate and compare with published DSGC spiking statistics.
 
 </details>
 

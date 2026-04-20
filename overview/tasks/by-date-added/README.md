@@ -6,7 +6,132 @@
 
 ---
 
-## 2026-04-20 (5)
+## 2026-04-20 (7)
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0008 — <strong>Port ModelDB 189347 and similar DSGC compartmental models
+to NEURON</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0008_port_modeldb_189347` |
+| **Status** | in_progress |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library, 1 answer |
+| **Source suggestion** | `S-0002-03` |
+| **Task types** | [`code-reproduction`](../../../meta/task_types/code-reproduction/), [`write-library`](../../../meta/task_types/write-library/) |
+| **Start time** | 2026-04-20T10:08:09Z |
+| **Task page** | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Task folder** | [`t0008_port_modeldb_189347/`](../../../tasks/t0008_port_modeldb_189347/) |
+
+# Port ModelDB 189347 and similar DSGC compartmental models to NEURON as library assets
+
+## Motivation
+
+Poleg-Polsky & Diamond 2016 (paper `10.1016_j.neuron.2016.02.013`, ModelDB 189347) is the
+closest published match to this project's goal: a NEURON multi-compartmental mouse ON-OFF DSGC
+model with **177 AMPA + 177 GABA** synapses and NMDA multiplicative gain. Reproducing it
+creates the reference implementation that every later parameter-variation task (Na/K grid
+S-0002-01, morphology sweep S-0002-04, E/I ratio scan S-0002-05, active-vs-passive dendrites
+S-0002-02) will fork from. It is also the cleanest end-to-end test that the NEURON+NetPyNE
+install from t0007 and the calibrated morphology from t0009 are fit for purpose.
+
+Covers suggestions **S-0002-03** and **S-0003-02** (merged — the two suggestions describe the
+same work from slightly different angles).
+
+## Scope
+
+### Phase A — Port the Poleg-Polsky 2016 baseline
+
+1. Download ModelDB entry 189347 and register the resulting Python package under
+   `assets/library/dsgc-polegpolsky-2016/` with a description, module paths, test paths, and a
+   smoke-test that instantiates the model and runs a single angle.
+2. Swap in the calibrated morphology produced by t0009 (`dsgc-baseline-morphology-calibrated`)
+   in place of the ModelDB-bundled morphology. Document the swap and any geometric differences
+   (compartment count, dendritic path length, branch points) vs the original ModelDB
+   morphology.
+3. Run the published stimulus: drifting bar / moving spot at 12 angles (30° spacing), synaptic
+   configuration matching the paper, Poleg-Polsky NMDA parameters.
+4. Compute the simulated tuning curve (firing rate vs angle, 20 trials per angle with fresh
+   seeds) and score it with the t0012 scoring loss library against the envelope: DSI
+   **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM **60-90°**.
+
+### Phase B — Hunt for sibling DSGC compartmental models
+
+5. Search ModelDB, SenseLab, OSF, and GitHub for additional DSGC compartmental models cited or
+   adjacent in the literature (Schachter2010 derivatives, Briggman-lineage forks, 2017-2025
+   updates of the Poleg-Polsky model, any post-2020 published code).
+6. For each model found, record: source URL, NEURON compatibility, morphology it ships with,
+   synaptic configuration, and whether it runs out-of-the-box in this environment.
+7. Port any model that has public code and runs cleanly as a separate library asset under
+   `assets/library/<model-slug>/`. If a model fails to run, record the failure in the Phase B
+   answer asset and do not register a broken library.
+
+## Dependencies
+
+* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology`
+* **t0007_install_neuron_netpyne** — NEURON+NetPyNE must work before any simulation runs
+* **t0009_calibrate_dendritic_diameters** — needs calibrated morphology to avoid biasing the
+  reproduction with placeholder 0.125 µm radii
+* **t0012_tuning_curve_scoring_loss_library** — envelope verification must use the canonical
+  scoring library, not an ad-hoc check
+
+## Expected Outputs
+
+* **1 library asset** (`assets/library/dsgc-polegpolsky-2016/`) — the ported ModelDB 189347.
+* **1 answer asset** (`assets/answer/dsgc-modeldb-port-reproduction-report/`) covering:
+  * Phase A: envelope verification table (DSI, peak, null, HWHM) vs targets
+  * Phase B: a survey row-per-model listing each candidate found, its source, its NEURON
+    compatibility, whether it was ported, and if not, why
+* **0 or more additional library assets** for any sibling models successfully ported.
+* **Simulated tuning-curve CSVs** under `data/tuning_curves/` (per model, per seed) for t0011
+  to consume.
+
+## Approach
+
+* Write `code/port_modeldb_189347.py` that downloads the ModelDB zip, unpacks it into the
+  library asset folder, compiles its MOD files with `nrnivmodl`, and runs the published demo
+  to confirm the port is intact before any morphology swap.
+* Write `code/run_tuning_curve.py` that takes a library name and a morphology (calibrated
+  SWC), runs 12 angles × 20 seeded trials, writes `tuning_curve.csv` with `(angle_deg,
+  trial_seed, firing_rate_hz)`.
+* Write `code/score_envelope.py` that imports the t0012 scoring library and produces the
+  verification table.
+* For Phase B: write `code/hunt_sibling_models.py` that scrapes ModelDB's category listings
+  (the author's own follow-up entries, neighbouring DSGC entries, 2017+ entries citing 189347)
+  and writes a candidate-list CSV. Human review selects which candidates to attempt porting
+  before Phase B code runs.
+
+## Compute and Budget
+
+Local only. 12 angles × 20 trials × ~5-10 s wall-clock per trial ≈ 20-40 minutes per model on
+this workstation. Budget remains `$0.00`.
+
+## Questions the task answers
+
+1. Does the reproduced Poleg-Polsky 2016 model hit the envelope: DSI 0.7-0.85, peak 40-80 Hz,
+   null < 10 Hz, HWHM 60-90°?
+2. Does swapping the ModelDB morphology for the calibrated Feller morphology preserve envelope
+   compliance, or does it shift the model outside the envelope?
+3. Which sibling DSGC compartmental models exist in public repositories, and which run in this
+   environment?
+4. Are there published DSGC compartmental models whose tuning curves systematically disagree
+   with the Poleg-Polsky envelope, and if so, by how much?
+
+## Risks and Fallbacks
+
+* **ModelDB 189347 has drifted or the Python wrapper is stale**: port the `hoc`/`mod` files
+  directly and wrap in a minimal Python loader; record the drift in the answer asset.
+* **Swapping to the calibrated morphology produces envelope failure**: treat that as a
+  scientific finding, not a blocker — report it verbatim and surface a new suggestion for
+  morphology- conditioned parameter retuning.
+* **Phase B finds no portable sibling models**: document the gap as a new suggestion and do
+  not invent models to port.
+
+</details>
 
 ## ⏹ Not Started
 
@@ -164,6 +289,120 @@ None.
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0016 — <strong>Literature survey: dendritic computation beyond
+DSGCs</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0016_literature_survey_dendritic_computation` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | — |
+| **Expected assets** | 25 paper, 1 answer |
+| **Source suggestion** | `S-0014-02` |
+| **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/) |
+| **Start time** | 2026-04-19T23:38:58Z |
+| **End time** | 2026-04-20T10:36:25Z |
+| **Step progress** | 11/15 |
+| **Task page** | [Literature survey: dendritic computation beyond DSGCs](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Task folder** | [`t0016_literature_survey_dendritic_computation/`](../../../tasks/t0016_literature_survey_dendritic_computation/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0016_literature_survey_dendritic_computation/results/results_detailed.md) |
+
+# Literature survey: dendritic computation beyond DSGCs
+
+## Motivation
+
+Research question RQ4 (active vs passive dendrites) needs evidence from computational
+neuroscience beyond the retinal literature. Cortical and cerebellar dendrites have been
+studied far more extensively than DSGC dendrites, and the mechanisms and modelling conventions
+developed there (NMDA spikes, Ca/Na plateaus, branch-level nonlinearities) are the natural
+reference for whether active dendrites plausibly shape DSGC tuning curves. Source suggestion:
+S-0014-02 from t0014_brainstorm_results_3.
+
+## Scope
+
+Target ~25 category-relevant papers covering:
+
+1. NMDA spikes — thresholds, amplitudes, distance-dependence, supralinear integration.
+2. Na+ and Ca2+ dendritic spikes — backpropagation, forward propagation, local spikes.
+3. Plateau potentials — in-vivo evidence, role in coincidence detection, duration scaling.
+4. Branch-level nonlinearities — independent subunits, clustered-vs-distributed input
+   summation.
+5. Sublinear-to-supralinear integration regimes — what controls the transition, which
+   conditions make dendrites behave passively in practice.
+6. Active-vs-passive modelling comparisons — cortical, cerebellar, hippocampal studies that
+   built matched active and passive compartmental models and quantified the difference.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
+mid task must be dropped and the exclusion recorded in the task log.
+
+## Approach
+
+1. Run `/research-internet` targeting each of the six themes above with preference for review
+   articles plus 2-4 primary studies per theme.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: "failed"` and added to `intervention/paywalled_papers.md` for the
+   researcher to retrieve manually.
+3. Write one answer asset synthesising which dendritic-computation mechanisms plausibly
+   transfer to DSGC dendrites, with explicit caveats about anatomical and biophysical
+   differences.
+
+## Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant), some possibly with
+  `download_status: "failed"`.
+* One answer asset under `assets/answer/` synthesising the six themes and flagging mechanisms
+  most plausible for DSGC dendrites.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+## Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+## Dependencies
+
+None.
+
+## Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and explicitly addresses transferability to
+  DSGC dendrites.
+* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
+
+**Results summary:**
+
+> **Results Summary: Dendritic-Computation Literature Survey**
+>
+> **Summary**
+>
+> Surveyed 5 foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum
+> 1999,
+> Bittner 2017, London & Hausser 2005) and produced a single answer asset synthesising which
+> dendritic-computation motifs plausibly transfer to DSGC dendrites and the biophysical
+> caveats on
+> each transfer. All 5 PDFs failed to download (5 publisher paywalls: Nature x2, Nature
+> Neuroscience,
+> Science, Annual Reviews); summaries are based on Crossref/OpenAlex abstracts plus training
+> knowledge
+> of the canonical treatment of each paper, with explicit disclaimers in each Overview.
+>
+> **Objective**
+>
+> Survey the foundational dendritic-computation literature (NMDA spikes, Ca2+ dendritic
+> spikes, BAC
+> firing, plateau potentials/BTSP, branch-level nonlinear integration, and regime switching)
+> and
+> synthesise a single answer asset mapping which motifs plausibly transfer to DSGC dendrites
+> and the
+> biophysical caveats on each transfer.
+>
+> **What Was Produced**
+>
+
+</details>
 
 <details>
 <summary>✅ 0015 — <strong>Literature survey: cable theory and dendritic
@@ -544,90 +783,9 @@ Covers suggestion **S-0005-02**.
 
 </details>
 
-## 2026-04-19 (13)
+## 2026-04-19 (11)
 
 ## ⏳ In Progress
-
-<details>
-<summary>⏳ 0016 — <strong>Literature survey: dendritic computation beyond
-DSGCs</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0016_literature_survey_dendritic_computation` |
-| **Status** | in_progress |
-| **Effective date** | 2026-04-19 |
-| **Dependencies** | — |
-| **Expected assets** | 25 paper, 1 answer |
-| **Source suggestion** | `S-0014-02` |
-| **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/) |
-| **Start time** | 2026-04-19T23:38:58Z |
-| **Task page** | [Literature survey: dendritic computation beyond DSGCs](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
-| **Task folder** | [`t0016_literature_survey_dendritic_computation/`](../../../tasks/t0016_literature_survey_dendritic_computation/) |
-
-# Literature survey: dendritic computation beyond DSGCs
-
-## Motivation
-
-Research question RQ4 (active vs passive dendrites) needs evidence from computational
-neuroscience beyond the retinal literature. Cortical and cerebellar dendrites have been
-studied far more extensively than DSGC dendrites, and the mechanisms and modelling conventions
-developed there (NMDA spikes, Ca/Na plateaus, branch-level nonlinearities) are the natural
-reference for whether active dendrites plausibly shape DSGC tuning curves. Source suggestion:
-S-0014-02 from t0014_brainstorm_results_3.
-
-## Scope
-
-Target ~25 category-relevant papers covering:
-
-1. NMDA spikes — thresholds, amplitudes, distance-dependence, supralinear integration.
-2. Na+ and Ca2+ dendritic spikes — backpropagation, forward propagation, local spikes.
-3. Plateau potentials — in-vivo evidence, role in coincidence detection, duration scaling.
-4. Branch-level nonlinearities — independent subunits, clustered-vs-distributed input
-   summation.
-5. Sublinear-to-supralinear integration regimes — what controls the transition, which
-   conditions make dendrites behave passively in practice.
-6. Active-vs-passive modelling comparisons — cortical, cerebellar, hippocampal studies that
-   built matched active and passive compartmental models and quantified the difference.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
-mid task must be dropped and the exclusion recorded in the task log.
-
-## Approach
-
-1. Run `/research-internet` targeting each of the six themes above with preference for review
-   articles plus 2-4 primary studies per theme.
-2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
-   `download_status: "failed"` and added to `intervention/paywalled_papers.md` for the
-   researcher to retrieve manually.
-3. Write one answer asset synthesising which dendritic-computation mechanisms plausibly
-   transfer to DSGC dendrites, with explicit caveats about anatomical and biophysical
-   differences.
-
-## Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant), some possibly with
-  `download_status: "failed"`.
-* One answer asset under `assets/answer/` synthesising the six themes and flagging mechanisms
-  most plausible for DSGC dendrites.
-* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
-
-## Compute and Budget
-
-No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
-
-## Dependencies
-
-None.
-
-## Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and explicitly addresses transferability to
-  DSGC dendrites.
-* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
-
-</details>
 
 <details>
 <summary>⏳ 0017 — <strong>Literature survey: patch-clamp recordings of RGCs and
@@ -999,128 +1157,6 @@ stdout/stderr under `logs/` so reviewers can audit the call.
 * **Search produces too many candidates to port within this task**: triage by (a) citation
   count, (b) publication year (newer first), (c) whether the code is in a simulator already on
   this workstation. Port the top 3-5 and list the rest as suggestions.
-
-</details>
-
-<details>
-<summary>⏹ 0008 — <strong>Port ModelDB 189347 and similar DSGC compartmental models
-to NEURON</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0008_port_modeldb_189347` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-19 |
-| **Dependencies** | [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
-| **Expected assets** | 1 library, 1 answer |
-| **Source suggestion** | `S-0002-03` |
-| **Task types** | [`code-reproduction`](../../../meta/task_types/code-reproduction/), [`write-library`](../../../meta/task_types/write-library/) |
-| **Task page** | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
-| **Task folder** | [`t0008_port_modeldb_189347/`](../../../tasks/t0008_port_modeldb_189347/) |
-
-# Port ModelDB 189347 and similar DSGC compartmental models to NEURON as library assets
-
-## Motivation
-
-Poleg-Polsky & Diamond 2016 (paper `10.1016_j.neuron.2016.02.013`, ModelDB 189347) is the
-closest published match to this project's goal: a NEURON multi-compartmental mouse ON-OFF DSGC
-model with **177 AMPA + 177 GABA** synapses and NMDA multiplicative gain. Reproducing it
-creates the reference implementation that every later parameter-variation task (Na/K grid
-S-0002-01, morphology sweep S-0002-04, E/I ratio scan S-0002-05, active-vs-passive dendrites
-S-0002-02) will fork from. It is also the cleanest end-to-end test that the NEURON+NetPyNE
-install from t0007 and the calibrated morphology from t0009 are fit for purpose.
-
-Covers suggestions **S-0002-03** and **S-0003-02** (merged — the two suggestions describe the
-same work from slightly different angles).
-
-## Scope
-
-### Phase A — Port the Poleg-Polsky 2016 baseline
-
-1. Download ModelDB entry 189347 and register the resulting Python package under
-   `assets/library/dsgc-polegpolsky-2016/` with a description, module paths, test paths, and a
-   smoke-test that instantiates the model and runs a single angle.
-2. Swap in the calibrated morphology produced by t0009 (`dsgc-baseline-morphology-calibrated`)
-   in place of the ModelDB-bundled morphology. Document the swap and any geometric differences
-   (compartment count, dendritic path length, branch points) vs the original ModelDB
-   morphology.
-3. Run the published stimulus: drifting bar / moving spot at 12 angles (30° spacing), synaptic
-   configuration matching the paper, Poleg-Polsky NMDA parameters.
-4. Compute the simulated tuning curve (firing rate vs angle, 20 trials per angle with fresh
-   seeds) and score it with the t0012 scoring loss library against the envelope: DSI
-   **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM **60-90°**.
-
-### Phase B — Hunt for sibling DSGC compartmental models
-
-5. Search ModelDB, SenseLab, OSF, and GitHub for additional DSGC compartmental models cited or
-   adjacent in the literature (Schachter2010 derivatives, Briggman-lineage forks, 2017-2025
-   updates of the Poleg-Polsky model, any post-2020 published code).
-6. For each model found, record: source URL, NEURON compatibility, morphology it ships with,
-   synaptic configuration, and whether it runs out-of-the-box in this environment.
-7. Port any model that has public code and runs cleanly as a separate library asset under
-   `assets/library/<model-slug>/`. If a model fails to run, record the failure in the Phase B
-   answer asset and do not register a broken library.
-
-## Dependencies
-
-* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology`
-* **t0007_install_neuron_netpyne** — NEURON+NetPyNE must work before any simulation runs
-* **t0009_calibrate_dendritic_diameters** — needs calibrated morphology to avoid biasing the
-  reproduction with placeholder 0.125 µm radii
-* **t0012_tuning_curve_scoring_loss_library** — envelope verification must use the canonical
-  scoring library, not an ad-hoc check
-
-## Expected Outputs
-
-* **1 library asset** (`assets/library/dsgc-polegpolsky-2016/`) — the ported ModelDB 189347.
-* **1 answer asset** (`assets/answer/dsgc-modeldb-port-reproduction-report/`) covering:
-  * Phase A: envelope verification table (DSI, peak, null, HWHM) vs targets
-  * Phase B: a survey row-per-model listing each candidate found, its source, its NEURON
-    compatibility, whether it was ported, and if not, why
-* **0 or more additional library assets** for any sibling models successfully ported.
-* **Simulated tuning-curve CSVs** under `data/tuning_curves/` (per model, per seed) for t0011
-  to consume.
-
-## Approach
-
-* Write `code/port_modeldb_189347.py` that downloads the ModelDB zip, unpacks it into the
-  library asset folder, compiles its MOD files with `nrnivmodl`, and runs the published demo
-  to confirm the port is intact before any morphology swap.
-* Write `code/run_tuning_curve.py` that takes a library name and a morphology (calibrated
-  SWC), runs 12 angles × 20 seeded trials, writes `tuning_curve.csv` with `(angle_deg,
-  trial_seed, firing_rate_hz)`.
-* Write `code/score_envelope.py` that imports the t0012 scoring library and produces the
-  verification table.
-* For Phase B: write `code/hunt_sibling_models.py` that scrapes ModelDB's category listings
-  (the author's own follow-up entries, neighbouring DSGC entries, 2017+ entries citing 189347)
-  and writes a candidate-list CSV. Human review selects which candidates to attempt porting
-  before Phase B code runs.
-
-## Compute and Budget
-
-Local only. 12 angles × 20 trials × ~5-10 s wall-clock per trial ≈ 20-40 minutes per model on
-this workstation. Budget remains `$0.00`.
-
-## Questions the task answers
-
-1. Does the reproduced Poleg-Polsky 2016 model hit the envelope: DSI 0.7-0.85, peak 40-80 Hz,
-   null < 10 Hz, HWHM 60-90°?
-2. Does swapping the ModelDB morphology for the calibrated Feller morphology preserve envelope
-   compliance, or does it shift the model outside the envelope?
-3. Which sibling DSGC compartmental models exist in public repositories, and which run in this
-   environment?
-4. Are there published DSGC compartmental models whose tuning curves systematically disagree
-   with the Poleg-Polsky envelope, and if so, by how much?
-
-## Risks and Fallbacks
-
-* **ModelDB 189347 has drifted or the Python wrapper is stale**: port the `hoc`/`mod` files
-  directly and wrap in a minimal Python loader; record the drift in the answer asset.
-* **Swapping to the calibrated morphology produces envelope failure**: treat that as a
-  scientific finding, not a blocker — report it verbatim and surface a new suggestion for
-  morphology- conditioned parameter retuning.
-* **Phase B finds no portable sibling models**: document the gap as a new suggestion and do
-  not invent models to port.
 
 </details>
 

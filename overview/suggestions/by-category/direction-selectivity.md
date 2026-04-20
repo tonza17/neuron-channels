@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-22 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **19 open** (6
-high, 11 medium, 2 low), **3 closed**.
+24 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **21 open** (7
+high, 12 medium, 2 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -49,6 +49,29 @@ Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliabilit
 out of individual tasks into a shared library asset. Every later fitting task will need these
 four functions; centralising them avoids divergent reimplementations and makes metric values
 reproducible from parameters alone.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
+selectivity via compartmental simulation</strong> (S-0016-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_35005094`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_35005094/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA
+spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC
+model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0)
+and test whether spatially-clustered co-directional bipolar-cell input produces supralinear
+summation during preferred-direction motion and is suppressed by asymmetric inhibition during
+null-direction motion. Compare the resulting DSI (direction selectivity index) against the
+no-NMDA baseline to quantify the NMDA-spike contribution to DS.
 
 </details>
 
@@ -408,6 +431,30 @@ Build a small library that wraps NetPyNE's `Batch` class with the project's pref
 axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
 `assets/library/` entry plus a one-page usage example. This unblocks every downstream
 tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
+in DSGC dendritic trees</strong> (S-0016-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | [`10.1038_18686`](../../../tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_18686/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a
+plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal
+two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with
+spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone
+compartments, then test whether asymmetric inhibition at principal-branch bifurcations can
+selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
+null-direction motion. Report preferred-direction burst firing rate versus null-direction
+burst rate and compare with published DSGC spiking statistics.
 
 </details>
 

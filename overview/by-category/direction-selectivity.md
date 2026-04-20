@@ -5,8 +5,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (18)](../papers/by-category/direction-selectivity.md) | [Answers
-(2)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(22)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(3)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(24)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (1)](../libraries/by-category/direction-selectivity.md)
 
@@ -945,7 +945,7 @@ simulation.
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 
-## Answers (2)
+## Answers (3)
 
 <details>
 <summary><strong>What does the classical cable-theory and dendritic-computation
@@ -962,6 +962,24 @@ asymmetry. The DS computation must arise from asymmetric inhibitory input acting
 dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model
 must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block,
 and reproducing the graded-vs- spike contrast-sensitivity trade-off.
+
+</details>
+
+<details>
+<summary><strong>Which dendritic-computation motifs observed in cortical,
+hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites,
+and what are the biophysical caveats?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`dendritic-computation-motifs-for-dsgc-direction-selectivity`](../../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/)
+
+Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and
+cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear
+integration, asymmetric shunting inhibition placed on the path between excitation and soma,
+and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC
+firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
+short and unipolar rather than tufted. All transferred numbers must be treated as targets to
+falsify rather than to assume, pending DSGC-specific patch validation.
 
 </details>
 
@@ -990,7 +1008,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (19 open, 3 closed)
+## Suggestions (21 open, 3 closed)
 
 <details>
 <summary>🔧 <strong>Parametric curve fitting (von Mises / wrapped Gaussian) for
@@ -1104,6 +1122,41 @@ parameters, validation suite, spike-generator tuning). A follow-up experiment ta
 implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
 publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
 test battery (shape-index, graded DS, inhibition block, contrast-response).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
+selectivity via compartmental simulation</strong> (S-0016-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0016_literature_survey_dendritic_computation](../../tasks/t0016_literature_survey_dendritic_computation/)
+
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA
+spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC
+model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0)
+and test whether spatially-clustered co-directional bipolar-cell input produces supralinear
+summation during preferred-direction motion and is suppressed by asymmetric inhibition during
+null-direction motion. Compare the resulting DSI (direction selectivity index) against the
+no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
+in DSGC dendritic trees</strong> (S-0016-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0016_literature_survey_dendritic_computation](../../tasks/t0016_literature_survey_dendritic_computation/)
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a
+plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal
+two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with
+spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone
+compartments, then test whether asymmetric inhibition at principal-branch bifurcations can
+selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
+null-direction motion. Report preferred-direction burst firing rate versus null-direction
+burst rate and compare with published DSGC spiking statistics.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T10:07:51Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T10:40:33Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>93560</char_count>
-    <byte_count>93706</byte_count>
-    <estimated_tokens>23390</estimated_tokens>
+    <char_count>96062</char_count>
+    <byte_count>96196</byte_count>
+    <estimated_tokens>24015</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -123,9 +123,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
+        <id>t0016_literature_survey_dendritic_computation</id>
       </source_ids>
       <content>
-Completed tasks: 11
+Completed tasks: 12
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -192,6 +193,12 @@ ID: t0015_literature_survey_cable_theory
 Completed: 2026-04-20
 Short description: Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.
 Result summary: Results Summary: Cable-Theory Literature Survey Summary Surveyed 5 foundational cable-theory and DSGC-biophysics papers and produced a single answer asset giving a concrete 6-point compartmental-modelling specification for DSGCs in NEURON. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare block); summaries are based on Crossref/OpenAlex abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational cable-theory and dendritic-computation literature and synthesize concrete compartmental-modelling guidance for direction-selective retinal ganglion cells (DSGCs) in NEURON. What Was Produced * **5 paper assets** covering the core cable-theory / DSGC-biophysics...
+
+## Literature survey: dendritic computation beyond DSGCs
+ID: t0016_literature_survey_dendritic_computation
+Completed: 2026-04-20
+Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+Result summary: Results Summary: Dendritic-Computation Literature Survey Summary Surveyed 5 foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London &amp; Hausser 2005) and produced a single answer asset synthesising which dendritic-computation motifs plausibly transfer to DSGC dendrites and the biophysical caveats on each transfer. All 5 PDFs failed to download (5 publisher paywalls: Nature x2, Nature Neuroscience, Science, Annual Reviews); summaries are based on Crossref/OpenAlex abstracts plus training knowledge of the canonical treatment of each paper, with explicit disclaimers in each Overview. Objective Survey the foundational dendritic-computation...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -202,18 +209,17 @@ Result summary: Results Summary: Cable-Theory Literature Survey Summary Surveyed
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 8
+Planned or active tasks: 7
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
-Status: not_started
-Effective date: 2026-04-19
+Status: in_progress
+Effective date: 2026-04-20
 Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
 Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
 
@@ -565,70 +571,6 @@ Covers suggestion **S-0005-01**.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
 
-## Literature survey: dendritic computation beyond DSGCs
-ID: t0016_literature_survey_dendritic_computation
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
-
-#### Motivation
-
-Research question RQ4 (active vs passive dendrites) needs evidence from computational neuroscience
-beyond the retinal literature. Cortical and cerebellar dendrites have been studied far more
-extensively than DSGC dendrites, and the mechanisms and modelling conventions developed there (NMDA
-spikes, Ca/Na plateaus, branch-level nonlinearities) are the natural reference for whether active
-dendrites plausibly shape DSGC tuning curves. Source suggestion: S-0014-02 from
-t0014_brainstorm_results_3.
-
-#### Scope
-
-Target ~25 category-relevant papers covering:
-
-1. NMDA spikes — thresholds, amplitudes, distance-dependence, supralinear integration.
-2. Na+ and Ca2+ dendritic spikes — backpropagation, forward propagation, local spikes.
-3. Plateau potentials — in-vivo evidence, role in coincidence detection, duration scaling.
-4. Branch-level nonlinearities — independent subunits, clustered-vs-distributed input summation.
-5. Sublinear-to-supralinear integration regimes — what controls the transition, which conditions
-   make dendrites behave passively in practice.
-6. Active-vs-passive modelling comparisons — cortical, cerebellar, hippocampal studies that built
-   matched active and passive compartmental models and quantified the difference.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered mid task
-must be dropped and the exclusion recorded in the task log.
-
-#### Approach
-
-1. Run `/research-internet` targeting each of the six themes above with preference for review
-   articles plus 2-4 primary studies per theme.
-2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
-   `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the researcher to
-   retrieve manually.
-3. Write one answer asset synthesising which dendritic-computation mechanisms plausibly transfer to
-   DSGC dendrites, with explicit caveats about anatomical and biophysical differences.
-
-#### Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant), some possibly with
-  `download_status: &quot;failed&quot;`.
-* One answer asset under `assets/answer/` synthesising the six themes and flagging mechanisms most
-  plausible for DSGC dendrites.
-* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
-
-#### Compute and Budget
-
-No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
-
-#### Dependencies
-
-None.
-
-#### Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and explicitly addresses transferability to DSGC
-  dendrites.
-* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
-
 ## Literature survey: patch-clamp recordings of RGCs and DSGCs
 ID: t0017_literature_survey_patch_clamp
 Status: in_progress
@@ -817,9 +759,10 @@ None.
         <id>dsgc-compartmental-simulator-choice</id>
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
+        <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
       </source_ids>
       <content>
-Answers: 4
+Answers: 5
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -852,6 +795,14 @@ Confidence: medium
 Categories: cable-theory, dendritic-computation, direction-selectivity, retinal-ganglion-cells, compartmental-modelling
 
 DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not ball- and-stick), discretized with the `d_lambda` rule, and must implement direction selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block, and reproducing the graded-vs- spike contrast-sensitivity trade-off.
+
+## Which dendritic-computation motifs observed in cortical, hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites, and what are the biophysical caveats?
+ID: dendritic-computation-motifs-for-dsgc-direction-selectivity
+Created by: t0016_literature_survey_dendritic_computation on 2026-04-20
+Confidence: medium
+Categories: dendritic-computation, direction-selectivity, synaptic-integration, compartmental-modeling
+
+Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -880,6 +831,8 @@ DSGC compartmental models in NEURON must use morphologically accurate reconstruc
         <id>S-0012-03</id>
         <id>S-0015-01</id>
         <id>S-0015-04</id>
+        <id>S-0016-01</id>
+        <id>S-0016-03</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -902,13 +855,15 @@ DSGC compartmental models in NEURON must use morphologically accurate reconstruc
         <id>S-0012-05</id>
         <id>S-0015-02</id>
         <id>S-0015-03</id>
+        <id>S-0016-02</id>
+        <id>S-0016-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0009-07</id>
         <id>S-0012-06</id>
       </source_ids>
       <content>
-Open suggestions: 48
+Open suggestions: 52
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1064,6 +1019,20 @@ Kind: experiment
 Source task: t0015_literature_survey_cable_theory
 The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive parameters, validation suite, spike-generator tuning). A follow-up experiment task should implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part test battery (shape-index, graded DS, inhibition block, contrast-response).
 
+## Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims
+ID: S-0016-01
+Priority: high
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London &amp; Hausser 2005) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset&#x27;s download_status to &#x27;success&#x27;, replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the actual papers.
+
+## Experimentally test NMDA-spike contribution to DSGC direction selectivity via compartmental simulation
+ID: S-0016-03
+Priority: high
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0) and test whether spatially-clustered co-directional bipolar-cell input produces supralinear summation during preferred-direction motion and is suppressed by asymmetric inhibition during null-direction motion. Compare the resulting DSI (direction selectivity index) against the no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -1217,6 +1186,20 @@ Priority: medium
 Kind: evaluation
 Source task: t0015_literature_survey_cable_theory
 The answer asset verificator emits AA-W001 warnings because categories &#x27;retinal-ganglion-cells&#x27; and &#x27;compartmental-modelling&#x27; are not registered in meta/categories/. These categories are used by all five literature-survey tasks (t0015-t0019) and should be formally registered to silence the warnings and enable category-based aggregation across those tasks.
+
+## Extend dendritic-computation survey to cerebellar Purkinje and STDP papers
+ID: S-0016-02
+Priority: medium
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+The scoped-down 5-paper survey covers cortical and hippocampal dendritic-computation motifs (NMDA spike, BAC firing, BTSP, branch-level integration, canonical review) but does not cover cerebellar Purkinje-cell branch-specific computation or cortical / hippocampal spike-timing-dependent plasticity. A follow-up survey task should add approximately 5 papers on cerebellar Purkinje branch-strength (Llinas &amp; Sugimori 1980, Rancz &amp; Hausser 2006, Brunel 2016) and cortical / hippocampal STDP (Bi &amp; Poo 1998, Markram 1997, Sjostrom 2008 review) to close the gap.
+
+## Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees
+ID: S-0016-04
+Priority: medium
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone compartments, then test whether asymmetric inhibition at principal-branch bifurcations can selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during null-direction motion. Report preferred-direction burst firing rate versus null-direction burst rate and compare with published DSGC spiking...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

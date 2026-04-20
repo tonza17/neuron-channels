@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T10:07:51Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T10:40:33Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>48408</char_count>
-    <byte_count>48417</byte_count>
-    <estimated_tokens>12102</estimated_tokens>
+    <char_count>52323</char_count>
+    <byte_count>52332</byte_count>
+    <estimated_tokens>13080</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -66,9 +66,13 @@
         <id>S-0015-02</id>
         <id>S-0015-03</id>
         <id>S-0015-04</id>
+        <id>S-0016-01</id>
+        <id>S-0016-02</id>
+        <id>S-0016-03</id>
+        <id>S-0016-04</id>
       </source_ids>
       <content>
-Suggestions: 49
+Suggestions: 53
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -619,6 +623,52 @@ Categories: compartmental-modelling, direction-selectivity
 Date added: 2026-04-20
 
 The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive parameters, validation suite, spike-generator tuning). A follow-up experiment task should implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part test battery (shape-index, graded DS, inhibition block, contrast-response).
+
+## Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims
+ID: S-0016-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+Categories: dendritic-computation
+Date added: 2026-04-20
+
+Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999, Bittner 2017, London &amp; Hausser 2005) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset&#x27;s download_status to &#x27;success&#x27;, replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the actual papers.
+
+## Extend dendritic-computation survey to cerebellar Purkinje and STDP papers
+ID: S-0016-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+Categories: dendritic-computation
+Date added: 2026-04-20
+
+The scoped-down 5-paper survey covers cortical and hippocampal dendritic-computation motifs (NMDA spike, BAC firing, BTSP, branch-level integration, canonical review) but does not cover cerebellar Purkinje-cell branch-specific computation or cortical / hippocampal spike-timing-dependent plasticity. A follow-up survey task should add approximately 5 papers on cerebellar Purkinje branch-strength (Llinas &amp; Sugimori 1980, Rancz &amp; Hausser 2006, Brunel 2016) and cortical / hippocampal STDP (Bi &amp; Poo 1998, Markram 1997, Sjostrom 2008 review) to close the gap.
+
+## Experimentally test NMDA-spike contribution to DSGC direction selectivity via compartmental simulation
+ID: S-0016-03
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+Source paper: 10.1038_35005094
+Categories: dendritic-computation, direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+The answer asset dendritic-computation-motifs-for-dsgc-direction-selectivity identifies NMDA spikes as the highest-confidence transferable motif. Build a NEURON/NetPyNE compartmental DSGC model with explicit NMDA synapses (dynamic Mg2+ block, NMDA:AMPA ratio swept from 0.5 to 2.0) and test whether spatially-clustered co-directional bipolar-cell input produces supralinear summation during preferred-direction motion and is suppressed by asymmetric inhibition during null-direction motion. Compare the resulting DSI (direction selectivity index) against the no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+## Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees
+ID: S-0016-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0016_literature_survey_dendritic_computation
+Source paper: 10.1038_18686
+Categories: dendritic-computation, direction-selectivity, voltage-gated-channels
+Date added: 2026-04-20
+
+The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Larkum 1999) as a plausible but uncertain motif for DSGCs (caveat: DSGC dendritic trees lack the tuft / basal two-compartment layout of cortical pyramidals). Build a compartmental DSGC model with spatially-varying L-type / T-type Ca2+-channel densities to identify candidate initiation-zone compartments, then test whether asymmetric inhibition at principal-branch bifurcations can selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during null-direction motion. Report preferred-direction burst firing rate versus null-direction burst rate and compare with published DSGC spiking statistics.
       </content>
     </section>
   </sections>
