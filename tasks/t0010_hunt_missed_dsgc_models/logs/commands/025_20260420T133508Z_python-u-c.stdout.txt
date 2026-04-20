@@ -1,0 +1,7 @@
+total rows: 14
+fields: ['candidate_id', 'source_url', 'authors', 'year', 'simulator', 'has_public_code', 'runnable_guess', 'priority', 'port_attempt_status', 'port_failure_phase', 'port_failure_reason', 'library_asset_slug', 'tuning_curve_csv_path', 'notes']
+high-priority rows: 3
+   hanson_2019_spatial_offset -> pending
+   derosenroll_2026_circuit_ei -> pending
+   polegpolsky_2026_ds_mechanisms -> pending
+not_attempted block looks good; count = 11

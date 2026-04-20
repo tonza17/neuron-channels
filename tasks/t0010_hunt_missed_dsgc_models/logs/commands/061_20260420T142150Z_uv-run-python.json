@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u tasks/t0010_hunt_missed_dsgc_models/code/write_answer_asset.py",
+  "exit_code": 0,
+  "duration_seconds": 0.214,
+  "started_at": "2026-04-20T14:21:50Z",
+  "completed_at": "2026-04-20T14:21:50Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "061_20260420T142150Z_uv-run-python.stdout.txt",
+  "stderr_file": "061_20260420T142150Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,39 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsgc-missed-models-survey",
+  "question": "What DSGC compartmental models published in public literature were missed by tasks t0002 and t0008, and which of them are viable ports for this project?",
+  "short_title": "Missed DSGC compartmental models: hunt and port viability",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "papers",
+    "internet",
+    "code-experiment"
+  ],
+  "source_paper_ids": [
+    "10.1016_j.celrep.2025.116833",
+    "10.1038_s41467-026-70288-4",
+    "10.7554_eLife.42392"
+  ],
+  "source_urls": [
+    "https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model",
+    "https://github.com/geoffder/ds-circuit-ei-microarchitecture",
+    "https://doi.org/10.5281/zenodo.17666157",
+    "https://github.com/PolegPolskyLab/DS-mechanisms",
+    "https://modeldb.science/189347",
+    "https://modeldb.science/267646"
+  ],
+  "source_task_ids": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0008_port_modeldb_189347",
+    "t0012_tuning_curve_scoring_loss_library"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0010_hunt_missed_dsgc_models",
+  "date_created": "2026-04-20"
+}

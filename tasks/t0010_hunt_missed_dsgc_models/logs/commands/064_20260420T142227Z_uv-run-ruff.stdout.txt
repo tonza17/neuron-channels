@@ -1,0 +1,217 @@
+E501 Line too long (101 > 100)
+  --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:90:101
+   |
+89 | Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et al.
+90 | 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature Communications,
+   |                                                                                                     ^
+91 | DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in the t0002 corpus but
+92 | had never been ported. None of the three HIGH-priority candidates completed a 12-angle canonical
+   |
+
+E501 Line too long (101 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:134:101
+    |
+133 | Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et al.
+134 | 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature Communications,
+    |                                                                                                     ^
+135 | DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in the t0002 corpus but
+136 | had never been ported. None of the three HIGH-priority candidates completed a 12-angle canonical
+    |
+
+E501 Line too long (146 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:257:101
+    |
+255 | … emitted a canonical tuning-curve CSV.
+256 | …
+257 | … | port_attempted | port_outcome | dsi | peak_hz | null_hz | hwhm_deg | passes_envelope |
+    |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+258 | …-- | --- |
+259 | …https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model | yes | yes | p2_failed (upstream headfull driver, hardcoded Windows pa…
+    |
+
+E501 Line too long (215 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:259:101
+    |
+257 | …dsi | peak_hz | null_hz | hwhm_deg | passes_envelope |
+258 | …
+259 | …-Offset-DSGC-NEURON-Model | yes | yes | p2_failed (upstream headfull driver, hardcoded Windows paths) | - | - | - | - | - |
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+260 | …er/ds-circuit-ei-microarchitecture | yes | yes | p2_failed (8-direction hardcode, heavy deps outside env) | - | - | - | - | - |
+261 | …PolskyLab/DS-mechanisms | yes | yes | p2_failed (GA training driver with numDir=2, no LICENSE) | - | - | - | - | - |
+    |
+
+E501 Line too long (219 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:260:101
+    |
+258 | …
+259 | …ffset-DSGC-NEURON-Model | yes | yes | p2_failed (upstream headfull driver, hardcoded Windows paths) | - | - | - | - | - |
+260 | …/ds-circuit-ei-microarchitecture | yes | yes | p2_failed (8-direction hardcode, heavy deps outside env) | - | - | - | - | - |
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+261 | …lskyLab/DS-mechanisms | yes | yes | p2_failed (GA training driver with numDir=2, no LICENSE) | - | - | - | - | - |
+262 | … no | not_attempted (medium; antecedent fallback) | - | - | - | - | - |
+    |
+
+E501 Line too long (208 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:261:101
+    |
+259 | …tial-Offset-DSGC-NEURON-Model | yes | yes | p2_failed (upstream headfull driver, hardcoded Windows paths) | - | - | - | - | - |
+260 | …offder/ds-circuit-ei-microarchitecture | yes | yes | p2_failed (8-direction hardcode, heavy deps outside env) | - | - | - | - | - |
+261 | …olegPolskyLab/DS-mechanisms | yes | yes | p2_failed (GA training driver with numDir=2, no LICENSE) | - | - | - | - | - |
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+262 | … yes | no | not_attempted (medium; antecedent fallback) | - | - | - | - | - |
+263 | …ted (medium; needs code inspection for DSGC class) | - | - | - | - | - |
+    |
+
+E501 Line too long (165 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:262:101
+    |
+260 | …https://github.com/geoffder/ds-circuit-ei-microarchitecture | yes | yes | p2_failed (8-direction hardcode, heavy deps outside env) |…
+261 | … https://github.com/PolegPolskyLab/DS-mechanisms | yes | yes | p2_failed (GA training driver with numDir=2, no LICENSE) | - | - | - …
+262 | …geoffder/ei-balance | yes | no | not_attempted (medium; antecedent fallback) | - | - | - | - | - |
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+263 | …yes | no | not_attempted (medium; needs code inspection for DSGC class) | - | - | - | - | - |
+264 | …ub.com/NBELab/RSME | yes | no | not_attempted (low; DSGC is phenomenological) | - | - | - | - | - |
+    |
+
+E501 Line too long (160 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:263:101
+    |
+261 | …` | https://github.com/PolegPolskyLab/DS-mechanisms | yes | yes | p2_failed (GA training driver with numDir=2, no LICENSE) | - | - |…
+262 | …om/geoffder/ei-balance | yes | no | not_attempted (medium; antecedent fallback) | - | - | - | - | - |
+263 | … | yes | no | not_attempted (medium; needs code inspection for DSGC class) | - | - | - | - | - |
+    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+264 | …ithub.com/NBELab/RSME | yes | no | not_attempted (low; DSGC is phenomenological) | - | - | - | - | - |
+265 | …/PolegPolskyLab/DS_Bipolar_Inputs_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |
+
+E501 Line too long (166 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:264:101
+    |
+262 | …geoffder/ei-balance | yes | no | not_attempted (medium; antecedent fallback) | - | - | - | - | - |
+263 | …yes | no | not_attempted (medium; needs code inspection for DSGC class) | - | - | - | - | - |
+264 | …ub.com/NBELab/RSME | yes | no | not_attempted (low; DSGC is phenomenological) | - | - | - | - | - |
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+265 | …legPolskyLab/DS_Bipolar_Inputs_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+266 | …/geoffder/spatiotemporal-starburst-model | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |
+
+E501 Line too long (167 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:265:101
+    |
+263 | …es | no | not_attempted (medium; needs code inspection for DSGC class) | - | - | - | - | - |
+264 | …b.com/NBELab/RSME | yes | no | not_attempted (low; DSGC is phenomenological) | - | - | - | - | - |
+265 | …egPolskyLab/DS_Bipolar_Inputs_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+266 | …geoffder/spatiotemporal-starburst-model | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+267 | …AB) | no | not_attempted (drop; rate-coded) | - | - | - | - | - |
+    |
+
+E501 Line too long (173 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:266:101
+    |
+264 | …om/NBELab/RSME | yes | no | not_attempted (low; DSGC is phenomenological) | - | - | - | - | - |
+265 | …olskyLab/DS_Bipolar_Inputs_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+266 | …ffder/spatiotemporal-starburst-model | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+267 | … | no | not_attempted (drop; rate-coded) | - | - | - | - | - |
+268 | …GC-Velocity-Project | no (MATLAB analysis) | no | not_attempted (drop; analysis-only) | - | - | - | - | - |
+    |
+
+E501 Line too long (133 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:267:101
+    |
+265 | …://github.com/PolegPolskyLab/DS_Bipolar_Inputs_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+266 | …tps://github.com/geoffder/spatiotemporal-starburst-model | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+267 | …ab/dsg | no (MATLAB) | no | not_attempted (drop; rate-coded) | - | - | - | - | - |
+    |                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+268 | …com/vivinetto-lab/DSGC-Velocity-Project | no (MATLAB analysis) | no | not_attempted (drop; analysis-only) | - | - | - | - | - |
+269 | …ub.com/Kathleen-Kish/Retinal_Ganglion_Cell | yes | no | not_attempted (drop; generic RGC) | - | - | - | - | - |
+    |
+
+E501 Line too long (178 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:268:101
+    |
+266 | …der/spatiotemporal-starburst-model | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+267 | … no | not_attempted (drop; rate-coded) | - | - | - | - | - |
+268 | …-Velocity-Project | no (MATLAB analysis) | no | not_attempted (drop; analysis-only) | - | - | - | - | - |
+    |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+269 | …etinal_Ganglion_Cell | yes | no | not_attempted (drop; generic RGC) | - | - | - | - | - |
+270 | …es | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |
+
+E501 Line too long (162 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:269:101
+    |
+267 | …ATLAB) | no | not_attempted (drop; rate-coded) | - | - | - | - | - |
+268 | …lab/DSGC-Velocity-Project | no (MATLAB analysis) | no | not_attempted (drop; analysis-only) | - | - | - | - | - |
+269 | …n-Kish/Retinal_Ganglion_Cell | yes | no | not_attempted (drop; generic RGC) | - | - | - | - | - |
+    |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+270 | …_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+271 | …3` | https://modeldb.science/189347 | yes | n/a (already ported by t0008) | drop (not a new candidate) | - | - | - | - | - |
+    |
+
+E501 Line too long (135 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:270:101
+    |
+268 | …om/vivinetto-lab/DSGC-Velocity-Project | no (MATLAB analysis) | no | not_attempted (drop; analysis-only) | - | - | - | - | - |
+269 | …b.com/Kathleen-Kish/Retinal_Ganglion_Cell | yes | no | not_attempted (drop; generic RGC) | - | - | - | - | - |
+270 | …ab/ankri_2020_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+    |                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+271 | …on.2016.02.013` | https://modeldb.science/189347 | yes | n/a (already ported by t0008) | drop (not a new candidate) | - | - | - | - …
+272 | …science/223890 | no (NeuronC) | no | not_attempted (drop; separate simulator) | - | - | - | - | - |
+    |
+
+E501 Line too long (189 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:271:101
+    |
+269 | …_Ganglion_Cell | yes | no | not_attempted (drop; generic RGC) | - | - | - | - | - |
+270 | …o | not_attempted (drop; SAC-only) | - | - | - | - | - |
+271 | …odeldb.science/189347 | yes | n/a (already ported by t0008) | drop (not a new candidate) | - | - | - | - | - |
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+272 | …C) | no | not_attempted (drop; separate simulator) | - | - | - | - | - |
+    |
+
+E501 Line too long (151 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:272:101
+    |
+270 | …_2020_SAC | yes | no | not_attempted (drop; SAC-only) | - | - | - | - | - |
+271 | …02.013` | https://modeldb.science/189347 | yes | n/a (already ported by t0008) | drop (not a new candidate) | - | - | - | - | - |
+272 | …223890 | no (NeuronC) | no | not_attempted (drop; separate simulator) | - | - | - | - | - |
+    |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+273 | …
+274 | …
+    |
+
+E501 Line too long (101 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:308:101
+    |
+307 | Per the task's Phase B rule (never leave a broken library behind), no library asset was scaffolded
+308 | for any of the three failures. `assets/library/` in this task therefore remains empty. `metrics.json`
+    |                                                                                                     ^
+309 | was written in explicit multi-variant format with an empty `variants` list, consistent with REQ-7
+310 | when zero ports succeed. `data/tuning_curves/` contains no port-authored CSVs. `data/candidates.csv`
+    |
+
+E501 Line too long (104 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:316:101
+    |
+314 | ## Synthesis
+315 |
+316 | **REQ-1** was satisfied by transcribing the 14-row CANDIDATES TABLE from `research/research_internet.md`
+    |                                                                                                     ^^^^
+317 | into `data/candidates.csv`; the three-pass hunt (37 queries across ModelDB, GitHub/Zenodo/OSF, and
+318 | Google Scholar + bioRxiv forward-cites of the six DSGC seed papers) produced exhaustive coverage.
+    |
+
+E501 Line too long (119 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_answer_asset.py:392:101
+    |
+390 | [deRosenroll2026]: ../../paper/10.1016_j.celrep.2025.116833/summary.md
+391 | [PolegPolsky2026]: ../../paper/10.1038_s41467-026-70288-4/summary.md
+392 | [Hanson2019]: ../../../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/summary.md
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^
+393 | [t0002]: ../../../../t0002_literature_survey_dsgc_compartmental_models/
+394 | [t0008]: ../../../../t0008_port_modeldb_189347/
+    |
+
+Found 20 errors.

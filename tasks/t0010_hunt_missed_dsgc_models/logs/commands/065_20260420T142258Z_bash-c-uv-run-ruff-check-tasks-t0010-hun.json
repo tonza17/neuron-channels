@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "bash -c uv run ruff check tasks/t0010_hunt_missed_dsgc_models/code/write_answer_asset.py && uv run ruff format tasks/t0010_hunt_missed_dsgc_models/code/write_answer_asset.py && uv run mypy tasks/t0010_hunt_missed_dsgc_models/code/write_answer_asset.py",
+  "exit_code": 0,
+  "duration_seconds": 1.572,
+  "started_at": "2026-04-20T14:22:58Z",
+  "completed_at": "2026-04-20T14:23:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "065_20260420T142258Z_bash-c-uv-run-ruff-check-tasks-t0010-hun.stdout.txt",
+  "stderr_file": "065_20260420T142258Z_bash-c-uv-run-ruff-check-tasks-t0010-hun.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

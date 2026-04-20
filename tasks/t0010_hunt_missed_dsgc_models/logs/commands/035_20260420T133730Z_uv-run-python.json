@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -c \nimport urllib.request\nimport urllib.error\nimport json\n\n# DOAJ pointer\nurl = 'https://doaj.org/api/search/articles/id:54f4740f1ecc4790afbd2eebb9a076a8'\nreq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\ntry:\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read())\n    print(json.dumps(data, indent=2)[:3000])\nexcept Exception as e:\n    print('err', repr(e))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.443,
+  "started_at": "2026-04-20T13:37:30Z",
+  "completed_at": "2026-04-20T13:37:30Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "035_20260420T133730Z_uv-run-python.stdout.txt",
+  "stderr_file": "035_20260420T133730Z_uv-run-python.stderr.txt",
+  "stdout_lines": 68,
+  "stderr_lines": 0,
+  "truncated": false
+}

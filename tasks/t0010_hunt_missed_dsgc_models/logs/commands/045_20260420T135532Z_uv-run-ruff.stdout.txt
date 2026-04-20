@@ -1,0 +1,12 @@
+E501 Line too long (113 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_paper_summaries.py:213:101
+    |
+211 | ---
+212 |
+213 | # Machine learning discovers numerous new computational principles underlying direction selectivity in the retina
+    |                                                                                                     ^^^^^^^^^^^^^
+214 |
+215 | ## Metadata
+    |
+
+Found 3 errors (2 fixed, 1 remaining).

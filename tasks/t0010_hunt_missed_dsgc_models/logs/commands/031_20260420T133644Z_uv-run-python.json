@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -c \nimport urllib.request\nimport urllib.error\n\n# Attempt Poleg-Polsky 2026 PDF first (Nature gives a direct pdf link).\npdf_url = 'https://www.nature.com/articles/s41467-026-70288-4.pdf'\nout = 'tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/files/polegpolsky_2026_ml-motion-primitives.pdf'\nreq = urllib.request.Request(pdf_url, headers={'User-Agent': 'Mozilla/5.0 (neuron-channels-arf; mailto:a.nikolaev@sheffield.ac.uk)'})\ntry:\n    with urllib.request.urlopen(req, timeout=120) as resp:\n        data = resp.read()\n    with open(out, 'wb') as f:\n        f.write(data)\n    print('poleg-polsky pdf bytes:', len(data))\nexcept urllib.error.HTTPError as e:\n    print('poleg-polsky HTTP error:', e.code, e.reason)\nexcept Exception as e:\n    print('poleg-polsky ERROR:', repr(e))\n",
+  "exit_code": 0,
+  "duration_seconds": 1.699,
+  "started_at": "2026-04-20T13:36:44Z",
+  "completed_at": "2026-04-20T13:36:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "031_20260420T133644Z_uv-run-python.stdout.txt",
+  "stderr_file": "031_20260420T133644Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

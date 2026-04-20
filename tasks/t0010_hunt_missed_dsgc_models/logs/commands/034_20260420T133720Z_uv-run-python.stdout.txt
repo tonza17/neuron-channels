@@ -1,0 +1,19 @@
+{
+  "id": "41581149",
+  "source": "MED",
+  "pmcid": null,
+  "fullTextUrlList": null,
+  "isOpenAccess": "N",
+  "hasPDF": "N"
+}
+unpaywall is_oa: True
+best OA: {
+  "url": "https://doi.org/10.1016/j.celrep.2025.116833",
+  "url_for_pdf": null,
+  "url_for_landing_page": "https://doi.org/10.1016/j.celrep.2025.116833",
+  "host_type": "publisher",
+  "license": "cc-by",
+  "version": "publishedVersion"
+}
+  OA loc: https://doi.org/10.1016/j.celrep.2025.116833 | publisher | cc-by
+  OA loc: https://doaj.org/article/54f4740f1ecc4790afbd2eebb9a076a8 | repository | cc-by

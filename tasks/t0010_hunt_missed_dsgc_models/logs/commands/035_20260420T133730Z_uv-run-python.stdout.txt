@@ -1,0 +1,68 @@
+{
+  "total": 1,
+  "page": 1,
+  "pageSize": 10,
+  "timestamp": "2026-04-20T13:37:30.706061Z",
+  "query": "id:54f4740f1ecc4790afbd2eebb9a076a8",
+  "results": [
+    {
+      "last_updated": "2026-01-25T14:14:42Z",
+      "bibjson": {
+        "identifier": [
+          {
+            "id": "2211-1247",
+            "type": "eissn"
+          },
+          {
+            "id": "10.1016/j.celrep.2025.116833",
+            "type": "doi"
+          }
+        ],
+        "journal": {
+          "volume": "45",
+          "number": "2",
+          "country": "NL",
+          "issns": [
+            "2211-1247"
+          ],
+          "publisher": "Elsevier",
+          "language": [
+            "EN"
+          ],
+          "title": "Cell Reports"
+        },
+        "month": "02",
+        "end_page": "",
+        "keywords": [
+          "CP: neuroscience"
+        ],
+        "year": "2026",
+        "start_page": "116833",
+        "subject": [
+          {
+            "code": "QH301-705.5",
+            "scheme": "LCC",
+            "term": "Biology (General)"
+          }
+        ],
+        "author": [
+          {
+            "affiliation": "Department of Biology, University of Victoria, Victoria, BC V8W 2Y2, Canada",
+            "name": "Geoff deRosenroll"
+          },
+          {
+            "affiliation": "Department of Biology, University of Victoria, Victoria, BC V8W 2Y2, Canada",
+            "name": "Santhosh Sethuramanujam"
+          },
+          {
+            "affiliation": "Department of Biology, University of Victoria, Victoria, BC V8W 2Y2, Canada; Corresponding author",
+            "name": "Gautam B. Awatramani"
+          }
+        ],
+        "link": [
+          {
+            "type": "fulltext",
+            "url": "http://www.sciencedirect.com/science/article/pii/S2211124725016055"
+          }
+        ],
+        "abstract": "Summary: GABAergic/cholinergic starburst amacrine cells play a crucial role in shaping direction selectivity in the dendrites of downstream direction-selective (DS) ganglion cells (DSGCs) in the retina by providing \u201cnull\u201d inhibitory and \u201cpreferred\u201d excitatory signals. The extent to which GABA and acetylcholine (ACh) signals are co-transmitted at the subcellular level is challenging to assess, making it difficult to fully appreciate the mechanisms underlying this dendritic computation. Here, two-photon Ca2+ imaging reveals that processing within local dendritic \u201cDS subunits\u201d is compromised when ACh dynamics are perturbed regionally with an acetylcholinesterase blocker. A network model that captures the specific anatomical \u201cwiring\u201d of the DS circuit reveals how minor perturbations in the spatiotemporal properties of ACh\u2014that do not disrupt the global excitation/inhibition (E/I) balance\u2014uncouple E/I locally and compromise direction selectivity. These results reveal the inner workings of the \u201chidden\u201d synaptic microarchitecture that mediates diverse, localized direction computations across the DS

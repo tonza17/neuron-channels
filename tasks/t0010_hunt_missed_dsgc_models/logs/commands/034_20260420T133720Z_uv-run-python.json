@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -c \nimport urllib.request\nimport urllib.error\nimport json\n\n# Try Europe PMC for the deRosenroll paper\ndoi = '10.1016/j.celrep.2025.116833'\nurl = f'https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:{doi}&format=json'\nreq = urllib.request.Request(url, headers={'User-Agent': 'neuron-channels-arf'})\ntry:\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read())\n    hits = data.get('resultList', {}).get('result', [])\n    if hits:\n        for h in hits:\n            print(json.dumps({k: h.get(k) for k in ['id', 'source', 'pmcid', 'fullTextUrlList', 'isOpenAccess', 'hasPDF']}, indent=2, default=str))\n    else:\n        print('no hits')\nexcept Exception as e:\n    print('err', repr(e))\n\n# Also try unpaywall\nimport urllib.parse\nu2 = f'https://api.unpaywall.org/v2/{doi}?email=a.nikolaev@sheffield.ac.uk'\ntry:\n    req = urllib.request.Request(u2, headers={'User-Agent': 'neuron-channels-arf'})\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read())\n    print('unpaywall is_oa:', data.get('is_oa'))\n    oa = data.get('best_oa_location')\n    if oa:\n        print('best OA:', json.dumps({k: oa.get(k) for k in ['url', 'url_for_pdf', 'url_for_landing_page', 'host_type', 'license', 'version']}, indent=2))\n    for loc in data.get('oa_locations', []):\n        print('  OA loc:', loc.get('url_for_pdf') or loc.get('url'), '|', loc.get('host_type'), '|', loc.get('license'))\nexcept Exception as e:\n    print('unpaywall err', repr(e))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.966,
+  "started_at": "2026-04-20T13:37:20Z",
+  "completed_at": "2026-04-20T13:37:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "034_20260420T133720Z_uv-run-python.stdout.txt",
+  "stderr_file": "034_20260420T133720Z_uv-run-python.stderr.txt",
+  "stdout_lines": 19,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -c \nimport urllib.request\nimport urllib.error\n\n# Attempt deRosenroll 2026 PDF from Cell Press. Try multiple URLs.\nurls = [\n    'https://www.cell.com/cell-reports/pdf/S2211-1247(25)01605-5.pdf',\n    'https://www.cell.com/action/showPdf?pii=S2211-1247%2825%2901605-5',\n    'https://www.cell.com/cell-reports/pdfExtended/S2211-1247(25)01605-5',\n    'https://www.sciencedirect.com/science/article/pii/S2211124725016055/pdfft',\n]\nout = 'tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/files/derosenroll_2026_circuit-ei-microarchitecture.pdf'\nfor u in urls:\n    req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (neuron-channels-arf; mailto:a.nikolaev@sheffield.ac.uk)', 'Accept': 'application/pdf,*/*'})\n    try:\n        with urllib.request.urlopen(req, timeout=60) as resp:\n            data = resp.read()\n            ct = resp.headers.get('Content-Type', '')\n            print(u, '->', len(data), ct)\n            if 'pdf' in ct.lower() and len(data) > 50000:\n                with open(out, 'wb') as f:\n                    f.write(data)\n                print('WROTE pdf:', out, len(data))\n                break\n    except urllib.error.HTTPError as e:\n        print(u, 'HTTP', e.code, e.reason)\n    except Exception as e:\n        print(u, 'ERROR', repr(e))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.789,
+  "started_at": "2026-04-20T13:36:56Z",
+  "completed_at": "2026-04-20T13:36:57Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "032_20260420T133656Z_uv-run-python.stdout.txt",
+  "stderr_file": "032_20260420T133656Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

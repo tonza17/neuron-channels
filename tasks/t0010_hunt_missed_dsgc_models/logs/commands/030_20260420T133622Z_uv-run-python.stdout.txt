@@ -1,0 +1,25 @@
+== 10.1016/j.celrep.2025.116833
+title: ['Uncovering the “hidden” synaptic microarchitecture of the retinal direction selective circuit']
+container: ['Cell Reports']
+type: journal-article
+issued: {'date-parts': [[2026, 2]]}
+published-online: None
+authors:
+  - deRosenroll Geoff | [] | ORCID: None
+  - Sethuramanujam Santhosh | [] | ORCID: None
+  - Awatramani Gautam B. | [] | ORCID: https://orcid.org/0000-0002-0610-5271
+abstract: None
+URL: https://doi.org/10.1016/j.celrep.2025.116833
+link: [{'URL': 'https://api.elsevier.com/content/article/PII:S2211124725016055?httpAccept=text/xml', 'content-type': 'text/xml', 'content-version': 'vor', 'intended-application': 'text-mining'}, {'URL': 'https://api.elsevier.com/content/article/PII:S2211124725016055?httpAccept=text/plain', 'content-type': 'text/plain', 'content-version': 'vor', 'intended-application': 'text-mining'}]
+== 10.1038/s41467-026-70288-4
+title: ['Machine learning discovers numerous new computational principles supporting elementary motion detection']
+container: ['Nature Communications']
+type: journal-article
+issued: {'date-parts': [[2026, 3, 3]]}
+published-online: {'date-parts': [[2026, 3, 3]]}
+authors:
+  - Poleg-Polsky Alon | [] | ORCID: https://orcid.org/0000-0003-1327-5129
+abstract: <jats:title>Abstract</jats:title>
+                  <jats:p>Motion direction detection is a fundamental visual computation that transforms spatial luminance patterns into directionally tuned outputs. Classical models of direction selectivity rely on temporal asymmetry, where motion detection arises through either delayed excitation or inhibition. Here, I used biologically inspired machine learning applied to retinal and cortical circuits to uncover receptive field architectures capable of direct...
+URL: https://doi.org/10.1038/s41467-026-70288-4
+link: [{'URL': 'https://www.nature.com/articles/s41467-026-70288-4', 'content-type': 'text/html', 'content-version': 'vor', 'intended-application': 'text-mining'}, {'URL': 'https://www.nature.com/articles/s41467-026-70288-4.pdf', 'content-type': 'application/pdf', 'content-version': 'vor', 'intended-application': 'text-mining'}, {'URL': 'https://www.nature.com/articles/s41467-026-70288-4.pdf', 'content-type': 'application/pdf', 'content-version': 'vor', 'intended-application': 'similarity-checking'}]

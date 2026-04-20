@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.celrep.2025.116833",
+  "doi": "10.1016/j.celrep.2025.116833",
+  "title": "Uncovering the \u201chidden\u201d synaptic microarchitecture of the retinal direction selective circuit",
+  "url": "https://www.cell.com/cell-reports/fulltext/S2211-1247(25)01605-5",
+  "pdf_url": "https://www.cell.com/cell-reports/pdf/S2211-1247(25)01605-5.pdf",
+  "date_published": "2026-02",
+  "year": 2026,
+  "authors": [
+    {
+      "name": "Geoff deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Gautam B. Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-0610-5271"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    }
+  ],
+  "journal": "Cell Reports",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "dendritic-computation"
+  ],
+  "abstract": "GABAergic/cholinergic starburst amacrine cells play a crucial role in shaping direction selectivity in the dendrites of downstream direction-selective (DS) ganglion cells (DSGCs) in the retina by providing \u201cnull\u201d inhibitory and \u201cpreferred\u201d excitatory signals. The extent to which GABA and acetylcholine (ACh) signals are co-transmitted at the subcellular level is challenging to assess, making it difficult to fully appreciate the mechanisms underlying this dendritic computation. Here, two-photon Ca2+ imaging reveals that processing within local dendritic \u201cDS subunits\u201d is compromised when ACh dynamics are perturbed regionally with an acetylcholinesterase blocker. A network model that captures the specific anatomical \u201cwiring\u201d of the DS circuit reveals how minor perturbations in the spatiotemporal properties of ACh\u2014that do not disrupt the global excitation/inhibition (E/I) balance\u2014uncouple E/I locally and compromise direction selectivity. These results reveal the inner workings of the \u201chidden\u201d synaptic microarchitecture that mediates diverse, localized direction computations across the DSGC\u2019s dendritic field.",
+  "citation_key": "deRosenroll2026",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "The publisher (Cell Press / Elsevier) returned HTTP 403 Forbidden for every anonymous automated request to the article PDF. URLs attempted: https://www.cell.com/cell-reports/pdf/S2211-1247(25)01605-5.pdf, https://www.cell.com/action/showPdf?pii=S2211-1247%2825%2901605-5, https://www.cell.com/cell-reports/pdfExtended/S2211-1247(25)01605-5, https://www.sciencedirect.com/science/article/pii/S2211124725016055/pdfft, https://linkinghub.elsevier.com/retrieve/pii/S2211124725016055, and the Cell Reports fulltext landing page. The article is open-access under a CC-BY licence (confirmed via Unpaywall and DOAJ at https://doaj.org/article/54f4740f1ecc4790afbd2eebb9a076a8), but Elsevier's bot-protection blocks programmatic downloads and the article is not yet indexed in PubMed Central (NCBI PMC ID converter returns \"Identifier not found in PMC\"). The paper metadata (authors, institution, journal, abstract, volume/issue, figures) was captured from CrossRef, DOAJ, and the companion code repository README, so this asset retains metadata value and the summary is written from the verbatim abstract plus the fully public companion code at https://github.com/geoffder/ds-circuit-ei-microarchitecture (Zenodo archive 10.5281/zenodo.17666157). Manual download by a human with browser access is the recommended recovery path; an intervention file can be raised if t0010 downstream steps require the full PDF."
+,
+  "added_by_task": "t0010_hunt_missed_dsgc_models",
+  "date_added": "2026-04-20"
+}
