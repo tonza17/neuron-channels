@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0018_literature_survey_synaptic_integration",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0018_literature_survey_synaptic_integration/results/results_summary.md tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md",
+  "exit_code": 0,
+  "duration_seconds": 0.497,
+  "started_at": "2026-04-20T12:06:42Z",
+  "completed_at": "2026-04-20T12:06:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0018_literature_survey_synaptic_integration",
+  "stdout_file": "058_20260420T120642Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "058_20260420T120642Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
