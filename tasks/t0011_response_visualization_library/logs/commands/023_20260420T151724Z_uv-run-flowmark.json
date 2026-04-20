@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0011_response_visualization_library",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0011_response_visualization_library/plan/plan.md",
+  "exit_code": 0,
+  "duration_seconds": 0.426,
+  "started_at": "2026-04-20T15:17:24Z",
+  "completed_at": "2026-04-20T15:17:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0011_response_visualization_library",
+  "stdout_file": "023_20260420T151724Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "023_20260420T151724Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

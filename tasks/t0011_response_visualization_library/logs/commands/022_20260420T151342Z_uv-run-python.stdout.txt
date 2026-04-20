@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0011_response_visualization_library\tasks\t0011_response_visualization_library\plan\plan.md
+
+[31m[1mERRORS:[0m
+[31m  PL-E004 error: Missing mandatory section: '## Task Requirement Checklist'[0m
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W001 warning: Section 'Cost Estimation' has 18 words (minimum: 20)[0m
+[33m  PL-W001 warning: Section 'Remote Machines' has 1 words (minimum: 10)[0m
+[33m  PL-W002 warning: '## Risks & Fallbacks' section contains no markdown table[0m
+[33m  PL-W007 warning: '## Step by Step' does not reference any `REQ-*` items[0m
+
+[31m[1mFAILED[0m — 1 error(s), 4 warning(s)
