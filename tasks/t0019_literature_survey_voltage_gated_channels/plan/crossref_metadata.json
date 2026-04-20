@@ -1,0 +1,3161 @@
+[
+  {
+    "doi": "10.1002/cne.21173",
+    "citation_key": "VanWart2006",
+    "theme": 1,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            19
+          ]
+        ],
+        "date-time": "2026-03-19T18:00:20Z",
+        "timestamp": 1773943220580,
+        "version": "3.50.1"
+      },
+      "reference-count": 56,
+      "publisher": "Wiley",
+      "issue": "2",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2006,
+                11,
+                16
+              ]
+            ],
+            "date-time": "2006-11-16T00:00:00Z",
+            "timestamp": 1163635200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "J of Comparative Neurology"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2007,
+            1,
+            10
+          ]
+        ]
+      },
+      "abstract": "<jats:title>Abstract</jats:title><jats:p>Voltage\u2010gated sodium (Na<jats:sub>v</jats:sub>) channels accumulate at the axon initial segment (IS), where their high density supports spike initiation. Maintenance of this high density of Na<jats:sub>v</jats:sub> channels involves a macromolecular complex that includes the cytoskeletal linker protein ankyrin\u2010G, the only protein known to bind Na<jats:sub>v</jats:sub> channels and localize them at the IS. We found previously that Na<jats:sub>v</jats:sub>1.6 is the predominant Na<jats:sub>v</jats:sub> channel isoform at IS of adult rodent retinal ganglion cells. However, here we report that Na<jats:sub>v</jats:sub>1.6 immunostaining is consistently reduced or absent in short regions of the IS proximal to the soma, although both ankyrin\u2010G and pan\u2010Na<jats:sub>v</jats:sub> antibodies stain this region. We show that this proximal IS subregion is a unique axonal microdomain, containing an accumulation of Na<jats:sub>v</jats:sub>1.1 channels that are spatially segregated from the Na<jats:sub>v</jats:sub>1.6 channels of the distal IS. Additionally, we find that axonal K<jats:sub>v</jats:sub>1.2 potassium channels are present within the distal IS, but are also excluded from the Na<jats:sub>v</jats:sub>1.1\u2010enriched proximal IS microdomain. Because ankyrin\u2010G was prominent in both proximal and distal subcompartments of the IS, where it colocalized with either Na<jats:sub>v</jats:sub>1.1 or Na<jats:sub>v</jats:sub>1.6, respectively, mechanisms other than association with ankyrin\u2010G must mediate differential targeting of Na<jats:sub>v</jats:sub> channel subtypes to achieve the spatial precision observed within the IS. This precise arrangement of ion channels within the axon initial segment is likely an important determinant of the firing properties of ganglion cells and other mammalian neurons. J. Comp. Neurol. 500:339\u2013352, 2007. \u00a9 2006 Wiley\u2010Liss, Inc.</jats:p>",
+      "DOI": "10.1002/cne.21173",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2006,
+            11,
+            17
+          ]
+        ],
+        "date-time": "2006-11-17T14:18:34Z",
+        "timestamp": 1163773114000
+      },
+      "page": "339-352",
+      "source": "Crossref",
+      "is-referenced-by-count": 193,
+      "title": [
+        "Polarized distribution of ion channels within microdomains of the axon initial segment"
+      ],
+      "prefix": "10.1002",
+      "volume": "500",
+      "author": [
+        {
+          "given": "Audra",
+          "family": "Van Wart",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "James S.",
+          "family": "Trimmer",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Gary",
+          "family": "Matthews",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "311",
+      "published-online": {
+        "date-parts": [
+          [
+            2006,
+            11,
+            16
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "issue": "1",
+          "key": "e_1_2_6_2_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "203",
+          "DOI": "10.1111/j.1469-7793.1999.0203r.x",
+          "article-title": "Specific distribution of sodium channels in axons of rat embryo spinal motoneurones",
+          "volume": "518",
+          "author": "Alessandri\u2010Haber N",
+          "year": "1999",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "e_1_2_6_3_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.2001.013371"
+        },
+        {
+          "key": "e_1_2_6_4_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/j.1460-2075.1989.tb08534.x"
+        },
+        {
+          "key": "e_1_2_6_5_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0028-3908(96)00128-1"
+        },
+        {
+          "key": "e_1_2_6_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1023/A:1007005528505"
+        },
+        {
+          "key": "e_1_2_6_7_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0896-6273(01)00265-3"
+        },
+        {
+          "key": "e_1_2_6_8_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.23-06-02306.2003"
+        },
+        {
+          "key": "e_1_2_6_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.090034797"
+        },
+        {
+          "key": "e_1_2_6_10_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "292",
+          "DOI": "10.1152/jn.1992.67.2.292",
+          "article-title": "Site of action potential initiation in amphibian retinal ganglion cells",
+          "volume": "67",
+          "author": "Carras PL",
+          "year": "1992",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "e_1_2_6_11_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/284170a0"
+        },
+        {
+          "key": "e_1_2_6_12_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/(SICI)1098-1136(199805)23:1<11::AID-GLIA2>3.0.CO;2-7"
+        },
+        {
+          "key": "e_1_2_6_13_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1083/jcb.135.5.1355"
+        },
+        {
+          "key": "e_1_2_6_14_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.22-16-06953.2002"
+        },
+        {
+          "key": "e_1_2_6_15_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.15-01-00492.1995"
+        },
+        {
+          "key": "e_1_2_6_16_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1083/jcb.147.6.1145"
+        },
+        {
+          "key": "e_1_2_6_17_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0169-328X(97)00187-3"
+        },
+        {
+          "key": "e_1_2_6_18_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1152/jn.1997.78.4.1948"
+        },
+        {
+          "key": "e_1_2_6_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/emboj/20.21.5950"
+        },
+        {
+          "key": "e_1_2_6_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/(SICI)1096-9861(19990920)412:2<342::AID-CNE11>3.0.CO;2-2"
+        },
+        {
+          "key": "e_1_2_6_21_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.0511197103"
+        },
+        {
+          "key": "e_1_2_6_22_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1083/jcb.200109026"
+        },
+        {
+          "key": "e_1_2_6_23_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "3823",
+          "DOI": "10.1242/jcs.114.21.3823",
+          "article-title": "FIGQY phosphorylation defines discrete populations of L1 cell adhesion molecules at sites of cell\u2010cell contact and in migrating neurons",
+          "volume": "114",
+          "author": "Jenkins SM",
+          "year": "2001",
+          "journal-title": "J Cell Sci"
+        },
+        {
+          "key": "e_1_2_6_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/jnr.20806"
+        },
+        {
+          "key": "e_1_2_6_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0042-6989(93)90221-H"
+        },
+        {
+          "key": "e_1_2_6_26_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1074/jbc.270.5.2352"
+        },
+        {
+          "key": "e_1_2_6_27_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1074/jbc.M303327200"
+        },
+        {
+          "key": "e_1_2_6_28_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1074/jbc.M202354200"
+        },
+        {
+          "key": "e_1_2_6_29_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0306-4522(93)90047-J"
+        },
+        {
+          "key": "e_1_2_6_30_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.21-16-05973.2001"
+        },
+        {
+          "key": "e_1_2_6_31_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/ncb1009"
+        },
+        {
+          "key": "e_1_2_6_32_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.4314-05.2006"
+        },
+        {
+          "key": "e_1_2_6_33_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/nrn1253"
+        },
+        {
+          "key": "e_1_2_6_34_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/cne.10702"
+        },
+        {
+          "key": "e_1_2_6_35_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.19-17-07516.1999"
+        },
+        {
+          "key": "e_1_2_6_36_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/glia.10284"
+        },
+        {
+          "key": "e_1_2_6_37_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1083/jcb.200102086"
+        },
+        {
+          "key": "e_1_2_6_38_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.17-21-08246.1997"
+        },
+        {
+          "key": "e_1_2_6_39_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.23-18-07001.2003"
+        },
+        {
+          "key": "e_1_2_6_40_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0896-6273(03)00628-7"
+        },
+        {
+          "key": "e_1_2_6_41_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.5427-03.2004"
+        },
+        {
+          "key": "e_1_2_6_42_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/(SICI)1096-9861(20000424)420:1<84::AID-CNE6>3.0.CO;2-9"
+        },
+        {
+          "key": "e_1_2_6_43_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1152/jn.1999.81.4.1685"
+        },
+        {
+          "key": "e_1_2_6_44_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.95.26.15753"
+        },
+        {
+          "key": "e_1_2_6_45_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1017/S0952523800007951"
+        },
+        {
+          "key": "e_1_2_6_46_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0896-6273(92)90127-Y"
+        },
+        {
+          "key": "e_1_2_6_47_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.19-02-00747.1999"
+        },
+        {
+          "key": "e_1_2_6_48_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.mcn.2004.11.012"
+        },
+        {
+          "key": "e_1_2_6_49_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/j.1460-9568.1995.tb00641.x"
+        },
+        {
+          "key": "e_1_2_6_50_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.07-12-04115.1987"
+        },
+        {
+          "key": "e_1_2_6_51_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/365075a0"
+        },
+        {
+          "key": "e_1_2_6_52_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.14-08-04588.1994"
+        },
+        {
+          "key": "e_1_2_6_53_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0896-6273(89)90238-9"
+        },
+        {
+          "key": "e_1_2_6_54_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0169-328X(00)00289-8"
+        },
+        {
+          "key": "e_1_2_6_55_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/17806"
+        },
+        {
+          "key": "e_1_2_6_56_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0896-6273(88)90171-7"
+        },
+        {
+          "key": "e_1_2_6_57_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1083/jcb.143.5.1295"
+        }
+      ],
+      "container-title": [
+        "Journal of Comparative Neurology"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fcne.21173",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/cne.21173",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            11
+          ]
+        ],
+        "date-time": "2023-10-11T08:55:23Z",
+        "timestamp": 1697014523000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://onlinelibrary.wiley.com/doi/10.1002/cne.21173"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2006,
+            11,
+            16
+          ]
+        ]
+      },
+      "references-count": 56,
+      "journal-issue": {
+        "issue": "2",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              1,
+              10
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1002/cne.21173"
+      ],
+      "URL": "https://doi.org/10.1002/cne.21173",
+      "archive": [
+        "Portico"
+      ],
+      "relation": {},
+      "ISSN": [
+        "0021-9967",
+        "1096-9861"
+      ],
+      "issn-type": [
+        {
+          "value": "0021-9967",
+          "type": "print"
+        },
+        {
+          "value": "1096-9861",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2006,
+            11,
+            16
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "doi": "10.1016/j.neuron.2007.07.031",
+    "citation_key": "KoleLetzkus2007",
+    "theme": 2,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            1
+          ]
+        ],
+        "date-time": "2026-04-01T02:08:46Z",
+        "timestamp": 1775009326775,
+        "version": "3.50.1"
+      },
+      "reference-count": 57,
+      "publisher": "Elsevier BV",
+      "issue": "4",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2007,
+                8,
+                1
+              ]
+            ],
+            "date-time": "2007-08-01T00:00:00Z",
+            "timestamp": 1185926400000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                2013,
+                7,
+                17
+              ]
+            ],
+            "date-time": "2013-07-17T00:00:00Z",
+            "timestamp": 1374019200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 2177,
+          "URL": "https://www.elsevier.com/open-access/userlicense/1.0/"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Neuron"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2007,
+            8
+          ]
+        ]
+      },
+      "DOI": "10.1016/j.neuron.2007.07.031",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2007,
+            8,
+            16
+          ]
+        ],
+        "date-time": "2007-08-16T16:53:24Z",
+        "timestamp": 1187283204000
+      },
+      "page": "633-647",
+      "source": "Crossref",
+      "is-referenced-by-count": 394,
+      "title": [
+        "Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic Efficacy"
+      ],
+      "prefix": "10.1016",
+      "volume": "55",
+      "author": [
+        {
+          "given": "Maarten H.P.",
+          "family": "Kole",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Johannes J.",
+          "family": "Letzkus",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Greg J.",
+          "family": "Stuart",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "78",
+      "reference": [
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib1",
+          "doi-asserted-by": "crossref",
+          "first-page": "1290",
+          "DOI": "10.1126/science.1119055",
+          "article-title": "Combined analog and action potential coding in hippocampal mossy fibers",
+          "volume": "311",
+          "author": "Alle",
+          "year": "2006",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib2",
+          "doi-asserted-by": "crossref",
+          "first-page": "109",
+          "DOI": "10.1016/j.neuron.2005.08.038",
+          "article-title": "Modulation of transmitter release by presynaptic resting potential and background calcium levels",
+          "volume": "48",
+          "author": "Awatramani",
+          "year": "2005",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib3",
+          "doi-asserted-by": "crossref",
+          "first-page": "8345",
+          "DOI": "10.1073/pnas.95.14.8345",
+          "article-title": "Synaptic facilitation by reflected action potentials: enhancement of transmission when nerve impulses reverse direction at axon branch points",
+          "volume": "95",
+          "author": "Baccus",
+          "year": "1998",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib4",
+          "doi-asserted-by": "crossref",
+          "first-page": "593",
+          "DOI": "10.1111/j.1469-7793.2000.t01-1-00593.x",
+          "article-title": "Properties of voltage-gated potassium currents in nucleated patches from large layer 5 cortical pyramidal neurons of the rat",
+          "volume": "525",
+          "author": "Bekkers",
+          "year": "2000",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib5",
+          "doi-asserted-by": "crossref",
+          "first-page": "6553",
+          "DOI": "10.1523/JNEUROSCI.21-17-06553.2001",
+          "article-title": "Modulation of excitability by alpha-dendrotoxin-sensitive potassium channels in neocortical pyramidal neurons",
+          "volume": "21",
+          "author": "Bekkers",
+          "year": "2001",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib6",
+          "doi-asserted-by": "crossref",
+          "first-page": "8441",
+          "DOI": "10.1523/JNEUROSCI.1400-04.2004",
+          "article-title": "A quantitative map of the circuit of cat primary visual cortex",
+          "volume": "24",
+          "author": "Binzegger",
+          "year": "2004",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib7",
+          "doi-asserted-by": "crossref",
+          "first-page": "10593",
+          "DOI": "10.1523/JNEUROSCI.22-24-10593.2002",
+          "article-title": "Timing and efficacy of Ca2+ channel activation in hippocampal mossy fiber boutons",
+          "volume": "22",
+          "author": "Bischofberger",
+          "year": "2002",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib8",
+          "doi-asserted-by": "crossref",
+          "first-page": "347",
+          "DOI": "10.1098/rstb.1999.0386",
+          "article-title": "Effect of changes in action potential shape on calcium currents and transmitter release in a calyx-type synapse of the rat auditory brainstem",
+          "volume": "354",
+          "author": "Borst",
+          "year": "1999",
+          "journal-title": "Philos. Trans. R. Soc. Lond. B Biol. Sci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib9",
+          "doi-asserted-by": "crossref",
+          "first-page": "425",
+          "DOI": "10.1523/JNEUROSCI.16-02-00425.1996",
+          "article-title": "Presynaptic facilitation revisited: state and time dependence",
+          "volume": "16",
+          "author": "Byrne",
+          "year": "1996",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib10",
+          "doi-asserted-by": "crossref",
+          "first-page": "415",
+          "DOI": "10.1113/jphysiol.1981.sp013674",
+          "article-title": "Evidence for the presence of potassium channels in the paranodal region of acutely demyelinated mammalian single nerve fibres",
+          "volume": "313",
+          "author": "Chiu",
+          "year": "1981",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib11",
+          "doi-asserted-by": "crossref",
+          "first-page": "9724",
+          "DOI": "10.1073/pnas.170278697",
+          "article-title": "Action potentials reliably invade axonal arbors of rat neocortical neurons",
+          "volume": "97",
+          "author": "Cox",
+          "year": "2000",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib12",
+          "doi-asserted-by": "crossref",
+          "first-page": "304",
+          "DOI": "10.1038/nrn1397",
+          "article-title": "Information processing in the axon",
+          "volume": "5",
+          "author": "Debanne",
+          "year": "2004",
+          "journal-title": "Nat. Rev. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib13",
+          "doi-asserted-by": "crossref",
+          "first-page": "286",
+          "DOI": "10.1038/38502",
+          "article-title": "Action-potential propagation gated by an axonal I(A)-like K+ conductance in hippocampus",
+          "volume": "389",
+          "author": "Debanne",
+          "year": "1997",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib14",
+          "doi-asserted-by": "crossref",
+          "first-page": "210",
+          "DOI": "10.1016/j.tins.2004.02.012",
+          "article-title": "Presynaptic K+ channels: electrifying regulators of synaptic terminal excitability",
+          "volume": "27",
+          "author": "Dodson",
+          "year": "2004",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib15",
+          "doi-asserted-by": "crossref",
+          "first-page": "27",
+          "DOI": "10.1113/jphysiol.2003.046250",
+          "article-title": "Presynaptic rat Kv1.2 channels suppress synaptic terminal hyperexcitability following action potential invasion",
+          "volume": "550",
+          "author": "Dodson",
+          "year": "2003",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib16",
+          "doi-asserted-by": "crossref",
+          "first-page": "1288",
+          "DOI": "10.1016/S0006-3495(91)82162-2",
+          "article-title": "Applicability of the coefficient of variation method for analyzing synaptic plasticity",
+          "volume": "60",
+          "author": "Faber",
+          "year": "1991",
+          "journal-title": "Biophys. J."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib17",
+          "doi-asserted-by": "crossref",
+          "first-page": "927",
+          "DOI": "10.1016/S0896-6273(00)00164-1",
+          "article-title": "Dynamic control of presynaptic Ca(2+) inflow by fast-inactivating K(+) channels in hippocampal mossy fiber boutons",
+          "volume": "28",
+          "author": "Geiger",
+          "year": "2000",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib18",
+          "doi-asserted-by": "crossref",
+          "first-page": "371",
+          "DOI": "10.1113/jphysiol.2005.097006",
+          "article-title": "Expression and biophysical properties of Kv1 channels in supragranular neocortical pyramidal neurones",
+          "volume": "571",
+          "author": "Guan",
+          "year": "2006",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib19",
+          "doi-asserted-by": "crossref",
+          "first-page": "15",
+          "DOI": "10.1016/S0041-0101(00)00162-8",
+          "article-title": "Twenty years of dendrotoxins",
+          "volume": "39",
+          "author": "Harvey",
+          "year": "2001",
+          "journal-title": "Toxicon"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib20",
+          "doi-asserted-by": "crossref",
+          "first-page": "1",
+          "DOI": "10.1016/0165-0270(88)90114-8",
+          "article-title": "A versatile means of intracellular labeling: injection of biocytin and its detection with avidin conjugates",
+          "volume": "25",
+          "author": "Horikawa",
+          "year": "1988",
+          "journal-title": "J. Neurosci. Methods"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib21",
+          "doi-asserted-by": "crossref",
+          "first-page": "2920",
+          "DOI": "10.1073/pnas.0511197103",
+          "article-title": "Voltage-gated ion channels in the axon initial segment of human cortical pyramidal cells and their relationship with chandelier cells",
+          "volume": "103",
+          "author": "Inda",
+          "year": "2006",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib22",
+          "doi-asserted-by": "crossref",
+          "first-page": "10445",
+          "DOI": "10.1523/JNEUROSCI.23-32-10445.2003",
+          "article-title": "Distinct roles of Kv1 and Kv3 potassium channels at the calyx of Held presynaptic terminal",
+          "volume": "23",
+          "author": "Ishikawa",
+          "year": "2003",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib23",
+          "doi-asserted-by": "crossref",
+          "first-page": "692",
+          "DOI": "10.1152/jn.1993.69.3.692",
+          "article-title": "Passive current flow and morphology in the terminal arborizations of the posterior pituitary",
+          "volume": "69",
+          "author": "Jackson",
+          "year": "1993",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib24",
+          "doi-asserted-by": "crossref",
+          "first-page": "380",
+          "DOI": "10.1073/pnas.88.2.380",
+          "article-title": "Action potential broadening and frequency-dependent facilitation of calcium signals in pituitary nerve terminals",
+          "volume": "88",
+          "author": "Jackson",
+          "year": "1991",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib25",
+          "doi-asserted-by": "crossref",
+          "first-page": "959",
+          "DOI": "10.1016/S0896-6273(00)80335-9",
+          "article-title": "The efficiency of sensory information coding by mechanoreceptor neurons",
+          "volume": "18",
+          "author": "Juusola",
+          "year": "1997",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib26",
+          "doi-asserted-by": "crossref",
+          "first-page": "1472",
+          "DOI": "10.1038/nn1798",
+          "article-title": "Cortical feed-forward networks for binding different streams of sensory information",
+          "volume": "9",
+          "author": "Kampa",
+          "year": "2006",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib27",
+          "doi-asserted-by": "crossref",
+          "first-page": "625",
+          "DOI": "10.1111/j.1469-7793.2000.00625.x",
+          "article-title": "Calcium dynamics associated with action potentials in single nerve terminals of pyramidal cells in layer 2/3 of the young rat neocortex",
+          "volume": "529",
+          "author": "Koester",
+          "year": "2000",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib28",
+          "doi-asserted-by": "crossref",
+          "first-page": "1069",
+          "DOI": "10.1038/nature05347",
+          "article-title": "Axonal site of spike initiation enhances auditory coincidence detection",
+          "volume": "444",
+          "author": "Kuba",
+          "year": "2006",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib29",
+          "doi-asserted-by": "crossref",
+          "first-page": "1870",
+          "DOI": "10.1126/science.1089662",
+          "article-title": "Communication in neuronal networks",
+          "volume": "301",
+          "author": "Laughlin",
+          "year": "2003",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib30",
+          "doi-asserted-by": "crossref",
+          "first-page": "399",
+          "DOI": "10.1016/j.neuron.2006.07.004",
+          "article-title": "Whole-cell recordings in freely moving rats",
+          "volume": "51",
+          "author": "Lee",
+          "year": "2006",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib31",
+          "doi-asserted-by": "crossref",
+          "first-page": "601",
+          "DOI": "10.1113/jphysiol.2003.053132",
+          "article-title": "Sub- and suprathreshold receptive field properties of pyramidal neurones in layers 5A and 5B of rat somatosensory barrel cortex",
+          "volume": "556",
+          "author": "Manns",
+          "year": "2004",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib32",
+          "doi-asserted-by": "crossref",
+          "first-page": "1424",
+          "DOI": "10.1016/S0006-3495(91)82179-8",
+          "article-title": "Effect of geometrical irregularities on propagation delay in axonal trees",
+          "volume": "60",
+          "author": "Manor",
+          "year": "1991",
+          "journal-title": "Biophys. J."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib33",
+          "doi-asserted-by": "crossref",
+          "first-page": "409",
+          "DOI": "10.1113/jphysiol.1997.sp022031",
+          "article-title": "Physiology and anatomy of synaptic connections between thick tufted pyramidal neurones in the developing rat neocortex",
+          "volume": "500",
+          "author": "Markram",
+          "year": "1997",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib34",
+          "doi-asserted-by": "crossref",
+          "first-page": "1854",
+          "DOI": "10.1523/JNEUROSCI.4812-05.2006",
+          "article-title": "Site of action potential initiation in layer 5 pyramidal neurons",
+          "volume": "26",
+          "author": "Palmer",
+          "year": "2006",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib35",
+          "doi-asserted-by": "crossref",
+          "first-page": "2599",
+          "DOI": "10.1523/JNEUROSCI.4314-05.2006",
+          "article-title": "A common ankyrin-G-based mechanism retains KCNQ and NaV channels at electrically active domains of the axon",
+          "volume": "26",
+          "author": "Pan",
+          "year": "2006",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib36",
+          "doi-asserted-by": "crossref",
+          "first-page": "13638",
+          "DOI": "10.1073/pnas.2235811100",
+          "article-title": "Interaction of sensory responses with spontaneous depolarization in layer 2/3 barrel cortex",
+          "volume": "100",
+          "author": "Petersen",
+          "year": "2003",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib37",
+          "doi-asserted-by": "crossref",
+          "first-page": "63",
+          "DOI": "10.1111/j.1469-7793.2000.00063.x",
+          "article-title": "Ion channel sequestration in central nervous system axons",
+          "volume": "525",
+          "author": "Rasband",
+          "year": "2000",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib38",
+          "doi-asserted-by": "crossref",
+          "first-page": "36",
+          "DOI": "10.1523/JNEUROSCI.18-01-00036.1998",
+          "article-title": "Potassium channel distribution, clustering, and function in remyelinating rat axons",
+          "volume": "18",
+          "author": "Rasband",
+          "year": "1998",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib39",
+          "doi-asserted-by": "crossref",
+          "first-page": "26",
+          "DOI": "10.1016/0014-5793(96)00211-6",
+          "article-title": "Novel effects of dendrotoxin homologues on subtypes of mammalian Kv1 potassium channels expressed in Xenopus oocytes",
+          "volume": "383",
+          "author": "Robertson",
+          "year": "1996",
+          "journal-title": "FEBS Lett."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib40",
+          "doi-asserted-by": "crossref",
+          "first-page": "737",
+          "DOI": "10.1113/jphysiol.2006.122564",
+          "article-title": "Dendritic voltage-gated K+ conductance gradient in pyramidal neurones of neocortical layer 5B",
+          "volume": "579",
+          "author": "Schaefer",
+          "year": "2007",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib41",
+          "doi-asserted-by": "crossref",
+          "first-page": "746",
+          "DOI": "10.1152/jn.00922.2006",
+          "article-title": "Properties of action potential initiation in neocortical pyramidal cells: evidence from whole cell axon recordings",
+          "volume": "97",
+          "author": "Shu",
+          "year": "2006",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib42",
+          "doi-asserted-by": "crossref",
+          "first-page": "761",
+          "DOI": "10.1038/nature04720",
+          "article-title": "Modulation of intracortical synaptic potentials by presynaptic somatic membrane potential",
+          "volume": "441",
+          "author": "Shu",
+          "year": "2006",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib43",
+          "doi-asserted-by": "crossref",
+          "first-page": "11453",
+          "DOI": "10.1073/pnas.0702041104",
+          "article-title": "Selective control of cortical axonal spikes by a slowly inactivating K+ current",
+          "volume": "104",
+          "author": "Shu",
+          "year": "2007",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib44",
+          "doi-asserted-by": "crossref",
+          "first-page": "173",
+          "DOI": "10.1098/rstb.1979.0004",
+          "article-title": "A study of the axon initial segment and proximal axon of neurons in the primate motor and somatic sensory cortices",
+          "volume": "285",
+          "author": "Sloper",
+          "year": "1979",
+          "journal-title": "Philos. Trans. R. Soc. Lond. B Biol. Sci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib45",
+          "doi-asserted-by": "crossref",
+          "first-page": "948",
+          "DOI": "10.1523/JNEUROSCI.18-03-00948.1998",
+          "article-title": "Patch-clamp recordings from cerebellar basket cell bodies and their presynaptic terminals reveal an asymmetric distribution of voltage-gated potassium channels",
+          "volume": "18",
+          "author": "Southan",
+          "year": "1998",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib46",
+          "doi-asserted-by": "crossref",
+          "first-page": "3252",
+          "DOI": "10.1523/JNEUROSCI.13-08-03252.1993",
+          "article-title": "A novel slow (< 1 Hz) oscillation of neocortical neurons in vivo: depolarizing and hyperpolarizing components",
+          "volume": "13",
+          "author": "Steriade",
+          "year": "1993",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib47",
+          "doi-asserted-by": "crossref",
+          "first-page": "379",
+          "DOI": "10.1038/336379a0",
+          "article-title": "Temporal integration by a slowly inactivating K+ current in hippocampal neurons",
+          "volume": "336",
+          "author": "Storm",
+          "year": "1988",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib48",
+          "doi-asserted-by": "crossref",
+          "first-page": "125",
+          "DOI": "10.1016/S0166-2236(96)10075-8",
+          "article-title": "Action potential initiation and backpropagation in neurons of the mammalian CNS",
+          "volume": "20",
+          "author": "Stuart",
+          "year": "1997",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib49",
+          "doi-asserted-by": "crossref",
+          "first-page": "3235",
+          "DOI": "10.1002/j.1460-2075.1989.tb08483.x",
+          "article-title": "Molecular basis of functional diversity of voltage-gated potassium channels in mammalian brain",
+          "volume": "8",
+          "author": "St\u00fchmer",
+          "year": "1989",
+          "journal-title": "EMBO J."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib50",
+          "doi-asserted-by": "crossref",
+          "first-page": "921",
+          "DOI": "10.1016/S0306-4522(01)00041-0",
+          "article-title": "Evidence of altered inhibition in layer V pyramidal neurons from neocortex of Kcna1-null mice",
+          "volume": "103",
+          "author": "van Brederode",
+          "year": "2001",
+          "journal-title": "Neuroscience"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib51",
+          "doi-asserted-by": "crossref",
+          "first-page": "339",
+          "DOI": "10.1002/cne.21173",
+          "article-title": "Polarized distribution of ion channels within microdomains of the axon initial segment",
+          "volume": "500",
+          "author": "Van Wart",
+          "year": "2007",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib52",
+          "doi-asserted-by": "crossref",
+          "first-page": "1890",
+          "DOI": "10.1126/science.282.5395.1890",
+          "article-title": "KCNQ2 and KCNQ3 potassium channel subunits: molecular correlates of the M-channel",
+          "volume": "282",
+          "author": "Wang",
+          "year": "1998",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib53",
+          "doi-asserted-by": "crossref",
+          "first-page": "65",
+          "DOI": "10.1113/jphysiol.2004.073353",
+          "article-title": "Anatomical, physiological and molecular properties of Martinotti cells in the somatosensory cortex of the juvenile rat",
+          "volume": "561",
+          "author": "Wang",
+          "year": "2004",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib54",
+          "doi-asserted-by": "crossref",
+          "first-page": "77",
+          "DOI": "10.1007/BF00499898",
+          "article-title": "Electrophysiological and neurobiochemical evidence for the blockade of a potassium channel by dendrotoxin",
+          "volume": "330",
+          "author": "Weller",
+          "year": "1985",
+          "journal-title": "Naunyn Schmiedebergs Arch. Pharmacol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib55",
+          "doi-asserted-by": "crossref",
+          "first-page": "467",
+          "DOI": "10.1111/j.1469-7793.1999.00467.x",
+          "article-title": "Mechanisms and consequences of action potential burst firing in rat neocortical pyramidal neurons",
+          "volume": "521",
+          "author": "Williams",
+          "year": "1999",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib56",
+          "doi-asserted-by": "crossref",
+          "first-page": "147",
+          "DOI": "10.1016/S0166-2236(03)00035-3",
+          "article-title": "Role of dendritic synapse location in the control of action potential output",
+          "volume": "26",
+          "author": "Williams",
+          "year": "2003",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "10.1016/j.neuron.2007.07.031_bib57",
+          "doi-asserted-by": "crossref",
+          "first-page": "767",
+          "DOI": "10.1111/j.1469-7793.1998.767bm.x",
+          "article-title": "Uneven distribution of K+ channels in soma, axon and dendrites of rat spinal neurones: functional role of the soma in generation of action potentials",
+          "volume": "509",
+          "author": "Wolff",
+          "year": "1998",
+          "journal-title": "J. Physiol."
+        }
+      ],
+      "container-title": [
+        "Neuron"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://api.elsevier.com/content/article/PII:S0896627307005764?httpAccept=text/xml",
+          "content-type": "text/xml",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://api.elsevier.com/content/article/PII:S0896627307005764?httpAccept=text/plain",
+          "content-type": "text/plain",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ],
+        "date-time": "2019-05-02T05:06:26Z",
+        "timestamp": 1556773586000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0896627307005764"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2007,
+            8
+          ]
+        ]
+      },
+      "references-count": 57,
+      "journal-issue": {
+        "issue": "4",
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              8
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "S0896627307005764"
+      ],
+      "URL": "https://doi.org/10.1016/j.neuron.2007.07.031",
+      "relation": {},
+      "ISSN": [
+        "0896-6273"
+      ],
+      "issn-type": [
+        {
+          "value": "0896-6273",
+          "type": "print"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2007,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "doi": "10.1152/jn.1997.78.4.1948",
+    "citation_key": "FohlmeisterMiller1997",
+    "theme": 3,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            18
+          ]
+        ],
+        "date-time": "2026-01-18T06:44:51Z",
+        "timestamp": 1768718691988,
+        "version": "3.49.0"
+      },
+      "reference-count": 25,
+      "publisher": "American Physiological Society",
+      "issue": "4",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Journal of Neurophysiology"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            1997,
+            10,
+            1
+          ]
+        ]
+      },
+      "abstract": "<jats:p> Fohlmeister, J.\u2009F. and R.\u2009F. Miller. Mechanisms by which cell geometry controls repetitive impulse firing in retinal ganglion cells. J. Neurophysiol. 78: 1948\u20131964, 1997. Models for generating repetitive impulse activity were developed based on multicompartmental representations of ganglion cell morphology in the amphibian retina. Each model includes five nonlinear ion channels and one linear (leakage) channel. Compartmental distribution of ion channel type and density was designed to simulate whole cell recording experiments carried out in the intact retina-eyecup preparation. Correspondence between the model and physiology emphasized channel-specific details in the impulse waveform, based on phase plot analysis, frequency versus current (F/I) properties, and interspike trajectories for current injected into the soma, as well as the ability to conduct impulses in both orthodromic and antidromic directions. Two general types of model are developed, including equivalent cylinder representations and more realistic compartmentalizations of dendritic morphology. These multicompartmental models include representations for dendritic trees, soma, axon hillock, a thin axonal segment, and axon distal to thin segment. A large number of compartments (\u2264800) representing a single neuron were employed to ensure that maximum voltage differences between neighboring compartments during the steepest rates of change of membrane potential were acceptably small. Leakage conductance varied from 3 to 8 \u03bcS/cm<jats:sup>2</jats:sup>. The results establish that intercompartmental currents, due to inhomogeneous morphology, dominate membrane currents in the interspike intervals and thus play a major role in determining the impulse spacing and the information carried by impulse trains. Variations in input resistance are far less important than the degree to which ion channels are present in the dendritic compartments for the regulation of F/I properties. Cell geometry, including the thin axonal segment, places significant constraints on the location of ion channels required to support impulse initiation and propagation in both the ortho- and antidromic directions. The site of impulse initiation varies greatly and depends on the stimulus magnitude. Models that conform to physiological constraints also show irregular firing, particularly for near threshold stimulation of the soma, due to multiple sites of impulse initiation. Such behavior could represent an asset to the cells for conveying information under conditions of low contrast stimulation. Multiple spike initiation zones also can provide retinal ganglion cells with a variety of response characteristics, including spike doublets, depending on the level of cell activation. Increasing the diameter of the dendritic equivalent cylinder reduces the impulse frequency (F/I) response. Over a restricted range of ion channel densities in the dendritic tree, phase locking between dendritic membrane oscillations and somatic spiking can occur with dendritic stimulation, and mathematical chaos can be demonstrated when sufficiently thin dendritic processes are present. We conclude that cell morphology is the primary factor in determining firing patterns and the impulse frequency response of a given cell and that differences in channel density distribution across a population of cells plays, at most, a secondary role in this function. This conclusion applies to both synaptic activation and electrode stimulation of the soma. </jats:p>",
+      "DOI": "10.1152/jn.1997.78.4.1948",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2017,
+            12,
+            25
+          ]
+        ],
+        "date-time": "2017-12-25T06:10:17Z",
+        "timestamp": 1514182217000
+      },
+      "page": "1948-1964",
+      "source": "Crossref",
+      "is-referenced-by-count": 91,
+      "title": [
+        "Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal Ganglion Cells"
+      ],
+      "prefix": "10.1152",
+      "volume": "78",
+      "author": [
+        {
+          "given": "J. F.",
+          "family": "Fohlmeister",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Physiology Department, University of Minnesota, Minneapolis, Minnesota 55455"
+            }
+          ]
+        },
+        {
+          "given": "R. F.",
+          "family": "Miller",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Physiology Department, University of Minnesota, Minneapolis, Minnesota 55455"
+            }
+          ]
+        }
+      ],
+      "member": "24",
+      "reference": [
+        {
+          "key": "B1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.1982.sp014370"
+        },
+        {
+          "key": "B2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.2446391"
+        },
+        {
+          "key": "B3",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1152/jn.1992.67.2.292"
+        },
+        {
+          "key": "B4",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.1957.sp005887"
+        },
+        {
+          "key": "B6",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0006-8993(90)91388-W"
+        },
+        {
+          "key": "B7",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1152/jn.1997.78.4.1935"
+        },
+        {
+          "key": "B8",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1085/jgp.69.6.849"
+        },
+        {
+          "key": "B9",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.2154851"
+        },
+        {
+          "key": "B11",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.1952.sp004764"
+        },
+        {
+          "key": "B12",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1098/rspb.1946.0024"
+        },
+        {
+          "key": "B13",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0168-0102(91)90009-N"
+        },
+        {
+          "key": "B14",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.1989.sp017847"
+        },
+        {
+          "key": "B15",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/BF00192402"
+        },
+        {
+          "key": "B16",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1113/jphysiol.1987.sp016497"
+        },
+        {
+          "key": "B17",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1523/JNEUROSCI.08-12-04470.1988"
+        },
+        {
+          "key": "B18",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/291497a0"
+        },
+        {
+          "key": "B19",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/302827a0"
+        },
+        {
+          "key": "B20",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/293471a0"
+        },
+        {
+          "key": "B21",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/j.1749-6632.1962.tb54120.x"
+        },
+        {
+          "key": "B22",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1152/jn.1971.34.5.773"
+        },
+        {
+          "key": "B23",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/cne.901480102"
+        },
+        {
+          "key": "B24",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1038/367069a0"
+        },
+        {
+          "key": "B25",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1126/science.2847315"
+        },
+        {
+          "key": "B26",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/cne.903520405"
+        },
+        {
+          "key": "B27",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.83.21.8424"
+        }
+      ],
+      "container-title": [
+        "Journal of Neurophysiology"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://www.physiology.org/doi/pdf/10.1152/jn.1997.78.4.1948",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2019,
+            9,
+            9
+          ]
+        ],
+        "date-time": "2019-09-09T05:23:45Z",
+        "timestamp": 1568006625000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.physiology.org/doi/10.1152/jn.1997.78.4.1948"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            1997,
+            10,
+            1
+          ]
+        ]
+      },
+      "references-count": 25,
+      "journal-issue": {
+        "issue": "4",
+        "published-print": {
+          "date-parts": [
+            [
+              1997,
+              10,
+              1
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1152/jn.1997.78.4.1948"
+      ],
+      "URL": "https://doi.org/10.1152/jn.1997.78.4.1948",
+      "relation": {},
+      "ISSN": [
+        "0022-3077",
+        "1522-1598"
+      ],
+      "issn-type": [
+        {
+          "value": "0022-3077",
+          "type": "print"
+        },
+        {
+          "value": "1522-1598",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            1997,
+            10,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "doi": "10.1038/nn.2359",
+    "citation_key": "Hu2009",
+    "theme": 4,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            19
+          ]
+        ],
+        "date-time": "2026-04-19T18:53:11Z",
+        "timestamp": 1776624791976,
+        "version": "3.51.2"
+      },
+      "reference-count": 50,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "8",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2009,
+                7,
+                26
+              ]
+            ],
+            "date-time": "2009-07-26T00:00:00Z",
+            "timestamp": 1248566400000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://www.springer.com/tdm"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Nat Neurosci"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2009,
+            8
+          ]
+        ]
+      },
+      "DOI": "10.1038/nn.2359",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2009,
+            7,
+            26
+          ]
+        ],
+        "date-time": "2009-07-26T14:12:08Z",
+        "timestamp": 1248617528000
+      },
+      "page": "996-1002",
+      "source": "Crossref",
+      "is-referenced-by-count": 655,
+      "title": [
+        "Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and backpropagation"
+      ],
+      "prefix": "10.1038",
+      "volume": "12",
+      "author": [
+        {
+          "given": "Wenqin",
+          "family": "Hu",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Cuiping",
+          "family": "Tian",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Tun",
+          "family": "Li",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Mingpo",
+          "family": "Yang",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Han",
+          "family": "Hou",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Yousheng",
+          "family": "Shu",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            2009,
+            7,
+            26
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "BFnn2359_CR1",
+          "doi-asserted-by": "publisher",
+          "first-page": "137",
+          "DOI": "10.1038/nn1390",
+          "volume": "8",
+          "author": "BA Clark",
+          "year": "2005",
+          "unstructured": "Clark, B.A., Monsivais, P., Branco, T., London, M. & Hausser, M. The site of action potential initiation in cerebellar Purkinje neurons. Nat. Neurosci. 8, 137\u2013139 (2005).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR2",
+          "doi-asserted-by": "publisher",
+          "first-page": "6676",
+          "DOI": "10.1523/JNEUROSCI.16-21-06676.1996",
+          "volume": "16",
+          "author": "CM Colbert",
+          "year": "1996",
+          "unstructured": "Colbert, C.M. & Johnston, D. Axonal action-potential initiation and Na+ channel densities in the soma and axon initial segment of subicular pyramidal neurons. J. Neurosci. 16, 6676\u20136686 (1996).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "533",
+          "DOI": "10.1038/nn0602-857",
+          "volume": "5",
+          "author": "CM Colbert",
+          "year": "2002",
+          "unstructured": "Colbert, C.M. & Pan, E. Ion channel properties underlying axonal action potential initiation in pyramidal neurons. Nat. Neurosci. 5, 533\u2013538 (2002).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR4",
+          "doi-asserted-by": "publisher",
+          "first-page": "1427",
+          "DOI": "10.1016/0896-6273(95)90020-9",
+          "volume": "15",
+          "author": "ZF Mainen",
+          "year": "1995",
+          "unstructured": "Mainen, Z.F., Joerges, J., Huguenard, J.R. & Sejnowski, T.J. A model of spike initiation in neocortical pyramidal neurons. Neuron 15, 1427\u20131439 (1995).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2359_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "155",
+          "DOI": "10.1007/s00232-005-0827-7",
+          "volume": "208",
+          "author": "BA Milojkovic",
+          "year": "2005",
+          "unstructured": "Milojkovic, B.A., Wuskell, J.P., Loew, L.M. & Antic, S.D. Initiation of sodium spikelets in basal dendrites of neocortical pyramidal neurons. J. Membr. Biol. 208, 155\u2013169 (2005).",
+          "journal-title": "J. Membr. Biol."
+        },
+        {
+          "key": "BFnn2359_CR6",
+          "doi-asserted-by": "publisher",
+          "first-page": "617",
+          "DOI": "10.1111/j.1469-7793.1997.617ba.x",
+          "volume": "505",
+          "author": "G Stuart",
+          "year": "1997",
+          "unstructured": "Stuart, G., Schiller, J. & Sakmann, B. Action potential initiation and propagation in rat neocortical pyramidal neurons. J. Physiol. (Lond.) 505, 617\u2013632 (1997).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR7",
+          "doi-asserted-by": "publisher",
+          "first-page": "125",
+          "DOI": "10.1016/S0166-2236(96)10075-8",
+          "volume": "20",
+          "author": "G Stuart",
+          "year": "1997",
+          "unstructured": "Stuart, G., Spruston, N., Sakmann, B. & Hausser, M. Action potential initiation and backpropagation in neurons of the mammalian CNS. Trends Neurosci. 20, 125\u2013131 (1997).",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "198",
+          "DOI": "10.1113/jphysiol.1957.sp005887",
+          "volume": "139",
+          "author": "JS Coombs",
+          "year": "1957",
+          "unstructured": "Coombs, J.S., Curtis, D.R. & Eccles, J.C. The interpretation of spike potentials of motoneurones. J. Physiol. (Lond.) 139, 198\u2013231 (1957).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR9",
+          "unstructured": "Eccles, J.C. The Physiology of Nerve Cells (The Johns Hopkins Press, Baltimore, 1957)."
+        },
+        {
+          "key": "BFnn2359_CR10",
+          "doi-asserted-by": "publisher",
+          "first-page": "61",
+          "DOI": "10.1152/jn.1957.20.1.61",
+          "volume": "20",
+          "author": "P Fatt",
+          "year": "1957",
+          "unstructured": "Fatt, P. Sequence of events in synaptic activation of a motoneurone. J. Neurophysiol. 20, 61\u201380 (1957).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2359_CR11",
+          "doi-asserted-by": "publisher",
+          "first-page": "735",
+          "DOI": "10.1085/jgp.40.5.735",
+          "volume": "40",
+          "author": "MG Fuortes",
+          "year": "1957",
+          "unstructured": "Fuortes, M.G., Frank, K. & Becker, M.C. Steps in the production of motoneuron spikes. J. Gen. Physiol. 40, 735\u2013752 (1957).",
+          "journal-title": "J. Gen. Physiol."
+        },
+        {
+          "key": "BFnn2359_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "3460",
+          "DOI": "10.1152/jn.01288.2006",
+          "volume": "97",
+          "author": "JP Meeks",
+          "year": "2007",
+          "unstructured": "Meeks, J.P. & Mennerick, S. Action potential initiation and propagation in CA3 pyramidal axons. J. Neurophysiol. 97, 3460\u20133472 (2007).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2359_CR13",
+          "doi-asserted-by": "publisher",
+          "first-page": "746",
+          "DOI": "10.1152/jn.00922.2006",
+          "volume": "97",
+          "author": "Y Shu",
+          "year": "2007",
+          "unstructured": "Shu, Y., Duque, A., Yu, Y., Haider, B. & McCormick, D.A. Properties of action-potential initiation in neocortical pyramidal cells: evidence from whole cell axon recordings. J. Neurophysiol. 97, 746\u2013760 (2007).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2359_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "1253",
+          "DOI": "10.1038/nn.2203",
+          "volume": "11",
+          "author": "MH Kole",
+          "year": "2008",
+          "unstructured": "Kole, M.H. & Stuart, G.J. Is action potential threshold lowest in the axon? Nat. Neurosci. 11, 1253\u20131255 (2008).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR15",
+          "doi-asserted-by": "publisher",
+          "first-page": "219",
+          "DOI": "10.1147/rd.173.0219",
+          "volume": "17",
+          "author": "FA Dodge",
+          "year": "1973",
+          "unstructured": "Dodge, F.A. & Cooley, J.W. Action potential of the motoneuron. IBM J. Res. Develop. 17, 219\u2013229 (1973).",
+          "journal-title": "IBM J. Res. Develop."
+        },
+        {
+          "key": "BFnn2359_CR16",
+          "doi-asserted-by": "publisher",
+          "first-page": "301",
+          "DOI": "10.1113/jphysiol.1983.sp014582",
+          "volume": "336",
+          "author": "JW Moore",
+          "year": "1983",
+          "unstructured": "Moore, J.W., Stockbridge, N. & Westerfield, M. On the site of impulse initiation in a neurone. J. Physiol. (Lond.) 336, 301\u2013311 (1983).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR17",
+          "doi-asserted-by": "publisher",
+          "first-page": "11985",
+          "DOI": "10.1073/pnas.93.21.11985",
+          "volume": "93",
+          "author": "M Rapp",
+          "year": "1996",
+          "unstructured": "Rapp, M., Yarom, Y. & Segev, I. Modeling back propagating action potential in weakly excitable dendrites of neocortical pyramidal cells. Proc. Natl. Acad. Sci. USA 93, 11985\u201311990 (1996).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2359_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "339",
+          "DOI": "10.1002/cne.21173",
+          "volume": "500",
+          "author": "A Van Wart",
+          "year": "2007",
+          "unstructured": "Van Wart, A., Trimmer, J.S. & Matthews, G. Polarized distribution of ion channels within microdomains of the axon initial segment. J. Comp. Neurol. 500, 339\u2013352 (2007).",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "BFnn2359_CR19",
+          "doi-asserted-by": "publisher",
+          "first-page": "2920",
+          "DOI": "10.1073/pnas.0511197103",
+          "volume": "103",
+          "author": "MC Inda",
+          "year": "2006",
+          "unstructured": "Inda, M.C., DeFelipe, J. & Munoz, A. Voltage-gated ion channels in the axon initial segment of human cortical pyramidal cells and their relationship with chandelier cells. Proc. Natl. Acad. Sci. USA 103, 2920\u20132925 (2006).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2359_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "633",
+          "DOI": "10.1016/j.neuron.2007.07.031",
+          "volume": "55",
+          "author": "MH Kole",
+          "year": "2007",
+          "unstructured": "Kole, M.H., Letzkus, J.J. & Stuart, G.J. Axon initial segment Kv1 channels control axonal action potential waveform and synaptic efficacy. Neuron 55, 633\u2013647 (2007).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2359_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "11453",
+          "DOI": "10.1073/pnas.0702041104",
+          "volume": "104",
+          "author": "Y Shu",
+          "year": "2007",
+          "unstructured": "Shu, Y., Yu, Y., Yang, J. & McCormick, D.A. Selective control of cortical axonal spikes by a slowly inactivating K+ current. Proc. Natl. Acad. Sci. USA 104, 11453\u201311458 (2007).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2359_CR22",
+          "doi-asserted-by": "publisher",
+          "first-page": "310",
+          "DOI": "10.1016/j.tins.2005.04.004",
+          "volume": "28",
+          "author": "A Howard",
+          "year": "2005",
+          "unstructured": "Howard, A., Tamas, G. & Soltesz, I. Lighting the chandelier: new vistas for axo-axonic cells. Trends Neurosci. 28, 310\u2013316 (2005).",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR23",
+          "doi-asserted-by": "publisher",
+          "first-page": "178",
+          "DOI": "10.1038/nn2040",
+          "volume": "11",
+          "author": "MH Kole",
+          "year": "2008",
+          "unstructured": "Kole, M.H. et al. Action potential generation requires a high sodium channel density in the axon initial segment. Nat. Neurosci. 11, 178\u2013186 (2008).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR24",
+          "doi-asserted-by": "publisher",
+          "first-page": "14329",
+          "DOI": "10.1523/JNEUROSCI.4833-08.2008",
+          "volume": "28",
+          "author": "A Lorincz",
+          "year": "2008",
+          "unstructured": "Lorincz, A. & Nusser, Z. Cell type\u2013dependent molecular composition of the axon initial segment. J. Neurosci. 28, 14329\u201314340 (2008).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR25",
+          "doi-asserted-by": "publisher",
+          "first-page": "2306",
+          "DOI": "10.1523/JNEUROSCI.23-06-02306.2003",
+          "volume": "23",
+          "author": "T Boiko",
+          "year": "2003",
+          "unstructured": "Boiko, T. et al. Functional specialization of the axon initial segment by isoform-specific sodium channel targeting. J. Neurosci. 23, 2306\u20132313 (2003).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR26",
+          "doi-asserted-by": "publisher",
+          "first-page": "2361",
+          "DOI": "10.1152/jn.90332.2008",
+          "volume": "100",
+          "author": "M Royeck",
+          "year": "2008",
+          "unstructured": "Royeck, M. et al. Role of axonal Nav1.6 sodium channels in action potential initiation of CA1 pyramidal neurons. J. Neurophysiol. 100, 2361\u20132380 (2008).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2359_CR27",
+          "doi-asserted-by": "publisher",
+          "first-page": "180",
+          "DOI": "10.1016/j.mcn.2008.06.008",
+          "volume": "39",
+          "author": "A Duflocq",
+          "year": "2008",
+          "unstructured": "Duflocq, A., Le Bras, B., Bullier, E., Couraud, F. & Davenne, M. Nav1.1 is predominantly expressed in nodes of Ranvier and axon initial segments. Mol. Cell. Neurosci. 39, 180\u2013192 (2008).",
+          "journal-title": "Mol. Cell. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR28",
+          "doi-asserted-by": "publisher",
+          "first-page": "803",
+          "DOI": "10.1113/jphysiol.2005.083089",
+          "volume": "564",
+          "author": "AM Rush",
+          "year": "2005",
+          "unstructured": "Rush, A.M., Dib-Hajj, S.D. & Waxman, S.G. Electrophysiological properties of two axonal sodium channels, Nav1.2 and Nav1.6, expressed in mouse spinal sensory neurones. J. Physiol. (Lond.) 564, 803\u2013815 (2005).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR29",
+          "doi-asserted-by": "publisher",
+          "first-page": "91",
+          "DOI": "10.1016/S0896-6273(01)00265-3",
+          "volume": "30",
+          "author": "T Boiko",
+          "year": "2001",
+          "unstructured": "Boiko, T. et al. Compact myelin dictates the differential targeting of two sodium channel isoforms in the same axon. Neuron 30, 91\u2013104 (2001).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2359_CR30",
+          "doi-asserted-by": "publisher",
+          "first-page": "105",
+          "DOI": "10.1016/S0896-6273(01)00266-5",
+          "volume": "30",
+          "author": "MR Kaplan",
+          "year": "2001",
+          "unstructured": "Kaplan, M.R. et al. Differential control of clustering of the sodium channels Na(v)1.2 and Na(v)1.6 at developing CNS nodes of Ranvier. Neuron 30, 105\u2013119 (2001).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2359_CR31",
+          "doi-asserted-by": "publisher",
+          "first-page": "1125",
+          "DOI": "10.1038/nn1752",
+          "volume": "9",
+          "author": "S Komai",
+          "year": "2006",
+          "unstructured": "Komai, S. et al. Postsynaptic excitability is necessary for strengthening of cortical sensory responses during experience-dependent development. Nat. Neurosci. 9, 1125\u20131133 (2006).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR32",
+          "doi-asserted-by": "publisher",
+          "first-page": "761",
+          "DOI": "10.1038/nature04720",
+          "volume": "441",
+          "author": "Y Shu",
+          "year": "2006",
+          "unstructured": "Shu, Y., Hasenstaub, A., Duque, A., Yu, Y. & McCormick, D.A. Modulation of intracortical synaptic potentials by presynaptic somatic membrane potential. Nature 441, 761\u2013765 (2006).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2359_CR33",
+          "doi-asserted-by": "publisher",
+          "first-page": "1854",
+          "DOI": "10.1523/JNEUROSCI.4812-05.2006",
+          "volume": "26",
+          "author": "LM Palmer",
+          "year": "2006",
+          "unstructured": "Palmer, L.M. & Stuart, G.J. Site of action potential initiation in layer 5 pyramidal neurons. J. Neurosci. 26, 1854\u20131863 (2006).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR34",
+          "doi-asserted-by": "publisher",
+          "first-page": "8424",
+          "DOI": "10.1073/pnas.83.21.8424",
+          "volume": "83",
+          "author": "DA Wollner",
+          "year": "1986",
+          "unstructured": "Wollner, D.A. & Catterall, W.A. Localization of sodium channels in axon hillocks and initial segments of retinal ganglion cells. Proc. Natl. Acad. Sci. USA 83, 8424\u20138428 (1986).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2359_CR35",
+          "doi-asserted-by": "publisher",
+          "first-page": "1060",
+          "DOI": "10.1038/nature04610",
+          "volume": "440",
+          "author": "B Naundorf",
+          "year": "2006",
+          "unstructured": "Naundorf, B., Wolf, F. & Volgushev, M. Unique features of action potential initiation in cortical neurons. Nature 440, 1060\u20131063 (2006).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2359_CR36",
+          "doi-asserted-by": "publisher",
+          "first-page": "288",
+          "DOI": "10.1038/nature01616",
+          "volume": "423",
+          "author": "Y Shu",
+          "year": "2003",
+          "unstructured": "Shu, Y., Hasenstaub, A. & McCormick, D.A. Turning on and off recurrent balanced cortical activity. Nature 423, 288\u2013293 (2003).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2359_CR37",
+          "doi-asserted-by": "publisher",
+          "first-page": "3252",
+          "DOI": "10.1523/JNEUROSCI.13-08-03252.1993",
+          "volume": "13",
+          "author": "M Steriade",
+          "year": "1993",
+          "unstructured": "Steriade, M., Nunez, A. & Amzica, F. A novel slow (&lt;1 Hz) oscillation of neocortical neurons in vivo: depolarizing and hyperpolarizing components. J. Neurosci. 13, 3252\u20133265 (1993).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR38",
+          "doi-asserted-by": "publisher",
+          "first-page": "7260",
+          "DOI": "10.1523/JNEUROSCI.1613-08.2008",
+          "volume": "28",
+          "author": "Y Yu",
+          "year": "2008",
+          "unstructured": "Yu, Y., Shu, Y. & McCormick, D.A. Cortical action potential backpropagation explains spike threshold variability and rapid-onset kinetics. J. Neurosci. 28, 7260\u20137272 (2008).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR39",
+          "doi-asserted-by": "publisher",
+          "first-page": "E1",
+          "DOI": "10.1038/nature05523",
+          "volume": "445",
+          "author": "DA McCormick",
+          "year": "2007",
+          "unstructured": "McCormick, D.A., Shu, Y. & Yu, Y. Neurophysiology: Hodgkin and Huxley model\u2014still standing? Nature 445, E1\u20132; discussion E2\u20133 (2007).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2359_CR40",
+          "doi-asserted-by": "publisher",
+          "first-page": "491",
+          "DOI": "10.1152/jn.1998.79.1.491",
+          "volume": "79",
+          "author": "CM Colbert",
+          "year": "1998",
+          "unstructured": "Colbert, C.M. & Johnston, D. Protein kinase C activation decreases activity-dependent attenuation of dendritic Na+ current in hippocampal CA1 pyramidal neurons. J. Neurophysiol. 79, 491\u2013495 (1998).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2359_CR41",
+          "doi-asserted-by": "publisher",
+          "first-page": "10464",
+          "DOI": "10.1523/JNEUROSCI.18-24-10464.1998",
+          "volume": "18",
+          "author": "GQ Bi",
+          "year": "1998",
+          "unstructured": "Bi, G.Q. & Poo, M.M. Synaptic modifications in cultured hippocampal neurons: dependence on spike timing, synaptic strength and postsynaptic cell type. J. Neurosci. 18, 10464\u201310472 (1998).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2359_CR42",
+          "doi-asserted-by": "publisher",
+          "first-page": "337",
+          "DOI": "10.1113/jphysiol.2003.058842",
+          "volume": "556",
+          "author": "BM Kampa",
+          "year": "2004",
+          "unstructured": "Kampa, B.M., Clements, J., Jonas, P. & Stuart, G.J. Kinetics of Mg2+ unblock of NMDA receptors: implications for spike timing\u2013dependent synaptic plasticity. J. Physiol. (Lond.) 556, 337\u2013345 (2004).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR43",
+          "doi-asserted-by": "publisher",
+          "first-page": "283",
+          "DOI": "10.1113/jphysiol.2006.111062",
+          "volume": "574",
+          "author": "BM Kampa",
+          "year": "2006",
+          "unstructured": "Kampa, B.M., Letzkus, J.J. & Stuart, G.J. Requirement of dendritic calcium spikes for induction of spike timing\u2013dependent synaptic plasticity. J. Physiol. (Lond.) 574, 283\u2013290 (2006).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR44",
+          "doi-asserted-by": "publisher",
+          "first-page": "213",
+          "DOI": "10.1126/science.275.5297.213",
+          "volume": "275",
+          "author": "H Markram",
+          "year": "1997",
+          "unstructured": "Markram, H., Lubke, J., Frotscher, M. & Sakmann, B. Regulation of synaptic efficacy by coincidence of postsynaptic APs and EPSPs. Science 275, 213\u2013215 (1997).",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnn2359_CR45",
+          "doi-asserted-by": "publisher",
+          "first-page": "1149",
+          "DOI": "10.1016/S0896-6273(01)00542-6",
+          "volume": "32",
+          "author": "PJ Sj\u00f6str\u00f6m",
+          "year": "2001",
+          "unstructured": "Sj\u00f6str\u00f6m, P.J., Turrigiano, G.G. & Nelson, S.B. Rate, timing, and cooperativity jointly determine cortical synaptic plasticity. Neuron 32, 1149\u20131164 (2001).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2359_CR46",
+          "doi-asserted-by": "publisher",
+          "first-page": "643",
+          "DOI": "10.1113/jphysiol.1992.sp019148",
+          "volume": "450",
+          "author": "W Sather",
+          "year": "1992",
+          "unstructured": "Sather, W., Dieudonne, S., MacDonald, J.F. & Ascher, P. Activation and desensitization of N-methyl-D-aspartate receptors in nucleated outside-out patches from mouse neurones. J. Physiol. (Lond.) 450, 643\u2013672 (1992).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR47",
+          "doi-asserted-by": "publisher",
+          "first-page": "500",
+          "DOI": "10.1113/jphysiol.1952.sp004764",
+          "volume": "117",
+          "author": "AL Hodgkin",
+          "year": "1952",
+          "unstructured": "Hodgkin, A.L. & Huxley, A.F. A quantitative description of membrane current and its application to conduction and excitation in nerve. J. Physiol. (Lond.) 117, 500\u2013544 (1952).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2359_CR48",
+          "doi-asserted-by": "publisher",
+          "first-page": "1179",
+          "DOI": "10.1162/neco.1997.9.6.1179",
+          "volume": "9",
+          "author": "ML Hines",
+          "year": "1997",
+          "unstructured": "Hines, M.L. & Carnevale, N.T. The NEURON simulation environment. Neural Comput. 9, 1179\u20131209 (1997).",
+          "journal-title": "Neural Comput."
+        },
+        {
+          "key": "BFnn2359_CR49",
+          "doi-asserted-by": "publisher",
+          "first-page": "363",
+          "DOI": "10.1038/382363a0",
+          "volume": "382",
+          "author": "ZF Mainen",
+          "year": "1996",
+          "unstructured": "Mainen, Z.F. & Sejnowski, T.J. Influence of dendritic structure on firing pattern in model neocortical neurons. Nature 382, 363\u2013366 (1996).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2359_CR50",
+          "doi-asserted-by": "publisher",
+          "first-page": "405",
+          "DOI": "10.1016/j.neuron.2004.12.048",
+          "volume": "45",
+          "author": "D Engel",
+          "year": "2005",
+          "unstructured": "Engel, D. & Jonas, P. Presynaptic action potential amplification by voltage-gated Na+ channels in hippocampal mossy fiber boutons. Neuron 45, 405\u2013417 (2005).",
+          "journal-title": "Neuron"
+        }
+      ],
+      "container-title": [
+        "Nature Neuroscience"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://www.nature.com/articles/nn.2359.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nn.2359",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nn.2359.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            18
+          ]
+        ],
+        "date-time": "2023-05-18T20:03:53Z",
+        "timestamp": 1684440233000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.nature.com/articles/nn.2359"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2009,
+            7,
+            26
+          ]
+        ]
+      },
+      "references-count": 50,
+      "journal-issue": {
+        "issue": "8",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              8
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "BFnn2359"
+      ],
+      "URL": "https://doi.org/10.1038/nn.2359",
+      "relation": {
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.3410/f.1163149.623819",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "ISSN": [
+        "1097-6256",
+        "1546-1726"
+      ],
+      "issn-type": [
+        {
+          "value": "1097-6256",
+          "type": "print"
+        },
+        {
+          "value": "1546-1726",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2009,
+            7,
+            26
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "doi": "10.1038/nn2040",
+    "citation_key": "Kole2008",
+    "theme": 5,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            14
+          ]
+        ],
+        "date-time": "2026-04-14T15:36:55Z",
+        "timestamp": 1776181015682,
+        "version": "3.50.1"
+      },
+      "reference-count": 50,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "2",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2008,
+                1,
+                20
+              ]
+            ],
+            "date-time": "2008-01-20T00:00:00Z",
+            "timestamp": 1200787200000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://www.springer.com/tdm"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Nat Neurosci"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2008,
+            2
+          ]
+        ]
+      },
+      "DOI": "10.1038/nn2040",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2008,
+            1,
+            20
+          ]
+        ],
+        "date-time": "2008-01-20T18:17:57Z",
+        "timestamp": 1200853077000
+      },
+      "page": "178-186",
+      "source": "Crossref",
+      "is-referenced-by-count": 611,
+      "title": [
+        "Action potential generation requires a high sodium channel density in the axon initial segment"
+      ],
+      "prefix": "10.1038",
+      "volume": "11",
+      "author": [
+        {
+          "given": "Maarten H P",
+          "family": "Kole",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Susanne U",
+          "family": "Ilschner",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Bj\u00f6rn M",
+          "family": "Kampa",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Stephen R",
+          "family": "Williams",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Peter C",
+          "family": "Ruben",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Greg J",
+          "family": "Stuart",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            2008,
+            1,
+            20
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "BFnn2040_CR1",
+          "doi-asserted-by": "publisher",
+          "first-page": "232",
+          "DOI": "10.1113/jphysiol.1957.sp005888",
+          "volume": "139",
+          "author": "JS Coombs",
+          "year": "1957",
+          "unstructured": "Coombs, J.S., Curtis, D.R. & Eccles, J.C. The generation of impulses in motoneurones. J. Physiol. (Lond.) 139, 232\u2013249 (1957).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR2",
+          "doi-asserted-by": "publisher",
+          "first-page": "61",
+          "DOI": "10.1152/jn.1957.20.1.61",
+          "volume": "20",
+          "author": "P Fatt",
+          "year": "1957",
+          "unstructured": "Fatt, P. Sequence of events in synaptic activation of a motoneurone. J. Neurophysiol. 20, 61\u201380 (1957).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2040_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "735",
+          "DOI": "10.1085/jgp.40.5.735",
+          "volume": "40",
+          "author": "MGF Fuortes",
+          "year": "1957",
+          "unstructured": "Fuortes, M.G.F., Frank, K. & Becker, M.C. Steps in the production of motoneuron spikes. J. Gen. Physiol. 40, 735\u2013752 (1957).",
+          "journal-title": "J. Gen. Physiol."
+        },
+        {
+          "key": "BFnn2040_CR4",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-642-64950-9",
+          "volume-title": "The Physiology of Synapses",
+          "author": "JC Eccles",
+          "year": "1964",
+          "unstructured": "Eccles, J.C. The Physiology of Synapses (Springer, Berlin, 1964)."
+        },
+        {
+          "key": "BFnn2040_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "69",
+          "DOI": "10.1038/367069a0",
+          "volume": "367",
+          "author": "GJ Stuart",
+          "year": "1994",
+          "unstructured": "Stuart, G.J. & Sakmann, B. Active propagation of somatic action potentials into neocortical pyramidal cell dendrites. Nature 367, 69\u201372 (1994).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2040_CR6",
+          "doi-asserted-by": "publisher",
+          "first-page": "703",
+          "DOI": "10.1016/0896-6273(94)90037-X",
+          "volume": "13",
+          "author": "G Stuart",
+          "year": "1994",
+          "unstructured": "Stuart, G. & Hausser, M. Initiation and spread of sodium action potentials in cerebellar Purkinje cells. Neuron 13, 703\u2013712 (1994).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR7",
+          "doi-asserted-by": "publisher",
+          "first-page": "6676",
+          "DOI": "10.1523/JNEUROSCI.16-21-06676.1996",
+          "volume": "16",
+          "author": "CM Colbert",
+          "year": "1996",
+          "unstructured": "Colbert, C.M. & Johnston, D. Axonal action-potential initiation and Na+ channel densities in the soma and axon initial segment of subicular pyramidal neurons. J. Neurosci. 16, 6676\u20136686 (1996).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "617",
+          "DOI": "10.1111/j.1469-7793.1997.617ba.x",
+          "volume": "505",
+          "author": "G Stuart",
+          "year": "1997",
+          "unstructured": "Stuart, G., Schiller, J. & Sakmann, B. Action potential initiation and propagation in rat neocortical pyramidal neurons. J. Physiol. (Lond.) 505, 617\u2013632 (1997).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR9",
+          "doi-asserted-by": "publisher",
+          "first-page": "137",
+          "DOI": "10.1038/nn1390",
+          "volume": "8",
+          "author": "BA Clark",
+          "year": "2005",
+          "unstructured": "Clark, B.A., Monsivais, P., Branco, T., London, M. & Hausser, M. The site of action potential initiation in cerebellar Purkinje neurons. Nat. Neurosci. 8, 137\u2013139 (2005).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR10",
+          "doi-asserted-by": "publisher",
+          "first-page": "746",
+          "DOI": "10.1152/jn.00922.2006",
+          "volume": "97",
+          "author": "Y Shu",
+          "year": "2007",
+          "unstructured": "Shu, Y., Duque, A., Yu, Y., Haider, B. & McCormick, D.A. Properties of action-potential initiation in neocortical pyramidal cells: evidence from whole-cell axon recordings. J. Neurophysiol. 97, 746\u2013760 (2007).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2040_CR11",
+          "doi-asserted-by": "publisher",
+          "first-page": "3460",
+          "DOI": "10.1152/jn.01288.2006",
+          "volume": "97",
+          "author": "JP Meeks",
+          "year": "2007",
+          "unstructured": "Meeks, J.P. & Mennerick, S. Action potential initiation and propagation in CA3 pyramidal axons. J. Neurophysiol. 97, 3460\u20133472 (2007).",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnn2040_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "1854",
+          "DOI": "10.1523/JNEUROSCI.4812-05.2006",
+          "volume": "26",
+          "author": "LM Palmer",
+          "year": "2006",
+          "unstructured": "Palmer, L.M. & Stuart, G.J. Site of action potential initiation in layer 5 pyramidal neurons. J. Neurosci. 26, 1854\u20131863 (2006).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR13",
+          "doi-asserted-by": "publisher",
+          "first-page": "633",
+          "DOI": "10.1016/j.neuron.2007.07.031",
+          "volume": "55",
+          "author": "MHP Kole",
+          "year": "2007",
+          "unstructured": "Kole, M.H.P., Letzkus, J.J. & Stuart, G.J. Axon initial segment Kv1 channels control axonal action potential waveform and synaptic efficacy. Neuron 55, 633\u2013647 (2007).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "219",
+          "DOI": "10.1147/rd.173.0219",
+          "volume": "17",
+          "author": "FA Dodge",
+          "year": "1973",
+          "unstructured": "Dodge, F.A. & Cooley, J.W. Action potential of the motoneuron. IBM J. Res. Develop. 17, 219\u2013229 (1973).",
+          "journal-title": "IBM J. Res. Develop."
+        },
+        {
+          "key": "BFnn2040_CR15",
+          "doi-asserted-by": "publisher",
+          "first-page": "301",
+          "DOI": "10.1113/jphysiol.1983.sp014582",
+          "volume": "336",
+          "author": "JW Moore",
+          "year": "1983",
+          "unstructured": "Moore, J.W., Stockbridge, N. & Westerfield, M. On the site of impulse initiation in a neurone. J. Physiol. (Lond.) 336, 301\u2013311 (1983).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR16",
+          "doi-asserted-by": "publisher",
+          "first-page": "1427",
+          "DOI": "10.1016/0896-6273(95)90020-9",
+          "volume": "15",
+          "author": "ZF Mainen",
+          "year": "1995",
+          "unstructured": "Mainen, Z.F., Joerges, J., Huguenard, J.R. & Sejnowski, T.J. A model of spike initiation in neocortical pyramidal neurons. Neuron 15, 1427\u20131439 (1995).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR17",
+          "doi-asserted-by": "publisher",
+          "first-page": "11985",
+          "DOI": "10.1073/pnas.93.21.11985",
+          "volume": "93",
+          "author": "M Rapp",
+          "year": "1996",
+          "unstructured": "Rapp, M., Yarom, Y. & Segev, I. Modeling back propagating action potential in weakly excitable dendrites of neocortical pyramidal cells. Proc. Natl. Acad. Sci. USA 93, 11985\u201311990 (1996).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2040_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "8424",
+          "DOI": "10.1073/pnas.83.21.8424",
+          "volume": "83",
+          "author": "DA Wollner",
+          "year": "1986",
+          "unstructured": "Wollner, D.A. & Catterall, W.A. Localization of sodium channels in axon hillocks and initial segments of retinal ganglion cells. Proc. Natl. Acad. Sci. USA 83, 8424\u20138428 (1986).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2040_CR19",
+          "doi-asserted-by": "publisher",
+          "first-page": "1295",
+          "DOI": "10.1083/jcb.143.5.1295",
+          "volume": "143",
+          "author": "D Zhou",
+          "year": "1998",
+          "unstructured": "Zhou, D. et al. AnkyrinG is required for clustering of voltage-gated Na channels at axon initial segments and for normal action potential firing. J. Cell Biol. 143, 1295\u20131304 (1998).",
+          "journal-title": "J. Cell Biol."
+        },
+        {
+          "key": "BFnn2040_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "2352",
+          "DOI": "10.1074/jbc.270.5.2352",
+          "volume": "270",
+          "author": "E Kordeli",
+          "year": "1995",
+          "unstructured": "Kordeli, E., Lambert, S. & Bennett, V. AnkyrinG. A new ankyrin gene with neural-specific isoforms localized at the axonal initial segment and node of Ranvier. J. Biol. Chem. 270, 2352\u20132359 (1995).",
+          "journal-title": "J. Biol. Chem."
+        },
+        {
+          "key": "BFnn2040_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "337",
+          "DOI": "10.1083/jcb.200110003",
+          "volume": "156",
+          "author": "M Komada",
+          "year": "2002",
+          "unstructured": "Komada, M. & Soriano, P. \u00dfIV-spectrin regulates sodium channel clustering through ankyrin-G at axon initial segments and nodes of Ranvier. J. Cell Biol. 156, 337\u2013348 (2002).",
+          "journal-title": "J. Cell Biol."
+        },
+        {
+          "key": "BFnn2040_CR22",
+          "doi-asserted-by": "publisher",
+          "first-page": "2306",
+          "DOI": "10.1523/JNEUROSCI.23-06-02306.2003",
+          "volume": "23",
+          "author": "T Boiko",
+          "year": "2003",
+          "unstructured": "Boiko, T. et al. Functional specialization of the axon initial segment by isoform-specific sodium channel targeting. J. Neurosci. 23, 2306\u20132313 (2003).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR23",
+          "doi-asserted-by": "publisher",
+          "first-page": "2920",
+          "DOI": "10.1073/pnas.0511197103",
+          "volume": "103",
+          "author": "MC Inda",
+          "year": "2006",
+          "unstructured": "Inda, M.C., DeFelipe, J. & Munoz, A. Voltage-gated ion channels in the axon initial segment of human cortical pyramidal cells and their relationship with chandelier cells. Proc. Natl. Acad. Sci. USA 103, 2920\u20132925 (2006).",
+          "journal-title": "Proc. Natl. Acad. Sci. USA"
+        },
+        {
+          "key": "BFnn2040_CR24",
+          "doi-asserted-by": "publisher",
+          "first-page": "339",
+          "DOI": "10.1002/cne.21173",
+          "volume": "500",
+          "author": "A Van Wart",
+          "year": "2007",
+          "unstructured": "Van Wart, A., Trimmer, J.S. & Matthews, G. Polarized distribution of ion channels within microdomains of the axon initial segment. J. Comp. Neurol. 500, 339\u2013352 (2007).",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "BFnn2040_CR25",
+          "doi-asserted-by": "publisher",
+          "first-page": "533",
+          "DOI": "10.1038/nn0602-857",
+          "volume": "5",
+          "author": "CM Colbert",
+          "year": "2002",
+          "unstructured": "Colbert, C.M. & Pan, E. Ion channel properties underlying axonal action potential initiation in pyramidal neurons. Nat. Neurosci. 5, 533\u2013538 (2002).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR26",
+          "doi-asserted-by": "publisher",
+          "first-page": "1271",
+          "DOI": "10.1152/physrev.00024.2004",
+          "volume": "85",
+          "author": "W Ulbricht",
+          "year": "2005",
+          "unstructured": "Ulbricht, W. Sodium channel inactivation: molecular determinants and modulation. Physiol. Rev. 85, 1271\u20131301 (2005).",
+          "journal-title": "Physiol. Rev."
+        },
+        {
+          "key": "BFnn2040_CR27",
+          "doi-asserted-by": "publisher",
+          "first-page": "35",
+          "DOI": "10.1098/rspb.1992.0006",
+          "volume": "247",
+          "author": "N Lasser-Ross",
+          "year": "1992",
+          "unstructured": "Lasser-Ross, N. & Ross, W.N. Imaging voltage and synaptically activated sodium transients in cerebellar Purkinje cells. Proc. Biol. Sci. 247, 35\u201339 (1992).",
+          "journal-title": "Proc. Biol. Sci."
+        },
+        {
+          "key": "BFnn2040_CR28",
+          "doi-asserted-by": "publisher",
+          "first-page": "626",
+          "DOI": "10.1038/ncb1009",
+          "volume": "5",
+          "author": "C Nakada",
+          "year": "2003",
+          "unstructured": "Nakada, C. et al. Accumulation of anchored proteins forms membrane diffusion barriers during neuronal polarization. Nat. Cell Biol. 5, 626\u2013632 (2003).",
+          "journal-title": "Nat. Cell Biol."
+        },
+        {
+          "key": "BFnn2040_CR29",
+          "doi-asserted-by": "publisher",
+          "first-page": "885",
+          "DOI": "10.1523/JNEUROSCI.10-03-00885.1990",
+          "volume": "10",
+          "author": "RL Milton",
+          "year": "1990",
+          "unstructured": "Milton, R.L. & Caldwell, J.H. Na current in membrane blebs: implications for channel mobility and patch clamp recording. J. Neurosci. 10, 885\u2013893 (1990).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR30",
+          "doi-asserted-by": "publisher",
+          "first-page": "67",
+          "DOI": "10.1113/jphysiol.1995.sp020862",
+          "volume": "487",
+          "author": "JC Magee",
+          "year": "1995",
+          "unstructured": "Magee, J.C. & Johnston, D. Characterization of single voltage-gated Na+ and Ca2+ channels in apical dendrites of rat CA1 pyramidal neurons. J. Physiol. (Lond.) 487, 67\u201390 (1995).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR31",
+          "doi-asserted-by": "publisher",
+          "first-page": "149",
+          "DOI": "10.1016/0006-8993(89)90046-2",
+          "volume": "483",
+          "author": "P Shrager",
+          "year": "1989",
+          "unstructured": "Shrager, P. Sodium channels in single demyelinated mammalian axons. Brain Res. 483, 149\u2013154 (1989).",
+          "journal-title": "Brain Res."
+        },
+        {
+          "key": "BFnn2040_CR32",
+          "doi-asserted-by": "publisher",
+          "first-page": "91",
+          "DOI": "10.1016/S0896-6273(01)00265-3",
+          "volume": "30",
+          "author": "T Boiko",
+          "year": "2001",
+          "unstructured": "Boiko, T. et al. Compact myelin dictates the differential targeting of two sodium channel isoforms in the same axon. Neuron 30, 91\u2013104 (2001).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR33",
+          "doi-asserted-by": "publisher",
+          "first-page": "105",
+          "DOI": "10.1016/S0896-6273(01)00266-5",
+          "volume": "30",
+          "author": "MR Kaplan",
+          "year": "2001",
+          "unstructured": "Kaplan, M.R. et al. Differential control of clustering of the sodium channels Na(v)1.2 and Na(v)1.6 at developing CNS nodes of Ranvier. Neuron 30, 105\u2013119 (2001).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR34",
+          "doi-asserted-by": "publisher",
+          "first-page": "803",
+          "DOI": "10.1113/jphysiol.2005.083089",
+          "volume": "564",
+          "author": "AM Rush",
+          "year": "2005",
+          "unstructured": "Rush, A.M., Dib-Hajj, S.D. & Waxman, S.G. Electrophysiological properties of two axonal sodium channels, Nav1.2 and Nav1.6, expressed in mouse spinal sensory neurones. J. Physiol. (Lond.) 564, 803\u2013815 (2005).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR35",
+          "doi-asserted-by": "publisher",
+          "first-page": "1125",
+          "DOI": "10.1038/nn1752",
+          "volume": "9",
+          "author": "S Komai",
+          "year": "2006",
+          "unstructured": "Komai, S. et al. Postsynaptic excitability is necessary for strengthening of cortical sensory responses during experience-dependent development. Nat. Neurosci. 9, 1125\u20131133 (2006).",
+          "journal-title": "Nat. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR36",
+          "doi-asserted-by": "publisher",
+          "first-page": "604",
+          "DOI": "10.1083/jcb.39.3.604",
+          "volume": "39",
+          "author": "A Peters",
+          "year": "1968",
+          "unstructured": "Peters, A., Proskauer, C.C. & Kaiserman-Abramof, I.R. The small pyramidal neuron of the rat cerebral cortex. The axon hillock and initial segment. J. Cell Biol. 39, 604\u2013619 (1968).",
+          "journal-title": "J. Cell Biol."
+        },
+        {
+          "key": "BFnn2040_CR37",
+          "doi-asserted-by": "publisher",
+          "first-page": "698",
+          "DOI": "10.1038/17806",
+          "volume": "397",
+          "author": "B Winckler",
+          "year": "1999",
+          "unstructured": "Winckler, B., Forscher, P. & Mellman, I. A diffusion barrier maintains distribution of membrane proteins in polarized neurons. Nature 397, 698\u2013701 (1999).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2040_CR38",
+          "doi-asserted-by": "publisher",
+          "first-page": "2091",
+          "DOI": "10.1126/science.1085167",
+          "volume": "300",
+          "author": "JJ Garrido",
+          "year": "2003",
+          "unstructured": "Garrido, J.J. et al. A targeting motif involved in sodium channel clustering at the axonal initial segment. Science 300, 2091\u20132094 (2003).",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnn2040_CR39",
+          "doi-asserted-by": "publisher",
+          "first-page": "548",
+          "DOI": "10.1038/nrn1938",
+          "volume": "7",
+          "author": "HC Lai",
+          "year": "2006",
+          "unstructured": "Lai, H.C. & Jan, L.Y. The distribution and targeting of neuronal voltage-gated ion channels. Nat. Rev. Neurosci. 7, 548\u2013562 (2006).",
+          "journal-title": "Nat. Rev. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR40",
+          "doi-asserted-by": "publisher",
+          "first-page": "310",
+          "DOI": "10.1016/j.tins.2005.04.004",
+          "volume": "28",
+          "author": "A Howard",
+          "year": "2005",
+          "unstructured": "Howard, A., Tamas, G. & Soltesz, I. Lighting the chandelier: new vistas for axo-axonic cells. Trends Neurosci. 28, 310\u2013316 (2005).",
+          "journal-title": "Trends Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR41",
+          "doi-asserted-by": "publisher",
+          "first-page": "1069",
+          "DOI": "10.1038/nature05347",
+          "volume": "444",
+          "author": "H Kuba",
+          "year": "2006",
+          "unstructured": "Kuba, H., Ishii, T.M. & Ohmori, H. Axonal site of spike initiation enhances auditory coincidence detection. Nature 444, 1069\u20131072 (2006).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnn2040_CR42",
+          "doi-asserted-by": "publisher",
+          "first-page": "511",
+          "DOI": "10.1007/BF00374949",
+          "volume": "423",
+          "author": "GJ Stuart",
+          "year": "1993",
+          "unstructured": "Stuart, G.J., Dodt, H.-U. & Sakmann, B. Patch-clamp recordings from the soma and dendrites of neurones in brain slices using infrared video microscopy. Pflugers Arch. 423, 511\u2013518 (1993).",
+          "journal-title": "Pflugers Arch."
+        },
+        {
+          "key": "BFnn2040_CR43",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1017/CBO9780511541612",
+          "volume-title": "The Neuron Book",
+          "author": "NT Carnevale",
+          "year": "2006",
+          "unstructured": "Carnevale, N.T. & Hines, M.L. The Neuron Book (Cambridge University Press, Cambridge, 2006)."
+        },
+        {
+          "key": "BFnn2040_CR44",
+          "doi-asserted-by": "publisher",
+          "first-page": "173",
+          "DOI": "10.1098/rstb.1979.0004",
+          "volume": "285",
+          "author": "JJ Sloper",
+          "year": "1979",
+          "unstructured": "Sloper, J.J. & Powell, T.P. A study of the axon initial segment and proximal axon of neurons in the primate motor and somatic sensory cortices. Phil. Trans. R. Soc. Lond. B 285, 173\u2013197 (1979).",
+          "journal-title": "Phil. Trans. R. Soc. Lond. B"
+        },
+        {
+          "key": "BFnn2040_CR45",
+          "doi-asserted-by": "publisher",
+          "first-page": "163",
+          "DOI": "10.1113/jphysiol.1982.sp014296",
+          "volume": "329",
+          "author": "B Neumcke",
+          "year": "1982",
+          "unstructured": "Neumcke, B. & St\u00e4mpfli, R. Sodium currents and sodium-current fluctuations in rat myelinated nerve fibres. J. Physiol. (Lond.) 329, 163\u2013184 (1982).",
+          "journal-title": "J. Physiol. (Lond.)"
+        },
+        {
+          "key": "BFnn2040_CR46",
+          "doi-asserted-by": "publisher",
+          "first-page": "671",
+          "DOI": "10.1523/JNEUROSCI.2283-05.2006",
+          "volume": "26",
+          "author": "G Baranauskas",
+          "year": "2006",
+          "unstructured": "Baranauskas, G. & Martina, M. Sodium currents activate without a Hodgkin-and-Huxley-type delay in central mammalian neurons. J. Neurosci. 26, 671\u2013684 (2006).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR47",
+          "doi-asserted-by": "publisher",
+          "first-page": "587",
+          "DOI": "10.1016/S0896-6273(02)00574-3",
+          "volume": "33",
+          "author": "A Taddese",
+          "year": "2002",
+          "unstructured": "Taddese, A. & Bean, B.P. Subthreshold sodium current from rapidly inactivating sodium channels drives spontaneous firing of tuberomammillary neurons. Neuron 33, 587\u2013600 (2002).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnn2040_CR48",
+          "doi-asserted-by": "publisher",
+          "first-page": "49",
+          "DOI": "10.1023/A:1008809000182",
+          "volume": "6",
+          "author": "CC Canavier",
+          "year": "1999",
+          "unstructured": "Canavier, C.C. Sodium dynamics underlying burst firing and putative mechanisms for the regulation of the firing pattern in midbrain dopamine neurons: a computational approach. J. Comput. Neurosci. 6, 49\u201369 (1999).",
+          "journal-title": "J. Comput. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR49",
+          "doi-asserted-by": "publisher",
+          "first-page": "4602",
+          "DOI": "10.1523/JNEUROSCI.5204-05.2006",
+          "volume": "26",
+          "author": "W Akemann",
+          "year": "2006",
+          "unstructured": "Akemann, W. & Knopfel, T. Interaction of Kv3 potassium channels and resurgent sodium current influences the rate of spontaneous firing of Purkinje neurons. J. Neurosci. 26, 4602\u20134612 (2006).",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnn2040_CR50",
+          "doi-asserted-by": "publisher",
+          "first-page": "1677",
+          "DOI": "10.1523/JNEUROSCI.3664-05.2006",
+          "volume": "26",
+          "author": "MHP Kole",
+          "year": "2006",
+          "unstructured": "Kole, M.H.P., Hallermann, S. & Stuart, G.J. Single Ih channels in pyramidal neuron dendrites: properties, distribution, and impact on action potential output. J. Neurosci. 26, 1677\u20131687 (2006).",
+          "journal-title": "J. Neurosci."
+        }
+      ],
+      "container-title": [
+        "Nature Neuroscience"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://www.nature.com/articles/nn2040.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nn2040",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nn2040.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            19
+          ]
+        ],
+        "date-time": "2023-05-19T00:01:36Z",
+        "timestamp": 1684454496000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.nature.com/articles/nn2040"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2008,
+            1,
+            20
+          ]
+        ]
+      },
+      "references-count": 50,
+      "journal-issue": {
+        "issue": "2",
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              2
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "BFnn2040"
+      ],
+      "URL": "https://doi.org/10.1038/nn2040",
+      "relation": {},
+      "ISSN": [
+        "1097-6256",
+        "1546-1726"
+      ],
+      "issn-type": [
+        {
+          "value": "1097-6256",
+          "type": "print"
+        },
+        {
+          "value": "1546-1726",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2008,
+            1,
+            20
+          ]
+        ]
+      }
+    }
+  }
+]
