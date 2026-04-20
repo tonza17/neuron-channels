@@ -59,10 +59,10 @@
       "step": 7,
       "name": "planning",
       "description": "Write plan.md covering paper selection, /add-paper invocations, paywall policy, and answer-asset design.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T00:03:04Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\007_planning/"
     },
     {
       "step": 8,
