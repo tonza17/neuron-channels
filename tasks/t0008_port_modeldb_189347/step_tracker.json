@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0005 (morphology), t0009 (calibrated radii), t0007 (NEURON install), and t0012 (scoring library) for exact interfaces and file formats the implementation will consume.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T10:39:08Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T10:52:11Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
