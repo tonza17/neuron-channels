@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\research\research_papers.md
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W002 warning: Paper Index entry [Fried2002] has DOI '10.1038/nature00931' but no paper asset folder '10.1038_nature00931' was found[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

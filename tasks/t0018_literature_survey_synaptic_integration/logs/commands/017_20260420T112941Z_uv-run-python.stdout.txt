@@ -1,0 +1,20 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [Euler2002] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Hausser2003] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Koch1983] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Wehr2003] has no matching Paper Index entry[0m
+[31m  RP-E008 error: Paper Index entry [Taylor2014] is missing the DOI field[0m
+[31m  RP-E008 error: Paper Index entry [Sivyer2013] is missing the DOI field[0m
+[31m  RP-E008 error: Paper Index entry [Park2014] is missing the DOI field[0m
+[31m  RP-E008 error: Paper Index entry [Sethuramanujam2017] is missing the DOI field[0m
+[31m  RP-E008 error: Paper Index entry [Jack1975] is missing the DOI field[0m
+[31m  RP-E008 error: Paper Index entry [Segev1995] is missing the DOI field[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W001 warning: Section 'Gaps and Limitations' has 47 words (minimum: 50)[0m
+[33m  RP-W002 warning: Paper Index entry [Fried2002] has DOI '10.1038/nature00931' but no paper asset folder '10.1038_nature00931' was found[0m
+
+[31m[1mFAILED[0m — 10 error(s), 2 warning(s)
