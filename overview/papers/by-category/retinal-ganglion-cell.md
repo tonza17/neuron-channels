@@ -1,6 +1,6 @@
-# Papers: `retinal-ganglion-cell` (21)
+# Papers: `retinal-ganglion-cell` (22)
 
-21 papers across 14 year(s).
+22 papers across 14 year(s).
 
 [Back to all papers](../README.md)
 
@@ -896,7 +896,7 @@ collapse.
 
 </details>
 
-## 2007 (1)
+## 2007 (2)
 
 <details>
 <summary>📖 Different Mechanisms Generate Maintained Activity in ON and OFF Retinal
@@ -941,6 +941,46 @@ include or exclude the relevant voltage-gated channels (T-type Ca2+, HCN) accord
 maintained-activity-under-synaptic-blockade as a model validation target cleanly separates the
 intrinsic biophysics from the synaptic drive, and that separation should be part of our
 modelling workflow.
+
+</details>
+
+<details>
+<summary>📖 Polarized distribution of ion channels within microdomains of the axon
+initial segment — Wart et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1002_cne.21173` |
+| **Authors** | Audra Van Wart, James S. Trimmer, Gary Matthews |
+| **Venue** | Journal of Comparative Neurology (journal) |
+| **DOI** | `10.1002/cne.21173` |
+| **URL** | https://doi.org/10.1002/cne.21173 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/summary.md) |
+
+Audra Van Wart and colleagues (2007) published "Polarized distribution of ion channels within
+microdomains of the axon initial segment" in Journal of Comparative Neurology. The paper is
+included in this task's survey because it contributes to the "Nav subunit localisation at RGC
+AIS" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+The methodology and key findings of the paper are stated verbatim in the `## Abstract` section
+above. This summary asset deliberately does not paraphrase or extend those claims beyond what
+CrossRef returns; any quantitative prior used from this paper in the DSGC model-fitting
+pipeline must be read directly from the published figures and tables.
+
+The paper's primary significance for this project is its contribution to the "Nav subunit
+localisation at RGC AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
 
 </details>
 

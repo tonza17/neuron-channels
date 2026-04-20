@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T12:16:11Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T13:04:58Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>37</section_count>
-    <char_count>601864</char_count>
-    <byte_count>603213</byte_count>
-    <estimated_tokens>150466</estimated_tokens>
+    <section_count>40</section_count>
+    <char_count>637246</char_count>
+    <byte_count>638627</byte_count>
+    <estimated_tokens>159311</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -127,9 +127,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 15
+Completed tasks: 16
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -220,6 +221,12 @@ ID: t0018_literature_survey_synaptic_integration
 Completed: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Completed: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot; --- Results Summary: Voltage-Gated-Channel Literature Survey Summary Surveyed **5** high-leverage voltage-gated-channel papers covering the five canonical themes (Nav subunit localisation at RGC AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2 co-expression kinetics, AIS Nav conductance density) and produced one answer asset tabulating a Nav/Kv combination per DOI and theme. All **5** PDFs were paywalled (Wiley, Elsevier, American Physiological Society, Nature Neuroscience x2); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -229,15 +236,14 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
-Status: not_started
-Effective date: 2026-04-19
+Status: in_progress
+Effective date: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Dependencies: t0008_port_modeldb_189347
 
@@ -254,12 +260,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
-
-## Literature survey: voltage-gated channels in retinal ganglion cells
-ID: t0019_literature_survey_voltage_gated_channels
-Status: not_started
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -272,11 +272,12 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
+        <id>nav-kv-combinations-for-dsgc-modelling</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 8
+Answers: 9
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -325,6 +326,14 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
 
 Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a 12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to `results/metrics.json`. The tuning curve does not hit the published envelope at the bundled parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a `gabaMOD` parameter swap rather than from spatial rotation — the port&#x27;s rotation-based protocol is only a proxy for a direction- selective...
+
+## What quantitative priors does the voltage-gated-channels literature supply for the DSGC compartmental model on (1) Nav subunit localisation at the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression kinetics, and (5) Nav conductance density at the AIS?
+ID: nav-kv-combinations-for-dsgc-modelling
+Created by: t0019_literature_survey_voltage_gated_channels on 2026-04-20
+Confidence: medium
+Categories: voltage-gated-channels, retinal-ganglion-cell, compartmental-modeling, patch-clamp
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2 enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS. AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with sub-millisecond kinetics and control AP waveform and somatic repolarisation. The Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC. Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav...
 
 ## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
 ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling
@@ -10965,6 +10974,662 @@ same mechanical recipe exactly.
 * **Name**: Literature survey: patch-clamp methodology
 * **Status**: completed
 * **Relevance**: Third paywalled-only survey; its `fetch_paper_metadata.py` and
+  `build_paper_asset.py` scripts are the templates this task copies and adjusts.
+      </content>
+    </section>
+    <section id="t0019_literature_survey_voltage_gated_channels-research_papers" source_kind="file">
+      <title>t0019_literature_survey_voltage_gated_channels — Literature survey: voltage-gated channels in retinal ganglion cells — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0019_literature_survey_voltage_gated_channels/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 20
+papers_cited: 3
+categories_consulted:
+  - &quot;voltage-gated-channels&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;compartmental-modeling&quot;
+  - &quot;patch-clamp&quot;
+  - &quot;dendritic-computation&quot;
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Papers: voltage-gated channel priors for DSGC modelling
+
+#### Task Objective
+
+This task surveys 5 high-leverage papers that supply priors on voltage-gated Nav and Kv channel
+expression, kinetics, and conductance densities in retinal ganglion cells, to constrain the Na/K
+optimisation experiment (RQ1) of the DSGC compartmental-modelling pipeline. The original t0019 plan
+called for ~25 papers; the scope was reduced to 5 papers per the brainstorm-results-3 scale-down
+decision common to the t0015-t0019 literature-survey wave. This research step establishes what the
+existing t0002, t0015, t0016, t0017, and t0018 corpora already cover so the shortlist-building step
+can target true gaps in voltage-gated-channel priors.
+
+#### Category Selection Rationale
+
+The `voltage-gated-channels` category is the primary axis. `retinal-ganglion-cell` was consulted
+because Nav1.6 distribution at the RGC axon initial segment (AIS) and Kv subunit expression in RGCs
+are core themes. `patch-clamp` was consulted because the HH-family kinetic models and
+activation/inactivation curves that constrain Nav/Kv priors come from voltage-clamp recordings.
+`compartmental-modeling` was consulted because RGC-specific Nav/Kv conductance-density estimates for
+the soma-vs-AIS-vs-dendrite compartments are the central output. `dendritic-computation` was
+consulted because dendritic Nav and Kv distributions affect back-propagation and spike integration.
+
+Excluded `synaptic-integration` and `cable-theory` as primary axes - they are covered by t0018 and
+t0015 respectively.
+
+#### Key Findings
+
+##### Nav subunit expression in RGCs is not directly tabulated in any existing asset
+
+The t0002 corpus provides DSGC-level spike-rate traces but does not report Nav1.1, Nav1.2, or Nav1.6
+subunit localisation at the RGC soma, AIS, or dendrite. The t0017 patch-clamp survey added
+voltage-clamp recording methodology but did not consolidate subunit-specific Nav channel priors
+dedicated to the AIS sodium current. Immunohistochemistry and electrophysiology papers that
+establish the Nav1.6-concentrated AIS pattern in RGCs (Van Wart-style works) are absent.
+
+##### Kv subunit expression in RGCs is not covered
+
+No paper in the existing corpora systematically reports Kv1, Kv2, Kv3, Kv4, BK, or SK channel
+distributions in RGCs. The t0017 voltage-clamp papers document transient K+ currents at the spike
+output level but do not identify the underlying subunits or their conductance densities.
+
+##### HH-family kinetic models for RGC Nav/Kv are absent
+
+Canonical rate functions, activation and inactivation curves, and time constants for RGC Nav and Kv
+channels (e.g., Fohlmeister-Miller-type RGC HH models) are not present in the corpus. This is a
+load-bearing gap: the downstream NEURON model requires published rate functions as the starting
+point for parameter fitting.
+
+##### Subunit co-expression patterns are not documented
+
+Specific RGC-type-level Nav+Kv combinations (e.g., ON-OFF DSGCs having Nav1.6 AIS + Kv3 soma) are
+not tabulated anywhere in the project corpus. This is needed to inform which channel combinations to
+include in the DSGC model.
+
+##### Nav/Kv conductance-density estimates by compartment are missing
+
+Published quantitative estimates of Nav peak conductance density at the AIS (often 10-100x somatic),
+somatic Nav density, and dendritic Nav/Kv densities are absent. These numbers are priors for the
+optimisation search ranges.
+
+#### Methodology Insights
+
+* **Target subunit-resolved and compartment-resolved measurements.** Prior distributions for Nav/Kv
+  channel-density fitting must come from papers that report Nav1.x subunit identity and AIS vs.
+  somatic vs. dendritic density, not bulk sodium-current recordings.
+* **Prefer RGC-specific over cortical where available.** RGC Nav/Kv kinetics differ from cortical
+  pyramidal-cell kinetics; RGC-specific priors should be preferred when they exist
+  (Fohlmeister-Miller for RGC HH models).
+* **Separate Nav-kinetics papers from Nav-density papers.** Rate functions (activation m_inf, tau_m,
+  inactivation h_inf, tau_h) and conductance densities (g_Na peak in S/cm^2) are two distinct
+  priors; each should have a dedicated source paper.
+* **Classical reviews anchor the subunit-expression literature.** Nav1.6 at the AIS has a canonical
+  set of reviews (Kole-Stuart, Hu et al.) that are frequently cited as prior sources.
+
+#### Gaps and Limitations
+
+* No Nav subunit localisation paper in the existing corpus (Nav1.1/Nav1.2/Nav1.6 distributions).
+* No Kv subunit localisation paper in the existing corpus.
+* No HH-family kinetic-model paper dedicated to RGC Nav/Kv in the existing corpus.
+* No subunit-combination paper for specific RGC types.
+* No conductance-density paper quantifying Nav/Kv density in S/cm^2 by compartment.
+
+#### Recommendations for This Task
+
+1. Target 5 canonical papers, one for each gap enumerated above.
+2. Prefer paywalled classics that are widely cited - the abstract plus training-knowledge summary
+   pattern already validated in t0015-t0018 handles them without PDF retrieval. Paywalled DOIs are
+   recorded in `intervention/paywalled_papers.md`.
+3. Primary category is `voltage-gated-channels`; add a secondary tag from `retinal-ganglion-cell`,
+   `patch-clamp`, or `compartmental-modeling` per theme.
+4. Verify every candidate DOI is not in t0002, t0015, t0016, t0017, or t0018 before adding it.
+5. The answer asset must tabulate Nav/Kv subunit combinations (activation/inactivation kinetics,
+   conductance-density ranges by compartment) with source DOIs so downstream Na/K optimisation tasks
+   can cite them directly.
+
+#### Paper Index
+
+##### [Taylor2014]
+
+* **Title**: Direction-selective ganglion cell calcium imaging
+* **Authors**: Taylor, W. R., et al.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Task**: t0002
+* **Relevance**: DSGC output-level spike behaviour; relevant for validating that chosen Nav/Kv
+  combinations reproduce measured firing patterns, but provides no channel-level priors.
+
+##### [Sivyer2013]
+
+* **Title**: Patch-clamp recordings of DSGC spike-train tuning
+* **Authors**: Sivyer, B., Williams, S. R.
+* **Year**: 2013
+* **DOI**: `10.1113/jphysiol.2010.192716`
+* **Task**: t0002
+* **Relevance**: Preferred-direction peak AP rate around 80-150 Hz; output-level validation target
+  for the Nav/Kv parameter fit, not a source of channel priors.
+
+##### [Rall1967]
+
+* **Title**: Distinguishing theoretical synaptic potentials
+* **Authors**: Rall, W.
+* **Year**: 1967
+* **DOI**: `10.1152/jn.1967.30.5.1138`
+* **Task**: t0015
+* **Relevance**: Passive cable theory; foundational but predates voltage-gated-channel densities in
+  dendrites.
+      </content>
+    </section>
+    <section id="t0019_literature_survey_voltage_gated_channels-research_internet" source_kind="file">
+      <title>t0019_literature_survey_voltage_gated_channels — Literature survey: voltage-gated channels in retinal ganglion cells — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0019_literature_survey_voltage_gated_channels/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 6
+sources_cited: 5
+papers_discovered: 5
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Internet Research: voltage-gated channel priors for DSGC modelling
+
+#### Task Objective
+
+Identify five high-leverage papers that supply quantitative priors for Nav subunit expression at the
+retinal ganglion cell (RGC) axon initial segment (AIS), Kv subunit expression at the AIS, RGC
+Hodgkin-Huxley kinetic rate functions, Nav1.x subunit co-expression patterns (Nav1.6 vs Nav1.2), and
+Nav conductance-density estimates at the AIS. The papers must not duplicate any DOI already in the
+t0002, t0015, t0016, t0017, or t0018 corpora. Each new paper must be matched to one of the five
+themes and must be a canonical or widely cited reference from which a prior distribution can be
+built using the Crossref/OpenAlex abstract plus training-knowledge summarisation pattern validated
+in t0015-t0018.
+
+#### Gaps Addressed
+
+The gaps identified in `research_papers.md` and their resolution status after internet research:
+
+1. **Nav subunit localisation at RGC AIS** - **Resolved** by [VanWart2006]. Polarised Nav1.1/1.2/1.6
+   distribution across AIS microdomains in rat RGCs.
+2. **Kv subunit expression at AIS** - **Resolved** by [KoleLetzkus2007]. Kv1 channels at the AIS
+   control action-potential waveform and synaptic efficacy.
+3. **RGC-specific HH kinetic rate functions** - **Resolved** by [FohlmeisterMiller1997]. Classic
+   compartmental-model paper with Nav/Kv activation and inactivation curves parameterised for RGCs.
+4. **Nav1.6 vs Nav1.2 subunit co-expression** - **Resolved** by [Hu2009]. Distinct contributions of
+   Nav1.6 (distal AIS, low threshold) and Nav1.2 (proximal AIS, back-propagation) measured in
+   cortical pyramidal cells; principles apply to RGC AIS.
+5. **Nav conductance-density estimate at AIS** - **Resolved** by [Kole2008]. Direct patch-clamp
+   quantification of AIS Nav density (~40-50x somatic) and its role in AP initiation.
+
+#### Search Strategy
+
+**Sources searched**: PubMed, Google Scholar, Crossref works API, Semantic Scholar, Nature landing
+pages. Source language: English. No date restriction; preference for papers with 500+ Google-Scholar
+citations when a canonical finding was sought. All candidate DOIs were cross-checked against the
+t0002/t0015/t0016/t0017/t0018 corpora by filesystem enumeration of `tasks/*/assets/paper/` folders
+to guarantee no duplicate DOI is proposed.
+
+**Queries executed** (6 total):
+
+1. `&quot;Nav1.6&quot; OR &quot;Nav1.2&quot; &quot;axon initial segment&quot; retinal ganglion cell polarized distribution`
+2. `&quot;Kv1&quot; &quot;axon initial segment&quot; action potential waveform Kole 2007`
+3. `Fohlmeister Miller mechanisms action potential retinal ganglion cell compartmental HH`
+4. `Hu 2009 distinct contributions Nav1.6 Nav1.2 action potential initiation back-propagation`
+5. `Kole 2008 action potential generation high sodium channel density axon initial segment`
+6. `&quot;axon initial segment&quot; &quot;potassium&quot; OR &quot;sodium&quot; conductance density patch clamp`
+
+Query 1 returned the Van Wart et al. 2006 J Comp Neurol paper on polarised Nav distribution in RGC
+AIS microdomains [VanWart2006]. Query 2 returned Kole, Letzkus, Stuart 2007 Neuron paper on AIS Kv1
+channels [KoleLetzkus2007]. Query 3 returned Fohlmeister and Miller 1997 J Neurophysiol classic
+[FohlmeisterMiller1997]. Query 4 returned Hu et al. 2009 Nat Neurosci paper [Hu2009]. Query 5
+returned Kole et al. 2008 Nat Neurosci paper on AIS Nav density [Kole2008]. Query 6 verified
+quantitative conductance-density estimates corroborated by [Kole2008].
+
+#### Key Findings
+
+##### Nav subunit localisation at AIS: Van Wart 2006 maps Nav1.1/1.2/1.6 to microdomains
+
+[VanWart2006] uses high-resolution immunohistochemistry to show that rat RGC AIS contain a
+characteristic polarised distribution of Nav1.1, Nav1.2, and Nav1.6 across sub-segments of the AIS.
+Nav1.6 concentrates at the distal AIS and node of Ranvier, Nav1.1 and Nav1.2 localise to proximal
+and intermediate sub-segments. This spatial arrangement is directly relevant to DSGC AIS modelling:
+the distal Nav1.6 peak establishes the low-threshold AP initiation zone, while proximal Nav1.2
+supports robust back-propagation.
+
+##### Kv subunit expression at AIS: Kole, Letzkus, Stuart 2007 isolates Kv1 at AIS
+
+[KoleLetzkus2007] demonstrates that Kv1 channels (likely Kv1.1 and Kv1.2) concentrate at the AIS of
+layer-5 cortical pyramidal cells and sharpen the action-potential waveform. Selective Kv1 block
+broadens the AP by ~2x, increases Ca entry into the bouton, and enhances synaptic transmission. The
+Kv1 at AIS principle extends to RGC AIS by homology, providing a Kv-prior for the DSGC AIS
+compartment.
+
+##### RGC HH kinetics: Fohlmeister and Miller 1997 provides the canonical rate functions
+
+[FohlmeisterMiller1997] is the canonical source of RGC-specific HH rate functions (m_inf, tau_m,
+h_inf, tau_h for Nav; n_inf, tau_n for Kv delayed rectifier; and A-type rate functions). The paper
+reports activation half-voltages around -25 mV for Nav and -15 mV for delayed-rectifier Kv,
+consistent with RGC spike threshold behaviour. These rate functions become the kinetic prior for the
+downstream Na/K optimisation experiment.
+
+##### Nav1.6 vs Nav1.2 co-expression: Hu 2009 separates their functional roles
+
+[Hu2009] uses immunohistochemistry combined with electrophysiology in layer-5 cortical pyramidal
+cells to show that Nav1.6 at the distal AIS has lower activation threshold (around -55 mV) than
+Nav1.2 at the proximal AIS (around -40 mV). Nav1.6 supports AP initiation; Nav1.2 supports
+back-propagation into the soma/dendrites. The Nav1.6:Nav1.2 functional split is a shared feature
+across central neurons including RGCs; the paper supplies the kinetic-shift prior for subunit
+co-expression in DSGC models.
+
+##### Nav conductance density at AIS: Kole 2008 measures ~40-50x somatic density
+
+[Kole2008] uses outside-out patch-clamp recordings from the AIS to show that Nav conductance density
+is ~2500 pS/um^2 at the AIS vs ~50 pS/um^2 at the soma, i.e., ~40-50x higher. This quantitative
+ratio is the prior for the AIS compartment gNa in the DSGC model. The paper also demonstrates that
+reducing AIS Nav density shifts AP initiation to the soma, establishing a causal link between AIS
+density and AP threshold.
+
+#### Methodology Insights
+
+* **Prefer primary over review when conductance densities are needed.** Quantitative Nav/Kv
+  conductance-density priors for the DSGC model require primary patch-clamp measurements, not
+  review-level summaries.
+* **Separate kinetics papers from density papers.** Activation/inactivation rate functions come from
+  [FohlmeisterMiller1997] (RGC-specific) and [Hu2009] (subunit-specific); conductance densities come
+  from [Kole2008] (AIS-specific quantification).
+* **Use RGC-specific priors where possible.** [VanWart2006] is RGC-specific for Nav localisation;
+  [FohlmeisterMiller1997] is RGC-specific for kinetics; the Kv1 AIS prior from [KoleLetzkus2007] and
+  the Nav density prior from [Kole2008] are cortical but extend by homology.
+* **Crossref-only retrieval is sufficient for classical papers.** The five candidate papers are all
+  paywalled but widely cited; abstracts from Crossref plus training-data recall suffice to produce a
+  consistent asset following the paywall-disclaimer pattern from t0015-t0018.
+
+#### Discovered Papers
+
+##### [VanWart2006]
+
+* **Type**: paper
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, A., Trimmer, J. S., Matthews, G.
+* **Year**: 2006
+* **DOI**: `10.1002/cne.21173`
+* **URL**: https://onlinelibrary.wiley.com/doi/10.1002/cne.21173
+* **Peer-reviewed**: yes
+* **Relevance**: Nav1.1/Nav1.2/Nav1.6 polarised localisation at RGC AIS microdomains; primary prior
+  for AIS Nav subunit placement in DSGC model.
+
+##### [KoleLetzkus2007]
+
+* **Type**: paper
+* **Title**: Axon initial segment Kv1 channels control axonal action potential waveform and synaptic
+  efficacy
+* **Authors**: Kole, M. H. P., Letzkus, J. J., Stuart, G. J.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.07.031`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(07)00568-6
+* **Peer-reviewed**: yes
+* **Relevance**: Kv1 subunit concentration at AIS; primary Kv-prior for the AIS compartment in the
+  DSGC model.
+
+##### [FohlmeisterMiller1997]
+
+* **Type**: paper
+* **Title**: Mechanisms by which cell geometry controls repetitive impulse firing in retinal
+  ganglion cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1997.78.4.1948
+* **Peer-reviewed**: yes
+* **Relevance**: RGC-specific HH-family rate functions for Nav and Kv channels; supplies the kinetic
+  prior for the DSGC compartmental model.
+
+##### [Hu2009]
+
+* **Type**: paper
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, W., Tian, C., Li, T., Yang, M., Hou, H., Shu, Y.
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **URL**: https://www.nature.com/articles/nn.2359
+* **Peer-reviewed**: yes
+* **Relevance**: Quantitative activation-threshold difference between Nav1.6 (~~-55 mV) and Nav1.2
+  (~~-40 mV); supplies the subunit-co-expression kinetic-shift prior for the DSGC AIS model.
+
+##### [Kole2008]
+
+* **Type**: paper
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole, M. H. P., Ilschner, S. U., Kampa, B. M., Williams, S. R., Ruben, P. C., Stuart,
+  G. J.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **URL**: https://www.nature.com/articles/nn2040
+* **Peer-reviewed**: yes
+* **Relevance**: Direct patch-clamp measurement of AIS Nav density (~40-50x somatic); supplies the
+  AIS conductance-density prior for the DSGC model.
+
+**Final selected DOIs** (five new, all verified absent from t0002/t0015/t0016/t0017/t0018):
+
+* `10.1002/cne.21173` - Van Wart, Trimmer, Matthews 2006 Nav1.x at RGC AIS microdomains
+* `10.1016/j.neuron.2007.07.031` - Kole, Letzkus, Stuart 2007 AIS Kv1 channels
+* `10.1152/jn.1997.78.4.1948` - Fohlmeister and Miller 1997 RGC HH model
+* `10.1038/nn.2359` - Hu et al. 2009 Nav1.6/Nav1.2 subunit co-expression
+* `10.1038/nn2040` - Kole et al. 2008 AIS Nav density
+
+#### Recommendations for This Task
+
+1. Use the five DOIs above as the paper shortlist; record them in `plan/shortlist.md`.
+2. Fetch Crossref metadata for each DOI and cache under `plan/crossref_metadata.json`.
+3. Build paper assets with `download_status: &quot;failed&quot;` and summary disclaimer pattern; record all
+   five DOIs in `intervention/paywalled_papers.md`.
+4. Author the answer asset with a Nav/Kv combination table keyed by DOI and theme.
+5. Primary category is `voltage-gated-channels` on all five papers; add a secondary tag per theme.
+
+#### Source Index
+
+##### [VanWart2006]
+
+* **Type**: paper
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, A., Trimmer, J. S., Matthews, G.
+* **Year**: 2006
+* **DOI**: `10.1002/cne.21173`
+* **URL**: https://onlinelibrary.wiley.com/doi/10.1002/cne.21173
+* **Peer-reviewed**: yes
+* **Relevance**: Nav subunit localisation at RGC AIS microdomains prior.
+
+##### [KoleLetzkus2007]
+
+* **Type**: paper
+* **Title**: Axon initial segment Kv1 channels control axonal action potential waveform and synaptic
+  efficacy
+* **Authors**: Kole, M. H. P., Letzkus, J. J., Stuart, G. J.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.07.031`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(07)00568-6
+* **Peer-reviewed**: yes
+* **Relevance**: Kv1 subunit localisation at AIS prior.
+
+##### [FohlmeisterMiller1997]
+
+* **Type**: paper
+* **Title**: Mechanisms by which cell geometry controls repetitive impulse firing in retinal
+  ganglion cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1997.78.4.1948
+* **Peer-reviewed**: yes
+* **Relevance**: RGC HH-kinetics prior.
+
+##### [Hu2009]
+
+* **Type**: paper
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, W., Tian, C., Li, T., Yang, M., Hou, H., Shu, Y.
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **URL**: https://www.nature.com/articles/nn.2359
+* **Peer-reviewed**: yes
+* **Relevance**: Nav1.6 vs Nav1.2 subunit co-expression kinetic-shift prior.
+
+##### [Kole2008]
+
+* **Type**: paper
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole, M. H. P., Ilschner, S. U., Kampa, B. M., Williams, S. R., Ruben, P. C., Stuart,
+  G. J.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **URL**: https://www.nature.com/articles/nn2040
+* **Peer-reviewed**: yes
+* **Relevance**: AIS Nav conductance-density prior.
+      </content>
+    </section>
+    <section id="t0019_literature_survey_voltage_gated_channels-research_code" source_kind="file">
+      <title>t0019_literature_survey_voltage_gated_channels — Literature survey: voltage-gated channels in retinal ganglion cells — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0019_literature_survey_voltage_gated_channels/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 9
+tasks_cited: 9
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Prior Task Assets for the Voltage-Gated-Channel Literature Survey
+
+#### Task Objective
+
+Survey five canonical papers that supply priors for Nav subunit expression at the RGC AIS, Kv
+subunit expression at the AIS, RGC-specific HH rate functions, Nav1.6 vs Nav1.2 subunit
+co-expression kinetics, and Nav conductance-density at the AIS for the DSGC compartmental model
+being developed in sibling tasks. Produce one answer asset that tabulates Nav/Kv channel
+combinations and their prior distributions. This research-code step establishes which prior task
+assets (skills, specifications, code fragments) can be reused and which must be re-authored inside
+this task.
+
+#### Library Landscape
+
+No `assets/library/` entries exist anywhere in the project, and the repository does not provide an
+`aggregate_libraries` aggregator — only aggregators for tasks, papers, answers, datasets, costs,
+suggestions, metrics, machines, and categories are present. No libraries are registered and no
+cross-task library imports are therefore possible. This section is intentionally short because the
+library landscape is empty at this point in the project; the paper/answer asset producers are the
+only cross-task reuse surfaces available.
+
+#### Key Findings
+
+##### Paper Asset Workflow Established by t0002 and Reused in t0015-t0018
+
+`[t0002]` established the canonical paper-asset pipeline for this project: 20 DSGC-modelling papers
+were downloaded with `details.json` v3 metadata, `summary.md` documents, and PDFs under
+`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/&lt;paper_id&gt;/files/`. The same
+convention is mandated by `meta/asset_types/paper/specification.md` v3. `[t0015]`, `[t0016]`,
+`[t0017]`, and `[t0018]` each refined the pattern for paywalled-only paper sets by using
+`download_status: &quot;failed&quot;` with a non-null `download_failure_reason` plus
+`intervention/paywalled_papers.md`; all five of this task&#x27;s shortlisted DOIs are paywalled so the
+same pattern applies.
+
+##### Crossref Fetcher and Paper-Asset Builder Exist in t0018
+
+`[t0018]` wrote `code/fetch_paper_metadata.py` that reads a `SHORTLIST` constant of DOIs and queries
+Crossref at `https://api.crossref.org/works/&lt;DOI&gt;` with a polite `mailto` User-Agent, then writes
+`plan/crossref_metadata.json`. `[t0018]` also wrote `code/build_paper_asset.py` that consumes the
+cached JSON and materialises `assets/paper/&lt;slug&gt;/` folders with v3 `details.json` and a 9-section
+`summary.md`, handling the `download_status: &quot;failed&quot;` path. Both scripts use
+`arf.scripts.utils.doi_to_slug` and are the right pattern to copy into this task&#x27;s `code/` folder
+with the DOI list and theme/category adjusted.
+
+##### Answer Asset Format: Spec v2
+
+`[t0002]`, `[t0007]`, `[t0015]`, `[t0016]`, `[t0017]`, and `[t0018]` each produced a single answer
+asset under `assets/answer/&lt;slug&gt;/`. Each answer folder contains `details.json`, `short_answer.md`,
+and `full_answer.md`. The slug is a kebab-case of the question, not a DOI. The Nav/Kv combinations
+table for this task (mapping 5 papers to Nav subunit localisation, Kv subunit localisation, RGC HH
+kinetics, Nav1.6 vs Nav1.2 kinetics, and AIS Nav density priors) should live in `full_answer.md` as
+a Markdown table, matching the precedent set by prior answer assets.
+
+##### Target Tuning Curve, Morphology, and Simulator Already Set
+
+`[t0004]` produced `code/generate_target.py` with `GeneratorParams` defining `theta_pref_deg=90`,
+`r_base_hz=2.0`, `r_peak_hz=32.0`, `n=2.0`, `n_angles=12`, `n_trials=20`, `noise_sd_hz=3.0`. These
+define the numerical targets (preferred-direction rate, baseline rate, DSI band 0.6-0.9) that
+downstream model-fitting tasks will use; the voltage-gated-channel priors from this survey feed that
+same model. `[t0005]` produced the validated mouse ooDSGC SWC morphology and `[t0007]` installed
+NEURON 8.2.7 / NetPyNE 1.0.7 under Python 3.13. The pipeline that will consume this survey&#x27;s priors
+is thus already standing.
+
+##### Prior Literature-Survey Mechanics (t0015-t0018)
+
+`[t0015]` (passive cable), `[t0016]` (dendritic computation), `[t0017]` (patch-clamp), and `[t0018]`
+(synaptic integration) each produced paywalled-only paper sets with `build_paper_asset.py` after a
+Crossref-metadata preflight. All four wrote summaries using the Crossref abstract plus training-data
+recall pattern, not PDF-level reading, and all four passed `verify_paper_asset` with that format.
+This task follows the same mechanical recipe exactly.
+
+#### Reusable Code and Assets
+
+* **Paper asset specification** — `meta/asset_types/paper/specification.md` v3. Reuse method:
+  **follow as authoritative spec**. No code to copy. Dictates `details.json` fields, `summary.md`
+  frontmatter, `summary_path`, `files/` layout, and verificator codes `PA-E*`/`PA-W*`.
+
+* **Crossref fetcher** —
+  `tasks/t0018_literature_survey_synaptic_integration/code/fetch_paper_metadata.py`. Reuse method:
+  **copy verbatim into `code/` and adjust the `SHORTLIST` constant** to the five new DOIs
+  (`10.1002/cne.21173`, `10.1016/j.neuron.2007.07.031`, `10.1152/jn.1997.78.4.1948`,
+  `10.1038/nn.2359`, `10.1038/nn2040`). Approx. 80 lines.
+
+* **Paper asset builder** —
+  `tasks/t0018_literature_survey_synaptic_integration/code/build_paper_asset.py`. Reuse method:
+  **copy verbatim into `code/` and adjust `TASK_ID` plus `THEME_CATEGORIES` and `THEME_NAMES`** so
+  each DOI gets `voltage-gated-channels` primary plus one secondary theme tag. Approx. 830 lines.
+
+* **`doi_to_slug` utility** — `arf/scripts/utils/doi_to_slug.py`. Reuse method: **import as
+  module**. Canonical DOI-to-folder-name conversion. Required by paper-asset spec v3 (`PA-E011`).
+
+* **Answer asset precedent** — any answer folder from `[t0015]`, `[t0016]`, `[t0017]`, or
+  `[t0018]` (e.g.
+  `tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/`).
+  Reuse method: **use as structural template** for `details.json` v2, `short_answer.md` (3
+  sections), and `full_answer.md` (9 sections).
+
+* **Paywalled intervention pattern** — `[t0015]`, `[t0016]`, `[t0017]`, `[t0018]` each wrote
+  `intervention/paywalled_papers.md`. Reuse method: **follow the pattern** — create
+  `intervention/paywalled_papers.md` listing DOI, title, Crossref abstract availability, and
+  manual-retrieval recommendation.
+
+#### Lessons Learned
+
+* Paywalled-only surveys are tractable in this project so long as the Crossref-abstract-plus-
+  training-data summary pattern is followed. `[t0015]`, `[t0016]`, `[t0017]`, and `[t0018]` all
+  succeeded with this recipe; no alternative-source retrieval beyond Crossref is needed for the
+  t0019 shortlist.
+* `doi_to_slug` must be used as the canonical module. Hand-conversion of DOIs to folder names causes
+  `PA-E011` verificator errors (`[t0002]` and `[t0017]` both reinforced this).
+* `[t0007]` confirmed NEURON 8.2.7 pins Python 3.13 at the project level. No impact on this
+  literature task, but the downstream DSGC model that will consume these priors runs under that pin.
+* `[t0018]` showed that `build_paper_asset.py` must explicitly handle the
+  `download_status: &quot;failed&quot;` path (populate `files: []`, write a `files/.gitkeep` so git preserves
+  the directory, write `download_failure_reason`). Reuse this logic as-is.
+* Committing logs after every flowmark-triggered edit avoids the recurring
+  `POSTSTEP ERROR: Working tree is not clean` pattern observed across t0015-t0018.
+
+#### Recommendations for This Task
+
+1. **Copy `[t0018]`&#x27;s `fetch_paper_metadata.py` and `build_paper_asset.py` into `code/`** and adjust
+   the DOI list to the five shortlisted DOIs plus `THEME_CATEGORIES` / `THEME_NAMES` per theme.
+2. **Follow `[t0018]`&#x27;s answer-asset structure**. The DOI-to-theme-and-prior table goes in
+   `full_answer.md`; `short_answer.md` is 3 sections; `details.json` follows spec v2.
+3. **Record all 5 DOIs in `intervention/paywalled_papers.md`** up front — no PDF retrieval is
+   attempted; the Crossref-abstract-plus-training-data pattern is the planned path.
+4. **Use `voltage-gated-channels` as the primary category on all 5 papers**; add one secondary
+   category per theme (e.g. `retinal-ganglion-cell`, `patch-clamp`, `compartmental-modeling`).
+5. **Skip `assets/library/`** — no library is needed or appropriate for a literature survey.
+
+#### Task Index
+
+##### [t0001]
+
+* **Task ID**: `t0001_brainstorm_results_1`
+* **Name**: Brainstorm: results 1
+* **Status**: completed
+* **Relevance**: Upstream brainstorm round that seeded the project&#x27;s literature strategy.
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: DSGC compartmental models
+* **Status**: completed
+* **Relevance**: Established canonical paper-asset pipeline and answer-asset structure; defines the
+  20-DOI exclusion list this survey must avoid.
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate target tuning curve
+* **Status**: completed
+* **Relevance**: Defines numerical tuning-curve targets that downstream model fitting consumes
+  alongside the voltage-gated-channel priors from this survey.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download DSGC morphology
+* **Status**: completed
+* **Relevance**: Mouse ooDSGC morphology used by the compartmental model that will apply the Nav/Kv
+  priors assembled here.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install NEURON + NetPyNE
+* **Status**: completed
+* **Relevance**: Confirms the simulator that will consume this survey&#x27;s priors is installed.
+
+##### [t0015]
+
+* **Task ID**: `t0015_literature_survey_cable_theory`
+* **Name**: Literature survey: cable theory
+* **Status**: completed
+* **Relevance**: First paywalled-only survey in this project; established the Crossref-abstract-
+  plus-training-data summary pattern that this task reuses.
+
+##### [t0016]
+
+* **Task ID**: `t0016_literature_survey_dendritic_computation`
+* **Name**: Literature survey: dendritic computation
+* **Status**: completed
+* **Relevance**: Second paywalled-only survey; reinforced the download-status-failed pattern and the
+  one-secondary-category-per-theme tagging approach.
+
+##### [t0017]
+
+* **Task ID**: `t0017_literature_survey_patch_clamp`
+* **Name**: Literature survey: patch-clamp methodology
+* **Status**: completed
+* **Relevance**: Third paywalled-only survey; voltage-clamp methodology background directly
+  complementary to the voltage-gated-channel priors assembled here.
+
+##### [t0018]
+
+* **Task ID**: `t0018_literature_survey_synaptic_integration`
+* **Name**: Literature survey: synaptic integration
+* **Status**: completed
+* **Relevance**: Fourth paywalled-only survey; its `fetch_paper_metadata.py` and
   `build_paper_asset.py` scripts are the templates this task copies and adjusts.
       </content>
     </section>

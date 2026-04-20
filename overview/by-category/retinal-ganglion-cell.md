@@ -4,15 +4,15 @@ Output neurons of the retina whose axons form the optic nerve.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (21)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(5)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(21)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+**Detail pages**: [Papers (22)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
+(6)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(22)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (2)](../libraries/by-category/retinal-ganglion-cell.md)
 
 ---
 
-## Papers (21)
+## Papers (22)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -934,6 +934,46 @@ modelling workflow.
 </details>
 
 <details>
+<summary>📖 <strong>Polarized distribution of ion channels within microdomains of
+the axon initial segment</strong> — Wart et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1002_cne.21173` |
+| **Authors** | Audra Van Wart, James S. Trimmer, Gary Matthews |
+| **Venue** | Journal of Comparative Neurology (journal) |
+| **DOI** | `10.1002/cne.21173` |
+| **URL** | https://doi.org/10.1002/cne.21173 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/summary.md) |
+
+Audra Van Wart and colleagues (2007) published "Polarized distribution of ion channels within
+microdomains of the axon initial segment" in Journal of Comparative Neurology. The paper is
+included in this task's survey because it contributes to the "Nav subunit localisation at RGC
+AIS" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+The methodology and key findings of the paper are stated verbatim in the `## Abstract` section
+above. This summary asset deliberately does not paraphrase or extend those claims beyond what
+CrossRef returns; any quantitative prior used from this paper in the DSGC model-fitting
+pipeline must be read directly from the published figures and tables.
+
+The paper's primary significance for this project is its contribution to the "Nav subunit
+localisation at RGC AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
 <summary>📖 <strong>Direction-Selective Dendritic Action Potentials in Rabbit
 Retina</strong> — Oesch et al., 2005</summary>
 
@@ -1081,14 +1121,15 @@ simulation.
 
 </details>
 
-## Tasks (2)
+## Tasks (3)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
+| 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 
-## Answers (5)
+## Answers (6)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -1170,6 +1211,29 @@ direction selectivity at the DSGC level.
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the voltage-gated-channels literature
+supply for the DSGC compartmental model on (1) Nav subunit localisation at
+the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family
+kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression
+kinetics, and (5) Nav conductance density at the AIS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`nav-kv-combinations-for-dsgc-modelling`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/)
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2
+enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS.
+AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with
+sub-millisecond kinetics and control AP waveform and somatic repolarisation. The
+Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv
+at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC.
+Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP
+while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav conductance density
+is about 2500-5000 pS/um2 (roughly 50x somatic density), an order-of-magnitude prior essential
+for reproducing fast, reliable AP initiation in compartmental models.
+
+</details>
+
+<details>
 <summary><strong>Which compartmental simulator should the direction-selective
 ganglion cell (DSGC) project use as its primary simulator, and which should
 it keep as a backup?</strong></summary>
@@ -1210,7 +1274,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (18 open, 3 closed)
+## Suggestions (19 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1415,6 +1479,25 @@ ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 
 lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
 0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
 targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
+access and verify numerical priors</strong> (S-0019-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
+
+Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
+Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
+-45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
+Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
+before adopting them as tight compartmental-model fitting targets.
 
 </details>
 

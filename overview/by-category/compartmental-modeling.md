@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (14)](../papers/by-category/compartmental-modeling.md) | [Answers
-(6)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(39)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(7)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(41)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (1)](../libraries/by-category/compartmental-modeling.md)
 
@@ -737,7 +737,7 @@ dendritic transients.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (6)
+## Answers (7)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -811,6 +811,29 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the voltage-gated-channels literature
+supply for the DSGC compartmental model on (1) Nav subunit localisation at
+the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family
+kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression
+kinetics, and (5) Nav conductance density at the AIS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`nav-kv-combinations-for-dsgc-modelling`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/)
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2
+enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS.
+AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with
+sub-millisecond kinetics and control AP waveform and somatic repolarisation. The
+Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv
+at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC.
+Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP
+while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav conductance density
+is about 2500-5000 pS/um2 (roughly 50x somatic density), an order-of-magnitude prior essential
+for reproducing fast, reliable AP initiation in compartmental models.
+
+</details>
+
+<details>
 <summary><strong>Which compartmental simulator should the direction-selective
 ganglion cell (DSGC) project use as its primary simulator, and which should
 it keep as a backup?</strong></summary>
@@ -869,7 +892,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (35 open, 4 closed)
+## Suggestions (37 open, 4 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1223,6 +1246,49 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend voltage-gated-channel survey with recent DSGC-specific
+Nav/Kv patch-clamp and super-resolution AIS microdomain papers</strong>
+(S-0019-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
+
+The scaled-down 5-paper survey covers the five canonical themes (Nav subunit localisation at
+AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2
+co-expression kinetics, AIS Nav conductance density) but with one classical paper per theme. A
+follow-up survey task should add ~5 DSGC-targeted papers across: (a) DSGC-specific Nav/Kv
+patch-clamp measurements at near-physiological temperature, (b) super-resolution microscopy of
+AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) developmental Nav/Kv
+channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
+fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
+voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with
+AIS-specific conductance densities in downstream DSGC model</strong>
+(S-0019-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
+
+The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
+DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
+constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
+Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
+(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
+pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
+pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
+mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
+except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
+objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
+degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
+Fohlmeister-Miller RGC firing properties.
 
 </details>
 

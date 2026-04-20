@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-40-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-44-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-2-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-8-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-9-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-66-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-70-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (8K) |
-[full](llm-context/full.xml) (103K) | [roadmap](llm-context/roadmap.xml) (25K) |
-[results](llm-context/results-deep-dive.xml) (62K) |
-[assets](llm-context/literature-and-assets.xml) (19K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (9K) |
+[full](llm-context/full.xml) (110K) | [roadmap](llm-context/roadmap.xml) (26K) |
+[results](llm-context/results-deep-dive.xml) (66K) |
+[assets](llm-context/literature-and-assets.xml) (20K)
 
-*Last updated: 2026-04-20 12:16 UTC*
+*Last updated: 2026-04-20 13:04 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -47,20 +47,20 @@ No daily news yet.
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | 2026-04-20 12:25 |
 
 ---
 
-## [Ready to Start (4)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`description`](../tasks/t0010_hunt_missed_dsgc_models/task_description.md) | 2026-04-19 |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`description`](../tasks/t0011_response_visualization_library/task_description.md) | 2026-04-19 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`description`](../tasks/t0013_resolve_morphology_provenance/task_description.md) | 2026-04-19 |
-| 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`description`](../tasks/t0019_literature_survey_voltage_gated_channels/task_description.md) | 2026-04-20 |
 
 ---
 
@@ -70,10 +70,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (15 total)](tasks/by-status/completed.md)
+## [Recently Completed (16 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
 | 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`results`](../tasks/t0008_port_modeldb_189347/results/results_detailed.md) | 2026-04-20 12:10 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | [`results`](../tasks/t0017_literature_survey_patch_clamp/results/results_detailed.md) | 2026-04-20 11:08 |
@@ -83,9 +84,8 @@ No blocked tasks.
 | 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
 | 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
 | 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`results`](../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) | 2026-04-19 22:43 |
-| 0006 | [Brainstorm results session 2](../overview/tasks/task_pages/t0006_brainstorm_results_2.md) | [`results`](../tasks/t0006_brainstorm_results_2/results/results_detailed.md) | 2026-04-19 11:00 |
 
-*5 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*6 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -99,7 +99,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (56 open)](suggestions/)
+## [Recent Suggestions (60 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -278,11 +278,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*46 more open suggestions → [open suggestions](suggestions/)*
+*50 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (21)](suggestions/)
+## [High Priority Suggestions (23)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -467,11 +467,11 @@ actual papers.
 
 </details>
 
-*11 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*13 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (8 total)](answers/)
+## [Recent Answers (9 total)](answers/)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -589,6 +589,29 @@ direction selectivity at the DSGC level.
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the voltage-gated-channels literature
+supply for the DSGC compartmental model on (1) Nav subunit localisation at
+the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family
+kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression
+kinetics, and (5) Nav conductance density at the AIS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`nav-kv-combinations-for-dsgc-modelling`](../tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/)
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2
+enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS.
+AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with
+sub-millisecond kinetics and control AP waveform and somatic repolarisation. The
+Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv
+at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC.
+Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP
+while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav conductance density
+is about 2500-5000 pS/um2 (roughly 50x somatic density), an order-of-magnitude prior essential
+for reproducing fast, reliable AP initiation in compartmental models.
+
+</details>
+
+<details>
 <summary><strong>Which compartmental simulator should the direction-selective
 ganglion cell (DSGC) project use as its primary simulator, and which should
 it keep as a backup?</strong></summary>
@@ -649,7 +672,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 ---
 
-## [Latest Papers (40 total)](papers/)
+## [Latest Papers (44 total)](papers/)
 
 <details>
 <summary>📖 <strong>Tailoring of the axon initial segment shapes the conversion of
@@ -732,6 +755,46 @@ temporal co-tuning" evidence pool. The answer asset
 (rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
 shunting-inhibition location dependence) this paper supplies, together with the numerical
 value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
+<summary>📖 <strong>Polarized distribution of ion channels within microdomains of
+the axon initial segment</strong> — Wart et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1002_cne.21173` |
+| **Authors** | Audra Van Wart, James S. Trimmer, Gary Matthews |
+| **Venue** | Journal of Comparative Neurology (journal) |
+| **DOI** | `10.1002/cne.21173` |
+| **URL** | https://doi.org/10.1002/cne.21173 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/summary.md) |
+
+Audra Van Wart and colleagues (2007) published "Polarized distribution of ion channels within
+microdomains of the axon initial segment" in Journal of Comparative Neurology. The paper is
+included in this task's survey because it contributes to the "Nav subunit localisation at RGC
+AIS" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+The methodology and key findings of the paper are stated verbatim in the `## Abstract` section
+above. This summary asset deliberately does not paraphrase or extend those claims beyond what
+CrossRef returns; any quantitative prior used from this paper in the DSGC model-fitting
+pipeline must be read directly from the published figures and tables.
+
+The paper's primary significance for this project is its contribution to the "Nav subunit
+localisation at RGC AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
 
 The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
 failure reason). Downstream users should obtain the paper through their institutional
@@ -1064,53 +1127,7 @@ calibration uncertainty on distal synaptic conductance amplitudes.
 
 </details>
 
-<details>
-<summary>📖 <strong>Different Mechanisms Generate Maintained Activity in ON and OFF
-Retinal Ganglion Cells</strong> — Margolis & Detwiler, 2007</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_jneurosci.0130-07.2007` |
-| **Authors** | David J. Margolis, Peter B. Detwiler |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/jneurosci.0130-07.2007` |
-| **URL** | https://www.jneurosci.org/content/27/22/5994 |
-| **Date added** | 2026-04-20 |
-| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0017_literature_survey_patch_clamp`](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1523_jneurosci.0130-07.2007/summary.md) |
-
-Margolis and Detwiler take a direct experimental approach to the question of whether retinal
-ganglion cell maintained activity is synaptically driven or intrinsically generated. Using
-whole-cell and cell-attached patch-clamp recordings from morphologically identified ON and OFF
-RGCs in rabbit retinal wholemount, they compare maintained firing under control conditions to
-firing after pharmacological blockade of ionotropic glutamate receptors. The design cleanly
-separates synaptic drive from intrinsic biophysics in the same cells.
-
-The methodology is careful about cell identification and blockade efficacy, and the follow-up
-experiments extend the comparison beyond maintained firing to other signatures of pacemaker
-activity: subthreshold oscillations, burst firing, and rebound excitation. Each signature is a
-distinct testable claim about the cell intrinsic biophysics, not a single measurement.
-
-The headline finding is that ON and OFF RGCs use qualitatively different strategies. ON cells
-require synaptic input to fire at rest; OFF cells fire autonomously and additionally show the
-full suite of pacemaker properties. The difference is not explained by passive properties but
-by different voltage-gated channel complements, a conclusion supported by the pattern of
-intrinsic responses.
-
-For this project, the implications matter even though the paper is about pure ON and OFF cells
-rather than DSGCs directly. ON-OFF DSGCs integrate both input streams, and the biophysics of
-the OFF input pathway may bring some of the intrinsic-pacemaker machinery into the DSGC soma
-and dendrites. DSGC compartmental models should consider whether burst firing, rebound
-excitation, and subthreshold oscillations are expected behaviours of the target cell and
-include or exclude the relevant voltage-gated channels (T-type Ca2+, HCN) accordingly. Using
-maintained-activity-under-synaptic-blockade as a model validation target cleanly separates the
-intrinsic biophysics from the synaptic drive, and that separation should be part of our
-modelling workflow.
-
-</details>
-
-*30 more papers → [papers](papers/)*
+*34 more papers → [papers](papers/)*
 
 ---
 

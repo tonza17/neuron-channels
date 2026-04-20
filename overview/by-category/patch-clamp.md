@@ -4,13 +4,13 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (17)](../papers/by-category/patch-clamp.md) | [Answers
-(1)](../answers/by-category/patch-clamp.md) | [Suggestions
+**Detail pages**: [Papers (19)](../papers/by-category/patch-clamp.md) | [Answers
+(2)](../answers/by-category/patch-clamp.md) | [Suggestions
 (5)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
-## Papers (17)
+## Papers (19)
 
 <details>
 <summary>📖 <strong>Voltage Clamp Errors During Estimation of Concurrent Excitatory
@@ -721,6 +721,84 @@ collapse.
 </details>
 
 <details>
+<summary>📖 <strong>Distinct contributions of Nav1.6 and Nav1.2 in action potential
+initiation and backpropagation</strong> — Hu et al., 2009</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn.2359` |
+| **Authors** | Wenqin Hu, Cuiping Tian, Tun Li, Mingpo Yang, Han Hou, Yousheng Shu |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn.2359` |
+| **URL** | https://doi.org/10.1038/nn.2359 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/summary.md) |
+
+Wenqin Hu and colleagues (2009) published "Distinct contributions of Nav1.6 and Nav1.2 in
+action potential initiation and backpropagation" in Nature Neuroscience. The paper is included
+in this task's survey because it contributes to the "Nav1.6 vs Nav1.2 subunit co-expression
+kinetics" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Nav1.6 vs Nav1.2
+subunit co-expression kinetics" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
+<summary>📖 <strong>Action potential generation requires a high sodium channel
+density in the axon initial segment</strong> — Kole et al., 2008</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn2040` |
+| **Authors** | Maarten H P Kole, Susanne U Ilschner, Björn M Kampa, Stephen R Williams, Peter C Ruben, Greg J Stuart |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn2040` |
+| **URL** | https://doi.org/10.1038/nn2040 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/summary.md) |
+
+Maarten H P Kole and colleagues (2008) published "Action potential generation requires a high
+sodium channel density in the axon initial segment" in Nature Neuroscience. The paper is
+included in this task's survey because it contributes to the "Nav conductance density at AIS"
+theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion
+cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Nav conductance
+density at AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
 <summary>📖 <strong>Different Mechanisms Generate Maintained Activity in ON and OFF
 Retinal Ganglion Cells</strong> — Margolis & Detwiler, 2007</summary>
 
@@ -868,14 +946,15 @@ means and standard deviations.
 
 </details>
 
-## Tasks (2)
+## Tasks (3)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
+| 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 
-## Answers (1)
+## Answers (2)
 
 <details>
 <summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
@@ -901,6 +980,29 @@ DSGC dendrites, fit to AMPA/NMDA charge ratios during preferred and null motion 
 peak-AMPA-current alone. Finally the modeller must decide explicitly whether to include
 intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold oscillations) based on the
 target DSGC subtype, validated by maintained-activity-under-synaptic-blockade traces.
+
+</details>
+
+<details>
+<summary><strong>What quantitative priors does the voltage-gated-channels literature
+supply for the DSGC compartmental model on (1) Nav subunit localisation at
+the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family
+kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression
+kinetics, and (5) Nav conductance density at the AIS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`nav-kv-combinations-for-dsgc-modelling`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/)
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2
+enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS.
+AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with
+sub-millisecond kinetics and control AP waveform and somatic repolarisation. The
+Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv
+at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC.
+Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP
+while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav conductance density
+is about 2500-5000 pS/um2 (roughly 50x somatic density), an order-of-magnitude prior essential
+for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 

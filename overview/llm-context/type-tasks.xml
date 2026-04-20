@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T12:16:11Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T13:04:58Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>114206</char_count>
-    <byte_count>114628</byte_count>
-    <estimated_tokens>28551</estimated_tokens>
+    <char_count>116363</char_count>
+    <byte_count>116785</byte_count>
+    <estimated_tokens>29090</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1088,11 +1088,12 @@ while total dendritic surface area grows **7.99x** and total dendritic axial res
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
-Status: not_started
-Effective date: 2026-04-19
+Status: in_progress
+Effective date: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Dependencies: t0008_port_modeldb_189347
 Task types: literature-survey, download-paper, code-reproduction
+Start time: 2026-04-20T12:25:27Z
 
 #### Motivation
 
@@ -2181,11 +2182,13 @@ via Sheffield institutional access.
 
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels
-Status: not_started
+Status: completed
 Effective date: 2026-04-20
 Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
 Task types: literature-survey
 Source suggestion: S-0014-05
+Start time: 2026-04-20T12:16:45Z
+End time: 2026-04-20T13:00:08Z
 
 #### Motivation
 
@@ -2240,6 +2243,48 @@ None.
 * The answer asset passes `verify_answer_asset.py` and contains a combination table with at least
   five rows keyed by Nav/Kv subunits and source paper DOI.
 * No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot;
+---
+### Results Summary: Voltage-Gated-Channel Literature Survey
+
+#### Summary
+
+Surveyed **5** high-leverage voltage-gated-channel papers covering the five canonical themes (Nav
+subunit localisation at RGC AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate
+functions, Nav1.6 vs Nav1.2 co-expression kinetics, AIS Nav conductance density) and produced one
+answer asset tabulating a Nav/Kv combination per DOI and theme. All **5** PDFs were paywalled
+(Wiley, Elsevier, American Physiological Society, Nature Neuroscience x2); summaries are based on
+Crossref abstracts plus training knowledge, and DOIs are recorded in
+`intervention/paywalled_papers.md` for manual retrieval via Sheffield institutional access.
+
+#### Metrics
+
+* **papers_built**: **5** (one per theme: VanWart2006, KoleLetzkus2007, FohlmeisterMiller1997,
+  Hu2009, Kole2008)
+* **papers_paywalled**: **5** (100% paywalled; all `download_status: &quot;failed&quot;`)
+* **themes_covered**: **5** (all five planned themes covered)
+* **answer_assets_built**: **1** (`nav-kv-combinations-for-dsgc-modelling`)
+* **dois_duplicated_from_prior_tasks**: **0** (verified against t0002, t0015, t0016, t0017, t0018
+  corpora)
+
+#### Verification
+
+* `verify_plan` passes with **0** errors, **0** warnings
+* `verify_research_papers`, `verify_research_internet`, `verify_research_code` pass with **0**
+  errors
+* `verify_task_folder` passes with **0** errors, **1** warning (FD-W002 empty `logs/searches/`)
+* `meta/asset_types/paper/verificator.py` passes on all 5 paper assets with **0** PA-E errors
+  (PA-W002 / PA-W007 / PA-W008 / PA-W010 warnings consistent with paywalled-paper template from
+  t0018)
+* `meta/asset_types/answer/verificator.py` passes on the single answer asset with **0** errors and
+  **0** warnings
+* `verify_task_complete` runs at the reporting step; expected warnings TC-W002 (25 vs 5 paper count)
+  and TC-W005 (no merged PR yet) are planned and acceptable
       </content>
     </section>
   </sections>

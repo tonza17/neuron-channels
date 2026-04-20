@@ -1,6 +1,6 @@
-# Papers: `dendritic-computation` (23)
+# Papers: `dendritic-computation` (24)
 
-23 papers across 19 year(s).
+24 papers across 20 year(s).
 
 [Back to all papers](../README.md)
 
@@ -566,6 +566,47 @@ and (iii) the compartmentalized-subunit structure of the tree. It also establish
 presynaptic DS cannot be omitted from a DSGC model intended to match physiological spike
 tuning and gives quantitative guidance on how to calibrate voltage-clamp-derived conductances
 for use in simulation.
+
+</details>
+
+## 2007 (1)
+
+<details>
+<summary>📖 Axon Initial Segment Kv1 Channels Control Axonal Action Potential
+Waveform and Synaptic Efficacy — Kole et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2007.07.031` |
+| **Authors** | Maarten H.P. Kole, Johannes J. Letzkus, Greg J. Stuart |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2007.07.031` |
+| **URL** | https://doi.org/10.1016/j.neuron.2007.07.031 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/summary.md) |
+
+Maarten H.P. Kole and colleagues (2007) published "Axon Initial Segment Kv1 Channels Control
+Axonal Action Potential Waveform and Synaptic Efficacy" in Neuron. The paper is included in
+this task's survey because it contributes to the "Kv1 subunit expression at AIS" theme of
+voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Kv1 subunit
+expression at AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
 
 </details>
 

@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (21)](../papers/by-category/direction-selectivity.md) | [Answers
 (6)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(33)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(35)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (2)](../libraries/by-category/direction-selectivity.md)
 
@@ -1211,7 +1211,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (30 open, 3 closed)
+## Suggestions (32 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1524,6 +1524,49 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend voltage-gated-channel survey with recent DSGC-specific
+Nav/Kv patch-clamp and super-resolution AIS microdomain papers</strong>
+(S-0019-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
+
+The scaled-down 5-paper survey covers the five canonical themes (Nav subunit localisation at
+AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2
+co-expression kinetics, AIS Nav conductance density) but with one classical paper per theme. A
+follow-up survey task should add ~5 DSGC-targeted papers across: (a) DSGC-specific Nav/Kv
+patch-clamp measurements at near-physiological temperature, (b) super-resolution microscopy of
+AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) developmental Nav/Kv
+channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
+fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
+voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with
+AIS-specific conductance densities in downstream DSGC model</strong>
+(S-0019-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
+
+The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
+DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
+constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
+Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
+(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
+pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
+pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
+mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
+except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
+objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
+degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
+Fohlmeister-Miller RGC firing properties.
 
 </details>
 

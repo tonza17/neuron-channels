@@ -1,24 +1,29 @@
-# ⏳ Hunt DSGC compartmental models missed by prior survey; port runnable ones
+# ⏳ Tasks: In Progress
+
+1 tasks. ⏳ **1 in_progress**.
 
 [Back to all tasks](../README.md)
 
-## Overview
+---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0010 — <strong>Hunt DSGC compartmental models missed by prior survey;
+port runnable ones</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0010_hunt_missed_dsgc_models` |
-| **Status** | ⏳ in_progress |
-| **Started** | 2026-04-20T12:25:27Z |
+| **Status** | in_progress |
+| **Effective date** | 2026-04-20 |
 | **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
-| **Task types** | `literature-survey`, `download-paper`, `code-reproduction` |
 | **Expected assets** | 1 answer |
+| **Source suggestion** | — |
+| **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/), [`download-paper`](../../../meta/task_types/download-paper/), [`code-reproduction`](../../../meta/task_types/code-reproduction/) |
+| **Start time** | 2026-04-20T12:25:27Z |
+| **Task page** | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
 | **Task folder** | [`t0010_hunt_missed_dsgc_models/`](../../../tasks/t0010_hunt_missed_dsgc_models/) |
-
-<details>
-<summary><strong>Task Description</strong></summary>
-
-*Source:
-[`task_description.md`](../../../tasks/t0010_hunt_missed_dsgc_models/task_description.md)*
 
 # Hunt DSGC compartmental models missed by t0002 and t0008; port any with code
 

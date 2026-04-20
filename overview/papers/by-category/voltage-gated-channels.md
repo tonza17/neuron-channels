@@ -1,6 +1,6 @@
-# Papers: `voltage-gated-channels` (11)
+# Papers: `voltage-gated-channels` (15)
 
-11 papers across 9 year(s).
+15 papers across 11 year(s).
 
 [Back to all papers](../README.md)
 
@@ -266,7 +266,128 @@ calibrate DSGC compartmental models against future whole-cell recordings.
 
 </details>
 
-## 2007 (1)
+## 2009 (1)
+
+<details>
+<summary>📖 Distinct contributions of Nav1.6 and Nav1.2 in action potential
+initiation and backpropagation — Hu et al., 2009</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn.2359` |
+| **Authors** | Wenqin Hu, Cuiping Tian, Tun Li, Mingpo Yang, Han Hou, Yousheng Shu |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn.2359` |
+| **URL** | https://doi.org/10.1038/nn.2359 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/summary.md) |
+
+Wenqin Hu and colleagues (2009) published "Distinct contributions of Nav1.6 and Nav1.2 in
+action potential initiation and backpropagation" in Nature Neuroscience. The paper is included
+in this task's survey because it contributes to the "Nav1.6 vs Nav1.2 subunit co-expression
+kinetics" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Nav1.6 vs Nav1.2
+subunit co-expression kinetics" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+## 2008 (1)
+
+<details>
+<summary>📖 Action potential generation requires a high sodium channel density in
+the axon initial segment — Kole et al., 2008</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn2040` |
+| **Authors** | Maarten H P Kole, Susanne U Ilschner, Björn M Kampa, Stephen R Williams, Peter C Ruben, Greg J Stuart |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn2040` |
+| **URL** | https://doi.org/10.1038/nn2040 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/summary.md) |
+
+Maarten H P Kole and colleagues (2008) published "Action potential generation requires a high
+sodium channel density in the axon initial segment" in Nature Neuroscience. The paper is
+included in this task's survey because it contributes to the "Nav conductance density at AIS"
+theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion
+cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Nav conductance
+density at AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+## 2007 (3)
+
+<details>
+<summary>📖 Axon Initial Segment Kv1 Channels Control Axonal Action Potential
+Waveform and Synaptic Efficacy — Kole et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2007.07.031` |
+| **Authors** | Maarten H.P. Kole, Johannes J. Letzkus, Greg J. Stuart |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2007.07.031` |
+| **URL** | https://doi.org/10.1016/j.neuron.2007.07.031 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/summary.md) |
+
+Maarten H.P. Kole and colleagues (2007) published "Axon Initial Segment Kv1 Channels Control
+Axonal Action Potential Waveform and Synaptic Efficacy" in Neuron. The paper is included in
+this task's survey because it contributes to the "Kv1 subunit expression at AIS" theme of
+voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Kv1 subunit
+expression at AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
 
 <details>
 <summary>📖 Different Mechanisms Generate Maintained Activity in ON and OFF Retinal
@@ -311,6 +432,46 @@ include or exclude the relevant voltage-gated channels (T-type Ca2+, HCN) accord
 maintained-activity-under-synaptic-blockade as a model validation target cleanly separates the
 intrinsic biophysics from the synaptic drive, and that separation should be part of our
 modelling workflow.
+
+</details>
+
+<details>
+<summary>📖 Polarized distribution of ion channels within microdomains of the axon
+initial segment — Wart et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1002_cne.21173` |
+| **Authors** | Audra Van Wart, James S. Trimmer, Gary Matthews |
+| **Venue** | Journal of Comparative Neurology (journal) |
+| **DOI** | `10.1002/cne.21173` |
+| **URL** | https://doi.org/10.1002/cne.21173 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/summary.md) |
+
+Audra Van Wart and colleagues (2007) published "Polarized distribution of ion channels within
+microdomains of the axon initial segment" in Journal of Comparative Neurology. The paper is
+included in this task's survey because it contributes to the "Nav subunit localisation at RGC
+AIS" theme of voltage-gated-channel priors relevant to the direction-selective retinal
+ganglion cell (DSGC) compartmental model.
+
+The methodology and key findings of the paper are stated verbatim in the `## Abstract` section
+above. This summary asset deliberately does not paraphrase or extend those claims beyond what
+CrossRef returns; any quantitative prior used from this paper in the DSGC model-fitting
+pipeline must be read directly from the published figures and tables.
+
+The paper's primary significance for this project is its contribution to the "Nav subunit
+localisation at RGC AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
 
 </details>
 

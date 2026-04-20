@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T12:16:11Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T13:04:58Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>74412</char_count>
-    <byte_count>74474</byte_count>
-    <estimated_tokens>18603</estimated_tokens>
+    <char_count>76538</char_count>
+    <byte_count>76601</byte_count>
+    <estimated_tokens>19134</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -131,9 +131,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
+        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 15
+Completed tasks: 16
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -224,6 +225,12 @@ ID: t0018_literature_survey_synaptic_integration
 Completed: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
+
+## Literature survey: voltage-gated channels in retinal ganglion cells
+ID: t0019_literature_survey_voltage_gated_channels
+Completed: 2026-04-20
+Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_survey_voltage_gated_channels&quot; --- Results Summary: Voltage-Gated-Channel Literature Survey Summary Surveyed **5** high-leverage voltage-gated-channel papers covering the five canonical themes (Nav subunit localisation at RGC AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2 co-expression kinetics, AIS Nav conductance density) and produced one answer asset tabulating a Nav/Kv combination per DOI and theme. All **5** PDFs were paywalled (Wiley, Elsevier, American Physiological Society, Nature Neuroscience x2); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -233,15 +240,14 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
-Status: not_started
-Effective date: 2026-04-19
+Status: in_progress
+Effective date: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Dependencies: t0008_port_modeldb_189347
 
@@ -258,12 +264,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
-
-## Literature survey: voltage-gated channels in retinal ganglion cells
-ID: t0019_literature_survey_voltage_gated_channels
-Status: not_started
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -276,11 +276,12 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
+        <id>nav-kv-combinations-for-dsgc-modelling</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 8
+Answers: 9
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -329,6 +330,14 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
 
 Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a 12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to `results/metrics.json`. The tuning curve does not hit the published envelope at the bundled parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a `gabaMOD` parameter swap rather than from spatial rotation — the port&#x27;s rotation-based protocol is only a proxy for a direction- selective...
+
+## What quantitative priors does the voltage-gated-channels literature supply for the DSGC compartmental model on (1) Nav subunit localisation at the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression kinetics, and (5) Nav conductance density at the AIS?
+ID: nav-kv-combinations-for-dsgc-modelling
+Created by: t0019_literature_survey_voltage_gated_channels on 2026-04-20
+Confidence: medium
+Categories: voltage-gated-channels, retinal-ganglion-cell, compartmental-modeling, patch-clamp
+
+RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2 enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS. AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with sub-millisecond kinetics and control AP waveform and somatic repolarisation. The Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC. Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav...
 
 ## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
 ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling
@@ -525,7 +534,11 @@ Geometry alone does not recover the Schachter Rin targets; the residual gap need
         <id>10.1126_science.aan3846</id>
         <id>10.1016_j.neuron.2017.09.058</id>
         <id>10.1371_journal.pone.0019463</id>
+        <id>10.1038_nn.2359</id>
+        <id>10.1038_nn2040</id>
         <id>10.1523_jneurosci.0130-07.2007</id>
+        <id>10.1016_j.neuron.2007.07.031</id>
+        <id>10.1002_cne.21173</id>
         <id>10.1146_annurev.neuro.28.061604.135703</id>
         <id>10.1523_jneurosci.5346-03.2004</id>
         <id>10.1038_nn1253</id>
@@ -536,10 +549,6 @@ Geometry alone does not recover the Schachter Rin targets; the residual gap need
         <id>10.1038_35005094</id>
         <id>10.1038_18686</id>
         <id>10.1038_382363a0</id>
-        <id>10.1038_346565a0</id>
-        <id>10.1073_pnas.80.9.2799</id>
-        <id>10.1098_rstb.1982.0084</id>
-        <id>10.1152_jn.1967.30.5.1138</id>
       </source_ids>
       <content>
 Papers: 20
@@ -579,12 +588,40 @@ Authors: Alon Poleg-Polsky, Jeffrey S. Diamond
 Added by task: t0017_literature_survey_patch_clamp
 Poleg-Polsky and Diamond ask a methodological question that matters for every modelling paper built on experimental E/I decomposition: how accurate is the standard protocol of reconstructing excitatory and inhibitory conductances from multi-holding-potential voltage-clamp recordings when the cell has thin, extended dendrites? They answer it with NEURON compartmental simulations of realistic retinal ganglion cell morphologies, where the ground-truth synaptic input is known and the somatic pipette recording can be directly compared against it. The...
 
+## Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and backpropagation
+ID: 10.1038_nn.2359
+Year: 2009
+Authors: Wenqin Hu, Cuiping Tian, Tun Li, Mingpo Yang
+Added by task: t0019_literature_survey_voltage_gated_channels
+Wenqin Hu and colleagues (2009) published &quot;Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and backpropagation&quot; in Nature Neuroscience. The paper is included in this task&#x27;s survey because it contributes to the &quot;Nav1.6 vs Nav1.2 subunit co-expression kinetics&quot; theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before...
+
+## Action potential generation requires a high sodium channel density in the axon initial segment
+ID: 10.1038_nn2040
+Year: 2008
+Authors: Maarten H P Kole, Susanne U Ilschner, Björn M Kampa, Stephen R Williams
+Added by task: t0019_literature_survey_voltage_gated_channels
+Maarten H P Kole and colleagues (2008) published &quot;Action potential generation requires a high sodium channel density in the axon initial segment&quot; in Nature Neuroscience. The paper is included in this task&#x27;s survey because it contributes to the &quot;Nav conductance density at AIS&quot; theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used...
+
 ## Different Mechanisms Generate Maintained Activity in ON and OFF Retinal Ganglion Cells
 ID: 10.1523_jneurosci.0130-07.2007
 Year: 2007
 Authors: David J. Margolis, Peter B. Detwiler
 Added by task: t0017_literature_survey_patch_clamp
 Margolis and Detwiler take a direct experimental approach to the question of whether retinal ganglion cell maintained activity is synaptically driven or intrinsically generated. Using whole-cell and cell-attached patch-clamp recordings from morphologically identified ON and OFF RGCs in rabbit retinal wholemount, they compare maintained firing under control conditions to firing after pharmacological blockade of ionotropic glutamate receptors. The design cleanly separates synaptic drive from intrinsic biophysics in the same cells. The methodology is...
+
+## Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic Efficacy
+ID: 10.1016_j.neuron.2007.07.031
+Year: 2007
+Authors: Maarten H.P. Kole, Johannes J. Letzkus, Greg J. Stuart
+Added by task: t0019_literature_survey_voltage_gated_channels
+Maarten H.P. Kole and colleagues (2007) published &quot;Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic Efficacy&quot; in Neuron. The paper is included in this task&#x27;s survey because it contributes to the &quot;Kv1 subunit expression at AIS&quot; theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the...
+
+## Polarized distribution of ion channels within microdomains of the axon initial segment
+ID: 10.1002_cne.21173
+Year: 2007
+Authors: Audra Van Wart, James S. Trimmer, Gary Matthews
+Added by task: t0019_literature_survey_voltage_gated_channels
+Audra Van Wart and colleagues (2007) published &quot;Polarized distribution of ion channels within microdomains of the axon initial segment&quot; in Journal of Comparative Neurology. The paper is included in this task&#x27;s survey because it contributes to the &quot;Nav subunit localisation at RGC AIS&quot; theme of voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. The methodology and key findings of the paper are stated verbatim in the `## Abstract` section above. This summary asset deliberately does not...
 
 ## Dendritic Computation
 ID: 10.1146_annurev.neuro.28.061604.135703
@@ -655,34 +692,6 @@ Year: 1996
 Authors: Zachary F. Mainen, Terrence J. Sejnowski
 Added by task: t0015_literature_survey_cable_theory
 Mainen &amp; Sejnowski&#x27;s 1996 Nature paper is a landmark in compartmental neuroscience modelling because it cleanly separates the roles of ion-channel density and dendritic morphology in shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3 pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four characteristic firing patterns observed in neocortical recordings without changing any biophysical...
-
-## Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents
-ID: 10.1038_346565a0
-Year: 1990
-Authors: Robin A. J. Lester, John D. Clements, Gary L. Westbrook, Craig E. Jahr
-Added by task: t0018_literature_survey_synaptic_integration
-Robin A. J. Lester and colleagues (1990) published &quot;Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents&quot; in Nature. The paper is included in this task&#x27;s survey because it contributes to the &quot;AMPA/NMDA/GABA receptor kinetics&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC...
-
-## Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.
-ID: 10.1073_pnas.80.9.2799
-Year: 1983
-Authors: C Koch, T Poggio, V Torre
-Added by task: t0018_literature_survey_synaptic_integration
-C Koch and colleagues (1983) published &quot;Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.&quot; in Proceedings of the National Academy of Sciences. The paper is included in this task&#x27;s survey because it contributes to the &quot;Shunting inhibition&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. The methodology and key findings of the paper are stated verbatim in the `## Abstract` section above. This summary asset deliberately does not...
-
-## Retinal ganglion cells: a functional interpretation of dendritic morphology
-ID: 10.1098_rstb.1982.0084
-Year: 1982
-Authors: Christof Koch, Tomaso Poggio, Vincent Torre
-Added by task: t0015_literature_survey_cable_theory
-Koch, Poggio &amp; Torre&#x27;s 1982 paper is arguably the most influential theoretical paper on retinal ganglion cell biophysics ever published, and is the direct intellectual ancestor of the DSGC modelling work this project undertakes. Using passive cable theory applied to histologically reconstructed cat RGC morphologies, the authors compute electrotonic properties of each RGC class and show that none are truly isopotential despite their small physical sizes. The paper&#x27;s central theoretical contribution is the &quot;on-the-path&quot; shunting-inhibition mechanism for...
-
-## Distinguishing theoretical synaptic potentials computed for different soma-dendritic distributions of synaptic input
-ID: 10.1152_jn.1967.30.5.1138
-Year: 1967
-Authors: Wilfrid Rall
-Added by task: t0015_literature_survey_cable_theory
-Rall&#x27;s 1967 paper asks whether the shape of a somatic EPSP carries information about where along the dendritic tree the underlying synaptic input was delivered. Using the equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the soma. The paper&#x27;s methodological contribution is the shape-index plot: a two-dimensional graph of EPSP rise time versus half-width in which different input locations trace out distinguishable curves...
       </content>
     </section>
     <section id="datasets" source_kind="aggregator">

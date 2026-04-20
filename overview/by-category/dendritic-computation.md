@@ -4,14 +4,14 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (23)](../papers/by-category/dendritic-computation.md) | [Answers
+**Detail pages**: [Papers (24)](../papers/by-category/dendritic-computation.md) | [Answers
 (4)](../answers/by-category/dendritic-computation.md) | [Suggestions
 (12)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (23)
+## Papers (24)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -558,6 +558,45 @@ and (iii) the compartmentalized-subunit structure of the tree. It also establish
 presynaptic DS cannot be omitted from a DSGC model intended to match physiological spike
 tuning and gives quantitative guidance on how to calibrate voltage-clamp-derived conductances
 for use in simulation.
+
+</details>
+
+<details>
+<summary>📖 <strong>Axon Initial Segment Kv1 Channels Control Axonal Action Potential
+Waveform and Synaptic Efficacy</strong> — Kole et al., 2007</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2007.07.031` |
+| **Authors** | Maarten H.P. Kole, Johannes J. Letzkus, Greg J. Stuart |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2007.07.031` |
+| **URL** | https://doi.org/10.1016/j.neuron.2007.07.031 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/summary.md) |
+
+Maarten H.P. Kole and colleagues (2007) published "Axon Initial Segment Kv1 Channels Control
+Axonal Action Potential Waveform and Synaptic Efficacy" in Neuron. The paper is included in
+this task's survey because it contributes to the "Kv1 subunit expression at AIS" theme of
+voltage-gated-channel priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "Kv1 subunit
+expression at AIS" evidence pool. The answer asset
+`assets/answer/nav-kv-combinations-for-dsgc-modelling/` records which DSGC model Nav/Kv
+channel combination (subunit identity, compartment, conductance density, activation
+half-voltage, or kinetic time constant) this paper supplies, together with the numerical value
+when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
 
 </details>
 
@@ -1167,7 +1206,7 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (4)
+## Tasks (5)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1175,6 +1214,7 @@ than reduced analytical models.
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
+| 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 
 ## Answers (4)
 

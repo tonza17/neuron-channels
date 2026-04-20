@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-6 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **5 open** (4
-high, 1 medium), **1 closed**.
+9 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **8 open** (6
+high, 2 medium), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -61,6 +61,35 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with
+AIS-specific conductance densities in downstream DSGC model</strong>
+(S-0019-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
+DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
+constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
+Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
+(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
+pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
+pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
+mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
+except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
+objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
+degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
+Fohlmeister-Miller RGC firing properties.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
 Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
 
@@ -81,6 +110,31 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
+access and verify numerical priors</strong> (S-0019-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
+Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
+-45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
+Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
+before adopting them as tight compartmental-model fitting targets.
 
 </details>
 
@@ -106,6 +160,32 @@ spikes before downstream retinal tasks depend on it.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>Extend voltage-gated-channel survey with recent DSGC-specific
+Nav/Kv patch-clamp and super-resolution AIS microdomain papers</strong>
+(S-0019-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The scaled-down 5-paper survey covers the five canonical themes (Nav subunit localisation at
+AIS, Kv1 subunit expression at AIS, RGC HH-family kinetic rate functions, Nav1.6 vs Nav1.2
+co-expression kinetics, AIS Nav conductance density) but with one classical paper per theme. A
+follow-up survey task should add ~5 DSGC-targeted papers across: (a) DSGC-specific Nav/Kv
+patch-clamp measurements at near-physiological temperature, (b) super-resolution microscopy of
+AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) developmental Nav/Kv
+channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
+fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
+voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
