@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Build a comparison table of reproduced vs published Poleg-Polsky 2016 values (DSI, peak, null, HWHM) and note any gaps beyond the envelope tolerances.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T11:54:38Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T11:59:18Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
