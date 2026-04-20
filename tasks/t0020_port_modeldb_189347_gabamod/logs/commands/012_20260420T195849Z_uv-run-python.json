@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0020_port_modeldb_189347_gabamod",
+  "command": "uv run python -u -m tasks.t0020_port_modeldb_189347_gabamod.code.plot_pd_vs_nd",
+  "exit_code": 0,
+  "duration_seconds": 2.863,
+  "started_at": "2026-04-20T19:58:49Z",
+  "completed_at": "2026-04-20T19:58:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0020_port_modeldb_189347_gabamod",
+  "stdout_file": "012_20260420T195849Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260420T195849Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

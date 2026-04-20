@@ -1,0 +1,14 @@
+Scoring C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\data\tuning_curves.csv vs literature envelope...
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\results\score_report.json
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\results\metrics.json
+
+Summary:
+  protocol                = gabamod_swap
+  n_PD / n_ND             = 20 / 20
+  mean_PD (Hz)            = 14.85 (std 1.59)
+  mean_ND (Hz)            = 1.80 (std 1.03)
+  DSI                     = 0.7838 (envelope 0.7-0.85)
+  peak (Hz)               = 14.85 (envelope 40.0-80.0)
+  dsi_in_range            = True
+  peak_in_range           = False
+  gate.passed             = False

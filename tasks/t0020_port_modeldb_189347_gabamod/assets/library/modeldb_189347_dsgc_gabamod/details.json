@@ -1,0 +1,56 @@
+{
+  "spec_version": "2",
+  "library_id": "modeldb_189347_dsgc_gabamod",
+  "name": "ModelDB 189347 DSGC Port -- gabaMOD-swap protocol",
+  "version": "0.1.0",
+  "short_description": "Sibling port of ModelDB 189347 (Poleg-Polsky & Diamond 2016 DSGC) that implements direction selectivity via the paper's native gabaMOD parameter swap (PD=0.33, ND=0.99) instead of the t0008 spatial-rotation proxy.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/constants.py",
+    "code/paths.py",
+    "code/run_gabamod_sweep.py",
+    "code/score_envelope.py",
+    "code/plot_pd_vs_nd.py"
+  ],
+  "entry_points": [
+    {
+      "name": "run_one_trial_gabamod",
+      "kind": "function",
+      "module": "code/run_gabamod_sweep.py",
+      "description": "Apply canonical parameters, override h.gabaMOD to the condition-specific scalar (0.33 for PD, 0.99 for ND), assert BIP synapse positions stay at their baseline values, and return the somatic firing rate in Hz for a single trial."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/run_gabamod_sweep.py",
+      "description": "Build the DSGC once, iterate over (condition, trial_seed) pairs for PD and ND, and emit data/tuning_curves.csv with schema (condition, trial_seed, firing_rate_hz)."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/score_envelope.py",
+      "description": "Read data/tuning_curves.csv, compute DSI = (mean_PD - mean_ND) / (mean_PD + mean_ND) and peak = mean_PD, gate against the literature envelope (DSI 0.70-0.85, peak 40-80 Hz), and write results/score_report.json and results/metrics.json."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "code/plot_pd_vs_nd.py",
+      "description": "Generate a PD vs ND mean firing-rate bar chart with per-trial scatter overlay and save it to results/images/pd_vs_nd_firing_rate.png."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "pandas",
+    "pydantic",
+    "tqdm",
+    "matplotlib"
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0020_port_modeldb_189347_gabamod",
+  "date_created": "2026-04-20"
+}

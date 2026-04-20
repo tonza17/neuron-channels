@@ -5,13 +5,13 @@
   "name": "Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol",
   "short_description": "Reproduce Poleg-Polsky & Diamond 2016 DSGC direction selectivity using the paper's native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0012_tuning_curve_scoring_loss_library"
   ],
   "start_time": "2026-04-20T19:13:31Z",
-  "end_time": null,
+  "end_time": "2026-04-20T20:35:00Z",
   "expected_assets": {
     "library": 1
   },

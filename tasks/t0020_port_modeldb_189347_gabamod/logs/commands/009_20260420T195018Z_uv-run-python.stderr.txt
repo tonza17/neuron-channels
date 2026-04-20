@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\code\run_gabamod_sweep.py", line 285, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\code\run_gabamod_sweep.py", line 211, in main
+    h = build_dsgc()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 139, in build_dsgc
+    h = load_neuron()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 115, in load_neuron
+    assert loaded_std == 1.0, "h.load_file('stdrun.hoc') failed"
+           ^^^^^^^^^^^^^^^^^
+AssertionError: h.load_file('stdrun.hoc') failed
+NEURON: Couldn't find: stdrun.hoc
+ near line 0
+ objref hoc_obj_[2]
+                   ^
