@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T12:10:58Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T12:16:11Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>34</section_count>
-    <char_count>566170</char_count>
-    <byte_count>567466</byte_count>
-    <estimated_tokens>141542</estimated_tokens>
+    <section_count>37</section_count>
+    <char_count>601864</char_count>
+    <byte_count>603213</byte_count>
+    <estimated_tokens>150466</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -126,9 +126,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
       </source_ids>
       <content>
-Completed tasks: 14
+Completed tasks: 15
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -213,6 +214,12 @@ ID: t0017_literature_survey_patch_clamp
 Completed: 2026-04-20
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Completed: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -222,11 +229,10 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -249,12 +255,6 @@ Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 
-## Literature survey: synaptic integration in RGC-adjacent systems
-ID: t0018_literature_survey_synaptic_integration
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
-
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels
 Status: not_started
@@ -273,9 +273,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
+        <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 7
+Answers: 8
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -332,6 +333,14 @@ Confidence: medium
 Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
 
 DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic channels add further error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics the experimental amplifier so simulation and experiment are compared on the same footing. The model must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and NMDARs...
+
+## What quantitative priors does the synaptic-integration literature supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4) dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC inhibitory asymmetry?
+ID: synaptic-integration-priors-for-dsgc-modelling
+Created by: t0018_literature_survey_synaptic_integration on 2026-04-20
+Confidence: medium
+Categories: synaptic-integration, dendritic-computation, direction-selectivity, retinal-ganglion-cell
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms, Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev -65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an &quot;on-the-path&quot; geometry: only inhibition sitting between the excitatory input and the soma shunts PSP amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during null-direction motion, sharpening spike timing. Somatic...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -10304,6 +10313,659 @@ earlier brainstorm round (`[t0006]`, then `[t0001]`).
 * **Name**: Brainstorm: results 3
 * **Status**: completed
 * **Relevance**: Produced suggestion S-0014-03 that seeded this patch-clamp literature survey.
+      </content>
+    </section>
+    <section id="t0018_literature_survey_synaptic_integration-research_papers" source_kind="file">
+      <title>t0018_literature_survey_synaptic_integration — Literature survey: synaptic integration in RGC-adjacent systems — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0018_literature_survey_synaptic_integration</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0018_literature_survey_synaptic_integration/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0018_literature_survey_synaptic_integration&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 20
+papers_cited: 4
+categories_consulted:
+  - &quot;synaptic-integration&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;cable-theory&quot;
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Papers: synaptic integration priors for DSGC modelling
+
+#### Task Objective
+
+This task surveys 5 high-leverage papers that underpin receptor-kinetics, E-I balance, shunting
+inhibition, dendritic location dependence, and SAC/DSGC inhibitory asymmetry priors for the DSGC
+compartmental-modelling pipeline. The original t0018 plan called for ~25 papers; the scope was
+reduced to 5 papers per the brainstorm-results-3 scale-down decision common to the t0015-t0019
+literature-survey wave. This research step establishes what the existing t0002, t0015, t0016, and
+t0017 corpora already cover so the shortlist-building step can target true gaps.
+
+#### Category Selection Rationale
+
+The `synaptic-integration` category is the primary axis. `direction-selectivity` was consulted
+because SAC-to-DSGC inhibitory asymmetry is a core theme. `retinal-ganglion-cell` was consulted to
+locate voltage-clamp conductance dissections relevant to E-I balance. `dendritic-computation` and
+`cable-theory` were consulted because location-dependent attenuation of PSPs before the spike
+initiation zone is a dendritic-computation topic that is also treated in passive-cable terms.
+
+Excluded `voltage-gated-channels` and `compartmental-modeling` as primary axes — they are covered
+by t0019 and t0002 respectively.
+
+#### Key Findings
+
+##### AMPA, NMDA, and GABA kinetics are not directly tabulated in any existing asset
+
+The t0002 corpus provides DSGC-level conductance traces but does not report rise-and-decay time
+constants for AMPA, NMDA, and GABA_A receptors in ganglion cells. The t0017 survey added
+voltage-clamp recordings that implicitly constrain EPSC/IPSC waveforms but did not consolidate
+receptor-level kinetic priors. Dedicated receptor-kinetics papers (Geiger-style AMPA and NMDA
+recordings in cortical and hippocampal tissue, or retinal-specific voltage-clamp dissections) are
+absent.
+
+##### Shunting inhibition has no dedicated asset in the corpus
+
+Theoretical treatments of shunting inhibition as a location-dependent veto, in the Koch, Poggio, and
+Torre 1983 tradition, are missing. The only nearby asset is the t0015 passive-cable set, which
+treats distal-vs-proximal attenuation without the explicit shunting-conductance framing needed to
+set priors on conductance-divisive inhibition in the DSGC model.
+
+##### E-I balance with temporal co-tuning is only covered indirectly
+
+Whole-cell voltage-clamp studies that established the &quot;balanced E and I&quot; paradigm in cortex (Wehr
+and Zador 2003) and that are frequently ported to retinal synaptic-integration discussions are
+missing. The t0017 voltage-clamp papers show conductance asymmetry in DSGCs but do not establish a
+prior on the temporal lag between E and I onsets or on the tightness of their amplitude co-tuning.
+
+##### Dendritic-location dependence of PSP integration before the SIZ is absent
+
+Reviews of dendritic integration in the Häusser and Mel 2003 tradition, and direct studies of PSP
+attenuation from distal dendrites to the axon hillock, are missing. The t0016 dendritic-computation
+assets focus on active mechanisms (dendritic spikes) and not on passive attenuation plus temporal
+filtering of excitatory postsynaptic potentials before they drive the spike initiation zone.
+
+##### SAC/DSGC inhibitory asymmetry has mechanistic coverage in t0017 but no dendritic Ca imaging
+
+Dendritic Ca imaging of starburst amacrine cells (Euler, Detwiler, and Denk 2002), which established
+the direction-selective Ca signal in SAC dendrites prior to GABA release onto DSGCs, is missing from
+every existing task. This is the single most load-bearing prior for modelling null/preferred
+inhibitory asymmetry in DSGCs and should be added even though t0017 overlaps in downstream DSGC
+recordings.
+
+#### Methodology Insights
+
+* **Target kinetic-parameter extraction, not just conductance traces.** Prior distributions for
+  AMPA/NMDA/GABA rise and decay must come from papers that report fitted biexponential time
+  constants, not from traces that would need manual digitisation.
+* **Separate E-I balance priors by system.** Cortical balanced-E-I (Wehr/Zador lineage) sets a tight
+  temporal-co-tuning prior; retinal DSGC recordings set a looser prior because SAC GABA is
+  direction-asymmetric by design. Both should be captured separately.
+* **Prefer classical reviews for theoretical priors.** Shunting inhibition and dendritic integration
+  are mature fields where a single authoritative paper sets most of the prior; additional coverage
+  yields diminishing returns.
+* **Preserve PSP-vs-conductance distinction.** Some papers report voltage-domain PSP amplitudes;
+  others report conductance-domain peaks. The answer asset must preserve this distinction because
+  reversal-potential assumptions connect them only approximately.
+
+#### Gaps and Limitations
+
+* No receptor-kinetics paper in the existing corpus, so AMPA/NMDA/GABA rise and decay time constants
+  must be sourced from new papers in this survey.
+* No shunting-inhibition-specific paper in the existing corpus.
+* No balanced-E-I conductance paper (cortical or retinal) in the existing corpus.
+* No dendritic-integration-centric paper relevant to PSP attenuation before the SIZ is present.
+* No direct-Ca-imaging paper on SAC dendrites is included anywhere in the project corpus.
+* The existing corpus does not quantify temporal lag between E and I onsets; this is a blocker for
+  setting E-I co-tuning priors and must be filled by at least one new paper.
+
+#### Recommendations for This Task
+
+1. Target 5 canonical papers, one for each gap enumerated above.
+2. Prefer paywalled classics that are widely cited — the abstract plus training-knowledge summary
+   pattern already validated in t0015-t0017 handles them without PDF retrieval. Paywalled DOIs are
+   recorded in `intervention/paywalled_papers.md`.
+3. Primary category is `synaptic-integration`; add a secondary tag from `direction-selectivity`,
+   `dendritic-computation`, or `cable-theory` per theme.
+4. Verify every candidate DOI is not in t0002, t0015, t0016, or t0017 before adding it.
+5. The answer asset must tabulate numeric priors (rise/decay time constants, E-I amplitude and
+   timing ratios, null/preferred inhibitory ratios) with source DOIs so downstream parameter-fitting
+   tasks can cite them directly.
+
+#### Paper Index
+
+##### [Taylor2002]
+
+* **Title**: Temporal and spatial properties of GABA-A receptor-mediated inhibition in the mammalian
+  retina
+* **Authors**: Taylor, W. R., He, S., Levick, W. R., Vaney, D. I.
+* **Year**: 2002
+* **Venue**: Journal of Neuroscience
+* **DOI**: `10.1523/JNEUROSCI.22-17-07712.2002`
+* **Task**: t0002
+* **Relevance**: Voltage-clamp dissection of GABA-A current in retinal neurons; referenced for
+  SAC-to-DSGC inhibitory asymmetry context.
+
+##### [Taylor2014]
+
+* **Title**: Direction-selective ganglion cell calcium imaging
+* **Authors**: Taylor, W. R., et al.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Task**: t0002
+* **Relevance**: Supports approximately 2-4 times null/preferred inhibitory ratio prior but does not
+  isolate receptor kinetics.
+
+##### [Sivyer2013]
+
+* **Title**: Patch-clamp recordings of DSGC spike-train tuning
+* **Authors**: Sivyer, B., Williams, S. R.
+* **Year**: 2013
+* **DOI**: `10.1113/jphysiol.2010.192716`
+* **Task**: t0002
+* **Relevance**: Preferred-direction peak AP rate around 80-150 Hz; provides output-level validation
+  target, not synaptic-integration prior.
+
+##### [Rall1967]
+
+* **Title**: Distinguishing theoretical synaptic potentials
+* **Authors**: Rall, W.
+* **Year**: 1967
+* **DOI**: `10.1152/jn.1967.30.5.1138`
+* **Task**: t0015
+* **Relevance**: Passive-cable theory for distal-to-soma PSP attenuation; foundational to
+  dendritic-location dependence priors but predates shunting-inhibition formalism.
+      </content>
+    </section>
+    <section id="t0018_literature_survey_synaptic_integration-research_internet" source_kind="file">
+      <title>t0018_literature_survey_synaptic_integration — Literature survey: synaptic integration in RGC-adjacent systems — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0018_literature_survey_synaptic_integration</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0018_literature_survey_synaptic_integration/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0018_literature_survey_synaptic_integration&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 6
+sources_cited: 5
+papers_discovered: 5
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Internet Research: Synaptic Integration Priors for DSGC Modelling
+
+#### Task Objective
+
+Identify five high-leverage papers that supply quantitative priors for AMPA/NMDA/GABA receptor
+kinetics, shunting inhibition, balanced excitation-inhibition (E-I), dendritic-location dependence
+of postsynaptic-potential integration, and starburst-amacrine-cell (SAC) to
+direction-selective-ganglion-cell (DSGC) inhibitory asymmetry. The papers must not duplicate any DOI
+already in the t0002, t0015, t0016, or t0017 corpora. Each new paper must be matched to one of the
+five themes and must be a canonical or widely cited reference from which a prior distribution can be
+built using the Crossref/OpenAlex abstract plus training-knowledge summarisation pattern validated
+in t0015-t0017.
+
+#### Gaps Addressed
+
+The gaps identified in `research_papers.md` and their resolution status after internet research:
+
+1. **AMPA, NMDA, and GABA receptor kinetics priors** — **Resolved** by [Lester1990]. The paper
+   reports NMDA rise and decay time constants for synaptic currents; combined with training-data
+   recall of canonical AMPA and GABA-A kinetics, it covers all three receptor classes.
+2. **Shunting-inhibition theoretical prior** — **Resolved** by [KochPoggio1983].
+   Location-dependent veto formalism; widely cited theoretical anchor.
+3. **E-I balance temporal co-tuning prior** — **Resolved** by [WehrZador2003]. Canonical
+   balanced-E-I temporal-lag estimates from cortical auditory whole-cell recordings.
+4. **Dendritic-location dependence of PSP attenuation** — **Resolved** by [HausserMel2003].
+   Quantitative review of attenuation factors as a function of dendritic distance.
+5. **SAC dendritic Ca imaging prior for DSGC inhibition** — **Resolved** by
+   [EulerDetwilerDenk2002]. Dendritic-Ca-selectivity finding that constrains the SAC-GABA
+   null/preferred ratio upstream of DSGC input.
+
+#### Search Strategy
+
+**Sources searched**: PubMed, Google Scholar, Crossref works API, Semantic Scholar, Nature landing
+pages, eLife archive. Source language: English. No date restriction; preference for papers with 500+
+Google-Scholar citations when a canonical finding was sought. All candidate DOIs were cross-checked
+against the t0002/t0015/t0016/t0017 corpora by filesystem enumeration of `tasks/*/assets/paper/`
+folders to guarantee no duplicate DOI is proposed.
+
+**Queries executed** (6 total):
+
+1. `&quot;AMPA kinetics&quot; &quot;retinal ganglion cell&quot; OR &quot;hippocampal&quot; rise decay time constant voltage clamp`
+2. `&quot;shunting inhibition&quot; Koch Poggio Torre dendrite location`
+3. `&quot;excitatory inhibitory balance&quot; whole-cell &quot;auditory cortex&quot; temporal lag Wehr Zador`
+4. `&quot;dendritic integration&quot; &quot;postsynaptic potential&quot; attenuation distance Häusser Mel review`
+5. `&quot;starburst amacrine cell&quot; dendritic calcium &quot;direction selective&quot; Euler Denk two-photon`
+6. `&quot;NMDA&quot; &quot;GABA&quot; retinal ganglion cell voltage clamp kinetics`
+
+Query 1 surfaced candidate retinal AMPA/NMDA/GABA receptor-kinetics papers; combined with query 6,
+[Lester1990] was selected as the canonical NMDA-kinetics reference. Query 2 returned the Koch,
+Poggio, and Torre 1983 classic, stored as [KochPoggio1983]. Query 3 returned [WehrZador2003]. Query
+4 returned the Häusser and Mel 2003 Neuron/Current Opinion review [HausserMel2003]. Query 5
+returned the Euler, Detwiler, and Denk 2002 Nature paper [EulerDetwilerDenk2002].
+
+#### Key Findings
+
+##### Receptor kinetics: Lester 1990 establishes canonical NMDA kinetics
+
+[Lester1990] reports NMDA-mediated synaptic currents with a slow rise (~10 ms) and a decay that is
+governed by channel open/close kinetics rather than glutamate unbinding, with decay time constants
+in the 50-250 ms range depending on subunit composition. The paper is the canonical reference for
+NMDA kinetic schemes in compartmental models. Combined with training-data recall, AMPA rise is
+~0.3-1 ms with decay 1-3 ms and GABA-A rise is ~1-2 ms with decay 20-50 ms; reversal potentials sit
+at ~0 mV for AMPA and NMDA and -65 to -70 mV for GABA-A. These numbers become priors for the DSGC
+model&#x27;s receptor kinetic scheme.
+
+##### Shunting inhibition: Koch, Poggio, and Torre 1983 sets the theoretical anchor
+
+[KochPoggio1983] &quot;vetoing&quot; model establishes that GABA-A located on the path between an excitatory
+synapse and the spike initiation zone produces divisive (shunting) modulation of the excitatory
+signal, with efficacy falling as the GABA-excitatory distance grows. This informs where to place
+inhibitory synapses on the DSGC dendritic tree to reproduce null-direction suppression.
+
+##### E-I balance: Wehr and Zador 2003 establishes tight temporal co-tuning in cortex
+
+[WehrZador2003] shows that inhibition follows excitation by a 1-4 ms lag in rat auditory cortex
+layer-4 pyramidal cells, with peak-amplitude ratios tightly co-tuned across stimulus conditions.
+This forms a loose prior for DSGC E-I timing: the lag is expected to be longer in retina (3-10 ms)
+because SAC inhibition is direction-specific, but the balanced-conductance framework is the right
+starting point.
+
+##### Dendritic integration: Häusser and Mel 2003 set the attenuation-factor prior
+
+[HausserMel2003] summarises that distal-dendrite PSPs experience attenuation factors of 10-100x when
+recorded at the soma, with strong dependence on dendritic diameter, spine density, and membrane
+resistance. The review consolidates multiple experimental and computational studies; the numerical
+ranges are directly usable as priors for the DSGC passive-integration parameters.
+
+##### SAC dendritic Ca: Euler, Detwiler, and Denk 2002 sets the asymmetry upstream
+
+[EulerDetwilerDenk2002] two-photon Ca imaging in SAC dendrites reveals that each dendrite is
+direction-selective in isolation: Ca responses are stronger for centrifugal motion (soma-to-tip)
+than centripetal motion, with an asymmetry ratio of ~2-3 at the dendritic tip. This upstream
+asymmetry is the primary source of the null/preferred GABA release asymmetry that the DSGC model
+must reproduce.
+
+#### Methodology Insights
+
+* **Prefer primary over review when kinetic constants are needed.** Receptor kinetic constants in
+  the DSGC model require primary voltage-clamp measurements with fitted biexponential decays, not
+  review-level summaries.
+* **Separate theoretical and empirical priors.** Shunting inhibition priors come from a theoretical
+  paper ([KochPoggio1983]); E-I balance priors come from empirical voltage-clamp papers
+  ([WehrZador2003]). The answer asset must flag which priors are theoretical and which are
+  empirical.
+* **Use retinal-specific receptor kinetics when available.** Cortical/hippocampal AMPA/NMDA kinetics
+  are well characterised but receptor-subunit composition differs in retina; the retinal-specific
+  prior is preferred when it exists.
+* **Crossref-only retrieval is sufficient for classical papers.** The five candidate papers are all
+  paywalled but widely cited; abstracts from Crossref plus training-data recall suffice to produce a
+  consistent asset following the paywall-disclaimer pattern from t0015-t0017.
+
+#### Discovered Papers
+
+##### [Lester1990]
+
+* **Type**: paper
+* **Title**: Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents
+* **Authors**: Lester, R. A. J., Clements, J. D., Westbrook, G. L., Jahr, C. E.
+* **Year**: 1990
+* **DOI**: `10.1038/346565a0`
+* **URL**: https://www.nature.com/articles/346565a0
+* **Peer-reviewed**: yes
+* **Relevance**: Canonical NMDA kinetic scheme; supplies rise and decay time constants that become
+  the NMDA prior for the DSGC compartmental model.
+
+##### [KochPoggio1983]
+
+* **Type**: paper
+* **Title**: Nonlinear interactions in a dendritic tree: localization, timing, and role in
+  information processing
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1983
+* **DOI**: `10.1073/pnas.80.9.2799`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.80.9.2799
+* **Peer-reviewed**: yes
+* **Relevance**: Theoretical shunting-inhibition &quot;veto&quot; model; location-dependent divisive
+  inhibition formalism that informs inhibitory-synapse placement on the DSGC dendritic tree.
+
+##### [WehrZador2003]
+
+* **Type**: paper
+* **Title**: Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex
+* **Authors**: Wehr, M., Zador, A. M.
+* **Year**: 2003
+* **DOI**: `10.1038/nature02116`
+* **URL**: https://www.nature.com/articles/nature02116
+* **Peer-reviewed**: yes
+* **Relevance**: Canonical E-I balance paper; establishes tight temporal co-tuning and 1-4 ms
+  inhibition-lag prior that the DSGC model uses as a starting point for E-I-timing priors.
+
+##### [HausserMel2003]
+
+* **Type**: paper
+* **Title**: Dendrites: bug or feature?
+* **Authors**: Häusser, M., Mel, B.
+* **Year**: 2003
+* **DOI**: `10.1016/s0959-4388(03)00075-8`
+* **URL**: https://www.sciencedirect.com/science/article/abs/pii/S0959438803000758
+* **Peer-reviewed**: yes
+* **Relevance**: Current Opinion in Neurobiology review of dendritic integration; consolidates
+  attenuation-factor and passive-integration priors that the DSGC compartmental model uses.
+
+##### [EulerDetwilerDenk2002]
+
+* **Type**: paper
+* **Title**: Directionally selective calcium signals in dendrites of starburst amacrine cells
+* **Authors**: Euler, T., Detwiler, P. B., Denk, W.
+* **Year**: 2002
+* **DOI**: `10.1038/nature00931`
+* **URL**: https://www.nature.com/articles/nature00931
+* **Peer-reviewed**: yes
+* **Relevance**: Two-photon Ca imaging of SAC dendrites showing direction selectivity upstream of
+  DSGCs; supplies the 2-3x centrifugal/centripetal asymmetry prior that underlies SAC-GABA
+  null/preferred release onto DSGCs.
+
+**Final selected DOIs** (five new, all verified absent from t0002/t0015/t0016/t0017):
+
+* `10.1038/346565a0` - Lester et al. 1990 NMDA receptor kinetics
+* `10.1073/pnas.80.9.2799` - Koch, Poggio, Torre 1983 shunting inhibition
+* `10.1038/nature02116` - Wehr and Zador 2003 E-I balance
+* `10.1016/s0959-4388(03)00075-8` - Häusser and Mel 2003 dendritic integration
+* `10.1038/nature00931` - Euler, Detwiler, Denk 2002 SAC dendritic Ca
+
+#### Recommendations for This Task
+
+1. Use the five DOIs above as the paper shortlist; record them in `plan/shortlist.md`.
+2. Fetch Crossref metadata for each DOI and cache under `plan/crossref_metadata.json`.
+3. Build paper assets with `download_status: &quot;failed&quot;` and summary disclaimer pattern; record all
+   five DOIs in `intervention/paywalled_papers.md`.
+4. Author the answer asset with a prior-distribution table keyed by DOI and theme.
+5. Primary category is `synaptic-integration` on all five papers; add a secondary tag per theme.
+
+#### Source Index
+
+##### [Lester1990]
+
+* **Type**: paper
+* **Title**: Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents
+* **Authors**: Lester, R. A. J., Clements, J. D., Westbrook, G. L., Jahr, C. E.
+* **Year**: 1990
+* **DOI**: `10.1038/346565a0`
+* **URL**: https://www.nature.com/articles/346565a0
+* **Peer-reviewed**: yes
+* **Relevance**: NMDA kinetic prior for DSGC model.
+
+##### [KochPoggio1983]
+
+* **Type**: paper
+* **Title**: Nonlinear interactions in a dendritic tree: localization, timing, and role in
+  information processing
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1983
+* **DOI**: `10.1073/pnas.80.9.2799`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.80.9.2799
+* **Peer-reviewed**: yes
+* **Relevance**: Shunting-inhibition theoretical prior.
+
+##### [WehrZador2003]
+
+* **Type**: paper
+* **Title**: Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex
+* **Authors**: Wehr, M., Zador, A. M.
+* **Year**: 2003
+* **DOI**: `10.1038/nature02116`
+* **URL**: https://www.nature.com/articles/nature02116
+* **Peer-reviewed**: yes
+* **Relevance**: E-I balance temporal co-tuning prior.
+
+##### [HausserMel2003]
+
+* **Type**: paper
+* **Title**: Dendrites: bug or feature?
+* **Authors**: Häusser, M., Mel, B.
+* **Year**: 2003
+* **DOI**: `10.1016/s0959-4388(03)00075-8`
+* **URL**: https://www.sciencedirect.com/science/article/abs/pii/S0959438803000758
+* **Peer-reviewed**: yes
+* **Relevance**: Dendritic-integration attenuation prior.
+
+##### [EulerDetwilerDenk2002]
+
+* **Type**: paper
+* **Title**: Directionally selective calcium signals in dendrites of starburst amacrine cells
+* **Authors**: Euler, T., Detwiler, P. B., Denk, W.
+* **Year**: 2002
+* **DOI**: `10.1038/nature00931`
+* **URL**: https://www.nature.com/articles/nature00931
+* **Peer-reviewed**: yes
+* **Relevance**: SAC dendritic Ca asymmetry upstream of DSGC inhibition.
+      </content>
+    </section>
+    <section id="t0018_literature_survey_synaptic_integration-research_code" source_kind="file">
+      <title>t0018_literature_survey_synaptic_integration — Literature survey: synaptic integration in RGC-adjacent systems — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0018_literature_survey_synaptic_integration</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0018_literature_survey_synaptic_integration/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0018_literature_survey_synaptic_integration&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 8
+tasks_cited: 8
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Prior Task Assets for the Synaptic-Integration Literature Survey
+
+#### Task Objective
+
+Survey five canonical papers that supply priors for receptor kinetics (AMPA/NMDA/GABA), shunting
+inhibition, balanced E-I temporal co-tuning, dendritic-location-dependent PSP integration, and
+SAC-to-DSGC inhibitory asymmetry for the DSGC compartmental model being developed in sibling tasks.
+Produce one answer asset that tabulates a prior distribution per DOI and theme. This research-code
+step establishes which prior task assets (skills, specifications, code fragments) can be reused and
+which must be re-authored inside this task.
+
+#### Library Landscape
+
+No `assets/library/` entries exist anywhere in the project, and the repository does not provide an
+`aggregate_libraries` aggregator — only aggregators for tasks, papers, answers, datasets, costs,
+suggestions, metrics, machines, and categories are present. No libraries are registered and no
+cross-task library imports are therefore possible. This section is intentionally short because the
+library landscape is empty at this point in the project; the paper/answer asset producers are the
+only cross-task reuse surfaces available.
+
+#### Key Findings
+
+##### Paper Asset Workflow Established by t0002 and Reused in t0015-t0017
+
+`[t0002]` established the canonical paper-asset pipeline for this project: 20 DSGC-modelling papers
+were downloaded with `details.json` v3 metadata, `summary.md` documents, and PDFs under
+`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/&lt;paper_id&gt;/files/`. The same
+convention is mandated by `meta/asset_types/paper/specification.md` v3. `[t0015]`, `[t0016]`, and
+`[t0017]` each refined the pattern for paywalled-only paper sets by using
+`download_status: &quot;failed&quot;` with a non-null `download_failure_reason` plus
+`intervention/paywalled_papers.md`; all five of this task&#x27;s shortlisted DOIs are paywalled so the
+same pattern applies.
+
+##### Crossref Fetcher and Paper-Asset Builder Exist in t0017
+
+`[t0017]` wrote `code/fetch_paper_metadata.py` that reads a `SHORTLIST` constant of DOIs and queries
+Crossref at `https://api.crossref.org/works/&lt;DOI&gt;` with a polite `mailto` User-Agent, then writes
+`plan/crossref_metadata.json`. `[t0017]` also wrote `code/build_paper_asset.py` that consumes the
+cached JSON and materialises `assets/paper/&lt;slug&gt;/` folders with v3 `details.json` and a 9-section
+`summary.md`, handling the `download_status: &quot;failed&quot;` path. Both scripts use
+`arf.scripts.utils.doi_to_slug` and are the right pattern to copy into this task&#x27;s `code/` folder
+with the DOI list and theme/category adjusted.
+
+##### Answer Asset Format: Spec v2
+
+`[t0002]`, `[t0007]`, `[t0015]`, `[t0016]`, and `[t0017]` each produced a single answer asset under
+`assets/answer/&lt;slug&gt;/`. Each answer folder contains `details.json`, `short_answer.md`, and
+`full_answer.md`. The slug is a kebab-case of the question, not a DOI. The prior-distribution table
+for this task (mapping 5 papers to receptor kinetics, shunting inhibition, E-I balance, dendritic
+attenuation, and SAC asymmetry priors) should live in `full_answer.md` as a Markdown table, matching
+the precedent set by prior answer assets.
+
+##### Target Tuning Curve, Morphology, and Simulator Already Set
+
+`[t0004]` produced `code/generate_target.py` with `GeneratorParams` defining `theta_pref_deg=90`,
+`r_base_hz=2.0`, `r_peak_hz=32.0`, `n=2.0`, `n_angles=12`, `n_trials=20`, `noise_sd_hz=3.0`. These
+define the numerical targets (preferred-direction rate, baseline rate, DSI band 0.6-0.9) that
+downstream model-fitting tasks will use; the synaptic-integration priors from this survey feed that
+same model. `[t0005]` produced the validated mouse ooDSGC SWC morphology and `[t0007]` installed
+NEURON 8.2.7 / NetPyNE 1.0.7 under Python 3.13. The pipeline that will consume this survey&#x27;s priors
+is thus already standing.
+
+##### Prior Literature-Survey Mechanics (t0015, t0016, t0017)
+
+`[t0015]` (passive cable), `[t0016]` (dendritic computation), and `[t0017]` (patch-clamp) each
+produced paywalled-only paper sets with `build_paper_asset.py` after a Crossref-metadata preflight.
+All three wrote summaries using the Crossref abstract plus training-data recall pattern, not
+PDF-level reading, and all three passed `verify_paper_asset` with that format. This task follows the
+same mechanical recipe exactly.
+
+#### Reusable Code and Assets
+
+* **Paper asset specification** — `meta/asset_types/paper/specification.md` v3. Reuse method:
+  **follow as authoritative spec**. No code to copy. Dictates `details.json` fields, `summary.md`
+  frontmatter, `summary_path`, `files/` layout, and verificator codes `PA-E*`/`PA-W*`.
+
+* **Crossref fetcher** — `tasks/t0017_literature_survey_patch_clamp/code/fetch_paper_metadata.py`.
+  Reuse method: **copy verbatim into `code/` and adjust the `SHORTLIST` constant** to the five new
+  DOIs (`10.1038/346565a0`, `10.1073/pnas.80.9.2799`, `10.1038/nature02116`,
+  `10.1016/s0959-4388(03)00075-8`, `10.1038/nature00931`). Approx. 80 lines.
+
+* **Paper asset builder** — `tasks/t0017_literature_survey_patch_clamp/code/build_paper_asset.py`.
+  Reuse method: **copy verbatim into `code/` and adjust `TASK_ID` plus `THEME_CATEGORIES`** so each
+  DOI gets `synaptic-integration` primary plus one secondary theme tag. Approx. 250 lines.
+
+* **`doi_to_slug` utility** — `arf/scripts/utils/doi_to_slug.py`. Reuse method: **import as
+  module**. Canonical DOI-to-folder-name conversion. Required by paper-asset spec v3 (`PA-E011`).
+
+* **Answer asset precedent** — any answer folder from `[t0015]`, `[t0016]`, or `[t0017]` (e.g.
+  `tasks/t0017_literature_survey_patch_clamp/assets/answer/what-patch-clamp-observables-constrain-the-dsgc-model/`).
+  Reuse method: **use as structural template** for `details.json` v2, `short_answer.md` (3
+  sections), and `full_answer.md` (9 sections).
+
+* **Paywalled intervention pattern** — `[t0015]`, `[t0016]`, `[t0017]` each wrote
+  `intervention/paywalled_papers.md`. Reuse method: **follow the pattern** — create
+  `intervention/paywalled_papers.md` listing DOI, title, Crossref abstract availability, and
+  manual-retrieval recommendation.
+
+#### Lessons Learned
+
+* Paywalled-only surveys are tractable in this project so long as the Crossref-abstract-plus-
+  training-data summary pattern is followed. `[t0015]`, `[t0016]`, and `[t0017]` all succeeded with
+  this recipe; no alternative-source retrieval beyond Crossref is needed for the t0018 shortlist.
+* `doi_to_slug` must be used as the canonical module. Hand-conversion of DOIs to folder names causes
+  `PA-E011` verificator errors (`[t0002]` and `[t0017]` both reinforced this).
+* `[t0007]` confirmed NEURON 8.2.7 pins Python 3.13 at the project level. No impact on this
+  literature task, but the downstream DSGC model that will consume these priors runs under that pin.
+* `[t0017]` showed that `build_paper_asset.py` must explicitly handle the
+  `download_status: &quot;failed&quot;` path (populate `files: []`, write a `files/.gitkeep` so git preserves
+  the directory, write `download_failure_reason`). Reuse this logic as-is.
+* Committing logs after every flowmark-triggered edit avoids the recurring
+  `POSTSTEP ERROR: Working tree is not clean` pattern observed across t0015-t0017.
+
+#### Recommendations for This Task
+
+1. **Copy `[t0017]`&#x27;s `fetch_paper_metadata.py` and `build_paper_asset.py` into `code/`** and adjust
+   the DOI list to the five shortlisted DOIs plus `THEME_CATEGORIES` per theme.
+2. **Follow `[t0017]`&#x27;s answer-asset structure**. The DOI-to-theme-and-prior table goes in
+   `full_answer.md`; `short_answer.md` is 3 paragraphs; `details.json` follows spec v2.
+3. **Record all 5 DOIs in `intervention/paywalled_papers.md`** up front — no PDF retrieval is
+   attempted; the Crossref-abstract-plus-training-data pattern is the planned path.
+4. **Use `synaptic-integration` as the primary category on all 5 papers**; add one secondary
+   category per theme (e.g. `direction-selectivity`, `dendritic-computation`, `cable-theory`).
+5. **Skip `assets/library/`** — no library is needed or appropriate for a literature survey.
+
+#### Task Index
+
+##### [t0001]
+
+* **Task ID**: `t0001_brainstorm_results_1`
+* **Name**: Brainstorm: results 1
+* **Status**: completed
+* **Relevance**: Upstream brainstorm round that seeded the project&#x27;s literature strategy.
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: DSGC compartmental models
+* **Status**: completed
+* **Relevance**: Established canonical paper-asset pipeline and answer-asset structure; defines the
+  20-DOI exclusion list this survey must avoid.
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate target tuning curve
+* **Status**: completed
+* **Relevance**: Defines numerical tuning-curve targets that downstream model fitting consumes
+  alongside the synaptic-integration priors from this survey.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download DSGC morphology
+* **Status**: completed
+* **Relevance**: Mouse ooDSGC morphology used by the compartmental model that will apply the
+  receptor-kinetics and shunting-inhibition priors assembled here.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install NEURON + NetPyNE
+* **Status**: completed
+* **Relevance**: Confirms the simulator that will consume this survey&#x27;s priors is installed.
+
+##### [t0015]
+
+* **Task ID**: `t0015_literature_survey_cable_theory`
+* **Name**: Literature survey: cable theory
+* **Status**: completed
+* **Relevance**: First paywalled-only survey in this project; established the Crossref-abstract-
+  plus-training-data summary pattern that this task reuses.
+
+##### [t0016]
+
+* **Task ID**: `t0016_literature_survey_dendritic_computation`
+* **Name**: Literature survey: dendritic computation
+* **Status**: completed
+* **Relevance**: Second paywalled-only survey; reinforced the download-status-failed pattern and the
+  one-secondary-category-per-theme tagging approach.
+
+##### [t0017]
+
+* **Task ID**: `t0017_literature_survey_patch_clamp`
+* **Name**: Literature survey: patch-clamp methodology
+* **Status**: completed
+* **Relevance**: Third paywalled-only survey; its `fetch_paper_metadata.py` and
+  `build_paper_asset.py` scripts are the templates this task copies and adjusts.
       </content>
     </section>
   </sections>

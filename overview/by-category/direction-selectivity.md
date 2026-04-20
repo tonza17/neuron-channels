@@ -4,15 +4,15 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (19)](../papers/by-category/direction-selectivity.md) | [Answers
-(5)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(31)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+**Detail pages**: [Papers (21)](../papers/by-category/direction-selectivity.md) | [Answers
+(6)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(33)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (2)](../libraries/by-category/direction-selectivity.md)
 
 ---
 
-## Papers (19)
+## Papers (21)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -840,6 +840,83 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 </details>
 
 <details>
+<summary>📖 <strong>Balanced inhibition underlies tuning and sharpens spike timing
+in auditory cortex</strong> — Wehr & Zador, 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature02116` |
+| **Authors** | Michael Wehr, Anthony M. Zador |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature02116` |
+| **URL** | https://doi.org/10.1038/nature02116 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature02116/summary.md) |
+
+Michael Wehr and colleagues (2003) published "Balanced inhibition underlies tuning and
+sharpens spike timing in auditory cortex" in Nature. The paper is included in this task's
+survey because it contributes to the "E-I balance temporal co-tuning" theme of
+synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "E-I balance
+temporal co-tuning" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
+<summary>📖 <strong>Directionally selective calcium signals in dendrites of starburst
+amacrine cells</strong> — Euler et al., 2002</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature00931` |
+| **Authors** | Thomas Euler, Peter B. Detwiler, Winfried Denk |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature00931` |
+| **URL** | https://doi.org/10.1038/nature00931 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature00931/summary.md) |
+
+Thomas Euler and colleagues (2002) published "Directionally selective calcium signals in
+dendrites of starburst amacrine cells" in Nature. The paper is included in this task's survey
+because it contributes to the "SAC-to-DSGC inhibitory asymmetry" theme of synaptic-integration
+priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "SAC-to-DSGC
+inhibitory asymmetry" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
 <summary>📖 <strong>Diverse Synaptic Mechanisms Generate Direction Selectivity in
 the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
 
@@ -983,15 +1060,16 @@ simulation.
 
 </details>
 
-## Tasks (3)
+## Tasks (4)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
+| 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 
-## Answers (5)
+## Answers (6)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -1083,6 +1161,32 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the synaptic-integration literature
+supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor
+kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4)
+dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC
+inhibitory asymmetry?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`synaptic-integration-priors-for-dsgc-modelling`](../../tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/)
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms,
+Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with
+Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev
+-65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an "on-the-path"
+geometry: only inhibition sitting between the excitatory input and the soma shunts PSP
+amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in
+time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during
+null-direction motion, sharpening spike timing. Somatic PSP amplitude decays roughly
+exponentially with electrotonic distance (lambda_DC ~100-300 um for RGC dendrites) while local
+dendritic non-linearities (Na+, Ca2+, NMDAR) partially compensate for distal attenuation. SAC
+boutons onto a DSGC dendrite are spatially asymmetric with stronger inhibition from null-side
+SACs, and this cellular asymmetry (not somatic E-I timing alone) is the primary substrate for
+direction selectivity at the DSGC level.
+
+</details>
+
+<details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
 models of direction-selective retinal ganglion cells structure the five
 project research questions (Na/K conductances, morphology sensitivity,
@@ -1107,7 +1211,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (28 open, 3 closed)
+## Suggestions (30 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1377,6 +1481,49 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend synaptic-integration survey with DSGC-specific
+receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers</strong>
+(S-0018-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
+
+The scaled-down 5-paper survey covers the five canonical themes (AMPA/NMDA/GABA kinetics,
+shunting inhibition, E-I balance, dendritic-location integration, SAC-to-DSGC asymmetry) but
+with one paper per theme, selected from the most-cited classical literature. A follow-up
+survey task should add ~5 DSGC-targeted papers across: (a) modern DSGC-specific AMPA and NMDA
+kinetic measurements at near-physiological temperature, (b) DSGC dynamic-clamp studies that
+inject measured conductance waveforms, (c) connectomic reconstructions of SAC-to-DSGC wiring
+(Briggman et al. 2011, Kim et al. 2014), (d) recent E-I temporal co-tuning studies in retina
+(rather than auditory cortex), and (e) DSGC dendritic computation (Oesch, Euler, Taylor,
+Sivyer). This closes the gap between canonical theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
+co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC
+model</strong> (S-0018-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
+
+The answer asset synaptic-integration-priors-for-dsgc-modelling produces a 6-point
+specification for DSGC synaptic integration in NEURON extending the space-clamp/AIS/NMDAR
+constraints from t0017. The downstream DSGC compartmental-model build task must implement: (1)
+AMPA with dual-exponential kinetics (tau_rise 0.2-0.4 ms, tau_decay 1-3 ms) and NMDA with
+Mg2+-block + tau_decay 100-200 ms at 32 degC on glutamatergic inputs, (2) GABA_A with shunting
+(reversal near resting Vm) and tau_decay 5-20 ms on SAC inputs, (3) E->I temporal lag of 15-50
+ms on preferred-direction stimuli reproducing Wehr & Zador 2003 co-tuning, (4) asymmetric
+GABAergic inputs that are strong on null-side dendrites (to match Euler-Detwiler-Denk 2002 SAC
+Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-location-dependent
+EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
+objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
+balance during null-direction motion.
 
 </details>
 

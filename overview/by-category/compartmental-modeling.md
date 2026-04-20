@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (14)](../papers/by-category/compartmental-modeling.md) | [Answers
 (6)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(37)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(39)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (1)](../libraries/by-category/compartmental-modeling.md)
 
@@ -869,7 +869,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (33 open, 4 closed)
+## Suggestions (35 open, 4 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1180,6 +1180,49 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend synaptic-integration survey with DSGC-specific
+receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers</strong>
+(S-0018-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
+
+The scaled-down 5-paper survey covers the five canonical themes (AMPA/NMDA/GABA kinetics,
+shunting inhibition, E-I balance, dendritic-location integration, SAC-to-DSGC asymmetry) but
+with one paper per theme, selected from the most-cited classical literature. A follow-up
+survey task should add ~5 DSGC-targeted papers across: (a) modern DSGC-specific AMPA and NMDA
+kinetic measurements at near-physiological temperature, (b) DSGC dynamic-clamp studies that
+inject measured conductance waveforms, (c) connectomic reconstructions of SAC-to-DSGC wiring
+(Briggman et al. 2011, Kim et al. 2014), (d) recent E-I temporal co-tuning studies in retina
+(rather than auditory cortex), and (e) DSGC dendritic computation (Oesch, Euler, Taylor,
+Sivyer). This closes the gap between canonical theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
+co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC
+model</strong> (S-0018-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
+
+The answer asset synaptic-integration-priors-for-dsgc-modelling produces a 6-point
+specification for DSGC synaptic integration in NEURON extending the space-clamp/AIS/NMDAR
+constraints from t0017. The downstream DSGC compartmental-model build task must implement: (1)
+AMPA with dual-exponential kinetics (tau_rise 0.2-0.4 ms, tau_decay 1-3 ms) and NMDA with
+Mg2+-block + tau_decay 100-200 ms at 32 degC on glutamatergic inputs, (2) GABA_A with shunting
+(reversal near resting Vm) and tau_decay 5-20 ms on SAC inputs, (3) E->I temporal lag of 15-50
+ms on preferred-direction stimuli reproducing Wehr & Zador 2003 co-tuning, (4) asymmetric
+GABAergic inputs that are strong on null-side dendrites (to match Euler-Detwiler-Denk 2002 SAC
+Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-location-dependent
+EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
+objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
+balance during null-direction motion.
 
 </details>
 

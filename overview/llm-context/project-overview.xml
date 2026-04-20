@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T12:10:58Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T12:16:11Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>31618</char_count>
-    <byte_count>31661</byte_count>
-    <estimated_tokens>7904</estimated_tokens>
+    <char_count>33655</char_count>
+    <byte_count>33698</byte_count>
+    <estimated_tokens>8413</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -125,9 +125,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
       </source_ids>
       <content>
-Completed tasks: 14
+Completed tasks: 15
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -212,6 +213,12 @@ ID: t0017_literature_survey_patch_clamp
 Completed: 2026-04-20
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Completed: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -221,11 +228,10 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -248,12 +254,6 @@ Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 
-## Literature survey: synaptic integration in RGC-adjacent systems
-ID: t0018_literature_survey_synaptic_integration
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
-
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels
 Status: not_started
@@ -272,9 +272,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
+        <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 7
+Answers: 8
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -331,6 +332,14 @@ Confidence: medium
 Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
 
 DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic channels add further error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics the experimental amplifier so simulation and experiment are compared on the same footing. The model must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and NMDARs...
+
+## What quantitative priors does the synaptic-integration literature supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4) dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC inhibitory asymmetry?
+ID: synaptic-integration-priors-for-dsgc-modelling
+Created by: t0018_literature_survey_synaptic_integration on 2026-04-20
+Confidence: medium
+Categories: synaptic-integration, dendritic-computation, direction-selectivity, retinal-ganglion-cell
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms, Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev -65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an &quot;on-the-path&quot; geometry: only inhibition sitting between the excitatory input and the soma shunts PSP amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during null-direction motion, sharpening spike timing. Somatic...
       </content>
     </section>
   </sections>

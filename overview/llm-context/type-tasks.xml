@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T12:10:58Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T12:16:11Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>112156</char_count>
-    <byte_count>112578</byte_count>
-    <estimated_tokens>28039</estimated_tokens>
+    <char_count>114206</char_count>
+    <byte_count>114628</byte_count>
+    <estimated_tokens>28551</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -2076,12 +2076,13 @@ No API or compute costs. `costs.json` records `total_cost_usd: 0.00`.
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
-Status: in_progress
+Status: completed
 Effective date: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 Task types: literature-survey
 Source suggestion: S-0014-04
 Start time: 2026-04-20T11:18:49Z
+End time: 2026-04-20T12:15:00Z
 
 #### Motivation
 
@@ -2137,6 +2138,46 @@ None.
 * At least 20 paper assets pass `verify_paper_asset.py`.
 * The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution table.
 * No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0018_literature_survey_synaptic_integration&quot;
+---
+### Results Summary: Synaptic-Integration Literature Survey
+
+#### Summary
+
+Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes
+(AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning,
+dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one
+answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled
+(Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus
+training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for manual retrieval
+via Sheffield institutional access.
+
+#### Metrics
+
+* **papers_built**: **5** (one per theme: Lester1990, KochPoggio1983, WehrZador2003, HausserMel2003,
+  EulerDetwilerDenk2002)
+* **papers_paywalled**: **5** (100% paywalled; all `download_status: &quot;failed&quot;`)
+* **themes_covered**: **5** (all five planned themes covered)
+* **answer_assets_built**: **1** (`synaptic-integration-priors-for-dsgc-modelling`)
+* **dois_duplicated_from_prior_tasks**: **0** (verified against t0002, t0015, t0016, t0017 corpora)
+
+#### Verification
+
+* `verify_plan` passes with **0** errors, **0** warnings
+* `verify_research_papers`, `verify_research_internet`, `verify_research_code` pass with **0**
+  errors
+* `verify_task_folder` passes with **0** errors, **1** warning (FD-W002 empty `logs/searches/`)
+* `meta/asset_types/paper/verificator.py` passes on all 5 paper assets with **0** PA-E errors
+  (PA-W002 / PA-W007 / PA-W008 warnings consistent with paywalled-paper template from t0017)
+* `meta/asset_types/answer/verificator.py` passes on the single answer asset with **0** errors and
+  **0** warnings
+* `verify_task_complete` runs at the reporting step; expected warnings TC-W002 (25 vs 5 paper count)
+  and TC-W005 (no merged PR yet) are planned and acceptable
 
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels

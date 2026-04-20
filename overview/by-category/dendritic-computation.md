@@ -4,14 +4,14 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (20)](../papers/by-category/dendritic-computation.md) | [Answers
-(3)](../answers/by-category/dendritic-computation.md) | [Suggestions
+**Detail pages**: [Papers (23)](../papers/by-category/dendritic-computation.md) | [Answers
+(4)](../answers/by-category/dendritic-computation.md) | [Suggestions
 (12)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (20)
+## Papers (23)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -711,6 +711,43 @@ and comparing the somatic response to the distributed-input control.
 </details>
 
 <details>
+<summary>📖 <strong>Dendrites: bug or feature?</strong> — Häusser & Mel, 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `no-doi_HausserMel2003_s0959-4388-03-00075-8` |
+| **Authors** | Michael Häusser, Bartlett Mel |
+| **Venue** | Current Opinion in Neurobiology (journal) |
+| **DOI** | `10.1016/s0959-4388(03)00075-8` |
+| **URL** | https://doi.org/10.1016/s0959-4388(03)00075-8 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/no-doi_HausserMel2003_s0959-4388-03-00075-8/summary.md) |
+
+Michael Häusser and colleagues (2003) published "Dendrites: bug or feature?" in Current
+Opinion in Neurobiology. The paper is included in this task's survey because it contributes to
+the "Dendritic-location dependence of PSP integration" theme of synaptic-integration priors
+relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the
+"Dendritic-location dependence of PSP integration" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
 <summary>📖 <strong>Diverse Synaptic Mechanisms Generate Direction Selectivity in
 the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
 
@@ -957,6 +994,85 @@ active-dendrite simulations.
 </details>
 
 <details>
+<summary>📖 <strong>Channel kinetics determine the time course of NMDA
+receptor-mediated synaptic currents</strong> — Lester et al., 1990</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_346565a0` |
+| **Authors** | Robin A. J. Lester, John D. Clements, Gary L. Westbrook, Craig E. Jahr |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/346565a0` |
+| **URL** | https://doi.org/10.1038/346565a0 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_346565a0/summary.md) |
+
+Robin A. J. Lester and colleagues (1990) published "Channel kinetics determine the time course
+of NMDA receptor-mediated synaptic currents" in Nature. The paper is included in this task's
+survey because it contributes to the "AMPA/NMDA/GABA receptor kinetics" theme of
+synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "AMPA/NMDA/GABA
+receptor kinetics" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
+<summary>📖 <strong>Nonlinear interactions in a dendritic tree: localization, timing,
+and role in information processing.</strong> — Koch et al., 1983</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1073_pnas.80.9.2799` |
+| **Authors** | C Koch, T Poggio, V Torre |
+| **Venue** | Proceedings of the National Academy of Sciences (journal) |
+| **DOI** | `10.1073/pnas.80.9.2799` |
+| **URL** | https://doi.org/10.1073/pnas.80.9.2799 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1073_pnas.80.9.2799/summary.md) |
+
+C Koch and colleagues (1983) published "Nonlinear interactions in a dendritic tree:
+localization, timing, and role in information processing." in Proceedings of the National
+Academy of Sciences. The paper is included in this task's survey because it contributes to the
+"Shunting inhibition" theme of synaptic-integration priors relevant to the direction-selective
+retinal ganglion cell (DSGC) compartmental model.
+
+The methodology and key findings of the paper are stated verbatim in the `## Abstract` section
+above. This summary asset deliberately does not paraphrase or extend those claims beyond what
+CrossRef returns; any quantitative prior used from this paper in the DSGC model-fitting
+pipeline must be read directly from the published figures and tables.
+
+The paper's primary significance for this project is its contribution to the "Shunting
+inhibition" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+<details>
 <summary>📖 <strong>Retinal ganglion cells: a functional interpretation of dendritic
 morphology</strong> — Koch et al., 1982</summary>
 
@@ -1051,15 +1167,16 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (3)
+## Tasks (4)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
+| 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 
-## Answers (3)
+## Answers (4)
 
 <details>
 <summary><strong>What does the classical cable-theory and dendritic-computation
@@ -1094,6 +1211,32 @@ and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-pl
 firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
 short and unipolar rather than tufted. All transferred numbers must be treated as targets to
 falsify rather than to assume, pending DSGC-specific patch validation.
+
+</details>
+
+<details>
+<summary><strong>What quantitative priors does the synaptic-integration literature
+supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor
+kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4)
+dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC
+inhibitory asymmetry?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`synaptic-integration-priors-for-dsgc-modelling`](../../tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/)
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms,
+Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with
+Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev
+-65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an "on-the-path"
+geometry: only inhibition sitting between the excitatory input and the soma shunts PSP
+amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in
+time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during
+null-direction motion, sharpening spike timing. Somatic PSP amplitude decays roughly
+exponentially with electrotonic distance (lambda_DC ~100-300 um for RGC dendrites) while local
+dendritic non-linearities (Na+, Ca2+, NMDAR) partially compensate for distal attenuation. SAC
+boutons onto a DSGC dendrite are spatially asymmetric with stronger inhibition from null-side
+SACs, and this cellular asymmetry (not somatic E-I timing alone) is the primary substrate for
+direction selectivity at the DSGC level.
 
 </details>
 

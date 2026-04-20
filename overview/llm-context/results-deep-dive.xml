@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-20T12:10:58Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-20T12:16:11Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>18</section_count>
-    <char_count>236521</char_count>
-    <byte_count>237358</byte_count>
-    <estimated_tokens>59130</estimated_tokens>
+    <section_count>19</section_count>
+    <char_count>249530</char_count>
+    <byte_count>250373</byte_count>
+    <estimated_tokens>62382</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -126,9 +126,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
       </source_ids>
       <content>
-Completed tasks: 14
+Completed tasks: 15
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -213,6 +214,12 @@ ID: t0017_literature_survey_patch_clamp
 Completed: 2026-04-20
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Completed: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -222,11 +229,10 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -249,12 +255,6 @@ Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 
-## Literature survey: synaptic integration in RGC-adjacent systems
-ID: t0018_literature_survey_synaptic_integration
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
-
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels
 Status: not_started
@@ -273,9 +273,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
+        <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 7
+Answers: 8
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -332,6 +333,14 @@ Confidence: medium
 Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
 
 DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic channels add further error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics the experimental amplifier so simulation and experiment are compared on the same footing. The model must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and NMDARs...
+
+## What quantitative priors does the synaptic-integration literature supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4) dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC inhibitory asymmetry?
+ID: synaptic-integration-priors-for-dsgc-modelling
+Created by: t0018_literature_survey_synaptic_integration on 2026-04-20
+Confidence: medium
+Categories: synaptic-integration, dendritic-computation, direction-selectivity, retinal-ganglion-cell
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms, Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev -65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an &quot;on-the-path&quot; geometry: only inhibition sitting between the excitatory input and the soma shunts PSP amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during null-direction motion, sharpening spike timing. Somatic...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-results-detailed" source_kind="file">
@@ -3594,6 +3603,200 @@ extension of the patch-clamp survey to DSGC-specific dynamic-clamp and HCN-bioph
 inclusion of an AIS compartment with NMDARs and depolarisation-block validation in the downstream
 DSGC model build task, (4) registration of the `patch-clamp` and `compartmental-modeling` categories
 if not already present in `meta/categories/`.
+      </content>
+    </section>
+    <section id="t0018_literature_survey_synaptic_integration-results-detailed" source_kind="file">
+      <title>t0018_literature_survey_synaptic_integration — Literature survey: synaptic integration in RGC-adjacent systems — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0018_literature_survey_synaptic_integration</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0018_literature_survey_synaptic_integration&quot;
+---
+### Results Detailed: Synaptic-Integration Literature Survey
+
+#### Summary
+
+Surveyed 5 high-leverage synaptic-integration papers (Lester et al. 1990 on NMDAR receptor kinetics,
+Koch-Poggio-Torre 1983 on shunting inhibition, Wehr &amp; Zador 2003 on E-I balance, Hausser &amp; Mel 2003
+on dendritic-location-dependent PSP integration, Euler-Detwiler-Denk 2002 on SAC-to-DSGC inhibitory
+asymmetry), built 5 paper assets with `download_status: &quot;failed&quot;` plus one answer asset tabulating a
+prior distribution per DOI and theme. All 5 PDFs are paywalled; summaries combine Crossref metadata
+with training-knowledge consensus. DOIs were verified non-duplicate against the
+t0002/t0015/t0016/t0017 corpora before asset construction.
+
+#### Methodology
+
+##### Machine
+
+Local Windows 11 development box (same machine as t0017). No remote compute used; this is a pure
+literature-survey task. No GPU hours consumed. All CLI calls were wrapped in
+`arf/scripts/utils/run_with_logs.py` and logged under `logs/commands/`.
+
+##### Runtime and Timestamps
+
+Task branch `task/t0018_literature_survey_synaptic_integration` was created at 2026-04-20T11:22:48Z
+and the implementation step completed at 2026-04-20T12:02:36Z (approximately 40 minutes of actual
+implementation wall-clock for steps 9 and 12; total task wall-clock approximately 1.5 hours across
+the 15 ARF lifecycle steps). Timestamps throughout the task are ISO 8601 UTC.
+
+##### Paper selection
+
+Five papers were chosen to cover the five synaptic-integration themes identified in the task plan,
+one paper per theme:
+
+1. AMPA/NMDA/GABA receptor kinetics: Lester, Clements, Westbrook, Jahr 1990 (`10.1038/346565a0`)
+2. Shunting inhibition: Koch, Poggio, Torre 1983 (`10.1073/pnas.80.9.2799`)
+3. E-I balance temporal co-tuning: Wehr &amp; Zador 2003 (`10.1038/nature02116`)
+4. Dendritic-location dependence of PSP integration: Hausser &amp; Mel 2003
+   (`10.1016/s0959-4388(03)00075-8`)
+5. SAC-to-DSGC inhibitory asymmetry: Euler, Detwiler, Denk 2002 (`10.1038/nature00931`)
+
+DOIs were cross-checked against existing `tasks/t0002/assets/paper/`, `tasks/t0015/assets/paper/`,
+`tasks/t0016/assets/paper/`, `tasks/t0017/assets/paper/` corpora via filesystem enumeration; zero
+duplicates found.
+
+##### Crossref metadata fetch and asset build
+
+`code/fetch_paper_metadata.py` (copied from `t0017/code/`) fetched Crossref metadata for all 5 DOIs
+to `plan/crossref_metadata.json`; all returned `status: &quot;ok&quot;` with matching titles/ authors.
+`code/build_paper_asset.py` (copied from `t0017/code/` with `TASK_ID`, `THEME_CATEGORIES`,
+`THEME_NAMES`, and answer-asset-slug substitutions) then built each of the five paper assets. Four
+materialised as DOI-slug folders; Hausser &amp; Mel 2003&#x27;s DOI contains parentheses that the canonical
+`doi_to_slug` module rejects, so the builder fell back to
+`no-doi_HausserMel2003_s0959-4388-03-00075-8` per the paper-asset spec v3. Each asset has
+`download_status: &quot;failed&quot;`, `files/.gitkeep`, and `download_failure_reason: &quot;No PDF URL supplied&quot;`.
+
+##### Answer asset synthesis
+
+The answer asset `synaptic-integration-priors-for-dsgc-modelling` was written manually with three
+files: `details.json` (spec v2, `confidence: &quot;medium&quot;`, 5 source paper IDs), `short_answer.md`
+(Question, Answer, Sources sections; Answer is exactly 5 sentences), and `full_answer.md` (9
+mandatory sections with a prior-distribution table and 6 numbered modelling constraints). The Prior
+Distribution Table has 6 rows (Lester1990 contributes two rows because it supplies both the NMDAR
+direct measurement and the canonical AMPA/GABA_A kinetic consensus) with columns DOI, First author &amp;
+year, Theme, Prior quantity, Numerical value (range + units), Source nature.
+
+#### Verification
+
+* `verify_plan t0018_literature_survey_synaptic_integration`: PASSED, 0 errors, 0 warnings
+* `verify_research_papers t0018_literature_survey_synaptic_integration`: PASSED, 0 errors
+* `verify_research_internet t0018_literature_survey_synaptic_integration`: PASSED, 0 errors (after
+  rewriting `research_internet.md` to use the `### [Key]` source-entry format)
+* `verify_research_code t0018_literature_survey_synaptic_integration`: PASSED, 0 errors
+* `verify_task_folder t0018_literature_survey_synaptic_integration`: PASSED, 0 errors, 1 warning
+  (FD-W002, `logs/searches/` empty — acceptable, a literature-survey task may rely on
+  existing-paper and Crossref searches without logging structured internet queries)
+* `meta/asset_types/paper/verificator.py` on all 5 paper assets: PASSED, 0 PA-E errors; warnings:
+  PA-W002 (Results bullet count) on all 5, PA-W007 (no country data) on all 5, PA-W008 (empty
+  abstract) on 4 papers. These warnings are inherent to the Crossref-plus-training-knowledge pattern
+  and match the t0017 precedent
+* `meta/asset_types/answer/verificator.py synaptic-integration-priors-for-dsgc-modelling`: PASSED, 0
+  errors, 0 warnings (after reducing short-answer sentence count from 6 to 5)
+* `verify_task_complete` will run at the reporting step; the expected TC-W002 (25 vs 5 paper count)
+  and TC-W005 (no merged PR yet) warnings are planned and acceptable per the wave-wide downscoping
+  decision
+
+#### Limitations
+
+All 5 source papers are paywalled and could not be retrieved through the automated pipeline.
+Summaries are based on Crossref-provided metadata (full abstracts only for some, empty for others)
+combined with training-knowledge consensus on the canonical treatment of each paper in the
+synaptic-integration and retinal-neuroscience literature. Specific numeric values quoted in
+summaries and the prior-distribution table (NMDAR tau_decay at 22-32 degC, AMPA and GABA_A kinetic
+constants, lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS
+index 0.3-0.5) should be verified against the actual PDFs before being used as tight
+compartmental-model fitting targets. `intervention/paywalled_papers.md` records all 5 DOIs for
+Sheffield institutional access.
+
+The task was scaled down from the planned 25 papers to 5 papers per the project-wide
+`intervention/paywalled_papers.md` guidance introduced at t0014. The 5 selected papers still cover
+all 5 planned themes, but breadth within each theme (e.g., modern DSGC-specific receptor-kinetic
+studies, recent dynamic-clamp DSGC work, connectomic SAC-DSGC wiring measurements) is deferred to
+follow-up tasks. The TC-W002 warning from `verify_task_complete` (25 vs 5 paper count) is the
+expected consequence of this downscope and is acceptable.
+
+#### Files Created
+
+##### Paper Assets
+
+* `assets/paper/10.1038_346565a0/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1073_pnas.80.9.2799/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1038_nature02116/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/no-doi_HausserMel2003_s0959-4388-03-00075-8/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1038_nature00931/{details.json,summary.md,files/.gitkeep}`
+
+##### Answer Asset
+
+* `assets/answer/synaptic-integration-priors-for-dsgc-modelling/details.json`
+* `assets/answer/synaptic-integration-priors-for-dsgc-modelling/short_answer.md`
+* `assets/answer/synaptic-integration-priors-for-dsgc-modelling/full_answer.md`
+
+##### Code
+
+* `code/fetch_paper_metadata.py` (Crossref metadata fetcher, adapted from `t0017`)
+* `code/build_paper_asset.py` (v3 paper asset builder, adapted from `t0017`)
+
+##### Plan and Research
+
+* `plan/plan.md`
+* `plan/shortlist.md`
+* `plan/crossref_metadata.json`
+* `research/research_papers.md`
+* `research/research_internet.md`
+* `research/research_code.md`
+
+##### Intervention and Results
+
+* `intervention/paywalled_papers.md`
+* `results/results_summary.md`
+* `results/results_detailed.md`
+* `results/metrics.json`
+* `results/costs.json`
+* `results/remote_machines_used.json`
+
+#### Task Requirement Coverage
+
+The task description from `task.json` reads:
+
+&gt; **Literature survey: synaptic integration.** Survey canonical papers on AMPA/NMDA/GABA kinetics,
+&gt; E-I balance, shunting inhibition, dendritic-location integration, and SAC-to-DSGC inhibitory
+&gt; asymmetry, producing a paper asset per canonical reference and one answer asset tabulating a prior
+&gt; distribution per DOI and theme. The original plan targeted ~25 papers; the brainstorm results 3
+&gt; scale-down decision common to the t0015-t0019 wave reduces the scope to 5 canonical papers per
+&gt; task.
+
+Requirements from `plan/plan.md`:
+
+* **REQ-1: Five new paper assets (one per theme), v3-spec compliant, under `assets/paper/`.**
+  Status: **Done**. Evidence: 5 folders under
+  `tasks/t0018_literature_survey_synaptic_integration/assets/paper/` each with `details.json`,
+  `summary.md`, and `files/.gitkeep`; `meta/asset_types/paper/verificator.py` passes on all 5 with 0
+  PA-E errors.
+* **REQ-2: No DOI from t0002/t0015/t0016/t0017 may be duplicated.** Status: **Done**. Evidence:
+  `plan/shortlist.md` records the exclusion cross-check; all 5 DOIs verified absent from prior
+  corpora by filesystem enumeration.
+* **REQ-3: All five paywalled papers recorded in `intervention/paywalled_papers.md`.** Status:
+  **Done**. Evidence:
+  `tasks/t0018_literature_survey_synaptic_integration/ intervention/paywalled_papers.md` contains a
+  5-row DOI table with retrieval priority.
+* **REQ-4: One answer asset under `assets/answer/&lt;slug&gt;/` with a prior-distribution table keyed by
+  DOI and theme, at least 5 rows.** Status: **Done**. Evidence:
+  `assets/answer/synaptic-integration-priors-for-dsgc-modelling/full_answer.md` contains the Prior
+  Distribution Table with 6 rows (5 DOIs, Lester1990 contributing two rows for its two distinct
+  priors); `meta/asset_types/answer/verificator.py` passes with 0 errors.
+* **REQ-5: All five themes covered (theme-balance).** Status: **Done**. Evidence: one paper per
+  theme in `plan/shortlist.md`; `themes_covered: 5` in `results/metrics.json`.
+* **REQ-6: All five paper assets pass `verify_paper_asset`.** Status: **Done**. Evidence:
+  `meta/asset_types/paper/verificator.py --task-id t0018_literature_survey_synaptic_integration`
+  passes with 0 PA-E errors on all 5 assets; only quality-level warnings (PA-W002, PA-W007, PA-W008)
+  remain, consistent with the paywalled template from t0017.
       </content>
     </section>
   </sections>

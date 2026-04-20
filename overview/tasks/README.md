@@ -1,10 +1,9 @@
 # Project Tasks
 
-19 tasks. ⏳ **1 in_progress**, ⏹ **4 not_started**, ✅ **14 completed**.
+19 tasks. ⏹ **4 not_started**, ✅ **15 completed**.
 
-**Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
-`not_started`](by-status/not_started.md), [✅ `completed`](by-status/completed.md); [By date
-added](by-date-added/README.md)
+**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
+`completed`](by-status/completed.md); [By date added](by-date-added/README.md)
 
 ---
 
@@ -18,7 +17,6 @@ graph LR
     t0010_hunt_missed_dsgc_models["⏹ t0010_hunt_missed_dsgc_models"]
     t0011_response_visualization_library["⏹ t0011_response_visualization_library"]
     t0013_resolve_morphology_provenance["⏹ t0013_resolve_morphology_provenance"]
-    t0018_literature_survey_synaptic_integration["⏳ t0018_literature_survey_synaptic_integration"]
     t0019_literature_survey_voltage_gated_channels["⏹ t0019_literature_survey_voltage_gated_channels"]
 
     t0005_download_dsgc_morphology --> t0008_port_modeldb_189347
@@ -29,85 +27,6 @@ graph LR
 ```
 
 ---
-
-## ⏳ In Progress
-
-<details>
-<summary>⏳ 0018 — <strong>Literature survey: synaptic integration in RGC-adjacent
-systems</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0018_literature_survey_synaptic_integration` |
-| **Status** | in_progress |
-| **Effective date** | 2026-04-20 |
-| **Dependencies** | — |
-| **Expected assets** | 25 paper, 1 answer |
-| **Source suggestion** | `S-0014-04` |
-| **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/) |
-| **Start time** | 2026-04-20T11:18:49Z |
-| **Task page** | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
-| **Task folder** | [`t0018_literature_survey_synaptic_integration/`](../../tasks/t0018_literature_survey_synaptic_integration/) |
-
-# Literature survey: synaptic integration in RGC-adjacent systems
-
-## Motivation
-
-Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
-distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The
-modelling literature in t0002 touches these parameters but does not systematically cover the
-synaptic- integration experimental and theoretical work that underpins them. Source
-suggestion: S-0014-04 from t0014_brainstorm_results_3.
-
-## Scope
-
-Target ~25 category-relevant papers covering:
-
-1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
-2. Shunting inhibition — location-dependent vetoing, input resistance changes.
-3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
-4. Temporal summation — how closely spaced inputs integrate vs saturate.
-5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
-   initiation zone.
-6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
-7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in
-   the preferred vs null directions.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
-mid task must be dropped and the exclusion recorded in the task log.
-
-## Approach
-
-1. Run `/research-internet` targeting each theme, preferring studies that publish fitted
-   kinetic parameters or conductance-ratio measurements rather than qualitative reports.
-2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
-   `download_status: "failed"` and added to `intervention/paywalled_papers.md`.
-3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior
-   distributions for later optimisation tasks.
-
-## Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant).
-* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
-  ratios, keyed by paper DOI and region.
-* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
-
-## Compute and Budget
-
-No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
-
-## Dependencies
-
-None.
-
-## Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution
-  table.
-* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
-
-</details>
 
 ## ⏹ Not Started
 
@@ -484,6 +403,114 @@ stdout/stderr under `logs/` so reviewers can audit the call.
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0018 — <strong>Literature survey: synaptic integration in RGC-adjacent
+systems</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0018_literature_survey_synaptic_integration` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | — |
+| **Expected assets** | 25 paper, 1 answer |
+| **Source suggestion** | `S-0014-04` |
+| **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/) |
+| **Start time** | 2026-04-20T11:18:49Z |
+| **End time** | 2026-04-20T12:15:00Z |
+| **Step progress** | 11/15 |
+| **Task page** | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Task folder** | [`t0018_literature_survey_synaptic_integration/`](../../tasks/t0018_literature_survey_synaptic_integration/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) |
+
+# Literature survey: synaptic integration in RGC-adjacent systems
+
+## Motivation
+
+Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
+distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The
+modelling literature in t0002 touches these parameters but does not systematically cover the
+synaptic- integration experimental and theoretical work that underpins them. Source
+suggestion: S-0014-04 from t0014_brainstorm_results_3.
+
+## Scope
+
+Target ~25 category-relevant papers covering:
+
+1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
+2. Shunting inhibition — location-dependent vetoing, input resistance changes.
+3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
+4. Temporal summation — how closely spaced inputs integrate vs saturate.
+5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
+   initiation zone.
+6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
+7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in
+   the preferred vs null directions.
+
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
+mid task must be dropped and the exclusion recorded in the task log.
+
+## Approach
+
+1. Run `/research-internet` targeting each theme, preferring studies that publish fitted
+   kinetic parameters or conductance-ratio measurements rather than qualitative reports.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: "failed"` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior
+   distributions for later optimisation tasks.
+
+## Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
+  ratios, keyed by paper DOI and region.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
+
+## Compute and Budget
+
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
+
+## Dependencies
+
+None.
+
+## Verification Criteria
+
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution
+  table.
+* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0018_literature_survey_synaptic_integration"
+> ---
+> **Results Summary: Synaptic-Integration Literature Survey**
+>
+> **Summary**
+>
+> Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes
+> (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning,
+> dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced
+> one
+> answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were
+> paywalled
+> (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts
+> plus
+> training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for manual
+> retrieval
+> via Sheffield institutional access.
+>
+> **Metrics**
+>
+> * **papers_built**: **5** (one per theme: Lester1990, KochPoggio1983, WehrZador2003,
+>   HausserMel2003,
+> EulerDetwilerDenk2002)
+
+</details>
 
 <details>
 <summary>✅ 0017 — <strong>Literature survey: patch-clamp recordings of RGCs and

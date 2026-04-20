@@ -5,8 +5,8 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (21)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(4)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(20)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(5)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(21)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (2)](../libraries/by-category/retinal-ganglion-cell.md)
 
@@ -1088,7 +1088,7 @@ simulation.
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (4)
+## Answers (5)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -1144,6 +1144,32 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the synaptic-integration literature
+supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor
+kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4)
+dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC
+inhibitory asymmetry?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`synaptic-integration-priors-for-dsgc-modelling`](../../tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/)
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms,
+Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with
+Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev
+-65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an "on-the-path"
+geometry: only inhibition sitting between the excitatory input and the soma shunts PSP
+amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in
+time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during
+null-direction motion, sharpening spike timing. Somatic PSP amplitude decays roughly
+exponentially with electrotonic distance (lambda_DC ~100-300 um for RGC dendrites) while local
+dendritic non-linearities (Na+, Ca2+, NMDAR) partially compensate for distal attenuation. SAC
+boutons onto a DSGC dendrite are spatially asymmetric with stronger inhibition from null-side
+SACs, and this cellular asymmetry (not somatic E-I timing alone) is the primary substrate for
+direction selectivity at the DSGC level.
+
+</details>
+
+<details>
 <summary><strong>Which compartmental simulator should the direction-selective
 ganglion cell (DSGC) project use as its primary simulator, and which should
 it keep as a backup?</strong></summary>
@@ -1184,7 +1210,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (17 open, 3 closed)
+## Suggestions (18 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1369,6 +1395,26 @@ through Sheffield institutional access, update each paper asset's download_statu
 numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
 Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
 OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
+and verify numerical priors</strong> (S-0018-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
+
+Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
+2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
+ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
+lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
+0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
+targets.
 
 </details>
 

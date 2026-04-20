@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-31 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **28 open** (10
-high, 15 medium, 3 low), **3 closed**.
+33 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **30 open** (11
+high, 16 medium, 3 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -124,6 +124,35 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
+co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC
+model</strong> (S-0018-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The answer asset synaptic-integration-priors-for-dsgc-modelling produces a 6-point
+specification for DSGC synaptic integration in NEURON extending the space-clamp/AIS/NMDAR
+constraints from t0017. The downstream DSGC compartmental-model build task must implement: (1)
+AMPA with dual-exponential kinetics (tau_rise 0.2-0.4 ms, tau_decay 1-3 ms) and NMDA with
+Mg2+-block + tau_decay 100-200 ms at 32 degC on glutamatergic inputs, (2) GABA_A with shunting
+(reversal near resting Vm) and tau_decay 5-20 ms on SAC inputs, (3) E->I temporal lag of 15-50
+ms on preferred-direction stimuli reproducing Wehr & Zador 2003 co-tuning, (4) asymmetric
+GABAergic inputs that are strong on null-side dendrites (to match Euler-Detwiler-Denk 2002 SAC
+Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-location-dependent
+EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
+objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
+balance during null-direction motion.
 
 </details>
 
@@ -343,6 +372,32 @@ properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-
 not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
 RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
 gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend synaptic-integration survey with DSGC-specific
+receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers</strong>
+(S-0018-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The scaled-down 5-paper survey covers the five canonical themes (AMPA/NMDA/GABA kinetics,
+shunting inhibition, E-I balance, dendritic-location integration, SAC-to-DSGC asymmetry) but
+with one paper per theme, selected from the most-cited classical literature. A follow-up
+survey task should add ~5 DSGC-targeted papers across: (a) modern DSGC-specific AMPA and NMDA
+kinetic measurements at near-physiological temperature, (b) DSGC dynamic-clamp studies that
+inject measured conductance waveforms, (c) connectomic reconstructions of SAC-to-DSGC wiring
+(Briggman et al. 2011, Kim et al. 2014), (d) recent E-I temporal co-tuning studies in retina
+(rather than auditory cortex), and (e) DSGC dendritic computation (Oesch, Euler, Taylor,
+Sivyer). This closes the gap between canonical theory and DSGC-specific parameters.
 
 </details>
 

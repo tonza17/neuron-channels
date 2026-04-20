@@ -1,7 +1,7 @@
 # Suggestions: `retinal-ganglion-cell`
 
-20 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **17 open** (8
+21 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **18 open** (9
 high, 7 medium, 2 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
@@ -201,6 +201,32 @@ through Sheffield institutional access, update each paper asset's download_statu
 numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
 Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
 OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
+and verify numerical priors</strong> (S-0018-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
+2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
+ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
+lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
+0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
+targets.
 
 </details>
 

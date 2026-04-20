@@ -1,6 +1,6 @@
-# Papers: `direction-selectivity` (19)
+# Papers: `direction-selectivity` (21)
 
-19 papers across 14 year(s).
+21 papers across 15 year(s).
 
 [Back to all papers](../README.md)
 
@@ -851,7 +851,86 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 
 </details>
 
-## 2002 (1)
+## 2003 (1)
+
+<details>
+<summary>📖 Balanced inhibition underlies tuning and sharpens spike timing in
+auditory cortex — Wehr & Zador, 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature02116` |
+| **Authors** | Michael Wehr, Anthony M. Zador |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature02116` |
+| **URL** | https://doi.org/10.1038/nature02116 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature02116/summary.md) |
+
+Michael Wehr and colleagues (2003) published "Balanced inhibition underlies tuning and
+sharpens spike timing in auditory cortex" in Nature. The paper is included in this task's
+survey because it contributes to the "E-I balance temporal co-tuning" theme of
+synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "E-I balance
+temporal co-tuning" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
+
+## 2002 (2)
+
+<details>
+<summary>📖 Directionally selective calcium signals in dendrites of starburst
+amacrine cells — Euler et al., 2002</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature00931` |
+| **Authors** | Thomas Euler, Peter B. Detwiler, Winfried Denk |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature00931` |
+| **URL** | https://doi.org/10.1038/nature00931 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature00931/summary.md) |
+
+Thomas Euler and colleagues (2002) published "Directionally selective calcium signals in
+dendrites of starburst amacrine cells" in Nature. The paper is included in this task's survey
+because it contributes to the "SAC-to-DSGC inhibitory asymmetry" theme of synaptic-integration
+priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "SAC-to-DSGC
+inhibitory asymmetry" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
+
+</details>
 
 <details>
 <summary>📖 Diverse Synaptic Mechanisms Generate Direction Selectivity in the Rabbit

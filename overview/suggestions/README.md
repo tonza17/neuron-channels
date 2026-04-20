@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-62 suggestions **52 open** (19 high, 27 medium, 6 low), **10 closed**.
+66 suggestions **56 open** (21 high, 28 medium, 7 low), **10 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -208,6 +208,35 @@ and null motion as named fitting objectives. Validation must include DSI reducti
 simulated NMDAR block to match Sethuramanujam2017 and maintained activity under simulated
 synaptic blockade to resolve the MargolisDetwiler2007 intrinsic-vs-synaptic question for the
 target DSGC subtype.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
+co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC
+model</strong> (S-0018-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+The answer asset synaptic-integration-priors-for-dsgc-modelling produces a 6-point
+specification for DSGC synaptic integration in NEURON extending the space-clamp/AIS/NMDAR
+constraints from t0017. The downstream DSGC compartmental-model build task must implement: (1)
+AMPA with dual-exponential kinetics (tau_rise 0.2-0.4 ms, tau_decay 1-3 ms) and NMDA with
+Mg2+-block + tau_decay 100-200 ms at 32 degC on glutamatergic inputs, (2) GABA_A with shunting
+(reversal near resting Vm) and tau_decay 5-20 ms on SAC inputs, (3) E->I temporal lag of 15-50
+ms on preferred-direction stimuli reproducing Wehr & Zador 2003 co-tuning, (4) asymmetric
+GABAergic inputs that are strong on null-side dendrites (to match Euler-Detwiler-Denk 2002 SAC
+Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-location-dependent
+EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
+objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
+balance during null-direction motion.
 
 </details>
 
@@ -449,6 +478,32 @@ OFF-cell maintained activity that survives synaptic blockade) against the actual
 </details>
 
 <details>
+<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
+and verify numerical priors</strong> (S-0018-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
+2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
+ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
+lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
+0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
+targets.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
 simulation</strong> (S-0007-01)</summary>
 
@@ -683,6 +738,32 @@ properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-
 not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
 RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
 gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend synaptic-integration survey with DSGC-specific
+receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers</strong>
+(S-0018-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+The scaled-down 5-paper survey covers the five canonical themes (AMPA/NMDA/GABA kinetics,
+shunting inhibition, E-I balance, dendritic-location integration, SAC-to-DSGC asymmetry) but
+with one paper per theme, selected from the most-cited classical literature. A follow-up
+survey task should add ~5 DSGC-targeted papers across: (a) modern DSGC-specific AMPA and NMDA
+kinetic measurements at near-physiological temperature, (b) DSGC dynamic-clamp studies that
+inject measured conductance waveforms, (c) connectomic reconstructions of SAC-to-DSGC wiring
+(Briggman et al. 2011, Kim et al. 2014), (d) recent E-I temporal co-tuning studies in retina
+(rather than auditory cortex), and (e) DSGC dendritic computation (Oesch, Euler, Taylor,
+Sivyer). This closes the gap between canonical theory and DSGC-specific parameters.
 
 </details>
 
@@ -1248,6 +1329,29 @@ that are missing so that category-based asset aggregators (aggregate_papers --ca
 patch-clamp) return the expected results. This is analogous to the S-0015-03 suggestion
 registered by t0015 for retinal-ganglion-cells and compartmental-modelling but may now be
 satisfied by category-registration tasks executed between t0015 and t0017.
+
+</details>
+
+<details>
+<summary>📊 <strong>Register synaptic-integration category slugs if not already
+present</strong> (S-0018-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+The paper assets in this task use category slugs `synaptic-integration`, `receptor-kinetics`,
+`shunting-inhibition`, `ei-balance`, `dendritic-integration`, `direction-selectivity`, and
+`starburst-amacrine`. Verify that all seven categories exist in meta/categories/; register any
+that are missing so that category-based asset aggregators (aggregate_papers --categories
+synaptic-integration) return the expected results. This mirrors the S-0017-04 registration
+suggestion and the analogous S-0015-03 / S-0016-0X registrations; may already be satisfied by
+category-registration tasks executed between t0015 and t0018.
 
 </details>
 

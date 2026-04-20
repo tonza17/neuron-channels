@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T12:10:58Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T12:16:11Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>72459</char_count>
-    <byte_count>72524</byte_count>
-    <estimated_tokens>18114</estimated_tokens>
+    <char_count>74412</char_count>
+    <byte_count>74474</byte_count>
+    <estimated_tokens>18603</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -130,9 +130,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
+        <id>t0018_literature_survey_synaptic_integration</id>
       </source_ids>
       <content>
-Completed tasks: 14
+Completed tasks: 15
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -217,6 +218,12 @@ ID: t0017_literature_survey_patch_clamp
 Completed: 2026-04-20
 Short description: Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
 Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 5 high-leverage patch-clamp / voltage-clamp / space-clamp / DSGC papers and produced a single answer asset giving a concrete 7-point compartmental-modelling specification for DSGCs in NEURON covering voltage-clamp pipeline, AIS compartment, NMDAR synaptic complement, and intrinsic vs synaptic maintained-activity biophysics. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare/cookie-wall); summaries are based on Crossref abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational patch-clamp / voltage-clamp / space-clamp literature and synthesize concrete compartmental-modelling guidance for...
+
+## Literature survey: synaptic integration in RGC-adjacent systems
+ID: t0018_literature_survey_synaptic_integration
+Completed: 2026-04-20
+Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0018_literature_survey_synaptic_integration&quot; --- Results Summary: Synaptic-Integration Literature Survey Summary Surveyed **5** high-leverage synaptic-integration papers covering the five canonical themes (AMPA/NMDA/GABA receptor kinetics, shunting inhibition, E-I balance temporal co-tuning, dendritic-location-dependent PSP integration, SAC-to-DSGC inhibitory asymmetry) and produced one answer asset tabulating a prior distribution per DOI and theme. All **5** PDFs were paywalled (Nature, PNAS, Current Opinion in Neurobiology); summaries are based on Crossref abstracts plus training knowledge, and DOIs are recorded in `intervention/paywalled_papers.md` for...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -226,11 +233,10 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -253,12 +259,6 @@ Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
 
-## Literature survey: synaptic integration in RGC-adjacent systems
-ID: t0018_literature_survey_synaptic_integration
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
-
 ## Literature survey: voltage-gated channels in retinal ganglion cells
 ID: t0019_literature_survey_voltage_gated_channels
 Status: not_started
@@ -277,9 +277,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
+        <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 7
+Answers: 8
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -336,6 +337,14 @@ Confidence: medium
 Categories: patch-clamp, compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels, synaptic-integration
 
 DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic channels add further error. The modelling pipeline therefore needs a simulated somatic voltage-clamp block that mimics the experimental amplifier so simulation and experiment are compared on the same footing. The model must include an explicit AIS compartment with Nav1.6 enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable parameter constrained by immunohistochemistry, and NMDARs...
+
+## What quantitative priors does the synaptic-integration literature supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4) dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC inhibitory asymmetry?
+ID: synaptic-integration-priors-for-dsgc-modelling
+Created by: t0018_literature_survey_synaptic_integration on 2026-04-20
+Confidence: medium
+Categories: synaptic-integration, dendritic-computation, direction-selectivity, retinal-ganglion-cell
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms, Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev -65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an &quot;on-the-path&quot; geometry: only inhibition sitting between the excitatory input and the soma shunts PSP amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during null-direction motion, sharpening spike timing. Somatic...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -520,17 +529,17 @@ Geometry alone does not recover the Schachter Rin targets; the residual gap need
         <id>10.1146_annurev.neuro.28.061604.135703</id>
         <id>10.1523_jneurosci.5346-03.2004</id>
         <id>10.1038_nn1253</id>
+        <id>no-doi_HausserMel2003_s0959-4388-03-00075-8</id>
+        <id>10.1038_nature02116</id>
+        <id>10.1038_nature00931</id>
         <id>10.1126_science.289.5488.2347</id>
         <id>10.1038_35005094</id>
         <id>10.1038_18686</id>
         <id>10.1038_382363a0</id>
+        <id>10.1038_346565a0</id>
+        <id>10.1073_pnas.80.9.2799</id>
         <id>10.1098_rstb.1982.0084</id>
         <id>10.1152_jn.1967.30.5.1138</id>
-        <id>10.1523_ENEURO.0261-21.2021</id>
-        <id>10.7554_eLife.52949</id>
-        <id>10.7554_eLife.42392</id>
-        <id>10.1016_j.neuron.2017.07.020</id>
-        <id>10.1038_nature18609</id>
       </source_ids>
       <content>
 Papers: 20
@@ -598,6 +607,27 @@ Authors: Alon Polsky, Bartlett W. Mel, Jackie Schiller
 Added by task: t0016_literature_survey_dendritic_computation
 Polsky, Mel and Schiller (2004) test a core prediction of the two-layer model of pyramidal-cell computation: that thin basal and apical oblique dendrites function as independent sigmoidal integrative subunits whose outputs sum at the soma. Using two-photon glutamate uncaging at pairs of spatially precise sites, they compare measured paired EPSPs to the linear sum of individual-site responses. The experimental design varies the spatial configuration of the two uncaged sites: either on the same thin dendrite (same-branch) or on two different thin dendrites...
 
+## Dendrites: bug or feature?
+ID: no-doi_HausserMel2003_s0959-4388-03-00075-8
+Year: 2003
+Authors: Michael Häusser, Bartlett Mel
+Added by task: t0018_literature_survey_synaptic_integration
+Michael Häusser and colleagues (2003) published &quot;Dendrites: bug or feature?&quot; in Current Opinion in Neurobiology. The paper is included in this task&#x27;s survey because it contributes to the &quot;Dendritic-location dependence of PSP integration&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC model-fitting pipeline. The...
+
+## Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex
+ID: 10.1038_nature02116
+Year: 2003
+Authors: Michael Wehr, Anthony M. Zador
+Added by task: t0018_literature_survey_synaptic_integration
+Michael Wehr and colleagues (2003) published &quot;Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex&quot; in Nature. The paper is included in this task&#x27;s survey because it contributes to the &quot;E-I balance temporal co-tuning&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC model-fitting...
+
+## Directionally selective calcium signals in dendrites of starburst amacrine cells
+ID: 10.1038_nature00931
+Year: 2002
+Authors: Thomas Euler, Peter B. Detwiler, Winfried Denk
+Added by task: t0018_literature_survey_synaptic_integration
+Thomas Euler and colleagues (2002) published &quot;Directionally selective calcium signals in dendrites of starburst amacrine cells&quot; in Nature. The paper is included in this task&#x27;s survey because it contributes to the &quot;SAC-to-DSGC inhibitory asymmetry&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC model-fitting...
+
 ## Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
 ID: 10.1126_science.289.5488.2347
 Year: 2000
@@ -626,6 +656,20 @@ Authors: Zachary F. Mainen, Terrence J. Sejnowski
 Added by task: t0015_literature_survey_cable_theory
 Mainen &amp; Sejnowski&#x27;s 1996 Nature paper is a landmark in compartmental neuroscience modelling because it cleanly separates the roles of ion-channel density and dendritic morphology in shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3 pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four characteristic firing patterns observed in neocortical recordings without changing any biophysical...
 
+## Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents
+ID: 10.1038_346565a0
+Year: 1990
+Authors: Robin A. J. Lester, John D. Clements, Gary L. Westbrook, Craig E. Jahr
+Added by task: t0018_literature_survey_synaptic_integration
+Robin A. J. Lester and colleagues (1990) published &quot;Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents&quot; in Nature. The paper is included in this task&#x27;s survey because it contributes to the &quot;AMPA/NMDA/GABA receptor kinetics&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. CrossRef did not return a machine-readable abstract for this paper. The paper&#x27;s claims must therefore be read directly from the publisher PDF before being used in the DSGC...
+
+## Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.
+ID: 10.1073_pnas.80.9.2799
+Year: 1983
+Authors: C Koch, T Poggio, V Torre
+Added by task: t0018_literature_survey_synaptic_integration
+C Koch and colleagues (1983) published &quot;Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.&quot; in Proceedings of the National Academy of Sciences. The paper is included in this task&#x27;s survey because it contributes to the &quot;Shunting inhibition&quot; theme of synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC) compartmental model. The methodology and key findings of the paper are stated verbatim in the `## Abstract` section above. This summary asset deliberately does not...
+
 ## Retinal ganglion cells: a functional interpretation of dendritic morphology
 ID: 10.1098_rstb.1982.0084
 Year: 1982
@@ -639,41 +683,6 @@ Year: 1967
 Authors: Wilfrid Rall
 Added by task: t0015_literature_survey_cable_theory
 Rall&#x27;s 1967 paper asks whether the shape of a somatic EPSP carries information about where along the dendritic tree the underlying synaptic input was delivered. Using the equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the soma. The paper&#x27;s methodological contribution is the shape-index plot: a two-dimensional graph of EPSP rise time versus half-width in which different input locations trace out distinguishable curves...
-
-## Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and Inhibition in Retinal Direction-Selective Ganglion Cells
-ID: 10.1523_ENEURO.0261-21.2021
-Year: 2021
-Authors: Malak El-Quessny, Marla B. Feller
-Added by task: t0002_literature_survey_dsgc_compartmental_models
-El-Quessny and Feller test whether the global shape of a DSGC’s dendritic arbor determines how its excitatory and inhibitory synaptic inputs are spatially organized. They exploit a natural biological contrast: Hb9::GFP vDSGCs have strongly asymmetric dendrites oriented toward the preferred direction, while Trhr::GFP nDSGCs have symmetric dendrites but similar direction-selective spike output. The motivation is to dissociate two classical mechanisms of retinal direction selectivity, tuned inhibition and spatially offset inhibition, and to ask which of...
-
-## The functional organization of excitation and inhibition in the dendrites of mouse direction-selective ganglion cells
-ID: 10.7554_eLife.52949
-Year: 2020
-Authors: Varsha Jain, Benjamin L Murphy-Baum, Geoff deRosenroll, Santhosh Sethuramanujam
-Added by task: t0002_literature_survey_dsgc_compartmental_models
-This eLife paper asks a specific question about retinal direction selectivity: at what spatial scale is the direction-selective computation actually performed inside the dendrites of an ON-OFF DSGC? The question is motivated by decades of theoretical work (Koch, Poggio &amp; Torre 1982; Schachter et al. 2010) proposing dendritic subunits on a 50–100 µm scale, by anatomical evidence that starburst amacrine cells wrap varicosities around DSGC dendrites with direction-dependent orientation (Briggman et al. 2011), and by earlier patch-clamp results (Sivyer &amp;...
-
-## Retinal direction selectivity in the absence of asymmetric starburst amacrine cell responses
-ID: 10.7554_eLife.42392
-Year: 2019
-Authors: Laura Hanson, Santhosh Sethuramanujam, Geoff deRosenroll, Varsha Jain
-Added by task: t0002_literature_survey_dsgc_compartmental_models
-Hanson et al. revisit one of the most entrenched assumptions in retinal neuroscience: that direction selectivity in direction-selective retinal ganglion cells (DSGCs) is inherited from the directionally tuned GABA release of starburst amacrine cells. They ask whether DSGCs can still compute direction when starburst output itself is no longer directional, a question made answerable for the first time by combining the Gabra2 conditional KO (which removes mutual SAC inhibition) with optogenetic stimulation of SACs while bipolar-cell drive is...
-
-## Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity
-ID: 10.1016_j.neuron.2017.07.020
-Year: 2017
-Authors: David Koren, James C. R. Grove, Wei Wei
-Added by task: t0002_literature_survey_dsgc_compartmental_models
-Koren, Grove, and Wei address a gap in the mechanistic understanding of retinal direction selectivity: how the starburst amacrine cell (SAC) maintains the required balance between electrotonic isolation and cross-compartmental signal integration in its dendrites, and how that balance is regulated and coupled to direction-selective ganglion cell (DSGC) output. Earlier work established that SAC dendritic sectors are semi-independent computational units with centrifugal preference, but the mechanisms controlling the &quot;semi&quot; part of that isolation were...
-
-## Species-specific wiring for direction selectivity in the mammalian retina
-ID: 10.1038_nature18609
-Year: 2016
-Authors: Huayu Ding, Robert G. Smith, Alon Poleg-Polsky, Jeffrey S. Diamond
-Added by task: t0002_literature_survey_dsgc_compartmental_models
-Ding et al. use serial block-face EM to reconstruct the complete synaptic wiring of four starburst amacrine cells in mouse retina and compare it with the previously characterised rabbit circuit. The central finding is that mouse SACs receive inhibitory SAC-SAC inputs exclusively on their proximal dendrites, whereas rabbit SACs receive them distally. The study is motivated by the need to understand which circuit features -- intrinsic or network-based -- account for direction selectivity of SAC dendrites, and whether that organisation varies across...
       </content>
     </section>
     <section id="datasets" source_kind="aggregator">

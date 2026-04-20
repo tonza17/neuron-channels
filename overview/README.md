@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-35-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-40-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-2-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-7-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-8-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-62-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-66-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (8K) |
-[full](llm-context/full.xml) (96K) | [roadmap](llm-context/roadmap.xml) (25K) |
-[results](llm-context/results-deep-dive.xml) (59K) |
-[assets](llm-context/literature-and-assets.xml) (17K)
+[full](llm-context/full.xml) (103K) | [roadmap](llm-context/roadmap.xml) (25K) |
+[results](llm-context/results-deep-dive.xml) (62K) |
+[assets](llm-context/literature-and-assets.xml) (19K)
 
-*Last updated: 2026-04-20 12:10 UTC*
+*Last updated: 2026-04-20 12:16 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -47,11 +47,9 @@ No daily news yet.
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | 2026-04-20 11:18 |
+No tasks in progress.
 
 ---
 
@@ -72,10 +70,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (14 total)](tasks/by-status/completed.md)
+## [Recently Completed (15 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
 | 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`results`](../tasks/t0008_port_modeldb_189347/results/results_detailed.md) | 2026-04-20 12:10 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | [`results`](../tasks/t0017_literature_survey_patch_clamp/results/results_detailed.md) | 2026-04-20 11:08 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | [`results`](../tasks/t0016_literature_survey_dendritic_computation/results/results_detailed.md) | 2026-04-20 10:36 |
@@ -85,9 +84,8 @@ No blocked tasks.
 | 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
 | 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`results`](../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) | 2026-04-19 22:43 |
 | 0006 | [Brainstorm results session 2](../overview/tasks/task_pages/t0006_brainstorm_results_2.md) | [`results`](../tasks/t0006_brainstorm_results_2/results/results_detailed.md) | 2026-04-19 11:00 |
-| 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`results`](../tasks/t0005_download_dsgc_morphology/results/results_detailed.md) | 2026-04-19 09:28 |
 
-*4 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*5 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -101,7 +99,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (52 open)](suggestions/)
+## [Recent Suggestions (56 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -280,11 +278,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*42 more open suggestions → [open suggestions](suggestions/)*
+*46 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (19)](suggestions/)
+## [High Priority Suggestions (21)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -469,11 +467,11 @@ actual papers.
 
 </details>
 
-*9 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*11 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (7 total)](answers/)
+## [Recent Answers (8 total)](answers/)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -565,6 +563,32 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 </details>
 
 <details>
+<summary><strong>What quantitative priors does the synaptic-integration literature
+supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor
+kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4)
+dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC
+inhibitory asymmetry?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`synaptic-integration-priors-for-dsgc-modelling`](../tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/)
+
+Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms,
+Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with
+Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev
+-65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an "on-the-path"
+geometry: only inhibition sitting between the excitatory input and the soma shunts PSP
+amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in
+time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during
+null-direction motion, sharpening spike timing. Somatic PSP amplitude decays roughly
+exponentially with electrotonic distance (lambda_DC ~100-300 um for RGC dendrites) while local
+dendritic non-linearities (Na+, Ca2+, NMDAR) partially compensate for distal attenuation. SAC
+boutons onto a DSGC dendrite are spatially asymmetric with stronger inhibition from null-side
+SACs, and this cellular asymmetry (not somatic E-I timing alone) is the primary substrate for
+direction selectivity at the DSGC level.
+
+</details>
+
+<details>
 <summary><strong>Which compartmental simulator should the direction-selective
 ganglion cell (DSGC) project use as its primary simulator, and which should
 it keep as a backup?</strong></summary>
@@ -625,7 +649,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 ---
 
-## [Latest Papers (35 total)](papers/)
+## [Latest Papers (40 total)](papers/)
 
 <details>
 <summary>📖 <strong>Tailoring of the axon initial segment shapes the conversion of
@@ -673,6 +697,45 @@ should be a named tunable parameter constrained by immunohistochemistry rather t
 value, and depolarisation-block behaviour must be used as a fitting constraint. Ignoring the
 AIS will produce a DSGC model that cannot correctly reproduce high-firing-rate and
 strong-contrast responses.
+
+</details>
+
+<details>
+<summary>📖 <strong>Balanced inhibition underlies tuning and sharpens spike timing
+in auditory cortex</strong> — Wehr & Zador, 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature02116` |
+| **Authors** | Michael Wehr, Anthony M. Zador |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature02116` |
+| **URL** | https://doi.org/10.1038/nature02116 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`synaptic-integration`](../meta/categories/synaptic-integration/), [`direction-selectivity`](../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0018_literature_survey_synaptic_integration`](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Full summary** | [`summary.md`](../tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature02116/summary.md) |
+
+Michael Wehr and colleagues (2003) published "Balanced inhibition underlies tuning and
+sharpens spike timing in auditory cortex" in Nature. The paper is included in this task's
+survey because it contributes to the "E-I balance temporal co-tuning" theme of
+synaptic-integration priors relevant to the direction-selective retinal ganglion cell (DSGC)
+compartmental model.
+
+CrossRef did not return a machine-readable abstract for this paper. The paper's claims must
+therefore be read directly from the publisher PDF before being used in the DSGC model-fitting
+pipeline.
+
+The paper's primary significance for this project is its contribution to the "E-I balance
+temporal co-tuning" evidence pool. The answer asset
+`assets/answer/synaptic-integration-priors-for-dsgc-modelling/` records which DSGC model prior
+(rise/decay time constant, attenuation factor, E-I lag, asymmetry ratio, or
+shunting-inhibition location dependence) this paper supplies, together with the numerical
+value when one is reported.
+
+The PDF was not downloadable in this run (see `intervention/paywalled_papers.md` for the
+failure reason). Downstream users should obtain the paper through their institutional
+subscription before citing any specific numerical claim from it.
 
 </details>
 
@@ -1047,56 +1110,7 @@ modelling workflow.
 
 </details>
 
-<details>
-<summary>📖 <strong>Influence of dendritic structure on firing pattern in model
-neocortical neurons</strong> — Mainen & Sejnowski, 1996</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1038_382363a0` |
-| **Authors** | Zachary F. Mainen, Terrence J. Sejnowski |
-| **Venue** | Nature (journal) |
-| **DOI** | `10.1038/382363a0` |
-| **URL** | https://www.nature.com/articles/382363a0 |
-| **Date added** | 2026-04-20 |
-| **Categories** | [`cable-theory`](../meta/categories/cable-theory/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`compartmental-modelling`](../meta/categories/compartmental-modelling/) |
-| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
-| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/summary.md) |
-
-Mainen & Sejnowski's 1996 Nature paper is a landmark in compartmental neuroscience modelling
-because it cleanly separates the roles of ion-channel density and dendritic morphology in
-shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and
-calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3
-pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four
-characteristic firing patterns observed in neocortical recordings without changing any
-biophysical parameter except the dendritic tree.
-
-Methodologically, the paper is a textbook example of the NEURON-based compartmental-modelling
-workflow: reconstructed morphology, `d_lambda` spatial discretization, axonal spike initiation
-with biophysically motivated channel distributions, and quantitative comparison of simulated
-somatic firing patterns to experimental intracellular data. The calcium-driven slow
-depolarizing current in large apical dendrites, coupled to axonal re-excitation through the
-soma, emerges as the mechanism for intrinsic bursting.
-
-The main finding is that morphology-driven differences in the dendritic load on the soma are
-sufficient to explain observed firing-pattern diversity. Truncating the apical dendrite of the
-layer-5 pyramidal morphology abolishes bursting; removing dendritic calcium conductance has
-the same effect, showing the two factors are jointly necessary. This is a strong and
-counterintuitive result that reshaped how compartmental modellers interpret cell-type-specific
-firing.
-
-For this project, the paper is directly relevant in three ways. First, it confirms that our
-DSGC compartmental models must use accurate dendritic reconstructions, not simplified
-"ball-and-stick" approximations, before attributing behavioural differences to channel-density
-variation between DSGC subtypes. Second, the axon-dendrite coupling framework it establishes
-is essential context for understanding how spikes initiate and propagate in DSGCs given their
-distinctive bistratified dendritic arbors. Third, the paper codifies the `d_lambda`
-discretization practice that our NEURON models must follow to produce trustworthy
-active-dendrite simulations.
-
-</details>
-
-*25 more papers → [papers](papers/)*
+*30 more papers → [papers](papers/)*
 
 ---
 
