@@ -1,0 +1,1 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\.venv\Scripts\python.exe: No module named arf.scripts.verificators.verify_results
