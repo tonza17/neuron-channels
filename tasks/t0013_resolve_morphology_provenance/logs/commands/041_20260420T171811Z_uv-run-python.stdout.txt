@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0013_resolve_morphology_provenance\tasks\t0013_resolve_morphology_provenance
+
+[31m[1mERRORS:[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/searches/[0m
+[31m  FD-E005 error: Required log subdirectory is missing: logs/sessions/[0m
+
+[33m[1mWARNINGS:[0m
+[33m  FD-W005 warning: corrections/ contains files but task status is not completed[0m
+
+[31m[1mFAILED[0m — 2 error(s), 1 warning(s)

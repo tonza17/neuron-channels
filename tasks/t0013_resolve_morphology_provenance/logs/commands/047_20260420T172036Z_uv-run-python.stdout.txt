@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0013_resolve_morphology_provenance\tasks\t0013_resolve_morphology_provenance\logs\steps\015_reporting
+
+[31m[1mERRORS:[0m
+[31m  SV-E002 error: Required file missing: step_log.md[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

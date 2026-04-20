@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0013_resolve_morphology_provenance\tasks\t0013_resolve_morphology_provenance
+
+[33m[1mWARNINGS:[0m
+[33m  FD-W002 warning: logs/searches/ is empty (no search queries were logged)[0m
+[33m  FD-W005 warning: corrections/ contains files but task status is not completed[0m
+
+[33m[1mPASSED[0m — 0 error(s), 2 warning(s)

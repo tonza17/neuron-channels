@@ -1,0 +1,49 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.cub.2018.03.001",
+  "doi": "10.1016/j.cub.2018.03.001",
+  "title": "A Dense Starburst Plexus Is Critical for Generating Direction Selectivity",
+  "url": "https://doi.org/10.1016/j.cub.2018.03.001",
+  "pdf_url": "https://escholarship.org/content/qt5mr6604j/qt5mr6604j.pdf",
+  "date_published": "2018-04-23",
+  "year": 2018,
+  "authors": [
+    {
+      "name": "Ryan D. Morrie",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0001-9227-4997"
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0002-9137-5849"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    }
+  ],
+  "journal": "Current Biology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "dendritic-computation",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "Starburst amacrine cell (SAC) morphology is considered central to retinal direction selectivity. In Sema6A-/- mice, SAC dendritic arbors are smaller and no longer radially symmetric, leading to a reduction in SAC dendritic plexus density. Sema6A-/- mice also have a dramatic reduction in the directional tuning of retinal direction-selective ganglion cells (DSGCs). Here we show that the loss of DSGC tuning in Sema6A-/- mice is due to reduced null direction inhibition, even though strong asymmetric SAC-DSGC connectivity and SAC dendritic direction selectivity are maintained. Hence, the reduced coverage factor of SAC dendrites leads specifically to a loss of null direction inhibition. Moreover, SAC dendrites are no longer strictly tuned to centrifugal motion, indicating that SAC morphology is critical in coordinating synaptic connectivity and dendritic integration to generate direction selectivity.",
+  "citation_key": "Morrie2018",
+  "summary_path": "summary.md",
+  "files": [
+    "files/morrie_2018_dense-starburst-plexus.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0013_resolve_morphology_provenance",
+  "date_added": "2026-04-20"
+}

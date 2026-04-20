@@ -1,0 +1,11 @@
+tasks/t0013_resolve_morphology_provenance/assets/
+tasks/t0013_resolve_morphology_provenance/assets/paper/
+tasks/t0013_resolve_morphology_provenance/corrections/
+tasks/t0013_resolve_morphology_provenance/intervention/
+tasks/t0013_resolve_morphology_provenance/logs/
+tasks/t0013_resolve_morphology_provenance/logs/commands/
+tasks/t0013_resolve_morphology_provenance/logs/steps/
+tasks/t0013_resolve_morphology_provenance/plan/
+tasks/t0013_resolve_morphology_provenance/research/
+tasks/t0013_resolve_morphology_provenance/results/
+tasks/t0013_resolve_morphology_provenance/results/images/
