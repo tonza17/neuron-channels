@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Look up NEURON conventions for spatially-targeted synapses, moving-bar drivers, and forsec channel-modular layouts.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T23:01:22Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
