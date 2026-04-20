@@ -1,0 +1,5 @@
+Skipped step 010_teardown -> logs/steps/010_teardown/
+Skipped step 011_creative-thinking -> logs/steps/011_creative-thinking/
+Skipped step 013_compare-literature -> logs/steps/013_compare-literature/
+
+3 step(s) skipped.

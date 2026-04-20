@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0013_resolve_morphology_provenance",
+  "command": "uv run python -m arf.scripts.utils.poststep t0013_resolve_morphology_provenance results",
+  "exit_code": 0,
+  "duration_seconds": 6.651,
+  "started_at": "2026-04-20T17:10:29Z",
+  "completed_at": "2026-04-20T17:10:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0013_resolve_morphology_provenance",
+  "stdout_file": "020_20260420T171029Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260420T171029Z_uv-run-python.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 7,
+  "truncated": false
+}
