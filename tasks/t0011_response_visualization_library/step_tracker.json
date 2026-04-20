@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Final reporting, capture task sessions, run pre-PR verificators, open PR.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T15:48:07Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T15:50:00Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
