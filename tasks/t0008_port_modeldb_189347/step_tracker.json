@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Find ModelDB 189347 download URL, Poleg-Polsky supplementary code, any errata, and sibling DSGC compartmental models in public repositories (ModelDB, GitHub, OSF).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T10:25:38Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T10:38:52Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
