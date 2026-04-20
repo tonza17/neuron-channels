@@ -1,0 +1,13 @@
+TUNING_CURVE_CSV_COLUMNS = ('angle_deg', 'trial_seed', 'firing_rate_hz')
+TARGET_MEAN_CSV = C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\files\curve_mean.csv exists = True
+angles = [0.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0]
+rates = [9.5, 18.875, 28.11538105676658, 32.0, 28.115381056766587, 18.87500000000001, 9.5, 3.8750000000000018, 2.134618943233421, 2.0, 2.1346189432334195, 3.874999999999997]
+trials shape = (12, 20)
+dsi = 0.8823529411764706
+peak = 32.0
+null = 2.0
+hwhm = 66.00000000000001
+rel = 0.9968916120168636
+loss_scalar = 0.0
+passes_envelope = False
+per_target_pass = {'dsi': False, 'peak': True, 'null': True, 'hwhm': True}

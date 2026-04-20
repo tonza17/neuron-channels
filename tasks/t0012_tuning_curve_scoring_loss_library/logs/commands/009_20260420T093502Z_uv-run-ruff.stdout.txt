@@ -1,0 +1,23 @@
+E501 Line too long (113 > 100)
+  --> tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\cli.py:93:101
+   |
+91 |     )
+92 |     lines.append(
+93 |         f"target_metrics:     dsi={report.target_metrics.dsi:.4f}  peak={report.target_metrics.peak_hz:.3f} Hz  "
+   |                                                                                                     ^^^^^^^^^^^^^
+94 |         f"null={report.target_metrics.null_hz:.3f} Hz  hwhm={report.target_metrics.hwhm_deg:.3f} deg"
+95 |     )
+   |
+
+E501 Line too long (101 > 100)
+  --> tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\cli.py:94:101
+   |
+92 |     lines.append(
+93 |         f"target_metrics:     dsi={report.target_metrics.dsi:.4f}  peak={report.target_metrics.peak_hz:.3f} Hz  "
+94 |         f"null={report.target_metrics.null_hz:.3f} Hz  hwhm={report.target_metrics.hwhm_deg:.3f} deg"
+   |                                                                                                     ^
+95 |     )
+96 |     lines.append(f"residuals          = {report.residuals}")
+   |
+
+Found 7 errors (5 fixed, 2 remaining).

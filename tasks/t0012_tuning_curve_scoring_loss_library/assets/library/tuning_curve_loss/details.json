@@ -1,0 +1,115 @@
+{
+  "spec_version": "2",
+  "library_id": "tuning_curve_loss",
+  "name": "Tuning Curve Loss",
+  "version": "0.1.0",
+  "short_description": "Canonical scorer for 12-angle direction-selectivity tuning curves against the t0004 target, returning a weighted scalar loss over DSI, preferred-peak, null, and HWHM residuals plus per-metric diagnostics and a Poleg-Polsky envelope pass/fail.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/tuning_curve_loss/__init__.py",
+    "code/tuning_curve_loss/paths.py",
+    "code/tuning_curve_loss/loader.py",
+    "code/tuning_curve_loss/metrics.py",
+    "code/tuning_curve_loss/envelope.py",
+    "code/tuning_curve_loss/weights.py",
+    "code/tuning_curve_loss/scoring.py",
+    "code/tuning_curve_loss/cli.py"
+  ],
+  "entry_points": [
+    {
+      "name": "score",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/scoring.py",
+      "description": "Score a simulated tuning-curve CSV against the target CSV and return a ScoreReport with loss, residuals, and envelope pass/fail."
+    },
+    {
+      "name": "score_curves",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/scoring.py",
+      "description": "Score two pre-loaded TuningCurve objects; supports custom weights and weights loaded from a JSON file."
+    },
+    {
+      "name": "ScoreReport",
+      "kind": "class",
+      "module": "code/tuning_curve_loss/scoring.py",
+      "description": "Frozen dataclass carrying loss_scalar, residuals, normalized_residuals, per_target_pass, passes_envelope, candidate_metrics, target_metrics, weights_used, and rmse_vs_target."
+    },
+    {
+      "name": "load_tuning_curve",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/loader.py",
+      "description": "Load a 12-angle tuning curve from CSV in canonical, t0004-trials, or t0004-mean schema."
+    },
+    {
+      "name": "compute_dsi",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/metrics.py",
+      "description": "Direction Selectivity Index = (peak - null) / (peak + null); returns 0.0 for a zero-sum denominator."
+    },
+    {
+      "name": "compute_peak_hz",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/metrics.py",
+      "description": "Firing rate (Hz) at the preferred direction."
+    },
+    {
+      "name": "compute_null_hz",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/metrics.py",
+      "description": "Firing rate (Hz) at the null direction (minimum of the curve)."
+    },
+    {
+      "name": "compute_hwhm_deg",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/metrics.py",
+      "description": "Half-width at half-maximum in degrees via linear interpolation, rotated so the peak is at the grid midpoint."
+    },
+    {
+      "name": "compute_reliability",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/metrics.py",
+      "description": "Split-half Pearson correlation over even/odd trials; returns None when trials are absent or variance is zero."
+    },
+    {
+      "name": "check_envelope",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/envelope.py",
+      "description": "Evaluate a curve against the four concurrent envelope gates and return per-target pass flags."
+    },
+    {
+      "name": "validate_weights",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/weights.py",
+      "description": "Validate a weight mapping (correct keys, non-negative, non-zero sum)."
+    },
+    {
+      "name": "load_weights_from_json",
+      "kind": "function",
+      "module": "code/tuning_curve_loss/weights.py",
+      "description": "Load a weights mapping from a JSON file and validate it."
+    },
+    {
+      "name": "tuning_curve_loss.cli",
+      "kind": "script",
+      "module": "code/tuning_curve_loss/cli.py",
+      "description": "Command-line entry point: score a simulated CSV against the t0004 target (or a supplied target) with optional custom weights and JSON output."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "pandas"
+  ],
+  "test_paths": [
+    "code/test_loader.py",
+    "code/test_metrics.py",
+    "code/test_envelope.py",
+    "code/test_scoring.py",
+    "code/test_cli.py"
+  ],
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0012_tuning_curve_scoring_loss_library",
+  "date_created": "2026-04-20"
+}
