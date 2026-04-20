@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary, results_detailed, metrics.json, costs.json, remote_machines_used.json, and any tuning-curve CSVs for ported models.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T14:29:09Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T14:37:15Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
