@@ -86,7 +86,7 @@
       "step": 10,
       "name": "teardown",
       "description": "Skipped: no remote compute was provisioned.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
       "log_file": "logs/steps/010_teardown/"
@@ -95,7 +95,7 @@
       "step": 11,
       "name": "creative-thinking",
       "description": "Skipped: mechanical retrieval task with no alternative-approach exploration needed.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
       "log_file": "logs/steps/011_creative-thinking/"
