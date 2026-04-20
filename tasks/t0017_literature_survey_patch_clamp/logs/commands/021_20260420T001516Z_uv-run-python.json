@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0017_literature_survey_patch_clamp",
+  "command": "uv run python -u tasks/t0017_literature_survey_patch_clamp/code/fetch_paper_metadata.py",
+  "exit_code": 0,
+  "duration_seconds": 15.53,
+  "started_at": "2026-04-20T00:15:16Z",
+  "completed_at": "2026-04-20T00:15:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0017_literature_survey_patch_clamp",
+  "stdout_file": "021_20260420T001516Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260420T001516Z_uv-run-python.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 5,
+  "truncated": false
+}

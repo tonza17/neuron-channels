@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0017_literature_survey_patch_clamp",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_categories --format ids",
+  "exit_code": 0,
+  "duration_seconds": 1.161,
+  "started_at": "2026-04-20T00:17:51Z",
+  "completed_at": "2026-04-20T00:17:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0017_literature_survey_patch_clamp",
+  "stdout_file": "023_20260420T001751Z_uv-run-python.stdout.txt",
+  "stderr_file": "023_20260420T001751Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

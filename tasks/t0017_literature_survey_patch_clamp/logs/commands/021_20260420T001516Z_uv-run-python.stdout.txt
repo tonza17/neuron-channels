@@ -1,0 +1,17 @@
+OK   10.1038/nature00931
+OK   10.1016/0165-0270(94)00116-x
+OK   10.3791/50400
+OK   10.1152/jn.1996.75.5.2129
+OK   10.1371/journal.pone.0019463
+OK   10.1016/j.neuroscience.2021.08.024
+OK   10.1126/sciadv.abb6642
+OK   10.1016/j.neuron.2017.09.058
+OK   10.1016/j.neuron.2012.08.041
+OK   10.1113/jphysiol.2001.013009
+OK   10.1016/j.neuron.2016.01.024
+OK   10.1113/jphysiol.2014.276543
+OK   10.1111/ejn.14343
+OK   10.1371/journal.pone.0103822
+OK   10.1109/TNS.2004.832706
+OK   10.1038/nn.3404
+Wrote tasks\t0017_literature_survey_patch_clamp\plan\crossref_metadata.json
