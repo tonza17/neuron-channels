@@ -1,14 +1,35 @@
 # Suggestions: `direction-selectivity`
 
-35 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **32 open** (12
-high, 17 medium, 3 low), **3 closed**.
+40 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **37 open** (15
+high, 19 medium, 3 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
+models</strong> (S-0010-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
+GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
+NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
+and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
+driver-rewrite step and go straight to P2/P3 scoring.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
@@ -96,6 +117,48 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
 
 </details>
 
@@ -377,6 +440,26 @@ review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic driv
 Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
 input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
 corpus to 24 papers. Recommended task types: download-paper, literature-survey.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend DSGC model corpus to Arbor and NetPyNE
+reimplementations</strong> (S-0010-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+All three candidates hunted in t0010 use NEURON; t0010's DROP list includes Schachter2010
+(NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC
+compartmental models specifically, since those simulators are becoming standard for
+large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
 
 </details>
 
@@ -707,6 +790,27 @@ compartments, then test whether asymmetric inhibition at principal-branch bifurc
 selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
 null-direction motion. Report preferred-direction burst firing rate versus null-direction
 burst rate and compare with published DSGC spiking statistics.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Write forward-only driver for PolegPolsky2026 DS-mechanisms model
+and pursue LICENSE</strong> (S-0010-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+PolegPolskyLab/DS-mechanisms ships only a GA-training harness (numGen=300, popSize=50) and has
+no LICENSE file, which blocks library-asset registration under this project's rules. A
+follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a
+single-parameter-set forward-only 'simulate at angle theta' driver from the GA inner loop so
+the model can be scored against the canonical 12-angle sweep without running the full GA.
 
 </details>
 

@@ -4,14 +4,108 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (24)](../papers/by-category/dendritic-computation.md) | [Answers
+**Detail pages**: [Papers (26)](../papers/by-category/dendritic-computation.md) | [Answers
 (4)](../answers/by-category/dendritic-computation.md) | [Suggestions
 (12)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (24)
+## Papers (26)
+
+<details>
+<summary>📖 <strong>Machine learning discovers numerous new computational principles
+underlying direction selectivity in the retina</strong> — Poleg-Polsky,
+2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41467-026-70288-4` |
+| **Authors** | Alon Poleg-Polsky |
+| **Venue** | Nature Communications (journal) |
+| **DOI** | `10.1038/s41467-026-70288-4` |
+| **URL** | https://www.nature.com/articles/s41467-026-70288-4 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md) |
+
+Poleg-Polsky uses a machine-learning parameter search over a 352-segment biophysical model of
+a mouse ON-OFF DSGC to enumerate mechanisms that can produce direction selectivity. The search
+space includes bipolar-cell input geometry, synaptic kinetics, NMDA receptor placement and
+strength, dendritic voltage-gated channel densities, and the presence or absence of
+SAC-derived inhibition. Thousands of candidate configurations are simulated under standardised
+moving-bar stimuli and scored on DSI.
+
+The search reveals that many qualitatively different mechanisms can produce robust direction
+selectivity. Dendrite-intrinsic primitives - velocity-dependent coincidence detection,
+distance-graded passive delay lines, NMDA-mediated multiplicative gating - are each sufficient
+on their own. Hybrid configurations that combine these primitives with SAC-derived inhibition
+match experimental DSI most closely. Targeted ablations confirm each primitive is causally
+responsible for DSI within its cluster.
+
+The paper challenges the textbook view that starburst amacrine cells are the dominant
+substrate of DSGC direction selectivity. Instead, it argues the DSGC dendrite itself is a
+richer computational organ capable of producing DS via multiple biophysically plausible
+strategies, and that the retinal circuit likely exploits several of them in parallel.
+
+For t0010_hunt_missed_dsgc_models, this paper is a high-priority candidate. The companion code
+(`PolegPolskyLab/DS-mechanisms`) provides a NEURON + Python 352-segment DSGC model exposing
+exactly the parameters our project is interested in probing - bipolar-cell input structure,
+kinetics, NMDA strength, and dendritic biophysics. The ML-discovered configurations give us a
+library of distinct tuning-curve shapes to include in comparative analyses. The primary
+porting risk is the absent LICENSE file; a licence clarification intervention or
+fork-under-MIT may be required before the code can be redistributed.
+
+</details>
+
+<details>
+<summary>📖 <strong>Uncovering the “hidden” synaptic microarchitecture of the retinal
+direction selective circuit</strong> — deRosenroll et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.celrep.2025.116833` |
+| **Authors** | Geoff deRosenroll, Santhosh Sethuramanujam, Gautam B. Awatramani |
+| **Venue** | Cell Reports (journal) |
+| **DOI** | `10.1016/j.celrep.2025.116833` |
+| **URL** | https://www.cell.com/cell-reports/fulltext/S2211-1247(25)01605-5 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/summary.md) |
+
+This paper addresses how starburst amacrine cells shape direction selectivity in ON-OFF DSGCs
+at the subcellular scale, focusing on the differential release of GABA and ACh. The authors
+combine two-photon Ca2+ imaging of local DSGC dendritic subunits with a biophysically detailed
+NEURON network model that explicitly represents the anatomical offset between SAC-GABA and
+SAC-ACh synapses onto the DSGC.
+
+Using acetylcholinesterase blockade, they perturb ACh dynamics while preserving the global
+excitation/inhibition balance across the dendritic tree. Experimentally, this preserves
+cell-wide firing but degrades direction selectivity at the local subunit level. The network
+model reproduces the dissociation and attributes it to local uncoupling of E and I caused by
+spatiotemporal perturbation of ACh relative to spatially offset GABA.
+
+The central finding is that direction-selective computation in a DSGC is not a simple function
+of whole-cell E/I balance, but depends on a *microstructured* alignment of GABA and ACh
+release from SACs. Perturbing this alignment - even without disturbing the global ratio - is
+sufficient to compromise the cell direction selectivity at the subunit scale. The authors call
+this the "hidden" synaptic microarchitecture of the DS circuit.
+
+For the current project (t0010_hunt_missed_dsgc_models), the paper is a top-priority
+candidate: it publishes a new MIT-licensed NEURON + Python DSGC network model with
+differential GABA/ACh wiring, directly addresses the project research question of how local
+synaptic input patterns determine DSGC tuning, and extends the canonical Poleg-Polsky 2016
+model already ported by t0008. The companion repository
+(`geoffder/ds-circuit-ei-microarchitecture`, Zenodo 10.5281/zenodo.17666157) ships a driver
+script, MOD files, and a HOC geometry that should be amenable to an automated port with a thin
+12-direction tuning-curve wrapper. The main limitation for this summary is that the published
+PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
+cited from the abstract should be re-verified once a human reviewer retrieves the article
+manually.
+
+</details>
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -1206,11 +1300,12 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (5)
+## Tasks (6)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
+| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | completed | 2026-04-20 14:42 |
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |

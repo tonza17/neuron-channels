@@ -1,12 +1,12 @@
 # Suggestions by Date Added
 
-70 suggestion(s) grouped by derived added date.
+76 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-04-20 (39)
+## 2026-04-20 (45)
 
 ## High Priority
 
@@ -33,6 +33,27 @@ the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md ha
 mandatory sections, and categories exist in meta/categories/. Port the checks already
 performed by hand on t0012 into a reusable verificator, wire it into step_registry.py, and
 re-run it against existing library assets. Recommended task types: infrastructure-setup.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
+models</strong> (S-0010-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
+GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
+NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
+and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
+driver-rewrite step and go straight to P2/P3 scoring.
 
 </details>
 
@@ -104,6 +125,48 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
 
 </details>
 
@@ -512,6 +575,26 @@ close the gap.
 </details>
 
 <details>
+<summary>🧪 <strong>Extend DSGC model corpus to Arbor and NetPyNE
+reimplementations</strong> (S-0010-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+All three candidates hunted in t0010 use NEURON; t0010's DROP list includes Schachter2010
+(NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC
+compartmental models specifically, since those simulators are becoming standard for
+large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN
 biophysics, and AIS measurements</strong> (S-0017-02)</summary>
 
@@ -827,7 +910,49 @@ burst rate and compare with published DSGC spiking statistics.
 
 </details>
 
+<details>
+<summary>🧪 <strong>Write forward-only driver for PolegPolsky2026 DS-mechanisms model
+and pursue LICENSE</strong> (S-0010-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+PolegPolskyLab/DS-mechanisms ships only a GA-training harness (numGen=300, popSize=50) and has
+no LICENSE file, which blocks library-asset registration under this project's rules. A
+follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a
+single-parameter-set forward-only 'simulate at angle theta' driver from the GA inner loop so
+the model can be scored against the canonical 12-angle sweep without running the full GA.
+
+</details>
+
 ## Low Priority
+
+<details>
+<summary>🔧 <strong>Add Elsevier-login fallback to the paper-download
+workflow</strong> (S-0010-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-06` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | — |
+
+t0010 failed to download the deRosenroll2026 PDF (Elsevier HTTP 403 on anonymous access) but
+succeeded on other publishers. A follow-up infrastructure task should add a Sheffield
+institutional-login-aware download path (or a manual-fetch checkpoint) to the /add-paper skill
+so future Elsevier-hosted papers can be registered with download_status=success instead of
+requiring a failure record.
+
+</details>
 
 <details>
 <summary>📊 <strong>Cross-validate compute_reliability against independent split-half

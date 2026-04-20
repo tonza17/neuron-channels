@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-44-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-46-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-2-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-9-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-10-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-70-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-76-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (9K) |
-[full](llm-context/full.xml) (110K) | [roadmap](llm-context/roadmap.xml) (26K) |
-[results](llm-context/results-deep-dive.xml) (66K) |
-[assets](llm-context/literature-and-assets.xml) (20K)
+[full](llm-context/full.xml) (121K) | [roadmap](llm-context/roadmap.xml) (27K) |
+[results](llm-context/results-deep-dive.xml) (72K) |
+[assets](llm-context/literature-and-assets.xml) (21K)
 
-*Last updated: 2026-04-20 13:04 UTC*
+*Last updated: 2026-04-20 14:49 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -47,11 +47,9 @@ No daily news yet.
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | 2026-04-20 12:25 |
+No tasks in progress.
 
 ---
 
@@ -70,10 +68,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (16 total)](tasks/by-status/completed.md)
+## [Recently Completed (17 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
 | 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`results`](../tasks/t0008_port_modeldb_189347/results/results_detailed.md) | 2026-04-20 12:10 |
@@ -83,9 +82,8 @@ No blocked tasks.
 | 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
 | 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
 | 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
-| 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`results`](../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) | 2026-04-19 22:43 |
 
-*6 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*7 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -99,7 +97,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (60 open)](suggestions/)
+## [Recent Suggestions (66 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -278,11 +276,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*50 more open suggestions → [open suggestions](suggestions/)*
+*56 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (23)](suggestions/)
+## [High Priority Suggestions (26)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -377,6 +375,51 @@ experiments. Recommended task types: experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
+models</strong> (S-0010-05)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
+GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
+NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
+and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
+driver-rewrite step and go straight to P2/P3 scoring.
+
+</details>
+
+<details>
 <summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
 asset structure and metadata</strong> (S-0012-01)</summary>
 
@@ -416,62 +459,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
-verify numerical claims</strong> (S-0015-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0015_literature_survey_cable_theory](../tasks/t0015_literature_survey_cable_theory/)
-
-Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski
-1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but
-were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
-paper asset's download_status to 'success', replace summary Overview disclaimers with
-PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
-length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
-papers.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
-specification</strong> (S-0015-04)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0015_literature_survey_cable_theory](../tasks/t0015_literature_survey_cable_theory/)
-
-The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point
-specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive
-parameters, validation suite, spike-generator tuning). A follow-up experiment task should
-implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
-publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
-test battery (shape-index, graded DS, inhibition block, contrast-response).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled dendritic-computation PDFs via Sheffield
-access and verify numerical claims</strong> (S-0016-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0016_literature_survey_dendritic_computation](../tasks/t0016_literature_survey_dendritic_computation/)
-
-Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999,
-Bittner 2017, London & Hausser 2005) are documented in intervention/paywalled_papers.md but
-were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
-paper asset's download_status to 'success', replace summary Overview disclaimers with
-PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike
-threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
-duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
-actual papers.
-
-</details>
-
-*13 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*16 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (9 total)](answers/)
+## [Recent Answers (10 total)](answers/)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -496,6 +488,29 @@ next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 an
 ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
 Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
 class.
+
+</details>
+
+<details>
+<summary><strong>What DSGC compartmental models published in public literature were
+missed by tasks t0002 and t0008, and which of them are viable ports for
+this project?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`dsgc-missed-models-survey`](../tasks/t0010_hunt_missed_dsgc_models/assets/answer/dsgc-missed-models-survey/)
+
+Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et
+al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature
+Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in
+the t0002 corpus but had never been ported. None of the three HIGH-priority candidates
+completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each
+failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python
+driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus
+heavy out-of-env dependencies; Poleg-Polsky: genetic-algorithm training driver with `numDir=2`
+and no LICENSE). Zero library assets were registered per the "never leave a broken library
+behind" rule, and all three candidates are recorded as `p2_failed` in `data/candidates.csv`.
+Deeper investment (hand-rewriting each driver) would very plausibly succeed; the 90-minute cap
+is the binding constraint, not a definitive portability verdict.
 
 </details>
 
@@ -672,7 +687,55 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 ---
 
-## [Latest Papers (44 total)](papers/)
+## [Latest Papers (46 total)](papers/)
+
+<details>
+<summary>📖 <strong>Uncovering the “hidden” synaptic microarchitecture of the retinal
+direction selective circuit</strong> — deRosenroll et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.celrep.2025.116833` |
+| **Authors** | Geoff deRosenroll, Santhosh Sethuramanujam, Gautam B. Awatramani |
+| **Venue** | Cell Reports (journal) |
+| **DOI** | `10.1016/j.celrep.2025.116833` |
+| **URL** | https://www.cell.com/cell-reports/fulltext/S2211-1247(25)01605-5 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0010_hunt_missed_dsgc_models`](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Full summary** | [`summary.md`](../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/summary.md) |
+
+This paper addresses how starburst amacrine cells shape direction selectivity in ON-OFF DSGCs
+at the subcellular scale, focusing on the differential release of GABA and ACh. The authors
+combine two-photon Ca2+ imaging of local DSGC dendritic subunits with a biophysically detailed
+NEURON network model that explicitly represents the anatomical offset between SAC-GABA and
+SAC-ACh synapses onto the DSGC.
+
+Using acetylcholinesterase blockade, they perturb ACh dynamics while preserving the global
+excitation/inhibition balance across the dendritic tree. Experimentally, this preserves
+cell-wide firing but degrades direction selectivity at the local subunit level. The network
+model reproduces the dissociation and attributes it to local uncoupling of E and I caused by
+spatiotemporal perturbation of ACh relative to spatially offset GABA.
+
+The central finding is that direction-selective computation in a DSGC is not a simple function
+of whole-cell E/I balance, but depends on a *microstructured* alignment of GABA and ACh
+release from SACs. Perturbing this alignment - even without disturbing the global ratio - is
+sufficient to compromise the cell direction selectivity at the subunit scale. The authors call
+this the "hidden" synaptic microarchitecture of the DS circuit.
+
+For the current project (t0010_hunt_missed_dsgc_models), the paper is a top-priority
+candidate: it publishes a new MIT-licensed NEURON + Python DSGC network model with
+differential GABA/ACh wiring, directly addresses the project research question of how local
+synaptic input patterns determine DSGC tuning, and extends the canonical Poleg-Polsky 2016
+model already ported by t0008. The companion repository
+(`geoffder/ds-circuit-ei-microarchitecture`, Zenodo 10.5281/zenodo.17666157) ships a driver
+script, MOD files, and a HOC geometry that should be amenable to an automated port with a thin
+12-direction tuning-curve wrapper. The main limitation for this summary is that the published
+PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
+cited from the abstract should be re-verified once a human reviewer retrieves the article
+manually.
+
+</details>
 
 <details>
 <summary>📖 <strong>Tailoring of the axon initial segment shapes the conversion of
@@ -1079,55 +1142,7 @@ and comparing the somatic response to the distributed-input control.
 
 </details>
 
-<details>
-<summary>📖 <strong>Imperfect Space Clamp Permits Electrotonic Interactions between
-Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp
-Recordings</strong> — Poleg-Polsky & Diamond, 2011</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1371_journal.pone.0019463` |
-| **Authors** | Alon Poleg-Polsky, Jeffrey S. Diamond |
-| **Venue** | PLoS ONE (journal) |
-| **DOI** | `10.1371/journal.pone.0019463` |
-| **URL** | https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019463 |
-| **Date added** | 2026-04-20 |
-| **Categories** | [`patch-clamp`](../meta/categories/patch-clamp/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0017_literature_survey_patch_clamp`](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1371_journal.pone.0019463/summary.md) |
-
-Poleg-Polsky and Diamond ask a methodological question that matters for every modelling paper
-built on experimental E/I decomposition: how accurate is the standard protocol of
-reconstructing excitatory and inhibitory conductances from multi-holding-potential
-voltage-clamp recordings when the cell has thin, extended dendrites? They answer it with
-NEURON compartmental simulations of realistic retinal ganglion cell morphologies, where the
-ground-truth synaptic input is known and the somatic pipette recording can be directly
-compared against it.
-
-The methodology is careful: the authors systematically vary dendritic diameter, synaptic
-distance, E/I relative timing, and holding-potential range, and compare each reconstruction
-against the known inputs. They also test what happens when voltage-gated dendritic channels
-are added. The design isolates space-clamp error from other confounds (series resistance,
-filtering, ionic non-stationarity) and lets the reader see exactly which experimental choices
-drive the largest distortions.
-
-The headline result is that imperfect space clamp is not a second-order concern: on thin
-distal dendrites up to 80% of the synaptic signal is lost, inhibitory estimates are
-systematically worse than excitatory ones, and co-active E and I interact electrotonically so
-that reconstructing one requires correctly modelling the other. Active dendritic channels make
-everything worse. The paper practical guidance (proximal-only reconstruction,
-compartmental-model validation of each experiment) is now standard.
-
-For this project, the implication is direct. DSGC models will be calibrated against published
-Ge and Gi traces from somatic voltage-clamp recordings, and those traces are lower bounds on
-the true dendritic conductances, not ground truth. Our NEURON pipeline must include a somatic
-voltage-clamp block so that simulated recordings can be compared to experimental recordings on
-the same footing, and we must plan parameter-fitting procedures to absorb a several-fold
-calibration uncertainty on distal synaptic conductance amplitudes.
-
-</details>
-
-*34 more papers → [papers](papers/)*
+*36 more papers → [papers](papers/)*
 
 ---
 

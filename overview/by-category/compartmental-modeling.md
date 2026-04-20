@@ -4,15 +4,109 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (14)](../papers/by-category/compartmental-modeling.md) | [Answers
-(7)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(41)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+**Detail pages**: [Papers (16)](../papers/by-category/compartmental-modeling.md) | [Answers
+(8)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(46)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (1)](../libraries/by-category/compartmental-modeling.md)
 
 ---
 
-## Papers (14)
+## Papers (16)
+
+<details>
+<summary>📖 <strong>Machine learning discovers numerous new computational principles
+underlying direction selectivity in the retina</strong> — Poleg-Polsky,
+2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41467-026-70288-4` |
+| **Authors** | Alon Poleg-Polsky |
+| **Venue** | Nature Communications (journal) |
+| **DOI** | `10.1038/s41467-026-70288-4` |
+| **URL** | https://www.nature.com/articles/s41467-026-70288-4 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md) |
+
+Poleg-Polsky uses a machine-learning parameter search over a 352-segment biophysical model of
+a mouse ON-OFF DSGC to enumerate mechanisms that can produce direction selectivity. The search
+space includes bipolar-cell input geometry, synaptic kinetics, NMDA receptor placement and
+strength, dendritic voltage-gated channel densities, and the presence or absence of
+SAC-derived inhibition. Thousands of candidate configurations are simulated under standardised
+moving-bar stimuli and scored on DSI.
+
+The search reveals that many qualitatively different mechanisms can produce robust direction
+selectivity. Dendrite-intrinsic primitives - velocity-dependent coincidence detection,
+distance-graded passive delay lines, NMDA-mediated multiplicative gating - are each sufficient
+on their own. Hybrid configurations that combine these primitives with SAC-derived inhibition
+match experimental DSI most closely. Targeted ablations confirm each primitive is causally
+responsible for DSI within its cluster.
+
+The paper challenges the textbook view that starburst amacrine cells are the dominant
+substrate of DSGC direction selectivity. Instead, it argues the DSGC dendrite itself is a
+richer computational organ capable of producing DS via multiple biophysically plausible
+strategies, and that the retinal circuit likely exploits several of them in parallel.
+
+For t0010_hunt_missed_dsgc_models, this paper is a high-priority candidate. The companion code
+(`PolegPolskyLab/DS-mechanisms`) provides a NEURON + Python 352-segment DSGC model exposing
+exactly the parameters our project is interested in probing - bipolar-cell input structure,
+kinetics, NMDA strength, and dendritic biophysics. The ML-discovered configurations give us a
+library of distinct tuning-curve shapes to include in comparative analyses. The primary
+porting risk is the absent LICENSE file; a licence clarification intervention or
+fork-under-MIT may be required before the code can be redistributed.
+
+</details>
+
+<details>
+<summary>📖 <strong>Uncovering the “hidden” synaptic microarchitecture of the retinal
+direction selective circuit</strong> — deRosenroll et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.celrep.2025.116833` |
+| **Authors** | Geoff deRosenroll, Santhosh Sethuramanujam, Gautam B. Awatramani |
+| **Venue** | Cell Reports (journal) |
+| **DOI** | `10.1016/j.celrep.2025.116833` |
+| **URL** | https://www.cell.com/cell-reports/fulltext/S2211-1247(25)01605-5 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/summary.md) |
+
+This paper addresses how starburst amacrine cells shape direction selectivity in ON-OFF DSGCs
+at the subcellular scale, focusing on the differential release of GABA and ACh. The authors
+combine two-photon Ca2+ imaging of local DSGC dendritic subunits with a biophysically detailed
+NEURON network model that explicitly represents the anatomical offset between SAC-GABA and
+SAC-ACh synapses onto the DSGC.
+
+Using acetylcholinesterase blockade, they perturb ACh dynamics while preserving the global
+excitation/inhibition balance across the dendritic tree. Experimentally, this preserves
+cell-wide firing but degrades direction selectivity at the local subunit level. The network
+model reproduces the dissociation and attributes it to local uncoupling of E and I caused by
+spatiotemporal perturbation of ACh relative to spatially offset GABA.
+
+The central finding is that direction-selective computation in a DSGC is not a simple function
+of whole-cell E/I balance, but depends on a *microstructured* alignment of GABA and ACh
+release from SACs. Perturbing this alignment - even without disturbing the global ratio - is
+sufficient to compromise the cell direction selectivity at the subunit scale. The authors call
+this the "hidden" synaptic microarchitecture of the DS circuit.
+
+For the current project (t0010_hunt_missed_dsgc_models), the paper is a top-priority
+candidate: it publishes a new MIT-licensed NEURON + Python DSGC network model with
+differential GABA/ACh wiring, directly addresses the project research question of how local
+synaptic input patterns determine DSGC tuning, and extends the canonical Poleg-Polsky 2016
+model already ported by t0008. The companion repository
+(`geoffder/ds-circuit-ei-microarchitecture`, Zenodo 10.5281/zenodo.17666157) ships a driver
+script, MOD files, and a HOC geometry that should be amenable to an automated port with a thin
+12-direction tuning-curve wrapper. The main limitation for this summary is that the published
+PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
+cited from the abstract should be re-verified once a human reviewer retrieves the article
+manually.
+
+</details>
 
 <details>
 <summary>📖 <strong>Voltage Clamp Errors During Estimation of Concurrent Excitatory
@@ -729,15 +823,16 @@ dendritic transients.
 
 </details>
 
-## Tasks (3)
+## Tasks (4)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
+| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | completed | 2026-04-20 14:42 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (7)
+## Answers (8)
 
 <details>
 <summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
@@ -762,6 +857,29 @@ next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 an
 ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
 Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
 class.
+
+</details>
+
+<details>
+<summary><strong>What DSGC compartmental models published in public literature were
+missed by tasks t0002 and t0008, and which of them are viable ports for
+this project?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`dsgc-missed-models-survey`](../../tasks/t0010_hunt_missed_dsgc_models/assets/answer/dsgc-missed-models-survey/)
+
+Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et
+al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature
+Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in
+the t0002 corpus but had never been ported. None of the three HIGH-priority candidates
+completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each
+failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python
+driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus
+heavy out-of-env dependencies; Poleg-Polsky: genetic-algorithm training driver with `numDir=2`
+and no LICENSE). Zero library assets were registered per the "never leave a broken library
+behind" rule, and all three candidates are recorded as `p2_failed` in `data/candidates.csv`.
+Deeper investment (hand-rewriting each driver) would very plausibly succeed; the 90-minute cap
+is the binding constraint, not a definitive portability verdict.
 
 </details>
 
@@ -892,7 +1010,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (37 open, 4 closed)
+## Suggestions (42 open, 4 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1126,6 +1244,80 @@ Strahler-calibrated asset by per-branch axial resistance, total surface area, an
 per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the
 measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Write forward-only driver for PolegPolsky2026 DS-mechanisms model
+and pursue LICENSE</strong> (S-0010-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
+
+PolegPolskyLab/DS-mechanisms ships only a GA-training harness (numGen=300, popSize=50) and has
+no LICENSE file, which blocks library-asset registration under this project's rules. A
+follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a
+single-parameter-set forward-only 'simulate at angle theta' driver from the GA inner loop so
+the model can be scored against the canonical 12-angle sweep without running the full GA.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend DSGC model corpus to Arbor and NetPyNE
+reimplementations</strong> (S-0010-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
+
+All three candidates hunted in t0010 use NEURON; t0010's DROP list includes Schachter2010
+(NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC
+compartmental models specifically, since those simulators are becoming standard for
+large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
+models</strong> (S-0010-05)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
+GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
+NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
+and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
+driver-rewrite step and go straight to P2/P3 scoring.
 
 </details>
 

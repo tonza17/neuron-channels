@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T13:04:58Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T14:49:18Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>69825</char_count>
-    <byte_count>69834</byte_count>
-    <estimated_tokens>17456</estimated_tokens>
+    <char_count>74179</char_count>
+    <byte_count>74188</byte_count>
+    <estimated_tokens>18544</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -61,6 +61,12 @@
         <id>S-0009-06</id>
         <id>S-0009-07</id>
         <id>S-0009-08</id>
+        <id>S-0010-01</id>
+        <id>S-0010-02</id>
+        <id>S-0010-03</id>
+        <id>S-0010-04</id>
+        <id>S-0010-05</id>
+        <id>S-0010-06</id>
         <id>S-0012-01</id>
         <id>S-0012-02</id>
         <id>S-0012-03</id>
@@ -89,7 +95,7 @@
         <id>S-0019-04</id>
       </source_ids>
       <content>
-Suggestions: 70
+Suggestions: 76
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -590,6 +596,75 @@ Categories: cable-theory, compartmental-modeling
 Date added: 2026-04-20
 
 Rall&#x27;s 3/2 power rule (r_parent^(3/2) = sum r_child^(3/2)) is the only biophysically principled way to match impedance across a binary tree; our max-child Strahler bins have no such guarantee. Implement TREES-toolbox&#x27;s quaddiameter algorithm as ~80 lines of pure Python, solve the system bottom-up from the 131 terminals with the Poleg-Polsky terminal mean fixed, and produce a sibling asset dsgc-baseline-morphology-rall. Compare against the Strahler-calibrated asset by per-branch axial resistance, total surface area, and per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types: write-library, comparative-analysis.
+
+## Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep
+ID: S-0010-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Source paper: 10.1038_s41467-019-09147-4
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-20
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove the headful &#x27;from neuron import h, gui&#x27; import and the hardcoded C:\Users\geoff\NEURONoutput path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012 tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port task can budget 3-4 hours and reach P3.
+
+## Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle grid to 12 angles
+ID: S-0010-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Source paper: 10.1016_j.celrep.2025.116833
+Categories: direction-selectivity, compartmental-modeling, synaptic-integration
+Date added: 2026-04-20
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE). Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap; budget 4-6 hours for full P3.
+
+## Write forward-only driver for PolegPolsky2026 DS-mechanisms model and pursue LICENSE
+ID: S-0010-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Source paper: 10.1038_s41467-026-70288-4
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+PolegPolskyLab/DS-mechanisms ships only a GA-training harness (numGen=300, popSize=50) and has no LICENSE file, which blocks library-asset registration under this project&#x27;s rules. A follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a single-parameter-set forward-only &#x27;simulate at angle theta&#x27; driver from the GA inner loop so the model can be scored against the canonical 12-angle sweep without running the full GA.
+
+## Extend DSGC model corpus to Arbor and NetPyNE reimplementations
+ID: S-0010-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-04-20
+
+All three candidates hunted in t0010 use NEURON; t0010&#x27;s DROP list includes Schachter2010 (NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC compartmental models specifically, since those simulators are becoming standard for large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
+
+## Build a headless-port scaffold library that wraps upstream NEURON models
+ID: S-0010-05
+Status: active
+Priority: high
+Kind: library
+Source task: t0010_hunt_missed_dsgc_models
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-04-20
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless NEURON loader that stubs out &#x27;from neuron import gui&#x27;, (b) a configurable output-path layer, and (c) a canonical 12-angle stimulus generator would let future port tasks skip the driver-rewrite step and go straight to P2/P3 scoring.
+
+## Add Elsevier-login fallback to the paper-download workflow
+ID: S-0010-06
+Status: active
+Priority: low
+Kind: technique
+Source task: t0010_hunt_missed_dsgc_models
+Source paper: 10.1016_j.celrep.2025.116833
+Date added: 2026-04-20
+
+t0010 failed to download the deRosenroll2026 PDF (Elsevier HTTP 403 on anonymous access) but succeeded on other publishers. A follow-up infrastructure task should add a Sheffield institutional-login-aware download path (or a manual-fetch checkpoint) to the /add-paper skill so future Elsevier-hosted papers can be registered with download_status=success instead of requiring a failure record.
 
 ## Add a verify_library_asset.py framework verificator for library asset structure and metadata
 ID: S-0012-01

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-20T13:04:58Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-20T14:49:18Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>1681</char_count>
-    <byte_count>1681</byte_count>
-    <estimated_tokens>420</estimated_tokens>
+    <char_count>1720</char_count>
+    <byte_count>1720</byte_count>
+    <estimated_tokens>430</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -33,6 +33,7 @@ Spent: 0.0%
 * t0007_install_neuron_netpyne: $0.00
 * t0008_port_modeldb_189347: $0.00
 * t0009_calibrate_dendritic_diameters: $0.00
+* t0010_hunt_missed_dsgc_models: $0.00
 * t0012_tuning_curve_scoring_loss_library: $0.00
 * t0014_brainstorm_results_3: $0.00
 * t0015_literature_survey_cable_theory: $0.00

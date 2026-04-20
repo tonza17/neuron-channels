@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T13:04:58Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T14:49:18Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>105221</char_count>
-    <byte_count>105298</byte_count>
-    <estimated_tokens>26305</estimated_tokens>
+    <char_count>106146</char_count>
+    <byte_count>106219</byte_count>
+    <estimated_tokens>26536</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -121,6 +121,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0007_install_neuron_netpyne</id>
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
@@ -130,7 +131,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 16
+Completed tasks: 17
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -186,6 +187,12 @@ Completed: 2026-04-20
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
 
+## Hunt DSGC compartmental models missed by prior survey; port runnable ones
+ID: t0010_hunt_missed_dsgc_models
+Completed: 2026-04-20
+Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
+Result summary: Results Summary: Hunt DSGC Compartmental Models Missed by Prior Survey Summary Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002 and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky 2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026, Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not biophysics bugs. Produced one answer asset summarising every candidate and outcome. Metrics * **Candidates found**: **14** (3 HIGH-priority, 2...
+
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
 Completed: 2026-04-20
@@ -233,98 +240,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
-
-## Hunt DSGC compartmental models missed by prior survey; port runnable ones
-ID: t0010_hunt_missed_dsgc_models
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
-Dependencies: t0008_port_modeldb_189347
-
-#### Motivation
-
-The t0002 literature survey built a 20-paper corpus biased toward the six seed references from
-`project/description.md` and adjacent DSGC papers. The t0008 ModelDB port focussed on entry 189347
-(Poleg-Polsky &amp; Diamond 2016) and its immediate siblings. Neither task exhaustively searched
-post-2020 publications, non-ModelDB repositories (GitHub / OSF / Zenodo / institutional pages), or
-adjacent computational neuroscience venues (NeurIPS, Cosyne, bioRxiv) for DSGC compartmental models.
-This task closes that gap: actively hunt for DSGC compartmental models the project might have
-missed, download their papers, and port any models that have runnable code and are scientifically
-relevant.
-
-#### Scope
-
-1. **Systematic search** across:
-   * ModelDB full listing under keywords `direction selective`, `retina`, `DSGC`, `RGC`,
-     `Starburst`, `SAC` (broader than the t0008 sweep).
-   * GitHub search: `DSGC`, `retinal ganglion direction`, `NetPyNE direction`, `Arbor retina`,
-     `NEURON DSGC`.
-   * Google Scholar + Semantic Scholar forward-citation chains of:
-     * Poleg-Polsky &amp; Diamond 2016
-     * Schachter et al. 2010
-     * Park et al. 2014
-     * Sethuramanujam et al. 2016
-     * Hanson et al. 2019
-   * bioRxiv + preprint servers, 2023-2025, keyword `direction-selective ganglion cell`.
-2. **Download** any paper not already in `assets/paper/` that meets the inclusion bar: publishes a
-   compartmental (not rate-coded / not purely statistical) DSGC model with at least partial
-   biophysical detail.
-3. **Port** any paper with public code that:
-   * Runs in Python 3.12 + NEURON 8.2.7 (or Arbor 0.12.0).
-   * Can load `dsgc-baseline-morphology-calibrated` or bring its own morphology.
-   * Produces an angle-resolved tuning curve.
-4. **Report** every candidate in a single answer asset with a per-model row: paper DOI, code URL,
-   NEURON compatibility, whether ported, and if not, why not.
-
-#### Dependencies
-
-* **t0008_port_modeldb_189347** — gives us a working NEURON-based reference implementation to
-  contrast with any newly ported model and a pattern for how to port additional models.
-
-#### Expected Outputs
-
-* **1 answer asset** (`assets/answer/missed-dsgc-models-hunt-report/`) summarising every candidate
-  found and the outcome of each port attempt.
-* **N paper assets** for any new papers (DOI-keyed, v3-spec-compliant). Exact count depends on what
-  the search turns up.
-* **0 or more library assets** for any successfully ported models (`assets/library/&lt;model-slug&gt;/`).
-  Exact count depends on what was portable.
-* **Simulated tuning-curve CSVs** under `data/tuning_curves/` for every ported model, formatted
-  identically to the t0008 outputs so t0011 can render them side-by-side.
-
-#### Approach
-
-Run the search in three passes (ModelDB full sweep, GitHub + OSF + Zenodo, Google Scholar forward
-citations). Maintain a single `data/candidates.csv` that grows across passes and records
-duplicate-vs-new status against t0002&#x27;s corpus. Decide portability by actually cloning the repo and
-running the demo, not by reading the README; record every port attempt&#x27;s stdout/stderr under `logs/`
-so reviewers can audit the call.
-
-#### Questions the task answers
-
-1. Which DSGC compartmental models exist in the literature or in public code that the t0002 survey
-   and the t0008 ModelDB port missed?
-2. Of those, which have runnable public code in this environment?
-3. How does each successfully ported model&#x27;s tuning curve compare with the t0008 Poleg-Polsky
-   reproduction and with the canonical `target-tuning-curve`?
-4. Are there consistent disagreements across ports (e.g., systematically narrower HWHM, higher null
-   firing) that warrant new experiment suggestions?
-
-#### Risks and Fallbacks
-
-* **Search finds no new portable models**: document the gap as a new suggestion; the answer asset&#x27;s
-  table should still be produced listing every candidate considered and why each was excluded.
-* **Port attempts consistently fail**: surface that as a finding — published DSGC compartmental code
-  is often fragile — rather than inventing fixes that change the original model&#x27;s behaviour.
-* **Search produces too many candidates to port within this task**: triage by (a) citation count,
-  (b) publication year (newer first), (c) whether the code is in a simulator already on this
-  workstation. Port the top 3-5 and list the rest as suggestions.
+Planned or active tasks: 2
 
 ## Response-visualisation library (firing rate vs angle graphs)
 ID: t0011_response_visualization_library
@@ -497,13 +417,14 @@ Covers suggestion **S-0005-01**.
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>dsgc-missed-models-survey</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>nav-kv-combinations-for-dsgc-modelling</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 9
+Answers: 10
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -544,6 +465,14 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, synaptic-integration, compartmental-modeling
 
 Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
+
+## What DSGC compartmental models published in public literature were missed by tasks t0002 and t0008, and which of them are viable ports for this project?
+ID: dsgc-missed-models-survey
+Created by: t0010_hunt_missed_dsgc_models on 2026-04-20
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+
+Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in the t0002 corpus but had never been ported. None of the three HIGH-priority candidates completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus heavy out-of-env dependencies; Poleg-Polsky...
 
 ## Can ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline?
 ID: dsgc-modeldb-port-reproduction-report
@@ -602,6 +531,9 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0009-01</id>
         <id>S-0009-02</id>
         <id>S-0009-03</id>
+        <id>S-0010-01</id>
+        <id>S-0010-02</id>
+        <id>S-0010-05</id>
         <id>S-0012-01</id>
         <id>S-0012-03</id>
         <id>S-0015-01</id>
@@ -633,6 +565,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0009-05</id>
         <id>S-0009-06</id>
         <id>S-0009-08</id>
+        <id>S-0010-03</id>
+        <id>S-0010-04</id>
         <id>S-0012-02</id>
         <id>S-0012-04</id>
         <id>S-0012-05</id>
@@ -647,13 +581,14 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0004-02</id>
         <id>S-0008-05</id>
         <id>S-0009-07</id>
+        <id>S-0010-06</id>
         <id>S-0012-06</id>
         <id>S-0017-04</id>
         <id>S-0018-04</id>
         <id>S-0019-04</id>
       </source_ids>
       <content>
-Open suggestions: 69
+Open suggestions: 75
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -794,6 +729,27 @@ Priority: high
 Kind: technique
 Source task: t0009_calibrate_dendritic_diameters
 Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation): it tunes channel densities against single-cell...
+
+## Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep
+ID: S-0010-01
+Priority: high
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove the headful &#x27;from neuron import h, gui&#x27; import and the hardcoded C:\Users\geoff\NEURONoutput path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012 tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port task can budget 3-4 hours and reach P3.
+
+## Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle grid to 12 angles
+ID: S-0010-02
+Priority: high
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE). Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap; budget 4-6 hours for full P3.
+
+## Build a headless-port scaffold library that wraps upstream NEURON models
+ID: S-0010-05
+Priority: high
+Kind: library
+Source task: t0010_hunt_missed_dsgc_models
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless NEURON loader that stubs out &#x27;from neuron import gui&#x27;, (b) a configurable output-path layer, and (c) a canonical 12-angle stimulus generator would let future port tasks skip the driver-rewrite step and go straight to P2/P3 scoring.
 
 ## Add a verify_library_asset.py framework verificator for library asset structure and metadata
 ID: S-0012-01
@@ -1012,6 +968,20 @@ Kind: library
 Source task: t0009_calibrate_dendritic_diameters
 Rall&#x27;s 3/2 power rule (r_parent^(3/2) = sum r_child^(3/2)) is the only biophysically principled way to match impedance across a binary tree; our max-child Strahler bins have no such guarantee. Implement TREES-toolbox&#x27;s quaddiameter algorithm as ~80 lines of pure Python, solve the system bottom-up from the 131 terminals with the Poleg-Polsky terminal mean fixed, and produce a sibling asset dsgc-baseline-morphology-rall. Compare against the Strahler-calibrated asset by per-branch axial resistance, total surface area, and per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task...
 
+## Write forward-only driver for PolegPolsky2026 DS-mechanisms model and pursue LICENSE
+ID: S-0010-03
+Priority: medium
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+PolegPolskyLab/DS-mechanisms ships only a GA-training harness (numGen=300, popSize=50) and has no LICENSE file, which blocks library-asset registration under this project&#x27;s rules. A follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a single-parameter-set forward-only &#x27;simulate at angle theta&#x27; driver from the GA inner loop so the model can be scored against the canonical 12-angle sweep without running the full GA.
+
+## Extend DSGC model corpus to Arbor and NetPyNE reimplementations
+ID: S-0010-04
+Priority: medium
+Kind: experiment
+Source task: t0010_hunt_missed_dsgc_models
+All three candidates hunted in t0010 use NEURON; t0010&#x27;s DROP list includes Schachter2010 (NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC compartmental models specifically, since those simulators are becoming standard for large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
+
 ## Parametric curve fitting (von Mises / wrapped Gaussian) for sub-degree HWHM estimates on sparse 12-angle grids
 ID: S-0012-02
 Priority: medium
@@ -1109,6 +1079,13 @@ Priority: low
 Kind: dataset
 Source task: t0009_calibrate_dendritic_diameters
 The calibration imposes a nearby cell&#x27;s diameters on our topology; a cell-specific ground truth would validate or refute the transfer. The 141009_Pair1DSGC reconstruction came from the Murphy-Baum / Feller two-photon rig; contact the original authors to obtain the raw image stack and run a segmentation + radius-estimation pipeline (e.g., Vaa3D or neuTube) to recover per-compartment diameters. Register the result as dsgc-baseline-morphology-imaged and use it as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external data availability; likely requires an intervention for author contact. Recommended task types: download-dataset, data-analysis.
+
+## Add Elsevier-login fallback to the paper-download workflow
+ID: S-0010-06
+Priority: low
+Kind: technique
+Source task: t0010_hunt_missed_dsgc_models
+t0010 failed to download the deRosenroll2026 PDF (Elsevier HTTP 403 on anonymous access) but succeeded on other publishers. A follow-up infrastructure task should add a Sheffield institutional-login-aware download path (or a manual-fetch checkpoint) to the /add-paper skill so future Elsevier-hosted papers can be registered with download_status=success instead of requiring a failure record.
 
 ## Cross-validate compute_reliability against independent split-half implementations (odd-even, bootstrap, Spearman-Brown)
 ID: S-0012-06

@@ -1,6 +1,6 @@
-# Answers (9)
+# Answers (10)
 
-9 answer(s).
+10 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -192,6 +192,42 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+
+</details>
+
+<details>
+<summary><strong>What DSGC compartmental models published in public literature were
+missed by tasks t0002 and t0008, and which of them are viable ports for
+this project?</strong></summary>
+
+**Confidence**: medium
+
+Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et
+al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature
+Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in
+the t0002 corpus but had never been ported. None of the three HIGH-priority candidates
+completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each
+failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python
+driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus
+heavy out-of-env dependencies; Poleg-Polsky: genetic-algorithm training driver with `numDir=2`
+and no LICENSE). Zero library assets were registered per the "never leave a broken library
+behind" rule, and all three candidates are recorded as `p2_failed` in `data/candidates.csv`.
+Deeper investment (hand-rewriting each driver) would very plausibly succeed; the 90-minute cap
+is the binding constraint, not a definitive portability verdict.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0010_hunt_missed_dsgc_models/assets/answer/dsgc-missed-models-survey/full_answer.md) |
+| **ID** | [`dsgc-missed-models-survey`](../../tasks/t0010_hunt_missed_dsgc_models/assets/answer/dsgc-missed-models-survey/) |
+| **Question** | What DSGC compartmental models published in public literature were missed by tasks t0002 and t0008, and which of them are viable ports for this project? |
+| **Methods** | `papers`, `internet`, `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1016_j.celrep.2025.116833`, `10.1038_s41467-026-70288-4`, `10.7554_eLife.42392` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **URL sources** | [url 1](https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model), [url 2](https://github.com/geoffder/ds-circuit-ei-microarchitecture), [url 3](https://doi.org/10.5281/zenodo.17666157), [url 4](https://github.com/PolegPolskyLab/DS-mechanisms), [url 5](https://modeldb.science/189347), [url 6](https://modeldb.science/267646) |
+| **Created by** | [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
 
 </details>
 

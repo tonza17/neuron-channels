@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-20T13:04:58Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-20T14:49:18Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>80963</char_count>
-    <byte_count>81034</byte_count>
-    <estimated_tokens>20240</estimated_tokens>
+    <char_count>84394</char_count>
+    <byte_count>84471</byte_count>
+    <estimated_tokens>21098</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -124,6 +124,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0007_install_neuron_netpyne</id>
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
@@ -133,7 +134,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 16
+Completed tasks: 17
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -189,6 +190,12 @@ Completed: 2026-04-20
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
 
+## Hunt DSGC compartmental models missed by prior survey; port runnable ones
+ID: t0010_hunt_missed_dsgc_models
+Completed: 2026-04-20
+Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
+Result summary: Results Summary: Hunt DSGC Compartmental Models Missed by Prior Survey Summary Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002 and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky 2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026, Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not biophysics bugs. Produced one answer asset summarising every candidate and outcome. Metrics * **Candidates found**: **14** (3 HIGH-priority, 2...
+
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
 Completed: 2026-04-20
@@ -236,19 +243,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
-
-## Hunt DSGC compartmental models missed by prior survey; port runnable ones
-ID: t0010_hunt_missed_dsgc_models
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
-Dependencies: t0008_port_modeldb_189347
+Planned or active tasks: 2
 
 ## Response-visualisation library (firing rate vs angle graphs)
 ID: t0011_response_visualization_library
@@ -274,13 +273,14 @@ Dependencies: t0005_download_dsgc_morphology
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>dsgc-missed-models-survey</id>
         <id>dsgc-modeldb-port-reproduction-report</id>
         <id>nav-kv-combinations-for-dsgc-modelling</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 9
+Answers: 10
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -322,6 +322,14 @@ Categories: dendritic-computation, direction-selectivity, synaptic-integration, 
 
 Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
 
+## What DSGC compartmental models published in public literature were missed by tasks t0002 and t0008, and which of them are viable ports for this project?
+ID: dsgc-missed-models-survey
+Created by: t0010_hunt_missed_dsgc_models on 2026-04-20
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+
+Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in the t0002 corpus but had never been ported. None of the three HIGH-priority candidates completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus heavy out-of-env dependencies; Poleg-Polsky...
+
 ## Can ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline?
 ID: dsgc-modeldb-port-reproduction-report
 Created by: t0008_port_modeldb_189347 on 2026-04-20
@@ -359,6 +367,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1038_s41467-026-70288-4</id>
+        <id>10.1016_j.celrep.2025.116833</id>
         <id>10.1016_j.neuroscience.2021.08.024</id>
         <id>10.1126_sciadv.abb6642</id>
         <id>10.1126_science.aan3846</id>
@@ -405,7 +415,21 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 44
+Papers: 46
+
+## Machine learning discovers numerous new computational principles underlying direction selectivity in the retina
+ID: 10.1038_s41467-026-70288-4
+Year: 2026
+Authors: Alon Poleg-Polsky
+Added by task: t0010_hunt_missed_dsgc_models
+Poleg-Polsky uses a machine-learning parameter search over a 352-segment biophysical model of a mouse ON-OFF DSGC to enumerate mechanisms that can produce direction selectivity. The search space includes bipolar-cell input geometry, synaptic kinetics, NMDA receptor placement and strength, dendritic voltage-gated channel densities, and the presence or absence of SAC-derived inhibition. Thousands of candidate configurations are simulated under standardised moving-bar stimuli and scored on DSI. The search reveals that many qualitatively different mechanisms...
+
+## Uncovering the “hidden” synaptic microarchitecture of the retinal direction selective circuit
+ID: 10.1016_j.celrep.2025.116833
+Year: 2026
+Authors: Geoff deRosenroll, Santhosh Sethuramanujam, Gautam B. Awatramani
+Added by task: t0010_hunt_missed_dsgc_models
+This paper addresses how starburst amacrine cells shape direction selectivity in ON-OFF DSGCs at the subcellular scale, focusing on the differential release of GABA and ACh. The authors combine two-photon Ca2+ imaging of local DSGC dendritic subunits with a biophysically detailed NEURON network model that explicitly represents the anatomical offset between SAC-GABA and SAC-ACh synapses onto the DSGC. Using acetylcholinesterase blockade, they perturb ACh dynamics while preserving the global excitation/inhibition balance across the dendritic tree...
 
 ## Voltage Clamp Errors During Estimation of Concurrent Excitatory and Inhibitory Synaptic Input to Neurons with Dendrites
 ID: 10.1016_j.neuroscience.2021.08.024

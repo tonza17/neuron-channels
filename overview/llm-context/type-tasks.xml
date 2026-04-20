@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T13:04:58Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T14:49:18Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>116363</char_count>
-    <byte_count>116785</byte_count>
-    <estimated_tokens>29090</estimated_tokens>
+    <char_count>118149</char_count>
+    <byte_count>118581</byte_count>
+    <estimated_tokens>29537</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1088,12 +1088,13 @@ while total dendritic surface area grows **7.99x** and total dendritic axial res
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
-Status: in_progress
+Status: completed
 Effective date: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Dependencies: t0008_port_modeldb_189347
 Task types: literature-survey, download-paper, code-reproduction
 Start time: 2026-04-20T12:25:27Z
+End time: 2026-04-20T14:42:24Z
 
 #### Motivation
 
@@ -1173,6 +1174,39 @@ so reviewers can audit the call.
 * **Search produces too many candidates to port within this task**: triage by (a) citation count,
   (b) publication year (newer first), (c) whether the code is in a simulator already on this
   workstation. Port the top 3-5 and list the rest as suggestions.
+
+### Results Summary
+
+#### Summary
+
+Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002
+and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky
+2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026,
+Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock
+budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not
+biophysics bugs. Produced one answer asset summarising every candidate and outcome.
+
+#### Metrics
+
+* **Candidates found**: **14** (3 HIGH-priority, 2 MEDIUM, 1 LOW, 8 DROP) across 37 queries
+* **New papers registered**: **2** (one `download_status=success`, one `download_status=failed` due
+  to Elsevier HTTP 403 on anonymous access)
+* **Port attempts**: **3/3 HIGH-priority** completed and logged; **0/3 reached P3** (canonical
+  sweep); all three marked `p2_failed` with explicit structural-block reasons
+* **Library assets produced**: **0** (plan explicitly permits this outcome; no broken scaffolds were
+  left behind)
+* **Answer assets produced**: **1** (`dsgc-missed-models-survey`, confidence=medium, 2,753-word full
+  answer, 219-word short answer, 3 paper evidence IDs)
+* **Total spend**: **$0.00** (local-only, no remote machines)
+
+#### Verification
+
+* `verify_task_folder.py` — **PASSED** (0 errors, 0 warnings)
+* `verify_research_papers.py` — PASSED (0 errors, 1 informational RP-W002 warning inherited from
+  historical no-doi slug in Hausser-Mel-2003)
+* `verify_research_internet.py` — PASSED (0 errors, 0 warnings)
+* `verify_research_code.py` — PASSED (0 errors, 0 warnings)
+* `verify_plan.py` — PASSED (0 errors, 0 warnings)
 
 ## Response-visualisation library (firing rate vs angle graphs)
 ID: t0011_response_visualization_library

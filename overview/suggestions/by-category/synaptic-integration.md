@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-9 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **7 open** (2 high, 5
+10 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **8 open** (3 high, 5
 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
@@ -9,6 +9,27 @@ medium), **2 closed**.
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
