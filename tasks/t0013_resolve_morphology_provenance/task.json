@@ -5,11 +5,11 @@
   "name": "Resolve dsgc-baseline-morphology source-paper provenance",
   "short_description": "Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0005_download_dsgc_morphology"
   ],
-  "start_time": null,
+  "start_time": "2026-04-20T16:26:01Z",
   "end_time": null,
   "expected_assets": {
     "paper": 2
