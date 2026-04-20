@@ -113,7 +113,7 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Skipped: survey produces no quantitative comparable metrics.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
       "log_file": "logs/steps/013_compare-literature/"
