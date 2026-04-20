@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review papers in t0015-t0019 surveys for on-the-path shunting, AIS channel split, E-I temporal co-tuning priors.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T22:48:35Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T22:59:41Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
