@@ -1,0 +1,11 @@
+Building DSGC for gabaMOD-swap sweep...
+	0
+	1
+	1
+	1
+  countON=282 numsyn=282
+  PD (n=20): mean =  14.85 Hz
+  ND (n=20): mean =   1.80 Hz
+  DSI estimate: 0.7838
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\data\tuning_curves.csv

@@ -1,0 +1,21 @@
+{
+  "protocol": "gabamod_swap",
+  "n_trials_per_condition": 20,
+  "n_pd_trials": 20,
+  "n_nd_trials": 20,
+  "mean_pd_hz": 14.85,
+  "mean_nd_hz": 1.8,
+  "std_pd_hz": 1.5898113095584645,
+  "std_nd_hz": 1.0295630140987,
+  "dsi": 0.7837837837837838,
+  "peak_hz": 14.85,
+  "gate": {
+    "dsi_min": 0.7,
+    "dsi_max": 0.85,
+    "peak_min_hz": 40.0,
+    "peak_max_hz": 80.0,
+    "dsi_in_range": true,
+    "peak_in_range": false,
+    "passed": false
+  }
+}
