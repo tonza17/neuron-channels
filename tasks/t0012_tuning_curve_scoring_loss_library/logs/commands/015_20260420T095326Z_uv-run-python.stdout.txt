@@ -1,0 +1,435 @@
+{
+  "suggestion_count": 28,
+  "suggestions": [
+    {
+      "id": "S-0002-01",
+      "title": "Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge",
+      "description": "No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1152_jn.00123.2009",
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-02",
+      "title": "Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -> ~0.7)",
+      "description": "Schachter2010 reports that switching DSGC dendrites from passive to active (adding Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and isolates the dendritic-conductance contribution from morphology and synaptic effects. Recommended task types: experiment-run, comparative-analysis.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-04",
+      "title": "Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count",
+      "description": "ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1523_ENEURO.0261-21.2021",
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-05",
+      "title": "GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry",
+      "description": "PolegPolsky2016 sets GABA/AMPA at 1:1 (177/177), while Park2014 and Taylor2002 constrain the null/preferred IPSC ratio to 3-5x but not the total GABA density. Scan the GABA/AMPA density ratio from 0.5 to 4.0 (keeping the 3-5x null asymmetry fixed, the 40-80 Hz preferred peak fixed by the Na/K ridge, and the morphology and dendritic conductances fixed) and report how tuning-curve HWHM and preferred peak rate co-vary. The expected pattern (sharper tuning at the cost of lower peak rate) is stated in research_internet.md as hypothesis H4 but is not yet tested in the literature. This directly refines the RQ3 answer. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-06",
+      "title": "NMDA multiplicative-gain ablation to isolate its contribution to DSI",
+      "description": "PolegPolsky2016 reports that NMDA receptors multiplicatively scale excitatory drive by ~2x and sharpen directional discrimination, but the survey did not find a published ablation that isolates the NMDA contribution independently of the AMPA+GABA core. Run three configurations on the reproduced DSGC baseline (AMPA+GABA only, AMPA+GABA+NMDA with PolegPolsky2016 NMDA parameters, AMPA+GABA+NMDA with NMDA_gain swept 1-4x) and report the DSI, peak rate, and HWHM trajectories. This answers a specific open RQ3/RQ4-adjacent question that the literature states but does not isolate experimentally. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-07",
+      "title": "Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision)",
+      "description": "research_internet.md catalogues 22 peer-reviewed candidates but only 20 became paper assets. The held-back items are Sivyer2017 (dendro-dendritic cholinergic control of dendritic spike initiation, Nat Commun), Euler2002 (SAC dendritic Ca signals are themselves directional, Nature), Enciso2010 (SAC-network compartmental model, J Comp Neurosci), and the Webvision-DSGC review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic drive for RQ3, and Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA input for the DSGC model. Download them via /add-paper in a dedicated task and extend the corpus to 24 papers. Recommended task types: download-paper, literature-survey.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-08",
+      "title": "Register SAC presynaptic drive model as an asset for downstream DSGC input construction",
+      "description": "Briggman2011 (SBEM wiring) and Ding2016 (cross-species comparison) supply the structural E/I bias; Park2014 and Taylor2002 supply the 3-5x null/preferred IPSC amplitudes; Sethuramanujam2016 adds ACh/GABA co-release; Hanson2019 challenges the pure SAC-asymmetry model. Consolidate these findings into a pre-built SAC presynaptic drive asset (a reusable library or dataset: angle-dependent GABA conductance time courses, AMPA time courses, and their spatial distributions on a DSGC) so downstream DSGC simulation tasks do not each re-implement the presynaptic waveform construction. The asset should expose a pure-function API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse conductance time courses. Recommended task types: write-library, feature-engineering.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1038_nature09818",
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-10",
+      "title": "Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark",
+      "description": "Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1523_JNEUROSCI.5017-13.2014",
+      "categories": [
+        "patch-clamp",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-02",
+      "title": "Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into the project as a library asset",
+      "description": "Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and register the resulting Python package as a library asset under `assets/library/`. This makes the DSGC reference implementation available to every downstream simulation task without re-download.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-03",
+      "title": "Benchmark NEURON vs Arbor on the project's actual DSGC morphology",
+      "description": "Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation. Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged as the main Arbor adoption risk.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-04",
+      "title": "Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies",
+      "description": "Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an `assets/library/` entry plus a one-page usage example. This unblocks every downstream tuning-curve experiment that needs to run more than one parameter combination.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-05",
+      "title": "Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption",
+      "description": "NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0004-01",
+      "title": "Generate weaker-DSI variant target tuning curves",
+      "description": "Create sibling dataset assets (e.g., target-tuning-curve-weak-dsi, target-tuning-curve-mid-dsi) with the same generator but r_peak values chosen so DSI lands at ~0.65 and ~0.75. Lets downstream fitting tasks test whether the optimisation pipeline is robust across the 0.6-0.9 band instead of only the upper end.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0004_generate_target_tuning_curve",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0004-02",
+      "title": "Add a Poisson-noise variant of the target trials",
+      "description": "Replace the current Gaussian-noise trial replicates with Poisson counts converted to rates (Fano factor ~1) and register it as a separate dataset asset. This would give tuning_curve_reliability a noise model closer to real spike statistics while keeping the closed-form mean curve unchanged.",
+      "kind": "dataset",
+      "priority": "low",
+      "source_task": "t0004_generate_target_tuning_curve",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-03",
+      "title": "Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis",
+      "description": "The current dsgc-baseline-morphology commits the project to a single reconstructed cell (141009_Pair1DSGC). Cell-to-cell variability in branching pattern, total path length, and arbor extent is a known source of variance in DSGC tuning curves (RQ2), and the Feller archive on NeuroMorpho hosts several sibling ON-OFF DSGC reconstructions from the same lab (e.g., 141009_Pair2DSGC and other 2014 Pair* records). Download 3-5 additional Feller-archive ON-OFF DSGC SWCs as separate dataset assets (each with its own NeuroMorpho neuron_id and provenance), validate each with the existing validate_swc.py parser, and tabulate per-cell compartment count, branch points, and total dendritic path length so a downstream morphology-sweep task can quantify cross-cell variability without committing a priori to a specific morphology. Recommended task types: download-dataset.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-04",
+      "title": "Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology",
+      "description": "Every downstream compartmental-modelling task in this project will need to load the dsgc-baseline-morphology SWC into a simulator and produce a section/segment graph indexed by SWC compartment id, soma reference, and per-section parent links. NEURON's built-in Import3d handling of CNG SWCs is fragile (soma-3point convention, branch-point splitting, axon stubs) and other simulators have their own quirks (NetPyNE's netParams.cellParams, Arbor's morphology builder). Write a small library asset that exposes a pure-function load_dsgc_morphology(simulator: str) -> SimulatorMorphology API with verified-equivalent loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total path length and compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types: write-library.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-05",
+      "title": "Render and QA-check 2D/3D visualisations of dsgc-baseline-morphology for documentation and synapse placement",
+      "description": "The dsgc-baseline-morphology asset is currently described only by tabulated statistics (6,736 compartments, 129 branch points, 1,536.25 um path length). Downstream tasks that place AMPA/GABA synapses by spatial rule (e.g., Park2014 3-5x null/preferred IPSC asymmetry, S-0002-05 GABA/AMPA density scan) need a visual reference for the dendritic arbor, branch-order map, and soma orientation; reviewers also need a figure for any project paper. Render three QA visualisations (2D top-down dendrogram coloured by Strahler order, 2D xy projection coloured by path distance from soma, 3D rotating xyz scatter) using neurom + matplotlib (or NEURON's PlotShape) and register the figures plus the rendering script as an answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types: data-analysis, answer-question.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-01",
+      "title": "Validate custom khhchan.mod biophysics with a dedicated sanity simulation",
+      "description": "The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace against the built-in hh to confirm the custom mechanism produces physiologically plausible spikes before downstream retinal tasks depend on it.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-02",
+      "title": "Script the full NEURON + NetPyNE install for clean-machine reproduction",
+      "description": "The NSIS installer's /S flag ignored the /D= prefix, forcing an interactive GUI step. Ship a PowerShell / bash installer script that (a) downloads nrn-8.2.7-setup.exe to a known path, (b) drives the install with the correct prefix (either by default-install-then-move or by a chocolatey recipe), (c) writes the .pth file into the uv venv, and (d) runs nrnivmodl + both sanity sims end-to-end. This unblocks automated reproduction on a fresh Windows machine and Linux / macOS CI runners.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-03",
+      "title": "Benchmark NetPyNE harness overhead vs raw NEURON across problem sizes",
+      "description": "At the single-compartment size, NetPyNE's setup is ~6× slower than raw NEURON (38.7 ms vs 6.7 ms) but runtime is indistinguishable. Scan both harnesses across realistic retinal network sizes (1, 10, 100, 1000 cells; dense and sparse connectivity) to quantify where NetPyNE's cost becomes significant for downstream t0008 / t0010 / t0011 runs, and decide whether any hot-loop experiments should stay in raw NEURON.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0009-01",
+      "title": "Inverse-fit three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient",
+      "description": "The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter 2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid / terminal) structure but treat the three radii as free parameters; fit them in a NEURON passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in 150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means (3.694/1.653/0.439 um) and emit a corrections file that overrides dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions against Schachter's tree. Recommended task types: feature-engineering, experiment-run.",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-02",
+      "title": "Interpolate soma pt3dadd diameters along the principal axis to replace the uniform 4.118 um soma radius",
+      "description": "All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the bell-shaped taper (~3.07 um to 5.31 um) visible in the five central Poleg-Polsky pt3dadd soma contour points. Run PCA on the 19 soma xyz coordinates, project each row onto the first principal component, and assign a radius by linear interpolation over the 7 Poleg-Polsky pt3dadd values mapped onto the same axis. Emit a corrections file that overrides the 19 soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current-density distribution for downstream spike-initiation simulations without changing the mean soma radius or any dendritic row. Creative_thinking.md section F4. Recommended task types: feature-engineering, correction.",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-03",
+      "title": "Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky 2016 spike shape and distal Ih sag",
+      "description": "Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation): it tunes channel densities against single-cell electrophysiological waveforms, not tuning curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI experiments. Recommended task types: experiment-run, feature-engineering.",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-04",
+      "title": "Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section diameter lookup to drop Strahler binning entirely",
+      "description": "Our three-bin heuristic collapses 170 Poleg-Polsky mid-role sections into one 1.653 um radius (section F1 of creative_thinking.md). A lossless alternative is to Procrustes-align the CNG xyz points with the Poleg-Polsky RGCmodel.hoc pt3dadd points, then for each CNG compartment copy the diameter of the nearest registered source section. Preserves all 350 source diameters and eliminates both the tie-break-induced primary bin boundary (section F3) and the bin-collapse interior variability. Deliverable: a sibling dataset asset dsgc-baseline-morphology-registered with a registration-quality report (residual xyz distance per compartment). Emit corrections if registration succeeds with sub-micron residuals. Recommended task types: feature-engineering, data-analysis.",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-05",
+      "title": "Sensitivity analysis: re-run DSGC simulations under alternative Strahler tie-break rules and bin boundaries",
+      "description": "The primary bin (33 compartments) is set by max_strahler_order = 5 under a max-child tie-break; a min-child or NeuroM section-based convention can push max_order to 6 and reclassify the current 33 primary compartments as mid, jumping proximal Rin by ~15% (creative_thinking.md section F3, E1). Produce 3-4 sibling calibrated SWCs under alternative tie-break rules (max-child, min-child, NeuroM section_strahler_orders, two-bin collapse) and run the downstream DSGC passive simulation from S-0009-01 on each. Report DSI, preferred peak, HWHM, and proximal/distal Rin per variant; quantify the sensitivity of downstream metrics to the heuristic choice. This makes the tie-break choice reviewable rather than arbitrary. Recommended task types: experiment-run, comparative-analysis.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "cable-theory"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-06",
+      "title": "Re-type SWC by section role (soma / primary / mid / terminal) as a sibling dataset asset",
+      "description": "The calibrated SWC uses only SWC type codes 1 (soma) and 3 (dendrite); downstream NEURON tasks that set section-specific conductance densities (e.g., Na 150/150/30 mS/cm^2, K 70/70/35) must re-derive Strahler order every time. Produce a sibling dataset asset dsgc-baseline-morphology-calibrated-typed that re-types each row to 1 (soma), 5 (primary), 3 (mid), or 6 (terminal) using the calibration's bin labels. Topology, xyz, and parent_id are preserved; only type_code changes. Add a conversion script and a smoke test that confirms NEURON's Import3d loader accepts the extended type codes. Cuts duplicated Strahler recomputation from every downstream channel-placement task. Creative_thinking.md section A3. Recommended task types: feature-engineering.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-07",
+      "title": "Per-cell ex-vivo two-photon image segmentation of 141009_Pair1DSGC to produce a cell-specific diameter ground truth",
+      "description": "The calibration imposes a nearby cell's diameters on our topology; a cell-specific ground truth would validate or refute the transfer. The 141009_Pair1DSGC reconstruction came from the Murphy-Baum / Feller two-photon rig; contact the original authors to obtain the raw image stack and run a segmentation + radius-estimation pipeline (e.g., Vaa3D or neuTube) to recover per-compartment diameters. Register the result as dsgc-baseline-morphology-imaged and use it as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external data availability; likely requires an intervention for author contact. Recommended task types: download-dataset, data-analysis.",
+      "kind": "dataset",
+      "priority": "low",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-08",
+      "title": "Port the TREES-toolbox Rall 3/2 quaddiameter rule to a pure-Python calibrator and compare against the Strahler bins",
+      "description": "Rall's 3/2 power rule (r_parent^(3/2) = sum r_child^(3/2)) is the only biophysically principled way to match impedance across a binary tree; our max-child Strahler bins have no such guarantee. Implement TREES-toolbox's quaddiameter algorithm as ~80 lines of pure Python, solve the system bottom-up from the 131 terminals with the Poleg-Polsky terminal mean fixed, and produce a sibling asset dsgc-baseline-morphology-rall. Compare against the Strahler-calibrated asset by per-branch axial resistance, total surface area, and per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types: write-library, comparative-analysis.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    }
+  ]
+}

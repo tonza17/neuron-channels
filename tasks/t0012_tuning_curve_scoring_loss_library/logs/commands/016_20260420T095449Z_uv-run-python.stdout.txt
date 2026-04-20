@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0012_tuning_curve_scoring_loss_library\tasks\t0012_tuning_curve_scoring_loss_library\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1014 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1040 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1079 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)
