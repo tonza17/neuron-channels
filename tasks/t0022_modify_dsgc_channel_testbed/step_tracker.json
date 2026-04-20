@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify all 7 dependency tasks (t0008, t0012, t0015-t0019) are completed.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T22:45:13Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
