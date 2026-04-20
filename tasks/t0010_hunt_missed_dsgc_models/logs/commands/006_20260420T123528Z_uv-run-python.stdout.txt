@@ -1,0 +1,803 @@
+{
+  "paper_count": 40,
+  "papers": [
+    {
+      "paper_id": "10.1002_cne.22678",
+      "title": "Two distinct types of ON directionally selective ganglion cells in the rabbit retina",
+      "year": 2011,
+      "authors": [
+        "Hideo Hoshi",
+        "Lian-Ming Tian",
+        "Stephen C. Massey",
+        "Stephen L. Mills"
+      ],
+      "citation_key": "Hoshi2011",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "patch-clamp",
+        "dendritic-computation"
+      ],
+      "journal": "Journal of Comparative Neurology",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2005.06.036",
+      "title": "Direction-Selective Dendritic Action Potentials in Rabbit Retina",
+      "year": 2005,
+      "authors": [
+        "Nicholas Oesch",
+        "Thomas Euler",
+        "W. Rowland Taylor"
+      ],
+      "citation_key": "Oesch2005",
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "patch-clamp"
+      ],
+      "journal": "Neuron",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2016.02.013",
+      "title": "NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion Discrimination in Retinal Ganglion Cells",
+      "year": 2016,
+      "authors": [
+        "Alon Poleg-Polsky",
+        "Jeffrey S. Diamond"
+      ],
+      "citation_key": "PolegPolsky2016",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "synaptic-integration",
+        "dendritic-computation",
+        "retinal-ganglion-cell"
+      ],
+      "journal": "Neuron",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2016.04.041",
+      "title": "A Central Role for Mixed Acetylcholine/GABA Transmission in Direction Coding in the Retina",
+      "year": 2016,
+      "authors": [
+        "Santhosh Sethuramanujam",
+        "Amanda J. McLaughlin",
+        "Geoffery deRosenroll",
+        "Alex Hoggarth",
+        "David J. Schwab",
+        "Gautam B. Awatramani"
+      ],
+      "citation_key": "Sethuramanujam2016",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "patch-clamp"
+      ],
+      "journal": "Neuron",
+      "download_status": "failed",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2017.07.020",
+      "title": "Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity",
+      "year": 2017,
+      "authors": [
+        "David Koren",
+        "James C. R. Grove",
+        "Wei Wei"
+      ],
+      "citation_key": "Koren2017",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "voltage-gated-channels",
+        "patch-clamp"
+      ],
+      "journal": "Neuron",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1038_nature09818",
+      "title": "Wiring specificity in the direction-selectivity circuit of the retina",
+      "year": 2011,
+      "authors": [
+        "Kevin L. Briggman",
+        "Moritz Helmstaedter",
+        "Winfried Denk"
+      ],
+      "citation_key": "Briggman2011",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ],
+      "journal": "Nature",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1038_nature18609",
+      "title": "Species-specific wiring for direction selectivity in the mammalian retina",
+      "year": 2016,
+      "authors": [
+        "Huayu Ding",
+        "Robert G. Smith",
+        "Alon Poleg-Polsky",
+        "Jeffrey S. Diamond",
+        "Kevin L. Briggman"
+      ],
+      "citation_key": "Ding2016",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "journal": "Nature",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1038_nrn3165",
+      "title": "Direction selectivity in the retina: symmetry and asymmetry in structure and function",
+      "year": 2012,
+      "authors": [
+        "David I. Vaney",
+        "Benjamin Sivyer",
+        "W. Rowland Taylor"
+      ],
+      "citation_key": "Vaney2012",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "dendritic-computation",
+        "synaptic-integration"
+      ],
+      "journal": "Nature Reviews Neuroscience",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1113_jphysiol.1965.sp007638",
+      "title": "The mechanism of directionally selective units in rabbit's retina.",
+      "year": 1965,
+      "authors": [
+        "H. B. Barlow",
+        "W. R. Levick"
+      ],
+      "citation_key": "Barlow1965",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ],
+      "journal": "The Journal of Physiology",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1113_jphysiol.2008.161240",
+      "title": "Physiological properties of direction-selective ganglion cells in early postnatal and adult mouse retina",
+      "year": 2009,
+      "authors": [
+        "Minggang Chen",
+        "Shijun Weng",
+        "Qiudong Deng",
+        "Zhen Xu",
+        "Shigang He"
+      ],
+      "citation_key": "Chen2009",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "patch-clamp"
+      ],
+      "journal": "The Journal of Physiology",
+      "download_status": "failed",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1113_jphysiol.2010.192716",
+      "title": "Synaptic inputs and timing underlying the velocity tuning of direction-selective ganglion cells in rabbit retina",
+      "year": 2010,
+      "authors": [
+        "Benjamin Sivyer",
+        "Michiel Van Wyk",
+        "David I. Vaney",
+        "W. Rowland Taylor"
+      ],
+      "citation_key": "Sivyer2010",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "patch-clamp"
+      ],
+      "journal": "The Journal of Physiology",
+      "download_status": "failed",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1126_science.1189664",
+      "title": "Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons",
+      "year": 2010,
+      "authors": [
+        "Tiago Branco",
+        "Beverley A. Clark",
+        "Michael Häusser"
+      ],
+      "citation_key": "Branco2010",
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "dendritic-computation",
+        "synaptic-integration"
+      ],
+      "journal": "Science",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1152_jn.00123.2009",
+      "title": "Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using Temperature as an Independent Variable",
+      "year": 2010,
+      "authors": [
+        "Jürgen F. Fohlmeister",
+        "Ethan D. Cohen",
+        "Eric A. Newman"
+      ],
+      "citation_key": "Fohlmeister2010",
+      "categories": [
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "voltage-gated-channels",
+        "patch-clamp"
+      ],
+      "journal": "Journal of Neurophysiology",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1162_neco.1997.9.6.1179",
+      "title": "The NEURON Simulation Environment",
+      "year": 1997,
+      "authors": [
+        "Michael L. Hines",
+        "Nicholas T. Carnevale"
+      ],
+      "citation_key": "Hines1997",
+      "categories": [
+        "compartmental-modeling",
+        "cable-theory",
+        "voltage-gated-channels"
+      ],
+      "journal": "Neural Computation",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1371_journal.pcbi.1000899",
+      "title": "Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a Simulation of the Direction-Selective Ganglion Cell",
+      "year": 2010,
+      "authors": [
+        "Michael J. Schachter",
+        "Nicholas Oesch",
+        "Robert G. Smith",
+        "W. Rowland Taylor"
+      ],
+      "citation_key": "Schachter2010",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation",
+        "retinal-ganglion-cell",
+        "voltage-gated-channels",
+        "synaptic-integration",
+        "cable-theory"
+      ],
+      "journal": "PLoS Computational Biology",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1523_ENEURO.0261-21.2021",
+      "title": "Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and Inhibition in Retinal Direction-Selective Ganglion Cells",
+      "year": 2021,
+      "authors": [
+        "Malak El-Quessny",
+        "Marla B. Feller"
+      ],
+      "citation_key": "ElQuessny2021",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "dendritic-computation",
+        "patch-clamp"
+      ],
+      "journal": "eNeuro",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1523_JNEUROSCI.22-17-07712.2002",
+      "title": "Diverse Synaptic Mechanisms Generate Direction Selectivity in the Rabbit Retina",
+      "year": 2002,
+      "authors": [
+        "W. Rowland Taylor",
+        "David I. Vaney"
+      ],
+      "citation_key": "Taylor2002",
+      "categories": [
+        "direction-selectivity",
+        "patch-clamp",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "journal": "The Journal of Neuroscience",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1523_JNEUROSCI.5017-13.2014",
+      "title": "Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal Ganglion Cells Lack Direction Tuning",
+      "year": 2014,
+      "authors": [
+        "Silvia J.H. Park",
+        "In-Jung Kim",
+        "Loren L. Looger",
+        "Jonathan B. Demb",
+        "Bart G. Borghuis"
+      ],
+      "citation_key": "Park2014",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "patch-clamp"
+      ],
+      "journal": "The Journal of Neuroscience",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.7554_eLife.42392",
+      "title": "Retinal direction selectivity in the absence of asymmetric starburst amacrine cell responses",
+      "year": 2019,
+      "authors": [
+        "Laura Hanson",
+        "Santhosh Sethuramanujam",
+        "Geoff deRosenroll",
+        "Varsha Jain",
+        "Gautam B Awatramani"
+      ],
+      "citation_key": "Hanson2019",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "compartmental-modeling",
+        "dendritic-computation",
+        "patch-clamp"
+      ],
+      "journal": "eLife",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.7554_eLife.52949",
+      "title": "The functional organization of excitation and inhibition in the dendrites of mouse direction-selective ganglion cells",
+      "year": 2020,
+      "authors": [
+        "Varsha Jain",
+        "Benjamin L Murphy-Baum",
+        "Geoff deRosenroll",
+        "Santhosh Sethuramanujam",
+        "Mike Delsey",
+        "Kerry R Delaney",
+        "Gautam Bhagwan Awatramani"
+      ],
+      "citation_key": "Jain2020",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "dendritic-computation",
+        "synaptic-integration",
+        "compartmental-modeling",
+        "patch-clamp"
+      ],
+      "journal": "eLife",
+      "download_status": "success",
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models"
+    },
+    {
+      "paper_id": "10.1038_382363a0",
+      "title": "Influence of dendritic structure on firing pattern in model neocortical neurons",
+      "year": 1996,
+      "authors": [
+        "Zachary F. Mainen",
+        "Terrence J. Sejnowski"
+      ],
+      "citation_key": "Mainen1996",
+      "categories": [
+        "cable-theory",
+        "dendritic-computation",
+        "compartmental-modelling"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0015_literature_survey_cable_theory"
+    },
+    {
+      "paper_id": "10.1098_rstb.1982.0084",
+      "title": "Retinal ganglion cells: a functional interpretation of dendritic morphology",
+      "year": 1982,
+      "authors": [
+        "Christof Koch",
+        "Tomaso Poggio",
+        "Vincent Torre"
+      ],
+      "citation_key": "KochPoggio1982",
+      "categories": [
+        "cable-theory",
+        "retinal-ganglion-cells",
+        "dendritic-computation"
+      ],
+      "journal": "Philosophical Transactions of the Royal Society B",
+      "download_status": "failed",
+      "added_by_task": "t0015_literature_survey_cable_theory"
+    },
+    {
+      "paper_id": "10.1126_science.289.5488.2347",
+      "title": "Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells",
+      "year": 2000,
+      "authors": [
+        "W. Rowland Taylor",
+        "Shigang He",
+        "William R. Levick",
+        "David I. Vaney"
+      ],
+      "citation_key": "Taylor2000",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cells",
+        "dendritic-computation"
+      ],
+      "journal": "Science",
+      "download_status": "failed",
+      "added_by_task": "t0015_literature_survey_cable_theory"
+    },
+    {
+      "paper_id": "10.1152_jn.1967.30.5.1138",
+      "title": "Distinguishing theoretical synaptic potentials computed for different soma-dendritic distributions of synaptic input",
+      "year": 1967,
+      "authors": [
+        "Wilfrid Rall"
+      ],
+      "citation_key": "Rall1967",
+      "categories": [
+        "cable-theory",
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "journal": "Journal of Neurophysiology",
+      "download_status": "failed",
+      "added_by_task": "t0015_literature_survey_cable_theory"
+    },
+    {
+      "paper_id": "10.1523_jneurosci.5346-03.2004",
+      "title": "Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell",
+      "year": 2004,
+      "authors": [
+        "Narender K. Dhingra",
+        "Robert G. Smith"
+      ],
+      "citation_key": "Dhingra2004",
+      "categories": [
+        "retinal-ganglion-cells",
+        "voltage-gated-channels",
+        "compartmental-modelling"
+      ],
+      "journal": "Journal of Neuroscience",
+      "download_status": "failed",
+      "added_by_task": "t0015_literature_survey_cable_theory"
+    },
+    {
+      "paper_id": "10.1038_18686",
+      "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+      "year": 1999,
+      "authors": [
+        "Matthew E. Larkum",
+        "J. Julius Zhu",
+        "Bert Sakmann"
+      ],
+      "citation_key": "Larkum1999",
+      "categories": [
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "synaptic-integration"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0016_literature_survey_dendritic_computation"
+    },
+    {
+      "paper_id": "10.1038_35005094",
+      "title": "NMDA spikes in basal dendrites of cortical pyramidal neurons",
+      "year": 2000,
+      "authors": [
+        "Jackie Schiller",
+        "Guy Major",
+        "Helmut J. Koester",
+        "Yitzhak Schiller"
+      ],
+      "citation_key": "Schiller2000",
+      "categories": [
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "synaptic-integration"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0016_literature_survey_dendritic_computation"
+    },
+    {
+      "paper_id": "10.1038_nn1253",
+      "title": "Computational subunits in thin dendrites of pyramidal cells",
+      "year": 2004,
+      "authors": [
+        "Alon Polsky",
+        "Bartlett W. Mel",
+        "Jackie Schiller"
+      ],
+      "citation_key": "Polsky2004",
+      "categories": [
+        "dendritic-computation",
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "journal": "Nature Neuroscience",
+      "download_status": "failed",
+      "added_by_task": "t0016_literature_survey_dendritic_computation"
+    },
+    {
+      "paper_id": "10.1126_science.aan3846",
+      "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+      "year": 2017,
+      "authors": [
+        "Katie C. Bittner",
+        "Aaron D. Milstein",
+        "Christine Grienberger",
+        "Sandro Romani",
+        "Jeffrey C. Magee"
+      ],
+      "citation_key": "Bittner2017",
+      "categories": [
+        "dendritic-computation",
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "journal": "Science",
+      "download_status": "failed",
+      "added_by_task": "t0016_literature_survey_dendritic_computation"
+    },
+    {
+      "paper_id": "10.1146_annurev.neuro.28.061604.135703",
+      "title": "Dendritic Computation",
+      "year": 2005,
+      "authors": [
+        "Michael London",
+        "Michael Hausser"
+      ],
+      "citation_key": "LondonHausser2005",
+      "categories": [
+        "dendritic-computation",
+        "compartmental-modeling",
+        "cable-theory"
+      ],
+      "journal": "Annual Review of Neuroscience",
+      "download_status": "failed",
+      "added_by_task": "t0016_literature_survey_dendritic_computation"
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2017.09.058",
+      "title": "\"Silent\" NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal Circuit",
+      "year": 2017,
+      "authors": [
+        "Santhosh Sethuramanujam",
+        "Xiaoyang Yao",
+        "Geoff deRosenroll",
+        "Kevin L. Briggman",
+        "Greg D. Field",
+        "Gautam B. Awatramani"
+      ],
+      "citation_key": "Sethuramanujam2017",
+      "categories": [
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "patch-clamp",
+        "synaptic-integration"
+      ],
+      "journal": "Neuron",
+      "download_status": "failed",
+      "added_by_task": "t0017_literature_survey_patch_clamp"
+    },
+    {
+      "paper_id": "10.1016_j.neuroscience.2021.08.024",
+      "title": "Voltage Clamp Errors During Estimation of Concurrent Excitatory and Inhibitory Synaptic Input to Neurons with Dendrites",
+      "year": 2022,
+      "authors": [
+        "Minh-Son To",
+        "Suraj Honnuraiah",
+        "Greg J. Stuart"
+      ],
+      "citation_key": "To2022",
+      "categories": [
+        "patch-clamp",
+        "compartmental-modeling"
+      ],
+      "journal": "Neuroscience",
+      "download_status": "failed",
+      "added_by_task": "t0017_literature_survey_patch_clamp"
+    },
+    {
+      "paper_id": "10.1126_sciadv.abb6642",
+      "title": "Tailoring of the axon initial segment shapes the conversion of synaptic inputs into spiking output in OFF-alpha T retinal ganglion cells",
+      "year": 2020,
+      "authors": [
+        "Paul Werginz",
+        "Vineeth Raghuram",
+        "Shelley I. Fried"
+      ],
+      "citation_key": "Werginz2020",
+      "categories": [
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "patch-clamp"
+      ],
+      "journal": "Science Advances",
+      "download_status": "failed",
+      "added_by_task": "t0017_literature_survey_patch_clamp"
+    },
+    {
+      "paper_id": "10.1371_journal.pone.0019463",
+      "title": "Imperfect Space Clamp Permits Electrotonic Interactions between Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp Recordings",
+      "year": 2011,
+      "authors": [
+        "Alon Poleg-Polsky",
+        "Jeffrey S. Diamond"
+      ],
+      "citation_key": "PolegPolsky2011",
+      "categories": [
+        "patch-clamp",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "journal": "PLoS ONE",
+      "download_status": "failed",
+      "added_by_task": "t0017_literature_survey_patch_clamp"
+    },
+    {
+      "paper_id": "10.1523_jneurosci.0130-07.2007",
+      "title": "Different Mechanisms Generate Maintained Activity in ON and OFF Retinal Ganglion Cells",
+      "year": 2007,
+      "authors": [
+        "David J. Margolis",
+        "Peter B. Detwiler"
+      ],
+      "citation_key": "MargolisDetwiler2007",
+      "categories": [
+        "retinal-ganglion-cell",
+        "voltage-gated-channels",
+        "patch-clamp"
+      ],
+      "journal": "The Journal of Neuroscience",
+      "download_status": "failed",
+      "added_by_task": "t0017_literature_survey_patch_clamp"
+    },
+    {
+      "paper_id": "10.1038_346565a0",
+      "title": "Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents",
+      "year": 1990,
+      "authors": [
+        "Robin A. J. Lester",
+        "John D. Clements",
+        "Gary L. Westbrook",
+        "Craig E. Jahr"
+      ],
+      "citation_key": "Lester1990",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0018_literature_survey_synaptic_integration"
+    },
+    {
+      "paper_id": "10.1038_nature00931",
+      "title": "Directionally selective calcium signals in dendrites of starburst amacrine cells",
+      "year": 2002,
+      "authors": [
+        "Thomas Euler",
+        "Peter B. Detwiler",
+        "Winfried Denk"
+      ],
+      "citation_key": "EulerDetwilerDenk2002",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0018_literature_survey_synaptic_integration"
+    },
+    {
+      "paper_id": "10.1038_nature02116",
+      "title": "Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex",
+      "year": 2003,
+      "authors": [
+        "Michael Wehr",
+        "Anthony M. Zador"
+      ],
+      "citation_key": "WehrZador2003",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity"
+      ],
+      "journal": "Nature",
+      "download_status": "failed",
+      "added_by_task": "t0018_literature_survey_synaptic_integration"
+    },
+    {
+      "paper_id": "10.1073_pnas.80.9.2799",
+      "title": "Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.",
+      "year": 1983,
+      "authors": [
+        "C Koch",
+        "T Poggio",
+        "V Torre"
+      ],
+      "citation_key": "KochPoggio1983",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "journal": "Proceedings of the National Academy of Sciences",
+      "download_status": "failed",
+      "added_by_task": "t0018_literature_survey_synaptic_integration"
+    },
+    {
+      "paper_id": "no-doi_HausserMel2003_s0959-4388-03-00075-8",
+      "title": "Dendrites: bug or feature?",
+      "year": 2003,
+      "authors": [
+        "Michael Häusser",
+        "Bartlett Mel"
+      ],
+      "citation_key": "HausserMel2003",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "journal": "Current Opinion in Neurobiology",
+      "download_status": "failed",
+      "added_by_task": "t0018_literature_survey_synaptic_integration"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -m meta.asset_types.library.aggregator --format json --detail short",
+  "exit_code": 0,
+  "duration_seconds": 0.461,
+  "started_at": "2026-04-20T12:35:49Z",
+  "completed_at": "2026-04-20T12:35:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "008_20260420T123549Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260420T123549Z_uv-run-python.stderr.txt",
+  "stdout_lines": 30,
+  "stderr_lines": 0,
+  "truncated": false
+}

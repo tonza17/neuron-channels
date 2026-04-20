@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0010_hunt_missed_dsgc_models/research/research_papers.md",
+  "exit_code": 0,
+  "duration_seconds": 0.508,
+  "started_at": "2026-04-20T12:46:59Z",
+  "completed_at": "2026-04-20T12:46:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "017_20260420T124659Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "017_20260420T124659Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

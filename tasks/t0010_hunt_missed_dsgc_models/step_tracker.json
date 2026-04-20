@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review the existing DSGC paper corpus (tasks t0002, t0008) to establish what's already covered before hunting for missed models.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T12:34:07Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-papers/"
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
