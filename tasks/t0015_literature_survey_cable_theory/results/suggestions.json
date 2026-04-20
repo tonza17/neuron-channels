@@ -1,4 +1,5 @@
 {
+  "spec_version": "2",
   "suggestions": [
     {
       "id": "S-0015-01",
@@ -7,6 +8,7 @@
       "kind": "experiment",
       "priority": "high",
       "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
       "categories": [
         "cable-theory",
         "retinal-ganglion-cells"
@@ -21,6 +23,7 @@
       "kind": "experiment",
       "priority": "medium",
       "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
       "categories": [
         "cable-theory",
         "dendritic-computation"
@@ -35,9 +38,8 @@
       "kind": "evaluation",
       "priority": "medium",
       "source_task": "t0015_literature_survey_cable_theory",
-      "categories": [
-        "infrastructure"
-      ],
+      "source_paper": null,
+      "categories": [],
       "status": "active",
       "date_added": "2026-04-20"
     },
@@ -48,6 +50,7 @@
       "kind": "experiment",
       "priority": "high",
       "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
       "categories": [
         "compartmental-modelling",
         "direction-selectivity"

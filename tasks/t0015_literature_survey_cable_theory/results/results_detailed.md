@@ -135,6 +135,25 @@ Integrated across the five papers, a faithful DSGC compartmental model in NEURON
   executed by the orchestrator directly (not via parallel `/add-paper` subagents). The selected 5
   still span all 5 originally-planned themes.
 
+## Files Created
+
+* `assets/paper/10.1152_jn.1967.30.5.1138/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1098_rstb.1982.0084/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1038_382363a0/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1126_science.289.5488.2347/{details.json,summary.md,files/.gitkeep}`
+* `assets/paper/10.1523_jneurosci.5346-03.2004/{details.json,summary.md,files/.gitkeep}`
+* `assets/answer/cable-theory-implications-for-dsgc-modelling/{details.json,short_answer.md,full_answer.md}`
+* `intervention/paywalled_papers.md`
+* `results/{results_summary.md,results_detailed.md,metrics.json,costs.json,remote_machines_used.json,suggestions.json}`
+* `logs/steps/009_implementation/step_log.md`
+* `logs/steps/008_setup-machines/step_log.md` (skipped)
+* `logs/steps/010_teardown/step_log.md` (skipped)
+* `logs/steps/011_creative-thinking/step_log.md` (skipped)
+* `logs/steps/012_results/step_log.md`
+* `logs/steps/013_compare-literature/step_log.md` (skipped)
+* `logs/steps/014_suggestions/step_log.md`
+* `logs/steps/015_reporting/step_log.md`
+
 ## Deliverables
 
 * Paper assets:

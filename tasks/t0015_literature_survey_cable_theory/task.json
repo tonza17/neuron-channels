@@ -5,10 +5,10 @@
   "name": "Literature survey: cable theory and dendritic filtering",
   "short_description": "Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-04-19T23:38:43Z",
-  "end_time": null,
+  "end_time": "2026-04-20T10:00:00Z",
   "expected_assets": {
     "paper": 5,
     "answer": 1
