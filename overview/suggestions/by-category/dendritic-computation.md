@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-7 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **5 open** (2 high,
-3 medium), **2 closed**.
+8 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **6 open** (2 high,
+4 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -81,6 +81,28 @@ review. Sivyer2017 and Euler2002 directly constrain RQ4 and the presynaptic driv
 Enciso2010 provides a compartmental SAC-network model that could seed the presynaptic GABA
 input for the DSGC model. Download them via /add-paper in a dedicated task and extend the
 corpus to 24 papers. Recommended task types: download-paper, literature-survey.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend cable-theory survey to frequency-domain and thin-dendrite
+transmission</strong> (S-0015-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The scoped-down 5-paper survey covers 3 of the 5 originally-planned themes in depth (Rall
+foundations, on-the-path shunting DS, morphology-driven firing) and references the other two
+(frequency-domain cable analysis, thin-dendrite transmission) only indirectly. A follow-up
+survey task should add ~5 papers on frequency-domain cable theory (Koch 1984, Segev & Rall
+1988) and thin-dendrite active transmission (Stuart & Sakmann 1994, London & Hausser 2005
+review, Stuart & Spruston 2015 review) to close the gap.
 
 </details>
 

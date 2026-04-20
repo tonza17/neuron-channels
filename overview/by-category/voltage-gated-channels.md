@@ -4,13 +4,13 @@ Ion channels whose opening probability depends on membrane voltage.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (5)](../papers/by-category/voltage-gated-channels.md) | [Answers
+**Detail pages**: [Papers (6)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (1)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
 (5)](../suggestions/by-category/voltage-gated-channels.md)
 
 ---
 
-## Papers (5)
+## Papers (6)
 
 <details>
 <summary>📖 <strong>Cross-compartmental Modulation of Dendritic Signals for Retinal
@@ -226,6 +226,56 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 </details>
 
 <details>
+<summary>📖 <strong>Spike Generator Limits Efficiency of Information Transfer in a
+Retinal Ganglion Cell</strong> — Dhingra & Smith, 2004</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_jneurosci.5346-03.2004` |
+| **Authors** | Narender K. Dhingra, Robert G. Smith |
+| **Venue** | Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/jneurosci.5346-03.2004` |
+| **URL** | https://www.jneurosci.org/content/24/12/2914 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`retinal-ganglion-cells`](../../meta/categories/retinal-ganglion-cells/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modelling`](../../meta/categories/compartmental-modelling/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/summary.md) |
+
+Dhingra & Smith (2004) provide the first quantitative measurement of how much information the
+retinal ganglion cell spike generator loses when converting graded synaptic input into a
+discrete spike train. Using intracellular recordings from brisk-transient RGCs in an intact
+mammalian retina at physiological temperature, combined with ideal-observer analysis of
+contrast detection and increment thresholds, they find that spikes require roughly 2.5-fold
+higher contrast for detection than the graded potential does (3.8% vs. 1.5%), and carry
+approximately 60% fewer distinguishable gray levels.
+
+Mechanistically, the information loss is dominated by the threshold nonlinearity of the spike
+generator rather than by stochastic noise in the spike-generation machinery. A simple
+threshold- nonlinearity model of the spike generator reproduces both the detection threshold
+gap between graded potential and spikes and the full shape of the increment-threshold "dipper"
+function for both signals. This implicates threshold-related biophysics — resting potential,
+sodium-channel activation voltage, and effective gain — as the key parameters controlling RGC
+spike-generator information transfer.
+
+A further result is the trade-off between contrast sensitivity and dynamic range: depolarizing
+the cell reduces spike detection threshold (improving low-contrast sensitivity) but also
+reduces the range of contrasts the spike output can represent (collapsing high-contrast
+responses). No single setting of the spike generator simultaneously maximizes both,
+establishing a fundamental constraint on any biophysical model of RGC output.
+
+For DSGC modelling in this project, the paper provides three key constraints. First, our
+compartmental DSGC models should be evaluated not only on spike output but also on the
+underlying graded-potential response, since the spike conversion systematically loses
+information. Second, the threshold-nonlinearity finding means that matching DSGC firing
+patterns to experimental data requires careful tuning of spike-initiation-zone sodium-channel
+kinetics rather than adding noise to force a match. Third, the sensitivity-dynamic-range
+trade-off means that our DSGC model cannot be validated against a single operating point — we
+must test across a realistic contrast range and verify that the model reproduces the shape of
+the sensitivity-vs-contrast curve, not just a single contrast sensitivity value.
+
+</details>
+
+<details>
 <summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
 1997</summary>
 
@@ -276,11 +326,12 @@ dendritic transients.
 
 </details>
 
-## Tasks (1)
+## Tasks (2)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
+| 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 
 ## Answers (1)
 

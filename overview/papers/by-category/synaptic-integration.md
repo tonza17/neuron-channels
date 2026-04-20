@@ -1,6 +1,6 @@
-# Papers: `synaptic-integration` (15)
+# Papers: `synaptic-integration` (16)
 
-15 papers across 11 year(s).
+16 papers across 12 year(s).
 
 [Back to all papers](../README.md)
 
@@ -757,6 +757,53 @@ inhibitory synapse placement. The push-pull E/I structure implies both excitator
 inhibitory conductances must be directionally modulated. The large cell-to-cell variability
 justifies treating E/I ratios as free parameters in the optimisation, bounded by the reported
 means and standard deviations.
+
+</details>
+
+## 1967 (1)
+
+<details>
+<summary>📖 Distinguishing theoretical synaptic potentials computed for different
+soma-dendritic distributions of synaptic input — Rall, 1967</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1152_jn.1967.30.5.1138` |
+| **Authors** | Wilfrid Rall |
+| **Venue** | Journal of Neurophysiology (journal) |
+| **DOI** | `10.1152/jn.1967.30.5.1138` |
+| **URL** | https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1152_jn.1967.30.5.1138/summary.md) |
+
+Rall's 1967 paper asks whether the shape of a somatic EPSP carries information about where
+along the dendritic tree the underlying synaptic input was delivered. Using the
+equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall
+computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the
+soma.
+
+The paper's methodological contribution is the shape-index plot: a two-dimensional graph of
+EPSP rise time versus half-width in which different input locations trace out distinguishable
+curves. Somatic inputs produce fast, narrow EPSPs; distal dendritic inputs produce slower,
+broader EPSPs whose temporal profile is dominated by cable low-pass filtering.
+
+The main result is that input location is recoverable from EPSP shape with useful accuracy,
+provided the underlying neuron approximately satisfies the equivalent-cylinder assumptions.
+Rall also reports the expected dramatic attenuation of distal-input amplitude at the soma, and
+discusses the interplay between membrane time constant and cable filtering in shaping the
+observed waveform.
+
+For the direction-selective retinal ganglion cell (DSGC) modelling work in this project, the
+paper is relevant in three ways. First, it establishes that somatically-recorded EPSPs from
+DSGC patch experiments can in principle be used to estimate input location, informing how we
+interpret experimental data. Second, it defines a standard validation target (shape-index
+curves) that our reduced compartment models should reproduce. Third, it warns that the
+equivalent-cylinder simplification depends on branching-rule assumptions that real dendritic
+arbors — including the starburst amacrine and DSGC arbors we care about — do not satisfy
+exactly, motivating the use of full morphological compartmental simulation in NEURON rather
+than reduced analytical models.
 
 </details>
 

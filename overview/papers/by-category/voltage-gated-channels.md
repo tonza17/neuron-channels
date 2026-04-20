@@ -1,6 +1,6 @@
-# Papers: `voltage-gated-channels` (5)
+# Papers: `voltage-gated-channels` (6)
 
-5 papers across 4 year(s).
+6 papers across 5 year(s).
 
 [Back to all papers](../README.md)
 
@@ -221,6 +221,58 @@ active dendrites with distributed Na+ channels, multiple independent initiation 
 on-the-path starburst inhibition, and a near-unity dendritic-to-somatic spike coupling. Any
 model that relies on passive dendrites and a single somatic threshold cannot reach the
 observed tuning sharpness and should be rejected on quantitative grounds.
+
+</details>
+
+## 2004 (1)
+
+<details>
+<summary>📖 Spike Generator Limits Efficiency of Information Transfer in a Retinal
+Ganglion Cell — Dhingra & Smith, 2004</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_jneurosci.5346-03.2004` |
+| **Authors** | Narender K. Dhingra, Robert G. Smith |
+| **Venue** | Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/jneurosci.5346-03.2004` |
+| **URL** | https://www.jneurosci.org/content/24/12/2914 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modelling`](../../../meta/categories/compartmental-modelling/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/summary.md) |
+
+Dhingra & Smith (2004) provide the first quantitative measurement of how much information the
+retinal ganglion cell spike generator loses when converting graded synaptic input into a
+discrete spike train. Using intracellular recordings from brisk-transient RGCs in an intact
+mammalian retina at physiological temperature, combined with ideal-observer analysis of
+contrast detection and increment thresholds, they find that spikes require roughly 2.5-fold
+higher contrast for detection than the graded potential does (3.8% vs. 1.5%), and carry
+approximately 60% fewer distinguishable gray levels.
+
+Mechanistically, the information loss is dominated by the threshold nonlinearity of the spike
+generator rather than by stochastic noise in the spike-generation machinery. A simple
+threshold- nonlinearity model of the spike generator reproduces both the detection threshold
+gap between graded potential and spikes and the full shape of the increment-threshold "dipper"
+function for both signals. This implicates threshold-related biophysics — resting potential,
+sodium-channel activation voltage, and effective gain — as the key parameters controlling RGC
+spike-generator information transfer.
+
+A further result is the trade-off between contrast sensitivity and dynamic range: depolarizing
+the cell reduces spike detection threshold (improving low-contrast sensitivity) but also
+reduces the range of contrasts the spike output can represent (collapsing high-contrast
+responses). No single setting of the spike generator simultaneously maximizes both,
+establishing a fundamental constraint on any biophysical model of RGC output.
+
+For DSGC modelling in this project, the paper provides three key constraints. First, our
+compartmental DSGC models should be evaluated not only on spike output but also on the
+underlying graded-potential response, since the spike conversion systematically loses
+information. Second, the threshold-nonlinearity finding means that matching DSGC firing
+patterns to experimental data requires careful tuning of spike-initiation-zone sodium-channel
+kinetics rather than adding noise to force a match. Third, the sensitivity-dynamic-range
+trade-off means that our DSGC model cannot be validated against a single operating point — we
+must test across a realistic contrast range and verify that the model reproduces the shape of
+the sensitivity-vs-contrast curve, not just a single contrast sensitivity value.
 
 </details>
 

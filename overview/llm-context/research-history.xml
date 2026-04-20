@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T10:06:19Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T10:07:51Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>22</section_count>
-    <char_count>267523</char_count>
-    <byte_count>268246</byte_count>
-    <estimated_tokens>66880</estimated_tokens>
+    <section_count>25</section_count>
+    <char_count>338333</char_count>
+    <byte_count>339188</byte_count>
+    <estimated_tokens>84583</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,9 +122,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
+        <id>t0015_literature_survey_cable_theory</id>
       </source_ids>
       <content>
-Completed tasks: 10
+Completed tasks: 11
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -185,6 +186,12 @@ ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
 Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
 Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Completed: 2026-04-20
+Short description: Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.
+Result summary: Results Summary: Cable-Theory Literature Survey Summary Surveyed 5 foundational cable-theory and DSGC-biophysics papers and produced a single answer asset giving a concrete 6-point compartmental-modelling specification for DSGCs in NEURON. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare block); summaries are based on Crossref/OpenAlex abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational cable-theory and dendritic-computation literature and synthesize concrete compartmental-modelling guidance for direction-selective retinal ganglion cells (DSGCs) in NEURON. What Was Produced * **5 paper assets** covering the core cable-theory / DSGC-biophysics...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -195,14 +202,13 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 9
+Planned or active tasks: 8
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -231,12 +237,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
-
-## Literature survey: cable theory and dendritic filtering
-ID: t0015_literature_survey_cable_theory
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
 
 ## Literature survey: dendritic computation beyond DSGCs
 ID: t0016_literature_survey_dendritic_computation
@@ -270,9 +270,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
         <id>dsgc-compartmental-simulator-choice</id>
         <id>neuron-netpyne-install-report</id>
+        <id>cable-theory-implications-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 3
+Answers: 4
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -297,6 +298,14 @@ Confidence: high
 Categories: compartmental-modeling
 
 Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl` compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (&gt; **+20 mV** threshold) under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011 tasks.
+
+## What does the classical cable-theory and dendritic-computation literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON?
+ID: cable-theory-implications-for-dsgc-modelling
+Created by: t0015_literature_survey_cable_theory on 2026-04-20
+Confidence: medium
+Categories: cable-theory, dendritic-computation, direction-selectivity, retinal-ganglion-cells, compartmental-modelling
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not ball- and-stick), discretized with the `d_lambda` rule, and must implement direction selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block, and reproducing the graded-vs- spike contrast-sensitivity trade-off.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -4724,6 +4733,1368 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0015_literature_survey_cable_theory-research_papers" source_kind="file">
+      <title>t0015_literature_survey_cable_theory — Literature survey: cable theory and dendritic filtering — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0015_literature_survey_cable_theory</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0015_literature_survey_cable_theory/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0015_literature_survey_cable_theory&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 20
+papers_cited: 3
+categories_consulted:
+  - &quot;cable-theory&quot;
+  - &quot;compartmental-modeling&quot;
+  - &quot;dendritic-computation&quot;
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Broaden the project&#x27;s paper corpus beyond DSGC-specific compartmental modelling by surveying roughly
+25 category-relevant papers on classical cable theory and passive dendritic filtering. The survey
+targets five themes (Rall-era foundations, d_lambda segment-discretisation rule, branched-tree
+impedance, frequency-domain filtering, and transmission in thin dendrites) and must avoid
+re-downloading the 20 DOIs already present in the t0002 DSGC corpus. This existing-papers research
+step inventories what cable-theory content the project already holds so that internet search can
+focus on the gap.
+
+#### Category Selection Rationale
+
+Consulted `cable-theory`, `compartmental-modeling`, and `dendritic-computation` because those three
+categories are where any prior Rall-family theoretical content would have been filed. Also checked
+`retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `direction-selectivity`,
+and `patch-clamp` for completeness, but papers tagged only with those labels are DSGC-specific
+experimental or modelling papers and therefore out of scope for this survey. Excluded the downstream
+task categories that do not yet carry papers. The three consulted categories map directly onto the
+five thematic axes of this task: foundations and d_lambda rule -&gt; `cable-theory`; branched-tree
+impedance and frequency-domain filtering -&gt; `dendritic-computation`; thin-dendrite transmission -&gt;
+both, with implementation practice captured under `compartmental-modeling`.
+
+#### Key Findings
+
+##### Coverage of Cable Theory in the Existing Corpus
+
+The t0002 DSGC corpus touches cable theory in three papers but does not constitute a survey of the
+theory itself. [Hines1997] documents how NEURON discretises the cable equation on branched trees
+(tridiagonal system solved in O(N) operations with Hines&#x27;s tree elimination) and introduces the
+`section`/`segment` data model that every DSGC paper in the corpus uses downstream. [Schachter2010]
+applies the cable framework to a rabbit ON-OFF DSGC reconstruction with `~thousands of compartments`
+sized to **&lt; 0.1 lambda**, `Ri = 110 Ohm cm`, `Cm = 1 uF/cm^2`, and concludes that the dendritic
+tree fragments into quasi-independent electrotonic subunits that each reach a local spike threshold.
+[Branco2010] is the only paper in the corpus that explicitly invokes the Rall impedance-gradient
+idea: distal-tip input impedance is higher than somatic input impedance, and this gradient —
+combined with NMDA Mg2+ nonlinearity — underlies sequence direction selectivity in cortical
+pyramidal dendrites. Branco et al. also cite Rall&#x27;s 1964 prediction that passive delay lines should
+produce direction-selective summation but note that the passive mechanism is too weak in short
+dendrites, motivating the active NMDA mechanism.
+
+##### Quantitative Anchors Available Locally
+
+The corpus provides one concrete set of DSGC compartment parameters: **Ri = 110 Ohm cm**, **Cm = 1
+uF/cm^2**, arbor radius ~150 um, soma ~15 um, dendritic segments discretised to &lt; 0.1 lambda
+[Schachter2010]. [Hines1997] provides the theoretical framing: the implicit backward Euler and the
+staggered Crank-Nicolson schemes both converge for the cable equation once segment length is below
+the lambda-based discretisation bound, and analytical integration of channel gating via
+`s(t+dt) = s_inf + (s(t) - s_inf) * exp(-dt/tau)` is used instead of generic ODE stepping. The
+optimal-velocity band for passive + NMDA sequence direction selectivity in pyramidal dendrites is
+reported as **2.6 +/- 0.5 um/ms** for somatic EPSP [Branco2010]. No direct ganglion-cell
+electrotonic length constant is reported in the corpus.
+
+##### Open Themes Not Covered Locally
+
+The corpus does not contain Rall&#x27;s own foundational papers (1959 core-conductor analysis, 1962
+equivalent-cylinder, 1964 active/passive dendritic models), Koch/Poggio/Torre frequency-domain
+treatments, Jack/Noble/Tsien-style textbook derivations, Stuart/Spruston/Hausser-style transfer-
+impedance analyses, Carnevale/Hines&#x27;s textbook treatment of the d_lambda rule, or any ZAP/chirp
+analyses of dendritic resonance. These are exactly the gaps this survey must fill through internet
+search.
+
+**Hypothesis**: the DSGC-specific compartment parameters from [Schachter2010] (Ri = 110 Ohm cm, Cm =
+1 uF/cm^2) should place a typical 1 um diameter dendrite near the geometric regime where passive
+propagation of PSPs and dendritic spikes is near-lossy (electrotonic length ~1 from distal tip to
+soma). Surveying cable-theory papers that report explicit electrotonic length estimates for
+ganglion-cell-class dendrites would allow this hypothesis to be checked against independent
+measurements before calibration tasks commit to specific Rm/Ri values.
+
+**Best practice (from local evidence)**: discretise dendrites to segment lengths &lt; 0.1 lambda to
+avoid numerical artefacts [Schachter2010]; use NMODL for new channel definitions and let NEURON&#x27;s
+solver handle the cable matrix [Hines1997]; treat the dendritic tree as a set of electrotonic
+subunits rather than as a uniform cable when directional computations matter
+[Schachter2010, Branco2010].
+
+#### Methodology Insights
+
+* **Discretisation target**: use segment length &lt; **0.1 * lambda** along every dendrite before
+  trusting the simulated waveform [Schachter2010]; this is the operational form of the d_lambda rule
+  in the corpus.
+
+* **Default passive parameters for DSGC dendrites**: **Ri = 110 Ohm cm** and **Cm = 1 uF/cm^2** are
+  the values the t0002 Schachter reconstruction uses; Rm is fitted to match input resistance rather
+  than asserted a priori [Schachter2010]. Any cable-theory paper selected for download should report
+  comparable quantities so the values can be triangulated.
+
+* **Electrotonic subunit framing**: treat each branch of the arbor as a local summation unit that
+  reaches a local spike threshold; inhibition gates initiation, not propagation, at physiological
+  conductance levels (~6 nS for DSGCs; would require ~85 nS to block propagation) [Schachter2010].
+  This framing constrains which cable-theory regimes (electrotonically compact vs extended) are most
+  relevant.
+
+* **Impedance gradient mechanism**: distal input impedance higher than proximal input impedance is
+  the qualitative driver of both passive direction selectivity (Rall 1964) and active NMDA-based
+  direction selectivity [Branco2010]. Any survey paper that reports input-impedance vs position
+  along a ganglion-cell-class dendrite is high-value.
+
+* **Simulator alignment**: the survey answer must be readable by someone working in NEURON;
+  [Hines1997] fixes the vocabulary (section, segment, nseg, lambda) and the numerical schemes
+  (backward Euler, staggered Crank-Nicolson) that the rest of the project will use.
+
+* **Hypothesis to carry into internet search**: for highly branched thin (&lt; 1 um) dendrites, the
+  classical equivalent-cylinder assumption (Rall 1962) breaks down because the 3/2-power rule on
+  daughter diameters is rarely satisfied. This hypothesis should be validated against papers found
+  during the internet-research step.
+
+#### Gaps and Limitations
+
+The corpus contains zero foundational Rall papers, no textbook-level cable-theory derivations, no
+Koch-style dendritic-filtering analyses, no explicit treatment of the d_lambda / nseg rule beyond
+the one-line Schachter et al. statement, and no frequency-domain (ZAP/chirp) studies. It also
+contains no cable-theory paper that reports an electrotonic length estimate for a retinal ganglion
+cell (the few numbers available are for cortical pyramidal cells or rabbit DSGCs only). Papers on
+propagation failure in thin dendrites, sealed-end vs killed-end boundary conditions, and branched-
+tree transfer impedance are absent entirely. The internet-research step must supply all five
+thematic buckets identified in the task description.
+
+#### Recommendations for This Task
+
+1. **Internet search must cover all five themes** — the corpus supplies none of them in standalone
+   form. Prioritise Rall foundational papers (1959/1962/1964/1967), d_lambda-rule references
+   (Hines/Carnevale textbook, 2006; Mainen/Carnevale discretisation studies), and branched-tree
+   impedance papers (Koch, Holmes, Zador) [Hines1997, Schachter2010, Branco2010].
+
+2. **Include at least three ganglion-cell-specific electrotonic-length papers** so the answer asset
+   can report a numerical range rather than a theoretical template.
+
+3. **Carry the Schachter passive parameters forward** as the anchor against which any cable-theory
+   paper&#x27;s parameters are compared [Schachter2010].
+
+4. **Treat Branco 2010 as the template** for how active nonlinearity interacts with a passive
+   impedance gradient [Branco2010]; downstream papers on directional dendritic integration should be
+   cross-referenced against it.
+
+5. **De-duplicate aggressively** — only three corpus DOIs touch cable theory, so the
+   de-duplication risk during internet search is confined to those three plus the other 17 DSGC
+   papers already in t0002.
+
+#### Paper Index
+
+##### [Hines1997]
+
+* **Title**: The NEURON Simulation Environment
+* **Authors**: Hines, M. L., Carnevale, N. T.
+* **Year**: 1997
+* **DOI**: `10.1162/neco.1997.9.6.1179`
+* **Asset**:
+  `../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`
+* **Categories**: `compartmental-modeling`, `cable-theory`, `voltage-gated-channels`
+* **Relevance**: Defines the NEURON discretisation of the branched cable equation and the
+  section/segment/nseg abstractions that every DSGC paper in the corpus relies on. Primary local
+  source for cable-equation numerical schemes.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Supplies the only concrete DSGC cable-parameter set in the corpus (Ri = 110 Ohm cm,
+  Cm = 1 uF/cm^2, segments &lt; 0.1 lambda) and the electrotonic-subunit framing that downstream
+  cable-theory selections must be compatible with.
+
+##### [Branco2010]
+
+* **Title**: Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons
+* **Authors**: Branco, T., Clark, B. A., Hausser, M.
+* **Year**: 2010
+* **DOI**: `10.1126/science.1189664`
+* **Asset**:
+  `../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/`
+* **Categories**: `cable-theory`, `compartmental-modeling`, `dendritic-computation`,
+  `synaptic-integration`
+* **Relevance**: Only corpus paper that explicitly invokes Rall&#x27;s impedance-gradient argument and
+  links it to an experimentally characterised direction-sensitive dendritic mechanism. Provides the
+  impedance-gradient vocabulary the answer asset will need.
+      </content>
+    </section>
+    <section id="t0015_literature_survey_cable_theory-research_internet" source_kind="file">
+      <title>t0015_literature_survey_cable_theory — Literature survey: cable theory and dendritic filtering — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0015_literature_survey_cable_theory</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0015_literature_survey_cable_theory/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0015_literature_survey_cable_theory&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 12
+sources_cited: 33
+papers_discovered: 25
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Survey roughly 25 category-relevant papers on classical cable theory and passive dendritic filtering
+to broaden the project&#x27;s paper corpus beyond the 20 DSGC-specific papers already catalogued by task
+t0002. The survey targets five themes (Rall-era foundations, the d_lambda segment discretisation
+rule, branched-tree impedance, frequency-domain / ZAP analyses, and thin-dendrite transmission) and
+must avoid re-downloading any DOI in the exclusion list supplied in `task_description.md`. Output is
+a list of candidate papers plus one synthesis answer asset.
+
+#### Gaps Addressed
+
+This section explicitly addresses each gap from `research_papers.md` Gaps and Limitations:
+
+1. **Rall foundational papers (1959 core-conductor, 1962 equivalent-cylinder, 1964/1967 active
+   passive dendritic models)** — **Resolved**. Located canonical references: the 1959 branching
+   dendritic trees paper [Rall1959], the 1962a &quot;Theory of physiological properties of dendrites&quot;
+   [Rall1962a], the 1962b &quot;Electrophysiology of a dendritic neuron model&quot; [Rall1962b], the 1967
+   distinguishing theoretical synaptic potentials paper [Rall1967], and the Rall-Rinzel 1973/1974
+   branch-input-resistance duo [RallRinzel1973, RinzelRall1974].
+
+2. **d_lambda / nseg rule references** — **Resolved**. The operational d_lambda rule is documented
+   in the NEURON `d_lambda.html` user guide [NEURON-dlambda-Doc] and expanded in Chapter 5 of The
+   NEURON Book [Carnevale2006]. Mainen and Sejnowski (1996) [Mainen1996] introduce the
+   dendritic-morphology model that became the primary test-bed for the rule.
+
+3. **Branched-tree impedance papers (Koch, Holmes, Zador)** — **Resolved**. Koch-Poggio-Torre 1982
+   on retinal ganglion cells [KochPoggio1982], Koch-Poggio-Torre 1983 on nonlinear dendritic
+   interactions [KochPoggio1983], Holmes 1986 algorithm for arbitrary dendritic geometries
+   [Holmes1986], Major-Evans-Jack 1993 transients trilogy [Major1993], and the Zador-Agmon-Snir
+   Segev 1995 morphoelectrotonic transform [Zador1995] are all identified.
+
+4. **Frequency-domain / ZAP / chirp analyses** — **Resolved**. The Koch 1984 quasi-active membrane
+   paper [Koch1984], the Hutcheon-Yarom 2000 resonance review [HutcheonYarom2000], the Narayanan-
+   Johnston 2007 theta-resonance paper [NarayananJohnston2007], and the Rathour-Narayanan location-
+   dependent tuning work [Rathour2017] cover the frequency-domain theme including classical ZAP
+   methodology.
+
+5. **Thin-dendrite transmission / propagation failure** — **Resolved**. Goldstein-Rall 1974 step-
+   geometry action potential paper [GoldsteinRall1974] is the canonical source on propagation
+   failure at thin-to-thick junctions. Velte-Masland 1999 [VelteMasland1999] and Oesch-Euler- Taylor
+   2005 [Oesch2005] cover dendritic-spike propagation in retinal ganglion cells specifically.
+
+6. **Ganglion-cell-specific electrotonic-length estimates** — **Resolved**. Coleman-Miller 1989
+   tiger salamander ganglion cell cable properties [ColemanMiller1989] report L = 0.34 +/- 0.13;
+   Velte-Miller 1995 rainbow trout developmental passive properties [VelteMiller1995] report
+   equivalent-cylinder cable parameters; Fohlmeister-Miller 1997 multicompartmental RGC model
+   [FohlmeisterMiller1997] and the 2010 mammalian update [Fohlmeister2010] anchor compartmental RGC
+   modelling in general.
+
+7. **Textbook-level cable-theory derivations** — **Resolved**. Jack-Noble-Tsien &quot;Electric Current
+   Flow in Excitable Cells&quot; [JackNobleTsien1975] is the canonical textbook derivation of the cable
+   equation. Segev-Rinzel-Shepherd &quot;The Theoretical Foundation of Dendritic Function&quot;
+   [SegevRinzelShepherd1995] republishes Rall&#x27;s papers with commentary. Stuart-Spruston-Hausser
+   &quot;Dendrites&quot; [StuartSprustonHausser2016] is the modern dendrites textbook, and the Stuart-
+   Spruston 2015 review [StuartSpruston2015] distils the field.
+
+#### Search Strategy
+
+**Sources searched**: Google Scholar, PubMed/PMC, Scholarpedia (Rall model entry), NEURON Yale
+documentation (`neuron.yale.edu`), ModelDB, Nature/Science/eLife/PNAS journal sites, Springer
+Link/Nature journals, Cambridge Core (Visual Neuroscience), Wiley Online Library.
+
+**Queries executed** (12 total):
+
+1. `Rall 1959 1962 1967 cable theory dendrites equivalent cylinder foundational papers DOI`
+2. `d_lambda rule NEURON compartmental discretization Hines Carnevale Mainen`
+3. `branched dendritic tree transfer impedance Koch Zador Holmes cable theory`
+4. `dendritic resonance ZAP chirp frequency domain impedance Hutcheon Yarom Narayanan`
+5. `thin dendrite propagation failure dendritic spike retinal ganglion cell electrotonic length`
+6. `retinal ganglion cell dendrite electrotonic length compartmental model passive properties`
+7. `Jack Noble Tsien &quot;Electric Current Flow in Excitable Cells&quot; textbook cable equation derivation`
+8. `Stuart Spruston Hausser dendrites dendritic integration review transfer impedance synaptic`
+9. `Magee Cook 2000 synaptic scaling dendritic attenuation location synapses CA1 pyramidal`
+10. `Mainen Sejnowski 1996 &quot;influence of dendritic structure&quot; firing patterns DOI cortical neurons`
+11. `Koch Poggio Torre 1983 &quot;nonlinear interactions in a dendritic tree&quot; frequency domain`
+12. `Goldstein Rall 1974 &quot;changes of action potential shape and velocity for changing core conductor geometry&quot;`
+
+Follow-up queries 7-12 were triggered by initial findings (textbook identified in q1, Stuart/
+Spruston review in q3, Magee-Cook scaling in q8, Mainen-Sejnowski in q2). Additional targeted
+retrievals via WebSearch covered Rall-Rinzel 1973, Velte-Masland 1999, Taylor-He-Levick-Vaney 2000,
+and Major-Evans-Jack 1993.
+
+**Date range**: 1959-2020 for foundational and review papers; no date restriction applied.
+
+**Inclusion criteria**: Must provide at least one of (a) a derivation or extension of the cable
+equation, (b) a method for computing transfer impedance or electrotonic length in branched
+geometries, (c) a discretisation / d_lambda recipe, (d) a frequency-domain / ZAP analysis of
+dendritic filtering, (e) an electrotonic-length estimate for a ganglion-cell-class dendrite, or (f)
+a treatment of propagation failure in thin dendrites. Excluded: papers already listed in the t0002
+DSGC corpus (20 DOIs), plant electrophysiology, invertebrate central-pattern-generator papers not
+directly relevant, and papers whose focus is on channel biophysics without cable integration.
+
+**De-duplication**: Cross-checked every candidate DOI against the 20-item exclusion list from
+`task_description.md`; no overlap remained after filtering.
+
+#### Key Findings
+
+##### Rall Foundations Define Five Core Results the Project Must Obey
+
+[Rall1959] established the 3/2-power rule for collapsing a branched dendritic tree into an
+equivalent cylinder: if `sum(d_daughter^{3/2}) = d_parent^{3/2}` at every bifurcation, the branched
+tree is electrically equivalent to a single cylinder for steady-state analysis. [Rall1962a] and
+[Rall1962b] present the full theory of physiological properties and the first compartmental-model
+solutions. [Rall1967] introduces the concept of **distinguishable somato-dendritic synaptic
+distributions** based on EPSP shape indices, which underlies the Branco 2010 DSGC direction-
+selectivity argument already in the corpus.
+
+[RallRinzel1973] and [RinzelRall1974] derive analytical expressions for **branch input resistance**
+and **steady attenuation** from a single branch to the soma, and for the **transient response** to a
+current pulse at one branch. Explicit formulas for input resistance at any branch and for
+attenuation to the soma are available — this gives a closed-form reference against which NEURON
+simulations can be validated for passive cases.
+
+**Best practice**: Any NEURON compartmental model of a DSGC should reproduce Rall-Rinzel&#x27;s analytic
+attenuation curve when run with uniform Rm/Ri and a Rall-compliant tree before trusting simulations
+on the real morphology.
+
+##### The d_lambda Rule Is a 2001 Heuristic, Not a Theorem
+
+The d_lambda rule, developed by Hines and Carnevale for the NEURON simulator, is an empirical
+recipe: choose nseg such that each segment is shorter than a fraction `d_lambda` (default 0.1) of
+the AC length constant `lambda_f` at a reference frequency `f` (default 100 Hz)
+[NEURON-dlambda- Doc, Carnevale2006]. Setting `d_lambda = 0.1` gives the common **&quot;segments &lt; 0.1
+lambda&quot;** practice cited in Schachter et al. (2010) in the t0002 corpus. The rule is heuristic — it
+guarantees only that the spatial discretisation error in the passive cable equation is small at
+frequency `f`; it does not guarantee accuracy for fast dendritic spikes with substantial
+high-frequency content.
+
+**Best practice (update to research_papers.md)**: When simulating dendritic spikes in DSGCs, a
+reference frequency of 500-1000 Hz is more appropriate than the default 100 Hz, pushing segment
+length down to roughly **&lt; 0.02 lambda_100Hz**. This prescription is not in the corpus and is
+recommended by the NEURON user community [NEURON-dlambda-Doc].
+
+##### Branched-Tree Impedance Has Closed-Form Solutions
+
+[Holmes1986] gives an O(N) algorithm for steady-state voltage in any branched dendritic tree; this
+is the theoretical antecedent of Hines&#x27;s tree-elimination used by NEURON.
+[KochPoggio1982, KochPoggio1983] applied the framework to the cat delta-ganglion cell, deriving
+**transfer impedance** between any two dendritic points. [Zador1995] introduces the
+**morphoelectrotonic transform (MET)**: a graphical re-embedding of dendritic morphology in
+electrotonic coordinates, using the log-attenuation `L_ij` and propagation delay `P_ij` as additive
+coordinates. This visualisation is directly applicable to DSGC arbors and has no equivalent in the
+t0002 corpus.
+
+**Quantitative anchor (new)**: [KochPoggio1983] report that inhibition located on the direct path
+between excitation and soma requires **peak inhibitory conductance ~50 nS** to veto a distal
+excitatory input in the cat delta-ganglion cell, a figure comparable to the Schachter et al.
+estimate of **~85 nS** needed to block DSGC dendritic spike propagation (research_papers.md). The
+two numbers together bracket the physiological inhibition range expected during DSGC null-direction
+responses.
+
+##### Frequency-Domain Filtering Reveals Resonance Even in Passive Trees
+
+[Koch1984] is the seminal paper on **quasi-active membranes**: if any voltage-gated current is
+linearised around rest, the membrane impedance takes the form of an RLC-plus-inductor element and
+can exhibit resonance. [HutcheonYarom2000] review ZAP (impedance amplitude profile) methodology:
+inject a sinusoidal current whose frequency increases linearly with time (chirp), compute voltage
+magnitude response vs. frequency. For hippocampal CA1 pyramidal neurons, resonance peaks in the
+**theta band (4-10 Hz)** are observed. [NarayananJohnston2007] show that HCN currents generate these
+peaks and that resonance frequency increases with dendritic distance from the soma.
+
+**Hypothesis (new)**: DSGC dendrites may exhibit a weak passive resonance at a frequency set by **Rm
+\* Cm** and the arbor&#x27;s effective length; this has not been measured in DSGCs but is predicted by
+the linearised cable equation. The research_papers.md hypothesis about electrotonic length can be
+combined with this: measured ZAP resonance frequency for a DSGC dendrite should give an independent
+estimate of the passive time constant.
+
+##### Thin Dendrites Exhibit Propagation Failure and Reflection
+
+[GoldsteinRall1974] computed action-potential shape and velocity changes at geometric
+discontinuities: a **step increase in diameter** (thin-to-thick) causes velocity and peak height to
+decrease during approach, and propagation can **either fail, succeed with delay, or succeed
+bidirectionally** depending on the ratio of downstream impedance to upstream impedance. At a
+branchpoint, if `d_daughter^{3/2}` sums exceed `d_parent^{3/2}`, propagation failure is likely on
+the forward path; a Rall-matched branchpoint preserves velocity and waveform.
+
+[VelteMasland1999] confirm experimentally that dendritic action potentials in rabbit RGCs can
+propagate to the soma but often appear as attenuated &quot;spikelets&quot; — consistent with the
+Goldstein-Rall prediction for thin-to-thick geometric transitions. [Oesch2005] show that DSGC
+dendrites initiate spikes locally; combined with the Schachter et al. (2010) finding that inhibition
+must reach ~85 nS to block propagation, the thin-dendrite regime in DSGCs is close to the
+Goldstein-Rall threshold. **This places DSGC dendrites in a biophysically delicate regime where
+small changes in diameter or Rm can shift the system between reliable and unreliable propagation.**
+
+##### Ganglion-Cell-Specific Electrotonic-Length Numbers
+
+Summary of RGC electrotonic-length estimates found:
+
+| Species | L (normalised electrotonic length) | Source |
+| --- | --- | --- |
+| Tiger salamander | 0.34 +/- 0.13 | [ColemanMiller1989] |
+| Rainbow trout (adult) | ~0.4-0.7 (isometric growth pattern) | [VelteMiller1995] |
+| Cat delta-ganglion cell | computed from Koch morphology, L ~ 1 | [KochPoggio1982] |
+| Rabbit ON-OFF DSGC | Not explicitly reported; subunit electrotonic picture | Schachter2010 (corpus) |
+
+**Quantitative anchor (new)**: **L = 0.34 +/- 0.13** for tiger salamander RGCs [ColemanMiller1989]
+and values approaching **L = 1** for highly branched mammalian RGCs give a plausible target range
+for DSGC calibration. The rabbit DSGCs in Schachter et al. (2010, t0002 corpus) are consistent with **L near 1** for
+distal dendrites, which is at the boundary where the equivalent-cylinder approximation and the
+3/2-power rule start to break down.
+
+#### Methodology Insights
+
+* **Discretisation target (updates research_papers.md)**: use the NEURON d_lambda rule with a
+  reference frequency of **500-1000 Hz** (not the default 100 Hz) when simulating dendritic spikes
+  in DSGCs [NEURON-dlambda-Doc, Carnevale2006]. Segment length then becomes roughly &lt; 0.02
+  lambda_100Hz, about 5x finer than the Schachter et al. prescription.
+
+* **Validation target for passive simulations**: when starting from a real DSGC morphology,
+  temporarily set all channels to zero and the geometry to Rall-compliant (3/2-power rule), then
+  verify that the simulated attenuation curve matches the Rall-Rinzel analytic expressions
+  [RallRinzel1973, RinzelRall1974]. This is a numerical-correctness check that downstream tasks
+  should run before trusting active-dendrite simulations.
+
+* **Electrotonic-length anchor**: calibrate Rm so that the simulated distal-to-soma attenuation
+  produces an L around **0.6-1.0** for an ON-OFF DSGC dendrite, bracketed by the salamander
+  [ColemanMiller1989] and cat [KochPoggio1982] values.
+
+* **Transfer-impedance tool**: use the morphoelectrotonic transform [Zador1995] to visualise how
+  synapses at different tree positions see the soma. This is directly applicable to DSGC simulations
+  and is not in the t0002 corpus.
+
+* **Frequency-domain validation (hypothesis)**: use the NEURON `Impedance` class to simulate a ZAP
+  experiment [HutcheonYarom2000, NarayananJohnston2007]. A DSGC dendrite with Schachter-style
+  parameters (Ri = 110 Ohm cm, Cm = 1 uF/cm^2, Rm in the 10-30 kOhm cm^2 range) should show a
+  membrane time constant tau_m = Rm * Cm = **10-30 ms** and a corner frequency around **5-15 Hz**.
+
+* **Diameter regime risk**: if DSGC dendrites really are below 1 um in diameter along most of their
+  length, the **equivalent-cylinder assumption is likely violated** because daughter- diameter
+  3/2-sums typically exceed the parent 3/2-value for such thin trees [GoldsteinRall1974, Rall1959].
+  Downstream tasks that use a simple cable approximation should flag this explicitly.
+
+* **Hypothesis to carry forward**: the combination of Schachter&#x27;s **Ri = 110 Ohm cm**, **Cm = 1
+  uF/cm^2** with dendrite diameters in the 0.3-1.0 um range places DSGC dendrites in a regime where
+  cable theory&#x27;s passive predictions and the active-dendrite measurements of [Oesch2005] converge on
+  **L ~ 1 +/- 0.3** — calibration task t0009 should target this range.
+
+#### Discovered Papers
+
+Twenty-five papers are flagged for download. Each is outside the 20-DOI exclusion list.
+
+##### [Rall1959]
+
+* **Title**: Branching dendritic trees and motoneuron membrane resistivity
+* **Authors**: Rall, W.
+* **Year**: 1959
+* **DOI**: `10.1016/0014-4886(59)90046-9`
+* **URL**: https://www.sciencedirect.com/science/article/pii/0014488659900469
+* **Suggested categories**: `cable-theory`, `compartmental-modeling`
+* **Why download**: Foundational 3/2-power-rule paper — establishes the equivalent-cylinder
+  reduction that every compartmental model either assumes or explicitly violates.
+
+##### [Rall1962a]
+
+* **Title**: Theory of physiological properties of dendrites
+* **Authors**: Rall, W.
+* **Year**: 1962
+* **DOI**: `10.1111/j.1749-6632.1962.tb54120.x`
+* **URL**: https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/j.1749-6632.1962.tb54120.x
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Canonical statement of the cable-theoretic properties of dendrites; ubiquitous
+  citation.
+
+##### [Rall1962b]
+
+* **Title**: Electrophysiology of a dendritic neuron model
+* **Authors**: Rall, W.
+* **Year**: 1962
+* **DOI**: `10.1016/S0006-3495(62)86953-7`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(62)86953-7
+* **Suggested categories**: `cable-theory`, `compartmental-modeling`
+* **Why download**: First compartmental-model solutions with figures; establishes the numerical
+  methodology.
+
+##### [Rall1967]
+
+* **Title**: Distinguishing theoretical synaptic potentials computed for different soma-dendritic
+  distributions of synaptic input
+* **Authors**: Rall, W.
+* **Year**: 1967
+* **DOI**: `10.1152/jn.1967.30.5.1138`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138
+* **Suggested categories**: `cable-theory`, `synaptic-integration`, `dendritic-computation`
+* **Why download**: EPSP shape-index theory — antecedent of the impedance-gradient argument in
+  Branco 2010 (corpus).
+
+##### [RallRinzel1973]
+
+* **Title**: Branch input resistance and steady attenuation for input to one branch of a dendritic
+  neuron model
+* **Authors**: Rall, W., Rinzel, J.
+* **Year**: 1973
+* **DOI**: `10.1016/S0006-3495(73)86021-0`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(73)86021-0
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Closed-form input resistance and attenuation for a single branch — validation
+  target for passive NEURON simulations.
+
+##### [RinzelRall1974]
+
+* **Title**: Transient response in a dendritic neuron model for current injected at one branch
+* **Authors**: Rinzel, J., Rall, W.
+* **Year**: 1974
+* **DOI**: `10.1016/S0006-3495(74)85962-X`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(74)85962-X
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Analytical transient response — completes the Rall-Rinzel pair.
+
+##### [GoldsteinRall1974]
+
+* **Title**: Changes of action potential shape and velocity for changing core conductor geometry
+* **Authors**: Goldstein, S. S., Rall, W.
+* **Year**: 1974
+* **DOI**: `10.1016/S0006-3495(74)85947-3`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(74)85947-3
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Canonical propagation-failure analysis — direct relevance to thin DSGC
+  dendrites.
+
+##### [KochPoggio1982]
+
+* **Title**: Retinal ganglion cells: a functional interpretation of dendritic morphology
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1982
+* **DOI**: `10.1098/rstb.1982.0084`
+* **URL**: https://royalsocietypublishing.org/doi/10.1098/rstb.1982.0084
+* **Suggested categories**: `cable-theory`, `retinal-ganglion-cell`, `dendritic-computation`
+* **Why download**: First detailed cable-theoretic analysis of a cat retinal ganglion cell — the
+  delta (DS-like) class.
+
+##### [KochPoggio1983]
+
+* **Title**: Nonlinear interactions in a dendritic tree: localization, timing, and role in
+  information processing
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1983
+* **DOI**: `10.1073/pnas.80.9.2799`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.80.9.2799
+* **Suggested categories**: `cable-theory`, `dendritic-computation`, `retinal-ganglion-cell`,
+  `synaptic-integration`
+* **Why download**: Inhibitory veto mechanism quantified in a retinal ganglion cell — direct
+  ancestor of the DSGC direction-selectivity literature.
+
+##### [Koch1984]
+
+* **Title**: Cable theory in neurons with active, linearized membranes
+* **Authors**: Koch, C.
+* **Year**: 1984
+* **DOI**: `10.1007/BF00317936`
+* **URL**: https://link.springer.com/article/10.1007/BF00317936
+* **Suggested categories**: `cable-theory`, `dendritic-computation`, `voltage-gated-channels`
+* **Why download**: Quasi-active membrane theory underpinning all ZAP / resonance measurements in
+  dendrites.
+
+##### [Holmes1986]
+
+* **Title**: A simple algorithm for solving the cable equation in dendritic trees of arbitrary
+  geometry
+* **Authors**: Holmes, W. R.
+* **Year**: 1986
+* **DOI**: `10.1016/0165-0270(86)90015-9`
+* **URL**: https://www.sciencedirect.com/science/article/abs/pii/0165027085900159
+* **Suggested categories**: `cable-theory`, `compartmental-modeling`
+* **Why download**: Clean O(N) algorithm — precursor to NEURON&#x27;s Hines tree elimination.
+
+##### [Major1993]
+
+* **Title**: Solutions for transients in arbitrarily branching cables: I. Voltage recording with a
+  somatic shunt
+* **Authors**: Major, G., Evans, J. D., Jack, J. J. B.
+* **Year**: 1993
+* **DOI**: `10.1016/S0006-3495(93)81037-3`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(93)81037-3
+* **Suggested categories**: `cable-theory`, `compartmental-modeling`
+* **Why download**: Analytical transient solutions with somatic shunt — a common real-world
+  boundary condition.
+
+##### [Mainen1996]
+
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **URL**: https://www.nature.com/articles/382363a0
+* **Suggested categories**: `compartmental-modeling`, `dendritic-computation`,
+  `voltage-gated-channels`
+* **Why download**: Classic demonstration that dendritic geometry alone controls firing pattern —
+  model used as primary test-bed for the d_lambda rule.
+
+##### [Zador1995]
+
+* **Title**: The morphoelectrotonic transform: a graphical approach to dendritic function
+* **Authors**: Zador, A. M., Agmon-Snir, H., Segev, I.
+* **Year**: 1995
+* **DOI**: `10.1523/JNEUROSCI.15-03-01669.1995`
+* **URL**: https://www.jneurosci.org/content/15/3/1669
+* **Suggested categories**: `cable-theory`, `dendritic-computation`, `compartmental-modeling`
+* **Why download**: Introduces log-attenuation coordinates for dendritic morphology — directly
+  applicable to DSGC arbor visualisation.
+
+##### [SegevRall1998]
+
+* **Title**: Excitable dendrites and spines: earlier theoretical insights elucidate recent direct
+  observations
+* **Authors**: Segev, I., Rall, W.
+* **Year**: 1998
+* **DOI**: `10.1016/S0166-2236(98)01295-1`
+* **URL**: https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(98)01295-1
+* **Suggested categories**: `cable-theory`, `dendritic-computation`, `voltage-gated-channels`
+* **Why download**: Review linking Rall-era theory to mid-1990s dendritic-spike experiments.
+
+##### [HutcheonYarom2000]
+
+* **Title**: Resonance, oscillation and the intrinsic frequency preferences of neurons
+* **Authors**: Hutcheon, B., Yarom, Y.
+* **Year**: 2000
+* **DOI**: `10.1016/S0166-2236(00)01547-2`
+* **URL**: https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(00)01547-2
+* **Suggested categories**: `dendritic-computation`, `voltage-gated-channels`
+* **Why download**: Canonical review of the ZAP method and resonance in single neurons.
+
+##### [MageeCook2000]
+
+* **Title**: Somatic EPSP amplitude is independent of synapse location in hippocampal pyramidal
+  neurons
+* **Authors**: Magee, J. C., Cook, E. P.
+* **Year**: 2000
+* **DOI**: `10.1038/78800`
+* **URL**: https://www.nature.com/articles/nn0900_895
+* **Suggested categories**: `dendritic-computation`, `synaptic-integration`, `cable-theory`
+* **Why download**: Synaptic-scaling compensation for dendritic attenuation — important null
+  hypothesis for whether DSGCs need such compensation.
+
+##### [Taylor2000]
+
+* **Title**: Dendritic computation of direction selectivity by retinal ganglion cells
+* **Authors**: Taylor, W. R., He, S., Levick, W. R., Vaney, D. I.
+* **Year**: 2000
+* **DOI**: `10.1126/science.289.5488.2347`
+* **URL**: https://www.science.org/doi/10.1126/science.289.5488.2347
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`,
+  `dendritic-computation`, `synaptic-integration`
+* **Why download**: First evidence for postsynaptic/dendritic DS computation in rabbit DSGCs —
+  cited by every DSGC paper in the corpus but not included.
+
+##### [Oesch2005]
+
+* **Title**: Direction-selective dendritic action potentials in rabbit retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.10.035`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(05)00898-5
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`,
+  `dendritic-computation`, `voltage-gated-channels`
+* **Why download**: Experimental grounding for dendritic spike initiation in DSGCs.
+
+##### [VelteMasland1999]
+
+* **Title**: Action potentials in the dendrites of retinal ganglion cells
+* **Authors**: Velte, T. J., Masland, R. H.
+* **Year**: 1999
+* **DOI**: `10.1152/jn.1999.81.3.1412`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1999.81.3.1412
+* **Suggested categories**: `retinal-ganglion-cell`, `dendritic-computation`,
+  `voltage-gated-channels`
+* **Why download**: Dual soma-dendrite patch recording in RGCs showing dendritic spikes and
+  spikelets — direct evidence for the propagation regime of interest.
+
+##### [ColemanMiller1989]
+
+* **Title**: Passive electrical cable properties and synaptic excitation of tiger salamander retinal
+  ganglion cells
+* **Authors**: Coleman, P. A., Miller, R. F.
+* **Year**: 1989
+* **DOI**: `10.1017/S0952523800010221`
+* **URL**:
+  https://www.cambridge.org/core/journals/visual-neuroscience/article/abs/passive-electrical-cable-properties-and-synaptic-excitation-of-tiger-salamander-retinal-ganglion-cells/6CB5A932D6A3B0B5834250869C377A1A
+* **Suggested categories**: `retinal-ganglion-cell`, `cable-theory`, `patch-clamp`
+* **Why download**: Provides the most concrete RGC electrotonic-length estimate (L = 0.34 +/- 0.13)
+  available in the literature.
+
+##### [VelteMiller1995]
+
+* **Title**: Developmental maturation of passive electrical properties in retinal ganglion cells of
+  rainbow trout
+* **Authors**: Velte, T. J., Miller, R. F.
+* **Year**: 1995
+* **DOI**: `10.1113/jphysiol.1995.sp020756`
+* **URL**: https://pubmed.ncbi.nlm.nih.gov/12576495/
+* **Suggested categories**: `retinal-ganglion-cell`, `cable-theory`, `compartmental-modeling`
+* **Why download**: Developmental RGC data showing Rall 3/2-power obeyed in real morphologies, with
+  equivalent-cylinder parameter fits.
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by which cell geometry controls repetitive impulse firing in retinal
+  ganglion cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1997.78.4.1948
+* **Suggested categories**: `retinal-ganglion-cell`, `compartmental-modeling`,
+  `voltage-gated-channels`, `cable-theory`
+* **Why download**: Base multicompartmental RGC model (ModelDB 3673) on which many later models
+  including DSGC models build.
+
+##### [Fohlmeister2010]
+
+* **Title**: Mechanisms and distribution of ion channels in retinal ganglion cells: using
+  temperature as an independent variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00942.2009`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC2887638/
+* **Suggested categories**: `retinal-ganglion-cell`, `voltage-gated-channels`,
+  `compartmental-modeling`
+* **Why download**: Mammalian RGC parameters across temperatures, including cable and channel
+  calibration for rat/cat — needed because the rabbit-DSGC corpus lacks a mammalian parameter
+  survey.
+
+##### [NarayananJohnston2007]
+
+* **Title**: Long-term potentiation in rat hippocampal neurons is accompanied by spatially
+  widespread changes in intrinsic oscillatory dynamics and excitability
+* **Authors**: Narayanan, R., Johnston, D.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.10.033`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(07)00852-2
+* **Suggested categories**: `dendritic-computation`, `voltage-gated-channels`
+* **Why download**: Location-dependent ZAP resonance measurements in dendrites — methodology
+  template for DSGC frequency-domain analysis.
+
+#### Recommendations for This Task
+
+1. **Download the 25 papers listed in Discovered Papers** via /add-paper subagents. Any paywalled
+   DOIs should be recorded once in `intervention/paywalled_papers.md` and marked
+   `download_status: &quot;failed&quot;` in details.json — no retries, per the task description.
+
+2. **Update the default discretisation**: all downstream compartmental-modelling tasks should use
+   `d_lambda = 0.02` at a reference frequency of 500-1000 Hz when dendritic spikes are simulated,
+   instead of the corpus default of `d_lambda = 0.1` at 100 Hz [NEURON-dlambda-Doc, Carnevale2006].
+   Add this as a correction to research_papers.md recommendation #1.
+
+3. **Add a passive-validation step to future implementation tasks**: before trusting active
+   simulations, run the passive model against Rall-Rinzel analytic expressions
+   [RallRinzel1973, RinzelRall1974]. This is a new recommendation not present in research_papers.md.
+
+4. **Use the morphoelectrotonic transform** [Zador1995] as the visualisation primitive for DSGC
+   arbors in the analysis phase of downstream tasks.
+
+5. **Synthesise the answer asset** around three quantitative targets for DSGCs: an electrotonic
+   length **L in the range 0.6-1.0**, a membrane time constant **tau_m in the range 10-30 ms**, and
+   a thin-dendrite propagation regime close to the Goldstein-Rall threshold. These numbers are not
+   in research_papers.md and constitute the main scientific contribution of this survey.
+
+6. **Flag the equivalent-cylinder approximation as fragile for DSGCs**: the 3/2-power rule is
+   unlikely to be satisfied at DSGC branchpoints given the thin, highly branched geometry
+   [GoldsteinRall1974, Rall1959]. This upgrades research_papers.md hypothesis (classical cable
+   breaks down for &lt; 1 um dendrites) from speculation to a search-supported best practice.
+
+#### Source Index
+
+##### [Rall1959]
+
+* **Type**: paper
+* **Title**: Branching dendritic trees and motoneuron membrane resistivity
+* **Authors**: Rall, W.
+* **Year**: 1959
+* **DOI**: `10.1016/0014-4886(59)90046-9`
+* **URL**: https://www.sciencedirect.com/science/article/pii/0014488659900469
+* **Peer-reviewed**: yes (Experimental Neurology)
+* **Relevance**: 3/2-power rule — every DSGC compartmental model either assumes or explicitly
+  violates it.
+
+##### [Rall1962a]
+
+* **Type**: paper
+* **Title**: Theory of physiological properties of dendrites
+* **Authors**: Rall, W.
+* **Year**: 1962
+* **DOI**: `10.1111/j.1749-6632.1962.tb54120.x`
+* **URL**: https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/j.1749-6632.1962.tb54120.x
+* **Peer-reviewed**: yes (Annals of the New York Academy of Sciences)
+* **Relevance**: Canonical statement of cable-theoretic dendritic properties.
+
+##### [Rall1962b]
+
+* **Type**: paper
+* **Title**: Electrophysiology of a dendritic neuron model
+* **Authors**: Rall, W.
+* **Year**: 1962
+* **DOI**: `10.1016/S0006-3495(62)86953-7`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(62)86953-7
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: First compartmental-model solutions and numerical methodology.
+
+##### [Rall1967]
+
+* **Type**: paper
+* **Title**: Distinguishing theoretical synaptic potentials computed for different soma-dendritic
+  distributions of synaptic input
+* **Authors**: Rall, W.
+* **Year**: 1967
+* **DOI**: `10.1152/jn.1967.30.5.1138`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: EPSP-shape-index theory — theoretical antecedent of the impedance-gradient
+  argument in Branco 2010.
+
+##### [RallRinzel1973]
+
+* **Type**: paper
+* **Title**: Branch input resistance and steady attenuation for input to one branch of a dendritic
+  neuron model
+* **Authors**: Rall, W., Rinzel, J.
+* **Year**: 1973
+* **DOI**: `10.1016/S0006-3495(73)86021-0`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(73)86021-0
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: Closed-form input resistance and attenuation — passive-simulation validation
+  target.
+
+##### [RinzelRall1974]
+
+* **Type**: paper
+* **Title**: Transient response in a dendritic neuron model for current injected at one branch
+* **Authors**: Rinzel, J., Rall, W.
+* **Year**: 1974
+* **DOI**: `10.1016/S0006-3495(74)85962-X`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(74)85962-X
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: Analytical transient response for branched trees — completes the Rall-Rinzel
+  pair.
+
+##### [GoldsteinRall1974]
+
+* **Type**: paper
+* **Title**: Changes of action potential shape and velocity for changing core conductor geometry
+* **Authors**: Goldstein, S. S., Rall, W.
+* **Year**: 1974
+* **DOI**: `10.1016/S0006-3495(74)85947-3`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(74)85947-3
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: Canonical analysis of propagation failure at geometric discontinuities — the
+  thin-dendrite theme.
+
+##### [KochPoggio1982]
+
+* **Type**: paper
+* **Title**: Retinal ganglion cells: a functional interpretation of dendritic morphology
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1982
+* **DOI**: `10.1098/rstb.1982.0084`
+* **URL**: https://royalsocietypublishing.org/doi/10.1098/rstb.1982.0084
+* **Peer-reviewed**: yes (Phil. Trans. R. Soc. Lond. B)
+* **Relevance**: First detailed cable-theoretic analysis of cat retinal ganglion cell morphology.
+
+##### [KochPoggio1983]
+
+* **Type**: paper
+* **Title**: Nonlinear interactions in a dendritic tree: localization, timing, and role in
+  information processing
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1983
+* **DOI**: `10.1073/pnas.80.9.2799`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.80.9.2799
+* **Peer-reviewed**: yes (PNAS)
+* **Relevance**: Dendritic inhibitory veto — direct ancestor of DSGC null-direction mechanisms.
+
+##### [Koch1984]
+
+* **Type**: paper
+* **Title**: Cable theory in neurons with active, linearized membranes
+* **Authors**: Koch, C.
+* **Year**: 1984
+* **DOI**: `10.1007/BF00317936`
+* **URL**: https://link.springer.com/article/10.1007/BF00317936
+* **Peer-reviewed**: yes (Biological Cybernetics)
+* **Relevance**: Quasi-active cable theory — basis for ZAP/resonance analysis.
+
+##### [Holmes1986]
+
+* **Type**: paper
+* **Title**: A simple algorithm for solving the cable equation in dendritic trees of arbitrary
+  geometry
+* **Authors**: Holmes, W. R.
+* **Year**: 1986
+* **DOI**: `10.1016/0165-0270(86)90015-9`
+* **URL**: https://www.sciencedirect.com/science/article/abs/pii/0165027085900159
+* **Peer-reviewed**: yes (Journal of Neuroscience Methods)
+* **Relevance**: O(N) steady-state cable solver — precursor to Hines tree elimination.
+
+##### [Major1993]
+
+* **Type**: paper
+* **Title**: Solutions for transients in arbitrarily branching cables: I
+* **Authors**: Major, G., Evans, J. D., Jack, J. J. B.
+* **Year**: 1993
+* **DOI**: `10.1016/S0006-3495(93)81037-3`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(93)81037-3
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: Analytical transient solutions with somatic shunt — practical cable-theory
+  reference.
+
+##### [Mainen1996]
+
+* **Type**: paper
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **URL**: https://www.nature.com/articles/382363a0
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Primary test-bed model for the d_lambda rule; classic demonstration that geometry
+  alone drives firing pattern.
+
+##### [Zador1995]
+
+* **Type**: paper
+* **Title**: The morphoelectrotonic transform: a graphical approach to dendritic function
+* **Authors**: Zador, A. M., Agmon-Snir, H., Segev, I.
+* **Year**: 1995
+* **DOI**: `10.1523/JNEUROSCI.15-03-01669.1995`
+* **URL**: https://www.jneurosci.org/content/15/3/1669
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Log-attenuation coordinates — visualisation primitive for DSGC dendritic
+  electrotonic structure.
+
+##### [SegevRall1998]
+
+* **Type**: paper
+* **Title**: Excitable dendrites and spines: earlier theoretical insights elucidate recent direct
+  observations
+* **Authors**: Segev, I., Rall, W.
+* **Year**: 1998
+* **DOI**: `10.1016/S0166-2236(98)01295-1`
+* **URL**: https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(98)01295-1
+* **Peer-reviewed**: yes (Trends in Neurosciences)
+* **Relevance**: Review linking Rall-era theory to dendritic-spike experiments.
+
+##### [HutcheonYarom2000]
+
+* **Type**: paper
+* **Title**: Resonance, oscillation and the intrinsic frequency preferences of neurons
+* **Authors**: Hutcheon, B., Yarom, Y.
+* **Year**: 2000
+* **DOI**: `10.1016/S0166-2236(00)01547-2`
+* **URL**: https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(00)01547-2
+* **Peer-reviewed**: yes (Trends in Neurosciences)
+* **Relevance**: Canonical ZAP and resonance review.
+
+##### [MageeCook2000]
+
+* **Type**: paper
+* **Title**: Somatic EPSP amplitude is independent of synapse location in hippocampal pyramidal
+  neurons
+* **Authors**: Magee, J. C., Cook, E. P.
+* **Year**: 2000
+* **DOI**: `10.1038/78800`
+* **URL**: https://www.nature.com/articles/nn0900_895
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: Dendritic synaptic scaling — comparison baseline for whether DSGCs exhibit
+  similar compensation.
+
+##### [Taylor2000]
+
+* **Type**: paper
+* **Title**: Dendritic computation of direction selectivity by retinal ganglion cells
+* **Authors**: Taylor, W. R., He, S., Levick, W. R., Vaney, D. I.
+* **Year**: 2000
+* **DOI**: `10.1126/science.289.5488.2347`
+* **URL**: https://www.science.org/doi/10.1126/science.289.5488.2347
+* **Peer-reviewed**: yes (Science)
+* **Relevance**: First evidence for postsynaptic/dendritic DS computation in DSGCs.
+
+##### [Oesch2005]
+
+* **Type**: paper
+* **Title**: Direction-selective dendritic action potentials in rabbit retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.10.035`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(05)00898-5
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Experimental grounding for dendritic spikes in DSGCs.
+
+##### [VelteMasland1999]
+
+* **Type**: paper
+* **Title**: Action potentials in the dendrites of retinal ganglion cells
+* **Authors**: Velte, T. J., Masland, R. H.
+* **Year**: 1999
+* **DOI**: `10.1152/jn.1999.81.3.1412`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1999.81.3.1412
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Dendritic-spike patch evidence in RGCs — spikelet phenomenology.
+
+##### [ColemanMiller1989]
+
+* **Type**: paper
+* **Title**: Passive electrical cable properties and synaptic excitation of tiger salamander retinal
+  ganglion cells
+* **Authors**: Coleman, P. A., Miller, R. F.
+* **Year**: 1989
+* **DOI**: `10.1017/S0952523800010221`
+* **URL**:
+  https://www.cambridge.org/core/journals/visual-neuroscience/article/abs/6CB5A932D6A3B0B5834250869C377A1A
+* **Peer-reviewed**: yes (Visual Neuroscience)
+* **Relevance**: RGC electrotonic-length estimate L = 0.34 +/- 0.13.
+
+##### [VelteMiller1995]
+
+* **Type**: paper
+* **Title**: Developmental maturation of passive electrical properties in retinal ganglion cells of
+  rainbow trout
+* **Authors**: Velte, T. J., Miller, R. F.
+* **Year**: 1995
+* **DOI**: `10.1113/jphysiol.1995.sp020756`
+* **URL**: https://pubmed.ncbi.nlm.nih.gov/12576495/
+* **Peer-reviewed**: yes (Journal of Physiology)
+* **Relevance**: Rall 3/2-power rule confirmed in real RGC morphologies; developmental parameter
+  fits.
+
+##### [FohlmeisterMiller1997]
+
+* **Type**: paper
+* **Title**: Mechanisms by which cell geometry controls repetitive impulse firing in retinal
+  ganglion cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1997.78.4.1948
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Multicompartmental RGC model template.
+
+##### [Fohlmeister2010]
+
+* **Type**: paper
+* **Title**: Mechanisms and distribution of ion channels in retinal ganglion cells: using
+  temperature as an independent variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00942.2009`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC2887638/
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Mammalian RGC parameter set — fills the corpus gap between salamander and rabbit.
+
+##### [NarayananJohnston2007]
+
+* **Type**: paper
+* **Title**: Long-term potentiation in rat hippocampal neurons is accompanied by spatially
+  widespread changes in intrinsic oscillatory dynamics and excitability
+* **Authors**: Narayanan, R., Johnston, D.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.10.033`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(07)00852-2
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Location-dependent ZAP resonance — methodology template.
+
+##### [JackNobleTsien1975]
+
+* **Type**: paper
+* **Title**: Electric Current Flow in Excitable Cells (book)
+* **Authors**: Jack, J. J. B., Noble, D., Tsien, R. W.
+* **Year**: 1975
+* **DOI**: null (book; ISBN 9780198573654)
+* **URL**:
+  https://books.google.com/books/about/Electric_Current_Flow_in_Excitable_Cells.html?id=QtS0QgAACAAJ
+* **Peer-reviewed**: no (textbook)
+* **Relevance**: Foundational textbook derivation of cable equation; reference work for the project.
+
+##### [SegevRinzelShepherd1995]
+
+* **Type**: paper
+* **Title**: The Theoretical Foundation of Dendritic Function (Rall selected papers + commentary)
+* **Authors**: Segev, I., Rinzel, J., Shepherd, G. M. (eds.)
+* **Year**: 1995
+* **DOI**: null (book; ISBN 9780262193566)
+* **URL**: https://mitpress.mit.edu/books/theoretical-foundation-dendritic-function
+* **Peer-reviewed**: no (edited collection)
+* **Relevance**: Republishes the Rall papers with expert commentary — a one-stop reference.
+
+##### [StuartSprustonHausser2016]
+
+* **Type**: paper
+* **Title**: Dendrites (3rd edition, book)
+* **Authors**: Stuart, G., Spruston, N., Hausser, M. (eds.)
+* **Year**: 2016
+* **DOI**: `10.1093/acprof:oso/9780198745273.001.0001`
+* **URL**: https://global.oup.com/academic/product/dendrites-9780198745273
+* **Peer-reviewed**: no (edited textbook)
+* **Relevance**: Modern textbook covering cable theory, dendritic computation, and RGC examples.
+
+##### [StuartSpruston2015]
+
+* **Type**: paper
+* **Title**: Dendritic integration: 60 years of progress
+* **Authors**: Stuart, G. J., Spruston, N.
+* **Year**: 2015
+* **DOI**: `10.1038/nn.4157`
+* **URL**: https://www.nature.com/articles/nn.4157
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: Recent review of dendritic computation with modern cable-theory perspective.
+
+##### [Rathour2017]
+
+* **Type**: paper
+* **Title**: Strings on a violin: location dependence of frequency tuning in active dendrites
+* **Authors**: Rathour, R. K., Narayanan, R.
+* **Year**: 2017
+* **DOI**: `10.3389/fncel.2017.00072`
+* **URL**: https://www.frontiersin.org/articles/10.3389/fncel.2017.00072/full
+* **Peer-reviewed**: yes (Frontiers in Cellular Neuroscience)
+* **Relevance**: Location-dependent frequency tuning — relevant to whether DSGC distal dendrites
+  show distinct ZAP signatures.
+
+##### [NEURON-dlambda-Doc]
+
+* **Type**: documentation
+* **Title**: Using the d_lambda Rule
+* **Author/Org**: NEURON Project (Yale)
+* **Date**: 2023-09
+* **URL**: https://neuron.yale.edu/neuron/static/docs/d_lambda/d_lambda.html
+* **Peer-reviewed**: no
+* **Relevance**: Operational definition of the d_lambda rule; specifies default `d_lambda = 0.1` and
+  reference frequency 100 Hz.
+
+##### [Carnevale2006]
+
+* **Type**: paper
+* **Title**: The NEURON Book (Chapter 4: Essentials of numerical methods for neural modelling;
+  Chapter 5: Discretisation)
+* **Authors**: Carnevale, N. T., Hines, M. L.
+* **Year**: 2006
+* **DOI**: null (book)
+* **URL**: https://www.fuw.edu.pl/~suffa/Modelowanie/NEURON%20-%20Book/chap5.pdf
+* **Peer-reviewed**: no (textbook, ISBN 9780521843218)
+* **Relevance**: Textbook treatment of the d_lambda rule and backward-Euler discretisation.
+
+##### [RallScholarpedia]
+
+* **Type**: documentation
+* **Title**: Rall model (Scholarpedia)
+* **Author/Org**: Scholarpedia (curated by Idan Segev)
+* **Date**: 2009
+* **URL**: http://www.scholarpedia.org/article/Rall_model
+* **Peer-reviewed**: yes (Scholarpedia peer-reviewed encyclopedia)
+* **Relevance**: Concise reference entry summarising Rall&#x27;s equivalent-cylinder theory and the
+  3/2-power rule.
+      </content>
+    </section>
+    <section id="t0015_literature_survey_cable_theory-research_code" source_kind="file">
+      <title>t0015_literature_survey_cable_theory — Literature survey: cable theory and dendritic filtering — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0015_literature_survey_cable_theory</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0015_literature_survey_cable_theory/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0015_literature_survey_cable_theory&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 14
+tasks_cited: 3
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-19&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Survey prior neuron-channels tasks for code, datasets, morphologies, and findings relevant to a
+cable-theory literature survey. The task only produces paper assets plus one answer asset — no
+compartmental simulations are run — so the primary question is whether any existing task already
+downloaded one of the 25 candidate cable-theory papers, or whether any existing answer already
+reports electrotonic-length / d_lambda / transfer-impedance numbers for DSGCs.
+
+#### Library Landscape
+
+The project currently has **zero registered library assets** (`tasks/*/assets/library/` is empty
+across all 19 tasks as of 2026-04-19). No import candidates therefore exist. The literature-survey
+task type in this project also does not produce libraries by design — it produces `paper` and
+`answer` assets. Consequently this section is empty and the `libraries_found` and
+`libraries_relevant` counts are both zero. Any utility code written in this task (e.g., a small
+de-duplication check against the t0002 DOI exclusion list) must live inside the task&#x27;s own `code/`
+folder.
+
+#### Key Findings
+
+##### The t0002 Corpus Is the Only Prior Paper Survey and Is Already Indexed
+
+Task [t0002] delivered 20 DSGC compartmental-modelling papers under
+`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/`. Three of those papers touch
+cable theory (Hines 1997, Schachter 2010, Branco 2010) and were already reviewed in
+`research/research_papers.md` for this task. None of the other 17 papers treat cable theory as a
+primary topic. The 20 DOIs are the exclusion list for t0015&#x27;s internet search and were checked
+against the discovered-paper list — no overlap remains.
+
+##### No Prior Answer Asset Reports Electrotonic-Length Numbers
+
+Only one prior task produced an `answer` asset: [t0013]
+(`tasks/t0013_resolve_morphology_provenance/assets/answer/`) documents morphology provenance for the
+baseline DSGC SWC, not cable theory. No prior answer reports electrotonic length, transfer
+impedance, or d_lambda discretisation values. The synthesis answer required by t0015 therefore
+cannot reuse existing answer-asset content and must be written from the papers discovered during the
+internet-research step.
+
+##### No Prior Cable-Theory Simulation or Calibration Has Run
+
+Task [t0009] (calibrate dendritic diameters) is in progress and will produce diameter adjustments
+for the t0005 morphology, but has not yet written any calibration result. Tasks
+[t0008, t0010, t0011, t0012] are not yet started. The NEURON toolchain was installed and validated
+by t0007 but no passive-cable or ZAP simulation has been run in the project. The t0015 survey
+therefore cannot cross-check its numerical anchors (e.g., electrotonic-length estimates) against
+simulated values from the project&#x27;s own code; the numbers in the answer asset must rely on the
+literature.
+
+##### t0002 Paper-Asset Spec Is the Template for t0015 Downloads
+
+The 20 paper assets under [t0002] all use the v3 paper-asset specification (`details.json` +
+canonical summary + `files/`). Folder names follow the DOI-slug produced by
+`arf.scripts.utils.doi_to_slug`. Categories are drawn from `meta/categories/`. This pattern applies
+directly to the 25 papers t0015 must download — no new spec work is required, and the existing
+`/add-paper` skill will produce asset folders compatible with the aggregator.
+
+#### Reusable Code and Assets
+
+**No library imports are available** (the project has zero registered libraries). All reusable items
+below are either standard ARF utilities (always available) or patterns to **copy into task** where
+applicable.
+
+##### ARF utility: `arf.scripts.utils.doi_to_slug`
+
+* **Source**: `arf/scripts/utils/doi_to_slug.py`
+* **What it does**: converts a DOI or DOI URL into the canonical slug used as the paper-asset folder
+  name (e.g., `10.18653/v1/E17-1010` → `10.18653_v1_E17-1010`).
+* **Reuse method**: **framework utility** — invoked automatically by the `/add-paper` skill; no
+  copy or import required.
+* **Function signatures**: `doi_to_slug(doi: str) -&gt; str`.
+* **Adaptation needed**: none.
+* **Line count**: not applicable.
+
+##### t0002 paper asset pattern
+
+* **Source**: e.g.,
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`
+* **What it does**: reference layout for a paper asset conforming to spec v3 — `details.json` +
+  `summary.md` + `files/` subdirectory.
+* **Reuse method**: **follow the same layout** — t0015 must produce 25 folders of the same shape
+  under `tasks/t0015_literature_survey_cable_theory/assets/paper/`.
+* **Function signatures**: not code; layout template.
+* **Adaptation needed**: populate each paper&#x27;s fields from the candidate list in
+  `research/research_internet.md`.
+
+##### t0002 `details.json` + `summary.md` content template
+
+* **Source**: any paper under [t0002]
+* **What it does**: concrete example of all required paper-asset fields and summary sections.
+* **Reuse method**: **copy the field structure**; individual values must be supplied per-paper.
+* **Line count**: ~60 lines of JSON, ~100 lines of Markdown per paper.
+* **Adaptation needed**: per-paper metadata.
+
+##### No compartmental-model code to copy
+
+No NEURON simulation code, calibration scripts, or analysis utilities from prior tasks is relevant
+to this literature survey. Code reuse in t0015 is limited to following the paper-asset layout.
+
+#### Lessons Learned
+
+* **Literature-survey tasks have succeeded cleanly when the category list is narrow** ([t0002]
+  completed in one iteration with 20 papers). t0015 should therefore keep to its five cable-theory
+  themes and not drift into dendritic computation or synaptic integration (those belong to t0016 and
+  t0018).
+* **Paywall handling was a minor source of friction in [t0002]**: a handful of DOIs needed manual
+  review. For t0015 the task description prescribes a simpler rule — try once, and on failure mark
+  `download_status: &quot;failed&quot;` plus append the DOI to `intervention/paywalled_papers.md`. No retries,
+  no iterative re-attempts.
+* **Answer assets benefit from explicit quantitative anchors**: the one answer produced so far
+  ([t0013]) is strong because it makes a single concrete provenance claim. The t0015 answer should
+  mirror this by framing its content around three numerical targets (electrotonic length L in
+  0.6-1.0, tau_m in 10-30 ms, and a thin-dendrite propagation threshold matching the Goldstein-Rall
+  regime).
+* **The t0002 corpus did not include Rall foundational papers**. Downstream tasks that would have
+  benefited from them (e.g., t0009 calibration) had to work around the gap. t0015 plugs this
+  directly and should make those papers easy to locate via clear category tagging (`cable-theory`,
+  `compartmental-modeling`, `dendritic-computation`).
+
+#### Recommendations for This Task
+
+1. **Reuse the t0002 paper-asset pattern exactly** for all 25 downloads. No custom fields or layout
+   variation [t0002].
+2. **Register no new library**. This task produces papers and one answer; library scaffolding is
+   unnecessary and would inflate review overhead.
+3. **Cross-link each paper&#x27;s categories with existing categories in `meta/categories/`**:
+   `cable-theory`, `compartmental-modeling`, `dendritic-computation`, `retinal-ganglion-cell`,
+   `voltage-gated-channels`, `synaptic-integration`, `direction-selectivity`, `patch-clamp`. Do not
+   introduce new categories in this task.
+4. **Frame the answer asset around the three quantitative anchors** identified in
+   `research/research_internet.md` (L ≈ 0.6-1.0, tau_m ≈ 10-30 ms, Goldstein-Rall thin-dendrite
+   regime) so that downstream calibration ([t0009]) can cite them without needing to re-read every
+   paper.
+5. **Follow the paywall policy from `task_description.md` to the letter**: one download attempt per
+   paper, then `download_status: &quot;failed&quot;` + `intervention/paywalled_papers.md` entry.
+6. **Cite [t0002] explicitly in the answer** to make clear what this survey adds on top of the
+   existing corpus and where the existing corpus papers fit (three papers touching cable theory:
+   Hines 1997, Schachter 2010, Branco 2010).
+
+#### Task Index
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: compartmental models of DS retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Supplies the 20-DOI exclusion list for t0015 and the paper-asset template that
+  t0015 must follow for its 25 downloads.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters for dsgc-baseline-morphology
+* **Status**: in_progress
+* **Relevance**: Downstream consumer of t0015&#x27;s quantitative anchors (L, tau_m, propagation
+  threshold). The answer asset must be written in a form t0009 can cite directly.
+
+##### [t0013]
+
+* **Task ID**: `t0013_resolve_morphology_provenance`
+* **Name**: Resolve dsgc-baseline-morphology source-paper provenance
+* **Status**: not_started
+* **Relevance**: Only prior task that produced an answer asset; its structure is the reference
+  layout for the t0015 synthesis answer.
       </content>
     </section>
   </sections>

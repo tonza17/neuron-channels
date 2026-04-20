@@ -1,13 +1,15 @@
 # Research Suggestions Backlog
 
-45 suggestions **35 open** (11 high, 20 medium, 4 low), **10 closed**.
+49 suggestions **39 open** (13 high, 22 medium, 4 low), **10 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
+[`compartmental-modelling`](by-category/compartmental-modelling.md),
 [`dendritic-computation`](by-category/dendritic-computation.md),
 [`direction-selectivity`](by-category/direction-selectivity.md),
 [`patch-clamp`](by-category/patch-clamp.md),
 [`retinal-ganglion-cell`](by-category/retinal-ganglion-cell.md),
+[`retinal-ganglion-cells`](by-category/retinal-ganglion-cells.md),
 [`synaptic-integration`](by-category/synaptic-integration.md),
 [`voltage-gated-channels`](by-category/voltage-gated-channels.md); [By date
 added](by-date-added/README.md)
@@ -39,6 +41,28 @@ the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md ha
 mandatory sections, and categories exist in meta/categories/. Port the checks already
 performed by hand on t0012 into a reusable verificator, wire it into step_registry.py, and
 re-run it against existing library assets. Recommended task types: infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
+specification</strong> (S-0015-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modelling`](../../meta/categories/compartmental-modelling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point
+specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive
+parameters, validation suite, spike-generator tuning). A follow-up experiment task should
+implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
+publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
+test battery (shape-index, graded DS, inhibition block, contrast-response).
 
 </details>
 
@@ -257,6 +281,29 @@ re-download.
 </details>
 
 <details>
+<summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
+verify numerical claims</strong> (S-0015-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../meta/categories/cable-theory/), [`retinal-ganglion-cells`](../../meta/categories/retinal-ganglion-cells/) |
+
+Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski
+1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but
+were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
+paper asset's download_status to 'success', replace summary Overview disclaimers with
+PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
+length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
+papers.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
 simulation</strong> (S-0007-01)</summary>
 
@@ -426,6 +473,28 @@ corpus to 24 papers. Recommended task types: download-paper, literature-survey.
 </details>
 
 <details>
+<summary>🧪 <strong>Extend cable-theory survey to frequency-domain and thin-dendrite
+transmission</strong> (S-0015-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../meta/categories/cable-theory/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+The scoped-down 5-paper survey covers 3 of the 5 originally-planned themes in depth (Rall
+foundations, on-the-path shunting DS, morphology-driven firing) and references the other two
+(frequency-domain cable analysis, thin-dendrite transmission) only indirectly. A follow-up
+survey task should add ~5 papers on frequency-domain cable theory (Koch 1984, Segev & Rall
+1988) and thin-dendrite active transmission (Stuart & Sakmann 1994, London & Hausser 2005
+review, Stuart & Spruston 2015 review) to close the gap.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC
 asymmetry</strong> (S-0002-05)</summary>
 
@@ -590,6 +659,27 @@ preserved; only type_code changes. Add a conversion script and a smoke test that
 NEURON's Import3d loader accepts the extended type codes. Cuts duplicated Strahler
 recomputation from every downstream channel-placement task. Creative_thinking.md section A3.
 Recommended task types: feature-engineering.
+
+</details>
+
+<details>
+<summary>📊 <strong>Register retinal-ganglion-cells and compartmental-modelling
+categories</strong> (S-0015-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+The answer asset verificator emits AA-W001 warnings because categories
+'retinal-ganglion-cells' and 'compartmental-modelling' are not registered in meta/categories/.
+These categories are used by all five literature-survey tasks (t0015-t0019) and should be
+formally registered to silence the warnings and enable category-based aggregation across those
+tasks.
 
 </details>
 

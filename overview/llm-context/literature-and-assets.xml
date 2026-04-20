@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-20T10:06:19Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-20T10:07:51Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>47593</char_count>
-    <byte_count>47651</byte_count>
-    <estimated_tokens>11898</estimated_tokens>
+    <char_count>53656</char_count>
+    <byte_count>53718</byte_count>
+    <estimated_tokens>13414</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -125,9 +125,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
+        <id>t0015_literature_survey_cable_theory</id>
       </source_ids>
       <content>
-Completed tasks: 10
+Completed tasks: 11
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -188,6 +189,12 @@ ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
 Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
 Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Completed: 2026-04-20
+Short description: Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.
+Result summary: Results Summary: Cable-Theory Literature Survey Summary Surveyed 5 foundational cable-theory and DSGC-biophysics papers and produced a single answer asset giving a concrete 6-point compartmental-modelling specification for DSGCs in NEURON. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare block); summaries are based on Crossref/OpenAlex abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational cable-theory and dendritic-computation literature and synthesize concrete compartmental-modelling guidance for direction-selective retinal ganglion cells (DSGCs) in NEURON. What Was Produced * **5 paper assets** covering the core cable-theory / DSGC-biophysics...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -198,14 +205,13 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 9
+Planned or active tasks: 8
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -234,12 +240,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
 Dependencies: t0005_download_dsgc_morphology
-
-## Literature survey: cable theory and dendritic filtering
-ID: t0015_literature_survey_cable_theory
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
 
 ## Literature survey: dendritic computation beyond DSGCs
 ID: t0016_literature_survey_dendritic_computation
@@ -273,9 +273,10 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
         <id>dsgc-compartmental-simulator-choice</id>
         <id>neuron-netpyne-install-report</id>
+        <id>cable-theory-implications-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 3
+Answers: 4
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -300,12 +301,25 @@ Confidence: high
 Categories: compartmental-modeling
 
 Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl` compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (&gt; **+20 mV** threshold) under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011 tasks.
+
+## What does the classical cable-theory and dendritic-computation literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON?
+ID: cable-theory-implications-for-dsgc-modelling
+Created by: t0015_literature_survey_cable_theory on 2026-04-20
+Confidence: medium
+Categories: cable-theory, dendritic-computation, direction-selectivity, retinal-ganglion-cells, compartmental-modelling
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not ball- and-stick), discretized with the `d_lambda` rule, and must implement direction selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block, and reproducing the graded-vs- spike contrast-sensitivity trade-off.
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1523_jneurosci.5346-03.2004</id>
+        <id>10.1126_science.289.5488.2347</id>
+        <id>10.1038_382363a0</id>
+        <id>10.1098_rstb.1982.0084</id>
+        <id>10.1152_jn.1967.30.5.1138</id>
         <id>10.1523_ENEURO.0261-21.2021</id>
         <id>10.7554_eLife.52949</id>
         <id>10.7554_eLife.42392</id>
@@ -328,7 +342,42 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 20
+Papers: 25
+
+## Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell
+ID: 10.1523_jneurosci.5346-03.2004
+Year: 2004
+Authors: Narender K. Dhingra, Robert G. Smith
+Added by task: t0015_literature_survey_cable_theory
+Dhingra &amp; Smith (2004) provide the first quantitative measurement of how much information the retinal ganglion cell spike generator loses when converting graded synaptic input into a discrete spike train. Using intracellular recordings from brisk-transient RGCs in an intact mammalian retina at physiological temperature, combined with ideal-observer analysis of contrast detection and increment thresholds, they find that spikes require roughly 2.5-fold higher contrast for detection than the graded potential does (3.8% vs. 1.5%), and carry approximately 60%...
+
+## Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
+ID: 10.1126_science.289.5488.2347
+Year: 2000
+Authors: W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney
+Added by task: t0015_literature_survey_cable_theory
+Taylor et al.&#x27;s 2000 Science paper resolves a decades-long question about where in the retinal circuit the direction-selectivity computation actually happens. By combining whole-cell patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and that the nonlinear interaction between excitation and inhibition responsible for the observed...
+
+## Influence of dendritic structure on firing pattern in model neocortical neurons
+ID: 10.1038_382363a0
+Year: 1996
+Authors: Zachary F. Mainen, Terrence J. Sejnowski
+Added by task: t0015_literature_survey_cable_theory
+Mainen &amp; Sejnowski&#x27;s 1996 Nature paper is a landmark in compartmental neuroscience modelling because it cleanly separates the roles of ion-channel density and dendritic morphology in shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3 pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four characteristic firing patterns observed in neocortical recordings without changing any biophysical...
+
+## Retinal ganglion cells: a functional interpretation of dendritic morphology
+ID: 10.1098_rstb.1982.0084
+Year: 1982
+Authors: Christof Koch, Tomaso Poggio, Vincent Torre
+Added by task: t0015_literature_survey_cable_theory
+Koch, Poggio &amp; Torre&#x27;s 1982 paper is arguably the most influential theoretical paper on retinal ganglion cell biophysics ever published, and is the direct intellectual ancestor of the DSGC modelling work this project undertakes. Using passive cable theory applied to histologically reconstructed cat RGC morphologies, the authors compute electrotonic properties of each RGC class and show that none are truly isopotential despite their small physical sizes. The paper&#x27;s central theoretical contribution is the &quot;on-the-path&quot; shunting-inhibition mechanism for...
+
+## Distinguishing theoretical synaptic potentials computed for different soma-dendritic distributions of synaptic input
+ID: 10.1152_jn.1967.30.5.1138
+Year: 1967
+Authors: Wilfrid Rall
+Added by task: t0015_literature_survey_cable_theory
+Rall&#x27;s 1967 paper asks whether the shape of a somatic EPSP carries information about where along the dendritic tree the underlying synaptic input was delivered. Using the equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the soma. The paper&#x27;s methodological contribution is the shape-index plot: a two-dimensional graph of EPSP rise time versus half-width in which different input locations trace out distinguishable curves...
 
 ## Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and Inhibition in Retinal Direction-Selective Ganglion Cells
 ID: 10.1523_ENEURO.0261-21.2021

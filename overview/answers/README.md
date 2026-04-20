@@ -1,12 +1,14 @@
-# Answers (3)
+# Answers (4)
 
-3 answer(s).
+4 answer(s).
 
-**Browse by view**: By category:
+**Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
+[`compartmental-modelling`](by-category/compartmental-modelling.md),
 [`dendritic-computation`](by-category/dendritic-computation.md),
 [`direction-selectivity`](by-category/direction-selectivity.md),
 [`retinal-ganglion-cell`](by-category/retinal-ganglion-cell.md),
+[`retinal-ganglion-cells`](by-category/retinal-ganglion-cells.md),
 [`synaptic-integration`](by-category/synaptic-integration.md),
 [`voltage-gated-channels`](by-category/voltage-gated-channels.md); [By date
 added](by-date-added/README.md)
@@ -79,6 +81,37 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+
+</details>
+
+<details>
+<summary><strong>What does the classical cable-theory and dendritic-computation
+literature imply for the compartmental modelling of direction-selective
+retinal ganglion cells (DSGCs) in NEURON?</strong></summary>
+
+**Confidence**: medium
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not
+ball- and-stick), discretized with the `d_lambda` rule, and must implement direction
+selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring
+asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on
+dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model
+must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block,
+and reproducing the graded-vs- spike contrast-sensitivity trade-off.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0015_literature_survey_cable_theory/assets/answer/cable-theory-implications-for-dsgc-modelling/full_answer.md) |
+| **ID** | [`cable-theory-implications-for-dsgc-modelling`](../../tasks/t0015_literature_survey_cable_theory/assets/answer/cable-theory-implications-for-dsgc-modelling/) |
+| **Question** | What does the classical cable-theory and dendritic-computation literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON? |
+| **Methods** | `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../../meta/categories/cable-theory/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cells`](../../meta/categories/retinal-ganglion-cells/), [`compartmental-modelling`](../../meta/categories/compartmental-modelling/) |
+| **Paper sources** | `10.1152_jn.1967.30.5.1138`, `10.1098_rstb.1982.0084`, `10.1038_382363a0`, `10.1126_science.289.5488.2347`, `10.1523_jneurosci.5346-03.2004` |
+| **Task sources** | — |
+| **URL sources** | — |
+| **Created by** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
 
 </details>
 

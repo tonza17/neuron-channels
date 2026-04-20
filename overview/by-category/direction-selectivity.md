@@ -4,15 +4,15 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (17)](../papers/by-category/direction-selectivity.md) | [Answers
-(1)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(21)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+**Detail pages**: [Papers (18)](../papers/by-category/direction-selectivity.md) | [Answers
+(2)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(22)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (1)](../libraries/by-category/direction-selectivity.md)
 
 ---
 
-## Papers (17)
+## Papers (18)
 
 <details>
 <summary>📖 <strong>Dendrite Morphology Minimally Influences the Synaptic
@@ -845,6 +845,54 @@ means and standard deviations.
 </details>
 
 <details>
+<summary>📖 <strong>Dendritic Computation of Direction Selectivity by Retinal
+Ganglion Cells</strong> — Taylor et al., 2000</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_science.289.5488.2347` |
+| **Authors** | W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney |
+| **Venue** | Science (journal) |
+| **DOI** | `10.1126/science.289.5488.2347` |
+| **URL** | https://www.science.org/doi/10.1126/science.289.5488.2347 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cells`](../../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1126_science.289.5488.2347/summary.md) |
+
+Taylor et al.'s 2000 Science paper resolves a decades-long question about where in the retinal
+circuit the direction-selectivity computation actually happens. By combining whole-cell
+patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and
+inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the
+authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and
+that the nonlinear interaction between excitation and inhibition responsible for the observed
+direction-selective spike output takes place postsynaptically in the DSGC dendrites.
+
+The experimental design is paradigmatic for the field. Moving-bar visual stimuli are presented
+in 12 directions; excitatory and inhibitory synaptic currents are isolated by clamping at
+appropriate holding potentials; and pharmacological dissection (picrotoxin, SR-95531,
+glutamate receptor antagonists) establishes which circuit elements carry the DS signal. The
+finding that the direction-selectivity index (DSI) of the spike output is abolished by
+blockade of inhibition, while the excitatory input is only weakly direction-tuned on its own,
+nails down inhibition as the DS- carrying signal.
+
+The mechanistic conclusion — that the nonlinearity is postsynaptic and dendritic — vindicates
+the Koch, Poggio & Torre 1982 theoretical framework and elevates shunting inhibition from a
+theoretical possibility to an experimentally established computation in a specific neural
+circuit. This establishes the mammalian DSGC as one of the cleanest examples of biophysical
+dendritic computation in vertebrate neuroscience.
+
+For this project, the paper is the single most important experimental constraint on DSGC
+compartmental modelling. Our NEURON DSGC models must: (1) receive asymmetric inhibitory inputs
+with the DS signal in the inhibition, not the excitation; (2) produce DS spike output via
+postsynaptic dendritic shunting, not via presynaptic asymmetry; (3) lose the DSI when
+dendritic inhibition is removed; (4) preserve the DSI across a range of stimulus velocities.
+Any DSGC model that fails these Taylor-et-al-2000 tests is not capturing the real biology and
+should not be used to make predictions about retinal circuit function.
+
+</details>
+
+<details>
 <summary>📖 <strong>The mechanism of directionally selective units in rabbit's
 retina.</strong> — Barlow & Levick, 1965</summary>
 
@@ -890,13 +938,32 @@ simulation.
 
 </details>
 
-## Tasks (1)
+## Tasks (2)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
+| 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 
-## Answers (1)
+## Answers (2)
+
+<details>
+<summary><strong>What does the classical cable-theory and dendritic-computation
+literature imply for the compartmental modelling of direction-selective
+retinal ganglion cells (DSGCs) in NEURON?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`cable-theory-implications-for-dsgc-modelling`](../../tasks/t0015_literature_survey_cable_theory/assets/answer/cable-theory-implications-for-dsgc-modelling/)
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not
+ball- and-stick), discretized with the `d_lambda` rule, and must implement direction
+selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring
+asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on
+dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model
+must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block,
+and reproducing the graded-vs- spike contrast-sensitivity trade-off.
+
+</details>
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
@@ -923,7 +990,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (18 open, 3 closed)
+## Suggestions (19 open, 3 closed)
 
 <details>
 <summary>🔧 <strong>Parametric curve fitting (von Mises / wrapped Gaussian) for
@@ -1021,6 +1088,22 @@ t0004's trials.csv and downstream simulated trials, and write an answer asset do
 where the estimates agree or diverge. If a variant is systematically preferred for our
 approximately 20 trials per angle, promote it to the default via a corrections-aware revision.
 Recommended task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
+specification</strong> (S-0015-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0015_literature_survey_cable_theory](../../tasks/t0015_literature_survey_cable_theory/)
+
+The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point
+specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive
+parameters, validation suite, spike-generator tuning). A follow-up experiment task should
+implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
+publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
+test battery (shape-index, graded DS, inhibition block, contrast-response).
 
 </details>
 

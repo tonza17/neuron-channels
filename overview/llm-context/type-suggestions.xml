@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T10:06:19Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T10:07:51Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>45261</char_count>
-    <byte_count>45268</byte_count>
-    <estimated_tokens>11315</estimated_tokens>
+    <char_count>48408</char_count>
+    <byte_count>48417</byte_count>
+    <estimated_tokens>12102</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -62,9 +62,13 @@
         <id>S-0012-04</id>
         <id>S-0012-05</id>
         <id>S-0012-06</id>
+        <id>S-0015-01</id>
+        <id>S-0015-02</id>
+        <id>S-0015-03</id>
+        <id>S-0015-04</id>
       </source_ids>
       <content>
-Suggestions: 45
+Suggestions: 49
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -572,6 +576,49 @@ Categories: direction-selectivity
 Date added: 2026-04-20
 
 compute_reliability implements one split-half estimator: partition trials into even/odd indices, per-angle means, Pearson r, clamped to [0, 1]. Canonical alternatives differ in defensible ways: (a) random-draw split rather than parity, (b) Spearman-Brown prophecy correction to project split-half r back to full-length reliability, (c) Spearman rank correlation for ordinal robustness, (d) bootstrap resampling to produce a confidence interval. Build compute_reliability_variants returning all four on the same TuningCurve, run it on t0004&#x27;s trials.csv and downstream simulated trials, and write an answer asset documenting where the estimates agree or diverge. If a variant is systematically preferred for our approximately 20 trials per angle, promote it to the default via a corrections-aware revision. Recommended task types: comparative-analysis, answer-question.
+
+## Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims
+ID: S-0015-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+Categories: cable-theory, retinal-ganglion-cells
+Date added: 2026-04-20
+
+Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski 1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset&#x27;s download_status to &#x27;success&#x27;, replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual papers.
+
+## Extend cable-theory survey to frequency-domain and thin-dendrite transmission
+ID: S-0015-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+Categories: cable-theory, dendritic-computation
+Date added: 2026-04-20
+
+The scoped-down 5-paper survey covers 3 of the 5 originally-planned themes in depth (Rall foundations, on-the-path shunting DS, morphology-driven firing) and references the other two (frequency-domain cable analysis, thin-dendrite transmission) only indirectly. A follow-up survey task should add ~5 papers on frequency-domain cable theory (Koch 1984, Segev &amp; Rall 1988) and thin-dendrite active transmission (Stuart &amp; Sakmann 1994, London &amp; Hausser 2005 review, Stuart &amp; Spruston 2015 review) to close the gap.
+
+## Register retinal-ganglion-cells and compartmental-modelling categories
+ID: S-0015-03
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0015_literature_survey_cable_theory
+Date added: 2026-04-20
+
+The answer asset verificator emits AA-W001 warnings because categories &#x27;retinal-ganglion-cells&#x27; and &#x27;compartmental-modelling&#x27; are not registered in meta/categories/. These categories are used by all five literature-survey tasks (t0015-t0019) and should be formally registered to silence the warnings and enable category-based aggregation across those tasks.
+
+## Build a minimal DSGC compartmental model implementing the 6-point specification
+ID: S-0015-04
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+Categories: compartmental-modelling, direction-selectivity
+Date added: 2026-04-20
+
+The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive parameters, validation suite, spike-generator tuning). A follow-up experiment task should implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part test battery (shape-index, graded DS, inhibition block, contrast-response).
       </content>
     </section>
   </sections>

@@ -1,6 +1,6 @@
-# Papers: `direction-selectivity` (17)
+# Papers: `direction-selectivity` (18)
 
-17 papers across 13 year(s).
+18 papers across 14 year(s).
 
 [Back to all papers](../README.md)
 
@@ -855,6 +855,56 @@ inhibitory synapse placement. The push-pull E/I structure implies both excitator
 inhibitory conductances must be directionally modulated. The large cell-to-cell variability
 justifies treating E/I ratios as free parameters in the optimisation, bounded by the reported
 means and standard deviations.
+
+</details>
+
+## 2000 (1)
+
+<details>
+<summary>📖 Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
+— Taylor et al., 2000</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_science.289.5488.2347` |
+| **Authors** | W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney |
+| **Venue** | Science (journal) |
+| **DOI** | `10.1126/science.289.5488.2347` |
+| **URL** | https://www.science.org/doi/10.1126/science.289.5488.2347 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1126_science.289.5488.2347/summary.md) |
+
+Taylor et al.'s 2000 Science paper resolves a decades-long question about where in the retinal
+circuit the direction-selectivity computation actually happens. By combining whole-cell
+patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and
+inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the
+authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and
+that the nonlinear interaction between excitation and inhibition responsible for the observed
+direction-selective spike output takes place postsynaptically in the DSGC dendrites.
+
+The experimental design is paradigmatic for the field. Moving-bar visual stimuli are presented
+in 12 directions; excitatory and inhibitory synaptic currents are isolated by clamping at
+appropriate holding potentials; and pharmacological dissection (picrotoxin, SR-95531,
+glutamate receptor antagonists) establishes which circuit elements carry the DS signal. The
+finding that the direction-selectivity index (DSI) of the spike output is abolished by
+blockade of inhibition, while the excitatory input is only weakly direction-tuned on its own,
+nails down inhibition as the DS- carrying signal.
+
+The mechanistic conclusion — that the nonlinearity is postsynaptic and dendritic — vindicates
+the Koch, Poggio & Torre 1982 theoretical framework and elevates shunting inhibition from a
+theoretical possibility to an experimentally established computation in a specific neural
+circuit. This establishes the mammalian DSGC as one of the cleanest examples of biophysical
+dendritic computation in vertebrate neuroscience.
+
+For this project, the paper is the single most important experimental constraint on DSGC
+compartmental modelling. Our NEURON DSGC models must: (1) receive asymmetric inhibitory inputs
+with the DS signal in the inhibition, not the excitation; (2) produce DS spike output via
+postsynaptic dendritic shunting, not via presynaptic asymmetry; (3) lose the DSI when
+dendritic inhibition is removed; (4) preserve the DSI across a range of stimulus velocities.
+Any DSGC model that fails these Taylor-et-al-2000 tests is not capturing the real biology and
+should not be used to make predictions about retinal circuit function.
 
 </details>
 

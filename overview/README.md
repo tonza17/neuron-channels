@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-20-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-25-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-1-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-3-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-4-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-45-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-49-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-2-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (6K) |
-[full](llm-context/full.xml) (63K) | [roadmap](llm-context/roadmap.xml) (23K) |
-[results](llm-context/results-deep-dive.xml) (38K) |
-[assets](llm-context/literature-and-assets.xml) (12K)
+[full](llm-context/full.xml) (69K) | [roadmap](llm-context/roadmap.xml) (23K) |
+[results](llm-context/results-deep-dive.xml) (41K) |
+[assets](llm-context/literature-and-assets.xml) (13K)
 
-*Last updated: 2026-04-20 10:06 UTC*
+*Last updated: 2026-04-20 10:07 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -47,13 +47,12 @@ No daily news yet.
 
 ---
 
-## [In Progress (3)](tasks/by-status/in_progress.md)
+## [In Progress (2)](tasks/by-status/in_progress.md)
 
 | # | Task | Started |
 |---|------|---------|
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | 2026-04-19 23:39 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | 2026-04-19 23:38 |
-| 0015 | [Literature survey: cable theory and dendritic filtering](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | 2026-04-19 23:38 |
 
 ---
 
@@ -77,10 +76,11 @@ No daily news yet.
 
 ---
 
-## [Recently Completed (10 total)](tasks/by-status/completed.md)
+## [Recently Completed (11 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0015 | [Literature survey: cable theory and dendritic filtering](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | [`results`](../tasks/t0015_literature_survey_cable_theory/results/results_detailed.md) | 2026-04-20 10:00 |
 | 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
 | 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
 | 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
@@ -90,11 +90,12 @@ No daily news yet.
 | 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`results`](../tasks/t0004_generate_target_tuning_curve/results/results_detailed.md) | 2026-04-19 08:42 |
 | 0003 | [Simulator library survey for DSGC compartmental modelling](../overview/tasks/task_pages/t0003_simulator_library_survey.md) | [`results`](../tasks/t0003_simulator_library_survey/results/results_detailed.md) | 2026-04-19 08:05 |
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | [`results`](../tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md) | 2026-04-19 01:35 |
-| 0001 | [Brainstorm results session 1](../overview/tasks/task_pages/t0001_brainstorm_results_1.md) | [`results`](../tasks/t0001_brainstorm_results_1/results/results_detailed.md) | 2026-04-18 00:00 |
+
+*1 more completed task → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
-## [Recent Suggestions (35 open)](suggestions/)
+## [Recent Suggestions (39 open)](suggestions/)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -289,11 +290,11 @@ parametric fit is required. Recommended task types: write-library, experiment-ru
 
 </details>
 
-*25 more open suggestions → [open suggestions](suggestions/)*
+*29 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (11)](suggestions/)
+## [High Priority Suggestions (13)](suggestions/)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -394,6 +395,39 @@ Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
+verify numerical claims</strong> (S-0015-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0015_literature_survey_cable_theory](../tasks/t0015_literature_survey_cable_theory/)
+
+Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski
+1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but
+were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
+paper asset's download_status to 'success', replace summary Overview disclaimers with
+PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
+length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
+papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
+specification</strong> (S-0015-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0015_literature_survey_cable_theory](../tasks/t0015_literature_survey_cable_theory/)
+
+The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point
+specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive
+parameters, validation suite, spike-generator tuning). A follow-up experiment task should
+implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
+publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
+test battery (shape-index, graded DS, inhibition block, contrast-response).
+
+</details>
+
+<details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
@@ -447,39 +481,29 @@ currently lacks. Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
-the project as a library asset</strong> (S-0003-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0003_simulator_library_survey](../tasks/t0003_simulator_library_survey/)
-
-Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
-register the resulting Python package as a library asset under `assets/library/`. This makes
-the DSGC reference implementation available to every downstream simulation task without
-re-download.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a small reusable library for target-vs-simulated tuning
-curve metrics</strong> (S-0004-03)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0004_generate_target_tuning_curve](../tasks/t0004_generate_target_tuning_curve/)
-
-Factor the closed-form DSI, HWHM, tuning_curve_rmse, and tuning_curve_reliability computations
-out of individual tasks into a shared library asset. Every later fitting task will need these
-four functions; centralising them avoids divergent reimplementations and makes metric values
-reproducible from parameters alone.
-
-</details>
-
-*1 more high-priority suggestion → [high-priority suggestions](suggestions/)*
+*3 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (3 total)](answers/)
+## [Recent Answers (4 total)](answers/)
+
+<details>
+<summary><strong>What does the classical cable-theory and dendritic-computation
+literature imply for the compartmental modelling of direction-selective
+retinal ganglion cells (DSGCs) in NEURON?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`cable-theory-implications-for-dsgc-modelling`](../tasks/t0015_literature_survey_cable_theory/assets/answer/cable-theory-implications-for-dsgc-modelling/)
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not
+ball- and-stick), discretized with the `d_lambda` rule, and must implement direction
+selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring
+asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on
+dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model
+must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block,
+and reproducing the graded-vs- spike contrast-sensitivity trade-off.
+
+</details>
 
 <details>
 <summary><strong>Which compartmental simulator should the direction-selective
@@ -542,7 +566,249 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 ---
 
-## [Latest Papers (20 total)](papers/)
+## [Latest Papers (25 total)](papers/)
+
+<details>
+<summary>📖 <strong>Dendritic Computation of Direction Selectivity by Retinal
+Ganglion Cells</strong> — Taylor et al., 2000</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_science.289.5488.2347` |
+| **Authors** | W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney |
+| **Venue** | Science (journal) |
+| **DOI** | `10.1126/science.289.5488.2347` |
+| **URL** | https://www.science.org/doi/10.1126/science.289.5488.2347 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cells`](../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1126_science.289.5488.2347/summary.md) |
+
+Taylor et al.'s 2000 Science paper resolves a decades-long question about where in the retinal
+circuit the direction-selectivity computation actually happens. By combining whole-cell
+patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and
+inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the
+authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and
+that the nonlinear interaction between excitation and inhibition responsible for the observed
+direction-selective spike output takes place postsynaptically in the DSGC dendrites.
+
+The experimental design is paradigmatic for the field. Moving-bar visual stimuli are presented
+in 12 directions; excitatory and inhibitory synaptic currents are isolated by clamping at
+appropriate holding potentials; and pharmacological dissection (picrotoxin, SR-95531,
+glutamate receptor antagonists) establishes which circuit elements carry the DS signal. The
+finding that the direction-selectivity index (DSI) of the spike output is abolished by
+blockade of inhibition, while the excitatory input is only weakly direction-tuned on its own,
+nails down inhibition as the DS- carrying signal.
+
+The mechanistic conclusion — that the nonlinearity is postsynaptic and dendritic — vindicates
+the Koch, Poggio & Torre 1982 theoretical framework and elevates shunting inhibition from a
+theoretical possibility to an experimentally established computation in a specific neural
+circuit. This establishes the mammalian DSGC as one of the cleanest examples of biophysical
+dendritic computation in vertebrate neuroscience.
+
+For this project, the paper is the single most important experimental constraint on DSGC
+compartmental modelling. Our NEURON DSGC models must: (1) receive asymmetric inhibitory inputs
+with the DS signal in the inhibition, not the excitation; (2) produce DS spike output via
+postsynaptic dendritic shunting, not via presynaptic asymmetry; (3) lose the DSI when
+dendritic inhibition is removed; (4) preserve the DSI across a range of stimulus velocities.
+Any DSGC model that fails these Taylor-et-al-2000 tests is not capturing the real biology and
+should not be used to make predictions about retinal circuit function.
+
+</details>
+
+<details>
+<summary>📖 <strong>Distinguishing theoretical synaptic potentials computed for
+different soma-dendritic distributions of synaptic input</strong> — Rall,
+1967</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1152_jn.1967.30.5.1138` |
+| **Authors** | Wilfrid Rall |
+| **Venue** | Journal of Neurophysiology (journal) |
+| **DOI** | `10.1152/jn.1967.30.5.1138` |
+| **URL** | https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../meta/categories/cable-theory/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1152_jn.1967.30.5.1138/summary.md) |
+
+Rall's 1967 paper asks whether the shape of a somatic EPSP carries information about where
+along the dendritic tree the underlying synaptic input was delivered. Using the
+equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall
+computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the
+soma.
+
+The paper's methodological contribution is the shape-index plot: a two-dimensional graph of
+EPSP rise time versus half-width in which different input locations trace out distinguishable
+curves. Somatic inputs produce fast, narrow EPSPs; distal dendritic inputs produce slower,
+broader EPSPs whose temporal profile is dominated by cable low-pass filtering.
+
+The main result is that input location is recoverable from EPSP shape with useful accuracy,
+provided the underlying neuron approximately satisfies the equivalent-cylinder assumptions.
+Rall also reports the expected dramatic attenuation of distal-input amplitude at the soma, and
+discusses the interplay between membrane time constant and cable filtering in shaping the
+observed waveform.
+
+For the direction-selective retinal ganglion cell (DSGC) modelling work in this project, the
+paper is relevant in three ways. First, it establishes that somatically-recorded EPSPs from
+DSGC patch experiments can in principle be used to estimate input location, informing how we
+interpret experimental data. Second, it defines a standard validation target (shape-index
+curves) that our reduced compartment models should reproduce. Third, it warns that the
+equivalent-cylinder simplification depends on branching-rule assumptions that real dendritic
+arbors — including the starburst amacrine and DSGC arbors we care about — do not satisfy
+exactly, motivating the use of full morphological compartmental simulation in NEURON rather
+than reduced analytical models.
+
+</details>
+
+<details>
+<summary>📖 <strong>Influence of dendritic structure on firing pattern in model
+neocortical neurons</strong> — Mainen & Sejnowski, 1996</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_382363a0` |
+| **Authors** | Zachary F. Mainen, Terrence J. Sejnowski |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/382363a0` |
+| **URL** | https://www.nature.com/articles/382363a0 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../meta/categories/cable-theory/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`compartmental-modelling`](../meta/categories/compartmental-modelling/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/summary.md) |
+
+Mainen & Sejnowski's 1996 Nature paper is a landmark in compartmental neuroscience modelling
+because it cleanly separates the roles of ion-channel density and dendritic morphology in
+shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and
+calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3
+pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four
+characteristic firing patterns observed in neocortical recordings without changing any
+biophysical parameter except the dendritic tree.
+
+Methodologically, the paper is a textbook example of the NEURON-based compartmental-modelling
+workflow: reconstructed morphology, `d_lambda` spatial discretization, axonal spike initiation
+with biophysically motivated channel distributions, and quantitative comparison of simulated
+somatic firing patterns to experimental intracellular data. The calcium-driven slow
+depolarizing current in large apical dendrites, coupled to axonal re-excitation through the
+soma, emerges as the mechanism for intrinsic bursting.
+
+The main finding is that morphology-driven differences in the dendritic load on the soma are
+sufficient to explain observed firing-pattern diversity. Truncating the apical dendrite of the
+layer-5 pyramidal morphology abolishes bursting; removing dendritic calcium conductance has
+the same effect, showing the two factors are jointly necessary. This is a strong and
+counterintuitive result that reshaped how compartmental modellers interpret cell-type-specific
+firing.
+
+For this project, the paper is directly relevant in three ways. First, it confirms that our
+DSGC compartmental models must use accurate dendritic reconstructions, not simplified
+"ball-and-stick" approximations, before attributing behavioural differences to channel-density
+variation between DSGC subtypes. Second, the axon-dendrite coupling framework it establishes
+is essential context for understanding how spikes initiate and propagate in DSGCs given their
+distinctive bistratified dendritic arbors. Third, the paper codifies the `d_lambda`
+discretization practice that our NEURON models must follow to produce trustworthy
+active-dendrite simulations.
+
+</details>
+
+<details>
+<summary>📖 <strong>Retinal ganglion cells: a functional interpretation of dendritic
+morphology</strong> — Koch et al., 1982</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1098_rstb.1982.0084` |
+| **Authors** | Christof Koch, Tomaso Poggio, Vincent Torre |
+| **Venue** | Philosophical Transactions of the Royal Society B (journal) |
+| **DOI** | `10.1098/rstb.1982.0084` |
+| **URL** | https://royalsocietypublishing.org/doi/10.1098/rstb.1982.0084 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../meta/categories/cable-theory/), [`retinal-ganglion-cells`](../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1098_rstb.1982.0084/summary.md) |
+
+Koch, Poggio & Torre's 1982 paper is arguably the most influential theoretical paper on
+retinal ganglion cell biophysics ever published, and is the direct intellectual ancestor of
+the DSGC modelling work this project undertakes. Using passive cable theory applied to
+histologically reconstructed cat RGC morphologies, the authors compute electrotonic properties
+of each RGC class and show that none are truly isopotential despite their small physical
+sizes.
+
+The paper's central theoretical contribution is the "on-the-path" shunting-inhibition
+mechanism for direction selectivity. A shunting inhibitory synapse (reversal potential near
+rest, acting as a conductance gate) placed between an excitatory synapse and the soma
+implements an approximately multiplicative veto of the excitation. If the inhibitory input is
+activated only by null-direction motion (via a delay or asymmetric synaptic wiring), the
+asymmetric activation of preferred vs. null motion produces strongly direction-selective
+somatic responses even in a purely passive neuron.
+
+The biophysical predictions are quantitative: the paper reports direction-selectivity indices
+exceeding 0.5 for physiologically reasonable synaptic conductance magnitudes, matching the
+values measured in cat RGCs. The effect depends critically on the relative positions of the
+excitatory and inhibitory synapses along the dendrite, which is a concrete, testable
+prediction for modern morphologically detailed DSGC models.
+
+For this project, the paper is essential context in three ways. First, it establishes the
+"on-the-path" shunting paradigm that all modern DSGC circuit-level models (Vaney, Taylor,
+Euler, Borg-Graham, and their successors) rely on. Second, it shows that the passive
+cable-theoretic machinery of Rall is sufficient to generate nontrivial retinal computations,
+which means our passive baseline compartment models should already be able to produce
+meaningful DS indices before adding active conductances. Third, it defines the electrotonic
+compactness question concretely: our NEURON models should measure dendritic L values and
+compare them against the paper's 0.5-0.8 lambda range for alpha RGCs to validate
+passive-parameter choices.
+
+</details>
+
+<details>
+<summary>📖 <strong>Spike Generator Limits Efficiency of Information Transfer in a
+Retinal Ganglion Cell</strong> — Dhingra & Smith, 2004</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_jneurosci.5346-03.2004` |
+| **Authors** | Narender K. Dhingra, Robert G. Smith |
+| **Venue** | Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/jneurosci.5346-03.2004` |
+| **URL** | https://www.jneurosci.org/content/24/12/2914 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`retinal-ganglion-cells`](../meta/categories/retinal-ganglion-cells/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modelling`](../meta/categories/compartmental-modelling/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/summary.md) |
+
+Dhingra & Smith (2004) provide the first quantitative measurement of how much information the
+retinal ganglion cell spike generator loses when converting graded synaptic input into a
+discrete spike train. Using intracellular recordings from brisk-transient RGCs in an intact
+mammalian retina at physiological temperature, combined with ideal-observer analysis of
+contrast detection and increment thresholds, they find that spikes require roughly 2.5-fold
+higher contrast for detection than the graded potential does (3.8% vs. 1.5%), and carry
+approximately 60% fewer distinguishable gray levels.
+
+Mechanistically, the information loss is dominated by the threshold nonlinearity of the spike
+generator rather than by stochastic noise in the spike-generation machinery. A simple
+threshold- nonlinearity model of the spike generator reproduces both the detection threshold
+gap between graded potential and spikes and the full shape of the increment-threshold "dipper"
+function for both signals. This implicates threshold-related biophysics — resting potential,
+sodium-channel activation voltage, and effective gain — as the key parameters controlling RGC
+spike-generator information transfer.
+
+A further result is the trade-off between contrast sensitivity and dynamic range: depolarizing
+the cell reduces spike detection threshold (improving low-contrast sensitivity) but also
+reduces the range of contrasts the spike output can represent (collapsing high-contrast
+responses). No single setting of the spike generator simultaneously maximizes both,
+establishing a fundamental constraint on any biophysical model of RGC output.
+
+For DSGC modelling in this project, the paper provides three key constraints. First, our
+compartmental DSGC models should be evaluated not only on spike output but also on the
+underlying graded-potential response, since the spike conversion systematically loses
+information. Second, the threshold-nonlinearity finding means that matching DSGC firing
+patterns to experimental data requires careful tuning of spike-initiation-zone sodium-channel
+kinetics rather than adding noise to force a match. Third, the sensitivity-dynamic-range
+trade-off means that our DSGC model cannot be validated against a single operating point — we
+must test across a realistic contrast range and verify that the model reproduces the shape of
+the sensitivity-vs-contrast curve, not just a single contrast sensitivity value.
+
+</details>
 
 <details>
 <summary>📖 <strong>Direction selectivity in the retina: symmetry and asymmetry in
@@ -803,269 +1069,7 @@ for use in simulation.
 
 </details>
 
-<details>
-<summary>📖 <strong>NMDA Receptors Multiplicatively Scale Visual Signals and Enhance
-Directional Motion Discrimination in Retinal Ganglion Cells</strong> —
-Poleg-Polsky & Diamond, 2016</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2016.02.013` |
-| **Authors** | Alon Poleg-Polsky, Jeffrey S. Diamond |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2016.02.013` |
-| **URL** | https://www.sciencedirect.com/science/article/pii/S0896627316001069 |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/summary.md) |
-
-Poleg-Polsky and Diamond investigate how direction-selective ganglion cells (DSGCs) in the
-mouse retina amplify visual signals while preserving reliable directional tuning. The central
-question is why NMDA receptors are present on DSGC dendrites when direction selectivity can be
-computed without them. The answer proposed is that NMDARs provide multiplicative gain --
-scaling responses in both the preferred and null directions by the same factor -- which
-maintains the direction-selectivity index, increases absolute signal amplitude, and improves
-resistance to visual noise.
-
-The experiments combine whole-cell patch-clamp from GFP-labeled DRD4 mouse DSGCs with a
-morphologically realistic multicompartmental NEURON model containing 177 AMPAR + 177 NMDAR +
-177 GABA_A synapses on reconstructed ON dendrites. Slope-angle analysis distinguishes
-multiplicative from additive NMDAR scaling. Two pharmacological manipulations convert
-multiplication to addition: removing voltage-dependent Mg2+ block and reversing GABAergic
-inhibition to excitation with high-Cl- internal solution. The NEURON model replicates all
-experimental PSP and AP responses and predicts additive NMDAR scaling under both
-pharmacological conditions.
-
-The key finding is that NMDAR multiplication requires the conjunction of voltage-dependent
-NMDAR conductance and directionally tuned GABAergic inhibition. Under noiseless conditions,
-NMDAR blockade preserves DSI but reduces AP firing amplitude. Under noisy conditions, ROC
-analysis demonstrates significantly better signal discrimination with intact NMDARs than with
-AP5 or 0 Mg2+. Dendritic spikes were absent in DRD4 DSGCs; passive propagation proved
-sufficient for DS computation.
-
-For this project, the Poleg-Polsky & Diamond NEURON model is the essential template. Its
-geometry (single reconstructed DRD4 DSGC), synaptic counts (177 AMPA + 177 GABA on ON
-dendrites), and circuit architecture (tuned GABAergic inhibition as stronger ND conductance)
-directly match the planned implementation. Available on ModelDB (accession 189347). The paper
-validates passive- dendrite sufficiency for project RQ4, constrains NMDAR conductance
-Mg2+-block parameters, and establishes ROC accuracy-curve area as the appropriate metric for
-comparing DS tuning fidelity across model variants.
-
-</details>
-
-<details>
-<summary>📖 <strong>Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective
-Retinal Ganglion Cells Lack Direction Tuning</strong> — Park et al., 2014</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.5017-13.2014` |
-| **Authors** | Silvia J.H. Park, In-Jung Kim, Loren L. Looger, Jonathan B. Demb, Bart G. Borghuis |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.5017-13.2014` |
-| **URL** | https://www.jneurosci.org/content/34/11/3976 |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/summary.md) |
-
-Park et al. (2014) investigate the synaptic basis of direction selectivity in mouse On-Off
-DSGCs, asking whether acetylcholine and glutamate inputs are genuinely directionally tuned
-alongside the well-established null-direction GABA from starburst amacrine cells. The study is
-motivated by a decade of contradictory voltage-clamp data that appeared to show
-preferred-direction-tuned excitatory conductances, implying DS presynaptic release from
-bipolar cells and SAC cholinergic terminals.
-
-The authors combine whole-cell patch-clamp with simultaneous two-photon imaging of iGluSnFR
-conditionally expressed on DSGC dendrites via CART-Cre mice, applying pharmacological
-manipulations (hexamethonium for nicotinic block, gabazine for GABA-A block). Recording the
-optical glutamate signal and electrical conductance in the same cell at the same time allows
-direct dissociation of presynaptic release directionality from voltage-clamp measurement
-artefacts.
-
-The central result is unambiguous: glutamate release lacks directional tuning (iGluSnFR P - N
-= +0.073 +/- 0.04, p = 0.95) even while simultaneously recorded excitatory current appears
-tuned (+0.35 +/- 0.07 nS, p = 0.00015). Blocking GABA-A receptors with gabazine abolishes
-apparent excitatory DS in both modalities, confirming the artefact arises from imperfect space
-clamp during strong null-direction inhibition (2.43 +/- 0.31 nS). The DS index of recorded
-cells is 0.65 +/- 0.05, establishing a quantitative target for model optimisation.
-
-For this project's compartmental simulation, these results provide three hard constraints: (1)
-excitatory inputs (glutamate and acetylcholine) must be modelled as omnidirectional; (2) null-
-direction GABA inhibition is the primary DS-generating mechanism with a P - N magnitude of
-approximately 2.4 nS; and (3) the target DS index for optimisation is 0.65-0.73 under in vitro
-patch-clamp conditions. The space-clamp artefact warns against using apparent excitatory
-tuning in experimental voltage-clamp traces to calibrate any model excitatory tuning
-parameter.
-
-</details>
-
-<details>
-<summary>📖 <strong>Direction-Selective Dendritic Action Potentials in Rabbit
-Retina</strong> — Oesch et al., 2005</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2005.06.036` |
-| **Authors** | Nicholas Oesch, Thomas Euler, W. Rowland Taylor |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2005.06.036` |
-| **URL** | https://www.sciencedirect.com/science/article/pii/S089662730500646X |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md) |
-
-Oesch, Euler, and Taylor address a central unresolved question in retinal direction
-selectivity: why does a ganglion cell whose somatic subthreshold EPSPs are only weakly
-directional produce spike output that is sharply tuned to the preferred direction of motion?
-By combining whole-cell current-clamp recordings from ON-OFF DSGCs in flat-mounted rabbit
-retina with focal and dendritic TTX application, intracellular QX-314, controlled somatic
-hyperpolarization, and two-photon Ca2+ imaging of dendritic arbors, they dissect the spatial
-origin of the spikes that drive DSGC output during visual stimulation.
-
-The headline finding is a bimodal spike amplitude distribution - large ~55 mV somatic action
-potentials and small ~7 mV dendritic spikelets - that can be separated by any of three
-independent manipulations (somatic TTX, QX-314, somatic hyperpolarization). The dendritic
-spikelets inherit the full directional tuning of the somatic output (DSI ~0.6-0.7),
-superimpose at sub-somatic-refractory intervals, and are selectively suppressed by puffing TTX
-onto the dendrites (reducing light-evoked spikes by ~42% while barely affecting
-depolarization-evoked somatic spikes). Calcium imaging confirms that the dendrites host
-functional TTX-sensitive Na+ channels active during light-driven responses.
-
-Mechanistically, the authors argue that direction selectivity is computed by dendritic spike
-failure: locally offset GABAergic inhibition from starburst amacrine cells, positioned between
-bipolar-cell excitation and the soma along the null-direction pathway, shunts dendritic spikes
-before they can reach the soma. In the preferred direction the inhibition is distal to the
-excitation, so dendritic spikes propagate successfully. This model naturally explains the
-nondirectional zone on the preferred side of the receptive field and the preferred-side
-receptive field offset.
-
-For a DSGC compartmental modeling project, this paper is foundational. It supplies the
-quantitative targets (somatic PSP amplitudes of ~12 mV across all directions, somatic
-threshold near -49 mV, dendritic spikelet amplitude ~7 mV, spike DSI ~0.7 versus PSP DSI ~0.1)
-that any biophysical simulation must reproduce, and it specifies the qualitative requirements:
-active dendrites with distributed Na+ channels, multiple independent initiation zones,
-on-the-path starburst inhibition, and a near-unity dendritic-to-somatic spike coupling. Any
-model that relies on passive dendrites and a single somatic threshold cannot reach the
-observed tuning sharpness and should be rejected on quantitative grounds.
-
-</details>
-
-<details>
-<summary>📖 <strong>Cross-compartmental Modulation of Dendritic Signals for Retinal
-Direction Selectivity</strong> — Koren et al., 2017</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2017.07.020` |
-| **Authors** | David Koren, James C. R. Grove, Wei Wei |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2017.07.020` |
-| **URL** | https://doi.org/10.1016/j.neuron.2017.07.020 |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`dendritic-computation`](../meta/categories/dendritic-computation/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md) |
-
-Koren, Grove, and Wei address a gap in the mechanistic understanding of retinal direction
-selectivity: how the starburst amacrine cell (SAC) maintains the required balance between
-electrotonic isolation and cross-compartmental signal integration in its dendrites, and how
-that balance is regulated and coupled to direction-selective ganglion cell (DSGC) output.
-Earlier work established that SAC dendritic sectors are semi-independent computational units
-with centrifugal preference, but the mechanisms controlling the "semi" part of that isolation
-were unknown.
-
-Methodologically the paper combines two-photon GCaMP6 imaging of distal SAC varicosities,
-whole-cell patch-clamp of SACs and DSGCs, subregion visual stimulation to dissociate local
-from global dendritic activation, a selective pharmacology (LY341495 antagonist and LY354740
-agonist) for mGluR2, and mGluR2 knockout mice as an off-target control. Voltage-gated calcium
-channel subtypes are identified with omega-conotoxin GVIA (N-type) and omega-agatoxin IVA
-(P/Q-type).
-
-The central findings are that (i) the strong centrifugal response of distal SAC varicosities
-during full-field motion is partly produced by trans-somatic signal integration from the
-opposite side of the dendritic tree; (ii) mGluR2 signaling inhibits N- and P/Q-type VGCCs on
-SACs to enforce sufficient electrotonic isolation during centripetal motion; (iii) blocking
-mGluR2 selectively enhances preferred-direction IPSCs onto DSGCs (delay **289 ms at 440
-um/s**, **147 ms at 1100 um/s**); and (iv) this aberrant inhibition reduces DSGC spiking
-specifically at high motion speeds, contributing to the broad speed tuning of the
-direction-selective circuit.
-
-For this project's goal of a compartmental DSGC model that matches a target
-angle-to-AP-frequency curve, the paper has two concrete implications. First, the IPSC input
-model on the DSGC must reflect speed-dependent latency and amplitude arising from SAC
-trans-somatic propagation rather than a speed-invariant null-direction inhibition. Second, the
-saturation of centrifugal SAC calcium signals and null-direction DSGC IPSCs, even under strong
-pharmacological perturbation, suggests that the target tuning curve can be reproduced with a
-degenerate set of Na/K conductance combinations (RQ1 "ridge" hypothesis), because upstream
-inhibition is the first-order constraint on firing at preferred direction and any well-chosen
-conductance combination that preserves somatic excitability will suffice. Active dendritic
-conductances in the DSGC (RQ4) can be evaluated against this framework, but the primary
-directional signal arrives pre-shaped by SAC compartmental computation, not generated locally
-in the DSGC dendrites.
-
-</details>
-
-<details>
-<summary>📖 <strong>The functional organization of excitation and inhibition in the
-dendrites of mouse direction-selective ganglion cells</strong> — Jain et
-al., 2020</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.7554_eLife.52949` |
-| **Authors** | Varsha Jain, Benjamin L Murphy-Baum, Geoff deRosenroll, Santhosh Sethuramanujam, Mike Delsey, Kerry R Delaney, Gautam Bhagwan Awatramani |
-| **Venue** | eLife (journal) |
-| **DOI** | `10.7554/eLife.52949` |
-| **URL** | https://elifesciences.org/articles/52949 |
-| **Date added** | 2026-04-19 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0002_literature_survey_dsgc_compartmental_models`](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Full summary** | [`summary.md`](../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/summary.md) |
-
-This eLife paper asks a specific question about retinal direction selectivity: at what spatial
-scale is the direction-selective computation actually performed inside the dendrites of an
-ON-OFF DSGC? The question is motivated by decades of theoretical work (Koch, Poggio & Torre
-1982; Schachter et al. 2010) proposing dendritic subunits on a 50–100 µm scale, by anatomical
-evidence that starburst amacrine cells wrap varicosities around DSGC dendrites with
-direction-dependent orientation (Briggman et al. 2011), and by earlier patch-clamp results
-(Sivyer & Williams 2013) suggesting subthreshold local tuning. The authors set out to measure
-that spatial scale directly in an intact mouse retina.
-
-Their methodology combines two-photon Ca²⁺ imaging of small (3–4 µm) dendritic ROIs in
-OGB-1-loaded DSGCs with voltage-gated Na⁺ channel blockade (intracellular QX-314 or bath TTX),
-pharmacological dissection of NMDA receptors (D-AP5), genetic disruption of GABA release from
-starburst amacrine cells (vGAT-KO), mechanical ablation of individual SACs via sharp-electrode
-lesions, and a multi-compartmental NEURON model of a reconstructed DSGC with 177 E/I synaptic
-pairs and stochastic release. The combination of imaging, targeted circuit perturbation, and
-biophysical simulation is the paper's methodological core.
-
-The headline findings are that DS information exists and is independently generated inside
-5–10 µm dendritic segments — an order of magnitude smaller than classic cable-theory
-estimates; that noise correlations between dendritic ROIs fall off with a 5.3 µm space
-constant; that dendritic Ca²⁺ tuning matches somatic spiking tuning and is sharper than
-subthreshold somatic voltage; that NMDA receptors scale responses multiplicatively without
-altering PD or DSI; that ablating just 3–7 null-side SACs selectively disrupts DS at
-interspersed dendritic hot spots leaving other segments intact; and that a soft dendritic
-voltage threshold in the CaV activation range (−55 to −48 mV) is sufficient in the model to
-convert homogeneously-tuned inputs into strongly-tuned, locally-independent compartments.
-
-For this project the paper is central. It pins down the empirical target that an ON-OFF DSGC
-compartmental model must reproduce: sharp somatic directional tuning that emerges from many
-small, locally-tuned dendritic segments whose independence is enforced by dendritic threshold
-nonlinearities and by spatially-precise GABAergic inhibition. It also supplies an explicit set
-of channel conductances, a morphology reference (Poleg-Polsky & Diamond 2016), a ratio of 1:1
-excitatory-to-inhibitory synapse count (177 each), and a concrete prediction — active
-dendritic Na⁺/K⁺ channels are expected to sharpen tuning — that we will test directly as part
-of our active-vs-passive dendrite experiment. The measured DSI distribution, angular SD of
-~32°, and 5–10 µm compartment scale give us quantitative benchmarks to score candidate model
-configurations against.
-
-</details>
-
-*10 more papers → [papers](papers/)*
+*15 more papers → [papers](papers/)*
 
 ---
 

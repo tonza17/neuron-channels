@@ -1,6 +1,6 @@
-# Papers: `dendritic-computation` (11)
+# Papers: `dendritic-computation` (15)
 
-11 papers across 10 year(s).
+15 papers across 14 year(s).
 
 [Back to all papers](../README.md)
 
@@ -624,5 +624,204 @@ inhibitory synapse placement. The push-pull E/I structure implies both excitator
 inhibitory conductances must be directionally modulated. The large cell-to-cell variability
 justifies treating E/I ratios as free parameters in the optimisation, bounded by the reported
 means and standard deviations.
+
+</details>
+
+## 2000 (1)
+
+<details>
+<summary>📖 Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
+— Taylor et al., 2000</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1126_science.289.5488.2347` |
+| **Authors** | W. Rowland Taylor, Shigang He, William R. Levick, David I. Vaney |
+| **Venue** | Science (journal) |
+| **DOI** | `10.1126/science.289.5488.2347` |
+| **URL** | https://www.science.org/doi/10.1126/science.289.5488.2347 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1126_science.289.5488.2347/summary.md) |
+
+Taylor et al.'s 2000 Science paper resolves a decades-long question about where in the retinal
+circuit the direction-selectivity computation actually happens. By combining whole-cell
+patch-clamp recording from rabbit DSGCs with voltage-clamp separation of excitatory and
+inhibitory synaptic currents and with pharmacological block of inhibitory transmission, the
+authors demonstrate that DSGCs receive a strongly direction-asymmetric inhibitory input and
+that the nonlinear interaction between excitation and inhibition responsible for the observed
+direction-selective spike output takes place postsynaptically in the DSGC dendrites.
+
+The experimental design is paradigmatic for the field. Moving-bar visual stimuli are presented
+in 12 directions; excitatory and inhibitory synaptic currents are isolated by clamping at
+appropriate holding potentials; and pharmacological dissection (picrotoxin, SR-95531,
+glutamate receptor antagonists) establishes which circuit elements carry the DS signal. The
+finding that the direction-selectivity index (DSI) of the spike output is abolished by
+blockade of inhibition, while the excitatory input is only weakly direction-tuned on its own,
+nails down inhibition as the DS- carrying signal.
+
+The mechanistic conclusion — that the nonlinearity is postsynaptic and dendritic — vindicates
+the Koch, Poggio & Torre 1982 theoretical framework and elevates shunting inhibition from a
+theoretical possibility to an experimentally established computation in a specific neural
+circuit. This establishes the mammalian DSGC as one of the cleanest examples of biophysical
+dendritic computation in vertebrate neuroscience.
+
+For this project, the paper is the single most important experimental constraint on DSGC
+compartmental modelling. Our NEURON DSGC models must: (1) receive asymmetric inhibitory inputs
+with the DS signal in the inhibition, not the excitation; (2) produce DS spike output via
+postsynaptic dendritic shunting, not via presynaptic asymmetry; (3) lose the DSI when
+dendritic inhibition is removed; (4) preserve the DSI across a range of stimulus velocities.
+Any DSGC model that fails these Taylor-et-al-2000 tests is not capturing the real biology and
+should not be used to make predictions about retinal circuit function.
+
+</details>
+
+## 1996 (1)
+
+<details>
+<summary>📖 Influence of dendritic structure on firing pattern in model neocortical
+neurons — Mainen & Sejnowski, 1996</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_382363a0` |
+| **Authors** | Zachary F. Mainen, Terrence J. Sejnowski |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/382363a0` |
+| **URL** | https://www.nature.com/articles/382363a0 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modelling`](../../../meta/categories/compartmental-modelling/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/summary.md) |
+
+Mainen & Sejnowski's 1996 Nature paper is a landmark in compartmental neuroscience modelling
+because it cleanly separates the roles of ion-channel density and dendritic morphology in
+shaping neuronal firing patterns. By applying the same fixed set of sodium, potassium, and
+calcium conductances to four reconstructed neuronal morphologies — layer-5 pyramidal, layer-3
+pyramidal, stellate, and low-threshold-spiking interneuron — the authors reproduce the four
+characteristic firing patterns observed in neocortical recordings without changing any
+biophysical parameter except the dendritic tree.
+
+Methodologically, the paper is a textbook example of the NEURON-based compartmental-modelling
+workflow: reconstructed morphology, `d_lambda` spatial discretization, axonal spike initiation
+with biophysically motivated channel distributions, and quantitative comparison of simulated
+somatic firing patterns to experimental intracellular data. The calcium-driven slow
+depolarizing current in large apical dendrites, coupled to axonal re-excitation through the
+soma, emerges as the mechanism for intrinsic bursting.
+
+The main finding is that morphology-driven differences in the dendritic load on the soma are
+sufficient to explain observed firing-pattern diversity. Truncating the apical dendrite of the
+layer-5 pyramidal morphology abolishes bursting; removing dendritic calcium conductance has
+the same effect, showing the two factors are jointly necessary. This is a strong and
+counterintuitive result that reshaped how compartmental modellers interpret cell-type-specific
+firing.
+
+For this project, the paper is directly relevant in three ways. First, it confirms that our
+DSGC compartmental models must use accurate dendritic reconstructions, not simplified
+"ball-and-stick" approximations, before attributing behavioural differences to channel-density
+variation between DSGC subtypes. Second, the axon-dendrite coupling framework it establishes
+is essential context for understanding how spikes initiate and propagate in DSGCs given their
+distinctive bistratified dendritic arbors. Third, the paper codifies the `d_lambda`
+discretization practice that our NEURON models must follow to produce trustworthy
+active-dendrite simulations.
+
+</details>
+
+## 1982 (1)
+
+<details>
+<summary>📖 Retinal ganglion cells: a functional interpretation of dendritic
+morphology — Koch et al., 1982</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1098_rstb.1982.0084` |
+| **Authors** | Christof Koch, Tomaso Poggio, Vincent Torre |
+| **Venue** | Philosophical Transactions of the Royal Society B (journal) |
+| **DOI** | `10.1098/rstb.1982.0084` |
+| **URL** | https://royalsocietypublishing.org/doi/10.1098/rstb.1982.0084 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1098_rstb.1982.0084/summary.md) |
+
+Koch, Poggio & Torre's 1982 paper is arguably the most influential theoretical paper on
+retinal ganglion cell biophysics ever published, and is the direct intellectual ancestor of
+the DSGC modelling work this project undertakes. Using passive cable theory applied to
+histologically reconstructed cat RGC morphologies, the authors compute electrotonic properties
+of each RGC class and show that none are truly isopotential despite their small physical
+sizes.
+
+The paper's central theoretical contribution is the "on-the-path" shunting-inhibition
+mechanism for direction selectivity. A shunting inhibitory synapse (reversal potential near
+rest, acting as a conductance gate) placed between an excitatory synapse and the soma
+implements an approximately multiplicative veto of the excitation. If the inhibitory input is
+activated only by null-direction motion (via a delay or asymmetric synaptic wiring), the
+asymmetric activation of preferred vs. null motion produces strongly direction-selective
+somatic responses even in a purely passive neuron.
+
+The biophysical predictions are quantitative: the paper reports direction-selectivity indices
+exceeding 0.5 for physiologically reasonable synaptic conductance magnitudes, matching the
+values measured in cat RGCs. The effect depends critically on the relative positions of the
+excitatory and inhibitory synapses along the dendrite, which is a concrete, testable
+prediction for modern morphologically detailed DSGC models.
+
+For this project, the paper is essential context in three ways. First, it establishes the
+"on-the-path" shunting paradigm that all modern DSGC circuit-level models (Vaney, Taylor,
+Euler, Borg-Graham, and their successors) rely on. Second, it shows that the passive
+cable-theoretic machinery of Rall is sufficient to generate nontrivial retinal computations,
+which means our passive baseline compartment models should already be able to produce
+meaningful DS indices before adding active conductances. Third, it defines the electrotonic
+compactness question concretely: our NEURON models should measure dendritic L values and
+compare them against the paper's 0.5-0.8 lambda range for alpha RGCs to validate
+passive-parameter choices.
+
+</details>
+
+## 1967 (1)
+
+<details>
+<summary>📖 Distinguishing theoretical synaptic potentials computed for different
+soma-dendritic distributions of synaptic input — Rall, 1967</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1152_jn.1967.30.5.1138` |
+| **Authors** | Wilfrid Rall |
+| **Venue** | Journal of Neurophysiology (journal) |
+| **DOI** | `10.1152/jn.1967.30.5.1138` |
+| **URL** | https://journals.physiology.org/doi/10.1152/jn.1967.30.5.1138 |
+| **Date added** | 2026-04-20 |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0015_literature_survey_cable_theory/assets/paper/10.1152_jn.1967.30.5.1138/summary.md) |
+
+Rall's 1967 paper asks whether the shape of a somatic EPSP carries information about where
+along the dendritic tree the underlying synaptic input was delivered. Using the
+equivalent-cylinder formalism and closed-form solutions of the passive cable equation, Rall
+computes theoretical EPSP waveforms for inputs at a range of electrotonic distances from the
+soma.
+
+The paper's methodological contribution is the shape-index plot: a two-dimensional graph of
+EPSP rise time versus half-width in which different input locations trace out distinguishable
+curves. Somatic inputs produce fast, narrow EPSPs; distal dendritic inputs produce slower,
+broader EPSPs whose temporal profile is dominated by cable low-pass filtering.
+
+The main result is that input location is recoverable from EPSP shape with useful accuracy,
+provided the underlying neuron approximately satisfies the equivalent-cylinder assumptions.
+Rall also reports the expected dramatic attenuation of distal-input amplitude at the soma, and
+discusses the interplay between membrane time constant and cable filtering in shaping the
+observed waveform.
+
+For the direction-selective retinal ganglion cell (DSGC) modelling work in this project, the
+paper is relevant in three ways. First, it establishes that somatically-recorded EPSPs from
+DSGC patch experiments can in principle be used to estimate input location, informing how we
+interpret experimental data. Second, it defines a standard validation target (shape-index
+curves) that our reduced compartment models should reproduce. Third, it warns that the
+equivalent-cylinder simplification depends on branching-rule assumptions that real dendritic
+arbors — including the starburst amacrine and DSGC arbors we care about — do not satisfy
+exactly, motivating the use of full morphological compartmental simulation in NEURON rather
+than reduced analytical models.
 
 </details>

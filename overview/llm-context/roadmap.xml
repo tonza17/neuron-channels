@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T10:06:19Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T10:07:51Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>91952</char_count>
-    <byte_count>92110</byte_count>
-    <estimated_tokens>22988</estimated_tokens>
+    <char_count>93560</char_count>
+    <byte_count>93706</byte_count>
+    <estimated_tokens>23390</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,9 +122,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
+        <id>t0015_literature_survey_cable_theory</id>
       </source_ids>
       <content>
-Completed tasks: 10
+Completed tasks: 11
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -185,6 +186,12 @@ ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
 Short description: Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
 Result summary: Brainstorm session 3 — Summary Summary Planned a five-task literature-survey wave (t0015-t0019) to broaden the project&#x27;s paper corpus beyond the DSGC-specific modelling focus of t0002. Authorised a $1 budget bump (to be applied directly on `main` as a follow-up commit, since task branches cannot modify `project/budget.json`) so `literature-survey` tasks clear the project budget gate without incurring real spend. Confirmed a paywalled-paper workflow where each survey emits an `intervention/paywalled_papers.md` the researcher resolves from their institutional account. Decisions * **Five surveys, one per under-saturated category**: cable-theory, dendritic-computation, patch-clamp...
+
+## Literature survey: cable theory and dendritic filtering
+ID: t0015_literature_survey_cable_theory
+Completed: 2026-04-20
+Short description: Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.
+Result summary: Results Summary: Cable-Theory Literature Survey Summary Surveyed 5 foundational cable-theory and DSGC-biophysics papers and produced a single answer asset giving a concrete 6-point compartmental-modelling specification for DSGCs in NEURON. All 5 PDFs failed to download (4 paywalls + 1 Cloudflare block); summaries are based on Crossref/OpenAlex abstracts plus training knowledge with explicit disclaimers. Objective Survey foundational cable-theory and dendritic-computation literature and synthesize concrete compartmental-modelling guidance for direction-selective retinal ganglion cells (DSGCs) in NEURON. What Was Produced * **5 paper assets** covering the core cable-theory / DSGC-biophysics...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -195,14 +202,13 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
-        <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
         <id>t0017_literature_survey_patch_clamp</id>
         <id>t0018_literature_survey_synaptic_integration</id>
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 9
+Planned or active tasks: 8
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -559,70 +565,6 @@ Covers suggestion **S-0005-01**.
 * **Paper downloads fail (paywall / captcha)**: fall back to metadata-only paper assets (v3 spec
   `download_status: &quot;failed&quot;`) and raise an intervention file requesting library access.
 
-## Literature survey: cable theory and dendritic filtering
-ID: t0015_literature_survey_cable_theory
-Status: in_progress
-Effective date: 2026-04-19
-Short description: Survey ~25 category-relevant papers on cable theory and passive dendritic filtering to broaden the corpus beyond DSGC-specific models.
-
-#### Motivation
-
-The t0002 corpus concentrates on direction-selective retinal ganglion cell (DSGC) compartmental
-models. Downstream calibration and optimisation tasks (segment discretisation, morphology-sensitive
-tuning, dendritic attenuation) need a deeper grounding in classical cable theory and passive
-dendritic filtering than t0002 provides. This task broadens the corpus into the foundational theory.
-Source suggestion: S-0014-01 from t0014_brainstorm_results_3.
-
-#### Scope
-
-Target ~25 category-relevant papers covering:
-
-1. Rall-era foundations — passive cable equation, equivalent cylinder, classical Rall papers.
-2. Segment discretisation guidelines — `d_lambda` rule, spatial-frequency constraints on `nseg`.
-3. Branched-tree impedance — transfer impedance, voltage attenuation in branched dendrites.
-4. Frequency-domain analyses — input impedance, synaptic-event filtering, chirp / ZAP analyses.
-5. Transmission in thin dendrites — space constant, propagation failure, passive integration
-   limits.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus (20 DOIs under
-`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/`). Duplicates discovered mid
-task must be dropped and the exclusion recorded in the task log.
-
-#### Approach
-
-1. Run `/research-internet` with search terms targeting each of the five themes above.
-2. For each shortlisted paper, invoke `/download-paper` — the skill produces a v3-compliant paper
-   asset (`details.json`, summary document, files). Papers behind institutional paywalls are
-   recorded as `download_status: &quot;failed&quot;` and added to `intervention/paywalled_papers.md` for the
-   researcher to retrieve manually from their institutional account.
-3. After the paper set is assembled, write one answer asset that synthesises the corpus by theme and
-   maps each paper to its relevance for the project&#x27;s direction-selectivity modelling work.
-
-#### Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant). Some may have
-  `download_status: &quot;failed&quot;` pending manual retrieval.
-* One answer asset under `assets/answer/` synthesising the five themes and identifying the
-  cable-theory parameters most directly useful for downstream DSGC tasks.
-* `intervention/paywalled_papers.md` listing DOIs the researcher must download manually.
-
-#### Compute and Budget
-
-No paid services required for the automated pass. The task type `literature-survey` is gated on the
-project budget — the brainstorm session set `project/budget.json` `total_budget` to $1 to clear
-the gate; no actual spend is expected.
-
-#### Dependencies
-
-None. This task is independent of the t0002 corpus (beyond the deduplication constraint).
-
-#### Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py` (accounting for some paywalled failures).
-* The answer asset passes `verify_answer_asset.py`.
-* `intervention/paywalled_papers.md` exists with a DOI list if any downloads failed.
-* No paper in this task&#x27;s `assets/paper/` shares a DOI with the t0002 corpus.
-
 ## Literature survey: dendritic computation beyond DSGCs
 ID: t0016_literature_survey_dendritic_computation
 Status: in_progress
@@ -874,9 +816,10 @@ None.
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
         <id>dsgc-compartmental-simulator-choice</id>
         <id>neuron-netpyne-install-report</id>
+        <id>cable-theory-implications-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 3
+Answers: 4
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -901,6 +844,14 @@ Confidence: high
 Categories: compartmental-modeling
 
 Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.exe` binary wired into the uv venv with a `.pth` file, NetPyNE 1.1.1 installs via `uv pip`, `nrnivmodl` compiles `khhchan.mod` into `nrnmech.dll` with no errors, and both sanity simulations (raw NEURON and NetPyNE) fire action potentials reaching **42.003 mV** (&gt; **+20 mV** threshold) under a 0.5 nA / 50 ms IClamp. Raw NEURON run time is **4.4 ms** wall-clock; NetPyNE run time is **4.8 ms**. The toolchain is validated end-to-end for downstream t0008 / t0010 / t0011 tasks.
+
+## What does the classical cable-theory and dendritic-computation literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON?
+ID: cable-theory-implications-for-dsgc-modelling
+Created by: t0015_literature_survey_cable_theory on 2026-04-20
+Confidence: medium
+Categories: cable-theory, dendritic-computation, direction-selectivity, retinal-ganglion-cells, compartmental-modelling
+
+DSGC compartmental models in NEURON must use morphologically accurate reconstructions (not ball- and-stick), discretized with the `d_lambda` rule, and must implement direction selectivity via postsynaptic dendritic shunting inhibition rather than presynaptic wiring asymmetry. The DS computation must arise from asymmetric inhibitory input acting locally on dendritic branches via the Koch-Poggio-Torre on-the-path shunting mechanism, and the model must be validated by measuring EPSP shape-indices, losing DS under simulated inhibition block, and reproducing the graded-vs- spike contrast-sensitivity trade-off.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -927,6 +878,8 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0009-03</id>
         <id>S-0012-01</id>
         <id>S-0012-03</id>
+        <id>S-0015-01</id>
+        <id>S-0015-04</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -947,13 +900,15 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0012-02</id>
         <id>S-0012-04</id>
         <id>S-0012-05</id>
+        <id>S-0015-02</id>
+        <id>S-0015-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0009-07</id>
         <id>S-0012-06</id>
       </source_ids>
       <content>
-Open suggestions: 44
+Open suggestions: 48
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1095,6 +1050,20 @@ Kind: experiment
 Source task: t0012_tuning_curve_scoring_loss_library
 t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008&#x27;s verification step so the Poleg-Polsky reproduction&#x27;s simulated curve is scored against the t0004 target and the resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008&#x27;s simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and produces a side-by-side overlay plot (simulated vs target). This is the...
 
+## Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims
+ID: S-0015-01
+Priority: high
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski 1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each paper asset&#x27;s download_status to &#x27;success&#x27;, replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual papers.
+
+## Build a minimal DSGC compartmental model implementing the 6-point specification
+ID: S-0015-04
+Priority: high
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+The answer asset cable-theory-implications-for-dsgc-modelling produces a concrete 6-point specification for DSGC modelling in NEURON (morphology, d_lambda, DS mechanism, passive parameters, validation suite, spike-generator tuning). A follow-up experiment task should implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part test battery (shape-index, graded DS, inhibition block, contrast-response).
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -1234,6 +1203,20 @@ Priority: medium
 Kind: evaluation
 Source task: t0012_tuning_curve_scoring_loss_library
 REQ-7 was satisfied by widening two envelope bounds away from the t0002 literature values: DSI upper raised from 0.85 to 0.9 to admit t0004&#x27;s DSI 0.8824, and peak lower lowered from 40 Hz to 30 Hz to admit t0004&#x27;s 32 Hz peak. This is explicit but anchored to the t0004 generator, not to measured DSGC variability. After t0008 (ModelDB 189347) and the Na/K grid search (S-0002-01) produce real simulated curves, re-evaluate: (a) re-parameterise t0004 so its curve lands inside the literature envelope (reducing DSI_MAX from 0.9 to 0.83 would drop DSI to 0.8 and peak to about 37 Hz), or (b) formally widen the envelope with a citation justifying the wider bounds. Deliverable: an answer asset...
+
+## Extend cable-theory survey to frequency-domain and thin-dendrite transmission
+ID: S-0015-02
+Priority: medium
+Kind: experiment
+Source task: t0015_literature_survey_cable_theory
+The scoped-down 5-paper survey covers 3 of the 5 originally-planned themes in depth (Rall foundations, on-the-path shunting DS, morphology-driven firing) and references the other two (frequency-domain cable analysis, thin-dendrite transmission) only indirectly. A follow-up survey task should add ~5 papers on frequency-domain cable theory (Koch 1984, Segev &amp; Rall 1988) and thin-dendrite active transmission (Stuart &amp; Sakmann 1994, London &amp; Hausser 2005 review, Stuart &amp; Spruston 2015 review) to close the gap.
+
+## Register retinal-ganglion-cells and compartmental-modelling categories
+ID: S-0015-03
+Priority: medium
+Kind: evaluation
+Source task: t0015_literature_survey_cable_theory
+The answer asset verificator emits AA-W001 warnings because categories &#x27;retinal-ganglion-cells&#x27; and &#x27;compartmental-modelling&#x27; are not registered in meta/categories/. These categories are used by all five literature-survey tasks (t0015-t0019) and should be formally registered to silence the warnings and enable category-based aggregation across those tasks.
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
