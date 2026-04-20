@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create worktree, task branch, branch_info.txt, and full step-tracker plan.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T12:26:02Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T12:28:40Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
