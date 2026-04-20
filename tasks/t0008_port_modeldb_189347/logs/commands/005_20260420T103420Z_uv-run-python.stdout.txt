@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [EzraTsur2022] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [PolegPolsky2016] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 21 entries but frontmatter says sources_cited=17[0m
+
+[31m[1mFAILED[0m — 3 error(s), 0 warning(s)
