@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Download ~25 paper assets and write one answer asset synthesising dendritic motifs for DSGCs.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T00:06:50Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T10:30:19Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
