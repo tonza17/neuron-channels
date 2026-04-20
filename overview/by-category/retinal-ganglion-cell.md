@@ -5,10 +5,10 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (21)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(3)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(18)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(4)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(20)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
-(1)](../libraries/by-category/retinal-ganglion-cell.md)
+(2)](../libraries/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -1088,7 +1088,33 @@ simulation.
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (3)
+## Answers (4)
+
+<details>
+<summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
+be reproduced locally on Windows as a headless library, does it hit the
+published direction-selectivity envelope with a canonical 12-angle x
+20-trial drifting-bar protocol, and which sibling DSGC compartmental models
+are the next-best candidates for porting in the same pipeline?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`dsgc-modeldb-port-reproduction-report`](../../tasks/t0008_port_modeldb_189347/assets/answer/dsgc-modeldb-port-reproduction-report/)
+
+Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python
+driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a
+12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes
+and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to
+`results/metrics.json`. The tuning curve does not hit the published envelope at the bundled
+parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a
+`gabaMOD` parameter swap rather than from spatial rotation — the port's rotation-based
+protocol is only a proxy for a direction- selective stimulus. The Hanson et al. 2019
+Spatial-Offset-DSGC model (GitHub `geoffder/Spatial-Offset-DSGC-NEURON-Model`) is the
+next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 and already
+ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
+Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
+class.
+
+</details>
 
 <details>
 <summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
@@ -1158,7 +1184,40 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (15 open, 3 closed)
+## Suggestions (17 open, 3 closed)
+
+<details>
+<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
+library</strong> (S-0008-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
+(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
+proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
+ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
+mechanism that matches the rotation-based protocol used in t0008 more directly than
+Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
+asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
+task types: code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC
+asset</strong> (S-0008-05)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Clone ModelDB 267001 (Jain et al. 2020 eLife 56404) and port under the same HOC-driver pattern
+as t0008. Jain 2020 extends the Poleg-Polsky architecture with bipolar delays and likely
+shares MOD mechanisms with 189347. Medium effort (~20 hours) because the morphology and
+stimulus logic are separate from 189347. Recommended task types: code-reproduction,
+write-library.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010

@@ -5,9 +5,10 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (14)](../papers/by-category/compartmental-modeling.md) | [Answers
-(5)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(32)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
-(1)](../datasets/by-category/compartmental-modeling.md)
+(6)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(37)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
+(1)](../libraries/by-category/compartmental-modeling.md)
 
 ---
 
@@ -736,7 +737,33 @@ dendritic transients.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 
-## Answers (5)
+## Answers (6)
+
+<details>
+<summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
+be reproduced locally on Windows as a headless library, does it hit the
+published direction-selectivity envelope with a canonical 12-angle x
+20-trial drifting-bar protocol, and which sibling DSGC compartmental models
+are the next-best candidates for porting in the same pipeline?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
+[`dsgc-modeldb-port-reproduction-report`](../../tasks/t0008_port_modeldb_189347/assets/answer/dsgc-modeldb-port-reproduction-report/)
+
+Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python
+driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a
+12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes
+and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to
+`results/metrics.json`. The tuning curve does not hit the published envelope at the bundled
+parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a
+`gabaMOD` parameter swap rather than from spatial rotation — the port's rotation-based
+protocol is only a proxy for a direction- selective stimulus. The Hanson et al. 2019
+Spatial-Offset-DSGC model (GitHub `geoffder/Spatial-Offset-DSGC-NEURON-Model`) is the
+next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 and already
+ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
+Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
+class.
+
+</details>
 
 <details>
 <summary><strong>Which dendritic-computation motifs observed in cortical,
@@ -842,7 +869,88 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (28 open, 4 closed)
+## Suggestions (33 open, 4 closed)
+
+<details>
+<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
+library</strong> (S-0008-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
+(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
+proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
+ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
+mechanism that matches the rotation-based protocol used in t0008 more directly than
+Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
+asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
+task types: code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Implement gabaMOD parameter-swap protocol for ModelDB
+189347</strong> (S-0008-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Re-run the ModelDB 189347 port under the paper's native DS protocol: sweep gabaMOD between PD
+(0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to
+reproduce the paper's headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based
+proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in
+run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the
+rotation protocol. Recommended task types: code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rebuild ModelDB 189347 port on the calibrated Horton-Strahler
+SWC from t0009</strong> (S-0008-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Replace the bundled 1-soma + 350-dend topology in RGCmodel.hoc with the calibrated SWC from
+t0009 (6,736 compartments) and rewrite placeBIP()'s section-ordering-dependent synapse
+placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point placement and
+section indices. Outcome is a third variant of the port asset running on a morphology that
+actually matches the measured dendritic diameter profile. Recommended task types:
+code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Parameter-sweep calibration of bundled 189347 toward the envelope
+targets</strong> (S-0008-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Systematically vary the main free parameters of the 189347 HOC (bipolar-to-RGC synaptic
+weight, SAC inhibition gain, NMDA/AMPA ratio, HHst gbar_ scaling) to find a parameter point
+where the rotation-based protocol hits the envelope (DSI 0.7-0.85, peak 40-80 Hz, null <10 Hz,
+HWHM 60-90 deg). Would produce a calibration_results.json and a mapping between
+envelope-passing parameters and the paper's default values. Recommended task types:
+code-reproduction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC
+asset</strong> (S-0008-05)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-20 | **Source**:
+[t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
+
+Clone ModelDB 267001 (Jain et al. 2020 eLife 56404) and port under the same HOC-driver pattern
+as t0008. Jain 2020 extends the Poleg-Polsky architecture with bipolar delays and likely
+shares MOD mechanisms with 189347. Medium effort (~20 hours) because the morphology and
+stimulus logic are separate from 189347. Recommended task types: code-reproduction,
+write-library.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010

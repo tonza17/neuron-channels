@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T11:18:13Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-20T12:10:58Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>29768</char_count>
-    <byte_count>29805</byte_count>
-    <estimated_tokens>7442</estimated_tokens>
+    <char_count>31618</char_count>
+    <byte_count>31661</byte_count>
+    <estimated_tokens>7904</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,6 +118,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
@@ -126,7 +127,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0017_literature_survey_patch_clamp</id>
       </source_ids>
       <content>
-Completed tasks: 13
+Completed tasks: 14
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -170,6 +171,12 @@ Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
 
+## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+ID: t0008_port_modeldb_189347
+Completed: 2026-04-20
+Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
+Result summary: Results Summary: Port ModelDB 189347 DSGC and Hunt Sibling Models Summary Ported ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC compartmental model) as a registered library asset, compiled its six MOD files cleanly on NEURON 8.2.7, and ran a canonical 12-angle x 20-trial (240 total) drifting-bar tuning-curve sweep using the t0012 `tuning_curve_loss` scoring library. The port is **technically faithful** — all MOD files compile, the morphology-swap report confirms section-count and surface-area parity, and every trial completes end-to-end on the local Windows workstation — but it does **not** reproduce the project envelope (DSI **0.316** vs target 0.70-0.85; peak **18.1 Hz** vs...
+
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
 Completed: 2026-04-20
@@ -211,7 +218,6 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0008_port_modeldb_189347</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
@@ -219,14 +225,7 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
-
-## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
-ID: t0008_port_modeldb_189347
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
-Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
+Planned or active tasks: 5
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -251,7 +250,7 @@ Dependencies: t0005_download_dsgc_morphology
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 
@@ -271,10 +270,11 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 6
+Answers: 7
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -315,6 +315,14 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, synaptic-integration, compartmental-modeling
 
 Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
+
+## Can ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline?
+ID: dsgc-modeldb-port-reproduction-report
+Created by: t0008_port_modeldb_189347 on 2026-04-20
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
+
+Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a 12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to `results/metrics.json`. The tuning curve does not hit the published envelope at the bundled parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a `gabaMOD` parameter swap rather than from spatial rotation — the port&#x27;s rotation-based protocol is only a proxy for a direction- selective...
 
 ## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
 ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling

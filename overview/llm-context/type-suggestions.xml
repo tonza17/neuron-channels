@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T11:18:13Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-20T12:10:58Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>56559</char_count>
-    <byte_count>56568</byte_count>
-    <estimated_tokens>14139</estimated_tokens>
+    <char_count>60597</char_count>
+    <byte_count>60606</byte_count>
+    <estimated_tokens>15149</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -48,6 +48,11 @@
         <id>S-0014-03</id>
         <id>S-0014-04</id>
         <id>S-0014-05</id>
+        <id>S-0008-01</id>
+        <id>S-0008-02</id>
+        <id>S-0008-03</id>
+        <id>S-0008-04</id>
+        <id>S-0008-05</id>
         <id>S-0009-01</id>
         <id>S-0009-02</id>
         <id>S-0009-03</id>
@@ -76,7 +81,7 @@
         <id>S-0017-04</id>
       </source_ids>
       <content>
-Suggestions: 57
+Suggestions: 62
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -427,6 +432,64 @@ Categories: voltage-gated-channels
 Date added: 2026-04-19
 
 Systematically survey voltage-gated-channel literature relevant to RGC/DSGC modelling. Target ~25 category-relevant papers covering Na_v 1.1-1.6 and K_v subtype expression, HH-family kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provenance, and Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output: paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC tuning-curve fits.
+
+## Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC library
+ID: S-0008-01
+Status: active
+Priority: high
+Kind: library
+Source task: t0008_port_modeldb_189347
+Source paper: 10.7554_eLife.42392
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-20
+
+Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model (github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset mechanism that matches the rotation-based protocol used in t0008 more directly than Poleg-Polsky&#x27;s gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended task types: code-reproduction, write-library.
+
+## Implement gabaMOD parameter-swap protocol for ModelDB 189347
+ID: S-0008-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0008_port_modeldb_189347
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+Re-run the ModelDB 189347 port under the paper&#x27;s native DS protocol: sweep gabaMOD between PD (0.33) and ND (0.99) instead of rotating BIP synapse coordinates. This is expected to reproduce the paper&#x27;s headline DSI (~0.8) and peak firing (~32-40 Hz) that the rotation-based proxy in t0008 cannot reach. Would be a small extension (new trial-protocol branch in run_one_trial) with a separate tuning_curves CSV and score_report for comparison with the rotation protocol. Recommended task types: code-reproduction.
+
+## Rebuild ModelDB 189347 port on the calibrated Horton-Strahler SWC from t0009
+ID: S-0008-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0008_port_modeldb_189347
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+Replace the bundled 1-soma + 350-dend topology in RGCmodel.hoc with the calibrated SWC from t0009 (6,736 compartments) and rewrite placeBIP()&#x27;s section-ordering-dependent synapse placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point placement and section indices. Outcome is a third variant of the port asset running on a morphology that actually matches the measured dendritic diameter profile. Recommended task types: code-reproduction.
+
+## Parameter-sweep calibration of bundled 189347 toward the envelope targets
+ID: S-0008-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0008_port_modeldb_189347
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-20
+
+Systematically vary the main free parameters of the 189347 HOC (bipolar-to-RGC synaptic weight, SAC inhibition gain, NMDA/AMPA ratio, HHst gbar_ scaling) to find a parameter point where the rotation-based protocol hits the envelope (DSI 0.7-0.85, peak 40-80 Hz, null &lt;10 Hz, HWHM 60-90 deg). Would produce a calibration_results.json and a mapping between envelope-passing parameters and the paper&#x27;s default values. Recommended task types: code-reproduction.
+
+## Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC asset
+ID: S-0008-05
+Status: active
+Priority: low
+Kind: library
+Source task: t0008_port_modeldb_189347
+Source paper: 10.7554_eLife.52949
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-20
+
+Clone ModelDB 267001 (Jain et al. 2020 eLife 56404) and port under the same HOC-driver pattern as t0008. Jain 2020 extends the Poleg-Polsky architecture with bipolar delays and likely shares MOD mechanisms with 189347. Medium effort (~20 hours) because the morphology and stimulus logic are separate from 189347. Recommended task types: code-reproduction, write-library.
 
 ## Inverse-fit three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient
 ID: S-0009-01

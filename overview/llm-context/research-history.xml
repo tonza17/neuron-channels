@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T11:18:13Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T12:10:58Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>31</section_count>
-    <char_count>481803</char_count>
-    <byte_count>482812</byte_count>
-    <estimated_tokens>120450</estimated_tokens>
-    <compatibility>131k-class, 200k-class, 1M-class</compatibility>
+    <section_count>34</section_count>
+    <char_count>566170</char_count>
+    <byte_count>567466</byte_count>
+    <estimated_tokens>141542</estimated_tokens>
+    <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
     <item>project description</item>
@@ -119,6 +119,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0005_download_dsgc_morphology</id>
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
+        <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
@@ -127,7 +128,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0017_literature_survey_patch_clamp</id>
       </source_ids>
       <content>
-Completed tasks: 13
+Completed tasks: 14
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -171,6 +172,12 @@ Completed: 2026-04-19
 Short description: Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0007_install_neuron_netpyne&quot; date_completed: &quot;2026-04-19&quot; --- Results Summary: NEURON 8.2.7 + NetPyNE 1.1.1 install Summary The NEURON 8.2.7 + NetPyNE 1.1.1 toolchain installs, compiles MOD files, and runs a single-compartment Hodgkin-Huxley sanity simulation end-to-end on the project&#x27;s Windows 11 workstation. Raw NEURON and NetPyNE sanity sims agree to machine precision at **v_max = 42.003 mV**, confirming the stack is ready for downstream modelling tasks (t0008, t0010, t0011). Metrics * Raw NEURON sanity sim: **v_max = 42.003 mV**, crossed +20 mV threshold, 3201 samples, setup **6.7 ms**, run **4.4 ms**. * NetPyNE sanity sim: **v_max = 42.003 mV**, crossed...
 
+## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+ID: t0008_port_modeldb_189347
+Completed: 2026-04-20
+Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
+Result summary: Results Summary: Port ModelDB 189347 DSGC and Hunt Sibling Models Summary Ported ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC compartmental model) as a registered library asset, compiled its six MOD files cleanly on NEURON 8.2.7, and ran a canonical 12-angle x 20-trial (240 total) drifting-bar tuning-curve sweep using the t0012 `tuning_curve_loss` scoring library. The port is **technically faithful** — all MOD files compile, the morphology-swap report confirms section-count and surface-area parity, and every trial completes end-to-end on the local Windows workstation — but it does **not** reproduce the project envelope (DSI **0.316** vs target 0.70-0.85; peak **18.1 Hz** vs...
+
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
 Completed: 2026-04-20
@@ -212,7 +219,6 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0008_port_modeldb_189347</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
@@ -220,14 +226,7 @@ Result summary: Results Summary: Patch-Clamp Literature Survey Summary Surveyed 
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
-
-## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
-ID: t0008_port_modeldb_189347
-Status: in_progress
-Effective date: 2026-04-20
-Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
-Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
+Planned or active tasks: 5
 
 ## Hunt DSGC compartmental models missed by prior survey; port runnable ones
 ID: t0010_hunt_missed_dsgc_models
@@ -252,7 +251,7 @@ Dependencies: t0005_download_dsgc_morphology
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 
@@ -272,10 +271,11 @@ Short description: Survey ~25 papers on Nav/Kv subunit expression, kinetics, and
         <id>neuron-netpyne-install-report</id>
         <id>cable-theory-implications-for-dsgc-modelling</id>
         <id>dendritic-computation-motifs-for-dsgc-direction-selectivity</id>
+        <id>dsgc-modeldb-port-reproduction-report</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
       </source_ids>
       <content>
-Answers: 6
+Answers: 7
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -316,6 +316,14 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, synaptic-integration, compartmental-modeling
 
 Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear integration, asymmetric shunting inhibition placed on the path between excitation and soma, and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are short and unipolar rather than tufted. All transferred numbers must be treated as targets to falsify rather than to assume, pending DSGC-specific patch validation.
+
+## Can ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline?
+ID: dsgc-modeldb-port-reproduction-report
+Created by: t0008_port_modeldb_189347 on 2026-04-20
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
+
+Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a 12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to `results/metrics.json`. The tuning curve does not hit the published envelope at the bundled parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a `gabaMOD` parameter swap rather than from spatial rotation — the port&#x27;s rotation-based protocol is only a proxy for a direction- selective...
 
 ## What does the patch-clamp / voltage-clamp / space-clamp literature imply for the compartmental modelling of direction-selective retinal ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic voltage-gated channels and the AIS compartment, (c) synaptic receptor complement including NMDARs, and (d) modelling of maintained activity and intrinsic pacemaker properties?
 ID: patch-clamp-techniques-and-constraints-for-dsgc-modelling
@@ -2845,6 +2853,1403 @@ closer to what this task demands. Regardless, `matplotlib.use(&quot;Agg&quot;)` 
   including `curl` downloads). Source of the optional-import hedge pattern in `validate_swc.py` that
   will be reused for the `import neuron` / `import netpyne` probe. Also the template for the
   &quot;document plan deviation in the Task Requirement Checklist&quot; pattern.
+      </content>
+    </section>
+    <section id="t0008_port_modeldb_189347-research_papers" source_kind="file">
+      <title>t0008_port_modeldb_189347 — Port ModelDB 189347 and similar DSGC compartmental models to NEURON — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0008_port_modeldb_189347</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0008_port_modeldb_189347/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0008_port_modeldb_189347&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 12
+papers_cited: 10
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;synaptic-integration&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;patch-clamp&quot;
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research: Porting ModelDB 189347 (Poleg-Polsky 2016) and Sibling DSGC Compartmental Models
+
+#### Task Objective
+
+This task ports ModelDB 189347, the multi-compartmental NEURON model of a mouse ON-OFF DRD4 DSGC
+from [PolegPolsky2016], into the project as a library asset, swaps in the calibrated morphology from
+t0009, and reproduces the published tuning curve to verify the envelope (DSI **0.7-0.85**, preferred
+peak **40-80 Hz**, null residual **&lt; 10 Hz**, HWHM **60-90°**). Phase B then hunts for and surveys
+sibling DSGC compartmental models (Schachter 2010, Koren 2017, Ding 2016, Hanson 2019, Jain 2020) to
+decide which can be ported in addition. This literature review extracts the exact simulation
+protocol, model architecture, and reported metrics from the primary paper and from every other DSGC
+compartmental model in the project corpus.
+
+#### Category Selection Rationale
+
+Consulted six categories that together cover the methodological and biological scope of this task.
+`compartmental-modeling` is the methodology itself — every sibling-model paper lives here.
+`direction-selectivity` filters for the functional property being reproduced.
+`dendritic-computation` covers subunit integration, dendritic spikes, and NMDAR nonlinearity, all of
+which constrain model architecture choices. `retinal-ganglion-cell` narrows to the target cell
+class. `synaptic-integration` captures the AMPA+NMDA+GABA synaptic wiring that drives the tuning
+curve. `voltage-gated-channels` is included because active dendritic vs passive dendritic
+configurations are an explicit research question. Excluded `cable-theory` and `patch-clamp` as
+primary filters: the task is a code-reproduction rather than a theoretical derivation, and
+patch-clamp data enters only as validation targets already quoted by the modelling papers above. The
+excluded categories still contribute papers that appear under multi-tag queries ([Oesch2005] has
+both).
+
+#### Key Findings
+
+##### Simulation Protocol in Poleg-Polsky 2016
+
+The canonical stimulus in [PolegPolsky2016] is a bright bar moving across the retina at **1 mm/sec**
+along its long axis in **8 directions** (45° spacing), not 12 directions — the task plan&#x27;s 12-angle
+requirement is an extension introduced for this project. Noise-free and noisy conditions are both
+tested; the noisy stimulus varies background and bar luminance independently every **50 ms** with SD
+= 0%, 10%, 30%, or 50% of mean luminance. Spike responses are recorded in cell-attached
+configuration (n = **25 cells** control, **21** AP5, **34** 0 Mg²⁺). The reported DSI across control
+cells in noise-free conditions is unchanged by AP5 blockade (DSI statistically indistinguishable
+from control, p &gt; 0.5 paired Wilcoxon), but no single numeric control-condition peak firing rate or
+HWHM is given anywhere in the text or figures I can extract from the PMC NIHMS manuscript:
+Experimental Procedures values for peak firing rate, HWHM, and integration timestep are not found in
+paper. The project envelope values (peak **40-80 Hz**, HWHM **60-90°**) therefore cannot be
+attributed to [PolegPolsky2016] alone — they must be interpreted as project targets drawn from the
+broader DSGC literature rather than reproduction of a single published curve.
+
+The reported DSI values are **qualitative**: the paper repeatedly states DSI is preserved or reduced
+without a single aggregate DSI numeric value in the main text (figures 1H, 5G, 6G, 8E use median ±
+quartile box plots). Reproduction therefore requires the t0012 scoring library to score the envelope
+compliance flag rather than to score an exact numeric match.
+
+##### Model Architecture in Poleg-Polsky 2016
+
+[PolegPolsky2016] documents the following architecture: &quot;Multicompartmental numerical simulations
+were performed in the NEURON simulation environment using morphology of one reconstructed DSGC. The
+cell was stimulated by a network of **282 presynaptic cells**, releasing simulated vesicles based on
+the presynaptic membrane potential.&quot; Synaptic inputs: **177 AMPA + 177 NMDA + 177 GABA_A
++ nicotinic AChR** on ON dendrites, distributed homogeneously following [Jeon2002]. NMDAR
+  conductance is voltage-dependent with Jahr-Stevens Mg²⁺ block; tested value g_NMDA = **2.5 nS**
+  (Figure 3). DS is implemented by making the GABAergic conductance stronger in the null direction
+  (tuned inhibition), with excitation untuned, consistent with [Park2014]. Dendrites are passive:
+  &quot;We did not detect dendritic spikes in DRD4 DSGCs, and our computer simulations did not require
+  regenerative dendritic events to replicate experimentally recorded PSP and (somatic) AP responses
+  and DSI values.&quot; The model therefore requires somatic Nav + Kv but no dendritic active
+  conductances for the Phase A reproduction.
+
+Exact passive membrane parameters (Ri, Rm, Cm) are not found in the PMC manuscript Experimental
+Procedures section, which is truncated in the author-manuscript XML available in the corpus.
+Ground-truth values must be read from the ModelDB 189347 source files directly during Phase A
+implementation.
+
+##### Morphology-Conditioned Tuning
+
+[PolegPolsky2016] uses a single reconstructed morphology bundled with ModelDB 189347.
+[ElQuessny2021] shows that global dendritic morphology influences inhibitory tuning strength (IPSC
+DSI: asymmetric vDSGCs significantly higher than symmetric nDSGCs) but does not dictate E/I spatial
+organisation. This predicts that the t0009 calibrated morphology swap could quantitatively shift the
+tuning curve — the task must treat envelope failure after morphology swap as a scientific result
+rather than a bug. [Jain2020] localises DS computation to **~5-10 µm** dendritic subunits and shows
+that CaV/NMDA nonlinearities, not somatic integration, drive the sharp output tuning.
+
+##### Role of Dendritic Spikes — Species and Subtype Specific
+
+Mouse DRD4 DSGCs have passive dendrites in [PolegPolsky2016]. Rabbit ON-OFF DSGCs have regenerative
+dendritic spikes [Oesch2005, Schachter2010]: Oesch et al. measured large **~55 mV** somatic and **~7
+mV** dendritic spikelets; Schachter et al. showed that each dendritic spike initiates a somatic
+spike **1:1** and that DSI is amplified from **~0.2** (PSP) to **~0.8** (spike) by local
+spike-threshold nonlinearity. This disagreement between species motivates the task&#x27;s Phase B
+sibling-model survey: porting Schachter2010 (if its NeuronC code is available) produces a second
+point on the active-dendrite dimension that the Phase A mouse model cannot cover.
+
+##### Subunit Spacing and E/I Wiring
+
+Subunit integration scales are reported as: [Schachter2010] ~150 µm arbor radius with subunit spike
+thresholds dropping from **3-4 nS** proximally to **~1 nS** distally; [Jain2020] **5-10 µm**
+Ca²⁺-defined subunits; [Koren2017] ~**132 µm** full-field vs subregion stimulation spacing.
+Inhibition is placed within **~20 µm** of each excitatory input in [Schachter2010], with peak
+compound conductances g_exc ≈ **6.5 nS** / g_inh ≈ **3.5 nS** PD and g_exc ≈ **2.5 nS** / g_inh ≈
+**6.0 nS** ND. [Hanson2019] reports a **25-30 µm** spatial offset between cholinergic excitation and
+GABAergic inhibition (velocity-dependent onset offset up to **50 ms** in PD). [PolegPolsky2016]
+places 177 synapses homogeneously on ON dendrites without local E-I pairing, which is the simpler
+configuration the port must preserve.
+
+##### Best Practices for Reproduction
+
+Multiple converging best practices emerge:
+
+* Distribute synapses homogeneously on ON dendrites, **1 AMPA + 1 NMDA + 1 GABA per site**, 177
+  sites total [PolegPolsky2016, Jeon2002].
+* Use Jahr-Stevens Mg²⁺-block kinetics for the NMDAR conductance; physiological extracellular Mg²⁺
+  is **1 mM** [PolegPolsky2016].
+* Implement DS by scaling the GABA conductance higher in the null direction; keep excitation
+  untuned, consistent with [Park2014]&#x27;s finding that bipolar cell inputs are not directionally
+  tuned.
+* Passive dendrites are sufficient for mouse DRD4 DSGC [PolegPolsky2016]; do not add dendritic
+  Nav/Kv unless explicitly porting Schachter2010.
+* Run **≥ 10 trials per direction** with fresh seeds
+  [Jain2020 uses 7-cell averages; Hanson2019 uses 4-10 repetitions]. Task plan&#x27;s 20 trials × 12
+  angles is above literature floor.
+
+**Hypothesis (testable this task)**: Swapping the ModelDB 189347 bundled morphology for the t0009
+calibrated morphology will preserve envelope compliance because [ElQuessny2021] shows morphology
+affects inhibitory tuning magnitude but not spatial organisation, and project RQ2 is primarily an
+internal sensitivity test.
+
+**Hypothesis (testable later)**: Adding the Schachter2010 active-dendrite configuration to the mouse
+model will sharpen DSI beyond the [PolegPolsky2016] envelope upper bound, because
+[Oesch2005, Schachter2010] show active dendrites amplify DSI from **~0.2** (subthreshold) to
+**~0.8** (spike output) in rabbit.
+
+##### Validation Targets Beyond DSI
+
+[PolegPolsky2016] reports several quantitative subthreshold features the model must reproduce before
+spike-level envelope comparison: NMDAR-mediated PD PSP component **5.8 ± 3.1 mV**, ND **3.3 ± 2.8
+mV** (p = 0.001, n = 19, Figure 1D); slope of NMDAR scaling **62.5 ± 14.2°** (multiplicative) vs
+expected **59.4 ± 10.7°** (Figure 1H); AP5 reduction of PD PSP **~35%** and ND PSP **~34%**
+(proportional, Figure 1E); 0 Mg²⁺ produces additive scaling (slope **45.5 ± 5.3°**, Figure 5G);
+high-Cl⁻ internal also produces additive scaling (slope **45.5 ± 3.7°**, Figure 4G). These are
+supplementary validation checks beyond the tuning-curve envelope and are not required for Phase A
+success but should appear in the answer asset.
+
+#### Methodology Insights
+
+* **Port in two stages**: (1) download ModelDB 189347 and compile MOD files with `nrnivmodl`, then
+  run the shipped demo unmodified to confirm the port is intact; (2) only after step 1 passes the
+  smoke test, swap in the t0009 calibrated morphology. This ordering isolates port-breakage bugs
+  from morphology-induced envelope shifts — critical because [ElQuessny2021] predicts the morphology
+  swap may quantitatively shift tuning.
+* **Use 8 directions in reproduction, 12 directions for envelope scoring**: The paper uses 8
+  directions [PolegPolsky2016], but the envelope targets (HWHM 60-90°) require finer angular
+  sampling. Run both protocols. Report the 8-direction DSI for comparison with the paper; use the
+  12-direction run for envelope scoring with the t0012 library.
+* **Do not implement presynaptic vesicle-release dynamics unless needed**: the paper&#x27;s 282-cell
+  presynaptic network with vesicle-release kinetics [PolegPolsky2016] is reproducible architecture
+  detail. Check ModelDB sources first — if the published code already implements this, keep it;
+  otherwise stub with per-synapse NetStim-driven spike trains and record this as a documented
+  simplification.
+* **NMDAR conductance calibration**: use g_NMDA = **2.5 nS** as the reference point
+  [PolegPolsky2016 Figure 3]. If the port&#x27;s somatic PSP amplitudes differ from paper values (PD
+  NMDAR component **5.8 ± 3.1 mV**), adjust only g_NMDA, not AMPA or GABA, until PSP targets match.
+* **Envelope scoring workflow**: run 12 angles × 20 seeded trials → write tuning_curve.csv with
+  (angle_deg, trial_seed, firing_rate_hz) → pass to t0012 scoring library → record DSI, peak, null,
+  HWHM in the answer asset&#x27;s verification table.
+* **Presynaptic signal shape**: [PolegPolsky2016] drives synapses via simulated vesicle release
+  gated on presynaptic membrane potential, not fixed spike trains. If ModelDB 189347 bundles the
+  presynaptic network, keep it. Otherwise, approximate with a 1 mm/sec bar-crossing time profile
+  mapped to per-synapse NetStim activations, recording the simplification explicitly.
+* **Best practice — report median and quartiles, not mean ± SD, for DSI**:
+  [PolegPolsky2016, Figures 1G, 4F, 5G, 6G, 8E] consistently uses median ± quartile boxplots for DSI
+  because the underlying distribution is non-Gaussian. The t0012 scoring library output should match
+  this convention.
+* **Skip the 0 Mg²⁺ and high-Cl⁻ controls for Phase A**: these reproduce the additive-scaling result
+  [PolegPolsky2016 Figures 4, 5] but are not part of the envelope test. They can become a later
+  suggestion if the ported model works.
+* **Phase B model-triage rule**: for each sibling found, test `nrnivmodl` + single-angle simulation
+  before committing to full reproduction. [Schachter2010] uses NeuronC (Smith lab custom solver)
+  which does not run in NEURON — port feasibility is low; record it in the answer asset as a failed
+  candidate. [Hanson2019] explicitly references `geoffder/Spatial-Offset-DSGC-NEURON-Model` which is
+  a modified Poleg-Polsky NEURON model — high feasibility, attempt port. [Ding2016] uses Neuron-C
+  (Smith lab again) — low feasibility.
+
+#### Gaps and Limitations
+
+* **No published numeric peak firing rate or HWHM**: [PolegPolsky2016] reports DSI and PSP slopes in
+  depth but never reports a peak firing rate number for the preferred direction, nor a
+  half-width-at-half-maximum tuning-curve value. The project&#x27;s 40-80 Hz peak and 60-90° HWHM
+  envelope is therefore a project-specific target, not a paper-reproduction target, and must be
+  treated as such in the answer asset (not found in paper for both values).
+* **PMC author-manuscript XML truncates Experimental Procedures**: specific NEURON integration
+  timestep (`dt`), specific passive membrane values (Ri, Rm, Cm), sodium/potassium channel
+  densities, and synaptic decay time constants are not present in the corpus paper file. These must
+  be read directly from ModelDB 189347 source code during Phase A implementation. If ModelDB source
+  disagrees with the paper&#x27;s narrative, the task must treat the ModelDB values as canonical (they
+  are what produced the published simulations) and record the gap in the answer asset.
+* **No erratum review yet**: this literature survey did not check for post-publication corrections
+  to [PolegPolsky2016]. Phase A should check PubMed/publisher for any erratum before treating the
+  port as complete; none of the other papers in this corpus mention one, but absence of mention is
+  not evidence of absence.
+* **Active-dendrite configuration underspecified for mouse**: [PolegPolsky2016] explicitly rules out
+  dendritic spikes for DRD4 DSGCs but does not parameterise what dendritic Nav/Kv densities would
+  produce if hypothetically added. Project RQ4 (active vs passive) cannot be answered for mouse from
+  literature alone — it becomes an experimental task downstream of this port.
+* **Sibling-model code availability is uneven**: [Hanson2019] references
+  `geoffder/Spatial-Offset-DSGC-NEURON-Model` as a GitHub repo, but the other sibling papers do not
+  publish code URLs in their Methods text. Phase B search effort should prioritise ModelDB listings
+  and the Awatramani/Diamond/Taylor lab GitHub organisations.
+* **No reproducibility data on seed stability**: none of the papers reviewed reports how DSI or peak
+  firing rate vary across random-seed repetitions. Task plan&#x27;s 20-seed trial count is conservative
+  relative to the literature&#x27;s typical 4-10 cell averages.
+
+#### Recommendations for This Task
+
+1. **Run Phase A with 8 directions to match paper, then re-run with 12 directions for envelope
+   scoring.** Report both in the answer asset. The paper uses 8 directions [PolegPolsky2016]; the
+   envelope targets require 12.
+2. **Do not attempt to reproduce an exact peak-firing-rate number from the paper.**
+   [PolegPolsky2016] does not report one (not found in paper). Score the envelope using the
+   project&#x27;s 40-80 Hz target and label this clearly in the answer asset.
+3. **Read simulation timestep, passive properties, and channel densities from ModelDB 189347 source
+   files, not from the paper.** The PMC manuscript XML truncates Experimental Procedures; the
+   canonical values live in the code.
+4. **Keep dendrites passive for the Phase A baseline.** [PolegPolsky2016] explicitly states passive
+   propagation is sufficient for DRD4 mouse DSGCs.
+5. **In Phase B, prioritise the `geoffder/Spatial-Offset-DSGC-NEURON-Model` fork referenced by
+   [Hanson2019]** over [Schachter2010] and [Ding2016] — the latter two use NeuronC, not NEURON, and
+   therefore require a full rewrite rather than a port.
+6. **Record the ModelDB 189347 commit/version hash** in `assets/library/dsgc-polegpolsky-2016/`
+   metadata so that future morphology sweeps (S-0002-04) and E/I scans (S-0002-05) can branch from a
+   pinned baseline.
+7. **Log all subthreshold validation metrics** (PD NMDAR-mediated PSP = 5.8 ± 3.1 mV, ND = 3.3 ± 2.8
+   mV, slope ≈ 62° for multiplicative scaling) in the answer asset as a supplementary correctness
+   table, in addition to the envelope table.
+8. **Treat any envelope failure after t0009 morphology swap as a scientific finding**, generate a
+   suggestion for morphology-conditioned Na/K retuning, and do not retroactively adjust channel
+   densities inside this task.
+
+#### Paper Index
+
+##### [PolegPolsky2016]
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`,
+  `dendritic-computation`, `retinal-ganglion-cell`
+* **Relevance**: The ModelDB 189347 source paper being ported. Defines the architecture (177 AMPA +
+  177 NMDA + 177 GABA synapses, 282 presynaptic cells, passive dendrites, Jahr-Stevens NMDAR Mg²⁺
+  block), the stimulus (1 mm/sec bar, 8 directions), and the validation targets (PSP amplitudes,
+  multiplicative scaling slope ≈ 62°).
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Phase B sibling candidate — rabbit ON-OFF DSGC compartmental model with active
+  dendrites. Uses NeuronC (Smith lab, not NEURON), so direct port is infeasible; included in the
+  survey row as a failed candidate and as the active-dendrite reference for RQ4.
+
+##### [Koren2017]
+
+* **Title**: Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity
+* **Authors**: Koren, D., Grove, J. C. R., Wei, W.
+* **Year**: 2017
+* **DOI**: `10.1016/j.neuron.2017.07.020`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Adds SAC-level mGluR2-gated calcium channel dynamics; relevant for Phase B as a
+  richer presynaptic SAC model that could be swapped in if the Phase A reproduction requires it.
+  Does not ship with a standalone NEURON DSGC model, so low porting priority.
+
+##### [Ding2016]
+
+* **Title**: Species-specific wiring for direction selectivity in the mammalian retina
+* **Authors**: Ding, H., Smith, R. G., Poleg-Polsky, A., Diamond, J. S., Briggman, K. L.
+* **Year**: 2016
+* **DOI**: `10.1038/nature18609`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `compartmental-modeling`,
+  `synaptic-integration`
+* **Relevance**: Phase B sibling candidate using Neuron-C for a 7-SAC network model. Not a DSGC
+  model itself, and Neuron-C is incompatible with this project&#x27;s NEURON 8.2.7 stack — included in
+  the survey as a failed port candidate. Provides SAC wiring measurements useful for later
+  presynaptic-network refinement.
+
+##### [Hanson2019]
+
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, L., Sethuramanujam, S., deRosenroll, G., Jain, V., Awatramani, G. B.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`,
+  `compartmental-modeling`, `dendritic-computation`, `patch-clamp`
+* **Relevance**: Uses a modified Poleg-Polsky NEURON DSGC model published at
+  `geoffder/Spatial-Offset-DSGC-NEURON-Model`. Highest-priority Phase B port target because it is
+  already a NEURON fork of the same codebase being ported in Phase A.
+
+##### [Jain2020]
+
+* **Title**: The functional organization of excitation and inhibition in the dendrites of mouse
+  direction-selective ganglion cells
+* **Authors**: Jain, V., Murphy-Baum, B. L., deRosenroll, G., Sethuramanujam, S., Delsey, M.,
+  Delaney, K. R., Awatramani, G. B.
+* **Year**: 2020
+* **DOI**: `10.7554/eLife.52949`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`,
+  `synaptic-integration`, `compartmental-modeling`, `patch-clamp`
+* **Relevance**: Uses a multi-compartmental NEURON DSGC model with **177** directionally tuned
+  inhibitory + untuned excitatory synapses — architecturally almost identical to [PolegPolsky2016].
+  Phase B candidate; also constrains subunit size (~5-10 µm) for later E/I-ratio tasks.
+
+##### [Oesch2005]
+
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `voltage-gated-channels`,
+  `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Evidence that rabbit DSGCs use dendritic spikes (somatic ~55 mV vs dendritic ~7 mV
+  spikelets). Sets the baseline for contrasting active- vs passive-dendrite reproductions between
+  mouse [PolegPolsky2016] and rabbit [Schachter2010].
+
+##### [Jeon2002]
+
+* **Title**: Pattern of synaptic excitation and inhibition upon direction-selective retinal ganglion
+  cells
+* **Authors**: Jeon, C.-J., Kong, J.-H., Strettoi, E., Rockhill, R., Stasheff, S. F., Masland, R. H.
+* **Year**: 2002
+* **DOI**: `10.1002/cne.10288`
+* **Asset**: (not in project corpus — referenced only through [PolegPolsky2016])
+* **Categories**: `retinal-ganglion-cell`, `synaptic-integration`
+* **Relevance**: Anatomical source cited by [PolegPolsky2016] for the homogeneous distribution of
+  AMPA/NMDA/GABA synapses on ON dendrites — the spatial pattern that the Phase A port must preserve.
+
+##### [Park2014]
+
+* **Title**: Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal Ganglion Cells
+  Lack Direction Tuning
+* **Authors**: Park, S. J. H. et al.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`,
+  `patch-clamp`
+* **Relevance**: Provides the experimental justification for the untuned-excitation / tuned-
+  inhibition architecture used by [PolegPolsky2016] and by this port.
+
+##### [ElQuessny2021]
+
+* **Title**: Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and
+  Inhibition in Retinal Direction-Selective Ganglion Cells
+* **Authors**: El-Quessny, M., Feller, M. B.
+* **Year**: 2021
+* **DOI**: `10.1523/ENEURO.0261-21.2021`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`,
+  `dendritic-computation`, `patch-clamp`
+* **Relevance**: Evidence that morphology affects inhibitory DSI magnitude but not E/I spatial
+  organisation — directly informs the expected outcome of the t0009 morphology swap in Phase A.
+      </content>
+    </section>
+    <section id="t0008_port_modeldb_189347-research_internet" source_kind="file">
+      <title>t0008_port_modeldb_189347 — Port ModelDB 189347 and similar DSGC compartmental models to NEURON — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0008_port_modeldb_189347</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0008_port_modeldb_189347/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0008_port_modeldb_189347&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 13
+sources_cited: 23
+papers_discovered: 1
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research: Internet Sources for Porting ModelDB 189347 and Sibling DSGC Models
+
+#### Task Objective
+
+This task ports ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016) into the project as a library asset,
+swaps in the t0009 calibrated morphology, reproduces the published tuning-curve envelope, and
+surveys sibling DSGC compartmental models for Phase B. Internet research fills concrete gaps left
+open by the paper corpus: the exact code-archive layout, authoritative parameter defaults baked into
+the shipped HOC source, availability and NEURON-version compatibility of sibling models, and porting
+tips for NEURON 7.x-era code onto the project&#x27;s NEURON 8.2.7 / NetPyNE 1.1.1 stack.
+
+#### Gaps Addressed
+
+From `research_papers.md` Gaps and Limitations:
+
+1. **PMC author-manuscript XML truncates Experimental Procedures (`dt`, Ri, Rm, Cm, channel
+   densities, synaptic decay)** — **Partially resolved**. The canonical `main.hoc` served from the
+   `ModelDBRepository/189347` GitHub mirror exposes `tstop = 1000` ms, `dt = 0.1` ms,
+   `tau1NMDA_bipNMDA = 60` ms, `e_SACinhib = -60` mV, and a scaling formula
+   `b2gnmda = 0.5/sparse/maxvesmul` for bipolar NMDA conductance [ModelDB-189347-mainhoc-2016]. The
+   `RGCmodel.hoc` template shows **1 soma + 350 dendrite sections** organised as a branching tree
+   with 3D `pt3dadd` coordinates, and declares `SACinhibsyn[2]`, `BIPsyn[2]`, and `SACexcsyn[2]`
+   synapse arrays [ModelDB-189347-RGCmodel-2016]. Passive properties (Ri, Rm, Cm) and Nav/Kv channel
+   densities are set in procedures referenced but not fully reproduced in the web view — Phase A
+   must read these directly from the working copy after unpacking the archive.
+2. **ModelDB 189347 download URL/archive structure** — **Resolved**. Canonical entry is
+   https://modeldb.science/189347 [ModelDB-189347-2016]; the full archive is mirrored at
+   https://github.com/ModelDBRepository/189347 [ModelDBRepo-GH]. The archive contains 14 files:
+   `HHst.mod`, `RGCmodel.hoc`, `SAC2RGCexc.mod`, `SAC2RGCinhib.mod`, `SquareInput.mod`,
+   `bipolarNMDA.mod`, `main.hoc`, `main2.c`, `main3.c`, `model.ses`, `mosinit.hoc`, `readme.docx`,
+   `readme.html`, `spike.mod`, plus a `readme.fld/` directory
+   [ModelDBRepo-GH, ModelDB-189347-DwnldGuide].
+3. **Existence of a Poleg-Polsky supplementary code or errata on GitHub/Zenodo** — **Unresolved (no
+   erratum found)**. Searches of PubMed, Google Scholar, Zenodo, and the Poleg- Polsky lab page at
+   CU Anschutz [PolegPolsky-CUAnschutz] returned the 2016 paper and ModelDB entry only; no erratum
+   or supplementary code archive was found. The absence should be noted in the answer asset but
+   confirms the ModelDB archive is the only canonical source. Poleg-Polsky has since moved to the
+   University of Colorado Anschutz (2019+) [ModelDB-189347-citations].
+4. **Sibling DSGC compartmental models in public code repos (Hanson 2019, Jain 2020, Koren 2017,
+   Ding 2016)** — **Resolved**. (a) `Hanson2019` ships a working NEURON fork:
+   `geoffder/Spatial-Offset-DSGC-NEURON-Model` [Geoffder-GH]; 7 files (`Exp2NMDA.mod`, `HHst.mod`,
+   `RGCmodel.hoc`, `modelUtils.py`, `offsetDSGC.py`, MIT licence, README). This is the highest-
+   feasibility Phase B port target. (b) `Ding2016` is deposited as ModelDB 223890 but simulates a
+   SAC network (not a DSGC) and is implemented in **NeuronC**, not NEURON [ModelDB-223890-2016]; low
+   port feasibility, matches the research_papers.md verdict. (c) `Jain2020` publishes only
+   calcium-imaging analysis code (IGOR Pro) at `benmurphybaum/eLife_2020_Analysis` [MurphyBaum-GH];
+   no NEURON source is deposited, but the paper&#x27;s data/code statement points back to the shared
+   Awatramani-lab fork in [Geoffder-GH] [Jain2020-eLife]. (d) `Koren2017` does not publish a
+   standalone NEURON DSGC model; the paper focuses on SAC-level mGluR2 dynamics and no code URL was
+   found. (e) Schachter 2010 uses NeuronC and has no NEURON mirror [Smith-Lab]. **An additional
+   repository discovered during search**: `NBELab/RSME` (Retinal Stimulation Modeling Environment,
+   Ezra-Tsur 2022) — a NEURON + Python SAC-DSGC network with a `SAC-DSGC_network.ipynb` notebook
+   driving moving-bar stimuli [NBELab-RSME-GH, EzraTsur2022].
+5. **Known porting issues between NEURON 7.x and 8.2.7 for DSGC/retina mod files** — **Resolved**.
+   NEURON 8.2 implicitly declares more `nrn_` / `hoc_` API methods, which can collide with legacy
+   MOD files that hand-declare the same prototypes with the wrong argument or return types; the fix
+   is to delete the incorrect MOD-file declaration [NEURON-Changelog-8.2, NEURON-Porting-CPP].
+   NEURON 8.2.7 ships binary installers for Windows with Python 3.12 support [NEURON-Downloads].
+   8.2.7 remains backward compatible with legacy MOD files that do **not** contain VERBATIM blocks;
+   VERBATIM blocks may need C++-syntax updates for the upcoming NEURON 9.0 but are fine on 8.2.7
+   [NEURON-Porting-CPP]. For ModelDB 189347 the risk surface is bounded: the only VERBATIM block
+   anticipated is inside `HHst.mod` / `spike.mod`, which are shared-style Hodgkin-Huxley templates
+   also used in the working geoffder fork.
+6. **NetPyNE 1.1 compatibility tips for hand-written HOC/Python NEURON code** — **Resolved**.
+   NetPyNE&#x27;s `importCell()` (`netpyne.conversion.neuronPyHoc`) extracts sections, section lists,
+   mechanisms, point processes, and synapses from an instantiated HOC template and stores them as a
+   NetPyNE cellRule [NetPyNE-Docs, NetPyNE-ImportCell]. Signature:
+   `importCell(fileName, cellName, cellArgs=None, cellInstance=False)`. Known pitfall:
+   `importCell()` can modify global `h` variables (e.g. `h.celsius`) [NetPyNE-Issue-31]. Required
+   discipline is to wrap the imported HOC in a NetPyNE-compatible template (section lists named
+   conventionally) before calling `importCell`; section lists with original variable names are
+   supported.
+
+#### Search Strategy
+
+**Sources searched**: ModelDB (modeldb.science + legacy senselab), GitHub (code search and specific
+repositories), Google Scholar, PubMed/PMC, ResearchGate, eLife, Nature, Cell, CU Anschutz
+Poleg-Polsky lab page, Zenodo, NEURON documentation (nrn.readthedocs.io), NetPyNE documentation,
+NEURON simulator changelog, ModelDB citation graph, Hanson 2019 eLife article, Jain 2020 eLife
+article, NEURON Yale forum.
+
+**Queries executed** (13 total):
+
+*Pass 1 — Gap-targeted queries:*
+
+1. `&quot;ModelDB 189347 Poleg-Polsky Diamond DSGC NEURON download&quot;`
+2. `&quot;geoffder Spatial-Offset-DSGC-NEURON-Model GitHub Poleg-Polsky&quot;`
+3. `&quot;ModelDB Schachter 2010 DSGC compartmental model NeuronC rabbit direction selective&quot;`
+4. `&quot;Jain 2020 eLife DSGC compartmental model NEURON code repository Awatramani&quot;`
+5. `&quot;ModelDB Koren 2017 cross-compartmental DSGC direction selectivity Wei&quot;`
+6. `&quot;NEURON 7.x to 8.2 porting migration changes mod files compatibility issues&quot;`
+
+*Pass 2 — Broadening queries:*
+
+7. `&quot;NetPyNE HOC conversion Python import NEURON 8.2 mod files compile nrnivmodl windows&quot;`
+8. `&quot;&quot;Poleg-Polsky&quot; DSGC NEURON erratum correction supplementary code GitHub Zenodo&quot;`
+9. `&quot;ModelDB retinal direction selective ganglion cell compartmental NEURON list models&quot;`
+10. `&quot;&quot;Awatramani&quot; lab GitHub organization DSGC retinal models starburst code&quot;`
+11. `&quot;DSGC direction selective ganglion NEURON simulation github NMDAR retina compartmental&quot;`
+
+*Pass 3 — Snowball queries:*
+
+12. `&quot;&quot;spike.mod&quot; &quot;HHst.mod&quot; &quot;bipolarNMDA.mod&quot; NEURON DSGC 189347 compile errors&quot;`
+13. `&quot;&quot;nrnivmodl&quot; windows NEURON 8.2 Visual Studio compile mod ModelDB legacy&quot;`
+
+Additional deep-reads via WebFetch: `modeldb.science/189347`, `github.com/ModelDBRepository/189347`,
+`github.com/ModelDBRepository/189347/raw/.../readme.html`,
+`raw.githubusercontent.com/ModelDBRepository/189347/master/main.hoc`,
+`raw.githubusercontent.com/ModelDBRepository/189347/master/RGCmodel.hoc`,
+`github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model`, the same repo&#x27;s `README.md` and
+`offsetDSGC.py`, `github.com/NBELab/RSME`, `modeldb.science/showmodel?model=223890`,
+`elifesciences.org/articles/52949`, `github.com/benmurphybaum/eLife_2020_Analysis`, and
+`modeldb.science/modellist/1882?all_simu=true`.
+
+**Date range**: No publication-date restriction. Prioritised the most recent authoritative
+fork/mirror of each candidate model.
+
+**Inclusion criteria**: Code archive or README with verifiable file list; explicit reference to
+Poleg-Polsky 2016 architecture; NEURON (not NeuronC) implementation; compatible-by-construction with
+NEURON 8.2.7 or documented upgrade path. **Exclusion**: marketing pages, unrelated ModelDB hits,
+non-retinal DSGC work, generic tutorials without a concrete code artefact.
+
+**Search iterations**: Query 12 was prompted by confirming MOD-file names from
+`ModelDBRepository/189347`. Query 13 was prompted by the NEURON 8.2 changelog mentioning implicit
+declarations. The `NBELab/RSME` find was an unexpected yield from query 11 and triggered a follow-up
+WebFetch.
+
+#### Key Findings
+
+##### Canonical Archive Is Mirrored on GitHub with a Known File Layout
+
+ModelDB 189347 ships 14 top-level files plus a `readme.fld/` directory
+[ModelDBRepo-GH, ModelDB-189347-2016]. The HOC entry point is `mosinit.hoc` (auto-launched by NEURON
+when the archive is opened) which loads `main.hoc`; `main.hoc` sets `tstop = 1000` ms, `dt = 0.1` ms
+and drives the stimulus GUI [ModelDB-189347-mainhoc-2016]. `RGCmodel.hoc` defines a **1-soma +
+350-dendrite** template with 3D points and three 2-element synapse arrays; passive properties are
+set inside a `biophys()` procedure that the webfetch summary did not fully expose
+[ModelDB-189347-RGCmodel-2016]. This maps cleanly to a NetPyNE
+`importCell(fileName=&quot;main.hoc&quot;, cellName=&quot;RGC&quot;)` workflow once `mosinit.hoc`&#x27;s GUI auto-launch is
+disabled by loading `main.hoc` directly [NetPyNE-ImportCell].
+
+**Hypothesis (testable this task)**: Because `main.hoc` uses `dt = 0.1` ms with NEURON&#x27;s default
+backward-Euler integrator, the port should reproduce the published tuning-curve envelope without
+further integration-timestep tuning. If the envelope fails at `dt = 0.1` ms after a clean port,
+inspect variable-step integration settings before touching channel densities.
+
+##### Sibling-Model Code Availability — A Clear Port Priority Ordering
+
+Cross-referencing repositories against the `research_papers.md` sibling list yields this table:
+
+| Sibling | Code location | Simulator | NEURON 8.2.7 fit | Priority |
+| --- | --- | --- | --- | --- |
+| Poleg-Polsky &amp; Diamond 2016 | ModelDB 189347 / [ModelDBRepo-GH] | NEURON | Expected good after 8.2 declaration fix | Phase A |
+| Hanson et al. 2019 | [Geoffder-GH] (fork of 189347 + `Exp2NMDA.mod`) | NEURON | Expected good (same base) | Phase B primary |
+| Jain et al. 2020 | [MurphyBaum-GH] (IGOR Pro, imaging only); NEURON model not deposited; Methods cites `Poleg-Polsky &amp; Diamond 2016` base | NEURON (re-using 189347) | Same base as Phase A | Phase B secondary (re-use 189347) |
+| Ding et al. 2016 | ModelDB 223890 | **NeuronC** | Incompatible | Skip, document as failed candidate |
+| Schachter et al. 2010 | No public deposit found | **NeuronC** | Incompatible | Skip |
+| Koren et al. 2017 | No standalone DSGC model deposited | n/a | n/a | Skip |
+| Ezra-Tsur et al. 2022 | [NBELab-RSME-GH] | NEURON + Python | Likely good | Phase B stretch goal |
+
+The `geoffder/Spatial-Offset-DSGC-NEURON-Model` fork adds `Exp2NMDA.mod` and substitutes the
+cholinergic / bipolar / GABAergic synapse weights to `excWeight = 0.0005 µS`,
+`inhibWeight = 0.004 µS`, `ampaWeight = 0.0005 µS`, `nmdaWeight = 0.0015 µS`, with `tstop = 750` ms
+[Geoffder-offsetDSGC-2019]. These weights are **not identical** to the Poleg-Polsky 2016 defaults
+and explain how the Hanson 2019 paper reached different quantitative inhibition amplitudes from the
+same architecture. The paper [Jain2020-eLife] and [MurphyBaum-GH] together confirm Jain 2020 builds
+on the same base code, re-using the **177 paired excitatory + inhibitory synapses** on a
+reconstructed DSGC arbor, which matches [PolegPolsky2016]&#x27;s architecture word-for-word.
+
+**Hypothesis (testable this task)**: The `geoffder` fork&#x27;s default synaptic weights
+(`inhibWeight = 0.004 µS`, `nmdaWeight = 0.0015 µS`) may produce an envelope more consistent with
+the 40-80 Hz peak / 60-90° HWHM project targets than the published Poleg-Polsky 2016 defaults,
+because Hanson 2019 re-tuned these weights against a contemporary experimental dataset with explicit
+spike-rate targets. If the Phase A reproduction with 189347 defaults misses the envelope on the
+original morphology, the Hanson 2019 weights are the first re-tuning to try before any
+channel-density change.
+
+**Best practice (community converged)**: Across every NEURON DSGC fork surveyed, the **architecture
+is held constant** (177 synaptic triplets AMPA + NMDA + GABA, passive dendrites, distributed
+homogeneously on ON dendrites) and tuning is accomplished **only** by rescaling conductance weights.
+Channel densities and morphology are not touched after the first calibration. This task should
+follow the same discipline.
+
+##### NEURON 8.2.7 Compatibility Risk Is Low and Well-Bounded
+
+NEURON 8.2.7 is the project&#x27;s target runtime. Key findings for 8.2-era porting of 7.x models:
+
+* **Implicit API declarations**: NEURON 8.2 implicitly includes more `nrn_` / `hoc_` function
+  prototypes. MOD files that hand-declare these with incorrect return or argument types will collide
+  at compile time. Fix: delete the incorrect local declaration
+  [NEURON-Changelog-8.2, NEURON-Porting-CPP].
+* **VERBATIM blocks**: 8.2.7 still accepts legacy C syntax in VERBATIM blocks. NEURON 9.0 will
+  switch to C++ and may require updates [NEURON-Porting-CPP]. Phase A&#x27;s target is 8.2.7, so VERBATIM
+  migration is out of scope.
+* **Windows compile path**: `nrnivmodl` on Windows ships with MinGW/gcc, not Visual Studio. Two
+  interfaces exist: the legacy `mknrndll` GUI (launched from the NEURON program group icon) and the
+  CLI `nrnivmodl` [NEURON-FAQ, NEURON-Windows]. Either is fine; CLI is easier to automate.
+* **Python bindings**: NEURON 8.2.7 on Windows supports Python 3.12 via the prebuilt installer
+  [NEURON-Downloads]. The project&#x27;s pyproject should be set accordingly; no source build is needed.
+
+**Best practice**: compile `.mod` files with `nrnivmodl` first, smoke-test the loaded module by
+running the shipped demo unchanged, **then** begin porting logic into the project&#x27;s library layer.
+If the ModelDB archive builds clean on the first try, do not change any MOD file; all divergence
+should live in the Python/NetPyNE wrapper layer.
+
+##### NetPyNE `importCell` Workflow Validates Direct HOC Reuse
+
+NetPyNE 1.1.x&#x27;s `importCell()` is the canonical bridge for the project: it instantiates a HOC
+template, walks its sections, and captures morphology plus point processes into a NetPyNE cellRule
+[NetPyNE-ImportCell, NetPyNE-Docs]. For ModelDB 189347 the recommended wrapper is:
+
+1. Disable `mosinit.hoc` GUI launch (load `main.hoc` directly or copy `RGCmodel.hoc` to a GUI-free
+   entry file).
+2. Wrap the cell creation as a HOC template with a named section list covering soma + all 350
+   dendrite sections.
+3. Call `importCell(fileName=&quot;dsgc.hoc&quot;, cellName=&quot;DSGC&quot;)` inside a NetPyNE cellRule builder.
+4. Define synapse mechanisms as NetPyNE `synMechParams` so that synaptic weights can be
+   parameterised (and tuned) from the Python side without editing HOC
+   [NetPyNE-ImportCell, Geoffder-offsetDSGC-2019].
+
+Known pitfall: `importCell()` can silently mutate global `h` state such as `h.celsius`
+[NetPyNE-Issue-31]. Workaround: reset `h.celsius` immediately after the import.
+
+##### No Erratum or Post-Publication Correction Found for Poleg-Polsky 2016
+
+Exhaustive searches of Cell Press (Neuron), PubMed, Google Scholar, Zenodo, and the Poleg-Polsky lab
+page at CU Anschutz [PolegPolsky-CUAnschutz] returned no erratum, corrigendum, or supplementary code
+archive attached to the 2016 paper beyond ModelDB 189347. Poleg-Polsky has since moved from NIH to
+CU Anschutz [PolegPolsky-CUAnschutz, ModelDB-189347-citations] and published newer DSGC work (2019+)
+but no correction to the 2016 codebase. The answer asset should record this negative result: the
+ModelDB archive is canonical, first-author contact is mailto:alonpol@tx.technion.ac.il (historical)
+or via CU Anschutz.
+
+#### Methodology Insights
+
+* **Port the ModelDB archive verbatim first**: clone `ModelDBRepository/189347`, run `nrnivmodl`,
+  launch `main.hoc` in NEURON 8.2.7, confirm the shipped GUI produces the PD vs ND responses. Only
+  then wrap in NetPyNE [ModelDBRepo-GH, NEURON-FAQ]. This isolates port-breakage bugs from
+  architecture-change bugs exactly as the `research_papers.md` methodology insight recommends.
+* **Expect and handle NEURON 8.2 implicit-declaration collisions**: if a MOD file fails to compile
+  with a redeclaration error for `hoc_*` or `nrn_*`, delete the hand-declared prototype from the top
+  of the affected `.mod` file; do not rename or rewrite the function
+  [NEURON-Changelog-8.2, NEURON-Porting-CPP].
+* **Use the geoffder fork&#x27;s weights as a Phase A fallback, not an alternative baseline**: port with
+  the Poleg-Polsky 2016 defaults from `main.hoc` first; if the envelope test fails only after the
+  t0009 morphology swap, try the Hanson 2019 weights as a targeted re-tuning before touching channel
+  densities [Geoffder-offsetDSGC-2019, Geoffder-GH].
+* **Wrap HOC in NetPyNE via `importCell()`, keep `mosinit.hoc` out of the import path**: NetPyNE
+  re-runs the HOC at import time; a GUI-launching `mosinit.hoc` would pop a window. Rename or skip
+  it and call the underlying `main.hoc` / `RGCmodel.hoc` directly
+  [NetPyNE-ImportCell, NetPyNE-Docs].
+* **Bail out of Ding 2016 and Schachter 2010 early in Phase B**: both are NeuronC. NeuronC does not
+  run inside NEURON and would require a full rewrite [Smith-Lab, ModelDB-223890-2016]. Record as
+  &quot;failed candidate — incompatible simulator&quot; in the answer asset and move on.
+* **Jain 2020 does not need its own port**: Jain 2020&#x27;s NEURON model **is** the Poleg-Polsky 2016
+  base code (architecture-identical, 177 paired synapses on the same reconstructed arbor)
+  [Jain2020-eLife]. Phase A&#x27;s working port covers Jain 2020 for free; only the conductance-weight
+  parameter set differs, and that is a Python-side configuration, not a separate port.
+* **NBELab/RSME is a stretch goal**: if Phase A completes ahead of schedule, `NBELab/RSME` provides
+  a self-contained NEURON+Python SAC-DSGC **network** (not single-cell) model with a ready
+  `SAC-DSGC_network.ipynb` moving-bar protocol [NBELab-RSME-GH, EzraTsur2022]. This would support
+  later tasks studying bipolar/SAC presynaptic tuning; it is out of scope for this task&#x27;s Phase B.
+* **Windows `nrnivmodl` + `uv run`**: both legacy and modern NEURON Windows installers work with the
+  project&#x27;s `uv`-managed Python. Run `nrnivmodl` from the DSGC library folder wrapped in
+  `run_with_logs.py`, then treat the produced `nrnmech.dll` as a task-local build artefact (do not
+  commit) [NEURON-FAQ, NEURON-Windows].
+
+#### Discovered Papers
+
+##### [EzraTsur2022]
+
+* **Title**: Realistic retinal modeling unravels the differential role of excitation and inhibition
+  to starburst amacrine cells in direction selectivity
+* **Authors**: Ezra-Tsur, E. et al.
+* **Year**: 2022
+* **DOI**: `10.1371/journal.pcbi.1009754`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009754
+* **Suggested categories**: `compartmental-modeling`, `direction-selectivity`,
+  `retinal-ganglion-cell`, `synaptic-integration`
+* **Why download**: Companion paper to the `NBELab/RSME` GitHub repository — a NEURON + Python
+  SAC-DSGC network model. Provides published parameters and protocols for the stretch-goal extension
+  in Phase B, and closes a gap in the paper corpus (no NEURON SAC-DSGC network model is currently
+  catalogued).
+
+#### Recommendations for This Task
+
+1. **Clone the ModelDB 189347 archive from `github.com/ModelDBRepository/189347`**, not the raw
+   SenseLab zip. Pin the commit SHA in the library asset&#x27;s `details.json` for reproducibility
+   [ModelDBRepo-GH]. This updates `research_papers.md` recommendation 6 with an exact source URL.
+2. **Use NEURON 8.2.7 on Windows with Python 3.12** via the prebuilt installer; compile MOD files
+   with `nrnivmodl` inside the library folder before launching any simulation
+   [NEURON-Downloads, NEURON-FAQ].
+3. **If MOD-file compile fails**, delete hand-declared `nrn_` / `hoc_` prototypes that NEURON 8.2
+   implicitly provides [NEURON-Changelog-8.2, NEURON-Porting-CPP]. No deeper code rewrite is
+   expected to be needed for these particular MOD files.
+4. **Wrap via NetPyNE `importCell()` against `main.hoc`** (not `mosinit.hoc`) with `cellName=&quot;RGC&quot;`
+   and an explicit section list covering soma + all 350 dendrite sections [NetPyNE-ImportCell].
+5. **Use the Poleg-Polsky 2016 defaults first, Hanson 2019 weights as the fallback re-tuning step**:
+   `tstop = 1000` ms, `dt = 0.1` ms, `tau1NMDA = 60` ms, `e_SACinhib = -60` mV
+   [ModelDB-189347-mainhoc-2016]. Fallback weights if envelope fails after morphology swap:
+   `excWeight = 0.0005 µS`, `inhibWeight = 0.004 µS`, `ampaWeight = 0.0005 µS`,
+   `nmdaWeight = 0.0015 µS` [Geoffder-offsetDSGC-2019].
+6. **In Phase B, port only `geoffder/Spatial-Offset-DSGC-NEURON-Model`** (the Hanson 2019 NEURON
+   fork). Record Ding 2016 and Schachter 2010 as NeuronC-incompatible failed candidates without
+   attempting port [Geoffder-GH, ModelDB-223890-2016, Smith-Lab].
+7. **Re-use Phase A&#x27;s port for Jain 2020 coverage**: the Jain 2020 model is architecturally
+   identical to Poleg-Polsky 2016; only the parameter set differs and is configurable from Python
+   [Jain2020-eLife, PolegPolsky2016-cited-in-research-papers].
+8. **Record the negative erratum result in the answer asset**: no correction or supplementary
+   archive exists for [PolegPolsky2016] beyond ModelDB 189347 [PolegPolsky-CUAnschutz].
+9. **Optionally add `Ezra-Tsur 2022` to the paper corpus** (see Discovered Papers) as a later
+   stretch reference for any SAC-DSGC network-level task downstream of this port
+   [EzraTsur2022, NBELab-RSME-GH].
+
+#### Source Index
+
+##### [ModelDB-189347-2016]
+
+* **Type**: repository
+* **Title**: Multiplication by NMDA receptors in Direction Selective Ganglion cells (Poleg-Polsky &amp;
+  Diamond 2016) — ModelDB entry 189347
+* **Author/Org**: Alon Poleg-Polsky (Technion / NIH), published via ModelDB
+* **Date**: 2016
+* **URL**: https://modeldb.science/189347
+* **Last updated**: 2016 (single upload)
+* **Peer-reviewed**: no (code archive associated with a peer-reviewed paper)
+* **Relevance**: Canonical ModelDB landing page and metadata for the source model being ported.
+  Confirms implementer identity and sim environment (NEURON).
+
+##### [ModelDBRepo-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/189347 — GitHub mirror of the ModelDB archive
+* **Author/Org**: ModelDB (McDougal lab, Yale)
+* **Date**: 2016 (mirror created at archive deposit)
+* **URL**: https://github.com/ModelDBRepository/189347
+* **Last updated**: single commit on master
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative mirror of the full archive with browsable file tree. The clone target
+  for Phase A because it exposes the exact 14-file layout including `mosinit.hoc`, `main.hoc`,
+  `RGCmodel.hoc`, and six `.mod` files.
+
+##### [ModelDB-189347-mainhoc-2016]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/189347 — `main.hoc` (entry point)
+* **Author/Org**: Alon Poleg-Polsky
+* **Date**: 2016
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/main.hoc
+* **Peer-reviewed**: no
+* **Relevance**: Source of authoritative simulation parameters the paper omits: `tstop = 1000` ms,
+  `dt = 0.1` ms, `tau1NMDA_bipNMDA = 60` ms, `e_SACinhib = -60` mV, `lightspeed = 1` µm/ms, plus the
+  `b2gnmda = 0.5/sparse/maxvesmul` scaling. These are the values the port must reproduce.
+
+##### [ModelDB-189347-RGCmodel-2016]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/189347 — `RGCmodel.hoc` (cell template)
+* **Author/Org**: Alon Poleg-Polsky
+* **Date**: 2016
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/RGCmodel.hoc
+* **Peer-reviewed**: no
+* **Relevance**: Reveals the architectural dimensions: 1 soma + 350 dendrite sections with `pt3dadd`
+  3D coordinates, `SACinhibsyn[2]`, `BIPsyn[2]`, `SACexcsyn[2]` synapse arrays. Needed when
+  designing the NetPyNE cellRule and planning the t0009 morphology swap.
+
+##### [ModelDB-189347-DwnldGuide]
+
+* **Type**: documentation
+* **Title**: ModelDB — NEURON download help
+* **Author/Org**: ModelDB (McDougal lab, Yale)
+* **Date**: 2022 (page revision date)
+* **URL**: https://modeldb.science/NEURON_DwnldGuide
+* **Peer-reviewed**: no
+* **Relevance**: Confirms the canonical download workflow (zip from model page or git clone from
+  ModelDBRepository GitHub) and the expected `mosinit.hoc` auto-launch convention.
+
+##### [ModelDB-189347-citations]
+
+* **Type**: documentation
+* **Title**: ModelDB paper citations for entry 189347 / Poleg-Polsky 2019 entry
+* **Author/Org**: ModelDB (McDougal lab, Yale)
+* **Date**: queried 2026-04
+* **URL**: https://modeldb.science/citations/259733
+* **Peer-reviewed**: no
+* **Relevance**: Shows Poleg-Polsky&#x27;s post-2016 publications at CU Anschutz, confirming no
+  corrigendum / updated code archive has been posted.
+
+##### [Geoffder-GH]
+
+* **Type**: repository
+* **Title**: Spatial-Offset-DSGC-NEURON-Model
+* **Author/Org**: Geoff deRosenroll (geoffder), Awatramani lab, University of Victoria
+* **Date**: 2019 (original publication of associated paper)
+* **URL**: https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model
+* **Last updated**: 9 commits total, exact date not shown in the fetch
+* **Peer-reviewed**: no (code for peer-reviewed paper eLife 42392)
+* **Relevance**: The Hanson 2019 NEURON fork of ModelDB 189347 — highest-feasibility Phase B port
+  target. Adds `Exp2NMDA.mod` and re-tunes synaptic weights while preserving architecture.
+
+##### [Geoffder-offsetDSGC-2019]
+
+* **Type**: repository
+* **Title**: offsetDSGC.py (`Spatial-Offset-DSGC-NEURON-Model`)
+* **Author/Org**: Geoff deRosenroll
+* **Date**: 2019
+* **URL**:
+  https://raw.githubusercontent.com/geoffder/Spatial-Offset-DSGC-NEURON-Model/master/offsetDSGC.py
+* **Peer-reviewed**: no
+* **Relevance**: Reveals the Hanson 2019 default weights (`inhibWeight = 0.004 µS`,
+  `excWeight = 0.0005 µS`, `ampaWeight = 0.0005 µS`, `nmdaWeight = 0.0015 µS`, `tstop = 750` ms),
+  which become the Phase A re-tuning fallback if envelope fails after morphology swap.
+
+##### [ModelDB-223890-2016]
+
+* **Type**: repository
+* **Title**: Species-specific wiring for direction selectivity in the mammalian retina (Ding et al
+  2016\) — ModelDB 223890
+* **Author/Org**: H. Ding, R. G. Smith, A. Poleg-Polsky, J. S. Diamond, K. L. Briggman
+* **Date**: 2016
+* **URL**: https://modeldb.science/showmodel?model=223890
+* **Peer-reviewed**: no (archive for peer-reviewed Nature paper)
+* **Relevance**: Confirms Ding 2016 is a SAC-network model in NeuronC, not a NEURON DSGC.
+  Incompatible with this project&#x27;s stack; used to justify the &quot;skip&quot; decision in Phase B.
+
+##### [MurphyBaum-GH]
+
+* **Type**: repository
+* **Title**: eLife_2020_Analysis (Jain, Murphy-Baum et al. 2020)
+* **Author/Org**: Ben Murphy-Baum, Awatramani lab, University of Victoria
+* **Date**: 2020
+* **URL**: https://github.com/benmurphybaum/eLife_2020_Analysis
+* **Peer-reviewed**: no (analysis code for peer-reviewed eLife paper)
+* **Relevance**: IGOR Pro calcium-imaging analysis, not a NEURON model. Confirms Jain 2020 publishes
+  no independent DSGC model source and points implementation to the shared Poleg-Polsky / Hanson
+  fork.
+
+##### [Jain2020-eLife]
+
+* **Type**: paper
+* **Title**: The functional organization of excitation and inhibition in the dendrites of mouse
+  direction-selective ganglion cells
+* **Authors**: Jain V., Murphy-Baum B. L., deRosenroll G., Sethuramanujam S., Delsey M., Delaney K.
+  R., Awatramani G. B.
+* **Year**: 2020
+* **DOI**: `10.7554/eLife.52949`
+* **URL**: https://elifesciences.org/articles/52949
+* **Peer-reviewed**: yes (eLife)
+* **Relevance**: Data-availability statement verified: the paper&#x27;s multi-compartmental NEURON DSGC
+  model is architecturally the Poleg-Polsky 2016 base (&quot;177 paired excitatory and inhibitory
+  synaptic inputs distributed across the dendritic arbor&quot;). Also present in the existing paper
+  corpus as
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/ 10.7554_eLife.52949/`.
+
+##### [NBELab-RSME-GH]
+
+* **Type**: repository
+* **Title**: RSME — Retinal Stimulation Modeling Environment
+* **Author/Org**: NBELab (Ezra-Tsur group)
+* **Date**: 2022
+* **URL**: https://github.com/NBELab/RSME
+* **Peer-reviewed**: no (code for peer-reviewed PLOS Comput Biol paper)
+* **Relevance**: NEURON + Python SAC-DSGC network model with `SAC-DSGC_network.ipynb` moving-bar
+  notebook. Stretch-goal Phase B candidate; closes a paper-corpus gap.
+
+##### [NEURON-Changelog-8.2]
+
+* **Type**: documentation
+* **Title**: NEURON 8.2 Changelog
+* **Author/Org**: NEURON simulator project
+* **Date**: 2022-07 onward; 8.2.7 on PyPI with Python 3.12 support
+* **URL**: https://nrn.readthedocs.io/en/8.2.7/changelog.html
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative source on implicit-declaration collisions that are the most likely
+  compile-time break when porting 2016-era MOD files to 8.2.7.
+
+##### [NEURON-Porting-CPP]
+
+* **Type**: documentation
+* **Title**: Adapting MOD files for C++ with NEURON &gt;= 9.0
+* **Author/Org**: NEURON simulator project
+* **Date**: 2024-2026 (docs site)
+* **URL**: https://nrn.readthedocs.io/en/latest/guide/porting_mechanisms_to_cpp.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents the implicit-declaration fix and explains why VERBATIM migration is
+  **not** needed when staying on 8.2.7. Bounds the risk surface of the port.
+
+##### [NEURON-FAQ]
+
+* **Type**: documentation
+* **Title**: NEURON FAQ — compiling MOD files with `nrnivmodl`
+* **Author/Org**: NEURON simulator project
+* **Date**: 8.2.6 docs revision
+* **URL**: https://nrn.readthedocs.io/en/8.2.6/guide/faq.html
+* **Peer-reviewed**: no
+* **Relevance**: Practical build workflow: run `nrnivmodl` in the folder containing `.mod` files or
+  `nrnivmodl mod` when they live in a subfolder. Sets the compile pattern for the library asset.
+
+##### [NEURON-Windows]
+
+* **Type**: documentation
+* **Title**: NEURON Windows build and `mknrndll` workflow
+* **Author/Org**: NEURON simulator project
+* **Date**: 2024 docs revision
+* **URL**: https://nrn.readthedocs.io/en/latest/install/windows.html
+* **Peer-reviewed**: no
+* **Relevance**: Confirms Windows MinGW/gcc toolchain ships with the NEURON installer; Visual Studio
+  is not needed. Supports the project&#x27;s Windows target environment.
+
+##### [NEURON-Downloads]
+
+* **Type**: documentation
+* **Title**: NEURON precompiled installers page (8.2.7 binaries with Python 3.12 support)
+* **Author/Org**: NEURON simulator project
+* **Date**: queried 2026-04
+* **URL**: https://www.neuron.yale.edu/neuron/download
+* **Peer-reviewed**: no
+* **Relevance**: Confirms 8.2.7 Windows installer availability that matches the project&#x27;s NEURON
+  8.2.7 / Python 3.12 target.
+
+##### [NetPyNE-ImportCell]
+
+* **Type**: documentation
+* **Title**: NetPyNE `netpyne.conversion.neuronPyHoc.importCell` — API reference
+* **Author/Org**: NetPyNE developers (SUNY Downstate / Neurosim-lab)
+* **Date**: v1.x docs
+* **URL**: http://doc.netpyne.org/_modules/netpyne/conversion/neuronPyHoc.html
+* **Peer-reviewed**: no
+* **Relevance**: The canonical bridge API from hand-written HOC into NetPyNE cellRules — the
+  function the port uses to wrap the Poleg-Polsky HOC template.
+
+##### [NetPyNE-Docs]
+
+* **Type**: documentation
+* **Title**: NetPyNE User Documentation — importing externally-defined cell models
+* **Author/Org**: NetPyNE developers
+* **Date**: v1.x docs
+* **URL**: http://doc.netpyne.org/user_documentation.html
+* **Peer-reviewed**: no
+* **Relevance**: Describes how NetPyNE captures morphology, sections, section lists, point
+  processes, and synapses from an imported HOC template into a cellRule. Sets the wrapper
+  architecture for the library asset.
+
+##### [NetPyNE-Issue-31]
+
+* **Type**: forum
+* **Title**: `importCell()` function can modify h variables (eg. h.celsius) — NetPyNE issue #31
+* **Author/Org**: netpyne / Neurosim-lab
+* **Date**: 2018 (issue; behaviour persists in 1.x)
+* **URL**: https://github.com/suny-downstate-medical-center/netpyne/issues/31
+* **Peer-reviewed**: no (community issue tracker)
+* **Relevance**: Documents the global-state mutation pitfall of `importCell()`; informs the &quot;reset
+  `h.celsius` after import&quot; workaround that the port should apply.
+
+##### [PolegPolsky-CUAnschutz]
+
+* **Type**: documentation
+* **Title**: Alon Poleg-Polsky, MD, PhD — CU Anschutz Physiology faculty page
+* **Author/Org**: University of Colorado Anschutz Medical Campus
+* **Date**: queried 2026-04
+* **URL**: https://medschool.cuanschutz.edu/physiology/faculty/regular-faculty/alon-poleg-polsky
+* **Peer-reviewed**: no
+* **Relevance**: Current first-author affiliation and contact point should the port need
+  clarification on undocumented 2016-era parameters. Confirms no corrigendum is publicly linked.
+
+##### [Smith-Lab]
+
+* **Type**: documentation
+* **Title**: Robert G. Smith, PhD — NeuronC lab page (Penn)
+* **Author/Org**: Robert Smith, University of Pennsylvania
+* **Date**: queried 2026-04
+* **URL**: https://retina.anatomy.upenn.edu/~rob/
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative source on NeuronC — the simulator used by Schachter 2010 and Ding
+  2016 that is **not** NEURON. Confirms porting these to NEURON would require rewriting the
+  simulator layer, not just translating files.
+
+##### [PolegPolsky2016]
+
+* **Type**: paper
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Alon Poleg-Polsky, Jeffrey S. Diamond
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.07.035`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(16)30463-7
+* **Peer-reviewed**: yes (Neuron, Cell Press)
+* **Relevance**: The source paper whose model is being ported. Present in the existing paper corpus
+  at `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/` and analysed in
+  `research/research_papers.md`. Referenced in body text when distinguishing the 2016 paper itself
+  from the ModelDB code archive.
+
+##### [EzraTsur2022]
+
+* **Type**: paper
+* **Title**: Realistic retinal modeling unravels the differential role of excitation and inhibition
+  to starburst amacrine cells in direction selectivity
+* **Authors**: Elishai Ezra-Tsur et al.
+* **Year**: 2022
+* **DOI**: `10.1371/journal.pcbi.1009754`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009754
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Companion paper to the `NBELab/RSME` repository — a NEURON + Python SAC-DSGC
+  network model. Stretch-goal Phase B candidate; also listed in Discovered Papers for addition to
+  the paper corpus.
+      </content>
+    </section>
+    <section id="t0008_port_modeldb_189347-research_code" source_kind="file">
+      <title>t0008_port_modeldb_189347 — Port ModelDB 189347 and similar DSGC compartmental models to NEURON — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0008_port_modeldb_189347</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0008_port_modeldb_189347/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0008_port_modeldb_189347&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 11
+tasks_cited: 7
+libraries_found: 1
+libraries_relevant: 1
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Port ModelDB 189347 to NEURON/NetPyNE
+
+#### Task Objective
+
+Port the Poleg-Polsky &amp; Rivlin-Etzion 2016 DSGC NEURON model (ModelDB 189347) into this project as a
+reusable NetPyNE library asset, reproduce the published 12-angle direction-tuning curve on the
+calibrated DSGC morphology, and verify that simulated DSI, peak, null, and HWHM fall inside the
+envelope targets defined by the project. The deliverables are one library asset and one answer asset
+summarising the port and its biological/numerical fidelity. This document surveys existing project
+code, libraries, datasets, and prior lessons so the planning and implementation stages can reuse
+maximum prior work and avoid reinventing solutions already validated upstream.
+
+#### Library Landscape
+
+Only one library asset is registered in the project at the time of this research, and it is the
+library we depend on for scoring.
+
+* **Library**: `tuning_curve_loss` (version 0.1.0) — produced by `[t0012]`. Not overridden by any
+  corrections in the corrections overlay. Registered under
+  `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/details.json` with
+  8 modules and 14 public entry points. **Relevant**: yes — it is the mandated scorer for the
+  reproduced tuning curve and it canonicalises the envelope targets, metric keys, and CSV schema
+  this task must emit.
+* **Import path**:
+  ```python
+  from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss import (
+      score, score_curves, load_tuning_curve, TuningCurve, ScoreReport,
+      Envelope, DEFAULT_ENVELOPE, DEFAULT_WEIGHTS, ENVELOPE_HALF_WIDTHS,
+      TUNING_CURVE_CSV_COLUMNS,
+      METRIC_KEY_DSI, METRIC_KEY_HWHM, METRIC_KEY_RELIABILITY, METRIC_KEY_RMSE,
+  )
+  ```
+
+No other libraries exist. SWC parsing code lives in `[t0005]` and `[t0009]` but is not registered as
+a library, so per the cross-task reuse rule it must be **copied**, not imported, into this task.
+
+#### Key Findings
+
+##### NEURON/NetPyNE toolchain is already verified on this Windows host
+
+The NEURON 8.2.7 + NetPyNE 1.1.1 stack is fully installed and validated on this host by `[t0007]`.
+The install-report answer asset
+(`tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/`) documents that
+`nrnivmodl` compiles MOD files via a `run_nrnivmodl.cmd` Windows wrapper (MSYS path mangling
+workaround), a single-cell Hodgkin-Huxley smoke test produced a ~42 mV spike with 4.4 ms wall-clock
+runtime, and the interpreter needs
+`os.environ.setdefault(&quot;NEURONHOME&quot;, r&quot;C:\Users\md1avn\nrn-8.2.7&quot;)` before importing NEURON in a
+uv-managed venv `[t0007]`. This means the port can assume the compile-run cycle works; no
+environment-reinstallation step is needed.
+
+##### NetPyNE cell construction template already exists
+
+`tasks/t0007_install_neuron_netpyne/code/sanity_netpyne.py` is a 187-line NetPyNE reference script
+that exercises every API this task needs: `specs.NetParams()`, `net_params.cellParams[...]` with
+`secs`/`geom`/`mechs`, `popParams` to instantiate a single cell,
+`stimSourceParams`/`stimTargetParams` for current injection, `specs.SimConfig()` with
+`duration`/`dt`/`hParams`/`recordTraces`/`filename`, and the canonical
+`sim.initialize -&gt; createPops -&gt; createCells -&gt; addStims -&gt; setupRecording -&gt; runSim -&gt; gatherData -&gt; saveData`
+pipeline `[t0007]`. The DSGC port can adopt this scaffolding verbatim and extend `cellParams` to
+load the calibrated DSGC morphology via NetPyNE&#x27;s `importCell()` HOC/SWC importer and register the
+ported MOD mechanisms (HHst, SAC2RGCexc, SAC2RGCinhib, bipolarNMDA, SquareInput).
+
+##### Morphology is already calibrated and ready to consume
+
+`[t0005]` downloaded NeuroMorpho.Org #141009_Pair1DSGC (6,736 compartments: 19 soma + 6,717 basal
+dendrite, 0 axon, 129 branch points, 131 leaves, 1.54 mm total dendritic length, uniform 0.125 µm
+placeholder radius). `[t0009]` then calibrated the radii to Poleg-Polsky 2016 harvested values (soma
+4.118 µm, primary 3.694 µm, mid 1.653 µm, terminal 0.439 µm) using a Horton-Strahler partition
+(max_order = 5; per-order floors of 0.5 µm for soma/primary and 0.15 µm for terminal) `[t0009]`. The
+calibrated SWC keeps the baseline topology exactly, so simply swap the input path from baseline to
+calibrated and all downstream code is unchanged.
+
+##### Target tuning curve and generator provenance are pinned
+
+`[t0004]` emitted the canonical target curve at
+`tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/` as three files:
+`curve_mean.csv` (12 angles × mean_rate_hz), `curve_trials.csv` (12 angles × 20 trials × rate_hz),
+and `generator_params.json`
+(`theta_pref=90°, r_peak=32 Hz, r_base=2 Hz, n_angles=12, n_trials=20, noise_sd=3 Hz, seed`)
+`[t0004]`. These paths are hard-coded in the tuning_curve_loss library as `TARGET_MEAN_CSV` and
+`TARGET_TRIALS_CSV`, so `score(simulated_curve_csv)` with the default second argument scores the
+NEURON output directly against this canonical target `[t0012]`.
+
+##### Scoring loss semantics and identity gate
+
+`score_curves(target, candidate, ...)` returns a frozen `ScoreReport` dataclass with `loss_scalar`,
+per-axis signed residuals (`dsi_residual`, `peak_residual_hz`, `null_residual_hz`,
+`hwhm_residual_deg`), `rmse_vs_target`, `reliability`, `passes_envelope`, `per_target_pass` dict,
+normalised residuals (residual divided by envelope half-width), the weights used, and both candidate
+and target metric snapshots `[t0012]`. The identity gate is exact:
+`score(target, target).loss_scalar == 0.0` and `passes_envelope is True` `[t0012]`. The loss is
+`sqrt(sum(w_i * (residual_i / half_width_i)^2))` across the four axes, with
+`ENVELOPE_HALF_WIDTHS = {&quot;dsi&quot;: 0.1, &quot;peak&quot;: 25.0, &quot;null&quot;: 5.0, &quot;hwhm&quot;: 15.0}` and `DEFAULT_WEIGHTS`
+at 0.25 each. 47/47 pytest tests pass, ruff/mypy clean `[t0012]`.
+
+##### CSV schemas accepted by the loader
+
+`load_tuning_curve(csv_path=...)` accepts three schemas, checked in this order: canonical 3-column
+`(angle_deg, trial_seed, firing_rate_hz)` for per-trial output; t0004 3-column trials
+`(angle_deg, trial_index, rate_hz)`; and t0004 2-column mean `(angle_deg, mean_rate_hz)`. All three
+require a uniform 30° grid with exactly 12 angles `[t0012]`. The simplest simulator output strategy
+is the canonical schema — emit one row per (angle_deg, trial_seed, firing_rate_hz) from the 20-trial
+× 12-angle NEURON loop.
+
+##### Metric registry keys are fixed
+
+Module-level constants in `scoring.py` name the four registered metrics this task must emit in
+`results/metrics.json`: `direction_selectivity_index`, `tuning_curve_hwhm_deg`,
+`tuning_curve_reliability`, and `tuning_curve_rmse` `[t0012]`. `ScoreReport.to_metrics_dict()`
+returns a dict keyed by these constants — dump it straight into `metrics.json`.
+
+##### Existing SWC I/O is the same across t0005 and t0009 — copy the newer version
+
+`[t0005]`&#x27;s `validate_swc.py` (236 lines) and `[t0009]`&#x27;s `swc_io.py` (215 lines) contain the same
+`SwcCompartment` dataclass and SWC round-trip logic. `[t0009]`&#x27;s version is the supserset: it adds
+`write_swc_file()` and `build_children_index()` and keeps `parse_swc_file()`,
+`validate_structure()`, `summarize()`, `SwcSummary`, and explicit type-code constants (`SOMA=1`,
+`AXON=2`, `BASAL_DENDRITE=3`, `APICAL_DENDRITE=4`, `ROOT_PARENT_ID=-1`) `[t0009]`. Per the
+cross-task rule, this code must be copied — copy the `[t0009]` version directly.
+
+##### Environment and command-wrapping invariants
+
+Every task-branch CLI call must be wrapped in `uv run python -m arf.scripts.utils.run_with_logs`
+(project rule 1). `[t0007]` established that `nrnivmodl` must be invoked through a plain `.cmd`
+wrapper rather than directly from an MSYS/bash shell to avoid MSYS path mangling `[t0007]`. The
+Windows-side `PYTHONUTF8=1` and `$HOME/.local/bin` PATH prefix are required across the whole
+toolchain to keep NEURON and uv co-operative.
+
+#### Reusable Code and Assets
+
+##### `tuning_curve_loss` library — **import via library** `[t0012]`
+
+* **Source**: `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/`
+  (code at `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/`).
+* **What it does**: loads a 12-angle tuning curve CSV, computes DSI/peak/null/HWHM/reliability,
+  checks them against the envelope, and scores a candidate against the t0004 target as a weighted
+  Euclidean residual in envelope-half-width units.
+* **Key signatures**:
+  ```python
+  def score(
+      simulated_curve_csv: Path,
+      target_curve_csv: Path | None = None,
+      *,
+      weights: dict[str, float] | None = None,
+      envelope: Envelope | None = None,
+      weights_path: Path | None = None,
+  ) -&gt; ScoreReport
+  def score_curves(
+      *,
+      target: TuningCurve,
+      candidate: TuningCurve,
+      weights: dict[str, float] | None = None,
+      envelope: Envelope | None = None,
+      weights_path: Path | None = None,
+  ) -&gt; ScoreReport
+  def load_tuning_curve(*, csv_path: Path) -&gt; TuningCurve
+  ```
+* **Adaptation needed**: none — use as-is.
+* **How the asset is located**: read
+  `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/details.json` for
+  `module_paths`, `entry_points`, and `dependencies`; the description at `.../description.md` has
+  usage examples.
+
+##### Target tuning curve dataset — **read the files directly** `[t0004]`
+
+* **Source**: `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/`
+* **Files**: `curve_mean.csv`, `curve_trials.csv`, `generator_params.json`.
+* **Reuse method**: pass `tuning_curve_loss.score(simulated_curve_csv)` with no explicit target —
+  the library resolves `TARGET_MEAN_CSV` to this file automatically.
+* **Adaptation needed**: none.
+
+##### Calibrated DSGC morphology — **read the SWC directly** `[t0009]`
+
+* **Source**:
+  `tasks/t0009_calibrate_dendritic_diameters/assets/dataset/dsgc-baseline-morphology-calibrated/files/141009_Pair1DSGC_calibrated.CNG.swc`.
+* **What it provides**: 6,736-compartment SWC with Strahler-order-calibrated radii matching
+  Poleg-Polsky 2016 bins (soma 4.118 µm, primary 3.694 µm, mid 1.653 µm, terminal 0.439 µm).
+* **Reuse method**: pass the path to NetPyNE&#x27;s `importCell()` (SWC importer) or to NEURON&#x27;s
+  `Import3d_SWC_read`.
+* **Adaptation needed**: none — this SWC is the drop-in morphology.
+
+##### SWC I/O module — **copy into task** `[t0009]`
+
+* **Source**: `tasks/t0009_calibrate_dendritic_diameters/code/swc_io.py` (~215 lines).
+* **What it does**: Provides `SwcCompartment` and `SwcSummary` frozen dataclasses,
+  `parse_swc_file(*, swc_path) -&gt; list[SwcCompartment]`, `validate_structure(*, compartments)`,
+  `summarize(*, compartments) -&gt; SwcSummary`,
+  `build_children_index(*, compartments) -&gt; dict[int, list[int]]`,
+  `write_swc_file(*, compartments, output_path, header_comments)`, and the type-code constants
+  `SOMA=1`, `AXON=2`, `BASAL_DENDRITE=3`, `APICAL_DENDRITE=4`, `ROOT_PARENT_ID=-1`.
+* **Reuse method**: **copy into task** (cross-task rule: non-library code must be copied).
+* **Adaptation needed**: none expected for parsing; only extend if the port needs per-compartment
+  Strahler order lookup during channel placement.
+
+##### NetPyNE sanity template — **copy and extend** `[t0007]`
+
+* **Source**: `tasks/t0007_install_neuron_netpyne/code/sanity_netpyne.py` (187 lines).
+* **What it does**: Minimal NEURON+NetPyNE cell-construction pipeline: `specs.NetParams()` with
+  `cellParams`/`popParams`/`stimSourceParams`/`stimTargetParams`, `specs.SimConfig()` with
+  `duration`/`dt`/`hParams`/`recordTraces`/`filename`, and the
+  `sim.initialize -&gt; createPops -&gt; createCells -&gt; addStims -&gt; setupRecording -&gt; runSim -&gt; gatherData -&gt; saveData`
+  pipeline.
+* **Reuse method**: **copy into task**. Replace the single HH cell with an SWC-imported DSGC, bind
+  the ported MOD mechanisms, and add the 177 AMPA + 177 NMDA + 177 GABA synapse populations.
+* **Adaptation needed**: swap geometry for `importCell()` on the calibrated SWC, register the ported
+  MOD mechanisms under `net_params.mechs`, and drive the simulation with a 12-angle outer loop over
+  20 trials each.
+
+##### `nrnivmodl` Windows wrapper — **copy into task** `[t0007]`
+
+* **Source**: `tasks/t0007_install_neuron_netpyne/code/run_nrnivmodl.cmd` (7 lines).
+* **What it does**: CMD wrapper that invokes `nrnivmodl` without MSYS path mangling.
+* **Reuse method**: **copy into task** and run it on the directory containing the ported MOD files
+  (HHst, SAC2RGCexc, SAC2RGCinhib, bipolarNMDA, SquareInput, spike) to produce `nrnmech.dll`.
+* **Adaptation needed**: adjust the MOD source directory if the task lays files out differently.
+
+##### Install-report answer asset — **read only, do not copy** `[t0007]`
+
+* **Source**: `tasks/t0007_install_neuron_netpyne/assets/answer/neuron-netpyne-install-report/`.
+* **What it does**: Documents NEURON 8.2.7 + NetPyNE 1.1.1 install paths, `NEURONHOME` env var,
+  `nrnivmodl` wrapper usage, and the ~42 mV / 4.4 ms smoke-test baseline.
+* **Reuse method**: read during planning to get exact commands and paths; do not copy into the task
+  folder.
+
+#### Lessons Learned
+
+* **Library scoring has an exact identity gate** — `[t0012]` confirmed `score(target, target)`
+  yields `loss_scalar == 0.0` and `passes_envelope is True`. Any non-zero identity loss during port
+  implementation signals a pipeline bug (schema mismatch, column swap, or float cast), not a model
+  deviation.
+* **NEURON on Windows requires a CMD wrapper for `nrnivmodl`** — `[t0007]` hit MSYS path mangling
+  when invoking `nrnivmodl` from bash and resolved it by using a plain `.cmd` wrapper. Do not invoke
+  `nrnivmodl` directly from the run-with-logs bash wrapper.
+* **NEURON import order matters** — `[t0007]` had to set `os.environ[&quot;NEURONHOME&quot;]` before
+  `import neuron`; otherwise the DLL/`nrnmech` resolution fails on Windows.
+* **NEURON 8.2 is stricter about implicit HOC declarations** — the ModelDB 189347 sources documented
+  in `research_internet.md` use implicit declarations that break under NEURON 8.2; the port must add
+  explicit `objref`/variable declarations at the top of each HOC file it inherits.
+* **SWC placeholder radii are biologically meaningless** — `[t0005]` delivered uniform 0.125 µm
+  radii; `[t0009]` replaced them with Strahler-calibrated values. Always use the `[t0009]` SWC for
+  simulation; the `[t0005]` SWC is only for topology reference.
+* **`DEFAULT_WEIGHTS` and `DEFAULT_ENVELOPE` are sufficient defaults** — 47/47 tests pass under them
+  `[t0012]`; no need to hand-tune weights for this task unless the envelope envelope check fails
+  meaningfully on a first successful port, in which case the loss-scalar breakdown pinpoints which
+  of the four axes is drifting.
+* **The canonical CSV schema is `(angle_deg, trial_seed, firing_rate_hz)`** — `[t0012]` accepts
+  three schemas but the canonical one maps directly onto a per-trial NEURON loop without
+  bookkeeping.
+
+#### Recommendations for This Task
+
+1. **Import `tuning_curve_loss` directly** from
+   `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss` and call
+   `score(simulated_curve_csv=&lt;path&gt;)` with no explicit target — the library resolves the canonical
+   t0004 target for you `[t0012]` `[t0004]`. Dump `ScoreReport.to_metrics_dict()` into
+   `results/metrics.json`.
+2. **Load the calibrated SWC, not the baseline**, from
+   `tasks/t0009_calibrate_dendritic_diameters/assets/dataset/dsgc-baseline-morphology-calibrated/files/141009_Pair1DSGC_calibrated.CNG.swc`
+   via NetPyNE `importCell()` `[t0009]`.
+3. **Copy `swc_io.py` from `[t0009]` into this task&#x27;s `code/`** if per-compartment Strahler-order
+   lookup is needed during channel or synapse placement; otherwise NetPyNE&#x27;s own SWC importer may be
+   enough.
+4. **Copy `sanity_netpyne.py` from `[t0007]` as the simulator scaffolding** and extend it with the
+   SWC import, ported mechanisms, and 177×3 synapse populations `[t0007]`.
+5. **Copy `run_nrnivmodl.cmd` from `[t0007]`** and point it at the directory of ported MOD files to
+   build `nrnmech.dll` before the first simulation `[t0007]`.
+6. **Set `os.environ[&quot;NEURONHOME&quot;] = r&quot;C:\Users\md1avn\nrn-8.2.7&quot;` before importing NEURON**, per
+   the install-report answer asset `[t0007]`.
+7. **Emit simulator output in canonical schema** `(angle_deg, trial_seed, firing_rate_hz)` with 12
+   angles × 20 trials and the 30° grid fixed by `tuning_curve_loss.paths` `[t0012]` `[t0004]`.
+8. **Gate implementation on the identity check** — before the first run on real NEURON output,
+   assert `score(TARGET_MEAN_CSV).loss_scalar == 0.0` to confirm the wiring end-to-end `[t0012]`.
+9. **Register the port as a NetPyNE cell-builder library** under `assets/library/` in this task,
+   exposing a single `build_dsgc_cell(*, swc_path: Path) -&gt; dict` entry point that returns the
+   NetPyNE `cellParams` dict, so downstream tasks can import it without re-copying any code (CLAUDE
+   rule 3 &amp; cross-task reuse rule).
+10. **Keep all MOD sources and the compiled `nrnmech.dll` inside the task folder** — do not rely on
+    any path outside `tasks/t0008_port_modeldb_189347/`; task isolation is rule 3 of CLAUDE.md.
+
+#### Task Index
+
+##### [t0003]
+
+* **Task ID**: `t0003_simulator_library_survey`
+* **Name**: Simulator library survey for the DSGC port
+* **Status**: completed
+* **Relevance**: answer asset that pins NEURON + NetPyNE as the chosen simulator pair, justifying
+  the import surface this task targets.
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate target DSGC tuning curve
+* **Status**: completed
+* **Relevance**: produces the canonical 12-angle tuning curve dataset (mean + 20 trials) that this
+  task&#x27;s simulator output is scored against via `tuning_curve_loss.score` default target.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download baseline DSGC morphology
+* **Status**: completed
+* **Relevance**: provides the upstream NeuroMorpho.Org SWC (141009_Pair1DSGC.CNG.swc) whose topology
+  underlies the calibrated morphology this task consumes.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install NEURON + NetPyNE on Windows host
+* **Status**: completed
+* **Relevance**: validates the NEURON/NetPyNE toolchain, documents the Windows `nrnivmodl` wrapper
+  and `NEURONHOME` requirement, and provides the NetPyNE sanity template to extend.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate DSGC dendritic radii
+* **Status**: completed
+* **Relevance**: produces the calibrated SWC morphology this task imports into NetPyNE and the
+  `swc_io.py` module to copy for any per-compartment topology lookups.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response visualization library
+* **Status**: not_started
+* **Relevance**: future consumer of this task&#x27;s simulator output; knowing it exists motivates making
+  the NEURON CSV output conform to `tuning_curve_loss`&#x27;s canonical schema so t0011 can read it too.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Build tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: provides the only registered library in the project (`tuning_curve_loss`), which
+  this task imports to score its reproduced tuning curve and to emit the four registered metrics.
       </content>
     </section>
     <section id="t0009_calibrate_dendritic_diameters-research_papers" source_kind="file">

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T11:18:13Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T12:10:58Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>109783</char_count>
-    <byte_count>110201</byte_count>
-    <estimated_tokens>27445</estimated_tokens>
+    <char_count>112156</char_count>
+    <byte_count>112578</byte_count>
+    <estimated_tokens>28039</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -816,13 +816,14 @@ confirming the stack is ready for downstream modelling tasks (t0008, t0010, t001
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
-Status: in_progress
+Status: completed
 Effective date: 2026-04-20
 Short description: Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
 Dependencies: t0005_download_dsgc_morphology, t0007_install_neuron_netpyne, t0009_calibrate_dendritic_diameters, t0012_tuning_curve_scoring_loss_library
 Task types: code-reproduction, write-library
 Source suggestion: S-0002-03
 Start time: 2026-04-20T10:08:09Z
+End time: 2026-04-20T12:10:00Z
 
 #### Motivation
 
@@ -924,6 +925,45 @@ workstation. Budget remains `$0.00`.
   conditioned parameter retuning.
 * **Phase B finds no portable sibling models**: document the gap as a new suggestion and do not
   invent models to port.
+
+### Results Summary
+
+#### Summary
+
+Ported ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016 ON-OFF DRD4 DSGC compartmental model) as a
+registered library asset, compiled its six MOD files cleanly on NEURON 8.2.7, and ran a canonical
+12-angle x 20-trial (240 total) drifting-bar tuning-curve sweep using the t0012 `tuning_curve_loss`
+scoring library. The port is **technically faithful** — all MOD files compile, the morphology-swap
+report confirms section-count and surface-area parity, and every trial completes end-to-end on the
+local Windows workstation — but it does **not** reproduce the project envelope (DSI **0.316** vs
+target 0.70-0.85; peak **18.1 Hz** vs 40-80 Hz). The gap is a protocol mismatch, not a port bug:
+Poleg-Polsky 2016 implements direction selectivity via a per-angle `gabaMOD` parameter swap, whereas
+this task applied a spatial-rotation proxy. Follow-up captured in `S-0008-02`. Phase B completed as
+a desk survey ranking Hanson 2019 as the highest-priority sibling port.
+
+#### Metrics
+
+* **DSI (direction-selectivity index)**: **0.316** (target 0.70-0.85) - **FAIL**
+* **Peak firing rate**: **18.1 Hz** (target 40-80 Hz) - **FAIL**
+* **Null firing rate**: **9.4 Hz** (target &lt;10 Hz) - **PASS**
+* **HWHM (half-width at half-maximum)**: **82.81 deg** (target 60-90 deg) - **PASS**
+* **Reliability (trial-to-trial)**: **0.991** (target &gt;0.9) - **PASS**
+* **RMSE vs target curve**: **13.73 Hz** (diagnostic only, no envelope target)
+* **Envelope axes passing**: **2 of 4** (null + HWHM pass; DSI + peak fail)
+* **Assets produced**: 1 library, 1 answer, 1 tuning-curve CSV (240 rows), 1 morphology-swap report,
+  1 Phase B survey CSV
+
+#### Verification
+
+* `verify_library_asset.py` on `modeldb_189347_dsgc` - **PASSED** (0 errors, 0 warnings)
+* `verify_answer_asset.py` on `dsgc-modeldb-port-reproduction-report` - **PASSED** (0 errors, 0
+  warnings)
+* `verify_task_metrics.py` (implicit via spec) - all four registered metric keys populated with
+  floats
+* Tuning-curve schema check - **PASSED** (240 rows, canonical
+  `(angle_deg, trial_seed, firing_rate_hz)` columns, 12 angles x 20 trials)
+* Scoring-library identity gate (`score(TARGET_MEAN_CSV).loss_scalar == 0.0`) - **PASSED**
+* Smoke test (single-angle preferred-direction firing) - **PASSED** (non-zero rate at angle 0 deg)
 
 ## Calibrate dendritic diameters for dsgc-baseline-morphology
 ID: t0009_calibrate_dendritic_diameters
@@ -2036,11 +2076,12 @@ No API or compute costs. `costs.json` records `total_cost_usd: 0.00`.
 
 ## Literature survey: synaptic integration in RGC-adjacent systems
 ID: t0018_literature_survey_synaptic_integration
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-20
 Short description: Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
 Task types: literature-survey
 Source suggestion: S-0014-04
+Start time: 2026-04-20T11:18:49Z
 
 #### Motivation
 

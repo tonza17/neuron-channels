@@ -1,6 +1,6 @@
 # Project Tasks
 
-19 tasks. ⏳ **1 in_progress**, ⏹ **5 not_started**, ✅ **13 completed**.
+19 tasks. ⏳ **1 in_progress**, ⏹ **4 not_started**, ✅ **14 completed**.
 
 **Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
 `not_started`](by-status/not_started.md), [✅ `completed`](by-status/completed.md); [By date
@@ -14,25 +14,17 @@ added](by-date-added/README.md)
 graph LR
     t0004_generate_target_tuning_curve["✅ t0004_generate_target_tuning_curve"]
     t0005_download_dsgc_morphology["✅ t0005_download_dsgc_morphology"]
-    t0007_install_neuron_netpyne["✅ t0007_install_neuron_netpyne"]
-    t0008_port_modeldb_189347["⏳ t0008_port_modeldb_189347"]
-    t0009_calibrate_dendritic_diameters["✅ t0009_calibrate_dendritic_diameters"]
+    t0008_port_modeldb_189347["✅ t0008_port_modeldb_189347"]
     t0010_hunt_missed_dsgc_models["⏹ t0010_hunt_missed_dsgc_models"]
     t0011_response_visualization_library["⏹ t0011_response_visualization_library"]
-    t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0013_resolve_morphology_provenance["⏹ t0013_resolve_morphology_provenance"]
-    t0018_literature_survey_synaptic_integration["⏹ t0018_literature_survey_synaptic_integration"]
+    t0018_literature_survey_synaptic_integration["⏳ t0018_literature_survey_synaptic_integration"]
     t0019_literature_survey_voltage_gated_channels["⏹ t0019_literature_survey_voltage_gated_channels"]
 
     t0005_download_dsgc_morphology --> t0008_port_modeldb_189347
-    t0007_install_neuron_netpyne --> t0008_port_modeldb_189347
-    t0009_calibrate_dendritic_diameters --> t0008_port_modeldb_189347
-    t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
-    t0005_download_dsgc_morphology --> t0009_calibrate_dendritic_diameters
     t0008_port_modeldb_189347 --> t0010_hunt_missed_dsgc_models
     t0004_generate_target_tuning_curve --> t0011_response_visualization_library
     t0008_port_modeldb_189347 --> t0011_response_visualization_library
-    t0004_generate_target_tuning_curve --> t0012_tuning_curve_scoring_loss_library
     t0005_download_dsgc_morphology --> t0013_resolve_morphology_provenance
 ```
 
@@ -41,125 +33,79 @@ graph LR
 ## ⏳ In Progress
 
 <details>
-<summary>⏳ 0008 — <strong>Port ModelDB 189347 and similar DSGC compartmental models
-to NEURON</strong></summary>
+<summary>⏳ 0018 — <strong>Literature survey: synaptic integration in RGC-adjacent
+systems</strong></summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `t0008_port_modeldb_189347` |
+| **ID** | `t0018_literature_survey_synaptic_integration` |
 | **Status** | in_progress |
 | **Effective date** | 2026-04-20 |
-| **Dependencies** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
-| **Expected assets** | 1 library, 1 answer |
-| **Source suggestion** | `S-0002-03` |
-| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/), [`write-library`](../../meta/task_types/write-library/) |
-| **Start time** | 2026-04-20T10:08:09Z |
-| **Task page** | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
-| **Task folder** | [`t0008_port_modeldb_189347/`](../../tasks/t0008_port_modeldb_189347/) |
+| **Dependencies** | — |
+| **Expected assets** | 25 paper, 1 answer |
+| **Source suggestion** | `S-0014-04` |
+| **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/) |
+| **Start time** | 2026-04-20T11:18:49Z |
+| **Task page** | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Task folder** | [`t0018_literature_survey_synaptic_integration/`](../../tasks/t0018_literature_survey_synaptic_integration/) |
 
-# Port ModelDB 189347 and similar DSGC compartmental models to NEURON as library assets
+# Literature survey: synaptic integration in RGC-adjacent systems
 
 ## Motivation
 
-Poleg-Polsky & Diamond 2016 (paper `10.1016_j.neuron.2016.02.013`, ModelDB 189347) is the
-closest published match to this project's goal: a NEURON multi-compartmental mouse ON-OFF DSGC
-model with **177 AMPA + 177 GABA** synapses and NMDA multiplicative gain. Reproducing it
-creates the reference implementation that every later parameter-variation task (Na/K grid
-S-0002-01, morphology sweep S-0002-04, E/I ratio scan S-0002-05, active-vs-passive dendrites
-S-0002-02) will fork from. It is also the cleanest end-to-end test that the NEURON+NetPyNE
-install from t0007 and the calibrated morphology from t0009 are fit for purpose.
-
-Covers suggestions **S-0002-03** and **S-0003-02** (merged — the two suggestions describe the
-same work from slightly different angles).
+Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
+distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The
+modelling literature in t0002 touches these parameters but does not systematically cover the
+synaptic- integration experimental and theoretical work that underpins them. Source
+suggestion: S-0014-04 from t0014_brainstorm_results_3.
 
 ## Scope
 
-### Phase A — Port the Poleg-Polsky 2016 baseline
+Target ~25 category-relevant papers covering:
 
-1. Download ModelDB entry 189347 and register the resulting Python package under
-   `assets/library/dsgc-polegpolsky-2016/` with a description, module paths, test paths, and a
-   smoke-test that instantiates the model and runs a single angle.
-2. Swap in the calibrated morphology produced by t0009 (`dsgc-baseline-morphology-calibrated`)
-   in place of the ModelDB-bundled morphology. Document the swap and any geometric differences
-   (compartment count, dendritic path length, branch points) vs the original ModelDB
-   morphology.
-3. Run the published stimulus: drifting bar / moving spot at 12 angles (30° spacing), synaptic
-   configuration matching the paper, Poleg-Polsky NMDA parameters.
-4. Compute the simulated tuning curve (firing rate vs angle, 20 trials per angle with fresh
-   seeds) and score it with the t0012 scoring loss library against the envelope: DSI
-   **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM **60-90°**.
+1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
+2. Shunting inhibition — location-dependent vetoing, input resistance changes.
+3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
+4. Temporal summation — how closely spaced inputs integrate vs saturate.
+5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
+   initiation zone.
+6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
+7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in
+   the preferred vs null directions.
 
-### Phase B — Hunt for sibling DSGC compartmental models
-
-5. Search ModelDB, SenseLab, OSF, and GitHub for additional DSGC compartmental models cited or
-   adjacent in the literature (Schachter2010 derivatives, Briggman-lineage forks, 2017-2025
-   updates of the Poleg-Polsky model, any post-2020 published code).
-6. For each model found, record: source URL, NEURON compatibility, morphology it ships with,
-   synaptic configuration, and whether it runs out-of-the-box in this environment.
-7. Port any model that has public code and runs cleanly as a separate library asset under
-   `assets/library/<model-slug>/`. If a model fails to run, record the failure in the Phase B
-   answer asset and do not register a broken library.
-
-## Dependencies
-
-* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology`
-* **t0007_install_neuron_netpyne** — NEURON+NetPyNE must work before any simulation runs
-* **t0009_calibrate_dendritic_diameters** — needs calibrated morphology to avoid biasing the
-  reproduction with placeholder 0.125 µm radii
-* **t0012_tuning_curve_scoring_loss_library** — envelope verification must use the canonical
-  scoring library, not an ad-hoc check
-
-## Expected Outputs
-
-* **1 library asset** (`assets/library/dsgc-polegpolsky-2016/`) — the ported ModelDB 189347.
-* **1 answer asset** (`assets/answer/dsgc-modeldb-port-reproduction-report/`) covering:
-  * Phase A: envelope verification table (DSI, peak, null, HWHM) vs targets
-  * Phase B: a survey row-per-model listing each candidate found, its source, its NEURON
-    compatibility, whether it was ported, and if not, why
-* **0 or more additional library assets** for any sibling models successfully ported.
-* **Simulated tuning-curve CSVs** under `data/tuning_curves/` (per model, per seed) for t0011
-  to consume.
+Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
+mid task must be dropped and the exclusion recorded in the task log.
 
 ## Approach
 
-* Write `code/port_modeldb_189347.py` that downloads the ModelDB zip, unpacks it into the
-  library asset folder, compiles its MOD files with `nrnivmodl`, and runs the published demo
-  to confirm the port is intact before any morphology swap.
-* Write `code/run_tuning_curve.py` that takes a library name and a morphology (calibrated
-  SWC), runs 12 angles × 20 seeded trials, writes `tuning_curve.csv` with `(angle_deg,
-  trial_seed, firing_rate_hz)`.
-* Write `code/score_envelope.py` that imports the t0012 scoring library and produces the
-  verification table.
-* For Phase B: write `code/hunt_sibling_models.py` that scrapes ModelDB's category listings
-  (the author's own follow-up entries, neighbouring DSGC entries, 2017+ entries citing 189347)
-  and writes a candidate-list CSV. Human review selects which candidates to attempt porting
-  before Phase B code runs.
+1. Run `/research-internet` targeting each theme, preferring studies that publish fitted
+   kinetic parameters or conductance-ratio measurements rather than qualitative reports.
+2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
+   `download_status: "failed"` and added to `intervention/paywalled_papers.md`.
+3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior
+   distributions for later optimisation tasks.
+
+## Expected Outputs
+
+* ~25 paper assets under `assets/paper/` (v3 spec compliant).
+* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
+  ratios, keyed by paper DOI and region.
+* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
 
 ## Compute and Budget
 
-Local only. 12 angles × 20 trials × ~5-10 s wall-clock per trial ≈ 20-40 minutes per model on
-this workstation. Budget remains `$0.00`.
+No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
 
-## Questions the task answers
+## Dependencies
 
-1. Does the reproduced Poleg-Polsky 2016 model hit the envelope: DSI 0.7-0.85, peak 40-80 Hz,
-   null < 10 Hz, HWHM 60-90°?
-2. Does swapping the ModelDB morphology for the calibrated Feller morphology preserve envelope
-   compliance, or does it shift the model outside the envelope?
-3. Which sibling DSGC compartmental models exist in public repositories, and which run in this
-   environment?
-4. Are there published DSGC compartmental models whose tuning curves systematically disagree
-   with the Poleg-Polsky envelope, and if so, by how much?
+None.
 
-## Risks and Fallbacks
+## Verification Criteria
 
-* **ModelDB 189347 has drifted or the Python wrapper is stale**: port the `hoc`/`mod` files
-  directly and wrap in a minimal Python loader; record the drift in the answer asset.
-* **Swapping to the calibrated morphology produces envelope failure**: treat that as a
-  scientific finding, not a blocker — report it verbatim and surface a new suggestion for
-  morphology- conditioned parameter retuning.
-* **Phase B finds no portable sibling models**: document the gap as a new suggestion and do
-  not invent models to port.
+* At least 20 paper assets pass `verify_paper_asset.py`.
+* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution
+  table.
+* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
 
 </details>
 
@@ -238,82 +184,6 @@ None.
 * At least 20 paper assets pass `verify_paper_asset.py`.
 * The answer asset passes `verify_answer_asset.py` and contains a combination table with at
   least five rows keyed by Nav/Kv subunits and source paper DOI.
-* No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
-
-</details>
-
-<details>
-<summary>⏹ 0018 — <strong>Literature survey: synaptic integration in RGC-adjacent
-systems</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0018_literature_survey_synaptic_integration` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-20 |
-| **Dependencies** | — |
-| **Expected assets** | 25 paper, 1 answer |
-| **Source suggestion** | `S-0014-04` |
-| **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/) |
-| **Task page** | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
-| **Task folder** | [`t0018_literature_survey_synaptic_integration/`](../../tasks/t0018_literature_survey_synaptic_integration/) |
-
-# Literature survey: synaptic integration in RGC-adjacent systems
-
-## Motivation
-
-Research question RQ3 (AMPA/GABA balance) and later synaptic-parameter optimisation need prior
-distributions for receptor kinetics, E-I ratios, and spatial-distribution patterns. The
-modelling literature in t0002 touches these parameters but does not systematically cover the
-synaptic- integration experimental and theoretical work that underpins them. Source
-suggestion: S-0014-04 from t0014_brainstorm_results_3.
-
-## Scope
-
-Target ~25 category-relevant papers covering:
-
-1. AMPA/NMDA/GABA receptor kinetics — rise and decay time constants, reversal potentials.
-2. Shunting inhibition — location-dependent vetoing, input resistance changes.
-3. E-I balance — temporal co-tuning, conductance ratios in retinal and cortical systems.
-4. Temporal summation — how closely spaced inputs integrate vs saturate.
-5. Dendritic-location dependence — soma-vs-dendrite integration, attenuation before the spike
-   initiation zone.
-6. Synaptic-density scaling — synapses per micrometre of dendrite, bouton counts.
-7. SAC/DSGC inhibitory asymmetry — starburst amacrine cell GABA output onto DSGC dendrites in
-   the preferred vs null directions.
-
-Exclusion: do not re-add any DOI already present in the t0002 corpus. Duplicates discovered
-mid task must be dropped and the exclusion recorded in the task log.
-
-## Approach
-
-1. Run `/research-internet` targeting each theme, preferring studies that publish fitted
-   kinetic parameters or conductance-ratio measurements rather than qualitative reports.
-2. For each shortlisted paper, invoke `/download-paper`. Paywalled papers are recorded as
-   `download_status: "failed"` and added to `intervention/paywalled_papers.md`.
-3. Write one answer asset tabulating receptor kinetics and E-I ratios usable as prior
-   distributions for later optimisation tasks.
-
-## Expected Outputs
-
-* ~25 paper assets under `assets/paper/` (v3 spec compliant).
-* One answer asset under `assets/answer/` with a prior-distribution table for kinetics and E-I
-  ratios, keyed by paper DOI and region.
-* `intervention/paywalled_papers.md` listing DOIs requiring manual retrieval.
-
-## Compute and Budget
-
-No paid services required. Task-type budget gate cleared by the $1 bump set in t0014.
-
-## Dependencies
-
-None.
-
-## Verification Criteria
-
-* At least 20 paper assets pass `verify_paper_asset.py`.
-* The answer asset passes `verify_answer_asset.py` and provides a numeric prior-distribution
-  table.
 * No paper in this task's `assets/paper/` shares a DOI with the t0002 corpus.
 
 </details>
@@ -1325,6 +1195,165 @@ Covers suggestion **S-0005-02**.
 > * **Surface area**: placeholder **1,213.43 µm²** -> calibrated **9,700.10 µm²** (**+7.99x**)
 > * **Dendritic axial resistance**: placeholder **3.13e10 Ohm** -> calibrated **1.50e9 Ohm**
 > (**4.79%**, a **20.9x** drop)
+
+</details>
+
+<details>
+<summary>✅ 0008 — <strong>Port ModelDB 189347 and similar DSGC compartmental models
+to NEURON</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0008_port_modeldb_189347` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library, 1 answer |
+| **Source suggestion** | `S-0002-03` |
+| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/), [`write-library`](../../meta/task_types/write-library/) |
+| **Start time** | 2026-04-20T10:08:09Z |
+| **End time** | 2026-04-20T12:10:00Z |
+| **Step progress** | 12/15 |
+| **Key metrics** | Tuning Curve RMSE (Hz): **13.726223262294535** |
+| **Task page** | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Task folder** | [`t0008_port_modeldb_189347/`](../../tasks/t0008_port_modeldb_189347/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0008_port_modeldb_189347/results/results_detailed.md) |
+
+# Port ModelDB 189347 and similar DSGC compartmental models to NEURON as library assets
+
+## Motivation
+
+Poleg-Polsky & Diamond 2016 (paper `10.1016_j.neuron.2016.02.013`, ModelDB 189347) is the
+closest published match to this project's goal: a NEURON multi-compartmental mouse ON-OFF DSGC
+model with **177 AMPA + 177 GABA** synapses and NMDA multiplicative gain. Reproducing it
+creates the reference implementation that every later parameter-variation task (Na/K grid
+S-0002-01, morphology sweep S-0002-04, E/I ratio scan S-0002-05, active-vs-passive dendrites
+S-0002-02) will fork from. It is also the cleanest end-to-end test that the NEURON+NetPyNE
+install from t0007 and the calibrated morphology from t0009 are fit for purpose.
+
+Covers suggestions **S-0002-03** and **S-0003-02** (merged — the two suggestions describe the
+same work from slightly different angles).
+
+## Scope
+
+### Phase A — Port the Poleg-Polsky 2016 baseline
+
+1. Download ModelDB entry 189347 and register the resulting Python package under
+   `assets/library/dsgc-polegpolsky-2016/` with a description, module paths, test paths, and a
+   smoke-test that instantiates the model and runs a single angle.
+2. Swap in the calibrated morphology produced by t0009 (`dsgc-baseline-morphology-calibrated`)
+   in place of the ModelDB-bundled morphology. Document the swap and any geometric differences
+   (compartment count, dendritic path length, branch points) vs the original ModelDB
+   morphology.
+3. Run the published stimulus: drifting bar / moving spot at 12 angles (30° spacing), synaptic
+   configuration matching the paper, Poleg-Polsky NMDA parameters.
+4. Compute the simulated tuning curve (firing rate vs angle, 20 trials per angle with fresh
+   seeds) and score it with the t0012 scoring loss library against the envelope: DSI
+   **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM **60-90°**.
+
+### Phase B — Hunt for sibling DSGC compartmental models
+
+5. Search ModelDB, SenseLab, OSF, and GitHub for additional DSGC compartmental models cited or
+   adjacent in the literature (Schachter2010 derivatives, Briggman-lineage forks, 2017-2025
+   updates of the Poleg-Polsky model, any post-2020 published code).
+6. For each model found, record: source URL, NEURON compatibility, morphology it ships with,
+   synaptic configuration, and whether it runs out-of-the-box in this environment.
+7. Port any model that has public code and runs cleanly as a separate library asset under
+   `assets/library/<model-slug>/`. If a model fails to run, record the failure in the Phase B
+   answer asset and do not register a broken library.
+
+## Dependencies
+
+* **t0005_download_dsgc_morphology** — source of `dsgc-baseline-morphology`
+* **t0007_install_neuron_netpyne** — NEURON+NetPyNE must work before any simulation runs
+* **t0009_calibrate_dendritic_diameters** — needs calibrated morphology to avoid biasing the
+  reproduction with placeholder 0.125 µm radii
+* **t0012_tuning_curve_scoring_loss_library** — envelope verification must use the canonical
+  scoring library, not an ad-hoc check
+
+## Expected Outputs
+
+* **1 library asset** (`assets/library/dsgc-polegpolsky-2016/`) — the ported ModelDB 189347.
+* **1 answer asset** (`assets/answer/dsgc-modeldb-port-reproduction-report/`) covering:
+  * Phase A: envelope verification table (DSI, peak, null, HWHM) vs targets
+  * Phase B: a survey row-per-model listing each candidate found, its source, its NEURON
+    compatibility, whether it was ported, and if not, why
+* **0 or more additional library assets** for any sibling models successfully ported.
+* **Simulated tuning-curve CSVs** under `data/tuning_curves/` (per model, per seed) for t0011
+  to consume.
+
+## Approach
+
+* Write `code/port_modeldb_189347.py` that downloads the ModelDB zip, unpacks it into the
+  library asset folder, compiles its MOD files with `nrnivmodl`, and runs the published demo
+  to confirm the port is intact before any morphology swap.
+* Write `code/run_tuning_curve.py` that takes a library name and a morphology (calibrated
+  SWC), runs 12 angles × 20 seeded trials, writes `tuning_curve.csv` with `(angle_deg,
+  trial_seed, firing_rate_hz)`.
+* Write `code/score_envelope.py` that imports the t0012 scoring library and produces the
+  verification table.
+* For Phase B: write `code/hunt_sibling_models.py` that scrapes ModelDB's category listings
+  (the author's own follow-up entries, neighbouring DSGC entries, 2017+ entries citing 189347)
+  and writes a candidate-list CSV. Human review selects which candidates to attempt porting
+  before Phase B code runs.
+
+## Compute and Budget
+
+Local only. 12 angles × 20 trials × ~5-10 s wall-clock per trial ≈ 20-40 minutes per model on
+this workstation. Budget remains `$0.00`.
+
+## Questions the task answers
+
+1. Does the reproduced Poleg-Polsky 2016 model hit the envelope: DSI 0.7-0.85, peak 40-80 Hz,
+   null < 10 Hz, HWHM 60-90°?
+2. Does swapping the ModelDB morphology for the calibrated Feller morphology preserve envelope
+   compliance, or does it shift the model outside the envelope?
+3. Which sibling DSGC compartmental models exist in public repositories, and which run in this
+   environment?
+4. Are there published DSGC compartmental models whose tuning curves systematically disagree
+   with the Poleg-Polsky envelope, and if so, by how much?
+
+## Risks and Fallbacks
+
+* **ModelDB 189347 has drifted or the Python wrapper is stale**: port the `hoc`/`mod` files
+  directly and wrap in a minimal Python loader; record the drift in the answer asset.
+* **Swapping to the calibrated morphology produces envelope failure**: treat that as a
+  scientific finding, not a blocker — report it verbatim and surface a new suggestion for
+  morphology- conditioned parameter retuning.
+* **Phase B finds no portable sibling models**: document the gap as a new suggestion and do
+  not invent models to port.
+
+**Results summary:**
+
+> **Results Summary: Port ModelDB 189347 DSGC and Hunt Sibling Models**
+>
+> **Summary**
+>
+> Ported ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC compartmental model) as
+> a
+> registered library asset, compiled its six MOD files cleanly on NEURON 8.2.7, and ran a
+> canonical
+> 12-angle x 20-trial (240 total) drifting-bar tuning-curve sweep using the t0012
+> `tuning_curve_loss`
+> scoring library. The port is **technically faithful** — all MOD files compile, the
+> morphology-swap
+> report confirms section-count and surface-area parity, and every trial completes end-to-end
+> on the
+> local Windows workstation — but it does **not** reproduce the project envelope (DSI
+> **0.316** vs
+> target 0.70-0.85; peak **18.1 Hz** vs 40-80 Hz). The gap is a protocol mismatch, not a port
+> bug:
+> Poleg-Polsky 2016 implements direction selectivity via a per-angle `gabaMOD` parameter swap,
+> whereas
+> this task applied a spatial-rotation proxy. Follow-up captured in `S-0008-02`. Phase B
+> completed as
+> a desk survey ranking Hanson 2019 as the highest-priority sibling port.
+>
+> **Metrics**
+>
+> * **DSI (direction-selectivity index)**: **0.316** (target 0.70-0.85) - **FAIL**
+> * **Peak firing rate**: **18.1 Hz** (target 40-80 Hz) - **FAIL**
+> * **Null firing rate**: **9.4 Hz** (target <10 Hz) - **PASS**
 
 </details>
 

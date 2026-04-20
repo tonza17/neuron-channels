@@ -1,12 +1,51 @@
 # Answers by Date Added
 
-6 answer(s) grouped by creation date.
+7 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-04-20 (3)
+## 2026-04-20 (4)
+
+<details>
+<summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
+be reproduced locally on Windows as a headless library, does it hit the
+published direction-selectivity envelope with a canonical 12-angle x
+20-trial drifting-bar protocol, and which sibling DSGC compartmental models
+are the next-best candidates for porting in the same pipeline?</strong></summary>
+
+**Confidence**: medium
+
+Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python
+driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a
+12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes
+and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to
+`results/metrics.json`. The tuning curve does not hit the published envelope at the bundled
+parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a
+`gabaMOD` parameter swap rather than from spatial rotation — the port's rotation-based
+protocol is only a proxy for a direction- selective stimulus. The Hanson et al. 2019
+Spatial-Offset-DSGC model (GitHub `geoffder/Spatial-Offset-DSGC-NEURON-Model`) is the
+next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 and already
+ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
+Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
+class.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0008_port_modeldb_189347/assets/answer/dsgc-modeldb-port-reproduction-report/full_answer.md) |
+| **ID** | [`dsgc-modeldb-port-reproduction-report`](../../../tasks/t0008_port_modeldb_189347/assets/answer/dsgc-modeldb-port-reproduction-report/) |
+| **Question** | Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline? |
+| **Methods** | `code-experiment`, `internet` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **URL sources** | [url 1](https://modeldb.science/189347), [url 2](https://github.com/ModelDBRepository/189347), [url 3](https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model), [url 4](https://elifesciences.org/articles/42392v1) |
+| **Created by** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+
+</details>
 
 <details>
 <summary><strong>What does the classical cable-theory and dendritic-computation

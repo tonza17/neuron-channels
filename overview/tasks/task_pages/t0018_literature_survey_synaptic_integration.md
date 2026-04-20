@@ -1,4 +1,4 @@
-# ⏹ Literature survey: synaptic integration in RGC-adjacent systems
+# ⏳ Literature survey: synaptic integration in RGC-adjacent systems
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0018_literature_survey_synaptic_integration` |
-| **Status** | ⏹ not_started |
+| **Status** | ⏳ in_progress |
+| **Started** | 2026-04-20T11:18:49Z |
 | **Source suggestion** | `S-0014-04` |
 | **Task types** | `literature-survey` |
 | **Expected assets** | 25 paper, 1 answer |

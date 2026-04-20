@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-18 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **15 open** (7
-high, 7 medium, 1 low), **3 closed**.
+20 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **17 open** (8
+high, 7 medium, 2 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -133,6 +133,30 @@ passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin l
 (3.694/1.653/0.439 um) and emit a corrections file that overrides
 dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
 against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
+library</strong> (S-0008-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0008-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0008_port_modeldb_189347/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
+(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
+proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
+ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
+mechanism that matches the rotation-based protocol used in t0008 more directly than
+Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
+asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
+task types: code-reproduction, write-library.
 
 </details>
 
@@ -382,6 +406,27 @@ per-compartment diameters. Register the result as dsgc-baseline-morphology-image
 as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external
 data availability; likely requires an intervention for author contact. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC
+asset</strong> (S-0008-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0008-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Source paper** | [`10.7554_eLife.52949`](../../../tasks/t0008_port_modeldb_189347/assets/paper/10.7554_eLife.52949/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Clone ModelDB 267001 (Jain et al. 2020 eLife 56404) and port under the same HOC-driver pattern
+as t0008. Jain 2020 extends the Poleg-Polsky architecture with bipolar delays and likely
+shares MOD mechanisms with 189347. Medium effort (~20 hours) because the morphology and
+stimulus logic are separate from 189347. Recommended task types: code-reproduction,
+write-library.
 
 </details>
 
