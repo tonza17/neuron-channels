@@ -1,0 +1,44 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1152_jn.1997.78.4.1948",
+  "doi": "10.1152/jn.1997.78.4.1948",
+  "title": "Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal Ganglion Cells",
+  "url": "https://doi.org/10.1152/jn.1997.78.4.1948",
+  "pdf_url": null,
+  "date_published": "1997-10-01",
+  "year": 1997,
+  "authors": [
+    {
+      "name": "J. F. Fohlmeister",
+      "country": null,
+      "institution": "Physiology Department, University of Minnesota, Minneapolis, Minnesota 55455",
+      "orcid": null
+    },
+    {
+      "name": "R. F. Miller",
+      "country": null,
+      "institution": "Physiology Department, University of Minnesota, Minneapolis, Minnesota 55455",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Physiology Department, University of Minnesota, Minneapolis, Minnesota 55455",
+      "country": null
+    }
+  ],
+  "journal": "Journal of Neurophysiology",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling"
+  ],
+  "abstract": "Fohlmeister, J. F. and R. F. Miller. Mechanisms by which cell geometry controls repetitive impulse firing in retinal ganglion cells. J. Neurophysiol. 78: 1948–1964, 1997. Models for generating repetitive impulse activity were developed based on multicompartmental representations of ganglion cell morphology in the amphibian retina. Each model includes five nonlinear ion channels and one linear (leakage) channel. Compartmental distribution of ion channel type and density was designed to simulate whole cell recording experiments carried out in the intact retina-eyecup preparation. Correspondence between the model and physiology emphasized channel-specific details in the impulse waveform, based on phase plot analysis, frequency versus current (F/I) properties, and interspike trajectories for current injected into the soma, as well as the ability to conduct impulses in both orthodromic and antidromic directions. Two general types of model are developed, including equivalent cylinder representations and more realistic compartmentalizations of dendritic morphology. These multicompartmental models include representations for dendritic trees, soma, axon hillock, a thin axonal segment, and axon distal to thin segment. A large number of compartments (≤800) representing a single neuron were employed to ensure that maximum voltage differences between neighboring compartments during the steepest rates of change of membrane potential were acceptably small. Leakage conductance varied from 3 to 8 μS/cm 2 . The results establish that intercompartmental currents, due to inhomogeneous morphology, dominate membrane currents in the interspike intervals and thus play a major role in determining the impulse spacing and the information carried by impulse trains. Variations in input resistance are far less important than the degree to which ion channels are present in the dendritic compartments for the regulation of F/I properties. Cell geometry, including the thin axonal segment, places significant constraints on the location of ion channels required to support impulse initiation and propagation in both the ortho- and antidromic directions. The site of impulse initiation varies greatly and depends on the stimulus magnitude. Models that conform to physiological constraints also show irregular firing, particularly for near threshold stimulation of the soma, due to multiple sites of impulse initiation. Such behavior could represent an asset to the cells for conveying information under conditions of low contrast stimulation. Multiple spike initiation zones also can provide retinal ganglion cells with a variety of response characteristics, including spike doublets, depending on the level of cell activation. Increasing the diameter of the dendritic equivalent cylinder reduces the impulse frequency (F/I) response. Over a restricted range of ion channel densities in the dendritic tree, phase locking between dendritic membrane oscillations and somatic spiking can occur with dendritic stimulation, and mathematical chaos can be demonstrated when sufficiently thin dendritic processes are present. We conclude that cell morphology is the primary factor in determining firing patterns and the impulse frequency response of a given cell and that differences in channel density distribution across a population of cells plays, at most, a secondary role in this function. This conclusion applies to both synaptic activation and electrode stimulation of the soma.",
+  "citation_key": "FohlmeisterMiller1997",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0019_literature_survey_voltage_gated_channels",
+  "date_added": "2026-04-20"
+}

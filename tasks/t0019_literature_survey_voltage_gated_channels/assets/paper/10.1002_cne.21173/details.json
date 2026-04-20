@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1002_cne.21173",
+  "doi": "10.1002/cne.21173",
+  "title": "Polarized distribution of ion channels within microdomains of the axon initial segment",
+  "url": "https://doi.org/10.1002/cne.21173",
+  "pdf_url": null,
+  "date_published": "2007-01-10",
+  "year": 2007,
+  "authors": [
+    {
+      "name": "Audra Van Wart",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "James S. Trimmer",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Gary Matthews",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Journal of Comparative Neurology",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "Abstract Voltage‐gated sodium (Na v ) channels accumulate at the axon initial segment (IS), where their high density supports spike initiation. Maintenance of this high density of Na v channels involves a macromolecular complex that includes the cytoskeletal linker protein ankyrin‐G, the only protein known to bind Na v channels and localize them at the IS. We found previously that Na v 1.6 is the predominant Na v channel isoform at IS of adult rodent retinal ganglion cells. However, here we report that Na v 1.6 immunostaining is consistently reduced or absent in short regions of the IS proximal to the soma, although both ankyrin‐G and pan‐Na v antibodies stain this region. We show that this proximal IS subregion is a unique axonal microdomain, containing an accumulation of Na v 1.1 channels that are spatially segregated from the Na v 1.6 channels of the distal IS. Additionally, we find that axonal K v 1.2 potassium channels are present within the distal IS, but are also excluded from the Na v 1.1‐enriched proximal IS microdomain. Because ankyrin‐G was prominent in both proximal and distal subcompartments of the IS, where it colocalized with either Na v 1.1 or Na v 1.6, respectively, mechanisms other than association with ankyrin‐G must mediate differential targeting of Na v channel subtypes to achieve the spatial precision observed within the IS. This precise arrangement of ion channels within the axon initial segment is likely an important determinant of the firing properties of ganglion cells and other mammalian neurons. J. Comp. Neurol. 500:339–352, 2007. © 2006 Wiley‐Liss, Inc.",
+  "citation_key": "VanWart2006",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0019_literature_survey_voltage_gated_channels",
+  "date_added": "2026-04-20"
+}
