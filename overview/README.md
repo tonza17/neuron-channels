@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-0-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-1-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-3-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-39-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-45-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-2-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (6K) |
-[full](llm-context/full.xml) (60K) | [roadmap](llm-context/roadmap.xml) (23K) |
-[results](llm-context/results-deep-dive.xml) (35K) |
-[assets](llm-context/literature-and-assets.xml) (11K)
+[full](llm-context/full.xml) (63K) | [roadmap](llm-context/roadmap.xml) (23K) |
+[results](llm-context/results-deep-dive.xml) (38K) |
+[assets](llm-context/literature-and-assets.xml) (12K)
 
-*Last updated: 2026-04-20 00:17 UTC*
+*Last updated: 2026-04-20 10:06 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -61,27 +61,27 @@ No daily news yet.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`description`](../tasks/t0012_tuning_curve_scoring_loss_library/task_description.md) | 2026-04-19 |
+| 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`description`](../tasks/t0008_port_modeldb_189347/task_description.md) | 2026-04-19 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`description`](../tasks/t0013_resolve_morphology_provenance/task_description.md) | 2026-04-19 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`description`](../tasks/t0018_literature_survey_synaptic_integration/task_description.md) | 2026-04-20 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`description`](../tasks/t0019_literature_survey_voltage_gated_channels/task_description.md) | 2026-04-20 |
 
 ---
 
-## [Blocked Tasks (3)](tasks/)
+## [Blocked Tasks (2)](tasks/)
 
 | # | Task | Blocked By |
 |---|------|------------|
-| 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`t0012_tuning_curve_scoring_loss_library`](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`t0008_port_modeldb_189347`](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`t0008_port_modeldb_189347`](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
 
 ---
 
-## [Recently Completed (9 total)](tasks/by-status/completed.md)
+## [Recently Completed (10 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
 | 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
 | 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
 | 0007 | [Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain](../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) | [`results`](../tasks/t0007_install_neuron_netpyne/results/results_detailed.md) | 2026-04-19 22:43 |
@@ -94,7 +94,7 @@ No daily news yet.
 
 ---
 
-## [Recent Suggestions (29 open)](suggestions/)
+## [Recent Suggestions (35 open)](suggestions/)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -251,46 +251,49 @@ write-library, comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
-to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
+<summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
+asset structure and metadata</strong> (S-0012-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../tasks/t0002_literature_survey_dsgc_compartmental_models/)
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
 
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
-Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
-the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
-S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
-morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
-tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
-with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
+The t0012 library asset was hand-validated against meta/asset_types/library/specification.md
+because arf/scripts/verificators/ has verify_suggestions.py, verify_metrics.py,
+verify_research_papers.py, etc., but no verify_library_asset.py. Every future write-library
+task (S-0002-08 SAC drive, S-0003-02 ModelDB 189347, S-0003-04 NetPyNE Batch harness,
+S-0005-04 SWC loader, S-0009-08 Rall quaddiameter, t0011 response visualisation) will need the
+same checks: details.json present with all required fields, library_id matches folder name and
+the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md has the 8
+mandatory sections, and categories exist in meta/categories/. Port the checks already
+performed by hand on t0012 into a reusable verificator, wire it into step_registry.py, and
+re-run it against existing library assets. Recommended task types: infrastructure-setup.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
-Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
+<summary>🔧 <strong>Parametric curve fitting (von Mises / wrapped Gaussian) for
+sub-degree HWHM estimates on sparse 12-angle grids</strong> (S-0012-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../tasks/t0002_literature_survey_dsgc_compartmental_models/)
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
 
-Schachter2010 reports that switching DSGC dendrites from passive to active (adding
-Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
-synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data
-that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs
-Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and
-report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
-isolates the dendritic-conductance contribution from morphology and synaptic effects.
-Recommended task types: experiment-run, comparative-analysis.
+The current compute_hwhm_deg interpolates linearly between the two 30 deg samples bracketing
+the half-maximum on each flank, limiting HWHM resolution to about 1 deg and producing a 5.5
+deg deficit versus the closed-form 65.5 deg (measured 60.0 deg on the t0004 target). Add a
+fit_parametric_tuning_curve helper to tuning_curve_loss.metrics that fits a von Mises or
+wrapped Gaussian to the 12 angles via scipy.optimize.curve_fit, derives an analytic HWHM from
+the fitted kappa or sigma, and exposes hwhm_deg_parametric and parametric_fit_residual_rms on
+ScoreReport. Compare parametric HWHM against interpolated HWHM on t0004, t0008 (ModelDB
+189347), and S-0002-01 grid-search points; document when interpolation suffices and when the
+parametric fit is required. Recommended task types: write-library, experiment-run.
 
 </details>
 
-*19 more open suggestions → [open suggestions](suggestions/)*
+*25 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (9)](suggestions/)
+## [High Priority Suggestions (11)](suggestions/)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -347,6 +350,46 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
+asset structure and metadata</strong> (S-0012-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+The t0012 library asset was hand-validated against meta/asset_types/library/specification.md
+because arf/scripts/verificators/ has verify_suggestions.py, verify_metrics.py,
+verify_research_papers.py, etc., but no verify_library_asset.py. Every future write-library
+task (S-0002-08 SAC drive, S-0003-02 ModelDB 189347, S-0003-04 NetPyNE Batch harness,
+S-0005-04 SWC loader, S-0009-08 Rall quaddiameter, t0011 response visualisation) will need the
+same checks: details.json present with all required fields, library_id matches folder name and
+the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md has the 8
+mandatory sections, and categories exist in meta/categories/. Port the checks already
+performed by hand on t0012 into a reusable verificator, wire it into step_registry.py, and
+re-run it against existing library assets. Recommended task types: infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
+reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
+simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
+so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
+resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
+under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
+simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
+produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
+validation that the scorer library does what it promises on a non-trivial candidate.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -432,20 +475,7 @@ reproducible from parameters alone.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
-simulation</strong> (S-0007-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0007_install_neuron_netpyne](../tasks/t0007_install_neuron_netpyne/)
-
-The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
-a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
-1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
-against the built-in hh to confirm the custom mechanism produces physiologically plausible
-spikes before downstream retinal tasks depend on it.
-
-</details>
+*1 more high-priority suggestion → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1061,9 +1091,11 @@ No predictions yet.
 
 ---
 
-## [Latest Libraries (0 total)](libraries/)
+## [Latest Libraries (1 total)](libraries/)
 
-No libraries yet.
+| Name | Source | Created |
+|------|--------|---------|
+| [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |
 
 ---
 

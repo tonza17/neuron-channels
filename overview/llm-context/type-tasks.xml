@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T00:17:50Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T10:06:19Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>92446</char_count>
-    <byte_count>92809</byte_count>
-    <estimated_tokens>23111</estimated_tokens>
+    <char_count>94811</char_count>
+    <byte_count>95193</byte_count>
+    <estimated_tokens>23702</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1217,12 +1217,14 @@ demonstrates what each plot looks like.
 
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
-Status: not_started
-Effective date: 2026-04-19
+Status: completed
+Effective date: 2026-04-20
 Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
 Dependencies: t0004_generate_target_tuning_curve
 Task types: write-library
 Source suggestion: S-0002-09
+Start time: 2026-04-20T01:02:11Z
+End time: 2026-04-20T09:58:10Z
 
 #### Motivation
 
@@ -1305,6 +1307,47 @@ written directly into `results/metrics.json` without post-hoc renaming.
   description; do not silently redefine targets.
 * **Trial-to-trial variance inflates `reliability` beyond sensible bounds**: clamp to [0, 1] and
   document the clamp.
+
+### Results Summary
+
+#### Summary
+
+Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC
+tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the
+t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate
+`score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47
+pytest tests pass, ruff and mypy are clean, and the library asset is registered at
+`assets/library/tuning_curve_loss/`.
+
+#### Metrics
+
+* **Tests passed**: **47 / 47** (0 failed, 0 skipped)
+* **Identity loss on t0004 target**: **0.0** (exact)
+* **Library modules**: **8** (paths, loader, metrics, envelope, weights, scoring, cli, `__init__`)
+* **Public entry points**: **13** (score, compute_dsi, compute_peak_hz, compute_null_hz,
+  compute_hwhm_deg, compute_reliability, load_tuning_curve, passes_envelope, validate_weights,
+  load_weights_from_json, Envelope, ScoreResult, TuningCurveMetrics)
+* **Test modules**: **5** covering loader, metrics, envelope, scoring, and CLI
+* **Registered metric keys mapped**: **4** (direction_selectivity_index, tuning_curve_hwhm_deg,
+  tuning_curve_reliability, tuning_curve_rmse)
+* **DSI on t0004 target**: **0.8824** (matches closed-form `(32 − 2) / (32 + 2)`)
+* **HWHM on t0004 target**: **60°** (from 12-angle grid with rotation-based interpolation)
+
+#### Verification
+
+* `uv run pytest tasks/t0012_tuning_curve_scoring_loss_library/code -q` — **47 passed**, 0 failed,
+  0 skipped
+* `uv run ruff check tasks/t0012_tuning_curve_scoring_loss_library/` — PASSED (0 errors)
+* `uv run ruff format --check tasks/t0012_tuning_curve_scoring_loss_library/` — PASSED (15 files
+  already formatted)
+* `uv run mypy .` — PASSED (238 files clean)
+* `verify_plan t0012_tuning_curve_scoring_loss_library` — PASSED (0 errors, 0 warnings)
+* `verify_research_internet t0012_tuning_curve_scoring_loss_library` — PASSED (0 errors, 0
+  warnings)
+* `verify_research_code t0012_tuning_curve_scoring_loss_library` — PASSED (0 errors, 0 warnings)
+* Library-asset hand-validation against `meta/asset_types/library/specification.md` — PASSED (no
+  `verify_library_asset.py` exists; fields, module_paths, ID regex, and 8 mandatory description
+  sections all satisfied)
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance

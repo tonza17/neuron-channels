@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T00:17:50Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T10:06:19Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>20</section_count>
-    <char_count>235148</char_count>
-    <byte_count>235764</byte_count>
-    <estimated_tokens>58787</estimated_tokens>
+    <section_count>22</section_count>
+    <char_count>267523</char_count>
+    <byte_count>268246</byte_count>
+    <estimated_tokens>66880</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -120,10 +120,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
         <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 9
+Completed tasks: 10
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -173,6 +174,12 @@ Completed: 2026-04-20
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
 
+## Tuning-curve scoring loss library
+ID: t0012_tuning_curve_scoring_loss_library
+Completed: 2026-04-20
+Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -187,7 +194,6 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0008_port_modeldb_189347</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
-        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -196,7 +202,7 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 10
+Planned or active tasks: 9
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -218,13 +224,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
 Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
-
-## Tuning-curve scoring loss library
-ID: t0012_tuning_curve_scoring_loss_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
-Dependencies: t0004_generate_target_tuning_curve
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
@@ -4052,6 +4051,573 @@ No prior task has produced a `predictions`, `model`, or `library` asset.
   `RGCmodel.hoc` and harvesting pt3dadd diameters via `sec.diam3d(i)`. Because t0007 is not yet
   completed, t0009 must use the regex/text-parse route on the raw `.hoc` file rather than the
   NEURON-Python loader route. This is a binding constraint on the implementation strategy.
+      </content>
+    </section>
+    <section id="t0012_tuning_curve_scoring_loss_library-research_internet" source_kind="file">
+      <title>t0012_tuning_curve_scoring_loss_library — Tuning-curve scoring loss library — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0012_tuning_curve_scoring_loss_library/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0012_tuning_curve_scoring_loss_library&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 8
+sources_cited: 10
+papers_discovered: 2
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Design and build a pure-Python library `tuning_curve_loss` that scores a simulated DSGC tuning curve
+(firing rate vs. stimulus angle) against the canonical target established by
+`t0004_generate_target_tuning_curve`. The library must expose a single `score()` entry point that
+returns a frozen `ScoreReport` with weighted-Euclidean scalar loss, DSI/peak/null/HWHM residuals,
+per-metric pass booleans for the t0002 envelope (DSI 0.7-0.85, peak 40-80 Hz, null &lt; 10 Hz, HWHM
+60-90°), trial-to-trial reliability, and overall `passes_envelope`. It must also expose per-metric
+helpers, a CLI, and a tuning-curve CSV schema `(angle_deg, trial_seed, firing_rate_hz)`. Internet
+research must establish the canonical conventions so that every downstream optimisation task shares
+one scorer.
+
+#### Gaps Addressed
+
+Because `research-papers` is skipped for this task (the paper corpus already covers DSGC scoring via
+the t0002 literature survey; see the t0006 brainstorm results), there is no dedicated
+`research_papers.md` for this task. The gaps treated here instead come from the
+`task_description.md` *Questions the task answers* list and from the t0006 brainstorm&#x27;s merge of
+S-0002-09 and S-0004-03:
+
+1. **Canonical DSI formula for DSGCs** — **Resolved**. The dominant convention is the
+   ratio-of-differences DSI = (R_pref - R_null) / (R_pref + R_null) with R_null taken at pref +
+   180° [Elstrott2008] [Taylor2012]. The vector-sum DSI is used in some earlier cortical DS work
+   but is not the DSGC standard; we adopt the ratio form to stay aligned with the Poleg-Polsky 2016
+   envelope [PolegPolsky2016].
+2. **Canonical HWHM for a sampled tuning curve** — **Resolved**. Standard practice is to fit or
+   linearly interpolate between sample points on each side of the peak, find the first crossing of
+   the half-max level, and report the mean of the two angular distances to those crossings
+   [PolegPolsky2016] [scipy-interp-docs]. Non-monotonic shoulders are handled by selecting the first
+   crossing from the peak outward.
+3. **&quot;Reliability&quot; for trial-resolved tuning curves** — **Partially resolved**. The closest
+   community-converged metric is the split-half or leave-one-trial-out coefficient of determination
+   of trial means vs. individual trials, clamped to [0, 1] [DavidGallant2005]. Fano factor and SNR
+   are also used but are sensitive to low firing rates; the R² formulation is preferred for DSGC
+   scoring because it is bounded.
+4. **Public DSGC scoring libraries** — **Partially resolved**. ModelDB 189347 ships a MATLAB/HOC
+   stack that computes DSI inline but does not expose a Python scoring API [ModelDB-189347].
+   `ratcave`, `pynapple`, and `elephant` provide tuning-curve utilities but none implement the t0002
+   four-target envelope [elephant-GH]. No off-the-shelf library meets our spec, confirming the need
+   for this task.
+5. **Angle convention** — **Resolved**. DSGC literature uses 0° = preferred direction (or the
+   stimulus azimuth at which response is maximal) with counter-clockwise positive. The target CSV
+   from t0004 follows this convention, so our scorer must not re-rotate angles [Taylor2012].
+6. **Normalisation for the weighted scalar loss** — **Resolved**. Min-max over the envelope
+   half-widths is the standard choice in calibration-loss libraries (each residual is divided by the
+   envelope width before squaring), which makes the four residuals commensurable [Nevergrad-docs]
+   [BayesianOpt-GH].
+
+#### Search Strategy
+
+**Sources searched**: Google Scholar, Semantic Scholar, ModelDB, GitHub code search, PyPI, SciPy
+documentation, Nature Reviews Neuroscience archive, the Poleg-Polsky &amp; Diamond (2016) supplement.
+
+**Queries executed (8 total)**:
+
+1. `direction selectivity index formula retinal ganglion cell DSI pref null`
+2. `HWHM half width half maximum tuning curve sampled interpolation retinal`
+3. `tuning curve reliability coefficient of determination trial R2 direction`
+4. `&quot;ModelDB 189347&quot; Poleg-Polsky DSGC scoring implementation`
+5. `GitHub &quot;tuning_curve&quot; DSI direction selectivity python library`
+6. `scipy.interpolate HWHM half max crossing tuning curve`
+7. `weighted euclidean loss envelope calibration residual normalization`
+8. `python elephant tuning curve direction selectivity utilities`
+
+**Date range**: no date restriction for foundational DS papers; 2015-2026 for code and tools.
+
+**Inclusion criteria**: sources must provide either (a) an explicit DSI/HWHM/reliability formula
+applied to a DSGC or DS ganglion-cell preparation, (b) open-source Python or MATLAB code computing
+one of these quantities, or (c) design guidance for weighted scalar losses over bounded envelopes.
+Non-DS cortical DSI work was excluded unless it was cited by DSGC sources.
+
+**Search iterations**: queries 4-6 were follow-ups: query 4 was triggered by locating the
+Poleg-Polsky &amp; Diamond 2016 ModelDB entry, query 5 probed whether any community library already
+exposes a score function, and query 6 validated the HWHM interpolation method against the SciPy API
+we plan to depend on.
+
+#### Key Findings
+
+##### DSI formula convention for DSGCs
+
+The standard DSGC DSI is the ratio-of-differences
+`DSI = (R_preferred - R_null) / (R_preferred + R_null)`, where `R_preferred` is the firing rate at
+the angle that maximises the trial-mean firing rate and `R_null` is the rate at `pref + 180°`
+(modulo the angular grid) [Elstrott2008] [Taylor2012] [PolegPolsky2016]. This form gives DSI in
+[0, 1] for non-negative rates and matches the envelope bounds stated in t0002 (DSI 0.7-0.85). The
+vector-sum DSI used in some cortical papers produces a slightly different distribution and is not
+used by the DSGC community.
+
+**Best practice**: compute DSI on the trial-mean curve, not per-trial, to avoid division-by-zero
+when a single trial happens to fire zero spikes at the null.
+
+##### HWHM computation on sampled tuning curves
+
+HWHM (half width at half maximum) is computed by interpolating the tuning curve on each side of the
+peak to find the angular distance at which the response crosses half of the peak value, then
+averaging the two half-widths [PolegPolsky2016] [scipy-interp-docs]. For a 12-point curve at 30°
+spacing, linear interpolation is enough — the community does not converge on cubic or spline fits
+because those can introduce overshoots on noisy shoulders.
+
+The half-max threshold is `(R_pref + R_baseline) / 2` or `R_pref / 2` depending on whether baseline
+is subtracted. The Poleg-Polsky envelope uses the unsubtracted form `R_pref / 2` because baseline at
+null is already small; we adopt the same form.
+
+**Edge cases**: if no crossing is found on one side (monotonic shoulder), use the full angular span
+on that side and document the clamp. If the curve has multiple local maxima, take the global max as
+the peak and the *first* half-max crossing moving outward.
+
+##### Reliability as a bounded metric
+
+The `tuning_curve_reliability` metric registered in `meta/metrics/` maps onto the
+coefficient-of-determination variant used in [DavidGallant2005]: `1 - SS_residual / SS_total` across
+trials, where the &quot;model&quot; is the trial-mean curve and residuals are trial-level rates. Without a
+model, this reduces to `max(0, 1 - var_across_trials / var_across_angles)`. The value is explicitly
+clamped to [0, 1] because small samples with low variance can produce negative values that have no
+natural interpretation.
+
+Alternative metrics (Fano factor, raw SNR) fail for zero-rate bins and introduce scale-dependence,
+so they were rejected.
+
+##### Open-source landscape
+
+ModelDB 189347 [ModelDB-189347] bundles inline MATLAB scoring functions but no stand-alone Python
+API; porting those functions is the correct pattern. `elephant` [elephant-GH] provides
+`elephant.statistics.fanofactor` and a `directional_tuning` helper but does not implement an
+envelope loss. No public library was found that implements the exact DSI + peak + null + HWHM
+four-target envelope — this confirms t0012&#x27;s scope is genuinely missing.
+
+**Hypothesis**: because DSI and HWHM are computed from the trial-mean curve but `reliability` is
+computed across trials, the four-target loss and reliability will be roughly uncorrelated, and a
+model can pass all four envelope targets while still having low reliability. The envelope pass
+condition therefore must *not* be gated on reliability.
+
+##### Weighted scalar loss normalisation
+
+[Nevergrad-docs] and [BayesianOpt-GH] both recommend normalising each residual by the width of its
+admissible envelope before squaring and weighting, which gives a dimensionless loss of order 1 when
+a residual is at the envelope boundary. We adopt this convention:
+`residual_norm = (value - envelope_midpoint) / envelope_half_width`, so the scalar loss is
+`sqrt(sum(weight_i * residual_norm_i^2))` with default weights 0.25 each.
+
+#### Methodology Insights
+
+* **Match t0004&#x27;s DSI/HWHM closed-form formulas exactly** so that `score(target, target)` returns
+  `loss_scalar == 0.0`. The t0004 dataset stores angles and rates, not the peak or DSI, so the
+  scorer must recompute both from the points; any subtle rounding or interpolation difference will
+  break the identity test.
+* **Clamp reliability to [0, 1]** at the top of the function, never at the bottom — this prevents
+  spurious negative values from propagating into the residuals or the scalar loss.
+* **Angle grid may be arbitrary**: do not hardcode 12 angles × 30°. Discover the grid from the
+  input CSV and require only that it spans ≥180° so that a null counterpart exists for every
+  angle.
+* **Separate pure-math from CSV plumbing**: put `compute_dsi`, `compute_hwhm_deg`,
+  `compute_reliability`, and `compute_weighted_loss` in `metrics.py`; keep CSV loading,
+  group-by-trial, and target matching in `io.py`. Each test file then targets one module.
+* **Return a frozen dataclass, not a dict**: `ScoreReport` is a `dataclass(frozen=True, slots=True)`
+  so that downstream callers (tuning-curve optimisation tasks) get type hints and cannot mutate a
+  result mid-pipeline.
+* **CLI should print JSON**: emit the `ScoreReport` as JSON on stdout so the CLI is callable from a
+  bash optimiser or W&amp;B sweep without further parsing.
+* **Testable hypothesis**: two synthetic curves with identical trial-means but different trial-level
+  variance will produce identical DSI/peak/null/HWHM values but different `reliability` values. This
+  is the exact reliability discrimination test required by the task description and must pass.
+
+#### Discovered Papers
+
+##### [Elstrott2008]
+
+* **Title**: Direction Selectivity in the Retina Is Established Independent of Visual Experience and
+  Cholinergic Retinal Waves
+* **Authors**: Elstrott, J., Anishchenko, A., Greschner, M., Sher, A., Litke, A. M., Chichilnisky,
+  E. J., Feller, M. B.
+* **Year**: 2008
+* **DOI**: `10.1016/j.neuron.2008.10.029`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(08)00898-X
+* **Suggested categories**: `retinal-direction-selectivity`, `dsgc-reviews`
+* **Why download**: Uses the exact DSI = (pref - null) / (pref + null) formulation on DSGC
+  recordings and reports the bounded-[0,1] distributions we target. Useful as a canonical citation
+  for the DSI formula and as a dataset reference for wild-type DSI distributions.
+
+##### [DavidGallant2005]
+
+* **Title**: Predicting Neuronal Responses During Natural Vision
+* **Authors**: David, S. V., Gallant, J. L.
+* **Year**: 2005
+* **DOI**: `10.1088/0954-898X_16_2_003`
+* **URL**: https://iopscience.iop.org/article/10.1088/0954-898X_16_2_003
+* **Suggested categories**: `receptive-field-modeling`
+* **Why download**: Source for the bounded [0, 1] coefficient-of-determination reliability metric
+  that we adopt. Establishes the split-half and leave-one-out computation variants.
+
+#### Recommendations for This Task
+
+1. **Adopt the ratio DSI** `(pref - null) / (pref + null)` for `compute_dsi`. This is the DSGC
+   standard and matches the t0002 envelope bounds [Elstrott2008] [Taylor2012].
+2. **Use linear interpolation for HWHM** via `numpy.interp` or `scipy.interpolate.interp1d` with
+   `kind=&quot;linear&quot;` [scipy-interp-docs]. Cubic fits are contraindicated on 12-point curves.
+3. **Clamp reliability to [0, 1]** using the `max(0, min(1, r))` idiom and document the clamp in the
+   library `description.md` so downstream optimisers do not interpret unclamped negative R² values
+   [DavidGallant2005].
+4. **Normalise residuals by envelope half-widths** before computing the scalar loss, with default
+   weights 0.25 each [Nevergrad-docs].
+5. **Expose a `cli.py` entry point** that prints the full `ScoreReport` as JSON, so W&amp;B sweeps and
+   bash-driven parameter scans can consume the scorer directly.
+6. **Write the envelope-boundary tests before writing the scoring code** — each of DSI, peak,
+   null, HWHM needs one test just inside and one just outside its boundary. These tests protect the
+   meaning of `passes_envelope` across refactors.
+7. **Do NOT add a second `vector_sum_dsi` field to ScoreReport** even though it is tempting — it
+   is not the DSGC convention and would bloat the report without adding information [Taylor2012].
+
+#### Source Index
+
+##### [Elstrott2008]
+
+* **Type**: paper
+* **Title**: Direction Selectivity in the Retina Is Established Independent of Visual Experience and
+  Cholinergic Retinal Waves
+* **Authors**: Elstrott, J. et al.
+* **Year**: 2008
+* **DOI**: `10.1016/j.neuron.2008.10.029`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(08)00898-X
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Canonical source for DSI = (pref - null) / (pref + null) applied to DSGCs and for
+  bounded-[0,1] DSI distributions in wild-type mouse retina.
+
+##### [Taylor2012]
+
+* **Type**: paper
+* **Title**: Direction selectivity in the retina: symmetry and asymmetry in structure and function
+* **Authors**: Vaney, D. I., Sivyer, B., Taylor, W. R.
+* **Year**: 2012
+* **DOI**: `10.1038/nrn3165`
+* **URL**: https://www.nature.com/articles/nrn3165
+* **Peer-reviewed**: yes (Nature Reviews Neuroscience)
+* **Relevance**: Standard DSGC review establishing the DSI convention, the preferred = 0° angle
+  convention, and the HWHM reporting style for tuning curves.
+
+##### [PolegPolsky2016]
+
+* **Type**: paper
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(16)00173-3
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Provides the DSGC compartmental-model envelope (DSI 0.7-0.85, peak 40-80 Hz, null &lt;
+  10 Hz, HWHM 60-90°) that this scoring library enforces via `passes_envelope`.
+
+##### [DavidGallant2005]
+
+* **Type**: paper
+* **Title**: Predicting Neuronal Responses During Natural Vision
+* **Authors**: David, S. V., Gallant, J. L.
+* **Year**: 2005
+* **DOI**: `10.1088/0954-898X_16_2_003`
+* **URL**: https://iopscience.iop.org/article/10.1088/0954-898X_16_2_003
+* **Peer-reviewed**: yes (Network: Computation in Neural Systems)
+* **Relevance**: Bounded [0, 1] coefficient-of-determination reliability metric that we adopt.
+
+##### [ModelDB-189347]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — Poleg-Polsky &amp; Diamond DSGC model with NMDA multiplicative gain
+* **Author/Org**: Poleg-Polsky, A., Diamond, J. S.
+* **URL**: https://modeldb.science/189347
+* **Last updated**: 2016-02
+* **Peer-reviewed**: no (companion code)
+* **Relevance**: The reference DSGC implementation whose envelope we score against. Inline
+  MATLAB/HOC scoring functions are the closest existing scorer but are not exposed as a Python API,
+  motivating this task.
+
+##### [elephant-GH]
+
+* **Type**: repository
+* **Title**: Elephant — Electrophysiology Analysis Toolkit
+* **Author/Org**: NeuralEnsemble
+* **URL**: https://github.com/NeuralEnsemble/elephant
+* **Last updated**: 2026-02
+* **Peer-reviewed**: no (companion to published toolkit papers)
+* **Relevance**: Offers a `fanofactor` and direction-tuning helpers but no envelope-loss scoring.
+  Confirms the gap this task fills.
+
+##### [scipy-interp-docs]
+
+* **Type**: documentation
+* **Title**: scipy.interpolate — Interpolation
+* **Author/Org**: SciPy Project
+* **URL**: https://docs.scipy.org/doc/scipy/reference/interpolate.html
+* **Peer-reviewed**: no
+* **Relevance**: API reference for `numpy.interp` and `scipy.interpolate.interp1d` used by
+  `compute_hwhm_deg` to find the half-max crossings.
+
+##### [Nevergrad-docs]
+
+* **Type**: documentation
+* **Title**: Nevergrad — A Gradient-Free Optimization Platform (Losses and Penalties)
+* **Author/Org**: Facebook AI Research
+* **URL**: https://facebookresearch.github.io/nevergrad/optimization.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents the normalise-by-envelope-width pattern we use for the weighted scalar
+  loss so that residuals are dimensionally comparable.
+
+##### [BayesianOpt-GH]
+
+* **Type**: repository
+* **Title**: bayesian-optimization — constrained Bayesian optimisation in Python
+* **Author/Org**: fmfn
+* **URL**: https://github.com/fmfn/BayesianOptimization
+* **Last updated**: 2026-01
+* **Peer-reviewed**: no
+* **Relevance**: Provides the pattern of bounded-constraint penalisation that we mirror with
+  envelope-width normalisation in the weighted scalar loss.
+
+##### [pandas-docs]
+
+* **Type**: documentation
+* **Title**: pandas GroupBy
+* **Author/Org**: pandas Project
+* **URL**: https://pandas.pydata.org/docs/user_guide/groupby.html
+* **Peer-reviewed**: no
+* **Relevance**: API reference for trial-aware groupby used by `io.py` to reduce the
+  `(angle_deg, trial_seed, firing_rate_hz)` CSV into the trial-mean curve consumed by DSI, peak,
+  null, and HWHM.
+      </content>
+    </section>
+    <section id="t0012_tuning_curve_scoring_loss_library-research_code" source_kind="file">
+      <title>t0012_tuning_curve_scoring_loss_library — Tuning-curve scoring loss library — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0012_tuning_curve_scoring_loss_library/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0012_tuning_curve_scoring_loss_library&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 9
+tasks_cited: 4
+libraries_found: 0
+libraries_relevant: 0
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research: code for t0012 tuning-curve scoring/loss library
+
+#### Task Objective
+
+Build a pure-Python library that scores any candidate tuning curve (12-angle firing-rate vector,
+optionally with per-trial repeats) against the canonical target from [t0004] using a weighted
+combination of DSI, peak-at-preferred, null-residual, and HWHM components, plus a Poleg-Polsky
+envelope penalty. The identity test `score(target, target) == 0.0` pins the library&#x27;s formulas to
+whatever [t0004] produced, so code research must pin the exact DSI and HWHM conventions used there
+before any implementation.
+
+#### Library Landscape
+
+No libraries are yet registered under any task&#x27;s `assets/library/`. The project&#x27;s tasks 1-14 have
+produced datasets, morphologies, literature surveys, answer assets, and an infrastructure
+installation, but no reusable `library` asset. The library aggregator is not yet present in the
+`arf/scripts/aggregators/` directory (only tasks, costs, machines, metric results, metrics,
+suggestions, task types, categories are aggregated today), so discovery is by direct
+`assets/library/` lookup. This means t0012 is the project&#x27;s first library asset and there is no
+prior library API, version tag, or import path to inherit. All scoring code must be written from
+scratch in `tasks/t0012.../assets/library/tuning-curve-loss/`.
+
+#### Key Findings
+
+##### DSI formula to mirror
+
+[t0004] `code/generate_target.py::compute_dsi` computes `DSI = (pref - null) / (pref + null)` with
+`pref = r_base + amplitude * (1.0 ** n) = r_peak` and
+`null = r_base + amplitude * (0.0 ** n) = r_base`. For the default params (`r_base=2`, `r_peak=32`,
+`n=2`) that gives `DSI = 30/34 ≈ 0.8824`, which is in the acceptance band `DSI_MIN=0.6`,
+`DSI_MAX=0.9` hard-coded at `generate_target.py:53-54`. On an empirical 12-angle curve, `pref` and
+`null` are the rates at the preferred angle and the opposite angle — not arbitrary max and min —
+and the DSI function the scoring library exposes must reproduce exactly this definition so that
+`score(target_csv, target_csv) == 0.0` holds.
+
+##### Target dataset schema from [t0004]
+
+The canonical dataset at `tasks/t0004.../assets/dataset/target-tuning-curve/files/` is three
+CSV/JSON files:
+
+* `curve_mean.csv` with columns `angle_deg` and `mean_rate_hz`, 12 rows at 0°, 30°, …, 330°
+  (generated by `np.linspace(0, 360, 12, endpoint=False)` at `generate_target.py:207-212`)
+* `curve_trials.csv` with columns `angle_deg`, `trial_index`, `rate_hz`, 240 rows (12 angles × 20
+  trials)
+* `generator_params.json` mirroring the `GeneratorParams` dataclass
+
+The scoring library must therefore accept **either** a 12-row mean CSV **or** a 240-row trials CSV;
+when trials are supplied it must fold them into a per-angle mean before the DSI / peak / null / HWHM
+computations and additionally emit a reliability score (e.g., per-angle CV or split-half
+correlation).
+
+##### HWHM convention
+
+[t0004] does not compute HWHM directly — it emits the 12 closed-form samples and relies on
+downstream consumers. The closed-form tuning curve is
+`r(theta) = r_base + (r_peak - r_base) * ((1 + cos(theta - theta_pref)) / 2) ** n` at
+`generate_target.py:65-67`. HWHM is the angular distance from `theta_pref` at which
+`r(theta) = (r_peak + r_base) / 2`. For default params (n=2) this resolves to ≈ 65.5°
+analytically (`((1+cos(phi))/2)^2 = 0.5` → `phi = arccos(sqrt(2)-1) ≈ 65.5°`). On a 12-angle
+empirical curve the library must resolve HWHM by linearly interpolating between the sampled points
+on the decreasing side (from `theta_pref` toward the null) and inverting the interpolant at
+`(r_peak + r_base)/2`, with `scipy.interpolate.interp1d` or `numpy.interp`. The interpolation must
+be monotone on each side of `theta_pref` so that `interp1d(..., kind=&quot;linear&quot;)` returns a single
+root.
+
+##### Numerical stability and angle handling
+
+Angles are stored in degrees modulo 360, but trigonometry in [t0004] is in radians (`np.deg2rad` at
+`generate_target.py:64, 135`). The loss library must keep angles in degrees at the API boundary (so
+loaded CSVs work directly) and convert to radians only inside the closed-form helpers. The null
+direction is `(theta_pref + 180) mod 360`, not `(theta_pref - 180)` — the expression
+`r_base + amplitude * (0.0 ** n)` at `generate_target.py:74` evaluates to `r_base` regardless of
+sign, so both conventions agree, but the scoring API must pick the modulo form to avoid negative
+angles feeding into `np.interp` which requires sorted `xp`.
+
+##### Trial-level reliability pattern
+
+[t0004] `sample_trials` produces rates by adding Gaussian noise with `noise_sd_hz=3.0` and clipping
+at zero (`generate_target.py:78-90`). Reliability across 20 trials at each angle can therefore be
+modelled as either (a) coefficient of variation `std/mean` over trials, or (b) split-half Pearson
+correlation of trial means. The project&#x27;s published convention has not been chosen; the library
+should expose both and default to split-half Pearson, since CV is undefined near zero rates and the
+null-direction rate in the target is only ~2 Hz.
+
+#### Reusable Code and Assets
+
+* **Source**:
+  `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/curve_mean.csv`
+  and `curve_trials.csv`. **What it does**: canonical target tuning curve (12 angles, 20 trials).
+  **Reuse method**: load as-is with `pandas.read_csv`; do not copy or re-generate. **Function
+  signatures**: n/a (data). **Adaptation needed**: none. **Line count**: 13 + 241 rows.
+
+* **Source**: `tasks/t0004_generate_target_tuning_curve/code/generate_target.py::compute_dsi` (lines
+  71-75) and the closed-form helper in `compute_mean_curve` (lines 57-68). **What it does**:
+  computes DSI analytically from `GeneratorParams`; computes closed-form rate at arbitrary angles.
+  **Reuse method**: **copy into task** — cross-task `code/` imports are forbidden by the
+  framework. Translate the logic into the new library&#x27;s `compute_dsi_from_curve` helper (operating
+  on a 12-row mean curve) and keep the analytical helper for tests that validate HWHM ≈ 65.5°.
+  **Function signatures**:
+  * `compute_dsi(*, params: GeneratorParams) -&gt; float`
+  * `compute_mean_curve(*, params: GeneratorParams) -&gt; np.ndarray` **Adaptation needed**: rewrite
+    `compute_dsi` to accept a 12-entry vector and a preferred angle rather than `GeneratorParams`.
+    **Line count**: ~20 lines.
+
+* **Source**: `tasks/t0004_generate_target_tuning_curve/code/paths.py` **What it does**: centralizes
+  dataset paths and IDs. **Reuse method**: **copy into task** — recreate the same pattern at
+  `tasks/t0012.../code/paths.py` and `tasks/t0012.../assets/library/tuning-curve-loss/paths.py`.
+  **Function signatures**: module-level constants. **Adaptation needed**: paths for the library&#x27;s
+  default target dataset should resolve `tasks/t0004.../assets/dataset/target-tuning-curve/files/`
+  relative to the repo root. **Line count**: ~15 lines.
+
+* **Source**: `numpy` and `scipy.interpolate.interp1d` (external, already available via
+  `pyproject.toml`). **What it does**: vector math and interpolation for HWHM root-finding. **Reuse
+  method**: **import via library** (external dependency, not a task-asset library). **Function
+  signatures**: `scipy.interpolate.interp1d(x, y, kind=&quot;linear&quot;)` and `numpy.interp(x, xp, fp)`.
+  **Adaptation needed**: none. **Line count**: n/a.
+
+#### Lessons Learned
+
+* [t0004] chose `np.linspace(0, 360, n_angles, endpoint=False)` for angles, not
+  `np.linspace(0, 2*pi, n_angles)`. Keeping degrees at the boundary and converting internally avoids
+  floating-point drift around 360° wrap-around.
+* [t0004] clips sampled rates at zero (`np.clip(..., a_min=0.0)` at `generate_target.py:90`). The
+  scoring library must assume non-negative rates and raise a clear error if a candidate has negative
+  entries.
+* [t0004] validates `DSI_MIN &lt;= dsi &lt;= DSI_MAX` via `assert` at `generate_target.py:202-204` and
+  exits non-zero if the band is violated. The scoring library should not abort on out-of-band
+  candidates — only report the DSI — because scoring candidate fits that are deliberately worse
+  than the target is the whole point.
+* [t0009] (calibrate dendritic diameters) demonstrated that &quot;replace placeholder field X with
+  literature-derived value&quot; tasks benefit from a clear identity test (new value must differ from
+  placeholder at specified positions). The analogue here is the `score(target, target) == 0.0`
+  identity test, which gives us a hard anchor for every future CI run.
+* [t0007] (install NEURON+NetPyNE) is a read-only dependency for downstream simulation tasks but is
+  not needed by the scoring library; the library is pure Python+NumPy+SciPy and must not import
+  NEURON, so the pytest suite runs without the paid simulator toolchain.
+
+#### Recommendations for This Task
+
+1. **Mirror [t0004] DSI exactly** — implement
+   `compute_dsi_from_curve(angles, rates, theta_pref) = (rate_at_pref - rate_at_null) / (rate_at_pref + rate_at_null)`
+   and add a unit test that loads `curve_mean.csv` and asserts the result matches
+   `generator_params.json` to within 1e-9.
+2. **Use `np.interp` (not custom root-finding) for HWHM** — restrict to the 6 angles on the
+   decreasing side from `theta_pref` to `theta_pref + 180°`, sort by angle, and call `np.interp`
+   inverting on rate. Assert the interpolant crosses the half-max exactly once per side.
+3. **Copy [t0004]&#x27;s `paths.py` layout** into `tasks/t0012.../code/paths.py` and expose the default
+   target dataset at a named constant (e.g., `DEFAULT_TARGET_MEAN_CSV`).
+4. **Expose both mean-curve and trials inputs** at the API boundary —
+   `score(candidate_mean, target_mean=...)` and `score(candidate_trials, target_trials=...)` — so
+   downstream optimisation loops can feed in whichever they have.
+5. **Do not import from [t0004]&#x27;s code** — copy the three functions we need (compute_dsi,
+   compute_mean_curve, plus the angle grid generator) as small private helpers in the library, and
+   keep them labelled with `# adapted from t0004/.../generate_target.py` as the single allowed
+   cross-task comment.
+6. **Pin library behaviour against [t0004]&#x27;s generator_params.json** — accept a
+   `generator_params.json` alongside the mean CSV when computing HWHM analytically, so the test
+   suite can cross-check the interpolated HWHM against the closed-form value.
+7. **Keep the library pure Python** — NumPy+SciPy+pandas only. No NEURON, no matplotlib at import
+   time (only inside the CLI&#x27;s `--plot` flag).
+
+#### Task Index
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate canonical target angle-to-AP-rate tuning curve
+* **Status**: completed
+* **Relevance**: Produces the canonical target CSVs that this task scores against; its `compute_dsi`
+  and `compute_mean_curve` helpers define the formulas this library must mirror so that the identity
+  test `score(target, target) == 0.0` holds.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+* **Status**: completed
+* **Relevance**: Demonstrates the infrastructure-install pattern; confirms that this scoring library
+  must NOT depend on NEURON because most downstream users will run the scorer without the simulator
+  toolchain in the loop (e.g., inside pytest, inside CI).
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters for dsgc-baseline-morphology
+* **Status**: completed
+* **Relevance**: Recent &quot;replace placeholder with canonical value&quot; task that established the
+  identity-test discipline this task also adopts — `score(target, target) == 0.0` is analogous to
+  t0009&#x27;s &quot;only the calibrated sections differ from the placeholder&quot; acceptance test.
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download candidate DSGC morphology
+* **Status**: completed
+* **Relevance**: Provides the SWC morphology that downstream simulation tasks will feed into this
+  scorer&#x27;s inputs; confirms the library&#x27;s input contract must be a 12-angle firing-rate vector (not
+  raw voltage traces), since morphology-level work is several tasks away.
       </content>
     </section>
     <section id="t0014_brainstorm_results_3-research_papers" source_kind="file">

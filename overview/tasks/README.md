@@ -1,6 +1,6 @@
 # Project Tasks
 
-19 tasks. ⏳ **3 in_progress**, ⏹ **7 not_started**, ✅ **9 completed**.
+19 tasks. ⏳ **3 in_progress**, ⏹ **6 not_started**, ✅ **10 completed**.
 
 **Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
 `not_started`](by-status/not_started.md), [✅ `completed`](by-status/completed.md); [By date
@@ -19,7 +19,7 @@ graph LR
     t0009_calibrate_dendritic_diameters["✅ t0009_calibrate_dendritic_diameters"]
     t0010_hunt_missed_dsgc_models["⏹ t0010_hunt_missed_dsgc_models"]
     t0011_response_visualization_library["⏹ t0011_response_visualization_library"]
-    t0012_tuning_curve_scoring_loss_library["⏹ t0012_tuning_curve_scoring_loss_library"]
+    t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0013_resolve_morphology_provenance["⏹ t0013_resolve_morphology_provenance"]
     t0015_literature_survey_cable_theory["⏳ t0015_literature_survey_cable_theory"]
     t0016_literature_survey_dendritic_computation["⏳ t0016_literature_survey_dendritic_computation"]
@@ -535,109 +535,6 @@ Covers suggestion **S-0005-01**.
 </details>
 
 <details>
-<summary>⏹ 0012 — <strong>Tuning-curve scoring loss library</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0012_tuning_curve_scoring_loss_library` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-19 |
-| **Dependencies** | [`t0004_generate_target_tuning_curve`](../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
-| **Expected assets** | 1 library |
-| **Source suggestion** | `S-0002-09` |
-| **Task types** | [`write-library`](../../meta/task_types/write-library/) |
-| **Task page** | [Tuning-curve scoring loss library](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
-| **Task folder** | [`t0012_tuning_curve_scoring_loss_library/`](../../tasks/t0012_tuning_curve_scoring_loss_library/) |
-
-# Tuning-curve scoring loss library
-
-## Motivation
-
-The t0002 literature survey set four concurrent quantitative targets an optimised DSGC model
-must hit: DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM
-**60-90°**. The project has four registered metrics (`direction_selectivity_index`,
-`tuning_curve_hwhm_deg`, `tuning_curve_reliability`, `tuning_curve_rmse`). Every downstream
-optimisation task (Na/K grid search S-0002-01, morphology sweep S-0002-04, E/I ratio scan
-S-0002-05, active-vs-passive dendrites S-0002-02) needs a shared scoring function: same
-target, same weighting, same tie-breaks. Without this library, each task will invent its own
-scoring and cross-task comparisons of "who wins" become meaningless. This task provides that
-canonical scorer.
-
-Covers suggestion **S-0002-09** (and subsumes **S-0004-03** — see the t0006 correction file).
-
-## Scope
-
-The library `tuning_curve_loss` exposes:
-
-1. `score(simulated_curve_csv, target_curve_csv | None) -> ScoreReport` — returns a frozen
-   dataclass containing:
-   * `loss_scalar` (float) — weighted-Euclidean-distance-in-normalised-space loss combining
-     the four envelope targets.
-   * `dsi_residual`, `peak_residual_hz`, `null_residual_hz`, `hwhm_residual_deg` — individual
-     residuals with signs.
-   * `rmse_vs_target` — point-wise RMSE of `(angle, firing_rate)` against the target curve
-     (only when a target is supplied).
-   * `reliability` — cross-trial coefficient of determination (maps onto the registered
-     `tuning_curve_reliability` metric).
-   * `passes_envelope` (bool) — whether the simulated curve lands inside the t0002 envelope on
-     all four targets simultaneously.
-   * `per_target_pass` — dict `{"dsi": bool, "peak": bool, "null": bool, "hwhm": bool}`.
-2. `compute_dsi(curve_csv) -> float`
-3. `compute_preferred_peak_hz(curve_csv) -> float`
-4. `compute_null_residual_hz(curve_csv) -> float`
-5. `compute_hwhm_deg(curve_csv) -> float`
-6. Tuning-curve CSV schema constant: `(angle_deg, trial_seed, firing_rate_hz)`.
-7. CLI: `python -m tuning_curve_loss.cli <simulated.csv> [--target <target.csv>]`.
-
-Weights for the scalar loss default to **DSI 0.25, peak 0.25, null 0.25, HWHM 0.25** but are
-user-overridable via a keyword argument and via a JSON config file; the defaults and rationale
-are documented in the asset's `description.md`.
-
-## Dependencies
-
-* **t0004_generate_target_tuning_curve** — source of the canonical `target-tuning-curve`
-  dataset used as the default comparison target and as the smoke-test fixture.
-
-## Expected Outputs
-
-* **1 library asset** (`assets/library/tuning-curve-loss/`) with:
-  * `description.md` covering API, weight defaults, and worked examples
-  * `module_paths` pointing at `code/tuning_curve_loss/`
-  * `test_paths` pointing at `code/tuning_curve_loss/test_*.py` with at least:
-    * Identity test: `score(target, target)` must return `loss_scalar == 0.0` and
-      `passes_envelope is True`.
-    * Envelope-boundary tests: hand-crafted curves just inside and just outside each of the
-      four envelope boundaries.
-    * Reliability test: two curves with identical trial-means but very different
-      trial-to-trial variance produce different `reliability` values.
-
-## Approach
-
-Pure Python + NumPy + pandas. No simulator dependency. The DSI and HWHM computations must
-match the closed-form computations used in t0004 to produce the target curve, so that
-`score(target, target)` is exactly zero. Use the registered metric keys from `meta/metrics/`
-so that scored values can be written directly into `results/metrics.json` without post-hoc
-renaming.
-
-## Questions the task answers
-
-1. Does `score(target, target)` return `loss_scalar == 0.0`?
-2. Do the envelope-boundary tests flip `passes_envelope` at the correct boundary to within
-   floating-point tolerance?
-3. Does the scorer accept multi-trial CSVs and correctly combine trials into a mean before
-   computing DSI, peak, null and HWHM?
-
-## Risks and Fallbacks
-
-* **The literature envelope numbers conflict with the t0004 target curve** (e.g., the target
-  sits right at an envelope boundary): document the target's position on the envelope in the
-  library description; do not silently redefine targets.
-* **Trial-to-trial variance inflates `reliability` beyond sensible bounds**: clamp to [0, 1]
-  and document the clamp.
-
-</details>
-
-<details>
 <summary>⏹ 0011 — <strong>Response-visualisation library (firing rate vs angle
 graphs)</strong></summary>
 
@@ -1069,6 +966,141 @@ for their respective child task.
 > deduplication constraint and for papers that ultimately fail quality filters.
 > * **Exclude the 20 DOIs already in the t0002 corpus** from each survey. Duplicate hits must
 >   be
+
+</details>
+
+<details>
+<summary>✅ 0012 — <strong>Tuning-curve scoring loss library</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0012_tuning_curve_scoring_loss_library` |
+| **Status** | completed |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0004_generate_target_tuning_curve`](../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | `S-0002-09` |
+| **Task types** | [`write-library`](../../meta/task_types/write-library/) |
+| **Start time** | 2026-04-20T01:02:11Z |
+| **End time** | 2026-04-20T09:58:10Z |
+| **Step progress** | 10/15 |
+| **Task page** | [Tuning-curve scoring loss library](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Task folder** | [`t0012_tuning_curve_scoring_loss_library/`](../../tasks/t0012_tuning_curve_scoring_loss_library/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) |
+
+# Tuning-curve scoring loss library
+
+## Motivation
+
+The t0002 literature survey set four concurrent quantitative targets an optimised DSGC model
+must hit: DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **< 10 Hz**, HWHM
+**60-90°**. The project has four registered metrics (`direction_selectivity_index`,
+`tuning_curve_hwhm_deg`, `tuning_curve_reliability`, `tuning_curve_rmse`). Every downstream
+optimisation task (Na/K grid search S-0002-01, morphology sweep S-0002-04, E/I ratio scan
+S-0002-05, active-vs-passive dendrites S-0002-02) needs a shared scoring function: same
+target, same weighting, same tie-breaks. Without this library, each task will invent its own
+scoring and cross-task comparisons of "who wins" become meaningless. This task provides that
+canonical scorer.
+
+Covers suggestion **S-0002-09** (and subsumes **S-0004-03** — see the t0006 correction file).
+
+## Scope
+
+The library `tuning_curve_loss` exposes:
+
+1. `score(simulated_curve_csv, target_curve_csv | None) -> ScoreReport` — returns a frozen
+   dataclass containing:
+   * `loss_scalar` (float) — weighted-Euclidean-distance-in-normalised-space loss combining
+     the four envelope targets.
+   * `dsi_residual`, `peak_residual_hz`, `null_residual_hz`, `hwhm_residual_deg` — individual
+     residuals with signs.
+   * `rmse_vs_target` — point-wise RMSE of `(angle, firing_rate)` against the target curve
+     (only when a target is supplied).
+   * `reliability` — cross-trial coefficient of determination (maps onto the registered
+     `tuning_curve_reliability` metric).
+   * `passes_envelope` (bool) — whether the simulated curve lands inside the t0002 envelope on
+     all four targets simultaneously.
+   * `per_target_pass` — dict `{"dsi": bool, "peak": bool, "null": bool, "hwhm": bool}`.
+2. `compute_dsi(curve_csv) -> float`
+3. `compute_preferred_peak_hz(curve_csv) -> float`
+4. `compute_null_residual_hz(curve_csv) -> float`
+5. `compute_hwhm_deg(curve_csv) -> float`
+6. Tuning-curve CSV schema constant: `(angle_deg, trial_seed, firing_rate_hz)`.
+7. CLI: `python -m tuning_curve_loss.cli <simulated.csv> [--target <target.csv>]`.
+
+Weights for the scalar loss default to **DSI 0.25, peak 0.25, null 0.25, HWHM 0.25** but are
+user-overridable via a keyword argument and via a JSON config file; the defaults and rationale
+are documented in the asset's `description.md`.
+
+## Dependencies
+
+* **t0004_generate_target_tuning_curve** — source of the canonical `target-tuning-curve`
+  dataset used as the default comparison target and as the smoke-test fixture.
+
+## Expected Outputs
+
+* **1 library asset** (`assets/library/tuning-curve-loss/`) with:
+  * `description.md` covering API, weight defaults, and worked examples
+  * `module_paths` pointing at `code/tuning_curve_loss/`
+  * `test_paths` pointing at `code/tuning_curve_loss/test_*.py` with at least:
+    * Identity test: `score(target, target)` must return `loss_scalar == 0.0` and
+      `passes_envelope is True`.
+    * Envelope-boundary tests: hand-crafted curves just inside and just outside each of the
+      four envelope boundaries.
+    * Reliability test: two curves with identical trial-means but very different
+      trial-to-trial variance produce different `reliability` values.
+
+## Approach
+
+Pure Python + NumPy + pandas. No simulator dependency. The DSI and HWHM computations must
+match the closed-form computations used in t0004 to produce the target curve, so that
+`score(target, target)` is exactly zero. Use the registered metric keys from `meta/metrics/`
+so that scored values can be written directly into `results/metrics.json` without post-hoc
+renaming.
+
+## Questions the task answers
+
+1. Does `score(target, target)` return `loss_scalar == 0.0`?
+2. Do the envelope-boundary tests flip `passes_envelope` at the correct boundary to within
+   floating-point tolerance?
+3. Does the scorer accept multi-trial CSVs and correctly combine trials into a mean before
+   computing DSI, peak, null and HWHM?
+
+## Risks and Fallbacks
+
+* **The literature envelope numbers conflict with the t0004 target curve** (e.g., the target
+  sits right at an envelope boundary): document the target's position on the envelope in the
+  library description; do not silently redefine targets.
+* **Trial-to-trial variance inflates `reliability` beyond sensible bounds**: clamp to [0, 1]
+  and document the clamp.
+
+**Results summary:**
+
+> **Results Summary: Tuning-Curve Scoring Loss Library**
+>
+> **Summary**
+>
+> Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads
+> a DSGC
+> tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve
+> against the
+> t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity
+> gate
+> `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All
+> 47
+> pytest tests pass, ruff and mypy are clean, and the library asset is registered at
+> `assets/library/tuning_curve_loss/`.
+>
+> **Metrics**
+>
+> * **Tests passed**: **47 / 47** (0 failed, 0 skipped)
+> * **Identity loss on t0004 target**: **0.0** (exact)
+> * **Library modules**: **8** (paths, loader, metrics, envelope, weights, scoring, cli,
+>   `__init__`)
+> * **Public entry points**: **13** (score, compute_dsi, compute_peak_hz, compute_null_hz,
+> compute_hwhm_deg, compute_reliability, load_tuning_curve, passes_envelope, validate_weights,
+> load_weights_from_json, Envelope, ScoreResult, TuningCurveMetrics)
+> * **Test modules**: **5** covering loader, metrics, envelope, scoring, and CLI
 
 </details>
 

@@ -6,8 +6,9 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (18)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (2)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(16)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
-(2)](../datasets/by-category/retinal-ganglion-cell.md)
+(17)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
+(1)](../libraries/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -989,7 +990,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (13 open, 3 closed)
+## Suggestions (14 open, 3 closed)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -1103,6 +1104,26 @@ per-compartment diameters. Register the result as dsgc-baseline-morphology-image
 as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external
 data availability; likely requires an intervention for author contact. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
+reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
+simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
+so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
+resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
+under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
+simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
+produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
+validation that the scorer library does what it promises on a non-trivial candidate.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 

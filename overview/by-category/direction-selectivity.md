@@ -6,8 +6,9 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (17)](../papers/by-category/direction-selectivity.md) | [Answers
 (1)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(16)](../suggestions/by-category/direction-selectivity.md) | [Datasets
-(2)](../datasets/by-category/direction-selectivity.md)
+(21)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(2)](../datasets/by-category/direction-selectivity.md) | [Libraries
+(1)](../libraries/by-category/direction-selectivity.md)
 
 ---
 
@@ -922,7 +923,106 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (13 open, 3 closed)
+## Suggestions (18 open, 3 closed)
+
+<details>
+<summary>🔧 <strong>Parametric curve fitting (von Mises / wrapped Gaussian) for
+sub-degree HWHM estimates on sparse 12-angle grids</strong> (S-0012-02)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+The current compute_hwhm_deg interpolates linearly between the two 30 deg samples bracketing
+the half-maximum on each flank, limiting HWHM resolution to about 1 deg and producing a 5.5
+deg deficit versus the closed-form 65.5 deg (measured 60.0 deg on the t0004 target). Add a
+fit_parametric_tuning_curve helper to tuning_curve_loss.metrics that fits a von Mises or
+wrapped Gaussian to the 12 angles via scipy.optimize.curve_fit, derives an analytic HWHM from
+the fitted kappa or sigma, and exposes hwhm_deg_parametric and parametric_fit_residual_rms on
+ScoreReport. Compare parametric HWHM against interpolated HWHM on t0004, t0008 (ModelDB
+189347), and S-0002-01 grid-search points; document when interpolation suffices and when the
+parametric fit is required. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
+reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
+simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
+so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
+resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
+under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
+simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
+produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
+validation that the scorer library does what it promises on a non-trivial candidate.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Alternative loss formulations (L1, max-residual,
+weighted-L-infinity) benchmarked against the Euclidean default</strong>
+(S-0012-04)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+tuning_curve_loss currently computes loss_scalar as a weighted Euclidean (L2) norm of four
+normalised residuals. Downstream optimisers may prefer L1 (more robust to a single bad metric,
+sub-gradient at zero), max-residual / L-infinity (guarantees every individual target is within
+a budget), or Huber (quadratic near zero, linear in the tails). Add pluggable
+loss_kind='l2'|'l1'|'linf'|'huber' to score and score_curves, keep 'l2' as the default to
+preserve the identity contract, and add parametrised tests that exercise each norm on the same
+synthetic inputs used by test_envelope.py. Once downstream grid searches (S-0002-01,
+S-0002-04, S-0002-05) have produced O(1000) points, compare how each loss norm ranks the top-k
+configurations and whether ranking changes meaningfully. Recommended task types:
+write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Revisit envelope widening (DSI upper 0.85 to 0.9, peak lower 40
+to 30 Hz) once real simulation results are in</strong> (S-0012-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+REQ-7 was satisfied by widening two envelope bounds away from the t0002 literature values: DSI
+upper raised from 0.85 to 0.9 to admit t0004's DSI 0.8824, and peak lower lowered from 40 Hz
+to 30 Hz to admit t0004's 32 Hz peak. This is explicit but anchored to the t0004 generator,
+not to measured DSGC variability. After t0008 (ModelDB 189347) and the Na/K grid search
+(S-0002-01) produce real simulated curves, re-evaluate: (a) re-parameterise t0004 so its curve
+lands inside the literature envelope (reducing DSI_MAX from 0.9 to 0.83 would drop DSI to 0.8
+and peak to about 37 Hz), or (b) formally widen the envelope with a citation justifying the
+wider bounds. Deliverable: an answer asset recommending a resolution, with corresponding
+corrections file. Recommended task types: answer-question, correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cross-validate compute_reliability against independent split-half
+implementations (odd-even, bootstrap, Spearman-Brown)</strong> (S-0012-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+compute_reliability implements one split-half estimator: partition trials into even/odd
+indices, per-angle means, Pearson r, clamped to [0, 1]. Canonical alternatives differ in
+defensible ways: (a) random-draw split rather than parity, (b) Spearman-Brown prophecy
+correction to project split-half r back to full-length reliability, (c) Spearman rank
+correlation for ordinal robustness, (d) bootstrap resampling to produce a confidence interval.
+Build compute_reliability_variants returning all four on the same TuningCurve, run it on
+t0004's trials.csv and downstream simulated trials, and write an answer asset documenting
+where the estimates agree or diverge. If a variant is systematically preferred for our
+approximately 20 trials per angle, promote it to the default via a corrections-aware revision.
+Recommended task types: comparative-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model

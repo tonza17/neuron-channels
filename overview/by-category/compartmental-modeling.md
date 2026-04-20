@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (8)](../papers/by-category/compartmental-modeling.md) | [Answers
 (3)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(28)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(29)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md)
 
 ---
@@ -507,7 +507,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 4 closed)
+## Suggestions (25 open, 4 closed)
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
@@ -660,6 +660,26 @@ Strahler-calibrated asset by per-branch axial resistance, total surface area, an
 per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the
 measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
+reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0012_tuning_curve_scoring_loss_library](../../tasks/t0012_tuning_curve_scoring_loss_library/)
+
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
+simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
+so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
+resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
+under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
+tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
+simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
+produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
+validation that the scorer library does what it promises on a non-trivial candidate.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 

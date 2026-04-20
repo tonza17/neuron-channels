@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T00:17:50Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-20T10:06:19Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>90008</char_count>
-    <byte_count>90185</byte_count>
-    <estimated_tokens>22502</estimated_tokens>
+    <char_count>91952</char_count>
+    <byte_count>92110</byte_count>
+    <estimated_tokens>22988</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -120,10 +120,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
         <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 9
+Completed tasks: 10
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -173,6 +174,12 @@ Completed: 2026-04-20
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
 
+## Tuning-curve scoring loss library
+ID: t0012_tuning_curve_scoring_loss_library
+Completed: 2026-04-20
+Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -187,7 +194,6 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0008_port_modeldb_189347</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
-        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -196,7 +202,7 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 10
+Planned or active tasks: 9
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -473,95 +479,6 @@ demonstrates what each plot looks like.
 * **`scipy.stats.bootstrap` unavailable**: fall back to a 4-line NumPy bootstrap.
 * **Multi-model overlay becomes illegible with &gt; 6 models**: cap overlay at 6 and surface a warning;
   the CLI batches additional models into separate PNGs.
-
-## Tuning-curve scoring loss library
-ID: t0012_tuning_curve_scoring_loss_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
-Dependencies: t0004_generate_target_tuning_curve
-
-#### Motivation
-
-The t0002 literature survey set four concurrent quantitative targets an optimised DSGC model must
-hit: DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **&lt; 10 Hz**, HWHM **60-90°**. The
-project has four registered metrics (`direction_selectivity_index`, `tuning_curve_hwhm_deg`,
-`tuning_curve_reliability`, `tuning_curve_rmse`). Every downstream optimisation task (Na/K grid
-search S-0002-01, morphology sweep S-0002-04, E/I ratio scan S-0002-05, active-vs-passive dendrites
-S-0002-02) needs a shared scoring function: same target, same weighting, same tie-breaks. Without
-this library, each task will invent its own scoring and cross-task comparisons of &quot;who wins&quot; become
-meaningless. This task provides that canonical scorer.
-
-Covers suggestion **S-0002-09** (and subsumes **S-0004-03** — see the t0006 correction file).
-
-#### Scope
-
-The library `tuning_curve_loss` exposes:
-
-1. `score(simulated_curve_csv, target_curve_csv | None) -&gt; ScoreReport` — returns a frozen dataclass
-   containing:
-   * `loss_scalar` (float) — weighted-Euclidean-distance-in-normalised-space loss combining the four
-     envelope targets.
-   * `dsi_residual`, `peak_residual_hz`, `null_residual_hz`, `hwhm_residual_deg` — individual
-     residuals with signs.
-   * `rmse_vs_target` — point-wise RMSE of `(angle, firing_rate)` against the target curve (only
-     when a target is supplied).
-   * `reliability` — cross-trial coefficient of determination (maps onto the registered
-     `tuning_curve_reliability` metric).
-   * `passes_envelope` (bool) — whether the simulated curve lands inside the t0002 envelope on all
-     four targets simultaneously.
-   * `per_target_pass` — dict `{&quot;dsi&quot;: bool, &quot;peak&quot;: bool, &quot;null&quot;: bool, &quot;hwhm&quot;: bool}`.
-2. `compute_dsi(curve_csv) -&gt; float`
-3. `compute_preferred_peak_hz(curve_csv) -&gt; float`
-4. `compute_null_residual_hz(curve_csv) -&gt; float`
-5. `compute_hwhm_deg(curve_csv) -&gt; float`
-6. Tuning-curve CSV schema constant: `(angle_deg, trial_seed, firing_rate_hz)`.
-7. CLI: `python -m tuning_curve_loss.cli &lt;simulated.csv&gt; [--target &lt;target.csv&gt;]`.
-
-Weights for the scalar loss default to **DSI 0.25, peak 0.25, null 0.25, HWHM 0.25** but are
-user-overridable via a keyword argument and via a JSON config file; the defaults and rationale are
-documented in the asset&#x27;s `description.md`.
-
-#### Dependencies
-
-* **t0004_generate_target_tuning_curve** — source of the canonical `target-tuning-curve` dataset
-  used as the default comparison target and as the smoke-test fixture.
-
-#### Expected Outputs
-
-* **1 library asset** (`assets/library/tuning-curve-loss/`) with:
-  * `description.md` covering API, weight defaults, and worked examples
-  * `module_paths` pointing at `code/tuning_curve_loss/`
-  * `test_paths` pointing at `code/tuning_curve_loss/test_*.py` with at least:
-    * Identity test: `score(target, target)` must return `loss_scalar == 0.0` and
-      `passes_envelope is True`.
-    * Envelope-boundary tests: hand-crafted curves just inside and just outside each of the four
-      envelope boundaries.
-    * Reliability test: two curves with identical trial-means but very different trial-to-trial
-      variance produce different `reliability` values.
-
-#### Approach
-
-Pure Python + NumPy + pandas. No simulator dependency. The DSI and HWHM computations must match the
-closed-form computations used in t0004 to produce the target curve, so that `score(target, target)`
-is exactly zero. Use the registered metric keys from `meta/metrics/` so that scored values can be
-written directly into `results/metrics.json` without post-hoc renaming.
-
-#### Questions the task answers
-
-1. Does `score(target, target)` return `loss_scalar == 0.0`?
-2. Do the envelope-boundary tests flip `passes_envelope` at the correct boundary to within
-   floating-point tolerance?
-3. Does the scorer accept multi-trial CSVs and correctly combine trials into a mean before computing
-   DSI, peak, null and HWHM?
-
-#### Risks and Fallbacks
-
-* **The literature envelope numbers conflict with the t0004 target curve** (e.g., the target sits
-  right at an envelope boundary): document the target&#x27;s position on the envelope in the library
-  description; do not silently redefine targets.
-* **Trial-to-trial variance inflates `reliability` beyond sensible bounds**: clamp to [0, 1] and
-  document the clamp.
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
@@ -1008,6 +925,8 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0009-01</id>
         <id>S-0009-02</id>
         <id>S-0009-03</id>
+        <id>S-0012-01</id>
+        <id>S-0012-03</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1025,12 +944,16 @@ Yes. NEURON 8.2.7+ (HEAD 34cf696+, build 2025-05-21) installs via the Windows `.
         <id>S-0009-05</id>
         <id>S-0009-06</id>
         <id>S-0009-08</id>
+        <id>S-0012-02</id>
+        <id>S-0012-04</id>
+        <id>S-0012-05</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0009-07</id>
+        <id>S-0012-06</id>
       </source_ids>
       <content>
-Open suggestions: 38
+Open suggestions: 44
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1158,6 +1081,20 @@ Kind: technique
 Source task: t0009_calibrate_dendritic_diameters
 Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation): it tunes channel densities against single-cell...
 
+## Add a verify_library_asset.py framework verificator for library asset structure and metadata
+ID: S-0012-01
+Priority: high
+Kind: library
+Source task: t0012_tuning_curve_scoring_loss_library
+The t0012 library asset was hand-validated against meta/asset_types/library/specification.md because arf/scripts/verificators/ has verify_suggestions.py, verify_metrics.py, verify_research_papers.py, etc., but no verify_library_asset.py. Every future write-library task (S-0002-08 SAC drive, S-0003-02 ModelDB 189347, S-0003-04 NetPyNE Batch harness, S-0005-04 SWC loader, S-0009-08 Rall quaddiameter, t0011 response visualisation) will need the same checks: details.json present with all required fields, library_id matches folder name and the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md has the 8 mandatory sections, and categories exist in meta/categories/. Port the...
+
+## Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC reproduction to score the ported ModelDB 189347 curve
+ID: S-0012-03
+Priority: high
+Kind: experiment
+Source task: t0012_tuning_curve_scoring_loss_library
+t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008&#x27;s verification step so the Poleg-Polsky reproduction&#x27;s simulated curve is scored against the t0004 target and the resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008&#x27;s simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and produces a side-by-side overlay plot (simulated vs target). This is the...
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -1277,6 +1214,27 @@ Kind: library
 Source task: t0009_calibrate_dendritic_diameters
 Rall&#x27;s 3/2 power rule (r_parent^(3/2) = sum r_child^(3/2)) is the only biophysically principled way to match impedance across a binary tree; our max-child Strahler bins have no such guarantee. Implement TREES-toolbox&#x27;s quaddiameter algorithm as ~80 lines of pure Python, solve the system bottom-up from the 131 terminals with the Poleg-Polsky terminal mean fixed, and produce a sibling asset dsgc-baseline-morphology-rall. Compare against the Strahler-calibrated asset by per-branch axial resistance, total surface area, and per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task...
 
+## Parametric curve fitting (von Mises / wrapped Gaussian) for sub-degree HWHM estimates on sparse 12-angle grids
+ID: S-0012-02
+Priority: medium
+Kind: technique
+Source task: t0012_tuning_curve_scoring_loss_library
+The current compute_hwhm_deg interpolates linearly between the two 30 deg samples bracketing the half-maximum on each flank, limiting HWHM resolution to about 1 deg and producing a 5.5 deg deficit versus the closed-form 65.5 deg (measured 60.0 deg on the t0004 target). Add a fit_parametric_tuning_curve helper to tuning_curve_loss.metrics that fits a von Mises or wrapped Gaussian to the 12 angles via scipy.optimize.curve_fit, derives an analytic HWHM from the fitted kappa or sigma, and exposes hwhm_deg_parametric and parametric_fit_residual_rms on ScoreReport. Compare parametric HWHM against interpolated HWHM on t0004, t0008 (ModelDB 189347), and S-0002-01 grid-search points; document when...
+
+## Alternative loss formulations (L1, max-residual, weighted-L-infinity) benchmarked against the Euclidean default
+ID: S-0012-04
+Priority: medium
+Kind: technique
+Source task: t0012_tuning_curve_scoring_loss_library
+tuning_curve_loss currently computes loss_scalar as a weighted Euclidean (L2) norm of four normalised residuals. Downstream optimisers may prefer L1 (more robust to a single bad metric, sub-gradient at zero), max-residual / L-infinity (guarantees every individual target is within a budget), or Huber (quadratic near zero, linear in the tails). Add pluggable loss_kind=&#x27;l2&#x27;|&#x27;l1&#x27;|&#x27;linf&#x27;|&#x27;huber&#x27; to score and score_curves, keep &#x27;l2&#x27; as the default to preserve the identity contract, and add parametrised tests that exercise each norm on the same synthetic inputs used by test_envelope.py. Once downstream grid searches (S-0002-01, S-0002-04, S-0002-05) have produced O(1000) points, compare how each...
+
+## Revisit envelope widening (DSI upper 0.85 to 0.9, peak lower 40 to 30 Hz) once real simulation results are in
+ID: S-0012-05
+Priority: medium
+Kind: evaluation
+Source task: t0012_tuning_curve_scoring_loss_library
+REQ-7 was satisfied by widening two envelope bounds away from the t0002 literature values: DSI upper raised from 0.85 to 0.9 to admit t0004&#x27;s DSI 0.8824, and peak lower lowered from 40 Hz to 30 Hz to admit t0004&#x27;s 32 Hz peak. This is explicit but anchored to the t0004 generator, not to measured DSGC variability. After t0008 (ModelDB 189347) and the Na/K grid search (S-0002-01) produce real simulated curves, re-evaluate: (a) re-parameterise t0004 so its curve lands inside the literature envelope (reducing DSI_MAX from 0.9 to 0.83 would drop DSI to 0.8 and peak to about 37 Hz), or (b) formally widen the envelope with a citation justifying the wider bounds. Deliverable: an answer asset...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -1297,6 +1255,13 @@ Priority: low
 Kind: dataset
 Source task: t0009_calibrate_dendritic_diameters
 The calibration imposes a nearby cell&#x27;s diameters on our topology; a cell-specific ground truth would validate or refute the transfer. The 141009_Pair1DSGC reconstruction came from the Murphy-Baum / Feller two-photon rig; contact the original authors to obtain the raw image stack and run a segmentation + radius-estimation pipeline (e.g., Vaa3D or neuTube) to recover per-compartment diameters. Register the result as dsgc-baseline-morphology-imaged and use it as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external data availability; likely requires an intervention for author contact. Recommended task types: download-dataset, data-analysis.
+
+## Cross-validate compute_reliability against independent split-half implementations (odd-even, bootstrap, Spearman-Brown)
+ID: S-0012-06
+Priority: low
+Kind: evaluation
+Source task: t0012_tuning_curve_scoring_loss_library
+compute_reliability implements one split-half estimator: partition trials into even/odd indices, per-angle means, Pearson r, clamped to [0, 1]. Canonical alternatives differ in defensible ways: (a) random-draw split rather than parity, (b) Spearman-Brown prophecy correction to project split-half r back to full-length reliability, (c) Spearman rank correlation for ordinal robustness, (d) bootstrap resampling to produce a confidence interval. Build compute_reliability_variants returning all four on the same TuningCurve, run it on t0004&#x27;s trials.csv and downstream simulated trials, and write an answer asset documenting where the estimates agree or diverge. If a variant is systematically...
       </content>
     </section>
   </sections>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T00:17:50Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-20T10:06:19Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>66680</char_count>
-    <byte_count>66811</byte_count>
-    <estimated_tokens>16670</estimated_tokens>
+    <char_count>67319</char_count>
+    <byte_count>67450</byte_count>
+    <estimated_tokens>16829</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -119,10 +119,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0006_brainstorm_results_2</id>
         <id>t0007_install_neuron_netpyne</id>
         <id>t0009_calibrate_dendritic_diameters</id>
+        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
       </source_ids>
       <content>
-Completed tasks: 9
+Completed tasks: 10
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -172,6 +173,12 @@ Completed: 2026-04-20
 Short description: Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
 Result summary: Results Summary: Calibrate Dendritic Diameters Summary Replaced the uniform **0.125 µm** placeholder radius on every compartment of `dsgc-baseline-morphology` with a Poleg-Polsky &amp; Diamond 2016 per-Strahler-order taper, registered as the new dataset asset `dsgc-baseline-morphology-calibrated`. Topology is preserved byte-for-byte (**6,736** compartments, **129** branch points, **131** leaves, **1,536.25 µm** dendritic length) while total dendritic surface area grows **7.99x** and total dendritic axial resistance drops to **~4.8%** of the placeholder baseline. Metrics * **Distinct radii (calibrated)**: 4 — soma **4.118 µm**, primary **3.694 µm** (Strahler order 5), mid **1.653 µm** (orders...
 
+## Tuning-curve scoring loss library
+ID: t0012_tuning_curve_scoring_loss_library
+Completed: 2026-04-20
+Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+Result summary: Results Summary: Tuning-Curve Scoring Loss Library Summary Built and registered the `tuning_curve_loss` Python library: an 8-module package that loads a DSGC tuning curve from CSV, computes DSI, peak, null, and HWHM, and scores a candidate curve against the t0004 target as a weighted Euclidean residual in envelope-half-width units. The identity gate `score(target, target).loss_scalar == 0.0` and `passes_envelope is True` holds exactly. All 47 pytest tests pass, ruff and mypy are clean, and the library asset is registered at `assets/library/tuning_curve_loss/`. Metrics * **Tests passed**: **47 / 47** (0 failed, 0 skipped) * **Identity loss on t0004 target**: **0.0** (exact) * **Library...
+
 ## Brainstorm results session 3
 ID: t0014_brainstorm_results_3
 Completed: 2026-04-19
@@ -186,7 +193,6 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0008_port_modeldb_189347</id>
         <id>t0010_hunt_missed_dsgc_models</id>
         <id>t0011_response_visualization_library</id>
-        <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0013_resolve_morphology_provenance</id>
         <id>t0015_literature_survey_cable_theory</id>
         <id>t0016_literature_survey_dendritic_computation</id>
@@ -195,7 +201,7 @@ Result summary: Brainstorm session 3 — Summary Summary Planned a five-task lit
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Planned or active tasks: 10
+Planned or active tasks: 9
 
 ## Port ModelDB 189347 and similar DSGC compartmental models to NEURON
 ID: t0008_port_modeldb_189347
@@ -217,13 +223,6 @@ Status: not_started
 Effective date: 2026-04-19
 Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
 Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
-
-## Tuning-curve scoring loss library
-ID: t0012_tuning_curve_scoring_loss_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
-Dependencies: t0004_generate_target_tuning_curve
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
