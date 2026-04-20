@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Research matplotlib polar plotting conventions, Okabe-Ito colour palette, and scipy bootstrap API.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T15:03:09Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
