@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\code\test_hanson_demo.py", line 105, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\code\test_hanson_demo.py", line 43, in main
+    from neuron import h  # noqa: PLC0415
+    ^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'neuron'

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run ruff check --fix tasks/t0010_hunt_missed_dsgc_models/code/",
+  "exit_code": 1,
+  "duration_seconds": 0.177,
+  "started_at": "2026-04-20T13:55:32Z",
+  "completed_at": "2026-04-20T13:55:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "045_20260420T135532Z_uv-run-ruff.stdout.txt",
+  "stderr_file": "045_20260420T135532Z_uv-run-ruff.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

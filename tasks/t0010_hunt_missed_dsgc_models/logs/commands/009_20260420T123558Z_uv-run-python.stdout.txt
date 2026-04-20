@@ -1,0 +1,630 @@
+{
+  "paper_count": 10,
+  "papers": [
+    {
+      "paper_id": "10.1016_j.neuron.2016.02.013",
+      "title": "NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion Discrimination in Retinal Ganglion Cells",
+      "doi": "10.1016/j.neuron.2016.02.013",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0896627316001069",
+      "pdf_url": "http://www.cell.com/article/S0896627316001069/pdf",
+      "date_published": "2016-03-16",
+      "year": 2016,
+      "authors": [
+        {
+          "name": "Alon Poleg-Polsky",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        },
+        {
+          "name": "Jeffrey S. Diamond",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "National Institute of Neurological Disorders and Stroke, NIH",
+          "country": "US"
+        }
+      ],
+      "journal": "Neuron",
+      "venue_kind": "journal",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "synaptic-integration",
+        "dendritic-computation",
+        "retinal-ganglion-cell"
+      ],
+      "abstract": "Postsynaptic responses in many CNS neurons are typically small and variable, often making it difficult to distinguish physiologically relevant signals from background noise. To extract salient information, neurons are thought to integrate multiple synaptic inputs and/or selectively amplify specific synaptic activation patterns. Here, we present evidence for a third strategy: directionally selective ganglion cells (DSGCs) in the mouse retina multiplicatively scale visual signals via a mechanism that requires both nonlinear NMDA receptor (NMDAR) conductances in DSGC dendrites and directionally tuned inhibition provided by the upstream retinal circuitry. Postsynaptic multiplication enables DSGCs to discriminate visual motion more accurately in noisy visual conditions without compromising directional tuning. These findings demonstrate a novel role for NMDARs in synaptic processing and provide new insights into how synaptic and network features interact to accomplish physiologically relevant neural computations.",
+      "citation_key": "PolegPolsky2016",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/files/poleg-polsky_2016_nmda-dsgc-multiplicative.xml"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/summary.md",
+      "summary": "Poleg-Polsky and Diamond investigate how direction-selective ganglion cells (DSGCs) in the mouse\nretina amplify visual signals while preserving reliable directional tuning. The central question is\nwhy NMDA receptors are present on DSGC dendrites when direction selectivity can be computed without\nthem. The answer proposed is that NMDARs provide multiplicative gain -- scaling responses in both\nthe preferred and null directions by the same factor -- which maintains the direction-selectivity\nindex, increases absolute signal amplitude, and improves resistance to visual noise.\n\nThe experiments combine whole-cell patch-clamp from GFP-labeled DRD4 mouse DSGCs with a\nmorphologically realistic multicompartmental NEURON model containing 177 AMPAR + 177 NMDAR + 177\nGABA_A synapses on reconstructed ON dendrites. Slope-angle analysis distinguishes multiplicative\nfrom additive NMDAR scaling. Two pharmacological manipulations convert multiplication to addition:\nremoving voltage-dependent Mg2+ block and reversing GABAergic inhibition to excitation with high-Cl-\ninternal solution. The NEURON model replicates all experimental PSP and AP responses and predicts\nadditive NMDAR scaling under both pharmacological conditions.\n\nThe key finding is that NMDAR multiplication requires the conjunction of voltage-dependent NMDAR\nconductance and directionally tuned GABAergic inhibition. Under noiseless conditions, NMDAR blockade\npreserves DSI but reduces AP firing amplitude. Under noisy conditions, ROC analysis demonstrates\nsignificantly better signal discrimination with intact NMDARs than with AP5 or 0 Mg2+. Dendritic\nspikes were absent in DRD4 DSGCs; passive propagation proved sufficient for DS computation.\n\nFor this project, the Poleg-Polsky & Diamond NEURON model is the essential template. Its geometry\n(single reconstructed DRD4 DSGC), synaptic counts (177 AMPA + 177 GABA on ON dendrites), and circuit\narchitecture (tuned GABAergic inhibition as stronger ND conductance) directly match the planned\nimplementation. Available on ModelDB (accession 189347). The paper validates passive- dendrite\nsufficiency for project RQ4, constrains NMDAR conductance Mg2+-block parameters, and establishes ROC\naccuracy-curve area as the appropriate metric for comparing DS tuning fidelity across model\nvariants.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2017.07.020",
+      "title": "Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity",
+      "doi": "10.1016/j.neuron.2017.07.020",
+      "url": "https://doi.org/10.1016/j.neuron.2017.07.020",
+      "pdf_url": "https://www.cell.com/article/S0896627317306426/pdf",
+      "date_published": "2017-08-16",
+      "year": 2017,
+      "authors": [
+        {
+          "name": "David Koren",
+          "country": "US",
+          "institution": "University of Chicago"
+        },
+        {
+          "name": "James C. R. Grove",
+          "country": "US",
+          "institution": "University of Chicago"
+        },
+        {
+          "name": "Wei Wei",
+          "country": "US",
+          "institution": "University of Chicago"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Chicago",
+          "country": "US"
+        }
+      ],
+      "journal": "Neuron",
+      "venue_kind": "journal",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "voltage-gated-channels",
+        "patch-clamp"
+      ],
+      "abstract": "Compartmentalized signaling in dendritic subdomains is critical for the function of many central neurons. In the retina, individual dendritic sectors of a starburst amacrine cell (SAC) are preferentially activated by different directions of linear motion, indicating limited signal propagation between the sectors. However, the mechanism that regulates this propagation is poorly understood. Here, we find that metabotropic glutamate receptor 2 (mGluR2) signaling, which acts on voltage-gated calcium channels in SACs, selectively restricts cross-sector signal propagation in SACs, but does not affect local dendritic computation within individual sectors. mGluR2 signaling ensures sufficient electrotonic isolation of dendritic sectors to prevent their depolarization during non-preferred motion, yet enables controlled multicompartmental signal integration that enhances responses to preferred motion. Furthermore, mGluR2-mediated dendritic compartmentalization in SACs is important for the functional output of direction-selective ganglion cells (DSGCs). Therefore, our results directly link modulation of dendritic compartmentalization to circuit-level encoding of motion direction in the retina.",
+      "citation_key": "Koren2017",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/files/koren_2017_cross-compartmental-ds.json",
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/files/koren_2017_cross-compartmental-ds.md"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/summary.md",
+      "summary": "Koren, Grove, and Wei address a gap in the mechanistic understanding of retinal direction\nselectivity: how the starburst amacrine cell (SAC) maintains the required balance between\nelectrotonic isolation and cross-compartmental signal integration in its dendrites, and how that\nbalance is regulated and coupled to direction-selective ganglion cell (DSGC) output. Earlier work\nestablished that SAC dendritic sectors are semi-independent computational units with centrifugal\npreference, but the mechanisms controlling the \"semi\" part of that isolation were unknown.\n\nMethodologically the paper combines two-photon GCaMP6 imaging of distal SAC varicosities, whole-cell\npatch-clamp of SACs and DSGCs, subregion visual stimulation to dissociate local from global\ndendritic activation, a selective pharmacology (LY341495 antagonist and LY354740 agonist) for\nmGluR2, and mGluR2 knockout mice as an off-target control. Voltage-gated calcium channel subtypes\nare identified with omega-conotoxin GVIA (N-type) and omega-agatoxin IVA (P/Q-type).\n\nThe central findings are that (i) the strong centrifugal response of distal SAC varicosities during\nfull-field motion is partly produced by trans-somatic signal integration from the opposite side of\nthe dendritic tree; (ii) mGluR2 signaling inhibits N- and P/Q-type VGCCs on SACs to enforce\nsufficient electrotonic isolation during centripetal motion; (iii) blocking mGluR2 selectively\nenhances preferred-direction IPSCs onto DSGCs (delay **289 ms at 440 um/s**, **147 ms at 1100\num/s**); and (iv) this aberrant inhibition reduces DSGC spiking specifically at high motion speeds,\ncontributing to the broad speed tuning of the direction-selective circuit.\n\nFor this project's goal of a compartmental DSGC model that matches a target angle-to-AP-frequency\ncurve, the paper has two concrete implications. First, the IPSC input model on the DSGC must reflect\nspeed-dependent latency and amplitude arising from SAC trans-somatic propagation rather than a\nspeed-invariant null-direction inhibition. Second, the saturation of centrifugal SAC calcium signals\nand null-direction DSGC IPSCs, even under strong pharmacological perturbation, suggests that the\ntarget tuning curve can be reproduced with a degenerate set of Na/K conductance combinations (RQ1\n\"ridge\" hypothesis), because upstream inhibition is the first-order constraint on firing at\npreferred direction and any well-chosen conductance combination that preserves somatic excitability\nwill suffice. Active dendritic conductances in the DSGC (RQ4) can be evaluated against this\nframework, but the primary directional signal arrives pre-shaped by SAC compartmental computation,\nnot generated locally in the DSGC dendrites.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1038_nature18609",
+      "title": "Species-specific wiring for direction selectivity in the mammalian retina",
+      "doi": "10.1038/nature18609",
+      "url": "https://www.nature.com/articles/nature18609",
+      "pdf_url": null,
+      "date_published": "2016-07-07",
+      "year": 2016,
+      "authors": [
+        {
+          "name": "Huayu Ding",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        },
+        {
+          "name": "Robert G. Smith",
+          "country": "US",
+          "institution": "University of Pennsylvania"
+        },
+        {
+          "name": "Alon Poleg-Polsky",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        },
+        {
+          "name": "Jeffrey S. Diamond",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        },
+        {
+          "name": "Kevin L. Briggman",
+          "country": "DE",
+          "institution": "Max Planck Institute for Medical Research"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "National Institute of Neurological Disorders and Stroke, NIH",
+          "country": "US"
+        },
+        {
+          "name": "University of Pennsylvania",
+          "country": "US"
+        },
+        {
+          "name": "Max Planck Institute for Medical Research",
+          "country": "DE"
+        }
+      ],
+      "journal": "Nature",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "abstract": "Directionally tuned signaling in starburst amacrine cell (SAC) dendrites lies at the heart of the direction selective (DS) circuit in the mammalian retina. The relative contributions of intrinsic cellular properties and network connectivity to SAC DS remain unclear. We present a detailed connectomic reconstruction of SAC circuitry in mouse retina and describe previously unknown features of synapse distributions along SAC dendrites: 1) input and output synapses are segregated, with inputs restricted to proximal dendrites; 2) the distribution of inhibitory inputs is fundamentally different from that observed in rabbit retina. An anatomically constrained SAC network model suggests that SAC-SAC wiring differences between mouse and rabbit retina underlie distinct contributions of synaptic inhibition to velocity and contrast tuning and receptive field structure. In particular, the model indicates that mouse connectivity enables SACs to encode lower linear velocities that account for smaller eye diameter, thereby conserving angular velocity tuning.",
+      "citation_key": "Ding2016",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/files/ding_2016_ds-network.xml"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/summary.md",
+      "summary": "Ding et al. use serial block-face EM to reconstruct the complete synaptic wiring of four starburst\namacrine cells in mouse retina and compare it with the previously characterised rabbit circuit. The\ncentral finding is that mouse SACs receive inhibitory SAC-SAC inputs exclusively on their proximal\ndendrites, whereas rabbit SACs receive them distally. The study is motivated by the need to\nunderstand which circuit features -- intrinsic or network-based -- account for direction selectivity\nof SAC dendrites, and whether that organisation varies across species.\n\nTo interpret the anatomy, the authors construct a 7-SAC network model in Neuron-C with anatomically\nmeasured dendritic diameters, biophysically grounded active conductances (NaV1.8, Kdr, L-type\nCa^2+), and synapse placements derived from the EM data. Mouse-like (proximal inhibition, 145 um\ninter-soma spacing) and rabbit-like (distal inhibition, 200 um spacing) configurations are compared\nover stimulus velocities 30-2000 um/s. Two-photon calcium imaging and SR95531 pharmacology confirm\nthe model predictions in vitro.\n\nKey quantitative results: the mouse model remains DS down to ~100 um/s linear velocity, matching the\nsmaller mouse eye (3 mm axial diameter, ~30 um/deg) to conserve angular velocity tuning.\nDistributing BC inputs uniformly reverses direction preference in the model. SAC-SAC inhibition is\nnecessary for DS at high contrast (300%) and for DS to centrally restricted stimuli in mouse. Full\nbiophysical parameters (Rm = 10,000 Ohm-cm^2, Ri = 75 Ohm-cm, NaV1.8/Kdr/Ca^2+ densities per\ndendritic zone) are tabulated and distributed with the model code.\n\nFor this project, Ding et al. (2016) provides three concrete resources: (1) a fully described\nmulti-compartmental DS circuit model with biophysical parameters and DSI protocol that can directly\ninform DSGC model parameterisation; (2) a design principle -- restrict excitatory inputs to proximal\nzones away from the output zone -- guiding AMPA vs. GABA placement in the DSGC dendritic model; and\n(3) mouse-specific synaptic geometry (inhibitory inputs at proximal third, excitatory at proximal\ntwo-thirds) to validate against when choosing GABA input distributions in the project compartmental\nDSGC model.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1371_journal.pcbi.1000899",
+      "title": "Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a Simulation of the Direction-Selective Ganglion Cell",
+      "doi": "10.1371/journal.pcbi.1000899",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899",
+      "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000899&type=printable",
+      "date_published": "2010-08-19",
+      "year": 2010,
+      "authors": [
+        {
+          "name": "Michael J. Schachter",
+          "country": "US",
+          "institution": "University of Pennsylvania"
+        },
+        {
+          "name": "Nicholas Oesch",
+          "country": "US",
+          "institution": "Oregon Health & Science University"
+        },
+        {
+          "name": "Robert G. Smith",
+          "country": "US",
+          "institution": "University of Pennsylvania"
+        },
+        {
+          "name": "W. Rowland Taylor",
+          "country": "US",
+          "institution": "Oregon Health & Science University"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Pennsylvania",
+          "country": "US"
+        },
+        {
+          "name": "Oregon Health & Science University",
+          "country": "US"
+        }
+      ],
+      "journal": "PLoS Computational Biology",
+      "venue_kind": "journal",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation",
+        "retinal-ganglion-cell",
+        "voltage-gated-channels",
+        "synaptic-integration",
+        "cable-theory"
+      ],
+      "abstract": "The On-Off direction-selective ganglion cell (DSGC) in mammalian retinas responds most strongly to a stimulus moving in a specific direction. The DSGC initiates spikes in its dendritic tree, which are thought to propagate to the soma with high probability. Both dendritic and somatic spikes in the DSGC display strong directional tuning, whereas somatic PSPs (postsynaptic potentials) are only weakly directional, indicating that spike generation includes marked enhancement of the directional signal. We used a realistic computational model based on anatomical and physiological measurements to determine the source of the enhancement. Our results indicate that the DSGC dendritic tree is partitioned into separate electrotonic regions, each summing its local excitatory and inhibitory synaptic inputs to initiate spikes. Within each local region the local spike threshold nonlinearly amplifies the preferred response over the null response on the basis of PSP amplitude. Using inhibitory conductances previously measured in DSGCs, the simulation results showed that inhibition is only sufficient to prevent spike initiation and cannot affect spike propagation. Therefore, inhibition will only act locally within the dendritic arbor. We identified the role of three mechanisms that generate directional selectivity (DS) in the local dendritic regions. First, a mechanism for DS intrinsic to the dendritic structure of the DSGC enhances DS on the null side of the cell's dendritic tree and weakens it on the preferred side. Second, spatially offset postsynaptic inhibition generates robust DS in the isolated dendritic tips but weak DS near the soma. Third, presynaptic DS is apparently necessary because it is more robust across the dendritic tree. The pre- and postsynaptic mechanisms together can overcome the local intrinsic DS. These local dendritic mechanisms can perform independent nonlinear computations to make a decision, and there could be analogous mechanisms within cortical circuitry.",
+      "citation_key": "Schachter2010",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/files/schachter_2010_dendritic-spikes-dsgc.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/summary.md",
+      "summary": "Schachter, Oesch, Smith & Taylor (2010) ask how the rabbit On-Off direction-selective ganglion cell\nconverts weakly directionally tuned synaptic input (PSP DSI ~0.2) into strongly tuned spike output\n(spike DSI ~0.8). The scope is a single-cell biophysical explanation: given the known circuitry\n(starburst amacrine cells providing presynaptic DS, spatially offset postsynaptic inhibition) and\nthe known cell (anatomical DSGC morphology with active dendrites), can the measured transformation\nbe reproduced, and what is each mechanism contribution? This is motivated by prior in vitro evidence\nfrom Oesch et al. (2005) that each somatic spike is triggered by a dendritic spike, and by the\nunresolved question of whether postsynaptic inhibition alone can account for DS.\n\nThe methodology is a NeuronC compartmental simulation of a reconstructed DSGC with Hodgkin-Huxley\nNa, Kv, Kv4, and Ca channels in the dendrites and soma, driven by AMPA-like excitatory and\nGABA-A-like inhibitory synapses whose conductances and timings match published voltage-clamp data.\nStimulation protocols include single-synapse threshold mapping, paired excitation+inhibition\ntitration, and full 12-direction drifting-bar experiments. Key design decisions include electrically\ncompartmentalizing the dendrites via high Rm and thin distal branches (Rin >1 GOhm), using uniform\nor graded dendritic gNa (**40 mS/cm^2** or **45 to 20 mS/cm^2**), and systematically removing each\nDS mechanism to isolate its contribution.\n\nThe headline results are that local dendritic spike thresholds act as ~4x nonlinear amplifiers of\nPSP-level DS; that physiological inhibition (**~4-10 nS**) can prevent spike initiation but cannot\nblock propagation (which would require ~85 nS); that presynaptic DS from SACs is the more robust\nmechanism across the arbor while postsynaptic inhibition dominates only at distal tips; and that an\nintrinsic dendritic geometric effect actually opposes the desired DS on the preferred side,\nrequiring network DS to be strong enough to overcome it. Somatic voltage-clamp additionally\nunderestimates distal conductances by 40-100%.\n\nFor the present project compartmental modeling of DSGCs, this paper provides a concrete reference\ndesign (channel densities, synapse conductances, inhibition placement, morphology source) and three\nload-bearing predictions to reproduce: (i) the 4x amplification of DSI from PSPs to spikes via\ndendritic Na, (ii) the initiation-vs-propagation asymmetry for inhibition, and (iii) the\ncompartmentalized-subunit structure of the tree. It also establishes that presynaptic DS cannot be\nomitted from a DSGC model intended to match physiological spike tuning and gives quantitative\nguidance on how to calibrate voltage-clamp-derived conductances for use in simulation.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1523_JNEUROSCI.5017-13.2014",
+      "title": "Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal Ganglion Cells Lack Direction Tuning",
+      "doi": "10.1523/JNEUROSCI.5017-13.2014",
+      "url": "https://www.jneurosci.org/content/34/11/3976",
+      "pdf_url": "https://www.jneurosci.org/content/jneuro/34/11/3976.full.pdf",
+      "date_published": "2014-03-12",
+      "year": 2014,
+      "authors": [
+        {
+          "name": "Silvia J.H. Park",
+          "country": "US",
+          "institution": "Yale University School of Medicine"
+        },
+        {
+          "name": "In-Jung Kim",
+          "country": "US",
+          "institution": "Yale University School of Medicine"
+        },
+        {
+          "name": "Loren L. Looger",
+          "country": "US",
+          "institution": "Howard Hughes Medical Institute, Janelia Farm Research Campus"
+        },
+        {
+          "name": "Jonathan B. Demb",
+          "country": "US",
+          "institution": "Yale University School of Medicine"
+        },
+        {
+          "name": "Bart G. Borghuis",
+          "country": "US",
+          "institution": "University of Louisville School of Medicine"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "Yale University School of Medicine",
+          "country": "US"
+        },
+        {
+          "name": "Howard Hughes Medical Institute, Janelia Farm Research Campus",
+          "country": "US"
+        },
+        {
+          "name": "University of Louisville School of Medicine",
+          "country": "US"
+        }
+      ],
+      "journal": "The Journal of Neuroscience",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "patch-clamp"
+      ],
+      "abstract": "Direction selectivity represents a fundamental visual computation. In mammalian retina, On-Off direction-selective ganglion cells (DSGCs) respond strongly to motion in a preferred direction and weakly to motion in the opposite, null direction. Electrical recordings suggested three direction-selective (DS) synaptic mechanisms: DS GABA release during null-direction motion from starburst amacrine cells (SACs) and DS acetylcholine and glutamate release during preferred direction motion from SACs and bipolar cells. However, evidence for DS acetylcholine and glutamate release has been inconsistent and at least one bipolar cell type that contacts another DSGC (On-type) lacks DS release. Here, whole-cell recordings in mouse retina showed that cholinergic input to On-Off DSGCs lacked DS, whereas the remaining (glutamatergic) input showed apparent DS. Fluorescence measurements with the glutamate biosensor intensity-based glutamate-sensing fluorescent reporter (iGluSnFR) conditionally expressed in On-Off DSGCs showed that glutamate release in both On- and Off-layer dendrites lacked DS, whereas simultaneously recorded excitatory currents showed apparent DS. With GABA-A receptors blocked, both iGluSnFR signals and excitatory currents lacked DS. Our measurements rule out DS release from bipolar cells onto On-Off DSGCs and support a theoretical model suggesting that apparent DS excitation in voltage-clamp recordings results from inadequate voltage control of DSGC dendrites during null-direction inhibition. SAC GABA release is the apparent sole source of DS input onto On-Off DSGCs.",
+      "citation_key": "Park2014",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/files/park_2014_dsgc-ei.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/summary.md",
+      "summary": "Park et al. (2014) investigate the synaptic basis of direction selectivity in mouse On-Off DSGCs,\nasking whether acetylcholine and glutamate inputs are genuinely directionally tuned alongside the\nwell-established null-direction GABA from starburst amacrine cells. The study is motivated by a\ndecade of contradictory voltage-clamp data that appeared to show preferred-direction-tuned\nexcitatory conductances, implying DS presynaptic release from bipolar cells and SAC cholinergic\nterminals.\n\nThe authors combine whole-cell patch-clamp with simultaneous two-photon imaging of iGluSnFR\nconditionally expressed on DSGC dendrites via CART-Cre mice, applying pharmacological manipulations\n(hexamethonium for nicotinic block, gabazine for GABA-A block). Recording the optical glutamate\nsignal and electrical conductance in the same cell at the same time allows direct dissociation of\npresynaptic release directionality from voltage-clamp measurement artefacts.\n\nThe central result is unambiguous: glutamate release lacks directional tuning (iGluSnFR P - N =\n+0.073 +/- 0.04, p = 0.95) even while simultaneously recorded excitatory current appears tuned\n(+0.35 +/- 0.07 nS, p = 0.00015). Blocking GABA-A receptors with gabazine abolishes apparent\nexcitatory DS in both modalities, confirming the artefact arises from imperfect space clamp during\nstrong null-direction inhibition (2.43 +/- 0.31 nS). The DS index of recorded cells is 0.65 +/-\n0.05, establishing a quantitative target for model optimisation.\n\nFor this project's compartmental simulation, these results provide three hard constraints: (1)\nexcitatory inputs (glutamate and acetylcholine) must be modelled as omnidirectional; (2) null-\ndirection GABA inhibition is the primary DS-generating mechanism with a P - N magnitude of\napproximately 2.4 nS; and (3) the target DS index for optimisation is 0.65-0.73 under in vitro\npatch-clamp conditions. The space-clamp artefact warns against using apparent excitatory tuning in\nexperimental voltage-clamp traces to calibrate any model excitatory tuning parameter.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.7554_eLife.42392",
+      "title": "Retinal direction selectivity in the absence of asymmetric starburst amacrine cell responses",
+      "doi": "10.7554/eLife.42392",
+      "url": "https://elifesciences.org/articles/42392",
+      "pdf_url": "https://elifesciences.org/articles/42392.pdf",
+      "date_published": "2019-02-04",
+      "year": 2019,
+      "authors": [
+        {
+          "name": "Laura Hanson",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Santhosh Sethuramanujam",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Geoff deRosenroll",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Varsha Jain",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Gautam B Awatramani",
+          "country": "CA",
+          "institution": "University of Victoria"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Victoria",
+          "country": "CA"
+        }
+      ],
+      "journal": "eLife",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration",
+        "compartmental-modeling",
+        "dendritic-computation",
+        "patch-clamp"
+      ],
+      "abstract": "In the mammalian retina, direction-selectivity is thought to originate in the dendrites of GABAergic/cholinergic starburst amacrine cells, where it is first observed. However, here we demonstrate that direction selectivity in downstream ganglion cells remains remarkably unaffected when starburst dendrites are rendered non-directional, using a novel strategy combining a conditional GABAA a2 receptor knockout mouse with optogenetics. We show that temporal asymmetries between excitation/inhibition, arising from the differential connectivity patterns of starburst cholinergic and GABAergic synapses to ganglion cells, form the basis for a parallel mechanism generating direction selectivity. We further demonstrate that these distinct mechanisms work in a coordinated way to refine direction selectivity as the stimulus crosses the ganglion cell's receptive field. Thus, precise spatiotemporal patterns of inhibition and excitation that determine directional responses in ganglion cells are shaped by two `core' mechanisms, both arising from distinct specializations of the starburst network.",
+      "citation_key": "Hanson2019",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/files/hanson_2019_circuit-ds.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/summary.md",
+      "summary": "Hanson et al. revisit one of the most entrenched assumptions in retinal neuroscience: that direction\nselectivity in direction-selective retinal ganglion cells (DSGCs) is inherited from the\ndirectionally tuned GABA release of starburst amacrine cells. They ask whether DSGCs can still\ncompute direction when starburst output itself is no longer directional, a question made answerable\nfor the first time by combining the Gabra2 conditional KO (which removes mutual SAC inhibition) with\noptogenetic stimulation of SACs while bipolar-cell drive is pharmacologically silenced.\n\nMethodologically, the study integrates four approaches: cell-specific genetics to control SAC\ninhibition, ChR2 optogenetics to control excitation of SACs in isolation, whole-cell and loose\ncell-attached patch-clamp recordings to read out EPSCs, IPSCs, and spiking in the same DSGCs, and a\nmulticompartmental NEURON model (built on the Poleg-Polsky and Diamond 2016 DSGC morphology) to test\nthe computational sufficiency of the proposed mechanisms. Pharmacology (hexamethonium, SR-95531,\nDL-AP4, UBP310, CNQX, D-AP5) isolates cholinergic, GABAergic, and glutamatergic components.\nModelling synapses and somatic Na/K/delayed-rectifier conductances are set to densities matched to\nprior literature, and release probabilities are parameterised sigmoidally with direction.\n\nThe central findings are that (i) starburst IPSC direction selectivity can be essentially abolished\n(DSI about 0.07) while DSGC spiking remains robustly directional; (ii) the residual DS is explained\nby a directionally tuned excitation-inhibition temporal offset of up to 50 ms in the preferred\ndirection, which corresponds to a relatively fixed 25-30 microm spatial offset across velocities;\n(iii) this offset is cholinergic in origin, since hexamethonium delays preferred-direction EPSCs by\nabout 25 ms and collapses the offset; and (iv) the two DS mechanisms (amplitude and timing) dominate\ndifferent phases of the response: offsets sharpen the early phase, amplitude differences broaden and\nstabilise the peak phase. The NEURON model reproduces all of these features under both full and\nreduced wiring.\n\nFor this project, Hanson et al. 2019 is directly relevant on three fronts. First, it constrains the\ntarget tuning curve: a single trial-averaged angle-to-AP-frequency curve is unlikely to capture the\ndual-mechanism structure, so the target should ideally include early-versus-peak temporal structure.\nSecond, it provides a specific, reconstructed, publicly available NEURON model\n(`geoffder/Spatial-Offset-DSGC-NEURON-Model`) with the exact conductance recipe, passive properties,\nand distributed AMPA/ACh/GABA synapses needed as a baseline for the morphology/conductance/input\nparametric variation planned here. Third, it establishes that any realistic DSGC model in this\nproject must treat excitation as two distinct populations (bipolar AMPA and starburst ACh) with\ndifferent spatial offsets, because their differential timing is itself a DS mechanism that must be\nrepresented if the optimiser is to fit mouse DSGC behaviour rather than a generic ON-OFF ganglion\ncell.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.7554_eLife.52949",
+      "title": "The functional organization of excitation and inhibition in the dendrites of mouse direction-selective ganglion cells",
+      "doi": "10.7554/eLife.52949",
+      "url": "https://elifesciences.org/articles/52949",
+      "pdf_url": "https://cdn.elifesciences.org/articles/52949/elife-52949-v2.pdf",
+      "date_published": "2020-02-25",
+      "year": 2020,
+      "authors": [
+        {
+          "name": "Varsha Jain",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Benjamin L Murphy-Baum",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Geoff deRosenroll",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Santhosh Sethuramanujam",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Mike Delsey",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Kerry R Delaney",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Gautam Bhagwan Awatramani",
+          "country": "CA",
+          "institution": "University of Victoria"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Victoria",
+          "country": "CA"
+        }
+      ],
+      "journal": "eLife",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "dendritic-computation",
+        "synaptic-integration",
+        "compartmental-modeling",
+        "patch-clamp"
+      ],
+      "abstract": "Recent studies indicate that the precise timing and location of excitation and inhibition (E/I) within active dendritic trees can significantly impact neuronal function. How synaptic inputs are functionally organized at the subcellular level in intact circuits remains unclear. To address this issue, we took advantage of the retinal direction-selective ganglion cell circuit, where directionally tuned inhibition is known to shape non-directional excitatory signals. We combined two-photon calcium imaging with genetic, pharmacological, and single-cell ablation methods to examine the extent to which inhibition 'vetoes' excitation at the level of individual dendrites of direction-selective ganglion cells. We demonstrate that inhibition shapes direction selectivity independently within small dendritic segments (<10um) with remarkable accuracy. The data suggest that the parallel processing schemes proposed for direction encoding could be more fine-grained than previously envisioned.",
+      "citation_key": "Jain2020",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/files/jain_2020_dsgc-ca.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/summary.md",
+      "summary": "This eLife paper asks a specific question about retinal direction selectivity: at what spatial scale\nis the direction-selective computation actually performed inside the dendrites of an ON-OFF DSGC?\nThe question is motivated by decades of theoretical work (Koch, Poggio & Torre 1982; Schachter et\nal. 2010) proposing dendritic subunits on a 50–100 µm scale, by anatomical evidence that starburst\namacrine cells wrap varicosities around DSGC dendrites with direction-dependent orientation\n(Briggman et al. 2011), and by earlier patch-clamp results (Sivyer & Williams 2013) suggesting\nsubthreshold local tuning. The authors set out to measure that spatial scale directly in an intact\nmouse retina.\n\nTheir methodology combines two-photon Ca²⁺ imaging of small (3–4 µm) dendritic ROIs in OGB-1-loaded\nDSGCs with voltage-gated Na⁺ channel blockade (intracellular QX-314 or bath TTX), pharmacological\ndissection of NMDA receptors (D-AP5), genetic disruption of GABA release from starburst amacrine\ncells (vGAT-KO), mechanical ablation of individual SACs via sharp-electrode lesions, and a\nmulti-compartmental NEURON model of a reconstructed DSGC with 177 E/I synaptic pairs and stochastic\nrelease. The combination of imaging, targeted circuit perturbation, and biophysical simulation is\nthe paper's methodological core.\n\nThe headline findings are that DS information exists and is independently generated inside 5–10 µm\ndendritic segments — an order of magnitude smaller than classic cable-theory estimates; that noise\ncorrelations between dendritic ROIs fall off with a 5.3 µm space constant; that dendritic Ca²⁺\ntuning matches somatic spiking tuning and is sharper than subthreshold somatic voltage; that NMDA\nreceptors scale responses multiplicatively without altering PD or DSI; that ablating just 3–7\nnull-side SACs selectively disrupts DS at interspersed dendritic hot spots leaving other segments\nintact; and that a soft dendritic voltage threshold in the CaV activation range (−55 to −48 mV) is\nsufficient in the model to convert homogeneously-tuned inputs into strongly-tuned,\nlocally-independent compartments.\n\nFor this project the paper is central. It pins down the empirical target that an ON-OFF DSGC\ncompartmental model must reproduce: sharp somatic directional tuning that emerges from many small,\nlocally-tuned dendritic segments whose independence is enforced by dendritic threshold\nnonlinearities and by spatially-precise GABAergic inhibition. It also supplies an explicit set of\nchannel conductances, a morphology reference (Poleg-Polsky & Diamond 2016), a ratio of 1:1\nexcitatory-to-inhibitory synapse count (177 each), and a concrete prediction — active dendritic\nNa⁺/K⁺ channels are expected to sharpen tuning — that we will test directly as part of our\nactive-vs-passive dendrite experiment. The measured DSI distribution, angular SD of ~32°, and 5–10\nµm compartment scale give us quantitative benchmarks to score candidate model configurations\nagainst.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1016_j.neuron.2017.09.058",
+      "title": "\"Silent\" NMDA Synapses Enhance Motion Sensitivity in a Mature Retinal Circuit",
+      "doi": "10.1016/j.neuron.2017.09.058",
+      "url": "https://www.cell.com/neuron/fulltext/S0896-6273(17)30927-3",
+      "pdf_url": "https://www.cell.com/neuron/pdf/S0896-6273(17)30927-3.pdf",
+      "date_published": "2017-12",
+      "year": 2017,
+      "authors": [
+        {
+          "name": "Santhosh Sethuramanujam",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Xiaoyang Yao",
+          "country": "US",
+          "institution": "Duke University"
+        },
+        {
+          "name": "Geoff deRosenroll",
+          "country": "CA",
+          "institution": "University of Victoria"
+        },
+        {
+          "name": "Kevin L. Briggman",
+          "country": "DE",
+          "institution": "Max Planck Institute for Neurobiology of Behavior (caesar)"
+        },
+        {
+          "name": "Greg D. Field",
+          "country": "US",
+          "institution": "Duke University"
+        },
+        {
+          "name": "Gautam B. Awatramani",
+          "country": "CA",
+          "institution": "University of Victoria"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Victoria",
+          "country": "CA"
+        },
+        {
+          "name": "Duke University",
+          "country": "US"
+        },
+        {
+          "name": "Max Planck Institute for Neurobiology of Behavior (caesar)",
+          "country": "DE"
+        }
+      ],
+      "journal": "Neuron",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "patch-clamp",
+        "synaptic-integration"
+      ],
+      "abstract": "Crossref returned no abstract for this Cell Press Neuron article. Based on the published paper, Sethuramanujam and colleagues use whole-cell voltage-clamp recordings from ON-OFF direction-selective ganglion cells (DSGCs) in adult mouse retina combined with pharmacology to demonstrate a functionally silent population of NMDA receptors on DSGC dendrites. At rest and under standard somatic recording conditions, these NMDARs contribute very little to the excitatory current, but during directional-motion stimuli that efficiently depolarise dendrites, the NMDAR population is recruited and multiplicatively enhances motion sensitivity. The study provides quantitative measurements of AMPA/NMDA ratios during preferred- and null-direction motion and pairs them with pharmacological block to isolate each component.",
+      "citation_key": "Sethuramanujam2017",
+      "files": [],
+      "download_status": "failed",
+      "download_failure_reason": "Elsevier/Cell Press Neuron article is paywalled. Automated PDF fetch from cell.com returns a cookie wall. Added to intervention/paywalled_papers.md for Sheffield institutional retrieval.",
+      "added_by_task": "t0017_literature_survey_patch_clamp",
+      "date_added": "2026-04-20",
+      "summary_path": "tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1016_j.neuron.2017.09.058/summary.md",
+      "summary": "Sethuramanujam and colleagues address a gap in the DSGC direction-selectivity literature: is the\nAMPAR-and-inhibition picture of DS generation complete, or do NMDARs also play a functional role in\nthe adult circuit? Using whole-cell patch-clamp recordings from ON-OFF DSGCs in mouse retinal\nwholemount, combined with drifting-grating and moving-bar motion stimuli and pharmacological block\nof AMPARs and NMDARs, they answer the question by directly measuring each receptor component during\npreferred and null motion.\n\nThe methodology combines voltage-clamp at multiple holding potentials to isolate excitatory and\ninhibitory components, pharmacological dissection to isolate AMPA and NMDA contributions within the\nexcitatory component, and matched current-clamp recordings to confirm the spike-output consequences.\nThe design lets the authors quantify the AMPA/NMDA ratio, its direction dependence, and the effect\nof NMDAR block on direction selectivity index separately at the synaptic-current and spike levels.\n\nThe headline result is that DSGCs contain a substantial but functionally silent NMDAR population\nthat is recruited preferentially during preferred-direction motion and multiplicatively enhances DS.\nNMDAR block reduces DSI significantly at both the current and spike level. The paper also provides\nquantitative AMPA/NMDA charge ratios that can be used directly as model-fitting targets.\n\nFor this project, the implications are central. DSGC compartmental models in NEURON must include\nNMDARs with proper Mg2+ block kinetics on DSGC dendrites; the AMPA-only baseline is inadequate.\nNMDAR recruitment depends on dendritic depolarisation, so space-clamp corrections from Poleg-Polsky\nand To-Honnuraiah-Stuart apply. Fitting objectives should include the AMPA/NMDA charge ratio during\npreferred and null motion, not just peak AMPA current. The Sethuramanujam measurements provide the\nquantitative targets our model must hit.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1126_sciadv.abb6642",
+      "title": "Tailoring of the axon initial segment shapes the conversion of synaptic inputs into spiking output in OFF-alpha T retinal ganglion cells",
+      "doi": "10.1126/sciadv.abb6642",
+      "url": "https://www.science.org/doi/10.1126/sciadv.abb6642",
+      "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.abb6642",
+      "date_published": "2020-09-11",
+      "year": 2020,
+      "authors": [
+        {
+          "name": "Paul Werginz",
+          "country": "US",
+          "institution": "Massachusetts General Hospital, Harvard Medical School"
+        },
+        {
+          "name": "Vineeth Raghuram",
+          "country": "US",
+          "institution": "Massachusetts General Hospital, Harvard Medical School"
+        },
+        {
+          "name": "Shelley I. Fried",
+          "country": "US",
+          "institution": "Massachusetts General Hospital, Harvard Medical School"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "Massachusetts General Hospital, Harvard Medical School",
+          "country": "US"
+        },
+        {
+          "name": "Vienna University of Technology",
+          "country": "AT"
+        },
+        {
+          "name": "Boston VA Healthcare System",
+          "country": "US"
+        },
+        {
+          "name": "Tufts University",
+          "country": "US"
+        }
+      ],
+      "journal": "Science Advances",
+      "venue_kind": "journal",
+      "categories": [
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "patch-clamp"
+      ],
+      "abstract": "Intrinsic properties of retinal ganglion cells are tailored to their synaptic inputs to ensure reliable spiking output. Werginz, Raghuram and Fried combine patch-clamp recordings, immunohistochemistry and compartmental modelling of OFF-alpha transient (OFF-alphaT) retinal ganglion cells to show that the axon initial segment (AIS) is a key biophysical site tuning the input-output transformation. Dorsal-retina OFF-alphaT cells have longer AISs with higher Nav1.6 density and can sustain high firing rates without depolarization block, while ventral cells with shorter AISs enter depolarization block at lower input strengths. The AIS-to-soma Na+ density ratio is approximately 7x, and AIS length variability is the dominant morphological factor controlling maximum firing rate.",
+      "citation_key": "Werginz2020",
+      "files": [],
+      "download_status": "failed",
+      "download_failure_reason": "AAAS Science Advances is nominally open access but the publisher PDF URL is protected by an AAAS/Cloudflare bot challenge that returns an interstitial HTML page to automated fetchers. Manual browser download via Sheffield institutional access should succeed. Added to intervention/paywalled_papers.md.",
+      "added_by_task": "t0017_literature_survey_patch_clamp",
+      "date_added": "2026-04-20",
+      "summary_path": "tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1126_sciadv.abb6642/summary.md",
+      "summary": "Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites shapes\nthe spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is that the AIS is\nspecialised to match the synaptic input that each cell type receives. Using a combined experimental\nand computational approach (patch-clamp current-clamp recordings, Nav1.6 and ankyrin-G\nimmunohistochemistry, and NEURON compartmental modelling) they show that AIS morphology and sodium\nchannel density are the primary determinants of maximum firing rate and depolarisation-block\nthreshold.\n\nThe methodology is carefully matched: the same OFF-alphaT cell population is characterised\nelectrophysiologically, anatomically, and computationally. Dorsal and ventral retinal locations are\ncompared because prior work showed that OFF-alphaT cells receive different synaptic drive in these\nregions; the intrinsic-biophysics question is whether the output side is also tuned. The\ncompartmental model serves as a mechanistic bridge, varying only AIS parameters while holding\ndendritic and somatic properties constant, to test whether AIS alone can explain the observed\nfiring-rate differences.\n\nThe headline quantitative results are a 7x AIS-to-soma Na+ density ratio, a systematic AIS-length\ndifference between dorsal and ventral OFF-alphaT cells, and the demonstration that AIS length alone\nis sufficient to reproduce the firing-rate and depolarisation-block differences in the compartmental\nmodel. Dorsal cells have longer AISs and sustain higher firing rates; ventral cells have shorter\nAISs and enter depolarisation block at lower input currents.\n\nFor this project, the implications are direct. DSGC compartmental models must include an explicit\nAIS compartment with Nav1.6 enrichment at the reported density ratio, AIS length should be a named\ntunable parameter constrained by immunohistochemistry rather than a fixed value, and\ndepolarisation-block behaviour must be used as a fitting constraint. Ignoring the AIS will produce a\nDSGC model that cannot correctly reproduce high-firing-rate and strong-contrast responses.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1371_journal.pone.0019463",
+      "title": "Imperfect Space Clamp Permits Electrotonic Interactions between Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp Recordings",
+      "doi": "10.1371/journal.pone.0019463",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019463",
+      "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0019463&type=printable",
+      "date_published": "2011-04-29",
+      "year": 2011,
+      "authors": [
+        {
+          "name": "Alon Poleg-Polsky",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        },
+        {
+          "name": "Jeffrey S. Diamond",
+          "country": "US",
+          "institution": "National Institute of Neurological Disorders and Stroke, NIH"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "National Institute of Neurological Disorders and Stroke, NIH",
+          "country": "US"
+        }
+      ],
+      "journal": "PLoS ONE",
+      "venue_kind": "journal",
+      "categories": [
+        "patch-clamp",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "abstract": "Crossref returned no abstract for this open-access PLoS ONE article. Based on the full paper (accessible publicly), the study uses detailed NEURON compartmental simulations of realistic retinal ganglion cell morphologies to quantify the errors made when excitatory and inhibitory synaptic conductances are estimated from somatic voltage-clamp recordings in cells with extended dendrites. The authors show that imperfect space clamp allows electrotonic interactions between co-active synaptic conductances, producing systematic distortions of the reconstructed conductance waveforms. On thin distal dendrites up to ~80% of the synaptic signal is lost, and inhibitory conductance estimates carry larger errors than excitatory estimates even when clamping at the inhibitory reversal.",
+      "citation_key": "PolegPolsky2011",
+      "files": [],
+      "download_status": "failed",
+      "download_failure_reason": "Automated PDF download not attempted in this scale-down run; Crossref returned structured metadata without an abstract and the publisher PDF endpoint was not retrieved in the same pipeline used for the other four paywalled papers in this task. Open-access on PLoS ONE but needs manual fetch to complete the local copy; logged in intervention/paywalled_papers.md for retrieval.",
+      "added_by_task": "t0017_literature_survey_patch_clamp",
+      "date_added": "2026-04-20",
+      "summary_path": "tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1371_journal.pone.0019463/summary.md",
+      "summary": "Poleg-Polsky and Diamond ask a methodological question that matters for every modelling paper built\non experimental E/I decomposition: how accurate is the standard protocol of reconstructing\nexcitatory and inhibitory conductances from multi-holding-potential voltage-clamp recordings when\nthe cell has thin, extended dendrites? They answer it with NEURON compartmental simulations of\nrealistic retinal ganglion cell morphologies, where the ground-truth synaptic input is known and the\nsomatic pipette recording can be directly compared against it.\n\nThe methodology is careful: the authors systematically vary dendritic diameter, synaptic distance,\nE/I relative timing, and holding-potential range, and compare each reconstruction against the known\ninputs. They also test what happens when voltage-gated dendritic channels are added. The design\nisolates space-clamp error from other confounds (series resistance, filtering, ionic\nnon-stationarity) and lets the reader see exactly which experimental choices drive the largest\ndistortions.\n\nThe headline result is that imperfect space clamp is not a second-order concern: on thin distal\ndendrites up to 80% of the synaptic signal is lost, inhibitory estimates are systematically worse\nthan excitatory ones, and co-active E and I interact electrotonically so that reconstructing one\nrequires correctly modelling the other. Active dendritic channels make everything worse. The paper\npractical guidance (proximal-only reconstruction, compartmental-model validation of each experiment)\nis now standard.\n\nFor this project, the implication is direct. DSGC models will be calibrated against published Ge and\nGi traces from somatic voltage-clamp recordings, and those traces are lower bounds on the true\ndendritic conductances, not ground truth. Our NEURON pipeline must include a somatic voltage-clamp\nblock so that simulated recordings can be compared to experimental recordings on the same footing,\nand we must plan parameter-fitting procedures to absorb a several-fold calibration uncertainty on\ndistal synaptic conductance amplitudes.",
+      "full_summary": null
+    }
+  ]
+}

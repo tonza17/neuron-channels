@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -c \nimport urllib.request\nimport json\nfor doi in ['10.1016/j.celrep.2025.116833', '10.1038/s41467-026-70288-4']:\n    url = f'https://api.crossref.org/works/{doi}'\n    try:\n        req = urllib.request.Request(url, headers={'User-Agent': 'neuron-channels-arf (mailto:a.nikolaev@sheffield.ac.uk)'})\n        with urllib.request.urlopen(req, timeout=30) as resp:\n            data = json.loads(resp.read())\n        msg = data.get('message', {})\n        print('==', doi)\n        print('title:', msg.get('title'))\n        print('container:', msg.get('container-title'))\n        print('type:', msg.get('type'))\n        print('issued:', msg.get('issued'))\n        print('published-online:', msg.get('published-online'))\n        authors = msg.get('author', [])\n        print('authors:')\n        for a in authors:\n            affs = [aff.get('name') for aff in a.get('affiliation', [])]\n            print('  -', a.get('family'), a.get('given'), '|', affs, '| ORCID:', a.get('ORCID'))\n        abstract = msg.get('abstract')\n        print('abstract:', (abstract[:500] + '...') if abstract else None)\n        print('URL:', msg.get('URL'))\n        print('link:', msg.get('link'))\n    except Exception as e:\n        print('==', doi, 'ERROR', repr(e))\n",
+  "exit_code": 0,
+  "duration_seconds": 1.267,
+  "started_at": "2026-04-20T13:36:22Z",
+  "completed_at": "2026-04-20T13:36:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "030_20260420T133622Z_uv-run-python.stdout.txt",
+  "stderr_file": "030_20260420T133622Z_uv-run-python.stderr.txt",
+  "stdout_lines": 25,
+  "stderr_lines": 0,
+  "truncated": false
+}

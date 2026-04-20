@@ -1,0 +1,30 @@
+{
+  "library_count": 2,
+  "libraries": [
+    {
+      "library_id": "modeldb_189347_dsgc",
+      "name": "ModelDB 189347 DSGC Port",
+      "version": "0.1.0",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "short_description": "Python-driven port of ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC) with a NEURON/HOC back-end, 12-angle drifting-bar tuning-curve runner, and t0012-based envelope scoring.",
+      "created_by_task": "t0008_port_modeldb_189347",
+      "date_created": "2026-04-20"
+    },
+    {
+      "library_id": "tuning_curve_loss",
+      "name": "Tuning Curve Loss",
+      "version": "0.1.0",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "short_description": "Canonical scorer for 12-angle direction-selectivity tuning curves against the t0004 target, returning a weighted scalar loss over DSI, preferred-peak, null, and HWHM residuals plus per-metric diagnostics and a Poleg-Polsky envelope pass/fail.",
+      "created_by_task": "t0012_tuning_curve_scoring_loss_library",
+      "date_created": "2026-04-20"
+    }
+  ]
+}

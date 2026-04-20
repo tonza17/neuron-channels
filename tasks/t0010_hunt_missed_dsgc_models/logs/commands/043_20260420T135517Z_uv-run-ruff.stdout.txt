@@ -1,0 +1,38 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> tasks\t0010_hunt_missed_dsgc_models\code\write_paper_details.py:8:1
+   |
+ 6 |   """
+ 7 |
+ 8 | / from __future__ import annotations
+ 9 | |
+10 | | import json
+11 | | from pathlib import Path
+   | |________________________^
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tasks\t0010_hunt_missed_dsgc_models\code\write_paper_summaries.py:8:1
+   |
+ 6 |   """
+ 7 |
+ 8 | / from __future__ import annotations
+ 9 | |
+10 | | from pathlib import Path
+   | |________________________^
+   |
+help: Organize imports
+
+E501 Line too long (113 > 100)
+   --> tasks\t0010_hunt_missed_dsgc_models\code\write_paper_summaries.py:214:101
+    |
+212 | ---
+213 |
+214 | # Machine learning discovers numerous new computational principles underlying direction selectivity in the retina
+    |                                                                                                     ^^^^^^^^^^^^^
+215 |
+216 | ## Metadata
+    |
+
+Found 3 errors.
+[*] 2 fixable with the `--fix` option.

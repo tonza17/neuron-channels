@@ -1,0 +1,49 @@
+{
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "checked_at": "2026-04-20T12:29:30Z",
+  "dependencies": [
+    {
+      "task_id": "t0008_port_modeldb_189347",
+      "status": "completed",
+      "end_time": "2026-04-20T12:10:00Z",
+      "expected_assets": {
+        "library": 1,
+        "answer": 1
+      },
+      "key_outputs": {
+        "library_asset": "assets/library/modeldb_189347_dsgc",
+        "answer_asset": "assets/answer/dsgc-modeldb-port-reproduction-report",
+        "tuning_curve_csv": "data/tuning_curves/modeldb_189347_dsgc.csv",
+        "morphology_swap_report": "data/morphology_swap_report.md",
+        "phase_b_survey": "data/phase_b_sibling_survey.csv"
+      },
+      "port_pattern": {
+        "summary": "t0008 established the canonical DSGC port pattern: download ModelDB zip, unpack into assets/library/<slug>/, compile MOD files with nrnivmodl, run canonical 12-angle x 20-trial drifting-bar sweep via t0012 tuning_curve_loss scoring library, record envelope outcome in an answer asset.",
+        "scripts_to_reuse": [
+          "code/port_modeldb_189347.py (download + unpack + nrnivmodl)",
+          "code/run_tuning_curve.py (12 angles x 20 trials -> tuning_curve.csv)",
+          "code/score_envelope.py (t0012 scoring loss library application)"
+        ],
+        "known_pitfalls": [
+          "Poleg-Polsky 2016 implements DS via per-angle gabaMOD parameter swap, not spatial rotation; spatial-rotation proxy underscores direction tuning (see S-0008-02).",
+          "Morphology swap preserved section-count and surface-area parity but did not rescue envelope compliance (DSI 0.316, peak 18.1 Hz both FAIL)."
+        ]
+      },
+      "envelope_targets_for_ports": {
+        "dsi_range": [0.7, 0.85],
+        "peak_hz_range": [40.0, 80.0],
+        "null_hz_max": 10.0,
+        "hwhm_deg_range": [60.0, 90.0],
+        "reliability_min": 0.9
+      },
+      "phase_b_gap": "t0008 Phase B ran as a desk survey (not a full three-pass search) and identified Hanson 2019 as the highest-priority sibling port candidate. No new library assets were produced in Phase B. This is the gap t0010 was created to close.",
+      "verification": {
+        "aggregate_tasks_status": "completed",
+        "all_verificators_passed": true,
+        "pr_merged": true,
+        "branch_removed": true
+      }
+    }
+  ],
+  "conclusion": "Sole dependency t0008_port_modeldb_189347 is completed and its port pattern + envelope targets are fully documented. t0010 can proceed to implementation using the same code/ scaffolding and scoring library."
+}

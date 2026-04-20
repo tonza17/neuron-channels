@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "python -u -c \nimport csv\nfrom pathlib import Path\np = Path('tasks/t0010_hunt_missed_dsgc_models/data/candidates.csv')\nwith p.open() as f:\n    reader = csv.DictReader(f)\n    rows = list(reader)\nprint('total rows:', len(rows))\nprint('fields:', reader.fieldnames)\nhigh = [r for r in rows if r['priority']=='high']\nprint('high-priority rows:', len(high))\nfor r in high:\n    print('  ', r['candidate_id'], '->', r['port_attempt_status'])\nnot_attempted = [r for r in rows if r['priority']!='high']\nfor r in not_attempted:\n    assert r['port_attempt_status'] == 'not_attempted', r\n    assert r['port_failure_phase'] == '' and r['port_failure_reason'] == '' and r['library_asset_slug'] == '' and r['tuning_curve_csv_path'] == '', r\nprint('not_attempted block looks good; count =', len(not_attempted))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.078,
+  "started_at": "2026-04-20T13:35:08Z",
+  "completed_at": "2026-04-20T13:35:08Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "025_20260420T133508Z_python-u-c.stdout.txt",
+  "stderr_file": "025_20260420T133508Z_python-u-c.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 0,
+  "truncated": false
+}

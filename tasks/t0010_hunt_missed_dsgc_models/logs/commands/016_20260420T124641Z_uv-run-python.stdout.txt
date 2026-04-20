@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\research\research_papers.md
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W002 warning: Paper Index entry [HausserMel2003] has DOI 'not assigned (Current Opinion in Neurobiology editorial, S0959-4388(03)00075-8)' but no paper asset folder 'not assigned (Current Opinion in Neurobiology editorial, S0959-4388(03)00075-8)' was found[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

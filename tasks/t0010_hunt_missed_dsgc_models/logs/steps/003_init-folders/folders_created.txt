@@ -1,0 +1,14 @@
+tasks/t0010_hunt_missed_dsgc_models/assets/
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/
+tasks/t0010_hunt_missed_dsgc_models/assets/library/
+tasks/t0010_hunt_missed_dsgc_models/assets/answer/
+tasks/t0010_hunt_missed_dsgc_models/code/
+tasks/t0010_hunt_missed_dsgc_models/data/
+tasks/t0010_hunt_missed_dsgc_models/intervention/
+tasks/t0010_hunt_missed_dsgc_models/logs/commands/
+tasks/t0010_hunt_missed_dsgc_models/logs/searches/
+tasks/t0010_hunt_missed_dsgc_models/logs/sessions/
+tasks/t0010_hunt_missed_dsgc_models/plan/
+tasks/t0010_hunt_missed_dsgc_models/research/
+tasks/t0010_hunt_missed_dsgc_models/results/
+tasks/t0010_hunt_missed_dsgc_models/results/images/

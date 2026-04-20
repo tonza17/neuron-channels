@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [EulerDetwilerDenk2002] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [HausserMel2003] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Hines1997] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Sethuramanujam2016] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Sethuramanujam2017] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Sivyer2010] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Taylor2000] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Taylor2002] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [To2022] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Vaney2012] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Werginz2020] has no matching Paper Index entry[0m
+
+[31m[1mFAILED[0m — 11 error(s), 0 warning(s)

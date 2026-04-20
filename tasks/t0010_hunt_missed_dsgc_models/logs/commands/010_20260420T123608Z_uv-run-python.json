@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -u -m meta.asset_types.paper.aggregator --format json --detail full --ids 10.1126_science.289.5488.2347 10.1038_nature00931 10.1152_jn.00123.2009 10.1523_JNEUROSCI.22-17-07712.2002 10.1002_cne.22678 10.1523_ENEURO.0261-21.2021 10.1038_nature09818 10.1016_j.neuron.2016.04.041 10.1113_jphysiol.2010.192716 10.1113_jphysiol.2008.161240",
+  "exit_code": 0,
+  "duration_seconds": 0.498,
+  "started_at": "2026-04-20T12:36:08Z",
+  "completed_at": "2026-04-20T12:36:08Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "010_20260420T123608Z_uv-run-python.stdout.txt",
+  "stderr_file": "010_20260420T123608Z_uv-run-python.stderr.txt",
+  "stdout_lines": 557,
+  "stderr_lines": 0,
+  "truncated": false
+}

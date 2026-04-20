@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "python -u -m arf.scripts.aggregators.aggregate_categories --format ids",
+  "exit_code": 1,
+  "duration_seconds": 0.109,
+  "started_at": "2026-04-20T13:35:41Z",
+  "completed_at": "2026-04-20T13:35:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "028_20260420T133541Z_python-u-m.stdout.txt",
+  "stderr_file": "028_20260420T133541Z_python-u-m.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 12,
+  "truncated": false
+}

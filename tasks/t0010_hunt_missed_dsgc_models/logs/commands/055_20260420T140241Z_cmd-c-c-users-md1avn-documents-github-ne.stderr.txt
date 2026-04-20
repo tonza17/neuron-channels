@@ -1,0 +1,5 @@
+Translating Exp2NMDA.mod into Exp2NMDA.c
+Thread Safe
+Translating HHst.mod into HHst.c
+Notice: This mechanism cannot be used with CVODE
+Thread Safe

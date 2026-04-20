@@ -1,0 +1,358 @@
+{
+  "paper_count": 7,
+  "papers": [
+    {
+      "paper_id": "10.1016_j.neuron.2005.06.036",
+      "title": "Direction-Selective Dendritic Action Potentials in Rabbit Retina",
+      "doi": "10.1016/j.neuron.2005.06.036",
+      "url": "https://www.sciencedirect.com/science/article/pii/S089662730500646X",
+      "pdf_url": "http://www2.neuroscience.umn.edu/rfm/journal/neuron_ds_2005.pdf",
+      "date_published": "2005-09-01",
+      "year": 2005,
+      "authors": [
+        {
+          "name": "Nicholas Oesch",
+          "country": "US",
+          "institution": "Oregon Health and Sciences University"
+        },
+        {
+          "name": "Thomas Euler",
+          "country": "DE",
+          "institution": "Max-Planck-Institute for Medical Research"
+        },
+        {
+          "name": "W. Rowland Taylor",
+          "country": "US",
+          "institution": "Oregon Health and Sciences University"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "Oregon Health and Sciences University",
+          "country": "US"
+        },
+        {
+          "name": "Max-Planck-Institute for Medical Research",
+          "country": "DE"
+        }
+      ],
+      "journal": "Neuron",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "retinal-ganglion-cell",
+        "patch-clamp"
+      ],
+      "abstract": "Dendritic spikes that propagate toward the soma are well documented, but their physiological role remains uncertain. Our in vitro patch-clamp recordings and two-photon calcium imaging show that direction-selective retinal ganglion cells (DSGCs) utilize orthograde dendritic spikes during physiological activity. DSGCs signal the direction of image motion. Excitatory subthreshold postsynaptic potentials are observed in DSGCs for motion in all directions and provide a weakly tuned directional signal. However, spikes are generated over only a narrow range of motion angles, indicating that spike generation greatly enhances directional tuning. Our results indicate that spikes are initiated at multiple sites within the dendritic arbors of DSGCs and that each dendritic spike initiates a somatic spike. We propose that dendritic spike failure, produced by local inhibitory inputs, might be a critical factor that enhances directional tuning of somatic spikes.",
+      "citation_key": "Oesch2005",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/files/oesch_2005_ds-dendritic-aps.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/summary.md",
+      "summary": "Oesch, Euler, and Taylor address a central unresolved question in retinal direction selectivity: why\ndoes a ganglion cell whose somatic subthreshold EPSPs are only weakly directional produce spike\noutput that is sharply tuned to the preferred direction of motion? By combining whole-cell\ncurrent-clamp recordings from ON-OFF DSGCs in flat-mounted rabbit retina with focal and dendritic\nTTX application, intracellular QX-314, controlled somatic hyperpolarization, and two-photon Ca2+\nimaging of dendritic arbors, they dissect the spatial origin of the spikes that drive DSGC output\nduring visual stimulation.\n\nThe headline finding is a bimodal spike amplitude distribution - large ~55 mV somatic action\npotentials and small ~7 mV dendritic spikelets - that can be separated by any of three independent\nmanipulations (somatic TTX, QX-314, somatic hyperpolarization). The dendritic spikelets inherit the\nfull directional tuning of the somatic output (DSI ~0.6-0.7), superimpose at sub-somatic-refractory\nintervals, and are selectively suppressed by puffing TTX onto the dendrites (reducing light-evoked\nspikes by ~42% while barely affecting depolarization-evoked somatic spikes). Calcium imaging\nconfirms that the dendrites host functional TTX-sensitive Na+ channels active during light-driven\nresponses.\n\nMechanistically, the authors argue that direction selectivity is computed by dendritic spike\nfailure: locally offset GABAergic inhibition from starburst amacrine cells, positioned between\nbipolar-cell excitation and the soma along the null-direction pathway, shunts dendritic spikes\nbefore they can reach the soma. In the preferred direction the inhibition is distal to the\nexcitation, so dendritic spikes propagate successfully. This model naturally explains the\nnondirectional zone on the preferred side of the receptive field and the preferred-side receptive\nfield offset.\n\nFor a DSGC compartmental modeling project, this paper is foundational. It supplies the quantitative\ntargets (somatic PSP amplitudes of ~12 mV across all directions, somatic threshold near -49 mV,\ndendritic spikelet amplitude ~7 mV, spike DSI ~0.7 versus PSP DSI ~0.1) that any biophysical\nsimulation must reproduce, and it specifies the qualitative requirements: active dendrites with\ndistributed Na+ channels, multiple independent initiation zones, on-the-path starburst inhibition,\nand a near-unity dendritic-to-somatic spike coupling. Any model that relies on passive dendrites and\na single somatic threshold cannot reach the observed tuning sharpness and should be rejected on\nquantitative grounds.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1038_nrn3165",
+      "title": "Direction selectivity in the retina: symmetry and asymmetry in structure and function",
+      "doi": "10.1038/nrn3165",
+      "url": "https://www.nature.com/articles/nrn3165",
+      "pdf_url": "https://redwood.berkeley.edu/wp-content/uploads/2020/08/vaney-sivyer-taylor-direction-selectivity.pdf",
+      "date_published": "2012-02-08",
+      "year": 2012,
+      "authors": [
+        {
+          "name": "David I. Vaney",
+          "country": "AU",
+          "institution": "Queensland Brain Institute, University of Queensland"
+        },
+        {
+          "name": "Benjamin Sivyer",
+          "country": "AU",
+          "institution": "Queensland Brain Institute, University of Queensland"
+        },
+        {
+          "name": "W. Rowland Taylor",
+          "country": "US",
+          "institution": "Casey Eye Institute, Department of Ophthalmology, Oregon Health and Science University"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "Queensland Brain Institute, University of Queensland",
+          "country": "AU"
+        },
+        {
+          "name": "Casey Eye Institute, Department of Ophthalmology, Oregon Health and Science University",
+          "country": "US"
+        }
+      ],
+      "journal": "Nature Reviews Neuroscience",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "dendritic-computation",
+        "synaptic-integration"
+      ],
+      "abstract": "Visual information is processed in the retina to a remarkable degree before it is transmitted to higher visual centres. Several types of retinal ganglion cells (the output neurons of the retina) respond preferentially to image motion in a particular direction, and each type of direction-selective ganglion cell (DSGC) is comprised of multiple subtypes with different preferred directions. The direction selectivity of the cells is generated by diverse mechanisms operating within microcircuits that rely on independent neuronal processing in individual dendrites of both the DSGCs and the presynaptic neurons that innervate them.",
+      "citation_key": "Vaney2012",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nrn3165/files/vaney_2012_ds-retina-review.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nrn3165/summary.md",
+      "summary": "This 2012 Nature Reviews Neuroscience article by Vaney, Sivyer and Taylor is the standard decadal\nsynthesis of retinal direction selectivity. Its research question is how the retina - within two\nsynapses of the photoreceptors - produces ganglion cells whose spike output prefers one direction of\nimage motion, and in particular how the three Barlow-Levick computational ingredients (spatial\nasymmetry, nonlinearity, time delay) are implemented at the cellular level. The scope covers On-Off\nDSGCs, On DSGCs and Off DSGCs in rabbit, rat and mouse, with the microcircuit-level focus on\nstarburst amacrine cells and bipolar cells as the presynaptic substrate and on DSGC dendrites as the\npostsynaptic substrate.\n\nThe synthesis is built from four data streams. Morphological work (dye fills, SBF-EM,\nNeurobiotin-tracer coupling) defines the bistratified DSGC dendritic geometry and the SAC mosaic.\nPharmacology (GABA_A and nicotinic antagonists) and paired cell recordings pin down which\ntransmitters and which sides of the SAC carry the directional signal. Calcium imaging of SAC\ndendrites under apparent-motion paradigms establishes that individual SAC dendrites are themselves\nDS units whose calcium transients are biased toward centrifugal motion. Developmental experiments\n(intravitreal GABA and cholinergic drugs, dark-rearing, TTX) show that the direction-selective\nwiring is essentially hard-wired.\n\nThe headline findings are that null-side SAC-to-DSGC GABAergic inhibition is **~9x larger** in\nconductance and **~11x more numerous** in synapses than the preferred-side input, that cholinergic\nSAC-to-DSGC excitation is spatially symmetric, and that DSGC dendrites carry voltage-gated\nself-propagating dendritic spikes that are immune to shunting by intervening inhibition once\ninitiated. The authors also raise a provocative methodological caveat - that reported directional\nasymmetries in DSGC excitatory currents may reflect somatic voltage-clamp errors on electrotonically\nextended dendrites rather than genuine DS glutamatergic or cholinergic inputs. This leaves the\nrelative pre- vs post-synaptic contributions to the final spike output partially unresolved.\n\nFor this project the review is foundational. It fixes the cell type (On-Off DSGC), the minimum\nbiophysical geometry (bistratified dendrites, ~150-200 micrometre dendritic field per sublamina, ~40\nmicrometre subunit spacing), the dominant directional input (asymmetric null-side GABAergic\ninhibition, symmetric cholinergic and glutamatergic excitation), and the post-synaptic nonlinearity\n(dendritic spikes). It directly informs Research Question 1 (somatic Na/K conductance combinations\nmust still support spiking under large null-direction inhibitory conductances), Research Question 3\n(AMPA/GABA input density should be calibrated against the ~9:1 null/preferred IPSC amplitude and\nisotropic EPSC), and Research Question 4 (active vs passive dendrites should be compared against the\ndendritic-spike substrate the authors endorse). Its voltage-clamp-error argument is a direct caution\nagainst over-fitting to published excitatory-current directionality.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1113_jphysiol.1965.sp007638",
+      "title": "The mechanism of directionally selective units in rabbit's retina.",
+      "doi": "10.1113/jphysiol.1965.sp007638",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1965.sp007638",
+      "pdf_url": "https://physoc.onlinelibrary.wiley.com/doi/pdf/10.1113/jphysiol.1965.sp007638",
+      "date_published": "1965-06",
+      "year": 1965,
+      "authors": [
+        {
+          "name": "H. B. Barlow",
+          "country": "GB",
+          "institution": "Physiological Laboratory, University of Cambridge"
+        },
+        {
+          "name": "W. R. Levick",
+          "country": "AU",
+          "institution": "Neurosensory Laboratory, School of Optometry, University of California, Berkeley"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Cambridge",
+          "country": "GB"
+        },
+        {
+          "name": "University of California, Berkeley",
+          "country": "US"
+        },
+        {
+          "name": "University of Sydney",
+          "country": "AU"
+        }
+      ],
+      "journal": "The Journal of Physiology",
+      "venue_kind": "journal",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ],
+      "abstract": "Directionally selective single units in the retinae of rabbits respond vigorously to a stimulus object moved through the receptive field in one (preferred) direction, but give little or no response to motion in the reverse (null) direction. The present paper investigates the mechanism of this directional selectivity by showing: (1) it is not caused by optical aberrations or progressive latency differences across the receptive field; (2) the directionally selective property resides in small subunits distributed across the entire receptive field, each subtending 0.25-0.5 degrees; (3) these subunits discriminate the sequence of excitation of pairs of neighbouring retinal regions; (4) the sequence-discrimination is based primarily on an inhibitory mechanism that vetoes responses to null sequences, rather than on the detection of excitatory conjunctions. A tentative circuit is proposed in which horizontal cells conduct laterally to inhibit bipolar cells, preventing their responses to null-direction sequences, while ganglion cells pool selectively from bipolars responding to preferred-direction sequences.",
+      "citation_key": "Barlow1965",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/files/barlow_1965_ds-units-rabbit-retina.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/summary.md",
+      "summary": "Barlow and Levick investigate the mechanism of direction selectivity in on-off retinal ganglion\ncells of the rabbit. The central question is what intraretinal circuit produces the striking\nasymmetry between vigorous preferred-direction responses and near-silence for null-direction motion,\ngiven that this asymmetry cannot be explained by the static on/off receptive field map.\n\nThe experimental strategy combines systematic exclusion of alternative hypotheses with two-spot\ntemporal sequence experiments. Optical aberrations and latency gradients are ruled out first.\nSingle-slit experiments localise the full DS mechanism to subunits of 6-24 arc-minutes, replicated\nuniformly across the 3-4.5 degree receptive field. Two-spot experiments show that these subunits\ndiscriminate the temporal order of excitation of pairs of neighbouring regions, with the effect\npresent only within approximately 24 arc-minutes.\n\nThe key finding is that null-direction selectivity is produced by active inhibition: null sequences\nelicit fewer spikes than the sum of individual responses (Table 3), while preferred sequences\nproduce a small facilitation. The inhibitory mechanism is proposed to arise from horizontal cells\nconducting laterally in the null direction to veto bipolar responses. The specific cell-type\nassignment was later revised to starburst amacrine cells, but the logical architecture has proven\ncorrect.\n\nFor this project, Barlow1965 provides the primary behavioural benchmark for the compartmental model:\nit must fire vigorously for preferred-direction waves and be nearly silent for null-direction waves,\nwith asymmetry arising from spatially distributed inhibitory GABA synaptic input across the\ndendritic arbor. The inhibitory interaction range constraint (approximately 0.25-1 degree) bounds\nthe spatial scale of GABA inputs, and the optimal wave speed of approximately 5 degrees/sec sets the\ntarget velocity for parametric sweeps in simulation.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1126_science.1189664",
+      "title": "Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons",
+      "doi": "10.1126/science.1189664",
+      "url": "https://www.science.org/doi/10.1126/science.1189664",
+      "pdf_url": null,
+      "date_published": "2010-09-24",
+      "year": 2010,
+      "authors": [
+        {
+          "name": "Tiago Branco",
+          "country": "GB",
+          "institution": "University College London"
+        },
+        {
+          "name": "Beverley A. Clark",
+          "country": "GB",
+          "institution": "University College London"
+        },
+        {
+          "name": "Michael Häusser",
+          "country": "GB",
+          "institution": "University College London"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University College London",
+          "country": "GB"
+        }
+      ],
+      "journal": "Science",
+      "venue_kind": "journal",
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "dendritic-computation",
+        "synaptic-integration"
+      ],
+      "abstract": "The detection and discrimination of temporal sequences is fundamental to brain function and underlies perception, cognition, and motor output. By applying patterned, two-photon glutamate uncaging, we found that single dendrites of cortical pyramidal neurons exhibit sensitivity to the sequence of synaptic activation. This sensitivity is encoded by both local dendritic calcium signals and somatic depolarization, leading to sequence-selective spike output. The mechanism involves dendritic impedance gradients and nonlinear synaptic N-methyl-D-aspartate receptor activation and is generalizable to dendrites in different neuronal types. This enables discrimination of patterns delivered to a single dendrite, as well as patterns distributed randomly across the dendritic tree. Pyramidal cell dendrites can thus act as processing compartments for the detection of synaptic sequences, thereby implementing a fundamental cortical computation.",
+      "citation_key": "Branco2010",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/files/branco_2010_dendritic-sequence-discrimination.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/summary.md",
+      "summary": "Branco, Clark, and Häusser ask whether individual cortical dendrites can detect the temporal order\nof their synaptic inputs — a computation previously assumed to require networks of neurons. Using\nmulti-site two-photon glutamate uncaging in layer 2/3 pyramidal neurons of rat somatosensory and\nvisual cortex, they show that single dendrites produce systematically larger somatic EPSPs and\nhigher spike probabilities when synapses are activated from the branch tip toward the soma (\"IN\")\nthan from soma to tip (\"OUT\"), and that local dendritic Ca2+ signals carry the same directionality.\nThe finding scales up: neurons can also discriminate arbitrary random temporal sequences delivered\nto a single dendrite or distributed across multiple dendrites.\n\nThe mechanism is revealed by pharmacology and a compartmental model. Blocking NMDA receptors with\nD-AP5 abolishes supralinear summation (response drops from **223 ± 9%** to **103 ± 3%** of linear\nsum) and the directional asymmetry (IN-OUT difference shrinks from **2.8 mV** to **0.4 mV**). The\ncompartmental model with passive dendrites and AMPA+NMDA synapses fully reproduces direction\nsensitivity, identifying the mechanism as the interaction between the dendritic impedance gradient\n(high distally, low proximally) and the voltage-dependent Mg2+ block of NMDA receptors. Sequences\ninitiated distally depolarise more locally, progressively relieving Mg2+ block and generating a\nregenerative NMDAR cascade that is absent in the distal-to-proximal direction.\n\nThe paper's headline results are: IN responses **31 ± 4%** larger than OUT (n = 20); spike\nprobability **38 ± 9%** higher; Ca2+ signals **48 ± 13%** larger; random pattern discrimination\nprobability **40%** (> 1 mV, n = 7); multi-dendrite sequence discrimination **4.0 ± 1.3 mV** (n =\n5). All effects are abolished by D-AP5 or hyperpolarisation. The mechanism is confirmed in layer 5\npyramidal neurons and hippocampal dentate gyrus granule cells.\n\nFor this project, Branco et al. (2010) provides the mechanistic logic for dendritic direction\nselectivity in the compartmental model: the impedance gradient combined with NMDA receptor\nnon-linearity converts a spatiotemporal sweep of synaptic activation into a directionally tuned\noutput. Although the paper uses cortical pyramidal neurons, the mechanism explicitly generalises to\nany neuron with an impedance gradient and NMDAR-containing synapses, including DSGCs. The ModelDB\n140828 NEURON implementation offers directly reusable AMPA+NMDA synapse code, the ~2–3 µm/ms\noptimal velocity sets a wave-sweep parameter target, and the D-AP5 results provide a clear internal\ncontrol for validating the synaptic component of the DSGC model.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1162_neco.1997.9.6.1179",
+      "title": "The NEURON Simulation Environment",
+      "doi": "10.1162/neco.1997.9.6.1179",
+      "url": "https://direct.mit.edu/neco/article/9/6/1179-1209/6087",
+      "pdf_url": "https://direct.mit.edu/neco/article-pdf/9/6/1179/813733/neco.1997.9.6.1179.pdf",
+      "date_published": "1997-08-01",
+      "year": 1997,
+      "authors": [
+        {
+          "name": "Michael L. Hines",
+          "country": "US",
+          "institution": "Yale University"
+        },
+        {
+          "name": "Nicholas T. Carnevale",
+          "country": "US",
+          "institution": "Yale University"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "Yale University",
+          "country": "US"
+        }
+      ],
+      "journal": "Neural Computation",
+      "venue_kind": "journal",
+      "categories": [
+        "compartmental-modeling",
+        "cable-theory",
+        "voltage-gated-channels"
+      ],
+      "abstract": "The moment-to-moment processing of information by the nervous system involves the propagation and interaction of electrical and chemical signals that are distributed in space and time. Biologically realistic modeling is needed to test hypotheses about the mechanisms that govern these signals and how nervous system function emerges from the operation of these mechanisms. The NEURON simulation program provides a powerful and flexible environment for implementing such models of individual neurons and small networks of neurons. It is particularly useful when membrane potential is nonuniform and membrane currents are complex. We present the basic ideas that would help informed users make the most efficient use of NEURON.",
+      "citation_key": "Hines1997",
+      "files": [
+        "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/files/hines_1997_neuron-simulation-environment.pdf"
+      ],
+      "download_status": "success",
+      "download_failure_reason": null,
+      "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "date_added": "2026-04-19",
+      "summary_path": "tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md",
+      "summary": "This paper describes the NEURON simulation environment, a domain-specific software system for\nbuilding biophysically detailed compartmental models of individual neurons and small networks. It\nmotivates the work by the inadequacy of generic ODE solvers for problems with branched cable\ngeometry, multiple voltage- and ligand-gated ionic currents, and spatially nonuniform membrane\npotential. The scope is deliberately broad — from single-compartment HH models through\nreconstructed dendritic trees with thousands of compartments — and the paper positions NEURON as\nthe tool that lets modelers focus on biophysics rather than on numerics.\n\nMethodologically, NEURON rests on four design choices: (1) a two-level data model separating\nanatomical `sections` from numerical `segments`; (2) an O(N) Gaussian elimination for the branched\ncable matrix; (3) a staggered-time-step second-order integration scheme that is as cheap per step as\nbackward Euler; and (4) NMODL, a DSL for specifying membrane mechanisms that is translated to C and\ndynamically linked into the simulator. The top-level interface is the hoc interpreter with an\nInterViews-based GUI for interactive debugging.\n\nThe headline results are qualitative — the paper shows that the combined system can simulate\nmorphologically reconstructed neurons with detailed ion-channel biophysics at usable wall-clock\nspeeds on 1990s hardware, and that adding new channel types requires only an NMODL file. The O(N)\nsolver and the staggered Crank-Nicolson integrator are each presented with mathematical\njustification and are the numerical innovations that make the system performant. No quantitative\nbenchmark table is given, but subsequent decades of published models establish that the framework\nachieves its design goals.\n\nFor this project's literature survey on compartmental DSGC (direction-selective ganglion cell)\nmodels, this paper is foundational infrastructure rather than a direct scientific antecedent.\nVirtually every compartmental DSGC model in the literature is written against the abstractions\nintroduced here — sections, segments, NMODL mechanisms, hoc scripts. Understanding the\nsection/segment distinction, the role of `nseg`, and the NMODL toolchain is a prerequisite for\nreading, replicating, and critiquing those models. The paper also defines the numerical methods\nwhose accuracy limits (first-order backward Euler, fixed-timestep analytical gating updates) set the\nfloor for how faithfully any DSGC compartmental model can reproduce fast dendritic transients.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1523_jneurosci.5346-03.2004",
+      "title": "Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell",
+      "doi": "10.1523/jneurosci.5346-03.2004",
+      "url": "https://www.jneurosci.org/content/24/12/2914",
+      "pdf_url": "https://www.jneurosci.org/content/jneuro/24/12/2914.full.pdf",
+      "date_published": "2004-03-24",
+      "year": 2004,
+      "authors": [
+        {
+          "name": "Narender K. Dhingra",
+          "country": "US",
+          "institution": "University of Pennsylvania School of Medicine"
+        },
+        {
+          "name": "Robert G. Smith",
+          "country": "US",
+          "institution": "University of Pennsylvania School of Medicine"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Pennsylvania School of Medicine",
+          "country": "US"
+        }
+      ],
+      "journal": "Journal of Neuroscience",
+      "venue_kind": "journal",
+      "categories": [
+        "retinal-ganglion-cells",
+        "voltage-gated-channels",
+        "compartmental-modelling"
+      ],
+      "abstract": "The quality of the signal a retinal ganglion cell transmits to the brain is important for perception because it sets the minimum detectable stimulus. The ganglion cell converts graded potentials into a spike train with a selective filter but in the process adds noise. To explore how efficiently information is transferred to spikes, we measured contrast detection threshold and increment threshold from graded potential and spike responses of brisk-transient ganglion cells. Intracellular responses to a spot flashed over the receptive field center of the cell were recorded in an intact mammalian retina maintained in vitro at 37C. Thresholds were measured in a single-interval forced-choice procedure with an ideal observer. The graded potential gave a detection threshold of 1.5% contrast, whereas spikes gave 3.8%. The graded potential also gave increment thresholds approximately twofold lower and carried approximately 60% more gray levels. Increment threshold dipped below the detection threshold at a low contrast (<5%) but increased rapidly at higher contrasts. The magnitude of the dipper for both graded potential and spikes could be predicted from a threshold nonlinearity in the responses. Depolarization of the cell by current injection reduced the detection threshold for spikes but also reduced the range of contrasts they can transmit. This suggests that contrast sensitivity and dynamic range are related in an essential trade-off.",
+      "citation_key": "Dhingra2004",
+      "files": [],
+      "download_status": "failed",
+      "download_failure_reason": "Paper is OA-flagged by OpenAlex (is_oa: true) but the Journal of Neuroscience PDF URL is protected by a Cloudflare bot challenge; automated curl download returns the Cloudflare interstitial HTML rather than the PDF. Added to intervention/paywalled_papers.md for manual browser retrieval.",
+      "added_by_task": "t0015_literature_survey_cable_theory",
+      "date_added": "2026-04-20",
+      "summary_path": "tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/summary.md",
+      "summary": "Dhingra & Smith (2004) provide the first quantitative measurement of how much information the\nretinal ganglion cell spike generator loses when converting graded synaptic input into a discrete\nspike train. Using intracellular recordings from brisk-transient RGCs in an intact mammalian retina\nat physiological temperature, combined with ideal-observer analysis of contrast detection and\nincrement thresholds, they find that spikes require roughly 2.5-fold higher contrast for detection\nthan the graded potential does (3.8% vs. 1.5%), and carry approximately 60% fewer distinguishable\ngray levels.\n\nMechanistically, the information loss is dominated by the threshold nonlinearity of the spike\ngenerator rather than by stochastic noise in the spike-generation machinery. A simple threshold-\nnonlinearity model of the spike generator reproduces both the detection threshold gap between graded\npotential and spikes and the full shape of the increment-threshold \"dipper\" function for both\nsignals. This implicates threshold-related biophysics — resting potential, sodium-channel\nactivation voltage, and effective gain — as the key parameters controlling RGC spike-generator\ninformation transfer.\n\nA further result is the trade-off between contrast sensitivity and dynamic range: depolarizing the\ncell reduces spike detection threshold (improving low-contrast sensitivity) but also reduces the\nrange of contrasts the spike output can represent (collapsing high-contrast responses). No single\nsetting of the spike generator simultaneously maximizes both, establishing a fundamental constraint\non any biophysical model of RGC output.\n\nFor DSGC modelling in this project, the paper provides three key constraints. First, our\ncompartmental DSGC models should be evaluated not only on spike output but also on the underlying\ngraded-potential response, since the spike conversion systematically loses information. Second, the\nthreshold-nonlinearity finding means that matching DSGC firing patterns to experimental data\nrequires careful tuning of spike-initiation-zone sodium-channel kinetics rather than adding noise to\nforce a match. Third, the sensitivity-dynamic-range trade-off means that our DSGC model cannot be\nvalidated against a single operating point — we must test across a realistic contrast range and\nverify that the model reproduces the shape of the sensitivity-vs-contrast curve, not just a single\ncontrast sensitivity value.",
+      "full_summary": null
+    },
+    {
+      "paper_id": "10.1523_jneurosci.0130-07.2007",
+      "title": "Different Mechanisms Generate Maintained Activity in ON and OFF Retinal Ganglion Cells",
+      "doi": "10.1523/jneurosci.0130-07.2007",
+      "url": "https://www.jneurosci.org/content/27/22/5994",
+      "pdf_url": "https://www.jneurosci.org/content/jneuro/27/22/5994.full.pdf",
+      "date_published": "2007-05-30",
+      "year": 2007,
+      "authors": [
+        {
+          "name": "David J. Margolis",
+          "country": "US",
+          "institution": "University of Washington"
+        },
+        {
+          "name": "Peter B. Detwiler",
+          "country": "US",
+          "institution": "University of Washington"
+        }
+      ],
+      "institutions": [
+        {
+          "name": "University of Washington",
+          "country": "US"
+        }
+      ],
+      "journal": "The Journal of Neuroscience",
+      "venue_kind": "journal",
+      "categories": [
+        "retinal-ganglion-cell",
+        "voltage-gated-channels",
+        "patch-clamp"
+      ],
+      "abstract": "Neuronal discharge is driven by either synaptic input or cell-autonomous intrinsic pacemaker activity. It is commonly assumed that the resting spike activity of retinal ganglion cells (RGCs), the output cells of the retina, is driven synaptically, because retinal photoreceptors and second-order cells tonically release neurotransmitter. Here we show that ON and OFF RGCs generate maintained activity through different mechanisms: ON cells depend on tonic excitatory input to drive resting activity, whereas OFF cells continue to fire in the absence of synaptic input. In addition to spontaneous activity, OFF cells exhibit other properties of pacemaker neurons, including subthreshold oscillations, burst firing, and rebound excitation. Thus, variable weighting of synaptic mechanisms and intrinsic properties underlies differences in the generation of maintained activity in these parallel retinal pathways.",
+      "citation_key": "MargolisDetwiler2007",
+      "files": [],
+      "download_status": "failed",
+      "download_failure_reason": "Journal of Neuroscience publisher PDF is protected by a Cloudflare bot challenge that returns an interstitial HTML page to automated fetchers. Manual browser download via Sheffield institutional access should succeed. Added to intervention/paywalled_papers.md.",
+      "added_by_task": "t0017_literature_survey_patch_clamp",
+      "date_added": "2026-04-20",
+      "summary_path": "tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1523_jneurosci.0130-07.2007/summary.md",
+      "summary": "Margolis and Detwiler take a direct experimental approach to the question of whether retinal\nganglion cell maintained activity is synaptically driven or intrinsically generated. Using\nwhole-cell and cell-attached patch-clamp recordings from morphologically identified ON and OFF RGCs\nin rabbit retinal wholemount, they compare maintained firing under control conditions to firing\nafter pharmacological blockade of ionotropic glutamate receptors. The design cleanly separates\nsynaptic drive from intrinsic biophysics in the same cells.\n\nThe methodology is careful about cell identification and blockade efficacy, and the follow-up\nexperiments extend the comparison beyond maintained firing to other signatures of pacemaker\nactivity: subthreshold oscillations, burst firing, and rebound excitation. Each signature is a\ndistinct testable claim about the cell intrinsic biophysics, not a single measurement.\n\nThe headline finding is that ON and OFF RGCs use qualitatively different strategies. ON cells\nrequire synaptic input to fire at rest; OFF cells fire autonomously and additionally show the full\nsuite of pacemaker properties. The difference is not explained by passive properties but by\ndifferent voltage-gated channel complements, a conclusion supported by the pattern of intrinsic\nresponses.\n\nFor this project, the implications matter even though the paper is about pure ON and OFF cells\nrather than DSGCs directly. ON-OFF DSGCs integrate both input streams, and the biophysics of the OFF\ninput pathway may bring some of the intrinsic-pacemaker machinery into the DSGC soma and dendrites.\nDSGC compartmental models should consider whether burst firing, rebound excitation, and subthreshold\noscillations are expected behaviours of the target cell and include or exclude the relevant\nvoltage-gated channels (T-type Ca2+, HCN) accordingly. Using\nmaintained-activity-under-synaptic-blockade as a model validation target cleanly separates the\nintrinsic biophysics from the synaptic drive, and that separation should be part of our modelling\nworkflow.",
+      "full_summary": null
+    }
+  ]
+}

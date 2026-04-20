@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "response-date": "2026-04-20 09:37:07",
+  "request": {
+    "warnings": [],
+    "format": "json",
+    "ids": [
+      "10.1016/j.celrep.2025.116833"
+    ],
+    "email": "a.nikolaev@sheffield.ac.uk",
+    "tool": "neuron-channels-arf",
+    "echo": "tool=neuron-channels-arf&email=a.nikolaev%40sheffield.ac.uk&ids=10.1016%2Fj.celrep.2025.116833&format=json",
+    "versions": "no",
+    "showaiid": "no",
+    "idtype": "doi"
+  },
+  "records": [
+    {
+      "doi": "10.1016/j.celrep.2025.116833",
+      "requested-id": "10.1016/j.celrep.2025.116833",
+      "status": "error",
+      "errmsg": "Identifier not found in PMC"
+    }
+  ]
+}

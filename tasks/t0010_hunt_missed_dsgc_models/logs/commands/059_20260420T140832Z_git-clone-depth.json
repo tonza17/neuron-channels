@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "git clone --depth 1 https://github.com/geoffder/ds-circuit-ei-microarchitecture.git C:/Users/md1avn/AppData/Local/Temp/t0010_clones/ds-circuit-ei-microarchitecture",
+  "exit_code": 0,
+  "duration_seconds": 5.635,
+  "started_at": "2026-04-20T14:08:32Z",
+  "completed_at": "2026-04-20T14:08:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "059_20260420T140832Z_git-clone-depth.stdout.txt",
+  "stderr_file": "059_20260420T140832Z_git-clone-depth.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

@@ -1,0 +1,4 @@
+https://www.cell.com/cell-reports/pdf/S2211-1247(25)01605-5.pdf HTTP 403 Forbidden
+https://www.cell.com/action/showPdf?pii=S2211-1247%2825%2901605-5 HTTP 403 Forbidden
+https://www.cell.com/cell-reports/pdfExtended/S2211-1247(25)01605-5 HTTP 403 Forbidden
+https://www.sciencedirect.com/science/article/pii/S2211124725016055/pdfft HTTP 403 Forbidden

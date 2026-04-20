@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\code\test_hanson_demo.py", line 112, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0010_hunt_missed_dsgc_models\tasks\t0010_hunt_missed_dsgc_models\code\test_hanson_demo.py", line 80, in main
+    h.tstop = 50.0
+    ^^^^^^^
+LookupError: 'tstop' is not a defined hoc variable name.
+NEURON: Couldn't find: stdrun.hoc
+ near line 0
+ objref hoc_obj_[2]
+                   ^

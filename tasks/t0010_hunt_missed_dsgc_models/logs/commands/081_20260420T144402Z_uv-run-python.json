@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0010_hunt_missed_dsgc_models",
+  "command": "uv run python -m arf.scripts.utils.capture_task_sessions --task-id t0010_hunt_missed_dsgc_models",
+  "exit_code": 0,
+  "duration_seconds": 0.574,
+  "started_at": "2026-04-20T14:44:02Z",
+  "completed_at": "2026-04-20T14:44:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0010_hunt_missed_dsgc_models",
+  "stdout_file": "081_20260420T144402Z_uv-run-python.stdout.txt",
+  "stderr_file": "081_20260420T144402Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

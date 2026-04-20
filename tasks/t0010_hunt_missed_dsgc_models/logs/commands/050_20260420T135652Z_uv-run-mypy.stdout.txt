@@ -1,0 +1,2 @@
+tasks\t0010_hunt_missed_dsgc_models\code\write_paper_details.py:17: error: Missing type arguments for generic type "dict"  [type-arg]
+Found 1 error in 1 file (checked 4 source files)
