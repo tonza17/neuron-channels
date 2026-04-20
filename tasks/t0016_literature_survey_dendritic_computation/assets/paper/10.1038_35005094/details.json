@@ -1,0 +1,65 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_35005094",
+  "doi": "10.1038/35005094",
+  "title": "NMDA spikes in basal dendrites of cortical pyramidal neurons",
+  "url": "https://www.nature.com/articles/35005094",
+  "pdf_url": null,
+  "date_published": "2000-05-18",
+  "year": 2000,
+  "authors": [
+    {
+      "name": "Jackie Schiller",
+      "country": "IL",
+      "institution": "Technion - Israel Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Guy Major",
+      "country": "GB",
+      "institution": "MRC Laboratory of Molecular Biology",
+      "orcid": null
+    },
+    {
+      "name": "Helmut J. Koester",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    },
+    {
+      "name": "Yitzhak Schiller",
+      "country": "IL",
+      "institution": "Technion - Israel Institute of Technology",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Technion - Israel Institute of Technology",
+      "country": "IL"
+    },
+    {
+      "name": "MRC Laboratory of Molecular Biology",
+      "country": "GB"
+    },
+    {
+      "name": "Max Planck Institute for Medical Research",
+      "country": "DE"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "voltage-gated-channels",
+    "synaptic-integration"
+  ],
+  "abstract": "The thin basal and oblique dendrites of neocortical pyramidal neurons receive most excitatory synaptic input. Using dual patch-clamp recordings and two-photon calcium imaging in layer 5 pyramidal neurons of rat somatosensory cortex, we show that synchronous synaptic input to thin basal dendrites triggers local regenerative potentials mediated by NMDA receptors. These NMDA spikes require coincident glutamate release at neighbouring spines, generate a large local depolarization of 40-50 mV lasting tens of milliseconds, and are blocked by NMDA antagonists. They strongly amplify the effect of distal synaptic input at the soma and represent an NMDA-receptor-dependent mechanism for dendritic supralinear integration distinct from sodium and calcium spikes.",
+  "citation_key": "Schiller2000",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Publisher (Nature Publishing Group) requires subscription for full text; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.",
+  "added_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_added": "2026-04-20"
+}
