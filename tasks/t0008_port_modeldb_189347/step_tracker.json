@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review the Poleg-Polsky 2016 paper (DOI 10.1016_j.neuron.2016.02.013) and any other DSGC compartmental-model papers already in the corpus for exact method details.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T10:15:36Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-papers/"
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
