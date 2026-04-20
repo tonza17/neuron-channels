@@ -1,0 +1,32 @@
+{
+  "spec_version": "2",
+  "answer_id": "dendritic-computation-motifs-for-dsgc-direction-selectivity",
+  "question": "Which dendritic-computation motifs observed in cortical, hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites, and what are the biophysical caveats?",
+  "short_title": "Dendritic-computation motifs for DSGC direction selectivity",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "dendritic-computation",
+    "direction-selectivity",
+    "synaptic-integration",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1038_35005094",
+    "10.1038_nn1253",
+    "10.1038_18686",
+    "10.1126_science.aan3846",
+    "10.1146_annurev.neuro.28.061604.135703"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0015_literature_survey_cable_theory"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_created": "2026-04-20"
+}

@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1146_annurev.neuro.28.061604.135703",
+  "doi": "10.1146/annurev.neuro.28.061604.135703",
+  "title": "Dendritic Computation",
+  "url": "https://www.annualreviews.org/doi/10.1146/annurev.neuro.28.061604.135703",
+  "pdf_url": null,
+  "date_published": "2005-07-21",
+  "year": 2005,
+  "authors": [
+    {
+      "name": "Michael London",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    },
+    {
+      "name": "Michael Hausser",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University College London",
+      "country": "GB"
+    }
+  ],
+  "journal": "Annual Review of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "compartmental-modeling",
+    "cable-theory"
+  ],
+  "abstract": "One of the central questions in neuroscience is how particular tasks, or computations, are implemented by neural networks to generate behavior. The prevailing view has been that information processing in neural networks results primarily from the properties of synapses and the connectivity of neurons within the network, with the intrinsic excitability of single neurons playing a lesser role. As a consequence, the contribution of single neurons to computation in the brain has long been underestimated. Here we review recent work showing that neuronal dendrites exhibit a range of linear and nonlinear mechanisms that allow them to implement elementary computations. We discuss why these dendritic properties may be essential for the computations performed by the neuron and by the network, as well as approaches to study them experimentally. We conclude that these non-linear dendritic mechanisms, together with the properties of the axon and the spike-initiation zone, endow single neurons with powerful computational capabilities that allow them to play a central role in the operation of the nervous system.",
+  "citation_key": "LondonHausser2005",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Publisher (Annual Reviews) requires subscription; direct PDF fetch returned 403. Abstract-based summary produced per paper spec.",
+  "added_by_task": "t0016_literature_survey_dendritic_computation",
+  "date_added": "2026-04-20"
+}

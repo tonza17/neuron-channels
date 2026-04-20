@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0016_literature_survey_dendritic_computation",
+  "command": "uv run python -m meta.asset_types.paper.verificator --task-id t0016_literature_survey_dendritic_computation",
+  "exit_code": 0,
+  "duration_seconds": 0.342,
+  "started_at": "2026-04-20T10:22:12Z",
+  "completed_at": "2026-04-20T10:22:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0016_literature_survey_dendritic_computation",
+  "stdout_file": "012_20260420T102212Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260420T102212Z_uv-run-python.stderr.txt",
+  "stdout_lines": 25,
+  "stderr_lines": 0,
+  "truncated": false
+}
