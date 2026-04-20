@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create mandatory task folder structure including assets/paper/ and corrections/.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T16:32:53Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T16:34:20Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
