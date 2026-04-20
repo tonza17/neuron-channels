@@ -5,9 +5,9 @@
   "name": "Literature survey: voltage-gated channels in retinal ganglion cells",
   "short_description": "Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [],
-  "start_time": null,
+  "start_time": "2026-04-20T12:16:45Z",
   "end_time": null,
   "expected_assets": {
     "paper": 25,
