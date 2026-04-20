@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Run /add-paper twice (Morrie & Feller 2018 Neuron, Murphy-Baum & Feller 2018 Current Biology), read Methods sections, write correction asset dataset_dsgc-baseline-morphology.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T16:41:45Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T17:04:17Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
