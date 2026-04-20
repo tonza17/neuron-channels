@@ -1,0 +1,3 @@
+branch: task/t0019_literature_survey_voltage_gated_channels
+base_commit: d2a92ee5639936bc6ba4a2400e8aae30e3a8dd12
+worktree: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0019_literature_survey_voltage_gated_channels
