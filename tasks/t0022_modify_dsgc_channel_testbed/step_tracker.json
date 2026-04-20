@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Read t0008 modeldb_189347_dsgc and t0020 modeldb_189347_dsgc_gabamod source to identify reusable HOC/MOD skeleton and driver-extension points.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-20T23:08:45Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
