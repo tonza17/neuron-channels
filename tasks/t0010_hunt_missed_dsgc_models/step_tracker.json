@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0008_port_modeldb_189347 is completed and understand its port pattern + answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T12:28:54Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T12:32:14Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
