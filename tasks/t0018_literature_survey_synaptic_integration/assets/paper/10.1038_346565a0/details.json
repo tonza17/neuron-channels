@@ -1,0 +1,51 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_346565a0",
+  "doi": "10.1038/346565a0",
+  "title": "Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents",
+  "url": "https://doi.org/10.1038/346565a0",
+  "pdf_url": null,
+  "date_published": "1990-08-09",
+  "year": 1990,
+  "authors": [
+    {
+      "name": "Robin A. J. Lester",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "John D. Clements",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Gary L. Westbrook",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Craig E. Jahr",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "synaptic-integration",
+    "dendritic-computation"
+  ],
+  "abstract": "",
+  "citation_key": "Lester1990",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0018_literature_survey_synaptic_integration",
+  "date_added": "2026-04-20"
+}

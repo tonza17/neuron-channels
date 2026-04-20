@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0018_literature_survey_synaptic_integration",
+  "command": "uv run python -m arf.scripts.workflow.poststep t0018_literature_survey_synaptic_integration planning",
+  "exit_code": 1,
+  "duration_seconds": 0.211,
+  "started_at": "2026-04-20T11:52:55Z",
+  "completed_at": "2026-04-20T11:52:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0018_literature_survey_synaptic_integration",
+  "stdout_file": "040_20260420T115255Z_uv-run-python.stdout.txt",
+  "stderr_file": "040_20260420T115255Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

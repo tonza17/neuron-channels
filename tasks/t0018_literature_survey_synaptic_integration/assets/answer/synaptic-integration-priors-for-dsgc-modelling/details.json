@@ -1,0 +1,29 @@
+{
+  "spec_version": "2",
+  "answer_id": "synaptic-integration-priors-for-dsgc-modelling",
+  "question": "What quantitative priors does the synaptic-integration literature supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4) dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC inhibitory asymmetry?",
+  "short_title": "Synaptic-integration priors for DSGC modelling",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "synaptic-integration",
+    "dendritic-computation",
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1038_346565a0",
+    "10.1073_pnas.80.9.2799",
+    "10.1038_nature02116",
+    "no-doi_HausserMel2003_s0959-4388-03-00075-8",
+    "10.1038_nature00931"
+  ],
+  "source_urls": [],
+  "source_task_ids": [],
+  "confidence": "medium",
+  "created_by_task": "t0018_literature_survey_synaptic_integration",
+  "date_created": "2026-04-20"
+}

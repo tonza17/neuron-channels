@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0018_literature_survey_synaptic_integration",
+  "command": "uv run python meta/asset_types/answer/verificator.py --task-id t0018_literature_survey_synaptic_integration synaptic-integration-priors-for-dsgc-modelling",
+  "exit_code": 0,
+  "duration_seconds": 0.351,
+  "started_at": "2026-04-20T12:01:07Z",
+  "completed_at": "2026-04-20T12:01:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0018_literature_survey_synaptic_integration",
+  "stdout_file": "054_20260420T120107Z_uv-run-python.stdout.txt",
+  "stderr_file": "054_20260420T120107Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

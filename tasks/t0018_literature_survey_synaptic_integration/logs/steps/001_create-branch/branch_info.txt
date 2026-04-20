@@ -1,0 +1,3 @@
+branch: task/t0018_literature_survey_synaptic_integration
+base_commit: 798af4a43e36f1dbcbbfbaaa6b6c6e44c3022b2d
+worktree: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0018_literature_survey_synaptic_integration

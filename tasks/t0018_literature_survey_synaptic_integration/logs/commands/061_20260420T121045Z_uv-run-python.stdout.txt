@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\task.json
+
+[31m[1mERRORS:[0m
+[31m  TC-E001 error: task.json status is 'in_progress', expected one of: cancelled, completed, permanently_failed[0m
+[31m  TC-E002 error: task.json end_time is null[0m
+[31m  TC-E004 error: Step 'reporting' has status 'in_progress', not finished[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_logs
+    [31m  LG-E005 error: Step log step_log.md missing frontmatter field: 'step_number'[0m; [31m  LG-E005 error: Step log step_log.md missing frontmatter field: 'step_number'[0m; [31m[1mFAILED[0m — 2 error(s), 21 warning(s)[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_task_metrics
+    [31m  TM-E005 error: metrics.json key 'papers_built' is not registered in meta/metrics/. Only registered project metrics are allowed in metrics.json. Task-specific data belongs in results_detailed.md.[0m; [31m  TM-E005 error: metrics.json key 'papers_paywalled' is not registered in meta/metrics/. Only registered project metrics are allowed in metrics.json. Task-specific data belongs in results_detailed.md.[0m; [31m  TM-E005 error: metrics.json key 'themes_covered' is not registered in meta/metrics/. Only registered project metrics are allowed in metrics.json. Task-specific data belongs in results_detailed.md.[0m[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TC-W002 warning: Expected 25 paper asset(s), found 5[0m
+[33m  TC-W005 warning: No merged PR found for branch 'task/t0018_literature_survey_synaptic_integration'[0m
+
+[31m[1mFAILED[0m — 5 error(s), 2 warning(s)

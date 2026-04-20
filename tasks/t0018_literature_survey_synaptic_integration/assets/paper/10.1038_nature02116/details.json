@@ -1,0 +1,39 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature02116",
+  "doi": "10.1038/nature02116",
+  "title": "Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex",
+  "url": "https://doi.org/10.1038/nature02116",
+  "pdf_url": null,
+  "date_published": "2003-11",
+  "year": 2003,
+  "authors": [
+    {
+      "name": "Michael Wehr",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Anthony M. Zador",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "synaptic-integration",
+    "direction-selectivity"
+  ],
+  "abstract": "",
+  "citation_key": "WehrZador2003",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0018_literature_survey_synaptic_integration",
+  "date_added": "2026-04-20"
+}

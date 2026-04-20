@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0003] has no matching Task Index entry[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RC-W002 warning: Task Index entry [t0015] references task 't0015_literature_survey_passive_cable' which does not exist[0m
+
+[31m[1mFAILED[0m — 1 error(s), 1 warning(s)

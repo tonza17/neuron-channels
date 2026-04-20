@@ -1,0 +1,6 @@
+OK   10.1038/346565a0
+OK   10.1073/pnas.80.9.2799
+OK   10.1038/nature02116
+OK   10.1016/s0959-4388(03)00075-8
+OK   10.1038/nature00931
+Wrote tasks\t0018_literature_survey_synaptic_integration\plan\crossref_metadata.json

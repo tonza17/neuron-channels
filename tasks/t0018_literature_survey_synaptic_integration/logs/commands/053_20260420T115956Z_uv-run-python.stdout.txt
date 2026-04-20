@@ -1,0 +1,28 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\task.json
+
+[31m[1mERRORS:[0m
+[31m  TC-E001 error: task.json status is 'in_progress', expected one of: cancelled, completed, permanently_failed[0m
+[31m  TC-E002 error: task.json end_time is null[0m
+[31m  TC-E004 error: Step 'implementation' has status 'in_progress', not finished[0m
+[31m  TC-E004 error: Step 'results' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'suggestions' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'reporting' has status 'pending', not finished[0m
+[31m  TC-E006 error: Mandatory result file missing: results/results_summary.md[0m
+[31m  TC-E006 error: Mandatory result file missing: results/results_detailed.md[0m
+[31m  TC-E006 error: Mandatory result file missing: results/metrics.json[0m
+[31m  TC-E006 error: Mandatory result file missing: results/suggestions.json[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_suggestions
+    [31m  SG-E001 error: suggestions.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\results\suggestions.json[0m; [31m[1mFAILED[0m — 1 error(s), 0 warning(s)[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_task_metrics
+    [31m  TM-E001 error: metrics.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\results\metrics.json[0m; [31m[1mFAILED[0m — 1 error(s), 0 warning(s)[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_task_results
+    [31m  TR-E001 error: results_summary.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\results\results_summary.md[0m; [31m  TR-E002 error: results_detailed.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\results\results_detailed.md[0m; [31m  TR-E003 error: metrics.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\results\metrics.json[0m[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_answer_asset synaptic-integration-priors-for-dsgc-modelling
+    [31m  AA-E013 error: ## Answer in short answer document has 6 sentences (expected: 2-5)[0m; [31m[1mFAILED[0m — 1 error(s), 0 warning(s)[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TC-W002 warning: Expected 25 paper asset(s), found 5[0m
+[33m  TC-W005 warning: No merged PR found for branch 'task/t0018_literature_survey_synaptic_integration'[0m
+
+[31m[1mFAILED[0m — 14 error(s), 2 warning(s)

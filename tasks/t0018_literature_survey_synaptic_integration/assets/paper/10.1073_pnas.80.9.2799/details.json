@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1073_pnas.80.9.2799",
+  "doi": "10.1073/pnas.80.9.2799",
+  "title": "Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing.",
+  "url": "https://doi.org/10.1073/pnas.80.9.2799",
+  "pdf_url": null,
+  "date_published": "1983-05",
+  "year": 1983,
+  "authors": [
+    {
+      "name": "C Koch",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "T Poggio",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "V Torre",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Proceedings of the National Academy of Sciences",
+  "venue_type": "journal",
+  "categories": [
+    "synaptic-integration",
+    "dendritic-computation"
+  ],
+  "abstract": "In a passive dendritic tree, inhibitory synaptic inputs activating ionic conductances with an equilibrium potential near the resting potential can effectively veto excitatory inputs. Analog interactions of this type can be very powerful if the inputs are appropriately timed and occur at certain locations. We examine with computer simulations the precise conditions required for strong and specific interactions in the case of a delta-like ganglion cell of the cat retina. We find some critical conditions to be that (i) the peak inhibitory conductance changes must be sufficiently large (i.e., approximately equal to 50 nS or more), (ii) inhibition must be on the direct path from the location of excitation to the soma, and (iii) the time course of excitation and inhibition must substantially overlap. Analog AND-NOT operations realized by satisfying these conditions may underlie direction selectivity in ganglion cells.",
+  "citation_key": "KochPoggio1983",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0018_literature_survey_synaptic_integration",
+  "date_added": "2026-04-20"
+}

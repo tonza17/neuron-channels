@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0018_literature_survey_synaptic_integration\tasks\t0018_literature_survey_synaptic_integration\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Crossref] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [EulerDetwilerDenk2002] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [HausserMel2003] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [KochPoggio1983] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [OpenAlex] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [RGC-NMDA-2010] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [SemanticScholar] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [WehrZador2003] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 0 entries but frontmatter says sources_cited=8[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RI-W006 warning: papers_discovered=5 in frontmatter but Discovered Papers section has 0 entries[0m
+
+[31m[1mFAILED[0m — 9 error(s), 1 warning(s)

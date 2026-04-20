@@ -1,0 +1,3436 @@
+[
+  {
+    "doi": "10.1038/346565a0",
+    "citation_key": "Lester1990",
+    "theme": 1,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            28
+          ]
+        ],
+        "date-time": "2026-03-28T21:46:45Z",
+        "timestamp": 1774734405167,
+        "version": "3.50.1"
+      },
+      "reference-count": 23,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "6284",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                1990,
+                8,
+                9
+              ]
+            ],
+            "date-time": "1990-08-09T00:00:00Z",
+            "timestamp": 650160000000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://www.springer.com/tdm"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                1990,
+                8,
+                9
+              ]
+            ],
+            "date-time": "1990-08-09T00:00:00Z",
+            "timestamp": 650160000000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.springer.com/tdm"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "link.springer.com"
+        ],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Nature"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            1990,
+            8,
+            9
+          ]
+        ]
+      },
+      "DOI": "10.1038/346565a0",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2003,
+            6,
+            12
+          ]
+        ],
+        "date-time": "2003-06-12T22:48:27Z",
+        "timestamp": 1055458107000
+      },
+      "page": "565-567",
+      "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 396,
+      "title": [
+        "Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents"
+      ],
+      "prefix": "10.1038",
+      "volume": "346",
+      "author": [
+        {
+          "given": "Robin A. J.",
+          "family": "Lester",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "John D.",
+          "family": "Clements",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Gary L.",
+          "family": "Westbrook",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Craig E.",
+          "family": "Jahr",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            1990,
+            8,
+            9
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "BF346565a0_CR1",
+          "doi-asserted-by": "publisher",
+          "first-page": "515",
+          "DOI": "10.1113/jphysiol.1988.sp016975",
+          "volume": "396",
+          "author": "ID Forsythe",
+          "year": "1988",
+          "unstructured": "Forsythe, I. D. & Westbrook, G. L. J. Physiol., Lond. 396, 515\u2013533 (1988).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR2",
+          "first-page": "103",
+          "volume": "1",
+          "author": "GL Westbrook",
+          "year": "1989",
+          "unstructured": "Westbrook, G. L. & Jahr, C. E. Seminars in the Neurosciences 1, 103\u2013114 (1989).",
+          "journal-title": "Seminars in the Neurosciences"
+        },
+        {
+          "key": "BF346565a0_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "35",
+          "DOI": "10.1113/jphysiol.1985.sp015694",
+          "volume": "363",
+          "author": "N Dale",
+          "year": "1985",
+          "unstructured": "Dale, N. & Roberts, A. J. Physiol., Lond. 363, 35\u201359 (1985).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR4",
+          "doi-asserted-by": "publisher",
+          "first-page": "230",
+          "DOI": "10.1038/341230a0",
+          "volume": "341",
+          "author": "JM Bekkers",
+          "year": "1989",
+          "unstructured": "Bekkers, J. M. & Stevens, C. F. Nature 341, 230\u2013233 (1989).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "283",
+          "DOI": "10.1113/jphysiol.1988.sp017080",
+          "volume": "399",
+          "author": "GL Collingridge",
+          "year": "1988",
+          "unstructured": "Collingridge, G. L., Herron, C. E. & Lester, R. A. J. J. Physiol., Lond. 399, 283\u2013300 (1988).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR6",
+          "doi-asserted-by": "publisher",
+          "first-page": "203",
+          "DOI": "10.1113/jphysiol.1990.sp017980",
+          "volume": "422",
+          "author": "S Hestrin",
+          "year": "1990",
+          "unstructured": "Hestrin, S., Nicoll, R. A., Perkel, D. J. & Sah, P. J. Physiol., Lond. 422, 203\u2013225 (1990).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR7",
+          "doi-asserted-by": "publisher",
+          "first-page": "462",
+          "DOI": "10.1038/307462a0",
+          "volume": "307",
+          "author": "L Nowak",
+          "year": "1984",
+          "unstructured": "Nowak, L., Bregestovski, P., Ascher, P., Herbet, A. & Prochiantz, A. Nature 307, 462\u2013465 (1984).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "522",
+          "DOI": "10.1038/325522a0",
+          "volume": "325",
+          "author": "CE Jahr",
+          "year": "1987",
+          "unstructured": "Jahr, C. E. & Stevens, C. F. Nature 325, 522\u2013525 (1987).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR9",
+          "doi-asserted-by": "publisher",
+          "first-page": "525",
+          "DOI": "10.1038/325525a0",
+          "volume": "325",
+          "author": "SG Cull-Candy",
+          "year": "1987",
+          "unstructured": "Cull-Candy, S. G. & Usowicz, M. M. Nature 325, 525\u2013528 (1987).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR10",
+          "doi-asserted-by": "publisher",
+          "first-page": "182",
+          "DOI": "10.1016/0304-3940(88)90378-3",
+          "volume": "89",
+          "author": "JF Blake",
+          "year": "1988",
+          "unstructured": "Blake, J. F., Brown, M. W. & Collingridge, G. L. Neurosci. Lett. 89, 182\u2013186 (1988).",
+          "journal-title": "Neurosci. Lett."
+        },
+        {
+          "key": "BF346565a0_CR11",
+          "doi-asserted-by": "publisher",
+          "first-page": "317",
+          "DOI": "10.1113/jphysiol.1989.sp017690",
+          "volume": "414",
+          "author": "M Andreasen",
+          "year": "1989",
+          "unstructured": "Andreasen, M., Lambert, J. D. C. & Jensen, M. S. J. Physiol., Lond. 414, 317\u2013336 (1989).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "911",
+          "DOI": "10.1016/0896-6273(88)90148-1",
+          "volume": "1",
+          "author": "JA Kauer",
+          "year": "1988",
+          "unstructured": "Kauer, J. A., Malenka, R. C. & Nicoll, R. A. Neuron 1, 911\u2013917 (1988).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BF346565a0_CR13",
+          "doi-asserted-by": "publisher",
+          "first-page": "475",
+          "DOI": "10.1111/j.1748-1716.1985.tb07685.x",
+          "volume": "124",
+          "author": "H Wigstrom",
+          "year": "1985",
+          "unstructured": "Wigstrom, H., Gustafsson, B. & Huang, Y-Y. Acta physiol. scand. 124, 475\u2013478 (1985).",
+          "journal-title": "Acta physiol. scand."
+        },
+        {
+          "key": "BF346565a0_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "1221",
+          "DOI": "10.1016/0896-6273(89)90306-1",
+          "volume": "2",
+          "author": "E Sernagor",
+          "year": "1989",
+          "unstructured": "Sernagor, E., Kuhn, D., Vyklicky, L. & Mayer, M. Neuron 2, 1221\u20131227 (1989).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BF346565a0_CR15",
+          "doi-asserted-by": "publisher",
+          "first-page": "261",
+          "DOI": "10.1038/309261a0",
+          "volume": "309",
+          "author": "ML Mayer",
+          "year": "1984",
+          "unstructured": "Mayer, M. L., Westbrook, G. L. & Guthrie, P. B. Nature 309, 261\u2013263 (1984).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR16",
+          "doi-asserted-by": "publisher",
+          "first-page": "131",
+          "DOI": "10.1113/jphysiol.1988.sp016912",
+          "volume": "395",
+          "author": "D Colquhoun",
+          "year": "1988",
+          "unstructured": "Colquhoun, D. & Ogden, D. C. J. Physiol., Lond. 395, 131\u2013159 (1988).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR17",
+          "unstructured": "Patneau, D. K. & Mayer, M. L. J. Neurosci. (in the press)."
+        },
+        {
+          "key": "BF346565a0_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "460",
+          "DOI": "10.1038/307460a0",
+          "volume": "307",
+          "author": "HJ Olverman",
+          "year": "1984",
+          "unstructured": "Olverman, H. J., Jones, A. W. & Watkins, J. C. Nature 307, 460\u2013462 (1984).",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BF346565a0_CR19",
+          "doi-asserted-by": "publisher",
+          "first-page": "361",
+          "DOI": "10.1113/jphysiol.1977.sp011772",
+          "volume": "266",
+          "author": "D Colquhoun",
+          "year": "1977",
+          "unstructured": "Colquhoun, D., Large, W. A. & Rang, H. P. J. Physiol., Lond. 266, 361\u2013395 (1977).",
+          "journal-title": "J. Physiol., Lond."
+        },
+        {
+          "key": "BF346565a0_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "209",
+          "DOI": "10.1016/0896-6273(89)90034-2",
+          "volume": "3",
+          "author": "LO Trussell",
+          "year": "1989",
+          "unstructured": "Trussell, L. O. & Fischbach, G. D. Neuron 3, 209\u2013218 (1989).",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BF346565a0_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "1474",
+          "DOI": "10.1126/science.2467378",
+          "volume": "243",
+          "author": "CM Tang",
+          "year": "1989",
+          "unstructured": "Tang, C. M., Dichter, M. & Morad, M. Science 243, 1474\u20131477 (1989).",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BF346565a0_CR22",
+          "unstructured": "Forsythe, I. D. & Clements, J. D. J. Physiol., Lond. (in the press)."
+        },
+        {
+          "key": "BF346565a0_CR23",
+          "first-page": "565",
+          "volume": "35",
+          "author": "RAJ Lester",
+          "year": "1989",
+          "unstructured": "Lester, R. A. J., Quarum, M. L., Parker, J. D., Weber, E. & Jahr, C. E. Molec. Pharmac. 35, 565\u2013570 (1989).",
+          "journal-title": "Molec. Pharmac."
+        }
+      ],
+      "container-title": [
+        "Nature"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://www.nature.com/articles/346565a0",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://www.nature.com/articles/346565a0.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://www.nature.com/articles/346565a0.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2022,
+            6,
+            25
+          ]
+        ],
+        "date-time": "2022-06-25T16:03:26Z",
+        "timestamp": 1656173006000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.nature.com/articles/346565a0"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            1990,
+            8,
+            9
+          ]
+        ]
+      },
+      "references-count": 23,
+      "journal-issue": {
+        "issue": "6284",
+        "published-print": {
+          "date-parts": [
+            [
+              1990,
+              8,
+              9
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "BF346565a0"
+      ],
+      "URL": "https://doi.org/10.1038/346565a0",
+      "relation": {},
+      "ISSN": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "issn-type": [
+        {
+          "value": "0028-0836",
+          "type": "print"
+        },
+        {
+          "value": "1476-4687",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            1990,
+            8,
+            9
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "25 April 1990",
+          "order": 1,
+          "name": "received",
+          "label": "Received",
+          "group": {
+            "name": "ArticleHistory",
+            "label": "Article History"
+          }
+        },
+        {
+          "value": "17 May 1990",
+          "order": 2,
+          "name": "accepted",
+          "label": "Accepted",
+          "group": {
+            "name": "ArticleHistory",
+            "label": "Article History"
+          }
+        },
+        {
+          "value": "9 August 1990",
+          "order": 3,
+          "name": "first_online",
+          "label": "First Online",
+          "group": {
+            "name": "ArticleHistory",
+            "label": "Article History"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "doi": "10.1073/pnas.80.9.2799",
+    "citation_key": "KochPoggio1983",
+    "theme": 2,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            14
+          ]
+        ],
+        "date-time": "2026-04-14T21:58:19Z",
+        "timestamp": 1776203899459,
+        "version": "3.50.1"
+      },
+      "reference-count": 0,
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "issue": "9",
+      "content-domain": {
+        "domain": [
+          "www.pnas.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "Proc. Natl. Acad. Sci. U.S.A."
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            1983,
+            5
+          ]
+        ]
+      },
+      "abstract": "<jats:p>In a passive dendritic tree, inhibitory synaptic inputs activating ionic conductances with an equilibrium potential near the resting potential can effectively veto excitatory inputs. Analog interactions of this type can be very powerful if the inputs are appropriately timed and occur at certain locations. We examine with computer simulations the precise conditions required for strong and specific interactions in the case of a delta-like ganglion cell of the cat retina. We find some critical conditions to be that (i) the peak inhibitory conductance changes must be sufficiently large (i.e., approximately equal to 50 nS or more), (ii) inhibition must be on the direct path from the location of excitation to the soma, and (iii) the time course of excitation and inhibition must substantially overlap. Analog AND-NOT operations realized by satisfying these conditions may underlie direction selectivity in ganglion cells.</jats:p>",
+      "DOI": "10.1073/pnas.80.9.2799",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2006,
+            5,
+            31
+          ]
+        ],
+        "date-time": "2006-05-31T09:21:26Z",
+        "timestamp": 1149067286000
+      },
+      "page": "2799-2802",
+      "update-policy": "https://doi.org/10.1073/pnas.cm10313",
+      "source": "Crossref",
+      "is-referenced-by-count": 403,
+      "title": [
+        "Nonlinear interactions in a dendritic tree: localization, timing, and role in information processing."
+      ],
+      "prefix": "10.1073",
+      "volume": "80",
+      "author": [
+        {
+          "given": "C",
+          "family": "Koch",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "T",
+          "family": "Poggio",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "V",
+          "family": "Torre",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "341",
+      "published-online": {
+        "date-parts": [
+          [
+            1983,
+            5
+          ]
+        ]
+      },
+      "container-title": [
+        "Proceedings of the National Academy of Sciences"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://pnas.org/doi/pdf/10.1073/pnas.80.9.2799",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2022,
+            4,
+            13
+          ]
+        ],
+        "date-time": "2022-04-13T16:03:34Z",
+        "timestamp": 1649865814000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://pnas.org/doi/full/10.1073/pnas.80.9.2799"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            1983,
+            5
+          ]
+        ]
+      },
+      "references-count": 0,
+      "journal-issue": {
+        "issue": "9",
+        "published-print": {
+          "date-parts": [
+            [
+              1983,
+              5
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1073/pnas.80.9.2799"
+      ],
+      "URL": "https://doi.org/10.1073/pnas.80.9.2799",
+      "relation": {},
+      "ISSN": [
+        "0027-8424",
+        "1091-6490"
+      ],
+      "issn-type": [
+        {
+          "value": "0027-8424",
+          "type": "print"
+        },
+        {
+          "value": "1091-6490",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            1983,
+            5
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "1983-05-01",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "doi": "10.1038/nature02116",
+    "citation_key": "WehrZador2003",
+    "theme": 3,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            17
+          ]
+        ],
+        "date-time": "2026-04-17T05:29:05Z",
+        "timestamp": 1776403745973,
+        "version": "3.51.2"
+      },
+      "reference-count": 30,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "6965",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2003,
+                11,
+                1
+              ]
+            ],
+            "date-time": "2003-11-01T00:00:00Z",
+            "timestamp": 1067644800000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://www.springer.com/tdm"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Nature"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2003,
+            11
+          ]
+        ]
+      },
+      "DOI": "10.1038/nature02116",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2003,
+            11,
+            26
+          ]
+        ],
+        "date-time": "2003-11-26T13:13:33Z",
+        "timestamp": 1069852413000
+      },
+      "page": "442-446",
+      "source": "Crossref",
+      "is-referenced-by-count": 1248,
+      "title": [
+        "Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex"
+      ],
+      "prefix": "10.1038",
+      "volume": "426",
+      "author": [
+        {
+          "given": "Michael",
+          "family": "Wehr",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Anthony M.",
+          "family": "Zador",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "297",
+      "reference": [
+        {
+          "key": "BFnature02116_CR1",
+          "doi-asserted-by": "publisher",
+          "first-page": "1",
+          "DOI": "10.1016/0378-5955(85)90094-2",
+          "volume": "19",
+          "author": "SA Shamma",
+          "year": "1985",
+          "unstructured": "Shamma, S. A. & Symmes, D. Patterns of inhibition in auditory cortical cells in awake squirrel monkeys. Hear. Res. 19, 1\u201313 (1985)",
+          "journal-title": "Hear. Res."
+        },
+        {
+          "key": "BFnature02116_CR2",
+          "doi-asserted-by": "publisher",
+          "first-page": "1876",
+          "DOI": "10.1152/jn.1995.73.5.1876",
+          "volume": "73",
+          "author": "MB Calford",
+          "year": "1995",
+          "unstructured": "Calford, M. B. & Semple, M. N. Monaural inhibition in cat auditory cortex. J. Neurophysiol. 73, 1876\u20131891 (1995)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "2358",
+          "DOI": "10.1152/jn.1999.82.5.2358",
+          "volume": "82",
+          "author": "ML Sutter",
+          "year": "1999",
+          "unstructured": "Sutter, M. L., Schreiner, C. E., McLean, M., O'Connor, K. N. & Loftus, W. C. Organization of inhibitory frequency receptive fields in cat primary auditory cortex. J. Neurophysiol. 82, 2358\u20132371 (1999)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR4",
+          "doi-asserted-by": "publisher",
+          "first-page": "161",
+          "DOI": "10.1016/S0378-5955(00)00197-0",
+          "volume": "150",
+          "author": "QC Chen",
+          "year": "2000",
+          "unstructured": "Chen, Q. C. & Jen, P. H. Bicuculline application affects discharge patterns, rate-intensity functions, and frequency tuning characteristics of bat auditory cortical neurons. Hear. Res. 150, 161\u2013174 (2000)",
+          "journal-title": "Hear. Res."
+        },
+        {
+          "key": "BFnature02116_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "219",
+          "DOI": "10.1016/S0006-8993(02)02926-8",
+          "volume": "944",
+          "author": "J Wang",
+          "year": "2002",
+          "unstructured": "Wang, J., McFadden, S. L., Caspary, D. & Salvi, R. Gamma-aminobutyric acid circuits shape response properties of auditory cortex neurons. Brain Res. 944, 219\u2013231 (2002)",
+          "journal-title": "Brain Res."
+        },
+        {
+          "key": "BFnature02116_CR6",
+          "doi-asserted-by": "publisher",
+          "first-page": "1159",
+          "DOI": "10.1126/science.1060342",
+          "volume": "293",
+          "author": "F Pouille",
+          "year": "2001",
+          "unstructured": "Pouille, F. & Scanziani, M. Enforcement of temporal fidelity in pyramidal cells by somatic feed-forward inhibition. Science 293, 1159\u20131163 (2001)",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnature02116_CR7",
+          "doi-asserted-by": "publisher",
+          "first-page": "3870",
+          "DOI": "10.1523/JNEUROSCI.18-10-03870.1998",
+          "volume": "18",
+          "author": "MN Shadlen",
+          "year": "1998",
+          "unstructured": "Shadlen, M. N. & Newsome, W. T. The variable discharge of cortical neurons: implications for connectivity, computation, and information coding. J. Neurosci. 18, 3870\u20133896 (1998)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature02116_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "651",
+          "DOI": "10.1085/jgp.39.5.651",
+          "volume": "39",
+          "author": "HK Hartline",
+          "year": "1956",
+          "unstructured": "Hartline, H. K., Wagner, H. G. & Ratcliff, F. Inhibition in the eye of Limulus. J. Gen. Physiol. 39, 651\u2013673 (1956)",
+          "journal-title": "J. Gen. Physiol."
+        },
+        {
+          "key": "BFnature02116_CR9",
+          "doi-asserted-by": "publisher",
+          "first-page": "201",
+          "DOI": "10.1038/nature01796",
+          "volume": "424",
+          "author": "LI Zhang",
+          "year": "2003",
+          "unstructured": "Zhang, L. I., Tan, A. Y., Schreiner, C. E. & Merzenich, M. M. Topography and synaptic shaping of direction selectivity in primary auditory cortex. Nature 424, 201\u2013205 (2003)",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnature02116_CR10",
+          "doi-asserted-by": "publisher",
+          "first-page": "369",
+          "DOI": "10.1038/30735",
+          "volume": "393",
+          "author": "LJ Borg-Graham",
+          "year": "1998",
+          "unstructured": "Borg-Graham, L. J., Monier, C. & Fregnac, Y. Visual input evokes transient and strong shunting inhibition in visual cortical neurons. Nature 393, 369\u2013373 (1998)",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnature02116_CR11",
+          "doi-asserted-by": "publisher",
+          "first-page": "9517",
+          "DOI": "10.1523/JNEUROSCI.18-22-09517.1998",
+          "volume": "18",
+          "author": "JA Hirsch",
+          "year": "1998",
+          "unstructured": "Hirsch, J. A., Alonso, J. M., Reid, R. C. & Martinez, L. M. Synaptic integration in striate cortical simple cells. J. Neurosci. 18, 9517\u20139528 (1998)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature02116_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "909",
+          "DOI": "10.1152/jn.2000.84.2.909",
+          "volume": "84",
+          "author": "JS Anderson",
+          "year": "2000",
+          "unstructured": "Anderson, J. S., Carandini, M. & Ferster, D. Orientation tuning of input conductance, excitation, and inhibition in cat primary visual cortex. J. Neurophysiol. 84, 909\u2013926 (2000)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR13",
+          "doi-asserted-by": "publisher",
+          "first-page": "663",
+          "DOI": "10.1016/S0896-6273(03)00064-3",
+          "volume": "37",
+          "author": "C Monier",
+          "year": "2003",
+          "unstructured": "Monier, C., Chavane, F., Baudot, P., Graham, L. J. & Fregnac, Y. Orientation and direction selectivity of synaptic inputs in visual cortical neurons: a diversity of combinations produces spike tuning. Neuron 37, 663\u2013680 (2003)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "2882",
+          "DOI": "10.1152/jn.1998.80.6.2882",
+          "volume": "80",
+          "author": "CI Moore",
+          "year": "1998",
+          "unstructured": "Moore, C. I. & Nelson, S. B. Spatio-temporal subthreshold receptive fields in the vibrissa representation of rat primary somatosensory cortex. J. Neurophysiol. 80, 2882\u20132892 (1998)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR15",
+          "doi-asserted-by": "publisher",
+          "first-page": "470",
+          "DOI": "10.1523/JNEUROSCI.20-01-00470.2000",
+          "volume": "20",
+          "author": "M Carandini",
+          "year": "2000",
+          "unstructured": "Carandini, M. & Ferster, D. Membrane potential and firing rate in cat primary visual cortex. J. Neurosci. 20, 470\u2013484 (2000)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature02116_CR16",
+          "doi-asserted-by": "publisher",
+          "first-page": "1079",
+          "DOI": "10.1093/cercor/12.10.1079",
+          "volume": "12",
+          "author": "H Ojima",
+          "year": "2002",
+          "unstructured": "Ojima, H. & Murakami, K. Intracellular characterization of suppressive responses in supragranular pyramidal neurons of cat primary auditory cortex in vivo. Cereb. Cortex 12, 1079\u20131091 (2002)",
+          "journal-title": "Cereb. Cortex"
+        },
+        {
+          "key": "BFnature02116_CR17",
+          "doi-asserted-by": "publisher",
+          "first-page": "1177",
+          "DOI": "10.1016/S0896-6273(00)80498-5",
+          "volume": "20",
+          "author": "S Chung",
+          "year": "1998",
+          "unstructured": "Chung, S. & Ferster, D. Strength and orientation tuning of the thalamic input to simple cells revealed by electrically evoked cortical suppression. Neuron 20, 1177\u20131189 (1998)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "151",
+          "DOI": "10.1016/S0896-6273(01)00445-7",
+          "volume": "32",
+          "author": "LM Miller",
+          "year": "2001",
+          "unstructured": "Miller, L. M., Escabi, M. A., Read, H. L. & Schreiner, C. E. Functional convergence of response properties in the auditory thalamocortical system. Neuron 32, 151\u2013160 (2001)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR19",
+          "doi-asserted-by": "publisher",
+          "first-page": "969",
+          "DOI": "10.1016/S0896-6273(02)01012-7",
+          "volume": "36",
+          "author": "J Schummers",
+          "year": "2002",
+          "unstructured": "Schummers, J., Marino, J. & Sur, M. Synaptic integration by V1 neurons depends on location within the orientation map. Neuron 36, 969\u2013978 (2002)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "87",
+          "DOI": "10.1016/0378-5955(85)90112-1",
+          "volume": "18",
+          "author": "DP Phillips",
+          "year": "1985",
+          "unstructured": "Phillips, D. P. & Cynader, M. S. Some neural mechanisms in the cat's auditory cortex underlying sensitivity to combined tone and wide-spectrum noise stimuli. Hear. Res. 18, 87\u2013102 (1985)",
+          "journal-title": "Hear. Res."
+        },
+        {
+          "key": "BFnature02116_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "115",
+          "DOI": "10.1007/BF00230019",
+          "volume": "91",
+          "author": "IO Volkov",
+          "year": "1992",
+          "unstructured": "Volkov, I. O. & Galazyuk, A. V. Peculiarities of inhibition in cat auditory cortex neurons evoked by tonal stimuli of various durations. Exp. Brain Res. 91, 115\u2013120 (1992)",
+          "journal-title": "Exp. Brain Res."
+        },
+        {
+          "key": "BFnature02116_CR22",
+          "doi-asserted-by": "publisher",
+          "first-page": "437",
+          "DOI": "10.1016/S0896-6273(02)00659-1",
+          "volume": "34",
+          "author": "S Chung",
+          "year": "2002",
+          "unstructured": "Chung, S., Li, X. & Nelson, S. Short-term depression at thalamocortical synapses contributes to rapid adaptation of cortical sensory responses in vivo. Neuron 34, 437\u2013446 (2002)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR23",
+          "doi-asserted-by": "publisher",
+          "first-page": "773",
+          "DOI": "10.1016/S0896-6273(02)00820-6",
+          "volume": "35",
+          "author": "FS Chance",
+          "year": "2002",
+          "unstructured": "Chance, F. S., Abbott, L. F. & Reyes, A. D. Gain modulation from background synaptic input. Neuron 35, 773\u2013782 (2002)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature02116_CR24",
+          "doi-asserted-by": "publisher",
+          "first-page": "1524",
+          "DOI": "10.1152/jn.1988.59.5.1524",
+          "volume": "59",
+          "author": "DP Phillips",
+          "year": "1988",
+          "unstructured": "Phillips, D. P. Effect of tone-pulse rise time on rate-level functions of cat auditory cortex neurons: excitatory and inhibitory processes shaping responses to tone onset. J. Neurophysiol. 59, 1524\u20131539 (1988)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR25",
+          "doi-asserted-by": "publisher",
+          "first-page": "185",
+          "DOI": "10.1016/0006-8993(72)90178-3",
+          "volume": "48",
+          "author": "F De Ribaupierre",
+          "year": "1972",
+          "unstructured": "De Ribaupierre, F., Goldstein, M. H. Jr & Yeni-Komshian, G. Intracellular study of the cat's primary auditory cortex. Brain Res. 48, 185\u2013204 (1972)",
+          "journal-title": "Brain Res."
+        },
+        {
+          "key": "BFnature02116_CR26",
+          "doi-asserted-by": "publisher",
+          "first-page": "417",
+          "DOI": "10.1002/cne.902350402",
+          "volume": "235",
+          "author": "A Mitani",
+          "year": "1985",
+          "unstructured": "Mitani, A. & Shimokouchi, M. Neuronal connections in the primary auditory cortex: an electrophysiological study in the cat. J. Comp. Neurol. 235, 417\u2013429 (1985)",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "BFnature02116_CR27",
+          "doi-asserted-by": "publisher",
+          "first-page": "1005",
+          "DOI": "10.1152/jn.1969.32.6.1005",
+          "volume": "32",
+          "author": "JF Brugge",
+          "year": "1969",
+          "unstructured": "Brugge, J. F., Dubrovsky, N. A., Aitkin, L. M. & Anderson, D. J. Sensitivity of single neurons in auditory cortex of cat to binaural tonal stimulation; effects of varying interaural time and intensity. J. Neurophysiol. 32, 1005\u20131024 (1969)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature02116_CR28",
+          "doi-asserted-by": "publisher",
+          "first-page": "7940",
+          "DOI": "10.1523/JNEUROSCI.23-21-07940.2003",
+          "volume": "23",
+          "author": "MR DeWeese",
+          "year": "2003",
+          "unstructured": "DeWeese, M. R., Wehr, M. & Zador, A. M. Binary spiking in auditory cortex. J. Neurosci. 23, 7940\u20137949 (2003)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature02116_CR29",
+          "doi-asserted-by": "publisher",
+          "first-page": "3009",
+          "DOI": "10.1523/JNEUROSCI.16-09-03009.1996",
+          "volume": "16",
+          "author": "E Covey",
+          "year": "1996",
+          "unstructured": "Covey, E., Kauer, J. A. & Casseday, J. H. Whole-cell patch-clamp recording reveals subthreshold sound-evoked postsynaptic currents in the inferior colliculus of awake bats. J. Neurosci. 16, 3009\u20133018 (1996)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature02116_CR30",
+          "doi-asserted-by": "publisher",
+          "first-page": "210",
+          "DOI": "10.1038/659",
+          "volume": "1",
+          "author": "CF Stevens",
+          "year": "1998",
+          "unstructured": "Stevens, C. F. & Zador, A. M. Input synchrony and the irregular firing of cortical neurons. Nature Neurosci. 1, 210\u2013217 (1998)",
+          "journal-title": "Nature Neurosci."
+        }
+      ],
+      "container-title": [
+        "Nature"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://www.nature.com/articles/nature02116.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nature02116",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/doifinder/10.1038/nature02116",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nature02116.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            18
+          ]
+        ],
+        "date-time": "2023-05-18T14:19:22Z",
+        "timestamp": 1684419562000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.nature.com/articles/nature02116"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2003,
+            11
+          ]
+        ]
+      },
+      "references-count": 30,
+      "journal-issue": {
+        "issue": "6965",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              11
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "BFnature02116"
+      ],
+      "URL": "https://doi.org/10.1038/nature02116",
+      "relation": {
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.3410/f.1016531.200897",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "ISSN": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "issn-type": [
+        {
+          "value": "0028-0836",
+          "type": "print"
+        },
+        {
+          "value": "1476-4687",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2003,
+            11
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "doi": "10.1016/s0959-4388(03)00075-8",
+    "citation_key": "HausserMel2003",
+    "theme": 4,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            4
+          ]
+        ],
+        "date-time": "2026-03-04T09:59:33Z",
+        "timestamp": 1772618373069,
+        "version": "3.50.1"
+      },
+      "reference-count": 123,
+      "publisher": "Elsevier BV",
+      "issue": "3",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2003,
+                6,
+                1
+              ]
+            ],
+            "date-time": "2003-06-01T00:00:00Z",
+            "timestamp": 1054425600000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                2003,
+                6,
+                1
+              ]
+            ],
+            "date-time": "2003-06-01T00:00:00Z",
+            "timestamp": 1054425600000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "https://www.elsevier.com/legal/tdmrep-license"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "bmn.com",
+          "clinicalkey.com",
+          "clinicalkey.com.au",
+          "clinicalkey.es",
+          "clinicalkey.fr",
+          "clinicalkey.jp",
+          "elsevier.com",
+          "sciencedirect.com"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "Current Opinion in Neurobiology"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2003,
+            6
+          ]
+        ]
+      },
+      "DOI": "10.1016/s0959-4388(03)00075-8",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2003,
+            6,
+            30
+          ]
+        ],
+        "date-time": "2003-06-30T08:45:30Z",
+        "timestamp": 1056962730000
+      },
+      "page": "372-383",
+      "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 333,
+      "title": [
+        "Dendrites: bug or feature?"
+      ],
+      "prefix": "10.1016",
+      "volume": "13",
+      "author": [
+        {
+          "given": "Michael",
+          "family": "H\u00e4usser",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Bartlett",
+          "family": "Mel",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "78",
+      "reference": [
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB1",
+          "doi-asserted-by": "crossref",
+          "first-page": "848",
+          "DOI": "10.1038/12229",
+          "article-title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
+          "volume": "2",
+          "author": "Magee",
+          "year": "1999",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB2",
+          "doi-asserted-by": "crossref",
+          "first-page": "895",
+          "DOI": "10.1038/78800",
+          "article-title": "Somatic EPSP amplitude is independent of synapse location in hippocampal pyramidal neurons",
+          "volume": "3",
+          "author": "Magee",
+          "year": "2000",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB3",
+          "doi-asserted-by": "crossref",
+          "first-page": "2743",
+          "DOI": "10.1152/jn.1994.72.6.2743",
+          "article-title": "Amplification and linearization of distal synaptic input to cortical pyramidal cells",
+          "volume": "72",
+          "author": "Bernander",
+          "year": "1994",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB4",
+          "doi-asserted-by": "crossref",
+          "first-page": "751",
+          "DOI": "10.1523/JNEUROSCI.14-02-00751.1994",
+          "article-title": "Synaptic physiology of horizontal afferents to layer I in slices of rat SI neocortex",
+          "volume": "14",
+          "author": "Cauller",
+          "year": "1994",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB5_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "853",
+          "DOI": "10.1038/nn0901-853",
+          "article-title": "Synaptic scaling in vitro and in vivo",
+          "volume": "4",
+          "author": "London",
+          "year": "2001",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB6_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Schaefer AT, Larkum ME, Sakmann B, Roth A: Coincidence detection in pyramidal neurons is tuned by their dendritic branching pattern. J Neurophysiol 2003, in press.",
+          "DOI": "10.1152/jn.00046.2003"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB7",
+          "unstructured": "Helmchen F: Dendrites as biochemical compartments. In Dendrites. Edited by Stuart GJ, Spruston N, H\u00e4usser M. Oxford UK: Oxford University Press; 1999:160-192."
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB8",
+          "doi-asserted-by": "crossref",
+          "first-page": "227",
+          "DOI": "10.1098/rstb.1982.0084",
+          "article-title": "Retinal ganglion cells: a functional interpretation of dendritic morphology",
+          "volume": "298",
+          "author": "Koch",
+          "year": "1982",
+          "journal-title": "Philos Trans R Soc Lond B Biol Sci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB9",
+          "doi-asserted-by": "crossref",
+          "first-page": "99",
+          "DOI": "10.1016/S0092-8240(05)80006-0",
+          "article-title": "A logical calculus of the ideas immanent in nervous activity",
+          "volume": "99",
+          "author": "McCulloch",
+          "year": "1990",
+          "journal-title": "Bull Math Biophys"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB10",
+          "unstructured": "Minsky M, Papert S: Perceptrons. Cambridge, MA: MIT Press; 1969."
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB11",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Rumelhart D, McClelland J: Parallel Distributed Processing: Explorations in the Microstructure of Cognition. Cambridge, MA:MIT Press; 1986.",
+          "DOI": "10.7551/mitpress/5236.001.0001"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB12",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Bishop C: Neural Networks for Pattern Recognition. Oxford UK: Oxford University Press; 1995.",
+          "DOI": "10.1093/oso/9780198538493.001.0001"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB13_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "2272",
+          "DOI": "10.1126/science.1061198",
+          "article-title": "Compartmentalized and binary behavior of terminal dendrites in hippocampal pyramidal neurons",
+          "volume": "293",
+          "author": "Wei",
+          "year": "2001",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB14",
+          "doi-asserted-by": "crossref",
+          "first-page": "285",
+          "DOI": "10.1038/35005094",
+          "article-title": "NMDA spikes in basal dendrites of cortical pyramidal neurons",
+          "volume": "404",
+          "author": "Schiller",
+          "year": "2000",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB15",
+          "doi-asserted-by": "crossref",
+          "first-page": "14600",
+          "DOI": "10.1073/pnas.96.25.14600",
+          "article-title": "Calcium electrogenesis in distal apical dendrites of layer 5 pyramidal cells at a critical frequency of back-propagating action potentials",
+          "volume": "96",
+          "author": "Larkum",
+          "year": "1999",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB16_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "6991",
+          "DOI": "10.1523/JNEUROSCI.22-16-06991.2002",
+          "article-title": "Signaling of layer 1 and whisker-evoked Ca2+ and Na+ action potentials in distal and terminal dendrites of rat neocortical pyramidal neurons in vitro and in vivo",
+          "volume": "22",
+          "author": "Larkum",
+          "year": "2002",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB17",
+          "doi-asserted-by": "crossref",
+          "first-page": "338",
+          "DOI": "10.1038/18686",
+          "article-title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+          "volume": "398",
+          "author": "Larkum",
+          "year": "1999",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB18_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "447",
+          "DOI": "10.1111/j.1469-7793.2001.0447a.x",
+          "article-title": "Dendritic mechanisms underlying the coupling of the dendritic with the axonal action potential initiation zone of adult rat layer 5 pyramidal neurons",
+          "volume": "533",
+          "author": "Larkum",
+          "year": "2001",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB19_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "63",
+          "DOI": "10.1038/82910",
+          "article-title": "Dendritic coincidence detection of EPSPs and action potentials",
+          "volume": "4",
+          "author": "Stuart",
+          "year": "2001",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB20",
+          "doi-asserted-by": "crossref",
+          "first-page": "8366",
+          "DOI": "10.1073/pnas.122210599",
+          "article-title": "Dendritic K+ channels contribute to spike-timing dependent long-term potentiation in hippocampal pyramidal neurons",
+          "volume": "99",
+          "author": "Watanabe",
+          "year": "2002",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB21",
+          "unstructured": "Rall W: Theoretical significance of dendritic trees for neuronal input-output relations. In Neural Theory and Modeling. Edited by Reiss RF. Palo Alto: Stanford University Press, 1964: 73-97."
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB22",
+          "doi-asserted-by": "crossref",
+          "first-page": "453",
+          "DOI": "10.1016/S0166-2236(98)01327-7",
+          "article-title": "Excitable dendrites and spines: earlier theoretical insights elucidate recent direct observations",
+          "volume": "21",
+          "author": "Segev",
+          "year": "1998",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB23",
+          "doi-asserted-by": "crossref",
+          "first-page": "744",
+          "DOI": "10.1126/science.290.5492.744",
+          "article-title": "Untangling dendrites with quantitative models",
+          "volume": "290",
+          "author": "Segev",
+          "year": "2000",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB24",
+          "doi-asserted-by": "crossref",
+          "first-page": "R10",
+          "DOI": "10.1016/S0960-9822(00)00034-8",
+          "article-title": "Synaptic function: dendritic democracy",
+          "volume": "11",
+          "author": "H\u00e4usser",
+          "year": "2001",
+          "journal-title": "Curr Biol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB25",
+          "doi-asserted-by": "crossref",
+          "first-page": "147",
+          "DOI": "10.1016/S0166-2236(03)00035-3",
+          "article-title": "Role of dendritic synapse location in the control of action potential output",
+          "volume": "26",
+          "author": "Williams",
+          "year": "2003",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB26_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "332",
+          "DOI": "10.1038/nn826",
+          "article-title": "The information efficacy of a synapse",
+          "volume": "5",
+          "author": "London",
+          "year": "2002",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB27_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "9151",
+          "DOI": "10.1523/JNEUROSCI.21-23-09151.2001",
+          "article-title": "Distance-dependent increase in AMPA receptor number in the dendrites of adult hippocampal CA1 pyramidal neurons",
+          "volume": "21",
+          "author": "Andrasfalvy",
+          "year": "2001",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB28_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "1907",
+          "DOI": "10.1126/science.1067903",
+          "article-title": "Dependence of EPSP efficacy on synapse location in neocortical pyramidal neurons",
+          "volume": "295",
+          "author": "Williams",
+          "year": "2002",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB29_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "261",
+          "DOI": "10.1038/nn807",
+          "article-title": "Boosting of neuronal firing evoked with asynchronous and synchronous inputs to the dendrite",
+          "volume": "5",
+          "author": "Oviedo",
+          "year": "2002",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB30",
+          "doi-asserted-by": "crossref",
+          "first-page": "514",
+          "DOI": "10.1152/jn.2001.86.1.514",
+          "article-title": "Dendritic calcium spikes in layer 5 pyramidal neurons amplify and limit transmission of ligand-gated dendritic current to soma",
+          "volume": "86",
+          "author": "Oakley",
+          "year": "2001",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB31",
+          "doi-asserted-by": "crossref",
+          "first-page": "4736",
+          "DOI": "10.1073/pnas.91.11.4736",
+          "article-title": "Simulated responses of cerebellar Purkinje cells are independent of the dendritic location of granule cell synaptic inputs",
+          "volume": "91",
+          "author": "De Schutter",
+          "year": "1994",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB32",
+          "doi-asserted-by": "crossref",
+          "first-page": "535",
+          "DOI": "10.1152/jn.1999.81.2.535",
+          "article-title": "Voltage-dependent properties of dendrites that eliminate location-dependent variability of synaptic input",
+          "volume": "81",
+          "author": "Cook",
+          "year": "1999",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB33",
+          "doi-asserted-by": "crossref",
+          "first-page": "2466",
+          "DOI": "10.1523/JNEUROSCI.23-06-02466.2003",
+          "article-title": "A fast-conducting, stochastic integrative mode for neocortical neurons in vivo",
+          "volume": "23",
+          "author": "Rudolph",
+          "year": "2003",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB34",
+          "doi-asserted-by": "crossref",
+          "first-page": "3177",
+          "DOI": "10.1152/jn.2000.83.5.3177",
+          "article-title": "Site independence of EPSP time course is mediated by dendritic I(h) in neocortical pyramidal neurons",
+          "volume": "83",
+          "author": "Williams",
+          "year": "2000",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB35",
+          "doi-asserted-by": "crossref",
+          "first-page": "197",
+          "DOI": "10.1113/jphysiol.1980.sp013358",
+          "article-title": "Electrophysiological properties of in vitro Purkinje cell dendrites in mammalian cerebellar slices",
+          "volume": "305",
+          "author": "Llinas",
+          "year": "1980",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB36",
+          "doi-asserted-by": "crossref",
+          "first-page": "23",
+          "DOI": "10.1016/0896-6273(94)90457-X",
+          "article-title": "Ca2+ accumulations in dendrites of neocortical pyramidal neurons: an apical band and evidence for two functional compartments",
+          "volume": "13",
+          "author": "Yuste",
+          "year": "1994",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB37",
+          "doi-asserted-by": "crossref",
+          "first-page": "5301",
+          "DOI": "10.1523/JNEUROSCI.13-12-05301.1993",
+          "article-title": "Apical dendrites of the neocortex: correlation between sodium- and calcium-dependent spiking and pyramidal cell morphology",
+          "volume": "13",
+          "author": "Kim",
+          "year": "1993",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB38",
+          "doi-asserted-by": "crossref",
+          "first-page": "605",
+          "DOI": "10.1111/j.1469-7793.1997.605ba.x",
+          "article-title": "Calcium action potentials restricted to distal apical dendrites of rat neocortical pyramidal neurons",
+          "volume": "505",
+          "author": "Schiller",
+          "year": "1997",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB39",
+          "doi-asserted-by": "crossref",
+          "first-page": "125",
+          "DOI": "10.1016/S0166-2236(96)10075-8",
+          "article-title": "Action potential initiation and backpropagation in neurons of the mammalian CNS",
+          "volume": "20",
+          "author": "Stuart",
+          "year": "1997",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB40_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "926",
+          "DOI": "10.1152/jn.2001.85.2.926",
+          "article-title": "Propagation of action potentials in dendrites depends on dendritic morphology",
+          "volume": "85",
+          "author": "Vetter",
+          "year": "2001",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB41",
+          "doi-asserted-by": "crossref",
+          "first-page": "2998",
+          "DOI": "10.1152/jn.2001.86.6.2998",
+          "article-title": "Dichotomy of action-potential backpropagation in CA1 pyramidal neuron dendrites",
+          "volume": "86",
+          "author": "Golding",
+          "year": "2001",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB42_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "167",
+          "DOI": "10.1111/j.1469-7793.2001.00167.x",
+          "article-title": "Apical tuft input efficacy in layer 5 pyramidal cells from rat visual cortex",
+          "volume": "536",
+          "author": "Rhodes",
+          "year": "2001",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB43",
+          "doi-asserted-by": "crossref",
+          "first-page": "297",
+          "DOI": "10.1002/(SICI)1096-9861(19980112)390:2<297::AID-CNE11>3.0.CO;2-V",
+          "article-title": "Backward cortical projections to primary somatosensory cortex in rats extend long horizontal axons in layer I",
+          "volume": "390",
+          "author": "Cauller",
+          "year": "1998",
+          "journal-title": "J Comp Neurol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB44",
+          "doi-asserted-by": "crossref",
+          "first-page": "39",
+          "DOI": "10.1007/BF00962717",
+          "article-title": "Intrinsic and network rhythmogenesis in a reduced Traub model for CA3 neurons",
+          "volume": "1",
+          "author": "Pinsky",
+          "year": "1994",
+          "journal-title": "J Comput Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB45",
+          "doi-asserted-by": "crossref",
+          "first-page": "363",
+          "DOI": "10.1038/382363a0",
+          "article-title": "Influence of dendritic structure on firing pattern in model neocortical neurons",
+          "volume": "382",
+          "author": "Mainen",
+          "year": "1996",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB46",
+          "doi-asserted-by": "crossref",
+          "first-page": "9053",
+          "DOI": "10.1523/JNEUROSCI.22-20-09053.2002",
+          "article-title": "Bursting neurons signal input slope",
+          "volume": "22",
+          "author": "Kepecs",
+          "year": "2002",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB47",
+          "doi-asserted-by": "crossref",
+          "first-page": "571",
+          "DOI": "10.1111/j.1469-7793.2000.00571.x",
+          "article-title": "Maturation of layer 5 neocortical pyramidal neurons: amplifying salient layer 1 and layer 4 inputs by Ca2+ action potentials in adult rat tuft dendrites",
+          "volume": "526",
+          "author": "Zhu",
+          "year": "2000",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB48",
+          "doi-asserted-by": "crossref",
+          "first-page": "815",
+          "DOI": "10.1016/S0896-6273(00)80101-4",
+          "article-title": "Differences between somatic and dendritic inhibition in the hippocampus",
+          "volume": "16",
+          "author": "Miles",
+          "year": "1996",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB49",
+          "doi-asserted-by": "crossref",
+          "first-page": "2896",
+          "DOI": "10.1152/jn.1996.76.5.2896",
+          "article-title": "IPSPs modulate spike backpropagation and associated [Ca2+]i changes in the dendrites of hippocampal CA1 pyramidal neurons",
+          "volume": "76",
+          "author": "Tsubokawa",
+          "year": "1996",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB50",
+          "doi-asserted-by": "crossref",
+          "first-page": "1159",
+          "DOI": "10.1126/science.1060342",
+          "article-title": "Enforcement of temporal fidelity in pyramidal cells by somatic feed-forward inhibition",
+          "volume": "293",
+          "author": "Pouille",
+          "year": "2001",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB51",
+          "doi-asserted-by": "crossref",
+          "first-page": "8238",
+          "DOI": "10.1523/JNEUROSCI.20-22-08238.2000",
+          "article-title": "Backpropagation of physiological spike trains in neocortical pyramidal neurons: implications for temporal coding in dendrites",
+          "volume": "20",
+          "author": "Williams",
+          "year": "2000",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB52",
+          "doi-asserted-by": "crossref",
+          "first-page": "14",
+          "DOI": "10.1016/S0166-2236(02)00012-7",
+          "article-title": "A prominent role for intrinsic neuronal properties in temporal coding",
+          "volume": "26",
+          "author": "Magee",
+          "year": "2003",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB53",
+          "doi-asserted-by": "crossref",
+          "first-page": "528",
+          "DOI": "10.1152/jn.2001.86.1.528",
+          "article-title": "Dendritic mechanisms of phase precession in hippocampal CA1 pyramidal neurons",
+          "volume": "86",
+          "author": "Magee",
+          "year": "2001",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB54_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "138",
+          "DOI": "10.1126/science.291.5501.138",
+          "article-title": "Differential shunting of EPSPs by action potentials",
+          "volume": "291",
+          "author": "H\u00e4usser",
+          "year": "2001",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB55",
+          "doi-asserted-by": "crossref",
+          "first-page": "843",
+          "DOI": "10.1016/0896-6273(95)90175-2",
+          "article-title": "Improvement in visual sensitivity by changes in local context: parallel studies in human observers and in V1 of alert monkeys",
+          "volume": "15",
+          "author": "Kapadia",
+          "year": "1995",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB56",
+          "doi-asserted-by": "crossref",
+          "first-page": "1751",
+          "DOI": "10.1152/jn.2000.83.3.1751",
+          "article-title": "Attention to both space and feature modulates neuronal responses in macaque area V4",
+          "volume": "83",
+          "author": "McAdams",
+          "year": "2000",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB57",
+          "doi-asserted-by": "crossref",
+          "first-page": "175",
+          "DOI": "10.1016/S0079-6123(01)30012-2",
+          "article-title": "Coordinate transformations in the visual system: how to generate gain fields and what to compute with them",
+          "volume": "130",
+          "author": "Salinas",
+          "year": "2001",
+          "journal-title": "Prog Brain Res"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB58_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "207",
+          "DOI": "10.1023/A:1013776130161",
+          "article-title": "Supervised and unsupervised learning with two sites of synaptic integration",
+          "volume": "11",
+          "author": "K\u00f6rding",
+          "year": "2001",
+          "journal-title": "J Comput Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB59",
+          "doi-asserted-by": "crossref",
+          "first-page": "2823",
+          "DOI": "10.1162/089976601317098547",
+          "article-title": "Neurons with two sites of synaptic integration learn invariant representations",
+          "volume": "13",
+          "author": "K\u00f6rding",
+          "year": "2001",
+          "journal-title": "Neural Comput"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB60",
+          "doi-asserted-by": "crossref",
+          "first-page": "184",
+          "DOI": "10.1126/science.163.3863.184",
+          "article-title": "Preferred centripetal conduction of dendritic spikes in alligator Purkinje cells",
+          "volume": "163",
+          "author": "Llinas",
+          "year": "1969",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB61",
+          "doi-asserted-by": "crossref",
+          "first-page": "3919",
+          "DOI": "10.1523/JNEUROSCI.18-10-03919.1998",
+          "article-title": "Dendritic spikes are enhanced by cooperative network activity in the intact hippocampus",
+          "volume": "18",
+          "author": "Kamondi",
+          "year": "1998",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB62",
+          "doi-asserted-by": "crossref",
+          "first-page": "1189",
+          "DOI": "10.1016/S0896-6273(00)80635-2",
+          "article-title": "Dendritic sodium spikes are variable triggers of axonal action potentials in hippocampal CA1 pyramidal neurons",
+          "volume": "21",
+          "author": "Golding",
+          "year": "1998",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB63",
+          "doi-asserted-by": "crossref",
+          "first-page": "125",
+          "DOI": "10.1016/S0166-2236(96)10075-8",
+          "article-title": "Action potential initiation and backpropagation in neurons of the mammalian CNS",
+          "volume": "20",
+          "author": "Stuart",
+          "year": "1997",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB64",
+          "doi-asserted-by": "crossref",
+          "first-page": "343",
+          "DOI": "10.1016/S0959-4388(00)00217-8",
+          "article-title": "NMDA receptor-mediated dendritic spikes and coincident signal amplification",
+          "volume": "11",
+          "author": "Schiller",
+          "year": "2001",
+          "journal-title": "Curr Opin Neurobiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB65",
+          "doi-asserted-by": "crossref",
+          "first-page": "278",
+          "DOI": "10.1093/cercor/8.3.278",
+          "article-title": "Morphological variation of layer III pyramidal neurones in the occipitotemporal pathway of the macaque monkey visual cortex",
+          "volume": "8",
+          "author": "Elston",
+          "year": "1998",
+          "journal-title": "Cereb Cortex"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB66_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "845",
+          "DOI": "10.1038/nature00931",
+          "article-title": "Directionally selective calcium signals in dendrites of starburst amacrine cells",
+          "volume": "418",
+          "author": "Euler",
+          "year": "2002",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB67",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Borg-Graham LJ, Grzywacz N: A model of the direction selectivity circuit in retina: transformations by neurons singly and in concert. In Single Neuron Computation. Edited by McKenna T, Davis J, Zornetzer SF. Boston MA: Academic Press; 1992:347-375.",
+          "DOI": "10.1016/B978-0-12-484815-3.50020-7"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB68",
+          "doi-asserted-by": "crossref",
+          "first-page": "6440",
+          "DOI": "10.1523/JNEUROSCI.21-16-06440.2001",
+          "article-title": "Chattering and differential signal processing in identified motion-sensitive neurons of parallel visual pathways in the chick tectum",
+          "volume": "21",
+          "author": "Luksch",
+          "year": "2001",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB69",
+          "doi-asserted-by": "crossref",
+          "first-page": "349",
+          "DOI": "10.1016/S0959-4388(00)00218-X",
+          "article-title": "Ca2+ signaling in dendritic spines",
+          "volume": "11",
+          "author": "Sabatini",
+          "year": "2001",
+          "journal-title": "Curr Opin Neurobiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB70",
+          "doi-asserted-by": "crossref",
+          "first-page": "4207",
+          "DOI": "10.1523/JNEUROSCI.21-12-04207.2001",
+          "article-title": "NMDA receptor-mediated Na+ signals in spines and dendrites",
+          "volume": "21",
+          "author": "Rose",
+          "year": "2001",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB71",
+          "doi-asserted-by": "crossref",
+          "first-page": "413",
+          "DOI": "10.1523/JNEUROSCI.13-02-00413.1993",
+          "article-title": "The function of dendritic spines: devices subserving biochemical rather than electrical compartmentalization",
+          "volume": "13",
+          "author": "Koch",
+          "year": "1993",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB72",
+          "doi-asserted-by": "crossref",
+          "first-page": "54",
+          "DOI": "10.1038/71125",
+          "article-title": "A model for intradendritic computation of binocular disparity",
+          "volume": "3",
+          "author": "Archie",
+          "year": "2000",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB73",
+          "first-page": "202",
+          "article-title": "Voltage imaging of action potentials and synaptic potentials in the primary and secondary dendrites of mitral cells",
+          "volume": "32",
+          "author": "Djurisic",
+          "year": "2002",
+          "journal-title": "SFN Abstr"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB74",
+          "doi-asserted-by": "crossref",
+          "first-page": "1086",
+          "DOI": "10.1038/nn736",
+          "article-title": "Dendritic spine geometry is critical for AMPA receptor expression in hippocampal CA1 pyramidal neurons",
+          "volume": "4",
+          "author": "Matsuzaki",
+          "year": "2001",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB75",
+          "doi-asserted-by": "crossref",
+          "first-page": "383",
+          "DOI": "10.1016/S0896-6273(00)81098-3",
+          "article-title": "Linear summation of excitatory inputs by CA1 pyramidal neurons",
+          "volume": "22",
+          "author": "Cash",
+          "year": "1999",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB76",
+          "doi-asserted-by": "crossref",
+          "first-page": "11450",
+          "DOI": "10.1073/pnas.95.19.11450",
+          "article-title": "Active summation of excitatory postsynaptic potentials in hippocampal CA3 pyramidal neurons",
+          "volume": "95",
+          "author": "Urban",
+          "year": "1998",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB77",
+          "doi-asserted-by": "crossref",
+          "first-page": "740",
+          "DOI": "10.1523/JNEUROSCI.22-03-00740.2002",
+          "article-title": "Cell type- and subcellular position-dependent summation of unitary postsynaptic potentials in neocortical neurons",
+          "volume": "22",
+          "author": "Tamas",
+          "year": "2002",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB78",
+          "doi-asserted-by": "crossref",
+          "first-page": "463",
+          "DOI": "10.1016/S0896-6273(02)01189-3",
+          "article-title": "Bidirectional changes in spatial dendritic integration accompanying long-term synaptic modifications",
+          "volume": "37",
+          "author": "Wang",
+          "year": "2003",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB79_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "989",
+          "DOI": "10.1016/S0896-6273(03)00149-1",
+          "article-title": "Pyramidal neuron as a 2-layer neural network",
+          "volume": "37",
+          "author": "Poirazi",
+          "year": "2003",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB80_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "977",
+          "DOI": "10.1016/S0896-6273(03)00148-X",
+          "article-title": "Arithmetic of subthreshold synaptic summation in a model of a CA1 pyramidal cell",
+          "volume": "37",
+          "author": "Poirazi",
+          "year": "2003",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB81",
+          "doi-asserted-by": "crossref",
+          "first-page": "4325",
+          "DOI": "10.1523/JNEUROSCI.18-11-04325.1998",
+          "article-title": "Translation-invariant orientation tuning in visual \u2018complex\u2019 cells could derive from intradendritic computations",
+          "volume": "18",
+          "author": "Mel",
+          "year": "1998",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB82_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "779",
+          "DOI": "10.1016/S0896-6273(01)00252-5",
+          "article-title": "Impact of active dendrites and structural plasticity on the memory capacity of neural tissue",
+          "volume": "29",
+          "author": "Poirazi",
+          "year": "2001",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB83_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "275",
+          "DOI": "10.1016/S0896-6273(02)00652-9",
+          "article-title": "Geometry and structural plasticity of synaptic connectivity",
+          "volume": "34",
+          "author": "Stepanyants",
+          "year": "2002",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB84",
+          "doi-asserted-by": "crossref",
+          "first-page": "305",
+          "DOI": "10.1016/S0959-4388(02)00325-2",
+          "article-title": "Spike timing, calcium signals and synaptic plasticity",
+          "volume": "12",
+          "author": "Sj\u00f6str\u00f6m",
+          "year": "2002",
+          "journal-title": "Curr Opin Neurobiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB85",
+          "doi-asserted-by": "crossref",
+          "first-page": "209",
+          "DOI": "10.1126/science.275.5297.209",
+          "article-title": "A synaptically controlled, associative signal for Hebbian plasticity in hippocampal neurons",
+          "volume": "275",
+          "author": "Magee",
+          "year": "1997",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB86",
+          "doi-asserted-by": "crossref",
+          "first-page": "299",
+          "DOI": "10.1016/S0896-6273(02)01146-7",
+          "article-title": "Excitatory actions of GABA in the cortex",
+          "volume": "37",
+          "author": "Gulledge",
+          "year": "2003",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB87",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Mo C, Koch C: Modeling revers-phi motion selective neurons in cortex: double synaptic veto mechanism. Neural Comput 2003, in press.",
+          "DOI": "10.1162/08997660360581886"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB88",
+          "unstructured": "Mainen ZF: Functional plasticity at dendritic synapses. In Dendrites. Edited by Stuart G, Spruston N, H\u00e4usser M. Oxford, UK: Oxford University Press; 1999:310-338."
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB89",
+          "doi-asserted-by": "crossref",
+          "first-page": "433",
+          "DOI": "10.1016/S0166-2236(02)02200-2",
+          "article-title": "A problem with Hebb and local spikes",
+          "volume": "25",
+          "author": "Goldberg",
+          "year": "2002",
+          "journal-title": "Trends Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB90",
+          "doi-asserted-by": "crossref",
+          "first-page": "2778",
+          "DOI": "10.1152/jn.01038.2002",
+          "article-title": "A slow component of voltage-dependent Mg2+ unblock of NMDA receptors limits their contribution to spike generation in cortical pyramidal neurons",
+          "volume": "89",
+          "author": "Vargas-Caballero",
+          "year": "2003",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB91",
+          "doi-asserted-by": "crossref",
+          "first-page": "213",
+          "DOI": "10.1126/science.275.5297.213",
+          "article-title": "Regulation of synaptic efficacy by coincidence of postsynaptic APs and EPSPs",
+          "volume": "275",
+          "author": "Markram",
+          "year": "1997",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB92",
+          "doi-asserted-by": "crossref",
+          "first-page": "1149",
+          "DOI": "10.1016/S0896-6273(01)00542-6",
+          "article-title": "Rate, timing, and cooperativity jointly determine cortical synaptic plasticity",
+          "volume": "32",
+          "author": "Sj\u00f6str\u00f6m",
+          "year": "2001",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB93",
+          "doi-asserted-by": "crossref",
+          "first-page": "571",
+          "DOI": "10.1111/j.1469-7793.1999.0571p.x",
+          "article-title": "Postsynaptic bursting is essential for \u2018Hebbian\u2019 induction of associative long-term potentiation at excitatory synapses in rat hippocampus",
+          "volume": "518",
+          "author": "Pike",
+          "year": "1999",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB94_1",
+          "doi-asserted-by": "crossref",
+          "first-page": "326",
+          "DOI": "10.1038/nature00854",
+          "article-title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
+          "volume": "418",
+          "author": "Golding",
+          "year": "2002",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB95",
+          "doi-asserted-by": "crossref",
+          "first-page": "358",
+          "DOI": "10.1016/S0959-4388(00)00091-X",
+          "article-title": "Hebb and homeostasis in neuronal plasticity",
+          "volume": "10",
+          "author": "Turrigiano",
+          "year": "2000",
+          "journal-title": "Curr Opin Neurobiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB96",
+          "doi-asserted-by": "crossref",
+          "first-page": "331",
+          "DOI": "10.1113/jphysiol.1973.sp010273",
+          "article-title": "Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path",
+          "volume": "232",
+          "author": "Bliss",
+          "year": "1973",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB97",
+          "doi-asserted-by": "crossref",
+          "first-page": "14512",
+          "DOI": "10.1073/pnas.222546399",
+          "article-title": "Bidirectional plasticity of excitatory postsynaptic potential (EPSP)-spike coupling in CA1 hippocampal pyramidal neurons",
+          "volume": "99",
+          "author": "Daoudal",
+          "year": "2002",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB98",
+          "first-page": "442",
+          "article-title": "LTP induction enhances locally the back-propagation of action potentials into dendrites",
+          "volume": "32",
+          "author": "Frick",
+          "year": "2002",
+          "journal-title": "SFN Abstr"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB99",
+          "first-page": "1",
+          "article-title": "Plastic changes in intrinsic excitability associated with long-term synaptic potentiation in CA1 pyramidal neurons",
+          "volume": "31",
+          "author": "Fricker",
+          "year": "2001",
+          "journal-title": "SFN Abstr"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB100",
+          "first-page": "435",
+          "article-title": "All-or-none, stochastic depression of R-type calcium channels in dendritic spines",
+          "volume": "32",
+          "author": "Yasuda",
+          "year": "2002",
+          "journal-title": "SFN Abstr"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB101",
+          "doi-asserted-by": "crossref",
+          "first-page": "637",
+          "DOI": "10.1016/0896-6273(95)90152-3",
+          "article-title": "Axonal initiation and active dendritic propagation of action potentials in substantia nigra neurons",
+          "volume": "15",
+          "author": "H\u00e4usser",
+          "year": "1995",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB102",
+          "doi-asserted-by": "crossref",
+          "first-page": "979",
+          "DOI": "10.1016/S0896-6273(00)81044-2",
+          "article-title": "Dendritic GABA release depresses excitatory transmission between layer 2/3 pyramidal and bitufted neurons in rat neocortex",
+          "volume": "24",
+          "author": "Zilberter",
+          "year": "1999",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB103",
+          "doi-asserted-by": "crossref",
+          "first-page": "489",
+          "DOI": "10.1111/j.1469-7793.2000.00489.x",
+          "article-title": "Dendritic release of glutamate suppresses synaptic inhibition of pyramidal neurons in rat neocortex",
+          "volume": "528",
+          "author": "Zilberter",
+          "year": "2000",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB104",
+          "doi-asserted-by": "crossref",
+          "first-page": "2465",
+          "DOI": "10.1126/science.1060645",
+          "article-title": "Dendrodendritic inhibition through reversal of dopamine transport",
+          "volume": "293",
+          "author": "Falkenburger",
+          "year": "2001",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB105",
+          "doi-asserted-by": "crossref",
+          "first-page": "355",
+          "DOI": "10.1113/jphysiol.2001.013491",
+          "article-title": "Reciprocal intraglomerular excitation and intra- and interglomerular lateral inhibition between mouse olfactory bulb mitral cells",
+          "volume": "542",
+          "author": "Urban",
+          "year": "2002",
+          "journal-title": "J Physiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB106",
+          "first-page": "337",
+          "article-title": "Mechanisms governing dendritic gamma-aminobutyric acid (GABA) release in the rat olfactory bulb",
+          "volume": "98",
+          "author": "Isaacson",
+          "year": "2001",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB107",
+          "doi-asserted-by": "crossref",
+          "first-page": "639",
+          "DOI": "10.1016/S0896-6273(01)00389-0",
+          "article-title": "Glomerulus-specific synchronization of mitral cells in the olfactory bulb",
+          "volume": "31",
+          "author": "Schoppa",
+          "year": "2001",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB108",
+          "doi-asserted-by": "crossref",
+          "first-page": "5124",
+          "DOI": "10.1523/JNEUROSCI.20-13-05124.2000",
+          "article-title": "Calcium influx through NMDA receptors directly evokes GABA release in olfactory bulb granule cells",
+          "volume": "20",
+          "author": "Halabisky",
+          "year": "2000",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB109",
+          "doi-asserted-by": "crossref",
+          "first-page": "85",
+          "DOI": "10.1038/nature00822",
+          "article-title": "Intracellular calcium stores regulate activity-dependent neuropeptide release from dendrites",
+          "volume": "418",
+          "author": "Ludwig",
+          "year": "2002",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB110",
+          "doi-asserted-by": "crossref",
+          "first-page": "1148",
+          "DOI": "10.1523/JNEUROSCI.21-04-01148.2001",
+          "article-title": "Muscarinic regulation of dendritic and axonal outputs of rat thalamic interneurons: a new cellular mechanism for uncoupling distal dendrites",
+          "volume": "21",
+          "author": "Zhu",
+          "year": "2001",
+          "journal-title": "J Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB111",
+          "doi-asserted-by": "crossref",
+          "first-page": "597",
+          "DOI": "10.1016/S0896-6273(00)00069-6",
+          "article-title": "Control of dendritic outputs of inhibitory interneurons in the lateral geniculate nucleus",
+          "volume": "27",
+          "author": "Cox",
+          "year": "2000",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB112",
+          "doi-asserted-by": "crossref",
+          "first-page": "1230",
+          "DOI": "10.1073/pnas.98.3.1230",
+          "article-title": "Odor-evoked calcium signals in dendrites of rat mitral cells",
+          "volume": "98",
+          "author": "Charpak",
+          "year": "2001",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB113",
+          "doi-asserted-by": "crossref",
+          "first-page": "319",
+          "DOI": "10.1073/pnas.98.1.319",
+          "article-title": "Action potential propagation in mitral cell lateral dendrites is decremental and controls recurrent and lateral inhibition in the mammalian olfactory bulb",
+          "volume": "98",
+          "author": "Margrie",
+          "year": "2001",
+          "journal-title": "Proc Natl Acad Sci USA"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB114",
+          "doi-asserted-by": "crossref",
+          "first-page": "64",
+          "DOI": "10.1152/jn.2002.88.1.64",
+          "article-title": "Inhibition of backpropagating action potentials in mitral cell secondary dendrites",
+          "volume": "88",
+          "author": "Lowe",
+          "year": "2002",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB115",
+          "doi-asserted-by": "crossref",
+          "first-page": "115",
+          "DOI": "10.1016/S0896-6273(02)00628-1",
+          "article-title": "Dynamic gating of spike propagation in the mitral cell lateral dendrites",
+          "volume": "34",
+          "author": "Xiong",
+          "year": "2002",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB116",
+          "doi-asserted-by": "crossref",
+          "first-page": "2466",
+          "DOI": "10.1152/jn.00997.2002",
+          "article-title": "Regulation of backpropagating action potentials in mitral cell lateral dendrites by A-type potassium currents",
+          "volume": "89",
+          "author": "Christie",
+          "year": "2003",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB117",
+          "doi-asserted-by": "crossref",
+          "first-page": "678",
+          "DOI": "10.1126/science.1063545",
+          "article-title": "Endocannabinoid signaling in the brain",
+          "volume": "296",
+          "author": "Wilson",
+          "year": "2002",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB118",
+          "doi-asserted-by": "crossref",
+          "first-page": "989",
+          "DOI": "10.1038/14788",
+          "article-title": "In vivo dendritic calcium dynamics in deep-layer cortical pyramidal neurons",
+          "volume": "2",
+          "author": "Helmchen",
+          "year": "1999",
+          "journal-title": "Nat Neurosci"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB119",
+          "doi-asserted-by": "crossref",
+          "first-page": "903",
+          "DOI": "10.1016/S0896-6273(01)00421-4",
+          "article-title": "A miniature head-mounted two-photon microscope. High-resolution brain imaging in freely moving animals",
+          "volume": "31",
+          "author": "Helmchen",
+          "year": "2001",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB120",
+          "doi-asserted-by": "crossref",
+          "first-page": "491",
+          "DOI": "10.1007/s00424-002-0831-z",
+          "article-title": "In vivo, low-resistance, whole-cell recordings from neurons in the anaesthetized and awake mammalian brain",
+          "volume": "444",
+          "author": "Margrie",
+          "year": "2002",
+          "journal-title": "Pflugers Arch"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB121",
+          "doi-asserted-by": "crossref",
+          "first-page": "1969",
+          "DOI": "10.1152/jn.2001.85.5.1969",
+          "article-title": "Natural waking and sleep states: a view from inside neocortical neurons",
+          "volume": "85",
+          "author": "Steriade",
+          "year": "2001",
+          "journal-title": "J Neurophysiol"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB122",
+          "doi-asserted-by": "crossref",
+          "first-page": "1196",
+          "DOI": "10.1126/science.1082133",
+          "article-title": "Encoding pheromonal signals in the accessory olfactory bulb of behaving mice",
+          "volume": "299",
+          "author": "Luo",
+          "year": "2003",
+          "journal-title": "Science"
+        },
+        {
+          "key": "10.1016/S0959-4388(03)00075-8_BIB123",
+          "doi-asserted-by": "crossref",
+          "first-page": "49",
+          "DOI": "10.1016/S0165-0270(98)00091-0",
+          "article-title": "An on-line archive of reconstructed hippocampal neurons",
+          "volume": "84",
+          "author": "Cannon",
+          "year": "1998",
+          "journal-title": "J Neurosci Methods"
+        }
+      ],
+      "container-title": [
+        "Current Opinion in Neurobiology"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://api.elsevier.com/content/article/PII:S0959438803000758?httpAccept=text/xml",
+          "content-type": "text/xml",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://api.elsevier.com/content/article/PII:S0959438803000758?httpAccept=text/plain",
+          "content-type": "text/plain",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            10,
+            17
+          ]
+        ],
+        "date-time": "2025-10-17T12:17:19Z",
+        "timestamp": 1760703439000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0959438803000758"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2003,
+            6
+          ]
+        ]
+      },
+      "references-count": 123,
+      "journal-issue": {
+        "issue": "3",
+        "published-print": {
+          "date-parts": [
+            [
+              2003,
+              6
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "S0959438803000758"
+      ],
+      "URL": "https://doi.org/10.1016/s0959-4388(03)00075-8",
+      "relation": {},
+      "ISSN": [
+        "0959-4388"
+      ],
+      "issn-type": [
+        {
+          "value": "0959-4388",
+          "type": "print"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2003,
+            6
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "Elsevier",
+          "name": "publisher",
+          "label": "This article is maintained by"
+        },
+        {
+          "value": "Dendrites: bug or feature?",
+          "name": "articletitle",
+          "label": "Article Title"
+        },
+        {
+          "value": "Current Opinion in Neurobiology",
+          "name": "journaltitle",
+          "label": "Journal Title"
+        },
+        {
+          "value": "https://doi.org/10.1016/S0959-4388(03)00075-8",
+          "name": "articlelink",
+          "label": "CrossRef DOI link to publisher maintained version"
+        },
+        {
+          "value": "converted-article",
+          "name": "content_type",
+          "label": "Content Type"
+        },
+        {
+          "value": "Copyright \u00a9 2003 Elsevier Science Ltd. All rights reserved.",
+          "name": "copyright",
+          "label": "Copyright"
+        }
+      ]
+    }
+  },
+  {
+    "doi": "10.1038/nature00931",
+    "citation_key": "EulerDetwilerDenk2002",
+    "theme": 5,
+    "status": "ok",
+    "payload": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            31
+          ]
+        ],
+        "date-time": "2026-03-31T02:55:34Z",
+        "timestamp": 1774925734680,
+        "version": "3.50.1"
+      },
+      "reference-count": 45,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "6900",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2002,
+                8,
+                1
+              ]
+            ],
+            "date-time": "2002-08-01T00:00:00Z",
+            "timestamp": 1028160000000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://www.springer.com/tdm"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Nature"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2002,
+            8
+          ]
+        ]
+      },
+      "DOI": "10.1038/nature00931",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2002,
+            9,
+            17
+          ]
+        ],
+        "date-time": "2002-09-17T20:15:48Z",
+        "timestamp": 1032293748000
+      },
+      "page": "845-852",
+      "source": "Crossref",
+      "is-referenced-by-count": 531,
+      "title": [
+        "Directionally selective calcium signals in dendrites of starburst amacrine cells"
+      ],
+      "prefix": "10.1038",
+      "volume": "418",
+      "author": [
+        {
+          "given": "Thomas",
+          "family": "Euler",
+          "sequence": "first",
+          "affiliation": []
+        },
+        {
+          "given": "Peter B.",
+          "family": "Detwiler",
+          "sequence": "additional",
+          "affiliation": []
+        },
+        {
+          "given": "Winfried",
+          "family": "Denk",
+          "sequence": "additional",
+          "affiliation": []
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            2002,
+            8,
+            4
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "BFnature00931_CR1",
+          "doi-asserted-by": "publisher",
+          "first-page": "377",
+          "DOI": "10.1113/jphysiol.1964.sp007463",
+          "volume": "173",
+          "author": "HB Barlow",
+          "year": "1964",
+          "unstructured": "Barlow, H. B., Hill, R. M. & Levick, W. R. Rabbit retinal ganglion cells responding selectively to direction and speed of image motion in the rabbit. J. Physiol. 173, 377\u2013407 (1964)",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "BFnature00931_CR2",
+          "volume-title": "Motion Vision\u2014Computational, Neural, and Ecological Constraints",
+          "author": "DI Vaney",
+          "year": "2001",
+          "unstructured": "Vaney, D. I., He, S., Taylor, W. R. & Levick, W. R. in Motion Vision\u2014Computational, Neural, and Ecological Constraints (eds Zanker, J. M. & Zeil, J.) (Springer, Berlin, 2001)"
+        },
+        {
+          "key": "BFnature00931_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "121",
+          "DOI": "10.1098/rspb.1984.0086",
+          "volume": "223",
+          "author": "RH Masland",
+          "year": "1984",
+          "unstructured": "Masland, R. H., Mills, J. W. & Cassidy, C. The functions of acetylcholine in the rabbit retina. Proc. R. Soc. Lond. B 223, 121\u2013139 (1984)",
+          "journal-title": "Proc. R. Soc. Lond. B"
+        },
+        {
+          "key": "BFnature00931_CR4",
+          "doi-asserted-by": "publisher",
+          "first-page": "347",
+          "DOI": "10.1016/B978-0-12-484815-3.50020-7",
+          "volume-title": "Single Neuron Computation",
+          "author": "LJ Borg-Graham",
+          "year": "1992",
+          "unstructured": "Borg-Graham, L. J. & Grzywacz, N. M. in Single Neuron Computation (eds McKenna, T., Zornetzer, S. F. & Davis, J. L.) 347\u2013375 (Academic, London, 1992)"
+        },
+        {
+          "key": "BFnature00931_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "40",
+          "DOI": "10.1002/cne.903090105",
+          "volume": "309",
+          "author": "EV Famiglietti",
+          "year": "1991",
+          "unstructured": "Famiglietti, E. V. Synaptic organization of starburst amacrine cells in rabbit retina: analysis of serial thin sections by electron microscopy and graphic reconstruction. J. Comp. Neurol. 309, 40\u201370 (1991)",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "BFnature00931_CR6",
+          "doi-asserted-by": "publisher",
+          "first-page": "101",
+          "DOI": "10.1098/rspb.1984.0085",
+          "volume": "223",
+          "author": "M Tauchi",
+          "year": "1984",
+          "unstructured": "Tauchi, M. & Masland, R. H. The shape and arrangement of the cholinergic neurons in the rabbit retina. Proc. R. Soc. Lond. B 223, 101\u2013191 (1984)",
+          "journal-title": "Proc. R. Soc. Lond. B"
+        },
+        {
+          "key": "BFnature00931_CR7",
+          "doi-asserted-by": "publisher",
+          "first-page": "378",
+          "DOI": "10.1038/38723",
+          "volume": "389",
+          "author": "S He",
+          "year": "1997",
+          "unstructured": "He, S. & Masland, R. H. Retinal direction selectivity after targeted laser ablation of starburst amacrine cells. Nature 389, 378\u2013382 (1997)",
+          "journal-title": "Nature"
+        },
+        {
+          "key": "BFnature00931_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "176",
+          "DOI": "10.1038/84007",
+          "volume": "4",
+          "author": "LJ Borg-Graham",
+          "year": "2001",
+          "unstructured": "Borg-Graham, L. J. The computation of directional selectivity in the retina occurs presynaptic to the ganglion cell. Nature Neurosci. 4, 176\u2013183 (2001)",
+          "journal-title": "Nature Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR9",
+          "doi-asserted-by": "publisher",
+          "first-page": "2347",
+          "DOI": "10.1126/science.289.5488.2347",
+          "volume": "289",
+          "author": "WR Taylor",
+          "year": "2000",
+          "unstructured": "Taylor, W. R., He, S., Levick, W. R. & Vaney, D. I. Dendritic computation of direction selectivity by retinal ganglion cells. Science 289, 2347\u20132350 (2000)",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnature00931_CR10",
+          "doi-asserted-by": "publisher",
+          "first-page": "771",
+          "DOI": "10.1016/S0896-6273(01)00316-6",
+          "volume": "30",
+          "author": "K Yoshida",
+          "year": "2001",
+          "unstructured": "Yoshida, K. et al. A key role of starburst amacrine cells in originating retinal directional selectivity and optokinetic eye movement. Neuron 30, 771\u2013780 (2001)",
+          "journal-title": "Neuron"
+        },
+        {
+          "key": "BFnature00931_CR11",
+          "doi-asserted-by": "publisher",
+          "first-page": "415",
+          "DOI": "10.1016/S0959-4388(00)00228-2",
+          "volume": "11",
+          "author": "T Euler",
+          "year": "2001",
+          "unstructured": "Euler, T. & Denk, W. Dendritic processing. Curr. Opin. Neurobiol. 11, 415\u2013422 (2001)",
+          "journal-title": "Curr. Opin. Neurobiol."
+        },
+        {
+          "key": "BFnature00931_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "73",
+          "DOI": "10.1126/science.2321027",
+          "volume": "248",
+          "author": "W Denk",
+          "year": "1990",
+          "unstructured": "Denk, W., Strickler, J. H. & Webb, W. W. Two-photon laser scanning fluorescence microscopy. Science 248, 73\u201376 (1990)",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnature00931_CR13",
+          "doi-asserted-by": "publisher",
+          "first-page": "40",
+          "DOI": "10.1002/glia.440100106",
+          "volume": "10",
+          "author": "B Ehinger",
+          "year": "1994",
+          "unstructured": "Ehinger, B., Zucker, C. L., Bruun, A. & Adolph, A. In vivo staining of oligodendroglia in the rabbit retina. Glia 10, 40\u201348 (1994)",
+          "journal-title": "Glia"
+        },
+        {
+          "key": "BFnature00931_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "129",
+          "DOI": "10.1002/cne.1275",
+          "volume": "437",
+          "author": "RF Miller",
+          "year": "2001",
+          "unstructured": "Miller, R. F. et al. Structure and functional connections of presynaptic terminals in the vertebrate retina revealed by activity-dependent dyes and confocal microscopy. J. Comp. Neurol. 437, 129\u2013155 (2001)",
+          "journal-title": "J. Comp. Neurol."
+        },
+        {
+          "key": "BFnature00931_CR15",
+          "doi-asserted-by": "publisher",
+          "first-page": "119",
+          "DOI": "10.1016/0006-8993(87)90431-8",
+          "volume": "426",
+          "author": "C Brandon",
+          "year": "1987",
+          "unstructured": "Brandon, C. Cholinergic neurons in the rabbit retina: dendritic branching and ultrastructural connectivity. Brain Res. 426, 119\u2013130 (1987)",
+          "journal-title": "Brain Res."
+        },
+        {
+          "key": "BFnature00931_CR16",
+          "doi-asserted-by": "publisher",
+          "first-page": "7035",
+          "DOI": "10.1073/pnas.96.12.7035",
+          "volume": "96",
+          "author": "W Denk",
+          "year": "1999",
+          "unstructured": "Denk, W. & Detwiler, P. B. Optical recording of light-evoked calcium signals in the functionally intact retina. Proc. Natl Acad. Sci. USA 96, 7035\u20137040 (1999)",
+          "journal-title": "Proc. Natl Acad. Sci. USA"
+        },
+        {
+          "key": "BFnature00931_CR17",
+          "doi-asserted-by": "publisher",
+          "first-page": "711",
+          "DOI": "10.1152/jn.1992.68.3.711",
+          "volume": "68",
+          "author": "SA Bloomfield",
+          "year": "1992",
+          "unstructured": "Bloomfield, S. A. Relationship between receptive and dendritic field size of amacrine cells in the rabbit retina. J. Neurophys. 68, 711\u2013725 (1992)",
+          "journal-title": "J. Neurophys."
+        },
+        {
+          "key": "BFnature00931_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "2300",
+          "DOI": "10.1111/j.1460-9568.1995.tb00652.x",
+          "volume": "7",
+          "author": "WR Taylor",
+          "year": "1995",
+          "unstructured": "Taylor, W. R. & Wassle, H. Receptive field properties of starburst cholinergic amacrine cells in the rabbit retina. Eur. J. Neurosci. 7, 2300\u20132321 (1995)",
+          "journal-title": "Eur. J. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR19",
+          "doi-asserted-by": "publisher",
+          "first-page": "469",
+          "DOI": "10.1152/jn.1996.75.1.469",
+          "volume": "75",
+          "author": "BN Peters",
+          "year": "1996",
+          "unstructured": "Peters, B. N. & Masland, R. H. Responses to light of starburst amacrine cells. J. Neurophysiol. 75, 469\u2013480 (1996)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature00931_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "3069",
+          "DOI": "10.1073/pnas.80.10.3069",
+          "volume": "80",
+          "author": "RF Miller",
+          "year": "1983",
+          "unstructured": "Miller, R. F. & Bloomfield, S. A. Electroanatomy of a unique amacrine cell in the rabbit retina. Proc. Natl Acad. Sci. USA 80, 3069\u20133073 (1983)",
+          "journal-title": "Proc. Natl Acad. Sci. USA"
+        },
+        {
+          "key": "BFnature00931_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "905",
+          "DOI": "10.1007/BF02460658",
+          "volume": "54",
+          "author": "RR Poznanski",
+          "year": "1992",
+          "unstructured": "Poznanski, R. R. Modelling the electrotonic structure of starburst amacrine cells in the rabbit retina: a functional interpretation of dendritic morphology. Bull. Math. Biol. 54, 905\u2013928 (1992)",
+          "journal-title": "Bull. Math. Biol."
+        },
+        {
+          "key": "BFnature00931_CR22",
+          "doi-asserted-by": "publisher",
+          "first-page": "2308",
+          "DOI": "10.1111/j.1460-9568.1995.tb00652.x",
+          "volume": "7",
+          "author": "WR Taylor",
+          "year": "1995",
+          "unstructured": "Taylor, W. R. & W\u00e4ssle, H. Receptive field properties of starburst cholinergic amacrine cells in the rabbit retina. Eur. J. Neurosci. 7, 2308\u20132321 (1995)",
+          "journal-title": "Eur. J. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR23",
+          "doi-asserted-by": "publisher",
+          "first-page": "2668",
+          "DOI": "10.1523/JNEUROSCI.15-04-02668.1995",
+          "volume": "15",
+          "author": "ZH Pan",
+          "year": "1995",
+          "unstructured": "Pan, Z. H. & Lipton, S. A. Multiple GABA receptor subtypes mediate inhibition of calcium influx at rat retinal bipolar cell terminals. J. Neurosci. 15, 2668\u20132679 (1995)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR24",
+          "doi-asserted-by": "publisher",
+          "first-page": "97",
+          "DOI": "10.1017/S0952523800009263",
+          "volume": "8",
+          "author": "DM Linn",
+          "year": "1992",
+          "unstructured": "Linn, D. M. & Massey, S. C. GABA inhibits ACh release from the rabbit retina: a direct effect or feedback to bipolar cells? Vis. Neurosci. 8, 97\u2013106 (1992)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR25",
+          "doi-asserted-by": "publisher",
+          "first-page": "939",
+          "DOI": "10.1017/S0952523800011652",
+          "volume": "14",
+          "author": "SC Massey",
+          "year": "1997",
+          "unstructured": "Massey, S. C., Linn, D. M., Kittila, C. A. & Mirza, W. Contributions of GABAA receptors and GABAC receptors to acetylcholine release and directional selectivity in the rabbit retina. Vis. Neurosci. 14, 939\u2013948 (1997)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR26",
+          "doi-asserted-by": "publisher",
+          "first-page": "204",
+          "DOI": "10.1126/science.1857",
+          "volume": "191",
+          "author": "HJ Wyatt",
+          "year": "1976",
+          "unstructured": "Wyatt, H. J. & Daw, N. W. Specific effects of neurotransmitter antagonists on ganglion cells in rabbit retina. Science 191, 204\u2013205 (1976)",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnature00931_CR27",
+          "first-page": "377",
+          "volume-title": "Sensory Communication",
+          "author": "W Reichardt",
+          "year": "1961",
+          "unstructured": "Reichardt, W. in Sensory Communication (ed. Rosenblith, W. A.) 377\u2013390 (MIT Press/Wiley, New York, 1961)"
+        },
+        {
+          "key": "BFnature00931_CR28",
+          "doi-asserted-by": "publisher",
+          "first-page": "1073",
+          "DOI": "10.1017/S0952523800011780",
+          "volume": "14",
+          "author": "TJ Velte",
+          "year": "1997",
+          "unstructured": "Velte, T. J. & Miller, R. F. Spiking and nonspiking models of starburst amacrine cells in the rabbit retina. Vis. Neurosci. 14, 1073\u20131088 (1997)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR29",
+          "doi-asserted-by": "publisher",
+          "first-page": "743",
+          "DOI": "10.1017/S095252380017508X",
+          "volume": "17",
+          "author": "KT Keyser",
+          "year": "2000",
+          "unstructured": "Keyser, K. T. et al. Amacrine, ganglion, and displaced amacrine cells in the rabbit retina express nicotinic acetylcholine receptors. Vis. Neurosci. 17, 743\u2013752 (2000)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR30",
+          "doi-asserted-by": "publisher",
+          "first-page": "5334",
+          "DOI": "10.1523/JNEUROSCI.15-07-05334.1995",
+          "volume": "15",
+          "author": "ZJ Zhou",
+          "year": "1995",
+          "unstructured": "Zhou, Z. J. & Fain, G. L. Neurotransmitter receptors of starburst amacrine cells in rabbit retinal slices. J. Neurosci. 15, 5334\u20135345 (1995)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR31",
+          "doi-asserted-by": "publisher",
+          "first-page": "1411",
+          "DOI": "10.1016/S0042-6989(97)00300-3",
+          "volume": "38",
+          "author": "H W\u00e4ssle",
+          "year": "1998",
+          "unstructured": "W\u00e4ssle, H., Koulen, P., Brandst\u00e4tter, J. H., Fletcher, E. L. & Becker, C. M. Glycine and GABA receptors in the mammalian retina. Vision Res. 38, 1411\u20131430 (1998)",
+          "journal-title": "Vision Res."
+        },
+        {
+          "key": "BFnature00931_CR32",
+          "doi-asserted-by": "publisher",
+          "first-page": "79",
+          "DOI": "10.1098/rspb.1984.0084",
+          "volume": "223",
+          "author": "RH Masland",
+          "year": "1984",
+          "unstructured": "Masland, R. H., Mills, J. W. & Hayden, S. A. Acetylcholine-synthesizing amacrine cells: identification and selective staining by using radioautography and fluorescent markers. Proc. R. Soc. Lond. B 223, 79\u2013100 (1984)",
+          "journal-title": "Proc. R. Soc. Lond. B"
+        },
+        {
+          "key": "BFnature00931_CR33",
+          "doi-asserted-by": "publisher",
+          "first-page": "6187",
+          "DOI": "10.1073/pnas.85.16.6187",
+          "volume": "85",
+          "author": "N Brecha",
+          "year": "1988",
+          "unstructured": "Brecha, N., Johnson, D., Peichl, L. & Wassle, H. Cholinergic amacrine cells of the rabbit retina contain glutamate decarboxylase and gamma-aminobutyrate immunoreactivity. Proc. Natl Acad. Sci. USA 85, 6187\u20136191 (1988)",
+          "journal-title": "Proc. Natl Acad. Sci. USA"
+        },
+        {
+          "key": "BFnature00931_CR34",
+          "doi-asserted-by": "publisher",
+          "first-page": "369",
+          "DOI": "10.1016/0006-8993(88)91366-2",
+          "volume": "438",
+          "author": "DI Vaney",
+          "year": "1988",
+          "unstructured": "Vaney, D. I. & Young, H. M. GABA-like immunoreactivity in cholinergic amacrine cells of the rabbit retina. Brain Res. 438, 369\u2013373 (1988)",
+          "journal-title": "Brain Res."
+        },
+        {
+          "key": "BFnature00931_CR35",
+          "doi-asserted-by": "publisher",
+          "first-page": "1394",
+          "DOI": "10.1523/JNEUROSCI.12-04-01394.1992",
+          "volume": "12",
+          "author": "DM O'Malley",
+          "year": "1992",
+          "unstructured": "O'Malley, D. M., Sandell, J. H. & Masland, R. H. Co-release of acetylcholine and GABA by the starburst amacrine cells. J. Neurosci. 12, 1394\u20131408 (1992)",
+          "journal-title": "J. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR36",
+          "doi-asserted-by": "publisher",
+          "first-page": "350",
+          "DOI": "10.1126/science.2443977",
+          "volume": "238",
+          "author": "EA Schwartz",
+          "year": "1987",
+          "unstructured": "Schwartz, E. A. Depolarization without calcium can release gamma-aminobutyric acid from a retinal neuron. Science 238, 350\u2013355 (1987)",
+          "journal-title": "Science"
+        },
+        {
+          "key": "BFnature00931_CR37",
+          "doi-asserted-by": "publisher",
+          "first-page": "419",
+          "DOI": "10.1113/jphysiol.1967.sp008367",
+          "volume": "193",
+          "author": "FA Dodge Jr",
+          "year": "1967",
+          "unstructured": "Dodge, F. A. Jr & Rahamimoff, R. Co-operative action a calcium ions in transmitter release at the neuromuscular junction. J. Physiol. 193, 419\u2013432 (1967)",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "BFnature00931_CR38",
+          "doi-asserted-by": "publisher",
+          "first-page": "161",
+          "DOI": "10.1113/jphysiol.1982.sp014105",
+          "volume": "324",
+          "author": "M Ariel",
+          "year": "1982",
+          "unstructured": "Ariel, M. & Daw, N. W. Pharmacological analysis of directionally sensitive rabbit retinal ganglion cells. J. Physiol. 324, 161\u2013185 (1982)",
+          "journal-title": "J. Physiol."
+        },
+        {
+          "key": "BFnature00931_CR39",
+          "doi-asserted-by": "publisher",
+          "first-page": "39",
+          "DOI": "10.1017/S0952523800008749",
+          "volume": "14",
+          "author": "NM Grzywacz",
+          "year": "1997",
+          "unstructured": "Grzywacz, N. M., Tootle, J. S. & Amthor, F. R. Is the input to a GABAergic or cholinergic synapse the sole asymmetry in rabbit retinal directional selectivity? Vis. Neurosci. 14, 39\u201354 (1997)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR40",
+          "doi-asserted-by": "publisher",
+          "first-page": "675",
+          "DOI": "10.1152/jn.1997.77.2.675",
+          "volume": "77",
+          "author": "CA Kittila",
+          "year": "1997",
+          "unstructured": "Kittila, C. A. & Massey, S. C. Pharmacology of directionally selective ganglion cells in the rabbit retina. J. Neurophysiol. 77, 675\u2013689 (1997)",
+          "journal-title": "J. Neurophysiol."
+        },
+        {
+          "key": "BFnature00931_CR41",
+          "doi-asserted-by": "publisher",
+          "first-page": "1119",
+          "DOI": "10.1017/S0952523898156109",
+          "volume": "15",
+          "author": "NM Grzywacz",
+          "year": "1998",
+          "unstructured": "Grzywacz, N. M., Merwine, D. K. & Amthor, F. R. Complementary roles of two excitatory pathways in retinal directional selectivity. Vis. Neurosci. 15, 1119\u20131127 (1998)",
+          "journal-title": "Vis. Neurosci."
+        },
+        {
+          "key": "BFnature00931_CR42",
+          "doi-asserted-by": "publisher",
+          "first-page": "159",
+          "DOI": "10.1083/jcb.83.1.159",
+          "volume": "83",
+          "author": "RH Masland",
+          "year": "1979",
+          "unstructured": "Masland, R. H. & Mills, J. W. Autoradiographic identification of acetylcholine in the rabbit retina. J. Cell Biol. 83, 159\u2013178 (1979)",
+          "journal-title": "J. Cell Biol."
+        },
+        {
+          "key": "BFnature00931_CR43",
+          "doi-asserted-by": "publisher",
+          "first-page": "9363",
+          "DOI": "10.1073/pnas.87.23.9363",
+          "volume": "87",
+          "author": "A Borst",
+          "year": "1990",
+          "unstructured": "Borst, A. & Egelhaaf, M. Direction selectivity of blowfly motion-sensitive neurons is computed in a two-stage process. Proc. Natl Acad. Sci. USA 87, 9363\u20139367 (1990)",
+          "journal-title": "Proc. Natl Acad. Sci. USA"
+        },
+        {
+          "key": "BFnature00931_CR44",
+          "doi-asserted-by": "publisher",
+          "first-page": "157",
+          "DOI": "10.1007/978-3-642-74149-4_13",
+          "volume-title": "Neurobiology of the Inner Retina",
+          "author": "DI Vaney",
+          "year": "1989",
+          "unstructured": "Vaney, D. I., Collins, S. P. & Young, H. M. in Neurobiology of the Inner Retina (eds Weiler, R. & Osborn, N. N.) 157\u2013168 (Springer, Berlin, 1989)"
+        },
+        {
+          "key": "BFnature00931_CR45",
+          "doi-asserted-by": "publisher",
+          "first-page": "477",
+          "DOI": "10.1113/jphysiol.1965.sp007638",
+          "volume": "178",
+          "author": "HB Barlow",
+          "year": "1965",
+          "unstructured": "Barlow, H. B. & Levick, W. R. The mechanism of directionally selective units in rabbit's retina. J. Physiol. 178, 477\u2013504 (1965)",
+          "journal-title": "J. Physiol."
+        }
+      ],
+      "container-title": [
+        "Nature"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://www.nature.com/articles/nature00931.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nature00931",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://www.nature.com/articles/nature00931.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            18
+          ]
+        ],
+        "date-time": "2023-05-18T14:08:49Z",
+        "timestamp": 1684418929000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.nature.com/articles/nature00931"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2002,
+            8
+          ]
+        ]
+      },
+      "references-count": 45,
+      "journal-issue": {
+        "issue": "6900",
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              8
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "BFnature00931"
+      ],
+      "URL": "https://doi.org/10.1038/nature00931",
+      "relation": {
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.3410/f.1008888.112907",
+            "asserted-by": "object"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.3410/f.1008888.142114",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "ISSN": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "issn-type": [
+        {
+          "value": "0028-0836",
+          "type": "print"
+        },
+        {
+          "value": "1476-4687",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2002,
+            8
+          ]
+        ]
+      }
+    }
+  }
+]
