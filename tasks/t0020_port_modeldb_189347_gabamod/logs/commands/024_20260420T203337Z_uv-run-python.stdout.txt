@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0020_port_modeldb_189347_gabamod\tasks\t0020_port_modeldb_189347_gabamod\logs\sessions\capture_report.json.
