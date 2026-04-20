@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E007 error: Task Index entry [t0003] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0004] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0005] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0007] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0009] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0011] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0012] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m — 7 error(s), 0 warning(s)

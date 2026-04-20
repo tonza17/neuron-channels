@@ -1,0 +1,6 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "budget_limit": 0.0,
+  "note": "Local-only execution. ModelDB 189347 port compiled and ran entirely on the local Windows 11 workstation using the existing NEURON 8.2.7 install and Python 3.13. No paid APIs, no remote compute, no dataset fees."
+}

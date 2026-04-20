@@ -1,0 +1,13 @@
+Scoring C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\data\tuning_curves\curve_modeldb_189347.csv vs canonical t0004 target...
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\data\score_report.json
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\results\metrics.json
+
+Summary:
+  candidate DSI           = 0.316
+  candidate peak (Hz)     = 18.10
+  candidate null (Hz)     = 9.40
+  candidate HWHM (deg)    = 82.81
+  reliability             = 0.991
+  RMSE vs target (Hz)     = 13.726
+  loss_scalar             = 3.901
+  passes_envelope         = False

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\code\test_smoke_single_angle.py", line 86, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\code\test_smoke_single_angle.py", line 39, in main
+    h = build_dsgc()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 168, in build_dsgc
+    h.v_init = V_INIT_MV
+    ^^^^^^^^
+LookupError: 'v_init' is not a defined hoc variable name.

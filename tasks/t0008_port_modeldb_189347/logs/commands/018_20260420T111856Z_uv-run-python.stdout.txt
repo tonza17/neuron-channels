@@ -1,0 +1,11 @@
+Building bundled DSGC to read its morphology...
+	0
+	1
+	1
+	1
+  bundled sections: 351
+  bundled total cable length: 6484.5 um
+  bundled countON=282, numsyn=282
+  synapse BIP x range: [16.0, 172.7] um
+  synapse BIP y range: [30.5, 221.5] um
+Reading calibrated SWC...

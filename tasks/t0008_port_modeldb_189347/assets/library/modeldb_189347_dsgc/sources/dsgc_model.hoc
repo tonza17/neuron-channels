@@ -1,0 +1,330 @@
+
+	//-------------- GUI-free derivative of main.hoc (ModelDB 189347) ----------//
+	// Verbatim copy of Poleg-Polsky & Diamond 2016 parameter block + simulation
+	// procedures from main.hoc @ commit 87d669dcef18e9966e29c88520ede78bc16d36ff,
+	// with all interactive/GUI lines removed so the HOC file can be loaded by a
+	// Python driver. Specifically:
+	//   * nrn_load_dll / load_file("nrngui.hoc") / load_file("model.ses")
+	//     removed (the Python driver loads nrnmech.dll and RGCmodel.hoc itself).
+	//   * xpanel / xbutton / xstatebutton / xlabel removed.
+	//   * simplerun() left intact for reference but never called; Python drives
+	//     init_sim() -> update() -> placeBIP() -> h.run() directly.
+	// Every other line (parameter value, expression, comment) is verbatim.
+	//--------------------------------------------------------------------------//
+
+	startseed=1
+
+	//--------------MAIN SIMULATION PARAMETERS
+
+	filesavenum=startseed					//where to save
+	exptype=1								//Recording type
+											//1:AP
+											//2:PSP
+											//3:EPSC
+											//4:IPSC
+
+	use_active=0//1							//1-active conductances; 0- only passive
+	tstop=1000								//simulation run time
+	maxvesmul=1
+
+	//--------------SYNAPTIC CONDUCTANCES
+	sparse=1						 		//sparse distribution of bipolar inputs control>>1 sparse 1/3
+	b2gampa=0.25/sparse/maxvesmul			//bipolar to DSGC AMPA conductance (nS) >>0.1
+	b2gnmda=0.5/sparse/maxvesmul 			//bipolar to DSGC conductance (nS)	>>0.2
+	s2ggaba=0.5/maxvesmul 					//SAC to DSGC inhibitory conductance (nS)	>>0.2
+	s2gach=0.5/maxvesmul					//SAC to DSGC excitatory conductance (nS)	>>0.2
+	gabaMOD=.33*1 						//SAC inhibitory release voltage relative to Bipolar votage (used to generate DS in SAC input	pref>>0.33 null>>1
+	achMOD=0.25*1 						//same for excitatory drive from SAC
+
+	//--------------MORE PARAMETERS
+	dt=0.1									//integration time
+	INHIBnum=2								//number of inhibitory levels
+	REPEATnum=3								//number of repeats
+	GROUPnum=2								//number of repeats
+	seed2=startseed							//random generator, any number
+	BIPVamp=1			      				//amplitude of the light evoked bipolar depolarization (AU)>>1
+	BIPVbase=0	     						//bipolar rest (AU)		>>0
+	SACVamp=BIPVamp				   			//amplitude of the light evoked SAC depolarization (AU)
+	SACVbase=BIPVbase      					//SAC rest (AU)
+	maxves_bipNMDA=10*maxvesmul				//RRP from each presynaptic synapse
+	maxves_SACinhib=maxves_bipNMDA
+	maxves_SACexc=maxves_bipNMDA
+	//-------------------VISUAL INPUT
+	lightstart=-100     						//start time of the stimulus bar(ms) >>300
+	lightspeed=1		       				//speed of the stimulus bar (um/ms)	>>1
+	lightwidth=500			     			//width of the stimulus bar(um)			>>1000
+	lightXstart=-100       					//start location (X axis)of the stimulus bar (um) 	>>-100
+	lightXend=200        					//end location (X axis)of the stimulus bar (um)		>>200
+	lightYstart=-130       					//start location (Y axis) of the stimulus bar (um)	>>-130
+	lightYend=100        					//end location (Y axis) of the stimulus bar (um)	>>100
+	lightreverse=0							//direction	of light sweep (left>right;right<left)	>>0
+
+	SACdelt=0
+	SACdelx=0								//offset of the SAC receptive field (um)			>>0
+	SACdur=500								//Additional duration of SAC depolarization following the stimulus>>500
+	inhibamp=1
+	//------------------SYNAPTIC/VGC PARAMS
+	VampK_bipNMDA=5
+	VampK_SACinhib=VampK_bipNMDA
+	VampK_SACexc=VampK_bipNMDA
+	VampT=1
+	Transient=250//ms
+	n_bipNMDA=0.3 							//Params of voltage dependent NMDA activation 	>>0.2
+	gama_bipNMDA=0.07 						//Params of voltage dependent NMDA activation 	>>0.08
+	newves_bipNMDA=0.002					//Rate of addition of new Vesicles to the RRP	>>0.002
+	newves_SACinhib=0.002//0.002					//Rate of addition of new Vesicles to the RRP	>>0.003
+	tau1NMDA_bipNMDA=60//100						//Decaytime for NMDA activation (ms)			>>50
+	newves_SACexc=newves_bipNMDA					//Rate of addition of new Vesicles to the RRP	>>0.002
+	tau_SACexc=3							//Decaytime for ACH activation (ms)				>>3
+	e_SACinhib=-60					//SAC mediated inhibitory reversal potential (mV)>>-65
+	tau_SACinhib=30							//Tau decay of GABA inhibition (ms)				>>30
+	vshift_HHst=-4						//DSGC voltage gated channel Vm change (fine tuning)>>-3, positive-more AP
+	rSYNchance=1							//chance to have a bipolar/SAC input per each DSGC dend		>>0.7
+	NMDAspike_dur=30
+	NMDAspike_V=-40
+	NF_HHst=0
+
+	Voff_bipNMDA=0
+	Vset_bipNMDA=-43
+	flickertime=50
+	flickerVAR=0
+	stimnoiseVAR=0
+
+	//---------------OBJECTS
+	objref RGC,rtime ,rnoise,RGCsomaAP,netcon,rbackground,temp,filesave,nil,pc,rBIP	,tempAP
+	objref RecV[2][2][2],AMPA[2][2][2],NMDA[2][2][2],ACH[2][2][2],GABA[2][2][2],recDEND[2],recDENDtemp
+	double gatherdata[2][2][2],gatherdataN[2][2][2],gatherdataI[2][2][2]
+	objref fileAMPA,fileNMDA,fileACH,fileGABA,VOLClamp,fileDEND	,rundendV[2]
+	objref Vvec,AMPAvec,NMDAvec,ACHvec,GABAvec
+	Vvec=new Vector()
+	AMPAvec=new Vector()
+	NMDAvec=new Vector()
+	ACHvec=new Vector()
+	GABAvec=new Vector()
+	rtime=new Random()
+	rtime.ACG(seed2)
+	rnoise=new Random()
+	rnoise.ACG(seed2)
+	rbackground=new Random()
+	rBIP=new Random()
+	rBIP.ACG(seed2)
+	pc = new ParallelContext()
+
+
+	proc  init_active(){
+		//***initialization of active voltages parameters
+		doingVC=0
+		if (exptype>=3){
+			doingVC=1
+		}
+		TTX=0
+		if (exptype==2){
+			TTX=1
+		}
+		VOLClamp=new OClamp(0.5)
+		VOLClamp.on=0
+		VOLClamp.off=100000
+		VOLClamp.rs=20
+		VOLClamp.switched_on=doingVC
+		VOLClamp.vc=-60
+		if (exptype==4){
+			VOLClamp.vc=0
+		}
+
+		active=1-doingVC
+
+		//SOMA
+		RGCsomana=00.4*active*(1-TTX)
+		RGCsomakv=0.07*active
+		RGCsomakm=00.0005*active
+		//DEND
+		RGCdendna=0.0002*(1-TTX)
+		RGCdendkv=0.007*active
+		RGCdendkm=0*active
+		RGCcaT=0*active
+		RGCcaL=0.0*active
+		RGCcaP=0*active
+		RGCih=0*active
+		RGCkca=0*active
+
+		RGCgpas=5e-5*(1+active*10)
+		RGCepas	=-60
+	}
+	objref tempV
+
+
+	func minval(){
+		if (($1<0)||($2<0)){return 0}
+		if ($1<$2){
+			return $1
+		}else{
+			return $2
+		}
+	}
+
+	func convertlight(){
+		//***Conversion of  light into linear units
+		if ($1<=0){
+			calcreturn=0
+		}else{
+			calcreturn=$1
+		}
+		return calcreturn
+	}
+
+	objref noisevecBIP[2],noisevecSACI[2],noisevecSACE[2],basenoise	,ampnoise	,mulnoise	,g
+
+	proc placeBIP(){
+		//***Placement of Bip and SAC inputs on the dendrites of the DSGC
+		count=0
+		rBIP.ACG(seed2)
+		rBIP.uniform(0,1)
+		rnoise.ACG(seed2)
+	    rnoise.normal(0,flickerVAR)
+
+		objref noisevecBIP[RGC.numsyn],noisevecSACI[RGC.numsyn],noisevecSACE[RGC.numsyn],basenoise,ampnoise,mulnoise
+		basenoise=new Vector(tstop/dt+1,0)
+		ampnoise=new Vector(tstop/dt+1,0)
+		mulnoise=new Vector(tstop/dt+1,0)
+		for timer=0,tstop/flickertime-1{
+			basenoise.fill((BIPVbase+rnoise.normal(0,flickerVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+			ampnoise.fill((BIPVamp+rnoise.normal(0,flickerVAR+stimnoiseVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+		}
+		for i=0,basenoise.size()-1{
+			basenoise.x[i]=convertlight(basenoise.x[i])
+			ampnoise.x[i]=convertlight(ampnoise.x[i])
+
+		}
+
+
+		for synnum=0,RGC.numsyn-1{
+			//---------------BIP
+			noisevecBIP[synnum]=new Vector(tstop/dt+1,0)
+			noisevecSACI[synnum]=new Vector(tstop/dt+1,0)
+			noisevecSACE[synnum]=new Vector(tstop/dt+1,0)
+			starttime=tstop
+			if (rBIP.repick<rSYNchance*sparse){//found close dend
+				count=count+1
+				if (lightspeed==0){	//stationary light input
+					starttime=lightstart
+				}else{  			//moving bar
+	               	if (lightreverse){
+    	              	starttime=(lightstart+(lightXend-RGC.BIPsyn[synnum].locx)/lightspeed)
+        	       	}else{
+            	    	starttime=(lightstart+(RGC.BIPsyn[synnum].locx-lightXstart)/lightspeed)
+               		}
+               	}
+				noisevecBIP[synnum].copy(basenoise)
+				noisevecBIP[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+
+				mulnoise.fill(1)
+				mulnoise.fill(VampT,minval(starttime/dt,tstop/dt),minval((starttime+Transient)/dt,tstop/dt))
+				noisevecBIP[synnum].mul(mulnoise)
+
+			}
+			noisevecBIP[synnum].play(&RGC.BIPsyn[synnum].Vinf,dt)
+			//------------SACinhibsyn
+			if (rBIP.repick<rSYNchance){		//found close dend
+				if (lightspeed==0){				//stationary light input
+					starttime=lightstart
+				}else{  						//moving bar
+	               	if (lightreverse){
+    	              	starttime=(lightstart+(lightXend-RGC.SACinhibsyn[synnum].locx)/lightspeed)+SACdelt
+        	       	}else{
+            	    	starttime=(lightstart+(RGC.SACinhibsyn[synnum].locx-lightXstart)/lightspeed)+SACdelt
+               		}
+               	}
+				noisevecSACI[synnum].copy(basenoise)
+				noisevecSACI[synnum].add(SACVbase-BIPVbase)
+				noisevecSACI[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+				noisevecSACI[synnum].add(SACVamp-BIPVamp)
+				mulnoise.fill(1)
+				mulnoise.fill(VampT*gabaMOD,minval(starttime/dt,tstop/dt),minval((starttime+Transient+SACdur)/dt,tstop/dt))
+				noisevecSACI[synnum].mul(mulnoise)
+			}
+			noisevecSACI[synnum].play(&RGC.SACinhibsyn[synnum].Vinf,dt)
+			//--------------SACexcsyn
+			if (rBIP.repick<rSYNchance){		//found close dend
+				if (lightspeed==0){				//stationary light input
+					starttime=lightstart
+				}else{  						//moving bar
+	               	if (lightreverse){
+    	              	starttime=(lightstart+(lightXend-RGC.SACinhibsyn[synnum].locx)/lightspeed)+SACdelt
+        	       	}else{
+            	    	starttime=(lightstart+(RGC.SACinhibsyn[synnum].locx-lightXstart)/lightspeed)+SACdelt
+               		}
+               	}
+				noisevecSACE[synnum].copy(basenoise)
+				noisevecSACE[synnum].add(SACVbase-BIPVbase)
+				noisevecSACE[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+				mulnoise.fill(1)
+				mulnoise.fill(VampT*achMOD,minval(starttime/dt,tstop/dt),minval((starttime+Transient+SACdur)/dt,tstop/dt))
+				noisevecSACE[synnum].mul(mulnoise)
+				noisevecSACE[synnum].add(SACVamp-BIPVamp)
+			}
+			noisevecSACE[synnum].play(&RGC.SACexcsyn[synnum].Vinf,dt)
+
+		}
+	}
+
+	proc update(){
+		//***Update of variables in the simulation
+		//-----SYNAPSES
+		seed_HHst=seed2
+		gAMPAsingle_bipNMDA=b2gampa
+		gNMDAsingle_bipNMDA=b2gnmda
+		gsingle_SACinhib=s2ggaba
+		gsingle_SACexc=s2gach
+		//-----RGC
+		forsec RGC.somas{
+			gnabar_HHst= RGCsomana
+			gkbar_HHst= RGCsomakv
+			gkmbar_HHst= RGCsomakm
+		}
+		if(use_active){
+			access RGC.soma
+			distance()
+			forsec RGC.all{
+				glbar_HHst=RGCcaL
+				gtbar_HHst=RGCcaT
+				gleak_HHst=RGCgpas/2
+				eleak_HHst=RGCepas
+			}
+			forsec RGC.dends{
+				gnabar_HHst= RGCdendna
+				gkbar_HHst= RGCdendkv
+				gkmbar_HHst=RGCdendkm
+			}
+		}else{
+			forsec RGC.all{
+				g_pas=RGCgpas
+				e_pas=RGCepas
+			}
+		}
+ 	}//UPDATE
+
+	proc init_sim(){
+		//***STARTS THE SIMULATION-----//
+		RGC=new DSGC(0,0)
+		placeBIP()
+		forsec RGC.somas{insert HHst}
+		forsec RGC.all{
+			if(use_active){
+				insert HHst
+			}else{
+				insert pas
+			}
+			global_ra = 100
+			Ra=global_ra
+		}
+		count=0
+		forsec RGC.ON{
+			count=count+1
+		}
+	}
+
+
+	nmdaOn=1		//show with NDMA
+	SpikesOn=1			//show w/o action potentials
+
+	tstop=1000

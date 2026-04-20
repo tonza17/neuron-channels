@@ -1,0 +1,140 @@
+{
+  "task_id": "t0008_port_modeldb_189347",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create worktree and task branch, record branch info, plan full step list.",
+      "status": "completed",
+      "started_at": "2026-04-20T10:08:43Z",
+      "completed_at": "2026-04-20T10:10:59Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0005, t0007, t0009, t0012 are completed and understand their outputs.",
+      "status": "completed",
+      "started_at": "2026-04-20T10:11:15Z",
+      "completed_at": "2026-04-20T10:12:14Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create canonical task folder tree (code, data, results, research, plan, assets, intervention, logs).",
+      "status": "completed",
+      "started_at": "2026-04-20T10:12:28Z",
+      "completed_at": "2026-04-20T10:15:16Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review the Poleg-Polsky 2016 paper (DOI 10.1016_j.neuron.2016.02.013) and any other DSGC compartmental-model papers already in the corpus for exact method details.",
+      "status": "completed",
+      "started_at": "2026-04-20T10:15:36Z",
+      "completed_at": "2026-04-20T10:25:18Z",
+      "log_file": "logs\\steps\\004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Find ModelDB 189347 download URL, Poleg-Polsky supplementary code, any errata, and sibling DSGC compartmental models in public repositories (ModelDB, GitHub, OSF).",
+      "status": "completed",
+      "started_at": "2026-04-20T10:25:38Z",
+      "completed_at": "2026-04-20T10:38:52Z",
+      "log_file": "logs\\steps\\005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0005 (morphology), t0009 (calibrated radii), t0007 (NEURON install), and t0012 (scoring library) for exact interfaces and file formats the implementation will consume.",
+      "status": "completed",
+      "started_at": "2026-04-20T10:39:08Z",
+      "completed_at": "2026-04-20T10:52:11Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Plan module layout, port strategy, morphology swap procedure, tuning-curve simulation protocol, envelope verification, and Phase B sibling-model survey. Budget remains $0.00 (local only).",
+      "status": "completed",
+      "started_at": "2026-04-20T10:52:27Z",
+      "completed_at": "2026-04-20T11:01:55Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: pure local NEURON compute; no remote machines needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Download ModelDB 189347, port as library asset, compile MOD files, swap in calibrated morphology, run 12-angle 20-trial tuning curve, score against envelope via t0012, then Phase B sibling-model survey.",
+      "status": "completed",
+      "started_at": "2026-04-20T11:03:11Z",
+      "completed_at": "2026-04-20T11:39:02Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines to tear down.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: reproduction task with a fixed published method; no exploratory variation within this task.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary, results_detailed, metrics.json (including efficiency metrics), costs.json, remote_machines_used.json, and tuning_curve CSVs.",
+      "status": "completed",
+      "started_at": "2026-04-20T11:41:16Z",
+      "completed_at": "2026-04-20T11:54:18Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Build a comparison table of reproduced vs published Poleg-Polsky 2016 values (DSI, peak, null, HWHM) and note any gaps beyond the envelope tolerances.",
+      "status": "completed",
+      "started_at": "2026-04-20T11:54:38Z",
+      "completed_at": "2026-04-20T11:59:18Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate 4-6 follow-up suggestions based on port outcome and Phase B survey.",
+      "status": "completed",
+      "started_at": "2026-04-20T11:59:25Z",
+      "completed_at": "2026-04-20T12:04:18Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Finalize task.json, run all verificators, write session logs, push, open PR, merge.",
+      "status": "completed",
+      "started_at": "2026-04-20T12:04:25Z",
+      "completed_at": "2026-04-20T12:06:45Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

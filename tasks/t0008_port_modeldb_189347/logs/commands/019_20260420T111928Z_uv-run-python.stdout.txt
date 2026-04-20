@@ -1,0 +1,14 @@
+Building bundled DSGC to read its morphology...
+	0
+	1
+	1
+	1
+  bundled sections: 351
+  bundled total cable length: 6484.5 um
+  bundled countON=282, numsyn=282
+  synapse BIP x range: [16.0, 172.7] um
+  synapse BIP y range: [30.5, 221.5] um
+Reading calibrated SWC...
+  calibrated SWC compartments: 6736
+  calibrated SWC diameter range: [0.879, 8.235] um
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\data\morphology_swap_report.md

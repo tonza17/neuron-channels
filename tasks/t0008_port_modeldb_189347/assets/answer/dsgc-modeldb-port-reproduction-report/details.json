@@ -1,0 +1,33 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsgc-modeldb-port-reproduction-report",
+  "question": "Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC) be reproduced locally on Windows as a headless library, does it hit the published direction-selectivity envelope with a canonical 12-angle x 20-trial drifting-bar protocol, and which sibling DSGC compartmental models are the next-best candidates for porting in the same pipeline?",
+  "short_title": "ModelDB 189347 DSGC port and sibling-model survey",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "internet"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [
+    "https://modeldb.science/189347",
+    "https://github.com/ModelDBRepository/189347",
+    "https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model",
+    "https://elifesciences.org/articles/42392v1"
+  ],
+  "source_task_ids": [
+    "t0004_generate_target_tuning_curve",
+    "t0007_install_neuron_netpyne",
+    "t0009_calibrate_dendritic_diameters",
+    "t0012_tuning_curve_scoring_loss_library"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0008_port_modeldb_189347",
+  "date_created": "2026-04-20"
+}

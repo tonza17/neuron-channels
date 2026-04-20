@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0008_port_modeldb_189347",
+  "command": "uv run python -u -c \nimport time\nt0 = time.time()\nfrom tasks.t0008_port_modeldb_189347.code.build_cell import build_dsgc, read_synapse_coords, run_one_trial\nh = build_dsgc()\nbaseline = read_synapse_coords(h=h)\nprint(f'build took {time.time()-t0:.1f}s', flush=True)\nfor angle in [0.0, 90.0, 180.0, 270.0]:\n    t1 = time.time()\n    r = run_one_trial(h=h, angle_deg=angle, seed=1, baseline_coords=baseline)\n    print(f'angle={angle:6.1f}  rate={r:.2f} Hz  took {time.time()-t1:.1f}s', flush=True)\n",
+  "exit_code": 0,
+  "duration_seconds": 8.898,
+  "started_at": "2026-04-20T11:19:57Z",
+  "completed_at": "2026-04-20T11:20:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0008_port_modeldb_189347",
+  "stdout_file": "020_20260420T111957Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260420T111957Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

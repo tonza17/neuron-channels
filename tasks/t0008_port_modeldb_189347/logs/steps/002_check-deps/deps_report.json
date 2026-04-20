@@ -1,0 +1,30 @@
+{
+  "task_id": "t0008_port_modeldb_189347",
+  "dependencies": [
+    {
+      "task_id": "t0005_download_dsgc_morphology",
+      "status": "completed",
+      "provides": "dsgc-baseline-morphology SWC"
+    },
+    {
+      "task_id": "t0007_install_neuron_netpyne",
+      "status": "completed",
+      "provides": "NEURON 8.2.7 + NetPyNE 1.1.1 toolchain"
+    },
+    {
+      "task_id": "t0009_calibrate_dendritic_diameters",
+      "status": "completed",
+      "provides": "dsgc-baseline-morphology-calibrated"
+    },
+    {
+      "task_id": "t0012_tuning_curve_scoring_loss_library",
+      "status": "completed",
+      "provides": "tuning_curve_loss library for envelope scoring"
+    }
+  ],
+  "verificator": "verify_task_dependencies",
+  "verificator_result": "PASSED",
+  "errors": 0,
+  "warnings": 0,
+  "checked_at": "2026-04-20T10:11:50Z"
+}

@@ -1,0 +1,21 @@
+Building DSGC for tuning-curve sweep...
+	0
+	1
+	1
+	1
+  countON=282 numsyn=282
+
+  angle=  0 deg  mean= 14.85 Hz  (n=20)
+  angle= 30 deg  mean= 13.90 Hz  (n=20)
+  angle= 60 deg  mean=  9.40 Hz  (n=20)
+  angle= 90 deg  mean=  8.55 Hz  (n=20)
+  angle=120 deg  mean=  8.40 Hz  (n=20)
+  angle=150 deg  mean=  8.45 Hz  (n=20)
+  angle=180 deg  mean=  8.65 Hz  (n=20)
+  angle=210 deg  mean=  9.75 Hz  (n=20)
+  angle=240 deg  mean= 18.10 Hz  (n=20)
+  angle=270 deg  mean= 16.15 Hz  (n=20)
+  angle=300 deg  mean= 16.05 Hz  (n=20)
+  angle=330 deg  mean= 15.10 Hz  (n=20)
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0008_port_modeldb_189347\tasks\t0008_port_modeldb_189347\data\tuning_curves\curve_modeldb_189347.csv
