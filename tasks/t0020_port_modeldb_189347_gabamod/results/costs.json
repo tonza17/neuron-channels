@@ -1,0 +1,6 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "budget_limit": 0.0,
+  "note": "Local-only execution on the Windows workstation (NEURON 8.2.7 + NetPyNE 1.1.1); no paid APIs, remote compute, or cloud storage were used."
+}
