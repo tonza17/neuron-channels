@@ -113,10 +113,10 @@
       "step": 13,
       "name": "results",
       "description": "Summarize before/after diameter statistics, surface-area and axial-resistance deltas, and publish metrics.json + results_*.md.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T23:57:03Z",
       "completed_at": null,
-      "log_file": "logs/steps/013_results/"
+      "log_file": "logs\\steps\\013_results/"
     },
     {
       "step": 14,
