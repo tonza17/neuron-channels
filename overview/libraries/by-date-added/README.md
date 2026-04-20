@@ -1,12 +1,12 @@
 # Libraries by Date Added
 
-2 librar(y/ies) grouped by creation date.
+3 librar(y/ies) grouped by creation date.
 
 [Back to all libraries](../README.md)
 
 ---
 
-## 2026-04-20 (2)
+## 2026-04-20 (3)
 
 <details>
 <summary>📦 <strong>ModelDB 189347 DSGC Port</strong>
@@ -90,5 +90,38 @@ scoring.
 Canonical scorer for 12-angle direction-selectivity tuning curves against the t0004 target,
 returning a weighted scalar loss over DSI, preferred-peak, null, and HWHM residuals plus
 per-metric diagnostics and a Poleg-Polsky envelope pass/fail.
+
+</details>
+
+<details>
+<summary>📦 <strong>Tuning Curve Visualizer</strong> (<code>tuning_curve_viz</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `tuning_curve_viz` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0011_response_visualization_library\code\tuning_curve_viz\__init__.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\cartesian.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\cli.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\constants.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\loaders.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\overlay.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\paths.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\polar.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py`, `tasks\t0011_response_visualization_library\code\tuning_curve_viz\stats.py` |
+| **Dependencies** | numpy, pandas, matplotlib, scipy |
+| **Date created** | 2026-04-20 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Created by** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) |
+
+**Entry points:**
+
+* `plot_cartesian_tuning_curve` (function) — Cartesian firing-rate-vs-direction plot with
+  optional per-trial scatter, 95 percent bootstrap CI band, and an optional dashed target
+  overlay.
+* `plot_polar_tuning_curve` (function) — Polar firing-rate-vs-direction plot with a
+  preferred-direction arrow and an optional dashed target overlay.
+* `plot_multi_model_overlay` (function) — Side-by-side Cartesian + polar overlay for up to six
+  models (Okabe-Ito palette) with an optional dashed target overlay.
+* `plot_angle_raster_psth` (function) — Per-angle spike raster above a PSTH histogram from a
+  (angle_deg, trial_index, spike_time_s) CSV.
+* `tuning_curve_viz.cli` (script) — Command-line wrapper that renders Cartesian, polar,
+  overlay, and raster+PSTH PNGs into --out-dir.
+
+Matplotlib library that turns tuning-curve CSVs and spike-time CSVs into Cartesian, polar,
+multi-model overlay, and per-angle raster+PSTH PNGs.
 
 </details>

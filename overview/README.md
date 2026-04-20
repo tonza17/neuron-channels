@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-2-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-3-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-10-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-19-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-76-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-82-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (9K) |
-[full](llm-context/full.xml) (121K) | [roadmap](llm-context/roadmap.xml) (27K) |
-[results](llm-context/results-deep-dive.xml) (72K) |
-[assets](llm-context/literature-and-assets.xml) (21K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (10K)
+| [full](llm-context/full.xml) (123K) | [roadmap](llm-context/roadmap.xml) (27K) |
+[results](llm-context/results-deep-dive.xml) (74K) |
+[assets](llm-context/literature-and-assets.xml) (22K)
 
-*Last updated: 2026-04-20 14:49 UTC*
+*Last updated: 2026-04-20 16:24 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -53,11 +53,10 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (1)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`description`](../tasks/t0011_response_visualization_library/task_description.md) | 2026-04-19 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`description`](../tasks/t0013_resolve_morphology_provenance/task_description.md) | 2026-04-19 |
 
 ---
@@ -68,10 +67,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (17 total)](tasks/by-status/completed.md)
+## [Recently Completed (18 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`results`](../tasks/t0011_response_visualization_library/results/results_detailed.md) | 2026-04-20 15:50 |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
@@ -81,9 +81,8 @@ No blocked tasks.
 | 0015 | [Literature survey: cable theory and dendritic filtering](../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | [`results`](../tasks/t0015_literature_survey_cable_theory/results/results_detailed.md) | 2026-04-20 10:00 |
 | 0012 | [Tuning-curve scoring loss library](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | [`results`](../tasks/t0012_tuning_curve_scoring_loss_library/results/results_detailed.md) | 2026-04-20 09:58 |
 | 0009 | [Calibrate dendritic diameters for dsgc-baseline-morphology](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | [`results`](../tasks/t0009_calibrate_dendritic_diameters/results/results_detailed.md) | 2026-04-20 00:12 |
-| 0014 | [Brainstorm results session 3](../overview/tasks/task_pages/t0014_brainstorm_results_3.md) | [`results`](../tasks/t0014_brainstorm_results_3/results/results_detailed.md) | 2026-04-19 23:45 |
 
-*7 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*8 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -97,7 +96,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (66 open)](suggestions/)
+## [Recent Suggestions (72 open)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -276,11 +275,11 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*56 more open suggestions → [open suggestions](suggestions/)*
+*62 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (26)](suggestions/)
+## [High Priority Suggestions (27)](suggestions/)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -420,6 +419,25 @@ driver-rewrite step and go straight to P2/P3 scoring.
 </details>
 
 <details>
+<summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
+exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0011_response_visualization_library](../tasks/t0011_response_visualization_library/)
+
+The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic
+Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008
+Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action
+potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s)
+alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the
+baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth
+to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
+correction, replacing the synthetic fixture outputs. Recommended task types:
+feature-engineering, code-reproduction.
+
+</details>
+
+<details>
 <summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
 asset structure and metadata</strong> (S-0012-01)</summary>
 
@@ -439,27 +457,7 @@ re-run it against existing library assets. Recommended task types: infrastructur
 
 </details>
 
-<details>
-<summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
-reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0012_tuning_curve_scoring_loss_library](../tasks/t0012_tuning_curve_scoring_loss_library/)
-
-t0008 (port ModelDB 189347) is the first downstream consumer that will produce a real
-simulated 12-angle tuning curve. Wire tuning_curve_loss.score into t0008's verification step
-so the Poleg-Polsky reproduction's simulated curve is scored against the t0004 target and the
-resulting ScoreReport.to_metrics_dict() is written straight into t0008/results/metrics.json
-under the four registered keys (direction_selectivity_index, tuning_curve_hwhm_deg,
-tuning_curve_reliability, tuning_curve_rmse). Deliverable: a short task that runs t0008's
-simulated curve through score(), records ScoreReport.loss_scalar and passes_envelope, and
-produces a side-by-side overlay plot (simulated vs target). This is the first end-to-end
-validation that the scorer library does what it promises on a non-trivial candidate.
-Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-*16 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*17 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1168,10 +1166,11 @@ No predictions yet.
 
 ---
 
-## [Latest Libraries (2 total)](libraries/)
+## [Latest Libraries (3 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |
 | [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |
 | [ModelDB 189347 DSGC Port](../tasks\t0008_port_modeldb_189347\assets\library\modeldb_189347_dsgc\description.md) | [8](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | 2026-04-20 |
 

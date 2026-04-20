@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-46 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **42 open** (18
-high, 21 medium, 3 low), **4 closed**.
+50 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **46 open** (19
+high, 24 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -423,6 +423,31 @@ re-download.
 </details>
 
 <details>
+<summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
+exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic
+Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008
+Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action
+potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s)
+alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the
+baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth
+to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
+correction, replacing the synthetic fixture outputs. Recommended task types:
+feature-engineering, code-reproduction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
 simulation</strong> (S-0007-01)</summary>
 
@@ -444,6 +469,56 @@ spikes before downstream retinal tasks depend on it.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📚 <strong>Add statistical-comparison overlays (paired bootstrap, DSI/HWHM
+annotations) to multi-model plots</strong> (S-0011-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+plot_multi_model_overlay currently draws every model as a coloured line with a shared legend
+but provides no quantitative comparison on the figure itself. Extend the overlay to optionally
+annotate each model with its DSI, peak rate, null rate, and HWHM (computed via
+tuning_curve_loss.metrics) in the legend, and add a plot_model_comparison(model_a_csv,
+model_b_csv, target_csv, out_png) function that computes a paired bootstrap
+difference-of-means between two models at every angle, draws the difference curve with a
+shaded 95 percent CI, and shades angles where the CI excludes zero. This turns qualitative
+overlay comparisons into formally comparable figures suitable for the headline DSI-residual
+reporting in S-0002-01 / S-0008-04 calibration sweeps. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add strict angle-grid validation mode to
+tuning_curve_viz.loaders.validate_angle_grid</strong> (S-0011-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The current validate_angle_grid is permissive: it accepts 8/12/16 uniformly-spaced angle
+counts and only warns on non-uniform grids. Downstream optimisation and scoring tasks (e.g.,
+S-0002-01 g_Na/g_K grid search, S-0012-03 tuning_curve_loss integration) need hard guarantees
+that every CSV is on the project-canonical 12-angle 30-degree grid before plots are compared.
+Add a strict_mode=False parameter to validate_angle_grid that, when True, raises ValueError
+unless angles exactly match np.arange(0, 360, 30.0) to within 1e-6 degree. Add a matching
+--strict-angle-grid CLI flag to tuning_curve_viz.cli. Ship unit tests covering:
+strict+canonical (pass), strict+8-angle (raise), strict+12-angle-shifted-by-1-degree (raise),
+permissive (current behaviour preserved). Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>📊 <strong>Benchmark NetPyNE harness overhead vs raw NEURON across problem
@@ -702,6 +777,31 @@ where the rotation-based protocol hits the envelope (DSI 0.7-0.85, peak 40-80 Hz
 HWHM 60-90 deg). Would produce a calibration_results.json and a mapping between
 envelope-passing parameters and the paper's default values. Recommended task types:
 code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port additional DSGC models from t0010 hunt and exercise
+plot_multi_model_overlay with >2 models</strong> (S-0011-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+plot_multi_model_overlay caps at 6 models and was smoke-tested with only two (t0004 target +
+t0008 ModelDB 189347). The t0010 hunt identified Hanson 2019 Spatial-Offset-DSGC, deRosenroll
+2026 ds-circuit-ei, and other DSGC compartmental models but none have been ported to runnable
+headless form yet. Run the headless-port scaffold proposed in S-0010-05 to produce
+tuning-curve CSVs for 3-5 additional DSGC models, then regenerate the multi-model overlay
+smoke test. This will surface any layout bugs (legend clipping, colour collisions,
+preferred-direction arrow overlap) that single- or double-model overlays never exercise and
+will give the project a real cross-model comparison figure. Recommended task types:
+code-reproduction, write-library.
 
 </details>
 

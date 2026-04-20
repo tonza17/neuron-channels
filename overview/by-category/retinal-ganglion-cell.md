@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (24)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (7)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(23)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(25)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (2)](../libraries/by-category/retinal-ganglion-cell.md)
 
@@ -1392,7 +1392,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (20 open, 3 closed)
+## Suggestions (22 open, 3 closed)
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
@@ -1554,6 +1554,44 @@ the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\
 path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
 tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
 task can budget 3-4 hours and reach P3.
+
+</details>
+
+<details>
+<summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
+exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0011_response_visualization_library](../../tasks/t0011_response_visualization_library/)
+
+The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic
+Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008
+Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action
+potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s)
+alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the
+baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth
+to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
+correction, replacing the synthetic fixture outputs. Recommended task types:
+feature-engineering, code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port additional DSGC models from t0010 hunt and exercise
+plot_multi_model_overlay with >2 models</strong> (S-0011-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
+[t0011_response_visualization_library](../../tasks/t0011_response_visualization_library/)
+
+plot_multi_model_overlay caps at 6 models and was smoke-tested with only two (t0004 target +
+t0008 ModelDB 189347). The t0010 hunt identified Hanson 2019 Spatial-Offset-DSGC, deRosenroll
+2026 ds-circuit-ei, and other DSGC compartmental models but none have been ported to runnable
+headless form yet. Run the headless-port scaffold proposed in S-0010-05 to produce
+tuning-curve CSVs for 3-5 additional DSGC models, then regenerate the multi-model overlay
+smoke test. This will surface any layout bugs (legend clipping, colour collisions,
+preferred-direction arrow overlap) that single- or double-model overlays never exercise and
+will give the project a real cross-model comparison figure. Recommended task types:
+code-reproduction, write-library.
 
 </details>
 

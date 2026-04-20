@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T14:49:18Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T16:24:19Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>43</section_count>
-    <char_count>745455</char_count>
-    <byte_count>747105</byte_count>
-    <estimated_tokens>186363</estimated_tokens>
+    <section_count>46</section_count>
+    <char_count>772723</char_count>
+    <byte_count>774440</byte_count>
+    <estimated_tokens>193180</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,6 +122,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
+        <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
@@ -131,7 +132,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 17
+Completed tasks: 18
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -193,6 +194,12 @@ Completed: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Result summary: Results Summary: Hunt DSGC Compartmental Models Missed by Prior Survey Summary Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002 and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky 2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026, Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not biophysics bugs. Produced one answer asset summarising every candidate and outcome. Metrics * **Candidates found**: **14** (3 HIGH-priority, 2...
 
+## Response-visualisation library (firing rate vs angle graphs)
+ID: t0011_response_visualization_library
+Completed: 2026-04-20
+Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+Result summary: --- spec_version: &quot;3&quot; task_id: &quot;t0011_response_visualization_library&quot; date_completed: &quot;2026-04-20&quot; --- Results Summary Summary Built the `tuning_curve_viz` matplotlib library: **4** plotting functions (Cartesian, polar, multi-model overlay, raster+PSTH), a CLI, a deterministic synthetic Poisson spike fixture for the raster smoke test, and **1** library asset at `assets/library/tuning_curve_viz/`. Smoke-tested against both the t0004 target curve and the t0008 simulated curve, producing **7** example PNGs. The library imports the canonical CSV loader from t0012 rather than re-implementing schema parsing. Metrics * **Plotting functions**: **4** (`plot_cartesian_tuning_curve`...
+
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
 Completed: 2026-04-20
@@ -240,18 +247,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
-
-## Response-visualisation library (firing rate vs angle graphs)
-ID: t0011_response_visualization_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
-Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
+Planned or active tasks: 1
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
@@ -7265,6 +7264,533 @@ For any candidate model a port-attempt agent must produce:
 * **Relevance**: the mandated scoring library. Supplies the `score()` entry point, the four
   registered metric-key constants, the canonical CSV schema constant, the envelope defaults, and the
   identity-gate invariant that every t0010 port must honour.
+      </content>
+    </section>
+    <section id="t0011_response_visualization_library-research_papers" source_kind="file">
+      <title>t0011_response_visualization_library — Response-visualisation library (firing rate vs angle graphs) — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0011_response_visualization_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0011_response_visualization_library/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;3&quot;
+task_id: &quot;t0011_response_visualization_library&quot;
+research_stage: &quot;papers&quot;
+date_completed: &quot;2026-04-20&quot;
+---
+### Research Papers
+
+#### Objective
+
+No paper research is required for this task.
+
+#### Background
+
+This is a `write-library` task that produces a matplotlib visualisation layer over tuning-curve CSVs
+produced by upstream tasks. The plotting conventions (Okabe-Ito, polar axis, bootstrap CI, raster +
+PSTH) are well-established engineering defaults, not research questions.
+
+#### Methodology Review
+
+Not applicable.
+
+#### Key Findings
+
+No research required for this library-writing task.
+
+#### Recommended Approach
+
+Proceed directly to `research-internet` for engineering conventions and `research-code` for the
+input CSV schemas from t0004 and t0008.
+
+#### References
+
+None.
+      </content>
+    </section>
+    <section id="t0011_response_visualization_library-research_internet" source_kind="file">
+      <title>t0011_response_visualization_library — Response-visualisation library (firing rate vs angle graphs) — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0011_response_visualization_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0011_response_visualization_library/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0011_response_visualization_library&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 6
+sources_cited: 8
+papers_discovered: 0
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Internet
+
+#### Task Objective
+
+Build `tuning_curve_viz`, a reusable matplotlib library that renders standard tuning-curve CSVs
+(produced by t0004 and t0008) as Cartesian, polar, multi-model overlay, and per-angle raster+PSTH
+PNGs for every downstream DSGC experiment. Collect engineering references that fix polar-axis
+conventions, colour-blind-safe palette choices, confidence-band bootstrapping, and raster/PSTH
+layout so that all downstream figures share a single publication-quality visual language.
+
+#### Gaps Addressed
+
+This is a `write-library` task, so `research_papers.md` was skipped (no open research questions or
+methodology reviews are required to produce a plotting library). There are therefore no gaps from
+`research_papers.md` to resolve. The internet research instead targets engineering-convention gaps
+— polar-axis direction, colour-blind palette, bootstrap API, raster+PSTH layout — that are not
+peer-reviewed research questions but are necessary defaults for a consistent visualisation layer.
+All four convention gaps listed below are marked **Resolved** via the matplotlib, scipy, and CUD
+documentation sources indexed at the end of this file.
+
+* **Polar-axis direction and zero-angle convention** — **Resolved** via [MPL-PolarAxes-Docs].
+* **Colour-blind-safe palette for multi-model overlays** — **Resolved** via [CUD-Okabe-Ito-2008].
+* **95 % confidence-interval bootstrap API** — **Resolved** via [SciPy-Bootstrap].
+* **Raster + PSTH layout primitives** — **Resolved** via [MPL-Eventplot] and [MPL-GridSpec].
+
+#### Search Strategy
+
+**Sources searched**: matplotlib official documentation, SciPy official documentation, Okabe &amp; Ito
+Color Universal Design (CUD) reference page, Stack Overflow (for raster/PSTH idioms), GitHub code
+search for `eventplot` + `hist` PSTH patterns.
+
+**Queries executed** (6 total):
+
+1. `matplotlib polar axis set_theta_direction set_theta_offset default`
+2. `Okabe Ito colour blind safe palette hex codes`
+3. `scipy.stats.bootstrap confidence_interval mean n_resamples`
+4. `matplotlib eventplot raster trial spike times`
+5. `matplotlib gridspec height_ratios PSTH histogram shared x axis`
+6. `matplotlib polar arrow annotate preferred direction radius`
+
+**Date range**: no restriction — the relevant references are stable API documentation pages and
+the 2008 CUD specification. matplotlib and SciPy docs consulted at their current (3.x and 1.11+)
+versions.
+
+**Inclusion criteria**: Must provide (a) an authoritative API reference for a matplotlib/SciPy
+primitive we plan to call, or (b) the canonical specification of a colour-palette / visualisation
+convention. Excluded: third-party blog posts with outdated APIs, and tutorials that rely on
+deprecated `pyplot.polar` shortcuts.
+
+**Search iterations**: Query 6 was a follow-up triggered when query 1 established that a
+preferred-direction annotation overlay was feasible but not documented as a single recipe; it
+confirmed that `ax.annotate` with `xycoords=&quot;polar&quot;` is the standard pattern.
+
+#### Key Findings
+
+##### Polar-axis conventions in matplotlib
+
+matplotlib polar axes default to `theta_direction=1` (counter-clockwise) and `theta_offset=0` (0°
+at east, i.e. the positive x-axis) [MPL-PolarAxes-Docs]. This matches the mathematical convention
+our upstream t0004/t0008 CSVs already use — `angle_deg` is measured CCW from east — so the
+library never needs to transform input angles. We explicitly document this convention in
+`description.md` and keep matplotlib&#x27;s defaults. If a downstream task ever supplies a
+clock-convention CSV (0° at north, clockwise), it must transform angles at the call site, not
+inside `tuning_curve_viz`.
+
+**Best practice**: do not silently transform angles inside the plotting library; surface the
+convention in documentation so that downstream callers cannot mis-align data with axes.
+
+##### Okabe-Ito colour-blind-safe palette
+
+The Okabe &amp; Ito (2008) Color Universal Design (CUD) palette defines eight colour-blind-safe hex
+codes [CUD-Okabe-Ito-2008]: `#000000` (black), `#E69F00` (orange), `#56B4E9` (sky blue), `#009E73`
+(bluish green), `#F0E442` (yellow), `#0072B2` (blue), `#D55E00` (vermillion), `#CC79A7` (reddish
+purple). The palette is recommended across the neuroscience-figure community because it preserves
+distinguishability under deuteranopia and protanopia. We cap the multi-model overlay at **6 models**
+(palette minus black, minus yellow which has low contrast on white) and reserve **black** for the
+target tuning curve drawn as a dashed line on every overlay.
+
+**Best practice**: pre-register the palette as a module-level constant so every figure in the
+project inherits an identical colour mapping for the same model label.
+
+##### Bootstrap 95 % confidence band via SciPy
+
+`scipy.stats.bootstrap(data, statistic=np.mean, confidence_level=0.95, n_resamples=1000, method=&quot;percentile&quot;)`
+is the canonical API and has been available since SciPy 1.7 [SciPy-Bootstrap]. It returns a
+`BootstrapResult` with `.confidence_interval.low` and `.high` arrays, suitable for
+`ax.fill_between(angles, low, high, alpha=0.3)`. The project already depends on SciPy, so no new
+dependency is needed. For defensive robustness, we keep a four-line NumPy fallback
+(`np.random.default_rng().choice(..., replace=True)` + `np.percentile(..., [2.5, 97.5])`) that is
+stubbed but not wired into the default code path.
+
+**Hypothesis** (testable): the 95 % CI width at each angle is a monotonic function of trial count
+per angle; downstream tasks with noisy sampling should verify this rather than assume it.
+
+##### Raster + PSTH layout
+
+The community-standard layout for per-angle raster+PSTH is a `GridSpec(2, 1, height_ratios=[3, 1])`
+with a shared x-axis (time in seconds) [MPL-GridSpec]. The raster is drawn with
+`ax.eventplot(spike_times_by_trial, colors=&quot;black&quot;)` [MPL-Eventplot] where `spike_times_by_trial` is
+a list of 1-D arrays (one array of spike times per trial). The PSTH below uses `ax.hist` with 10 ms
+bins (0.010 s), matching t0008&#x27;s spike-time resolution.
+
+**Best practice**: call `ax.sharex(raster_ax)` on the PSTH axis so zoom/pan stays aligned.
+
+##### Preferred-direction annotation on polar axes
+
+Preferred direction is the angle at which the per-angle mean firing rate is maximal. Compute via
+`np.argmax` on the mean vector, then draw a red arrow from the origin to the radius equal to the
+peak rate via
+`ax.annotate(&quot;&quot;, xy=(theta_pref, r_max), xytext=(0, 0), xycoords=&quot;polar&quot;, arrowprops=dict(arrowstyle=&quot;-&gt;&quot;, color=&quot;red&quot;))`
+[MPL-PolarAxes-Docs]. Label with the angle in degrees.
+
+**Best practice**: compute the preferred direction from the per-angle mean of the sample — not
+from a vector sum — so that noisy low-rate tails do not skew the arrow.
+
+#### Methodology Insights
+
+* **Dependencies**: depend only on `matplotlib`, `numpy`, `pandas`, and `scipy` — all already in
+  the project environment. No new `pyproject.toml` entries.
+* **Palette constant**: store the 8 Okabe-Ito hex codes in `tuning_curve_viz/constants.py`. Cap the
+  multi-model overlay at 6 models; emit a `UserWarning` and truncate deterministically (sorted dict
+  keys) when exceeded.
+* **Bootstrap wiring**: default to `scipy.stats.bootstrap` with `n_resamples=1000`,
+  `method=&quot;percentile&quot;`, `confidence_level=0.95`, and `vectorized=True`. Keep the NumPy fallback
+  present but inert.
+* **Thin CLI**: one entry point `tuning_curve_viz.cli` with `argparse` flags `--curve-csv`,
+  `--target-csv`, `--spike-times-csv`, `--out-dir`. No interactive rendering, no animation.
+* **PNG save defaults**: `dpi=150`, `bbox_inches=&quot;tight&quot;`, `facecolor=&quot;white&quot;`. No vector output
+  (SVG/PDF) from the library — downstream tasks that need vector can reopen the returned Figure.
+* **Polar angle pass-through**: never transform `angle_deg`. Callers must pre-align to the
+  mathematical convention (0° east, CCW positive).
+* **Hypothesis to test in future tasks**: the raster+PSTH view at the preferred direction is
+  sufficient to diagnose most DSGC response pathologies without needing a full 8-angle raster grid.
+  A future task should empirically compare single-angle vs. grid diagnostic value.
+
+#### Discovered Papers
+
+No new papers were discovered. This is a write-library task producing an engineering artefact
+(matplotlib visualisation layer); the relevant references are API documentation and a single
+colour-palette specification, not peer-reviewed research. The project&#x27;s existing paper corpus is not
+affected by this task.
+
+#### Recommendations for This Task
+
+1. **Use matplotlib defaults for polar axes** (`theta_direction=1`, `theta_offset=0`) and document
+   the input-angle convention in `description.md` [MPL-PolarAxes-Docs].
+2. **Adopt the Okabe-Ito palette** as a module-level constant; reserve black for the target curve
+   and cap overlays at 6 models [CUD-Okabe-Ito-2008].
+3. **Use `scipy.stats.bootstrap`** with 1 000 resamples for 95 % CI bands; keep a NumPy fallback
+   stubbed but not wired by default [SciPy-Bootstrap].
+4. **Implement raster+PSTH via `GridSpec(2, 1, [3, 1])`** + `ax.eventplot` + `ax.hist` with 10 ms
+   bins [MPL-GridSpec] [MPL-Eventplot].
+5. **Annotate preferred direction** with a red polar arrow from the origin to the peak mean rate.
+6. **Save all PNGs at 150 DPI** with `bbox_inches=&quot;tight&quot;` and a white face colour. No SVG/PDF
+   output from the library itself.
+
+#### Source Index
+
+##### [MPL-PolarAxes-Docs]
+
+* **Type**: documentation
+* **Title**: matplotlib.projections.polar.PolarAxes
+* **Author/Org**: Matplotlib Development Team
+* **Date**: 2024
+* **URL**: https://matplotlib.org/stable/api/projections/polar_api.html
+* **Last updated**: 2024-09
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative reference for `set_theta_direction`, `set_theta_offset`, polar
+  `annotate`, and the default CCW-from-east convention we inherit unchanged.
+
+##### [CUD-Okabe-Ito-2008]
+
+* **Type**: documentation
+* **Title**: Color Universal Design (CUD) — How to make figures and presentations that are
+  friendly to colour-blind people
+* **Author/Org**: Okabe, M. &amp; Ito, K.
+* **Date**: 2008
+* **URL**: https://jfly.uni-koeln.de/color/
+* **Peer-reviewed**: no
+* **Relevance**: Canonical spec for the eight colour-blind-safe hex codes adopted as our multi-model
+  palette. Recommended by the neuroscience figure community for preserving distinguishability under
+  deuteranopia/protanopia.
+
+##### [SciPy-Bootstrap]
+
+* **Type**: documentation
+* **Title**: scipy.stats.bootstrap
+* **Author/Org**: SciPy Project
+* **Date**: 2024
+* **URL**: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html
+* **Last updated**: 2024-09
+* **Peer-reviewed**: no
+* **Relevance**: API reference for the 95 % percentile-bootstrap CI used on per-angle firing-rate
+  means. Establishes the `n_resamples`, `method`, and `vectorized` defaults the library uses.
+
+##### [MPL-Eventplot]
+
+* **Type**: documentation
+* **Title**: matplotlib.axes.Axes.eventplot
+* **Author/Org**: Matplotlib Development Team
+* **Date**: 2024
+* **URL**: https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.eventplot.html
+* **Last updated**: 2024-09
+* **Peer-reviewed**: no
+* **Relevance**: Primitive for raster plots. Accepts a list of 1-D arrays (one per trial) and draws
+  vertical tick marks per spike — the exact shape of t0008&#x27;s per-angle spike output.
+
+##### [MPL-GridSpec]
+
+* **Type**: documentation
+* **Title**: matplotlib.gridspec.GridSpec
+* **Author/Org**: Matplotlib Development Team
+* **Date**: 2024
+* **URL**: https://matplotlib.org/stable/api/_as_gen/matplotlib.gridspec.GridSpec.html
+* **Last updated**: 2024-09
+* **Peer-reviewed**: no
+* **Relevance**: Layout primitive for the 2-row raster+PSTH figure with a 3:1 height ratio and a
+  shared x-axis.
+
+##### [MPL-Fill-Between]
+
+* **Type**: documentation
+* **Title**: matplotlib.axes.Axes.fill_between
+* **Author/Org**: Matplotlib Development Team
+* **Date**: 2024
+* **URL**: https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill_between.html
+* **Last updated**: 2024-09
+* **Peer-reviewed**: no
+* **Relevance**: Primitive for the bootstrap 95 % CI band on Cartesian tuning curves; takes the
+  low/high arrays returned by `scipy.stats.bootstrap`.
+
+##### [NumPy-Argmax]
+
+* **Type**: documentation
+* **Title**: numpy.argmax
+* **Author/Org**: NumPy Project
+* **Date**: 2024
+* **URL**: https://numpy.org/doc/stable/reference/generated/numpy.argmax.html
+* **Peer-reviewed**: no
+* **Relevance**: Used to compute the preferred-direction angle from the per-angle mean vector for
+  the polar annotation arrow.
+
+##### [Pandas-ReadCSV]
+
+* **Type**: documentation
+* **Title**: pandas.read_csv
+* **Author/Org**: pandas Project
+* **Date**: 2024
+* **URL**: https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
+* **Peer-reviewed**: no
+* **Relevance**: Used by the loader helpers to read the t0004 and t0008 tuning-curve CSVs into typed
+  DataFrames before plotting.
+      </content>
+    </section>
+    <section id="t0011_response_visualization_library-research_code" source_kind="file">
+      <title>t0011_response_visualization_library — Response-visualisation library (firing rate vs angle graphs) — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0011_response_visualization_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0011_response_visualization_library/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0011_response_visualization_library&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 17
+tasks_cited: 4
+libraries_found: 2
+libraries_relevant: 1
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Code
+
+#### Task Objective
+
+Survey previously completed tasks so the `tuning_curve_viz` library reuses existing CSV loaders and
+schemas rather than reinventing them, and so the smoke tests plot real project data (t0004 target
+curve, t0008 simulated curve) against a deterministic synthetic raster fixture generated locally.
+
+#### Library Landscape
+
+Walking `tasks/*/assets/library/*/details.json` revealed 2 registered libraries. No
+`aggregate_libraries.py` script exists in this project, so the filesystem walk is used as a direct
+substitute.
+
+* **`tuning_curve_loss`** (v0.1.0, created by [t0012]). Canonical 12-angle scorer — loss scalar
+  over DSI/peak/null/HWHM residuals plus a `load_tuning_curve` CSV loader that already handles all
+  three schemas this task cares about (canonical `(angle_deg, trial_seed, firing_rate_hz)`, t0004
+  trials `(angle_deg, trial_index, rate_hz)`, t0004 mean `(angle_deg, mean_rate_hz)`). **Relevant.**
+  Import via library path
+  `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.loader.load_tuning_curve`.
+* **`modeldb_189347_dsgc`** (v0.1.0, created by [t0008]). NEURON/HOC port of the Poleg-Polsky DSGC.
+  Depends on `neuron` and runs full compartmental simulations. **Not relevant** —
+  `tuning_curve_viz` never runs simulations; it only reads the CSV outputs.
+
+Neither library has been corrected or replaced by a later task. Both are at spec version 2.
+
+#### Key Findings
+
+##### Canonical CSV schema is already fixed by t0012 and t0008
+
+The canonical tuning-curve schema `(angle_deg, trial_seed, firing_rate_hz)` is the format used by
+both t0008&#x27;s `curve_modeldb_189347.csv` and t0012&#x27;s primary loader entry point [t0008] [t0012].
+t0012&#x27;s `loader.py` also accepts the legacy t0004 schemas (`curve_trials.csv` with
+`(angle_deg, trial_index, rate_hz)` and `curve_mean.csv` with `(angle_deg, mean_rate_hz)`) and folds
+trials into per-angle means. The `tuning_curve_viz` library should inherit the same canonical schema
+and reuse t0012&#x27;s loader wherever possible.
+
+##### t0004 writes two files the viz library must support
+
+[t0004] emits `assets/dataset/target-tuning-curve/files/curve_mean.csv` (columns
+`angle_deg, mean_rate_hz`) and `curve_trials.csv` (columns `angle_deg, trial_index, rate_hz`). The
+target-curve overlay on every multi-model plot reads `curve_mean.csv`. The bootstrap CI band on the
+Cartesian plot needs the trial-level data, which t0012&#x27;s loader handles natively.
+
+##### t0008 emits only firing rates — no spike times
+
+[t0008] produces 8 angles × 8 trials = 64 rows in
+`tasks/t0008_port_modeldb_189347/data/tuning_curves/curve_modeldb_189347.csv`, plus a
+`smoke_test_single_angle.csv` with a single angle. **No spike-time CSV is produced.** The
+raster+PSTH smoke test therefore cannot run against real simulated spike times; it must synthesise a
+small Poisson fixture inside the smoke test with deterministic RNG seeding.
+
+##### 12-angle grid is the project convention
+
+Both [t0004] and [t0008] use a 12-angle grid with 30° spacing (0, 30, 60, ..., 330). The
+`tuning_curve_viz` functions should not hard-code 12 angles (the library must gracefully handle 8-,
+12-, or 16-angle grids) but should default the polar-tick layout to multiples of 30° when the grid
+is a divisor of 360°.
+
+##### Cross-task import rule
+
+Per project rule, only libraries in `assets/library/` may be imported across tasks [t0008] [t0012].
+t0012&#x27;s loader is registered as the `tuning_curve_loss` library and is the authoritative source for
+CSV parsing in this project. All other code (e.g., [t0004]&#x27;s one-off generator script) must be read
+for schema reference only and never imported.
+
+#### Reusable Code and Assets
+
+##### `tuning_curve_loss.loader.load_tuning_curve`
+
+* **Source**: `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/loader.py`
+* **What it does**: Loads a CSV in any of the 3 supported schemas and returns a `TuningCurve`
+  dataclass with `angles_deg: np.ndarray`, `firing_rates_hz: np.ndarray` (per-angle mean), and
+  `trials: np.ndarray | None` of shape `(n_angles, n_trials)`.
+* **Reuse method**: **import via library**. Path:
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.loader import load_tuning_curve, TuningCurve`.
+* **Function signature**: `load_tuning_curve(path: Path) -&gt; TuningCurve`
+* **Adaptation needed**: none for the Cartesian and polar plots. For the multi-model overlay and the
+  raster+PSTH, `tuning_curve_viz` defines its own thin wrappers around `load_tuning_curve` and adds
+  a per-angle spike-times loader (new code — nothing exists to reuse).
+* **Line count**: ~150 lines in the upstream loader; zero lines to copy.
+
+##### `tuning_curve_loss.paths` column-name constants
+
+* **Source**: `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/paths.py`
+* **What it does**: Defines `ANGLE_COLUMN`, `FIRING_RATE_COLUMN`, `TRIAL_SEED_COLUMN`,
+  `TRIAL_INDEX_COLUMN`, `TRIAL_RATE_COLUMN`, `MEAN_RATE_COLUMN`, `N_ANGLES`, `ANGLE_STEP_DEG`.
+* **Reuse method**: **import via library** (same path as loader).
+* **Adaptation needed**: none. The viz library uses the same names so column references stay
+  consistent across tasks.
+
+##### t0004 target curve CSV (data asset)
+
+* **Source**:
+  `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/curve_mean.csv`
+* **What it does**: Provides the canonical target tuning curve drawn as a dashed black overlay on
+  every multi-model plot and exercised by two smoke-test plots.
+* **Reuse method**: **read at runtime via path** (no Python import; not code reuse).
+
+##### t0008 simulated tuning-curve CSV (data asset)
+
+* **Source**: `tasks/t0008_port_modeldb_189347/data/tuning_curves/curve_modeldb_189347.csv`
+* **What it does**: Provides one concrete simulated tuning curve for the multi-model overlay and two
+  single-curve smoke plots.
+* **Reuse method**: **read at runtime via path**.
+
+No spike-time assets exist anywhere in the project, so the raster+PSTH smoke test must generate a
+synthetic spike-time fixture locally (see Lessons Learned below).
+
+#### Lessons Learned
+
+* **Always import the upstream library rather than re-implementing a CSV loader**. [t0012] already
+  absorbed every edge case of the t0004/t0008 schemas; re-implementing CSV parsing here would
+  duplicate tests and silently diverge on future schema corrections.
+* **Schema documentation lives in the library**. [t0012]&#x27;s `loader.py` docstring is the single
+  source of truth for the three accepted CSV schemas. `tuning_curve_viz` should reference this
+  docstring in `description.md` rather than restating the schema in yet another place.
+* **Spike-time data is an unresolved gap**. Neither [t0004] nor [t0008] emits per-trial spike times.
+  This task&#x27;s raster+PSTH smoke test must generate a synthetic fixture; a future
+  compartmental-simulation task that actually records soma spike times will be needed before the
+  raster+PSTH plot can exercise real data. Emit a suggestion to that effect.
+* **Library metadata conventions**: [t0008] and [t0012] use lowercase-underscore `library_id`
+  (`modeldb_189347_dsgc`, `tuning_curve_loss`). Follow the same pattern: `tuning_curve_viz`.
+* **12-angle grid is the project norm**. Hard-coded 12-angle assumptions exist in t0012&#x27;s loader
+  (`N_ANGLES = 12`, `ANGLE_STEP_DEG = 30`). The viz library must be more permissive — polar plots
+  over 8 angles should still render — so `tuning_curve_viz` defines its own angle-validation logic
+  rather than reusing t0012&#x27;s `_validate_angle_grid`.
+
+#### Recommendations for This Task
+
+1. **Import `tuning_curve_loss.loader.load_tuning_curve` and `TuningCurve`** instead of writing a
+   new CSV loader. This eliminates ~150 lines of duplicated code and keeps the project&#x27;s schema
+   definitions in one place [t0012].
+2. **Import `tuning_curve_loss.paths` column-name constants** for every `pd.read_csv` dtype spec and
+   column reference [t0012].
+3. **Do not import anything from t0008**. `modeldb_189347_dsgc` pulls in NEURON and runs simulations
+   — `tuning_curve_viz` must remain a lightweight plotting-only dependency [t0008].
+4. **Generate the raster+PSTH smoke-test fixture in-process** with a seeded `np.random.default_rng`
+   so the smoke test remains deterministic and CI-friendly. The fixture is test-only code; do not
+   ship a spike-time CSV in the library asset.
+5. **Use `library_id = &quot;tuning_curve_viz&quot;`** (lowercase-underscore) to match the project&#x27;s
+   library-naming convention [t0008] [t0012].
+6. **Emit a follow-up suggestion** for a future task that records per-angle soma spike times from
+   the `modeldb_189347_dsgc` simulator, so the raster+PSTH plot can be exercised on real data.
+7. **Do not reuse t0012&#x27;s strict angle-grid validator** — the viz library must gracefully accept
+   arbitrary uniform grids (8, 12, 16 angles) without raising. Implement a permissive validator in
+   `tuning_curve_viz.loaders` instead [t0012].
+
+#### Task Index
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate canonical target angle-to-AP-rate tuning curve
+* **Status**: completed
+* **Relevance**: Produces the canonical target tuning curve CSVs (`curve_mean.csv`,
+  `curve_trials.csv`) consumed by `tuning_curve_viz` as the dashed-black reference overlay on every
+  multi-model plot and as a smoke-test input.
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+* **Status**: completed
+* **Relevance**: Registers the `modeldb_189347_dsgc` library and emits the simulated tuning-curve
+  CSV (`curve_modeldb_189347.csv`) consumed by `tuning_curve_viz` as a concrete model curve in the
+  multi-model overlay and two single-curve smoke plots.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters for dsgc-baseline-morphology
+* **Status**: completed
+* **Relevance**: Out of scope for plotting but confirms the library-and-morphology asset pattern the
+  `tuning_curve_viz` asset should follow — description.md + details.json + files/ layout.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: Registers the `tuning_curve_loss` library whose `loader.load_tuning_curve` and
+  column-name constants are imported directly by `tuning_curve_viz`. This is the primary reusable
+  dependency for this task.
       </content>
     </section>
     <section id="t0012_tuning_curve_scoring_loss_library-research_internet" source_kind="file">

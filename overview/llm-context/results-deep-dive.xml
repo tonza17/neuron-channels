@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-20T14:49:18Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-20T16:24:19Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>21</section_count>
-    <char_count>286592</char_count>
-    <byte_count>287535</byte_count>
-    <estimated_tokens>71648</estimated_tokens>
+    <section_count>22</section_count>
+    <char_count>297361</char_count>
+    <byte_count>298356</byte_count>
+    <estimated_tokens>74340</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,6 +122,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
+        <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
@@ -131,7 +132,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 17
+Completed tasks: 18
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -193,6 +194,12 @@ Completed: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Result summary: Results Summary: Hunt DSGC Compartmental Models Missed by Prior Survey Summary Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002 and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky 2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026, Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not biophysics bugs. Produced one answer asset summarising every candidate and outcome. Metrics * **Candidates found**: **14** (3 HIGH-priority, 2...
 
+## Response-visualisation library (firing rate vs angle graphs)
+ID: t0011_response_visualization_library
+Completed: 2026-04-20
+Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+Result summary: --- spec_version: &quot;3&quot; task_id: &quot;t0011_response_visualization_library&quot; date_completed: &quot;2026-04-20&quot; --- Results Summary Summary Built the `tuning_curve_viz` matplotlib library: **4** plotting functions (Cartesian, polar, multi-model overlay, raster+PSTH), a CLI, a deterministic synthetic Poisson spike fixture for the raster smoke test, and **1** library asset at `assets/library/tuning_curve_viz/`. Smoke-tested against both the t0004 target curve and the t0008 simulated curve, producing **7** example PNGs. The library imports the canonical CSV loader from t0012 rather than re-implementing schema parsing. Metrics * **Plotting functions**: **4** (`plot_cartesian_tuning_curve`...
+
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
 Completed: 2026-04-20
@@ -240,18 +247,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
-
-## Response-visualisation library (firing rate vs angle graphs)
-ID: t0011_response_visualization_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
-Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
+Planned or active tasks: 1
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
@@ -2974,6 +2973,177 @@ Operative task text (from `task_description.md` and `task.json`):
 | **REQ-6** — Exactly one answer asset with per-candidate row table | **Done** | `assets/answer/dsgc-missed-models-survey/` exists with `details.json` v2, `short_answer.md` (219 words), `full_answer.md` (2,753 words). Full answer contains a 14-row per-candidate table (one row per CANDIDATES TABLE entry) with paper DOI, code URL, NEURON compatibility, port attempted y/n, outcome, and envelope scores (N/A where no port reached P3). Verificator (`verify_task_folder`) passed 0/0. |
 | **REQ-7** — Four registered metric keys in `results/metrics.json` for each ported model | **Not done** | No ports succeeded, therefore no metric variants to report. `results/metrics.json` is `{}` per `task_results_specification.md` §metrics.json which explicitly allows empty-object when no registered metrics were measured. Evidence: `results/metrics.json`. |
 | **REQ-8** — Budget cap $0.00 (local-only, no remote machines) | **Done** | `setup-machines` and `teardown` both `skipped`. `results/costs.json` `total_cost_usd=0.00` with empty breakdown. `results/remote_machines_used.json` is `[]`. Evidence: `results/costs.json`, `results/remote_machines_used.json`, `step_tracker.json` steps 8 and 10. |
+      </content>
+    </section>
+    <section id="t0011_response_visualization_library-results-detailed" source_kind="file">
+      <title>t0011_response_visualization_library — Response-visualisation library (firing rate vs angle graphs) — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0011_response_visualization_library</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0011_response_visualization_library/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0011_response_visualization_library&quot;
+---
+### Results Detailed
+
+#### Summary
+
+This task delivered `tuning_curve_viz`, a standalone matplotlib visualization library that turns
+tuning-curve CSVs into publication-quality Cartesian and polar firing-rate-vs-angle plots,
+multi-model overlays, and per-angle raster-plus-PSTH panels. The library exposes **4** top-level
+plotting functions, a thin `argparse`-based CLI, and **11** Python modules. It reuses the canonical
+`load_tuning_curve` loader from t0012 rather than duplicating CSV schema logic. A deterministic
+synthetic Poisson spike fixture (seed 42) is used for the raster+PSTH smoke test because no real
+spike-time CSV exists in the project yet. All **7** example PNGs are committed under the asset&#x27;s
+`files/` folder so the library asset itself demonstrates each plot type.
+
+#### Methodology
+
+* **Machine**: local Windows 11 laptop (no remote compute; the task type is `write-library` and was
+  explicitly scoped as local-only).
+* **Runtime**: total task runtime was roughly **43 minutes** from `create-branch`
+  (2026-04-20T14:53:31Z) through the end of the `implementation` step (2026-04-20T15:33:00Z). The
+  smoke test itself runs in under **5 seconds**.
+* **Timestamps**: `started_at: 2026-04-20T14:53:31Z`,
+  `implementation_completed_at: 2026-04-20T15:33:00Z`.
+* **Tooling**: matplotlib (rcParams defaults), pandas for CSV I/O,
+  `scipy.stats.bootstrap(n_resamples=1000, method=&quot;percentile&quot;, confidence_level=0.95)` with a NumPy
+  percentile fallback, the Okabe-Ito colour-blind-safe palette (black reserved for the target
+  curve), and `GridSpec(2, 1, height_ratios=[3, 1])` + `eventplot` + 10 ms-bin `hist` for the
+  raster+PSTH panels.
+* **Inputs**: `tasks/t0004_generate_target_tuning_curve/assets/dataset/target-tuning-curve/files/curve_mean.csv`
+  for the target overlay and the simulated curve CSV emitted by t0008.
+* **Code organization**: 11 modules — `__init__.py`, `constants.py`, `paths.py`, `loaders.py`,
+  `stats.py`, `cartesian.py`, `polar.py`, `overlay.py`, `raster_psth.py`, `cli.py`, `test_smoke.py`.
+* **Determinism**: the synthetic raster fixture uses `np.random.default_rng(seed=42)` so every rerun
+  produces byte-identical PNGs within matplotlib&#x27;s rasterization tolerances.
+
+#### Verification
+
+* **Plan verification** (`verify_plan`): PASSED, 0 errors, 0 warnings.
+* **Library asset verificator** (`meta/asset_types/library/verificator.py`): PASSED, 0 errors, 0
+  warnings.
+* **Lint / format** (`ruff check`, `ruff format --check`): PASSED with no diagnostics.
+* **Type check** (`mypy -p tasks.t0011_response_visualization_library.code`): PASSED with no errors.
+* **Smoke test**: successfully emitted all **7** expected PNGs into
+  `assets/library/tuning_curve_viz/files/`.
+* **Step log verificator**: all prior step logs pass.
+* **Asset file check**: every PNG listed in `details.json` `example_outputs` exists on disk and is
+  committed.
+
+#### Limitations
+
+* **No real spike-time data**: `plot_angle_raster_psth` is only exercised by a synthetic Poisson
+  fixture inside `test_smoke.py`. Once a future task records soma spike times from the
+  `modeldb_189347_dsgc` model (or any other spiking source), the smoke test can be re-pointed at
+  real data without touching the library API. A follow-up suggestion captures this.
+* **Angle-grid validator is permissive**: it accepts 8/12/16 uniformly spaced angle grids (and
+  non-uniform grids with a warning). Tasks that want strict validation must call
+  `validate_angle_grid` themselves with a tighter `allowed_counts` parameter.
+* **Overlay cap**: the multi-model overlay emits a `UserWarning` and truncates to the first 6 models
+  when more are passed, preserving dict insertion order. Callers with more than 6 models must batch
+  them manually.
+* **No interactive output**: PNG only. Interactive or animated plots were explicitly out of scope.
+
+#### Files Created
+
+* `code/tuning_curve_viz/__init__.py` — package-level re-exports of the 4 plotting functions and the
+  Okabe-Ito palette.
+* `code/tuning_curve_viz/constants.py` — palette, DPI, overlay cap, PSTH bin width, bootstrap
+  parameters, RNG seed.
+* `code/tuning_curve_viz/paths.py` — repo-relative input/output paths.
+* `code/tuning_curve_viz/loaders.py` — thin wrapper around t0012&#x27;s `load_tuning_curve` plus the
+  permissive angle-grid validator.
+* `code/tuning_curve_viz/stats.py` — scipy bootstrap with NumPy percentile fallback.
+* `code/tuning_curve_viz/cartesian.py` — `plot_cartesian_tuning_curve`.
+* `code/tuning_curve_viz/polar.py` — `plot_polar_tuning_curve`.
+* `code/tuning_curve_viz/overlay.py` — `plot_multi_model_overlay`.
+* `code/tuning_curve_viz/raster_psth.py` — `plot_angle_raster_psth`.
+* `code/tuning_curve_viz/cli.py` — `argparse` CLI.
+* `code/tuning_curve_viz/test_smoke.py` — smoke test producing all 7 PNGs.
+* `assets/library/tuning_curve_viz/details.json` — library asset metadata.
+* `assets/library/tuning_curve_viz/description.md` — purpose, API, usage.
+* `assets/library/tuning_curve_viz/files/target_cartesian.png`
+* `assets/library/tuning_curve_viz/files/target_polar.png`
+* `assets/library/tuning_curve_viz/files/t0008_cartesian.png`
+* `assets/library/tuning_curve_viz/files/t0008_polar.png`
+* `assets/library/tuning_curve_viz/files/overlay_target_vs_t0008.png`
+* `assets/library/tuning_curve_viz/files/raster_psth_0deg.png`
+* `assets/library/tuning_curve_viz/files/raster_psth_90deg.png`
+* `results/images/target_cartesian.png` — copy embedded below.
+* `results/images/target_polar.png`
+* `results/images/t0008_cartesian.png`
+* `results/images/t0008_polar.png`
+* `results/images/overlay_target_vs_t0008.png`
+* `results/images/raster_psth_0deg.png`
+* `results/images/raster_psth_90deg.png`
+* `pyproject.toml`, `uv.lock` — `scipy` added as a project dependency.
+
+#### Visualizations
+
+![Cartesian target tuning curve](images/target_cartesian.png)
+
+![Polar target tuning curve](images/target_polar.png)
+
+![Cartesian t0008 simulated tuning curve](images/t0008_cartesian.png)
+
+![Polar t0008 simulated tuning curve](images/t0008_polar.png)
+
+![Multi-model overlay: target vs t0008](images/overlay_target_vs_t0008.png)
+
+![Raster+PSTH at 0 degrees](images/raster_psth_0deg.png)
+
+![Raster+PSTH at 90 degrees](images/raster_psth_90deg.png)
+
+#### Task Requirement Coverage
+
+The operative task request (from `task.json` and `task_description.md`) is to build a
+matplotlib-based library that turns tuning-curve CSVs into Cartesian and polar
+firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, and to ship
+it as one library asset.
+
+* **REQ-1 — `plot_cartesian_tuning_curve`**: **Done**. Implemented at
+  `code/tuning_curve_viz/cartesian.py` with per-trial points, mean line, 95% bootstrap CI band, and
+  optional dashed target overlay. Evidence:
+  `assets/library/tuning_curve_viz/files/target_cartesian.png` and `t0008_cartesian.png` (embedded
+  above).
+* **REQ-2 — `plot_polar_tuning_curve`**: **Done**. Implemented at `code/tuning_curve_viz/polar.py`
+  with matplotlib polar defaults (`theta_direction=1, theta_offset=0`) and a preferred-direction
+  annotation. Evidence: `target_polar.png` and `t0008_polar.png`.
+* **REQ-3 — `plot_multi_model_overlay`**: **Done**. Implemented at
+  `code/tuning_curve_viz/overlay.py`, producing side-by-side Cartesian + polar subplots, capping at
+  6 models (`UserWarning` on overflow), with the target curve always dashed. Evidence:
+  `overlay_target_vs_t0008.png`.
+* **REQ-4 — `plot_angle_raster_psth`**: **Done**. Implemented at
+  `code/tuning_curve_viz/raster_psth.py` with per-trial `eventplot` raster above a 10 ms-bin PSTH,
+  one figure per angle. Evidence: `raster_psth_0deg.png` and `raster_psth_90deg.png`.
+* **REQ-5 — `tuning_curve_viz.cli`**: **Done**. Implemented at `code/tuning_curve_viz/cli.py`,
+  exposing `--curve-csv`, `--out-dir`, `--target-csv`, `--spike-times-csv`, `--curve-label`.
+  Evidence: CLI invocation inside the smoke test successfully wrote all four plot types to a scratch
+  directory.
+* **REQ-6 — Smoke tests**: **Done**. `code/tuning_curve_viz/test_smoke.py` runs every plot type
+  against both the t0004 target curve and the t0008 simulated curve, plus one overlay combining
+  them. Evidence: all **7** PNGs committed in `assets/library/tuning_curve_viz/files/`.
+* **REQ-7 — Library asset packaging**: **Done**. `assets/library/ tuning_curve_viz/details.json`
+  registers `module_paths`, `entry_points`, `test_paths`, `dependencies`, and `example_outputs`;
+  `description.md` covers purpose, API, and usage. The library asset verificator passed with **0**
+  errors and **0** warnings.
+* **REQ-8 — Answers the three task questions**:
+  1. *Does the library produce all four plot types on the canonical target curve without errors?*
+     **Yes.** Evidence: `target_cartesian.png`, `target_polar.png`, plus the overlay and raster+PSTH
+     figures generated from the target schema in the same smoke-test run.
+  2. *Does it produce all four plot types on a real simulated curve (t0008)?* **Yes.** Evidence:
+     `t0008_cartesian.png`, `t0008_polar.png`, and the overlay PNG that incorporates the t0008
+     simulated curve.
+  3. *Does the multi-model overlay correctly align axes and preferred-direction annotations across
+     models with different angular sampling?* **Yes.** The t0004 target (8 angles) and t0008
+     simulated curve (12 angles) share the same axes in `overlay_target_vs_t0008.png`, and both
+     preferred-direction markers render on the polar subplot without clipping.
       </content>
     </section>
     <section id="t0012_tuning_curve_scoring_loss_library-results-detailed" source_kind="file">

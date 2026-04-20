@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T14:49:18Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T16:24:19Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>118149</char_count>
-    <byte_count>118581</byte_count>
-    <estimated_tokens>29537</estimated_tokens>
+    <char_count>119720</char_count>
+    <byte_count>120160</byte_count>
+    <estimated_tokens>29930</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1210,11 +1210,13 @@ biophysics bugs. Produced one answer asset summarising every candidate and outco
 
 ## Response-visualisation library (firing rate vs angle graphs)
 ID: t0011_response_visualization_library
-Status: not_started
-Effective date: 2026-04-19
+Status: completed
+Effective date: 2026-04-20
 Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
 Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
 Task types: write-library
+Start time: 2026-04-20T14:52:53Z
+End time: 2026-04-20T15:50:00Z
 
 #### Motivation
 
@@ -1290,6 +1292,41 @@ demonstrates what each plot looks like.
 * **`scipy.stats.bootstrap` unavailable**: fall back to a 4-line NumPy bootstrap.
 * **Multi-model overlay becomes illegible with &gt; 6 models**: cap overlay at 6 and surface a warning;
   the CLI batches additional models into separate PNGs.
+
+### Results Summary
+
+---
+spec_version: &quot;3&quot;
+task_id: &quot;t0011_response_visualization_library&quot;
+date_completed: &quot;2026-04-20&quot;
+---
+### Results Summary
+
+#### Summary
+
+Built the `tuning_curve_viz` matplotlib library: **4** plotting functions (Cartesian, polar,
+multi-model overlay, raster+PSTH), a CLI, a deterministic synthetic Poisson spike fixture for the
+raster smoke test, and **1** library asset at `assets/library/tuning_curve_viz/`. Smoke-tested
+against both the t0004 target curve and the t0008 simulated curve, producing **7** example PNGs. The
+library imports the canonical CSV loader from t0012 rather than re-implementing schema parsing.
+
+#### Metrics
+
+* **Plotting functions**: **4** (`plot_cartesian_tuning_curve`, `plot_polar_tuning_curve`,
+  `plot_multi_model_overlay`, `plot_angle_raster_psth`)
+* **Python modules**: **11** under `code/tuning_curve_viz/`
+* **Example PNGs emitted by the smoke test**: **7** (2 cartesian, 2 polar, 1 overlay, 2 raster+PSTH)
+* **Requirement coverage**: **8 / 8** plan requirements marked Done (REQ-1 through REQ-8)
+* **External costs**: **$0.00** (local matplotlib only, no remote compute)
+* **Smoke-test runtime**: under **5 s** on a 2024 laptop
+
+#### Verification
+
+* `verify_plan` — PASSED (0 errors, 0 warnings)
+* Library asset verificator (`meta/asset_types/library/verificator.py`) — PASSED (0 errors, 0
+  warnings)
+* `ruff check` + `ruff format --check` — PASSED
+* `mypy -p tasks.t0011_response_visualization_library.code` — PASSED
 
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library

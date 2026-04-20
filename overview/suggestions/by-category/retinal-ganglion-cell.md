@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-23 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **20 open** (11
-high, 7 medium, 2 low), **3 closed**.
+25 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **22 open** (12
+high, 8 medium, 2 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -202,6 +202,31 @@ re-download.
 </details>
 
 <details>
+<summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
+exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic
+Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008
+Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action
+potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s)
+alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the
+baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth
+to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
+correction, replacing the synthetic fixture outputs. Recommended task types:
+feature-engineering, code-reproduction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
 verify numerical claims</strong> (S-0017-01)</summary>
 
@@ -349,6 +374,31 @@ validate each with the existing validate_swc.py parser, and tabulate per-cell co
 count, branch points, and total dendritic path length so a downstream morphology-sweep task
 can quantify cross-cell variability without committing a priori to a specific morphology.
 Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port additional DSGC models from t0010 hunt and exercise
+plot_multi_model_overlay with >2 models</strong> (S-0011-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0011-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+plot_multi_model_overlay caps at 6 models and was smoke-tested with only two (t0004 target +
+t0008 ModelDB 189347). The t0010 hunt identified Hanson 2019 Spatial-Offset-DSGC, deRosenroll
+2026 ds-circuit-ei, and other DSGC compartmental models but none have been ported to runnable
+headless form yet. Run the headless-port scaffold proposed in S-0010-05 to produce
+tuning-curve CSVs for 3-5 additional DSGC models, then regenerate the multi-model overlay
+smoke test. This will surface any layout bugs (legend clipping, colour collisions,
+preferred-direction arrow overlap) that single- or double-model overlays never exercise and
+will give the project a real cross-model comparison figure. Recommended task types:
+code-reproduction, write-library.
 
 </details>
 

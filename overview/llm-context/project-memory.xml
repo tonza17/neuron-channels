@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T14:49:18Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-20T16:24:19Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>78321</char_count>
-    <byte_count>78386</byte_count>
-    <estimated_tokens>19580</estimated_tokens>
+    <char_count>80312</char_count>
+    <byte_count>80377</byte_count>
+    <estimated_tokens>20078</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -126,6 +126,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0008_port_modeldb_189347</id>
         <id>t0009_calibrate_dendritic_diameters</id>
         <id>t0010_hunt_missed_dsgc_models</id>
+        <id>t0011_response_visualization_library</id>
         <id>t0012_tuning_curve_scoring_loss_library</id>
         <id>t0014_brainstorm_results_3</id>
         <id>t0015_literature_survey_cable_theory</id>
@@ -135,7 +136,7 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
       </source_ids>
       <content>
-Completed tasks: 17
+Completed tasks: 18
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -197,6 +198,12 @@ Completed: 2026-04-20
 Short description: Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
 Result summary: Results Summary: Hunt DSGC Compartmental Models Missed by Prior Survey Summary Executed a three-pass literature + public-code hunt for DSGC compartmental models missed by t0002 and t0008. Registered the two new qualifying papers (deRosenroll 2026 Cell Reports, Poleg-Polsky 2026 Nat Commun) and attempted three HIGH-priority ports (Hanson 2019, deRosenroll 2026, Poleg-Polsky 2026). All three ports exited at P2 (upstream demo) within the 90-minute wall-clock budget due to structural driver incompatibility with the canonical 12-angle x 20-trial sweep, not biophysics bugs. Produced one answer asset summarising every candidate and outcome. Metrics * **Candidates found**: **14** (3 HIGH-priority, 2...
 
+## Response-visualisation library (firing rate vs angle graphs)
+ID: t0011_response_visualization_library
+Completed: 2026-04-20
+Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+Result summary: --- spec_version: &quot;3&quot; task_id: &quot;t0011_response_visualization_library&quot; date_completed: &quot;2026-04-20&quot; --- Results Summary Summary Built the `tuning_curve_viz` matplotlib library: **4** plotting functions (Cartesian, polar, multi-model overlay, raster+PSTH), a CLI, a deterministic synthetic Poisson spike fixture for the raster smoke test, and **1** library asset at `assets/library/tuning_curve_viz/`. Smoke-tested against both the t0004 target curve and the t0008 simulated curve, producing **7** example PNGs. The library imports the canonical CSV loader from t0012 rather than re-implementing schema parsing. Metrics * **Plotting functions**: **4** (`plot_cartesian_tuning_curve`...
+
 ## Tuning-curve scoring loss library
 ID: t0012_tuning_curve_scoring_loss_library
 Completed: 2026-04-20
@@ -244,18 +251,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0019_literature_
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0011_response_visualization_library</id>
         <id>t0013_resolve_morphology_provenance</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
-
-## Response-visualisation library (firing rate vs angle graphs)
-ID: t0011_response_visualization_library
-Status: not_started
-Effective date: 2026-04-19
-Short description: Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
-Dependencies: t0004_generate_target_tuning_curve, t0008_port_modeldb_189347
+Planned or active tasks: 1
 
 ## Resolve dsgc-baseline-morphology source-paper provenance
 ID: t0013_resolve_morphology_provenance
@@ -744,9 +743,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
       <source_ids>
         <id>modeldb_189347_dsgc</id>
         <id>tuning_curve_loss</id>
+        <id>tuning_curve_viz</id>
       </source_ids>
       <content>
-Libraries: 2
+Libraries: 3
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -761,6 +761,13 @@ Version: 0.1.0
 Created by task: t0012_tuning_curve_scoring_loss_library
 Module paths: tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\__init__.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\paths.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\metrics.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\envelope.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\weights.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\scoring.py, tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\cli.py
 `tuning_curve_loss` provides the canonical scoring function for 12-angle direction-selectivity tuning curves in this project. It loads a simulated CSV, reduces it to four shape metrics (DSI, preferred peak, null, HWHM), compares them against the t0004 target curve, and returns a scalar weighted-Euclidean loss plus per-metric residuals, envelope pass/fail flags, and an optional split-half reliability and point-wise...
+
+## Tuning Curve Visualizer
+ID: tuning_curve_viz
+Version: 0.1.0
+Created by task: t0011_response_visualization_library
+Module paths: tasks\t0011_response_visualization_library\code\tuning_curve_viz\__init__.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\cartesian.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\cli.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\constants.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\loaders.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\overlay.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\paths.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\polar.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\stats.py
+`tuning_curve_viz` is the project&#x27;s matplotlib front end for every firing-rate-vs-direction figure. It renders Cartesian, polar, side-by-side multi-model overlay, and per-angle raster+PSTH panels from the three canonical CSV schemas shared with the t0012 scoring library. A 95 percent bootstrap confidence band (`scipy.stats.bootstrap`, 1000 resamples) sits on top of every Cartesian plot that has per-trial data, a red...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">
