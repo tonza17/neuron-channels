@@ -1,0 +1,45 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature00931",
+  "doi": "10.1038/nature00931",
+  "title": "Directionally selective calcium signals in dendrites of starburst amacrine cells",
+  "url": "https://doi.org/10.1038/nature00931",
+  "pdf_url": null,
+  "date_published": "2002-08",
+  "year": 2002,
+  "authors": [
+    {
+      "name": "Thomas Euler",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Peter B. Detwiler",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    },
+    {
+      "name": "Winfried Denk",
+      "country": null,
+      "institution": null,
+      "orcid": null
+    }
+  ],
+  "institutions": [],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "synaptic-integration",
+    "direction-selectivity"
+  ],
+  "abstract": "",
+  "citation_key": "EulerDetwilerDenk2002",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "No PDF URL supplied",
+  "added_by_task": "t0018_literature_survey_synaptic_integration",
+  "date_added": "2026-04-20"
+}

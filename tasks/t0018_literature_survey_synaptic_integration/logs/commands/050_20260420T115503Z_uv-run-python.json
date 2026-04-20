@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0018_literature_survey_synaptic_integration",
+  "command": "uv run python tasks/t0018_literature_survey_synaptic_integration/code/build_paper_asset.py --doi 10.1038/nature00931 --theme 5 --citation-key EulerDetwilerDenk2002",
+  "exit_code": 0,
+  "duration_seconds": 0.36,
+  "started_at": "2026-04-20T11:55:03Z",
+  "completed_at": "2026-04-20T11:55:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0018_literature_survey_synaptic_integration",
+  "stdout_file": "050_20260420T115503Z_uv-run-python.stdout.txt",
+  "stderr_file": "050_20260420T115503Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
