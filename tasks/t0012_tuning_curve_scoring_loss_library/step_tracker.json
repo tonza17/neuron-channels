@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0004_generate_target_tuning_curve is completed and its target-tuning-curve dataset is usable.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-20T01:04:54Z",
-      "completed_at": null,
+      "completed_at": "2026-04-20T01:07:08Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
