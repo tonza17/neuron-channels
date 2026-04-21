@@ -1,11 +1,4 @@
 {
-  "de_rosenroll_dsi_correlated_12ang": 0.7758620689655171,
-  "de_rosenroll_dsi_correlated_8dir": 0.8181818181818182,
-  "de_rosenroll_dsi_uncorrelated_12ang": 0.8556701030927837,
-  "de_rosenroll_dsi_uncorrelated_8dir": 0.8350515463917525,
-  "de_rosenroll_peak_hz_correlated_8dir": 5.0,
-  "de_rosenroll_peak_hz_uncorrelated_8dir": 4.45,
-  "de_rosenroll_port_fidelity_gate_pass": false,
   "direction_selectivity_index": 0.7758620689655171,
   "tuning_curve_hwhm_deg": 68.65079365079364,
   "tuning_curve_reliability": 0.9835579184749684,

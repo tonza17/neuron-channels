@@ -253,11 +253,14 @@ stayed subthreshold).
 
 ### Best-PD trials (8-dir correlated, angle 0°)
 
-| trial | direction | spike_count | peak_mv | note |
-| --- | --- | --- | --- | --- |
-| 41028 | 0.0 | **6** | 37.226 | Top spike count for PD; healthy somatic AP train |
-| 51035 | 0.0 | **6** | 37.335 | Same magnitude, slightly higher peak voltage |
-| 61042 | 0.0 | **6** | 37.113 | Three independent seeds reach the 6-spike ceiling |
+Verbatim rows from `data/tuning_curves_8dir_correlated.csv`:
+
+```text
+trial,direction_deg,spike_count,peak_mv
+41028,0.0,6,37.226
+51035,0.0,6,37.335
+61042,0.0,6,37.113
+```
 
 These illustrate the practical PD ceiling: with the per-terminal driver, the cell saturates at ~6
 spikes per 1000 ms even on the most favorable seeds. Compare to the t0008 rotation-proxy port which
@@ -265,11 +268,12 @@ routinely reached 18 Hz peaks under the same morphology.
 
 ### Worst-PD trials (8-dir correlated, angle 0°)
 
-| trial | direction | spike_count | peak_mv | note |
-| --- | --- | --- | --- | --- |
-| 191133 | 0.0 | **3** | 36.977 | Floor for PD; unfavorable AR(2) realization |
-| 21014 | 0.0 | **4** | 37.227 | Mid-low PD; somatic AP still clearly present |
-| 31021 | 0.0 | **4** | 37.521 | Same magnitude; no obvious geometry difference |
+```text
+trial,direction_deg,spike_count,peak_mv
+191133,0.0,3,36.977
+21014,0.0,4,37.227
+31021,0.0,4,37.521
+```
 
 The PD half-plane has a 2:1 dynamic range across seeds (3-6 spikes), and even worst-case PD trials
 spike at the somatic threshold — the variability is in *how many* APs the cell fires, not whether
@@ -277,34 +281,37 @@ it spikes at all.
 
 ### Null-direction silence (8-dir correlated, angle 180°)
 
-| trial | direction | spike_count | peak_mv | note |
-| --- | --- | --- | --- | --- |
-| 3340 | 180.0 | **0** | -50.688 | Cell sits well below threshold throughout |
-| 23354 | 180.0 | **0** | -48.433 | Same — peak voltage barely above v_init |
-| 43368 | 180.0 | **0** | -53.864 | Even quieter; deep hyperpolarization from GABA inhibition |
+```text
+trial,direction_deg,spike_count,peak_mv
+3340,180.0,0,-50.688
+23354,180.0,0,-48.433
+43368,180.0,0,-53.864
+```
 
 These illustrate the asymmetric-inhibition mechanism working as designed: in the null direction the
 GABA half-plane fires first and clamps the cell well below threshold for the entire trial.
 
 ### Null breakthrough (8-dir correlated, angle 180°, max trials)
 
-| trial | direction | spike_count | peak_mv | note |
-| --- | --- | --- | --- | --- |
-| 33361 | 180.0 | **2** | 36.736 | Two AP breakthrough — favorable noise alignment defeats GABA |
-| 13347 | 180.0 | **1** | 36.807 | Single AP escape; rest of trial subthreshold |
-| 73389 | 180.0 | **1** | 35.249 | Same; peak voltage at the bottom of AP range |
+```text
+trial,direction_deg,spike_count,peak_mv
+33361,180.0,2,36.736
+13347,180.0,1,36.807
+73389,180.0,1,35.249
+```
 
 These ~5% of null-direction trials with breakthrough spikes are the source of the residual mean null
 firing rate (0.50 Hz at 180° corr) and account for why DSI is 0.82 rather than ~1.0.
 
 ### Contrastive: PD same-angle, correlated vs uncorrelated mean
 
-| direction | corr mean ± std | uncorr mean ± std | delta |
-| --- | --- | --- | --- |
-| 0° (PD) | 5.00 ± 0.92 | 4.45 ± 1.00 | -0.55 (uniform amplitude reduction) |
-| 90° (cardinal) | 1.90 ± 0.79 | 1.35 ± 0.99 | -0.55 (same uniform shift) |
-| 180° (null) | 0.50 ± 0.61 | 0.40 ± 0.60 | -0.10 (no GABA-inhibition rebalance) |
-| 270° (cardinal) | 1.65 ± 0.59 | 0.95 ± 0.76 | -0.70 (same uniform shift) |
+```text
+direction  corr_mean  corr_std  uncorr_mean  uncorr_std  delta
+0.0        5.00       0.92      4.45         1.00        -0.55   (PD, uniform amplitude reduction)
+90.0       1.90       0.79      1.35         0.99        -0.55   (cardinal, same uniform shift)
+180.0      0.50       0.61      0.40         0.60        -0.10   (null, no GABA-inhibition rebalance)
+270.0      1.65       0.59      0.95         0.76        -0.70   (cardinal, same uniform shift)
+```
 
 The uncorrelation effect is a uniform ~0.5 Hz reduction across **all** directions, including the
 null. There is no preferential reshaping of PD vs ND lobes — exactly the signature that would have
