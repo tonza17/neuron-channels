@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search Google Scholar, PubMed, bioRxiv, ModelDB, arXiv for morphology-to-direction-selectivity modeling papers beyond the baseline.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T19:00:34Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T19:18:55Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
