@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-26-4682B4" alt="Tasks"></a>
+  <a href="news/"><img src="https://img.shields.io/badge/News-1-FF6347" alt="News"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-27-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-115-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (11K)
-| [full](llm-context/full.xml) (159K) | [roadmap](llm-context/roadmap.xml) (36K) |
+| [full](llm-context/full.xml) (163K) | [roadmap](llm-context/roadmap.xml) (40K) |
 [results](llm-context/results-deep-dive.xml) (110K) |
 [assets](llm-context/literature-and-assets.xml) (25K)
 
-*Last updated: 2026-04-21 17:48 UTC*
+*Last updated: 2026-04-21 22:00 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -41,15 +41,17 @@
 
 ---
 
-## [Daily News (0)](news/)
+## [Daily News (1)](news/)
 
-No daily news yet.
+* [Apr 20, 2026](news/2026-04-20.md) — 14 completed · 11 created · ~$0
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | 2026-04-21 18:33 |
 
 ---
 

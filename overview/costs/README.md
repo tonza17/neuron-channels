@@ -17,7 +17,7 @@ threshold.
 | Default per-task limit | $1.00 USD |
 | Tasks with cost records | 25 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 1 |
+| Skipped tasks | 2 |
 
 ## Service Totals
 
@@ -42,3 +42,4 @@ No task cost records found.
 | Task ID | Reason |
 |---------|--------|
 | `t0023_port_hanson_2019_dsgc` | results/costs.json is missing or invalid |
+| `t0027_literature_survey_morphology_ds_modeling` | results/costs.json is missing or invalid |

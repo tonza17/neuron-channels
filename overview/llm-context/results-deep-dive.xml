@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-21T17:48:22Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-21T22:00:38Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
     <section_count>29</section_count>
-    <char_count>438325</char_count>
-    <byte_count>439960</byte_count>
-    <estimated_tokens>109581</estimated_tokens>
+    <char_count>438733</char_count>
+    <byte_count>440368</byte_count>
+    <estimated_tokens>109683</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -297,9 +297,10 @@ Result summary: Results Summary: V_rest sweep tuning curves for t0022 and t0024 
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0027_literature_survey_morphology_ds_modeling</id>
       </source_ids>
       <content>
-Planned or active tasks: 1
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -307,6 +308,12 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## Literature survey: modeling effect of cell morphology on direction selectivity
+ID: t0027_literature_survey_morphology_ds_modeling
+Status: in_progress
+Effective date: 2026-04-21
+Short description: Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

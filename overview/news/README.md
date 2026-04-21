@@ -1,9 +1,11 @@
 # Daily News
 
-0 daily summaries.
+1 daily summaries.
 
 [Back to dashboard](../README.md)
 
 ---
 
-No news files found yet.
+| Date | Tasks completed | Tasks created | Cost |
+| --- | --- | --- | --- |
+| [Apr 20, 2026](2026-04-20.md) | 14 | 11 | $0 |
