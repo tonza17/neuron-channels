@@ -1,0 +1,57 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.celrep.2025.116833",
+  "doi": "10.1016/j.celrep.2025.116833",
+  "title": "Uncovering the \"hidden\" synaptic microarchitecture of the retinal direction selective circuit",
+  "url": "https://www.sciencedirect.com/science/article/pii/S2211124725013968",
+  "pdf_url": null,
+  "date_published": "2026-02-24",
+  "year": 2026,
+  "authors": [
+    {
+      "name": "Geoff deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "IN",
+      "institution": "Indian Institute of Technology Madras",
+      "orcid": null
+    },
+    {
+      "name": "Gautam B. Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    },
+    {
+      "name": "Indian Institute of Technology Madras",
+      "country": "IN"
+    }
+  ],
+  "journal": "Cell Reports",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "GABAergic/cholinergic starburst amacrine cells play a crucial role in shaping direction selectivity in the dendrites of downstream direction-selective (DS) ganglion cells (DSGCs) in the retina by providing \"null\" inhibitory and \"preferred\" excitatory signals. The extent to which GABA and acetylcholine (ACh) signals are co-transmitted at the subcellular level is challenging to assess, making it difficult to fully appreciate the mechanisms underlying this dendritic computation. Here, two-photon Ca2+ imaging reveals that processing within local dendritic \"DS subunits\" is compromised when ACh dynamics are perturbed regionally with an acetylcholinesterase blocker. A network model that captures the specific anatomical \"wiring\" of the DS circuit reveals how minor perturbations in the spatiotemporal properties of ACh--that do not disrupt the global excitation/inhibition (E/I) balance--uncouple E/I locally and compromise direction selectivity. These results reveal the inner workings of the \"hidden\" synaptic microarchitecture that mediates diverse, localized direction computations across the DSGC's dendritic field.",
+  "citation_key": "deRosenroll2026",
+  "summary_path": "summary.md",
+  "files": [
+    "files/derosenroll_2026_ds-microarchitecture.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0024_port_de_rosenroll_2026_dsgc",
+  "date_added": "2026-04-21"
+}

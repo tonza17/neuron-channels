@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Locate the de Rosenroll et al. 2026 paper, publisher/preprint venue, and any accompanying NEURON source code or ModelDB entry.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-21T02:32:34Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_research-internet/"
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
