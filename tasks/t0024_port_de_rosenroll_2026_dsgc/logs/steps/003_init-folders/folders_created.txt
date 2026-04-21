@@ -1,0 +1,11 @@
+assets/
+assets/library/
+assets/paper/
+code/
+corrections/
+data/
+intervention/
+plan/
+research/
+results/
+results/images/
