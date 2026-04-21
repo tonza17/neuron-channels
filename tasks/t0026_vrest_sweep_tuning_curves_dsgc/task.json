@@ -5,12 +5,12 @@
   "name": "V_rest sweep tuning curves for t0022 and t0024 DSGC ports",
   "short_description": "Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed",
     "t0024_port_de_rosenroll_2026_dsgc"
   ],
-  "start_time": null,
+  "start_time": "2026-04-21T12:47:42Z",
   "end_time": null,
   "expected_assets": {
     "predictions": 2
