@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [implementation]: add step logs for skipped steps 8, 10, 13",
+  "exit_code": 0,
+  "duration_seconds": 5.669,
+  "started_at": "2026-04-21T21:07:48Z",
+  "completed_at": "2026-04-21T21:07:54Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "014_20260421T210748Z_git-commit-m.stdout.txt",
+  "stderr_file": "014_20260421T210748Z_git-commit-m.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 7,
+  "truncated": false
+}

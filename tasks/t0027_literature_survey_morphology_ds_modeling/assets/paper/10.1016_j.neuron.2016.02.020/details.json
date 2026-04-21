@@ -1,0 +1,91 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2016.02.020",
+  "doi": "10.1016/j.neuron.2016.02.020",
+  "title": "A Role for Synaptic Input Distribution in a Dendritic Computation of Motion Direction in the Retina",
+  "url": "https://doi.org/10.1016/j.neuron.2016.02.020",
+  "pdf_url": "https://escholarship.org/content/qt03k0q7cw/qt03k0q7cw.pdf",
+  "date_published": "2016-03-16",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Anna L. Vlasits",
+      "country": "US",
+      "institution": "Helen Wills Neuroscience Institute, University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Ryan D. Morrie",
+      "country": "US",
+      "institution": "Department of Molecular and Cell Biology, University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Alexandra Tran-Van-Minh",
+      "country": "FR",
+      "institution": "Unit of Dynamic Neuronal Imaging, Institut Pasteur, CNRS",
+      "orcid": null
+    },
+    {
+      "name": "Adam Bleckert",
+      "country": "US",
+      "institution": "Department of Biological Structure, University of Washington",
+      "orcid": null
+    },
+    {
+      "name": "Christian F. Gainer",
+      "country": "US",
+      "institution": "School of Optometry, University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "David A. DiGregorio",
+      "country": "FR",
+      "institution": "Unit of Dynamic Neuronal Imaging, Institut Pasteur, CNRS",
+      "orcid": null
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "Helen Wills Neuroscience Institute and Department of Molecular and Cell Biology, University of California, Berkeley",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    },
+    {
+      "name": "Institut Pasteur",
+      "country": "FR"
+    },
+    {
+      "name": "Centre National de la Recherche Scientifique (CNRS)",
+      "country": "FR"
+    },
+    {
+      "name": "University of Washington",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "The starburst amacrine cell in the mouse retina presents an opportunity to examine the precise role of sensory input location on neuronal computations. Using visual receptive field mapping, glutamate uncaging, two-photon Ca2+ imaging, and genetic labeling of putative synapses, we identify a unique arrangement of excitatory inputs and neurotransmitter release sites on starburst amacrine cell dendrites: the excitatory input distribution is skewed away from the release sites. By comparing computational simulations with Ca2+ transients recorded near release sites, we show that this anatomical arrangement of inputs and outputs supports a dendritic mechanism for computing motion direction. Direction selective Ca2+ transients persist in the presence of a GABA-A receptor antagonist, though the directional tuning is reduced. These results indicate a synergistic interaction between dendritic and circuit mechanisms for generating direction selectivity in the starburst amacrine cell.",
+  "citation_key": "Vlasits2016",
+  "summary_path": "summary.md",
+  "files": [
+    "files/vlasits_2016_synaptic-input-distribution.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

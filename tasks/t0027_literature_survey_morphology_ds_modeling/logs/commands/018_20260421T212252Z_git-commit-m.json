@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [results]: write results files and 5-section results_detailed.md",
+  "exit_code": 0,
+  "duration_seconds": 12.297,
+  "started_at": "2026-04-21T21:22:52Z",
+  "completed_at": "2026-04-21T21:23:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "018_20260421T212252Z_git-commit-m.stdout.txt",
+  "stderr_file": "018_20260421T212252Z_git-commit-m.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 7,
+  "truncated": false
+}

@@ -1,0 +1,9 @@
+[task/t0027_literature_survey_morphology_ds_modeling 1bacb85] t0027_literature_survey_morphology_ds_modeling [results]: write results files and 5-section results_detailed.md
+ 8 files changed, 550 insertions(+), 3 deletions(-)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/012_results/step_log.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/costs.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/metrics.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/remote_machines_used.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/results_summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/results/suggestions.json

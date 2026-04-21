@@ -1,0 +1,4 @@
+warning: in the working copy of 'tasks/t0027_literature_survey_morphology_ds_modeling/results/costs.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tasks/t0027_literature_survey_morphology_ds_modeling/results/metrics.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tasks/t0027_literature_survey_morphology_ds_modeling/results/remote_machines_used.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tasks/t0027_literature_survey_morphology_ds_modeling/results/suggestions.json', LF will be replaced by CRLF the next time Git touches it

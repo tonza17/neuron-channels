@@ -1,0 +1,1 @@
+warning: in the working copy of 'tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/details.json', LF will be replaced by CRLF the next time Git touches it

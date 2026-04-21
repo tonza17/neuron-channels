@@ -1,0 +1,58 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1017_S0952523804214109",
+  "doi": "10.1017/S0952523804214109",
+  "title": "Direction selectivity in a model of the starburst amacrine cell",
+  "url": "https://www.cambridge.org/core/journals/visual-neuroscience/article/abs/direction-selectivity-in-a-model-of-the-starburst-amacrine-cell/BEFF3097D9C22BE07CFA6F5AA3BE4095",
+  "pdf_url": "http://retina.anatomy.upenn.edu/pdfiles/6695.pdf",
+  "date_published": "2004-07",
+  "year": 2004,
+  "authors": [
+    {
+      "name": "John J. Tukker",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": null
+    },
+    {
+      "name": "W. Rowland Taylor",
+      "country": "US",
+      "institution": "Oregon Health and Science University",
+      "orcid": null
+    },
+    {
+      "name": "Robert G. Smith",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Pennsylvania",
+      "country": "US"
+    },
+    {
+      "name": "Oregon Health and Science University",
+      "country": "US"
+    }
+  ],
+  "journal": "Visual Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "cable-theory"
+  ],
+  "abstract": "The starburst amacrine cell (SBAC), found in all mammalian retinas, is thought to provide the directional inhibitory input recorded in On-Off direction-selective ganglion cells (DSGCs). While voltage recordings from the somas of SBACs have not shown robust direction selectivity (DS), the dendritic tips of these cells display direction-selective calcium signals, even when gamma-aminobutyric acid (GABAa,c) channels are blocked, implying that inhibition is not necessary to generate DS. This suggested that the distinctive morphology of the SBAC could generate a DS signal at the dendritic tips, where most of its synaptic output is located. To explore this possibility, we constructed a compartmental model incorporating realistic morphological structure, passive membrane properties, and excitatory inputs. We found robust DS at the dendritic tips but not at the soma. Two-spot apparent motion and annulus radial motion produced weak DS, but thin bars produced robust DS. For these stimuli, DS was caused by the interaction of a local synaptic input signal with a temporally delayed \"global\" signal, that is, an excitatory postsynaptic potential (EPSP) that spread from the activated inputs into the soma and throughout the dendritic tree. In the preferred direction the signals in the dendritic tips coincided, allowing summation, whereas in the null direction the local signal preceded the global signal, preventing summation. Sine-wave grating stimuli produced the greatest amount of DS, especially at high velocities and low spatial frequencies. The sine-wave DS responses could be accounted for by a simple mathematical model, which summed phase-shifted signals from soma and dendritic tip. By testing different artificial morphologies, we discovered DS was relatively independent of the morphological details, but depended on having a sufficient number of inputs at the distal tips and a limited electrotonic isolation. Adding voltage-gated calcium channels to the model showed that their threshold effect can amplify DS in the intracellular calcium signal.",
+  "citation_key": "Tukker2004",
+  "summary_path": "summary.md",
+  "files": [
+    "files/tukker_2004_sac-ds-model.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

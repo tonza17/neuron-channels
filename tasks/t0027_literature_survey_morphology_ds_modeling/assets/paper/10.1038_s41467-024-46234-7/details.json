@@ -1,0 +1,88 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_s41467-024-46234-7",
+  "doi": "10.1038/s41467-024-46234-7",
+  "title": "Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic computation of mouse starburst amacrine cells",
+  "url": "https://www.nature.com/articles/s41467-024-46234-7",
+  "pdf_url": "https://www.nature.com/articles/s41467-024-46234-7.pdf",
+  "date_published": "2024-02-28",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Hector Acaron Ledesma",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": null
+    },
+    {
+      "name": "Jennifer Ding",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": "0000-0003-2282-6615"
+    },
+    {
+      "name": "Swen Oosterboer",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": "0009-0007-5143-8538"
+    },
+    {
+      "name": "Xiaolin Huang",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": "0000-0001-7367-8347"
+    },
+    {
+      "name": "Qiang Chen",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": null
+    },
+    {
+      "name": "Sui Wang",
+      "country": "US",
+      "institution": "Stanford University",
+      "orcid": "0000-0003-1563-9117"
+    },
+    {
+      "name": "Michael Z. Lin",
+      "country": "US",
+      "institution": "Stanford University",
+      "orcid": "0000-0002-0492-1961"
+    },
+    {
+      "name": "Wei Wei",
+      "country": "US",
+      "institution": "The University of Chicago",
+      "orcid": "0000-0002-7771-5974"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "The University of Chicago",
+      "country": "US"
+    },
+    {
+      "name": "Stanford University",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature Communications",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "dendritic-computation",
+    "synaptic-integration",
+    "voltage-gated-channels"
+  ],
+  "abstract": "Dendritic mechanisms driving input-output transformation in starburst amacrine cells (SACs) are not fully understood. Here, we combine two-photon subcellular voltage and calcium imaging and electrophysiological recording to determine the computational architecture of mouse SAC dendrites. We found that the perisomatic region integrates motion signals over the entire dendritic field, providing a low-pass-filtered global depolarization to dendrites. Dendrites integrate local synaptic inputs with this global signal in a direction-selective manner. Coincidental local synaptic inputs and the global motion signal in the outward motion direction generate local suprathreshold calcium transients. Moreover, metabotropic glutamate receptor 2 (mGluR2) signaling in SACs modulates the initiation of calcium transients in dendrites but not at the soma. In contrast, voltage-gated potassium channel 3 (Kv3) dampens fast voltage transients at the soma. Together, complementary mGluR2 and Kv3 signaling in different subcellular regions leads to dendritic compartmentalization and direction selectivity, highlighting the importance of these mechanisms in dendritic computation.",
+  "citation_key": "Aldor2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/aldor_2024_sac-mglur2-kv3.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

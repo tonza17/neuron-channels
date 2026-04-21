@@ -1,0 +1,12 @@
+[task/t0027_literature_survey_morphology_ds_modeling 9a990fc] t0027_literature_survey_morphology_ds_modeling [implementation]: write step log and log run_with_logs output
+ 10 files changed, 134 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/008_20260421T205001Z_git-commit-m.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/008_20260421T205001Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/008_20260421T205001Z_git-commit-m.stdout.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/009_20260421T210412Z_git-add-tasks-t0027-literature-survey-mo.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/009_20260421T210412Z_git-add-tasks-t0027-literature-survey-mo.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/009_20260421T210412Z_git-add-tasks-t0027-literature-survey-mo.stdout.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/010_20260421T210426Z_git-commit-m.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/010_20260421T210426Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/010_20260421T210426Z_git-commit-m.stdout.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/009_implementation/step_log.md

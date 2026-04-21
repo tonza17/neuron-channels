@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.17-16-06023.1997",
+  "doi": "10.1523/JNEUROSCI.17-16-06023.1997",
+  "title": "Dendritic Computation of Direction Selectivity and Gain Control in Visual Interneurons",
+  "url": "https://www.jneurosci.org/content/17/16/6023",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/17/16/6023.full.pdf",
+  "date_published": "1997-08-15",
+  "year": 1997,
+  "authors": [
+    {
+      "name": "Sandra Single",
+      "country": "DE",
+      "institution": "Friedrich-Miescher-Laboratory, Max-Planck-Society, Tuebingen",
+      "orcid": null
+    },
+    {
+      "name": "Juergen Haag",
+      "country": "DE",
+      "institution": "Friedrich-Miescher-Laboratory, Max-Planck-Society, Tuebingen",
+      "orcid": null
+    },
+    {
+      "name": "Alexander Borst",
+      "country": "DE",
+      "institution": "Friedrich-Miescher-Laboratory, Max-Planck-Society, Tuebingen",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Friedrich-Miescher-Laboratory, Max-Planck-Society, Tuebingen",
+      "country": "DE"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration"
+  ],
+  "abstract": "The extraction of motion information from time varying retinal images is a fundamental task of visual systems. Accordingly, neurons that selectively respond to visual motion are found in almost all species investigated so far. Despite its general importance, the cellular mechanisms underlying direction selectivity are not yet understood in most systems. Blocking inhibitory input to fly visual interneurons by picrotoxinin (PTX), we demonstrate that their direction selectivity arises largely from interactions between postsynaptic signals elicited by excitatory and inhibitory input elements, which are themselves only weakly tuned to opposite directions of motion. Their joint activation by preferred as well as null direction motion leads to a mixed reversal potential at which the postsynaptic response settles for large field stimuli. Assuming the activation ratio of these opponent inputs to be a function of pattern velocity can explain how the postsynaptic membrane potential saturates with increasing pattern size at different levels for different pattern velocities (\"gain control\"). Accordingly, we find that after blocking the inhibitory input by PTX, gain control is abolished.",
+  "citation_key": "Single1997",
+  "summary_path": "summary.md",
+  "files": [
+    "files/single_1997_dendritic-ds-gain-control.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

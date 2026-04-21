@@ -1,0 +1,63 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1000877",
+  "doi": "10.1371/journal.pcbi.1000877",
+  "title": "One Rule to Grow Them All: A General Theory of Neuronal Branching and Its Practical Application",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000877",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000877&type=printable",
+  "date_published": "2010-08-05",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "Hermann Cuntz",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    },
+    {
+      "name": "Friedrich Forstner",
+      "country": "DE",
+      "institution": "Max Planck Institute of Neurobiology",
+      "orcid": null
+    },
+    {
+      "name": "Alexander Borst",
+      "country": "DE",
+      "institution": "Max Planck Institute of Neurobiology",
+      "orcid": null
+    },
+    {
+      "name": "Michael Häusser",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University College London",
+      "country": "GB"
+    },
+    {
+      "name": "Max Planck Institute of Neurobiology",
+      "country": "DE"
+    }
+  ],
+  "journal": "PLoS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "dendritic-computation",
+    "cable-theory"
+  ],
+  "abstract": "Understanding the principles governing axonal and dendritic branching is essential for unravelling the functionality of single neurons and the way in which they connect. Nevertheless, no formalism has yet been described which can capture the general features of neuronal branching. Here we propose such a formalism, which is derived from the expression of dendritic arborizations as locally optimized graphs. Inspired by Ramón y Cajal's laws of conservation of cytoplasm and conduction time in neural circuitry, we show that this graphical representation can be used to optimize these variables. This approach allows us to generate synthetic branching geometries which replicate morphological features of any tested neuron. The essential structure of a neuronal tree is thereby captured by the density profile of its spanning field and by a single parameter, a balancing factor weighing the costs for material and conduction time. This balancing factor determines a neuron's electrotonic compartmentalization. Additions to this rule, when required in the construction process, can be directly attributed to developmental processes or a neuron's computational role within its neural circuit. The simulations presented here are implemented in an open-source software package, the \"TREES toolbox,\" which provides a general set of tools for analyzing, manipulating, and generating dendritic structure, including a tool to create synthetic members of any particular cell group and an approach for a model-based supervised automatic morphological reconstruction from fluorescent image stacks. These approaches provide new insights into the constraints governing dendritic architectures. They also provide a novel framework for modelling and analyzing neuronal branching structures and for constructing realistic synthetic neural networks.",
+  "citation_key": "Cuntz2010",
+  "summary_path": "summary.md",
+  "files": [
+    "files/cuntz_2010_one-rule-grow-them-all.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

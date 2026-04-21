@@ -1,0 +1,48 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.4013-15.2016",
+  "doi": "10.1523/JNEUROSCI.4013-15.2016",
+  "title": "Retinal Circuitry Balances Contrast Tuning of Excitation and Inhibition to Enable Reliable Computation of Direction Selectivity",
+  "url": "https://www.jneurosci.org/content/36/21/5861",
+  "pdf_url": "https://europepmc.org/articles/PMC4879202?pdf=render",
+  "date_published": "2016-05-25",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Alon Poleg-Polsky",
+      "country": "US",
+      "institution": "NINDS, NIH",
+      "orcid": "0000-0003-1327-5129"
+    },
+    {
+      "name": "Jeffrey S. Diamond",
+      "country": "US",
+      "institution": "NINDS, NIH",
+      "orcid": "0000-0002-1770-2629"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "NINDS, NIH",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "synaptic-integration",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "Feedforward (FF) inhibition is a common motif in many neural networks. Typically, excitatory inputs drive both principal neurons and interneurons; the interneurons then inhibit the principal neurons, thereby regulating the strength and timing of the FF signal. The interneurons introduce a likely nonlinear processing step that could distort the excitation/inhibition (E/I) ratio in the principal neuron, potentially degrading the reliability of computation in the circuit. In the retina, FF inhibition is an essential feature of the circuitry underlying direction selectivity (DS): glutamatergic bipolar cells (BCs) provide excitatory input to direction-selective ganglion cells (DSGCs) and GABAergic starburst amacrine cells (SACs), and the SACs then provide FF inhibition onto DSGCs. Robust DS computation requires a consistent synaptic E/I ratio in the DSGC in various visual conditions. Here, we show in mouse retina that the E/I ratio is maintained in DSGCs over a wide stimulus contrast range due to compensatory mechanisms in the diverse population of presynaptic BCs. BC inputs to SACs exhibit higher contrast sensitivity, so that the subsequent nonlinear transformation in SACs reduces the contrast sensitivity of FF inhibition to match the sensitivity of direct excitatory inputs onto DSGCs. Measurements of light-evoked responses from individual BC synaptic terminals suggest that the distinct sensitivity of BC inputs reflects different contrast sensitivity between BC subtypes. Numerical simulations suggest that this network arrangement is crucial for reliable DS computation.",
+  "citation_key": "PolegPolsky2016",
+  "summary_path": "summary.md",
+  "files": [
+    "files/poleg-polsky_2016_ei-contrast-tuning-ds.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

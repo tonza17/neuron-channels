@@ -1,0 +1,55 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_s41593-017-0046-4",
+  "doi": "10.1038/s41593-017-0046-4",
+  "title": "Simple integration of fast excitation and offset, delayed inhibition computes directional selectivity in Drosophila",
+  "url": "https://www.nature.com/articles/s41593-017-0046-4",
+  "pdf_url": "https://www.nature.com/articles/s41593-017-0046-4.pdf",
+  "date_published": "2018-01-08",
+  "year": 2018,
+  "authors": [
+    {
+      "name": "Eyal Gruntman",
+      "country": "US",
+      "institution": "Janelia Research Campus, Howard Hughes Medical Institute",
+      "orcid": "0000-0003-1383-7347"
+    },
+    {
+      "name": "Sandro Romani",
+      "country": "US",
+      "institution": "Janelia Research Campus, Howard Hughes Medical Institute",
+      "orcid": "0000-0002-4727-4207"
+    },
+    {
+      "name": "Michael B. Reiser",
+      "country": "US",
+      "institution": "Janelia Research Campus, Howard Hughes Medical Institute",
+      "orcid": "0000-0002-4108-4517"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Janelia Research Campus, Howard Hughes Medical Institute",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "A neuron that extracts directionally selective motion information from upstream signals lacking this selectivity must compare visual responses from spatially offset inputs. Distinguishing among prevailing algorithmic models for this computation requires measuring fast neuronal activity and inhibition. In the Drosophila melanogaster visual system, a fourth-order neuron\u2014T4\u2014is the first cell type in the ON pathway to exhibit directionally selective signals. Here we use in vivo whole-cell recordings of T4 to show that directional selectivity originates from simple integration of spatially offset fast excitatory and slow inhibitory inputs, resulting in a suppression of responses to the nonpreferred motion direction. We constructed a passive, conductance-based model of a T4 cell that accurately predicts the neuron's response to moving stimuli. These results connect the known circuit anatomy of the motion pathway to the algorithmic mechanism by which the direction of motion is computed.",
+  "citation_key": "Gruntman2018",
+  "summary_path": "summary.md",
+  "files": [
+    "files/gruntman_2018_t4-directional-selectivity.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

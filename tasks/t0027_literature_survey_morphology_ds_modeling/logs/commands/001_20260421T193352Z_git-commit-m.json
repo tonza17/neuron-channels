@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [research-code]: identify 19 prior literature-survey tasks and 3 directly-relevant answer assets to cite\n\nSubagent reviewed 25 prior tasks, scanned 6 libraries, and identified 3\ndirectly-relevant answer assets (t0002 five-RQ synthesis, t0015 cable-theory\nanswer, t0016 dendritic-computation motifs) for citation in the synthesis\nanswer. Flagged t0018 paper-asset utilities as copy-into-task templates for\nthe implementation step.",
+  "exit_code": 0,
+  "duration_seconds": 6.013,
+  "started_at": "2026-04-21T19:33:52Z",
+  "completed_at": "2026-04-21T19:33:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "001_20260421T193352Z_git-commit-m.stdout.txt",
+  "stderr_file": "001_20260421T193352Z_git-commit-m.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 7,
+  "truncated": false
+}

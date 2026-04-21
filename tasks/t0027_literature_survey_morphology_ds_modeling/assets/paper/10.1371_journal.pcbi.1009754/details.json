@@ -1,0 +1,80 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1009754",
+  "doi": "10.1371/journal.pcbi.1009754",
+  "title": "Realistic retinal modeling unravels the differential role of excitation and inhibition to starburst amacrine cells in direction selectivity",
+  "url": "https://doi.org/10.1371/journal.pcbi.1009754",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1009754&type=printable",
+  "date_published": "2021-12-30",
+  "year": 2021,
+  "authors": [
+    {
+      "name": "Elishai Ezra-Tsur",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0003-1304-8022"
+    },
+    {
+      "name": "Oren Amsalem",
+      "country": "IL",
+      "institution": "Hebrew University of Jerusalem",
+      "orcid": "0000-0002-8070-0378"
+    },
+    {
+      "name": "Lea Ankri",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-7622-6239"
+    },
+    {
+      "name": "Pritish Patil",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-2655-4090"
+    },
+    {
+      "name": "Idan Segev",
+      "country": "IL",
+      "institution": "Hebrew University of Jerusalem",
+      "orcid": "0000-0001-7279-9630"
+    },
+    {
+      "name": "Michal Rivlin-Etzion",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-1310-3370"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Weizmann Institute of Science",
+      "country": "IL"
+    },
+    {
+      "name": "The Open University of Israel",
+      "country": "IL"
+    },
+    {
+      "name": "Hebrew University of Jerusalem",
+      "country": "IL"
+    }
+  ],
+  "journal": "PLOS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "Retinal direction-selectivity originates in starburst amacrine cells (SACs), which display a centrifugal preference, responding with greater depolarization to a stimulus expanding from soma to dendrites than to a collapsing stimulus. Various mechanisms were hypothesized to underlie SAC centrifugal preference, but dissociating them is experimentally challenging and the mechanisms remain debatable. To address this issue, we developed the Retinal Stimulation Modeling Environment (RSME), a multifaceted data-driven retinal model that encompasses detailed neuronal morphology and biophysical properties, retina-tailored connectivity scheme and visual input. Using a genetic algorithm, we demonstrated that spatiotemporally diverse excitatory inputs-sustained in the proximal and transient in the distal processes-are sufficient to generate experimentally validated centrifugal preference in a single SAC. Reversing these input kinetics did not produce any centrifugal-preferring SAC. We then explored the contribution of SAC-SAC inhibitory connections in establishing the centrifugal preference. SAC inhibitory network enhanced the centrifugal preference, but failed to generate it in its absence. Embedding a direction selective ganglion cell (DSGC) in a SAC network showed that the known SAC-DSGC asymmetric connectivity by itself produces direction selectivity. Still, this selectivity is sharpened in a centrifugal-preferring SAC network. Finally, we use RSME to demonstrate the contribution of SAC-SAC inhibitory connections in mediating direction selectivity and recapitulate recent experimental findings. Thus, using RSME, we obtained a mechanistic understanding of SACs' centrifugal preference and its contribution to direction selectivity.",
+  "citation_key": "Ezra-Tsur2021",
+  "summary_path": "summary.md",
+  "files": [
+    "files/ezra-tsur_2021_morphology-direction-selective.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

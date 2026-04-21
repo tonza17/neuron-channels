@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git add tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/",
+  "exit_code": 0,
+  "duration_seconds": 0.334,
+  "started_at": "2026-04-21T21:04:12Z",
+  "completed_at": "2026-04-21T21:04:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "009_20260421T210412Z_git-add-tasks-t0027-literature-survey-mo.stdout.txt",
+  "stderr_file": "009_20260421T210412Z_git-add-tasks-t0027-literature-survey-mo.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

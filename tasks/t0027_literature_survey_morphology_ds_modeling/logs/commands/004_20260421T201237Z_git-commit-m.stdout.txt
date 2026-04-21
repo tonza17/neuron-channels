@@ -1,0 +1,5 @@
+[task/t0027_literature_survey_morphology_ds_modeling 6bb5fb1] t0027_literature_survey_morphology_ds_modeling [implementation]: log run_with_logs output for priority-1 papers commit
+ 3 files changed, 39 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/003_20260421T201216Z_git-commit-m.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/003_20260421T201216Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/003_20260421T201216Z_git-commit-m.stdout.txt

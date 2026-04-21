@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "python -u -m arf.scripts.verificators.verify_suggestions t0027_literature_survey_morphology_ds_modeling",
+  "exit_code": 1,
+  "duration_seconds": 0.193,
+  "started_at": "2026-04-21T21:28:00Z",
+  "completed_at": "2026-04-21T21:28:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "019_20260421T212800Z_python-u-m.stdout.txt",
+  "stderr_file": "019_20260421T212800Z_python-u-m.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 14,
+  "truncated": false
+}

@@ -1,0 +1,101 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.7554_eLife.81533",
+  "doi": "10.7554/eLife.81533",
+  "title": "Spatiotemporal properties of glutamate input support direction selectivity in the dendrites of retinal starburst amacrine cells",
+  "url": "https://elifesciences.org/articles/81533",
+  "pdf_url": "https://cdn.elifesciences.org/articles/81533/elife-81533-v1.pdf",
+  "date_published": "2022-11-08",
+  "year": 2022,
+  "authors": [
+    {
+      "name": "Prerna Srivastava",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-3429-7039"
+    },
+    {
+      "name": "Geoff de Rosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-5431-2814"
+    },
+    {
+      "name": "Akihiro Matsumoto",
+      "country": "DK",
+      "institution": "Aarhus University (DANDRITE)",
+      "orcid": null
+    },
+    {
+      "name": "Tracy Michaels",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Zachary Turple",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Varsha Jain",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Benjamin L Murphy-Baum",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0001-6746-3091"
+    },
+    {
+      "name": "Keisuke Yonehara",
+      "country": "DK",
+      "institution": "Aarhus University (DANDRITE)",
+      "orcid": null
+    },
+    {
+      "name": "Gautam Bhagwan Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-0610-5271"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    },
+    {
+      "name": "Aarhus University (DANDRITE)",
+      "country": "DK"
+    }
+  ],
+  "journal": "eLife",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "The asymmetric summation of kinetically distinct glutamate inputs across the dendrites of retinal \"starburst\" amacrine cells is one of the several mechanisms that have been proposed to underlie their direction-selective properties, but experimentally verifying input kinetics has been a challenge. Here, we used two-photon glutamate sensor (iGluSnFR) imaging to directly measure the input kinetics across individual starburst dendrites. We found that signals measured from proximal dendrites were relatively sustained compared to those measured from distal dendrites. These differences were observed across a range of stimulus sizes and appeared to be shaped mainly by excitatory rather than inhibitory network interactions. Temporal deconvolution analysis suggests that the steady-state vesicle release rate was ~3 times larger at proximal sites compared to distal sites. Using a connectomics-inspired computational model, we demonstrate that input kinetics play an important role in shaping direction selectivity at low stimulus velocities. Taken together, these results provide direct support for the 'space-time wiring' model for direction selectivity.",
+  "citation_key": "Srivastava2022",
+  "summary_path": "summary.md",
+  "files": [
+    "files/srivastava_2022_sac-glutamate-ds.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

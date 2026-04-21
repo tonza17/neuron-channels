@@ -1,0 +1,46 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn.3565",
+  "doi": "10.1038/nn.3565",
+  "title": "Direction selectivity is computed by active dendritic integration in retinal ganglion cells",
+  "url": "https://www.nature.com/articles/nn.3565",
+  "pdf_url": "https://www.nature.com/articles/nn.3565.pdf",
+  "date_published": "2013-10-27",
+  "year": 2013,
+  "authors": [
+    {
+      "name": "Benjamin Sivyer",
+      "country": "AU",
+      "institution": "Queensland Brain Institute, The University of Queensland",
+      "orcid": null
+    },
+    {
+      "name": "Stephen R Williams",
+      "country": "AU",
+      "institution": "Queensland Brain Institute, The University of Queensland",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Queensland Brain Institute, The University of Queensland",
+      "country": "AU"
+    }
+  ],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "dendritic-computation",
+    "retinal-ganglion-cell",
+    "patch-clamp"
+  ],
+  "abstract": "Active dendritic integration is thought to enrich the computational power of central neurons. However, a direct role of active dendritic processing in the execution of defined neuronal computations in intact neural networks has not been established. Here we used multi-site electrophysiological recording techniques to demonstrate that active dendritic integration underlies the computation of direction selectivity in rabbit retinal ganglion cells. Direction-selective retinal ganglion cells fire action potentials in response to visual image movement in a preferred direction. Dendritic recordings revealed that preferred-direction moving-light stimuli led to dendritic spike generation in terminal dendrites, which were further integrated and amplified as they spread through the dendritic arbor to the axon to drive action potential output. In contrast, when light bars moved in a null direction, synaptic inhibition vetoed neuronal output by directly inhibiting terminal dendritic spike initiation. Active dendritic integration therefore underlies a physiologically engaged circuit-based computation in the retina.",
+  "citation_key": "Sivyer2013",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Nature Neuroscience PDF is paywalled; Unpaywall and Semantic Scholar confirm no open-access copy exists (is_oa=false, oa_status=closed, has_repository_copy=false). No PMC deposit. Direct fetch of https://www.nature.com/articles/nn.3565.pdf returned the HTML paywall landing page. See intervention/Sivyer2013_paywalled.md for manual-download instructions.",
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

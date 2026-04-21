@@ -1,0 +1,64 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pbio.0050185",
+  "doi": "10.1371/journal.pbio.0050185",
+  "title": "A Dendrite-Autonomous Mechanism for Direction Selectivity in Retinal Starburst Amacrine Cells",
+  "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050185",
+  "pdf_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.0050185&type=printable",
+  "date_published": "2007-07-10",
+  "year": 2007,
+  "authors": [
+    {
+      "name": "Susanne E. Hausselt",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research, Heidelberg",
+      "orcid": null
+    },
+    {
+      "name": "Thomas Euler",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research, Heidelberg",
+      "orcid": null
+    },
+    {
+      "name": "Peter B. Detwiler",
+      "country": "US",
+      "institution": "University of Washington, Seattle",
+      "orcid": null
+    },
+    {
+      "name": "Winfried Denk",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research, Heidelberg",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Max Planck Institute for Medical Research, Heidelberg",
+      "country": "DE"
+    },
+    {
+      "name": "University of Washington, Seattle",
+      "country": "US"
+    }
+  ],
+  "journal": "PLoS Biology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration"
+  ],
+  "abstract": "Detection of image motion direction begins in the retina, with starburst amacrine cells (SACs) playing a major role. SACs generate larger dendritic Ca2+ signals when motion is from their somata towards their dendritic tips than for motion in the opposite direction. To study the mechanisms underlying the computation of direction selectivity (DS) in SAC dendrites, electrical responses to expanding and contracting circular wave visual stimuli were measured via somatic whole-cell recordings and quantified using Fourier analysis. Fundamental and, especially, harmonic frequency components were larger for expanding stimuli. This DS persists in the presence of GABA and glycine receptor antagonists, suggesting that inhibitory network interactions are not essential. The presence of harmonics indicates nonlinearity, which, as the relationship between harmonic amplitudes and holding potential indicates, is likely due to the activation of voltage-gated channels. [Ca2+] changes in SAC dendrites evoked by voltage steps and monitored by two-photon microscopy suggest that the distal dendrite is tonically depolarized relative to the soma, due in part to resting currents mediated by tonic glutamatergic synaptic input, and that high-voltage-activated Ca2+ channels are active at rest. Supported by compartmental modeling, we conclude that dendritic DS in SACs can be computed by the dendrites themselves, relying on voltage-gated channels and a dendritic voltage gradient, which provides the spatial asymmetry necessary for direction discrimination.",
+  "citation_key": "Hausselt2007",
+  "summary_path": "summary.md",
+  "files": [
+    "files/hausselt_2007_sac-direction-selectivity.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

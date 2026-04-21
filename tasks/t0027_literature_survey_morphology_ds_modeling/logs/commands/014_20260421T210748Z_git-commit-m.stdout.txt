@@ -1,0 +1,5 @@
+[task/t0027_literature_survey_morphology_ds_modeling 2aede71] t0027_literature_survey_morphology_ds_modeling [implementation]: add step logs for skipped steps 8, 10, 13
+ 3 files changed, 83 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/008_setup-machines/step_log.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/010_teardown/step_log.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/013_compare-literature/step_log.md

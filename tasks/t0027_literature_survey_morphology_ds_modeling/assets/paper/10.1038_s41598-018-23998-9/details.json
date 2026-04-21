@@ -1,0 +1,65 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_s41598-018-23998-9",
+  "doi": "10.1038/s41598-018-23998-9",
+  "title": "Non-uniform weighting of local motion inputs underlies dendritic computation in the fly visual system",
+  "url": "https://www.nature.com/articles/s41598-018-23998-9",
+  "pdf_url": "https://www.nature.com/articles/s41598-018-23998-9.pdf",
+  "date_published": "2018-04-10",
+  "year": 2018,
+  "authors": [
+    {
+      "name": "Ohad Dan",
+      "country": "IL",
+      "institution": "Hebrew University of Jerusalem",
+      "orcid": "0000-0001-7707-1665"
+    },
+    {
+      "name": "Elizabeth Hopp",
+      "country": "DE",
+      "institution": "Max Planck Institute of Neurobiology",
+      "orcid": "0000-0002-0577-0501"
+    },
+    {
+      "name": "Alexander Borst",
+      "country": "DE",
+      "institution": "Max Planck Institute of Neurobiology",
+      "orcid": null
+    },
+    {
+      "name": "Idan Segev",
+      "country": "IL",
+      "institution": "Hebrew University of Jerusalem",
+      "orcid": "0000-0001-7279-9630"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Hebrew University of Jerusalem",
+      "country": "IL"
+    },
+    {
+      "name": "Max Planck Institute of Neurobiology",
+      "country": "DE"
+    }
+  ],
+  "journal": "Scientific Reports",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration",
+    "cable-theory"
+  ],
+  "abstract": "The fly visual system offers a unique opportunity to explore computations performed by single neurons. Two previous studies characterized, in vivo, the receptive field (RF) of the vertical system (VS) cells of the blowfly (calliphora vicina), both intracellularly in the axon, and, independently using Ca2+ imaging, in hundreds of distal dendritic branchlets. We integrated this information into detailed passive cable and compartmental models of 3D reconstructed VS cells. Within a given VS cell type, the transfer resistance (TR) from different branchlets to the axon differs substantially, suggesting that they contribute unequally to the shaping of the axonal RF. Weighting the local RFs of all dendritic branchlets by their respective TR yielded a faithful reproduction of the axonal RF. The model also predicted that the various dendritic branchlets are electrically decoupled from each other, thus acting as independent local functional subunits. The study suggests that single neurons in the fly visual system filter dendritic noise and compute the weighted average of their inputs.",
+  "citation_key": "Dan2018",
+  "summary_path": "summary.md",
+  "files": [
+    "files/dan_2018_vs-cells-dendritic-weighting.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

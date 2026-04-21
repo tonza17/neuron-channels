@@ -1,0 +1,74 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1017_S0952523823000019",
+  "doi": "10.1017/S0952523823000019",
+  "title": "Two mechanisms for direction selectivity in a model of the primate starburst amacrine cell",
+  "url": "https://www.cambridge.org/core/journals/visual-neuroscience/article/two-mechanisms-for-direction-selectivity-in-a-model-of-the-primate-starburst-amacrine-cell/6C688BA235ED1FE58BBD8BCDDB8C5B59",
+  "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C688BA235ED1FE58BBD8BCDDB8C5B59/S0952523823000019a.pdf/div-class-title-two-mechanisms-for-direction-selectivity-in-a-model-of-the-primate-starburst-amacrine-cell-div.pdf",
+  "date_published": "2023-05-23",
+  "year": 2023,
+  "authors": [
+    {
+      "name": "Jiajia Wu",
+      "country": "US",
+      "institution": "Northwestern University",
+      "orcid": "0000-0002-4321-9868"
+    },
+    {
+      "name": "Yeon Jin Kim",
+      "country": "US",
+      "institution": "University of Washington",
+      "orcid": "0000-0002-6722-4063"
+    },
+    {
+      "name": "Dennis M. Dacey",
+      "country": "US",
+      "institution": "University of Washington",
+      "orcid": null
+    },
+    {
+      "name": "John B. Troy",
+      "country": "US",
+      "institution": "Northwestern University",
+      "orcid": null
+    },
+    {
+      "name": "Robert G. Smith",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": "0000-0001-5703-1324"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Northwestern University",
+      "country": "US"
+    },
+    {
+      "name": "University of Washington",
+      "country": "US"
+    },
+    {
+      "name": "University of Pennsylvania",
+      "country": "US"
+    }
+  ],
+  "journal": "Visual Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "In a recent study, visual signals were recorded for the first time in starburst amacrine cells of the macaque retina, and, as for mouse and rabbit, a directional bias observed in calcium signals was recorded from near the dendritic tips. Stimulus motion from the soma toward the tip generated a larger calcium signal than motion from the tip toward the soma. Two mechanisms affecting the spatiotemporal summation of excitatory postsynaptic currents have been proposed to contribute to directional signaling at the dendritic tips of starbursts: (1) a \"morphological\" mechanism in which electrotonic propagation of excitatory synaptic currents along a dendrite sums bipolar cell inputs at the dendritic tip preferentially for stimulus motion in the centrifugal direction; (2) a \"space-time\" mechanism that relies on differences in the time-courses of proximal and distal bipolar cell inputs to favor centrifugal stimulus motion. To explore the contributions of these two mechanisms in the primate, we developed a realistic computational model based on connectomic reconstruction of a macaque starburst cell and the distribution of its synaptic inputs from sustained and transient bipolar cell types. Our model suggests that both mechanisms can initiate direction selectivity in starburst dendrites, but their contributions differ depending on the spatiotemporal properties of the stimulus. Specifically, the morphological mechanism dominates when small visual objects are moving at high velocities, and the space-time mechanism contributes most for large visual objects moving at low velocities.",
+  "citation_key": "Wu2023",
+  "summary_path": "summary.md",
+  "files": [
+    "files/wu_2023_primate-sac-ds-mechanisms.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}

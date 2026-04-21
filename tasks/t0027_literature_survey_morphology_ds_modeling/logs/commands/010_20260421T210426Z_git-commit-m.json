@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [implementation]: write synthesis answer asset citing all 20 papers\n\nBuilt morphology-direction-selectivity-modeling-synthesis answer asset with:\n- details.json (spec v2, 20 paper_ids, answer_methods=[papers, internet], confidence=medium)\n- short_answer.md (242 words, 3 sections, no inline citations)\n- full_answer.md (1931 words, 9 mandatory sections)\n\nEvidence organised by morphology variable: dendritic length, branch pattern/order,\ninput spatial layout, asymmetric arbors/tiling, electrotonic compartmentalisation,\ndendritic diameter, active dendritic conductances, contrast linearisation.\n\nCites all 15 new papers (this task) plus 5 baseline papers from t0002, t0010, t0013\nby paper_id. Verificator verify_task_folder PASSED (0 errors).",
+  "exit_code": 0,
+  "duration_seconds": 5.845,
+  "started_at": "2026-04-21T21:04:26Z",
+  "completed_at": "2026-04-21T21:04:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "010_20260421T210426Z_git-commit-m.stdout.txt",
+  "stderr_file": "010_20260421T210426Z_git-commit-m.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 7,
+  "truncated": false
+}
