@@ -1,0 +1,22 @@
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c mod_func.c
+nocmodl HHst
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c HHst.c
+nocmodl SAC2RGCexc
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c SAC2RGCexc.c
+nocmodl SAC2RGCinhib
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c SAC2RGCinhib.c
+nocmodl SquareInput
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c SquareInput.c
+nocmodl bipolarNMDA
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c bipolarNMDA.c
+nocmodl spike
+Warning: Default 1.8 of PARAMETER cao will be ignored and set by NEURON.
+Warning: Default 0.0001 of PARAMETER cai will be ignored and set by NEURON.
+Warning: Default -100 of PARAMETER ek will be ignored and set by NEURON.
+Warning: Default 65 of PARAMETER ena will be ignored and set by NEURON.
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c spike.c
+x86_64-w64-mingw32-gcc.exe  -shared mod_func.o HHst.o SAC2RGCexc.o SAC2RGCinhib.o SquareInput.o bipolarNMDA.o spike.o \
+  -L/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../bin -lnrniv -lpthread -o 789.nrnmech.dll
+#rebase -b 0x64000000 -v nrnmech.dll
+
+nrnmech.dll was built successfully.

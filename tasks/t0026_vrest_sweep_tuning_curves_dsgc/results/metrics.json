@@ -1,0 +1,212 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0022_vrest_m90mv",
+      "label": "t0022 DSGC @ V_rest=-90 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -90,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4852,
+        "tuning_curve_hwhm_deg": 0.7753
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m80mv",
+      "label": "t0022 DSGC @ V_rest=-80 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -80,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5999,
+        "tuning_curve_hwhm_deg": 0.7664
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m70mv",
+      "label": "t0022 DSGC @ V_rest=-70 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -70,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6368,
+        "tuning_curve_hwhm_deg": 83.961
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m60mv",
+      "label": "t0022 DSGC @ V_rest=-60 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -60,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6555,
+        "tuning_curve_hwhm_deg": 86.25
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m50mv",
+      "label": "t0022 DSGC @ V_rest=-50 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -50,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2047,
+        "tuning_curve_hwhm_deg": 102.1875
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m40mv",
+      "label": "t0022 DSGC @ V_rest=-40 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -40,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0952,
+        "tuning_curve_hwhm_deg": 180.0
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m30mv",
+      "label": "t0022 DSGC @ V_rest=-30 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -30,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.046,
+        "tuning_curve_hwhm_deg": 180.0
+      }
+    },
+    {
+      "variant_id": "t0022_vrest_m20mv",
+      "label": "t0022 DSGC @ V_rest=-20 mV",
+      "dimensions": {
+        "model": "t0022_modeldb_189347",
+        "v_rest_mv": -20,
+        "release_mode": "deterministic"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2751,
+        "tuning_curve_hwhm_deg": 107.8125
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m90mv",
+      "label": "t0024 DSGC @ V_rest=-90 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -90,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6746,
+        "tuning_curve_hwhm_deg": 65.1786
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m80mv",
+      "label": "t0024 DSGC @ V_rest=-80 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -80,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5489,
+        "tuning_curve_hwhm_deg": 68.4375
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m70mv",
+      "label": "t0024 DSGC @ V_rest=-70 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -70,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4698,
+        "tuning_curve_hwhm_deg": 70.4545
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m60mv",
+      "label": "t0024 DSGC @ V_rest=-60 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -60,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4463,
+        "tuning_curve_hwhm_deg": 78.4737
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m50mv",
+      "label": "t0024 DSGC @ V_rest=-50 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -50,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5601,
+        "tuning_curve_hwhm_deg": 69.9519
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m40mv",
+      "label": "t0024 DSGC @ V_rest=-40 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -40,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6248,
+        "tuning_curve_hwhm_deg": 67.7038
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m30mv",
+      "label": "t0024 DSGC @ V_rest=-30 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -30,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5898,
+        "tuning_curve_hwhm_deg": 66.4904
+      }
+    },
+    {
+      "variant_id": "t0024_vrest_m20mv",
+      "label": "t0024 DSGC @ V_rest=-20 mV",
+      "dimensions": {
+        "model": "t0024_de_rosenroll_2026",
+        "v_rest_mv": -20,
+        "release_mode": "ar2_rho_0p6"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3606,
+        "tuning_curve_hwhm_deg": 83.2867
+      }
+    }
+  ]
+}

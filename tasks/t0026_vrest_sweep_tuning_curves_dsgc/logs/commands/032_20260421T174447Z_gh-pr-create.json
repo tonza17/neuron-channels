@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "command": "gh pr create --title t0026_vrest_sweep_tuning_curves_dsgc: V_rest sweep tuning curves for DSGC ports --body ## Summary\n\nSweeps resting potential from -90 to -20 mV in 10 mV steps across two DSGC compartmental-model ports (t0022 deterministic, t0024 AR(2) rho=0.6 stochastic) and exports per-(model, V_rest) polar tuning curves plus per-model overlay plots and quantitative direction-selectivity / peak-firing / HWHM tables.\n\n## Key findings\n\n* **t0022** (deterministic, ModelDB 189347): DSI rises from 0.49 at V=-90 to a 0.66 peak at V=-60, then collapses to 0.05 at V=-30 due to Na channel inactivation. Tuning HWHM widens from <1 deg at V<=-80 to 180 deg (no tuning) at V=-30.\n* **t0024** (AR(2) rho=0.6, de Rosenroll 2026): DSI traces a U-shape (0.67 -> 0.45 -> 0.62) over the same V_rest range; HWHM stays in the 65-83 deg band throughout. Depolarisation does not collapse t0024 tuning the way it collapses t0022.\n* 1056 trials total (96 + 960), 4h 28m total wall time on a single Windows CPU.\n\n## Deliverables\n\n* 2 predictions assets (`tasks/t0026_*/assets/predictions/`)\n* 18 polar plots: 16 per-(model, V_rest) + 2 per-model overlays\n* 2 multi-panel summary plots (DSI / peak Hz / HWHM vs V_rest)\n* `results_summary.md`, `results_detailed.md`, `compare_literature.md`\n* `metrics.json` with 16 explicit variants (registered keys only)\n* 7 follow-up suggestions (S-0026-01..07)\n\n## Test plan\n\n- [x] All 15 step verificators passed\n- [x] verify_task_metrics PASS (0 errors, 0 warnings) on the multi-variant metrics.json\n- [x] verify_compare_literature PASS\n- [x] verify_suggestions PASS\n- [x] verify_task_results PASS",
+  "exit_code": 0,
+  "duration_seconds": 3.613,
+  "started_at": "2026-04-21T17:44:47Z",
+  "completed_at": "2026-04-21T17:44:50Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc",
+  "stdout_file": "032_20260421T174447Z_gh-pr-create.stdout.txt",
+  "stderr_file": "032_20260421T174447Z_gh-pr-create.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 1,
+  "truncated": false
+}

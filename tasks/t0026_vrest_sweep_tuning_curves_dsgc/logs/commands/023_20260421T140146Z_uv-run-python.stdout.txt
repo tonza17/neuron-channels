@@ -1,0 +1,10 @@
+[compute_vrest_metrics] t0022: wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0022\vrest_metrics.csv
+   V_rest  peak_hz  null_hz    dsi    hwhm    pref  peak_mv
+    -90.0     6.00     0.00  0.485     0.8    19.4    -22.1
+    -80.0    11.00     0.00  0.600     0.8    42.3     -6.7
+    -70.0    12.00     0.00  0.637    84.0    50.7     -5.8
+    -60.0    15.00     0.00  0.656    86.2    49.3     -4.9
+    -50.0    41.00    20.41  0.205   102.2    42.4    +43.7
+    -40.0    70.00    50.64  0.095   180.0    49.1    +43.6
+    -30.0   129.00   111.20  0.046   180.0    48.0    +43.4
+    -20.0    26.00     7.40  0.275   107.8    48.0    +41.8

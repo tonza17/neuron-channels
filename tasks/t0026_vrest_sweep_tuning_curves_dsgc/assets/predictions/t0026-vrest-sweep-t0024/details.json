@@ -1,0 +1,36 @@
+{
+  "spec_version": "2",
+  "predictions_id": "t0026-vrest-sweep-t0024",
+  "name": "V_rest sweep on t0024 DSGC channel testbed (stochastic AR(2) release)",
+  "short_description": "Per-trial spike counts and peak voltages from a V_rest sweep (-90 to -20 mV in 10 mV steps) of the t0024 DSGC compartmental model under the standard 12-angle moving-bar protocol with AR(2)-correlated stochastic E-I release at rho=0.6 (10 trials per angle per V_rest, 960 trials total).",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "de Rosenroll 2026 DSGC compartmental model ported in t0024 (library asset de_rosenroll_2026_dsgc). The model uses HHst membrane (with leak reversal eleak_HHst) on the soma and pas membrane (with e_pas) on dendrites, plus per-dendrite AR(2)-correlated stochastic glutamate/GABA release with a default temporal correlation rho=0.6 between successive synaptic events. The V_rest is shifted by overriding both h.v_init and the resting parameters of every HHst- and pas-bearing section before h.finitialize.",
+  "dataset_ids": [],
+  "prediction_format": "csv",
+  "prediction_schema": "Each row is one (V_rest, angle, trial) outcome. Columns: v_rest_mv (float, mV), trial (int, zero-based trial index per angle, 0..9 for this stochastic sweep), direction_deg (int, motion direction in degrees, one of 0/30/60/90/120/150/180/210/240/270/300/330), spike_count (int, count of spikes during the simulation window), peak_mv (float, peak somatic membrane voltage in mV), firing_rate_hz (float, spike_count / 1.0 s simulation window).",
+  "instance_count": 960,
+  "metrics_at_creation": {
+    "best_dsi_across_vrest": 0.6754,
+    "best_dsi_at_vrest_mv": -90.0,
+    "min_hwhm_deg_across_vrest": 65.2,
+    "peak_hz_at_minus_60mv": 5.0,
+    "null_hz_at_minus_60mv": 0.51
+  },
+  "files": [
+    {
+      "path": "files/predictions-vrest-sweep-t0024.csv",
+      "description": "Tidy CSV of per-trial outcomes for the 8 V_rest values x 12 directions x 10 trials = 960 trials.",
+      "format": "csv"
+    }
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "voltage-gated-channels"
+  ],
+  "created_by_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "date_created": "2026-04-21"
+}

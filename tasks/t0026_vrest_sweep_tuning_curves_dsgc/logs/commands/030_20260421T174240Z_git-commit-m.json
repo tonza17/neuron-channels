@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "command": "git commit -m t0026_vrest_sweep_tuning_curves_dsgc [reporting]: add command logs from session capture commit",
+  "exit_code": 0,
+  "duration_seconds": 5.713,
+  "started_at": "2026-04-21T17:42:40Z",
+  "completed_at": "2026-04-21T17:42:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc",
+  "stdout_file": "030_20260421T174240Z_git-commit-m.stdout.txt",
+  "stderr_file": "030_20260421T174240Z_git-commit-m.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 7,
+  "truncated": false
+}

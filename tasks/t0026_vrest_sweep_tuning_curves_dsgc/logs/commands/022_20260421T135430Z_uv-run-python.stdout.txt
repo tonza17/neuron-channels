@@ -1,0 +1,969 @@
+[t0024 sweep] V_rest values = (-90.0, -80.0, -70.0, -60.0, -50.0, -40.0, -30.0, -20.0)
+[t0024 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0024 sweep] n_trials per (V_rest, angle) = 10
+[t0024 sweep] rho = 0.6
+[t0024 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0024\vrest_sweep_tidy.csv
+[t0024 sweep] building DSGC cell + synapse bundle (one-time)...
+[t0024 sweep] cell built in 0.2s; n_terminals = 177
+  V=-90.0mV  dir=  0  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-90.0mV  dir=  0  trial= 1  spikes=  1  rate=  1.00Hz  peak=+38.2mV
+  V=-90.0mV  dir=  0  trial= 2  spikes=  2  rate=  2.00Hz  peak=+36.9mV
+  V=-90.0mV  dir=  0  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-90.0mV  dir=  0  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-90.0mV  dir=  0  trial= 5  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  V=-90.0mV  dir=  0  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-90.0mV  dir=  0  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-90.0mV  dir=  0  trial= 8  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  V=-90.0mV  dir=  0  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  V=-90.0mV  dir= 30  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-90.0mV  dir= 30  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-90.0mV  dir= 30  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  V=-90.0mV  dir= 30  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-90.0mV  dir= 30  trial= 4  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-90.0mV  dir= 30  trial= 5  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  V=-90.0mV  dir= 30  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-90.0mV  dir= 30  trial= 7  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-90.0mV  dir= 30  trial= 8  spikes=  0  rate=  0.00Hz  peak=-49.0mV
+  V=-90.0mV  dir= 30  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-90.0mV  dir= 60  trial= 0  spikes=  0  rate=  0.00Hz  peak=-49.5mV
+  V=-90.0mV  dir= 60  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-90.0mV  dir= 60  trial= 2  spikes=  0  rate=  0.00Hz  peak=-47.7mV
+  V=-90.0mV  dir= 60  trial= 3  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-90.0mV  dir= 60  trial= 4  spikes=  0  rate=  0.00Hz  peak=-45.5mV
+  V=-90.0mV  dir= 60  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-90.0mV  dir= 60  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-90.0mV  dir= 60  trial= 7  spikes=  0  rate=  0.00Hz  peak=-49.8mV
+  V=-90.0mV  dir= 60  trial= 8  spikes=  1  rate=  1.00Hz  peak=+34.8mV
+  V=-90.0mV  dir= 60  trial= 9  spikes=  0  rate=  0.00Hz  peak=-49.2mV
+  V=-90.0mV  dir= 90  trial= 0  spikes=  0  rate=  0.00Hz  peak=-50.1mV
+  V=-90.0mV  dir= 90  trial= 1  spikes=  0  rate=  0.00Hz  peak=-48.9mV
+  V=-90.0mV  dir= 90  trial= 2  spikes=  0  rate=  0.00Hz  peak=-52.8mV
+  V=-90.0mV  dir= 90  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-90.0mV  dir= 90  trial= 4  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-90.0mV  dir= 90  trial= 5  spikes=  0  rate=  0.00Hz  peak=-54.7mV
+  V=-90.0mV  dir= 90  trial= 6  spikes=  0  rate=  0.00Hz  peak=-51.7mV
+  V=-90.0mV  dir= 90  trial= 7  spikes=  0  rate=  0.00Hz  peak=-48.6mV
+  V=-90.0mV  dir= 90  trial= 8  spikes=  0  rate=  0.00Hz  peak=-45.7mV
+  V=-90.0mV  dir= 90  trial= 9  spikes=  0  rate=  0.00Hz  peak=-55.5mV
+  V=-90.0mV  dir=120  trial= 0  spikes=  0  rate=  0.00Hz  peak=-49.8mV
+  V=-90.0mV  dir=120  trial= 1  spikes=  0  rate=  0.00Hz  peak=-52.5mV
+  V=-90.0mV  dir=120  trial= 2  spikes=  0  rate=  0.00Hz  peak=-50.5mV
+  V=-90.0mV  dir=120  trial= 3  spikes=  0  rate=  0.00Hz  peak=-53.8mV
+  V=-90.0mV  dir=120  trial= 4  spikes=  0  rate=  0.00Hz  peak=-56.2mV
+  V=-90.0mV  dir=120  trial= 5  spikes=  0  rate=  0.00Hz  peak=-54.0mV
+  V=-90.0mV  dir=120  trial= 6  spikes=  0  rate=  0.00Hz  peak=-51.7mV
+  V=-90.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-54.9mV
+  V=-90.0mV  dir=120  trial= 8  spikes=  0  rate=  0.00Hz  peak=-54.5mV
+  V=-90.0mV  dir=120  trial= 9  spikes=  0  rate=  0.00Hz  peak=-55.8mV
+  V=-90.0mV  dir=150  trial= 0  spikes=  0  rate=  0.00Hz  peak=-54.3mV
+  V=-90.0mV  dir=150  trial= 1  spikes=  0  rate=  0.00Hz  peak=-57.1mV
+  V=-90.0mV  dir=150  trial= 2  spikes=  0  rate=  0.00Hz  peak=-52.1mV
+  V=-90.0mV  dir=150  trial= 3  spikes=  0  rate=  0.00Hz  peak=-57.1mV
+  V=-90.0mV  dir=150  trial= 4  spikes=  0  rate=  0.00Hz  peak=-52.8mV
+  V=-90.0mV  dir=150  trial= 5  spikes=  0  rate=  0.00Hz  peak=-58.0mV
+  V=-90.0mV  dir=150  trial= 6  spikes=  0  rate=  0.00Hz  peak=-57.1mV
+  V=-90.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-54.6mV
+  V=-90.0mV  dir=150  trial= 8  spikes=  0  rate=  0.00Hz  peak=-52.3mV
+  V=-90.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-53.7mV
+  V=-90.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+  V=-90.0mV  dir=180  trial= 1  spikes=  0  rate=  0.00Hz  peak=-56.2mV
+  V=-90.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-58.5mV
+  V=-90.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-58.8mV
+  V=-90.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-53.0mV
+  V=-90.0mV  dir=180  trial= 5  spikes=  0  rate=  0.00Hz  peak=-52.8mV
+  V=-90.0mV  dir=180  trial= 6  spikes=  0  rate=  0.00Hz  peak=-54.1mV
+  V=-90.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-54.0mV
+  V=-90.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-57.0mV
+  V=-90.0mV  dir=180  trial= 9  spikes=  0  rate=  0.00Hz  peak=-52.1mV
+  V=-90.0mV  dir=210  trial= 0  spikes=  0  rate=  0.00Hz  peak=-53.6mV
+  V=-90.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-57.3mV
+  V=-90.0mV  dir=210  trial= 2  spikes=  0  rate=  0.00Hz  peak=-54.4mV
+  V=-90.0mV  dir=210  trial= 3  spikes=  0  rate=  0.00Hz  peak=-47.9mV
+  V=-90.0mV  dir=210  trial= 4  spikes=  0  rate=  0.00Hz  peak=-53.4mV
+  V=-90.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-57.0mV
+  V=-90.0mV  dir=210  trial= 6  spikes=  0  rate=  0.00Hz  peak=-56.0mV
+  V=-90.0mV  dir=210  trial= 7  spikes=  0  rate=  0.00Hz  peak=-56.6mV
+  V=-90.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-57.1mV
+  V=-90.0mV  dir=210  trial= 9  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-90.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-54.6mV
+  V=-90.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-90.0mV  dir=240  trial= 2  spikes=  0  rate=  0.00Hz  peak=-52.3mV
+  V=-90.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-90.0mV  dir=240  trial= 4  spikes=  0  rate=  0.00Hz  peak=-55.7mV
+  V=-90.0mV  dir=240  trial= 5  spikes=  0  rate=  0.00Hz  peak=-51.3mV
+  V=-90.0mV  dir=240  trial= 6  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  V=-90.0mV  dir=240  trial= 7  spikes=  0  rate=  0.00Hz  peak=-51.6mV
+  V=-90.0mV  dir=240  trial= 8  spikes=  0  rate=  0.00Hz  peak=-47.0mV
+  V=-90.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-54.5mV
+  V=-90.0mV  dir=270  trial= 0  spikes=  0  rate=  0.00Hz  peak=-52.0mV
+  V=-90.0mV  dir=270  trial= 1  spikes=  0  rate=  0.00Hz  peak=-49.3mV
+  V=-90.0mV  dir=270  trial= 2  spikes=  0  rate=  0.00Hz  peak=-46.5mV
+  V=-90.0mV  dir=270  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-90.0mV  dir=270  trial= 4  spikes=  0  rate=  0.00Hz  peak=-52.3mV
+  V=-90.0mV  dir=270  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-90.0mV  dir=270  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-90.0mV  dir=270  trial= 7  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-90.0mV  dir=270  trial= 8  spikes=  0  rate=  0.00Hz  peak=-48.7mV
+  V=-90.0mV  dir=270  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-90.0mV  dir=300  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  V=-90.0mV  dir=300  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  V=-90.0mV  dir=300  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-90.0mV  dir=300  trial= 3  spikes=  0  rate=  0.00Hz  peak=-45.7mV
+  V=-90.0mV  dir=300  trial= 4  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  V=-90.0mV  dir=300  trial= 5  spikes=  1  rate=  1.00Hz  peak=+34.5mV
+  V=-90.0mV  dir=300  trial= 6  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-90.0mV  dir=300  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-90.0mV  dir=300  trial= 8  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  V=-90.0mV  dir=300  trial= 9  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  V=-90.0mV  dir=330  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-90.0mV  dir=330  trial= 1  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  V=-90.0mV  dir=330  trial= 2  spikes=  1  rate=  1.00Hz  peak=+38.2mV
+  V=-90.0mV  dir=330  trial= 3  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  V=-90.0mV  dir=330  trial= 4  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  V=-90.0mV  dir=330  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  V=-90.0mV  dir=330  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-90.0mV  dir=330  trial= 7  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  V=-90.0mV  dir=330  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-90.0mV  dir=330  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-80.0mV  dir=  0  trial= 0  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=  0  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  V=-80.0mV  dir=  0  trial= 2  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  V=-80.0mV  dir=  0  trial= 3  spikes=  2  rate=  2.00Hz  peak=+38.4mV
+  V=-80.0mV  dir=  0  trial= 4  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-80.0mV  dir=  0  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-80.0mV  dir=  0  trial= 6  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  V=-80.0mV  dir=  0  trial= 7  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=  0  trial= 8  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  V=-80.0mV  dir=  0  trial= 9  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  V=-80.0mV  dir= 30  trial= 0  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  V=-80.0mV  dir= 30  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-80.0mV  dir= 30  trial= 2  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  V=-80.0mV  dir= 30  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  V=-80.0mV  dir= 30  trial= 4  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  V=-80.0mV  dir= 30  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-80.0mV  dir= 30  trial= 6  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-80.0mV  dir= 30  trial= 7  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-80.0mV  dir= 30  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-80.0mV  dir= 30  trial= 9  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  V=-80.0mV  dir= 60  trial= 0  spikes=  0  rate=  0.00Hz  peak=-43.8mV
+  V=-80.0mV  dir= 60  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  V=-80.0mV  dir= 60  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  V=-80.0mV  dir= 60  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  V=-80.0mV  dir= 60  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-80.0mV  dir= 60  trial= 5  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  V=-80.0mV  dir= 60  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  V=-80.0mV  dir= 60  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-80.0mV  dir= 60  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  V=-80.0mV  dir= 60  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-80.0mV  dir= 90  trial= 0  spikes=  1  rate=  1.00Hz  peak=+34.3mV
+  V=-80.0mV  dir= 90  trial= 1  spikes=  0  rate=  0.00Hz  peak=-44.3mV
+  V=-80.0mV  dir= 90  trial= 2  spikes=  0  rate=  0.00Hz  peak=-51.7mV
+  V=-80.0mV  dir= 90  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-80.0mV  dir= 90  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-80.0mV  dir= 90  trial= 5  spikes=  0  rate=  0.00Hz  peak=-47.0mV
+  V=-80.0mV  dir= 90  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-80.0mV  dir= 90  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-80.0mV  dir= 90  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-80.0mV  dir= 90  trial= 9  spikes=  0  rate=  0.00Hz  peak=-46.2mV
+  V=-80.0mV  dir=120  trial= 0  spikes=  0  rate=  0.00Hz  peak=-46.5mV
+  V=-80.0mV  dir=120  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-80.0mV  dir=120  trial= 2  spikes=  0  rate=  0.00Hz  peak=-48.4mV
+  V=-80.0mV  dir=120  trial= 3  spikes=  0  rate=  0.00Hz  peak=-51.8mV
+  V=-80.0mV  dir=120  trial= 4  spikes=  0  rate=  0.00Hz  peak=-51.9mV
+  V=-80.0mV  dir=120  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-80.0mV  dir=120  trial= 6  spikes=  0  rate=  0.00Hz  peak=-50.6mV
+  V=-80.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-53.8mV
+  V=-80.0mV  dir=120  trial= 8  spikes=  0  rate=  0.00Hz  peak=-53.1mV
+  V=-80.0mV  dir=120  trial= 9  spikes=  0  rate=  0.00Hz  peak=-54.0mV
+  V=-80.0mV  dir=150  trial= 0  spikes=  0  rate=  0.00Hz  peak=-51.6mV
+  V=-80.0mV  dir=150  trial= 1  spikes=  0  rate=  0.00Hz  peak=-54.6mV
+  V=-80.0mV  dir=150  trial= 2  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-80.0mV  dir=150  trial= 3  spikes=  0  rate=  0.00Hz  peak=-54.4mV
+  V=-80.0mV  dir=150  trial= 4  spikes=  0  rate=  0.00Hz  peak=-50.6mV
+  V=-80.0mV  dir=150  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-80.0mV  dir=150  trial= 6  spikes=  0  rate=  0.00Hz  peak=-46.5mV
+  V=-80.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-53.7mV
+  V=-80.0mV  dir=150  trial= 8  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-80.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-50.7mV
+  V=-80.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-54.1mV
+  V=-80.0mV  dir=180  trial= 1  spikes=  0  rate=  0.00Hz  peak=-54.6mV
+  V=-80.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-55.7mV
+  V=-80.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-56.4mV
+  V=-80.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-51.8mV
+  V=-80.0mV  dir=180  trial= 5  spikes=  0  rate=  0.00Hz  peak=-50.9mV
+  V=-80.0mV  dir=180  trial= 6  spikes=  0  rate=  0.00Hz  peak=-51.6mV
+  V=-80.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-53.3mV
+  V=-80.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-53.7mV
+  V=-80.0mV  dir=180  trial= 9  spikes=  0  rate=  0.00Hz  peak=-48.4mV
+  V=-80.0mV  dir=210  trial= 0  spikes=  0  rate=  0.00Hz  peak=-51.5mV
+  V=-80.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-54.8mV
+  V=-80.0mV  dir=210  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-80.0mV  dir=210  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-80.0mV  dir=210  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-80.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-54.8mV
+  V=-80.0mV  dir=210  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-80.0mV  dir=210  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-80.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-50.5mV
+  V=-80.0mV  dir=210  trial= 9  spikes=  0  rate=  0.00Hz  peak=-48.3mV
+  V=-80.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-53.9mV
+  V=-80.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-80.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  V=-80.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-80.0mV  dir=240  trial= 4  spikes=  0  rate=  0.00Hz  peak=-53.5mV
+  V=-80.0mV  dir=240  trial= 5  spikes=  0  rate=  0.00Hz  peak=-49.4mV
+  V=-80.0mV  dir=240  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-80.0mV  dir=240  trial= 7  spikes=  0  rate=  0.00Hz  peak=-49.9mV
+  V=-80.0mV  dir=240  trial= 8  spikes=  0  rate=  0.00Hz  peak=-47.2mV
+  V=-80.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-51.0mV
+  V=-80.0mV  dir=270  trial= 0  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-80.0mV  dir=270  trial= 1  spikes=  0  rate=  0.00Hz  peak=-48.9mV
+  V=-80.0mV  dir=270  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-80.0mV  dir=270  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-80.0mV  dir=270  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-80.0mV  dir=270  trial= 5  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=270  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-80.0mV  dir=270  trial= 7  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-80.0mV  dir=270  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-80.0mV  dir=270  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-80.0mV  dir=300  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.8mV
+  V=-80.0mV  dir=300  trial= 1  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=300  trial= 2  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=300  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-80.0mV  dir=300  trial= 4  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  V=-80.0mV  dir=300  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  V=-80.0mV  dir=300  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=300  trial= 7  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-80.0mV  dir=300  trial= 8  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  V=-80.0mV  dir=300  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.9mV
+  V=-80.0mV  dir=330  trial= 0  spikes=  2  rate=  2.00Hz  peak=+37.7mV
+  V=-80.0mV  dir=330  trial= 1  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  V=-80.0mV  dir=330  trial= 2  spikes=  2  rate=  2.00Hz  peak=+38.3mV
+  V=-80.0mV  dir=330  trial= 3  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  V=-80.0mV  dir=330  trial= 4  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-80.0mV  dir=330  trial= 5  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  V=-80.0mV  dir=330  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  V=-80.0mV  dir=330  trial= 7  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-80.0mV  dir=330  trial= 8  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  V=-80.0mV  dir=330  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-70.0mV  dir=  0  trial= 0  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-70.0mV  dir=  0  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  V=-70.0mV  dir=  0  trial= 2  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=  0  trial= 3  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  V=-70.0mV  dir=  0  trial= 4  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=  0  trial= 5  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  V=-70.0mV  dir=  0  trial= 6  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  V=-70.0mV  dir=  0  trial= 7  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-70.0mV  dir=  0  trial= 8  spikes=  6  rate=  6.00Hz  peak=+36.9mV
+  V=-70.0mV  dir=  0  trial= 9  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  V=-70.0mV  dir= 30  trial= 0  spikes=  4  rate=  4.00Hz  peak=+36.1mV
+  V=-70.0mV  dir= 30  trial= 1  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-70.0mV  dir= 30  trial= 2  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-70.0mV  dir= 30  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  V=-70.0mV  dir= 30  trial= 4  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-70.0mV  dir= 30  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-70.0mV  dir= 30  trial= 6  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-70.0mV  dir= 30  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-70.0mV  dir= 30  trial= 8  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-70.0mV  dir= 30  trial= 9  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  V=-70.0mV  dir= 60  trial= 0  spikes=  3  rate=  3.00Hz  peak=+36.1mV
+  V=-70.0mV  dir= 60  trial= 1  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  V=-70.0mV  dir= 60  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  V=-70.0mV  dir= 60  trial= 3  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-70.0mV  dir= 60  trial= 4  spikes=  3  rate=  3.00Hz  peak=+36.1mV
+  V=-70.0mV  dir= 60  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-70.0mV  dir= 60  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-70.0mV  dir= 60  trial= 7  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  V=-70.0mV  dir= 60  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-70.0mV  dir= 60  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-70.0mV  dir= 90  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-70.0mV  dir= 90  trial= 1  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-70.0mV  dir= 90  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-70.0mV  dir= 90  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-70.0mV  dir= 90  trial= 4  spikes=  2  rate=  2.00Hz  peak=+35.0mV
+  V=-70.0mV  dir= 90  trial= 5  spikes=  0  rate=  0.00Hz  peak=-48.6mV
+  V=-70.0mV  dir= 90  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-70.0mV  dir= 90  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-70.0mV  dir= 90  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-70.0mV  dir= 90  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-70.0mV  dir=120  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-70.0mV  dir=120  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-70.0mV  dir=120  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-70.0mV  dir=120  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-70.0mV  dir=120  trial= 4  spikes=  0  rate=  0.00Hz  peak=-53.0mV
+  V=-70.0mV  dir=120  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-70.0mV  dir=120  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-70.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-53.0mV
+  V=-70.0mV  dir=120  trial= 8  spikes=  0  rate=  0.00Hz  peak=-47.8mV
+  V=-70.0mV  dir=120  trial= 9  spikes=  0  rate=  0.00Hz  peak=-48.3mV
+  V=-70.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-70.0mV  dir=150  trial= 1  spikes=  0  rate=  0.00Hz  peak=-52.3mV
+  V=-70.0mV  dir=150  trial= 2  spikes=  1  rate=  1.00Hz  peak=+38.1mV
+  V=-70.0mV  dir=150  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-70.0mV  dir=150  trial= 4  spikes=  0  rate=  0.00Hz  peak=-46.5mV
+  V=-70.0mV  dir=150  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  V=-70.0mV  dir=150  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-70.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-52.5mV
+  V=-70.0mV  dir=150  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  V=-70.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-70.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-53.5mV
+  V=-70.0mV  dir=180  trial= 1  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-70.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-53.1mV
+  V=-70.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-52.7mV
+  V=-70.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-51.2mV
+  V=-70.0mV  dir=180  trial= 5  spikes=  0  rate=  0.00Hz  peak=-49.4mV
+  V=-70.0mV  dir=180  trial= 6  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-70.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-52.4mV
+  V=-70.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-70.0mV  dir=180  trial= 9  spikes=  0  rate=  0.00Hz  peak=-47.9mV
+  V=-70.0mV  dir=210  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-70.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-54.0mV
+  V=-70.0mV  dir=210  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-70.0mV  dir=210  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-70.0mV  dir=210  trial= 4  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-70.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-49.4mV
+  V=-70.0mV  dir=210  trial= 6  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  V=-70.0mV  dir=210  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-70.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-48.0mV
+  V=-70.0mV  dir=210  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-70.0mV  dir=240  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.8mV
+  V=-70.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  V=-70.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-70.0mV  dir=240  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-70.0mV  dir=240  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-70.0mV  dir=240  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-70.0mV  dir=240  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-70.0mV  dir=240  trial= 8  spikes=  1  rate=  1.00Hz  peak=+34.0mV
+  V=-70.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-49.7mV
+  V=-70.0mV  dir=270  trial= 0  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  V=-70.0mV  dir=270  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-70.0mV  dir=270  trial= 2  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  V=-70.0mV  dir=270  trial= 4  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  V=-70.0mV  dir=270  trial= 5  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  V=-70.0mV  dir=270  trial= 6  spikes=  1  rate=  1.00Hz  peak=+34.4mV
+  V=-70.0mV  dir=270  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-70.0mV  dir=270  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  V=-70.0mV  dir=270  trial= 9  spikes=  2  rate=  2.00Hz  peak=+38.5mV
+  V=-70.0mV  dir=300  trial= 0  spikes=  2  rate=  2.00Hz  peak=+38.1mV
+  V=-70.0mV  dir=300  trial= 1  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-70.0mV  dir=300  trial= 2  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-70.0mV  dir=300  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-70.0mV  dir=300  trial= 4  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=300  trial= 5  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-70.0mV  dir=300  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=300  trial= 7  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-70.0mV  dir=300  trial= 8  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  V=-70.0mV  dir=300  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  V=-70.0mV  dir=330  trial= 0  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  V=-70.0mV  dir=330  trial= 1  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  V=-70.0mV  dir=330  trial= 2  spikes=  3  rate=  3.00Hz  peak=+38.2mV
+  V=-70.0mV  dir=330  trial= 3  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  V=-70.0mV  dir=330  trial= 4  spikes=  4  rate=  4.00Hz  peak=+37.5mV
+  V=-70.0mV  dir=330  trial= 5  spikes=  4  rate=  4.00Hz  peak=+37.5mV
+  V=-70.0mV  dir=330  trial= 6  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  V=-70.0mV  dir=330  trial= 7  spikes=  3  rate=  3.00Hz  peak=+38.1mV
+  V=-70.0mV  dir=330  trial= 8  spikes=  4  rate=  4.00Hz  peak=+37.5mV
+  V=-70.0mV  dir=330  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  V=-60.0mV  dir=  0  trial= 0  spikes=  5  rate=  5.00Hz  peak=+38.1mV
+  V=-60.0mV  dir=  0  trial= 1  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=  0  trial= 2  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  V=-60.0mV  dir=  0  trial= 3  spikes=  5  rate=  5.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=  0  trial= 4  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=  0  trial= 5  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=  0  trial= 6  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  V=-60.0mV  dir=  0  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=  0  trial= 8  spikes=  7  rate=  7.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=  0  trial= 9  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-60.0mV  dir= 30  trial= 0  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-60.0mV  dir= 30  trial= 1  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-60.0mV  dir= 30  trial= 2  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-60.0mV  dir= 30  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  V=-60.0mV  dir= 30  trial= 4  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  V=-60.0mV  dir= 30  trial= 5  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  V=-60.0mV  dir= 30  trial= 6  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-60.0mV  dir= 30  trial= 7  spikes=  6  rate=  6.00Hz  peak=+36.4mV
+  V=-60.0mV  dir= 30  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-60.0mV  dir= 30  trial= 9  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  V=-60.0mV  dir= 60  trial= 0  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  V=-60.0mV  dir= 60  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.1mV
+  V=-60.0mV  dir= 60  trial= 2  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-60.0mV  dir= 60  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.5mV
+  V=-60.0mV  dir= 60  trial= 4  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-60.0mV  dir= 60  trial= 5  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  V=-60.0mV  dir= 60  trial= 6  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-60.0mV  dir= 60  trial= 7  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  V=-60.0mV  dir= 60  trial= 8  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  V=-60.0mV  dir= 60  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-60.0mV  dir= 90  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-60.0mV  dir= 90  trial= 1  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-60.0mV  dir= 90  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  V=-60.0mV  dir= 90  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  V=-60.0mV  dir= 90  trial= 4  spikes=  2  rate=  2.00Hz  peak=+34.9mV
+  V=-60.0mV  dir= 90  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-60.0mV  dir= 90  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  V=-60.0mV  dir= 90  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-60.0mV  dir= 90  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  V=-60.0mV  dir= 90  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-60.0mV  dir=120  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-60.0mV  dir=120  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-60.0mV  dir=120  trial= 2  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  V=-60.0mV  dir=120  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-60.0mV  dir=120  trial= 4  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-60.0mV  dir=120  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=120  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-60.0mV  dir=120  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=120  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=120  trial= 9  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-60.0mV  dir=150  trial= 1  spikes=  0  rate=  0.00Hz  peak=-51.2mV
+  V=-60.0mV  dir=150  trial= 2  spikes=  1  rate=  1.00Hz  peak=+38.1mV
+  V=-60.0mV  dir=150  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=150  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-60.0mV  dir=150  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-60.0mV  dir=150  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-60.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-52.2mV
+  V=-60.0mV  dir=150  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-60.0mV  dir=150  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=180  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=180  trial= 1  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-60.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-45.6mV
+  V=-60.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-51.3mV
+  V=-60.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-50.5mV
+  V=-60.0mV  dir=180  trial= 5  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  V=-60.0mV  dir=180  trial= 6  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  V=-60.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-51.6mV
+  V=-60.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-48.9mV
+  V=-60.0mV  dir=180  trial= 9  spikes=  0  rate=  0.00Hz  peak=-46.2mV
+  V=-60.0mV  dir=210  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  V=-60.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-52.8mV
+  V=-60.0mV  dir=210  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-60.0mV  dir=210  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-60.0mV  dir=210  trial= 4  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=210  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-60.0mV  dir=210  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-60.0mV  dir=210  trial= 7  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=210  trial= 8  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  V=-60.0mV  dir=210  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-60.0mV  dir=240  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.9mV
+  V=-60.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  V=-60.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-60.0mV  dir=240  trial= 4  spikes=  0  rate=  0.00Hz  peak=-51.5mV
+  V=-60.0mV  dir=240  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  V=-60.0mV  dir=240  trial= 6  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=240  trial= 7  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  V=-60.0mV  dir=240  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  V=-60.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-60.0mV  dir=270  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-60.0mV  dir=270  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  V=-60.0mV  dir=270  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  V=-60.0mV  dir=270  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-60.0mV  dir=270  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-60.0mV  dir=270  trial= 6  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=270  trial= 7  spikes=  2  rate=  2.00Hz  peak=+38.2mV
+  V=-60.0mV  dir=270  trial= 8  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=270  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=300  trial= 0  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-60.0mV  dir=300  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  V=-60.0mV  dir=300  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=300  trial= 3  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  V=-60.0mV  dir=300  trial= 4  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=300  trial= 5  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-60.0mV  dir=300  trial= 6  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=300  trial= 7  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  V=-60.0mV  dir=300  trial= 8  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+  V=-60.0mV  dir=300  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  V=-60.0mV  dir=330  trial= 0  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=330  trial= 1  spikes=  6  rate=  6.00Hz  peak=+37.0mV
+  V=-60.0mV  dir=330  trial= 2  spikes=  4  rate=  4.00Hz  peak=+37.5mV
+  V=-60.0mV  dir=330  trial= 3  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=330  trial= 4  spikes=  5  rate=  5.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=330  trial= 5  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  V=-60.0mV  dir=330  trial= 6  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  V=-60.0mV  dir=330  trial= 7  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  V=-60.0mV  dir=330  trial= 8  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-60.0mV  dir=330  trial= 9  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  V=-50.0mV  dir=  0  trial= 0  spikes=  6  rate=  6.00Hz  peak=+37.4mV
+  V=-50.0mV  dir=  0  trial= 1  spikes=  7  rate=  7.00Hz  peak=+36.7mV
+  V=-50.0mV  dir=  0  trial= 2  spikes=  8  rate=  8.00Hz  peak=+37.1mV
+  V=-50.0mV  dir=  0  trial= 3  spikes=  6  rate=  6.00Hz  peak=+37.8mV
+  V=-50.0mV  dir=  0  trial= 4  spikes=  5  rate=  5.00Hz  peak=+38.2mV
+  V=-50.0mV  dir=  0  trial= 5  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  V=-50.0mV  dir=  0  trial= 6  spikes=  7  rate=  7.00Hz  peak=+36.6mV
+  V=-50.0mV  dir=  0  trial= 7  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-50.0mV  dir=  0  trial= 8  spikes=  8  rate=  8.00Hz  peak=+37.4mV
+  V=-50.0mV  dir=  0  trial= 9  spikes=  6  rate=  6.00Hz  peak=+37.5mV
+  V=-50.0mV  dir= 30  trial= 0  spikes=  6  rate=  6.00Hz  peak=+36.6mV
+  V=-50.0mV  dir= 30  trial= 1  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  V=-50.0mV  dir= 30  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  V=-50.0mV  dir= 30  trial= 3  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  V=-50.0mV  dir= 30  trial= 4  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  V=-50.0mV  dir= 30  trial= 5  spikes=  5  rate=  5.00Hz  peak=+37.7mV
+  V=-50.0mV  dir= 30  trial= 6  spikes=  7  rate=  7.00Hz  peak=+37.4mV
+  V=-50.0mV  dir= 30  trial= 7  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-50.0mV  dir= 30  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.3mV
+  V=-50.0mV  dir= 30  trial= 9  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  V=-50.0mV  dir= 60  trial= 0  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  V=-50.0mV  dir= 60  trial= 1  spikes=  6  rate=  6.00Hz  peak=+36.5mV
+  V=-50.0mV  dir= 60  trial= 2  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  V=-50.0mV  dir= 60  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-50.0mV  dir= 60  trial= 4  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-50.0mV  dir= 60  trial= 5  spikes=  3  rate=  3.00Hz  peak=+36.1mV
+  V=-50.0mV  dir= 60  trial= 6  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-50.0mV  dir= 60  trial= 7  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  V=-50.0mV  dir= 60  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-50.0mV  dir= 60  trial= 9  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  V=-50.0mV  dir= 90  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-50.0mV  dir= 90  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  V=-50.0mV  dir= 90  trial= 2  spikes=  1  rate=  1.00Hz  peak=+34.1mV
+  V=-50.0mV  dir= 90  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  V=-50.0mV  dir= 90  trial= 4  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  V=-50.0mV  dir= 90  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  V=-50.0mV  dir= 90  trial= 6  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-50.0mV  dir= 90  trial= 7  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-50.0mV  dir= 90  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-50.0mV  dir= 90  trial= 9  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-50.0mV  dir=120  trial= 0  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  V=-50.0mV  dir=120  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.9mV
+  V=-50.0mV  dir=120  trial= 2  spikes=  1  rate=  1.00Hz  peak=+33.0mV
+  V=-50.0mV  dir=120  trial= 3  spikes=  3  rate=  3.00Hz  peak=+35.5mV
+  V=-50.0mV  dir=120  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-50.0mV  dir=120  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  V=-50.0mV  dir=120  trial= 6  spikes=  0  rate=  0.00Hz  peak=-48.7mV
+  V=-50.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=120  trial= 8  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-50.0mV  dir=120  trial= 9  spikes=  0  rate=  0.00Hz  peak=-47.0mV
+  V=-50.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-50.0mV  dir=150  trial= 1  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  V=-50.0mV  dir=150  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-50.0mV  dir=150  trial= 3  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=150  trial= 4  spikes=  0  rate=  0.00Hz  peak=-47.9mV
+  V=-50.0mV  dir=150  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-50.0mV  dir=150  trial= 6  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-50.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=150  trial= 8  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-50.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-49.4mV
+  V=-50.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 1  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-49.5mV
+  V=-50.0mV  dir=180  trial= 5  spikes=  1  rate=  1.00Hz  peak=+33.0mV
+  V=-50.0mV  dir=180  trial= 6  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  V=-50.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=180  trial= 9  spikes=  1  rate=  1.00Hz  peak=+33.9mV
+  V=-50.0mV  dir=210  trial= 0  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=210  trial= 2  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=210  trial= 3  spikes=  1  rate=  1.00Hz  peak=+34.8mV
+  V=-50.0mV  dir=210  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  V=-50.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=210  trial= 6  spikes=  0  rate=  0.00Hz  peak=-46.7mV
+  V=-50.0mV  dir=210  trial= 7  spikes=  0  rate=  0.00Hz  peak=-49.3mV
+  V=-50.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-49.1mV
+  V=-50.0mV  dir=210  trial= 9  spikes=  1  rate=  1.00Hz  peak=+33.8mV
+  V=-50.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-50.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-50.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-50.0mV  dir=240  trial= 4  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  V=-50.0mV  dir=240  trial= 5  spikes=  0  rate=  0.00Hz  peak=-48.7mV
+  V=-50.0mV  dir=240  trial= 6  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-50.0mV  dir=240  trial= 7  spikes=  0  rate=  0.00Hz  peak=-44.6mV
+  V=-50.0mV  dir=240  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-50.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-46.0mV
+  V=-50.0mV  dir=270  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-50.0mV  dir=270  trial= 1  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-50.0mV  dir=270  trial= 2  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-50.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  V=-50.0mV  dir=270  trial= 4  spikes=  0  rate=  0.00Hz  peak=-47.0mV
+  V=-50.0mV  dir=270  trial= 5  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  V=-50.0mV  dir=270  trial= 6  spikes=  2  rate=  2.00Hz  peak=+35.2mV
+  V=-50.0mV  dir=270  trial= 7  spikes=  2  rate=  2.00Hz  peak=+35.2mV
+  V=-50.0mV  dir=270  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  V=-50.0mV  dir=270  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.9mV
+  V=-50.0mV  dir=300  trial= 0  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  V=-50.0mV  dir=300  trial= 1  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  V=-50.0mV  dir=300  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  V=-50.0mV  dir=300  trial= 3  spikes=  3  rate=  3.00Hz  peak=+35.5mV
+  V=-50.0mV  dir=300  trial= 4  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-50.0mV  dir=300  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-50.0mV  dir=300  trial= 6  spikes=  3  rate=  3.00Hz  peak=+36.1mV
+  V=-50.0mV  dir=300  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.3mV
+  V=-50.0mV  dir=300  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.1mV
+  V=-50.0mV  dir=300  trial= 9  spikes=  3  rate=  3.00Hz  peak=+38.1mV
+  V=-50.0mV  dir=330  trial= 0  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  V=-50.0mV  dir=330  trial= 1  spikes=  6  rate=  6.00Hz  peak=+37.2mV
+  V=-50.0mV  dir=330  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-50.0mV  dir=330  trial= 3  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  V=-50.0mV  dir=330  trial= 4  spikes=  6  rate=  6.00Hz  peak=+37.5mV
+  V=-50.0mV  dir=330  trial= 5  spikes=  6  rate=  6.00Hz  peak=+37.2mV
+  V=-50.0mV  dir=330  trial= 6  spikes=  6  rate=  6.00Hz  peak=+36.9mV
+  V=-50.0mV  dir=330  trial= 7  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-50.0mV  dir=330  trial= 8  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  V=-50.0mV  dir=330  trial= 9  spikes=  4  rate=  4.00Hz  peak=+38.1mV
+  V=-40.0mV  dir=  0  trial= 0  spikes=  7  rate=  7.00Hz  peak=+36.2mV
+  V=-40.0mV  dir=  0  trial= 1  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-40.0mV  dir=  0  trial= 2  spikes=  8  rate=  8.00Hz  peak=+36.1mV
+  V=-40.0mV  dir=  0  trial= 3  spikes=  7  rate=  7.00Hz  peak=+37.6mV
+  V=-40.0mV  dir=  0  trial= 4  spikes=  7  rate=  7.00Hz  peak=+36.9mV
+  V=-40.0mV  dir=  0  trial= 5  spikes=  6  rate=  6.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=  0  trial= 6  spikes=  7  rate=  7.00Hz  peak=+37.1mV
+  V=-40.0mV  dir=  0  trial= 7  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-40.0mV  dir=  0  trial= 8  spikes=  8  rate=  8.00Hz  peak=+37.4mV
+  V=-40.0mV  dir=  0  trial= 9  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 30  trial= 0  spikes=  7  rate=  7.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 30  trial= 1  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-40.0mV  dir= 30  trial= 2  spikes=  6  rate=  6.00Hz  peak=+37.3mV
+  V=-40.0mV  dir= 30  trial= 3  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  V=-40.0mV  dir= 30  trial= 4  spikes=  7  rate=  7.00Hz  peak=+37.0mV
+  V=-40.0mV  dir= 30  trial= 5  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-40.0mV  dir= 30  trial= 6  spikes=  7  rate=  7.00Hz  peak=+37.3mV
+  V=-40.0mV  dir= 30  trial= 7  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-40.0mV  dir= 30  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  V=-40.0mV  dir= 30  trial= 9  spikes=  7  rate=  7.00Hz  peak=+37.5mV
+  V=-40.0mV  dir= 60  trial= 0  spikes=  6  rate=  6.00Hz  peak=+37.5mV
+  V=-40.0mV  dir= 60  trial= 1  spikes=  7  rate=  7.00Hz  peak=+37.2mV
+  V=-40.0mV  dir= 60  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-40.0mV  dir= 60  trial= 3  spikes=  7  rate=  7.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 60  trial= 4  spikes=  7  rate=  7.00Hz  peak=+36.7mV
+  V=-40.0mV  dir= 60  trial= 5  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 60  trial= 6  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 60  trial= 7  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  V=-40.0mV  dir= 60  trial= 8  spikes=  6  rate=  6.00Hz  peak=+37.0mV
+  V=-40.0mV  dir= 60  trial= 9  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  V=-40.0mV  dir= 90  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-40.0mV  dir= 90  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-40.0mV  dir= 90  trial= 2  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  V=-40.0mV  dir= 90  trial= 3  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  V=-40.0mV  dir= 90  trial= 4  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  V=-40.0mV  dir= 90  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-40.0mV  dir= 90  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-40.0mV  dir= 90  trial= 7  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  V=-40.0mV  dir= 90  trial= 8  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  V=-40.0mV  dir= 90  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-40.0mV  dir=120  trial= 0  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=120  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  V=-40.0mV  dir=120  trial= 2  spikes=  1  rate=  1.00Hz  peak=+33.6mV
+  V=-40.0mV  dir=120  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+  V=-40.0mV  dir=120  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-40.0mV  dir=120  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  V=-40.0mV  dir=120  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-40.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=120  trial= 8  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=120  trial= 9  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  V=-40.0mV  dir=150  trial= 1  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  V=-40.0mV  dir=150  trial= 2  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 3  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=150  trial= 5  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 6  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 7  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=150  trial= 8  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  V=-40.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 1  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 5  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 6  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=180  trial= 9  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 0  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 2  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 3  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 4  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 6  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 7  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=210  trial= 9  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 1  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  V=-40.0mV  dir=240  trial= 3  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 4  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 5  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 6  spikes=  0  rate=  0.00Hz  peak=-40.0mV
+  V=-40.0mV  dir=240  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  V=-40.0mV  dir=240  trial= 8  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-40.0mV  dir=240  trial= 9  spikes=  1  rate=  1.00Hz  peak=+34.2mV
+  V=-40.0mV  dir=270  trial= 0  spikes=  1  rate=  1.00Hz  peak=+34.5mV
+  V=-40.0mV  dir=270  trial= 1  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  V=-40.0mV  dir=270  trial= 2  spikes=  1  rate=  1.00Hz  peak=+34.8mV
+  V=-40.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-40.0mV  dir=270  trial= 4  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  V=-40.0mV  dir=270  trial= 5  spikes=  3  rate=  3.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=270  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=270  trial= 7  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-40.0mV  dir=270  trial= 8  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-40.0mV  dir=270  trial= 9  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  V=-40.0mV  dir=300  trial= 0  spikes=  3  rate=  3.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=300  trial= 1  spikes=  3  rate=  3.00Hz  peak=+35.0mV
+  V=-40.0mV  dir=300  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  V=-40.0mV  dir=300  trial= 3  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  V=-40.0mV  dir=300  trial= 4  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-40.0mV  dir=300  trial= 5  spikes=  4  rate=  4.00Hz  peak=+36.0mV
+  V=-40.0mV  dir=300  trial= 6  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  V=-40.0mV  dir=300  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  V=-40.0mV  dir=300  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.0mV
+  V=-40.0mV  dir=300  trial= 9  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-40.0mV  dir=330  trial= 0  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-40.0mV  dir=330  trial= 1  spikes=  6  rate=  6.00Hz  peak=+37.4mV
+  V=-40.0mV  dir=330  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-40.0mV  dir=330  trial= 3  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  V=-40.0mV  dir=330  trial= 4  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-40.0mV  dir=330  trial= 5  spikes=  6  rate=  6.00Hz  peak=+37.4mV
+  V=-40.0mV  dir=330  trial= 6  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  V=-40.0mV  dir=330  trial= 7  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-40.0mV  dir=330  trial= 8  spikes=  6  rate=  6.00Hz  peak=+35.9mV
+  V=-40.0mV  dir=330  trial= 9  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=  0  trial= 0  spikes=  8  rate=  8.00Hz  peak=+36.6mV
+  V=-30.0mV  dir=  0  trial= 1  spikes=  7  rate=  7.00Hz  peak=+36.7mV
+  V=-30.0mV  dir=  0  trial= 2  spikes=  8  rate=  8.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=  0  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.9mV
+  V=-30.0mV  dir=  0  trial= 4  spikes=  7  rate=  7.00Hz  peak=+37.1mV
+  V=-30.0mV  dir=  0  trial= 5  spikes=  8  rate=  8.00Hz  peak=+37.2mV
+  V=-30.0mV  dir=  0  trial= 6  spikes=  8  rate=  8.00Hz  peak=+35.9mV
+  V=-30.0mV  dir=  0  trial= 7  spikes=  8  rate=  8.00Hz  peak=+37.6mV
+  V=-30.0mV  dir=  0  trial= 8  spikes=  8  rate=  8.00Hz  peak=+36.9mV
+  V=-30.0mV  dir=  0  trial= 9  spikes=  6  rate=  6.00Hz  peak=+36.6mV
+  V=-30.0mV  dir= 30  trial= 0  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-30.0mV  dir= 30  trial= 1  spikes=  7  rate=  7.00Hz  peak=+37.1mV
+  V=-30.0mV  dir= 30  trial= 2  spikes=  7  rate=  7.00Hz  peak=+36.7mV
+  V=-30.0mV  dir= 30  trial= 3  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  V=-30.0mV  dir= 30  trial= 4  spikes=  7  rate=  7.00Hz  peak=+36.8mV
+  V=-30.0mV  dir= 30  trial= 5  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-30.0mV  dir= 30  trial= 6  spikes=  7  rate=  7.00Hz  peak=+36.5mV
+  V=-30.0mV  dir= 30  trial= 7  spikes=  7  rate=  7.00Hz  peak=+36.3mV
+  V=-30.0mV  dir= 30  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  V=-30.0mV  dir= 30  trial= 9  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  V=-30.0mV  dir= 60  trial= 0  spikes=  7  rate=  7.00Hz  peak=+37.2mV
+  V=-30.0mV  dir= 60  trial= 1  spikes=  7  rate=  7.00Hz  peak=+36.2mV
+  V=-30.0mV  dir= 60  trial= 2  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-30.0mV  dir= 60  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.5mV
+  V=-30.0mV  dir= 60  trial= 4  spikes=  6  rate=  6.00Hz  peak=+36.2mV
+  V=-30.0mV  dir= 60  trial= 5  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  V=-30.0mV  dir= 60  trial= 6  spikes=  6  rate=  6.00Hz  peak=+36.2mV
+  V=-30.0mV  dir= 60  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-30.0mV  dir= 60  trial= 8  spikes=  6  rate=  6.00Hz  peak=+36.6mV
+  V=-30.0mV  dir= 60  trial= 9  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-30.0mV  dir= 90  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-30.0mV  dir= 90  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  V=-30.0mV  dir= 90  trial= 2  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  V=-30.0mV  dir= 90  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-30.0mV  dir= 90  trial= 4  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  V=-30.0mV  dir= 90  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  V=-30.0mV  dir= 90  trial= 6  spikes=  1  rate=  1.00Hz  peak=+34.3mV
+  V=-30.0mV  dir= 90  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-30.0mV  dir= 90  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-30.0mV  dir= 90  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=120  trial= 0  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=120  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  V=-30.0mV  dir=120  trial= 2  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  V=-30.0mV  dir=120  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.0mV
+  V=-30.0mV  dir=120  trial= 4  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  V=-30.0mV  dir=120  trial= 5  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  V=-30.0mV  dir=120  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=120  trial= 7  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=120  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=120  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  V=-30.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  V=-30.0mV  dir=150  trial= 1  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-30.0mV  dir=150  trial= 2  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=150  trial= 3  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=150  trial= 4  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  V=-30.0mV  dir=150  trial= 5  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=150  trial= 6  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=150  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-30.0mV  dir=150  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-30.0mV  dir=150  trial= 9  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 0  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 1  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 2  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 3  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 4  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-30.0mV  dir=180  trial= 6  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 7  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 8  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=180  trial= 9  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-30.0mV  dir=210  trial= 0  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 1  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 2  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 3  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  V=-30.0mV  dir=210  trial= 5  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 6  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 7  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 8  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=210  trial= 9  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=240  trial= 1  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=240  trial= 2  spikes=  1  rate=  1.00Hz  peak=+34.5mV
+  V=-30.0mV  dir=240  trial= 3  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=240  trial= 4  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-30.0mV  dir=240  trial= 5  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  V=-30.0mV  dir=240  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  V=-30.0mV  dir=240  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  V=-30.0mV  dir=240  trial= 8  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=240  trial= 9  spikes=  0  rate=  0.00Hz  peak=-30.0mV
+  V=-30.0mV  dir=270  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=270  trial= 1  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=270  trial= 2  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  V=-30.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=270  trial= 4  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-30.0mV  dir=270  trial= 5  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=270  trial= 6  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-30.0mV  dir=270  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  V=-30.0mV  dir=270  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  V=-30.0mV  dir=270  trial= 9  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  V=-30.0mV  dir=300  trial= 0  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  V=-30.0mV  dir=300  trial= 1  spikes=  3  rate=  3.00Hz  peak=+35.7mV
+  V=-30.0mV  dir=300  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-30.0mV  dir=300  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.7mV
+  V=-30.0mV  dir=300  trial= 4  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-30.0mV  dir=300  trial= 5  spikes=  4  rate=  4.00Hz  peak=+35.9mV
+  V=-30.0mV  dir=300  trial= 6  spikes=  2  rate=  2.00Hz  peak=+34.7mV
+  V=-30.0mV  dir=300  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=300  trial= 8  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+  V=-30.0mV  dir=300  trial= 9  spikes=  3  rate=  3.00Hz  peak=+36.1mV
+  V=-30.0mV  dir=330  trial= 0  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  V=-30.0mV  dir=330  trial= 1  spikes=  6  rate=  6.00Hz  peak=+37.0mV
+  V=-30.0mV  dir=330  trial= 2  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  V=-30.0mV  dir=330  trial= 3  spikes=  7  rate=  7.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=330  trial= 4  spikes=  7  rate=  7.00Hz  peak=+37.2mV
+  V=-30.0mV  dir=330  trial= 5  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-30.0mV  dir=330  trial= 6  spikes=  5  rate=  5.00Hz  peak=+37.9mV
+  V=-30.0mV  dir=330  trial= 7  spikes=  5  rate=  5.00Hz  peak=+36.0mV
+  V=-30.0mV  dir=330  trial= 8  spikes=  7  rate=  7.00Hz  peak=+36.3mV
+  V=-30.0mV  dir=330  trial= 9  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  V=-20.0mV  dir=  0  trial= 0  spikes=  8  rate=  8.00Hz  peak=+36.5mV
+  V=-20.0mV  dir=  0  trial= 1  spikes=  6  rate=  6.00Hz  peak=+36.5mV
+  V=-20.0mV  dir=  0  trial= 2  spikes= 10  rate= 10.00Hz  peak=+36.2mV
+  V=-20.0mV  dir=  0  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=  0  trial= 4  spikes=  8  rate=  8.00Hz  peak=+36.6mV
+  V=-20.0mV  dir=  0  trial= 5  spikes=  8  rate=  8.00Hz  peak=+37.1mV
+  V=-20.0mV  dir=  0  trial= 6  spikes=  9  rate=  9.00Hz  peak=+36.4mV
+  V=-20.0mV  dir=  0  trial= 7  spikes=  8  rate=  8.00Hz  peak=+36.4mV
+  V=-20.0mV  dir=  0  trial= 8  spikes=  7  rate=  7.00Hz  peak=+36.6mV
+  V=-20.0mV  dir=  0  trial= 9  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-20.0mV  dir= 30  trial= 0  spikes=  7  rate=  7.00Hz  peak=+36.5mV
+  V=-20.0mV  dir= 30  trial= 1  spikes=  8  rate=  8.00Hz  peak=+37.2mV
+  V=-20.0mV  dir= 30  trial= 2  spikes=  8  rate=  8.00Hz  peak=+36.4mV
+  V=-20.0mV  dir= 30  trial= 3  spikes=  7  rate=  7.00Hz  peak=+36.3mV
+  V=-20.0mV  dir= 30  trial= 4  spikes=  7  rate=  7.00Hz  peak=+36.2mV
+  V=-20.0mV  dir= 30  trial= 5  spikes=  7  rate=  7.00Hz  peak=+36.4mV
+  V=-20.0mV  dir= 30  trial= 6  spikes=  8  rate=  8.00Hz  peak=+36.7mV
+  V=-20.0mV  dir= 30  trial= 7  spikes=  7  rate=  7.00Hz  peak=+36.2mV
+  V=-20.0mV  dir= 30  trial= 8  spikes=  6  rate=  6.00Hz  peak=+37.4mV
+  V=-20.0mV  dir= 30  trial= 9  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  V=-20.0mV  dir= 60  trial= 0  spikes=  8  rate=  8.00Hz  peak=+36.6mV
+  V=-20.0mV  dir= 60  trial= 1  spikes=  7  rate=  7.00Hz  peak=+36.6mV
+  V=-20.0mV  dir= 60  trial= 2  spikes=  7  rate=  7.00Hz  peak=+37.1mV
+  V=-20.0mV  dir= 60  trial= 3  spikes=  6  rate=  6.00Hz  peak=+37.3mV
+  V=-20.0mV  dir= 60  trial= 4  spikes=  7  rate=  7.00Hz  peak=+36.8mV
+  V=-20.0mV  dir= 60  trial= 5  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  V=-20.0mV  dir= 60  trial= 6  spikes=  6  rate=  6.00Hz  peak=+36.1mV
+  V=-20.0mV  dir= 60  trial= 7  spikes=  6  rate=  6.00Hz  peak=+36.5mV
+  V=-20.0mV  dir= 60  trial= 8  spikes=  7  rate=  7.00Hz  peak=+37.0mV
+  V=-20.0mV  dir= 60  trial= 9  spikes=  5  rate=  5.00Hz  peak=+36.1mV
+  V=-20.0mV  dir= 90  trial= 0  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  V=-20.0mV  dir= 90  trial= 1  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-20.0mV  dir= 90  trial= 2  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  V=-20.0mV  dir= 90  trial= 3  spikes=  4  rate=  4.00Hz  peak=+35.4mV
+  V=-20.0mV  dir= 90  trial= 4  spikes=  5  rate=  5.00Hz  peak=+36.2mV
+  V=-20.0mV  dir= 90  trial= 5  spikes=  4  rate=  4.00Hz  peak=+36.3mV
+  V=-20.0mV  dir= 90  trial= 6  spikes=  3  rate=  3.00Hz  peak=+35.6mV
+  V=-20.0mV  dir= 90  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  V=-20.0mV  dir= 90  trial= 8  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  V=-20.0mV  dir= 90  trial= 9  spikes=  3  rate=  3.00Hz  peak=+35.5mV
+  V=-20.0mV  dir=120  trial= 0  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=120  trial= 1  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  V=-20.0mV  dir=120  trial= 2  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=120  trial= 3  spikes=  4  rate=  4.00Hz  peak=+35.9mV
+  V=-20.0mV  dir=120  trial= 4  spikes=  2  rate=  2.00Hz  peak=+34.9mV
+  V=-20.0mV  dir=120  trial= 5  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+  V=-20.0mV  dir=120  trial= 6  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  V=-20.0mV  dir=120  trial= 7  spikes=  2  rate=  2.00Hz  peak=+35.0mV
+  V=-20.0mV  dir=120  trial= 8  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  V=-20.0mV  dir=120  trial= 9  spikes=  4  rate=  4.00Hz  peak=+36.0mV
+  V=-20.0mV  dir=150  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-20.0mV  dir=150  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=150  trial= 2  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=150  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+  V=-20.0mV  dir=150  trial= 4  spikes=  4  rate=  4.00Hz  peak=+35.9mV
+  V=-20.0mV  dir=150  trial= 5  spikes=  3  rate=  3.00Hz  peak=+35.2mV
+  V=-20.0mV  dir=150  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=150  trial= 7  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=150  trial= 8  spikes=  3  rate=  3.00Hz  peak=+35.9mV
+  V=-20.0mV  dir=150  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-20.0mV  dir=180  trial= 0  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=180  trial= 1  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=180  trial= 2  spikes=  1  rate=  1.00Hz  peak=+34.5mV
+  V=-20.0mV  dir=180  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=180  trial= 4  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-20.0mV  dir=180  trial= 5  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  V=-20.0mV  dir=180  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  V=-20.0mV  dir=180  trial= 7  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=180  trial= 8  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  V=-20.0mV  dir=180  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  V=-20.0mV  dir=210  trial= 0  spikes=  2  rate=  2.00Hz  peak=+35.1mV
+  V=-20.0mV  dir=210  trial= 1  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  V=-20.0mV  dir=210  trial= 2  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=210  trial= 3  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  V=-20.0mV  dir=210  trial= 4  spikes=  3  rate=  3.00Hz  peak=+35.4mV
+  V=-20.0mV  dir=210  trial= 5  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  V=-20.0mV  dir=210  trial= 6  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  V=-20.0mV  dir=210  trial= 7  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  V=-20.0mV  dir=210  trial= 8  spikes=  2  rate=  2.00Hz  peak=+35.0mV
+  V=-20.0mV  dir=210  trial= 9  spikes=  0  rate=  0.00Hz  peak=-20.0mV
+  V=-20.0mV  dir=240  trial= 0  spikes=  0  rate=  0.00Hz  peak=-20.0mV
+  V=-20.0mV  dir=240  trial= 1  spikes=  1  rate=  1.00Hz  peak=+34.3mV
+  V=-20.0mV  dir=240  trial= 2  spikes=  2  rate=  2.00Hz  peak=+34.9mV
+  V=-20.0mV  dir=240  trial= 3  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  V=-20.0mV  dir=240  trial= 4  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-20.0mV  dir=240  trial= 5  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  V=-20.0mV  dir=240  trial= 6  spikes=  3  rate=  3.00Hz  peak=+35.7mV
+  V=-20.0mV  dir=240  trial= 7  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=240  trial= 8  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  V=-20.0mV  dir=240  trial= 9  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=270  trial= 0  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=270  trial= 1  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  V=-20.0mV  dir=270  trial= 2  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=270  trial= 3  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  V=-20.0mV  dir=270  trial= 4  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  V=-20.0mV  dir=270  trial= 5  spikes=  4  rate=  4.00Hz  peak=+35.7mV
+  V=-20.0mV  dir=270  trial= 6  spikes=  3  rate=  3.00Hz  peak=+35.9mV
+  V=-20.0mV  dir=270  trial= 7  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=270  trial= 8  spikes=  3  rate=  3.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=270  trial= 9  spikes=  4  rate=  4.00Hz  peak=+35.7mV
+  V=-20.0mV  dir=300  trial= 0  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-20.0mV  dir=300  trial= 1  spikes=  5  rate=  5.00Hz  peak=+35.2mV
+  V=-20.0mV  dir=300  trial= 2  spikes=  7  rate=  7.00Hz  peak=+36.2mV
+  V=-20.0mV  dir=300  trial= 3  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-20.0mV  dir=300  trial= 4  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  V=-20.0mV  dir=300  trial= 5  spikes=  6  rate=  6.00Hz  peak=+36.1mV
+  V=-20.0mV  dir=300  trial= 6  spikes=  4  rate=  4.00Hz  peak=+35.3mV
+  V=-20.0mV  dir=300  trial= 7  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  V=-20.0mV  dir=300  trial= 8  spikes=  5  rate=  5.00Hz  peak=+36.0mV
+  V=-20.0mV  dir=300  trial= 9  spikes=  4  rate=  4.00Hz  peak=+35.7mV
+  V=-20.0mV  dir=330  trial= 0  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  V=-20.0mV  dir=330  trial= 1  spikes=  8  rate=  8.00Hz  peak=+36.5mV
+  V=-20.0mV  dir=330  trial= 2  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  V=-20.0mV  dir=330  trial= 3  spikes=  6  rate=  6.00Hz  peak=+36.3mV
+  V=-20.0mV  dir=330  trial= 4  spikes=  8  rate=  8.00Hz  peak=+36.9mV
+  V=-20.0mV  dir=330  trial= 5  spikes=  7  rate=  7.00Hz  peak=+36.3mV
+  V=-20.0mV  dir=330  trial= 6  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  V=-20.0mV  dir=330  trial= 7  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  V=-20.0mV  dir=330  trial= 8  spikes=  6  rate=  6.00Hz  peak=+35.8mV
+  V=-20.0mV  dir=330  trial= 9  spikes=  5  rate=  5.00Hz  peak=+36.4mV
+[t0024 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0024\vrest_sweep_tidy.csv
+[t0024 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0024\wall_time_by_vrest.json

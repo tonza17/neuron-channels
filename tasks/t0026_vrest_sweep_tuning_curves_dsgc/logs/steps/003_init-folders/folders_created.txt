@@ -1,0 +1,14 @@
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/predictions/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/corrections/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/data/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/intervention/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/plan/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/research/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/images/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/commands/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/searches/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/sessions/
+tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/steps/
