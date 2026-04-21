@@ -1,0 +1,134 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature13240",
+  "doi": "10.1038/nature13240",
+  "title": "Space-time wiring specificity supports direction selectivity in the retina",
+  "url": "https://www.nature.com/articles/nature13240",
+  "pdf_url": "https://www.nature.com/articles/nature13240.pdf",
+  "date_published": "2014-05-04",
+  "year": 2014,
+  "authors": [
+    {
+      "name": "Jinseop S. Kim",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Matthew J. Greene",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Aleksandar Zlateski",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Kisuk Lee",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Mark Richardson",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Srinivas C. Turaga",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Michael Purcaro",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Matthew Balkam",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Amy Robinson",
+      "country": "US",
+      "institution": "Massachusetts Institute of Technology",
+      "orcid": null
+    },
+    {
+      "name": "Bardia F. Behabadi",
+      "country": "US",
+      "institution": "Qualcomm Research",
+      "orcid": null
+    },
+    {
+      "name": "Michael Campos",
+      "country": "US",
+      "institution": "Qualcomm Research",
+      "orcid": null
+    },
+    {
+      "name": "Winfried Denk",
+      "country": "DE",
+      "institution": "Max Planck Institute of Neurobiology",
+      "orcid": null
+    },
+    {
+      "name": "the EyeWirers",
+      "country": null,
+      "institution": "EyeWire citizen-science community",
+      "orcid": null
+    },
+    {
+      "name": "H. Sebastian Seung",
+      "country": "US",
+      "institution": "Princeton University",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Massachusetts Institute of Technology",
+      "country": "US"
+    },
+    {
+      "name": "Princeton University",
+      "country": "US"
+    },
+    {
+      "name": "Qualcomm Research",
+      "country": "US"
+    },
+    {
+      "name": "Max Planck Institute of Neurobiology",
+      "country": "DE"
+    },
+    {
+      "name": "EyeWire citizen-science community",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "dendritic-computation",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "How does the mammalian retina detect motion? This classic problem in visual neuroscience has remained unsolved for 50 years. In search of clues, we reconstructed Off-type starburst amacrine cells (SACs) and bipolar cells (BCs) in serial electron microscopic images with help from EyeWire, an online community of \"citizen neuroscientists.\" Based on quantitative analyses of contact area and branch depth in the retina, we found evidence that one BC type prefers to wire with a SAC dendrite near the SAC soma, while another BC type prefers to wire far from the soma. The near type is known to lag the far type in time of visual response. A mathematical model shows how such \"space-time wiring specificity\" could endow SAC dendrites with receptive fields that are oriented in space-time and therefore respond selectively to stimuli that move in the outward direction from the soma.",
+  "citation_key": "Kim2014",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Nature PDF is paywalled; PMC4074887 PDF gated by JavaScript proof-of-work challenge that curl cannot solve; EuropePMC render endpoint returned {\"error\": \"Failed to retrieve PDF for pmcid: PMC4074887\"}. Metadata and abstract extracted from CrossRef and PMC HTML full-text. See intervention/Kim2014_paywalled.md.",
+  "added_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_added": "2026-04-21"
+}
