@@ -5,7 +5,7 @@
   "name": "Port de Rosenroll 2026 DSGC model",
   "short_description": "Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.",
   "long_description_file": "task_description.md",
-  "status": "intervention_blocked",
+  "status": "not_started",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0012_tuning_curve_scoring_loss_library",
