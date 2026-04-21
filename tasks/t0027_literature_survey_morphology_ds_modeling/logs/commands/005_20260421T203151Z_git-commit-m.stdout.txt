@@ -1,0 +1,22 @@
+[task/t0027_literature_survey_morphology_ds_modeling 37cafff] t0027_literature_survey_morphology_ds_modeling [implementation]: add 5 priority-2 paper assets + 2 paywall interventions
+ 20 files changed, 1703 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1016_j.neuron.2016.02.020/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1016_j.neuron.2016.02.020/files/vlasits_2016_synaptic-input-distribution.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1016_j.neuron.2016.02.020/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523804214109/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523804214109/files/tukker_2004_sac-ds-model.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523804214109/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nature13240/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nature13240/files/.gitkeep
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nature13240/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/files/.gitkeep
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pbio.0050185/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pbio.0050185/files/hausselt_2007_sac-direction-selectivity.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pbio.0050185/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/intervention/Kim2014_paywalled.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/intervention/Sivyer2013_paywalled.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/004_20260421T201237Z_git-commit-m.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/004_20260421T201237Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/004_20260421T201237Z_git-commit-m.stdout.txt
