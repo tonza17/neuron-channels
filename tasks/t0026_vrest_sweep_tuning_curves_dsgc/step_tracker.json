@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Finalize predictions assets, run verificators, prepare PR, close the task.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T17:36:39Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T17:43:26Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
