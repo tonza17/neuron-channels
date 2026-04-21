@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Survey existing corpus papers relevant to morphology-and-DS modeling; link the 5 baseline papers without re-downloading.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T18:42:45Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T19:00:19Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
