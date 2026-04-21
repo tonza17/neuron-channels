@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0022_modify_dsgc_channel_testbed",
+  "command": "uv run python -u -m tasks.t0022_modify_dsgc_channel_testbed.code.run_tuning_curve",
+  "exit_code": 0,
+  "duration_seconds": 563.542,
+  "started_at": "2026-04-21T00:00:08Z",
+  "completed_at": "2026-04-21T00:09:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0022_modify_dsgc_channel_testbed",
+  "stdout_file": "017_20260421T000008Z_uv-run-python.stdout.txt",
+  "stderr_file": "017_20260421T000008Z_uv-run-python.stderr.txt",
+  "stdout_lines": 24,
+  "stderr_lines": 123,
+  "truncated": false
+}

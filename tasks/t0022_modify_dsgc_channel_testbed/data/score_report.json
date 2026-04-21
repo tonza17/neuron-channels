@@ -1,0 +1,54 @@
+{
+  "loss_scalar": 1.9082447484513902,
+  "dsi_residual": 0.11764705882352944,
+  "peak_residual_hz": -17.0,
+  "null_residual_hz": -2.0,
+  "hwhm_residual_deg": 50.249999999999986,
+  "rmse_vs_target": 10.478802654331396,
+  "reliability": 1.0,
+  "passes_envelope": false,
+  "per_target_pass": {
+    "dsi": false,
+    "peak": false,
+    "null": true,
+    "hwhm": false
+  },
+  "residuals": {
+    "dsi": 0.11764705882352944,
+    "peak": -17.0,
+    "null": -2.0,
+    "hwhm": 50.249999999999986
+  },
+  "normalized_residuals": {
+    "dsi": 1.5686274509803926,
+    "peak": -0.85,
+    "null": -0.4,
+    "hwhm": 3.349999999999999
+  },
+  "weights_used": {
+    "dsi": 0.25,
+    "peak": 0.25,
+    "null": 0.25,
+    "hwhm": 0.25
+  },
+  "candidate_metrics": {
+    "dsi": 1.0,
+    "peak_hz": 15.0,
+    "null_hz": 0.0,
+    "hwhm_deg": 116.25,
+    "reliability": 1.0
+  },
+  "target_metrics": {
+    "dsi": 0.8823529411764706,
+    "peak_hz": 32.0,
+    "null_hz": 2.0,
+    "hwhm_deg": 66.00000000000001,
+    "reliability": 0.9968916120168636
+  },
+  "half_widths_used": {
+    "dsi": 0.075,
+    "peak": 20.0,
+    "null": 5.0,
+    "hwhm": 15.0
+  }
+}

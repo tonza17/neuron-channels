@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0022_modify_dsgc_channel_testbed",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0022_modify_dsgc_channel_testbed/logs/steps/013_compare-literature/step_log.md",
+  "exit_code": 0,
+  "duration_seconds": 0.395,
+  "started_at": "2026-04-21T00:35:36Z",
+  "completed_at": "2026-04-21T00:35:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0022_modify_dsgc_channel_testbed",
+  "stdout_file": "029_20260421T003536Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "029_20260421T003536Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

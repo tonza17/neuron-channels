@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 654, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 647, in main
+    return _main_dry_run()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 518, in _main_dry_run
+    pairs: list[EiPair] = build_ei_pairs(h=h)
+                          ~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 216, in build_ei_pairs
+    ampa_vecstim: Any = h.VecStim()
+                        ^^^^^^^^^
+AttributeError: 'hoc.HocObject' object has no attribute 'VecStim'

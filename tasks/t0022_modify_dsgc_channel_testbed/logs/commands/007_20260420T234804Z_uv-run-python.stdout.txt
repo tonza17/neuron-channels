@@ -1,0 +1,17 @@
+Preflight: preloading nrnmech.dll...
+Preflight: building DSGC cell...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+  EiPair count = 282, gabaMOD baseline = 0.33
+  wrote debug onsets to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\logs\preflight\onsets.json
+
+  angle=  0 deg  mean=  0.00 Hz  (n=2)
+  angle= 90 deg  mean=  0.00 Hz  (n=2)
+  angle=180 deg  mean=  0.00 Hz  (n=2)
+  angle=270 deg  mean=  0.00 Hz  (n=2)
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\logs\preflight\preflight_curve.csv

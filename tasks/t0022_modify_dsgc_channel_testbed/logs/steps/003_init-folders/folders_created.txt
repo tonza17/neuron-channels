@@ -1,0 +1,12 @@
+code/
+data/
+plan/
+research/
+assets/library/
+intervention/
+corrections/
+results/
+results/images/
+logs/commands/
+logs/searches/
+logs/sessions/
