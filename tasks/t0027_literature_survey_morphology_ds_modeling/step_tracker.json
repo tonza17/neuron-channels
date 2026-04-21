@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Record follow-up suggestions (morphology-sweep experiments, missing papers, method gaps) in results/suggestions.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T21:23:49Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T21:29:49Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
