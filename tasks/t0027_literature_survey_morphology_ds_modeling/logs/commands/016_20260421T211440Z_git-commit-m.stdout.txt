@@ -1,0 +1,4 @@
+[task/t0027_literature_survey_morphology_ds_modeling 8aced73] t0027_literature_survey_morphology_ds_modeling [creative-thinking]: write creative_thinking.md with 5 falsifiable predictions
+ 2 files changed, 120 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/steps/011_creative-thinking/step_log.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/research/creative_thinking.md
