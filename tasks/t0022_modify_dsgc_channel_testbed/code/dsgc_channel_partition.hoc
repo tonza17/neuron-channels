@@ -1,0 +1,108 @@
+// Channel-modular partition for the t0022 DSGC testbed.
+//
+// Sourced after RGCmodel.hoc and dsgc_model.hoc (the t0008 cell bootstrap).
+// Declares five named SectionLists that downstream channel-swap tasks can
+// target with a one-line ``forsec <region> { ... }`` edit, without touching
+// the Python driver or the verbatim Poleg-Polsky HOC sources.
+//
+// The five regions and their canonical channel priors (from
+// ``research/research_internet.md`` -- Channel-Density Numbers table):
+//
+//   SOMA_CHANNELS    soma                 Nav (soma)   gbar 1.0   S/cm^2
+//                                         [ModelDB-189347]
+//   DEND_CHANNELS    every dend section   Nav (dend)   gbar 0.03  S/cm^2
+//                                         [ModelDB-189347]
+//   AIS_PROXIMAL     axon sections with   Nav1.1       gbar 1.5   S/cm^2
+//                    distance(0.5) <= 10  [ModelDB-123623-KoleStuart]
+//                    um from the soma     (NOT Nav1.2 -- see RGC-AIS-Review-2022)
+//   AIS_DISTAL       axon sections with   Nav1.6       gbar 8.0   S/cm^2
+//                    distance(0.5) > 10   [ModelDB-144526-Hallermann]
+//                    and <= 45 um         Kv1.2        gbar 0.1   S/cm^2
+//                                         [ModelDB-123623-KoleStuart]
+//                                         Kv3 (opt)    gbar 0.0033 S/cm^2
+//                                         [ModelDB-Kv3-Akemann2006]
+//   THIN_AXON        axon sections with   (baseline HHst from t0008)
+//                    distance(0.5) > 45
+//
+// NOTE: The bundled Poleg-Polsky morphology in RGCmodel.hoc does NOT define
+// axon sections -- only soma + 350 dend[]. The AIS_PROXIMAL, AIS_DISTAL,
+// and THIN_AXON SectionLists are therefore empty in the baseline testbed,
+// exactly as intended: they are hooks for downstream channel-swap tasks
+// which will (a) create axon[] sections, connect them to the soma, and
+// (b) append to these lists before calling their own forsec insertion.
+//
+// NOTE: t0022 is a TESTBED. The ``forsec`` blocks below insert the baseline
+// HHst channels inherited from the t0008 port unchanged (HHst is already
+// on the soma from RGCmodel.hoc). Channel-swap tasks replace each block's
+// body with their own ``insert`` + ``gbar`` statements. Do NOT add
+// Nav1.1/Nav1.6/Kv1.2 MOD files here -- those live in downstream tasks.
+//
+// AIS partition thresholds are taken from VanWart2006 (~10 um proximal/
+// distal boundary; distal band extends to ~45 um before the thin axon).
+
+objref SOMA_CHANNELS
+objref DEND_CHANNELS
+objref AIS_PROXIMAL
+objref AIS_DISTAL
+objref THIN_AXON
+
+SOMA_CHANNELS = new SectionList()
+DEND_CHANNELS = new SectionList()
+AIS_PROXIMAL  = new SectionList()
+AIS_DISTAL    = new SectionList()
+THIN_AXON     = new SectionList()
+
+// --- SOMA population ---------------------------------------------------
+// The Poleg-Polsky template exposes ``RGC.soma`` as a single section.
+access RGC.soma
+SOMA_CHANNELS.append()
+
+// --- DEND population ---------------------------------------------------
+// Iterate the existing ``RGC.dends`` SectionList (defined in RGCmodel.hoc).
+forsec RGC.dends {
+    DEND_CHANNELS.append()
+}
+
+// --- AIS and thin-axon partition --------------------------------------
+// The bundled morphology has no axon sections, so these SectionLists are
+// intentionally left empty. Channel-swap tasks that add axon will be
+// expected to ``AIS_PROXIMAL.append()`` / ``AIS_DISTAL.append()`` /
+// ``THIN_AXON.append()`` at the time they create their axon[i] sections,
+// classified by distance(0.5) from the soma:
+//     proximal <= 10 um, distal <= 45 um, thin axon > 45 um.
+
+// --- Channel-insertion forsec blocks (one per region) -----------------
+// Baseline: inherit the t0008 HHst insertion unchanged. Downstream
+// channel-swap tasks replace each block's body with their own insert
+// statements (e.g. Nav1.6 in AIS_DISTAL, Nav1.1 in AIS_PROXIMAL).
+
+forsec SOMA_CHANNELS {
+    // Baseline HHst is inserted by RGCmodel.hoc; nothing to add here.
+    // A channel-swap task would replace the body with e.g.
+    //   uninsert HHst insert na gbar_na=1.0
+}
+
+forsec DEND_CHANNELS {
+    // Baseline: dendrites are passive (Ra + pas) per RGCmodel.hoc.
+    // Channel-swap tasks insert dendritic Nav / Kv / Ih here.
+}
+
+forsec AIS_PROXIMAL {
+    // Channel-modular hook for Nav1.1 proximal AIS insertion
+    // (gbar = 1.5 S/cm^2 per [ModelDB-123623-KoleStuart]). See
+    // library description.md REQ-6 note: this is Nav1.1, NOT Nav1.2.
+}
+
+forsec AIS_DISTAL {
+    // Channel-modular hook for Nav1.6 (gbar = 8.0 S/cm^2 per
+    // [ModelDB-144526-Hallermann]) + Kv1.2 (gbar = 0.1 S/cm^2) +
+    // optional Kv3 (gbar = 0.0033 S/cm^2 per
+    // [ModelDB-Kv3-Akemann2006]).
+}
+
+forsec THIN_AXON {
+    // Channel-modular hook for thin-axon channels; typically inherit
+    // soma parameters at lower density.
+}
+
+print "dsgc_channel_partition.hoc loaded: 5 SectionLists declared."

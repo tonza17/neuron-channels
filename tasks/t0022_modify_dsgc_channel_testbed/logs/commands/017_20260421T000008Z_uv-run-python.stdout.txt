@@ -1,0 +1,24 @@
+Preloading nrnmech.dll...
+Building DSGC cell for full sweep...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+  EiPair count = 282, gabaMOD baseline = 0.33
+
+  angle=  0 deg  mean= 14.00 Hz  (n=10)
+  angle= 30 deg  mean= 14.00 Hz  (n=10)
+  angle= 60 deg  mean= 13.00 Hz  (n=10)
+  angle= 90 deg  mean= 13.00 Hz  (n=10)
+  angle=120 deg  mean= 15.00 Hz  (n=10)
+  angle=150 deg  mean=  0.00 Hz  (n=10)
+  angle=180 deg  mean=  0.00 Hz  (n=10)
+  angle=210 deg  mean=  0.00 Hz  (n=10)
+  angle=240 deg  mean=  0.00 Hz  (n=10)
+  angle=270 deg  mean=  0.00 Hz  (n=10)
+  angle=300 deg  mean=  0.00 Hz  (n=10)
+  angle=330 deg  mean= 10.00 Hz  (n=10)
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\data\tuning_curves\curve_modeldb_189347_dendritic.csv

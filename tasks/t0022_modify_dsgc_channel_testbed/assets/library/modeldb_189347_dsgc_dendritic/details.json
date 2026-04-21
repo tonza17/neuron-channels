@@ -1,0 +1,71 @@
+{
+  "spec_version": "2",
+  "library_id": "modeldb_189347_dsgc_dendritic",
+  "name": "ModelDB 189347 DSGC -- Dendritic-Computation Driver",
+  "version": "0.1.0",
+  "short_description": "Per-dendrite excitation-inhibition driver for the Poleg-Polsky DSGC model, producing direction selectivity via on-the-path shunting inhibition with a channel-modular AIS partition.",
+  "description_path": "description.md",
+  "module_paths": [
+    "tasks/t0022_modify_dsgc_channel_testbed/code/neuron_bootstrap.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/score_envelope.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/plot_tuning_curve.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/constants.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/paths.py",
+    "tasks/t0022_modify_dsgc_channel_testbed/code/dsgc_channel_partition.hoc"
+  ],
+  "entry_points": [
+    {
+      "name": "run_one_trial_dendritic",
+      "kind": "function",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py",
+      "description": "Run one per-dendrite E-I trial at a given bar direction and return somatic firing rate in Hz."
+    },
+    {
+      "name": "build_ei_pairs",
+      "kind": "function",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py",
+      "description": "Create one AMPA (distal 0.9) and one GABA_A (proximal 0.3) Exp2Syn per ON-dendrite with NetStim burst drivers."
+    },
+    {
+      "name": "schedule_ei_onsets",
+      "kind": "function",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py",
+      "description": "Set per-pair NetStim start times and GABA weights for a given bar direction."
+    },
+    {
+      "name": "run_tuning_curve",
+      "kind": "script",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py",
+      "description": "CLI driver: --dry-run, --preflight (4x2), or default full 12-angle x 10-trial sweep."
+    },
+    {
+      "name": "score_envelope",
+      "kind": "script",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/score_envelope.py",
+      "description": "Score the emitted tuning curve via t0012 tuning_curve_loss and emit metrics.json."
+    },
+    {
+      "name": "plot_tuning_curve",
+      "kind": "script",
+      "module": "tasks/t0022_modify_dsgc_channel_testbed/code/plot_tuning_curve.py",
+      "description": "Emit a polar+Cartesian tuning-curve PNG from the emitted CSV."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "pandas",
+    "tqdm",
+    "matplotlib"
+  ],
+  "test_paths": [],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels"
+  ],
+  "created_by_task": "t0022_modify_dsgc_channel_testbed",
+  "date_created": "2026-04-21"
+}

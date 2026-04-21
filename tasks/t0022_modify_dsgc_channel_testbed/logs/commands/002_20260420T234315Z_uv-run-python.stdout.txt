@@ -1,0 +1,5 @@
+Dry run: preloading nrnmech.dll...
+Failed to setup nrnpy_pr
+Failed to setup nrnpy_vec_math
+Failed to setup _nrnpy_rvp_pyobj_callback
+Can't load NEURON resources from /cygdrive/C/Users/md1avn/AppData/Roaming/uv/python/lib/nrn.def[aults]

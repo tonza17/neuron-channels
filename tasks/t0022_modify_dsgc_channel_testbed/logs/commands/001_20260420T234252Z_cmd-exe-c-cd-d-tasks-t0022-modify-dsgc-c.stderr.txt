@@ -1,0 +1,9 @@
+Translating HHst.mod into HHst.c
+Notice: This mechanism cannot be used with CVODE
+Thread Safe
+Translating SAC2RGCexc.mod into SAC2RGCexc.c
+Notice: scop_random is not thread safe
+Notice: Use of state_discontinuity is not thread safe except in a NET_RECEIVE blockNotice: scop_random is not thread safe
+Translating SAC2RGCinhib.mod into SAC2RGCinhib.c
+Notice: scop_random is not thread safe
+Notice: Use of state_discontinuity is not thread safe except in a NET_RECEIVE blockNotice: scop_random is not thread safe

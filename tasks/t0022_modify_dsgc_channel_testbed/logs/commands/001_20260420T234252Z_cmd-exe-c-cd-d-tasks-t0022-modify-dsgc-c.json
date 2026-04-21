@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0022_modify_dsgc_channel_testbed",
+  "command": "cmd.exe /c cd /d tasks\\t0022_modify_dsgc_channel_testbed\\build\\modeldb_189347 && C:\\Users\\md1avn\\nrn-8.2.7\\bin\\nrnivmodl.bat C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0022_modify_dsgc_channel_testbed\\tasks\\t0008_port_modeldb_189347\\assets\\library\\modeldb_189347_dsgc\\sources",
+  "exit_code": 0,
+  "duration_seconds": 11.759,
+  "started_at": "2026-04-20T23:42:52Z",
+  "completed_at": "2026-04-20T23:43:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0022_modify_dsgc_channel_testbed",
+  "stdout_file": "001_20260420T234252Z_cmd-exe-c-cd-d-tasks-t0022-modify-dsgc-c.stdout.txt",
+  "stderr_file": "001_20260420T234252Z_cmd-exe-c-cd-d-tasks-t0022-modify-dsgc-c.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 9,
+  "truncated": false
+}

@@ -1,0 +1,13 @@
+Dry run: preloading nrnmech.dll...
+Dry run: building DSGC cell...
+	0
+	1
+	1
+	1
+  countON=282 numsyn=282
+Sourcing channel-partition HOC overlay...
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+Building per-dendrite E-I pairs...
+  Built 282 EiPair objects
+Dry run succeeded.
