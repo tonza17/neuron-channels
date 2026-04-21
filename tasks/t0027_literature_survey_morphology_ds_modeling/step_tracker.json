@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Finalise logs, write costs.json and remote_machines_used.json, run verificators, open PR, merge, refresh overview.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T21:30:04Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T22:23:03Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
