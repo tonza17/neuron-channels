@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review prior-task code and libraries (t0022, t0024 DSGC ports) for morphology-handling primitives that inform sweep feasibility.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-21T19:19:10Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
