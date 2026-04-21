@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md and results_detailed.md (Coverage Table + morphology taxonomy + mechanism taxonomy + gaps + recommendations).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-21T21:15:31Z",
       "completed_at": null,
-      "log_file": "logs/steps/012_results/"
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
