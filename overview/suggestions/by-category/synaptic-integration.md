@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-16 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **14 open** (6 high,
+17 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **15 open** (7 high,
 8 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
@@ -108,6 +108,30 @@ is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 ban
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
 data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 

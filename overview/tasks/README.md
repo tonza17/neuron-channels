@@ -1,6 +1,6 @@
 # Project Tasks
 
-24 tasks. ⚠️ **2 intervention_blocked**, ✅ **22 completed**.
+24 tasks. ⚠️ **1 intervention_blocked**, ✅ **23 completed**.
 
 **Browse by view**: By status: [⚠️ `intervention_blocked`](by-status/intervention_blocked.md),
 [✅ `completed`](by-status/completed.md); [By date added](by-date-added/README.md)
@@ -15,7 +15,6 @@ graph LR
     t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0022_modify_dsgc_channel_testbed["✅ t0022_modify_dsgc_channel_testbed"]
     t0023_port_hanson_2019_dsgc["⚠️ t0023_port_hanson_2019_dsgc"]
-    t0024_port_de_rosenroll_2026_dsgc["⚠️ t0024_port_de_rosenroll_2026_dsgc"]
 
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
     t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
@@ -23,9 +22,6 @@ graph LR
     t0008_port_modeldb_189347 --> t0023_port_hanson_2019_dsgc
     t0012_tuning_curve_scoring_loss_library --> t0023_port_hanson_2019_dsgc
     t0022_modify_dsgc_channel_testbed --> t0023_port_hanson_2019_dsgc
-    t0008_port_modeldb_189347 --> t0024_port_de_rosenroll_2026_dsgc
-    t0012_tuning_curve_scoring_loss_library --> t0024_port_de_rosenroll_2026_dsgc
-    t0022_modify_dsgc_channel_testbed --> t0024_port_de_rosenroll_2026_dsgc
 ```
 
 ---
@@ -120,20 +116,27 @@ follow-up tasks and must not be performed here.
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⚠️ 0024 — <strong>Port de Rosenroll 2026 DSGC model</strong></summary>
+<summary>✅ 0024 — <strong>Port de Rosenroll 2026 DSGC model</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0024_port_de_rosenroll_2026_dsgc` |
-| **Status** | intervention_blocked |
-| **Effective date** | 2026-04-20 |
+| **Status** | completed |
+| **Effective date** | 2026-04-21 |
 | **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
 | **Expected assets** | 1 library, 1 paper |
 | **Source suggestion** | — |
 | **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
+| **Start time** | 2026-04-21T01:51:48Z |
+| **End time** | 2026-04-21T08:55:00Z |
+| **Step progress** | 12/15 |
+| **Key metrics** | Tuning Curve RMSE (Hz): **15.489547768408103** |
 | **Task page** | [Port de Rosenroll 2026 DSGC model](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
 | **Task folder** | [`t0024_port_de_rosenroll_2026_dsgc/`](../../tasks/t0024_port_de_rosenroll_2026_dsgc/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) |
 
 # Port de Rosenroll 2026 DSGC Model
 
@@ -204,9 +207,39 @@ framework and whether a third independent implementation adds value.
   t0022 outcomes).
 * Executing this task now — execution is blocked pending t0022 review.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Port de Rosenroll 2026 DSGC Model**
+>
+> **Summary**
+>
+> Ported the de Rosenroll et al. 2026 DSGC model into a new library asset
+> `de_rosenroll_2026_dsgc`
+> (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section
+> `RGCmodelGD.hoc`
+> morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the
+> cell
+> through the paper-native 8-direction protocol and the project-standard 12-angle protocol
+> under both
+> correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per
+> angle,
+> 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces
+> strong
+> direction selectivity but **does not** reproduce the paper's correlation-drop signature; the
+> port-fidelity gate (REQ-5) failed and the miss is recorded in
+> `intervention/port_fidelity_miss.md`
+> as a first-class finding per plan step 13.
+>
+> **Metrics**
+>
+> * **DSI 12-ang correlated** (project-standard, t0004 envelope): **0.7759** — well above
+>   t0008's
+> 0.316 and matching t0020's 0.7838 / t0022's 1.0 lineage
+> * **DSI 12-ang uncorrelated**: **0.8557** — *higher* than correlated, opposite of paper
+>   prediction
+> * **DSI 8-dir correlated** (paper-match, REQ-5 target [0.30, 0.50]): **0.8182** — FAIL
+
+</details>
 
 <details>
 <summary>✅ 0022 — <strong>Modify DSGC port with spatially-asymmetric inhibition

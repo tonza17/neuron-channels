@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-5-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-6-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-10-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-24-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-102-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-108-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (11K)
-| [full](llm-context/full.xml) (145K) | [roadmap](llm-context/roadmap.xml) (34K) |
-[results](llm-context/results-deep-dive.xml) (94K) |
+| [full](llm-context/full.xml) (151K) | [roadmap](llm-context/roadmap.xml) (34K) |
+[results](llm-context/results-deep-dive.xml) (101K) |
 [assets](llm-context/literature-and-assets.xml) (24K)
 
-*Last updated: 2026-04-21 00:57 UTC*
+*Last updated: 2026-04-21 07:57 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -65,19 +65,19 @@ No blocked tasks.
 
 ---
 
-## Intervention Blocked (2)
+## Intervention Blocked (1)
 
 | # | Task |
 |---|------|
 | 0023 | [Port Hanson 2019 DSGC model](../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
-| 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
 
 ---
 
-## [Recently Completed (22 total)](tasks/by-status/completed.md)
+## [Recently Completed (23 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | [`results`](../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) | 2026-04-21 08:55 |
 | 0022 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | [`results`](../tasks/t0022_modify_dsgc_channel_testbed/results/results_detailed.md) | 2026-04-21 01:50 |
 | 0020 | [Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | [`results`](../tasks/t0020_port_modeldb_189347_gabamod/results/results_detailed.md) | 2026-04-20 20:35 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`results`](../tasks/t0013_resolve_morphology_provenance/results/results_detailed.md) | 2026-04-20 17:21 |
@@ -87,9 +87,8 @@ No blocked tasks.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
 | 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`results`](../tasks/t0008_port_modeldb_189347/results/results_detailed.md) | 2026-04-20 12:10 |
-| 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | [`results`](../tasks/t0017_literature_survey_patch_clamp/results/results_detailed.md) | 2026-04-20 11:08 |
 
-*12 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*13 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -99,12 +98,13 @@ No blocked tasks.
 
 | # | Task | Variant | Value |
 |---|------|---------|-------|
-| 1 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
-| 2 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |  | **10.478802654331396** |
+| 1 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |  | **15.489547768408103** |
+| 2 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
+| 3 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |  | **10.478802654331396** |
 
 ---
 
-## [Recent Suggestions (91 open)](suggestions/)
+## [Recent Suggestions (97 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -262,44 +262,44 @@ task type: experiment-run.
 </details>
 
 <details>
-<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
-library</strong> (S-0008-01)</summary>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0008_port_modeldb_189347](../tasks/t0008_port_modeldb_189347/)
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../tasks/t0024_port_de_rosenroll_2026_dsgc/)
 
-Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
-(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
-proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
-ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
-mechanism that matches the rotation-based protocol used in t0008 more directly than
-Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
-asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
-task types: code-reproduction, write-library.
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Rebuild ModelDB 189347 port on the calibrated Horton-Strahler
-SWC from t0009</strong> (S-0008-03)</summary>
+<summary>🧪 <strong>Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to
+test peak firing-rate shortfall</strong> (S-0024-02)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
-[t0008_port_modeldb_189347](../tasks/t0008_port_modeldb_189347/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../tasks/t0024_port_de_rosenroll_2026_dsgc/)
 
-Replace the bundled 1-soma + 350-dend topology in RGCmodel.hoc with the calibrated SWC from
-t0009 (6,736 compartments) and rewrite placeBIP()'s section-ordering-dependent synapse
-placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point placement and
-section indices. Outcome is a third variant of the port asset running on a morphology that
-actually matches the measured dendritic diameter profile. Recommended task types:
-code-reproduction.
+Peak firing rate is 5.15 Hz in t0024 versus the paper's qualitative ~30-40 Hz and the t0004
+envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and
+Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity
+sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate)
+with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak
+rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
 
 </details>
 
-*81 more open suggestions → [open suggestions](suggestions/)*
+*87 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (33)](suggestions/)
+## [High Priority Suggestions (34)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -355,6 +355,24 @@ is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 ban
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
 data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 
@@ -464,22 +482,7 @@ budget 4-6 hours for full P3.
 
 </details>
 
-<details>
-<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
-models</strong> (S-0010-05)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
-
-The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
-GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
-NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
-and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
-driver-rewrite step and go straight to P2/P3 scoring.
-
-</details>
-
-*23 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*24 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1188,10 +1191,11 @@ No predictions yet.
 
 ---
 
-## [Latest Libraries (5 total)](libraries/)
+## [Latest Libraries (6 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [de Rosenroll 2026 DSGC](../tasks\t0024_port_de_rosenroll_2026_dsgc\assets\library\de_rosenroll_2026_dsgc\description.md) | [24](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | 2026-04-21 |
 | [ModelDB 189347 DSGC -- Dendritic-Computation Driver](../tasks\t0022_modify_dsgc_channel_testbed\assets\library\modeldb_189347_dsgc_dendritic\description.md) | [22](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | 2026-04-21 |
 | [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |
 | [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |

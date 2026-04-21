@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-13 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **12 open** (8
-high, 3 medium, 1 low), **1 closed**.
+15 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **14 open** (8
+high, 5 medium, 1 low), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -258,6 +258,51 @@ sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; c
 drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
 either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
 Recommended task type: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Overlay a Van Wart + Werginz AIS on the deRosenroll morphology
+to test peak-rate recovery</strong> (S-0024-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Research-internet gap 2 showed that the upstream repository has no explicit AIS section, but
+research-papers (Werginz 2020, Van Wart 2007) pins the AIS-to-soma Na ratio at ~7x and names
+AIS length as the dominant predictor of maximum sustained firing rate. Fork t0024 into a new
+library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 + Kv1.2) with
+Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol,
+and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the
+SAC network.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to
+test peak firing-rate shortfall</strong> (S-0024-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Peak firing rate is 5.15 Hz in t0024 versus the paper's qualitative ~30-40 Hz and the t0004
+envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and
+Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity
+sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate)
+with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak
+rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
 
 </details>
 

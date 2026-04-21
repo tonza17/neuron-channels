@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-21T00:57:22Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-21T07:57:25Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>87198</char_count>
-    <byte_count>87266</byte_count>
-    <estimated_tokens>21799</estimated_tokens>
+    <char_count>88804</char_count>
+    <byte_count>88872</byte_count>
+    <estimated_tokens>22201</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -138,9 +138,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0020_port_modeldb_189347_gabamod</id>
         <id>t0021_brainstorm_results_4</id>
         <id>t0022_modify_dsgc_channel_testbed</id>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Completed tasks: 22
+Completed tasks: 23
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -273,6 +274,12 @@ ID: t0022_modify_dsgc_channel_testbed
 Completed: 2026-04-21
 Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
 Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed Summary Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008 rotation-proxy and t0020 gabaMOD-swap ports of Poleg-Polsky &amp; Diamond 2016. Direction selectivity now arises from per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I leads E by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five `forsec` regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The canonical 12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and **null 0 Hz**...
+
+## Port de Rosenroll 2026 DSGC model
+ID: t0024_port_de_rosenroll_2026_dsgc
+Completed: 2026-04-21
+Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Ported the de Rosenroll et al. 2026 DSGC model into a new library asset `de_rosenroll_2026_dsgc` (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section `RGCmodelGD.hoc` morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the cell through the paper-native 8-direction protocol and the project-standard 12-angle protocol under both correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per angle, 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces strong direction selectivity but **does not** reproduce the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -280,23 +287,15 @@ Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhi
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
 Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
-Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
-
-## Port de Rosenroll 2026 DSGC model
-ID: t0024_port_de_rosenroll_2026_dsgc
-Status: intervention_blocked
-Effective date: 2026-04-20
-Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
       </content>
     </section>
@@ -781,10 +780,11 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>modeldb_189347_dsgc_gabamod</id>
         <id>tuning_curve_loss</id>
         <id>tuning_curve_viz</id>
+        <id>de_rosenroll_2026_dsgc</id>
         <id>modeldb_189347_dsgc_dendritic</id>
       </source_ids>
       <content>
-Libraries: 5
+Libraries: 6
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -813,6 +813,13 @@ Version: 0.1.0
 Created by task: t0011_response_visualization_library
 Module paths: tasks\t0011_response_visualization_library\code\tuning_curve_viz\__init__.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\cartesian.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\cli.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\constants.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\loaders.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\overlay.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\paths.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\polar.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\raster_psth.py, tasks\t0011_response_visualization_library\code\tuning_curve_viz\stats.py
 `tuning_curve_viz` is the project&#x27;s matplotlib front end for every firing-rate-vs-direction figure. It renders Cartesian, polar, side-by-side multi-model overlay, and per-angle raster+PSTH panels from the three canonical CSV schemas shared with the t0012 scoring library. A 95 percent bootstrap confidence band (`scipy.stats.bootstrap`, 1000 resamples) sits on top of every Cartesian plot that has per-trial data, a red...
+
+## de Rosenroll 2026 DSGC
+ID: de_rosenroll_2026_dsgc
+Version: 0.1.0
+Created by task: t0024_port_de_rosenroll_2026_dsgc
+Module paths: tasks\t0024_port_de_rosenroll_2026_dsgc\code\ar2_noise.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\constants.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\paths.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\plot_tuning_curves.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\run_tuning_curve.py, tasks\t0024_port_de_rosenroll_2026_dsgc\code\score_envelope.py
+This library is the project&#x27;s third NEURON-based DSGC port, alongside the Poleg-Polsky lineage (t0008, t0020, t0022) and the Hanson port (t0023). It vendors the de Rosenroll 2026 morphology, mechanisms, and compiled `nrnmech.dll`, and pairs them with a simplified Python driver that implements the paper&#x27;s headline correlated-vs-uncorrelated SAC release contrast via an AR(2) release-rate noise process with configurable...
 
 ## ModelDB 189347 DSGC -- Dendritic-Computation Driver
 ID: modeldb_189347_dsgc_dendritic

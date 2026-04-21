@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T00:57:22Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T07:57:25Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>135498</char_count>
-    <byte_count>135573</byte_count>
-    <estimated_tokens>33874</estimated_tokens>
+    <char_count>137001</char_count>
+    <byte_count>137068</byte_count>
+    <estimated_tokens>34250</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -134,9 +134,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0020_port_modeldb_189347_gabamod</id>
         <id>t0021_brainstorm_results_4</id>
         <id>t0022_modify_dsgc_channel_testbed</id>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Completed tasks: 22
+Completed tasks: 23
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -269,6 +270,12 @@ ID: t0022_modify_dsgc_channel_testbed
 Completed: 2026-04-21
 Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
 Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed Summary Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008 rotation-proxy and t0020 gabaMOD-swap ports of Poleg-Polsky &amp; Diamond 2016. Direction selectivity now arises from per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I leads E by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five `forsec` regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The canonical 12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and **null 0 Hz**...
+
+## Port de Rosenroll 2026 DSGC model
+ID: t0024_port_de_rosenroll_2026_dsgc
+Completed: 2026-04-21
+Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Ported the de Rosenroll et al. 2026 DSGC model into a new library asset `de_rosenroll_2026_dsgc` (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section `RGCmodelGD.hoc` morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the cell through the paper-native 8-direction protocol and the project-standard 12-angle protocol under both correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per angle, 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces strong direction selectivity but **does not** reproduce the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -276,10 +283,9 @@ Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhi
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -353,79 +359,6 @@ No analyses beyond the basic 12-angle tuning curve and score report. Channel-sen
 parameter-space exploration, dendritic-computation decomposition, optogenetic/pharmacological
 perturbation studies, or other downstream analyses belong to follow-up tasks and must not be
 performed here.
-
-## Port de Rosenroll 2026 DSGC model
-ID: t0024_port_de_rosenroll_2026_dsgc
-Status: intervention_blocked
-Effective date: 2026-04-20
-Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
-Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
-
-#### Motivation
-
-The project currently has DSGC compartmental model ports derived from a single lineage: t0008 and
-t0020 both port ModelDB 189347 (Poleg-Polsky &amp; Diamond 2016), and t0022 modifies that same port for
-dendritic-computation DS. A sibling port of Hanson et al. 2019 is reserved in t0023. Adding de
-Rosenroll et al. 2026 as an independent third implementation provides a third structurally
-independent comparison point and, because the paper is recent, is the port most likely to
-incorporate modern methodology and channel mechanisms. In particular, it may include an explicit
-Nav1.6 / Nav1.2 split at the axon initial segment consistent with the patch-clamp priors reviewed in
-t0017, and may use more recent Kv and Cav formulations than the older Poleg-Polsky and Hanson
-models. This makes it especially relevant to the project&#x27;s channel-testbed goal of evaluating how
-specific channel combinations shape direction selectivity.
-
-#### Scope
-
-Port the de Rosenroll et al. 2026 DSGC model into the project as a new library asset (proposed slug
-`de_rosenroll_2026_dsgc`) following the HOC/MOD/morphology layout established by t0008. Fetch the
-paper as a paper asset if it is not already present. Run the standard 12-angle moving-bar
-tuning-curve protocol using the driver infrastructure from t0022 where compatible, producing
-`tuning_curves.csv` and a `score_report.json` against the target tuning curve from t0004. Compare
-results against the Poleg-Polsky lineage (t0008, t0020, t0022) and the Hanson port (t0023) in
-`results_detailed.md`.
-
-#### Deferred Status
-
-This task is deferred. It is created and reserved now but must NOT be executed by the execute-task
-loop until t0022 completes and the researcher explicitly reviews its outcomes. After task-folder
-creation the orchestrator will write an intervention file to block execution. The decision to
-proceed depends on what t0022 reveals about the channel-testbed framework and whether a third
-independent implementation adds value.
-
-#### Deliverables
-
-* New library asset `de_rosenroll_2026_dsgc` with HOC, MOD, and morphology files, `details.json`,
-  and `description.md`.
-* Source paper downloaded and registered as a paper asset if not already in the corpus.
-* 12-angle moving-bar tuning curve: `tuning_curves.csv` and `score_report.json`.
-* Cross-model comparison in `results_detailed.md` against t0008, t0020, t0022, and t0023.
-
-#### Dependencies
-
-* `t0008_port_modeldb_189347` — reference HOC/MOD library-asset skeleton.
-* `t0012_tuning_curve_scoring_loss_library` — scorer used for `score_report.json`.
-* `t0022_modify_dsgc_channel_testbed` — driver infrastructure (soft dependency; reuse if
-  compatible, otherwise adapt).
-
-#### Risks and Unknowns
-
-* The 2026 paper may have restricted full-text access or be paywalled at porting time, limiting
-  methodological detail.
-* Original source code may not be publicly released or may not target NEURON, forcing partial
-  reimplementation from the paper.
-* Morphology may live in a different repository with different conventions.
-* The model may rely on MOD mechanisms (Nav1.6, Nav1.2, modern Kv1, updated Cav) not yet in the
-  project&#x27;s MOD set, requiring new mechanism files and validation.
-* Rough effort estimate: 1-2 days if source is NEURON and openly available; 3-5 days if partial
-  reimplementation is needed.
-
-#### Out of Scope
-
-* Parameter fitting or channel-density sweeps on the ported model (future task).
-* Cross-simulator porting (e.g., NetPyNE, Brian) beyond the NEURON target.
-* Re-running t0022&#x27;s channel-testbed modifications on this model (future task if justified by t0022
-  outcomes).
-* Executing this task now — execution is blocked pending t0022 review.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -574,6 +507,7 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0022-01</id>
         <id>S-0022-02</id>
         <id>S-0022-03</id>
+        <id>S-0024-01</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -619,6 +553,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0022-05</id>
         <id>S-0022-06</id>
         <id>S-0022-07</id>
+        <id>S-0024-02</id>
+        <id>S-0024-03</id>
+        <id>S-0024-04</id>
+        <id>S-0024-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -632,9 +570,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0019-04</id>
         <id>S-0020-07</id>
         <id>S-0022-08</id>
+        <id>S-0024-05</id>
       </source_ids>
       <content>
-Open suggestions: 101
+Open suggestions: 107
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -936,6 +875,13 @@ Priority: high
 Kind: experiment
 Source task: t0022_modify_dsgc_channel_testbed
 The t0022 driver has three free per-dendrite parameters fixed at single points: EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2, 3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014&#x27;s 0.31 nS somatic measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism tracks continuous inhibition as real DSGCs do). Dependencies: t0022...
+
+## Port the full upstream SacNetwork with bp_locs/probs/deltas to reproduce the deRosenroll correlation-drop effect
+ID: S-0024-01
+Priority: high
+Kind: technique
+Source task: t0024_port_de_rosenroll_2026_dsgc
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target [0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs &gt;=0.20) because the AR(2) correlation was applied at per-terminal Exp2Syn drivers rather than across the spatially-distributed SAC varicosity release network that the paper identifies as the causal substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 -&gt; ~0.25 DSI drop.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -1252,6 +1198,34 @@ Kind: evaluation
 Source task: t0022_modify_dsgc_channel_testbed
 The project now has three independent implementations of DS on the same Poleg-Polsky &amp; Diamond 2016 skeleton: t0008 (per-angle BIP rotation, DSI 0.316), t0020 (global gabaMOD scalar swap, DSI 0.7838), and t0022 (per-dendrite E-I scheduling, DSI 1.0). Each used slightly different scoring paths, trial counts, and metric key sets. Produce a shared analysis module that loads each port&#x27;s tuning_curves.csv, recomputes DSI / peak / null / HWHM / reliability under one harmonised scorer (t0012 score() where applicable plus S-0020-04&#x27;s score_two_point for t0020), and produces one side-by-side comparison chart (polar plot overlay plus bar chart of headline metrics). Outputs a consolidated...
 
+## Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to test peak firing-rate shortfall
+ID: S-0024-02
+Priority: medium
+Kind: experiment
+Source task: t0024_port_de_rosenroll_2026_dsgc
+Peak firing rate is 5.15 Hz in t0024 versus the paper&#x27;s qualitative ~30-40 Hz and the t0004 envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate) with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
+
+## Overlay a Van Wart + Werginz AIS on the deRosenroll morphology to test peak-rate recovery
+ID: S-0024-03
+Priority: medium
+Kind: experiment
+Source task: t0024_port_de_rosenroll_2026_dsgc
+Research-internet gap 2 showed that the upstream repository has no explicit AIS section, but research-papers (Werginz 2020, Van Wart 2007) pins the AIS-to-soma Na ratio at ~7x and names AIS length as the dominant predictor of maximum sustained firing rate. Fork t0024 into a new library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 + Kv1.2) with Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol, and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the SAC network.
+
+## Parameterize t0011/t0012 tuning-curve plotter and scorer to support N_ANGLES != 12
+ID: S-0024-04
+Priority: medium
+Kind: library
+Source task: t0024_port_de_rosenroll_2026_dsgc
+The t0011 tuning_curve_viz library and the t0012 tuning_curve_loss scorer both hardcode N_ANGLES=12, which blocks native 8-direction visualisation and scoring for the deRosenroll port (and any future paper that uses 4/6/8/16/24 directions). Refactor both libraries to accept an N_ANGLES argument (default 12 for backward compatibility) and rerun the t0024 8-direction conditions through the plotter to produce polar/Cartesian PNGs for results_detailed.md. Small infrastructure change with broad reuse benefit across the DSGC lineage.
+
+## Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can include 5/5 DSGC models instead of 4/5
+ID: S-0024-06
+Priority: medium
+Kind: experiment
+Source task: t0024_port_de_rosenroll_2026_dsgc
+t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked (intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM 116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023&#x27;s intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the REQ-6 partial-coverage caveat.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -1342,6 +1316,13 @@ Priority: low
 Kind: experiment
 Source task: t0022_modify_dsgc_channel_testbed
 The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying the dendritic-integration timescale imposed by Ih...
+
+## Add a verify_library_asset.py verificator to close the framework-wide gap flagged during t0024 step 9
+ID: S-0024-05
+Priority: low
+Kind: library
+Source task: t0024_port_de_rosenroll_2026_dsgc
+During t0024 step 9 the library asset structure was validated manually against meta/asset_types/library/specification.md because no automated verificator exists. The other asset types (paper, dataset, answer) have dedicated verificators. Add verify_library_asset.py to arf/scripts/verificators/ enforcing the mandatory fields in library/specification.md (manifest, source files, citation metadata, entry points) and wire it into the prestep/poststep cycle for any task that produces a library asset. Framework infrastructure task, not task-folder work.
       </content>
     </section>
   </sections>

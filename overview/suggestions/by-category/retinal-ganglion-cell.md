@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-31 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **28 open** (13
-high, 11 medium, 4 low), **3 closed**.
+33 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **30 open** (14
+high, 12 medium, 4 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -203,6 +203,30 @@ mechanism that matches the rotation-based protocol used in t0008 more directly t
 Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
 asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
 task types: code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 
@@ -605,6 +629,28 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can
+include 5/5 DSGC models instead of 4/5</strong> (S-0024-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked
+(intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM
+116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023's
+intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model
+comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the
+REQ-6 partial-coverage caveat.
 
 </details>
 

@@ -7,7 +7,8 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 **Detail pages**: [Papers (27)](../papers/by-category/dendritic-computation.md) | [Answers
 (4)](../answers/by-category/dendritic-computation.md) | [Suggestions
 (14)](../suggestions/by-category/dendritic-computation.md) | [Datasets
-(1)](../datasets/by-category/dendritic-computation.md)
+(1)](../datasets/by-category/dendritic-computation.md) | [Libraries
+(1)](../libraries/by-category/dendritic-computation.md)
 
 ---
 

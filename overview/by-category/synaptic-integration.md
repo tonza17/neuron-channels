@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (30)](../papers/by-category/synaptic-integration.md) | [Answers
 (4)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(16)](../suggestions/by-category/synaptic-integration.md)
+(17)](../suggestions/by-category/synaptic-integration.md)
 
 ---
 
@@ -1575,7 +1575,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (14 open, 2 closed)
+## Suggestions (15 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
@@ -1633,6 +1633,24 @@ Poisson process (1, 2, 3, 5 Hz baseline rate on all synapses) and rerun the 12-a
 bg to ~0.6 at 5 Hz bg, bracketing the literature envelope, with per-angle std rising from 0 Hz
 to ~2-4 Hz matching Schachter2010 trial-to-trial variability. Dependencies: t0022 library
 asset. Effort ~8 hours. Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 

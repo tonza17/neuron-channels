@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-21T00:57:22Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-21T07:57:25Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>54</section_count>
-    <char_count>892160</char_count>
-    <byte_count>894056</byte_count>
-    <estimated_tokens>223040</estimated_tokens>
+    <section_count>57</section_count>
+    <char_count>947968</char_count>
+    <byte_count>949904</byte_count>
+    <estimated_tokens>236992</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -134,9 +134,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0020_port_modeldb_189347_gabamod</id>
         <id>t0021_brainstorm_results_4</id>
         <id>t0022_modify_dsgc_channel_testbed</id>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Completed tasks: 22
+Completed tasks: 23
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -269,6 +270,12 @@ ID: t0022_modify_dsgc_channel_testbed
 Completed: 2026-04-21
 Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
 Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed Summary Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008 rotation-proxy and t0020 gabaMOD-swap ports of Poleg-Polsky &amp; Diamond 2016. Direction selectivity now arises from per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I leads E by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five `forsec` regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The canonical 12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and **null 0 Hz**...
+
+## Port de Rosenroll 2026 DSGC model
+ID: t0024_port_de_rosenroll_2026_dsgc
+Completed: 2026-04-21
+Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Ported the de Rosenroll et al. 2026 DSGC model into a new library asset `de_rosenroll_2026_dsgc` (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section `RGCmodelGD.hoc` morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the cell through the paper-native 8-direction protocol and the project-standard 12-angle protocol under both correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per angle, 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces strong direction selectivity but **does not** reproduce the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -276,23 +283,15 @@ Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhi
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
 Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
-Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
-
-## Port de Rosenroll 2026 DSGC model
-ID: t0024_port_de_rosenroll_2026_dsgc
-Status: intervention_blocked
-Effective date: 2026-04-20
-Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
       </content>
     </section>
@@ -15952,6 +15951,952 @@ Windows (`build_cell.py:120-126`); the `_sources_dir_hoc_safe()` helper implemen
 * **Status**: completed
 * **Relevance**: Strategic brainstorm that produced t0022; sets the channel-testbed framing and the
   acceptance gates (DSI &gt;=0.5, peak &gt;=10 Hz) adopted in Requirement 4.
+      </content>
+    </section>
+    <section id="t0024_port_de_rosenroll_2026_dsgc-research_papers" source_kind="file">
+      <title>t0024_port_de_rosenroll_2026_dsgc — Port de Rosenroll 2026 DSGC model — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0024_port_de_rosenroll_2026_dsgc/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0024_port_de_rosenroll_2026_dsgc&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 16
+papers_cited: 15
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;synaptic-integration&quot;
+date_completed: &quot;2026-04-21&quot;
+status: &quot;complete&quot;
+---
+### Research Papers: Port de Rosenroll 2026 DSGC
+
+#### Task Objective
+
+Port de Rosenroll et al. 2026 (Cell Reports, `10.1016/j.celrep.2025.116833`) into the project as a
+third DSGC library asset with modern ion channels (Nav1.6 / Nav1.2 AIS split, updated Kv / Cav), and
+evaluate it with the same 12-angle moving-bar protocol used in t0022 and t0023. Corpus evidence must
+pin channel densities, AIS geometry, synaptic conductances, and the target tuning envelope before
+implementation begins, since the de Rosenroll PDF was not retrievable at the start of this step (see
+`10.1016_j.celrep.2025.116833/details.json` `download_failure_reason`); that gap is now closed by
+the manually-uploaded PDF handled in research-internet.
+
+#### Category Selection Rationale
+
+Six categories from `meta/categories/` are directly relevant. `direction-selectivity` and
+`retinal-ganglion-cell` together cover the DSGC-specific papers (Taylor 2000, Schachter 2010,
+Poleg-Polsky 2016, Hanson 2019, Poleg-Polsky 2026, Sivyer 2010, Koren 2017) that define the target
+envelope, synaptic architecture, and protocol conventions. `compartmental-modeling` and
+`voltage-gated-channels` cover the channel-biophysics priors (Fohlmeister-Miller 1997, Fohlmeister
+2010, Van Wart 2007, Kole 2008, Kole-Letzkus 2007, Hu 2009, Werginz 2020, Dhingra 2004) needed to
+parameterise the Nav1.6 / Nav1.2 AIS split, Kv1.2 distal microdomain, and modern Kv / Cav set.
+`dendritic-computation` and `synaptic-integration` surfaced Schachter 2010 local-spike thresholds
+and Hanson 2019 E / I offsets used as sanity checks. Unrelated categories (`cable-theory`,
+`patch-clamp`) were scanned for relevance but their indexed papers duplicate content already covered
+by the six selected categories.
+
+#### Key Findings
+
+##### DS Protocol Conventions (Parameter-Swap vs Spatial Rotation)
+
+Direction selectivity in Poleg-Polsky-lineage DSGC models is driven by swapping the `gabaMOD` scalar
+between preferred (0.33) and null (0.99) trials, not by rotating the bar in space. t0008 reached
+only DSI 0.316 using spatial rotation on ModelDB 189347; t0020 reached DSI 0.784 on the same
+geometry with the native parameter-swap [PolegPolsky2016]. [Hanson2019] methods prescribe a
+sigmoidal GABA release probability `Pr` from ~0.5 (null) to ~0.012 (preferred) plus a fixed
+cholinergic `Pr = 0.5`. The standard DSI metric is `DSI = (R_PD - R_ND) / (R_PD + R_ND)`
+[Schachter2010, PolegPolsky2016, Hanson2019]. [Hanson2019] uses a normalised vector sum over 8
+directions; t0022 extends to 12.
+
+##### Nav1.6 / Nav1.2 AIS Split Priors
+
+[VanWart2006] establishes that rodent RGC axon initial segments contain a Nav1.1-enriched proximal
+microdomain spatially segregated from a Nav1.6-enriched distal microdomain, with Kv1.2 present only
+in the distal microdomain. [Werginz2020] quantifies the AIS-to-soma Na density ratio at
+approximately 7x and names AIS length as the dominant morphological predictor of both maximum
+sustained firing rate and depolarisation-block threshold. [Kole2008] and [Hu2009] support the Nav1.6
+/ Nav1.2 split qualitatively for cortical neurons (Nav1.6 distal, Nav1.2 proximal, Nav1.6 drives AP
+initiation and backpropagation threshold) but their exact numeric kinetic parameters (V_half, tau,
+slope) are not in the current corpus and must be fetched during research-internet. [KoleLetzkus2007]
+demonstrates that AIS Kv1 channels control spike waveform and synaptic efficacy.
+
+##### Modern Kv / Cav Formulations for Retinal Neurons
+
+[Fohlmeister2010] provides a temperature-calibrated five-channel set (Na, K_DR, Ca, K_A, K_Ca) with
+per-compartment G-bar tables and Q10s (kinetic ~1.95, permeability ~1.6 between 23 and 37 degrees
+C); the rate constants derive from [FohlmeisterMiller1997]. The published Fohlmeister rat Type I
+densities (dendrite / soma / IS / TS / axon, mS/cm^2, 35 C) are: Na 79.5 / 72.0 / 141.1 / 231.1 /
+124; K_DR 23.4 / 50.4 / 67.8 / 74.6 / 50; Ca 1.2 / 1.2 / 0.753 / 0 / 0; K_A approximately 36 on soma
+and dendrites. Peak axonal Na reaches 448.5 mS/cm^2 in cat alpha cells on a thin segment 50-130 um
+distal to the soma.
+
+##### Quantitative Envelope Targets
+
+Target envelope from t0004 `metrics.json`: DSI 0.8824, HWHM 68.51 deg. Prior ports on the same
+ModelDB 189347 geometry: t0008 (spatial-rotation proxy) DSI 0.316; t0020 (parameter-swap) DSI 0.784.
+[Hanson2019] conductance set (soma / primary dendrite / terminal dendrite): Na 150 / 150 / 30, K
+rectifier 70 / 70 / 35, delayed rectifier 3 / 0.8 / 0.4 mS/cm^2; Cm 1 uF/cm^2, Ra 100 Ohm cm, E_leak
+-60 mV. [Schachter2010] dendritic Na is 40 mS/cm^2 uniform (or 45 -&gt; 20 gradient), somatic Na 150
+mS/cm^2; Oesch-derived compound synaptic conductances are g_exc 6.5 / g_inh 3.5 nS (PD) vs 2.5 / 6.0
+nS (ND); local spike threshold drops from 3-4 nS proximal to ~1 nS distal; inhibition of 4-10 nS
+blocks initiation and ~85 nS is required to block propagation.
+
+##### Synaptic Architecture and E / I Timing
+
+[PolegPolsky2016] equips the reconstructed DRD4 DSGC (ModelDB 189347) ON dendrites with 177 AMPA +
+177 NMDA + 177 GABA_A synapses; NMDA-receptor block reduces PD PSPs by ~35 % and ND PSPs by ~34 %
+(multiplicative), and requires Mg2+ block. [Hanson2019] E / I offset: excitation leads inhibition by
+~50 ms in PD and 0 ms in ND; there is a fixed 25-30 um spatial offset between ACh and GABA release
+sites across bar velocities from 500 to 2400 um/s; hexamethonium delays the PD EPSC onset by 26 +/-
+2 ms. [Sivyer2010] corroborates velocity-tuning timing. [Koren2017] adds cross-compartmental
+modulation of dendritic signals as a secondary DS mechanism.
+
+##### de Rosenroll 2026 Headline and Independent Cross-Check
+
+[deRosenroll2026] headline (from the paper&#x27;s public abstract and figures): perturbation of ACh via
+AChE block preserves whole-cell E / I balance but collapses subunit-level DSI. Exact quantitative
+drops are not in the corpus and must be extracted from the uploaded PDF in research-internet.
+[PolegPolsky2026] provides an independent 352-segment ON-OFF DSGC in NEURON 8.2 + Python showing
+that DSI above 0.5 is achievable via velocity-coincidence, passive delay lines, or NMDA
+multiplicative gating alone, independent of SAC inhibition; this is a useful null-model cross-check
+for the de Rosenroll port. [Dhingra2004] sets the spike-generator efficiency ceiling.
+
+#### Methodology Insights
+
+Adopt the Hanson / de Rosenroll parameter-swap protocol (GABA Pr PD = 0.33, ND = 0.99; ACh Pr fixed
+0.5) and reject the t0008 spatial-rotation proxy, which demonstrably under-shoots DSI by ~0.5 units
+on the same geometry [PolegPolsky2016, Hanson2019]. Build the channel library in two layers: a
+Fohlmeister 2010 five-channel set (Na, K_DR, Ca, K_A, K_Ca) with Table-1 G-bar maps and Q10 scaling
+as the non-AIS default [Fohlmeister2010, FohlmeisterMiller1997], then overlay a two-subsegment AIS
+(proximal Nav1.2 / Nav1.1, distal Nav1.6 + Kv1.2, AIS-to-soma Na ratio ~7x) following
+[VanWart2006, Werginz2020]; keep dendritic Na in the Schachter range (40 mS/cm^2 uniform, or 45 -&gt;
+20 gradient) [Schachter2010]. Evaluate on the same 12-angle moving-bar sweep as t0022 with 20 trials
+per angle; report whole-cell DSI, HWHM, and subunit-level DSI separately, because the de Rosenroll
+headline is that AChE block dissociates whole-cell from subunit DSI and a single scalar will obscure
+the port&#x27;s correctness. Use the 26 ms hexamethonium-induced EPSC delay and the 25-30 um ACh / GABA
+spatial offset as held-out sanity checks that must reproduce without retuning [Hanson2019].
+
+#### Gaps and Limitations
+
+The corpus does not contain the quantitative AChE-block DSI drops from [deRosenroll2026] itself, nor
+numeric V_half / tau / slope parameters for Nav1.6 and Nav1.2 from [Kole2008] and [Hu2009]
+(CrossRef-only entries in the corpus), nor the Kv1.2 AIS density from [KoleLetzkus2007]. MOD-file
+parameter values for the companion repository `geoffder/ds-circuit-ei-microarchitecture` (Zenodo
+10.5281/zenodo.17666158) are also missing. All four gaps are flagged for research-internet, where
+the manually-uploaded PDF, the Zenodo archive, and the GitHub repo will be read directly. No paper
+corpus entry quantifies whole-cell-vs-subunit DSI dissociation magnitude.
+
+#### Recommendations for This Task
+
+Start implementation from the Hanson 2019 conductance recipe and overlay a two-subsegment AIS
+parameterised from Van Wart 2007 and Werginz 2020; use the Fohlmeister 2010 channel set as the
+non-AIS default and drive with the parameter-swap protocol, not spatial rotation. Cross-check
+against (a) the t0020 Poleg-Polsky parameter-swap envelope (DSI 0.784) and (b) the t0004 target (DSI
+0.8824 / HWHM 68.51 deg); expect the de Rosenroll port to match or slightly exceed the
+Hanson-lineage DSI thanks to the ACh spatial offset plus the Nav1.6-driven AIS. Treat the 26 ms
+HEX-induced EPSC delay, the 25-30 um E / I offset, and the ~85 nS propagation-block threshold as
+held-out validation targets that must hold without retuning.
+
+#### Paper Index
+
+##### deRosenroll2026
+
+* **Title**: Uncovering the &quot;hidden&quot; synaptic microarchitecture of the retinal direction selective
+  circuit
+* **Authors**: de Rosenroll, Awatramani et al.
+* **Year**: 2026
+* **DOI**: `10.1016/j.celrep.2025.116833`
+* **Asset path**:
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/`
+* **Categories**: direction-selectivity, retinal-ganglion-cell, synaptic-integration
+* **Relevance**: Primary source for this port; headline is the AChE-block whole-cell-vs-subunit DSI
+  dissociation.
+
+##### PolegPolsky2016
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, Diamond
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset path**: `tasks/t0001_download_first_papers/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: direction-selectivity, retinal-ganglion-cell, synaptic-integration
+* **Relevance**: ModelDB 189347 geometry and AMPA / NMDA / GABA_A architecture; parameter-swap
+  protocol source.
+
+##### Hanson2019
+
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, Awatramani et al.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **Asset path**: `tasks/t0001_download_first_papers/assets/paper/10.7554_eLife.42392/`
+* **Categories**: direction-selectivity, retinal-ganglion-cell, synaptic-integration
+* **Relevance**: GABA Pr sigmoid PD / ND, fixed ACh Pr, E / I timing offset, 26 ms HEX delay,
+  conductance recipe.
+
+##### PolegPolsky2026
+
+* **Title**: Machine learning discovers numerous new computational principles underlying direction
+  selectivity in the retina
+* **Authors**: Poleg-Polsky et al.
+* **Year**: 2026
+* **DOI**: `10.1038/s41467-026-70288-4`
+* **Asset path**: `tasks/t0003_download_polegpolsky_2026/assets/paper/10.1038_s41467-026-70288-4/`
+* **Categories**: direction-selectivity, retinal-ganglion-cell, compartmental-modeling
+* **Relevance**: Independent 352-segment DSGC baseline; velocity-coincidence / NMDA null models.
+
+##### Schachter2010
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, Oesch, Taylor, Werblin
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset path**: `tasks/t0002_second_wave_papers/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: direction-selectivity, dendritic-computation, compartmental-modeling
+* **Relevance**: Dendritic / somatic Na densities, compound PD / ND conductances, local-spike
+  thresholds, ~85 nS propagation-block threshold.
+
+##### Taylor2000
+
+* **Title**: Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
+* **Authors**: Taylor, He, Levick, Vaney
+* **Year**: 2000
+* **DOI**: `10.1126/science.289.5488.2347`
+* **Asset path**: `tasks/t0002_second_wave_papers/assets/paper/10.1126_science.289.5488.2347/`
+* **Categories**: direction-selectivity, dendritic-computation
+* **Relevance**: Foundational dendritic-DS hypothesis; sets the subunit-thresholding frame.
+
+##### Fohlmeister2010
+
+* **Title**: Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using
+  Temperature as an Independent Variable
+* **Authors**: Fohlmeister, Cohen, Newman
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00123.2009`
+* **Asset path**: `tasks/t0005_fohlmeister_ion_channel_papers/assets/paper/10.1152_jn.00123.2009/`
+* **Categories**: compartmental-modeling, voltage-gated-channels, retinal-ganglion-cell
+* **Relevance**: Five-channel set, per-compartment G-bar table, temperature Q10s for non-AIS
+  default.
+
+##### FohlmeisterMiller1997
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, Miller
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset path**:
+  `tasks/t0005_fohlmeister_ion_channel_papers/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: compartmental-modeling, voltage-gated-channels
+* **Relevance**: Rate-constant derivations feeding the 2010 temperature calibration.
+
+##### Werginz2020
+
+* **Title**: Tailoring of the axon initial segment shapes the conversion of synaptic inputs into
+  spiking output in OFF-alpha T retinal ganglion cells
+* **Authors**: Werginz et al.
+* **Year**: 2020
+* **DOI**: `10.1126/sciadv.abb6642`
+* **Asset path**: `tasks/t0006_ais_papers/assets/paper/10.1126_sciadv.abb6642/`
+* **Categories**: retinal-ganglion-cell, voltage-gated-channels, compartmental-modeling
+* **Relevance**: AIS-to-soma Na ratio ~7x; AIS length as dominant predictor of firing rate and
+  depolarisation block.
+
+##### VanWart2006
+
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, Trimmer, Matthews
+* **Year**: 2007
+* **DOI**: `10.1002/cne.21173`
+* **Asset path**: `tasks/t0006_ais_papers/assets/paper/10.1002_cne.21173/`
+* **Categories**: retinal-ganglion-cell, voltage-gated-channels
+* **Relevance**: Nav1.1-proximal / Nav1.6-distal microdomain split; Kv1.2 in distal microdomain
+  only.
+
+##### Kole2008
+
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole et al.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **Asset path**: `tasks/t0006_ais_papers/assets/paper/10.1038_nn2040/`
+* **Categories**: voltage-gated-channels, compartmental-modeling
+* **Relevance**: Qualitative AIS Na-density argument (CrossRef-only entry; numbers needed via
+  research-internet).
+
+##### KoleLetzkus2007
+
+* **Title**: Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic
+  Efficacy
+* **Authors**: Kole, Letzkus, Stuart
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.07.031`
+* **Asset path**: `tasks/t0006_ais_papers/assets/paper/10.1016_j.neuron.2007.07.031/`
+* **Categories**: voltage-gated-channels, synaptic-integration
+* **Relevance**: AIS Kv1 control of spike waveform; Kv1.2 density needed via research-internet.
+
+##### Hu2009
+
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, Tian, Li, Shu, Yu
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **Asset path**: `tasks/t0006_ais_papers/assets/paper/10.1038_nn.2359/`
+* **Categories**: voltage-gated-channels, compartmental-modeling
+* **Relevance**: Nav1.6-distal / Nav1.2-proximal functional split (CrossRef-only; kinetic parameters
+  needed via research-internet).
+
+##### Sivyer2010
+
+* **Title**: Synaptic inputs and timing underlying the velocity tuning of direction-selective
+  ganglion cells in rabbit retina
+* **Authors**: Sivyer, Williams
+* **Year**: 2010
+* **DOI**: `10.1113/jphysiol.2010.192716`
+* **Asset path**: `tasks/t0002_second_wave_papers/assets/paper/10.1113_jphysiol.2010.192716/`
+* **Categories**: direction-selectivity, synaptic-integration
+* **Relevance**: Velocity-tuning timing data corroborating Hanson E / I offsets.
+
+##### Koren2017
+
+* **Title**: Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity
+* **Authors**: Koren et al.
+* **Year**: 2017
+* **DOI**: `10.1016/j.neuron.2017.07.020`
+* **Asset path**: `tasks/t0002_second_wave_papers/assets/paper/10.1016_j.neuron.2017.07.020/`
+* **Categories**: direction-selectivity, dendritic-computation
+* **Relevance**: Secondary cross-compartmental DS mechanism.
+
+##### Dhingra2004
+
+* **Title**: Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell
+* **Authors**: Dhingra, Smith
+* **Year**: 2004
+* **DOI**: `10.1523/jneurosci.5346-03.2004`
+* **Asset path**: `tasks/t0002_second_wave_papers/assets/paper/10.1523_jneurosci.5346-03.2004/`
+* **Categories**: retinal-ganglion-cell, voltage-gated-channels
+* **Relevance**: Spike-generator efficiency ceiling for sanity-checking firing rates.
+      </content>
+    </section>
+    <section id="t0024_port_de_rosenroll_2026_dsgc-research_internet" source_kind="file">
+      <title>t0024_port_de_rosenroll_2026_dsgc — Port de Rosenroll 2026 DSGC model — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0024_port_de_rosenroll_2026_dsgc/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0024_port_de_rosenroll_2026_dsgc&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 5
+sources_cited: 6
+papers_discovered: 0
+date_completed: &quot;2026-04-21&quot;
+status: &quot;complete&quot;
+---
+### Research Internet: Port de Rosenroll 2026 DSGC
+
+#### Task Objective
+
+Port de Rosenroll et al. 2026 (Cell Reports, 10.1016/j.celrep.2025.116833) into the project as a
+third DSGC library asset with modern ion channels and evaluate it with the same 12-angle moving-bar
+protocol used in t0022 and t0023. This internet-research step closes the gaps identified in
+`research_papers.md` by reading the manually-uploaded PDF [deRosenroll2026] and the companion Zenodo
+archive [dsMicro-Zenodo] / GitHub repository [dsMicro-GH] directly, pinning channel densities,
+synaptic conductances, AIS geometry, noise-model parameters, and the target tuning envelope before
+implementation begins.
+
+#### Gaps Addressed
+
+From `research_papers.md` Gaps and Limitations:
+
+1. **Quantitative AChE-block DSI drops from [deRosenroll2026]** - **Resolved**. Reading the PDF
+   directly yielded the two headline numbers: correlated SAC ACh/GABA co-release produces DSI around
+   0.39, while uncorrelated (or AMB-broadened) release collapses DSI to around 0.25, an
+   approximately 36 percent drop [deRosenroll2026]. The AMB spatial footprint has a decay constant
+   tau ~ 27 um, so subunits within ~ 100 um of the pipette are degraded while distant subunits and
+   somatic E/I are spared.
+
+2. **Nav1.6 / Nav1.2 V_half / tau / slope parameters (Kole2008, Hu2009)** - **Unresolved, but
+   deprioritised.** The deRosenroll companion code [dsMicro-GH] does not implement a Nav1.6 / Nav1.2
+   AIS split. It uses a single `HHst_noiseless.mod` (Hodgkin-Huxley-style Na+ / K+) on soma and
+   primary dendrites only, with no explicit axon initial segment. Adding AIS kinetics would
+   therefore diverge from the source. This finding contradicts the Recommendations in
+   `research_papers.md` that called for a Van Wart 2007 / Werginz 2020 AIS overlay; that overlay is
+   now out of scope for the port.
+
+3. **Kv1.2 AIS density (KoleLetzkus2007)** - **Resolved as not applicable**. Same reasoning as gap
+   2: without an explicit AIS section, no Kv1.2 density is required.
+
+4. **MOD-file parameter values for the companion repository [dsMicro-GH]** - **Resolved**. Reading
+   `ei_balance.py`, `HHst_noiseless.mod`, `cadecay.mod`, and `Exp2NMDA.mod` gave the full parameter
+   set: Ra = 100 Ohm*cm, cm = 1 uF/cm^2, gleak = 5e-5 S/cm^2, eleak = -60 mV, gbar_Na = 150, 200, 30
+   mS/cm^2 (soma / primary / distal), gbar_K = 35, 40, 25 mS/cm^2, ACh Exp2Syn 0.5/6 ms with gmax =
+   140.85 pS, GABA Exp2Syn 0.5/35 ms with gmax = 450.72 pS, NMDA Exp2NMDA 2/80 ms with gmax = 140.85
+   pS, Ca2+ decay tau = 10 ms, celsius = 36.9 C, dt = 0.1 ms. AR(2) release-rate noise with phi =
+   [0.9, -0.1] and cross-channel correlation 0.6, calibrated to Cafaro and Rieke 2010 voltage-clamp
+   data, reproduces the E/I noise spectrum. GABA is scaled 1.8x to match the empirical I:E ratio.
+
+5. **Whole-cell-vs-subunit DSI dissociation magnitude** - **Resolved**. Somatic E/I ratio is
+   preserved under AMB (p &gt; 0.05) while dendritic Ca2+ subunit DSI drops significantly. The spatial
+   signature of AMB (tau ~ 27 um) confirms this is a subcellular rather than global effect
+   [deRosenroll2026].
+
+**Additional note flagged back to the implementation plan**: paper text and repository code disagree
+on Ra (paper: 200; code: 100), eleak (paper: -65; code: -60), and Na/K densities (paper: 200/70/35
+and 40/12/18; code: 150/200/30 and 35/40/25). The repository values are authoritative for the port
+[dsMicro-GH].
+
+#### Search Strategy
+
+**Sources searched**: (a) the manually-uploaded PDF at the staging path
+`C:\Users\md1avn\Documents\GitHub\neuron-channels-staging\de_rosenroll_2026.pdf` extracted with
+`pdftotext`; (b) the companion Zenodo archive [dsMicro-Zenodo] at DOI 10.5281/zenodo.17666158; (c)
+the companion GitHub repository [dsMicro-GH] at `geoffder/ds-circuit-ei-microarchitecture`,
+specifically the `ei_balance.py` driver, the `RGCmodelGD.hoc` morphology, and the MOD sources
+`HHst_noiseless.mod`, `cadecay.mod`, and `Exp2NMDA.mod`; (d) Cell Reports landing page at the
+Elsevier ScienceDirect URL [CellRep-Page].
+
+**Queries executed** (5 total):
+
+1. WebFetch `https://zenodo.org/records/17666158` to confirm DOI resolves and extract repository
+   metadata (version, deposit date, file manifest).
+2. WebFetch `https://github.com/geoffder/ds-circuit-ei-microarchitecture` (root) and the raw
+   `ei_balance.py`, `modelUtils.py`, `experiments.py`, `SacNetwork.py`, `NetQuanta.py`, `Rig.py`
+   files to locate biophysics and synaptic parameters.
+3. WebFetch
+   `https://raw.githubusercontent.com/geoffder/ds-circuit-ei-microarchitecture/main/RGCmodelGD.hoc`
+   and the `.mod` files under `mechanisms/` to extract channel and synaptic MOD parameters.
+4. `pdftotext` extraction of the manually-uploaded [deRosenroll2026] PDF and grep for &quot;DSI&quot;,
+   &quot;ambenonium&quot;, &quot;AMB&quot;, &quot;correlated&quot;, &quot;tau&quot;, &quot;HHst&quot;, and &quot;celsius&quot; to pin numerical values.
+5. WebFetch `https://www.sciencedirect.com/science/article/pii/S2211124725013968` to confirm
+   publication metadata (venue, date, DOI, ScienceDirect URL) [CellRep-Page].
+
+**Date range**: 2025-2026 publication window for the primary paper; the companion repository code
+was reviewed at its current state (2026-04 snapshot). Foundational references cited inside the paper
+(Briggman 2011 connectome, Cafaro-Rieke 2010 noise calibration) were not independently searched
+because they are already covered by `research_papers.md` corpus entries.
+
+**Inclusion criteria**: Must provide (a) quantitative AChE-block phenotype numbers, (b) concrete
+MOD-file parameter values, (c) explicit synaptic kinetics or conductance densities, or (d) the
+noise-process specification. Excluded: general reviews, unrelated retinal modeling work, or
+secondary summaries.
+
+**Search iterations**: Query 2 was split into per-file WebFetches because initial WebFetch of the
+repo root returned only a file listing. Biophysics parameters were located only after the fifth
+per-file fetch (`ei_balance.py`); earlier fetches of `modelUtils.py`, `experiments.py`,
+`SacNetwork.py`, `NetQuanta.py`, and `Rig.py` returned no channel densities. Query 4 was added after
+WebFetch of `RGCmodelGD.hoc` showed only morphology (shape3d_1..13, topology) with no biophysics,
+confirming that the biophysics lives exclusively in the Python driver.
+
+#### Key Findings
+
+##### Quantitative AChE-Block Phenotype and DSI Benchmarks
+
+The paper [deRosenroll2026] provides the two numerical targets that were missing from the corpus.
+Correlated ACh/GABA co-release at SAC varicosities yields DSI around **0.39**, while decorrelating
+the two transmitters (or broadening ACh spatially with ambenonium) drops DSI to around **0.25**, a
+~36 percent reduction. The spatial signature of AMB is a Gaussian-like decay with tau ~ **27 um**
+around the pipette tip. Subunits closer than ~100 um lose DS tuning; subunits farther than ~100 um
+and somatic spike output are preserved. Critically, the global somatic E/I ratio is statistically
+unchanged (p &gt; 0.05), establishing the subcellular-vs-global dissociation that defines the paper.
+
+##### Repository Biophysics and Synaptic Parameters
+
+The companion code [dsMicro-GH] exposes every parameter required to reproduce the model (confirmed
+by direct file read). The DSGC morphology has **341 sections** imported from `RGCmodelGD.hoc`.
+Passive properties in the code: Ra = **100 Ohm*cm**, cm = **1 uF/cm^2**, gleak = **5e-5 S/cm^2**,
+eleak = **-60 mV**. Active conductances use the custom `HHst_noiseless.mod` mechanism on soma and
+primary dendrites only (no AIS, no axon): gbar_Na = **150, 200, 30 mS/cm^2** and gbar_K = **35, 40,
+25 mS/cm^2** across soma, primary, and distal compartments. Synaptic inputs use Exp2Syn point
+processes for ACh (tau1/tau2 = **0.5/6 ms**, E_rev = 0 mV, gmax = **140.85 pS**), GABA (**0.5/35
+ms**, E_rev = -60 mV, gmax = **450.72 pS**), and AMPA (0.2/4 ms). NMDA uses `Exp2NMDA.mod` with Mg2+
+block (**2/80 ms**, gmax = **140.85 pS**). Intracellular Ca2+ buffering via `cadecay.mod` with tau =
+**10 ms**. Simulation runs at **celsius = 36.9 C** and **dt = 0.1 ms**.
+
+##### AR(2) Correlated Release Noise Model
+
+Each SAC varicosity co-releases ACh and GABA with correlated, noisy release rates drawn from an
+autoregressive AR(2) Gaussian process with **phi = [0.9, -0.1]** and cross-transmitter correlation
+peak **rho = 0.6** [deRosenroll2026, dsMicro-GH]. This process is calibrated to Cafaro and Rieke
+2010 oscillating voltage-clamp data. The GABA conductance is scaled **1.8x** to compensate for
+chloride-reversal dynamics so the modeled I:E ratio matches the experimental observation. This is a
+notable departure from the simpler Poisson or independent-release noise in the Hanson 2019 and
+Poleg-Polsky 2016 lineages already in the corpus.
+
+##### No AIS in the Source Model (Contradicts research_papers.md)
+
+Direct inspection of [dsMicro-GH] confirms that the de Rosenroll 2026 model does **not** contain an
+explicit axon-initial-segment section. Spikes are somatic Na-driven using the same
+`HHst_noiseless.mod` on soma and primary dendrites. This contradicts the Recommendations section of
+`research_papers.md`, which advised overlaying a Van Wart 2007 / Werginz 2020 AIS parameterised with
+Kole 2008 / Hu 2009 Nav1.6 / Nav1.2 kinetics. That overlay is now out of scope for the port:
+reproducing the paper requires the single-`HHst_noiseless` channel set. Any AIS split should be
+saved as a follow-up suggestion rather than included in the initial port.
+
+##### Stimulus Protocol and DSI Metric
+
+The moving-bar stimulus uses **8 directions**, bar velocity **1 mm/s**, bar width **250 um**, with a
+**30 um** minimum offset between SAC somata and their DSGC contacts (Briggman 2011 connectome
+[deRosenroll2026]). DSI is computed as the normalized vector sum of spike counts across directions.
+This differs in direction count from the project-standard t0022 / t0023 **12-angle** protocol; the
+port must either (a) use 8 directions to match the paper, (b) extend to 12 for project consistency,
+or (c) report both. Recommendation: run both and report the 8-direction DSI as the paper-match
+benchmark (DSI ~ 0.39) and the 12-angle DSI as the project-comparable metric.
+
+#### Methodology Insights
+
+* **Use the repository values, not the paper-text values, where they disagree.** Ra = 100 Ohm*cm
+  (code) vs 200 Ohm*cm (paper text); eleak = -60 mV (code) vs -65 mV (paper text); gbar_Na =
+  150/200/30 (code) vs 200/70/35 mS/cm^2 (paper text); gbar_K = 35/40/25 (code) vs 40/12/18 mS/cm^2
+  (paper text) [dsMicro-GH]. The code is what actually produced the published DSI numbers;
+  paper-text alternatives should be logged in the plan and tested as a sensitivity sweep only.
+
+* **Adopt the AR(2) correlated release-rate noise model.** Independent Poisson release will not
+  reproduce the Cafaro-Rieke 2010 noise spectrum or the correlated-vs-uncorrelated DSI contrast
+  [deRosenroll2026]. Implement AR(2) with phi = [0.9, -0.1] and a 2-channel Gaussian
+  cross-correlation rho = 0.6.
+
+* **Skip the AIS overlay.** The port must not add a Nav1.6 / Nav1.2 AIS split; doing so would
+  diverge from the source and change the spike output distribution. Treat Van Wart 2007 / Werginz
+  2020 AIS kinetics as a follow-up suggestion, not as part of this port.
+
+* **Place SAC varicosities by connectome, not by rule.** The model depends on individual release
+  sites positioned per Briggman 2011 with a 30 um minimum SAC-soma offset. Lumping varicosities into
+  a handful of compartments will destroy the subcellular DS signal that the paper reports
+  [deRosenroll2026].
+
+* **Benchmark with the two DSI targets.** DSI ~ 0.39 (correlated) and DSI ~ 0.25 (uncorrelated) are
+  the port validation targets. Any reimplementation must recover the ~36 percent DSI drop under ACh
+  decorrelation or AMB-style spatial broadening.
+
+* **Hypothesis (testable in this task)**: extending the direction set from 8 to 12 angles will yield
+  a slightly higher DSI (tighter vector-sum resolution) but preserve the correlated-vs- uncorrelated
+  contrast. If true, 12-angle DSI serves as a monotone rescaling of 8-angle DSI and can be used as
+  the project-consistent metric.
+
+* **Hypothesis (follow-up)**: adding a Nav1.6 / Nav1.2 AIS overlay on top of the de Rosenroll base
+  model (as originally suggested by `research_papers.md`) would increase somatic spike threshold
+  sharpness but leave dendritic subunit DSI unchanged. This is a follow-up task, not part of this
+  port.
+
+#### Discovered Papers
+
+No new papers were discovered that need to be added to the corpus.
+
+Rationale: the central paper [deRosenroll2026] is already present as a paper asset in this task; the
+companion code is a repository, not a paper; and the foundational references cited inside the paper
+(Briggman 2011, Cafaro-Rieke 2010) are already covered by prior tasks in the corpus. The frontmatter
+field `papers_discovered` is therefore **0**.
+
+#### Recommendations for This Task
+
+1. **Use the [dsMicro-GH] repository parameters as the authoritative source.** Passive: Ra = 100
+   Ohm*cm, cm = 1 uF/cm^2, gleak = 5e-5 S/cm^2, eleak = -60 mV. Active: `HHst_noiseless` with
+   gbar_Na 150/200/30 and gbar_K 35/40/25 mS/cm^2 on soma/primary/distal. Log paper-text
+   alternatives (Ra 200, eleak -65, Na 200/70/35, K 40/12/18) for sensitivity sweep only. This
+   updates `research_papers.md` Recommendations.
+
+2. **Drop the Nav1.6 / Nav1.2 AIS overlay from the port.** The source model has no axon initial
+   segment; adding one would diverge from the published biophysics [dsMicro-GH, deRosenroll2026].
+   File a follow-up suggestion for a separate AIS-augmented variant.
+
+3. **Implement the AR(2) correlated release-rate noise exactly as specified.** phi = [0.9, -0.1],
+   cross-channel rho = 0.6, 1.8x GABA scaling, calibrated to Cafaro-Rieke 2010.
+
+4. **Port synaptic kinetics verbatim**: ACh Exp2Syn 0.5/6 ms 140.85 pS; GABA Exp2Syn 0.5/35 ms
+   450.72 pS; NMDA Exp2NMDA 2/80 ms 140.85 pS with voltage-dependent Mg2+ block; AMPA Exp2Syn 0.2/4
+   ms. Ca2+ decay tau 10 ms.
+
+5. **Validate against two DSI benchmarks**: DSI ~ 0.39 (correlated ACh/GABA) and DSI ~ 0.25
+   (uncorrelated). The port must recover the ~36 percent drop; otherwise the noise process or
+   correlation structure is misimplemented.
+
+6. **Run both 8-direction (paper-match) and 12-angle (project-consistent) stimulus protocols.**
+   Report 8-angle DSI as the primary paper-match metric, 12-angle DSI as the project-standard
+   comparison to t0022 and t0023.
+
+7. **Preserve 36.9 C simulation temperature and dt = 0.1 ms.** These are part of the parameter set
+   that the code uses and they affect channel kinetics.
+
+#### Source Index
+
+##### [deRosenroll2026]
+
+* **Type**: paper
+* **Title**: Uncovering the &quot;hidden&quot; synaptic microarchitecture of the retinal direction selective
+  circuit
+* **Authors**: deRosenroll, G., Sethuramanujam, S., Awatramani, G. B.
+* **Year**: 2026
+* **DOI**: `10.1016/j.celrep.2025.116833`
+* **URL**: https://www.sciencedirect.com/science/article/pii/S2211124725013968
+* **Peer-reviewed**: yes (Cell Reports)
+* **Relevance**: Primary source. Provides the DSI benchmarks (correlated 0.39 vs uncorrelated 0.25),
+  the AMB decay constant (tau ~ 27 um), the AR(2) noise parameters, the stimulus protocol, and the
+  subcellular-vs-global E/I dissociation result. Asset stored at
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/`.
+
+##### [dsMicro-Zenodo]
+
+* **Type**: dataset
+* **Title**: deRosenroll et al. 2026 DS circuit E/I microarchitecture model code
+* **Author/Org**: deRosenroll, G.; Awatramani lab (University of Victoria)
+* **Date**: 2026-02
+* **URL**: https://zenodo.org/records/17666158 (DOI 10.5281/zenodo.17666158)
+* **Peer-reviewed**: no (code archive)
+* **Relevance**: Authoritative archived snapshot of the NEURON model code and MOD files. Contains
+  the `RGCmodelGD.hoc` morphology, the `HHst_noiseless.mod`, `cadecay.mod`, and `Exp2NMDA.mod`
+  mechanisms, and the Python driver. This is the frozen reference for the port.
+
+##### [dsMicro-GH]
+
+* **Type**: repository
+* **Title**: ds-circuit-ei-microarchitecture
+* **Author/Org**: Geoff deRosenroll (`geoffder` on GitHub)
+* **URL**: https://github.com/geoffder/ds-circuit-ei-microarchitecture
+* **Last updated**: 2026-02 (tracks the Zenodo snapshot)
+* **Peer-reviewed**: no (live code)
+* **Relevance**: Primary source for all biophysics and synaptic parameter values. The
+  `ei_balance.py` driver contains the authoritative Ra, cm, gleak, eleak, gbar_Na, gbar_K, synaptic
+  conductance and kinetic values, the AR(2) noise model (phi = [0.9, -0.1], rho = 0.6), and the 1.8x
+  GABA scaling factor. Use the repository values over the paper-text values where they disagree.
+
+##### [CellRep-Page]
+
+* **Type**: documentation
+* **Title**: Cell Reports ScienceDirect article landing page for deRosenroll 2026
+* **Author/Org**: Elsevier / Cell Reports
+* **URL**: https://www.sciencedirect.com/science/article/pii/S2211124725013968
+* **Peer-reviewed**: yes (the underlying article is peer-reviewed)
+* **Relevance**: Confirms venue (Cell Reports, journal), publication date (2026-02-24), DOI, and
+  canonical landing-page URL recorded in the paper asset `details.json`.
+
+##### [Briggman2011]
+
+* **Type**: paper
+* **Title**: Wiring specificity in the direction-selectivity circuit of the retina
+* **Authors**: Briggman, K. L., Helmstaedter, M., Denk, W.
+* **Year**: 2011
+* **DOI**: `10.1038/nature09818`
+* **URL**: https://www.nature.com/articles/nature09818
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Source of the SAC to DSGC connectome that the deRosenroll model uses to place
+  varicosities. Already covered by prior corpus tasks; cited here to document provenance of the 30
+  um SAC-soma offset and wiring asymmetry encoded in the port.
+
+##### [CafaroRieke2010]
+
+* **Type**: paper
+* **Title**: Noise correlations improve response fidelity and stimulus encoding
+* **Authors**: Cafaro, J., Rieke, F.
+* **Year**: 2010
+* **DOI**: `10.1038/nature09576`
+* **URL**: https://www.nature.com/articles/nature09576
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Provides the oscillating voltage-clamp E/I noise correlation data that
+  [deRosenroll2026] uses to calibrate the AR(2) release-rate noise process (rho = 0.6 peak
+  correlation). Cited to justify the choice of cross-transmitter correlation in the port.
+      </content>
+    </section>
+    <section id="t0024_port_de_rosenroll_2026_dsgc-research_code" source_kind="file">
+      <title>t0024_port_de_rosenroll_2026_dsgc — Port de Rosenroll 2026 DSGC model — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0024_port_de_rosenroll_2026_dsgc</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0024_port_de_rosenroll_2026_dsgc/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0024_port_de_rosenroll_2026_dsgc&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 6
+tasks_cited: 6
+libraries_found: 5
+libraries_relevant: 3
+date_completed: &quot;2026-04-21&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Port de Rosenroll 2026 DSGC
+
+#### Task Objective
+
+Port the de Rosenroll et al. 2026 DSGC model into the project as a new library asset (proposed slug
+`de_rosenroll_2026_dsgc`) following the HOC/MOD/morphology layout established by t0008, run the
+canonical 12-angle moving-bar tuning-curve sweep against the t0004 target envelope, and compare
+results against the existing Poleg-Polsky lineage (`modeldb_189347_dsgc` and siblings) and the
+Hanson 2019 sibling. This is a third, structurally independent NEURON DSGC implementation that
+should exercise more recent channel formulations (Nav1.6/Nav1.2 AIS split, modern Kv/Cav
+mechanisms).
+
+#### Library Landscape
+
+Five libraries are registered across prior tasks (enumerated by walking `tasks/*/assets/library/`
+because no `aggregate_libraries.py` aggregator is wired in yet):
+
+* **`modeldb_189347_dsgc`** (v0.1.0, created by [t0008]) — the reference HOC/MOD/morphology
+  skeleton. Ships `code/build_cell.py` (NEURON bootstrap, DLL load, HOC sourcing, `build_dsgc`,
+  `apply_params`, `run_one_trial`), `code/run_tuning_curve.py` (12 x 20 canonical sweep),
+  `code/score_envelope.py` (t0012 scoring glue), `code/swc_io.py` (SWC parse/validate/write), and
+  `sources/` with the ModelDB 189347 MOD/HOC files (`HHst.mod`, `SAC2RGCexc.mod`,
+  `SAC2RGCinhib.mod`, `bipolarNMDA.mod`, `SquareInput.mod`, `spike.mod`, `RGCmodel.hoc`,
+  `dsgc_model.hoc`, `nrnmech.dll` on Windows). Import path:
+  `tasks.t0008_port_modeldb_189347.code.build_cell`. **Highly relevant** — the HOC-sourcing and
+  per-trial loop pattern transfers directly.
+* **`tuning_curve_loss`** (v0.1.0, [t0012]) — canonical scorer consuming a 12-angle CSV and
+  returning a `ScoreReport` with DSI/peak/null/HWHM/RMSE/reliability. Import path:
+  `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss`. Exposes `score`,
+  `score_curves`, `load_tuning_curve`, `compute_dsi`, `compute_hwhm_deg`, `check_envelope`, plus
+  metric-key constants (`METRIC_KEY_DSI`, `METRIC_KEY_HWHM`, `METRIC_KEY_RELIABILITY`,
+  `METRIC_KEY_RMSE`). **Highly relevant** — this is exactly the deliverable scorer.
+* **`modeldb_189347_dsgc_gabamod`** (v0.1.0, [t0020]) — sibling port using the paper&#x27;s native
+  gabaMOD PD/ND parameter swap (PD=0.33, ND=0.99). Reference pattern for parameter-swap drivers, but
+  built for a 2-condition schema (not 12-angle), so its driver is **not** the right template for
+  t0024. **Moderately relevant** as a precedent.
+* **`modeldb_189347_dsgc_dendritic`** (v0.1.0, [t0022]) — 12-angle moving-bar driver with per-
+  dendrite AMPA/GABA_A `Exp2Syn` pairs driven by NetStim bursts and a channel-modular AIS partition
+  (`dsgc_channel_partition.hoc`). **Highly relevant** — this is the closest match to what t0024
+  needs. Note its `code/` is in the task folder, not wrapped as an importable Python module inside
+  `assets/library/`, so cross-task reuse requires copy-in.
+* **`tuning_curve_viz`** (v0.1.0, [t0011]) — Cartesian, polar, multi-model overlay, and
+  raster+PSTH plotters for tuning-curve CSVs. **Optionally relevant** for the `results/images/`
+  deliverable.
+
+All aggregator output is the raw library state; no correction overlays touch these libraries.
+
+#### Key Findings
+
+##### HOC/MOD skeleton and port layout
+
+[t0008] establishes the canonical layout every NEURON port follows: ModelDB sources are dropped
+verbatim into `assets/library/&lt;slug&gt;/sources/`, compiled in place with `nrnivmodl` via the
+`run_nrnivmodl.cmd` Windows wrapper, and the resulting `nrnmech.dll` is loaded through
+`h.nrn_load_dll` before any `h.load_file(...)` HOC import. `build_cell.py` (358 lines) wraps the
+whole boot sequence: `load_neuron()` sets `NEURONHOME`, loads the DLL, sources `stdrun.hoc`;
+`build_dsgc()` calls `h.chdir` on the sources dir using forward slashes (HOC parser treats `\` as an
+escape character on Windows), then loads `RGCmodel.hoc` and the GUI-stripped `dsgc_model.hoc`, then
+fires `init_sim()` / `init_active()` / `update()`. `apply_params(h, seed=...)` then sets
+`celsius=32`, `dt=0.1`, `tstop=1000`, `v_init=-65`, synaptic conductances, and the HHst
+`vshift_HHst` — the 30-parameter canonical block is already defined in `code/constants.py`.
+[t0020] reuses this skeleton unchanged (library import of `build_dsgc`, `apply_params`,
+`read_synapse_coords`, `SynapseCoords`). [t0022] also imports the same `build_cell` module and only
+adds an extra HOC overlay (`dsgc_channel_partition.hoc`) on top. The de Rosenroll port will not
+reuse this library verbatim because it is a different model with different channel files, but the
+exact same layout (`sources/` + `build_cell.py` + `code/run_nrnivmodl.cmd`) is the right pattern.
+
+##### Driver evolution for 12-angle moving-bar sweeps
+
+The project has now iterated the moving-bar driver three times. [t0008] drives direction selectivity
+via **spatial rotation** of BIP synapse `(locx, locy)` around the soma while SAC coordinates stay
+fixed (see `rotate_synapse_coords_in_place` at `build_cell.py:211-263`). Each trial calls
+`apply_params` -&gt; `rotate_synapse_coords_in_place` -&gt; `h(&quot;update()&quot;)` -&gt; `h(&quot;placeBIP()&quot;)` -&gt;
+`h.finitialize` -&gt; `h.continuerun(1000 ms)` -&gt; count rising threshold crossings at -10 mV at the
+soma. This hit DSI 0.316 / peak 18.1 Hz — under target because rotation is a proxy for the paper&#x27;s
+native per-angle gabaMOD swap. [t0020] rewrote the driver as a 2-condition (PD, ND) protocol that
+overrides `h.gabaMOD` to 0.33 vs 0.99 after `apply_params`; this reached DSI 0.7838 / peak 14.85 Hz.
+[t0022] then moved to a fundamentally different protocol: baseline HOC synapses are silenced
+(`_silence_baseline_hoc_synapses` zeros `b2gampa`, `b2gnmda`, `s2ggaba`, `s2gach` and re-runs
+`update()`/`placeBIP()`), per-ON-dendrite AMPA (`sec(0.9)`) + GABA_A (`sec(0.3)`) `Exp2Syn` pairs
+are created once at build time and driven by dedicated NetStim bursts, and `schedule_ei_onsets`
+computes per-pair start times as a function of bar direction. The CSV schema is the canonical
+`(angle_deg, trial_seed, firing_rate_hz)` across all three drivers [t0008, t0020, t0022] — that
+schema is what `tuning_curve_loss.score` expects.
+
+##### Scoring glue with `tuning_curve_loss`
+
+All three driver generations use identical scoring glue [t0008, t0020, t0022]. `score_envelope.py`
+is effectively a 100-line copy across tasks: import `score`, `METRIC_KEY_DSI`, `METRIC_KEY_HWHM`,
+`METRIC_KEY_RELIABILITY`, `METRIC_KEY_RMSE` from
+`tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss`, call
+`score(simulated_curve_csv=&lt;csv_path&gt;)`, then serialize a 13-field debug dump to
+`data/score_report.json` and the four registered metric keys to `results/metrics.json`
+([t0012]-registered keys). `score()` resolves the default target to the t0004 canonical curve. The
+identity gate `score(TARGET_MEAN_CSV).loss_scalar == 0.0` is the standard self-check [t0008].
+
+##### Library-vs-copy reuse boundary
+
+[t0008]&#x27;s `modeldb_189347_dsgc` is the only port library whose Python code is physically rooted
+inside `assets/library/&lt;slug&gt;/code/` — the library `details.json` declares it via `module_paths`.
+[t0020]&#x27;s library also points at its task-folder `code/` via `module_paths`. [t0022]&#x27;s library
+declares `module_paths` pointing to task-folder `code/` files, but nothing stops cross-task import
+in principle since task folders are Python packages (t0022 imports
+`tasks.t0008_port_modeldb_189347.code.build_cell` directly). The project rule is clear: cross-task
+imports are permitted only through registered libraries; everything else must be copied.
+
+#### Reusable Code and Assets
+
+* **`modeldb_189347_dsgc` library** from [t0008]. **Import via library.** Specifically
+  `build_cell.py` provides `build_dsgc() -&gt; h`, `apply_params(h, *, seed: int) -&gt; None`,
+  `read_synapse_coords(h) -&gt; list[SynapseCoords]`, `get_cell_summary(h) -&gt; CellSummary`, and
+  `run_one_trial(*, h, angle_deg, seed, baseline_coords) -&gt; float`. For t0024 these cannot be
+  imported as-is (different model, different HOC file names) but are the template for a new
+  analogous module. Approx 358 lines in `build_cell.py`; adapt to de Rosenroll HOC/MOD file names,
+  new parameter block, new channel densities. The Windows-specific nrnmech.dll loading sequence
+  (`_nrnmech_dll_path`, `load_neuron`, `_sources_dir_hoc_safe`) transfers unchanged.
+
+* **`tuning_curve_loss` library** from [t0012]. **Import via library.** Use
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss import score, METRIC_KEY_DSI, METRIC_KEY_HWHM, METRIC_KEY_RELIABILITY, METRIC_KEY_RMSE`
+  and call `report = score(simulated_curve_csv=&lt;path&gt;)`. No adaptation needed if the CSV uses the
+  canonical `(angle_deg, trial_seed, firing_rate_hz)` schema. Zero lines to copy.
+
+* **`score_envelope.py` pattern** from `tasks/t0008_port_modeldb_189347/code/score_envelope.py`
+  (also present almost verbatim in
+  `tasks/t0022_modify_dsgc_channel_testbed/code/score_envelope.py`). **Copy into task.** Approx 100
+  lines. Adapt only the input CSV constant and the output paths.
+
+* **12-angle moving-bar driver pattern** from
+  `tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py` (683 lines) and its
+  `neuron_bootstrap.py` (64 lines). **Copy into task**, since t0022&#x27;s driver is not packaged as an
+  importable library module. Key signatures to preserve: `build_ei_pairs(*, h) -&gt; list[EiPair]`,
+  `schedule_ei_onsets(*, h, pairs, angle_deg, velocity_um_per_ms, gaba_null_pref_ratio, trial_seed)`,
+  `run_one_trial_dendritic(*, h, pairs, angle_deg, trial_seed, baseline_coords, baseline_gaba_mod) -&gt; float`.
+  Adapt to whatever direction-selectivity mechanism the de Rosenroll source uses; most likely the de
+  Rosenroll paper provides its own driver and we should wire that up instead, keeping only the outer
+  sweep loop and CSV writer (~150 lines).
+
+* **Constants block layout** from `tasks/t0008_port_modeldb_189347/code/constants.py` (85 lines) —
+  one flat module with `CELSIUS_DEG_C`, `DT_MS`, `TSTOP_MS`, `V_INIT_MV`, `AP_THRESHOLD_MV`,
+  `ANGLE_STEP_DEG`, `N_ANGLES`, `N_TRIALS`, plus the paper&#x27;s canonical parameter block. **Copy into
+  task** and replace with de Rosenroll parameters.
+
+* **Per-trial BIP position guard** from
+  `tasks/t0020_port_modeldb_189347_gabamod/code/run_gabamod_sweep.py` function
+  `_assert_bip_positions_baseline(*, h, baseline_coords)` — asserts BIP `(locx, locy)` match the
+  baseline snapshot to catch silent rotation-logic re-engagement. **Copy into task**, ~20 lines,
+  only if the de Rosenroll port also retains the Poleg-Polsky BIP synapses.
+
+* **SWC morphology I/O** from `tasks/t0008_port_modeldb_189347/code/swc_io.py` (215 lines). **Copy
+  into task** if de Rosenroll ships morphology as SWC rather than HOC. Provides `parse_swc_file`,
+  `validate_structure`, `summarize`, `write_swc_file`.
+
+* **Optional: `tuning_curve_viz` library** from [t0011]. **Import via library.** Polar + Cartesian
+  plots consuming the canonical CSV schema. Zero lines to copy.
+
+#### Lessons Learned
+
+* **Spatial-rotation proxy undershoots DSI**: [t0008] reached DSI 0.316 with a rotation-only driver;
+  [t0020] reached DSI 0.7838 with the paper&#x27;s native parameter swap on the same geometry. If the de
+  Rosenroll paper specifies a native direction-selectivity mechanism, implement that mechanism
+  directly rather than approximating with geometry.
+* **Absolute firing rates lag the envelope even when DSI is right**: both [t0020] (peak 14.85 Hz)
+  and [t0022] (peak 15 Hz) fell well below the 40-80 Hz envelope despite correct DSI, a Risk-3 class
+  of failure. Expect to report this gap as a genuine experimental finding rather than chasing it as
+  a bug, unless the de Rosenroll paper reports higher firing rates.
+* **Windows nrnivmodl requires a CMD wrapper**: [t0008] introduced `code/run_nrnivmodl.cmd` to
+  bypass MSYS path mangling; the compiled `nrnmech.dll` must live in the same directory as the MOD
+  sources or `h.nrn_load_dll` fails.
+* **HOC parser is brittle with backslashes**: always build HOC path strings with forward slashes,
+  even on Windows ([t0008] `_sources_dir_hoc_safe` helper).
+* **Re-running `update()` + `placeBIP()` is mandatory** after any global parameter change, because
+  scalars sit in HOC globals but per-synapse instances retain old values until those procs run
+  ([t0020, t0022]).
+* **Silence baseline synapses** when adding a new direction-selectivity driver: [t0022] zeros
+  `b2gampa`, `b2gnmda`, `s2ggaba`, `s2gach` to prevent the bundled Poleg-Polsky synapses from
+  contributing background spikes.
+* **Library-asset driver code can live in `assets/library/&lt;slug&gt;/code/`**: [t0008] and [t0020] do
+  this; [t0022] leaves its driver in the task `code/` folder, which makes it harder for later tasks
+  to reuse. Prefer the [t0008] pattern when packaging the new port library.
+
+#### Recommendations for This Task
+
+1. **Adopt the [t0008] layout for the new library**: `assets/library/de_rosenroll_2026_dsgc/` with
+   `sources/` for the paper&#x27;s HOC/MOD/morphology files (clone the de Rosenroll repository in place,
+   strip any nested `.git`), `code/` for the Python driver and scoring glue, and a
+   `run_nrnivmodl.cmd` wrapper. Reuse the `build_cell.py` skeleton: NEURON bootstrap, DLL load,
+   `build_dsgc`-equivalent, `apply_params`, `run_one_trial`, `SynapseCoords`-style dataclasses.
+2. **Import the `modeldb_189347_dsgc` library only for the generic helpers** (NEURON bootstrap
+   utilities); do **not** reuse its `build_dsgc` directly because the HOC/MOD files and parameter
+   set are different. Write a `build_de_rosenroll_dsgc()` that mirrors the same lifecycle.
+3. **Import `tuning_curve_loss` via library** and copy the ~100-line `score_envelope.py` pattern
+   into the new task; keep the four registered metric keys and the canonical 12-angle CSV schema
+   `(angle_deg, trial_seed, firing_rate_hz)`.
+4. **Use the de Rosenroll paper&#x27;s own direction-selectivity driver verbatim** when porting. Only
+   fall back to copying [t0022]&#x27;s `schedule_ei_onsets` / `run_one_trial_dendritic` pattern if the
+   paper does not specify a driver and we must synthesize one.
+5. **Expect and plan for the peak-firing-rate envelope miss**. Frame the result in
+   `results_detailed.md` as a third datapoint on whether the 40-80 Hz peak requirement is achievable
+   across independent DSGC models, not as a port defect to chase.
+6. **Keep the BIP-position guard only if the de Rosenroll model reuses Poleg-Polsky BIP synapses**;
+   otherwise write an analogous guard for whatever the new model&#x27;s direction-coding variables are.
+7. **Copy-in versus library-import labels must be explicit in the plan**. Every piece of code from
+   [t0022] is a copy-in because the task `code/` is not a module-registered library; every piece
+   from [t0008] and [t0012] flows through `module_paths` in their `details.json` and must be
+   imported.
+
+#### Task Index
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 DSGC and hunt sibling models
+* **Status**: completed
+* **Relevance**: Source of the `modeldb_189347_dsgc` library asset and the canonical
+  HOC/MOD/morphology port layout; its `build_cell.py` bootstrap pattern, Windows nrnivmodl wrapper,
+  and 12-angle tuning-curve driver are the direct templates for t0024.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response visualization library
+* **Status**: completed
+* **Relevance**: Provides `tuning_curve_viz`, the optional Cartesian + polar + overlay plotter that
+  consumes the canonical tuning-curve CSV; t0024 may import it to populate `results/images/`.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning curve scoring loss library
+* **Status**: completed
+* **Relevance**: Provides the `tuning_curve_loss` library consumed by every port&#x27;s scoring step;
+  t0024 will import `score()` and the four registered metric keys without adaptation.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+* **Status**: completed
+* **Relevance**: Demonstrates how to package a driver variant as a new library while reusing
+  [t0008]&#x27;s `build_cell` via library import; also contributes the per-trial BIP-position baseline
+  guard.
+
+##### [t0022]
+
+* **Task ID**: `t0022_modify_dsgc_channel_testbed`
+* **Name**: Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+* **Status**: completed
+* **Relevance**: Supplies the 12-angle moving-bar driver infrastructure with per-dendrite
+  AMPA/GABA_A NetStim pairs and channel-modular AIS partition; t0024&#x27;s plan identifies this driver
+  as the soft-dependency reference implementation for the moving-bar protocol.
+
+##### [t0023]
+
+* **Task ID**: `t0023_port_hanson_2019_dsgc`
+* **Name**: Port Hanson 2019 DSGC model
+* **Status**: intervention_blocked
+* **Relevance**: Sibling port using the same infrastructure as t0024; its task description documents
+  the intended reuse pattern (t0008 layout + t0022 driver) that t0024 should also follow, even
+  though t0023 has not executed yet.
       </content>
     </section>
   </sections>

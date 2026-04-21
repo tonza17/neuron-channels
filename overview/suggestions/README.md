@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-102 suggestions **91 open** (33 high, 45 medium, 13 low), **11 closed**.
+108 suggestions **97 open** (34 high, 49 medium, 14 low), **11 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -580,6 +580,30 @@ mechanism that matches the rotation-based protocol used in t0008 more directly t
 Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
 asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
 task types: code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
 
 </details>
 
@@ -1462,6 +1486,29 @@ states but does not isolate experimentally. Recommended task types: experiment-r
 </details>
 
 <details>
+<summary>🧪 <strong>Overlay a Van Wart + Werginz AIS on the deRosenroll morphology
+to test peak-rate recovery</strong> (S-0024-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+
+Research-internet gap 2 showed that the upstream repository has no explicit AIS section, but
+research-papers (Werginz 2020, Van Wart 2007) pins the AIS-to-soma Na ratio at ~7x and names
+AIS length as the dominant predictor of maximum sustained firing rate. Fork t0024 into a new
+library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 + Kv1.2) with
+Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol,
+and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the
+SAC network.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Parameter-sweep calibration of bundled 189347 toward the envelope
 targets</strong> (S-0008-04)</summary>
 
@@ -1480,6 +1527,29 @@ where the rotation-based protocol hits the envelope (DSI 0.7-0.85, peak 40-80 Hz
 HWHM 60-90 deg). Would produce a calibration_results.json and a mapping between
 envelope-passing parameters and the paper's default values. Recommended task types:
 code-reproduction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Parameterize t0011/t0012 tuning-curve plotter and scorer to
+support N_ANGLES != 12</strong> (S-0024-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+The t0011 tuning_curve_viz library and the t0012 tuning_curve_loss scorer both hardcode
+N_ANGLES=12, which blocks native 8-direction visualisation and scoring for the deRosenroll
+port (and any future paper that uses 4/6/8/16/24 directions). Refactor both libraries to
+accept an N_ANGLES argument (default 12 for backward compatibility) and rerun the t0024
+8-direction conditions through the plotter to produce polar/Cartesian PNGs for
+results_detailed.md. Small infrastructure change with broad reuse benefit across the DSGC
+lineage.
 
 </details>
 
@@ -1849,6 +1919,28 @@ Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to
+test peak firing-rate shortfall</strong> (S-0024-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+
+Peak firing rate is 5.15 Hz in t0024 versus the paper's qualitative ~30-40 Hz and the t0004
+envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and
+Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity
+sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate)
+with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak
+rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
 in DSGC dendritic trees</strong> (S-0016-04)</summary>
 
@@ -1898,6 +1990,28 @@ tier. Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can
+include 5/5 DSGC models instead of 4/5</strong> (S-0024-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked
+(intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM
+116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023's
+intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model
+comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the
+REQ-6 partial-coverage caveat.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Write forward-only driver for PolegPolsky2026 DS-mechanisms model
 and pursue LICENSE</strong> (S-0010-03)</summary>
 
@@ -1937,6 +2051,29 @@ Replace the current Gaussian-noise trial replicates with Poisson counts converte
 (Fano factor ~1) and register it as a separate dataset asset. This would give
 tuning_curve_reliability a noise model closer to real spike statistics while keeping the
 closed-form mean curve unchanged.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a verify_library_asset.py verificator to close the
+framework-wide gap flagged during t0024 step 9</strong> (S-0024-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+During t0024 step 9 the library asset structure was validated manually against
+meta/asset_types/library/specification.md because no automated verificator exists. The other
+asset types (paper, dataset, answer) have dedicated verificators. Add verify_library_asset.py
+to arf/scripts/verificators/ enforcing the mandatory fields in library/specification.md
+(manifest, source files, citation metadata, entry points) and wire it into the
+prestep/poststep cycle for any task that produces a library asset. Framework infrastructure
+task, not task-folder work.
 
 </details>
 

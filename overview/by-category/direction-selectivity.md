@@ -6,9 +6,9 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (24)](../papers/by-category/direction-selectivity.md) | [Answers
 (7)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(60)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(62)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(5)](../libraries/by-category/direction-selectivity.md)
+(6)](../libraries/by-category/direction-selectivity.md)
 
 ---
 
@@ -1385,7 +1385,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (56 open, 4 closed)
+## Suggestions (58 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -1500,6 +1500,40 @@ and produces one side-by-side comparison chart (polar plot overlay plus bar char
 metrics). Outputs a consolidated comparison_report.md plus an overview/llm-context/ snapshot.
 Dependencies: t0008, t0020, t0022 library assets, t0012 scorer. Effort ~12 hours. Recommended
 task type: data-analysis, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can
+include 5/5 DSGC models instead of 4/5</strong> (S-0024-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked
+(intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM
+116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023's
+intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model
+comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the
+REQ-6 partial-coverage caveat.
 
 </details>
 

@@ -6,9 +6,9 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (16)](../papers/by-category/compartmental-modeling.md) | [Answers
 (8)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(66)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(69)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
-(3)](../libraries/by-category/compartmental-modeling.md)
+(4)](../libraries/by-category/compartmental-modeling.md)
 
 ---
 
@@ -1010,7 +1010,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (61 open, 5 closed)
+## Suggestions (64 open, 5 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -1164,6 +1164,56 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to
+test peak firing-rate shortfall</strong> (S-0024-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+Peak firing rate is 5.15 Hz in t0024 versus the paper's qualitative ~30-40 Hz and the t0004
+envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and
+Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity
+sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate)
+with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak
+rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Overlay a Van Wart + Werginz AIS on the deRosenroll morphology
+to test peak-rate recovery</strong> (S-0024-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+Research-internet gap 2 showed that the upstream repository has no explicit AIS section, but
+research-papers (Werginz 2020, Van Wart 2007) pins the AIS-to-soma Na ratio at ~7x and names
+AIS length as the dominant predictor of maximum sustained firing rate. Fork t0024 into a new
+library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 + Kv1.2) with
+Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol,
+and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the
+SAC network.
+
+</details>
+
+<details>
+<summary>📚 <strong>Parameterize t0011/t0012 tuning-curve plotter and scorer to
+support N_ANGLES != 12</strong> (S-0024-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+The t0011 tuning_curve_viz library and the t0012 tuning_curve_loss scorer both hardcode
+N_ANGLES=12, which blocks native 8-direction visualisation and scoring for the deRosenroll
+port (and any future paper that uses 4/6/8/16/24 directions). Refactor both libraries to
+accept an N_ANGLES argument (default 12 for backward compatibility) and rerun the t0024
+8-direction conditions through the plotter to produce polar/Cartesian PNGs for
+results_detailed.md. Small infrastructure change with broad reuse benefit across the DSGC
+lineage.
 
 </details>
 
