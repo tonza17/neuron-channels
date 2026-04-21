@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0008 HOC/MOD layout, t0012 scoring library, and t0022 driver infrastructure for reuse.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T03:03:18Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T03:14:19Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
