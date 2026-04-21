@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0004] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0008] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0011] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0012] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0022] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0024] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m — 7 error(s), 0 warning(s)
