@@ -1,0 +1,21 @@
+{
+  "spec_version": 4,
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "task_index": 27,
+  "name": "Literature survey: modeling effect of cell morphology on direction selectivity",
+  "short_description": "Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.",
+  "long_description_file": "task_description.md",
+  "status": "in_progress",
+  "dependencies": [],
+  "start_time": "2026-04-21T18:33:02Z",
+  "end_time": null,
+  "expected_assets": {
+    "paper": 15,
+    "answer": 1
+  },
+  "task_types": [
+    "literature-survey",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}
