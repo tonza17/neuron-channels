@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI / peak / HWHM to Poleg-Polsky & Diamond 2016 paper envelope and other DSGC literature.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T00:29:59Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T00:36:27Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
