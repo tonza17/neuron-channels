@@ -1,0 +1,110 @@
+[t0022 sweep] V_rest values = (-90.0, -80.0, -70.0, -60.0, -50.0, -40.0, -30.0, -20.0)
+[t0022 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0022 sweep] n_trials per (V_rest, angle) = 1
+[t0022 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0022\vrest_sweep_tidy.csv
+[t0022 sweep] building DSGC cell + E-I pairs (one-time)...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0022 sweep] cell built in 0.4s; n_pairs = 282
+  V=-90.0mV  dir=  0  trial=0  spikes=  6  rate=  6.00Hz  peak=+43.3mV
+  V=-90.0mV  dir= 30  trial=0  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-90.0mV  dir= 60  trial=0  spikes=  1  rate=  1.00Hz  peak=+42.7mV
+  V=-90.0mV  dir= 90  trial=0  spikes=  0  rate=  0.00Hz  peak=-45.1mV
+  V=-90.0mV  dir=120  trial=0  spikes=  6  rate=  6.00Hz  peak=+43.5mV
+  V=-90.0mV  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-48.8mV
+  V=-90.0mV  dir=180  trial=0  spikes=  0  rate=  0.00Hz  peak=-58.8mV
+  V=-90.0mV  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-59.2mV
+  V=-90.0mV  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-61.3mV
+  V=-90.0mV  dir=270  trial=0  spikes=  0  rate=  0.00Hz  peak=-59.5mV
+  V=-90.0mV  dir=300  trial=0  spikes=  0  rate=  0.00Hz  peak=-57.7mV
+  V=-90.0mV  dir=330  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+  V=-80.0mV  dir=  0  trial=0  spikes= 11  rate= 11.00Hz  peak=+44.0mV
+  V=-80.0mV  dir= 30  trial=0  spikes=  3  rate=  3.00Hz  peak=+43.3mV
+  V=-80.0mV  dir= 60  trial=0  spikes=  5  rate=  5.00Hz  peak=+44.0mV
+  V=-80.0mV  dir= 90  trial=0  spikes=  6  rate=  6.00Hz  peak=+43.0mV
+  V=-80.0mV  dir=120  trial=0  spikes=  8  rate=  8.00Hz  peak=+42.9mV
+  V=-80.0mV  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-47.9mV
+  V=-80.0mV  dir=180  trial=0  spikes=  0  rate=  0.00Hz  peak=-58.0mV
+  V=-80.0mV  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-58.5mV
+  V=-80.0mV  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-60.5mV
+  V=-80.0mV  dir=270  trial=0  spikes=  0  rate=  0.00Hz  peak=-58.6mV
+  V=-80.0mV  dir=300  trial=0  spikes=  0  rate=  0.00Hz  peak=-57.1mV
+  V=-80.0mV  dir=330  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+  V=-70.0mV  dir=  0  trial=0  spikes= 12  rate= 12.00Hz  peak=+43.2mV
+  V=-70.0mV  dir= 30  trial=0  spikes=  8  rate=  8.00Hz  peak=+44.2mV
+  V=-70.0mV  dir= 60  trial=0  spikes=  7  rate=  7.00Hz  peak=+44.0mV
+  V=-70.0mV  dir= 90  trial=0  spikes= 12  rate= 12.00Hz  peak=+43.8mV
+  V=-70.0mV  dir=120  trial=0  spikes= 11  rate= 11.00Hz  peak=+44.0mV
+  V=-70.0mV  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  V=-70.0mV  dir=180  trial=0  spikes=  0  rate=  0.00Hz  peak=-57.0mV
+  V=-70.0mV  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-57.0mV
+  V=-70.0mV  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-58.1mV
+  V=-70.0mV  dir=270  trial=0  spikes=  0  rate=  0.00Hz  peak=-57.7mV
+  V=-70.0mV  dir=300  trial=0  spikes=  0  rate=  0.00Hz  peak=-56.4mV
+  V=-70.0mV  dir=330  trial=0  spikes=  7  rate=  7.00Hz  peak=+43.9mV
+  V=-60.0mV  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+  V=-60.0mV  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+43.7mV
+  V=-60.0mV  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+  V=-60.0mV  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.4mV
+  V=-60.0mV  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+  V=-60.0mV  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-45.5mV
+  V=-60.0mV  dir=180  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.8mV
+  V=-60.0mV  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-54.7mV
+  V=-60.0mV  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+  V=-60.0mV  dir=270  trial=0  spikes=  0  rate=  0.00Hz  peak=-56.2mV
+  V=-60.0mV  dir=300  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.8mV
+  V=-60.0mV  dir=330  trial=0  spikes= 10  rate= 10.00Hz  peak=+44.5mV
+  V=-50.0mV  dir=  0  trial=0  spikes= 38  rate= 38.00Hz  peak=+43.3mV
+  V=-50.0mV  dir= 30  trial=0  spikes= 41  rate= 41.00Hz  peak=+43.6mV
+  V=-50.0mV  dir= 60  trial=0  spikes= 38  rate= 38.00Hz  peak=+44.0mV
+  V=-50.0mV  dir= 90  trial=0  spikes= 36  rate= 36.00Hz  peak=+43.5mV
+  V=-50.0mV  dir=120  trial=0  spikes= 35  rate= 35.00Hz  peak=+44.1mV
+  V=-50.0mV  dir=150  trial=0  spikes= 19  rate= 19.00Hz  peak=+43.2mV
+  V=-50.0mV  dir=180  trial=0  spikes= 19  rate= 19.00Hz  peak=+44.0mV
+  V=-50.0mV  dir=210  trial=0  spikes= 20  rate= 20.00Hz  peak=+43.1mV
+  V=-50.0mV  dir=240  trial=0  spikes= 21  rate= 21.00Hz  peak=+43.8mV
+  V=-50.0mV  dir=270  trial=0  spikes= 20  rate= 20.00Hz  peak=+43.9mV
+  V=-50.0mV  dir=300  trial=0  spikes= 19  rate= 19.00Hz  peak=+43.7mV
+  V=-50.0mV  dir=330  trial=0  spikes= 35  rate= 35.00Hz  peak=+44.5mV
+  V=-40.0mV  dir=  0  trial=0  spikes= 67  rate= 67.00Hz  peak=+43.2mV
+  V=-40.0mV  dir= 30  trial=0  spikes= 70  rate= 70.00Hz  peak=+43.1mV
+  V=-40.0mV  dir= 60  trial=0  spikes= 68  rate= 68.00Hz  peak=+43.8mV
+  V=-40.0mV  dir= 90  trial=0  spikes= 65  rate= 65.00Hz  peak=+43.4mV
+  V=-40.0mV  dir=120  trial=0  spikes= 68  rate= 68.00Hz  peak=+43.3mV
+  V=-40.0mV  dir=150  trial=0  spikes= 53  rate= 53.00Hz  peak=+43.5mV
+  V=-40.0mV  dir=180  trial=0  spikes= 49  rate= 49.00Hz  peak=+43.2mV
+  V=-40.0mV  dir=210  trial=0  spikes= 50  rate= 50.00Hz  peak=+44.0mV
+  V=-40.0mV  dir=240  trial=0  spikes= 51  rate= 51.00Hz  peak=+43.7mV
+  V=-40.0mV  dir=270  trial=0  spikes= 50  rate= 50.00Hz  peak=+44.3mV
+  V=-40.0mV  dir=300  trial=0  spikes= 49  rate= 49.00Hz  peak=+43.6mV
+  V=-40.0mV  dir=330  trial=0  spikes= 64  rate= 64.00Hz  peak=+44.2mV
+  V=-30.0mV  dir=  0  trial=0  spikes=129  rate=129.00Hz  peak=+43.8mV
+  V=-30.0mV  dir= 30  trial=0  spikes=129  rate=129.00Hz  peak=+43.1mV
+  V=-30.0mV  dir= 60  trial=0  spikes=123  rate=123.00Hz  peak=+42.9mV
+  V=-30.0mV  dir= 90  trial=0  spikes=125  rate=125.00Hz  peak=+42.7mV
+  V=-30.0mV  dir=120  trial=0  spikes=125  rate=125.00Hz  peak=+43.8mV
+  V=-30.0mV  dir=150  trial=0  spikes=111  rate=111.00Hz  peak=+43.9mV
+  V=-30.0mV  dir=180  trial=0  spikes=106  rate=106.00Hz  peak=+43.4mV
+  V=-30.0mV  dir=210  trial=0  spikes=110  rate=110.00Hz  peak=+43.3mV
+  V=-30.0mV  dir=240  trial=0  spikes=112  rate=112.00Hz  peak=+43.0mV
+  V=-30.0mV  dir=270  trial=0  spikes=108  rate=108.00Hz  peak=+43.6mV
+  V=-30.0mV  dir=300  trial=0  spikes=106  rate=106.00Hz  peak=+43.8mV
+  V=-30.0mV  dir=330  trial=0  spikes=120  rate=120.00Hz  peak=+43.8mV
+  V=-20.0mV  dir=  0  trial=0  spikes= 24  rate= 24.00Hz  peak=+42.5mV
+  V=-20.0mV  dir= 30  trial=0  spikes= 26  rate= 26.00Hz  peak=+39.2mV
+  V=-20.0mV  dir= 60  trial=0  spikes= 20  rate= 20.00Hz  peak=+36.3mV
+  V=-20.0mV  dir= 90  trial=0  spikes= 21  rate= 21.00Hz  peak=+38.2mV
+  V=-20.0mV  dir=120  trial=0  spikes= 22  rate= 22.00Hz  peak=+42.7mV
+  V=-20.0mV  dir=150  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+  V=-20.0mV  dir=180  trial=0  spikes= 11  rate= 11.00Hz  peak=+43.4mV
+  V=-20.0mV  dir=210  trial=0  spikes=  8  rate=  8.00Hz  peak=+42.5mV
+  V=-20.0mV  dir=240  trial=0  spikes=  7  rate=  7.00Hz  peak=+42.8mV
+  V=-20.0mV  dir=270  trial=0  spikes=  9  rate=  9.00Hz  peak=+42.9mV
+  V=-20.0mV  dir=300  trial=0  spikes=  8  rate=  8.00Hz  peak=+42.9mV
+  V=-20.0mV  dir=330  trial=0  spikes= 24  rate= 24.00Hz  peak=+43.7mV
+[t0022 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0022\vrest_sweep_tidy.csv
+[t0022 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\t0022\wall_time_by_vrest.json

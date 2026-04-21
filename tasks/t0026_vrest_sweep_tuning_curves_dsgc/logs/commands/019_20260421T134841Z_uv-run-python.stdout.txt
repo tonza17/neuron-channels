@@ -1,0 +1,12 @@
+[t0022 sweep] V_rest values = (-60.0,)
+[t0022 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0022 sweep] n_trials per (V_rest, angle) = 1
+[t0022 sweep] tidy CSV -> data\preflight\t0022_preflight.csv
+[t0022 sweep] building DSGC cell + E-I pairs (one-time)...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0022 sweep] cell built in 0.4s; n_pairs = 282

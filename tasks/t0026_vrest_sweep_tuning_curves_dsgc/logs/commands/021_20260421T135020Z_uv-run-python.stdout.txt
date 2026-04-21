@@ -1,0 +1,21 @@
+[t0024 sweep] V_rest values = (-60.0,)
+[t0024 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0024 sweep] n_trials per (V_rest, angle) = 1
+[t0024 sweep] rho = 0.6
+[t0024 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\preflight\t0024_preflight.csv
+[t0024 sweep] building DSGC cell + synapse bundle (one-time)...
+[t0024 sweep] cell built in 0.2s; n_terminals = 177
+  V=-60.0mV  dir=  0  trial= 0  spikes=  5  rate=  5.00Hz  peak=+38.1mV
+  V=-60.0mV  dir= 30  trial= 0  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  V=-60.0mV  dir= 60  trial= 0  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  V=-60.0mV  dir= 90  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  V=-60.0mV  dir=120  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  V=-60.0mV  dir=150  trial= 0  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  V=-60.0mV  dir=180  trial= 0  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  V=-60.0mV  dir=210  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  V=-60.0mV  dir=240  trial= 0  spikes=  1  rate=  1.00Hz  peak=+37.9mV
+  V=-60.0mV  dir=270  trial= 0  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  V=-60.0mV  dir=300  trial= 0  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  V=-60.0mV  dir=330  trial= 0  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+[t0024 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\preflight\t0024_preflight.csv
+[t0024 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0026_vrest_sweep_tuning_curves_dsgc\tasks\t0026_vrest_sweep_tuning_curves_dsgc\data\preflight\t0024_wall.json

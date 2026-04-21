@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Write run_vrest_sweep_t0022.py and run_vrest_sweep_t0024.py; execute the two sweeps; aggregate per-model tidy CSVs.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-21T13:17:45Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

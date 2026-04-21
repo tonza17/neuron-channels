@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "command": "C:\\Users\\md1avn/.local/bin/uv.exe run python -u -m tasks.t0026_vrest_sweep_tuning_curves_dsgc.code.write_metrics",
+  "exit_code": 0,
+  "duration_seconds": 0.223,
+  "started_at": "2026-04-21T17:08:42Z",
+  "completed_at": "2026-04-21T17:08:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc",
+  "stdout_file": "027_20260421T170842Z_c-users-md1avn-local-bin-uv-exe-run-pyth.stdout.txt",
+  "stderr_file": "027_20260421T170842Z_c-users-md1avn-local-bin-uv-exe-run-pyth.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

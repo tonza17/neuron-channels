@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "command": "uv run python -u -m tasks.t0026_vrest_sweep_tuning_curves_dsgc.code.run_vrest_sweep_t0024 --limit-vrest -60 --limit-trials 1 --output C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc\\tasks\\t0026_vrest_sweep_tuning_curves_dsgc\\data\\preflight\\t0024_preflight.csv --wall-time-output C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc\\tasks\\t0026_vrest_sweep_tuning_curves_dsgc\\data\\preflight\\t0024_wall.json",
+  "exit_code": 0,
+  "duration_seconds": 234.159,
+  "started_at": "2026-04-21T13:50:20Z",
+  "completed_at": "2026-04-21T13:54:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0026_vrest_sweep_tuning_curves_dsgc",
+  "stdout_file": "021_20260421T135020Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260421T135020Z_uv-run-python.stderr.txt",
+  "stdout_lines": 21,
+  "stderr_lines": 0,
+  "truncated": false
+}

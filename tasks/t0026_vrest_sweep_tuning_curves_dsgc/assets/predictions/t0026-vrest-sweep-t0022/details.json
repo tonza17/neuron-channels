@@ -1,0 +1,36 @@
+{
+  "spec_version": "2",
+  "predictions_id": "t0026-vrest-sweep-t0022",
+  "name": "V_rest sweep on t0022 DSGC channel testbed (deterministic)",
+  "short_description": "Per-trial spike counts and peak voltages from a V_rest sweep (-90 to -20 mV in 10 mV steps) of the t0022 DSGC compartmental model under the standard 12-angle moving-bar protocol with deterministic per-dendrite E-I scheduling (1 trial per angle per V_rest, 96 trials total).",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "ModelDB 189347 DSGC compartmental model (Mazurek lab) ported in t0008 and modified in t0022 to expose deterministic per-dendrite E-I scheduling. The model uses HHst membrane (with leak reversal eleak_HHst) on the soma and pas membrane (with e_pas) on dendrites, plus deterministic glutamate/GABA stimulus pairs constructed by tasks/t0022_modify_dsgc_channel_testbed/code (library asset modeldb_189347_dsgc). The V_rest is shifted by overriding both h.v_init and the resting parameters of every HHst- and pas-bearing section before h.finitialize.",
+  "dataset_ids": [],
+  "prediction_format": "csv",
+  "prediction_schema": "Each row is one (V_rest, angle, trial) outcome. Columns: v_rest_mv (float, mV), trial (int, zero-based trial index per angle, always 0 for this deterministic sweep), direction_deg (int, motion direction in degrees, one of 0/30/60/90/120/150/180/210/240/270/300/330), spike_count (int, count of spikes during the simulation window), peak_mv (float, peak somatic membrane voltage in mV), firing_rate_hz (float, spike_count / 1.0 s simulation window).",
+  "instance_count": 96,
+  "metrics_at_creation": {
+    "best_dsi_across_vrest": 0.6562,
+    "best_dsi_at_vrest_mv": -60.0,
+    "min_hwhm_deg_across_vrest": 0.8,
+    "peak_hz_at_minus_60mv": 15.0,
+    "null_hz_at_minus_60mv": 0.0
+  },
+  "files": [
+    {
+      "path": "files/predictions-vrest-sweep-t0022.csv",
+      "description": "Tidy CSV of per-trial outcomes for the 8 V_rest values x 12 directions x 1 trial = 96 trials.",
+      "format": "csv"
+    }
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "voltage-gated-channels"
+  ],
+  "created_by_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "date_created": "2026-04-21"
+}
