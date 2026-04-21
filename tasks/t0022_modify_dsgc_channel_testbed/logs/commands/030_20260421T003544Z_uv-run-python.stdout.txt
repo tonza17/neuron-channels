@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0022_modify_dsgc_channel_testbed\tasks\t0022_modify_dsgc_channel_testbed\results\compare_literature.md
+
+[32m[1mPASSED[0m â€” no errors or warnings
