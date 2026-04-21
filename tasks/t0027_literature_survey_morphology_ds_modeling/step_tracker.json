@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Download and summarise 12-20 new papers per spec; write synthesis answer asset citing baseline + new papers.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T19:39:13Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T21:06:40Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
