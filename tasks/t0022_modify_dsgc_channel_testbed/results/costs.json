@@ -1,0 +1,8 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {
+    "local_compute": 0.0,
+    "api": 0.0,
+    "remote_compute": 0.0
+  }
+}
