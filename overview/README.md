@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-24-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-26-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-108-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (11K)
-| [full](llm-context/full.xml) (151K) | [roadmap](llm-context/roadmap.xml) (34K) |
-[results](llm-context/results-deep-dive.xml) (101K) |
+| [full](llm-context/full.xml) (154K) | [roadmap](llm-context/roadmap.xml) (37K) |
+[results](llm-context/results-deep-dive.xml) (102K) |
 [assets](llm-context/literature-and-assets.xml) (24K)
 
-*Last updated: 2026-04-21 12:17 UTC*
+*Last updated: 2026-04-21 12:45 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -53,9 +53,11 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (0)](tasks/by-status/not_started.md)
+## [Ready to Start (1)](tasks/by-status/not_started.md)
 
-No tasks ready to start.
+| # | Task | Description | Date Added |
+|---|------|-------------|------------|
+| 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`description`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/task_description.md) | 2026-04-21 |
 
 ---
 
@@ -73,10 +75,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (23 total)](tasks/by-status/completed.md)
+## [Recently Completed (24 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
 | 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | [`results`](../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) | 2026-04-21 08:55 |
 | 0022 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | [`results`](../tasks/t0022_modify_dsgc_channel_testbed/results/results_detailed.md) | 2026-04-21 01:50 |
 | 0020 | [Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | [`results`](../tasks/t0020_port_modeldb_189347_gabamod/results/results_detailed.md) | 2026-04-20 20:35 |
@@ -86,9 +89,8 @@ No blocked tasks.
 | 0021 | [Brainstorm Session 4: DSGC Model Channel Testbed](../overview/tasks/task_pages/t0021_brainstorm_results_4.md) | [`results`](../tasks/t0021_brainstorm_results_4/results/results_detailed.md) | 2026-04-20 14:00 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
-| 0008 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | [`results`](../tasks/t0008_port_modeldb_189347/results/results_detailed.md) | 2026-04-20 12:10 |
 
-*13 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*14 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 

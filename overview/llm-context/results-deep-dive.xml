@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-21T12:17:59Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-21T12:45:10Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>27</section_count>
-    <char_count>403558</char_count>
-    <byte_count>405049</byte_count>
-    <estimated_tokens>100889</estimated_tokens>
+    <section_count>28</section_count>
+    <char_count>408941</char_count>
+    <byte_count>410446</byte_count>
+    <estimated_tokens>102235</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -135,9 +135,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0021_brainstorm_results_4</id>
         <id>t0022_modify_dsgc_channel_testbed</id>
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
+        <id>t0025_brainstorm_results_5</id>
       </source_ids>
       <content>
-Completed tasks: 23
+Completed tasks: 24
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -276,6 +277,12 @@ ID: t0024_port_de_rosenroll_2026_dsgc
 Completed: 2026-04-21
 Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
 Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Ported the de Rosenroll et al. 2026 DSGC model into a new library asset `de_rosenroll_2026_dsgc` (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section `RGCmodelGD.hoc` morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the cell through the paper-native 8-direction protocol and the project-standard 12-angle protocol under both correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per angle, 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces strong direction selectivity but **does not** reproduce the...
+
+## Brainstorm results session 5
+ID: t0025_brainstorm_results_5
+Completed: 2026-04-21
+Short description: Review project state after t0024 and plan V_rest-sweep tuning-curve experiment on t0022 and t0024.
+Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorming session 5 held after the t0024 de Rosenroll 2026 DSGC port merged (PR #23). The session answered three researcher questions on model count, DSI = 1 saturation in t0022, HWHM definition, and stimulus length, then captured one concrete follow-up task: a V_rest sweep of the t0022 and t0024 ports from -90 mV to -20 mV in 10 mV steps, reported in polar coordinates. Metrics No quantitative metrics produced by a brainstorm session. Verification * `verify_task_file.py` passed on `t0025_brainstorm_results_5` with 0 errors. * `verify_logs.py` passed on `t0025_brainstorm_results_5` with 0 errors. * Follow-up task `t0026` created via...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -283,9 +290,10 @@ Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Porte
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 1
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -293,6 +301,13 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+ID: t0026_vrest_sweep_tuning_curves_dsgc
+Status: not_started
+Effective date: 2026-04-21
+Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -6350,6 +6365,108 @@ Operative task request from `task.json` and `task_description.md`:
 | REQ-4 | Paper-match 8-direction tuning curve CSV (separate file) | **Done** | `data/tuning_curves_8dir_correlated.csv` and `data/tuning_curves_8dir_uncorrelated.csv` (160 rows each); 8-direction DSI surfaced in `results/metrics.json` as `de_rosenroll_dsi_correlated_8dir` and `de_rosenroll_dsi_uncorrelated_8dir` |
 | REQ-5 | Port-fidelity gate: corr DSI ∈ [0.30, 0.50], uncorr DSI ∈ [0.18, 0.35], drop ≥ 20% | **Not done** (recorded as first-class finding) | All three sub-criteria failed: corr DSI 0.818, uncorr DSI 0.835, drop 0.000. Logged in `intervention/port_fidelity_miss.md`, surfaced in `metrics.json[&quot;de_rosenroll_port_fidelity_gate_pass&quot;]=false`, mechanistic root cause analysed above (per-terminal driver vs full SAC network), follow-up suggestion captured for step 14 |
 | REQ-6 | Cross-model comparison vs t0008, t0020, t0022, t0023 in `results_detailed.md` | **Partial** | Comparison table above includes t0008/t0020/t0022/t0024 across all four registered metric keys; t0023 is `intervention_blocked` (`status=intervention_blocked`, `intervention/deferred_pending_t0022.md`) and was unavailable. The Hanson row will need to be retrofitted into a cross-comparison task once t0023 executes |
+      </content>
+    </section>
+    <section id="t0025_brainstorm_results_5-results-detailed" source_kind="file">
+      <title>t0025_brainstorm_results_5 — Brainstorm results session 5 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0025_brainstorm_results_5</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0025_brainstorm_results_5/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Session 5 focused on a single researcher-directed follow-up experiment rather than broad backlog
+pruning. Three inline Q&amp;A exchanges were answered before the task was captured.
+
+#### Methodology
+
+* Machine: local Windows workstation (Windows 11 Education 22631).
+* Runtime: ~5 minutes of interactive dialogue.
+* Timestamp: 2026-04-21.
+* Worker count: 1.
+
+#### Metrics Tables
+
+No metrics produced by a brainstorm session.
+
+#### Comparison vs Baselines
+
+Not applicable.
+
+#### Visualizations
+
+No charts produced by a brainstorm session.
+
+#### Analysis / Discussion
+
+##### Q1. Count of implemented models
+
+Answer: four DSGC compartmental-model ports now exist, all sharing the t0004 tuning-curve target and
+the t0012 scoring library:
+
+| Model | Task | Library asset | Driver paradigm |
+| --- | --- | --- | --- |
+| 1 | t0008 | `modeldb_189347_dsgc` | Spatial-rotation BIP proxy |
+| 2 | t0020 | `modeldb_189347_dsgc_gabamod` | gabaMOD swap (PD=0.33, ND=0.99) |
+| 3 | t0022 | `modeldb_189347_dsgc_channel_testbed` | Deterministic per-dendrite E-I scheduling |
+| 4 | t0024 | `de_rosenroll_2026_dsgc` | AR(2)-correlated stochastic release |
+
+##### Q2. Why t0022 returns DSI = 1; what is HWHM?
+
+t0022 returns DSI = 1.0 because its ND-direction firing rate is exactly 0 Hz — per-dendrite E-I
+scheduling delivers a pure inhibitory lead in the ND condition, which silences the cell entirely.
+`(R_pref - R_null) / (R_pref + R_null)` with `R_null = 0` collapses to 1.
+
+HWHM = Half-Width at Half-Maximum — the angular width of the tuning curve measured from preferred
+direction to the angle where firing drops to half the peak rate. It is the direction-tuning analogue
+of full-width-at-half-maximum (FWHM) / 2 and reflects how sharp the tuning is.
+
+##### Q3. Stimulus length and firing-rate window
+
+`TSTOP_MS = 1000` ms per trial; the moving bar enters the dendritic field around 40 ms and sweeps
+across at `1 um/ms` so it takes ~240 ms to cross. Firing rate is computed as total spikes over the
+full 1000 ms window, so it is strictly spikes/s (Hz).
+
+##### Follow-up task captured
+
+Researcher requested: &quot;calculate the tuning curves as a function of resting potential. Perform this
+for models 3 and 4 start from -90 and go to -20 incrementing by 10 (all in mv). Report data in polar
+coordinates.&quot;
+
+Clarifications:
+
+1. Shift both `v_init` and `eleak` to the sweep value (true V_rest shift, biophysically consistent).
+   Leak reversal must move with the holding potential.
+2. Trial counts: 1 trial × 12 angles for t0022 (deterministic driver), 10 trials × 12 angles for
+   t0024 (stochastic AR(2) release).
+3. Eight V_rest values: -90, -80, -70, -60, -50, -40, -30, -20 mV.
+
+This captured as new task `t0026` via `/create-task`.
+
+#### Limitations
+
+* This brainstorm captured only the researcher-directed experiment; the 96 uncovered suggestions
+  were not pruned and the higher-priority open questions (AIS compartment, Na/K factorial) remain
+  queued for future sessions.
+
+#### Verification
+
+* `verify_task_file.py` on `t0025_brainstorm_results_5`: 0 errors.
+* `verify_logs.py` on `t0025_brainstorm_results_5`: 0 errors.
+* `verify_task_file.py` on `t0026` (created via `/create-task`): 0 errors.
+
+#### Files Created
+
+* `tasks/t0025_brainstorm_results_5/` — brainstorm-results task folder.
+* `tasks/t0026_&lt;slug&gt;/` — V_rest sweep follow-up task (slug determined by `/create-task`).
+
+#### Next Steps / Suggestions
+
+Execute `t0026` via `/execute-task` to produce the V_rest sweep tuning curves.
       </content>
     </section>
   </sections>

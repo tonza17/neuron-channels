@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-21T12:17:59Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-21T12:45:10Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>2069</char_count>
-    <byte_count>2069</byte_count>
-    <estimated_tokens>517</estimated_tokens>
+    <char_count>2105</char_count>
+    <byte_count>2105</byte_count>
+    <estimated_tokens>526</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -53,6 +53,7 @@ Spent: 0.0%
 * t0021_brainstorm_results_4: $0.00
 * t0022_modify_dsgc_channel_testbed: $0.00
 * t0024_port_de_rosenroll_2026_dsgc: $0.00
+* t0025_brainstorm_results_5: $0.00
       </content>
     </section>
   </sections>

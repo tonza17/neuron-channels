@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-21T12:17:59Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-21T12:45:10Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>88804</char_count>
-    <byte_count>88872</byte_count>
-    <estimated_tokens>22201</estimated_tokens>
+    <char_count>90191</char_count>
+    <byte_count>90259</byte_count>
+    <estimated_tokens>22547</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -139,9 +139,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0021_brainstorm_results_4</id>
         <id>t0022_modify_dsgc_channel_testbed</id>
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
+        <id>t0025_brainstorm_results_5</id>
       </source_ids>
       <content>
-Completed tasks: 23
+Completed tasks: 24
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -280,6 +281,12 @@ ID: t0024_port_de_rosenroll_2026_dsgc
 Completed: 2026-04-21
 Short description: Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
 Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Ported the de Rosenroll et al. 2026 DSGC model into a new library asset `de_rosenroll_2026_dsgc` (NEURON `HHst_noiseless`/`Exp2NMDA`/`cadecay` MOD mechanisms with the 341-section `RGCmodelGD.hoc` morphology, vendored from Zenodo `10.5281/zenodo.17666158` at commit `a23f642a`). Drove the cell through the paper-native 8-direction protocol and the project-standard 12-angle protocol under both correlated (`rho=0.6`) and uncorrelated (`rho=0.0`) AR(2) release-rate noise (20 trials per angle, 800 trials total, ~4h15m wall time on the local Windows workstation). The port produces strong direction selectivity but **does not** reproduce the...
+
+## Brainstorm results session 5
+ID: t0025_brainstorm_results_5
+Completed: 2026-04-21
+Short description: Review project state after t0024 and plan V_rest-sweep tuning-curve experiment on t0022 and t0024.
+Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorming session 5 held after the t0024 de Rosenroll 2026 DSGC port merged (PR #23). The session answered three researcher questions on model count, DSI = 1 saturation in t0022, HWHM definition, and stimulus length, then captured one concrete follow-up task: a V_rest sweep of the t0022 and t0024 ports from -90 mV to -20 mV in 10 mV steps, reported in polar coordinates. Metrics No quantitative metrics produced by a brainstorm session. Verification * `verify_task_file.py` passed on `t0025_brainstorm_results_5` with 0 errors. * `verify_logs.py` passed on `t0025_brainstorm_results_5` with 0 errors. * Follow-up task `t0026` created via...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -287,9 +294,10 @@ Result summary: Results Summary: Port de Rosenroll 2026 DSGC Model Summary Porte
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 1
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -297,6 +305,13 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+ID: t0026_vrest_sweep_tuning_curves_dsgc
+Status: not_started
+Effective date: 2026-04-21
+Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
