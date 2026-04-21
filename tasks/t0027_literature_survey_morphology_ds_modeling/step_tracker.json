@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify task has no unsatisfied dependencies (task.json lists none).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T18:39:00Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T18:40:41Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
