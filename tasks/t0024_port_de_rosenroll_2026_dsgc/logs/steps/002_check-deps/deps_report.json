@@ -1,0 +1,27 @@
+{
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "verified_at": "2026-04-21T02:11:30Z",
+  "verificator_result": "PASSED",
+  "errors": 0,
+  "warnings": 0,
+  "dependencies": [
+    {
+      "task_id": "t0008_port_modeldb_189347",
+      "status": "completed",
+      "effective_date": "2026-04-20",
+      "role": "Baseline HOC/MOD library asset (modeldb_189347_dsgc) reused as structural skeleton."
+    },
+    {
+      "task_id": "t0012_tuning_curve_scoring_loss_library",
+      "status": "completed",
+      "effective_date": "2026-04-20",
+      "role": "Scorer library used to produce score_report.json against target tuning curve."
+    },
+    {
+      "task_id": "t0022_modify_dsgc_channel_testbed",
+      "status": "completed",
+      "effective_date": "2026-04-21",
+      "role": "Driver infrastructure for 12-angle moving-bar tuning-curve sweep; reuse where compatible."
+    }
+  ]
+}
