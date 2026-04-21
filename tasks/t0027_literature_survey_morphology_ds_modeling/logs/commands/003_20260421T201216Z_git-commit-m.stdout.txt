@@ -1,0 +1,17 @@
+[task/t0027_literature_survey_morphology_ds_modeling 5eb1520] t0027_literature_survey_morphology_ds_modeling [implementation]: add 5 priority-1 paper assets
+ 16 files changed, 35526 insertions(+), 3 deletions(-)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523823000019/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523823000019/files/wu_2023_primate-sac-ds-mechanisms.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523823000019/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_12194/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_12194/files/anderson_1999_dendritic-asymmetry-v1-ds.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_12194/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41593-017-0046-4/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41593-017-0046-4/files/gruntman_2018_t4-directional-selectivity.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41593-017-0046-4/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41598-018-23998-9/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41598-018-23998-9/files/dan_2018_vs-cells-dendritic-weighting.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41598-018-23998-9/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1009754/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1009754/files/ezra-tsur_2021_morphology-direction-selective.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1009754/summary.md

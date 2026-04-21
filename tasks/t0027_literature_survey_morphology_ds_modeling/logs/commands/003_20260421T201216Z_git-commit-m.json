@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [implementation]: add 5 priority-1 paper assets\n\nBuild paper assets for the five highest-priority candidates surfaced by research-internet:\n- 10.1371_journal.pcbi.1009754 (Ezra-Tsur 2021): retinal SAC realistic-morphology DS model\n- 10.1017_S0952523823000019 (Wu 2023): primate SAC dendritic-diameter morphology sweep\n- 10.1038_s41593-017-0046-4 (Gruntman 2018): T4 fly DS via E-I synapse layout on dendrite\n- 10.1038_s41598-018-23998-9 (Dan 2018): blowfly VS passive-cable transfer-resistance weighting\n- 10.1038_12194 (Anderson 1999): V1 cortical DS does NOT require asymmetric dendrites (negative)\n\nAll five summaries follow paper asset spec v3 (frontmatter + 9 mandatory sections, >=500 words).\nTwo DOIs in the original task brief were corrected by the subagents during retrieval\n(Stincic2023 -> Wu2023; Haag2018 -> Dan2018). Anderson1999 retrieved from INI UZH open repo\nafter Nature URL failed.",
+  "exit_code": 0,
+  "duration_seconds": 6.62,
+  "started_at": "2026-04-21T20:12:16Z",
+  "completed_at": "2026-04-21T20:12:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "003_20260421T201216Z_git-commit-m.stdout.txt",
+  "stderr_file": "003_20260421T201216Z_git-commit-m.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 7,
+  "truncated": false
+}
