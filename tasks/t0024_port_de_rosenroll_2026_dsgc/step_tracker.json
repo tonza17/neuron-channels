@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing paper corpus for DSGC models, Nav1.6/Nav1.2 AIS split, and modern Kv/Cav formulations informing the port.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T02:15:57Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T02:32:20Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
