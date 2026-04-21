@@ -1,6 +1,9 @@
 line-length = 100
 target-version = "py312"
-extend-exclude = ["tasks/*/assets/dataset/*/files/"]
+extend-exclude = [
+    "tasks/*/assets/dataset/*/files/",
+    "tasks/*/assets/library/*/sources/",
+]
 
 [lint]
 select = [
