@@ -1,0 +1,174 @@
+{
+  "spec_version": "2",
+  "date": "2026-04-20",
+  "tasks_completed": [
+    {
+      "task_id": "t0008_port_modeldb_189347",
+      "name": "Port ModelDB 189347 and similar DSGC compartmental models to NEURON",
+      "cost_usd": 0.0,
+      "key_finding": "First DSGC port compiles clean but scores DSI 0.316 under rotation-proxy protocol, below envelope [0.70, 0.85]"
+    },
+    {
+      "task_id": "t0009_calibrate_dendritic_diameters",
+      "name": "Calibrate dendritic diameters for dsgc-baseline-morphology",
+      "cost_usd": 0.0,
+      "key_finding": "Per-Strahler-order taper grows surface area 7.99x and cuts axial resistance to 4.8% of placeholder baseline while keeping topology byte-identical"
+    },
+    {
+      "task_id": "t0010_hunt_missed_dsgc_models",
+      "name": "Hunt DSGC compartmental models missed by prior survey; port runnable ones",
+      "cost_usd": 0.0,
+      "key_finding": "14 candidates, 3 HIGH-priority ports attempted; 0/3 reached the canonical 12-angle sweep due to structural driver incompatibility"
+    },
+    {
+      "task_id": "t0011_response_visualization_library",
+      "name": "Response-visualisation library (firing rate vs angle graphs)",
+      "cost_usd": 0.0,
+      "key_finding": "tuning_curve_viz library ships 4 plotting functions (Cartesian, polar, overlay, raster+PSTH) and emits 7 example PNGs under 5 s"
+    },
+    {
+      "task_id": "t0012_tuning_curve_scoring_loss_library",
+      "name": "Tuning-curve scoring loss library",
+      "cost_usd": 0.0,
+      "key_finding": "tuning_curve_loss library: 47/47 tests pass, identity loss = 0.0 on target curve, 4 registered metric keys wired"
+    },
+    {
+      "task_id": "t0013_resolve_morphology_provenance",
+      "name": "Resolve dsgc-baseline-morphology source-paper provenance",
+      "cost_usd": 0.0,
+      "key_finding": "Corrected morphology source DOI from a mis-cited unrelated paper to Morrie & Feller 2018 Current Biology via correction C-0013-01"
+    },
+    {
+      "task_id": "t0014_brainstorm_results_3",
+      "name": "Brainstorm results session 3",
+      "cost_usd": 0.0,
+      "key_finding": "Authorised five literature-survey tasks (t0015-t0019) and a $1 nominal budget bump to clear the literature-survey cost gate"
+    },
+    {
+      "task_id": "t0015_literature_survey_cable_theory",
+      "name": "Cable-theory literature survey",
+      "cost_usd": 0.0,
+      "key_finding": "5 foundational cable-theory papers registered, 0/5 PDFs retrieved; 6-point compartmental-modelling spec synthesised from abstracts"
+    },
+    {
+      "task_id": "t0016_literature_survey_dendritic_computation",
+      "name": "Dendritic-computation literature survey",
+      "cost_usd": 0.0,
+      "key_finding": "5 dendritic-computation papers registered; all 5 publisher-paywalled; motif transfer to DSGC dendrites synthesised as answer asset"
+    },
+    {
+      "task_id": "t0017_literature_survey_patch_clamp",
+      "name": "Patch-clamp literature survey",
+      "cost_usd": 0.0,
+      "key_finding": "5 patch-clamp / space-clamp papers registered, all paywalled; 7-point DSGC biophysics spec authored from abstracts plus training knowledge"
+    },
+    {
+      "task_id": "t0018_literature_survey_synaptic_integration",
+      "name": "Synaptic-integration literature survey",
+      "cost_usd": 0.0,
+      "key_finding": "5 synaptic-integration priors papers registered; 0/5 PDFs retrieved; prior distribution tabulated per theme"
+    },
+    {
+      "task_id": "t0019_literature_survey_voltage_gated_channels",
+      "name": "Voltage-gated-channel literature survey",
+      "cost_usd": 0.0,
+      "key_finding": "5 Nav/Kv papers registered, all paywalled; Nav/Kv-per-compartment prior table authored as answer asset"
+    },
+    {
+      "task_id": "t0020_port_modeldb_189347_gabamod",
+      "name": "Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol",
+      "cost_usd": 0.0,
+      "key_finding": "gabaMOD-swap variant lands DSI 0.7838 inside envelope [0.70, 0.85], but peak firing 14.85 Hz remains below envelope [40, 80] Hz"
+    },
+    {
+      "task_id": "t0021_brainstorm_results_4",
+      "name": "Brainstorm results session 4",
+      "cost_usd": 0.0,
+      "key_finding": "Authorised t0022 (channel testbed, active), and t0023 + t0024 as deferred ports pending t0022 outcomes"
+    }
+  ],
+  "tasks_created": [
+    {
+      "task_id": "t0014_brainstorm_results_3",
+      "name": "Brainstorm results session 3",
+      "reason": "Plan a per-category literature-survey wave to broaden the paper corpus beyond DSGC-specific modelling"
+    },
+    {
+      "task_id": "t0015_literature_survey_cable_theory",
+      "name": "Cable-theory literature survey",
+      "reason": "Broaden corpus in the cable-theory category per brainstorm session 3"
+    },
+    {
+      "task_id": "t0016_literature_survey_dendritic_computation",
+      "name": "Dendritic-computation literature survey",
+      "reason": "Broaden corpus in the dendritic-computation category per brainstorm session 3"
+    },
+    {
+      "task_id": "t0017_literature_survey_patch_clamp",
+      "name": "Patch-clamp literature survey",
+      "reason": "Broaden corpus in the patch-clamp category per brainstorm session 3"
+    },
+    {
+      "task_id": "t0018_literature_survey_synaptic_integration",
+      "name": "Synaptic-integration literature survey",
+      "reason": "Broaden corpus in the synaptic-integration category per brainstorm session 3"
+    },
+    {
+      "task_id": "t0019_literature_survey_voltage_gated_channels",
+      "name": "Voltage-gated-channel literature survey",
+      "reason": "Broaden corpus in the voltage-gated-channels category per brainstorm session 3"
+    },
+    {
+      "task_id": "t0020_port_modeldb_189347_gabamod",
+      "name": "Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol",
+      "reason": "Retry the failed t0008 port using the paper's native gabaMOD swap instead of the rotation-proxy protocol"
+    },
+    {
+      "task_id": "t0021_brainstorm_results_4",
+      "name": "Brainstorm results session 4",
+      "reason": "Decide the next batch of tasks after the literature-survey wave and the gabaMOD port landed"
+    },
+    {
+      "task_id": "t0022_modify_dsgc_channel_testbed",
+      "name": "Modify DSGC port with spatially-asymmetric inhibition for channel testbed",
+      "reason": "Produce a channel-modular DSGC testbed that yields dendritic-computation DS under the 12-angle sweep"
+    },
+    {
+      "task_id": "t0023_port_hanson_2019_dsgc",
+      "name": "Port Hanson 2019 DSGC model",
+      "reason": "Second NEURON implementation for cross-model comparison; created intervention_blocked, deferred pending t0022 outcomes"
+    },
+    {
+      "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+      "name": "Port de Rosenroll 2026 DSGC model",
+      "reason": "Third NEURON implementation with modern channel mechanisms; created intervention_blocked, deferred pending t0022 outcomes"
+    }
+  ],
+  "tasks_cancelled": [],
+  "total_cost_usd": 0.0,
+  "assets_added": 47,
+  "papers_added": 29,
+  "infrastructure_changes": [],
+  "current_best_results": [
+    {
+      "system": "modeldb_189347_dsgc_gabamod (t0020)",
+      "f1": 0.7838,
+      "type": "gabaMOD-swap protocol"
+    },
+    {
+      "system": "modeldb_189347_dsgc (t0008)",
+      "f1": 0.3163,
+      "type": "rotation-proxy protocol"
+    }
+  ],
+  "key_findings": [
+    "First DSGC port (t0008) compiles clean but scores DSI 0.316 under the rotation-proxy protocol, well below envelope [0.70, 0.85]",
+    "gabaMOD-swap variant (t0020) lands DSI 0.7838 inside envelope; peak firing 14.85 Hz remains below envelope [40, 80] Hz",
+    "Per-Strahler-order morphology calibration (t0009) grows dendritic surface area 7.99x and drops axial resistance to 4.8% of the placeholder baseline",
+    "Morphology provenance corrected (t0013): source DOI changed from a mis-cited unrelated paper to Morrie & Feller 2018 Current Biology",
+    "Hunt for missed DSGC models (t0010) logged 14 candidates but 0/3 HIGH-priority ports cleared the P2 structural gate",
+    "Scoring library (t0012, 47/47 tests) and visualisation library (t0011, 4 plotting functions) land as reusable libraries",
+    "Five literature surveys (t0015-t0019) add 25 paper assets, but all 25 PDFs are paywalled and escalate to Sheffield institutional access",
+    "Brainstorm session 4 (t0021) spawns t0022 (active channel testbed) and t0023/t0024 as deferred ports"
+  ]
+}
