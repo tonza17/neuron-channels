@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T12:45:10Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T17:48:22Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>147172</char_count>
-    <byte_count>147272</byte_count>
-    <estimated_tokens>36793</estimated_tokens>
+    <char_count>143348</char_count>
+    <byte_count>143415</byte_count>
+    <estimated_tokens>35837</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -136,9 +136,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0022_modify_dsgc_channel_testbed</id>
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
         <id>t0025_brainstorm_results_5</id>
+        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Completed tasks: 24
+Completed tasks: 25
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -283,6 +284,12 @@ ID: t0025_brainstorm_results_5
 Completed: 2026-04-21
 Short description: Review project state after t0024 and plan V_rest-sweep tuning-curve experiment on t0022 and t0024.
 Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorming session 5 held after the t0024 de Rosenroll 2026 DSGC port merged (PR #23). The session answered three researcher questions on model count, DSI = 1 saturation in t0022, HWHM definition, and stimulus length, then captured one concrete follow-up task: a V_rest sweep of the t0022 and t0024 ports from -90 mV to -20 mV in 10 mV steps, reported in polar coordinates. Metrics No quantitative metrics produced by a brainstorm session. Verification * `verify_task_file.py` passed on `t0025_brainstorm_results_5` with 0 errors. * `verify_logs.py` passed on `t0025_brainstorm_results_5` with 0 errors. * Follow-up task `t0026` created via...
+
+## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+ID: t0026_vrest_sweep_tuning_curves_dsgc
+Completed: 2026-04-21
+Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
+Result summary: Results Summary: V_rest sweep tuning curves for t0022 and t0024 DSGC ports Summary Swept resting potential across eight values (**-90 mV to -20 mV in 10 mV steps**) for two DSGC compartmental models under the standard 12-direction moving-bar protocol. Model t0022 (deterministic ModelDB 189347 port) ran **96 trials** (~6.0 min wall time); model t0024 (de Rosenroll 2026 port with AR(2)-correlated stochastic release at rho=0.6) ran **960 trials** (~3.21 h wall time). Both models show strong V_rest dependence but with qualitatively different shapes: t0022 peaks DSI sharply at V_rest=-60 mV, while t0024 is U-shaped with maxima at the extremes. Metrics * **t0022 DSI range**: **0.046** (V=-30 mV)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -290,10 +297,9 @@ Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorm
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -367,183 +373,6 @@ No analyses beyond the basic 12-angle tuning curve and score report. Channel-sen
 parameter-space exploration, dendritic-computation decomposition, optogenetic/pharmacological
 perturbation studies, or other downstream analyses belong to follow-up tasks and must not be
 performed here.
-
-## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
-ID: t0026_vrest_sweep_tuning_curves_dsgc
-Status: not_started
-Effective date: 2026-04-21
-Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc
-
-#### Motivation
-
-Two of the four DSGC compartmental-model ports in this project
-(`modeldb_189347_dsgc_channel_testbed` from t0022 and `de_rosenroll_2026_dsgc` from t0024) produce
-direction-selective tuning curves at the default resting potential of `-60 mV`. The project&#x27;s
-research questions (RQ1, RQ4) ask how the cell&#x27;s biophysics — particularly voltage-gated-channel
-availability and dendritic integration — shape tuning. Resting potential is the single most direct
-experimental knob for probing those mechanisms because it controls:
-
-1. **Na channel inactivation availability**: at hyperpolarized holding (e.g. `-90 mV`) the fast
-   sodium gate sits in its deinactivated state, producing a larger pool available for spiking; at
-   depolarized holding (e.g. `-30 mV`) a large fraction is tonically inactivated.
-2. **NMDA receptor Mg block**: the voltage-dependent Mg block relieves as the membrane depolarizes,
-   so NMDA contribution to synaptic integration grows with V_rest. This should shift the E/I balance
-   that implements asymmetric inhibition in both ports.
-3. **Leak driving force and input resistance**: with `eleak` pinned to a new holding, the leak
-   current&#x27;s reversal and the cell&#x27;s apparent input resistance both change, altering how strong
-   BIP/SAC input currents look to the soma.
-
-The two driver paradigms under test — deterministic per-dendrite E-I scheduling in t0022 versus
-AR(2)-correlated stochastic release in t0024 — should respond differently to V_rest because they
-differ in how they compose inhibitory current magnitude against voltage-gated drive.
-
-#### Scope
-
-Run a V_rest sweep on both ports. All other protocol knobs (bar velocity, 12 angles, tstop,
-morphology) are held fixed to the defaults of the respective library assets.
-
-##### V_rest values
-
-Exactly eight values, all in mV: `-90, -80, -70, -60, -50, -40, -30, -20`.
-
-##### Holding strategy
-
-At every V_rest value, set **both** `V_INIT_MV` **and** `ELEAK_MV` (leak reversal) to the sweep
-value before initialising NEURON. Moving only `v_init` re-settles to `eleak` within a few
-milliseconds and does not implement a true resting-potential shift; moving only `eleak` leaves the
-initial condition mismatched. Both must move together.
-
-##### Models and trial budgets
-
-| Model | Task | Driver | Trials per angle | Total trials |
-| --- | --- | --- | --- | --- |
-| `modeldb_189347_dsgc_channel_testbed` | t0022 | Deterministic per-dendrite E-I | 1 | 1 × 12 × 8 = 96 |
-| `de_rosenroll_2026_dsgc` (correlated `rho=0.6`) | t0024 | AR(2)-correlated stochastic release | 10 | 10 × 12 × 8 = 960 |
-
-One trial per angle is sufficient for t0022 because its driver is deterministic; only the V_rest
-value changes between (angle, V_rest) runs. Ten trials per angle are retained for t0024 so that
-trial-to-trial variance in the AR(2) release process remains visible in the tuning curve — lower
-counts would fold V_rest effects into noise.
-
-##### Protocol
-
-For each model and each V_rest value, run the existing 12-angle protocol (`0, 30, 60, …, 330`
-degrees) using the library asset&#x27;s stock `run_trial` / `run_one_trial` function. Only override the
-two holding-potential constants — do not modify the library asset itself (immutability rule 5) and
-do not change bar velocity, tstop, or any other constant.
-
-#### Approach
-
-##### Implementation
-
-Two thin wrapper drivers live in `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/`:
-
-* `run_vrest_sweep_t0022.py` — imports from `tasks.t0022_modify_dsgc_channel_testbed.code`,
-  parameterises `V_REST_MV`, sets both `h.v_init` and every leak section&#x27;s `e` parameter to that
-  value, then invokes the stock tuning-curve routine across the 12 angles. Loops the 8 V_rest values
-  serially.
-* `run_vrest_sweep_t0024.py` — same idea against `tasks.t0024_port_de_rosenroll_2026_dsgc.code`.
-  Uses the correlated `rho=0.6` AR(2) path (the task&#x27;s headline condition).
-
-Each wrapper writes one CSV per V_rest value under `data/t0022/` or `data/t0024/`, then concatenates
-them into `data/t0022/vrest_sweep_tidy.csv` and `data/t0024/vrest_sweep_tidy.csv` with columns
-`(v_rest_mv, trial, direction_deg, spike_count, peak_mv, firing_rate_hz)`. Also records per-V_rest
-wall time to `data/t0022/wall_time_by_vrest.json` and `data/t0024/wall_time_by_vrest.json`.
-
-##### Analysis
-
-A single analysis script computes, for each (model, V_rest):
-
-* Preferred direction and DSI (reusing the t0012 `tuning_curve_loss` scorer&#x27;s DSI formula)
-* Peak firing rate (Hz)
-* Null-direction firing rate (Hz)
-* HWHM (degrees)
-
-Those values are written to `data/t0022/vrest_metrics.csv` and `data/t0024/vrest_metrics.csv`, and
-summary tables are embedded in `results/results_detailed.md`.
-
-##### Plots (all in `results/images/`)
-
-* 16 individual polar plots: `polar_&lt;model&gt;_vrest_&lt;value&gt;.png` (one per model × V_rest pair,
-  plotting firing rate in Hz vs direction in degrees on a polar axis).
-* 2 overlay polar plots: `polar_overlay_t0022.png` and `polar_overlay_t0024.png` showing all 8
-  V_rest tuning curves on the same polar axes with a perceptually ordered colormap. Each answers the
-  question &quot;how does the tuning curve morph as V_rest moves from hyperpolarized to depolarized?&quot;
-* 2 Cartesian summary plots: `dsi_vs_vrest.png` and `peak_hz_vs_vrest.png` with both models
-  overlaid, showing how DSI and peak firing rate trend with V_rest.
-
-#### Expected Assets
-
-Two predictions assets, one per model. Each contains:
-
-* `details.json` (predictions asset metadata following `meta/asset_types/predictions/`)
-* The full tidy CSV as the predictions payload
-* A short description linking back to this task and the source model&#x27;s library asset
-
-`expected_assets` in `task.json` is `{&quot;predictions&quot;: 2}`.
-
-#### Dependencies
-
-* `t0022_modify_dsgc_channel_testbed` — provides the `modeldb_189347_dsgc_channel_testbed` library
-  asset and the `run_tuning_curve.py` driver that this task reuses.
-* `t0024_port_de_rosenroll_2026_dsgc` — provides the `de_rosenroll_2026_dsgc` library asset and
-  the correlated-AR(2) driver.
-
-Both dependencies are completed and on main.
-
-#### Compute and Budget
-
-* No remote compute, no paid API calls, no GPUs.
-* Runs entirely on the local Windows workstation using the existing NEURON + Python stack.
-* Expected wall time: ~25 min for t0022 (96 trials) + ~4 h 15 min for t0024 (960 trials at scale
-  comparable to t0024&#x27;s original 800-trial run).
-* Total budget: `$0`.
-
-#### Metrics
-
-Register the following if not already registered in `meta/metrics/` (propose as suggestions
-otherwise; do not block on meta gaps):
-
-* `dsi_at_vrest_&lt;mv&gt;` for each V_rest value
-* `peak_hz_at_vrest_&lt;mv&gt;` for each V_rest value
-* `hwhm_deg_at_vrest_&lt;mv&gt;` for each V_rest value
-* `efficiency_wall_time_per_trial_seconds` (one value per model — total wall time / total trial
-  count)
-
-#### Output Specification
-
-##### Charts (all in `results/images/`, embedded in `results_detailed.md`)
-
-| Chart | Axes | Question answered |
-| --- | --- | --- |
-| `polar_&lt;model&gt;_vrest_&lt;value&gt;.png` | θ = direction (deg), r = firing rate (Hz) | What is the tuning curve shape at this specific V_rest? |
-| `polar_overlay_&lt;model&gt;.png` | θ = direction (deg), r = firing rate (Hz), 8 curves | How does the tuning curve morph with V_rest? |
-| `dsi_vs_vrest.png` | x = V_rest (mV), y = DSI, 2 lines (one per model) | Is there a V_rest that maximises direction selectivity? |
-| `peak_hz_vs_vrest.png` | x = V_rest (mV), y = peak firing rate (Hz), 2 lines | Where is peak firing rate highest? Does the 40-80 Hz envelope open up? |
-
-##### Tables in `results_detailed.md`
-
-* Per-(model, V_rest) metrics: V_rest, DSI, peak_hz, null_hz, HWHM, wall_time_s
-* Per-model aggregate efficiency: total trials, total wall time, seconds per trial
-
-#### Key Questions
-
-1. Does either DSGC port show a V_rest value at which DSI is higher than at the default `-60 mV`
-   baseline?
-2. Does either port reach the t0004 target peak-firing-rate envelope (40-80 Hz) at any V_rest value?
-   This is the headline unresolved problem across all four existing ports.
-3. Is the direction-selectivity mechanism in t0022 (deterministic per-dendrite E-I) more or less
-   V_rest-dependent than in t0024 (AR(2) stochastic release)?
-4. At what V_rest does each port silence (all-angle firing rate ≈ 0 Hz) on the hyperpolarized end,
-   and at what V_rest does it enter depolarization block on the depolarized end?
-5. Does HWHM narrow systematically as V_rest increases (depolarization-driven gain change), or is it
-   relatively flat across the sweep (consistent with inhibition-dominated tuning)?
-
-#### Source Suggestion
-
-None. Researcher-directed experiment captured in brainstorming session 5
-(`t0025_brainstorm_results_5`).
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -693,6 +522,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0022-02</id>
         <id>S-0022-03</id>
         <id>S-0024-01</id>
+        <id>S-0026-02</id>
+        <id>S-0026-06</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -742,6 +573,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0024-03</id>
         <id>S-0024-04</id>
         <id>S-0024-06</id>
+        <id>S-0026-01</id>
+        <id>S-0026-03</id>
+        <id>S-0026-04</id>
+        <id>S-0026-05</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -756,9 +591,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0020-07</id>
         <id>S-0022-08</id>
         <id>S-0024-05</id>
+        <id>S-0026-07</id>
       </source_ids>
       <content>
-Open suggestions: 107
+Open suggestions: 114
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1067,6 +903,20 @@ Priority: high
 Kind: technique
 Source task: t0024_port_de_rosenroll_2026_dsgc
 The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target [0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs &gt;=0.20) because the AR(2) correlation was applied at per-terminal Exp2Syn drivers rather than across the spatially-distributed SAC varicosity release network that the paper identifies as the causal substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 -&gt; ~0.25 DSI drop.
+
+## Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects
+ID: S-0026-02
+Priority: high
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the Na-inactivation-independent peak firing behaviour.
+
+## Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism
+ID: S-0026-06
+Priority: high
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while t0024 stays flat (DSI&gt;=0.36). Two candidate mechanisms are Na channel inactivation and NMDA Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block (g_NMDA=0) to isolate which channel class drives each model&#x27;s V_rest sensitivity.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -1411,6 +1261,34 @@ Kind: experiment
 Source task: t0024_port_de_rosenroll_2026_dsgc
 t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked (intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM 116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023&#x27;s intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the REQ-6 partial-coverage caveat.
 
+## Register dsi_at_vrest and peak_hz_at_vrest metric keys in meta/metrics/
+ID: S-0026-01
+Priority: medium
+Kind: technique
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+This task produced direction_selectivity_index and peak firing rate per V_rest but the keys dsi_at_vrest_&lt;value&gt; and peak_hz_at_vrest_&lt;value&gt; are not registered under meta/metrics/. Add metric definitions so future V_rest sweeps can report through the registered key registry and appear in aggregate_metric_results output. Also reshape t0026 metrics.json variants from the current map form to the array form required by task_results_specification.md multi-variant format.
+
+## Sweep bar velocity x V_rest on both DSGC ports to test velocity-V_rest interaction
+ID: S-0026-03
+Priority: medium
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Sivyer2010 reports DSI varies with velocity (0.45-0.57) at natural V_rest. Our current sweep fixed velocity at the t0022/t0024 defaults. Repeat the 8-value V_rest sweep at 3-5 bar velocities to check whether V_rest modulates the velocity-tuning curve or only the direction-tuning curve. Expected runtime: ~4x current (t0022) and ~4x current (t0024) if 4 velocities are tested.
+
+## Parallelise the t0024 sweep across CPU cores to cut wall time from 3.21 h to under 1 h
+ID: S-0026-04
+Priority: medium
+Kind: library
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one CPU. Each (V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1 h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+## Port Hanson2019 DSGC model and repeat V_rest sweep to test starburst-independent DS hypothesis
+ID: S-0026-05
+Priority: medium
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses, suggesting an alternative mechanism. If the Hanson model is ported and swept over the same eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI is a universal signature or specific to starburst-driven models.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -1508,6 +1386,13 @@ Priority: low
 Kind: library
 Source task: t0024_port_de_rosenroll_2026_dsgc
 During t0024 step 9 the library asset structure was validated manually against meta/asset_types/library/specification.md because no automated verificator exists. The other asset types (paper, dataset, answer) have dedicated verificators. Add verify_library_asset.py to arf/scripts/verificators/ enforcing the mandatory fields in library/specification.md (manifest, source files, citation metadata, entry points) and wire it into the prestep/poststep cycle for any task that produces a library asset. Framework infrastructure task, not task-folder work.
+
+## Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the post-collapse regime in t0024
+ID: S-0026-07
+Priority: low
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse. Extending the t0024 sweep to V_rest &gt;= -20 mV would reveal whether t0024 also exhibits a Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains depolarisation-insensitive (suggesting NMDA-dominated signalling).
       </content>
     </section>
   </sections>

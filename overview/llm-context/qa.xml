@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-21T12:45:10Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-21T17:48:22Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>186602</char_count>
-    <byte_count>186792</byte_count>
-    <estimated_tokens>46650</estimated_tokens>
+    <char_count>187212</char_count>
+    <byte_count>187402</byte_count>
+    <estimated_tokens>46803</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -135,9 +135,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0022_modify_dsgc_channel_testbed</id>
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
         <id>t0025_brainstorm_results_5</id>
+        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Completed tasks: 24
+Completed tasks: 25
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -282,6 +283,12 @@ ID: t0025_brainstorm_results_5
 Completed: 2026-04-21
 Short description: Review project state after t0024 and plan V_rest-sweep tuning-curve experiment on t0022 and t0024.
 Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorming session 5 held after the t0024 de Rosenroll 2026 DSGC port merged (PR #23). The session answered three researcher questions on model count, DSI = 1 saturation in t0022, HWHM definition, and stimulus length, then captured one concrete follow-up task: a V_rest sweep of the t0022 and t0024 ports from -90 mV to -20 mV in 10 mV steps, reported in polar coordinates. Metrics No quantitative metrics produced by a brainstorm session. Verification * `verify_task_file.py` passed on `t0025_brainstorm_results_5` with 0 errors. * `verify_logs.py` passed on `t0025_brainstorm_results_5` with 0 errors. * Follow-up task `t0026` created via...
+
+## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+ID: t0026_vrest_sweep_tuning_curves_dsgc
+Completed: 2026-04-21
+Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
+Result summary: Results Summary: V_rest sweep tuning curves for t0022 and t0024 DSGC ports Summary Swept resting potential across eight values (**-90 mV to -20 mV in 10 mV steps**) for two DSGC compartmental models under the standard 12-direction moving-bar protocol. Model t0022 (deterministic ModelDB 189347 port) ran **96 trials** (~6.0 min wall time); model t0024 (de Rosenroll 2026 port with AR(2)-correlated stochastic release at rho=0.6) ran **960 trials** (~3.21 h wall time). Both models show strong V_rest dependence but with qualitatively different shapes: t0022 peaks DSI sharply at V_rest=-60 mV, while t0024 is U-shaped with maxima at the extremes. Metrics * **t0022 DSI range**: **0.046** (V=-30 mV)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -289,10 +296,9 @@ Result summary: Results Summary: Brainstorm results session 5 Summary Brainstorm
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -300,13 +306,6 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
-
-## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
-ID: t0026_vrest_sweep_tuning_curves_dsgc
-Status: not_started
-Effective date: 2026-04-21
-Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

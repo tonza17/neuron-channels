@@ -6,9 +6,10 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (16)](../papers/by-category/compartmental-modeling.md) | [Answers
 (8)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(69)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(72)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
-(4)](../libraries/by-category/compartmental-modeling.md)
+(4)](../libraries/by-category/compartmental-modeling.md) | [Predictions
+(2)](../predictions/by-category/compartmental-modeling.md)
 
 ---
 
@@ -1010,7 +1011,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (64 open, 5 closed)
+## Suggestions (67 open, 5 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -1214,6 +1215,51 @@ accept an N_ANGLES argument (default 12 for backward compatibility) and rerun th
 8-direction conditions through the plotter to produce polar/Cartesian PNGs for
 results_detailed.md. Small infrastructure change with broad reuse benefit across the DSGC
 lineage.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Register dsi_at_vrest and peak_hz_at_vrest metric keys in
+meta/metrics/</strong> (S-0026-01)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+This task produced direction_selectivity_index and peak firing rate per V_rest but the keys
+dsi_at_vrest_<value> and peak_hz_at_vrest_<value> are not registered under meta/metrics/. Add
+metric definitions so future V_rest sweeps can report through the registered key registry and
+appear in aggregate_metric_results output. Also reshape t0026 metrics.json variants from the
+current map form to the array form required by task_results_specification.md multi-variant
+format.
+
+</details>
+
+<details>
+<summary>📚 <strong>Parallelise the t0024 sweep across CPU cores to cut wall time
+from 3.21 h to under 1 h</strong> (S-0026-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one CPU. Each
+(V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor
+wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1
+h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port Hanson2019 DSGC model and repeat V_rest sweep to test
+starburst-independent DS hypothesis</strong> (S-0026-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses,
+suggesting an alternative mechanism. If the Hanson model is ported and swept over the same
+eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly
+V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI
+is a universal signature or specific to starburst-driven models.
 
 </details>
 

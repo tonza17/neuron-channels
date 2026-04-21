@@ -1,14 +1,34 @@
 # Suggestions: `voltage-gated-channels`
 
-15 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **14 open** (8
-high, 5 medium, 1 low), **1 closed**.
+17 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **16 open** (9
+high, 5 medium, 2 low), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.04.041`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1016_j.neuron.2016.04.041/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
@@ -355,6 +375,27 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the
+post-collapse regime in t0024</strong> (S-0026-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na
+inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse.
+Extending the t0024 sweep to V_rest >= -20 mV would reveal whether t0024 also exhibits a
+Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains
+depolarisation-insensitive (suggesting NMDA-dominated signalling).
 
 </details>
 

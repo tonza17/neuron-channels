@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-21T12:45:10Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-21T17:48:22Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>175167</char_count>
-    <byte_count>175824</byte_count>
-    <estimated_tokens>43791</estimated_tokens>
+    <char_count>177167</char_count>
+    <byte_count>177842</byte_count>
+    <estimated_tokens>44291</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3146,11 +3146,13 @@ No quantitative metrics produced by a brainstorm session.
 
 ## V_rest sweep tuning curves for t0022 and t0024 DSGC ports
 ID: t0026_vrest_sweep_tuning_curves_dsgc
-Status: not_started
+Status: completed
 Effective date: 2026-04-21
 Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc
 Task types: experiment-run, data-analysis
+Start time: 2026-04-21T12:47:42Z
+End time: 2026-04-21T17:43:26Z
 
 #### Motivation
 
@@ -3321,6 +3323,42 @@ otherwise; do not block on meta gaps):
 
 None. Researcher-directed experiment captured in brainstorming session 5
 (`t0025_brainstorm_results_5`).
+
+### Results Summary
+
+#### Summary
+
+Swept resting potential across eight values (**-90 mV to -20 mV in 10 mV steps**) for two DSGC
+compartmental models under the standard 12-direction moving-bar protocol. Model t0022 (deterministic
+ModelDB 189347 port) ran **96 trials** (~6.0 min wall time); model t0024 (de Rosenroll 2026 port
+with AR(2)-correlated stochastic release at rho=0.6) ran **960 trials** (~3.21 h wall time). Both
+models show strong V_rest dependence but with qualitatively different shapes: t0022 peaks DSI
+sharply at V_rest=-60 mV, while t0024 is U-shaped with maxima at the extremes.
+
+#### Metrics
+
+* **t0022 DSI range**: **0.046** (V=-30 mV) to **0.6555** (V=-60 mV) — 14x modulation
+* **t0024 DSI range**: **0.3606** (V=-20 mV) to **0.6746** (V=-90 mV) — 1.9x modulation, U-shaped
+* **t0022 peak firing rate**: **6 Hz** at V=-90 mV, monotone up to **129 Hz** at V=-30 mV, collapses
+  to **26 Hz** at V=-20 mV (Na inactivation)
+* **t0024 peak firing rate**: **1.5 Hz** at V=-90 mV, monotone up to **7.6 Hz** at V=-20 mV (no
+  hyper-depolarisation collapse)
+* **t0022 HWHM**: 0.77 deg at V≤-80 mV (near-binary curve) vs. 180 deg at V=-30/-40 mV (complete
+  loss of tuning)
+* **t0024 HWHM**: **65-83 deg** across the full V_rest range — AR(2) noise smooths tuning
+* **Total trials executed**: 1,056 (96 + 960) across both models
+
+#### Verification
+
+* `verify_logs.py` — PASSED (0 errors) after step 9 implementation commit
+* `verify_task_file.py` — PASSED (0 errors) — task.json confirms
+  `expected_assets = {&quot;predictions&quot;: 2}`
+* `verify_implementation.py` — PASSED for both predictions assets (expected PR-W014 model_id null
+  \+ PR-W015 dataset_ids empty, both correct)
+* Per-model tidy CSV row counts: **96** (t0022) and **960** (t0024), matching REQ-3 and REQ-4
+  exactly
+* Override unit test `vrest_override_smoke.py` — PASSED: every HHst-bearing and pas-bearing
+  section responds to `set_vrest(h, -20.0)`
       </content>
     </section>
   </sections>

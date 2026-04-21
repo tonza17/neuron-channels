@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-69 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **64 open** (23
-high, 36 medium, 5 low), **5 closed**.
+72 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **67 open** (23
+high, 39 medium, 5 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1093,6 +1093,26 @@ SAC network.
 </details>
 
 <details>
+<summary>📚 <strong>Parallelise the t0024 sweep across CPU cores to cut wall time
+from 3.21 h to under 1 h</strong> (S-0026-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one CPU. Each
+(V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor
+wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1
+h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Parameter-sweep calibration of bundled 189347 toward the envelope
 targets</strong> (S-0008-04)</summary>
 
@@ -1159,6 +1179,27 @@ smoke test. This will surface any layout bugs (legend clipping, colour collision
 preferred-direction arrow overlap) that single- or double-model overlays never exercise and
 will give the project a real cross-model comparison figure. Recommended task types:
 code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port Hanson2019 DSGC model and repeat V_rest sweep to test
+starburst-independent DS hypothesis</strong> (S-0026-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses,
+suggesting an alternative mechanism. If the Hanson model is ported and swept over the same
+eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly
+V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI
+is a universal signature or specific to starburst-driven models.
 
 </details>
 
@@ -1257,6 +1298,28 @@ placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point
 section indices. Outcome is a third variant of the port asset running on a morphology that
 actually matches the measured dendritic diameter profile. Recommended task types:
 code-reproduction.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Register dsi_at_vrest and peak_hz_at_vrest metric keys in
+meta/metrics/</strong> (S-0026-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+This task produced direction_selectivity_index and peak firing rate per V_rest but the keys
+dsi_at_vrest_<value> and peak_hz_at_vrest_<value> are not registered under meta/metrics/. Add
+metric definitions so future V_rest sweeps can report through the registered key registry and
+appear in aggregate_metric_results output. Also reshape t0026 metrics.json variants from the
+current map form to the array form required by task_results_specification.md multi-variant
+format.
 
 </details>
 

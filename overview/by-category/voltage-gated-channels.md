@@ -6,8 +6,9 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (15)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (3)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(15)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
-(1)](../libraries/by-category/voltage-gated-channels.md)
+(17)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
+(2)](../predictions/by-category/voltage-gated-channels.md)
 
 ---
 
@@ -810,7 +811,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (14 open, 1 closed)
+## Suggestions (16 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -918,6 +919,35 @@ library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 +
 Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol,
 and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the
 SAC network.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the
+post-collapse regime in t0024</strong> (S-0026-07)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na
+inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse.
+Extending the t0024 sweep to V_rest >= -20 mV would reveal whether t0024 also exhibits a
+Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains
+depolarisation-insensitive (suggesting NMDA-dominated signalling).
 
 </details>
 

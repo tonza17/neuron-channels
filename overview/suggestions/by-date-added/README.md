@@ -1,14 +1,34 @@
 # Suggestions by Date Added
 
-108 suggestion(s) grouped by derived added date.
+115 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-04-21 (14)
+## 2026-04-21 (21)
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.04.041`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1016_j.neuron.2016.04.041/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -106,6 +126,27 @@ substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
 geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
 cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
 ~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
 
 </details>
 
@@ -237,6 +278,26 @@ SAC network.
 </details>
 
 <details>
+<summary>📚 <strong>Parallelise the t0024 sweep across CPU cores to cut wall time
+from 3.21 h to under 1 h</strong> (S-0026-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one CPU. Each
+(V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor
+wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1
+h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+</details>
+
+<details>
 <summary>📚 <strong>Parameterize t0011/t0012 tuning-curve plotter and scorer to
 support N_ANGLES != 12</strong> (S-0024-04)</summary>
 
@@ -256,6 +317,70 @@ accept an N_ANGLES argument (default 12 for backward compatibility) and rerun th
 8-direction conditions through the plotter to produce polar/Cartesian PNGs for
 results_detailed.md. Small infrastructure change with broad reuse benefit across the DSGC
 lineage.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port Hanson2019 DSGC model and repeat V_rest sweep to test
+starburst-independent DS hypothesis</strong> (S-0026-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses,
+suggesting an alternative mechanism. If the Hanson model is ported and swept over the same
+eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly
+V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI
+is a universal signature or specific to starburst-driven models.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Register dsi_at_vrest and peak_hz_at_vrest metric keys in
+meta/metrics/</strong> (S-0026-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+This task produced direction_selectivity_index and peak firing rate per V_rest but the keys
+dsi_at_vrest_<value> and peak_hz_at_vrest_<value> are not registered under meta/metrics/. Add
+metric definitions so future V_rest sweeps can report through the registered key registry and
+appear in aggregate_metric_results output. Also reshape t0026 metrics.json variants from the
+current map form to the array form required by task_results_specification.md multi-variant
+format.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep bar velocity x V_rest on both DSGC ports to test
+velocity-V_rest interaction</strong> (S-0026-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1113_jphysiol.2010.192716`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1113_jphysiol.2010.192716/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Sivyer2010 reports DSI varies with velocity (0.45-0.57) at natural V_rest. Our current sweep
+fixed velocity at the t0022/t0024 defaults. Repeat the 8-value V_rest sweep at 3-5 bar
+velocities to check whether V_rest modulates the velocity-tuning curve or only the
+direction-tuning curve. Expected runtime: ~4x current (t0022) and ~4x current (t0024) if 4
+velocities are tested.
 
 </details>
 
@@ -351,6 +476,27 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the
+post-collapse regime in t0024</strong> (S-0026-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na
+inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse.
+Extending the t0024 sweep to V_rest >= -20 mV would reveal whether t0024 also exhibits a
+Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains
+depolarisation-insensitive (suggesting NMDA-dominated signalling).
 
 </details>
 

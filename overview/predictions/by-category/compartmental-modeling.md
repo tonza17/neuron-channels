@@ -1,14 +1,8 @@
-# Predictions (2)
+# Predictions: `compartmental-modeling`
 
 2 predictions asset(s).
 
-**Browse by view**: By category:
-[`compartmental-modeling`](by-category/compartmental-modeling.md),
-[`direction-selectivity`](by-category/direction-selectivity.md),
-[`retinal-ganglion-cell`](by-category/retinal-ganglion-cell.md),
-[`synaptic-integration`](by-category/synaptic-integration.md),
-[`voltage-gated-channels`](by-category/voltage-gated-channels.md); [By date
-added](by-date-added/README.md)
+[Back to all predictions](../README.md)
 
 ---
 
@@ -26,9 +20,9 @@ instances (csv)</summary>
 | **Format** | csv |
 | **Instances** | 96 |
 | **Date created** | 2026-04-21 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
-| **Created by** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
-| **Documentation** | [`description.md`](../../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0022\description.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Created by** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0022\description.md) |
 
 **Metrics at creation:**
 
@@ -188,9 +182,9 @@ release)</strong> (<code>t0026-vrest-sweep-t0024</code>) — 960 instances
 | **Format** | csv |
 | **Instances** | 960 |
 | **Date created** | 2026-04-21 |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
-| **Created by** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
-| **Documentation** | [`description.md`](../../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Created by** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) |
 
 **Metrics at creation:**
 

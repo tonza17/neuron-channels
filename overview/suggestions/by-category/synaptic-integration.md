@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-17 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **15 open** (7 high,
+18 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **16 open** (8 high,
 8 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
@@ -184,6 +184,27 @@ ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 
 lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
 0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
 targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
 
 </details>
 

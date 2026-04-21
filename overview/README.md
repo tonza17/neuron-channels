@@ -4,7 +4,7 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-48-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-6-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-10-CD853F" alt="Answers"></a>
 </p>
@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-26-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-108-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-115-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (11K)
-| [full](llm-context/full.xml) (154K) | [roadmap](llm-context/roadmap.xml) (37K) |
-[results](llm-context/results-deep-dive.xml) (102K) |
-[assets](llm-context/literature-and-assets.xml) (24K)
+| [full](llm-context/full.xml) (159K) | [roadmap](llm-context/roadmap.xml) (36K) |
+[results](llm-context/results-deep-dive.xml) (110K) |
+[assets](llm-context/literature-and-assets.xml) (25K)
 
-*Last updated: 2026-04-21 12:45 UTC*
+*Last updated: 2026-04-21 17:48 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -53,11 +53,9 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (1)](tasks/by-status/not_started.md)
+## [Ready to Start (0)](tasks/by-status/not_started.md)
 
-| # | Task | Description | Date Added |
-|---|------|-------------|------------|
-| 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`description`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/task_description.md) | 2026-04-21 |
+No tasks ready to start.
 
 ---
 
@@ -75,10 +73,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (24 total)](tasks/by-status/completed.md)
+## [Recently Completed (25 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
 | 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
 | 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | [`results`](../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) | 2026-04-21 08:55 |
 | 0022 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | [`results`](../tasks/t0022_modify_dsgc_channel_testbed/results/results_detailed.md) | 2026-04-21 01:50 |
@@ -88,9 +87,8 @@ No blocked tasks.
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
 | 0021 | [Brainstorm Session 4: DSGC Model Channel Testbed](../overview/tasks/task_pages/t0021_brainstorm_results_4.md) | [`results`](../tasks/t0021_brainstorm_results_4/results/results_detailed.md) | 2026-04-20 14:00 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | [`results`](../tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md) | 2026-04-20 13:00 |
-| 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | [`results`](../tasks/t0018_literature_survey_synaptic_integration/results/results_detailed.md) | 2026-04-20 12:15 |
 
-*14 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*15 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -106,7 +104,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (97 open)](suggestions/)
+## [Recent Suggestions (104 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -297,11 +295,11 @@ rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 en
 
 </details>
 
-*87 more open suggestions → [open suggestions](suggestions/)*
+*94 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (34)](suggestions/)
+## [High Priority Suggestions (36)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -375,6 +373,35 @@ substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
 geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
 cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
 ~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
 
 </details>
 
@@ -454,37 +481,7 @@ experiments. Recommended task types: experiment-run, feature-engineering.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
-12-angle sweep</strong> (S-0010-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
-
-Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
-the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
-path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
-tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
-task can budget 3-4 hours and reach P3.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
-grid to 12 angles</strong> (S-0010-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0010_hunt_missed_dsgc_models](../tasks/t0010_hunt_missed_dsgc_models/)
-
-Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
-Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
-minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
-to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
-budget 4-6 hours for full P3.
-
-</details>
-
-*24 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*26 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1187,9 +1184,12 @@ No models yet.
 
 ---
 
-## [Latest Predictions (0 total)](predictions/)
+## [Latest Predictions (2 total)](predictions/)
 
-No predictions yet.
+| Name | Source | Created |
+|------|--------|---------|
+| [V_rest sweep on t0024 DSGC channel testbed (stochastic AR(2) release)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
+| [V_rest sweep on t0022 DSGC channel testbed (deterministic)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0022\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
 
 ---
 

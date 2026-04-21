@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-21T12:45:10Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-21T17:48:22Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>110043</char_count>
-    <byte_count>110052</byte_count>
-    <estimated_tokens>27510</estimated_tokens>
+    <char_count>115097</char_count>
+    <byte_count>115106</byte_count>
+    <estimated_tokens>28774</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -125,9 +125,16 @@
         <id>S-0024-04</id>
         <id>S-0024-05</id>
         <id>S-0024-06</id>
+        <id>S-0026-01</id>
+        <id>S-0026-02</id>
+        <id>S-0026-03</id>
+        <id>S-0026-04</id>
+        <id>S-0026-05</id>
+        <id>S-0026-06</id>
+        <id>S-0026-07</id>
       </source_ids>
       <content>
-Suggestions: 108
+Suggestions: 115
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1341,6 +1348,86 @@ Categories: direction-selectivity, retinal-ganglion-cell
 Date added: 2026-04-21
 
 t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked (intervention/deferred_pending_t0022.md). The t0022 task has since completed (DSI 1.000, HWHM 116.25, RMSE 10.48) so the original blocking dependency is resolved. Triage t0023&#x27;s intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the REQ-6 partial-coverage caveat.
+
+## Register dsi_at_vrest and peak_hz_at_vrest metric keys in meta/metrics/
+ID: S-0026-01
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Categories: compartmental-modeling
+Date added: 2026-04-21
+
+This task produced direction_selectivity_index and peak firing rate per V_rest but the keys dsi_at_vrest_&lt;value&gt; and peak_hz_at_vrest_&lt;value&gt; are not registered under meta/metrics/. Add metric definitions so future V_rest sweeps can report through the registered key registry and appear in aggregate_metric_results output. Also reshape t0026 metrics.json variants from the current map form to the array form required by task_results_specification.md multi-variant format.
+
+## Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects
+ID: S-0026-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Categories: direction-selectivity, synaptic-integration
+Date added: 2026-04-21
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the Na-inactivation-independent peak firing behaviour.
+
+## Sweep bar velocity x V_rest on both DSGC ports to test velocity-V_rest interaction
+ID: S-0026-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Source paper: 10.1113_jphysiol.2010.192716
+Categories: direction-selectivity
+Date added: 2026-04-21
+
+Sivyer2010 reports DSI varies with velocity (0.45-0.57) at natural V_rest. Our current sweep fixed velocity at the t0022/t0024 defaults. Repeat the 8-value V_rest sweep at 3-5 bar velocities to check whether V_rest modulates the velocity-tuning curve or only the direction-tuning curve. Expected runtime: ~4x current (t0022) and ~4x current (t0024) if 4 velocities are tested.
+
+## Parallelise the t0024 sweep across CPU cores to cut wall time from 3.21 h to under 1 h
+ID: S-0026-04
+Status: active
+Priority: medium
+Kind: library
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Categories: compartmental-modeling
+Date added: 2026-04-21
+
+The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one CPU. Each (V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1 h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+## Port Hanson2019 DSGC model and repeat V_rest sweep to test starburst-independent DS hypothesis
+ID: S-0026-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Source paper: 10.7554_eLife.42392
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-21
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses, suggesting an alternative mechanism. If the Hanson model is ported and swept over the same eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI is a universal signature or specific to starburst-driven models.
+
+## Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism
+ID: S-0026-06
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Source paper: 10.1016_j.neuron.2016.04.041
+Categories: voltage-gated-channels, direction-selectivity
+Date added: 2026-04-21
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while t0024 stays flat (DSI&gt;=0.36). Two candidate mechanisms are Na channel inactivation and NMDA Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block (g_NMDA=0) to isolate which channel class drives each model&#x27;s V_rest sensitivity.
+
+## Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the post-collapse regime in t0024
+ID: S-0026-07
+Status: active
+Priority: low
+Kind: experiment
+Source task: t0026_vrest_sweep_tuning_curves_dsgc
+Categories: voltage-gated-channels
+Date added: 2026-04-21
+
+Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse. Extending the t0024 sweep to V_rest &gt;= -20 mV would reveal whether t0024 also exhibits a Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains depolarisation-insensitive (suggesting NMDA-dominated signalling).
       </content>
     </section>
   </sections>

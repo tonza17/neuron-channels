@@ -6,9 +6,10 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (24)](../papers/by-category/direction-selectivity.md) | [Answers
 (7)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(62)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(66)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(6)](../libraries/by-category/direction-selectivity.md)
+(6)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(2)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
@@ -1385,7 +1386,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (58 open, 4 closed)
+## Suggestions (62 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -1534,6 +1535,65 @@ t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked
 intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model
 comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the
 REQ-6 partial-coverage caveat.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep bar velocity x V_rest on both DSGC ports to test
+velocity-V_rest interaction</strong> (S-0026-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Sivyer2010 reports DSI varies with velocity (0.45-0.57) at natural V_rest. Our current sweep
+fixed velocity at the t0022/t0024 defaults. Repeat the 8-value V_rest sweep at 3-5 bar
+velocities to check whether V_rest modulates the velocity-tuning curve or only the
+direction-tuning curve. Expected runtime: ~4x current (t0022) and ~4x current (t0024) if 4
+velocities are tested.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Port Hanson2019 DSGC model and repeat V_rest sweep to test
+starburst-independent DS hypothesis</strong> (S-0026-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses,
+suggesting an alternative mechanism. If the Hanson model is ported and swept over the same
+eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly
+V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI
+is a universal signature or specific to starburst-driven models.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
 
 </details>
 

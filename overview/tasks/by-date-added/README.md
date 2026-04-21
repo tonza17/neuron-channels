@@ -8,23 +8,27 @@
 
 ## 2026-04-21 (4)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0026 — <strong>V_rest sweep tuning curves for t0022 and t0024 DSGC
+<summary>✅ 0026 — <strong>V_rest sweep tuning curves for t0022 and t0024 DSGC
 ports</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0026_vrest_sweep_tuning_curves_dsgc` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-21 |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
 | **Expected assets** | 2 predictions |
 | **Source suggestion** | — |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/) |
+| **Start time** | 2026-04-21T12:47:42Z |
+| **End time** | 2026-04-21T17:43:26Z |
+| **Step progress** | 10/15 |
 | **Task page** | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
 | **Task folder** | [`t0026_vrest_sweep_tuning_curves_dsgc/`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) |
 
 # V_rest sweep tuning curves for t0022 and t0024 DSGC ports
 
@@ -202,9 +206,39 @@ otherwise; do not block on meta gaps):
 None. Researcher-directed experiment captured in brainstorming session 5
 (`t0025_brainstorm_results_5`).
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: V_rest sweep tuning curves for t0022 and t0024 DSGC ports**
+>
+> **Summary**
+>
+> Swept resting potential across eight values (**-90 mV to -20 mV in 10 mV steps**) for two
+> DSGC
+> compartmental models under the standard 12-direction moving-bar protocol. Model t0022
+> (deterministic
+> ModelDB 189347 port) ran **96 trials** (~6.0 min wall time); model t0024 (de Rosenroll 2026
+> port
+> with AR(2)-correlated stochastic release at rho=0.6) ran **960 trials** (~3.21 h wall time).
+> Both
+> models show strong V_rest dependence but with qualitatively different shapes: t0022 peaks
+> DSI
+> sharply at V_rest=-60 mV, while t0024 is U-shaped with maxima at the extremes.
+>
+> **Metrics**
+>
+> * **t0022 DSI range**: **0.046** (V=-30 mV) to **0.6555** (V=-60 mV) — 14x modulation
+> * **t0024 DSI range**: **0.3606** (V=-20 mV) to **0.6746** (V=-90 mV) — 1.9x modulation,
+>   U-shaped
+> * **t0022 peak firing rate**: **6 Hz** at V=-90 mV, monotone up to **129 Hz** at V=-30 mV,
+>   collapses
+> to **26 Hz** at V=-20 mV (Na inactivation)
+> * **t0024 peak firing rate**: **1.5 Hz** at V=-90 mV, monotone up to **7.6 Hz** at V=-20 mV
+>   (no
+> hyper-depolarisation collapse)
+> * **t0022 HWHM**: 0.77 deg at V≤-80 mV (near-binary curve) vs. 180 deg at V=-30/-40 mV
+>   (complete
+
+</details>
 
 <details>
 <summary>✅ 0025 — <strong>Brainstorm results session 5</strong></summary>

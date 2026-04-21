@@ -6,7 +6,8 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (30)](../papers/by-category/synaptic-integration.md) | [Answers
 (4)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(17)](../suggestions/by-category/synaptic-integration.md)
+(18)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(2)](../predictions/by-category/synaptic-integration.md)
 
 ---
 
@@ -1575,7 +1576,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (15 open, 2 closed)
+## Suggestions (16 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
@@ -1651,6 +1652,21 @@ substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
 geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
 cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
 ~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
 
 </details>
 

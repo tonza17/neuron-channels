@@ -1,14 +1,34 @@
 # Suggestions: `direction-selectivity`
 
-62 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **58 open** (21
-high, 32 medium, 5 low), **4 closed**.
+66 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **62 open** (23
+high, 34 medium, 5 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.04.041`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1016_j.neuron.2016.04.041/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
 
 <details>
 <summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
@@ -514,6 +534,27 @@ over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=1
 intervals. This turns a single spike-output check into a multi-level subthreshold validation
 that exercises the cell's passive and NMDA-block biophysics independently of spike
 thresholding. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
 
 </details>
 
@@ -1089,6 +1130,27 @@ code-reproduction, write-library.
 </details>
 
 <details>
+<summary>🧪 <strong>Port Hanson2019 DSGC model and repeat V_rest sweep to test
+starburst-independent DS hypothesis</strong> (S-0026-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses,
+suggesting an alternative mechanism. If the Hanson model is ported and swept over the same
+eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly
+V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI
+is a universal signature or specific to starburst-driven models.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Rebuild ModelDB 189347 port on the calibrated Horton-Strahler
 SWC from t0009</strong> (S-0008-03)</summary>
 
@@ -1201,6 +1263,27 @@ Build a small library that wraps NetPyNE's `Batch` class with the project's pref
 axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
 `assets/library/` entry plus a one-page usage example. This unblocks every downstream
 tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep bar velocity x V_rest on both DSGC ports to test
+velocity-V_rest interaction</strong> (S-0026-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1113_jphysiol.2010.192716`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1113_jphysiol.2010.192716/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Sivyer2010 reports DSI varies with velocity (0.45-0.57) at natural V_rest. Our current sweep
+fixed velocity at the t0022/t0024 defaults. Repeat the 8-value V_rest sweep at 3-5 bar
+velocities to check whether V_rest modulates the velocity-tuning curve or only the
+direction-tuning curve. Expected runtime: ~4x current (t0022) and ~4x current (t0024) if 4
+velocities are tested.
 
 </details>
 
