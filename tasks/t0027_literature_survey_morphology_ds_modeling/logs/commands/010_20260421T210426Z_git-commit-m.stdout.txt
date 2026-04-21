@@ -1,0 +1,5 @@
+[task/t0027_literature_survey_morphology_ds_modeling 8418a22] t0027_literature_survey_morphology_ds_modeling [implementation]: write synthesis answer asset citing all 20 papers
+ 3 files changed, 365 insertions(+)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/full_answer.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/short_answer.md
