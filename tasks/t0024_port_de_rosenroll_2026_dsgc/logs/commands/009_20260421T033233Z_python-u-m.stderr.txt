@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\ar2_noise.py", line 22, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

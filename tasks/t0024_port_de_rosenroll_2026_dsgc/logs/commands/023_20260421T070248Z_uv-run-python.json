@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "command": "uv run python -u -m tasks.t0024_port_de_rosenroll_2026_dsgc.code.plot_tuning_curves",
+  "exit_code": 0,
+  "duration_seconds": 4.025,
+  "started_at": "2026-04-21T07:02:48Z",
+  "completed_at": "2026-04-21T07:02:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0024_port_de_rosenroll_2026_dsgc",
+  "stdout_file": "023_20260421T070248Z_uv-run-python.stdout.txt",
+  "stderr_file": "023_20260421T070248Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

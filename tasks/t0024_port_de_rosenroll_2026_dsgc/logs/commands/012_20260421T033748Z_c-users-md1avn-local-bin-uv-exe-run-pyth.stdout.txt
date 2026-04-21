@@ -1,0 +1,11 @@
+Failed to setup nrnpy_pr
+Failed to setup nrnpy_vec_math
+Failed to setup _nrnpy_rvp_pyobj_callback
+Can't load NEURON resources from /cygdrive/C/Users/md1avn/AppData/Roaming/uv/python/lib/nrn.def[aults]
+DSGC cell built: 350 dendrites
+  primaries     = 3
+  non-terminals = 347
+  terminals     = 177
+  origin (x,y)  = (101.95, 120.63)
+  terminal x range = [9.9, 196.4], y range = [24.2, 223.2]
+build_cell self-test PASSED.

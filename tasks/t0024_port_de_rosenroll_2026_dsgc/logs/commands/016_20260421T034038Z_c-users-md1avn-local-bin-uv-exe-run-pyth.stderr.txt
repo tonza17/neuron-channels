@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\run_tuning_curve.py", line 456, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\run_tuning_curve.py", line 448, in main
+    results = run_sweep(cfg, cell=cell, limit=args.limit)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\run_tuning_curve.py", line 336, in run_sweep
+    _, _, ncs_ach, ncs_gaba = _setup_synapses(
+                              ~~~~~~~~~~~~~~~^
+        cell=cell, gaba_weight_scale=gaba_scale
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\run_tuning_curve.py", line 221, in _setup_synapses
+    syn_e._ns = ns_e  # type: ignore[attr-defined]
+    ^^^^^^^^^
+LookupError: '_ns' is not a defined hoc variable name.

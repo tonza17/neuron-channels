@@ -1,0 +1,8 @@
+=== Port-fidelity gate ===
+- corr DSI    = 0.818  required [0.3, 0.5]  -> FAIL
+- uncorr DSI  = 0.835  required [0.18, 0.35]  -> FAIL
+- drop frac   = 0.000  required >= 0.2  -> FAIL
+=> FAIL
+wrote intervention file -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\intervention\port_fidelity_miss.md
+wrote score report -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\data\score_report.json
+wrote metrics -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\results\metrics.json

@@ -1,0 +1,63 @@
+{
+  "spec_version": "2",
+  "library_id": "de_rosenroll_2026_dsgc",
+  "name": "de Rosenroll 2026 DSGC",
+  "version": "0.1.0",
+  "short_description": "Port of the de Rosenroll et al. 2026 direction-selective retinal ganglion cell (DSGC) model into this project: NEURON HOC morphology template, compiled MOD mechanisms, and Python driver that reproduces the correlated-vs-AMB tuning-curve contrast.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/ar2_noise.py",
+    "code/build_cell.py",
+    "code/constants.py",
+    "code/paths.py",
+    "code/plot_tuning_curves.py",
+    "code/run_tuning_curve.py",
+    "code/score_envelope.py"
+  ],
+  "entry_points": [
+    {
+      "name": "generate_ar2_batch",
+      "kind": "function",
+      "module": "code/ar2_noise.py",
+      "description": "Vectorised AR(2) release-rate noise generator with configurable cross-channel correlation rho (0.6 reproduces the paper's correlated condition; 0.0 the AMB/decorrelated control)."
+    },
+    {
+      "name": "build_dsgc_cell",
+      "kind": "function",
+      "module": "code/build_cell.py",
+      "description": "Bootstraps NEURON 8.2.7, loads the vendored nrnmech.dll, sources RGCmodelGD.hoc and returns a configured DSGC cell with its primary/non-terminal/terminal dendrites enumerated and plan-pinned channel densities applied."
+    },
+    {
+      "name": "run_tuning_curve",
+      "kind": "script",
+      "module": "code/run_tuning_curve.py",
+      "description": "CLI driver for the four-condition moving-bar sweep (8-direction and 12-angle x {correlated, uncorrelated}); writes a trial-level CSV per condition under data/."
+    },
+    {
+      "name": "score_envelope",
+      "kind": "script",
+      "module": "code/score_envelope.py",
+      "description": "Scores the 12-angle correlated tuning curve against the t0004 target envelope using the t0012 tuning_curve_loss library, evaluates the REQ-5 port-fidelity gate, and writes data/score_report.json + results/metrics.json."
+    },
+    {
+      "name": "plot_tuning_curves",
+      "kind": "script",
+      "module": "code/plot_tuning_curves.py",
+      "description": "Renders polar and Cartesian PNG plots from the four sweep CSVs into results/images/ (plan step 14)."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "pandas"
+  ],
+  "test_paths": [],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "dendritic-computation"
+  ],
+  "created_by_task": "t0024_port_de_rosenroll_2026_dsgc",
+  "date_created": "2026-04-21"
+}

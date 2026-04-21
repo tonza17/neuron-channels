@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\plot_tuning_curves.py", line 122, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\plot_tuning_curves.py", line 116, in main
+    _render_one(job=job, work_dir=work_dir)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\plot_tuning_curves.py", line 72, in _render_one
+    plot_polar_tuning_curve(curve_csv=canonical_csv, out_png=job.polar_png)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0011_response_visualization_library\code\tuning_curve_viz\polar.py", line 73, in plot_polar_tuning_curve
+    curve: TuningCurve = load_curve(csv_path=curve_csv)
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0011_response_visualization_library\code\tuning_curve_viz\loaders.py", line 37, in load_curve
+    return load_tuning_curve(csv_path=csv_path)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 131, in load_tuning_curve
+    return _load_from_trials(df=df, rate_column=FIRING_RATE_COLUMN)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 81, in _load_from_trials
+    _validate_angle_grid(angles_deg=angles_deg)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 61, in _validate_angle_grid
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Expected 12 unique angles; got 8. Angles: [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0]

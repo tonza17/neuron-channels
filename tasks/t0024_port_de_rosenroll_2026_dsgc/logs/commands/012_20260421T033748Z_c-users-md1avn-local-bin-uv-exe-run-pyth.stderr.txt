@@ -1,0 +1,4 @@
+NEURON: Couldn't find: stdrun.hoc
+ near line 0
+ objref hoc_obj_[2]
+                   ^
