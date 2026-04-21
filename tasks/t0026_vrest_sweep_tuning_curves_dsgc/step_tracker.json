@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare V_rest-dependent DSI and peak firing rate against published DSGC recordings.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T17:29:04Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T17:34:39Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
