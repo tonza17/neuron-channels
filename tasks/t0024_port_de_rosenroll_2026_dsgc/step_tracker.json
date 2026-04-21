@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare de Rosenroll 2026 port metrics against Poleg-Polsky lineage (t0008, t0020, t0022) and Hanson port (t0023) plus published envelope.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T07:30:19Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T07:32:52Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
