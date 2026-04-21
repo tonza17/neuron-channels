@@ -5,7 +5,7 @@
   "name": "Modify DSGC port with spatially-asymmetric inhibition for channel testbed",
   "short_description": "Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0012_tuning_curve_scoring_loss_library",
@@ -16,7 +16,7 @@
     "t0019_literature_survey_voltage_gated_channels"
   ],
   "start_time": "2026-04-20T22:41:11Z",
-  "end_time": null,
+  "end_time": "2026-04-21T01:50:00Z",
   "expected_assets": {
     "library": 1
   },
