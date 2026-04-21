@@ -1,0 +1,55 @@
+{
+  "spec_version": "2",
+  "answer_id": "morphology-direction-selectivity-modeling-synthesis",
+  "question": "What variables of neuronal morphology have been shown by computational modeling to affect direction selectivity, by what mechanisms, and what gaps remain?",
+  "short_title": "Morphology variables and mechanisms shaping DS across computational models",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell",
+    "cable-theory",
+    "synaptic-integration"
+  ],
+  "answer_methods": [
+    "papers",
+    "internet"
+  ],
+  "source_paper_ids": [
+    "10.1038_s41598-018-23998-9",
+    "10.1017_S0952523804214109",
+    "10.1371_journal.pbio.0050185",
+    "10.1016_j.neuron.2016.02.020",
+    "10.1038_nature13240",
+    "10.1038_nn.3565",
+    "10.7554_eLife.81533",
+    "10.1371_journal.pcbi.1000877",
+    "10.1523_JNEUROSCI.17-16-06023.1997",
+    "10.1038_s41467-024-46234-7",
+    "10.1523_JNEUROSCI.4013-15.2016",
+    "10.1038_s41593-017-0046-4",
+    "10.1371_journal.pcbi.1009754",
+    "10.1038_12194",
+    "10.1017_S0952523823000019",
+    "10.1371_journal.pcbi.1000899",
+    "10.7554_eLife.52949",
+    "10.1016_j.cub.2018.03.001",
+    "10.1038_s41467-026-70288-4",
+    "10.1016_j.celrep.2025.116833"
+  ],
+  "source_urls": [
+    "https://scholar.google.com/",
+    "https://pubmed.ncbi.nlm.nih.gov/",
+    "https://www.biorxiv.org/"
+  ],
+  "source_task_ids": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0010_hunt_missed_dsgc_models",
+    "t0013_resolve_morphology_provenance"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0027_literature_survey_morphology_ds_modeling",
+  "date_created": "2026-04-21"
+}
