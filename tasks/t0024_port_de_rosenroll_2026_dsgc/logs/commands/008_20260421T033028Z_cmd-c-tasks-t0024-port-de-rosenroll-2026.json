@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "command": "cmd /c tasks\\t0024_port_de_rosenroll_2026_dsgc\\assets\\library\\de_rosenroll_2026_dsgc\\run_nrnivmodl.cmd",
+  "exit_code": 0,
+  "duration_seconds": 7.731,
+  "started_at": "2026-04-21T03:30:28Z",
+  "completed_at": "2026-04-21T03:30:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0024_port_de_rosenroll_2026_dsgc",
+  "stdout_file": "008_20260421T033028Z_cmd-c-tasks-t0024-port-de-rosenroll-2026.stdout.txt",
+  "stderr_file": "008_20260421T033028Z_cmd-c-tasks-t0024-port-de-rosenroll-2026.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 7,
+  "truncated": false
+}

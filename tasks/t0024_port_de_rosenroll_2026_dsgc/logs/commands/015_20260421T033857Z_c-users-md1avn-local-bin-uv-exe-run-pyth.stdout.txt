@@ -1,0 +1,7 @@
+Failed to setup nrnpy_pr
+Failed to setup nrnpy_vec_math
+Failed to setup _nrnpy_rvp_pyobj_callback
+Can't load NEURON resources from /cygdrive/C/Users/md1avn/AppData/Roaming/uv/python/lib/nrn.def[aults]
+cell has 177 terminals
+V range = [-70.88, 41.66]  spikes = 1
+smoke sim PASSED

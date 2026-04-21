@@ -1,0 +1,4 @@
+[12ang/correlated] wrote polar -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\results\images\tuning_curve_12ang.png
+[12ang/correlated] wrote cartesian -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\results\images\tuning_curve_12ang_cartesian.png
+[12ang/uncorrelated] wrote polar -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\results\images\tuning_curve_12ang_uncorrelated.png
+[12ang/uncorrelated] wrote cartesian -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\results\images\tuning_curve_12ang_uncorrelated_cartesian.png

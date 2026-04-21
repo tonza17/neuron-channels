@@ -1,0 +1,140 @@
+{
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0024_port_de_rosenroll_2026_dsgc branch from main and plan steps.",
+      "status": "completed",
+      "started_at": "2026-04-21T01:52:28Z",
+      "completed_at": "2026-04-21T01:58:15Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0008, t0012, t0022 are completed and fetch their outputs.",
+      "status": "completed",
+      "started_at": "2026-04-21T02:10:53Z",
+      "completed_at": "2026-04-21T02:13:18Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Initialize task folder scaffold (assets, code, data, results, logs).",
+      "status": "completed",
+      "started_at": "2026-04-21T02:13:47Z",
+      "completed_at": "2026-04-21T02:14:57Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review existing paper corpus for DSGC models, Nav1.6/Nav1.2 AIS split, and modern Kv/Cav formulations informing the port.",
+      "status": "completed",
+      "started_at": "2026-04-21T02:15:57Z",
+      "completed_at": "2026-04-21T02:32:20Z",
+      "log_file": "logs\\steps\\004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Locate the de Rosenroll et al. 2026 paper, publisher/preprint venue, and any accompanying NEURON source code or ModelDB entry.",
+      "status": "completed",
+      "started_at": "2026-04-21T02:32:34Z",
+      "completed_at": "2026-04-21T03:02:58Z",
+      "log_file": "logs\\steps\\005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0008 HOC/MOD layout, t0012 scoring library, and t0022 driver infrastructure for reuse.",
+      "status": "completed",
+      "started_at": "2026-04-21T03:03:18Z",
+      "completed_at": "2026-04-21T03:14:19Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Design the library asset, driver, tuning-curve protocol, scoring glue, and contingency if source code is unavailable.",
+      "status": "completed",
+      "started_at": "2026-04-21T03:14:31Z",
+      "completed_at": "2026-04-21T03:18:38Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: no remote compute needed; NEURON runs on the local Windows workstation like t0008.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Implement the de_rosenroll_2026_dsgc library asset, driver, run tuning-curve sweep, and score against target envelope.",
+      "status": "completed",
+      "started_at": "2026-04-21T03:18:55Z",
+      "completed_at": "2026-04-21T07:16:46Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote compute to tear down.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: mechanical code-reproduction port; no exploratory reinterpretation required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json with tuning curves and scoring outputs.",
+      "status": "completed",
+      "started_at": "2026-04-21T07:19:15Z",
+      "completed_at": "2026-04-21T07:29:51Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare de Rosenroll 2026 port metrics against Poleg-Polsky lineage (t0008, t0020, t0022) and Hanson port (t0023) plus published envelope.",
+      "status": "completed",
+      "started_at": "2026-04-21T07:30:19Z",
+      "completed_at": "2026-04-21T07:32:52Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions based on port outcomes and cross-model comparison.",
+      "status": "completed",
+      "started_at": "2026-04-21T07:33:05Z",
+      "completed_at": "2026-04-21T07:35:36Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run pre-merge verificator, open PR, merge to main, and refresh overview/.",
+      "status": "completed",
+      "started_at": "2026-04-21T07:35:51Z",
+      "completed_at": "2026-04-21T07:55:09Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

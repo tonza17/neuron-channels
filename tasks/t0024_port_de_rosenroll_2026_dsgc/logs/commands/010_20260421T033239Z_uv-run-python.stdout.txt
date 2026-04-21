@@ -1,0 +1,3 @@
+  target rho = 0.600, empirical = 0.374
+  target lag-1 autocorr ~ 0.818, empirical = 0.819
+AR(2) self-test FAILED.

@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\logs\steps\015_reporting
+
+[31m[1mERRORS:[0m
+[31m  SV-E003 error: Required file missing: logs/sessions/capture_report.json[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

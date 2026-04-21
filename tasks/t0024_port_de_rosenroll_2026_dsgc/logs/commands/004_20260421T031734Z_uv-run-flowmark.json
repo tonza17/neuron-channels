@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0024_port_de_rosenroll_2026_dsgc/plan/plan.md",
+  "exit_code": 0,
+  "duration_seconds": 0.482,
+  "started_at": "2026-04-21T03:17:34Z",
+  "completed_at": "2026-04-21T03:17:34Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0024_port_de_rosenroll_2026_dsgc",
+  "stdout_file": "004_20260421T031734Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "004_20260421T031734Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

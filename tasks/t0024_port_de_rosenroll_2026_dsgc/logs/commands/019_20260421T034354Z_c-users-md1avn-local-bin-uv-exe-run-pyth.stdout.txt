@@ -1,0 +1,16 @@
+Failed to setup nrnpy_pr
+Failed to setup nrnpy_vec_math
+Failed to setup _nrnpy_rvp_pyobj_callback
+Can't load NEURON resources from /cygdrive/C/Users/md1avn/AppData/Roaming/uv/python/lib/nrn.def[aults]
+Cell loaded: 177 terminals
+
+=== sweep: n_angles=8 n_trials/angle=20 rho=correlated ===
+  dir=  0  trial= 0  spikes=  5  peak=+37.3  [12.38s]
+  dir= 45  trial= 0  spikes=  3  peak=+36.7  [12.32s]
+  dir= 90  trial= 0  spikes=  1  peak=+36.9  [12.37s]
+  dir=135  trial= 0  spikes=  1  peak=+36.1  [12.27s]
+  dir=180  trial= 0  spikes=  0  peak=-50.7  [12.47s]
+  dir=225  trial= 0  spikes=  1  peak=+35.4  [12.87s]
+  dir=270  trial= 0  spikes=  2  peak=+38.0  [13.43s]
+  dir=315  trial= 0  spikes=  4  peak=+38.2  [13.04s]
+wrote 8 rows -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\data\tuning_curves_8dir_correlated_preflight.csv

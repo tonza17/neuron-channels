@@ -1,0 +1,14 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\task.json
+
+[31m[1mERRORS:[0m
+[31m  PM-E007 error: Step 'reporting' has status 'in_progress', not finished[0m
+
+[33m[1mWARNINGS:[0m
+[33m  PM-W002 warning: Commit subject exceeds 100 chars (109): 't0024_port_de_rosenroll_2026_dsgc [suggestions]: f...'[0m
+[33m  PM-W002 warning: Commit subject exceeds 100 chars (108): 't0024_port_de_rosenroll_2026_dsgc [compare-literat...'[0m
+[33m  PM-W002 warning: Commit subject exceeds 100 chars (109): 't0024_port_de_rosenroll_2026_dsgc [results]: write...'[0m
+[33m  PM-W002 warning: Commit subject exceeds 100 chars (117): 't0024_port_de_rosenroll_2026_dsgc [implementation]...'[0m
+[33m  PM-W002 warning: Commit subject exceeds 100 chars (109): 't0024_port_de_rosenroll_2026_dsgc [research-papers...'[0m
+
+[31m[1mFAILED[0m — 1 error(s), 5 warning(s)

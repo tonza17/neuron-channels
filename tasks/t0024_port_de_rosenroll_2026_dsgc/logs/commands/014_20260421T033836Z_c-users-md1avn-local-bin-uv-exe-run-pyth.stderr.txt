@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\_smoke_sim.py", line 75, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0024_port_de_rosenroll_2026_dsgc\tasks\t0024_port_de_rosenroll_2026_dsgc\code\_smoke_sim.py", line 57, in main
+    h.steps_per_ms = C.STEPS_PER_MS
+    ^^^^^^^^^^^^^^
+LookupError: 'steps_per_ms' is not a defined hoc variable name.
+NEURON: Couldn't find: stdrun.hoc
+ near line 0
+ objref hoc_obj_[2]
+                   ^

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "command": "python -u -m tasks.t0024_port_de_rosenroll_2026_dsgc.code.ar2_noise",
+  "exit_code": 1,
+  "duration_seconds": 0.11,
+  "started_at": "2026-04-21T03:32:33Z",
+  "completed_at": "2026-04-21T03:32:33Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0024_port_de_rosenroll_2026_dsgc",
+  "stdout_file": "009_20260421T033233Z_python-u-m.stdout.txt",
+  "stderr_file": "009_20260421T033233Z_python-u-m.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

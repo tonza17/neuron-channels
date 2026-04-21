@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0024_port_de_rosenroll_2026_dsgc",
+  "exit_code": 0,
+  "duration_seconds": 0.315,
+  "started_at": "2026-04-21T03:17:46Z",
+  "completed_at": "2026-04-21T03:17:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0024_port_de_rosenroll_2026_dsgc",
+  "stdout_file": "005_20260421T031746Z_uv-run-python.stdout.txt",
+  "stderr_file": "005_20260421T031746Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
