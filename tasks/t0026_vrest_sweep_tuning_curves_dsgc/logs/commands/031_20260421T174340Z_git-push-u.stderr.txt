@@ -1,0 +1,6 @@
+remote:
+remote: Create a pull request for 'task/t0026_vrest_sweep_tuning_curves_dsgc' on GitHub by visiting:
+remote:      https://github.com/tonza17/neuron-channels/pull/new/task/t0026_vrest_sweep_tuning_curves_dsgc
+remote:
+To https://github.com/tonza17/neuron-channels.git
+ * [new branch]      task/t0026_vrest_sweep_tuning_curves_dsgc -> task/t0026_vrest_sweep_tuning_curves_dsgc
