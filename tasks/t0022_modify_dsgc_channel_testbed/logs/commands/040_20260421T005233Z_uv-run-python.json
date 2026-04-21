@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0022_modify_dsgc_channel_testbed",
+  "command": "uv run python -m arf.scripts.utils.capture_task_sessions --task-id t0022_modify_dsgc_channel_testbed",
+  "exit_code": 0,
+  "duration_seconds": 0.845,
+  "started_at": "2026-04-21T00:52:33Z",
+  "completed_at": "2026-04-21T00:52:34Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0022_modify_dsgc_channel_testbed",
+  "stdout_file": "040_20260421T005233Z_uv-run-python.stdout.txt",
+  "stderr_file": "040_20260421T005233Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
