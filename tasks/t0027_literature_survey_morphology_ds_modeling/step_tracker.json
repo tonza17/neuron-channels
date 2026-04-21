@@ -95,9 +95,9 @@
       "step": 11,
       "name": "creative-thinking",
       "description": "Propose 3-5 concrete morphology-sweep experiments for the t0022/t0024 testbeds, prioritised by expected information gain.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T21:08:16Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T21:15:16Z",
       "log_file": "logs\\steps\\011_creative-thinking/"
     },
     {
