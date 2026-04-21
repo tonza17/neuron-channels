@@ -1,0 +1,6 @@
+[task/t0026_vrest_sweep_tuning_curves_dsgc e68b2df] t0026_vrest_sweep_tuning_curves_dsgc [reporting]: capture session transcripts and command logs
+ 4 files changed, 48 insertions(+)
+ create mode 100644 tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/commands/028_20260421T174120Z_git-commit-m.json
+ create mode 100644 tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/commands/028_20260421T174120Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/commands/028_20260421T174120Z_git-commit-m.stdout.txt
+ create mode 100644 tasks/t0026_vrest_sweep_tuning_curves_dsgc/logs/sessions/capture_report.json
