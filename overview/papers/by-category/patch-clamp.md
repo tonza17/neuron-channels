@@ -1,6 +1,6 @@
-# Papers: `patch-clamp` (20)
+# Papers: `patch-clamp` (22)
 
-20 papers across 15 year(s).
+22 papers across 16 year(s).
 
 [Back to all papers](../README.md)
 
@@ -281,7 +281,7 @@ is to fit mouse DSGC behaviour rather than a generic ON-OFF ganglion cell.
 
 </details>
 
-## 2018 (1)
+## 2018 (2)
 
 <details>
 <summary>📖 A Dense Starburst Plexus Is Critical for Generating Direction Selectivity
@@ -335,6 +335,66 @@ biocytin fills, Neurolucida tracings, a `141009` or `Pair1DSGC` identifier, or a
 deposition statement. The NeuroMorpho.org linkage of neuron 102976 to this DOI is therefore
 not supported by the paper itself and must be resolved by inspecting a different Feller-lab
 source (lab repository, earlier paired-recording paper, or unpublished deposition metadata).
+
+</details>
+
+<details>
+<summary>📖 Simple integration of fast excitation and offset, delayed inhibition
+computes directional selectivity in Drosophila — Gruntman et al., 2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41593-017-0046-4` |
+| **Authors** | Eyal Gruntman, Sandro Romani, Michael B. Reiser |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/s41593-017-0046-4` |
+| **URL** | https://www.nature.com/articles/s41593-017-0046-4 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41593-017-0046-4/summary.md) |
+
+This paper asks how direction selectivity is implemented in Drosophila T4 neurons, the first
+site in the fly ON motion pathway where directionally selective signals appear. The motivation
+is to resolve which of the classical algorithmic motion detectors \u2014
+Hassenstein\u2013Reichardt multiplication, Barlow\u2013Levick veto, or an Adelson\u2013Bergen
+motion-energy filter \u2014 the fly circuit actually implements. The authors focus on T4
+because prior calcium-imaging evidence had been ambiguous: the indicator is blind to
+hyperpolarization and too slow to resolve the sub- ommatidial timing differences that would
+distinguish these models.
+
+Methodologically, the study combines targeted in vivo whole-cell patch-clamp of GFP-labelled
+T4 cells (n = 17) with a biophysical, compartmental model of a single T4 cell whose morphology
+was reconstructed from Janelia FlyEM FIB-SEM. They map the receptive field with
+single-position bar flashes and with two-step apparent-motion pairs, extract per-position
+onset-time and decay-time, and then fit a passive conductance-based model (99 excitatory and
+55 inhibitory synapses on a 344-section dendrite) to the stationary SPFRs. They test
+generalization by predicting moving-bar responses the model never saw, and they run three
+clean model ablations: remove inhibition, collapse all synapses to the dendritic base, and
+replace the whole cell with a single compartment.
+
+The headline findings are that T4's direction selectivity arises from spatially offset fast
+excitatory and delayed inhibitory inputs (approximately 6\u00B0 E\u2013I offset along the
+PD\u2013ND axis) with invariant excitatory onset times across the receptive field, so there is
+no HR-style delay line. Two-step apparent motion produces pure null-direction suppression (DSI
+approximately 0.46 on the trailing side versus DSI approximately 0.03 on the leading side),
+with no preferred- direction enhancement. The conductance-based model reproduces DSI vs speed
+quantitatively for moving stimuli; removing inhibition abolishes DSI at every speed; and
+\u2014 critically for morphology-modelling work \u2014 collapsing all synapses to the
+dendritic base or using a single- compartment variant reproduces the full-dendrite DSI almost
+exactly. The T4 arbor's role is therefore input sampling, not nonlinear integration.
+
+For this project's literature survey on morphology-to-DS modelling, this is the canonical
+invertebrate reference and a strong null result: the morphology-related variable that drives
+DS in T4 is not dendritic cable geometry but the 1D spatial layout of excitatory and
+inhibitory inputs along the PD\u2013ND dendritic axis, combined with a dynamic passive
+shunting nonlinearity. That gives our compartmental RGC model a precise contrastive
+hypothesis: if dendritic morphology contributes to DS beyond input layout in vertebrate DSGCs,
+it must do so via active conductances, asymmetric passive cable properties, or structured
+dendritic branching that goes beyond the mechanisms sufficient for T4. We should reuse
+Gruntman et al.'s SPFR-to-moving-bar generalization protocol, their DSI = (R_PD \u2212 R_ND) /
+R_PD convention, and their collapse-to-base vs full-arbor ablation design as template
+comparisons in our own modelling work.
 
 </details>
 
@@ -532,6 +592,69 @@ approximately 2.4 nS; and (3) the target DS index for optimisation is 0.65-0.73 
 patch-clamp conditions. The space-clamp artefact warns against using apparent excitatory
 tuning in experimental voltage-clamp traces to calibrate any model excitatory tuning
 parameter.
+
+</details>
+
+## 2013 (1)
+
+<details>
+<summary>📖 Direction selectivity is computed by active dendritic integration in
+retinal ganglion cells — Sivyer & Williams, 2013</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn.3565` |
+| **Authors** | Benjamin Sivyer, Stephen R Williams |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn.3565` |
+| **URL** | https://www.nature.com/articles/nn.3565 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/summary.md) |
+
+Sivyer and Williams address one of the oldest and most studied computations in the mammalian
+retina — the direction-selective response of ON-OFF DSGCs — and ask, at the cellular level,
+*where* the selectivity is actually computed. Classical circuit models had concentrated on the
+presynaptic starburst amacrine cell and on spatially offset GABAergic input to the DSGC. Prior
+single-site recordings had been unable to resolve whether the DSGC itself simply passes along
+its synaptic input or performs active, location-specific computation of its own. The authors
+reframe the question by introducing dual simultaneous whole-cell patch-clamp recordings from
+the DSGC soma and from individual terminal dendritic branches of the same cell, supplemented
+by pharmacology (TTX, gabazine, QX-314) and a reconstructed-morphology compartmental
+simulation.
+
+Methodologically, the paper combines two-photon-guided patch-clamping of sub-micrometre
+terminal dendrites with conventional visual stimulation of ON-OFF DSGCs, and with
+voltage-clamp isolation of excitatory and inhibitory synaptic conductances. Dendritic spikes
+are identified by their larger amplitude at the dendritic than at the somatic recording site
+and by their temporal lead over the somatic action potential — the same criteria used in
+canonical cortical dendritic-spike work. The compartmental model, fitted to passive responses
+and endowed with distributed voltage-gated sodium and calcium conductances, is used to test
+whether the experimental observations imply branch-level spike-initiation zones operating
+quasi-independently.
+
+The headline findings are that preferred-direction stimuli drive locally initiated dendritic
+spikes in terminal branches which then propagate and boost the somatic drive, while
+null-direction stimuli recruit GABAergic inhibition that acts at the same terminal branches to
+veto spike initiation before it can escape to the soma. The direction-selectivity index is
+close to 1 at the soma under control conditions, and this selectivity is almost entirely lost
+when dendritic sodium spikes are blocked. The model reproduces these behaviours when terminal
+dendrites carry physiologically plausible densities of voltage-gated sodium and calcium
+channels and when inhibitory synaptic input is placed asymmetrically on the preferred-null
+axis. Individual terminal branches behave as near-independent direction-selective subunits
+whose outputs are pooled at the soma.
+
+For this project literature survey on how morphology shapes DS via computational modelling,
+Sivyer2013 sits at the boundary of the modelling bucket: it is primarily an experimental
+dual-patch study, but its compartmental simulation supplies the mechanistic bridge between
+dendritic geometry and DS computation. It is included with the explicit flag that
+voltage-gated channel density is as decisive as branch geometry: morphology-only (passive)
+models of DSGCs cannot reproduce the observations of this paper. Any DSGC model we build or
+compare against in t0027 must jointly specify dendritic morphology *and* the densities of gNa
+and gCa in terminal branches, and must treat terminal branches as quasi-independent
+spike-initiation compartments with local GABAergic veto rather than as a single
+electrotonically collapsed input.
 
 </details>
 

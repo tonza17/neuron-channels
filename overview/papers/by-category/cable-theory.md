@@ -1,12 +1,73 @@
-# Papers: `cable-theory` (7)
+# Papers: `cable-theory` (10)
 
-7 papers across 6 year(s).
+10 papers across 8 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2010 (2)
+## 2018 (1)
+
+<details>
+<summary>📖 Non-uniform weighting of local motion inputs underlies dendritic
+computation in the fly visual system — Dan et al., 2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41598-018-23998-9` |
+| **Authors** | Ohad Dan, Elizabeth Hopp, Alexander Borst, Idan Segev |
+| **Venue** | Scientific Reports (journal) |
+| **DOI** | `10.1038/s41598-018-23998-9` |
+| **URL** | https://www.nature.com/articles/s41598-018-23998-9 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41598-018-23998-9/summary.md) |
+
+Dan, Hopp, Borst and Segev (2018) resolve the long-standing question of how the ~400–600
+motion-sensitive dendritic branchlets of a blowfly VS tangential cell are integrated into the
+cell's single direction-selective axonal output. They combine two prior *in vivo* datasets —
+axonal intracellular recordings and branchlet-level Ca2+ imaging — and fuse them onto six
+prototypical 3D reconstructions of VS1, VS2, VS3, VS4, VS5 and VS9 cells by exploiting the
+morphological stereotypy of VS cells across specimens. The fused dataset yields up to 116
+local receptive fields on a single prototype, enabling the first quantitative test of the rule
+by which dendritic RFs are combined into the axonal RF.
+
+The methodology is a steady-state passive cable / compartmental model in NEURON with fixed Rm
+= 2,000 Ω·cm² and Ri = 40 Ω·cm and no free parameters. For each branchlet they compute the
+electrotonic distance (x/λ), the local input resistance (8–13 MΩ), and — crucially — the
+branchlet-to-axon transfer resistance (2.4–3.0 MΩ range, ~20% variability within a cell). They
+then compare two integration rules against the experimentally measured axonal receptive field:
+uniform average (the null model from Hopp et al.) versus transfer-resistance-weighted average.
+A supplementary threshold non-linearity that filters out the smallest dendritic vectors is
+added on top.
+
+The headline result is that TR-weighted summation significantly outperforms uniform summation:
+for VS5 the difference index drops from 0.411 to 0.293, with the improvement exceeding 2 SD of
+a shuffled-weights null distribution. Adding the non-linearity improves the fit further to DI
+= 0.283 (VS3), 0.236 (VS4), 0.280 (VS5). Separately, the full inter-branchlet TR matrix (3–4
+MΩ) is much smaller than the local branchlet input resistance (8–13 MΩ), establishing that
+VS-cell dendritic branchlets are **electrically decoupled and function as independent local
+subunits**. The effective membrane time constant (<2 ms) is much shorter than the
+motion-detector input timescale, validating the steady-state approximation.
+
+For this literature survey, the paper is included as a borderline entry: it is a single-
+morphology-per-cell-type passive-cable study of an invertebrate visual neuron, not a
+morphology-variant sweep (the earlier task brief mis-attributed it as "Haag2018 — 200
+morphology variants", which was wrong). It is nonetheless a strong reference for (a)
+transfer-resistance weighting as the correct passive rule for many-to-one dendritic
+integration, (b) the independent-subunit architecture as a passively-derivable property of
+dendritic trees, and (c) the methodological pattern of fusing branchlet-level imaging across
+specimens onto a prototypical morphology. Translation to vertebrate retinal DSGCs requires
+adjusting for active dendritic mechanisms and gap-junctional network effects (the authors flag
+axo-axonal coupling between neighboring VS cells, coupling coefficients up to 50%, as one
+reason their fit is not perfect), but the core TR-weighting result is a morphology-agnostic
+passive-cable prediction that any compartmental DSGC model should reproduce as a baseline
+before invoking active conductances.
+
+</details>
+
+## 2010 (3)
 
 <details>
 <summary>📖 Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons
@@ -118,6 +179,56 @@ for use in simulation.
 
 </details>
 
+<details>
+<summary>📖 One Rule to Grow Them All: A General Theory of Neuronal Branching and
+Its Practical Application — Cuntz et al., 2010</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1000877` |
+| **Authors** | Hermann Cuntz, Friedrich Forstner, Alexander Borst, Michael Häusser |
+| **Venue** | PLoS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1000877` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000877 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/summary.md) |
+
+Cuntz, Forstner, Borst and Häusser propose that the apparent diversity of dendritic
+morphologies across cell classes is the solution of a single optimisation problem: given a
+target spanning field populated with carrier points, grow a tree that simultaneously minimises
+total wiring length (Cajal's cytoplasm conservation) and path length from the root (Cajal's
+conduction-time conservation). A single scalar balancing factor `bf` weighs the two costs, and
+an extended minimum-spanning-tree algorithm converts the problem into a tractable greedy
+construction.
+
+The method is validated on three cell classes that sit in very different corners of morphology
+space — fly LPTCs, mammalian CA1 pyramidal neurons, and cerebellar Purkinje cells — by
+matching Sholl profiles, branch-order distributions, total dendritic length, and
+segment-length statistics between synthetic and reconstructed arbors. The balancing factor
+additionally maps onto electrotonic compartmentalisation, linking a single geometric parameter
+to cable-theoretic behaviour. The authors release the method as the open-source MATLAB "TREES
+toolbox", which also contains morphometric analyses and a semi-automated reconstruction
+pipeline from confocal image stacks.
+
+The headline results are quantitative: synthetic trees match total wiring length within a few
+percent, reproduce Sholl and branch-order distributions across all three cell classes, and do
+so with biologically realistic `bf` clustering at intermediate values (~**0.2-0.7**). The
+theory thereby elevates Cajal's qualitative laws into a predictive generator and provides the
+first genuinely low-dimensional parametric family of realistic dendritic morphologies.
+
+For this project's literature survey on how morphology shapes direction selectivity, Cuntz2010
+is flagged as borderline: it contains no DS experiments or simulations. However, it is the
+enabling tool for the sweep-based approach we plan. Its 3-5 Cuntz parameters define a
+tractable morphology embedding in which DSI can be evaluated compartmentally, and the mapping
+between `bf` and electrotonic compartmentalisation is directly mechanistically relevant to DS
+computations that rely on dendritic independence (e.g. starburst amacrine sectors, DSGC
+subunit models). It will be cited as the morphology-generation backbone for any
+synthetic-arbor DS sweep in the project.
+
+</details>
+
 ## 2005 (1)
 
 <details>
@@ -171,6 +282,57 @@ that DSGC simulations should follow. Specifically, any DSGC model should be anal
 systematic ablation of each of the five dendritic primitives (cable filtering, NMDA
 supralinearity, Na+ spikes, Ca2+ plateaus, shunting asymmetry) to report which are necessary
 and which are sufficient for DS.
+
+</details>
+
+## 2004 (1)
+
+<details>
+<summary>📖 Direction selectivity in a model of the starburst amacrine cell — Tukker
+et al., 2004</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1017_S0952523804214109` |
+| **Authors** | John J. Tukker, W. Rowland Taylor, Robert G. Smith |
+| **Venue** | Visual Neuroscience (journal) |
+| **DOI** | `10.1017/S0952523804214109` |
+| **URL** | https://www.cambridge.org/core/journals/visual-neuroscience/article/abs/direction-selectivity-in-a-model-of-the-starburst-amacrine-cell/BEFF3097D9C22BE07CFA6F5AA3BE4095 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523804214109/summary.md) |
+
+Tukker, Taylor, and Smith address a specific puzzle raised by Euler et al. (2002): SBAC
+dendritic tips show direction-selective calcium signals even with GABAa/c blocked, so where
+does the DS come from? The authors hypothesize that the answer is geometry. Their scope is a
+passive, excitatory-only SBAC with realistic or parameterizable morphology; their motivation
+is that the SBAC is the dominant source of directional inhibition onto DSGCs, so explaining
+SBAC DS bounds the morphology-to-DSGC mapping.
+
+The method is a full Neuron-C compartmental simulation built on two digitized rabbit SBACs and
+a procedural artificial-morphology generator, driven by a semirandom bipolar array (200-300
+synapses) with physiological cone and synaptic dynamics. They systematically manipulate
+independent geometric variables — first-branch distance, distal branching density,
+dendritic-tree radius, electrotonic length constant, compartment resolution, and per-dendrite
+length variability — and read out DSI at 16 dendritic tips and the soma for bars, spots,
+annuli, and gratings. An optional Q-type Ca2+ channel layer provides the voltage-to-release
+amplification step.
+
+The headline findings are that (a) morphology alone generates DSI ~ 0.2 at dendritic tips for
+bars and DSI up to ~0.9 for gratings; (b) the mechanism is the direction-dependent summation
+of a local tip-EPSP with a soma-mediated global EPSP, with optimal electrotonic length ~
+dendritic spread; (c) DS is surprisingly robust to branching detail but sensitive to distal
+synapse count and to symmetry-breaking in dendritic length; and (d) a Ca2+-channel threshold
+can amplify the voltage DSI roughly threefold in intracellular calcium concentration.
+
+For this project, Tukker 2004 is the canonical starting point for morphology as a causal
+variable for DS. It fits the inclusion criteria with the caveat that the cell modeled is the
+SBAC rather than the DSGC itself (borderline — flagged in Overview). Its artificial-morphology
+methodology, DSI definition, and local-global summation framing should be treated as reference
+points when comparing to downstream DSGC-centric modeling work, and its demonstration that
+passive-only, inhibition-free morphology can yield strong DS establishes the baseline any more
+complex retinal DS model must improve upon.
 
 </details>
 

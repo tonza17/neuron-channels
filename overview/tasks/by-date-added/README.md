@@ -8,24 +8,27 @@
 
 ## 2026-04-21 (5)
 
-## ⏳ In Progress
+## ✅ Completed
 
 <details>
-<summary>⏳ 0027 — <strong>Literature survey: modeling effect of cell morphology
+<summary>✅ 0027 — <strong>Literature survey: modeling effect of cell morphology
 on direction selectivity</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0027_literature_survey_morphology_ds_modeling` |
-| **Status** | in_progress |
+| **Status** | completed |
 | **Effective date** | 2026-04-21 |
 | **Dependencies** | — |
 | **Expected assets** | 15 paper, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/), [`answer-question`](../../../meta/task_types/answer-question/) |
 | **Start time** | 2026-04-21T18:33:02Z |
+| **End time** | 2026-04-21T22:23:03Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Literature survey: modeling effect of cell morphology on direction selectivity](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
 | **Task folder** | [`t0027_literature_survey_morphology_ds_modeling/`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) |
 
 # Literature Survey: Modeling the Effect of Cell Morphology on Direction Selectivity
 
@@ -312,9 +315,41 @@ experimental work on t0022 / t0024 / t0026 follow-ups.
 * `results_summary.md` opens with a single sentence stating the final paper count and the most
   consensus-supported morphology variable.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Morphology and Direction Selectivity Modeling Literature Survey**
+>
+> **Summary**
+>
+> This task added **15 new paper assets** to the morphology-and-direction-selectivity modeling
+> corpus,
+> bringing the total corpus (baseline + new) to **20 papers**. Coverage now spans retinal SAC
+> and DSGC
+> models, fly lobula-plate VS and T4 neurons, primate SAC, cat V1 cortical cells, and the
+> TREES-toolbox cable-theory framework. The strongest cross-paper evidence supports
+> **asymmetric SAC
+> inhibition** and **electrotonic compartmentalisation** as the DS-shaping morphology
+> mechanisms:
+> these are replicated across mouse, rabbit, and fly; across TREES, NEURON, NeuronC, and
+> patch-clamp;
+> and across at least seven papers. Kinetic tiling of bipolar input (sustained-proximal,
+> transient-distal) is the third replicated mechanism, supported by four independent papers.
+>
+> Key gaps: **dendritic diameter** is systematically swept in only one paper (Wu2023, primate
+> SAC);
+> **branch order**, **soma size**, and **branch-angle at fixed length** are all effectively
+> untouched
+> in the DSGC literature. Cortical DS modeling is limited to one paper (Anderson1999) that
+> rejects
+> dendritic asymmetry as sufficient and has not been updated with kinetic-tiling tests. The
+> corpus
+> also contains a genuine contradiction: Sivyer2013 and Schachter2010 argue DSGC DS requires
+> active
+> dendritic conductances, while Dan2018 (fly VS) and Gruntman2018 (fly T4) show that passive
+> cable or
+> even a collapsed single compartment can produce DS in invertebrate systems.
+
+</details>
 
 <details>
 <summary>✅ 0026 — <strong>V_rest sweep tuning curves for t0022 and t0024 DSGC

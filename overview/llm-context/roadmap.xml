@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T22:00:38Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-21T22:43:42Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>159053</char_count>
-    <byte_count>159262</byte_count>
-    <estimated_tokens>39763</estimated_tokens>
+    <char_count>151177</char_count>
+    <byte_count>151244</byte_count>
+    <estimated_tokens>37794</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -137,9 +137,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
         <id>t0025_brainstorm_results_5</id>
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
+        <id>t0027_literature_survey_morphology_ds_modeling</id>
       </source_ids>
       <content>
-Completed tasks: 25
+Completed tasks: 26
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -290,6 +291,12 @@ ID: t0026_vrest_sweep_tuning_curves_dsgc
 Completed: 2026-04-21
 Short description: Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
 Result summary: Results Summary: V_rest sweep tuning curves for t0022 and t0024 DSGC ports Summary Swept resting potential across eight values (**-90 mV to -20 mV in 10 mV steps**) for two DSGC compartmental models under the standard 12-direction moving-bar protocol. Model t0022 (deterministic ModelDB 189347 port) ran **96 trials** (~6.0 min wall time); model t0024 (de Rosenroll 2026 port with AR(2)-correlated stochastic release at rho=0.6) ran **960 trials** (~3.21 h wall time). Both models show strong V_rest dependence but with qualitatively different shapes: t0022 peaks DSI sharply at V_rest=-60 mV, while t0024 is U-shaped with maxima at the extremes. Metrics * **t0022 DSI range**: **0.046** (V=-30 mV)...
+
+## Literature survey: modeling effect of cell morphology on direction selectivity
+ID: t0027_literature_survey_morphology_ds_modeling
+Completed: 2026-04-21
+Short description: Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.
+Result summary: Results Summary: Morphology and Direction Selectivity Modeling Literature Survey Summary This task added **15 new paper assets** to the morphology-and-direction-selectivity modeling corpus, bringing the total corpus (baseline + new) to **20 papers**. Coverage now spans retinal SAC and DSGC models, fly lobula-plate VS and T4 neurons, primate SAC, cat V1 cortical cells, and the TREES-toolbox cable-theory framework. The strongest cross-paper evidence supports **asymmetric SAC inhibition** and **electrotonic compartmentalisation** as the DS-shaping morphology mechanisms: these are replicated across mouse, rabbit, and fly; across TREES, NEURON, NeuronC, and patch-clamp; and across at least seven...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -297,10 +304,9 @@ Result summary: Results Summary: V_rest sweep tuning curves for t0022 and t0024 
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0027_literature_survey_morphology_ds_modeling</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 1
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -374,285 +380,6 @@ No analyses beyond the basic 12-angle tuning curve and score report. Channel-sen
 parameter-space exploration, dendritic-computation decomposition, optogenetic/pharmacological
 perturbation studies, or other downstream analyses belong to follow-up tasks and must not be
 performed here.
-
-## Literature survey: modeling effect of cell morphology on direction selectivity
-ID: t0027_literature_survey_morphology_ds_modeling
-Status: in_progress
-Effective date: 2026-04-21
-Short description: Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.
-
-#### Motivation
-
-Our recent V_rest sweep (`t0026`) on the t0022 (deterministic ModelDB 189347 port) and t0024 (de
-Rosenroll 2026 AR(2)-correlated stochastic port) DSGC compartmental models produced a headline
-finding: neither port simultaneously reproduces the published DSI (0.45–0.67) and the published peak
-firing rate (40–166 Hz) at any biologically plausible resting potential. Both ports use a single
-fixed dendritic morphology — `dsgc-baseline-morphology` for t0022/t0024 — and we have not yet asked
-how much of the gap is attributable to morphology versus channels, synaptic kinetics, or input
-statistics.
-
-Before we commit compute and engineering effort to a morphology-sweep experiment on these testbeds,
-we need to know what the published modeling literature already says: which morphology variables
-(dendritic length, branch order, segment diameter, asymmetry, input layout on dendrites,
-soma-dendrite ratios, etc.) have been shown to affect direction selectivity, by what causal
-mechanisms, and where the published findings disagree or have gaps. This survey directly informs the
-design of follow-up experiments on t0022/t0024 and constrains which morphology dimensions are worth
-sweeping.
-
-#### Scope
-
-Survey the published computational, biophysical, and theoretical modeling literature on the effect
-of neuronal cell morphology on direction selectivity. Primary focus: retinal direction-selective
-ganglion cells (DSGCs — ON, OFF, ON-OFF subtypes) and starburst amacrine cells (SACs). Secondary
-focus: other direction-selective neurons (cortical V1 / MT, fly lobula plate / motion-sensitive
-neurons, vestibular nuclei) where morphology is treated as a manipulated variable in a model.
-
-##### Already-covered baseline
-
-Five papers in our existing corpus already meet the inclusion criteria below and were identified
-during a prior in-session corpus search. **Do NOT re-download these** — link to them by `paper_id`
-in the synthesis report and cite them alongside any new papers found:
-
-* `10.1371_journal.pcbi.1000899` — Schachter 2010 — dendrite electrotonic length × Na density
-  distribution → spike-DSI amplification (NeuronC compartmental)
-* `10.7554_eLife.52949` — Jain 2020 — dendritic compartment scale (5–10 µm) × CaV/NMDA thresholding
-  → dendritic Ca²⁺ DSI (NEURON + 2P imaging)
-* `10.1016_j.cub.2018.03.001` — Morrie 2018 — SAC arbor size &amp; plexus density (Sema6A−/−) → DSGC
-  spike DSI collapse (TREES-toolbox IPSC simulation)
-* `10.1038_s41467-026-70288-4` — Poleg-Polsky 2026 — bipolar input location on dendrite × A-type K ×
-  NMDA ratio × passive Rm/Cm via ML search → DSI mechanisms (NEURON + ML)
-* `10.1016_j.celrep.2025.116833` — de Rosenroll 2026 — SAC GABA/ACh spatial offset × subunit E/I
-  geometry → subunit-level DSI (NEURON network)
-
-The task&#x27;s job is to **extend** coverage beyond these five, not duplicate them.
-
-#### Inclusion Criteria
-
-A paper is included if it satisfies **all three** criteria:
-
-1. **Builds a model** — compartmental simulation (NEURON, Arbor, NetPyNE, Brian, GENESIS, NeuronC,
-   custom solver), cable-theory derivation, or abstract neural network model with explicit
-   morphology (not just point neurons).
-2. **Morphology is a manipulated or causally-relevant variable** — dendritic branching pattern,
-   branch order, dendritic length, segment diameter, surface area, soma-dendrite ratio, asymmetric
-   vs symmetric arbors, isotropic vs anisotropic arbors, primary/secondary/tertiary hierarchy, or
-   the spatial layout of synaptic inputs ON the dendrites. Just *using* a morphology without varying
-   it does not qualify.
-3. **Direction selectivity as outcome** — directional tuning curves, DSI / DS index, preferred-vs-
-   null direction asymmetry, vector-sum direction, or equivalent measure of direction-dependent
-   firing or PSP.
-
-##### Borderline cases — include and flag
-
-* **SAC morphology → DS** papers — include; flag as `&quot;SAC, not DSGC&quot;`.
-* **Passive cable theory** papers deriving DS from input asymmetry on a passive cylinder — include;
-  flag as `&quot;passive cable, geometry-only&quot;`.
-* **Insect / invertebrate DS-circuit** modeling — include if morphology is varied; flag organism
-  (e.g., `&quot;Drosophila lobula plate&quot;`, `&quot;hawkmoth&quot;`).
-* **Cortical or subcortical DS neurons** modeled with morphology variation — include; flag region.
-
-##### Borderline cases — exclude
-
-* Papers fitting DSI to **one fixed morphology** without varying it — exclude; they do not model the
-  *effect* of morphology.
-* Pure **NMDA-Mg-block** or pure **E/I-timing** papers without morphology variation — exclude.
-* Pure experimental papers (no model) — exclude unless the experimental finding is explicitly used
-  to constrain a model in the same paper.
-
-#### Search Strategy
-
-##### Citation-graph expansion
-
-Pull forward and backward citations for each of the five baseline papers using:
-
-* Google Scholar &quot;Cited by&quot; — forward citation graph
-* OpenCitations / Semantic Scholar API — both directions
-* Each paper&#x27;s reference list — backward citations
-
-##### Targeted keyword searches
-
-Run on Google Scholar, PubMed, bioRxiv, arXiv:
-
-* `&quot;DSGC compartmental model morphology&quot;`
-* `&quot;direction selectivity dendritic geometry&quot;`
-* `&quot;starburst amacrine cell morphology direction selectivity&quot;`
-* `&quot;asymmetric dendritic arbor direction selective&quot;`
-* `&quot;branch order morphology direction tuning&quot;`
-* `&quot;compartmental model dendritic length DSI&quot;`
-* `&quot;cable theory direction selective neuron&quot;`
-* `&quot;synaptic input asymmetry dendritic compartment direction&quot;`
-
-##### Author-targeted searches
-
-Pull recent and seminal works from authors known to publish in this space:
-
-* Sebastian Espinosa (Schachter senior author), Greg Field, Marla Feller, Jonathan Demb, Florentina
-  Soto, Alex Poleg-Polsky, Justin de Rosenroll, Stuart Trenholm, Anastasia Jain, Adam Mani, Wei Wei,
-  David Berson, Richard Masland, Robert Smith.
-
-##### Repository searches
-
-* **ModelDB** (`modeldb.science`) — search for compartmental DSGC and SAC models; each model entry
-  typically links to one or more publications.
-* **SenseLab Yale** — DSGC-related model lookups.
-* **Open Source Brain** — published compartmental model collection.
-
-##### Beyond retina
-
-Do not limit to retinal DSGCs. Include:
-
-* Classic cable-theory papers (Rall, Branco-Häusser-Clark) deriving DS from input pattern asymmetry
-  on dendritic geometry.
-* Cortical DS modeling (V1 simple/complex cells, MT) where morphology is varied.
-* Fly motion-sensitive neuron modeling (HS/VS cells, T4/T5) where dendritic geometry is varied.
-
-#### Budget and Stop Criterion
-
-**Target**: 12–20 new paper assets downloaded and summarised (in addition to the 5 baseline papers,
-for a final corpus of ~17–25 morphology-DS papers).
-
-**Stop criterion**: stop earlier if returns diminish — when newly-found candidates stop satisfying
-the inclusion criteria or stop introducing novel mechanisms / morphology variables. Push to **25 new
-papers** if novel mechanisms keep appearing (e.g., a previously-unknown class of morphology
-manipulation shows up).
-
-**Per-paper cost**: $0. No paid APIs. PDF retrieval is via open access, preprint servers, or
-Sheffield institutional access (VPN / SSO). For paywalled PDFs that cannot be retrieved (e.g., Cell
-Press / Elsevier / Springer-Nature / Wiley), generate an intervention file in `intervention/` rather
-than blocking the survey — record the metadata and abstract from the landing page, mark
-`download_status: &quot;failed&quot;` in `details.json`, and proceed.
-
-#### Deliverables
-
-`expected_assets`: `{&quot;paper&quot;: 15, &quot;answer&quot;: 1}` — the `15` is the midpoint of the 12–20 target
-range; the actual count may legitimately fall anywhere in 12–25 depending on the stop criterion.
-
-##### 1. Paper assets (target 12–20)
-
-Each new paper assets goes under
-`tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/&lt;paper_id&gt;/` and follows
-`meta/asset_types/paper/specification.md` exactly:
-
-* `details.json` with all required fields, including all relevant `categories` from
-  `meta/categories/`
-* `summary.md` with all mandatory sections (Metadata, Abstract, Overview, Architecture/Models/
-  Methods, Results, Innovations, Datasets, Main Ideas, Summary), summarised after reading the full
-  paper text per the spec
-* `files/` containing at minimum the PDF (or markdown conversion if no PDF is available)
-
-For every included paper, the `summary.md` must explicitly note in the
-`## Architecture, Models and Methods` section: which morphology variable was manipulated, how it was
-manipulated (range, levels, parametric vs categorical), and the DS metric reported.
-
-##### 2. Answer asset
-
-One answer asset at
-`tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/`
-following `meta/asset_types/answer/specification.md`.
-
-Question (verbatim, to appear in the answer asset&#x27;s `details.json`):
-
-&gt; **What variables of neuronal morphology have been shown by computational modeling to affect
-&gt; direction selectivity, by what mechanisms, and what gaps remain?**
-
-The answer must cite by `paper_id` every paper used as evidence — both the 5 baseline papers (from
-t0002, t0010, t0013, t0024) and every new paper added in this task. Confidence level should reflect
-the consistency of findings across papers and across modelling approaches.
-
-##### 3. `results_detailed.md` synthesis
-
-Required sections (in this order):
-
-* **Coverage table** — one row per included paper (baseline + new). Columns: `paper_id`,
-  first-author year, organism / cell type, morphology variable manipulated, DS outcome measured,
-  model type, mechanism flag.
-* **Morphology variable taxonomy** — group findings by which variable was studied: dendritic length,
-  branch count, branch order, segment diameter, total surface area, asymmetric vs symmetric arbor,
-  input-on-dendrite spatial layout, soma-dendrite ratio, dendritic compartmentalisation scale. For
-  each variable: how many papers studied it, what range was swept, what direction the effect on DSI
-  went, and the strength of the consensus.
-* **Mechanism taxonomy** — group findings by causal mechanism: electrotonic compartmentalisation,
-  dendritic spike thresholding, NMDA-Mg gating in dendritic context, delay lines via dendritic cable
-  propagation, coincidence detection at branch points, asymmetric SAC inhibition driven by
-  presynaptic geometry, leak-driven attenuation, axial-resistance-driven sequence selectivity.
-* **Gaps and contradictions** — which morphology variables are under-explored in the literature,
-  where published findings disagree (e.g., Schachter 2010 vs Jain 2020 on the dominant scale of
-  compartmentalisation), and which findings are most replicable across labs / model frameworks.
-* **Recommendations** — 3–5 concrete morphology-sweep experiments worth running on our t0022 / t0024
-  testbeds, prioritised by expected information gain. Each recommendation must specify: the
-  morphology variable to sweep, the range and step size, the predicted effect on DSI / peak firing
-  rate based on the literature, and which baseline paper the prediction comes from.
-
-##### 4. `results_summary.md`
-
-A 2–3 paragraph executive summary with headline findings: how many papers were found in total
-(baseline + new), which morphology variables have the strongest cross-paper evidence, what the field
-disagrees on, what the project should sweep first on the t0022 / t0024 testbeds.
-
-#### Categories
-
-For each new paper, mark with the most specific applicable subset of: `direction-selectivity`,
-`compartmental-modeling`, `dendritic-computation`, `retinal-ganglion-cell`. Add `cable-theory` for
-passive-cable theoretical papers, `patch-clamp` only if the paper jointly contributes patch-clamp
-data plus a morphology-varying model, `synaptic-integration` if the morphology variation is on
-synaptic input layout.
-
-#### Dependencies
-
-**None.** This is an independent literature survey that runs in parallel with any active
-experimental work on t0022 / t0024 / t0026 follow-ups.
-
-#### Compute and Budget
-
-* No remote compute.
-* No paid API.
-* Runs entirely on the local Windows workstation using existing tooling (paper-download skill,
-  paper-asset spec).
-* PDF retrieval may require Sheffield VPN or institutional SSO for paywalled journals — flag as
-  intervention if a needed PDF cannot be retrieved.
-* Estimated wall time: 4–8 hours of human-supervised execution, depending on how many borderline
-  papers require careful judgment calls and how many PDFs are paywalled.
-
-#### Key Questions (numbered, falsifiable)
-
-1. Which morphology variable (dendritic length, branch count, segment diameter, asymmetry, input
-   layout) has the **most cross-paper evidence** for affecting DSI in DSGCs and SACs?
-2. Is the **dominant compartmentalisation scale** for direction selectivity at the level of whole
-   dendrites (Schachter 2010), 5–10 µm sub-segments (Jain 2020), or somewhere else?
-3. Where do **published findings disagree**, and is the disagreement attributable to species (mouse
-   vs rabbit), cell-type (ON vs OFF vs ON-OFF), simulator (NEURON vs NeuronC vs custom), or genuine
-   biological diversity?
-4. Which **3–5 morphology sweeps** should we prioritise on t0022 / t0024 next, given our headline
-   gap (peak firing rate 15 Hz at DSI 0.66, vs published 148 Hz)?
-5. Is there a **published morphology that simultaneously reproduces DSI ≈ 0.5 AND peak firing rate ≈
-   100 Hz** in a compartmental model? If so, what makes that morphology different from
-   `dsgc-baseline-morphology`?
-
-#### Risks and Fallbacks
-
-* **PDF paywall**: flag as intervention; abstract-only summary is acceptable for paywalled papers if
-  the abstract contains enough information to confirm inclusion.
-* **Borderline judgment calls**: when the inclusion criteria are ambiguous for a given paper,
-  default to **include and flag**, with a brief borderline note in the paper&#x27;s `summary.md`. The
-  synthesis report can re-exclude flagged papers if the synthesis-stage review finds the morphology
-  link too weak.
-* **Search exhaustion before target hit**: if fewer than 12 new papers are found after exhausting
-  the search strategy, document the gap in `results_summary.md` and proceed with whatever coverage
-  was achieved. Do not pad the corpus with weakly-relevant papers to meet the count.
-* **Search overshoot**: if more than 25 strong candidates are found, prioritise by recency
-  (post-2010) and by mechanism novelty, and defer the rest to a follow-up survey task suggestion.
-
-#### Verification Criteria
-
-* Each new paper asset passes `verify_paper_asset.py` with 0 errors.
-* `details.json` for every new paper has a non-empty `categories` field including at least one of
-  `direction-selectivity`, `compartmental-modeling`, `dendritic-computation`, or
-  `retinal-ganglion-cell`.
-* The answer asset cites every included paper by `paper_id` (no orphan citations, no missing
-  evidence).
-* `results_detailed.md` Coverage Table includes a row for every included paper (baseline + new).
-* `results_summary.md` opens with a single sentence stating the final paper count and the most
-  consensus-supported morphology variable.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -669,9 +396,10 @@ experimental work on t0022 / t0024 / t0026 follow-ups.
         <id>nav-kv-combinations-for-dsgc-modelling</id>
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
+        <id>morphology-direction-selectivity-modeling-synthesis</id>
       </source_ids>
       <content>
-Answers: 10
+Answers: 11
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -752,6 +480,14 @@ Confidence: medium
 Categories: synaptic-integration, dendritic-computation, direction-selectivity, retinal-ganglion-cell
 
 Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms, Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev -65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an &quot;on-the-path&quot; geometry: only inhibition sitting between the excitatory input and the soma shunts PSP amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during null-direction motion, sharpening spike timing. Somatic...
+
+## What variables of neuronal morphology have been shown by computational modeling to affect direction selectivity, by what mechanisms, and what gaps remain?
+ID: morphology-direction-selectivity-modeling-synthesis
+Created by: t0027_literature_survey_morphology_ds_modeling on 2026-04-21
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling, dendritic-computation, retinal-ganglion-cell, cable-theory, synaptic-integration
+
+Computational models have shown that direction selectivity is shaped by dendritic length, branch-order and branching pattern, dendritic diameter (especially in starburst amacrine cells), spatial layout and kinetic tiling of bipolar-cell inputs, asymmetric arbors and plexus density, and the electrotonic compartmentalization of terminal branches. The load-bearing mechanisms are passive cable filtering with transfer-resistance weighting of distributed inputs, local-global EPSP summation along soma-to-tip dendritic gradients, space-time input tiling (sustained proximal, transient distal), dendritic-spike branch independence driven by voltage-gated Na and Ca channels, and asymmetric SAC-to-DSGC...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -804,6 +540,8 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0024-01</id>
         <id>S-0026-02</id>
         <id>S-0026-06</id>
+        <id>S-0027-01</id>
+        <id>S-0027-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -857,6 +595,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0026-03</id>
         <id>S-0026-04</id>
         <id>S-0026-05</id>
+        <id>S-0027-03</id>
+        <id>S-0027-04</id>
+        <id>S-0027-05</id>
+        <id>S-0027-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -872,9 +614,10 @@ Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, de
         <id>S-0022-08</id>
         <id>S-0024-05</id>
         <id>S-0026-07</id>
+        <id>S-0027-07</id>
       </source_ids>
       <content>
-Open suggestions: 114
+Open suggestions: 121
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1197,6 +940,20 @@ Priority: high
 Kind: experiment
 Source task: t0026_vrest_sweep_tuning_curves_dsgc
 Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while t0024 stays flat (DSI&gt;=0.36). Two candidate mechanisms are Na channel inactivation and NMDA Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block (g_NMDA=0) to isolate which channel class drives each model&#x27;s V_rest sensitivity.
+
+## Sweep distal-dendrite scale on t0022 to discriminate passive TR weighting vs dendritic-spike branch independence
+ID: S-0027-01
+Priority: high
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by &gt;30% at 1.5x; if dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within 10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed corpus and directly informs whether morphology-sweep design must preserve cable geometry or only branch topology.
+
+## Swap bipolar-cell sustained vs transient kinetics on t0024 to discriminate kinetic tiling from cable delay
+ID: S-0027-02
+Priority: high
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+Run t0024 (de Rosenroll 2026 port) with bipolar-cell kinetic identities swapped: assign sustained kinetics to distal terminals and transient kinetics to proximal terminals, opposite to the wild-type tiling. Prediction (creative_thinking.md #2): if [Srivastava2022] kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred direction; if [Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms before committing to a morphology sweep design.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -1569,6 +1326,34 @@ Kind: experiment
 Source task: t0026_vrest_sweep_tuning_curves_dsgc
 Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell responses, suggesting an alternative mechanism. If the Hanson model is ported and swept over the same eight V_rest values, we can compare its V_rest sensitivity against our t0022 (strongly V_rest-dependent) and t0024 (U-shaped) results. Would clarify whether V_rest-dependence of DSI is a universal signature or specific to starburst-driven models.
 
+## Thicken distal branches on t0022 (halve distal input resistance) to separate active amplification from passive filtering
+ID: S-0027-03
+Priority: medium
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter and re-running the DSI protocol with active conductances (a) intact and (b) ablated. Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899] dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs passive contribution that the corpus does not separate cleanly.
+
+## Random terminal-branch ablation (25%) on t0022 to test branch independence
+ID: S-0027-04
+Priority: medium
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+Ablate 25% of randomly-chosen terminal dendritic branches on t0022 (10 random seeds) and measure global DSI. Prediction (creative_thinking.md #4): if [Sivyer2013, 10.1038_nn.3565] dendritic-spike branch independence holds, global DSI drops by &lt;15%; if global transfer-resistance summation dominates, DSI drops by &gt;40%. Also yields the first DSI-vs-stochastic-pruning curve in the corpus, which would speak to in vivo robustness under aging or disease perturbations and complement the broader factorial morphology sweep already proposed in S-0002-04.
+
+## Single-compartment collapse of t0024 to test whether T4-style geometry-nullity extends to DSGCs
+ID: S-0027-05
+Priority: medium
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+Collapse t0024 (de Rosenroll 2026 port) to a single isopotential compartment that retains full synaptic input drive and biophysics, and re-run the DSI-vs-speed protocol. Prediction (creative_thinking.md #5): if T4-style geometry-nullity [Gruntman2018] extends to mammalian DSGCs, the collapsed model reproduces full-model DSI-vs-speed; if the de Rosenroll local-DSI mechanism is load-bearing, it fails. Cheapest of the five testbed experiments and a strong null-hypothesis test for the necessity of dendritic geometry.
+
+## Retrieve paywalled Kim2014 and Sivyer2013 PDFs via Sheffield SSO and upgrade their summaries to full-text grounding
+ID: S-0027-06
+Priority: medium
+Kind: dataset
+Source task: t0027_literature_survey_morphology_ds_modeling
+Two papers (Kim2014, Sivyer2013) were flagged in t0027 intervention/ folder as paywalled and summarised from abstract + secondary citations only. Both are load-bearing for predictions S-0027-01 and S-0027-02. Resolve by retrieving full PDFs through Sheffield institutional SSO (Cell Press, Nature Neuroscience), upgrading their summaries to full-text level, and updating the t0027 synthesis answer asset citations from abstract-only to full-text grounding. Low-cost prerequisite for confidently running S-0027-01 and S-0027-02.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -1673,6 +1458,13 @@ Priority: low
 Kind: experiment
 Source task: t0026_vrest_sweep_tuning_curves_dsgc
 Model t0022 peak firing collapses from 129 Hz at V=-30 to 26 Hz at V=-20 due to Na inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no collapse. Extending the t0024 sweep to V_rest &gt;= -20 mV would reveal whether t0024 also exhibits a Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains depolarisation-insensitive (suggesting NMDA-dominated signalling).
+
+## Sweep dendritic spine density on t0022 distal terminals as an unconventional morphology variable
+ID: S-0027-07
+Priority: low
+Kind: experiment
+Source task: t0027_literature_survey_morphology_ds_modeling
+No paper in the t0027 corpus sweeps dendritic spines on DSGCs; all 20 papers treat distal terminals as smooth cables. Add explicit spine compartments (varying spine density 0, 0.5, 1.0, 2.0 spines/um on distal branches) on t0022 and measure DSI. Tests whether spine-head capacitance shifts the dendritic-spike threshold gradient in a DS-relevant way, complementing predictions from [Schachter2010] and [Sivyer2013]. Lower priority than the five predictive sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinking.md.
       </content>
     </section>
   </sections>

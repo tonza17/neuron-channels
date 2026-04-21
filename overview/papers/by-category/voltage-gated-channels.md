@@ -1,10 +1,65 @@
-# Papers: `voltage-gated-channels` (15)
+# Papers: `voltage-gated-channels` (16)
 
-15 papers across 11 year(s).
+16 papers across 12 year(s).
 
 [Back to all papers](../README.md)
 
 ---
+
+## 2024 (1)
+
+<details>
+<summary>📖 Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
+computation of mouse starburst amacrine cells — Ledesma et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41467-024-46234-7` |
+| **Authors** | Hector Acaron Ledesma, Jennifer Ding, Swen Oosterboer, Xiaolin Huang, Qiang Chen, Sui Wang, Michael Z. Lin, Wei Wei |
+| **Venue** | Nature Communications (journal) |
+| **DOI** | `10.1038/s41467-024-46234-7` |
+| **URL** | https://www.nature.com/articles/s41467-024-46234-7 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/summary.md) |
+
+This Nature Communications paper from the Wei lab at the University of Chicago (with
+genetic-tool collaborations from the Lin and Wang labs at Stanford) uses genetically encoded
+voltage (ASAP3) and calcium (GCaMP6f) imaging together with whole-cell patch-clamp to ask how
+starburst amacrine cell dendrites convert concentrically distributed synaptic inputs into
+branch-specific direction-selective outputs. The study focuses on two specific membrane
+conductances — metabotropic glutamate receptor 2 (mGluR2) and voltage-gated potassium channel
+Kv3 — whose subcellular distributions are non-uniform: Kv3 clusters around the soma while
+mGluR2 extends throughout the dendritic arbor.
+
+Methodologically, the authors combine subcellular two-photon imaging at multiple radial
+distances (0-105 µm from soma) with targeted pharmacology: LY341495 to block endogenous mGluR2
+signaling and 1 mM TEA to selectively block Kv3 while leaving bipolar-cell excitatory inputs
+intact. Paired SAC-DSGC recordings verify that manipulations at the SAC level propagate to
+direction-selective ganglion-cell IPSCs. No biophysical compartmental model is constructed;
+this is a strictly experimental paper.
+
+The headline findings are: (1) direction-selective calcium transients emerge abruptly only in
+the distal half of each SAC dendrite; (2) mGluR2 blockade releases suprathreshold calcium in
+the inward direction by lowering the VGCC activation threshold (paired t-test p = 0.0002, n =
+10), abolishing dendritic DS while leaving somatic responses untouched; (3) Kv3 blockade
+triples somatic Vm variance (1.6 -> 4.3 mV^2, p = 0.006) and introduces fast transients >15 mV
+at the soma without changing slow depolarization; (4) co-blockade of both eliminates DSGC
+direction selectivity downstream, demonstrating that the two mechanisms are jointly necessary.
+
+For this project literature survey on how morphology shapes direction selectivity via
+computational modeling, Aldor2024 (Ledesma et al. 2024) is a borderline inclusion. It is SAC
+rather than DSGC biology, and — critically — it does not perform morphology sweeps or build a
+compartmental model. Its contribution to a morphology-focused survey is as an empirical
+constraint: it identifies two anatomically localized conductances that any honest
+compartmental SAC DS model must include with their correct spatial distributions (perisomatic
+Kv3, dendritic mGluR2), and it quantifies the DS-relevant observables (calcium threshold
+shifts, somatic Vm variance, directional calcium onset at fractional radius ~0.5) that such a
+model must reproduce. Use it as a validation target when sweeping morphology or channel
+distribution in a SAC model; do not cite it as a morphology-sweep example.
+
+</details>
 
 ## 2020 (1)
 

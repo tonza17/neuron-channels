@@ -1,10 +1,9 @@
 # Project Tasks
 
-27 tasks. ⏳ **1 in_progress**, ⚠️ **1 intervention_blocked**, ✅ **25 completed**.
+27 tasks. ⚠️ **1 intervention_blocked**, ✅ **26 completed**.
 
-**Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⚠️
-`intervention_blocked`](by-status/intervention_blocked.md), [✅
-`completed`](by-status/completed.md); [By date added](by-date-added/README.md)
+**Browse by view**: By status: [⚠️ `intervention_blocked`](by-status/intervention_blocked.md),
+[✅ `completed`](by-status/completed.md); [By date added](by-date-added/README.md)
 
 ---
 
@@ -16,7 +15,6 @@ graph LR
     t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0022_modify_dsgc_channel_testbed["✅ t0022_modify_dsgc_channel_testbed"]
     t0023_port_hanson_2019_dsgc["⚠️ t0023_port_hanson_2019_dsgc"]
-    t0027_literature_survey_morphology_ds_modeling["⏳ t0027_literature_survey_morphology_ds_modeling"]
 
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
     t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
@@ -28,24 +26,117 @@ graph LR
 
 ---
 
-## ⏳ In Progress
+## ⚠️ Intervention Blocked
 
 <details>
-<summary>⏳ 0027 — <strong>Literature survey: modeling effect of cell morphology
+<summary>⚠️ 0023 — <strong>Port Hanson 2019 DSGC model</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0023_port_hanson_2019_dsgc` |
+| **Status** | intervention_blocked |
+| **Effective date** | 2026-04-20 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Expected assets** | 1 library, 1 paper |
+| **Source suggestion** | — |
+| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
+| **Task page** | [Port Hanson 2019 DSGC model](../../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
+| **Task folder** | [`t0023_port_hanson_2019_dsgc/`](../../tasks/t0023_port_hanson_2019_dsgc/) |
+
+# Port Hanson 2019 DSGC Model
+
+## Motivation
+
+The project currently has two direction-selective retinal ganglion cell (DSGC) ports, both
+derived from the same underlying ModelDB 189347 (Poleg-Polsky & Diamond 2016) codebase. Task
+t0008 produced the initial port `modeldb_189347_dsgc` using a spatial-rotation proxy driver
+(DSI 0.316, peak 18.1 Hz), and task t0020 produced the sibling port
+`modeldb_189347_dsgc_gabamod` using the paper's native gabaMOD scalar swap (DSI 0.7838, peak
+14.85 Hz). Both share the same morphology, channel densities, and synaptic topology — so any
+channel-mechanism finding drawn from them is a claim about one model, not about DSGCs in
+general.
+
+Hanson et al. 2019 published an independent DSGC implementation with distinct channel
+densities, morphology detail, and synaptic placement patterns. Task t0010 identified this
+model as a high-value alternative. Porting it adds a second, genuinely independent NEURON DSGC
+that supports cross-model comparison of direction-selectivity mechanisms, channel
+sensitivities, and dendritic computation patterns — the pattern of agreement (or disagreement)
+between the two models is what makes any downstream claim robust.
+
+## Scope
+
+Port the Hanson et al. 2019 DSGC model into NEURON as a new library asset sibling to
+`modeldb_189347_dsgc`. Reproduce the model's published direction-selective response under a
+12-angle moving-bar sweep, reusing task t0022's driver infrastructure if compatible (soft
+dependency) or copying from t0020 otherwise. Produce a tuning curve and score report directly
+comparable to the existing ports.
+
+## Deferred Status
+
+This task is deferred. It is reserved and planned but must NOT be executed by the execute-task
+loop until a human decision is made after reviewing t0022's outcomes. Upon creation, the
+orchestrator will add an intervention file that blocks execute-task. The `status` field
+remains `not_started`; the intervention file, not the status, is what suspends execution.
+
+## Deliverables
+
+1. New library asset (proposed slug `hanson_2019_dsgc`) containing the model's
+   HOC/MOD/morphology files, `details.json`, and `description.md`, following the same layout
+   as `modeldb_189347_dsgc`.
+2. Source paper (Hanson et al. 2019) downloaded and registered as a paper asset, if not
+   already present in the project.
+3. A 12-angle moving-bar tuning curve producing `tuning_curves.csv` and `score_report.json`,
+   using t0022's driver if compatible or a port of t0020's driver otherwise.
+4. Comparison section in `results/results_detailed.md` reporting DSI, peak firing rate, HWHM,
+   and reliability against t0008, t0020, and t0022.
+
+## Dependencies
+
+* `t0008_port_modeldb_189347` — reference HOC/MOD/asset layout for a NEURON DSGC library port.
+* `t0012_tuning_curve_scoring_loss_library` — tuning-curve scorer applied to the new model.
+* `t0022_modify_dsgc_channel_testbed` — soft dependency providing the 12-angle driver
+  infrastructure; reuse if available, otherwise fall back to t0020's driver.
+
+## Risks and Unknowns
+
+* Simulator mismatch: Hanson et al. 2019 may use NEST, Brian, custom Python, or another
+  simulator instead of NEURON. A non-NEURON source increases effort from roughly 1-2 days to
+  up to a week.
+* Morphology provenance: the model's morphology may come from NeuroMorpho.Org or another
+  external repository and may require a separate retrieval step before porting can proceed.
+* Channel mechanisms: the paper may rely on ion-channel MOD mechanisms not currently present
+  in this project, requiring new `.mod` files and compilation into the existing mechanism set.
+
+## Out of Scope
+
+No analyses beyond the basic 12-angle tuning curve and score report. Channel-sensitivity
+sweeps, parameter-space exploration, dendritic-computation decomposition,
+optogenetic/pharmacological perturbation studies, or other downstream analyses belong to
+follow-up tasks and must not be performed here.
+
+</details>
+
+## ✅ Completed
+
+<details>
+<summary>✅ 0027 — <strong>Literature survey: modeling effect of cell morphology
 on direction selectivity</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0027_literature_survey_morphology_ds_modeling` |
-| **Status** | in_progress |
+| **Status** | completed |
 | **Effective date** | 2026-04-21 |
 | **Dependencies** | — |
 | **Expected assets** | 15 paper, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`literature-survey`](../../meta/task_types/literature-survey/), [`answer-question`](../../meta/task_types/answer-question/) |
 | **Start time** | 2026-04-21T18:33:02Z |
+| **End time** | 2026-04-21T22:23:03Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
 | **Task folder** | [`t0027_literature_survey_morphology_ds_modeling/`](../../tasks/t0027_literature_survey_morphology_ds_modeling/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) |
 
 # Literature Survey: Modeling the Effect of Cell Morphology on Direction Selectivity
 
@@ -332,99 +423,41 @@ experimental work on t0022 / t0024 / t0026 follow-ups.
 * `results_summary.md` opens with a single sentence stating the final paper count and the most
   consensus-supported morphology variable.
 
-</details>
+**Results summary:**
 
-## ⚠️ Intervention Blocked
-
-<details>
-<summary>⚠️ 0023 — <strong>Port Hanson 2019 DSGC model</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0023_port_hanson_2019_dsgc` |
-| **Status** | intervention_blocked |
-| **Effective date** | 2026-04-20 |
-| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Expected assets** | 1 library, 1 paper |
-| **Source suggestion** | — |
-| **Task types** | [`code-reproduction`](../../meta/task_types/code-reproduction/) |
-| **Task page** | [Port Hanson 2019 DSGC model](../../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
-| **Task folder** | [`t0023_port_hanson_2019_dsgc/`](../../tasks/t0023_port_hanson_2019_dsgc/) |
-
-# Port Hanson 2019 DSGC Model
-
-## Motivation
-
-The project currently has two direction-selective retinal ganglion cell (DSGC) ports, both
-derived from the same underlying ModelDB 189347 (Poleg-Polsky & Diamond 2016) codebase. Task
-t0008 produced the initial port `modeldb_189347_dsgc` using a spatial-rotation proxy driver
-(DSI 0.316, peak 18.1 Hz), and task t0020 produced the sibling port
-`modeldb_189347_dsgc_gabamod` using the paper's native gabaMOD scalar swap (DSI 0.7838, peak
-14.85 Hz). Both share the same morphology, channel densities, and synaptic topology — so any
-channel-mechanism finding drawn from them is a claim about one model, not about DSGCs in
-general.
-
-Hanson et al. 2019 published an independent DSGC implementation with distinct channel
-densities, morphology detail, and synaptic placement patterns. Task t0010 identified this
-model as a high-value alternative. Porting it adds a second, genuinely independent NEURON DSGC
-that supports cross-model comparison of direction-selectivity mechanisms, channel
-sensitivities, and dendritic computation patterns — the pattern of agreement (or disagreement)
-between the two models is what makes any downstream claim robust.
-
-## Scope
-
-Port the Hanson et al. 2019 DSGC model into NEURON as a new library asset sibling to
-`modeldb_189347_dsgc`. Reproduce the model's published direction-selective response under a
-12-angle moving-bar sweep, reusing task t0022's driver infrastructure if compatible (soft
-dependency) or copying from t0020 otherwise. Produce a tuning curve and score report directly
-comparable to the existing ports.
-
-## Deferred Status
-
-This task is deferred. It is reserved and planned but must NOT be executed by the execute-task
-loop until a human decision is made after reviewing t0022's outcomes. Upon creation, the
-orchestrator will add an intervention file that blocks execute-task. The `status` field
-remains `not_started`; the intervention file, not the status, is what suspends execution.
-
-## Deliverables
-
-1. New library asset (proposed slug `hanson_2019_dsgc`) containing the model's
-   HOC/MOD/morphology files, `details.json`, and `description.md`, following the same layout
-   as `modeldb_189347_dsgc`.
-2. Source paper (Hanson et al. 2019) downloaded and registered as a paper asset, if not
-   already present in the project.
-3. A 12-angle moving-bar tuning curve producing `tuning_curves.csv` and `score_report.json`,
-   using t0022's driver if compatible or a port of t0020's driver otherwise.
-4. Comparison section in `results/results_detailed.md` reporting DSI, peak firing rate, HWHM,
-   and reliability against t0008, t0020, and t0022.
-
-## Dependencies
-
-* `t0008_port_modeldb_189347` — reference HOC/MOD/asset layout for a NEURON DSGC library port.
-* `t0012_tuning_curve_scoring_loss_library` — tuning-curve scorer applied to the new model.
-* `t0022_modify_dsgc_channel_testbed` — soft dependency providing the 12-angle driver
-  infrastructure; reuse if available, otherwise fall back to t0020's driver.
-
-## Risks and Unknowns
-
-* Simulator mismatch: Hanson et al. 2019 may use NEST, Brian, custom Python, or another
-  simulator instead of NEURON. A non-NEURON source increases effort from roughly 1-2 days to
-  up to a week.
-* Morphology provenance: the model's morphology may come from NeuroMorpho.Org or another
-  external repository and may require a separate retrieval step before porting can proceed.
-* Channel mechanisms: the paper may rely on ion-channel MOD mechanisms not currently present
-  in this project, requiring new `.mod` files and compilation into the existing mechanism set.
-
-## Out of Scope
-
-No analyses beyond the basic 12-angle tuning curve and score report. Channel-sensitivity
-sweeps, parameter-space exploration, dendritic-computation decomposition,
-optogenetic/pharmacological perturbation studies, or other downstream analyses belong to
-follow-up tasks and must not be performed here.
+> **Results Summary: Morphology and Direction Selectivity Modeling Literature Survey**
+>
+> **Summary**
+>
+> This task added **15 new paper assets** to the morphology-and-direction-selectivity modeling
+> corpus,
+> bringing the total corpus (baseline + new) to **20 papers**. Coverage now spans retinal SAC
+> and DSGC
+> models, fly lobula-plate VS and T4 neurons, primate SAC, cat V1 cortical cells, and the
+> TREES-toolbox cable-theory framework. The strongest cross-paper evidence supports
+> **asymmetric SAC
+> inhibition** and **electrotonic compartmentalisation** as the DS-shaping morphology
+> mechanisms:
+> these are replicated across mouse, rabbit, and fly; across TREES, NEURON, NeuronC, and
+> patch-clamp;
+> and across at least seven papers. Kinetic tiling of bipolar input (sustained-proximal,
+> transient-distal) is the third replicated mechanism, supported by four independent papers.
+>
+> Key gaps: **dendritic diameter** is systematically swept in only one paper (Wu2023, primate
+> SAC);
+> **branch order**, **soma size**, and **branch-angle at fixed length** are all effectively
+> untouched
+> in the DSGC literature. Cortical DS modeling is limited to one paper (Anderson1999) that
+> rejects
+> dendritic asymmetry as sufficient and has not been updated with kinetic-tiling tests. The
+> corpus
+> also contains a genuine contradiction: Sivyer2013 and Schachter2010 argue DSGC DS requires
+> active
+> dendritic conductances, while Dan2018 (fly VS) and Gruntman2018 (fly T4) show that passive
+> cable or
+> even a collapsed single compartment can produce DS in invertebrate systems.
 
 </details>
-
-## ✅ Completed
 
 <details>
 <summary>✅ 0026 — <strong>V_rest sweep tuning curves for t0022 and t0024 DSGC

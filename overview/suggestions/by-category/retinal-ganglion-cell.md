@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-33 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **30 open** (14
-high, 12 medium, 4 low), **3 closed**.
+37 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **34 open** (15
+high, 14 medium, 5 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -350,6 +350,29 @@ before adopting them as tight compartmental-model fitting targets.
 
 </details>
 
+<details>
+<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
+weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
+count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
+weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
+dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
+10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
+corpus and directly informs whether morphology-sweep design must preserve cable geometry or
+only branch topology.
+
+</details>
+
 ## Medium Priority
 
 <details>
@@ -531,6 +554,29 @@ code-reproduction, write-library.
 </details>
 
 <details>
+<summary>🧪 <strong>Random terminal-branch ablation (25%) on t0022 to test branch
+independence</strong> (S-0027-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Ablate 25% of randomly-chosen terminal dendritic branches on t0022 (10 random seeds) and
+measure global DSI. Prediction (creative_thinking.md #4): if [Sivyer2013, 10.1038_nn.3565]
+dendritic-spike branch independence holds, global DSI drops by <15%; if global
+transfer-resistance summation dominates, DSI drops by >40%. Also yields the first
+DSI-vs-stochastic-pruning curve in the corpus, which would speak to in vivo robustness under
+aging or disease perturbations and complement the broader factorial morphology sweep already
+proposed in S-0002-04.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section
 diameter lookup to drop Strahler binning entirely</strong> (S-0009-04)</summary>
 
@@ -629,6 +675,28 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Single-compartment collapse of t0024 to test whether T4-style
+geometry-nullity extends to DSGCs</strong> (S-0027-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Collapse t0024 (de Rosenroll 2026 port) to a single isopotential compartment that retains full
+synaptic input drive and biophysics, and re-run the DSI-vs-speed protocol. Prediction
+(creative_thinking.md #5): if T4-style geometry-nullity [Gruntman2018] extends to mammalian
+DSGCs, the collapsed model reproduces full-model DSI-vs-speed; if the de Rosenroll local-DSI
+mechanism is load-bearing, it fails. Cheapest of the five testbed experiments and a strong
+null-hypothesis test for the necessity of dendritic geometry.
 
 </details>
 
@@ -751,6 +819,28 @@ as t0008. Jain 2020 extends the Poleg-Polsky architecture with bipolar delays an
 shares MOD mechanisms with 189347. Medium effort (~20 hours) because the morphology and
 stimulus logic are separate from 189347. Recommended task types: code-reproduction,
 write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep dendritic spine density on t0022 distal terminals as an
+unconventional morphology variable</strong> (S-0027-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+No paper in the t0027 corpus sweeps dendritic spines on DSGCs; all 20 papers treat distal
+terminals as smooth cables. Add explicit spine compartments (varying spine density 0, 0.5,
+1.0, 2.0 spines/um on distal branches) on t0022 and measure DSI. Tests whether spine-head
+capacitance shifts the dendritic-spike threshold gradient in a DS-relevant way, complementing
+predictions from [Schachter2010] and [Sivyer2013]. Lower priority than the five predictive
+sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinking.md.
 
 </details>
 

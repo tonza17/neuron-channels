@@ -4,15 +4,69 @@ Ion channels whose opening probability depends on membrane voltage.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (15)](../papers/by-category/voltage-gated-channels.md) | [Answers
+**Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (3)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(17)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(18)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
 ---
 
-## Papers (15)
+## Papers (16)
+
+<details>
+<summary>📖 <strong>Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
+computation of mouse starburst amacrine cells</strong> — Ledesma et al.,
+2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_s41467-024-46234-7` |
+| **Authors** | Hector Acaron Ledesma, Jennifer Ding, Swen Oosterboer, Xiaolin Huang, Qiang Chen, Sui Wang, Michael Z. Lin, Wei Wei |
+| **Venue** | Nature Communications (journal) |
+| **DOI** | `10.1038/s41467-024-46234-7` |
+| **URL** | https://www.nature.com/articles/s41467-024-46234-7 |
+| **Date added** | 2026-04-21 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/summary.md) |
+
+This Nature Communications paper from the Wei lab at the University of Chicago (with
+genetic-tool collaborations from the Lin and Wang labs at Stanford) uses genetically encoded
+voltage (ASAP3) and calcium (GCaMP6f) imaging together with whole-cell patch-clamp to ask how
+starburst amacrine cell dendrites convert concentrically distributed synaptic inputs into
+branch-specific direction-selective outputs. The study focuses on two specific membrane
+conductances — metabotropic glutamate receptor 2 (mGluR2) and voltage-gated potassium channel
+Kv3 — whose subcellular distributions are non-uniform: Kv3 clusters around the soma while
+mGluR2 extends throughout the dendritic arbor.
+
+Methodologically, the authors combine subcellular two-photon imaging at multiple radial
+distances (0-105 µm from soma) with targeted pharmacology: LY341495 to block endogenous mGluR2
+signaling and 1 mM TEA to selectively block Kv3 while leaving bipolar-cell excitatory inputs
+intact. Paired SAC-DSGC recordings verify that manipulations at the SAC level propagate to
+direction-selective ganglion-cell IPSCs. No biophysical compartmental model is constructed;
+this is a strictly experimental paper.
+
+The headline findings are: (1) direction-selective calcium transients emerge abruptly only in
+the distal half of each SAC dendrite; (2) mGluR2 blockade releases suprathreshold calcium in
+the inward direction by lowering the VGCC activation threshold (paired t-test p = 0.0002, n =
+10), abolishing dendritic DS while leaving somatic responses untouched; (3) Kv3 blockade
+triples somatic Vm variance (1.6 -> 4.3 mV^2, p = 0.006) and introduces fast transients >15 mV
+at the soma without changing slow depolarization; (4) co-blockade of both eliminates DSGC
+direction selectivity downstream, demonstrating that the two mechanisms are jointly necessary.
+
+For this project literature survey on how morphology shapes direction selectivity via
+computational modeling, Aldor2024 (Ledesma et al. 2024) is a borderline inclusion. It is SAC
+rather than DSGC biology, and — critically — it does not perform morphology sweeps or build a
+compartmental model. Its contribution to a morphology-focused survey is as an empirical
+constraint: it identifies two anatomically localized conductances that any honest
+compartmental SAC DS model must include with their correct spatial distributions (perisomatic
+Kv3, dendritic mGluR2), and it quantifies the DS-relevant observables (calcium threshold
+shifts, somatic Vm variance, directional calcium onset at fractional radius ~0.5) that such a
+model must reproduce. Use it as a validation target when sweeping morphology or channel
+distribution in a SAC model; do not cite it as a morphology-sweep example.
+
+</details>
 
 <details>
 <summary>📖 <strong>Tailoring of the axon initial segment shapes the conversion of
@@ -724,7 +778,7 @@ dendritic transients.
 
 </details>
 
-## Tasks (5)
+## Tasks (6)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -733,6 +787,7 @@ dendritic transients.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
+| 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
 ## Answers (3)
 
@@ -811,7 +866,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (16 open, 1 closed)
+## Suggestions (17 open, 1 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -948,6 +1003,23 @@ inactivation, but t0024 still rises monotonically to 7.6 Hz at V=-20 with no col
 Extending the t0024 sweep to V_rest >= -20 mV would reveal whether t0024 also exhibits a
 Na-inactivation collapse (suggesting shared mechanism at higher depolarisations) or remains
 depolarisation-insensitive (suggesting NMDA-dominated signalling).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Thicken distal branches on t0022 (halve distal input resistance)
+to separate active amplification from passive filtering</strong>
+(S-0027-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0027_literature_survey_morphology_ds_modeling](../../tasks/t0027_literature_survey_morphology_ds_modeling/)
+
+Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
+and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
+Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
+dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
+DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
+passive contribution that the corpus does not separate cleanly.
 
 </details>
 

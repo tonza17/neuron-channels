@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-21T22:00:38Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-21T22:43:42Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>2151</char_count>
-    <byte_count>2151</byte_count>
-    <estimated_tokens>537</estimated_tokens>
+    <char_count>2207</char_count>
+    <byte_count>2207</byte_count>
+    <estimated_tokens>551</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -55,6 +55,7 @@ Spent: 0.0%
 * t0024_port_de_rosenroll_2026_dsgc: $0.00
 * t0025_brainstorm_results_5: $0.00
 * t0026_vrest_sweep_tuning_curves_dsgc: $0.00
+* t0027_literature_survey_morphology_ds_modeling: $0.00
       </content>
     </section>
   </sections>
