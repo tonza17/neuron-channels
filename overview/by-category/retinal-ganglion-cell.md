@@ -6,9 +6,9 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (25)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (7)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(29)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(31)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
-(3)](../libraries/by-category/retinal-ganglion-cell.md)
+(4)](../libraries/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -1448,7 +1448,47 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (26 open, 3 closed)
+## Suggestions (28 open, 3 closed)
+
+<details>
+<summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
+inhibition physiologically</strong> (S-0022-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The t0022 driver schedules GABA directly onto each DSGC dendrite, skipping the SAC (Starburst
+Amacrine Cell) layer that shapes DS inhibition in vivo (Euler-Detwiler-Denk 2002). Extend the
+modeldb_189347_dsgc_dendritic library with a configurable SAC layer: an array of simplified
+SAC models (single-compartment or 2-compartment) whose dendritic output drives DSGC GABA
+synapses via NetCon, with SAC dendrites themselves direction-tuned per Euler2002. Expected
+outcome: DSI becomes graded rather than saturated (real SAC output is not a hard half-plane
+step) and peak firing rate may rise because SAC inhibition is timed to bar arrival not to a
+global half-plane rule. This is a library extension not just a channel swap; produces a fourth
+DSGC library asset modeldb_189347_dsgc_sac. Dependencies: t0022 library asset, Euler2002
+paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Harmonised cross-comparison of the three ModelDB 189347 sibling
+ports (t0008, t0020, t0022)</strong> (S-0022-07)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The project now has three independent implementations of DS on the same Poleg-Polsky & Diamond
+2016 skeleton: t0008 (per-angle BIP rotation, DSI 0.316), t0020 (global gabaMOD scalar swap,
+DSI 0.7838), and t0022 (per-dendrite E-I scheduling, DSI 1.0). Each used slightly different
+scoring paths, trial counts, and metric key sets. Produce a shared analysis module that loads
+each port's tuning_curves.csv, recomputes DSI / peak / null / HWHM / reliability under one
+harmonised scorer (t0012 score() where applicable plus S-0020-04's score_two_point for t0020),
+and produces one side-by-side comparison chart (polar plot overlay plus bar chart of headline
+metrics). Outputs a consolidated comparison_report.md plus an overview/llm-context/ snapshot.
+Dependencies: t0008, t0020, t0022 library assets, t0012 scorer. Effort ~12 hours. Recommended
+task type: data-analysis, write-library.
+
+</details>
 
 <details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC

@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (7)](../papers/by-category/cable-theory.md) | [Answers
 (1)](../answers/by-category/cable-theory.md) | [Suggestions
-(7)](../suggestions/by-category/cable-theory.md) | [Datasets
+(8)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -400,7 +400,27 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (5 open, 2 closed)
+## Suggestions (6 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
+integration window</strong> (S-0022-08)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from
+t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers
+input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih
+at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a
+start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep
+plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration
+window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying
+the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
+S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
+task type: experiment-run.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010

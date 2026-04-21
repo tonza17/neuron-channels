@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-29 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **26 open** (13
-high, 9 medium, 4 low), **3 closed**.
+31 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **28 open** (13
+high, 11 medium, 4 low), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -329,6 +329,32 @@ before adopting them as tight compartmental-model fitting targets.
 ## Medium Priority
 
 <details>
+<summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
+inhibition physiologically</strong> (S-0022-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1038_nature00931`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1038_nature00931/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver schedules GABA directly onto each DSGC dendrite, skipping the SAC (Starburst
+Amacrine Cell) layer that shapes DS inhibition in vivo (Euler-Detwiler-Denk 2002). Extend the
+modeldb_189347_dsgc_dendritic library with a configurable SAC layer: an array of simplified
+SAC models (single-compartment or 2-compartment) whose dendritic output drives DSGC GABA
+synapses via NetCon, with SAC dendrites themselves direction-tuned per Euler2002. Expected
+outcome: DSI becomes graded rather than saturated (real SAC output is not a hard half-plane
+step) and peak firing rate may rise because SAC inhibition is timed to bar arrival not to a
+global half-plane rule. This is a library extension not just a channel swap; produces a fourth
+DSGC library asset modeldb_189347_dsgc_sac. Dependencies: t0022 library asset, Euler2002
+paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Benchmark NEURON vs Arbor on the project's actual DSGC
 morphology</strong> (S-0003-03)</summary>
 
@@ -426,6 +452,32 @@ neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and reg
 dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
 anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
 S-0002-08. Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>📊 <strong>Harmonised cross-comparison of the three ModelDB 189347 sibling
+ports (t0008, t0020, t0022)</strong> (S-0022-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The project now has three independent implementations of DS on the same Poleg-Polsky & Diamond
+2016 skeleton: t0008 (per-angle BIP rotation, DSI 0.316), t0020 (global gabaMOD scalar swap,
+DSI 0.7838), and t0022 (per-dendrite E-I scheduling, DSI 1.0). Each used slightly different
+scoring paths, trial counts, and metric key sets. Produce a shared analysis module that loads
+each port's tuning_curves.csv, recomputes DSI / peak / null / HWHM / reliability under one
+harmonised scorer (t0012 score() where applicable plus S-0020-04's score_two_point for t0020),
+and produces one side-by-side comparison chart (polar plot overlay plus bar chart of headline
+metrics). Outputs a consolidated comparison_report.md plus an overview/llm-context/ snapshot.
+Dependencies: t0008, t0020, t0022 library assets, t0012 scorer. Effort ~12 hours. Recommended
+task type: data-analysis, write-library.
 
 </details>
 

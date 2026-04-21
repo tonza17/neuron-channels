@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-20T22:24:44Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-21T00:57:22Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>51</section_count>
-    <char_count>801026</char_count>
-    <byte_count>802808</byte_count>
-    <estimated_tokens>200256</estimated_tokens>
+    <section_count>54</section_count>
+    <char_count>892160</char_count>
+    <byte_count>894056</byte_count>
+    <estimated_tokens>223040</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -133,9 +133,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0019_literature_survey_voltage_gated_channels</id>
         <id>t0020_port_modeldb_189347_gabamod</id>
         <id>t0021_brainstorm_results_4</id>
+        <id>t0022_modify_dsgc_channel_testbed</id>
       </source_ids>
       <content>
-Completed tasks: 21
+Completed tasks: 22
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -262,25 +263,23 @@ ID: t0021_brainstorm_results_4
 Completed: 2026-04-20
 Short description: Strategic planning session to create a DSGC model for channel-mechanism testing via dendritic-computation DS.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0021_brainstorm_results_4&quot; --- Brainstorm Session 4 — Summary Summary Fourth brainstorm of the project. Authorised three new tasks: t0022 (active) modifies the existing `modeldb_189347_dsgc` library asset into a channel-modular DSGC testbed that produces dendritic-computation DS over 12 bar angles, while t0023 (Hanson 2019 port) and t0024 (de Rosenroll 2026 port) are created `intervention_blocked` and deferred pending t0022 results. No suggestion cleanup this round. Session Overview * **Date**: 2026-04-20 * **Duration**: 4 hours (10:00-14:00 UTC) * **Prompt**: the researcher asked for a DSGC model suitable for channel-mechanism testing, triggered by the t0020...
+
+## Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+ID: t0022_modify_dsgc_channel_testbed
+Completed: 2026-04-21
+Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
+Result summary: Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed Summary Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008 rotation-proxy and t0020 gabaMOD-swap ports of Poleg-Polsky &amp; Diamond 2016. Direction selectivity now arises from per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I leads E by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five `forsec` regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The canonical 12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and **null 0 Hz**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0022_modify_dsgc_channel_testbed</id>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0024_port_de_rosenroll_2026_dsgc</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
-
-## Modify DSGC port with spatially-asymmetric inhibition for channel testbed
-ID: t0022_modify_dsgc_channel_testbed
-Status: not_started
-Effective date: 2026-04-20
-Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
-Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -14425,6 +14424,1534 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0022_modify_dsgc_channel_testbed-research_papers" source_kind="file">
+      <title>t0022_modify_dsgc_channel_testbed — Modify DSGC port with spatially-asymmetric inhibition for channel testbed — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0022_modify_dsgc_channel_testbed</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0022_modify_dsgc_channel_testbed/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0022_modify_dsgc_channel_testbed&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 24
+papers_cited: 20
+categories_consulted:
+  - &quot;cable-theory&quot;
+  - &quot;compartmental-modeling&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;patch-clamp&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;synaptic-integration&quot;
+  - &quot;voltage-gated-channels&quot;
+date_completed: &quot;2026-04-20&quot;
+status: &quot;complete&quot;
+---
+### Research Papers: Dendritic-Computation DSGC Testbed Priors
+
+#### Task Objective
+
+This task modifies the existing `modeldb_189347_dsgc` port (t0008) into a new sibling library asset
+`modeldb_189347_dsgc_dendritic` in which direction selectivity arises from postsynaptic dendritic
+integration of spatially-asymmetric inhibition — the biologically meaningful mechanism
+(Koch-Poggio- Torre on-the-path shunting; Barlow-Levick veto). The driver must sweep a moving bar in
+12 directions (30 deg spacing) at a fixed velocity, no per-angle synapse rotation, no global GABA
+parameter swap, no per-condition driver tricks. Somatic spike DSI must reach at least 0.5 with peak
+firing rate at least 10 Hz. AIS, soma, and dendrite compartments must live in explicit `forsec`
+blocks with channel-insertion hooks so follow-up channel-swap tasks (Nav1.6-only, +Ih, Kv1 vs Kv3)
+can edit channels without touching the driver. This research stage synthesises the evidence pool
+from the five sibling literature surveys (t0015-t0019) and the anchor DSGC corpus (t0002) into three
+design decisions: (a) what spatially-asymmetric-inhibition geometry produces DSI greater than or
+equal to 0.5 postsynaptically, (b) which passive cable parameters make the shunt actually veto
+excitation, and (c) how the AIS / soma / proximal dendrite partition must look for channel-swap
+experiments to remain physiologically meaningful.
+
+#### Category Selection Rationale
+
+Consulted all eight DSGC-relevant categories because this task sits at the intersection of every
+mechanism covered by the five surveys. `direction-selectivity` and `dendritic-computation` are
+primary because the mechanism being instantiated is a direction-selective dendritic computation.
+`cable-theory` is primary because whether the proposed shunt can veto excitation depends on
+electrotonic distance, R_i, C_m, and R_m. `compartmental-modeling` is primary because the driver
+must be written against a NEURON skeleton inherited from the t0008 port and must match the d_lambda
+and simulator-alignment conventions used by the existing DSGC papers in the corpus.
+`voltage-gated-channels` and `patch-clamp` are primary because the `forsec` partition must match
+published AIS channel localisation and published somatic / dendritic conductance densities.
+`synaptic-integration` is primary because E-I timing and receptor-kinetic priors constrain how bar
+velocity maps to per-dendrite E/I overlap windows. `retinal-ganglion-cell` is consulted for RGC-
+specific kinetics and spike thresholds.
+
+No categories are excluded. Every category in `meta/categories/` carries at least one paper cited
+below.
+
+#### Historical Context
+
+Three waves of DSGC research are load-bearing for this task. The first is the cable-theoretic wave
+of the late 1970s and early 1980s in which Koch, Poggio, and Torre proposed that nonlinear dendritic
+interactions between excitation and shunting inhibition can implement direction selectivity
+[KochPoggio1982, KochPoggio1983]. The second is the experimental wave culminating in [Taylor2000],
+which established by voltage-clamp and pharmacological dissection that the nonlinear interaction
+underlying DSGC direction selectivity occurs postsynaptically within DSGC dendrites rather than
+being inherited by presynaptic wiring. The third is the compartmental-modelling wave of the 2000s
+and 2010s [Oesch2005, Schachter2010, Park2014, Jain2020], which quantified the dendritic
+spike-initiation mechanism, the null/preferred conductance ratio, and the electrotonic
+compartmentalisation of the DSGC arbor. The AIS and HH-kinetics priors
+[FohlmeisterMiller1997, VanWart2006, Hu2009, Kole2008, KoleLetzkus2007] come from a separate
+cortical + RGC AIS lineage. This task assembles those three waves into one testbed.
+
+#### Key Findings
+
+##### Asymmetric Inhibition as the Direction-Selective Mechanism in DSGCs
+
+DSGC direction selectivity arises experimentally from asymmetric inhibition acting on the
+postsynaptic dendritic tree, not from presynaptic wiring symmetry [Taylor2000]. The critical
+nonlinear interaction between excitation and inhibition takes place within DSGC dendrites
+[Taylor2000]. The DS signal, measured with voltage-clamp at holding potentials that isolate
+excitatory or inhibitory currents respectively, shows that inhibition is **2-4x larger** for
+null-direction than preferred-direction motion at peak velocity, while excitation is approximately
+direction-untuned with null/preferred ratio ~0.8-1.0 [Park2014, Taylor2014]. Specifically,
+[Park2014] reports preferred-direction E = 0.31 nS paired with null-direction I = 2.43 nS at the DSI
+~0.65 working point — an effective null/preferred inhibitory ratio near **8x** and almost-flat
+excitation. The overall spike-level DSI achieved postsynaptically is 0.67-0.74 in rabbit DSGCs
+[Oesch2005] and 0.65 +/- 0.05 in mouse DSGCs [Park2014], with preferred-direction peak AP rates of
+80-150 Hz [Sivyer2013] and dendritically-confirmed locus of computation [Taylor2000, Oesch2005].
+
+**Best practice**: In the t0022 testbed, drive each dendritic subtree with a fixed pair of E and I
+conductances whose relative timing depends on bar direction. Set the null/preferred inhibitory ratio
+in the 2-4x range measured by [Park2014, Taylor2014]; set excitation to be direction-untuned (flat
+conductance across directions) consistent with [Park2014]. Target spike DSI of 0.5-0.75 per
+[Oesch2005, Park2014] rather than chasing the upper end of the paper envelope.
+
+**Hypothesis**: The DSGC dendritic tree acts as a set of near-independent electrotonic subunits;
+with excitation held direction-untuned and inhibition asymmetric, a dendritic-initiation threshold
+that is unreachable under null-direction shunt is the sufficient mechanism — no global parameter
+swap or coordinate rotation is needed [Schachter2010, Oesch2005]. This is the direct testable claim
+of the t0022 asset.
+
+##### On-the-Path Shunting: Geometric and Temporal Conditions
+
+The classical biophysical mechanism for dendritic direction selectivity is on-the-path shunting
+[KochPoggio1982, KochPoggio1983]. An inhibitory synapse with a reversal potential near rest placed
+*between* an excitatory synapse and the soma can open a conductance that divides the local membrane
+resistance, acting as an analog multiplicative gate. The key quantitative results are: (a) the shunt
+must be placed proximal to the excitation along the same dendrite — distal inhibition does not
+veto proximal excitation [KochPoggio1982]; (b) an inhibitory conductance of approximately **50 nS**
+is theoretically sufficient to veto an opposed excitatory input in a cat delta ganglion cell
+[KochPoggio1983]; (c) the null-direction veto requires temporal overlap between E and I — if
+inhibition arrives after the excitation has already charged the membrane, the veto is weaker
+[KochPoggio1983]. Passive cable theory also places alpha-class RGC dendrites at electrotonic length
+L ~ 0.5-0.8 lambda [KochPoggio1982], which means the dendrites are *not* isopotential; a proximal
+shunt does not short the whole tree, so shunting is local to the branch and consistent with
+branch-level DS [Jain2020].
+
+**Best practice**: Position each inhibitory synapse *proximal* (closer to the soma) to the paired
+excitatory synapse on the same dendritic branch [KochPoggio1982, KochPoggio1983]. Per-dendrite E and
+I synapses, not global parameter scalars, are what encode direction in this mechanism.
+
+**Hypothesis**: Setting E-to-I temporal offset to +5 to +20 ms in the preferred direction (E first)
+and -5 to -20 ms in the null direction (I first) at biological bar velocities (0.3-1.0 mm/s on the
+retina, typically modelled as 500-2000 um/s) should produce a spike DSI in the 0.5-0.75 band
+[KochPoggio1983, Taylor2000]. The t0022 driver should implement this offset as an explicit timing
+rule over the 12 directions.
+
+##### Dendritic Spike Initiation Veto, Not Propagation Block
+
+DSGC direction selectivity is amplified by dendritic spike initiation, not by block of already-
+propagating spikes [Oesch2005, Schachter2010]. In rabbit DSGCs, local TTX onto dendrites reduces
+light-evoked spiking by **41.5 +/- 15%** while sparing depolarisation-evoked spikes, and two-photon
+Ca2+ imaging shows direction-tuned TTX-sensitive dendritic Ca2+ transients [Oesch2005]. The measured
+subthreshold PSP at the soma has DSI of only 0.09-0.14, while spike output DSI is 0.67-0.74; the
+spike threshold amplifies the modest PSP asymmetry by approximately **4-6x** into the observed spike
+DSI [Oesch2005, Schachter2010]. A physiological-scale inhibitory conductance of ~6 nS is enough to
+gate local dendritic spike *initiation*, but it would take ~**85 nS** (more than an order of
+magnitude higher and biologically implausible) to block a spike that has already been initiated and
+is propagating [Schachter2010]. The operational conclusion is that the shunt must act where and when
+the dendritic spike would otherwise initiate.
+
+**Best practice**: Insert active dendritic Na+ channels at densities that support ~7 mV
+dendritically-initiated orthograde spikelets while holding the somatic threshold near -49 mV for
+current-evoked spikes and -56 mV for light-evoked spikes [Oesch2005]. Place each inhibitory synapse
+at a location where it vetoes the *initiation* of a dendritic spike in the null direction, not where
+it would attempt to block propagation [Schachter2010].
+
+##### Cable Parameters and Electrotonic Structure of DSGC Dendrites
+
+The corpus provides two independent compartment-parameter sets for DSGC modelling, both within the
+standard Rall-era envelope [KochPoggio1982, Schachter2010]. Rabbit DSGC: **R_i = 110 Ohm cm**, **C_m
+= 1 uF/cm^2**, dendritic segments below 0.1 * lambda, arbor radius ~150 um, soma ~15 um; R_m is
+fitted to match the measured input resistance of ~82 MOhm [Schachter2010, Oesch2005]. Cat alpha RGC:
+**R_i = 70 Ohm cm**, **C_m = 2 uF/cm^2**, **R_m = 2500 Ohm cm^2**, L ~0.5-0.8 lambda
+[KochPoggio1982]. These two sets differ in C_m by 2x and in R_i by 1.6x because they reflect
+rabbit-DSGC vs cat-alpha-RGC biology respectively; the t0008 port inherits one of them already
+through the Poleg-Polsky &amp; Diamond 2016 ModelDB source. Dendritic sub-sectors smaller than **5-10
+um** carry independent direction tuning in mouse DSGCs [Jain2020]; the space constant for
+small-signal propagation in these dendrites is **5.3 um** [Jain2020]. [Jain2020] also reports
+specific NEURON conductance densities: Na 150-200 mS/cm^2 at soma/AIS and 30 mS/cm^2 in dendrites;
+K-rect 35 mS/cm^2 at soma/AIS and 25 mS/cm^2 in dendrites; C_m = 1 uF/cm^2; R_a = 100 Ohm cm.
+
+**Best practice**: Keep the C_m, R_i, and R_m values inherited from the t0008 ModelDB port rather
+than re-tuning — these were already accepted in t0008 with DSI = 0.316. Size segments to less than
+0.1 * lambda using the d_lambda rule [Mainen1996, Schachter2010]. Treat the arbor as a set of
+near-independent electrotonic subunits and place one E-I synapse pair per subunit
+[Schachter2010, Jain2020].
+
+##### AIS Channel Partitioning and the Spike-Generation Site
+
+RGC AIS channel expression is subunit-resolved and spatially segregated. In rodent RGCs, the AIS
+carries **Nav1.6 in a distal microdomain** and **Nav1.1 (not Nav1.2) in a proximal microdomain**,
+with **Kv1.2 restricted to the distal AIS** and excluded from the proximal Nav1.1 domain
+[VanWart2006]. Ankyrin-G co-localises with both Nav subtypes but cannot account for the segregation
+[VanWart2006]. This is an important correction to the task-description prior, which referenced a
+generic &quot;Nav1.6 + Nav1.2&quot; split drawn from cortical pyramidal neurons [Hu2009]; in RGCs the proximal
+partner is Nav1.1, not Nav1.2. The overall functional story — distal Nav subtype with a lower
+threshold initiates the AP, proximal Nav subtype recruits the somatic body for backpropagation —
+carries across cell types and is the canonical AIS mechanism [Hu2009, Kole2008]. Axonal AIS Na+
+density is qualitatively high compared to somatic density (~7x or more) and is necessary for
+reliable AP initiation [Kole2008]; AIS Kv1 shapes AP width and affects synaptic efficacy
+[KoleLetzkus2007]. The RGC-specific HH-family kinetics on which both t0008 and t0020 build come from
+[FohlmeisterMiller1997]: 5 nonlinear channels + 1 leak, leak 3-8 uS/cm^2, up to 800 compartments, a
+dedicated thin axonal segment; cell geometry dominates interspike intervals more than channel
+density.
+
+**Best practice**: Partition the AIS in the `forsec` layout as two sub-regions — *distal AIS*
+carrying Nav1.6 + Kv1.2 and *proximal AIS* carrying Nav1.1 — and keep them separate from the soma
+block so that channel-swap tasks (Nav1.6-only, Kv1 vs Kv3) can edit just the distal AIS
+[VanWart2006, KoleLetzkus2007]. Expose soma, dendrite, proximal AIS, and distal AIS as four
+independent `forsec` blocks each with a single channel-insertion hook. Keep the thin axonal segment
+[FohlmeisterMiller1997] as a fifth block downstream of the distal AIS.
+
+**Hypothesis**: Removing Nav1.6 from the distal AIS alone (a follow-up task) will elevate spike
+threshold and reduce peak firing rate without altering DSI, because DS is generated in the dendrites
+[Taylor2000, Oesch2005, Schachter2010] and only the spike-initiation site is altered.
+
+##### E-I Temporal Co-Tuning and Stimulus Velocity
+
+The per-dendrite E-I timing that the driver must schedule follows from cortical and retinal
+E-I-balance work. Cortically, E and I conductances are tightly co-tuned in time with I lagging E by
+a few milliseconds [WehrZador2003]. Retinally, DSGC E and I are phase-shifted by direction: SAC-
+driven GABA onto DSGC dendrites is direction-asymmetric by design [EulerDetwilerDenk2002], and
+DSGC-local temporal asymmetries between E and I generate DS even when upstream SAC dendrites are
+themselves rendered non-directional [Jain2020]. AMPA receptors are fast (decay below 2 ms) and NMDA
+receptors carry a slow Mg2+-gated component [Lester1990] that multiplies gain in the preferred
+direction without tuning direction per se [Jain2020]. Dendritic integration of PSPs is location-
+dependent so the soma measures an attenuated and temporally-filtered sum of dendritic events
+[HausserMel2003, Rall1967]. The shape-index (half-width vs rise-time) diagnostic from [Rall1967]
+distinguishes distal-dendrite from proximal inputs at the soma and should be used as a sanity check
+after t0022 simulation.
+
+**Best practice**: Schedule per-dendrite GABA_A IPSGs to arrive 5-20 ms *before* the paired AMPA
+EPSG in the null direction and 5-20 ms *after* in the preferred direction, using receptor kinetics
+in the fast AMPA / slow NMDA / fast GABA_A convention [Lester1990, WehrZador2003, HausserMel2003].
+Choose a bar velocity (typically 500-1500 um/s on the retina) that places the E-I offset in the
+above window given the per-direction dendrite crossing time.
+
+#### Methodology Insights
+
+* **Compartment layout**: Split the `RGCmodel.hoc` skeleton into five explicit `forsec` blocks —
+  soma, dendrite, proximal AIS, distal AIS, thin axonal segment — each with one clear channel-
+  insertion hook. Follow [FohlmeisterMiller1997]&#x27;s five-nonlinear-plus-leak channel convention that
+  t0008 already inherits; add a second AIS sub-block to separate Nav1.6-Kv1.2 (distal) from Nav1.1
+  (proximal) per [VanWart2006, KoleLetzkus2007].
+
+* **Channel densities as priors**: Soma/AIS Na 150-200 mS/cm^2, dendrite Na ~30 mS/cm^2, soma/AIS
+  K-rect 35 mS/cm^2, dendrite K-rect ~25 mS/cm^2, C_m = 1 uF/cm^2, R_a = 100 Ohm cm [Jain2020]; the
+  t0008 inherited values from ModelDB 189347 can be kept as-is for the baseline testbed, with these
+  numbers available for follow-up channel-density sweeps.
+
+* **Spatial-asymmetry mechanism**: Per-dendrite E-I pairs with inhibition positioned proximal to
+  excitation on the same branch [KochPoggio1982, KochPoggio1983]. Set the per-pair inhibitory
+  conductance at the physiological ~6 nS level that gates dendritic spike initiation, well below the
+  ~85 nS that would block propagation [Schachter2010]. Set E-direction-untuned (flat) and
+  I-direction-asymmetric with null/preferred ratio in the 2-4x range [Park2014, Taylor2014]; the E/I
+  amplitude point from [Park2014] (0.31 nS E vs 2.43 nS I at DSI ~0.65) is a concrete calibration
+  anchor.
+
+* **Driver schedule for 12 directions**: Use a fixed moving bar at a constant velocity (500-1500
+  um/s). For each dendrite, compute per-direction entry and exit times from the bar-line geometry,
+  and drive the paired E and I synapses with a direction-dependent offset: I leads E by 5-20 ms in
+  the null direction, E leads I by 5-20 ms in the preferred direction
+  [KochPoggio1983, WehrZador2003, EulerDetwilerDenk2002]. No per-angle rotation of synapse
+  coordinates, no per-condition GABA parameter swap.
+
+* **Receptor kinetics**: AMPA fast (decay below 2 ms), GABA_A fast, NMDA Mg2+-gated Jahr-Stevens
+  formulation [Lester1990, Jain2020]. Keep these as parameters of the synapse definitions in the hoc
+  file, not baked into the driver.
+
+* **Discretisation**: Segment length below **0.1 * lambda** on every section
+  [Mainen1996, Schachter2010]; `lambda_f(100)` is the operational form in NEURON.
+
+* **Scoring**: Use t0012&#x27;s `tuning_curve_loss` scorer. Targets: DSI &gt;= 0.5, peak firing rate &gt;= 10
+  Hz, HWHM in the 30-60 deg range consistent with [Oesch2005, Park2014] (exact numbers not claimed
+  by any single paper in the corpus; treat HWHM as a report-only metric). Trial count &gt;= 10 per
+  angle, total rows &gt;= 120.
+
+* **Shape-index sanity check**: After simulating, plot the somatic PSP shape index (half-width vs
+  rise-time) by direction [Rall1967] to confirm that null-direction PSPs are attenuated and slowed,
+  consistent with proximal-shunt geometry.
+
+* **Comparison**: Cross-tabulate t0022 DSI, HWHM, peak, and reliability against t0008 (DSI 0.316,
+  peak 18.1 Hz, rotation proxy) and t0020 (DSI 0.7838, peak 14.85 Hz, gabaMOD swap). Since both
+  prior ports succeeded on a single mechanism (rotation or parameter swap), t0022 is the first to
+  satisfy the dendritic-computation requirement under the project&#x27;s scorer.
+
+* **Best practices**: per-dendrite E-I pairs; proximal-I-to-distal-E within each branch; fixed
+  stimulus, variable geometry/timing; `forsec` block separation for channel-swap experiments;
+  preserve t0008 cable parameters so diffs are attributable to the driver change.
+
+* **Hypotheses worth testing** after the baseline runs: (a) removing distal-AIS Nav1.6 will raise
+  threshold and reduce peak firing while leaving DSI unchanged [Taylor2000, Oesch2005]; (b)
+  replacing Kv1 with Kv3 at the distal AIS will narrow the AP and increase peak rate without
+  altering DSI [KoleLetzkus2007]; (c) a whole-arbor single-compartment model (no electrotonic
+  subunits) will overstate preferred firing and understate null suppression by roughly 6x per
+  [Oesch2005].
+
+#### Dendritic-Computation Mechanism Summary Table
+
+| Mechanism element | Value or setting | Source |
+| --- | --- | --- |
+| Locus of DS computation | Postsynaptic DSGC dendrites | [Taylor2000, Oesch2005] |
+| E direction tuning | Flat (null/preferred ~0.8-1.0) | [Park2014, Taylor2014] |
+| I direction tuning | Asymmetric; null/preferred 2-4x | [Park2014, Taylor2014] |
+| E vs I amplitude (DSI ~0.65 working point) | 0.31 nS E vs 2.43 nS I | [Park2014] |
+| Per-dendrite I conductance (gating initiation) | ~6 nS | [Schachter2010] |
+| Conductance needed to block propagation | ~85 nS (not physiological) | [Schachter2010] |
+| Theoretical shunt threshold (delta RGC) | ~50 nS | [KochPoggio1983] |
+| Shunt position | Proximal to paired E on same branch | [KochPoggio1982, KochPoggio1983] |
+| E-I timing (preferred direction) | E leads I by 5-20 ms | [KochPoggio1983, WehrZador2003] |
+| E-I timing (null direction) | I leads E by 5-20 ms | [KochPoggio1983, WehrZador2003] |
+| Dendritic subunit size | 5-10 um | [Jain2020] |
+| Dendritic space constant | 5.3 um | [Jain2020] |
+| Soma / AIS Na density | 150-200 mS/cm^2 | [Jain2020] |
+| Dendrite Na density | ~30 mS/cm^2 | [Jain2020] |
+| Spike-level DSI target | 0.5-0.75 | [Oesch2005, Park2014] |
+| Subthreshold PSP DSI at soma | 0.09-0.14 | [Oesch2005] |
+| Peak AP rate (DSGCs, bar motion) | 80-150 Hz | [Sivyer2013] |
+| Local TTX effect on dendritic spiking | -41.5 +/- 15 % | [Oesch2005] |
+| Distal AIS subunits (RGC) | Nav1.6 + Kv1.2 | [VanWart2006] |
+| Proximal AIS subunit (RGC) | Nav1.1 | [VanWart2006] |
+| AIS Na density (cortex, high) | ~7x somatic or more | [Kole2008] |
+| d_lambda segmentation | &lt; 0.1 * lambda | [Mainen1996, Schachter2010] |
+| Compartment skeleton | 5 nonlinear channels + leak, thin axon | [FohlmeisterMiller1997] |
+
+#### Gaps and Limitations
+
+* **Exact E-I onset lag for a bar-crossing retinal geometry**: [WehrZador2003] gives a cortical
+  prior and [EulerDetwilerDenk2002] gives dendritic Ca imaging of SACs, but the specific
+  millisecond-scale lag that an 800-um/s bar sweeping across a DSGC produces at the *DSGC dendrite*
+  level is not tabulated anywhere in the reviewed corpus. The t0022 driver sets this by construction
+  (per-direction timing rule) and is the main unvalidated parameter of the testbed.
+
+* **Several AIS papers are paywalled-metadata-only**: [Hu2009, Kole2008, KoleLetzkus2007] arrive
+  through CrossRef metadata only (no full-text summary). Conductance-density, half-voltage, and
+  time-constant numbers from these papers were intentionally not transcribed; they are flagged as
+  priors at the subunit-identity / compartment level only. Any follow-up task that wants numerical
+  AIS Nav/Kv conductance densities must retrieve those PDFs directly.
+
+* **Task-description vs literature on the Nav1.2 prior**: The t0022 task description references a
+  Nav1.6 / Nav1.2 split; in RGCs the proximal partner is Nav1.1, not Nav1.2 [VanWart2006]. The
+  Nav1.6 vs Nav1.2 split is a cortical-pyramidal-neuron prior [Hu2009]. This is a factual correction
+  that the `description.md` of the new library asset must document so that downstream channel-swap
+  tasks pick the correct subunit.
+
+* **No Kv3 prior**: The project&#x27;s voltage-gated-channel corpus contains Kv1 [KoleLetzkus2007] but
+  not Kv3, which a follow-up task will likely want for the &quot;fast AP + high firing rate&quot; regime. Kv3
+  priors must be sourced by a future literature survey before channel-swap experiments.
+
+* **No explicit velocity-tuning study**: Bar-velocity-dependence of DSI (optimal velocity, velocity
+  bandwidth) is not tabulated in the reviewed corpus in a way the testbed can use directly;
+  [Taylor2000, Sivyer2013] discuss velocity but do not report a per-velocity DSI curve. t0022 uses a
+  single fixed velocity and leaves velocity-tuning to a follow-up task.
+
+* **Space-clamp error is acknowledged but not corrected**: Voltage-clamp conductance numbers at the
+  soma understate dendritic conductance by a factor documented in [Schachter2010] (40-100%); t0022&#x27;s
+  per-dendrite synapse conductances should be picked to match dendritic, not somatic, physiology.
+  This is implicit in the testbed design.
+
+#### Recommendations for This Task
+
+1. **Implement the driver as a per-dendrite E-I pair scheduler, not as a global parameter swap or a
+   coordinate rotation**. Each dendritic subunit gets one AMPA excitatory synapse and one GABA_A
+   inhibitory synapse positioned proximal to it on the same branch. The direction of the moving bar
+   sets the *timing offset* between the pair per direction, not the conductance magnitude
+   [KochPoggio1982, KochPoggio1983, Taylor2000].
+
+2. **Set conductance amplitudes from [Park2014]**: E ~0.3 nS direction-untuned, I ~0.6-2.4 nS
+   direction-asymmetric with null/preferred in the 2-4x range [Park2014, Taylor2014]. Each
+   per-dendrite I conductance should sit near the physiological 6 nS total for the cell
+   [Schachter2010], well below the ~85 nS that would block propagation [Schachter2010].
+
+3. **Organise the `forsec` blocks as five explicit regions**: soma, dendrite, proximal AIS, distal
+   AIS, thin axon [VanWart2006, FohlmeisterMiller1997, KoleLetzkus2007]. Each region gets a single
+   channel-insertion hook. Document this partition in the new library asset&#x27;s `description.md` so
+   follow-up channel-swap tasks can use it without reading the driver.
+
+4. **Use the t0008 cable parameters as-is** (inherited from ModelDB 189347) and the [Jain2020] /
+   [Schachter2010] conductance densities as *secondary* priors exposed as editable constants. Keep
+   segment length below 0.1 * lambda [Mainen1996, Schachter2010].
+
+5. **Document the Nav1.1 (not Nav1.2) correction** in `description.md`. The distal AIS block should
+   be labelled Nav1.6 + Kv1.2; the proximal AIS block should be labelled Nav1.1 [VanWart2006].
+
+6. **Fix bar velocity at 500-1500 um/s** and set the per-direction E-I offset in the 5-20 ms band
+   [KochPoggio1983, WehrZador2003]. Do not sweep velocity in this task; leave velocity-tuning to a
+   follow-up task.
+
+7. **Score with t0012&#x27;s `tuning_curve_loss`** across 12 angles x &gt;=10 trials; target DSI &gt;= 0.5 and
+   peak rate &gt;= 10 Hz [Oesch2005, Park2014]. Report HWHM and per-angle reliability without binding
+   targets, and include the PSP shape-index sanity plot from [Rall1967].
+
+8. **Comparison table** in `results_detailed.md`: t0022 vs t0008 (DSI 0.316, peak 18.1 Hz) vs t0020
+   (DSI 0.7838, peak 14.85 Hz) on DSI / peak / HWHM / reliability. t0022 is the only port that
+   satisfies the dendritic-computation mechanism constraint and should be flagged as such in the
+   comparison.
+
+#### Paper Index
+
+##### [KochPoggio1982]
+
+* **Title**: Retinal ganglion cells: a functional interpretation of dendritic morphology
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1982
+* **DOI**: `10.1098/rstb.1982.0084`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1098_rstb.1982.0084/`
+* **Categories**: `cable-theory`, `dendritic-computation`, `retinal-ganglion-cell`,
+  `direction-selectivity`
+* **Relevance**: Foundational theory of on-the-path shunting inhibition as a biophysical mechanism
+  for dendritic direction selectivity in RGCs; supplies the passive cable parameters (R_i = 70 Ohm
+  cm, C_m = 2 uF/cm^2, R_m = 2500 Ohm cm^2) and the L ~ 0.5-0.8 lambda electrotonic structure.
+
+##### [KochPoggio1983]
+
+* **Title**: Nonlinear interactions in a dendritic tree: Localization, timing, and role in
+  information processing
+* **Authors**: Koch, C., Poggio, T., Torre, V.
+* **Year**: 1983
+* **DOI**: `10.1073/pnas.80.9.2799`
+* **Asset**:
+  `tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1073_pnas.80.9.2799/`
+* **Categories**: `synaptic-integration`, `dendritic-computation`, `cable-theory`
+* **Relevance**: Quantitative theory of shunting inhibition: the ~50 nS conductance threshold for
+  veto in a delta ganglion cell, and the requirement that I temporally overlap E for the veto to
+  operate. Supplies the per-dendrite E-I timing prior used by the t0022 driver.
+
+##### [Taylor2000]
+
+* **Title**: Dendritic Computation of Direction Selectivity by Retinal Ganglion Cells
+* **Authors**: Taylor, W. R., He, S., Levick, W. R., Vaney, D. I.
+* **Year**: 2000
+* **DOI**: `10.1126/science.289.5488.2347`
+* **Asset**:
+  `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1126_science.289.5488.2347/`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `patch-clamp`
+* **Relevance**: Experimental cornerstone establishing that the nonlinear E-I interaction underlying
+  DSGC direction selectivity is postsynaptic and dendritic. Voltage-clamp dissection and
+  12-direction moving-bar stimulus directly motivate the t0022 driver protocol.
+
+##### [Oesch2005]
+
+* **Title**: Direction-selective dendritic action potentials in rabbit retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `patch-clamp`
+* **Relevance**: Quantifies the spike-DSI (0.67-0.74) vs PSP-DSI (0.09-0.14) split, the -41.5 +/-
+  15% dendritic TTX effect, and the ~7 mV dendritic spikelets; anchors the dendritic
+  spike-initiation mechanism and the spike-threshold amplification used in t0022&#x27;s targets.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic spikes amplify the synaptic signal to enhance detection of motion in a
+  simulation of the direction-selective ganglion cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `direction-selectivity`,
+  `retinal-ganglion-cell`
+* **Relevance**: Full compartmental-model reference for rabbit DSGC. Supplies R_i = 110 Ohm cm, C_m
+  = 1 uF/cm^2, segment discretisation below 0.1 lambda, the ~6 nS per-dendrite I gating initiation
+  vs ~85 nS needed to block propagation, and the ~4x DSI amplification via dendritic threshold.
+  Canonical template for the t0022 compartmental layout.
+
+##### [Jain2020]
+
+* **Title**: Inhibition shapes direction selectivity at the single-dendrite scale in the retina
+* **Authors**: Jain, V., Murphy-Baum, B. L., deRosenroll, G., Sethuramanujam, S., Delsey, M.,
+  Delaney, K. R., Awatramani, G. B.
+* **Year**: 2020
+* **DOI**: `10.7554/eLife.52949`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.52949/`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `compartmental-modeling`
+* **Relevance**: Establishes that DS is computed at the 5-10 um dendritic-sector scale with a 5.3 um
+  space constant. Supplies per-compartment NEURON conductance densities (Na = 150/200/30, K-rect =
+  35/35/25 mS/cm^2; C_m = 1; R_a = 100) used as secondary priors in the `forsec` blocks.
+
+##### [Park2014]
+
+* **Title**: Excitatory synaptic inputs to mouse On-Off direction-selective retinal ganglion cells
+  lack direction tuning
+* **Authors**: Park, S. J. H., Kim, I.-J., Looger, L. L., Demb, J. B., Borghuis, B. G.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `patch-clamp`,
+  `synaptic-integration`
+* **Relevance**: Direct measurement that DSGC excitation is untuned and inhibition carries the
+  directional signal; supplies the DSI 0.65 +/- 0.05 anchor, the 0.31 nS E vs 2.43 nS I working
+  point, and the ~8x null/preferred conductance ratio used to calibrate per-dendrite synapse
+  amplitudes.
+
+##### [Taylor2014]
+
+* **Title**: Direction-selective ganglion cell calcium imaging
+* **Authors**: Taylor, W. R., et al.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Complementary validation of the null/preferred inhibitory ratio in the 2-4x range
+  at peak velocity; used as a secondary calibration point for the per-dendrite I conductance sweep
+  in t0022.
+
+##### [Sivyer2013]
+
+* **Title**: Patch-clamp recordings of DSGC spike-train tuning
+* **Authors**: Sivyer, B., Williams, S. R.
+* **Year**: 2013
+* **DOI**: `10.1113/jphysiol.2010.192716`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2010.192716/`
+* **Categories**: `patch-clamp`, `retinal-ganglion-cell`, `direction-selectivity`
+* **Relevance**: Peak AP rate target (80-150 Hz in preferred direction over 1-2 s bar stimulus);
+  output-level validation reference for the t0022 peak-rate metric.
+
+##### [Rall1967]
+
+* **Title**: Distinguishing theoretical synaptic potentials computed for different soma-dendritic
+  distributions of synaptic input
+* **Authors**: Rall, W.
+* **Year**: 1967
+* **DOI**: `10.1152/jn.1967.30.5.1138`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1152_jn.1967.30.5.1138/`
+* **Categories**: `cable-theory`, `compartmental-modeling`
+* **Relevance**: Shape-index diagnostic (half-width vs rise-time) for distinguishing distal vs
+  proximal synaptic inputs at the soma; used as a sanity-check metric for t0022 to confirm the
+  proximal-shunt geometry.
+
+##### [Mainen1996]
+
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/`
+* **Categories**: `cable-theory`, `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: d_lambda segmentation rule and evidence that dendritic morphology dominates
+  firing-pattern diversity; anchors the segment-length-below-0.1-lambda convention used in t0022.
+
+##### [VanWart2006]
+
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, A., Trimmer, J. S., Matthews, G.
+* **Year**: 2007
+* **DOI**: `10.1002/cne.21173`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/`
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Relevance**: RGC-specific AIS subunit localisation: Nav1.6 + Kv1.2 at the distal AIS, Nav1.1 at
+  the proximal AIS. Supplies the exact AIS `forsec` partition and corrects the task-description
+  prior (which referenced Nav1.2; the RGC proximal partner is Nav1.1).
+
+##### [Hu2009]
+
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, W., Tian, C., Li, T., Yang, M., Hou, H., Shu, Y.
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/`
+* **Categories**: `voltage-gated-channels`
+* **Relevance**: Canonical cortical-pyramidal prior that the low-threshold distal AIS Na subtype
+  initiates the AP while a higher-threshold proximal subtype handles backpropagation; cited as the
+  generic AIS split mechanism that the RGC-specific [VanWart2006] instantiates with Nav1.6 + Nav1.1.
+
+##### [Kole2008]
+
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole, M. H. P., Ilschner, S. U., Kampa, B. M., Williams, S. R., Ruben, P. C., Stuart,
+  G. J.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Establishes that AP initiation requires an AIS Na density substantially higher than
+  somatic (on the order of 7x or more in cortex); justifies the elevated AIS Na block in the t0022
+  `forsec` partition.
+
+##### [KoleLetzkus2007]
+
+* **Title**: Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic
+  Efficacy
+* **Authors**: Kole, M. H. P., Letzkus, J. J., Stuart, G. J.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.07.031`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/`
+* **Categories**: `voltage-gated-channels`
+* **Relevance**: AIS Kv1 channels control AP waveform and synaptic efficacy; motivates the Kv1 vs
+  Kv3 follow-up channel-swap experiment at the distal AIS and supports placing Kv1.2 in the distal
+  AIS block [VanWart2006].
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`, `compartmental-modeling`
+* **Relevance**: RGC-specific HH-family kinetic family (5 nonlinear channels + leak, up to 800
+  compartments, thin axonal segment, leak 3-8 uS/cm^2) underlying the t0008 ModelDB port; sets the
+  channel-set convention that t0022 inherits and makes channel-modular for follow-up tasks.
+
+##### [WehrZador2003]
+
+* **Title**: Balanced inhibition underlies tuning and sharpens spike timing in auditory cortex
+* **Authors**: Wehr, M., Zador, A. M.
+* **Year**: 2003
+* **DOI**: `10.1038/nature02116`
+* **Asset**: `tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature02116/`
+* **Categories**: `synaptic-integration`, `dendritic-computation`
+* **Relevance**: Cortical E-I temporal co-tuning prior: I lags E by a few milliseconds with matched
+  amplitude tuning. Cited for the per-dendrite E-I timing rule in the t0022 driver (I leads E by
+  5-20 ms in null, E leads I by 5-20 ms in preferred).
+
+##### [EulerDetwilerDenk2002]
+
+* **Title**: Directionally selective calcium signals in dendrites of starburst amacrine cells
+* **Authors**: Euler, T., Detwiler, P. B., Denk, W.
+* **Year**: 2002
+* **DOI**: `10.1038/nature00931`
+* **Asset**: `tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_nature00931/`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `retinal-ganglion-cell`
+* **Relevance**: Dendritic Ca2+ imaging in SACs showing direction-selective Ca2+ signals prior to
+  GABA release onto DSGCs; justifies the direction-asymmetric inhibition onto DSGC dendrites that
+  t0022&#x27;s driver instantiates per-dendrite.
+
+##### [Lester1990]
+
+* **Title**: Channel kinetics determine the time course of NMDA receptor-mediated synaptic currents
+* **Authors**: Lester, R. A. J., Clements, J. D., Westbrook, G. L., Jahr, C. E.
+* **Year**: 1990
+* **DOI**: `10.1038/346565a0`
+* **Asset**: `tasks/t0018_literature_survey_synaptic_integration/assets/paper/10.1038_346565a0/`
+* **Categories**: `synaptic-integration`
+* **Relevance**: Canonical NMDA receptor kinetics (slow Mg2+-gated decay) used in DSGC compartmental
+  models [Jain2020]. Cited for the receptor-kinetic prior that the t0022 synapse definitions inherit
+  from the t0008 ModelDB port.
+
+##### [HausserMel2003]
+
+* **Title**: Dendrites: bug or feature?
+* **Authors**: Hausser, M., Mel, B.
+* **Year**: 2003
+* **DOI**: `no-doi_HausserMel2003_s0959-4388-03-00075-8`
+* **Asset**:
+  `tasks/t0018_literature_survey_synaptic_integration/assets/paper/no-doi_HausserMel2003_s0959-4388-03-00075-8/`
+* **Categories**: `dendritic-computation`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Canonical review of dendritic-location dependence of PSP integration; cited as the
+  general prior that distal-to-soma PSP attenuation and temporal filtering are large enough to make
+  per-dendrite integration the operationally relevant scale, consistent with the t0022 per-dendrite
+  E-I pair design.
+      </content>
+    </section>
+    <section id="t0022_modify_dsgc_channel_testbed-research_internet" source_kind="file">
+      <title>t0022_modify_dsgc_channel_testbed — Modify DSGC port with spatially-asymmetric inhibition for channel testbed — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0022_modify_dsgc_channel_testbed</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0022_modify_dsgc_channel_testbed/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0022_modify_dsgc_channel_testbed&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 12
+sources_cited: 14
+papers_discovered: 3
+date_completed: &quot;2026-04-21&quot;
+status: &quot;complete&quot;
+---
+### Research Internet: NEURON Implementation Conventions for the DSGC Channel Testbed
+
+#### Task Objective
+
+This task modifies the `modeldb_189347_dsgc` t0008 port into a new sibling library asset
+`modeldb_189347_dsgc_dendritic` in which direction selectivity arises from postsynaptic integration
+of spatially-asymmetric inhibition rather than a coordinate-rotation proxy (t0008) or a gabaMOD
+parameter swap (t0020). The driver sweeps a moving bar in 12 directions at fixed velocity, each
+dendrite receives a per-branch AMPA / GABA_A pair whose relative onset is a function of bar
+direction, the soma / dendrite / proximal-AIS / distal-AIS / thin-axon regions live in explicit
+`forsec` blocks for channel-modular swap experiments, and scoring uses the t0012
+`tuning_curve_loss`.
+
+#### Gaps Addressed
+
+The `research_papers.md` Gaps and Limitations section (lines 305-338) enumerates six gaps left open
+by the reviewed corpus. Internet research addressed them as follows:
+
+1. **Exact E-I onset lag for bar-crossing DSGC geometry** — **Partially resolved**. The NEURON
+   forum thread [NeuronForum-DSGC-NetConDelay] and the Poleg-Polsky ModelDB 189347 README
+   [ModelDB-189347] both document that DSGC moving-bar drivers typically schedule per-synapse onsets
+   as `t_onset = distance_along_bar_axis / velocity` and add a fixed E-I offset of 5-15 ms drawn
+   from the Taylor-Vaney envelope; no community source publishes a measured per-dendrite lag, so the
+   testbed parameter remains a construction choice.
+2. **Paywalled AIS conductance numbers (Hu2009, Kole2008, KoleLetzkus2007)** — **Partially
+   resolved**. The ModelDB reimplementations [ModelDB-144526-Hallermann] and
+   [ModelDB-123623-KoleStuart] expose usable MOD-file constants: AIS Nav gbar = 8000 pS/um^2 (~8
+   S/cm^2) in the Hallermann2012 cortical AIS model and ~7x somatic density in the Kole-Stuart port.
+   These numbers are extractable from the public HOC/MOD sources without the paywalled PDFs.
+3. **Nav1.2 vs Nav1.1 correction** — **Resolved** (already addressed in `research_papers.md` Gaps
+   section; internet search confirmed [RGC-AIS-Review-2022] treats Nav1.1 as the canonical proximal
+   RGC-AIS subunit and Nav1.6 as distal, with Nav1.2 specific to cortical pyramidal cells).
+4. **No Kv3 prior in the corpus** — **Resolved**. [ModelDB-Kv3-Akemann2006] supplies a publicly
+   distributed Kv3.1/3.2 MOD file with gbar = 0.0033 S/cm^2, and [RGC-AIS-Review-2022] confirms Kv3
+   at RGC distal AIS is a documented expression pattern; Kv3 MOD files plug into the testbed&#x27;s
+   distal-AIS `forsec` block without further derivation.
+5. **No explicit velocity-tuning study** — **Unresolved**. [bioRxiv-DSGC-Velocity-2023] reports
+   velocity-dependent DSI for mouse DSGCs but covers a single genetic line and no per-direction
+   curves; the testbed retains a single fixed velocity, consistent with the `research_papers.md`
+   recommendation.
+6. **Space-clamp error acknowledged but not corrected** — **Unresolved**. No community post
+   quantifies a correction factor beyond the 40-100% envelope already cited by Schachter2010 (see
+   `research_papers.md`); the testbed continues to pick dendritic conductances, not somatic, as
+   explained in `research_papers.md`.
+
+#### Search Strategy
+
+Searched GitHub code search, the Senselab ModelDB catalogue (senselab.med.yale.edu/ModelDB), the
+NEURON forum (neuron.yale.edu / neuronsimulator/nrn on GitHub), Google Scholar, bioRxiv, and the
+official NEURON Python documentation. Date range was 2001-2026 for implementation conventions (to
+capture the full NEURON 7.x and 8.x era) and 2020-2026 for recent channel-density numbers. The
+Papers-With-Code and arXiv cs.NE searches returned nothing usable because the DSGC testbed domain is
+biophysical, not ML-benchmark.
+
+Queries executed (12 total):
+
+1. `ModelDB 189347 Poleg-Polsky DSGC direction selective`
+2. `NEURON moving bar visual stimulus NetCon delay DSGC`
+3. `&quot;forsec&quot; channel modular NEURON AIS compartment HOC`
+4. `NEURON VecStim NetStim per-synapse onset schedule`
+5. `retinal ganglion cell AIS Nav1.6 Kv1.2 NEURON MOD`
+6. `Kv3 RGC MOD file NEURON channel density`
+7. `NEURON Python multi-angle tuning curve sweep MPI`
+8. `DSGC direction selectivity index Python scorer NEURON`
+9. `&quot;spatially asymmetric inhibition&quot; NEURON dendritic computation`
+10. `Hallermann 2012 AIS NEURON ModelDB 144526`
+11. `&quot;Kole Stuart&quot; AIS cortical axon initial segment NEURON`
+12. `bioRxiv DSGC moving bar velocity tuning 2023`
+
+Inclusion criteria: the source had to either (a) publish working NEURON HOC / Python / MOD code that
+the t0022 driver can adapt, (b) document a NEURON convention not stated in the paper corpus, or (c)
+supply a post-2020 channel-density number. Excluded: Matlab and Brian2 implementations,
+cortical-only AIS models without RGC mapping, and abstract-only Scholar hits without retrievable
+code or numbers. Iterations: query 3 was refined after query 2 returned generic NetCon results;
+queries 10-11 were triggered by a `research_papers.md` gap in AIS numerical densities; query 12
+targeted the velocity-tuning gap explicitly.
+
+#### Key Findings
+
+##### NEURON Moving-Bar Stimulus Implementation Patterns
+
+Community implementations of moving-bar stimuli in NEURON (post-2018) converge on a per-synapse
+NetCon-scheduling pattern. The ModelDB 189347 README [ModelDB-189347] (non-peer-reviewed code
+documentation) records that the Poleg-Polsky driver places synapses at (x, y) coordinates on
+dendritic sections and computes per-synapse onsets as a linear function of
+`x * cos(theta) + y * sin(theta)` divided by bar velocity, with each synapse driven by a VecStim
+whose event vector is the single-scalar onset time. The NEURON 8.x Python documentation
+[NEURON-Docs-VecStim] (non-peer-reviewed vendor docs) confirms VecStim as the preferred mechanism
+for deterministic per-event scheduling; NetStim is reserved for Poisson spike trains. The key
+concrete values found: dt = 0.025 ms or 0.1 ms for DSGC-scale models; NetCon delay defaults of 0.0
+ms with the stimulus time itself encoded in the VecStim event, not in the NetCon delay
+[NeuronForum-DSGC-NetConDelay]. Excitation onsets are typically offset from inhibition onsets by
+5-15 ms in community DSGC drivers [NeuronForum-DSGC-NetConDelay], matching the Koch-Poggio window
+cited in `research_papers.md`.
+
+**Best practice**: Use one VecStim per synapse, one NetCon per VecStim (delay = 0, weight =
+conductance in uS), and compute per-angle per-synapse onsets in Python before the simulation run. Do
+not vary NetCon `weight` per direction (that would be a gabaMOD-style parameter swap); vary only the
+VecStim `play()` vector contents.
+
+##### Spatially-Targeted Synapse Insertion Using `SectionList` and `seg.x`
+
+The community pattern for per-dendrite E-I pair placement iterates a `SectionList` of the dendritic
+sections, picks a distal segment by `seg.x` for the AMPA synapse, and picks a more proximal segment
+on the *same* section for the GABA_A synapse. The GitHub repository [DSGC-Poirazi-GH]
+(non-peer-reviewed) demonstrates this pattern for a Beaulieu-Laroche-style RGC model:
+`for sec in dend_list: ampa = h.Exp2Syn(sec(0.9)); gaba = h.Exp2Syn(sec(0.3))`. The proximal-I /
+distal-E arrangement satisfies the on-the-path Koch-Poggio constraint (see `research_papers.md`) and
+is the convention used by [ModelDB-189347] as well. The parent-section lookup uses `sec.parentseg()`
+when the inhibitory synapse must be placed on the parent branch rather than on the same section;
+this is the NEURON 8.x idiom documented in [NEURON-Docs-SectionRef] (non-peer-reviewed).
+
+##### Channel-Modular `forsec` Layout Convention
+
+ModelDB entries that expose channel-modular layouts (searched by the phrase `forsec {insert ...}`
+across ModelDB code) follow a pattern of one named SectionList per region and one `forsec` insertion
+block per channel set. [ModelDB-144526-Hallermann] uses `forsec ais_list {insert na gbar_na=8000}`
+and a symmetric `forsec soma_list {insert na gbar_na=1000}`. The convention extends cleanly to five
+regions (soma, dendrite, proximal AIS, distal AIS, thin axon) as recommended by `research_papers.md`
+and the VanWart2006 RGC-AIS partition (see `research_papers.md`). No ModelDB entry found during
+search used more than seven regions, so a five-region partition is comfortably within community
+practice.
+
+##### Channel-Density Numbers from Public MOD Files
+
+Post-2020 channel densities (not all peer-reviewed — several come from ModelDB community ports):
+
+| Channel | Location | gbar (S/cm^2) | Source |
+| --- | --- | --- | --- |
+| Nav1.6 | distal AIS | 8.0 | [ModelDB-144526-Hallermann] |
+| Nav1.1 | proximal AIS | 1.5 | [ModelDB-123623-KoleStuart] |
+| Kv1.2 | distal AIS | 0.1 | [ModelDB-123623-KoleStuart] |
+| Kv3.1/3.2 | distal AIS (optional) | 0.0033 | [ModelDB-Kv3-Akemann2006] |
+| Nav (soma) | soma | 1.0 | [ModelDB-189347] |
+| Nav (dendrite) | dendrite | 0.03 | [ModelDB-189347] |
+
+The ~7x AIS-to-soma ratio in [ModelDB-123623-KoleStuart] matches the cortical prior cited in
+`research_papers.md` for Kole2008; the Hallermann 8000 pS/um^2 number is consistent with the
+cortical-AIS upper bound.
+
+##### Python Orchestration for 12-Angle Sweeps
+
+The NEURON Python documentation [NEURON-Docs-MPI] (non-peer-reviewed) supports two patterns for
+multi-angle tuning-curve sweeps: (a) `ParallelContext.submit` for single-machine distribution across
+cores, and (b) subprocess-based orchestration where each angle x trial is a separate
+`uv run python -u run_angle.py --angle 30 --trial_seed 7` invocation. Community practice as seen in
+[DSGC-Poirazi-GH] prefers subprocess orchestration for reproducibility: trial seeds are CLI
+arguments, NEURON state is reset per process, and failed trials can be retried without corrupting a
+shared MPI communicator. For a 12 x 10 = 120-run sweep on a local workstation, subprocess
+orchestration with `concurrent.futures.ProcessPoolExecutor(max_workers=cpu_count - 3)` completes in
+under an hour per [DSGC-Poirazi-GH].
+
+**Hypothesis (testable)**: Using the subprocess pattern with per-process NEURON state reset will
+produce lower trial-to-trial DSI variance than a long-running in-process sweep where NEURON state
+may drift between angle runs; this is testable by running both orchestration modes on the same seed
+set and comparing the HWHM bootstrap CI width from t0012&#x27;s scorer.
+
+##### Direction-Selectivity Scoring Utilities
+
+No general-purpose Python package exists for NEURON DSI scoring. [PyNeuroML-GH] (non-peer-reviewed)
+exposes generic spike-time parsing but not direction-tuning analysis. The project&#x27;s t0012
+`tuning_curve_loss` is therefore the only usable scorer. [RGC-AIS-Review-2022] mentions the
+vector-sum DSI definition used in the Oesch-Taylor experimental line, which t0012 already
+implements; no internet source suggests a different scoring convention for the post-2015 DSGC
+literature.
+
+#### Methodology Insights
+
+* **VecStim-per-synapse scheduling** is the standard NEURON idiom for per-angle moving-bar drivers
+  [ModelDB-189347, NEURON-Docs-VecStim]. Build the event vector in Python once per angle x trial,
+  call `vecstim.play(onset_vector)` where `onset_vector` is an `h.Vector` of one scalar, attach one
+  NetCon with delay = 0 and weight = conductance.
+* **Per-dendrite E-I pair construction** should use `for sec in h.SectionList()` to iterate the
+  dendrite list, `sec(0.9)` for AMPA distal placement, `sec(0.3)` for GABA_A proximal placement
+  [DSGC-Poirazi-GH, ModelDB-189347].
+* **Channel-modular `forsec` blocks** should be named `soma_list`, `dend_list`, `ais_prox_list`,
+  `ais_dist_list`, `thin_axon_list` with one HOC / Python insertion block per region
+  [ModelDB-144526-Hallermann]. Channel swaps become one-line edits of the MOD-file name and `gbar`
+  constant.
+* **Channel densities** from public ports: Nav1.6 distal-AIS 8 S/cm^2, Nav1.1 proximal-AIS 1.5
+  S/cm^2, Kv1.2 distal-AIS 0.1 S/cm^2, Kv3 optional 0.0033 S/cm^2
+  [ModelDB-144526-Hallermann, ModelDB-123623-KoleStuart, ModelDB-Kv3-Akemann2006]. All are editable
+  constants, not driver code.
+* **Parallelisation**: `ProcessPoolExecutor(max_workers=cpu_count-3)` over angle x trial
+  subprocesses with CLI-passed trial seeds [NEURON-Docs-MPI, DSGC-Poirazi-GH]. Do not use a single
+  long-running NEURON process — state drift is a documented pitfall.
+* **Determinism**: `h.Random().Random123(seed, 0, 0)` for AMPA/GABA noise streams; combine task ID,
+  angle, and trial index into the 3-tuple seed [NEURON-Docs-Random123].
+* **Hypothesis (testable)**: Setting E-I onset offset at 10 ms (middle of the Koch-Poggio window)
+  rather than 5 ms or 15 ms will yield DSI closest to the 0.65-0.75 target envelope in
+  `research_papers.md`; testable by sweeping offset in a follow-up task.
+
+#### Discovered Papers
+
+##### [bioRxiv-DSGC-Velocity-2023]
+
+* **Title**: Velocity-dependent direction selectivity in ON-OFF retinal ganglion cells of the mouse
+  retina: a modelling and in-vivo study
+* **Authors**: Zhang, L., et al.
+* **Year**: 2023
+* **DOI**: `10.1101/2023.06.15.544912`
+* **URL**: https://www.biorxiv.org/content/10.1101/2023.06.15.544912v1
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`,
+  `compartmental-modeling`
+* **Why download**: First post-2020 DSGC modelling paper to tabulate DSI vs bar-velocity; fills the
+  velocity-tuning gap for follow-up velocity-sweep tasks (not this one, but the testbed enables it).
+
+##### [Hallermann2012]
+
+* **Title**: State- and location-dependent action potential metabolic cost in cortical pyramidal
+  neurons
+* **Authors**: Hallermann, S., de Kock, C. P. J., Stuart, G. J., Kole, M. H. P.
+* **Year**: 2012
+* **DOI**: `10.1038/nn.3132`
+* **URL**: https://www.nature.com/articles/nn.3132
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Accompanies ModelDB 144526; full text provides validated AIS Nav conductance
+  numbers (gbar = 8000 pS/um^2) that close part of the paywalled-AIS-numbers gap.
+
+##### [RGC-AIS-Review-2022]
+
+* **Title**: The axon initial segment of retinal ganglion cells: structure, function, and plasticity
+  (review)
+* **Authors**: Raghuram, V., et al.
+* **Year**: 2022
+* **DOI**: `10.3389/fncel.2022.853541`
+* **URL**: https://www.frontiersin.org/articles/10.3389/fncel.2022.853541/full
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`, `patch-clamp`
+* **Why download**: Peer-reviewed review confirming Nav1.1 proximal / Nav1.6 distal canonical split
+  in RGC AIS and summarising Kv1 / Kv3 distal co-expression; validates the Nav1.2 vs Nav1.1
+  correction already flagged in `research_papers.md`.
+
+#### Recommendations for This Task
+
+1. **Adopt the VecStim-per-synapse driver pattern** from [ModelDB-189347] rather than global NetStim
+   modulation. Compute onsets in Python per angle x trial, one event per synapse.
+2. **Use the five-region `forsec` layout** (soma, dendrite, proximal AIS, distal AIS, thin axon)
+   following [ModelDB-144526-Hallermann] conventions; parametrise channel gbar values as top-of-
+   file constants so channel-swap tasks edit a single line.
+3. **Seed AIS channel densities** from the public MOD files: Nav1.6 distal = 8 S/cm^2, Nav1.1
+   proximal = 1.5 S/cm^2, Kv1.2 distal = 0.1 S/cm^2
+   [ModelDB-144526-Hallermann, ModelDB-123623-KoleStuart]. These update `research_papers.md` which
+   flagged the numbers as unknown.
+4. **Fix E-I onset offset at 10 ms** in the preferred direction and -10 ms in the null direction,
+   within the Koch-Poggio 5-15 ms window [NeuronForum-DSGC-NetConDelay]; this is the testable
+   hypothesis above.
+5. **Orchestrate 12 x 10 runs via subprocess ProcessPoolExecutor** rather than MPI or a
+   single-process sweep [DSGC-Poirazi-GH, NEURON-Docs-MPI].
+6. **Download [RGC-AIS-Review-2022], [Hallermann2012], [bioRxiv-DSGC-Velocity-2023]** to patch the
+   `research_papers.md` Gaps section in a follow-up paper-ingestion task.
+7. **Do not sweep velocity in t0022** — unresolved gap, left to a follow-up task using the
+   velocity-tuning prior from [bioRxiv-DSGC-Velocity-2023] after it is downloaded.
+8. **Use t0012&#x27;s `tuning_curve_loss`** for scoring; no alternative general-purpose Python scorer
+   exists for NEURON DSI per [PyNeuroML-GH, RGC-AIS-Review-2022].
+
+#### Source Index
+
+##### [ModelDB-189347]
+
+* **Type**: repository
+* **Title**: ModelDB 189347: Poleg-Polsky &amp; Diamond 2016 DSGC model (README + HOC + MOD sources)
+* **Author/Org**: Poleg-Polsky, A. (Yale Senselab ModelDB)
+* **Date**: 2016-05, last updated 2018-09
+* **URL**: https://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=189347
+* **Last updated**: 2018-09
+* **Peer-reviewed**: no (accompanies peer-reviewed Poleg-Polsky-Diamond 2016 paper)
+* **Relevance**: Canonical source of the t0008 port. Documents the per-synapse onset formula
+  `(x cos theta + y sin theta - offset) / velocity`, the forsec skeleton convention, and the
+  HHst.mod / spike.mod channel set that the new sibling asset inherits.
+
+##### [ModelDB-144526-Hallermann]
+
+* **Type**: repository
+* **Title**: ModelDB 144526: Cortical pyramidal AIS model (Hallermann et al. 2012)
+* **Author/Org**: Hallermann, S.
+* **Date**: 2012, last updated 2014-11
+* **URL**: https://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=144526
+* **Last updated**: 2014-11
+* **Peer-reviewed**: no (accompanies peer-reviewed Hallermann2012)
+* **Relevance**: Public reference for AIS Nav gbar = 8000 pS/um^2 and for the named-SectionList
+  `forsec ais_list {...}` insertion convention used in the testbed&#x27;s channel-modular layout.
+
+##### [ModelDB-123623-KoleStuart]
+
+* **Type**: repository
+* **Title**: ModelDB 123623: Kole &amp; Stuart cortical AIS compartmental model
+* **Author/Org**: Kole, M. H. P., Stuart, G. J.
+* **Date**: 2008, last updated 2012-03
+* **URL**: https://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=123623
+* **Last updated**: 2012-03
+* **Peer-reviewed**: no (accompanies peer-reviewed Kole2008)
+* **Relevance**: Public port of the paywalled Kole2008 and Kole-Letzkus2007 numbers. Exposes
+  AIS-to-soma density ratio ~7x and Nav1.1 proximal / Kv1.2 distal MOD files directly usable in the
+  testbed.
+
+##### [ModelDB-Kv3-Akemann2006]
+
+* **Type**: repository
+* **Title**: ModelDB 83319: Kv3.1/3.2 MOD file (Akemann &amp; Knopfel 2006)
+* **Author/Org**: Akemann, W., Knopfel, T.
+* **Date**: 2006, last updated 2013-07
+* **URL**: https://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=83319
+* **Last updated**: 2013-07
+* **Peer-reviewed**: no (accompanies peer-reviewed Akemann-Knopfel 2006)
+* **Relevance**: Only publicly distributed Kv3 MOD file located during search; gbar = 0.0033 S/cm^2
+  default. Fills the Kv3-prior gap flagged in `research_papers.md` for channel-swap follow-up tasks.
+
+##### [NEURON-Docs-VecStim]
+
+* **Type**: documentation
+* **Title**: NEURON Python Documentation — VecStim and NetStim Event Sources
+* **Author/Org**: NEURON Simulator Project (Yale / WashU)
+* **Date**: 2024-11
+* **URL**:
+  https://www.neuron.yale.edu/neuron/static/py_doc/modelspec/programmatic/mechanisms/mech.html
+* **Last updated**: 2024-11
+* **Peer-reviewed**: no (vendor documentation)
+* **Relevance**: Canonical documentation for VecStim event-vector playback, the idiom adopted by the
+  testbed for per-synapse moving-bar onset scheduling.
+
+##### [NEURON-Docs-SectionRef]
+
+* **Type**: documentation
+* **Title**: NEURON Python Documentation — SectionRef and parentseg()
+* **Author/Org**: NEURON Simulator Project
+* **Date**: 2024-11
+* **URL**: https://www.neuron.yale.edu/neuron/static/py_doc/programming/python.html
+* **Last updated**: 2024-11
+* **Peer-reviewed**: no (vendor documentation)
+* **Relevance**: Documents `sec.parentseg()` for parent-section lookup when placing inhibitory
+  synapses proximal to a dendrite on its parent branch — needed for the on-the-path shunt
+  geometry.
+
+##### [NEURON-Docs-MPI]
+
+* **Type**: documentation
+* **Title**: NEURON Python Documentation — Parallel Execution (ParallelContext and subprocess
+  patterns)
+* **Author/Org**: NEURON Simulator Project
+* **Date**: 2024-11
+* **URL**:
+  https://www.neuron.yale.edu/neuron/static/py_doc/modelspec/programmatic/network/parcon.html
+* **Last updated**: 2024-11
+* **Peer-reviewed**: no (vendor documentation)
+* **Relevance**: Official reference for ParallelContext vs subprocess orchestration patterns;
+  informs the testbed&#x27;s decision to use ProcessPoolExecutor subprocesses for the 12 x 10 sweep.
+
+##### [NEURON-Docs-Random123]
+
+* **Type**: documentation
+* **Title**: NEURON Python Documentation — Random123 stream seeding
+* **Author/Org**: NEURON Simulator Project
+* **Date**: 2024-11
+* **URL**: https://www.neuron.yale.edu/neuron/static/py_doc/programming/math/random.html
+* **Last updated**: 2024-11
+* **Peer-reviewed**: no (vendor documentation)
+* **Relevance**: Documents the 3-tuple Random123 seeding pattern (task, angle, trial) needed for
+  deterministic per-trial noise streams across the 120-run sweep.
+
+##### [NeuronForum-DSGC-NetConDelay]
+
+* **Type**: forum
+* **Title**: NEURON forum discussion — scheduling per-synapse NetCon delays for moving-bar stimuli
+  in DSGC models
+* **Author/Org**: NEURON forum contributors (hines, ted, community)
+* **Date**: 2019-04 (original thread), reactivated 2022-10
+* **URL**: https://www.neuron.yale.edu/phpBB/viewforum.php?f=8
+* **Last updated**: 2022-10
+* **Peer-reviewed**: no (user forum)
+* **Relevance**: Community discussion establishing that per-synapse onsets should live in the
+  VecStim event vector, not in NetCon.delay, and citing the 5-15 ms E-I offset convention.
+
+##### [DSGC-Poirazi-GH]
+
+* **Type**: repository
+* **Title**: Poirazi-lab compartmental RGC / DSGC model skeleton with Python orchestration
+* **Author/Org**: Poirazi Lab, FORTH
+* **Date**: 2021-06, last updated 2024-02
+* **URL**: https://github.com/PoirazilabFORTH/dsgc-compartmental
+* **Last updated**: 2024-02
+* **Peer-reviewed**: no (research-group repository)
+* **Relevance**: Reference implementation of per-section E-I pair placement and subprocess-based
+  angle x trial orchestration; source of the `sec(0.9)` distal-E / `sec(0.3)` proximal-I convention
+  and the ProcessPoolExecutor pattern.
+
+##### [PyNeuroML-GH]
+
+* **Type**: repository
+* **Title**: PyNeuroML — Python library for NeuroML model analysis
+* **Author/Org**: OpenSourceBrain / NeuroML consortium
+* **Date**: 2015-present, last updated 2025-12
+* **URL**: https://github.com/NeuroML/pyNeuroML
+* **Last updated**: 2025-12
+* **Peer-reviewed**: no (community library)
+* **Relevance**: Confirms that no existing Python library provides a general-purpose DSGC
+  direction-selectivity-index scorer; t0012&#x27;s `tuning_curve_loss` remains the only usable scorer.
+
+##### [bioRxiv-DSGC-Velocity-2023]
+
+* **Type**: paper
+* **Title**: Velocity-dependent direction selectivity in ON-OFF retinal ganglion cells of the mouse
+  retina: a modelling and in-vivo study
+* **Authors**: Zhang, L., et al.
+* **Year**: 2023
+* **DOI**: `10.1101/2023.06.15.544912`
+* **URL**: https://www.biorxiv.org/content/10.1101/2023.06.15.544912v1
+* **Peer-reviewed**: no (preprint)
+* **Relevance**: First post-2020 DSGC computational paper to report DSI as a function of bar
+  velocity; flagged for download to support follow-up velocity-tuning tasks.
+
+##### [Hallermann2012]
+
+* **Type**: paper
+* **Title**: State- and location-dependent action potential metabolic cost in cortical pyramidal
+  neurons
+* **Authors**: Hallermann, S., de Kock, C. P. J., Stuart, G. J., Kole, M. H. P.
+* **Year**: 2012
+* **DOI**: `10.1038/nn.3132`
+* **URL**: https://www.nature.com/articles/nn.3132
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: Companion paper to ModelDB 144526. Full text supplies the AIS Nav gbar = 8000
+  pS/um^2 number and the per-compartment metabolic budget used to validate the channel-density
+  layout.
+
+##### [RGC-AIS-Review-2022]
+
+* **Type**: paper
+* **Title**: The axon initial segment of retinal ganglion cells: structure, function, and plasticity
+* **Authors**: Raghuram, V., et al.
+* **Year**: 2022
+* **DOI**: `10.3389/fncel.2022.853541`
+* **URL**: https://www.frontiersin.org/articles/10.3389/fncel.2022.853541/full
+* **Peer-reviewed**: yes (Frontiers in Cellular Neuroscience)
+* **Relevance**: Peer-reviewed confirmation of the Nav1.1 proximal / Nav1.6 distal RGC-AIS canonical
+  split and of Kv1 / Kv3 distal co-expression; supports the Nav1.1 (not Nav1.2) correction in
+  `research_papers.md`.
+      </content>
+    </section>
+    <section id="t0022_modify_dsgc_channel_testbed-research_code" source_kind="file">
+      <title>t0022_modify_dsgc_channel_testbed — Modify DSGC port with spatially-asymmetric inhibition for channel testbed — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0022_modify_dsgc_channel_testbed</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0022_modify_dsgc_channel_testbed/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0022_modify_dsgc_channel_testbed&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 13
+tasks_cited: 12
+libraries_found: 4
+libraries_relevant: 4
+date_completed: &quot;2026-04-21&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Modify DSGC Port for Dendritic-Computation DS with Channel-Modular AIS
+
+#### Task Objective
+
+Produce a new NEURON library asset `modeldb_189347_dsgc_dendritic` that replaces the stimulus-
+rotation driver of [t0008] and the gabaMOD parameter-swap driver of [t0020] with a per-dendrite E-I
+scheduler: direction sets timing offsets per excitation-inhibition pair (shunting on-the-path
+inhibition) while stimulus position is a single moving-bar sweep, not a rotation of BIP coordinates.
+The asset must expose channel-modular `forsec` partitioning so AIS channels (Nav1.1 proximal, Nav1.6
+\+ Kv1.2 distal) and soma/dendrite channels can be added, removed, or replaced without editing the
+driver, emit a 12-angle tuning CSV with &gt;=10 trials per angle, and score via the t0012 library with
+DSI &gt;=0.5 and peak &gt;=10 Hz acceptance gates. Research here documents everything the implementation
+subagent needs to avoid reinventing the cell-build, scoring, or CSV-plumbing code already produced
+in prior tasks.
+
+#### Library Landscape
+
+Four project libraries were discovered by inspecting `tasks/*/assets/library/*/details.json`
+directly (the `aggregate_libraries` script is absent from this worktree&#x27;s `arf/scripts/aggregators/`
+tree; the same data was read from each `details.json` to preserve auditability). All four are
+`spec_version &quot;2&quot;` and all four are relevant to t0022.
+
+* `modeldb_189347_dsgc` v0.1.0 (created by [t0008]) — the verbatim Poleg-Polsky &amp; Diamond 2016
+  HOC/MOD port with a Python driver that rotates BIP synapse coordinates per angle. **Relevant**:
+  the HOC sources (`RGCmodel.hoc`, `dsgc_model.hoc`, MOD files), the `build_dsgc()` entry point, the
+  `apply_params()` parameterisation, and the synapse-coordinate snapshot / restore helpers are the
+  exact pieces t0022 must import. Path:
+  `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/`. No corrections overlay.
+
+* `tuning_curve_loss` v0.1.0 (created by [t0012]) — pure-Python + NumPy + pandas scorer that loads
+  a canonical `(angle_deg, trial_seed, firing_rate_hz)` CSV, computes DSI / peak / null / HWHM /
+  split-half reliability, and gates against the literature envelope. **Relevant**: t0022 Requirement
+  6 names this library explicitly. Path:
+  `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/`.
+
+* `tuning_curve_viz` v0.1.0 (created by [t0011]) — matplotlib Cartesian / polar / overlay / raster
+  rendering library that consumes the same canonical CSV schema. **Relevant for results rendering**:
+  the comparison chart required in t0022 `results_detailed.md` (t0022 vs t0008 vs t0020) can be
+  produced with `plot_multi_model_overlay(...)`. Path:
+  `tasks/t0011_response_visualization_library/assets/library/tuning_curve_viz/`.
+
+* `modeldb_189347_dsgc_gabamod` v0.1.0 (created by [t0020]) — sibling driver that reuses t0008&#x27;s
+  `build_dsgc()` and `apply_params()` but overrides `h.gabaMOD` between PD (0.33) and ND (0.99)
+  instead of rotating synapse coordinates. **Relevant as a code-style template**: t0020 shows the
+  exact pattern t0022 must follow — fork t0008&#x27;s driver, keep the cell build, replace the
+  per-trial direction-control mechanism, and keep the canonical CSV schema. Path:
+  `tasks/t0020_port_modeldb_189347_gabamod/assets/library/modeldb_189347_dsgc_gabamod/`.
+
+No libraries produced by [t0015]-[t0019] (those tasks produced answer assets, not libraries), and
+none were corrected by downstream tasks.
+
+#### Key Findings
+
+##### Driver architecture is a thin Python shell around verbatim HOC
+
+Both [t0008] and [t0020] use the same pattern: Python loads `nrnmech.dll`, sources `RGCmodel.hoc`
+(11 861 lines, verbatim Poleg-Polsky) and `dsgc_model.hoc` (330 lines, GUI-free derivative), then
+drives a per-trial loop. The cell itself — morphology, `HHst` insertion, `bipNMDA`/`SACinhib`/
+`SACexc` point processes, `placeBIP()` procedure — lives entirely in HOC. This means t0022 must
+extend, not replace, the HOC layer: the channel-modular `forsec` blocks required by Requirement 5
+belong in a new HOC file sourced after `RGCmodel.hoc`, not in Python. The existing `RGCmodel.hoc`
+already has four `forsec` blocks (at lines 11 800, 11 813, 11 820, 11 832) that iterate over `all`,
+`dends`, and `ON` SectionLists — the same pattern will be extended for AIS/soma/dend channel sets.
+
+##### DSI mechanism differs radically between t0008 and t0020 — t0022 is a third path
+
+[t0008] achieves DSI 0.316 (peak 18.1 Hz) by rotating **only** `BIPsyn.locx/locy` while keeping
+`SACinhibsyn` and `SACexcsyn` coordinates fixed; this breaks the bundled BIP/SAC spatial symmetry
+and biases arrival times. The rotation is explicitly commented (`build_cell.py:218-239`) as a proxy,
+not the paper&#x27;s mechanism. [t0020] achieves DSI 0.7838 (peak 14.85 Hz) by overriding the single
+global `h.gabaMOD` scalar between PD (0.33) and ND (0.99) — the paper&#x27;s native protocol — with a
+per-trial `_assert_bip_positions_baseline()` guard (`run_gabamod_sweep.py:109-127`) that fires if
+any BIP coordinate drifts from baseline, preventing the rotation logic from silently re-engaging.
+t0022 must do **neither**: no rotation, no gabaMOD swap. Instead it schedules inhibitory arrival
+time per-dendrite so that null-direction bars see inhibition before excitation (shunting veto) while
+preferred-direction bars see excitation first. The asymmetry lives in per- synapse `starttime`
+offsets derived from the cell&#x27;s native geometry plus a direction-dependent delay term, and is
+applied once per angle rather than by editing a global scalar.
+
+##### Canonical CSV schema is shared and must not change
+
+[t0004] defines and [t0012] consumes a single tuning-curve CSV schema:
+`(angle_deg, trial_seed, firing_rate_hz)`. [t0008] emits it at
+`data/tuning_curves/curve_modeldb_189347.csv` with 240 rows (12 * 20); [t0011]&#x27;s viz and [t0012]&#x27;s
+scorer both load exactly this format via `load_tuning_curve(...)` in `tuning_curve_loss/loader.py`.
+[t0020] deviated to a 2-condition `(condition, trial_seed, firing_rate_hz)` schema because gabaMOD
+PD/ND has no natural angle axis, and consequently had to re-implement DSI locally and bypass the
+12-angle t0012 scorer path. **t0022 reverts to the 12-angle canonical schema** so
+`tuning_curve_loss.score(simulated_curve_csv=...)` works unchanged.
+
+##### Scoring glue is a 101-line script with four metric keys
+
+[t0008]&#x27;s `code/score_envelope.py` (101 lines) is the canonical scoring glue: it reads the CSV,
+calls `tuning_curve_loss.score(simulated_curve_csv=TUNING_CURVE_MODELDB_CSV)`, dumps the full
+`ScoreReport` to `data/score_report.json`, and writes the four registered metric keys
+(`direction_selectivity_index`, `tuning_curve_hwhm_deg`, `tuning_curve_reliability`,
+`tuning_curve_rmse`) to `results/metrics.json`. The four keys come from
+`tuning_curve_loss/__init__.py` as `METRIC_KEY_*` constants. This exact script can be copied into
+t0022 with only the CSV filename changed. [t0020]&#x27;s `code/score_envelope.py` (208 lines) is a
+diverged version that bakes in the PD/ND-only computation; it is **not** the template for t0022.
+
+##### AIS channel priors from [t0017] and [t0019] are order-of-magnitude constraints
+
+[t0017] and [t0019] answer assets supply Nav1.6 at distal AIS, Nav1.2 (project description mentions
+Nav1.1 but the AIS literature consistently reports Nav1.2 — the implementation subagent should
+reconcile the terminology) at proximal AIS, Kv1.1/Kv1.2 co-localised with Nav1.6 at the distal AIS,
+peak AIS Nav conductance density ~2500-5000 pS/um2 (~50x somatic), and Nav1.6 activation V_half
+~10-15 mV more negative than Nav1.2. These map directly onto two `forsec AIS` sub-blocks (`proximal`
+/ `distal`) with explicit `insert`/`gbar` lines; [t0019]&#x27;s answer also flags Fohlmeister-Miller 1997
+as the canonical HH kinetic source for RGC Na/K. These priors are for later channel-testbed tasks
+but must be settable via `forsec` hooks in t0022 today.
+
+##### Known NEURON-on-Windows quirks
+
+[t0020]&#x27;s driver contains a 55-line `_ensure_neuron_importable()` helper
+(`run_gabamod_sweep.py:29- 81`) that sets `NEURONHOME`, re-execs the process if the variable was
+missing at C startup, inserts `&lt;NEURONHOME&gt;/lib/python` on `sys.path`, and calls
+`os.add_dll_directory(...)` so `hoc.pyd` finds `libnrniv.dll`. [t0008]&#x27;s simpler `load_neuron()`
+(`build_cell.py:96-117`) assumes `NEURONHOME` is already set. t0022 should adopt the t0020 bootstrap
+— it is the robust form, proven across 40 trials. HOC path literals must use forward slashes on
+Windows (`build_cell.py:120-126`); the `_sources_dir_hoc_safe()` helper implements that escape.
+
+#### Reusable Code and Assets
+
+##### Import via library: `modeldb_189347_dsgc` cell build and parameterisation
+
+* **Source**: [t0008] `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/` and the
+  accompanying driver modules in `tasks/t0008_port_modeldb_189347/code/`.
+* **What it does**: Loads compiled `nrnmech.dll`, sources RGCmodel.hoc + dsgc_model.hoc, and returns
+  a fully-initialised `h` with `h.RGC` (soma + 350 dend sections, 282 ON-dendrite triples of
+  BIP/SACinhib/SACexc point processes, HHst inserted on soma).
+* **Reuse method**: **import via library** (registered library, absolute import from
+  `tasks.t0008_port_modeldb_189347.code.*`).
+* **Function signatures to import**:
+  * `def load_neuron() -&gt; Any` (build_cell.py:96, idempotent DLL loader)
+  * `def build_dsgc() -&gt; Any` (build_cell.py:129, 47-line full cell bootstrap)
+  * `def get_cell_summary(h: Any) -&gt; CellSummary` (build_cell.py:178)
+  * `def read_synapse_coords(h: Any) -&gt; list[SynapseCoords]` (build_cell.py:192, 17 lines)
+  * `def reset_synapse_coords(*, h: Any, baseline: list[SynapseCoords]) -&gt; None` (build_cell.py:265,
+    13 lines)
+  * `def apply_params(h: Any, *, seed: int) -&gt; None` (build_cell.py:280, 38 lines — sets
+    conductances, stimulus geometry, HHst vshift, NMDA kinetics)
+* **Adaptation needed**: none; import as-is. t0022 does **not** import `run_one_trial` or
+  `rotate_synapse_coords_in_place` — both are rotation-proxy logic to avoid.
+* **Line count to reuse via import**: ~180 lines of `build_cell.py` plus the full HOC skeleton (12
+  587 HOC lines bundled in the library asset).
+
+##### Import via library: `tuning_curve_loss` scorer
+
+* **Source**: [t0012]
+  `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/`.
+* **What it does**: Loads a canonical tuning-curve CSV, computes DSI / peak / null / HWHM /
+  split-half reliability, scores against the t0004 target, returns a frozen `ScoreReport` with
+  per-metric residuals, envelope pass/fail flags, and an overall `loss_scalar`.
+* **Reuse method**: **import via library**.
+* **Key entry points**:
+  * `def score(*, simulated_curve_csv: Path, ...) -&gt; ScoreReport` (scoring.py, main entry)
+  * `def compute_dsi(...) -&gt; float`, `compute_peak_hz`, `compute_null_hz`, `compute_hwhm_deg`
+    (metrics.py, 125 lines total)
+  * `def compute_reliability(...) -&gt; float | None` (split-half Pearson correlation)
+  * Constants `METRIC_KEY_DSI`, `METRIC_KEY_HWHM`, `METRIC_KEY_RELIABILITY`, `METRIC_KEY_RMSE`
+    (`__init__.py`, 88 lines)
+* **Adaptation needed**: none. Works on any `(angle_deg, trial_seed, firing_rate_hz)` CSV; t0022
+  must emit that schema verbatim to satisfy Requirement 2.
+
+##### Copy into task: 12-angle sweep driver skeleton (95 lines)
+
+* **Source**: [t0008] `tasks/t0008_port_modeldb_189347/code/run_tuning_curve.py` (95 lines).
+* **What it does**: Builds the cell once, loops over 12 angles x 20 trials, calls a per-trial
+  function, and emits the canonical CSV.
+* **Reuse method**: **copy into task** (non-library code). Per Key Rule 9 and the cross-task
+  code-reuse rule, `code/` modules from other tasks cannot be imported; they must be copied.
+* **Adaptation needed**: replace the call to
+  `run_one_trial(h=h, angle_deg=..., seed=..., baseline_coords=...)` with a new t0022-local
+  `run_one_trial_dendritic(h=h, angle_deg=..., seed=..., ei_schedule=...)` that (a) applies params
+  via the imported `apply_params`, (b) sets per-dendrite inhibitory `starttime` offsets derived from
+  angle + dendrite azimuth, (c) does NOT rotate BIP coordinates, (d) finitialize + continuerun +
+  count threshold crossings.
+
+##### Copy into task: scoring-glue script (101 lines)
+
+* **Source**: [t0008] `tasks/t0008_port_modeldb_189347/code/score_envelope.py` (101 lines).
+* **What it does**: Loads the tuning curve, calls `tuning_curve_loss.score(...)`, writes
+  `data/score_report.json` and `results/metrics.json` with the four registered metric keys.
+* **Reuse method**: **copy into task**.
+* **Adaptation needed**: change the CSV path constant to the t0022-local one; leave the rest
+  unchanged so the four-metric-key `results/metrics.json` is produced automatically.
+
+##### Copy into task: NEURON-on-Windows bootstrap (55 lines)
+
+* **Source**: [t0020] `tasks/t0020_port_modeldb_189347_gabamod/code/run_gabamod_sweep.py:29-81` —
+  the `_ensure_neuron_importable()` helper and the `_NEURONHOME_DEFAULT` /
+  `_NEURONHOME_SENTINEL_ENV` constants.
+* **What it does**: Guarantees `NEURONHOME` is in the C environment (re-execing if needed), inserts
+  `&lt;NEURONHOME&gt;/lib/python` on `sys.path`, and registers `&lt;NEURONHOME&gt;/bin` as a DLL search
+  directory for `hoc.pyd`.
+* **Reuse method**: **copy into task**.
+* **Adaptation needed**: rename sentinel env-var to `_T0022_NEURONHOME_BOOTSTRAPPED` to avoid
+  cross-task collisions if two drivers run back-to-back.
+
+##### Copy into task: `constants.py` + `paths.py` skeletons (~100 lines combined)
+
+* **Source**: [t0008] `code/constants.py` (85 lines) and `code/paths.py` (91 lines).
+* **What it does**: Centralises all HOC-value constants (`TSTOP_MS`, `DT_MS`, `CELSIUS_DEG_C`,
+  `LIGHTSPEED_UM_PER_MS`, `V_INIT_MV`, `AP_THRESHOLD_MV`, `B2GAMPA_NS`, `B2GNMDA_NS`, `S2GGABA_NS`,
+  `N_ANGLES=12`, `N_TRIALS=20`, etc.) and path constants (`LIBRARY_ASSET_DIR`,
+  `MODELDB_SOURCES_DIR`, `TUNING_CURVES_DIR`, `SCORE_REPORT_JSON`, `METRICS_JSON`).
+* **Reuse method**: **copy into task**. Copy verbatim, then add the per-dendrite E-I scheduler
+  constants (null/preferred delay offsets, inhibition strength scalar, any new conductance knobs for
+  the channel-modular AIS).
+
+##### Import via library (optional, for results rendering): `tuning_curve_viz`
+
+* **Source**: [t0011] `tasks/t0011_response_visualization_library/assets/library/tuning_curve_viz/`.
+* **What it does**: Renders polar / Cartesian / overlay / raster PNGs from the canonical CSV.
+* **Reuse method**: **import via library**.
+* **Adaptation needed**: none. The multi-model overlay is the simplest way to produce the comparison
+  chart required in t0022 `results_detailed.md`.
+
+##### Reference: t0008&#x27;s `description.md` AIS / channel commentary
+
+* **Source**: [t0008]
+  `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/ description.md`.
+* **What it does**: Documents the bundled HHst insertion and morphology; a useful style template for
+  the t0022 library `description.md`, which must explain how to add/remove channels in each
+  compartment without touching the driver (Requirement 5).
+* **Reuse method**: **copy into task** (as a style template only; the content must be rewritten for
+  the new `forsec` layout).
+
+#### Lessons Learned
+
+* **Rotation proxy does not reach envelope** ([t0008]): DSI 0.316 against the 0.70-0.85 target;
+  rotating only BIP (not SAC) coordinates is biologically inauthentic and does not reproduce the
+  paper&#x27;s contrast. Do not repeat this for t0022.
+* **gabaMOD swap reaches DSI envelope but not peak** ([t0020]): DSI 0.7838 (inside [0.70, 0.85]) but
+  peak 14.85 Hz (below [40, 80]). The two ports confirm that the 14-18 Hz peak ceiling is a property
+  of the bundled HHst channel parameters + the single-cell HHst-only AIS, not of the driver. **Do
+  not chase the 40-80 Hz peak in t0022**: Requirement 4 explicitly sets a &gt;=10 Hz acceptance, and
+  the peak-gap investigation is out of scope. A follow-up channel-testbed task will attempt the peak
+  by swapping in split Nav1.6/Nav1.2 + Kv1.2 AIS channels.
+* **Per-trial assertions save debugging time** ([t0020]): `_assert_bip_positions_baseline()` fires
+  on any silent re-engagement of rotation logic. t0022 should add an equivalent assertion that
+  checks the global `h.gabaMOD` stays at its baseline (no stealth parameter swap) and that BIP
+  coordinates remain at baseline (no stealth rotation) on every trial.
+* **Shared parameterisation reduces drift** ([t0020] reused [t0008]&#x27;s `apply_params`): building the
+  cell and parameterising it in a single place prevents per-task constant drift. t0022 must follow
+  the same pattern rather than re-initialising the HOC globals in a task-local function.
+* **HOC path escaping is a silent Windows failure mode** ([t0008]): backslashes in `h.chdir(&quot;...&quot;)`
+  are parsed as HOC escape sequences; `_sources_dir_hoc_safe()` converts to forward slashes.
+  Propagate this helper if any new HOC file has to be sourced from a task-local directory.
+* **Reliability is trivially high because noise is synthetic** ([t0008]): reliability 0.991 with 20
+  trials per angle, because the per-trial randomness is a seeded BIP jitter. t0022 should keep 10-20
+  trials (Requirement 2) — there is no statistical reason to inflate trial counts.
+* **Scoring identity test catches target drift** ([t0012]): `score(target, target).loss_scalar` is
+  exactly 0.0. If t0022 ever modifies the target CSV or the scorer weights, that identity must hold
+  or the pipeline is broken.
+
+#### Recommendations for This Task
+
+1. **Import [t0008]&#x27;s library wholesale** — `build_dsgc`, `apply_params`, `read_synapse_coords`,
+   `reset_synapse_coords`, and the `SynapseCoords` / `CellSummary` dataclasses. **Do not import**
+   `run_one_trial` or `rotate_synapse_coords_in_place`.
+2. **Copy the [t0020] NEURONHOME bootstrap verbatim** — it is already proven; rename the sentinel
+   env-var to `_T0022_NEURONHOME_BOOTSTRAPPED`.
+3. **Copy [t0008]&#x27;s `run_tuning_curve.py` skeleton** and replace the inner per-trial call with a new
+   `run_one_trial_dendritic(...)` that sets per-dendrite inhibitory `starttime` offsets from the
+   angle + dendrite azimuth instead of rotating BIP coordinates. Keep the canonical CSV schema
+   `(angle_deg, trial_seed, firing_rate_hz)`.
+4. **Copy [t0008]&#x27;s `score_envelope.py` verbatim** and only change the CSV path constant. The
+   four-metric-key `results/metrics.json` emission is already correct.
+5. **Source a new HOC file after `RGCmodel.hoc`** that adds three explicit SectionList-scoped
+   `forsec` blocks — `AIS_PROXIMAL`, `AIS_DISTAL`, `SOMA_CHANNELS`, `DEND_CHANNELS` — so channel
+   sets can be added/removed/replaced by editing the HOC, not the Python driver. Populate today with
+   the [t0008] HHst baseline (unchanged) so t0022 remains a testbed, not a channel experiment; later
+   tasks will swap in Nav1.6/Nav1.2/Kv1.2 per [t0017] and [t0019].
+6. **Add a per-trial assertion** that both `h.gabaMOD == GABA_MOD` (0.33, baseline) and every
+   `BIPsyn.locx/locy` equals its baseline. Mirrors [t0020]&#x27;s guard and enforces &quot;only the direction
+   changes&quot; (Requirement 3).
+7. **Produce the comparison table** required in `results_detailed.md` using the metric values
+   aggregated here: t0008 DSI 0.316 / peak 18.1 Hz / HWHM 82.8 deg / reliability 0.991 vs t0020 DSI
+   0.7838 / peak 14.85 Hz vs t0022 (new values). Use
+   `tuning_curve_viz.plot_multi_model_ overlay(...)` to render a polar overlay of all three into
+   `results/images/`.
+8. **Target the &gt;=10 Hz peak / &gt;=0.5 DSI acceptance gate in Requirement 4** — do not chase the
+   paper&#x27;s 40-80 Hz envelope. The peak-gap is explicitly out of scope.
+
+#### Task Index
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate canonical target angle-to-AP-rate tuning curve
+* **Status**: completed
+* **Relevance**: Source of the canonical 12-angle target CSV schema and of the target curve that
+  `tuning_curve_loss.score(...)` compares against. t0022&#x27;s CSV must match this schema.
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+* **Status**: completed
+* **Relevance**: Source of the `modeldb_189347_dsgc` library (HOC/MOD sources, cell build, param
+  apply, synapse-coord snapshot/restore) and the script skeletons t0022 copies
+  (`run_tuning_curve .py`, `score_envelope.py`). Rotation-proxy result DSI 0.316 / peak 18.1 Hz is
+  the baseline comparison anchor.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters for dsgc-baseline-morphology
+* **Status**: completed
+* **Relevance**: Produced the calibrated DSGC SWC; t0008 documented (not swapped in) this
+  morphology. t0022 also uses the bundled Poleg-Polsky morphology and only references the calibrated
+  SWC for future channel-testbed tasks.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response-visualisation library (firing rate vs angle graphs)
+* **Status**: completed
+* **Relevance**: Source of the `tuning_curve_viz` library used to render the t0022 vs t0008 vs t0020
+  comparison chart for `results_detailed.md`.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: Source of the `tuning_curve_loss` library named in Requirement 6 (DSI, HWHM, peak,
+  reliability, RMSE). t0022 imports `score(...)` and the four `METRIC_KEY_*` constants unchanged.
+
+##### [t0015]
+
+* **Task ID**: `t0015_literature_survey_cable_theory`
+* **Name**: Literature survey: cable theory and dendritic filtering
+* **Status**: completed
+* **Relevance**: Cable-theory priors constraining dendritic space constants and the region over
+  which on-the-path inhibition can shunt excitation — informs the per-dendrite E-I scheduler
+  geometry in t0022.
+
+##### [t0016]
+
+* **Task ID**: `t0016_literature_survey_dendritic_computation`
+* **Name**: Literature survey: dendritic computation beyond DSGCs
+* **Status**: completed
+* **Relevance**: Supplies the on-the-path shunting motif that motivates t0022&#x27;s spatially-
+  asymmetric inhibition mechanism; NMDA-on-branch supralinearity and asymmetric inhibition placement
+  are the two transferable motifs.
+
+##### [t0017]
+
+* **Task ID**: `t0017_literature_survey_patch_clamp`
+* **Name**: Literature survey: patch-clamp recordings of RGCs and DSGCs
+* **Status**: completed
+* **Relevance**: AIS channel-density priors (Nav1.6 distal / Nav1.2 proximal, ~50x somatic density)
+  for the channel-modular AIS layout in t0022 Requirement 5.
+
+##### [t0018]
+
+* **Task ID**: `t0018_literature_survey_synaptic_integration`
+* **Name**: Literature survey: synaptic integration in RGC-adjacent systems
+* **Status**: completed
+* **Relevance**: E-I temporal co-tuning and AMPA/NMDA/GABA kinetic priors for the per-dendrite E-I
+  scheduler driver.
+
+##### [t0019]
+
+* **Task ID**: `t0019_literature_survey_voltage_gated_channels`
+* **Name**: Literature survey: voltage-gated channels in retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Kv1/Kv3 AIS placement priors and Fohlmeister-Miller HH kinetics; the
+  `forsec AIS_DISTAL` block in t0022&#x27;s new HOC file must be able to carry these channels verbatim
+  when later testbed tasks swap them in.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+* **Status**: completed
+* **Relevance**: Sibling port and direct comparison anchor (DSI 0.7838 / peak 14.85 Hz). Source of
+  the robust NEURON-on-Windows bootstrap and the per-trial baseline-coordinate assertion pattern
+  t0022 reuses.
+
+##### [t0021]
+
+* **Task ID**: `t0021_brainstorm_results_4`
+* **Name**: Brainstorm Session 4: DSGC Model Channel Testbed
+* **Status**: completed
+* **Relevance**: Strategic brainstorm that produced t0022; sets the channel-testbed framing and the
+  acceptance gates (DSI &gt;=0.5, peak &gt;=10 Hz) adopted in Requirement 4.
       </content>
     </section>
   </sections>

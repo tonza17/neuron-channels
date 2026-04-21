@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-58 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **53 open** (20
-high, 29 medium, 4 low), **5 closed**.
+66 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **61 open** (23
+high, 33 medium, 5 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -358,6 +358,55 @@ against Schachter's tree. Recommended task types: feature-engineering, experimen
 </details>
 
 <details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
+peak-rate gap</strong> (S-0022-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
+(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
+the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
+Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
+Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
+distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
+inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
+Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
 Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
 
@@ -378,6 +427,32 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
 
 </details>
 
@@ -522,6 +597,32 @@ N_pd_pass PD trials fire above a biological minimum threshold (e.g., 5 Hz). Repo
 per-trial floor result alongside the mean-based envelope. Rerun scoring over t0020's existing
 40-trial CSV to verify the new gate flags the current run as failed on the floor (baseline
 expectation). Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
+inhibition physiologically</strong> (S-0022-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1038_nature00931`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1038_nature00931/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver schedules GABA directly onto each DSGC dendrite, skipping the SAC (Starburst
+Amacrine Cell) layer that shapes DS inhibition in vivo (Euler-Detwiler-Denk 2002). Extend the
+modeldb_189347_dsgc_dendritic library with a configurable SAC layer: an array of simplified
+SAC models (single-compartment or 2-compartment) whose dendritic output drives DSGC GABA
+synapses via NetCon, with SAC dendrites themselves direction-tuned per Euler2002. Expected
+outcome: DSI becomes graded rather than saturated (real SAC output is not a hard half-plane
+step) and peak firing rate may rise because SAC inhibition is timed to bar arrival not to a
+global half-plane rule. This is a library extension not just a channel swap; produces a fourth
+DSGC library asset modeldb_189347_dsgc_sac. Dependencies: t0022 library asset, Euler2002
+paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction.
 
 </details>
 
@@ -844,6 +945,57 @@ experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>Harmonised cross-comparison of the three ModelDB 189347 sibling
+ports (t0008, t0020, t0022)</strong> (S-0022-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The project now has three independent implementations of DS on the same Poleg-Polsky & Diamond
+2016 skeleton: t0008 (per-angle BIP rotation, DSI 0.316), t0020 (global gabaMOD scalar swap,
+DSI 0.7838), and t0022 (per-dendrite E-I scheduling, DSI 1.0). Each used slightly different
+scoring paths, trial counts, and metric key sets. Produce a shared analysis module that loads
+each port's tuning_curves.csv, recomputes DSI / peak / null / HWHM / reliability under one
+harmonised scorer (t0012 score() where applicable plus S-0020-04's score_two_point for t0020),
+and produces one side-by-side comparison chart (polar plot overlay plus bar chart of headline
+metrics). Outputs a consolidated comparison_report.md plus an overview/llm-context/ snapshot.
+Dependencies: t0008, t0020, t0022 library assets, t0012 scorer. Effort ~12 hours. Recommended
+task type: data-analysis, write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Inject Poisson background rate on the t0022 driver to moderate
+DSI from 1.0 toward the 0.5-0.8 published band</strong> (S-0022-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2005.06.036`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2005.06.036/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 NetStim burst driver uses noise = 0 and baseline synapses are silenced, so DSI
+saturates at 1.0 across all 60 null-direction trials. Park2014, Oesch2005, and Poleg-Polsky &
+Diamond 2016 all report DSI in the 0.5-0.8 range because real DSGCs have 2-5 Hz per-trial
+spike jitter from stochastic bipolar release. Extend the driver with a configurable background
+Poisson process (1, 2, 3, 5 Hz baseline rate on all synapses) and rerun the 12-angle x
+10-trial sweep at each noise level. Expected outcome: DSI curve drops from 1.0 to ~0.8 at 2 Hz
+bg to ~0.6 at 5 Hz bg, bracketing the literature envelope, with per-angle std rising from 0 Hz
+to ~2-4 Hz matching Schachter2010 trial-to-trial variability. Dependencies: t0022 library
+asset. Effort ~8 hours. Recommended task type: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Intermediate-gabaMOD sensitivity sweep to map the PD-ND
 transition curve</strong> (S-0020-03)</summary>
 
@@ -866,6 +1018,31 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007
+repolarisation prior</strong> (S-0022-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Kole & Letzkus 2007 report that Kv1 in the proximal AIS sets spike threshold while Kv3 in the
+distal AIS sets repolarisation speed and thus maximum sustained firing rate. Use the t0022
+AIS_PROXIMAL and AIS_DISTAL forsec blocks to implement four conditions: (a) Kv1 proximal + Kv3
+distal (canonical), (b) Kv1 distal + Kv3 proximal (swap), (c) Kv1 both (no Kv3), (d) Kv3 both
+(no Kv1), each with Nav1.6 held at 8 S/cm^2 in the distal AIS. Rerun the 12-angle x 10-trial
+sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; condition (b)
+drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
+either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
+Recommended task type: experiment-run, comparative-analysis.
 
 </details>
 
@@ -1204,6 +1381,32 @@ the model can be scored against the canonical 12-angle sweep without running the
 </details>
 
 ## Low Priority
+
+<details>
+<summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
+integration window</strong> (S-0022-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from
+t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers
+input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih
+at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a
+start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep
+plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration
+window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying
+the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
+S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
+task type: experiment-run.
+
+</details>
 
 <details>
 <summary>📊 <strong>Evaluate NEURON 9.0.x C++ MOD-file migration readiness for

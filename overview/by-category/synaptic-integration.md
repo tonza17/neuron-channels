@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (30)](../papers/by-category/synaptic-integration.md) | [Answers
 (4)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(13)](../suggestions/by-category/synaptic-integration.md)
+(16)](../suggestions/by-category/synaptic-integration.md)
 
 ---
 
@@ -1575,7 +1575,66 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (11 open, 2 closed)
+## Suggestions (14 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
+inhibition physiologically</strong> (S-0022-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The t0022 driver schedules GABA directly onto each DSGC dendrite, skipping the SAC (Starburst
+Amacrine Cell) layer that shapes DS inhibition in vivo (Euler-Detwiler-Denk 2002). Extend the
+modeldb_189347_dsgc_dendritic library with a configurable SAC layer: an array of simplified
+SAC models (single-compartment or 2-compartment) whose dendritic output drives DSGC GABA
+synapses via NetCon, with SAC dendrites themselves direction-tuned per Euler2002. Expected
+outcome: DSI becomes graded rather than saturated (real SAC output is not a hard half-plane
+step) and peak firing rate may rise because SAC inhibition is timed to bar arrival not to a
+global half-plane rule. This is a library extension not just a channel swap; produces a fourth
+DSGC library asset modeldb_189347_dsgc_sac. Dependencies: t0022 library asset, Euler2002
+paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Inject Poisson background rate on the t0022 driver to moderate
+DSI from 1.0 toward the 0.5-0.8 published band</strong> (S-0022-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
+
+The t0022 NetStim burst driver uses noise = 0 and baseline synapses are silenced, so DSI
+saturates at 1.0 across all 60 null-direction trials. Park2014, Oesch2005, and Poleg-Polsky &
+Diamond 2016 all report DSI in the 0.5-0.8 range because real DSGCs have 2-5 Hz per-trial
+spike jitter from stochastic bipolar release. Extend the driver with a configurable background
+Poisson process (1, 2, 3, 5 Hz baseline rate on all synapses) and rerun the 12-angle x
+10-trial sweep at each noise level. Expected outcome: DSI curve drops from 1.0 to ~0.8 at 2 Hz
+bg to ~0.6 at 5 Hz bg, bracketing the literature envelope, with per-angle std rising from 0 Hz
+to ~2-4 Hz matching Schachter2010 trial-to-trial variability. Dependencies: t0022 library
+asset. Effort ~8 hours. Recommended task type: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle

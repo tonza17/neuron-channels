@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-20T22:24:44Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-21T00:57:22Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>1890</char_count>
-    <byte_count>1890</byte_count>
-    <estimated_tokens>472</estimated_tokens>
+    <char_count>2026</char_count>
+    <byte_count>2026</byte_count>
+    <estimated_tokens>506</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -21,6 +21,12 @@ Total budget: $1.00
 Total spent: $0.00
 Budget remaining: $1.00
 Spent: 0.0%
+
+### Cost Breakdown by Category
+
+* api: $0.00
+* local_compute: $0.00
+* remote_compute: $0.00
 
 ### Per-Task Costs
 
@@ -45,6 +51,7 @@ Spent: 0.0%
 * t0019_literature_survey_voltage_gated_channels: $0.00
 * t0020_port_modeldb_189347_gabamod: $0.00
 * t0021_brainstorm_results_4: $0.00
+* t0022_modify_dsgc_channel_testbed: $0.00
       </content>
     </section>
   </sections>

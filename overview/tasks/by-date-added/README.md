@@ -6,25 +6,29 @@
 
 ---
 
-## 2026-04-20 (16)
+## 2026-04-21 (1)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0022 — <strong>Modify DSGC port with spatially-asymmetric inhibition
+<summary>✅ 0022 — <strong>Modify DSGC port with spatially-asymmetric inhibition
 for channel testbed</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0022_modify_dsgc_channel_testbed` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-20 |
+| **Status** | completed |
+| **Effective date** | 2026-04-21 |
 | **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | — |
 | **Task types** | [`code-reproduction`](../../../meta/task_types/code-reproduction/) |
+| **Start time** | 2026-04-20T22:41:11Z |
+| **End time** | 2026-04-21T01:50:00Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
 | **Task folder** | [`t0022_modify_dsgc_channel_testbed/`](../../../tasks/t0022_modify_dsgc_channel_testbed/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0022_modify_dsgc_channel_testbed/results/results_detailed.md) |
 
 # Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel Testbed
 
@@ -117,7 +121,42 @@ editing the driver.
   separate investigation.
 * No modifications to t0008 or t0020 assets; both ports remain intact for comparison.
 
+**Results summary:**
+
+> **Results Summary: Modify DSGC Port with Spatially-Asymmetric Inhibition for Channel
+> Testbed**
+>
+> **Summary**
+>
+> Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008
+> rotation-proxy and
+> t0020 gabaMOD-swap ports of Poleg-Polsky & Diamond 2016. Direction selectivity now arises
+> from
+> per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I
+> leads E
+> by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five
+> `forsec`
+> regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The
+> canonical
+> 12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and
+> **null 0
+> Hz** across 150-300 deg, clearing both acceptance gates (DSI >= 0.5 and peak >= 10 Hz).
+>
+> **Metrics**
+>
+> * **Direction Selectivity Index**: **1.0** (gate >= 0.5 — pass; up from 0.316 in t0008 and
+>   0.7838
+> in t0020)
+> * **Peak firing rate**: **15 Hz** at 120 deg (gate >= 10 Hz — pass)
+> * **Null firing rate**: **0 Hz** (150-300 deg half-plane completely silenced by early
+>   inhibition)
+> * **HWHM**: **116.25 deg** (broader than t0008's 82.81 deg — the 120-deg lit half-plane
+>   covers 5
+> of 12 angles)
+
 </details>
+
+## 2026-04-20 (15)
 
 ## ⚠️ Intervention Blocked
 

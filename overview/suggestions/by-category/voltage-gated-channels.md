@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-9 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **8 open** (6
-high, 2 medium), **1 closed**.
+13 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **12 open** (8
+high, 3 medium, 1 low), **1 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -86,6 +86,55 @@ except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fit
 objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
 degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
 Fohlmeister-Miller RGC firing properties.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
+peak-rate gap</strong> (S-0022-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
+(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
+the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
+Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
+Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
+distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
+inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
+Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -188,6 +237,31 @@ voltage-gated-channel theory and DSGC-specific parameters.
 </details>
 
 <details>
+<summary>🧪 <strong>Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007
+repolarisation prior</strong> (S-0022-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Kole & Letzkus 2007 report that Kv1 in the proximal AIS sets spike threshold while Kv3 in the
+distal AIS sets repolarisation speed and thus maximum sustained firing rate. Use the t0022
+AIS_PROXIMAL and AIS_DISTAL forsec blocks to implement four conditions: (a) Kv1 proximal + Kv3
+distal (canonical), (b) Kv1 distal + Kv3 proximal (swap), (c) Kv1 both (no Kv3), (d) Kv3 both
+(no Kv1), each with Nav1.6 held at 8 S/cm^2 in the distal AIS. Rerun the 12-angle x 10-trial
+sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; condition (b)
+drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
+either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
+Recommended task type: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
 in DSGC dendritic trees</strong> (S-0016-04)</summary>
 
@@ -208,6 +282,34 @@ compartments, then test whether asymmetric inhibition at principal-branch bifurc
 selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
 null-direction motion. Report preferred-direction burst firing rate versus null-direction
 burst rate and compare with published DSGC spiking statistics.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
+integration window</strong> (S-0022-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from
+t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers
+input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih
+at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a
+start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep
+plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration
+window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying
+the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
+S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
+task type: experiment-run.
 
 </details>
 

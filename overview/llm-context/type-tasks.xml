@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-20T22:24:44Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-21T00:57:22Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>156517</char_count>
-    <byte_count>157079</byte_count>
-    <estimated_tokens>39129</estimated_tokens>
+    <char_count>158849</char_count>
+    <byte_count>159433</byte_count>
+    <estimated_tokens>39712</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -2751,11 +2751,13 @@ cleanup this round.
 
 ## Modify DSGC port with spatially-asymmetric inhibition for channel testbed
 ID: t0022_modify_dsgc_channel_testbed
-Status: not_started
-Effective date: 2026-04-20
+Status: completed
+Effective date: 2026-04-21
 Short description: Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels
 Task types: code-reproduction
+Start time: 2026-04-20T22:41:11Z
+End time: 2026-04-21T01:50:00Z
 
 #### Motivation
 
@@ -2840,6 +2842,45 @@ tasks can add, remove, or replace channels without editing the driver.
 * No attempt to match the paper&#x27;s peak firing envelope [40, 80] Hz — closing the peak gap is a
   separate investigation.
 * No modifications to t0008 or t0020 assets; both ports remain intact for comparison.
+
+### Results Summary
+
+#### Summary
+
+Built the `modeldb_189347_dsgc_dendritic` library asset, a sibling to the t0008 rotation-proxy and
+t0020 gabaMOD-swap ports of Poleg-Polsky &amp; Diamond 2016. Direction selectivity now arises from
+per-dendrite E-I temporal scheduling (E leads I by **+10 ms** in the preferred half-plane; I leads E
+by **10 ms** in the null half-plane) on top of a channel-modular AIS partitioned into five `forsec`
+regions (`SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`). The canonical
+12-angle x 10-trial sweep (120 rows) yields **DSI 1.0**, **peak 15 Hz** at 120 deg, and **null 0
+Hz** across 150-300 deg, clearing both acceptance gates (DSI &gt;= 0.5 and peak &gt;= 10 Hz).
+
+#### Metrics
+
+* **Direction Selectivity Index**: **1.0** (gate &gt;= 0.5 — pass; up from 0.316 in t0008 and 0.7838
+  in t0020)
+* **Peak firing rate**: **15 Hz** at 120 deg (gate &gt;= 10 Hz — pass)
+* **Null firing rate**: **0 Hz** (150-300 deg half-plane completely silenced by early inhibition)
+* **HWHM**: **116.25 deg** (broader than t0008&#x27;s 82.81 deg — the 120-deg lit half-plane covers 5
+  of 12 angles)
+* **Tuning-curve reliability**: **1.0** (zero trial-to-trial std at every angle; deterministic
+  driver)
+* **RMSE vs t0004 target**: **10.48 Hz** (t0008: 13.73 Hz; dendritic driver is closer to target
+  shape despite the 17 Hz peak gap)
+
+#### Verification
+
+* `verify_task_file.py` — PASSED at init-folders (0 errors, 0 warnings)
+* `verify_task_dependencies.py` — PASSED (all 7 dependency tasks completed)
+* `verify_task_metrics.py` — PASSED (all 4 keys registered in `meta/metrics/` and non-null)
+* `verify_task_results.py` — to be run in Step 15 (reporting); structure manually confirmed
+  against `task_results_specification.md` v8
+* **Acceptance envelope (REQ-4)** — PASSED: DSI 1.0 &gt;= 0.5 and peak 15 Hz &gt;= 10 Hz
+* **CSV schema (REQ-2)** — PASSED: 120 rows with columns `angle_deg,trial_seed,firing_rate_hz`
+* **Library asset** — structural check PASSED manually against
+  `meta/asset_types/library/specification.md` (no `verify_library_asset.py` script exists; flagged
+  as a framework gap in the implementation step log)
+* **Lint / type** — `ruff check --fix`, `ruff format`, `mypy .` all clean across the full tree
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc

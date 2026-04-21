@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-12 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **10 open** (4
-high, 6 medium), **2 closed**.
+14 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **12 open** (5
+high, 6 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -78,6 +78,32 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
 
 </details>
 
@@ -248,6 +274,34 @@ compartments, then test whether asymmetric inhibition at principal-branch bifurc
 selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
 null-direction motion. Report preferred-direction burst firing rate versus null-direction
 burst rate and compare with published DSGC spiking statistics.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
+integration window</strong> (S-0022-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from
+t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers
+input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih
+at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a
+start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep
+plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration
+window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying
+the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
+S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
+task type: experiment-run.
 
 </details>
 

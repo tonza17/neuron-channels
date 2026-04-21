@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-7 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **5
-open** (2 high, 3 medium), **2 closed**.
+8 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **6
+open** (2 high, 3 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -129,6 +129,34 @@ run the downstream DSGC passive simulation from S-0009-01 on each. Report DSI, p
 HWHM, and proximal/distal Rin per variant; quantify the sensitivity of downstream metrics to
 the heuristic choice. This makes the tie-break choice reviewable rather than arbitrary.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
+integration window</strong> (S-0022-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 testbed currently has no Ih (HCN) channels in DEND_CHANNELS. Literature prior from
+t0019 (voltage-gated-channels survey) flags Ih as a common dendritic modulator: it lowers
+input resistance and shortens the E-I temporal window over which coincidence matters. Add Ih
+at a realistic dendritic density (e.g., 1e-5 S/cm^2 following hippocampal CA1 values as a
+start) to the DEND_CHANNELS forsec block and rerun the canonical 12-angle x 10-trial sweep
+plus an EI_OFFSET sweep in {5, 10, 15, 20, 30} ms. Expected outcome: the E-I integration
+window narrows (only tight E-I offsets produce DSI, long offsets stop working), quantifying
+the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
+S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
+task type: experiment-run.
 
 </details>
 
