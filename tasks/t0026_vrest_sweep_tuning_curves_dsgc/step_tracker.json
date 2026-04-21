@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Produce polar plots (per-V_rest and overlay), results_summary.md, results_detailed.md, metrics.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-21T17:17:59Z",
-      "completed_at": null,
+      "completed_at": "2026-04-21T17:28:51Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
