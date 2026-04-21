@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0027_literature_survey_morphology_ds_modeling",
+  "command": "git commit -m t0027_literature_survey_morphology_ds_modeling [implementation]: add 5 priority-3 paper assets, hitting 15-paper target\n\nBuild paper assets for the priority-3 batch:\n- 10.7554_eLife.81533 (Srivastava 2022): SAC bipolar-input kinetic tiling proximal-sustained -> distal-transient\n- 10.1371_journal.pcbi.1000877 (Cuntz 2010): TREES toolbox / centripetal-branch-ordering morphology generator\n- 10.1523_JNEUROSCI.17-16-06023.1997 (Single 1997): first compartmental fly VS/CH/H1 LPTC model with postsynaptic E-I shunting\n- 10.1038_s41467-024-46234-7 (Aldor 2024): SAC Kv3+mGluR2 division-of-labor; anatomical not morphological\n- 10.1523_JNEUROSCI.4013-15.2016 (Poleg-Polsky 2016): BC presynaptic contrast heterogeneity pre-compensates SAC nonlinearity\n\nAll five PDFs successfully retrieved (eLife, PLoS, JNeurosci open mirror, Nature Comms,\nEuropePMC). Subagents flagged three corrections to the task brief during retrieval:\n(1) Srivastava2022 has 10 authors not 6 -- two Aarhus co-authors (Yonehara group) were\nomitted; (2) Single1997 reports VS/CH/H1 cells, not HS cells; (3) Aldor2024 author list\nin CrossRef is Ledesma/Ding/Oosterboer/Huang/Chen/Wang/Lin/Wei -- citation_key kept as\nAldor2024 per spec but details.json reflects the actual authors. All summaries meet the\nspec >=500-word + 9-section bar; all 15 papers (5 priority-1 + 5 priority-2 + 5\npriority-3) now in place. Stop criterion satisfied: at target (12-25, target ~15).",
+  "exit_code": 0,
+  "duration_seconds": 8.705,
+  "started_at": "2026-04-21T20:49:43Z",
+  "completed_at": "2026-04-21T20:49:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0027_literature_survey_morphology_ds_modeling",
+  "stdout_file": "007_20260421T204943Z_git-commit-m.stdout.txt",
+  "stderr_file": "007_20260421T204943Z_git-commit-m.stderr.txt",
+  "stdout_lines": 20,
+  "stderr_lines": 7,
+  "truncated": false
+}

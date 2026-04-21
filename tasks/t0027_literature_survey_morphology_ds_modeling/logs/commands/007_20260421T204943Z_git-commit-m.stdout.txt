@@ -1,0 +1,20 @@
+[task/t0027_literature_survey_morphology_ds_modeling c6f3f3a] t0027_literature_survey_morphology_ds_modeling [implementation]: add 5 priority-3 paper assets, hitting 15-paper target
+ 19 files changed, 56840 insertions(+), 89 deletions(-)
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/files/aldor_2024_sac-mglur2-kv3.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/files/cuntz_2010_one-rule-grow-them-all.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.17-16-06023.1997/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.17-16-06023.1997/files/single_1997_dendritic-ds-gain-control.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.17-16-06023.1997/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.4013-15.2016/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.4013-15.2016/files/poleg-polsky_2016_ei-contrast-tuning-ds.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.4013-15.2016/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.7554_eLife.81533/details.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.7554_eLife.81533/files/srivastava_2022_sac-glutamate-ds.pdf
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.7554_eLife.81533/summary.md
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/006_20260421T203206Z_git-commit-m.json
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/006_20260421T203206Z_git-commit-m.stderr.txt
+ create mode 100644 tasks/t0027_literature_survey_morphology_ds_modeling/logs/commands/006_20260421T203206Z_git-commit-m.stdout.txt
