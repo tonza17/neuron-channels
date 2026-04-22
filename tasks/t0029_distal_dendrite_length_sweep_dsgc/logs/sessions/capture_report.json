@@ -1,0 +1,23 @@
+{
+  "spec_version": "1",
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "captured_at": "2026-04-22T15:39:12Z",
+  "checked_roots": [
+    {
+      "source_kind": "codex",
+      "root_path": "C:\\Users\\md1avn\\.codex\\sessions",
+      "exists": false,
+      "candidate_file_count": 0,
+      "matched_file_count": 0
+    },
+    {
+      "source_kind": "claude_code",
+      "root_path": "C:\\Users\\md1avn\\.claude\\projects",
+      "exists": true,
+      "candidate_file_count": 141,
+      "matched_file_count": 0
+    }
+  ],
+  "copied_sessions": [],
+  "errors": []
+}
