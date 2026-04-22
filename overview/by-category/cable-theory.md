@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (2)](../answers/by-category/cable-theory.md) | [Suggestions
-(9)](../suggestions/by-category/cable-theory.md) | [Datasets
+(12)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -582,7 +582,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (7 open, 2 closed)
+## Suggestions (10 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to
@@ -602,6 +602,66 @@ the soma and no resolution is possible; (b) DSI drops at a specific high multipl
 monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
 narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
 min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Wider distal-diameter sweep (0.25x to 4.0x) after the schedule
+fix to probe extreme impedance regimes</strong> (S-0030-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+The t0030 sweep used multipliers 0.5x-2.0x (a 4x range) and found vector-sum DSI moved by only
+0.030 absolute, with Wu2023 reporting distal-diameter DSI saturation above ~0.8 um on primate
+SAC - our baseline distal seg.diam straddles that threshold so our sweep likely sat in the
+saturated regime throughout. Once the S-0030-01/S-0030-02 schedule fix has removed the DSI
+ceiling, rerun the diameter sweep over a wider range {0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0,
+4.0}x at the same 12-direction x 10-trial protocol. Provides the impedance-gradient dynamic
+range Schachter2010's 5-7x proximal-to-distal input-resistance measurement implies, and tests
+whether Wu2023's saturation threshold applies to mouse ON-OFF DSGC. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint distal length x diameter 2-D sweep on t0022 to catch
+interactions the marginal sweeps miss</strong> (S-0030-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+t0029 (distal-length sweep) and t0030 (distal-diameter sweep) both produced flat vector-sum
+DSI curves when run in isolation on the t0022 E-I schedule. Marginal sweeps cannot reveal
+interactions: Schachter2010's active amplification depends on length (number of Nav-bearing
+segments) AND diameter (Nav substrate per unit length) jointly, and the cable space constant
+lambda = sqrt(d * Rm / (4 * Ra)) couples them nonlinearly. Run a focused 2-D grid (e.g., 5
+length x 5 diameter = 25 configurations x 12 angles x 10 trials = 3000 trials) on the
+schedule-fixed testbed (S-0030-01 prerequisite). Distinct from S-0002-04 (broad factorial
+including branch orders at fixed synapse count) because it is 2-D, focused, and scheduled
+after the desaturation fix. Expected local CPU wall time ~7 h. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Non-uniform proximal-to-distal diameter taper sweep on t0022 to
+match Schachter2010 impedance gradient</strong> (S-0030-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+t0030 applied a single multiplier uniformly to every distal leaf, producing a 4x range that
+Schachter2010's 150-200 MOhm proximal -> >1 GOhm distal (5-7x) impedance gradient indicates is
+too narrow and the wrong shape. Real DSGC dendrites taper from thick primary branches to thin
+terminal tips; the uniform multiplier scales all terminals together without recreating that
+gradient. Implement a taper parameter k such that a segment's diameter scales by (1 + k *
+path_distance / L_max), sweep k in {-0.5, -0.25, 0, 0.25, 0.5, 0.75} to produce flattened,
+nominal, and exaggerated tapers, and run the standard 12-direction x 10-trial protocol at each
+k (after the S-0030-01 schedule fix). Expected outcome: the exaggerated-taper cell (high k,
+very thin distal) maximises distal input impedance and should exhibit the Schachter2010
+amplification signature if the mechanism is active on this morphology. Recommended task types:
+experiment-run, feature-engineering.
 
 </details>
 

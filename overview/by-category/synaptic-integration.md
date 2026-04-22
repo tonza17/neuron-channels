@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(21)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(23)](../suggestions/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -2107,7 +2107,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (19 open, 2 closed)
+## Suggestions (21 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
@@ -2147,6 +2147,45 @@ non-monotonic length dependence, kinetic tiling is a real third mechanism and th
 result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
 t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
 Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
+conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
+DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
+schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
+delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
+(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
+with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
+regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
+S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
+cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
+sweep on t0022</strong> (S-0030-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
+deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
+collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
+and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
+NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
+rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
+Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
+1.0, and diameter regains discrimination power between Schachter2010 active amplification
+(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
+length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
 
 </details>
 

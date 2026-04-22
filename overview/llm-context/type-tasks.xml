@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T15:44:46Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T21:55:21Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>245008</char_count>
-    <byte_count>246057</byte_count>
-    <estimated_tokens>61252</estimated_tokens>
+    <char_count>247935</char_count>
+    <byte_count>249039</byte_count>
+    <estimated_tokens>61983</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -4001,12 +4001,14 @@ DSI, peak firing rate, HWHM) move only weakly or non-monotonically.
 
 ## Distal-dendrite diameter sweep on t0022 DSGC
 ID: t0030_distal_dendrite_diameter_sweep_dsgc
-Status: not_started
+Status: completed
 Effective date: 2026-04-22
 Short description: Sweep distal-dendrite diameter on the t0022 DSGC testbed to discriminate Schachter2010 active-dendrite amplification vs passive-filtering mechanisms using DSI as outcome.
 Dependencies: t0022_modify_dsgc_channel_testbed
 Task types: experiment-run
 Source suggestion: S-0027-03
+Start time: 2026-04-22T20:08:09Z
+End time: 2026-04-22T22:00:00Z
 
 #### Motivation
 
@@ -4098,6 +4100,58 @@ synthesis.
   `setup-machines` / `teardown` (local CPU).
 * Include `compare-literature` — compare the DSI-vs-diameter curve to Schachter2010 predictions.
 * Can be executed in parallel with t0029 in a separate worktree.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0030_distal_dendrite_diameter_sweep_dsgc&quot;
+date_completed: &quot;2026-04-22&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Distal-Dendrite Diameter Sweep on t0022 DSGC
+
+#### Summary
+
+Swept distal-dendrite diameter across seven multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×
+baseline) on the t0022 DSGC testbed under the standard 12-direction × 10-trial protocol (840 trials
+total). **Vector-sum DSI is essentially flat** across the 4× diameter range: slope 0.0083 per
+log2(multiplier), p=0.1773, DSI range 0.635-0.665 across extremes. **Neither the Schachter2010
+active-dendrite amplification prediction (positive slope) nor the passive-filtering prediction
+(negative slope) is supported** — the t0022 testbed&#x27;s E-I timing carries DSI almost entirely,
+leaving distal diameter with no measurable mechanistic role.
+
+#### Metrics
+
+* **Vector-sum DSI range**: **0.635** (0.5×) to **0.665** (1.5×) — 0.030 absolute range across the
+  4× diameter sweep; slope not distinguishable from zero (p=0.1773).
+* **Primary DSI (peak-minus-null)**: pinned at **1.000** across every diameter — same plateau as
+  t0029 length sweep, because null-direction firing is 0 Hz under the t0022 E-I schedule.
+* **Preferred-direction peak firing rate**: **15 Hz** at 0.5×-1.0×, **14 Hz** at 1.25×-1.5×, **13
+  Hz** at 1.75×-2.0× — mild decline with thickening, consistent with reduced distal input impedance.
+* **HWHM**: 84.2° at 0.5×, broadening to 116.2° at 0.75×-1.0×, narrowing to 78.3° at 1.75×; no
+  monotonic trend.
+* **Peak distal membrane voltage**: approximately **-5 mV** across all diameters — distal spike
+  thresholds are cleared everywhere, so thickening-driven impedance changes do not break the
+  existing amplification regime.
+* **Slope classification**: **flat** (mechanism_label=&quot;flat&quot;, slope=0.0083, p=0.1773,
+  dsi_range_extremes=0.0124, used_fallback=True).
+* **Total trials executed**: **840** (7 diameters × 12 directions × 10 trials).
+* **Sweep wall time**: approximately **115 min** end-to-end on local Windows CPU; thinner diameters
+  ran slowest (raised axial resistance shrinks the NEURON integration timestep).
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors on final pass.
+* `verify_task_dependencies.py` — PASSED on step 2 (t0022 dependency completed).
+* `verify_research_code.py` — PASSED on step 6 (0 errors, 0 warnings).
+* `verify_plan.py` — PASSED on step 7 (0 errors, 0 warnings).
+* `verify_task_metrics.py` — target 0 errors.
+* `verify_task_results.py` — target 0 errors on final pass.
+* `verify_task_folder.py` — target 0 errors on final pass.
+* `verify_logs.py` — target 0 errors on final pass.
+* `ruff check --fix`, `ruff format`, and
+  `mypy -p tasks.t0030_distal_dendrite_diameter_sweep_dsgc.code` — all clean (10 files).
 
 ## Fetch paywalled morphology papers: Kim2014 and Sivyer2013
 ID: t0031_fetch_paywalled_morphology_papers

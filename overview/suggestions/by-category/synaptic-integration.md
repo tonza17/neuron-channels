@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-21 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **19 open** (9 high,
+23 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **21 open** (11 high,
 10 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
@@ -112,6 +112,32 @@ data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
+sweep on t0022</strong> (S-0030-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
+deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
+collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
+and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
+NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
+rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
+Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
+1.0, and diameter regains discrimination power between Schachter2010 active amplification
+(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
+length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
 reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
 
@@ -158,6 +184,31 @@ over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=1
 intervals. This turns a single spike-output check into a multi-level subthreshold validation
 that exercises the cell's passive and NMDA-block biophysics independently of spike
 thresholding. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
+conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
+DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
+schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
+delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
+(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
+with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
+regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
+S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
+cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
 
 </details>
 

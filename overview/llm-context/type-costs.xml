@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-22T15:44:46Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-22T21:55:21Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>2385</char_count>
-    <byte_count>2385</byte_count>
-    <estimated_tokens>596</estimated_tokens>
+    <char_count>2436</char_count>
+    <byte_count>2436</byte_count>
+    <estimated_tokens>609</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -58,6 +58,7 @@ Spent: 0.0%
 * t0027_literature_survey_morphology_ds_modeling: $0.00
 * t0028_brainstorm_results_6: $0.00
 * t0029_distal_dendrite_length_sweep_dsgc: $0.00
+* t0030_distal_dendrite_diameter_sweep_dsgc: $0.00
 * t0032_brainstorm_results_7: $0.00
 * t0033_plan_dsgc_morphology_channel_optimisation: $0.00
       </content>
