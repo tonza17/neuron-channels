@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0033_plan_dsgc_morphology_channel_optimisation/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\logs\steps\003_init-folders
