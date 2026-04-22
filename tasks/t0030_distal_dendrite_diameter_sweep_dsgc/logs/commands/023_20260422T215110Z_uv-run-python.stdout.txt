@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W013 warning: results_detailed.md is missing ## Examples section (mandatory for experiment-type tasks)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

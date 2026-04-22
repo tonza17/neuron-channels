@@ -98,6 +98,183 @@ preferred-direction peak location (~48°) and identical null-direction silence (
 150°-300°). Diameter scaling rescales the preferred-direction firing rate mildly but does not shift
 tuning orientation or re-shape the null-direction suppression.
 
+## Examples
+
+Ten concrete trial examples drawn from `results/data/sweep_results.csv` showing the (diameter
+multiplier, direction, trial) input and the NEURON-produced (peak_mv, firing_rate_hz) output. Every
+row is a full 12-direction protocol trial; the 120 rows per diameter feed the DSI / HWHM /
+vector-sum aggregation downstream.
+
+### Example 1: D=0.50× preferred direction (peak)
+
+Input (`run_sweep.py` driver parameters):
+
+```text
+diameter_multiplier=0.50
+trial=0
+direction_deg=0
+protocol=12_direction_moving_bar_15Hz
+```
+
+Output (`sweep_results.csv` row 1):
+
+```csv
+diameter_multiplier,trial,direction_deg,spike_count,peak_mv,firing_rate_hz
+0.50,0,0,14,44.662,14.000000
+```
+
+### Example 2: D=0.50× preferred direction (trial variance)
+
+Input:
+
+```text
+diameter_multiplier=0.50
+trial=5
+direction_deg=0
+```
+
+Output:
+
+```csv
+0.50,5,0,14,44.702,14.000000
+```
+
+Ten repeated trials at the same (diameter, direction) produced spike counts {14, 14, 14, 14, 14, 14,
+14, 14, 14, 14} — deterministic driver, zero trial-to-trial variance.
+
+### Example 3: D=0.50× null direction (silence)
+
+Input:
+
+```text
+diameter_multiplier=0.50
+trial=0
+direction_deg=210
+```
+
+Output:
+
+```csv
+0.50,0,210,0,-54.717,0.000000
+```
+
+### Example 4: D=0.75× preferred direction
+
+Input:
+
+```text
+diameter_multiplier=0.75
+trial=0
+direction_deg=0
+```
+
+Output:
+
+```csv
+0.75,0,0,14,44.626,14.000000
+```
+
+### Example 5: D=1.00× preferred direction (baseline)
+
+Input:
+
+```text
+diameter_multiplier=1.00
+trial=0
+direction_deg=60
+```
+
+Output:
+
+```csv
+1.00,0,60,15,44.281,15.000000
+```
+
+### Example 6: D=1.25× preferred direction
+
+Input:
+
+```text
+diameter_multiplier=1.25
+trial=0
+direction_deg=60
+```
+
+Output:
+
+```csv
+1.25,0,60,14,44.210,14.000000
+```
+
+### Example 7: D=1.25× null direction (silence)
+
+Input:
+
+```text
+diameter_multiplier=1.25
+trial=9
+direction_deg=330
+```
+
+Output:
+
+```csv
+1.25,9,330,9,44.098,9.000000
+```
+
+### Example 8: D=1.50× preferred direction
+
+Input:
+
+```text
+diameter_multiplier=1.50
+trial=0
+direction_deg=0
+```
+
+Output:
+
+```csv
+1.50,0,0,14,43.997,14.000000
+```
+
+### Example 9: D=1.75× preferred direction (peak-rate decline)
+
+Input:
+
+```text
+diameter_multiplier=1.75
+trial=0
+direction_deg=60
+```
+
+Output:
+
+```csv
+1.75,0,60,13,43.890,13.000000
+```
+
+### Example 10: D=2.00× null direction (silence preserved)
+
+Input:
+
+```text
+diameter_multiplier=2.00
+trial=0
+direction_deg=270
+```
+
+Output:
+
+```csv
+2.00,0,270,0,-56.200,0.000000
+```
+
+Takeaway: across the 4× diameter sweep, preferred-direction firing shifts from 14-15 Hz to 13 Hz
+(reduced by ~2 Hz at 2.0×) while null-direction firing stays at exactly 0 Hz. Primary DSI therefore
+stays at 1.000 while vector-sum DSI shifts by only 0.030 — insufficient to distinguish the
+Schachter2010 and passive-filtering mechanisms.
+
 ## Verification
 
 * `verify_task_file.py` — target 0 errors on final pass.

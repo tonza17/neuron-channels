@@ -5,12 +5,12 @@
   "name": "Distal-dendrite diameter sweep on t0022 DSGC",
   "short_description": "Sweep distal-dendrite diameter on the t0022 DSGC testbed to discriminate Schachter2010 active-dendrite amplification vs passive-filtering mechanisms using DSI as outcome.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed"
   ],
   "start_time": "2026-04-22T20:08:09Z",
-  "end_time": null,
+  "end_time": "2026-04-22T22:00:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
