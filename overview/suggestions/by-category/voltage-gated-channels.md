@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 18 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **17 open** (9
-high, 6 medium, 2 low), **1 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **16 open** (9
+high, 5 medium, 2 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -350,29 +350,6 @@ burst rate and compare with published DSGC spiking statistics.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Thicken distal branches on t0022 (halve distal input resistance)
-to separate active amplification from passive filtering</strong>
-(S-0027-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
-and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
-Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
-dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
-DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
-passive contribution that the corpus does not separate cleanly.
-
-</details>
-
 ## Low Priority
 
 <details>
@@ -445,5 +422,29 @@ kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provena
 Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output:
 paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC
 tuning-curve fits.
+
+</details>
+
+<details>
+<summary>✅ <s>Thicken distal branches on t0022 (halve distal input resistance) to
+separate active amplification from passive filtering</s> — covered by <a
+href="../../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/"><code>t0030_distal_dendrite_diameter_sweep_dsgc</code></a>
+(S-0027-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
+and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
+Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
+dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
+DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
+passive contribution that the corpus does not separate cleanly.
 
 </details>

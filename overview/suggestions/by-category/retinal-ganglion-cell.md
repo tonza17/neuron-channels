@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 37 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **34 open** (15
-high, 14 medium, 5 low), **3 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **33 open** (14
+high, 14 medium, 5 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -347,29 +347,6 @@ priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_
 -45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
 Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
 before adopting them as tight compartmental-model fitting targets.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
-weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
-count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
-weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
-dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
-10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
-corpus and directly informs whether morphology-sweep design must preserve cable geometry or
-only branch topology.
 
 </details>
 
@@ -922,5 +899,30 @@ virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs
 1-compartment sanity simulation, and records the installed versions, install-time warnings,
 and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
 but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>✅ <s>Sweep distal-dendrite scale on t0022 to discriminate passive TR
+weighting vs dendritic-spike branch independence</s> — covered by <a
+href="../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/"><code>t0029_distal_dendrite_length_sweep_dsgc</code></a>
+(S-0027-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
+count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
+weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
+dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
+10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
+corpus and directly informs whether morphology-sweep design must preserve cable geometry or
+only branch topology.
 
 </details>

@@ -2267,7 +2267,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (17 open, 2 closed)
+## Suggestions (14 open, 5 closed)
 
 <details>
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
@@ -2310,40 +2310,6 @@ task type: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
-weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
-count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
-weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
-dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
-10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
-corpus and directly informs whether morphology-sweep design must preserve cable geometry or
-only branch topology.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Thicken distal branches on t0022 (halve distal input resistance)
-to separate active amplification from passive filtering</strong>
-(S-0027-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
-and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
-Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
-dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
-DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
-passive contribution that the corpus does not separate cleanly.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Random terminal-branch ablation (25%) on t0022 to test branch
 independence</strong> (S-0027-04)</summary>
 
@@ -2357,22 +2323,6 @@ transfer-resistance summation dominates, DSI drops by >40%. Also yields the firs
 DSI-vs-stochastic-pruning curve in the corpus, which would speak to in vivo robustness under
 aging or disease perturbations and complement the broader factorial morphology sweep already
 proposed in S-0002-04.
-
-</details>
-
-<details>
-<summary>📂 <strong>Retrieve paywalled Kim2014 and Sivyer2013 PDFs via Sheffield SSO
-and upgrade their summaries to full-text grounding</strong> (S-0027-06)</summary>
-
-**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Two papers (Kim2014, Sivyer2013) were flagged in t0027 intervention/ folder as paywalled and
-summarised from abstract + secondary citations only. Both are load-bearing for predictions
-S-0027-01 and S-0027-02. Resolve by retrieving full PDFs through Sheffield institutional SSO
-(Cell Press, Nature Neuroscience), upgrading their summaries to full-text level, and updating
-the t0027 synthesis answer asset citations from abstract-only to full-text grounding. Low-cost
-prerequisite for confidently running S-0027-01 and S-0027-02.
 
 </details>
 

@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 19 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **17 open** (6
-high, 9 medium, 2 low), **2 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **14 open** (5
+high, 7 medium, 2 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -128,29 +128,6 @@ PDF-verified content, and cross-check the numerical claims in the synthesis (NMD
 threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
 duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
 actual papers.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
-weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
-count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
-weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
-dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
-10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
-corpus and directly informs whether morphology-sweep design must preserve cable geometry or
-only branch topology.
 
 </details>
 
@@ -300,28 +277,6 @@ data-analysis, answer-question.
 </details>
 
 <details>
-<summary>📂 <strong>Retrieve paywalled Kim2014 and Sivyer2013 PDFs via Sheffield SSO
-and upgrade their summaries to full-text grounding</strong> (S-0027-06)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-06` |
-| **Kind** | dataset |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-Two papers (Kim2014, Sivyer2013) were flagged in t0027 intervention/ folder as paywalled and
-summarised from abstract + secondary citations only. Both are load-bearing for predictions
-S-0027-01 and S-0027-02. Resolve by retrieving full PDFs through Sheffield institutional SSO
-(Cell Press, Nature Neuroscience), upgrading their summaries to full-text level, and updating
-the t0027 synthesis answer asset citations from abstract-only to full-text grounding. Low-cost
-prerequisite for confidently running S-0027-01 and S-0027-02.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Test whether a Larkum-style Ca2+ plateau zone can be localised
 in DSGC dendritic trees</strong> (S-0016-04)</summary>
 
@@ -342,29 +297,6 @@ compartments, then test whether asymmetric inhibition at principal-branch bifurc
 selectively enable Ca2+ plateaus during preferred-direction motion and suppress them during
 null-direction motion. Report preferred-direction burst firing rate versus null-direction
 burst rate and compare with published DSGC spiking statistics.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Thicken distal branches on t0022 (halve distal input resistance)
-to separate active amplification from passive filtering</strong>
-(S-0027-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
-and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
-Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
-dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
-DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
-passive contribution that the corpus does not separate cleanly.
 
 </details>
 
@@ -470,5 +402,78 @@ branch-level nonlinearities, sublinear-to-supralinear integration regimes, and
 active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already
 in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly
 transfer to DSGC dendrites.
+
+</details>
+
+<details>
+<summary>✅ <s>Retrieve paywalled Kim2014 and Sivyer2013 PDFs via Sheffield SSO and
+upgrade their summaries to full-text grounding</s> — covered by <a
+href="../../../tasks/t0031_fetch_paywalled_morphology_papers/"><code>t0031_fetch_paywalled_morphology_papers</code></a>
+(S-0027-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-06` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Two papers (Kim2014, Sivyer2013) were flagged in t0027 intervention/ folder as paywalled and
+summarised from abstract + secondary citations only. Both are load-bearing for predictions
+S-0027-01 and S-0027-02. Resolve by retrieving full PDFs through Sheffield institutional SSO
+(Cell Press, Nature Neuroscience), upgrading their summaries to full-text level, and updating
+the t0027 synthesis answer asset citations from abstract-only to full-text grounding. Low-cost
+prerequisite for confidently running S-0027-01 and S-0027-02.
+
+</details>
+
+<details>
+<summary>✅ <s>Sweep distal-dendrite scale on t0022 to discriminate passive TR
+weighting vs dendritic-spike branch independence</s> — covered by <a
+href="../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/"><code>t0029_distal_dendrite_length_sweep_dsgc</code></a>
+(S-0027-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
+count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
+weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
+dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
+10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
+corpus and directly informs whether morphology-sweep design must preserve cable geometry or
+only branch topology.
+
+</details>
+
+<details>
+<summary>✅ <s>Thicken distal branches on t0022 (halve distal input resistance) to
+separate active amplification from passive filtering</s> — covered by <a
+href="../../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/"><code>t0030_distal_dendrite_diameter_sweep_dsgc</code></a>
+(S-0027-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Halve the input resistance of distal dendritic branches on t0022 by doubling their diameter
+and re-running the DSI protocol with active conductances (a) intact and (b) ablated.
+Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.1000899]
+dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
+DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
+passive contribution that the corpus does not separate cleanly.
 
 </details>

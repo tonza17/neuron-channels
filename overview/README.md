@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="news/"><img src="https://img.shields.io/badge/News-1-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-27-4682B4" alt="Tasks"></a>
+  <a href="news/"><img src="https://img.shields.io/badge/News-2-FF6347" alt="News"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-31-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-122-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (12K)
-| [full](llm-context/full.xml) (174K) | [roadmap](llm-context/roadmap.xml) (38K) |
-[results](llm-context/results-deep-dive.xml) (117K) |
+| [full](llm-context/full.xml) (180K) | [roadmap](llm-context/roadmap.xml) (42K) |
+[results](llm-context/results-deep-dive.xml) (120K) |
 [assets](llm-context/literature-and-assets.xml) (29K)
 
-*Last updated: 2026-04-21 22:43 UTC*
+*Last updated: 2026-04-22 10:05 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -41,8 +41,9 @@
 
 ---
 
-## [Daily News (1)](news/)
+## [Daily News (2)](news/)
 
+* [Apr 21, 2026](news/2026-04-21.md) — 5 completed · 3 created · ~$0
 * [Apr 20, 2026](news/2026-04-20.md) — 14 completed · 11 created · ~$0
 
 ---
@@ -53,9 +54,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (0)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
-No tasks ready to start.
+| # | Task | Description | Date Added |
+|---|------|-------------|------------|
+| 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`description`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/task_description.md) | 2026-04-22 |
+| 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`description`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/task_description.md) | 2026-04-22 |
+| 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 
 ---
 
@@ -73,10 +78,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (26 total)](tasks/by-status/completed.md)
+## [Recently Completed (27 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0028 | [Brainstorm results session 6](../overview/tasks/task_pages/t0028_brainstorm_results_6.md) | [`results`](../tasks/t0028_brainstorm_results_6/results/results_detailed.md) | 2026-04-22 13:10 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | [`results`](../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) | 2026-04-21 22:23 |
 | 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
 | 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
@@ -86,9 +92,8 @@ No blocked tasks.
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`results`](../tasks/t0013_resolve_morphology_provenance/results/results_detailed.md) | 2026-04-20 17:21 |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`results`](../tasks/t0011_response_visualization_library/results/results_detailed.md) | 2026-04-20 15:50 |
 | 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
-| 0021 | [Brainstorm Session 4: DSGC Model Channel Testbed](../overview/tasks/task_pages/t0021_brainstorm_results_4.md) | [`results`](../tasks/t0021_brainstorm_results_4/results/results_detailed.md) | 2026-04-20 14:00 |
 
-*16 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*17 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -104,7 +109,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (111 open)](suggestions/)
+## [Recent Suggestions (108 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -295,11 +300,11 @@ rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 en
 
 </details>
 
-*101 more open suggestions → [open suggestions](suggestions/)*
+*98 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (38)](suggestions/)
+## [High Priority Suggestions (37)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
@@ -406,23 +411,6 @@ Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once wit
 </details>
 
 <details>
-<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
-weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
-count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
-weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
-dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
-10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
-corpus and directly informs whether morphology-sweep design must preserve cable geometry or
-only branch topology.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
 discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
 
@@ -476,7 +464,26 @@ against Schachter's tree. Recommended task types: feature-engineering, experimen
 
 </details>
 
-*28 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🔧 <strong>Interpolate soma pt3dadd diameters along the principal axis to
+replace the uniform 4.118 um soma radius</strong> (S-0009-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0009_calibrate_dendritic_diameters](../tasks/t0009_calibrate_dendritic_diameters/)
+
+All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the
+bell-shaped taper (~3.07 um to 5.31 um) visible in the five central Poleg-Polsky pt3dadd soma
+contour points. Run PCA on the 19 soma xyz coordinates, project each row onto the first
+principal component, and assign a radius by linear interpolation over the 7 Poleg-Polsky
+pt3dadd values mapped onto the same axis. Emit a corrections file that overrides the 19
+soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current-density
+distribution for downstream spike-initiation simulations without changing the mean soma radius
+or any dendritic row. Creative_thinking.md section F4. Recommended task types:
+feature-engineering, correction.
+
+</details>
+
+*27 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

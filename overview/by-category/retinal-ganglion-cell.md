@@ -1872,7 +1872,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (34 open, 3 closed)
+## Suggestions (33 open, 4 closed)
 
 <details>
 <summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
@@ -1945,23 +1945,6 @@ t0024 step 12 records t0023_port_hanson_2019_dsgc as intervention_blocked
 intervention file, resume the port, and then retrofit a Hanson 2019 row into the cross-model
 comparison table in results_detailed.md of both t0024 and any subsequent DSGC port. Closes the
 REQ-6 partial-coverage caveat.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Sweep distal-dendrite scale on t0022 to discriminate passive TR
-weighting vs dendritic-spike branch independence</strong> (S-0027-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Run t0022 with distal dendritic segments scaled by 1.0x, 1.25x, and 1.5x at fixed synapse
-count and biophysics. Prediction (creative_thinking.md #1): if passive transfer-resistance
-weighting [Dan2018, 10.1101_2024.07.10.602901] dominates, DSI drops by >30% at 1.5x; if
-dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI stays within
-10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
-corpus and directly informs whether morphology-sweep design must preserve cable geometry or
-only branch topology.
 
 </details>
 

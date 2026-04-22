@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-21T22:43:42Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-22T10:05:46Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>114052</char_count>
-    <byte_count>114162</byte_count>
-    <estimated_tokens>28513</estimated_tokens>
+    <char_count>116258</char_count>
+    <byte_count>116368</byte_count>
+    <estimated_tokens>29064</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -141,9 +141,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0025_brainstorm_results_5</id>
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
         <id>t0027_literature_survey_morphology_ds_modeling</id>
+        <id>t0028_brainstorm_results_6</id>
       </source_ids>
       <content>
-Completed tasks: 26
+Completed tasks: 27
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -300,6 +301,12 @@ ID: t0027_literature_survey_morphology_ds_modeling
 Completed: 2026-04-21
 Short description: Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.
 Result summary: Results Summary: Morphology and Direction Selectivity Modeling Literature Survey Summary This task added **15 new paper assets** to the morphology-and-direction-selectivity modeling corpus, bringing the total corpus (baseline + new) to **20 papers**. Coverage now spans retinal SAC and DSGC models, fly lobula-plate VS and T4 neurons, primate SAC, cat V1 cortical cells, and the TREES-toolbox cable-theory framework. The strongest cross-paper evidence supports **asymmetric SAC inhibition** and **electrotonic compartmentalisation** as the DS-shaping morphology mechanisms: these are replicated across mouse, rabbit, and fly; across TREES, NEURON, NeuronC, and patch-clamp; and across at least seven...
+
+## Brainstorm results session 6
+ID: t0028_brainstorm_results_6
+Completed: 2026-04-22
+Short description: Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
+Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic brainstorm following the completion of t0026 (V_rest sweep and tuning curves on t0022/t0024 DSGCs) and t0027 (15-paper morphology-direction-selectivity literature survey with synthesis answer). Three new tasks approved: t0029 (distal-dendrite length sweep on t0022), t0030 (distal-dendrite diameter sweep on t0022), t0031 (paywalled PDF fetch for Kim2014 and Sivyer2013). Zero suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Outcome The researcher directed the session toward dendritic morphology sweeps, keeping t0023 (Hanson2019 port) intervention_blocked, preferring a 3-5 task focused batch executed...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -307,9 +314,12 @@ Result summary: Results Summary: Morphology and Direction Selectivity Modeling L
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
+        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
+        <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
+        <id>t0031_fetch_paywalled_morphology_papers</id>
       </source_ids>
       <content>
-Planned or active tasks: 1
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -317,6 +327,26 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
+
+## Distal-dendrite length sweep on t0022 DSGC
+ID: t0029_distal_dendrite_length_sweep_dsgc
+Status: not_started
+Effective date: 2026-04-22
+Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
+Dependencies: t0022_modify_dsgc_channel_testbed
+
+## Distal-dendrite diameter sweep on t0022 DSGC
+ID: t0030_distal_dendrite_diameter_sweep_dsgc
+Status: not_started
+Effective date: 2026-04-22
+Short description: Sweep distal-dendrite diameter on the t0022 DSGC testbed to discriminate Schachter2010 active-dendrite amplification vs passive-filtering mechanisms using DSI as outcome.
+Dependencies: t0022_modify_dsgc_channel_testbed
+
+## Fetch paywalled morphology papers: Kim2014 and Sivyer2013
+ID: t0031_fetch_paywalled_morphology_papers
+Status: not_started
+Effective date: 2026-04-22
+Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
