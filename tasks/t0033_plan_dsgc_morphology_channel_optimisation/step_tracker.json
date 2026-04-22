@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review downloaded paper corpus for methodology on compartmental-model parameter optimisation, CoreNEURON / GPU-NEURON, and surrogate modelling.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-22T14:17:38Z",
-      "completed_at": null,
+      "completed_at": "2026-04-22T14:31:50Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
