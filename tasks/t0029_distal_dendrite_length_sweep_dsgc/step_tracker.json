@@ -122,10 +122,10 @@
       "step": 14,
       "name": "suggestions",
       "description": "File follow-up suggestions based on the discriminated mechanism and any surprising findings.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-22T15:32:11Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\014_suggestions/"
     },
     {
       "step": 15,

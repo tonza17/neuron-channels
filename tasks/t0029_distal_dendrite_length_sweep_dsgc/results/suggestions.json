@@ -1,0 +1,108 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0029-01",
+      "title": "Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022",
+      "description": "The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000 at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability = 1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume stochastic Poisson drive with a rate-code noise floor; removing noise collapses the mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full 7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0029-02",
+      "title": "Distal Nav ablation crossed with distal-dendrite length sweep on t0022",
+      "description": "HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs 115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal Nav channels crossing or failing to cross dendritic-spike threshold at a critical length. Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS { gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45 min CPU. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_nn.3565",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0029-03",
+      "title": "Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to reach Dan2018's critical regime",
+      "description": "Dan2018 reports monotonic DSI-vs-length over 50-400 um distal branches; Sivyer2013's critical length sits at ~150 um. The t0022 distal-leaf baseline is on the order of tens of um, so the 0.5-2.0x sweep likely spans only ~15-160 um, overlapping only the tail of Sivyer2013's range and sitting entirely below Dan2018's critical length. Add three extreme sweep points at 3.0x, 5.0x, and 8.0x while keeping the rest of the t0022 testbed fixed. Watch for `d_lambda` violations at extreme lengths (fallback: adaptive `nseg` at each point). Possible outcomes: (a) DSI stays at 1.000 and peak Hz continues linear decline - testbed is cable-dominated at the soma and no resolution is possible; (b) DSI drops at a specific high multiplier with monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45 min CPU. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_s41598-018-23998-9",
+      "categories": [
+        "cable-theory",
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0029-04",
+      "title": "Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the deterministic ceiling on t0022",
+      "description": "The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed length multiplier of 1.0x and locate the conductance at which null-direction firing first exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min CPU. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0029-05",
+      "title": "Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to localize the peak-Hz cliff",
+      "description": "Peak somatic firing rate in t0029 steps from 15 Hz at multipliers <= 1.0x to 14 Hz at multipliers >= 1.25x with no intermediate value, and mean peak membrane voltage drifts linearly from -4.81 mV (1.0x) to -5.23 mV (2.0x) - a 0.42 mV loss scaling linearly with length rather than as exp(-L/lambda). A linear drop is inconsistent with passive cable attenuation but consistent with distal synapses sitting beyond an active boosting region whose gain depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add a dense 7-point sweep at {1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to resolve whether the 15->14 Hz step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature). Record both peak Hz and mean peak somatic voltage at each point. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_nn.3565",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0029-06",
+      "title": "Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite length sweep on t0022",
+      "description": "The t0022 `_silence_baseline_hoc_synapses` sets b2gnmda = 0 and installs single-component AMPA-only E-I pairs, removing the Espinosa2010 AMPA/NMDA kinetic-tiling mechanism from the testable space entirely. Espinosa2010 proposes that DSGC DS arises from different activation time courses of AMPA and NMDA interacting with cable propagation delay - predicting non-monotonic DSI-vs-length because NMDA's 50-150 ms time constant resonates with propagation delay at specific lengths. Modify `_silence_baseline_hoc_synapses` to restore b2gnmda at 30% of the 189347 baseline and rerun the 7-point length sweep. If DSI drops below 1.000 with non-monotonic length dependence, kinetic tiling is a real third mechanism and the current null result was partially a function of NMDA silencing. Requires a sibling library asset (clone of t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding. Recommended task types: build-model, experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0029-07",
+      "title": "Promote peak-Hz and HWHM to co-primary outcomes when DSI is at ceiling (evaluation methodology)",
+      "description": "The t0029 null result exposes a systematic evaluation weakness: whenever the t0022-lineage testbed drives null firing to exactly 0 Hz, pref/null DSI is structurally pinned at 1.000 regardless of the manipulated variable, yet the secondary metrics (peak somatic firing rate, HWHM, mean peak soma voltage, vector-sum DSI) contain usable length-dependent signal (e.g., the non-monotonic HWHM oscillation 71.7-116.3 deg and the 15->14 Hz peak-Hz cliff at 1.25x). Adopt a co-primary-metric convention: whenever DSI is at ceiling (range across sweep points < 0.01 or null firing = 0 Hz on > 90% of trials), elevate peak-Hz, HWHM, and vector-sum DSI to co-primary outcome variables and require all three to be reported alongside DSI in results_summary.md and compare_literature.md. Encode the rule as an extension to the task-results specification, add a verificator check for the DSI-ceiling condition, and document the convention in arf/specifications. Recommended task types: infrastructure-setup.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    }
+  ]
+}
