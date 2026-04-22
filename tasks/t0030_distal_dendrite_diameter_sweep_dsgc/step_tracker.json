@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI-vs-diameter slope sign and magnitude to Schachter2010 active-dendrite predictions and passive-filtering alternative predictions.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-22T21:40:54Z",
       "completed_at": null,
-      "log_file": "logs/steps/013_compare-literature/"
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,

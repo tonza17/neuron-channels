@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\compare_literature.md
+
+[33m[1mWARNINGS:[0m
+[33m  CL-W002 warning: Table data row missing numeric values in both Published Value and Our Value: | t0029 length sweep | classification label | flat | flat | n/a | Both axes yield the same null result; the testbed's E-I schedule dominates both morphology axes |[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
