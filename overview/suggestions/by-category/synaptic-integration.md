@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-19 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **17 open** (9 high,
-8 medium), **2 closed**.
+21 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **19 open** (9 high,
+10 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -404,6 +404,59 @@ on the reproduced DSGC baseline (AMPA+GABA only, AMPA+GABA+NMDA with PolegPolsky
 parameters, AMPA+GABA+NMDA with NMDA_gain swept 1-4x) and report the DSI, peak rate, and HWHM
 trajectories. This answers a specific open RQ3/RQ4-adjacent question that the literature
 states but does not isolate experimentally. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
+deterministic ceiling on t0022</strong> (S-0029-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on
+null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured
+compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to
+exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable
+mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed
+length multiplier of 1.0x and locate the conductance at which null-direction firing first
+exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and
+S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
+mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
+CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite
+length sweep on t0022</strong> (S-0029-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 `_silence_baseline_hoc_synapses` sets b2gnmda = 0 and installs single-component
+AMPA-only E-I pairs, removing the Espinosa2010 AMPA/NMDA kinetic-tiling mechanism from the
+testable space entirely. Espinosa2010 proposes that DSGC DS arises from different activation
+time courses of AMPA and NMDA interacting with cable propagation delay - predicting
+non-monotonic DSI-vs-length because NMDA's 50-150 ms time constant resonates with propagation
+delay at specific lengths. Modify `_silence_baseline_hoc_synapses` to restore b2gnmda at 30%
+of the 189347 baseline and rerun the 7-point length sweep. If DSI drops below 1.000 with
+non-monotonic length dependence, kinetic tiling is a real third mechanism and the current null
+result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
+t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
+Recommended task types: build-model, experiment-run.
 
 </details>
 

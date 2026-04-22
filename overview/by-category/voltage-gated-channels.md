@@ -5,8 +5,8 @@ Ion channels whose opening probability depends on membrane voltage.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(3)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(18)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(22)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -789,7 +789,28 @@ dendritic transients.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (3)
+## Answers (4)
+
+<details>
+<summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
+joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+task?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-22 | **Full answer**:
+[`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation`](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/)
+
+Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations
+x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz
+morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a
+central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119
+dollars. This combination is cheapest among the corpus-justified gradient-free strategies
+because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a
+one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour.
+Confidence is medium: the CoreNEURON CPU-to-GPU speedup and the surrogate-NN economics are
+external assumptions not quantified in the downloaded paper corpus, and the sensitivity grid
+is propagated across a 0.5x-2x band for both per-sim cost and sample count.
+
+</details>
 
 <details>
 <summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
@@ -866,7 +887,86 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (16 open, 2 closed)
+## Suggestions (20 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
+on t0022</strong> (S-0029-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
+115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
+Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
+Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
+gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
+length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
+the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
+resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
+with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
+min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25,
+1.30} to localize the peak-Hz cliff</strong> (S-0029-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+Peak somatic firing rate in t0029 steps from 15 Hz at multipliers <= 1.0x to 14 Hz at
+multipliers >= 1.25x with no intermediate value, and mean peak membrane voltage drifts
+linearly from -4.81 mV (1.0x) to -5.23 mV (2.0x) - a 0.42 mV loss scaling linearly with length
+rather than as exp(-L/lambda). A linear drop is inconsistent with passive cable attenuation
+but consistent with distal synapses sitting beyond an active boosting region whose gain
+depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add a dense
+7-point sweep at {1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to resolve whether the 15->14 Hz
+step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
+Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to
+validate sample-efficiency assumptions</strong> (S-0033-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=500,
+Surrogate-NN-GA=18,500) on 25 dims without empirical DSGC validation. Before the full joint
+optimiser is commissioned, run a low-dim spike on t0022: (a) pick 5 representative parameters
+from the committed 25 (3 Cuntz scalars: bf, distal-length, distal-diameter + gNa_dend +
+gKdr_dend), (b) run 200-300 deterministic 12-angle evaluations each under CMA-ES and
+sequential BO, (c) compare the DSI converged-to-within-1% sample count against the cost-grid
+extrapolations, and (d) report whether either method actually converges on DSGC landscapes or
+hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost
+model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022

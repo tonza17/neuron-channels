@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (8)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(37)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(39)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (5)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -1872,7 +1872,48 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (33 open, 4 closed)
+## Suggestions (35 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
+sweep on t0022</strong> (S-0029-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
+at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
+1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
+stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
+mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
+dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
+7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
+from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
+discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
+predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
+types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
+deterministic ceiling on t0022</strong> (S-0029-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on
+null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured
+compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to
+exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable
+mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed
+length multiplier of 1.0x and locate the conductance at which null-direction firing first
+exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and
+S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
+mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
+CPU. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive

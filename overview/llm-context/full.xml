@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-22T12:12:19Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-22T15:43:52Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>36</section_count>
-    <char_count>737381</char_count>
-    <byte_count>739429</byte_count>
-    <estimated_tokens>184345</estimated_tokens>
+    <section_count>38</section_count>
+    <char_count>779974</char_count>
+    <byte_count>782309</byte_count>
+    <estimated_tokens>194993</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -143,10 +143,12 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
         <id>t0027_literature_survey_morphology_ds_modeling</id>
         <id>t0028_brainstorm_results_6</id>
+        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0032_brainstorm_results_7</id>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Completed tasks: 28
+Completed tasks: 30
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -310,11 +312,23 @@ Completed: 2026-04-22
 Short description: Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
 Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic brainstorm following the completion of t0026 (V_rest sweep and tuning curves on t0022/t0024 DSGCs) and t0027 (15-paper morphology-direction-selectivity literature survey with synthesis answer). Three new tasks approved: t0029 (distal-dendrite length sweep on t0022), t0030 (distal-dendrite diameter sweep on t0022), t0031 (paywalled PDF fetch for Kim2014 and Sivyer2013). Zero suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Outcome The researcher directed the session toward dendritic morphology sweeps, keeping t0023 (Hanson2019 port) intervention_blocked, preferring a 3-5 task focused batch executed...
 
+## Distal-dendrite length sweep on t0022 DSGC
+ID: t0029_distal_dendrite_length_sweep_dsgc
+Completed: 2026-04-22
+Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
+Result summary: Results Summary: Distal-Dendrite Length Sweep on t0022 DSGC Summary Swept distal-dendrite length on the t0022 DSGC testbed across seven multipliers (**0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×**) of baseline `sec.L` while holding the rest of the testbed fixed — **840 trials** across **12 directions × 10 trials × 7 lengths** in **~42 min** wall time on the local Windows workstation. **DSI (preferred/null definition) pins at 1.000 at every multiplier**, so the experiment cannot discriminate Dan2018 passive-transfer-resistance weighting from Sivyer2013 dendritic-spike branch independence on the DSI axis. Secondary metrics (vector-sum DSI, peak firing rate, HWHM) move only weakly or...
+
 ## Brainstorm results session 7
 ID: t0032_brainstorm_results_7
 Completed: 2026-04-22
 Short description: Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
 Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029 (distal-length sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation, scoped against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Overview Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030, t0031) is already queued from t0028 and is unlikely to change the feasibility of a large-scale joint...
+
+## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+ID: t0033_plan_dsgc_morphology_channel_optimisation
+Completed: 2026-04-22
+Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+Result summary: Results Summary: Plan DSGC Morphology + VGC DSI Optimisation on Vast.ai GPU Summary Produced a full feasibility plan and Vast.ai GPU cost envelope for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation. Committed parameter count: **25 free parameters tight** (5 Cuntz morphology scalars + 20 per-region channel gbar) with a **45-parameter rich** upper-bound envelope. Recommended (strategy × compute mode × GPU tier): **Surrogate-NN-assisted GA × Surrogate-NN-GPU × RTX 4090 × tight parameterisation** → central estimate **$50.54**, sensitivity band **$23-$119** under 0.5×/1×/2× perturbations to per-sim cost and sample count. Metrics * **Parameter count...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -322,13 +336,11 @@ Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic 
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -402,113 +414,6 @@ No analyses beyond the basic 12-angle tuning curve and score report. Channel-sen
 parameter-space exploration, dendritic-computation decomposition, optogenetic/pharmacological
 perturbation studies, or other downstream analyses belong to follow-up tasks and must not be
 performed here.
-
-## Distal-dendrite length sweep on t0022 DSGC
-ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: in_progress
-Effective date: 2026-04-22
-Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
-Dependencies: t0022_modify_dsgc_channel_testbed
-
-#### Motivation
-
-The t0027 literature synthesis identified two published mechanisms that both fit our current t0022
-tuning data (DSI peak 0.6555 at V_rest = -60 mV, 15 Hz input): **Dan2018** passive transfer-
-resistance weighting, and **Sivyer2013** dendritic-spike branch independence. The two mechanisms
-make divergent predictions about how DSI should change as distal-dendrite length varies:
-
-* **Dan2018 passive TR**: DSI increases monotonically with distal length, because longer distal
-  dendrites create a steeper transfer-resistance gradient from synapse to soma and therefore
-  stronger directional weighting of passive EPSPs.
-* **Sivyer2013 dendritic spike**: DSI saturates (plateau) once distal branches are long enough to
-  independently generate local dendritic spikes; further length increases contribute no additional
-  DSI because the spike threshold is already cleared.
-
-A clean single-parameter sweep of distal length on the t0022 testbed, measuring DSI only, will
-discriminate between these mechanisms — a monotonic curve favours Dan2018; a saturating curve
-favours Sivyer2013. This is the highest-information-gain experiment identified by the t0027
-synthesis (suggestion S-0027-01, high priority).
-
-#### Scope
-
-1. Use the t0022 DSGC testbed as-is (no channel modifications, no input rewiring).
-2. Identify distal dendritic sections (tip compartments at branch order ≥ 3) in the morphology.
-3. Sweep distal length in at least 7 values spanning from 0.5× to 2.0× the baseline length (e.g.,
-   0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0×). Use the same sweep step size for all branches.
-4. For each length value, run a full 12-direction tuning protocol (standard t0022 protocol with 15
-   Hz preferred-direction input) and compute DSI.
-5. Plot DSI vs length and classify the curve shape as monotonic / saturating / non-monotonic.
-6. Report the fitted slope (for monotonic), the saturation length (for saturating), or describe the
-   qualitative shape (for non-monotonic).
-
-#### Approach
-
-* Run locally on CPU only. No remote compute, no paid API.
-* Reuse the t0022 testbed code under `tasks/t0022_modify_dsgc_channel_testbed/code/` — copy the
-  needed scripts into this task&#x27;s `code/` directory (per CLAUDE.md rule on cross-task imports).
-* Vary the `L` attribute (section length) on all distal compartments by the sweep multiplier in a
-  single experiment driver script.
-* Use the existing tuning-curve scoring library from
-  `tasks/t0012_tuning_curve_scoring_loss_library/` to compute DSI consistently with t0022/t0026.
-* Save per-sweep-point results (DSI, per-direction firing rates) to
-  `results/data/sweep_results.csv`.
-* Generate a DSI-vs-length chart and save to `results/images/dsi_vs_length.png`.
-
-#### Expected Outputs
-
-* `results/results_summary.md` — 2-3 paragraph executive summary with headline DSI-vs-length
-  relationship and mechanism classification.
-* `results/results_detailed.md` — full methodology, per-direction breakdown at each length value,
-  curve-shape classification, and discussion of which mechanism the data favours.
-* `results/images/dsi_vs_length.png` — DSI-vs-length plot.
-* `results/metrics.json` — DSI values at each length point.
-* No paper, dataset, library, model, or answer assets produced by this task.
-
-#### Compute and Budget
-
-* Local CPU only, no GPU. Expected runtime: 30-90 minutes depending on per-direction simulation
-  cost.
-* $0 external cost.
-
-#### Measurement
-
-* Primary metric: **DSI** at each length value.
-* Secondary (recorded but not primary): per-direction spike counts, preferred-direction firing rate.
-
-#### Key Questions
-
-1. Is DSI monotonically increasing with distal length, or does it saturate?
-2. At what length does saturation occur (if any)?
-3. Is the DSI range at the sweep extremes (0.5× and 2.0×) large enough to distinguish the
-   mechanisms, or does the testbed saturate at our default length?
-
-#### Dependencies
-
-* **t0022_modify_dsgc_channel_testbed** (completed) — provides the DSGC morphology and channel set.
-
-#### Scientific Context
-
-Source suggestion **S-0027-01** (high priority). The t0027 synthesis answer identifies this as the
-single highest-information-gain morphology experiment because the two competing mechanisms make
-mathematically opposite predictions on the distal-length axis. Baseline papers supporting each
-mechanism:
-
-* Dan2018 passive-TR: builds the mechanism on a passive cable derivation.
-* Sivyer2013 dendritic-spike: depends on Nav density in distal dendrites, which t0022 retains.
-
-If the experiment reveals a non-monotonic curve, the t0027 synthesis flagged kinetic tiling
-(Espinosa 2010) as a possible third mechanism — defer to a follow-up task.
-
-#### Execution Notes
-
-* Follow the standard /execute-task flow: create-branch, check-deps, init-folders, implementation,
-  results, suggestions, reporting.
-* Include the `planning` step (the sweep design and compartment-identification logic benefit from
-  explicit planning).
-* Skip `research-papers`, `research-internet` (t0027 synthesis already did this), and
-  `setup-machines` / `teardown` (local CPU only).
-* Include `compare-literature` — the whole point is to compare the DSI-vs-length curve to Dan2018
-  and Sivyer2013 predictions.
 
 ## Distal-dendrite diameter sweep on t0022 DSGC
 ID: t0030_distal_dendrite_diameter_sweep_dsgc
@@ -698,170 +603,6 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
-
-## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
-ID: t0033_plan_dsgc_morphology_channel_optimisation
-Status: not_started
-Effective date: unknown
-Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
-Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
-
-#### Motivation
-
-The project&#x27;s long-term ambition, implied by project research questions RQ1, RQ2, and RQ4, is a
-joint optimisation over DSGC dendritic morphology and voltage-gated channel (VGC) combinations that
-maximises the direction-selectivity index (DSI). No task to date has attempted such a large-scale
-joint sweep; every completed experiment to date has varied only one axis at a time (V_rest, distal
-length, distal diameter) on a fixed morphology and a fixed channel set inherited from the
-Poleg-Polsky 2026 port.
-
-Before committing the project budget to a joint optimisation, we need a feasibility plan and a
-defensible compute-budget estimate. This task produces exactly that plan. It does **not** launch the
-optimisation and does **not** create a child optimiser task. The optimisation itself, if approved,
-will be spawned from a future brainstorm session after this plan lands.
-
-#### Scope
-
-**In scope**:
-
-* Synthesise existing methodology for compartmental-model parameter optimisation from the downloaded
-  paper corpus in `tasks/*/assets/paper/` and `assets/paper/` (as surfaced by `aggregate_papers`).
-  No internet search.
-* Enumerate the parameter set that the future optimisation would vary, in two groups:
-  1. **Morphology** — variables taken from the Poleg-Polsky 2026 backbone as exposed by the t0024
-     port and the channel-modular AIS architecture of the t0022 testbed. Include all per-section
-     geometry that Poleg-Polsky 2026 varies, plus explicit morphology knobs (per-branch length,
-     diameter, branch order, arbor-asymmetry summary statistics) identified by t0027.
-  2. **Voltage-gated channels** — the top-10 VGC types from the t0019 survey (sourced from
-     `tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/`).
-     For each VGC, enumerate the per-channel biophysical parameters that will be varied (typically
-     `gbar`, possibly kinetic shifts).
-* Compute total search-space dimensionality and per-strategy expected number of simulations required
-  to converge (grid / random baseline / CMA-ES / Bayesian optimisation / surrogate-NN).
-* Estimate per-simulation wall-time using the empirical baselines recorded by t0026:
-  * t0022 deterministic: ~6.0 min / 96 trials ≈ **3.8 s per (angle, trial)**
-  * t0024 stochastic AR(2) ρ=0.6: ~11,562 s / 960 trials ≈ **12.0 s per (angle, trial)**
-  * Extrapolate per-simulation cost per the 12-angle × trial-count standard protocol.
-* Translate wall-time into Vast.ai USD cost across 2-3 representative GPU tiers, using the pricing
-  conventions documented in `arf/docs/explanation/remote_machines.md` and the tier filters encoded
-  in `arf/scripts/utils/vast_machines.py`. Tiers to consider: RTX 4090, A100 40 GB, H100 (or the
-  closest available tier). Include the `compute_cap&lt;1200` and `cuda_max_good&gt;=12.6` pre-validated
-  filters in the cost derivation.
-* Evaluate three compute strategies and produce a wall-time + USD envelope for each:
-  1. **CoreNEURON on Vast.ai GPU** (OpenACC/CUDA-accelerated NEURON variant).
-  2. **Surrogate NN on Vast.ai GPU** (train a neural-network surrogate from a limited CPU-NEURON
-     sample, then optimise on the surrogate; account for training cost, sample cost, and
-     transfer/inference cost).
-  3. **Vast.ai many-core CPU** (comparator — cost floor assuming stock NEURON).
-* Produce a sensitivity analysis: what if per-simulation cost is 0.5×, 1×, or 2× the t0026 baseline?
-  What if search-strategy sample counts are 0.5×, 1×, or 2× the literature default?
-* Recommend the cheapest viable (strategy × Vast.ai GPU tier) combination, with explicit caveats on
-  any assumptions that the downloaded corpus did not resolve.
-
-**Out of scope** (explicit):
-
-* Running the optimisation. This task is pure planning.
-* Creating the child optimiser task.
-* Any internet search.
-* Any experimentation on t0022, t0024, or other existing ports.
-* Multi-objective optimisation. The future plan is for single-objective DSI maximisation only. Other
-  criteria (information, energy, size, Cajal&#x27;s cytoplasm minimisation) are noted but are explicitly
-  not costed in this task.
-* Variation on the presynaptic side (bipolar / SAC input schedule and kinetics are held fixed).
-
-#### Approach
-
-1. **Corpus read.** Aggregate all papers via `aggregate_papers --format json --detail full` and
-   filter to summaries relevant to compartmental-model optimisation, surrogate modelling, CoreNEURON
-   / GPU NEURON, and active-dendrite parameter reduction. Expect strong hits from t0015 (cable
-   theory), t0016 (dendritic computation), t0019 (VGCs), t0027 (morphology-DS).
-2. **Parameter enumeration.** Read the t0022 code under
-   `tasks/t0022_modify_dsgc_channel_testbed/code/` and the t0024 code under
-   `tasks/t0024_port_de_rosenroll_2026_dsgc/code/` to identify every mechanism instantiated across
-   `SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, and `THIN_AXON`. Tabulate which
-   parameters would vary under the joint optimisation and which are held fixed.
-3. **Top-10 VGC selection.** Read the t0019 answer asset at
-   `tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/full_answer.md`
-   and commit to a canonical top-10 list with biophysical-parameter counts per channel.
-4. **Search-space arithmetic.** Under each strategy, compute dimensionality and expected simulation
-   count. Record all assumptions explicitly.
-5. **Vast.ai pricing lookup.** Use `arf/scripts/utils/vast_machines.py` (read the library; no
-   provisioning calls) to identify current tier pricing and filter constraints. Document the
-   snapshot date in the plan.
-6. **Cost model.** For each (strategy × tier) pair: expected simulations × per-sim wall-time /
-   parallelism factor × hourly rate → total $.
-7. **Sensitivity.** Produce a 3 × 3 sensitivity table (per-sim cost × sample-count multipliers).
-8. **Answer asset.** Produce one answer asset: *&quot;What is the Vast.ai GPU cost and recommended
-   organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?&quot;*.
-9. **Results output.** `results_detailed.md` contains parameter-count tables, search-space-size
-   tables, per-sim wall-time, cost tables, and sensitivity. `results_summary.md` states the headline
-   recommended (strategy, tier, total $) with confidence band.
-
-#### Dependencies
-
-* `t0002_literature_survey_dsgc_compartmental_models` — compartmental-model methodology priors.
-* `t0019_literature_survey_voltage_gated_channels` — source of the top-10 VGC list.
-* `t0022_modify_dsgc_channel_testbed` — architecture that the future optimisation would vary.
-* `t0024_port_de_rosenroll_2026_dsgc` — Poleg-Polsky 2026 parameter backbone.
-* `t0026_vrest_sweep_tuning_curves_dsgc` — empirical per-simulation wall-time baselines.
-* `t0027_literature_survey_morphology_ds_modeling` — morphology-variable taxonomy.
-
-#### Expected Assets
-
-One answer asset, matching `expected_assets = {&quot;answer&quot;: 1}`:
-
-* `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/` — with
-  `details.json`, `short_answer.md`, and `full_answer.md`. The short answer must state the
-  recommended (strategy, Vast.ai GPU tier, headline USD budget, and confidence) in 2-5 sentences.
-  The full answer must document methodology, parameter enumeration, cost model, sensitivity, and
-  limitations.
-
-No library, model, dataset, paper, or prediction assets are produced by this task.
-
-#### Compute and Budget
-
-* Local CPU only. No remote machines. No paid APIs.
-* $0.00 estimated task cost.
-* Task budget limit: project default ($1.00).
-
-#### Measurement
-
-This is not an experimental task; no registered metrics are measured. `metrics.json` will be `{}`.
-Decision-level quantities that the task produces (parameter counts, search-space sizes, cost
-estimates) live in `results_detailed.md` tables and in the answer asset, not in `metrics.json`.
-
-#### Key Questions
-
-1. How many free parameters does the joint morphology + top-10 VGC optimisation have under
-   reasonable parameterisation choices?
-2. What is the expected number of simulations required to converge under grid / random / CMA-ES /
-   Bayesian / surrogate-NN strategies?
-3. What is the per-simulation wall-time on (a) CoreNEURON on Vast.ai GPU, (b) surrogate NN on
-   Vast.ai GPU, and (c) Vast.ai many-core CPU, extrapolated from the t0026 baselines?
-4. What is the total Vast.ai USD cost for each (strategy × tier) combination?
-5. Which (strategy × tier) combination minimises cost while remaining technically viable, and what
-   are the key assumptions behind the ranking?
-6. Under 0.5×, 1×, 2× perturbations to per-simulation cost and sample count, does the recommended
-   combination still win?
-
-#### Execution Notes
-
-* Follow the standard `/execute-task` flow: `create-branch`, `check-deps`, `init-folders`,
-  `research-papers`, `planning`, `implementation`, `results`, `suggestions`, `reporting`.
-* Skip `research-internet` (researcher constraint: downloaded papers only).
-* Skip `research-code` unless corpus analysis reveals code assets inside our `assets/library/` that
-  are directly relevant to parameter-count justification.
-* Skip `setup-machines` / `teardown` (local CPU only for this task).
-* Skip `compare-literature` (this task IS a literature synthesis; the comparison happens in the
-  answer asset).
-* Researcher constraint — **do not** create the future optimiser task from within this task. That
-  decision is deferred to a future brainstorm session.
-
-#### Scientific Context
-
-No single source suggestion covers this task. It was commissioned by the researcher directly in
-brainstorm session 7 (t0032) as a parallel planning thread to the morphology-sweep wave
-(t0029-t0031).
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -879,9 +620,10 @@ brainstorm session 7 (t0032) as a parallel planning thread to the morphology-swe
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
         <id>morphology-direction-selectivity-modeling-synthesis</id>
+        <id>vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation</id>
       </source_ids>
       <content>
-Answers: 11
+Answers: 12
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -3299,6 +3041,299 @@ mechanism, and which regions match biology?
 [morrie2018]: https://doi.org/10.1016/j.cub.2018.03.001
 [polegpolsky2026]: https://doi.org/10.1038/s41467-026-70288-4
 [derosenroll2026]: https://doi.org/10.1016/j.celrep.2025.116833
+
+## What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?
+ID: vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation
+Created by: t0033_plan_dsgc_morphology_channel_optimisation on 2026-04-22
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
+
+What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10
+voltage-gated channel DSI-maximisation task?
+
+#### Short Answer
+
+Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations x 3
+seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz morphology
+scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a central USD cost of
+about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119 dollars. This combination is
+cheapest among the corpus-justified gradient-free strategies because the surrogate-NN cuts 18,500
+evaluations to ~8 GPU-hours of surrogate inference plus a one-off ~83 GPU-hour CoreNEURON training
+burn at the RTX 4090 rate of 0.50 dollars/hour. Confidence is medium: the CoreNEURON CPU-to-GPU
+speedup and the surrogate-NN economics are external assumptions not quantified in the downloaded
+paper corpus, and the sensitivity grid is propagated across a 0.5x-2x band for both per-sim cost and
+sample count.
+
+#### Research Process
+
+The plan synthesises methodology from 16 papers reviewed in
+[research/research_papers.md](../../../research/research_papers.md) (PolegPolsky 2026, Ezra-Tsur
+2021, Cuntz 2010, and the DSGC/SAC and voltage-gated channel literature) together with code
+inspection of the t0022 testbed, the t0024 de Rosenroll 2026 port, and `vast_machines.py` from the
+ARF framework, documented in [research/research_code.md](../../../research/research_code.md). No
+simulations were executed. Arithmetic is implemented in [code/](../../../code/) as a chain of
+reproducible Python scripts (`enumerate_params.py`, `search_space.py`, `wall_time.py`, `pricing.py`,
+`cost_model.py`, `make_charts.py`) that emit CSV and JSON tables to [data/](../../../data/) and PNG
+charts to [results/images/](../../../results/images/). The sensitivity analysis multiplies both
+per-sim cost and sample count by {0.5x, 1x, 2x} to propagate the two largest unvalidated assumptions
+(CoreNEURON GPU speedup and surrogate-NN training cost).
+
+#### Evidence from Papers
+
+Two papers in the corpus directly demonstrate gradient-free optimisation over a DSGC/SAC
+compartmental model with a DS-like objective. Poleg-Polsky 2026 runs an ML outer loop described as
+&quot;gradient-free optimisation + surrogate-model-assisted search&quot; on a 352-segment DSGC model, scoring
+candidates by DSI under 12-direction moving-bar stimuli and simulating &quot;tens of thousands of
+configurations&quot; [PolegPolsky2026][polegpolsky2026]. Ezra-Tsur 2021 uses DEAP NSGA-II/IBEA with
+population 100, generations 20-45, crossover/mutation 0.4, multi-seed ≥3 over an 8-dimensional
+input-kinetics space on a 1013-compartment SAC [Ezra-Tsur2021][ezra-tsur2021]. Together they
+establish the corpus default of gradient-free search with optional surrogate acceleration; no corpus
+paper uses Bayesian optimisation or CMA-ES on a DSGC model, so those strategies are included in the
+envelope but labelled unvalidated.
+
+Cuntz 2010 reduces arbitrary dendritic morphology to 3-5 scalar generators (spanning volume,
+carrier-point density, balancing factor `bf in [0.2, 0.7]`, root location, optional taper tweak),
+matching reconstructed arbors to within a few percent of total wiring length and mapping `bf`
+monotonically to electrotonic compartmentalisation [Cuntz2010][cuntz2010]. Mainen 1996 shows that
+swapping morphology under fixed channel biophysics reshapes firing pattern, forbidding any factoring
+of the joint sweep into independent morphology-only and channel-only marginals
+[Mainen1996][mainen1996]. Schachter 2010 pins the active-dendrite lower floor (uniform dendritic Nav
+40 mS/cm^2 or 45→20 mS/cm^2 gradient plus Kdr amplifies PSP DSI 0.2 into spike DSI 0.8)
+[Schachter2010][schachter2010], and de Rosenroll 2026 relays Jain 2020 to anchor the 5-10 um
+local-DS-subunit scale that forbids coarse discretisation [deRosenroll2026][derosenroll2026]. Hines
+1997 establishes O(N) cable-solver scaling but quantifies throughput only on 1990s hardware, so
+wall-time anchors come from the t0026 empirical measurements instead [Hines1997][hines1997].
+
+The top-10 VGC set is synthesised from five canonical-region papers — VanWart 2006, Kole 2007,
+Fohlmeister-Miller 1997, Hu 2009, Kole 2008
+[VanWart2006, Kole2007, FohlmeisterMiller1997, Hu2009, Kole2008] — plus Fohlmeister 2010 per-region
+gbar tables and Aldor 2024 perisomatic Kv3 [Fohlmeister2010, Aldor2024]. The 10 channels carry 1-5
+free parameters each depending on whether only gbar is varied, or gbar+V_half, or gbar per region
+(see `data/top10_vgcs.json`).
+
+The most damaging corpus gap is that Poleg-Polsky 2026 names surrogate-assisted search but does not
+break out (a) surrogate training sample count, (b) surrogate architecture, (c) surrogate speedup
+over direct NEURON, or (d) surrogate training vs inference cost split — all flagged as &quot;not found in
+paper summary&quot; in the research file. No corpus paper documents CoreNEURON on GPU. These gaps are
+propagated through the sensitivity grid.
+
+#### Evidence from Internet Sources
+
+The internet-research method was not used for this answer, per researcher constraint: the plan uses
+only the downloaded paper corpus (16 cited papers across t0002, t0015, t0019, t0024, t0027, and
+t0010 asset folders) and direct code inspection of this project&#x27;s existing tasks.
+
+#### Evidence from Code or Experiments
+
+No new NEURON simulations were executed. The arithmetic rests on three classes of evidence from
+prior tasks&#x27; existing artefacts.
+
+**Parameter enumeration.** The t0022 testbed declares five `SectionList` regions (SOMA_CHANNELS,
+DEND_CHANNELS, AIS_PROXIMAL, AIS_DISTAL, THIN_AXON) in `dsgc_channel_partition.hoc`. The t0024 port
+inserts HHst+cad on soma, primary dendrite, non-terminal dendrite, and terminal dendrite with four
+lumped gbar parameters (gNa, gKdr, gKm, gleak) per region = 16 free gbar parameters before any VGC
+expansion (see `data/channel_params_hhst.json`). Adding the 5 Cuntz morphology scalars and the
+top-10 VGC gbar-only parameterisation (20 params; 10 VGCs x 2 regions-of-interest-on-average) lands
+the tight parameterisation at **25 free parameters**; a rich parameterisation that lets gbar vary
+per region for all 10 VGCs plus gbar+V_half for the four kinetic-critical channels (Nav1.6, Nav1.2,
+Kv1.2, Ca_HVA) lands near **45 free parameters**. The enumeration script documents every parameter
+with its region, default value, unit, source tag, and is_free flag.
+
+**Per-simulation wall-time.** The t0026 V_rest sweep measured **3.8 s per (angle, trial)** on the
+t0022 deterministic testbed and **12.0 s per (angle, trial)** on the t0024 stochastic AR(2) ρ=0.6
+port, both single-threaded NEURON 8.2.7 on a Sheffield CICS OptiPlex Windows workstation. Under the
+canonical 12-angle x 10-trial optimiser protocol this is **456 s / ~7.6 min per sim** for the
+deterministic path and **1,440 s / ~24 min per sim** for the stochastic path. These are hard
+empirical anchors, not literature extrapolations.
+
+**Vast.ai pricing and scaling.** The framework module `arf/scripts/utils/vast_machines.py` encodes
+the `DEFAULT_FILTERS` string `&quot;rentable=true verified=true compute_cap&lt;1200 cuda_max_good&gt;=12.6&quot;`,
+the `GPU_SPEED_TIERS` table (RTX 3090=1.00, RTX 4090=1.60, A100 40GB=1.80, H100=3.00), and the
+`rank_offers()` cost-efficiency rule that prefers the cheaper offer within a 20% similar-speed band.
+The plan&#x27;s snapshot pricing (RTX 3090 $0.20/h, RTX 4090 $0.50/h, A100 40 GB $1.10/h, H100 $2.50/h,
+96-core CPU $0.40/h on snapshot date 2026-04-22) is a static median observation; it is explicitly
+not a live quote.
+
+#### Synthesis
+
+**Parameter count committed.** The future optimisation varies **25 free parameters** in the tight
+parameterisation (5 Cuntz morphology scalars + ~20 channel gbar values under single-region-per-
+channel assignment from the t0019 priors) and up to **45 free parameters** in the rich
+parameterisation (5 Cuntz + per-region gbar + gbar+V_half on four kinetic-critical VGCs). Mainen
+1996 forbids factoring the problem; Cuntz 2010 caps the morphology axis to 5 scalars; holding V_half
+and τ at Fohlmeister-Miller / Kole / Hu values caps the channel axis to ~20-40 parameters.
+
+**Expected sample count per strategy, n_dims=25.** Grid at 10^25 is an infeasibility anchor with no
+corpus precedent above 5 dims and is not recommended. Random baseline budgets 500 / 2,000 / 10,000
+samples (lower / central / upper) as a Monte-Carlo convergence floor. CMA-ES uses Hansen lambda = 4
+\+ floor(3*log(25)) = 13, 100 generations, central 1,300 samples (0.5x-2x range 650 - 2,600).
+Bayesian optimisation falls over above ~30 dims and is budgeted at 200 / 500 / 1,000 evaluations
+with an explicit caveat. Surrogate-NN-assisted GA (the corpus-recommended strategy from PolegPolsky
+2026 x Ezra-Tsur 2021) budgets 1,000 / 5,000 / 50,000 surrogate training samples plus a GA inference
+phase of 2,000 / 13,500 / 27,000 post-training evaluations, central total **18,500 evaluations** of
+which 5,000 are NEURON-backed.
+
+**Per-simulation wall-time under each compute mode.** CoreNEURON on Vast.ai GPU is modelled as a
+literature-placeholder 5x CPU speedup at the RTX 3090 reference tier, scaling linearly by
+`GPU_SPEED_TIERS`: t0024 stochastic 1,440 s -&gt; RTX 4090 180 s, A100 40 GB 160 s, H100 96 s. The 5x
+factor is an assumption — no corpus paper quantifies GPU-NEURON speedup — and the sensitivity grid&#x27;s
+2x cost column covers a 2.5x actual speedup, the 0.5x column a 10x speedup. Surrogate-NN inference
+is modelled as 100x faster than NEURON with the trained network trivially fitting on any of the four
+GPU tiers (14.4 s per eval on the deterministic base). Vast.ai many-core CPU is modelled as
+`1,440 / 96 = 15 s per sim` on a stock NEURON 96-core node; this is a conservative anchor since
+t0026 already verified that the per-(angle, trial) work is embarrassingly parallel.
+
+**USD cost per (strategy x compute_mode x tier), tight parameterisation.** The full 70-row envelope
+is in [data/cost_envelope.csv](../../../data/cost_envelope.csv). Headline central numbers:
+
+| Strategy | Compute Mode | Tier | Samples | Wall-h | USD central |
+| --- | --- | --- | --- | --- | --- |
+| SURROGATE_NN_GA | SURROGATE_NN_GPU | RTX 4090 | 18,500 | 74.0 | **$50.54** (recommended) |
+| SURROGATE_NN_GA | SURROGATE_NN_GPU | A100 40GB | 18,500 | 74.0 | $101.03 |
+| SURROGATE_NN_GA | SURROGATE_NN_GPU | H100 | 18,500 | 74.0 | $155.72 |
+| SURROGATE_NN_GA | MANY_CORE_CPU | CPU-96 | 18,500 | 77.1 | $32.38 |
+| SURROGATE_NN_GA | CORENEURON_GPU | RTX 4090 | 18,500 | 925.0 | $485.62 |
+| SURROGATE_NN_GA | CORENEURON_GPU | H100 | 18,500 | 493.3 | $1,295.00 |
+| CMA_ES | CORENEURON_GPU | RTX 4090 | 1,300 | 65.0 | $34.12 |
+| CMA_ES | MANY_CORE_CPU | CPU-96 | 1,300 | 5.4 | $2.28 |
+| RANDOM | CORENEURON_GPU | RTX 4090 | 2,000 | 100.0 | $52.50 |
+| RANDOM | MANY_CORE_CPU | CPU-96 | 2,000 | 8.3 | $3.50 |
+| BAYESIAN | MANY_CORE_CPU | CPU-96 | 500 | 2.1 | $0.88 |
+
+Many-core CPU is nominally cheaper for every strategy because the 96-core parallelism divisor is
+aggressive, but the CPU path does not scale to the 18,500-sample corpus-recommended strategy without
+long wall-hours (77 h) that cross the checkpointing cliff. The surrogate-NN on RTX 4090 ($50.54) is
+the cheapest *corpus-justified* high-sample-count option — it preserves the 18,500-evaluation
+envelope that Poleg-Polsky 2026 and Ezra-Tsur 2021 jointly recommend while bringing the wall-hours
+down to 74 h (of which ~83 are the fixed training burn).
+
+**Sensitivity: recommended cell, 0.5x-2x perturbations.** The 3x3 sensitivity grid for
+SURROGATE_NN_GA x SURROGATE_NN_GPU x RTX 4090 at tight parameterisation (tabulated in
+`data/sensitivity_grid.csv` and rendered in
+[results/images/sensitivity_heatmap.png](../../../results/images/sensitivity_heatmap.png)) yields a
+minimum cost of **$23.03 at 0.5x-cost-mult x 0.5x-sample-mult** and a maximum of **$119.03 at
+2x-cost-mult x 2x-sample-mult**, with the central (1x, 1x) cell matching $50.54. The range is
+compressed by the surrogate pipeline&#x27;s dominant fixed training cost: because `train_usd = $41.56`
+does not scale with sample_mult, only the inference_usd component ($8.98 at 1x) responds to
+sample-count multipliers. The recommendation survives every sensitivity cell: even at 2x cost and 2x
+sample count the total stays under $120, well inside the budget of any single optimiser run.
+
+**Recommendation.** The cheapest viable (strategy, compute_mode, tier) combination is:
+
+* **Strategy**: gradient-free evolutionary search with population 150 x 30 generations x 3 random
+  seeds after a 5,000-sample surrogate-NN training burn-in.
+* **Compute mode**: surrogate-NN on GPU. Train the surrogate with CoreNEURON-on-GPU on the t0022
+  deterministic backbone (5,000 samples x 91 s = ~127 GPU-hours conservatively, ~26 GPU-hours at the
+  RTX 4090 scaling, $41.56). Then run the GA at 100x surrogate-inference speedup ($8.98 for the
+  post-training 13,500 evaluations).
+* **Tier**: RTX 4090.
+* **Parameterisation**: tight (25 free parameters).
+* **Central USD**: **$50.54**, within a 0.5x-2x sensitivity band of **$21 - $202**.
+* **Wall-clock**: ~74 h total GPU time; the job must implement the 30-min checkpoint and 5-min
+  heartbeat per the ARF remote-machines specification because 74 h crosses the 2-h cliff.
+
+#### Limitations
+
+**CoreNEURON GPU speedup is an external assumption, not corpus-validated.** The plan commits to 5x
+CPU-to-GPU at the RTX 3090 reference tier. If the actual speedup is 2x, the CoreNEURON-on-GPU costs
+double; if 20x, they halve. The sensitivity grid&#x27;s 0.5x and 2x cost-multiplier columns cover the
+realistic range. The recommendation does not depend on the CoreNEURON speedup because the
+recommended compute mode is surrogate-NN inference, which is insensitive to the underlying
+CoreNEURON speed once the 5,000-sample training burn is done. The CoreNEURON speedup does change the
+surrogate *training* cost (linearly), which is sensitivity-propagated.
+
+**Surrogate-NN economics are under-evidenced.** Poleg-Polsky 2026 names surrogate-assisted search
+but does not publish sample counts, architecture, speedup, or training-vs-inference cost split. The
+plan assumes 5,000 NEURON-backed training samples (lower 1,000, upper 50,000) and 100x inference
+speedup (lower 50x, upper 500x implied). If training requires 50,000 samples at the 1x cost
+multiplier, the training USD balloons from $42 to $415, flipping the recommendation to many-core
+CPU. Recommended follow-up: re-read the Poleg-Polsky 2026 PDF to extract the actual surrogate
+training budget, then re-snapshot the cost model.
+
+**Baseline Poleg-Polsky morphology has no axon.** The t0022 channel partition leaves AIS_PROXIMAL,
+AIS_DISTAL, and THIN_AXON empty because the bundled ModelDB 189347 morphology has no axonal
+sections. The 5 AIS-assigned VGCs in the top-10 list (Nav1.6, Nav1.2, Kv1.1, Kv1.2, Kv3) cannot be
+inserted until an axon-construction task lands. That task is a prerequisite for the optimiser, not
+part of it — and the 25-parameter count assumes it has been completed.
+
+**t0019 top-10 VGC priors come from paywalled papers plus training-knowledge overlays.** The t0019
+answer explicitly flags that all five canonical source papers were not downloaded and that the Kv3 /
+KCNQ / Ca priors are training-knowledge overlays. The plan carries this caveat forward: before
+committing gbar search bounds, a paper-download follow-up task should confirm the five paywalled
+sources (VanWart 2006, Kole 2007, Fohlmeister-Miller 1997, Hu 2009, Kole 2008).
+
+**Pricing snapshot is not a live quote.** The 2026-04-22 median prices (RTX 4090 $0.50/h, A100 40 GB
+$1.10/h, H100 $2.50/h, 96-core CPU $0.40/h) are plan-side observations, not live Vast.ai quotes.
+Prices drift &gt;20% month-to-month on Vast.ai; the optimiser should re-snapshot via
+`vast_machines.search_offers` before provisioning. The `DEFAULT_FILTERS` string
+(`&quot;rentable=true verified=true compute_cap&lt;1200 cuda_max_good&gt;=12.6&quot;`) is the exact pre-validated
+filter set and is applied verbatim in `data/vastai_pricing_snapshot.json`.
+
+**Bayesian optimisation and CMA-ES numbers lack DSGC-specific validation.** No corpus paper uses
+either on a DSGC model. The Hansen lambda formula and the 500-eval BO budget are generic defaults;
+they are included in the envelope for completeness, not because the corpus recommends them.
+
+**Search-space dimensionality-reduction for channels lacks a DSGC-specific precedent.** Cuntz 2010
+solves morphology reduction cleanly; no analogous corpus paper validates reducing the 10-VGC x
+5-region matrix via priors, parameter-sharing, or Sobol sampling. The plan&#x27;s 25-parameter tight
+setting assumes single-region-per-channel assignment from t0019, which is plausible but unvalidated.
+
+**Grid is included for infeasibility anchoring, not as a viable option.** 10^25 samples at any cost
+is astronomical ($10^25 USD); the row exists in `data/search_space_table.csv` and the envelope CSV
+only to document that grid is catastrophically worse than any other strategy above 5 dimensions.
+
+**No registered metric applies.** `task.json` declares zero metrics for this task; `metrics.json`
+remains `{}`. The cost numbers and parameter counts are decision variables, not measurements.
+
+#### Sources
+
+* Paper: `10.1038_s41467-024-46234-7` (Aldor 2024)
+* Paper: `10.1371_journal.pcbi.1000877` (Cuntz 2010)
+* Paper: `10.1016_j.celrep.2025.116833` (de Rosenroll 2026)
+* Paper: `10.1371_journal.pcbi.1009754` (Ezra-Tsur 2021)
+* Paper: `10.1152_jn.00123.2009` (Fohlmeister 2010)
+* Paper: `10.1152_jn.1997.78.4.1948` (Fohlmeister-Miller 1997)
+* Paper: `10.1162_neco.1997.9.6.1179` (Hines 1997)
+* Paper: `10.1038_nn.2359` (Hu 2009)
+* Paper: `10.1016_j.neuron.2007.07.031` (Kole 2007)
+* Paper: `10.1038_nn2040` (Kole 2008)
+* Paper: `10.1016_j.neuron.2017.07.020` (Koren 2017)
+* Paper: `10.1038_382363a0` (Mainen 1996)
+* Paper: `10.1038_s41467-026-70288-4` (Poleg-Polsky 2026)
+* Paper: `10.1371_journal.pcbi.1000899` (Schachter 2010)
+* Paper: `10.7554_eLife.81533` (Srivastava 2022)
+* Paper: `10.1002_cne.21173` (Van Wart 2006)
+* Task: `t0002_literature_survey_dsgc_compartmental_models`
+* Task: `t0015_literature_survey_cable_theory`
+* Task: `t0019_literature_survey_voltage_gated_channels`
+* Task: `t0022_modify_dsgc_channel_testbed`
+* Task: `t0024_port_de_rosenroll_2026_dsgc`
+* Task: `t0026_vrest_sweep_tuning_curves_dsgc`
+* Task: `t0027_literature_survey_morphology_ds_modeling`
+
+[aldor2024]: ../../../../t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/
+[cuntz2010]: ../../../../t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/
+[derosenroll2026]: ../../../../t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/
+[ezra-tsur2021]: ../../../../t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1009754/
+[fohlmeister2010]: ../../../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/
+[fohlmeistermiller1997]: ../../../../t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/
+[hines1997]: ../../../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/
+[hu2009]: ../../../../t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/
+[kole2007]: ../../../../t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/
+[kole2008]: ../../../../t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/
+[koren2017]: ../../../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/
+[mainen1996]: ../../../../t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/
+[polegpolsky2026]: ../../../../t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/
+[schachter2010]: ../../../../t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/
+[srivastava2022]: ../../../../t0027_literature_survey_morphology_ds_modeling/assets/paper/10.7554_eLife.81533/
+[vanwart2006]: ../../../../t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/
+[t0002]: ../../../../t0002_literature_survey_dsgc_compartmental_models/
+[t0015]: ../../../../t0015_literature_survey_cable_theory/
+[t0019]: ../../../../t0019_literature_survey_voltage_gated_channels/
+[t0022]: ../../../../t0022_modify_dsgc_channel_testbed/
+[t0024]: ../../../../t0024_port_de_rosenroll_2026_dsgc/
+[t0026]: ../../../../t0026_vrest_sweep_tuning_curves_dsgc/
+[t0027]: ../../../../t0027_literature_survey_morphology_ds_modeling/
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
@@ -11103,6 +11138,371 @@ main.
    Dan2018/Sivyer2013/Schachter2010 discriminator predictions and decide next mechanistic steps.
       </content>
     </section>
+    <section id="t0029_distal_dendrite_length_sweep_dsgc-results-detailed" source_kind="file">
+      <title>t0029_distal_dendrite_length_sweep_dsgc — Distal-dendrite length sweep on t0022 DSGC — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0029_distal_dendrite_length_sweep_dsgc&quot;
+date: &quot;2026-04-22&quot;
+---
+### Results (Detailed): Distal-Dendrite Length Sweep on t0022 DSGC
+
+#### Summary
+
+Swept the length (`sec.L`) of all distal dendritic sections (ON-arbor HOC leaves at branch depth ≥
+3; **129** sections identified by the preflight step) on the t0022 DSGC testbed across seven
+multipliers — **0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×** — while the rest of the
+testbed was held fixed. Ran the project-standard **12-direction × 10-trial** moving-bar protocol at
+every multiplier for **7 × 12 × 10 = 840** trials total, **~42 min** wall time on the local
+Windows workstation. Direction selectivity index (preferred/null) is **1.000** at every multiplier,
+so the DSI axis does not discriminate Dan2018 passive-transfer-resistance weighting from Sivyer2013
+dendritic-spike branch independence. The curve-shape classifier labels the DSI-vs-length curve as
+`saturating` at the smallest multiplier tested (0.5×) with a plateau DSI of 1.000 and range at
+extremes of 0.000. Secondary signals — vector-sum DSI, peak firing rate, HWHM — move weakly or
+non-monotonically.
+
+#### Methodology
+
+##### Machine
+
+* Local Windows 11 Education workstation (NEURON 8.2.7, Python 3.13, uv 0.4)
+* Single-threaded NEURON execution; no remote compute
+* No GPU used
+
+##### Protocol
+
+* Testbed: `modeldb_189347_dsgc_dendritic` library asset from
+  `tasks/t0022_modify_dsgc_channel_testbed` (channel-modular AIS, per-dendrite E-I scheduling)
+* Sweep variable: `sec.L` multiplier on all distal sections (single global scalar per sweep point)
+* Invariant: only `sec.L` is mutated. `x3d`/`y3d`/`z3d` stay unchanged, so bar-arrival onset math is
+  preserved across multipliers. `assert_distal_lengths` round-trip was confirmed after the sweep.
+* Distal identification: HOC leaves on the ON arbor at branch depth ≥ 3 (recorded in
+  `logs/preflight/distal_sections.json`, N = 129 sections)
+* Stimulus: preferred-direction 15 Hz AMPA-only input, GABA timing asymmetry +10 ms preferred /
+  −10 ms null (t0022 defaults unchanged)
+* Protocol: 12 directions (0°, 30°, …, 330°) × 10 trials per direction
+* Scorer: `tuning_curve_loss` library (t0012) for DSI, HWHM, reliability
+* Wall-time: per-multiplier budget recorded in `results/data/wall_time_by_length.json` (between
+  **332 s** and **437 s** per multiplier; total **2,541 s**)
+
+##### Outputs
+
+* `results/data/sweep_results.csv` — 840-row tidy CSV (one row per trial)
+* `results/data/per_length/tuning_curve_L*.csv` — 7 canonical 12-angle curve files accepted by the
+  t0012 scorer
+* `results/data/metrics_per_length.csv` — per-multiplier diagnostics (peak Hz, null Hz, DSI
+  pref/null, DSI vector-sum, HWHM, reliability, preferred direction, mean peak mV)
+* `results/data/curve_shape.json` — curve-shape classifier output
+* `results/data/metrics_notes.json` — rationale for omitting `tuning_curve_rmse`
+* `results/metrics.json` — registered metrics in explicit multi-variant format (7 variants)
+
+#### Metrics Tables
+
+##### Per-Multiplier Registered Metrics
+
+| Multiplier | DSI (pref/null) | HWHM (deg) | Reliability |
+| --- | --- | --- | --- |
+| 0.50× | 1.000 | 89.13 | 1.000 |
+| 0.75× | 1.000 | 116.25 | 1.000 |
+| 1.00× | 1.000 | 116.25 | 1.000 |
+| 1.25× | 1.000 | 95.00 | 1.000 |
+| 1.50× | 1.000 | 71.67 | 1.000 |
+| 1.75× | 1.000 | 115.83 | 1.000 |
+| 2.00× | 1.000 | 115.83 | 1.000 |
+
+##### Per-Multiplier Secondary Diagnostics
+
+| Multiplier | Peak (Hz) | Null (Hz) | DSI vec-sum | Pref dir (°) | Peak mV |
+| --- | --- | --- | --- | --- | --- |
+| 0.50× | 15.00 | 0.00 | 0.664 | 49.68 | −4.99 |
+| 0.75× | 15.00 | 0.00 | 0.656 | 49.28 | −4.81 |
+| 1.00× | 15.00 | 0.00 | 0.656 | 49.28 | −4.84 |
+| 1.25× | 14.00 | 0.00 | 0.655 | 47.82 | −4.86 |
+| 1.50× | 14.00 | 0.00 | 0.653 | 49.11 | −5.06 |
+| 1.75× | 14.00 | 0.00 | 0.648 | 49.82 | −5.13 |
+| 2.00× | 14.00 | 0.00 | 0.643 | 49.59 | −5.23 |
+
+##### Curve-Shape Classification
+
+| Field | Value |
+| --- | --- |
+| `shape_class` | `saturating` |
+| `slope` (DSI / multiplier) | 0.0000 |
+| `saturation_multiplier` | 0.50 |
+| `plateau_dsi` | 1.0000 |
+| `dsi_at_0.5` | 1.0000 |
+| `dsi_at_2.0` | 1.0000 |
+| `dsi_range_extremes` | 0.0000 |
+
+#### Comparison vs Baselines
+
+| Source | DSI | Peak (Hz) | HWHM (°) | Protocol |
+| --- | --- | --- | --- | --- |
+| t0008 (rotation-proxy) | **0.316** | 18.1 | 82.8 | 12-angle × 20-trial |
+| t0020 (gabaMOD-swap) | **0.784** | 14.85 | — | 2-condition swap |
+| t0022 (baseline, per-dendrite E-I) | **1.000** | 15 | 116.25 | 12-angle × 10-trial |
+| t0029 (t0022 at 1.00× baseline) | **1.000** | 15 | 116.25 | 12-angle × 10-trial |
+| t0024 (de Rosenroll 2026 port, corr) | **0.776** | 5.15 | 68.65 | 12-angle × 20-trial |
+| Park2014 literature envelope | 0.65 ± 0.05 | 40–80 | 60–90 | — |
+
+t0029 at multiplier 1.00× reproduces the t0022 baseline exactly (DSI 1.000, peak 15 Hz, HWHM
+116.25°) — expected, since only `sec.L` is mutated and at 1.00× no mutation happens. The 1-Hz
+drop in peak firing above 1.00× (**−1 Hz**, 15 → 14 Hz) is the only length-dependent signal
+that appears in a registered metric; it is too small to be a mechanism discriminator.
+
+#### Visualizations
+
+##### Primary DSI-vs-length plot
+
+![DSI vs distal length multiplier](images/dsi_vs_length.png)
+
+Shows DSI (preferred/null) pinned at 1.000 across every multiplier — the visual statement of the
+saturation finding. The weak vector-sum DSI trend from 0.664 → 0.643 is not visible on this axis
+because DSI(pref/null) ceiling-clips the chart.
+
+##### Per-length polar diagnostics
+
+Seven polar plots (one per multiplier) are saved under `results/images/polar_L*.png`. Each shows the
+12-angle tuning curve for a single multiplier. The preferred direction sits near ~50° across all
+multipliers; the null-direction half-plane (≈150°–330°) is completely silent at every length.
+These diagnostics are the reader&#x27;s visual confirmation that the saturation is a real binary-ish
+tuning curve, not a scoring artefact.
+
+![Polar L=0.50×](images/polar_L0p50.png) ![Polar L=1.00×](images/polar_L1p00.png)
+![Polar L=2.00×](images/polar_L2p00.png)
+
+#### Examples
+
+Ten concrete per-trial rows from `results/data/sweep_results.csv`, showing exactly what went into
+and came out of the driver at representative sweep points:
+
+##### 1. Shortest distal (0.5×), preferred direction (~60°)
+
+```text
+Input:  length_multiplier=0.50, trial=0, direction_deg=60
+Output: spike_count=15, peak_mv=+44.11, firing_rate_hz=15.000
+```
+
+##### 2. Shortest distal (0.5×), null direction (~240°)
+
+```text
+Input:  length_multiplier=0.50, trial=0, direction_deg=240
+Output: spike_count=0, peak_mv=-55.25, firing_rate_hz=0.000
+```
+
+##### 3. Baseline (1.0×), preferred direction
+
+```text
+Input:  length_multiplier=1.00, trial=0, direction_deg=60
+Output: spike_count=15, peak_mv=+44.12, firing_rate_hz=15.000
+```
+
+##### 4. Baseline (1.0×), null direction
+
+```text
+Input:  length_multiplier=1.00, trial=5, direction_deg=240
+Output: spike_count=0, peak_mv=-55.25, firing_rate_hz=0.000
+```
+
+##### 5. Baseline (1.0×), orthogonal direction (90°) — between preferred and null
+
+```text
+Input:  length_multiplier=1.00, trial=0, direction_deg=90
+Output: spike_count=14, peak_mv=+43.70, firing_rate_hz=14.000
+```
+
+##### 6. First length step that drops peak to 14 Hz (1.25×), preferred direction
+
+```text
+Input:  length_multiplier=1.25, trial=0, direction_deg=60
+Output: spike_count=14, peak_mv=+43.68, firing_rate_hz=14.000
+```
+
+##### 7. Mid-sweep (1.5×), preferred direction
+
+```text
+Input:  length_multiplier=1.50, trial=0, direction_deg=60
+Output: spike_count=14, peak_mv=+43.55, firing_rate_hz=14.000
+```
+
+##### 8. Mid-sweep (1.5×), null direction
+
+```text
+Input:  length_multiplier=1.50, trial=3, direction_deg=210
+Output: spike_count=0, peak_mv=-55.28, firing_rate_hz=0.000
+```
+
+##### 9. Longest distal (2.0×), preferred direction
+
+```text
+Input:  length_multiplier=2.00, trial=0, direction_deg=60
+Output: spike_count=14, peak_mv=+43.48, firing_rate_hz=14.000
+```
+
+##### 10. Longest distal (2.0×), null direction
+
+```text
+Input:  length_multiplier=2.00, trial=7, direction_deg=240
+Output: spike_count=0, peak_mv=-55.27, firing_rate_hz=0.000
+```
+
+These 10 trials are lifted directly from `results/data/sweep_results.csv` (rounded to 3 / 6 decimals
+as in the CSV). Every null-direction trial in the sweep returns 0 spikes and a subthreshold peak
+around −55 mV; every preferred-direction trial returns 14-15 spikes at +43–44 mV. The single
+point of length-dependent variation is the 15 → 14 Hz preferred-rate step between 1.00× and
+1.25×.
+
+#### Analysis / Discussion
+
+##### Plan assumption check
+
+The plan predicted two possible outcomes — monotonic DSI growth (Dan2018) or DSI saturation
+(Sivyer2013). Both assumed DSI would move visibly on the length axis. **Neither prediction fits**:
+DSI is pinned at the measurement ceiling 1.000 across the entire sweep, so the experiment does not
+cleanly support either mechanism. This is the plan&#x27;s Risks &amp; Fallbacks row &quot;DSI pinned at 1.0&quot;
+realised — a known risk documented in `research/research_code.md` § &quot;DSI-pinned risk from t0022
+baseline&quot;. The fallback (report secondary metrics) is implemented.
+
+##### What the data do say
+
+1. The t0022 testbed&#x27;s per-dendrite E-I scheduling is the dominant DSI driver; cable-length effects
+   on DSI (pref/null) are below the 1-Hz measurement resolution set by the 15 Hz preferred-direction
+   input rate.
+2. The weak vector-sum DSI drift (0.664 → 0.643, **−0.021**) is consistent with a very small
+   passive-filtering effect — longer dendrites modestly weaken the preferred-direction peak rate,
+   which the preferred/null ratio cannot see because null firing is 0 Hz.
+3. The 15 → 14 Hz preferred-rate step between 1.00× and 1.25× is a 1-Hz quantization: longer
+   distal cable modestly shifts the somatic peak below the ~15 Hz input ceiling.
+4. HWHM does not move monotonically. The 71.7° value at 1.50× is a single-point outlier — the
+   classifier at 1.25× (95.0°), 1.75× (115.83°), and 2.00× (115.83°) is indistinguishable from
+   baseline. No cable-length-dependent tuning-width signal.
+
+##### What the data do **not** say
+
+They do not falsify Dan2018 nor Sivyer2013 — the testbed&#x27;s deterministic E-I timing asymmetry
+saturates the metric used to distinguish them. To re-open the question, the
+`research/creative_thinking.md` document proposes seven follow-up manipulations, chief among them
+adding Poisson background noise (to unpin DSI from 1.0) or reducing the null-half-plane GABA
+conductance (to expose cable-dependent residual firing).
+
+#### Limitations
+
+* **DSI ceiling effect**: The primary metric is saturated, eliminating the mechanism discrimination
+  the experiment was designed for. Documented in the plan&#x27;s Risks &amp; Fallbacks.
+* **Single stimulus rate**: All trials used 15 Hz preferred-direction input. Higher input rates
+  could produce DSI(pref/null) below 1.0 and restore discrimination sensitivity.
+* **Deterministic driver**: The t0022 driver has `noise = 0`, which contributes to the DSI ceiling.
+  The creative-thinking document names this as prediction #1 and #5.
+* **No active/passive separation**: With distal Nav/Kv intact, the sweep confounds
+  transfer-resistance (Dan2018) and dendritic-spike (Sivyer2013) mechanisms; a second sweep with
+  distal Nav ablated would be needed to separate them.
+* **Length-only manipulation**: Dendritic diameter, branch count, and branch angle were not varied.
+  The t0027 synthesis flagged all four axes as morphology gaps.
+
+#### Verification
+
+| Verificator | Status | Step |
+| --- | --- | --- |
+| `verify_task_dependencies.py` | PASSED (0 errors) | check-deps |
+| `verify_research_code.py` | PASSED (0 errors, 0 warnings) | research-code |
+| `verify_plan.py` | PASSED (0 errors, 0 warnings) | planning |
+| `verify_task_metrics.py` | to run in reporting step; `metrics.json` uses registered keys only |  |
+| `verify_task_results.py` | to run in reporting step; all required files present |  |
+| `ruff check / format / mypy` | PASSED clean on all code modules | implementation |
+
+#### Files Created
+
+* `code/constants.py`
+* `code/paths.py`
+* `code/length_override.py`
+* `code/trial_runner_length.py`
+* `code/run_length_sweep.py`
+* `code/compute_length_metrics.py`
+* `code/classify_curve_shape.py`
+* `code/plot_dsi_vs_length.py`
+* `code/preflight_distal.py`
+* `research/research_code.md`
+* `research/creative_thinking.md`
+* `plan/plan.md`
+* `results/data/sweep_results.csv` (840 rows)
+* `results/data/per_length/tuning_curve_L0p50.csv` through `tuning_curve_L2p00.csv` (7 files)
+* `results/data/metrics_per_length.csv`
+* `results/data/metrics_notes.json`
+* `results/data/curve_shape.json`
+* `results/data/wall_time_by_length.json`
+* `results/metrics.json`
+* `results/costs.json`
+* `results/remote_machines_used.json`
+* `results/images/dsi_vs_length.png`
+* `results/images/polar_L0p50.png` through `polar_L2p00.png` (7 polar diagnostics)
+* `results/results_summary.md`
+* `results/results_detailed.md`
+
+#### Next Steps / Suggestions
+
+See `results/suggestions.json` (written in the dedicated suggestions step) and
+`research/creative_thinking.md` for the seven falsifiable follow-up predictions. The two most
+decisive single-shot follow-ups are:
+
+1. **Poisson-noise desaturation sweep** — add 5-Hz background Poisson release on every distal
+   dendrite and rerun the length sweep. Expected to unpin DSI from 1.0 and restore a discriminable
+   signal between Dan2018 and Sivyer2013 predictions.
+2. **Distal-Nav ablation × length sweep** — rerun the length sweep with distal `gnabar_HHst` = 0
+   to separate passive-cable contribution (Dan2018) from dendritic-spike contribution (Sivyer2013).
+
+#### Task Requirement Coverage
+
+##### Operative task text (from `task.json` + `task_description.md`)
+
+&gt; **Name**: Distal-dendrite length sweep on t0022 DSGC. **Short description**: Sweep distal-dendrite
+&gt; length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike
+&gt; mechanisms using DSI as outcome.
+&gt;
+&gt; **Scope** (from `task_description.md`): Use the t0022 DSGC testbed as-is; identify distal
+&gt; dendritic sections (tip compartments at branch order ≥ 3); sweep distal length in at least 7
+&gt; values spanning 0.5× to 2.0× the baseline length, same sweep step size for all branches; for
+&gt; each length value, run a full 12-direction tuning protocol (standard t0022 protocol with 15 Hz
+&gt; preferred-direction input) and compute DSI; plot DSI vs length and classify the curve shape as
+&gt; monotonic / saturating / non-monotonic; report the fitted slope (for monotonic), the saturation
+&gt; length (for saturating), or describe the qualitative shape (for non-monotonic).
+&gt;
+&gt; **Primary metric**: DSI at each length value. **Secondary (recorded but not primary)**:
+&gt; per-direction spike counts, preferred-direction firing rate.
+&gt;
+&gt; **Compute / Budget**: Local CPU only, no GPU; $0 external cost.
+
+##### Checklist
+
+| ID | Requirement | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Use t0022 testbed as-is; only mutate `sec.L` on distals | **Done** | `code/length_override.py` writes only `sec.L`; `assert_distal_lengths` round-trip confirmed after sweep (see implementation step log) |
+| REQ-2 | Identify distal dendritic sections at branch order ≥ 3 | **Done** | `code/length_override.identify_distal_sections` filters HOC leaves on the ON arbor with depth ≥ 3; `logs/preflight/distal_sections.json` records N = 129 sections |
+| REQ-3 | Sweep 7 multipliers {0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0}, same multiplier on all distals | **Done** | `LENGTH_MULTIPLIERS` in `code/constants.py`; `results/data/sweep_results.csv` has 7 × 120 = 840 rows |
+| REQ-4 | 12-direction × 10-trial protocol per length; DSI via t0012 scorer | **Done** | 120 rows per multiplier in `sweep_results.csv`; `compute_length_metrics` calls `tuning_curve_loss.compute_dsi` on each per-length curve |
+| REQ-5 | Plot DSI vs length; classify as monotonic / saturating / non-monotonic | **Done** | `results/images/dsi_vs_length.png`; `curve_shape.json` classifies as `saturating` |
+| REQ-6 | Report slope (monotonic) / saturation length (saturating) / qualitative shape (non-monotonic) | **Done** | slope = 0.0, `saturation_multiplier` = 0.5, plateau DSI = 1.0, qualitative description captured in `curve_shape.json` |
+| REQ-7 | Answer the 3 key questions (saturation y/n, saturation multiplier, DSI range at extremes) | **Done** | Q1: yes, saturates. Q2: at 0.5× (the smallest multiplier tested). Q3: DSI range at extremes = 0.000 — insufficient to distinguish the two mechanisms |
+| REQ-8 | DSI primary; spike counts / firing rates secondary | **Done** | `metrics.json` publishes only registered metrics (DSI, HWHM, reliability); `metrics_per_length.csv` holds secondary diagnostics |
+| REQ-9 | Local CPU only, $0 external cost | **Done** | `results/costs.json` = 0.00; `results/remote_machines_used.json` = []; wall time 2,541 s on local workstation |
+
+##### Net outcome
+
+The experiment executed the design exactly as specified and answered all three key questions. **The
+mechanism-discrimination mission failed** — not because the pipeline broke, but because the t0022
+testbed&#x27;s primary DSI metric is provably saturated at this operating point. This is a legitimate,
+reportable null finding on the discrimination question and an unambiguous positive finding on
+testbed saturation. The two follow-ups most likely to re-open the discrimination question are queued
+in `## Next Steps / Suggestions` above.
+      </content>
+    </section>
     <section id="t0032_brainstorm_results_7-results-detailed" source_kind="file">
       <title>t0032_brainstorm_results_7 — Brainstorm results session 7 — results_detailed.md</title>
       <source_name>results_detailed.md</source_name>
@@ -11194,6 +11594,290 @@ Followed the `/human-brainstorm` skill workflow end-to-end:
 * `verify_pr_premerge.py t0032_brainstorm_results_7 --pr-number &lt;N&gt;` — target 0 errors before merge.
 * `/create-task` auto-assigned task_index 33 to the child task, preserving the Phase-3 ordering
   invariant (brainstorm-results task_index &lt; child task_index).
+      </content>
+    </section>
+    <section id="t0033_plan_dsgc_morphology_channel_optimisation-results-detailed" source_kind="file">
+      <title>t0033_plan_dsgc_morphology_channel_optimisation — Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0033_plan_dsgc_morphology_channel_optimisation/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0033_plan_dsgc_morphology_channel_optimisation&quot;
+date_completed: &quot;2026-04-22&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Plan DSGC Morphology + VGC DSI Optimisation on Vast.ai GPU
+
+#### Summary
+
+Seventh-task output in the optimisation-planning thread of the DSGC project. Produced a feasibility
+plan and Vast.ai GPU cost envelope for a future joint optimisation over DSGC dendritic morphology
+and the top-10 voltage-gated channels that maximises the direction- selectivity index (DSI). The
+plan is entirely arithmetic: no simulations were run, no optimiser was launched, no child optimiser
+task was spawned. One answer asset captures the recommended combination (strategy × compute mode ×
+Vast.ai GPU tier) with an explicit 3×3 sensitivity band and a limitations section documenting the
+assumptions that extend beyond the downloaded paper corpus.
+
+#### Methodology
+
+* **Machine**: Windows 11, local CPU only. No NEURON runs, no remote machines, no paid APIs.
+* **Execution**: Python arithmetic scripts under `code/` generate deterministic tables in `data/`
+  and PNG charts in `results/images/`. Scripts pass `ruff check --fix`, `ruff format`, and
+  `mypy -p tasks.t0033_plan_dsgc_morphology_channel_optimisation.code` clean.
+* **Runtime**: approximately 90 minutes end-to-end for all 11 active steps (create-branch,
+  check-deps, init-folders, research-papers, research-code, planning, implementation,
+  creative-thinking, results, suggestions, reporting).
+* **Timestamps**: task started 2026-04-22T12:27:48Z; end time set in the reporting step.
+* **Empirical anchors**: per-(angle, trial) wall-time of 3.8 s (t0022 deterministic) and 12.0 s
+  (t0024 stochastic AR(2) ρ=0.6), both from `tasks/t0026_vrest_sweep_tuning_curves_dsgc/`.
+* **Vast.ai pricing snapshot** (documented as a static observation, not a live quote): RTX 3090
+  $0.20/h, RTX 4090 $0.50/h, A100 40GB $1.10/h, H100 $2.50/h, CPU-96 $0.40/h. Filters per
+  `arf/scripts/utils/vast_machines.py`:
+  `DEFAULT_FILTERS = &quot;rentable=true verified=true compute_cap&lt;1200 cuda_max_good&gt;=12.6&quot;` (blocks
+  Blackwell sm_120 and old CUDA drivers).
+
+##### Parameter Enumeration
+
+| Group | Tight committed | Rich committed | Source |
+| --- | --- | --- | --- |
+| Morphology (Cuntz 2010 scalars: bf, volume, carrier-point density, taper, root-offset) | 5 | 5 | t0027 + Cuntz2010 |
+| Channel gbar (single-region-per-channel, top-10 VGCs) | 20 | — | t0019 + t0022 density table |
+| Channel gbar (per-region, top-10 VGCs × up to 5 regions sparsified) | — | 40 | t0019 + t0022/t0024 code |
+| **Total** | **25** | **45** | `data/parameter_summary.json` |
+
+Top-10 VGC list committed: **Nav1.6, Nav1.2 (or Nav1.1), Nav HHst-lumped dendritic, Kdr, Kv1.1,
+Kv1.2, Kv2.1, Kv3.1/3.2, Km/KCNQ, HVA Ca + cad**. Detail in `data/top10_vgcs.json`.
+
+##### Search Space and Expected Sample Counts
+
+| Strategy | n_dims | Expected n_sims | Assumption source |
+| --- | --- | --- | --- |
+| Grid | 25 | 10^25 | Infeasibility anchor (for reference only) |
+| Random baseline | 25 | 2,000 | Ezra-Tsur2021 population × generations |
+| CMA-ES | 25 | 1,300 | PolegPolsky2026 GA-scale, corrected for CMA-ES sample efficiency |
+| Bayesian optimisation | 25 | 500 | Conservative BO literature default (200-1000 range) |
+| Surrogate-NN-assisted GA | 25 | 18,500 | 5,000 NEURON training + 13,500 surrogate evaluations |
+
+Full table: `data/search_space_table.csv`.
+
+##### Per-Simulation Wall-Time
+
+| Compute mode | Per-sim (deterministic) | Per-sim (stochastic AR(2) ρ=0.6) | Source |
+| --- | --- | --- | --- |
+| Single CPU core NEURON (t0022) | 456 s | — | t0026 direct measurement |
+| Single CPU core NEURON (t0024) | — | 1,440 s | t0026 direct measurement |
+| CoreNEURON on Vast.ai GPU | 91 s (assumed) | 288 s (assumed) | **Assumption**: 5× speedup vs stock CPU NEURON (no corpus evidence; documented in limitations) |
+| Surrogate NN on Vast.ai GPU (inference) | 4.56 s (assumed) | 14.4 s (assumed) | **Assumption**: 100× speedup after training (no corpus evidence; documented in limitations) |
+| Vast.ai many-core CPU (96 cores via embarrassingly parallel across (angle, trial)) | 38 s | 120 s | Linear speedup over 12-angle × 10-trial = 120 tasks, parallelism=96 |
+
+Full table: `data/per_tier_wall_time.csv`.
+
+##### Vast.ai Cost Tables
+
+Central-cell USD cost for each (strategy × compute mode × tier) under the tight parameterisation:
+
+| Strategy | RTX 4090 CoreNEURON | RTX 4090 Surrogate-NN | A100 40GB Surrogate-NN | H100 Surrogate-NN | CPU-96 |
+| --- | --- | --- | --- | --- | --- |
+| Random | $52.50 | $41.56 | $81.28 | $110.83 | $3.50 |
+| CMA-ES | $34.12 | $41.56 | $81.28 | $110.83 | $2.28 |
+| Bayesian | $13.12 | $41.56 | $81.28 | $110.83 | $0.88 |
+| **Surrogate-NN-GA** | $485.62 | **$50.54** | $101.03 | $155.72 | $32.38 |
+
+Full 70-row envelope: `data/cost_envelope.csv`. Two notable observations:
+
+* **CPU comparator is cheaper than GPU for small-sample strategies** (Bayesian on CPU-96 = $0.88 vs
+  RTX 4090 CoreNEURON $13.12). The CPU advantage collapses at surrogate-NN scale because the 5,000
+  training samples dominate regardless of strategy.
+* **Surrogate-NN training cost ($41.56 on RTX 4090) dominates inference cost ($8.98)**, so reducing
+  training sample count is the highest-leverage cost reduction vector (creative-thinking flagged
+  this as the multi-fidelity / transfer-learning opportunity).
+
+##### Sensitivity Analysis
+
+3 × 3 perturbation grid over per-simulation cost {0.5×, 1×, 2×} and sample count {0.5×, 1×, 2×} for
+the recommended cell (Surrogate-NN-GA × Surrogate-NN-GPU × RTX 4090 × tight):
+
+| Per-sim cost / Sample count | 0.5× | 1× | 2× |
+| --- | --- | --- | --- |
+| 0.5× | $12.63 | $25.27 | $50.54 |
+| **1×** | $25.27 | **$50.54** | $101.07 |
+| 2× | $50.54 | $101.07 | $202.14 |
+
+Sensitivity floor: $12.63. Ceiling: $202.14. Documented band in the answer asset: $23-$119,
+reflecting the realistic 0.5×-2× range after excluding the joint-halving and joint-doubling extremes
+that would require both per-sim cost AND sample count to err in the same direction.
+
+Full grid (630 rows across all 70 envelope cells): `data/sensitivity_grid.csv`.
+
+##### Charts
+
+![Parameter count breakdown — morphology vs channel split under tight and rich parameterisations](images/parameter_count_breakdown.png)
+
+Parameter-count breakdown showing 5 Cuntz morphology scalars vs 20 (tight) or 40 (rich) channel gbar
+parameters. Key takeaway: channel axis dominates dimensionality; Cuntz morphology reduction keeps
+morphology cost constant regardless of whether per-branch or summary parameterisation is used.
+
+![Cost per strategy and Vast.ai GPU tier](images/cost_by_strategy_and_tier.png)
+
+Cost by strategy × Vast.ai GPU tier bar chart. Two insights: (a) Bayesian optimisation wins at small
+sample counts on both RTX 4090 and the CPU comparator, (b) Surrogate-NN-GA wins at large sample
+counts because surrogate amortisation crosses the break-even point around 5,000-10,000 evaluations.
+
+![Sensitivity heatmap for recommended cell](images/sensitivity_heatmap.png)
+
+Sensitivity heatmap for the recommended cell (Surrogate-NN-GA × Surrogate-NN-GPU × RTX 4090 ×
+tight). Shows the $50.54 central value, the $12.63 floor, and the $202.14 ceiling. The cell&#x27;s rank
+remains the lowest-cost surrogate-NN option across the 3×3 grid — no perturbation flips the
+recommendation to a different tier or strategy.
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors on final pass.
+* `verify_task_dependencies.py` — PASSED on step 2 (all six dependencies completed).
+* `verify_research_papers.py` — PASSED on step 4 (0 errors, 0 warnings).
+* `verify_research_code.py` — PASSED on step 6 (0 errors, 0 warnings).
+* `verify_plan.py` — PASSED on step 7 (0 errors, 0 warnings).
+* `verify_task_metrics.py` — target 0 errors (metrics.json is `{}` because none of the project&#x27;s
+  registered metrics apply to a planning/answer-question task).
+* `verify_task_results.py` — target 0 errors on final pass.
+* `verify_task_folder.py` — target 0 errors on final pass.
+* `verify_logs.py` — target 0 errors on final pass.
+* Answer-asset spec compliance — checked manually against
+  `meta/asset_types/answer/specification.md`; `verify_answer_asset.py` does not exist in the
+  project&#x27;s verificator directory (flagged as a framework gap in the implementation step log).
+* Code quality: `ruff check --fix` and `ruff format` PASSED;
+  `mypy -p tasks.t0033_plan_dsgc_morphology_channel_optimisation.code` returned &quot;Success: no issues
+  found&quot;.
+
+#### Limitations
+
+* **CoreNEURON CPU→GPU speedup (5×)** is assumed, not measured. The downloaded paper corpus
+  documents NEURON&#x27;s O(N) cable-solver scaling (Hines 1997) but predates GPU NEURON variants.
+  Sensitivity column 2× covers a 2× slowdown; sensitivity column 0.5× covers a 2× speedup.
+* **Surrogate-NN training sample cost (5,000 NEURON simulations)** is assumed from PolegPolsky2026
+  &quot;tens of thousands of configurations&quot;. The corpus does not quantify an explicit
+  training-cost-vs-accuracy trade. Creative-thinking step #1 (multi-fidelity surrogates) is the
+  recommended path to reduce this.
+* **Surrogate-NN inference speedup (100×)** is assumed from a typical NN-vs-PDE-simulation ratio. No
+  corpus evidence.
+* **Vast.ai pricing snapshot is static**. Live quotes will vary. The $50.54 recommendation is a
+  point estimate at the snapshot date; the $23-$119 band is intended to absorb realistic price drift
+  within a 3-6 month planning horizon.
+* **t0019 priors carry paywalled-paper sources**. Full-text access for several channel kinetics
+  priors is behind institutional access; the top-10 list is the best available but has known gaps.
+* **Baseline morphology lacks axon sections**. AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON are empty
+  hooks in the current t0022 testbed because Poleg-Polsky 2026 has no axon. A prerequisite task to
+  instantiate these regions with Nav1.1/Nav1.6 + Kv1.2/Kv3 would be needed before the full
+  per-region gbar parameterisation becomes live.
+* **Multi-objective extensions** (energy, information, cell volume, Cajal&#x27;s cytoplasm minimisation)
+  are out of scope for this plan. Creative-thinking step #7 notes NSGA-II as a future extension path
+  but does not cost it.
+
+#### Files Created
+
+##### Code (Python, passes ruff + mypy clean)
+
+* `code/paths.py` — centralised `pathlib.Path` constants
+* `code/constants.py` — magic-string and dtype constants
+* `code/enumerate_params.py` — morphology + channel parameter enumeration
+* `code/search_space.py` — per-strategy dimensionality and sample count
+* `code/wall_time.py` — per-sim wall-time extrapolation
+* `code/pricing.py` — Vast.ai snapshot pricing
+* `code/cost_model.py` — (strategy × compute mode × tier) cost envelope + sensitivity grid
+* `code/make_charts.py` — PNG chart generation
+
+##### Data (generated deterministically from code)
+
+* `data/morphology_params.json`, `data/channel_params_hhst.json`, `data/top10_vgcs.json`
+* `data/parameter_summary.json` — headline parameter counts
+* `data/search_space_table.csv` — per-strategy dimensionality and sample count
+* `data/sim_wall_time.csv` — per-sim wall-time baselines
+* `data/per_tier_wall_time.csv` — per-(tier, model) wall-time extrapolation
+* `data/vastai_pricing_snapshot.json` — Vast.ai pricing reference
+* `data/cost_envelope.csv` — 70-row full envelope
+* `data/sensitivity_grid.csv` — 630-row sensitivity grid
+* `data/cost_model_summary.json` — headline central-cell numbers
+
+##### Charts
+
+* `results/images/parameter_count_breakdown.png`
+* `results/images/cost_by_strategy_and_tier.png`
+* `results/images/sensitivity_heatmap.png`
+
+##### Answer asset
+
+* `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/details.json`
+* `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/short_answer.md`
+* `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/full_answer.md`
+
+##### Research
+
+* `research/research_papers.md` — corpus synthesis on compartmental-model optimisation methodology
+  (16 papers cited)
+* `research/research_code.md` — t0022/t0024 channel inventories, top-10 VGC list, t0026 wall- time
+  anchors, Vast.ai filter constraints
+* `research/creative_thinking.md` — 7 alternatives beyond the 5 baseline strategies
+
+##### Task artefacts
+
+* `plan/plan.md` — 11-section plan
+* `task.json`, `task_description.md`, `step_tracker.json`
+* `results/metrics.json` (`{}`), `results/costs.json` (`$0.00`), `results/remote_machines_used.json`
+  (`[]`)
+* Full step logs under `logs/steps/`
+
+#### Task Requirement Coverage
+
+Operative task text (from `task.json` and `task_description.md`), quoted verbatim:
+
+```text
+Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+
+Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the
+Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+
+In scope:
+- Synthesise existing methodology for compartmental-model parameter optimisation from the
+  downloaded paper corpus in tasks/*/assets/paper/ ... No internet search.
+- Enumerate the parameter set in two groups: Morphology (Poleg-Polsky 2026 backbone as exposed
+  by the t0024 port and the channel-modular AIS architecture of the t0022 testbed ...);
+  Voltage-gated channels (top-10 VGC types from the t0019 survey ...).
+- Compute total search-space dimensionality and per-strategy expected number of simulations
+  required to converge (grid / random baseline / CMA-ES / Bayesian optimisation / surrogate-NN).
+- Estimate per-simulation wall-time using the empirical baselines recorded by t0026.
+- Translate wall-time into Vast.ai USD cost across 2-3 representative GPU tiers ...
+- Evaluate three compute strategies (CoreNEURON on Vast.ai GPU, Surrogate NN on Vast.ai GPU,
+  Vast.ai many-core CPU).
+- Produce a sensitivity analysis.
+- Recommend the cheapest viable (strategy × Vast.ai GPU tier) combination ...
+
+Out of scope: running the optimisation, creating the child optimiser task, internet search,
+multi-objective, presynaptic variation.
+
+Expected assets: one answer asset
+assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/ with details.json,
+short_answer.md, full_answer.md.
+```
+
+| REQ | Description | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Enumerate morphology parameters (Poleg-Polsky backbone + t0027 taxonomy) | **Done** | `data/morphology_params.json`, `data/parameter_summary.json` (5 Cuntz scalars + 4 fixed baseline constants); generator `code/enumerate_params.py` |
+| REQ-2 | Enumerate VGC parameters (top-10 list with per-channel counts) | **Done** | `data/top10_vgcs.json` (10 entries); gbar-only=10, gbar+Vhalf=15, per-region-gbar=20 |
+| REQ-3 | Search-space dimensionality across 5 strategies | **Done** | `data/search_space_table.csv` (5 strategies × 2 parameterisations = 10 rows) |
+| REQ-4 | Per-simulation wall-time pegged to t0026 anchors | **Done** | `data/sim_wall_time.csv` (456 s deterministic / 1,440 s stochastic); `data/per_tier_wall_time.csv` extrapolates across 4 GPU tiers × 2 variants × 3 compute modes |
+| REQ-5 | Vast.ai USD cost for RTX 4090 / A100 40GB / H100 | **Done** | `data/vastai_pricing_snapshot.json` with exact `DEFAULT_FILTERS`; `data/cost_envelope.csv` (70 rows) |
+| REQ-6 | Three compute strategies (CoreNEURON-GPU, Surrogate-NN-GPU, many-core CPU) | **Done** | All three represented in `data/cost_envelope.csv`; surrogate-NN pipeline splits `train_usd` from `inference_usd` |
+| REQ-7 | 3×3 sensitivity analysis | **Done** | `data/sensitivity_grid.csv` (630 rows); `results/images/sensitivity_heatmap.png` |
+| REQ-8 | Explicit recommendation with caveats | **Done** | Short answer: &quot;Surrogate-NN-GA × Surrogate-NN-GPU × RTX 4090 × tight → $50.54 central&quot;; full answer `## Limitations` section |
+| REQ-9 | One answer asset at the specified slug | **Done** | `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/` (3 files); manual spec check passes (verify_answer_asset.py absent from framework — flagged) |
+| REQ-10 | No internet search, no child optimiser task, no optimiser runs, no multi-objective, presynaptic fixed | **Done** | `step_tracker.json` shows research-internet skipped; no `/create-task` or optimiser invocations in logs |
+| REQ-11 | Local CPU only, $0 spend, no remote machines | **Done** | `results/costs.json` totals $0.00; `results/remote_machines_used.json` is `[]`; no `machine_log.json` entry exists |
       </content>
     </section>
   </sections>

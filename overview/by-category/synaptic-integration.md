@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(19)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(21)](../suggestions/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -2107,7 +2107,48 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (17 open, 2 closed)
+## Suggestions (19 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
+deterministic ceiling on t0022</strong> (S-0029-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on
+null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured
+compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to
+exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable
+mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed
+length multiplier of 1.0x and locate the conductance at which null-direction firing first
+exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and
+S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
+mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
+CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite
+length sweep on t0022</strong> (S-0029-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0022 `_silence_baseline_hoc_synapses` sets b2gnmda = 0 and installs single-component
+AMPA-only E-I pairs, removing the Espinosa2010 AMPA/NMDA kinetic-tiling mechanism from the
+testable space entirely. Espinosa2010 proposes that DSGC DS arises from different activation
+time courses of AMPA and NMDA interacting with cable propagation delay - predicting
+non-monotonic DSI-vs-length because NMDA's 50-150 ms time constant resonates with propagation
+delay at specific lengths. Modify `_silence_baseline_hoc_synapses` to restore b2gnmda at 30%
+of the 189347 baseline and rerun the 7-point length sweep. If DSI drops below 1.000 with
+non-monotonic length dependence, kinetic tiling is a real third mechanism and the current null
+result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
+t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
+Recommended task types: build-model, experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response

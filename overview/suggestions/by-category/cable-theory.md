@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-8 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **6
-open** (2 high, 3 medium, 1 low), **2 closed**.
+9 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **7
+open** (2 high, 4 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -78,6 +78,33 @@ foundations, on-the-path shunting DS, morphology-driven firing) and references t
 survey task should add ~5 papers on frequency-domain cable theory (Koch 1984, Segev & Rall
 1988) and thin-dendrite active transmission (Stuart & Sakmann 1994, London & Hausser 2005
 review, Stuart & Spruston 2015 review) to close the gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to
+reach Dan2018's critical regime</strong> (S-0029-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1038_s41598-018-23998-9`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1038_s41598-018-23998-9/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Dan2018 reports monotonic DSI-vs-length over 50-400 um distal branches; Sivyer2013's critical
+length sits at ~150 um. The t0022 distal-leaf baseline is on the order of tens of um, so the
+0.5-2.0x sweep likely spans only ~15-160 um, overlapping only the tail of Sivyer2013's range
+and sitting entirely below Dan2018's critical length. Add three extreme sweep points at 3.0x,
+5.0x, and 8.0x while keeping the rest of the t0022 testbed fixed. Watch for `d_lambda`
+violations at extreme lengths (fallback: adaptive `nseg` at each point). Possible outcomes:
+(a) DSI stays at 1.000 and peak Hz continues linear decline - testbed is cable-dominated at
+the soma and no resolution is possible; (b) DSI drops at a specific high multiplier with
+monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
+narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
+min CPU. Recommended task types: experiment-run.
 
 </details>
 

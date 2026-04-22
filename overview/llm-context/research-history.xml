@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-22T12:12:19Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-22T15:43:52Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>70</section_count>
-    <char_count>1096223</char_count>
-    <byte_count>1098742</byte_count>
-    <estimated_tokens>274055</estimated_tokens>
+    <section_count>73</section_count>
+    <char_count>1205311</char_count>
+    <byte_count>1208126</byte_count>
+    <estimated_tokens>301327</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -139,10 +139,12 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
         <id>t0027_literature_survey_morphology_ds_modeling</id>
         <id>t0028_brainstorm_results_6</id>
+        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0032_brainstorm_results_7</id>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Completed tasks: 28
+Completed tasks: 30
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -306,11 +308,23 @@ Completed: 2026-04-22
 Short description: Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
 Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic brainstorm following the completion of t0026 (V_rest sweep and tuning curves on t0022/t0024 DSGCs) and t0027 (15-paper morphology-direction-selectivity literature survey with synthesis answer). Three new tasks approved: t0029 (distal-dendrite length sweep on t0022), t0030 (distal-dendrite diameter sweep on t0022), t0031 (paywalled PDF fetch for Kim2014 and Sivyer2013). Zero suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Outcome The researcher directed the session toward dendritic morphology sweeps, keeping t0023 (Hanson2019 port) intervention_blocked, preferring a 3-5 task focused batch executed...
 
+## Distal-dendrite length sweep on t0022 DSGC
+ID: t0029_distal_dendrite_length_sweep_dsgc
+Completed: 2026-04-22
+Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
+Result summary: Results Summary: Distal-Dendrite Length Sweep on t0022 DSGC Summary Swept distal-dendrite length on the t0022 DSGC testbed across seven multipliers (**0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×**) of baseline `sec.L` while holding the rest of the testbed fixed — **840 trials** across **12 directions × 10 trials × 7 lengths** in **~42 min** wall time on the local Windows workstation. **DSI (preferred/null definition) pins at 1.000 at every multiplier**, so the experiment cannot discriminate Dan2018 passive-transfer-resistance weighting from Sivyer2013 dendritic-spike branch independence on the DSI axis. Secondary metrics (vector-sum DSI, peak firing rate, HWHM) move only weakly or...
+
 ## Brainstorm results session 7
 ID: t0032_brainstorm_results_7
 Completed: 2026-04-22
 Short description: Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
 Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029 (distal-length sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation, scoped against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Overview Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030, t0031) is already queued from t0028 and is unlikely to change the feasibility of a large-scale joint...
+
+## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+ID: t0033_plan_dsgc_morphology_channel_optimisation
+Completed: 2026-04-22
+Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+Result summary: Results Summary: Plan DSGC Morphology + VGC DSI Optimisation on Vast.ai GPU Summary Produced a full feasibility plan and Vast.ai GPU cost envelope for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation. Committed parameter count: **25 free parameters tight** (5 Cuntz morphology scalars + 20 per-region channel gbar) with a **45-parameter rich** upper-bound envelope. Recommended (strategy × compute mode × GPU tier): **Surrogate-NN-assisted GA × Surrogate-NN-GPU × RTX 4090 × tight parameterisation** → central estimate **$50.54**, sensitivity band **$23-$119** under 0.5×/1×/2× perturbations to per-sim cost and sample count. Metrics * **Parameter count...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -318,13 +332,11 @@ Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic 
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
-        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -332,13 +344,6 @@ Status: intervention_blocked
 Effective date: 2026-04-20
 Short description: Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
 Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library, t0022_modify_dsgc_channel_testbed
-
-## Distal-dendrite length sweep on t0022 DSGC
-ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: in_progress
-Effective date: 2026-04-22
-Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
-Dependencies: t0022_modify_dsgc_channel_testbed
 
 ## Distal-dendrite diameter sweep on t0022 DSGC
 ID: t0030_distal_dendrite_diameter_sweep_dsgc
@@ -352,13 +357,6 @@ ID: t0031_fetch_paywalled_morphology_papers
 Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
-
-## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
-ID: t0033_plan_dsgc_morphology_channel_optimisation
-Status: not_started
-Effective date: unknown
-Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
-Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -376,9 +374,10 @@ Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literatur
         <id>patch-clamp-techniques-and-constraints-for-dsgc-modelling</id>
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
         <id>morphology-direction-selectivity-modeling-synthesis</id>
+        <id>vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation</id>
       </source_ids>
       <content>
-Answers: 11
+Answers: 12
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -467,6 +466,14 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, dendritic-computation, retinal-ganglion-cell, cable-theory, synaptic-integration
 
 Computational models have shown that direction selectivity is shaped by dendritic length, branch-order and branching pattern, dendritic diameter (especially in starburst amacrine cells), spatial layout and kinetic tiling of bipolar-cell inputs, asymmetric arbors and plexus density, and the electrotonic compartmentalization of terminal branches. The load-bearing mechanisms are passive cable filtering with transfer-resistance weighting of distributed inputs, local-global EPSP summation along soma-to-tip dendritic gradients, space-time input tiling (sustained proximal, transient distal), dendritic-spike branch independence driven by voltage-gated Na and Ca channels, and asymmetric SAC-to-DSGC...
+
+## What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?
+ID: vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation
+Created by: t0033_plan_dsgc_morphology_channel_optimisation on 2026-04-22
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
+
+Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119 dollars. This combination is cheapest among the corpus-justified gradient-free strategies because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour. Confidence is medium: the CoreNEURON CPU-to-GPU speedup and...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -19514,6 +19521,643 @@ No research required for brainstorming session.
 No research required for brainstorming session.
       </content>
     </section>
+    <section id="t0029_distal_dendrite_length_sweep_dsgc-research_code" source_kind="file">
+      <title>t0029_distal_dendrite_length_sweep_dsgc — Distal-dendrite length sweep on t0022 DSGC — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0029_distal_dendrite_length_sweep_dsgc</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0029_distal_dendrite_length_sweep_dsgc/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0029_distal_dendrite_length_sweep_dsgc&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 9
+tasks_cited: 8
+libraries_found: 6
+libraries_relevant: 3
+date_completed: &quot;2026-04-22&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Distal-Dendrite Length Sweep on the t0022 DSGC Testbed
+
+#### Task Objective
+
+Sweep the length (`L`) of distal dendritic compartments on the existing t0022 DSGC channel testbed
+(at least 7 multipliers from 0.5x to 2.0x of baseline), run the canonical 12-direction tuning
+protocol at each length, compute DSI via the t0012 scorer, and classify the DSI-vs-length curve as
+monotonic (favours Dan2018 passive transfer-resistance weighting), saturating (favours Sivyer2013
+dendritic-spike branch independence), or non-monotonic. The experiment discriminates between two
+mechanisms that both fit the baseline t0022 tuning data. No channel edits, no input rewiring, CPU
+only, zero external cost. Outputs are `results/data/sweep_results.csv`,
+`results/images/dsi_vs_length.png`, and per-length DSI entries in `results/metrics.json`.
+
+#### Library Landscape
+
+Six libraries were discovered via `overview/libraries/README.md` (the asset-library aggregator
+script is not present in this worktree, so the overview index served as the authoritative
+enumeration). None of them has a correction overlay applied.
+
+* `modeldb_189347_dsgc_dendritic` ([t0022], v0.1.0) — **Highly relevant.** This is the testbed we
+  are sweeping. Its driver `run_tuning_curve.py`, `constants.py`, `paths.py`, `neuron_bootstrap.py`,
+  `score_envelope.py`, `plot_tuning_curve.py`, and `dsgc_channel_partition.hoc` are all registered
+  `module_paths`, so functions like `build_ei_pairs`, `schedule_ei_onsets`,
+  `run_one_trial_dendritic`, `EiPair`, and the helpers `_preload_nrnmech_dll`,
+  `_source_channel_partition_hoc`, `_silence_baseline_hoc_synapses`,
+  `_assert_bip_and_gabamod_baseline`, and `_count_threshold_crossings` are importable via
+  `from tasks.t0022_modify_dsgc_channel_testbed.code.run_tuning_curve import ...`.
+
+* `tuning_curve_loss` ([t0012], v0.1.0) — **Highly relevant.** Canonical DSI / peak / null / HWHM
+  / reliability / RMSE scorer. Import via
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss import (compute_dsi, compute_peak_hz, compute_null_hz, load_tuning_curve, score, ScoreReport, METRIC_KEY_DSI)`.
+  The library accepts the canonical `(angle_deg, trial_seed, firing_rate_hz)` CSV that t0022 emits,
+  so per-sweep-point curves can be scored without format conversion.
+
+* `tuning_curve_viz` ([t0011], v0.1.0) — **Relevant for one chart.** Okabe-Ito palette plus
+  `plot_cartesian_tuning_curve`, `plot_polar_tuning_curve`, `plot_multi_model_overlay`, and
+  `plot_angle_raster_psth`. For this task the primary deliverable is a single `dsi_vs_length.png`
+  chart (a scalar sweep), which is not a tuning-curve plot and is outside `tuning_curve_viz`&#x27;s
+  current function surface. The library is still useful for optional diagnostic polar overlays (one
+  per sweep point) if we want to visually inspect how tuning morphs with distal length.
+
+* `modeldb_189347_dsgc` ([t0008], v0.1.0) — **Indirectly relevant.** Provides `build_dsgc`,
+  `apply_params`, `read_synapse_coords`, `SynapseCoords`, and `rotate_synapse_coords_in_place` from
+  `build_cell.py`. The t0022 driver already imports these; we do not import directly from t0008
+  unless we need additional morphology helpers.
+
+* `modeldb_189347_dsgc_gabamod` ([t0020], v0.1.0) — Not relevant. Sibling port that drives DS via
+  the gabaMOD PD/ND scalar swap rather than per-dendrite E-I timing. No reusable morphology
+  manipulation code.
+
+* `de_rosenroll_2026_dsgc` (t0024, v0.1.0) — Not relevant. Alternative DSGC with a different cell
+  template (`build_dsgc_cell`), AR(2) stochastic release, and its own tuning-curve driver. Outside
+  the scope of a t0022-only distal-length sweep.
+
+#### Key Findings
+
+##### NEURON Windows bootstrap is a solved problem and must be reused verbatim
+
+NEURON on this Windows workstation needs `NEURONHOME` set in the C runtime environment at
+interpreter startup, `&lt;NEURONHOME&gt;/lib/python` on `sys.path`, and `os.add_dll_directory` pointing at
+`&lt;NEURONHOME&gt;/bin`. The `ensure_neuron_importable` function in
+`tasks/t0022_modify_dsgc_channel_testbed/code/neuron_bootstrap.py` (64 lines) re-execs the process
+once with `NEURONHOME` set if absent, guarded by a per-task sentinel env-var
+(`_T0022_NEURONHOME_BOOTSTRAPPED`) to prevent infinite re-exec loops [t0022]. The same pattern
+appears verbatim in `tasks/t0020_port_modeldb_189347_gabamod/code/run_gabamod_sweep.py:29-81`
+[t0020] and is imported via library in
+`tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/trial_runner_t0022.py:29-33` [t0026]. For t0029 we
+should use `ensure_neuron_importable` from the t0022 library and rename the sentinel env-var to
+`_T0029_NEURONHOME_BOOTSTRAPPED` (or reuse the t0022 one — it is already idempotent).
+
+##### The t0022 cell context must be built once per process, not per sweep point
+
+Building the DSGC once (~1.6 s in t0022&#x27;s preflight; similar in t0026) and reusing the NEURON handle
+across many (angle, trial) combinations saves non-trivial wall time. The pattern is established in
+`trial_runner_t0022.py:88-101` [t0026]:
+
+```python
+def build_cell_context() -&gt; CellContext:
+    _preload_nrnmech_dll()
+    h = build_dsgc()
+    _source_channel_partition_hoc(h=h)
+    pairs: list[EiPair] = build_ei_pairs(h=h)
+    baseline_coords: list[SynapseCoords] = read_synapse_coords(h=h)
+    baseline_gaba_mod: float = float(h.gabaMOD)
+    return CellContext(h=h, pairs=pairs, baseline_coords=baseline_coords,
+                      baseline_gaba_mod=baseline_gaba_mod)
+```
+
+`CellContext` is a mutable `@dataclass(slots=True)` holding `h`, `pairs`, `baseline_coords`, and
+`baseline_gaba_mod` [t0026]. For a distal-length sweep we will need to either (a) rebuild the cell
+for each length (guaranteed but slow: ~1.6 s x 7 = ~11 s extra), or (b) rescale section length
+directly on the live HOC handle via `for sec in h.RGC.dends: sec.L = baseline_L[sec] * multiplier`
+(faster but requires a baseline-length snapshot + a restore step at the end). The latter is
+analogous to how `vrest_override.set_vrest` in t0026 mutates `seg.eleak_HHst` and `seg.e_pas` on the
+live handle without re-building [t0026].
+
+##### Distal compartments are defined by Strahler order on the morphology graph, not by NEURON section index
+
+The baseline morphology is the NeuroMorpho.org `141009_Pair1DSGC` CNG SWC (6,736 compartments: 19
+soma, 6,717 dendrite, 0 axon, 129 branch points, 131 leaves, ~1.54 mm total dendritic path length
+[t0005]). t0009 builds a pure-stdlib Horton-Strahler calculator in
+`tasks/t0009_calibrate_dendritic_diameters/code/morphology.py:66-99`: iterative post-order DFS over
+`SwcCompartment` rows, `children_by_parent` adjacency index from `swc_io.build_children_index`, soma
+nodes get sentinel order 0, leaves get order 1, and internal nodes follow the maximum-child
+tie-break rule (if the maximum child order appears `m &gt;= 2` times, the parent is `max + 1`; else it
+equals `max`) [t0009].
+
+This Strahler calculator operates on the SWC file, not on the live HOC model. The t0022 testbed
+builds its cell from `RGCmodel.hoc` + `dsgc_model.hoc` (a hand-edited Neurolucida export that
+predates the NeuroMorpho SWC). The HOC side exposes `h.RGC.ON` as a `SectionList` of 282 ON-dendrite
+sections (derived from the HOC&#x27;s `z3d/y3d` test in `RGCmodel.hoc:11817-11826`). For the t0029 sweep
+we have two options:
+
+* Use the HOC-native topology: starting from `h.RGC.soma`, walk the HOC section tree via
+  `sec.parentseg()` / `h.SectionRef(sec=sec).child` or equivalent to label sections by topological
+  depth (branch order). A section is &quot;distal&quot; if it has no downstream dendrite children **in the HOC
+  section tree** (i.e., a leaf of the HOC topology). This avoids dependency on the SWC.
+* Port t0009&#x27;s Strahler to HOC: map each HOC `dend[i]` to its SWC ancestry by matching
+  `(x3d, y3d, z3d)` point coordinates, then compute Strahler on the SWC graph, then attach the order
+  back to HOC sections. Heavier but gives Strahler-based identification.
+
+The task description says `tip compartments at branch order &gt;= 3`. The cleanest implementation is to
+identify &quot;distal&quot; as **HOC leaf dendrites** (sections with no child dendrite sections in the HOC
+tree). The t0022 HOC builds its tree with `connect dend[i](0), dend[i-1](1)` and similar, so leaf
+dendrites are easy to identify by checking `h.SectionRef(sec=sec).nchild() == 0` after building the
+cell [t0008]. If the &quot;branch order &gt;= 3&quot; constraint turns out to be strict, we can use a simple HOC
+iterative walk rooted at `soma` to assign depths.
+
+##### The sweep driver pattern from t0026 is the right template to copy
+
+`tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/run_vrest_sweep_t0022.py` (166 lines) [t0026] is
+the most directly applicable template for t0029. Structure:
+
+1. Parse CLI args (`--limit-vrest`, `--limit-trials`, `--output`).
+2. Make output directories.
+3. Call `build_cell_context()` ONCE (the expensive NEURON bootstrap).
+4. For each sweep value in the outer loop:
+   * Apply the sweep-specific override (t0026 calls `set_vrest`; t0029 will rescale distal `sec.L`).
+   * Iterate `(angle_deg, trial_idx)` and call `run_one_trial_*(...)`.
+   * Write one row per trial to the tidy CSV with `fh.flush()` so crash recovery is possible.
+   * Record wall time per sweep value to a JSON log.
+5. Drop the sweep override (restore baseline L values on the live handle).
+
+The CSV schema t0026 uses is tidy with columns
+`v_rest_mv, trial, direction_deg, spike_count, peak_mv, firing_rate_hz` [t0026]. For t0029 the
+equivalent would be `length_multiplier, trial, direction_deg, spike_count, peak_mv, firing_rate_hz`
+— identical except for the first column name. Keeping the per-row tidy schema makes the
+`compute_vrest_metrics.py` style reducer trivial to adapt (vector-sum DSI + HWHM + peak + null per
+sweep value).
+
+##### DSI is computed by two different but equivalent conventions in the project
+
+Two DSI formulations exist in the project:
+
+* Peak-minus-null formulation in `tuning_curve_loss/metrics.py:41-47`:
+  `(peak - null) / (peak + null)` with null = rate at `(preferred_idx + N/2) % N` [t0012].
+* Vector-sum formulation in `t0026/compute_vrest_metrics.py:48-63`:
+  `|sum_i r_i exp(i theta_i)| / sum_i r_i` with preferred direction taken from the vector-sum angle
+  [t0026].
+
+For t0029 we should follow t0022&#x27;s own convention: t0022 reports DSI via the t0012 scorer (peak-
+minus-null). Using `score()` or `compute_dsi()` on the per-sweep-point curve CSV keeps the DSI
+values directly comparable to t0022&#x27;s baseline DSI = 1.0 and t0026&#x27;s DSI = 0.6555 at V = -60 mV
+[t0022] [t0026]. The t0026 vector-sum DSI is a secondary diagnostic (more robust to noise at low
+firing rates) and can be emitted alongside the primary DSI in the results.
+
+##### DSI charting patterns: follow t0026&#x27;s summary plot
+
+For the primary `dsi_vs_length.png` chart, the closest existing pattern is t0026&#x27;s
+`plot_polar_tuning.py:summary` figure: a two-panel Cartesian plot (DSI on the left axis, peak Hz on
+the right axis, both vs V_rest) [t0026]. For t0029 the x-axis changes to &quot;distal length multiplier&quot;
+(or the actual um length) and the panels become DSI-vs-length plus peak-vs-length. The
+`tuning_curve_viz` library does not cover scalar-sweep plots, so this chart must be built directly
+with `matplotlib` using the patterns from t0026/plot_polar_tuning.py.
+
+##### Guardrails against baseline drift are mandatory
+
+t0022 includes a per-trial assertion via `_assert_bip_and_gabamod_baseline` [t0022] that fires if
+`h.gabaMOD` drifted from baseline or any BIP synapse coordinate moved. t0029 must add an analogous
+guardrail: after restoring baseline distal L at sweep end, assert each distal section&#x27;s `sec.L`
+matches the baseline snapshot within floating-point tolerance. Without this, a buggy restore could
+silently leak state across sweep points.
+
+##### The canonical onset-scheduling contract depends on section midpoints, not section length
+
+`_compute_onset_times_ms` in `run_tuning_curve.py:274-306` computes each AMPA/GABA onset from
+`pair.x_mid_um` and `pair.y_mid_um`, which are stored once at `build_ei_pairs` time via
+`_section_midpoint` averaging `x3d(i)` / `y3d(i)` over the section&#x27;s 3D points [t0022]. When we
+rescale `sec.L`, NEURON internally re-interpolates segments but does NOT rewrite the 3D points
+(`x3d`/`y3d`/`z3d`). This means **rescaling `sec.L` alone changes the electrotonic length of the
+section but leaves the bar-arrival-time calculation unchanged** — a subtle but important property
+that preserves the directional-input structure while isolating the cable-length effect. Explicitly
+document this in the sweep driver and assert it with a midpoint-snapshot check.
+
+#### Reusable Code and Assets
+
+##### t0022 testbed driver — copy into task
+
+* **Source**: `tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py` (683 lines, but
+  only ~350 lines need to be copied; the full-sweep `_main_full_sweep` and the argparse scaffolding
+  can be replaced with the length-sweep equivalent).
+* **What it does**: Builds per-dendrite AMPA/GABA E-I pairs, schedules bar-direction-dependent
+  onsets, runs one trial returning firing rate in Hz, writes canonical CSV.
+* **Reuse method**: **copy into task**. Even though t0022 registers this file in its library
+  `module_paths`, the helpers we need (`build_ei_pairs`, `schedule_ei_onsets`,
+  `run_one_trial_dendritic`, `_preload_nrnmech_dll`, `_source_channel_partition_hoc`,
+  `_silence_baseline_hoc_synapses`, `_assert_bip_and_gabamod_baseline`,
+  `_count_threshold_crossings`, `EiPair`, `TrialResult`, `_section_midpoint`) are importable. Per
+  the CLAUDE.md cross-task rule, library-registered modules CAN be imported; only non-library task
+  code must be copied. **Decision**: import `EiPair`, `build_ei_pairs`, `schedule_ei_onsets`,
+  `_preload_nrnmech_dll`, `_source_channel_partition_hoc`, `_silence_baseline_hoc_synapses`,
+  `_assert_bip_and_gabamod_baseline`, `_count_threshold_crossings` directly from the t0022 library
+  (same pattern as `trial_runner_t0022.py:50-59` in t0026), and write a thin local
+  `run_one_trial_length` that adds the distal-length override in the same position `set_vrest`
+  occupies in t0026 (after `apply_params` / `_silence_baseline_hoc_synapses` /
+  `_assert_bip_and_gabamod_baseline`, before `h.finitialize`).
+* **Function signatures** (to import via library):
+  * `build_ei_pairs(*, h: Any) -&gt; list[EiPair]`
+  * `schedule_ei_onsets(*, h: Any, pairs: list[EiPair], angle_deg: float, velocity_um_per_ms: float, gaba_null_pref_ratio: float, trial_seed: int) -&gt; list[dict[str, float]]`
+  * `_preload_nrnmech_dll() -&gt; None`
+  * `_source_channel_partition_hoc(*, h: Any) -&gt; None`
+  * `_silence_baseline_hoc_synapses(*, h: Any) -&gt; None`
+  * `_assert_bip_and_gabamod_baseline(*, h: Any, baseline_coords: list[SynapseCoords], baseline_gaba_mod: float) -&gt; None`
+  * `_count_threshold_crossings(*, samples: list[float], threshold_mv: float) -&gt; int`
+
+##### t0022 NEURON bootstrap — import via library
+
+* **Source**: `tasks/t0022_modify_dsgc_channel_testbed/code/neuron_bootstrap.py` (64 lines).
+* **What it does**: `ensure_neuron_importable()` sets `NEURONHOME`, adds NEURON Python bindings to
+  `sys.path`, registers the DLL directory, and re-execs once if `NEURONHOME` is missing.
+* **Reuse method**: **import via library**. t0022 registers `code/neuron_bootstrap.py` in its
+  library module_paths. Call `ensure_neuron_importable()` at module scope before any `neuron`
+  import, exactly as t0026 does in `trial_runner_t0022.py:29-33` [t0026].
+* **Function signature**: `ensure_neuron_importable() -&gt; None`.
+* **Adaptation needed**: Either (a) reuse t0022&#x27;s sentinel directly (the env-var is idempotent under
+  repeated exec) or (b) clone the function into this task with a `_T0029_*` sentinel if we ever
+  expect two sweeps to run back-to-back without process restart. Option (a) is simpler.
+
+##### t0022 channel-partition HOC overlay — import via library
+
+* **Source**: `tasks/t0022_modify_dsgc_channel_testbed/code/dsgc_channel_partition.hoc` (108 lines).
+* **What it does**: After `build_dsgc()`, declares 5 `SectionList` globals (`SOMA_CHANNELS`,
+  `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON`) and populates them from `RGC.soma` and
+  `RGC.dends`. AIS lists are intentionally empty on this morphology (no axon sections).
+* **Reuse method**: **import via library**. It is listed in t0022&#x27;s `module_paths`. Call
+  `_source_channel_partition_hoc(h=h)` after `build_dsgc()` to guarantee the testbed matches t0022
+  exactly.
+* **Adaptation needed**: None. We do not modify channel densities in t0029; only `sec.L` changes.
+
+##### t0022 canonical constants — import via library
+
+* **Source**: `tasks/t0022_modify_dsgc_channel_testbed/code/constants.py` (146 lines).
+* **What it does**: Holds every magic number the driver needs: `TSTOP_MS=1000.0`, `DT_MS=0.1`,
+  `CELSIUS_DEG_C=32.0`, `N_ANGLES=12`, `N_TRIALS=10`, `ANGLE_STEP_DEG=30.0`,
+  `AP_THRESHOLD_MV=-10.0`, `V_INIT_MV=-65.0`, `BAR_VELOCITY_UM_PER_MS=1.0`,
+  `BAR_BASE_ONSET_MS=200.0`, the E-I onset offsets (`EI_OFFSET_PREFERRED_MS=10.0`,
+  `EI_OFFSET_NULL_MS=-10.0`), conductances (`AMPA_CONDUCTANCE_NS=6.0`,
+  `GABA_CONDUCTANCE_PREFERRED_NS=3.0`, `GABA_CONDUCTANCE_NULL_NS=12.0`), kinetics, segment locations
+  (`AMPA_SEG_LOCATION=0.9`, `GABA_SEG_LOCATION=0.3`), CSV column names, and metric keys.
+* **Reuse method**: **import via library**. Listed in t0022&#x27;s `module_paths`. Do not redefine any of
+  these in t0029; import them.
+
+##### t0012 tuning-curve scorer — import via library
+
+* **Source**: `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/` (8 files,
+  registered library).
+* **What it does**: Loads a canonical 12-angle CSV, computes DSI, peak Hz, null Hz, HWHM, split-half
+  reliability, and RMSE against the t0004 target. `score` returns a `ScoreReport` dataclass with all
+  metrics and envelope pass/fail.
+* **Reuse method**: **import via library**.
+* **Function signatures**:
+  * `compute_dsi(*, curve: TuningCurve) -&gt; float`
+  * `compute_peak_hz(*, curve: TuningCurve) -&gt; float`
+  * `compute_null_hz(*, curve: TuningCurve) -&gt; float`
+  * `compute_hwhm_deg(*, curve: TuningCurve) -&gt; float`
+  * `load_tuning_curve(csv_path: Path) -&gt; TuningCurve`
+  * `score(*, simulated_curve_csv: Path) -&gt; ScoreReport`
+* **Adaptation needed**: For each sweep point we write one per-sweep-point 12-angle tidy CSV in the
+  canonical schema and call `load_tuning_curve` followed by `compute_dsi`/`compute_peak_hz`/
+  `compute_null_hz`/`compute_hwhm_deg` directly. We do not need the full `score()` because the
+  loss-vs-t0004-target is not informative here — the sweep question is about DSI shape, not
+  target-fit quality.
+
+##### t0011 tuning-curve visualizer — import via library (optional)
+
+* **Source**: `tasks/t0011_response_visualization_library/code/tuning_curve_viz/` (10 files,
+  registered library).
+* **What it does**: Produces polar, Cartesian, multi-model-overlay, and raster+PSTH PNGs from
+  tuning-curve CSVs.
+* **Reuse method**: **import via library**.
+* **Function signatures**:
+  * `plot_polar_tuning_curve(curve_csv: Path, out_png: Path, *, show_trials: bool = True, target_csv: Path | None = None) -&gt; None`
+  * `plot_multi_model_overlay(curve_csvs: list[Path], labels: list[str], out_png: Path, ...) -&gt; None`
+* **Adaptation needed**: The primary chart (`dsi_vs_length.png`) is not a tuning curve; it is a
+  scalar sweep. Write it directly with matplotlib using the t0026 summary-plot pattern (~30-50
+  lines). Optionally produce a `plot_multi_model_overlay` diagnostic where &quot;models&quot; are labeled by
+  length multiplier to confirm visually that the tuning curves look sensible at each point.
+
+##### t0026 length-multiplier override pattern (to clone, not copy) — copy into task
+
+* **Source**: `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/vrest_override.py` (38 lines) and
+  `trial_runner_t0022.py:104-160` (run_one_trial_vrest).
+* **What it does**: `set_vrest` walks `h.allsec()` and mutates `seg.eleak_HHst` / `seg.e_pas` on the
+  live handle. `run_one_trial_vrest` interleaves `set_vrest` between `apply_params` and
+  `h.finitialize` so baseline values are re-applied on every trial then immediately overridden.
+* **Reuse method**: **copy into task** (NOT registered as a library). Clone the 38-line structure of
+  `vrest_override.py` into `code/length_override.py`. New function signature:
+  * `snapshot_distal_lengths(*, h: Any, distal_sections: list[Any]) -&gt; dict[int, float]` — record
+    baseline `sec.L` keyed by section index; called once at `build_cell_context` time.
+  * `set_distal_length_multiplier(*, h: Any, distal_sections: list[Any], baseline_L: dict[int, float], multiplier: float) -&gt; None`
+    — sets `sec.L = baseline_L[idx] * multiplier` for every distal section. Called after
+    `apply_params` / `_silence_baseline_hoc_synapses` and before `h.finitialize`.
+  * `identify_distal_sections(*, h: Any) -&gt; list[Any]` — walks `h.RGC.dends` and returns only
+    dendrite sections with no dendrite children in the HOC topology (i.e., HOC leaves). Returns
+    about 100-150 sections on the 350-compartment bundled morphology (estimate; actual count will be
+    logged in the implementation&#x27;s preflight).
+* **Adaptation needed**: The `set_vrest` pattern mutates `seg`-level RANGE variables; for length we
+  must mutate `sec.L` directly (section-level, not segment-level). NEURON re-discretises segments
+  automatically when `sec.L` or `sec.nseg` changes. The d_lambda rule is not enforced in the
+  t0008/t0022 HOC (they use `nseg=1` globally per `RGCmodel.hoc:11817`), so changing `L` may
+  under-resolve segmentation at 2.0x baseline. Post-rescale, either (a) leave `nseg=1` and accept
+  the coarser spatial resolution at 2.0x (matches existing t0008/t0022 convention), or (b) re-apply
+  d_lambda by setting `sec.nseg = int((sec.L / (0.1 * sec.lambda_f)) * 2) + 1` after the length
+  change. Decision deferred to planning, but (a) is the simpler starting point.
+
+##### t0026 tidy-CSV sweep driver pattern — copy into task
+
+* **Source**: `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/run_vrest_sweep_t0022.py` (166
+  lines).
+* **What it does**: Builds cell once, iterates outer sweep values and inner (angle, trial) loops,
+  writes one CSV row per trial with `fh.flush()` after every row, emits a per-sweep-value wall-time
+  JSON.
+* **Reuse method**: **copy into task** (NOT registered as a library).
+* **Adaptation needed**: ~20-line delta: rename `V_REST_VALUES_MV` to `LENGTH_MULTIPLIERS`, swap the
+  `set_vrest(h, v_rest_mv)` override for
+  `set_distal_length_multiplier(h=h, distal_sections=..., baseline_L=..., multiplier=m)`, and change
+  the CSV schema to have `length_multiplier` as the first column. Per-trial count should match the
+  task description&#x27;s recommended 12-direction tuning protocol: use `N_TRIALS=10` (matching t0022&#x27;s
+  canonical count) or `N_TRIALS=1` if total runtime pushes past 90 min.
+
+##### t0026 per-sweep-value metrics reducer — copy into task
+
+* **Source**: `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/compute_vrest_metrics.py` (265
+  lines).
+* **What it does**: Reads tidy CSV, groups by sweep value, computes per-group DSI (vector-sum),
+  preferred direction, HWHM, peak, null, and mean peak V_soma. Writes a per-sweep-value metrics CSV.
+* **Reuse method**: **copy into task**. Rename the sweep axis from V_rest to length_multiplier and
+  adjust column names accordingly. Use the t0012 `compute_dsi` scorer for the primary DSI column and
+  keep the `_vector_sum_dsi` helper as the secondary diagnostic.
+
+##### t0026 summary plot — copy into task
+
+* **Source**: `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/plot_polar_tuning.py` summary
+  function (~80 lines of the 263-line file).
+* **What it does**: Two-panel Cartesian plot of DSI and peak Hz vs sweep axis.
+* **Reuse method**: **copy into task**. Rename x-axis to &quot;distal length multiplier&quot; and x-values to
+  the 7 multipliers.
+
+##### Baseline DSGC morphology dataset asset (context only)
+
+* **Source**: `dsgc-baseline-morphology` dataset asset produced by [t0005]
+  (`tasks/t0005_download_dsgc_morphology/assets/dataset/dsgc-baseline-morphology/`).
+* **What it does**: Holds the `141009_Pair1DSGC.CNG.swc` reconstruction (6,736 compartments, 1.54 mm
+  total dendritic length) on which t0009 calibrated diameters. This is NOT the HOC morphology that
+  t0022 actually uses; t0022 uses the Poleg-Polsky bundled HOC (`RGCmodel.hoc` + `dsgc_model.hoc`
+  under the t0008 library asset). The two trees are topologically different.
+* **Reuse method**: Read-only reference. For t0029 we sweep on the HOC (t0022) morphology, not the
+  NeuroMorpho SWC, because the full t0022 biophysics depends on the HOC cell template.
+
+##### t0009 Strahler calculator (optional reference)
+
+* **Source**: `tasks/t0009_calibrate_dendritic_diameters/code/morphology.py:66-99` (Strahler DFS),
+  `swc_io.py` (SWC parse + children index).
+* **What it does**: Pure-stdlib Horton-Strahler on SWC trees.
+* **Reuse method**: **copy into task** IF we decide to run Strahler on the HOC topology. For the
+  initial implementation we default to HOC-leaf-dendrite identification (simpler), and only port
+  Strahler if the &quot;branch order &gt;= 3&quot; constraint turns out to matter. This is a planning decision,
+  not an implementation prerequisite.
+
+#### Common Patterns
+
+* **`ensure_neuron_importable()` before any `neuron` import** (t0022, t0026, t0024). Always call at
+  module scope before `from neuron import h`.
+* **NEURON bootstrap sentinel env-var per task** prevents re-exec loops. Current convention:
+  `_T&lt;TASK_ID&gt;_NEURONHOME_BOOTSTRAPPED`.
+* **Canonical CSV schema** `(angle_deg, trial_seed, firing_rate_hz)` is enforced across t0004,
+  t0008, t0020, t0022, t0024 and accepted by t0012&#x27;s `load_tuning_curve`. Per-sweep-point curves for
+  t0029 should be written in this schema so they can be scored without conversion.
+* **Per-trial seed** convention is `1000 * angle_idx + trial_idx + 1` [t0008] [t0022] [t0026]. Keep
+  this for t0029 trial seeds; add the length-multiplier index as an outer dimension so seeds remain
+  unique across sweep points.
+* **Tidy wide CSV** for sweep results: one row per (sweep_value, angle, trial), with `fh.flush()`
+  after every row for crash recovery [t0026].
+* **Baseline-drift guards**: every trial asserts that `h.gabaMOD` and BIP coords are at their
+  baseline values [t0022]. t0029 should add an analogous assertion that every distal section&#x27;s
+  `sec.L` matches `baseline_L[idx] * current_multiplier` to within 1e-9.
+* **Keyword-only arguments** throughout the project per CLAUDE.md Python style rules. All helper
+  signatures above follow this convention.
+
+#### Lessons Learned
+
+* **Build cost matters**: t0026 flagged that NEURON cell build + channel-partition HOC source + E-I
+  pair creation takes ~1-2 s, while one trial runs ~0.2-0.5 s. Over a 7-length x 12-angle x 10-trial
+  sweep (840 trials), avoiding per-sweep-value rebuilds saves ~10 s and avoids spurious differences
+  from stochastic cell-build state. **Takeaway for t0029**: build once, mutate `sec.L` on the live
+  handle per sweep point.
+
+* **Forgetting to silence bundled HOC synapses gives a spurious 13-15 Hz baseline firing rate** that
+  confounds the E-I driver. t0022 fixed this with `_silence_baseline_hoc_synapses` which zeros
+  `h.b2gampa`, `h.b2gnmda`, `h.s2ggaba`, `h.s2gach` and calls `update()` + `placeBIP()` [t0022].
+  **Takeaway**: every trial in t0029 must call `_silence_baseline_hoc_synapses`; omitting it is a
+  silent, hard-to-detect bug.
+
+* **`apply_params` resets `v_init` and segment leak reversals to their t0008 defaults on every
+  call**, which is why t0026&#x27;s `set_vrest` must run AFTER `apply_params` and BEFORE `h.finitialize`
+  [t0026]. The same ordering constraint applies to t0029&#x27;s length override: `apply_params` does NOT
+  touch `sec.L`, so overriding `sec.L` once per sweep point (outside the trial loop) is actually
+  sufficient. **Optimisation**: set distal lengths at the top of the outer sweep loop, not inside
+  the inner trial loop. Re-assert L before each trial as a cheap sanity check.
+
+* **HOC global vs RANGE variable confusion burned t0020**: setting `h.gabaMOD = X` in Python does
+  not retroactively update per-synapse objects unless `placeBIP()` is re-called [t0020]. The same
+  class of bug applies to `sec.L`: changing `sec.L` on a live handle implicitly re-discretises the
+  section, but only if `sec.nseg` is re-evaluated. Since the t0008 HOC uses `forall {nseg=1}` there
+  is only one segment per section and discretisation is trivial. **Takeaway**: verify with a
+  preflight that `sec.nseg == 1` for every distal section after our override, and that the d_lambda
+  rule is not silently violated at the 2.0x endpoint.
+
+* **Keep `apply_params` in the inner trial loop even with a constant sweep parameter**. t0022 and
+  t0026 both do this because `apply_params` also re-seeds the NEURON Random123 streams
+  (`h(f&quot;seed2={seed}&quot;)`) per trial. If we pull `apply_params` out of the inner loop, trial seeds
+  stop rotating and every trial returns identical firing rates. **Takeaway**: keep the t0026
+  trial-runner structure; do not &quot;optimise&quot; by hoisting `apply_params`.
+
+* **Results-CSV per-row `fh.flush()` in t0026 enabled successful crash-recovery** when the t0024
+  sweep (960 trials, 3.21 h) had intermittent issues. **Takeaway**: follow the same pattern in t0029
+  even though the sweep is ~840 trials (well under an hour).
+
+* **t0022 DSI = 1.0 at baseline is unusually high** because the deterministic driver produces zero
+  firing at any angle &gt;= 150 deg from the preferred direction [t0022]. This means the sweep&#x27;s
+  &quot;saturation&quot; signature may appear as DSI pinned at 1.0 across a wide plateau of length values,
+  which would need extra care in the curve-shape classifier — a plateau at DSI=1.0 is both
+  &quot;monotonic&quot; (if approached from below) and &quot;saturating&quot; depending on where the plateau starts.
+  **Takeaway**: compute DSI at length = 0.5x first to confirm DSI &lt; 1.0 at the low end, and if not,
+  propose a narrower sweep range around the 0.25x-1.0x regime as a follow-up suggestion.
+
+#### Recommendations for This Task
+
+##### Architecture
+
+1. Follow the t0026 two-file architecture: `code/length_override.py` (~40 lines, clone of
+   `vrest_override.py` logic) and `code/trial_runner_length.py` (~160 lines, clone of
+   `trial_runner_t0022.py`). Plus a `code/run_length_sweep.py` driver (~160 lines, clone of
+   `run_vrest_sweep_t0022.py`) and a `code/compute_length_metrics.py` reducer (~250 lines, clone of
+   `compute_vrest_metrics.py`).
+
+2. Import these pieces from the t0022 library (library, not copy): `ensure_neuron_importable`,
+   `EiPair`, `build_ei_pairs`, `schedule_ei_onsets`, `_preload_nrnmech_dll`,
+   `_source_channel_partition_hoc`, `_silence_baseline_hoc_synapses`,
+   `_assert_bip_and_gabamod_baseline`, `_count_threshold_crossings`. Import from t0008 library:
+   `build_dsgc`, `apply_params`, `read_synapse_coords`, `SynapseCoords`. Import from t0012 library:
+   `compute_dsi`, `compute_peak_hz`, `compute_null_hz`, `compute_hwhm_deg`, `load_tuning_curve`,
+   `TuningCurve`.
+
+##### Distal-section identification
+
+3. Define &quot;distal&quot; as **HOC leaf dendrites**: sections in `h.RGC.dends` with no dendrite children in
+   the HOC section tree. This avoids a Strahler port and is implementable in ~15 lines using
+   `h.SectionRef(sec=sec).nchild()`. Log the count in the preflight; expect 100-200 distal sections
+   on the 350-dend bundled morphology.
+
+4. If the task description&#x27;s &quot;branch order &gt;= 3&quot; must be enforced strictly, port the t0009 Strahler
+   DFS to HOC in a follow-up step. This is a planning-time decision; defer until the leaf-dendrite
+   approach is benchmarked.
+
+##### Sweep driver
+
+5. Sweep values: use the task description&#x27;s suggestion `(0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0)` —
+   exactly 7 multipliers. Trial count: N_TRIALS=10 (canonical t0022 count). Total trials: 7 x 12 x
+   10 = 840. Estimated wall time at t0026&#x27;s t0022-model pace (~3.75 s/trial): ~52 min, comfortably
+   within the 30-90 min budget.
+
+6. CSV schema: tidy with columns
+   `(length_multiplier, trial, direction_deg, spike_count, peak_mv, firing_rate_hz)`. Write one row
+   per trial, flush after every row.
+
+7. For each sweep point, after the outer sweep CSV row batch is complete, also emit a
+   per-sweep-point canonical CSV `(angle_deg, trial_seed, firing_rate_hz)` so the t0012 scorer can
+   be called without reshaping.
+
+##### Scorer integration
+
+8. For each of 7 sweep points, call `compute_dsi(curve=load_tuning_curve(csv_path=...))` on the
+   per-sweep-point curve CSV and write `dsi_length_&lt;m&gt;` entries to `results/metrics.json`. This
+   matches t0022&#x27;s metric key convention.
+
+##### Chart
+
+9. `dsi_vs_length.png` is the primary chart. Follow t0026&#x27;s `summary_&lt;model&gt;_vrest.png` two-panel
+   Cartesian pattern: left axis DSI vs multiplier, right axis peak Hz vs multiplier. Use the
+   Okabe-Ito palette from `tuning_curve_viz.constants.OKABE_ITO` for colour consistency across the
+   project.
+
+10. As a diagnostic, generate 7 per-length polar tuning-curve PNGs via
+    `plot_polar_tuning_curve(curve_csv=per_length_csv, out_png=images/polar_L&lt;m&gt;.png)` to visually
+    inspect how the curve morphs with length. Optional but recommended.
+
+##### Curve-shape classifier
+
+11. Classify the resulting DSI-vs-length curve as:
+    * **Monotonic** (favours Dan2018) if DSI is strictly non-decreasing with a significant slope
+      (e.g., linear regression slope &gt; 0.05 per unit multiplier, p &lt; 0.05).
+    * **Saturating** (favours Sivyer2013) if the DSI-vs-length curve reaches within 5% of its max by
+      the 1.0x or 1.25x point and stays flat thereafter.
+    * **Non-monotonic** otherwise — flag kinetic tiling (Espinosa 2010) as a possible mechanism in
+      the results discussion per the task description&#x27;s guidance.
+
+12. Watch out for DSI pinned at 1.0 across a wide plateau (expected at baseline length per [t0022]
+    results). Compute and report the full tuning-curve peak Hz and null Hz vectors at each sweep
+    point so the mechanism interpretation has enough resolution even when DSI saturates at 1.0.
+
+##### Guardrails
+
+13. Add a pre-sweep snapshot of baseline distal `sec.L` values and a post-sweep assertion that they
+    have been restored to the snapshot (to within 1e-9 relative tolerance). Follow the
+    `_assert_bip_and_gabamod_baseline` pattern from t0022.
+
+14. Add a preflight mode (analogous to t0022&#x27;s `--preflight`): 3 angles x 2 trials x 3 multipliers
+    (0.5, 1.0, 2.0), total 18 trials, ~1 min wall time. This validates the override logic and curve
+    shape before committing to the full 840-trial sweep.
+
+##### Logging
+
+15. Log the number of identified distal sections, the baseline-L distribution (min / median / max /
+    total distal length), and per-sweep-point wall time. Emit as JSON under
+    `logs/preflight/distal_sections.json` and `data/wall_time_by_length.json`.
+
+#### Task Index
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download candidate DSGC morphology
+* **Status**: completed
+* **Relevance**: Produces the `dsgc-baseline-morphology` dataset asset (141009_Pair1DSGC CNG SWC,
+  6,736 compartments, 1.54 mm total dendritic length). Background context for the
+  morphology-provenance discussion, though t0029 sweeps on the Poleg-Polsky HOC topology (t0008
+  library), not directly on this SWC.
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 DSGC model (12-angle tuning curve)
+* **Status**: completed
+* **Relevance**: Registers the `modeldb_189347_dsgc` library and bundles the Poleg-Polsky HOC
+  sources (`RGCmodel.hoc`, `dsgc_model.hoc`) + compiled mechanisms that the t0022 testbed inherits.
+  Exposes `build_dsgc`, `apply_params`, `read_synapse_coords`, `SynapseCoords` that we import for
+  the cell build and baseline-coord snapshot.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters on DSGC morphology
+* **Status**: completed
+* **Relevance**: Provides the pure-stdlib Horton-Strahler DFS in `morphology.py` that can be ported
+  to HOC in a follow-up if leaf-dendrite identification proves insufficient for the &quot;branch order &gt;=
+  3&quot; constraint in the task description.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Tuning-curve response visualization library
+* **Status**: completed
+* **Relevance**: Provides the `tuning_curve_viz` library with polar / Cartesian / multi-model-
+  overlay / raster+PSTH plot functions and the Okabe-Ito palette. Used optionally for diagnostic
+  per-length polar plots.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring and loss library
+* **Status**: completed
+* **Relevance**: Provides the `tuning_curve_loss` library with `compute_dsi`, `compute_peak_hz`,
+  `compute_null_hz`, `compute_hwhm_deg`, `load_tuning_curve`, and `score`. Primary DSI scorer for
+  this task — one call per sweep point.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: Port ModelDB 189347 DSGC with gabaMOD PD/ND swap
+* **Status**: completed
+* **Relevance**: Sibling DSGC port (not directly reused). Demonstrates an alternative DS driver
+  (gabaMOD swap) and the same NEURON bootstrap pattern that t0022 inherits. Background only.
+
+##### [t0022]
+
+* **Task ID**: `t0022_modify_dsgc_channel_testbed`
+* **Name**: Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+* **Status**: completed
+* **Relevance**: **The direct dependency.** Provides the `modeldb_189347_dsgc_dendritic` library —
+  the testbed we are sweeping. Supplies the per-dendrite E-I scheduler, the channel-partition HOC
+  overlay, the canonical constants, the Windows NEURON bootstrap, the per-trial baseline-drift
+  guardrails, and the tuning-curve CSV schema. The t0022 baseline DSI = 1.0 at baseline length is
+  the reference point for the sweep.
+
+##### [t0026]
+
+* **Task ID**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Name**: V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+* **Status**: completed
+* **Relevance**: **The direct structural template.** Demonstrates exactly how to design a
+  one-parameter sweep driver on top of t0022: override helper, build-once cell context,
+  per-row-flushed tidy CSV, per-sweep-value metrics reducer, two-panel summary plot. t0029&#x27;s
+  architecture is a straight analogue with `L` in place of `V_rest`.
+      </content>
+    </section>
     <section id="t0032_brainstorm_results_7-research_papers" source_kind="file">
       <title>t0032_brainstorm_results_7 — Brainstorm results session 7 — research_papers.md</title>
       <source_name>research_papers.md</source_name>
@@ -19617,6 +20261,1035 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0033_plan_dsgc_morphology_channel_optimisation-research_papers" source_kind="file">
+      <title>t0033_plan_dsgc_morphology_channel_optimisation — Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0033_plan_dsgc_morphology_channel_optimisation/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0033_plan_dsgc_morphology_channel_optimisation&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 24
+papers_cited: 16
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;cable-theory&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;synaptic-integration&quot;
+date_completed: &quot;2026-04-22&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+This task is a planning task: it must produce a cost and search-strategy envelope for a *future*
+joint optimisation over DSGC dendritic morphology and the top-10 voltage-gated channel (VGC) types
+that maximises direction-selectivity index (DSI) on the t0022 channel-modular testbed built atop the
+Poleg-Polsky 2026 (de Rosenroll 2026) port (t0024). The downstream planning subagent will consume
+this `research_papers.md` to estimate search-space dimensionality, expected simulation counts under
+competing optimisation strategies, per-simulation wall-time scaling, and Vast.ai USD cost envelopes
+for CoreNEURON-on-GPU, NN-surrogate-on-GPU, and many-core-CPU compute modes. Per researcher
+constraint this stage uses the downloaded paper corpus only; no internet search.
+
+#### Category Selection Rationale
+
+Consulted `compartmental-modeling` because every relevant precedent is a NEURON-style simulation
+whose per-simulation wall-time and per-simulation free-parameter count constrain any joint
+optimisation. Consulted `dendritic-computation` and `cable-theory` because the balance between
+active-dendrite conductances and passive cable attenuation is the biophysical substrate that the
+joint sweep will tune. Consulted `direction-selectivity` because this defines the DSI objective.
+Consulted `voltage-gated-channels` because the top-10 VGC set is the channel axis of the
+optimisation. Consulted `retinal-ganglion-cell` because DSGC is the target cell type. Consulted
+`synaptic-integration` because the t0022 testbed instantiates direction-tuned Exp2Syn pairs whose
+conductances and kinetics are held fixed during the future sweep but set the stimulus-side
+constants. Excluded `patch-clamp` because patch-clamp papers primarily supply *targets* rather than
+optimisation methodology. Explicitly searched for corpus coverage of high-dimensional parameter
+optimisation, CoreNEURON/GPU-NEURON variants, and neural-network surrogate modelling; these keywords
+do not map to any ARF category because the corpus is a DSGC-biophysics corpus, not a
+numerical-methods corpus. That gap is documented in `## Gaps and Limitations`.
+
+#### Key Findings
+
+##### Gradient-Free Optimisation Is the Only Strategy the Corpus Actually Demonstrates for DSGC/SAC Biophysics
+
+Two papers in the corpus directly implement gradient-free optimisation over compartmental-model
+parameters with a DS-like objective. [PolegPolsky2026] built a 352-segment NEURON DSGC model and ran
+a machine-learning outer loop described in the paper abstract as &quot;gradient-free optimisation +
+surrogate-model-assisted search&quot; over a joint space that contains bipolar-cell input offsets,
+weights, rise/decay kinetics, AMPA/NMDA ratio, A-type potassium density, and optional SAC-derived
+inhibition, scoring each candidate by DSI computed from spike rates (or subthreshold somatic peak
+voltage) under 12-direction moving-bar stimuli; the paper reports that &quot;tens of thousands of
+configurations&quot; were simulated and that successful candidates were clustered *post hoc* and
+dissected by targeted ablation to identify multiple qualitatively distinct DS-producing primitives
+[PolegPolsky2026, Results]. [Ezra-Tsur2021] applied the DEAP library with NSGA-II, IBEA, and
+rank-based selection to an 8-dimensional input-kinetics / input-density parameter space on a fixed
+1013-compartment passive SAC morphology (NeuroMorpho NMO_139062); the GA used 100 individuals for
+20-45 generations with crossover/mutation probability 0.4, and the authors confirmed &quot;qualitatively
+identical&quot; convergence across six random seeds and across the three selection algorithms
+[Ezra-Tsur2021, Methods]. These two papers are the corpus&#x27;s only direct evidence for any specific
+optimisation strategy on a DSGC/SAC compartmental model; they jointly establish a community default
+of gradient-free search (evolutionary + surrogate-assisted) rather than Bayesian optimisation, CMA-
+ES, or gradient-based training.
+
+**Best practice** (converged across these two papers): treat DSGC-style parameter sweeps as a
+gradient-free search over **O(10)-O(20)** free parameters with population sizes of
+**O(100)-O(10,000)** and generation counts of **O(20)-O(50)** when paired with surrogate-assisted
+acceleration. **Hypothesis**: Because both precedents converge on the same design pattern
+(population + generations + optional surrogate acceleration), the future optimisation can adopt this
+pattern without inventing a new method; any Bayesian-optimisation or CMA-ES baseline must be
+justified against it, not assumed to dominate it.
+
+##### Surrogate-Model-Assisted Search Has Precedent but No Explicit Cost Accounting in the Corpus
+
+[PolegPolsky2026] is the only DSGC paper in the corpus that explicitly names &quot;surrogate-model-
+assisted search&quot; as part of its optimiser; the companion repository (`PolegPolskyLab/DS-mechanisms`)
+is described in [PolegPolsky2026, Overview] as containing the NEURON model plus the ML outer loop,
+but the paper summary does not break out (a) how many NEURON simulations trained the surrogate, (b)
+which ML architecture was used (feed-forward, gradient-boosted, Gaussian process), (c) the
+surrogate&#x27;s wall-time speedup factor over direct NEURON evaluation, or (d) surrogate training vs
+surrogate inference cost breakdown. The summary flags &quot;Specific quantitative DSI values and velocity
+thresholds are available in the PDF (which is downloaded) but are not reproduced here&quot;
+[PolegPolsky2026, Results], so the cost-accounting details are in-corpus but not yet summarised —
+**not found in paper summary**. For the plan&#x27;s cost-envelope work this is the most damaging gap: the
+one paper that demonstrates a surrogate- assisted DSGC sweep does not quantify the economics of the
+surrogate itself. No Bayesian optimisation, Gaussian-process regression, or CMA-ES is mentioned
+anywhere in the corpus in the context of DSGC / SAC / RGC compartmental modelling.
+
+##### Morphology Dimensionality Can Be Reduced to 3-5 Scalar Parameters via Cuntz Generation
+
+[Cuntz2010] is the single most important corpus paper for parameter-count reduction on the
+morphology side of the joint optimisation. The authors reduce arbitrary dendritic morphology to an
+extended minimum-spanning-tree construction driven by (a) a target density profile over a spanning
+volume, (b) a single scalar balancing factor `bf` that weighs wiring length against root-to-leaf
+path length, (c) the root location, and (d) Rall&#x27;s 3/2 diameter-taper rule. Synthetic trees
+generated under this construction match reconstructed fly LPTCs, hippocampal CA1 pyramidal cells,
+and cerebellar Purkinje cells to **within a few percent** of total dendritic length, with
+biologically realistic `bf` clustering at **0.2-0.7** [Cuntz2010, Results]. Critically for the DSGC
+plan, the paper demonstrates that `bf` maps monotonically onto electrotonic compartmentalisation —
+low `bf` produces electrotonically isolated subtrees, high `bf` produces electrotonically compact
+trees — providing a direct single-parameter handle for controlling the subunit-structure of the
+dendritic tree [Cuntz2010, Innovations]. **Best practice**: the future DSGC joint optimisation
+should reduce the morphology axis to **O(3-5) scalar Cuntz parameters** (spanning volume, carrier-
+point density / total wiring length, `bf`, root location, optional per-cell taper tweak) rather than
+treat per-branch length and diameter as O(100-1000) free variables.
+
+##### Morphology Is a First-Class Determinant of Firing Pattern Even with Fixed Channel Biophysics
+
+[Mainen1996] applied an identical set of Hodgkin-Huxley sodium, potassium, and calcium conductances
+across four reconstructed cortical morphologies (layer-5 pyramidal, layer-3 pyramidal, stellate
+interneuron, low-threshold-spiking interneuron) and reproduced the four canonical firing patterns
+(regular spiking, bursting, fast spiking, low-threshold spiking) purely via morphological
+differences [Mainen1996, Results]. The mechanism is the coupling between axonal spike initiation and
+dendritic backpropagation: large trees load the soma with a slow capacitive current that re- excites
+the axon initial segment and drives bursts; truncating the apical dendrite or removing dendritic Ca
+conductance abolishes bursting [Mainen1996, Results]. This establishes a direct
+morphology-biophysics coupling that the joint optimisation must respect: holding channels fixed and
+sweeping morphology produces measurable output-firing differences, so the DSGC sweep cannot factor
+cleanly into &quot;morphology only&quot; and &quot;channels only&quot; sub-problems. **Best practice** (converging with
+[PolegPolsky2026] for DSGCs): never collapse the joint sweep into two independent marginal sweeps.
+
+##### Fine Spatial Discretisation Is Mandatory, Which Locks In Per-Simulation Cost
+
+Multiple corpus papers converge on the requirement that DSGC compartmental models must be
+discretised to well below the electrotonic space constant. [Schachter2010] reports each dendritic
+segment `&lt; 0.1 lambda` on a rabbit On-Off DSGC, producing thousands of compartments
+[Schachter2010, Architecture]. [Ezra-Tsur2021] used 1013 compartments on both the SAC and the DSGC
+morphologies. [PolegPolsky2026] fixed the search space on a **352-segment** DSGC morphology.
+[deRosenroll2026] reports (citing Jain 2020 — not in this corpus) that ≤10 μm compartments are
+required to resolve the experimentally-measured 5-10 μm local DS subunits. [Mainen1996] emphasises
+the `d_lambda` discretisation rule as a prerequisite for trustworthy active-dendrite simulation. The
+converged minimum is **hundreds of compartments** per DSGC; this is the dominant factor setting
+per-simulation wall-time, because the cable-equation solver cost scales linearly with compartment
+count ([Hines1997], see below) but the number of time steps required also grows with the fastest
+gating kinetic and the finest compartment. **Best practice**: do not attempt to accelerate the joint
+sweep by coarsening morphology below a few hundred compartments — doing so will invalidate the
+local-DS-subunit structure that the DSI objective depends on.
+
+##### NEURON Numerics: O(N) Compartment Solver Is the Only Per-Simulation Scaling Result in the Corpus
+
+[Hines1997] describes NEURON&#x27;s branched-cable Gaussian-elimination solver with reordering that runs
+in **O(N)** time versus **O(N^3)** for generic dense LU decomposition, a second-order staggered
+Crank-Nicolson integrator at backward-Euler cost per step, and analytical HH gating updates via the
+closed form `s_inf + (s - s_inf) * exp(-dt/tau)` [Hines1997, Results]. The paper reports &quot;typical
+simulation speeds on the order of **10^4 compartments** at subsecond simulated time per wall-clock
+minute on 1990s workstations&quot; [Hines1997, Results]; this is the only explicit
+wall-time-vs-compartment-count scaling statement in the corpus. No corpus paper mentions CoreNEURON,
+OpenACC, CUDA-accelerated NEURON, Intel MKL-accelerated NEURON, or any GPU-based alternative
+simulator. This is a corpus gap (see `## Gaps and Limitations`); the downstream planning subagent
+will need to estimate GPU speedups from outside the corpus or from empirical t0026 measurements.
+
+##### Per-Simulation Wall-Time Landmarks in the Corpus for DSGC/SAC Models
+
+Three corpus points bracket the per-simulation wall-time question for DSGC/SAC compartmental models.
+[Ezra-Tsur2021] reports on the Blue Brain V HPC (Intel Xeon 6140, 384 GB): single-SAC run time
+**70.66 s**, SAC-network run time **421.47 s**, full DSGC-circuit run time **492.36 s** per trial
+(post-compilation), with 1500 ms of simulated time at 0.025 ms dt [Ezra-Tsur2021, Methods].
+[Schachter2010] does not report wall-time numbers — **not found in paper summary**.
+[PolegPolsky2026] likewise does not report per-simulation wall-time in the available summary — **not
+found in paper summary**. These points establish that a single NEURON-based DSGC-circuit evaluation
+on a contemporary HPC node is in the **O(100)-O(500) s** range per run when the model includes an
+embedding circuit; the t0026 empirical baselines of **3.8 s per (angle,trial)** on the t0022
+deterministic isolated-cell model and **12.0 s per (angle,trial)** on the t0024 stochastic AR(2)
+model fall inside this envelope once multiplied by the 12-angle × trial-count protocol.
+
+##### Top-10 VGC Set and Per-Channel Parameter Counts from t0019
+
+[VanWart2006], [Kole2007], [FohlmeisterMiller1997], [Hu2009], and [Kole2008] together pin down the
+RGC AIS channel complement. The `t0019` answer asset
+(`tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/full_answer.md`)
+consolidates these into a canonical set with explicit quantitative priors: Nav1.6 in the distal AIS
+(V_half ~**-45 mV**, gbar ~**2500-5000 pS/μm²**), Nav1.2 in the proximal AIS (V_half ~**-32 mV**,
+gbar ~**50× less than distal**), Kv1.1/Kv1.2 co-localising with Nav1.6 (V_half ~**-40 to -50 mV**, τ
+~**0.5-1 ms**, gbar ~**100-300 pS/μm²**), Kv2.1 somatic, plus Fohlmeister-Miller Kdr/Ka/Ca kinetics
+for the soma and dendrites (Nav V_half ~**-40 mV**, Kdr V_half ~**-30 mV**, Q10 ~3 from 22 °C to 37
+°C) [VanWart2006, Kole2007, FohlmeisterMiller1997, Hu2009, Kole2008]. [Fohlmeister2010] extends this
+with cell-type-specific conductance maps at 35 °C in mS/cm² across dendrites / soma / IS / TS / axon
+for both rat and cat RGCs and reports dendritic channel densities (e.g. rat Type I: Na 79.5 / K 23.4
+/ Ca 1.2 / K_A ~36 / K_Ca small in dendrites) [Fohlmeister2010, Results]. [Aldor2024] adds Kv3 in
+the perisomatic SAC region with dendritic mGluR2 modulation [Aldor2024]. Under a gbar-only
+parameterisation each VGC contributes **1 free parameter**; under a gbar+shift parameterisation each
+VGC contributes **2 free parameters**. The top-10 set therefore contributes **10-20 free channel
+parameters** before any region-specific gbar distinctions (soma / dendrite / AIS-proximal /
+AIS-distal / thin-axon = 5 regions per channel, bounded above by **10 × 2 × 5 = 100** but in
+practice most channels are restricted to 1-2 of the 5 regions by the `t0019` priors).
+
+##### Two Active Channels in Dendrites Are Sufficient to Convert Sub-DSI into Supra-DSI
+
+[Schachter2010] shows that uniform dendritic Na density of **40 mS/cm²** (or a proximal-to-distal
+gradient of **45 → 20 mS/cm²**) plus Kdr is sufficient to transform weak subthreshold directional
+asymmetry (PSP DSI ~**0.2**) into strong somatic spike directional tuning (spike DSI ~**0.8**), a
+**~4×** amplification via the local spike-initiation threshold [Schachter2010, Results].
+[deRosenroll2026] (relaying Jain 2020, which is not in this corpus) sharpens this with
+NMDA-dependent local amplification: for soft voltage thresholds of **-55 / -50 / -48 mV**, dendritic
+DSI rises from **0.42 / 0.70 / 0.80**. This implies that for the joint optimisation, active
+dendritic Na and K are *necessary* channels (not optional), and adding NMDA receptors creates a
+further multiplicative gain lever. **Best practice**: fix an active-dendrite lower bound (at
+minimum: Nav + Kdr) rather than allowing the optimiser to zero out dendritic channels, since
+passive-dendrite configurations are known *a priori* to cap DSI below the achievable spike DSI band.
+
+##### The t0022 Region Partition Defines the Concrete Channel-Parameter Topology
+
+The t0022 testbed (`tasks/t0022_modify_dsgc_channel_testbed/code/dsgc_channel_partition.hoc`)
+declares exactly **5 named SectionLists** (SOMA_CHANNELS, DEND_CHANNELS, AIS_PROXIMAL, AIS_DISTAL,
+THIN_AXON) with canonical per-region channel priors: soma Nav gbar 1.0 S/cm²; dend Nav gbar 0.03
+S/cm²; AIS_PROXIMAL Nav1.1 gbar 1.5 S/cm²; AIS_DISTAL Nav1.6 gbar 8.0 S/cm², Kv1.2 gbar 0.1 S/cm²,
+Kv3 gbar 0.0033 S/cm²; THIN_AXON inherits baseline HHst. These five regions × top-10 VGCs define the
+maximum channel-parameter topology. Under a gbar-only single-region-per-channel parameterisation,
+the channel axis is **10 parameters**; under a per-region-gbar parameterisation, the channel axis is
+at most **50 parameters** (but sparsified by the `t0019` priors to ~**15-25** channel/region
+combinations). This is the concrete dimensionality the downstream planner must operate on.
+
+##### Connectomic-Scale Reconstructions Supply Morphology Priors at No Simulation Cost
+
+[deRosenroll2026] and [Srivastava2022] (together with Briggman 2011 and Kim 2014, which are present
+in the corpus as paper assets but not needed as load-bearing citations here) collectively
+demonstrate that connectome-derived DSGC morphologies and SAC-to-DSGC wiring are available at scale
+and can be imported directly into NEURON-based sweeps. The space-time wiring rule relayed by
+[Srivastava2022] from the connectomic literature uses **6 proximal (BC7, sustained) + 12 distal
+(BC5, transient)** synapses sampled pseudo-randomly from Ding-2016 empirical PDFs, with synaptic
+conductances scaling **172.2 pS proximal → 68.6 pS distal** [Srivastava2022, Methods]. This means
+the morphology axis of the joint optimisation does not have to generate DSGC arbors *ab initio*:
+real reconstructions (e.g., NeuroMorpho NMO_05318 from [Ezra-Tsur2021]) plus Cuntz-style synthetic
+perturbations are both available as starting points. **Best practice**: anchor the morphology sweep
+on a small set of seed reconstructions (Poleg-Polsky backbone, NMO_05318, and 1-2 further connectome
+exports) and let Cuntz parameters interpolate between them, rather than sampling the morphology
+generator uniformly.
+
+#### Methodology Insights
+
+* **Default search strategy**: gradient-free evolutionary search with population = **O(100)**,
+  generations = **O(20-45)**, crossover/mutation = **0.4**, multi-seed (&gt;=3) validation
+  [Ezra-Tsur2021, Methods]. NSGA-II is the first-line choice because it extends cleanly to
+  multi-objective if DSI is later paired with a secondary objective.
+
+* **Surrogate-assisted extension**: the [PolegPolsky2026] pipeline combines gradient-free search
+  with a surrogate model. For the plan, assume the surrogate burns **O(10^3-10^4) NEURON
+  simulations** to train (the PDF quantifies this but the summary does not — **not found in paper
+  summary**) and provides O(&gt;1000×) inference speedup. Include an explicit sensitivity row for
+  surrogate training cost ranging 1000-50000 NEURON evaluations.
+
+* **Morphology parameterisation**: use Cuntz [Cuntz2010] with **3-5 scalar parameters** (spanning
+  volume, carrier-point density, balancing factor `bf` in **[0.2, 0.7]**, root location, optional
+  per-cell taper tweak) rather than per-branch geometry.
+
+* **Channel parameterisation**: use the t0022 5-region × top-10-VGC matrix from the `t0019` answer,
+  holding `V_half` and kinetic τ at the Fohlmeister-Miller / Kole / Hu / VanWart / Kole-2008
+  literature values and varying only `gbar` per (region, channel) combination to keep the channel
+  axis at **~15-25 parameters**
+  [VanWart2006, Kole2007, FohlmeisterMiller1997, Hu2009, Kole2008, Fohlmeister2010].
+
+* **Joint dimensionality upper bound**: O(5) morphology + O(15-25) channel = **O(20-30) free
+  parameters**. Under a classic &quot;10× dimension per generation for evolutionary search&quot; rule of thumb
+  — uncorroborated by the corpus; flagged as an assumption the plan must own — that maps to
+  **O(200-300) evaluations per generation × O(20-45) generations = O(4000-13500) NEURON
+  simulations**, with a surrogate accelerant potentially reducing total NEURON-backed evaluations to
+  O(1000-5000).
+
+* **Per-simulation wall-time baseline**: empirical t0026 measurements are **3.8 s per (angle,trial)
+  on t0022 deterministic** and **12.0 s per (angle,trial) on t0024 stochastic AR(2)**. Under the
+  12-angle × 10-trial-replicates standard, that is **~7.6 min/sim on t0022** and **~24 min/sim on
+  t0024** per candidate morphology+channel vector. For the joint sweep, the stochastic AR(2) path is
+  the conservative upper bound; the deterministic path can be used for the surrogate-training phase.
+
+* **Discretisation floor**: hundreds of compartments per cell, respecting `d_lambda &lt; 0.1`
+  [Mainen1996, Schachter2010, Ezra-Tsur2021]. Do *not* coarsen to accelerate — coarsening erases the
+  5-10 μm local DS subunits that [deRosenroll2026] relays from Jain 2020 (not in this corpus), on
+  which the DSI objective depends.
+
+* **Active-dendrite lower bound**: the optimiser must not be allowed to zero out Nav + Kdr in the
+  dendrites, since passive-dendrite configurations cap DSI [Schachter2010]. Encode this as a hard
+  floor on dendritic gNa and gKdr.
+
+* **Reproducibility**: record `dt`, `nseg` per section, random seeds, and NEURON version per run,
+  per [Hines1997] section/segment abstraction concerns. Multi-seed (&gt;=3) replication per
+  [Ezra-Tsur2021] is mandatory — do not report DSI from a single seed.
+
+* **DSI metric definition**: use the standard vector-angle / PD-ND difference definition across 12
+  directions, matching the t0022 `ACCEPTANCE_MIN_DSI = 0.5` gate and the `METRIC_KEY_DSI` constant
+  already registered in `tasks/t0022_modify_dsgc_channel_testbed/code/constants.py`.
+
+* **Hypotheses to test in the plan** (explicit):
+  1. Surrogate-assisted search reduces total NEURON-backed simulations by **&gt;=5×** relative to a
+     pure GA, converging with [PolegPolsky2026].
+  2. Cuntz `bf` has a monotonic effect on DSI within **[0.2, 0.7]** because `bf` monotonically
+     controls electrotonic compartmentalisation and local DS subunits require electrotonic isolation
+     [Cuntz2010], together with the 5-10 μm subunit constraint that [deRosenroll2026] relays from
+     Jain 2020.
+  3. AIS-distal Nav1.6 `gbar` in **[2000, 5000] pS/μm²** dominates DSI among channel parameters
+     because it gates AP initiation at the microdomain that first fires
+     [VanWart2006, Hu2009, Kole2008].
+
+#### Gaps and Limitations
+
+The corpus has strong coverage of DSGC biophysics, morphology, and channel priors but weak or absent
+coverage on five methodology questions the downstream planner must resolve:
+
+* **CoreNEURON / GPU-NEURON variants**: zero corpus papers mention CoreNEURON, OpenACC, CUDA-based
+  NEURON, or any GPU-accelerated cable-equation solver. [Hines1997] is the only numerical-methods
+  paper and it predates GPUs. No speedup factor, no hardware requirement, and no per-simulation
+  throughput is quantified in the corpus for any GPU variant. The planner must source these numbers
+  elsewhere (e.g., CoreNEURON documentation or the Blue Brain Project outputs) — flag in the plan as
+  an external-input dependency.
+
+* **NN-surrogate training and inference economics**: [PolegPolsky2026] names surrogate-assisted
+  search but the summary does not quantify surrogate training cost, inference cost, or speedup
+  factor. The plan&#x27;s NN-surrogate compute-strategy cost envelope therefore rests on an assumption,
+  not on corpus evidence. Flag this as a **medium-priority** follow-up: either re-read the
+  [PolegPolsky2026] PDF (downloaded) for the specific numbers, or accept the assumption and carry it
+  through sensitivity analysis.
+
+* **Bayesian optimisation and CMA-ES**: no corpus paper uses these strategies on a DSGC / SAC / RGC
+  compartmental model. The plan cannot cite a DSGC-specific baseline for either; comparison must be
+  at the level of generic gradient-free-optimiser literature or omitted.
+
+* **Per-simulation wall-time scaling with compartment count and timestep**: [Hines1997] asserts O(N)
+  compartment scaling but reports no measured throughput on modern hardware. [Ezra-Tsur2021] reports
+  three per-simulation data points (70.66 / 421.47 / 492.36 s) on Blue Brain V Intel Xeon 6140 but
+  does not vary N or dt systematically. The t0026 data provide two additional empirical points
+  (t0022 deterministic 3.8 s, t0024 stochastic 12.0 s per angle-trial). There is no corpus curve for
+  wall-time as a function of compartment count — the plan will have to fit an extrapolation on three
+  points, which is weak.
+
+* **Dimensionality-reduction for channels**: [Cuntz2010] solves this cleanly for morphology, but
+  there is no corpus precedent for reducing the 10-VGC × 5-region channel space via hierarchical
+  priors, parameter sharing across regions, or Sobol sampling. The plan must propose a
+  dimensionality-reduction scheme (likely per-channel single-region assignment from the `t0019`
+  priors) and acknowledge that no DSGC-specific paper validates it.
+
+Additional narrower gaps: the Jain 2020 dendritic DSI numbers are accessed via [deRosenroll2026]&#x27;s
+citation rather than a direct read (Jain 2020 is not present in this corpus as a paper asset) —
+adding that paper would be a medium-priority corpus refresh. [Fohlmeister2010] per-region gbar
+tables have only 4 RGC morphology types (rat Type I/II and cat alpha/beta) — DSGC-specific gbar
+measurements are not in the corpus. [Koren2017] adds cross-compartmental SAC modulation but does not
+bear directly on the DSGC joint- sweep dimensionality.
+
+#### Recommendations for This Task
+
+1. **Fix the default search strategy as gradient-free evolutionary (DEAP-style GA or equivalent)
+   with surrogate-assisted acceleration**, grounded in [PolegPolsky2026] and [Ezra-Tsur2021]. Use
+   population **100-200**, generations **20-45**, crossover/mutation **0.4**, multi-seed (&gt;=3)
+   replication. Do not commit the plan to Bayesian optimisation or CMA-ES without an explicit caveat
+   that no DSGC precedent exists in the corpus.
+
+2. **Reduce the morphology axis to 3-5 Cuntz parameters** (spanning volume, carrier-point density,
+   balancing factor `bf ∈ [0.2, 0.7]`, root location, optional per-cell tweak) per [Cuntz2010]
+   rather than per-branch geometry. This caps the morphology search space at O(10^4-10^5) grid
+   points even under coarse discretisation.
+
+3. **Reduce the channel axis to ~15-25 region-channel gbar parameters** by combining the t0022
+   5-region partition with the `t0019` top-10 VGC priors; hold V_half and τ constant at the
+   Fohlmeister-Miller / Kole / Hu / VanWart / Kole-2008 literature values
+   [VanWart2006, Kole2007, FohlmeisterMiller1997, Hu2009, Kole2008, Fohlmeister2010].
+
+4. **Anchor per-simulation wall-time on t0026 empirical measurements** (3.8 s per angle-trial t0022,
+   12.0 s per angle-trial t0024) and use [Ezra-Tsur2021]&#x27;s 70-500 s per-trial point as an
+   upper-bound consistency check. Do not rely on [Hines1997]&#x27;s 1990s-hardware number.
+
+5. **Flag the CoreNEURON / GPU-NEURON evidence gap as an external-input dependency** in the plan.
+   The plan should either (a) commit to a specific speedup assumption (e.g., 5-20× for
+   CoreNEURON-on-GPU vs CPU) with an explicit sensitivity band, or (b) exclude the GPU option from
+   the recommended combination until a CoreNEURON-specific reference can be brought in.
+
+6. **Build the cost model around three compute strategies as scoped** (CoreNEURON-on-GPU,
+   NN-surrogate-on-GPU, many-core CPU), with the NN-surrogate option carrying an explicit assumption
+   about surrogate-training cost (O(10^3-10^4) NEURON calls) since the corpus does not quantify it.
+
+7. **Enforce a hard floor on dendritic Nav + Kdr** in the optimiser&#x27;s search bounds so that the
+   optimiser cannot degenerate to a passive-dendrite configuration that trivially fails DSI
+   [Schachter2010].
+
+8. **Record discretisation floor (`d_lambda &lt; 0.1`, &gt;=hundreds of compartments) as an inviolable
+   constraint** on the morphology axis [Mainen1996, Schachter2010, Ezra-Tsur2021, deRosenroll2026].
+   Do not offer a coarse-discretisation compute-reduction lever.
+
+9. **Plan a sensitivity analysis** over per-sim cost (**0.5×, 1×, 2×**) and sample count (**0.5×,
+   1×, 2×**) as pre-specified in `task_description.md`; this is what the downstream planner needs to
+   close the loop on the cost envelope given the multiple corpus gaps.
+
+10. **Defer any multi-objective formulation** (DSI + information + energy + Cajal cytoplasm
+    minimisation) per the explicit out-of-scope notice in `task_description.md`; record it as a
+    future-task suggestion only.
+
+#### Paper Index
+
+##### [Aldor2024]
+
+* **Title**: Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic computation of mouse
+  starburst amacrine cells
+* **Authors**: Ledesma, H. A., Ding, J., Oosterboer, S., Huang, X., Chen, Q., Wang, S., Lin, M. Z.,
+  Wei, W.
+* **Year**: 2024
+* **DOI**: `10.1038/s41467-024-46234-7`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_s41467-024-46234-7/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `synaptic-integration`,
+  `voltage-gated-channels`
+* **Relevance**: Adds perisomatic Kv3 to the top-10 VGC set for SAC/DSGC modelling and documents
+  mGluR2 dendritic modulation; supports the t0022 channel partition&#x27;s AIS_DISTAL Kv3 inclusion.
+
+##### [Cuntz2010]
+
+* **Title**: One Rule to Grow Them All: A General Theory of Neuronal Branching and Its Practical
+  Application
+* **Authors**: Cuntz, H., Forstner, F., Borst, A., Häusser, M.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000877`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `cable-theory`
+* **Relevance**: Provides the 3-5-parameter Cuntz morphology generator and TREES toolbox. This is
+  the load-bearing reference for reducing the morphology axis of the joint optimisation from
+  O(100-1000) per-branch parameters to **O(3-5) scalars**.
+
+##### [deRosenroll2026]
+
+* **Title**: Uncovering the &quot;hidden&quot; synaptic microarchitecture of the retinal direction selective
+  circuit
+* **Authors**: de Rosenroll, G., Sethuramanujam, S., Awatramani, G. B.
+* **Year**: 2026
+* **DOI**: `10.1016/j.celrep.2025.116833`
+* **Asset**: `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `dendritic-computation`
+* **Relevance**: The biophysical backbone that t0024 ports and t0022 extends; identifies that local
+  subunit-level DSI is the sensitive objective and relays the Jain 2020 5-10 μm subunit scale that
+  constrains the morphology-discretisation floor.
+
+##### [Ezra-Tsur2021]
+
+* **Title**: Realistic retinal modeling unravels the differential role of excitation and inhibition
+  to starburst amacrine cells in direction selectivity
+* **Authors**: Ezra-Tsur, E., Amsalem, O., Ankri, L., Patil, P., Segev, I., Rivlin-Etzion, M.
+* **Year**: 2021
+* **DOI**: `10.1371/journal.pcbi.1009754`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1009754/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`
+* **Relevance**: Primary corpus precedent for GA-based (DEAP / NSGA-II / IBEA) parameter sweep of
+  SAC / DSGC compartmental models, with explicit per-trial wall-time numbers on Blue Brain V HPC
+  (70.66 / 421.47 / 492.36 s) and a documented 8-D parameter space.
+
+##### [Fohlmeister2010]
+
+* **Title**: Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using
+  Temperature as an Independent Variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00123.2009`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/`
+* **Categories**: `retinal-ganglion-cell`, `compartmental-modeling`, `voltage-gated-channels`,
+  `patch-clamp`
+* **Relevance**: Per-region (dendrite / soma / IS / TS / axon) gbar tables for rat and cat RGCs at
+  35 °C, providing the gbar search-range priors for the channel axis of the joint optimisation.
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Canonical HH rate functions for RGC Nav / Kdr / Ka / Ca at 22 °C with Q10 ~3. These
+  kinetics define the V_half and τ values that the joint optimisation holds fixed while varying
+  gbar.
+
+##### [Hines1997]
+
+* **Title**: The NEURON Simulation Environment
+* **Authors**: Hines, M. L., Carnevale, N. T.
+* **Year**: 1997
+* **DOI**: `10.1162/neco.1997.9.6.1179`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`
+* **Categories**: `compartmental-modeling`, `cable-theory`, `voltage-gated-channels`
+* **Relevance**: The only corpus paper describing NEURON&#x27;s O(N) cable solver, staggered
+  Crank-Nicolson integrator, and analytical HH gating update. Establishes that per-simulation cost
+  scales linearly in compartment count — the foundation of the wall-time model.
+
+##### [Hu2009]
+
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, W., Tian, C., Li, T., Yang, M., Hou, H., Shu, Y.
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Establishes the **10-15 mV V_half split** between Nav1.6 (distal AIS, V_half ~-45
+  mV) and Nav1.2 (proximal AIS, V_half ~-32 mV). Justifies keeping separate AIS_DISTAL /
+  AIS_PROXIMAL gbar parameters in the joint optimisation.
+
+##### [Kole2007]
+
+* **Title**: Axon Initial Segment Kv1 Channels Control Axonal Action Potential Waveform and Synaptic
+  Efficacy
+* **Authors**: Kole, M. H. P., Letzkus, J. J., Stuart, G. J.
+* **Year**: 2007
+* **DOI**: `10.1016/j.neuron.2007.07.031`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1016_j.neuron.2007.07.031/`
+* **Categories**: `voltage-gated-channels`, `dendritic-computation`
+* **Relevance**: Provides the AIS-distal Kv1 priors (V_half ~**-40 to -50 mV**, τ ~**0.5-1 ms**,
+  gbar ~**100-300 pS/μm²**) for the channel axis.
+
+##### [Kole2008]
+
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole, M. H. P., Ilschner, S. U., Kampa, B. M., Williams, S. R., Ruben, P. C., Stuart,
+  G. J.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Peak AIS Nav conductance density **2500-5000 pS/μm²** (~50× somatic density),
+  setting the upper range for the AIS_DISTAL gbar search bound in the joint optimisation.
+
+##### [Koren2017]
+
+* **Title**: Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity
+* **Authors**: Koren, D., Grove, J. C. R., Wei, W.
+* **Year**: 2017
+* **DOI**: `10.1016/j.neuron.2017.07.020`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Demonstrates that cross-compartmental SAC modulation affects downstream DSGC
+  function; motivates keeping the SAC→DSGC input schedule fixed during the sweep rather than
+  co-optimising it (consistent with the out-of-scope note in `task_description.md`).
+
+##### [Mainen1996]
+
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/`
+* **Categories**: `cable-theory`, `dendritic-computation`, `compartmental-modeling`
+* **Relevance**: Canonical demonstration that morphology alone reshapes firing patterns under fixed
+  channel biophysics; establishes the `d_lambda` discretisation rule and the morphology- biophysics
+  coupling that forbids factoring the joint sweep into marginal sweeps.
+
+##### [PolegPolsky2026]
+
+* **Title**: Machine learning discovers numerous new computational principles underlying direction
+  selectivity in the retina
+* **Authors**: Poleg-Polsky, A.
+* **Year**: 2026
+* **DOI**: `10.1038/s41467-026-70288-4`
+* **Asset**: `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `dendritic-computation`
+* **Relevance**: The corpus&#x27;s primary reference for gradient-free + surrogate-assisted search
+  applied directly to a 352-segment DSGC compartmental model with DSI as the objective. Defines the
+  methodological template the plan should follow.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Quantifies dendritic Na density **40 mS/cm²** (uniform) or **45→20 mS/cm²**
+  (gradient) as the baseline active-dendrite configuration; shows the **4×** DSI amplification from
+  PSPs to spikes that the joint optimisation is trying to preserve or extend. Also the source of the
+  &quot;active-dendrite is necessary, not optional&quot; constraint.
+
+##### [Srivastava2022]
+
+* **Title**: Spatiotemporal properties of glutamate input support direction selectivity in the
+  dendrites of retinal starburst amacrine cells
+* **Authors**: Srivastava, P., de Rosenroll, G., Matsumoto, A., Michaels, T., Turple, Z., Jain, V.,
+  Sethuramanujam, S., Murphy-Baum, B. L., Yonehara, K., Awatramani, G. B.
+* **Year**: 2022
+* **DOI**: `10.7554/eLife.81533`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.7554_eLife.81533/`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `dendritic-computation`,
+  `synaptic-integration`, `retinal-ganglion-cell`
+* **Relevance**: Provides per-synapse conductance scaling (**172.2 pS proximal → 68.6 pS distal**)
+  and the 6-proximal + 12-distal BC synapse count that fix the synaptic-input axis (held constant
+  during the sweep per scope).
+
+##### [VanWart2006]
+
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, A., Trimmer, J. S., Matthews, G.
+* **Year**: 2006
+* **DOI**: `10.1002/cne.21173`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/`
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Relevance**: Demonstrates the RGC AIS subdivides into Nav1.6-distal + Nav1.2-proximal
+  microdomains, justifying the t0022 5-region partition (SOMA / DEND / AIS_PROXIMAL / AIS_DISTAL /
+  THIN_AXON) that anchors the channel-axis parameterisation.
+      </content>
+    </section>
+    <section id="t0033_plan_dsgc_morphology_channel_optimisation-research_code" source_kind="file">
+      <title>t0033_plan_dsgc_morphology_channel_optimisation — Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0033_plan_dsgc_morphology_channel_optimisation/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0033_plan_dsgc_morphology_channel_optimisation&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 8
+tasks_cited: 7
+libraries_found: 1
+libraries_relevant: 1
+date_completed: &quot;2026-04-22&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Plan DSGC Morphology + VGC DSI Optimisation
+
+#### Task Objective
+
+This task scopes and costs a future joint optimisation over DSGC dendritic morphology and the top-10
+voltage-gated channel (VGC) types to maximise the direction-selectivity index (DSI) on the t0022
+testbed architecture, priced on Vast.ai GPU. The planning step needs hard numbers for (a) the
+parameter count per forsec region already present in t0022 and t0024, (b) the per-channel
+biophysical parameter counts for the top-10 VGCs from t0019, (c) per-simulation wall-time anchors
+from t0026, (d) the Vast.ai tier filters and cost-ranking algorithm from `vast_machines.py`, and (e)
+which scoring / loss code can be reused as the optimiser objective. No simulations are run in this
+task; only code inspection and arithmetic. The findings below power the parameter-count and pricing
+tables in `plan/plan.md` and the final answer asset.
+
+#### Library Landscape
+
+The project&#x27;s library aggregator script is not present in this worktree (`arf/scripts/aggregators/`
+ships `aggregate_tasks`, `aggregate_costs`, `aggregate_machines`, `aggregate_metric_results`,
+`aggregate_metrics`, `aggregate_suggestions`, `aggregate_categories`, `aggregate_task_types` only —
+no `aggregate_libraries` or `aggregate_answers`). Libraries were therefore enumerated by direct
+inspection of `tasks/*/assets/library/`.
+
+One registered library is relevant to this task:
+
+* **`tuning_curve_loss`** (version `0.1.0`, registered by [t0012]): canonical 4-axis (DSI, peak,
+  null, HWHM) tuning-curve scorer with weighted Euclidean-in-normalised-space loss, envelope
+  pass/fail, and RMSE-vs-target diagnostics. Entry points include `score()`, `score_curves()`,
+  `ScoreReport`, `load_tuning_curve()`, `compute_dsi()`, `compute_peak_hz()` in
+  `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/` (8 modules: `__init__.py`,
+  `paths.py`, `loader.py`, `metrics.py`, `envelope.py`, `weights.py`, `scoring.py`, `cli.py`).
+  Aggregator output not available; the `details.json` under `assets/library/tuning_curve_loss/` is
+  the primary source of truth. Import path for the optimisation objective would be
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.scoring import score_curves, ScoreReport`.
+
+Other libraries (e.g. `modeldb_189347_dsgc_dendritic` registered by t0022, `de_rosenroll_2026_dsgc`
+registered by t0024, `dsgc-baseline-morphology-calibrated` registered by t0009, `response_plots`
+registered by t0011) exist but are cell-construction / plotting assets, not optimiser-objective
+libraries. They are covered under the per-region channel enumeration below.
+
+#### Architecture Overview
+
+The future optimisation inherits the t0022 testbed architecture: a ModelDB 189347 Poleg-Polsky
+morphology with 282 ON-dendrite sections, plus a five-region channel-modular HOC overlay
+(`dsgc_channel_partition.hoc`) that declares named `SectionList` objects for `SOMA_CHANNELS`,
+`DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, and `THIN_AXON` [t0022]. Each `forsec` block is a
+one-line hook that an optimiser can replace to swap channel mechanisms per region without touching
+the verbatim Poleg-Polsky HOC. The t0024 port overlays the same backbone with HHst + cad on every
+dendrite and adds AR(2)-correlated stochastic release [t0024]. The t0026 wall-time experiment gives
+the per-trial runtime anchors [t0026].
+
+#### Key Findings
+
+##### Per-Region Channel Set Already Instantiated by t0022
+
+`dsgc_channel_partition.hoc` at
+`tasks/t0022_modify_dsgc_channel_testbed/code/dsgc_channel_partition.hoc` (109 lines) defines five
+`forsec` hooks, but the baseline t0022 testbed is deliberately *empty* in `AIS_PROXIMAL`,
+`AIS_DISTAL`, and `THIN_AXON` — the bundled Poleg-Polsky morphology has no axon sections. Baseline
+channel inventory inherited from ModelDB 189347 [t0022]:
+
+| Region | Baseline mechanism | gbar (S/cm^2) | Source |
+| --- | --- | --- | --- |
+| `SOMA_CHANNELS` | HHst (spike.mod) | 1.0 (Nav) | ModelDB 189347 |
+| `DEND_CHANNELS` | pas only | 0.03 (Nav prior) | ModelDB 189347, dendrite Nav is a *prior* not an active insert in the baseline |
+| `AIS_PROXIMAL` | empty hook | 1.5 (Nav1.1 target) | [ModelDB-123623-KoleStuart] |
+| `AIS_DISTAL` | empty hook | 8.0 (Nav1.6), 0.1 (Kv1.2), 0.0033 (Kv3 optional) | [ModelDB-144526-Hallermann, ModelDB-Kv3-Akemann2006] |
+| `THIN_AXON` | empty hook | baseline HHst | — |
+
+The t0022 build defers the population of AIS_PROXIMAL / AIS_DISTAL / THIN_AXON to channel-swap
+tasks. For the future joint optimisation, every non-empty region above contributes at least one
+`gbar` free parameter.
+
+##### Per-Region Channel Set Already Instantiated by t0024
+
+The de Rosenroll 2026 port at `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py` (line
+numbers 192-248) inserts `HHst` + `cad` on the soma, every primary dendrite, every non-terminal
+dendrite, and every terminal dendrite, with per-tier `gbar` values from
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py` [t0024]:
+
+| Region | Mechanism | gNa (S/cm^2) | gKdr (S/cm^2) | gKm (S/cm^2) | gleak (S/cm^2) |
+| --- | --- | --- | --- | --- | --- |
+| Soma | HHst + cad | 0.150 | 0.035 | 0.003 | 1.667e-4 |
+| Primary dendrite | HHst + cad | 0.200 | 0.035 | 0.003 | 1.667e-4 |
+| Non-terminal dend | HHst + cad | 0.000 (zeroed) | 0.025 | 0.003 | 1.667e-4 |
+| Terminal dend | HHst + cad | 0.030 | 0.025 | 0.003 | 1.667e-4 |
+
+t0024&#x27;s HHst mechanism bundles Nav, Kdr, Km, and leak into one lumped mechanism — that is four
+conductance parameters per region × four regions = **16 free gbar parameters before introducing any
+new VGC species** [t0024]. Ra (100 Ω·cm), cm (1.0 μF/cm²), eleak (-60 mV), celsius (36.9 °C), and
+cad (CA_DECAY_TAU_MS=10 ms) are set as constants but are natural candidates for the optimiser.
+
+##### Held-Fixed Presynaptic / Synaptic Parameters
+
+The task scope fixes all presynaptic machinery. For t0024 the held-fixed parameters read from
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py` are: ACh kinetics (tau1 0.1 / tau2 4.0
+ms, E 0 mV, weight 0.001 μS); GABA kinetics (tau1 0.5 / tau2 12.0 ms, E -60 mV, weight 0.003 μS,
+uncorrelated scale 1.8); NMDA kinetics (tau1 2 / tau2 7 ms, E 0 mV, weight 0.0015 μS, n 0.25, γ
+0.08); AR(2) process (φ=(0.9, -0.1), ρ_corr 0.6 / ρ_uncorr 0.0, innov_scale 1.0, base_rate 50 Hz);
+SAC spatial offsets (30 μm min, 27 μm amacrine decay tau); bar geometry (velocity 1 μm/ms, width 250
+μm) [t0024]. For t0022 the held-fixed presynaptic parameters are: AMPA (tau1 0.2 / tau2 1.5 ms, E 0
+mV); GABA (tau1 0.5 / tau2 8.0 ms, E -70 mV); GABA null/pref ratio 4; burst scheduler (N_SYN_EVENTS
+6, SYN_EVENT_INTERVAL_MS 30); EI offsets (±10 ms); bar (velocity 1 μm/ms) [t0022]. The researcher
+explicitly excludes variation on the presynaptic side from the planned optimisation, so these values
+are inputs, not free parameters.
+
+##### Top-10 VGC Selection from t0019
+
+The t0019 answer asset at
+`tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/full_answer.md`
+(214 lines) enumerates five canonical priors grounded in five source papers (Van Wart 2006, Kole
+2007, Fohlmeister &amp; Miller 1997, Hu 2009, Kole 2008) [t0019]. It does not present a literal numbered
+&quot;top-10&quot; list, but the five priors plus the `research/research_internet.md` &quot;Channel-Density Numbers
+from Public MOD Files&quot; table in t0022 (lines 138-144) together name an effective top-10 VGC set for
+the optimisation:
+
+| # | Channel | Region(s) of interest | Per-channel free parameters (planning default) | Biophysical rationale |
+| --- | --- | --- | --- | --- |
+| 1 | Nav1.6 | distal AIS, soma | gbar, V_half_activation, τ_act | Hu2009 distal initiator, ~-45 mV V_half |
+| 2 | Nav1.1 | proximal AIS | gbar, V_half_activation | Van Wart 2006 RGC-AIS canonical proximal subunit |
+| 3 | Nav (HHst-lumped, dend) | dendrite | gbar | Poleg-Polsky 2026 dendritic Nav [t0024] |
+| 4 | Kdr (HHst-lumped K) | soma, dendrite, AIS | gbar, V_half | Fohlmeister-Miller 1997 canonical kinetics |
+| 5 | Kv1.1 | distal AIS | gbar | Kole 2007 near-threshold Kv1, co-localised with Nav1.6 |
+| 6 | Kv1.2 | distal AIS | gbar, V_half_activation | Kole 2007 (100-300 pS/μm² default), tunable V_half |
+| 7 | Kv2.1 | soma, proximal dendrite | gbar | Van Wart 2006 somatic Kv2.1 cluster |
+| 8 | Kv3.1/3.2 | distal AIS (optional) | gbar | Akemann 2006 MOD file, RGC-AIS-Review-2022 |
+| 9 | Km / KCNQ | soma, dendrite | gbar | HHst mechanism exposes gkmbar, Poleg-Polsky 2026 [t0024] |
+| 10 | Ca (HVA) + cad | soma, dendrite | gbar_Ca, tau_cad | Fohlmeister-Miller 1997 Ca; cad decay tau |
+
+This is the honest synthesis from the surveyed corpus. t0019&#x27;s limitations section notes that all
+five source papers were paywalled and that the Kv3 / KCNQ / Ca priors come from training-knowledge
+overlays rather than direct paper extraction; the planner must carry these caveats forward.
+Representative **per-channel free-parameter count = 2** (gbar in each of two regions of interest)
+gives ~20 VGC parameters in the tightest parameterisation; a richer parameterisation that also lets
+V_half / τ_act vary for Nav1.6 / Nav1.2 / Kv1.2 adds 6-9 more, landing in a 20-30 parameter total
+for VGCs alone.
+
+##### Wall-Time Anchors from t0026
+
+Per-(angle, trial) wall-time anchors read directly from
+`tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md` [t0026]:
+
+| Model | Trials | Wall time | Per-(angle, trial) |
+| --- | --- | --- | --- |
+| t0022 (deterministic ModelDB 189347 channel testbed) | 96 | **6.0 min** | **~3.8 s** |
+| t0024 (de Rosenroll 2026, AR(2) ρ=0.6) | 960 | **11,562 s / 3.21 h** | **~12.0 s** |
+
+Per-V_rest range for t0024 was 1,403 s (V=-30 mV) to 1,581 s (V=-90 mV); hyperpolarised runs take
+longer because the initial settle needs more sub-threshold steps. Hardware: Sheffield CICS Dell
+OptiPlex Windows 11 workstation, single-threaded NEURON 8.2.7. t0026 explicitly flags that NEURON
+supports `mpirun` and every (angle, trial) combination is embarrassingly parallel — a parallel-CPU
+variant could cut t0024&#x27;s 3.21 h to under 30 min [t0026]. This is a first-order input to the
+&quot;Vast.ai many-core CPU&quot; strategy cost model.
+
+##### DSI Loss Function from t0012
+
+`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/scoring.py` (line 1-80+ head)
+defines `ScoreReport` (frozen dataclass with `loss_scalar`, DSI / peak / null / HWHM residuals,
+normalised residuals, RMSE-vs-target, reliability, `passes_envelope`, `per_target_pass`,
+`weights_used`, `candidate_metrics`, `target_metrics`) and the `score()` and `score_curves()` entry
+points. The scorer computes a weighted Euclidean norm in envelope-normalised space; the planner&#x27;s
+answer asset can specify that the future optimiser maximises `-loss_scalar` (or maximises DSI
+directly using `compute_dsi()` from `tuning_curve_loss.metrics`) [t0012]. Per-metric keys registered
+in `meta/metrics/` and consumed by the scorer are `direction_selectivity_index`,
+`tuning_curve_hwhm_deg`, `tuning_curve_reliability`, `tuning_curve_rmse`. The library is already a
+registered asset, so the optimiser can `import` it directly and reuse its CSV loader.
+
+##### Vast.ai Tier Filters and Ranking Algorithm
+
+`arf/scripts/utils/vast_machines.py` (237 lines) encodes the cost model (framework module, not a
+task asset). Core findings:
+
+| Aspect | Value |
+| --- | --- |
+| Default search filter string | `&quot;rentable=true verified=true compute_cap&lt;1200 cuda_max_good&gt;=12.6&quot;` |
+| `compute_cap&lt;1200` | blocks Blackwell sm_120 (RTX 5090, RTX PRO 6000 S/WS) for PyTorch 2.6.0 compatibility |
+| `cuda_max_good&gt;=12.6` | blocks drivers too old for container image |
+| Speed-tier table (key entries) | RTX 3090 = 1.00 (reference); RTX 4090 = 1.60; A100 40GB = 1.80; A100 80GB = 2.00; H100 = 3.00; H200 = 3.50 |
+| Reliability thresholds | 0.95 for ≤1 h; 0.98 for ≤5 h; 0.995 for ≤24 h; 0.999 otherwise |
+| Cost-efficiency ranking | `rank_offers()` sorts by `(est_hours, price_per_hour)` with a ±20 % similar-speed tolerance — within the tolerance band the cheaper offer wins |
+| Provisioning constants | `MAX_RETRY_OFFERS=3`, `POLL_INTERVAL_SECONDS=30`, `CREATION_TIMEOUT_SECONDS=600` |
+
+`_estimate_hours(offer, estimated_hours_reference)` scales a reference runtime by
+`reference_speed / offer_speed` using the `GPU_SPEED_TIERS` table. For the planning task, this gives
+the tier-pricing extrapolation rule: RTX 4090 ≈ 0.625 × reference runtime, A100 40 GB ≈ 0.556×, H100
+≈ 0.333×, H200 ≈ 0.286× (vs RTX 3090 reference = 1.0).
+
+##### Remote-Machine Operational Constraints
+
+`arf/docs/explanation/remote_machines.md` and `arf/specifications/remote_machines_specification.md`
+spell out the operational envelope that every cost estimate in this plan must respect:
+
+* **Checkpointing** required when estimated wall-time exceeds 2 h: checkpoint every 30 min to a
+  known path (`checkpoint_path`) and heartbeat every 5 min to `heartbeat_path`, both recorded in
+  `machine_log.json`. Verificator code is `RM-W006`.
+* **Instance labelling** `&quot;&lt;project&gt;/&lt;task_id&gt;&quot;` via `label_instance()` in `vast_machines.py`.
+* **Cost recording** in two files: `tasks/&lt;task_id&gt;/results/costs.json` (with `vast_ai` service
+  entry) and `tasks/&lt;task_id&gt;/results/remote_machines_used.json` (one record per machine:
+  instance_id, GPU, duration, cost). Verificator `RM-E006` cross-checks the totals.
+* **Budget enforcement**: `setup-machines` reads current spend via `aggregate_costs`, adds the
+  plan&#x27;s estimate, and refuses to provision if the total would exceed `project/budget.json`&#x27;s stop
+  threshold.
+* **Teardown** is mandatory — `verify_machines_destroyed` blocks PR merge if any instance is alive.
+
+For a joint optimisation that will almost certainly run longer than 2 h, the plan must budget
+checkpointing overhead (writing a state snapshot every 30 min) and heartbeat I/O (every 5 min).
+
+##### Embarrassingly Parallel Structure and NEURON GPU Options
+
+t0026&#x27;s &quot;Compute efficiency&quot; note [t0026] flags `mpirun` multi-processing for NEURON and observes
+that &quot;each (V_rest, angle, trial) combination is embarrassingly parallel&quot;. Joint morphology ×
+channel optimisation is similarly decomposable: every objective evaluation is one 12-angle sweep
+(~96-960 trials) that can fan out across GPU / CPU cores. CoreNEURON (the OpenACC/CUDA variant of
+NEURON) is the obvious GPU path but has no installation or validation in any prior task — it would
+be a new tool adoption. Surrogate-NN approaches (training a small NN on a CPU-NEURON sample then
+optimising on the surrogate) are also untested in this project. The planner must record both as
+unvalidated, with the CPU many-core path as the conservative fallback.
+
+#### Reusable Code and Assets
+
+The future optimisation task will reuse the following (labelled per the cross-task code reuse rule):
+
+* **`tuning_curve_loss` library** — **import via library**. Path:
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.scoring import score, score_curves, ScoreReport`
+  and siblings. 8 modules, ~50-300 lines each. No adaptation needed; the scorer already returns DSI,
+  peak Hz, null Hz, HWHM, and a weighted scalar loss suitable as an optimiser objective [t0012].
+* **t0022 run driver** — `tasks/t0022_modify_dsgc_channel_testbed/code/run_tuning_curve.py` (684
+  lines). **Copy into task.** Provides `run_one_trial_dendritic()`, `_run_sweep()`,
+  `build_ei_pairs()`, `_compute_onset_times_ms()`, `schedule_ei_onsets()`. Adaptation needed: swap
+  the `forsec SOMA_CHANNELS / DEND_CHANNELS / AIS_*` HOC blocks to insert optimiser-controlled
+  channel mechanisms and `gbar` values [t0022].
+* **t0022 channel partition HOC** —
+  `tasks/t0022_modify_dsgc_channel_testbed/code/dsgc_channel_partition.hoc` (109 lines). **Copy into
+  task.** Five-region `SectionList` overlay used verbatim; only the `forsec` block bodies change per
+  optimiser evaluation [t0022].
+* **t0022 constants** — `tasks/t0022_modify_dsgc_channel_testbed/code/constants.py` (147 lines).
+  **Copy into task.** Timing, geometry, threshold, scheduling constants. Hold every presynaptic/bar
+  constant fixed per scope [t0022].
+* **t0024 build_cell** — `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py` (300+ lines).
+  **Copy into task.** Reuses `_configure_soma`, `_configure_dends`, `_find_origin`, `_map_tree`,
+  `DSGCCell`. The tier-based dendrite classification (primary / non-terminal / terminal) is directly
+  the right abstraction for the optimiser to control per-tier gbar_HHst [t0024].
+* **t0024 AR(2) noise generator** — `tasks/t0024_port_de_rosenroll_2026_dsgc/code/ar2_noise.py`.
+  **Copy into task** if the optimisation uses the stochastic t0024 backbone; the
+  `generate_ar2_process()` function is the presynaptic release-rate generator. Not needed for
+  deterministic t0022-style optimisation [t0024].
+* **t0024 constants** — `tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py` (120 lines).
+  **Copy into task.** All held-fixed presynaptic / synaptic / AR(2) parameters; the four lumped HHst
+  gbar defaults are the starting point the optimiser perturbs [t0024].
+* **t0026 V_rest override and per-(angle, trial) wall-time recorder** —
+  `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/vrest_override.py` and
+  `tasks/t0026_vrest_sweep_tuning_curves_dsgc/code/trial_runner_t0022.py` / `trial_runner_t0024.py`.
+  **Copy into task.** The wall-time recording pattern is directly reusable as the optimiser&#x27;s
+  telemetry [t0026].
+* **Vast.ai provisioning library** — `arf/scripts/utils/vast_machines.py` (237 lines). **Import
+  directly** (framework module, not a task library). Provides `build_query_string()`,
+  `rank_offers()`, `reliability_threshold_for()`, `label_instance()`, `destroy_and_confirm()`, and
+  the `SearchCriteria`, `VastOffer`, `FailedAttempt`, `ProvisionResult`, `DestroyResult`
+  dataclasses. The plan and cost model reference `DEFAULT_FILTERS`, `GPU_SPEED_TIERS`,
+  `RELIABILITY_THRESHOLDS`.
+
+#### Dataset Landscape
+
+No dataset assets are directly reused by this planning task. t0022 and t0024 hold their tuning-curve
+CSVs in `data/`; t0026 holds V_rest-sweep tidy CSVs. The future optimisation will produce many
+tuning-curve CSVs that the t0012 scorer consumes via `load_tuning_curve()` — but this task itself
+produces only an answer asset.
+
+#### Lessons Learned
+
+* **Wall-time multiplier between deterministic and stochastic drivers is ~3.2×.** t0022&#x27;s 3.8
+  s/(angle, trial) vs t0024&#x27;s 12.0 s/(angle, trial) is a hard empirical fact [t0026]. Any plan that
+  assumes the same speed for both is wrong.
+* **Hyperpolarised V_rest runs are slower.** t0024 per-V_rest wall-time varied 1,403-1,581 s across
+  -90 to -30 mV [t0026]. Optimisers that sample far from the baseline V_rest will pay a modest
+  wall-time surcharge.
+* **Baseline Poleg-Polsky morphology has no axon.** The t0022 channel partition leaves
+  `AIS_PROXIMAL`, `AIS_DISTAL`, `THIN_AXON` empty. Any optimisation that wants to vary AIS channels
+  must first construct axon sections — that is a new implementation task, not a one-line swap
+  [t0022].
+* **Lumped HHst vs multi-subunit trade-off is unresolved.** t0022 and t0024 both use the HHst
+  mechanism, which lumps Na + Kdr + Km + leak. Separating into Nav1.6 / Nav1.2 / Kv1.2 distinct MOD
+  files (as t0019 recommends) is a mechanism-library change outside this planning task&#x27;s scope
+  [t0019] [t0022].
+* **t0019 answer asset carries a paywall caveat.** All five source papers were not downloaded;
+  numerical priors for Kv1 gbar, Nav1.6 / Nav1.2 V_half split, AIS Nav density are
+  training-knowledge overlays and should be refined in later literature-survey tasks [t0019]. The
+  plan must flag this uncertainty.
+* **No prior task used a GPU.** Every sim to date is single-threaded CPU NEURON 8.2.7 on a Windows
+  workstation. CoreNEURON, NEURON+GPU, surrogate-NN are all unvalidated — so the cost model must
+  budget a &quot;tool adoption&quot; task on top of any GPU-strategy recommendation [t0026].
+* **Scoring library is production-ready.** `tuning_curve_loss` is already a registered library asset
+  with unit tests (`test_scoring.py`, `test_metrics.py`, `test_envelope.py`, `test_loader.py`,
+  `test_cli.py`) [t0012] — no objective-function work needed for the planner.
+
+#### Recommendations for This Task
+
+1. **Use the enumerated region parameter counts (5 forsec regions × ~3 channel parameters each ≈ 15
+   region-level parameters) plus the top-10 VGC × 2 parameters ≈ 20-30 VGC parameters as the
+   baseline search-space dimensionality** in the plan&#x27;s search-space arithmetic. Add ~6-10
+   morphology parameters from the t0027 taxonomy (length, branch count, diameter, arbor asymmetry)
+   to reach a total joint dimensionality of roughly 40-50 parameters in the tight parameterisation,
+   60-80 in the rich parameterisation.
+2. **Peg per-simulation wall-time to the t0026 anchors** (3.8 s/trial for t0022-deterministic, 12.0
+   s/trial for t0024-stochastic). Apply the `vast_machines.GPU_SPEED_TIERS` speed ratio to
+   extrapolate to each GPU tier. Note that CoreNEURON&#x27;s actual speedup is unvalidated in this
+   project — use a literature placeholder (e.g. 5-10× for a single-cell NEURON model on a midrange
+   GPU) with wide sensitivity bands.
+3. **Use `tuning_curve_loss.score_curves()` as the stated optimiser objective** in the answer asset,
+   with DSI weighting dominant. No need to reinvent the scorer [t0012].
+4. **Pick three GPU tiers as the headline comparisons**: RTX 4090, A100 40 GB, H100. They span the
+   speed-tier table (1.60, 1.80, 3.00 vs RTX 3090 = 1.00) and appear in
+   `vast_machines.GPU_SPEED_TIERS`. Include RTX 3090 as the reference tier.
+5. **Budget for the 2-hour checkpointing cliff.** Any headline strategy that runs more than 2 h must
+   budget 30-min checkpoint I/O + 5-min heartbeat overhead per the remote machines spec.
+6. **Report honestly on the top-10 VGC list**: the literal &quot;top-10&quot; numbered list is *synthesised*
+   from t0019&#x27;s 5 canonical priors plus t0022&#x27;s research_internet.md channel-density table, not a
+   pre-existing asset. State this in the answer asset&#x27;s methodology section with the exact synthesis
+   rule.
+7. **Recommend the CPU many-core Vast.ai strategy as the conservative fallback** — this is the only
+   compute path with validated t0026 wall-times. Surrogate-NN and CoreNEURON should be listed as
+   high-upside / high-risk strategies.
+
+#### Task Index
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: Source of the `tuning_curve_loss` registered library that the future joint
+  optimisation will import as its objective function. Provides DSI / peak / null / HWHM residuals
+  and a weighted scalar loss already validated against the t0004 target.
+
+##### [t0019]
+
+* **Task ID**: `t0019_literature_survey_voltage_gated_channels`
+* **Name**: Literature survey: voltage-gated channels in retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Source of the 5 canonical VGC priors that this task expands into a top-10 channel
+  list, with per-channel biophysical parameter counts for the optimisation search-space arithmetic.
+
+##### [t0022]
+
+* **Task ID**: `t0022_modify_dsgc_channel_testbed`
+* **Name**: Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+* **Status**: completed
+* **Relevance**: Provides the 5-region channel-modular HOC partition (`dsgc_channel_partition.hoc`)
+  and the 12-angle × 10-trial deterministic driver that the future optimiser will drive. Its
+  `constants.py` enumerates the held-fixed presynaptic / bar / scheduler parameters.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC model
+* **Status**: completed
+* **Relevance**: Provides the Poleg-Polsky 2026-derived parameter backbone, per-tier HHst gbar
+  values (16 free parameters before new VGCs), AR(2)-correlated stochastic release, and the primary
+  / non-terminal / terminal dendrite tier abstraction the optimiser will control.
+
+##### [t0026]
+
+* **Task ID**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Name**: V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+* **Status**: completed
+* **Relevance**: Empirical per-(angle, trial) wall-time anchors (3.8 s for t0022 deterministic, 12.0
+  s for t0024 stochastic at ρ=0.6) that every cost model in this plan must extrapolate from. Also
+  documents the embarrassingly parallel structure and the mpirun opportunity.
+
+##### [t0027]
+
+* **Task ID**: `t0027_literature_survey_morphology_ds_modeling`
+* **Name**: Literature survey: modeling effect of cell morphology on direction selectivity
+* **Status**: completed
+* **Relevance**: Taxonomises 8 morphology variables (length, branch count / order, diameter, arbor
+  asymmetry, input spatial layout, input kinetic tiling, transfer resistance, collapse-to-point)
+  that feed the morphology side of the joint optimisation&#x27;s search-space arithmetic.
+
+##### [t0002]
+
+* **Task ID**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Name**: Literature survey: compartmental models of DS retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Declared dependency; provides compartmental-model methodology priors the planner
+  must cross-reference when costing surrogate-NN and CoreNEURON strategies.
       </content>
     </section>
   </sections>

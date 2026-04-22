@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (8)
+# Answers: `direction-selectivity` (9)
 
-8 answer(s).
+9 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -187,6 +187,40 @@ is the binding constraint, not a definitive portability verdict.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | **URL sources** | [url 1](https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model), [url 2](https://github.com/geoffder/ds-circuit-ei-microarchitecture), [url 3](https://doi.org/10.5281/zenodo.17666157), [url 4](https://github.com/PolegPolskyLab/DS-mechanisms), [url 5](https://modeldb.science/189347), [url 6](https://modeldb.science/267646) |
 | **Created by** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+
+</details>
+
+<details>
+<summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
+joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+task?</strong></summary>
+
+**Confidence**: medium
+
+Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations
+x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz
+morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a
+central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119
+dollars. This combination is cheapest among the corpus-justified gradient-free strategies
+because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a
+one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour.
+Confidence is medium: the CoreNEURON CPU-to-GPU speedup and the surrogate-NN economics are
+external assumptions not quantified in the downloaded paper corpus, and the sensitivity grid
+is propagated across a 0.5x-2x band for both per-sim cost and sample count.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/full_answer.md) |
+| **ID** | [`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation`](../../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/) |
+| **Question** | What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task? |
+| **Methods** | `papers`, `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-22 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | `10.1038_s41467-024-46234-7`, `10.1371_journal.pcbi.1000877`, `10.1016_j.celrep.2025.116833`, `10.1371_journal.pcbi.1009754`, `10.1152_jn.00123.2009`, `10.1152_jn.1997.78.4.1948`, `10.1162_neco.1997.9.6.1179`, `10.1038_nn.2359`, `10.1016_j.neuron.2007.07.031`, `10.1038_nn2040`, `10.1016_j.neuron.2017.07.020`, `10.1038_382363a0`, `10.1038_s41467-026-70288-4`, `10.1371_journal.pcbi.1000899`, `10.7554_eLife.81533`, `10.1002_cne.21173` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **URL sources** | — |
+| **Created by** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
 
 </details>
 

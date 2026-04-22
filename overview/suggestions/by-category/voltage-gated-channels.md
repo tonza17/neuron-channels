@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-18 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **16 open** (9
-high, 5 medium, 2 low), **2 closed**.
+22 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **20 open** (11
+high, 7 medium, 2 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -57,6 +57,32 @@ experiments. Recommended task types: experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
+on t0022</strong> (S-0029-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1038_nn.3565`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1038_nn.3565/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
+115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
+Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
+Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
+gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
+length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
+the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
+resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
+with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
+min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
@@ -106,6 +132,32 @@ except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fit
 objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
 degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
 Fohlmeister-Miller RGC firing properties.
+
+</details>
+
+<details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
 
 </details>
 
@@ -229,6 +281,57 @@ spikes before downstream retinal tasks depend on it.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to
+validate sample-efficiency assumptions</strong> (S-0033-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=500,
+Surrogate-NN-GA=18,500) on 25 dims without empirical DSGC validation. Before the full joint
+optimiser is commissioned, run a low-dim spike on t0022: (a) pick 5 representative parameters
+from the committed 25 (3 Cuntz scalars: bf, distal-length, distal-diameter + gNa_dend +
+gKdr_dend), (b) run 200-300 deterministic 12-angle evaluations each under CMA-ES and
+sequential BO, (c) compare the DSI converged-to-within-1% sample count against the cost-grid
+extrapolations, and (d) report whether either method actually converges on DSGC landscapes or
+hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost
+model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25,
+1.30} to localize the peak-Hz cliff</strong> (S-0029-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1038_nn.3565`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1038_nn.3565/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Peak somatic firing rate in t0029 steps from 15 Hz at multipliers <= 1.0x to 14 Hz at
+multipliers >= 1.25x with no intermediate value, and mean peak membrane voltage drifts
+linearly from -4.81 mV (1.0x) to -5.23 mV (2.0x) - a 0.42 mV loss scaling linearly with length
+rather than as exp(-L/lambda). A linear drop is inconsistent with passive cable attenuation
+but consistent with distal synapses sitting beyond an active boosting region whose gain
+depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add a dense
+7-point sweep at {1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to resolve whether the 15->14 Hz
+step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
+Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend voltage-gated-channel survey with recent DSGC-specific

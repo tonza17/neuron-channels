@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T12:12:19Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T15:43:52Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>240192</char_count>
-    <byte_count>241161</byte_count>
-    <estimated_tokens>60048</estimated_tokens>
+    <char_count>245008</char_count>
+    <byte_count>246057</byte_count>
+    <estimated_tokens>61252</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3855,13 +3855,14 @@ not_started.
 
 ## Distal-dendrite length sweep on t0022 DSGC
 ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: in_progress
+Status: completed
 Effective date: 2026-04-22
 Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
 Dependencies: t0022_modify_dsgc_channel_testbed
 Task types: experiment-run
 Source suggestion: S-0027-01
 Start time: 2026-04-22T10:41:56Z
+End time: 2026-04-22T15:40:00Z
 
 #### Motivation
 
@@ -3962,6 +3963,41 @@ If the experiment reveals a non-monotonic curve, the t0027 synthesis flagged kin
   `setup-machines` / `teardown` (local CPU only).
 * Include `compare-literature` — the whole point is to compare the DSI-vs-length curve to Dan2018
   and Sivyer2013 predictions.
+
+### Results Summary
+
+#### Summary
+
+Swept distal-dendrite length on the t0022 DSGC testbed across seven multipliers (**0.5×, 0.75×,
+1.0×, 1.25×, 1.5×, 1.75×, 2.0×**) of baseline `sec.L` while holding the rest of the testbed
+fixed — **840 trials** across **12 directions × 10 trials × 7 lengths** in **~42 min** wall time
+on the local Windows workstation. **DSI (preferred/null definition) pins at 1.000 at every
+multiplier**, so the experiment cannot discriminate Dan2018 passive-transfer-resistance weighting
+from Sivyer2013 dendritic-spike branch independence on the DSI axis. Secondary metrics (vector-sum
+DSI, peak firing rate, HWHM) move only weakly or non-monotonically.
+
+#### Metrics
+
+* **DSI (preferred/null)**: **1.000** at every multiplier (range = **0.000**)
+* **Vector-sum DSI**: **0.664** at 0.5× → **0.643** at 2.0× (weak monotonic decrease,
+  **−0.021** across the sweep)
+* **Peak firing rate**: **15 Hz** at L ≤ 1.00× → **14 Hz** at L ≥ 1.25× (single-Hz step)
+* **Null firing rate**: **0 Hz** at every multiplier
+* **HWHM**: oscillates **71.7°–116.2°**, non-monotonic
+* **Reliability**: **1.000** at every multiplier (deterministic driver)
+* **Curve-shape classification**: `saturating` at multiplier **0.5×**, plateau DSI = **1.000**
+* **Total wall time**: 2,541 s (≈ 42 min); **total cost**: **$0.00**
+
+#### Verification
+
+* `verify_task_dependencies.py` — PASSED (0 errors) at `check-deps`
+* `verify_research_code.py` — PASSED (0 errors, 0 warnings) at `research-code`
+* `verify_plan.py` — PASSED (0 errors, 0 warnings) at `planning`
+* `verify_task_metrics.py` — to be run in the `reporting` step; `metrics.json` is in explicit
+  multi-variant format, 7 variants, registered keys only (DSI, HWHM, reliability)
+* `verify_task_results.py` — to be run in the `reporting` step; all required files present
+* `ruff check --fix . &amp;&amp; ruff format . &amp;&amp; mypy -p tasks.t0029_distal_dendrite_length_sweep_dsgc.code`
+  — all clean (no issues)
 
 ## Distal-dendrite diameter sweep on t0022 DSGC
 ID: t0030_distal_dendrite_diameter_sweep_dsgc
@@ -4314,11 +4350,13 @@ This is a planning task with no computational metrics. Decision-level counts for
 
 ## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
 ID: t0033_plan_dsgc_morphology_channel_optimisation
-Status: not_started
-Effective date: unknown
+Status: completed
+Effective date: 2026-04-22
 Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
 Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
 Task types: literature-survey, answer-question
+Start time: 2026-04-22T12:26:07Z
+End time: 2026-04-22T15:40:00Z
 
 #### Motivation
 
@@ -4476,6 +4514,53 @@ estimates) live in `results_detailed.md` tables and in the answer asset, not in 
 No single source suggestion covers this task. It was commissioned by the researcher directly in
 brainstorm session 7 (t0032) as a parallel planning thread to the morphology-sweep wave
 (t0029-t0031).
+
+### Results Summary
+
+#### Summary
+
+Produced a full feasibility plan and Vast.ai GPU cost envelope for a future joint DSGC morphology
++ top-10 voltage-gated channel DSI-maximisation optimisation. Committed parameter count: **25 free
+  parameters tight** (5 Cuntz morphology scalars + 20 per-region channel gbar) with a **45-parameter
+  rich** upper-bound envelope. Recommended (strategy × compute mode × GPU tier):
+  **Surrogate-NN-assisted GA × Surrogate-NN-GPU × RTX 4090 × tight parameterisation** → central
+  estimate **$50.54**, sensitivity band **$23-$119** under 0.5×/1×/2× perturbations to per-sim cost
+  and sample count.
+
+#### Metrics
+
+* **Parameter count (tight committed)**: **25** free parameters (5 Cuntz morphology + 20 per-region
+  VGC gbar); rich upper-bound envelope: **45** parameters.
+* **Expected simulation counts**: random baseline **2,000**; CMA-ES **1,300**; Bayesian optimisation
+  **500**; surrogate-NN-GA **18,500** (5,000 NEURON training samples + 13,500 GA evaluations on the
+  surrogate); grid **10^25** (reported as infeasibility anchor).
+* **Per-simulation wall-time (empirical, from t0026)**: **456 s** deterministic, **1,440 s**
+  stochastic per full 12-angle × 10-trial protocol (derived from 3.8 s and 12.0 s per (angle, trial)
+  respectively).
+* **Recommended USD on RTX 4090**: central **$50.54** (Surrogate-NN-GA × Surrogate-NN-GPU × tight);
+  sensitivity band **$23-$119** across 3×3 perturbation grid.
+* **Cost-floor CPU comparator**: Vast.ai CPU-96 at $0.40/h gives **$32.38** for
+  Surrogate-NN-GA-tight — within the recommended GPU sensitivity band but surrenders future scaling
+  headroom.
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors on final pass.
+* `verify_task_dependencies.py` — PASSED on step 2 (all six dependencies completed).
+* `verify_research_papers.py` — PASSED on step 4 (0 errors, 0 warnings).
+* `verify_research_code.py` — PASSED on step 6 (0 errors, 0 warnings).
+* `verify_plan.py` — PASSED on step 7 (0 errors, 0 warnings).
+* `verify_task_metrics.py` — target 0 errors (`metrics.json` is `{}` because no registered project
+  metrics apply to a planning/answer-question task).
+* `verify_task_results.py` — target 0 errors on final pass.
+* `verify_task_folder.py` — target 0 errors on final pass.
+* `verify_logs.py` — target 0 errors on final pass.
+* Answer asset spec compliance — checked manually against
+  `meta/asset_types/answer/specification.md`; all 14 required `details.json` fields present,
+  short-answer 3 sentences in 2-5 band, no inline citations in `## Short Answer` / `## Answer`, full
+  answer has all 9 mandatory sections.
+* `ruff check --fix` and `ruff format` PASSED;
+  `mypy -p tasks.t0033_plan_dsgc_morphology_channel_optimisation.code` PASSED with no issues.
       </content>
     </section>
   </sections>

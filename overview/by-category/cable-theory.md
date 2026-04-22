@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (2)](../answers/by-category/cable-theory.md) | [Suggestions
-(8)](../suggestions/by-category/cable-theory.md) | [Datasets
+(9)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -582,7 +582,28 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (6 open, 2 closed)
+## Suggestions (7 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to
+reach Dan2018's critical regime</strong> (S-0029-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+Dan2018 reports monotonic DSI-vs-length over 50-400 um distal branches; Sivyer2013's critical
+length sits at ~150 um. The t0022 distal-leaf baseline is on the order of tens of um, so the
+0.5-2.0x sweep likely spans only ~15-160 um, overlapping only the tail of Sivyer2013's range
+and sitting entirely below Dan2018's critical length. Add three extreme sweep points at 3.0x,
+5.0x, and 8.0x while keeping the rest of the t0022 testbed fixed. Watch for `d_lambda`
+violations at extreme lengths (fallback: adaptive `nseg` at each point). Possible outcomes:
+(a) DSI stays at 1.000 and peak Hz continues linear decline - testbed is cable-dominated at
+the soma and no resolution is possible; (b) DSI drops at a specific high multiplier with
+monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
+narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
+min CPU. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I

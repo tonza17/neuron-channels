@@ -5,8 +5,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
-(8)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(73)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(9)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(85)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (6)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2012,7 +2012,28 @@ simulation.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (8)
+## Answers (9)
+
+<details>
+<summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
+joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+task?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-22 | **Full answer**:
+[`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation`](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/)
+
+Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations
+x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz
+morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a
+central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119
+dollars. This combination is cheapest among the corpus-justified gradient-free strategies
+because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a
+one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour.
+Confidence is medium: the CoreNEURON CPU-to-GPU speedup and the surrogate-NN economics are
+external assumptions not quantified in the downloaded paper corpus, and the sensitivity grid
+is propagated across a 0.5x-2x band for both per-sim cost and sample count.
+
+</details>
 
 <details>
 <summary><strong>What variables of neuronal morphology have been shown by
@@ -2200,7 +2221,249 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (66 open, 7 closed)
+## Suggestions (78 open, 7 closed)
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
+sweep on t0022</strong> (S-0029-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
+at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
+1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
+stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
+mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
+dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
+7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
+from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
+discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
+predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
+types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
+on t0022</strong> (S-0029-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
+115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
+Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
+Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
+gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
+length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
+the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
+resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
+with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
+min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to
+reach Dan2018's critical regime</strong> (S-0029-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+Dan2018 reports monotonic DSI-vs-length over 50-400 um distal branches; Sivyer2013's critical
+length sits at ~150 um. The t0022 distal-leaf baseline is on the order of tens of um, so the
+0.5-2.0x sweep likely spans only ~15-160 um, overlapping only the tail of Sivyer2013's range
+and sitting entirely below Dan2018's critical length. Add three extreme sweep points at 3.0x,
+5.0x, and 8.0x while keeping the rest of the t0022 testbed fixed. Watch for `d_lambda`
+violations at extreme lengths (fallback: adaptive `nseg` at each point). Possible outcomes:
+(a) DSI stays at 1.000 and peak Hz continues linear decline - testbed is cable-dominated at
+the soma and no resolution is possible; (b) DSI drops at a specific high multiplier with
+monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
+narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
+min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
+deterministic ceiling on t0022</strong> (S-0029-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on
+null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured
+compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to
+exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable
+mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed
+length multiplier of 1.0x and locate the conductance at which null-direction firing first
+exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and
+S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
+mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
+CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25,
+1.30} to localize the peak-Hz cliff</strong> (S-0029-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+Peak somatic firing rate in t0029 steps from 15 Hz at multipliers <= 1.0x to 14 Hz at
+multipliers >= 1.25x with no intermediate value, and mean peak membrane voltage drifts
+linearly from -4.81 mV (1.0x) to -5.23 mV (2.0x) - a 0.42 mV loss scaling linearly with length
+rather than as exp(-L/lambda). A linear drop is inconsistent with passive cable attenuation
+but consistent with distal synapses sitting beyond an active boosting region whose gain
+depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add a dense
+7-point sweep at {1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to resolve whether the 15->14 Hz
+step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
+Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite
+length sweep on t0022</strong> (S-0029-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0022 `_silence_baseline_hoc_synapses` sets b2gnmda = 0 and installs single-component
+AMPA-only E-I pairs, removing the Espinosa2010 AMPA/NMDA kinetic-tiling mechanism from the
+testable space entirely. Espinosa2010 proposes that DSGC DS arises from different activation
+time courses of AMPA and NMDA interacting with cable propagation delay - predicting
+non-monotonic DSI-vs-length because NMDA's 50-150 ms time constant resonates with propagation
+delay at specific lengths. Modify `_silence_baseline_hoc_synapses` to restore b2gnmda at 30%
+of the 189347 baseline and rerun the 7-point length sweep. If DSI drops below 1.000 with
+non-monotonic length dependence, kinetic tiling is a real third mechanism and the current null
+result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
+t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
+Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Promote peak-Hz and HWHM to co-primary outcomes when DSI is at
+ceiling (evaluation methodology)</strong> (S-0029-07)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-22 | **Source**:
+[t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+
+The t0029 null result exposes a systematic evaluation weakness: whenever the t0022-lineage
+testbed drives null firing to exactly 0 Hz, pref/null DSI is structurally pinned at 1.000
+regardless of the manipulated variable, yet the secondary metrics (peak somatic firing rate,
+HWHM, mean peak soma voltage, vector-sum DSI) contain usable length-dependent signal (e.g.,
+the non-monotonic HWHM oscillation 71.7-116.3 deg and the 15->14 Hz peak-Hz cliff at 1.25x).
+Adopt a co-primary-metric convention: whenever DSI is at ceiling (range across sweep points <
+0.01 or null firing = 0 Hz on > 90% of trials), elevate peak-Hz, HWHM, and vector-sum DSI to
+co-primary outcome variables and require all three to be reported alongside DSI in
+results_summary.md and compare_literature.md. Encode the rule as an extension to the
+task-results specification, add a verificator check for the DSI-ceiling condition, and
+document the convention in arf/specifications. Recommended task types: infrastructure-setup.
+
+</details>
+
+<details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
+training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
+one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
+multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
+full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
+fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
+coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
+compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
+25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
+and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
+types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Transfer-learning surrogate warm-start from t0022 and t0024
+V_rest-sweep evaluations</strong> (S-0033-04)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+Creative-thinking alternative #3 in t0033 noted that t0022, t0024 and the t0026 V_rest sweep
+already produced thousands of (gbar-subset, DSI) evaluations on the 16-parameter HHst
+topology. If half of the 5,000-sample surrogate training burn is replaced by these as
+warm-start, the $41.56 training cost plausibly drops to ~$20, pulling the recommended cell to
+~$30. Build a task that (a) reads t0026 V_rest-sweep and t0022 baseline outputs, (b) encodes
+them as (parameter-vector, DSI) tuples in the 25-dim joint space by imputing the 9 unvaried
+dimensions at Poleg-Polsky defaults with tagged uncertainty, (c) pre-trains the surrogate NN
+on this warm-start set before the 2,500-sample cold-start burn, and (d) measures whether the
+half-dataset warm-start matches the 5,000-sample cold-start surrogate. Recommended task types:
+experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to
+validate sample-efficiency assumptions</strong> (S-0033-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=500,
+Surrogate-NN-GA=18,500) on 25 dims without empirical DSGC validation. Before the full joint
+optimiser is commissioned, run a low-dim spike on t0022: (a) pick 5 representative parameters
+from the committed 25 (3 Cuntz scalars: bf, distal-length, distal-diameter + gNa_dend +
+gKdr_dend), (b) run 200-300 deterministic 12-angle evaluations each under CMA-ES and
+sequential BO, (c) compare the DSI converged-to-within-1% sample count against the cost-grid
+extrapolations, and (d) report whether either method actually converges on DSGC landscapes or
+hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost
+model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
+separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
+across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
+t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
+library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
+evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
+pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
+Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
+JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
+single evaluator. Recommended task types: write-library, feature-engineering.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
