@@ -1,0 +1,11 @@
+parameterisation,strategy,n_dims,n_samples_lower,n_samples_central,n_samples_upper,assumption_text,source_citation
+tight,GRID,25,1.000e+25,1.000e+25,1.000e+25,10**n_dims (infeasibility anchor),plan_assumption
+tight,RANDOM,25,5.000e+02,2.000e+03,1.000e+04,Generic Monte-Carlo convergence; no corpus precedent for DSGC-specific random baselines,plan_assumption
+tight,CMA_ES,25,6.500e+02,1.300e+03,2.600e+03,Hansen lambda=4+floor(3*log(n_dims))=13; 100 generations; no DSGC corpus precedent,Hansen2006_assumption
+tight,BAYESIAN,25,2.000e+02,5.000e+02,1.000e+03,Gaussian-process BO scales poorly above ~30 dims,plan_assumption_no_corpus_DSGC_precedent
+tight,SURROGATE_NN_GA,25,3.000e+03,1.850e+04,7.700e+04,"Surrogate training = 1,000/5,000/50,000 NEURON evals + GA evaluations = (100x20) / (150x30x3) / (200x45x3) = 2000 / 13500 / 27000. Post-surrogate evaluations are cheap and ignored here.","Ezra-Tsur2021,PolegPolsky2026"
+rich,GRID,45,1.000e+45,1.000e+45,1.000e+45,10**n_dims (infeasibility anchor),plan_assumption
+rich,RANDOM,45,5.000e+02,2.000e+03,1.000e+04,Generic Monte-Carlo convergence; no corpus precedent for DSGC-specific random baselines,plan_assumption
+rich,CMA_ES,45,7.500e+02,1.500e+03,3.000e+03,Hansen lambda=4+floor(3*log(n_dims))=15; 100 generations; no DSGC corpus precedent,Hansen2006_assumption
+rich,BAYESIAN,45,2.000e+02,5.000e+02,1.000e+03,Gaussian-process BO scales poorly above ~30 dims — expect convergence failure; values are optimistic,plan_assumption_no_corpus_DSGC_precedent
+rich,SURROGATE_NN_GA,45,3.000e+03,1.850e+04,7.700e+04,"Surrogate training = 1,000/5,000/50,000 NEURON evals + GA evaluations = (100x20) / (150x30x3) / (200x45x3) = 2000 / 13500 / 27000. Post-surrogate evaluations are cheap and ignored here.","Ezra-Tsur2021,PolegPolsky2026"

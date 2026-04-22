@@ -1,0 +1,48 @@
+{
+  "spec_version": "2",
+  "answer_id": "vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation",
+  "question": "What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?",
+  "short_title": "Vast.ai cost for joint DSGC morphology + top-10 VGC DSI optimisation",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "literature",
+    "code-experiment"
+  ],
+  "source_paper_ids": [
+    "10.1038_s41467-024-46234-7",
+    "10.1371_journal.pcbi.1000877",
+    "10.1016_j.celrep.2025.116833",
+    "10.1371_journal.pcbi.1009754",
+    "10.1152_jn.00123.2009",
+    "10.1152_jn.1997.78.4.1948",
+    "10.1162_neco.1997.9.6.1179",
+    "10.1038_nn.2359",
+    "10.1016_j.neuron.2007.07.031",
+    "10.1038_nn2040",
+    "10.1016_j.neuron.2017.07.020",
+    "10.1038_382363a0",
+    "10.1038_s41467-026-70288-4",
+    "10.1371_journal.pcbi.1000899",
+    "10.7554_eLife.81533",
+    "10.1002_cne.21173"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0015_literature_survey_cable_theory",
+    "t0019_literature_survey_voltage_gated_channels",
+    "t0022_modify_dsgc_channel_testbed",
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0026_vrest_sweep_tuning_curves_dsgc",
+    "t0027_literature_survey_morphology_ds_modeling"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "date_created": "2026-04-22"
+}

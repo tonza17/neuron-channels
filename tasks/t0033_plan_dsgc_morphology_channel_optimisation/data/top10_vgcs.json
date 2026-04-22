@@ -1,0 +1,112 @@
+[
+  {
+    "rank": 1,
+    "channel": "Nav1.6",
+    "primary_region": "AIS_DISTAL",
+    "secondary_region": "SOMA_CHANNELS",
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 2,
+    "free_params_per_region_gbar": 2,
+    "citation": "Hu2009,Kole2008,VanWart2006",
+    "notes": "Distal AIS initiator, V_half ~ -45 mV, gbar 2500-5000 pS/um^2"
+  },
+  {
+    "rank": 2,
+    "channel": "Nav1.2",
+    "primary_region": "AIS_PROXIMAL",
+    "secondary_region": null,
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 2,
+    "free_params_per_region_gbar": 1,
+    "citation": "VanWart2006,Hu2009",
+    "notes": "Proximal AIS, V_half ~ -32 mV, ~50x less than Nav1.6"
+  },
+  {
+    "rank": 3,
+    "channel": "Nav_HHst_dend",
+    "primary_region": "DEND_CHANNELS",
+    "secondary_region": null,
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 1,
+    "free_params_per_region_gbar": 3,
+    "citation": "PolegPolsky2026,Schachter2010",
+    "notes": "Dendritic lumped Nav; split by primary/non-terminal/terminal tier"
+  },
+  {
+    "rank": 4,
+    "channel": "Kdr_HHst",
+    "primary_region": "SOMA_CHANNELS",
+    "secondary_region": "DEND_CHANNELS",
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 2,
+    "free_params_per_region_gbar": 4,
+    "citation": "FohlmeisterMiller1997,PolegPolsky2026",
+    "notes": "Delayed rectifier K+ lumped HHst; soma + 3 dend tiers"
+  },
+  {
+    "rank": 5,
+    "channel": "Kv1.1",
+    "primary_region": "AIS_DISTAL",
+    "secondary_region": null,
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 1,
+    "free_params_per_region_gbar": 1,
+    "citation": "Kole2007",
+    "notes": "Near-threshold K+ co-localising with Nav1.6, 100-300 pS/um^2"
+  },
+  {
+    "rank": 6,
+    "channel": "Kv1.2",
+    "primary_region": "AIS_DISTAL",
+    "secondary_region": null,
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 2,
+    "free_params_per_region_gbar": 1,
+    "citation": "Kole2007,VanWart2006",
+    "notes": "Distal-AIS Kv1.2; tunable V_half"
+  },
+  {
+    "rank": 7,
+    "channel": "Kv2.1",
+    "primary_region": "SOMA_CHANNELS",
+    "secondary_region": "DEND_CHANNELS",
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 1,
+    "free_params_per_region_gbar": 2,
+    "citation": "VanWart2006",
+    "notes": "Somatic + proximal-dend Kv2.1"
+  },
+  {
+    "rank": 8,
+    "channel": "Kv3",
+    "primary_region": "AIS_DISTAL",
+    "secondary_region": null,
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 1,
+    "free_params_per_region_gbar": 1,
+    "citation": "Aldor2024,Akemann2006",
+    "notes": "Optional distal-AIS Kv3; perisomatic per Aldor 2024"
+  },
+  {
+    "rank": 9,
+    "channel": "Km_KCNQ",
+    "primary_region": "SOMA_CHANNELS",
+    "secondary_region": "DEND_CHANNELS",
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 1,
+    "free_params_per_region_gbar": 2,
+    "citation": "PolegPolsky2026,Fohlmeister2010",
+    "notes": "HHst exposes gkmbar; soma + dend"
+  },
+  {
+    "rank": 10,
+    "channel": "Ca_HVA_plus_cad",
+    "primary_region": "SOMA_CHANNELS",
+    "secondary_region": "DEND_CHANNELS",
+    "free_params_gbar_only": 1,
+    "free_params_gbar_plus_vhalf": 2,
+    "free_params_per_region_gbar": 3,
+    "citation": "FohlmeisterMiller1997,Fohlmeister2010",
+    "notes": "HVA Ca + Ca-dependent cad decay tau; soma + dend"
+  }
+]

@@ -1,0 +1,32 @@
+Wrote 70 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\cost_envelope.csv
+Wrote 630 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\sensitivity_grid.csv
+
+=== Central-cell cost preview (tight parameterisation, stochastic t0024) ===
+  RANDOM             CORENEURON_GPU     RTX 4090      samples=2.00e+03  per_sim=   180.000 s  wall_h=  100.00  USD=$       52.50
+  RANDOM             CORENEURON_GPU     A100 40GB     samples=2.00e+03  per_sim=   160.000 s  wall_h=   88.89  USD=$      102.67
+  RANDOM             CORENEURON_GPU     H100          samples=2.00e+03  per_sim=    96.000 s  wall_h=   53.33  USD=$      140.00
+  RANDOM             SURROGATE_NN_GPU   RTX 4090      samples=2.00e+03  per_sim=    14.400 s  wall_h=    8.00  USD=$       41.56
+  RANDOM             SURROGATE_NN_GPU   A100 40GB     samples=2.00e+03  per_sim=    14.400 s  wall_h=    8.00  USD=$       81.28
+  RANDOM             SURROGATE_NN_GPU   H100          samples=2.00e+03  per_sim=    14.400 s  wall_h=    8.00  USD=$      110.83
+  RANDOM             MANY_CORE_CPU      CPU-96        samples=2.00e+03  per_sim=    15.000 s  wall_h=    8.33  USD=$        3.50
+  CMA_ES             CORENEURON_GPU     RTX 4090      samples=1.30e+03  per_sim=   180.000 s  wall_h=   65.00  USD=$       34.12
+  CMA_ES             CORENEURON_GPU     A100 40GB     samples=1.30e+03  per_sim=   160.000 s  wall_h=   57.78  USD=$       66.73
+  CMA_ES             CORENEURON_GPU     H100          samples=1.30e+03  per_sim=    96.000 s  wall_h=   34.67  USD=$       91.00
+  CMA_ES             SURROGATE_NN_GPU   RTX 4090      samples=1.30e+03  per_sim=    14.400 s  wall_h=    5.20  USD=$       41.56
+  CMA_ES             SURROGATE_NN_GPU   A100 40GB     samples=1.30e+03  per_sim=    14.400 s  wall_h=    5.20  USD=$       81.28
+  CMA_ES             SURROGATE_NN_GPU   H100          samples=1.30e+03  per_sim=    14.400 s  wall_h=    5.20  USD=$      110.83
+  CMA_ES             MANY_CORE_CPU      CPU-96        samples=1.30e+03  per_sim=    15.000 s  wall_h=    5.42  USD=$        2.28
+  BAYESIAN           CORENEURON_GPU     RTX 4090      samples=5.00e+02  per_sim=   180.000 s  wall_h=   25.00  USD=$       13.12
+  BAYESIAN           CORENEURON_GPU     A100 40GB     samples=5.00e+02  per_sim=   160.000 s  wall_h=   22.22  USD=$       25.67
+  BAYESIAN           CORENEURON_GPU     H100          samples=5.00e+02  per_sim=    96.000 s  wall_h=   13.33  USD=$       35.00
+  BAYESIAN           SURROGATE_NN_GPU   RTX 4090      samples=5.00e+02  per_sim=    14.400 s  wall_h=    2.00  USD=$       41.56
+  BAYESIAN           SURROGATE_NN_GPU   A100 40GB     samples=5.00e+02  per_sim=    14.400 s  wall_h=    2.00  USD=$       81.28
+  BAYESIAN           SURROGATE_NN_GPU   H100          samples=5.00e+02  per_sim=    14.400 s  wall_h=    2.00  USD=$      110.83
+  BAYESIAN           MANY_CORE_CPU      CPU-96        samples=5.00e+02  per_sim=    15.000 s  wall_h=    2.08  USD=$        0.88
+  SURROGATE_NN_GA    CORENEURON_GPU     RTX 4090      samples=1.85e+04  per_sim=   180.000 s  wall_h=  925.00  USD=$      485.62
+  SURROGATE_NN_GA    CORENEURON_GPU     A100 40GB     samples=1.85e+04  per_sim=   160.000 s  wall_h=  822.22  USD=$      949.67
+  SURROGATE_NN_GA    CORENEURON_GPU     H100          samples=1.85e+04  per_sim=    96.000 s  wall_h=  493.33  USD=$    1,295.00
+  SURROGATE_NN_GA    SURROGATE_NN_GPU   RTX 4090      samples=1.85e+04  per_sim=    14.400 s  wall_h=   74.00  USD=$       50.54
+  SURROGATE_NN_GA    SURROGATE_NN_GPU   A100 40GB     samples=1.85e+04  per_sim=    14.400 s  wall_h=   74.00  USD=$      101.03
+  SURROGATE_NN_GA    SURROGATE_NN_GPU   H100          samples=1.85e+04  per_sim=    14.400 s  wall_h=   74.00  USD=$      155.72
+  SURROGATE_NN_GA    MANY_CORE_CPU      CPU-96        samples=1.85e+04  per_sim=    15.000 s  wall_h=   77.08  USD=$       32.38

@@ -1,0 +1,11 @@
+Wrote 10 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\search_space_table.csv
+  [tight] GRID               n_dims=25  central=1.000e+25
+  [tight] RANDOM             n_dims=25  central=2.000e+03
+  [tight] CMA_ES             n_dims=25  central=1.300e+03
+  [tight] BAYESIAN           n_dims=25  central=5.000e+02
+  [tight] SURROGATE_NN_GA    n_dims=25  central=1.850e+04
+  [rich ] GRID               n_dims=45  central=1.000e+45
+  [rich ] RANDOM             n_dims=45  central=2.000e+03
+  [rich ] CMA_ES             n_dims=45  central=1.500e+03
+  [rich ] BAYESIAN           n_dims=45  central=5.000e+02
+  [rich ] SURROGATE_NN_GA    n_dims=45  central=1.850e+04

@@ -1,0 +1,3 @@
+Saved C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\results\images\cost_by_strategy_and_tier.png
+Saved C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\results\images\sensitivity_heatmap.png
+Saved C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\results\images\parameter_count_breakdown.png

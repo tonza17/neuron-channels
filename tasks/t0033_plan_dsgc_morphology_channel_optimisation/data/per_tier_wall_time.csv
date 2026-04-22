@@ -1,0 +1,19 @@
+compute_mode,model_variant,tier,speed_tier_ratio,per_sim_seconds,assumption_text
+CORENEURON_GPU,t0022_deterministic,RTX 3090,1.000,91.200,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[RTX 3090]=1.00
+CORENEURON_GPU,t0022_deterministic,RTX 4090,1.600,57.000,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[RTX 4090]=1.60
+CORENEURON_GPU,t0022_deterministic,A100 40GB,1.800,50.667,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[A100 40GB]=1.80
+CORENEURON_GPU,t0022_deterministic,H100,3.000,30.400,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[H100]=3.00
+SURROGATE_NN_GPU,t0022_deterministic,RTX 3090,1.000,4.560,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0022_deterministic,RTX 4090,1.600,4.560,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0022_deterministic,A100 40GB,1.800,4.560,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0022_deterministic,H100,3.000,4.560,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+MANY_CORE_CPU,t0022_deterministic,CPU-96,1.000,4.750,"Stock NEURON, 96-core Vast.ai CPU node"
+CORENEURON_GPU,t0024_stochastic_AR2_rho0.6,RTX 3090,1.000,288.000,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[RTX 3090]=1.00
+CORENEURON_GPU,t0024_stochastic_AR2_rho0.6,RTX 4090,1.600,180.000,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[RTX 4090]=1.60
+CORENEURON_GPU,t0024_stochastic_AR2_rho0.6,A100 40GB,1.800,160.000,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[A100 40GB]=1.80
+CORENEURON_GPU,t0024_stochastic_AR2_rho0.6,H100,3.000,96.000,CoreNEURON reference 5x CPU->GPU at RTX 3090; linear scale by GPU_SPEED_TIERS[H100]=3.00
+SURROGATE_NN_GPU,t0024_stochastic_AR2_rho0.6,RTX 3090,1.000,14.400,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0024_stochastic_AR2_rho0.6,RTX 4090,1.600,14.400,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0024_stochastic_AR2_rho0.6,A100 40GB,1.800,14.400,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+SURROGATE_NN_GPU,t0024_stochastic_AR2_rho0.6,H100,3.000,14.400,Surrogate inference 100x faster than NEURON; GPU tier trivialises forward pass
+MANY_CORE_CPU,t0024_stochastic_AR2_rho0.6,CPU-96,1.000,15.000,"Stock NEURON, 96-core Vast.ai CPU node"

@@ -1,0 +1,42 @@
+[
+  {
+    "tier": "RTX 3090",
+    "dollars_per_hour": 0.2,
+    "speed_tier_ratio": 1.0,
+    "snapshot_date": "2026-04-22",
+    "filters_applied": "rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6",
+    "source": "vast.ai historical market observation; not a live quote"
+  },
+  {
+    "tier": "RTX 4090",
+    "dollars_per_hour": 0.5,
+    "speed_tier_ratio": 1.6,
+    "snapshot_date": "2026-04-22",
+    "filters_applied": "rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6",
+    "source": "vast.ai historical market observation; not a live quote"
+  },
+  {
+    "tier": "A100 40GB",
+    "dollars_per_hour": 1.1,
+    "speed_tier_ratio": 1.8,
+    "snapshot_date": "2026-04-22",
+    "filters_applied": "rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6",
+    "source": "vast.ai historical market observation; not a live quote"
+  },
+  {
+    "tier": "H100",
+    "dollars_per_hour": 2.5,
+    "speed_tier_ratio": 3.0,
+    "snapshot_date": "2026-04-22",
+    "filters_applied": "rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6",
+    "source": "vast.ai historical market observation; not a live quote"
+  },
+  {
+    "tier": "CPU-96",
+    "dollars_per_hour": 0.4,
+    "speed_tier_ratio": 1.0,
+    "snapshot_date": "2026-04-22",
+    "filters_applied": "rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6",
+    "source": "vast.ai historical market observation; not a live quote"
+  }
+]

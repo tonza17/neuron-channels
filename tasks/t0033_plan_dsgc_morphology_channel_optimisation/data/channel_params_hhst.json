@@ -1,0 +1,162 @@
+[
+  {
+    "name": "gNa_HHst",
+    "region": "SOMA_CHANNELS",
+    "tier": null,
+    "default_value": 0.15,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "HHst soma Nav (lumped) gbar"
+  },
+  {
+    "name": "gKdr_HHst",
+    "region": "SOMA_CHANNELS",
+    "tier": null,
+    "default_value": 0.035,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "HHst soma Kdr (lumped)"
+  },
+  {
+    "name": "gKm_HHst",
+    "region": "SOMA_CHANNELS",
+    "tier": null,
+    "default_value": 0.003,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "HHst soma Km (lumped)"
+  },
+  {
+    "name": "gleak_HHst",
+    "region": "SOMA_CHANNELS",
+    "tier": null,
+    "default_value": 0.0001667,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "HHst soma leak"
+  },
+  {
+    "name": "gNa_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "primary_dend",
+    "default_value": 0.2,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Primary-dendrite Nav gbar"
+  },
+  {
+    "name": "gKdr_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "primary_dend",
+    "default_value": 0.035,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Primary-dendrite Kdr"
+  },
+  {
+    "name": "gKm_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "primary_dend",
+    "default_value": 0.003,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Primary-dendrite Km"
+  },
+  {
+    "name": "gleak_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "primary_dend",
+    "default_value": 0.0001667,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Primary-dendrite leak"
+  },
+  {
+    "name": "gNa_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "nonterminal_dend",
+    "default_value": 0.0,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Non-terminal dend Nav (zeroed in baseline)"
+  },
+  {
+    "name": "gKdr_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "nonterminal_dend",
+    "default_value": 0.025,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Non-terminal dend Kdr"
+  },
+  {
+    "name": "gKm_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "nonterminal_dend",
+    "default_value": 0.003,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Non-terminal dend Km"
+  },
+  {
+    "name": "gleak_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "nonterminal_dend",
+    "default_value": 0.0001667,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Non-terminal dend leak"
+  },
+  {
+    "name": "gNa_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "terminal_dend",
+    "default_value": 0.03,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Terminal-dend Nav gbar"
+  },
+  {
+    "name": "gKdr_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "terminal_dend",
+    "default_value": 0.025,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Terminal-dend Kdr"
+  },
+  {
+    "name": "gKm_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "terminal_dend",
+    "default_value": 0.003,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Terminal-dend Km"
+  },
+  {
+    "name": "gleak_HHst",
+    "region": "DEND_CHANNELS",
+    "tier": "terminal_dend",
+    "default_value": 0.0001667,
+    "units": "S/cm^2",
+    "is_free": true,
+    "source": "t0024_port_de_rosenroll_2026_dsgc",
+    "notes": "Terminal-dend leak"
+  }
+]

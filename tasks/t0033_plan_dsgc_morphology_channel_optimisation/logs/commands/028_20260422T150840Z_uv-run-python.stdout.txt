@@ -1,0 +1,11 @@
+Wrote 2 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\sim_wall_time.csv
+  t0022_deterministic: 456.0 s (7.6 min) per sim
+  t0024_stochastic_AR2_rho0.6: 1440.0 s (24.0 min) per sim
+
+Wrote 18 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\per_tier_wall_time.csv
+  CORENEURON_GPU     t0022_deterministic            tier=RTX 3090   per_sim=91.200 s
+  CORENEURON_GPU     t0022_deterministic            tier=RTX 4090   per_sim=57.000 s
+  CORENEURON_GPU     t0022_deterministic            tier=A100 40GB  per_sim=50.667 s
+  CORENEURON_GPU     t0022_deterministic            tier=H100       per_sim=30.400 s
+  SURROGATE_NN_GPU   t0022_deterministic            tier=RTX 3090   per_sim=4.560 s
+  SURROGATE_NN_GPU   t0022_deterministic            tier=RTX 4090   per_sim=4.560 s
