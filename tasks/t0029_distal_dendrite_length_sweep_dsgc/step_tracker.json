@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Implement the sweep driver that varies distal-branch L, runs the 12-angle protocol per multiplier, and produces tuning data, DSI metrics, and charts.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-22T11:09:46Z",
-      "completed_at": null,
+      "completed_at": "2026-04-22T12:16:45Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
