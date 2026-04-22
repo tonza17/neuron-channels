@@ -1,0 +1,12 @@
+{
+  "count": 129,
+  "n_distal_segments": 129,
+  "min_depth": 3,
+  "max_depth": 18,
+  "min_diam_um": 0.49999999999999994,
+  "median_diam_um": 0.5000011920928955,
+  "max_diam_um": 0.6874321103096007,
+  "total_surface_area_um2": 3899.447959795002,
+  "l_over_lambda_at_baseline_max": 0.4494284104652024,
+  "identification_rule": "hoc_leaves_on_arbor_depth_ge_3"
+}

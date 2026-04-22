@@ -1,0 +1,4 @@
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\curve_shape.json
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\slope_classification.json
+[classify_slope] mechanism_label = flat  slope = 0.0083  p = 0.1773  dsi_range_extremes = 0.0124  used_fallback = True
+[classify_slope] DSI vs diameter slope is not distinguishable from zero (slope=0.0083 per log2(multiplier), p=0.1773, dsi_range_extremes=0.0124); neither Schachter2010 nor passive filtering is supported.

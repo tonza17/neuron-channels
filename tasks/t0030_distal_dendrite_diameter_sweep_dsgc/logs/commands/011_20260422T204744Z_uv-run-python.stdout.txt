@@ -1,0 +1,37 @@
+[t0030 sweep] multipliers = (0.5, 1.0, 2.0)
+[t0030 sweep] angles = (0, 120, 240)
+[t0030 sweep] n_trials per (multiplier, angle) = 2
+[t0030 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\sweep_results.csv
+[t0030 sweep] per-diameter CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\per_diameter
+[t0030 sweep] building DSGC cell + E-I pairs + distal snapshot...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0030 sweep] cell built in 0.4s; n_pairs = 282; n_distal = 129
+  D=0.50x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.7mV
+  D=0.50x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.7mV
+  D=0.50x  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+  D=0.50x  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+  D=0.50x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.5mV
+  D=0.50x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.5mV
+[t0030 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\per_diameter\tuning_curve_D0p50.csv
+  D=1.00x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+  D=1.00x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+  D=1.00x  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+  D=1.00x  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.1mV
+  D=1.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+  D=1.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+[t0030 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\per_diameter\tuning_curve_D1p00.csv
+  D=2.00x  dir=  0  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.1mV
+  D=2.00x  dir=  0  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.1mV
+  D=2.00x  dir=120  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.1mV
+  D=2.00x  dir=120  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.1mV
+  D=2.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+  D=2.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+[t0030 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\per_diameter\tuning_curve_D2p00.csv
+[t0030 sweep] baseline seg.diam restoration confirmed
+[t0030 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\sweep_results.csv
+[t0030 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\results\data\wall_time_by_diameter.json

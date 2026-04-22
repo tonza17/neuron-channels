@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0030_distal_dendrite_diameter_sweep_dsgc",
+  "command": "uv run python -u -m tasks.t0030_distal_dendrite_diameter_sweep_dsgc.code.run_sweep --output tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/data/sweep_results.csv --wall-time-output tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/data/wall_time_by_diameter.json",
+  "exit_code": 1,
+  "duration_seconds": 0.841,
+  "started_at": "2026-04-22T20:48:54Z",
+  "completed_at": "2026-04-22T20:48:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0030_distal_dendrite_diameter_sweep_dsgc",
+  "stdout_file": "012_20260422T204854Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260422T204854Z_uv-run-python.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 13,
+  "truncated": false
+}
