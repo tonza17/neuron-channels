@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W012 warning: ## Task Requirement Coverage is not the final `##` section in results_detailed.md[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
