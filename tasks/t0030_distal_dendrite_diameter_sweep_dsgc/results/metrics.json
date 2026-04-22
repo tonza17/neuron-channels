@@ -1,0 +1,88 @@
+{
+  "variants": [
+    {
+      "variant_id": "diameter_0p50",
+      "label": "distal diam x 0.50",
+      "dimensions": {
+        "diameter_multiplier": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 84.2308,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "diameter_0p75",
+      "label": "distal diam x 0.75",
+      "dimensions": {
+        "diameter_multiplier": 0.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 116.25,
+        "tuning_curve_reliability": 0.999871
+      }
+    },
+    {
+      "variant_id": "diameter_1p00",
+      "label": "distal diam x 1.00",
+      "dimensions": {
+        "diameter_multiplier": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 116.25,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "diameter_1p25",
+      "label": "distal diam x 1.25",
+      "dimensions": {
+        "diameter_multiplier": 1.25
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 89.1667,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "diameter_1p50",
+      "label": "distal diam x 1.50",
+      "dimensions": {
+        "diameter_multiplier": 1.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 89.1667,
+        "tuning_curve_reliability": 0.999965
+      }
+    },
+    {
+      "variant_id": "diameter_1p75",
+      "label": "distal diam x 1.75",
+      "dimensions": {
+        "diameter_multiplier": 1.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 78.3333,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "diameter_2p00",
+      "label": "distal diam x 2.00",
+      "dimensions": {
+        "diameter_multiplier": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 81.5833,
+        "tuning_curve_reliability": 1.0
+      }
+    }
+  ]
+}

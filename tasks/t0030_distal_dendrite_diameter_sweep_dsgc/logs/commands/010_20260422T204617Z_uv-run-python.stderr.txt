@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\run_sweep.py", line 239, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\run_sweep.py", line 197, in main
+    curve_rows = _run_one_diameter_point(
+        ctx=ctx,
+    ...<4 lines>...
+        tidy_fh=fh,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\run_sweep.py", line 129, in _run_one_diameter_point
+    outcome = run_one_trial_diameter(
+        ctx=ctx,
+    ...<2 lines>...
+        multiplier=multiplier,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\trial_runner_diameter.py", line 187, in run_one_trial_diameter
+    assert_distal_diameters(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        h=h,
+        ^^^^
+    ...<2 lines>...
+        multiplier=multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\diameter_override.py", line 116, in assert_distal_diameters
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: distal seg.diam mismatches at multiplier=2.0: [('DSGC[0].dend[275]', 0.5, 1.000000001502865, 1.0), ('DSGC[0].dend[349]', 0.5, 1.0000000019049944, 1.0)] (and -3 more)

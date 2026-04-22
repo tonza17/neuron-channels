@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\preflight_distal.py", line 175, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\preflight_distal.py", line 86, in main
+    ctx = build_cell_context()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0030_distal_dendrite_diameter_sweep_dsgc\code\trial_runner_diameter.py", line 100, in build_cell_context
+    _preload_nrnmech_dll()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 149, in _preload_nrnmech_dll
+    raise FileNotFoundError(
+    ...<3 lines>...
+    )
+FileNotFoundError: nrnmech.dll missing at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0022_modify_dsgc_channel_testbed\build\modeldb_189347\nrnmech.dll. Run ``nrnivmodl`` on the t0008 bundled MOD sources into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0030_distal_dendrite_diameter_sweep_dsgc\tasks\t0022_modify_dsgc_channel_testbed\build\modeldb_189347.

@@ -1,0 +1,37 @@
+{
+  "slope": 0.008333979624537597,
+  "slope_95_ci_low": -0.005313620851811543,
+  "slope_95_ci_high": 0.021981580100886737,
+  "slope_p_value": 0.17727069444830063,
+  "slope_r_squared": 0.33012524860499787,
+  "slope_sign": "~",
+  "dsi_range_extremes": 0.01242500000000002,
+  "dsi_range_extremes_primary": 0.0,
+  "dsi_range_extremes_vector_sum": 0.01242500000000002,
+  "primary_regression": {
+    "slope": 0.0,
+    "intercept": 1.0,
+    "r_squared": NaN,
+    "p_value": NaN,
+    "slope_95_ci_low": NaN,
+    "slope_95_ci_high": NaN
+  },
+  "vector_sum_regression": {
+    "slope": 0.008333979624537597,
+    "intercept": 0.6525774895495321,
+    "r_squared": 0.33012524860499787,
+    "p_value": 0.17727069444830063,
+    "slope_95_ci_low": -0.005313620851811543,
+    "slope_95_ci_high": 0.021981580100886737
+  },
+  "peak_hz_trend_slope": -1.1252099334730439,
+  "peak_hz_trend_p_value": 0.007496153594935153,
+  "null_hz_trend_slope": 0.0,
+  "null_hz_trend_p_value": NaN,
+  "preferred_and_null_both_drop": null,
+  "used_fallback_vector_sum_dsi": true,
+  "dsi_primary_range": 0.0,
+  "dsi_saturation_threshold": 0.02,
+  "mechanism_label": "flat",
+  "qualitative_description": "DSI vs diameter slope is not distinguishable from zero (slope=0.0083 per log2(multiplier), p=0.1773, dsi_range_extremes=0.0124); neither Schachter2010 nor passive filtering is supported."
+}
