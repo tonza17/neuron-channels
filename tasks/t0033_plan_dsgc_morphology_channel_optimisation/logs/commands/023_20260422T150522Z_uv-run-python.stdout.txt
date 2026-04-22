@@ -1,0 +1,7 @@
+Wrote 5 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\data\vastai_pricing_snapshot.json
+  RTX 3090      $0.20/h  speed_ratio=1.00
+  RTX 4090      $0.50/h  speed_ratio=1.60
+  A100 40GB     $1.10/h  speed_ratio=1.80
+  H100          $2.50/h  speed_ratio=3.00
+  CPU-96        $0.40/h  speed_ratio=1.00
+  filters_applied=rentable=true verified=true compute_cap<1200 cuda_max_good>=12.6

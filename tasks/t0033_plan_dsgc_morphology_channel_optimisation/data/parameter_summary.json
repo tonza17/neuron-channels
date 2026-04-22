@@ -1,0 +1,13 @@
+{
+  "n_free_morphology": 5,
+  "n_hhst_baseline_free": 16,
+  "n_vgc_gbar_only": 10,
+  "n_vgc_gbar_plus_vhalf": 15,
+  "n_vgc_per_region_gbar": 20,
+  "n_free_tight": 25,
+  "n_free_rich": 40,
+  "n_free_tight_committed": 25,
+  "n_free_rich_committed": 45,
+  "morphology_source": "Cuntz2010 + t0027 taxonomy",
+  "channel_source": "t0019 + t0022 research_internet.md channel-density table"
+}

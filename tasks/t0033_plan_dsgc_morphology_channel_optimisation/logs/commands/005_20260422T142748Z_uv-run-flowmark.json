@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0033_plan_dsgc_morphology_channel_optimisation/research/research_papers.md",
+  "exit_code": 0,
+  "duration_seconds": 0.771,
+  "started_at": "2026-04-22T14:27:48Z",
+  "completed_at": "2026-04-22T14:27:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0033_plan_dsgc_morphology_channel_optimisation",
+  "stdout_file": "005_20260422T142748Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "005_20260422T142748Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

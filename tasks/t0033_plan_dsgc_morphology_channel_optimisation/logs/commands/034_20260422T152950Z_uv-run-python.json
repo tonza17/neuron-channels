@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format json --detail short --uncovered",
+  "exit_code": 0,
+  "duration_seconds": 0.523,
+  "started_at": "2026-04-22T15:29:50Z",
+  "completed_at": "2026-04-22T15:29:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0033_plan_dsgc_morphology_channel_optimisation",
+  "stdout_file": "034_20260422T152950Z_uv-run-python.stdout.txt",
+  "stderr_file": "034_20260422T152950Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1510,
+  "stderr_lines": 0,
+  "truncated": false
+}
