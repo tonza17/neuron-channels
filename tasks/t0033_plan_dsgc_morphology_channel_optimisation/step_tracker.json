@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Read t0022 and t0024 code to enumerate channel mechanisms; read t0019 answer asset for top-10 VGCs; read arf/scripts/utils/vast_machines.py for Vast.ai tier filters.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-22T14:32:06Z",
-      "completed_at": null,
+      "completed_at": "2026-04-22T14:42:38Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
