@@ -5,11 +5,11 @@
   "name": "Distal-dendrite length sweep on t0022 DSGC",
   "short_description": "Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed"
   ],
-  "start_time": null,
+  "start_time": "2026-04-22T10:41:56Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
