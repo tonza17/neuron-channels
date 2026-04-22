@@ -1,0 +1,92 @@
+{
+  "spec_version": "2",
+  "date": "2026-04-21",
+  "tasks_completed": [
+    {
+      "task_id": "t0022_modify_dsgc_channel_testbed",
+      "name": "Modify DSGC port with spatially-asymmetric inhibition for channel testbed",
+      "cost_usd": 0.0,
+      "key_finding": "Channel-modular AIS plus per-dendrite E-I scheduling saturates DSI at 1.0 with peak 15 Hz and null 0 Hz; DSI gate passed, peak-rate gap to envelope [40, 80] Hz remains"
+    },
+    {
+      "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+      "name": "Port de Rosenroll 2026 DSGC model",
+      "cost_usd": 0.0,
+      "key_finding": "Port lands DSI 0.7759 (12-ang) but fails all three paper-fidelity sub-criteria (corr/uncorr DSI and drop fraction 0.000); peak firing 5.15 Hz, REQ-5 miss logged as first-class finding"
+    },
+    {
+      "task_id": "t0025_brainstorm_results_5",
+      "name": "Brainstorm results session 5",
+      "cost_usd": 0.0,
+      "key_finding": "Authorised V_rest sweep on t0022 and t0024 as t0026; flagged DSI=1 saturation in t0022 and peak-rate shortfall in t0024 as the two gaps driving the next experiment"
+    },
+    {
+      "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "name": "V_rest sweep tuning curves for t0022 and t0024 DSGC ports",
+      "cost_usd": 0.0,
+      "key_finding": "t0022 DSI peaks sharply at V_rest=-60 mV (0.6555, 14x modulation); t0024 is U-shaped 0.36-0.67 (1.9x); t0022 peak firing climbs from 6 Hz to 129 Hz before Na inactivation collapses at -20 mV"
+    },
+    {
+      "task_id": "t0027_literature_survey_morphology_ds_modeling",
+      "name": "Literature survey: modeling effect of cell morphology on direction selectivity",
+      "cost_usd": 0.0,
+      "key_finding": "Added 15 paper assets covering retinal, invertebrate, and cortical DS modelling; recommended distal-dendrite scaling on t0022 as the next sweep; gaps identified in branch-order and diameter systematics"
+    }
+  ],
+  "tasks_created": [
+    {
+      "task_id": "t0025_brainstorm_results_5",
+      "name": "Brainstorm results session 5",
+      "reason": "Review state after t0024 merge and plan V_rest sweep experiment"
+    },
+    {
+      "task_id": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "name": "V_rest sweep tuning curves for t0022 and t0024 DSGC ports",
+      "reason": "Sweep resting potential -90 to -20 mV on both ports to expose depolarisation-dependent DSI; follow-up from brainstorm session 5"
+    },
+    {
+      "task_id": "t0027_literature_survey_morphology_ds_modeling",
+      "name": "Literature survey: modeling effect of cell morphology on direction selectivity",
+      "reason": "Build morphology-DS modelling corpus ahead of the next round of geometry sweeps on t0022 and t0024"
+    }
+  ],
+  "tasks_cancelled": [],
+  "total_cost_usd": 0.0,
+  "assets_added": 21,
+  "papers_added": 16,
+  "infrastructure_changes": [
+    "Excluded library sources from ruff (ruff.toml)",
+    "Added .gitattributes marking binary asset extensions for verify_pr_premerge"
+  ],
+  "current_best_results": [
+    {
+      "system": "modeldb_189347_dsgc_dendritic (t0022)",
+      "f1": 1.0,
+      "type": "per-dendrite E-I scheduling"
+    },
+    {
+      "system": "de_rosenroll_2026_dsgc (t0024)",
+      "f1": 0.7759,
+      "type": "AR(2)-correlated release, 12-ang"
+    },
+    {
+      "system": "modeldb_189347_dsgc_gabamod (t0020)",
+      "f1": 0.7838,
+      "type": "gabaMOD-swap protocol"
+    },
+    {
+      "system": "modeldb_189347_dsgc (t0008)",
+      "f1": 0.3163,
+      "type": "rotation-proxy protocol"
+    }
+  ],
+  "key_findings": [
+    "t0022 channel-modular dendritic testbed saturates DSI at 1.0 with peak 15 Hz — DSI gate passed, firing-rate gap remains",
+    "t0024 de Rosenroll 2026 port reproduces direction selectivity (DSI 0.78) but fails REQ-5 port fidelity: correlation-drop fraction is 0.000 vs target >= 0.20",
+    "t0022 shows 14x DSI modulation across V_rest -90 to -30 mV with sharp peak at -60 mV; t0024 is U-shaped with 1.9x modulation and tuning flattened by AR(2) noise",
+    "t0022 peak firing rate finally reaches 129 Hz at V_rest=-30 mV before Na-inactivation collapse at -20 mV; the firing-rate ceiling is a V_rest-dependence story, not a channel-density story",
+    "t0027 literature survey adds 15 papers across retinal SAC/DSGC, fly VS/T4, primate SAC, and cortical models; identifies dendritic diameter and branch order as systematic gaps",
+    "Corpus-level contradiction surfaced: Sivyer2013 and Schachter2010 require active dendrites for DS, while Dan2018 and Gruntman2018 show passive cable and even single-compartment systems produce DS",
+    "t0027 recommends distal-dendrite length scaling (1.0x/1.25x/1.5x) on t0022 as the highest-information-gain next experiment; discriminates passive TR weighting from dendritic-spike branch independence"
+  ]
+}
