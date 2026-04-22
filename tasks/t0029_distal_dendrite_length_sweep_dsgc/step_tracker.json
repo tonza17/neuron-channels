@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Survey t0022 testbed code, t0012 scorer, t0026 sweep driver, and dsgc-baseline-morphology to plan distal-length modulation.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-22T10:48:49Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
