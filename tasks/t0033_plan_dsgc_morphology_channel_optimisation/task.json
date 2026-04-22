@@ -1,0 +1,27 @@
+{
+  "spec_version": 4,
+  "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "task_index": 33,
+  "name": "Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget",
+  "short_description": "Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0019_literature_survey_voltage_gated_channels",
+    "t0022_modify_dsgc_channel_testbed",
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0026_vrest_sweep_tuning_curves_dsgc",
+    "t0027_literature_survey_morphology_ds_modeling"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "answer": 1
+  },
+  "task_types": [
+    "literature-survey",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}
