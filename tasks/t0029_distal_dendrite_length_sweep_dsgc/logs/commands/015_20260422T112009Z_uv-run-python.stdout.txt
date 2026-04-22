@@ -1,0 +1,37 @@
+[t0029 sweep] multipliers = (0.5, 1.0, 2.0)
+[t0029 sweep] angles = (0, 120, 240)
+[t0029 sweep] n_trials per (multiplier, angle) = 2
+[t0029 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\sweep_results.csv
+[t0029 sweep] per-length CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\per_length
+[t0029 sweep] building DSGC cell + E-I pairs + distal snapshot...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0029 sweep] cell built in 0.3s; n_pairs = 282; n_distal = 129
+  L=0.50x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+43.7mV
+  L=0.50x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.7mV
+  L=0.50x  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+  L=0.50x  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+  L=0.50x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.2mV
+  L=0.50x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.2mV
+[t0029 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\per_length\tuning_curve_L0p50.csv
+  L=1.00x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+  L=1.00x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+  L=1.00x  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+  L=1.00x  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.1mV
+  L=1.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+  L=1.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.3mV
+[t0029 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\per_length\tuning_curve_L1p00.csv
+  L=2.00x  dir=  0  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.3mV
+  L=2.00x  dir=  0  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.3mV
+  L=2.00x  dir=120  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+  L=2.00x  dir=120  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+  L=2.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-55.5mV
+  L=2.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.5mV
+[t0029 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\per_length\tuning_curve_L2p00.csv
+[t0029 sweep] baseline sec.L restoration confirmed
+[t0029 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\sweep_results.csv
+[t0029 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\wall_time_by_length.json

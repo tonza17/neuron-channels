@@ -1,0 +1,8 @@
+[plot_dsi_vs_length] wrote primary chart -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\dsi_vs_length.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L0p50.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L0p75.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L1p00.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L1p25.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L1p50.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L1p75.png
+[plot_dsi_vs_length] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\images\polar_L2p00.png

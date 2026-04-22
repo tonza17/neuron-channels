@@ -1,0 +1,8 @@
+[preflight_distal] building DSGC cell...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[preflight_distal] distal section count = 129

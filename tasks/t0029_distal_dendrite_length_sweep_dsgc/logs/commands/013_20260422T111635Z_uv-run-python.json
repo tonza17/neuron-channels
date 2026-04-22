@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "command": "uv run python -c \nfrom tasks.t0029_distal_dendrite_length_sweep_dsgc.code.trial_runner_length import build_cell_context\nctx = build_cell_context()\nh = ctx.h\nprint('type of h.RGC.soma:', type(h.RGC.soma))\nprint('has iter:', hasattr(h.RGC.soma, '__iter__'))\n# Try iteration\ntry:\n    items = list(h.RGC.soma)\n    print('first item:', items[0], type(items[0]))\nexcept Exception as e:\n    print('iteration failed:', e)\n# Try as Section directly\ntry:\n    print('name:', h.RGC.soma.name())\nexcept Exception as e:\n    print('name failed:', e)\n",
+  "exit_code": 0,
+  "duration_seconds": 0.773,
+  "started_at": "2026-04-22T11:16:35Z",
+  "completed_at": "2026-04-22T11:16:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0029_distal_dendrite_length_sweep_dsgc",
+  "stdout_file": "013_20260422T111635Z_uv-run-python.stdout.txt",
+  "stderr_file": "013_20260422T111635Z_uv-run-python.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}
