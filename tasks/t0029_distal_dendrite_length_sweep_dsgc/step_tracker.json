@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0022_modify_dsgc_channel_testbed is completed.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-22T10:45:56Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
