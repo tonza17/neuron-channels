@@ -1,0 +1,19 @@
+{
+  "spec_version": 4,
+  "task_id": "t0031_fetch_paywalled_morphology_papers",
+  "task_index": 31,
+  "name": "Fetch paywalled morphology papers: Kim2014 and Sivyer2013",
+  "short_description": "Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "paper": 2
+  },
+  "task_types": [
+    "download-paper"
+  ],
+  "source_suggestion": "S-0027-06"
+}
