@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write suggestions.json with follow-up experiments motivated by the feasibility plan and cost envelope.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-22T15:28:17Z",
-      "completed_at": null,
+      "completed_at": "2026-04-22T15:35:27Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
