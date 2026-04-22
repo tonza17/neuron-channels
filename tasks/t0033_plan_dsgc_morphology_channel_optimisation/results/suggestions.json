@@ -1,0 +1,84 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0033-01",
+      "title": "CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the assumed 5x speedup in the t0033 cost model",
+      "description": "The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup (91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines 1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a literature-less guess that drives the largest sensitivity-band column. Run a short task that (a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the $23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types: experiment-run, baseline-evaluation.",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0033-02",
+      "title": "Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on t0022 as a t0033 optimiser prerequisite",
+      "description": "The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1, Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live. Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz 2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new sibling library asset. Recommended task types: infrastructure-setup, build-model, write-library.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0033-03",
+      "title": "Multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended optimiser cell",
+      "description": "The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the 25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task types: experiment-run, feature-engineering.",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0033-04",
+      "title": "Transfer-learning surrogate warm-start from t0022 and t0024 V_rest-sweep evaluations",
+      "description": "Creative-thinking alternative #3 in t0033 noted that t0022, t0024 and the t0026 V_rest sweep already produced thousands of (gbar-subset, DSI) evaluations on the 16-parameter HHst topology. If half of the 5,000-sample surrogate training burn is replaced by these as warm-start, the $41.56 training cost plausibly drops to ~$20, pulling the recommended cell to ~$30. Build a task that (a) reads t0026 V_rest-sweep and t0022 baseline outputs, (b) encodes them as (parameter-vector, DSI) tuples in the 25-dim joint space by imputing the 9 unvaried dimensions at Poleg-Polsky defaults with tagged uncertainty, (c) pre-trains the surrogate NN on this warm-start set before the 2,500-sample cold-start burn, and (d) measures whether the half-dataset warm-start matches the 5,000-sample cold-start surrogate. Recommended task types: experiment-run, feature-engineering.",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0033-05",
+      "title": "5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to validate sample-efficiency assumptions",
+      "description": "The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=500, Surrogate-NN-GA=18,500) on 25 dims without empirical DSGC validation. Before the full joint optimiser is commissioned, run a low-dim spike on t0022: (a) pick 5 representative parameters from the committed 25 (3 Cuntz scalars: bf, distal-length, distal-diameter + gNa_dend + gKdr_dend), (b) run 200-300 deterministic 12-angle evaluations each under CMA-ES and sequential BO, (c) compare the DSI converged-to-within-1% sample count against the cost-grid extrapolations, and (d) report whether either method actually converges on DSGC landscapes or hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "voltage-gated-channels"
+      ]
+    },
+    {
+      "id": "S-0033-06",
+      "title": "Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop",
+      "description": "The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature. t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial) pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a single evaluator. Recommended task types: write-library, feature-engineering.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    }
+  ]
+}

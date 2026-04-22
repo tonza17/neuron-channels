@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[0]: description is 1067 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[1]: title is 127 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1099 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[2]: title is 123 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1234 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1068 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1106 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m — 0 error(s), 7 warning(s)
