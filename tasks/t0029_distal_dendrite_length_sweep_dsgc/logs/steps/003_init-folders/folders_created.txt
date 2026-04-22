@@ -1,0 +1,13 @@
+tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/code/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/corrections/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/intervention/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/plan/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/research/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/results/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/results/images/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/logs/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/logs/commands/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/logs/searches/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/logs/sessions/
+tasks/t0029_distal_dendrite_length_sweep_dsgc/logs/steps/

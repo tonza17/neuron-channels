@@ -1,0 +1,14 @@
+{
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "checked_at": "2026-04-22T10:46:10Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0022_modify_dsgc_channel_testbed",
+      "status": "completed",
+      "satisfied": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 0
+}

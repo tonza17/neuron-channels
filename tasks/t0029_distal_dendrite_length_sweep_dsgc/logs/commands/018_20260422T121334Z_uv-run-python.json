@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "command": "uv run python -m tasks.t0029_distal_dendrite_length_sweep_dsgc.code.classify_curve_shape",
+  "exit_code": 0,
+  "duration_seconds": 6.085,
+  "started_at": "2026-04-22T12:13:34Z",
+  "completed_at": "2026-04-22T12:13:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0029_distal_dendrite_length_sweep_dsgc",
+  "stdout_file": "018_20260422T121334Z_uv-run-python.stdout.txt",
+  "stderr_file": "018_20260422T121334Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

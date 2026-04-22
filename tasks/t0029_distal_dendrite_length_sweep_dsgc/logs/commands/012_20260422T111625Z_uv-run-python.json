@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "command": "uv run python -u -m tasks.t0029_distal_dendrite_length_sweep_dsgc.code.preflight_distal",
+  "exit_code": 1,
+  "duration_seconds": 1.502,
+  "started_at": "2026-04-22T11:16:25Z",
+  "completed_at": "2026-04-22T11:16:27Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0029_distal_dendrite_length_sweep_dsgc",
+  "stdout_file": "012_20260422T111625Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260422T111625Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 13,
+  "truncated": false
+}

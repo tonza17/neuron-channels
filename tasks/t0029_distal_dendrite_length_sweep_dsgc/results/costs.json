@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {},
+  "note": "No paid services used. 7 x 12 x 10 = 840 trials ran on the local Windows workstation (~42 min wall time, NEURON 8.2.7 only). No API, no remote compute."
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0029_distal_dendrite_length_sweep_dsgc",
+  "exit_code": 0,
+  "duration_seconds": 0.298,
+  "started_at": "2026-04-22T11:08:17Z",
+  "completed_at": "2026-04-22T11:08:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0029_distal_dendrite_length_sweep_dsgc",
+  "stdout_file": "009_20260422T110817Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260422T110817Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

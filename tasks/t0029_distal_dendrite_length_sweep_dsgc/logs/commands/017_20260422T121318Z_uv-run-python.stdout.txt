@@ -1,0 +1,11 @@
+[compute_length_metrics] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\metrics_per_length.csv
+[compute_length_metrics] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\metrics.json
+[compute_length_metrics] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\metrics_notes.json
+   L_mul  peak_hz  null_hz  dsi_pn  dsi_vs    hwhm    rel    pref  peak_mv
+    0.50    15.00     0.00   1.000   0.664    89.1  1.000    49.7     -5.0
+    0.75    15.00     0.00   1.000   0.656   116.2  1.000    49.3     -4.8
+    1.00    15.00     0.00   1.000   0.656   116.2  1.000    49.3     -4.8
+    1.25    14.00     0.00   1.000   0.655    95.0  1.000    47.8     -4.9
+    1.50    14.00     0.00   1.000   0.653    71.7  1.000    49.1     -5.1
+    1.75    14.00     0.00   1.000   0.648   115.8  1.000    49.8     -5.1
+    2.00    14.00     0.00   1.000   0.643   115.8  1.000    49.6     -5.2

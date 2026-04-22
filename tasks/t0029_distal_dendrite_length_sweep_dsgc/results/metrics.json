@@ -1,0 +1,88 @@
+{
+  "variants": [
+    {
+      "variant_id": "length_0p50",
+      "label": "distal L x 0.50",
+      "dimensions": {
+        "length_multiplier": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 89.1346,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_0p75",
+      "label": "distal L x 0.75",
+      "dimensions": {
+        "length_multiplier": 0.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 116.25,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_1p00",
+      "label": "distal L x 1.00",
+      "dimensions": {
+        "length_multiplier": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 116.25,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_1p25",
+      "label": "distal L x 1.25",
+      "dimensions": {
+        "length_multiplier": 1.25
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 95.0,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_1p50",
+      "label": "distal L x 1.50",
+      "dimensions": {
+        "length_multiplier": 1.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 71.6667,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_1p75",
+      "label": "distal L x 1.75",
+      "dimensions": {
+        "length_multiplier": 1.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 115.8333,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "length_2p00",
+      "label": "distal L x 2.00",
+      "dimensions": {
+        "length_multiplier": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 115.8333,
+        "tuning_curve_reliability": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+[classify_curve_shape] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0029_distal_dendrite_length_sweep_dsgc\tasks\t0029_distal_dendrite_length_sweep_dsgc\results\data\curve_shape.json
+[classify_curve_shape] shape_class = saturating  slope = 0.0000  p = nan  dsi_range_extremes = 0.0000
+[classify_curve_shape] DSI saturates at multiplier 0.50 and remains within 0.050 of its maximum for all larger multipliers. Plateau DSI = 1.0000. DSI range across the sweep = 0.0000.

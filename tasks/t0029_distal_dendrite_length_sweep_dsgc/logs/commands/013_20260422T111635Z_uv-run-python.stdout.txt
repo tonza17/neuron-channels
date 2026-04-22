@@ -1,0 +1,10 @@
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+type of h.RGC.soma: <class 'nrn.Section'>
+has iter: True
+first item: DSGC[0].soma(0.5) <class 'nrn.Segment'>
+name: DSGC[0].soma

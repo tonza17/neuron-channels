@@ -1,0 +1,16 @@
+{
+  "shape_class": "saturating",
+  "slope": 0.0,
+  "intercept": 1.0,
+  "r_squared": NaN,
+  "p_value": NaN,
+  "non_decreasing": true,
+  "saturation_multiplier": 0.5,
+  "plateau_dsi": 1.0,
+  "dsi_at_0.5": 1.0,
+  "dsi_at_2.0": 1.0,
+  "dsi_range_extremes": 0.0,
+  "dsi_min": 1.0,
+  "dsi_max": 1.0,
+  "qualitative_description": "DSI saturates at multiplier 0.50 and remains within 0.050 of its maximum for all larger multipliers. Plateau DSI = 1.0000. DSI range across the sweep = 0.0000."
+}
