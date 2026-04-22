@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\tasks\t0033_plan_dsgc_morphology_channel_optimisation\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [Briggman2011] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Jain2020] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Kim2014] has no matching Paper Index entry[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W003 warning: Category 'compartmental-modelling' does not exist in C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0033_plan_dsgc_morphology_channel_optimisation\meta\categories[0m
+
+[31m[1mFAILED[0m — 3 error(s), 1 warning(s)
