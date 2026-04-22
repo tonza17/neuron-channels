@@ -1,24 +1,28 @@
-# ⏳ Distal-dendrite length sweep on t0022 DSGC
+# ⏳ Tasks: In Progress
+
+1 tasks. ⏳ **1 in_progress**.
 
 [Back to all tasks](../README.md)
 
-## Overview
+---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0029 — <strong>Distal-dendrite length sweep on t0022 DSGC</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0029_distal_dendrite_length_sweep_dsgc` |
-| **Status** | ⏳ in_progress |
-| **Started** | 2026-04-22T10:41:56Z |
+| **Status** | in_progress |
+| **Effective date** | 2026-04-22 |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Expected assets** | — |
 | **Source suggestion** | `S-0027-01` |
-| **Task types** | `experiment-run` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-22T10:41:56Z |
+| **Task page** | [Distal-dendrite length sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
 | **Task folder** | [`t0029_distal_dendrite_length_sweep_dsgc/`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/) |
-
-<details>
-<summary><strong>Task Description</strong></summary>
-
-*Source:
-[`task_description.md`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/task_description.md)*
 
 # Distal-Dendrite Length Sweep on t0022 DSGC
 

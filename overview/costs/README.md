@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.80) |
 | Stop threshold | 100% ($1.00) |
 | Default per-task limit | $1.00 USD |
-| Tasks with cost records | 27 |
+| Tasks with cost records | 28 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 4 |
+| Skipped tasks | 5 |
 
 ## Service Totals
 
@@ -31,7 +31,7 @@ No entries found.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-27 task cost record(s) are zero-cost and omitted from the main spend table.
+28 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -45,3 +45,4 @@ No task cost records found.
 | `t0029_distal_dendrite_length_sweep_dsgc` | results/costs.json is missing or invalid |
 | `t0030_distal_dendrite_diameter_sweep_dsgc` | results/costs.json is missing or invalid |
 | `t0031_fetch_paywalled_morphology_papers` | results/costs.json is missing or invalid |
+| `t0033_plan_dsgc_morphology_channel_optimisation` | results/costs.json is missing or invalid |

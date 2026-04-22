@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-22T10:07:00Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-22T12:12:19Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>207261</char_count>
-    <byte_count>207451</byte_count>
-    <estimated_tokens>51815</estimated_tokens>
+    <char_count>208988</char_count>
+    <byte_count>209180</byte_count>
+    <estimated_tokens>52247</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -138,9 +138,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
         <id>t0027_literature_survey_morphology_ds_modeling</id>
         <id>t0028_brainstorm_results_6</id>
+        <id>t0032_brainstorm_results_7</id>
       </source_ids>
       <content>
-Completed tasks: 27
+Completed tasks: 28
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -303,6 +304,12 @@ ID: t0028_brainstorm_results_6
 Completed: 2026-04-22
 Short description: Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
 Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic brainstorm following the completion of t0026 (V_rest sweep and tuning curves on t0022/t0024 DSGCs) and t0027 (15-paper morphology-direction-selectivity literature survey with synthesis answer). Three new tasks approved: t0029 (distal-dendrite length sweep on t0022), t0030 (distal-dendrite diameter sweep on t0022), t0031 (paywalled PDF fetch for Kim2014 and Sivyer2013). Zero suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Outcome The researcher directed the session toward dendritic morphology sweeps, keeping t0023 (Hanson2019 port) intervention_blocked, preferring a 3-5 task focused batch executed...
+
+## Brainstorm results session 7
+ID: t0032_brainstorm_results_7
+Completed: 2026-04-22
+Short description: Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
+Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029 (distal-length sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation, scoped against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Overview Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030, t0031) is already queued from t0028 and is unlikely to change the feasibility of a large-scale joint...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -313,9 +320,10 @@ Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic br
         <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -326,7 +334,7 @@ Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library
 
 ## Distal-dendrite length sweep on t0022 DSGC
 ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-22
 Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
 Dependencies: t0022_modify_dsgc_channel_testbed
@@ -343,6 +351,13 @@ ID: t0031_fetch_paywalled_morphology_papers
 Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
+
+## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+ID: t0033_plan_dsgc_morphology_channel_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

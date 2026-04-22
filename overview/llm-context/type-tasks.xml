@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T10:07:00Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-22T12:12:19Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>220323</char_count>
-    <byte_count>221222</byte_count>
-    <estimated_tokens>55080</estimated_tokens>
+    <char_count>240192</char_count>
+    <byte_count>241161</byte_count>
+    <estimated_tokens>60048</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -48,9 +48,11 @@
         <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
+        <id>t0032_brainstorm_results_7</id>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Total tasks: 31
+Total tasks: 33
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -3853,12 +3855,13 @@ not_started.
 
 ## Distal-dendrite length sweep on t0022 DSGC
 ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-22
 Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
 Dependencies: t0022_modify_dsgc_channel_testbed
 Task types: experiment-run
 Source suggestion: S-0027-01
+Start time: 2026-04-22T10:41:56Z
 
 #### Motivation
 
@@ -4152,6 +4155,327 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
+
+## Brainstorm results session 7
+ID: t0032_brainstorm_results_7
+Status: completed
+Effective date: 2026-04-22
+Short description: Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
+Dependencies: t0001_brainstorm_results_1, t0002_literature_survey_dsgc_compartmental_models, t0003_simulator_library_survey, t0004_generate_target_tuning_curve, t0005_download_dsgc_morphology, t0006_brainstorm_results_2, t0007_install_neuron_netpyne, t0008_port_modeldb_189347, t0009_calibrate_dendritic_diameters, t0010_hunt_missed_dsgc_models, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0013_resolve_morphology_provenance, t0014_brainstorm_results_3, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels, t0020_port_modeldb_189347_gabamod, t0021_brainstorm_results_4, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0025_brainstorm_results_5, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling, t0028_brainstorm_results_6
+Task types: brainstorming
+Start time: 2026-04-22T11:45:00Z
+End time: 2026-04-22T12:30:00Z
+
+#### Motivation
+
+Seventh strategic brainstorming session. Run on 2026-04-22, a few hours after t0028 (brainstorm
+session 6) merged and queued the morphology-sweep wave (t0029, t0030, t0031). The researcher opened
+a second, parallel planning thread focused on a much larger future ambition: a joint optimisation
+over DSGC dendritic morphology and the top-10 voltage-gated channel types to maximise DSI.
+
+The immediate purpose of this session is not to launch that optimisation, but to commission a
+planning-and-costing task that answers: *is a full joint optimisation affordable on our Vast.ai GPU
+budget, and how should it be organised?*
+
+#### Scope
+
+* Review project state after the t0028 merge: 28 tasks completed, 1 in progress (t0029), 2 not
+  started (t0030, t0031), 1 intervention_blocked (t0023); 107 uncovered suggestions (36 high / 55
+  medium / 16 low); $0.00 / $1.00 budget used.
+* Summarise t0026 (V_rest sweep) and t0027 (morphology-DS synthesis) as the strategic context the
+  researcher is reacting to.
+* Decide whether to open a parallel planning thread during the morphology-sweep wave.
+* Decide on a single new task: a feasibility-and-costing plan for a large joint morphology + VGC
+  DSI-maximisation optimisation on Vast.ai GPU.
+* Capture the researcher&#x27;s constraints (no internet research, active dendritic conductances,
+  presynaptic inputs fixed, single-objective DSI, do not create the child optimiser task itself).
+
+#### Researcher Decisions
+
+* **Open a parallel planning thread**: yes. Do not wait for the morphology-sweep wave (t0029, t0030,
+  t0031) to complete.
+* **New task**: exactly one task, scoping and costing a future joint morphology + top-10 VGC
+  DSI-maximisation optimisation. The task is a **planner, not an optimiser** — it must not launch
+  any optimisation runs.
+* **Research scope**: downloaded paper corpus only. No internet search.
+* **Biophysical assumptions** (locked in for the plan): active dendritic conductances, Poleg-Polsky
+  2026 parameter backbone, top-10 voltage-gated channel types sourced from t0019, presynaptic inputs
+  held fixed.
+* **Objective**: DSI only. Future criteria (information content, energy, size constraints, Cajal&#x27;s
+  cytoplasm minimisation) are noted but explicitly out of scope for this plan.
+* **Compute target**: Vast.ai GPU pricing as the primary cost reference. Evaluate CoreNEURON-on-GPU,
+  surrogate-NN-on-GPU, and a Vast.ai many-core CPU comparator. Pick the cheapest viable strategy ×
+  tier.
+* **Suggestion backlog**: no rejections or reprioritisations this session. Pruning deferred.
+* **Task updates**: none.
+
+#### New Task Created
+
+The session authorised one child task, created via `/create-task` immediately after this
+brainstorm-results folder was scaffolded. Task index is auto-assigned as 33 (strictly greater than
+32 per the ordering invariant).
+
+* **t0033** — Plan DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation
+  task; synthesise methodology from the downloaded paper corpus only; enumerate parameter counts and
+  search-space sizes; estimate Vast.ai GPU wall-time and USD cost for 2-3 search strategies × 2-3
+  GPU tiers; recommend the cheapest viable combination. Deliverable includes an answer asset
+  capturing the cost envelope. Planning only — no optimiser runs, no child optimiser task spawned
+  from this plan. Local CPU only, $0.
+
+#### Suggestion Cleanup
+
+Zero suggestions rejected or reprioritised. Pruning of stale high-priority suggestions from the
+t0015-t0019 literature surveys was raised in the AI&#x27;s reassessment but the researcher did not
+authorise any action this session.
+
+#### Task Updates
+
+None. t0023 (Hanson2019 port) remains `intervention_blocked`. t0029 remains `in_progress` in its own
+worktree. t0030 and t0031 remain `not_started`.
+
+#### Expected Assets
+
+This brainstorm session produces no assets beyond the brainstorm-results task folder and its
+downstream child task. `expected_assets` is `{}`.
+
+#### Dependencies
+
+All 27 completed tasks up through t0028. t0029, t0030, t0031 are excluded because they are not yet
+completed.
+
+### Results Summary
+
+#### Summary
+
+Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029 (distal-length
+sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator for a
+future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation, scoped
+against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions
+rejected or reprioritised; t0023 remains intervention_blocked.
+
+#### Session Overview
+
+Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030, t0031) is
+already queued from t0028 and is unlikely to change the feasibility of a large-scale joint
+optimisation. The researcher therefore opened a parallel planning thread to assess whether a full
+morphology + channel sweep is affordable on the project&#x27;s Vast.ai GPU budget before the
+morphology-sweep wave returns. The session produced exactly one task (t0033) whose deliverable is a
+plan and cost estimate, explicitly not the optimiser itself.
+
+#### Decisions
+
+1. **Open a parallel planning thread** while t0029 runs. No dependency on the morphology-sweep wave,
+   because the plan is a costing exercise and does not consume morphology-sweep outputs.
+2. **Create t0033** — &quot;Plan DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+   optimisation; estimate Vast.ai GPU budget&quot;. Task types: `literature-survey`, `answer-question`.
+   Dependencies: t0002, t0019, t0022, t0024, t0026, t0027. Local CPU only, $0.
+3. **Constraints locked in** for the planning task: downloaded corpus only (no internet search),
+   active dendritic conductances, Poleg-Polsky 2026 parameter backbone, top-10 voltage-gated
+   channels sourced from t0019, presynaptic inputs held fixed, single objective = DSI.
+4. **Compute target**: Vast.ai GPU pricing as primary anchor. Evaluate CoreNEURON-on-GPU,
+   surrogate-NN-on-GPU, and a Vast.ai many-core CPU comparator. Recommend the cheapest viable
+   strategy × GPU tier.
+5. **Do not spawn the optimisation task**: t0033 is a planner. The optimiser task (if later
+   approved) will be spawned from a future brainstorm session, not from t0033.
+6. **No suggestion cleanup** this session (backlog pruning deferred).
+7. **No task cancellations or updates**: t0023 remains `intervention_blocked`; t0029 remains
+   `in_progress` in its own worktree; t0030 and t0031 remain `not_started`.
+
+#### Metrics
+
+This is a planning task with no computational metrics. Decision-level counts for the session:
+
+* New tasks created: 1 (t0033)
+* Suggestions rejected: 0
+* Suggestions reprioritised: 0
+* Tasks cancelled: 0
+* Tasks updated: 0
+* Corrections written: 0
+* Session duration: ~45 minutes
+* Cost: $0.00
+
+#### Verification
+
+* `verify_task_file.py t0032_brainstorm_results_7` — target 0 errors.
+* `verify_corrections.py t0032_brainstorm_results_7` — target 0 errors (no correction files).
+* `verify_suggestions.py t0032_brainstorm_results_7` — target 0 errors (empty suggestions array).
+* `verify_logs.py t0032_brainstorm_results_7` — target 0 errors; `LG-W005` acceptable per skill
+  guidance; session-capture warnings `LG-W007` / `LG-W008` cleared by step 4&#x27;s capture utility.
+* `verify_pr_premerge.py t0032_brainstorm_results_7 --pr-number &lt;N&gt;` — target 0 errors.
+* Child task `t0033_plan_dsgc_morphology_channel_optimisation` exists on disk with valid
+  `task.json`.
+
+#### Next Steps
+
+1. **t0033** runs next as the single new task authorised by this session. Local CPU only.
+2. The morphology-sweep wave (t0029, t0030, t0031) continues independently in its own worktree.
+3. A future brainstorm session will review t0033&#x27;s output alongside the morphology-sweep results and
+   decide whether to proceed with the full optimiser task on Vast.ai GPU.
+
+## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+ID: t0033_plan_dsgc_morphology_channel_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
+Task types: literature-survey, answer-question
+
+#### Motivation
+
+The project&#x27;s long-term ambition, implied by project research questions RQ1, RQ2, and RQ4, is a
+joint optimisation over DSGC dendritic morphology and voltage-gated channel (VGC) combinations that
+maximises the direction-selectivity index (DSI). No task to date has attempted such a large-scale
+joint sweep; every completed experiment to date has varied only one axis at a time (V_rest, distal
+length, distal diameter) on a fixed morphology and a fixed channel set inherited from the
+Poleg-Polsky 2026 port.
+
+Before committing the project budget to a joint optimisation, we need a feasibility plan and a
+defensible compute-budget estimate. This task produces exactly that plan. It does **not** launch the
+optimisation and does **not** create a child optimiser task. The optimisation itself, if approved,
+will be spawned from a future brainstorm session after this plan lands.
+
+#### Scope
+
+**In scope**:
+
+* Synthesise existing methodology for compartmental-model parameter optimisation from the downloaded
+  paper corpus in `tasks/*/assets/paper/` and `assets/paper/` (as surfaced by `aggregate_papers`).
+  No internet search.
+* Enumerate the parameter set that the future optimisation would vary, in two groups:
+  1. **Morphology** — variables taken from the Poleg-Polsky 2026 backbone as exposed by the t0024
+     port and the channel-modular AIS architecture of the t0022 testbed. Include all per-section
+     geometry that Poleg-Polsky 2026 varies, plus explicit morphology knobs (per-branch length,
+     diameter, branch order, arbor-asymmetry summary statistics) identified by t0027.
+  2. **Voltage-gated channels** — the top-10 VGC types from the t0019 survey (sourced from
+     `tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/`).
+     For each VGC, enumerate the per-channel biophysical parameters that will be varied (typically
+     `gbar`, possibly kinetic shifts).
+* Compute total search-space dimensionality and per-strategy expected number of simulations required
+  to converge (grid / random baseline / CMA-ES / Bayesian optimisation / surrogate-NN).
+* Estimate per-simulation wall-time using the empirical baselines recorded by t0026:
+  * t0022 deterministic: ~6.0 min / 96 trials ≈ **3.8 s per (angle, trial)**
+  * t0024 stochastic AR(2) ρ=0.6: ~11,562 s / 960 trials ≈ **12.0 s per (angle, trial)**
+  * Extrapolate per-simulation cost per the 12-angle × trial-count standard protocol.
+* Translate wall-time into Vast.ai USD cost across 2-3 representative GPU tiers, using the pricing
+  conventions documented in `arf/docs/explanation/remote_machines.md` and the tier filters encoded
+  in `arf/scripts/utils/vast_machines.py`. Tiers to consider: RTX 4090, A100 40 GB, H100 (or the
+  closest available tier). Include the `compute_cap&lt;1200` and `cuda_max_good&gt;=12.6` pre-validated
+  filters in the cost derivation.
+* Evaluate three compute strategies and produce a wall-time + USD envelope for each:
+  1. **CoreNEURON on Vast.ai GPU** (OpenACC/CUDA-accelerated NEURON variant).
+  2. **Surrogate NN on Vast.ai GPU** (train a neural-network surrogate from a limited CPU-NEURON
+     sample, then optimise on the surrogate; account for training cost, sample cost, and
+     transfer/inference cost).
+  3. **Vast.ai many-core CPU** (comparator — cost floor assuming stock NEURON).
+* Produce a sensitivity analysis: what if per-simulation cost is 0.5×, 1×, or 2× the t0026 baseline?
+  What if search-strategy sample counts are 0.5×, 1×, or 2× the literature default?
+* Recommend the cheapest viable (strategy × Vast.ai GPU tier) combination, with explicit caveats on
+  any assumptions that the downloaded corpus did not resolve.
+
+**Out of scope** (explicit):
+
+* Running the optimisation. This task is pure planning.
+* Creating the child optimiser task.
+* Any internet search.
+* Any experimentation on t0022, t0024, or other existing ports.
+* Multi-objective optimisation. The future plan is for single-objective DSI maximisation only. Other
+  criteria (information, energy, size, Cajal&#x27;s cytoplasm minimisation) are noted but are explicitly
+  not costed in this task.
+* Variation on the presynaptic side (bipolar / SAC input schedule and kinetics are held fixed).
+
+#### Approach
+
+1. **Corpus read.** Aggregate all papers via `aggregate_papers --format json --detail full` and
+   filter to summaries relevant to compartmental-model optimisation, surrogate modelling, CoreNEURON
+   / GPU NEURON, and active-dendrite parameter reduction. Expect strong hits from t0015 (cable
+   theory), t0016 (dendritic computation), t0019 (VGCs), t0027 (morphology-DS).
+2. **Parameter enumeration.** Read the t0022 code under
+   `tasks/t0022_modify_dsgc_channel_testbed/code/` and the t0024 code under
+   `tasks/t0024_port_de_rosenroll_2026_dsgc/code/` to identify every mechanism instantiated across
+   `SOMA_CHANNELS`, `DEND_CHANNELS`, `AIS_PROXIMAL`, `AIS_DISTAL`, and `THIN_AXON`. Tabulate which
+   parameters would vary under the joint optimisation and which are held fixed.
+3. **Top-10 VGC selection.** Read the t0019 answer asset at
+   `tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/full_answer.md`
+   and commit to a canonical top-10 list with biophysical-parameter counts per channel.
+4. **Search-space arithmetic.** Under each strategy, compute dimensionality and expected simulation
+   count. Record all assumptions explicitly.
+5. **Vast.ai pricing lookup.** Use `arf/scripts/utils/vast_machines.py` (read the library; no
+   provisioning calls) to identify current tier pricing and filter constraints. Document the
+   snapshot date in the plan.
+6. **Cost model.** For each (strategy × tier) pair: expected simulations × per-sim wall-time /
+   parallelism factor × hourly rate → total $.
+7. **Sensitivity.** Produce a 3 × 3 sensitivity table (per-sim cost × sample-count multipliers).
+8. **Answer asset.** Produce one answer asset: *&quot;What is the Vast.ai GPU cost and recommended
+   organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?&quot;*.
+9. **Results output.** `results_detailed.md` contains parameter-count tables, search-space-size
+   tables, per-sim wall-time, cost tables, and sensitivity. `results_summary.md` states the headline
+   recommended (strategy, tier, total $) with confidence band.
+
+#### Dependencies
+
+* `t0002_literature_survey_dsgc_compartmental_models` — compartmental-model methodology priors.
+* `t0019_literature_survey_voltage_gated_channels` — source of the top-10 VGC list.
+* `t0022_modify_dsgc_channel_testbed` — architecture that the future optimisation would vary.
+* `t0024_port_de_rosenroll_2026_dsgc` — Poleg-Polsky 2026 parameter backbone.
+* `t0026_vrest_sweep_tuning_curves_dsgc` — empirical per-simulation wall-time baselines.
+* `t0027_literature_survey_morphology_ds_modeling` — morphology-variable taxonomy.
+
+#### Expected Assets
+
+One answer asset, matching `expected_assets = {&quot;answer&quot;: 1}`:
+
+* `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/` — with
+  `details.json`, `short_answer.md`, and `full_answer.md`. The short answer must state the
+  recommended (strategy, Vast.ai GPU tier, headline USD budget, and confidence) in 2-5 sentences.
+  The full answer must document methodology, parameter enumeration, cost model, sensitivity, and
+  limitations.
+
+No library, model, dataset, paper, or prediction assets are produced by this task.
+
+#### Compute and Budget
+
+* Local CPU only. No remote machines. No paid APIs.
+* $0.00 estimated task cost.
+* Task budget limit: project default ($1.00).
+
+#### Measurement
+
+This is not an experimental task; no registered metrics are measured. `metrics.json` will be `{}`.
+Decision-level quantities that the task produces (parameter counts, search-space sizes, cost
+estimates) live in `results_detailed.md` tables and in the answer asset, not in `metrics.json`.
+
+#### Key Questions
+
+1. How many free parameters does the joint morphology + top-10 VGC optimisation have under
+   reasonable parameterisation choices?
+2. What is the expected number of simulations required to converge under grid / random / CMA-ES /
+   Bayesian / surrogate-NN strategies?
+3. What is the per-simulation wall-time on (a) CoreNEURON on Vast.ai GPU, (b) surrogate NN on
+   Vast.ai GPU, and (c) Vast.ai many-core CPU, extrapolated from the t0026 baselines?
+4. What is the total Vast.ai USD cost for each (strategy × tier) combination?
+5. Which (strategy × tier) combination minimises cost while remaining technically viable, and what
+   are the key assumptions behind the ranking?
+6. Under 0.5×, 1×, 2× perturbations to per-simulation cost and sample count, does the recommended
+   combination still win?
+
+#### Execution Notes
+
+* Follow the standard `/execute-task` flow: `create-branch`, `check-deps`, `init-folders`,
+  `research-papers`, `planning`, `implementation`, `results`, `suggestions`, `reporting`.
+* Skip `research-internet` (researcher constraint: downloaded papers only).
+* Skip `research-code` unless corpus analysis reveals code assets inside our `assets/library/` that
+  are directly relevant to parameter-count justification.
+* Skip `setup-machines` / `teardown` (local CPU only for this task).
+* Skip `compare-literature` (this task IS a literature synthesis; the comparison happens in the
+  answer asset).
+* Researcher constraint — **do not** create the future optimiser task from within this task. That
+  decision is deferred to a future brainstorm session.
+
+#### Scientific Context
+
+No single source suggestion covers this task. It was commissioned by the researcher directly in
+brainstorm session 7 (t0032) as a parallel planning thread to the morphology-sweep wave
+(t0029-t0031).
       </content>
     </section>
   </sections>

@@ -1,12 +1,143 @@
 # ✅ Tasks: Completed
 
-27 tasks. ✅ **27 completed**.
+28 tasks. ✅ **28 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0032 — <strong>Brainstorm results session 7</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0032_brainstorm_results_7` |
+| **Status** | completed |
+| **Effective date** | 2026-04-22 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-22T11:45:00Z |
+| **End time** | 2026-04-22T12:30:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 7](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md) |
+| **Task folder** | [`t0032_brainstorm_results_7/`](../../../tasks/t0032_brainstorm_results_7/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0032_brainstorm_results_7/results/results_detailed.md) |
+
+# Brainstorm Results Session 7
+
+## Motivation
+
+Seventh strategic brainstorming session. Run on 2026-04-22, a few hours after t0028
+(brainstorm session 6) merged and queued the morphology-sweep wave (t0029, t0030, t0031). The
+researcher opened a second, parallel planning thread focused on a much larger future ambition:
+a joint optimisation over DSGC dendritic morphology and the top-10 voltage-gated channel types
+to maximise DSI.
+
+The immediate purpose of this session is not to launch that optimisation, but to commission a
+planning-and-costing task that answers: *is a full joint optimisation affordable on our
+Vast.ai GPU budget, and how should it be organised?*
+
+## Scope
+
+* Review project state after the t0028 merge: 28 tasks completed, 1 in progress (t0029), 2 not
+  started (t0030, t0031), 1 intervention_blocked (t0023); 107 uncovered suggestions (36 high /
+  55 medium / 16 low); $0.00 / $1.00 budget used.
+* Summarise t0026 (V_rest sweep) and t0027 (morphology-DS synthesis) as the strategic context
+  the researcher is reacting to.
+* Decide whether to open a parallel planning thread during the morphology-sweep wave.
+* Decide on a single new task: a feasibility-and-costing plan for a large joint morphology +
+  VGC DSI-maximisation optimisation on Vast.ai GPU.
+* Capture the researcher's constraints (no internet research, active dendritic conductances,
+  presynaptic inputs fixed, single-objective DSI, do not create the child optimiser task
+  itself).
+
+## Researcher Decisions
+
+* **Open a parallel planning thread**: yes. Do not wait for the morphology-sweep wave (t0029,
+  t0030, t0031) to complete.
+* **New task**: exactly one task, scoping and costing a future joint morphology + top-10 VGC
+  DSI-maximisation optimisation. The task is a **planner, not an optimiser** — it must not
+  launch any optimisation runs.
+* **Research scope**: downloaded paper corpus only. No internet search.
+* **Biophysical assumptions** (locked in for the plan): active dendritic conductances,
+  Poleg-Polsky 2026 parameter backbone, top-10 voltage-gated channel types sourced from t0019,
+  presynaptic inputs held fixed.
+* **Objective**: DSI only. Future criteria (information content, energy, size constraints,
+  Cajal's cytoplasm minimisation) are noted but explicitly out of scope for this plan.
+* **Compute target**: Vast.ai GPU pricing as the primary cost reference. Evaluate
+  CoreNEURON-on-GPU, surrogate-NN-on-GPU, and a Vast.ai many-core CPU comparator. Pick the
+  cheapest viable strategy × tier.
+* **Suggestion backlog**: no rejections or reprioritisations this session. Pruning deferred.
+* **Task updates**: none.
+
+## New Task Created
+
+The session authorised one child task, created via `/create-task` immediately after this
+brainstorm-results folder was scaffolded. Task index is auto-assigned as 33 (strictly greater
+than 32 per the ordering invariant).
+
+* **t0033** — Plan DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+  optimisation task; synthesise methodology from the downloaded paper corpus only; enumerate
+  parameter counts and search-space sizes; estimate Vast.ai GPU wall-time and USD cost for 2-3
+  search strategies × 2-3 GPU tiers; recommend the cheapest viable combination. Deliverable
+  includes an answer asset capturing the cost envelope. Planning only — no optimiser runs, no
+  child optimiser task spawned from this plan. Local CPU only, $0.
+
+## Suggestion Cleanup
+
+Zero suggestions rejected or reprioritised. Pruning of stale high-priority suggestions from
+the t0015-t0019 literature surveys was raised in the AI's reassessment but the researcher did
+not authorise any action this session.
+
+## Task Updates
+
+None. t0023 (Hanson2019 port) remains `intervention_blocked`. t0029 remains `in_progress` in
+its own worktree. t0030 and t0031 remain `not_started`.
+
+## Expected Assets
+
+This brainstorm session produces no assets beyond the brainstorm-results task folder and its
+downstream child task. `expected_assets` is `{}`.
+
+## Dependencies
+
+All 27 completed tasks up through t0028. t0029, t0030, t0031 are excluded because they are not
+yet completed.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 7**
+>
+> **Summary**
+>
+> Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029
+> (distal-length
+> sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator
+> for a
+> future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation,
+> scoped
+> against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions
+> rejected or reprioritised; t0023 remains intervention_blocked.
+>
+> **Session Overview**
+>
+> Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030,
+> t0031) is
+> already queued from t0028 and is unlikely to change the feasibility of a large-scale joint
+> optimisation. The researcher therefore opened a parallel planning thread to assess whether a
+> full
+> morphology + channel sweep is affordable on the project's Vast.ai GPU budget before the
+> morphology-sweep wave returns. The session produced exactly one task (t0033) whose
+> deliverable is a
+> plan and cost estimate, explicitly not the optimiser itself.
+>
+> **Decisions**
+
+</details>
 
 <details>
 <summary>✅ 0028 — <strong>Brainstorm results session 6</strong></summary>
