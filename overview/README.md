@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-2-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-31-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-33-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-122-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (12K)
-| [full](llm-context/full.xml) (180K) | [roadmap](llm-context/roadmap.xml) (42K) |
-[results](llm-context/results-deep-dive.xml) (120K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (13K)
+| [full](llm-context/full.xml) (184K) | [roadmap](llm-context/roadmap.xml) (45K) |
+[results](llm-context/results-deep-dive.xml) (122K) |
 [assets](llm-context/literature-and-assets.xml) (29K)
 
-*Last updated: 2026-04-22 10:07 UTC*
+*Last updated: 2026-04-22 12:12 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -48,9 +48,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | 2026-04-22 10:41 |
 
 ---
 
@@ -58,7 +60,7 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`description`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/task_description.md) | 2026-04-22 |
+| 0033 | [Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget](../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) | [`description`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/task_description.md) | — |
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`description`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/task_description.md) | 2026-04-22 |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 
@@ -78,11 +80,12 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (27 total)](tasks/by-status/completed.md)
+## [Recently Completed (28 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
 | 0028 | [Brainstorm results session 6](../overview/tasks/task_pages/t0028_brainstorm_results_6.md) | [`results`](../tasks/t0028_brainstorm_results_6/results/results_detailed.md) | 2026-04-22 13:10 |
+| 0032 | [Brainstorm results session 7](../overview/tasks/task_pages/t0032_brainstorm_results_7.md) | [`results`](../tasks/t0032_brainstorm_results_7/results/results_detailed.md) | 2026-04-22 12:30 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | [`results`](../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) | 2026-04-21 22:23 |
 | 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
 | 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
@@ -91,9 +94,8 @@ No blocked tasks.
 | 0020 | [Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | [`results`](../tasks/t0020_port_modeldb_189347_gabamod/results/results_detailed.md) | 2026-04-20 20:35 |
 | 0013 | [Resolve dsgc-baseline-morphology source-paper provenance](../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) | [`results`](../tasks/t0013_resolve_morphology_provenance/results/results_detailed.md) | 2026-04-20 17:21 |
 | 0011 | [Response-visualisation library (firing rate vs angle graphs)](../overview/tasks/task_pages/t0011_response_visualization_library.md) | [`results`](../tasks/t0011_response_visualization_library/results/results_detailed.md) | 2026-04-20 15:50 |
-| 0010 | [Hunt DSGC compartmental models missed by prior survey; port runnable ones](../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) | [`results`](../tasks/t0010_hunt_missed_dsgc_models/results/results_detailed.md) | 2026-04-20 14:42 |
 
-*17 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*18 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 

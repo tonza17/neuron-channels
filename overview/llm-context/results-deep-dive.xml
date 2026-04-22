@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-22T10:07:00Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-22T12:12:19Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>31</section_count>
-    <char_count>479633</char_count>
-    <byte_count>481326</byte_count>
-    <estimated_tokens>119908</estimated_tokens>
+    <section_count>32</section_count>
+    <char_count>486367</char_count>
+    <byte_count>488090</byte_count>
+    <estimated_tokens>121591</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -139,9 +139,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0026_vrest_sweep_tuning_curves_dsgc</id>
         <id>t0027_literature_survey_morphology_ds_modeling</id>
         <id>t0028_brainstorm_results_6</id>
+        <id>t0032_brainstorm_results_7</id>
       </source_ids>
       <content>
-Completed tasks: 27
+Completed tasks: 28
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -304,6 +305,12 @@ ID: t0028_brainstorm_results_6
 Completed: 2026-04-22
 Short description: Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
 Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic brainstorm following the completion of t0026 (V_rest sweep and tuning curves on t0022/t0024 DSGCs) and t0027 (15-paper morphology-direction-selectivity literature survey with synthesis answer). Three new tasks approved: t0029 (distal-dendrite length sweep on t0022), t0030 (distal-dendrite diameter sweep on t0022), t0031 (paywalled PDF fetch for Kim2014 and Sivyer2013). Zero suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Outcome The researcher directed the session toward dendritic morphology sweeps, keeping t0023 (Hanson2019 port) intervention_blocked, preferring a 3-5 task focused batch executed...
+
+## Brainstorm results session 7
+ID: t0032_brainstorm_results_7
+Completed: 2026-04-22
+Short description: Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
+Result summary: Results Summary: Brainstorm Session 7 Summary Seventh strategic brainstorm, run a few hours after the t0028 merge while t0029 (distal-length sweep) is still in_progress. One new task approved: **t0033** — a planner-and-cost-estimator for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation, scoped against the downloaded paper corpus only and anchored on Vast.ai GPU pricing. No suggestions rejected or reprioritised; t0023 remains intervention_blocked. Session Overview Date: 2026-04-22. Duration: ~45 min. Context: the morphology-sweep wave (t0029, t0030, t0031) is already queued from t0028 and is unlikely to change the feasibility of a large-scale joint...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -314,9 +321,10 @@ Result summary: Results Summary: Brainstorm Session 6 Summary Sixth strategic br
         <id>t0029_distal_dendrite_length_sweep_dsgc</id>
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
+        <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -327,7 +335,7 @@ Dependencies: t0008_port_modeldb_189347, t0012_tuning_curve_scoring_loss_library
 
 ## Distal-dendrite length sweep on t0022 DSGC
 ID: t0029_distal_dendrite_length_sweep_dsgc
-Status: not_started
+Status: in_progress
 Effective date: 2026-04-22
 Short description: Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
 Dependencies: t0022_modify_dsgc_channel_testbed
@@ -344,6 +352,13 @@ ID: t0031_fetch_paywalled_morphology_papers
 Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
+
+## Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+ID: t0033_plan_dsgc_morphology_channel_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+Dependencies: t0002_literature_survey_dsgc_compartmental_models, t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -7611,6 +7626,99 @@ main.
 3. Execute t0031 paywalled PDF fetch (independent, can run anytime)
 4. After t0029 and t0030 complete, brainstorm session 7 will review sweep results against the
    Dan2018/Sivyer2013/Schachter2010 discriminator predictions and decide next mechanistic steps.
+      </content>
+    </section>
+    <section id="t0032_brainstorm_results_7-results-detailed" source_kind="file">
+      <title>t0032_brainstorm_results_7 — Brainstorm results session 7 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0032_brainstorm_results_7</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0032_brainstorm_results_7/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Seventh strategic brainstorm. One new task approved (t0033). Zero suggestion corrections, zero task
+updates. The session&#x27;s single purpose was to commission a feasibility plan and Vast.ai GPU cost
+estimate for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation
+optimisation. t0033 is a planner, not the optimiser.
+
+#### Methodology
+
+Followed the `/human-brainstorm` skill workflow end-to-end:
+
+1. **Phase 1 — project state review.** Ran `aggregate_tasks`, `aggregate_suggestions --uncovered`,
+   and `aggregate_costs`. Read recent task summaries (t0022, t0026, t0027, t0028) and the t0027
+   morphology synthesis answer asset. Confirmed Vast.ai as the project&#x27;s configured remote GPU
+   provider by reading `arf/docs/explanation/remote_machines.md` and the
+   `arf/scripts/utils/vast_machines.py` provisioning utility.
+2. **Phase 1.5 — clarification.** Asked the six standard clarifying questions. Researcher replied
+   with a concise &quot;1&quot;, which on follow-up clarification resolved to &quot;addressing Q1 first&quot;. The
+   researcher then supplied a complete strategic direction in place of Q2-Q6.
+3. **Phase 2 — discussion.** Round 1 settled on a single new task scoped as a
+   planner-and-cost-estimator. Round 2 raised backlog hygiene but the researcher did not authorise
+   action. Round 3 confirmed the plan after the researcher redirected cost estimation to Vast.ai GPU
+   specifically.
+4. **Phase 3 — task-id reservation.** Highest existing task_index was 31 (t0031). Reserved 32 for
+   this brainstorm-results container; t0033 is auto-assigned to the child via `/create-task`.
+5. **Phase 4 — branch + folder scaffold.** Branched from main to `task/t0032_brainstorm_results_7`
+   and created the full mandatory folder structure.
+6. **Phase 5 — apply decisions.** Invoked `/create-task` once to create t0033. Zero corrections,
+   zero updates to existing tasks.
+7. **Phase 6 — finalise.** Wrote results, session log, step logs, ran the session-capture utility,
+   ran all four verificators, rebuilt `overview/`, formatted markdown with flowmark, committed,
+   pushed, opened a PR, ran `verify_pr_premerge`, and merged.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 1 (t0033) |
+| Suggestions rejected | 0 |
+| Suggestions reprioritised | 0 |
+| Tasks cancelled | 0 |
+| Tasks updated | 0 |
+| Corrections written | 0 |
+| Session duration | ~45 minutes |
+| Session cost | $0.00 |
+
+#### Limitations
+
+* Planning task only; no simulation runs, no optimiser prototyping.
+* The researcher&#x27;s clarifying-question replies were abbreviated (single-digit initial reply);
+  session_log.md records the exchange verbatim.
+* Backlog of 107 uncovered suggestions remains unpruned; will be revisited in a later session.
+
+#### Files Created
+
+* `tasks/t0032_brainstorm_results_7/__init__.py`
+* `tasks/t0032_brainstorm_results_7/task.json`
+* `tasks/t0032_brainstorm_results_7/task_description.md`
+* `tasks/t0032_brainstorm_results_7/step_tracker.json`
+* `tasks/t0032_brainstorm_results_7/plan/plan.md`
+* `tasks/t0032_brainstorm_results_7/research/research_{papers,internet,code}.md`
+* `tasks/t0032_brainstorm_results_7/results/{metrics,costs,remote_machines_used,suggestions}.json`
+* `tasks/t0032_brainstorm_results_7/results/results_summary.md`
+* `tasks/t0032_brainstorm_results_7/results/results_detailed.md`
+* `tasks/t0032_brainstorm_results_7/logs/session_log.md`
+* `tasks/t0032_brainstorm_results_7/logs/steps/00{1,2,3,4}_*/step_log.md`
+* `tasks/t0032_brainstorm_results_7/logs/sessions/capture_report.json` (+ any JSONL transcripts)
+* `tasks/t0033_plan_dsgc_morphology_channel_optimisation/task.json`
+* `tasks/t0033_plan_dsgc_morphology_channel_optimisation/task_description.md`
+
+#### Verification
+
+* `verify_task_file.py t0032_brainstorm_results_7` — target 0 errors.
+* `verify_corrections.py t0032_brainstorm_results_7` — target 0 errors.
+* `verify_suggestions.py t0032_brainstorm_results_7` — target 0 errors.
+* `verify_logs.py t0032_brainstorm_results_7` — target 0 errors; `LG-W005` is an acceptable warning
+  per the brainstorm skill&#x27;s guidance (the session runs aggregators and verificators directly from
+  the orchestrator, not through `run_with_logs.py`).
+* `verify_pr_premerge.py t0032_brainstorm_results_7 --pr-number &lt;N&gt;` — target 0 errors before merge.
+* `/create-task` auto-assigned task_index 33 to the child task, preserving the Phase-3 ordering
+  invariant (brainstorm-results task_index &lt; child task_index).
       </content>
     </section>
   </sections>

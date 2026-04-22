@@ -1,4 +1,4 @@
-# ⏹ Distal-dendrite length sweep on t0022 DSGC
+# ⏳ Distal-dendrite length sweep on t0022 DSGC
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0029_distal_dendrite_length_sweep_dsgc` |
-| **Status** | ⏹ not_started |
+| **Status** | ⏳ in_progress |
+| **Started** | 2026-04-22T10:41:56Z |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
 | **Source suggestion** | `S-0027-01` |
 | **Task types** | `experiment-run` |
