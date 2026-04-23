@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W001 warning: suggestions[0]: title is 129 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[2]: title is 123 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[4]: title is 128 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[6]: description is 1031 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m — 0 error(s), 4 warning(s)
