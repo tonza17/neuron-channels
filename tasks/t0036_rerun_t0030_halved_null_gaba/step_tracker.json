@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI-vs-diameter slope to Schachter2010 + passive-filtering + t0030 null baseline + t0035 flat-on-t0024.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T22:24:27Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T22:29:25Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
