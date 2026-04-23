@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Read t0024 driver + t0030 diameter-override pattern + t0034 workflow adaptation; adapt to t0024's cell.terminal_dends.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-23T14:14:01Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
