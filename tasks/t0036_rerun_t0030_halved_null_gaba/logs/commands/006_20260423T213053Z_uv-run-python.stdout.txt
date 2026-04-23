@@ -1,0 +1,3 @@
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 6.0 nS
+[gaba_override] Patched t0022 GABA_CONDUCTANCE_NULL_NS: 12.0 -> 6.0
+[preflight_distal] building DSGC cell...

@@ -1,0 +1,29 @@
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 6.0 nS
+[gaba_override] Patched t0022 GABA_CONDUCTANCE_NULL_NS: 12.0 -> 6.0
+[preflight_distal] building DSGC cell...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[preflight_distal] distal section count = 129
+[preflight_distal] running 18-trial sanity subset (3 angles x 2 trials x 3 multipliers)...
+  [sanity] D=0.50x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz
+  [sanity] D=0.50x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz
+  [sanity] D=0.50x  dir=120  trial=0  spikes= 15  rate= 15.00Hz
+  [sanity] D=0.50x  dir=120  trial=1  spikes= 15  rate= 15.00Hz
+  [sanity] D=0.50x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=0.50x  dir=240  trial=1  spikes=  0  rate=  0.00Hz
+  [sanity] D=1.00x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz
+  [sanity] D=1.00x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz
+  [sanity] D=1.00x  dir=120  trial=0  spikes= 15  rate= 15.00Hz
+  [sanity] D=1.00x  dir=120  trial=1  spikes= 15  rate= 15.00Hz
+  [sanity] D=1.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=1.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz
+  [sanity] D=2.00x  dir=  0  trial=0  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=  0  trial=1  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=120  trial=0  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=120  trial=1  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=2.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz

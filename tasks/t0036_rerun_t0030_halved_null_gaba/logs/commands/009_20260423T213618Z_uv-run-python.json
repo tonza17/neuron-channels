@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0036_rerun_t0030_halved_null_gaba",
+  "command": "uv run python -u -m tasks.t0036_rerun_t0030_halved_null_gaba.code.run_sweep --output tasks/t0036_rerun_t0030_halved_null_gaba/results/data/sweep_results.csv",
+  "exit_code": 1,
+  "duration_seconds": 0.824,
+  "started_at": "2026-04-23T21:36:18Z",
+  "completed_at": "2026-04-23T21:36:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0036_rerun_t0030_halved_null_gaba",
+  "stdout_file": "009_20260423T213618Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260423T213618Z_uv-run-python.stderr.txt",
+  "stdout_lines": 15,
+  "stderr_lines": 13,
+  "truncated": false
+}

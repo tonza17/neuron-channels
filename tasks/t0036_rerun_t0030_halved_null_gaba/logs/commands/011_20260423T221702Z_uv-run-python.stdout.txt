@@ -1,0 +1,12 @@
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\metrics_per_diameter.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\dsi_by_diameter.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\metrics.json
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\metrics_notes.json
+   D_mul  peak_hz  null_hz  dsi_pn  dsi_vs    hwhm    rel    pref  peak_mv
+    0.50    15.00     0.00   1.000   0.579    59.2  1.000    53.0     +5.4
+    0.75    15.00     0.00   1.000   0.580    66.2  1.000    52.5     +5.2
+    1.00    15.00     0.00   1.000   0.583    59.2  1.000    52.6     +5.2
+    1.25    14.00     0.00   1.000   0.583   119.6  1.000    50.8     +5.0
+    1.50    14.00     0.00   1.000   0.589   112.3  1.000    53.6     +5.1
+    1.75    13.00     0.00   1.000   0.590   110.8  1.000    55.1     +4.8
+    2.00    13.00     0.00   1.000   0.585   105.2  1.000    56.1     +4.9
