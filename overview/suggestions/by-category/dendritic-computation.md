@@ -1,14 +1,41 @@
 # Suggestions: `dendritic-computation`
 
-29 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **24 open** (9
-high, 13 medium, 2 low), **5 closed**.
+32 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **27 open** (10
+high, 15 medium, 2 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
@@ -360,6 +387,32 @@ min CPU. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
+to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
+non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
+quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
+extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
+the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
+clear DSI peak at intermediate length with symmetric falloff on both sides (supports
+Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
+local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
+adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
+was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Joint distal length x diameter 2-D sweep on t0022 to catch
 interactions the marginal sweeps miss</strong> (S-0030-04)</summary>
 
@@ -432,6 +485,33 @@ k (after the S-0030-01 schedule fix). Expected outcome: the exaggerated-taper ce
 very thin distal) maximises distal input impedance and should exhibit the Schachter2010
 amplification signature if the mechanism is active on this morphology. Recommended task types:
 experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0034_distal_dendrite_length_sweep_t0024/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
 
 </details>
 

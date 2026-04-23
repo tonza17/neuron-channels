@@ -1,6 +1,6 @@
 # Tuning Curve Reliability
 
-**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 17
+**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 24
 
 [Back to all metrics](README.md)
 
@@ -23,3 +23,10 @@
 | 15 | [Distal-dendrite diameter sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | distal diam x 0.75 | **0.999871** |
 | 16 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | — | **0.9911006980264728** |
 | 17 | [Port de Rosenroll 2026 DSGC model](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | — | **0.9835579184749684** |
+| 18 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.75 | **0.981827** |
+| 19 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.00 | **0.978074** |
+| 20 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.25 | **0.976705** |
+| 21 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 2.00 | **0.970538** |
+| 22 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.50 | **0.957644** |
+| 23 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.75 | **0.94946** |
+| 24 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.50 | **0.943963** |

@@ -1,10 +1,201 @@
 # Suggestions by Date Added
 
-141 suggestion(s) grouped by derived added date.
+148 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
+
+## 2026-04-23 (7)
+
+## High Priority
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
+substrate (not vector-sum) and drop monotonic-length priors</strong>
+(S-0034-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
+design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
+p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
+vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
+with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
+NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
+pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
+length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
+(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
+task types: comparative-analysis, answer-question.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
+to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
+non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
+quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
+extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
+the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
+clear DSI peak at intermediate length with symmetric falloff on both sides (supports
+Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
+local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
+adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
+was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials
+per angle) to confirm the preferred-angle jumps</strong> (S-0034-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034's non-monotonicity hinges on two preferred-angle jumps: 0 deg -> 330 deg at 1.5x (DSI
+dip to 0.623) and 0 deg -> 30 deg at 2.0x (DSI collapse to 0.545). These are based on only 10
+trials per angle, and the compare-literature analysis notes the 95% CI on a 10-trial DSI is
+~+/-0.1 - comparable to the 0.23 observed DSI spread. Re-run the protocol at 1.5x and 2.0x
+with 30-50 trials per angle (3-5x the baseline count) and recompute bootstrap CIs on DSI and
+preferred-angle estimates at each point. If the jumps persist, Schachter2010
+local-spike-failure is strengthened; if they collapse to a single preferred direction, they
+were small-N artefacts and the cable-filtering story becomes more parsimonious. Listed in
+compare-literature.md as a concrete limitation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0034_distal_dendrite_length_sweep_t0024/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Quantitative cable-theory fit of t0034 DSI-vs-length curve
+against Rall 1/d^(3/2) and Tukker2004 predictions</strong> (S-0034-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034's classify_shape.py assigns a categorical label (monotonic/saturating/non-monotonic) but
+does not fit a parametric cable-theory model to the observed DSI vs length curve. Vector-sum
+DSI declines monotonically from 0.507 (0.5x) to 0.357 (2.0x) with R^2=0.91, and peak firing
+declines 40% across the sweep - both quantitative cable-filtering signatures. Write a
+dedicated analysis task that fits (a) the Rall 1/d^(3/2) impedance-matching rule to the
+peak-Hz decline, (b) Tukker2004's lambda-optimum function to the DSI vs length curve (extract
+the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scaling. Output a
+fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
+'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
+cross-paper comparison. Recommended task types: data-analysis.
+
+</details>
 
 ## 2026-04-22 (19)
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-23T10:01:11Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-23T14:05:06Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>263026</char_count>
-    <byte_count>264210</byte_count>
-    <estimated_tokens>65756</estimated_tokens>
+    <char_count>266002</char_count>
+    <byte_count>267249</byte_count>
+    <estimated_tokens>66500</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -4620,12 +4620,14 @@ Produced a full feasibility plan and Vast.ai GPU cost envelope for a future join
 
 ## Distal-dendrite length sweep on t0024 DSGC
 ID: t0034_distal_dendrite_length_sweep_t0024
-Status: not_started
+Status: completed
 Effective date: 2026-04-23
 Short description: Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0029_distal_dendrite_length_sweep_dsgc
 Task types: experiment-run
 Source suggestion: S-0027-01
+Start time: 2026-04-23T10:07:02Z
+End time: 2026-04-23T14:05:00Z
 
 #### Motivation
 
@@ -4749,6 +4751,59 @@ Companion to **t0035** (diameter sweep on t0024).
   t0022&#x27;s null result was due to schedule-only dominance or a deeper pathology.
 * Include `compare-literature` — compare the t0024 DSI-vs-length curve to Dan2018 and Sivyer2013
   predictions **and** to the t0029 null result.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0034_distal_dendrite_length_sweep_t0024&quot;
+date_completed: &quot;2026-04-23&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Distal-Dendrite Length Sweep on t0024 DSGC
+
+#### Summary
+
+Swept distal-dendrite length across seven multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×
+baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar
+protocol (840 trials total). **Unlike t0029&#x27;s null result on t0022, primary DSI varies measurably on
+t0024** (range 0.545-0.774) because AR(2) stochastic release produces non-zero null firing. The
+slope is **-0.1259 per unit multiplier (p=0.038)** — a statistically significant **negative** trend,
+classified as **non_monotonic** overall. Neither Dan2018 (predicted monotonic increase) nor
+Sivyer2013 (predicted saturating plateau) is supported; the data leans toward passive cable
+filtering past an optimal electrotonic length, with superimposed local-spike-failure transitions at
+1.5× and 2.0×.
+
+#### Metrics
+
+* **Primary DSI range**: **0.545** (2.0×) to **0.774** (0.75×) — 0.229 absolute range, slope
+  **-0.1259 per unit multiplier**, **p=0.038** (statistically significant, non-monotonic).
+* **Vector-sum DSI range**: **0.357** (2.0×) to **0.507** (0.5×) — cleaner monotonic decline
+  (R²=0.91), fully consistent with cable-filtering dominance.
+* **Preferred-direction peak firing rate**: **5.70 Hz** at 0.5× → **3.40 Hz** at 2.0× — monotone
+  decline of 40% across the 4× length sweep, signature of low-pass cable filtering.
+* **Null-direction firing rate**: **0.70-1.00 Hz** across all lengths (never zero, unlike t0022&#x27;s
+  pinned 0 Hz — this is the critical t0024 advantage).
+* **HWHM**: **62.7°-76.2°** across lengths — AR(2) noise smooths tuning as expected.
+* **Preferred-direction angle**: stable at **0°** for 0.5×-1.25×, jumps to **330°** at 1.5× and
+  **30°** at 2.0× — local-spike-failure fingerprint.
+* **Slope classification**: **non_monotonic**, vector-sum DSI also non_monotonic with clean negative
+  trend.
+* **Total trials executed**: **840** (7 lengths × 12 directions × 10 trials).
+* **Sweep wall time**: approximately **3 hours** end-to-end on local Windows CPU.
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors on final pass.
+* `verify_task_dependencies.py` — PASSED on step 2 (t0024 and t0029 dependencies completed).
+* `verify_research_code.py` — PASSED on step 6 (0 errors, 0 warnings).
+* `verify_plan.py` — PASSED on step 7 (0 errors, 0 warnings).
+* `verify_task_metrics.py` — target 0 errors.
+* `verify_task_results.py` — target 0 errors on final pass.
+* `verify_task_folder.py` — target 0 errors on final pass.
+* `verify_logs.py` — target 0 errors on final pass.
+* `ruff check --fix`, `ruff format`, and
+  `mypy -p tasks.t0034_distal_dendrite_length_sweep_t0024.code` — all clean (11 files).
 
 ## Distal-dendrite diameter sweep on t0024 DSGC
 ID: t0035_distal_dendrite_diameter_sweep_t0024

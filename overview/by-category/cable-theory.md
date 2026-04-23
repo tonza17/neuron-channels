@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (2)](../answers/by-category/cable-theory.md) | [Suggestions
-(12)](../suggestions/by-category/cable-theory.md) | [Datasets
+(15)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -582,7 +582,68 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (10 open, 2 closed)
+## Suggestions (13 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
+to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
+non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
+quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
+extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
+the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
+clear DSI peak at intermediate length with symmetric falloff on both sides (supports
+Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
+local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
+adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
+was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Quantitative cable-theory fit of t0034 DSI-vs-length curve
+against Rall 1/d^(3/2) and Tukker2004 predictions</strong> (S-0034-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034's classify_shape.py assigns a categorical label (monotonic/saturating/non-monotonic) but
+does not fit a parametric cable-theory model to the observed DSI vs length curve. Vector-sum
+DSI declines monotonically from 0.507 (0.5x) to 0.357 (2.0x) with R^2=0.91, and peak firing
+declines 40% across the sweep - both quantitative cable-filtering signatures. Write a
+dedicated analysis task that fits (a) the Rall 1/d^(3/2) impedance-matching rule to the
+peak-Hz decline, (b) Tukker2004's lambda-optimum function to the DSI vs length curve (extract
+the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scaling. Output a
+fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
+'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
+cross-paper comparison. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to

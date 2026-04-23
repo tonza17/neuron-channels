@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-22 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **20 open** (11
-high, 7 medium, 2 low), **2 closed**.
+23 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **21 open** (11
+high, 8 medium, 2 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -404,6 +404,33 @@ library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 +
 Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol,
 and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the
 SAC network.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0034_distal_dendrite_length_sweep_t0024/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
 
 </details>
 

@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(23)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(24)](../suggestions/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -2107,7 +2107,28 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (21 open, 2 closed)
+## Suggestions (22 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the

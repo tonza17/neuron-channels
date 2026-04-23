@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-23 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **21 open** (11 high,
+24 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **22 open** (12 high,
 10 medium), **2 closed**.
 
 [Back to all suggestions](../README.md)
@@ -9,6 +9,33 @@
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close

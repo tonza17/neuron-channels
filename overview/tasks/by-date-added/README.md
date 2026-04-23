@@ -159,20 +159,26 @@ meaningful. Companion to **t0034** (length sweep on t0024).
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⏹ 0034 — <strong>Distal-dendrite length sweep on t0024 DSGC</strong></summary>
+<summary>✅ 0034 — <strong>Distal-dendrite length sweep on t0024 DSGC</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0034_distal_dendrite_length_sweep_t0024` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-23 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
 | **Expected assets** | — |
 | **Source suggestion** | `S-0027-01` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-23T10:07:02Z |
+| **End time** | 2026-04-23T14:05:00Z |
+| **Step progress** | 11/15 |
 | **Task page** | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
 | **Task folder** | [`t0034_distal_dendrite_length_sweep_t0024/`](../../../tasks/t0034_distal_dendrite_length_sweep_t0024/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) |
 
 # Distal-Dendrite Length Sweep on t0024 DSGC
 
@@ -299,6 +305,35 @@ meaningful. Companion to **t0035** (diameter sweep on t0024).
   whether t0022's null result was due to schedule-only dominance or a deeper pathology.
 * Include `compare-literature` — compare the t0024 DSI-vs-length curve to Dan2018 and
   Sivyer2013 predictions **and** to the t0029 null result.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0034_distal_dendrite_length_sweep_t0024"
+> date_completed: "2026-04-23"
+> status: "complete"
+> ---
+> **Results Summary: Distal-Dendrite Length Sweep on t0024 DSGC**
+>
+> **Summary**
+>
+> Swept distal-dendrite length across seven multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×,
+> 1.75×, 2.0×
+> baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial
+> moving-bar
+> protocol (840 trials total). **Unlike t0029's null result on t0022, primary DSI varies
+> measurably on
+> t0024** (range 0.545-0.774) because AR(2) stochastic release produces non-zero null firing.
+> The
+> slope is **-0.1259 per unit multiplier (p=0.038)** — a statistically significant
+> **negative** trend,
+> classified as **non_monotonic** overall. Neither Dan2018 (predicted monotonic increase) nor
+> Sivyer2013 (predicted saturating plateau) is supported; the data leans toward passive cable
+> filtering past an optimal electrotonic length, with superimposed local-spike-failure
+> transitions at
+> 1.5× and 2.0×.
+>
 
 </details>
 

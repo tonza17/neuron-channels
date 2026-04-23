@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-3-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-35-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-141-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-148-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (14K)
-| [full](llm-context/full.xml) (202K) | [roadmap](llm-context/roadmap.xml) (49K) |
-[results](llm-context/results-deep-dive.xml) (135K) |
-[assets](llm-context/literature-and-assets.xml) (30K)
+| [full](llm-context/full.xml) (204K) | [roadmap](llm-context/roadmap.xml) (49K) |
+[results](llm-context/results-deep-dive.xml) (140K) |
+[assets](llm-context/literature-and-assets.xml) (31K)
 
-*Last updated: 2026-04-23 10:01 UTC*
+*Last updated: 2026-04-23 14:05 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -55,12 +55,11 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
-| 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`description`](../tasks/t0034_distal_dendrite_length_sweep_t0024/task_description.md) | 2026-04-23 |
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`description`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/task_description.md) | 2026-04-23 |
 
 ---
@@ -79,10 +78,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (31 total)](tasks/by-status/completed.md)
+## [Recently Completed (32 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
 | 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`results`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md) | 2026-04-22 15:40 |
 | 0033 | [Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget](../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) | [`results`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/results/results_detailed.md) | 2026-04-22 15:40 |
@@ -92,9 +92,8 @@ No blocked tasks.
 | 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
 | 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
 | 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | [`results`](../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) | 2026-04-21 08:55 |
-| 0022 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | [`results`](../tasks/t0022_modify_dsgc_channel_testbed/results/results_detailed.md) | 2026-04-21 01:50 |
 
-*21 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*22 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -110,7 +109,150 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (127 open)](suggestions/)
+## [Recent Suggestions (134 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
+to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
+non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
+quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
+extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
+the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
+clear DSI peak at intermediate length with symmetric falloff on both sides (supports
+Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
+local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
+adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
+was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Quantitative cable-theory fit of t0034 DSI-vs-length curve
+against Rall 1/d^(3/2) and Tukker2004 predictions</strong> (S-0034-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034's classify_shape.py assigns a categorical label (monotonic/saturating/non-monotonic) but
+does not fit a parametric cable-theory model to the observed DSI vs length curve. Vector-sum
+DSI declines monotonically from 0.507 (0.5x) to 0.357 (2.0x) with R^2=0.91, and peak firing
+declines 40% across the sweep - both quantitative cable-filtering signatures. Write a
+dedicated analysis task that fits (a) the Rall 1/d^(3/2) impedance-matching rule to the
+peak-Hz decline, (b) Tukker2004's lambda-optimum function to the DSI vs length curve (extract
+the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scaling. Output a
+fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
+'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
+cross-paper comparison. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials
+per angle) to confirm the preferred-angle jumps</strong> (S-0034-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034's non-monotonicity hinges on two preferred-angle jumps: 0 deg -> 330 deg at 1.5x (DSI
+dip to 0.623) and 0 deg -> 30 deg at 2.0x (DSI collapse to 0.545). These are based on only 10
+trials per angle, and the compare-literature analysis notes the 95% CI on a 10-trial DSI is
+~+/-0.1 - comparable to the 0.23 observed DSI spread. Re-run the protocol at 1.5x and 2.0x
+with 30-50 trials per angle (3-5x the baseline count) and recompute bootstrap CIs on DSI and
+preferred-angle estimates at each point. If the jumps persist, Schachter2010
+local-spike-failure is strengthened; if they collapse to a single preferred direction, they
+were small-N artefacts and the cable-filtering story becomes more parsimonious. Listed in
+compare-literature.md as a concrete limitation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
+substrate (not vector-sum) and drop monotonic-length priors</strong>
+(S-0034-07)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
+design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
+p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
+vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
+with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
+NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
+pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
+length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
+(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
+task types: comparative-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
@@ -174,151 +316,74 @@ min CPU. Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the
-deterministic ceiling on t0022</strong> (S-0029-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on
-null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured
-compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to
-exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable
-mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed
-length multiplier of 1.0x and locate the conductance at which null-direction firing first
-exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and
-S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
-mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
-CPU. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25,
-1.30} to localize the peak-Hz cliff</strong> (S-0029-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-Peak somatic firing rate in t0029 steps from 15 Hz at multipliers <= 1.0x to 14 Hz at
-multipliers >= 1.25x with no intermediate value, and mean peak membrane voltage drifts
-linearly from -4.81 mV (1.0x) to -5.23 mV (2.0x) - a 0.42 mV loss scaling linearly with length
-rather than as exp(-L/lambda). A linear drop is inconsistent with passive cable attenuation
-but consistent with distal synapses sitting beyond an active boosting region whose gain
-depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add a dense
-7-point sweep at {1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to resolve whether the 15->14 Hz
-step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
-Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite
-length sweep on t0022</strong> (S-0029-06)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-The t0022 `_silence_baseline_hoc_synapses` sets b2gnmda = 0 and installs single-component
-AMPA-only E-I pairs, removing the Espinosa2010 AMPA/NMDA kinetic-tiling mechanism from the
-testable space entirely. Espinosa2010 proposes that DSGC DS arises from different activation
-time courses of AMPA and NMDA interacting with cable propagation delay - predicting
-non-monotonic DSI-vs-length because NMDA's 50-150 ms time constant resonates with propagation
-delay at specific lengths. Modify `_silence_baseline_hoc_synapses` to restore b2gnmda at 30%
-of the 189347 baseline and rerun the 7-point length sweep. If DSI drops below 1.000 with
-non-monotonic length dependence, kinetic tiling is a real third mechanism and the current null
-result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
-t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
-Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Promote peak-Hz and HWHM to co-primary outcomes when DSI is at
-ceiling (evaluation methodology)</strong> (S-0029-07)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-The t0029 null result exposes a systematic evaluation weakness: whenever the t0022-lineage
-testbed drives null firing to exactly 0 Hz, pref/null DSI is structurally pinned at 1.000
-regardless of the manipulated variable, yet the secondary metrics (peak somatic firing rate,
-HWHM, mean peak soma voltage, vector-sum DSI) contain usable length-dependent signal (e.g.,
-the non-monotonic HWHM oscillation 71.7-116.3 deg and the 15->14 Hz peak-Hz cliff at 1.25x).
-Adopt a co-primary-metric convention: whenever DSI is at ceiling (range across sweep points <
-0.01 or null firing = 0 Hz on > 90% of trials), elevate peak-Hz, HWHM, and vector-sum DSI to
-co-primary outcome variables and require all three to be reported alongside DSI in
-results_summary.md and compare_literature.md. Encode the rule as an extension to the
-task-results specification, add a verificator check for the DSI-ceiling condition, and
-document the convention in arf/specifications. Recommended task types: infrastructure-setup.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
-conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
-DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
-schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
-delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
-(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
-with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
-regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
-S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
-cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
-sweep on t0022</strong> (S-0030-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
-deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
-collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
-and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
-NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
-rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
-Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
-1.0, and diameter regains discrimination power between Schachter2010 active amplification
-(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
-length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Wider distal-diameter sweep (0.25x to 4.0x) after the schedule
-fix to probe extreme impedance regimes</strong> (S-0030-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-The t0030 sweep used multipliers 0.5x-2.0x (a 4x range) and found vector-sum DSI moved by only
-0.030 absolute, with Wu2023 reporting distal-diameter DSI saturation above ~0.8 um on primate
-SAC - our baseline distal seg.diam straddles that threshold so our sweep likely sat in the
-saturated regime throughout. Once the S-0030-01/S-0030-02 schedule fix has removed the DSI
-ceiling, rerun the diameter sweep over a wider range {0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0,
-4.0}x at the same 12-direction x 10-trial protocol. Provides the impedance-gradient dynamic
-range Schachter2010's 5-7x proximal-to-distal input-resistance measurement implies, and tests
-whether Wu2023's saturation threshold applies to mouse ON-OFF DSGC. Recommended task types:
-experiment-run.
-
-</details>
-
-*117 more open suggestions → [open suggestions](suggestions/)*
+*124 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (46)](suggestions/)
+## [High Priority Suggestions (49)](suggestions/)
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
+substrate (not vector-sum) and drop monotonic-length priors</strong>
+(S-0034-07)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
+design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
+p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
+vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
+with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
+NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
+pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
+length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
+(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
+task types: comparative-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
@@ -460,64 +525,7 @@ write-library.
 
 </details>
 
-<details>
-<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
-training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
-one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
-multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
-full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
-fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
-coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
-compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
-25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
-and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
-types: experiment-run, feature-engineering.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
-separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
-across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
-t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
-library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
-evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
-pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
-Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
-JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
-single evaluator. Recommended task types: write-library, feature-engineering.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
-testbed</strong> (S-0022-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0022_modify_dsgc_channel_testbed](../tasks/t0022_modify_dsgc_channel_testbed/)
-
-Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
-proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
-gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
-dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
-should drop excitability and test whether DSI survives reduced spike-initiation margin.
-Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
-intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
-Recommended task type: experiment-run.
-
-</details>
-
-*36 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*39 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (5)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(29)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(32)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2267,7 +2267,69 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 5 closed)
+## Suggestions (27 open, 5 closed)
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
+to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
+non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
+quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
+extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
+the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
+clear DSI peak at intermediate length with symmetric falloff on both sides (supports
+Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
+local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
+adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
+was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length

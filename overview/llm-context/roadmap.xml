@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-23T10:01:11Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-23T14:05:06Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>194871</char_count>
-    <byte_count>195072</byte_count>
-    <estimated_tokens>48717</estimated_tokens>
+    <char_count>195391</char_count>
+    <byte_count>195560</byte_count>
+    <estimated_tokens>48847</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -143,9 +143,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0030_distal_dendrite_diameter_sweep_dsgc</id>
         <id>t0032_brainstorm_results_7</id>
         <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
+        <id>t0034_distal_dendrite_length_sweep_t0024</id>
       </source_ids>
       <content>
-Completed tasks: 31
+Completed tasks: 32
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -332,6 +333,12 @@ ID: t0033_plan_dsgc_morphology_channel_optimisation
 Completed: 2026-04-22
 Short description: Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
 Result summary: Results Summary: Plan DSGC Morphology + VGC DSI Optimisation on Vast.ai GPU Summary Produced a full feasibility plan and Vast.ai GPU cost envelope for a future joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation optimisation. Committed parameter count: **25 free parameters tight** (5 Cuntz morphology scalars + 20 per-region channel gbar) with a **45-parameter rich** upper-bound envelope. Recommended (strategy × compute mode × GPU tier): **Surrogate-NN-assisted GA × Surrogate-NN-GPU × RTX 4090 × tight parameterisation** → central estimate **$50.54**, sensitivity band **$23-$119** under 0.5×/1×/2× perturbations to per-sim cost and sample count. Metrics * **Parameter count...
+
+## Distal-dendrite length sweep on t0024 DSGC
+ID: t0034_distal_dendrite_length_sweep_t0024
+Completed: 2026-04-23
+Short description: Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0034_distal_dendrite_length_sweep_t0024&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Distal-Dendrite Length Sweep on t0024 DSGC Summary Swept distal-dendrite length across seven multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0× baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840 trials total). **Unlike t0029&#x27;s null result on t0022, primary DSI varies measurably on t0024** (range 0.545-0.774) because AR(2) stochastic release produces non-zero null firing. The slope is **-0.1259 per unit multiplier (p=0.038)** — a statistically significant **negative** trend...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -340,11 +347,10 @@ Result summary: Results Summary: Plan DSGC Morphology + VGC DSI Optimisation on 
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0034_distal_dendrite_length_sweep_t0024</id>
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -509,136 +515,6 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
-
-## Distal-dendrite length sweep on t0024 DSGC
-ID: t0034_distal_dendrite_length_sweep_t0024
-Status: not_started
-Effective date: 2026-04-23
-Short description: Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0029_distal_dendrite_length_sweep_dsgc
-
-#### Motivation
-
-The sibling task t0029 ran a distal-length sweep on the t0022 DSGC testbed and produced a **null
-result** for mechanism discrimination: primary DSI (peak-minus-null) pinned at 1.000 across every
-length multiplier because t0022&#x27;s deterministic E-I schedule silences null firing (0 Hz). The
-vector-sum DSI fallback also produced a flat slope (p=0.18 on t0029).
-
-The t0024 de Rosenroll 2026 port has fundamentally different biophysics that **fix the t0022
-pathology**:
-
-* **AR(2)-correlated stochastic bipolar release** (ρ=0.6) produces non-zero null-direction firing.
-  Per t0026&#x27;s V_rest sweep, t0024&#x27;s DSI ranges 0.36-0.67 with a measurable 1.9× modulation — the
-  discriminator has room to act.
-* **No Na-inactivation collapse** at depolarised V_rest (peak firing monotone to 7.6 Hz at V_rest =
-  -20 mV).
-* **AR(2) noise smooths tuning** (HWHM pinned 65-83° across V_rest).
-
-Running the t0029 length sweep on t0024 should therefore produce a **measurable primary DSI slope**
-that can actually distinguish the two mechanisms:
-
-* **Dan2018 passive transfer-resistance weighting**: DSI increases monotonically with distal length
-  (longer distal dendrites → steeper TR gradient → stronger directional weighting).
-* **Sivyer2013 dendritic-spike branch independence**: DSI saturates (plateau) once distal branches
-  clear local spike threshold; further lengthening adds no DSI.
-
-Covers source suggestion **S-0027-01** (high priority) on the t0024 biophysics. Companion to t0035
-(diameter sweep on t0024).
-
-#### Scope
-
-1. Use the **t0024 de Rosenroll 2026 DSGC port** as-is (no channel modifications, no input
-   rewiring). Keep the AR(2) correlation ρ=0.6 at its t0026 V_rest-sweep default.
-2. Identify distal dendritic sections (HOC leaves on `h.RGC.ON` arbor). Mirror the selection rule
-   from t0029&#x27;s `length_override.py:37-52` but **COPY** the helper into this task&#x27;s
-   `code/length_override_t0024.py` — no cross-task imports per CLAUDE.md.
-3. Sweep distal length in **7 values** spanning **0.5× to 2.0×** baseline (0.5, 0.75, 1.0, 1.25,
-   1.5, 1.75, 2.0×). Apply the multiplier uniformly to all distal branches.
-4. For each length value, run the **standard 12-direction tuning protocol** (12 angles × 10 trials)
-   and compute **primary DSI** as the operative metric. Also emit vector-sum DSI and secondary
-   metrics as t0029 did.
-5. Plot primary DSI vs length and classify the curve shape: monotonic (favours Dan2018), saturating
-   (favours Sivyer2013), or non-monotonic (neither or kinetic-tiling).
-
-#### Approach
-
-* **Local CPU only.** No remote compute, no paid API.
-* Reuse the t0024 port code at `tasks/t0024_port_de_rosenroll_2026_dsgc/code/` (the
-  de_rosenroll_2026_port library is registered and t0024&#x27;s driver is the model reference).
-* Copy the t0029 workflow template: `paths.py`, `constants.py`, `length_override.py` (with
-  `identify_distal_sections`), `preflight_distal.py`, `trial_runner_length.py`, `run_sweep.py`,
-  `analyse_sweep.py`, `classify_shape.py` (monotonic / saturating / non-monotonic), and
-  `plot_sweep.py`.
-* Save per-sweep-point data to `results/data/sweep_results.csv` (incremental checkpoint) and
-  per-diameter tuning curves to `results/data/per_length/*.csv`.
-* Render DSI-vs-length chart at `results/images/dsi_vs_length.png` plus secondary diagnostic plots.
-
-#### Expected Outputs
-
-* `results/results_summary.md` — 2-3 paragraph executive summary with headline DSI-vs-length curve
-  shape and mechanism classification.
-* `results/results_detailed.md` — full methodology, per-direction breakdown at each length value,
-  curve-shape classification, mechanism attribution (Dan2018 vs Sivyer2013), comparison to t0029&#x27;s
-  null result.
-* `results/images/dsi_vs_length.png` — primary DSI-vs-length curve.
-* `results/images/vector_sum_dsi_vs_length.png` — vector-sum DSI as secondary diagnostic.
-* `results/images/polar_overlay.png` — 12-direction polar overlay across all 7 lengths.
-* `results/metrics.json` — registered per-length DSI metrics.
-* No paper, dataset, library, model, or answer assets produced.
-
-#### Compute and Budget
-
-* **Local CPU only**; no GPU.
-* **Expected runtime: 2-4 hours.** The per-(angle, trial) wall time on t0024 is **~12 s** (per
-  t0026&#x27;s V_rest-sweep baseline), vs t0022&#x27;s ~3.8 s. Full sweep = 7 × 12 × 10 = 840 trials ≈ **~168
-  min** at 12 s/trial, plus overhead.
-* **$0 external cost.**
-
-#### Measurement
-
-* **Primary metric**: **primary DSI (peak-minus-null)** at each length value. Unlike t0029, this is
-  expected to vary because t0024 has non-zero null-direction firing.
-* **Secondary**: vector-sum DSI (sanity cross-check), peak Hz, null Hz, HWHM, reliability,
-  preferred-direction firing rate, per-direction spike counts.
-
-#### Key Questions
-
-1. Is primary DSI monotonically increasing with distal length (Dan2018), saturating (Sivyer2013), or
-   non-monotonic (neither)?
-2. At what length does saturation occur (if any)?
-3. Does the t0024 AR(2) noise broaden the HWHM enough to mask the mechanism signal, or does the
-   primary-DSI trend survive the noise floor?
-4. How do the t0024 and t0022 results compare under identical sweep protocols? A matched DSI trend
-   on both would strengthen the mechanism claim; divergent trends would indicate that t0022&#x27;s pinned
-   primary DSI masked a real effect.
-
-#### Dependencies
-
-* **t0024_port_de_rosenroll_2026_dsgc** (completed) — provides the DSGC port with AR(2) stochastic
-  release.
-* **t0029_distal_dendrite_length_sweep_dsgc** (completed) — provides the workflow template, the
-  `identify_distal_sections` helper (to be copied, not imported), and the null-result baseline for
-  comparison.
-
-#### Scientific Context
-
-Source suggestion **S-0027-01** (high priority) originally planned for t0022 and executed as t0029.
-This task re-runs the same experiment on t0024 specifically because t0024&#x27;s stochastic release
-restores non-zero null firing and therefore makes the primary DSI discriminator meaningful.
-Companion to **t0035** (diameter sweep on t0024).
-
-#### Execution Notes
-
-* Follow standard `/execute-task` flow.
-* Include `planning` step.
-* Skip `research-papers`, `research-internet` (t0027 synthesis already covered the mechanism
-  predictions; t0029 already surveyed the prior code).
-* Skip `setup-machines` / `teardown` (local CPU only).
-* Include `research-code` — need to read t0024 driver and t0029&#x27;s workflow pattern.
-* Include `creative-thinking` — if the primary-DSI discriminator works on t0024, consider whether
-  t0022&#x27;s null result was due to schedule-only dominance or a deeper pathology.
-* Include `compare-literature` — compare the t0024 DSI-vs-length curve to Dan2018 and Sivyer2013
-  predictions **and** to the t0029 null result.
 
 ## Distal-dendrite diameter sweep on t0024 DSGC
 ID: t0035_distal_dendrite_diameter_sweep_t0024
@@ -956,6 +832,9 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0033-02</id>
         <id>S-0033-03</id>
         <id>S-0033-06</id>
+        <id>S-0034-01</id>
+        <id>S-0034-02</id>
+        <id>S-0034-07</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1022,6 +901,10 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0030-05</id>
         <id>S-0033-04</id>
         <id>S-0033-05</id>
+        <id>S-0034-03</id>
+        <id>S-0034-04</id>
+        <id>S-0034-05</id>
+        <id>S-0034-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1041,7 +924,7 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0029-07</id>
       </source_ids>
       <content>
-Open suggestions: 140
+Open suggestions: 147
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1441,6 +1324,27 @@ Priority: high
 Kind: library
 Source task: t0033_plan_dsgc_morphology_channel_optimisation
 The t0033 plan repeatedly treats evaluate(parameter_vector) -&gt; DSI_scalar as the atomic unit across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature. t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function evaluate_dsi(parameters, protocol, n_trials) -&gt; DsiResult API, (b) batches (angle, trial) pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter JSON and emits a results JSON. Every strategy row...
+
+## 2-D distal length x diameter sweep on t0024 to disambiguate cable-filtering vs local-spike-failure
+ID: S-0034-01
+Priority: high
+Kind: experiment
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic vector-sum DSI decline (R^2=0.91) that falsified Dan2018&#x27;s passive-TR prediction and did not fit Sivyer2013&#x27;s plateau. Creative-thinking flagged passive cable filtering past an optimal electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure (Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5, 1.0, 2.0}) on the t0024 port with AR(2) rho=0.6...
+
+## AR(2) rho sweep at t0024 baseline morphology to isolate stochastic-release smoothing from cable biophysics
+ID: S-0034-02
+Priority: high
+Kind: experiment
+Source task: t0034_distal_dendrite_length_sweep_t0024
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6 temporally smooths the null-direction noise floor, potentially contributing to the observed primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled in or out before the cable-filtering interpretation is credible. Run the 12-direction x 10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in {0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if DSI varies with rho, the effect is release-noise-mediated...
+
+## Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors
+ID: S-0034-07
+Priority: high
+Kind: evaluation
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229, p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic with a net negative slope, opposite to Dan2018&#x27;s monotonic-increase prior - the optimiser must NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction: pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the length-axis initial distribution near 0.75x-1.0x (observed...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -1903,6 +1807,34 @@ Priority: medium
 Kind: experiment
 Source task: t0033_plan_dsgc_morphology_channel_optimisation
 The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=500, Surrogate-NN-GA=18,500) on 25 dims without empirical DSGC validation. Before the full joint optimiser is commissioned, run a low-dim spike on t0022: (a) pick 5 representative parameters from the committed 25 (3 Cuntz scalars: bf, distal-length, distal-diameter + gNa_dend + gKdr_dend), (b) run 200-300 deterministic 12-angle evaluations each under CMA-ES and sequential BO, (c) compare the DSI converged-to-within-1% sample count against the cost-grid extrapolations, and (d) report whether either method actually converges on DSGC landscapes or hits plateaus that the corpus did not flag. Outcome calibrates the...
+
+## Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points) to characterise the electrotonic-length optimum
+ID: S-0034-03
+Priority: medium
+Kind: experiment
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a non-monotonic decline beyond. To fit Tukker2004&#x27;s intermediate-electrotonic-length optimum quantitatively and to test whether the curve continues falling or saturates beyond 2.0x, extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a clear DSI peak at intermediate length with symmetric falloff on both sides (supports Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010 local-spike-failure); (c) d_lambda violations at extreme lengths...
+
+## Per-compartment distal-spike detector on t0024 length sweep to verify Schachter2010 local-spike-failure at 1.5x and 2.0x
+ID: S-0034-04
+Priority: medium
+Kind: experiment
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at 1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based only on the somatic readout and the angular-instability fingerprint. This interpretation is currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be &gt;1 at baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length decouples distal tips. If the ratio stays constant, the angle...
+
+## Quantitative cable-theory fit of t0034 DSI-vs-length curve against Rall 1/d^(3/2) and Tukker2004 predictions
+ID: S-0034-05
+Priority: medium
+Kind: evaluation
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034&#x27;s classify_shape.py assigns a categorical label (monotonic/saturating/non-monotonic) but does not fit a parametric cable-theory model to the observed DSI vs length curve. Vector-sum DSI declines monotonically from 0.507 (0.5x) to 0.357 (2.0x) with R^2=0.91, and peak firing declines 40% across the sweep - both quantitative cable-filtering signatures. Write a dedicated analysis task that fits (a) the Rall 1/d^(3/2) impedance-matching rule to the peak-Hz decline, (b) Tukker2004&#x27;s lambda-optimum function to the DSI vs length curve (extract the fitted lambda at peak DSI), and (c) Hausselt2007&#x27;s cable-length-to-DSI scaling. Output a fitted parameter set with 95% CIs and a residual plot. This...
+
+## Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials per angle) to confirm the preferred-angle jumps
+ID: S-0034-06
+Priority: medium
+Kind: experiment
+Source task: t0034_distal_dendrite_length_sweep_t0024
+t0034&#x27;s non-monotonicity hinges on two preferred-angle jumps: 0 deg -&gt; 330 deg at 1.5x (DSI dip to 0.623) and 0 deg -&gt; 30 deg at 2.0x (DSI collapse to 0.545). These are based on only 10 trials per angle, and the compare-literature analysis notes the 95% CI on a 10-trial DSI is ~+/-0.1 - comparable to the 0.23 observed DSI spread. Re-run the protocol at 1.5x and 2.0x with 30-50 trials per angle (3-5x the baseline count) and recompute bootstrap CIs on DSI and preferred-angle estimates at each point. If the jumps persist, Schachter2010 local-spike-failure is strengthened; if they collapse to a single preferred direction, they were small-N artefacts and the cable-filtering story becomes more...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

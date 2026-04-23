@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(22)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(23)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,28 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (20 open, 2 closed)
+## Suggestions (21 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
+verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
+(S-0034-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
+1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
+only on the somatic readout and the angular-instability fingerprint. This interpretation is
+currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
+recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
+ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
+baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
+decouples distal tips. If the ratio stays constant, the angle jumps are not a
+local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
+should be explored. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
