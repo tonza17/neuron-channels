@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Inherit t0036 code; generalise gaba_override to accept CLI value.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T23:00:22Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T23:03:30Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
