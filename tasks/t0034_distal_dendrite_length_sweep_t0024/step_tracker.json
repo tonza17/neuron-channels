@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI-vs-length curve to Dan2018 passive-TR vs Sivyer2013 dendritic-spike predictions and to t0029's null result.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T13:46:42Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T13:54:21Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
