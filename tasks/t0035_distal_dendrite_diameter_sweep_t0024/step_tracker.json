@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0024 and t0030 dependencies completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T14:11:56Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T14:12:49Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
