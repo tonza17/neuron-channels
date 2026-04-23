@@ -1,0 +1,64 @@
+{
+  "variants": [
+    {
+      "variant_id": "gaba_0p00",
+      "label": "null-GABA = 0.00 nS",
+      "dimensions": {
+        "gaba_null_ns": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.166667,
+        "tuning_curve_hwhm_deg": 18.75,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "gaba_0p50",
+      "label": "null-GABA = 0.50 nS",
+      "dimensions": {
+        "gaba_null_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 0.999742
+      }
+    },
+    {
+      "variant_id": "gaba_1p00",
+      "label": "null-GABA = 1.00 nS",
+      "dimensions": {
+        "gaba_null_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.157303,
+        "tuning_curve_hwhm_deg": 78.0,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "gaba_2p00",
+      "label": "null-GABA = 2.00 nS",
+      "dimensions": {
+        "gaba_null_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.243243,
+        "tuning_curve_hwhm_deg": 24.75,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "gaba_4p00",
+      "label": "null-GABA = 4.00 nS",
+      "dimensions": {
+        "gaba_null_ns": 4.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.428571,
+        "tuning_curve_hwhm_deg": 112.2857,
+        "tuning_curve_reliability": 1.0
+      }
+    }
+  ]
+}

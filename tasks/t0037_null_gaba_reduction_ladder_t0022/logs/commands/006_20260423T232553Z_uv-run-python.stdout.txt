@@ -1,0 +1,57 @@
+[t0037 sweep] gaba_levels_ns = (0.0, 2.0, 4.0)
+[t0037 sweep] angles = (0, 90, 180)
+[t0037 sweep] n_trials per (GABA, angle) = 2
+[t0037 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\sweep_results.csv
+[t0037 sweep] per-GABA CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba
+[t0037 sweep] building DSGC cell + E-I pairs + distal snapshot...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0037 sweep] cell built in 1.0s; n_pairs = 282; n_distal = 129
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 12.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=0  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=1  spikes= 12  rate= 12.00Hz  peak=+44.4mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G0p00.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 0.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=0  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=1  spikes= 17  rate= 17.00Hz  peak=+43.2mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G2p00.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 2.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=1  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G4p00.csv
+[t0037 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\sweep_results.csv
+[t0037 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\wall_time_by_gaba.json

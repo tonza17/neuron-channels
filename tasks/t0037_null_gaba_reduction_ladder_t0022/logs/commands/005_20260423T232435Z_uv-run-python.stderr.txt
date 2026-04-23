@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\code\run_sweep.py", line 221, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\code\run_sweep.py", line 176, in main
+    ctx = build_cell_context()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\code\trial_runner_gaba_ladder.py", line 100, in build_cell_context
+    _preload_nrnmech_dll()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 149, in _preload_nrnmech_dll
+    raise FileNotFoundError(
+    ...<3 lines>...
+    )
+FileNotFoundError: nrnmech.dll missing at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0022_modify_dsgc_channel_testbed\build\modeldb_189347\nrnmech.dll. Run ``nrnivmodl`` on the t0008 bundled MOD sources into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0022_modify_dsgc_channel_testbed\build\modeldb_189347.

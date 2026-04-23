@@ -1,0 +1,10 @@
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\metrics_per_gaba.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\dsi_by_gaba.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\metrics.json
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\metrics_notes.json
+    G_nS  peak_hz  null_hz  dsi_pn  dsi_vs    hwhm    rel    pref  peak_mv
+    0.00    21.00    15.00   0.167   0.058    18.8  1.000   277.7    +44.1
+    0.50    21.00    14.00   0.200   0.069    75.0  1.000   200.5    +44.0
+    1.00    20.60    15.00   0.157   0.099    78.0  1.000   234.2    +43.9
+    2.00    23.00    14.00   0.243   0.093    24.8  1.000   187.2    +43.8
+    4.00    15.00     6.00   0.429   0.259   112.3  1.000    40.8    +43.2

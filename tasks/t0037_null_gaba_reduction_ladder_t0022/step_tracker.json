@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Copy t0036 code, generalise gaba_override, run 5 \u00d7 120 = 600 trials at baseline diameter.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-23T23:12:56Z",
       "completed_at": null,
-      "log_file": "logs/steps/009_implementation/"
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

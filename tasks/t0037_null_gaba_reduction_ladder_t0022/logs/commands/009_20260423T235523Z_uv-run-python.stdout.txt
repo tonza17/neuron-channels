@@ -1,0 +1,3 @@
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\curve_shape.json
+[classify_slope] label = unpinned  unpinning_threshold_ns = 0.0  precondition_pass = True
+[classify_slope] recommendation: The unpinning threshold is 0.00 nS. A follow-up full-diameter sweep at this GABA level is warranted to measure the DSI-vs-diameter slope once null firing is unpinned.
