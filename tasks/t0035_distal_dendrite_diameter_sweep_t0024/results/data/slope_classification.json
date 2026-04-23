@@ -1,0 +1,42 @@
+{
+  "mechanism_class": "flat",
+  "slope": 0.00414142566519373,
+  "intercept": 0.7399637752240321,
+  "r_squared": 0.004958555060554673,
+  "p_value": 0.8807525351009755,
+  "slope_95_ci_low": -0.06330195286076817,
+  "slope_95_ci_high": 0.07158480419115562,
+  "slope_sign": "~",
+  "dsi_range_extremes": -0.023703999999999947,
+  "dsi_range_extremes_primary": -0.023703999999999947,
+  "dsi_range_extremes_vector_sum": -0.04559800000000003,
+  "shape_class_vector_sum": "flat",
+  "slope_vector_sum": -0.022313413543473326,
+  "p_value_vector_sum": 0.003784868532695683,
+  "primary_regression": {
+    "slope": 0.00414142566519373,
+    "intercept": 0.7399637752240321,
+    "r_squared": 0.004958555060554673,
+    "p_value": 0.8807525351009755,
+    "slope_95_ci_low": -0.06330195286076817,
+    "slope_95_ci_high": 0.07158480419115562
+  },
+  "vector_sum_regression": {
+    "slope": -0.022313413543473326,
+    "intercept": 0.44118282368475326,
+    "r_squared": 0.8385168569892838,
+    "p_value": 0.003784868532695683,
+    "slope_95_ci_low": -0.03357034818657139,
+    "slope_95_ci_high": -0.011056478900375262
+  },
+  "peak_hz_trend_slope": -0.29304043171308924,
+  "peak_hz_trend_p_value": 0.2851627107987226,
+  "null_hz_trend_slope": -0.05845832051892492,
+  "null_hz_trend_p_value": 0.3890672666696439,
+  "preferred_and_null_both_drop": null,
+  "used_fallback_vector_sum_dsi": false,
+  "dsi_primary_range": 0.12769199999999992,
+  "dsi_saturation_threshold": 0.02,
+  "qualitative_description": "DSI vs diameter slope is not distinguishable from zero (slope=0.0041 per log2(multiplier), p=0.8808, dsi_range_extremes=-0.0237); neither Schachter2010 nor passive filtering is supported.",
+  "t0030_comparison_note": "t0030 (diameter sweep on t0022) reported dsi_primary pinned at ~1.000 across all seven multipliers because t0022's deterministic E-I driver zeroed null-direction firing, collapsing the primary-DSI dynamic range. t0024's AR(2) correlated stochastic bipolar release (rho=0.6) restores non-zero null firing, and the t0035 sweep observes a primary-DSI range of 0.680-0.808 (0.128 wide). Mechanism classification under the revived dynamic range: flat."
+}

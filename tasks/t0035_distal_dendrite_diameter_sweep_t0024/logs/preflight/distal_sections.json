@@ -1,0 +1,17 @@
+{
+  "count": 177,
+  "segment_count": 177,
+  "min_depth": 3,
+  "median_depth": 9.0,
+  "max_depth": 18,
+  "min_diam_um": 0.49999999999999994,
+  "median_diam_um": 0.5000012516975404,
+  "max_diam_um": 0.6874321103096007,
+  "mean_diam_um": 0.5034757623765028,
+  "identification_rule": "t0024_terminal_dends",
+  "warn_count_threshold": 50,
+  "warn_depth_threshold": 3,
+  "count_warning": false,
+  "depth_warning": false,
+  "unwalkable_count": 0
+}
