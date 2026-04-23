@@ -1,0 +1,11 @@
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\metrics_per_length.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\metrics.json
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\metrics_notes.json
+   L_mul  peak_hz  null_hz  dsi_pr  dsi_vs    hwhm    rel    pref   prefHz  peak_mv
+    0.50     5.70     0.80   0.754   0.507    63.2  0.958     0.0     5.70    +27.8
+    0.75     5.50     0.70   0.774   0.455    64.3  0.949     0.0     5.50    +31.9
+    1.00     5.40     0.70   0.770   0.449    72.6  0.978     0.0     5.40    +31.3
+    1.25     4.80     0.70   0.745   0.420    62.7  0.977     0.0     4.80    +32.5
+    1.50     4.30     1.00   0.623   0.417    75.2  0.944   330.0     4.30    +28.3
+    1.75     4.30     0.70   0.720   0.408    76.2  0.982     0.0     4.30    +30.3
+    2.00     3.40     1.00   0.545   0.357    75.4  0.971    30.0     3.40    +31.0

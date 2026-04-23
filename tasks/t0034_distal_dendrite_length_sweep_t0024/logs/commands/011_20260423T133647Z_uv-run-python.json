@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0034_distal_dendrite_length_sweep_t0024",
+  "command": "uv run python -m tasks.t0034_distal_dendrite_length_sweep_t0024.code.classify_shape",
+  "exit_code": 0,
+  "duration_seconds": 2.822,
+  "started_at": "2026-04-23T13:36:47Z",
+  "completed_at": "2026-04-23T13:36:50Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0034_distal_dendrite_length_sweep_t0024",
+  "stdout_file": "011_20260423T133647Z_uv-run-python.stdout.txt",
+  "stderr_file": "011_20260423T133647Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,3 @@
+[classify_shape] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\curve_shape.json
+[classify_shape] shape_class = non_monotonic  vector_sum = non_monotonic  slope = -0.1259  p = 0.03842  dsi_range_extremes = -0.2084
+[classify_shape] DSI is neither monotonically increasing nor saturating within the sweep. Regression slope = -0.1259 per unit multiplier (p = 0.03842). DSI range = 0.2287. Non-decreasing check: False.

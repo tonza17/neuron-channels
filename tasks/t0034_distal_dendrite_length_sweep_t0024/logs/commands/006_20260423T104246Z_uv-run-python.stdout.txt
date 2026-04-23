@@ -1,0 +1,5 @@
+[preflight_distal] building t0024 DSGC cell...
+[preflight_distal] distal section count = 177
+[preflight_distal] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\logs\preflight\distal_sections.json
+[preflight_distal] payload = {'count': 177, 'min_depth': 3, 'median_depth': 9.0, 'max_depth': 18, 'min_L_um': 1.0923183072268654, 'median_L_um': 14.78822195444683, 'max_L_um': 89.64799747408945, 'total_L_um': 4004.8279960449927, 'identification_rule': 't0024_terminal_dends', 'warn_count_threshold': 50, 'warn_depth_threshold': 3, 'count_warning': False, 'depth_warning': False, 'unwalkable_count': 0}
+OK
