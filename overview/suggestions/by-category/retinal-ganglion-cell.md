@@ -958,7 +958,7 @@ but did not install it; the next simulation task needs a validated environment.
 <details>
 <summary>✅ <s>Sweep distal-dendrite scale on t0022 to discriminate passive TR
 weighting vs dendritic-spike branch independence</s> — covered by <a
-href="../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/"><code>t0029_distal_dendrite_length_sweep_dsgc</code></a>
+href="../../../tasks/t0034_distal_dendrite_length_sweep_t0024/"><code>t0034_distal_dendrite_length_sweep_t0024</code></a>
 (S-0027-01)</summary>
 
 | Field | Value |

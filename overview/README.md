@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-3-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-33-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-35-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-141-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (14K)
-| [full](llm-context/full.xml) (198K) | [roadmap](llm-context/roadmap.xml) (45K) |
+| [full](llm-context/full.xml) (202K) | [roadmap](llm-context/roadmap.xml) (49K) |
 [results](llm-context/results-deep-dive.xml) (135K) |
 [assets](llm-context/literature-and-assets.xml) (30K)
 
-*Last updated: 2026-04-23 09:21 UTC*
+*Last updated: 2026-04-23 10:01 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -55,11 +55,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (1)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
+| 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`description`](../tasks/t0034_distal_dendrite_length_sweep_t0024/task_description.md) | 2026-04-23 |
+| 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`description`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/task_description.md) | 2026-04-23 |
 
 ---
 

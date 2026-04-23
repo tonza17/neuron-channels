@@ -17,7 +17,7 @@ threshold.
 | Default per-task limit | $1.00 USD |
 | Tasks with cost records | 31 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 2 |
+| Skipped tasks | 4 |
 
 ## Service Totals
 
@@ -43,3 +43,5 @@ No task cost records found.
 |---------|--------|
 | `t0023_port_hanson_2019_dsgc` | results/costs.json is missing or invalid |
 | `t0031_fetch_paywalled_morphology_papers` | results/costs.json is missing or invalid |
+| `t0034_distal_dendrite_length_sweep_t0024` | results/costs.json is missing or invalid |
+| `t0035_distal_dendrite_diameter_sweep_t0024` | results/costs.json is missing or invalid |

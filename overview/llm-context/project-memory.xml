@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-23T09:21:17Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-23T10:01:11Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>100319</char_count>
-    <byte_count>100446</byte_count>
-    <estimated_tokens>25079</estimated_tokens>
+    <char_count>101313</char_count>
+    <byte_count>101440</byte_count>
+    <estimated_tokens>25328</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -344,9 +344,11 @@ Result summary: Results Summary: Plan DSGC Morphology + VGC DSI Optimisation on 
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
+        <id>t0034_distal_dendrite_length_sweep_t0024</id>
+        <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -360,6 +362,20 @@ ID: t0031_fetch_paywalled_morphology_papers
 Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
+
+## Distal-dendrite length sweep on t0024 DSGC
+ID: t0034_distal_dendrite_length_sweep_t0024
+Status: not_started
+Effective date: 2026-04-23
+Short description: Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0029_distal_dendrite_length_sweep_dsgc
+
+## Distal-dendrite diameter sweep on t0024 DSGC
+ID: t0035_distal_dendrite_diameter_sweep_t0024
+Status: not_started
+Effective date: 2026-04-23
+Short description: Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0030_distal_dendrite_diameter_sweep_dsgc
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

@@ -531,7 +531,7 @@ tuning-curve fits.
 <details>
 <summary>✅ <s>Thicken distal branches on t0022 (halve distal input resistance) to
 separate active amplification from passive filtering</s> — covered by <a
-href="../../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/"><code>t0030_distal_dendrite_diameter_sweep_dsgc</code></a>
+href="../../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/"><code>t0035_distal_dendrite_diameter_sweep_t0024</code></a>
 (S-0027-03)</summary>
 
 | Field | Value |
