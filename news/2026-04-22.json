@@ -1,0 +1,98 @@
+{
+  "spec_version": "2",
+  "date": "2026-04-22",
+  "tasks_completed": [
+    {
+      "task_id": "t0028_brainstorm_results_6",
+      "name": "Brainstorm results session 6",
+      "cost_usd": 0.0,
+      "key_finding": "Authorised three morphology sweep tasks (t0029 distal-length, t0030 distal-diameter, t0031 paywalled Kim2014/Sivyer2013 fetch) targeting S-0027-01/03/06; backlog left unchanged at 110 uncovered suggestions"
+    },
+    {
+      "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+      "name": "Distal-dendrite length sweep on t0022 DSGC",
+      "cost_usd": 0.0,
+      "key_finding": "Primary DSI pinned at 1.000 across all 7 multipliers (0.5x-2.0x, 840 trials, ~42 min); vector-sum DSI fallback shifts only 0.664 -> 0.643; cannot discriminate Dan2018 passive-TR from Sivyer2013 dendritic-spike because null firing is 0 Hz everywhere"
+    },
+    {
+      "task_id": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "name": "Distal-dendrite diameter sweep on t0022 DSGC",
+      "cost_usd": 0.0,
+      "key_finding": "Vector-sum DSI slope 0.0083 per log2(multiplier), p=0.1773 (flat) across 4x diameter range; neither Schachter2010 active-dendrite amplification nor passive-filtering supported; 840 trials in ~115 min"
+    },
+    {
+      "task_id": "t0032_brainstorm_results_7",
+      "name": "Brainstorm results session 7",
+      "cost_usd": 0.0,
+      "key_finding": "Opened a parallel planning thread while t0029 ran; commissioned t0033 as a corpus-only planner for a future joint morphology + top-10 VGC DSI-maximisation optimisation anchored on Vast.ai GPU pricing"
+    },
+    {
+      "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "name": "Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget",
+      "cost_usd": 0.0,
+      "key_finding": "Recommended Surrogate-NN-GA on RTX 4090 with tight 25-param parameterisation at central $50.54 (sensitivity $23-$119); training cost $41.56 dominates inference $8.98; 6 follow-up suggestions queued covering CoreNEURON benchmark, AIS/axon hooks, multi-fidelity surrogate, transfer-learning warm-start, CMA-ES/BO spike, and reusable DSI-objective library"
+    }
+  ],
+  "tasks_created": [
+    {
+      "task_id": "t0029_distal_dendrite_length_sweep_dsgc",
+      "name": "Distal-dendrite length sweep on t0022 DSGC",
+      "reason": "Authorised by brainstorm session 6 to cover S-0027-01; test Dan2018 passive-TR vs Sivyer2013 dendritic-spike on the t0022 testbed"
+    },
+    {
+      "task_id": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "name": "Distal-dendrite diameter sweep on t0022 DSGC",
+      "reason": "Authorised by brainstorm session 6 to cover S-0027-03; test Schachter2010 active-dendrite amplification vs passive filtering on the t0022 testbed"
+    },
+    {
+      "task_id": "t0031_fetch_paywalled_kim2014_sivyer2013",
+      "name": "Fetch paywalled Kim2014 and Sivyer2013 PDFs",
+      "reason": "Authorised by brainstorm session 6 to cover S-0027-06; remained not-started on 2026-04-22 because research loop prioritised morphology sweeps and Vast.ai planner"
+    },
+    {
+      "task_id": "t0032_brainstorm_results_7",
+      "name": "Brainstorm results session 7",
+      "reason": "Review state after t0028 merge and decide whether to plan a large-scale joint morphology + channel optimiser ahead of the morphology-sweep wave returning"
+    },
+    {
+      "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "name": "Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget",
+      "reason": "Authorised by brainstorm session 7 as a corpus-only planner and cost-estimator for a future joint morphology + top-10 VGC optimiser on Vast.ai GPU"
+    }
+  ],
+  "tasks_cancelled": [],
+  "total_cost_usd": 0.0,
+  "assets_added": 1,
+  "papers_added": 0,
+  "infrastructure_changes": [],
+  "current_best_results": [
+    {
+      "system": "modeldb_189347_dsgc_dendritic (t0022)",
+      "f1": 1.0,
+      "type": "primary DSI, per-dendrite E-I scheduling"
+    },
+    {
+      "system": "modeldb_189347_dsgc_dendritic (t0022)",
+      "f1": 0.656,
+      "type": "vector-sum DSI fallback"
+    },
+    {
+      "system": "de_rosenroll_2026_dsgc (t0024)",
+      "f1": 0.7759,
+      "type": "AR(2)-correlated release, 12-ang"
+    },
+    {
+      "system": "modeldb_189347_dsgc_gabamod (t0020)",
+      "f1": 0.7838,
+      "type": "gabaMOD-swap protocol"
+    }
+  ],
+  "key_findings": [
+    "t0029 distal-length sweep on t0022 pins primary DSI at 1.000 across all 7 multipliers (0.5x-2.0x, 840 trials); vector-sum DSI shifts only 0.021 absolute",
+    "t0030 distal-diameter sweep on t0022 produces vector-sum DSI slope 0.0083 per log2(mult), p=0.1773 - flat across 4x diameter range; neither Schachter2010 active amplification nor passive filtering is supported",
+    "Both t0029 and t0030 null-firing is 0 Hz on every one of 1,680 sweep trials - the E-I schedule (GABA_CONDUCTANCE_NULL_NS = 12 nS, 2x Schachter2010 compound inhibition) drives null firing to zero before cable mechanics act",
+    "t0033 recommended Surrogate-NN-GA on RTX 4090 with tight 25-parameter setup at central $50.54 (sensitivity $23-$119); training cost $41.56 dominates inference $8.98",
+    "t0033 identified multi-fidelity surrogates and transfer-learning warm-start from existing t0022/t0024/t0026 data as highest-leverage cost reductions (pulling central cell to ~$30)",
+    "t0031 paywalled-PDF fetch remained not-started; research loop prioritised morphology sweeps and Vast.ai planner ahead of the fetch"
+  ]
+}
