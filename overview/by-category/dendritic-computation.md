@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (5)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(32)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(37)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2267,7 +2267,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (27 open, 5 closed)
+## Suggestions (32 open, 5 closed)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -2328,6 +2328,91 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points)
+to probe non-linear extremes</strong> (S-0035-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Push the diameter multiplier beyond t0035's narrow 0.5x-2.0x range into a wider 0.25x-4.0x
+sweep (nine multipliers) on the t0024 DSGC substrate to look for non-linear DSI effects that
+the 4x range missed. Specifically targets two possibilities: (a) input-impedance saturation at
+baseline may break at extreme thinning/thickening and (b) the cable-theory 1/sqrt(d)
+prediction implies a detectable DSI shift over a 16x diameter range even if a 4x range is
+inside the noise floor. Distinct from S-0030-03 which targets t0022. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
+test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Sweep distal Ih (HCN) gbar from 0 to 2x baseline (five points) on the t0024 DSGC while holding
+all other parameters fixed, and measure primary DSI, HWHM, and distal-compartment voltage. Ih
+is a known resonance and input-impedance shaper that could partly explain why distal diameter
+reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
+diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
+which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Deprioritise distal-diameter parameters in the t0033 DSI
+optimiser search space</strong> (S-0035-06)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+The t0033 DSGC optimisation plan treats distal length and distal diameter as co-equal
+morphology parameters. t0034 (p=0.038 on length) and t0035 (p=0.88 on diameter) together show
+that distal diameter has DSI leverage below the noise floor on the t0024 substrate, while
+length is a strong discriminator. Concrete action: reduce distal-diameter weight in the
+optimiser search space (smaller range, coarser grid, or drop it entirely) so the GPU budget
+concentrates on axes that actually move DSI. Distinct from S-0034-07 which focuses on the
+primary-vs-vector-sum objective; this one concerns the parameter search space itself.
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 

@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(23)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(25)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (21 open, 2 closed)
+## Suggestions (23 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
@@ -907,6 +907,39 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
+test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Sweep distal Ih (HCN) gbar from 0 to 2x baseline (five points) on the t0024 DSGC while holding
+all other parameters fixed, and measure primary DSI, HWHM, and distal-compartment voltage. Ih
+is a known resonance and input-impedance shaper that could partly explain why distal diameter
+reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
+diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
+which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
 
 </details>
 

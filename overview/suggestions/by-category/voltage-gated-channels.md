@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-23 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **21 open** (11
-high, 8 medium, 2 low), **2 closed**.
+25 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **23 open** (12
+high, 9 medium, 2 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -260,6 +260,29 @@ before adopting them as tight compartmental-model fitting targets.
 </details>
 
 <details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
 simulation</strong> (S-0007-01)</summary>
 
@@ -356,6 +379,28 @@ AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) develo
 channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
 fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
 voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
+test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Sweep distal Ih (HCN) gbar from 0 to 2x baseline (five points) on the t0024 DSGC while holding
+all other parameters fixed, and measure primary DSI, HWHM, and distal-compartment voltage. Ih
+is a known resonance and input-impedance shaper that could partly explain why distal diameter
+reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
+diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
+which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
 
 </details>
 

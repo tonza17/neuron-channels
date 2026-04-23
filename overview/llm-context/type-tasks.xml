@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-23T14:05:06Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-23T17:59:48Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>266002</char_count>
-    <byte_count>267249</byte_count>
-    <estimated_tokens>66500</estimated_tokens>
+    <char_count>268902</char_count>
+    <byte_count>270191</byte_count>
+    <estimated_tokens>67225</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -4807,12 +4807,14 @@ filtering past an optimal electrotonic length, with superimposed local-spike-fai
 
 ## Distal-dendrite diameter sweep on t0024 DSGC
 ID: t0035_distal_dendrite_diameter_sweep_t0024
-Status: not_started
+Status: completed
 Effective date: 2026-04-23
 Short description: Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0030_distal_dendrite_diameter_sweep_dsgc
 Task types: experiment-run
 Source suggestion: S-0027-03
+Start time: 2026-04-23T14:09:57Z
+End time: 2026-04-23T18:00:00Z
 
 #### Motivation
 
@@ -4943,6 +4945,58 @@ Companion to **t0034** (length sweep on t0024).
 * Include `compare-literature` — compare the t0024 DSI-vs-diameter slope to Schachter2010 and
   passive-filtering predictions **and** to the t0030 null result.
 * **Can be executed in parallel with t0034 in a separate worktree.**
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0035_distal_dendrite_diameter_sweep_t0024&quot;
+date_completed: &quot;2026-04-23&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Distal-Dendrite Diameter Sweep on t0024 DSGC
+
+#### Summary
+
+Swept distal-dendrite diameter across seven multipliers (0.5×-2.0× baseline) on the t0024 de
+Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840 trials
+total). **DSI-vs-diameter slope is flat** (slope 0.0041 per log2(multiplier), **p=0.8808**, range
+across extremes -0.0237). **Neither Schachter2010 (predicted positive slope) nor passive filtering
+(predicted negative slope) is supported.** Primary DSI range 0.680-0.808 — measurable (unlike
+t0030&#x27;s pinned 1.000 on t0022) but with no mechanism-driven trend. Contrasts sharply with sibling
+t0034 (length sweep on same t0024 port) which showed a statistically significant non-monotonic
+negative slope (p=0.038): **length modulates DSI on t0024, diameter does not.**
+
+#### Metrics
+
+* **Primary DSI range**: **0.680** (2.0×) to **0.808** (1.5×) — 0.128 absolute range, slope 0.0041
+  per log2(multiplier), **p=0.8808** (not distinguishable from zero).
+* **Vector-sum DSI range**: **0.417** (2.0×) to **0.463** (0.5×) — 0.046 absolute range, no
+  meaningful trend.
+* **Preferred-direction peak firing rate**: **4.20 Hz** at 2.0× to **5.40 Hz** at 0.75× / 1.00× —
+  mild ~25% variation but not monotonic in either direction.
+* **Null-direction firing rate**: **0.50-0.80 Hz** across all diameters (non-zero throughout —
+  confirms AR(2) rescue holds on the diameter axis too).
+* **HWHM**: **61.4°-77.8°** across diameters.
+* **Slope classification**: **flat** (mechanism_class=&quot;flat&quot;, slope=0.0041, p=0.8808,
+  dsi_range_extremes=-0.0237, used_fallback=False).
+* **Total trials executed**: **840** (7 diameters × 12 directions × 10 trials).
+* **Sweep wall time**: approximately **3 hours** end-to-end on local Windows CPU.
+* **Sibling comparison**: t0034 (length sweep) on same t0024 port produced slope -0.1259 (p=0.038);
+  t0035 (diameter) produced slope 0.0041 (p=0.88). **Length modulates DSI; diameter does not.**
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors on final pass.
+* `verify_task_dependencies.py` — PASSED on step 2 (t0024 and t0030 dependencies completed).
+* `verify_research_code.py` — PASSED on step 6 (0 errors, 0 warnings).
+* `verify_plan.py` — PASSED on step 7 (0 errors, 0 warnings).
+* `verify_task_metrics.py` — target 0 errors.
+* `verify_task_results.py` — target 0 errors on final pass.
+* `verify_task_folder.py` — target 0 errors on final pass.
+* `verify_logs.py` — target 0 errors on final pass.
+* `ruff check --fix`, `ruff format`, and
+  `mypy -p tasks.t0035_distal_dendrite_diameter_sweep_t0024.code` — all clean (11 files).
       </content>
     </section>
   </sections>

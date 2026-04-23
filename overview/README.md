@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-3-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-35-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-148-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-154-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (14K)
-| [full](llm-context/full.xml) (204K) | [roadmap](llm-context/roadmap.xml) (49K) |
-[results](llm-context/results-deep-dive.xml) (140K) |
+| [full](llm-context/full.xml) (206K) | [roadmap](llm-context/roadmap.xml) (48K) |
+[results](llm-context/results-deep-dive.xml) (143K) |
 [assets](llm-context/literature-and-assets.xml) (31K)
 
-*Last updated: 2026-04-23 14:05 UTC*
+*Last updated: 2026-04-23 17:59 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -55,12 +55,11 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (1)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
-| 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`description`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/task_description.md) | 2026-04-23 |
 
 ---
 
@@ -78,10 +77,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (32 total)](tasks/by-status/completed.md)
+## [Recently Completed (33 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
 | 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
 | 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`results`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md) | 2026-04-22 15:40 |
@@ -91,9 +91,8 @@ No blocked tasks.
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | [`results`](../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) | 2026-04-21 22:23 |
 | 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
 | 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
-| 0024 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | [`results`](../tasks/t0024_port_de_rosenroll_2026_dsgc/results/results_detailed.md) | 2026-04-21 08:55 |
 
-*22 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*23 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -109,7 +108,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (134 open)](suggestions/)
+## [Recent Suggestions (140 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -255,72 +254,61 @@ task types: comparative-analysis, answer-question.
 </details>
 
 <details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
-sweep on t0022</strong> (S-0029-01)</summary>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
-The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
-at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
-1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
-stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
-mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
-dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
-7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
-from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
-discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
-predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
-types: experiment-run.
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
-on t0022</strong> (S-0029-02)</summary>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
-HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
-115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
-Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
-Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
-gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
-length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
-the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
-resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
-with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
-min CPU. Recommended task types: experiment-run.
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to
-reach Dan2018's critical regime</strong> (S-0029-03)</summary>
+<summary>🧪 <strong>Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points)
+to probe non-linear extremes</strong> (S-0035-03)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
-Dan2018 reports monotonic DSI-vs-length over 50-400 um distal branches; Sivyer2013's critical
-length sits at ~150 um. The t0022 distal-leaf baseline is on the order of tens of um, so the
-0.5-2.0x sweep likely spans only ~15-160 um, overlapping only the tail of Sivyer2013's range
-and sitting entirely below Dan2018's critical length. Add three extreme sweep points at 3.0x,
-5.0x, and 8.0x while keeping the rest of the t0022 testbed fixed. Watch for `d_lambda`
-violations at extreme lengths (fallback: adaptive `nseg` at each point). Possible outcomes:
-(a) DSI stays at 1.000 and peak Hz continues linear decline - testbed is cable-dominated at
-the soma and no resolution is possible; (b) DSI drops at a specific high multiplier with
-monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
-narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
-min CPU. Recommended task types: experiment-run.
+Push the diameter multiplier beyond t0035's narrow 0.5x-2.0x range into a wider 0.25x-4.0x
+sweep (nine multipliers) on the t0024 DSGC substrate to look for non-linear DSI effects that
+the 4x range missed. Specifically targets two possibilities: (a) input-impedance saturation at
+baseline may break at extreme thinning/thickening and (b) the cable-theory 1/sqrt(d)
+prediction implies a detectable DSI shift over a 16x diameter range even if a 4x range is
+inside the noise floor. Distinct from S-0030-03 which targets t0022. Recommended task types:
+experiment-run.
 
 </details>
 
-*124 more open suggestions → [open suggestions](suggestions/)*
+*130 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (49)](suggestions/)
+## [High Priority Suggestions (51)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -382,6 +370,40 @@ pick t0024 as the optimisation testbed, use primary DSI as the objective, and se
 length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
 (vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
 task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -485,47 +507,7 @@ option. Recommended task types: write-library, answer-question.
 
 </details>
 
-<details>
-<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
-assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
-(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
-1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
-literature-less guess that drives the largest sensitivity-band column. Run a short task that
-(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
-NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
-under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
-per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
-$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
-experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
-<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
-t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
-modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
-axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
-Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
-Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
-2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
-Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
-t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
-sibling library asset. Recommended task types: infrastructure-setup, build-model,
-write-library.
-
-</details>
-
-*39 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

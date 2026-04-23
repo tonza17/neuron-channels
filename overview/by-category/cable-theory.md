@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (2)](../answers/by-category/cable-theory.md) | [Suggestions
-(15)](../suggestions/by-category/cable-theory.md) | [Datasets
+(18)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -582,7 +582,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (13 open, 2 closed)
+## Suggestions (16 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -642,6 +642,56 @@ the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scali
 fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
 'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
 cross-paper comparison. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points)
+to probe non-linear extremes</strong> (S-0035-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Push the diameter multiplier beyond t0035's narrow 0.5x-2.0x range into a wider 0.25x-4.0x
+sweep (nine multipliers) on the t0024 DSGC substrate to look for non-linear DSI effects that
+the 4x range missed. Specifically targets two possibilities: (a) input-impedance saturation at
+baseline may break at extreme thinning/thickening and (b) the cable-theory 1/sqrt(d)
+prediction implies a detectable DSI shift over a 16x diameter range even if a 4x range is
+inside the noise floor. Distinct from S-0030-03 which targets t0022. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
+test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Sweep distal Ih (HCN) gbar from 0 to 2x baseline (five points) on the t0024 DSGC while holding
+all other parameters fixed, and measure primary DSI, HWHM, and distal-compartment voltage. Ih
+is a known resonance and input-impedance shaper that could partly explain why distal diameter
+reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
+diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
+which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
 
 </details>
 

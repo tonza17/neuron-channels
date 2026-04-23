@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-23T14:05:06Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-23T17:59:48Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>40</section_count>
-    <char_count>816972</char_count>
-    <byte_count>819562</byte_count>
-    <estimated_tokens>204243</estimated_tokens>
+    <section_count>41</section_count>
+    <char_count>823299</char_count>
+    <byte_count>825943</byte_count>
+    <estimated_tokens>205824</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -148,9 +148,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0032_brainstorm_results_7</id>
         <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
         <id>t0034_distal_dendrite_length_sweep_t0024</id>
+        <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
       </source_ids>
       <content>
-Completed tasks: 32
+Completed tasks: 33
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -343,6 +344,12 @@ ID: t0034_distal_dendrite_length_sweep_t0024
 Completed: 2026-04-23
 Short description: Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0034_distal_dendrite_length_sweep_t0024&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Distal-Dendrite Length Sweep on t0024 DSGC Summary Swept distal-dendrite length across seven multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0× baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840 trials total). **Unlike t0029&#x27;s null result on t0022, primary DSI varies measurably on t0024** (range 0.545-0.774) because AR(2) stochastic release produces non-zero null firing. The slope is **-0.1259 per unit multiplier (p=0.038)** — a statistically significant **negative** trend...
+
+## Distal-dendrite diameter sweep on t0024 DSGC
+ID: t0035_distal_dendrite_diameter_sweep_t0024
+Completed: 2026-04-23
+Short description: Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0035_distal_dendrite_diameter_sweep_t0024&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Distal-Dendrite Diameter Sweep on t0024 DSGC Summary Swept distal-dendrite diameter across seven multipliers (0.5×-2.0× baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840 trials total). **DSI-vs-diameter slope is flat** (slope 0.0041 per log2(multiplier), **p=0.8808**, range across extremes -0.0237). **Neither Schachter2010 (predicted positive slope) nor passive filtering (predicted negative slope) is supported.** Primary DSI range 0.680-0.808 — measurable (unlike t0030&#x27;s pinned 1.000 on...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -351,10 +358,9 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0034_distal_dend
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -519,143 +525,6 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
-
-## Distal-dendrite diameter sweep on t0024 DSGC
-ID: t0035_distal_dendrite_diameter_sweep_t0024
-Status: not_started
-Effective date: 2026-04-23
-Short description: Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0030_distal_dendrite_diameter_sweep_dsgc
-
-#### Motivation
-
-The sibling task t0030 ran a distal-diameter sweep on the t0022 DSGC testbed and produced a **null
-result** for mechanism discrimination: primary DSI pinned at 1.000 across every diameter multiplier
-because t0022&#x27;s deterministic E-I schedule silences null firing (0 Hz). Vector-sum DSI fallback
-produced a flat slope too (p=0.18 on t0030).
-
-The t0024 de Rosenroll 2026 port has fundamentally different biophysics that **fix the t0022
-pathology**:
-
-* **AR(2)-correlated stochastic bipolar release** (ρ=0.6) produces non-zero null-direction firing.
-  Per t0026&#x27;s V_rest sweep, t0024&#x27;s DSI ranges 0.36-0.67 with a measurable 1.9× modulation — the
-  discriminator has room to act.
-* **No Na-inactivation collapse** at depolarised V_rest (peak firing monotone to 7.6 Hz at V_rest =
-  -20 mV).
-* **AR(2) noise smooths tuning** (HWHM pinned 65-83° across V_rest).
-
-Running the t0030 diameter sweep on t0024 should therefore produce a **measurable primary DSI
-slope** that can actually distinguish the two mechanisms:
-
-* **Schachter2010 active-dendrite amplification**: DSI increases with distal thickening because
-  thicker compartments host more Na+ substrate per unit length and amplify preferred-direction local
-  spikes more strongly.
-* **Passive-filtering alternatives**: DSI decreases with distal thickening because thicker dendrites
-  have lower input impedance and less local depolarisation per unit synaptic current, damping the
-  directional contrast.
-
-Covers source suggestion **S-0027-03** (high priority) on the t0024 biophysics. Companion to t0034
-(length sweep on t0024).
-
-#### Scope
-
-1. Use the **t0024 de Rosenroll 2026 DSGC port** as-is (no channel modifications, no input
-   rewiring). Keep the AR(2) correlation ρ=0.6 at its t0026 V_rest-sweep default.
-2. Identify distal dendritic sections (HOC leaves on `h.RGC.ON` arbor). Mirror the selection rule
-   from t0030&#x27;s `diameter_override.py` but **COPY** the helper into this task&#x27;s
-   `code/diameter_override_t0024.py` — no cross-task imports per CLAUDE.md.
-3. Sweep distal diameter in **7 values** spanning **0.5× to 2.0×** baseline (0.5, 0.75, 1.0, 1.25,
-   1.5, 1.75, 2.0×). Apply the multiplier uniformly to all distal branches.
-4. For each diameter value, run the **standard 12-direction tuning protocol** (12 angles × 10
-   trials) and compute **primary DSI** as the operative metric. Also emit vector-sum DSI and
-   secondary metrics.
-5. Plot primary DSI vs diameter and classify slope sign: positive (Schachter2010 active), negative
-   (passive filtering), flat (neither or schedule-dominated).
-
-#### Approach
-
-* **Local CPU only.** No remote compute, no paid API.
-* Reuse the t0024 port code at `tasks/t0024_port_de_rosenroll_2026_dsgc/code/` (the
-  de_rosenroll_2026_port library is registered and t0024&#x27;s driver is the model reference).
-* Copy the t0030 workflow template: `paths.py`, `constants.py`, `diameter_override.py` (with
-  `identify_distal_sections`), `preflight_distal.py`, `trial_runner_diameter.py`, `run_sweep.py`,
-  `analyse_sweep.py`, `classify_slope.py`, and `plot_sweep.py`.
-* Save per-sweep-point data to `results/data/sweep_results.csv` (incremental checkpoint) and
-  per-diameter tuning curves to `results/data/per_diameter/*.csv`.
-* Render DSI-vs-diameter chart at `results/images/dsi_vs_diameter.png` plus secondary diagnostic
-  plots.
-
-#### Expected Outputs
-
-* `results/results_summary.md` — 2-3 paragraph executive summary with headline DSI-vs-diameter slope
-  sign and mechanism classification.
-* `results/results_detailed.md` — full methodology, per-direction breakdown at each diameter value,
-  slope classification, mechanism attribution (Schachter2010 vs passive filtering), comparison to
-  t0030&#x27;s null result.
-* `results/images/dsi_vs_diameter.png` — primary DSI-vs-diameter slope.
-* `results/images/vector_sum_dsi_vs_diameter.png` — vector-sum DSI as secondary diagnostic.
-* `results/images/polar_overlay.png` — 12-direction polar overlay across all 7 diameters.
-* `results/metrics.json` — registered per-diameter DSI metrics.
-* No paper, dataset, library, model, or answer assets produced.
-
-#### Compute and Budget
-
-* **Local CPU only**; no GPU.
-* **Expected runtime: 2-4 hours.** The per-(angle, trial) wall time on t0024 is **~12 s** (per
-  t0026&#x27;s V_rest-sweep baseline), vs t0022&#x27;s ~3.8 s. Full sweep = 7 × 12 × 10 = 840 trials ≈ **~168
-  min** at 12 s/trial, plus overhead. Thinner diameters will run slower due to increased axial
-  resistance (same behaviour observed on t0030).
-* **$0 external cost.**
-
-#### Measurement
-
-* **Primary metric**: **primary DSI (peak-minus-null)** at each diameter value. Unlike t0030, this
-  is expected to vary because t0024 has non-zero null-direction firing.
-* **Secondary**: vector-sum DSI (sanity cross-check), peak Hz, null Hz, HWHM, reliability,
-  preferred-direction firing rate, per-direction spike counts, peak voltage at a reference distal
-  compartment (to confirm impedance changes).
-
-#### Key Questions
-
-1. Is the primary DSI-vs-diameter slope positive (Schachter2010), negative (passive filtering), or
-   flat?
-2. If positive, is the slope consistent with Na-channel-density amplification as predicted by
-   Schachter2010?
-3. If negative, does preferred-direction firing drop alongside DSI (general damping) or does only
-   the null-direction rate change (selective mechanism)?
-4. Does t0024&#x27;s AR(2) noise broaden the HWHM enough to mask the mechanism signal, or does the
-   primary-DSI trend survive the noise floor?
-5. How do t0024 and t0022 compare under identical sweep protocols? A measurable slope on t0024 while
-   t0030 was flat would confirm that the pinned-DSI pathology was the culprit.
-
-#### Dependencies
-
-* **t0024_port_de_rosenroll_2026_dsgc** (completed) — provides the DSGC port with AR(2) stochastic
-  release.
-* **t0030_distal_dendrite_diameter_sweep_dsgc** (completed) — provides the workflow template, the
-  `identify_distal_sections` helper (to be copied, not imported), and the null-result baseline for
-  comparison.
-
-#### Scientific Context
-
-Source suggestion **S-0027-03** (high priority) originally planned for t0022 and executed as t0030.
-This task re-runs the same experiment on t0024 specifically because t0024&#x27;s stochastic release
-restores non-zero null firing and therefore makes the primary DSI discriminator meaningful.
-Companion to **t0034** (length sweep on t0024).
-
-#### Execution Notes
-
-* Follow standard `/execute-task` flow.
-* Include `planning` step.
-* Skip `research-papers`, `research-internet` (t0027 synthesis already covered the mechanism
-  predictions; t0030 already surveyed the prior code).
-* Skip `setup-machines` / `teardown` (local CPU only).
-* Include `research-code` — need to read the t0024 driver and the t0030 workflow pattern.
-* Include `creative-thinking` — if the primary-DSI discriminator works on t0024, consider what
-  schedule-level properties t0022 would need to adopt to recover sensitivity.
-* Include `compare-literature` — compare the t0024 DSI-vs-diameter slope to Schachter2010 and
-  passive-filtering predictions **and** to the t0030 null result.
-* **Can be executed in parallel with t0034 in a separate worktree.**
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -12738,6 +12607,327 @@ unlike t0029.
 | REQ-13 | Crash-recovery flush | **Done** | `run_sweep.py` per-row `fh.flush()` confirmed |
 | REQ-14 | $0 local CPU | **Done** | `costs.json` total $0.00; `remote_machines_used.json` empty |
 | REQ-15 | Primary DSI meaningful on t0024 | **Done** | Primary DSI range 0.545-0.774, p=0.038 — measurably different from t0029&#x27;s pinned 1.000 |
+      </content>
+    </section>
+    <section id="t0035_distal_dendrite_diameter_sweep_t0024-results-detailed" source_kind="file">
+      <title>t0035_distal_dendrite_diameter_sweep_t0024 — Distal-dendrite diameter sweep on t0024 DSGC — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0035_distal_dendrite_diameter_sweep_t0024&quot;
+date_completed: &quot;2026-04-23&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Distal-Dendrite Diameter Sweep on t0024 DSGC
+
+#### Summary
+
+Swept distal-dendrite diameter uniformly on the t0024 DSGC port across seven multipliers (0.5×-2.0×
+baseline) under the standard 12-direction × 10-trial moving-bar protocol (840 trials total).
+DSI-vs-diameter slope is **flat** (slope 0.0041 per log2(multiplier), p=0.8808). Neither
+Schachter2010 active-amplification (predicted positive slope) nor passive filtering (predicted
+negative slope) is supported. Primary DSI varies in a narrow range (0.680-0.808) without any
+monotonic trend. Critically, sibling task t0034 (length sweep on the same t0024 port) produced a
+statistically significant non-monotonic negative slope (p=0.038), so the length/diameter asymmetry
+is the new finding: **length modulates DSI on t0024; diameter does not**. creative_thinking.md
+argues this is explained by cable-theory asymmetry (length enters electrotonic distance L/λ
+linearly, diameter only as 1/sqrt(d)).
+
+#### Methodology
+
+* **Machine**: Windows 11, local CPU only. NEURON 8.2.7 + NetPyNE 1.1.1 (from t0007).
+* **Testbed**: `de_rosenroll_2026_port` library (t0024 port), unmodified except for the
+  distal-diameter override. AR(2) correlation ρ=0.6 preserved throughout.
+* **Distal override**: applied uniformly to all 177 sections returned by `cell.terminal_dends`.
+  Selection rule is the same t0024-specific helper copied from t0034 (not `h.RGC.ON` which doesn&#x27;t
+  exist on the t0024 arbor).
+* **Protocol**: 12-direction moving-bar sweep (0°-330° in 30° steps) × 10 trials per angle × 7
+  diameter multipliers = 840 trials.
+* **Scoring**: primary DSI (peak-minus-null via `tuning_curve_loss.compute_dsi`), vector-sum DSI,
+  peak Hz, null Hz, HWHM, reliability, preferred-direction angle, distal peak mV.
+* **Wall time**: approximately 3 hours for 840 trials (~13 s/trial, consistent with t0034/ t0026
+  baselines for stochastic AR(2) t0024).
+* **Timestamps**: task started 2026-04-23T14:10:45Z; sweep launched 2026-04-23T14:30Z; sweep
+  completed ~2026-04-23T17:30Z; end time set in reporting step.
+
+##### Per-Diameter Metrics Table
+
+| D_mul | peak_Hz | null_Hz | DSI (primary) | DSI (vector-sum) | HWHM (°) | Reliability | Pref (°) | peak_mV |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.50 | 4.60 | 0.80 | 0.704 | 0.463 | 61.4 | 0.943 | 0 | +27.0 |
+| 0.75 | 5.40 | 0.80 | 0.742 | 0.444 | 67.9 | 0.926 | 0 | +32.7 |
+| 1.00 | 5.40 | 0.70 | **0.770** | 0.449 | 72.6 | 0.978 | 0 | +31.3 |
+| 1.25 | 4.80 | 0.70 | 0.745 | 0.443 | 71.2 | 0.965 | 0 | +29.7 |
+| 1.50 | 4.70 | 0.50 | **0.808** | 0.418 | 77.8 | 0.942 | 0 | +29.6 |
+| 1.75 | 4.60 | 0.70 | 0.736 | 0.424 | 74.7 | 0.944 | 30 | +30.1 |
+| 2.00 | 4.20 | 0.80 | 0.680 | 0.417 | 70.3 | 0.977 | 330 | +28.7 |
+
+Sources: `results/data/metrics_per_diameter.csv`, `results/data/metrics_notes.json`.
+
+##### Slope Classification
+
+| Statistic | Value |
+| --- | --- |
+| Classification label | **flat** |
+| Slope (primary DSI per log2(multiplier)) | **0.0041** |
+| p-value | **0.8808** (not distinguishable from zero) |
+| DSI range across extremes (0.5× vs 2.0×) | -0.0237 |
+| Used vector-sum fallback? | No (primary DSI is itself classifiable) |
+| Schachter2010 supported? | **No** (no positive slope) |
+| Passive filtering supported? | **No** (no negative slope) |
+
+Source: `results/data/slope_classification.json`, `results/data/curve_shape.json`.
+
+#### Analysis
+
+**Contradicted assumption**: the task plan expected that on t0024, either Schachter2010 or passive
+filtering would produce a measurable DSI slope (because t0034 confirmed primary DSI is meaningful on
+t0024). Instead, the diameter axis is flat — neither mechanism supported. The informative finding is
+the **length/diameter asymmetry on the same t0024 port**: t0034 (length sweep) produced slope
+-0.1259 (p=0.038), while t0035 (diameter sweep) produced slope 0.0041 (p=0.88). This is consistent
+with cable-theory expectations (length directly scales electrotonic distance L/λ; diameter enters
+only through λ = sqrt(d·Rm/Ra) so per-unit diameter changes have less leverage).
+
+Combined with t0030 (diameter on t0022: also flat), the emerging pattern is: **distal diameter is a
+weak DSI discriminator across both testbeds**; **distal length is a strong discriminator only when
+the E-I schedule lets primary DSI vary** (t0024 works; t0022 pins at 1.000).
+
+#### Charts
+
+![Primary DSI vs distal-dendrite diameter multiplier](images/dsi_vs_diameter.png)
+
+Primary DSI is essentially flat across the 4× diameter sweep (0.680-0.808 range), with no monotonic
+trend. Slope 0.0041, p=0.88. Neither Schachter2010 (+slope predicted) nor passive filtering (-slope
+predicted) is supported.
+
+![Vector-sum DSI vs distal-dendrite diameter multiplier](images/vector_sum_dsi_vs_diameter.png)
+
+Vector-sum DSI declines mildly from 0.463 at 0.5× to 0.417 at 2.0× but the range (0.046) is too
+small to be mechanistically informative.
+
+![Peak firing rate vs distal-dendrite diameter multiplier](images/peak_hz_vs_diameter.png)
+
+Peak firing rate varies mildly (4.2-5.4 Hz) with no monotonic trend, unlike t0034&#x27;s clean monotonic
+40% decline with length.
+
+![12-direction polar overlay across all 7 diameters](images/polar_overlay.png)
+
+Twelve-direction tuning curves overlaid. All 7 diameters produce similar-shape polar curves with
+preferred peak near 0° (with small drifts to 30° at 1.75× and 330° at 2.0×). The uniformity of
+curves is itself the flat-slope signature.
+
+#### Verification
+
+* verify_task_file.py — target 0 errors.
+* verify_task_dependencies.py — PASSED on step 2.
+* verify_research_code.py — PASSED on step 6.
+* verify_plan.py — PASSED on step 7.
+* verify_task_metrics.py — target 0 errors.
+* verify_task_results.py — target 0 errors.
+* verify_task_folder.py — target 0 errors.
+* verify_logs.py — target 0 errors.
+* `ruff check --fix`, `ruff format`, `mypy -p tasks.t0035_distal_dendrite_diameter_sweep_t0024.code`
+  — all clean.
+* Pre-merge verificator — target 0 errors before merge.
+
+#### Limitations
+
+* **Diameter range 0.5×-2.0× narrow**: a wider sweep (0.25×-4.0×) might reveal non-linear effects
+  not captured in the 4× range.
+* **AR(2) ρ=0.6 fixed**: same ρ as t0034; no disambiguation of noise-vs-biophysics.
+* **Uniform multiplier**: all 177 distal leaves scaled identically. Non-uniform scaling (e.g.,
+  proximal-to-distal taper) could yield different results.
+* **No L/λ analysis performed**: creative_thinking&#x27;s recommended follow-up (re-plot all t0034
+  + t0035 data against computed distal L/λ) is a zero-cost next step but wasn&#x27;t done inline.
+
+#### Examples
+
+Ten concrete (diameter, direction, trial) input / (peak_mv, firing_rate_hz) output pairs drawn from
+`results/data/sweep_results.csv`. All trials use AR(2) ρ=0.6 stochastic release.
+
+##### Example 1: D=0.50× preferred direction (peak)
+
+```text
+diameter_multiplier=0.50, trial=0, direction_deg=0
+```
+
+```csv
+0.50,0,0,5,38.039,5.000000
+```
+
+##### Example 2: D=0.50× preferred direction (trial variance)
+
+```text
+diameter_multiplier=0.50, trial=1, direction_deg=0
+```
+
+```csv
+0.50,1,0,5,35.998,5.000000
+```
+
+Repeated 10 trials at (D=0.50×, dir=0°) produced spike counts {5, 5, 4, 4, 4, 5, 4, 5, 5, 5} —
+genuine AR(2) variance.
+
+##### Example 3: D=0.75× preferred direction
+
+```text
+diameter_multiplier=0.75, trial=0, direction_deg=0
+```
+
+```csv
+0.75,0,0,5,37.945,5.000000
+```
+
+##### Example 4: D=1.00× baseline
+
+```text
+diameter_multiplier=1.00, trial=0, direction_deg=0
+```
+
+```csv
+1.00,0,0,5,38.187,5.000000
+```
+
+##### Example 5: D=1.25× preferred direction
+
+```text
+diameter_multiplier=1.25, trial=0, direction_deg=0
+```
+
+```csv
+1.25,0,0,4,37.883,4.000000
+```
+
+##### Example 6: D=1.50× preferred direction (DSI peak at 0.808)
+
+```text
+diameter_multiplier=1.50, trial=0, direction_deg=0
+```
+
+```csv
+1.50,0,0,5,38.025,5.000000
+```
+
+##### Example 7: D=1.75× preferred-angle drift to 30°
+
+```text
+diameter_multiplier=1.75, trial=0, direction_deg=30
+```
+
+```csv
+1.75,0,30,4,37.845,4.000000
+```
+
+##### Example 8: D=2.00× preferred direction (firing decline)
+
+```text
+diameter_multiplier=2.00, trial=0, direction_deg=0
+```
+
+```csv
+2.00,0,0,4,37.506,4.000000
+```
+
+##### Example 9: D=1.50× null direction (AR(2) variance)
+
+```text
+diameter_multiplier=1.50, trial=0, direction_deg=180
+```
+
+```csv
+1.50,0,180,0,-53.024,0.000000
+```
+
+##### Example 10: D=2.00× null direction
+
+```text
+diameter_multiplier=2.00, trial=5, direction_deg=240
+```
+
+```csv
+2.00,5,240,1,35.912,1.000000
+```
+
+Takeaway: across 0.5× to 2.0× diameter, preferred-direction firing varies mildly (4-5 Hz) and
+null-direction firing stays in the 0.5-0.8 Hz band from AR(2) noise — resulting in a narrow primary
+DSI band (0.680-0.808) with no measurable slope trend.
+
+#### Files Created
+
+##### Code (10 Python files, lint + mypy clean)
+
+* `code/paths.py`, `code/constants.py`, `code/distal_selector_t0024.py`,
+  `code/diameter_override_t0024.py`, `code/preflight_distal.py`,
+  `code/trial_runner_diameter_t0024.py`, `code/run_sweep.py`, `code/analyse_sweep.py`,
+  `code/classify_slope.py`, `code/plot_sweep.py`
+
+##### Data
+
+* `results/data/sweep_results.csv` (840 trials + header)
+* `results/data/per_diameter/tuning_curve_D{0p50,0p75,1p00,1p25,1p50,1p75,2p00}.csv`
+* `results/data/metrics_per_diameter.csv`, `results/data/dsi_by_diameter.csv`,
+  `results/data/metrics_notes.json`
+* `results/data/curve_shape.json`, `results/data/slope_classification.json`
+* `results/metrics.json`
+
+##### Charts
+
+* `results/images/dsi_vs_diameter.png`, `results/images/vector_sum_dsi_vs_diameter.png`,
+  `results/images/peak_hz_vs_diameter.png`, `results/images/polar_overlay.png`
+
+##### Research
+
+* `research/research_code.md`, `research/creative_thinking.md`
+
+##### Task artefacts
+
+* `plan/plan.md` (11 sections, 17 REQ items)
+* `task.json`, `task_description.md`, `step_tracker.json`
+* Full step logs under `logs/steps/`
+
+#### Task Requirement Coverage
+
+Operative task text (from task.json and task_description.md), quoted:
+
+```text
+Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate
+Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024
+unlike t0030.
+
+1. Use t0024 as-is (AR(2) rho=0.6).
+2. Identify distal sections (h.RGC.ON leaves). COPY helper from t0029/t0030.
+3. Sweep 7 diameter multipliers 0.5x-2.0x uniformly.
+4. 12-direction tuning protocol per diameter. Compute PRIMARY DSI.
+5. Plot DSI vs diameter and classify slope sign: positive (Schachter), negative (passive),
+   flat.
+```
+
+| REQ | Description | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | t0024 as-is + AR(2) ρ=0.6 | **Done** | constants.py AR2_RHO preserved |
+| REQ-2 | Distal selection via terminal_dends | **Done** | 177 sections identified; no h.RGC.ON reference |
+| REQ-3 | Copy helpers (t0030 diameter, t0034 selector) | **Done** | diameter_override_t0024.py, distal_selector_t0024.py copied |
+| REQ-4 | 7 multipliers 0.5×-2.0× | **Done** | constants.py DIAMETER_MULTIPLIERS |
+| REQ-5 | 12-dir × 10-trial protocol | **Done** | 840 rows in sweep_results.csv |
+| REQ-6 | AR(2) ρ=0.6 at every call | **Done** | trial_runner_diameter_t0024.py module-scope constant |
+| REQ-7 | Secondary metrics | **Done** | metrics_per_diameter.csv with all columns |
+| REQ-8 | Slope classification | **Done** | curve_shape.json label=&quot;flat&quot;, slope=0.0041, p=0.8808 |
+| REQ-9 | Vector-sum defensive fallback | **Done** | vector_sum_dsi_vs_diameter.png emitted |
+| REQ-10 | Polar overlay | **Done** | results/images/polar_overlay.png |
+| REQ-11 | Peak-Hz chart | **Done** | results/images/peak_hz_vs_diameter.png |
+| REQ-12 | Slope taxonomy emitted | **Done** | slope_classification.json mechanism_class=&quot;flat&quot; |
+| REQ-13 | Per-row flush | **Done** | run_sweep.py fh.flush() confirmed |
+| REQ-14 | $0 local CPU | **Done** | costs.json $0.00; remote_machines_used.json [] |
+| REQ-15 | Primary DSI measurable on t0024 | **Done** | 0.680-0.808 range (not pinned at 1.000 like t0030) |
+| REQ-16 | Seed uniqueness | **Done** | 840 unique seeds confirmed in run_sweep.py |
+| REQ-17 | t0030 comparison | **Done** | Both diameter sweeps flat — diameter is weak discriminator on both testbeds |
       </content>
     </section>
   </sections>

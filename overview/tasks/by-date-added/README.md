@@ -8,22 +8,26 @@
 
 ## 2026-04-23 (2)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0035 — <strong>Distal-dendrite diameter sweep on t0024 DSGC</strong></summary>
+<summary>✅ 0035 — <strong>Distal-dendrite diameter sweep on t0024 DSGC</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0035_distal_dendrite_diameter_sweep_t0024` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-23 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
 | **Expected assets** | — |
 | **Source suggestion** | `S-0027-03` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-23T14:09:57Z |
+| **End time** | 2026-04-23T18:00:00Z |
+| **Step progress** | 11/15 |
 | **Task page** | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
 | **Task folder** | [`t0035_distal_dendrite_diameter_sweep_t0024/`](../../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) |
 
 # Distal-Dendrite Diameter Sweep on t0024 DSGC
 
@@ -157,9 +161,36 @@ meaningful. Companion to **t0034** (length sweep on t0024).
   passive-filtering predictions **and** to the t0030 null result.
 * **Can be executed in parallel with t0034 in a separate worktree.**
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "2"
+> task_id: "t0035_distal_dendrite_diameter_sweep_t0024"
+> date_completed: "2026-04-23"
+> status: "complete"
+> ---
+> **Results Summary: Distal-Dendrite Diameter Sweep on t0024 DSGC**
+>
+> **Summary**
+>
+> Swept distal-dendrite diameter across seven multipliers (0.5×-2.0× baseline) on the t0024 de
+> Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840
+> trials
+> total). **DSI-vs-diameter slope is flat** (slope 0.0041 per log2(multiplier), **p=0.8808**,
+> range
+> across extremes -0.0237). **Neither Schachter2010 (predicted positive slope) nor passive
+> filtering
+> (predicted negative slope) is supported.** Primary DSI range 0.680-0.808 — measurable
+> (unlike
+> t0030's pinned 1.000 on t0022) but with no mechanism-driven trend. Contrasts sharply with
+> sibling
+> t0034 (length sweep on same t0024 port) which showed a statistically significant
+> non-monotonic
+> negative slope (p=0.038): **length modulates DSI on t0024, diameter does not.**
+>
+> **Metrics**
+
+</details>
 
 <details>
 <summary>✅ 0034 — <strong>Distal-dendrite length sweep on t0024 DSGC</strong></summary>

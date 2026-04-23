@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-32 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **27 open** (10
-high, 15 medium, 2 low), **5 closed**.
+37 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **32 open** (12
+high, 18 medium, 2 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -262,6 +262,52 @@ actual papers.
 
 </details>
 
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
+
+</details>
+
 ## Medium Priority
 
 <details>
@@ -287,6 +333,30 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Deprioritise distal-diameter parameters in the t0033 DSI
+optimiser search space</strong> (S-0035-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-06` |
+| **Kind** | technique |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The t0033 DSGC optimisation plan treats distal length and distal diameter as co-equal
+morphology parameters. t0034 (p=0.038 on length) and t0035 (p=0.88 on diameter) together show
+that distal diameter has DSI leverage below the noise floor on the t0024 substrate, while
+length is a strong discriminator. Concrete action: reduce distal-diameter weight in the
+optimiser search space (smaller range, coarser grid, or drop it entirely) so the GPU budget
+concentrates on axes that actually move DSI. Distinct from S-0034-07 which focuses on the
+primary-vs-vector-sum objective; this one concerns the parameter search space itself.
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -387,6 +457,29 @@ min CPU. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points)
+to probe non-linear extremes</strong> (S-0035-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+Push the diameter multiplier beyond t0035's narrow 0.5x-2.0x range into a wider 0.25x-4.0x
+sweep (nine multipliers) on the t0024 DSGC substrate to look for non-linear DSI effects that
+the 4x range missed. Specifically targets two possibilities: (a) input-impedance saturation at
+baseline may break at extreme thinning/thickening and (b) the cable-theory 1/sqrt(d)
+prediction implies a detectable DSI shift over a 16x diameter range even if a 4x range is
+inside the noise floor. Distinct from S-0030-03 which targets t0022. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
 to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
 
@@ -409,6 +502,28 @@ Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports 
 local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
 adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
 was pinned at DSI=1.000). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
+test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Sweep distal Ih (HCN) gbar from 0 to 2x baseline (five points) on the t0024 DSGC while holding
+all other parameters fixed, and measure primary DSI, HWHM, and distal-compartment voltage. Ih
+is a known resonance and input-impedance shaper that could partly explain why distal diameter
+reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
+diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
+which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
 
 </details>
 

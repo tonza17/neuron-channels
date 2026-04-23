@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-98 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **91 open** (35
-high, 49 medium, 7 low), **7 closed**.
+103 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **96 open** (37
+high, 52 medium, 7 low), **7 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -826,6 +826,29 @@ task types: comparative-analysis, answer-question.
 </details>
 
 <details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
 discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
 
@@ -866,6 +889,29 @@ pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whe
 tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
 outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
 Na-inactivation-independent peak firing behaviour.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
+t0035 diameter data</strong> (S-0035-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
 
 </details>
 
@@ -1073,6 +1119,30 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Deprioritise distal-diameter parameters in the t0033 DSI
+optimiser search space</strong> (S-0035-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-06` |
+| **Kind** | technique |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The t0033 DSGC optimisation plan treats distal length and distal diameter as co-equal
+morphology parameters. t0034 (p=0.038 on length) and t0035 (p=0.88 on diameter) together show
+that distal diameter has DSI leverage below the noise floor on the t0024 substrate, while
+length is a strong discriminator. Concrete action: reduce distal-diameter weight in the
+optimiser search space (smaller range, coarser grid, or drop it entirely) so the GPU budget
+concentrates on axes that actually move DSI. Distinct from S-0034-07 which focuses on the
+primary-vs-vector-sum objective; this one concerns the parameter search space itself.
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1299,6 +1369,29 @@ the soma and no resolution is possible; (b) DSI drops at a specific high multipl
 monotonic HWHM broadening - Dan2018 passive-TR regime emerges; (c) DSI drops with HWHM
 narrowing at a specific multiplier - Sivyer2013 dendritic-spike-failure regime emerges. ~45
 min CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points)
+to probe non-linear extremes</strong> (S-0035-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+Push the diameter multiplier beyond t0035's narrow 0.5x-2.0x range into a wider 0.25x-4.0x
+sweep (nine multipliers) on the t0024 DSGC substrate to look for non-linear DSI effects that
+the 4x range missed. Specifically targets two possibilities: (a) input-impedance saturation at
+baseline may break at extreme thinning/thickening and (b) the cable-theory 1/sqrt(d)
+prediction implies a detectable DSI shift over a 16x diameter range even if a 4x range is
+inside the noise floor. Distinct from S-0030-03 which targets t0022. Recommended task types:
+experiment-run.
 
 </details>
 
@@ -2071,6 +2164,29 @@ no LICENSE file, which blocks library-asset registration under this project's ru
 follow-up task should (a) email the authors to request a LICENSE addition, and (b) extract a
 single-parameter-set forward-only 'simulate at angle theta' driver from the GA inner loop so
 the model can be scored against the canonical 12-angle sweep without running the full GA.
+
+</details>
+
+<details>
+<summary>📊 <strong>Zero-cost meta-analysis of primary-DSI vs vector-sum-DSI
+discrepancy across t0029, t0030, t0034, t0035</strong> (S-0035-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Combine metrics.json outputs from all four completed morphology sweeps (t0029 length t0022,
+t0030 diameter t0022, t0034 length t0024, t0035 diameter t0024) into a single cross-task table
+correlating primary DSI against vector-sum DSI. Key questions: when primary DSI is flat or at
+ceiling, does vector-sum DSI pick up signal? Does the rank-order of variants agree between the
+two metrics? This supports the t0033 optimiser choice and a standing evaluation-methodology
+recommendation (compare against S-0029-07, S-0030-06, S-0034-07). No simulations needed; pure
+re-analysis of existing CSVs. Recommended task types: data-analysis.
 
 </details>
 

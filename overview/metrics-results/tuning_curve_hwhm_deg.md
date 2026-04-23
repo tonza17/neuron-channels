@@ -1,6 +1,6 @@
 # Tuning Curve Half-Width at Half-Max (degrees)
 
-**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 41
+**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 48
 
 [Back to all metrics](README.md)
 
@@ -29,21 +29,28 @@
 | 21 | [Distal-dendrite diameter sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | distal diam x 2.00 | **81.5833** |
 | 22 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-60 mV | **78.4737** |
 | 23 | [Distal-dendrite diameter sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | distal diam x 1.75 | **78.3333** |
-| 24 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.75 | **76.25** |
-| 25 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 2.00 | **75.3571** |
-| 26 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.50 | **75.2404** |
-| 27 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.00 | **72.5882** |
-| 28 | [Distal-dendrite length sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | distal L x 1.50 | **71.6667** |
-| 29 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-70 mV | **70.4545** |
-| 30 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-50 mV | **69.9519** |
-| 31 | [Port de Rosenroll 2026 DSGC model](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | — | **68.65079365079364** |
-| 32 | [Generate canonical target angle-to-AP-rate tuning curve](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | — | **68.51** |
-| 33 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-80 mV | **68.4375** |
-| 34 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-40 mV | **67.7038** |
-| 35 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-30 mV | **66.4904** |
-| 36 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-90 mV | **65.1786** |
-| 37 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.75 | **64.2857** |
-| 38 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.50 | **63.2083** |
-| 39 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.25 | **62.6838** |
-| 40 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0022 DSGC @ V_rest=-90 mV | **0.7753** |
-| 41 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0022 DSGC @ V_rest=-80 mV | **0.7664** |
+| 24 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 1.50 | **77.75** |
+| 25 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.75 | **76.25** |
+| 26 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 2.00 | **75.3571** |
+| 27 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.50 | **75.2404** |
+| 28 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 1.75 | **74.6786** |
+| 29 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.00 | **72.5882** |
+| 30 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 1.00 | **72.5882** |
+| 31 | [Distal-dendrite length sweep on t0022 DSGC](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | distal L x 1.50 | **71.6667** |
+| 32 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 1.25 | **71.1623** |
+| 33 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-70 mV | **70.4545** |
+| 34 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 2.00 | **70.3125** |
+| 35 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-50 mV | **69.9519** |
+| 36 | [Port de Rosenroll 2026 DSGC model](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | — | **68.65079365079364** |
+| 37 | [Generate canonical target angle-to-AP-rate tuning curve](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | — | **68.51** |
+| 38 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-80 mV | **68.4375** |
+| 39 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 0.75 | **67.8947** |
+| 40 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-40 mV | **67.7038** |
+| 41 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-30 mV | **66.4904** |
+| 42 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0024 DSGC @ V_rest=-90 mV | **65.1786** |
+| 43 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.75 | **64.2857** |
+| 44 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 0.50 | **63.2083** |
+| 45 | [Distal-dendrite length sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | distal L x 1.25 | **62.6838** |
+| 46 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 0.50 | **61.3971** |
+| 47 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0022 DSGC @ V_rest=-90 mV | **0.7753** |
+| 48 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | t0022 DSGC @ V_rest=-80 mV | **0.7664** |
