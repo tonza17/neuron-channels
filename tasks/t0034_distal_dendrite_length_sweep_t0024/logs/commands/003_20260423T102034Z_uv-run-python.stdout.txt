@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0011] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)
