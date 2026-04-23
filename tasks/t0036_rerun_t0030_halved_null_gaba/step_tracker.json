@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Inherit t0030 workflow; identify null-GABA constant in t0022 driver and override to 6 nS.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T21:01:42Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T21:10:20Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
