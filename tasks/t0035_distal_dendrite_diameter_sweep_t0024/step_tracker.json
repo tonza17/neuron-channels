@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI-vs-diameter slope to Schachter2010 active-amplification and passive-filtering predictions; cross-reference with t0030 null and t0034 non-monotonic results.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-23T17:44:49Z",
-      "completed_at": null,
+      "completed_at": "2026-04-23T17:52:11Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
