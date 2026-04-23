@@ -5,13 +5,13 @@
   "name": "Distal-dendrite diameter sweep on t0024 DSGC",
   "short_description": "Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0030_distal_dendrite_diameter_sweep_dsgc"
   ],
   "start_time": "2026-04-23T14:09:57Z",
-  "end_time": null,
+  "end_time": "2026-04-23T18:00:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"

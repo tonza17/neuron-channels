@@ -131,10 +131,10 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators, capture sessions, finalise task.json, prepare PR, merge, overview refresh.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-23T17:56:20Z",
       "completed_at": null,
-      "log_file": "logs/steps/015_reporting/"
+      "log_file": "logs\\steps\\015_reporting/"
     }
   ]
 }
