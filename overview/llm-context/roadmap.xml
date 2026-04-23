@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-23T21:28:06Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-23T22:39:14Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>200527</char_count>
-    <byte_count>200708</byte_count>
-    <estimated_tokens>50131</estimated_tokens>
+    <char_count>198664</char_count>
+    <byte_count>198802</byte_count>
+    <estimated_tokens>49666</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -145,9 +145,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0033_plan_dsgc_morphology_channel_optimisation</id>
         <id>t0034_distal_dendrite_length_sweep_t0024</id>
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
+        <id>t0036_rerun_t0030_halved_null_gaba</id>
       </source_ids>
       <content>
-Completed tasks: 33
+Completed tasks: 34
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -346,6 +347,12 @@ ID: t0035_distal_dendrite_diameter_sweep_t0024
 Completed: 2026-04-23
 Short description: Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0035_distal_dendrite_diameter_sweep_t0024&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Distal-Dendrite Diameter Sweep on t0024 DSGC Summary Swept distal-dendrite diameter across seven multipliers (0.5×-2.0× baseline) on the t0024 de Rosenroll DSGC port under the standard 12-direction × 10-trial moving-bar protocol (840 trials total). **DSI-vs-diameter slope is flat** (slope 0.0041 per log2(multiplier), **p=0.8808**, range across extremes -0.0237). **Neither Schachter2010 (predicted positive slope) nor passive filtering (predicted negative slope) is supported.** Primary DSI range 0.680-0.808 — measurable (unlike t0030&#x27;s pinned 1.000 on...
+
+## Rerun distal-diameter sweep on t0022 with halved null-GABA
+ID: t0036_rerun_t0030_halved_null_gaba
+Completed: 2026-04-23
+Short description: Rerun the t0030 distal-diameter sweep on t0022 with null-direction GABA reduced from 12 nS to 6 nS to unpin primary DSI from 1.000 and restore the Schachter2010 vs passive-filtering discriminator.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0036_rerun_t0030_halved_null_gaba&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Rerun Distal-Diameter Sweep on t0022 with Halved Null-GABA Summary Reran the t0030 distal-diameter sweep on t0022 with `GABA_CONDUCTANCE_NULL_NS = 6.0 nS` (halved from 12 nS, matching Schachter2010&#x27;s compound null inhibition). **The halving was INSUFFICIENT to unpin null firing**: mean null-direction firing remained exactly **0.0 Hz at every diameter multiplier**, primary DSI stayed pinned at 1.000, and the classification label is **`flat_partial`** (pre-condition gate failed). Vector-sum DSI range 0.579-0.590 (range 0.011, p=0.019 — statistically...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -354,10 +361,9 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0035_distal_dend
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0036_rerun_t0030_halved_null_gaba</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 2
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -522,124 +528,6 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
-
-## Rerun distal-diameter sweep on t0022 with halved null-GABA
-ID: t0036_rerun_t0030_halved_null_gaba
-Status: in_progress
-Effective date: 2026-04-23
-Short description: Rerun the t0030 distal-diameter sweep on t0022 with null-direction GABA reduced from 12 nS to 6 nS to unpin primary DSI from 1.000 and restore the Schachter2010 vs passive-filtering discriminator.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0030_distal_dendrite_diameter_sweep_dsgc
-
-#### Motivation
-
-t0030 (distal-diameter sweep on t0022) produced a **null result** for the Schachter2010 vs
-passive-filtering discriminator because **primary DSI was pinned at 1.000 across every diameter
-multiplier**. Null-direction firing was exactly 0 Hz under the t0022 E-I schedule at every diameter,
-so the peak-minus-null DSI metric had no dynamic range to express either predicted mechanism slope.
-
-t0030&#x27;s compare_literature traced the ceiling to `GABA_CONDUCTANCE_NULL_NS = 12 nS` delivered 10 ms
-before AMPA on null trials — approximately **2× the ~6 nS compound null inhibition reported by
-Schachter2010**. Lowering the null-GABA conductance to 6 nS (halved) should leave enough residual
-excitation for occasional null-direction spikes while preserving preferred- direction firing,
-restoring a measurable primary-DSI signal.
-
-Source suggestion **S-0030-01** (high priority).
-
-#### Scope
-
-1. Use the **t0022 DSGC testbed** as-is (channel set, morphology, AIS partition, 12-direction
-   protocol, 10 trials per angle) — EXCEPT: set `GABA_CONDUCTANCE_NULL_NS = 6.0 nS` (half of the
-   default 12 nS). Preferred-direction GABA stays at its default.
-2. Identify distal dendritic sections via t0030&#x27;s selection rule (HOC leaves on `h.RGC.ON`, branch
-   order ≥ 3). COPY the helper into this task&#x27;s `code/`; no cross-task imports.
-3. Sweep 7 distal-diameter multipliers (0.5×, 0.75×, 1.0×, 1.25×, 1.5×, 1.75×, 2.0×) uniformly on
-   all distal branches. Same set as t0030.
-4. 12-direction moving-bar tuning × 10 trials per angle per diameter = **840 trials total**.
-5. Compute **primary DSI (peak-minus-null)** as the operative metric. Unlike t0030, this is expected
-   to vary because null-direction firing should now be non-zero. Also compute vector-sum DSI and
-   standard secondary metrics.
-6. Plot primary DSI vs diameter and classify slope sign:
-   - Positive slope → **Schachter2010 active-dendrite amplification** supported
-   - Negative slope → **Passive-filtering** supported
-   - Flat → mechanism remains ambiguous; diagnose cause (inspect null-firing rate change)
-
-#### Approach
-
-* **Local CPU only.** No remote compute, no paid APIs, $0.
-* Copy the t0030 code/ workflow verbatim: `paths.py`, `constants.py`, `diameter_override.py` (with
-  `identify_distal_sections`), `preflight_distal.py`, `trial_runner_diameter.py`, `run_sweep.py`,
-  `analyse_sweep.py`, `classify_slope.py`, `plot_sweep.py`.
-* Override the `GABA_CONDUCTANCE_NULL_NS` constant at import time (or expose a CLI override). Keep
-  preferred-direction GABA at default.
-* Save per-sweep-point tidy CSV incrementally (crash recovery via `fh.flush()`).
-* Render DSI-vs-diameter curve, vector-sum DSI curve, polar overlay, null-Hz-vs-diameter curve (new
-  diagnostic to confirm the fix is working).
-
-#### Expected Outputs
-
-* `results/results_summary.md` — 2-3 paragraph executive summary including null-Hz-vs-diameter
-  baseline (should be non-zero), primary DSI dynamic range, slope classification, mechanism
-  attribution.
-* `results/results_detailed.md` — per-direction breakdown, slope classification, comparison to
-  t0030&#x27;s pinned-1.000 baseline, discussion of which mechanism the schedule-fixed data favours.
-* `results/images/dsi_vs_diameter.png`, `vector_sum_dsi_vs_diameter.png`, `polar_overlay.png`,
-  `null_hz_vs_diameter.png` (new: confirms the fix desaturates null firing),
-  `peak_hz_vs_diameter.png`.
-* `results/metrics.json` — DSI primary, vector-sum, peak Hz, null Hz per diameter.
-* No paper, dataset, library, model, or answer assets produced.
-
-#### Compute and Budget
-
-* Local CPU only. Expected runtime: **~2 hours** (extrapolated from t0030&#x27;s ~115 min on same
-  testbed; non-zero null firing doesn&#x27;t change per-trial wall time meaningfully).
-* $0 external cost.
-
-#### Measurement
-
-* **Primary metric**: **primary DSI (peak-minus-null)** per diameter — expected to vary now that
-  null firing is unpinned.
-* **Critical diagnostic**: **null-direction firing rate per diameter** — must be non-zero to confirm
-  the GABA change had the intended effect.
-* **Secondary**: vector-sum DSI, peak Hz, HWHM, reliability, preferred-direction firing,
-  per-direction spike counts, distal peak mV.
-
-#### Key Questions
-
-1. Does null-direction firing become non-zero with GABA reduced to 6 nS? (Pre-condition for
-   everything else. If it&#x27;s still 0 Hz, the fix failed; consider a smaller reduction.)
-2. With null firing unpinned, what is the primary DSI-vs-diameter slope sign?
-3. Does the slope match Schachter2010 (positive), passive filtering (negative), or neither?
-4. How does the halved-GABA result on t0022 compare to t0035 (same diameter sweep on t0024)? Both
-   should now have unpinned primary DSI — do they agree on the diameter axis being a weak
-   discriminator?
-
-#### Dependencies
-
-* **t0022_modify_dsgc_channel_testbed** (completed) — provides the DSGC testbed architecture and the
-  default `GABA_CONDUCTANCE_NULL_NS = 12 nS` to be overridden.
-* **t0030_distal_dendrite_diameter_sweep_dsgc** (completed) — provides the workflow template, the
-  `identify_distal_sections` helper (to be copied), and the null-result baseline for before/after
-  comparison.
-
-#### Scientific Context
-
-Source suggestion **S-0030-01** (high priority). Complementary to S-0029-04 (null-GABA sweep at
-fixed length) and S-0029-01 (Poisson + length sweep) — this specifically targets the diameter axis
-with a fixed halved-GABA schedule change. Also parallels t0035 (diameter sweep on t0024) which found
-flat DSI, allowing a cross-testbed comparison under unpinned primary-DSI conditions.
-
-#### Execution Notes
-
-* Follow standard `/execute-task` flow.
-* Include `planning` step.
-* Skip `research-papers`, `research-internet` (t0027 + t0030 already cover the mechanism
-  predictions).
-* Include `research-code` — inherit t0030 workflow + t0022 driver.
-* Skip `setup-machines` / `teardown` (local CPU only).
-* Include `creative-thinking` — if null-Hz rescue works, interpret the slope in the context of t0035
-  (diameter on t0024) result.
-* Include `compare-literature` — compare DSI-vs-diameter slope to Schachter2010 / passive-filtering
-  predictions AND to t0030 null baseline AND to t0035 flat-on-t0024 result.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -825,6 +713,7 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0034-07</id>
         <id>S-0035-01</id>
         <id>S-0035-02</id>
+        <id>S-0036-01</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -899,6 +788,9 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0035-04</id>
         <id>S-0035-05</id>
         <id>S-0035-06</id>
+        <id>S-0036-02</id>
+        <id>S-0036-03</id>
+        <id>S-0036-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -918,7 +810,7 @@ Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 
         <id>S-0029-07</id>
       </source_ids>
       <content>
-Open suggestions: 153
+Open suggestions: 157
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1353,6 +1245,13 @@ Priority: high
 Kind: experiment
 Source task: t0035_distal_dendrite_diameter_sweep_t0024
 Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035) arises because NEURON&#x27;s surface-density gbar scales total channel current by d while axial load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI trend, the compensation confound is confirmed; if still flat, rule out this hypothesis. Recommended task types: experiment-run.
+
+## Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022 distal-diameter sweep
+ID: S-0036-01
+Priority: high
+Kind: experiment
+Source task: t0036_rerun_t0030_halved_null_gaba
+t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0 Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition rescue. The classifier auto-recommendation was &#x27;reduce null-GABA further to ~4 nS&#x27;. Rerun the t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS, primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally incompatible with primary DSI on morphology axes and the...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -1871,6 +1770,27 @@ Priority: medium
 Kind: technique
 Source task: t0035_distal_dendrite_diameter_sweep_t0024
 The t0033 DSGC optimisation plan treats distal length and distal diameter as co-equal morphology parameters. t0034 (p=0.038 on length) and t0035 (p=0.88 on diameter) together show that distal diameter has DSI leverage below the noise floor on the t0024 substrate, while length is a strong discriminator. Concrete action: reduce distal-diameter weight in the optimiser search space (smaller range, coarser grid, or drop it entirely) so the GPU budget concentrates on axes that actually move DSI. Distinct from S-0034-07 which focuses on the primary-vs-vector-sum objective; this one concerns the parameter search space itself. Recommended task types: experiment-run, data-analysis.
+
+## GABA-to-AMPA timing offset sweep on t0022 diameter testbed to test timing-dominates-conductance hypothesis
+ID: S-0036-02
+Priority: medium
+Kind: experiment
+Source task: t0036_rerun_t0030_halved_null_gaba
+t0036&#x27;s creative_thinking cited &#x27;timing dominates conductance&#x27; as the second-leading explanation for why halving null-GABA from 12 nS to 6 nS did not unpin null firing: the t0022 schedule delivers GABA 10 ms BEFORE AMPA on null trials, and the integrated kinetic profile (not the peak) may clamp the distal membrane below Nav threshold for the whole AMPA window. Sweep the GABA-leads-AMPA offset across {10 ms (default), 5 ms, 0 ms, -5 ms (AMPA leads GABA)} at two fixed GABA conductances (12 nS baseline and 6 nS) at diameter 1.0x only (12 angles x 10 trials x 4 offsets x 2 GABA = 960 trials, ~35 min CPU). Primary outcome: find the offset at which null firing first exceeds 0.1 Hz, isolating...
+
+## Distal voltage-trace capture at null direction on t0022 to confirm sub-threshold-clamp hypothesis
+ID: S-0036-03
+Priority: medium
+Kind: experiment
+Source task: t0036_rerun_t0030_halved_null_gaba
+t0036 recorded per-trial scalar distal peak_mv only (~-55 mV at null direction) but did not export the full distal membrane time course. Creative_thinking hypothesis 4 (distal Nav channels sub-threshold at null regardless of diameter amplification) and limitation bullet 5 both flag missing voltage traces as blocking direct mechanistic confirmation. Extend the t0022 trial driver to save a 200-sample time-course of the most-distal compartment voltage (one trial per direction at diameter 1.0x, GABA_NULL = 6 nS and 12 nS, 24 traces total, ~5 min CPU). Plot v_distal(t) across directions and annotate Nav activation threshold (~-55 mV) and AMPA/GABA event onsets. Expected: at null the distal...
+
+## Extract the t0022 GABA-override monkey-patch into a reusable library asset for downstream tasks
+ID: S-0036-04
+Priority: medium
+Kind: library
+Source task: t0036_rerun_t0030_halved_null_gaba
+t0036 introduced code/gaba_override.py which monkey-patches _t0022_constants.GABA_CONDUCTANCE_NULL_NS at import time and re-binds the local name inside trial_runner_diameter.py so the schedule_ei_onsets ratio is computed against the overridden value. This pattern is immediately needed for S-0036-01 (further null-GABA reductions) and S-0036-02 (GABA-AMPA timing offset). Rather than each task reimplementing the monkey-patch, lift it into a library asset (working name: dsgc_t0022_schedule_overrides) exposing a typed context-manager or setup function accepting gaba_null_ns, gaba_preferred_ns, gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a smoke test asserting the...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

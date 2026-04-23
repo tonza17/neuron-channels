@@ -8,24 +8,27 @@
 
 ## 2026-04-23 (3)
 
-## ⏳ In Progress
+## ✅ Completed
 
 <details>
-<summary>⏳ 0036 — <strong>Rerun distal-diameter sweep on t0022 with halved
+<summary>✅ 0036 — <strong>Rerun distal-diameter sweep on t0022 with halved
 null-GABA</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0036_rerun_t0030_halved_null_gaba` |
-| **Status** | in_progress |
+| **Status** | completed |
 | **Effective date** | 2026-04-23 |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
 | **Expected assets** | — |
 | **Source suggestion** | `S-0030-01` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
 | **Start time** | 2026-04-23T20:56:59Z |
+| **End time** | 2026-04-23T22:40:00Z |
+| **Step progress** | 11/15 |
 | **Task page** | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
 | **Task folder** | [`t0036_rerun_t0030_halved_null_gaba/`](../../../tasks/t0036_rerun_t0030_halved_null_gaba/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) |
 
 # Rerun Distal-Diameter Sweep on t0022 with Halved Null-GABA
 
@@ -143,9 +146,36 @@ conditions.
 * Include `compare-literature` — compare DSI-vs-diameter slope to Schachter2010 /
   passive-filtering predictions AND to t0030 null baseline AND to t0035 flat-on-t0024 result.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "2"
+> task_id: "t0036_rerun_t0030_halved_null_gaba"
+> date_completed: "2026-04-23"
+> status: "complete"
+> ---
+> **Results Summary: Rerun Distal-Diameter Sweep on t0022 with Halved Null-GABA**
+>
+> **Summary**
+>
+> Reran the t0030 distal-diameter sweep on t0022 with `GABA_CONDUCTANCE_NULL_NS = 6.0 nS`
+> (halved from
+> 12 nS, matching Schachter2010's compound null inhibition). **The halving was INSUFFICIENT to
+> unpin
+> null firing**: mean null-direction firing remained exactly **0.0 Hz at every diameter
+> multiplier**,
+> primary DSI stayed pinned at 1.000, and the classification label is **`flat_partial`**
+> (pre-condition gate failed). Vector-sum DSI range 0.579-0.590 (range 0.011, p=0.019 —
+> statistically
+> significant but practically negligible). The GABA- reduction rescue hypothesis from
+> S-0030-01 is
+> falsified at 6 nS; follow-up queued to try further reductions (4/2/1 nS) or switch to
+> Poisson-noise
+> rescue.
+>
+> **Metrics**
+
+</details>
 
 <details>
 <summary>✅ 0035 — <strong>Distal-dendrite diameter sweep on t0024 DSGC</strong></summary>

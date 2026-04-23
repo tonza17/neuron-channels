@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-36-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-154-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-158-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (14K)
-| [full](llm-context/full.xml) (208K) | [roadmap](llm-context/roadmap.xml) (50K) |
-[results](llm-context/results-deep-dive.xml) (143K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (15K)
+| [full](llm-context/full.xml) (209K) | [roadmap](llm-context/roadmap.xml) (50K) |
+[results](llm-context/results-deep-dive.xml) (147K) |
 [assets](llm-context/literature-and-assets.xml) (31K)
 
-*Last updated: 2026-04-23 21:28 UTC*
+*Last updated: 2026-04-23 22:39 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -50,11 +50,9 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | 2026-04-23 20:56 |
+No tasks in progress.
 
 ---
 
@@ -80,10 +78,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (33 total)](tasks/by-status/completed.md)
+## [Recently Completed (34 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | [`results`](../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) | 2026-04-23 22:40 |
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
 | 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
@@ -93,9 +92,8 @@ No blocked tasks.
 | 0032 | [Brainstorm results session 7](../overview/tasks/task_pages/t0032_brainstorm_results_7.md) | [`results`](../tasks/t0032_brainstorm_results_7/results/results_detailed.md) | 2026-04-22 12:30 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | [`results`](../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) | 2026-04-21 22:23 |
 | 0026 | [V_rest sweep tuning curves for t0022 and t0024 DSGC ports](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | [`results`](../tasks/t0026_vrest_sweep_tuning_curves_dsgc/results/results_detailed.md) | 2026-04-21 17:43 |
-| 0025 | [Brainstorm results session 5](../overview/tasks/task_pages/t0025_brainstorm_results_5.md) | [`results`](../tasks/t0025_brainstorm_results_5/results/results_detailed.md) | 2026-04-21 12:35 |
 
-*23 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*24 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -111,7 +109,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (139 open)](suggestions/)
+## [Recent Suggestions (143 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -307,11 +305,11 @@ experiment-run.
 
 </details>
 
-*129 more open suggestions → [open suggestions](suggestions/)*
+*133 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (50)](suggestions/)
+## [High Priority Suggestions (51)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -411,6 +409,27 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
+distal-diameter sweep</strong> (S-0036-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0036_rerun_t0030_halved_null_gaba](../tasks/t0036_rerun_t0030_halved_null_gaba/)
+
+t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
+Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
+rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
+t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
+at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
+primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
+on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
+incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
+(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
+(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
+diameter-sweep code path. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
 sweep on t0022</strong> (S-0029-01)</summary>
 
@@ -491,27 +510,7 @@ option. Recommended task types: write-library, answer-question.
 
 </details>
 
-<details>
-<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
-assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
-(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
-1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
-literature-less guess that drives the largest sensitivity-band column. Run a short task that
-(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
-NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
-under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
-per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
-$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
-experiment-run, baseline-evaluation.
-
-</details>
-
-*40 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

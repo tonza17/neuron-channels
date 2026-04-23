@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-25 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **23 open** (12
-high, 9 medium, 2 low), **2 closed**.
+26 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **24 open** (12
+high, 10 medium, 2 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -353,6 +353,33 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Distal voltage-trace capture at null direction on t0022 to
+confirm sub-threshold-clamp hypothesis</strong> (S-0036-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0036-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0036 recorded per-trial scalar distal peak_mv only (~-55 mV at null direction) but did not
+export the full distal membrane time course. Creative_thinking hypothesis 4 (distal Nav
+channels sub-threshold at null regardless of diameter amplification) and limitation bullet 5
+both flag missing voltage traces as blocking direct mechanistic confirmation. Extend the t0022
+trial driver to save a 200-sample time-course of the most-distal compartment voltage (one
+trial per direction at diameter 1.0x, GABA_NULL = 6 nS and 12 nS, 24 traces total, ~5 min
+CPU). Plot v_distal(t) across directions and annotate Nav activation threshold (~-55 mV) and
+AMPA/GABA event onsets. Expected: at null the distal membrane never crosses Nav threshold for
+the whole AMPA window on either 6 nS or 12 nS; at preferred it crosses and fires. Closes
+creative_thinking hypothesis 4 and confirms the sub-threshold-clamp failure mode. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 

@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (5)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(37)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(39)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2267,7 +2267,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (31 open, 6 closed)
+## Suggestions (33 open, 6 closed)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -2413,6 +2413,48 @@ optimiser search space (smaller range, coarser grid, or drop it entirely) so the
 concentrates on axes that actually move DSI. Distinct from S-0034-07 which focuses on the
 primary-vs-vector-sum objective; this one concerns the parameter search space itself.
 Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
+distal-diameter sweep</strong> (S-0036-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0036_rerun_t0030_halved_null_gaba](../../tasks/t0036_rerun_t0030_halved_null_gaba/)
+
+t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
+Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
+rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
+t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
+at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
+primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
+on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
+incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
+(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
+(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
+diameter-sweep code path. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Distal voltage-trace capture at null direction on t0022 to
+confirm sub-threshold-clamp hypothesis</strong> (S-0036-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0036_rerun_t0030_halved_null_gaba](../../tasks/t0036_rerun_t0030_halved_null_gaba/)
+
+t0036 recorded per-trial scalar distal peak_mv only (~-55 mV at null direction) but did not
+export the full distal membrane time course. Creative_thinking hypothesis 4 (distal Nav
+channels sub-threshold at null regardless of diameter amplification) and limitation bullet 5
+both flag missing voltage traces as blocking direct mechanistic confirmation. Extend the t0022
+trial driver to save a 200-sample time-course of the most-distal compartment voltage (one
+trial per direction at diameter 1.0x, GABA_NULL = 6 nS and 12 nS, 24 traces total, ~5 min
+CPU). Plot v_distal(t) across directions and annotate Nav activation threshold (~-55 mV) and
+AMPA/GABA event onsets. Expected: at null the distal membrane never crosses Nav threshold for
+the whole AMPA window on either 6 nS or 12 nS; at preferred it crosses and fires. Closes
+creative_thinking hypothesis 4 and confirms the sub-threshold-clamp failure mode. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 

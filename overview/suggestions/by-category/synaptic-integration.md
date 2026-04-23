@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-24 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **21 open** (11 high,
-10 medium), **3 closed**.
+27 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **24 open** (12 high,
+12 medium), **3 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -241,6 +241,33 @@ targets.
 </details>
 
 <details>
+<summary>🧪 <strong>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
+distal-diameter sweep</strong> (S-0036-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0036-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
+Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
+rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
+t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
+at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
+primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
+on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
+incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
+(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
+(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
+diameter-sweep code path. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
 discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
 
@@ -359,6 +386,60 @@ inject measured conductance waveforms, (c) connectomic reconstructions of SAC-to
 (Briggman et al. 2011, Kim et al. 2014), (d) recent E-I temporal co-tuning studies in retina
 (rather than auditory cortex), and (e) DSGC dendritic computation (Oesch, Euler, Taylor,
 Sivyer). This closes the gap between canonical theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extract the t0022 GABA-override monkey-patch into a reusable
+library asset for downstream tasks</strong> (S-0036-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0036-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0036 introduced code/gaba_override.py which monkey-patches
+_t0022_constants.GABA_CONDUCTANCE_NULL_NS at import time and re-binds the local name inside
+trial_runner_diameter.py so the schedule_ei_onsets ratio is computed against the overridden
+value. This pattern is immediately needed for S-0036-01 (further null-GABA reductions) and
+S-0036-02 (GABA-AMPA timing offset). Rather than each task reimplementing the monkey-patch,
+lift it into a library asset (working name: dsgc_t0022_schedule_overrides) exposing a typed
+context-manager or setup function accepting gaba_null_ns, gaba_preferred_ns,
+gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a smoke test
+asserting the override survived a fresh import and that the null/preferred ratio matches the
+requested value. Distinct from S-0033-06 (DSI objective evaluator) which wraps the scoring
+side - this wraps the schedule-parameter side. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA-to-AMPA timing offset sweep on t0022 diameter testbed to
+test timing-dominates-conductance hypothesis</strong> (S-0036-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0036-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0036's creative_thinking cited 'timing dominates conductance' as the second-leading
+explanation for why halving null-GABA from 12 nS to 6 nS did not unpin null firing: the t0022
+schedule delivers GABA 10 ms BEFORE AMPA on null trials, and the integrated kinetic profile
+(not the peak) may clamp the distal membrane below Nav threshold for the whole AMPA window.
+Sweep the GABA-leads-AMPA offset across {10 ms (default), 5 ms, 0 ms, -5 ms (AMPA leads GABA)}
+at two fixed GABA conductances (12 nS baseline and 6 nS) at diameter 1.0x only (12 angles x 10
+trials x 4 offsets x 2 GABA = 960 trials, ~35 min CPU). Primary outcome: find the offset at
+which null firing first exceeds 0.1 Hz, isolating timing as an independent rescue axis
+orthogonal to S-0036-01's conductance axis. Distinct from S-0030-02 (Poisson) and S-0036-01
+(conductance) - this targets the GABA-AMPA offset specifically. Recommended task types:
+experiment-run.
 
 </details>
 

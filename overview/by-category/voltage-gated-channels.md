@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(25)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(26)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (23 open, 2 closed)
+## Suggestions (24 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
@@ -940,6 +940,27 @@ is a known resonance and input-impedance shaper that could partly explain why di
 reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
 diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
 which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Distal voltage-trace capture at null direction on t0022 to
+confirm sub-threshold-clamp hypothesis</strong> (S-0036-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
+[t0036_rerun_t0030_halved_null_gaba](../../tasks/t0036_rerun_t0030_halved_null_gaba/)
+
+t0036 recorded per-trial scalar distal peak_mv only (~-55 mV at null direction) but did not
+export the full distal membrane time course. Creative_thinking hypothesis 4 (distal Nav
+channels sub-threshold at null regardless of diameter amplification) and limitation bullet 5
+both flag missing voltage traces as blocking direct mechanistic confirmation. Extend the t0022
+trial driver to save a 200-sample time-course of the most-distal compartment voltage (one
+trial per direction at diameter 1.0x, GABA_NULL = 6 nS and 12 nS, 24 traces total, ~5 min
+CPU). Plot v_distal(t) across directions and annotate Nav activation threshold (~-55 mV) and
+AMPA/GABA event onsets. Expected: at null the distal membrane never crosses Nav threshold for
+the whole AMPA window on either 6 nS or 12 nS; at preferred it crosses and fires. Closes
+creative_thinking hypothesis 4 and confirms the sub-threshold-clamp failure mode. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 
