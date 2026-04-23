@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="news/"><img src="https://img.shields.io/badge/News-3-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-35-4682B4" alt="Tasks"></a>
+  <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-36-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-154-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (14K)
-| [full](llm-context/full.xml) (206K) | [roadmap](llm-context/roadmap.xml) (48K) |
+| [full](llm-context/full.xml) (208K) | [roadmap](llm-context/roadmap.xml) (50K) |
 [results](llm-context/results-deep-dive.xml) (143K) |
 [assets](llm-context/literature-and-assets.xml) (31K)
 
-*Last updated: 2026-04-23 17:59 UTC*
+*Last updated: 2026-04-23 21:28 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -41,17 +41,20 @@
 
 ---
 
-## [Daily News (3)](news/)
+## [Daily News (4)](news/)
 
+* [Apr 23, 2026](news/2026-04-23.md) — 2 completed · 3 created · ~$0
 * [Apr 22, 2026](news/2026-04-22.md) — 5 completed · 5 created · ~$0
 * [Apr 21, 2026](news/2026-04-21.md) — 5 completed · 3 created · ~$0
 * [Apr 20, 2026](news/2026-04-20.md) — 14 completed · 11 created · ~$0
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | 2026-04-23 20:56 |
 
 ---
 
@@ -108,7 +111,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (140 open)](suggestions/)
+## [Recent Suggestions (139 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -304,11 +307,11 @@ experiment-run.
 
 </details>
 
-*130 more open suggestions → [open suggestions](suggestions/)*
+*129 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (51)](suggestions/)
+## [High Priority Suggestions (50)](suggestions/)
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -449,25 +452,6 @@ min CPU. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
-conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
-DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
-schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
-delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
-(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
-with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
-regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
-S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
-cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
 sweep on t0022</strong> (S-0030-02)</summary>
 
@@ -507,7 +491,27 @@ option. Recommended task types: write-library, answer-question.
 
 </details>
 
-*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
+assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
+(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
+1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
+literature-less guess that drives the largest sensitivity-band column. Run a short task that
+(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
+NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
+under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
+per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
+$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
+experiment-run, baseline-evaluation.
+
+</details>
+
+*40 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

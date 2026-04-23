@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 37 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **32 open** (12
-high, 18 medium, 2 low), **5 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **31 open** (11
+high, 18 medium, 2 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -210,31 +210,6 @@ from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and le
 discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
 predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
 types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
-conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0030-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
-DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
-schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
-delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
-(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
-with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
-regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
-S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
-cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
 
 </details>
 
@@ -859,6 +834,33 @@ branch-level nonlinearities, sublinear-to-supralinear integration regimes, and
 active-vs-passive comparisons in cortical and cerebellar neurons. Exclude the 20 DOIs already
 in the t0002 corpus. Output: paper assets + synthesis highlighting which mechanisms plausibly
 transfer to DSGC dendrites.
+
+</details>
+
+<details>
+<summary>✅ <s>Rerun the distal-diameter sweep on t0022 with null-GABA conductance
+reduced from 12 nS to 6 nS</s> — covered by <a
+href="../../../tasks/t0036_rerun_t0030_halved_null_gaba/"><code>t0036_rerun_t0030_halved_null_gaba</code></a>
+(S-0030-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
+DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
+schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
+delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
+(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
+with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
+regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
+S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
+cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
 
 </details>
 

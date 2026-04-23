@@ -547,31 +547,6 @@ types: experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Rerun the distal-diameter sweep on t0022 with null-GABA
-conductance reduced from 12 nS to 6 nS</strong> (S-0030-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0030-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
-DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
-schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
-delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
-(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
-with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
-regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
-S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
-cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -835,6 +810,35 @@ co-primary outcome variables and require all three to be reported alongside DSI 
 results_summary.md and compare_literature.md. Encode the rule as an extension to the
 task-results specification, add a verificator check for the DSI-ceiling condition, and
 document the convention in arf/specifications. Recommended task types: infrastructure-setup.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Rerun the distal-diameter sweep on t0022 with null-GABA conductance
+reduced from 12 nS to 6 nS</s> — covered by <a
+href="../../../tasks/t0036_rerun_t0030_halved_null_gaba/"><code>t0036_rerun_t0030_halved_null_gaba</code></a>
+(S-0030-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator because primary
+DSI is pinned at 1.000 at every diameter multiplier (null firing 0 Hz under the t0022 E-I
+schedule). compare_literature.md traces the ceiling to GABA_CONDUCTANCE_NULL_NS = 12 nS
+delivered 10 ms before AMPA on null trials, about 2x Schachter2010's compound null inhibition
+(~6 nS). Rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials)
+with GABA_CONDUCTANCE_NULL_NS lowered to 6 nS so null firing becomes non-zero and primary DSI
+regains dynamic range. Distinct from S-0029-04 (null-GABA sweep at fixed length 1.0x) and
+S-0029-01 (Poisson + length sweep): this targets the diameter axis specifically. Expected
+cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
 
 </details>
 
