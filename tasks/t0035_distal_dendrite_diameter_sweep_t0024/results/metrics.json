@@ -1,0 +1,88 @@
+{
+  "variants": [
+    {
+      "variant_id": "diameter_0p50",
+      "label": "distal diam x 0.50",
+      "dimensions": {
+        "diameter_multiplier": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.703704,
+        "tuning_curve_hwhm_deg": 61.3971,
+        "tuning_curve_reliability": 0.942704
+      }
+    },
+    {
+      "variant_id": "diameter_0p75",
+      "label": "distal diam x 0.75",
+      "dimensions": {
+        "diameter_multiplier": 0.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.741935,
+        "tuning_curve_hwhm_deg": 67.8947,
+        "tuning_curve_reliability": 0.926437
+      }
+    },
+    {
+      "variant_id": "diameter_1p00",
+      "label": "distal diam x 1.00",
+      "dimensions": {
+        "diameter_multiplier": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.770492,
+        "tuning_curve_hwhm_deg": 72.5882,
+        "tuning_curve_reliability": 0.978074
+      }
+    },
+    {
+      "variant_id": "diameter_1p25",
+      "label": "distal diam x 1.25",
+      "dimensions": {
+        "diameter_multiplier": 1.25
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.745455,
+        "tuning_curve_hwhm_deg": 71.1623,
+        "tuning_curve_reliability": 0.965082
+      }
+    },
+    {
+      "variant_id": "diameter_1p50",
+      "label": "distal diam x 1.50",
+      "dimensions": {
+        "diameter_multiplier": 1.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.807692,
+        "tuning_curve_hwhm_deg": 77.75,
+        "tuning_curve_reliability": 0.941639
+      }
+    },
+    {
+      "variant_id": "diameter_1p75",
+      "label": "distal diam x 1.75",
+      "dimensions": {
+        "diameter_multiplier": 1.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.735849,
+        "tuning_curve_hwhm_deg": 74.6786,
+        "tuning_curve_reliability": 0.944097
+      }
+    },
+    {
+      "variant_id": "diameter_2p00",
+      "label": "distal diam x 2.00",
+      "dimensions": {
+        "diameter_multiplier": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.68,
+        "tuning_curve_hwhm_deg": 70.3125,
+        "tuning_curve_reliability": 0.977348
+      }
+    }
+  ]
+}

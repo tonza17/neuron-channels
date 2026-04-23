@@ -1,0 +1,866 @@
+[t0035 sweep] multipliers = (0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0)
+[t0035 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0035 sweep] n_trials per (multiplier, angle) = 10
+[t0035 sweep] AR2 rho = 0.6
+[t0035 sweep] tidy CSV -> tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\sweep_results.csv
+[t0035 sweep] per-diameter CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter
+[t0035 sweep] building t0024 DSGC cell + synapse bundle + distal snapshot...
+[t0035 sweep] cell built in 0.2s; n_terminals = 177; n_distal = 177
+[t0035 sweep] applied distal diam x 0.50 to 177 sections
+  D=0.50x  dir=  0  trial=0  spikes=  5  rate=  5.00Hz  peak=+38.0mV
+  D=0.50x  dir=  0  trial=1  spikes=  5  rate=  5.00Hz  peak=+36.0mV
+  D=0.50x  dir=  0  trial=2  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  D=0.50x  dir=  0  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.9mV
+  D=0.50x  dir=  0  trial=4  spikes=  5  rate=  5.00Hz  peak=+37.8mV
+  D=0.50x  dir=  0  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+  D=0.50x  dir=  0  trial=6  spikes=  6  rate=  6.00Hz  peak=+38.0mV
+  D=0.50x  dir=  0  trial=7  spikes=  6  rate=  6.00Hz  peak=+37.8mV
+  D=0.50x  dir=  0  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=0.50x  dir=  0  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  D=0.50x  dir= 30  trial=0  spikes=  4  rate=  4.00Hz  peak=+36.0mV
+  D=0.50x  dir= 30  trial=1  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=0.50x  dir= 30  trial=2  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=0.50x  dir= 30  trial=3  spikes=  7  rate=  7.00Hz  peak=+38.0mV
+  D=0.50x  dir= 30  trial=4  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=0.50x  dir= 30  trial=5  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  D=0.50x  dir= 30  trial=6  spikes=  4  rate=  4.00Hz  peak=+37.9mV
+  D=0.50x  dir= 30  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=0.50x  dir= 30  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=0.50x  dir= 30  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=0.50x  dir= 60  trial=0  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  D=0.50x  dir= 60  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  D=0.50x  dir= 60  trial=2  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=0.50x  dir= 60  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  D=0.50x  dir= 60  trial=4  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=0.50x  dir= 60  trial=5  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=0.50x  dir= 60  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  D=0.50x  dir= 60  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  D=0.50x  dir= 60  trial=8  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=0.50x  dir= 60  trial=9  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  D=0.50x  dir= 90  trial=0  spikes=  2  rate=  2.00Hz  peak=+35.1mV
+  D=0.50x  dir= 90  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  D=0.50x  dir= 90  trial=2  spikes=  0  rate=  0.00Hz  peak=-52.0mV
+  D=0.50x  dir= 90  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=0.50x  dir= 90  trial=4  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  D=0.50x  dir= 90  trial=5  spikes=  0  rate=  0.00Hz  peak=-48.1mV
+  D=0.50x  dir= 90  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=0.50x  dir= 90  trial=7  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=0.50x  dir= 90  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=0.50x  dir= 90  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=0.50x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=0.50x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=0.50x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  D=0.50x  dir=120  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=0.50x  dir=120  trial=4  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  D=0.50x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+35.0mV
+  D=0.50x  dir=120  trial=6  spikes=  0  rate=  0.00Hz  peak=-49.7mV
+  D=0.50x  dir=120  trial=7  spikes=  0  rate=  0.00Hz  peak=-49.0mV
+  D=0.50x  dir=120  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=0.50x  dir=120  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=0.50x  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-46.3mV
+  D=0.50x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=0.50x  dir=150  trial=2  spikes=  1  rate=  1.00Hz  peak=+38.7mV
+  D=0.50x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=0.50x  dir=150  trial=4  spikes=  0  rate=  0.00Hz  peak=-52.5mV
+  D=0.50x  dir=150  trial=5  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=0.50x  dir=150  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=0.50x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=0.50x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=0.50x  dir=150  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=0.50x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=0.50x  dir=180  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=0.50x  dir=180  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=0.50x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.50x  dir=180  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  D=0.50x  dir=180  trial=5  spikes=  1  rate=  1.00Hz  peak=+38.9mV
+  D=0.50x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=0.50x  dir=180  trial=7  spikes=  0  rate=  0.00Hz  peak=-51.7mV
+  D=0.50x  dir=180  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=0.50x  dir=180  trial=9  spikes=  0  rate=  0.00Hz  peak=-51.3mV
+  D=0.50x  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-50.6mV
+  D=0.50x  dir=210  trial=1  spikes=  0  rate=  0.00Hz  peak=-51.2mV
+  D=0.50x  dir=210  trial=2  spikes=  0  rate=  0.00Hz  peak=-48.5mV
+  D=0.50x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=0.50x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=0.50x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=0.50x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+34.8mV
+  D=0.50x  dir=210  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=0.50x  dir=210  trial=8  spikes=  0  rate=  0.00Hz  peak=-53.1mV
+  D=0.50x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=0.50x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=0.50x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=0.50x  dir=240  trial=2  spikes=  0  rate=  0.00Hz  peak=-46.7mV
+  D=0.50x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=0.50x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.50x  dir=240  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=0.50x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=0.50x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=0.50x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=0.50x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=0.50x  dir=270  trial=0  spikes=  2  rate=  2.00Hz  peak=+38.1mV
+  D=0.50x  dir=270  trial=1  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=0.50x  dir=270  trial=2  spikes=  2  rate=  2.00Hz  peak=+38.0mV
+  D=0.50x  dir=270  trial=3  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  D=0.50x  dir=270  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=0.50x  dir=270  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=0.50x  dir=270  trial=6  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=0.50x  dir=270  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.50x  dir=270  trial=8  spikes=  2  rate=  2.00Hz  peak=+39.0mV
+  D=0.50x  dir=270  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=0.50x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  D=0.50x  dir=300  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=0.50x  dir=300  trial=2  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=0.50x  dir=300  trial=3  spikes=  1  rate=  1.00Hz  peak=+38.5mV
+  D=0.50x  dir=300  trial=4  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=0.50x  dir=300  trial=5  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=0.50x  dir=300  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=0.50x  dir=300  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=0.50x  dir=300  trial=8  spikes=  4  rate=  4.00Hz  peak=+38.1mV
+  D=0.50x  dir=300  trial=9  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=0.50x  dir=330  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  D=0.50x  dir=330  trial=1  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=0.50x  dir=330  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=0.50x  dir=330  trial=3  spikes=  4  rate=  4.00Hz  peak=+38.4mV
+  D=0.50x  dir=330  trial=4  spikes=  4  rate=  4.00Hz  peak=+37.9mV
+  D=0.50x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=0.50x  dir=330  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  D=0.50x  dir=330  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  D=0.50x  dir=330  trial=8  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=0.50x  dir=330  trial=9  spikes=  4  rate=  4.00Hz  peak=+38.4mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D0p50.csv
+[t0035 sweep] applied distal diam x 0.75 to 177 sections
+  D=0.75x  dir=  0  trial=0  spikes=  6  rate=  6.00Hz  peak=+37.9mV
+  D=0.75x  dir=  0  trial=1  spikes=  5  rate=  5.00Hz  peak=+38.8mV
+  D=0.75x  dir=  0  trial=2  spikes=  7  rate=  7.00Hz  peak=+37.2mV
+  D=0.75x  dir=  0  trial=3  spikes=  6  rate=  6.00Hz  peak=+38.7mV
+  D=0.75x  dir=  0  trial=4  spikes=  6  rate=  6.00Hz  peak=+37.4mV
+  D=0.75x  dir=  0  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=0.75x  dir=  0  trial=6  spikes=  5  rate=  5.00Hz  peak=+37.9mV
+  D=0.75x  dir=  0  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=0.75x  dir=  0  trial=8  spikes=  6  rate=  6.00Hz  peak=+37.3mV
+  D=0.75x  dir=  0  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  D=0.75x  dir= 30  trial=0  spikes=  6  rate=  6.00Hz  peak=+38.6mV
+  D=0.75x  dir= 30  trial=1  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  D=0.75x  dir= 30  trial=2  spikes=  7  rate=  7.00Hz  peak=+37.0mV
+  D=0.75x  dir= 30  trial=3  spikes=  6  rate=  6.00Hz  peak=+37.5mV
+  D=0.75x  dir= 30  trial=4  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  D=0.75x  dir= 30  trial=5  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=0.75x  dir= 30  trial=6  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  D=0.75x  dir= 30  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  D=0.75x  dir= 30  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=0.75x  dir= 30  trial=9  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  D=0.75x  dir= 60  trial=0  spikes=  3  rate=  3.00Hz  peak=+35.9mV
+  D=0.75x  dir= 60  trial=1  spikes=  6  rate=  6.00Hz  peak=+36.6mV
+  D=0.75x  dir= 60  trial=2  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=0.75x  dir= 60  trial=3  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  D=0.75x  dir= 60  trial=4  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=0.75x  dir= 60  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=0.75x  dir= 60  trial=6  spikes=  4  rate=  4.00Hz  peak=+38.4mV
+  D=0.75x  dir= 60  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=0.75x  dir= 60  trial=8  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  D=0.75x  dir= 60  trial=9  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  D=0.75x  dir= 90  trial=0  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=0.75x  dir= 90  trial=1  spikes=  2  rate=  2.00Hz  peak=+35.2mV
+  D=0.75x  dir= 90  trial=2  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  D=0.75x  dir= 90  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=0.75x  dir= 90  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  D=0.75x  dir= 90  trial=5  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  D=0.75x  dir= 90  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.75x  dir= 90  trial=7  spikes=  2  rate=  2.00Hz  peak=+38.2mV
+  D=0.75x  dir= 90  trial=8  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=0.75x  dir= 90  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=0.75x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=0.75x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.75x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=0.75x  dir=120  trial=3  spikes=  2  rate=  2.00Hz  peak=+35.0mV
+  D=0.75x  dir=120  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=0.75x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+38.2mV
+  D=0.75x  dir=120  trial=6  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=0.75x  dir=120  trial=7  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  D=0.75x  dir=120  trial=8  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  D=0.75x  dir=120  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=0.75x  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-53.9mV
+  D=0.75x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=0.75x  dir=150  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=0.75x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.75x  dir=150  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.9mV
+  D=0.75x  dir=150  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.75x  dir=150  trial=6  spikes=  0  rate=  0.00Hz  peak=-49.0mV
+  D=0.75x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=0.75x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=0.75x  dir=150  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=0.75x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=0.75x  dir=180  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.75x  dir=180  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=0.75x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.75x  dir=180  trial=4  spikes=  0  rate=  0.00Hz  peak=-52.6mV
+  D=0.75x  dir=180  trial=5  spikes=  0  rate=  0.00Hz  peak=-54.4mV
+  D=0.75x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=0.75x  dir=180  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=0.75x  dir=180  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=0.75x  dir=180  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=0.75x  dir=210  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.75x  dir=210  trial=1  spikes=  0  rate=  0.00Hz  peak=-53.3mV
+  D=0.75x  dir=210  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=0.75x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=0.75x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+38.1mV
+  D=0.75x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=0.75x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=0.75x  dir=210  trial=7  spikes=  0  rate=  0.00Hz  peak=-45.1mV
+  D=0.75x  dir=210  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.75x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+38.1mV
+  D=0.75x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=0.75x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=0.75x  dir=240  trial=2  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=0.75x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=0.75x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=0.75x  dir=240  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=0.75x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=0.75x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=0.75x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=0.75x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=0.75x  dir=270  trial=0  spikes=  3  rate=  3.00Hz  peak=+38.5mV
+  D=0.75x  dir=270  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=0.75x  dir=270  trial=2  spikes=  4  rate=  4.00Hz  peak=+39.1mV
+  D=0.75x  dir=270  trial=3  spikes=  2  rate=  2.00Hz  peak=+37.7mV
+  D=0.75x  dir=270  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.9mV
+  D=0.75x  dir=270  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=0.75x  dir=270  trial=6  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  D=0.75x  dir=270  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  D=0.75x  dir=270  trial=8  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=0.75x  dir=270  trial=9  spikes=  2  rate=  2.00Hz  peak=+38.3mV
+  D=0.75x  dir=300  trial=0  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=0.75x  dir=300  trial=1  spikes=  4  rate=  4.00Hz  peak=+38.0mV
+  D=0.75x  dir=300  trial=2  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=0.75x  dir=300  trial=3  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  D=0.75x  dir=300  trial=4  spikes=  2  rate=  2.00Hz  peak=+38.0mV
+  D=0.75x  dir=300  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=0.75x  dir=300  trial=6  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  D=0.75x  dir=300  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  D=0.75x  dir=300  trial=8  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  D=0.75x  dir=300  trial=9  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=0.75x  dir=330  trial=0  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=0.75x  dir=330  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=0.75x  dir=330  trial=2  spikes=  5  rate=  5.00Hz  peak=+38.5mV
+  D=0.75x  dir=330  trial=3  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  D=0.75x  dir=330  trial=4  spikes=  6  rate=  6.00Hz  peak=+37.8mV
+  D=0.75x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.8mV
+  D=0.75x  dir=330  trial=6  spikes=  4  rate=  4.00Hz  peak=+39.1mV
+  D=0.75x  dir=330  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=0.75x  dir=330  trial=8  spikes=  5  rate=  5.00Hz  peak=+37.7mV
+  D=0.75x  dir=330  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D0p75.csv
+[t0035 sweep] applied distal diam x 1.00 to 177 sections
+  D=1.00x  dir=  0  trial=0  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  D=1.00x  dir=  0  trial=1  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  D=1.00x  dir=  0  trial=2  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=1.00x  dir=  0  trial=3  spikes=  6  rate=  6.00Hz  peak=+37.9mV
+  D=1.00x  dir=  0  trial=4  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.00x  dir=  0  trial=5  spikes=  6  rate=  6.00Hz  peak=+37.2mV
+  D=1.00x  dir=  0  trial=6  spikes=  5  rate=  5.00Hz  peak=+37.2mV
+  D=1.00x  dir=  0  trial=7  spikes=  6  rate=  6.00Hz  peak=+37.9mV
+  D=1.00x  dir=  0  trial=8  spikes=  6  rate=  6.00Hz  peak=+38.3mV
+  D=1.00x  dir=  0  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=1.00x  dir= 30  trial=0  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=1.00x  dir= 30  trial=1  spikes=  6  rate=  6.00Hz  peak=+37.7mV
+  D=1.00x  dir= 30  trial=2  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=1.00x  dir= 30  trial=3  spikes=  6  rate=  6.00Hz  peak=+36.9mV
+  D=1.00x  dir= 30  trial=4  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=1.00x  dir= 30  trial=5  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  D=1.00x  dir= 30  trial=6  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=1.00x  dir= 30  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.00x  dir= 30  trial=8  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=1.00x  dir= 30  trial=9  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  D=1.00x  dir= 60  trial=0  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  D=1.00x  dir= 60  trial=1  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  D=1.00x  dir= 60  trial=2  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  D=1.00x  dir= 60  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  D=1.00x  dir= 60  trial=4  spikes=  4  rate=  4.00Hz  peak=+36.1mV
+  D=1.00x  dir= 60  trial=5  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  D=1.00x  dir= 60  trial=6  spikes=  5  rate=  5.00Hz  peak=+36.4mV
+  D=1.00x  dir= 60  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  D=1.00x  dir= 60  trial=8  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.00x  dir= 60  trial=9  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.00x  dir= 90  trial=0  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.00x  dir= 90  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  D=1.00x  dir= 90  trial=2  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  D=1.00x  dir= 90  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.00x  dir= 90  trial=4  spikes=  3  rate=  3.00Hz  peak=+38.1mV
+  D=1.00x  dir= 90  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=1.00x  dir= 90  trial=6  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  D=1.00x  dir= 90  trial=7  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  D=1.00x  dir= 90  trial=8  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=1.00x  dir= 90  trial=9  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=1.00x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=1.00x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.00x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+34.0mV
+  D=1.00x  dir=120  trial=3  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.00x  dir=120  trial=4  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=1.00x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=1.00x  dir=120  trial=6  spikes=  2  rate=  2.00Hz  peak=+37.8mV
+  D=1.00x  dir=120  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=1.00x  dir=120  trial=8  spikes=  2  rate=  2.00Hz  peak=+37.6mV
+  D=1.00x  dir=120  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.00x  dir=150  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.00x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.00x  dir=150  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.00x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.00x  dir=150  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=1.00x  dir=150  trial=5  spikes=  0  rate=  0.00Hz  peak=-49.6mV
+  D=1.00x  dir=150  trial=6  spikes=  0  rate=  0.00Hz  peak=-50.0mV
+  D=1.00x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=1.00x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.00x  dir=150  trial=9  spikes=  0  rate=  0.00Hz  peak=-45.7mV
+  D=1.00x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.00x  dir=180  trial=1  spikes=  0  rate=  0.00Hz  peak=-48.0mV
+  D=1.00x  dir=180  trial=2  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=1.00x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.00x  dir=180  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.00x  dir=180  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.00x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.00x  dir=180  trial=7  spikes=  0  rate=  0.00Hz  peak=-52.6mV
+  D=1.00x  dir=180  trial=8  spikes=  0  rate=  0.00Hz  peak=-53.3mV
+  D=1.00x  dir=180  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=1.00x  dir=210  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=1.00x  dir=210  trial=1  spikes=  0  rate=  0.00Hz  peak=-48.2mV
+  D=1.00x  dir=210  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.00x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.00x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.00x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=1.00x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.00x  dir=210  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=1.00x  dir=210  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=1.00x  dir=210  trial=9  spikes=  0  rate=  0.00Hz  peak=-51.2mV
+  D=1.00x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=1.00x  dir=240  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=1.00x  dir=240  trial=2  spikes=  1  rate=  1.00Hz  peak=+38.2mV
+  D=1.00x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=1.00x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.9mV
+  D=1.00x  dir=240  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.00x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+38.9mV
+  D=1.00x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.00x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.8mV
+  D=1.00x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.00x  dir=270  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.00x  dir=270  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=1.00x  dir=270  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.00x  dir=270  trial=3  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  D=1.00x  dir=270  trial=4  spikes=  3  rate=  3.00Hz  peak=+38.0mV
+  D=1.00x  dir=270  trial=5  spikes=  2  rate=  2.00Hz  peak=+38.0mV
+  D=1.00x  dir=270  trial=6  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  D=1.00x  dir=270  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  D=1.00x  dir=270  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.00x  dir=270  trial=9  spikes=  2  rate=  2.00Hz  peak=+38.8mV
+  D=1.00x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=1.00x  dir=300  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  D=1.00x  dir=300  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=1.00x  dir=300  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=1.00x  dir=300  trial=4  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=1.00x  dir=300  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.1mV
+  D=1.00x  dir=300  trial=6  spikes=  3  rate=  3.00Hz  peak=+38.3mV
+  D=1.00x  dir=300  trial=7  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+  D=1.00x  dir=300  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=1.00x  dir=300  trial=9  spikes=  3  rate=  3.00Hz  peak=+38.0mV
+  D=1.00x  dir=330  trial=0  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=1.00x  dir=330  trial=1  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=1.00x  dir=330  trial=2  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  D=1.00x  dir=330  trial=3  spikes=  6  rate=  6.00Hz  peak=+37.7mV
+  D=1.00x  dir=330  trial=4  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  D=1.00x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.4mV
+  D=1.00x  dir=330  trial=6  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=1.00x  dir=330  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.00x  dir=330  trial=8  spikes=  6  rate=  6.00Hz  peak=+38.8mV
+  D=1.00x  dir=330  trial=9  spikes=  6  rate=  6.00Hz  peak=+37.9mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D1p00.csv
+[t0035 sweep] applied distal diam x 1.25 to 177 sections
+  D=1.25x  dir=  0  trial=0  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  D=1.25x  dir=  0  trial=1  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  D=1.25x  dir=  0  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=1.25x  dir=  0  trial=3  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  D=1.25x  dir=  0  trial=4  spikes=  6  rate=  6.00Hz  peak=+37.5mV
+  D=1.25x  dir=  0  trial=5  spikes=  5  rate=  5.00Hz  peak=+38.0mV
+  D=1.25x  dir=  0  trial=6  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  D=1.25x  dir=  0  trial=7  spikes=  5  rate=  5.00Hz  peak=+36.4mV
+  D=1.25x  dir=  0  trial=8  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  D=1.25x  dir=  0  trial=9  spikes=  5  rate=  5.00Hz  peak=+38.2mV
+  D=1.25x  dir= 30  trial=0  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.25x  dir= 30  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  D=1.25x  dir= 30  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=1.25x  dir= 30  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=1.25x  dir= 30  trial=4  spikes=  5  rate=  5.00Hz  peak=+37.3mV
+  D=1.25x  dir= 30  trial=5  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  D=1.25x  dir= 30  trial=6  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  D=1.25x  dir= 30  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=1.25x  dir= 30  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=1.25x  dir= 30  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  D=1.25x  dir= 60  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=1.25x  dir= 60  trial=1  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=1.25x  dir= 60  trial=2  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=1.25x  dir= 60  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=1.25x  dir= 60  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  D=1.25x  dir= 60  trial=5  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=1.25x  dir= 60  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  D=1.25x  dir= 60  trial=7  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  D=1.25x  dir= 60  trial=8  spikes=  5  rate=  5.00Hz  peak=+36.0mV
+  D=1.25x  dir= 60  trial=9  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  D=1.25x  dir= 90  trial=0  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=1.25x  dir= 90  trial=1  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  D=1.25x  dir= 90  trial=2  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  D=1.25x  dir= 90  trial=3  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=1.25x  dir= 90  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=1.25x  dir= 90  trial=5  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=1.25x  dir= 90  trial=6  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.25x  dir= 90  trial=7  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  D=1.25x  dir= 90  trial=8  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=1.25x  dir= 90  trial=9  spikes=  2  rate=  2.00Hz  peak=+35.2mV
+  D=1.25x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.25x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.25x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.25x  dir=120  trial=3  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  D=1.25x  dir=120  trial=4  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=1.25x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.25x  dir=120  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=1.25x  dir=120  trial=7  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=1.25x  dir=120  trial=8  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  D=1.25x  dir=120  trial=9  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.25x  dir=150  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=1.25x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.25x  dir=150  trial=2  spikes=  0  rate=  0.00Hz  peak=-48.8mV
+  D=1.25x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  D=1.25x  dir=150  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.25x  dir=150  trial=5  spikes=  0  rate=  0.00Hz  peak=-48.6mV
+  D=1.25x  dir=150  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.25x  dir=150  trial=7  spikes=  0  rate=  0.00Hz  peak=-52.8mV
+  D=1.25x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=1.25x  dir=150  trial=9  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=1.25x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=1.25x  dir=180  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.25x  dir=180  trial=2  spikes=  0  rate=  0.00Hz  peak=-49.9mV
+  D=1.25x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.25x  dir=180  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.25x  dir=180  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.25x  dir=180  trial=7  spikes=  0  rate=  0.00Hz  peak=-52.4mV
+  D=1.25x  dir=180  trial=8  spikes=  0  rate=  0.00Hz  peak=-46.1mV
+  D=1.25x  dir=180  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=1.25x  dir=210  trial=0  spikes=  0  rate=  0.00Hz  peak=-43.6mV
+  D=1.25x  dir=210  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.25x  dir=210  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.25x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  D=1.25x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.25x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=1.25x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.25x  dir=210  trial=7  spikes=  0  rate=  0.00Hz  peak=-48.8mV
+  D=1.25x  dir=210  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.25x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.25x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=1.25x  dir=240  trial=2  spikes=  2  rate=  2.00Hz  peak=+37.7mV
+  D=1.25x  dir=240  trial=3  spikes=  0  rate=  0.00Hz  peak=-47.9mV
+  D=1.25x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.25x  dir=240  trial=5  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  D=1.25x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.25x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.25x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=1.25x  dir=270  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.25x  dir=270  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=1.25x  dir=270  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=1.25x  dir=270  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=270  trial=4  spikes=  1  rate=  1.00Hz  peak=+37.7mV
+  D=1.25x  dir=270  trial=5  spikes=  2  rate=  2.00Hz  peak=+38.4mV
+  D=1.25x  dir=270  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.25x  dir=270  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=270  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.25x  dir=270  trial=9  spikes=  0  rate=  0.00Hz  peak=-48.1mV
+  D=1.25x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.25x  dir=300  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  D=1.25x  dir=300  trial=2  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.25x  dir=300  trial=3  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  D=1.25x  dir=300  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.25x  dir=300  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=1.25x  dir=300  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=1.25x  dir=300  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=1.25x  dir=300  trial=8  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=1.25x  dir=300  trial=9  spikes=  3  rate=  3.00Hz  peak=+38.1mV
+  D=1.25x  dir=330  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=1.25x  dir=330  trial=1  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  D=1.25x  dir=330  trial=2  spikes=  6  rate=  6.00Hz  peak=+39.1mV
+  D=1.25x  dir=330  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.25x  dir=330  trial=4  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=1.25x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=1.25x  dir=330  trial=6  spikes=  6  rate=  6.00Hz  peak=+38.6mV
+  D=1.25x  dir=330  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=1.25x  dir=330  trial=8  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.25x  dir=330  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D1p25.csv
+[t0035 sweep] applied distal diam x 1.50 to 177 sections
+  D=1.50x  dir=  0  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=1.50x  dir=  0  trial=1  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.50x  dir=  0  trial=2  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.50x  dir=  0  trial=3  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  D=1.50x  dir=  0  trial=4  spikes=  6  rate=  6.00Hz  peak=+36.8mV
+  D=1.50x  dir=  0  trial=5  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=1.50x  dir=  0  trial=6  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.50x  dir=  0  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.6mV
+  D=1.50x  dir=  0  trial=8  spikes=  5  rate=  5.00Hz  peak=+36.9mV
+  D=1.50x  dir=  0  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=1.50x  dir= 30  trial=0  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=1.50x  dir= 30  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=1.50x  dir= 30  trial=2  spikes=  6  rate=  6.00Hz  peak=+36.9mV
+  D=1.50x  dir= 30  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  D=1.50x  dir= 30  trial=4  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  D=1.50x  dir= 30  trial=5  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.50x  dir= 30  trial=6  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.50x  dir= 30  trial=7  spikes=  6  rate=  6.00Hz  peak=+37.0mV
+  D=1.50x  dir= 30  trial=8  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=1.50x  dir= 30  trial=9  spikes=  5  rate=  5.00Hz  peak=+37.6mV
+  D=1.50x  dir= 60  trial=0  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.50x  dir= 60  trial=1  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  D=1.50x  dir= 60  trial=2  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  D=1.50x  dir= 60  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.3mV
+  D=1.50x  dir= 60  trial=4  spikes=  5  rate=  5.00Hz  peak=+36.4mV
+  D=1.50x  dir= 60  trial=5  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  D=1.50x  dir= 60  trial=6  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.50x  dir= 60  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.2mV
+  D=1.50x  dir= 60  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=1.50x  dir= 60  trial=9  spikes=  3  rate=  3.00Hz  peak=+36.5mV
+  D=1.50x  dir= 90  trial=0  spikes=  2  rate=  2.00Hz  peak=+36.6mV
+  D=1.50x  dir= 90  trial=1  spikes=  2  rate=  2.00Hz  peak=+38.3mV
+  D=1.50x  dir= 90  trial=2  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  D=1.50x  dir= 90  trial=3  spikes=  2  rate=  2.00Hz  peak=+37.0mV
+  D=1.50x  dir= 90  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.50x  dir= 90  trial=5  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=1.50x  dir= 90  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.0mV
+  D=1.50x  dir= 90  trial=7  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  D=1.50x  dir= 90  trial=8  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  D=1.50x  dir= 90  trial=9  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.50x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.50x  dir=120  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  D=1.50x  dir=120  trial=2  spikes=  0  rate=  0.00Hz  peak=-49.8mV
+  D=1.50x  dir=120  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=1.50x  dir=120  trial=4  spikes=  0  rate=  0.00Hz  peak=-47.4mV
+  D=1.50x  dir=120  trial=5  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  D=1.50x  dir=120  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=1.50x  dir=120  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  D=1.50x  dir=120  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.50x  dir=120  trial=9  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  D=1.50x  dir=150  trial=0  spikes=  0  rate=  0.00Hz  peak=-48.3mV
+  D=1.50x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=1.50x  dir=150  trial=2  spikes=  2  rate=  2.00Hz  peak=+36.7mV
+  D=1.50x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.50x  dir=150  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.50x  dir=150  trial=5  spikes=  0  rate=  0.00Hz  peak=-48.8mV
+  D=1.50x  dir=150  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  D=1.50x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.50x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=1.50x  dir=150  trial=9  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=1.50x  dir=180  trial=0  spikes=  0  rate=  0.00Hz  peak=-52.9mV
+  D=1.50x  dir=180  trial=1  spikes=  0  rate=  0.00Hz  peak=-52.7mV
+  D=1.50x  dir=180  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=1.50x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.50x  dir=180  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.50x  dir=180  trial=5  spikes=  0  rate=  0.00Hz  peak=-48.7mV
+  D=1.50x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.50x  dir=180  trial=7  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  D=1.50x  dir=180  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.50x  dir=180  trial=9  spikes=  0  rate=  0.00Hz  peak=-45.1mV
+  D=1.50x  dir=210  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.8mV
+  D=1.50x  dir=210  trial=1  spikes=  0  rate=  0.00Hz  peak=-48.9mV
+  D=1.50x  dir=210  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=1.50x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=1.50x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  D=1.50x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  D=1.50x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=1.50x  dir=210  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.50x  dir=210  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.8mV
+  D=1.50x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+34.6mV
+  D=1.50x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.50x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.50x  dir=240  trial=2  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  D=1.50x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=1.50x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+33.7mV
+  D=1.50x  dir=240  trial=5  spikes=  1  rate=  1.00Hz  peak=+34.1mV
+  D=1.50x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=1.50x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.50x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.50x  dir=240  trial=9  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  D=1.50x  dir=270  trial=0  spikes=  1  rate=  1.00Hz  peak=+38.6mV
+  D=1.50x  dir=270  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  D=1.50x  dir=270  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.50x  dir=270  trial=3  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  D=1.50x  dir=270  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.8mV
+  D=1.50x  dir=270  trial=5  spikes=  2  rate=  2.00Hz  peak=+36.3mV
+  D=1.50x  dir=270  trial=6  spikes=  3  rate=  3.00Hz  peak=+38.0mV
+  D=1.50x  dir=270  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=1.50x  dir=270  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=1.50x  dir=270  trial=9  spikes=  3  rate=  3.00Hz  peak=+38.4mV
+  D=1.50x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=1.50x  dir=300  trial=1  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  D=1.50x  dir=300  trial=2  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=1.50x  dir=300  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=1.50x  dir=300  trial=4  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.50x  dir=300  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  D=1.50x  dir=300  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.6mV
+  D=1.50x  dir=300  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=1.50x  dir=300  trial=8  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=1.50x  dir=300  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.7mV
+  D=1.50x  dir=330  trial=0  spikes=  4  rate=  4.00Hz  peak=+38.0mV
+  D=1.50x  dir=330  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=1.50x  dir=330  trial=2  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+  D=1.50x  dir=330  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=1.50x  dir=330  trial=4  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+  D=1.50x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+37.6mV
+  D=1.50x  dir=330  trial=6  spikes=  6  rate=  6.00Hz  peak=+38.0mV
+  D=1.50x  dir=330  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  D=1.50x  dir=330  trial=8  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.50x  dir=330  trial=9  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D1p50.csv
+[t0035 sweep] applied distal diam x 1.75 to 177 sections
+  D=1.75x  dir=  0  trial=0  spikes=  5  rate=  5.00Hz  peak=+37.5mV
+  D=1.75x  dir=  0  trial=1  spikes=  4  rate=  4.00Hz  peak=+37.8mV
+  D=1.75x  dir=  0  trial=2  spikes=  5  rate=  5.00Hz  peak=+37.4mV
+  D=1.75x  dir=  0  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=1.75x  dir=  0  trial=4  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  D=1.75x  dir=  0  trial=5  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  D=1.75x  dir=  0  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=1.75x  dir=  0  trial=7  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=1.75x  dir=  0  trial=8  spikes=  5  rate=  5.00Hz  peak=+37.6mV
+  D=1.75x  dir=  0  trial=9  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.75x  dir= 30  trial=0  spikes=  7  rate=  7.00Hz  peak=+37.1mV
+  D=1.75x  dir= 30  trial=1  spikes=  4  rate=  4.00Hz  peak=+37.9mV
+  D=1.75x  dir= 30  trial=2  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  D=1.75x  dir= 30  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.75x  dir= 30  trial=4  spikes=  6  rate=  6.00Hz  peak=+37.3mV
+  D=1.75x  dir= 30  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=1.75x  dir= 30  trial=6  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=1.75x  dir= 30  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=1.75x  dir= 30  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=1.75x  dir= 30  trial=9  spikes=  5  rate=  5.00Hz  peak=+36.6mV
+  D=1.75x  dir= 60  trial=0  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  D=1.75x  dir= 60  trial=1  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=1.75x  dir= 60  trial=2  spikes=  3  rate=  3.00Hz  peak=+36.4mV
+  D=1.75x  dir= 60  trial=3  spikes=  3  rate=  3.00Hz  peak=+36.7mV
+  D=1.75x  dir= 60  trial=4  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=1.75x  dir= 60  trial=5  spikes=  4  rate=  4.00Hz  peak=+36.5mV
+  D=1.75x  dir= 60  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.7mV
+  D=1.75x  dir= 60  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.0mV
+  D=1.75x  dir= 60  trial=8  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  D=1.75x  dir= 60  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=1.75x  dir= 90  trial=0  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.75x  dir= 90  trial=1  spikes=  2  rate=  2.00Hz  peak=+35.7mV
+  D=1.75x  dir= 90  trial=2  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  D=1.75x  dir= 90  trial=3  spikes=  3  rate=  3.00Hz  peak=+36.2mV
+  D=1.75x  dir= 90  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=1.75x  dir= 90  trial=5  spikes=  2  rate=  2.00Hz  peak=+34.8mV
+  D=1.75x  dir= 90  trial=6  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.75x  dir= 90  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=1.75x  dir= 90  trial=8  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=1.75x  dir= 90  trial=9  spikes=  2  rate=  2.00Hz  peak=+35.8mV
+  D=1.75x  dir=120  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=1.75x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.75x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=1.75x  dir=120  trial=3  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  D=1.75x  dir=120  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=1.75x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=1.75x  dir=120  trial=6  spikes=  2  rate=  2.00Hz  peak=+35.4mV
+  D=1.75x  dir=120  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.75x  dir=120  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.75x  dir=120  trial=9  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  D=1.75x  dir=150  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=1.75x  dir=150  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=1.75x  dir=150  trial=2  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=1.75x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=1.75x  dir=150  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=1.75x  dir=150  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.6mV
+  D=1.75x  dir=150  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.75x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  D=1.75x  dir=150  trial=8  spikes=  0  rate=  0.00Hz  peak=-51.7mV
+  D=1.75x  dir=150  trial=9  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  D=1.75x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  D=1.75x  dir=180  trial=1  spikes=  0  rate=  0.00Hz  peak=-50.4mV
+  D=1.75x  dir=180  trial=2  spikes=  1  rate=  1.00Hz  peak=+34.0mV
+  D=1.75x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=1.75x  dir=180  trial=4  spikes=  0  rate=  0.00Hz  peak=-54.4mV
+  D=1.75x  dir=180  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.75x  dir=180  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.6mV
+  D=1.75x  dir=180  trial=7  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  D=1.75x  dir=180  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=1.75x  dir=180  trial=9  spikes=  0  rate=  0.00Hz  peak=-53.6mV
+  D=1.75x  dir=210  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=1.75x  dir=210  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=1.75x  dir=210  trial=2  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  D=1.75x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.75x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.75x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=1.75x  dir=210  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.9mV
+  D=1.75x  dir=210  trial=7  spikes=  0  rate=  0.00Hz  peak=-53.0mV
+  D=1.75x  dir=210  trial=8  spikes=  0  rate=  0.00Hz  peak=-50.2mV
+  D=1.75x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+34.4mV
+  D=1.75x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=1.75x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=1.75x  dir=240  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=1.75x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  D=1.75x  dir=240  trial=4  spikes=  2  rate=  2.00Hz  peak=+35.3mV
+  D=1.75x  dir=240  trial=5  spikes=  0  rate=  0.00Hz  peak=-48.3mV
+  D=1.75x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.75x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.3mV
+  D=1.75x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=1.75x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=1.75x  dir=270  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.75x  dir=270  trial=1  spikes=  2  rate=  2.00Hz  peak=+36.4mV
+  D=1.75x  dir=270  trial=2  spikes=  3  rate=  3.00Hz  peak=+38.2mV
+  D=1.75x  dir=270  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=1.75x  dir=270  trial=4  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=1.75x  dir=270  trial=5  spikes=  0  rate=  0.00Hz  peak=-45.0mV
+  D=1.75x  dir=270  trial=6  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=1.75x  dir=270  trial=7  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=1.75x  dir=270  trial=8  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  D=1.75x  dir=270  trial=9  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=1.75x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  D=1.75x  dir=300  trial=1  spikes=  2  rate=  2.00Hz  peak=+37.2mV
+  D=1.75x  dir=300  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=1.75x  dir=300  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=1.75x  dir=300  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  D=1.75x  dir=300  trial=5  spikes=  4  rate=  4.00Hz  peak=+38.2mV
+  D=1.75x  dir=300  trial=6  spikes=  2  rate=  2.00Hz  peak=+37.9mV
+  D=1.75x  dir=300  trial=7  spikes=  4  rate=  4.00Hz  peak=+36.8mV
+  D=1.75x  dir=300  trial=8  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=1.75x  dir=300  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.5mV
+  D=1.75x  dir=330  trial=0  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  D=1.75x  dir=330  trial=1  spikes=  4  rate=  4.00Hz  peak=+38.3mV
+  D=1.75x  dir=330  trial=2  spikes=  6  rate=  6.00Hz  peak=+37.1mV
+  D=1.75x  dir=330  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=1.75x  dir=330  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=1.75x  dir=330  trial=5  spikes=  3  rate=  3.00Hz  peak=+38.5mV
+  D=1.75x  dir=330  trial=6  spikes=  5  rate=  5.00Hz  peak=+36.8mV
+  D=1.75x  dir=330  trial=7  spikes=  4  rate=  4.00Hz  peak=+38.0mV
+  D=1.75x  dir=330  trial=8  spikes=  5  rate=  5.00Hz  peak=+37.6mV
+  D=1.75x  dir=330  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D1p75.csv
+[t0035 sweep] applied distal diam x 2.00 to 177 sections
+  D=2.00x  dir=  0  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.2mV
+  D=2.00x  dir=  0  trial=1  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=2.00x  dir=  0  trial=2  spikes=  3  rate=  3.00Hz  peak=+37.6mV
+  D=2.00x  dir=  0  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=2.00x  dir=  0  trial=4  spikes=  5  rate=  5.00Hz  peak=+37.0mV
+  D=2.00x  dir=  0  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=2.00x  dir=  0  trial=6  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=2.00x  dir=  0  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=2.00x  dir=  0  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=2.00x  dir=  0  trial=9  spikes=  5  rate=  5.00Hz  peak=+38.5mV
+  D=2.00x  dir= 30  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.4mV
+  D=2.00x  dir= 30  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.4mV
+  D=2.00x  dir= 30  trial=2  spikes=  4  rate=  4.00Hz  peak=+38.0mV
+  D=2.00x  dir= 30  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=2.00x  dir= 30  trial=4  spikes=  5  rate=  5.00Hz  peak=+37.1mV
+  D=2.00x  dir= 30  trial=5  spikes=  5  rate=  5.00Hz  peak=+36.7mV
+  D=2.00x  dir= 30  trial=6  spikes=  4  rate=  4.00Hz  peak=+36.4mV
+  D=2.00x  dir= 30  trial=7  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=2.00x  dir= 30  trial=8  spikes=  4  rate=  4.00Hz  peak=+37.0mV
+  D=2.00x  dir= 30  trial=9  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=2.00x  dir= 60  trial=0  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  D=2.00x  dir= 60  trial=1  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+  D=2.00x  dir= 60  trial=2  spikes=  2  rate=  2.00Hz  peak=+35.1mV
+  D=2.00x  dir= 60  trial=3  spikes=  3  rate=  3.00Hz  peak=+37.5mV
+  D=2.00x  dir= 60  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=2.00x  dir= 60  trial=5  spikes=  3  rate=  3.00Hz  peak=+37.2mV
+  D=2.00x  dir= 60  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  D=2.00x  dir= 60  trial=7  spikes=  3  rate=  3.00Hz  peak=+37.3mV
+  D=2.00x  dir= 60  trial=8  spikes=  3  rate=  3.00Hz  peak=+35.8mV
+  D=2.00x  dir= 60  trial=9  spikes=  4  rate=  4.00Hz  peak=+36.7mV
+  D=2.00x  dir= 90  trial=0  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  D=2.00x  dir= 90  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=2.00x  dir= 90  trial=2  spikes=  2  rate=  2.00Hz  peak=+36.2mV
+  D=2.00x  dir= 90  trial=3  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=2.00x  dir= 90  trial=4  spikes=  2  rate=  2.00Hz  peak=+36.0mV
+  D=2.00x  dir= 90  trial=5  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=2.00x  dir= 90  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=2.00x  dir= 90  trial=7  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  D=2.00x  dir= 90  trial=8  spikes=  2  rate=  2.00Hz  peak=+34.8mV
+  D=2.00x  dir= 90  trial=9  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=2.00x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  D=2.00x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=2.00x  dir=120  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=2.00x  dir=120  trial=3  spikes=  0  rate=  0.00Hz  peak=-49.8mV
+  D=2.00x  dir=120  trial=4  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=2.00x  dir=120  trial=5  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=2.00x  dir=120  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  D=2.00x  dir=120  trial=7  spikes=  2  rate=  2.00Hz  peak=+35.9mV
+  D=2.00x  dir=120  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=2.00x  dir=120  trial=9  spikes=  0  rate=  0.00Hz  peak=-49.5mV
+  D=2.00x  dir=150  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=2.00x  dir=150  trial=1  spikes=  0  rate=  0.00Hz  peak=-50.9mV
+  D=2.00x  dir=150  trial=2  spikes=  0  rate=  0.00Hz  peak=-50.2mV
+  D=2.00x  dir=150  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=2.00x  dir=150  trial=4  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=2.00x  dir=150  trial=5  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=2.00x  dir=150  trial=6  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+  D=2.00x  dir=150  trial=7  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=2.00x  dir=150  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=2.00x  dir=150  trial=9  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=2.00x  dir=180  trial=0  spikes=  1  rate=  1.00Hz  peak=+34.7mV
+  D=2.00x  dir=180  trial=1  spikes=  0  rate=  0.00Hz  peak=-55.0mV
+  D=2.00x  dir=180  trial=2  spikes=  0  rate=  0.00Hz  peak=-49.5mV
+  D=2.00x  dir=180  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=2.00x  dir=180  trial=4  spikes=  1  rate=  1.00Hz  peak=+35.1mV
+  D=2.00x  dir=180  trial=5  spikes=  0  rate=  0.00Hz  peak=-55.4mV
+  D=2.00x  dir=180  trial=6  spikes=  0  rate=  0.00Hz  peak=-51.2mV
+  D=2.00x  dir=180  trial=7  spikes=  1  rate=  1.00Hz  peak=+34.9mV
+  D=2.00x  dir=180  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.1mV
+  D=2.00x  dir=180  trial=9  spikes=  2  rate=  2.00Hz  peak=+37.5mV
+  D=2.00x  dir=210  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.5mV
+  D=2.00x  dir=210  trial=1  spikes=  0  rate=  0.00Hz  peak=-46.9mV
+  D=2.00x  dir=210  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.9mV
+  D=2.00x  dir=210  trial=3  spikes=  1  rate=  1.00Hz  peak=+37.3mV
+  D=2.00x  dir=210  trial=4  spikes=  1  rate=  1.00Hz  peak=+36.1mV
+  D=2.00x  dir=210  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  D=2.00x  dir=210  trial=6  spikes=  0  rate=  0.00Hz  peak=-47.7mV
+  D=2.00x  dir=210  trial=7  spikes=  1  rate=  1.00Hz  peak=+38.2mV
+  D=2.00x  dir=210  trial=8  spikes=  1  rate=  1.00Hz  peak=+36.4mV
+  D=2.00x  dir=210  trial=9  spikes=  1  rate=  1.00Hz  peak=+35.8mV
+  D=2.00x  dir=240  trial=0  spikes=  2  rate=  2.00Hz  peak=+35.5mV
+  D=2.00x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.8mV
+  D=2.00x  dir=240  trial=2  spikes=  1  rate=  1.00Hz  peak=+36.3mV
+  D=2.00x  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=2.00x  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=2.00x  dir=240  trial=5  spikes=  2  rate=  2.00Hz  peak=+36.5mV
+  D=2.00x  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=2.00x  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+35.6mV
+  D=2.00x  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  D=2.00x  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+38.0mV
+  D=2.00x  dir=270  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  D=2.00x  dir=270  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.0mV
+  D=2.00x  dir=270  trial=2  spikes=  1  rate=  1.00Hz  peak=+37.4mV
+  D=2.00x  dir=270  trial=3  spikes=  1  rate=  1.00Hz  peak=+36.9mV
+  D=2.00x  dir=270  trial=4  spikes=  0  rate=  0.00Hz  peak=-48.7mV
+  D=2.00x  dir=270  trial=5  spikes=  1  rate=  1.00Hz  peak=+36.7mV
+  D=2.00x  dir=270  trial=6  spikes=  1  rate=  1.00Hz  peak=+35.7mV
+  D=2.00x  dir=270  trial=7  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+  D=2.00x  dir=270  trial=8  spikes=  1  rate=  1.00Hz  peak=+37.0mV
+  D=2.00x  dir=270  trial=9  spikes=  2  rate=  2.00Hz  peak=+37.3mV
+  D=2.00x  dir=300  trial=0  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=2.00x  dir=300  trial=1  spikes=  2  rate=  2.00Hz  peak=+36.1mV
+  D=2.00x  dir=300  trial=2  spikes=  3  rate=  3.00Hz  peak=+37.9mV
+  D=2.00x  dir=300  trial=3  spikes=  4  rate=  4.00Hz  peak=+36.9mV
+  D=2.00x  dir=300  trial=4  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=2.00x  dir=300  trial=5  spikes=  2  rate=  2.00Hz  peak=+37.4mV
+  D=2.00x  dir=300  trial=6  spikes=  3  rate=  3.00Hz  peak=+36.8mV
+  D=2.00x  dir=300  trial=7  spikes=  3  rate=  3.00Hz  peak=+36.3mV
+  D=2.00x  dir=300  trial=8  spikes=  2  rate=  2.00Hz  peak=+37.1mV
+  D=2.00x  dir=300  trial=9  spikes=  3  rate=  3.00Hz  peak=+37.1mV
+  D=2.00x  dir=330  trial=0  spikes=  6  rate=  6.00Hz  peak=+37.6mV
+  D=2.00x  dir=330  trial=1  spikes=  3  rate=  3.00Hz  peak=+37.8mV
+  D=2.00x  dir=330  trial=2  spikes=  4  rate=  4.00Hz  peak=+37.1mV
+  D=2.00x  dir=330  trial=3  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  D=2.00x  dir=330  trial=4  spikes=  4  rate=  4.00Hz  peak=+37.9mV
+  D=2.00x  dir=330  trial=5  spikes=  4  rate=  4.00Hz  peak=+37.7mV
+  D=2.00x  dir=330  trial=6  spikes=  5  rate=  5.00Hz  peak=+37.7mV
+  D=2.00x  dir=330  trial=7  spikes=  5  rate=  5.00Hz  peak=+37.9mV
+  D=2.00x  dir=330  trial=8  spikes=  3  rate=  3.00Hz  peak=+36.9mV
+  D=2.00x  dir=330  trial=9  spikes=  4  rate=  4.00Hz  peak=+36.6mV
+[t0035 sweep] wrote per-diameter curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\per_diameter\tuning_curve_D2p00.csv
+[t0035 sweep] baseline seg.diam restoration confirmed
+[t0035 sweep] seed uniqueness confirmed (840 unique seeds)
+[t0035 sweep] wrote tidy CSV to tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\sweep_results.csv
+[t0035 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0035_distal_dendrite_diameter_sweep_t0024\tasks\t0035_distal_dendrite_diameter_sweep_t0024\results\data\wall_time_by_diameter.json
