@@ -1,0 +1,4 @@
+[plot_sweep] wrote primary chart -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\images\dsi_vs_length.png
+[plot_sweep] wrote vector-sum chart -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\images\vector_sum_dsi_vs_length.png
+[plot_sweep] wrote polar overlay -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\images\polar_overlay.png
+[plot_sweep] wrote peak-Hz chart -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\images\peak_hz_vs_length.png

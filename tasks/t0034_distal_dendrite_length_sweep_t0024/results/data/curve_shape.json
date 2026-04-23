@@ -1,0 +1,33 @@
+{
+  "shape_class": "non_monotonic",
+  "slope": -0.12591585714285713,
+  "intercept": 0.86197825,
+  "r_squared": 0.608986580547496,
+  "p_value": 0.03841896716266974,
+  "non_decreasing": false,
+  "saturation_multiplier": null,
+  "plateau_dsi": null,
+  "dsi_at_0.5": 0.753846,
+  "dsi_at_2.0": 0.545455,
+  "dsi_range_extremes": -0.208391,
+  "dsi_min": 0.545455,
+  "dsi_max": 0.774194,
+  "qualitative_description": "DSI is neither monotonically increasing nor saturating within the sweep. Regression slope = -0.1259 per unit multiplier (p = 0.03842). DSI range = 0.2287. Non-decreasing check: False.",
+  "shape_class_vector_sum": "non_monotonic",
+  "vector_sum_details": {
+    "shape_class": "non_monotonic",
+    "slope": -0.08201185714285712,
+    "intercept": 0.5330523928571428,
+    "r_squared": 0.9126818896945835,
+    "p_value": 0.000790109470923766,
+    "non_decreasing": false,
+    "saturation_multiplier": null,
+    "plateau_dsi": null,
+    "dsi_at_0.5": 0.50667,
+    "dsi_at_2.0": 0.357491,
+    "dsi_range_extremes": -0.14917899999999995,
+    "dsi_min": 0.357491,
+    "dsi_max": 0.50667,
+    "qualitative_description": "DSI is neither monotonically increasing nor saturating within the sweep. Regression slope = -0.0820 per unit multiplier (p = 0.0007901). DSI range = 0.1492. Non-decreasing check: False."
+  }
+}

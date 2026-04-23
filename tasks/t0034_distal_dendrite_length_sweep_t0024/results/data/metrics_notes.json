@@ -1,0 +1,7 @@
+{
+  "omitted_metrics": [
+    "tuning_curve_rmse"
+  ],
+  "rationale": "tuning_curve_rmse is computed against the t0004 target tuning curve. For this task only distal sec.L changes; stimulus biophysics is otherwise unchanged (AR(2) rho=0.6, V_rest=-60 mV). Target-fit RMSE is not informative for a length sweep on the t0024 testbed, so we report DSI / HWHM / reliability but omit RMSE.",
+  "primary_metric": "direction_selectivity_index"
+}

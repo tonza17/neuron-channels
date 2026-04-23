@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\task.json
+
+[33m[1mWARNINGS:[0m
+[33m  TF-W005 warning: expected_assets is empty (task produces no assets)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

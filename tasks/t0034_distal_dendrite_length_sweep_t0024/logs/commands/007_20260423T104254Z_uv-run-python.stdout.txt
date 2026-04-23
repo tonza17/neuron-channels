@@ -1,0 +1,36 @@
+[t0034 sweep] multipliers = (0.5, 1.0, 2.0)
+[t0034 sweep] angles = (0, 120, 240)
+[t0034 sweep] n_trials per (multiplier, angle) = 2
+[t0034 sweep] AR2 rho = 0.6
+[t0034 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\sweep_results.csv
+[t0034 sweep] per-length CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\per_length
+[t0034 sweep] building t0024 DSGC cell + synapse bundle + distal snapshot...
+[t0034 sweep] cell built in 0.2s; n_terminals = 177; n_distal = 177
+[t0034 sweep] applied distal L x 0.50 to 177 sections
+  L=0.50x  dir=  0  trial=0  spikes=  4  rate=  4.00Hz  peak=+38.4mV
+  L=0.50x  dir=  0  trial=1  spikes=  6  rate=  6.00Hz  peak=+36.7mV
+  L=0.50x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+37.5mV
+  L=0.50x  dir=120  trial=1  spikes=  0  rate=  0.00Hz  peak=-49.6mV
+  L=0.50x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+36.0mV
+  L=0.50x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+37.2mV
+[t0034 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\per_length\tuning_curve_L0p50.csv
+[t0034 sweep] applied distal L x 1.00 to 177 sections
+  L=1.00x  dir=  0  trial=0  spikes=  4  rate=  4.00Hz  peak=+37.3mV
+  L=1.00x  dir=  0  trial=1  spikes=  5  rate=  5.00Hz  peak=+38.3mV
+  L=1.00x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.4mV
+  L=1.00x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+35.2mV
+  L=1.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz  peak=-47.2mV
+  L=1.00x  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.5mV
+[t0034 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\per_length\tuning_curve_L1p00.csv
+[t0034 sweep] applied distal L x 2.00 to 177 sections
+  L=2.00x  dir=  0  trial=0  spikes=  5  rate=  5.00Hz  peak=+36.1mV
+  L=2.00x  dir=  0  trial=1  spikes=  5  rate=  5.00Hz  peak=+36.5mV
+  L=2.00x  dir=120  trial=0  spikes=  1  rate=  1.00Hz  peak=+34.8mV
+  L=2.00x  dir=120  trial=1  spikes=  1  rate=  1.00Hz  peak=+36.2mV
+  L=2.00x  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+35.9mV
+  L=2.00x  dir=240  trial=1  spikes=  2  rate=  2.00Hz  peak=+35.6mV
+[t0034 sweep] wrote per-length curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\per_length\tuning_curve_L2p00.csv
+[t0034 sweep] baseline sec.L restoration confirmed
+[t0034 sweep] seed uniqueness confirmed (18 unique seeds)
+[t0034 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\sweep_results.csv
+[t0034 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0034_distal_dendrite_length_sweep_t0024\tasks\t0034_distal_dendrite_length_sweep_t0024\results\data\wall_time_by_length.json
