@@ -5,12 +5,12 @@
   "name": "Distal-dendrite length sweep on t0024 DSGC",
   "short_description": "Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0029_distal_dendrite_length_sweep_dsgc"
   ],
-  "start_time": null,
+  "start_time": "2026-04-23T10:07:02Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
