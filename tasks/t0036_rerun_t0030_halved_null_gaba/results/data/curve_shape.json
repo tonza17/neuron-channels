@@ -1,0 +1,47 @@
+{
+  "slope": 0.004869539359337592,
+  "slope_95_ci_low": 0.0011762908741005012,
+  "slope_95_ci_high": 0.008562787844574683,
+  "slope_p_value": 0.019475998814555244,
+  "slope_r_squared": 0.6967380320638802,
+  "slope_sign": "~",
+  "dsi_range_extremes": 0.005952999999999986,
+  "dsi_range_extremes_primary": 0.0,
+  "dsi_range_extremes_vector_sum": 0.005952999999999986,
+  "primary_regression": {
+    "slope": 0.0,
+    "intercept": 1.0,
+    "r_squared": NaN,
+    "p_value": NaN,
+    "slope_95_ci_low": NaN,
+    "slope_95_ci_high": NaN
+  },
+  "vector_sum_regression": {
+    "slope": 0.004869539359337592,
+    "intercept": 0.583436207916928,
+    "r_squared": 0.6967380320638802,
+    "p_value": 0.019475998814555244,
+    "slope_95_ci_low": 0.0011762908741005012,
+    "slope_95_ci_high": 0.008562787844574683
+  },
+  "peak_hz_trend_slope": -1.1252099334730439,
+  "peak_hz_trend_p_value": 0.007496153594935153,
+  "null_hz_trend_slope": 0.0,
+  "null_hz_trend_p_value": NaN,
+  "preferred_and_null_both_drop": null,
+  "used_fallback_vector_sum_dsi": true,
+  "dsi_primary_range": 0.0,
+  "dsi_saturation_threshold": 0.02,
+  "base_mechanism_label": "flat",
+  "mechanism_label": "flat_partial",
+  "qualitative_description": "DSI vs diameter slope is not distinguishable from zero (slope=0.0049 per log2(multiplier), p=0.01948, dsi_range_extremes=0.0060); neither Schachter2010 nor passive filtering is supported. [PARTIAL: Null-Hz pre-condition FAILED: mean null firing at 1.0x baseline = 0.0000 Hz, below threshold 0.1 Hz. DSI slope interpretation is PARTIAL: primary DSI is still effectively pinned at the null-zero corner. Recommend a further reduction of GABA_CONDUCTANCE_NULL_NS (currently 6.0 nS), e.g. to 4 nS.]",
+  "precondition_null_hz_at_baseline": 0.0,
+  "precondition_pass": false,
+  "precondition_threshold_hz": 0.1,
+  "precondition_note": "Null-Hz pre-condition FAILED: mean null firing at 1.0x baseline = 0.0000 Hz, below threshold 0.1 Hz. DSI slope interpretation is PARTIAL: primary DSI is still effectively pinned at the null-zero corner. Recommend a further reduction of GABA_CONDUCTANCE_NULL_NS (currently 6.0 nS), e.g. to 4 nS.",
+  "gaba_conductance_null_ns_effective": 6.0,
+  "comparator_task_ids": [
+    "t0030",
+    "t0035"
+  ]
+}

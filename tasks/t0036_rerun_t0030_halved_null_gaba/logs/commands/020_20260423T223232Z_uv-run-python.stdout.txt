@@ -1,0 +1,101 @@
+{
+  "suggestion_count": 6,
+  "suggestions": [
+    {
+      "id": "S-0029-01",
+      "title": "Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022",
+      "description": "The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000 at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability = 1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume stochastic Poisson drive with a rate-code noise floor; removing noise collapses the mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full 7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-04",
+      "title": "Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the deterministic ceiling on t0022",
+      "description": "The t0022 scheduler uses GABA_CONDUCTANCE_NULL_NS = 12 nS applied 10 ms before AMPA on null-direction trials - about 4x the preferred value (3 nS) and 2x Schachter2010's measured compound null inhibition (~6 nS). This oversized early shunt forces null-direction firing to exactly 0 Hz, pinning the pref/null DSI denominator and the ratio at 1.000 before cable mechanics have any effect. Sweep GABA_CONDUCTANCE_NULL_NS across {3, 6, 9, 12} nS at a fixed length multiplier of 1.0x and locate the conductance at which null-direction firing first exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0029-01 and S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min CPU. Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-02",
+      "title": "Poisson-noise desaturation rerun of the distal-dendrite diameter sweep on t0022",
+      "description": "Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030 deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials). Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and diameter regains discrimination power between Schachter2010 active amplification (+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-06",
+      "title": "Change the t0033 optimiser objective to a vector-sum-DSI-weighted blend instead of pure primary DSI",
+      "description": "t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule the optimiser will see a flat landscape and cannot discover morphology-channel interactions. Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 * peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal keeps DSI as the headline objective but replaces its pinned primary form with its unpinned vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi' option. Recommended task types: write-library, answer-question.",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-06",
+      "title": "Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop",
+      "description": "The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature. t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial) pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a single evaluator. Recommended task types: write-library, feature-engineering.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0034-07",
+      "title": "Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors",
+      "description": "t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229, p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction: pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06 (vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended task types: comparative-analysis, answer-question.",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    }
+  ]
+}

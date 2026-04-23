@@ -5,13 +5,13 @@
   "name": "Rerun distal-diameter sweep on t0022 with halved null-GABA",
   "short_description": "Rerun the t0030 distal-diameter sweep on t0022 with null-direction GABA reduced from 12 nS to 6 nS to unpin primary DSI from 1.000 and restore the Schachter2010 vs passive-filtering discriminator.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed",
     "t0030_distal_dendrite_diameter_sweep_dsgc"
   ],
   "start_time": "2026-04-23T20:56:59Z",
-  "end_time": null,
+  "end_time": "2026-04-23T22:40:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"

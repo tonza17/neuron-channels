@@ -1,0 +1,34 @@
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 6.0 nS
+[gaba_override] Patched t0022 GABA_CONDUCTANCE_NULL_NS: 12.0 -> 6.0
+[preflight_distal] building DSGC cell...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[preflight_distal] distal section count = 129
+[preflight_distal] running 18-trial sanity subset (3 angles x 2 trials x 3 multipliers)...
+  [sanity] D=0.50x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz
+  [sanity] D=0.50x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz
+  [sanity] D=0.50x  dir=120  trial=0  spikes= 15  rate= 15.00Hz
+  [sanity] D=0.50x  dir=120  trial=1  spikes= 15  rate= 15.00Hz
+  [sanity] D=0.50x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=0.50x  dir=240  trial=1  spikes=  0  rate=  0.00Hz
+  [sanity] D=1.00x  dir=  0  trial=0  spikes= 14  rate= 14.00Hz
+  [sanity] D=1.00x  dir=  0  trial=1  spikes= 14  rate= 14.00Hz
+  [sanity] D=1.00x  dir=120  trial=0  spikes= 15  rate= 15.00Hz
+  [sanity] D=1.00x  dir=120  trial=1  spikes= 15  rate= 15.00Hz
+  [sanity] D=1.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=1.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz
+  [sanity] D=2.00x  dir=  0  trial=0  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=  0  trial=1  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=120  trial=0  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=120  trial=1  spikes= 13  rate= 13.00Hz
+  [sanity] D=2.00x  dir=240  trial=0  spikes=  0  rate=  0.00Hz
+  [sanity] D=2.00x  dir=240  trial=1  spikes=  0  rate=  0.00Hz
+[preflight_distal] sanity subset complete: trials_run = 18, peak_hz_1p0x = 15.000, null_hz_1p0x = 0.000
+[preflight_distal] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\logs\preflight\distal_sections.json
+[preflight_distal] payload = {'count': 129, 'n_distal_segments': 129, 'min_depth': 3, 'max_depth': 18, 'min_diam_um': 0.49999999999999994, 'median_diam_um': 0.5000011920928955, 'max_diam_um': 0.6874321103096007, 'total_surface_area_um2': 3899.447959795002, 'l_over_lambda_at_baseline_max': 0.4494284104652024, 'identification_rule': 'hoc_leaves_on_arbor_depth_ge_3', 'gaba_conductance_null_ns_effective': 6.0, 'gaba_null_pref_ratio_asserted': 2.0, 'preflight_peak_hz_1p0x': 15.0, 'preflight_null_hz_1p0x': 0.0, 'preflight_sanity_trials_run': 18, 'preflight_null_hz_precondition_threshold_hz': 0.1, 'preflight_null_hz_precondition_pass_informational': False}
+[preflight_distal] WARNING: null_hz at 1.0x baseline = 0.000 Hz < 0.1 Hz pre-condition threshold. Full sweep may still recover with 10 trials/angle, but a further reduction of GABA_CONDUCTANCE_NULL_NS (e.g. 4 nS) may be needed.
+OK

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\code\preflight_distal.py", line 300, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\code\preflight_distal.py", line 236, in main
+    peak_hz_1p0, null_hz_1p0, trials_run = _run_sanity_subset(ctx=ctx)
+                                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\code\preflight_distal.py", line 161, in _run_sanity_subset
+    curve: TuningCurve = load_tuning_curve(csv_path=_SANITY_CURVE_CSV)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 131, in load_tuning_curve
+    return _load_from_trials(df=df, rate_column=FIRING_RATE_COLUMN)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 81, in _load_from_trials
+    _validate_angle_grid(angles_deg=angles_deg)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0012_tuning_curve_scoring_loss_library\code\tuning_curve_loss\loader.py", line 61, in _validate_angle_grid
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Expected 12 unique angles; got 3. Angles: [0.0, 120.0, 240.0]

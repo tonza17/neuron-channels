@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0036_rerun_t0030_halved_null_gaba",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format json --detail full --uncovered --ids S-0034-07 S-0030-06 S-0029-04 S-0030-02 S-0029-01 S-0033-06",
+  "exit_code": 0,
+  "duration_seconds": 0.541,
+  "started_at": "2026-04-23T22:32:32Z",
+  "completed_at": "2026-04-23T22:32:33Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0036_rerun_t0030_halved_null_gaba",
+  "stdout_file": "020_20260423T223232Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260423T223232Z_uv-run-python.stderr.txt",
+  "stdout_lines": 101,
+  "stderr_lines": 0,
+  "truncated": false
+}

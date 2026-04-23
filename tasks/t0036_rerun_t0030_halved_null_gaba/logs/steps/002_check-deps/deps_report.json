@@ -1,0 +1,11 @@
+{
+  "task_id": "t0036_rerun_t0030_halved_null_gaba",
+  "checked_at": "2026-04-23T20:59:25Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0022_modify_dsgc_channel_testbed", "status": "completed", "satisfied": true},
+    {"task_id": "t0030_distal_dendrite_diameter_sweep_dsgc", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}

@@ -1,0 +1,15 @@
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 6.0 nS
+[gaba_override] Patched t0022 GABA_CONDUCTANCE_NULL_NS: 12.0 -> 6.0
+[t0036 sweep] multipliers = (0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0)
+[t0036 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0036 sweep] n_trials per (multiplier, angle) = 10
+[t0036 sweep] tidy CSV -> tasks\t0036_rerun_t0030_halved_null_gaba\results\data\sweep_results.csv
+[t0036 sweep] per-diameter CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\per_diameter
+[t0036 sweep] building DSGC cell + E-I pairs + distal snapshot...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0036 sweep] cell built in 0.4s; n_pairs = 282; n_distal = 129

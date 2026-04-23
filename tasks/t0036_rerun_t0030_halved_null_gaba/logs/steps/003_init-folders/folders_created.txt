@@ -1,0 +1,19 @@
+Folders created by init_task_folders.py (already ran):
+
+assets/
+code/
+corrections/
+intervention/
+logs/commands/
+logs/searches/
+logs/sessions/
+logs/steps/
+plan/
+research/
+results/
+results/images/
+
+Files created:
+__init__.py
+code/__init__.py
+.gitkeep markers in 12 directories

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\arf\scripts\aggregators\aggregate_suggestions.py", line 713, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\arf\scripts\aggregators\aggregate_suggestions.py", line 695, in main
+    print(_format_full_json(suggestions=filtered_full))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2248' in position 64191: character maps to <undefined>

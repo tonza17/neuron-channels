@@ -1,0 +1,5 @@
+[classify_slope] WARNING: pre-condition failed; label -> 'flat_partial'
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\curve_shape.json
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0036_rerun_t0030_halved_null_gaba\tasks\t0036_rerun_t0030_halved_null_gaba\results\data\slope_classification.json
+[classify_slope] mechanism_label = flat_partial  slope = 0.0049  p = 0.01948  dsi_range_extremes = 0.0060  used_fallback = True  precondition_pass = False
+[classify_slope] DSI vs diameter slope is not distinguishable from zero (slope=0.0049 per log2(multiplier), p=0.01948, dsi_range_extremes=0.0060); neither Schachter2010 nor passive filtering is supported. [PARTIAL: Null-Hz pre-condition FAILED: mean null firing at 1.0x baseline = 0.0000 Hz, below threshold 0.1 Hz. DSI slope interpretation is PARTIAL: primary DSI is still effectively pinned at the null-zero corner. Recommend a further reduction of GABA_CONDUCTANCE_NULL_NS (currently 6.0 nS), e.g. to 4 nS.]
