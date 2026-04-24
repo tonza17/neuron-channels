@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0040-01",
+  "correcting_task": "t0040_brainstorm_results_8",
+  "target_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0030-06",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "Superseded by S-0034-07 (use primary DSI on t0024 as the t0033 optimiser substrate). t0034 established that primary DSI has measurable dynamic range on the AR(2) stochastic t0024 port (0.545-0.774 across a distal-length sweep, slope -0.126 p=0.038), so the fallback to vector-sum DSI is no longer necessary. Continuing to pursue vector-sum DSI as the t0033 objective would duplicate effort and could introduce a metric mismatch with downstream analyses that standardise on primary DSI."
+}

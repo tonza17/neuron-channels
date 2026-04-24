@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0040-05",
+  "correcting_task": "t0040_brainstorm_results_8",
+  "target_task": "t0010_hunt_missed_dsgc_models",
+  "target_kind": "suggestion",
+  "target_id": "S-0010-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Hand-porting the Hanson 2019 Spatial-Offset-DSGC model overlaps t0023 (Port Hanson 2019 DSGC), which remains intervention_blocked pending t0022 outcomes. t0022 is now complete, but the substrate choice for any further DSGC port is under review (t0034-07 recommends t0024 as the preferred substrate). Deprioritising to medium keeps the suggestion available as an alternate plan without implying that a standalone hand-port task should be spawned ahead of resolving t0023's disposition."
+}

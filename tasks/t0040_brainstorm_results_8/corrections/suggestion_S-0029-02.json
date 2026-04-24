@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0040-03",
+  "correcting_task": "t0040_brainstorm_results_8",
+  "target_task": "t0029_distal_dendrite_length_sweep_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0029-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Distal Nav ablation crossed with a length sweep on t0022 is most informative after t0043 has installed a proper Nav1.6 / Kv3 inventory. Running the ablation against the current lumped-HHst testbed would measure an ablation of a channel that does not match published DSGC channel priors (t0019). Deprioritising from high to medium until t0043 lands."
+}

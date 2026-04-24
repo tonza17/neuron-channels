@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0040-02",
+  "correcting_task": "t0040_brainstorm_results_8",
+  "target_task": "t0029_distal_dendrite_length_sweep_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0029-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Poisson-noise desaturation of the t0029 length sweep on t0022 is deprioritised because t0043 (Nav1.6 + Kv3 + NMDA restoration) and t0044 (Schachter re-test) address the same underlying pinning problem by a different route: fixing the channel inventory and restoring NMDA rather than adding Poisson background release. If t0043 and t0044 recover the expected peak firing rate and Schachter signature, the Poisson rescue becomes a secondary comparison rather than a primary experiment. Keeping the suggestion active at medium priority."
+}

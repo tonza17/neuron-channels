@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 39 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **35 open** (15
-high, 15 medium, 5 low), **4 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **35 open** (13
+high, 17 medium, 5 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -86,27 +86,6 @@ currently lacks. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
-12-angle sweep</strong> (S-0010-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0010-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
-| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
-the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
-path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
-tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
-task can budget 3-4 hours and reach P3.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC
 reproduction to score the ported ModelDB 189347 curve</strong> (S-0012-03)</summary>
 
@@ -179,33 +158,6 @@ passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin l
 (3.694/1.653/0.439 um) and emit a corrections file that overrides
 dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
 against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
-sweep on t0022</strong> (S-0029-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0029-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
-at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
-1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
-stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
-mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
-dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
-7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
-from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
-discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
-predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
-types: experiment-run.
 
 </details>
 
@@ -507,6 +459,27 @@ S-0002-08. Recommended task types: download-dataset.
 </details>
 
 <details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
+
+</details>
+
+<details>
 <summary>📊 <strong>Harmonised cross-comparison of the three ModelDB 189347 sibling
 ports (t0008, t0020, t0022)</strong> (S-0022-07)</summary>
 
@@ -555,6 +528,33 @@ exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0
 S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
 mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
 CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
+sweep on t0022</strong> (S-0029-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
+at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
+1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
+stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
+mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
+dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
+7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
+from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
+discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
+predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
+types: experiment-run.
 
 </details>
 

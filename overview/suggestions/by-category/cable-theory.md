@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-21 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **18
-open** (5 high, 12 medium, 1 low), **3 closed**.
+21 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **17
+open** (4 high, 12 medium, 1 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -105,29 +105,6 @@ paper asset's download_status to 'success', replace summary Overview disclaimers
 PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
 length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
 papers.
-
-</details>
-
-<details>
-<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
-t0035 diameter data</strong> (S-0035-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0035-01` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
-the computed distal electrotonic length L/lambda, using morphology and passive parameters
-already stored in each task's outputs. If the length and diameter data collapse onto a single
-curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
-is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
-new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
-data-analysis.
 
 </details>
 
@@ -533,5 +510,30 @@ realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-dia
 (0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
 Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
 target since t0030.
+
+</details>
+
+<details>
+<summary>✅ <s>Zero-cost L/lambda collapse analysis of all t0034 length and t0035
+diameter data</s> — covered by <a
+href="../../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/"><code>t0041_electrotonic_length_collapse_t0034_t0035</code></a>
+(S-0035-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
 
 </details>

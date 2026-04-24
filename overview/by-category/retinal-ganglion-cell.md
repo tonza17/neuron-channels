@@ -1878,7 +1878,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
 sweep on t0022</strong> (S-0029-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
 
 The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
@@ -2190,7 +2190,7 @@ download-dataset, data-analysis.
 <summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
 12-angle sweep</strong> (S-0010-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0010_hunt_missed_dsgc_models](../../tasks/t0010_hunt_missed_dsgc_models/)
 
 Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove

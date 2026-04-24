@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-39-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-44-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-170-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (15K)
-| [full](llm-context/full.xml) (218K) | [roadmap](llm-context/roadmap.xml) (53K) |
-[results](llm-context/results-deep-dive.xml) (155K) |
-[assets](llm-context/literature-and-assets.xml) (32K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (16K)
+| [full](llm-context/full.xml) (226K) | [roadmap](llm-context/roadmap.xml) (57K) |
+[results](llm-context/results-deep-dive.xml) (159K) |
+[assets](llm-context/literature-and-assets.xml) (33K)
 
-*Last updated: 2026-04-24 08:21 UTC*
+*Last updated: 2026-04-24 10:53 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,17 +56,22 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (1)](tasks/by-status/not_started.md)
+## [Ready to Start (4)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`description`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/task_description.md) | — |
+| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) | [`description`](../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md) | — |
+| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) | [`description`](../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 
 ---
 
-## [Blocked Tasks (0)](tasks/)
+## [Blocked Tasks (1)](tasks/)
 
-No blocked tasks.
+| # | Task | Blocked By |
+|---|------|------------|
+| 0044 | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) | [`t0043_nav16_kv3_nmda_restoration_t0022`](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
 
 ---
 
@@ -78,10 +83,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (37 total)](tasks/by-status/completed.md)
+## [Recently Completed (38 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0040 | [Brainstorm results session 8](../overview/tasks/task_pages/t0040_brainstorm_results_8.md) | [`results`](../tasks/t0040_brainstorm_results_8/results/results_detailed.md) | 2026-04-24 15:30 |
 | 0039 | [7-diameter sweep on t0022 DSGC at GABA=4 nS](../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) | [`results`](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/results/results_detailed.md) | 2026-04-24 08:18 |
 | 0038 | [Correct t0033 base GABA to 4 nS on t0022 variant](../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md) | [`results`](../tasks/t0038_correct_t0033_base_gaba_to_4ns/results/results_detailed.md) | 2026-04-24 07:12 |
 | 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
@@ -91,9 +97,8 @@ No blocked tasks.
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
 | 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`results`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md) | 2026-04-22 15:40 |
 | 0033 | [Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget](../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) | [`results`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/results/results_detailed.md) | 2026-04-22 15:40 |
-| 0028 | [Brainstorm results session 6](../overview/tasks/task_pages/t0028_brainstorm_results_6.md) | [`results`](../tasks/t0028_brainstorm_results_6/results/results_detailed.md) | 2026-04-22 13:10 |
 
-*27 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*28 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -109,7 +114,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (152 open)](suggestions/)
+## [Recent Suggestions (149 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -272,11 +277,11 @@ that writes a histogram per diameter.
 
 </details>
 
-*142 more open suggestions → [open suggestions](suggestions/)*
+*139 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (51)](suggestions/)
+## [High Priority Suggestions (44)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -360,23 +365,6 @@ task types: comparative-analysis, answer-question.
 </details>
 
 <details>
-<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
-t0035 diameter data</strong> (S-0035-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
-
-Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
-the computed distal electrotonic length L/lambda, using morphology and passive parameters
-already stored in each task's outputs. If the length and diameter data collapse onto a single
-curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
-is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
-new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
-data-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
@@ -390,67 +378,6 @@ arises because NEURON's surface-density gbar scales total channel current by d w
 load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
 trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
-sweep on t0022</strong> (S-0029-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
-at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
-1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
-stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
-mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
-dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
-7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
-from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
-discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
-predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
-types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
-on t0022</strong> (S-0029-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0029_distal_dendrite_length_sweep_dsgc](../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
-
-HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
-115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
-Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
-Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
-gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
-length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
-the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
-resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
-with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
-min CPU. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
-sweep on t0022</strong> (S-0030-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
-deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
-collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
-and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
-NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
-rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
-Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
-1.0, and diameter regains discrimination power between Schachter2010 active amplification
-(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
-length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
 
 </details>
 
@@ -474,7 +401,86 @@ option. Recommended task types: write-library, answer-question.
 
 </details>
 
-*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
+assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
+(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
+1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
+literature-less guess that drives the largest sensitivity-band column. Run a short task that
+(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
+NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
+under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
+per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
+$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
+experiment-run, baseline-evaluation.
+
+</details>
+
+<details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
+training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
+one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
+multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
+full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
+fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
+coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
+compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
+25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
+and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
+types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
+separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
+across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
+t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
+library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
+evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
+pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
+Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
+JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
+single evaluator. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+*34 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

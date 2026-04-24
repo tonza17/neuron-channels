@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-24T08:21:17Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-24T10:53:42Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>174915</char_count>
-    <byte_count>174928</byte_count>
-    <estimated_tokens>43728</estimated_tokens>
+    <char_count>174925</char_count>
+    <byte_count>174938</byte_count>
+    <estimated_tokens>43731</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -694,7 +694,7 @@ Rall&#x27;s 3/2 power rule (r_parent^(3/2) = sum r_child^(3/2)) is the only biop
 ## Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep
 ID: S-0010-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0010_hunt_missed_dsgc_models
 Source paper: 10.1038_s41467-019-09147-4
@@ -1565,7 +1565,7 @@ No paper in the t0027 corpus sweeps dendritic spines on DSGCs; all 20 papers tre
 ## Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022
 ID: S-0029-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0029_distal_dendrite_length_sweep_dsgc
 Source paper: 10.1371_journal.pcbi.1000899
@@ -1577,7 +1577,7 @@ The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pin
 ## Distal Nav ablation crossed with distal-dendrite length sweep on t0022
 ID: S-0029-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0029_distal_dendrite_length_sweep_dsgc
 Source paper: 10.1038_nn.3565
@@ -1658,7 +1658,7 @@ The t0030 sweep failed as a Schachter2010-vs-passive-filtering discriminator bec
 ## Poisson-noise desaturation rerun of the distal-dendrite diameter sweep on t0022
 ID: S-0030-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0030_distal_dendrite_diameter_sweep_dsgc
 Categories: direction-selectivity, dendritic-computation, compartmental-modeling, synaptic-integration
@@ -1701,7 +1701,7 @@ t0030 applied a single multiplier uniformly to every distal leaf, producing a 4x
 
 ## Change the t0033 optimiser objective to a vector-sum-DSI-weighted blend instead of pure primary DSI
 ID: S-0030-06
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0030_distal_dendrite_diameter_sweep_dsgc

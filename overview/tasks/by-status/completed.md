@@ -1,12 +1,143 @@
 # ✅ Tasks: Completed
 
-37 tasks. ✅ **37 completed**.
+38 tasks. ✅ **38 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0040 — <strong>Brainstorm results session 8</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0040_brainstorm_results_8` |
+| **Status** | completed |
+| **Effective date** | 2026-04-24 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-24T14:00:00Z |
+| **End time** | 2026-04-24T15:30:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 8](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md) |
+| **Task folder** | [`t0040_brainstorm_results_8/`](../../../tasks/t0040_brainstorm_results_8/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0040_brainstorm_results_8/results/results_detailed.md) |
+
+# Brainstorm Results Session 8
+
+## Motivation
+
+Eighth strategic brainstorming session, run on 2026-04-24 after the t0037–t0039 wave merged.
+The researcher requested a cross-task audit of every test run so far against published data,
+with the explicit goal of identifying discrepancies and designing corrections. The session
+produced a master test table, a published-data comparison table (both saved under `results/`),
+and a prioritised list of four follow-up tasks that target the discrepancies.
+
+## Scope
+
+* Review project state after the t0037–t0039 merges: 37 tasks completed, 1 `not_started`
+  (t0031), 1 `intervention_blocked` (t0023), 151 uncovered suggestions, $0.00 / $1.00 budget
+  used.
+* Build a master table summarising every simulation test we have run (13 tests across t0008,
+  t0020, t0022, t0024, t0026, t0029, t0030, t0034, t0035, t0036, t0037, t0039).
+* Build a published-data comparison table listing every quantitative claim from the
+  `compare_literature.md` files and classify each as MATCH / PARTIAL / MISMATCH.
+* Group the mismatches into discrepancy themes and propose root-cause corrections.
+* Approve four tasks (t0041–t0044) that address the top-leverage discrepancies.
+* Apply one suggestion rejection and four reprioritisations based on recent findings.
+
+## Researcher Decisions
+
+* **Four new tasks, all zero-cost local runs**:
+  * **t0041** — L/lambda electrotonic-length collapse analysis of t0034 and t0035 data. Data
+    analysis only, no simulation. Covers S-0035-01.
+  * **t0042** — Fine-grained null-GABA ladder {3.5, 3.0, 2.5} nS on t0022 baseline diameter.
+    Tests whether t0022 can reach DSI >= 0.5 below 4 nS without destabilising preferred
+    direction.
+  * **t0043** — Add Nav1.6 + Kv3 to AIS\_DISTAL and distal dendrites of t0022; restore NMDA at
+    PD and ND BIPs; validate peak rate against t0004 envelope (40–80 Hz). Covers S-0019-03
+    (partial), S-0018-03 (partial), S-0022-02.
+  * **t0044** — 7-diameter Schachter2010 re-test on the t0043 output substrate at GABA = 4 nS.
+    Pass/fail on quadratic curvature sign. Covers S-0002-02.
+* **Execution order**: t0041 and t0042 can run in parallel; t0043 can run in parallel with
+  them; t0044 depends on t0043 completion.
+* **Suggestion corrections**:
+  * Reject S-0030-06 (vector-sum DSI as t0033 objective). Superseded by S-0034-07 (primary DSI
+    on t0024).
+  * Reprioritise S-0029-01, S-0029-02, S-0030-02, S-0010-01 from high to medium pending t0043
+    and t0044 outcomes.
+* **Sheffield paywalled-paper retrieval** (Kim2014 + Sivyer2013): deferred to a later wave.
+* **t0023**: remains intervention_blocked; not revisited this session.
+
+## New Tasks Created
+
+Five child tasks (t0041, t0042, t0043, t0044) are authorised by this session. Task indices are
+auto-assigned by `/create-task` and will be strictly greater than 40 per the ordering
+invariant. Full scopes live in each child task's `task_description.md`.
+
+## Correction Files
+
+Five corrections written to `corrections/`:
+
+* `suggestion_S-0030-06.json` — update status to rejected
+* `suggestion_S-0029-01.json` — update priority to medium
+* `suggestion_S-0029-02.json` — update priority to medium
+* `suggestion_S-0030-02.json` — update priority to medium
+* `suggestion_S-0010-01.json` — update priority to medium
+
+## Published-Data Comparison Artifact
+
+Per the researcher's explicit request, the master test table and the published-data comparison
+table are stored as `results/test_vs_literature_table.md`. They are also embedded in
+`results/results_detailed.md` under the Methodology section and reproduced in
+`logs/session_log.md` as part of the session transcript.
+
+## Expected Assets
+
+This brainstorm session produces no assets beyond the brainstorm-results task folder and its
+downstream child tasks. `expected_assets` is `{}`.
+
+## Dependencies
+
+All 37 completed tasks up through t0039. t0023 and t0031 are excluded because they are not
+completed.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 8**
+>
+> **Summary**
+>
+> Eighth strategic brainstorm, run on 2026-04-24 after the t0037–t0039 merges. The session
+> produced
+> a cross-task audit comparing every DSGC simulation test we have run against published data,
+> and
+> approved four follow-up tasks (t0041–t0044) that target the discrepancies. One suggestion
+> was
+> rejected and four were reprioritised from high to medium.
+>
+> **Session Overview**
+>
+> Date: 2026-04-24. Duration: ~90 min. The researcher requested a master table of every test
+> plus a
+> side-by-side comparison to published data, with the explicit purpose of identifying
+> discrepancies
+> and designing corrections. Phase 1 aggregated project state (39 tasks total, 37 completed, 1
+> `intervention_blocked`, 1 `not_started`; 151 uncovered suggestions; $0.00 / $1.00 budget
+> used) and
+> delegated the cross-task synthesis to subagents. Phase 2 proposed four tasks (t0041–t0044)
+> plus
+> five suggestion corrections; the researcher confirmed all five decisions and explicitly
+> deferred a
+> Sheffield paywalled-paper retrieval task.
+>
+> **Decisions**
+
+</details>
 
 <details>
 <summary>✅ 0039 — <strong>7-diameter sweep on t0022 DSGC at GABA=4 nS</strong></summary>
