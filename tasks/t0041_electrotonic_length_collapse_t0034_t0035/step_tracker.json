@@ -86,19 +86,19 @@
       "step": 10,
       "name": "results",
       "description": "Write results_summary, results_detailed, metrics, costs, remote_machines_used; embed collapse plot.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T12:08:34Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T12:11:18Z",
       "log_file": "logs\\steps\\010_results/"
     },
     {
       "step": 11,
       "name": "suggestions",
       "description": "Generate follow-up suggestions based on collapse analysis outcome.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T12:11:38Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\011_suggestions/"
     },
     {
       "step": 12,
