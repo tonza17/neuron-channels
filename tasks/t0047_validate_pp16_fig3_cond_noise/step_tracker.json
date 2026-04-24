@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Implement conductance-recording wrapper, run gNMDA sweep + extended noise sweep, populate the answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T22:40:46Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T23:44:04Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
