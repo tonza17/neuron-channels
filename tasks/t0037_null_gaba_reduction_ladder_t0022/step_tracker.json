@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare unpinning threshold (if any) to Schachter2010 / Park2014 null-inhibition ranges.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T00:02:52Z",
       "completed_at": null,
-      "log_file": "logs/steps/013_compare-literature/"
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
