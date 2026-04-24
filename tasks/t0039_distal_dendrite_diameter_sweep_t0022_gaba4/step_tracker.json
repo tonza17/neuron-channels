@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary, results_detailed, Examples, Task Requirement Coverage.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T08:11:05Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T08:13:16Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
