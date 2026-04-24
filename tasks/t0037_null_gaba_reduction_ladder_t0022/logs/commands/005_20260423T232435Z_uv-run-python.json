@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0037_null_gaba_reduction_ladder_t0022",
+  "command": "uv run python -u -m tasks.t0037_null_gaba_reduction_ladder_t0022.code.run_sweep --preflight",
+  "exit_code": 1,
+  "duration_seconds": 0.418,
+  "started_at": "2026-04-23T23:24:35Z",
+  "completed_at": "2026-04-23T23:24:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0037_null_gaba_reduction_ladder_t0022",
+  "stdout_file": "005_20260423T232435Z_uv-run-python.stdout.txt",
+  "stderr_file": "005_20260423T232435Z_uv-run-python.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 16,
+  "truncated": false
+}

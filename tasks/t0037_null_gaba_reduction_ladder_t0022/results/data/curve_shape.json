@@ -1,0 +1,42 @@
+{
+  "label": "unpinned",
+  "base_label": "unpinned",
+  "unpinning_threshold_ns": 0.0,
+  "unpinning_threshold_hz": 0.1,
+  "null_hz_by_gaba": {
+    "0.00": 15.0,
+    "0.50": 14.0,
+    "1.00": 15.0,
+    "2.00": 14.0,
+    "4.00": 6.0
+  },
+  "primary_dsi_by_gaba": {
+    "0.00": 0.166667,
+    "0.50": 0.2,
+    "1.00": 0.157303,
+    "2.00": 0.243243,
+    "4.00": 0.428571
+  },
+  "peak_hz_by_gaba": {
+    "0.00": 21.0,
+    "0.50": 21.0,
+    "1.00": 20.6,
+    "2.00": 23.0,
+    "4.00": 15.0
+  },
+  "vector_sum_dsi_by_gaba": {
+    "0.00": 0.058133,
+    "0.50": 0.06923,
+    "1.00": 0.099486,
+    "2.00": 0.09305,
+    "4.00": 0.25942
+  },
+  "precondition_peak_hz_at_4ns": 15.0,
+  "precondition_pass": true,
+  "precondition_threshold_hz": 10.0,
+  "precondition_note": null,
+  "recommendation_text": "The unpinning threshold is 0.00 nS. A follow-up full-diameter sweep at this GABA level is warranted to measure the DSI-vs-diameter slope once null firing is unpinned.",
+  "comparator_task_ids": [
+    "t0036"
+  ]
+}

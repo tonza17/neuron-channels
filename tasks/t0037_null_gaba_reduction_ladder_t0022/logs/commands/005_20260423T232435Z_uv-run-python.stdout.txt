@@ -1,0 +1,6 @@
+[t0037 sweep] gaba_levels_ns = (0.0, 2.0, 4.0)
+[t0037 sweep] angles = (0, 90, 180)
+[t0037 sweep] n_trials per (GABA, angle) = 2
+[t0037 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\sweep_results.csv
+[t0037 sweep] per-GABA CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba
+[t0037 sweep] building DSGC cell + E-I pairs + distal snapshot...

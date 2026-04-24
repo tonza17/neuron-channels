@@ -1,0 +1,17 @@
+{
+  "omitted_metrics": [
+    "tuning_curve_rmse"
+  ],
+  "rationale": "tuning_curve_rmse is computed against the t0004 target tuning curve. For this task only null-direction GABA conductance changes; the stimulus and biophysics otherwise match the t0022 baseline. Target-fit RMSE is not informative for a GABA ladder sweep, so we report DSI / HWHM / reliability but omit RMSE.",
+  "primary_metric": "direction_selectivity_index",
+  "critical_diagnostic": "null_hz",
+  "secondary_metrics_recorded": [
+    "dsi_vector_sum",
+    "peak_hz",
+    "null_hz",
+    "hwhm_deg",
+    "reliability",
+    "preferred_dir_deg",
+    "mean_peak_mv"
+  ]
+}

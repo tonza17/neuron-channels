@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E004 error: Missing mandatory section: '## Key Findings'[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

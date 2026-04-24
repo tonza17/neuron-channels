@@ -1,0 +1,1225 @@
+[t0037 sweep] gaba_levels_ns = (4.0, 2.0, 1.0, 0.5, 0.0)
+[t0037 sweep] angles = (0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330)
+[t0037 sweep] n_trials per (GABA, angle) = 10
+[t0037 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\sweep_results.csv
+[t0037 sweep] per-GABA CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba
+[t0037 sweep] building DSGC cell + E-I pairs + distal snapshot...
+	0
+	1
+	1
+	1
+	1
+dsgc_channel_partition.hoc loaded: 5 SectionLists declared.
+[t0037 sweep] cell built in 0.4s; n_pairs = 282; n_distal = 129
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 12.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=2  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=3  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=4  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=5  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=6  spikes= 14  rate= 14.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=7  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=8  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=  0  trial=9  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 30  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=2  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 60  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=6  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir= 90  trial=9  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=120  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=0  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=1  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=2  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=3  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=4  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=5  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=6  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=7  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=8  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=150  trial=9  spikes=  6  rate=  6.00Hz  peak=+41.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=1  spikes=  6  rate=  6.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=2  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=3  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=4  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=5  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=6  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=7  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=8  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=180  trial=9  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=1  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=2  spikes=  6  rate=  6.00Hz  peak=+42.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=3  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=4  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=5  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=6  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=7  spikes=  6  rate=  6.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=8  spikes=  6  rate=  6.00Hz  peak=+42.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=210  trial=9  spikes=  6  rate=  6.00Hz  peak=+42.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=0  spikes=  1  rate=  1.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=1  spikes=  1  rate=  1.00Hz  peak=+42.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=2  spikes=  1  rate=  1.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=3  spikes=  1  rate=  1.00Hz  peak=+42.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=4  spikes=  1  rate=  1.00Hz  peak=+42.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=5  spikes=  1  rate=  1.00Hz  peak=+42.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=6  spikes=  1  rate=  1.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=7  spikes=  1  rate=  1.00Hz  peak=+42.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=8  spikes=  1  rate=  1.00Hz  peak=+42.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=240  trial=9  spikes=  1  rate=  1.00Hz  peak=+42.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=0  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=1  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=2  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=3  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=4  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=5  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=6  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=7  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=8  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=270  trial=9  spikes= 11  rate= 11.00Hz  peak=+43.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=1  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=2  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=3  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=4  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=5  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=6  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=7  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=8  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=300  trial=9  spikes=  6  rate=  6.00Hz  peak=+42.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=0  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 4.0 nS)
+  G=4.00nS  dir=330  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G4p00.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 4.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=2  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=3  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=4  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=5  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=6  spikes= 14  rate= 14.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=7  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=8  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=  0  trial=9  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 30  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=2  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 60  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=6  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir= 90  trial=9  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=120  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=3  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=150  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=0  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=1  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=2  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=3  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=4  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=5  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=6  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=7  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=8  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=180  trial=9  spikes= 17  rate= 17.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=0  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=1  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=2  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=3  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=4  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=5  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=6  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=7  spikes= 23  rate= 23.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=8  spikes= 23  rate= 23.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=210  trial=9  spikes= 23  rate= 23.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=0  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=1  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=2  spikes= 18  rate= 18.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=3  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=4  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=5  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=6  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=7  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=8  spikes= 18  rate= 18.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=240  trial=9  spikes= 18  rate= 18.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=270  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=0  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=1  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=2  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=3  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=4  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=5  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=6  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=7  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=8  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=300  trial=9  spikes=  6  rate=  6.00Hz  peak=+42.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 2.0 nS (previous = 2.0 nS)
+  G=2.00nS  dir=330  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G2p00.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 2.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=2  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=3  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=4  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=5  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=6  spikes= 14  rate= 14.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=7  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=8  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=  0  trial=9  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 30  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=2  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 60  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=6  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir= 90  trial=9  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=120  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=0  spikes= 18  rate= 18.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=1  spikes= 18  rate= 18.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=2  spikes= 18  rate= 18.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=3  spikes= 18  rate= 18.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=4  spikes= 18  rate= 18.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=5  spikes= 18  rate= 18.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=6  spikes= 18  rate= 18.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=7  spikes= 18  rate= 18.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=8  spikes= 18  rate= 18.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=150  trial=9  spikes= 18  rate= 18.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=0  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=1  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=2  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=3  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=4  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=5  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=6  spikes= 19  rate= 19.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=7  spikes= 19  rate= 19.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=8  spikes= 19  rate= 19.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=180  trial=9  spikes= 19  rate= 19.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=0  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=1  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=2  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=3  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=4  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=5  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=6  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=7  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=8  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=210  trial=9  spikes= 20  rate= 20.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=0  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=1  spikes= 16  rate= 16.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=2  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=3  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=4  spikes= 16  rate= 16.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=5  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=6  spikes= 16  rate= 16.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=7  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=8  spikes= 16  rate= 16.00Hz  peak=+43.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=240  trial=9  spikes= 16  rate= 16.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=0  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=1  spikes= 20  rate= 20.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=2  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=3  spikes= 20  rate= 20.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=4  spikes= 20  rate= 20.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=5  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=6  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=7  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=8  spikes= 20  rate= 20.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=270  trial=9  spikes= 20  rate= 20.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=0  spikes= 20  rate= 20.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=1  spikes= 20  rate= 20.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=2  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=3  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=4  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=5  spikes= 20  rate= 20.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=6  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=7  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=8  spikes= 20  rate= 20.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=300  trial=9  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 1.0 nS (previous = 1.0 nS)
+  G=1.00nS  dir=330  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G1p00.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 1.0 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=2  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=3  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=4  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=5  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=6  spikes= 14  rate= 14.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=7  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=8  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=  0  trial=9  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 30  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=2  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 60  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=6  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir= 90  trial=9  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=120  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=0  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=1  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=2  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=3  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=4  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=5  spikes= 20  rate= 20.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=6  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=7  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=8  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=150  trial=9  spikes= 20  rate= 20.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=0  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=1  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=2  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=3  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=4  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=5  spikes= 21  rate= 21.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=6  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=7  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=8  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=180  trial=9  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=210  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=240  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=0  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=1  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=2  spikes= 16  rate= 16.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=3  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=4  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=5  spikes= 16  rate= 16.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=6  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=7  spikes= 17  rate= 17.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=8  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=270  trial=9  spikes= 16  rate= 16.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=0  spikes= 17  rate= 17.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=1  spikes= 17  rate= 17.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=2  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=3  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=4  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=5  spikes= 17  rate= 17.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=6  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=7  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=8  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=300  trial=9  spikes= 17  rate= 17.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.5 nS (previous = 0.5 nS)
+  G=0.50nS  dir=330  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G0p50.csv
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.5 nS)
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=1  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=2  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=3  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=4  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=5  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=6  spikes= 14  rate= 14.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=7  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=8  spikes= 14  rate= 14.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=  0  trial=9  spikes= 14  rate= 14.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=0  spikes= 14  rate= 14.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=1  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=2  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=3  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=4  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=5  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=6  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=7  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=8  spikes= 14  rate= 14.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 30  trial=9  spikes= 14  rate= 14.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=0  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=1  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=2  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=4  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=5  spikes= 13  rate= 13.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=6  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=7  spikes= 13  rate= 13.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=8  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 60  trial=9  spikes= 13  rate= 13.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=0  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=1  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=2  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=3  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=4  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=5  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=6  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=7  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=8  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir= 90  trial=9  spikes= 13  rate= 13.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=120  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=0  spikes= 17  rate= 17.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=1  spikes= 17  rate= 17.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=2  spikes= 17  rate= 17.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=3  spikes= 17  rate= 17.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=4  spikes= 17  rate= 17.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=5  spikes= 17  rate= 17.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=6  spikes= 17  rate= 17.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=7  spikes= 17  rate= 17.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=8  spikes= 17  rate= 17.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=150  trial=9  spikes= 17  rate= 17.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=0  spikes= 12  rate= 12.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=1  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=2  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=3  spikes= 12  rate= 12.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=4  spikes= 12  rate= 12.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=5  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=6  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=7  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=8  spikes= 12  rate= 12.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=180  trial=9  spikes= 12  rate= 12.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.0mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.1mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=210  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=0  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=1  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=2  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=3  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=4  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=5  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=6  spikes= 15  rate= 15.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=7  spikes= 15  rate= 15.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=8  spikes= 15  rate= 15.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=240  trial=9  spikes= 15  rate= 15.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=0  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=1  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=2  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=3  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=4  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=5  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=6  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=7  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=8  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=270  trial=9  spikes= 17  rate= 17.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=0  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=1  spikes= 21  rate= 21.00Hz  peak=+43.6mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=2  spikes= 21  rate= 21.00Hz  peak=+43.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=3  spikes= 21  rate= 21.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=4  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=5  spikes= 21  rate= 21.00Hz  peak=+43.7mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=6  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=7  spikes= 21  rate= 21.00Hz  peak=+43.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=8  spikes= 21  rate= 21.00Hz  peak=+43.8mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=300  trial=9  spikes= 21  rate= 21.00Hz  peak=+43.9mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=0  spikes= 15  rate= 15.00Hz  peak=+44.3mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=1  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=2  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=3  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=4  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=5  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=6  spikes= 15  rate= 15.00Hz  peak=+44.4mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=7  spikes= 15  rate= 15.00Hz  peak=+44.5mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=8  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 0.0 nS (previous = 0.0 nS)
+  G=0.00nS  dir=330  trial=9  spikes= 15  rate= 15.00Hz  peak=+44.2mV
+[t0037 sweep] wrote per-GABA curve -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\per_gaba\tuning_curve_G0p00.csv
+[t0037 sweep] wrote tidy CSV to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\sweep_results.csv
+[t0037 sweep] wrote wall-time JSON to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0037_null_gaba_reduction_ladder_t0022\tasks\t0037_null_gaba_reduction_ladder_t0022\results\data\wall_time_by_gaba.json
