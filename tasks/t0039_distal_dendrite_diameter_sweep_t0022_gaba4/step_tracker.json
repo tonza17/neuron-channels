@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Copy t0030+t0037 code; run 7-diameter sweep at GABA=4 nS (840 trials, ~30 min).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T08:08:37Z",
       "completed_at": null,
-      "log_file": "logs/steps/009_implementation/"
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,
