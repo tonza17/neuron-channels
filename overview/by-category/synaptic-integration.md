@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(30)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(32)](../suggestions/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -2107,7 +2107,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (26 open, 4 closed)
+## Suggestions (28 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -2153,6 +2153,39 @@ GABA than null. Implement the cartwheel asymmetry as a new parameter
 `GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037's over-excitation regime below 2
 nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves
 t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
+GABA-suppressed active amplification</strong> (S-0039-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
+(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
+concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
+angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
+concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
+mechanism (a) is right.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Diagnose and fix t0022's 15 Hz peak-firing cap (inherited
+AMPA-only drive issue)</strong> (S-0039-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+Peak firing at the preferred direction is 15 Hz across the diameter sweep, well below
+Schachter2010's 40-80 Hz baseline. The same 15 Hz ceiling appeared in t0030 at 12 nS GABA, so
+it is a pre-existing t0022 drive issue, not a diameter or GABA artefact. Duplicate of
+S-0037-04 but now blocking quantitative literature comparisons for the discriminator task too.
+Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
+diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
+published traces.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-24T00:14:28Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-24T08:21:17Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>59161</char_count>
-    <byte_count>59263</byte_count>
-    <estimated_tokens>14790</estimated_tokens>
+    <char_count>61431</char_count>
+    <byte_count>61534</byte_count>
+    <estimated_tokens>15357</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -146,9 +146,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
         <id>t0036_rerun_t0030_halved_null_gaba</id>
         <id>t0037_null_gaba_reduction_ladder_t0022</id>
+        <id>t0038_correct_t0033_base_gaba_to_4ns</id>
+        <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
       </source_ids>
       <content>
-Completed tasks: 35
+Completed tasks: 37
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -359,6 +361,18 @@ ID: t0037_null_gaba_reduction_ladder_t0022
 Completed: 2026-04-24
 Short description: Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0037_null_gaba_reduction_ladder_t0022&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: Null-GABA Reduction Ladder on t0022 DSGC Summary Swept `GABA_CONDUCTANCE_NULL_NS` across 5 levels {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 (600 trials). **S-0036-01 rescue hypothesis CONFIRMED**: null firing unpinned at every tested level (6-15 Hz vs t0036&#x27;s 0 Hz at 6 nS baseline). The **operational sweet spot is 4 nS**: DSI=0.429, peak 15 Hz, null 6 Hz, preferred direction ~40° — biologically realistic DSGC regime. At ≤ 2 nS the cell fires everywhere and preferred direction randomises. The follow-up recommendation is to **rerun t0030&#x27;s...
+
+## Correct t0033 base GABA to 4 nS on t0022 variant
+ID: t0038_correct_t0033_base_gaba_to_4ns
+Completed: 2026-04-24
+Short description: Create a correction against t0033&#x27;s answer asset stating that any downstream optimiser or sweep targeting t0022 must set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter, per t0037 findings.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0038_correct_t0033_base_gaba_to_4ns&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: Correct t0033 Base GABA to 4 nS on t0022 Variant Summary Wrote correction `C-0038-01` against t0033&#x27;s answer asset `vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation` encoding the t0037 finding that the operational base parameter on t0022 is `GABA_CONDUCTANCE_NULL_NS = 4.0 nS`, not the original 12 nS default. Closes suggestion **S-0037-02**. Verificator PASSED. No sweep, no code, no new assets. Total cost $0.00, wall time under 10 minutes. Metrics * **Correction files produced**: **1** (`answer_vastai-*.json`). * **Correction ID**...
+
+## 7-diameter sweep on t0022 DSGC at GABA=4 nS
+ID: t0039_distal_dendrite_diameter_sweep_t0022_gaba4
+Completed: 2026-04-24
+Short description: Rerun t0030&#x27;s 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0039_distal_dendrite_diameter_sweep_t0022_gaba4&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: 7-Diameter Sweep on t0022 at GABA=4 nS Summary Rerunning t0030&#x27;s 7-diameter sweep at the t0037-validated operational GABA level (`GABA_CONDUCTANCE_NULL_NS = 4.0 nS`) produces the first diameter-vs-DSI measurement on t0022 with a discriminator that has dynamic range. DSI decreases monotonically from **0.429** at D=0.5x baseline to **0.368** at D=2.0x, slope=**-0.034** per log2(multiplier), **p=0.008**. Mechanism classified as **passive_filtering** on t0030&#x27;s inherited thresholds. The preferred direction stays pinned near **40°** across the full...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

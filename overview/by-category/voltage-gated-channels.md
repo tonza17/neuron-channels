@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(26)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(27)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,24 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 2 closed)
+## Suggestions (25 open, 2 closed)
+
+<details>
+<summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
+DSI) morphology dynamic range on t0022</strong> (S-0039-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0039 shows the t0022 discriminator's total DSI spread across a 4x diameter range is only
+0.061 (0.368 to 0.429). Any pure-morphology optimiser running at GABA=4 nS on t0022 has a
+ceiling of 0.429 (the 4 nS saturation value). If t0033's planned optimiser is scoped to
+maximise DSI via morphology alone, the maximum achievable lift from the baseline is ~0.06 -
+the headroom is much smaller than originally planned. Consider adding a channel-density
+dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
+density than through morphology alone.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to

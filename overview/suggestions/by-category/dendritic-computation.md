@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-40 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **33 open** (11
+41 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **34 open** (12
 high, 20 medium, 2 low), **7 closed**.
 
 [Back to all suggestions](../README.md)
@@ -210,6 +210,30 @@ from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and le
 discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
 predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
 types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
 
 </details>
 

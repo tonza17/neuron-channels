@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-112 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **103 open** (38
-high, 57 medium, 8 low), **9 closed**.
+116 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **105 open** (37
+high, 60 medium, 8 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -774,24 +774,26 @@ thresholding. Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
-(S-0037-01)</summary>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0037-01` |
+| **ID** | `S-0039-01` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-24 |
-| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
 | **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
 
-t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
-at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
-realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
-(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
-Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
-target since t0030.
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
 
 </details>
 
@@ -886,27 +888,6 @@ pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whe
 tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
 outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
 Na-inactivation-independent peak firing behaviour.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Update t0033 optimiser base GABA on t0022 variant to 4.0
-nS</strong> (S-0037-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0037-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
-GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
-t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
-first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
-this change the Vast.ai optimisation runs on t0022 will be wasted compute.
 
 </details>
 
@@ -1516,6 +1497,26 @@ side - this wraps the schedule-parameter side. Recommended task types: write-lib
 </details>
 
 <details>
+<summary>🧪 <strong>Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6,
+0.7} at GABA=4 nS on t0022</strong> (S-0039-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+t0039 found DSI saturates at 0.429 for D in {0.5, 0.75, 1.0}, matching the t0037 4 nS ceiling.
+This is the discriminator's upper bound at this GABA level. A finer sweep thinner than 0.5x
+would locate the saturation edge and bound the headroom available to any morphology optimiser
+on t0022. 5 diameters x 12 angles x 10 trials = 600 trials, ~25 min local CPU, $0.00.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA-to-AMPA timing offset sweep on t0022 diameter testbed to
 test timing-dominates-conductance hypothesis</strong> (S-0036-02)</summary>
 
@@ -1685,6 +1686,28 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
+GABA-suppressed active amplification</strong> (S-0039-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
+(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
+concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
+angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
+concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
+mechanism (a) is right.
 
 </details>
 
@@ -2264,6 +2287,29 @@ REQ-6 partial-coverage caveat.
 </details>
 
 <details>
+<summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
+DSI) morphology dynamic range on t0022</strong> (S-0039-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-05` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0039 shows the t0022 discriminator's total DSI spread across a 4x diameter range is only
+0.061 (0.368 to 0.429). Any pure-morphology optimiser running at GABA=4 nS on t0022 has a
+ceiling of 0.429 (the 4 nS saturation value). If t0033's planned optimiser is scoped to
+maximise DSI via morphology alone, the maximum achievable lift from the baseline is ~0.06 -
+the headroom is much smaller than originally planned. Consider adding a channel-density
+dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
+density than through morphology alone.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Wider distal-diameter sweep (0.25x to 4.0x) after the schedule
 fix to probe extreme impedance regimes</strong> (S-0030-03)</summary>
 
@@ -2631,6 +2677,30 @@ code-reproduction.
 </details>
 
 <details>
+<summary>✅ <s>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</s> — covered by
+<a
+href="../../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/"><code>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</code></a>
+(S-0037-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
+at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
+realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
+(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
+Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
+target since t0030.
+
+</details>
+
+<details>
 <summary>✅ <s>Rerun the distal-diameter sweep on t0022 with null-GABA conductance
 reduced from 12 nS to 6 nS</s> — covered by <a
 href="../../../tasks/t0036_rerun_t0030_halved_null_gaba/"><code>t0036_rerun_t0030_halved_null_gaba</code></a>
@@ -2756,5 +2826,28 @@ Prediction (creative_thinking.md #3): if [Schachter2010, 10.1371_journal.pcbi.10
 dendritic-spike gain is essential, thickening abolishes active gain but preserves subthreshold
 DSI; if passive filtering carries DSI, thickening preserves both. Disambiguates the active vs
 passive contribution that the corpus does not separate cleanly.
+
+</details>
+
+<details>
+<summary>✅ <s>Update t0033 optimiser base GABA on t0022 variant to 4.0 nS</s> —
+covered by <a
+href="../../../tasks/t0038_correct_t0033_base_gaba_to_4ns/"><code>t0038_correct_t0033_base_gaba_to_4ns</code></a>
+(S-0037-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
+GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
+t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
+first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
+this change the Vast.ai optimisation runs on t0022 will be wasted compute.
 
 </details>

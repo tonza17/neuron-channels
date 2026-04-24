@@ -1,4 +1,4 @@
-# Metrics Results (4 metrics, 167 results)
+# Metrics Results (4 metrics, 188 results)
 
 ## Key Metrics
 
@@ -8,6 +8,6 @@
 
 | Metric | Results |
 |--------|---------|
-| [Direction Selectivity Index](direction_selectivity_index.md) | 61 |
-| [Tuning Curve Half-Width at Half-Max (degrees)](tuning_curve_hwhm_deg.md) | 60 |
-| [Tuning Curve Reliability](tuning_curve_reliability.md) | 43 |
+| [Direction Selectivity Index](direction_selectivity_index.md) | 68 |
+| [Tuning Curve Half-Width at Half-Max (degrees)](tuning_curve_hwhm_deg.md) | 67 |
+| [Tuning Curve Reliability](tuning_curve_reliability.md) | 50 |

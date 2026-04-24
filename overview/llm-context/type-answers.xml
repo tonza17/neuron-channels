@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="answers" generated_at_utc="2026-04-24T00:14:28Z">
+<llm_context_archive type_id="answers" generated_at_utc="2026-04-24T08:21:17Z">
   <archive_summary>
     <title>All Answers</title>
     <description>Complete question and answer corpus with full answer bodies.</description>
     <section_count>1</section_count>
-    <char_count>196900</char_count>
-    <byte_count>197066</byte_count>
-    <estimated_tokens>49225</estimated_tokens>
+    <char_count>196957</char_count>
+    <byte_count>197123</byte_count>
+    <estimated_tokens>49239</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -2487,7 +2487,7 @@ mechanism, and which regions match biology?
 
 ## What is the Vast.ai GPU cost and recommended organisation of a joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation task?
 ID: vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation
-Short title: Vast.ai cost for joint DSGC morphology + top-10 VGC DSI optimisation
+Short title: Vast.ai cost for joint DSGC morphology + top-10 VGC DSI optimisation (t0022 base GABA_CONDUCTANCE_NULL_NS = 4.0 nS per t0037)
 Confidence: medium
 Created by: t0033_plan_dsgc_morphology_channel_optimisation on 2026-04-22
 Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels

@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-30 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **26 open** (11 high,
-14 medium, 1 low), **4 closed**.
+32 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **28 open** (11 high,
+16 medium, 1 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -313,6 +313,29 @@ paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction
 </details>
 
 <details>
+<summary>🧪 <strong>Diagnose and fix t0022's 15 Hz peak-firing cap (inherited
+AMPA-only drive issue)</strong> (S-0039-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Peak firing at the preferred direction is 15 Hz across the diameter sweep, well below
+Schachter2010's 40-80 Hz baseline. The same 15 Hz ceiling appeared in t0030 at 12 nS GABA, so
+it is a pre-existing t0022 drive issue, not a diameter or GABA artefact. Duplicate of
+S-0037-04 but now blocking quantitative literature comparisons for the discriminator task too.
+Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
+diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
+published traces.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Diagnose and fix the low peak firing rate in t0022 (15 Hz vs
 40-80 Hz Schachter2010)</strong> (S-0037-04)</summary>
 
@@ -510,6 +533,28 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
+GABA-suppressed active amplification</strong> (S-0039-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
+(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
+concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
+angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
+concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
+mechanism (a) is right.
 
 </details>
 

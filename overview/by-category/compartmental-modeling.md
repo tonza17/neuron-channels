@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (27)](../papers/by-category/compartmental-modeling.md) | [Answers
 (10)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(118)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(122)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (4)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -1663,38 +1663,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (109 open, 9 closed)
-
-<details>
-<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
-(S-0037-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
-at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
-realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
-(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
-Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
-target since t0030.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Update t0033 optimiser base GABA on t0022 variant to 4.0
-nS</strong> (S-0037-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
-GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
-t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
-first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
-this change the Vast.ai optimisation runs on t0022 will be wasted compute.
-
-</details>
+## Suggestions (111 open, 11 closed)
 
 <details>
 <summary>🧪 <strong>Diagnose and fix the low peak firing rate in t0022 (15 Hz vs
@@ -1725,6 +1694,73 @@ comparison task should run matched 7-diameter and 5-length sweeps on both substr
 identical stimulus schedules and report whether the two discriminators agree on
 Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth
 investigating.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
+GABA-suppressed active amplification</strong> (S-0039-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
+(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
+concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
+angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
+concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
+mechanism (a) is right.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Diagnose and fix t0022's 15 Hz peak-firing cap (inherited
+AMPA-only drive issue)</strong> (S-0039-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+Peak firing at the preferred direction is 15 Hz across the diameter sweep, well below
+Schachter2010's 40-80 Hz baseline. The same 15 Hz ceiling appeared in t0030 at 12 nS GABA, so
+it is a pre-existing t0022 drive issue, not a diameter or GABA artefact. Duplicate of
+S-0037-04 but now blocking quantitative literature comparisons for the discriminator task too.
+Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
+diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
+published traces.
+
+</details>
+
+<details>
+<summary>📊 <strong>Introduce per-trial spike-count distribution metric to
+distinguish failures from timing shifts</strong> (S-0039-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0039's peak firing drops from 15 Hz at D=0.5x to 13 Hz at D=2.0x - a 2 Hz difference could be
+2 fewer spikes per trial at the same timing, or a shift in the spike-count DISTRIBUTION (e.g.,
+bimodal failures). Currently metrics_per_diameter.csv reports only the mean; adding per-trial
+spike-count histograms would separate 'failure rate' from 'timing shift' in cable-theory
+interpretation. Low effort: reuse existing sweep_results.csv, add a standalone analysis script
+that writes a histogram per diameter.
 
 </details>
 

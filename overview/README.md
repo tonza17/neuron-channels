@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-37-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-164-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-39-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-170-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (15K)
-| [full](llm-context/full.xml) (213K) | [roadmap](llm-context/roadmap.xml) (51K) |
-[results](llm-context/results-deep-dive.xml) (150K) |
-[assets](llm-context/literature-and-assets.xml) (31K)
+| [full](llm-context/full.xml) (218K) | [roadmap](llm-context/roadmap.xml) (53K) |
+[results](llm-context/results-deep-dive.xml) (155K) |
+[assets](llm-context/literature-and-assets.xml) (32K)
 
-*Last updated: 2026-04-24 00:14 UTC*
+*Last updated: 2026-04-24 08:21 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -78,10 +78,12 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (35 total)](tasks/by-status/completed.md)
+## [Recently Completed (37 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0039 | [7-diameter sweep on t0022 DSGC at GABA=4 nS](../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) | [`results`](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/results/results_detailed.md) | 2026-04-24 08:18 |
+| 0038 | [Correct t0033 base GABA to 4 nS on t0022 variant](../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md) | [`results`](../tasks/t0038_correct_t0033_base_gaba_to_4ns/results/results_detailed.md) | 2026-04-24 07:12 |
 | 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
 | 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | [`results`](../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) | 2026-04-23 22:40 |
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
@@ -90,10 +92,8 @@ No blocked tasks.
 | 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`results`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md) | 2026-04-22 15:40 |
 | 0033 | [Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget](../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) | [`results`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/results/results_detailed.md) | 2026-04-22 15:40 |
 | 0028 | [Brainstorm results session 6](../overview/tasks/task_pages/t0028_brainstorm_results_6.md) | [`results`](../tasks/t0028_brainstorm_results_6/results/results_detailed.md) | 2026-04-22 13:10 |
-| 0032 | [Brainstorm results session 7](../overview/tasks/task_pages/t0032_brainstorm_results_7.md) | [`results`](../tasks/t0032_brainstorm_results_7/results/results_detailed.md) | 2026-04-22 12:30 |
-| 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | [`results`](../tasks/t0027_literature_survey_morphology_ds_modeling/results/results_detailed.md) | 2026-04-21 22:23 |
 
-*25 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*27 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -109,38 +109,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (148 open)](suggestions/)
-
-<details>
-<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
-(S-0037-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
-at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
-realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
-(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
-Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
-target since t0030.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Update t0033 optimiser base GABA on t0022 variant to 4.0
-nS</strong> (S-0037-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
-GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
-t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
-first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
-this change the Vast.ai optimisation runs on t0022 will be wasted compute.
-
-</details>
+## [Recent Suggestions (152 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -206,122 +175,124 @@ t0022 closer to the canonical DSGC E-I motif rather than relying on a single nul
 </details>
 
 <details>
-<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
-cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
-t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
-vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
-fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
-electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
-(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
-alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
-length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
-1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
-and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
-from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
-resolve the effect). Recommended task types: experiment-run.
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
 
 </details>
 
 <details>
-<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
-stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+<summary>🧪 <strong>Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6,
+0.7} at GABA=4 nS on t0022</strong> (S-0039-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
-Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
-temporally smooths the null-direction noise floor, potentially contributing to the observed
-primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
-in or out before the cable-filtering interpretation is credible. Run the 12-direction x
-10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
-{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
-trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
-DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
-crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
-fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
-Recommended task types: experiment-run.
+t0039 found DSI saturates at 0.429 for D in {0.5, 0.75, 1.0}, matching the t0037 4 nS ceiling.
+This is the discriminator's upper bound at this GABA level. A finer sweep thinner than 0.5x
+would locate the saturation edge and bound the headroom available to any morphology optimiser
+on t0022. 5 diameters x 12 angles x 10 trials = 600 trials, ~25 min local CPU, $0.00.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points)
-to characterise the electrotonic-length optimum</strong> (S-0034-03)</summary>
+<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
+GABA-suppressed active amplification</strong> (S-0039-03)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
-[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
-t0034 covered 0.5x-2.0x (7 points) and found the primary-DSI peak at 0.75x (0.774) with a
-non-monotonic decline beyond. To fit Tukker2004's intermediate-electrotonic-length optimum
-quantitatively and to test whether the curve continues falling or saturates beyond 2.0x,
-extend the sweep to 0.25x, 0.375x, 0.5x, 0.75x, 1.0x, 1.5x, 2.0x, 3.0x, 4.0x (9 points). Keep
-the standard 12-direction x 10-trial protocol and AR(2) rho=0.6. Expected outcomes: (a) a
-clear DSI peak at intermediate length with symmetric falloff on both sides (supports
-Tukker2004 optimum); (b) preferred-angle instability across 3.0x-4.0x (supports Schachter2010
-local-spike-failure); (c) d_lambda violations at extreme lengths (engineering concern - apply
-adaptive nseg at each point). Distinct from S-0029-03 (same approach on t0022 testbed which
-was pinned at DSI=1.000). Recommended task types: experiment-run.
+t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
+(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
+concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
+angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
+concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
+mechanism (a) is right.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
-verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
-(S-0034-04)</summary>
+<summary>🧪 <strong>Diagnose and fix t0022's 15 Hz peak-firing cap (inherited
+AMPA-only drive issue)</strong> (S-0039-04)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
-[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
-t0034 attributed the primary-DSI non-monotonicity and preferred-angle jumps (to 330 deg at
-1.5x, to 30 deg at 2.0x) to Schachter2010 local-spike-failure in distal compartments, based
-only on the somatic readout and the angular-instability fingerprint. This interpretation is
-currently suggestive but not confirmed. Re-run the t0034 sweep with per-compartment V
-recording at every distal terminal (177 sections) and compute the distal-to-soma spike-count
-ratio per trial per angle. Under Schachter2010 local-spike-failure, the ratio should be >1 at
-baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable length
-decouples distal tips. If the ratio stays constant, the angle jumps are not a
-local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
-should be explored. Recommended task types: experiment-run.
+Peak firing at the preferred direction is 15 Hz across the diameter sweep, well below
+Schachter2010's 40-80 Hz baseline. The same 15 Hz ceiling appeared in t0030 at 12 nS GABA, so
+it is a pre-existing t0022 drive issue, not a diameter or GABA artefact. Duplicate of
+S-0037-04 but now blocking quantitative literature comparisons for the discriminator task too.
+Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
+diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
+published traces.
 
 </details>
 
-*138 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
+DSI) morphology dynamic range on t0022</strong> (S-0039-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0039 shows the t0022 discriminator's total DSI spread across a 4x diameter range is only
+0.061 (0.368 to 0.429). Any pure-morphology optimiser running at GABA=4 nS on t0022 has a
+ceiling of 0.429 (the 4 nS saturation value). If t0033's planned optimiser is scoped to
+maximise DSI via morphology alone, the maximum achievable lift from the baseline is ~0.06 -
+the headroom is much smaller than originally planned. Consider adding a channel-density
+dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
+density than through morphology alone.
+
+</details>
+
+<details>
+<summary>📊 <strong>Introduce per-trial spike-count distribution metric to
+distinguish failures from timing shifts</strong> (S-0039-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-24 | **Source**:
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
+
+t0039's peak firing drops from 15 Hz at D=0.5x to 13 Hz at D=2.0x - a 2 Hz difference could be
+2 fewer spikes per trial at the same timing, or a shift in the spike-count DISTRIBUTION (e.g.,
+bimodal failures). Currently metrics_per_diameter.csv reports only the mean; adding per-trial
+spike-count histograms would separate 'failure rate' from 'timing shift' in cable-theory
+interpretation. Low effort: reuse existing sweep_results.csv, add a standalone analysis script
+that writes a histogram per diameter.
+
+</details>
+
+*142 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (52)](suggestions/)
+## [High Priority Suggestions (51)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
-(S-0037-01)</summary>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
 
 **Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
-t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
-at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
-realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
-(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
-Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
-target since t0030.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Update t0033 optimiser base GABA on t0022 variant to 4.0
-nS</strong> (S-0037-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
-GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
-t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
-first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
-this change the Vast.ai optimisation runs on t0022 will be wasted compute.
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
 
 </details>
 
@@ -483,7 +454,27 @@ length/diameter) and S-0029-01 (length axis). Recommended task types: experiment
 
 </details>
 
-*42 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
+blend instead of pure primary DSI</strong> (S-0030-06)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
+sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
+optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
+the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
+Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
+peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
+S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
+keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
+vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
+option. Recommended task types: write-library, answer-question.
+
+</details>
+
+*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

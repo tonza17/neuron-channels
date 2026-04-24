@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-24T00:14:28Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-24T08:21:17Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>78</section_count>
-    <char_count>1356574</char_count>
-    <byte_count>1360002</byte_count>
-    <estimated_tokens>339143</estimated_tokens>
+    <section_count>79</section_count>
+    <char_count>1364478</char_count>
+    <byte_count>1367939</byte_count>
+    <estimated_tokens>341119</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -147,9 +147,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
         <id>t0036_rerun_t0030_halved_null_gaba</id>
         <id>t0037_null_gaba_reduction_ladder_t0022</id>
+        <id>t0038_correct_t0033_base_gaba_to_4ns</id>
+        <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
       </source_ids>
       <content>
-Completed tasks: 35
+Completed tasks: 37
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -360,6 +362,18 @@ ID: t0037_null_gaba_reduction_ladder_t0022
 Completed: 2026-04-24
 Short description: Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0037_null_gaba_reduction_ladder_t0022&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: Null-GABA Reduction Ladder on t0022 DSGC Summary Swept `GABA_CONDUCTANCE_NULL_NS` across 5 levels {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 (600 trials). **S-0036-01 rescue hypothesis CONFIRMED**: null firing unpinned at every tested level (6-15 Hz vs t0036&#x27;s 0 Hz at 6 nS baseline). The **operational sweet spot is 4 nS**: DSI=0.429, peak 15 Hz, null 6 Hz, preferred direction ~40° — biologically realistic DSGC regime. At ≤ 2 nS the cell fires everywhere and preferred direction randomises. The follow-up recommendation is to **rerun t0030&#x27;s...
+
+## Correct t0033 base GABA to 4 nS on t0022 variant
+ID: t0038_correct_t0033_base_gaba_to_4ns
+Completed: 2026-04-24
+Short description: Create a correction against t0033&#x27;s answer asset stating that any downstream optimiser or sweep targeting t0022 must set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter, per t0037 findings.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0038_correct_t0033_base_gaba_to_4ns&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: Correct t0033 Base GABA to 4 nS on t0022 Variant Summary Wrote correction `C-0038-01` against t0033&#x27;s answer asset `vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation` encoding the t0037 finding that the operational base parameter on t0022 is `GABA_CONDUCTANCE_NULL_NS = 4.0 nS`, not the original 12 nS default. Closes suggestion **S-0037-02**. Verificator PASSED. No sweep, no code, no new assets. Total cost $0.00, wall time under 10 minutes. Metrics * **Correction files produced**: **1** (`answer_vastai-*.json`). * **Correction ID**...
+
+## 7-diameter sweep on t0022 DSGC at GABA=4 nS
+ID: t0039_distal_dendrite_diameter_sweep_t0022_gaba4
+Completed: 2026-04-24
+Short description: Rerun t0030&#x27;s 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0039_distal_dendrite_diameter_sweep_t0022_gaba4&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: 7-Diameter Sweep on t0022 at GABA=4 nS Summary Rerunning t0030&#x27;s 7-diameter sweep at the t0037-validated operational GABA level (`GABA_CONDUCTANCE_NULL_NS = 4.0 nS`) produces the first diameter-vs-DSI measurement on t0022 with a discriminator that has dynamic range. DSI decreases monotonically from **0.429** at D=0.5x baseline to **0.368** at D=2.0x, slope=**-0.034** per log2(multiplier), **p=0.008**. Mechanism classified as **passive_filtering** on t0030&#x27;s inherited thresholds. The preferred direction stays pinned near **40°** across the full...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -23705,6 +23719,115 @@ rule as t0030 → t0036 copy).
 * **t0012_tuning_curve_scoring_loss_library** — DSI scorer library imported for null_hz, peak_hz,
   primary DSI, vector-sum DSI, HWHM.
 * **t0011_response_visualization_library** — polar overlay chart for the 5 GABA levels.
+      </content>
+    </section>
+    <section id="t0039_distal_dendrite_diameter_sweep_t0022_gaba4-research_code" source_kind="file">
+      <title>t0039_distal_dendrite_diameter_sweep_t0022_gaba4 — 7-diameter sweep on t0022 DSGC at GABA=4 nS — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0039_distal_dendrite_diameter_sweep_t0022_gaba4&quot;
+---
+### Research Code: Prior-Task Code Reuse for t0039
+
+#### Task Objective
+
+Identify the reusable code from prior tasks that can be copied into t0039&#x27;s `code/` folder and
+adapted for the 7-diameter sweep at `GABA_CONDUCTANCE_NULL_NS = 4.0` on the t0022 testbed. Per the
+ARF cross-task import rule (CLAUDE.md rule 9: tasks must not import from other tasks&#x27; code
+directories; only libraries are importable), all reused code must be copied.
+
+#### Library Landscape
+
+Two libraries are importable across tasks:
+
+* `tasks.t0022_modify_dsgc_channel_testbed.code.*` (treated as library imports via t0022 package
+  symbols — matches pattern used by t0030, t0036, t0037).
+* `tasks.t0008_port_modeldb_189347.code.build_cell` (cell-build helpers; imported by every DSGC
+  sweep task).
+* `tasks.t0011_response_visualization_library.code.tuning_curve_viz` (polar / overlay plotting used
+  by `plot_sweep.py`).
+* `tasks.t0012_build_wsd_data_loader_and_scorer.code.tuning_curve_loss` (DSI scoring — not
+  directly imported here but consumed via `analyse_sweep.py`).
+
+#### Reusable Code and Assets
+
+##### From t0030 (diameter sweep driver)
+
+* `constants.py` — `DIAMETER_MULTIPLIERS`, `PREFLIGHT_DIAMETER_MULTIPLIERS`, CSV columns,
+  mechanism classification thresholds. **Copied verbatim**.
+* `paths.py` — centralised `Path` constants anchored at task root. **Copied**, `TASK_ID` updated.
+* `diameter_override.py` — `identify_distal_sections`, `snapshot_distal_diameters`,
+  `set_distal_diameter_multiplier`, `assert_distal_diameters`. **Copied verbatim**.
+* `preflight_distal.py`, `analyse_sweep.py`, `classify_slope.py`, `plot_sweep.py`, `run_sweep.py`,
+  `trial_runner_diameter.py` — **copied**, module-path self-references bulk-renamed from
+  `t0030_distal_dendrite_diameter_sweep_dsgc` →
+  `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`.
+
+##### From t0037 (null-GABA override)
+
+* `gaba_override.py` — `set_null_gaba_ns(value_ns: float)` runtime patch of
+  `tasks.t0022...constants.GABA_CONDUCTANCE_NULL_NS`. **Copied verbatim** (no renaming needed; no
+  inter-task references).
+
+##### Substantive edits in t0039
+
+* `constants.py` — added `GABA_NULL_NS_VALUE: float = 4.0` for the fixed GABA level.
+* `trial_runner_diameter.py` — merged t0030&#x27;s diameter override pattern with t0037&#x27;s lazy re-read
+  of the patched `GABA_CONDUCTANCE_NULL_NS`. Both overrides apply at every trial. The
+  `schedule_ei_onsets` call now computes `gaba_null_pref_ratio` from the effective (post-patch)
+  value, matching the t0037 pattern that cleared the `run_tuning_curve.py:327` assertion.
+* `run_sweep.py` — calls `set_null_gaba_ns(value_ns=GABA_NULL_NS_VALUE)` at startup as a
+  belt-and-braces patch. Outer loop iterates diameter multipliers (not GABA levels as in t0037).
+
+#### Key Findings
+
+1. **The t0037 lazy re-read pattern is the canonical way** to apply a runtime GABA patch inside a
+   trial runner without triggering the `run_tuning_curve.py:327` assertion. The fix is to re-import
+   `GABA_CONDUCTANCE_NULL_NS` AFTER `set_null_gaba_ns` has fired, so the local binding sees the
+   updated value.
+2. **Diameter and GABA overrides are orthogonal** — both can be applied in the same trial with no
+   ordering conflict beyond `apply_params` (which resets v_init and Random123) having to run first.
+3. **No analytical code from t0030 needs modification** — `analyse_sweep.py`, `classify_slope.py`,
+   and `plot_sweep.py` all operate on the per-trial CSV format, which is unchanged. The mechanism
+   classification thresholds (MIN_SLOPE_MAGNITUDE, MAX_P_VALUE, DSI_SATURATION_THRESHOLD) are
+   inherited from t0030 as-is.
+
+#### Lessons Learned
+
+* When merging two upstream runners that each monkey-patch a module-level constant, keep the
+  `from X import Y as _Y` lazy re-read pattern localised to one helper; do not distribute it across
+  call sites.
+* The ARF copy-not-import rule makes code reuse verbose but keeps the dependency graph explicit,
+  which matters when inherited behaviour (like the `run_tuning_curve.py` assertion) changes between
+  tasks.
+
+#### Recommendations for This Task
+
+1. Use t0037&#x27;s trial runner pattern, merged with t0030&#x27;s diameter override. See
+   `code/trial_runner_diameter.py`.
+2. Keep the analysis / classification / plotting code byte-identical to t0030 so the slope fit is
+   directly comparable.
+3. Run a preflight (3 diameters × 3 angles × 2 trials = 18 trials) before the full 840-trial sweep
+   to validate the merged overrides.
+
+#### Task Index
+
+| Task | Code Reused | Notes |
+| --- | --- | --- |
+| t0022 | constants, `run_tuning_curve`, `neuron_bootstrap` | library-style imports |
+| t0008 | `build_cell` helpers | library-style imports |
+| t0030 | constants, paths, diameter_override, runner, analysis, classifier, plot | copied |
+| t0037 | `gaba_override` | copied |
+| t0036 | (ancestor of t0037; not directly copied) | - |
+| t0011 | `tuning_curve_viz` | library-style imports (via `plot_sweep.py`) |
       </content>
     </section>
   </sections>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-24T00:14:28Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-24T08:21:17Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>286666</char_count>
-    <byte_count>288115</byte_count>
-    <estimated_tokens>71666</estimated_tokens>
+    <char_count>300081</char_count>
+    <byte_count>301626</byte_count>
+    <estimated_tokens>75020</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -54,9 +54,11 @@
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
         <id>t0036_rerun_t0030_halved_null_gaba</id>
         <id>t0037_null_gaba_reduction_ladder_t0022</id>
+        <id>t0038_correct_t0033_base_gaba_to_4ns</id>
+        <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
       </source_ids>
       <content>
-Total tasks: 37
+Total tasks: 39
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -5334,6 +5336,276 @@ t0030&#x27;s 7-diameter sweep at GABA=4 nS** to measure the Schachter2010 vs pas
   all clean (11 files).
 * Pre-condition gate: **PASSED** (null_hz ≥ 0.1 at every level; peak_hz ≥ 10 at the highest tested
   level; no AssertionError during 600 trials).
+
+## Correct t0033 base GABA to 4 nS on t0022 variant
+ID: t0038_correct_t0033_base_gaba_to_4ns
+Status: completed
+Effective date: 2026-04-24
+Short description: Create a correction against t0033&#x27;s answer asset stating that any downstream optimiser or sweep targeting t0022 must set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter, per t0037 findings.
+Dependencies: t0033_plan_dsgc_morphology_channel_optimisation, t0037_null_gaba_reduction_ladder_t0022
+Task types: correction
+Source suggestion: S-0037-02
+Start time: 2026-04-24T07:01:47Z
+End time: 2026-04-24T07:12:00Z
+
+#### Motivation
+
+t0033&#x27;s Vast.ai optimisation plan was written before the GABA-ladder rescue was available. At the
+time, the plan implicitly assumed the t0022 default `GABA_CONDUCTANCE_NULL_NS = 12 nS` as the base
+parameter for the joint morphology + channel optimisation. Subsequent experimental tasks showed this
+default is incompatible with a working DSI objective:
+
+* **t0030** — 7-diameter sweep at 12 nS: primary DSI pinned at 1.000; diameter effect
+  unmeasurable.
+* **t0036** — halved to 6 nS: primary DSI still pinned at 1.000; null firing = 0 Hz.
+* **t0037** — ladder sweep across {4, 2, 1, 0.5, 0} nS: 4 nS is the operational sweet spot
+  (primary DSI = 0.429, preferred direction = 40.8°, matches Park2014&#x27;s biological range
+  0.40–0.60). Below 2 nS the cell over-excites and preferred direction randomises.
+
+Without this correction, any downstream task that reads t0033&#x27;s plan and instantiates an optimiser
+on t0022 with the legacy 12 nS default would burn compute on a pinned objective: the optimiser would
+see a flat DSI=1.000 landscape and converge to anything.
+
+#### Scope
+
+Create a correction file in `corrections/` that updates t0033&#x27;s answer asset
+(`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation`) to document the new base-parameter
+recommendation. The correction&#x27;s `changes` payload adds or overrides a parameter note so that
+aggregators and downstream consumers expose the corrected effective view.
+
+This is a **correction-type task**. No sweep, no plan rewrite, no new answer asset. The completed
+t0033 folder remains untouched, per the ARF immutability rule.
+
+#### Dependencies
+
+* `t0033_plan_dsgc_morphology_channel_optimisation` — target of the correction
+* `t0037_null_gaba_reduction_ladder_t0022` — source of the 4 nS evidence
+
+#### Approach
+
+1. Read `arf/specifications/corrections_specification.md` to confirm the correction file format for
+   `target_kind: &quot;answer&quot;` with `action: &quot;update&quot;`.
+2. Read t0033&#x27;s `assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/`
+   details and full answer document to understand what the correction must override.
+3. Write `corrections/answer_vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation.json`
+   with a concise `changes` object and a `rationale` citing t0037&#x27;s DSI=0.429 result at 4 nS and
+   t0036&#x27;s pinned result at 6 nS.
+4. Run `verify_correction.py` (or equivalent) to confirm the correction file is valid.
+5. Run `aggregate_answers.py` to confirm the effective aggregated view of the answer reflects the
+   new base parameter.
+
+#### Expected Outputs
+
+* `corrections/answer_vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation.json` — single
+  correction file with `correction_id: &quot;C-0038-01&quot;`, `action: &quot;update&quot;`, and
+  `target_kind: &quot;answer&quot;`.
+* `results/results_summary.md` — brief confirmation that the correction was written and verified.
+* `results/suggestions.json` — empty or minimal; this task closes S-0037-02 and does not generate
+  new experimental follow-ups.
+
+#### Expected Assets
+
+None. This task produces a correction file and a results writeup, not new assets.
+
+#### Compute and Budget
+
+* Local only. No remote machines. No paid APIs.
+* Expected wall time: under 5 minutes total (metadata edit + verificator runs).
+* Cost: $0.00.
+
+#### Cross-References
+
+* Source suggestion: **S-0037-02** (&quot;Update t0033 optimiser base GABA on t0022 variant to 4.0 nS&quot;)
+* Evidence task: t0037 (DSI=0.429 at 4 nS; DSGC-like preferred direction 40.8°)
+* Pinned baselines: t0030 (12 nS, DSI=1.000), t0036 (6 nS, DSI=1.000)
+
+#### Verification Criteria
+
+1. `corrections/answer_vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation.json` exists
+   and passes the corrections verificator.
+2. The `correction_id` matches the regex `^C-0038-\d{2}$`.
+3. `correcting_task` equals `t0038_correct_t0033_base_gaba_to_4ns` and `target_task` equals
+   `t0033_plan_dsgc_morphology_channel_optimisation`.
+4. Running `aggregate_answers` with the correction overlay in place surfaces the updated base
+   parameter (or a field recording the update) in the effective answer object.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0038_correct_t0033_base_gaba_to_4ns&quot;
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Correct t0033 Base GABA to 4 nS on t0022 Variant
+
+#### Summary
+
+Wrote correction `C-0038-01` against t0033&#x27;s answer asset
+`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation` encoding the t0037 finding that the
+operational base parameter on t0022 is `GABA_CONDUCTANCE_NULL_NS = 4.0 nS`, not the original 12 nS
+default. Closes suggestion **S-0037-02**. Verificator PASSED. No sweep, no code, no new assets.
+Total cost $0.00, wall time under 10 minutes.
+
+#### Metrics
+
+* **Correction files produced**: **1** (`answer_vastai-*.json`).
+* **Correction ID**: `C-0038-01`.
+* **Target kind / action**: `answer` / `update`.
+* **Effective `short_title` overlay**: now ends
+  `&quot;(t0022 base GABA_CONDUCTANCE_NULL_NS = 4.0 nS per t0037)&quot;`.
+* **Evidence chain cited in rationale**: t0030 (12 nS → DSI pinned at 1.000), t0036 (6 nS →
+  still pinned), t0037 (4 nS → DSI=0.429, preferred 40.8°).
+
+#### Verification
+
+* `verify_corrections.py t0038_correct_t0033_base_gaba_to_4ns` — **PASSED**, 0 errors, 0 warnings.
+* `verify_task_dependencies.py` — PASSED.
+* `verify_task_file.py` — PASSED (1 warning: empty `expected_assets`, expected for correction
+  tasks).
+* `verify_logs.py` — PASSED.
+* `verify_task_folder.py` — target 0 errors.
+
+## 7-diameter sweep on t0022 DSGC at GABA=4 nS
+ID: t0039_distal_dendrite_diameter_sweep_t0022_gaba4
+Status: completed
+Effective date: 2026-04-24
+Short description: Rerun t0030&#x27;s 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022
+Task types: experiment-run
+Source suggestion: S-0037-01
+Start time: 2026-04-24T07:15:32Z
+End time: 2026-04-24T08:18:00Z
+
+#### Motivation
+
+t0030 originally ran a 7-diameter sweep on t0022 to measure the Schachter2010-vs-passive-filtering
+DSI slope — the project&#x27;s headline discriminator target since its inception. The attempt failed
+because the t0022 default `GABA_CONDUCTANCE_NULL_NS = 12 nS` pins primary DSI at 1.000 (null firing
+= 0 Hz), leaving the discriminator flat across all diameters. t0036 halved the GABA to 6 nS; still
+pinned. t0037 then swept the ladder {4, 2, 1, 0.5, 0} nS and found **4 nS** is the operational sweet
+spot (DSI=0.429, DSGC-like preferred direction 40.8°, matches Park2014&#x27;s biological range
+0.40–0.60).
+
+This task reruns t0030&#x27;s geometry sweep at the newly-discovered working GABA level, producing the
+first diameter-vs-DSI measurement on t0022 with a discriminator that has dynamic range. The
+resulting slope is the quantity the project needs to test the Schachter2010 active-amplification
+hypothesis against the passive cable-theory prediction.
+
+#### Scope
+
+Sweep **distal dendrite diameter** across 7 levels at `GABA_CONDUCTANCE_NULL_NS = 4.0 nS` on the
+t0022 testbed. All other parameters match the t0030 baseline, so the two sweeps are directly
+comparable except for the GABA value.
+
+* Diameters (µm): {0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0}
+* Trials per angle per diameter: 10
+* Angles per sweep: 12 (standard DSGC tuning directions)
+* Total trials: 7 × 12 × 10 = **840 trials**
+* Expected wall time on local Windows CPU: ~30 minutes (~2 s/trial)
+* Cost: $0.00
+
+#### Dependencies
+
+* `t0022_modify_dsgc_channel_testbed` — testbed + `GABA_CONDUCTANCE_NULL_NS` knob
+* `t0030_distal_dendrite_diameter_sweep_dsgc` — reuses diameter-sweep driver and analysis code
+* `t0037_null_gaba_reduction_ladder_t0022` — source of the 4 nS GABA choice
+
+#### Approach
+
+1. Copy t0030&#x27;s code into t0039&#x27;s `code/` folder (ARF cross-task import rule requires copying).
+2. Adapt t0037&#x27;s `gaba_override.py` — call `set_null_gaba_ns(4.0)` at the start of each trial
+   before invoking `run_tuning_curve`.
+3. Parameterise the diameter sweep over the t0030 diameter list.
+4. Run all 840 trials locally; monitor the process until completion.
+5. Analyse per-diameter DSI means and stddev; fit the DSI-vs-diameter slope and compare to
+   Schachter2010 (active amplification expects concave-down, passive filtering expects monotonically
+   decreasing).
+6. Write `compare_literature.md` matching our slope against published DSGC diameter dependence.
+
+#### Expected Outputs
+
+* `results/data/sweep_results.csv` — full 840-trial raw output (diameter, angle, trial, peak_hz,
+  null_hz, dsi_primary, dsi_vector_sum, pref_angle).
+* `results/data/metrics_per_diameter.csv` — per-diameter aggregated metrics (mean, stddev, n).
+* `results/data/slope_fit.json` — fitted slope of DSI vs diameter with CI.
+* `results/images/dsi_vs_diameter.png` — DSI means with error bars across 7 diameters.
+* `results/images/tuning_curves_per_diameter.png` — 7-panel plot of fitted tuning curves.
+* `results/results_summary.md`, `results/results_detailed.md` — full writeup.
+* `results/compare_literature.md` — comparison to Schachter2010 vs passive cable predictions.
+* `results/suggestions.json` — follow-ups based on outcome.
+
+#### Expected Assets
+
+None beyond CSV / JSON / images. Task type: `experiment-run`.
+
+#### Compute and Budget
+
+* Local Windows CPU only. No GPU, no remote machines, no paid APIs.
+* Wall time: ~30 minutes for the sweep; total task wall time including ARF pipeline ~60 minutes.
+* Cost: $0.00.
+
+#### Cross-References
+
+* Source suggestion: **S-0037-01** — &quot;Rerun t0030&#x27;s 7-diameter sweep at GABA=4 nS on t0022&quot;.
+* Evidence task: t0037 (DSI=0.429 at 4 nS, DSGC-like pref 40.8°).
+* Pinned baselines: t0030 (12 nS, DSI=1.000 flat), t0036 (6 nS, DSI=1.000 still flat).
+* Correction task: t0038 (recorded the base-parameter update on t0033&#x27;s answer asset).
+
+#### Verification Criteria
+
+1. 840 trials complete successfully (exit code 0 from the sweep driver).
+2. `metrics_per_diameter.csv` has 7 rows, all with non-null DSI values.
+3. At least one diameter has primary DSI measurably different from every other diameter (the sweep
+   is informative, not pinned).
+4. The DSI-vs-diameter slope is reported with a numeric value and 95% CI.
+5. All standard verificators PASS with zero errors.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0039_distal_dendrite_diameter_sweep_t0022_gaba4&quot;
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: 7-Diameter Sweep on t0022 at GABA=4 nS
+
+#### Summary
+
+Rerunning t0030&#x27;s 7-diameter sweep at the t0037-validated operational GABA level
+(`GABA_CONDUCTANCE_NULL_NS = 4.0 nS`) produces the first diameter-vs-DSI measurement on t0022 with a
+discriminator that has dynamic range. DSI decreases monotonically from **0.429** at D=0.5x baseline
+to **0.368** at D=2.0x, slope=**-0.034** per log2(multiplier), **p=0.008**. Mechanism classified as
+**passive_filtering** on t0030&#x27;s inherited thresholds. The preferred direction stays pinned near
+**40°** across the full sweep, confirming the E-I schedule encodes the DS axis; morphology sets the
+gain.
+
+#### Metrics
+
+* **DSI range**: **0.368 → 0.429** (Δ = **0.061**).
+* **Slope**: **-0.0336** per log2(diameter multiplier), **p=0.008**.
+* **Mechanism label**: `passive_filtering` (t0030 classifier, threshold criteria met).
+* **Preferred direction**: **37-41°** across all 7 diameters (stability = **4°** total range).
+* **Null firing rate**: **6 Hz** at every diameter (invariant; set by GABA+schedule).
+* **Peak firing rate**: **13-15 Hz** (decreases with diameter).
+* **DSI saturation**: D=0.5x and D=0.75x both hit DSI=**0.429** (the 4 nS ceiling from t0037).
+* **Total trials executed**: **840** (7 diameters × 12 directions × 10 trials).
+* **Sweep wall time**: **~38 min** (2,322 s total across the 7 diameters).
+* **Cost**: **$0.00** (local CPU only).
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors.
+* `verify_task_dependencies.py` — PASSED (t0022, t0030, t0037 all completed).
+* `verify_plan.py` — PASSED.
+* `verify_research_code.py` — PASSED.
+* `verify_task_results.py` — target 0 errors.
+* `verify_task_folder.py` — target 0 errors.
+* `verify_logs.py` — target 0 errors.
+* `ruff check --fix`, `ruff format`,
+  `mypy -p tasks.t0039_distal_dendrite_diameter_sweep_t0022_gaba4.code` — all clean (11 files).
+* Preflight gate: **PASSED** (18 trials, firing rates DSGC-like, GABA override confirmed).
       </content>
     </section>
   </sections>
