@@ -5,8 +5,9 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
-(5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(32)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(6)](../answers/by-category/synaptic-integration.md) | [Suggestions
+(35)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(1)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -1986,7 +1987,26 @@ simulation.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (5)
+## Answers (6)
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`poleg-polsky-2016-reproduction-audit`](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/)
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+</details>
 
 <details>
 <summary><strong>What variables of neuronal morphology have been shown by
@@ -2107,7 +2127,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (28 open, 4 closed)
+## Suggestions (31 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -2186,6 +2206,59 @@ S-0037-04 but now blocking quantitative literature comparisons for the discrimin
 Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
 diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
 published traces.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
 
 </details>
 

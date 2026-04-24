@@ -1,6 +1,6 @@
 # Tuning Curve Reliability
 
-**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 50
+**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 62
 
 [Back to all metrics](README.md)
 
@@ -56,3 +56,15 @@
 | 48 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 0.50 | **0.942704** |
 | 49 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 1.50 | **0.941639** |
 | 50 | [Distal-dendrite diameter sweep on t0024 DSGC](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | distal diam x 0.75 | **0.926437** |
+| 51 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 1 control (b2gnmda = 0.5 nS, code value) | — |
+| 52 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 1 control (b2gnmda = 2.5 nS, paper value) | — |
+| 53 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 2 AP5 analogue (b2gnmda = 0) | — |
+| 54 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 4 high-Cl- (tuned-excitation analogue, exptype = 3) | — |
+| 55 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 5 0 Mg2+ (Voff_bipNMDA = 1, exptype = 2) | — |
+| 56 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 6/7 fig6_control flickerVAR=0.00 | — |
+| 57 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 6/7 fig6_control flickerVAR=0.10 | — |
+| 58 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 6/7 fig6_zeromg flickerVAR=0.00 | — |
+| 59 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 6/7 fig6_zeromg flickerVAR=0.10 | — |
+| 60 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 8 fig8_control flickerVAR=0.00 | — |
+| 61 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 8 fig8_ap5 flickerVAR=0.00 | — |
+| 62 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 8 fig8_zeromg flickerVAR=0.00 | — |

@@ -5,8 +5,8 @@ Mathematical framework describing voltage spread in passive and active cables.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
-(2)](../answers/by-category/cable-theory.md) | [Suggestions
-(21)](../suggestions/by-category/cable-theory.md) | [Datasets
+(3)](../answers/by-category/cable-theory.md) | [Suggestions
+(23)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -539,7 +539,27 @@ than reduced analytical models.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (2)
+## Answers (3)
+
+<details>
+<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
+sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
+theory, and should t0033 parameterise dendritic morphology in 1-D
+(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/)
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
+L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
+primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
+and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
+fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
+non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
+length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
+because the direction of the DSI response is not determined by L/lambda alone.
+
+</details>
 
 <details>
 <summary><strong>What variables of neuronal morphology have been shown by
@@ -582,7 +602,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (17 open, 4 closed)
+## Suggestions (19 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -613,6 +633,35 @@ t0039 found DSI saturates at 0.429 for D in {0.5, 0.75, 1.0}, matching the t0037
 This is the discriminator's upper bound at this GABA level. A finer sweep thinner than 0.5x
 would locate the saturation edge and bound the headroom available to any morphology optimiser
 on t0022. 5 diameters x 12 angles x 10 trials = 600 trials, ~25 min local CPU, $0.00.
+
+</details>
+
+<details>
+<summary>📊 <strong>Impedance-loading-corrected electrotonic-length collapse
+re-test</strong> (S-0041-01)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0041_electrotonic_length_collapse_t0034_t0035](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/)
+
+t0041 falsified the simple lambda = sqrt(d * Rm / (4 * Ra)) collapse prediction for t0024
+distal morphology (primary r=0.42, vector-sum r=-0.68). Re-run the collapse test with an
+impedance-loading-corrected electrotonic length that accounts for sealed-end vs open-end
+boundary conditions and tapered branching. If the corrected formula recovers r > 0.9, the 1-D
+parameterisation could still be feasible with a slightly more sophisticated single scalar.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Per-section L/lambda rather than mean-based for collapse
+tests</strong> (S-0041-04)</summary>
+
+**Kind**: technique | **Priority**: low | **Date**: 2026-04-24 | **Source**:
+[t0041_electrotonic_length_collapse_t0034_t0035](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/)
+
+t0041 used the 177-dendrite mean L (22.63 um) as the baseline for all L/lambda points. A more
+accurate test would compute L/lambda per distal section and aggregate, rather than computing
+L/lambda from an aggregate L. Small refactor of t0041 code; would be free to run since the
+simulation data is already in hand.
 
 </details>
 

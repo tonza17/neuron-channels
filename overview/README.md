@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-6-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-12-CD853F" alt="Answers"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-7-20B2AA" alt="Libraries"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-14-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-45-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-170-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-46-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-180-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (16K)
-| [full](llm-context/full.xml) (227K) | [roadmap](llm-context/roadmap.xml) (58K) |
-[results](llm-context/results-deep-dive.xml) (159K) |
-[assets](llm-context/literature-and-assets.xml) (33K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (17K)
+| [full](llm-context/full.xml) (246K) | [roadmap](llm-context/roadmap.xml) (61K) |
+[results](llm-context/results-deep-dive.xml) (170K) |
+[assets](llm-context/literature-and-assets.xml) (34K)
 
-*Last updated: 2026-04-24 11:13 UTC*
+*Last updated: 2026-04-24 17:45 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,39 +56,39 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (5)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
-| 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`description`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/task_description.md) | 2026-04-24 |
-| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) | [`description`](../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md) | 2026-04-24 |
-| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) | [`description`](../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md) | 2026-04-24 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
 
 ---
 
-## [Blocked Tasks (1)](tasks/)
+## [Blocked Tasks (0)](tasks/)
 
-| # | Task | Blocked By |
-|---|------|------------|
-| 0044 | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) | [`t0043_nav16_kv3_nmda_restoration_t0022`](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
+No blocked tasks.
 
 ---
 
-## Intervention Blocked (1)
+## Intervention Blocked (4)
 
 | # | Task |
 |---|------|
 | 0023 | [Port Hanson 2019 DSGC model](../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
+| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) |
+| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
+| 0044 | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) |
 
 ---
 
-## [Recently Completed (38 total)](tasks/by-status/completed.md)
+## [Recently Completed (40 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
 | 0040 | [Brainstorm results session 8](../overview/tasks/task_pages/t0040_brainstorm_results_8.md) | [`results`](../tasks/t0040_brainstorm_results_8/results/results_detailed.md) | 2026-04-24 15:30 |
+| 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`results`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/results/results_detailed.md) | 2026-04-24 12:15 |
 | 0039 | [7-diameter sweep on t0022 DSGC at GABA=4 nS](../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) | [`results`](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/results/results_detailed.md) | 2026-04-24 08:18 |
 | 0038 | [Correct t0033 base GABA to 4 nS on t0022 variant](../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md) | [`results`](../tasks/t0038_correct_t0033_base_gaba_to_4ns/results/results_detailed.md) | 2026-04-24 07:12 |
 | 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
@@ -96,10 +96,8 @@ No tasks in progress.
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
 | 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
 | 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
-| 0029 | [Distal-dendrite length sweep on t0022 DSGC](../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) | [`results`](../tasks/t0029_distal_dendrite_length_sweep_dsgc/results/results_detailed.md) | 2026-04-22 15:40 |
-| 0033 | [Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget](../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) | [`results`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/results/results_detailed.md) | 2026-04-22 15:40 |
 
-*28 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*30 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -113,9 +111,11 @@ No tasks in progress.
 | 2 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
 | 3 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |  | **10.478802654331396** |
 
+*12 more results → [all results](metrics-results/)*
+
 ---
 
-## [Recent Suggestions (148 open)](suggestions/)
+## [Recent Suggestions (158 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -278,11 +278,11 @@ that writes a histogram per diameter.
 
 </details>
 
-*138 more open suggestions → [open suggestions](suggestions/)*
+*148 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (43)](suggestions/)
+## [High Priority Suggestions (46)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -299,6 +299,59 @@ t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanes
 testbed-level discrimination between the two mechanisms the project has produced. If both show
 passive_filtering, that rules out Schachter2010 across the substrates the project has
 available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
 
 </details>
 
@@ -422,68 +475,50 @@ write-library.
 
 </details>
 
-<details>
-<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
-training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
-one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
-multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
-full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
-fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
-coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
-compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
-25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
-and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
-types: experiment-run, feature-engineering.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
-separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
-across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
-t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
-library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
-evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
-pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
-Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
-JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
-single evaluator. Recommended task types: write-library, feature-engineering.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
-testbed</strong> (S-0022-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0022_modify_dsgc_channel_testbed](../tasks/t0022_modify_dsgc_channel_testbed/)
-
-Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
-proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
-gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
-dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
-should drop excitability and test whether DSI survives reduced spike-initiation margin.
-Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
-intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
-Recommended task type: experiment-run.
-
-</details>
-
-*33 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*36 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (12 total)](answers/)
+## [Recent Answers (14 total)](answers/)
+
+<details>
+<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
+sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
+theory, and should t0033 parameterise dendritic morphology in 1-D
+(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/)
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
+L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
+primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
+and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
+fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
+non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
+length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
+because the direction of the DSI response is not determined by L/lambda alone.
+
+</details>
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`poleg-polsky-2016-reproduction-audit`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/)
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+</details>
 
 <details>
 <summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
@@ -667,46 +702,7 @@ direction selectivity at the DSGC level.
 
 </details>
 
-<details>
-<summary><strong>What quantitative priors does the voltage-gated-channels literature
-supply for the DSGC compartmental model on (1) Nav subunit localisation at
-the RGC AIS, (2) Kv1 subunit expression at the AIS, (3) RGC HH-family
-kinetic rate functions, (4) Nav1.6 vs Nav1.2 subunit co-expression
-kinetics, and (5) Nav conductance density at the AIS?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`nav-kv-combinations-for-dsgc-modelling`](../tasks/t0019_literature_survey_voltage_gated_channels/assets/answer/nav-kv-combinations-for-dsgc-modelling/)
-
-RGC AIS Nav subunits segregate into microdomains with Nav1.6 concentrated distally and Nav1.2
-enriched proximally, and Kv1.1/Kv1.2 co-localising with Nav1.6 in the distal AIS.
-AIS-localised Kv1 channels activate near threshold (V_half around -40 to -50 mV) with
-sub-millisecond kinetics and control AP waveform and somatic repolarisation. The
-Fohlmeister-Miller RGC HH kinetics provide canonical alpha/beta rate functions for Nav and Kv
-at 22 degC with Nav activation V_half near -40 mV and a Q10 near 3 for warming to 37 degC.
-Nav1.6 activates about 10-15 mV more negative than Nav1.2, so distal Nav1.6 initiates the AP
-while proximal Nav1.2 supports backpropagation into the soma. Peak AIS Nav conductance density
-is about 2500-5000 pS/um2 (roughly 50x somatic density), an order-of-magnitude prior essential
-for reproducing fast, reliable AP initiation in compartmental models.
-
-</details>
-
-<details>
-<summary><strong>Which compartmental simulator should the direction-selective
-ganglion cell (DSGC) project use as its primary simulator, and which should
-it keep as a backup?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
-[`dsgc-compartmental-simulator-choice`](../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/)
-
-Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and
-optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell
-speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
-are rejected because Brian2's own authors describe its multicompartment support as immature
-and MOOSE shows the weakest maintenance signal of the five candidates.
-
-</details>
-
-*2 more answers → [answers](answers/)*
+*4 more answers → [answers](answers/)*
 
 ---
 
@@ -1301,10 +1297,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (6 total)](libraries/)
+## [Latest Libraries (7 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [ModelDB 189347 DSGC (exact reproduction)](../tasks\t0046_reproduce_poleg_polsky_2016_exact\assets\library\modeldb_189347_dsgc_exact\description.md) | [46](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | 2026-04-24 |
 | [de Rosenroll 2026 DSGC](../tasks\t0024_port_de_rosenroll_2026_dsgc\assets\library\de_rosenroll_2026_dsgc\description.md) | [24](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | 2026-04-21 |
 | [ModelDB 189347 DSGC -- Dendritic-Computation Driver](../tasks\t0022_modify_dsgc_channel_testbed\assets\library\modeldb_189347_dsgc_dendritic\description.md) | [22](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | 2026-04-21 |
 | [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |

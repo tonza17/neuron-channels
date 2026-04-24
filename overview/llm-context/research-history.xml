@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-24T11:13:31Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-24T17:45:36Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>82</section_count>
-    <char_count>1370794</char_count>
-    <byte_count>1374271</byte_count>
-    <estimated_tokens>342698</estimated_tokens>
+    <section_count>86</section_count>
+    <char_count>1501952</char_count>
+    <byte_count>1505674</byte_count>
+    <estimated_tokens>375488</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -150,9 +150,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0038_correct_t0033_base_gaba_to_4ns</id>
         <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
         <id>t0040_brainstorm_results_8</id>
+        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
+        <id>t0046_reproduce_poleg_polsky_2016_exact</id>
       </source_ids>
       <content>
-Completed tasks: 38
+Completed tasks: 40
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -381,6 +383,18 @@ ID: t0040_brainstorm_results_8
 Completed: 2026-04-24
 Short description: Eighth brainstorm: cross-task test-vs-literature audit; approve four correction tasks (L/lambda analysis, GABA ladder, Nav1.6+Kv3+NMDA, Schachter re-test); reject one suggestion and reprioritise four.
 Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic brainstorm, run on 2026-04-24 after the t0037–t0039 merges. The session produced a cross-task audit comparing every DSGC simulation test we have run against published data, and approved four follow-up tasks (t0041–t0044) that target the discrepancies. One suggestion was rejected and four were reprioritised from high to medium. Session Overview Date: 2026-04-24. Duration: ~90 min. The researcher requested a master table of every test plus a side-by-side comparison to published data, with the explicit purpose of identifying discrepancies and designing corrections. Phase 1 aggregated project state (39 tasks total, 37 completed, 1...
+
+## Electrotonic-length collapse analysis of t0034 and t0035
+ID: t0041_electrotonic_length_collapse_t0034_t0035
+Completed: 2026-04-24
+Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
+Result summary: Results Summary: t0041 Electrotonic-Length Collapse Analysis Summary Tested whether primary DSI and vector-sum DSI from t0034 (distal length sweep) and t0035 (distal diameter sweep) collapse onto a single DSI-vs-L/lambda curve under Rall&#x27;s cable theory. **Verdict: collapse_rejected.** The two sweeps do not share a common L/lambda parameterisation: Pearson r = +0.42 for primary DSI and -0.68 for vector-sum DSI (sign inverted), both well below the 0.9 confirmation threshold. Recommendation for t0033: keep the 2-D (raw length x raw diameter) morphology parameterisation. Metrics * **Pearson r primary DSI (overlap region, n=3 paired points)**: **+0.4161** (p=0.727). Threshold for...
+
+## Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit
+ID: t0046_reproduce_poleg_polsky_2016_exact
+Completed: 2026-04-24
+Short description: Rebuild ModelDB 189347 from scratch to match Poleg-Polsky 2016; audit every parameter against paper+code+supplementary; reproduce all paper tests within tolerance.
+Result summary: Results Summary: Exact Reproduction of Poleg-Polsky 2016 (ModelDB 189347) Summary The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning behaviour (preferred-direction PSP &gt; null-direction PSP) and matches the paper&#x27;s slope-angle and ROC-AUC targets within tolerance, but absolute PSP amplitudes at the code-pinned `b2gnmda = 0.5 nS` overshoot the paper&#x27;s reported means by approximately 4x. The paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver behaviour are confirmed; **12 discrepancies** are catalogued in the audit, including six MOD-default vs `main.hoc`-override mismatches. Metrics * **Fig 1 PD PSP** (b2gnmda = 0.5 nS, code value)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -389,14 +403,13 @@ Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic b
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
         <id>t0042_fine_grained_null_gaba_ladder_t0022</id>
         <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
         <id>t0044_schachter_retest_on_t0043</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -411,30 +424,23 @@ Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
 
-## Electrotonic-length collapse analysis of t0034 and t0035
-ID: t0041_electrotonic_length_collapse_t0034_t0035
-Status: not_started
-Effective date: 2026-04-24
-Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
-Dependencies: t0034_distal_dendrite_length_sweep_t0024, t0035_distal_dendrite_diameter_sweep_t0024
-
 ## Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
 ID: t0042_fine_grained_null_gaba_ladder_t0022
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037&#x27;s 4 nS sweet spot without destabilising preferred direction.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
 ID: t0043_nav16_kv3_nmda_restoration_t0022
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
 Dependencies: t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
 ID: t0044_schachter_retest_on_t0043
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
 Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
@@ -463,9 +469,11 @@ Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_chan
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
         <id>morphology-direction-selectivity-modeling-synthesis</id>
         <id>vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation</id>
+        <id>electrotonic-length-collapse-of-length-and-diameter-sweeps</id>
+        <id>poleg-polsky-2016-reproduction-audit</id>
       </source_ids>
       <content>
-Answers: 12
+Answers: 14
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -562,6 +570,22 @@ Confidence: medium
 Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
 
 Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119 dollars. This combination is cheapest among the corpus-justified gradient-free strategies because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour. Confidence is medium: the CoreNEURON CPU-to-GPU speedup and...
+
+## Do the t0034 distal-length sweep and the t0035 distal-diameter sweep collapse onto a single DSI-vs-L/lambda curve under Rall&#x27;s cable theory, and should t0033 parameterise dendritic morphology in 1-D (electrotonic length L/lambda) or 2-D (raw length x raw diameter)?
+ID: electrotonic-length-collapse-of-length-and-diameter-sweeps
+Created by: t0041_electrotonic_length_collapse_t0034_t0035 on 2026-04-24
+Confidence: medium
+Categories: cable-theory, compartmental-modeling, dendritic-computation, direction-selectivity
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold, and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda, because the direction of the DSI response is not determined by...
+
+## Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every quantitative claim in Figures 1-8 of the Neuron paper when re-run faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB code disagree?
+ID: poleg-polsky-2016-reproduction-audit
+Created by: t0046_reproduce_poleg_polsky_2016_exact on 2026-04-24
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, synaptic-integration
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning behaviour (PD PSP &gt; ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the absolute PSP amplitudes are larger than the paper&#x27;s reported means at the code-pinned gNMDA = 0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -23980,6 +24004,2030 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0041_electrotonic_length_collapse_t0034_t0035-research_code" source_kind="file">
+      <title>t0041_electrotonic_length_collapse_t0034_t0035 — Electrotonic-length collapse analysis of t0034 and t0035 — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0041_electrotonic_length_collapse_t0034_t0035/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0041_electrotonic_length_collapse_t0034_t0035&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 11
+tasks_cited: 9
+libraries_found: 7
+libraries_relevant: 3
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Electrotonic-Length Collapse of t0034 and t0035
+
+#### Task Objective
+
+t0041 is a zero-simulation, post-hoc cable-theory analysis that recomputes electrotonic length
+`L/lambda = L / sqrt(d * Rm / (4 * Ra))` per distal section for every (length-multiplier,
+diameter-multiplier) operating point already simulated by the t0034 length sweep [t0034] and the
+t0035 diameter sweep [t0035] on the t0024 de Rosenroll DSGC testbed [t0024]. The task then tests
+whether primary DSI and vector-sum DSI from both sweeps collapse onto a single DSI-vs-L/lambda curve
+(target Pearson r &gt; 0.9), and reports residual variance attributable to non-cable effects. Output is
+one answer asset, one overlay PNG, `results/metrics.json` with the Pearson r, residual RMSE, and a
+collapse-confirmed / collapse-rejected verdict, plus a recommendation for the t0033 morphology /
+channel optimiser [t0033]. No NEURON runs, no new trial CSVs.
+
+#### Library Landscape
+
+The library aggregator script is not present in this repo snapshot (`arf/scripts/aggregators/`
+contains costs, metrics, machines, suggestions, tasks, task-types, and categories aggregators but no
+`aggregate_libraries.py`), so libraries were enumerated by direct inspection of
+`tasks/*/assets/library/`. Seven library assets exist across completed tasks:
+
+1. **`tuning_curve_viz`** (t0011; v0.1.0) — Matplotlib polar / Cartesian / overlay / raster-PSTH
+   plotting. No correction overlay. Relevant to t0041: `plot_multi_model_overlay` and the Cartesian
+   primitive are candidates for the DSI-vs-L/lambda overlay PNG. Import path:
+   `tasks.t0011_response_visualization_library.code.tuning_curve_viz.{cartesian,overlay,polar}`.
+2. **`tuning_curve_loss`** (t0012; v0.1.0) — Canonical 12-angle scorer: `load_tuning_curve`,
+   `score_curves`, `compute_dsi`, `compute_peak_hz`, `compute_null_hz`, `compute_hwhm_deg`,
+   `compute_reliability`. Relevant: t0041 reuses t0034/t0035&#x27;s already-computed per-multiplier DSI
+   rather than re-scoring, but `load_tuning_curve` is useful if we need to re-derive DSI from the
+   per-length / per-diameter CSVs as a cross-check. Import path:
+   `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss`.
+3. **`de_rosenroll_2026_dsgc`** (t0024; v0.1.0) — The NEURON-based testbed library whose distal
+   biophysics constants (`RA_OHM_CM = 100.0`, `CM_UF_CM2 = 1.0`, `GLEAK_S_CM2 = 0.0001667`,
+   `ELEAK_MV = -60.0`) are the exact parameter backbone used by t0034 and t0035, so they define the
+   Rm and Ra that enter the L/lambda formula for this analysis. Relevant.
+4. **`modeldb_189347_dsgc_dendritic`** (t0022) — t0022 testbed library; used by t0029/t0030 but
+   not by t0034/t0035 and therefore not relevant to t0041&#x27;s collapse analysis.
+5. **`modeldb_189347_dsgc`** (t0008 / t0020) — upstream Poleg-Polsky ports; not relevant.
+6. **`hunt_missed_dsgc_models`** (t0010) — literature catalog library; not relevant.
+
+None of the seven libraries has a corrections overlay in `corrections/` of any downstream task.
+Three are directly relevant to t0041 (t0011, t0012, t0024), so `libraries_relevant = 3`. The
+remaining four were inspected and ruled out as not applicable.
+
+#### Key Findings
+
+##### Trial CSV schema is stable across t0034 and t0035
+
+Both sibling sweeps emit a tidy CSV `results/data/sweep_results.csv` with a 6-column schema. t0034
+uses `(length_multiplier, trial, direction_deg, spike_count, peak_mv, firing_rate_hz)` and t0035
+uses `(diameter_multiplier, trial, direction_deg, spike_count, peak_mv, firing_rate_hz)` — only
+the first column name differs [t0034, t0035]. Both also emit a per-multiplier reduction CSV
+(`results/data/metrics_per_length.csv`, `results/data/metrics_per_diameter.csv`) with an identical
+10-column schema:
+`(length|diameter)_multiplier, peak_hz, null_hz, dsi_primary, dsi_vector_sum, hwhm_deg, reliability, preferred_direction_deg, preferred_hz, mean_peak_mv`.
+This means t0041&#x27;s loader can share a single parser with two swappable column names, and the
+per-multiplier CSV is the canonical input for the collapse plot: both `dsi_primary` and
+`dsi_vector_sum` are already computed and do not need to be re-derived from trial-level spike
+counts. Column provenance is the same `_vector_sum_dsi` (Mazurek convention) and t0012 `compute_dsi`
+(peak-minus-null) functions in both `analyse_sweep.py` files, which means the two sweeps&#x27; DSI
+numbers are directly comparable on the same L/lambda axis without any normalisation.
+
+##### Biophysics values for the L/lambda calculation are hard-coded in t0024&#x27;s library
+
+The electrotonic length formula `lambda = sqrt(d * Rm / (4 * Ra))` requires per-section diameter `d`
+(in cm), specific membrane resistance `Rm = 1/g_leak` (in ohm·cm^2), and axial resistance `Ra` (in
+ohm·cm). All three values are pinned as named constants in
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py` [t0024]: `RA_OHM_CM = 100.0`,
+`GLEAK_S_CM2 = 0.0001667` (so `Rm = 1 / 0.0001667 ≈ 5999 ohm·cm^2`), and a paper-text alternative
+`RA_OHM_CM_PAPER_TEXT = 200.0` (not used by the t0034/t0035 simulations — confirmed by
+`build_cell.py` lines 200, 225, 236, 247, which assign `dend.Ra = C.RA_OHM_CM` on every soma /
+primary / non-terminal / terminal section). Because the simulations used the `100 ohm·cm` setting,
+t0041 must use the same value; the paper-text 200 is out of scope for this collapse analysis. These
+values are uniform across every terminal dendrite, so the &quot;section-weighted average L/lambda&quot;
+fallback hedged in the task description (`tasks/.../task_description.md` line 58) is not actually
+required — uniform Rm and Ra allow a per-section scalar L/lambda with only `sec.L` and `sec.diam`
+varying.
+
+##### The distal sections and their baseline L, diam must come from a single NEURON boot
+
+t0034 [t0034] uses `tasks/t0034_.../code/distal_selector_t0024.py::identify_distal_sections_t0024`
+(returns `list(cell.terminal_dends)` — the HOC-leaf dendrites, 177 sections on this morphology).
+t0035 [t0035] uses a structurally identical helper in its own `distal_selector_t0024.py`. Both
+helpers depend on `tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell.DSGCCell`, which is a
+frozen dataclass exposing `terminal_dends: list[Any]`. Because of the cross-task-import rule, t0041
+cannot import the t0034 / t0035 selectors directly — the library path is
+`tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell.build_dsgc_cell()` via the t0024 library,
+and the selector logic (`list(cell.terminal_dends)`) must be re-implemented inline inside t0041&#x27;s
+`code/`. A single NEURON boot of the t0024 cell at baseline multipliers (`length_multiplier = 1.0`
+and `diameter_multiplier = 1.0`) is enough to snapshot `(sec.L, seg.diam)` for every terminal
+section; the multiplier grid is then applied analytically in pure Python/NumPy without any further
+NEURON invocation, consistent with the task&#x27;s &quot;zero simulation cost&quot; requirement.
+
+##### Length and diameter multipliers are applied section-uniformly and reversibly
+
+`length_override_t0024.snapshot_distal_lengths` [t0034] returns `{id(sec): float(sec.L)}`, and
+`set_distal_length_multiplier(..., multiplier=m)` sets `sec.L = baseline_L[id(sec)] * m` uniformly
+across every terminal section — i.e. every terminal dendrite is scaled by the same multiplier. The
+diameter counterpart `diameter_override_t0024.snapshot_distal_diameters` [t0035] keys on
+`(id(sec), seg.x)` but the behaviour is identical at `nseg=1` (every terminal section has one
+segment on this morphology — confirmed by the in-file comment at line 31 of
+`diameter_override_t0024.py`). The upshot: at operating point `(m_L, m_D)`, every distal section
+shares the same `L/lambda_i = (m_L * L_baseline_i) / sqrt(m_D * d_baseline_i * Rm / (4 * Ra))`.
+Whether t0041 reports a single average `L/lambda` or the full per-section distribution is a
+presentation choice, not a modelling one — the cable-theory collapse test only needs one scalar
+summary per operating point.
+
+##### Sweep grids are identical between t0034 and t0035
+
+Both sweeps use the exact same 7-point multiplier grid `(0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0)` (see
+`LENGTH_MULTIPLIERS` in t0034 constants.py line 11 and `DIAMETER_MULTIPLIERS` in t0035 constants.py
+line 12), with the same 12-angle × 10-trial protocol (`N_TRIALS_T0024 = 10`, AR(2) `rho = 0.6`).
+The shared `1.0x` baseline operating point is therefore a duplicate observation that t0041 can use
+as a noise-floor sanity check — the two sweeps&#x27; DSI values at `(m_L=1.0, m_D=1.0)` must agree to
+within AR(2) seed-reassignment variance, providing a direct estimate of the DSI noise floor that any
+collapse claim must exceed.
+
+##### Downstream prior art for plotting and regression on sweep data
+
+`plot_sweep.py` in both t0034 and t0035 already implements Matplotlib-on-Agg bar/line plots with the
+Okabe-Ito palette (`COLOR_DSI = &quot;#0072B2&quot;`, `COLOR_PEAK = &quot;#E69F00&quot;`), multiplier-on-x-axis
+conventions, 300 dpi output, and dual-axis `dsi_primary` + `peak_hz` overlays [t0034, t0035]. These
+patterns can be copied to produce the t0041 overlay plot with minimal adaptation (swap multiplier
+axis for L/lambda axis, plot two series with distinguishing markers). `classify_shape.py` (t0034,
+line 1-50) and `classify_slope.py` (t0035) both use `scipy.stats.linregress` for the slope and
+p-value of DSI vs multiplier; for the collapse analysis, the same `linregress` call combined with
+`scipy.stats.pearsonr` (or equivalent) gives the collapse Pearson r and residual RMSE in a few
+lines. This is the template the t0037 GABA-ladder analysis [t0037] also follows, so it is a stable
+cross-task pattern.
+
+#### Reusable Code and Assets
+
+**Critical note**: per the cross-task import rule, only code inside an `assets/library/` directory
+can be imported across tasks. All non-library code must be copied.
+
+1. **`tuning_curve_loss.load_tuning_curve`** — Source:
+   `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/loader.py`. What: reads a
+   `(angle_deg, trial_seed, firing_rate_hz)` CSV and returns a `TuningCurve` dataclass. Signature:
+   `load_tuning_curve(*, csv_path: Path) -&gt; TuningCurve`. Reuse method: **import via library**.
+   Adaptation: none; t0034 / t0035 both produce per-multiplier canonical CSVs at
+   `results/data/per_length/tuning_curve_Lxpyy.csv` and
+   `results/data/per_diameter/tuning_curve_Dxpyy.csv` which this helper loads verbatim. Used only if
+   t0041 wants to re-verify DSI from raw rates; otherwise skip. Line count: ~80 (import only).
+
+2. **`tuning_curve_loss.compute_dsi` / `compute_peak_hz` / `compute_null_hz`** — Source:
+   `tasks/t0012_.../code/tuning_curve_loss/metrics.py`. What: scalar metrics from a `TuningCurve`.
+   Signature: `compute_dsi(*, curve: TuningCurve) -&gt; float`. Reuse method: **import via library**.
+   Adaptation: none. Line count: ~150 (import only).
+
+3. **`de_rosenroll_2026_dsgc.build_cell.build_dsgc_cell`** — Source:
+   `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py`. What: boots NEURON 8.2.7, sources
+   `RGCmodelGD.hoc`, returns a `DSGCCell` frozen dataclass exposing `.terminal_dends`. Signature:
+   `build_dsgc_cell() -&gt; DSGCCell`. Reuse method: **import via library**. Adaptation: wrap in a
+   one-shot helper that snapshots `(sec.L, seg.diam)` for every terminal section, then releases the
+   NEURON handle. Line count: ~10 of new caller code.
+
+4. **Biophysics constants `RA_OHM_CM`, `CM_UF_CM2`, `GLEAK_S_CM2`, `ELEAK_MV`** — Source:
+   `tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py` lines 27-30. What: the pinned Rm and
+   Ra values used by t0034 and t0035 simulations. Reuse method: **import via library** (importing
+   `tasks.t0024_port_de_rosenroll_2026_dsgc.code.constants` works through the library module-path
+   list). Adaptation: compute `RM_OHM_CM2 = 1.0 / GLEAK_S_CM2` in t0041&#x27;s own `constants.py`.
+
+5. **`analyse_sweep._vector_sum_dsi`** — Source:
+   `tasks/t0034_distal_dendrite_length_sweep_t0024/code/analyse_sweep.py` lines 80-99 (also at the
+   same location in t0035&#x27;s `analyse_sweep.py`). What: returns Mazurek `(dsi, preferred_dir_deg)`
+   from per-angle mean rates. Reuse method: **copy into task** (not in any library). Adaptation: a
+   verbatim copy into `tasks/t0041_.../code/vector_sum.py`; ~20 lines.
+
+6. **Trial-CSV loader pattern (`csv.DictReader` over tidy sweep CSV)** — Source:
+   `tasks/t0034_.../code/analyse_sweep.py::compute_metrics_from_tidy` lines 165-188. What: a
+   schema-aware `csv.DictReader` loop that groups `(multiplier -&gt; angle -&gt; list[rate])` and
+   `(multiplier -&gt; list[peak_mv])`. Reuse method: **copy into task**. Adaptation: generalise column
+   name from `length_multiplier` / `diameter_multiplier` to a caller-supplied constant; ~30 lines
+   each pass.
+
+7. **Per-multiplier metrics reader** — Source: `plot_sweep._read_metrics_csv` in both
+   `tasks/t0034_.../code/plot_sweep.py` lines 68-88 and `tasks/t0035_.../code/plot_sweep.py`. What:
+   reads `metrics_per_{length,diameter}.csv` into a `list[MetricsRow]` frozen dataclass. Reuse
+   method: **copy into task**. Adaptation: rename the multiplier column constant; ~30 lines.
+
+8. **Plot template (Cartesian DSI vs scalar x, Okabe-Ito palette, 300 dpi)** — Source:
+   `tasks/t0034_.../code/plot_sweep.py` lines 1-120. What: Matplotlib-Agg Cartesian figure with
+   named colour constants, optional regression overlay, baseline star marker, figure-size / dpi
+   constants. Reuse method: **copy into task**. Adaptation: replace the multiplier x-axis with
+   L/lambda, add two series with distinct markers (square for length sweep, circle for diameter
+   sweep); ~120 lines.
+
+9. **Linear regression + collapse test pattern** — Source:
+   `tasks/t0034_.../code/classify_shape.py` lines 1-50 (uses `scipy.stats.linregress`). What: slope,
+   intercept, r-value, p-value, stderr from `(x, y)` arrays. Reuse method: **copy into task**.
+   Adaptation: combine with `numpy.polyfit` residuals or `scipy.stats.pearsonr` for the unified-
+   curve Pearson r; ~25 lines.
+
+10. **`paths.py` / `constants.py` / frozen-dataclass scaffold** — Source: every recent task&#x27;s code
+    folder (e.g. `tasks/t0034_.../code/paths.py`). What: centralised `Path` constants, named CSV
+    column constants, frozen dataclasses. Reuse method: **copy into task** as the standard per-task
+    skeleton. Adaptation: adjust `TASK_ROOT` anchor and asset IDs; ~60 lines total.
+
+#### Lessons Learned
+
+The t0034 negative slope (`-0.126 per unit multiplier`, `p = 0.038`) and t0035 flat slope (`+0.004`,
+`p = 0.88`) [t0034, t0035] are the central empirical fact this task builds on, and both tasks
+explicitly flag the ~30x asymmetry as evidence that raw length and raw diameter are not equally
+effective DSI controls. The vector-sum DSI channel in t0034 shows a cleaner monotonic decline (R^2 =
+0.91) than primary DSI, suggesting that vector-sum DSI is the better channel on which to claim
+collapse if primary DSI is noisier. A pitfall to avoid, flagged in t0029 and carried over to t0034,
+is that the prior t0022 testbed pinned null firing at 0 Hz which made primary DSI saturate at 1.0
+for many multipliers — the t0024 testbed [t0024] fixed this via AR(2) noise-driven null firing
+(0.5-1.0 Hz), which is why this task uses t0024&#x27;s sweep outputs exclusively and not t0029&#x27;s /
+t0030&#x27;s. Finally, the t0034 classifier labelled the overall DSI-vs-length curve as `non_monotonic`
+with superimposed spike-failure transitions at 1.5x and 2.0x; the collapse plot must therefore
+accommodate the possibility that at extreme L/lambda values the curve bends due to active-spike
+failure rather than pure cable filtering, and should flag those operating points rather than fit a
+single line through them.
+
+#### Recommendations for This Task
+
+1. **Import the three relevant libraries directly**: add
+   `tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss` for optional DSI
+   re-verification, `tasks.t0011_response_visualization_library.code.tuning_curve_viz.cartesian` for
+   the collapse overlay, and `tasks.t0024_port_de_rosenroll_2026_dsgc.code.{build_cell, constants}`
+   for the NEURON snapshot and `Rm, Ra` constants.
+2. **Copy (not import) the distal-section selector, sweep-CSV parser, metrics-CSV reader, Mazurek
+   vector-sum helper, and linregress-classifier scaffolding** from t0034 and t0035 into
+   `tasks/t0041_.../code/`. These are not in `assets/library/` so the cross-task import rule forbids
+   importing them directly; structurally identical copies in t0041&#x27;s `code/` are the
+   project-standard answer.
+3. **Do not re-score DSI from trial CSVs**; consume `results/data/metrics_per_length.csv` and
+   `results/data/metrics_per_diameter.csv` directly. Both files already carry `dsi_primary` and
+   `dsi_vector_sum` computed by the same scoring functions, so re-scoring cannot yield different
+   values within this testbed and would waste I/O.
+4. **Use the 1.0x baseline as a noise-floor anchor**: report the delta between t0034&#x27;s
+   `length_multiplier = 1.0` and t0035&#x27;s `diameter_multiplier = 1.0` DSI values as the AR(2)
+   seed-reassignment noise floor. Any collapse curve residual below this floor is indistinguishable
+   from identical data.
+5. **Compute a single scalar L/lambda per operating point** (section-mean, since Rm, Ra are
+   uniform); additionally report the per-section L/lambda distribution as a diagnostic overlay.
+6. **Report both primary and vector-sum DSI collapse curves**. Given t0034&#x27;s observation that
+   vector-sum DSI has a cleaner monotonic signal, vector-sum DSI is a priori the more likely channel
+   to show a clean collapse; primary DSI is the task-spec primary and must still be reported.
+7. **Flag spike-failure operating points** (t0034&#x27;s 1.5x and 2.0x length multipliers, noted in
+   `classify_shape.py` output) on the collapse plot with distinct markers and exclude them from the
+   Pearson r fit, or report the fit both with and without them.
+8. **Write the answer asset per the paper / answer spec** (`meta/asset_types/answer/`), summarising
+   the Pearson r, residual RMSE, collapse verdict, and the t0033-parameterisation recommendation.
+
+#### Task Index
+
+##### [t0011]
+
+* **Task ID**: t0011_response_visualization_library
+* **Name**: Response Visualization Library
+* **Status**: completed
+* **Relevance**: Provides the `tuning_curve_viz` library with polar, Cartesian, and
+  multi-model-overlay plotters — the direct template for t0041&#x27;s DSI-vs-L/lambda overlay figure.
+
+##### [t0012]
+
+* **Task ID**: t0012_tuning_curve_scoring_loss_library
+* **Name**: Tuning Curve Scoring / Loss Library
+* **Status**: completed
+* **Relevance**: Provides `load_tuning_curve`, `compute_dsi`, `compute_peak_hz`, `compute_null_hz`,
+  `compute_hwhm_deg`, `compute_reliability` — the canonical tuning-curve metric library used by
+  t0034 and t0035 (and therefore what any DSI re-verification in t0041 must use).
+
+##### [t0015]
+
+* **Task ID**: t0015_literature_survey_cable_theory
+* **Name**: Literature Survey: Cable Theory and DSGC Modelling
+* **Status**: completed
+* **Relevance**: The `cable-theory-implications-for-dsgc-modelling` answer asset documents the
+  electrotonic-length framework and the 0.5-0.8 L/lambda target range, which is the theoretical
+  backbone of t0041&#x27;s collapse claim.
+
+##### [t0024]
+
+* **Task ID**: t0024_port_de_rosenroll_2026_dsgc
+* **Name**: Port of de Rosenroll et al. 2026 DSGC model
+* **Status**: completed
+* **Relevance**: The underlying testbed. Its library
+  (`de_rosenroll_2026_dsgc.{build_cell, constants}`) supplies the NEURON cell, the terminal-dendrite
+  enumeration, and the biophysics constants (`RA_OHM_CM = 100.0`, `GLEAK_S_CM2 = 0.0001667`,
+  `CM_UF_CM2 = 1.0`, `ELEAK_MV = -60.0`) that t0041 needs to compute L/lambda.
+
+##### [t0029]
+
+* **Task ID**: t0029_distal_dendrite_length_sweep_dsgc
+* **Name**: Distal-dendrite length sweep on t0022 DSGC
+* **Status**: completed
+* **Relevance**: t0034&#x27;s structural predecessor on the t0022 testbed; null result (DSI pinned at 1.0
+  because null firing was 0 Hz) is the lesson that motivated the t0024-based re-run and is why t0041
+  uses t0034/t0035 outputs and not t0029/t0030.
+
+##### [t0033]
+
+* **Task ID**: t0033_plan_dsgc_morphology_channel_optimisation
+* **Name**: Plan: DSGC morphology + channel optimisation
+* **Status**: completed (planning task)
+* **Relevance**: Downstream consumer. If t0041 confirms collapse, t0033 can parameterise dendritic
+  morphology in 1-D (L/lambda) instead of 2-D (raw L x raw d), shrinking its search space.
+
+##### [t0034]
+
+* **Task ID**: t0034_distal_dendrite_length_sweep_t0024
+* **Name**: Distal-dendrite length sweep on t0024 DSGC
+* **Status**: completed
+* **Relevance**: Primary input. t0041 consumes `results/data/sweep_results.csv` and
+  `results/data/metrics_per_length.csv`; copies the vector-sum DSI helper, the per-length metrics
+  reader, the plot template, and the linregress classifier scaffolding from its `code/`.
+
+##### [t0035]
+
+* **Task ID**: t0035_distal_dendrite_diameter_sweep_t0024
+* **Name**: Distal-dendrite diameter sweep on t0024 DSGC
+* **Status**: completed
+* **Relevance**: Primary input. t0041 consumes `results/data/sweep_results.csv` and
+  `results/data/metrics_per_diameter.csv`; shares CSV schema with t0034 modulo one column name.
+
+##### [t0037]
+
+* **Task ID**: t0037_null_gaba_reduction_ladder_t0022
+* **Name**: Null-direction GABA reduction ladder on t0022
+* **Status**: completed
+* **Relevance**: Demonstrates the shared slope / classifier / linregress / plot-template pattern
+  that t0034, t0035, and t0041 all follow; confirms the pattern is stable and copy-worthy.
+      </content>
+    </section>
+    <section id="t0046_reproduce_poleg_polsky_2016_exact-research_papers" source_kind="file">
+      <title>t0046_reproduce_poleg_polsky_2016_exact — Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0046_reproduce_poleg_polsky_2016_exact</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0046_reproduce_poleg_polsky_2016_exact/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0046_reproduce_poleg_polsky_2016_exact&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 16
+papers_cited: 14
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;synaptic-integration&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;patch-clamp&quot;
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Research: Exact Reproduction of Poleg-Polsky and Diamond 2016 (ModelDB 189347)
+
+#### Task Objective
+
+This task builds a fresh, from-scratch port of ModelDB 189347 (the compartmental DSGC model
+described by [PolegPolsky2016]) and audits every parameter against the paper, the ModelDB code, and
+the supplementary materials. The port must reproduce **every** test the paper runs - not only the
+headline DSI/tuning curve that prior ports t0008 and t0020 targeted - within tight tolerance (DSI
++/-0.05, firing rates +/-10%). The research stage&#x27;s job is to enumerate all those tests with
+specific quantitative anchors and to gather the published DSI and firing-rate targets from sibling
+DSGC papers that inform interpretation (e.g., Oesch 2005, Schachter 2010, Sivyer 2013, Hanson 2019,
+Park 2014, Taylor 2002, Hausselt 2007).
+
+#### Category Selection Rationale
+
+The seven consulted categories span the methodological and biological scope of the reproduction.
+`compartmental-modeling` is the methodology itself - every DSGC model paper lives here.
+`direction-selectivity` is the functional property being reproduced. `dendritic-computation` covers
+dendritic spikes, NMDAR nonlinearity, and passive-versus-active debates that distinguish the
+Poleg-Polsky mouse model from rabbit DSGC models. `retinal-ganglion-cell` narrows to the target cell
+class. `synaptic-integration` covers AMPA, NMDA, GABA, and cholinergic wiring.
+`voltage-gated-channels` matters because the reproduction audits channel densities (HHst Nav and Kv
+per compartment class). `patch-clamp` is included because the paper&#x27;s validation anchors are
+patch-clamp measurements. Excluded `cable-theory` as a standalone filter - the reproduction is
+code-driven rather than theory-driven - though cable ideas enter via the dendritic-computation and
+voltage-gated-channels tags.
+
+#### Key Findings
+
+##### Enumeration of Every Test and Figure in PolegPolsky2016
+
+This is the critical input for planning. The paper reports eight main figures plus eight
+supplementary figures, each running a distinct experimental or simulation test. The reproduction
+must produce one result row per item.
+
+* **Figure 1 - Multiplicative NMDAR scaling (main result)**. Whole-cell subthreshold PSPs in control
+  vs. AP5, 8 directions, bar at 1 mm/sec, n = 19 cells. Quantitative anchors: AP5-sensitive (NMDAR)
+  PD PSP = **5.8 +/- 3.1 mV**, ND = **3.3 +/- 2.8 mV** (p = 0.001, paired t-test)
+  [PolegPolsky2016, Figure 1D, main text]; AP5 reduces PD PSP by **~35%** and ND PSP by **~34%**
+  (Figure 1E,F); slope of NMDAR scaling = **62.5 +/- 14.2 deg** vs. expected multiplicative **59.4
+  +/- 10.7 deg** (p = 0.4, paired t-test; Figure 1H) [PolegPolsky2016, main text]. DSI unchanged by
+  AP5 (Figure 1G, p &gt; 0.5 paired Wilcoxon).
+
+* **Figure 2 - Postsynaptic locus of multiplication (iMK801 control)**. Intracellular MK801 (2 mM)
+  dialysis; subsequent bath AP5, n = 15 cells. Quantitative anchors: iMK801 reduces PSPs
+  significantly (p &lt; 0.001); subsequent bath AP5 further reduces PD PSP by only **16 +/- 17%**
+  [PolegPolsky2016, Figure 2B, main text]. DSI preserved across iMK801 and AP5. EPSC reduction under
+  AP5-after-iMK801 = **8 +/- 12%** (p = 0.25, n = 6; Figure S5).
+
+* **Figure 3 - NEURON model of DS signaling (the model the reproduction must rebuild)**.
+  Morphologically realistic reconstructed DSGC; **282 presynaptic cells** with vesicle release,
+  homogeneous synapse distribution on ON dendrites only
+  [PolegPolsky2016, Experimental Procedures, main text]. Each synaptic site carries GABA_A +
+  nicotinic AChR (SAC-like) + AMPA + NMDA (bipolar-like). DS imposed by stronger inhibitory drive in
+  ND. Tests: PD vs. ND simulated PSPs with **gNMDA = 2.5 nS** (blue) and **gNMDA = 0 nS** (black),
+  Figure 3E; DSI as function of gNMDA, Figure 3F; alternative tuned-excitation scheme, Figure 3G-I,
+  predicts additive NMDAR scaling. The model also reports simulated AP responses (Figure 3B) and
+  synaptic conductance traces (Figure 3C).
+
+* **Figure 4 - Tuned-excitation analogue (high-Cl- internal)**. Intracellular chloride = 65 mM
+  reverses GABA_A drive from inhibitory to excitatory (E_Cl ~ -20 mV); n = 12 cells. Quantitative
+  anchors: PD&#x27; - ND&#x27; difference = **14.1 +/- 4.7 vs. 11.9 +/- 4.8 mV** (p = 0.003, paired t-test);
+  DS reversed to new PD in 15/20 cells [PolegPolsky2016, Figure 4D,E]; NMDAR scaling slope = **45.5
+  +/- 3.7 deg** (additive, p = 0.01 vs. multiplicative; Figure 4G inset); DSI significantly reduced
+  by AP5 (p = 0.03, Wilcoxon with Bonferroni; Figure 4F inset).
+
+* **Figure 5 - Voltage-dependent NMDAR requirement (0 Mg++)**. Extracellular Mg++ removed, n = 8
+  cells. Quantitative anchors: DSI reduced but PD vs. ND still different (p = 0.01, paired t-test;
+  Figure 5F); NMDAR scaling slope = **45.5 +/- 5.3 deg** (additive, p &lt; 0.001 vs. multiplicative;
+  Figure 5G inset). Parallel simulation: Ohmic (voltage-independent) NMDAR substitute in the model
+  also produces additive scaling (Figure 5B,C; Figure S7).
+
+* **Figure 6 - DSGC responses to noisy visual stimulation (subthreshold)**. Bar luminance and
+  background luminance each vary independently every **50 ms** with SD = **0%, 10%, 30%, 50%** of
+  mean; n = 12 cells. Resting V_m in 0 Mg++ = control **+3.4 +/- 3.6 mV** (Figure 6C,D). PD PSP
+  amplitude not different between control and 0 Mg++ (p = 0.8, paired t-test, n = 12; Figure 6F). ND
+  PSPs consistently larger in 0 Mg++. DSI reduced by noise in all conditions; reduction strongest in
+  0 Mg++ (Figure 6G).
+
+* **Figure 7 - ROC / accuracy analysis (subthreshold)**. Noise-free ROC AUC for PD vs. baseline:
+  control **0.99**, AP5 **0.98**, 0 Mg++ **0.83** (p = 0.008, Wilcoxon with Bonferroni, n = 12;
+  Figure 7C,D) [PolegPolsky2016, main text]. ROC AUC falls with noise; Mg++-free significantly lower
+  than control up to **50%** stimulus variability. Accuracy-curve area significantly larger in
+  control than in AP5 or 0 Mg++ (Figure 7E,F).
+
+* **Figure 8 - Suprathreshold AP responses**. Cell-attached spike recording, 0 Mg++ (n = 34),
+  control (n = 25), AP5 (n = 21). Control DSI preserved under AP5; DSI significantly reduced in 0
+  Mg++ (p &lt; 0.001, ANOVA + Tukey; Figure 8E). Baseline firing elevated in 0 Mg++ (Figure 8A,C). PD
+  spike count unchanged in 0 Mg++ (p = 0.3); ND spike count increased in 0 Mg++ (p = 0.04; Figure
+  8D). **AP5 increases PD-stimulus failure rate** (Figure 8F). ROC/accuracy analyses on APs (Figure
+  8G-J) reproduce the PSP ROC picture: control outperforms AP5 and 0 Mg++ under noise.
+
+* **Supplementary Figure S1** - Extended AP and EPSC/IPSC directional tuning; DSI of AP responses &gt;&gt;
+  PSP DSI (Wilcoxon p &lt; 1e-8, n = 33).
+
+* **Supplementary Figure S2** - Conditions suitable for multiplicative scaling analysis (slope-angle
+  interpretation under different baseline PSP geometries).
+
+* **Supplementary Figure S3** - NMDAR multiplication across contrast levels (preserved across tested
+  contrasts).
+
+* **Supplementary Figure S4** - NMDAR multiplication across developmental ages (P14-P70).
+
+* **Supplementary Figure S5** - iMK801 control on voltage-clamped EPSCs and IPSCs (bath AP5 after
+  iMK801 does not change EPSCs or IPSCs).
+
+* **Supplementary Figure S6** - SACs do not receive NMDAR-mediated input (AP5 does not affect SAC
+  PSPs).
+
+* **Supplementary Figure S7** - Scaling additivity is independent of Ohmic conductance time course.
+
+* **Supplementary Figure S8** - Conceptual single-compartment model explaining how ideal-current,
+  Ohmic, NMDAR, and tuned-excitation schemes map to multiplicative vs. additive scaling.
+
+Note: [PolegPolsky2016] reports these results with **8 stimulus directions at 45 deg spacing** (bar
+at 1 mm/sec), not 12 directions. Prior project ports imposed a 12-direction protocol on top; for
+exact reproduction, the 8-direction protocol is the paper&#x27;s own test and must be replicated.
+
+##### What the Paper Does Not Report Numerically
+
+[PolegPolsky2016] never reports a single **peak firing rate in Hz** for PD stimulation, nor an
+aggregate DSI numeric for the control condition (uses box plots of median +/- quartile in Figures
+1G, 4F, 5G, 6G, 8E). The paper does not report an aggregate **HWHM** (half-width at half max of the
+tuning curve). It also does not specify explicit passive membrane parameters (V_rest, Ra, Rm, Cm),
+channel densities (somatic/dendritic gbar for HHst Na/K), synaptic kinetics (tau rise/decay for
+AMPA, NMDA, GABA), or the number of segments per compartment in the main text or the
+(author-manuscript PMC XML) Experimental Procedures, which is truncated. These values must be read
+from the ModelDB 189347 source files during the reproduction and treated as canonical for any
+paper-vs-code audit. &quot;Not found in paper&quot; applies to: peak PD Hz, aggregate DSI numeric, HWHM,
+V_rest, Ra, Rm, Cm, all channel gbar densities, all synaptic kinetics. Prior project ports (t0008,
+t0020) both observed peak firing rate **~15 Hz** vs. the project envelope 40-80 Hz - that envelope
+comes from a broader DSGC literature (e.g., [Oesch2005]) rather than the paper itself.
+
+##### Published DSI and Firing-Rate Targets from Sibling DSGC Papers
+
+The 40-80 Hz peak-rate expectation propagated through this project comes from rabbit DSGC in vitro
+recordings, where species differ from mouse DRD4. Specific anchors:
+
+* Rabbit ON-OFF DSGC spike-based DSI: **0.67 +/- 0.13** (ON arbor) and **0.74 +/- 0.13** (OFF
+  arbor); PSP-based DSI is ~6x lower, i.e., ~**0.1-0.13**
+  [Oesch2005, Results; PSP DSI values collapsed to 0.04 (ON) and 0.21 (OFF) after bath TTX].
+
+* Rabbit DSGC somatic excitation peak during full-field drift: **~72 spikes/stimulus** at modal rate
+  **148 +/- 30 Hz** under current injection mimicking the light-evoked PSP; **41 +/- 47 Hz** under
+  somatic current matching the PSP shape alone (p &lt; 0.001) [Oesch2005, Results]. These are rabbit
+  numbers.
+
+* Rabbit DSGC modelled PSP DSI ~**0.2** and spike DSI ~**0.8** [Schachter2010, Results] - **6-fold**
+  amplification via local dendritic-spike thresholds, achievable only with active dendrites.
+
+* Rabbit DSGC E/I conductance ratios (compound drives during moving bar): PD g_exc ~ **6.5 nS** with
+  g_inh ~ **3.5 nS**; ND g_exc ~ **2.5 nS** with g_inh ~ **6.0 nS** [Schachter2010]. On the on-arbor
+  alone, ge ratio PD/ND = **1.66 +/- 0.48** and gi ratio null/preferred = **3.31 +/- 2.15**
+  [Taylor2002, Results].
+
+* Rabbit DSGC IPSC DSI (wild-type, SAC-driven): **0.33 +/- 0.019**; drops to **0.07 +/- 0.02** when
+  SAC-SAC mutual inhibition is abolished (Gabra2 KO + ChR2) [Hanson2019, Results]. Paired E/I
+  temporal offsets in PD reach **~50 ms** and collapse in ND (25-30 um spatial offset).
+
+* Rabbit DSGC spike DSI when presynaptic DS is removed drops from **~0.8** to **~0.3-0.4**
+  [Schachter2010, Results] - demonstrating that presynaptic DS (SAC-mediated GABA tuning) dominates
+  the postsynaptic spatial-offset contribution.
+
+* Mouse bipolar-cell excitation onto DSGC **lacks direction tuning** (iGluSnFR) [Park2014],
+  validating PolegPolsky&#x27;s &quot;tuned inhibition only&quot; architecture. Apparent DS in voltage-clamp EPSCs
+  is shown to be a space-clamp artefact.
+
+* Mouse DSGC spike contrast threshold **68 +/- 24%** (n = 43) vs. PSP threshold **45 +/- 25%** (n =
+  13\) (p = 0.03, Wilcoxon) [PolegPolsky2016b]. E/I amplitude ratio in DSGCs is contrast-invariant
+  (Pearson r = 0.94).
+
+Implication for the reproduction: the 40-80 Hz peak band in the project envelope is a rabbit anchor
+rather than a mouse PolegPolsky2016 anchor. The reproduction audit should flag this as a potential
+misinterpretation of &quot;target&quot; - the proper mouse target is whatever ModelDB 189347 actually produces
+at paper parameters. If that is 15 Hz, t0046 validates the existing ports (t0008, t0020) and
+undermines the motivation for peak-rate modifications (t0043).
+
+##### Mouse DRD4 DSGC Passive Dendrite Assertion
+
+[PolegPolsky2016] explicitly states: &quot;We did not detect dendritic spikes in DRD4 DSGCs (data not
+shown), and our computer simulations did not require regenerative dendritic events to replicate
+experimentally recorded PSP and (somatic) AP responses and DSI values, suggesting that passive PSP
+propagation to the soma is sufficient.&quot; This contrasts with rabbit ON-OFF DSGCs that generate
+orthograde dendritic spikes [Oesch2005, Sivyer2013] and with rabbit models that require active
+dendrites to hit spike DSI [Schachter2010]. The ModelDB 189347 source must therefore contain HHst
+(Hodgkin-Huxley spike-capable) channels in the soma and AIS but minimal dendritic Nav density; the
+reproduction audit must document soma/AIS/dendrite gNa and gK per compartment class.
+
+##### Morphology, Synapse Counts, and Jeon2002
+
+[PolegPolsky2016] cites [Jeon2002] for the synapse distribution pattern and states &quot;177 AMPAR + 177
+NMDAR synapses from bipolar cells and 177 GABA_A synapses from starburst amacrine cells, distributed
+homogeneously on ON dendrites only, plus nicotinic AChR inputs&quot; - but the ModelDB 189347 release&#x27;s
+`RGCmodel.hoc` actually yields **countON = 282** triples [prior port t0008]. The reproduction must
+determine whether the paper&#x27;s 177 figure is a text error (not found in code), a subsampling of the
+282, or a different cell instance. This is a prime candidate for the paper-vs-code discrepancy
+catalogue.
+
+##### Best Practices Converged Across the DSGC Model Literature
+
+* Report DSI as **median +/- quartile**, not mean +/- SD - the underlying distribution is
+  non-Gaussian [PolegPolsky2016 uses box plots throughout]. Use the same convention in the audit
+  output.
+
+* Drive synapses via simulated vesicle release gated on presynaptic membrane potential rather than
+  fixed spike trains [PolegPolsky2016 Experimental Procedures].
+
+* Passive dendrites + Jahr-Stevens Mg++ block suffice for mouse DRD4 DSGC; do not add dendritic
+  active conductances unless explicitly porting a rabbit model
+  [PolegPolsky2016, Oesch2005, Schachter2010].
+
+* Stimulus is **1 mm/sec bright bar in 8 directions**; 1-D bar traversal is the canonical protocol
+  [PolegPolsky2016, Experimental Procedures]. 12-direction sweeps (used in t0008 for envelope
+  scoring) are not part of the paper.
+
+* Voltage-clamp EPSC measurements in DSGCs appear directionally tuned but are a space-clamp artefact
+  [Park2014, PolegPolsky2011] - any &quot;tuned excitation&quot; target in the model must be rejected unless
+  it comes from iGluSnFR or iMK801 controls.
+
+#### Methodology Insights
+
+* **Enumerate every paper test before implementation.** The test list above (8 main + 8
+  supplementary figures) becomes the row schema for the audit answer asset. Each row reports paper
+  value, ModelDB code value, reproduction value, tolerance, match verdict, and the figure reference
+  [PolegPolsky2016 Figure 1-8, S1-S8].
+
+* **Treat the ModelDB code as canonical for parameters the paper does not specify.** The author-
+  manuscript XML available in the corpus truncates Experimental Procedures - V_rest, Ra, Rm, Cm,
+  channel gbar, synaptic kinetics, and segment counts must be read from the `HHst.mod`,
+  `SAC2RGCexc.mod`, `SAC2RGCinhib.mod`, `bipolarNMDA.mod`, `SquareInput.mod`, `spike.mod`,
+  `RGCmodel.hoc`, and `main.hoc` files. This is consistent with the researcher directive in
+  task_description.md: &quot;the primary reproduction follows their code&quot;.
+
+* **Reproduce the paper&#x27;s protocol exactly, not the project&#x27;s 12-angle scoring protocol.** Use 8
+  directions at 45 deg spacing and 1 mm/sec bar. Use the native `gabaMOD` swap pipeline already
+  validated in t0020 for the DS test (PD gabaMOD=0.33, ND gabaMOD=0.99) rather than the rotation
+  proxy of t0008 [t0020 library description].
+
+* **Log AP5 and 0 Mg++ as parameter flips.** For Figure 1, simulate with gNMDA=0 vs. gNMDA=2.5 nS
+  (AP5 vs. control). For Figure 5, simulate with voltage-dependent NMDAR vs. Ohmic substitute
+  [PolegPolsky2016 Figure 3E, 5B]. For Figure 4, flip E_GABA from -60 mV to -20 mV and set
+  inhibition to zero (high-Cl- analogue) [PolegPolsky2016 Figure 4A]. All are single-parameter
+  toggles and should live in `constants.py` with named flags.
+
+* **Run noise-free stimuli first, noisy next.** The paper&#x27;s Figures 6-8 add stimulus-luminance noise
+  with SD = 0/10/30/50% of mean. Implement noise as per-50-ms frame luminance perturbations to the
+  SquareInput/bar stimulus in the MOD files. Match the ROC/accuracy pipeline used by the paper; the
+  python library `sklearn.metrics.roc_auc_score` will suffice for median AUC.
+
+* **Report all subthreshold validation anchors in the audit.** Not just DSI and peak Hz: also
+  NMDAR-mediated PD PSP (target **5.8 +/- 3.1 mV**), ND PSP (**3.3 +/- 2.8 mV**), slope angle
+  (target **62.5 +/- 14.2 deg** for multiplicative, **45.5 +/- 3.7 deg** for high-Cl-, **45.5 +/-
+  5.3 deg** for 0 Mg++), ROC AUC (**0.99 / 0.98 / 0.83** for control/AP5/0 Mg++ noise-free PD vs.
+  baseline), and PD-failure rate under AP5 [PolegPolsky2016 Figures 1D-H, 4G, 5G, 7C, 8F].
+
+* **Hypothesis (testable this task)**: If the faithful ModelDB 189347 port produces peak PD firing
+  rate ~15 Hz (matching t0008 and t0020), the 40-80 Hz envelope is a literature-import error from
+  rabbit [Oesch2005, Schachter2010] rather than a PolegPolsky2016 target. This invalidates the
+  peak-rate motivation for t0043 and t0044 modification tasks.
+
+* **Hypothesis (testable this task)**: The paper&#x27;s &quot;177 AMPA + 177 NMDA + 177 GABA&quot; figure is a text
+  error inconsistent with the ModelDB code&#x27;s `countON = 282`. If confirmed by code inspection, this
+  is the first paper-vs-code discrepancy to catalogue.
+
+* **Best practice**: Pin the ModelDB release hash in the library description. t0008 used
+  `87d669dcef18e9966e29c88520ede78bc16d36ff`; the reproduction should verify this is the same commit
+  the paper cites (or flag the delta).
+
+#### Gaps and Limitations
+
+* **Supplementary Experimental Procedures are missing from the corpus**. The author-manuscript XML
+  file in the corpus
+  (`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/files/poleg-polsky_2016_nmda-dsgc-multiplicative.xml`)
+  contains the main text, main figures&#x27; captions, and reference list, but **not** the Supplementary
+  Experimental Procedures document. This is where V_rest, Ra, Rm, Cm, channel densities, and
+  synaptic kinetics would be stated explicitly. The research-internet stage must attempt to download
+  the supplementary PDF from the Cell/Neuron publisher; if unavailable, the reproduction proceeds
+  from ModelDB code alone and every such parameter is flagged in the audit as &quot;paper reference:
+  Supplementary Procedures, not available&quot;.
+
+* **ModelDB 189347 release version**. The paper cites the code but does not specify a release
+  version or commit. t0008 pinned `87d669dcef18e9966e29c88520ede78bc16d36ff`. This reproduction
+  needs to verify that the pinned commit is the version cited in the paper&#x27;s Figure 3 caption or
+  Supplementary Procedures (if that exists).
+
+* **No aggregate numeric values for DSI, peak Hz, HWHM, or baseline firing rate in noise-free
+  control**. The paper&#x27;s Figures 1G, 6G, 8E display median +/- quartile boxplots; exact numeric
+  medians are not printed in the main text or figure captions (as available in the corpus XML). The
+  reproduction audit must re-extract these from the ModelDB code output rather than from the paper,
+  which limits the definitiveness of any paper-vs-reproduction numerical claim.
+
+* **No published ROC AUC CIs under noise levels 10%, 30%**. Figure 7D shows box plots at each noise
+  level; only the noise-free AUCs (0.99 / 0.98 / 0.83) are stated numerically in the main text.
+  Tolerance bands for noisy conditions must be read off Figure 7D panels; the reproduction audit
+  will need to digitise the boxplots or record &quot;visual-inspection match&quot; rather than a tight numeric
+  tolerance.
+
+* **Passive-vs-active dendrite test is asymmetric**. The paper shows passive suffices but does not
+  run a matched active-dendrite control [PolegPolsky2016 Discussion]. There is therefore no
+  quantitative paper target for &quot;what happens if you add Nav to the dendrites&quot; in the mouse model.
+  Sivyer2013 and Schachter2010 provide rabbit equivalents but the species gap means those cannot
+  anchor a mouse audit.
+
+* **Mouse DRD4 vs. rabbit conflation in the project&#x27;s peak-rate envelope**. The 40-80 Hz peak target
+  carried into t0012 and t0022 has never been attributed to a specific PolegPolsky2016 claim; it
+  traces back to rabbit DSGC literature [Oesch2005]. This reproduction is the first task positioned
+  to resolve whether the target is mislabeled.
+
+* **Stafford 2014 (NMDAR subunit composition across development)** is cited by [PolegPolsky2016, S4]
+  but is not in the project corpus. If the reproduction needs to parameterise NMDAR subunit
+  composition for the developmental age comparison (Figure S4), it will need to fetch this or record
+  the gap.
+
+#### Recommendations for This Task
+
+1. **Enumerate the 8 main + 8 supplementary figure tests as audit rows before writing code.** Use
+   the list in &quot;Enumeration of Every Test and Figure in PolegPolsky2016&quot; above as the row schema for
+   the answer asset&#x27;s test reproduction table.
+
+2. **Attempt to fetch Supplementary Experimental Procedures via research-internet**, since the
+   corpus XML omits them. If not available, proceed from ModelDB code and mark every missing
+   parameter as &quot;paper reference unavailable; code value canonical&quot;.
+
+3. **Read V_rest, Ra, Rm, Cm, and every channel gbar from ModelDB 189347 `.mod` and `.hoc` files**.
+   These are the audit&#x27;s canonical paper-vs-code column. Cross-check against any residual paper
+   mention in Experimental Procedures text.
+
+4. **Use the gabaMOD swap protocol (PD = 0.33, ND = 0.99) as the primary DS test**, following the
+   native paper pipeline validated in t0020, not the rotation proxy from t0008.
+
+5. **Simulate the paper&#x27;s Figure 3 / 4 / 5 parameter flips as distinct simulation runs**: control
+   (gNMDA = 2.5 nS, Mg++ block on, E_GABA = -60 mV), AP5 (gNMDA = 0), 0 Mg++ (Mg++ block off),
+   high-Cl- (E_GABA = -20 mV, inhibition zeroed), Ohmic NMDAR (voltage-independent substitute). Each
+   yields a row in the test reproduction table.
+
+6. **Report peak PD firing rate without assuming the 40-80 Hz target**. If the reproduction lands at
+   ~15 Hz, this is the scientific finding of the task; the 40-80 Hz envelope came from rabbit
+   literature, not PolegPolsky2016. Document this clearly in the audit summary paragraph.
+
+7. **Implement stimulus-luminance noise (Figure 6-8)** as per-50-ms luminance perturbations at SD =
+   0/10/30/50% of mean, then run ROC and accuracy pipelines to match Figure 7, 8.
+
+8. **Compare mouse DRD4 DSGC results to rabbit anchors only as context, never as reproduction
+   targets**. [Oesch2005, Schachter2010, Sivyer2013, Hanson2019] are rabbit or differ in circuit
+   manipulations; they bound the plausibility range but do not set tolerances for the paper- vs-code
+   match.
+
+9. **Document the &quot;177 vs. 282 synapses&quot; paper-vs-code discrepancy explicitly** in the audit, given
+   that the paper says 177 but the code yields 282.
+
+#### Paper Index
+
+##### [PolegPolsky2016]
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`,
+  `dendritic-computation`, `retinal-ganglion-cell`
+* **Relevance**: The paper being reproduced. Defines every test, parameter, figure, and quantitative
+  anchor this task must match. ModelDB 189347 is the code repository accompanying this paper.
+
+##### [PolegPolsky2016b]
+
+* **Title**: Retinal Circuitry Balances Contrast Tuning of Excitation and Inhibition to Enable
+  Reliable Computation of Direction Selectivity
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1523/JNEUROSCI.4013-15.2016`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.4013-15.2016/`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`,
+  `retinal-ganglion-cell`
+* **Relevance**: Second Poleg-Polsky 2016 paper. Provides DSGC contrast-threshold anchors (spike
+  threshold 68 +/- 24%, PSP threshold 45 +/- 25%) and DSGC E/I contrast invariance (Pearson r =
+  0.94), context for stimulus contrast choices in the reproduction.
+
+##### [Oesch2005]
+
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`
+* **Relevance**: Rabbit spike DSI (0.67-0.74) and peak firing rates (148 +/- 30 Hz modal, 41 +/- 47
+  Hz from PSP-shaped injection) anchor the high-firing-rate band that the project&#x27;s 40-80 Hz peak
+  envelope drew from. Establishes that the 40-80 Hz number is a rabbit anchor, not a PolegPolsky2016
+  anchor.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Relevance**: Rabbit DSGC model with active dendrites; PSP DSI ~0.2 amplified to spike DSI ~0.8
+  via local dendritic-spike thresholds. Provides E/I compound conductance anchors (PD 6.5/3.5 nS, ND
+  2.5/6.0 nS) and demonstrates active-dendrite mechanism the PolegPolsky2016 mouse model explicitly
+  does NOT use. Critical contrast for audit framing.
+
+##### [Sivyer2013]
+
+* **Title**: Direction selectivity is computed by active dendritic integration in retinal ganglion
+  cells
+* **Authors**: Sivyer, B., Williams, S. R.
+* **Year**: 2013
+* **DOI**: `10.1038/nn.3565`
+* **Asset**: `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `retinal-ganglion-cell`,
+  `voltage-gated-channels`
+* **Relevance**: First direct recording of dendritic spikes in rabbit DSGC terminal dendrites.
+  Establishes that species matters: rabbit has active dendrites; mouse DRD4 does not. Validates
+  [PolegPolsky2016]&#x27;s passive-dendrite assertion as species-specific, not a universal DSGC rule.
+
+##### [Taylor2002]
+
+* **Title**: Diverse Synaptic Mechanisms Generate Direction Selectivity in the Rabbit Retina
+* **Authors**: Taylor, W. R., Vaney, D. I.
+* **Year**: 2002
+* **DOI**: `10.1523/JNEUROSCI.22-17-07712.2002`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.22-17-07712.2002/`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `patch-clamp`,
+  `retinal-ganglion-cell`
+* **Relevance**: Voltage-clamp conductance decomposition in rabbit: on-response Ge PD/ND ratio 1.66
+  +/- 0.48, on-response Gi null/preferred ratio 3.31 +/- 2.15. Cited by [PolegPolsky2016] as
+  evidence for stronger ND inhibition, the architectural choice embedded in ModelDB 189347.
+
+##### [Park2014]
+
+* **Title**: Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal Ganglion Cells
+  Lack Direction Tuning
+* **Authors**: Park, S. J., Kim, I.-J., Looger, L. L., Demb, J. B., Borghuis, B. G.
+* **Year**: 2014
+* **DOI**: `10.1523/JNEUROSCI.5017-13.2014`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_JNEUROSCI.5017-13.2014/`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `retinal-ganglion-cell`
+* **Relevance**: iGluSnFR demonstrates mouse bipolar-cell glutamatergic input to DSGCs is NOT
+  directionally tuned; apparent tuning in voltage-clamp EPSCs is a space-clamp artefact. Cited by
+  [PolegPolsky2016] as justification for &quot;tuned inhibition, untuned excitation&quot; architecture
+  - the exact DS scheme the ModelDB 189347 model must implement.
+
+##### [Hausselt2007]
+
+* **Title**: A Dendrite-Autonomous Mechanism for Direction Selectivity in Retinal Starburst Amacrine
+  Cells
+* **Authors**: Hausselt, S. E., Euler, T., Detwiler, P. B., Denk, W.
+* **Year**: 2007
+* **DOI**: `10.1371/journal.pbio.0050185`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pbio.0050185/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `compartmental-modeling`
+* **Relevance**: Establishes that SAC dendrites compute DS autonomously via intrinsic dendritic
+  mechanisms (soma-to-tip voltage gradient + HVA Ca2+ channels). Relevant because ModelDB 189347
+  models SAC output as a presynaptic point process - if the SAC input already carries DS, the model
+  does not need to simulate SAC dendritic computation. This is the justification for the paper&#x27;s
+  vesicle-release presynaptic approximation.
+
+##### [Hanson2019]
+
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, L., Sethuramanujam, S., deRosenroll, G., Jain, V., Awatramani, G. B.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`,
+  `retinal-ganglion-cell`
+* **Relevance**: Directly reuses and modifies the PolegPolsky2016 NEURON model
+  (`geoffder/Spatial-Offset-DSGC-NEURON-Model`). Provides IPSC DSI anchors (wild-type 0.33,
+  knockdown 0.07) and the 25-30 um cholinergic/GABAergic spatial offset that the PolegPolsky2016
+  model does NOT use. Useful as a cross-validation that the base model behaves as expected under a
+  second research group&#x27;s hands.
+
+##### [Vaney2012]
+
+* **Title**: Direction selectivity in the retina: symmetry and asymmetry in structure and function
+* **Authors**: Vaney, D. I., Sivyer, B., Taylor, W. R.
+* **Year**: 2012
+* **DOI**: `10.1038/nrn3165`
+* **Asset**: `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nrn3165/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`
+* **Relevance**: Review tying the pre-vs-post-synaptic debate to specific cellular substrates;
+  documents the 11:1 null:preferred SAC synapse ratio (SBEM) that underlies the paper&#x27;s tuned-
+  inhibition architecture.
+
+##### [Briggman2011]
+
+* **Title**: Wiring specificity in the direction-selectivity circuit of the retina
+* **Authors**: Briggman, K. L., Helmstaedter, M., Denk, W.
+* **Year**: 2011
+* **DOI**: `10.1038/nature09818`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature09818/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`
+* **Relevance**: SBEM connectomic evidence that null-side SAC dendrites preferentially contact each
+  DSGC. Cited by [PolegPolsky2016] as justification for null-direction inhibitory bias.
+
+##### [Fohlmeister2010]
+
+* **Title**: Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using
+  Temperature as an Independent Variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00123.2009`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`, `retinal-ganglion-cell`,
+  `patch-clamp`
+* **Relevance**: Canonical RGC channel-distribution paper. Five-channel model (Na, K-DR, Ca, K-A,
+  K-Ca) with soma/dendrite/axon gbar densities. Provides defaults and comparison targets for the
+  somatic and dendritic channel gbar values the ModelDB 189347 HHst.mod embeds.
+
+##### [Jeon2002]
+
+* **Title**: Pattern of synaptic excitation and inhibition upon direction-selective retinal ganglion
+  cells
+* **Authors**: Jeon, C.-J., Kong, J.-H., Strettoi, E., Rockhill, R., Stasheff, S. F., Masland, R. H.
+* **Year**: 2002
+* **DOI**: `10.1002/cne.10288`
+* **Asset**: Not in corpus (cited only as anatomical reference).
+* **Categories**: `retinal-ganglion-cell`, `synaptic-integration`
+* **Relevance**: Cited by [PolegPolsky2016] as the source of the homogeneous synapse- distribution
+  assumption on ON dendrites. Not in corpus but flagged for optional fetch during research-internet
+  stage if synapse-count audit (&quot;177 vs. 282&quot;) cannot be resolved from code alone.
+
+##### [PolegPolsky2011]
+
+* **Title**: Imperfect Space Clamp Permits Electrotonic Interactions between Inhibitory and
+  Excitatory Synaptic Conductances, Distorting Voltage Clamp Recordings
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pone.0019463`
+* **Asset**: `tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1371_journal.pone.0019463/`
+* **Categories**: `patch-clamp`, `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: Same authors&#x27; earlier methods paper showing that space-clamp errors produce
+  apparent but spurious directional tuning in voltage-clamp EPSCs. Explains why [PolegPolsky2016]
+  trusts iGluSnFR (via [Park2014]) over voltage-clamp E/I measurements when deciding excitation is
+  untuned. Validates the architecture choice embedded in ModelDB 189347.
+      </content>
+    </section>
+    <section id="t0046_reproduce_poleg_polsky_2016_exact-research_internet" source_kind="file">
+      <title>t0046_reproduce_poleg_polsky_2016_exact — Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0046_reproduce_poleg_polsky_2016_exact</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0046_reproduce_poleg_polsky_2016_exact/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0046_reproduce_poleg_polsky_2016_exact&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 10
+sources_cited: 18
+papers_discovered: 0
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Research Internet: Exact Reproduction of Poleg-Polsky 2016 (ModelDB 189347)
+
+#### Task Objective
+
+Gather, from sources outside the existing paper corpus, the missing parameter values, protocol
+details, and authors&#x27; addenda required to rebuild ModelDB 189347 from scratch and audit it line by
+line against the Poleg-Polsky &amp; Diamond 2016 Neuron paper [PolegPolsky2016]. Primary deliverables:
+the published supplementary PDF (NIHMS766337), every numerical parameter in the ModelDB release, and
+any subsequent corrections, errata, or clarifications.
+
+#### Gaps Addressed
+
+From `research_papers.md` Gaps and Limitations:
+
+1. **Supplementary Experimental Procedures missing from corpus** — **Resolved**. The supplementary
+   PDF `NIHMS766337-supplement.pdf` is hosted on PubMed Central
+   (`/articles/instance/4795984/bin/NIHMS766337-supplement.pdf`) [PMC-PolegPolsky-Suppl-2016].
+   Direct PDF fetch was blocked inside the sandbox, so the file should be downloaded during
+   implementation and added as a paper file on the existing paper asset
+   `10.1016_j.neuron.2016.02.013` (it does not become a separate paper asset). The PMC article page
+   [PMC-PolegPolsky-Main-2016] lists the 8 supplementary figures (S1-S8) exactly as the paper
+   research enumerated them.
+
+2. **ModelDB 189347 release version / commit** — **Resolved**. The official mirror
+   [ModelDB-189347-GH] contains a single commit `87d669dcef18e9966e29c88520ede78bc16d36ff` dated 31
+   May 2019, author `tommorse`, message &quot;initial version&quot;. This matches the hash t0008 pinned. No
+   subsequent commits, tags, branches, issues, or release notes exist. There is no separate ModelDB
+   release-notes file; README is `readme.html` / `readme.docx` inside the `DSGC/` tree.
+
+3. **Passive parameters (V_rest, Ra, Rm, Cm) and channel gbar densities not in paper main text** —
+   **Resolved via code**. `main.hoc` fetched from the ModelDB GitHub mirror [ModelDB-189347-MainHoc]
+   gives canonical values: Ra = **100 Ω·cm** (`global_ra=100`), g_pas = **5e-5 S/cm^2** (implies
+   Rm = **20 000 Ω·cm^2**), e_pas = **-60 mV** (V_rest). `cm` is not set in `main.hoc` —
+   NEURON&#x27;s default (**1 µF/cm^2**) applies unless overridden in `RGCmodel.hoc`. HHst channel
+   densities (S/cm^2): Soma gNa=**0.4**, gKv=**0.07**, gKm=**5e-4**; Dendrite gNa=**2e-4**,
+   gKv=**7e-3**, gKm=**0** [ModelDB-189347-MainHoc]. These numbers become the canonical code column
+   of the audit table.
+
+4. **Synaptic kinetics (AMPA, NMDA, GABA, nACh) not in paper main text** — **Resolved via code**.
+   `bipolarNMDA.mod` [ModelDB-189347-bipolarNMDAmod]: τ_rise(NMDA) = **2 ms** (`tau2NMDA`),
+   τ_decay(NMDA) = **50 ms** (`tau1NMDA`), τ(AMPA) = **2 ms**; Mg block n = **0.25 /mM**, γ =
+   **0.08 /mV** (Jahr-Stevens); E_rev(AMPA+NMDA) = **0 mV**; single-channel gNMDA = gAMPA = **0.2
+   nS**; Ca-fraction = **10%**. `SAC2RGCinhib.mod` [ModelDB-189347-SACInhibmod]: τ(GABA-A) = **10
+   ms** (no explicit rise), E_GABA = **-65 mV**, g_single = **0.2 nS**. `SAC2RGCexc.mod`
+   [ModelDB-189347- SACExcmod]: τ(nACh) = **3 ms**, E_nACh = **0 mV**, g_single = **0.2 nS**. All
+   three synapse MOD files share the same vesicle-release machinery: max pool = **10**,
+   replenishment = **0.01 /ms**, presynaptic V relaxation τ = **30 ms**, release probability
+   `s_inf = v_pre / 100`. The project-level aggregate conductances in `main.hoc` after sparsity
+   scaling are b2gampa = **0.25 nS**, b2gnmda = **0.5 nS**, s2ggaba = **0.5 nS**, s2gach = **0.5
+   nS** [ModelDB-189347-MainHoc].
+
+5. **Note: `main.hoc` reports gNMDA = 0.5 nS, but the paper states gNMDA = 2.5 nS for Figure 3E
+   [PolegPolsky2016]** — **Identified discrepancy**. This is a concrete paper-vs-code discrepancy
+   to enter as the first row of the audit catalogue. Either the paper&#x27;s &quot;2.5 nS&quot; refers to an
+   effective aggregate across the 4-5 vesicles released per bar sweep (10 max, ~0.5 release
+   probability, 0.2 nS single channel -&gt; ~1-2 nS net peak per synapse) or it reflects a pre-release
+   parameter the code has since tuned. Both possibilities must be documented.
+
+6. **Stimulus-noise protocol for Figures 6-8 (SD = 0/10/30/50% per 50 ms)** — **Partially
+   resolved**. `SquareInput.mod` [ModelDB-189347-SquareInputmod] defines the stimulus as a square
+   pulse (`del=50 ms`, `dur=50 ms`, `gmax=1 nA`) without noise; noise injection would have to be
+   added externally. The paper&#x27;s main text describes per-50-ms luminance perturbations as the noise
+   protocol [PolegPolsky2016 Figure 6 legend] but the shipped ModelDB code does not implement it.
+   This is a second paper-vs-code discrepancy: the noisy-stimulation experiments cannot be
+   reproduced from the shipped `main.hoc` alone; the `SquareInput.mod` or its driver must be
+   modified, or a follow-up `gauss_noise` routine added.
+
+7. **177 vs. 282 synapses paper-vs-code discrepancy** — **Unresolved by internet**. No online
+   source clarifies the 177 figure in the paper text vs. the 282 `countON` in the code. No erratum,
+   corrigendum, author&#x27;s note, or community post addresses this. Internet search exhausted (6
+   queries). Resolution must come from direct code inspection during implementation.
+
+8. **Stafford 2014 (NMDAR subunit composition, cited by Figure S4)** — **Not investigated here**;
+   the paper-research stage flagged it as optional fetch. Not in scope for this internet stage
+   beyond noting availability. If implementation reaches the Figure S4 reproduction, that paper
+   should be fetched then.
+
+9. **Peak firing rate target (40-80 Hz from rabbit vs. mouse)** — **Confirmed rabbit-origin**. No
+   online source attributes a 40-80 Hz peak rate to the Poleg-Polsky 2016 mouse model. The band
+   traces to [Oesch2005] rabbit measurements (modal 148 ± 30 Hz under current injection; 41 ± 47
+   Hz from PSP-shaped somatic current) as already catalogued in `research_papers.md`. Internet
+   search found no mouse DRD4 DSGC recording that reports this band. This validates the
+   paper-research hypothesis that the project envelope is imported from rabbit literature.
+
+10. **Corrigendum / erratum for the Neuron paper** — **Resolved negative**. PubMed entry 26948896
+    [PubMed-PolegPolsky-2016] lists no corrections, errata, or comments. Google Scholar, PMC, Neuron
+    journal search, and the first author&#x27;s lab page [PolegPolskyLab-CU] return no published
+    correction or addendum. We should therefore treat the PDF as published.
+
+#### Search Strategy
+
+**Sources searched**: PubMed Central, PubMed, ModelDB (senselab.med.yale.edu and modeldb.science
+mirrors), GitHub (ModelDBRepository, PolegPolskyLab, geoffder repos), Google Scholar via WebSearch,
+the author&#x27;s University of Colorado Anschutz faculty page, the Neuron / Cell Press publisher page,
+and direct raw-file fetches from the GitHub mirror of ModelDB 189347.
+
+**Queries executed** (10 total):
+
+1. `Poleg-Polsky Diamond 2016 Neuron NMDA multiplicative supplementary materials experimental procedures`
+2. `ModelDB 189347 Poleg-Polsky DSGC README release notes NEURON`
+3. `&quot;Poleg-Polsky&quot; Diamond 2016 Neuron &quot;NIHMS766337&quot; supplementary PDF`
+4. `&quot;Poleg-Polsky&quot; 2016 Neuron DSGC NEURON model parameter &quot;Rm&quot; OR &quot;Ra&quot; OR &quot;g_pas&quot; dendrite`
+5. `geoffder &quot;Spatial-Offset-DSGC-NEURON-Model&quot; github Hanson Poleg-Polsky`
+6. `&quot;Poleg-Polsky&quot; 2016 Neuron corrigendum OR erratum OR correction`
+7. `&quot;189347&quot; OR &quot;Poleg-Polsky&quot; 2016 &quot;ModelDB&quot; compile NEURON Windows issue`
+8. `&quot;ModelDB&quot; &quot;189347&quot; release date 2016 Poleg-Polsky published version submission`
+
+Additional targeted fetches (WebFetch, counted separately from searches): raw `readme.html`,
+`main.hoc`, `HHst.mod`, `bipolarNMDA.mod`, `SAC2RGCexc.mod`, `SAC2RGCinhib.mod`, `SquareInput.mod`,
+`RGCmodel.hoc`, the PMC4795984 article page, the ModelDB 189347 entry, the `PolegPolskyLab` GitHub
+account, and the geoffder `Spatial-Offset-DSGC-NEURON-Model` README. Two more queries were used to
+confirm no lab-page or institutional notices:
+
+9. lab page fetch: `medschool.cuanschutz.edu/physiology/faculty/alon-poleg-polsky`
+10. repo listing fetch: `github.com/PolegPolskyLab?tab=repositories`
+
+**Date range**: no restriction (model release 2016, code commit 2019, later follow-up work through
+2026).
+
+**Inclusion criteria**: official (publisher/PMC/ModelDB), authors&#x27; (lab page, PolegPolskyLab
+GitHub), or third-party usage (Hanson 2019 `geoffder/Spatial-Offset-DSGC-NEURON-Model`, modeldb
+citations) sources that either publish parameters, cite the shipped model, or post corrections.
+
+**Exclusion criteria**: unrelated Poleg-Polsky publications (e.g., Polsky et al. 2009 piriform
+cortex, Poleg-Polsky 2019 pyramidal NMDA spike model ModelDB 259733), sibling-rodent DSGC models
+that do not cite ModelDB 189347 directly, and any source without a stable URL.
+
+**Search iterations**: Queries 1-3 targeted the supplementary PDF (resolved by PMC). Queries 4-5
+targeted parameter values (resolved by raw `main.hoc` fetch). Queries 6-7 targeted errata (null
+result; confirmed no corrections). Queries 8-10 confirmed ModelDB commit history and lab-page
+absence of addenda.
+
+#### Key Findings
+
+##### Supplementary PDF Exists and Is Public on PMC
+
+The supplementary file is [PMC-PolegPolsky-Suppl-2016]:
+`https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf` (1.4 MB).
+The PMC landing page [PMC-PolegPolsky-Main-2016] lists the 8 supplementary figures S1-S8 and
+confirms that Supplemental Experimental Procedures are bundled inside this one PDF rather than in
+separate files. The direct PDF fetch was blocked inside this sandbox, but the URL is reliable and
+the file can be downloaded during implementation. **This closes the supplementary-materials gap**.
+
+##### Canonical Parameter Values Extracted From Shipped Code
+
+The ModelDB 189347 release&#x27;s `main.hoc` file contains a single flat initialization block. Extracted
+values [ModelDB-189347-MainHoc]:
+
+| Parameter | Value | Unit | Source |
+| --- | --- | --- | --- |
+| Ra (axial resistance) | 100 | Ω·cm | `global_ra=100` |
+| g_pas (passive leak) | 5e-5 | S/cm^2 | g_pas section |
+| Rm (derived = 1/g_pas) | 20 000 | Ω·cm^2 | derived |
+| V_rest (e_pas) | -60 | mV | `e_pas=-60` |
+| Cm | 1.0 (NEURON default) | µF/cm^2 | not overridden |
+| Soma gNa | 0.4 | S/cm^2 | `RGCsomana=0.4` |
+| Soma gKv | 0.07 | S/cm^2 | `RGCsomakv=0.07` |
+| Soma gKm | 0.0005 | S/cm^2 | `RGCsomakm=5e-4` |
+| Dendrite gNa | 0.0002 | S/cm^2 | `RGCdendna=2e-4` |
+| Dendrite gKv | 0.007 | S/cm^2 | `RGCdendkv=7e-3` |
+| Dendrite gKm | 0 | S/cm^2 | inactive |
+| AMPA aggregate | 0.25 | nS/syn | `b2gampa=0.25` |
+| NMDA aggregate | 0.5 | nS/syn | `b2gnmda=0.5` |
+| GABA aggregate | 0.5 | nS/syn | `s2ggaba=0.5` |
+| nACh aggregate | 0.5 | nS/syn | `s2gach=0.5` |
+| Light onset | -100 | ms | `lightstart=-100` |
+| Light speed | 1 | µm/ms | `lightspeed=1` |
+| Light width | 500 | µm | `lightwidth=500` |
+| SAC extra duration | 500 | ms | `SACdur=500` |
+| dt | 0.1 | ms | integration step |
+| tstop | 1000 | ms | total simulation |
+
+The dendritic gNa of **2e-4 S/cm^2** is **three orders of magnitude** smaller than the somatic gNa
+of **0.4 S/cm^2**. This confirms the paper&#x27;s &quot;passive-dendrite assertion&quot; at the implementation
+level: dendrites have non-zero but vanishingly small Nav, effectively passive for spike generation
+but not perfectly zero — a nuance worth flagging in the audit rather than asserting &quot;no dendritic
+Nav&quot;.
+
+##### NMDA Kinetics and Jahr-Stevens Mg Block
+
+`bipolarNMDA.mod` [ModelDB-189347-bipolarNMDAmod] implements Jahr-Stevens
+`g = (A-B) / (1 + n·exp(-γ·V))` with **n = 0.25 /mM** and **γ = 0.08 /mV**. Rise τ = **2 ms**,
+decay τ = **50 ms**. NMDA E_rev = **0 mV**. Calcium fraction = **10%** of NMDA current
+(`icaconst=0.1`). This matches the Jahr-Stevens 1990 canonical form that the paper&#x27;s Figure 3
+caption cites. The Ohmic-NMDAR substitute (Figure 5) is implemented by setting Vdependent=0 via the
+`SquareInput.mod` flag, which linearises the above into a voltage-independent g. The same Mg-block
+parameters (n=0.25, γ=0.08) appear inside `SquareInput.mod` — a code-internal consistency that
+must be preserved during reimplementation.
+
+##### Vesicle-Release Presynaptic Model (All Three Synapse Classes)
+
+All three synaptic MOD files (`bipolarNMDA`, `SAC2RGCinhib`, `SAC2RGCexc`) use the same release
+scheme [ModelDB-189347-bipolarNMDAmod, ModelDB-189347-SACInhibmod, ModelDB-189347-SACExcmod]:
+
+* Max releasable vesicle pool: `maxves = 10`
+* Replenishment rate: `newves = 0.01 /ms` (so 100-ms recovery per vesicle)
+* Presynaptic V relaxation: `Vtau = 30 ms`
+* Release probability per ms: `s_inf = v_pre / 100` (presynaptic-V-dependent)
+
+This is the &quot;simulated vesicle release gated on presynaptic membrane potential&quot; described in the
+paper&#x27;s Experimental Procedures [PolegPolsky2016, Experimental Procedures]. The reproduction must
+preserve all four of these presynaptic constants across all three synapse types; deviations should
+be catalogued.
+
+##### HHst.mod Channel Kinetics (Stochastic Hodgkin-Huxley)
+
+`HHst.mod` [ModelDB-189347-HHstmod] embeds a **stochastic** Hodgkin-Huxley model with channel noise,
+single-channel conductances γ_na = γ_k = γ_km = γ_t = γ_l = **10 pS**, a small baseline leak
+g_leak = **1e-5 S/cm^2** (additional to g_pas), and placeholder gbar values (e.g., gnabar_default =
+0.12 S/cm^2) that are overridden per compartment by `main.hoc`. Temperature (Q10) is not explicit in
+the MOD file; temperature dependence is absorbed into the α/β rate equations. The calcium channels
+(gtbar, glbar) are present in the MOD file but are set to **zero** in the main simulation -- the
+paper&#x27;s DSGC model uses Na/Kv/Km only. These three inactive channels should still compile and be
+documented in the audit as &quot;present in source, disabled in run&quot;.
+
+##### ModelDB GitHub Repo Has One Commit and No Errata
+
+Official mirror [ModelDB-189347-GH]: single commit `87d669dcef18e9966e29c88520ede78bc16d36ff` on
+2019-05-31 by `tommorse` titled &quot;initial version&quot;. No tags, no branches besides master, no issues,
+no pull requests. No README updates since the original ModelDB submission. No errata posted on
+PubMed [PubMed-PolegPolsky-2016] or on the author&#x27;s current faculty page [PolegPolskyLab-CU]. The
+PolegPolskyLab GitHub account [PolegPolskyLab-GH] does not contain a re-publication of this model;
+its DSGC-adjacent repos (`DS-mechanisms`, `DS_Bipolar_Inputs_SAC`) address different aspects of the
+DS circuit.
+
+##### Third-Party Reuse: Hanson 2019 via geoffder Repo
+
+[Geoffder-Spatial-Offset-DSGC-GH] is the companion NEURON code for Hanson et al. 2019 (eLife 42392),
+which directly reuses and modifies the ModelDB 189347 architecture. The accessible parts of that
+repo (metadata, file listing) do not document an errata or parameter mismatch relative to ModelDB
+189347; the README visible online references only the eLife paper. A deep-dive into that repo&#x27;s
+Python code (not available via the fetch tools here) could in principle reveal &quot;what Hanson&#x27;s group
+believed the 2016 parameters were&quot;; that is an implementation-stage action if the audit&#x27;s
+synapse-count or parameter questions remain unresolved.
+
+##### No Corrigendum, Erratum, or Authors&#x27; Note
+
+The PubMed record [PubMed-PolegPolsky-2016] lists no linked corrections. The first author&#x27;s
+university faculty page [PolegPolskyLab-CU] makes no reference to errata for this paper. The
+PolegPolskyLab GitHub account [PolegPolskyLab-GH] does not host an updated version. The Poleg-
+Polsky &amp; Diamond 2016 Neuron paper stands as originally published; all paper-vs-code discrepancies
+catalogued during this reproduction are genuine and uncorrected.
+
+#### Methodology Insights
+
+* **Attach the supplementary PDF to the existing paper asset, not a new one.** The supplementary
+  belongs to DOI `10.1016/j.neuron.2016.02.013`. The paper asset folder
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/files/`
+  already exists; adding `NIHMS766337-supplement.pdf` there and appending it to the `files` list in
+  `details.json` is the correct corrections overlay (no new paper asset). Download source:
+  [PMC-PolegPolsky-Suppl-2016].
+
+* **Use `main.hoc` as the canonical parameter source.** For every row of the audit table where the
+  paper text is silent (V_rest, Ra, Rm, Cm, all gbar, all synaptic kinetics), enter the value from
+  `main.hoc` in the &quot;ModelDB code value&quot; column and write &quot;Supplementary Procedures (see
+  NIHMS766337-supplement.pdf) or code&quot; as the citation. Once the supplementary PDF is downloaded,
+  cross-check each value; any mismatch becomes a new paper-vs-code discrepancy row.
+
+* **Flag gNMDA = 0.5 nS (code) vs. gNMDA = 2.5 nS (paper Figure 3E caption) as the second paper-vs-
+  code discrepancy.** The audit should record both values and describe how peak aggregate NMDA
+  conductance is built up from single-channel release in the shipped code (10 vesicles × 0.2 nS ×
+  release probability × Mg-block scaling). If the supplementary procedures state a different
+  interpretation of the 2.5 nS figure, record that resolution.
+
+* **The shipped `SquareInput.mod` does not implement luminance noise.** Reproducing Figures 6-8
+  requires adding a Gaussian-perturbation driver with SD = 0/10/30/50% of mean at 50-ms intervals.
+  The existing `SquareInput.mod` provides the deterministic square-pulse backbone; noise must be
+  layered on top via an external NEURON procedure or a new MOD file. Document the new code as a
+  departure from ModelDB 189347 and attribute the protocol to [PolegPolsky2016 Figure 6 legend].
+
+* **Preserve the unified presynaptic vesicle model across all three synapse classes.** The four
+  constants `maxves=10`, `newves=0.01`, `Vtau=30`, `s_inf=v_pre/100` appear in every synapse MOD
+  file; reimplementation must enforce this at the source level. Any deviation breaks the paper&#x27;s
+  &quot;simulated vesicle release gated on presynaptic membrane potential&quot; claim.
+
+* **Dendrite Nav is small but not zero.** The audit must state gNa_dend = **2e-4 S/cm^2**, not
+  &quot;zero&quot;. The passive-dendrite assertion [PolegPolsky2016 Discussion] is accurate in the sense that
+  dendrites cannot sustain regenerative spikes at 2e-4, but it is an approximation rather than a
+  strict truth. Downstream tasks that claim &quot;no dendritic Nav&quot; in a channel-inventory modification
+  have the direction of departure right but the magnitude wrong by a factor of 2000.
+
+* **Hypothesis (testable this task)**: The apparent 177 vs. 282 synapse discrepancy
+  [`research_papers.md` Gaps] will be resolvable from `RGCmodel.hoc` alone once the `placeBIP()` and
+  `placeSAC()` procedures are read in full. The raw-file fetch returned only part of the file; a
+  local grep on the downloaded MOD+HOC bundle at implementation time will expose the `countON`
+  arithmetic. If the countON is built from a subset of dendritic segments × per-segment synapse
+  count, the 177 / 282 mismatch likely traces to a difference in the parameter value quoted in the
+  paper text vs. the one used in the simulation.
+
+* **Hypothesis (testable this task)**: Because `main.hoc` quotes gNMDA = **0.5 nS** (post-sparsity)
+  while the paper states **2.5 nS**, the effective peak per-synapse NMDA conductance under normal
+  release probability is plausibly in the 1-2.5 nS band. A parameter sweep of gNMDA across {0.5,
+  1.5, 2.5} nS can test whether moving to 2.5 nS (paper value) moves DSI or peak rate toward the
+  paper&#x27;s targets; this is the &quot;follows their code first, flags discrepancy, tests alternative&quot;
+  procedure the task description prescribes.
+
+* **Best practice**: Check compiled MOD files on Windows for the `gtbar` / `glbar` calcium channels
+  that are present but zeroed in `HHst.mod`. NEURON 8.x typically compiles them without issue but
+  some Windows builds have flagged warnings for `USEION ca` when g is zero; if warnings appear,
+  document them as build notes rather than code changes.
+
+#### Discovered Papers
+
+No new papers were discovered that require downloading. The internet research either resolved gaps
+via existing corpus papers, confirmed negative findings (no errata, no corrigendum), or revealed
+non-paper resources (code repositories, supplementary PDFs that belong to an existing paper). The
+supplementary PDF `NIHMS766337-supplement.pdf` attaches to the existing paper asset
+`10.1016_j.neuron.2016.02.013` and is not a separate paper.
+
+Potential future fetch (not this task&#x27;s scope):
+
+* **Stafford 2014** — NMDAR subunit composition across development, cited by Figure S4. Not in
+  scope unless implementation reaches Figure S4 and needs to parameterise subunit composition.
+
+#### Recommendations for This Task
+
+1. **Download `NIHMS766337-supplement.pdf`** from
+   `https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf` during
+   implementation stage and append to the existing paper asset&#x27;s `files/` directory. Update the
+   asset&#x27;s `details.json` via a corrections overlay, not by mutating the completed t0002 task
+   folder.
+
+2. **Populate the audit table&#x27;s paper-value column from the supplementary PDF after download**; use
+   `main.hoc` values as the code-value column immediately. When the PDF is parsed, any supp-PDF
+   value that disagrees with `main.hoc` becomes a new row in the discrepancy catalogue.
+
+3. **Record two paper-vs-code discrepancies already identified by internet research** before any
+   simulation runs:
+
+   * Paper Figure 3E says gNMDA = **2.5 nS**; `main.hoc` sets b2gnmda = **0.5 nS**.
+   * Paper Figures 6-8 describe per-50-ms luminance noise; shipped `SquareInput.mod` has no noise
+     driver.
+
+4. **Do not modify the `HHst.mod` channel complement**. Preserve `gtbar`, `glbar` at zero exactly as
+   shipped. Any Windows-compile warning is a toolchain note, not a model change.
+
+5. **Pin the ModelDB git hash `87d669dcef18e9966e29c88520ede78bc16d36ff` in the library asset&#x27;s
+   `library.json` description**. Include the commit date (2019-05-31) and author (`tommorse`). This
+   is the code-provenance anchor for the reproduction.
+
+6. **Re-use the existing `geoffder/Spatial-Offset-DSGC-NEURON-Model` repository
+   [Geoffder-Spatial- Offset-DSGC-GH] only for cross-checking, never as a source of truth**. It
+   modifies the base model per Hanson 2019&#x27;s SAC-SAC manipulation; its parameters are not the
+   Poleg-Polsky 2016 reproduction target.
+
+7. **Treat &quot;no corrigendum found&quot; as a positive finding, not an absence of search effort**. The
+   reproduction can be published as-is without worrying that we missed an official correction.
+
+8. **Extract synapse-count logic from `RGCmodel.hoc` directly on the local copy** (the remote raw
+   fetch truncated at ~350 dendritic sections before hitting `placeBIP`). Local grep for `countON`,
+   `numsyn`, `placeBIP`, `placeSAC` during implementation will close the 177/282 puzzle.
+
+#### Source Index
+
+##### [PMC-PolegPolsky-Main-2016]
+
+* **Type**: documentation
+* **Title**: NMDA receptors multiplicatively scale visual signals and enhance directional motion
+  discrimination in retinal ganglion cells (PMC full-text article)
+* **Author/Org**: National Library of Medicine (PubMed Central)
+* **Date**: 2016-03-16
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/
+* **Peer-reviewed**: yes (hosted version of peer-reviewed Neuron paper)
+* **Relevance**: PMC landing page for the paper, which lists the supplementary file
+  `NIHMS766337-supplement.pdf` and confirms the S1-S8 supplementary figure contents that the
+  `research_papers.md` enumerates.
+
+##### [PMC-PolegPolsky-Suppl-2016]
+
+* **Type**: documentation
+* **Title**: NIHMS766337-supplement.pdf (Supplementary Experimental Procedures and Figures S1-S8)
+* **Author/Org**: Poleg-Polsky &amp; Diamond via PubMed Central
+* **Date**: 2016-03
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf
+* **Peer-reviewed**: yes (supplementary to peer-reviewed Neuron paper)
+* **Relevance**: The missing supplementary PDF flagged by `research_papers.md`. Contains the
+  detailed experimental procedures that define every parameter the paper main text omits.
+
+##### [PubMed-PolegPolsky-2016]
+
+* **Type**: documentation
+* **Title**: PubMed record 26948896 for Poleg-Polsky &amp; Diamond 2016
+* **Author/Org**: National Library of Medicine
+* **URL**: https://pubmed.ncbi.nlm.nih.gov/26948896/
+* **Peer-reviewed**: yes
+* **Relevance**: Confirmed absence of corrigenda, errata, or linked corrections. No author addendum
+  posted through the PubMed linking service.
+
+##### [ModelDB-189347-Main]
+
+* **Type**: documentation
+* **Title**: ModelDB entry 189347 — Multiplication by NMDA receptors in DSGCs (Poleg-Polsky &amp;
+  Diamond 2016)
+* **Author/Org**: Yale SenseLab / ModelDB
+* **URL**: https://modeldb.science/189347
+* **Peer-reviewed**: no (repository metadata only)
+* **Relevance**: Canonical ModelDB entry. Author/implementer: Alon Polsky
+  (mailto:alonpol@tx.technion.ac.il). Cell type: retinal ganglion GLU; ion currents: I_K, I_Na,t;
+  receptors: AMPA, NMDA, GABA-A, nicotinic. No explicit version/release-date metadata beyond the
+  paper&#x27;s 2016 publication.
+
+##### [ModelDB-189347-README-HTML]
+
+* **Type**: documentation
+* **Title**: ModelDB 189347 README (readme.html)
+* **Author/Org**: Poleg-Polsky via ModelDB
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/readme.html
+* **Peer-reviewed**: no
+* **Relevance**: Original README text. Describes three experimental conditions (control, zero Mg++,
+  tuned excitation), the GUI toggles (NMDARs, voltage-gated channels, spike suppression), and the
+  paper&#x27;s architectural claim: tuned inhibition 300% stronger in ND; tuned excitation (cholinergic)
+  300% stronger in PD; glutamatergic synapse counts equal between directions. No errata. No version.
+
+##### [ModelDB-189347-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/189347 (official GitHub mirror)
+* **Author/Org**: ModelDB tommorse
+* **URL**: https://github.com/ModelDBRepository/189347
+* **Last updated**: 2019-05-31 (single commit `87d669dcef18e9966e29c88520ede78bc16d36ff`)
+* **Peer-reviewed**: no (code repo; accompanies peer-reviewed paper)
+* **Relevance**: Official version-controlled mirror of the ModelDB release. Commit hash is the
+  reproduction&#x27;s code-provenance anchor; single commit confirms no code updates since initial
+  deposit. Matches the hash t0008 pinned in its library description.
+
+##### [ModelDB-189347-MainHoc]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `main.hoc`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/main.hoc
+* **Peer-reviewed**: no
+* **Relevance**: Canonical source for V_rest, Ra, g_pas, soma/dendrite channel gbar, aggregate
+  synaptic conductances, stimulus parameters, and simulation timing. Used to populate the audit
+  table&#x27;s code-value column.
+
+##### [ModelDB-189347-HHstmod]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `HHst.mod`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/HHst.mod
+* **Peer-reviewed**: no
+* **Relevance**: Stochastic Hodgkin-Huxley MOD file. Source of single-channel conductance 10 pS,
+  baseline leak 1e-5 S/cm^2, and the fact that calcium channels (gtbar, glbar) are present in code
+  but zeroed in the simulation.
+
+##### [ModelDB-189347-bipolarNMDAmod]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `bipolarNMDA.mod`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/bipolarNMDA.mod
+* **Peer-reviewed**: no
+* **Relevance**: NMDA + AMPA synapse implementation. Source of τ_rise = 2 ms, τ_decay(NMDA) = 50
+  ms, τ(AMPA) = 2 ms, Mg-block n = 0.25 /mM, γ = 0.08 /mV, E_rev = 0 mV, g_single = 0.2 nS,
+  calcium fraction = 0.1.
+
+##### [ModelDB-189347-SACInhibmod]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `SAC2RGCinhib.mod`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/SAC2RGCinhib.mod
+* **Peer-reviewed**: no
+* **Relevance**: GABA-A synapse MOD file. Source of τ_decay = 10 ms (no explicit rise), E_GABA =
+  -65 mV, g_single = 0.2 nS, and the unified vesicle-release scheme (maxves=10, newves=0.01,
+  Vtau=30, s_inf=v_pre/100).
+
+##### [ModelDB-189347-SACExcmod]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `SAC2RGCexc.mod`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/SAC2RGCexc.mod
+* **Peer-reviewed**: no
+* **Relevance**: Nicotinic ACh synapse MOD file. Source of τ = 3 ms, E = 0 mV, g_single = 0.2 nS,
+  confirming the paper&#x27;s &quot;cholinergic presynaptic input&quot; architecture.
+
+##### [ModelDB-189347-SquareInputmod]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `SquareInput.mod`
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/SquareInput.mod
+* **Peer-reviewed**: no
+* **Relevance**: Stimulus point-process. Square pulse (del=50 ms, dur=50 ms, gmax=1 nA) with
+  embedded Jahr-Stevens block (n=0.25, γ=0.08). Noise injection is NOT implemented, so Figure 6-8
+  noisy-luminance reproductions require a separate driver.
+
+##### [ModelDB-189347-RGChoc]
+
+* **Type**: repository
+* **Title**: ModelDB 189347 — `RGCmodel.hoc` (morphology template)
+* **Author/Org**: Poleg-Polsky via ModelDB mirror
+* **URL**: https://raw.githubusercontent.com/ModelDBRepository/189347/master/RGCmodel.hoc
+* **Peer-reviewed**: no
+* **Relevance**: DSGC morphology: 1 soma + 350 dendritic sections (dend[0-349]). Synapse object
+  arrays `SACinhibsyn[2]`, `BIPsyn[2]`, `SACexcsyn[2]`. Public `countON` variable (the 282 /
+  synapse-count discrepancy origin). The raw-file fetch returned only the topol/shape3d portions;
+  `placeBIP`, `placeSAC`, and the countON arithmetic must be read from the local checkout.
+
+##### [PolegPolskyLab-CU]
+
+* **Type**: documentation
+* **Title**: Alon Poleg-Polsky, MD, PhD — CU Anschutz Physiology &amp; Biophysics faculty page
+* **Author/Org**: University of Colorado Anschutz School of Medicine
+* **URL**: https://medschool.cuanschutz.edu/physiology/faculty/alon-poleg-polsky
+* **Peer-reviewed**: no
+* **Relevance**: First author&#x27;s current lab page. No erratum, addendum, correction, or updated model
+  version is posted for the 2016 Neuron paper. Confirms ModelDB 189347 stands as the only
+  authoritative code release.
+
+##### [PolegPolskyLab-GH]
+
+* **Type**: repository
+* **Title**: PolegPolskyLab (GitHub organization)
+* **Author/Org**: Alon Poleg-Polsky lab
+* **URL**: https://github.com/PolegPolskyLab
+* **Last updated**: 2024+ (active repos; no updates to 2016 DSGC code)
+* **Peer-reviewed**: no
+* **Relevance**: Authors&#x27; GitHub account. DSGC-adjacent repos (`DS-mechanisms`,
+  `DS_Bipolar_Inputs_SAC`) address other facets of the DS circuit but do not republish or update
+  ModelDB 189347.
+
+##### [Geoffder-Spatial-Offset-DSGC-GH]
+
+* **Type**: repository
+* **Title**: geoffder/Spatial-Offset-DSGC-NEURON-Model (Hanson 2019 companion code)
+* **Author/Org**: Geoff deRosenroll (Awatramani lab)
+* **URL**: https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model
+* **Last updated**: 2019 (eLife 42392 companion)
+* **Peer-reviewed**: no (companion to peer-reviewed eLife paper)
+* **Relevance**: Third-party reuse of the ModelDB 189347 architecture for the SAC-SAC manipulation
+  study. Useful cross-check if audit questions survive direct `RGCmodel.hoc` inspection, but not a
+  source of truth for the Poleg-Polsky 2016 reproduction target.
+
+##### [PolegPolsky2016]
+
+* **Type**: paper
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: The paper being reproduced. Already catalogued in `research_papers.md` Paper Index;
+  re-listed here because internet findings refer to its Figure 3E (gNMDA = 2.5 nS) and Figure 6
+  (per-50-ms luminance noise) as anchors against the code.
+
+##### [Oesch2005]
+
+* **Type**: paper
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(05)00556-9
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Already in corpus; re-listed here because the internet research confirmed that the
+  project&#x27;s 40-80 Hz peak-rate envelope traces to this rabbit paper (modal 148 ± 30 Hz; 41 ± 47 Hz
+  PSP-shaped injection), not to the Poleg-Polsky 2016 mouse model.
+      </content>
+    </section>
+    <section id="t0046_reproduce_poleg_polsky_2016_exact-research_code" source_kind="file">
+      <title>t0046_reproduce_poleg_polsky_2016_exact — Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0046_reproduce_poleg_polsky_2016_exact</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0046_reproduce_poleg_polsky_2016_exact/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0046_reproduce_poleg_polsky_2016_exact&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 39
+tasks_cited: 9
+libraries_found: 6
+libraries_relevant: 4
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Exact Reproduction of Poleg-Polsky 2016 (ModelDB 189347)
+
+#### Task Objective
+
+Build a from-scratch independent port of ModelDB 189347 (library asset `modeldb_189347_dsgc_exact`)
+that reproduces Poleg-Polsky &amp; Diamond 2016 on its own reported metrics — PSP amplitudes (Figs
+1-5), subthreshold ROC AUC (Fig 7), and Figure 8 qualitative suprathreshold behaviour — and
+publish a line-by-line audit of **paper vs ModelDB code vs our reproduction** with a discrepancy
+catalogue. The task explicitly forbids forking `[t0008]` or `[t0020]` and is strictly scoped to the
+paper&#x27;s metrics (spike-rate comparisons against the t0004 envelope are out of scope). This
+code-research stage surveys existing libraries (bundled HOC/MOD sources already sitting inside
+`[t0008]`&#x27;s library asset, scoring/visualisation helpers from `[t0011]` and `[t0012]`, and the
+calibrated baseline morphology from `[t0005]`/`[t0009]`) to decide what can be imported via library
+and what must be copied verbatim into the new task&#x27;s `code/` directory per the cross-task import
+rule.
+
+#### Library Landscape
+
+Six registered library assets exist in the project. The library aggregator is not installed in this
+repo (a direct `assets/library/*/details.json` scan was used instead). No library has been replaced
+or corrected; all entries below reflect their original as-authored state.
+
+| Library ID | Creating task | Version | Relevant? | Why |
+| --- | --- | --- | --- | --- |
+| `modeldb_189347_dsgc` | `[t0008]` | 0.1.0 | **Yes** (source bundle + API reference) | Ships the verbatim ModelDB 189347 HOC/MOD files (`main.hoc`, `RGCmodel.hoc`, `dsgc_model.hoc`, `HHst.mod`, `bipolarNMDA.mod`, `SAC2RGCinhib.mod`, `SAC2RGCexc.mod`, `SquareInput.mod`, `spike.mod`, `mosinit.hoc`, `model.ses`, `readme.html`/`.docx`) under `sources/` and a Python driver (`build_cell.py`, `constants.py`, `paths.py`, `run_tuning_curve.py`, `score_envelope.py`, `report_morphology.py`, `swc_io.py`, `run_nrnivmodl.cmd`). **Not importable as a library for t0046**: the driver is coupled to the t0008 rotation-proxy protocol, not the gabaMOD-swap protocol the paper actually uses. Treat the `sources/` HOC/MOD files as the **canonical upstream release** for t0046&#x27;s new library asset. |
+| `modeldb_189347_dsgc_gabamod` | `[t0020]` | 0.1.0 | **Yes** (gabaMOD protocol reference) | Sibling port using the paper-native PD=0.33 / ND=0.99 gabaMOD swap. Registered library asset but `code/` is empty (`.gitkeep` only); `module_paths` in `details.json` point at the **task&#x27;s** `code/` directory, not at the asset&#x27;s own `code/`. Effective code lives at `tasks/t0020_port_modeldb_189347_gabamod/code/` and imports t0008 build helpers cross-task, which the t0046 instructions forbid copying. The protocol logic itself (gabaMOD override + `update()`/`placeBIP()` refresh + baseline-BIP-position assertion) must be re-expressed in t0046&#x27;s own code. |
+| `modeldb_189347_dsgc_dendritic` | `[t0022]` | — | No | Testbed modification with channel-partitioned AIS and spatially-asymmetric inhibition; structurally diverges from Poleg-Polsky baseline. Not relevant for exact reproduction. |
+| `de_rosenroll_2026_dsgc` | `[t0024]` | — | No | Different DSGC paper (de Rosenroll 2026), out of scope per task.json. |
+| `tuning_curve_viz` | `[t0011]` | 0.1.0 | **Yes, import via library** | Matplotlib visualiser: Cartesian + polar tuning curves, multi-model overlays, per-angle raster + PSTH from `(angle_deg, trial_seed, firing_rate_hz)` and spike-time CSVs. Useful for Fig 1/Fig 4/Fig 5 direction-tuning plots; adapt to plot PSP amplitudes instead of rates. Import path: `from tasks.t0011_response_visualization_library.code.tuning_curve_viz import ...`. |
+| `tuning_curve_loss` | `[t0012]` | 0.1.0 | **Yes, import via library** | Canonical scorer over DSI / peak / null / HWHM with weighted loss and envelope gate. **Not directly useful for the paper&#x27;s PSP-amplitude / slope-angle / ROC-AUC metrics**, but its `compute_dsi`, `compute_peak_hz`, `compute_null_hz` helpers remain useful for Fig 8 secondary suprathreshold pass. Import path: `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss import ...`. |
+
+#### Key Findings
+
+##### ModelDB 189347 release file-by-file catalogue
+
+One-line purpose for every file shipped in the ModelDB release, as bundled in `[t0008]`&#x27;s `sources/`
+directory (reused by reference, NOT re-downloaded). Line counts from the bundled copies.
+
+* `main.hoc` (396 lines) — top-level GUI driver. Defines every simulation global (`b2gampa`,
+  `b2gnmda`, `s2ggaba`, `s2gach`, `gabaMOD`, `achMOD`, `n_bipNMDA`, `gama_bipNMDA`,
+  `newves_bipNMDA`, `tau1NMDA_bipNMDA`, `e_SACinhib`, `tau_SACinhib`, `vshift_HHst`, `rSYNchance`,
+  `lightstart`, `lightspeed`, `lightwidth`, `lightX/Y*`, `SACdelt`, `SACdur`, `flickertime`,
+  `flickerVAR`, `stimnoiseVAR`, `tstop`, `dt`), constructs `init_active()`, `placeBIP()`,
+  `update()`, `init_sim()`, and the interactive `simplerun($1,$2)` callback that implements the
+  paper&#x27;s three conditions (`$1=1` control, `$1=2` zero-Mg++/Voff_bipNMDA=1, `$1=3` tuned
+  excitation) and two directions (`$2=0` PD → `gabaMOD=.33`, `$2=1` ND → `gabaMOD=.99`) plus
+  `nmdaOn`/`SpikesOn` GUI toggles [`t0008`].
+* `RGCmodel.hoc` (11 861 lines) — DSGC template. Declares `begintemplate DSGC ... endtemplate`
+  with fixed morphology `create soma, dend[350]`; `topol()` hard-codes the full 350-section
+  connectivity; `shape3d()` loads explicit `pt3dadd` coordinates for the bundled DSGC reconstruction
+  (approx. 11 500 of the 11 861 lines are `pt3dadd` calls). Section lists: `all`, `somas`, `dends`,
+  `ON`, `OFF`. The ON/OFF cut is `z3d(n3d()-1) &gt;= -.16*y3d(n3d()-1) + 46` (line 11801-11807). Places
+  `SACinhibsyn[numsyn]`, `BIPsyn[numsyn]`, `SACexcsyn[numsyn]` on ON dendrites at segment 0.5 with
+  `.locx`/`.locy` at the section midpoint (lines 11816-11851). Dendritic diameter taper:
+  `diam=.5 + 2.58*exp(-(distance(01)-10)/10)` (line 11814) [`t0008`].
+* `dsgc_model.hoc` (330 lines) — **task-local t0008 derivative**, NOT in the ModelDB release.
+  Copies every parameter-block line from `main.hoc` with all
+  `xpanel`/`xbutton`/`load_file(&quot;model.ses&quot;)` removed so Python drivers can `h.load_file()` it
+  headlessly. Parameter values are bit-identical to `main.hoc`; only the GUI interactive layer is
+  removed [`t0008`].
+* `HHst.mod` (415 lines) — stochastic Hodgkin-Huxley with channel noise (Linaro et al. framework).
+  Three conductances gated by `SUFFIX HHst`: `gnabar`, `gkbar`, `gkmbar` (Km), plus passive `gleak`,
+  and present-but-zeroed `glbar` (L-Ca) and `gtbar` (T-Ca). Single-channel conductances
+  `gamma_na = gamma_k = gamma_km = gamma_l = gamma_t = 10 pS`. `GLOBAL vshift` allows simultaneous
+  shift of all activation curves via `vshift_HHst` (main.hoc sets `-4`) [`t0008`].
+* `bipolarNMDA.mod` (160 lines) — the paper&#x27;s combined AMPA+NMDA synapse. `POINT_PROCESS bipNMDA`.
+  Presynaptic: `maxves=10`, `newves=0.01`, `Vtau=30 (/ms)`, release probability `s_inf = Vpre/100`,
+  per-ms vesicle-release Bernoulli loop with `scop_random()`. Postsynaptic: `gAMPAsingle=0.2 nS`,
+  `gNMDAsingle=0.2 nS`, `tau1NMDA=50 ms` (decay), `tau2NMDA=2 ms` (rise), `tauAMPA=2 ms`,
+  `n=0.25 /mM`, `gama=0.08 /mV`, `e=0 mV`, `icaconst=0.1`, Jahr-Stevens form
+  `gNMDA=(A-B)/(1+n*exp(-gama*local_v))`, `local_v = v*(1-Voff) + Vset*Voff` (`Voff=1` gives the
+  voltage-independent &quot;zero-Mg2+&quot; variant, `Vset=-60`) [`t0008`].
+* `SAC2RGCinhib.mod` (94 lines) — GABA-A synapse, `POINT_PROCESS SACinhib`. Same presynaptic
+  machinery (`maxves=10`, `newves=0.01`, `Vtau=30`). Postsynaptic: `gsingle=0.2 nS`, `tau=10 ms`,
+  `e=-65 mV` (overridden to `-60 mV` in `main.hoc` via `e_SACinhib`) [`t0008`].
+* `SAC2RGCexc.mod` (94 lines) — nicotinic ACh synapse, `POINT_PROCESS SACexc`. Presynaptic same as
+  above. Postsynaptic: `gsingle=0.2 nS`, `tau=3 ms`, `e=0 mV` [`t0008`].
+* `SquareInput.mod` (56 lines) — `POINT_PROCESS square`. Deterministic square conductance pulse
+  (`del=50 ms`, `dur=50 ms`, `gmax=1 nA`) with optional Jahr-Stevens Mg block (`n=0.25`,
+  `gama=0.08`, toggled by `Vdependent` flag). No noise, no vesicle machinery; used only by the
+  interactive ses file, not by `placeBIP()` [`t0008`].
+* `spike.mod` (195 lines) — legacy Fohlmeister/Velte 1990 channel complement (gnabar, gkbar,
+  gabar, gcabar, gkcbar). **Compiled into the DLL but never inserted** by `main.hoc`; `RGCmodel.hoc`
+  inserts `HHst` only. Keep compilation working but confirm it never runs [`t0008`].
+* `mosinit.hoc` (2 lines) — `load_file(&quot;nrngui.hoc&quot;)` + `load_file(&quot;main.hoc&quot;)`; standard ModelDB
+  bootstrap [`t0008`].
+* `model.ses` (NEURON session) — pre-configured graph/point-process plots. Loaded by `main.hoc` at
+  `load_file(&quot;model.ses&quot;)` on line 392 of the upstream. **Problem for headless driver**: its
+  `xopen`/`load_file` chain breaks on Windows NEURON 8.2.7 if `chdir()` is not set to the sources
+  directory first. `[t0008]` solves this by (a) stripping the `load_file(&quot;model.ses&quot;)` line in the
+  task-local `dsgc_model.hoc` and (b) `h(f&#x27;chdir(&quot;{sources_forward}&quot;)&#x27;)` before any `load_file`
+  call, emitting forward slashes so HOC&#x27;s string-literal escape parser does not break on Windows
+  backslashes [`t0008`, `build_cell.py:143-145`]. This pattern is mandatory for t0046.
+* `readme.html` / `readme.docx` / `readme.fld/` — original lab README. No parameter values of
+  their own; narrative-level description of what the GUI toggles do.
+
+##### Synapse count: 282 (code) vs 177 (paper) — catalogue origin
+
+`RGCmodel.hoc:11825-11851` computes synapse counts as follows. Every `ON` section (cut at
+`z &gt;= -0.16*y + 46`) contributes `numsynperdend=1` synapse triples (`SACinhibsyn`, `SACexcsyn`,
+`BIPsyn`), gated by `numdendskip=1`. `countON` is the number of ON sections;
+`numsyn = int(countON*numsynperdend/numdendskip) + 1 = countON + 1`. The `+1` accounts for the
+0-indexed `countn` assignment loop. `[t0008]` confirmed **282 ON dendrites** at build time
+(`N_SYNAPSES_EACH_TYPE: int = 282`, `constants.py:59`, with comment: &quot;The earlier task description
+figure of 177 referred to a different paper architecture; the port is faithful to the released HOC
+template, not to that number&quot;). The paper&#x27;s text &quot;177 synapses&quot; does not appear anywhere in the
+shipped HOC/MOD sources; the 282 count is the authoritative value of the released code. t0046 must
+preserve this behaviour and catalogue the discrepancy (paper 177 vs code 282) as pre-flagged.
+
+##### Luminance-noise driver: present in main.hoc but dormant
+
+**Finding contradicts research_internet.md&#x27;s &quot;noise driver missing&quot; claim.** `main.hoc:99-101` and
+the identical block in `dsgc_model.hoc:89-91` declare `flickertime=50`, `flickerVAR=0`,
+`stimnoiseVAR=0`. `placeBIP()` (main.hoc:191-282) implements per-`flickertime`-ms Gaussian
+perturbation of both `BIPVbase` and `BIPVamp`:
+
+```
+for timer=0,tstop/flickertime-1{
+  basenoise.fill((BIPVbase+rnoise.normal(0,flickerVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+  ampnoise.fill((BIPVamp+rnoise.normal(0,flickerVAR+stimnoiseVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+}
+```
+
+This is exactly the &quot;per-50-ms luminance noise at SD = X%&quot; protocol the paper&#x27;s Figures 6-8
+describe. It is merely parameterised to zero variance in the shipped code. To reproduce Figures 6-8
+at SD ∈ {0, 10, 30, 50}, t0046 must override `flickerVAR` (and optionally `stimnoiseVAR`) to {0.0,
+0.1, 0.3, 0.5} and call `placeBIP()` to re-roll the noise vectors. **No new MOD file needed.**
+`SquareInput.mod` is unused by the moving-bar protocol (that&#x27;s the `Vinf.play()` stream fed to each
+BIP/SACinhib/SACexc `POINT_PROCESS`); the shipped mechanism is complete for Figures 6-8. The audit
+discrepancy becomes: paper describes the noise in words only; the code parameterises it correctly
+but at zero SD. This is a weaker discrepancy than &quot;missing noise driver&quot; and should be re-framed in
+the audit catalogue.
+
+##### gabaMOD swap is the paper-native DS protocol
+
+`main.hoc:46` sets `gabaMOD=0.33` at module load and the interactive `simplerun($1,$2)` rebinds
+`gabaMOD = .33 + .66*$2` (line 351) where `$2=0` gives PD (`gabaMOD=0.33`) and `$2=1` gives ND
+(`gabaMOD=0.99`). `gabaMOD` enters `placeBIP()` at line 256 as a **multiplier on the inhibitory
+stimulus amplitude** during the transient window: `mulnoise.fill(VampT*gabaMOD, ...)`. A PD trial
+uses 33% of the SAC→DSGC inhibitory drive, an ND trial uses 99% — a 3× asymmetry in inhibition
+is how the paper&#x27;s model converts an angle-agnostic excitatory bar into a direction-selective
+response. `[t0020]` demonstrated that this protocol produces **DSI 0.78** (inside Poleg-Polsky&#x27;s
+0.70-0.85 median envelope) on the bundled morphology, whereas `[t0008]`&#x27;s spatial-rotation proxy
+produces DSI 0.316 on the same cell [`t0008`, `t0020`]. t0046 must use the gabaMOD-swap protocol for
+every direction-selectivity test; rotation-proxy trials are out of scope.
+
+##### Parameter audit: research_internet.md vs actual main.hoc
+
+Direct re-reading of `main.hoc` (line numbers cited) reveals **several values where
+`research_internet.md`&#x27;s extracted table disagrees with the actual shipped file**. These must be
+corrected in the t0046 audit table:
+
+| Parameter | research_internet.md says | main.hoc actual | Source line |
+| --- | --- | --- | --- |
+| `n_bipNMDA` (NMDA Mg-block n) | 0.25 | **0.3** | main.hoc:82, dsgc_model.hoc:72 |
+| `gama_bipNMDA` (NMDA Mg-block γ) | 0.08 | **0.07** | main.hoc:83, dsgc_model.hoc:73 |
+| `newves_bipNMDA` (vesicle replenishment) | 0.01 | **0.002** | main.hoc:84, dsgc_model.hoc:74 |
+| `tau1NMDA_bipNMDA` (NMDA decay) | 50 ms | **60 ms** | main.hoc:86 (code sets 60; MOD default is 50) |
+| `tau_SACinhib` (GABA decay) | 10 ms | **30 ms** | main.hoc:90 (code overrides MOD default of 10) |
+| `e_SACinhib` (GABA reversal) | -65 mV | **-60 mV** | main.hoc:89 (code overrides MOD default of -65) |
+| `achMOD` (default) | 0.25 | **0.25 in main.hoc:47, but `simplerun()` rebinds to 0.33** | main.hoc:47 vs 352 |
+| `gabaMOD` (default PD) | 0.33 | **0.33** | main.hoc:46 (confirmed) |
+
+The MOD file defaults (`bipolarNMDA.mod:40-41` n=0.25 gama=0.08; `bipolarNMDA.mod:23` newves=0.01;
+`bipolarNMDA.mod:37` tau1NMDA=50; `SAC2RGCinhib.mod:24-25` tau=10, e=-65) exist in PARAMETER blocks
+but `main.hoc` **overrides all of them at top level** via direct global assignment. The canonical
+audit values are the `main.hoc` assignments, not the MOD defaults. research_internet.md extracted
+MOD defaults where it should have extracted main.hoc values; t0046&#x27;s audit table must use the
+main.hoc values throughout and catalogue this as a correction against t0046&#x27;s own upstream research
+stage [`t0008`].
+
+##### Morphology source: ModelDB ships its own; t0005 is a substitute
+
+`RGCmodel.hoc:11860+` (topol + shape3d at lines 15-11780) ships its own DSGC morphology — 1 soma +
+350 dend sections — encoded directly as `pt3dadd(x,y,z,d)` calls with hard-coded 3D points. There
+is **no `.swc` file** in the ModelDB release; morphology is hoc-embedded. `[t0005]` downloaded a
+different DSGC reconstruction (`141009_Pair1DSGC.CNG.swc` from NeuroMorpho.org, Feller lab) as the
+project&#x27;s baseline; `[t0009]` later calibrated its diameters. `[t0008]`&#x27;s `report_morphology.py`
+confirms the two morphologies have similar section-count and surface-area parity but different
+3D-coordinate layouts; `[t0008]` explicitly did **not** swap in the t0005 SWC because `placeBIP()`
+depends on section ordering and the `z &gt;= -0.16*y + 46` ON/OFF cut that only makes sense on the
+bundled morphology [`t0008`]. t0046 must therefore use the bundled `RGCmodel.hoc` morphology, not
+the t0005 SWC, and catalogue this: the paper used its own reconstruction, and t0005&#x27;s candidate is a
+different cell that cannot be dropped in without re-implementing `placeBIP()`.
+
+##### NEURON 8.2.7 Windows compile and loader pattern
+
+`[t0007]` validated NEURON 8.2.7 + NetPyNE 1.1.1 installs cleanly at `C:\Users\md1avn\nrn-8.2.7`.
+`[t0008]` added a `run_nrnivmodl.cmd` Windows shell script that invokes the MinGW-gcc toolchain to
+produce `x86_64/nrnmech.dll`. The Python loader pattern, copied verbatim into `[t0020]`&#x27;s
+`run_gabamod_sweep.py:29-81` and `[t0022]`&#x27;s `neuron_bootstrap.py`, is: (1) set `NEURONHOME` in the
+C environment before any `import neuron` by `os.execv`-re-execing the process if missing; (2) insert
+`&lt;NEURONHOME&gt;/lib/python` into `sys.path`; (3) `os.add_dll_directory(&lt;NEURONHOME&gt;/bin)` so `hoc.pyd`
+can resolve `libnrniv.dll`. Forget any of these steps and NEURON fails with a cryptic import error
+on Windows — this has been demonstrated three times across `[t0008]`, `[t0020]`, `[t0022]`. t0046
+must replicate the same pattern; the code is approximately 55 lines.
+
+##### Cross-task import rule violations in prior ports
+
+`[t0020]` imports
+`tasks.t0008_port_modeldb_189347.code.build_cell.{build_dsgc, run_one_trial, read_synapse_coords, SynapseCoords, apply_params, get_cell_summary}`
+and `tasks.t0008_port_modeldb_189347.code.constants.*` directly. **This is a violation** of the
+cross-task import rule (task code may only import from registered libraries). t0046 must **not
+follow this pattern** and must copy rather than import. The same applies to t0022&#x27;s reuse of the
+t0020 bootstrap via file-level copy with renamed sentinel env var (pattern shown in
+`tasks/t0022_modify_dsgc_channel_testbed/code/neuron_bootstrap.py:1-20`, which explicitly documents
+the copy-verbatim + rename-sentinel approach). t0046 should follow t0022&#x27;s copy pattern, not t0020&#x27;s
+import pattern.
+
+##### Scoring/visualisation integration path for a PSP-first reproduction
+
+`[t0012]`&#x27;s `tuning_curve_loss` is built around **firing rates**, not PSP amplitudes. t0046&#x27;s
+primary metrics are PSP amplitudes (mV), direction-tuning slope angles (degrees), and ROC AUC —
+none of which the t0012 scorer covers. The `compute_dsi` helper is trivially reusable for the Figure
+8 secondary suprathreshold DSI check, but the PSP/slope/ROC audit requires new computation that
+t0046 must implement from scratch. `[t0011]`&#x27;s `tuning_curve_viz` renders tuning curves from the
+canonical CSV schema; the Cartesian/polar plotters assume firing rates on the y-axis but accept any
+(angle, trial, value) schema, so they can be driven with PSP-amplitude values if the CSV label says
+so. Target-envelope overlays from the t0004 canonical tuning curve are out of scope for this task.
+
+#### Reusable Code and Assets
+
+##### ModelDB 189347 HOC/MOD sources
+
+* **Source**: `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/`
+* **What it contains**: `main.hoc`, `RGCmodel.hoc`, `HHst.mod`, `bipolarNMDA.mod`,
+  `SAC2RGCinhib.mod`, `SAC2RGCexc.mod`, `SquareInput.mod`, `spike.mod`, `mosinit.hoc`, `model.ses`,
+  `readme.html`/`.docx`/`.fld/`.
+* **Reuse method**: **copy into task** (the sources live inside `[t0008]`&#x27;s library asset folder but
+  are the upstream ModelDB files; t0046&#x27;s new library asset `modeldb_189347_dsgc_exact` needs its
+  own copy under `tasks/t0046_.../assets/library/modeldb_189347_dsgc_exact/sources/` to remain
+  self-contained).
+* **Adaptation needed**: copy `main.hoc` verbatim; create a task-local `dsgc_model_exact.hoc`
+  (ported equivalent of `[t0008]`&#x27;s `dsgc_model.hoc`) that strips GUI lines. MOD files compile
+  unchanged on NEURON 8.2.7.
+* **Line count**: ~13 600 total (11 861 for `RGCmodel.hoc` alone; rest ~1 750).
+
+##### HOC-safe source-dir chdir + forward-slash loader pattern
+
+* **Source**: `tasks/t0008_port_modeldb_189347/code/build_cell.py:120-175` (`_sources_dir_hoc_safe`,
+  `build_dsgc`).
+* **What it does**: chdirs HOC into the sources directory using forward slashes so
+  `load_file(&quot;RGCmodel.hoc&quot;)` and `load_file(&quot;dsgc_model.hoc&quot;)` resolve on Windows.
+* **Reuse method**: **copy into task**.
+* **Function signatures**:
+  ```python
+  def _sources_dir_hoc_safe() -&gt; str
+  def build_dsgc() -&gt; Any  # returns h with RGC initialised
+  def load_neuron() -&gt; Any  # loads nrnmech.dll and stdrun.hoc
+  ```
+* **Adaptation needed**: rename `MODELDB_*` path constants to t0046 paths; replace
+  `MODELDB_GUI_FREE_HOC` with `MODELDB_EXACT_HOC` pointing at t0046&#x27;s own `dsgc_model_exact.hoc`.
+* **Line count**: ~60 lines.
+
+##### NEURONHOME bootstrap with process re-exec
+
+* **Source**: `tasks/t0022_modify_dsgc_channel_testbed/code/neuron_bootstrap.py` (cleanest of the
+  three versions; itself a copy-with-renamed-sentinel of t0020&#x27;s).
+* **What it does**: sets NEURONHOME, re-execs process if missing, adds DLL dir on Windows, places
+  NEURON Python bindings on `sys.path`.
+* **Reuse method**: **copy into task** with renamed sentinel `_T0046_NEURONHOME_BOOTSTRAPPED`.
+* **Function signature**: `def ensure_neuron_importable() -&gt; None`.
+* **Adaptation needed**: rename sentinel env var; change the `from tasks.t0022_...constants import`
+  line to import from t0046 constants.
+* **Line count**: ~55 lines.
+
+##### Synapse-coordinate snapshot dataclass
+
+* **Source**: `tasks/t0008_port_modeldb_189347/code/build_cell.py:63-74, 192-208`.
+* **What it does**: snapshots `BIPsyn/SACinhibsyn/SACexcsyn` `.locx`/`.locy` for all 282 synapses so
+  they can be asserted-unchanged before/after trials.
+* **Reuse method**: **copy into task**.
+* **Function signatures**:
+  ```python
+  @dataclass(frozen=True, slots=True)
+  class SynapseCoords: ...  # index, bip_locx/y, sac_inhib_locx/y, sac_exc_locx/y
+  def read_synapse_coords(h: Any) -&gt; list[SynapseCoords]: ...
+  def get_cell_summary(h: Any) -&gt; CellSummary: ...
+  ```
+* **Adaptation needed**: none — paste into t0046&#x27;s `build_cell.py`.
+* **Line count**: ~40 lines.
+
+##### BIP-position baseline assertion (anti-rotation guard)
+
+* **Source**: `tasks/t0020_port_modeldb_189347_gabamod/code/run_gabamod_sweep.py:109-127`
+  (`_assert_bip_positions_baseline`).
+* **What it does**: asserts `RGC.BIPsyn[i].locx == baseline` after every `placeBIP()` to prevent
+  silent reactivation of the rotation proxy. Indispensable for a pure-gabaMOD reproduction.
+* **Reuse method**: **copy into task**.
+* **Function signature**:
+  ```python
+  def _assert_bip_positions_baseline(
+      *, h: Any, baseline_coords: list[SynapseCoords]
+  ) -&gt; None
+  ```
+* **Adaptation needed**: none.
+* **Line count**: ~20 lines.
+
+##### Tuning-curve visualisation (import via library)
+
+* **Source**: library `tuning_curve_viz` at
+  `tasks/t0011_response_visualization_library/assets/ library/tuning_curve_viz/` (code lives at
+  `tasks/t0011_response_visualization_library/code/tuning_curve_viz/`).
+* **What it does**: Cartesian + polar tuning-curve plots, multi-model overlays, per-angle raster +
+  PSTH.
+* **Reuse method**: **import via library**. Import path:
+  `from tasks.t0011_response_visualization_library.code.tuning_curve_viz.cartesian import plot_cartesian_tuning_curve`
+  (and `polar`, `overlay`, `raster_psth`).
+* **Function signatures**: `plot_cartesian_tuning_curve(df, out_path, *, target_df=None)`,
+  `plot_polar_tuning_curve(...)`, `plot_multi_model_overlay(...)`, `plot_angle_raster_psth(...)`.
+* **Adaptation needed**: feed PSP-amplitude CSVs with the same `(angle_deg, trial_seed, value)`
+  schema; override y-axis label to &quot;PSP amplitude (mV)&quot;. No code changes to the library.
+* **Line count**: n/a — library import.
+
+##### DSI/peak/null helpers (import via library)
+
+* **Source**: library `tuning_curve_loss` at
+  `tasks/t0012_tuning_curve_scoring_loss_library/ assets/library/tuning_curve_loss/`.
+* **What it does**: `compute_dsi`, `compute_peak_hz`, `compute_null_hz`, `compute_hwhm_deg`.
+* **Reuse method**: **import via library**. Import:
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.metrics import ( compute_dsi, compute_peak_hz, compute_null_hz, compute_hwhm_deg)`.
+* **Adaptation needed**: Fig 8 secondary pass only. Do NOT use the `score()` aggregator; its
+  weighted-loss formulation over peak/null/HWHM/DSI does not match the paper&#x27;s metrics.
+* **Line count**: n/a — library import.
+
+##### ModelDB 189347 morphology (verbatim reuse; no swap)
+
+* **Source**: embedded inside
+  `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/ sources/RGCmodel.hoc` (350
+  `create dend[i]` + `pt3dadd()` calls for the DSGC).
+* **Reuse method**: **copy into task** (as part of the sources bundle).
+* **Adaptation needed**: none.
+* **Do not swap** the `[t0005]`/`[t0009]` SWC morphology in; `placeBIP()` cannot consume an SWC and
+  the paper used its own reconstruction. Flag as discrepancy only if t0005&#x27;s is found to be the
+  paper&#x27;s actual morphology (it is not — the paper&#x27;s Methods cite their own recording).
+
+#### Lessons Learned
+
+* **Rotation proxy understates DSI by &gt;2x** compared to the paper-native gabaMOD swap (DSI 0.316 vs
+  0.784 on the same cell) — this is the central empirical finding of `[t0008]` and `[t0020]`. Any
+  DS reproduction that is not using `gabaMOD=0.33`/`gabaMOD=0.99` swap is misaligned with the
+  paper&#x27;s mechanism [`t0008`, `t0020`].
+* **Firing rates stay depressed regardless of protocol**: `[t0008]` peak 18.1 Hz, `[t0020]` peak
+  14.85 Hz. Both fail the 40-80 Hz envelope. The t0046 task explicitly reframes the comparison
+  target to PSP amplitudes because that is what the paper actually reports; this is the correct
+  call. The 40-80 Hz band comes from Oesch 2005 rabbit recordings [`t0020`].
+* **Windows NEURON 8.2.7 needs three discrete steps** to make `import neuron` work: set `NEURONHOME`
+  before Python starts (requires re-exec), extend `sys.path`, and register the DLL directory. Each
+  of the three downstream ports re-solves this identically; t0046 should copy one of them verbatim
+  [`t0007`, `t0008`, `t0020`, `t0022`].
+* **`h.load_file()` + Windows paths require forward slashes and pre-emptive `chdir()`** inside HOC.
+  The backslash-as-escape-char interaction between HOC string literals and `os.PathLike` breaks
+  silently if not handled; `[t0008]`&#x27;s `_sources_dir_hoc_safe()` wrapper is the canonical fix.
+* **MOD defaults can disagree with main.hoc globals** and are often wrong if read in isolation.
+  `bipolarNMDA.mod` declares `n=0.25 gama=0.08 newves=0.01 tau1NMDA=50` in its PARAMETER block but
+  `main.hoc` overrides all of these at top level. The research_internet.md audit extracted MOD
+  defaults instead of main.hoc globals for several rows and must be corrected [this task].
+* **Per-trial `placeBIP()` is mandatory** whenever any of `gabaMOD`, `achMOD`, `b2gnmda`, light
+  geometry, or noise SD changes, because those globals are read at `placeBIP()` invocation to build
+  the `Vinf.play()` vectors. `[t0020]` forgot this once during development and DSI collapsed to ~0.1
+  until the call was restored [`t0020`].
+* **Test framework is local-only**; tasks `[t0008]` and `[t0020]` use `pytest`-style
+  `code/test_smoke_single_angle.py` files but no CI run. t0046 should follow the same pattern and
+  include a smoke test that builds the cell and confirms `numsyn=282`.
+
+#### Recommendations for This Task
+
+1. **Create the new library asset&#x27;s `sources/` by copying every file** from
+   `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/` into
+   `tasks/t0046_.../assets/library/modeldb_189347_dsgc_exact/sources/`. Keep `main.hoc` verbatim
+   (with the original 2019-05-31 commit SHA `87d669dcef18e9966e29c88520ede78bc16d36ff` documented in
+   `details.json`). Create `dsgc_model_exact.hoc` = `main.hoc` with GUI lines stripped, patterned on
+   `[t0008]`&#x27;s existing `dsgc_model.hoc` but written from scratch (no code copy).
+2. **Copy the three helper patterns** (NEURONHOME bootstrap, HOC-safe chdir + load, synapse-coord
+   snapshot with baseline assertion) into `tasks/t0046_.../code/` with renamed constants and
+   sentinel. Do **not** import from `tasks.t0008_...` or `tasks.t0020_...`; the cross-task import
+   rule forbids it.
+3. **Use gabaMOD swap (`0.33`/`0.99`) as the DS mechanism**, not rotation. Rotation is already known
+   to understate DSI by 2.5× [`t0008`, `t0020`].
+4. **Drive subthreshold PSP recording by setting `exptype=2` + `SpikesOn=0`** in the HOC loader
+   before `h.run()`. `main.hoc:132-133` handles this: `if (exptype==2){TTX=1}` zeroes the somatic
+   gNa, and `init_active()` propagates. For Fig 1-5 metrics, record soma `V_m` and integrate the
+   peak depolarisation relative to `v_init=-65 mV`.
+5. **For Figure 6-8 noisy-luminance reproductions, override `h.flickerVAR` and `h.stimnoiseVAR`** to
+   the paper&#x27;s `{0, 0.1, 0.3, 0.5}` SDs and call `h(&#x27;placeBIP()&#x27;)` to re-roll the noise vectors. The
+   noise driver is already present in `main.hoc`&#x27;s `placeBIP()` procedure; it is parameterised to
+   zero in the shipped code. Re-frame the &quot;missing noise driver&quot; discrepancy as **&quot;noise driver
+   present but zeroed&quot;** in the audit.
+6. **For the zero-Mg2+ variant (Figure 5), set `h.Voff_bipNMDA=1`** rather than editing
+   `bipolarNMDA.mod`. Line 101 of that MOD file implements `local_v = v*(1-Voff) + Vset*Voff` which
+   collapses the Jahr-Stevens block to Ohmic when `Voff=1` and `Vset=-60`.
+7. **For the High-Cl- / tuned-excitation variant (Figure 4), set `gabaMOD=1` and
+   `achMOD += 0.66*(1-$2)`** per `simplerun($1=3, $2)` in `main.hoc:354-357`.
+8. **Populate the audit table&#x27;s ModelDB-code column from `main.hoc` (not MOD defaults)** — use
+   this research_code.md&#x27;s parameter-correction table as the source of truth.
+9. **Preserve the 282 synapse count exactly** and record the paper&#x27;s 177 claim as a catalogued
+   paper-vs-code discrepancy with no reproduction action.
+10. **Import `[t0011]` and `[t0012]` libraries** via absolute
+    `tasks.t0011_....code.tuning_curve_viz` and `tasks.t0012_....code.tuning_curve_loss` paths for
+    plotting and the Figure 8 DSI helper. Do not depend on their CLI entry points; call the
+    functions directly.
+11. **Use the t0005/t0009 SWC morphology only for reporting**, not for simulation. `[t0008]`&#x27;s
+    `report_morphology.py` demonstrates the comparison report layout; copy it if section-count/
+    surface-area reporting is needed for the audit.
+12. **Plan for ~1.5 min/20 trials local runtime** on the Windows workstation (observed in
+    `[t0020]`); budget an afternoon for the Fig 1-7 subthreshold sweep of approx. 8 angles × 3
+    conditions × 20 trials = 480 trials. Fig 6-8 noise conditions add another 4 SD levels × 20
+    trials.
+
+#### Task Index
+
+##### [t0005]
+
+* **Task ID**: `t0005_download_dsgc_morphology`
+* **Name**: Download candidate DSGC morphology
+* **Status**: completed
+* **Relevance**: Downloaded `141009_Pair1DSGC.CNG.swc`. t0046 uses the bundled ModelDB morphology,
+  not this SWC, but references this dataset for an explicit morphology-provenance discrepancy note.
+
+##### [t0007]
+
+* **Task ID**: `t0007_install_neuron_netpyne`
+* **Name**: Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+* **Status**: completed
+* **Relevance**: Validates the NEURON 8.2.7 + NetPyNE 1.1.1 toolchain t0046 depends on; supplies
+  `NEURONHOME=C:\Users\md1avn\nrn-8.2.7` and the MinGW compile recipe.
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+* **Status**: completed
+* **Relevance**: First port; bundles the verbatim ModelDB HOC/MOD sources under its library asset&#x27;s
+  `sources/` directory and provides the canonical Windows-NEURON loader pattern. t0046 copies those
+  sources into its own library asset and re-implements the driver.
+
+##### [t0009]
+
+* **Task ID**: `t0009_calibrate_dendritic_diameters`
+* **Name**: Calibrate dendritic diameters for dsgc-baseline-morphology
+* **Status**: completed
+* **Relevance**: Calibrated the t0005 SWC; referenced only for the morphology-provenance discussion
+  — t0046 uses the ModelDB bundled morphology, not the calibrated SWC.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response-visualisation library (firing rate vs angle graphs)
+* **Status**: completed
+* **Relevance**: Registered library `tuning_curve_viz`; import its Cartesian + polar plotters for
+  the per-figure reproduction PNGs under `results/images/`.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: Registered library `tuning_curve_loss`; import `compute_dsi`/`compute_peak_hz`/
+  `compute_null_hz` for the Fig 8 secondary suprathreshold DSI check. Do not use the full scorer.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+* **Status**: completed
+* **Relevance**: Proves the gabaMOD swap reproduces the paper&#x27;s DS envelope (DSI 0.78). t0046 must
+  re-implement the swap pattern in its own code (no cross-task import) but uses the `[t0020]` result
+  as the target contrast for Fig 8 qualitative checks.
+
+##### [t0022]
+
+* **Task ID**: `t0022_modify_dsgc_channel_testbed`
+* **Name**: Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+* **Status**: completed
+* **Relevance**: Source of the cleanest copy-into-task pattern for the NEURON bootstrap
+  (`neuron_bootstrap.py`, with a renamed sentinel env var). t0046 copies its approach, not t0020&#x27;s
+  cross-task-import approach.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC model
+* **Status**: completed
+* **Relevance**: Sibling DSGC port (different paper); confirms the copy-source-files-per-task
+  pattern is standard across multiple reproduction tasks in this project, reinforcing the
+  recommendation that t0046 bundle its own `sources/` copy rather than symlinking t0008&#x27;s.
       </content>
     </section>
   </sections>

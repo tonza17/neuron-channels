@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (9)
+# Answers: `direction-selectivity` (11)
 
-9 answer(s).
+11 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -42,6 +42,71 @@ class.
 | **Task sources** | [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | **URL sources** | [url 1](https://modeldb.science/189347), [url 2](https://github.com/ModelDBRepository/189347), [url 3](https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model), [url 4](https://elifesciences.org/articles/42392v1) |
 | **Created by** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+
+</details>
+
+<details>
+<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
+sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
+theory, and should t0033 parameterise dendritic morphology in 1-D
+(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
+
+**Confidence**: medium
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
+L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
+primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
+and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
+fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
+non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
+length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
+because the direction of the DSI response is not determined by L/lambda alone.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/full_answer.md) |
+| **ID** | [`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/) |
+| **Question** | Do the t0034 distal-length sweep and the t0035 distal-diameter sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable theory, and should t0033 parameterise dendritic morphology in 1-D (electrotonic length L/lambda) or 2-D (raw length x raw diameter)? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-24 |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **URL sources** | — |
+| **Created by** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+
+</details>
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/full_answer.md) |
+| **ID** | [`poleg-polsky-2016-reproduction-audit`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/) |
+| **Question** | Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every quantitative claim in Figures 1-8 of the Neuron paper when re-run faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB code disagree? |
+| **Methods** | `papers`, `internet`, `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Paper sources** | `10.1016_j.neuron.2016.02.013` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **URL sources** | [url 1](https://github.com/ModelDBRepository/189347), [url 2](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347), [url 3](https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf) |
+| **Created by** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
 
 </details>
 

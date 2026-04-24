@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-116 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **102 open** (30
-high, 64 medium, 8 low), **14 closed**.
+119 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **105 open** (31
+high, 66 medium, 8 low), **14 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -570,6 +570,29 @@ re-download.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -942,6 +965,32 @@ investigating.
 </details>
 
 <details>
+<summary>📊 <strong>Decide the fate of t0042/t0043/t0044: rewrite motivation or
+cancel based on t0046 findings</strong> (S-0046-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0042 (fine-grained null-GABA ladder), t0043 (Nav1.6 + Kv3 + NMDA restoration), and t0044
+(Schachter re-test on t0043) are currently `intervention_blocked` pending t0046's outcome.
+t0046 establishes that the systematic peak-rate gap previously seen in t0008/t0020/t0022
+(which motivated t0043's channel-inventory framing) is inherent to the deposited ModelDB code,
+not a modification artefact. This invalidates t0043's stated motivation. Run a
+brainstorm-style triage that (a) explicitly cancels or (b) rewrites motivations for each of
+the three blocked tasks, replacing the discredited peak-rate-gap framing with t0046's
+confirmed findings (synapse-count overcount; AP5-vs-iMK801 substitution; PSP amplitude
+inflation). Apply corrections-overlay updates to record the decisions. Recommended task types:
+brainstorming, correction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25,
 1.30} to localize the peak-Hz cliff</strong> (S-0029-05)</summary>
 
@@ -964,6 +1013,27 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Denser 2-D sweep of L x d to map DSI response surface on
+t0024</strong> (S-0041-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0041 overlap region contained only n=3 paired points. Run a 2-D sweep varying length and
+diameter independently across a 5x5 or 7x7 grid on t0024 (at GABA operational baseline) to map
+the DSI response surface rather than test collapse on two 1-D slices. Outcome would feed
+directly into t0033's morphology parameterisation and quantify the interaction term that the
+collapse test implied exists.
 
 </details>
 

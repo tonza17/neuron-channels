@@ -1,10 +1,42 @@
-# Answers: `synaptic-integration` (5)
+# Answers: `synaptic-integration` (6)
 
-5 answer(s).
+6 answer(s).
 
 [Back to all answers](../README.md)
 
 ---
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/full_answer.md) |
+| **ID** | [`poleg-polsky-2016-reproduction-audit`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/) |
+| **Question** | Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every quantitative claim in Figures 1-8 of the Neuron paper when re-run faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB code disagree? |
+| **Methods** | `papers`, `internet`, `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Paper sources** | `10.1016_j.neuron.2016.02.013` |
+| **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **URL sources** | [url 1](https://github.com/ModelDBRepository/189347), [url 2](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347), [url 3](https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf) |
+| **Created by** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+
+</details>
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental

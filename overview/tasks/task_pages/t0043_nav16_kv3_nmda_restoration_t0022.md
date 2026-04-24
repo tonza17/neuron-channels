@@ -1,4 +1,4 @@
-# ⏹ Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
+# ⚠️ Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0043_nav16_kv3_nmda_restoration_t0022` |
-| **Status** | ⏹ not_started |
+| **Status** | ⚠️ intervention_blocked |
 | **Dependencies** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Source suggestion** | `S-0019-03` |
 | **Task types** | `feature-engineering`, `experiment-run` |
@@ -21,6 +21,17 @@
 [`task_description.md`](../../../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md)*
 
 # Nav1.6 + Kv3 + NMDA Restoration on t0022
+
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. This task proposes
+channel inventory modifications beyond Poleg-Polsky 2016's original model to close the
+observed peak-rate gap (15 Hz vs paper's 40-80 Hz range). If t0046 shows the peak-rate gap is
+inherent to the faithful reproduction of the paper (present in their code too), this task's
+motivation evaporates and the gap must be addressed differently (stimulus duration, drive
+amplitude, paper claim re-interpretation). If t0046 matches the paper's firing rates, then our
+prior modifications introduced the gap and this task's channel-additions become a well-founded
+fix. Reassess after t0046 merges.
 
 ## Source Suggestion
 

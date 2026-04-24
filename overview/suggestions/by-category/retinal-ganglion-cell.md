@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-39 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **35 open** (13
-high, 17 medium, 5 low), **4 closed**.
+43 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **39 open** (15
+high, 18 medium, 6 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -230,6 +230,29 @@ re-download.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -326,6 +349,30 @@ priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_
 -45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
 Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
 before adopting them as tight compartmental-model fitting targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
 
 </details>
 
@@ -502,6 +549,31 @@ and produces one side-by-side comparison chart (polar plot overlay plus bar char
 metrics). Outputs a consolidated comparison_report.md plus an overview/llm-context/ snapshot.
 Dependencies: t0008, t0020, t0022 library assets, t0012 scorer. Effort ~12 hours. Recommended
 task type: data-analysis, write-library.
+
+</details>
+
+<details>
+<summary>📂 <strong>Manually fetch and attach the Poleg-Polsky 2016 supplementary
+PDF (NIHMS766337, PMC4795984)</strong> (S-0046-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The supplementary PDF
+(`https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf`) was
+blocked by PMC's JS-only interstitial during t0046 implementation; a metadata-only correction
+overlay records the citation but the binary file is not attached. Manually download the PDF
+via a browser session and attach it to the existing `10.1016_j.neuron.2016.02.013` paper
+asset, then update the corrections overlay to a full-binary-attached state. The supplementary
+text is the only authoritative source for any Methods parameters not stated in the published
+main text and is needed to fully audit the synapse-count discrepancy (S-0046-02). Recommended
+task types: download-paper, correction.
 
 </details>
 
@@ -753,6 +825,30 @@ REQ-6 partial-coverage caveat.
 </details>
 
 ## Low Priority
+
+<details>
+<summary>📚 <strong>Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a
+reusable library used by t0008/t0020/t0022 successors</strong> (S-0046-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-06` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0046's `dsgc_model_exact.hoc` is a from-scratch GUI-free derivative of `main.hoc` that wraps
+`simplerun(exptype, dir)` and exposes `b2gnmda`, `flickerVAR`, and `stimnoiseVAR` as post-call
+overrides honouring the silent `achMOD = 0.33` rebind. Package this driver (plus
+`code/run_simplerun.py`) into a separate reusable library asset that t0008, t0020, t0022, and
+downstream optimisation tasks can import directly, replacing their bespoke headless driver
+scaffolding. This eliminates duplicated bootstrap code and gives every downstream port a
+single audited entry point with the noise-globals override mechanism already wired.
+Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>📊 <strong>Email the Feller lab to map the 141009_Pair1DSGC session to a

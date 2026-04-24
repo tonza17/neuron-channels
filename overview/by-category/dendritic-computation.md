@@ -5,8 +5,8 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
-(5)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(41)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(6)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(42)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2155,7 +2155,27 @@ than reduced analytical models.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (5)
+## Answers (6)
+
+<details>
+<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
+sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
+theory, and should t0033 parameterise dendritic morphology in 1-D
+(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/)
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
+L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
+primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
+and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
+fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
+non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
+length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
+because the direction of the DSI response is not determined by L/lambda alone.
+
+</details>
 
 <details>
 <summary><strong>What variables of neuronal morphology have been shown by
@@ -2267,7 +2287,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (32 open, 9 closed)
+## Suggestions (33 open, 9 closed)
 
 <details>
 <summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)
@@ -2300,6 +2320,24 @@ t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanes
 testbed-level discrimination between the two mechanisms the project has produced. If both show
 passive_filtering, that rules out Schachter2010 across the substrates the project has
 available.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
 
 </details>
 

@@ -5,10 +5,10 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(8)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(39)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(9)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(43)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
-(5)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
+(6)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
@@ -1681,7 +1681,26 @@ simulation.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (8)
+## Answers (9)
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`poleg-polsky-2016-reproduction-audit`](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/)
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+</details>
 
 <details>
 <summary><strong>What variables of neuronal morphology have been shown by
@@ -1872,7 +1891,79 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (35 open, 4 closed)
+## Suggestions (39 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
+
+</details>
+
+<details>
+<summary>📂 <strong>Manually fetch and attach the Poleg-Polsky 2016 supplementary
+PDF (NIHMS766337, PMC4795984)</strong> (S-0046-05)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+The supplementary PDF
+(`https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf`) was
+blocked by PMC's JS-only interstitial during t0046 implementation; a metadata-only correction
+overlay records the citation but the binary file is not attached. Manually download the PDF
+via a browser session and attach it to the existing `10.1016_j.neuron.2016.02.013` paper
+asset, then update the corrections overlay to a full-binary-attached state. The supplementary
+text is the only authoritative source for any Methods parameters not stated in the published
+main text and is needed to fully audit the synapse-count discrepancy (S-0046-02). Recommended
+task types: download-paper, correction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a
+reusable library used by t0008/t0020/t0022 successors</strong> (S-0046-06)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+t0046's `dsgc_model_exact.hoc` is a from-scratch GUI-free derivative of `main.hoc` that wraps
+`simplerun(exptype, dir)` and exposes `b2gnmda`, `flickerVAR`, and `stimnoiseVAR` as post-call
+overrides honouring the silent `achMOD = 0.33` rebind. Package this driver (plus
+`code/run_simplerun.py`) into a separate reusable library asset that t0008, t0020, t0022, and
+downstream optimisation tasks can import directly, replacing their bespoke headless driver
+scaffolding. This eliminates duplicated bootstrap code and gives every downstream port a
+single audited entry point with the noise-globals override mechanism already wired.
+Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length

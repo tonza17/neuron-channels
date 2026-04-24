@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(27)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(28)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (23 open, 4 closed)
+## Suggestions (24 open, 4 closed)
 
 <details>
 <summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
@@ -903,6 +903,24 @@ maximise DSI via morphology alone, the maximum achievable lift from the baseline
 the headroom is much smaller than originally planned. Consider adding a channel-density
 dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
 density than through morphology alone.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
 
 </details>
 

@@ -1,4 +1,4 @@
-# ⏹ Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
+# ⚠️ Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0042_fine_grained_null_gaba_ladder_t0022` |
-| **Status** | ⏹ not_started |
+| **Status** | ⚠️ intervention_blocked |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Task types** | `experiment-run` |
 | **Task folder** | [`t0042_fine_grained_null_gaba_ladder_t0022/`](../../../tasks/t0042_fine_grained_null_gaba_ladder_t0022/) |
@@ -19,6 +19,14 @@
 [`task_description.md`](../../../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md)*
 
 # Fine-Grained Null-GABA Ladder on t0022
+
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. The researcher has
+paused all t0022-substrate modification tasks until the faithful ModelDB 189347 reproduction
+establishes whether the observed DSI and peak-rate values in t0022 reflect genuine mechanism
+gaps (justifying this task) or accumulated deviations from Poleg-Polsky 2016 (making this
+task's target irrelevant). Reassess after t0046 merges.
 
 ## Motivation
 

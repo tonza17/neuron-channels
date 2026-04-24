@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-122 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **107 open** (30
-high, 69 medium, 8 low), **15 closed**.
+132 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **117 open** (33
+high, 74 medium, 10 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,30 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
 
 </details>
 
@@ -584,6 +608,29 @@ re-download.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -655,6 +702,30 @@ t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanes
 testbed-level discrimination between the two mechanisms the project has produced. If both show
 passive_filtering, that rules out Schachter2010 across the substrates the project has
 available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
 
 </details>
 
@@ -951,6 +1022,27 @@ write-library.
 </details>
 
 <details>
+<summary>📊 <strong>Correct t0033 answer asset: confirm 2-D morphology
+parameterisation</strong> (S-0041-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0041 falsified the 1-D L/lambda collapse hypothesis; t0033's answer asset should incorporate
+the finding that morphology requires 2-D (raw length x raw diameter) parameterisation rather
+than a 1-D compression. Create a lightweight correction task that writes a correction file
+against t0033 answering: yes the 25-free-parameter design is appropriate; no the morphology
+dimension cannot be reduced to 1-D.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)
 noise</strong> (S-0037-05)</summary>
 
@@ -969,6 +1061,32 @@ comparison task should run matched 7-diameter and 5-length sweeps on both substr
 identical stimulus schedules and report whether the two discriminators agree on
 Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth
 investigating.
+
+</details>
+
+<details>
+<summary>📊 <strong>Decide the fate of t0042/t0043/t0044: rewrite motivation or
+cancel based on t0046 findings</strong> (S-0046-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0042 (fine-grained null-GABA ladder), t0043 (Nav1.6 + Kv3 + NMDA restoration), and t0044
+(Schachter re-test on t0043) are currently `intervention_blocked` pending t0046's outcome.
+t0046 establishes that the systematic peak-rate gap previously seen in t0008/t0020/t0022
+(which motivated t0043's channel-inventory framing) is inherent to the deposited ModelDB code,
+not a modification artefact. This invalidates t0043's stated motivation. Run a
+brainstorm-style triage that (a) explicitly cancels or (b) rewrites motivations for each of
+the three blocked tasks, replacing the discredited peak-rate-gap framing with t0046's
+confirmed findings (synapse-count overcount; AP5-vs-iMK801 substitution; PSP amplitude
+inflation). Apply corrections-overlay updates to record the decisions. Recommended task types:
+brainstorming, correction.
 
 </details>
 
@@ -995,6 +1113,27 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Denser 2-D sweep of L x d to map DSI response surface on
+t0024</strong> (S-0041-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0041 overlap region contained only n=3 paired points. Run a 2-D sweep varying length and
+diameter independently across a 5x5 or 7x7 grid on t0024 (at GABA operational baseline) to map
+the DSI response surface rather than test collapse on two 1-D slices. Outcome would feed
+directly into t0033's morphology parameterisation and quantify the interaction term that the
+collapse test implied exists.
 
 </details>
 
@@ -1544,6 +1683,27 @@ which targeted Ih calibration, not ablation. Recommended task types: experiment-
 </details>
 
 <details>
+<summary>📊 <strong>Impedance-loading-corrected electrotonic-length collapse
+re-test</strong> (S-0041-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0041 falsified the simple lambda = sqrt(d * Rm / (4 * Ra)) collapse prediction for t0024
+distal morphology (primary r=0.42, vector-sum r=-0.68). Re-run the collapse test with an
+impedance-loading-corrected electrotonic length that accounts for sealed-end vs open-end
+boundary conditions and tapered branching. If the corrected formula recovers r > 0.9, the 1-D
+parameterisation could still be feasible with a slightly more sophisticated single scalar.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Inject Poisson background rate on the t0022 driver to moderate
 DSI from 1.0 toward the 0.5-0.8 published band</strong> (S-0022-05)</summary>
 
@@ -1664,6 +1824,31 @@ sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; c
 drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
 either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
 Recommended task type: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Manually fetch and attach the Poleg-Polsky 2016 supplementary
+PDF (NIHMS766337, PMC4795984)</strong> (S-0046-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The supplementary PDF
+(`https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf`) was
+blocked by PMC's JS-only interstitial during t0046 implementation; a metadata-only correction
+overlay records the citation but the binary file is not attached. Manually download the PDF
+via a browser session and attach it to the existing `10.1016_j.neuron.2016.02.013` paper
+asset, then update the corrections overlay to a full-binary-attached state. The supplementary
+text is the only authoritative source for any Methods parameters not stated in the published
+main text and is needed to fully audit the synapse-count discrepancy (S-0046-02). Recommended
+task types: download-paper, correction.
 
 </details>
 
@@ -2466,6 +2651,30 @@ task type: experiment-run.
 </details>
 
 <details>
+<summary>📚 <strong>Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a
+reusable library used by t0008/t0020/t0022 successors</strong> (S-0046-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-06` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0046's `dsgc_model_exact.hoc` is a from-scratch GUI-free derivative of `main.hoc` that wraps
+`simplerun(exptype, dir)` and exposes `b2gnmda`, `flickerVAR`, and `stimnoiseVAR` as post-call
+overrides honouring the silent `achMOD = 0.33` rebind. Package this driver (plus
+`code/run_simplerun.py`) into a separate reusable library asset that t0008, t0020, t0022, and
+downstream optimisation tasks can import directly, replacing their bespoke headless driver
+scaffolding. This eliminates duplicated bootstrap code and gives every downstream port a
+single audited entry point with the noise-globals override mechanism already wired.
+Recommended task types: write-library.
+
+</details>
+
+<details>
 <summary>📊 <strong>Evaluate NEURON 9.0.x C++ MOD-file migration readiness for
 project adoption</strong> (S-0003-05)</summary>
 
@@ -2556,6 +2765,26 @@ per-compartment diameters. Register the result as dsgc-baseline-morphology-image
 as the authoritative reference for sensitivity analyses like S-0009-05. Depends on external
 data availability; likely requires an intervention for author contact. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Per-section L/lambda rather than mean-based for collapse
+tests</strong> (S-0041-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-04` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0041 used the 177-dendrite mean L (22.63 um) as the baseline for all L/lambda points. A more
+accurate test would compute L/lambda per distal section and aggregate, rather than computing
+L/lambda from an aggregate L. Small refactor of t0041 code; would be free to run since the
+simulation data is already in hand.
 
 </details>
 

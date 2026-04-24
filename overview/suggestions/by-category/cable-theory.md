@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-21 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **17
-open** (4 high, 12 medium, 1 low), **4 closed**.
+23 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **19
+open** (4 high, 13 medium, 2 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -251,6 +251,27 @@ which targeted Ih calibration, not ablation. Recommended task types: experiment-
 </details>
 
 <details>
+<summary>📊 <strong>Impedance-loading-corrected electrotonic-length collapse
+re-test</strong> (S-0041-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0041 falsified the simple lambda = sqrt(d * Rm / (4 * Ra)) collapse prediction for t0024
+distal morphology (primary r=0.42, vector-sum r=-0.68). Re-run the collapse test with an
+impedance-loading-corrected electrotonic length that accounts for sealed-end vs open-end
+boundary conditions and tapered branching. If the corrected formula recovers r > 0.9, the 1-D
+parameterisation could still be feasible with a slightly more sophisticated single scalar.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Joint distal length x diameter 2-D sweep on t0022 to catch
 interactions the marginal sweeps miss</strong> (S-0030-04)</summary>
 
@@ -430,6 +451,26 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Per-section L/lambda rather than mean-based for collapse
+tests</strong> (S-0041-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0041-04` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0041 used the 177-dendrite mean L (22.63 um) as the baseline for all L/lambda points. A more
+accurate test would compute L/lambda per distal section and aggregate, rather than computing
+L/lambda from an aggregate L. Small refactor of t0041 code; would be free to run since the
+simulation data is already in hand.
 
 </details>
 

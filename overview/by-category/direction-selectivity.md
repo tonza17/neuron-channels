@@ -5,10 +5,10 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
-(9)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(116)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(11)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(119)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(6)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(7)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
 
 ---
@@ -2012,7 +2012,46 @@ simulation.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (9)
+## Answers (11)
+
+<details>
+<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
+sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
+theory, and should t0033 parameterise dendritic morphology in 1-D
+(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/)
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
+L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
+primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
+and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
+fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
+non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
+length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
+because the direction of the DSI response is not determined by L/lambda alone.
+
+</details>
+
+<details>
+<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
+quantitative claim in Figures 1-8 of the Neuron paper when re-run
+faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
+code disagree?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
+[`poleg-polsky-2016-reproduction-audit`](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/)
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
+behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
+absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
+0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
+behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
+six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
+disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+</details>
 
 <details>
 <summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
@@ -2221,7 +2260,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (102 open, 14 closed)
+## Suggestions (105 open, 14 closed)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -2332,6 +2371,58 @@ maximise DSI via morphology alone, the maximum achievable lift from the baseline
 the headroom is much smaller than originally planned. Consider adding a channel-density
 dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
 density than through morphology alone.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Denser 2-D sweep of L x d to map DSI response surface on
+t0024</strong> (S-0041-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0041_electrotonic_length_collapse_t0034_t0035](../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/)
+
+The t0041 overlap region contained only n=3 paired points. Run a 2-D sweep varying length and
+diameter independently across a 5x5 or 7x7 grid on t0024 (at GABA operational baseline) to map
+the DSI response surface rather than test collapse on two 1-D slices. Outcome would feed
+directly into t0033's morphology parameterisation and quantify the interaction term that the
+collapse test implied exists.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Decide the fate of t0042/t0043/t0044: rewrite motivation or
+cancel based on t0046 findings</strong> (S-0046-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+t0042 (fine-grained null-GABA ladder), t0043 (Nav1.6 + Kv3 + NMDA restoration), and t0044
+(Schachter re-test on t0043) are currently `intervention_blocked` pending t0046's outcome.
+t0046 establishes that the systematic peak-rate gap previously seen in t0008/t0020/t0022
+(which motivated t0043's channel-inventory framing) is inherent to the deposited ModelDB code,
+not a modification artefact. This invalidates t0043's stated motivation. Run a
+brainstorm-style triage that (a) explicitly cancels or (b) rewrites motivations for each of
+the three blocked tasks, replacing the discredited peak-rate-gap framing with t0046's
+confirmed findings (synapse-count overcount; AP5-vs-iMK801 substitution; PSP amplitude
+inflation). Apply corrections-overlay updates to record the decisions. Recommended task types:
+brainstorming, correction.
 
 </details>
 

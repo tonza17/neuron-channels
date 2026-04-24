@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-24T11:13:31Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-24T17:45:36Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>65050</char_count>
-    <byte_count>65157</byte_count>
-    <estimated_tokens>16262</estimated_tokens>
+    <char_count>69234</char_count>
+    <byte_count>69341</byte_count>
+    <estimated_tokens>17308</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -149,9 +149,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0038_correct_t0033_base_gaba_to_4ns</id>
         <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
         <id>t0040_brainstorm_results_8</id>
+        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
+        <id>t0046_reproduce_poleg_polsky_2016_exact</id>
       </source_ids>
       <content>
-Completed tasks: 38
+Completed tasks: 40
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -380,6 +382,18 @@ ID: t0040_brainstorm_results_8
 Completed: 2026-04-24
 Short description: Eighth brainstorm: cross-task test-vs-literature audit; approve four correction tasks (L/lambda analysis, GABA ladder, Nav1.6+Kv3+NMDA, Schachter re-test); reject one suggestion and reprioritise four.
 Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic brainstorm, run on 2026-04-24 after the t0037–t0039 merges. The session produced a cross-task audit comparing every DSGC simulation test we have run against published data, and approved four follow-up tasks (t0041–t0044) that target the discrepancies. One suggestion was rejected and four were reprioritised from high to medium. Session Overview Date: 2026-04-24. Duration: ~90 min. The researcher requested a master table of every test plus a side-by-side comparison to published data, with the explicit purpose of identifying discrepancies and designing corrections. Phase 1 aggregated project state (39 tasks total, 37 completed, 1...
+
+## Electrotonic-length collapse analysis of t0034 and t0035
+ID: t0041_electrotonic_length_collapse_t0034_t0035
+Completed: 2026-04-24
+Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
+Result summary: Results Summary: t0041 Electrotonic-Length Collapse Analysis Summary Tested whether primary DSI and vector-sum DSI from t0034 (distal length sweep) and t0035 (distal diameter sweep) collapse onto a single DSI-vs-L/lambda curve under Rall&#x27;s cable theory. **Verdict: collapse_rejected.** The two sweeps do not share a common L/lambda parameterisation: Pearson r = +0.42 for primary DSI and -0.68 for vector-sum DSI (sign inverted), both well below the 0.9 confirmation threshold. Recommendation for t0033: keep the 2-D (raw length x raw diameter) morphology parameterisation. Metrics * **Pearson r primary DSI (overlap region, n=3 paired points)**: **+0.4161** (p=0.727). Threshold for...
+
+## Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit
+ID: t0046_reproduce_poleg_polsky_2016_exact
+Completed: 2026-04-24
+Short description: Rebuild ModelDB 189347 from scratch to match Poleg-Polsky 2016; audit every parameter against paper+code+supplementary; reproduce all paper tests within tolerance.
+Result summary: Results Summary: Exact Reproduction of Poleg-Polsky 2016 (ModelDB 189347) Summary The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning behaviour (preferred-direction PSP &gt; null-direction PSP) and matches the paper&#x27;s slope-angle and ROC-AUC targets within tolerance, but absolute PSP amplitudes at the code-pinned `b2gnmda = 0.5 nS` overshoot the paper&#x27;s reported means by approximately 4x. The paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver behaviour are confirmed; **12 discrepancies** are catalogued in the audit, including six MOD-default vs `main.hoc`-override mismatches. Metrics * **Fig 1 PD PSP** (b2gnmda = 0.5 nS, code value)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -388,14 +402,13 @@ Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic b
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
         <id>t0042_fine_grained_null_gaba_ladder_t0022</id>
         <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
         <id>t0044_schachter_retest_on_t0043</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
       </source_ids>
       <content>
-Planned or active tasks: 7
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -410,30 +423,23 @@ Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
 
-## Electrotonic-length collapse analysis of t0034 and t0035
-ID: t0041_electrotonic_length_collapse_t0034_t0035
-Status: not_started
-Effective date: 2026-04-24
-Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
-Dependencies: t0034_distal_dendrite_length_sweep_t0024, t0035_distal_dendrite_diameter_sweep_t0024
-
 ## Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
 ID: t0042_fine_grained_null_gaba_ladder_t0022
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037&#x27;s 4 nS sweet spot without destabilising preferred direction.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
 ID: t0043_nav16_kv3_nmda_restoration_t0022
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
 Dependencies: t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
 ID: t0044_schachter_retest_on_t0043
-Status: not_started
+Status: intervention_blocked
 Effective date: 2026-04-24
 Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
 Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
@@ -462,9 +468,11 @@ Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_chan
         <id>synaptic-integration-priors-for-dsgc-modelling</id>
         <id>morphology-direction-selectivity-modeling-synthesis</id>
         <id>vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation</id>
+        <id>electrotonic-length-collapse-of-length-and-diameter-sweeps</id>
+        <id>poleg-polsky-2016-reproduction-audit</id>
       </source_ids>
       <content>
-Answers: 12
+Answers: 14
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -561,6 +569,22 @@ Confidence: medium
 Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
 
 Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119 dollars. This combination is cheapest among the corpus-justified gradient-free strategies because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour. Confidence is medium: the CoreNEURON CPU-to-GPU speedup and...
+
+## Do the t0034 distal-length sweep and the t0035 distal-diameter sweep collapse onto a single DSI-vs-L/lambda curve under Rall&#x27;s cable theory, and should t0033 parameterise dendritic morphology in 1-D (electrotonic length L/lambda) or 2-D (raw length x raw diameter)?
+ID: electrotonic-length-collapse-of-length-and-diameter-sweeps
+Created by: t0041_electrotonic_length_collapse_t0034_t0035 on 2026-04-24
+Confidence: medium
+Categories: cable-theory, compartmental-modeling, dendritic-computation, direction-selectivity
+
+No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold, and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda, because the direction of the DSI response is not determined by...
+
+## Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every quantitative claim in Figures 1-8 of the Neuron paper when re-run faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB code disagree?
+ID: poleg-polsky-2016-reproduction-audit
+Created by: t0046_reproduce_poleg_polsky_2016_exact on 2026-04-24
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, synaptic-integration
+
+Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning behaviour (PD PSP &gt; ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the absolute PSP amplitudes are larger than the paper&#x27;s reported means at the code-pinned gNMDA = 0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
       </content>
     </section>
   </sections>
