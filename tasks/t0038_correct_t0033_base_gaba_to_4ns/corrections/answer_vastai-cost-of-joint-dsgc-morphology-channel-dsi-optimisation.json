@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0038-01",
+  "correcting_task": "t0038_correct_t0033_base_gaba_to_4ns",
+  "target_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "target_kind": "answer",
+  "target_id": "vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation",
+  "action": "update",
+  "changes": {
+    "short_title": "Vast.ai cost for joint DSGC morphology + top-10 VGC DSI optimisation (t0022 base GABA_CONDUCTANCE_NULL_NS = 4.0 nS per t0037)"
+  },
+  "rationale": "t0033's original plan implicitly assumed the t0022 default GABA_CONDUCTANCE_NULL_NS = 12 nS as the base optimisation parameter. Experimental evidence subsequently showed this pins the primary-DSI objective: t0030 (12 nS, DSI=1.000 pinned), t0036 (6 nS, DSI=1.000 still pinned), t0037 (ladder across {4, 2, 1, 0.5, 0} nS, sweet spot at 4 nS with DSI=0.429 and DSGC-like preferred direction 40.8 deg). Running the planned optimiser with 12 nS would sweep a flat DSI=1.000 landscape and waste compute. The effective answer is updated so consumers see the corrected base parameter (4 nS) in the title; details are preserved in the source tasks (t0037 sweep_results.csv and compare_literature.md). Closes suggestion S-0037-02."
+}
