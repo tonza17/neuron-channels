@@ -17,7 +17,7 @@ threshold.
 | Default per-task limit | $1.00 USD |
 | Tasks with cost records | 38 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 6 |
+| Skipped tasks | 7 |
 
 ## Service Totals
 
@@ -47,3 +47,4 @@ No task cost records found.
 | `t0042_fine_grained_null_gaba_ladder_t0022` | results/costs.json is missing or invalid |
 | `t0043_nav16_kv3_nmda_restoration_t0022` | results/costs.json is missing or invalid |
 | `t0044_schachter_retest_on_t0043` | results/costs.json is missing or invalid |
+| `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |

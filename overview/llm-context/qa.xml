@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-24T10:57:41Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-24T11:13:31Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>241940</char_count>
-    <byte_count>242209</byte_count>
-    <estimated_tokens>60485</estimated_tokens>
+    <char_count>242412</char_count>
+    <byte_count>242681</byte_count>
+    <estimated_tokens>60603</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -392,9 +392,10 @@ Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic b
         <id>t0042_fine_grained_null_gaba_ladder_t0022</id>
         <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
         <id>t0044_schachter_retest_on_t0043</id>
+        <id>t0045_coreneuron_vastai_speedup_benchmark</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 7
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -436,6 +437,13 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
 Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
+
+## CoreNEURON Vast.ai RTX 4090 speedup benchmark
+ID: t0045_coreneuron_vastai_speedup_benchmark
+Status: not_started
+Effective date: 2026-04-24
+Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-44-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-45-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-170-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (16K)
-| [full](llm-context/full.xml) (226K) | [roadmap](llm-context/roadmap.xml) (57K) |
+| [full](llm-context/full.xml) (227K) | [roadmap](llm-context/roadmap.xml) (58K) |
 [results](llm-context/results-deep-dive.xml) (159K) |
 [assets](llm-context/literature-and-assets.xml) (33K)
 
-*Last updated: 2026-04-24 10:57 UTC*
+*Last updated: 2026-04-24 11:13 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,7 +56,7 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (4)](tasks/by-status/not_started.md)
+## [Ready to Start (5)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
@@ -64,6 +64,7 @@ No tasks in progress.
 | 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`description`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/task_description.md) | 2026-04-24 |
 | 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) | [`description`](../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md) | 2026-04-24 |
 | 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) | [`description`](../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md) | 2026-04-24 |
+| 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
 
 ---
 
@@ -114,7 +115,7 @@ No tasks in progress.
 
 ---
 
-## [Recent Suggestions (149 open)](suggestions/)
+## [Recent Suggestions (148 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -277,11 +278,11 @@ that writes a histogram per diameter.
 
 </details>
 
-*139 more open suggestions → [open suggestions](suggestions/)*
+*138 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (44)](suggestions/)
+## [High Priority Suggestions (43)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -402,26 +403,6 @@ option. Recommended task types: write-library, answer-question.
 </details>
 
 <details>
-<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
-assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
-(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
-1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
-literature-less guess that drives the largest sensitivity-band column. Run a short task that
-(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
-NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
-under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
-per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
-$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
-experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
 <summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
 t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
 
@@ -480,7 +461,25 @@ single evaluator. Recommended task types: write-library, feature-engineering.
 
 </details>
 
-*34 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0022_modify_dsgc_channel_testbed](../tasks/t0022_modify_dsgc_channel_testbed/)
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+*33 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

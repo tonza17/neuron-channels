@@ -783,32 +783,6 @@ option. Recommended task types: write-library, answer-question.
 </details>
 
 <details>
-<summary>📊 <strong>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
-assumed 5x speedup in the t0033 cost model</strong> (S-0033-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0033-01` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
-(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
-1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
-literature-less guess that drives the largest sensitivity-band column. Run a short task that
-(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
-NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
-under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
-per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
-$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
-experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
 <summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
 t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
 
@@ -1206,6 +1180,34 @@ document the convention in arf/specifications. Recommended task types: infrastru
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the
+assumed 5x speedup in the t0033 cost model</s> — covered by <a
+href="../../../tasks/t0045_coreneuron_vastai_speedup_benchmark/"><code>t0045_coreneuron_vastai_speedup_benchmark</code></a>
+(S-0033-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEURON speedup
+(91 s deterministic sim on RTX 4090 vs 456 s on single CPU core). The corpus documents Hines
+1997 O(N) cable-solver scaling but predates GPU NEURON variants, so the 5x figure is a
+literature-less guess that drives the largest sensitivity-band column. Run a short task that
+(a) provisions one Vast.ai RTX 4090 under the existing filters, (b) builds CoreNEURON against
+NEURON 8.2.7 with OpenACC/CUDA, (c) runs the t0022 deterministic 12-angle x 10-trial protocol
+under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured speedup and
+per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
+$23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
+experiment-run, baseline-evaluation.
+
+</details>
 
 <details>
 <summary>✅ <s>Rerun the distal-diameter sweep on t0022 with null-GABA conductance
