@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\code\run_sweep.py", line 59, in <module>
+    from tasks.t0039_distal_dendrite_diameter_sweep_t0022_gaba4.code.trial_runner_diameter import (
+    ...<3 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\code\trial_runner_diameter.py", line 46, in <module>
+    from tasks.t0022_modify_dsgc_channel_testbed.code.run_tuning_curve import (
+    ...<8 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0022_modify_dsgc_channel_testbed\code\run_tuning_curve.py", line 52, in <module>
+    from tqdm import tqdm
+ModuleNotFoundError: No module named 'tqdm'

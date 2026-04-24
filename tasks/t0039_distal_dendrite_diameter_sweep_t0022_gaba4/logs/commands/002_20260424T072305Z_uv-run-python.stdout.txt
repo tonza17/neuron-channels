@@ -1,0 +1,8 @@
+[t0039 sweep] multipliers = (0.5, 1.0, 2.0)
+[t0039 sweep] angles = (0, 120, 240)
+[t0039 sweep] n_trials per (multiplier, angle) = 2
+[t0039 sweep] GABA_NULL_NS = 4.0 (t0037 operational)
+[t0039 sweep] tidy CSV -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\sweep_results.csv
+[t0039 sweep] per-diameter CSV dir -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\per_diameter
+[gaba_override] GABA_CONDUCTANCE_NULL_NS = 4.0 nS (previous = 12.0 nS)
+[t0039 sweep] building DSGC cell + E-I pairs + distal snapshot...
