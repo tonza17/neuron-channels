@@ -1,6 +1,4 @@
 {
-  "spec_version": "2",
-  "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
   "variants": [
     {
       "variant_id": "control_gnmda05",

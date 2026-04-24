@@ -339,8 +339,6 @@ def main() -> int:
                 )
 
     out: dict[str, Any] = {
-        "spec_version": "2",
-        "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
         "variants": variants,
     }
     METRICS_JSON.parent.mkdir(parents=True, exist_ok=True)
