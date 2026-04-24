@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0046's run_simplerun.py and build_cell.py for the synapse-list pattern; identify _ref_g handles for bipNMDA, bipampa, SACinhib MOD models.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T22:15:57Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T22:28:10Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
