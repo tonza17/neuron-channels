@@ -5,12 +5,12 @@
   "name": "Correct t0033 base GABA to 4 nS on t0022 variant",
   "short_description": "Create a correction against t0033's answer asset stating that any downstream optimiser or sweep targeting t0022 must set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter, per t0037 findings.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0033_plan_dsgc_morphology_channel_optimisation",
     "t0037_null_gaba_reduction_ladder_t0022"
   ],
-  "start_time": null,
+  "start_time": "2026-04-24T07:01:47Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
