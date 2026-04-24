@@ -95,10 +95,10 @@
       "step": 11,
       "name": "creative-thinking",
       "description": "Interpret DSI-vs-diameter slope; Schachter2010 vs passive signature.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T08:09:44Z",
       "completed_at": null,
-      "log_file": "logs/steps/011_creative-thinking/"
+      "log_file": "logs\\steps\\011_creative-thinking/"
     },
     {
       "step": 12,
