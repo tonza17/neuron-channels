@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0046-01",
+  "correcting_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "target_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "target_kind": "paper",
+  "target_id": "10.1016_j.neuron.2016.02.013",
+  "action": "update",
+  "changes": {
+    "abstract": "[Supplementary materials NIHMS766337 (PMC4795984) cited at: https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf] Postsynaptic responses in many CNS neurons are typically small and variable, often making it difficult to distinguish physiologically relevant signals from background noise. To extract salient information, neurons are thought to integrate multiple synaptic inputs and/or selectively amplify specific synaptic activation patterns. Here, we present evidence for a third strategy: directionally selective ganglion cells (DSGCs) in the mouse retina multiplicatively scale visual signals via a mechanism that requires both nonlinear NMDA receptor (NMDAR) conductances in DSGC dendrites and directionally tuned inhibition provided by the upstream retinal circuitry. Postsynaptic multiplication enables DSGCs to discriminate visual motion more accurately in noisy visual conditions without compromising directional tuning. These findings demonstrate a novel role for NMDARs in synaptic processing and provide new insights into how synaptic and network features interact to accomplish physiologically relevant neural computations."
+  },
+  "rationale": "REQ-14 partial: PMC blocks programmatic download of NIHMS766337-supplement.pdf with a JS-only interstitial page that returns 1.8 KB of HTML instead of the PDF binary. We tried multiple user-agents, referer chains, and mirror URLs; all returned the interstitial. Recording the supplementary citation in the paper asset abstract via this metadata-only update so that downstream consumers see the canonical source URL (https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf). Manual fetch through a real browser is required to attach the PDF binary itself; this is documented in intervention/. The audit table and discrepancy catalogue still cite the supplementary text as needed."
+}

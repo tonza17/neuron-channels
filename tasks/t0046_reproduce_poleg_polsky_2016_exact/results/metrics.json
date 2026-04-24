@@ -1,0 +1,253 @@
+{
+  "variants": [
+    {
+      "variant_id": "control_gnmda05",
+      "label": "Fig 1 control (b2gnmda = 0.5 nS, code value)",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 4,
+        "n_nd_trials": 4,
+        "psp_pd_mean_mv": 23.245425,
+        "psp_pd_sd_mv": 1.3645213993069756,
+        "psp_nd_mean_mv": 16.387475,
+        "psp_nd_sd_mv": 0.6142428096173912,
+        "slope_angle_deg": 54.81706833462698,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.17303679518783643,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "control_gnmda25",
+      "label": "Fig 1 control (b2gnmda = 2.5 nS, paper value)",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 4,
+        "n_nd_trials": 4,
+        "psp_pd_mean_mv": 41.596050000000005,
+        "psp_pd_sd_mv": 0.26016924619690424,
+        "psp_nd_mean_mv": 39.91245,
+        "psp_nd_sd_mv": 0.36794355998350226,
+        "slope_angle_deg": 46.18330553523823,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.020655514455547648,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "ap5_gnmda0",
+      "label": "Fig 2 AP5 analogue (b2gnmda = 0)",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 4,
+        "n_nd_trials": 4,
+        "psp_pd_mean_mv": 13.321975,
+        "psp_pd_sd_mv": 0.2806361389771464,
+        "psp_nd_mean_mv": 10.63465,
+        "psp_nd_sd_mv": 0.27478239269162347,
+        "slope_angle_deg": 51.4003754425234,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.11217460723286353,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "high_cl_exptype3",
+      "label": "Fig 4 high-Cl- (tuned-excitation analogue, exptype = 3)",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 3,
+        "n_nd_trials": 3,
+        "psp_pd_mean_mv": 18.024433333333334,
+        "psp_pd_sd_mv": 1.243088461588045,
+        "psp_nd_mean_mv": 16.616500000000002,
+        "psp_nd_sd_mv": 0.22503775238834944,
+        "slope_angle_deg": 47.32742755698474,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0406436316188555,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "zero_mg_exptype2",
+      "label": "Fig 5 0 Mg2+ (Voff_bipNMDA = 1, exptype = 2)",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 3,
+        "n_nd_trials": 3,
+        "psp_pd_mean_mv": 22.338766666666668,
+        "psp_pd_sd_mv": 0.7438017500203482,
+        "psp_nd_mean_mv": 18.316266666666667,
+        "psp_nd_sd_mv": 0.22694110102256326,
+        "slope_angle_deg": 50.65058165101171,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.09894223839442597,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "noise_control_sd00",
+      "label": "Fig 6/7 fig6_control flickerVAR=0.00",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "psp_pd_mean_mv": 24.228749999999998,
+        "psp_pd_sd_mv": 1.2933690134683142,
+        "psp_nd_mean_mv": 16.01435,
+        "psp_nd_sd_mv": 0.36210938264562986,
+        "slope_angle_deg": 56.536701544018634,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.20411946395779645,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "noise_control_sd10",
+      "label": "Fig 6/7 fig6_control flickerVAR=0.10",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "psp_pd_mean_mv": 22.68935,
+        "psp_pd_sd_mv": 1.4480839771919296,
+        "psp_nd_mean_mv": 16.11375,
+        "psp_nd_sd_mv": 0.5166829250130094,
+        "slope_angle_deg": 54.61801024408785,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.16946068741930417,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "noise_zeromg_sd00",
+      "label": "Fig 6/7 fig6_zeromg flickerVAR=0.00",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "psp_pd_mean_mv": 22.66805,
+        "psp_pd_sd_mv": 0.6752162653550332,
+        "psp_nd_mean_mv": 18.29305,
+        "psp_nd_sd_mv": 0.3158645991560307,
+        "slope_angle_deg": 51.096571847550415,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.10680865504100232,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "noise_zeromg_sd10",
+      "label": "Fig 6/7 fig6_zeromg flickerVAR=0.10",
+      "dimensions": {
+        "kind": "subthreshold_psp",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "psp_pd_mean_mv": 22.034599999999998,
+        "psp_pd_sd_mv": 0.8963285558320663,
+        "psp_nd_mean_mv": 18.09655,
+        "psp_nd_sd_mv": 0.46591265812381555,
+        "slope_angle_deg": 50.604463401630696,
+        "roc_auc_pd_vs_baseline": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.09812950787605132,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "fig8_control_sd00",
+      "label": "Fig 8 fig8_control flickerVAR=0.00",
+      "dimensions": {
+        "kind": "suprathreshold_spikes",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "ap_rate_pd_mean_hz": 15.5,
+        "ap_rate_pd_sd_hz": 3.5355339059327378,
+        "ap_rate_nd_mean_hz": 3.0,
+        "ap_rate_nd_sd_hz": 0.0,
+        "pd_failure_rate": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6756756756756757,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "fig8_ap5_sd00",
+      "label": "Fig 8 fig8_ap5 flickerVAR=0.00",
+      "dimensions": {
+        "kind": "suprathreshold_spikes",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "ap_rate_pd_mean_hz": 0.0,
+        "ap_rate_pd_sd_hz": 0.0,
+        "ap_rate_nd_mean_hz": 0.0,
+        "ap_rate_nd_sd_hz": 0.0,
+        "pd_failure_rate": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "fig8_zeromg_sd00",
+      "label": "Fig 8 fig8_zeromg flickerVAR=0.00",
+      "dimensions": {
+        "kind": "suprathreshold_spikes",
+        "n_pd_trials": 2,
+        "n_nd_trials": 2,
+        "ap_rate_pd_mean_hz": 20.0,
+        "ap_rate_pd_sd_hz": 0.0,
+        "ap_rate_nd_mean_hz": 13.0,
+        "ap_rate_nd_sd_hz": 1.4142135623730951,
+        "pd_failure_rate": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.21212121212121213,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

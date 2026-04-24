@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Oesch2005] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [PolegPolsky2016] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 16 entries but frontmatter says sources_cited=17[0m
+
+[31m[1mFAILED[0m â€” 3 error(s), 0 warning(s)

@@ -1,0 +1,2152 @@
+{
+  "suggestion_count": 150,
+  "suggestions": [
+    {
+      "id": "S-0002-01",
+      "title": "Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1152_jn.00123.2009",
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-04",
+      "title": "Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1523_ENEURO.0261-21.2021",
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-05",
+      "title": "GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-06",
+      "title": "NMDA multiplicative-gain ablation to isolate its contribution to DSI",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-07",
+      "title": "Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision)",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-08",
+      "title": "Register SAC presynaptic drive model as an asset for downstream DSGC input construction",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1038_nature09818",
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0002-10",
+      "title": "Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0002_literature_survey_dsgc_compartmental_models",
+      "source_paper": "10.1523_JNEUROSCI.5017-13.2014",
+      "categories": [
+        "patch-clamp",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-02",
+      "title": "Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into the project as a library asset",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-03",
+      "title": "Benchmark NEURON vs Arbor on the project's actual DSGC morphology",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-04",
+      "title": "Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0003-05",
+      "title": "Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0004-01",
+      "title": "Generate weaker-DSI variant target tuning curves",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0004_generate_target_tuning_curve",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0004-02",
+      "title": "Add a Poisson-noise variant of the target trials",
+      "kind": "dataset",
+      "priority": "low",
+      "source_task": "t0004_generate_target_tuning_curve",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-03",
+      "title": "Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-04",
+      "title": "Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0005-05",
+      "title": "Render and QA-check 2D/3D visualisations of dsgc-baseline-morphology for documentation and synapse placement",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0005_download_dsgc_morphology",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "compartmental-modeling",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-01",
+      "title": "Validate custom khhchan.mod biophysics with a dedicated sanity simulation",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-02",
+      "title": "Script the full NEURON + NetPyNE install for clean-machine reproduction",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0007-03",
+      "title": "Benchmark NetPyNE harness overhead vs raw NEURON across problem sizes",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0007_install_neuron_netpyne",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-19"
+    },
+    {
+      "id": "S-0008-01",
+      "title": "Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC library",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0008_port_modeldb_189347",
+      "source_paper": "10.7554_eLife.42392",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0008-03",
+      "title": "Rebuild ModelDB 189347 port on the calibrated Horton-Strahler SWC from t0009",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0008_port_modeldb_189347",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0008-04",
+      "title": "Parameter-sweep calibration of bundled 189347 toward the envelope targets",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0008_port_modeldb_189347",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0008-05",
+      "title": "Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC asset",
+      "kind": "library",
+      "priority": "low",
+      "source_task": "t0008_port_modeldb_189347",
+      "source_paper": "10.7554_eLife.52949",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-01",
+      "title": "Inverse-fit three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-02",
+      "title": "Interpolate soma pt3dadd diameters along the principal axis to replace the uniform 4.118 um soma radius",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-03",
+      "title": "Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky 2016 spike shape and distal Ih sag",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-04",
+      "title": "Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section diameter lookup to drop Strahler binning entirely",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-05",
+      "title": "Sensitivity analysis: re-run DSGC simulations under alternative Strahler tie-break rules and bin boundaries",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "cable-theory"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-06",
+      "title": "Re-type SWC by section role (soma / primary / mid / terminal) as a sibling dataset asset",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-07",
+      "title": "Per-cell ex-vivo two-photon image segmentation of 141009_Pair1DSGC to produce a cell-specific diameter ground truth",
+      "kind": "dataset",
+      "priority": "low",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "retinal-ganglion-cell",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0009-08",
+      "title": "Port the TREES-toolbox Rall 3/2 quaddiameter rule to a pure-Python calibrator and compare against the Strahler bins",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0009_calibrate_dendritic_diameters",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-01",
+      "title": "Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": "10.1038_s41467-019-09147-4",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-02",
+      "title": "Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle grid to 12 angles",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": "10.1016_j.celrep.2025.116833",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-03",
+      "title": "Write forward-only driver for PolegPolsky2026 DS-mechanisms model and pursue LICENSE",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": "10.1038_s41467-026-70288-4",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-04",
+      "title": "Extend DSGC model corpus to Arbor and NetPyNE reimplementations",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-05",
+      "title": "Build a headless-port scaffold library that wraps upstream NEURON models",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0010-06",
+      "title": "Add Elsevier-login fallback to the paper-download workflow",
+      "kind": "technique",
+      "priority": "low",
+      "source_task": "t0010_hunt_missed_dsgc_models",
+      "source_paper": "10.1016_j.celrep.2025.116833",
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-01",
+      "title": "Record per-trial soma spike times from modeldb_189347_dsgc to exercise plot_angle_raster_psth on real data",
+      "kind": "dataset",
+      "priority": "high",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-02",
+      "title": "Add strict angle-grid validation mode to tuning_curve_viz.loaders.validate_angle_grid",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-03",
+      "title": "Add combined-report function that renders all four plot types into one multi-page PDF/HTML per model",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-04",
+      "title": "Add statistical-comparison overlays (paired bootstrap, DSI/HWHM annotations) to multi-model plots",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-05",
+      "title": "Port additional DSGC models from t0010 hunt and exercise plot_multi_model_overlay with >2 models",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0011-06",
+      "title": "Add PNG regression testing for tuning_curve_viz via pixel-level image diff in CI",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0011_response_visualization_library",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-01",
+      "title": "Add a verify_library_asset.py framework verificator for library asset structure and metadata",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-02",
+      "title": "Parametric curve fitting (von Mises / wrapped Gaussian) for sub-degree HWHM estimates on sparse 12-angle grids",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-03",
+      "title": "Integrate tuning_curve_loss into the t0008 Poleg-Polsky DSGC reproduction to score the ported ModelDB 189347 curve",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-04",
+      "title": "Alternative loss formulations (L1, max-residual, weighted-L-infinity) benchmarked against the Euclidean default",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-05",
+      "title": "Revisit envelope widening (DSI upper 0.85 to 0.9, peak lower 40 to 30 Hz) once real simulation results are in",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0012-06",
+      "title": "Cross-validate compute_reliability against independent split-half implementations (odd-even, bootstrap, Spearman-Brown)",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0012_tuning_curve_scoring_loss_library",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0013-01",
+      "title": "Write a shared arf.scripts.utils.resolve_doi helper that returns title, authors, venue, year, PMID, and PMCID",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0013_resolve_morphology_provenance",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0013-02",
+      "title": "Add a plan-stage DOI-nomination verificator that checks each candidate DOI matches its human-written label",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0013_resolve_morphology_provenance",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0013-03",
+      "title": "Download the Morrie & Feller 2018 SAC reconstructions from NeuroMorpho and build a paired SAC+DSGC morphology asset",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0013_resolve_morphology_provenance",
+      "source_paper": "10.1016_j.cub.2018.03.001",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0013-04",
+      "title": "Re-audit all existing dataset and library assets' source_paper_id fields against resolved DOI metadata",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0013_resolve_morphology_provenance",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0013-05",
+      "title": "Email the Feller lab to map the 141009_Pair1DSGC session to a specific pair in Morrie & Feller 2018 CB",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0013_resolve_morphology_provenance",
+      "source_paper": "10.1016_j.cub.2018.03.001",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0015-01",
+      "title": "Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "retinal-ganglion-cells"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0015-02",
+      "title": "Extend cable-theory survey to frequency-domain and thin-dendrite transmission",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0015-03",
+      "title": "Register retinal-ganglion-cells and compartmental-modelling categories",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0015-04",
+      "title": "Build a minimal DSGC compartmental model implementing the 6-point specification",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0015_literature_survey_cable_theory",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modelling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-01",
+      "title": "Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-02",
+      "title": "Extend dendritic-computation survey to cerebellar Purkinje and STDP papers",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-03",
+      "title": "Experimentally test NMDA-spike contribution to DSGC direction selectivity via compartmental simulation",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": "10.1038_35005094",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0016-04",
+      "title": "Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0016_literature_survey_dendritic_computation",
+      "source_paper": "10.1038_18686",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-01",
+      "title": "Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "patch-clamp",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-02",
+      "title": "Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN biophysics, and AIS measurements",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "patch-clamp",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-03",
+      "title": "Implement AIS compartment, NMDARs, and simulated voltage-clamp block in the downstream DSGC model build task",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "patch-clamp"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0017-04",
+      "title": "Register patch-clamp and compartmental-modeling categories if not already present",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0017_literature_survey_patch_clamp",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0018-01",
+      "title": "Retrieve paywalled synaptic-integration PDFs via Sheffield access and verify numerical priors",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0018_literature_survey_synaptic_integration",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0018-02",
+      "title": "Extend synaptic-integration survey with DSGC-specific receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0018_literature_survey_synaptic_integration",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0018-03",
+      "title": "Implement AMPA + NMDA + GABA_A synapses with E-I temporal co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC model",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0018_literature_survey_synaptic_integration",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0018-04",
+      "title": "Register synaptic-integration category slugs if not already present",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0018_literature_survey_synaptic_integration",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0019-01",
+      "title": "Retrieve paywalled voltage-gated-channel PDFs via Sheffield access and verify numerical priors",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0019_literature_survey_voltage_gated_channels",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0019-02",
+      "title": "Extend voltage-gated-channel survey with recent DSGC-specific Nav/Kv patch-clamp and super-resolution AIS microdomain papers",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0019_literature_survey_voltage_gated_channels",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0019-04",
+      "title": "Register voltage-gated-channel category slugs if not already present",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0019_literature_survey_voltage_gated_channels",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-01",
+      "title": "Excitation-side sensitivity sweep under gabaMOD-swap to close the 25 Hz peak-firing-rate gap",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-02",
+      "title": "Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation targets (PSP amplitude, NMDAR slope angle)",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "patch-clamp",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-03",
+      "title": "Intermediate-gabaMOD sensitivity sweep to map the PD-ND transition curve",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-04",
+      "title": "Extend tuning_curve_loss with a two-point (PD/ND) scoring API to make t0012 usable under the native protocol",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-05",
+      "title": "Add a per-trial spike-count floor to the two-point envelope gate to catch biologically implausible passes",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-06",
+      "title": "Trial-count power analysis for the PD/ND DSI estimator (bootstrap CI vs N_trials)",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0020-07",
+      "title": "Extend t0011 response-visualisation library with a condition-based (PD/ND) raster+PSTH plot",
+      "kind": "library",
+      "priority": "low",
+      "source_task": "t0020_port_modeldb_189347_gabamod",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-20"
+    },
+    {
+      "id": "S-0022-01",
+      "title": "Nav1.1 proximal-AIS knockout channel-swap on the t0022 testbed",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1016_j.neuron.2007.07.031",
+      "categories": [
+        "voltage-gated-channels",
+        "patch-clamp",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-02",
+      "title": "Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz peak-rate gap",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1523_jneurosci.0130-07.2007",
+      "categories": [
+        "voltage-gated-channels",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "patch-clamp"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-03",
+      "title": "Per-dendrite E-I parameter sweep to map the DSI response surface",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1523_JNEUROSCI.5017-13.2014",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-04",
+      "title": "Add a Starburst Amacrine Cell feedforward layer to drive inhibition physiologically",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1038_nature00931",
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "retinal-ganglion-cell",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-05",
+      "title": "Inject Poisson background rate on the t0022 driver to moderate DSI from 1.0 toward the 0.5-0.8 published band",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1016_j.neuron.2005.06.036",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-06",
+      "title": "Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007 repolarisation prior",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": "10.1523_jneurosci.0130-07.2007",
+      "categories": [
+        "voltage-gated-channels",
+        "patch-clamp",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-07",
+      "title": "Harmonised cross-comparison of the three ModelDB 189347 sibling ports (t0008, t0020, t0022)",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0022-08",
+      "title": "Add Ih (HCN) channel to dendrites and measure its effect on E-I integration window",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0022_modify_dsgc_channel_testbed",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "dendritic-computation",
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-01",
+      "title": "Port the full upstream SacNetwork with bp_locs/probs/deltas to reproduce the deRosenroll correlation-drop effect",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": "10.1016_j.celrep.2025.116833",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-02",
+      "title": "Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to test peak firing-rate shortfall",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": "10.1016_j.celrep.2025.116833",
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-03",
+      "title": "Overlay a Van Wart + Werginz AIS on the deRosenroll morphology to test peak-rate recovery",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-04",
+      "title": "Parameterize t0011/t0012 tuning-curve plotter and scorer to support N_ANGLES != 12",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-05",
+      "title": "Add a verify_library_asset.py verificator to close the framework-wide gap flagged during t0024 step 9",
+      "kind": "library",
+      "priority": "low",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": null,
+      "categories": [],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0024-06",
+      "title": "Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can include 5/5 DSGC models instead of 4/5",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0024_port_de_rosenroll_2026_dsgc",
+      "source_paper": "10.7554_eLife.42392",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-01",
+      "title": "Register dsi_at_vrest and peak_hz_at_vrest metric keys in meta/metrics/",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-02",
+      "title": "Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-03",
+      "title": "Sweep bar velocity x V_rest on both DSGC ports to test velocity-V_rest interaction",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": "10.1113_jphysiol.2010.192716",
+      "categories": [
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-04",
+      "title": "Parallelise the t0024 sweep across CPU cores to cut wall time from 3.21 h to under 1 h",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-05",
+      "title": "Port Hanson2019 DSGC model and repeat V_rest sweep to test starburst-independent DS hypothesis",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": "10.7554_eLife.42392",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-06",
+      "title": "Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": "10.1016_j.neuron.2016.04.041",
+      "categories": [
+        "voltage-gated-channels",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0026-07",
+      "title": "Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the post-collapse regime in t0024",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0027-02",
+      "title": "Swap bipolar-cell sustained vs transient kinetics on t0024 to discriminate kinetic tiling from cable delay",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0027_literature_survey_morphology_ds_modeling",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "synaptic-integration",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0027-04",
+      "title": "Random terminal-branch ablation (25%) on t0022 to test branch independence",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0027_literature_survey_morphology_ds_modeling",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation",
+        "retinal-ganglion-cell",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0027-05",
+      "title": "Single-compartment collapse of t0024 to test whether T4-style geometry-nullity extends to DSGCs",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0027_literature_survey_morphology_ds_modeling",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0027-07",
+      "title": "Sweep dendritic spine density on t0022 distal terminals as an unconventional morphology variable",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0027_literature_survey_morphology_ds_modeling",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-21"
+    },
+    {
+      "id": "S-0029-01",
+      "title": "Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-02",
+      "title": "Distal Nav ablation crossed with distal-dendrite length sweep on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_nn.3565",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-03",
+      "title": "Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to reach Dan2018's critical regime",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_s41598-018-23998-9",
+      "categories": [
+        "cable-theory",
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-04",
+      "title": "Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the deterministic ceiling on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-05",
+      "title": "Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to localize the peak-Hz cliff",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": "10.1038_nn.3565",
+      "categories": [
+        "dendritic-computation",
+        "direction-selectivity",
+        "voltage-gated-channels",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-06",
+      "title": "Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite length sweep on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0029-07",
+      "title": "Promote peak-Hz and HWHM to co-primary outcomes when DSI is at ceiling (evaluation methodology)",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0029_distal_dendrite_length_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-02",
+      "title": "Poisson-noise desaturation rerun of the distal-dendrite diameter sweep on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-03",
+      "title": "Wider distal-diameter sweep (0.25x to 4.0x) after the schedule fix to probe extreme impedance regimes",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-04",
+      "title": "Joint distal length x diameter 2-D sweep on t0022 to catch interactions the marginal sweeps miss",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "cable-theory"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0030-05",
+      "title": "Non-uniform proximal-to-distal diameter taper sweep on t0022 to match Schachter2010 impedance gradient",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation",
+        "cable-theory",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-02",
+      "title": "Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on t0022 as a t0033 optimiser prerequisite",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-03",
+      "title": "Multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended optimiser cell",
+      "kind": "technique",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-04",
+      "title": "Transfer-learning surrogate warm-start from t0022 and t0024 V_rest-sweep evaluations",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-05",
+      "title": "5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to validate sample-efficiency assumptions",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0033-06",
+      "title": "Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-22"
+    },
+    {
+      "id": "S-0034-01",
+      "title": "2-D distal length x diameter sweep on t0024 to disambiguate cable-filtering vs local-spike-failure",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-02",
+      "title": "AR(2) rho sweep at t0024 baseline morphology to isolate stochastic-release smoothing from cable biophysics",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-03",
+      "title": "Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points) to characterise the electrotonic-length optimum",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-04",
+      "title": "Per-compartment distal-spike detector on t0024 length sweep to verify Schachter2010 local-spike-failure at 1.5x and 2.0x",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": "10.1371_journal.pcbi.1000899",
+      "categories": [
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-05",
+      "title": "Quantitative cable-theory fit of t0034 DSI-vs-length curve against Rall 1/d^(3/2) and Tukker2004 predictions",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-06",
+      "title": "Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials per angle) to confirm the preferred-angle jumps",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0034-07",
+      "title": "Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0034_distal_dendrite_length_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0035-02",
+      "title": "Surface-density-rescaled Nav diameter sweep on t0024 to test surface-vs-volume compensation",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "dendritic-computation",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0035-03",
+      "title": "Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points) to probe non-linear extremes",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation",
+        "direction-selectivity",
+        "cable-theory"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0035-04",
+      "title": "Ih (HCN) conductance ablation sweep on t0024 distal dendrites to test h-current role in distal cable behaviour",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "dendritic-computation",
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0035-05",
+      "title": "Zero-cost meta-analysis of primary-DSI vs vector-sum-DSI discrepancy across t0029, t0030, t0034, t0035",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0035-06",
+      "title": "Deprioritise distal-diameter parameters in the t0033 DSI optimiser search space",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0036-02",
+      "title": "GABA-to-AMPA timing offset sweep on t0022 diameter testbed to test timing-dominates-conductance hypothesis",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0036_rerun_t0030_halved_null_gaba",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0036-03",
+      "title": "Distal voltage-trace capture at null direction on t0022 to confirm sub-threshold-clamp hypothesis",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0036_rerun_t0030_halved_null_gaba",
+      "source_paper": null,
+      "categories": [
+        "dendritic-computation",
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0036-04",
+      "title": "Extract the t0022 GABA-override monkey-patch into a reusable library asset for downstream tasks",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0036_rerun_t0030_halved_null_gaba",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "synaptic-integration",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-23"
+    },
+    {
+      "id": "S-0037-03",
+      "title": "Localise the GABA unpinning threshold with a fine sweep (5.0, 4.5, 4.0, 3.5, 3.0 nS)",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0037_null_gaba_reduction_ladder_t0022",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0037-04",
+      "title": "Diagnose and fix the low peak firing rate in t0022 (15 Hz vs 40-80 Hz Schachter2010)",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0037_null_gaba_reduction_ladder_t0022",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0037-05",
+      "title": "Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2) noise",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0037_null_gaba_reduction_ladder_t0022",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0037-06",
+      "title": "Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC offset)",
+      "kind": "technique",
+      "priority": "low",
+      "source_task": "t0037_null_gaba_reduction_ladder_t0022",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-01",
+      "title": "Rerun t0039 7-diameter sweep on t0024 for active-vs-passive testbed comparison",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "cable-theory",
+        "dendritic-computation"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-02",
+      "title": "Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6, 0.7} at GABA=4 nS on t0022",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "cable-theory"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-03",
+      "title": "Joint (GABA, diameter) sweep to separate passive filtering from GABA-suppressed active amplification",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-04",
+      "title": "Diagnose and fix t0022's 15 Hz peak-firing cap (inherited AMPA-only drive issue)",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-05",
+      "title": "Update t0033 optimiser headroom estimate to reflect narrow (0.06 DSI) morphology dynamic range on t0022",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "direction-selectivity",
+        "voltage-gated-channels"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0039-06",
+      "title": "Introduce per-trial spike-count distribution metric to distinguish failures from timing shifts",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0041-01",
+      "title": "Impedance-loading-corrected electrotonic-length collapse re-test",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0041_electrotonic_length_collapse_t0034_t0035",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0041-02",
+      "title": "Denser 2-D sweep of L x d to map DSI response surface on t0024",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0041_electrotonic_length_collapse_t0034_t0035",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0041-03",
+      "title": "Correct t0033 answer asset: confirm 2-D morphology parameterisation",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0041_electrotonic_length_collapse_t0034_t0035",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    },
+    {
+      "id": "S-0041-04",
+      "title": "Per-section L/lambda rather than mean-based for collapse tests",
+      "kind": "technique",
+      "priority": "low",
+      "source_task": "t0041_electrotonic_length_collapse_t0034_t0035",
+      "source_paper": null,
+      "categories": [
+        "cable-theory",
+        "compartmental-modeling"
+      ],
+      "status": "active",
+      "date_added": "2026-04-24"
+    }
+  ]
+}

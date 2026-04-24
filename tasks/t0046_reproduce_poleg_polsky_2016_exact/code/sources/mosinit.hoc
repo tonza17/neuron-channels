@@ -1,0 +1,9 @@
+// PROVENANCE: ModelDB accession 189347
+// Commit SHA: 87d669dcef18e9966e29c88520ede78bc16d36ff
+// Authored: 2019-05-31 by tommorse
+// Source mirror: https://github.com/ModelDBRepository/189347
+// Verbatim copy in this task: tasks/t0046_reproduce_poleg_polsky_2016_exact/code/sources/
+// Library mirror: assets/library/modeldb_189347_dsgc_exact/sources/
+//
+load_file("nrngui.hoc")
+load_file("main.hoc")

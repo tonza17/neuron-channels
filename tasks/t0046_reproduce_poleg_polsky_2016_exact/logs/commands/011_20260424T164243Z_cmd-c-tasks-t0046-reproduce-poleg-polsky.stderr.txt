@@ -1,0 +1,6 @@
+Translating HHst.mod into HHst.c
+syntax error:
+ Illegal block at line 1 in file HHst.mod
+// PROVENANCE: ModelDB accession 189347
+^
+make: *** [/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../lib/mknrndll.mak:23: HHst.c] Error 1

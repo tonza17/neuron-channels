@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format json --detail full --uncovered",
+  "exit_code": 1,
+  "duration_seconds": 0.602,
+  "started_at": "2026-04-24T17:33:12Z",
+  "completed_at": "2026-04-24T17:33:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0046_reproduce_poleg_polsky_2016_exact",
+  "stdout_file": "031_20260424T173312Z_uv-run-python.stdout.txt",
+  "stderr_file": "031_20260424T173312Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}

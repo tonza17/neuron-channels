@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
+  "command": "cmd /c tasks\\t0046_reproduce_poleg_polsky_2016_exact\\code\\run_nrnivmodl.cmd",
+  "exit_code": 0,
+  "duration_seconds": 8.834,
+  "started_at": "2026-04-24T16:42:43Z",
+  "completed_at": "2026-04-24T16:42:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0046_reproduce_poleg_polsky_2016_exact",
+  "stdout_file": "011_20260424T164243Z_cmd-c-tasks-t0046-reproduce-poleg-polsky.stdout.txt",
+  "stderr_file": "011_20260424T164243Z_cmd-c-tasks-t0046-reproduce-poleg-polsky.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 6,
+  "truncated": false
+}

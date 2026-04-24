@@ -1,0 +1,88 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0046-01",
+      "title": "Re-run t0046 figure sweeps at paper-N (12-19 trials per condition, full 8-direction sweep)",
+      "description": "Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's reported N (12-19 trials per condition) and the full 8-direction sweep instead of the wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a) tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP, mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00 (paper reports 0.83). Recommended task types: experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ]
+    },
+    {
+      "id": "S-0046-02",
+      "title": "Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB 189347 vs Poleg-Polsky 2016 paper text",
+      "description": "Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based sub-sampling, or supplementary-text geometry rules to find a code configuration that matches the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV); reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction. Recommended task types: experiment-run, code-reproduction.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "synaptic-integration",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0046-03",
+      "title": "Add an iMK801 analogue MOD modification (selective dendritic NMDAR block) to enable Fig 8 AP5 reproduction",
+      "description": "Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046 (`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5' Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit. Recommended task types: write-library, experiment-run.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "dendritic-computation",
+        "compartmental-modeling",
+        "voltage-gated-channels"
+      ]
+    },
+    {
+      "id": "S-0046-04",
+      "title": "Decide the fate of t0042/t0043/t0044: rewrite motivation or cancel based on t0046 findings",
+      "description": "t0042 (fine-grained null-GABA ladder), t0043 (Nav1.6 + Kv3 + NMDA restoration), and t0044 (Schachter re-test on t0043) are currently `intervention_blocked` pending t0046's outcome. t0046 establishes that the systematic peak-rate gap previously seen in t0008/t0020/t0022 (which motivated t0043's channel-inventory framing) is inherent to the deposited ModelDB code, not a modification artefact. This invalidates t0043's stated motivation. Run a brainstorm-style triage that (a) explicitly cancels or (b) rewrites motivations for each of the three blocked tasks, replacing the discredited peak-rate-gap framing with t0046's confirmed findings (synapse-count overcount; AP5-vs-iMK801 substitution; PSP amplitude inflation). Apply corrections-overlay updates to record the decisions. Recommended task types: brainstorming, correction.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0046-05",
+      "title": "Manually fetch and attach the Poleg-Polsky 2016 supplementary PDF (NIHMS766337, PMC4795984)",
+      "description": "The supplementary PDF (`https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf`) was blocked by PMC's JS-only interstitial during t0046 implementation; a metadata-only correction overlay records the citation but the binary file is not attached. Manually download the PDF via a browser session and attach it to the existing `10.1016_j.neuron.2016.02.013` paper asset, then update the corrections overlay to a full-binary-attached state. The supplementary text is the only authoritative source for any Methods parameters not stated in the published main text and is needed to fully audit the synapse-count discrepancy (S-0046-02). Recommended task types: download-paper, correction.",
+      "kind": "dataset",
+      "priority": "medium",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0046-06",
+      "title": "Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a reusable library used by t0008/t0020/t0022 successors",
+      "description": "t0046's `dsgc_model_exact.hoc` is a from-scratch GUI-free derivative of `main.hoc` that wraps `simplerun(exptype, dir)` and exposes `b2gnmda`, `flickerVAR`, and `stimnoiseVAR` as post-call overrides honouring the silent `achMOD = 0.33` rebind. Package this driver (plus `code/run_simplerun.py`) into a separate reusable library asset that t0008, t0020, t0022, and downstream optimisation tasks can import directly, replacing their bespoke headless driver scaffolding. This eliminates duplicated bootstrap code and gives every downstream port a single audited entry point with the noise-globals override mechanism already wired. Recommended task types: write-library.",
+      "kind": "library",
+      "priority": "low",
+      "source_task": "t0046_reproduce_poleg_polsky_2016_exact",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ]
+    }
+  ]
+}

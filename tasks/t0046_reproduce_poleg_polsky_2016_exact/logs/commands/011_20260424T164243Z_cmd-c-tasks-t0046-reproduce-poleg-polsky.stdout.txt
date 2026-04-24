@@ -1,0 +1,4 @@
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c mod_func.c
+nocmodl HHst
+
+There was an error in the process of creating nrnmech.dll

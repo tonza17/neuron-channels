@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
+  "command": "uv run python -u tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_all_figures.py",
+  "exit_code": 1,
+  "duration_seconds": 332.239,
+  "started_at": "2026-04-24T16:48:07Z",
+  "completed_at": "2026-04-24T16:53:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0046_reproduce_poleg_polsky_2016_exact",
+  "stdout_file": "015_20260424T164807Z_uv-run-python.stdout.txt",
+  "stderr_file": "015_20260424T164807Z_uv-run-python.stderr.txt",
+  "stdout_lines": 31,
+  "stderr_lines": 28,
+  "truncated": false
+}
