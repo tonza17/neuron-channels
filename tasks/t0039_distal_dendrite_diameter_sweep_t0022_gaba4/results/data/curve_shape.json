@@ -1,0 +1,37 @@
+{
+  "slope": -0.03357468069141869,
+  "slope_95_ci_low": -0.054004080817699404,
+  "slope_95_ci_high": -0.013145280565137973,
+  "slope_p_value": 0.008290943896888744,
+  "slope_r_squared": 0.7811569009167351,
+  "slope_sign": "~",
+  "dsi_range_extremes": -0.06014999999999998,
+  "dsi_range_extremes_primary": -0.06014999999999998,
+  "dsi_range_extremes_vector_sum": -0.010929000000000022,
+  "primary_regression": {
+    "slope": -0.03357468069141869,
+    "intercept": 0.4094536420527263,
+    "r_squared": 0.7811569009167351,
+    "p_value": 0.008290943896888744,
+    "slope_95_ci_low": -0.054004080817699404,
+    "slope_95_ci_high": -0.013145280565137973
+  },
+  "vector_sum_regression": {
+    "slope": -0.004129790651705449,
+    "intercept": 0.25430020816127946,
+    "r_squared": 0.20119272790525466,
+    "p_value": 0.31275698260144325,
+    "slope_95_ci_low": -0.013589751401087695,
+    "slope_95_ci_high": 0.0053301700976767985
+  },
+  "peak_hz_trend_slope": -1.1252099334730439,
+  "peak_hz_trend_p_value": 0.007496153594935153,
+  "null_hz_trend_slope": 0.0,
+  "null_hz_trend_p_value": NaN,
+  "preferred_and_null_both_drop": true,
+  "used_fallback_vector_sum_dsi": false,
+  "dsi_primary_range": 0.06014999999999998,
+  "dsi_saturation_threshold": 0.02,
+  "mechanism_label": "passive_filtering",
+  "qualitative_description": "DSI decreases with distal diameter (slope=-0.0336 per log2(multiplier), p=0.008291); consistent with passive cable filtering."
+}
