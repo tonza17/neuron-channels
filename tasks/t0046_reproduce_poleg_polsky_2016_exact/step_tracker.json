@@ -23,19 +23,19 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create task folder structure and initial files.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T13:06:25Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T13:07:10Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
       "step": 4,
       "name": "research-papers",
       "description": "Review Poleg-Polsky & Diamond 2016 paper and any related corpus papers on DSGC compartmental modelling; enumerate every test the paper runs.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T13:07:27Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,

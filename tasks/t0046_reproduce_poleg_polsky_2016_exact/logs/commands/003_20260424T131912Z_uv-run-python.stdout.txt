@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\research\research_papers.md
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W002 warning: Paper Index entry [Jeon2002] has DOI '10.1002/cne.10288' but no paper asset folder '10.1002_cne.10288' was found[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 1 warning(s)
