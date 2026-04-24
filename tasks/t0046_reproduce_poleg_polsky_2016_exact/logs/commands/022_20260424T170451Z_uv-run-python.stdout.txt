@@ -1,0 +1,81 @@
+Skipping Fig 1/2: data already on disk.
+
+=== Milestone Fig 3: gNMDA sweep ===
+	0 
+	1 
+	1 
+	1 
+[build_cell] countON=282 numsyn=282
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig3_gnmda_sweep.csv
+
+=== Milestone Fig 4: High-Cl- ===
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig4_highcl_psp.csv
+
+=== Milestone Fig 5: 0 Mg2+ ===
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig5_zeromg_psp.csv
+
+=== Milestone Fig 6/7: noise sweep ===
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig6_noise.csv
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig7_roc.csv
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig7_roc_noise.csv
+
+=== Milestone Fig 8: suprathreshold spikes ===
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\data\fig8_spikes.csv
+
+All sweeps complete in 655.9 s (10.9 min).

@@ -1,0 +1,9 @@
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig1_psp_vs_angle.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig2_imk801_psp.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig3_gnmda_sweep.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig4_highcl_psp.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig5_zeromg_psp.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig6_noise_dsi_by_sd.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig7_roc_noise.png
+  wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\results\images\fig8_spike_tuning_and_failures.png
+Figure rendering complete.
