@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write suggestions.json with follow-ups based on outcome.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T00:07:41Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T00:09:02Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
