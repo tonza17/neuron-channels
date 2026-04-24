@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write empty or minimal suggestions.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T07:10:28Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T07:10:55Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
