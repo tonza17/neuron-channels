@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0033 and t0037 dependencies completed.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T07:03:57Z",
       "completed_at": null,
-      "log_file": "logs/steps/002_check-deps/"
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
