@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators, update task.json to completed, PR and merge.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T07:11:09Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T07:12:28Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
