@@ -5,7 +5,7 @@
   "name": "Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed",
   "short_description": "Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "intervention_blocked",
   "dependencies": [
     "t0019_literature_survey_voltage_gated_channels",
     "t0022_modify_dsgc_channel_testbed",

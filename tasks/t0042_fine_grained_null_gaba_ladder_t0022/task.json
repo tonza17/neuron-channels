@@ -5,7 +5,7 @@
   "name": "Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022",
   "short_description": "Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037's 4 nS sweet spot without destabilising preferred direction.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "intervention_blocked",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed",
     "t0037_null_gaba_reduction_ladder_t0022"

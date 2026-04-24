@@ -1,5 +1,11 @@
 # Schachter 2010 Re-Test on t0043 Substrate
 
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact** and of this task's
+upstream dependency **t0043** (which is itself blocked on t0046). This task depends on the t0043
+substrate. Reassess after t0046 merges and t0043's block is reviewed.
+
 ## Source Suggestion
 
 S-0002-02 (paired active-vs-passive dendrite experiment to reproduce Schachter 2010 DSI gain ~0.3 ->

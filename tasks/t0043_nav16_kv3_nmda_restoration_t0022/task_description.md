@@ -1,5 +1,16 @@
 # Nav1.6 + Kv3 + NMDA Restoration on t0022
 
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. This task proposes
+channel inventory modifications beyond Poleg-Polsky 2016's original model to close the observed
+peak-rate gap (15 Hz vs paper's 40-80 Hz range). If t0046 shows the peak-rate gap is inherent to the
+faithful reproduction of the paper (present in their code too), this task's motivation evaporates
+and the gap must be addressed differently (stimulus duration, drive amplitude, paper claim
+re-interpretation). If t0046 matches the paper's firing rates, then our prior modifications
+introduced the gap and this task's channel-additions become a well-founded fix. Reassess after t0046
+merges.
+
 ## Source Suggestion
 
 S-0019-03 primary (implement Nav1.6 / Nav1.2 / Kv1 / Kv3 channels with AIS-specific densities). This
