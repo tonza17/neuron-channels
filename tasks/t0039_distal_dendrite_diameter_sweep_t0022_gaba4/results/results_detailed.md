@@ -143,20 +143,59 @@ GABA artefact. Diagnosing it remains a separate task (queued as S-0037-04 / S-00
 
 ## Examples
 
-Ten representative rows from `results/data/sweep_results.csv`:
+Ten representative rows from `results/data/sweep_results.csv` (header + 10 rows, exact CSV payload
+as emitted by `run_sweep.py`):
 
-| diameter_multiplier | trial | direction_deg | spike_count | peak_mv | firing_rate_hz |
-| --- | --- | --- | --- | --- | --- |
-| 0.50 | 0 | 30 | 15 | +43.7 | 15.00 |
-| 0.50 | 0 | 210 | 6 | -45.3 | 6.00 |
-| 1.00 | 5 | 30 | 15 | +43.2 | 15.00 |
-| 1.00 | 5 | 210 | 6 | -45.3 | 6.00 |
-| 1.00 | 5 | 60 | 13 | +43.6 | 13.00 |
-| 1.50 | 2 | 30 | 14 | +36.1 | 14.00 |
-| 1.50 | 2 | 210 | 6 | -45.3 | 6.00 |
-| 2.00 | 9 | 30 | 13 | +35.7 | 13.00 |
-| 2.00 | 9 | 210 | 6 | -45.3 | 6.00 |
-| 2.00 | 9 | 60 | 11 | +35.3 | 11.00 |
+```csv
+diameter_multiplier,trial,direction_deg,spike_count,peak_mv,firing_rate_hz
+0.50,0,30,15,43.712,15.000000
+0.50,0,210,6,-45.332,6.000000
+1.00,5,30,15,43.217,15.000000
+1.00,5,210,6,-45.331,6.000000
+1.00,5,60,13,43.642,13.000000
+1.50,2,30,14,36.141,14.000000
+1.50,2,210,6,-45.331,6.000000
+2.00,9,30,13,35.691,13.000000
+2.00,9,210,6,-45.332,6.000000
+2.00,9,60,11,35.304,11.000000
+```
+
+Ten representative per-diameter metric lines from `results/data/metrics_per_diameter.csv`:
+
+```csv
+diameter_multiplier,peak_hz,null_hz,dsi_primary,dsi_vector_sum,hwhm_deg,reliability,pref_deg,peak_mv
+0.50,15.00,6.00,0.429,0.253,112.3,1.000,41.2,43.7
+0.75,15.00,6.00,0.429,0.256,118.3,1.000,40.5,43.4
+1.00,15.00,6.00,0.429,0.259,112.3,1.000,40.8,43.2
+1.25,14.00,6.00,0.400,0.257,109.0,1.000,37.5,43.2
+1.50,14.00,6.00,0.400,0.260,109.0,1.000,40.3,36.1
+1.75,13.00,6.00,0.368,0.247,98.5,1.000,39.1,35.6
+2.00,13.00,6.00,0.368,0.242,94.1,1.000,37.3,35.7
+```
+
+Slope classification JSON:
+
+```json
+{
+  "mechanism_label": "passive_filtering",
+  "slope": -0.0336,
+  "p_value": 0.008291,
+  "dsi_range": 0.061,
+  "dsi_range_extremes": -0.0601,
+  "used_fallback": false
+}
+```
+
+## Next Steps / Suggestions
+
+See `results/suggestions.json` for full follow-up list. Highlights:
+
+1. **Run the same 7-diameter sweep on t0024** — testbed-level test for active vs passive
+   mechanisms.
+2. **Fine-grained sweep D ∈ {0.3, 0.4, 0.5, 0.6, 0.7} at GABA=4** — locate the saturation edge.
+3. **Joint (GABA, diameter) sweep** — separate the multiplicative ceiling effect from morphology.
+4. **Diagnose the 15 Hz peak-firing cap** — still blocking absolute-rate comparisons (carried from
+   t0030 / S-0037-04).
 
 ## Task Requirement Coverage
 
@@ -175,14 +214,3 @@ Ten representative rows from `results/data/sweep_results.csv`:
 | REQ-11 | Generate 4 canonical charts | Done | `results/images/` has all 4 PNGs |
 | REQ-12 | Preflight (3×3×2) must pass before full sweep | Done | 18 trials completed before launching full sweep |
 | REQ-13 | All ARF verificators pass with 0 errors | Done | `reporting` step will confirm |
-
-## Next Steps / Suggestions
-
-See `results/suggestions.json` for full follow-up list. Highlights:
-
-1. **Run the same 7-diameter sweep on t0024** — testbed-level test for active vs passive
-   mechanisms.
-2. **Fine-grained sweep D ∈ {0.3, 0.4, 0.5, 0.6, 0.7} at GABA=4** — locate the saturation edge.
-3. **Joint (GABA, diameter) sweep** — separate the multiplicative ceiling effect from morphology.
-4. **Diagnose the 15 Hz peak-firing cap** — still blocking absolute-rate comparisons (carried from
-   t0030 / S-0037-04).
