@@ -1,0 +1,4 @@
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\curve_shape.json
+[classify_slope] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\slope_classification.json
+[classify_slope] mechanism_label = passive_filtering  slope = -0.0336  p = 0.008291  dsi_range_extremes = -0.0601  used_fallback = False
+[classify_slope] DSI decreases with distal diameter (slope=-0.0336 per log2(multiplier), p=0.008291); consistent with passive cable filtering.

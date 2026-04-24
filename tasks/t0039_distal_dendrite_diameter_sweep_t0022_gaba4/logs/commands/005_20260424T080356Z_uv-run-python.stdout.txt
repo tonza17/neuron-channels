@@ -1,0 +1,12 @@
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\metrics_per_diameter.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\dsi_by_diameter.csv
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\metrics.json
+[analyse_sweep] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\tasks\t0039_distal_dendrite_diameter_sweep_t0022_gaba4\results\data\metrics_notes.json
+   D_mul  peak_hz  null_hz  dsi_pn  dsi_vs    hwhm    rel    pref  peak_mv
+    0.50    15.00     6.00   0.429   0.253   112.3  1.000    41.2    +43.7
+    0.75    15.00     6.00   0.429   0.256   118.3  1.000    40.5    +43.4
+    1.00    15.00     6.00   0.429   0.259   112.3  1.000    40.8    +43.2
+    1.25    14.00     6.00   0.400   0.257   109.0  1.000    37.5    +43.2
+    1.50    14.00     6.00   0.400   0.260   109.0  1.000    40.3    +36.1
+    1.75    13.00     6.00   0.368   0.247    98.5  1.000    39.1    +35.6
+    2.00    13.00     6.00   0.368   0.242    94.1  1.000    37.3    +35.7
