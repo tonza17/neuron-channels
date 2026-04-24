@@ -1,0 +1,15 @@
+[compute_electrotonic_length] wrote 14 rows -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0041_electrotonic_length_collapse_t0034_t0035\tasks\t0041_electrotonic_length_collapse_t0034_t0035\results\electrotonic_length_table.csv
+  sweep=length    m=0.50 L= 11.313 d=0.5035 lambda=274.784 L/lambda=0.0412 dsi_primary=0.7538 dsi_vs=0.5067 spike_fail=0
+  sweep=length    m=0.75 L= 16.970 d=0.5035 lambda=274.784 L/lambda=0.0618 dsi_primary=0.7742 dsi_vs=0.4554 spike_fail=0
+  sweep=length    m=1.00 L= 22.626 d=0.5035 lambda=274.784 L/lambda=0.0823 dsi_primary=0.7705 dsi_vs=0.4491 spike_fail=0
+  sweep=length    m=1.25 L= 28.283 d=0.5035 lambda=274.784 L/lambda=0.1029 dsi_primary=0.7455 dsi_vs=0.4196 spike_fail=0
+  sweep=length    m=1.50 L= 33.939 d=0.5035 lambda=274.784 L/lambda=0.1235 dsi_primary=0.6226 dsi_vs=0.4173 spike_fail=1
+  sweep=length    m=1.75 L= 39.596 d=0.5035 lambda=274.784 L/lambda=0.1441 dsi_primary=0.7200 dsi_vs=0.4081 spike_fail=0
+  sweep=length    m=2.00 L= 45.252 d=0.5035 lambda=274.784 L/lambda=0.1647 dsi_primary=0.5455 dsi_vs=0.3575 spike_fail=1
+  sweep=diameter  m=0.50 L= 22.626 d=0.2517 lambda=194.302 L/lambda=0.1164 dsi_primary=0.7037 dsi_vs=0.4628 spike_fail=0
+  sweep=diameter  m=0.75 L= 22.626 d=0.3776 lambda=237.970 L/lambda=0.0951 dsi_primary=0.7419 dsi_vs=0.4440 spike_fail=0
+  sweep=diameter  m=1.00 L= 22.626 d=0.5035 lambda=274.784 L/lambda=0.0823 dsi_primary=0.7705 dsi_vs=0.4491 spike_fail=0
+  sweep=diameter  m=1.25 L= 22.626 d=0.6293 lambda=307.218 L/lambda=0.0736 dsi_primary=0.7455 dsi_vs=0.4434 spike_fail=0
+  sweep=diameter  m=1.50 L= 22.626 d=0.7552 lambda=336.540 L/lambda=0.0672 dsi_primary=0.8077 dsi_vs=0.4185 spike_fail=0
+  sweep=diameter  m=1.75 L= 22.626 d=0.8811 lambda=363.505 L/lambda=0.0622 dsi_primary=0.7358 dsi_vs=0.4243 spike_fail=0
+  sweep=diameter  m=2.00 L= 22.626 d=1.0070 lambda=388.603 L/lambda=0.0582 dsi_primary=0.6800 dsi_vs=0.4172 spike_fail=0

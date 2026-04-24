@@ -68,10 +68,10 @@
       "step": 8,
       "name": "implementation",
       "description": "Compute L/lambda per (length, diameter) operating point; overlay primary DSI and vector-sum DSI vs L/lambda for t0034 and t0035; produce answer asset.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T11:53:11Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_implementation/"
     },
     {
       "step": 9,
