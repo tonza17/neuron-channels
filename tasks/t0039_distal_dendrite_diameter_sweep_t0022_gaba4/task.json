@@ -3,7 +3,7 @@
   "task_id": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
   "task_index": 39,
   "name": "7-diameter sweep on t0022 DSGC at GABA=4 nS",
-  "short_description": "Rerun t0030's 7-diameter sweep (0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) on t0022 with GABA_CONDUCTANCE_NULL_NS=4.0 — the unpinned operational sweet spot from t0037 — to measure the Schachter2010-vs-passive-filtering slope on a discriminator that has dynamic range.",
+  "short_description": "Rerun t0030's 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.",
   "long_description_file": "task_description.md",
   "status": "not_started",
   "dependencies": [
