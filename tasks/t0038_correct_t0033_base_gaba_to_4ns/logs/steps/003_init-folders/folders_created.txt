@@ -1,0 +1,9 @@
+corrections/
+intervention/
+results/
+results/images/
+assets/
+logs/commands/
+logs/searches/
+logs/sessions/
+__init__.py
