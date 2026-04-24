@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI-vs-diameter slope to Schachter2010 and passive-cable predictions.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T08:14:36Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T08:16:13Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
