@@ -1,0 +1,11 @@
+{
+  "task_id": "t0041_electrotonic_length_collapse_t0034_t0035",
+  "checked_at": "2026-04-24T11:36:37Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0034_distal_dendrite_length_sweep_t0024", "status": "completed", "satisfied": true},
+    {"task_id": "t0035_distal_dendrite_diameter_sweep_t0024", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}

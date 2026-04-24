@@ -1,0 +1,186 @@
+{
+  "variants": [
+    {
+      "variant_id": "length_m0p50",
+      "label": "t0034/t0035 length x 0.50",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 0.5,
+        "l_over_lambda": 0.041171,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.753846
+      }
+    },
+    {
+      "variant_id": "length_m0p75",
+      "label": "t0034/t0035 length x 0.75",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 0.75,
+        "l_over_lambda": 0.061756,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.774194
+      }
+    },
+    {
+      "variant_id": "length_m1p00",
+      "label": "t0034/t0035 length x 1.00",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 1.0,
+        "l_over_lambda": 0.082342,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.770492
+      }
+    },
+    {
+      "variant_id": "length_m1p25",
+      "label": "t0034/t0035 length x 1.25",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 1.25,
+        "l_over_lambda": 0.102927,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.745455
+      }
+    },
+    {
+      "variant_id": "length_m1p50",
+      "label": "t0034/t0035 length x 1.50",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 1.5,
+        "l_over_lambda": 0.123512,
+        "spike_failure_flag": true
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.622642
+      }
+    },
+    {
+      "variant_id": "length_m1p75",
+      "label": "t0034/t0035 length x 1.75",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 1.75,
+        "l_over_lambda": 0.144098,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.72
+      }
+    },
+    {
+      "variant_id": "length_m2p00",
+      "label": "t0034/t0035 length x 2.00",
+      "dimensions": {
+        "sweep": "length",
+        "multiplier": 2.0,
+        "l_over_lambda": 0.164683,
+        "spike_failure_flag": true
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.545455
+      }
+    },
+    {
+      "variant_id": "diameter_m0p50",
+      "label": "t0034/t0035 diameter x 0.50",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 0.5,
+        "l_over_lambda": 0.116449,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.703704
+      }
+    },
+    {
+      "variant_id": "diameter_m0p75",
+      "label": "t0034/t0035 diameter x 0.75",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 0.75,
+        "l_over_lambda": 0.09508,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.741935
+      }
+    },
+    {
+      "variant_id": "diameter_m1p00",
+      "label": "t0034/t0035 diameter x 1.00",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 1.0,
+        "l_over_lambda": 0.082342,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.770492
+      }
+    },
+    {
+      "variant_id": "diameter_m1p25",
+      "label": "t0034/t0035 diameter x 1.25",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 1.25,
+        "l_over_lambda": 0.073649,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.745455
+      }
+    },
+    {
+      "variant_id": "diameter_m1p50",
+      "label": "t0034/t0035 diameter x 1.50",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 1.5,
+        "l_over_lambda": 0.067232,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.807692
+      }
+    },
+    {
+      "variant_id": "diameter_m1p75",
+      "label": "t0034/t0035 diameter x 1.75",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 1.75,
+        "l_over_lambda": 0.062244,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.735849
+      }
+    },
+    {
+      "variant_id": "diameter_m2p00",
+      "label": "t0034/t0035 diameter x 2.00",
+      "dimensions": {
+        "sweep": "diameter",
+        "multiplier": 2.0,
+        "l_over_lambda": 0.058224,
+        "spike_failure_flag": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.68
+      }
+    }
+  ]
+}

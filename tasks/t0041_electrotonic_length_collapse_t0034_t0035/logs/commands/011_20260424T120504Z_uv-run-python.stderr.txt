@@ -1,0 +1,2 @@
+usage: verify_task_folder.py [-h] [--all] [task_id]
+verify_task_folder.py: error: unrecognized arguments: --task-id

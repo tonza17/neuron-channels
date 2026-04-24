@@ -1,0 +1,5 @@
+branch: task/t0041_electrotonic_length_collapse_t0034_t0035
+base_branch: main
+base_commit: 20cb306e79f8c652f094db434cc144d7ee6b3311
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0041_electrotonic_length_collapse_t0034_t0035
+created_at: 2026-04-24T11:34:00Z

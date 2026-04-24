@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0041_electrotonic_length_collapse_t0034_t0035\tasks\t0041_electrotonic_length_collapse_t0034_t0035\results
+
+[32m[1mPASSED[0m â€” no errors or warnings

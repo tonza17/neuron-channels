@@ -1,0 +1,53 @@
+{
+  "spec_version": "1",
+  "pearson_r_threshold": 0.9,
+  "n_t0034_points": 7,
+  "n_t0035_points": 7,
+  "l_over_lambda_overlap_min": 0.058224,
+  "l_over_lambda_overlap_max": 0.116449,
+  "n_paired_points_full": 3,
+  "n_paired_points_no_spike_failure": 3,
+  "pearson_primary_full": {
+    "n_points": 3,
+    "r": 0.4160575003323817,
+    "p_value": 0.7268230001710045
+  },
+  "pearson_primary_no_spike_failure": {
+    "n_points": 3,
+    "r": 0.4160575003323817,
+    "p_value": 0.7268230001710045
+  },
+  "pearson_vector_sum_full": {
+    "n_points": 3,
+    "r": -0.6786774504677898,
+    "p_value": 0.5251068821741324
+  },
+  "pearson_vector_sum_no_spike_failure": {
+    "n_points": 3,
+    "r": -0.6786774504677898,
+    "p_value": 0.5251068821741324
+  },
+  "poly_fit_primary": {
+    "coefficients_high_to_low": [
+      -21.318058394302838,
+      3.0291717404538194,
+      0.6485648937494766
+    ],
+    "rmse_pooled": 0.0397018267618322,
+    "rmse_length_sweep": 0.04354535530894723,
+    "rmse_diameter_sweep": 0.035443929345807736
+  },
+  "poly_fit_vector_sum": {
+    "coefficients_high_to_low": [
+      -3.868544871492457,
+      0.15502372617729204,
+      0.4563074933960215
+    ],
+    "rmse_pooled": 0.023742216085430395,
+    "rmse_length_sweep": 0.021453770785836837,
+    "rmse_diameter_sweep": 0.02582869273430836
+  },
+  "verdict_primary": "collapse_rejected",
+  "verdict_vector_sum": "collapse_rejected",
+  "verdict_overall": "collapse_rejected"
+}

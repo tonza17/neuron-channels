@@ -1,0 +1,10 @@
+[test_collapse] verdict_overall = collapse_rejected (primary: collapse_rejected, vector_sum: collapse_rejected)
+[test_collapse] paired samples (overlap 0.0582-0.1164):
+  primary      (with spike-failure): n=3 r=+0.4161 p=0.7268
+  primary      (no  spike-failure): n=3 r=+0.4161 p=0.7268
+  vector_sum   (with spike-failure): n=3 r=-0.6787 p=0.5251
+  vector_sum   (no  spike-failure): n=3 r=-0.6787 p=0.5251
+[test_collapse] poly2 RMSE (primary):    pooled=0.0397 length=0.0435 diameter=0.0354
+[test_collapse] poly2 RMSE (vector_sum): pooled=0.0237 length=0.0215 diameter=0.0258
+[test_collapse] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0041_electrotonic_length_collapse_t0034_t0035\tasks\t0041_electrotonic_length_collapse_t0034_t0035\results\collapse_stats.json
+[test_collapse] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0041_electrotonic_length_collapse_t0034_t0035\tasks\t0041_electrotonic_length_collapse_t0034_t0035\results\metrics.json
