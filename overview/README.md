@@ -33,7 +33,7 @@
 [results](llm-context/results-deep-dive.xml) (159K) |
 [assets](llm-context/literature-and-assets.xml) (33K)
 
-*Last updated: 2026-04-24 10:53 UTC*
+*Last updated: 2026-04-24 10:57 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -60,10 +60,10 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`description`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/task_description.md) | — |
-| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) | [`description`](../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md) | — |
-| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) | [`description`](../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
+| 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`description`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/task_description.md) | 2026-04-24 |
+| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) | [`description`](../tasks/t0042_fine_grained_null_gaba_ladder_t0022/task_description.md) | 2026-04-24 |
+| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) | [`description`](../tasks/t0043_nav16_kv3_nmda_restoration_t0022/task_description.md) | 2026-04-24 |
 
 ---
 

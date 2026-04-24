@@ -51,8 +51,8 @@ Compact starter context for general project chats.
 * Short label: `overview` (16K)
 * Best for: General orientation, quick status questions, and lightweight strategy chats.
 * File: [`project-overview.xml`](project-overview.xml)
-* Size: 63.2 KiB (64,673 bytes; 64,566 chars)
-* Estimated tokens: 16,141
+* Size: 63.2 KiB (64,685 bytes; 64,578 chars)
+* Estimated tokens: 16,144
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -72,8 +72,8 @@ Largest preset with detailed completed-task reports and the full project knowled
 * Short label: `full` (226K)
 * Best for: Deep project review, comprehensive planning, and long-context synthesis.
 * File: [`full.xml`](full.xml)
-* Size: 884.1 KiB (905,304 bytes; 902,273 chars)
-* Estimated tokens: 225,568
+* Size: 884.1 KiB (905,316 bytes; 902,285 chars)
+* Estimated tokens: 225,571
 * Fits: 1M-class
 
 ### Included Types
@@ -99,8 +99,8 @@ Research-stage documents across completed tasks, plus core project context.
 * Best for: Literature review continuity, methodology discussion, and prior-investigation
   lookup.
 * File: [`research-history.xml`](research-history.xml)
-* Size: 1341.6 KiB (1,373,787 bytes; 1,370,310 chars)
-* Estimated tokens: 342,577
+* Size: 1341.6 KiB (1,373,799 bytes; 1,370,322 chars)
+* Estimated tokens: 342,580
 * Fits: 1M-class
 
 ### Included Types
@@ -121,8 +121,8 @@ Completed-task result summaries plus all detailed results reports.
 * Short label: `results` (159K)
 * Best for: Performance analysis, experiment comparison, and result interpretation.
 * File: [`results-deep-dive.xml`](results-deep-dive.xml)
-* Size: 623.6 KiB (638,517 bytes; 635,765 chars)
-* Estimated tokens: 158,941
+* Size: 623.6 KiB (638,529 bytes; 635,777 chars)
+* Estimated tokens: 158,944
 * Fits: 200k-class, 1M-class
 
 ### Included Types
@@ -143,8 +143,8 @@ Project planning preset centered on upcoming tasks and open suggestions.
 * Short label: `roadmap` (57K)
 * Best for: Deciding what to do next, prioritizing experiments, and planning follow-up work.
 * File: [`roadmap.xml`](roadmap.xml)
-* Size: 222.6 KiB (227,953 bytes; 227,778 chars)
-* Estimated tokens: 56,944
+* Size: 222.6 KiB (227,965 bytes; 227,790 chars)
+* Estimated tokens: 56,947
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -165,8 +165,8 @@ Paper summaries and reusable project assets without the heaviest task reports.
 * Short label: `assets` (33K)
 * Best for: Method discussion, resource selection, and related-work chats.
 * File: [`literature-and-assets.xml`](literature-and-assets.xml)
-* Size: 128.0 KiB (131,030 bytes; 130,861 chars)
-* Estimated tokens: 32,715
+* Size: 128.0 KiB (131,042 bytes; 130,873 chars)
+* Estimated tokens: 32,718
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -190,8 +190,8 @@ Question-centric preset with the full answer corpus and compact project state.
 * Short label: `qa` (60K)
 * Best for: Answer review, follow-up questioning, and project knowledge-base chats.
 * File: [`qa.xml`](qa.xml)
-* Size: 236.5 KiB (242,197 bytes; 241,928 chars)
-* Estimated tokens: 60,482
+* Size: 236.5 KiB (242,209 bytes; 241,940 chars)
+* Estimated tokens: 60,485
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -211,8 +211,8 @@ Mid-size preset intended as a reusable working memory for ongoing chats.
 * Short label: `memory` (28K)
 * Best for: Keeping a durable project memory in medium-size chat sessions.
 * File: [`project-memory.xml`](project-memory.xml)
-* Size: 107.8 KiB (110,434 bytes; 110,280 chars)
-* Estimated tokens: 27,570
+* Size: 107.9 KiB (110,446 bytes; 110,292 chars)
+* Estimated tokens: 27,573
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -237,8 +237,8 @@ Complete task data with full descriptions, results summaries, dependencies, and 
 
 * Type id: `tasks`
 * File: [`type-tasks.xml`](type-tasks.xml)
-* Size: 321.4 KiB (329,092 bytes; 327,474 chars)
-* Estimated tokens: 81,868
+* Size: 321.4 KiB (329,104 bytes; 327,486 chars)
+* Estimated tokens: 81,871
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### All Papers

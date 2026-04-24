@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-24T10:53:42Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-24T10:57:41Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>110280</char_count>
-    <byte_count>110434</byte_count>
-    <estimated_tokens>27570</estimated_tokens>
+    <char_count>110292</char_count>
+    <byte_count>110446</byte_count>
+    <estimated_tokens>27573</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -417,28 +417,28 @@ Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivy
 ## Electrotonic-length collapse analysis of t0034 and t0035
 ID: t0041_electrotonic_length_collapse_t0034_t0035
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-24
 Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
 Dependencies: t0034_distal_dendrite_length_sweep_t0024, t0035_distal_dendrite_diameter_sweep_t0024
 
 ## Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
 ID: t0042_fine_grained_null_gaba_ladder_t0022
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-24
 Short description: Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037&#x27;s 4 nS sweet spot without destabilising preferred direction.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
 ID: t0043_nav16_kv3_nmda_restoration_t0022
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-24
 Short description: Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
 Dependencies: t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
 
 ## Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
 ID: t0044_schachter_retest_on_t0043
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-24
 Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
 Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
       </content>

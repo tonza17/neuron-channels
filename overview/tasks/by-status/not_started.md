@@ -16,7 +16,7 @@ GABA = 4 nS</strong></summary>
 |---|---|
 | **ID** | `t0044_schachter_retest_on_t0043` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-24 |
 | **Dependencies** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0043_nav16_kv3_nmda_restoration_t0022`](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
 | **Expected assets** | — |
 | **Source suggestion** | `S-0002-02` |
@@ -116,7 +116,7 @@ testbed</strong></summary>
 |---|---|
 | **ID** | `t0043_nav16_kv3_nmda_restoration_t0022` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-24 |
 | **Dependencies** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | `S-0019-03` |
@@ -223,7 +223,7 @@ t0022</strong></summary>
 |---|---|
 | **ID** | `t0042_fine_grained_null_gaba_ladder_t0022` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-24 |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Expected assets** | — |
 | **Source suggestion** | — |
@@ -305,7 +305,7 @@ t0035</strong></summary>
 |---|---|
 | **ID** | `t0041_electrotonic_length_collapse_t0034_t0035` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-04-24 |
 | **Dependencies** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | `S-0035-01` |
