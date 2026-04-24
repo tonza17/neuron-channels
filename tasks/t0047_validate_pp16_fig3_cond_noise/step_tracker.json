@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare per-synapse conductances and DSI-vs-gNMDA against Poleg-Polsky 2016 Fig 3A-F targets.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T23:50:06Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T23:52:00Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
