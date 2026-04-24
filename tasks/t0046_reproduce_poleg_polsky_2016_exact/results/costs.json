@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Local CPU only; no paid API or remote compute used. NEURON 8.2.7 + NetPyNE 1.1.1 are free open-source toolchains. Supplementary PDF download from PMC was attempted free of charge but blocked by a JS-only interstitial (manual fetch deferred via intervention/supplementary_pdf_blocked.md)."
+}
