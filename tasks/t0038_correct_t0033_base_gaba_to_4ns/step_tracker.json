@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create minimal task folder structure (corrections/, results/, logs/).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T07:05:02Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T07:06:06Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
