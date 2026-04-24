@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for supplementary materials and any related online resources (ModelDB release notes, errata, author addenda).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T13:20:37Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T13:46:20Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
