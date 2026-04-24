@@ -1,0 +1,17 @@
+Created 13 directories with .gitkeep files and __init__.py markers:
+  logs/commands
+  logs/searches
+  logs/sessions
+  logs/steps
+  assets/library
+  assets/answer
+  corrections
+  intervention
+  plan
+  research
+  results
+  results/images
+  code
+  __init__.py (task root)
+  code/__init__.py
+Created at: 2026-04-24T13:06:40Z
