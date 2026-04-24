@@ -5,14 +5,14 @@
   "name": "Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep",
   "short_description": "Re-run t0046 library to record per-synapse NMDA/AMPA/GABA conductances per direction (Fig 3A-E targets) and extend noise sweep to flickerVAR in {0.0, 0.1, 0.3, 0.5} for control / AP5 / 0 Mg.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "not_started",
   "dependencies": [
     "t0007_install_neuron_netpyne",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library",
     "t0046_reproduce_poleg_polsky_2016_exact"
   ],
-  "start_time": "2026-04-24T21:56:40Z",
+  "start_time": null,
   "end_time": null,
   "expected_assets": {
     "answer": 1
