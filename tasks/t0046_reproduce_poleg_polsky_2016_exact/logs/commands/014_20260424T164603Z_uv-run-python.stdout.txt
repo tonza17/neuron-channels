@@ -1,0 +1,11 @@
+Smoke test: control PSP, PD vs ND, seed=1.
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+Changed dt
+  PD: peak_psp= 25.14 mV  baseline= 6.021 mV
+Changed dt
+  ND: peak_psp= 15.76 mV  baseline= 5.586 mV
+Smoke test complete.

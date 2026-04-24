@@ -1,0 +1,1 @@
+Programmatic download of NIHMS766337-supplement.pdf is blocked by PMC's JS-only interstitial. Source URL: https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf. The corrections overlay records the citation as a metadata-only update. Manual fetch via a real browser is required to attach the PDF binary.

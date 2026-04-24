@@ -1,0 +1,21 @@
+  Trying https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64...)
+    not a PDF (1817 bytes, first 16 = b'\n\n\n\n<html>\n  <he')
+  Trying https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64...)
+    error: HTTP Error 404: Not Found
+  Trying https://www.cell.com/cms/10.1016/j.neuron.2016.02.013/attachment/b2b9a2d9-4a06-4e9c-8d93-3fb8d7d8a9d1/mmc1.pdf (UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64...)
+    error: HTTP Error 403: Forbidden
+  Trying https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (X11; Linux x86_64; rv:124.0...)
+    not a PDF (1817 bytes, first 16 = b'\n\n\n\n<html>\n  <he')
+  Trying https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (X11; Linux x86_64; rv:124.0...)
+    error: HTTP Error 404: Not Found
+  Trying https://www.cell.com/cms/10.1016/j.neuron.2016.02.013/attachment/b2b9a2d9-4a06-4e9c-8d93-3fb8d7d8a9d1/mmc1.pdf (UA: Mozilla/5.0 (X11; Linux x86_64; rv:124.0...)
+    error: HTTP Error 403: Forbidden
+  Trying https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 1...)
+    not a PDF (1817 bytes, first 16 = b'\n\n\n\n<html>\n  <he')
+  Trying https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/bin/NIHMS766337-supplement.pdf (UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 1...)
+    error: HTTP Error 404: Not Found
+  Trying https://www.cell.com/cms/10.1016/j.neuron.2016.02.013/attachment/b2b9a2d9-4a06-4e9c-8d93-3fb8d7d8a9d1/mmc1.pdf (UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 1...)
+    error: HTTP Error 403: Forbidden
+  Wrote correction file: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0046_reproduce_poleg_polsky_2016_exact\tasks\t0046_reproduce_poleg_polsky_2016_exact\corrections\paper_10.1016_j.neuron.2016.02.013.json
+
+Supplementary download blocked by PMC interstitial. Corrections overlay written as metadata-only citation; manual fetch documented as intervention.

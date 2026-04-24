@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0046_reproduce_poleg_polsky_2016_exact",
+  "command": "curl -L -A Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0 --max-time 60 -o tasks/t0046_reproduce_poleg_polsky_2016_exact/supplements/NIHMS766337-supplement.pdf https://europepmc.org/articles/PMC4795984/bin/NIHMS766337-supplement.pdf",
+  "exit_code": 52,
+  "duration_seconds": 0.317,
+  "started_at": "2026-04-24T16:49:59Z",
+  "completed_at": "2026-04-24T16:50:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0046_reproduce_poleg_polsky_2016_exact",
+  "stdout_file": "019_20260424T164959Z_curl-l-a.stdout.txt",
+  "stderr_file": "019_20260424T164959Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 11,
+  "truncated": false
+}

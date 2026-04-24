@@ -1,0 +1,7 @@
+trial_seed,direction_label,direction_deg,exptype,flicker_var,stim_noise_var,b2gnmda_ns,peak_psp_mv,baseline_psp_mv,spike_count,ap_rate_hz,notes
+1,PD,0,3,0.0000,0.0000,0.5000,16.9316,6.1150,0,0.0000,fig4_highcl
+2,PD,0,3,0.0000,0.0000,0.5000,17.7649,6.1316,0,0.0000,fig4_highcl
+3,PD,0,3,0.0000,0.0000,0.5000,19.3768,6.1070,0,0.0000,fig4_highcl
+1,ND,180,3,0.0000,0.0000,0.5000,16.5392,5.5672,0,0.0000,fig4_highcl
+2,ND,180,3,0.0000,0.0000,0.5000,16.8700,5.6446,0,0.0000,fig4_highcl
+3,ND,180,3,0.0000,0.0000,0.5000,16.4403,5.7096,0,0.0000,fig4_highcl

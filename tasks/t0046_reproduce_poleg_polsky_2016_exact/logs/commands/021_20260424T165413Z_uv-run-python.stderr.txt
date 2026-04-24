@@ -1,0 +1,47 @@
+
+fig1_control_gnmda05:   0%|          | 0/8 [00:00<?, ?trial/s]
+fig1_control_gnmda05:  12%|#2        | 1/8 [00:06<00:43,  6.18s/trial]
+fig1_control_gnmda05:  25%|##5       | 2/8 [00:13<00:42,  7.07s/trial]
+fig1_control_gnmda05:  38%|###7      | 3/8 [00:22<00:37,  7.56s/trial]
+fig1_control_gnmda05:  50%|#####     | 4/8 [00:30<00:31,  7.84s/trial]
+fig1_control_gnmda05:  62%|######2   | 5/8 [00:38<00:24,  8.04s/trial]
+fig1_control_gnmda05:  75%|#######5  | 6/8 [00:46<00:16,  8.12s/trial]
+fig1_control_gnmda05:  88%|########7 | 7/8 [00:55<00:08,  8.16s/trial]
+fig1_control_gnmda05: 100%|##########| 8/8 [01:03<00:00,  8.14s/trial]
+
+
+fig1_control_gnmda25:   0%|          | 0/8 [00:00<?, ?trial/s]
+fig1_control_gnmda25:  12%|#2        | 1/8 [00:20<02:23, 20.48s/trial]
+fig1_control_gnmda25:  25%|##5       | 2/8 [00:40<02:02, 20.44s/trial]
+fig1_control_gnmda25:  38%|###7      | 3/8 [01:01<01:41, 20.34s/trial]
+fig1_control_gnmda25:  50%|#####     | 4/8 [01:20<01:20, 20.06s/trial]
+fig1_control_gnmda25:  62%|######2   | 5/8 [01:41<01:00, 20.13s/trial]
+fig1_control_gnmda25:  75%|#######5  | 6/8 [02:01<00:40, 20.14s/trial]
+fig1_control_gnmda25:  88%|########7 | 7/8 [02:20<00:19, 19.88s/trial]
+fig1_control_gnmda25: 100%|##########| 8/8 [02:39<00:00, 19.69s/trial]
+
+
+fig2_ap5_gnmda0:   0%|          | 0/8 [00:00<?, ?trial/s]
+fig2_ap5_gnmda0:  12%|#2        | 1/8 [00:21<02:28, 21.22s/trial]
+fig2_ap5_gnmda0:  25%|##5       | 2/8 [00:43<02:10, 21.73s/trial]
+fig2_ap5_gnmda0:  38%|###7      | 3/8 [01:03<01:45, 21.01s/trial]
+fig2_ap5_gnmda0:  50%|#####     | 4/8 [01:22<01:21, 20.38s/trial]
+fig2_ap5_gnmda0:  62%|######2   | 5/8 [01:41<00:59, 19.87s/trial]
+fig2_ap5_gnmda0:  75%|#######5  | 6/8 [02:01<00:39, 19.76s/trial]
+fig2_ap5_gnmda0:  88%|########7 | 7/8 [02:21<00:19, 19.87s/trial]
+fig2_ap5_gnmda0: 100%|##########| 8/8 [02:40<00:00, 19.68s/trial]
+
+
+fig3_gnmda_0.00:   0%|          | 0/6 [00:00<?, ?trial/s]
+fig3_gnmda_0.00:  17%|#6        | 1/6 [00:20<01:41, 20.39s/trial]
+fig3_gnmda_0.00:  33%|###3      | 2/6 [00:40<01:19, 19.98s/trial]
+fig3_gnmda_0.00:  50%|#####     | 3/6 [00:59<00:59, 19.86s/trial]
+fig3_gnmda_0.00:  67%|######6   | 4/6 [01:20<00:39, 20.00s/trial]
+fig3_gnmda_0.00:  83%|########3 | 5/6 [01:39<00:19, 19.77s/trial]
+fig3_gnmda_0.00: 100%|##########| 6/6 [01:58<00:00, 19.65s/trial]
+
+
+fig3_gnmda_0.25:   0%|          | 0/6 [00:00<?, ?trial/s]
+fig3_gnmda_0.25:  17%|#6        | 1/6 [00:20<01:40, 20.13s/trial]
+fig3_gnmda_0.25:  33%|###3      | 2/6 [00:40<01:20, 20.21s/trial]
+fig3_gnmda_0.25:  50%|#####     | 3/6 [01:00<01:00, 20.11s/trial]

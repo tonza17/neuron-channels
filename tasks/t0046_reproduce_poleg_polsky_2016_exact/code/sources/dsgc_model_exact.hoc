@@ -1,0 +1,334 @@
+// PROVENANCE: ModelDB accession 189347
+// Commit SHA: 87d669dcef18e9966e29c88520ede78bc16d36ff
+// Authored: 2019-05-31 by tommorse
+// Source mirror: https://github.com/ModelDBRepository/189347
+// Adapted for: tasks/t0046_reproduce_poleg_polsky_2016_exact
+//
+// GUI-FREE DERIVATIVE OF main.hoc.
+// Parameter declarations (lines 28-101 of main.hoc) and the four procs
+// init_active, placeBIP, update, init_sim and the simplerun(exptype, dir)
+// proc are reproduced here verbatim. The GUI panels (xpanel, xbutton,
+// xstatebutton, model.ses load) and the auto-call init_sim() at file
+// load are removed; the Python driver in code/run_simplerun.py invokes
+// init_sim() and simplerun() explicitly.
+//
+// Authored from-scratch (not imported from t0008's dsgc_model.hoc) to
+// satisfy task_description.md's "do NOT fork t0008" rule. Parameter
+// values match main.hoc bit-for-bit; this file is the single source of
+// non-GUI HOC code that the t0046 driver loads.
+
+//--------------MAIN SIMULATION PARAMETERS
+
+startseed=1
+filesavenum=startseed
+exptype=1
+use_active=0
+tstop=1000
+maxvesmul=1
+
+//--------------SYNAPTIC CONDUCTANCES
+sparse=1
+b2gampa=0.25/sparse/maxvesmul
+b2gnmda=0.5/sparse/maxvesmul
+s2ggaba=0.5/maxvesmul
+s2gach=0.5/maxvesmul
+gabaMOD=.33*1
+achMOD=0.25*1
+
+//--------------MORE PARAMETERS
+dt=0.1
+INHIBnum=2
+REPEATnum=3
+GROUPnum=2
+seed2=startseed
+BIPVamp=1
+BIPVbase=0
+SACVamp=BIPVamp
+SACVbase=BIPVbase
+maxves_bipNMDA=10*maxvesmul
+maxves_SACinhib=maxves_bipNMDA
+maxves_SACexc=maxves_bipNMDA
+
+//-------------------VISUAL INPUT
+lightstart=-100
+lightspeed=1
+lightwidth=500
+lightXstart=-100
+lightXend=200
+lightYstart=-130
+lightYend=100
+lightreverse=0
+
+SACdelt=0
+SACdelx=0
+SACdur=500
+inhibamp=1
+
+//------------------SYNAPTIC/VGC PARAMS
+VampK_bipNMDA=5
+VampK_SACinhib=VampK_bipNMDA
+VampK_SACexc=VampK_bipNMDA
+VampT=1
+Transient=250
+n_bipNMDA=0.3
+gama_bipNMDA=0.07
+newves_bipNMDA=0.002
+newves_SACinhib=0.002
+tau1NMDA_bipNMDA=60
+newves_SACexc=newves_bipNMDA
+tau_SACexc=3
+e_SACinhib=-60
+tau_SACinhib=30
+vshift_HHst=-4
+rSYNchance=1
+NMDAspike_dur=30
+NMDAspike_V=-40
+NF_HHst=0
+
+Voff_bipNMDA=0
+Vset_bipNMDA=-43
+flickertime=50
+flickerVAR=0
+stimnoiseVAR=0
+
+//---------------OBJECTS
+objref RGC,rtime,rnoise,RGCsomaAP,netcon,rbackground,temp,filesave,nil,pc,rBIP,tempAP
+objref RecV[2][2][2],AMPA[2][2][2],NMDA[2][2][2],ACH[2][2][2],GABA[2][2][2],recDEND[2],recDENDtemp
+double gatherdata[2][2][2],gatherdataN[2][2][2],gatherdataI[2][2][2]
+objref fileAMPA,fileNMDA,fileACH,fileGABA,VOLClamp,fileDEND,rundendV[2]
+objref Vvec,AMPAvec,NMDAvec,ACHvec,GABAvec
+Vvec=new Vector()
+AMPAvec=new Vector()
+NMDAvec=new Vector()
+ACHvec=new Vector()
+GABAvec=new Vector()
+rtime=new Random()
+rtime.ACG(seed2)
+rnoise=new Random()
+rnoise.ACG(seed2)
+rbackground=new Random()
+rBIP=new Random()
+rBIP.ACG(seed2)
+pc = new ParallelContext()
+
+
+proc init_active(){
+	doingVC=0
+	if (exptype>=3){
+		doingVC=1
+	}
+	TTX=0
+	if (exptype==2){
+		TTX=1
+	}
+	VOLClamp=new OClamp(0.5)
+	VOLClamp.on=0
+	VOLClamp.off=100000
+	VOLClamp.rs=20
+	VOLClamp.switched_on=doingVC
+	VOLClamp.vc=-60
+	if (exptype==4){
+		VOLClamp.vc=0
+	}
+
+	active=1-doingVC
+
+	RGCsomana=00.4*active*(1-TTX)
+	RGCsomakv=0.07*active
+	RGCsomakm=00.0005*active
+	RGCdendna=0.0002*(1-TTX)
+	RGCdendkv=0.007*active
+	RGCdendkm=0*active
+	RGCcaT=0*active
+	RGCcaL=0.0*active
+	RGCcaP=0*active
+	RGCih=0*active
+	RGCkca=0*active
+
+	RGCgpas=5e-5*(1+active*10)
+	RGCepas	=-60
+}
+objref tempV
+
+
+func minval(){
+	if (($1<0)||($2<0)){return 0}
+	if ($1<$2){
+		return $1
+	}else{
+		return $2
+	}
+}
+
+func convertlight(){
+	if ($1<=0){
+		calcreturn=0
+	}else{
+		calcreturn=$1
+	}
+	return calcreturn
+}
+
+objref noisevecBIP[2],noisevecSACI[2],noisevecSACE[2],basenoise,ampnoise,mulnoise,g
+
+proc placeBIP(){
+	count=0
+	rBIP.ACG(seed2)
+	rBIP.uniform(0,1)
+	rnoise.ACG(seed2)
+    rnoise.normal(0,flickerVAR)
+
+	objref noisevecBIP[RGC.numsyn],noisevecSACI[RGC.numsyn],noisevecSACE[RGC.numsyn],basenoise,ampnoise,mulnoise
+	basenoise=new Vector(tstop/dt+1,0)
+	ampnoise=new Vector(tstop/dt+1,0)
+	mulnoise=new Vector(tstop/dt+1,0)
+	for timer=0,tstop/flickertime-1{
+		basenoise.fill((BIPVbase+rnoise.normal(0,flickerVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+		ampnoise.fill((BIPVamp+rnoise.normal(0,flickerVAR+stimnoiseVAR)),timer*flickertime/dt,(timer+1)*flickertime/dt)
+	}
+	for i=0,basenoise.size()-1{
+		basenoise.x[i]=convertlight(basenoise.x[i])
+		ampnoise.x[i]=convertlight(ampnoise.x[i])
+	}
+
+	for synnum=0,RGC.numsyn-1{
+		noisevecBIP[synnum]=new Vector(tstop/dt+1,0)
+		noisevecSACI[synnum]=new Vector(tstop/dt+1,0)
+		noisevecSACE[synnum]=new Vector(tstop/dt+1,0)
+		starttime=tstop
+		if (rBIP.repick<rSYNchance*sparse){
+			count=count+1
+			if (lightspeed==0){
+				starttime=lightstart
+			}else{
+               	if (lightreverse){
+              		starttime=(lightstart+(lightXend-RGC.BIPsyn[synnum].locx)/lightspeed)
+           		}else{
+            		starttime=(lightstart+(RGC.BIPsyn[synnum].locx-lightXstart)/lightspeed)
+               	}
+           	}
+			noisevecBIP[synnum].copy(basenoise)
+			noisevecBIP[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+
+			mulnoise.fill(1)
+			mulnoise.fill(VampT,minval(starttime/dt,tstop/dt),minval((starttime+Transient)/dt,tstop/dt))
+			noisevecBIP[synnum].mul(mulnoise)
+		}
+		noisevecBIP[synnum].play(&RGC.BIPsyn[synnum].Vinf,dt)
+
+		if (rBIP.repick<rSYNchance){
+			if (lightspeed==0){
+				starttime=lightstart
+			}else{
+               	if (lightreverse){
+              		starttime=(lightstart+(lightXend-RGC.SACinhibsyn[synnum].locx)/lightspeed)+SACdelt
+           		}else{
+            		starttime=(lightstart+(RGC.SACinhibsyn[synnum].locx-lightXstart)/lightspeed)+SACdelt
+               	}
+           	}
+			noisevecSACI[synnum].copy(basenoise)
+			noisevecSACI[synnum].add(SACVbase-BIPVbase)
+			noisevecSACI[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+			noisevecSACI[synnum].add(SACVamp-BIPVamp)
+			mulnoise.fill(1)
+			mulnoise.fill(VampT*gabaMOD,minval(starttime/dt,tstop/dt),minval((starttime+Transient+SACdur)/dt,tstop/dt))
+			noisevecSACI[synnum].mul(mulnoise)
+		}
+		noisevecSACI[synnum].play(&RGC.SACinhibsyn[synnum].Vinf,dt)
+
+		if (rBIP.repick<rSYNchance){
+			if (lightspeed==0){
+				starttime=lightstart
+			}else{
+               	if (lightreverse){
+              		starttime=(lightstart+(lightXend-RGC.SACinhibsyn[synnum].locx)/lightspeed)+SACdelt
+           		}else{
+            		starttime=(lightstart+(RGC.SACinhibsyn[synnum].locx-lightXstart)/lightspeed)+SACdelt
+               	}
+           	}
+			noisevecSACE[synnum].copy(basenoise)
+			noisevecSACE[synnum].add(SACVbase-BIPVbase)
+			noisevecSACE[synnum].copy(ampnoise,minval(starttime/dt,tstop/dt),minval(starttime/dt,tstop/dt),minval((starttime+lightwidth)/dt,tstop/dt))
+			mulnoise.fill(1)
+			mulnoise.fill(VampT*achMOD,minval(starttime/dt,tstop/dt),minval((starttime+Transient+SACdur)/dt,tstop/dt))
+			noisevecSACE[synnum].mul(mulnoise)
+			noisevecSACE[synnum].add(SACVamp-BIPVamp)
+		}
+		noisevecSACE[synnum].play(&RGC.SACexcsyn[synnum].Vinf,dt)
+	}
+}
+
+proc update(){
+	seed_HHst=seed2
+	gAMPAsingle_bipNMDA=b2gampa
+	gNMDAsingle_bipNMDA=b2gnmda
+	gsingle_SACinhib=s2ggaba
+	gsingle_SACexc=s2gach
+	forsec RGC.somas{
+		gnabar_HHst= RGCsomana
+		gkbar_HHst= RGCsomakv
+		gkmbar_HHst= RGCsomakm
+	}
+	if(use_active){
+		access RGC.soma
+		distance()
+		forsec RGC.all{
+			glbar_HHst=RGCcaL
+			gtbar_HHst=RGCcaT
+			gleak_HHst=RGCgpas/2
+			eleak_HHst=RGCepas
+		}
+		forsec RGC.dends{
+			gnabar_HHst= RGCdendna
+			gkbar_HHst= RGCdendkv
+			gkmbar_HHst=RGCdendkm
+		}
+	}else{
+		forsec RGC.all{
+			g_pas=RGCgpas
+			e_pas=RGCepas
+		}
+	}
+}
+
+proc init_sim(){
+	RGC=new DSGC(0,0)
+	placeBIP()
+	forsec RGC.somas{insert HHst}
+	forsec RGC.all{
+		if(use_active){
+			insert HHst
+		}else{
+			insert pas
+		}
+		global_ra = 100
+		Ra=global_ra
+	}
+	count=0
+	forsec RGC.ON{
+		count=count+1
+	}
+}
+
+
+nmdaOn=1
+SpikesOn=1
+proc simplerun(){
+	b2gampa=0.25
+	b2gnmda=0.5*(nmdaOn)
+	s2ggaba=0.5
+	s2gach=0.5
+
+	Voff_bipNMDA=($1==2)
+	gabaMOD=.33+.66*$2
+	achMOD=0.33
+	if($1==3){
+		gabaMOD	=1
+		achMOD+=0.66*(1-$2)
+	}
+	exptype=2-SpikesOn
+	init_active()
+	update()
+	placeBIP()
+	run()
+}

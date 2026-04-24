@@ -1,0 +1,73 @@
+{
+  "spec_version": "2",
+  "library_id": "modeldb_189347_dsgc_exact",
+  "name": "ModelDB 189347 DSGC (exact reproduction)",
+  "version": "0.1.0",
+  "short_description": "From-scratch port of ModelDB accession 189347 (Poleg-Polsky and Diamond 2016) reproducing every paper figure on its own metrics: PSP amplitudes, slope angles, ROC AUC, Figure 8 spikes; pinned to commit 87d669dcef18e9966e29c88520ede78bc16d36ff.",
+  "description_path": "description.md",
+  "module_paths": [
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/paths.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/constants.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/neuron_bootstrap.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/build_cell.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_simplerun.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_all_figures.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/compute_metrics.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/render_figures.py",
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/download_supplementary.py"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc",
+      "kind": "function",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/build_cell.py",
+      "description": "Build the ModelDB 189347 DSGC cell (350 dend sections, 282 ON synapses) under NEURON 8.2.7."
+    },
+    {
+      "name": "run_one_trial",
+      "kind": "function",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_simplerun.py",
+      "description": "Run a single drifting-bar trial via h.simplerun() with explicit exptype, direction, b2gnmda, and noise overrides; returns peak PSP, baseline mean, and spike times."
+    },
+    {
+      "name": "ensure_neuron_importable",
+      "kind": "function",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/neuron_bootstrap.py",
+      "description": "NEURON-on-Windows bootstrap: sets NEURONHOME, registers DLL dirs, inserts the bindings on sys.path."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_all_figures.py",
+      "description": "Runs every Poleg-Polsky 2016 figure reproduction sweep (Fig 1-8) and writes per-figure CSVs under results/data/."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/compute_metrics.py",
+      "description": "Aggregates the per-figure CSVs into the explicit multi-variant results/metrics.json."
+    },
+    {
+      "name": "main",
+      "kind": "script",
+      "module": "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/render_figures.py",
+      "description": "Renders results/images/fig{1..8}_*.png from the per-figure CSVs with paper-vs-reproduction overlays."
+    }
+  ],
+  "dependencies": [
+    "matplotlib",
+    "numpy",
+    "tqdm"
+  ],
+  "test_paths": [
+    "tasks/t0046_reproduce_poleg_polsky_2016_exact/code/smoke_test.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "created_by_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "date_created": "2026-04-24"
+}

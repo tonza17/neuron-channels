@@ -1,0 +1,36 @@
+{
+  "spec_version": "2",
+  "answer_id": "poleg-polsky-2016-reproduction-audit",
+  "question": "Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every quantitative claim in Figures 1-8 of the Neuron paper when re-run faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB code disagree?",
+  "short_title": "Poleg-Polsky 2016 reproduction audit (paper vs code vs reproduction)",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "answer_methods": [
+    "papers",
+    "internet",
+    "code-experiment"
+  ],
+  "source_paper_ids": [
+    "10.1016_j.neuron.2016.02.013"
+  ],
+  "source_urls": [
+    "https://github.com/ModelDBRepository/189347",
+    "https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347",
+    "https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf"
+  ],
+  "source_task_ids": [
+    "t0002_literature_survey_dsgc_compartmental_models",
+    "t0007_install_neuron_netpyne",
+    "t0008_port_modeldb_189347",
+    "t0020_port_modeldb_189347_gabamod"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "date_created": "2026-04-24"
+}

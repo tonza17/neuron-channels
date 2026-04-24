@@ -1,0 +1,31 @@
+
+=== Milestone Fig 1/2: control PSP + AP5 analogue ===
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
