@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review the ModelDB 189347 release end-to-end; document every file, parameter, and code path. Compare with t0008 and t0020 library assets.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T13:51:06Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
