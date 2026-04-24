@@ -5,13 +5,13 @@
   "name": "Null-GABA reduction ladder on t0022 DSGC",
   "short_description": "Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed",
     "t0036_rerun_t0030_halved_null_gaba"
   ],
   "start_time": "2026-04-23T22:56:20Z",
-  "end_time": null,
+  "end_time": "2026-04-24T00:10:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
