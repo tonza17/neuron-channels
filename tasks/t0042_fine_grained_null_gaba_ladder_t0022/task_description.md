@@ -1,5 +1,13 @@
 # Fine-Grained Null-GABA Ladder on t0022
 
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. The researcher has paused
+all t0022-substrate modification tasks until the faithful ModelDB 189347 reproduction establishes
+whether the observed DSI and peak-rate values in t0022 reflect genuine mechanism gaps (justifying
+this task) or accumulated deviations from Poleg-Polsky 2016 (making this task's target irrelevant).
+Reassess after t0046 merges.
+
 ## Motivation
 
 t0037 swept null-GABA at {0, 0.5, 1, 2, 4} nS on t0022 and identified a sweet spot at 4 nS (primary
