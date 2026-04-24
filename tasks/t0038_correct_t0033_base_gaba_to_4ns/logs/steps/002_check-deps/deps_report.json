@@ -1,0 +1,19 @@
+{
+  "task_id": "t0038_correct_t0033_base_gaba_to_4ns",
+  "checked_at": "2026-04-24T07:04:30Z",
+  "dependencies": [
+    {
+      "task_id": "t0033_plan_dsgc_morphology_channel_optimisation",
+      "status": "completed",
+      "end_time": "2026-04-22T15:40:00Z"
+    },
+    {
+      "task_id": "t0037_null_gaba_reduction_ladder_t0022",
+      "status": "completed",
+      "end_time": "2026-04-24T00:10:00Z"
+    }
+  ],
+  "verificator_result": "PASSED",
+  "errors": 0,
+  "warnings": 0
+}
