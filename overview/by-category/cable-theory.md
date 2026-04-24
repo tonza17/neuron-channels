@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (2)](../answers/by-category/cable-theory.md) | [Suggestions
-(18)](../suggestions/by-category/cable-theory.md) | [Datasets
+(19)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -582,7 +582,23 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (16 open, 2 closed)
+## Suggestions (17 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
+(S-0037-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+
+t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
+at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
+realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
+(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
+Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
+target since t0030.
+
+</details>
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate

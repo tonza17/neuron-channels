@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-23T22:39:14Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-24T00:14:28Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>278439</char_count>
-    <byte_count>279811</byte_count>
-    <estimated_tokens>69609</estimated_tokens>
+    <char_count>286666</char_count>
+    <byte_count>288115</byte_count>
+    <estimated_tokens>71666</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -53,9 +53,10 @@
         <id>t0034_distal_dendrite_length_sweep_t0024</id>
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
         <id>t0036_rerun_t0030_halved_null_gaba</id>
+        <id>t0037_null_gaba_reduction_ladder_t0022</id>
       </source_ids>
       <content>
-Total tasks: 36
+Total tasks: 37
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -5171,6 +5172,168 @@ rescue.
   clean (11 files).
 * **Pre-condition gate**: **FAILED** (null_hz at 1.0× = 0.0; threshold 0.1). Classification label
   carries `_partial` suffix; auto-recommendation printed.
+
+## Null-GABA reduction ladder on t0022 DSGC
+ID: t0037_null_gaba_reduction_ladder_t0022
+Status: completed
+Effective date: 2026-04-24
+Short description: Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0036_rerun_t0030_halved_null_gaba
+Task types: experiment-run
+Source suggestion: S-0036-01
+Start time: 2026-04-23T22:56:20Z
+End time: 2026-04-24T00:10:00Z
+
+#### Motivation
+
+t0036 reduced `GABA_CONDUCTANCE_NULL_NS` from 12 nS to 6 nS (Schachter2010-matched) on the t0022
+distal-diameter sweep and found **null firing still pinned at 0.0 Hz** across every diameter — the
+rescue hypothesis S-0030-01 was falsified at 6 nS. t0036&#x27;s creative-thinking enumerated 5
+explanations (notably: 12 nS was far above threshold, so 6 nS is still too high), and suggestion
+S-0036-01 proposed further reductions in sequence: **4 nS → 2 nS → 1 nS**.
+
+This task runs that ladder efficiently as a focused **1D sweep at baseline diameter only** (instead
+of 3× full diameter sweeps). The question: at what GABA level (if any) does null- direction firing
+become non-zero on the t0022 deterministic schedule? The answer bounds whether a future full
+diameter sweep at the unpinning level is worth the compute.
+
+If **all** tested GABA levels still yield 0 Hz null firing (including 0 nS — full GABA block), the
+null result falsifies any conductance-only rescue on t0022 and rules out future work along that axis
+— forcing the optimiser to either use t0024 or adopt vector-sum DSI on t0022 (already queued as
+S-0030-06).
+
+#### Scope
+
+1. Use the **t0022 DSGC testbed** as-is. Distal diameter locked at **1.0× baseline** (no diameter
+   variation).
+2. Sweep `GABA_CONDUCTANCE_NULL_NS` across **5 levels**: **{4.0, 2.0, 1.0, 0.5, 0.0}** nS. Brackets
+   S-0036-01&#x27;s specified 4/2/1 with a finer end (0.5) and full GABA block (0.0) as a sanity extreme.
+3. At each GABA level, run the standard **12-direction × 10-trial protocol = 120 trials**. Total =
+   **5 × 120 = 600 trials**.
+4. Measure **null-direction firing rate (critical diagnostic)** + primary DSI + vector-sum DSI +
+   peak Hz + HWHM per GABA level.
+5. Report: the lowest GABA level at which null firing becomes non-zero (if any); recommend a
+   follow-up full diameter sweep at that level OR definitively falsify the conductance-only rescue.
+
+#### Approach
+
+* **Local CPU only.** No remote compute, $0.
+* Copy the t0036 `gaba_override` monkey-patch pattern into a CLI-switchable version that accepts a
+  numeric GABA value per run.
+* Run the 12-direction × 10-trial protocol five times, one per GABA level, accumulating into a tidy
+  CSV keyed by `(gaba_null_ns, direction_deg, trial)`.
+* Analyse: per-GABA null_hz, peak_hz, DSI primary, DSI vector-sum, HWHM.
+* Chart: `null_hz_vs_gaba.png` (critical diagnostic), `primary_dsi_vs_gaba.png`,
+  `vector_sum_dsi_vs_gaba.png`, `peak_hz_vs_gaba.png`, polar overlay of all 5 levels.
+
+#### Expected Outputs
+
+* `results/results_summary.md` — headline: lowest GABA level with non-zero null firing (or
+  definitive falsification).
+* `results/results_detailed.md` — per-GABA metrics, per-direction breakdown at each level,
+  recommendation for follow-up.
+* `results/images/null_hz_vs_gaba.png` (THE key chart), plus primary-DSI, vector-sum-DSI, peak-Hz,
+  polar-overlay.
+* `results/metrics.json` — per-GABA-level registered DSI metrics.
+* No paper, dataset, library, model, or answer assets produced.
+
+#### Compute and Budget
+
+* Local CPU only. Expected runtime: **~20-30 minutes** (600 trials × ~2 s/trial on t0022
+  deterministic).
+* $0 external cost.
+
+#### Measurement
+
+* **Primary diagnostic**: **null-direction firing rate per GABA level**. Non-zero at any level → the
+  rescue works at that level.
+* **Secondary**: primary DSI (expected to drop below 1.000 once null firing unpins), vector-sum DSI,
+  peak Hz, HWHM, per-direction spike counts.
+
+#### Key Questions
+
+1. At what (if any) GABA level does null-direction firing become non-zero?
+2. If null firing unpins at some level, what is the primary DSI at that level?
+3. If NO level unpins null firing — including 0 nS full GABA block — what does that imply about the
+   t0022 schedule? Does the AMPA EPSP simply never reach AP threshold at null angles, independent of
+   GABA?
+
+#### Dependencies
+
+* **t0022_modify_dsgc_channel_testbed** (completed) — provides the testbed architecture.
+* **t0036_rerun_t0030_halved_null_gaba** (completed) — provides the `gaba_override` monkey-patch
+  pattern, the baseline-GABA=6 nS null result, and the 177-section distal- selection rule. Also
+  provides code/constants inheritance.
+
+#### Scientific Context
+
+Source suggestion **S-0036-01** (high priority). The 4/2/1 nS sequence was the explicit
+recommendation; extended here to 0.5 and 0 nS to bracket the extreme case. Result interacts directly
+with:
+- **S-0030-02** (Poisson noise rescue): if GABA ladder fails, Poisson is the next attempt
+- **S-0030-06** (vector-sum DSI objective): if GABA ladder fails, this becomes the recommended t0033
+  objective on t0022
+
+#### Execution Notes
+
+* Follow standard `/execute-task` flow.
+* Include `planning` step.
+* Skip `research-papers`, `research-internet` (t0027 + t0030 + t0036 cover mechanism priors).
+* Include `research-code` — need to copy t0036&#x27;s `gaba_override` and generalise it.
+* Skip `setup-machines` / `teardown` (local CPU only).
+* Include `creative-thinking` — if rescue fails even at 0 nS, the finding is mechanism- defining for
+  t0022.
+* Include `compare-literature` — compare unpinning threshold to Schachter2010 / Park2014
+  null-inhibition ranges.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0037_null_gaba_reduction_ladder_t0022&quot;
+date_completed: &quot;2026-04-24&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Null-GABA Reduction Ladder on t0022 DSGC
+
+#### Summary
+
+Swept `GABA_CONDUCTANCE_NULL_NS` across 5 levels {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022
+(600 trials). **S-0036-01 rescue hypothesis CONFIRMED**: null firing unpinned at every tested level
+(6-15 Hz vs t0036&#x27;s 0 Hz at 6 nS baseline). The **operational sweet spot is 4 nS**: DSI=0.429, peak
+15 Hz, null 6 Hz, preferred direction ~40° — biologically realistic DSGC regime. At ≤ 2 nS the cell
+fires everywhere and preferred direction randomises. The follow-up recommendation is to **rerun
+t0030&#x27;s 7-diameter sweep at GABA=4 nS** to measure the Schachter2010 vs passive-filtering slope.
+
+#### Metrics
+
+* **GABA unpinning threshold**: **≤ 4.0 nS** (highest tested level with null firing already
+  unpinned). t0036&#x27;s 6 nS was just above this threshold.
+* **Null firing rate by GABA**: **15, 14, 15, 14, 6 Hz** at {0, 0.5, 1, 2, 4} nS — all ≥ critical
+  0.1 Hz unpinning threshold.
+* **Primary DSI by GABA**: **0.167, 0.200, 0.157, 0.243, 0.429** — DSI peaks at 4 nS and collapses
+  below 2 nS as preferred direction randomises.
+* **Preferred-direction angle stability**: stable at 40.8° only at 4 nS; drifts to 187-278° at lower
+  GABA levels (directional tuning lost).
+* **Vector-sum DSI**: **0.058, 0.069, 0.099, 0.093, 0.259** — tracks primary DSI, peaks at 4 nS.
+* **Classification**: `unpinned` label emitted; threshold=0.0 nS auto-reported (but operational
+  sweet spot is 4 nS per DSI / preferred-direction stability).
+* **Total trials executed**: **600** (5 GABA levels × 12 directions × 10 trials).
+* **Sweep wall time**: approximately **20 minutes** on local Windows CPU.
+
+#### Verification
+
+* `verify_task_file.py` — target 0 errors.
+* `verify_task_dependencies.py` — PASSED (t0022 + t0036 completed).
+* `verify_research_code.py` — PASSED.
+* `verify_plan.py` — PASSED.
+* `verify_task_results.py` — PASSED.
+* `verify_task_folder.py` — target 0 errors.
+* `verify_logs.py` — target 0 errors.
+* `ruff check --fix`, `ruff format`, `mypy -p tasks.t0037_null_gaba_reduction_ladder_t0022.code` —
+  all clean (11 files).
+* Pre-condition gate: **PASSED** (null_hz ≥ 0.1 at every level; peak_hz ≥ 10 at the highest tested
+  level; no AssertionError during 600 trials).
       </content>
     </section>
   </sections>

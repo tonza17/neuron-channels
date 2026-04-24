@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (5)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(27)](../suggestions/by-category/synaptic-integration.md) | [Predictions
+(30)](../suggestions/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
@@ -2107,7 +2107,54 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 3 closed)
+## Suggestions (26 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
+4.5, 4.0, 3.5, 3.0 nS)</strong> (S-0037-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+
+The current sweep places the unpinning threshold between 6 nS (t0036 pinned) and 4 nS (t0037
+unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline diameter on
+t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
+threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
+Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Diagnose and fix the low peak firing rate in t0022 (15 Hz vs
+40-80 Hz Schachter2010)</strong> (S-0037-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
+[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+
+At the 4 nS sweet spot the preferred-direction peak firing is 15 Hz, an order of magnitude
+below Schachter2010's 40-80 Hz baseline. The same low rate was observed in t0030 at 12 nS
+GABA, so this is a pre-existing t0022 drive issue (likely the AMPA-only schedule lacking NMDA
+or compensatory excitation), not a GABA ladder artefact. A task should add NMDA back into the
+t0022 E-I schedule (or increase AMPA gain) and verify peak firing reaches 40+ Hz without
+re-pinning DSI. Until this is fixed, any cross-testbed peak-rate comparison is invalid.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC
+offset)</strong> (S-0037-06)</summary>
+
+**Kind**: technique | **Priority**: low | **Date**: 2026-04-24 | **Source**:
+[t0037_null_gaba_reduction_ladder_t0022](../../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+
+t0022 applies only null-direction GABA. Published DSGC models (Park2014, Schachter2010)
+include a directionally-offset SAC inhibition where preferred-direction trials see much lower
+GABA than null. Implement the cartwheel asymmetry as a new parameter
+`GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037's over-excitation regime below 2
+nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves
+t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
+
+</details>
 
 <details>
 <summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
@@ -2127,27 +2174,6 @@ DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-
 crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
 fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
-distal-diameter sweep</strong> (S-0036-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0036_rerun_t0030_halved_null_gaba](../../tasks/t0036_rerun_t0030_halved_null_gaba/)
-
-t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
-Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
-rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
-t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
-at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
-primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
-on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
-incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
-(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
-(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
-diameter-sweep code path. Recommended task types: experiment-run.
 
 </details>
 

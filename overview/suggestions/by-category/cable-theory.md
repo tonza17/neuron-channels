@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-18 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **16
-open** (4 high, 11 medium, 1 low), **2 closed**.
+19 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **17
+open** (5 high, 11 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,6 +58,28 @@ passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin l
 (3.694/1.653/0.439 um) and emit a corrections file that overrides
 dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
 against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
+(S-0037-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
+at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
+realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
+(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
+Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
+target since t0030.
 
 </details>
 

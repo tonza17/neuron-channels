@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-107 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **99 open** (37
-high, 55 medium, 7 low), **8 closed**.
+112 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **103 open** (38
+high, 57 medium, 8 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -774,29 +774,24 @@ thresholding. Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
-distal-diameter sweep</strong> (S-0036-01)</summary>
+<summary>🧪 <strong>Rerun t0030's 7-diameter sweep at GABA=4 nS on t0022</strong>
+(S-0037-01)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0036-01` |
+| **ID** | `S-0037-01` |
 | **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
 
-t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
-Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
-rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
-t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
-at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
-primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
-on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
-incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
-(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
-(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
-diameter-sweep code path. Recommended task types: experiment-run.
+t0030's diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz
+at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically
+realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep
+(0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the
+Schachter2010-vs-passive-filtering slope that has been the project's headline discriminator
+target since t0030.
 
 </details>
 
@@ -891,6 +886,27 @@ pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whe
 tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
 outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
 Na-inactivation-independent peak firing behaviour.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Update t0033 optimiser base GABA on t0022 variant to 4.0
+nS</strong> (S-0037-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With
+GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update
+t0033's t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the
+first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without
+this change the Vast.ai optimisation runs on t0022 will be wasted compute.
 
 </details>
 
@@ -1095,6 +1111,28 @@ synthetic inputs used by test_envelope.py. Once downstream grid searches (S-0002
 S-0002-04, S-0002-05) have produced O(1000) points, compare how each loss norm ranks the top-k
 configurations and whether ranking changes meaningfully. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)
+noise</strong> (S-0037-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034/t0035 already produce measurable primary DSI on t0024 via AR(2) stochastic release
+(rho=0.6). t0037 now shows that t0022 at 4 nS GABA is a second valid substrate. A dedicated
+comparison task should run matched 7-diameter and 5-length sweeps on both substrates with
+identical stimulus schedules and report whether the two discriminators agree on
+Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth
+investigating.
 
 </details>
 
@@ -1673,6 +1711,27 @@ schedule-fixed testbed (S-0030-01 prerequisite). Distinct from S-0002-04 (broad 
 including branch orders at fixed synapse count) because it is 2-D, focused, and scheduled
 after the desaturation fix. Expected local CPU wall time ~7 h. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
+4.5, 4.0, 3.5, 3.0 nS)</strong> (S-0037-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The current sweep places the unpinning threshold between 6 nS (t0036 pinned) and 4 nS (t0037
+unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline diameter on
+t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
+threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
+Important for characterising how fragile the operational window really is.
 
 </details>
 
@@ -2296,6 +2355,28 @@ closed-form mean curve unchanged.
 </details>
 
 <details>
+<summary>🔧 <strong>Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC
+offset)</strong> (S-0037-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0037-06` |
+| **Kind** | technique |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0022 applies only null-direction GABA. Published DSGC models (Park2014, Schachter2010)
+include a directionally-offset SAC inhibition where preferred-direction trials see much lower
+GABA than null. Implement the cartwheel asymmetry as a new parameter
+`GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037's over-excitation regime below 2
+nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves
+t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
+
+</details>
+
+<details>
 <summary>📊 <strong>Cross-validate compute_reliability against independent split-half
 implementations (odd-even, bootstrap, Spearman-Brown)</strong> (S-0012-06)</summary>
 
@@ -2597,6 +2678,35 @@ S-0027-01 and S-0027-02. Resolve by retrieving full PDFs through Sheffield insti
 (Cell Press, Nature Neuroscience), upgrading their summaries to full-text level, and updating
 the t0027 synthesis answer asset citations from abstract-only to full-text grounding. Low-cost
 prerequisite for confidently running S-0027-01 and S-0027-02.
+
+</details>
+
+<details>
+<summary>✅ <s>Sequential further null-GABA reductions (4, 2, 1 nS) on the t0022
+distal-diameter sweep</s> — covered by <a
+href="../../../tasks/t0037_null_gaba_reduction_ladder_t0022/"><code>t0037_null_gaba_reduction_ladder_t0022</code></a>
+(S-0036-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0036-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0
+Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition
+rescue. The classifier auto-recommendation was 'reduce null-GABA further to ~4 nS'. Rerun the
+t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz
+at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS,
+primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued
+on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally
+incompatible with primary DSI on morphology axes and the project must adopt Poisson rescue
+(S-0030-02) or migrate the optimiser substrate to t0024 (S-0034-07). Distinct from S-0029-04
+(3-12 nS at fixed length on t0029 code) - this extends below the 3 nS floor on the t0036
+diameter-sweep code path. Recommended task types: experiment-run.
 
 </details>
 

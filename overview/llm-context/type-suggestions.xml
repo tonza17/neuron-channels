@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-23T22:39:14Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-24T00:14:28Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>165016</char_count>
-    <byte_count>165029</byte_count>
-    <estimated_tokens>41254</estimated_tokens>
+    <char_count>169743</char_count>
+    <byte_count>169756</byte_count>
+    <estimated_tokens>42435</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -175,9 +175,15 @@
         <id>S-0036-02</id>
         <id>S-0036-03</id>
         <id>S-0036-04</id>
+        <id>S-0037-01</id>
+        <id>S-0037-02</id>
+        <id>S-0037-03</id>
+        <id>S-0037-04</id>
+        <id>S-0037-05</id>
+        <id>S-0037-06</id>
       </source_ids>
       <content>
-Suggestions: 158
+Suggestions: 164
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1951,6 +1957,72 @@ Categories: compartmental-modeling, synaptic-integration, direction-selectivity
 Date added: 2026-04-23
 
 t0036 introduced code/gaba_override.py which monkey-patches _t0022_constants.GABA_CONDUCTANCE_NULL_NS at import time and re-binds the local name inside trial_runner_diameter.py so the schedule_ei_onsets ratio is computed against the overridden value. This pattern is immediately needed for S-0036-01 (further null-GABA reductions) and S-0036-02 (GABA-AMPA timing offset). Rather than each task reimplementing the monkey-patch, lift it into a library asset (working name: dsgc_t0022_schedule_overrides) exposing a typed context-manager or setup function accepting gaba_null_ns, gaba_preferred_ns, gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a smoke test asserting the override survived a fresh import and that the null/preferred ratio matches the requested value. Distinct from S-0033-06 (DSI objective evaluator) which wraps the scoring side - this wraps the schedule-parameter side. Recommended task types: write-library.
+
+## Rerun t0030&#x27;s 7-diameter sweep at GABA=4 nS on t0022
+ID: S-0037-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: direction-selectivity, compartmental-modeling, cable-theory
+Date added: 2026-04-24
+
+t0030&#x27;s diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep (0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the Schachter2010-vs-passive-filtering slope that has been the project&#x27;s headline discriminator target since t0030.
+
+## Update t0033 optimiser base GABA on t0022 variant to 4.0 nS
+ID: S-0037-02
+Status: active
+Priority: high
+Kind: technique
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-24
+
+t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update t0033&#x27;s t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without this change the Vast.ai optimisation runs on t0022 will be wasted compute.
+
+## Localise the GABA unpinning threshold with a fine sweep (5.0, 4.5, 4.0, 3.5, 3.0 nS)
+ID: S-0037-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: direction-selectivity, synaptic-integration
+Date added: 2026-04-24
+
+The current sweep places the unpinning threshold between 6 nS (t0036 pinned) and 4 nS (t0037 unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline diameter on t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual. Important for characterising how fragile the operational window really is.
+
+## Diagnose and fix the low peak firing rate in t0022 (15 Hz vs 40-80 Hz Schachter2010)
+ID: S-0037-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: synaptic-integration, compartmental-modeling
+Date added: 2026-04-24
+
+At the 4 nS sweet spot the preferred-direction peak firing is 15 Hz, an order of magnitude below Schachter2010&#x27;s 40-80 Hz baseline. The same low rate was observed in t0030 at 12 nS GABA, so this is a pre-existing t0022 drive issue (likely the AMPA-only schedule lacking NMDA or compensatory excitation), not a GABA ladder artefact. A task should add NMDA back into the t0022 E-I schedule (or increase AMPA gain) and verify peak firing reaches 40+ Hz without re-pinning DSI. Until this is fixed, any cross-testbed peak-rate comparison is invalid.
+
+## Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2) noise
+ID: S-0037-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: direction-selectivity, compartmental-modeling, dendritic-computation
+Date added: 2026-04-24
+
+t0034/t0035 already produce measurable primary DSI on t0024 via AR(2) stochastic release (rho=0.6). t0037 now shows that t0022 at 4 nS GABA is a second valid substrate. A dedicated comparison task should run matched 7-diameter and 5-length sweeps on both substrates with identical stimulus schedules and report whether the two discriminators agree on Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth investigating.
+
+## Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC offset)
+ID: S-0037-06
+Status: active
+Priority: low
+Kind: technique
+Source task: t0037_null_gaba_reduction_ladder_t0022
+Categories: direction-selectivity, synaptic-integration
+Date added: 2026-04-24
+
+t0022 applies only null-direction GABA. Published DSGC models (Park2014, Schachter2010) include a directionally-offset SAC inhibition where preferred-direction trials see much lower GABA than null. Implement the cartwheel asymmetry as a new parameter `GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037&#x27;s over-excitation regime below 2 nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
       </content>
     </section>
   </sections>

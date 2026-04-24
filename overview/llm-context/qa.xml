@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-23T22:39:14Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-24T00:14:28Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>235397</char_count>
-    <byte_count>235656</byte_count>
-    <estimated_tokens>58849</estimated_tokens>
+    <char_count>236523</char_count>
+    <byte_count>236787</byte_count>
+    <estimated_tokens>59130</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -145,9 +145,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0034_distal_dendrite_length_sweep_t0024</id>
         <id>t0035_distal_dendrite_diameter_sweep_t0024</id>
         <id>t0036_rerun_t0030_halved_null_gaba</id>
+        <id>t0037_null_gaba_reduction_ladder_t0022</id>
       </source_ids>
       <content>
-Completed tasks: 34
+Completed tasks: 35
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -352,6 +353,12 @@ ID: t0036_rerun_t0030_halved_null_gaba
 Completed: 2026-04-23
 Short description: Rerun the t0030 distal-diameter sweep on t0022 with null-direction GABA reduced from 12 nS to 6 nS to unpin primary DSI from 1.000 and restore the Schachter2010 vs passive-filtering discriminator.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0036_rerun_t0030_halved_null_gaba&quot; date_completed: &quot;2026-04-23&quot; status: &quot;complete&quot; --- Results Summary: Rerun Distal-Diameter Sweep on t0022 with Halved Null-GABA Summary Reran the t0030 distal-diameter sweep on t0022 with `GABA_CONDUCTANCE_NULL_NS = 6.0 nS` (halved from 12 nS, matching Schachter2010&#x27;s compound null inhibition). **The halving was INSUFFICIENT to unpin null firing**: mean null-direction firing remained exactly **0.0 Hz at every diameter multiplier**, primary DSI stayed pinned at 1.000, and the classification label is **`flat_partial`** (pre-condition gate failed). Vector-sum DSI range 0.579-0.590 (range 0.011, p=0.019 — statistically...
+
+## Null-GABA reduction ladder on t0022 DSGC
+ID: t0037_null_gaba_reduction_ladder_t0022
+Completed: 2026-04-24
+Short description: Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0037_null_gaba_reduction_ladder_t0022&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: Null-GABA Reduction Ladder on t0022 DSGC Summary Swept `GABA_CONDUCTANCE_NULL_NS` across 5 levels {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 (600 trials). **S-0036-01 rescue hypothesis CONFIRMED**: null firing unpinned at every tested level (6-15 Hz vs t0036&#x27;s 0 Hz at 6 nS baseline). The **operational sweet spot is 4 nS**: DSI=0.429, peak 15 Hz, null 6 Hz, preferred direction ~40° — biologically realistic DSGC regime. At ≤ 2 nS the cell fires everywhere and preferred direction randomises. The follow-up recommendation is to **rerun t0030&#x27;s...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
