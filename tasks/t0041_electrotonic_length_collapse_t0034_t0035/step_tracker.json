@@ -31,11 +31,11 @@
     {
       "step": 4,
       "name": "research-papers",
-      "description": "Review corpus papers on cable theory and electrotonic-length scaling.",
-      "status": "pending",
+      "description": "Skipped: cable-theory literature was exhaustively surveyed in t0015; this task is a post-hoc numerical analysis of existing sweep data and requires no new paper input.",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/004_research-papers/"
     },
     {
       "step": 5,
@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0034 and t0035 trial CSVs, section biophysics in t0024 library, and any cable-theory utilities in prior tasks.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T11:43:38Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
