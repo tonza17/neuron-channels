@@ -5,13 +5,13 @@
   "name": "Electrotonic-length collapse analysis of t0034 and t0035",
   "short_description": "Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0034_distal_dendrite_length_sweep_t0024",
     "t0035_distal_dendrite_diameter_sweep_t0024"
   ],
   "start_time": "2026-04-24T11:33:06Z",
-  "end_time": null,
+  "end_time": "2026-04-24T12:15:00Z",
   "expected_assets": {
     "answer": 1
   },

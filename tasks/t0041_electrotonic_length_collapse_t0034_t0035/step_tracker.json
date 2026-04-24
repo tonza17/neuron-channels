@@ -95,19 +95,19 @@
       "step": 11,
       "name": "suggestions",
       "description": "Generate follow-up suggestions based on collapse analysis outcome.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T12:11:38Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T12:12:31Z",
       "log_file": "logs\\steps\\011_suggestions/"
     },
     {
       "step": 12,
       "name": "reporting",
       "description": "Run all verificators, capture sessions, mark task.json completed, prepare for PR.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T12:12:47Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_reporting/"
     }
   ]
 }
