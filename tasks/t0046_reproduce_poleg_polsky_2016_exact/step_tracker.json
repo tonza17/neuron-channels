@@ -8,7 +8,133 @@
       "status": "completed",
       "started_at": "2026-04-24T13:03:15Z",
       "completed_at": "2026-04-24T13:04:15Z",
-      "log_file": "logs\\steps\\001_create-branch/"
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0005, t0007, t0008, t0020 are completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create task folder structure and initial files.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review Poleg-Polsky & Diamond 2016 paper and any related corpus papers on DSGC compartmental modelling; enumerate every test the paper runs.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search for supplementary materials and any related online resources (ModelDB release notes, errata, author addenda).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review the ModelDB 189347 release end-to-end; document every file, parameter, and code path. Compare with t0008 and t0020 library assets.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Design the from-scratch port structure, audit-table schema, and per-paper-test reproduction plan.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: local CPU only; no remote compute required for this reproduction.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Build the faithful ModelDB 189347 port, run every paper test, fill in the audit table, catalogue paper-vs-code discrepancies, produce 1 library and 1 answer asset.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines provisioned.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: exact reproduction is the goal; out-of-the-box alternatives are not in scope.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md with paper-test-reproduction table and per-figure charts; populate metrics.json; record costs and remote machines.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Write compare_literature.md contrasting our reproduction results against Poleg-Polsky 2016's published values for every quantitative claim.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions based on reproduction outcomes and catalogued discrepancies.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task.json completed, prepare for PR.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
     }
   ]
 }
