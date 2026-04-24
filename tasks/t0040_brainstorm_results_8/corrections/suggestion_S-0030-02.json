@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0040-04",
+  "correcting_task": "t0040_brainstorm_results_8",
+  "target_task": "t0030_distal_dendrite_diameter_sweep_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0030-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Poisson-noise desaturation of the t0030 diameter sweep on t0022 is deprioritised for the same reasons as S-0029-01: t0044 (Schachter re-test on the t0043 output substrate) will re-examine the diameter axis after the channel inventory is fixed, and t0039 already established that the diameter axis on t0022 at GABA=4 nS shows passive filtering (slope -0.034 p=0.008). The Poisson-noise rerun remains a valid secondary experiment but does not belong in the next wave."
+}
