@@ -5,14 +5,14 @@
   "name": "Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit",
   "short_description": "Rebuild ModelDB 189347 from scratch to match Poleg-Polsky 2016; audit every parameter against paper+code+supplementary; reproduce all paper tests within tolerance.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0005_download_dsgc_morphology",
     "t0007_install_neuron_netpyne",
     "t0008_port_modeldb_189347",
     "t0020_port_modeldb_189347_gabamod"
   ],
-  "start_time": null,
+  "start_time": "2026-04-24T13:02:27Z",
   "end_time": null,
   "expected_assets": {
     "library": 1,
