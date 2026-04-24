@@ -32,19 +32,19 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review Poleg-Polsky & Diamond 2016 paper and any related corpus papers on DSGC compartmental modelling; enumerate every test the paper runs.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T13:07:27Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T13:20:20Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
       "name": "research-internet",
       "description": "Search for supplementary materials and any related online resources (ModelDB release notes, errata, author addenda).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-24T13:20:37Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
