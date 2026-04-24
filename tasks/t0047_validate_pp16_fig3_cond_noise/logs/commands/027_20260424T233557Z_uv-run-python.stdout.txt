@@ -1,0 +1,5 @@
+spec_version: 2
+short_answer_path: short_answer.md
+full_answer_path: full_answer.md
+short_answer.md exists: True
+full_answer.md exists: True

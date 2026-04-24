@@ -1,0 +1,17 @@
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+[smoke] attached recorders for numsyn=282
+Changed dt
+[smoke] peak_psp_mv             = 25.143
+[smoke] peak_g_nmda_summed_ns   = 69.434
+[smoke] peak_g_ampa_summed_ns   = 10.198
+[smoke] peak_g_sacexc_summed_ns = 15.362
+[smoke] peak_g_sacinhib_summed_ns = 100.338
+[smoke] peak_i_nmda_summed_na   = 2.768
+[smoke] peak_i_ampa_summed_na   = 0.485
+[smoke] peak_i_sacexc_summed_na = 0.703
+[smoke] peak_i_sacinhib_summed_na = 1.790
+[smoke][OK] all four conductance classes recorded non-zero peaks

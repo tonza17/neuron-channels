@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0047_validate_pp16_fig3_cond_noise",
+  "command": "python -u -m tasks.t0047_validate_pp16_fig3_cond_noise.code.run_with_conductances",
+  "exit_code": 1,
+  "duration_seconds": 0.115,
+  "started_at": "2026-04-24T22:46:54Z",
+  "completed_at": "2026-04-24T22:46:54Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0047_validate_pp16_fig3_cond_noise",
+  "stdout_file": "012_20260424T224654Z_python-u-m.stdout.txt",
+  "stderr_file": "012_20260424T224654Z_python-u-m.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

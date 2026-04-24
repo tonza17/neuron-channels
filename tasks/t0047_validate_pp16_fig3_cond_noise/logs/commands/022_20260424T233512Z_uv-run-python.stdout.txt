@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0047_validate_pp16_fig3_cond_noise\tasks\t0047_validate_pp16_fig3_cond_noise\results\metrics.json
+
+[31m[1mERRORS:[0m
+[31m  TM-E003 error: Variant 'control_flickerVAR_0p0' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'control_flickerVAR_0p1' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'control_flickerVAR_0p3' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'control_flickerVAR_0p5' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'AP5_flickerVAR_0p0' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'AP5_flickerVAR_0p1' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'AP5_flickerVAR_0p3' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant 'AP5_flickerVAR_0p5' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant '0Mg_flickerVAR_0p0' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant '0Mg_flickerVAR_0p1' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant '0Mg_flickerVAR_0p3' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+[31m  TM-E003 error: Variant '0Mg_flickerVAR_0p5' has an invalid 'variant_id'. Use lowercase letters, digits, dots, hyphens, and underscores.[0m
+
+[31m[1mFAILED[0m — 12 error(s), 0 warning(s)

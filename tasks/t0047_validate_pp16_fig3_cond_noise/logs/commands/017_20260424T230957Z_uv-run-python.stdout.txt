@@ -1,0 +1,16 @@
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+[run_noise_extension] numsyn=282
+Changed dt
+  trial=0 seed=10000 peak_psp_mv=24.155 peak_g_nmda_summed_ns=62.784
+Changed dt
+  trial=1 seed=10001 peak_psp_mv=25.478 peak_g_nmda_summed_ns=68.700
+Changed dt
+  trial=2 seed=10002 peak_psp_mv=22.986 peak_g_nmda_summed_ns=60.489
+Changed dt
+  trial=3 seed=10003 peak_psp_mv=23.882 peak_g_nmda_summed_ns=65.238
+[run_noise_extension] limit CSV at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0047_validate_pp16_fig3_cond_noise\tasks\t0047_validate_pp16_fig3_cond_noise\results\data\noise_extension_trials_limit.csv
+[run_noise_extension] done

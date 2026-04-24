@@ -1,0 +1,7 @@
+fig3a_nmda_conductance_pd_vs_nd.png True 51126
+fig3b_ampa_conductance_pd_vs_nd.png True 47670
+fig3c_gaba_conductance_pd_vs_nd.png True 48857
+fig3f_top_psp_traces.png True 169618
+fig3f_bottom_dsi_vs_gnmda.png True 61251
+fig6_dsi_vs_noise_per_condition.png True 58519
+fig7_auc_vs_noise_per_condition.png True 42042

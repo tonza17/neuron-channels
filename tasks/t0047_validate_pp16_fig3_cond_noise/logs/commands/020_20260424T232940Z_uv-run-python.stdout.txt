@@ -1,0 +1,5 @@
+[render_figures] wrote Fig 3A/B/C
+[render_figures] wrote Fig 3F top
+[render_figures] wrote Fig 3F bottom
+[render_figures] wrote Fig 6 and Fig 7
+[render_figures] done
