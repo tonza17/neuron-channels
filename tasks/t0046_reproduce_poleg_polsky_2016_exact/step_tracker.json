@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Write compare_literature.md contrasting our reproduction results against Poleg-Polsky 2016's published values for every quantitative claim.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T17:29:14Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T17:31:19Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
