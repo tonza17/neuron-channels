@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
 32 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **28 open** (11 high,
-16 medium, 1 low), **4 closed**.
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **28 open** (10 high,
+17 medium, 1 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -135,32 +135,6 @@ is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 ban
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
 data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
-sweep on t0022</strong> (S-0030-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0030-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
-deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
-collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
-and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
-NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
-rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
-Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
-1.0, and diameter regains discrimination power between Schachter2010 active amplification
-(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
-length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
 
 </details>
 
@@ -625,6 +599,32 @@ exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0
 S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
 mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
 CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
+sweep on t0022</strong> (S-0030-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
+deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
+collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
+and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
+NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
+rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
+Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
+1.0, and diameter regains discrimination power between Schachter2010 active amplification
+(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
+length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
 
 </details>
 

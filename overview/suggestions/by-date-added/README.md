@@ -392,29 +392,6 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
-t0035 diameter data</strong> (S-0035-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0035-01` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
-the computed distal electrotonic length L/lambda, using morphology and passive parameters
-already stored in each task's outputs. If the length and diameter data collapse onto a single
-curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
-is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
-new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
-data-analysis.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -725,6 +702,31 @@ diameter-sweep code path. Recommended task types: experiment-run.
 
 </details>
 
+<details>
+<summary>✅ <s>Zero-cost L/lambda collapse analysis of all t0034 length and t0035
+diameter data</s> — covered by <a
+href="../../../tasks/t0041_electrotonic_length_collapse_t0034_t0035/"><code>t0041_electrotonic_length_collapse_t0034_t0035</code></a>
+(S-0035-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
+the computed distal electrotonic length L/lambda, using morphology and passive parameters
+already stored in each task's outputs. If the length and diameter data collapse onto a single
+curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
+is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
+new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
+data-analysis.
+
+</details>
+
 ## 2026-04-22 (19)
 
 ## High Priority
@@ -807,32 +809,6 @@ experiment-run, baseline-evaluation.
 </details>
 
 <details>
-<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
-on t0022</strong> (S-0029-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0029-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
-| **Source paper** | [`10.1038_nn.3565`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1038_nn.3565/) |
-| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
-115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
-Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
-Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
-gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
-length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
-the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
-resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
-with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
-min CPU. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
 t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
 
@@ -881,59 +857,6 @@ compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hype
 25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
 and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
 types: experiment-run, feature-engineering.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
-sweep on t0022</strong> (S-0030-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0030-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
-deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
-collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
-and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
-NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
-rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
-Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
-1.0, and diameter regains discrimination power between Schachter2010 active amplification
-(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
-length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
-sweep on t0022</strong> (S-0029-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0029-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
-at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
-1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
-stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
-mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
-dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
-7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
-from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
-discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
-predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
-types: experiment-run.
 
 </details>
 
@@ -987,6 +910,32 @@ depends on spatial proximity (Poleg-Polsky2016 distal Nav/Cav contribution). Add
 step is smooth (passive) or sharp (local threshold crossing, i.e. Sivyer-like signature).
 Record both peak Hz and mean peak somatic voltage at each point. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
+on t0022</strong> (S-0029-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1038_nn.3565`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1038_nn.3565/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
+115.8 deg at 1.75-2.0x), inconsistent with any passive cable theory and consistent with distal
+Nav channels crossing or failing to cross dendritic-spike threshold at a critical length.
+Rerun the 7-point length sweep with distal Nav channels ablated (`forsec DEND_CHANNELS {
+gnabar_HHst = 0 }`) while keeping somatic and AIS Nav intact. If HWHM becomes monotonic with
+length, the non-monotonicity is a Sivyer2013 dendritic-spike signature and active boosting is
+the dominant mechanism. If HWHM still oscillates, the non-monotonicity is passive cable
+resonance and Sivyer2013 can be provisionally rejected on this morphology. Pairs naturally
+with S-0029-01 to form a 2x2 design (Nav ablation x Poisson noise). One-line HOC overlay. ~45
+min CPU. Recommended task types: experiment-run.
 
 </details>
 
@@ -1093,6 +1042,59 @@ exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0
 S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
 mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
 CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
+sweep on t0022</strong> (S-0030-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0030-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030
+deterministic testbed yields reliability = 1.000 and null firing 0 Hz at every diameter, which
+collapses the rate-code noise floor that Schachter2010's dendritic-spike-threshold mechanism
+and Dan2018's passive-TR derivation both assume. Add an independent 5 Hz background Poisson
+NetStim per distal dendrite (independent seed, no direction bias) to the t0022 scheduler and
+rerun the full 7-point diameter sweep (0.5x-2.0x, 12 angles x 10 trials = 840 trials).
+Expected: DSI drops from 1.000 into the 0.6-0.8 Park2014 envelope, reliability drops below
+1.0, and diameter regains discrimination power between Schachter2010 active amplification
+(+slope) and passive filtering (-slope). Distinct from S-0022-05 (Poisson at a single
+length/diameter) and S-0029-01 (length axis). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite length
+sweep on t0022</strong> (S-0029-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0029-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0029_distal_dendrite_length_sweep_dsgc/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0029 sweep failed as a mechanism discriminator because pref/null DSI is pinned at 1.000
+at every multiplier from 0.5x to 2.0x (null firing = 0 Hz on every trial, reliability =
+1.000). Dan2018's passive-TR derivation and Schachter2010's compartmental DSGC both assume
+stochastic Poisson drive with a rate-code noise floor; removing noise collapses the
+mechanism-distinguishing regime. Add an independent 5 Hz background Poisson NetStim per distal
+dendrite (independent seed, no direction bias) to the t0022 scheduler and rerun the full
+7-point length sweep (12 angles x 10 trials x 7 lengths = 840 trials). Expected: DSI drops
+from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and length regains
+discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
+predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
+types: experiment-run.
 
 </details>
 
@@ -2087,27 +2089,6 @@ budget 4-6 hours for full P3.
 </details>
 
 <details>
-<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
-12-angle sweep</strong> (S-0010-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0010-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
-| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
-the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
-path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
-tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
-task can budget 3-4 hours and reach P3.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
 block in the downstream DSGC model build task</strong> (S-0017-03)</summary>
 
@@ -2161,35 +2142,6 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with
-AIS-specific conductance densities in downstream DSGC model</strong>
-(S-0019-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0019-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
-DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
-constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
-Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
-(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
-pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
-pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
-mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
-except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
-objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
-degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
-Fohlmeister-Miller RGC firing properties.
 
 </details>
 
@@ -2813,6 +2765,27 @@ AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) develo
 channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
 fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
 voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
+12-angle sweep</strong> (S-0010-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1038_s41467-019-09147-4`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-019-09147-4/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Rewrite the upstream run.py driver from geoffder/Spatial-Offset-DSGC-NEURON-Model to remove
+the headful 'from neuron import h, gui' import and the hardcoded C:\Users\geoff\NEURONoutput
+path, then adapt it to the canonical 12-angle x 20-trial sweep scored against the t0012
+tuning-curve API. t0010 exited at P2 within the 90-min per-candidate cap; a dedicated port
+task can budget 3-4 hours and reach P3.
 
 </details>
 
@@ -3446,6 +3419,36 @@ rotation protocol. Recommended task types: code-reproduction.
 
 </details>
 
+<details>
+<summary>✅ <s>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with AIS-specific
+conductance densities in downstream DSGC model</s> — covered by <a
+href="../../../tasks/t0043_nav16_kv3_nmda_restoration_t0022/"><code>t0043_nav16_kv3_nmda_restoration_t0022</code></a>
+(S-0019-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
+DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
+constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
+Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
+(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
+pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
+pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
+mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
+except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
+objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
+degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
+Fohlmeister-Miller RGC firing properties.
+
+</details>
+
 ## 2026-04-19 (31)
 
 ## High Priority
@@ -3515,30 +3518,6 @@ orders, mean segment length, mean segment diameter) on an orthogonal grid, recor
 per point, and test whether segment diameter has the largest effect (as cable theory
 predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
 currently lacks. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
-Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Schachter2010 reports that switching DSGC dendrites from passive to active (adding
-Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
-synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data
-that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs
-Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and
-report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
-isolates the dendritic-conductance contribution from morphology and synaptic effects.
-Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -4160,6 +4139,32 @@ kinetic models, subunit co-expression patterns in RGCs, ModelDB MOD-file provena
 Nav/Kv conductance-density estimates. Exclude the 20 DOIs already in the t0002 corpus. Output:
 paper assets + synthesis mapping candidate Na/K conductance combinations to published DSGC
 tuning-curve fits.
+
+</details>
+
+<details>
+<summary>✅ <s>Paired active-vs-passive dendrite experiment to reproduce the
+Schachter2010 DSI gain (~0.3 -> ~0.7)</s> — covered by <a
+href="../../../tasks/t0044_schachter_retest_on_t0043/"><code>t0044_schachter_retest_on_t0043</code></a>
+(S-0002-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Schachter2010 reports that switching DSGC dendrites from passive to active (adding
+Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
+synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data
+that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs
+Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and
+report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
+isolates the dendritic-conductance contribution from morphology and synaptic effects.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 

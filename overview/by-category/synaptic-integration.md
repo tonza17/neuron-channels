@@ -2297,7 +2297,7 @@ Recommended task types: build-model, experiment-run.
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
 sweep on t0022</strong> (S-0030-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0030_distal_dendrite_diameter_sweep_dsgc](../../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
 
 Sibling of S-0029-01 (Poisson + length sweep) targeting the diameter axis. The t0030

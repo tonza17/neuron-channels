@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-24T08:21:17Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-24T10:53:42Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>45</section_count>
-    <char_count>873372</char_count>
-    <byte_count>876238</byte_count>
-    <estimated_tokens>218343</estimated_tokens>
+    <section_count>46</section_count>
+    <char_count>902273</char_count>
+    <byte_count>905304</byte_count>
+    <estimated_tokens>225568</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -153,9 +153,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0037_null_gaba_reduction_ladder_t0022</id>
         <id>t0038_correct_t0033_base_gaba_to_4ns</id>
         <id>t0039_distal_dendrite_diameter_sweep_t0022_gaba4</id>
+        <id>t0040_brainstorm_results_8</id>
       </source_ids>
       <content>
-Completed tasks: 37
+Completed tasks: 38
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -378,6 +379,12 @@ ID: t0039_distal_dendrite_diameter_sweep_t0022_gaba4
 Completed: 2026-04-24
 Short description: Rerun t0030&#x27;s 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0039_distal_dendrite_diameter_sweep_t0022_gaba4&quot; date_completed: &quot;2026-04-24&quot; status: &quot;complete&quot; --- Results Summary: 7-Diameter Sweep on t0022 at GABA=4 nS Summary Rerunning t0030&#x27;s 7-diameter sweep at the t0037-validated operational GABA level (`GABA_CONDUCTANCE_NULL_NS = 4.0 nS`) produces the first diameter-vs-DSI measurement on t0022 with a discriminator that has dynamic range. DSI decreases monotonically from **0.429** at D=0.5x baseline to **0.368** at D=2.0x, slope=**-0.034** per log2(multiplier), **p=0.008**. Mechanism classified as **passive_filtering** on t0030&#x27;s inherited thresholds. The preferred direction stays pinned near **40°** across the full...
+
+## Brainstorm results session 8
+ID: t0040_brainstorm_results_8
+Completed: 2026-04-24
+Short description: Eighth brainstorm: cross-task test-vs-literature audit; approve four correction tasks (L/lambda analysis, GABA ladder, Nav1.6+Kv3+NMDA, Schachter re-test); reject one suggestion and reprioritise four.
+Result summary: Results Summary: Brainstorm Session 8 Summary Eighth strategic brainstorm, run on 2026-04-24 after the t0037–t0039 merges. The session produced a cross-task audit comparing every DSGC simulation test we have run against published data, and approved four follow-up tasks (t0041–t0044) that target the discrepancies. One suggestion was rejected and four were reprioritised from high to medium. Session Overview Date: 2026-04-24. Duration: ~90 min. The researcher requested a master table of every test plus a side-by-side comparison to published data, with the explicit purpose of identifying discrepancies and designing corrections. Phase 1 aggregated project state (39 tasks total, 37 completed, 1...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -386,9 +393,13 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0039_distal_dend
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
+        <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
+        <id>t0042_fine_grained_null_gaba_ladder_t0022</id>
+        <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
+        <id>t0044_schachter_retest_on_t0043</id>
       </source_ids>
       <content>
-Planned or active tasks: 2
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -553,6 +564,317 @@ paper.
 * Skip `setup-machines` / `teardown` (local only).
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
+
+## Electrotonic-length collapse analysis of t0034 and t0035
+ID: t0041_electrotonic_length_collapse_t0034_t0035
+Status: not_started
+Effective date: unknown
+Short description: Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
+Dependencies: t0034_distal_dendrite_length_sweep_t0024, t0035_distal_dendrite_diameter_sweep_t0024
+
+#### Source Suggestion
+
+S-0035-01 (zero-cost L/lambda collapse analysis of t0034 length and t0035 diameter data).
+
+#### Motivation
+
+t0034 (distal-length sweep on t0024) and t0035 (distal-diameter sweep on t0024) together establish a
+~25–30x asymmetry in DSI sensitivity: length slope -0.126 (p=0.038) vs diameter slope +0.004
+(p=0.88). Cable theory predicts this asymmetry because electrotonic length scales as L / sqrt(d * Rm
+/ (4 * Ra)) — linearly in raw length, but as 1/sqrt(d) in raw diameter. If the cable-theory
+prediction is tight, primary DSI from both sweeps should collapse onto a single DSI-vs-L/lambda
+curve.
+
+Confirming the collapse would allow the t0033 morphology + channel optimiser to parameterise
+morphology in 1-D (electrotonic length) rather than 2-D (raw length × raw diameter), eliminating
+diameter as a spurious degree of freedom and reducing the search-space size.
+
+#### Objective
+
+For every (length multiplier, diameter multiplier) operating point in the combined t0034 ∪ t0035
+dataset, compute the electrotonic length L/lambda of the swept distal section using the t0024
+baseline biophysics (Rm, Ra from the Poleg-Polsky-2016 parameter backbone). Plot primary DSI and
+vector-sum DSI vs L/lambda for both sweeps on the same axes. Test whether the two sweeps collapse
+onto one curve with Pearson r &gt; 0.9, and report the residual variance attributable to non-cable
+effects.
+
+#### Scope
+
+* Zero simulation cost. No NEURON invocations. Pure post-hoc analysis on the existing t0034 and
+  t0035 trial-level CSV outputs.
+* Use only the primary-DSI and vector-sum-DSI per-trial outputs; do not re-derive quantities from
+  raw spike trains.
+* Input data: both sweeps&#x27; trial-level CSVs in their respective `results/` folders.
+* Output: one answer asset documenting the collapse test, one figure showing primary DSI and
+  vector-sum DSI on a common L/lambda axis, and a one-paragraph recommendation for the t0033
+  parameterisation.
+
+#### Deliverables
+
+* `assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/` — full answer asset
+  per the answer specification.
+* `results/images/electrotonic_length_collapse.png` — overlay of both sweeps.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections.
+* `results/metrics.json` — at minimum the Pearson r between the two sweeps on the common L/lambda
+  axis, the residual RMSE after fitting a single curve, and the recommendation verdict
+  (collapse-confirmed / collapse-rejected).
+
+#### Out of Scope
+
+* No new simulation runs on any testbed.
+* No modifications to t0022, t0024, or the t0033 plan.
+* No PDF re-reading of Kim 2014 or Sivyer 2013 (still blocked on paywall access).
+
+#### Anticipated Risks
+
+* The distal section in t0024 may not have a single uniform (Rm, Ra); if it does not, compute a
+  section-weighted average L/lambda and report the approximation in the results.
+* If collapse is weak (Pearson r &lt; 0.7), state this explicitly as a negative result and enumerate
+  the non-cable effects (spike failure at extremes, AR(2) noise correlation) that the collapse model
+  misses.
+
+## Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
+ID: t0042_fine_grained_null_gaba_ladder_t0022
+Status: not_started
+Effective date: unknown
+Short description: Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037&#x27;s 4 nS sweet spot without destabilising preferred direction.
+Dependencies: t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
+
+#### Motivation
+
+t0037 swept null-GABA at {0, 0.5, 1, 2, 4} nS on t0022 and identified a sweet spot at 4 nS (primary
+DSI 0.429, preferred direction 40.8 deg, matching Park 2014&#x27;s in vivo band 0.40–0.60). Below 2 nS
+the cell over-excites and preferred direction randomises. t0039 then showed that at GABA = 4 nS the
+t0022 diameter axis produces a monotonic DSI decline (slope -0.034, p=0.008) — passive-filtering
+rather than Schachter 2010 active amplification.
+
+What t0037 did not probe is the interval between 2 and 4 nS. Brainstorm session 8 requested a
+fine-grained ladder at {3.5, 3.0, 2.5} nS to answer: does t0022 admit a GABA level below 4 nS where
+DSI exceeds 0.5 without destabilising preferred direction? This directly informs whether t0022 is
+usable as an optimisation substrate above its current 0.429 ceiling.
+
+#### Objective
+
+Run the t0037 protocol (12 directions × 10 trials per direction, baseline diameter, V_rest = -60
+mV) at three additional null-GABA levels: 3.5 nS, 3.0 nS, 2.5 nS. Report primary DSI, vector-sum
+DSI, preferred direction, peak firing rate, and null firing rate at each level. Compare against
+t0037&#x27;s 4 nS and 2 nS anchors.
+
+Pass criterion: at any of the three new levels, primary DSI &gt;= 0.50 AND preferred direction
+stability across trials under 10 deg standard deviation. If pass, that GABA level becomes a
+candidate new base parameter for t0022 optimisation; emit a suggestion for a follow-up correction
+task (analogous to t0038) to propagate the new base into t0033.
+
+Fail criterion: all three new levels yield DSI &lt; 0.50 or preferred-direction standard deviation
+&gt; 10 deg. If fail, report that 4 nS is the effective t0022 ceiling and recommend the t0033 optimiser
+&gt; switch substrates to t0024 per S-0034-07.
+
+#### Scope
+
+* Local CPU only. No remote compute. ~1 hour total wall-clock.
+* Reuse the t0037 trial_runner with only the null-GABA parameter changed; no code changes to the
+  testbed.
+* Produce tuning curves (Cartesian and polar) at each GABA level.
+
+#### Out of Scope
+
+* Morphology sweeps (covered by t0039 at 4 nS).
+* Channel-inventory modifications (covered by t0043).
+* Schachter re-test (covered by t0044).
+
+#### Deliverables
+
+* Per-GABA-level tuning-curve CSV + polar plot under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections,
+  explicit Pass/Fail verdict against the criterion above.
+* `results/metrics.json` with primary DSI, vector-sum DSI, preferred direction (mean and sd), peak
+  Hz, and null Hz at each of the three new GABA levels, plus the two t0037 anchors.
+* If Pass: one new suggestion in `results/suggestions.json` proposing a correction task to set the
+  new GABA base value in t0033.
+
+#### Anticipated Risks
+
+* Narrow sampling (three points) may miss a non-monotonic optimum between 2 and 4 nS; if results
+  look non-monotonic, emit a follow-up suggestion for a denser sweep rather than extrapolating.
+* If the cell destabilises at 2.5 nS or 3.0 nS, record the destabilisation metrics (preferred
+  direction sd, coefficient of variation of peak rate) rather than treating those runs as failures.
+
+## Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
+ID: t0043_nav16_kv3_nmda_restoration_t0022
+Status: not_started
+Effective date: unknown
+Short description: Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
+Dependencies: t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
+
+#### Source Suggestion
+
+S-0019-03 primary (implement Nav1.6 / Nav1.2 / Kv1 / Kv3 channels with AIS-specific densities). This
+task covers the Nav1.6 and Kv3 portion of S-0019-03. It also partially covers S-0018-03 (NMDA
+restoration) and S-0022-02 (Nav1.6 distal-AIS density).
+
+#### Motivation
+
+The cross-task audit in brainstorm session 8 (see
+`tasks/t0040_brainstorm_results_8/results/test_vs_literature_table.md`) identifies peak firing rate
+as the most universal mismatch: 15 Hz across t0022 baseline and every t0022-based sweep, vs 30–150
+Hz in every cited published source (Oesch 2005: 148 Hz; Chen 2009: 166 Hz; Sivyer 2013: 80–150
+Hz). The likely causes stack: (a) t0022 uses lumped HHst which lacks Nav1.6 persistent Na current
+and Kv3 fast repolarisation, both of which are needed for high-frequency AP firing; (b) the t0022
+E-I schedule zeros NMDA at both PD and ND BIPs, removing the expected NMDA-mediated gain boost; (c)
+AMPA-only drive caps the effective depolarisation.
+
+The audit also shows that Schachter 2010&#x27;s predicted active-amplification diameter signature is
+absent on every diameter sweep we have run (t0030, t0035, t0039). One candidate explanation is that
+without Nav1.6 / Kv3 in the distal dendrite, the regenerative threshold-crossing regime Schachter
+2010 relies on cannot be recruited.
+
+This task restores the channel inventory and NMDA drive so the peak-rate mismatch can be attacked,
+and so the Schachter re-test in t0044 runs against a model that matches published DSGC channel
+priors.
+
+#### Objective
+
+Produce a new library asset (tentatively `modeldb_189347_dsgc_t0043` or similar) that is a fork of
+the t0022 testbed with three modifications:
+
+1. Nav1.6 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~8 mS/cm^2
+   (per t0019&#x27;s cited DSGC priors). If a Nav1.6 MOD file is not already available, adapt one from
+   the t0019 channel corpus.
+2. Kv3 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~5 mS/cm^2.
+3. NMDA synapse component restored at both PD and ND BIP terminals with conductance matching the
+   Poleg-Polsky 2016 parameter backbone (read from t0008&#x27;s library asset if available, else sourced
+   from the Poleg-Polsky 2016 paper).
+
+Hold the t0037 null-GABA sweet spot of 4 nS as the base parameter per t0038&#x27;s correction. Keep the
+12-direction × 10-trial sweep protocol identical to t0022 / t0037 / t0039 so results are directly
+comparable.
+
+Pass criterion (both must hold):
+
+* Peak firing rate in [40, 80] Hz at V_rest = -60 mV.
+* Primary DSI within +/- 0.1 of the t0037 anchor of 0.429 at the 1.0x baseline diameter.
+
+#### Scope
+
+* Local CPU only. No remote compute. ~6 hours wall-clock including MOD recompilation.
+* Produce a library asset with the modified model plus a baseline 12-direction x 10-trial sweep at
+  V_rest = -60 mV, GABA = 4 nS.
+* Write a test harness that can be reused by t0044 for the diameter sweep.
+
+#### Out of Scope
+
+* Nav1.2 and Kv1 (part of the fuller S-0019-03 scope, deferred).
+* Morphology sweeps (covered by t0044 which uses this task&#x27;s output as substrate).
+* V_rest sweep (covered by t0026 on the prior testbed; a re-run on the new testbed could be a
+  follow-up suggestion emitted from this task).
+
+#### Deliverables
+
+* `assets/library/modeldb_189347_dsgc_t0043/` — library asset with the modified model, compiled
+  MOD files, and baseline sweep driver.
+* Baseline 12-direction x 10-trial sweep CSV under `results/`.
+* Tuning curve (Cartesian and polar) under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections and an
+  explicit Pass/Fail verdict against both criteria above.
+* `results/metrics.json` with baseline primary DSI, vector-sum DSI, preferred direction, peak Hz,
+  null Hz, and a boolean `peak_rate_pass` and `dsi_preserved_pass`.
+* If Pass: the library asset is fit for use as t0044&#x27;s substrate. If Fail: emit a suggestion for a
+  follow-up calibration task (BIP burst rate + AMPA scale; see S-0040-01 or analogous) and stop
+  before t0044.
+
+#### Anticipated Risks
+
+* Nav1.6 MOD files in the t0019 corpus may not compile under NEURON 8.2.7 without adaptation; budget
+  time for MOD debugging.
+* Adding Nav1.6 may push the cell into runaway firing if the Kv3 density is too low; tune Kv3 first,
+  Nav1.6 second.
+* Restoring NMDA may break the t0037 4 nS sweet spot by over-exciting at the null direction; if this
+  happens, emit a follow-up suggestion to repeat a GABA sweet-spot search on the new testbed.
+
+## Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
+ID: t0044_schachter_retest_on_t0043
+Status: not_started
+Effective date: unknown
+Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
+Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
+
+#### Source Suggestion
+
+S-0002-02 (paired active-vs-passive dendrite experiment to reproduce Schachter 2010 DSI gain ~0.3 -&gt;
+~0.7).
+
+#### Motivation
+
+Three independent diameter sweeps across two testbeds have failed to show Schachter 2010&#x27;s predicted
+active-amplification signature:
+
+* t0030 on t0022 at GABA = 12 nS: slope +0.008 (p=0.177), DSI pinned at 1.000 (deterministic
+  schedule saturates the metric).
+* t0035 on t0024 (AR(2) stochastic) at paper-default GABA: slope +0.004 (p=0.88), flat.
+* t0039 on t0022 at GABA = 4 nS (t0037 sweet spot): slope -0.034 (p=0.008), monotonic decline
+  consistent with passive filtering rather than the predicted concave-down interior peak.
+
+One candidate explanation, surfaced in brainstorm session 8&#x27;s cross-task audit, is that lumped HHst
+lacks the distal Nav1.6 and Kv3 channels needed to recruit the regenerative threshold-crossing
+regime Schachter 2010 relies on. t0043 fixes that inventory and restores NMDA. If Schachter 2010 is
+correct and our previous null results were confounded by the channel gap, the same 7-diameter sweep
+on the t0043 substrate should show a concave-down DSI-vs-diameter curve with a significant negative
+quadratic coefficient.
+
+If the curve is still monotonic after t0043, we can close the Schachter 2010 hypothesis on the
+Poleg-Polsky-derived morphology and commit to a passive-filtering framing for the t0033 optimiser.
+
+#### Objective
+
+Run a 7-diameter distal-section sweep (multipliers 0.5, 0.67, 0.85, 1.0, 1.2, 1.5, 2.0 — same grid
+as t0030, t0039, t0035) on the t0043 library asset at GABA = 4 nS. Protocol matches t0039: 12
+directions x 10 trials per direction per multiplier, V_rest = -60 mV. Primary outcome is the
+DSI-vs-diameter curve shape; fit both linear and quadratic models and report the coefficients with
+p-values.
+
+Pass criterion (Schachter 2010 signature recovered):
+
+* Quadratic fit coefficient significantly negative (p &lt; 0.05) with a peak at an interior multiplier
+  (between 0.6 and 1.5).
+
+Fail criterion (Schachter hypothesis rejected on Poleg-Polsky morphology):
+
+* Monotonic (linear fit significant, quadratic not significant), or no significant trend. In this
+  case, emit a suggestion to formally close S-0002-02 and to add a clarifying note to the t0033 plan
+  recommending the passive-filtering framing.
+
+#### Scope
+
+* Local CPU only. No remote compute. ~8 hours wall-clock.
+* Use the t0043 library asset. Do not modify the channel inventory; this is a pure morphology sweep.
+* Keep per-trial stochasticity identical to t0039 so the results are directly comparable.
+
+#### Out of Scope
+
+* Nav ablation (covered by S-0029-02, currently medium priority).
+* Length-axis sweep on the t0043 substrate (possible follow-up, not this task).
+* Re-running on t0024 (possible follow-up under S-0039-01).
+
+#### Deliverables
+
+* 7-diameter tuning-curve CSVs under `results/`.
+* Overlay plot of DSI-vs-diameter with linear and quadratic fits under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections and an
+  explicit Schachter-recovered / Schachter-rejected verdict.
+* `results/metrics.json` with the linear slope, quadratic coefficient, and their p-values, plus
+  primary DSI, vector-sum DSI, and peak Hz at each multiplier.
+* `results/compare_literature.md` explicitly comparing the recovered (or absent) curvature against
+  Schachter 2010 and the passive-filtering prediction.
+
+#### Anticipated Risks
+
+* If t0043 fails its own Pass criterion (peak rate or DSI preservation), do not proceed with this
+  task; the substrate is not fit for use.
+* Adding Nav1.6 may change the effective preferred direction; re-seed the E-I schedule only if the
+  preferred direction has shifted by more than 30 deg from the t0037 40.8 deg anchor.
+* Quadratic fits on 7 points are under-powered if noise is high; if the quadratic p-value is
+  borderline (0.05 &lt; p &lt; 0.15), emit a suggestion for a denser 11-point sweep rather than declaring
+  a verdict.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -13973,6 +14295,164 @@ See `results/suggestions.json` for full follow-up list. Highlights:
 | REQ-11 | Generate 4 canonical charts | Done | `results/images/` has all 4 PNGs |
 | REQ-12 | Preflight (3×3×2) must pass before full sweep | Done | 18 trials completed before launching full sweep |
 | REQ-13 | All ARF verificators pass with 0 errors | Done | `reporting` step will confirm |
+      </content>
+    </section>
+    <section id="t0040_brainstorm_results_8-results-detailed" source_kind="file">
+      <title>t0040_brainstorm_results_8 — Brainstorm results session 8 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0040_brainstorm_results_8</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0040_brainstorm_results_8/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Eighth strategic brainstorm. Four new tasks approved (t0041, t0042, t0043, t0044). Five suggestions
+corrected (1 rejected, 4 reprioritised). A cross-task test-vs-literature audit was produced at the
+researcher&#x27;s explicit request and saved as `results/test_vs_literature_table.md`; the same tables
+are reproduced in this file under Methodology for convenience and embedded in `logs/session_log.md`
+as part of the session transcript.
+
+#### Methodology
+
+Followed the `/human-brainstorm` skill workflow end-to-end:
+
+1. **Phase 1 — project state review.** Ran `aggregate_tasks`, `aggregate_suggestions --uncovered`,
+   and `aggregate_costs`. Found the `aggregate_answers.py` script referenced in the skill does not
+   exist in this repo; read answer assets directly via glob and Read tool instead. Delegated the
+   cross-task synthesis to a subagent that read every `results_summary.md` and
+   `compare_literature.md` for tasks completed since the last brainstorm (t0033–t0039) and
+   produced the master test table plus the published-data comparison table below.
+2. **Phase 1.5 — clarification.** Researcher skipped the standard clarifying questions and
+   requested a cross-task audit table directly: &quot;summarise in a big table and also compare this to
+   published data ... we need to assess this and find ways to correct for this in our models&quot;.
+3. **Phase 2 — discussion.** Round 1 proposed seven correction strategies (C1–C7). Researcher
+   selected C4 + C5 + C1 + C6. Round 2 proposed 5 suggestion corrections; researcher confirmed all
+   5\. Round 3 consolidated decisions and received explicit confirmation (&quot;Confirm 1-3&quot;) plus a
+   deferral on Sheffield paper retrieval and a requirement to save the comparison table inside the
+   brainstorm task folder.
+4. **Phase 3 — task-id reservation.** Highest existing task_index was 39 (t0039). Reserved 40 for
+   this brainstorm-results container; child tasks auto-indexed by `/create-task` to 41–44.
+5. **Phase 4 — branch + folder scaffold.** Branched from main to `task/t0040_brainstorm_results_8`
+   and created the full mandatory folder structure.
+6. **Phase 5 — apply decisions.** Wrote five correction files in `corrections/`. Chained
+   `/create-task` four times for t0041–t0044. Saved the cross-task audit table as
+   `results/test_vs_literature_table.md`.
+7. **Phase 6 — finalise.** Wrote results, session log, step logs, ran the session-capture utility,
+   ran all four verificators, rebuilt `overview/`, formatted markdown with flowmark, committed,
+   pushed, opened a PR, ran `verify_pr_premerge`, and merged.
+
+##### Master Test Table
+
+| Task | Testbed | Swept | Range | N | Primary DSI | Vec-sum DSI | Pref dir | Peak Hz | Null Hz | Key finding |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| t0008 | t0008 rotation-proxy | none | — | 240 | 0.316 | 0.366 | 0–120 | 18.1 | 9.4 | Spatial-rotation proxy understates DSI by ~0.48 vs Poleg-Polsky target |
+| t0020 | t0008 gabaMOD-swap | none | — | 40 | 0.784 | — | 0 / 180 | 14.9 | 1.8 | Native gabaMOD protocol recovers DSI; peak remains depressed |
+| t0022 | t0022 dendritic E-I | none | — | 120 | 1.000 | — | 120 | 15 | 0 | Deterministic per-dendrite 12 nS GABA pins null firing at 0 Hz |
+| t0024 | t0024 AR(2) rho=0.6 | none | — | 800 | 0.776 | 0.776 | 0 | 5.15 | 0.74 | Correlation-drop signature not reproduced; DSI overshoots paper target |
+| t0026 t0022 | t0022 | V_rest | -90 to -20 mV | 96 | 0.046–0.656 | — | stable 40 | 6–129 | 0 | DSI peaks at -60 mV; null stays pinned at 0 Hz |
+| t0026 t0024 | t0024 | V_rest | -90 to -20 mV | 960 | 0.361–0.675 | — | unstable | 1.5–7.6 | 0.5–1.5 | U-shaped DSI profile; no firing-rate collapse |
+| t0029 | t0022 | distal L x | 0.5–2.0 | 840 | 1.000 pinned | 0.643–0.664 | 120 | 14–15 | 0 | DSI pinned; Dan2018 and Sivyer2013 not falsifiable |
+| t0030 | t0022 | distal d x | 0.5–2.0 | 840 | 1.000 pinned | 0.635–0.665 | 116→84 | 13–15 | 0 | Vec-sum DSI flat p=0.177; Schachter and passive-filtering unsupported |
+| t0034 | t0024 | distal L x | 0.5–2.0 | 840 | 0.545–0.774 | 0.357–0.507 | 0 / 30 / 330 jumps | 3.4–5.7 | 0.7–1.0 | Slope -0.126 p=0.038; Dan2018 falsified on t0024 |
+| t0035 | t0024 | distal d x | 0.5–2.0 | 840 | 0.680–0.808 | 0.417–0.463 | 0 stable | 4.2–5.4 | 0.5–0.8 | Flat p=0.88; length/diameter cable asymmetry confirmed |
+| t0036 | t0022 @ 6 nS | distal d x | 0.5–2.0 | 840 | 1.000 pinned | 0.579–0.590 | 116→59 | 13–15 | 0 | Halving GABA to 6 nS fails to unpin |
+| t0037 | t0022 | null-GABA | 0, 0.5, 1, 2, 4 nS | 600 | 0.167–0.429 | 0.058–0.259 | stable at 4 nS only | 15 | 6 (at 4 nS) | Sweet spot 4 nS: DSI 0.429 matches Park2014 |
+| t0039 | t0022 @ 4 nS | distal d x | 0.5–2.0 | 840 | 0.368–0.429 | — | 37–41 stable | 13–15 | 6 | Slope -0.034 p=0.008; passive filtering, not Schachter |
+
+##### Published-Data Comparison Table
+
+| Our task | Metric | Our value | Published source | Published value | Agreement | Gap |
+| --- | --- | --- | --- | --- | --- | --- |
+| t0008 | DSI | 0.316 | Poleg-Polsky 2016 | ~0.80 | MISMATCH | -0.48 (protocol proxy) |
+| t0008 | Peak Hz | 18.1 | t0004 envelope | 40–80 | MISMATCH | -22 Hz below floor |
+| t0020 | DSI | 0.784 | Poleg-Polsky 2016 | ~0.80 | MATCH | -0.016 |
+| t0020 | Peak Hz | 14.9 | t0004 envelope | 40–80 | MISMATCH | -25 Hz |
+| t0022 | DSI | 1.000 | Park 2014 / Oesch 2005 | 0.65–0.85 | MISMATCH | +0.15 to +0.35 (schedule artefact) |
+| t0022 | Peak Hz | 15 | Oesch 2005 | ~30–40 | MISMATCH | -15 to -25 Hz |
+| t0024 | 8-dir DSI corr | 0.818 | de Rosenroll 2026 | 0.39 | MISMATCH | +0.43 overshoot |
+| t0024 | 8-dir DSI uncorr | 0.835 | de Rosenroll 2026 | 0.25 | MISMATCH | +0.59 overshoot |
+| t0024 | DSI drop corr to uncorr | 0.000 | de Rosenroll 2026 | 0.36 | MISMATCH | sign and magnitude fail |
+| t0024 | Peak Hz | 5.15 | de Rosenroll 2026 | ~30 | MISMATCH | -25 Hz |
+| t0026 t0022 | Peak at -60 mV Hz | 15 | Oesch 2005 | 148 | MISMATCH | -133 Hz (10x gap) |
+| t0026 t0024 | DSI at -60 mV | 0.446 | de Rosenroll 2026 / Hanson 2019 | 0.50 / 0.33 | PARTIAL | -0.054 below deR threshold |
+| t0029 | DSI slope vs length | 0.000 | Dan 2018 | +0.118 | MISMATCH | both hypotheses untestable (pinned) |
+| t0030 | DSI slope vs diameter | +0.008 p=0.18 | Schachter 2010 | positive | MISMATCH | magnitude negligible |
+| t0034 | DSI slope vs length | -0.126 p=0.038 | Dan 2018 | +0.118 | MISMATCH | sign inverted |
+| t0034 | DSI at 1.0x | 0.770 | Schachter 2010 | 0.80 | MATCH | -0.030 |
+| t0035 | DSI slope vs diameter | +0.004 p=0.88 | Schachter 2010 | positive | MISMATCH | no signal |
+| t0036 | Primary DSI at 6 nS | 1.000 pinned | Schachter 2010 | 0.80 | MISMATCH | +0.20 overshoot; rescue failed |
+| t0037 | DSI at 4 nS | 0.429 | Park 2014 | 0.40–0.60 | MATCH | in band |
+| t0039 | DSI slope vs diameter | -0.034 p=0.008 | Schachter 2010 | concave interior peak | MISMATCH | wrong shape → passive filtering |
+| t0039 | Peak Hz | 15 | Schachter / Sivyer | 40–80 | MISMATCH | -25 to -65 Hz |
+
+Full 35-row comparison and the 13-row master table live in `results/test_vs_literature_table.md`. A
+21-row highlights view is shown above.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 4 (t0041, t0042, t0043, t0044) |
+| Suggestions rejected | 1 (S-0030-06) |
+| Suggestions reprioritised | 4 (S-0029-01, S-0029-02, S-0030-02, S-0010-01) |
+| Tasks cancelled | 0 |
+| Tasks updated | 0 |
+| Corrections written | 5 |
+| Comparison table rows (master) | 13 |
+| Comparison table rows (literature) | 35 |
+| Session duration | ~90 minutes |
+| Session cost | $0.00 |
+
+#### Limitations
+
+* Planning task only; no simulations run, no optimiser prototyping.
+* Cross-task audit relies on numbers reported in each task&#x27;s `compare_literature.md`; no PDF
+  re-reading this session. Where the comparison files already noted &quot;partial abstract only&quot; (Kim
+  2014, Sivyer 2013 via t0027, t0031), the audit carries that limitation forward.
+* `aggregate_answers.py` script referenced in the brainstorm skill does not exist in this repo;
+  answer assets were read directly. Same workaround was used in t0032&#x27;s session. Filed mentally as a
+  framework-infrastructure issue; no task spawned this session.
+* Backlog of 151 uncovered suggestions remains (now 146 after this session&#x27;s five corrections).
+  Further pruning deferred.
+
+#### Files Created
+
+* `tasks/t0040_brainstorm_results_8/__init__.py`
+* `tasks/t0040_brainstorm_results_8/task.json`
+* `tasks/t0040_brainstorm_results_8/task_description.md`
+* `tasks/t0040_brainstorm_results_8/step_tracker.json`
+* `tasks/t0040_brainstorm_results_8/plan/plan.md`
+* `tasks/t0040_brainstorm_results_8/research/research_{papers,internet,code}.md`
+* `tasks/t0040_brainstorm_results_8/corrections/suggestion_S-0030-06.json`
+* `tasks/t0040_brainstorm_results_8/corrections/suggestion_S-0029-01.json`
+* `tasks/t0040_brainstorm_results_8/corrections/suggestion_S-0029-02.json`
+* `tasks/t0040_brainstorm_results_8/corrections/suggestion_S-0030-02.json`
+* `tasks/t0040_brainstorm_results_8/corrections/suggestion_S-0010-01.json`
+* `tasks/t0040_brainstorm_results_8/results/{metrics,costs,remote_machines_used,suggestions}.json`
+* `tasks/t0040_brainstorm_results_8/results/results_summary.md`
+* `tasks/t0040_brainstorm_results_8/results/results_detailed.md`
+* `tasks/t0040_brainstorm_results_8/results/test_vs_literature_table.md`
+* `tasks/t0040_brainstorm_results_8/logs/session_log.md`
+* `tasks/t0040_brainstorm_results_8/logs/steps/00{1,2,3,4}_*/step_log.md`
+* `tasks/t0040_brainstorm_results_8/logs/sessions/capture_report.json` (+ any JSONL transcripts)
+* `tasks/t0041_*/task.json`, `task_description.md`
+* `tasks/t0042_*/task.json`, `task_description.md`
+* `tasks/t0043_*/task.json`, `task_description.md`
+* `tasks/t0044_*/task.json`, `task_description.md`
+
+#### Verification
+
+* `verify_task_file.py t0040_brainstorm_results_8` — target 0 errors.
+* `verify_corrections.py t0040_brainstorm_results_8` — target 0 errors across 5 correction files.
+* `verify_suggestions.py t0040_brainstorm_results_8` — target 0 errors.
+* `verify_logs.py t0040_brainstorm_results_8` — target 0 errors; `LG-W005` acceptable per skill
+  guidance.
+* `verify_pr_premerge.py t0040_brainstorm_results_8 --pr-number &lt;N&gt;` — target 0 errors.
+* `/create-task` auto-assigned task_index 41, 42, 43, 44 to the four child tasks, preserving the
+  Phase-3 ordering invariant (brainstorm-results task_index &lt; all child task_indices).
       </content>
     </section>
   </sections>

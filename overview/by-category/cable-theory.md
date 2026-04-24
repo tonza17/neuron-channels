@@ -582,7 +582,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (18 open, 3 closed)
+## Suggestions (17 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -674,23 +674,6 @@ the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scali
 fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
 'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
 cross-paper comparison. Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Zero-cost L/lambda collapse analysis of all t0034 length and
-t0035 diameter data</strong> (S-0035-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
-
-Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) trials against
-the computed distal electrotonic length L/lambda, using morphology and passive parameters
-already stored in each task's outputs. If the length and diameter data collapse onto a single
-curve, this confirms creative_thinking.md's primary hypothesis: the length/diameter asymmetry
-is a consequence of cable theory (L/lambda is linear in length but scales as 1/sqrt(d)). No
-new simulations required; ~1-2 hours of re-analysis work only. Recommended task types:
-data-analysis.
 
 </details>
 

@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (25 open, 2 closed)
+## Suggestions (23 open, 4 closed)
 
 <details>
 <summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
@@ -985,7 +985,7 @@ task types: experiment-run, data-analysis.
 <summary>🧪 <strong>Distal Nav ablation crossed with distal-dendrite length sweep
 on t0022</strong> (S-0029-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0029_distal_dendrite_length_sweep_dsgc](../../tasks/t0029_distal_dendrite_length_sweep_dsgc/)
 
 HWHM in t0029 oscillates non-monotonically across length multipliers (71.7 deg at 1.5x vs
@@ -1276,29 +1276,6 @@ voltage-gated-channel theory and DSGC-specific parameters.
 </details>
 
 <details>
-<summary>🧪 <strong>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with
-AIS-specific conductance densities in downstream DSGC model</strong>
-(S-0019-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
-[t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
-
-The answer asset nav-kv-combinations-for-dsgc-modelling produces a 6-point specification for
-DSGC voltage-gated-channel distribution in NEURON extending the synaptic-integration
-constraints from t0018. The downstream DSGC compartmental-model build task must implement: (1)
-Nav1.6 with V_half around -45 mV and fast kinetics at distal AIS (densities 2500-5000 pS/um2),
-(2) Nav1.2 with V_half around -32 mV at proximal AIS and soma (lower density around 100-500
-pS/um2), (3) Kv1.1/Kv1.2 delayed-rectifier with V_half -40 to -50 mV at AIS (density 100-500
-pS/um2), (4) Fohlmeister-Miller HH rate functions with Q10 near 3 for temperature scaling (all
-mechanisms tested at 22 and 32 degC), (5) passive soma/dendrite compartments with no Nav
-except for low-density Nav1.2 co-expression on proximal dendrites, (6) named fitting
-objectives for AP threshold (AIS initiation at -55 mV +/- 5 mV), AP width (0.5-1.0 ms at 32
-degC), and backpropagation attenuation (50% by 100 um into dendrite) to reproduce
-Fohlmeister-Miller RGC firing properties.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
@@ -1313,24 +1290,6 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
-Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
-[t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
-
-Schachter2010 reports that switching DSGC dendrites from passive to active (adding
-Fohlmeister-like g_Na and g_K) raises DSI from ~0.3 to ~0.7 on the same morphology and
-synaptic input, and Oesch2005 provides the TTX-sensitive dendritic Na+ spike patch-clamp data
-that anchor this claim. Run two paired simulations that differ only in dendritic g_Na (0 vs
-Schachter2010 density), holding morphology, synapse placement, and stimulus identical, and
-report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
-isolates the dendritic-conductance contribution from morphology and synaptic effects.
-Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
