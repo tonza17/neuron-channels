@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json (multi-variant), costs.json, remote_machines_used.json; render charts.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-24T23:45:23Z",
-      "completed_at": null,
+      "completed_at": "2026-04-24T23:49:53Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
