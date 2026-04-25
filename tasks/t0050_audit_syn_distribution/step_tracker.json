@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0007, t0046, t0049 are completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T11:18:09Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T11:18:41Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
