@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\code\extract_coordinates.py", line 283, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\code\extract_coordinates.py", line 266, in main
+    records: list[SynapseAuditRecord] = extract_synapse_audit(h=h)
+                                        ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\code\extract_coordinates.py", line 169, in extract_synapse_audit
+    assert abs(origin_check) < 1e-6, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: h.distance(0, soma(0.5)) returned 0.5 != 0; origin not set.

@@ -1,0 +1,18 @@
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+Changed dt
+[extract] simplerun completed: peak_psp_mv=25.143, baseline_mean_mv=6.021
+[extract] soma centroid (x,y,z) = (104.576, 121.779, 47.494) um
+[extract] CSV written to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\results\synapse_coordinates.csv
+[extract] CSV shape: (282, 17)
+[extract] First 5 rows:
+   index  bip_locx_um  bip_locy_um   bip_z_um  sac_inhib_locx_um  sac_inhib_locy_um  sac_inhib_z_um  sac_exc_locx_um  sac_exc_locy_um  sac_exc_z_um parent_section_name  parent_section_length_um  parent_section_centroid_x_um  parent_section_centroid_y_um  parent_section_centroid_z_um  path_distance_um  radial_distance_from_soma_um
+0      0   104.798500   123.224499  47.494343         104.798500         123.224499       47.494343       104.798500       123.224499     47.494343                soma                 11.433412                    104.576142                    121.779429                     47.494343          0.000000                      0.000000
+1      1    16.259800   144.141006  32.121212          16.259800         144.141006       32.121212        16.259800       144.141006     32.121212             dend[0]                 18.878122                     21.772900                    148.282242                     32.121212        219.912721                     88.289916
+2      2   103.778000   118.912498  47.040667         103.778000         118.912498       47.040667       103.778000       118.912498     47.040667             dend[1]                 15.036373                    102.149289                    117.191555                     47.040667         13.234893                      5.209993
+3      3   100.648499   114.140999  48.989901         100.648499         114.140999       48.989901       100.648499       114.140999     48.989901             dend[2]                  2.306764                    100.648499                    114.140999                     48.989901         21.906461                      8.718296
+4      4    99.975449   113.378502  50.000000          99.975449         113.378502       50.000000        99.975449       113.378502     50.000000             dend[3]                  2.739576                     99.865673                    112.500000                     50.000000         24.429630                     10.703954
+[extract] 282 synapses extracted; BIP/SACexc/SACinhib parent sections match for all indices
