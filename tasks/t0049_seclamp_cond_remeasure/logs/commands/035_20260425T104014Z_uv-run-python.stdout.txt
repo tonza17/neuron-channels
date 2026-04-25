@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\research\research_code.md
+
+[32m[1mPASSED[0m — no errors or warnings
