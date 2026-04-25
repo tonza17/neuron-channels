@@ -5,14 +5,14 @@
   "name": "Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper",
   "short_description": "Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0007_install_neuron_netpyne",
     "t0046_reproduce_poleg_polsky_2016_exact",
     "t0049_seclamp_cond_remeasure"
   ],
   "start_time": "2026-04-25T11:15:53Z",
-  "end_time": null,
+  "end_time": "2026-04-25T12:11:00Z",
   "expected_assets": {
     "answer": 1
   },
