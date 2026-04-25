@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0049_seclamp_cond_remeasure",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0049_seclamp_cond_remeasure/plan/plan.md",
+  "exit_code": 0,
+  "duration_seconds": 0.633,
+  "started_at": "2026-04-25T09:56:26Z",
+  "completed_at": "2026-04-25T09:56:27Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0049_seclamp_cond_remeasure",
+  "stdout_file": "008_20260425T095626Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "008_20260425T095626Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
