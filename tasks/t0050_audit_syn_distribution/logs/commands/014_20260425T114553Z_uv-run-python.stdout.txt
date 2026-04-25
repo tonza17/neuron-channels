@@ -1,0 +1,8 @@
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+Changed dt
+[extract] simplerun completed: peak_psp_mv=25.143, baseline_mean_mv=6.021
+[extract] soma centroid (x,y,z) = (104.576, 121.779, 47.494) um

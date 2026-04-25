@@ -1,0 +1,140 @@
+{
+  "task_id": "t0050_audit_syn_distribution",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0050_audit_syn_distribution branch from main.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:16:54Z",
+      "completed_at": "2026-04-25T11:17:52Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0007, t0046, t0049 are completed.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:18:09Z",
+      "completed_at": "2026-04-25T11:18:41Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create task folder structure and initial files.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:18:48Z",
+      "completed_at": "2026-04-25T11:19:26Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: paper text already exhaustively reviewed in t0046's research_papers.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: no new external information needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Identify placeBIP() x-coordinate convention, soma 3D access pattern, h.distance() origin requirements; review t0046's read_synapse_coords pattern.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:19:58Z",
+      "completed_at": "2026-04-25T11:33:21Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Design the synapse-coordinate extraction wrapper and per-channel spatial-statistics analysis.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:33:39Z",
+      "completed_at": "2026-04-25T11:41:48Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: local CPU only.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Extract synapse coordinates, compute per-channel spatial statistics, populate the answer asset.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:42:13Z",
+      "completed_at": "2026-04-25T11:59:13Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: hypothesis-test design with explicit H1 verdict; no out-of-the-box analysis required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results files; render per-channel x-coordinate histograms, radial-distance histograms, PD/ND count bar chart.",
+      "status": "completed",
+      "started_at": "2026-04-25T11:59:39Z",
+      "completed_at": "2026-04-25T12:03:54Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: this task IS the literature comparison; compare-literature would duplicate it.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions based on H1 verdict and any newly identified spatial-distribution discrepancies.",
+      "status": "completed",
+      "started_at": "2026-04-25T12:04:20Z",
+      "completed_at": "2026-04-25T12:09:06Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task.json completed, prepare PR.",
+      "status": "completed",
+      "started_at": "2026-04-25T12:09:29Z",
+      "completed_at": "2026-04-25T12:10:53Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

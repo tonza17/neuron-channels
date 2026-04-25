@@ -1,0 +1,8 @@
+[stats] Wrote 9 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\results\per_channel_density_stats.csv
+
+[stats] Headline midline = soma_x
+| Channel | count_total | count_side_a | count_side_b | ratio | symmetric? |
+|---|---|---|---|---|---|
+| NMDA + AMPA (BIP) | 282 | 171 | 111 | 1.541 | False |
+| SAC excitatory (ACh) | 282 | 171 | 111 | 1.541 | False |
+| SAC inhibitory (GABA) | 282 | 171 | 111 | 1.541 | False |

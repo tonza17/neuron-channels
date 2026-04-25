@@ -1,0 +1,23 @@
+{
+  "spec_version": "2",
+  "answer_id": "synapse-distribution-audit-deposited-vs-paper",
+  "question": "Does the deposited Poleg-Polsky 2016 DSGC's spatial distribution of NMDA, AMPA, and GABA synapses match the paper's text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse under somatic SEClamp?",
+  "short_title": "Synapse distribution audit: deposited DSGC vs Poleg-Polsky 2016",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0046_reproduce_poleg_polsky_2016_exact",
+    "t0047_validate_pp16_fig3_cond_noise",
+    "t0049_seclamp_cond_remeasure"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0050_audit_syn_distribution",
+  "date_created": "2026-04-25"
+}

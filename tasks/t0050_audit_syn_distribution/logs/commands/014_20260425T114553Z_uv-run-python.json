@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0050_audit_syn_distribution",
+  "command": "uv run python -u -m tasks.t0050_audit_syn_distribution.code.extract_coordinates",
+  "exit_code": 1,
+  "duration_seconds": 10.155,
+  "started_at": "2026-04-25T11:45:53Z",
+  "completed_at": "2026-04-25T11:46:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0050_audit_syn_distribution",
+  "stdout_file": "014_20260425T114553Z_uv-run-python.stdout.txt",
+  "stderr_file": "014_20260425T114553Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 13,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260425T112103Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260425T112105Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260425T112608Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260425T113114Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 014_20260425T114553Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 018_20260425T120518Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 021_20260425T120537Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 9 warning(s)

@@ -1,0 +1,2 @@
+paths.RESULTS_DIR= C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0050_audit_syn_distribution\tasks\t0050_audit_syn_distribution\results
+ChannelKind= [<ChannelKind.BIP: 'BIPsyn'>, <ChannelKind.SAC_EXC: 'SACexcsyn'>, <ChannelKind.SAC_INHIB: 'SACinhibsyn'>]
