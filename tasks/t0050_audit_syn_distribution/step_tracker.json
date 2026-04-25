@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Design the synapse-coordinate extraction wrapper and per-channel spatial-statistics analysis.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T11:33:39Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T11:41:48Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
