@@ -1,0 +1,16 @@
+{
+  "task_id": "t0050_audit_syn_distribution",
+  "checked_at": "2026-04-25T11:18:09Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0007_install_neuron_netpyne", "status": "completed", "satisfied": true},
+    {"task_id": "t0046_reproduce_poleg_polsky_2016_exact", "status": "completed", "satisfied": true},
+    {"task_id": "t0049_seclamp_cond_remeasure", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "budget_check": {
+    "ran": false,
+    "reason": "task type data-analysis has has_external_costs: false; budget gate skipped per execute-task SKILL.md"
+  }
+}
