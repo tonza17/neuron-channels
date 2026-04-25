@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0050_audit_syn_distribution branch from main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T11:16:54Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T11:17:52Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
