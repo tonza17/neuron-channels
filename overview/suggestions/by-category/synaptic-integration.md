@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-41 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **35 open** (14 high,
-18 medium, 3 low), **6 closed**.
+44 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **38 open** (16 high,
+19 medium, 3 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -62,6 +62,31 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
 the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
 
@@ -109,6 +134,30 @@ at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs
 scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
 Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
 range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
 
 </details>
 
@@ -799,6 +848,30 @@ their spatial distributions on a DSGC) so downstream DSGC simulation tasks do no
 re-implement the presynaptic waveform construction. The asset should expose a pure-function
 API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse
 conductance time courses. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>SEClamp Fig 3A-E re-measurement across multiple V_clamp levels
+(-85, -65, -45 mV) to vary GABA driving force</strong> (S-0049-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0049 ran SEClamp at the single V_clamp = -65 mV which yields a small GABA driving force (-5
+mV vs E_GABA = -60 mV) and amplifies noise on the GABA conductance estimate (SD +/- 1.98 nS at
+PD). Repeat the per-channel isolation sweep at V_clamp in {-85, -65, -45} mV. The -85 mV
+condition gives a 25 mV GABA driving force (5x improvement in GABA SNR) and inverts the
+AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force sign and
+increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across
+V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on
+holding voltage. Recommended task types: experiment-run.
 
 </details>
 

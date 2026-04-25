@@ -8,23 +8,27 @@
 
 ## 2026-04-25 (3)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0049 — <strong>Re-measure Fig 3A-E conductances under somatic SEClamp
+<summary>✅ 0049 — <strong>Re-measure Fig 3A-E conductances under somatic SEClamp
 on the deposited DSGC</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0049_seclamp_cond_remeasure` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-25 |
 | **Dependencies** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | `S-0047-02` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-25T09:35:35Z |
+| **End time** | 2026-04-25T10:42:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
 | **Task folder** | [`t0049_seclamp_cond_remeasure/`](../../../tasks/t0049_seclamp_cond_remeasure/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) |
 
 # Re-measure Fig 3A-E Conductances Under Somatic SEClamp on the Deposited DSGC
 
@@ -208,9 +212,38 @@ The implementation re-uses t0046's library entirely:
 * H0 / H1 / H2 verdict is stated per channel x direction with the numerical test that supports
   it.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: SEClamp Conductance Re-Measurement**
+>
+> **Summary**
+>
+> Measuring per-channel conductance under a somatic SEClamp at -65 mV on the deposited DSGC
+> (gNMDA =
+> 0.5 nS, exptype = control) yields values that lie **between** paper Fig 3A-E targets and
+> t0047's
+> per-synapse-direct measurements — but match **neither** within tolerance. Verdict: **H2
+> (intermediate)** for all 6 channel × direction cells. SEClamp is closer to paper than
+> per-synapse-direct (5-10x reduction from t0047) but still 1.7-5x over paper. **Critically:
+> GABA
+> PD/ND symmetry under SEClamp** (PD = 47.47 nS, ND = 48.04 nS, DSI = -0.006) **contradicts
+> the
+> paper's stated PD ~12.5 / ND ~30 nS** (DSI ≈ -0.41). Modality alone does not reconcile the
+> deposited code with paper Fig 3A-E.
+>
+> **Metrics**
+>
+> * **NMDA SEClamp at gNMDA = 0.5 nS**: PD **13.89 +/- 0.38 nS**, ND **13.71 +/- 0.19 nS**.
+>   Paper: PD
+> ~7.0, ND ~5.0. Delta: PD +98%, ND +174%. PD/ND ratio = **1.01** (paper expects ~1.4 with PD
+> bias).
+> * **AMPA SEClamp at gNMDA = 0.5 nS**: PD **5.93 +/- 0.27 nS**, ND **5.79 +/- 0.19 nS**.
+>   Paper: PD
+> ~3.5, ND ~3.5. Delta: PD +69%, ND +65%. PD/ND ratio = **1.02** (paper expects ~1.0,
+> qualitative
+> match for AMPA-no-DSI claim).
+
+</details>
 
 <details>
 <summary>✅ 0048 — <strong>Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI

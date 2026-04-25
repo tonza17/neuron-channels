@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-25T09:34:37Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-25T10:43:56Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>2955</char_count>
-    <byte_count>2955</byte_count>
-    <estimated_tokens>738</estimated_tokens>
+    <char_count>2993</char_count>
+    <byte_count>2993</byte_count>
+    <estimated_tokens>748</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -72,6 +72,7 @@ Spent: 0.0%
 * t0046_reproduce_poleg_polsky_2016_exact: $0.00
 * t0047_validate_pp16_fig3_cond_noise: $0.00
 * t0048_voff_nmda1_dsi_test: $0.00
+* t0049_seclamp_cond_remeasure: $0.00
       </content>
     </section>
   </sections>

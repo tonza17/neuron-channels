@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(23)](../suggestions/by-category/cable-theory.md) | [Datasets
+(24)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,27 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (19 open, 4 closed)
+## Suggestions (20 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
+locations to test cable-filtering vs spatial-distribution</strong>
+(S-0049-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
+
+t0049 measured SEClamp conductance only at the soma (`h.RGC.soma(0.5)`). The GABA PD/ND
+symmetry collapse at the soma could be due to (a) cable-filtering averaging out local
+asymmetry, or (b) symmetric spatial distribution of GABA synapses across PD/ND-side dendrites.
+To discriminate, insert SEClamp at intermediate dendritic locations along the principal axis
+(e.g., at 25%, 50%, 75% of the dendritic path from soma to the most distal synapse on each
+side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic decay of the
+asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
+persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
+Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive

@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-126 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **111 open** (33
-high, 69 medium, 9 low), **15 closed**.
+129 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **114 open** (35
+high, 70 medium, 9 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -109,6 +109,31 @@ DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-
 crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
 fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
 
 </details>
 
@@ -321,6 +346,30 @@ at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs
 scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
 Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
 range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
 
 </details>
 
@@ -2198,6 +2247,30 @@ their spatial distributions on a DSGC) so downstream DSGC simulation tasks do no
 re-implement the presynaptic waveform construction. The asset should expose a pure-function
 API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse
 conductance time courses. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Repeat SEClamp Fig 3A-E re-measurement at exptype=2
+(Voff_bipNMDA=1) for canonical-control baseline</strong> (S-0049-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0049 ran the SEClamp re-measurement at exptype=control (Voff_bipNMDA=0). t0048 established
+that exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) is the paper-faithful canonical
+control. Repeat the same 32-trial SEClamp sweep (2 directions x 4 channel-isolations x 4
+trials at gNMDA = 0.5 nS, V_clamp = -65 mV) under exptype=2 to establish whether the residual
+NMDA over-amplification (SEClamp PD 13.89 vs paper 7.0) and direction-asymmetry collapse
+persist under voltage-independent NMDA. This locks the canonical SEClamp baseline alongside
+the canonical exptype convention before downstream parameter-tuning work begins. Recommended
+task types: experiment-run.
 
 </details>
 

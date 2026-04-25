@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-23 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **19
-open** (4 high, 13 medium, 2 low), **4 closed**.
+24 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **20
+open** (4 high, 13 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -471,6 +471,32 @@ t0041 used the 177-dendrite mean L (22.63 um) as the baseline for all L/lambda p
 accurate test would compute L/lambda per distal section and aggregate, rather than computing
 L/lambda from an aggregate L. Small refactor of t0041 code; would be free to run since the
 simulation data is already in hand.
+
+</details>
+
+<details>
+<summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
+locations to test cable-filtering vs spatial-distribution</strong>
+(S-0049-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0049 measured SEClamp conductance only at the soma (`h.RGC.soma(0.5)`). The GABA PD/ND
+symmetry collapse at the soma could be due to (a) cable-filtering averaging out local
+asymmetry, or (b) symmetric spatial distribution of GABA synapses across PD/ND-side dendrites.
+To discriminate, insert SEClamp at intermediate dendritic locations along the principal axis
+(e.g., at 25%, 50%, 75% of the dendritic path from soma to the most distal synapse on each
+side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic decay of the
+asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
+persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
+Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
 
 </details>
 

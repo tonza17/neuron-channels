@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-7-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-16-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-17-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-49-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-189-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-194-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (19K)
-| [full](llm-context/full.xml) (268K) | [roadmap](llm-context/roadmap.xml) (67K) |
-[results](llm-context/results-deep-dive.xml) (182K) |
-[assets](llm-context/literature-and-assets.xml) (35K)
+| [full](llm-context/full.xml) (275K) | [roadmap](llm-context/roadmap.xml) (66K) |
+[results](llm-context/results-deep-dive.xml) (188K) |
+[assets](llm-context/literature-and-assets.xml) (36K)
 
-*Last updated: 2026-04-25 09:34 UTC*
+*Last updated: 2026-04-25 10:43 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,13 +56,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
-| 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`description`](../tasks/t0049_seclamp_cond_remeasure/task_description.md) | 2026-04-25 |
 
 ---
 
@@ -83,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (42 total)](tasks/by-status/completed.md)
+## [Recently Completed (43 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`results`](../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) | 2026-04-25 10:42 |
 | 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
 | 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
 | 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
@@ -96,9 +96,8 @@ No blocked tasks.
 | 0038 | [Correct t0033 base GABA to 4 nS on t0022 variant](../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md) | [`results`](../tasks/t0038_correct_t0033_base_gaba_to_4ns/results/results_detailed.md) | 2026-04-24 07:12 |
 | 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
 | 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | [`results`](../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) | 2026-04-23 22:40 |
-| 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
 
-*32 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*33 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -116,7 +115,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (165 open)](suggestions/)
+## [Recent Suggestions (170 open)](suggestions/)
 
 <details>
 <summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
@@ -259,57 +258,65 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
-4.5, 4.0, 3.5, 3.0 nS)</strong> (S-0037-03)</summary>
+<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
 
-The current sweep places the unpinning threshold between 6 nS (t0036 pinned) and 4 nS (t0037
-unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline diameter on
-t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
-threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
-Important for characterising how fragile the operational window really is.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Diagnose and fix the low peak firing rate in t0022 (15 Hz vs
-40-80 Hz Schachter2010)</strong> (S-0037-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-At the 4 nS sweet spot the preferred-direction peak firing is 15 Hz, an order of magnitude
-below Schachter2010's 40-80 Hz baseline. The same low rate was observed in t0030 at 12 nS
-GABA, so this is a pre-existing t0022 drive issue (likely the AMPA-only schedule lacking NMDA
-or compensatory excitation), not a GABA ladder artefact. A task should add NMDA back into the
-t0022 E-I schedule (or increase AMPA gain) and verify peak firing reaches 40+ Hz without
-re-pinning DSI. Until this is fixed, any cross-testbed peak-rate comparison is invalid.
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)
-noise</strong> (S-0037-05)</summary>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
 
-t0034/t0035 already produce measurable primary DSI on t0024 via AR(2) stochastic release
-(rho=0.6). t0037 now shows that t0022 at 4 nS GABA is a second valid substrate. A dedicated
-comparison task should run matched 7-diameter and 5-length sweeps on both substrates with
-identical stimulus schedules and report whether the two discriminators agree on
-Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth
-investigating.
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
 
 </details>
 
-*155 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Repeat SEClamp Fig 3A-E re-measurement at exptype=2
+(Voff_bipNMDA=1) for canonical-control baseline</strong> (S-0049-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
+
+t0049 ran the SEClamp re-measurement at exptype=control (Voff_bipNMDA=0). t0048 established
+that exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) is the paper-faithful canonical
+control. Repeat the same 32-trial SEClamp sweep (2 directions x 4 channel-isolations x 4
+trials at gNMDA = 0.5 nS, V_clamp = -65 mV) under exptype=2 to establish whether the residual
+NMDA over-amplification (SEClamp PD 13.89 vs paper 7.0) and direction-asymmetry collapse
+persist under voltage-independent NMDA. This locks the canonical SEClamp baseline alongside
+the canonical exptype convention before downstream parameter-tuning work begins. Recommended
+task types: experiment-run.
+
+</details>
+
+*160 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (48)](suggestions/)
+## [High Priority Suggestions (50)](suggestions/)
 
 <details>
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
@@ -350,6 +357,43 @@ import; (c) update the project's description.md / library asset README for
 modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
 experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
 task types: correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
+
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
 
 </details>
 
@@ -466,49 +510,11 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
-substrate (not vector-sum) and drop monotonic-length priors</strong>
-(S-0034-07)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
-
-t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
-design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
-p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
-vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
-with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
-NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
-pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
-length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
-(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
-task types: comparative-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
-surface-vs-volume compensation</strong> (S-0035-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
-[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
-
-Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
-by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
-varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
-arises because NEURON's surface-density gbar scales total channel current by d while axial
-load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
-trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
-Recommended task types: experiment-run.
-
-</details>
-
-*38 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*40 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (16 total)](answers/)
+## [Recent Answers (17 total)](answers/)
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -544,6 +550,26 @@ and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is t
 (flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
 0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
 reproduce the paper's DSI vs gNMDA claim.
+
+</details>
+
+<details>
+<summary><strong>Does measuring per-channel synaptic conductance under a somatic
+SEClamp on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values
+within +/- 25%, and resolve the t0047 amplitude mismatch as a
+measurement-modality artefact?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-25 | **Full answer**:
+[`seclamp-conductance-remeasurement-fig3`](../tasks/t0049_seclamp_cond_remeasure/assets/answer/seclamp-conductance-remeasurement-fig3/)
+
+No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all six channel x
+direction cells render an H2 verdict: SEClamp values are 1.6x-3.8x the paper Fig 3A-E targets
+and 0.2x-0.5x t0047's per-synapse-summed values, so they sit between the two references but
+match neither within tolerance. Modality (somatic clamp vs per-synapse direct) explains
+roughly an order of magnitude of the t0047 amplitude mismatch but does not fully close the gap
+to the paper. The deposited model also fails to reproduce the paper's headline GABA PD/ND
+asymmetry (SEClamp DSI ~ 0 vs paper ~ -0.4), which points to genuine parameter or protocol
+differences beyond measurement modality.
 
 </details>
 
@@ -697,25 +723,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-<details>
-<summary><strong>Which dendritic-computation motifs observed in cortical,
-hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites,
-and what are the biophysical caveats?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`dendritic-computation-motifs-for-dsgc-direction-selectivity`](../tasks/t0016_literature_survey_dendritic_computation/assets/answer/dendritic-computation-motifs-for-dsgc-direction-selectivity/)
-
-Three dendritic-computation motifs plausibly transfer from pyramidal, hippocampal, and
-cerebellar dendrites to DSGC dendrites: NMDA-receptor-mediated on-branch supralinear
-integration, asymmetric shunting inhibition placed on the path between excitation and soma,
-and sublinear-to-supralinear regime switching driven by clustered input. Ca2+-plateau BAC
-firing and behavioral-timescale plasticity transfer less cleanly because DSGC dendrites are
-short and unipolar rather than tufted. All transferred numbers must be treated as targets to
-falsify rather than to assume, pending DSGC-specific patch validation.
-
-</details>
-
-*6 more answers → [answers](answers/)*
+*7 more answers → [answers](answers/)*
 
 ---
 

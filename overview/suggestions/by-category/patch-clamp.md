@@ -1,13 +1,37 @@
 # Suggestions: `patch-clamp`
 
-10 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **8 open**
-(5 high, 3 medium), **2 closed**.
+14 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **12
+open** (6 high, 5 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
@@ -188,6 +212,30 @@ Recommended task type: experiment-run, comparative-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Repeat SEClamp Fig 3A-E re-measurement at exptype=2
+(Voff_bipNMDA=1) for canonical-control baseline</strong> (S-0049-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0049 ran the SEClamp re-measurement at exptype=control (Voff_bipNMDA=0). t0048 established
+that exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) is the paper-faithful canonical
+control. Repeat the same 32-trial SEClamp sweep (2 directions x 4 channel-isolations x 4
+trials at gNMDA = 0.5 nS, V_clamp = -65 mV) under exptype=2 to establish whether the residual
+NMDA over-amplification (SEClamp PD 13.89 vs paper 7.0) and direction-asymmetry collapse
+persist under voltage-independent NMDA. This locks the canonical SEClamp baseline alongside
+the canonical exptype convention before downstream parameter-tuning work begins. Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📂 <strong>Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset
 as a validation benchmark</strong> (S-0002-10)</summary>
 
@@ -208,6 +256,58 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>SEClamp Fig 3A-E re-measurement across multiple V_clamp levels
+(-85, -65, -45 mV) to vary GABA driving force</strong> (S-0049-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0049 ran SEClamp at the single V_clamp = -65 mV which yields a small GABA driving force (-5
+mV vs E_GABA = -60 mV) and amplifies noise on the GABA conductance estimate (SD +/- 1.98 nS at
+PD). Repeat the per-channel isolation sweep at V_clamp in {-85, -65, -45} mV. The -85 mV
+condition gives a 25 mV GABA driving force (5x improvement in GABA SNR) and inverts the
+AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force sign and
+increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across
+V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on
+holding voltage. Recommended task types: experiment-run.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
+locations to test cable-filtering vs spatial-distribution</strong>
+(S-0049-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0049 measured SEClamp conductance only at the soma (`h.RGC.soma(0.5)`). The GABA PD/ND
+symmetry collapse at the soma could be due to (a) cable-filtering averaging out local
+asymmetry, or (b) symmetric spatial distribution of GABA synapses across PD/ND-side dendrites.
+To discriminate, insert SEClamp at intermediate dendritic locations along the principal axis
+(e.g., at 25%, 50%, 75% of the dendritic path from soma to the most distal synapse on each
+side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic decay of the
+asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
+persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
+Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
 
 </details>
 

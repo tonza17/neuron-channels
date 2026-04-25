@@ -1,12 +1,45 @@
 # Answers by Date Added
 
-16 answer(s) grouped by creation date.
+17 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-04-25 (2)
+## 2026-04-25 (3)
+
+<details>
+<summary><strong>Does measuring per-channel synaptic conductance under a somatic
+SEClamp on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values
+within +/- 25%, and resolve the t0047 amplitude mismatch as a
+measurement-modality artefact?</strong></summary>
+
+**Confidence**: high
+
+No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all six channel x
+direction cells render an H2 verdict: SEClamp values are 1.6x-3.8x the paper Fig 3A-E targets
+and 0.2x-0.5x t0047's per-synapse-summed values, so they sit between the two references but
+match neither within tolerance. Modality (somatic clamp vs per-synapse direct) explains
+roughly an order of magnitude of the t0047 amplitude mismatch but does not fully close the gap
+to the paper. The deposited model also fails to reproduce the paper's headline GABA PD/ND
+asymmetry (SEClamp DSI ~ 0 vs paper ~ -0.4), which points to genuine parameter or protocol
+differences beyond measurement modality.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0049_seclamp_cond_remeasure/assets/answer/seclamp-conductance-remeasurement-fig3/full_answer.md) |
+| **ID** | [`seclamp-conductance-remeasurement-fig3`](../../../tasks/t0049_seclamp_cond_remeasure/assets/answer/seclamp-conductance-remeasurement-fig3/) |
+| **Question** | Does measuring per-channel synaptic conductance under a somatic SEClamp on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values within +/- 25%, and resolve the t0047 amplitude mismatch as a measurement-modality artefact? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-04-25 |
+| **Categories** | — |
+| **Paper sources** | — |
+| **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **URL sources** | — |
+| **Created by** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+
+</details>
 
 <details>
 <summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the

@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(126)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(129)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (7)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (111 open, 15 closed)
+## Suggestions (114 open, 15 closed)
 
 <details>
 <summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
@@ -2416,6 +2416,61 @@ noise sensitivity is dominated by NMDA voltage-dependence or by AMPA/GABA balanc
 priority because (a) t0047 already provides the qualitative noise-vs-DSI shape and (b) the H2
 verdict for the Voff=1 DSI baseline is unlikely to be qualitatively different under noise.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
+
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Repeat SEClamp Fig 3A-E re-measurement at exptype=2
+(Voff_bipNMDA=1) for canonical-control baseline</strong> (S-0049-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
+
+t0049 ran the SEClamp re-measurement at exptype=control (Voff_bipNMDA=0). t0048 established
+that exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) is the paper-faithful canonical
+control. Repeat the same 32-trial SEClamp sweep (2 directions x 4 channel-isolations x 4
+trials at gNMDA = 0.5 nS, V_clamp = -65 mV) under exptype=2 to establish whether the residual
+NMDA over-amplification (SEClamp PD 13.89 vs paper 7.0) and direction-asymmetry collapse
+persist under voltage-independent NMDA. This locks the canonical SEClamp baseline alongside
+the canonical exptype convention before downstream parameter-tuning work begins. Recommended
+task types: experiment-run.
 
 </details>
 
