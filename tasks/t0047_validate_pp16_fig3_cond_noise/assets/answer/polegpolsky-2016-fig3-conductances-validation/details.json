@@ -1,0 +1,28 @@
+{
+  "spec_version": "2",
+  "answer_id": "polegpolsky-2016-fig3-conductances-validation",
+  "question": "Does the deposited ModelDB 189347 code reproduce Poleg-Polsky 2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness, and does the extended noise sweep match the paper's qualitative shape?",
+  "short_title": "Poleg-Polsky 2016 Fig 3A-F per-synapse conductances and noise sweep",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1016_j.neuron.2016.02.013"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0046_reproduce_poleg_polsky_2016_exact"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0047_validate_pp16_fig3_cond_noise",
+  "date_created": "2026-04-25"
+}

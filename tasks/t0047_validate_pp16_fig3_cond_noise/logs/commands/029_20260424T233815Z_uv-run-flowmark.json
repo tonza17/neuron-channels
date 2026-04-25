@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0047_validate_pp16_fig3_cond_noise",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0047_validate_pp16_fig3_cond_noise/logs/steps/009_implementation/step_log.md",
+  "exit_code": 0,
+  "duration_seconds": 0.525,
+  "started_at": "2026-04-24T23:38:15Z",
+  "completed_at": "2026-04-24T23:38:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0047_validate_pp16_fig3_cond_noise",
+  "stdout_file": "029_20260424T233815Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "029_20260424T233815Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

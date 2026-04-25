@@ -1,0 +1,23 @@
+Created the mandatory task folder structure via init_task_folders:
+
+Directories with .gitkeep files:
+- assets/answer/
+- code/
+- corrections/
+- intervention/
+- logs/commands/
+- logs/searches/
+- logs/sessions/
+- logs/steps/
+- plan/
+- research/
+- results/
+- results/images/
+
+Files:
+- __init__.py
+- code/__init__.py
+
+Note: --step-log-dir flag failed (run_with_logs converts path to absolute, which the script
+rejects). The folder structure itself was created successfully before the flag-handling failure;
+this step log was written manually to compensate.

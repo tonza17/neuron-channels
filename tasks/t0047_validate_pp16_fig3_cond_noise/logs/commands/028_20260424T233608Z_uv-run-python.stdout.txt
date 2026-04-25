@@ -1,0 +1,3 @@
+gnmda 56
+noise 96
+psp_cells 6

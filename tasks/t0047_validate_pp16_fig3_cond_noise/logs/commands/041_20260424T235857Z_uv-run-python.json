@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0047_validate_pp16_fig3_cond_noise",
+  "command": "uv run python -m arf.scripts.verificators.verify_task_dependencies t0047_validate_pp16_fig3_cond_noise",
+  "exit_code": 0,
+  "duration_seconds": 0.406,
+  "started_at": "2026-04-24T23:58:57Z",
+  "completed_at": "2026-04-24T23:58:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0047_validate_pp16_fig3_cond_noise",
+  "stdout_file": "041_20260424T235857Z_uv-run-python.stdout.txt",
+  "stderr_file": "041_20260424T235857Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

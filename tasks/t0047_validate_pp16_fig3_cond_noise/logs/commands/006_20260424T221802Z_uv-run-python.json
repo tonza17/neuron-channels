@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0047_validate_pp16_fig3_cond_noise",
+  "command": "uv run python -m arf.scripts.aggregators.aggregate_tasks --format json --detail full --ids t0007_install_neuron_netpyne t0011_response_visualization_library t0012_tuning_curve_scoring_loss_library t0046_reproduce_poleg_polsky_2016_exact t0008_port_modeldb_189347 t0020_port_modeldb_189347_gabamod t0022_reproduce_polegpolsky_bipolar_input",
+  "exit_code": 1,
+  "duration_seconds": 0.922,
+  "started_at": "2026-04-24T22:18:02Z",
+  "completed_at": "2026-04-24T22:18:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0047_validate_pp16_fig3_cond_noise",
+  "stdout_file": "006_20260424T221802Z_uv-run-python.stdout.txt",
+  "stderr_file": "006_20260424T221802Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}

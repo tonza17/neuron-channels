@@ -1,0 +1,239 @@
+{
+  "variants": [
+    {
+      "variant_id": "gnmda_0p0ns",
+      "label": "gNMDA = 0.00 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 0.0,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1031914161023668
+      }
+    },
+    {
+      "variant_id": "gnmda_0p5ns",
+      "label": "gNMDA = 0.50 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 0.5,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1916319701582896
+      }
+    },
+    {
+      "variant_id": "gnmda_1p0ns",
+      "label": "gNMDA = 1.00 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 1.0,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.11431982451044653
+      }
+    },
+    {
+      "variant_id": "gnmda_1p5ns",
+      "label": "gNMDA = 1.50 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 1.5,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04156301391706694
+      }
+    },
+    {
+      "variant_id": "gnmda_2p0ns",
+      "label": "gNMDA = 2.00 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 2.0,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.032139268375461306
+      }
+    },
+    {
+      "variant_id": "gnmda_2p5ns",
+      "label": "gNMDA = 2.50 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 2.5,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.022115698915962014
+      }
+    },
+    {
+      "variant_id": "gnmda_3p0ns",
+      "label": "gNMDA = 3.00 nS",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 3.0,
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.017876851404282388
+      }
+    },
+    {
+      "variant_id": "control_flicker_0p0",
+      "label": "control, flickerVAR = 0.00",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "control",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.18901552131896893
+      }
+    },
+    {
+      "variant_id": "control_flicker_0p1",
+      "label": "control, flickerVAR = 0.10",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "control",
+        "flicker_var": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.14624174769569032
+      }
+    },
+    {
+      "variant_id": "control_flicker_0p3",
+      "label": "control, flickerVAR = 0.30",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "control",
+        "flicker_var": 0.3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.15368104445511316
+      }
+    },
+    {
+      "variant_id": "control_flicker_0p5",
+      "label": "control, flickerVAR = 0.50",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "control",
+        "flicker_var": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.15286840173961788
+      }
+    },
+    {
+      "variant_id": "ap5_flicker_0p0",
+      "label": "AP5, flickerVAR = 0.00",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "AP5",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.09282736357889024
+      }
+    },
+    {
+      "variant_id": "ap5_flicker_0p1",
+      "label": "AP5, flickerVAR = 0.10",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "AP5",
+        "flicker_var": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04369512213402089
+      }
+    },
+    {
+      "variant_id": "ap5_flicker_0p3",
+      "label": "AP5, flickerVAR = 0.30",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "AP5",
+        "flicker_var": 0.3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.03059115982737831
+      }
+    },
+    {
+      "variant_id": "ap5_flicker_0p5",
+      "label": "AP5, flickerVAR = 0.50",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "AP5",
+        "flicker_var": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04640464008525547
+      }
+    },
+    {
+      "variant_id": "zero_mg_flicker_0p0",
+      "label": "0Mg, flickerVAR = 0.00",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "0Mg",
+        "flicker_var": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.08966105742373312
+      }
+    },
+    {
+      "variant_id": "zero_mg_flicker_0p1",
+      "label": "0Mg, flickerVAR = 0.10",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "0Mg",
+        "flicker_var": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.07508522987614848
+      }
+    },
+    {
+      "variant_id": "zero_mg_flicker_0p3",
+      "label": "0Mg, flickerVAR = 0.30",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "0Mg",
+        "flicker_var": 0.3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.07480592222783894
+      }
+    },
+    {
+      "variant_id": "zero_mg_flicker_0p5",
+      "label": "0Mg, flickerVAR = 0.50",
+      "dimensions": {
+        "sweep": "noise_extension",
+        "condition": "0Mg",
+        "flicker_var": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.046869818356836616
+      }
+    }
+  ]
+}
