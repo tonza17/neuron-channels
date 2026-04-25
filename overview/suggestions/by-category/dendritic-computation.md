@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 43 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **34 open** (9
-high, 23 medium, 2 low), **9 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **33 open** (8
+high, 23 medium, 2 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -131,31 +131,6 @@ is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 ban
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
 data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
-whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0047-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
-never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
-`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
-depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
-paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
-(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
-instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
-model modification — only an exptype choice. Re-uses t0046 library and t0047's
-`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
 
 </details>
 
@@ -935,6 +910,33 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test whether
+voltage-independent NMDA flattens DSI vs gNMDA</s> — covered by <a
+href="../../../tasks/t0048_voff_nmda1_dsi_test/"><code>t0048_voff_nmda1_dsi_test</code></a>
+(S-0047-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
 
 </details>
 

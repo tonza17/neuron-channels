@@ -1,6 +1,6 @@
 # Project Tasks
 
-47 tasks. ⏹ **2 not_started**, ⚠️ **4 intervention_blocked**, ✅ **41 completed**.
+49 tasks. ⏹ **3 not_started**, ⚠️ **4 intervention_blocked**, ✅ **42 completed**.
 
 **Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [⚠️
 `intervention_blocked`](by-status/intervention_blocked.md), [✅
@@ -12,6 +12,7 @@
 
 ```mermaid
 graph LR
+    t0007_install_neuron_netpyne["✅ t0007_install_neuron_netpyne"]
     t0008_port_modeldb_189347["✅ t0008_port_modeldb_189347"]
     t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0019_literature_survey_voltage_gated_channels["✅ t0019_literature_survey_voltage_gated_channels"]
@@ -25,7 +26,11 @@ graph LR
     t0043_nav16_kv3_nmda_restoration_t0022["⚠️ t0043_nav16_kv3_nmda_restoration_t0022"]
     t0044_schachter_retest_on_t0043["⚠️ t0044_schachter_retest_on_t0043"]
     t0045_coreneuron_vastai_speedup_benchmark["⏹ t0045_coreneuron_vastai_speedup_benchmark"]
+    t0046_reproduce_poleg_polsky_2016_exact["✅ t0046_reproduce_poleg_polsky_2016_exact"]
+    t0047_validate_pp16_fig3_cond_noise["✅ t0047_validate_pp16_fig3_cond_noise"]
+    t0049_seclamp_cond_remeasure["⏹ t0049_seclamp_cond_remeasure"]
 
+    t0007_install_neuron_netpyne --> t0008_port_modeldb_189347
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
     t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
     t0012_tuning_curve_scoring_loss_library --> t0022_modify_dsgc_channel_testbed
@@ -47,11 +52,219 @@ graph LR
     t0043_nav16_kv3_nmda_restoration_t0022 --> t0044_schachter_retest_on_t0043
     t0022_modify_dsgc_channel_testbed --> t0045_coreneuron_vastai_speedup_benchmark
     t0033_plan_dsgc_morphology_channel_optimisation --> t0045_coreneuron_vastai_speedup_benchmark
+    t0007_install_neuron_netpyne --> t0046_reproduce_poleg_polsky_2016_exact
+    t0008_port_modeldb_189347 --> t0046_reproduce_poleg_polsky_2016_exact
+    t0007_install_neuron_netpyne --> t0047_validate_pp16_fig3_cond_noise
+    t0012_tuning_curve_scoring_loss_library --> t0047_validate_pp16_fig3_cond_noise
+    t0046_reproduce_poleg_polsky_2016_exact --> t0047_validate_pp16_fig3_cond_noise
+    t0007_install_neuron_netpyne --> t0049_seclamp_cond_remeasure
+    t0046_reproduce_poleg_polsky_2016_exact --> t0049_seclamp_cond_remeasure
+    t0047_validate_pp16_fig3_cond_noise --> t0049_seclamp_cond_remeasure
 ```
 
 ---
 
 ## ⏹ Not Started
+
+<details>
+<summary>⏹ 0049 — <strong>Re-measure Fig 3A-E conductances under somatic SEClamp
+on the deposited DSGC</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0049_seclamp_cond_remeasure` |
+| **Status** | not_started |
+| **Effective date** | 2026-04-25 |
+| **Dependencies** | [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | `S-0047-02` |
+| **Task types** | [`experiment-run`](../../meta/task_types/experiment-run/) |
+| **Task page** | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Task folder** | [`t0049_seclamp_cond_remeasure/`](../../tasks/t0049_seclamp_cond_remeasure/) |
+
+# Re-measure Fig 3A-E Conductances Under Somatic SEClamp on the Deposited DSGC
+
+## Motivation
+
+Task t0047 recorded per-synapse direct conductances (`syn._ref_g`) on the deposited DSGC and
+found summed-across-282-synapses peak conductances 6-9x over the paper's Fig 3A-E stated
+values (NMDA PD 69.55 nS vs paper ~7.0 nS; AMPA PD 10.92 nS vs paper ~3.5 nS; GABA ND 215.57
+nS vs paper ~30.0 nS), and 28-90x under on the per-synapse-mean scale. Neither the summed nor
+the per-synapse-mean interpretation reconciles with the paper's numbers.
+
+The compare_literature analysis identified the most likely source: the paper's Fig 3A-E most
+likely reports a **somatic voltage-clamp**-recorded conductance (the integrated synaptic
+current seen at the soma after cable propagation), which is a third quantity that t0047 did
+not measure. Per-synapse direct conductance vs somatic-voltage-clamp conductance differ
+because of cable attenuation and synaptic location heterogeneity along the dendrite.
+
+This task adds a NEURON SEClamp at the soma of the deposited DSGC, voltage-clamps it at -65
+mV, and records the total synaptic current per channel as the wave stimulus sweeps. The
+current divided by the driving force `(V_clamp - E_rev)` gives the
+somatic-voltage-clamp-equivalent conductance per channel. This is the apples-to-apples
+comparison with the paper's Fig 3A-E.
+
+## Hypothesis
+
+If the t0047 amplitude mismatch is purely a measurement-modality artefact, the SEClamp
+re-measurement should land much closer to the paper's stated values (within +/- 25% or so) on
+absolute amplitudes. If even the SEClamp values are still 5-10x over the paper, the deposited
+synaptic conductances themselves are higher than the paper's text describes — a real
+parameter-vs-paper discrepancy beyond just modality.
+
+* **H1**: SEClamp NMDA / AMPA / GABA conductances at gNMDA = 0.5 nS land within +/- 25% of the
+  paper's Fig 3A-E values (~7 / ~5 nS NMDA, ~3.5 / ~3.5 nS AMPA, ~12.5 / ~30 nS GABA). The
+  amplitude mismatch was modality, not parameters.
+* **H2**: SEClamp values are closer to paper than t0047's per-synapse-summed values, but still
+  outside +/- 25%. Modality is part of the explanation but not all.
+* **H0**: SEClamp values are essentially the same as t0047's per-synapse-summed values
+  (modality irrelevant). The amplitude mismatch is real and parameter-driven.
+
+## Scope
+
+### In Scope
+
+* Re-use the existing `modeldb_189347_dsgc_exact` library produced by t0046. No code copy or
+  fork.
+* Re-use t0046's `code/run_simplerun.py` `run_one_trial` for the wave stimulus dispatch.
+* Add a new wrapper `code/run_seclamp.py` that:
+  1. Builds the cell and places synapses (same as t0046's protocol).
+  2. Inserts a NEURON `SEClamp` at the soma center segment with `dur1 = tstop`, `amp1 = -65
+     mV`, `rs = 0.001 MOhm` (strong clamp).
+  3. Records the SEClamp's total current `i_clamp` via `_ref_i` (sub-sampled at dt = 0.25 ms).
+  4. To separate per-channel currents under the clamp, runs **four separate trials per
+     direction**: full circuit (all synapses on), AMPA-only (NMDA gNMDA=0, GABA blocked via
+     `gabaMOD = 0`), NMDA-only (AMPA blocked via `b2gampa = 0`), GABA-only (NMDA gNMDA=0, AMPA
+     blocked).
+  5. The SEClamp current per channel = sum across trials with that channel left on minus
+     baseline.
+* Compute somatic-equivalent conductance per channel as `g_soma_eq = mean_peak_i_channel /
+  (V_clamp - E_rev)`. With `V_clamp = -65 mV` and `E_rev_NMDA = E_rev_AMPA = 0 mV` and
+  `E_rev_GABA = -60 mV`, the driving forces are -65 mV, -65 mV, and -5 mV respectively.
+* Run at the single condition gNMDA = 0.5 nS, exptype = 1 (control), 4 trials per direction
+  per channel-isolation. That is 2 directions × 4 channel-isolations × 4 trials = 32 trials.
+* Compare per-channel SEClamp conductance to t0047's per-synapse-summed conductance and to
+  paper Fig 3A-E targets. Verdict on H0 / H1 / H2.
+
+### Out of Scope
+
+* Sweep across multiple gNMDA values (gNMDA = 0.5 only, the code-pinned value).
+* Voff_bipNMDA = 1 condition (separate task t0048, S-0047-01).
+* Higher-N rerun (separate task, S-0046-01).
+* Modifying the deposited synapse parameters even if SEClamp shows them too large (this task
+  is measurement, not modification).
+
+## Approach
+
+The implementation re-uses t0046's library entirely:
+
+1. Cross-task import: `from tasks.t0046_reproduce_poleg_polsky_2016_exact.code.run_simplerun
+   import run_one_trial`.
+2. The new wrapper `code/run_seclamp.py` extends `run_one_trial` semantics to additionally
+   insert a SEClamp at the soma and record `_ref_i` from the SEClamp object. The clamp is
+   inserted AFTER `placeBIP()` so it does not interfere with synapse placement.
+3. Channel isolation via four trial types: (a) full circuit; (b) AMPA-only via overriding
+   `b2gnmda = 0` and `gabaMOD = 0`; (c) NMDA-only via overriding `b2gampa = 0` and `gabaMOD =
+   0`; (d) GABA-only via overriding `b2gnmda = 0` and `b2gampa = 0`. Subtract baseline
+   (no-input pre-stimulus window) from each peak to get net per-channel current.
+4. Conversion `i_peak_pA` → `g_soma_eq_nS = i_peak_pA / (V_clamp - E_rev_mV)`. Sign
+   convention: inward current at clamp = positive g.
+
+### Driver design
+
+* `code/run_seclamp.py` exposes `run_seclamp_trial(*, direction, trial_seed, channel_on)`
+  where `channel_on in {"all", "ampa_only", "nmda_only", "gaba_only"}`. Returns a dataclass
+  with the per-channel peak SEClamp current and the derived `g_soma_eq_nS`.
+* `code/run_full_seclamp_sweep.py` orchestrates the 32-trial sweep (2 directions × 4
+  isolations × 4 trials), writes per-trial CSV, and computes the per-channel comparison table.
+
+## Pass Criterion
+
+* Per-channel somatic-equivalent conductance is recorded for NMDA, AMPA, GABA at PD and ND, at
+  gNMDA = 0.5 nS, with 4 trials per direction per isolation.
+* Comparison table contains: t0047 per-synapse summed (nS), this task's SEClamp summed (nS),
+  paper target (nS), verdict on H0/H1/H2 per channel × direction.
+* Synthesis paragraph identifying which interpretation (modality vs parameters) is supported.
+
+## Deliverables
+
+### Answer asset (1)
+
+`assets/answer/seclamp-conductance-remeasurement-fig3/` per
+`meta/asset_types/answer/specification.md` v2 with `details.json`, `short_answer.md`,
+`full_answer.md`. The `full_answer.md` must contain:
+
+* Question framing: "Does measuring per-channel synaptic conductance under a somatic SEClamp
+  on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values within tolerance, and
+  resolve the t0047 amplitude mismatch as a measurement-modality artefact?"
+* Per-channel comparison table (paper Fig 3A-E vs SEClamp this task vs per-synapse-summed
+  t0047 vs per-synapse-mean t0047).
+* H0 / H1 / H2 verdict per channel × direction.
+* SEClamp methodology notes (clamp parameters, channel isolation protocol).
+* Synthesis paragraph: whether the deposited synapse parameters match the paper's Fig 3A-E
+  values once the measurement modality is corrected.
+
+### Per-figure PNGs (under `results/images/`)
+
+* `seclamp_conductance_pd_vs_nd.png` — bar chart, 3 channels × 2 directions, our SEClamp +
+  paper target side-by-side.
+* `seclamp_vs_per_syn_direct_modality_comparison.png` — bar chart comparing the two modalities
+  at gNMDA = 0.5.
+
+## Execution Guidance
+
+* **Task type**: `experiment-run`. Optional steps to include: research-code (review t0046's
+  `run_one_trial` and the soma section access pattern; review NEURON SEClamp docs), planning,
+  implementation, results, compare-literature, suggestions, reporting. Skip research-papers /
+  research-internet (paper and corpus already covered).
+* **Local CPU only**. No Vast.ai. Total sweep is 32 trials. At ~5 sec/trial that is ~3 minutes
+  wall-clock plus SEClamp insertion overhead. Total task wall-clock estimate: 1-2 hours
+  including coding + planning + answer asset writing.
+* Use absolute imports per the project's Python style guide.
+* Centralise paths in `code/paths.py` and constants in `code/constants.py`.
+
+## Anticipated Risks
+
+* **SEClamp may interfere with synaptic transmission** if the clamp is too strong or
+  positioned suboptimally. Mitigation: use the standard NEURON SEClamp pattern with `rs =
+  0.001` (effectively voltage source); confirm by inspecting the soma voltage trace during the
+  trial — should stay locked at -65 mV throughout.
+* **Channel isolation protocol may not cleanly separate per-channel currents** if there are
+  cross-channel interactions (e.g., NMDA needs glutamate from AMPA release). Mitigation: the
+  deposited bipolarNMDA.mod is a single dual-component synapse with separate `gAMPA` and
+  `gNMDA` RANGE variables driven by the same presynaptic event, so AMPA-block via `b2gampa =
+  0` and NMDA-block via `b2gnmda = 0` are independent. Verify this by reading the MOD source.
+* **Voltage clamp at -65 mV may not match the paper's clamp potential**. Mitigation: paper's
+  Methods may state the clamp potential explicitly; if so, use that value. -65 mV is a
+  reasonable default matching `v_init` in the deposited code.
+* **SEClamp current sign convention** may be confusing (NEURON inward current is positive when
+  entering the clamp from the cell, negative when sourced by the clamp). Document the sign
+  explicitly in the wrapper.
+
+## Relationship to Other Tasks
+
+* **Depends on**: t0007 (NEURON env), t0046 (library asset), t0047 (per-synapse-direct
+  baseline data for comparison).
+* **Source suggestion**: S-0047-02 (HIGH priority experiment).
+* **Complements**: t0047's per-synapse-direct measurement. This task is the modality-corrected
+  re-measurement.
+* **Precedes**: any future modification task that adjusts deposited synaptic conductances to
+  match paper values (such a task needs the modality-corrected baseline this task produces to
+  decide what "match paper" means).
+
+## Verification Criteria
+
+* `verify_task_file.py` passes with 0 errors.
+* `verify_answer_asset` (or direct inspection against the v2 spec) passes for the answer
+  asset.
+* `verify_task_metrics.py` passes; `metrics.json` contains at least one variant per channel x
+  direction (6 variants minimum).
+* Per-channel SEClamp conductance is recorded for NMDA / AMPA / GABA at PD and ND with
+  numerical evidence and SD.
+* H0 / H1 / H2 verdict is stated per channel x direction with the numerical test that supports
+  it.
+
+</details>
 
 <details>
 <summary>⏹ 0045 — <strong>CoreNEURON Vast.ai RTX 4090 speedup benchmark</strong></summary>
@@ -678,6 +891,252 @@ Fail criterion (Schachter hypothesis rejected on Poleg-Polsky morphology):
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0048 — <strong>Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI
+vs gNMDA flatness</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0048_voff_nmda1_dsi_test` |
+| **Status** | completed |
+| **Effective date** | 2026-04-25 |
+| **Dependencies** | [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | `S-0047-01` |
+| **Task types** | [`experiment-run`](../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-25T08:20:33Z |
+| **End time** | 2026-04-25T09:32:00Z |
+| **Step progress** | 10/15 |
+| **Task page** | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Task folder** | [`t0048_voff_nmda1_dsi_test/`](../../tasks/t0048_voff_nmda1_dsi_test/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) |
+
+# Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA Flatness
+
+## Motivation
+
+Task t0047 measured DSI as a function of `b2gnmda` across {0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0}
+nS in the deposited ModelDB 189347 control condition (`exptype = 1`, `Voff_bipNMDA = 0`,
+voltage-dependent NMDA with Mg block). DSI peaked at 0.19 (gNMDA = 0.5) and decayed
+monotonically to 0.018 (gNMDA = 3.0) — not the paper's claimed flat ~0.30 across the range.
+The compare_literature analysis identified the deposited control's voltage-dependent NMDA as
+the most plausible mechanistic source of the collapse: at high gNMDA, the ND dendrite
+depolarizes enough to relieve Mg block, ND NMDA opens, and the PD/ND distinction collapses.
+
+The paper's biological finding (text statement in Poleg-Polsky and Diamond 2016) is that DSGC
+NMDA is largely **voltage-independent** in vivo. The deposited code already provides a
+voltage-independent NMDA setting via `exptype = 2` (`Voff_bipNMDA = 1`), used in the 0 Mg2+
+condition. **This is not a model modification — it is a choice of which deposited exptype best
+matches the paper's biological NMDA condition.**
+
+This task runs the exact same gNMDA sweep as t0047, but at `exptype = 2` instead of `exptype =
+1`, to directly test the hypothesis: does voltage-independent NMDA flatten the DSI-vs-gNMDA
+curve to match the paper's flat ~0.30 claim?
+
+## Hypothesis
+
+If voltage-dependent NMDA is the cause of the DSI-vs-gNMDA collapse in the t0047 control, then
+running the same sweep at `Voff_bipNMDA = 1` should produce a flat DSI-vs-gNMDA curve close to
+the paper's ~0.30 target.
+
+* **H0 (null)**: DSI vs gNMDA at `Voff_bipNMDA = 1` looks the same as t0047's `Voff_bipNMDA =
+  0` curve (peaks then decays). NMDA voltage-dependence is NOT the cause; the divergence comes
+  from somewhere else.
+* **H1 (alternative)**: DSI vs gNMDA at `Voff_bipNMDA = 1` is flat across the range (within
+  +/- 0.05 of some constant value). NMDA voltage-dependence WAS the cause; switching to the
+  voltage-independent setting reproduces the paper's claim.
+* **H2 (intermediate)**: DSI vs gNMDA at `Voff_bipNMDA = 1` is flatter than t0047's curve but
+  still does not match the paper's ~0.30 line. Voltage-dependence is part of the problem but
+  not the only contributor.
+
+Each outcome is informative. The pass criterion is to record numerical evidence sufficient to
+distinguish among the three.
+
+## Scope
+
+### In Scope
+
+* Re-use the existing `modeldb_189347_dsgc_exact` library produced by t0046. No code copy or
+  fork.
+* Re-use t0047's `code/run_with_conductances.py` recorder pattern via cross-task package
+  import (`from tasks.t0047_validate_pp16_fig3_cond_noise.code.run_with_conductances import
+  ...`).
+* Add a thin Python driver `code/run_voff1_sweep.py` that calls `run_one_trial(exptype=2,
+  ...)` for the same `b2gnmda in {0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0}` nS grid, 4 trials per
+  direction per value (matching t0047's protocol exactly).
+* Record per-synapse NMDA / AMPA / GABA conductances for cross-comparison with t0047's
+  `Voff_bipNMDA = 0` data.
+* Compute DSI per gNMDA value via the same inlined `_dsi(*, pd_values, nd_values)` helper
+  pattern from t0047.
+* Plot DSI vs gNMDA for `Voff_bipNMDA = 1` overlaid on t0047's `Voff_bipNMDA = 0` curve plus
+  the paper's flat ~0.30 line, on a single panel.
+* Report per-direction PSP amplitudes at gNMDA = 0.5, 1.5, 2.5 nS to characterize how
+  voltage-independence affects the absolute amplitudes.
+
+### Out of Scope
+
+* Any modification to the model beyond switching `Voff_bipNMDA` (the deposited exptype = 2
+  already handles this). This is an exptype-choice test, not a code modification.
+* SEClamp re-measurement of conductances (separate task t0049, S-0047-02).
+* Higher-N (12-19 trials) re-run (separate task, S-0046-01).
+* Re-running noise sweeps under `Voff_bipNMDA = 1` (out of scope — focus is the DSI-vs-gNMDA
+  flatness test).
+* Modifying the AP5 analogue (separate task, S-0046-03).
+
+## Reproduction Targets
+
+### Primary target: DSI vs gNMDA flatness
+
+| gNMDA (nS) | t0047 control (Voff=0) | Voff=1 hypothesis | Paper target |
+| --- | --- | --- | --- |
+| 0.0 | 0.103 | ? (unknown) | ~0.30 |
+| 0.5 | 0.192 | ? (test value) | ~0.30 |
+| 1.0 | 0.114 | ? (test value) | ~0.30 |
+| 1.5 | 0.042 | ? (test value) | ~0.30 |
+| 2.0 | 0.032 | ? (test value) | ~0.30 |
+| 2.5 | 0.022 | ? (test value) | ~0.30 |
+| 3.0 | 0.018 | ? (test value) | ~0.30 |
+
+H1 verdict: every Voff=1 DSI value within +/- 0.05 of a constant (target constant ~0.30 if it
+matches the paper exactly; lower constant if it matches paper qualitatively). H2 verdict:
+clearly flatter than t0047's curve but still trending downward. H0 verdict: same shape as
+t0047.
+
+### Secondary target: per-synapse conductance comparison
+
+Compare summed-across-282-synapses peak conductance at gNMDA = 0.5 nS for `Voff = 1` vs `Voff
+= 0` (from t0047's data). NMDA should be similar magnitude (the underlying gNMDA is the same),
+but PD/ND ratio should change because Mg block is no longer suppressing ND.
+
+## Approach
+
+The implementation re-uses every piece of t0046 + t0047 infrastructure unchanged:
+
+1. Cross-task import: `from tasks.t0046_reproduce_poleg_polsky_2016_exact.code.run_simplerun
+   import run_one_trial` and `from
+   tasks.t0047_validate_pp16_fig3_cond_noise.code.run_with_conductances import
+   ConductanceRecorder` (or equivalent — the recorder API is documented in t0047's README).
+2. Driver `code/run_voff1_sweep.py` calls the wrapper in a loop over the 7 gNMDA values × 2
+   directions × 4 trials = 56 trials. Same trial seeds as t0047 for reproducibility.
+3. Aggregator `code/compute_metrics.py` builds the multi-variant `metrics.json` (7 variants
+   per gNMDA value, with `direction_selectivity_index` per variant). Format matches t0047's.
+4. Renderer `code/render_figures.py` produces the overlay PNG: x-axis gNMDA, y-axis DSI, two
+   curves (Voff=0 from t0047's data, Voff=1 from this task's data) plus a horizontal reference
+   line at 0.30 (paper claim). Also produces a per-synapse conductance comparison bar chart
+   (Voff=0 vs Voff=1 at gNMDA=0.5).
+
+Cross-task data import: t0047's per-trial CSVs are in
+`tasks/t0047_validate_pp16_fig3_cond_noise/results/data/gnmda_sweep_trials.csv` and were
+merged to main. Read them via aggregator-style filtering (or directly via `pandas.read_csv`
+with the absolute task path) to compute the t0047 baseline DSI for the overlay.
+
+## Pass Criterion
+
+* DSI vs gNMDA at `Voff_bipNMDA = 1` is recorded numerically for all 7 grid points with 4
+  trials per direction per cell.
+* Verdict on H0 / H1 / H2 is stated with numerical evidence (per-grid-point DSI within +/-
+  0.05 band test, slope-of-DSI-vs-gNMDA test).
+* Per-synapse conductance comparison at gNMDA = 0.5 nS (Voff=0 from t0047 vs Voff=1 from this
+  task) is reported in a table.
+
+## Deliverables
+
+### Answer asset (1)
+
+`assets/answer/dsi-flatness-test-voltage-independent-nmda/` per
+`meta/asset_types/answer/specification.md` v2 with `details.json`, `short_answer.md`,
+`full_answer.md`. The `full_answer.md` must contain:
+
+* Question framing: "Does setting `Voff_bipNMDA = 1` (voltage-independent NMDA) reproduce the
+  paper's claim that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?"
+* DSI-vs-gNMDA table (Voff=0 from t0047 vs Voff=1 from this task vs paper).
+* Hypothesis verdict (H0 / H1 / H2) with numerical evidence.
+* Per-synapse conductance comparison table at gNMDA = 0.5.
+* Synthesis paragraph explaining the mechanistic interpretation and what the result means for
+  the deposited control choice.
+
+### Per-figure PNGs (under `results/images/`)
+
+* `dsi_vs_gnmda_voff0_vs_voff1.png` — overlay curve plot.
+* `conductance_comparison_voff0_vs_voff1_at_gnmda_0p5.png` — bar chart.
+
+## Execution Guidance
+
+* **Task type**: `experiment-run`. Optional steps to include: research-code (review t0047's
+  recorder API), planning, implementation, results, compare-literature (compare to paper's
+  flat claim), suggestions, reporting. Skip research-papers / research-internet (paper and
+  corpus already covered by t0046 + t0047).
+* **Local CPU only**. No Vast.ai. Total sweep is 56 trials. At ~5 sec/trial that is ~5 minutes
+  wall-clock. Total task wall-clock estimate: 1-2 hours including coding + planning + answer
+  asset writing.
+* Use absolute imports per the project's Python style guide.
+* Centralise paths in `code/paths.py` and constants in `code/constants.py`.
+
+## Anticipated Risks
+
+* **Voff_bipNMDA = 1 may produce unphysical results** at high gNMDA (the cell may saturate or
+  spike inappropriately with TTX off). Mitigation: confirm `SpikesOn = 0` (TTX on) for the
+  entire sweep and inspect the soma trace at the highest gNMDA value before fitting.
+* **t0047 cross-task import may not work** if t0047's recorder API is not packaged at a stable
+  module path. Mitigation: if direct import fails, copy the recorder code into this task's
+  `code/` folder with attribution comments (the project's cross-task import rule allows
+  copying for non-library code).
+* **DSI may turn out to be constantly low** (e.g., flat at 0.05 instead of 0.30) under Voff =
+  1, which would be H2 — flatter than Voff = 0 but not matching the paper's amplitude. This is
+  still informative; record honestly.
+
+## Relationship to Other Tasks
+
+* **Depends on**: t0007 (NEURON env), t0046 (library asset), t0047 (recorder pattern + Voff=0
+  baseline data for the overlay).
+* **Source suggestion**: S-0047-01 (HIGH priority experiment).
+* **Complements**: t0047's compare_literature analysis. This task is the direct test of
+  t0047's mechanistic hypothesis.
+* **Precedes**: any future modification task that decides between exptype = 1 vs exptype = 2
+  as the canonical "control" for the project's DSGC simulations.
+
+## Verification Criteria
+
+* `verify_task_file.py` passes with 0 errors.
+* `verify_answer_asset` (or direct inspection against the v2 spec) passes for the answer
+  asset.
+* `verify_task_metrics.py` passes; `metrics.json` contains 7 variants (one per gNMDA value).
+* DSI vs gNMDA at `Voff = 1` is recorded for all 7 grid points with numerical evidence.
+* H0 / H1 / H2 verdict is stated with the numerical test that supports it.
+
+**Results summary:**
+
+> **Results Summary: Voff_bipNMDA=1 DSI vs gNMDA Test**
+>
+> **Summary**
+>
+> Switching the deposited DSGC's NMDA model from voltage-dependent (`Voff_bipNMDA = 0`,
+> exptype = 1)
+> to voltage-independent (`Voff_bipNMDA = 1`, exptype = 2) flattens the DSI vs gNMDA curve
+> substantially — verdict **H2 (intermediate)**: max-min DSI range drops from 0.174 to
+> **0.066**
+> (within H1's 0.10 cutoff), but the linear-fit slope is still **-0.024 per nS** (above H1's
+> 0.02
+> cutoff and below t0047's reference -0.058 per nS). The absolute DSI values stay between
+> **0.04 and
+> 0.10** — never reaching the paper's claimed flat ~0.30 line. Mechanism confirmed: NMDA PD/ND
+> ratio
+> collapses from 2.05 (Voff=0 Mg-block runaway) to 1.00 (Voff=1 symmetric) at gNMDA = 0.5 nS,
+> exactly
+> as predicted.
+>
+> **Metrics**
+>
+> * **DSI vs gNMDA at Voff=1**: 0.103 (gNMDA=0), **0.102** (gNMDA=0.5), 0.078 (gNMDA=1.0),
+>   0.057
+> (gNMDA=1.5), 0.053 (gNMDA=2.0), 0.044 (gNMDA=2.5), 0.037 (gNMDA=3.0).
+> * **Range test**: max-min DSI = **0.066** vs H1 threshold 0.10 → **H1 passes** (curve is
+>   flatter
+> than 0.10 in absolute range).
+> * **Slope test**: linear-fit slope = **-0.024 per nS** vs H1 threshold |slope| < 0.02 → **H1
+
+</details>
 
 <details>
 <summary>✅ 0047 — <strong>Validate Poleg-Polsky 2016 Fig 3A-F conductances and

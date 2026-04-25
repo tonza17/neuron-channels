@@ -5,7 +5,7 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(10)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
 (45)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (6)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
@@ -1681,7 +1681,7 @@ simulation.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (10)
+## Answers (11)
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -1699,6 +1699,24 @@ b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's cl
 ~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
 the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
 metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+</details>
+
+<details>
+<summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the
+deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim
+that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
+[`dsi-flatness-test-voltage-independent-nmda`](../../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/)
+
+No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range
+collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold
+of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff
+and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is therefore H2
+(flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
+0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
+reproduce the paper's DSI vs gNMDA claim.
 
 </details>
 
@@ -1910,26 +1928,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (41 open, 4 closed)
-
-<details>
-<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
-the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
-paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
-reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
-conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
-at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
-per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
-`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
-(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
-a downstream model build, not the deposited code. Recommended task types: experiment-run.
-
-</details>
+## Suggestions (40 open, 5 closed)
 
 <details>
 <summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape

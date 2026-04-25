@@ -5,8 +5,8 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
-(7)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(38)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(8)](../answers/by-category/synaptic-integration.md) | [Suggestions
+(41)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (1)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -1987,7 +1987,7 @@ simulation.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (7)
+## Answers (8)
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -2005,6 +2005,24 @@ b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's cl
 ~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
 the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
 metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+</details>
+
+<details>
+<summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the
+deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim
+that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
+[`dsi-flatness-test-voltage-independent-nmda`](../../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/)
+
+No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range
+collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold
+of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff
+and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is therefore H2
+(flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
+0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
+reproduce the paper's DSI vs gNMDA claim.
 
 </details>
 
@@ -2146,45 +2164,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (34 open, 4 closed)
-
-<details>
-<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
-whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
-never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
-`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
-depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
-paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
-(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
-instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
-model modification — only an exptype choice. Re-uses t0046 library and t0047's
-`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
-the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
-paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
-reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
-conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
-at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
-per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
-`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
-(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
-a downstream model build, not the deposited code. Recommended task types: experiment-run.
-
-</details>
+## Suggestions (35 open, 6 closed)
 
 <details>
 <summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
@@ -2203,6 +2183,65 @@ reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA
 PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
 single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
 driver. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AMPA conductance scan at Voff_bipNMDA=1 as a secondary check
+on the residual DSI gap</strong> (S-0048-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../../tasks/t0048_voff_nmda1_dsi_test/)
+
+Complementary to S-0048-01's GABA scan: re-run the same 7-point gNMDA sweep at exptype=2 with
+the AMPA conductance scaled across {1.0, 0.5, 0.25, 0.125} of the deposited b2gampa = 0.25 nS
+value. t0048's per-class conductance comparison shows AMPA summed conductance is similar
+between PD/ND (~11 nS each), so AMPA changes alone cannot create direction selectivity, but
+lowering AMPA at fixed GABA could shift the AMPA/GABA balance enough to amplify whatever
+residual selectivity GABA provides. This is an essential negative control for S-0048-01: if
+AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
+4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
+types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0047's noise (flickerVAR) sweep at Voff_bipNMDA=1 to test
+noise-DSI behavior under voltage-independent NMDA</strong> (S-0048-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0047 ran a noise sweep at exptype=1 (Voff_bipNMDA=0). Now that t0048 establishes
+Voff_bipNMDA=1 as the paper-faithful NMDA condition, the corresponding question is whether
+t0047's noise vs DSI relationship (DSI declining with flickerVAR across the three gNMDA
+conditions) holds under the voltage-independent setting. Re-run the same flickerVAR x gNMDA
+grid t0047 used (or a reduced 3 x 3 grid to bound CPU) at exptype=2 and compare the
+noise-vs-DSI shape. Useful corollary to t0048's gNMDA finding because it tells us whether the
+noise sensitivity is dominated by NMDA voltage-dependence or by AMPA/GABA balance. Lower
+priority because (a) t0047 already provides the qualitative noise-vs-DSI shape and (b) the H2
+verdict for the Voff=1 DSI baseline is unlikely to be qualitatively different under noise.
+Recommended task types: experiment-run.
 
 </details>
 

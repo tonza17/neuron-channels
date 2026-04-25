@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-25T00:03:00Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-25T09:34:37Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>189258</char_count>
-    <byte_count>189275</byte_count>
-    <estimated_tokens>47314</estimated_tokens>
+    <char_count>195382</char_count>
+    <byte_count>195399</byte_count>
+    <estimated_tokens>48845</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -201,9 +201,14 @@
         <id>S-0047-02</id>
         <id>S-0047-03</id>
         <id>S-0047-04</id>
+        <id>S-0048-01</id>
+        <id>S-0048-02</id>
+        <id>S-0048-03</id>
+        <id>S-0048-04</id>
+        <id>S-0048-05</id>
       </source_ids>
       <content>
-Suggestions: 184
+Suggestions: 189
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -2270,6 +2275,66 @@ Categories: compartmental-modeling, synaptic-integration, retinal-ganglion-cell
 Date added: 2026-04-25
 
 t0047&#x27;s `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA / _ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only audited per-channel conductance recorder in the project and a prerequisite for any future Fig 3A-E reproduction (including S-0047-02&#x27;s SEClamp variant). Package it as a reusable library asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py` reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()` driver. Recommended task types: write-library.
+
+## GABA conductance scan at Voff_bipNMDA=1 to close the residual DSI gap to paper&#x27;s 0.30 line
+ID: S-0048-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0048_voff_nmda1_dsi_test
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, synaptic-integration, compartmental-modeling
+Date added: 2026-04-25
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs gNMDA curve to 0.04-0.10 but never reaches the paper&#x27;s claimed flat ~0.30. The residual gap must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured deposited PD ~106 / ND ~216 nS summed conductance vs paper&#x27;s PD ~12.5 / ND ~30 nS (8x over) at gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5, 0.25, 0.125, 0.06} (ratios chosen to bracket paper&#x27;s 12.5x reduction toward biological values) at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range. Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1 range/slope thresholds and a mean-DSI &gt; 0.20 target. Recommended task types: experiment-run.
+
+## Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control for downstream tasks via correction overlay
+ID: S-0048-02
+Status: active
+Priority: high
+Kind: technique
+Source task: t0048_voff_nmda1_dsi_test
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-25
+
+t0048 establishes that the deposited code&#x27;s exptype=1 (voltage-dependent NMDA) does not match the paper&#x27;s biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer to the paper&#x27;s text statement and the deposited 0 Mg2+ condition. Per t0048&#x27;s compare_literature.md: the deposited control choice for the project&#x27;s DSGC simulations should be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks import; (c) update the project&#x27;s description.md / library asset README for modeldb_189347_dsgc_exact to record the convention. This is correction work, not an experiment, but it gates every downstream DSGC task that compares to the paper. Recommended task types: correction.
+
+## AMPA conductance scan at Voff_bipNMDA=1 as a secondary check on the residual DSI gap
+ID: S-0048-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0048_voff_nmda1_dsi_test
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, synaptic-integration
+Date added: 2026-04-25
+
+Complementary to S-0048-01&#x27;s GABA scan: re-run the same 7-point gNMDA sweep at exptype=2 with the AMPA conductance scaled across {1.0, 0.5, 0.25, 0.125} of the deposited b2gampa = 0.25 nS value. t0048&#x27;s per-class conductance comparison shows AMPA summed conductance is similar between PD/ND (~11 nS each), so AMPA changes alone cannot create direction selectivity, but lowering AMPA at fixed GABA could shift the AMPA/GABA balance enough to amplify whatever residual selectivity GABA provides. This is an essential negative control for S-0048-01: if AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA. 4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task types: experiment-run.
+
+## Higher-N (12-19 trials) rerun of t0048&#x27;s Voff_bipNMDA=1 gNMDA sweep to tighten H2 verdict bands
+ID: S-0048-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0048_voff_nmda1_dsi_test
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity
+Date added: 2026-04-25
+
+t0048 used 4 trials per direction per gNMDA value. SD on PSP amplitudes was 0.16-1.02 mV, which is below the trial-to-trial PD/ND difference at most grid points, but the H2-vs-H1 boundary at the slope test (-0.024 vs |slope| &lt; 0.020 cutoff) is close enough that more trials might tip the verdict. Re-run this same Voff_bipNMDA=1 sweep at the paper&#x27;s reported N (12-19 trials per direction per gNMDA value) using the existing code/run_voff1_sweep.py with extended trial seed ranges. This is distinct from S-0046-01 which targets the Voff_bipNMDA=0 baseline; S-0048-04 specifically tightens t0048&#x27;s Voff=1 H2 finding. Pass criterion: report whether the slope test verdict changes from H2 to H1 with paper-N. Recommended task types: experiment-run.
+
+## Re-run t0047&#x27;s noise (flickerVAR) sweep at Voff_bipNMDA=1 to test noise-DSI behavior under voltage-independent NMDA
+ID: S-0048-05
+Status: active
+Priority: low
+Kind: experiment
+Source task: t0048_voff_nmda1_dsi_test
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, synaptic-integration
+Date added: 2026-04-25
+
+t0047 ran a noise sweep at exptype=1 (Voff_bipNMDA=0). Now that t0048 establishes Voff_bipNMDA=1 as the paper-faithful NMDA condition, the corresponding question is whether t0047&#x27;s noise vs DSI relationship (DSI declining with flickerVAR across the three gNMDA conditions) holds under the voltage-independent setting. Re-run the same flickerVAR x gNMDA grid t0047 used (or a reduced 3 x 3 grid to bound CPU) at exptype=2 and compare the noise-vs-DSI shape. Useful corollary to t0048&#x27;s gNMDA finding because it tells us whether the noise sensitivity is dominated by NMDA voltage-dependence or by AMPA/GABA balance. Lower priority because (a) t0047 already provides the qualitative noise-vs-DSI shape and (b) the H2 verdict for the Voff=1 DSI baseline is unlikely to be qualitatively different under noise. Recommended task types: experiment-run.
       </content>
     </section>
   </sections>

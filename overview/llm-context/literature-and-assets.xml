@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-25T00:03:00Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-25T09:34:37Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>139079</char_count>
-    <byte_count>139248</byte_count>
-    <estimated_tokens>34769</estimated_tokens>
+    <char_count>141795</char_count>
+    <byte_count>141972</byte_count>
+    <estimated_tokens>35448</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -156,9 +156,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0041_electrotonic_length_collapse_t0034_t0035</id>
         <id>t0046_reproduce_poleg_polsky_2016_exact</id>
         <id>t0047_validate_pp16_fig3_cond_noise</id>
+        <id>t0048_voff_nmda1_dsi_test</id>
       </source_ids>
       <content>
-Completed tasks: 41
+Completed tasks: 42
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -405,6 +406,12 @@ ID: t0047_validate_pp16_fig3_cond_noise
 Completed: 2026-04-25
 Short description: Re-run t0046 library to record per-synapse NMDA/AMPA/GABA conductances per direction (Fig 3A-E targets) and extend noise sweep to flickerVAR in {0.0, 0.1, 0.3, 0.5} for control / AP5 / 0 Mg.
 Result summary: Results Summary: Validate Poleg-Polsky 2016 Fig 3A-F Conductances and Extend Noise Sweep Summary The deposited ModelDB 189347 code does **not** reproduce Poleg-Polsky 2016&#x27;s Fig 3A-F simulation targets: per-synapse-class conductances are 6-9x the paper&#x27;s stated values on the summed scale (or 30-90x under on a per-synapse-mean scale, so neither interpretation reconciles), and the DSI vs gNMDA curve peaks at 0.19 and decays to 0.018 instead of staying flat near 0.30. The extended noise sweep does show DSI declining as flickerVAR rises (qualitative match for Figs 6-7), but the ROC AUC metric saturates at 1.0 in every cell because the implementation uses pre-stimulus baseline voltage as the...
+
+## Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness
+ID: t0048_voff_nmda1_dsi_test
+Completed: 2026-04-25
+Short description: Re-run t0046&#x27;s gNMDA sweep at exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) to test if NMDA voltage-dependence causes the DSI-vs-gNMDA collapse t0047 documented.
+Result summary: Results Summary: Voff_bipNMDA=1 DSI vs gNMDA Test Summary Switching the deposited DSGC&#x27;s NMDA model from voltage-dependent (`Voff_bipNMDA = 0`, exptype = 1) to voltage-independent (`Voff_bipNMDA = 1`, exptype = 2) flattens the DSI vs gNMDA curve substantially — verdict **H2 (intermediate)**: max-min DSI range drops from 0.174 to **0.066** (within H1&#x27;s 0.10 cutoff), but the linear-fit slope is still **-0.024 per nS** (above H1&#x27;s 0.02 cutoff and below t0047&#x27;s reference -0.058 per nS). The absolute DSI values stay between **0.04 and 0.10** — never reaching the paper&#x27;s claimed flat ~0.30 line. Mechanism confirmed: NMDA PD/ND ratio collapses from 2.05 (Voff=0 Mg-block runaway) to 1.00 (Voff=1...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -417,9 +424,10 @@ Result summary: Results Summary: Validate Poleg-Polsky 2016 Fig 3A-F Conductance
         <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
         <id>t0044_schachter_retest_on_t0043</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0049_seclamp_cond_remeasure</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 7
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -461,6 +469,13 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
+
+## Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC
+ID: t0049_seclamp_cond_remeasure
+Status: not_started
+Effective date: 2026-04-25
+Short description: Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.
+Dependencies: t0007_install_neuron_netpyne, t0046_reproduce_poleg_polsky_2016_exact, t0047_validate_pp16_fig3_cond_noise
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -481,10 +496,11 @@ Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_chan
         <id>vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation</id>
         <id>electrotonic-length-collapse-of-length-and-diameter-sweeps</id>
         <id>poleg-polsky-2016-reproduction-audit</id>
+        <id>dsi-flatness-test-voltage-independent-nmda</id>
         <id>polegpolsky-2016-fig3-conductances-validation</id>
       </source_ids>
       <content>
-Answers: 15
+Answers: 16
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -597,6 +613,14 @@ Confidence: medium
 Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, synaptic-integration
 
 Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning behaviour (PD PSP &gt; ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the absolute PSP amplitudes are larger than the paper&#x27;s reported means at the code-pinned gNMDA = 0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
+
+## Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016&#x27;s claim that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?
+ID: dsi-flatness-test-voltage-independent-nmda
+Created by: t0048_voff_nmda1_dsi_test on 2026-04-25
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, synaptic-integration
+
+No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff and never within +/- 0.05 of the paper&#x27;s claimed 0.30. The combined verdict is therefore H2 (flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at 0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not reproduce the paper&#x27;s DSI vs gNMDA claim.
 
 ## Does the deposited ModelDB 189347 code reproduce Poleg-Polsky 2016&#x27;s Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness, and does the extended noise sweep match the paper&#x27;s qualitative shape?
 ID: polegpolsky-2016-fig3-conductances-validation

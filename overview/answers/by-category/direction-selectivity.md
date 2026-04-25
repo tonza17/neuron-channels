@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (12)
+# Answers: `direction-selectivity` (13)
 
-12 answer(s).
+13 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -107,6 +107,37 @@ disagreements; every Figure 1-8 reproduction outcome is recorded with numerical 
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
 | **URL sources** | [url 1](https://github.com/ModelDBRepository/189347), [url 2](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347), [url 3](https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf) |
 | **Created by** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+
+</details>
+
+<details>
+<summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the
+deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim
+that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?</strong></summary>
+
+**Confidence**: medium
+
+No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range
+collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold
+of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff
+and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is therefore H2
+(flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
+0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
+reproduce the paper's DSI vs gNMDA claim.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/full_answer.md) |
+| **ID** | [`dsi-flatness-test-voltage-independent-nmda`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/) |
+| **Question** | Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Paper sources** | `10.1016_j.neuron.2016.02.013` |
+| **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **URL sources** | — |
+| **Created by** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
 
 </details>
 

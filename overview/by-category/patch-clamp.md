@@ -1185,26 +1185,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (9 open, 1 closed)
-
-<details>
-<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
-the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
-paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
-reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
-conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
-at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
-per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
-`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
-(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
-a downstream model build, not the deposited code. Recommended task types: experiment-run.
-
-</details>
+## Suggestions (8 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022

@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-7-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-15-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-16-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-47-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-184-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-49-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-189-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (18K)
-| [full](llm-context/full.xml) (257K) | [roadmap](llm-context/roadmap.xml) (63K) |
-[results](llm-context/results-deep-dive.xml) (176K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (19K)
+| [full](llm-context/full.xml) (268K) | [roadmap](llm-context/roadmap.xml) (67K) |
+[results](llm-context/results-deep-dive.xml) (182K) |
 [assets](llm-context/literature-and-assets.xml) (35K)
 
-*Last updated: 2026-04-25 00:03 UTC*
+*Last updated: 2026-04-25 09:34 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,12 +56,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
+| 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`description`](../tasks/t0049_seclamp_cond_remeasure/task_description.md) | 2026-04-25 |
 
 ---
 
@@ -82,10 +83,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (41 total)](tasks/by-status/completed.md)
+## [Recently Completed (42 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
 | 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
 | 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
 | 0040 | [Brainstorm results session 8](../overview/tasks/task_pages/t0040_brainstorm_results_8.md) | [`results`](../tasks/t0040_brainstorm_results_8/results/results_detailed.md) | 2026-04-24 15:30 |
@@ -95,9 +97,8 @@ No blocked tasks.
 | 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
 | 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | [`results`](../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) | 2026-04-23 22:40 |
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
-| 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
 
-*31 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*32 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -115,45 +116,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (162 open)](suggestions/)
-
-<details>
-<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
-whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
-never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
-`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
-depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
-paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
-(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
-instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
-model modification — only an exptype choice. Re-uses t0046 library and t0047's
-`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
-the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
-
-t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
-paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
-reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
-conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
-at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
-per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
-`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
-(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
-a downstream model build, not the deposited code. Recommended task types: experiment-run.
-
-</details>
+## [Recent Suggestions (165 open)](suggestions/)
 
 <details>
 <summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
@@ -193,6 +156,105 @@ reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA
 PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
 single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
 driver. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
+for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
+the paper's biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer
+to the paper's text statement and the deposited 0 Mg2+ condition. Per t0048's
+compare_literature.md: the deposited control choice for the project's DSGC simulations should
+be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a
+corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is
+reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a
+project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks
+import; (c) update the project's description.md / library asset README for
+modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
+experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
+task types: correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AMPA conductance scan at Voff_bipNMDA=1 as a secondary check
+on the residual DSI gap</strong> (S-0048-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
+
+Complementary to S-0048-01's GABA scan: re-run the same 7-point gNMDA sweep at exptype=2 with
+the AMPA conductance scaled across {1.0, 0.5, 0.25, 0.125} of the deposited b2gampa = 0.25 nS
+value. t0048's per-class conductance comparison shows AMPA summed conductance is similar
+between PD/ND (~11 nS each), so AMPA changes alone cannot create direction selectivity, but
+lowering AMPA at fixed GABA could shift the AMPA/GABA balance enough to amplify whatever
+residual selectivity GABA provides. This is an essential negative control for S-0048-01: if
+AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
+4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
+types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Higher-N (12-19 trials) rerun of t0048's Voff_bipNMDA=1 gNMDA
+sweep to tighten H2 verdict bands</strong> (S-0048-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0048 used 4 trials per direction per gNMDA value. SD on PSP amplitudes was 0.16-1.02 mV,
+which is below the trial-to-trial PD/ND difference at most grid points, but the H2-vs-H1
+boundary at the slope test (-0.024 vs |slope| < 0.020 cutoff) is close enough that more trials
+might tip the verdict. Re-run this same Voff_bipNMDA=1 sweep at the paper's reported N (12-19
+trials per direction per gNMDA value) using the existing code/run_voff1_sweep.py with extended
+trial seed ranges. This is distinct from S-0046-01 which targets the Voff_bipNMDA=0 baseline;
+S-0048-04 specifically tightens t0048's Voff=1 H2 finding. Pass criterion: report whether the
+slope test verdict changes from H2 to H1 with paper-N. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0047's noise (flickerVAR) sweep at Voff_bipNMDA=1 to test
+noise-DSI behavior under voltage-independent NMDA</strong> (S-0048-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
+
+t0047 ran a noise sweep at exptype=1 (Voff_bipNMDA=0). Now that t0048 establishes
+Voff_bipNMDA=1 as the paper-faithful NMDA condition, the corresponding question is whether
+t0047's noise vs DSI relationship (DSI declining with flickerVAR across the three gNMDA
+conditions) holds under the voltage-independent setting. Re-run the same flickerVAR x gNMDA
+grid t0047 used (or a reduced 3 x 3 grid to bound CPU) at exptype=2 and compare the
+noise-vs-DSI shape. Useful corollary to t0048's gNMDA finding because it tells us whether the
+noise sensitivity is dominated by NMDA voltage-dependence or by AMPA/GABA balance. Lower
+priority because (a) t0047 already provides the qualitative noise-vs-DSI shape and (b) the H2
+verdict for the Voff=1 DSI baseline is unlikely to be qualitatively different under noise.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -243,95 +305,51 @@ investigating.
 
 </details>
 
-<details>
-<summary>🔧 <strong>Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC
-offset)</strong> (S-0037-06)</summary>
-
-**Kind**: technique | **Priority**: low | **Date**: 2026-04-24 | **Source**:
-[t0037_null_gaba_reduction_ladder_t0022](../tasks/t0037_null_gaba_reduction_ladder_t0022/)
-
-t0022 applies only null-direction GABA. Published DSGC models (Park2014, Schachter2010)
-include a directionally-offset SAC inhibition where preferred-direction trials see much lower
-GABA than null. Implement the cartwheel asymmetry as a new parameter
-`GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037's over-excitation regime below 2
-nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves
-t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
-testbed comparison</strong> (S-0039-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
-Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
-AR(2) stochastic release) at its equivalent operational GABA level to test whether the
-Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
-t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
-testbed-level discrimination between the two mechanisms the project has produced. If both show
-passive_filtering, that rules out Schachter2010 across the substrates the project has
-available.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6,
-0.7} at GABA=4 nS on t0022</strong> (S-0039-02)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0039 found DSI saturates at 0.429 for D in {0.5, 0.75, 1.0}, matching the t0037 4 nS ceiling.
-This is the discriminator's upper bound at this GABA level. A finer sweep thinner than 0.5x
-would locate the saturation edge and bound the headroom available to any morphology optimiser
-on t0022. 5 diameters x 12 angles x 10 trials = 600 trials, ~25 min local CPU, $0.00.
-
-</details>
-
-*152 more open suggestions → [open suggestions](suggestions/)*
+*155 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
 ## [High Priority Suggestions (48)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
-whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
 
 **Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
 
-t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
-never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
-`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
-depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
-paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
-(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
-instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
-model modification — only an exptype choice. Re-uses t0046 library and t0047's
-`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
-the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+<summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
+for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
 
-t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
-paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
-reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
-conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
-at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
-per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
-`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
-(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
-a downstream model build, not the deposited code. Recommended task types: experiment-run.
+t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
+the paper's biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer
+to the paper's text statement and the deposited 0 Mg2+ condition. Per t0048's
+compare_literature.md: the deposited control choice for the project's DSGC simulations should
+be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a
+corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is
+reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a
+project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks
+import; (c) update the project's description.md / library asset README for
+modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
+experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
+task types: correction.
 
 </details>
 
@@ -490,7 +508,7 @@ Recommended task types: experiment-run.
 
 ---
 
-## [Recent Answers (15 total)](answers/)
+## [Recent Answers (16 total)](answers/)
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -508,6 +526,24 @@ b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's cl
 ~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
 the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
 metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+</details>
+
+<details>
+<summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the
+deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim
+that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
+[`dsi-flatness-test-voltage-independent-nmda`](../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/)
+
+No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range
+collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold
+of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff
+and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is therefore H2
+(flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
+0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
+reproduce the paper's DSI vs gNMDA claim.
 
 </details>
 
@@ -679,34 +715,7 @@ falsify rather than to assume, pending DSGC-specific patch validation.
 
 </details>
 
-<details>
-<summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
-imply for the compartmental modelling of direction-selective retinal
-ganglion cells (DSGCs) in NEURON, in particular for (a) treatment of
-published Ge/Gi traces as model-fitting targets, (b) inclusion of dendritic
-voltage-gated channels and the AIS compartment, (c) synaptic receptor
-complement including NMDARs, and (d) modelling of maintained activity and
-intrinsic pacemaker properties?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`patch-clamp-techniques-and-constraints-for-dsgc-modelling`](../tasks/t0017_literature_survey_patch_clamp/assets/answer/patch-clamp-techniques-and-constraints-for-dsgc-modelling/)
-
-DSGC compartmental models must treat published somatic voltage-clamp Ge/Gi traces as lower
-bounds on distal dendritic conductances rather than ground truth, because up to ~80% of the
-synaptic signal is lost on thin distal dendrites even in passive cables and active dendritic
-channels add further error. The modelling pipeline therefore needs a simulated somatic
-voltage-clamp block that mimics the experimental amplifier so simulation and experiment are
-compared on the same footing. The model must include an explicit AIS compartment with Nav1.6
-enrichment at approximately 7x the somatic Na+ density, with AIS length as a named tunable
-parameter constrained by immunohistochemistry, and NMDARs with standard Mg2+ block kinetics on
-DSGC dendrites, fit to AMPA/NMDA charge ratios during preferred and null motion rather than
-peak-AMPA-current alone. Finally the modeller must decide explicitly whether to include
-intrinsic-pacemaker biophysics (T-type Ca2+, HCN, subthreshold oscillations) based on the
-target DSGC subtype, validated by maintained-activity-under-synaptic-blockade traces.
-
-</details>
-
-*5 more answers → [answers](answers/)*
+*6 more answers → [answers](answers/)*
 
 ---
 
