@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Identify placeBIP() x-coordinate convention, soma 3D access pattern, h.distance() origin requirements; review t0046's read_synapse_coords pattern.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T11:19:58Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T11:33:21Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
