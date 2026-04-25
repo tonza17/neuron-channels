@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0046 simplerun for soma section access pattern, NEURON SEClamp docs, and the channel-isolation override pattern (b2gampa, b2gnmda, gabaMOD).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T09:39:15Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T09:49:00Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
