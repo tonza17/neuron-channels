@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0049_seclamp_cond_remeasure",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0049_seclamp_cond_remeasure",
+  "exit_code": 0,
+  "duration_seconds": 0.358,
+  "started_at": "2026-04-25T09:56:35Z",
+  "completed_at": "2026-04-25T09:56:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0049_seclamp_cond_remeasure",
+  "stdout_file": "009_20260425T095635Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260425T095635Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

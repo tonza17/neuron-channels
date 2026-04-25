@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0049_seclamp_cond_remeasure",
+  "command": "python -m arf.scripts.aggregators.aggregate_metrics --format json --detail full",
+  "exit_code": 1,
+  "duration_seconds": 0.127,
+  "started_at": "2026-04-25T09:50:42Z",
+  "completed_at": "2026-04-25T09:50:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0049_seclamp_cond_remeasure",
+  "stdout_file": "006_20260425T095042Z_python-m-arf-scripts-aggregators-aggrega.stdout.txt",
+  "stderr_file": "006_20260425T095042Z_python-m-arf-scripts-aggregators-aggrega.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 12,
+  "truncated": false
+}

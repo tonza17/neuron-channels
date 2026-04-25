@@ -1,0 +1,103 @@
+{
+  "variants": [
+    {
+      "variant_id": "ampa_nd",
+      "label": "AMPA, ND direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "ampa",
+        "direction": "ND",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "ampa_pd",
+      "label": "AMPA, PD direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "ampa",
+        "direction": "PD",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "gaba_nd",
+      "label": "GABA, ND direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "gaba",
+        "direction": "ND",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "gaba_pd",
+      "label": "GABA, PD direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "gaba",
+        "direction": "PD",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "nmda_nd",
+      "label": "NMDA, ND direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "nmda",
+        "direction": "ND",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "nmda_pd",
+      "label": "NMDA, PD direction (SEClamp at -65 mV)",
+      "dimensions": {
+        "channel": "nmda",
+        "direction": "PD",
+        "v_clamp_mv": -65.0,
+        "b2gnmda_ns": 0.5
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "nmda_dsi",
+      "label": "NMDA conductance DSI (SEClamp)",
+      "dimensions": {
+        "channel": "nmda",
+        "metric_kind": "conductance_dsi"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.006385640720213027
+      }
+    },
+    {
+      "variant_id": "ampa_dsi",
+      "label": "AMPA conductance DSI (SEClamp)",
+      "dimensions": {
+        "channel": "ampa",
+        "metric_kind": "conductance_dsi"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.012020552346102753
+      }
+    },
+    {
+      "variant_id": "gaba_dsi",
+      "label": "GABA conductance DSI (SEClamp)",
+      "dimensions": {
+        "channel": "gaba",
+        "metric_kind": "conductance_dsi"
+      },
+      "metrics": {
+        "direction_selectivity_index": -0.006038429391377136
+      }
+    }
+  ]
+}

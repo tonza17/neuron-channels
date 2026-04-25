@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure
+
+[33m[1mWARNINGS:[0m
+[33m  FD-W002 warning: logs/searches/ is empty (no search queries were logged)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

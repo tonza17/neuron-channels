@@ -1,0 +1,19 @@
+{
+  "spec_version": "2",
+  "answer_id": "seclamp-conductance-remeasurement-fig3",
+  "question": "Does measuring per-channel synaptic conductance under a somatic SEClamp on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values within +/- 25%, and resolve the t0047 amplitude mismatch as a measurement-modality artefact?",
+  "short_title": "SEClamp re-measurement of Fig 3A-E conductances",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [],
+  "answer_methods": ["code-experiment"],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0046_reproduce_poleg_polsky_2016_exact",
+    "t0047_validate_pp16_fig3_cond_noise"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0049_seclamp_cond_remeasure",
+  "date_created": "2026-04-25"
+}

@@ -1,0 +1,12 @@
+[metrics] Reading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\data\seclamp_trials.csv
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\data\seclamp_comparison_table.csv
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\metrics.json
+
+[metrics] Per-channel SEClamp conductance summary:
+channel direction  g_seclamp_mean_ns  g_seclamp_sd_ns  paper_target_ns  t0047_summed_ns  delta_paper_frac  delta_t0047_frac verdict
+   ampa        ND           0.005787         0.000194              3.5            10.77          0.998346          0.999463      H2
+   ampa        PD           0.005928         0.000267              3.5            10.92          0.998306          0.999457      H2
+   gaba        ND           0.048044         0.001756             30.0           215.57          0.998399          0.999777      H2
+   gaba        PD           0.047467         0.001980             12.5           106.13          0.996203          0.999553      H2
+   nmda        ND           0.013713         0.000187              5.0            33.98          0.997257          0.999596      H2
+   nmda        PD           0.013889         0.000382              7.0            69.55          0.998016          0.999800      H2

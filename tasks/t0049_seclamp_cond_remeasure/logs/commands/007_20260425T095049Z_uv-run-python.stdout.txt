@@ -1,0 +1,49 @@
+{
+  "metric_count": 4,
+  "metrics": [
+    {
+      "metric_key": "direction_selectivity_index",
+      "name": "Direction Selectivity Index",
+      "description": "Classic DSI = (R_pref - R_null) / (R_pref + R_null), where R_pref and R_null are AP rates in the preferred and null directions. Scalar summary of directional tuning strength, reported per simulation condition.",
+      "unit": "ratio",
+      "value_type": "float",
+      "version": 1,
+      "datasets": [],
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_hwhm_deg",
+      "name": "Tuning Curve Half-Width at Half-Max (degrees)",
+      "description": "Angular half-width in degrees at which the AP rate drops to half of the peak rate. Measures the sharpness of the directional tuning curve; lower values indicate steeper, more selective tuning.",
+      "unit": "none",
+      "value_type": "float",
+      "version": 1,
+      "datasets": [],
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_reliability",
+      "name": "Tuning Curve Reliability",
+      "description": "Pearson correlation coefficient of the angle-to-AP-rate tuning curve across repeated noisy trials. Measures robustness of directional tuning to stochastic synaptic or membrane noise; 1.0 means perfectly reproducible across trials, 0 means noise-dominated.",
+      "unit": "ratio",
+      "value_type": "float",
+      "version": 1,
+      "datasets": [],
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_rmse",
+      "name": "Tuning Curve RMSE (Hz)",
+      "description": "Root-mean-square error in Hz between the simulated angle-to-AP-rate tuning curve and the target tuning curve. Primary optimisation objective; captures absolute rates, preferred angle, and curve shape in one scalar.",
+      "unit": "none",
+      "value_type": "float",
+      "version": 1,
+      "datasets": [],
+      "is_key": true,
+      "emoji": null
+    }
+  ]
+}
