@@ -1,0 +1,2 @@
+[render_figures] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\results\images\dsi_vs_gnmda_voff0_vs_voff1.png
+[render_figures] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\results\images\conductance_comparison_voff0_vs_voff1_at_gnmda_0p5.png
