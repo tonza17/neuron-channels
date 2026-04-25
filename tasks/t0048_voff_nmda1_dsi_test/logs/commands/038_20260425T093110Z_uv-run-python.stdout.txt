@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\plan\plan.md
+
+[32m[1mPASSED[0m — no errors or warnings

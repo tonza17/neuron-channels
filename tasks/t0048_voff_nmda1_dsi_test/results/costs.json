@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Local CPU only; no paid API or remote compute. Re-uses t0046's compiled nrnmech.dll."
+}

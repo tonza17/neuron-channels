@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0048_voff_nmda1_dsi_test",
+  "command": "python -m arf.scripts.aggregators.aggregate_suggestions --format json --detail full --uncovered",
+  "exit_code": 1,
+  "duration_seconds": 0.123,
+  "started_at": "2026-04-25T09:24:54Z",
+  "completed_at": "2026-04-25T09:24:54Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0048_voff_nmda1_dsi_test",
+  "stdout_file": "023_20260425T092454Z_python-m-arf-scripts-aggregators-aggrega.stdout.txt",
+  "stderr_file": "023_20260425T092454Z_python-m-arf-scripts-aggregators-aggrega.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

@@ -1,0 +1,4 @@
+[compute_metrics] DSI Voff=1: {'0.00': 0.1031914161023668, '0.50': 0.1018497125825351, '1.00': 0.07796836821079331, '1.50': 0.05655963944271241, '2.00': 0.05275105554516958, '2.50': 0.04365807598378797, '3.00': 0.03747603319109665}
+[compute_metrics] DSI Voff=0 (recomputed from t0047): {'0.00': 0.1031914161023668, '0.50': 0.1916319701582896, '1.00': 0.11431982451044653, '1.50': 0.04156301391706694, '2.00': 0.032139268375461306, '2.50': 0.022115698915962014, '3.00': 0.017876851404282388}
+[compute_metrics] verdict range=0.0657 slope=-0.0242/nS range_label=H1 slope_label=H2 overall=H2
+[compute_metrics] wrote 7 variants to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\results\metrics.json

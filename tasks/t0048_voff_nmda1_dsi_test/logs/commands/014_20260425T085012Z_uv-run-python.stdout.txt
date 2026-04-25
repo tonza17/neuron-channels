@@ -1,0 +1,15 @@
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+[run_voff1_sweep] numsyn=282
+Changed dt
+  limited gi=0 dir=PD seed=0 peak_psp_mv=13.190 peak_g_nmda_summed_ns=0.000
+Changed dt
+  limited gi=0 dir=ND seed=100 peak_psp_mv=10.739 peak_g_nmda_summed_ns=0.000
+Changed dt
+  limited gi=1 dir=PD seed=1000 peak_psp_mv=22.465 peak_g_nmda_summed_ns=50.091
+Changed dt
+  limited gi=1 dir=ND seed=1100 peak_psp_mv=18.720 peak_g_nmda_summed_ns=51.472
+[run_voff1_sweep] limit CSV at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\results\data\gnmda_sweep_trials_voff1_limit.csv

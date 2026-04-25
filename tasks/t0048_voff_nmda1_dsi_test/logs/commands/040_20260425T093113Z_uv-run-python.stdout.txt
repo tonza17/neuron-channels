@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0048_voff_nmda1_dsi_test\tasks\t0048_voff_nmda1_dsi_test\logs\sessions\capture_report.json.

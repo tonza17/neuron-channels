@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0048_voff_nmda1_dsi_test",
+  "command": "uv run python -m arf.scripts.utils.capture_task_sessions --task-id t0048_voff_nmda1_dsi_test",
+  "exit_code": 0,
+  "duration_seconds": 1.757,
+  "started_at": "2026-04-25T09:31:13Z",
+  "completed_at": "2026-04-25T09:31:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0048_voff_nmda1_dsi_test",
+  "stdout_file": "040_20260425T093113Z_uv-run-python.stdout.txt",
+  "stderr_file": "040_20260425T093113Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
