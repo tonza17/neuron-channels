@@ -1,10 +1,44 @@
 # Answers by Date Added
 
-14 answer(s) grouped by creation date.
+15 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
+
+## 2026-04-25 (1)
+
+<details>
+<summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
+2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness,
+and does the extended noise sweep match the paper's qualitative
+shape?</strong></summary>
+
+**Confidence**: medium
+
+No. Every per-synapse-class summed peak conductance at the code-pinned gNMDA = 0.5 nS is 6-9x
+the paper's Fig 3A-E target on the summed scale and well below it on the per-synapse-mean
+scale, so neither interpretation reconciles. DSI as a function of gNMDA peaks at 0.19 near
+b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's claimed flat
+~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
+the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
+metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/full_answer.md) |
+| **ID** | [`polegpolsky-2016-fig3-conductances-validation`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/) |
+| **Question** | Does the deposited ModelDB 189347 code reproduce Poleg-Polsky 2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness, and does the extended noise sweep match the paper's qualitative shape? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Paper sources** | `10.1016_j.neuron.2016.02.013` |
+| **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **URL sources** | — |
+| **Created by** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+
+</details>
 
 ## 2026-04-24 (2)
 

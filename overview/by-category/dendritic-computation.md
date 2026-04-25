@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(42)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(43)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2287,7 +2287,26 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (33 open, 9 closed)
+## Suggestions (34 open, 9 closed)
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)

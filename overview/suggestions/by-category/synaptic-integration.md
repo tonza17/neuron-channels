@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-35 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **31 open** (13 high,
-17 medium, 1 low), **4 closed**.
+38 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **34 open** (15 high,
+17 medium, 2 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -187,6 +187,31 @@ cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce
 </details>
 
 <details>
+<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
+the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
+paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
+reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
+conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
+at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
+per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
+`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
+(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
+a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
 condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
 
@@ -206,6 +231,31 @@ tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(me
 mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
 does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
 (paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
 
 </details>
 
@@ -772,6 +822,32 @@ GABA than null. Implement the cartwheel asymmetry as a new parameter
 `GABA_CONDUCTANCE_PREF_NS` (probably 0-1 nS based on t0037's over-excitation regime below 2
 nS), and measure whether primary DSI improves toward the 0.5-0.6 Park2014 centre. This moves
 t0022 closer to the canonical DSGC E-I motif rather than relying on a single null-only scalar.
+
+</details>
+
+<details>
+<summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
+verdict helpers as a reusable library</strong> (S-0047-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0047's `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA /
+_ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only
+audited per-channel conductance recorder in the project and a prerequisite for any future Fig
+3A-E reproduction (including S-0047-02's SEClamp variant). Package it as a reusable library
+asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any
+t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py`
+reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x
+PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
+single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
+driver. Recommended task types: write-library.
 
 </details>
 

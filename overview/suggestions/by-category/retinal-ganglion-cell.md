@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-43 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **39 open** (15
-high, 18 medium, 6 low), **4 closed**.
+45 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **41 open** (16
+high, 18 medium, 7 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -226,6 +226,31 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
+the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
+paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
+reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
+conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
+at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
+per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
+`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
+(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
+a downstream model build, not the deposited code. Recommended task types: experiment-run.
 
 </details>
 
@@ -899,6 +924,32 @@ first record per-trial spike times (not just rates) from run_gabamod_sweep.py. C
 S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
 analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
 produce a publication-quality raster. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
+verdict helpers as a reusable library</strong> (S-0047-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0047's `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA /
+_ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only
+audited per-channel conductance recorder in the project and a prerequisite for any future Fig
+3A-E reproduction (including S-0047-02's SEClamp variant). Package it as a reusable library
+asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any
+t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py`
+reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x
+PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
+single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
+driver. Recommended task types: write-library.
 
 </details>
 

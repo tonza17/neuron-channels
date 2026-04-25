@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-119 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **105 open** (31
-high, 66 medium, 8 low), **14 closed**.
+121 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **107 open** (32
+high, 67 medium, 8 low), **14 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -589,6 +589,31 @@ tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(me
 mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
 does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
 (paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
 
 </details>
 
@@ -2043,6 +2068,33 @@ placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point
 section indices. Outcome is a third variant of the port asset running on a morphology that
 actually matches the measured dendritic diameter profile. Recommended task types:
 code-reproduction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
+jitter-isolated trials) so the metric does not saturate at 1.000</strong>
+(S-0047-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0047-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0047 reproduces the paper's qualitative DSI-declines-with-noise shape across all three
+conditions but ROC AUC saturates at 1.000 in every (condition, flickerVAR) cell. Root cause:
+t0046's `_roc_auc_pd_vs_baseline` uses pre-stimulus baseline mean (5-6 mV above v_init) as the
+negative class while PD PSP peaks (18-25 mV) dwarf baselines. Paper's Fig 7 shows AUC
+declining toward 0.7 under noise. Concrete actions: (a) re-implement AUC using off-direction
+(ND) PSP peaks as the negative class (PD-vs-ND PSP overlap framing); (b) alternatively sample
+jitter-isolated trials as the no-stimulus distribution; (c) add unit tests on a synthetic
+two-Gaussian distribution with controllable overlap. Recorded as discrepancy entry 15 in
+t0047's catalogue. Once redefined, re-evaluate the t0047 noise-extension trial CSVs (96 trials
+on disk) without re-simulating. Recommended task types: write-library, experiment-run.
 
 </details>
 

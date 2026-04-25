@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (27)](../papers/by-category/compartmental-modeling.md) | [Answers
-(12)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(132)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(13)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(136)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (5)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -1441,7 +1441,26 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 
-## Answers (12)
+## Answers (13)
+
+<details>
+<summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
+2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness,
+and does the extended noise sweep match the paper's qualitative
+shape?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
+[`polegpolsky-2016-fig3-conductances-validation`](../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/)
+
+No. Every per-synapse-class summed peak conductance at the code-pinned gNMDA = 0.5 nS is 6-9x
+the paper's Fig 3A-E target on the summed scale and well below it on the per-synapse-mean
+scale, so neither interpretation reconciles. DSI as a function of gNMDA peaks at 0.19 near
+b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's claimed flat
+~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
+the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
+metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+</details>
 
 <details>
 <summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
@@ -1702,7 +1721,86 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (117 open, 15 closed)
+## Suggestions (121 open, 15 closed)
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
+the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
+paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
+reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
+conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
+at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
+per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
+`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
+(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
+a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
+jitter-isolated trials) so the metric does not saturate at 1.000</strong>
+(S-0047-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 reproduces the paper's qualitative DSI-declines-with-noise shape across all three
+conditions but ROC AUC saturates at 1.000 in every (condition, flickerVAR) cell. Root cause:
+t0046's `_roc_auc_pd_vs_baseline` uses pre-stimulus baseline mean (5-6 mV above v_init) as the
+negative class while PD PSP peaks (18-25 mV) dwarf baselines. Paper's Fig 7 shows AUC
+declining toward 0.7 under noise. Concrete actions: (a) re-implement AUC using off-direction
+(ND) PSP peaks as the negative class (PD-vs-ND PSP overlap framing); (b) alternatively sample
+jitter-isolated trials as the no-stimulus distribution; (c) add unit tests on a synthetic
+two-Gaussian distribution with controllable overlap. Recorded as discrepancy entry 15 in
+t0047's catalogue. Once redefined, re-evaluate the t0047 noise-extension trial CSVs (96 trials
+on disk) without re-simulating. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
+verdict helpers as a reusable library</strong> (S-0047-04)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047's `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA /
+_ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only
+audited per-channel conductance recorder in the project and a prerequisite for any future Fig
+3A-E reproduction (including S-0047-02's SEClamp variant). Package it as a reusable library
+asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any
+t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py`
+reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x
+PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
+single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
+driver. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Diagnose and fix the low peak firing rate in t0022 (15 Hz vs

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-24T17:45:36Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-25T00:03:00Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>184183</char_count>
-    <byte_count>184196</byte_count>
-    <estimated_tokens>46045</estimated_tokens>
+    <char_count>189258</char_count>
+    <byte_count>189275</byte_count>
+    <estimated_tokens>47314</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -197,9 +197,13 @@
         <id>S-0046-04</id>
         <id>S-0046-05</id>
         <id>S-0046-06</id>
+        <id>S-0047-01</id>
+        <id>S-0047-02</id>
+        <id>S-0047-03</id>
+        <id>S-0047-04</id>
       </source_ids>
       <content>
-Suggestions: 180
+Suggestions: 184
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -2219,6 +2223,53 @@ Categories: compartmental-modeling, retinal-ganglion-cell
 Date added: 2026-04-24
 
 t0046&#x27;s `dsgc_model_exact.hoc` is a from-scratch GUI-free derivative of `main.hoc` that wraps `simplerun(exptype, dir)` and exposes `b2gnmda`, `flickerVAR`, and `stimnoiseVAR` as post-call overrides honouring the silent `achMOD = 0.33` rebind. Package this driver (plus `code/run_simplerun.py`) into a separate reusable library asset that t0008, t0020, t0022, and downstream optimisation tasks can import directly, replacing their bespoke headless driver scaffolding. This eliminates duplicated bootstrap code and gives every downstream port a single audited entry point with the noise-globals override mechanism already wired. Recommended task types: write-library.
+
+## Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test whether voltage-independent NMDA flattens DSI vs gNMDA
+ID: S-0047-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0047_validate_pp16_fig3_cond_noise
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: synaptic-integration, dendritic-computation, compartmental-modeling, direction-selectivity, voltage-gated-channels
+Date added: 2026-04-25
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS, never reaching the paper&#x27;s claimed flat ~0.30. Most plausible source: the deposited control&#x27;s `Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The paper&#x27;s biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep (PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg) instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a model modification — only an exptype choice. Re-uses t0046 library and t0047&#x27;s `code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+## Re-measure per-channel conductances under a somatic SEClamp on the deposited DSGC to match paper Fig 3A-E modality
+ID: S-0047-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0047_validate_pp16_fig3_cond_noise
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: patch-clamp, synaptic-integration, compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-25
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the paper&#x27;s Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation reconciles. The paper&#x27;s Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and `e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02 (synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+## Redefine the ROC AUC negative class (off-direction or jitter-isolated trials) so the metric does not saturate at 1.000
+ID: S-0047-03
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0047_validate_pp16_fig3_cond_noise
+Source paper: 10.1016_j.neuron.2016.02.013
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-04-25
+
+t0047 reproduces the paper&#x27;s qualitative DSI-declines-with-noise shape across all three conditions but ROC AUC saturates at 1.000 in every (condition, flickerVAR) cell. Root cause: t0046&#x27;s `_roc_auc_pd_vs_baseline` uses pre-stimulus baseline mean (5-6 mV above v_init) as the negative class while PD PSP peaks (18-25 mV) dwarf baselines. Paper&#x27;s Fig 7 shows AUC declining toward 0.7 under noise. Concrete actions: (a) re-implement AUC using off-direction (ND) PSP peaks as the negative class (PD-vs-ND PSP overlap framing); (b) alternatively sample jitter-isolated trials as the no-stimulus distribution; (c) add unit tests on a synthetic two-Gaussian distribution with controllable overlap. Recorded as discrepancy entry 15 in t0047&#x27;s catalogue. Once redefined, re-evaluate the t0047 noise-extension trial CSVs (96 trials on disk) without re-simulating. Recommended task types: write-library, experiment-run.
+
+## Package per-synapse conductance recorder and qualitative-shape verdict helpers as a reusable library
+ID: S-0047-04
+Status: active
+Priority: low
+Kind: library
+Source task: t0047_validate_pp16_fig3_cond_noise
+Categories: compartmental-modeling, synaptic-integration, retinal-ganglion-cell
+Date added: 2026-04-25
+
+t0047&#x27;s `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA / _ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only audited per-channel conductance recorder in the project and a prerequisite for any future Fig 3A-E reproduction (including S-0047-02&#x27;s SEClamp variant). Package it as a reusable library asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py` reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()` driver. Recommended task types: write-library.
       </content>
     </section>
   </sections>

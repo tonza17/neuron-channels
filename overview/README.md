@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-7-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-14-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-15-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-46-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-180-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-47-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-184-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (17K)
-| [full](llm-context/full.xml) (246K) | [roadmap](llm-context/roadmap.xml) (61K) |
-[results](llm-context/results-deep-dive.xml) (170K) |
-[assets](llm-context/literature-and-assets.xml) (34K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (18K)
+| [full](llm-context/full.xml) (257K) | [roadmap](llm-context/roadmap.xml) (63K) |
+[results](llm-context/results-deep-dive.xml) (176K) |
+[assets](llm-context/literature-and-assets.xml) (35K)
 
-*Last updated: 2026-04-24 17:45 UTC*
+*Last updated: 2026-04-25 00:03 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (40 total)](tasks/by-status/completed.md)
+## [Recently Completed (41 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
 | 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
 | 0040 | [Brainstorm results session 8](../overview/tasks/task_pages/t0040_brainstorm_results_8.md) | [`results`](../tasks/t0040_brainstorm_results_8/results/results_detailed.md) | 2026-04-24 15:30 |
 | 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`results`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/results/results_detailed.md) | 2026-04-24 12:15 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0036 | [Rerun distal-diameter sweep on t0022 with halved null-GABA](../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md) | [`results`](../tasks/t0036_rerun_t0030_halved_null_gaba/results/results_detailed.md) | 2026-04-23 22:40 |
 | 0035 | [Distal-dendrite diameter sweep on t0024 DSGC](../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) | [`results`](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/results/results_detailed.md) | 2026-04-23 18:00 |
 | 0034 | [Distal-dendrite length sweep on t0024 DSGC](../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) | [`results`](../tasks/t0034_distal_dendrite_length_sweep_t0024/results/results_detailed.md) | 2026-04-23 14:05 |
-| 0030 | [Distal-dendrite diameter sweep on t0022 DSGC](../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md) | [`results`](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/results/results_detailed.md) | 2026-04-22 22:00 |
 
-*30 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*31 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -115,7 +115,86 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (158 open)](suggestions/)
+## [Recent Suggestions (162 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
+the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
+paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
+reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
+conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
+at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
+per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
+`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
+(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
+a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Redefine the ROC AUC negative class (off-direction or
+jitter-isolated trials) so the metric does not saturate at 1.000</strong>
+(S-0047-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 reproduces the paper's qualitative DSI-declines-with-noise shape across all three
+conditions but ROC AUC saturates at 1.000 in every (condition, flickerVAR) cell. Root cause:
+t0046's `_roc_auc_pd_vs_baseline` uses pre-stimulus baseline mean (5-6 mV above v_init) as the
+negative class while PD PSP peaks (18-25 mV) dwarf baselines. Paper's Fig 7 shows AUC
+declining toward 0.7 under noise. Concrete actions: (a) re-implement AUC using off-direction
+(ND) PSP peaks as the negative class (PD-vs-ND PSP overlap framing); (b) alternatively sample
+jitter-isolated trials as the no-stimulus distribution; (c) add unit tests on a synthetic
+two-Gaussian distribution with controllable overlap. Recorded as discrepancy entry 15 in
+t0047's catalogue. Once redefined, re-evaluate the t0047 noise-extension trial CSVs (96 trials
+on disk) without re-simulating. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
+verdict helpers as a reusable library</strong> (S-0047-04)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047's `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gAMPA / _ref_gNMDA /
+_ref_g)` to every BIPsyn, SACexcsyn, and SACinhibsyn at cell-build time. It is the only
+audited per-channel conductance recorder in the project and a prerequisite for any future Fig
+3A-E reproduction (including S-0047-02's SEClamp variant). Package it as a reusable library
+asset with: (a) `attach_conductance_recorders(cell, dt_record_ms)` that operates on any
+t0046-derived cell; (b) qualitative-shape verdict helpers from `code/compute_metrics.py`
+reporting PD/ND ratios per channel as a positive finding (AMPA flat across gNMDA, GABA ND ~2x
+PD reproduce paper qualitative claims even though absolute amplitudes do not match); (c) a
+single-trial smoke test. Distinct from S-0046-06 which packages the GUI-free `simplerun()`
+driver. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Localise the GABA unpinning threshold with a fine sweep (5.0,
@@ -212,77 +291,49 @@ on t0022. 5 diameters x 12 angles x 10 trials = 600 trials, ~25 min local CPU, $
 
 </details>
 
-<details>
-<summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
-GABA-suppressed active amplification</strong> (S-0039-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0022 shows passive_filtering at 4 nS. Two explanations: (a) t0022 lacks active machinery, or
-(b) 4 nS GABA shunts regenerative events that would otherwise produce Schachter2010
-concave-down. A joint sweep GABA in {5, 4, 3, 2} x D in {0.5, 1.0, 2.0} = 12 conditions x 12
-angles x 10 trials = 1440 trials (~60 min) would distinguish: if lower-GABA runs produce
-concave-down curves, mechanism (b) is right; if all GABA levels show passive signatures,
-mechanism (a) is right.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Diagnose and fix t0022's 15 Hz peak-firing cap (inherited
-AMPA-only drive issue)</strong> (S-0039-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-Peak firing at the preferred direction is 15 Hz across the diameter sweep, well below
-Schachter2010's 40-80 Hz baseline. The same 15 Hz ceiling appeared in t0030 at 12 nS GABA, so
-it is a pre-existing t0022 drive issue, not a diameter or GABA artefact. Duplicate of
-S-0037-04 but now blocking quantitative literature comparisons for the discriminator task too.
-Likely fix: add NMDA back into the E-I schedule, or boost AMPA conductance, or both. Run a
-diagnostic trace of soma voltage at preferred direction and compare to Schachter2010's
-published traces.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
-DSI) morphology dynamic range on t0022</strong> (S-0039-05)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0039 shows the t0022 discriminator's total DSI spread across a 4x diameter range is only
-0.061 (0.368 to 0.429). Any pure-morphology optimiser running at GABA=4 nS on t0022 has a
-ceiling of 0.429 (the 4 nS saturation value). If t0033's planned optimiser is scoped to
-maximise DSI via morphology alone, the maximum achievable lift from the baseline is ~0.06 -
-the headroom is much smaller than originally planned. Consider adding a channel-density
-dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
-density than through morphology alone.
-
-</details>
-
-<details>
-<summary>📊 <strong>Introduce per-trial spike-count distribution metric to
-distinguish failures from timing shifts</strong> (S-0039-06)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0039's peak firing drops from 15 Hz at D=0.5x to 13 Hz at D=2.0x - a 2 Hz difference could be
-2 fewer spikes per trial at the same timing, or a shift in the spike-count DISTRIBUTION (e.g.,
-bimodal failures). Currently metrics_per_diameter.csv reports only the mean; adding per-trial
-spike-count histograms would separate 'failure rate' from 'timing shift' in cable-theory
-interpretation. Low effort: reuse existing sweep_results.csv, add a standalone analysis script
-that writes a histogram per diameter.
-
-</details>
-
-*148 more open suggestions → [open suggestions](suggestions/)*
+*152 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (46)](suggestions/)
+## [High Priority Suggestions (48)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Re-run t0046 gNMDA sweep at exptype=2 (Voff_bipNMDA=1) to test
+whether voltage-independent NMDA flattens DSI vs gNMDA</strong> (S-0047-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 confirms DSI vs gNMDA peaks at 0.19 near b2gnmda = 0.5 nS and decays to 0.018 by 3.0 nS,
+never reaching the paper's claimed flat ~0.30. Most plausible source: the deposited control's
+`Voff_bipNMDA = 0` (voltage-dependent NMDA with Mg block). As gNMDA rises, ND dendrites
+depolarise enough to relieve Mg block and ND NMDA catches up to PD, collapsing DSI. The
+paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same 7-point sweep
+(PD/ND, 4+ trials) at `exptype = 2` (sets `Voff_bipNMDA = 1`, the same setting used by 0Mg)
+instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
+model modification — only an exptype choice. Re-uses t0046 library and t0047's
+`code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-measure per-channel conductances under a somatic SEClamp on
+the deposited DSGC to match paper Fig 3A-E modality</strong> (S-0047-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0047_validate_pp16_fig3_cond_noise](../tasks/t0047_validate_pp16_fig3_cond_noise/)
+
+t0047 records `_ref_g` directly at each synapse and obtains summed peak conductances 6-9x the
+paper's Fig 3A-E targets and per-synapse-mean values 28-90x under. Neither interpretation
+reconciles. The paper's Fig 3A-E most likely reports a somatic voltage-clamp-recorded compound
+conductance — a third quantity not measured here. Implement a NEURON SEClamp at the soma held
+at -65 mV across the same 7-point gNMDA sweep, record `_ref_i` on the clamp, and deconvolve
+per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_AMPA = 0` and
+`e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
+(synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
+a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
@@ -435,51 +486,30 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
-blend instead of pure primary DSI</strong> (S-0030-06)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
-sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
-optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
-the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
-Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
-peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
-S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
-keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
-vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
-option. Recommended task types: write-library, answer-question.
-
-</details>
-
-<details>
-<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
-t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
-
-The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
-modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
-axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
-Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
-Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
-2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
-Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
-t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
-sibling library asset. Recommended task types: infrastructure-setup, build-model,
-write-library.
-
-</details>
-
-*36 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*38 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (14 total)](answers/)
+## [Recent Answers (15 total)](answers/)
+
+<details>
+<summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
+2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness,
+and does the extended noise sweep match the paper's qualitative
+shape?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
+[`polegpolsky-2016-fig3-conductances-validation`](../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/)
+
+No. Every per-synapse-class summed peak conductance at the code-pinned gNMDA = 0.5 nS is 6-9x
+the paper's Fig 3A-E target on the summed scale and well below it on the per-synapse-mean
+scale, so neither interpretation reconciles. DSI as a function of gNMDA peaks at 0.19 near
+b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's claimed flat
+~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
+the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
+metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+</details>
 
 <details>
 <summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
@@ -676,33 +706,7 @@ target DSGC subtype, validated by maintained-activity-under-synaptic-blockade tr
 
 </details>
 
-<details>
-<summary><strong>What quantitative priors does the synaptic-integration literature
-supply for the DSGC compartmental model on (1) AMPA/NMDA/GABA receptor
-kinetics, (2) shunting inhibition, (3) E-I balance temporal co-tuning, (4)
-dendritic-location-dependent PSP integration, and (5) SAC-to-DSGC
-inhibitory asymmetry?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`synaptic-integration-priors-for-dsgc-modelling`](../tasks/t0018_literature_survey_synaptic_integration/assets/answer/synaptic-integration-priors-for-dsgc-modelling/)
-
-Receptor kinetics: AMPA uses a fast bi-exponential conductance (rise ~0.2 ms, decay ~1-3 ms,
-Erev 0 mV); NMDA uses a slow conductance (rise ~5-10 ms, decay ~50-100 ms, Erev 0 mV) with
-Jahr-Stevens Mg2+ block; GABA_A uses a fast bi-exponential (rise ~0.5 ms, decay ~5-10 ms, Erev
--65 to -75 mV). Shunting inhibition vetoes excitation multiplicatively with an "on-the-path"
-geometry: only inhibition sitting between the excitatory input and the soma shunts PSP
-amplitude, while distal inhibition has negligible effect. Excitation and inhibition co-tune in
-time with inhibition lagging excitation by ~1-3 ms in cortex and ~15-50 ms in DSGCs during
-null-direction motion, sharpening spike timing. Somatic PSP amplitude decays roughly
-exponentially with electrotonic distance (lambda_DC ~100-300 um for RGC dendrites) while local
-dendritic non-linearities (Na+, Ca2+, NMDAR) partially compensate for distal attenuation. SAC
-boutons onto a DSGC dendrite are spatially asymmetric with stronger inhibition from null-side
-SACs, and this cellular asymmetry (not somatic E-I timing alone) is the primary substrate for
-direction selectivity at the DSGC level.
-
-</details>
-
-*4 more answers → [answers](answers/)*
+*5 more answers → [answers](answers/)*
 
 ---
 

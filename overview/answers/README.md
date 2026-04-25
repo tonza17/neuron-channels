@@ -1,6 +1,6 @@
-# Answers (14)
+# Answers (15)
 
-14 answer(s).
+15 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -117,6 +117,38 @@ disagreements; every Figure 1-8 reproduction outcome is recorded with numerical 
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
 | **URL sources** | [url 1](https://github.com/ModelDBRepository/189347), [url 2](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347), [url 3](https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf) |
 | **Created by** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
+2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness,
+and does the extended noise sweep match the paper's qualitative
+shape?</strong></summary>
+
+**Confidence**: medium
+
+No. Every per-synapse-class summed peak conductance at the code-pinned gNMDA = 0.5 nS is 6-9x
+the paper's Fig 3A-E target on the summed scale and well below it on the per-synapse-mean
+scale, so neither interpretation reconciles. DSI as a function of gNMDA peaks at 0.19 near
+b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's claimed flat
+~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
+the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
+metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/full_answer.md) |
+| **ID** | [`polegpolsky-2016-fig3-conductances-validation`](../../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/) |
+| **Question** | Does the deposited ModelDB 189347 code reproduce Poleg-Polsky 2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness, and does the extended noise sweep match the paper's qualitative shape? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-04-25 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Paper sources** | `10.1016_j.neuron.2016.02.013` |
+| **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **URL sources** | — |
+| **Created by** | [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
 
 </details>
 
