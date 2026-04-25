@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results files; render per-channel x-coordinate histograms, radial-distance histograms, PD/ND count bar chart.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T11:59:39Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T12:03:54Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
