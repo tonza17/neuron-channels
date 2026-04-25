@@ -1,0 +1,29 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsi-flatness-test-voltage-independent-nmda",
+  "question": "Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?",
+  "short_title": "Voff_bipNMDA=1 DSI flatness test",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1016_j.neuron.2016.02.013"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0046_reproduce_poleg_polsky_2016_exact",
+    "t0047_validate_pp16_fig3_cond_noise"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0048_voff_nmda1_dsi_test",
+  "date_created": "2026-04-25"
+}
