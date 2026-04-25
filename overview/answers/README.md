@@ -1,6 +1,6 @@
-# Answers (17)
+# Answers (18)
 
-17 answer(s).
+18 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -213,6 +213,40 @@ metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on t
 | **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
 | **URL sources** | — |
 | **Created by** | [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the deposited Poleg-Polsky 2016 DSGC's spatial distribution of
+NMDA, AMPA, and GABA synapses match the paper's text descriptions, and does
+it explain the t0049 GABA PD/ND symmetry collapse under somatic
+SEClamp?</strong></summary>
+
+**Confidence**: high
+
+The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical
+grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 +
+0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the
+somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all
+three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially
+symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only
+appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the
+t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct consequence of (1) a non-spatial
+gabaMOD protocol and (2) a symmetric underlying GABA distribution, exactly as H1 predicts.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0050_audit_syn_distribution/assets/answer/synapse-distribution-audit-deposited-vs-paper/full_answer.md) |
+| **ID** | [`synapse-distribution-audit-deposited-vs-paper`](../../tasks/t0050_audit_syn_distribution/assets/answer/synapse-distribution-audit-deposited-vs-paper/) |
+| **Question** | Does the deposited Poleg-Polsky 2016 DSGC's spatial distribution of NMDA, AMPA, and GABA synapses match the paper's text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse under somatic SEClamp? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | high |
+| **Date created** | 2026-04-25 |
+| **Categories** | — |
+| **Paper sources** | — |
+| **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0049_seclamp_cond_remeasure`](../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **URL sources** | — |
+| **Created by** | [`t0050_audit_syn_distribution`](../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
 
 </details>
 

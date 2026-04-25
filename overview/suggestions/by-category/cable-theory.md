@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-24 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **20
-open** (4 high, 13 medium, 3 low), **4 closed**.
+25 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **21
+open** (4 high, 14 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -109,6 +109,30 @@ papers.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📚 <strong>Add a path-distance helper to t0046's modeldb_189347_dsgc_exact
+library using the two-segment h.distance form</strong> (S-0050-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+Bonus finding from t0050: NEURON 8.2.7 Python's legacy single-arg form h.distance(0, sec(0.5))
+does NOT reliably set the path-distance origin (returns 0.5 instead of resetting). The audit
+worked around this using the two-segment form h.distance(soma_seg, syn_seg). Add a small
+path_distance_um(soma_seg, target_seg) helper to t0046's library (modeldb_189347_dsgc_exact)
+wrapping the robust form, plus a docstring note explaining the API quirk. Other DSGC tasks
+computing path distances (e.g., S-0049-05's intermediate SEClamp dendritic locations, future
+spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments
+required. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend cable-theory survey to frequency-domain and thin-dendrite

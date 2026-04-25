@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(44)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(45)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2287,7 +2287,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (34 open, 10 closed)
+## Suggestions (35 open, 10 closed)
 
 <details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
@@ -2306,6 +2306,25 @@ side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic 
 asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
 persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
 Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Refine spatial audit with dendritic-branch identity
+classification (proximal-PD / proximal-ND / distal)</strong> (S-0050-04)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-25 | **Source**:
+[t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
+
+t0050 used three midline-x conventions (soma_x, zero, BIPsyn-locx-median) to classify synapses
+as side_a / side_b. A more biophysically meaningful classification partitions synapses by
+dendritic branch identity: walk the section tree from soma, label each first-order branch as
+proximal-PD or proximal-ND based on its dendritic-field axis, then label deeper segments as
+distal. This finer partition would reveal whether the 282-synapse population has
+within-PD-branch or within-ND-branch density gradients invisible to a single x-midline split,
+and would provide the substrate-level data needed to design any future per-branch synaptic
+modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis on existing
+extract_coordinates outputs. Recommended task types: data-analysis.
 
 </details>
 

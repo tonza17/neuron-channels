@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-44 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **34 open** (8
-high, 23 medium, 3 low), **10 closed**.
+45 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (8
+high, 23 medium, 4 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -807,6 +807,31 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Refine spatial audit with dendritic-branch identity
+classification (proximal-PD / proximal-ND / distal)</strong> (S-0050-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0050 used three midline-x conventions (soma_x, zero, BIPsyn-locx-median) to classify synapses
+as side_a / side_b. A more biophysically meaningful classification partitions synapses by
+dendritic branch identity: walk the section tree from soma, label each first-order branch as
+proximal-PD or proximal-ND based on its dendritic-field axis, then label deeper segments as
+distal. This finer partition would reveal whether the 282-synapse population has
+within-PD-branch or within-ND-branch density gradients invisible to a single x-midline split,
+and would provide the substrate-level data needed to design any future per-branch synaptic
+modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis on existing
+extract_coordinates outputs. Recommended task types: data-analysis.
 
 </details>
 

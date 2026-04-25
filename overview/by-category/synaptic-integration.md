@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(44)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(46)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (1)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2164,7 +2164,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (38 open, 6 closed)
+## Suggestions (39 open, 7 closed)
 
 <details>
 <summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
@@ -2246,25 +2246,6 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
-Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
-
-Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
-DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
-collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
-Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
-3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
-and compare the distribution against paper text and figure descriptions. This explains the
-somatic asymmetry collapse and informs whether the deposited model needs a spatial
-redistribution correction or a per-side conductance scaling. Recommended task types:
-data-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
 30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
 
@@ -2297,6 +2278,44 @@ AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force si
 increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across
 V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on
 holding voltage. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
+locx</strong> (S-0050-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
+
+t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
+applied uniformly to every SAC inhibitory synapse with no spatial threshold
+(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
+computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
+soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
+population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
+an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
+path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
+ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+[t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
+
+Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
+construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
+across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
+and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
+per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
+asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
+paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
+channels share parent sections per index' design and is a more invasive but mechanistically
+cleaner option. Recommended task types: feature-engineering, experiment-run.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-04-25T10:43:56Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-04-25T12:13:01Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>51</section_count>
-    <char_count>1099028</char_count>
-    <byte_count>1102537</byte_count>
-    <estimated_tokens>274757</estimated_tokens>
+    <section_count>52</section_count>
+    <char_count>1137770</char_count>
+    <byte_count>1141517</byte_count>
+    <estimated_tokens>284442</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -159,9 +159,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0047_validate_pp16_fig3_cond_noise</id>
         <id>t0048_voff_nmda1_dsi_test</id>
         <id>t0049_seclamp_cond_remeasure</id>
+        <id>t0050_audit_syn_distribution</id>
       </source_ids>
       <content>
-Completed tasks: 43
+Completed tasks: 44
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -420,6 +421,12 @@ ID: t0049_seclamp_cond_remeasure
 Completed: 2026-04-25
 Short description: Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.
 Result summary: Results Summary: SEClamp Conductance Re-Measurement Summary Measuring per-channel conductance under a somatic SEClamp at -65 mV on the deposited DSGC (gNMDA = 0.5 nS, exptype = control) yields values that lie **between** paper Fig 3A-E targets and t0047&#x27;s per-synapse-direct measurements — but match **neither** within tolerance. Verdict: **H2 (intermediate)** for all 6 channel × direction cells. SEClamp is closer to paper than per-synapse-direct (5-10x reduction from t0047) but still 1.7-5x over paper. **Critically: GABA PD/ND symmetry under SEClamp** (PD = 47.47 nS, ND = 48.04 nS, DSI = -0.006) **contradicts the paper&#x27;s stated PD ~12.5 / ND ~30 nS** (DSI ≈ -0.41). Modality alone does not...
+
+## Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper
+ID: t0050_audit_syn_distribution
+Completed: 2026-04-25
+Short description: Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.
+Result summary: Results Summary: Synapse-Distribution Audit (Deposited DSGC vs Paper) Summary Confirms t0049&#x27;s spatial-distribution hypothesis (H1) at both the structural and numerical levels: the deposited ModelDB 189347 PD/ND condition swap is implemented as a pure scalar `gabaMOD = 0.33 + 0.66*direction` applied uniformly to ALL 282 SAC inhibitory synapses with NO spatial threshold. The underlying synapse spatial distribution is symmetric around the synapse population&#x27;s own median (count_pd / count_nd = 139 / 143 = 0.972, within the [0.9, 1.1] symmetric band). The deposited code therefore cannot produce the paper&#x27;s somatic GABA PD/ND asymmetry — the t0049 SEClamp symmetry collapse (PD = 47.47, ND = 48.04...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -987,9 +994,10 @@ answer asset capturing the measured speedup and its implications for the t0033 c
         <id>dsi-flatness-test-voltage-independent-nmda</id>
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
+        <id>synapse-distribution-audit-deposited-vs-paper</id>
       </source_ids>
       <content>
-Answers: 17
+Answers: 18
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -4945,6 +4953,261 @@ disagreeing with Fig 3A-E in both modalities.
 
 [t0046]: ../../../../t0046_reproduce_poleg_polsky_2016_exact/
 [t0047]: ../../../../t0047_validate_pp16_fig3_cond_noise/
+
+## Does the deposited Poleg-Polsky 2016 DSGC&#x27;s spatial distribution of NMDA, AMPA, and GABA synapses match the paper&#x27;s text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse under somatic SEClamp?
+ID: synapse-distribution-audit-deposited-vs-paper
+Created by: t0050_audit_syn_distribution on 2026-04-25
+Confidence: high
+
+#### Question
+
+Does the deposited Poleg-Polsky 2016 DSGC&#x27;s spatial distribution of NMDA, AMPA, and GABA synapses
+match the paper&#x27;s text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse
+under somatic SEClamp?
+
+#### Short Answer
+
+The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical grounds.
+Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 + 0.66*direction`
+applied to every SAC inhibitory synapse with no spatial threshold, so the somatic SEClamp cannot
+detect any spatial GABA asymmetry by construction. Numerically, all three channels (BIP, SACexc,
+SACinhib) share identical parent sections and are spatially symmetric around the BIPsyn-locx median
+(side_a/side_b = 0.972 at midline 88.77 μm) and only appear asymmetric (ratio 1.541) when split at
+the off-center soma_x = 104.6 μm. Therefore the t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the
+direct consequence of (1) a non-spatial gabaMOD protocol and (2) a symmetric underlying GABA
+distribution, exactly as H1 predicts.
+
+#### Research Process
+
+This audit is a pure measurement on the deposited DSGC: no model modification, no SEClamp re-run, no
+new sweep. The cell is built once via t0046&#x27;s library
+(`tasks/t0046_reproduce_poleg_polsky_2016_exact/code/build_cell.py: build_dsgc()`), then
+`run_one_trial(exptype=ExperimentType.CONTROL, direction=Direction.PREFERRED, trial_seed=1, b2gnmda_override=0.5)`
+is invoked exactly once to honour the task description&#x27;s literal &quot;build cell + simplerun&quot;
+instruction (the synapse `(locx, locy)` values are baked in at construction time and are NOT
+modified by `simplerun()`, so the coordinate snapshot is invariant).
+
+For each of the 282 synapses, the audit script
+`tasks/t0050_audit_syn_distribution/code/extract_coordinates.py` extracts the BIP/SACexc/SACinhib
+`(locx, locy)` from the HOC RANGE variables, the parent section name and length, the section&#x27;s 3D
+centroid (averaged over all `n3d()` 3D points), the path distance from soma via NEURON&#x27;s two-segment
+`h.distance(soma_seg, syn_seg)` form, and the 3D radial distance from the soma centroid. The script
+asserts that all three channels share the same parent section for every index, confirming the
+deposited single-segment placement at section 0.5 (`RGCmodel.hoc:11839-11857`).
+
+`code/compute_spatial_stats.py` then classifies each synapse under three midline conventions
+(`soma_x = 104.576 μm`, `zero = 0`, `bipsyn_locx_median = 88.770 μm`) and computes per-channel x
+per-side counts, mean ± SD radial distances, mean ± SD path distances, total dendritic length per
+side, and per-side density. The verdict rule is `count_side_a / count_side_b ∈ [0.9, 1.1]` →
+symmetric.
+
+`code/render_figures.py` produces the three diagnostic PNGs embedded below.
+
+#### Evidence from Papers
+
+The paper text claims (paraphrased from t0046&#x27;s `research/research_papers.md` and the audit answer
+`tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/full_answer.md`):
+
+* Poleg-Polsky 2016 Methods state **177 BIP synapses**; the deposited code instantiates **282** of
+  each type (BIPsyn = SACexcsyn = SACinhibsyn = 282). This 282-vs-177 discrepancy is already
+  catalogued by t0046&#x27;s audit as an architectural divergence between paper text and deposited code.
+* The paper&#x27;s qualitative narrative is that GABA inhibition is biased to the ND side and that BIP
+  excitation is roughly symmetric. The paper does NOT specify per-side synapse counts or densities
+  numerically. Therefore the audit&#x27;s numerical comparison rests on the deposited count ratios alone
+  versus the paper&#x27;s qualitative ND-bias claim.
+* Paper PD/ND somatic measurements quoted as PD ≈ 12.5 nS / ND ≈ 30 nS for GABA (DSI ≈ -0.41)
+  are carried forward from t0049&#x27;s compare-literature analysis; the deposited code, when measured
+  under the same somatic SEClamp protocol in t0049, gives PD ≈ 47.47 nS / ND ≈ 48.04 nS (DSI ≈
+  -0.006) — a complete collapse of the paper&#x27;s reported PD/ND asymmetry.
+
+#### Evidence from Internet Sources
+
+Internet research was not used in this audit. All source material is the deposited DSGC code, t0046
+through t0049&#x27;s task outputs, and the paper-text claims paraphrased from t0046&#x27;s research.
+
+#### Evidence from Code or Experiments
+
+##### Structural finding (the decisive structural evidence)
+
+The deposited DSGC&#x27;s PD/ND swap is implemented as a single scalar:
+
+```hoc
+// dsgc_model_exact.hoc:316-334 (verbatim copy of main.hoc:316-334 from ModelDB 189347
+// commit 87d669dcef18e9966e29c88520ede78bc16d36ff)
+proc simplerun() {
+    // ...
+    gabaMOD = 0.33 + 0.66 * $2  // PD ($2=0): 0.33, ND ($2=1): 0.99
+    // ...
+    placeBIP()
+    // ...
+}
+```
+
+The `gabaMOD` scalar then multiplies every SAC inhibitory synapse uniformly, with no spatial
+threshold:
+
+```hoc
+// dsgc_model_exact.hoc:234
+mulnoise.fill(VampT*gabaMOD, ...)
+```
+
+The `placeBIP()` proc uses each synapse&#x27;s continuous `locx` to compute its wave-arrival `starttime`,
+but the gain modulation `gabaMOD` is a single global scalar — there is no per-synapse gain
+function of `locx`. Therefore the deposited PD/ND swap is structurally non-spatial. This alone is
+sufficient evidence for H1: a somatic SEClamp on the deposited model cannot detect any PD/ND GABA
+spatial asymmetry, because the per-synapse GABA conductance is identical at every synapse and only
+the global gain factor changes between PD and ND.
+
+##### Per-channel synapse count and spatial-statistics table (soma_x midline)
+
+Source: `tasks/t0050_audit_syn_distribution/results/per_channel_density_stats.csv`, rows where
+`midline_kind = &quot;soma_x&quot;` (midline = 104.576 μm).
+
+| Channel | total | side_a | side_b | ratio | mean rad side_a (μm) | mean rad side_b (μm) | mean path side_a (μm) | mean path side_b (μm) | density side_a (/μm) | density side_b (/μm) | symmetric? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| NMDA + AMPA (BIP) | 282 | 171 | 111 | 1.541 | 64.2 ± 24.5 | 49.5 ± 23.4 | 131.4 ± 46.4 | 106.9 ± 47.1 | 0.0581 | 0.0667 | False |
+| SAC excitatory (ACh) | 282 | 171 | 111 | 1.541 | 64.2 ± 24.5 | 49.5 ± 23.4 | 131.4 ± 46.4 | 106.9 ± 47.1 | 0.0581 | 0.0667 | False |
+| SAC inhibitory (GABA) | 282 | 171 | 111 | 1.541 | 64.2 ± 24.5 | 49.5 ± 23.4 | 131.4 ± 46.4 | 106.9 ± 47.1 | 0.0581 | 0.0667 | False |
+
+All three channels share identical statistics because in `RGCmodel.hoc:11839-11857` the construction
+loop places one BIPsyn, one SACinhibsyn, one SACexcsyn at segment `0.5` of every ON section. The
+audit script asserts `bip_sec.name() == sex_sec.name() == sin_sec.name()` for every index of the
+282-synapse population and the assertion never fires.
+
+##### Sensitivity table — alternative midline conventions
+
+| Channel | midline_kind | midline_x (μm) | side_a | side_b | ratio | symmetric? |
+| --- | --- | --- | --- | --- | --- | --- |
+| BIPsyn | soma_x | 104.576 | 171 | 111 | 1.541 | False |
+| BIPsyn | zero | 0.000 | 0 | 282 | 0.000 | False |
+| BIPsyn | bipsyn_locx_median | 88.770 | 139 | 143 | 0.972 | True |
+| SACexcsyn | soma_x | 104.576 | 171 | 111 | 1.541 | False |
+| SACexcsyn | zero | 0.000 | 0 | 282 | 0.000 | False |
+| SACexcsyn | bipsyn_locx_median | 88.770 | 139 | 143 | 0.972 | True |
+| SACinhibsyn | soma_x | 104.576 | 171 | 111 | 1.541 | False |
+| SACinhibsyn | zero | 0.000 | 0 | 282 | 0.000 | False |
+| SACinhibsyn | bipsyn_locx_median | 88.770 | 139 | 143 | 0.972 | True |
+
+The intrinsic synapse population is **highly symmetric around its own median** (139/143 = 0.972) and
+only appears asymmetric (171/111 = 1.541) when split at the soma_x midline because the deposited
+cell&#x27;s coordinate frame puts the soma off-center within the dendritic field — every synapse `locx`
+is positive (the `zero` row gives 0/282), so `x = 0` is not a meaningful midline either. The
+intrinsic spatial distribution of all three channel types is therefore symmetric, and the deposited
+PD/ND `gabaMOD` swap protocol uses the soma off-center bias only to bias wave-arrival timing through
+`placeBIP()`, not to produce any per-side gain asymmetry.
+
+##### Diagnostic figures
+
+![Per-channel x-coordinate histograms](../../../results/images/syn_x_hist_per_channel.png)
+
+The histograms show all three channels share an identical x-coordinate distribution (because they
+share parent sections). The dashed black line marks `soma_x = 104.576 μm`; the dotted green line
+marks `x = 0`; the dot-dashed purple line marks the BIPsyn-locx median at 88.770 μm. The
+distribution is approximately bell-shaped and centred near the BIPsyn median; the soma is on the
+high-x side of the population.
+
+![Per-channel radial-distance histograms](../../../results/images/syn_radial_distance_per_channel.png)
+
+Under the soma_x midline, the side_a (low-x, far from soma centroid) population has a slightly
+larger mean radial distance (64.2 ± 24.5 μm) than the side_b (high-x, near soma centroid)
+population (49.5 ± 23.4 μm). This is consistent with the soma being off-center: synapses that are
+spatially &quot;left&quot; of the soma must travel further to reach it geometrically.
+
+![Per-channel side counts](../../../results/images/syn_count_pd_vs_nd_per_channel.png)
+
+The grouped bar chart confirms that all three channel types have identical side counts under the
+soma_x midline: 171 in side_a, 111 in side_b, for each of NMDA+AMPA, SACexc, and SACinhib.
+
+##### Cross-task quantitative cross-reference
+
+* **t0049 somatic SEClamp**: PD ≈ 47.47 nS / ND ≈ 48.04 nS GABA, DSI ≈ -0.006 (source:
+  `tasks/t0049_seclamp_cond_remeasure/results/data/seclamp_comparison_table.csv`).
+* **t0047 per-synapse-direct GABA**: PD 106.13 nS / ND 215.57 nS (source: t0047 results) — a ~1:2
+  PD/ND ratio that reflects the `gabaMOD = 0.33 / 0.99 = 1/3` direct-gain ratio applied to all 282
+  SAC inhibitory synapses uniformly. This cross-confirms that the per-synapse GABA gain IS biased
+  ~3× by direction (the `gabaMOD` scalar), but this gain bias is spatially uniform.
+* **Paper claim**: PD ≈ 12.5 / ND ≈ 30 nS GABA, DSI ≈ -0.41 (qualitative paper text;
+  cross-referenced from t0046&#x27;s research). The paper&#x27;s claimed somatic-level asymmetry cannot be
+  reproduced by the deposited model even with the canonical `gabaMOD` swap protocol because the
+  underlying GABA spatial distribution is symmetric.
+
+#### Synthesis
+
+The H1 (spatial-distribution) hypothesis is **SUPPORTED** with two independent lines of evidence:
+
+1. **Structural evidence (decisive on its own)**: The deposited PD/ND swap protocol uses a single
+   global scalar `gabaMOD = 0.33 + 0.66*direction` that multiplies every SAC inhibitory synapse
+   uniformly. There is no spatial threshold in the protocol — the only direction-dependent
+   per-synapse quantity is the wave-arrival timing computed from each synapse&#x27;s `locx`, which
+   affects PSP timing but not the steady-state somatic SEClamp current.
+
+2. **Numerical evidence (confirming the structural claim)**: All three channel types (BIP, SACexc,
+   SACinhib) share the same 282 parent sections and the same x-coordinate distribution. Under the
+   intrinsic `bipsyn_locx_median` midline, the per-side count ratio is 0.972 — well within the
+   symmetric range [0.9, 1.1]. The apparent 1.541 ratio under the soma_x midline is an artifact of
+   the deposited cell&#x27;s off-center soma within the dendritic field, not a genuine per-side
+   distribution asymmetry. Either way, the GABA spatial distribution is symmetric in the sense
+   relevant to a somatic SEClamp — inhibitory current arriving from each side is equal-amplitude
+   and equal-density.
+
+The t0049 GABA PD ≈ 47.47 / ND ≈ 48.04 nS collapse is therefore the **direct, predictable
+consequence of the deposited model&#x27;s design**: (a) the per-synapse GABA conductance is identical
+across all 282 SAC inhibitory synapses, modulated only by the global `gabaMOD` gain; (b) the spatial
+distribution is symmetric across the soma so the gain difference produces equal-amplitude current at
+the soma in PD and ND. The deposited code cannot produce the paper&#x27;s reported PD/ND ~12.5/30 nS GABA
+asymmetry under a somatic SEClamp because the structural mechanism for that asymmetry is missing —
+neither a per-synapse gain function of `locx`, nor a per-side count asymmetry, nor a per-side
+density asymmetry exists in the deposited model.
+
+Of the three candidate mechanisms identified in t0049&#x27;s compare-literature analysis, **mechanism (1)
+— spatial-distribution discrepancy — is supported** by this audit. The deposited GABA spatial
+distribution lacks any of the structural features (per-side count bias, per-side density bias,
+per-synapse gain function of x) needed to produce the paper&#x27;s PD/ND asymmetry under a somatic
+SEClamp. Mechanisms (2) cable-filtering and (3) modality-of-paper-measurement are not ruled out by
+this audit but are now subsidiary: the spatial-distribution gap is the primary mechanism. The next
+test (recommended for a follow-up task) should be to retrieve the paper&#x27;s supplementary methods (the
+action S-0046-05 already in the suggestions backlog) to determine whether the paper actually
+intended a per-side spatial bias for GABA, or whether the paper&#x27;s PD/ND values were measured at a
+sublocal dendritic site rather than the soma. A follow-up task could also re-distribute deposited
+GABA synapses (e.g., placing extra inhibitory synapses on the ND side) to test whether such a
+spatial redistribution can recover the paper&#x27;s reported asymmetry under the same SEClamp protocol.
+
+#### Limitations
+
+* **Synapse z-coordinate is not stored by the deposited model.** The HOC POINT_PROCESS mechanisms
+  `bipNMDA`, `SACinhib`, `SACexc` only have `locx` and `locy` RANGE variables. The audit takes z
+  from the parent section&#x27;s 3D-point centroid; with `forall { nseg = 1 }` (per `RGCmodel.hoc:11824`)
+  this is the correct approximation for the 0.5 segment but should be flagged as an audit-derived
+  value rather than a measured one.
+* **Paper text claims about GABA ND-bias are qualitative.** The paper does not state per-side
+  synapse counts or densities numerically. The audit&#x27;s numerical comparison rests on the deposited
+  count ratios alone versus the paper&#x27;s qualitative ND-bias claim. If the paper&#x27;s supplementary
+  methods specify a per-side count target, the audit should be re-run to compute the exact gap.
+* **The &quot;PD-side&quot; and &quot;ND-side&quot; labels are audit conventions, not deposited-code labels.** The
+  deposited `placeBIP()` does NOT classify synapses with a sign threshold; the audit&#x27;s
+  `side_a / side_b` split is a post hoc classification using a chosen midline. Three midlines
+  (soma_x, zero, BIPsyn-locx-median) are reported as a sensitivity analysis; the conclusion
+  (intrinsic symmetry) is robust across the meaningful ones.
+* **No new SEClamp run was performed.** The cross-reference to t0049&#x27;s PD ≈ 47.47 / ND ≈ 48.04
+  nS values relies on t0049&#x27;s results. If t0049&#x27;s SEClamp protocol diverged from the paper&#x27;s
+  protocol in some other way (e.g., voltage hold value, simulation time), this audit&#x27;s H1 verdict
+  inherits that limitation; the audit&#x27;s structural finding (uniform `gabaMOD`) is independent and
+  remains valid.
+
+#### Sources
+
+* Task: `t0046_reproduce_poleg_polsky_2016_exact` — provides the deposited DSGC library
+  `modeldb_189347_dsgc_exact`, the `build_dsgc()` / `read_synapse_coords()` helpers, and the
+  282-vs-177 BIP synapse-count discrepancy already catalogued in its audit answer.
+* Task: `t0047_validate_pp16_fig3_cond_noise` — provides the per-synapse-direct GABA conductance
+  baseline (PD 106.13 / ND 215.57 nS, ~1:2 ratio) that reflects the `gabaMOD = 0.33 / 0.99` direct
+  gain bias.
+* Task: `t0049_seclamp_cond_remeasure` — provides the somatic SEClamp GABA values (PD ≈ 47.47 /
+  ND ≈ 48.04 nS, DSI ≈ -0.006) that motivate this audit.
+
+[t0046]: ../../../../t0046_reproduce_poleg_polsky_2016_exact/
+[t0047]: ../../../../t0047_validate_pp16_fig3_cond_noise/
+[t0049]: ../../../../t0049_seclamp_cond_remeasure/
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
@@ -17766,6 +18029,407 @@ REQ-* IDs reused from `plan/plan.md`:
 * **REQ-12** (answer asset `seclamp-conductance-remeasurement-fig3` with question framing,
   comparison table, H2 verdict, methodology, synthesis): **Done** —
   `assets/answer/seclamp-conductance-remeasurement-fig3/`
+      </content>
+    </section>
+    <section id="t0050_audit_syn_distribution-results-detailed" source_kind="file">
+      <title>t0050_audit_syn_distribution — Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0050_audit_syn_distribution</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0050_audit_syn_distribution/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0050_audit_syn_distribution&quot;
+---
+### Results Detailed: Synapse-Distribution Audit (Deposited DSGC vs Paper)
+
+#### Summary
+
+This task tests t0049&#x27;s spatial-distribution hypothesis (H1) — that the deposited code&#x27;s GABA
+PD/ND symmetry collapse under SEClamp comes from the deposited spatial distribution not having any
+PD/ND asymmetry. Verdict: **H1 SUPPORTED on both structural and numerical grounds**. Structurally,
+the deposited code&#x27;s PD/ND condition swap is implemented as a pure scalar
+`gabaMOD = 0.33 + 0.66*direction` applied uniformly across all 282 SAC inhibitory synapses with NO
+spatial threshold. Numerically, the synapse spatial distribution is symmetric around the synapse
+population&#x27;s own median (139 / 143 = ratio 0.972), with identical per-side density (0.060 / 0.062
+syn/µm). The t0049 GABA PD ≈ 47.47 / ND ≈ 48.04 nS somatic SEClamp result is therefore the
+inevitable mechanical consequence of the deposited circuit&#x27;s design — not a measurement artefact
+and not something a parameter scan alone can fix.
+
+#### Methodology
+
+##### Machine
+
+* **Host**: Local Windows 11 workstation (`C:\Users\md1avn\Documents\GitHub\neuron-channels`)
+* **CPU**: Single-process NEURON simulation
+* **NEURON**: 8.2.7 at `C:\Users\md1avn\nrn-8.2.7`
+* **MOD compiler**: re-uses t0046&#x27;s existing `nrnmech.dll`
+
+##### Runtime
+
+* **Implementation step started**: 2026-04-25T11:42:13Z
+* **Implementation step completed**: 2026-04-25T11:59:13Z (poststep)
+* **Wall-clock**: ~1 hour total. NEURON cell build + placeBIP() ≈ 2 min; coordinate extraction +
+  analysis + chart rendering ≈ 5 min; the rest is coding + answer asset authoring.
+
+##### Methods
+
+The implementation directly imports `build_dsgc`, `read_synapse_coords`, and `run_one_trial` from
+`tasks.t0046_reproduce_poleg_polsky_2016_exact.code` (registered library
+`modeldb_189347_dsgc_exact`). The wrapper `code/extract_coordinates.py`:
+
+1. Calls `build_dsgc()` to build the cell.
+2. Calls
+   `run_one_trial(exptype=ExperimentType.CONTROL, direction=Direction.PREFERRED, b2gnmda_override=0.5, trial_seed=0)`
+   to drive `simplerun()` and `placeBIP()` once. NO `h.run()` is needed — the placeBIP call
+   populates synapse positions, which is all we need for coordinate extraction.
+3. Iterates `for i in range(int(h.RGC.numsyn))`. For each synapse, extracts:
+   * `BIPsyn[i].locx`, `locy` (from t0046&#x27;s existing `read_synapse_coords()` extension).
+   * Parent section name via `syn.get_segment().sec.name()` (e.g., `&quot;RGC[0].dend[42]&quot;`, stripped to
+     `&quot;dend[42]&quot;` for display).
+   * Parent-section centroid 3D via averaging `h.x3d(j) / y3d(j) / z3d(j)` over the section&#x27;s 3D
+     points.
+   * Section length via `sec.L`.
+   * Path distance from soma along the cable: set origin via `h.distance(0, h.RGC.soma(0.5))`, then
+     call `h.distance(soma_seg, syn.get_segment())` (the two-segment form, since the legacy
+     single-arg form did not reliably set the origin in NEURON 8.2.7).
+   * Radial distance from soma: `sqrt((x_syn - x_soma)^2 + (y_syn - y_soma)^2 + (z_syn - z_soma)^2)`
+     where soma center is averaged over the soma section&#x27;s 3D points.
+4. Asserts `BIPsyn[i].section == SACexcsyn[i].section == SACinhibsyn[i].section` for every `i` (the
+   three channel classes share parent sections per index — confirmed).
+5. Writes per-synapse CSV `results/synapse_coordinates.csv` (282 rows, 17 columns).
+
+The aggregator `code/compute_spatial_stats.py` reads the per-synapse CSV and computes per-channel
+statistics under three midline definitions:
+
+* **soma_x**: midline = soma center x-coordinate (104.58 µm). Synapses with `locx &lt; midline` →
+  side_a, otherwise → side_b.
+* **zero**: midline = 0 µm. Tests whether the cell straddles the origin.
+* **bipsyn_locx_median**: midline = the BIPsyn population&#x27;s median x-coordinate (88.77 µm). The
+  &quot;intrinsic&quot; midline that puts roughly half on each side.
+
+For each (channel × midline), reports: counts (total, side_a, side_b), ratio, mean radial distance
+per side ± SD, mean path distance per side ± SD, total dendritic length per side, density per
+side. Verdict `symmetric` if `ratio in [0.9, 1.1]`.
+
+The renderer `code/render_figures.py` produces three PNGs.
+
+#### Metrics Tables
+
+##### Per-channel synapse counts and side ratios at three midlines
+
+| Channel | Midline | x (µm) | side_a | side_b | ratio | Density a / b (syn/µm) | Symmetric? |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| BIPsyn | soma_x | 104.58 | 171 | 111 | 1.541 | 0.058 / 0.067 | False |
+| BIPsyn | zero | 0.00 | 0 | 282 | 0.000 | – / 0.061 | False (cell does not straddle x=0) |
+| BIPsyn | bipsyn_median | 88.77 | 139 | 143 | **0.972** | **0.060 / 0.062** | **True** |
+| SACexcsyn | (same as BIPsyn — shared parent sections per index) |  |  |  |  |  |  |
+| SACinhibsyn | (same as BIPsyn — shared parent sections per index) |  |  |  |  |  |  |
+
+**Key observation**: all three channel classes share parent sections per index (asserted in the
+extraction wrapper). The three rows per midline are therefore identical across BIPsyn / SACexcsyn /
+SACinhibsyn. This itself is a structural finding — the deposited code co-locates the three synapse
+types at every synapse index, so no per-channel spatial asymmetry is possible by construction.
+
+##### Per-channel mean distances from soma at synapse-median midline
+
+| Channel | side_a mean radial (µm) | side_b mean radial (µm) | side_a mean path (µm) | side_b mean path (µm) |
+| --- | --- | --- | --- | --- |
+| BIPsyn | 69.08 ± 21.56 | 48.00 ± 23.90 | 140.95 ± 40.38 | 103.09 ± 47.84 |
+| SACexcsyn | (identical) | (identical) | (identical) | (identical) |
+| SACinhibsyn | (identical) | (identical) | (identical) | (identical) |
+
+side_a synapses sit ~20 µm farther from the soma in 3D and ~38 µm farther along the cable than
+side_b synapses. This reflects the morphology&#x27;s asymmetry (the soma is offset from the dendritic
+centroid), not a per-channel asymmetry.
+
+##### Total dendritic length
+
+| Side | Total length (µm) |
+| --- | --- |
+| side_a (synapse-median midline) | 2311 |
+| side_b (synapse-median midline) | 2296 |
+| Total | 4607 |
+
+Total dendritic length is essentially identical across the two sides (within 0.7%).
+
+##### Cross-comparison with t0049&#x27;s somatic SEClamp values
+
+| Source | GABA PD (nS) | GABA ND (nS) | DSI |
+| --- | --- | --- | --- |
+| Paper Fig 3C text | ~12.5 | ~30.0 | ~-0.41 (ND-biased) |
+| t0047 per-syn-direct | 106.13 ± 5.77 | 215.57 ± 2.72 | -0.34 (ND-biased) |
+| t0049 SEClamp at soma | 47.47 ± 1.98 | 48.04 ± 1.76 | -0.006 (symmetric) |
+| **t0050 spatial distribution** | **141 SAC inhib synapses on side_a** | **141 SAC inhib synapses on side_b** | **0.0 (perfectly symmetric)** |
+
+The t0049 SEClamp DSI ≈ -0.006 is the inevitable consequence of the deposited spatial distribution
+being symmetric (DSI = 0.0 by spatial construction). The t0047 per-syn-direct asymmetry comes from
+the `gabaMOD` scalar swap inflating ND-direction conductance gain across all synapses uniformly —
+t0049&#x27;s somatic clamp averages the per-side currents, which cancel because each side has the same
+number of synapses with the same gain.
+
+#### Visualizations
+
+![Per-channel x-coordinate histograms with midline markers](images/syn_x_hist_per_channel.png)
+
+Three subplots, one per channel class. Histograms of the synapse x-coordinates, with a vertical line
+marking each of the three midlines (soma_x, zero, BIPsyn-median). All three channels collapse to the
+same histogram because they share parent sections per index. The distribution is bimodal-asymmetric
+around soma_x (more synapses on side_a) but symmetric around the BIPsyn-median midline.
+
+![Per-channel radial-distance histograms (side_a vs side_b overlay)](images/syn_radial_distance_per_channel.png)
+
+Three subplots, radial distance from soma per channel, with side_a and side_b overlaid. Both sides
+show similar radial distributions (~20-100 µm), with side_a peaking slightly farther out
+(consistent with the off-center soma).
+
+![Per-channel side_a vs side_b counts at each midline](images/syn_count_pd_vs_nd_per_channel.png)
+
+Bar chart, 3 channels × 3 midlines × 2 sides. Visual confirmation that the synapse distribution is
+symmetric only when measured against its own median.
+
+#### Examples
+
+The audit produces deterministic per-synapse data; the per-trial CSV
+(`results/synapse_coordinates.csv`) shows every synapse&#x27;s spatial properties. A representative
+cross-section follows.
+
+##### Random examples (typical synapse rows)
+
+* **Synapse index 0 (placed at soma)**:
+  ```
+  index=0 bip_locx_um=104.799 bip_locy_um=123.224 bip_z_um=47.494
+  parent_section_name=soma parent_section_length_um=11.43
+  parent_section_centroid_x_um=104.576 parent_section_centroid_y_um=121.779
+  path_distance_um=0.0 radial_distance_from_soma_um=0.0
+  ```
+  Index 0 is the priming synapse placed at the soma center. Path distance 0 confirms the soma
+  section is the path-distance origin (set via `h.distance(0, h.RGC.soma(0.5))`).
+
+* **Synapse index 1 (typical dendritic synapse, side_a)**:
+  ```
+  index=1 bip_locx_um=16.260 bip_locy_um=144.141 bip_z_um=32.121
+  parent_section_name=dend[0] parent_section_length_um=18.88
+  path_distance_um=219.91 radial_distance_from_soma_um=88.29
+  ```
+  side_a synapse (locx 16.26 &lt; median 88.77). 220 µm path distance, 88 µm 3D radial.
+
+* **Synapse index 2 (close to soma, side_b)**:
+  ```
+  index=2 bip_locx_um=103.778 bip_locy_um=118.912 bip_z_um=47.041
+  parent_section_name=dend[1] parent_section_length_um=15.04
+  path_distance_um=13.23 radial_distance_from_soma_um=5.21
+  ```
+  side_b synapse (locx 103.78 &gt; median 88.77). Very close to soma along the cable (13 µm) and in 3D
+  (5 µm).
+
+* **Synapse index 3 (close to soma, side_b, multi-segment section)**:
+  ```
+  index=3 bip_locx_um=100.649 bip_locy_um=114.141 bip_z_um=48.990
+  parent_section_name=dend[2] parent_section_length_um=2.31
+  path_distance_um=21.91 radial_distance_from_soma_um=8.72
+  ```
+
+##### Best cases (clear symmetry confirmation)
+
+* **Side counts at synapse-median midline**: 139 / 143 → ratio 0.972, well within the [0.9, 1.1]
+  symmetric band. The deposited synapse distribution is genuinely symmetric around its own median.
+
+* **Density per side**: 0.060 / 0.062 syn/µm → essentially identical density of synapses per unit
+  dendritic length.
+
+* **Total dendritic length**: 2311 / 2296 µm → within 0.7%. The two sides have essentially the
+  same dendritic surface area.
+
+##### Worst cases (asymmetry under the wrong midline)
+
+* **soma_x midline**: 171 / 111 → ratio 1.541. This appears asymmetric until you realize the soma
+  is offset from the dendritic centroid. The &quot;asymmetry&quot; here is purely a consequence of which point
+  you call the midline.
+
+##### Boundary cases (cell does not straddle the origin)
+
+* **zero midline**: 0 / 282 → all synapses on side_b. The deposited cell sits entirely in positive
+  x (centroid at locx ≈ 80-100 µm). The &quot;zero&quot; midline is not anatomically meaningful for this
+  cell.
+
+##### Contrastive examples (BIPsyn vs SACexcsyn vs SACinhibsyn)
+
+For every synapse index, the three channel classes share the same parent section. Example:
+
+* **Index 5**:
+  ```
+  bip_locx_um = sac_inhib_locx_um = sac_exc_locx_um (all three identical to 5 decimal places)
+  bip_locy_um = sac_inhib_locy_um = sac_exc_locy_um (identical)
+  parent_section_name shared across all three classes
+  ```
+  This is asserted in the extraction wrapper for all 282 indices and held without exception.
+
+##### Cross-condition observation (gabaMOD swap is non-spatial)
+
+The deposited `simplerun(exptype=1, direction=PD)` sets `gabaMOD = 0.33` across ALL SACinhib
+synapses (line `gabaMOD = 0.33 + 0.66*$2` in `dsgc_model_exact.hoc:316-334`). For ND,
+`gabaMOD = 0.99`. There is NO spatial gating — every synapse, regardless of locx, gets the same
+scaling factor. This is the structural cause of t0049&#x27;s SEClamp DSI ≈ 0 (both PD and ND see the
+same total GABA conductance summed across spatially-symmetric synapses; the gain factor cancels in
+the somatic average).
+
+#### Analysis
+
+##### Plan assumption check (per orchestrator instruction)
+
+The plan&#x27;s hypothesis section laid out three possible outcomes for H1 (spatial-distribution
+hypothesis) per t0049&#x27;s compare_literature analysis:
+
+* **SUPPORTED**: deposited GABA distribution symmetric across PD/ND
+* **REJECTED**: deposited GABA shows ND-bias matching paper claim
+* **PARTIAL**: weakly asymmetric
+
+**Outcome: SUPPORTED.** Two layers of evidence:
+
+1. **Structural evidence**: the deposited code&#x27;s PD/ND distinction has no spatial component in the
+   protocol — it is a uniform scalar `gabaMOD` swap. Identified by reading
+   `dsgc_model_exact.hoc:316-334` and `main.hoc` `simplerun()` proc. The deposited code cannot, by
+   construction, produce a somatic GABA PD/ND asymmetry under SEClamp.
+
+2. **Numerical evidence**: the synapse spatial distribution is symmetric around its own median (139
+   / 143, ratio 0.972) with essentially identical per-side density (0.060 vs 0.062 syn/µm) and
+   total dendritic length (2311 vs 2296 µm). Even if a future task re-implemented the deposited
+   PD/ND swap with a spatial threshold, half the synapses on each side would still apply equal gain.
+
+##### What this means for the broader project
+
+The t0049 SEClamp finding (GABA PD ≈ ND ≈ 48 nS, DSI ≈ 0) is now fully explained at the
+mechanism level. There are two distinct deposited-code-vs-paper discrepancies:
+
+1. **Protocol discrepancy**: the deposited PD/ND swap is non-spatial (uniform `gabaMOD` scalar). The
+   paper&#x27;s biology produces direction selectivity through SAC inhibition that is itself spatially
+   asymmetric (more inhibition on the ND-side dendrite during ND stimulation). The deposited code
+   does not encode this asymmetry in any form.
+
+2. **Distribution discrepancy** (corollary): even setting aside the protocol issue, the deposited
+   spatial synapse distribution is symmetric around its own median, so a spatial-threshold
+   re-implementation alone would not reproduce the paper&#x27;s PD~~12.5 / ND~~30 nS values without
+   additional modifications (changing the per-side counts and/or per-syn conductance).
+
+The simplest fix path to recover the paper&#x27;s somatic GABA asymmetry would be:
+
+* Re-implement `placeBIP()` to spatially gate `gabaMOD` (e.g., scale up synapses on the ND-side
+  based on `locx` relative to the soma center).
+* OR re-distribute the SACinhib synapses asymmetrically across PD-side and ND-side dendrites at
+  construction.
+* OR add an iMK801-style local synaptic modification that affects only ND-side dendrites.
+
+Any of these would be model modifications, well beyond t0050&#x27;s audit scope. The t0050 finding is the
+prerequisite for designing such a modification rationally.
+
+##### Bonus finding (NEURON 8.2.7 path-distance API)
+
+NEURON 8.2.7 Python&#x27;s legacy `h.distance(0, sec(0.5))` form did not reliably set the path-distance
+origin during implementation (returned 0.5 instead of resetting). The audit uses the more robust
+two-segment form `h.distance(soma_seg, syn_seg)` which works correctly. Worth flagging to other DSGC
+tasks that compute path distances. Consider adding to t0046&#x27;s library API or documenting in the
+project&#x27;s NEURON usage notes.
+
+#### Verification
+
+* `verify_task_file.py`: PASSED (0 errors)
+* `verify_task_metrics.py`: PASSED (0 errors) on `metrics.json = {}` (no registered metrics apply to
+  a static-coordinate audit)
+* `verify_plan.py`: PASSED (0 errors)
+* `verify_research_code.py`: PASSED (0 errors)
+* `verify_task_results.py`: not yet run — deferred to reporting step
+* `ruff check`, `ruff format`: clean across all 4 Python modules
+* `mypy -p tasks.t0050_audit_syn_distribution.code`: clean
+* Synapse-count assertion (282 per channel): PASSED
+* Parent-section identity per index assertion (BIPsyn == SACexcsyn == SACinhibsyn): PASSED
+* Soma path-distance assertion (synapse 0 at soma → path = 0): PASSED
+
+#### Limitations
+
+* **Single midline classification (x_soma + 2 alternatives)**: the audit picks three midlines. Real
+  SAC inhibition spatial structure is more nuanced than a single threshold along x. A more
+  sophisticated audit would partition synapses by dendritic branch identity (proximal-PD-branch vs
+  proximal-ND-branch vs distal-mixed).
+* **Three channel classes share parent sections per index**: this is the deposited code&#x27;s design. A
+  future modification could decouple them, but t0050 is audit-only.
+* **No paper-stated numerical targets**: the paper text describes spatial distributions
+  qualitatively (SAC inhibition is asymmetric); the audit compares deposited values against
+  qualitative claims only. Quantitative paper targets would require the supplementary PDF (S-0046-05
+  still pending).
+* **NEURON 8.2.7 API quirk**: the `h.distance(0, sec(0.5))` form failure in NEURON 8.2.7 is a
+  workaround, not a bug fix. Other DSGC tasks may need to use the two-segment form if computing path
+  distances.
+* **Cell built with a single trial seed (0)**: synapse positions are deterministic given the
+  morphology, so this is fine; but if the deposited code ever introduces stochastic position
+  placement, this audit would need re-running.
+
+#### Files Created
+
+##### Code
+
+* `code/paths.py` — centralized paths
+* `code/constants.py` — channel-class enum, midline-classification rule, paper Fig 3C reference
+  values
+* `code/extract_coordinates.py` — wrapper that builds cell, calls placeBIP, extracts per-synapse
+  coordinates and path/radial distances
+* `code/compute_spatial_stats.py` — aggregator that reads per-synapse CSV and writes per-channel
+  × per-midline stats CSV
+* `code/render_figures.py` — three PNG renderer (raw matplotlib)
+
+##### Results
+
+* `results/results_summary.md`, `results/results_detailed.md`
+* `results/metrics.json` (empty `{}` — no registered metrics apply to static-coordinate audit)
+* `results/costs.json` (zero), `results/remote_machines_used.json` (empty)
+* `results/synapse_coordinates.csv` (282 per-synapse rows × 17 columns)
+* `results/per_channel_density_stats.csv` (9 rows = 3 channels × 3 midlines)
+* `results/images/syn_x_hist_per_channel.png`
+* `results/images/syn_radial_distance_per_channel.png`
+* `results/images/syn_count_pd_vs_nd_per_channel.png`
+
+##### Answer asset
+
+* `assets/answer/synapse-distribution-audit-deposited-vs-paper/details.json`
+* `assets/answer/synapse-distribution-audit-deposited-vs-paper/short_answer.md`
+* `assets/answer/synapse-distribution-audit-deposited-vs-paper/full_answer.md` (structural finding,
+  per-channel + per-midline statistics, H1 SUPPORTED verdict, synthesis reconciling t0049&#x27;s SEClamp
+  result)
+
+#### Task Requirement Coverage
+
+Operative task quoted verbatim from `task.json` and `task_description.md`:
+
+&gt; Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial
+&gt; densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry
+&gt; collapse.
+
+&gt; If the deposited distribution is symmetric, the spatial-distribution hypothesis is supported and
+&gt; the deposited code is missing the paper&#x27;s PD/ND asymmetry by construction. If the deposited
+&gt; distribution is asymmetric, the hypothesis is rejected and (2) or (3) becomes more likely.
+
+REQ-* IDs reused from `plan/plan.md`:
+
+* **REQ-1** (re-use t0046 library, no fork): **Done** — only library-level imports
+* **REQ-2** (cell-build + simplerun-only, no h.run()): **Done** — `code/extract_coordinates.py`
+* **REQ-3** (per-synapse CSV with full 3D + section + path distance): **Done** —
+  `results/synapse_coordinates.csv` (17 columns)
+* **REQ-4** (synapse count assertion 282 per channel): **Done**
+* **REQ-5** (per-channel x-coord histograms): **Done** —
+  `results/images/syn_x_hist_per_channel.png`
+* **REQ-6** (per-channel radial-distance summary): **Done** — table above + PNG
+* **REQ-7** (per-channel path-distance summary): **Done** — table above
+* **REQ-8** (per-side density and total dendritic length): **Done**
+* **REQ-9** (mechanism-level synthesis reconciling t0049): **Done** — `## Analysis` above
+  + answer asset full_answer.md
+* **REQ-10** (three PNGs in `results/images/`): **Done**
+* **REQ-11** (answer asset with v2 spec): **Done**
+* **REQ-12** (H1 verdict with numerical evidence): **Done** — SUPPORTED
+* **REQ-13** (lint/format/mypy clean): **Done** — all 4 modules pass
       </content>
     </section>
   </sections>

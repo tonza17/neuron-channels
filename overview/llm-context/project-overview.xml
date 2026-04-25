@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-25T10:43:56Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-25T12:13:01Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>75937</char_count>
-    <byte_count>76057</byte_count>
-    <estimated_tokens>18984</estimated_tokens>
+    <char_count>78179</char_count>
+    <byte_count>78303</byte_count>
+    <estimated_tokens>19544</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -154,9 +154,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0047_validate_pp16_fig3_cond_noise</id>
         <id>t0048_voff_nmda1_dsi_test</id>
         <id>t0049_seclamp_cond_remeasure</id>
+        <id>t0050_audit_syn_distribution</id>
       </source_ids>
       <content>
-Completed tasks: 43
+Completed tasks: 44
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -415,6 +416,12 @@ ID: t0049_seclamp_cond_remeasure
 Completed: 2026-04-25
 Short description: Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.
 Result summary: Results Summary: SEClamp Conductance Re-Measurement Summary Measuring per-channel conductance under a somatic SEClamp at -65 mV on the deposited DSGC (gNMDA = 0.5 nS, exptype = control) yields values that lie **between** paper Fig 3A-E targets and t0047&#x27;s per-synapse-direct measurements — but match **neither** within tolerance. Verdict: **H2 (intermediate)** for all 6 channel × direction cells. SEClamp is closer to paper than per-synapse-direct (5-10x reduction from t0047) but still 1.7-5x over paper. **Critically: GABA PD/ND symmetry under SEClamp** (PD = 47.47 nS, ND = 48.04 nS, DSI = -0.006) **contradicts the paper&#x27;s stated PD ~12.5 / ND ~30 nS** (DSI ≈ -0.41). Modality alone does not...
+
+## Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper
+ID: t0050_audit_syn_distribution
+Completed: 2026-04-25
+Short description: Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.
+Result summary: Results Summary: Synapse-Distribution Audit (Deposited DSGC vs Paper) Summary Confirms t0049&#x27;s spatial-distribution hypothesis (H1) at both the structural and numerical levels: the deposited ModelDB 189347 PD/ND condition swap is implemented as a pure scalar `gabaMOD = 0.33 + 0.66*direction` applied uniformly to ALL 282 SAC inhibitory synapses with NO spatial threshold. The underlying synapse spatial distribution is symmetric around the synapse population&#x27;s own median (count_pd / count_nd = 139 / 143 = 0.972, within the [0.9, 1.1] symmetric band). The deposited code therefore cannot produce the paper&#x27;s somatic GABA PD/ND asymmetry — the t0049 SEClamp symmetry collapse (PD = 47.47, ND = 48.04...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -494,9 +501,10 @@ Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_chan
         <id>dsi-flatness-test-voltage-independent-nmda</id>
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
+        <id>synapse-distribution-audit-deposited-vs-paper</id>
       </source_ids>
       <content>
-Answers: 17
+Answers: 18
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -632,6 +640,13 @@ Created by: t0049_seclamp_cond_remeasure on 2026-04-25
 Confidence: high
 
 No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all six channel x direction cells render an H2 verdict: SEClamp values are 1.6x-3.8x the paper Fig 3A-E targets and 0.2x-0.5x t0047&#x27;s per-synapse-summed values, so they sit between the two references but match neither within tolerance. Modality (somatic clamp vs per-synapse direct) explains roughly an order of magnitude of the t0047 amplitude mismatch but does not fully close the gap to the paper. The deposited model also fails to reproduce the paper&#x27;s headline GABA PD/ND asymmetry (SEClamp DSI ~ 0 vs paper ~ -0.4), which points to genuine parameter or protocol differences beyond measurement modality.
+
+## Does the deposited Poleg-Polsky 2016 DSGC&#x27;s spatial distribution of NMDA, AMPA, and GABA synapses match the paper&#x27;s text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse under somatic SEClamp?
+ID: synapse-distribution-audit-deposited-vs-paper
+Created by: t0050_audit_syn_distribution on 2026-04-25
+Confidence: high
+
+The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 + 0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct...
       </content>
     </section>
   </sections>

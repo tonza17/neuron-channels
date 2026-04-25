@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(24)](../suggestions/by-category/cable-theory.md) | [Datasets
+(25)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (20 open, 4 closed)
+## Suggestions (21 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
@@ -621,6 +621,24 @@ side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic 
 asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
 persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
 Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a path-distance helper to t0046's modeldb_189347_dsgc_exact
+library using the two-segment h.distance form</strong> (S-0050-03)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
+[t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
+
+Bonus finding from t0050: NEURON 8.2.7 Python's legacy single-arg form h.distance(0, sec(0.5))
+does NOT reliably set the path-distance origin (returns 0.5 instead of resetting). The audit
+worked around this using the two-segment form h.distance(soma_seg, syn_seg). Add a small
+path_distance_um(soma_seg, target_seg) helper to t0046's library (modeldb_189347_dsgc_exact)
+wrapping the robust form, plus a docstring note explaining the API quirk. Other DSGC tasks
+computing path distances (e.g., S-0049-05's intermediate SEClamp dendritic locations, future
+spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments
+required. Recommended task types: write-library.
 
 </details>
 

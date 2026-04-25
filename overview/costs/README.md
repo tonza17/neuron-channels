@@ -15,7 +15,7 @@ threshold.
 | Warn threshold | 80% ($0.80) |
 | Stop threshold | 100% ($1.00) |
 | Default per-task limit | $1.00 USD |
-| Tasks with cost records | 43 |
+| Tasks with cost records | 44 |
 | Tasks with non-zero spend | 0 |
 | Skipped tasks | 6 |
 
@@ -31,7 +31,7 @@ No entries found.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-43 task cost record(s) are zero-cost and omitted from the main spend table.
+44 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 

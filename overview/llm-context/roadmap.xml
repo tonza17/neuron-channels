@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-25T10:43:56Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-25T12:13:01Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>263608</char_count>
-    <byte_count>263801</byte_count>
-    <estimated_tokens>65902</estimated_tokens>
+    <char_count>269573</char_count>
+    <byte_count>269770</byte_count>
+    <estimated_tokens>67393</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -155,9 +155,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0047_validate_pp16_fig3_cond_noise</id>
         <id>t0048_voff_nmda1_dsi_test</id>
         <id>t0049_seclamp_cond_remeasure</id>
+        <id>t0050_audit_syn_distribution</id>
       </source_ids>
       <content>
-Completed tasks: 43
+Completed tasks: 44
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -416,6 +417,12 @@ ID: t0049_seclamp_cond_remeasure
 Completed: 2026-04-25
 Short description: Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.
 Result summary: Results Summary: SEClamp Conductance Re-Measurement Summary Measuring per-channel conductance under a somatic SEClamp at -65 mV on the deposited DSGC (gNMDA = 0.5 nS, exptype = control) yields values that lie **between** paper Fig 3A-E targets and t0047&#x27;s per-synapse-direct measurements — but match **neither** within tolerance. Verdict: **H2 (intermediate)** for all 6 channel × direction cells. SEClamp is closer to paper than per-synapse-direct (5-10x reduction from t0047) but still 1.7-5x over paper. **Critically: GABA PD/ND symmetry under SEClamp** (PD = 47.47 nS, ND = 48.04 nS, DSI = -0.006) **contradicts the paper&#x27;s stated PD ~12.5 / ND ~30 nS** (DSI ≈ -0.41). Modality alone does not...
+
+## Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper
+ID: t0050_audit_syn_distribution
+Completed: 2026-04-25
+Short description: Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.
+Result summary: Results Summary: Synapse-Distribution Audit (Deposited DSGC vs Paper) Summary Confirms t0049&#x27;s spatial-distribution hypothesis (H1) at both the structural and numerical levels: the deposited ModelDB 189347 PD/ND condition swap is implemented as a pure scalar `gabaMOD = 0.33 + 0.66*direction` applied uniformly to ALL 282 SAC inhibitory synapses with NO spatial threshold. The underlying synapse spatial distribution is symmetric around the synapse population&#x27;s own median (count_pd / count_nd = 139 / 143 = 0.972, within the [0.9, 1.1] symmetric band). The deposited code therefore cannot produce the paper&#x27;s somatic GABA PD/ND asymmetry — the t0049 SEClamp symmetry collapse (PD = 47.47, ND = 48.04...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -983,9 +990,10 @@ answer asset capturing the measured speedup and its implications for the t0033 c
         <id>dsi-flatness-test-voltage-independent-nmda</id>
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
+        <id>synapse-distribution-audit-deposited-vs-paper</id>
       </source_ids>
       <content>
-Answers: 17
+Answers: 18
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1121,6 +1129,13 @@ Created by: t0049_seclamp_cond_remeasure on 2026-04-25
 Confidence: high
 
 No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all six channel x direction cells render an H2 verdict: SEClamp values are 1.6x-3.8x the paper Fig 3A-E targets and 0.2x-0.5x t0047&#x27;s per-synapse-summed values, so they sit between the two references but match neither within tolerance. Modality (somatic clamp vs per-synapse direct) explains roughly an order of magnitude of the t0047 amplitude mismatch but does not fully close the gap to the paper. The deposited model also fails to reproduce the paper&#x27;s headline GABA PD/ND asymmetry (SEClamp DSI ~ 0 vs paper ~ -0.4), which points to genuine parameter or protocol differences beyond measurement modality.
+
+## Does the deposited Poleg-Polsky 2016 DSGC&#x27;s spatial distribution of NMDA, AMPA, and GABA synapses match the paper&#x27;s text descriptions, and does it explain the t0049 GABA PD/ND symmetry collapse under somatic SEClamp?
+ID: synapse-distribution-audit-deposited-vs-paper
+Created by: t0050_audit_syn_distribution on 2026-04-25
+Confidence: high
+
+The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 + 0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1197,6 +1212,8 @@ No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all
         <id>S-0048-02</id>
         <id>S-0049-01</id>
         <id>S-0049-02</id>
+        <id>S-0050-01</id>
+        <id>S-0050-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1295,6 +1312,7 @@ No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all
         <id>S-0048-04</id>
         <id>S-0049-03</id>
         <id>S-0049-04</id>
+        <id>S-0050-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1319,9 +1337,10 @@ No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all
         <id>S-0047-04</id>
         <id>S-0048-05</id>
         <id>S-0049-05</id>
+        <id>S-0050-04</id>
       </source_ids>
       <content>
-Open suggestions: 192
+Open suggestions: 196
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1812,6 +1831,20 @@ Priority: high
 Kind: experiment
 Source task: t0049_seclamp_cond_remeasure
 SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper&#x27;s 12.5 / 30 nS. Run a `gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA down) to see whether the paper&#x27;s ND-bias DSI -0.41 is recoverable by a spatial redistribution at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types: experiment-run.
+
+## Re-implement placeBIP() to spatially gate gabaMOD by per-synapse locx
+ID: S-0050-01
+Priority: high
+Kind: technique
+Source task: t0050_audit_syn_distribution
+t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction applied uniformly to every SAC inhibitory synapse with no spatial threshold (dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is computed per synapse from each synapse&#x27;s locx relative to the BIPsyn-locx median (88.77 um) or soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the population mean. Re-run t0049&#x27;s somatic SEClamp protocol to test whether somatic GABA recovers an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary &#x27;fix path A&#x27; identified by t0050&#x27;s mechanism analysis. Recommended...
+
+## Re-distribute SACinhib synapses asymmetrically across PD-side and ND-side dendrites in RGCmodel.hoc
+ID: S-0050-02
+Priority: high
+Kind: technique
+Source task: t0050_audit_syn_distribution
+Alternative &#x27;fix path B&#x27; to S-0050-01: instead of modulating gabaMOD per synapse, modify the construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited &#x27;three channels share parent sections per index&#x27;...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2499,6 +2532,13 @@ Kind: experiment
 Source task: t0049_seclamp_cond_remeasure
 t0049 ran SEClamp at the single V_clamp = -65 mV which yields a small GABA driving force (-5 mV vs E_GABA = -60 mV) and amplifies noise on the GABA conductance estimate (SD +/- 1.98 nS at PD). Repeat the per-channel isolation sweep at V_clamp in {-85, -65, -45} mV. The -85 mV condition gives a 25 mV GABA driving force (5x improvement in GABA SNR) and inverts the AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force sign and increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on holding voltage. Recommended task types: experiment-run.
 
+## Add a path-distance helper to t0046&#x27;s modeldb_189347_dsgc_exact library using the two-segment h.distance form
+ID: S-0050-03
+Priority: medium
+Kind: library
+Source task: t0050_audit_syn_distribution
+Bonus finding from t0050: NEURON 8.2.7 Python&#x27;s legacy single-arg form h.distance(0, sec(0.5)) does NOT reliably set the path-distance origin (returns 0.5 instead of resetting). The audit worked around this using the two-segment form h.distance(soma_seg, syn_seg). Add a small path_distance_um(soma_seg, target_seg) helper to t0046&#x27;s library (modeldb_189347_dsgc_exact) wrapping the robust form, plus a docstring note explaining the API quirk. Other DSGC tasks computing path distances (e.g., S-0049-05&#x27;s intermediate SEClamp dendritic locations, future spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments required. Recommended task types: write-library.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2666,6 +2706,13 @@ Priority: low
 Kind: experiment
 Source task: t0049_seclamp_cond_remeasure
 t0049 measured SEClamp conductance only at the soma (`h.RGC.soma(0.5)`). The GABA PD/ND symmetry collapse at the soma could be due to (a) cable-filtering averaging out local asymmetry, or (b) symmetric spatial distribution of GABA synapses across PD/ND-side dendrites. To discriminate, insert SEClamp at intermediate dendritic locations along the principal axis (e.g., at 25%, 50%, 75% of the dendritic path from soma to the most distal synapse on each side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic decay of the asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out); persistence at all locations supports the...
+
+## Refine spatial audit with dendritic-branch identity classification (proximal-PD / proximal-ND / distal)
+ID: S-0050-04
+Priority: low
+Kind: evaluation
+Source task: t0050_audit_syn_distribution
+t0050 used three midline-x conventions (soma_x, zero, BIPsyn-locx-median) to classify synapses as side_a / side_b. A more biophysically meaningful classification partitions synapses by dendritic branch identity: walk the section tree from soma, label each first-order branch as proximal-PD or proximal-ND based on its dendritic-field axis, then label deeper segments as distal. This finer partition would reveal whether the 282-synapse population has within-PD-branch or within-ND-branch density gradients invisible to a single x-midline split, and would provide the substrate-level data needed to design any future per-branch synaptic modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis...
       </content>
     </section>
   </sections>

@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-44 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **38 open** (16 high,
-19 medium, 3 low), **6 closed**.
+46 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **39 open** (17 high,
+19 medium, 3 low), **7 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,31 +58,6 @@ DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-
 crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
 fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Audit deposited GABA and NMDA spatial synapse coordinates against
-Poleg-Polsky 2016 paper text</strong> (S-0049-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0049-01` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
-DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
-collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
-Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
-3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
-and compare the distribution against paper text and figure descriptions. This explains the
-somatic asymmetry collapse and informs whether the deposited model needs a spatial
-redistribution correction or a per-side conductance scaling. Recommended task types:
-data-analysis.
 
 </details>
 
@@ -258,6 +233,56 @@ substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
 geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
 cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
 ~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
+ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
+construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
+across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
+and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
+per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
+asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
+paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
+channels share parent sections per index' design and is a more invasive but mechanistically
+cleaner option. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
+locx</strong> (S-0050-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
+applied uniformly to every SAC inhibitory synapse with no spatial threshold
+(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
+computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
+soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
+population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
+an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
+path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
+experiment-run.
 
 </details>
 
@@ -952,6 +977,33 @@ Recommended task types: experiment-run.
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>Audit deposited GABA and NMDA spatial synapse coordinates against
+Poleg-Polsky 2016 paper text</s> — covered by <a
+href="../../../tasks/t0050_audit_syn_distribution/"><code>t0050_audit_syn_distribution</code></a>
+(S-0049-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Under SEClamp at -65 mV, the deposited code's GABA shows PD/ND symmetry (47.47 vs 48.04 nS,
+DSI -0.006) instead of the paper's clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also
+collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this.
+Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse
+3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite,
+and compare the distribution against paper text and figure descriptions. This explains the
+somatic asymmetry collapse and informs whether the deposited model needs a spatial
+redistribution correction or a per-side conductance scaling. Recommended task types:
+data-analysis.
+
+</details>
 
 <details>
 <summary>✅ <s>Literature survey: synaptic integration in RGC-adjacent systems
