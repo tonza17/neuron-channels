@@ -1,0 +1,11 @@
+{
+  "dsi_max_minus_min": 0.06571538291127016,
+  "dsi_slope_per_ns": -0.024196195328352037,
+  "range_test_threshold": 0.1,
+  "slope_test_threshold_per_ns": 0.02,
+  "t0047_range_reference": 0.174,
+  "t0047_slope_reference_per_ns": -0.058,
+  "range_test_label": "H1",
+  "slope_test_label": "H2",
+  "overall_label": "H2"
+}

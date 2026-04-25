@@ -1,0 +1,95 @@
+{
+  "variants": [
+    {
+      "variant_id": "voff1_gnmda_0p0ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 0.00 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 0.0,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1031914161023668
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_0p5ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 0.50 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 0.5,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1018497125825351
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_1p0ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 1.00 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 1.0,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.07796836821079331
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_1p5ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 1.50 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 1.5,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.05655963944271241
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_2p0ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 2.00 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 2.0,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.05275105554516958
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_2p5ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 2.50 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 2.5,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04365807598378797
+      }
+    },
+    {
+      "variant_id": "voff1_gnmda_3p0ns",
+      "label": "Voff_bipNMDA = 1, gNMDA = 3.00 nS, 4 trials per direction",
+      "dimensions": {
+        "sweep": "gnmda",
+        "b2gnmda_ns": 3.0,
+        "voff_bipnmda": 1,
+        "exptype": "ZERO_MG"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.03747603319109665
+      }
+    }
+  ]
+}
