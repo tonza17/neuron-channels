@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results files; render DSI vs gNMDA overlay chart and conductance comparison.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T09:16:26Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T09:21:00Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
