@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare Voff=1 DSI vs gNMDA against paper's flat ~0.30 claim.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-25T09:21:14Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
