@@ -5,13 +5,13 @@
   "name": "Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC",
   "short_description": "Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0007_install_neuron_netpyne",
     "t0046_reproduce_poleg_polsky_2016_exact",
     "t0047_validate_pp16_fig3_cond_noise"
   ],
-  "start_time": null,
+  "start_time": "2026-04-25T09:35:35Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1
