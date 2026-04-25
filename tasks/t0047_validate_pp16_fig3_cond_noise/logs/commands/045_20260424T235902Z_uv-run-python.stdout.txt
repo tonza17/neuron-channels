@@ -1,0 +1,19 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0047_validate_pp16_fig3_cond_noise\tasks\t0047_validate_pp16_fig3_cond_noise\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260424T221444Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260424T221644Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260424T221659Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260424T221713Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260424T221802Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 011_20260424T223727Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260424T224654Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 013_20260424T224823Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260424T233512Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 032_20260424T235307Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 033_20260424T235320Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 13 warning(s)
