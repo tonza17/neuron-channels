@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare SEClamp NMDA / AMPA / GABA conductances against paper Fig 3A-E values within +/-25%.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-25T10:32:29Z",
-      "completed_at": null,
+      "completed_at": "2026-04-25T10:34:35Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
