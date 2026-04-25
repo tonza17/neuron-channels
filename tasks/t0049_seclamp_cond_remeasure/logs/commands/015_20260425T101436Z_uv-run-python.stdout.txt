@@ -1,0 +1,3 @@
+[figures] Reading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\data\seclamp_comparison_table.csv
+[figures] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\images\seclamp_conductance_pd_vs_nd.png
+[figures] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\images\seclamp_vs_per_syn_direct_modality_comparison.png

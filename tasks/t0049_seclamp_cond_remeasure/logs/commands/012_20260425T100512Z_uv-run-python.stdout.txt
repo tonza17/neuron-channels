@@ -1,0 +1,59 @@
+[validate] Running 2-trial validation gate (PD, full circuit)...
+	0
+	1
+	1
+	1
+[build_cell] countON=282 numsyn=282
+Changed dt
+[validate] seed=20000 peak_i_pa=-524.34 baseline_i_pa=-124.59 peak_minus_baseline_pa=524.34 clamp_v_sd_mv=0.0002
+Changed dt
+[validate] seed=20001 peak_i_pa=-533.27 baseline_i_pa=-126.00 peak_minus_baseline_pa=533.27 clamp_v_sd_mv=0.0002
+[validate] Validation gate passed.
+
+[sweep] Running full SEClamp sweep (32 trials)...
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+Changed dt
+[sweep] Completed 32 trials in 471.7 s.
+[sweep] Wrote 32 rows to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0049_seclamp_cond_remeasure\tasks\t0049_seclamp_cond_remeasure\results\data\seclamp_trials.csv.
+
+[sweep] Per-(direction, channel_on) trial counts:
+direction  channel_on
+ND         all           4
+           ampa_only     4
+           gaba_only     4
+           nmda_only     4
+PD         all           4
+           ampa_only     4
+           gaba_only     4
+           nmda_only     4
+dtype: int64
