@@ -1,6 +1,6 @@
 # Libraries: `direction-selectivity`
 
-8 librar(y/ies).
+9 librar(y/ies).
 
 [Back to all libraries](../README.md)
 
@@ -93,6 +93,69 @@ that reproduces the correlated-vs-AMB tuning-curve contrast.
 
 Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located
 E+I synapses, scalar gabaMOD inhibition, and a 12-direction moving-bar trial runner.
+
+</details>
+
+<details>
+<summary>📦 <strong>Minimal DSGC with Spatial Centripetal-Gating GABA</strong>
+(<code>minimal_dsgc_spatial_gaba</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `minimal_dsgc_spatial_gaba` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0053_minimal_dsgc_spatial_gaba\code\constants.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\paths.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\swc_io.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\neuron_bootstrap.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\cell.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\placement.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\synapses.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\trial.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\run_tuning_curve.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\render_figures.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\compute_metrics.py`, `tasks\t0053_minimal_dsgc_spatial_gaba\code\metrics_extra.py` |
+| **Dependencies** | neuron, numpy, matplotlib, pandas, tqdm |
+| **Date created** | 2026-04-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Created by** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0053_minimal_dsgc_spatial_gaba\assets\library\minimal_dsgc_spatial_gaba\description.md) |
+
+**Entry points:**
+
+* `build_dsgc_from_swc` (function) — Parse a calibrated SWC, collapse the soma into one
+  Section, build one h.Section per non-soma compartment, attach a synthetic axon initial
+  segment, and return a CellHandles dataclass that includes soma_origin_um for the spatial
+  driver.
+* `sample_dendritic_locations` (function) — Sample N dendritic locations uniformly along total
+  dendritic length using numpy.random.default_rng(seed); seed=0 reproduces t0052's placement
+  bit-for-bit.
+* `build_ei_pairs` (function) — Construct one AMPA + GABA Exp2Syn pair per Location; each pair
+  carries theta_centrifugal_rad = atan2(y - y_soma, x - x_soma) precomputed from
+  soma_origin_um.
+* `schedule_ei_onsets` (function) — Per-trial scheduler: set AMPA NetStim.start at
+  bar-arrival; for each I synapse evaluate i_synapse_fires(theta_stim, theta_centrifugal);
+  when fired set GABA weight to 2 nS, otherwise zero. Returns ScheduleResult with
+  onset_times_ms and i_fired_mask.
+* `i_synapse_fires` (function) — Pure boolean predicate: returns cos(radians(theta_stim_deg -
+  theta_centrifugal_deg)) < 0 (strict; perpendicular does not fire).
+* `ScheduleResult` (class) — Frozen dataclass returned by schedule_ei_onsets, with
+  onset_times_ms: list[float] and i_fired_mask: list[bool] aligned with the pair list.
+* `TrialMode` (class) — StrEnum with members FULL, AMPA_ONLY, GABA_ONLY for selecting which
+  synaptic drive is active.
+* `run_one_trial` (function) — Run one trial: schedule onsets via the spatial gate, apply
+  mode-specific weight overrides, finitialize+continuerun, return TrialResult with V(t), spike
+  times, synapse onset times, i_fired_mask, and i_active_fraction.
+* `run_full_sweep` (function) — End-to-end 12 directions x 10 trials x 3 modes = 360-trial
+  sweep with dry-run validation gate; writes per-mode tuning-curve / spike-time /
+  voltage-trace CSVs, an activation-time CSV with is_fired column, and an
+  active_fraction_per_direction CSV.
+* `compute_vector_sum_dsi` (function) — Vector-sum DSI from the per-angle mean firing rates:
+  |sum r_k * exp(i theta_k)| / sum r_k.
+* `compute_preferred_direction_deg` (function) — Preferred direction in degrees from the
+  complex sum of rate-weighted unit vectors.
+* `render_active_fraction_polar` (function) — Render the per-direction active-fraction polar
+  plot (closed polygon with reference circle at 0.5).
+* `compute_metrics_main` (script) — Compute per-mode metrics (DSI, HWHM, reliability) and
+  write metrics.json + derived_quantities.json with a soft active-fraction sanity check (mean
+  in [0.4, 0.6]).
+* `render_figures_main` (script) — Render all per-direction figures (soma V, EPSP, IPSP, PSTH,
+  activation histograms) plus polar / Cartesian tuning curves, raster+PSTH per direction, and
+  the active-fraction polar plot.
+
+Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located
+E+I synapses where each I synapse fires only when the bar moves with a centripetal component
+(cos(theta_stim - theta_centrifugal) < 0); the spatial-asymmetry sibling of t0052.
 
 </details>
 

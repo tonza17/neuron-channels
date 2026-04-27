@@ -8,23 +8,27 @@
 
 ## 2026-04-27 (2)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0053 — <strong>Minimal from-scratch DSGC with spatial PD/ND-asymmetric
+<summary>✅ 0053 — <strong>Minimal from-scratch DSGC with spatial PD/ND-asymmetric
 inhibition</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0053_minimal_dsgc_spatial_gaba` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-27 |
 | **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | — |
 | **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-27T12:36:44Z |
+| **End time** | 2026-04-27T14:10:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
 | **Task folder** | [`t0053_minimal_dsgc_spatial_gaba/`](../../../tasks/t0053_minimal_dsgc_spatial_gaba/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0053_minimal_dsgc_spatial_gaba/results/results_detailed.md) |
 
 # Minimal From-Scratch DSGC with Spatial PD/ND-Asymmetric Inhibition
 
@@ -154,9 +158,36 @@ Local CPU only. Estimated wall-clock: ~1 week. Cost: $0.00.
 * Synapse placement uses the same fixed seed (0) as t0052 so the two tasks can be compared
   trial-for-trial in a downstream analysis.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Minimal From-Scratch DSGC with Spatial PD/ND-Asymmetric Inhibition**
+>
+> **Summary**
+>
+> Built a from-scratch minimal DSGC on `dsgc-baseline-morphology-calibrated` (same morphology
+> and
+> synapse placement seed as t0052) with 100 E + 100 I co-located synapses, position-gated
+> AMPA-only
+> excitation, and **centripetal-only spatial gating** of GABA inhibition (each I synapse fires
+> at full
+> 2 nS amplitude only when `cos(θ_stim − θ_centrifugal_synapse) < 0`, zero otherwise). Ran the
+> full 12-direction × 10-trial × 3-mode sweep (360 trials in 17 min 11 s on local CPU).
+> Headline
+> finding: **the FULL-mode tuning curve is identically 0 Hz across all directions** — the
+> spatial
+> mechanism with full 2 nS GABA on ~50% of synapses fully suppresses spiking on this
+> morphology /
+> synapse-density configuration. AMPA_ONLY fires uniformly at 0.667 Hz (excitation works at
+> threshold). The active-fraction soft sanity check passes (mean = 0.5000 ∈ [0.4, 0.6]).
+>
+> **Metrics**
+>
+> * **Primary DSI (FULL)**: **0.0** — degenerate; both peak and null directions fire 0 Hz.
+> * **Peak Hz / Null Hz (FULL)**: **0.0 / 0.0** — full inhibitory suppression.
+> * **Vector-sum DSI (FULL)**: **0.0** — degenerate.
+> * **HWHM**: **180.0°** — degenerate (flat-zero tuning curve).
+
+</details>
 
 <details>
 <summary>✅ 0052 — <strong>Minimal from-scratch DSGC with scalar gabaMOD

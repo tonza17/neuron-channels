@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(26)](../suggestions/by-category/cable-theory.md) | [Datasets
+(27)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (22 open, 4 closed)
+## Suggestions (23 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
@@ -621,6 +621,26 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Two-point driving-force saturation calibration library from t0052
++ t0053 IPSP data</strong> (S-0053-06)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
+[t0053_minimal_dsgc_spatial_gaba](../../tasks/t0053_minimal_dsgc_spatial_gaba/)
+
+S-0052-05 proposes a single-task library to translate nominal gabaMOD conductance ratios into
+somatic-voltage IPSP modulation using t0052's observation alone (3.0x conductance -> 1.54x
+voltage). t0053 provides a second calibration point on the same morphology and placement:
+1.94x active-count ratio -> 1.24x voltage ratio at fixed 2 nS per synapse. Build a calibration
+library `gaba_drive_saturation` taking both t0052 and t0053 IPSP data and fitting a two-point
+(extensible via S-0052-02 GABA-count sweep) voltage-vs-conductance saturation curve, exposing
+`gaba_eff(n_active_synapses, peak_g_per_syn)` returning predicted somatic IPSP modulation
+depth. Future scalar / spatial / hybrid inhibition models call this during design to check
+whether their nominal parameters land in the saturating regime. Sharpens S-0052-05 with a
+two-point dataset. Recommended task types: write-library.
 
 </details>
 

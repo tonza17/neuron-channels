@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-26 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **22
-open** (5 high, 14 medium, 3 low), **4 closed**.
+27 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **23
+open** (5 high, 15 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -448,6 +448,32 @@ run the downstream DSGC passive simulation from S-0009-01 on each. Report DSI, p
 HWHM, and proximal/distal Rin per variant; quantify the sensitivity of downstream metrics to
 the heuristic choice. This makes the tie-break choice reviewable rather than arbitrary.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Two-point driving-force saturation calibration library from t0052
++ t0053 IPSP data</strong> (S-0053-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-06` |
+| **Kind** | library |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+S-0052-05 proposes a single-task library to translate nominal gabaMOD conductance ratios into
+somatic-voltage IPSP modulation using t0052's observation alone (3.0x conductance -> 1.54x
+voltage). t0053 provides a second calibration point on the same morphology and placement:
+1.94x active-count ratio -> 1.24x voltage ratio at fixed 2 nS per synapse. Build a calibration
+library `gaba_drive_saturation` taking both t0052 and t0053 IPSP data and fitting a two-point
+(extensible via S-0052-02 GABA-count sweep) voltage-vs-conductance saturation curve, exposing
+`gaba_eff(n_active_synapses, peak_g_per_syn)` returning predicted somatic IPSP modulation
+depth. Future scalar / spatial / hybrid inhibition models call this during design to check
+whether their nominal parameters land in the saturating regime. Sharpens S-0052-05 with a
+two-point dataset. Recommended task types: write-library.
 
 </details>
 

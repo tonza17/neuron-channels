@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-137 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **121 open** (34
-high, 78 medium, 9 low), **16 closed**.
+142 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **126 open** (37
+high, 80 medium, 9 low), **16 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -224,6 +224,31 @@ option. Recommended task types: write-library, answer-question.
 </details>
 
 <details>
+<summary>📊 <strong>Conductance-matched t0052 vs t0053 comparison at fixed mean GABA
+mass per trial</strong> (S-0053-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+S-0052-04 proposes a t0052 vs t0053 side-by-side comparison at matched placement, but does not
+control for total GABA mass (t0052 = 66 nS mean / trial, t0053 = 100 nS mean / trial; 1.5x
+difference fully accounts for t0053's flat-zero result). Run a dedicated comparative task at
+conductance-matched mean GABA mass: e.g., t0052 standard gabaMOD (66 nS) vs t0053 at 1.32 nS x
+50 active = 66 nS, or matched at 100 nS. Use placement_seed0.json shared between tasks. Report
+all six output classes (V(t), EPSP, IPSP, PSTH, tuning curve, active-fraction) plus
+per-direction trial-for-trial diffs in soma V(t). Goal: isolate the spatial-vs-amplitude
+mechanism contribution to DSI from the GABA-mass confound, settling the graded-vs-binary
+question at matched mean drive. Recommended task types: comparative-analysis.
+
+</details>
+
+<details>
 <summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
 PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
 
@@ -344,6 +369,32 @@ at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs
 scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
 Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
 range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
+a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
+(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
+AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
+crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
+(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
+{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
+conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
+vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
+spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
+to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 
@@ -771,6 +822,33 @@ pick t0024 as the optimisation testbed, use primary DSI as the objective, and se
 length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
 (vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
 task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
+halve active-fraction on t0053</strong> (S-0053-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0053's centripetal-gating rule fires every I synapse whose centrifugal vector is anywhere on
+the bar-incoming hemisphere (cos(theta_stim - theta_centrifugal) < 0), giving a roughly 50%
+active fraction averaged over directions and a 0.34-0.66 per-direction spread. With 2 nS GABA
+per active synapse this is enough to fully suppress spiking. Tighten the threshold to T in
+{-0.3, -0.5, -0.7, -0.866} so only synapses whose centrifugal vector is within (90 - acos|T|)
+of being directly anti-aligned with the bar fire. T = -0.5 reduces mean active fraction to
+~0.33; T = -0.866 to ~0.17. Re-run the 12-direction x 10-trial FULL sweep at fixed 2 nS GABA
+per synapse and report peak Hz, DSI, HWHM, active-fraction polar curve, and aggregate IPSP per
+T. Goal: test whether a stricter threshold recovers a measurable DSI without changing
+per-synapse conductance, isolating the active-fraction-vs-amplitude contributions to
+suppression. Recommended task types: experiment-run.
 
 </details>
 
@@ -1839,6 +1917,32 @@ compare-literature.md as a concrete limitation. Recommended task types: experime
 </details>
 
 <details>
+<summary>🔧 <strong>Hybrid spatial-gating + amplitude-scaling inhibition mechanism
+on minimal DSGC</strong> (S-0053-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-05` |
+| **Kind** | technique |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0053_minimal_dsgc_spatial_gaba/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0052 scales all 100 I synapses by a graded gabaMOD(theta); t0053 binary-gates a subset at
+full amplitude. A biologically motivated hybrid gates which I synapses fire (t0053's
+per-synapse centripetal threshold) AND scales their amplitude by a global gabaMOD(theta)
+factor (t0052's amplitude curve). This decomposition matches the SAC network's
+centrifugal-release preference (spatial gating) layered on top of any global drive modulation.
+Build a variant library `minimal_dsgc_hybrid_gaba` implementing both rules, sweep the gabaMOD
+amplitude floor in {0.33, 0.5, 0.66, 1.0} at fixed centripetal threshold cos < 0, and report
+DSI, peak Hz, HWHM, IPSP modulation, and active-fraction per floor. Goal: test whether
+combining the two mechanisms produces a tuning curve closer to Park2014 / deRosenroll2026
+bands than either alone. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Inject Poisson background rate on the t0022 driver to moderate
 DSI from 1.0 toward the 0.5-0.8 published band</strong> (S-0022-05)</summary>
 
@@ -1955,6 +2059,33 @@ unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline d
 t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
 threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
 Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Narrow-bar stimulus sweep (50, 100, 150 um) on minimal DSGC to
+break the synchronous-firing regime</strong> (S-0053-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Both t0052 and t0053 use a 200 um bar that crosses the entire dendritic field in one stimulus
+epoch, so synapses fire near-synchronously and the cell sees a single dense
+excitation+inhibition pulse per trial. This produces single-spike-per-trial behaviour (peak Hz
+= 0.667 in AMPA-only) and binary on/off DSI dynamics in t0052, plus the full inhibition
+pile-up that suppresses t0053. Re-run both minimal DSGCs (t0052 scalar gabaMOD and t0053
+spatial centripetal at any non-suppressing g_GABA, e.g. 1.0 nS) under bar widths W in {50,
+100, 150, 200} um at the same 1000 um/s velocity, so synapses fire sequentially over a longer
+trial epoch. Report peak Hz, DSI, HWHM, reliability, and per-direction PSTH bin width. Goal:
+test whether a narrower stimulus produces graded firing rates (multiple spikes per trial) and
+a more biologically informative tuning curve under both inhibition mechanisms, decoupling DSI
+dynamics from synchronous-volley artefacts. Recommended task types: experiment-run.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-27T12:19:36Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-27T14:11:49Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>148096</char_count>
-    <byte_count>148289</byte_count>
-    <estimated_tokens>37024</estimated_tokens>
+    <char_count>149986</char_count>
+    <byte_count>150187</byte_count>
+    <estimated_tokens>37496</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -161,9 +161,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0050_audit_syn_distribution</id>
         <id>t0051_brainstorm_results_9</id>
         <id>t0052_minimal_dsgc_scalar_gaba</id>
+        <id>t0053_minimal_dsgc_spatial_gaba</id>
       </source_ids>
       <content>
-Completed tasks: 46
+Completed tasks: 47
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -440,6 +441,12 @@ ID: t0052_minimal_dsgc_scalar_gaba
 Completed: 2026-04-27
 Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, scalar gabaMOD inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
 Result summary: Results Summary: Minimal From-Scratch DSGC with Scalar gabaMOD Inhibition Summary Built a from-scratch minimal DSGC on `dsgc-baseline-morphology-calibrated` with 100 E + 100 I co-located synapses, position-gated AMPA-only excitation, and scalar `gabaMOD`-scaled inhibition; ran the full 12-direction × 10-trial × 3-mode sweep (360 trials in 19 min 13 s on local CPU). The cell produces **primary DSI = 1.0** in FULL mode (null direction silent, all preferred-side directions fire 0.667 Hz = 1 spike/trial), **vector-sum DSI = 0.746**, and preferred direction = 0° as designed. The IPSP conductance ratio `gabaMOD(180)/gabaMOD(0) = 3.0` matches the spec exactly; the observed somatic IPSP voltage...
+
+## Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition
+ID: t0053_minimal_dsgc_spatial_gaba
+Completed: 2026-04-27
+Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+Result summary: Results Summary: Minimal From-Scratch DSGC with Spatial PD/ND-Asymmetric Inhibition Summary Built a from-scratch minimal DSGC on `dsgc-baseline-morphology-calibrated` (same morphology and synapse placement seed as t0052) with 100 E + 100 I co-located synapses, position-gated AMPA-only excitation, and **centripetal-only spatial gating** of GABA inhibition (each I synapse fires at full 2 nS amplitude only when `cos(θ_stim − θ_centrifugal_synapse) &lt; 0`, zero otherwise). Ran the full 12-direction × 10-trial × 3-mode sweep (360 trials in 17 min 11 s on local CPU). Headline finding: **the FULL-mode tuning curve is identically 0 Hz across all directions** — the spatial mechanism with full 2 nS GABA...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -449,10 +456,9 @@ Result summary: Results Summary: Minimal From-Scratch DSGC with Scalar gabaMOD I
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0053_minimal_dsgc_spatial_gaba</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -473,13 +479,6 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-## Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition
-ID: t0053_minimal_dsgc_spatial_gaba
-Status: not_started
-Effective date: 2026-04-27
-Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1212,9 +1211,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>modeldb_189347_dsgc_dendritic</id>
         <id>modeldb_189347_dsgc_exact</id>
         <id>minimal_dsgc_scalar_gaba</id>
+        <id>minimal_dsgc_spatial_gaba</id>
       </source_ids>
       <content>
-Libraries: 8
+Libraries: 9
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1271,6 +1271,13 @@ Version: 0.1.0
 Created by task: t0052_minimal_dsgc_scalar_gaba
 Module paths: tasks\t0052_minimal_dsgc_scalar_gaba\code\constants.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\paths.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\swc_io.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\neuron_bootstrap.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\cell.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\placement.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\synapses.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\trial.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\run_tuning_curve.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\render_figures.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\compute_metrics.py, tasks\t0052_minimal_dsgc_scalar_gaba\code\metrics_extra.py
 This library provides the minimum machinery needed to study how scalar direction-dependent inhibition shapes a compartmental DSGC&#x27;s tuning curve: one cell builder, one length-weighted placement sampler, one position-gated AMPA + GABA driver pair, one trial runner with three mode toggles, one 12-direction sweep harness with a built-in dry-run validation gate, and one metrics computer with a hard IPSP-ratio sanity...
+
+## Minimal DSGC with Spatial Centripetal-Gating GABA
+ID: minimal_dsgc_spatial_gaba
+Version: 0.1.0
+Created by task: t0053_minimal_dsgc_spatial_gaba
+Module paths: tasks\t0053_minimal_dsgc_spatial_gaba\code\constants.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\paths.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\swc_io.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\neuron_bootstrap.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\cell.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\placement.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\synapses.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\trial.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\run_tuning_curve.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\render_figures.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\compute_metrics.py, tasks\t0053_minimal_dsgc_spatial_gaba\code\metrics_extra.py
+The `minimal_dsgc_spatial_gaba` library is the spatial-asymmetry sibling of t0052&#x27;s `minimal_dsgc_scalar_gaba`. Both libraries share an identical compartmental cell builder, identical seed-0 synapse placement, identical Exp2Syn / NetStim / NetCon rigging, and an identical 12-direction by 10-trial by 3-mode (FULL / AMPA_ONLY / GABA_ONLY) sweep harness with the same CSV schemas. The mechanistic difference lives...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">
