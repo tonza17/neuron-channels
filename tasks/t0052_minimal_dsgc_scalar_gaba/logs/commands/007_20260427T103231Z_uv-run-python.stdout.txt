@@ -1,0 +1,1 @@
+[quiescent] cell: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24

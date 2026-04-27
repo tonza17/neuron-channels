@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -c \nimport time\nimport numpy as np\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.run_tuning_curve import setup_sweep_artifacts\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.constants import TrialMode, V_INIT_MV\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.trial import run_one_trial\nartifacts = setup_sweep_artifacts()\nfrom neuron import h\nh.cvode.active(True)\n# Boost soma+AIS HH but tweak el_hh to maintain rest at -65 mV.\nsoma = artifacts.cell.soma\nais = artifacts.cell.axon_initial_segment\nsoma.gnabar_hh = 0.2\nais.gnabar_hh = 1.0\nais.gkbar_hh = 0.05\nais.el_hh = -45.0  # raise el so cell doesn't go below -65\nsoma.el_hh = -50.0\nprint(f'soma gnabar={soma(0.5).hh.gnabar} gkbar={soma(0.5).hh.gkbar} el={soma(0.5).hh.el}')\nprint(f'ais gnabar={ais(0.5).hh.gnabar} gkbar={ais(0.5).hh.gkbar} el={ais(0.5).hh.el}')\n\nv_rec = h.Vector()\nv_rec.record(soma(0.5)._ref_v)\nh.finitialize(V_INIT_MV)\nh.continuerun(50.0)\nv = np.array(list(v_rec))\nprint('quiescent v_final=', v[-1])\n\nt0 = time.time()\nres = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.AMPA_ONLY, angle_deg=0.0, trial_seed=1)\nprint(f'AMPA_ONLY 0: t={time.time()-t0:.2f}s n_spikes={len(res.spike_times_ms)} v_max={res.v_soma_mv.max():.2f}')\n\nt0 = time.time()\nres2 = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.AMPA_ONLY, angle_deg=180.0, trial_seed=1)\nprint(f'AMPA_ONLY 180: t={time.time()-t0:.2f}s n_spikes={len(res2.spike_times_ms)} v_max={res2.v_soma_mv.max():.2f}')\n\n# Now FULL mode at theta=0 (should fire well; gabaMOD=0.33)\nt0 = time.time()\nres3 = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.FULL, angle_deg=0.0, trial_seed=1)\nprint(f'FULL 0: t={time.time()-t0:.2f}s n_spikes={len(res3.spike_times_ms)} v_max={res3.v_soma_mv.max():.2f}')\n\n# FULL theta=180 (gabaMOD=0.99 - strong inhibition)\nt0 = time.time()\nres4 = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.FULL, angle_deg=180.0, trial_seed=1)\nprint(f'FULL 180: t={time.time()-t0:.2f}s n_spikes={len(res4.spike_times_ms)} v_max={res4.v_soma_mv.max():.2f}')\n",
+  "exit_code": 0,
+  "duration_seconds": 46.05,
+  "started_at": "2026-04-27T10:45:51Z",
+  "completed_at": "2026-04-27T10:46:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "014_20260427T104551Z_uv-run-python.stdout.txt",
+  "stderr_file": "014_20260427T104551Z_uv-run-python.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

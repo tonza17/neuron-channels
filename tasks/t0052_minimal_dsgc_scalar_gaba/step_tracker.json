@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Build the minimal_dsgc_scalar_gaba library asset (cell builder, synapse placer, position-gated event drivers, scalar gabaMOD scaling, trial runner, recording helpers); run 12 directions x 10 trials and produce per-direction plots and metrics.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-27T10:25:58Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

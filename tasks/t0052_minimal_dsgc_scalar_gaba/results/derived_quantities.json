@@ -1,0 +1,43 @@
+{
+  "peak_hz": 0.6666670000000001,
+  "null_hz": 0.0,
+  "vector_sum_dsi": 0.7464101615137754,
+  "preferred_direction_deg": 360.0,
+  "ipsp_conductance_ratio_null_over_pref": 3.0,
+  "ipsp_voltage_ratio_null_over_pref": 1.5399131911681423,
+  "gaba_mod_pd": 0.33,
+  "gaba_mod_nd": 0.99,
+  "ipsp_pd_mv": 5.299000000000007,
+  "ipsp_nd_mv": 8.159999999999997,
+  "aggregate_epsp_peak_per_direction_mv": {
+    "angle_000": 83.9509,
+    "angle_030": 83.6908,
+    "angle_060": 84.0425,
+    "angle_090": 84.4096,
+    "angle_120": 84.4961,
+    "angle_150": 84.595,
+    "angle_180": 84.4472,
+    "angle_210": 84.2781,
+    "angle_240": 84.237,
+    "angle_270": 83.0784,
+    "angle_300": 83.7564,
+    "angle_330": 83.6584
+  },
+  "aggregate_ipsp_peak_per_direction_mv": {
+    "angle_000": 5.299000000000007,
+    "angle_030": 5.503600000000006,
+    "angle_060": 6.004199999999997,
+    "angle_090": 6.813199999999995,
+    "angle_120": 7.560900000000004,
+    "angle_150": 7.927599999999998,
+    "angle_180": 8.159999999999997,
+    "angle_210": 7.975499999999997,
+    "angle_240": 7.681899999999999,
+    "angle_270": 7.124200000000002,
+    "angle_300": 6.383499999999998,
+    "angle_330": 5.608000000000004
+  },
+  "ampa_only_peak_hz": 0.6666670000000001,
+  "ampa_only_vector_sum_dsi": 3.231729517986563e-17,
+  "rmse_target_note": "tuning_curve_rmse computed against t0004 target curve"
+}

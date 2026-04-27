@@ -1,0 +1,114 @@
+{
+  "spec_version": "2",
+  "library_id": "minimal_dsgc_scalar_gaba",
+  "name": "Minimal DSGC with Scalar gabaMOD",
+  "version": "0.1.0",
+  "short_description": "Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located E+I synapses, scalar gabaMOD inhibition, and a 12-direction moving-bar trial runner.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/constants.py",
+    "code/paths.py",
+    "code/swc_io.py",
+    "code/neuron_bootstrap.py",
+    "code/cell.py",
+    "code/placement.py",
+    "code/synapses.py",
+    "code/trial.py",
+    "code/run_tuning_curve.py",
+    "code/render_figures.py",
+    "code/compute_metrics.py",
+    "code/metrics_extra.py"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc_from_swc",
+      "kind": "function",
+      "module": "code/cell.py",
+      "description": "Parse a calibrated SWC, collapse the soma into one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial segment, and return a CellHandles dataclass."
+    },
+    {
+      "name": "sample_dendritic_locations",
+      "kind": "function",
+      "module": "code/placement.py",
+      "description": "Sample N dendritic locations uniformly along total dendritic length using numpy.random.default_rng(seed)."
+    },
+    {
+      "name": "build_ei_pairs",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Construct one AMPA + GABA Exp2Syn pair per Location, each driven by a single-event NetStim+NetCon."
+    },
+    {
+      "name": "schedule_ei_onsets",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Per-trial scheduler: set NetStim.start times from the bar-leading-edge crossing geometry and apply gabaMOD scaling to GABA NetCon weights."
+    },
+    {
+      "name": "gaba_mod",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Scalar gabaMOD multiplier: returns 0.33 at preferred direction (theta=0) and 0.99 at null direction (theta=180)."
+    },
+    {
+      "name": "TrialMode",
+      "kind": "class",
+      "module": "code/constants.py",
+      "description": "StrEnum with members FULL, AMPA_ONLY, GABA_ONLY for selecting which synaptic drive is active."
+    },
+    {
+      "name": "run_one_trial",
+      "kind": "function",
+      "module": "code/trial.py",
+      "description": "Run one trial: schedule onsets, apply mode-specific weight overrides, finitialize+continuerun, return TrialResult with V(t), spike times, and synapse onset times."
+    },
+    {
+      "name": "run_full_sweep",
+      "kind": "function",
+      "module": "code/run_tuning_curve.py",
+      "description": "End-to-end 12 directions x 10 trials x 3 modes = 360-trial sweep with dry-run validation gate; writes per-mode tuning-curve / spike-time / voltage-trace CSVs and an activation-time CSV."
+    },
+    {
+      "name": "compute_vector_sum_dsi",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Vector-sum DSI from the per-angle mean firing rates: |sum r_k * exp(i theta_k)| / sum r_k."
+    },
+    {
+      "name": "compute_preferred_direction_deg",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Preferred direction in degrees from the complex sum of rate-weighted unit vectors."
+    },
+    {
+      "name": "compute_metrics_main",
+      "kind": "script",
+      "module": "code/compute_metrics.py",
+      "description": "Compute per-mode metrics (DSI, HWHM, reliability, vector-sum DSI, preferred direction, IPSP ratio) and write metrics.json + derived_quantities.json with a hard IPSP-ratio sanity check."
+    },
+    {
+      "name": "render_figures_main",
+      "kind": "script",
+      "module": "code/render_figures.py",
+      "description": "Render all per-direction figures (soma V, EPSP, IPSP, PSTH, activation histograms) plus polar and Cartesian tuning curves."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "tqdm"
+  ],
+  "test_paths": [
+    "code/test_quiescent_rest.py",
+    "code/test_gaba_mod.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "synaptic-integration"
+  ],
+  "created_by_task": "t0052_minimal_dsgc_scalar_gaba",
+  "date_created": "2026-04-25"
+}

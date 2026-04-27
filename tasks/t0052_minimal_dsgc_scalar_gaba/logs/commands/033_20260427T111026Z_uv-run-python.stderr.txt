@@ -1,0 +1,15 @@
+
+dry-run FULL:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run FULL:  50%|#####     | 1/2 [00:03<00:03,  3.76s/trial]
+dry-run FULL: 100%|##########| 2/2 [00:07<00:00,  3.74s/trial]
+dry-run FULL: 100%|##########| 2/2 [00:07<00:00,  3.74s/trial]
+
+dry-run AMPA_ONLY:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run AMPA_ONLY:  50%|#####     | 1/2 [00:03<00:03,  3.59s/trial]
+dry-run AMPA_ONLY: 100%|##########| 2/2 [00:07<00:00,  3.68s/trial]
+dry-run AMPA_ONLY: 100%|##########| 2/2 [00:07<00:00,  3.67s/trial]
+
+dry-run GABA_ONLY:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run GABA_ONLY:  50%|#####     | 1/2 [00:02<00:02,  2.70s/trial]
+dry-run GABA_ONLY: 100%|##########| 2/2 [00:05<00:00,  2.66s/trial]
+dry-run GABA_ONLY: 100%|##########| 2/2 [00:05<00:00,  2.66s/trial]

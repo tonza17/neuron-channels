@@ -1,0 +1,8 @@
+[quiescent] cell: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24
+[quiescent] soma voltage samples:
+  t=  0.000 ms  V=-65.000 mV
+  t= 25.000 ms  V=-63.631 mV
+  t= 50.000 ms  V=-63.703 mV
+[quiescent] soma: gnabar_hh=0.12 gkbar_hh=0.036 gl_hh=0.0003 el=-54.3
+[quiescent] dend[0]: g_pas=0.0001666944490748458 e_pas=-65.0 Ra=100.0 cm=1.0
+[quiescent] final V_soma = -63.7033 mV (target -65.0 +/- 0.5 mV; |delta| = 1.2967 mV)

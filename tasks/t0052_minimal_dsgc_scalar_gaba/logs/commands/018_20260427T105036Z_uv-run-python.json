@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -c \nimport time\nimport numpy as np\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.run_tuning_curve import setup_sweep_artifacts\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.constants import TrialMode, V_INIT_MV\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.trial import run_one_trial\nartifacts = setup_sweep_artifacts()\nfrom neuron import h\nh.cvode.active(True)\nsoma = artifacts.cell.soma\nais = artifacts.cell.axon_initial_segment\n# Boost only AIS, with carefully tuned el to maintain rest\n# Strategy: increase AIS gnabar substantially but compensate with more gleak by lowering Rm only on AIS\n# Actually let's just increase gl_hh on AIS and soma\nsoma.gnabar_hh = 0.3\nsoma.gkbar_hh = 0.04\nsoma.gl_hh = 0.001\nsoma.el_hh = -65.0\nais.gnabar_hh = 1.5\nais.gkbar_hh = 0.04\nais.gl_hh = 0.001\nais.el_hh = -65.0\nais.L = 50.0\n\nv_rec = h.Vector()\nv_rec.record(soma(0.5)._ref_v)\nh.finitialize(V_INIT_MV)\nh.continuerun(50.0)\nv = np.array(list(v_rec))\nprint(f'quiescent v_final={v[-1]:.2f}')\n\nfor (mode, angle) in [(TrialMode.AMPA_ONLY, 0), (TrialMode.AMPA_ONLY, 90), (TrialMode.AMPA_ONLY, 180), (TrialMode.FULL, 0), (TrialMode.FULL, 90), (TrialMode.FULL, 180)]:\n    t0 = time.time()\n    res = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=mode, angle_deg=float(angle), trial_seed=1)\n    print(f'{mode.value} {angle}: t={time.time()-t0:.2f}s n_spikes={len(res.spike_times_ms)} v_max={res.v_soma_mv.max():.2f}')\n",
+  "exit_code": 0,
+  "duration_seconds": 72.832,
+  "started_at": "2026-04-27T10:50:36Z",
+  "completed_at": "2026-04-27T10:51:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "018_20260427T105036Z_uv-run-python.stdout.txt",
+  "stderr_file": "018_20260427T105036Z_uv-run-python.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

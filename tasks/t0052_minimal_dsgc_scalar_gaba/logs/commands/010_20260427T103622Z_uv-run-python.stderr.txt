@@ -1,0 +1,24 @@
+
+dry-run FULL:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run FULL:  50%|#####     | 1/2 [01:17<01:17, 77.62s/trial]
+dry-run FULL: 100%|##########| 2/2 [02:33<00:00, 76.43s/trial]
+dry-run FULL: 100%|##########| 2/2 [02:33<00:00, 76.61s/trial]
+
+dry-run AMPA_ONLY:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run AMPA_ONLY:  50%|#####     | 1/2 [01:15<01:15, 75.31s/trial]
+dry-run AMPA_ONLY: 100%|##########| 2/2 [02:30<00:00, 75.43s/trial]
+dry-run AMPA_ONLY: 100%|##########| 2/2 [02:30<00:00, 75.41s/trial]
+
+dry-run GABA_ONLY:   0%|          | 0/2 [00:00<?, ?trial/s]
+dry-run GABA_ONLY:  50%|#####     | 1/2 [01:14<01:14, 74.94s/trial]
+dry-run GABA_ONLY: 100%|##########| 2/2 [02:30<00:00, 75.06s/trial]
+dry-run GABA_ONLY: 100%|##########| 2/2 [02:30<00:00, 75.04s/trial]
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    run_dry_run_validation(artifacts=artifacts)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\run_tuning_curve.py", line 319, in run_dry_run_validation
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Dry-run gate failed: AMPA_ONLY at theta=0 produced zero spikes. Aborting before the full 360-trial sweep.
