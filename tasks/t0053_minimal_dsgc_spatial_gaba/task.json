@@ -5,13 +5,13 @@
   "name": "Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition",
   "short_description": "From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0009_calibrate_dendritic_diameters",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library"
   ],
-  "start_time": null,
+  "start_time": "2026-04-27T12:36:44Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
