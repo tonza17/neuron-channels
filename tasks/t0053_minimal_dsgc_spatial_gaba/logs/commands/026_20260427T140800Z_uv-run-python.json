@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0053_minimal_dsgc_spatial_gaba",
+  "command": "uv run python -u -m meta.asset_types.library.verificator --task-id t0053_minimal_dsgc_spatial_gaba minimal_dsgc_spatial_gaba",
+  "exit_code": 0,
+  "duration_seconds": 0.309,
+  "started_at": "2026-04-27T14:08:00Z",
+  "completed_at": "2026-04-27T14:08:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0053_minimal_dsgc_spatial_gaba",
+  "stdout_file": "026_20260427T140800Z_uv-run-python.stdout.txt",
+  "stderr_file": "026_20260427T140800Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
