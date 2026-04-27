@@ -1,4 +1,4 @@
-# ⚠️ Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
+# ❌ Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0044_schachter_retest_on_t0043` |
-| **Status** | ⚠️ intervention_blocked |
+| **Status** | ❌ cancelled |
 | **Dependencies** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0043_nav16_kv3_nmda_restoration_t0022`](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
 | **Source suggestion** | `S-0002-02` |
 | **Task types** | `experiment-run` |

@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 45 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (8
-high, 23 medium, 4 low), **10 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (7
+high, 24 medium, 4 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,30 +34,6 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
-NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-03` |
-| **Kind** | library |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
-conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
-paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
-(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
-AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
-Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
-AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
-Recommended task types: write-library, experiment-run.
 
 </details>
 
@@ -206,6 +182,30 @@ Recommended task types: experiment-run.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2)

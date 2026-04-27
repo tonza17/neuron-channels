@@ -1,37 +1,13 @@
 # Suggestions: `patch-clamp`
 
 14 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **12
-open** (6 high, 5 medium, 1 low), **2 closed**.
+open** (5 high, 6 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
-30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0049-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
-`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
-multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
-introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
-down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
-at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
-without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
-experiment-run.
-
-</details>
 
 <details>
 <summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
@@ -183,6 +159,30 @@ properties, (c) DSGC-specific AIS measurements (the Werginz2020 paper is on OFF-
 not on ON-OFF DSGCs directly), and (d) large-scale compartmental-model fitting pipelines for
 RGCs. A follow-up survey task should add ~5 papers across these four sub-areas to close the
 gap.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
+30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0049-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0049_seclamp_cond_remeasure/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
+`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
+multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
+introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
+down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
+at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
+without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
+experiment-run.
 
 </details>
 

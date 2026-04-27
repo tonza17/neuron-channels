@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0051-02",
+  "correcting_task": "t0051_brainstorm_results_9",
+  "target_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "target_kind": "suggestion",
+  "target_id": "S-0046-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Adding an iMK801-analogue MOD modification to enable Fig 8 AP5 reproduction is specific to the deposited-code lineage. The from-scratch wave (t0052, t0053) does not include NMDA at all (AMPA-only excitation), so dendritic-NMDAR-block infrastructure is no longer on the project's critical path. Keep the suggestion active at medium priority for any future return to NMDA-bearing models."
+}

@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 48 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **43 open** (17
-high, 18 medium, 8 low), **5 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **43 open** (14
+high, 21 medium, 8 low), **5 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -226,79 +226,6 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
-ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0050-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
-construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
-across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
-and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
-per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
-asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
-paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
-channels share parent sections per index' design and is a more invasive but mechanistically
-cleaner option. Recommended task types: feature-engineering, experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
-locx</strong> (S-0050-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0050-01` |
-| **Kind** | technique |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
-applied uniformly to every SAC inhibitory synapse with no spatial threshold
-(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
-computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
-soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
-population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
-an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
-path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
-condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
-reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
-wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
-tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
-mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
-does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
-(paper reports 0.83). Recommended task types: experiment-run.
 
 </details>
 
@@ -750,6 +677,79 @@ bin-collapse interior variability. Deliverable: a sibling dataset asset
 dsgc-baseline-morphology-registered with a registration-quality report (residual xyz distance
 per compartment). Emit corrections if registration succeeds with sub-micron residuals.
 Recommended task types: feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
+ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
+construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
+across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
+and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
+per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
+asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
+paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
+channels share parent sections per index' design and is a more invasive but mechanistically
+cleaner option. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
+locx</strong> (S-0050-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
+applied uniformly to every SAC inhibitory synapse with no spatial threshold
+(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
+computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
+soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
+population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
+an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
+path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
 
 </details>
 

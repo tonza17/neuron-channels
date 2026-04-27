@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-50-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-53-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-198-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (20K)
-| [full](llm-context/full.xml) (284K) | [roadmap](llm-context/roadmap.xml) (67K) |
-[results](llm-context/results-deep-dive.xml) (194K) |
-[assets](llm-context/literature-and-assets.xml) (36K)
+| [full](llm-context/full.xml) (286K) | [roadmap](llm-context/roadmap.xml) (67K) |
+[results](llm-context/results-deep-dive.xml) (195K) |
+[assets](llm-context/literature-and-assets.xml) (37K)
 
-*Last updated: 2026-04-25 12:13 UTC*
+*Last updated: 2026-04-27 09:53 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,10 +56,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (4)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0052 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | [`description`](../tasks/t0052_minimal_dsgc_scalar_gaba/task_description.md) | — |
+| 0053 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | [`description`](../tasks/t0053_minimal_dsgc_spatial_gaba/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
 
@@ -71,21 +73,19 @@ No blocked tasks.
 
 ---
 
-## Intervention Blocked (4)
+## Intervention Blocked (1)
 
 | # | Task |
 |---|------|
 | 0023 | [Port Hanson 2019 DSGC model](../overview/tasks/task_pages/t0023_port_hanson_2019_dsgc.md) |
-| 0042 | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) |
-| 0043 | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
-| 0044 | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) |
 
 ---
 
-## [Recently Completed (44 total)](tasks/by-status/completed.md)
+## [Recently Completed (45 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0051 | [Brainstorm results session 9](../overview/tasks/task_pages/t0051_brainstorm_results_9.md) | [`results`](../tasks/t0051_brainstorm_results_9/results/results_detailed.md) | 2026-04-25 15:00 |
 | 0050 | [Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper](../overview/tasks/task_pages/t0050_audit_syn_distribution.md) | [`results`](../tasks/t0050_audit_syn_distribution/results/results_detailed.md) | 2026-04-25 12:11 |
 | 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`results`](../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) | 2026-04-25 10:42 |
 | 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
@@ -95,9 +95,8 @@ No blocked tasks.
 | 0041 | [Electrotonic-length collapse analysis of t0034 and t0035](../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) | [`results`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/results/results_detailed.md) | 2026-04-24 12:15 |
 | 0039 | [7-diameter sweep on t0022 DSGC at GABA=4 nS](../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) | [`results`](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/results/results_detailed.md) | 2026-04-24 08:18 |
 | 0038 | [Correct t0033 base GABA to 4 nS on t0022 variant](../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md) | [`results`](../tasks/t0038_correct_t0033_base_gaba_to_4ns/results/results_detailed.md) | 2026-04-24 07:12 |
-| 0037 | [Null-GABA reduction ladder on t0022 DSGC](../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) | [`results`](../tasks/t0037_null_gaba_reduction_ladder_t0022/results/results_detailed.md) | 2026-04-24 00:10 |
 
-*34 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*35 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -182,7 +181,7 @@ range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: exp
 <summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
 for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
 
 t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
@@ -261,7 +260,7 @@ Recommended task types: experiment-run.
 <summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
 30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
 
 SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
@@ -315,7 +314,7 @@ holding voltage. Recommended task types: experiment-run.
 
 ---
 
-## [High Priority Suggestions (51)](suggestions/)
+## [High Priority Suggestions (45)](suggestions/)
 
 <details>
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
@@ -338,84 +337,6 @@ range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: exp
 </details>
 
 <details>
-<summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
-for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
-
-t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
-the paper's biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer
-to the paper's text statement and the deposited 0 Mg2+ condition. Per t0048's
-compare_literature.md: the deposited control choice for the project's DSGC simulations should
-be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a
-corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is
-reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a
-project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks
-import; (c) update the project's description.md / library asset README for
-modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
-experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
-task types: correction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
-30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0049_seclamp_cond_remeasure](../tasks/t0049_seclamp_cond_remeasure/)
-
-SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a
-`gabaMOD` (or per-synapse GABA) scan under SEClamp at gNMDA = 0.5 nS, exptype = control, with
-multiplier values across {1.0, 0.5, 0.25, 0.125} of the deposited base, and additionally test
-introducing PD/ND spatial asymmetry (e.g., scale ND-side GABA up by 2-3x and PD-side GABA
-down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial redistribution
-at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
-without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
-locx</strong> (S-0050-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0050_audit_syn_distribution](../tasks/t0050_audit_syn_distribution/)
-
-t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
-applied uniformly to every SAC inhibitory synapse with no spatial threshold
-(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
-computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
-soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
-population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
-an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
-path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
-experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
-ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0050_audit_syn_distribution](../tasks/t0050_audit_syn_distribution/)
-
-Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
-construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
-across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
-and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
-per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
-asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
-paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
-channels share parent sections per index' design and is a more invasive but mechanistically
-cleaner option. Recommended task types: feature-engineering, experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
 testbed comparison</strong> (S-0039-01)</summary>
 
@@ -434,23 +355,6 @@ available.
 </details>
 
 <details>
-<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
-condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
-
-Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
-reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
-wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
-tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
-mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
-does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
-(paper reports 0.83). Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
 189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
 
@@ -465,24 +369,6 @@ the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesi
 PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
 reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
 Recommended task types: experiment-run, code-reproduction.
-
-</details>
-
-<details>
-<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
-NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
-
-Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
-conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
-paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
-(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
-AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
-Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
-AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
-Recommended task types: write-library, experiment-run.
 
 </details>
 
@@ -507,7 +393,126 @@ resolve the effect). Recommended task types: experiment-run.
 
 </details>
 
-*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
+substrate (not vector-sum) and drop monotonic-length priors</strong>
+(S-0034-07)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0034_distal_dendrite_length_sweep_t0024](../tasks/t0034_distal_dendrite_length_sweep_t0024/)
+
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
+design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
+p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
+vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
+with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
+NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
+pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
+length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
+(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
+task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+[t0035_distal_dendrite_diameter_sweep_t0024](../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
+blend instead of pure primary DSI</strong> (S-0030-06)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
+sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
+optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
+the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
+Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
+peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
+S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
+keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
+vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
+option. Recommended task types: write-library, answer-question.
+
+</details>
+
+<details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
+training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0033_plan_dsgc_morphology_channel_optimisation](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
+
+The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
+one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
+multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
+full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
+fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
+coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
+compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
+25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
+and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
+types: experiment-run, feature-engineering.
+
+</details>
+
+*35 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

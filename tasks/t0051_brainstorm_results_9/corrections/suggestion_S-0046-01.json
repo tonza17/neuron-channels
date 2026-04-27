@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0051-01",
+  "correcting_task": "t0051_brainstorm_results_9",
+  "target_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "target_kind": "suggestion",
+  "target_id": "S-0046-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Rerunning t0046 figure sweeps at paper-N (12-19 trials, full 8-direction sweep) is a statistical-power refinement of the deposited code's reproduction. Brainstorm session 9 commissioned a from-scratch minimal DSGC (t0052, t0053) as the project's primary substrate going forward; the deposited-code reproduction at higher N is no longer urgent. Keeping the suggestion active at medium priority for completeness if the from-scratch wave reveals a need to revisit deposited-code statistics."
+}

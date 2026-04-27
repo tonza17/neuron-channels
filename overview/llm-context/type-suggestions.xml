@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-25T12:13:01Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-27T09:53:05Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>205389</char_count>
-    <byte_count>205406</byte_count>
-    <estimated_tokens>51347</estimated_tokens>
+    <char_count>205401</char_count>
+    <byte_count>205418</byte_count>
+    <estimated_tokens>51350</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -2171,7 +2171,7 @@ t0041 used the 177-dendrite mean L (22.63 um) as the baseline for all L/lambda p
 ## Re-run t0046 figure sweeps at paper-N (12-19 trials per condition, full 8-direction sweep)
 ID: S-0046-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0046_reproduce_poleg_polsky_2016_exact
 Source paper: 10.1016_j.neuron.2016.02.013
@@ -2195,7 +2195,7 @@ Inspect `RGCmodel.hoc`&#x27;s ON/OFF cut plane (`z &gt;= -0.16 * y + 46`) and `p
 ## Add an iMK801 analogue MOD modification (selective dendritic NMDAR block) to enable Fig 8 AP5 reproduction
 ID: S-0046-03
 Status: active
-Priority: high
+Priority: medium
 Kind: library
 Source task: t0046_reproduce_poleg_polsky_2016_exact
 Source paper: 10.1016_j.neuron.2016.02.013
@@ -2300,7 +2300,7 @@ t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens 
 ## Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control for downstream tasks via correction overlay
 ID: S-0048-02
 Status: active
-Priority: high
+Priority: medium
 Kind: technique
 Source task: t0048_voff_nmda1_dsi_test
 Source paper: 10.1016_j.neuron.2016.02.013
@@ -2360,7 +2360,7 @@ Under SEClamp at -65 mV, the deposited code&#x27;s GABA shows PD/ND symmetry (47
 ## GABA conductance scan under SEClamp toward paper PD 12.5 / ND 30 nS at fixed gNMDA = 0.5 nS
 ID: S-0049-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0049_seclamp_cond_remeasure
 Source paper: 10.1016_j.neuron.2016.02.013
@@ -2408,7 +2408,7 @@ t0049 measured SEClamp conductance only at the soma (`h.RGC.soma(0.5)`). The GAB
 ## Re-implement placeBIP() to spatially gate gabaMOD by per-synapse locx
 ID: S-0050-01
 Status: active
-Priority: high
+Priority: medium
 Kind: technique
 Source task: t0050_audit_syn_distribution
 Source paper: 10.1016_j.neuron.2016.02.013
@@ -2420,7 +2420,7 @@ t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 
 ## Re-distribute SACinhib synapses asymmetrically across PD-side and ND-side dendrites in RGCmodel.hoc
 ID: S-0050-02
 Status: active
-Priority: high
+Priority: medium
 Kind: technique
 Source task: t0050_audit_syn_distribution
 Source paper: 10.1016_j.neuron.2016.02.013

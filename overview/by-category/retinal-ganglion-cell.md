@@ -1954,7 +1954,7 @@ driver. Recommended task types: write-library.
 <summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
 locx</strong> (S-0050-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
 
 t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
@@ -1973,7 +1973,7 @@ experiment-run.
 <summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
 ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0050_audit_syn_distribution](../../tasks/t0050_audit_syn_distribution/)
 
 Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
@@ -2011,7 +2011,7 @@ extract_coordinates outputs. Recommended task types: data-analysis.
 <summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
 condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
 
 Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's

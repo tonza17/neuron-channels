@@ -1,12 +1,105 @@
 # ✅ Tasks: Completed
 
-44 tasks. ✅ **44 completed**.
+45 tasks. ✅ **45 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0051 — <strong>Brainstorm results session 9</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0051_brainstorm_results_9` |
+| **Status** | completed |
+| **Effective date** | 2026-04-25 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-25T13:00:00Z |
+| **End time** | 2026-04-25T15:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 9](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md) |
+| **Task folder** | [`t0051_brainstorm_results_9/`](../../../tasks/t0051_brainstorm_results_9/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0051_brainstorm_results_9/results/results_detailed.md) |
+
+# Brainstorm Session 9: From-Scratch Minimal DSGC Wave
+
+Ninth brainstorming session. Run after the t0046–t0050 reproduction wave revealed that the
+deposited Poleg-Polsky 2016 ModelDB 189347 code does not match the paper's Fig 3A-E claims
+(282 vs 177 synapses; per-channel conductances 6-9x over paper; DSI vs gNMDA peaks at 0.19 not
+the paper's flat 0.30; spatially-symmetric SAC inhibition mechanically incapable of producing
+the paper's GABA PD/ND asymmetry).
+
+## Strategic Pivot
+
+The researcher decided to step away from modifying the deposited code and from the t0022
+channel-testbed lineage, and instead build a new minimal DSGC model from scratch on the
+project's calibrated baseline morphology. The new model uses 100 excitatory and 100 inhibitory
+synapses, position-gated AMPA-only excitation with classical EPSP kinetics, deRosenroll-style
+direction-dependent inhibition, and standard Hodgkin-Huxley spike generation on soma + AIS
+only. Because there are two natural ways to implement "deRosenroll-style direction-dependent
+inhibition" (scalar `gabaMOD` per synapse vs true spatial PD/ND asymmetry), the researcher
+asked for both to be implemented in two parallel tasks.
+
+## Decisions
+
+* **Create t0052** — minimal DSGC with scalar `gabaMOD = 0.33 +
+  0.66*(1-cos(theta-theta_ND))/2` per-synapse inhibition.
+* **Create t0053** — minimal DSGC with spatial PD/ND-asymmetric inhibition; each I synapse
+  fires only when `cos(theta_stim - theta_centrifugal_synapse) < 0` (centripetal-only firing).
+* **Cancel t0042, t0043, t0044** — all `intervention_blocked` on the t0022 testbed; the
+  reproduction wave reframes that substrate as non-canonical and the new minimal model
+  supersedes their motivation.
+* **Reprioritise six t0046–t0050 follow-up suggestions** from high to medium (S-0046-01,
+  S-0046-03, S-0048-02, S-0049-02, S-0050-01, S-0050-02) — all become non-urgent now that the
+  from-scratch model is the primary substrate.
+* **Keep deferred** t0023, t0031, t0045 — none on critical path.
+
+## Assets Produced
+
+No assets in this brainstorm task. The two new tasks (t0052, t0053) will each produce a
+library asset and an experiment-results bundle when executed.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 9**
+>
+> **Summary**
+>
+> Ninth strategic brainstorm, run on 2026-04-25 after the t0046–t0050 reproduction wave.
+> Produced a
+> strategic pivot: step away from modifying the deposited Poleg-Polsky 2016 ModelDB 189347
+> code and
+> from the t0022 channel-testbed lineage; build a from-scratch minimal DSGC on the project's
+> calibrated baseline morphology with two parallel inhibition mechanisms (scalar `gabaMOD` and
+> spatial
+> PD/ND-asymmetric); cancel three obsolete `intervention_blocked` tasks; reprioritise six
+> follow-up
+> suggestions whose urgency the new substrate dissolves.
+>
+> **Session Overview**
+>
+> Date: 2026-04-25. Triggered by the researcher reading the t0046–t0050 reproduction wave
+> findings
+> (deposited code mismatches paper Fig 3A-E in synapse count, conductances, and mechanism;
+> spatial
+> GABA asymmetry mechanically impossible in the deposited synapse layout). The session opened
+> with an
+> independent priority reassessment of the 49 high-priority active suggestions, focusing on
+> those
+> superseded by the new substrate. The researcher specified the new model design directly
+> during Round
+> 1 (100 E + 100 I co-located synapses, position-gated AMPA-only EPSPs, classical IPSPs,
+> soma+AIS HH
+> on `dsgc-baseline-morphology-calibrated`) and asked for the deRosenroll-style direction-
+> dependent
+
+</details>
 
 <details>
 <summary>✅ 0050 — <strong>Audit deposited GABA/NMDA/AMPA synapse spatial
