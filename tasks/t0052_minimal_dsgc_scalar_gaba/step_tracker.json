@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare the model's primary DSI, peak rate, and tuning-curve shape against Park 2014 in vivo band (DSI 0.40-0.60), Poleg-Polsky 2016 reproductions, and t0024 de Rosenroll port.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-27T12:03:24Z",
-      "completed_at": null,
+      "completed_at": "2026-04-27T12:09:05Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
