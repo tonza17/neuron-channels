@@ -122,10 +122,10 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions covering parameter sweeps, comparison-task scaffolding for t0053 cross-comparison, and any biophysical refinements identified during implementation.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-27T12:09:22Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\014_suggestions/"
     },
     {
       "step": 15,
