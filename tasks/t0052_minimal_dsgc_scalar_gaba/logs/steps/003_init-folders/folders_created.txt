@@ -1,0 +1,27 @@
+Folders created by init_task_folders for t0052_minimal_dsgc_scalar_gaba:
+
+results/
+results/images/
+corrections/
+intervention/
+code/
+logs/commands/
+logs/searches/
+logs/sessions/
+logs/steps/
+assets/library/
+
+Files created:
+__init__.py
+code/__init__.py
+.gitkeep files in all empty directories above.
+
+Pre-existing (from create-task skill):
+plan/ (with plan.md to be written in step 7)
+research/ (with research_*.md to be written if research steps execute)
+task.json
+task_description.md
+step_tracker.json
+logs/steps/001_create-branch/ (created by prestep)
+logs/steps/002_check-deps/ (created by prestep)
+logs/steps/003_init-folders/ (created by prestep, this folder)
