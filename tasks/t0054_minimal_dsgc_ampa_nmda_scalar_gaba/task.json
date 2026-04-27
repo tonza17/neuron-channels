@@ -5,14 +5,14 @@
   "name": "Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition",
   "short_description": "Extend t0052 by adding co-located NMDA Exp2Syn (tau1=5, tau2=80, e=0) at each E synapse; sweep gNMDA at {0, 0.25, 0.5, 1.0} nS; characterise EPSP decay, peak rate, and DSI vs gNMDA.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0009_calibrate_dendritic_diameters",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library",
     "t0052_minimal_dsgc_scalar_gaba"
   ],
-  "start_time": null,
+  "start_time": "2026-04-27T16:35:46Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
