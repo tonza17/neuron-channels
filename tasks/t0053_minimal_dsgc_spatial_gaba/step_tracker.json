@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Build the minimal_dsgc_spatial_gaba library asset with centripetal-only inhibition driver, run 12 directions x 10 trials x 3 modes (360 trials), produce per-direction plots and metrics, plus the synapse-activation polar plot specific to the spatial mechanism.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": null
+      "status": "completed",
+      "started_at": "2026-04-27T13:02:46Z",
+      "completed_at": "2026-04-27T13:50:31Z",
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

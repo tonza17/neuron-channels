@@ -1,0 +1,6 @@
+[metrics] Loading per-mode tuning curves...
+[metrics] Computing peak somatic deflection per direction...
+[metrics] active fraction per direction: {0: 0.36, 30: 0.34, 60: 0.38, 90: 0.5, 120: 0.63, 150: 0.65, 180: 0.64, 210: 0.66, 240: 0.62, 270: 0.5, 300: 0.37, 330: 0.35}
+[metrics] mean_active_fraction = 0.5000 (soft band [0.4, 0.6])
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0053_minimal_dsgc_spatial_gaba\tasks\t0053_minimal_dsgc_spatial_gaba\results\metrics.json
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0053_minimal_dsgc_spatial_gaba\tasks\t0053_minimal_dsgc_spatial_gaba\results\derived_quantities.json

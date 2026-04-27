@@ -1,0 +1,36 @@
+{
+  "variants": [
+    {
+      "variant_id": "full",
+      "label": "Full E+I (spatial centripetal gating)",
+      "dimensions": {
+        "mode": "full"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 17.178292988536434
+      }
+    },
+    {
+      "variant_id": "ampa_only",
+      "label": "AMPA only (zeroed GABA NetCons)",
+      "dimensions": {
+        "mode": "ampa_only"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_only",
+      "label": "GABA only (zeroed AMPA NetCons; spatial gating preserved)",
+      "dimensions": {
+        "mode": "gaba_only"
+      },
+      "metrics": {}
+    }
+  ]
+}

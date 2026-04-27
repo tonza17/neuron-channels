@@ -1,0 +1,3 @@
+[placement-match] comparing 100 pairs against C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0053_minimal_dsgc_spatial_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\results\placement_seed0.json
+[placement-match] OK: all 100 pairs match t0052 within 1e-09.
+[placement-match] PASS
