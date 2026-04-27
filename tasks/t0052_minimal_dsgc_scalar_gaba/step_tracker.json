@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0052_minimal_dsgc_scalar_gaba branch from main and write step_tracker.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-27T10:00:19Z",
-      "completed_at": null,
+      "completed_at": "2026-04-27T10:04:30Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
