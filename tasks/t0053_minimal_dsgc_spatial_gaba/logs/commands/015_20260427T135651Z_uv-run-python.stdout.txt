@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0053_minimal_dsgc_spatial_gaba\tasks\t0053_minimal_dsgc_spatial_gaba\results
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W014 warning: ## Examples section has 9 examples (bullets, code blocks, numbered items), minimum is 10[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
