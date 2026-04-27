@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_library_asset --task-id t0052_minimal_dsgc_scalar_gaba minimal_dsgc_scalar_gaba",
+  "exit_code": 1,
+  "duration_seconds": 0.22,
+  "started_at": "2026-04-27T12:14:51Z",
+  "completed_at": "2026-04-27T12:14:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "055_20260427T121451Z_uv-run-python.stdout.txt",
+  "stderr_file": "055_20260427T121451Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

@@ -1,0 +1,20 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260427T100543Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260427T101444Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260427T103231Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260427T103406Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260427T103622Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 025_20260427T110616Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 026_20260427T110635Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 031_20260427T110940Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 034_20260427T111252Z_uv-run-python.json has non-zero exit code: 4294967295[0m
+[33m  LG-W004 warning: Command log 034_20260427T111319Z_uv-run-python.json has non-zero exit code: 4294967295[0m
+[33m  LG-W004 warning: Command log 036_20260427T115103Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 039_20260427T115406Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 14 warning(s)
