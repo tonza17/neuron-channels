@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0053_minimal_dsgc_spatial_gaba",
+  "command": "uv run python -u tasks/t0053_minimal_dsgc_spatial_gaba/code/render_figures.py",
+  "exit_code": 0,
+  "duration_seconds": 18.036,
+  "started_at": "2026-04-27T13:48:50Z",
+  "completed_at": "2026-04-27T13:49:08Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0053_minimal_dsgc_spatial_gaba",
+  "stdout_file": "012_20260427T134850Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260427T134850Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

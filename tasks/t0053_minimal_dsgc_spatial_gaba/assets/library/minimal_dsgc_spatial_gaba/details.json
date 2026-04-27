@@ -1,0 +1,127 @@
+{
+  "spec_version": "2",
+  "library_id": "minimal_dsgc_spatial_gaba",
+  "name": "Minimal DSGC with Spatial Centripetal-Gating GABA",
+  "version": "0.1.0",
+  "short_description": "Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located E+I synapses where each I synapse fires only when the bar moves with a centripetal component (cos(theta_stim - theta_centrifugal) < 0); the spatial-asymmetry sibling of t0052.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/constants.py",
+    "code/paths.py",
+    "code/swc_io.py",
+    "code/neuron_bootstrap.py",
+    "code/cell.py",
+    "code/placement.py",
+    "code/synapses.py",
+    "code/trial.py",
+    "code/run_tuning_curve.py",
+    "code/render_figures.py",
+    "code/compute_metrics.py",
+    "code/metrics_extra.py"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc_from_swc",
+      "kind": "function",
+      "module": "code/cell.py",
+      "description": "Parse a calibrated SWC, collapse the soma into one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial segment, and return a CellHandles dataclass that includes soma_origin_um for the spatial driver."
+    },
+    {
+      "name": "sample_dendritic_locations",
+      "kind": "function",
+      "module": "code/placement.py",
+      "description": "Sample N dendritic locations uniformly along total dendritic length using numpy.random.default_rng(seed); seed=0 reproduces t0052's placement bit-for-bit."
+    },
+    {
+      "name": "build_ei_pairs",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Construct one AMPA + GABA Exp2Syn pair per Location; each pair carries theta_centrifugal_rad = atan2(y - y_soma, x - x_soma) precomputed from soma_origin_um."
+    },
+    {
+      "name": "schedule_ei_onsets",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Per-trial scheduler: set AMPA NetStim.start at bar-arrival; for each I synapse evaluate i_synapse_fires(theta_stim, theta_centrifugal); when fired set GABA weight to 2 nS, otherwise zero. Returns ScheduleResult with onset_times_ms and i_fired_mask."
+    },
+    {
+      "name": "i_synapse_fires",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Pure boolean predicate: returns cos(radians(theta_stim_deg - theta_centrifugal_deg)) < 0 (strict; perpendicular does not fire)."
+    },
+    {
+      "name": "ScheduleResult",
+      "kind": "class",
+      "module": "code/synapses.py",
+      "description": "Frozen dataclass returned by schedule_ei_onsets, with onset_times_ms: list[float] and i_fired_mask: list[bool] aligned with the pair list."
+    },
+    {
+      "name": "TrialMode",
+      "kind": "class",
+      "module": "code/constants.py",
+      "description": "StrEnum with members FULL, AMPA_ONLY, GABA_ONLY for selecting which synaptic drive is active."
+    },
+    {
+      "name": "run_one_trial",
+      "kind": "function",
+      "module": "code/trial.py",
+      "description": "Run one trial: schedule onsets via the spatial gate, apply mode-specific weight overrides, finitialize+continuerun, return TrialResult with V(t), spike times, synapse onset times, i_fired_mask, and i_active_fraction."
+    },
+    {
+      "name": "run_full_sweep",
+      "kind": "function",
+      "module": "code/run_tuning_curve.py",
+      "description": "End-to-end 12 directions x 10 trials x 3 modes = 360-trial sweep with dry-run validation gate; writes per-mode tuning-curve / spike-time / voltage-trace CSVs, an activation-time CSV with is_fired column, and an active_fraction_per_direction CSV."
+    },
+    {
+      "name": "compute_vector_sum_dsi",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Vector-sum DSI from the per-angle mean firing rates: |sum r_k * exp(i theta_k)| / sum r_k."
+    },
+    {
+      "name": "compute_preferred_direction_deg",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Preferred direction in degrees from the complex sum of rate-weighted unit vectors."
+    },
+    {
+      "name": "render_active_fraction_polar",
+      "kind": "function",
+      "module": "code/render_figures.py",
+      "description": "Render the per-direction active-fraction polar plot (closed polygon with reference circle at 0.5)."
+    },
+    {
+      "name": "compute_metrics_main",
+      "kind": "script",
+      "module": "code/compute_metrics.py",
+      "description": "Compute per-mode metrics (DSI, HWHM, reliability) and write metrics.json + derived_quantities.json with a soft active-fraction sanity check (mean in [0.4, 0.6])."
+    },
+    {
+      "name": "render_figures_main",
+      "kind": "script",
+      "module": "code/render_figures.py",
+      "description": "Render all per-direction figures (soma V, EPSP, IPSP, PSTH, activation histograms) plus polar / Cartesian tuning curves, raster+PSTH per direction, and the active-fraction polar plot."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "tqdm"
+  ],
+  "test_paths": [
+    "code/test_quiescent_rest.py",
+    "code/test_spatial_gating.py",
+    "code/test_placement_seed0_match.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "synaptic-integration"
+  ],
+  "created_by_task": "t0053_minimal_dsgc_spatial_gaba",
+  "date_created": "2026-04-25"
+}

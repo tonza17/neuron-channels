@@ -1,0 +1,2 @@
+[spatial_gating] uniform-random active fraction at theta_stim=0: 0.4800 (n=1000)
+[spatial_gating] PASS

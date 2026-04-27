@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0053_minimal_dsgc_spatial_gaba",
+  "command": "uv run python -u tasks/t0053_minimal_dsgc_spatial_gaba/code/test_placement_seed0_match.py",
+  "exit_code": 0,
+  "duration_seconds": 0.229,
+  "started_at": "2026-04-27T13:16:36Z",
+  "completed_at": "2026-04-27T13:16:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0053_minimal_dsgc_spatial_gaba",
+  "stdout_file": "008_20260427T131636Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260427T131636Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}
