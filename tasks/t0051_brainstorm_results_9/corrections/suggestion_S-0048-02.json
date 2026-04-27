@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0051-03",
+  "correcting_task": "t0051_brainstorm_results_9",
+  "target_task": "t0048_voff_nmda1_dsi_test",
+  "target_kind": "suggestion",
+  "target_id": "S-0048-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Adopting exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) as the canonical DSGC control via correction overlay is specific to the deposited Poleg-Polsky lineage. The from-scratch wave (t0052, t0053) abandons NMDA entirely (classical AMPA-only EPSP). The canonical-control choice for the deposited code is no longer critical-path. Keep at medium priority."
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0051-04",
+  "correcting_task": "t0051_brainstorm_results_9",
+  "target_task": "t0049_seclamp_cond_remeasure",
+  "target_kind": "suggestion",
+  "target_id": "S-0049-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "GABA conductance scan under SEClamp toward paper PD 12.5 / ND 30 nS is a deposited-code calibration step. Now that the project's primary substrate is the from-scratch minimal DSGC (t0052, t0053), this calibration is no longer urgent. The from-scratch model uses paper-aligned GABA scaling natively (gabaMOD) or spatial-asymmetric mechanism, so no SEClamp-derived calibration is needed. Keep at medium priority."
+}

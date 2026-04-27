@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
 145 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **127 open** (37
-high, 78 medium, 12 low), **18 closed**.
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **127 open** (32
+high, 83 medium, 12 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,58 +34,6 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
-NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-03` |
-| **Kind** | library |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
-conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
-paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
-(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
-AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
-Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
-AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
-Recommended task types: write-library, experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
-for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0048-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
-the paper's biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer
-to the paper's text statement and the deposited 0 Mg2+ condition. Per t0048's
-compare_literature.md: the deposited control choice for the project's DSGC simulations should
-be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a
-corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is
-reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a
-project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks
-import; (c) update the project's description.md / library asset README for
-modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
-experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
-task types: correction.
 
 </details>
 
@@ -662,79 +610,6 @@ re-download.
 </details>
 
 <details>
-<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
-ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0050-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
-construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
-across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
-and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
-per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
-asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
-paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
-channels share parent sections per index' design and is a more invasive but mechanistically
-cleaner option. Recommended task types: feature-engineering, experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
-locx</strong> (S-0050-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0050-01` |
-| **Kind** | technique |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
-applied uniformly to every SAC inhibitory synapse with no spatial threshold
-(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
-computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
-soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
-population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
-an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
-path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
-condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
-reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
-wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
-tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
-mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
-does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
-(paper reports 0.83). Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -1031,6 +906,30 @@ paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction
 </details>
 
 <details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
 <summary>📚 <strong>Add statistical-comparison overlays (paired bootstrap, DSI/HWHM
 annotations) to multi-model plots</strong> (S-0011-04)</summary>
 
@@ -1077,6 +976,34 @@ unless angles exactly match np.arange(0, 360, 30.0) to within 1e-6 degree. Add a
 --strict-angle-grid CLI flag to tuning_curve_viz.cli. Ship unit tests covering:
 strict+canonical (pass), strict+8-angle (raise), strict+12-angle-shifted-by-1-degree (raise),
 permissive (current behaviour preserved). Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
+for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0048-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0048 establishes that the deposited code's exptype=1 (voltage-dependent NMDA) does not match
+the paper's biological NMDA, while exptype=2 (Voff_bipNMDA=1, voltage-independent) is closer
+to the paper's text statement and the deposited 0 Mg2+ condition. Per t0048's
+compare_literature.md: the deposited control choice for the project's DSGC simulations should
+be exptype=2, not exptype=1. Implement this as a project-wide convention change: (a) write a
+corrections-overlay note attached to t0046 documenting that ExperimentType.CONTROL is
+reinterpreted as ExperimentType.ZERO_MG for paper-faithful DSGC reproduction; (b) add a
+project-level constant CANONICAL_DSGC_EXPTYPE = 2 in a shared module that downstream tasks
+import; (c) update the project's description.md / library asset README for
+modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
+experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
+task types: correction.
 
 </details>
 
@@ -2371,6 +2298,31 @@ Recommended task types: feature-engineering, data-analysis.
 </details>
 
 <details>
+<summary>🔧 <strong>Re-distribute SACinhib synapses asymmetrically across PD-side and
+ND-side dendrites in RGCmodel.hoc</strong> (S-0050-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Alternative 'fix path B' to S-0050-01: instead of modulating gabaMOD per synapse, modify the
+construction loop in RGCmodel.hoc:11839-11857 so SACinhib synapses are placed asymmetrically
+across the dendritic field (more on the ND-side, fewer on the PD-side) while leaving BIPsyn
+and SACexcsyn at the deposited 282-symmetric distribution. t0050 found total dendritic length
+per side is essentially identical (2311 vs 2296 um) so the dendritic substrate supports an
+asymmetric placement at construction. Test whether the somatic SEClamp PD/ND asymmetry reaches
+paper Fig 3C targets without changing per-synapse gabaMOD. This decouples the deposited 'three
+channels share parent sections per index' design and is a more invasive but mechanistically
+cleaner option. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite
 length sweep on t0022</strong> (S-0029-06)</summary>
 
@@ -2394,6 +2346,54 @@ non-monotonic length dependence, kinetic tiling is a real third mechanism and th
 result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
 t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
 Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
+locx</strong> (S-0050-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0050_audit_syn_distribution/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0050 confirmed deposited PD/ND swap is a single global scalar gabaMOD = 0.33 + 0.66*direction
+applied uniformly to every SAC inhibitory synapse with no spatial threshold
+(dsgc_model_exact.hoc:316-334). Modify placeBIP() (or wrap it in a helper) so gabaMOD is
+computed per synapse from each synapse's locx relative to the BIPsyn-locx median (88.77 um) or
+soma_x (104.58 um), scaling up ND-side synapses and down PD-side synapses while preserving the
+population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic GABA recovers
+an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
+path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
 
 </details>
 

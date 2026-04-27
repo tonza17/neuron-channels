@@ -2366,7 +2366,7 @@ available.
 <summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
 NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
 
 Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR

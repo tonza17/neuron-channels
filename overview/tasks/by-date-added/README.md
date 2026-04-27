@@ -1,14 +1,107 @@
 # Tasks by Date Added
 
-50 tasks grouped by effective task date.
+53 tasks grouped by effective task date.
 
 [Back to all tasks](../README.md)
 
 ---
 
-## 2026-04-25 (4)
+## 2026-04-25 (5)
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0051 — <strong>Brainstorm results session 9</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0051_brainstorm_results_9` |
+| **Status** | completed |
+| **Effective date** | 2026-04-25 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-25T13:00:00Z |
+| **End time** | 2026-04-25T15:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 9](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md) |
+| **Task folder** | [`t0051_brainstorm_results_9/`](../../../tasks/t0051_brainstorm_results_9/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0051_brainstorm_results_9/results/results_detailed.md) |
+
+# Brainstorm Session 9: From-Scratch Minimal DSGC Wave
+
+Ninth brainstorming session. Run after the t0046–t0050 reproduction wave revealed that the
+deposited Poleg-Polsky 2016 ModelDB 189347 code does not match the paper's Fig 3A-E claims
+(282 vs 177 synapses; per-channel conductances 6-9x over paper; DSI vs gNMDA peaks at 0.19 not
+the paper's flat 0.30; spatially-symmetric SAC inhibition mechanically incapable of producing
+the paper's GABA PD/ND asymmetry).
+
+## Strategic Pivot
+
+The researcher decided to step away from modifying the deposited code and from the t0022
+channel-testbed lineage, and instead build a new minimal DSGC model from scratch on the
+project's calibrated baseline morphology. The new model uses 100 excitatory and 100 inhibitory
+synapses, position-gated AMPA-only excitation with classical EPSP kinetics, deRosenroll-style
+direction-dependent inhibition, and standard Hodgkin-Huxley spike generation on soma + AIS
+only. Because there are two natural ways to implement "deRosenroll-style direction-dependent
+inhibition" (scalar `gabaMOD` per synapse vs true spatial PD/ND asymmetry), the researcher
+asked for both to be implemented in two parallel tasks.
+
+## Decisions
+
+* **Create t0052** — minimal DSGC with scalar `gabaMOD = 0.33 +
+  0.66*(1-cos(theta-theta_ND))/2` per-synapse inhibition.
+* **Create t0053** — minimal DSGC with spatial PD/ND-asymmetric inhibition; each I synapse
+  fires only when `cos(theta_stim - theta_centrifugal_synapse) < 0` (centripetal-only firing).
+* **Cancel t0042, t0043, t0044** — all `intervention_blocked` on the t0022 testbed; the
+  reproduction wave reframes that substrate as non-canonical and the new minimal model
+  supersedes their motivation.
+* **Reprioritise six t0046–t0050 follow-up suggestions** from high to medium (S-0046-01,
+  S-0046-03, S-0048-02, S-0049-02, S-0050-01, S-0050-02) — all become non-urgent now that the
+  from-scratch model is the primary substrate.
+* **Keep deferred** t0023, t0031, t0045 — none on critical path.
+
+## Assets Produced
+
+No assets in this brainstorm task. The two new tasks (t0052, t0053) will each produce a
+library asset and an experiment-results bundle when executed.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 9**
+>
+> **Summary**
+>
+> Ninth strategic brainstorm, run on 2026-04-25 after the t0046–t0050 reproduction wave.
+> Produced a
+> strategic pivot: step away from modifying the deposited Poleg-Polsky 2016 ModelDB 189347
+> code and
+> from the t0022 channel-testbed lineage; build a from-scratch minimal DSGC on the project's
+> calibrated baseline morphology with two parallel inhibition mechanisms (scalar `gabaMOD` and
+> spatial
+> PD/ND-asymmetric); cancel three obsolete `intervention_blocked` tasks; reprioritise six
+> follow-up
+> suggestions whose urgency the new substrate dissolves.
+>
+> **Session Overview**
+>
+> Date: 2026-04-25. Triggered by the researcher reading the t0046–t0050 reproduction wave
+> findings
+> (deposited code mismatches paper Fig 3A-E in synapse count, conductances, and mechanism;
+> spatial
+> GABA asymmetry mechanically impossible in the deposited synapse layout). The session opened
+> with an
+> independent priority reassessment of the 49 high-priority active suggestions, focusing on
+> those
+> superseded by the new substrate. The researcher specified the new model design directly
+> during Round
+> 1 (100 E + 100 I co-located synapses, position-gated AMPA-only EPSPs, classical IPSPs,
+> soma+AIS HH
+> on `dsgc-baseline-morphology-calibrated`) and asked for the deRosenroll-style direction-
+> dependent
+
+</details>
 
 <details>
 <summary>✅ 0050 — <strong>Audit deposited GABA/NMDA/AMPA synapse spatial
@@ -1187,322 +1280,6 @@ cost envelope.
 
 </details>
 
-## ⚠️ Intervention Blocked
-
-<details>
-<summary>⚠️ 0042 — <strong>Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on
-t0022</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0042_fine_grained_null_gaba_ladder_t0022` |
-| **Status** | intervention_blocked |
-| **Effective date** | 2026-04-24 |
-| **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
-| **Expected assets** | — |
-| **Source suggestion** | — |
-| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
-| **Task page** | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../../../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) |
-| **Task folder** | [`t0042_fine_grained_null_gaba_ladder_t0022/`](../../../tasks/t0042_fine_grained_null_gaba_ladder_t0022/) |
-
-# Fine-Grained Null-GABA Ladder on t0022
-
-## Status: BLOCKED (2026-04-24)
-
-Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. The researcher has
-paused all t0022-substrate modification tasks until the faithful ModelDB 189347 reproduction
-establishes whether the observed DSI and peak-rate values in t0022 reflect genuine mechanism
-gaps (justifying this task) or accumulated deviations from Poleg-Polsky 2016 (making this
-task's target irrelevant). Reassess after t0046 merges.
-
-## Motivation
-
-t0037 swept null-GABA at {0, 0.5, 1, 2, 4} nS on t0022 and identified a sweet spot at 4 nS
-(primary DSI 0.429, preferred direction 40.8 deg, matching Park 2014's in vivo band
-0.40–0.60). Below 2 nS the cell over-excites and preferred direction randomises. t0039 then
-showed that at GABA = 4 nS the t0022 diameter axis produces a monotonic DSI decline (slope
--0.034, p=0.008) — passive-filtering rather than Schachter 2010 active amplification.
-
-What t0037 did not probe is the interval between 2 and 4 nS. Brainstorm session 8 requested a
-fine-grained ladder at {3.5, 3.0, 2.5} nS to answer: does t0022 admit a GABA level below 4 nS
-where DSI exceeds 0.5 without destabilising preferred direction? This directly informs whether
-t0022 is usable as an optimisation substrate above its current 0.429 ceiling.
-
-## Objective
-
-Run the t0037 protocol (12 directions × 10 trials per direction, baseline diameter, V_rest =
--60 mV) at three additional null-GABA levels: 3.5 nS, 3.0 nS, 2.5 nS. Report primary DSI,
-vector-sum DSI, preferred direction, peak firing rate, and null firing rate at each level.
-Compare against t0037's 4 nS and 2 nS anchors.
-
-Pass criterion: at any of the three new levels, primary DSI >= 0.50 AND preferred direction
-stability across trials under 10 deg standard deviation. If pass, that GABA level becomes a
-candidate new base parameter for t0022 optimisation; emit a suggestion for a follow-up
-correction task (analogous to t0038) to propagate the new base into t0033.
-
-Fail criterion: all three new levels yield DSI < 0.50 or preferred-direction standard
-deviation
-> 10 deg. If fail, report that 4 nS is the effective t0022 ceiling and recommend the t0033 optimiser
-> switch substrates to t0024 per S-0034-07.
-
-## Scope
-
-* Local CPU only. No remote compute. ~1 hour total wall-clock.
-* Reuse the t0037 trial_runner with only the null-GABA parameter changed; no code changes to
-  the testbed.
-* Produce tuning curves (Cartesian and polar) at each GABA level.
-
-## Out of Scope
-
-* Morphology sweeps (covered by t0039 at 4 nS).
-* Channel-inventory modifications (covered by t0043).
-* Schachter re-test (covered by t0044).
-
-## Deliverables
-
-* Per-GABA-level tuning-curve CSV + polar plot under `results/images/`.
-* `results/results_summary.md` and `results/results_detailed.md` with the standard sections,
-  explicit Pass/Fail verdict against the criterion above.
-* `results/metrics.json` with primary DSI, vector-sum DSI, preferred direction (mean and sd),
-  peak Hz, and null Hz at each of the three new GABA levels, plus the two t0037 anchors.
-* If Pass: one new suggestion in `results/suggestions.json` proposing a correction task to set
-  the new GABA base value in t0033.
-
-## Anticipated Risks
-
-* Narrow sampling (three points) may miss a non-monotonic optimum between 2 and 4 nS; if
-  results look non-monotonic, emit a follow-up suggestion for a denser sweep rather than
-  extrapolating.
-* If the cell destabilises at 2.5 nS or 3.0 nS, record the destabilisation metrics (preferred
-  direction sd, coefficient of variation of peak rate) rather than treating those runs as
-  failures.
-
-</details>
-
-<details>
-<summary>⚠️ 0043 — <strong>Nav1.6 + Kv3 + NMDA restoration on t0022 channel
-testbed</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0043_nav16_kv3_nmda_restoration_t0022` |
-| **Status** | intervention_blocked |
-| **Effective date** | 2026-04-24 |
-| **Dependencies** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
-| **Expected assets** | 1 library |
-| **Source suggestion** | `S-0019-03` |
-| **Task types** | [`feature-engineering`](../../../meta/task_types/feature-engineering/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
-| **Task page** | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
-| **Task folder** | [`t0043_nav16_kv3_nmda_restoration_t0022/`](../../../tasks/t0043_nav16_kv3_nmda_restoration_t0022/) |
-
-# Nav1.6 + Kv3 + NMDA Restoration on t0022
-
-## Status: BLOCKED (2026-04-24)
-
-Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. This task proposes
-channel inventory modifications beyond Poleg-Polsky 2016's original model to close the
-observed peak-rate gap (15 Hz vs paper's 40-80 Hz range). If t0046 shows the peak-rate gap is
-inherent to the faithful reproduction of the paper (present in their code too), this task's
-motivation evaporates and the gap must be addressed differently (stimulus duration, drive
-amplitude, paper claim re-interpretation). If t0046 matches the paper's firing rates, then our
-prior modifications introduced the gap and this task's channel-additions become a well-founded
-fix. Reassess after t0046 merges.
-
-## Source Suggestion
-
-S-0019-03 primary (implement Nav1.6 / Nav1.2 / Kv1 / Kv3 channels with AIS-specific
-densities). This task covers the Nav1.6 and Kv3 portion of S-0019-03. It also partially covers
-S-0018-03 (NMDA restoration) and S-0022-02 (Nav1.6 distal-AIS density).
-
-## Motivation
-
-The cross-task audit in brainstorm session 8 (see
-`tasks/t0040_brainstorm_results_8/results/test_vs_literature_table.md`) identifies peak firing
-rate as the most universal mismatch: 15 Hz across t0022 baseline and every t0022-based sweep,
-vs 30–150 Hz in every cited published source (Oesch 2005: 148 Hz; Chen 2009: 166 Hz; Sivyer
-2013: 80–150 Hz). The likely causes stack: (a) t0022 uses lumped HHst which lacks Nav1.6
-persistent Na current and Kv3 fast repolarisation, both of which are needed for high-frequency
-AP firing; (b) the t0022 E-I schedule zeros NMDA at both PD and ND BIPs, removing the expected
-NMDA-mediated gain boost; (c) AMPA-only drive caps the effective depolarisation.
-
-The audit also shows that Schachter 2010's predicted active-amplification diameter signature
-is absent on every diameter sweep we have run (t0030, t0035, t0039). One candidate explanation
-is that without Nav1.6 / Kv3 in the distal dendrite, the regenerative threshold-crossing
-regime Schachter 2010 relies on cannot be recruited.
-
-This task restores the channel inventory and NMDA drive so the peak-rate mismatch can be
-attacked, and so the Schachter re-test in t0044 runs against a model that matches published
-DSGC channel priors.
-
-## Objective
-
-Produce a new library asset (tentatively `modeldb_189347_dsgc_t0043` or similar) that is a
-fork of the t0022 testbed with three modifications:
-
-1. Nav1.6 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~8
-   mS/cm^2 (per t0019's cited DSGC priors). If a Nav1.6 MOD file is not already available,
-   adapt one from the t0019 channel corpus.
-2. Kv3 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~5
-   mS/cm^2.
-3. NMDA synapse component restored at both PD and ND BIP terminals with conductance matching
-   the Poleg-Polsky 2016 parameter backbone (read from t0008's library asset if available,
-   else sourced from the Poleg-Polsky 2016 paper).
-
-Hold the t0037 null-GABA sweet spot of 4 nS as the base parameter per t0038's correction. Keep
-the 12-direction × 10-trial sweep protocol identical to t0022 / t0037 / t0039 so results are
-directly comparable.
-
-Pass criterion (both must hold):
-
-* Peak firing rate in [40, 80] Hz at V_rest = -60 mV.
-* Primary DSI within +/- 0.1 of the t0037 anchor of 0.429 at the 1.0x baseline diameter.
-
-## Scope
-
-* Local CPU only. No remote compute. ~6 hours wall-clock including MOD recompilation.
-* Produce a library asset with the modified model plus a baseline 12-direction x 10-trial
-  sweep at V_rest = -60 mV, GABA = 4 nS.
-* Write a test harness that can be reused by t0044 for the diameter sweep.
-
-## Out of Scope
-
-* Nav1.2 and Kv1 (part of the fuller S-0019-03 scope, deferred).
-* Morphology sweeps (covered by t0044 which uses this task's output as substrate).
-* V_rest sweep (covered by t0026 on the prior testbed; a re-run on the new testbed could be a
-  follow-up suggestion emitted from this task).
-
-## Deliverables
-
-* `assets/library/modeldb_189347_dsgc_t0043/` — library asset with the modified model,
-  compiled MOD files, and baseline sweep driver.
-* Baseline 12-direction x 10-trial sweep CSV under `results/`.
-* Tuning curve (Cartesian and polar) under `results/images/`.
-* `results/results_summary.md` and `results/results_detailed.md` with the standard sections
-  and an explicit Pass/Fail verdict against both criteria above.
-* `results/metrics.json` with baseline primary DSI, vector-sum DSI, preferred direction, peak
-  Hz, null Hz, and a boolean `peak_rate_pass` and `dsi_preserved_pass`.
-* If Pass: the library asset is fit for use as t0044's substrate. If Fail: emit a suggestion
-  for a follow-up calibration task (BIP burst rate + AMPA scale; see S-0040-01 or analogous)
-  and stop before t0044.
-
-## Anticipated Risks
-
-* Nav1.6 MOD files in the t0019 corpus may not compile under NEURON 8.2.7 without adaptation;
-  budget time for MOD debugging.
-* Adding Nav1.6 may push the cell into runaway firing if the Kv3 density is too low; tune Kv3
-  first, Nav1.6 second.
-* Restoring NMDA may break the t0037 4 nS sweet spot by over-exciting at the null direction;
-  if this happens, emit a follow-up suggestion to repeat a GABA sweet-spot search on the new
-  testbed.
-
-</details>
-
-<details>
-<summary>⚠️ 0044 — <strong>Schachter 2010 re-test via 7-diameter sweep on t0043
-at GABA = 4 nS</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0044_schachter_retest_on_t0043` |
-| **Status** | intervention_blocked |
-| **Effective date** | 2026-04-24 |
-| **Dependencies** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0043_nav16_kv3_nmda_restoration_t0022`](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
-| **Expected assets** | — |
-| **Source suggestion** | `S-0002-02` |
-| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
-| **Task page** | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../../../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) |
-| **Task folder** | [`t0044_schachter_retest_on_t0043/`](../../../tasks/t0044_schachter_retest_on_t0043/) |
-
-# Schachter 2010 Re-Test on t0043 Substrate
-
-## Status: BLOCKED (2026-04-24)
-
-Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact** and of this task's
-upstream dependency **t0043** (which is itself blocked on t0046). This task depends on the
-t0043 substrate. Reassess after t0046 merges and t0043's block is reviewed.
-
-## Source Suggestion
-
-S-0002-02 (paired active-vs-passive dendrite experiment to reproduce Schachter 2010 DSI gain
-~0.3 -> ~0.7).
-
-## Motivation
-
-Three independent diameter sweeps across two testbeds have failed to show Schachter 2010's
-predicted active-amplification signature:
-
-* t0030 on t0022 at GABA = 12 nS: slope +0.008 (p=0.177), DSI pinned at 1.000 (deterministic
-  schedule saturates the metric).
-* t0035 on t0024 (AR(2) stochastic) at paper-default GABA: slope +0.004 (p=0.88), flat.
-* t0039 on t0022 at GABA = 4 nS (t0037 sweet spot): slope -0.034 (p=0.008), monotonic decline
-  consistent with passive filtering rather than the predicted concave-down interior peak.
-
-One candidate explanation, surfaced in brainstorm session 8's cross-task audit, is that lumped
-HHst lacks the distal Nav1.6 and Kv3 channels needed to recruit the regenerative
-threshold-crossing regime Schachter 2010 relies on. t0043 fixes that inventory and restores
-NMDA. If Schachter 2010 is correct and our previous null results were confounded by the
-channel gap, the same 7-diameter sweep on the t0043 substrate should show a concave-down
-DSI-vs-diameter curve with a significant negative quadratic coefficient.
-
-If the curve is still monotonic after t0043, we can close the Schachter 2010 hypothesis on the
-Poleg-Polsky-derived morphology and commit to a passive-filtering framing for the t0033
-optimiser.
-
-## Objective
-
-Run a 7-diameter distal-section sweep (multipliers 0.5, 0.67, 0.85, 1.0, 1.2, 1.5, 2.0 — same
-grid as t0030, t0039, t0035) on the t0043 library asset at GABA = 4 nS. Protocol matches
-t0039: 12 directions x 10 trials per direction per multiplier, V_rest = -60 mV. Primary
-outcome is the DSI-vs-diameter curve shape; fit both linear and quadratic models and report
-the coefficients with p-values.
-
-Pass criterion (Schachter 2010 signature recovered):
-
-* Quadratic fit coefficient significantly negative (p < 0.05) with a peak at an interior
-  multiplier (between 0.6 and 1.5).
-
-Fail criterion (Schachter hypothesis rejected on Poleg-Polsky morphology):
-
-* Monotonic (linear fit significant, quadratic not significant), or no significant trend. In
-  this case, emit a suggestion to formally close S-0002-02 and to add a clarifying note to the
-  t0033 plan recommending the passive-filtering framing.
-
-## Scope
-
-* Local CPU only. No remote compute. ~8 hours wall-clock.
-* Use the t0043 library asset. Do not modify the channel inventory; this is a pure morphology
-  sweep.
-* Keep per-trial stochasticity identical to t0039 so the results are directly comparable.
-
-## Out of Scope
-
-* Nav ablation (covered by S-0029-02, currently medium priority).
-* Length-axis sweep on the t0043 substrate (possible follow-up, not this task).
-* Re-running on t0024 (possible follow-up under S-0039-01).
-
-## Deliverables
-
-* 7-diameter tuning-curve CSVs under `results/`.
-* Overlay plot of DSI-vs-diameter with linear and quadratic fits under `results/images/`.
-* `results/results_summary.md` and `results/results_detailed.md` with the standard sections
-  and an explicit Schachter-recovered / Schachter-rejected verdict.
-* `results/metrics.json` with the linear slope, quadratic coefficient, and their p-values,
-  plus primary DSI, vector-sum DSI, and peak Hz at each multiplier.
-* `results/compare_literature.md` explicitly comparing the recovered (or absent) curvature
-  against Schachter 2010 and the passive-filtering prediction.
-
-## Anticipated Risks
-
-* If t0043 fails its own Pass criterion (peak rate or DSI preservation), do not proceed with
-  this task; the substrate is not fit for use.
-* Adding Nav1.6 may change the effective preferred direction; re-seed the E-I schedule only if
-  the preferred direction has shifted by more than 30 deg from the t0037 40.8 deg anchor.
-* Quadratic fits on 7 points are under-powered if noise is high; if the quadratic p-value is
-  borderline (0.05 < p < 0.15), emit a suggestion for a denser 11-point sweep rather than
-  declaring a verdict.
-
-</details>
-
 ## ✅ Completed
 
 <details>
@@ -2485,6 +2262,322 @@ directly with:
 > **Metrics**
 >
 > * **GABA unpinning threshold**: **≤ 4.0 nS** (highest tested level with null firing already
+
+</details>
+
+## ❌ Cancelled
+
+<details>
+<summary>❌ 0042 — <strong>Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on
+t0022</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0042_fine_grained_null_gaba_ladder_t0022` |
+| **Status** | cancelled |
+| **Effective date** | 2026-04-24 |
+| **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022](../../../overview/tasks/task_pages/t0042_fine_grained_null_gaba_ladder_t0022.md) |
+| **Task folder** | [`t0042_fine_grained_null_gaba_ladder_t0022/`](../../../tasks/t0042_fine_grained_null_gaba_ladder_t0022/) |
+
+# Fine-Grained Null-GABA Ladder on t0022
+
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. The researcher has
+paused all t0022-substrate modification tasks until the faithful ModelDB 189347 reproduction
+establishes whether the observed DSI and peak-rate values in t0022 reflect genuine mechanism
+gaps (justifying this task) or accumulated deviations from Poleg-Polsky 2016 (making this
+task's target irrelevant). Reassess after t0046 merges.
+
+## Motivation
+
+t0037 swept null-GABA at {0, 0.5, 1, 2, 4} nS on t0022 and identified a sweet spot at 4 nS
+(primary DSI 0.429, preferred direction 40.8 deg, matching Park 2014's in vivo band
+0.40–0.60). Below 2 nS the cell over-excites and preferred direction randomises. t0039 then
+showed that at GABA = 4 nS the t0022 diameter axis produces a monotonic DSI decline (slope
+-0.034, p=0.008) — passive-filtering rather than Schachter 2010 active amplification.
+
+What t0037 did not probe is the interval between 2 and 4 nS. Brainstorm session 8 requested a
+fine-grained ladder at {3.5, 3.0, 2.5} nS to answer: does t0022 admit a GABA level below 4 nS
+where DSI exceeds 0.5 without destabilising preferred direction? This directly informs whether
+t0022 is usable as an optimisation substrate above its current 0.429 ceiling.
+
+## Objective
+
+Run the t0037 protocol (12 directions × 10 trials per direction, baseline diameter, V_rest =
+-60 mV) at three additional null-GABA levels: 3.5 nS, 3.0 nS, 2.5 nS. Report primary DSI,
+vector-sum DSI, preferred direction, peak firing rate, and null firing rate at each level.
+Compare against t0037's 4 nS and 2 nS anchors.
+
+Pass criterion: at any of the three new levels, primary DSI >= 0.50 AND preferred direction
+stability across trials under 10 deg standard deviation. If pass, that GABA level becomes a
+candidate new base parameter for t0022 optimisation; emit a suggestion for a follow-up
+correction task (analogous to t0038) to propagate the new base into t0033.
+
+Fail criterion: all three new levels yield DSI < 0.50 or preferred-direction standard
+deviation
+> 10 deg. If fail, report that 4 nS is the effective t0022 ceiling and recommend the t0033 optimiser
+> switch substrates to t0024 per S-0034-07.
+
+## Scope
+
+* Local CPU only. No remote compute. ~1 hour total wall-clock.
+* Reuse the t0037 trial_runner with only the null-GABA parameter changed; no code changes to
+  the testbed.
+* Produce tuning curves (Cartesian and polar) at each GABA level.
+
+## Out of Scope
+
+* Morphology sweeps (covered by t0039 at 4 nS).
+* Channel-inventory modifications (covered by t0043).
+* Schachter re-test (covered by t0044).
+
+## Deliverables
+
+* Per-GABA-level tuning-curve CSV + polar plot under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections,
+  explicit Pass/Fail verdict against the criterion above.
+* `results/metrics.json` with primary DSI, vector-sum DSI, preferred direction (mean and sd),
+  peak Hz, and null Hz at each of the three new GABA levels, plus the two t0037 anchors.
+* If Pass: one new suggestion in `results/suggestions.json` proposing a correction task to set
+  the new GABA base value in t0033.
+
+## Anticipated Risks
+
+* Narrow sampling (three points) may miss a non-monotonic optimum between 2 and 4 nS; if
+  results look non-monotonic, emit a follow-up suggestion for a denser sweep rather than
+  extrapolating.
+* If the cell destabilises at 2.5 nS or 3.0 nS, record the destabilisation metrics (preferred
+  direction sd, coefficient of variation of peak rate) rather than treating those runs as
+  failures.
+
+</details>
+
+<details>
+<summary>❌ 0043 — <strong>Nav1.6 + Kv3 + NMDA restoration on t0022 channel
+testbed</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0043_nav16_kv3_nmda_restoration_t0022` |
+| **Status** | cancelled |
+| **Effective date** | 2026-04-24 |
+| **Dependencies** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | `S-0019-03` |
+| **Task types** | [`feature-engineering`](../../../meta/task_types/feature-engineering/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
+| **Task folder** | [`t0043_nav16_kv3_nmda_restoration_t0022/`](../../../tasks/t0043_nav16_kv3_nmda_restoration_t0022/) |
+
+# Nav1.6 + Kv3 + NMDA Restoration on t0022
+
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact**. This task proposes
+channel inventory modifications beyond Poleg-Polsky 2016's original model to close the
+observed peak-rate gap (15 Hz vs paper's 40-80 Hz range). If t0046 shows the peak-rate gap is
+inherent to the faithful reproduction of the paper (present in their code too), this task's
+motivation evaporates and the gap must be addressed differently (stimulus duration, drive
+amplitude, paper claim re-interpretation). If t0046 matches the paper's firing rates, then our
+prior modifications introduced the gap and this task's channel-additions become a well-founded
+fix. Reassess after t0046 merges.
+
+## Source Suggestion
+
+S-0019-03 primary (implement Nav1.6 / Nav1.2 / Kv1 / Kv3 channels with AIS-specific
+densities). This task covers the Nav1.6 and Kv3 portion of S-0019-03. It also partially covers
+S-0018-03 (NMDA restoration) and S-0022-02 (Nav1.6 distal-AIS density).
+
+## Motivation
+
+The cross-task audit in brainstorm session 8 (see
+`tasks/t0040_brainstorm_results_8/results/test_vs_literature_table.md`) identifies peak firing
+rate as the most universal mismatch: 15 Hz across t0022 baseline and every t0022-based sweep,
+vs 30–150 Hz in every cited published source (Oesch 2005: 148 Hz; Chen 2009: 166 Hz; Sivyer
+2013: 80–150 Hz). The likely causes stack: (a) t0022 uses lumped HHst which lacks Nav1.6
+persistent Na current and Kv3 fast repolarisation, both of which are needed for high-frequency
+AP firing; (b) the t0022 E-I schedule zeros NMDA at both PD and ND BIPs, removing the expected
+NMDA-mediated gain boost; (c) AMPA-only drive caps the effective depolarisation.
+
+The audit also shows that Schachter 2010's predicted active-amplification diameter signature
+is absent on every diameter sweep we have run (t0030, t0035, t0039). One candidate explanation
+is that without Nav1.6 / Kv3 in the distal dendrite, the regenerative threshold-crossing
+regime Schachter 2010 relies on cannot be recruited.
+
+This task restores the channel inventory and NMDA drive so the peak-rate mismatch can be
+attacked, and so the Schachter re-test in t0044 runs against a model that matches published
+DSGC channel priors.
+
+## Objective
+
+Produce a new library asset (tentatively `modeldb_189347_dsgc_t0043` or similar) that is a
+fork of the t0022 testbed with three modifications:
+
+1. Nav1.6 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~8
+   mS/cm^2 (per t0019's cited DSGC priors). If a Nav1.6 MOD file is not already available,
+   adapt one from the t0019 channel corpus.
+2. Kv3 mechanism inserted in AIS_DISTAL and all distal dendrite sections at density ~5
+   mS/cm^2.
+3. NMDA synapse component restored at both PD and ND BIP terminals with conductance matching
+   the Poleg-Polsky 2016 parameter backbone (read from t0008's library asset if available,
+   else sourced from the Poleg-Polsky 2016 paper).
+
+Hold the t0037 null-GABA sweet spot of 4 nS as the base parameter per t0038's correction. Keep
+the 12-direction × 10-trial sweep protocol identical to t0022 / t0037 / t0039 so results are
+directly comparable.
+
+Pass criterion (both must hold):
+
+* Peak firing rate in [40, 80] Hz at V_rest = -60 mV.
+* Primary DSI within +/- 0.1 of the t0037 anchor of 0.429 at the 1.0x baseline diameter.
+
+## Scope
+
+* Local CPU only. No remote compute. ~6 hours wall-clock including MOD recompilation.
+* Produce a library asset with the modified model plus a baseline 12-direction x 10-trial
+  sweep at V_rest = -60 mV, GABA = 4 nS.
+* Write a test harness that can be reused by t0044 for the diameter sweep.
+
+## Out of Scope
+
+* Nav1.2 and Kv1 (part of the fuller S-0019-03 scope, deferred).
+* Morphology sweeps (covered by t0044 which uses this task's output as substrate).
+* V_rest sweep (covered by t0026 on the prior testbed; a re-run on the new testbed could be a
+  follow-up suggestion emitted from this task).
+
+## Deliverables
+
+* `assets/library/modeldb_189347_dsgc_t0043/` — library asset with the modified model,
+  compiled MOD files, and baseline sweep driver.
+* Baseline 12-direction x 10-trial sweep CSV under `results/`.
+* Tuning curve (Cartesian and polar) under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections
+  and an explicit Pass/Fail verdict against both criteria above.
+* `results/metrics.json` with baseline primary DSI, vector-sum DSI, preferred direction, peak
+  Hz, null Hz, and a boolean `peak_rate_pass` and `dsi_preserved_pass`.
+* If Pass: the library asset is fit for use as t0044's substrate. If Fail: emit a suggestion
+  for a follow-up calibration task (BIP burst rate + AMPA scale; see S-0040-01 or analogous)
+  and stop before t0044.
+
+## Anticipated Risks
+
+* Nav1.6 MOD files in the t0019 corpus may not compile under NEURON 8.2.7 without adaptation;
+  budget time for MOD debugging.
+* Adding Nav1.6 may push the cell into runaway firing if the Kv3 density is too low; tune Kv3
+  first, Nav1.6 second.
+* Restoring NMDA may break the t0037 4 nS sweet spot by over-exciting at the null direction;
+  if this happens, emit a follow-up suggestion to repeat a GABA sweet-spot search on the new
+  testbed.
+
+</details>
+
+<details>
+<summary>❌ 0044 — <strong>Schachter 2010 re-test via 7-diameter sweep on t0043 at
+GABA = 4 nS</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0044_schachter_retest_on_t0043` |
+| **Status** | cancelled |
+| **Effective date** | 2026-04-24 |
+| **Dependencies** | [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0043_nav16_kv3_nmda_restoration_t0022`](../../../overview/tasks/task_pages/t0043_nav16_kv3_nmda_restoration_t0022.md) |
+| **Expected assets** | — |
+| **Source suggestion** | `S-0002-02` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS](../../../overview/tasks/task_pages/t0044_schachter_retest_on_t0043.md) |
+| **Task folder** | [`t0044_schachter_retest_on_t0043/`](../../../tasks/t0044_schachter_retest_on_t0043/) |
+
+# Schachter 2010 Re-Test on t0043 Substrate
+
+## Status: BLOCKED (2026-04-24)
+
+Blocked pending completion of **t0046_reproduce_poleg_polsky_2016_exact** and of this task's
+upstream dependency **t0043** (which is itself blocked on t0046). This task depends on the
+t0043 substrate. Reassess after t0046 merges and t0043's block is reviewed.
+
+## Source Suggestion
+
+S-0002-02 (paired active-vs-passive dendrite experiment to reproduce Schachter 2010 DSI gain
+~0.3 -> ~0.7).
+
+## Motivation
+
+Three independent diameter sweeps across two testbeds have failed to show Schachter 2010's
+predicted active-amplification signature:
+
+* t0030 on t0022 at GABA = 12 nS: slope +0.008 (p=0.177), DSI pinned at 1.000 (deterministic
+  schedule saturates the metric).
+* t0035 on t0024 (AR(2) stochastic) at paper-default GABA: slope +0.004 (p=0.88), flat.
+* t0039 on t0022 at GABA = 4 nS (t0037 sweet spot): slope -0.034 (p=0.008), monotonic decline
+  consistent with passive filtering rather than the predicted concave-down interior peak.
+
+One candidate explanation, surfaced in brainstorm session 8's cross-task audit, is that lumped
+HHst lacks the distal Nav1.6 and Kv3 channels needed to recruit the regenerative
+threshold-crossing regime Schachter 2010 relies on. t0043 fixes that inventory and restores
+NMDA. If Schachter 2010 is correct and our previous null results were confounded by the
+channel gap, the same 7-diameter sweep on the t0043 substrate should show a concave-down
+DSI-vs-diameter curve with a significant negative quadratic coefficient.
+
+If the curve is still monotonic after t0043, we can close the Schachter 2010 hypothesis on the
+Poleg-Polsky-derived morphology and commit to a passive-filtering framing for the t0033
+optimiser.
+
+## Objective
+
+Run a 7-diameter distal-section sweep (multipliers 0.5, 0.67, 0.85, 1.0, 1.2, 1.5, 2.0 — same
+grid as t0030, t0039, t0035) on the t0043 library asset at GABA = 4 nS. Protocol matches
+t0039: 12 directions x 10 trials per direction per multiplier, V_rest = -60 mV. Primary
+outcome is the DSI-vs-diameter curve shape; fit both linear and quadratic models and report
+the coefficients with p-values.
+
+Pass criterion (Schachter 2010 signature recovered):
+
+* Quadratic fit coefficient significantly negative (p < 0.05) with a peak at an interior
+  multiplier (between 0.6 and 1.5).
+
+Fail criterion (Schachter hypothesis rejected on Poleg-Polsky morphology):
+
+* Monotonic (linear fit significant, quadratic not significant), or no significant trend. In
+  this case, emit a suggestion to formally close S-0002-02 and to add a clarifying note to the
+  t0033 plan recommending the passive-filtering framing.
+
+## Scope
+
+* Local CPU only. No remote compute. ~8 hours wall-clock.
+* Use the t0043 library asset. Do not modify the channel inventory; this is a pure morphology
+  sweep.
+* Keep per-trial stochasticity identical to t0039 so the results are directly comparable.
+
+## Out of Scope
+
+* Nav ablation (covered by S-0029-02, currently medium priority).
+* Length-axis sweep on the t0043 substrate (possible follow-up, not this task).
+* Re-running on t0024 (possible follow-up under S-0039-01).
+
+## Deliverables
+
+* 7-diameter tuning-curve CSVs under `results/`.
+* Overlay plot of DSI-vs-diameter with linear and quadratic fits under `results/images/`.
+* `results/results_summary.md` and `results/results_detailed.md` with the standard sections
+  and an explicit Schachter-recovered / Schachter-rejected verdict.
+* `results/metrics.json` with the linear slope, quadratic coefficient, and their p-values,
+  plus primary DSI, vector-sum DSI, and peak Hz at each multiplier.
+* `results/compare_literature.md` explicitly comparing the recovered (or absent) curvature
+  against Schachter 2010 and the passive-filtering prediction.
+
+## Anticipated Risks
+
+* If t0043 fails its own Pass criterion (peak rate or DSI preservation), do not proceed with
+  this task; the substrate is not fit for use.
+* Adding Nav1.6 may change the effective preferred direction; re-seed the E-I schedule only if
+  the preferred direction has shifted by more than 30 deg from the t0037 40.8 deg anchor.
+* Quadratic fits on 7 points are under-powered if noise is high; if the quadratic p-value is
+  borderline (0.05 < p < 0.15), emit a suggestion for a denser 11-point sweep rather than
+  declaring a verdict.
 
 </details>
 
@@ -7511,5 +7604,320 @@ morphology shortlist.
 >
 > 1. **Create t0002: literature survey of DSGC compartmental models** — one broad survey
 >    covering
+
+</details>
+
+## unknown (2)
+
+## ⏹ Not Started
+
+<details>
+<summary>⏹ 0053 — <strong>Minimal from-scratch DSGC with spatial PD/ND-asymmetric
+inhibition</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0053_minimal_dsgc_spatial_gaba` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | — |
+| **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Task folder** | [`t0053_minimal_dsgc_spatial_gaba/`](../../../tasks/t0053_minimal_dsgc_spatial_gaba/) |
+
+# Minimal From-Scratch DSGC with Spatial PD/ND-Asymmetric Inhibition
+
+## Source
+
+Approved in brainstorm session 9 (t0051) as Task B of a paired wave (t0052 scalar gabaMOD,
+t0053 spatial PD/ND-asymmetric). No upstream suggestion ID; this task is created directly from
+the session's strategic pivot to a from-scratch minimal-DSGC substrate.
+
+## Motivation
+
+This task is the spatial-asymmetry sibling of t0052. Where t0052 scales each I synapse's
+amplitude by a global direction-dependent scalar, t0053 instead activates a synapse only when
+the moving stimulus is approaching the synapse from outside the soma (centripetal motion). The
+aggregate effect mimics the SAC network's known centrifugal preference (SAC dendrites release
+GABA preferentially when stimuli move centrifugally over them, so from the post-synaptic
+DSGC's perspective inhibition concentrates on dendrites being approached from the wrong side).
+
+The two tasks isolate the impact of inhibition mechanism (scalar amplitude scaling vs spatial
+gating) on direction selectivity at otherwise-identical morphology, excitation, spike
+generation, and stimulus.
+
+## Objective
+
+Build and run a minimal compartmental DSGC model with the following specification, then report
+per-direction voltage and firing-rate data so the behaviour can be compared against the
+project's target tuning curve and against t0052.
+
+## Model Specification
+
+### Morphology
+
+* Asset: `dsgc-baseline-morphology-calibrated` (the t0009 Strahler-calibrated 141009_Pair1DSGC
+  reconstruction).
+* Compartments: as defined in the asset; standard NEURON section discretisation.
+
+### Sections and Channels
+
+* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism.
+* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1
+  uF/cm^2`.
+* V_rest: -65 mV.
+
+### Synapses
+
+* 100 E + 100 I synapses, **co-located in pairs**, uniform random over dendrites with the same
+  fixed seed (0) as t0052. (Identical placement across the two tasks lets later comparison
+  isolate the inhibition mechanism.)
+
+### Excitatory mechanism (identical to t0052)
+
+* `Exp2Syn`: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV, peak 0.5 nS.
+* Position-gated firing: each E synapse fires once when bar leading edge crosses it;
+  direction-independent waveform.
+
+### Inhibitory mechanism (spatial PD/ND-asymmetric, centripetal-only firing)
+
+* `Exp2Syn`: rise = 1 ms, decay = 20 ms, e = -75 mV, peak 2 nS (no scalar scaling).
+* For each I synapse i, define a centrifugal direction `theta_centrifugal_i = atan2(y_i -
+  y_soma, x_i - x_soma)`.
+* Synapse i fires only when the bar direction `theta_stim` satisfies `cos(theta_stim -
+  theta_centrifugal_i) < 0`. Equivalently, the synapse fires when the stimulus motion has a
+  component pointing back toward the soma (centripetal).
+* When the firing condition is satisfied, the synapse fires one event at the moment the bar
+  leading edge crosses its (x, y).
+* Aggregate effect: for any given bar direction, only the half of I synapses whose centrifugal
+  vectors point into the bar-incoming hemisphere will fire. Inhibition is spatially
+  concentrated on the side of the dendritic field being approached "from the wrong end".
+
+### Stimulus protocol
+
+* Identical to t0052: 12 directions, 10 trials each, bar 200 um x full arena, 1000 um/s, T =
+  1500 ms.
+
+## Outputs
+
+Same six output classes as t0052, plus one additional plot specific to the spatial mechanism:
+
+1. Soma V(t) per direction.
+2. Aggregate EPSP at soma per direction.
+3. Aggregate IPSP at soma per direction.
+4. Firing-rate PSTH per direction.
+5. Polar tuning curve (peak Hz, primary DSI, vector-sum DSI, preferred direction).
+6. Per-synapse activation-time histogram per direction.
+7. **Polar plot of "fraction of I synapses active vs direction"** — confirms the
+   centripetal-gating mechanism produces the expected directional asymmetry in the active I
+   population.
+
+## Library Asset
+
+Produce one library asset: `minimal_dsgc_spatial_gaba`. Same component structure as
+`minimal_dsgc_scalar_gaba` except the inhibition driver implements the centripetal-gating rule
+instead of scalar gabaMOD scaling.
+
+## Key Questions
+
+1. Does spatial gating produce a higher or lower DSI than scalar gabaMOD on the same
+   morphology and excitation?
+2. Is the preferred direction of the model the same as t0052's, given that the underlying
+   morphology is asymmetric (the soma is offset from the dendritic-field centroid)?
+3. Does the "fraction of I synapses active" curve show the predicted ~50% modulation across
+   direction, or does the morphology asymmetry produce a stronger / weaker modulation?
+4. Does the spatial mechanism reproduce a biologically-realistic null-side-leading null
+   inhibition timing pattern in the IPSP traces?
+
+## Compute and Budget
+
+Local CPU only. Estimated wall-clock: ~1 week. Cost: $0.00.
+
+## Out of Scope
+
+* NMDA receptors (AMPA-only minimal model by design).
+* Active dendritic conductances.
+* Synaptic noise.
+* Network-level inputs.
+* Cross-comparison to t0052 (handled by a downstream task once both finish).
+
+## Verification Criteria
+
+* Library asset validates against `meta/asset_types/library/specification.md`.
+* All 12 directions produce a per-direction PNG plot in `results/images/` and are embedded in
+  `results_detailed.md`.
+* `results/metrics.json` contains primary DSI, vector-sum DSI, preferred direction, peak Hz,
+  null Hz at minimum.
+* The synapse-activation polar plot shows roughly 50% of I synapses active in each direction
+  (any deviation must be explained by the dendritic-field asymmetry).
+* Synapse placement uses the same fixed seed (0) as t0052 so the two tasks can be compared
+  trial-for-trial in a downstream analysis.
+
+</details>
+
+<details>
+<summary>⏹ 0052 — <strong>Minimal from-scratch DSGC with scalar gabaMOD
+inhibition</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0052_minimal_dsgc_scalar_gaba` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | — |
+| **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Task folder** | [`t0052_minimal_dsgc_scalar_gaba/`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/) |
+
+# Minimal From-Scratch DSGC with Scalar gabaMOD Inhibition
+
+## Source
+
+Approved in brainstorm session 9 (t0051) as Task A of a paired wave (t0052 scalar gabaMOD,
+t0053 spatial PD/ND-asymmetric). No upstream suggestion ID; this task is created directly from
+the session's strategic pivot away from the deposited Poleg-Polsky 2016 lineage and the t0022
+channel-testbed lineage.
+
+## Motivation
+
+The t0046–t0050 reproduction wave demonstrated that the deposited ModelDB 189347 code does not
+implement the mechanism described in the Poleg-Polsky 2016 paper text, and that the t0022
+modified-port lineage carries accumulated deviations from that paper as well. Brainstorm
+session 9 commissioned a new from-scratch minimal DSGC built on the project's calibrated
+baseline morphology so that all parameters and mechanisms are explicit, audited, and clean of
+upstream-code legacy.
+
+This task implements the **scalar gabaMOD** variant of deRosenroll-style direction-dependent
+inhibition, which is the form actually published in Poleg-Polsky 2016 and also a faithful
+abstraction of de Rosenroll 2026's effective DSGC inhibition: every inhibitory synapse fires
+when the bar covers it, but its amplitude is scaled by a direction-dependent scalar so that
+inhibition is strongest in null direction and weakest in preferred direction.
+
+The sibling task t0053 implements a true spatial PD/ND-asymmetric variant.
+
+## Objective
+
+Build and run a minimal compartmental DSGC model with the following specification, then report
+per-direction voltage and firing-rate data so the behaviour can be compared against the
+project's target tuning curve and against t0053.
+
+## Model Specification
+
+### Morphology
+
+* Asset: `dsgc-baseline-morphology-calibrated` (the t0009 Strahler-calibrated 141009_Pair1DSGC
+  reconstruction).
+* Compartments: as defined in the asset; standard NEURON section discretisation.
+
+### Sections and Channels
+
+* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism (Na, K
+  active conductances; leak built into the mechanism). Default densities from `hh.mod` unless
+  explicit re-tuning is required to keep the cell silent at rest with V_rest = -65 mV.
+* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1
+  uF/cm^2` (matching t0024 baseline).
+* V_rest: -65 mV.
+
+### Synapses
+
+* 100 excitatory (E) + 100 inhibitory (I) synapses, **co-located in pairs**.
+* Placement: 100 dendritic locations sampled uniformly at random from the dendritic length (no
+  distal bias; no exclusion of soma- or AIS-adjacent sections beyond the soma/AIS themselves).
+  Each location hosts exactly one E + one I synapse.
+* Random seed for placement: fixed (0) and reported in `results/results_detailed.md`.
+
+### Excitatory mechanism (direction-independent, position-gated)
+
+* `Exp2Syn` configured as a classical EPSP: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV.
+* Peak conductance per synapse: 0.5 nS.
+* Trigger: each E synapse fires **one event** when the moving bar's leading edge crosses the
+  synapse's (x, y) position projected along the bar's normal direction.
+* Direction-independent waveform: identical EPSC shape regardless of bar direction.
+
+### Inhibitory mechanism (direction-dependent via scalar gabaMOD)
+
+* `Exp2Syn` configured as classical IPSC: rise = 1 ms, decay = 20 ms, e = -75 mV.
+* Peak conductance per synapse: 2 nS times `gabaMOD(theta)`.
+* `gabaMOD(theta) = 0.33 + 0.66 * (1 - cos(theta - theta_ND)) / 2`, where `theta_ND` is the
+  null direction of the cell. By convention, set `theta_PD = 0` (rightward), `theta_ND = 180`
+  (leftward); `theta` is the bar direction.
+* Trigger: each I synapse fires **one event** when the moving bar's leading edge crosses the
+  synapse's (x, y) position; the event's amplitude is scaled by `gabaMOD(theta)`.
+
+### Stimulus protocol
+
+* 12 bar directions: 0, 30, 60, ..., 330 degrees.
+* Bar dimensions: 200 um wide x full arena length.
+* Bar speed: 1000 um/s.
+* Trial duration: 1500 ms.
+* Trials per direction: 10.
+* Total trials: 120.
+
+## Outputs
+
+For each of the 12 directions, produce:
+
+1. **Soma V(t)** — mean trace +/- SD across the 10 trials. PNG under `results/images/`,
+   embedded in `results_detailed.md`.
+2. **Aggregate EPSP at soma** — sum of EPSC-driven somatic depolarisation per trial, mean
+   trace +/- SD across trials. (Computed by simulating the synapse population with only E
+   active.)
+3. **Aggregate IPSP at soma** — analogous, with only I active.
+4. **Firing-rate PSTH** — 5 ms bins, mean across 10 trials.
+5. **Polar tuning curve** — peak firing rate (Hz) vs direction; primary DSI; vector-sum DSI;
+   preferred direction.
+6. **Per-synapse activation-time histogram** (sanity check): for each direction, histogram of
+   when each E synapse fires. Confirms position-gating logic is correct.
+
+## Library Asset
+
+Produce one library asset: `minimal_dsgc_scalar_gaba`. Contents:
+
+* Cell builder (morphology load + section channel assignment + V_rest setup).
+* Synapse placer (uniform random over dendrites, 100 co-located pairs, fixed seed).
+* Excitation driver (position-gated AMPA event scheduler).
+* Inhibition driver (position-gated GABA event scheduler with scalar gabaMOD scaling).
+* Trial runner (12 directions x 10 trials, deterministic seeds).
+* Recording helpers (soma V, EPSC/IPSC components, spike times).
+
+Follow the project's library asset specification
+(`meta/asset_types/library/specification.md`).
+
+## Key Questions
+
+1. With AMPA-only excitation, what peak firing rate does the cell produce in the preferred
+   direction at default HH densities?
+2. What is the primary DSI of this minimal model? Does it land in the project's target band
+   (Park 2014 in vivo: 0.40 - 0.60)?
+3. Does the position-gated firing pattern match expectations (E synapses on the leading edge
+   of the bar fire first, trailing-edge last)?
+4. How do EPSP and IPSP aggregate amplitudes scale with direction under scalar gabaMOD?
+
+## Compute and Budget
+
+Local CPU only. Estimated wall-clock: ~1 week including library development and reporting.
+Cost: $0.00.
+
+## Out of Scope
+
+* NMDA receptors (this is an AMPA-only minimal model by design).
+* Active dendritic conductances.
+* Synaptic noise (deterministic protocol; one event per synapse per trial).
+* Network-level inputs (no SAC network; inhibition is a phenomenological scalar gating).
+* Cross-comparison to t0053 (handled by a downstream task once both finish).
+
+## Verification Criteria
+
+* Library asset structure validates against `meta/asset_types/library/specification.md`.
+* All 12 directions produce a per-direction PNG plot in `results/images/` and are embedded in
+  `results_detailed.md`.
+* `results/metrics.json` contains primary DSI, vector-sum DSI, preferred direction, peak Hz,
+  null Hz at minimum.
+* Sanity check: in the null direction, IPSP aggregate should be approximately 3x the
+  preferred-direction IPSP aggregate (`gabaMOD(180)/gabaMOD(0) = 1.0/0.33`).
 
 </details>

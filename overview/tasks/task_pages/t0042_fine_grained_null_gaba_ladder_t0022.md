@@ -1,4 +1,4 @@
-# ⚠️ Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
+# ❌ Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0042_fine_grained_null_gaba_ladder_t0022` |
-| **Status** | ⚠️ intervention_blocked |
+| **Status** | ❌ cancelled |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Task types** | `experiment-run` |
 | **Task folder** | [`t0042_fine_grained_null_gaba_ladder_t0022/`](../../../tasks/t0042_fine_grained_null_gaba_ladder_t0022/) |

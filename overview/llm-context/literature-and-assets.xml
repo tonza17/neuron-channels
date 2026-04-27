@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-25T12:13:01Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-27T09:53:05Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>145720</char_count>
-    <byte_count>145906</byte_count>
-    <estimated_tokens>36430</estimated_tokens>
+    <char_count>146237</char_count>
+    <byte_count>146427</byte_count>
+    <estimated_tokens>36559</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -159,9 +159,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0048_voff_nmda1_dsi_test</id>
         <id>t0049_seclamp_cond_remeasure</id>
         <id>t0050_audit_syn_distribution</id>
+        <id>t0051_brainstorm_results_9</id>
       </source_ids>
       <content>
-Completed tasks: 44
+Completed tasks: 45
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -426,6 +427,12 @@ ID: t0050_audit_syn_distribution
 Completed: 2026-04-25
 Short description: Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.
 Result summary: Results Summary: Synapse-Distribution Audit (Deposited DSGC vs Paper) Summary Confirms t0049&#x27;s spatial-distribution hypothesis (H1) at both the structural and numerical levels: the deposited ModelDB 189347 PD/ND condition swap is implemented as a pure scalar `gabaMOD = 0.33 + 0.66*direction` applied uniformly to ALL 282 SAC inhibitory synapses with NO spatial threshold. The underlying synapse spatial distribution is symmetric around the synapse population&#x27;s own median (count_pd / count_nd = 139 / 143 = 0.972, within the [0.9, 1.1] symmetric band). The deposited code therefore cannot produce the paper&#x27;s somatic GABA PD/ND asymmetry — the t0049 SEClamp symmetry collapse (PD = 47.47, ND = 48.04...
+
+## Brainstorm results session 9
+ID: t0051_brainstorm_results_9
+Completed: 2026-04-25
+Short description: Ninth brainstorm: commission two from-scratch minimal-DSGC tasks (scalar vs spatial inhibition); cancel three t0022-substrate tasks; reprioritise six follow-up suggestions.
+Result summary: Results Summary: Brainstorm Session 9 Summary Ninth strategic brainstorm, run on 2026-04-25 after the t0046–t0050 reproduction wave. Produced a strategic pivot: step away from modifying the deposited Poleg-Polsky 2016 ModelDB 189347 code and from the t0022 channel-testbed lineage; build a from-scratch minimal DSGC on the project&#x27;s calibrated baseline morphology with two parallel inhibition mechanisms (scalar `gabaMOD` and spatial PD/ND-asymmetric); cancel three obsolete `intervention_blocked` tasks; reprioritise six follow-up suggestions whose urgency the new substrate dissolves. Session Overview Date: 2026-04-25. Triggered by the researcher reading the t0046–t0050 reproduction wave findings...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -434,13 +441,12 @@ Result summary: Results Summary: Synapse-Distribution Audit (Deposited DSGC vs P
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0042_fine_grained_null_gaba_ladder_t0022</id>
-        <id>t0043_nav16_kv3_nmda_restoration_t0022</id>
-        <id>t0044_schachter_retest_on_t0043</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0052_minimal_dsgc_scalar_gaba</id>
+        <id>t0053_minimal_dsgc_spatial_gaba</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -455,33 +461,26 @@ Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
 
-## Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
-ID: t0042_fine_grained_null_gaba_ladder_t0022
-Status: intervention_blocked
-Effective date: 2026-04-24
-Short description: Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037&#x27;s 4 nS sweet spot without destabilising preferred direction.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
-
-## Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
-ID: t0043_nav16_kv3_nmda_restoration_t0022
-Status: intervention_blocked
-Effective date: 2026-04-24
-Short description: Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
-Dependencies: t0019_literature_survey_voltage_gated_channels, t0022_modify_dsgc_channel_testbed, t0037_null_gaba_reduction_ladder_t0022
-
-## Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
-ID: t0044_schachter_retest_on_t0043
-Status: intervention_blocked
-Effective date: 2026-04-24
-Short description: 7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
-Dependencies: t0030_distal_dendrite_diameter_sweep_dsgc, t0037_null_gaba_reduction_ladder_t0022, t0043_nav16_kv3_nmda_restoration_t0022
-
 ## CoreNEURON Vast.ai RTX 4090 speedup benchmark
 ID: t0045_coreneuron_vastai_speedup_benchmark
 Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
+
+## Minimal from-scratch DSGC with scalar gabaMOD inhibition
+ID: t0052_minimal_dsgc_scalar_gaba
+Status: not_started
+Effective date: unknown
+Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, scalar gabaMOD inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library
+
+## Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition
+ID: t0053_minimal_dsgc_spatial_gaba
+Status: not_started
+Effective date: unknown
+Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

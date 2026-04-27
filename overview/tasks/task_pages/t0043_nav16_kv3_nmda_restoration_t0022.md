@@ -1,4 +1,4 @@
-# ⚠️ Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
+# ❌ Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,7 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0043_nav16_kv3_nmda_restoration_t0022` |
-| **Status** | ⚠️ intervention_blocked |
+| **Status** | ❌ cancelled |
 | **Dependencies** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md) |
 | **Source suggestion** | `S-0019-03` |
 | **Task types** | `feature-engineering`, `experiment-run` |

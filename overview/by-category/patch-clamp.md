@@ -1191,7 +1191,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 <summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND
 30 nS at fixed gNMDA = 0.5 nS</strong> (S-0049-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0049_seclamp_cond_remeasure](../../tasks/t0049_seclamp_cond_remeasure/)
 
 SEClamp at -65 mV yielded GABA PD = 47.47 / ND = 48.04 nS vs paper's 12.5 / 30 nS. Run a

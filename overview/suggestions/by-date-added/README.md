@@ -11,6 +11,58 @@
 ## High Priority
 
 <details>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0048-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>📚 <strong>Add a path-distance helper to t0046's modeldb_189347_dsgc_exact
+library using the two-segment h.distance form</strong> (S-0050-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0050-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+Bonus finding from t0050: NEURON 8.2.7 Python's legacy single-arg form h.distance(0, sec(0.5))
+does NOT reliably set the path-distance origin (returns 0.5 instead of resetting). The audit
+worked around this using the two-segment form h.distance(soma_seg, syn_seg). Add a small
+path_distance_um(soma_seg, target_seg) helper to t0046's library (modeldb_189347_dsgc_exact)
+wrapping the robust form, plus a docstring note explaining the API quirk. Other DSGC tasks
+computing path distances (e.g., S-0049-05's intermediate SEClamp dendritic locations, future
+spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments
+required. Recommended task types: write-library.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control
 for downstream tasks via correction overlay</strong> (S-0048-02)</summary>
 
@@ -39,28 +91,27 @@ task types: correction.
 </details>
 
 <details>
-<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
-DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+<summary>🧪 <strong>AMPA conductance scan at Voff_bipNMDA=1 as a secondary check
+on the residual DSI gap</strong> (S-0048-03)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0048-01` |
+| **ID** | `S-0048-03` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-25 |
 | **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
 | **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
 
-t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
-gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
-must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
-deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
-gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
-0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
-at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
-scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
-Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
-range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+Complementary to S-0048-01's GABA scan: re-run the same 7-point gNMDA sweep at exptype=2 with
+the AMPA conductance scaled across {1.0, 0.5, 0.25, 0.125} of the deposited b2gampa = 0.25 nS
+value. t0048's per-class conductance comparison shows AMPA summed conductance is similar
+between PD/ND (~11 nS each), so AMPA changes alone cannot create direction selectivity, but
+lowering AMPA at fixed GABA could shift the AMPA/GABA balance enough to amplify whatever
+residual selectivity GABA provides. This is an essential negative control for S-0048-01: if
+AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
+4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
+types: experiment-run.
 
 </details>
 
@@ -85,6 +136,30 @@ down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial r
 at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
 without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Higher-N (12-19 trials) rerun of t0048's Voff_bipNMDA=1 gNMDA
+sweep to tighten H2 verdict bands</strong> (S-0048-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0048-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0048 used 4 trials per direction per gNMDA value. SD on PSP amplitudes was 0.16-1.02 mV,
+which is below the trial-to-trial PD/ND difference at most grid points, but the H2-vs-H1
+boundary at the slope test (-0.024 vs |slope| < 0.020 cutoff) is close enough that more trials
+might tip the verdict. Re-run this same Voff_bipNMDA=1 sweep at the paper's reported N (12-19
+trials per direction per gNMDA value) using the existing code/run_voff1_sweep.py with extended
+trial seed ranges. This is distinct from S-0046-01 which targets the Voff_bipNMDA=0 baseline;
+S-0048-04 specifically tightens t0048's Voff=1 H2 finding. Pass criterion: report whether the
+slope test verdict changes from H2 to H1 with paper-N. Recommended task types: experiment-run.
 
 </details>
 
@@ -135,81 +210,6 @@ population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic
 an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
 path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
 experiment-run.
-
-</details>
-
-## Medium Priority
-
-<details>
-<summary>📚 <strong>Add a path-distance helper to t0046's modeldb_189347_dsgc_exact
-library using the two-segment h.distance form</strong> (S-0050-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0050-03` |
-| **Kind** | library |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
-
-Bonus finding from t0050: NEURON 8.2.7 Python's legacy single-arg form h.distance(0, sec(0.5))
-does NOT reliably set the path-distance origin (returns 0.5 instead of resetting). The audit
-worked around this using the two-segment form h.distance(soma_seg, syn_seg). Add a small
-path_distance_um(soma_seg, target_seg) helper to t0046's library (modeldb_189347_dsgc_exact)
-wrapping the robust form, plus a docstring note explaining the API quirk. Other DSGC tasks
-computing path distances (e.g., S-0049-05's intermediate SEClamp dendritic locations, future
-spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments
-required. Recommended task types: write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>AMPA conductance scan at Voff_bipNMDA=1 as a secondary check
-on the residual DSI gap</strong> (S-0048-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0048-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Complementary to S-0048-01's GABA scan: re-run the same 7-point gNMDA sweep at exptype=2 with
-the AMPA conductance scaled across {1.0, 0.5, 0.25, 0.125} of the deposited b2gampa = 0.25 nS
-value. t0048's per-class conductance comparison shows AMPA summed conductance is similar
-between PD/ND (~11 nS each), so AMPA changes alone cannot create direction selectivity, but
-lowering AMPA at fixed GABA could shift the AMPA/GABA balance enough to amplify whatever
-residual selectivity GABA provides. This is an essential negative control for S-0048-01: if
-AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
-4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
-types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Higher-N (12-19 trials) rerun of t0048's Voff_bipNMDA=1 gNMDA
-sweep to tighten H2 verdict bands</strong> (S-0048-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0048-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0048 used 4 trials per direction per gNMDA value. SD on PSP amplitudes was 0.16-1.02 mV,
-which is below the trial-to-trial PD/ND difference at most grid points, but the H2-vs-H1
-boundary at the slope test (-0.024 vs |slope| < 0.020 cutoff) is close enough that more trials
-might tip the verdict. Re-run this same Voff_bipNMDA=1 sweep at the paper's reported N (12-19
-trials per direction per gNMDA value) using the existing code/run_voff1_sweep.py with extended
-trial seed ranges. This is distinct from S-0046-01 which targets the Voff_bipNMDA=0 baseline;
-S-0048-04 specifically tightens t0048's Voff=1 H2 finding. Pass criterion: report whether the
-slope test verdict changes from H2 to H1 with paper-N. Recommended task types: experiment-run.
 
 </details>
 
@@ -481,53 +481,6 @@ model modification — only an exptype choice. Re-uses t0046 library and t0047's
 ## High Priority
 
 <details>
-<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
-NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-03` |
-| **Kind** | library |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
-conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
-paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
-(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
-AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
-Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
-AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
-Recommended task types: write-library, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
-condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
-reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
-wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
-tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
-mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
-does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
-(paper reports 0.83). Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
 testbed comparison</strong> (S-0039-01)</summary>
 
@@ -576,6 +529,30 @@ Recommended task types: experiment-run, code-reproduction.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
+NMDAR block) to enable Fig 8 AP5 reproduction</strong> (S-0046-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-03` |
+| **Kind** | library |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Author a new MOD mechanism (or extend `bipolarNMDA.mod`) that selectively blocks NMDAR
+conductance in dendritic compartments while leaving somatic NMDAR + AMPA intact, mirroring the
+paper's intracellular MK801 (iMK801) protocol. The current AP5 analogue used in t0046
+(`b2gnmda = 0`) removes ALL NMDAR contribution and silences the cell entirely (DSI = 0 under
+AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preserved under AP5'
+Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
+AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
+Recommended task types: write-library, experiment-run.
+
+</details>
 
 <details>
 <summary>📊 <strong>Correct t0033 answer asset: confirm 2-D morphology
@@ -818,6 +795,29 @@ asset, then update the corrections overlay to a full-binary-attached state. The 
 text is the only authoritative source for any Methods parameters not stated in the published
 main text and is needed to fully audit the synapse-count discrepancy (S-0046-02). Recommended
 task types: download-paper, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
+condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Re-execute every figure-reproduction sweep in t0046 (`code/run_all_figures.py`) at the paper's
+reported N (12-19 trials per condition) and the full 8-direction sweep instead of the
+wall-clock-budget-reduced 2-4 trials and PD/ND-only collapse used in t0046. This will (a)
+tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(mean PD PSP,
+mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
+does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
+(paper reports 0.83). Recommended task types: experiment-run.
 
 </details>
 

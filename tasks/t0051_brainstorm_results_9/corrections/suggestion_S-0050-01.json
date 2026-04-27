@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0051-05",
+  "correcting_task": "t0051_brainstorm_results_9",
+  "target_task": "t0050_audit_syn_distribution",
+  "target_kind": "suggestion",
+  "target_id": "S-0050-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "Re-implementing placeBIP() so gabaMOD is spatially gated by per-synapse locx is a fix to the deposited Poleg-Polsky 2016 code. The brainstorm session 9 decision is to step away from modifying deposited code and build the equivalent mechanism into a from-scratch minimal DSGC instead (t0053 implements spatial PD/ND-asymmetric inhibition natively). Keep at medium priority because it remains a valid drop-in fix if the deposited lineage is ever revived."
+}

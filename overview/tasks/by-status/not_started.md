@@ -1,12 +1,323 @@
 # ⏹ Tasks: Not Started
 
-2 tasks. ⏹ **2 not_started**.
+4 tasks. ⏹ **4 not_started**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ⏹ Not Started
+
+<details>
+<summary>⏹ 0053 — <strong>Minimal from-scratch DSGC with spatial PD/ND-asymmetric
+inhibition</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0053_minimal_dsgc_spatial_gaba` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | — |
+| **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Task folder** | [`t0053_minimal_dsgc_spatial_gaba/`](../../../tasks/t0053_minimal_dsgc_spatial_gaba/) |
+
+# Minimal From-Scratch DSGC with Spatial PD/ND-Asymmetric Inhibition
+
+## Source
+
+Approved in brainstorm session 9 (t0051) as Task B of a paired wave (t0052 scalar gabaMOD,
+t0053 spatial PD/ND-asymmetric). No upstream suggestion ID; this task is created directly from
+the session's strategic pivot to a from-scratch minimal-DSGC substrate.
+
+## Motivation
+
+This task is the spatial-asymmetry sibling of t0052. Where t0052 scales each I synapse's
+amplitude by a global direction-dependent scalar, t0053 instead activates a synapse only when
+the moving stimulus is approaching the synapse from outside the soma (centripetal motion). The
+aggregate effect mimics the SAC network's known centrifugal preference (SAC dendrites release
+GABA preferentially when stimuli move centrifugally over them, so from the post-synaptic
+DSGC's perspective inhibition concentrates on dendrites being approached from the wrong side).
+
+The two tasks isolate the impact of inhibition mechanism (scalar amplitude scaling vs spatial
+gating) on direction selectivity at otherwise-identical morphology, excitation, spike
+generation, and stimulus.
+
+## Objective
+
+Build and run a minimal compartmental DSGC model with the following specification, then report
+per-direction voltage and firing-rate data so the behaviour can be compared against the
+project's target tuning curve and against t0052.
+
+## Model Specification
+
+### Morphology
+
+* Asset: `dsgc-baseline-morphology-calibrated` (the t0009 Strahler-calibrated 141009_Pair1DSGC
+  reconstruction).
+* Compartments: as defined in the asset; standard NEURON section discretisation.
+
+### Sections and Channels
+
+* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism.
+* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1
+  uF/cm^2`.
+* V_rest: -65 mV.
+
+### Synapses
+
+* 100 E + 100 I synapses, **co-located in pairs**, uniform random over dendrites with the same
+  fixed seed (0) as t0052. (Identical placement across the two tasks lets later comparison
+  isolate the inhibition mechanism.)
+
+### Excitatory mechanism (identical to t0052)
+
+* `Exp2Syn`: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV, peak 0.5 nS.
+* Position-gated firing: each E synapse fires once when bar leading edge crosses it;
+  direction-independent waveform.
+
+### Inhibitory mechanism (spatial PD/ND-asymmetric, centripetal-only firing)
+
+* `Exp2Syn`: rise = 1 ms, decay = 20 ms, e = -75 mV, peak 2 nS (no scalar scaling).
+* For each I synapse i, define a centrifugal direction `theta_centrifugal_i = atan2(y_i -
+  y_soma, x_i - x_soma)`.
+* Synapse i fires only when the bar direction `theta_stim` satisfies `cos(theta_stim -
+  theta_centrifugal_i) < 0`. Equivalently, the synapse fires when the stimulus motion has a
+  component pointing back toward the soma (centripetal).
+* When the firing condition is satisfied, the synapse fires one event at the moment the bar
+  leading edge crosses its (x, y).
+* Aggregate effect: for any given bar direction, only the half of I synapses whose centrifugal
+  vectors point into the bar-incoming hemisphere will fire. Inhibition is spatially
+  concentrated on the side of the dendritic field being approached "from the wrong end".
+
+### Stimulus protocol
+
+* Identical to t0052: 12 directions, 10 trials each, bar 200 um x full arena, 1000 um/s, T =
+  1500 ms.
+
+## Outputs
+
+Same six output classes as t0052, plus one additional plot specific to the spatial mechanism:
+
+1. Soma V(t) per direction.
+2. Aggregate EPSP at soma per direction.
+3. Aggregate IPSP at soma per direction.
+4. Firing-rate PSTH per direction.
+5. Polar tuning curve (peak Hz, primary DSI, vector-sum DSI, preferred direction).
+6. Per-synapse activation-time histogram per direction.
+7. **Polar plot of "fraction of I synapses active vs direction"** — confirms the
+   centripetal-gating mechanism produces the expected directional asymmetry in the active I
+   population.
+
+## Library Asset
+
+Produce one library asset: `minimal_dsgc_spatial_gaba`. Same component structure as
+`minimal_dsgc_scalar_gaba` except the inhibition driver implements the centripetal-gating rule
+instead of scalar gabaMOD scaling.
+
+## Key Questions
+
+1. Does spatial gating produce a higher or lower DSI than scalar gabaMOD on the same
+   morphology and excitation?
+2. Is the preferred direction of the model the same as t0052's, given that the underlying
+   morphology is asymmetric (the soma is offset from the dendritic-field centroid)?
+3. Does the "fraction of I synapses active" curve show the predicted ~50% modulation across
+   direction, or does the morphology asymmetry produce a stronger / weaker modulation?
+4. Does the spatial mechanism reproduce a biologically-realistic null-side-leading null
+   inhibition timing pattern in the IPSP traces?
+
+## Compute and Budget
+
+Local CPU only. Estimated wall-clock: ~1 week. Cost: $0.00.
+
+## Out of Scope
+
+* NMDA receptors (AMPA-only minimal model by design).
+* Active dendritic conductances.
+* Synaptic noise.
+* Network-level inputs.
+* Cross-comparison to t0052 (handled by a downstream task once both finish).
+
+## Verification Criteria
+
+* Library asset validates against `meta/asset_types/library/specification.md`.
+* All 12 directions produce a per-direction PNG plot in `results/images/` and are embedded in
+  `results_detailed.md`.
+* `results/metrics.json` contains primary DSI, vector-sum DSI, preferred direction, peak Hz,
+  null Hz at minimum.
+* The synapse-activation polar plot shows roughly 50% of I synapses active in each direction
+  (any deviation must be explained by the dendritic-field asymmetry).
+* Synapse placement uses the same fixed seed (0) as t0052 so the two tasks can be compared
+  trial-for-trial in a downstream analysis.
+
+</details>
+
+<details>
+<summary>⏹ 0052 — <strong>Minimal from-scratch DSGC with scalar gabaMOD
+inhibition</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0052_minimal_dsgc_scalar_gaba` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | — |
+| **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Task folder** | [`t0052_minimal_dsgc_scalar_gaba/`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/) |
+
+# Minimal From-Scratch DSGC with Scalar gabaMOD Inhibition
+
+## Source
+
+Approved in brainstorm session 9 (t0051) as Task A of a paired wave (t0052 scalar gabaMOD,
+t0053 spatial PD/ND-asymmetric). No upstream suggestion ID; this task is created directly from
+the session's strategic pivot away from the deposited Poleg-Polsky 2016 lineage and the t0022
+channel-testbed lineage.
+
+## Motivation
+
+The t0046–t0050 reproduction wave demonstrated that the deposited ModelDB 189347 code does not
+implement the mechanism described in the Poleg-Polsky 2016 paper text, and that the t0022
+modified-port lineage carries accumulated deviations from that paper as well. Brainstorm
+session 9 commissioned a new from-scratch minimal DSGC built on the project's calibrated
+baseline morphology so that all parameters and mechanisms are explicit, audited, and clean of
+upstream-code legacy.
+
+This task implements the **scalar gabaMOD** variant of deRosenroll-style direction-dependent
+inhibition, which is the form actually published in Poleg-Polsky 2016 and also a faithful
+abstraction of de Rosenroll 2026's effective DSGC inhibition: every inhibitory synapse fires
+when the bar covers it, but its amplitude is scaled by a direction-dependent scalar so that
+inhibition is strongest in null direction and weakest in preferred direction.
+
+The sibling task t0053 implements a true spatial PD/ND-asymmetric variant.
+
+## Objective
+
+Build and run a minimal compartmental DSGC model with the following specification, then report
+per-direction voltage and firing-rate data so the behaviour can be compared against the
+project's target tuning curve and against t0053.
+
+## Model Specification
+
+### Morphology
+
+* Asset: `dsgc-baseline-morphology-calibrated` (the t0009 Strahler-calibrated 141009_Pair1DSGC
+  reconstruction).
+* Compartments: as defined in the asset; standard NEURON section discretisation.
+
+### Sections and Channels
+
+* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism (Na, K
+  active conductances; leak built into the mechanism). Default densities from `hh.mod` unless
+  explicit re-tuning is required to keep the cell silent at rest with V_rest = -65 mV.
+* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1
+  uF/cm^2` (matching t0024 baseline).
+* V_rest: -65 mV.
+
+### Synapses
+
+* 100 excitatory (E) + 100 inhibitory (I) synapses, **co-located in pairs**.
+* Placement: 100 dendritic locations sampled uniformly at random from the dendritic length (no
+  distal bias; no exclusion of soma- or AIS-adjacent sections beyond the soma/AIS themselves).
+  Each location hosts exactly one E + one I synapse.
+* Random seed for placement: fixed (0) and reported in `results/results_detailed.md`.
+
+### Excitatory mechanism (direction-independent, position-gated)
+
+* `Exp2Syn` configured as a classical EPSP: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV.
+* Peak conductance per synapse: 0.5 nS.
+* Trigger: each E synapse fires **one event** when the moving bar's leading edge crosses the
+  synapse's (x, y) position projected along the bar's normal direction.
+* Direction-independent waveform: identical EPSC shape regardless of bar direction.
+
+### Inhibitory mechanism (direction-dependent via scalar gabaMOD)
+
+* `Exp2Syn` configured as classical IPSC: rise = 1 ms, decay = 20 ms, e = -75 mV.
+* Peak conductance per synapse: 2 nS times `gabaMOD(theta)`.
+* `gabaMOD(theta) = 0.33 + 0.66 * (1 - cos(theta - theta_ND)) / 2`, where `theta_ND` is the
+  null direction of the cell. By convention, set `theta_PD = 0` (rightward), `theta_ND = 180`
+  (leftward); `theta` is the bar direction.
+* Trigger: each I synapse fires **one event** when the moving bar's leading edge crosses the
+  synapse's (x, y) position; the event's amplitude is scaled by `gabaMOD(theta)`.
+
+### Stimulus protocol
+
+* 12 bar directions: 0, 30, 60, ..., 330 degrees.
+* Bar dimensions: 200 um wide x full arena length.
+* Bar speed: 1000 um/s.
+* Trial duration: 1500 ms.
+* Trials per direction: 10.
+* Total trials: 120.
+
+## Outputs
+
+For each of the 12 directions, produce:
+
+1. **Soma V(t)** — mean trace +/- SD across the 10 trials. PNG under `results/images/`,
+   embedded in `results_detailed.md`.
+2. **Aggregate EPSP at soma** — sum of EPSC-driven somatic depolarisation per trial, mean
+   trace +/- SD across trials. (Computed by simulating the synapse population with only E
+   active.)
+3. **Aggregate IPSP at soma** — analogous, with only I active.
+4. **Firing-rate PSTH** — 5 ms bins, mean across 10 trials.
+5. **Polar tuning curve** — peak firing rate (Hz) vs direction; primary DSI; vector-sum DSI;
+   preferred direction.
+6. **Per-synapse activation-time histogram** (sanity check): for each direction, histogram of
+   when each E synapse fires. Confirms position-gating logic is correct.
+
+## Library Asset
+
+Produce one library asset: `minimal_dsgc_scalar_gaba`. Contents:
+
+* Cell builder (morphology load + section channel assignment + V_rest setup).
+* Synapse placer (uniform random over dendrites, 100 co-located pairs, fixed seed).
+* Excitation driver (position-gated AMPA event scheduler).
+* Inhibition driver (position-gated GABA event scheduler with scalar gabaMOD scaling).
+* Trial runner (12 directions x 10 trials, deterministic seeds).
+* Recording helpers (soma V, EPSC/IPSC components, spike times).
+
+Follow the project's library asset specification
+(`meta/asset_types/library/specification.md`).
+
+## Key Questions
+
+1. With AMPA-only excitation, what peak firing rate does the cell produce in the preferred
+   direction at default HH densities?
+2. What is the primary DSI of this minimal model? Does it land in the project's target band
+   (Park 2014 in vivo: 0.40 - 0.60)?
+3. Does the position-gated firing pattern match expectations (E synapses on the leading edge
+   of the bar fire first, trailing-edge last)?
+4. How do EPSP and IPSP aggregate amplitudes scale with direction under scalar gabaMOD?
+
+## Compute and Budget
+
+Local CPU only. Estimated wall-clock: ~1 week including library development and reporting.
+Cost: $0.00.
+
+## Out of Scope
+
+* NMDA receptors (this is an AMPA-only minimal model by design).
+* Active dendritic conductances.
+* Synaptic noise (deterministic protocol; one event per synapse per trial).
+* Network-level inputs (no SAC network; inhibition is a phenomenological scalar gating).
+* Cross-comparison to t0053 (handled by a downstream task once both finish).
+
+## Verification Criteria
+
+* Library asset structure validates against `meta/asset_types/library/specification.md`.
+* All 12 directions produce a per-direction PNG plot in `results/images/` and are embedded in
+  `results_detailed.md`.
+* `results/metrics.json` contains primary DSI, vector-sum DSI, preferred direction, peak Hz,
+  null Hz at minimum.
+* Sanity check: in the null direction, IPSP aggregate should be approximately 3x the
+  preferred-direction IPSP aggregate (`gabaMOD(180)/gabaMOD(0) = 1.0/0.33`).
+
+</details>
 
 <details>
 <summary>⏹ 0045 — <strong>CoreNEURON Vast.ai RTX 4090 speedup benchmark</strong></summary>
