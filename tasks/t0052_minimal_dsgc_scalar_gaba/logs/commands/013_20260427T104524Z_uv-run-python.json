@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -c \nimport time\nimport numpy as np\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.run_tuning_curve import setup_sweep_artifacts\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.constants import TrialMode, AP_THRESHOLD_MV, V_INIT_MV\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.trial import run_one_trial\nartifacts = setup_sweep_artifacts()\nfrom neuron import h\nh.cvode.active(True)\n# Try increased gnabar on both soma and AIS to lower spike threshold.\nsoma = artifacts.cell.soma\nais = artifacts.cell.axon_initial_segment\n# Increase soma gnabar a little, and boost AIS substantially.\nsoma.gnabar_hh = 0.2\nais.gnabar_hh = 1.0\nais.gkbar_hh = 0.05  # lower K to make AIS more excitable\nprint(f'soma gnabar={soma(0.5).hh.gnabar} gkbar={soma(0.5).hh.gkbar}')\nprint(f'ais gnabar={ais(0.5).hh.gnabar} gkbar={ais(0.5).hh.gkbar}')\n\nv_rec = h.Vector()\nv_rec.record(soma(0.5)._ref_v)\nh.finitialize(V_INIT_MV)\nh.continuerun(50.0)\nv = np.array(list(v_rec))\nprint('quiescent v_final=', v[-1])\n\nt0 = time.time()\nres = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.AMPA_ONLY, angle_deg=0.0, trial_seed=1)\nelapsed = time.time() - t0\nprint(f'AMPA_ONLY t={elapsed:.2f}s n_spikes={len(res.spike_times_ms)} v_min={res.v_soma_mv.min():.2f} v_max={res.v_soma_mv.max():.2f}')\n\n# Try theta=180 (null direction for AMPA only)\nt0 = time.time()\nres2 = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.AMPA_ONLY, angle_deg=180.0, trial_seed=1)\nprint(f'AMPA_ONLY 180: t={time.time()-t0:.2f}s n_spikes={len(res2.spike_times_ms)} v_max={res2.v_soma_mv.max():.2f}')\n",
+  "exit_code": 0,
+  "duration_seconds": 7.868,
+  "started_at": "2026-04-27T10:45:24Z",
+  "completed_at": "2026-04-27T10:45:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "013_20260427T104524Z_uv-run-python.stdout.txt",
+  "stderr_file": "013_20260427T104524Z_uv-run-python.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}

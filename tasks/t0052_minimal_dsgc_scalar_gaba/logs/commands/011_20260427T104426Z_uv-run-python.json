@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -c \nimport time\nimport numpy as np\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.run_tuning_curve import setup_sweep_artifacts\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.constants import TrialMode, AP_THRESHOLD_MV\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.trial import run_one_trial\nartifacts = setup_sweep_artifacts()\nfrom neuron import h\n# Try using cvode (variable time-step) to speed up\nh.cvode.active(True)\nh.cvode.atol(1e-3)\nprint('cvode active=', h.cvode.active())\nt0 = time.time()\nres = run_one_trial(h=h, cell=artifacts.cell, pairs=artifacts.pairs, mode=TrialMode.AMPA_ONLY, angle_deg=0.0, trial_seed=1)\nelapsed = time.time() - t0\nprint(f'AMPA_ONLY trial time={elapsed:.2f}s n_spikes={len(res.spike_times_ms)} v_soma min={res.v_soma_mv.min():.2f} max={res.v_soma_mv.max():.2f}')\nv = res.v_soma_mv\n# Check time of v_max\ni_max = int(np.argmax(v))\nprint(f'v_max at sample {i_max} t={res.t_ms[i_max]:.2f} ms')\n# Print a window of 50 samples around v_max\nlo = max(0, i_max-25)\nhi = min(len(v), i_max+25)\nprint('v[i_max-25..i_max+25]:', list(map(lambda x: f'{x:.2f}', v[lo:hi])))\n",
+  "exit_code": 0,
+  "duration_seconds": 4.349,
+  "started_at": "2026-04-27T10:44:26Z",
+  "completed_at": "2026-04-27T10:44:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "011_20260427T104426Z_uv-run-python.stdout.txt",
+  "stderr_file": "011_20260427T104426Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

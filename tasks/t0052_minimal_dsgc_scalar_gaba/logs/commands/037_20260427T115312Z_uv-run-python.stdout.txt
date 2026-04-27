@@ -1,0 +1,6 @@
+[metrics] Loading per-mode tuning curves...
+[metrics] Computing peak somatic deflection per direction...
+[metrics] gabaMOD(0)=0.3300  gabaMOD(180)=0.9900  conductance_ratio=3.0000
+[metrics] Somatic IPSP deflection: PD=5.299000000000007 mV ND=8.159999999999997 mV voltage_ratio=1.5399131911681423 (driving-force saturation expected to shrink this below the conductance ratio).
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\results\metrics.json
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\results\derived_quantities.json

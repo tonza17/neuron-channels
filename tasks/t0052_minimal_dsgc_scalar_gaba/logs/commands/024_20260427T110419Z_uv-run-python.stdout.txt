@@ -1,0 +1,15 @@
+[setup] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[setup] cell built: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24
+[setup] Sampling 100 dendritic locations (seed=0)
+[setup] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\results\placement_seed0.json
+[setup] Building 100 co-located E+I pairs
+quiescent v_final=-65.167
+ampa_only 0: t=4.12s n_spikes=2 v_max=20.20
+ampa_only 180: t=2.45s n_spikes=1 v_max=20.45
+full 0: t=4.17s n_spikes=1 v_max=11.30
+full 30: t=7.72s n_spikes=1 v_max=10.95
+full 60: t=3.93s n_spikes=1 v_max=7.09
+full 90: t=4.61s n_spikes=1 v_max=1.12
+full 120: t=3.21s n_spikes=0 v_max=-55.53
+full 150: t=3.56s n_spikes=0 v_max=-56.97
+full 180: t=3.14s n_spikes=0 v_max=-57.60

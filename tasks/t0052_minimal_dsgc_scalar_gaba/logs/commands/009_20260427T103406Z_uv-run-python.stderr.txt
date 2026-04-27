@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_gaba_mod.py", line 20, in <module>
+    test_gaba_mod_pd()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_gaba_mod.py", line 11, in test_gaba_mod_pd
+    assert abs(value - GABAMOD_PD) < 1e-9, f"gaba_mod(0) = {value}, expected {GABAMOD_PD}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: gaba_mod(0) = 0.99, expected 0.33

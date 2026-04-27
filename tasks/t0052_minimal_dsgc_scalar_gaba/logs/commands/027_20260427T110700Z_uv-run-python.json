@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u -c \nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.cell import build_dsgc_from_swc\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.constants import V_INIT_MV, DT_MS\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.neuron_bootstrap import ensure_neuron_importable, load_stdrun, enable_cvode\nfrom tasks.t0052_minimal_dsgc_scalar_gaba.code.paths import MORPHOLOGY_SWC_PATH\nensure_neuron_importable()\nload_stdrun()\nfrom neuron import h\nimport numpy as np\ncell = build_dsgc_from_swc(swc_path=MORPHOLOGY_SWC_PATH)\nv_rec = h.Vector(); v_rec.record(cell.soma(0.5)._ref_v)\nt_rec = h.Vector(); t_rec.record(h._ref_t)\n# Try CVODE\nh.cvode.active(True)\nh.cvode.atol(1e-3)\nh.finitialize(V_INIT_MV)\nh.continuerun(500.0)\nv = np.array(list(v_rec))\nt = np.array(list(t_rec))\nprint(f'CVODE: V at t={t[-1]:.1f} = {v[-1]:.3f} mV, V at 100={v[np.searchsorted(t,100)]:.3f}, 200={v[np.searchsorted(t,200)]:.3f}, 500={v[-1]:.3f}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.946,
+  "started_at": "2026-04-27T11:07:00Z",
+  "completed_at": "2026-04-27T11:07:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "027_20260427T110700Z_uv-run-python.stdout.txt",
+  "stderr_file": "027_20260427T110700Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

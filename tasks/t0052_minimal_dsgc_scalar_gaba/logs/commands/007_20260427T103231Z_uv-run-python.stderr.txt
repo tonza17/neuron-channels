@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_quiescent_rest.py", line 95, in <module>
+    test_quiescent_rest()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_quiescent_rest.py", line 54, in test_quiescent_rest
+    h.continuerun(QUIESCENT_DURATION_MS)
+    ^^^^^^^^^^^^^
+AttributeError: 'hoc.HocObject' object has no attribute 'continuerun'. Did you mean: 'continue'?

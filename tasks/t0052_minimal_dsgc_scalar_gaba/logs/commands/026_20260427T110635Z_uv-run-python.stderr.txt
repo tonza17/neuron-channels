@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_quiescent_rest.py", line 100, in <module>
+    test_quiescent_rest()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\code\test_quiescent_rest.py", line 93, in test_quiescent_rest
+    assert delta_mv <= V_REST_TOLERANCE_MV, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: V_rest -63.7032 mV outside [-65.5, -64.5]

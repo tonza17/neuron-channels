@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0052_minimal_dsgc_scalar_gaba/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0052_minimal_dsgc_scalar_gaba\tasks\t0052_minimal_dsgc_scalar_gaba\logs\steps\003_init-folders

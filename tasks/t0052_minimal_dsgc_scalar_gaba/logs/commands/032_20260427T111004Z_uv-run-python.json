@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "command": "uv run python -u tasks/t0052_minimal_dsgc_scalar_gaba/code/test_quiescent_rest.py",
+  "exit_code": 0,
+  "duration_seconds": 10.37,
+  "started_at": "2026-04-27T11:10:04Z",
+  "completed_at": "2026-04-27T11:10:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0052_minimal_dsgc_scalar_gaba",
+  "stdout_file": "032_20260427T111004Z_uv-run-python.stdout.txt",
+  "stderr_file": "032_20260427T111004Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

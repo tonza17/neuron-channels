@@ -1,0 +1,140 @@
+{
+  "task_id": "t0052_minimal_dsgc_scalar_gaba",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0052_minimal_dsgc_scalar_gaba branch from main and write step_tracker.json.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:00:19Z",
+      "completed_at": "2026-04-27T10:04:30Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0009, t0011, t0012 are completed and produced the assets this task needs.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:04:50Z",
+      "completed_at": "2026-04-27T10:05:27Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure including assets/library/ for the expected library asset.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:05:42Z",
+      "completed_at": "2026-04-27T10:06:36Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: prior literature surveys (t0015-t0019, t0027) and the Poleg-Polsky/de Rosenroll/Park2014 references in the task description supply all the lit context this implementation needs.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: task is implementation-focused with explicit specification; no new external knowledge required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0009 calibrated morphology asset, t0011 visualisation library, t0012 tuning-curve scoring library, t0007 NEURON setup, and t0046 from-scratch DSGC build for reusable patterns.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:07:34Z",
+      "completed_at": "2026-04-27T10:16:47Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesize research-code findings into plan/plan.md with concrete code design for the minimal-DSGC library asset and 12-direction simulation harness.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:17:05Z",
+      "completed_at": "2026-04-27T10:25:10Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: task runs on local CPU only ($0 budget).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Build the minimal_dsgc_scalar_gaba library asset (cell builder, synapse placer, position-gated event drivers, scalar gabaMOD scaling, trial runner, recording helpers); run 12 directions x 10 trials and produce per-direction plots and metrics.",
+      "status": "completed",
+      "started_at": "2026-04-27T10:25:58Z",
+      "completed_at": "2026-04-27T11:59:03Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were used.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: task design is fully specified; no exploratory analysis needed at this stage.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed all 12 per-direction PNGs.",
+      "status": "completed",
+      "started_at": "2026-04-27T11:59:34Z",
+      "completed_at": "2026-04-27T12:03:09Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare the model's primary DSI, peak rate, and tuning-curve shape against Park 2014 in vivo band (DSI 0.40-0.60), Poleg-Polsky 2016 reproductions, and t0024 de Rosenroll port.",
+      "status": "completed",
+      "started_at": "2026-04-27T12:03:24Z",
+      "completed_at": "2026-04-27T12:09:05Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions covering parameter sweeps, comparison-task scaffolding for t0053 cross-comparison, and any biophysical refinements identified during implementation.",
+      "status": "completed",
+      "started_at": "2026-04-27T12:09:22Z",
+      "completed_at": "2026-04-27T12:14:07Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, set status=completed, push branch, open PR, run pre-merge verificator, merge.",
+      "status": "completed",
+      "started_at": "2026-04-27T12:14:21Z",
+      "completed_at": "2026-04-27T12:16:29Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}
