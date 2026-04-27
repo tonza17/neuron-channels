@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0009, t0011, t0012 are completed (same as t0052).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-27T12:40:16Z",
-      "completed_at": null,
+      "completed_at": "2026-04-27T12:40:47Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
