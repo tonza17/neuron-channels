@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0052 (sibling task to extend) for direct reuse; identify changes for NMDA addition and gNMDA sweep.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-27T21:19:33Z",
-      "completed_at": null,
+      "completed_at": "2026-04-27T21:27:45Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
