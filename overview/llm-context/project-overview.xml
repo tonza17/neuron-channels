@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-27T09:53:05Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-27T12:19:36Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>78696</char_count>
-    <byte_count>78824</byte_count>
-    <estimated_tokens>19674</estimated_tokens>
+    <char_count>79263</char_count>
+    <byte_count>79394</byte_count>
+    <estimated_tokens>19815</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -156,9 +156,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0049_seclamp_cond_remeasure</id>
         <id>t0050_audit_syn_distribution</id>
         <id>t0051_brainstorm_results_9</id>
+        <id>t0052_minimal_dsgc_scalar_gaba</id>
       </source_ids>
       <content>
-Completed tasks: 45
+Completed tasks: 46
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -429,6 +430,12 @@ ID: t0051_brainstorm_results_9
 Completed: 2026-04-25
 Short description: Ninth brainstorm: commission two from-scratch minimal-DSGC tasks (scalar vs spatial inhibition); cancel three t0022-substrate tasks; reprioritise six follow-up suggestions.
 Result summary: Results Summary: Brainstorm Session 9 Summary Ninth strategic brainstorm, run on 2026-04-25 after the t0046–t0050 reproduction wave. Produced a strategic pivot: step away from modifying the deposited Poleg-Polsky 2016 ModelDB 189347 code and from the t0022 channel-testbed lineage; build a from-scratch minimal DSGC on the project&#x27;s calibrated baseline morphology with two parallel inhibition mechanisms (scalar `gabaMOD` and spatial PD/ND-asymmetric); cancel three obsolete `intervention_blocked` tasks; reprioritise six follow-up suggestions whose urgency the new substrate dissolves. Session Overview Date: 2026-04-25. Triggered by the researcher reading the t0046–t0050 reproduction wave findings...
+
+## Minimal from-scratch DSGC with scalar gabaMOD inhibition
+ID: t0052_minimal_dsgc_scalar_gaba
+Completed: 2026-04-27
+Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, scalar gabaMOD inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+Result summary: Results Summary: Minimal From-Scratch DSGC with Scalar gabaMOD Inhibition Summary Built a from-scratch minimal DSGC on `dsgc-baseline-morphology-calibrated` with 100 E + 100 I co-located synapses, position-gated AMPA-only excitation, and scalar `gabaMOD`-scaled inhibition; ran the full 12-direction × 10-trial × 3-mode sweep (360 trials in 19 min 13 s on local CPU). The cell produces **primary DSI = 1.0** in FULL mode (null direction silent, all preferred-side directions fire 0.667 Hz = 1 spike/trial), **vector-sum DSI = 0.746**, and preferred direction = 0° as designed. The IPSP conductance ratio `gabaMOD(180)/gabaMOD(0) = 3.0` matches the spec exactly; the observed somatic IPSP voltage...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -438,11 +445,10 @@ Result summary: Results Summary: Brainstorm Session 9 Summary Ninth strategic br
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0052_minimal_dsgc_scalar_gaba</id>
         <id>t0053_minimal_dsgc_spatial_gaba</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -464,17 +470,10 @@ Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
 
-## Minimal from-scratch DSGC with scalar gabaMOD inhibition
-ID: t0052_minimal_dsgc_scalar_gaba
-Status: not_started
-Effective date: unknown
-Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, scalar gabaMOD inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library
-
 ## Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition
 ID: t0053_minimal_dsgc_spatial_gaba
 Status: not_started
-Effective date: unknown
+Effective date: 2026-04-27
 Short description: From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
 Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library
       </content>

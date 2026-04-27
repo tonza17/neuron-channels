@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(25)](../suggestions/by-category/cable-theory.md) | [Datasets
+(26)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,27 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (21 open, 4 closed)
+## Suggestions (22 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
+saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
+[t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
+
+The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
+substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
+E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
+= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
+{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
+design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
+gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
+Goal: produce a quantitative voltage-vs-conductance saturation curve that future
+scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
+suppression. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic

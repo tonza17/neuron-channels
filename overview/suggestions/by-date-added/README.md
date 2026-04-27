@@ -1,10 +1,171 @@
 # Suggestions by Date Added
 
-198 suggestion(s) grouped by derived added date.
+204 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
+
+## 2026-04-27 (6)
+
+## High Priority
+
+<details>
+<summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
+the 30-150x peak-rate gap</strong> (S-0052-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 target (30 Hz)
+and 30-150x below the in vivo / in vitro DSGC range (30-100 Hz, Park2014 / PolegPolsky2016).
+The current AMPA conductance is 0.5 nS x 100 synapses (AMPA-only by design) and the cell is
+locked in a single-spike-per-trial regime that makes DSI = 1.0 trivially. Sweep the
+per-synapse AMPA peak conductance over {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed synapse
+count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and report peak Hz,
+vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
+the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
+biologically informative. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
+PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0053 (not_started, dependencies = same morphology + library-asset substrate as t0052)
+implements spatial PD/ND-asymmetric SAC inhibition rather than scalar gabaMOD. Once t0053 is
+completed, run a comparison task that side-by-side analyses the two minimal DSGCs at matched
+100 E + 100 I synapse counts: peak Hz, primary and vector-sum DSI, HWHM, reliability, ND/PD
+IPSP voltage ratio, ND/PD IPSP conductance ratio (where applicable), per-direction soma V(t)
+overlays, and polar tuning overlays. Use the same placement seed (PLACEMENT_SEED = 0, recorded
+in tasks/t0052_minimal_dsgc_scalar_gaba/results/placement_seed0.json) so synapse placement is
+exactly matched. Goal: quantify the DS / firing-rate / IPSP-saturation differences
+attributable to the inhibition-mechanism choice (scalar mod vs spatial asymmetry) on an
+otherwise identical from-scratch substrate. Recommended task types: comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
+saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
+substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
+E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
+= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
+{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
+design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
+gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
+Goal: produce a quantitative voltage-vs-conductance saturation curve that future
+scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
+suppression. Recommended task types: experiment-run.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>🧪 <strong>Add NMDA component to t0052 minimal DSGC and measure DSI /
+peak-rate response</strong> (S-0052-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
+mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
+Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
+voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
+and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
+gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
+PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
+t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
+minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
+with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
+in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
+Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
+0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
+band is not attributable to Park2014 from the paper text. File a correction against the t0051
+brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
+(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
+across the project so downstream tasks do not inherit the wrong target. Recommended task
+types: correction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Driving-force-corrected gabaMOD: calibrate conductance ratio to
+target somatic-voltage IPSP modulation depth</strong> (S-0052-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0052 establishes that scalar gabaMOD models systematically over-promise somatic IPSP
+suppression: the nominal conductance ratio 3.0x (gabaMOD(180)/gabaMOD(0)) produces only a
+1.54x somatic IPSP voltage ratio under realistic 100-synapse crowding, because driving force
+(V - E_GABA) saturates locally. Define and document a corrected `gabaMOD_eff(theta)` whose
+conductance ratio is calibrated to produce the intended somatic-voltage IPSP modulation depth
+(e.g., 3.0x somatic IPSP requires ~5-7x conductance ratio under crowding). Add a small library
+helper that, given target voltage modulation depth and synapse count, returns the calibrated
+gabaMOD curve via a one-time calibration run on the placement, and recommends using that curve
+in downstream tasks (this would be applied via correction overlay or as a successor library
+asset). Goal: future scalar-gabaMOD reports do not silently confuse conductance modulation
+with voltage modulation. Recommended task types: write-library.
+
+</details>
 
 ## 2026-04-25 (18)
 

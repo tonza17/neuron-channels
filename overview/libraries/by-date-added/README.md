@@ -1,10 +1,63 @@
 # Libraries by Date Added
 
-7 librar(y/ies) grouped by creation date.
+8 librar(y/ies) grouped by creation date.
 
 [Back to all libraries](../README.md)
 
 ---
+
+## 2026-04-25 (1)
+
+<details>
+<summary>📦 <strong>Minimal DSGC with Scalar gabaMOD</strong>
+(<code>minimal_dsgc_scalar_gaba</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `minimal_dsgc_scalar_gaba` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0052_minimal_dsgc_scalar_gaba\code\constants.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\paths.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\swc_io.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\neuron_bootstrap.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\cell.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\placement.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\synapses.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\trial.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\run_tuning_curve.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\render_figures.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\compute_metrics.py`, `tasks\t0052_minimal_dsgc_scalar_gaba\code\metrics_extra.py` |
+| **Dependencies** | neuron, numpy, matplotlib, pandas, tqdm |
+| **Date created** | 2026-04-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Created by** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) |
+
+**Entry points:**
+
+* `build_dsgc_from_swc` (function) — Parse a calibrated SWC, collapse the soma into one
+  Section, build one h.Section per non-soma compartment, attach a synthetic axon initial
+  segment, and return a CellHandles dataclass.
+* `sample_dendritic_locations` (function) — Sample N dendritic locations uniformly along total
+  dendritic length using numpy.random.default_rng(seed).
+* `build_ei_pairs` (function) — Construct one AMPA + GABA Exp2Syn pair per Location, each
+  driven by a single-event NetStim+NetCon.
+* `schedule_ei_onsets` (function) — Per-trial scheduler: set NetStim.start times from the
+  bar-leading-edge crossing geometry and apply gabaMOD scaling to GABA NetCon weights.
+* `gaba_mod` (function) — Scalar gabaMOD multiplier: returns 0.33 at preferred direction
+  (theta=0) and 0.99 at null direction (theta=180).
+* `TrialMode` (class) — StrEnum with members FULL, AMPA_ONLY, GABA_ONLY for selecting which
+  synaptic drive is active.
+* `run_one_trial` (function) — Run one trial: schedule onsets, apply mode-specific weight
+  overrides, finitialize+continuerun, return TrialResult with V(t), spike times, and synapse
+  onset times.
+* `run_full_sweep` (function) — End-to-end 12 directions x 10 trials x 3 modes = 360-trial
+  sweep with dry-run validation gate; writes per-mode tuning-curve / spike-time /
+  voltage-trace CSVs and an activation-time CSV.
+* `compute_vector_sum_dsi` (function) — Vector-sum DSI from the per-angle mean firing rates:
+  |sum r_k * exp(i theta_k)| / sum r_k.
+* `compute_preferred_direction_deg` (function) — Preferred direction in degrees from the
+  complex sum of rate-weighted unit vectors.
+* `compute_metrics_main` (script) — Compute per-mode metrics (DSI, HWHM, reliability,
+  vector-sum DSI, preferred direction, IPSP ratio) and write metrics.json +
+  derived_quantities.json with a hard IPSP-ratio sanity check.
+* `render_figures_main` (script) — Render all per-direction figures (soma V, EPSP, IPSP, PSTH,
+  activation histograms) plus polar and Cartesian tuning curves.
+
+Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located
+E+I synapses, scalar gabaMOD inhibition, and a 12-direction moving-bar trial runner.
+
+</details>
 
 ## 2026-04-24 (1)
 

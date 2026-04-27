@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-25 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **21
-open** (4 high, 14 medium, 3 low), **4 closed**.
+26 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **22
+open** (5 high, 14 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -33,6 +33,32 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
+saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
+substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
+E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
+= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
+{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
+design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
+gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
+Goal: produce a quantitative voltage-vs-conductance saturation curve that future
+scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
+suppression. Recommended task types: experiment-run.
 
 </details>
 

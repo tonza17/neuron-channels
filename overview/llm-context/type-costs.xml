@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-27T09:53:05Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-27T12:19:36Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>3067</char_count>
-    <byte_count>3067</byte_count>
-    <estimated_tokens>766</estimated_tokens>
+    <char_count>3107</char_count>
+    <byte_count>3107</byte_count>
+    <estimated_tokens>776</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -75,6 +75,7 @@ Spent: 0.0%
 * t0049_seclamp_cond_remeasure: $0.00
 * t0050_audit_syn_distribution: $0.00
 * t0051_brainstorm_results_9: $0.00
+* t0052_minimal_dsgc_scalar_gaba: $0.00
       </content>
     </section>
   </sections>

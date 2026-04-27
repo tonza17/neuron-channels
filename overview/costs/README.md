@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($0.80) |
 | Stop threshold | 100% ($1.00) |
 | Default per-task limit | $1.00 USD |
-| Tasks with cost records | 45 |
+| Tasks with cost records | 46 |
 | Tasks with non-zero spend | 0 |
-| Skipped tasks | 8 |
+| Skipped tasks | 7 |
 
 ## Service Totals
 
@@ -31,7 +31,7 @@ No entries found.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-45 task cost record(s) are zero-cost and omitted from the main spend table.
+46 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -47,5 +47,4 @@ No task cost records found.
 | `t0043_nav16_kv3_nmda_restoration_t0022` | results/costs.json is missing or invalid |
 | `t0044_schachter_retest_on_t0043` | results/costs.json is missing or invalid |
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
-| `t0052_minimal_dsgc_scalar_gaba` | results/costs.json is missing or invalid |
 | `t0053_minimal_dsgc_spatial_gaba` | results/costs.json is missing or invalid |

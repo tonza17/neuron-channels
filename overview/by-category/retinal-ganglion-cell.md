@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(48)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(51)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (6)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -1928,7 +1928,65 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (43 open, 5 closed)
+## Suggestions (46 open, 5 closed)
+
+<details>
+<summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
+the 30-150x peak-rate gap</strong> (S-0052-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
+[t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
+
+t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 target (30 Hz)
+and 30-150x below the in vivo / in vitro DSGC range (30-100 Hz, Park2014 / PolegPolsky2016).
+The current AMPA conductance is 0.5 nS x 100 synapses (AMPA-only by design) and the cell is
+locked in a single-spike-per-trial regime that makes DSI = 1.0 trivially. Sweep the
+per-synapse AMPA peak conductance over {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed synapse
+count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and report peak Hz,
+vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
+the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
+biologically informative. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
+PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
+[t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
+
+t0053 (not_started, dependencies = same morphology + library-asset substrate as t0052)
+implements spatial PD/ND-asymmetric SAC inhibition rather than scalar gabaMOD. Once t0053 is
+completed, run a comparison task that side-by-side analyses the two minimal DSGCs at matched
+100 E + 100 I synapse counts: peak Hz, primary and vector-sum DSI, HWHM, reliability, ND/PD
+IPSP voltage ratio, ND/PD IPSP conductance ratio (where applicable), per-direction soma V(t)
+overlays, and polar tuning overlays. Use the same placement seed (PLACEMENT_SEED = 0, recorded
+in tasks/t0052_minimal_dsgc_scalar_gaba/results/placement_seed0.json) so synapse placement is
+exactly matched. Goal: quantify the DS / firing-rate / IPSP-saturation differences
+attributable to the inhibition-mechanism choice (scalar mod vs spatial asymmetry) on an
+otherwise identical from-scratch substrate. Recommended task types: comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
+with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
+[t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
+
+The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
+in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
+Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
+0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
+band is not attributable to Park2014 from the paper text. File a correction against the t0051
+brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
+(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
+across the project so downstream tasks do not inherit the wrong target. Recommended task
+types: correction.
+
+</details>
 
 <details>
 <summary>📚 <strong>Package per-synapse conductance recorder and qualitative-shape
