@@ -59,10 +59,10 @@
       "step": 7,
       "name": "planning",
       "description": "Synthesize research-code into plan/plan.md; design NMDA addition, gNMDA sweep harness, and the new sweep-summary plots.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-27T21:28:01Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\007_planning/"
     },
     {
       "step": 8,
