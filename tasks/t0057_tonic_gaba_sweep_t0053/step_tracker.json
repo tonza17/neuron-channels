@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json (multi-variant, one variant per GABA_BASE_NS), costs.json, remote_machines_used.json; embed cross-conductance summary plots and selected per-direction representatives.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T17:45:00Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T17:49:15Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
