@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0054 code structure (synapses.py, run_tuning_curve.py, neuron_bootstrap.py) and t0046's bipolarNMDA.mod to design the NMDA_MgBlock MOD.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-28T10:54:34Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
