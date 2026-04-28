@@ -2164,7 +2164,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (51 open, 9 closed)
+## Suggestions (50 open, 10 closed)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -2307,26 +2307,6 @@ with voltage modulation. Recommended task types: write-library.
 </details>
 
 <details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
 halve active-fraction on t0053</strong> (S-0053-02)</summary>
 
@@ -2430,7 +2410,7 @@ driver. Recommended task types: write-library.
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
 DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0048_voff_nmda1_dsi_test](../../tasks/t0048_voff_nmda1_dsi_test/)
 
 t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
@@ -2696,7 +2676,7 @@ Recommended task types: write-library, experiment-run.
 <summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
 stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
@@ -2820,7 +2800,7 @@ length/diameter) and S-0029-01 (length axis). Recommended task types: experiment
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
 surface</strong> (S-0022-03)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 The t0022 driver has three free per-dendrite parameters fixed at single points:
@@ -2897,7 +2877,7 @@ cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce
 <summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
 from depolarisation effects</strong> (S-0026-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
 
 The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
@@ -2944,7 +2924,7 @@ budget 4-6 hours for full P3.
 <summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
 and verify numerical priors</strong> (S-0018-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
 
 Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador

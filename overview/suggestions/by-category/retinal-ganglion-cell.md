@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 55 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **50 open** (18
-high, 24 medium, 8 low), **5 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **49 open** (14
+high, 27 medium, 8 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -158,32 +158,6 @@ orders, mean segment length, mean segment diameter) on an orthogonal grid, recor
 per point, and test whether segment diameter has the largest effect (as cable theory
 predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
 currently lacks. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0053-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 
@@ -353,81 +327,6 @@ baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smo
 to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
 correction, replacing the synthetic fixture outputs. Recommended task types:
 feature-engineering, code-reproduction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
-verify numerical claims</strong> (S-0017-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0017-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
-| **Source paper** | — |
-| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
-2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are
-documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs
-through Sheffield institutional access, update each paper asset's download_status to
-'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the
-numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
-Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
-OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
-and verify numerical priors</strong> (S-0018-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0018-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
-| **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
-2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
-intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
-Sheffield institutional access, update each paper asset's download_status to 'success',
-replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
-priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
-ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
-lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
-0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
-targets.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
-access and verify numerical priors</strong> (S-0019-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0019-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
-Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
-intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
-Sheffield institutional access, update each paper asset's download_status to 'success',
-replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
-priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
--45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
-Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
-before adopting them as tight compartmental-model fitting targets.
 
 </details>
 
@@ -1011,6 +910,81 @@ download-dataset, data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
+verify numerical claims</strong> (S-0017-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0017-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
+2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are
+documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs
+through Sheffield institutional access, update each paper asset's download_status to
+'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the
+numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
+Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
+OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
+and verify numerical priors</strong> (S-0018-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
+2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
+ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
+lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
+0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
+targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
+access and verify numerical priors</strong> (S-0019-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
+Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
+-45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
+Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
+before adopting them as tight compartmental-model fitting targets.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Single-compartment collapse of t0024 to test whether T4-style
 geometry-nullity extends to DSGCs</strong> (S-0027-05)</summary>
 
@@ -1306,6 +1280,34 @@ read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC r
 then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
 correct paper_id slug. This unblocks correct citation of the morphology in every downstream
 paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>GABA peak-conductance sweep on t0053 spatial DSGC to recover a
+non-zero FULL tuning curve</s> — covered by <a
+href="../../../tasks/t0057_tonic_gaba_sweep_t0053/"><code>t0057_tonic_gaba_sweep_t0053</code></a>
+(S-0053-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
+(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
+AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
+crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
+(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
+{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
+conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
+vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
+spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
+to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 

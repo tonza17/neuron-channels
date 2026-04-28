@@ -1,6 +1,6 @@
 # Project Tasks
 
-55 tasks. ⏳ **1 in_progress**, ⏹ **2 not_started**, ⚠️ **1 intervention_blocked**, ✅ **48
+57 tasks. ⏳ **1 in_progress**, ⏹ **3 not_started**, ⚠️ **1 intervention_blocked**, ✅ **49
 completed**, ❌ **3 cancelled**.
 
 **Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
@@ -25,8 +25,10 @@ graph LR
     t0033_plan_dsgc_morphology_channel_optimisation["✅ t0033_plan_dsgc_morphology_channel_optimisation"]
     t0045_coreneuron_vastai_speedup_benchmark["⏹ t0045_coreneuron_vastai_speedup_benchmark"]
     t0046_reproduce_poleg_polsky_2016_exact["✅ t0046_reproduce_poleg_polsky_2016_exact"]
+    t0053_minimal_dsgc_spatial_gaba["✅ t0053_minimal_dsgc_spatial_gaba"]
     t0054_minimal_dsgc_ampa_nmda_scalar_gaba["✅ t0054_minimal_dsgc_ampa_nmda_scalar_gaba"]
     t0055_nmda_mg_block_dsi_recovery["⏳ t0055_nmda_mg_block_dsi_recovery"]
+    t0057_tonic_gaba_sweep_t0053["⏹ t0057_tonic_gaba_sweep_t0053"]
 
     t0009_calibrate_dendritic_diameters --> t0008_port_modeldb_189347
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
@@ -40,6 +42,9 @@ graph LR
     t0022_modify_dsgc_channel_testbed --> t0045_coreneuron_vastai_speedup_benchmark
     t0033_plan_dsgc_morphology_channel_optimisation --> t0045_coreneuron_vastai_speedup_benchmark
     t0008_port_modeldb_189347 --> t0046_reproduce_poleg_polsky_2016_exact
+    t0009_calibrate_dendritic_diameters --> t0053_minimal_dsgc_spatial_gaba
+    t0011_response_visualization_library --> t0053_minimal_dsgc_spatial_gaba
+    t0012_tuning_curve_scoring_loss_library --> t0053_minimal_dsgc_spatial_gaba
     t0009_calibrate_dendritic_diameters --> t0054_minimal_dsgc_ampa_nmda_scalar_gaba
     t0011_response_visualization_library --> t0054_minimal_dsgc_ampa_nmda_scalar_gaba
     t0012_tuning_curve_scoring_loss_library --> t0054_minimal_dsgc_ampa_nmda_scalar_gaba
@@ -48,6 +53,10 @@ graph LR
     t0012_tuning_curve_scoring_loss_library --> t0055_nmda_mg_block_dsi_recovery
     t0046_reproduce_poleg_polsky_2016_exact --> t0055_nmda_mg_block_dsi_recovery
     t0054_minimal_dsgc_ampa_nmda_scalar_gaba --> t0055_nmda_mg_block_dsi_recovery
+    t0009_calibrate_dendritic_diameters --> t0057_tonic_gaba_sweep_t0053
+    t0011_response_visualization_library --> t0057_tonic_gaba_sweep_t0053
+    t0012_tuning_curve_scoring_loss_library --> t0057_tonic_gaba_sweep_t0053
+    t0053_minimal_dsgc_spatial_gaba --> t0057_tonic_gaba_sweep_t0053
 ```
 
 ---
@@ -300,6 +309,195 @@ parallelisation task (S-0054-06 covers exactly this).
 </details>
 
 ## ⏹ Not Started
+
+<details>
+<summary>⏹ 0057 — <strong>Tonic GABA + amplitude sweep on t0053 spatial
+DSGC</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0057_tonic_gaba_sweep_t0053` |
+| **Status** | not_started |
+| **Effective date** | 2026-04-28 |
+| **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0053_minimal_dsgc_spatial_gaba`](../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Expected assets** | 1 library |
+| **Source suggestion** | `S-0053-01` |
+| **Task types** | [`build-model`](../../meta/task_types/build-model/), [`experiment-run`](../../meta/task_types/experiment-run/) |
+| **Task page** | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Task folder** | [`t0057_tonic_gaba_sweep_t0053/`](../../tasks/t0057_tonic_gaba_sweep_t0053/) |
+
+# Tonic GABA + Amplitude Sweep on t0053 Spatial DSGC
+
+## Source
+
+Approved in brainstorm session 10 (t0056) and covers suggestion **S-0053-01** (GABA
+conductance sweep on t0053 spatial DSGC to recover a non-zero FULL tuning curve).
+
+## Motivation
+
+t0053 reported a degenerate FULL-mode tuning curve of 0 Hz across all 12 directions because 2
+nS GABA on roughly half of 100 synapses (100 nS mean total per trial) fully suppressed spiking
+on the t0009-calibrated morphology. While reviewing t0053's traces, the researcher noticed a
+second, more fundamental issue: GABA conductance is only present in a narrow ~100-200 ms
+window per trial because each spatial-gating GABA synapse fires exactly once at the
+bar-arrival time (`t_onset = (x*cos(theta) + y*sin(theta)) / velocity + 100 ms`) and the
+Exp2Syn decay is only `tau2 = 20 ms`. With a 1500 ms trial, this leaves the cell uninhibited
+for the remaining ~1100 ms — biologically wrong (real SAC→DSGC IPSCs envelope over 100-300 ms
+via multiple GABA release events) and the likely root cause of the t0053 amplitude-calibration
+sensitivity.
+
+This task fixes the timing problem with a **tonic GABA conductance gated by stimulus window**
+(brainstorm-10 Option C: simplest "always-on during stimulus" model) and then sweeps the
+per-synapse peak conductance to find the operating point that produces a non-zero FULL-mode
+tuning curve while preserving direction selectivity.
+
+## Objective
+
+Build a new GABA mechanism (`gaba_tonic.mod`) that delivers a sustained conductance over a
+configurable `(t_on, t_off)` window per synapse, integrate it into the t0053 minimal DSGC code
+as a drop-in replacement for the current Exp2Syn GABA mechanism, sweep per-synapse peak
+conductance across five values, and report the directional response.
+
+## Model Specification
+
+### Morphology
+
+* Asset: `dsgc-baseline-morphology-calibrated` (the t0009 Strahler-calibrated 141009_Pair1DSGC
+  reconstruction). Identical to t0053.
+
+### Sections and Channels
+
+* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism.
+* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1
+  uF/cm^2`.
+* V_rest: -65 mV.
+* Identical to t0053.
+
+### Synapses
+
+* 100 E + 100 I synapses, **co-located in pairs**, uniform random over dendrites with the same
+  fixed seed (0) as t0052 / t0053. Identical placement so the placement_seed0 fixture from
+  t0053 applies bit-for-bit.
+
+### Excitatory mechanism (identical to t0053)
+
+* `Exp2Syn`: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV, peak 0.5 nS.
+* Position-gated firing: each E synapse fires once when bar leading edge crosses it;
+  direction-independent waveform.
+
+### Inhibitory mechanism (NEW — tonic gated by stimulus window)
+
+* New point process: **`gaba_tonic.mod`** with parameters `(g, e, t_on, t_off)`:
+  * Sustained conductance `g` (in microsiemens) between simulation times `t_on` and `t_off`.
+  * Zero conductance outside that window.
+  * Reversal `e = -75 mV` (matches `GABA_E_MV` from t0053).
+  * Rise / fall envelope at the window edges: piecewise constant is acceptable, but a 1-2 ms
+    cosine ramp to avoid step-function artefacts in the integrator is preferred.
+* Per-synapse instance: each pair gets one `gaba_tonic` mechanism.
+* **Spatial gating preserved from t0053**: gated synapses are those whose
+  `cos(radians(theta_stim - theta_centrifugal_synapse)) < 0`. For each direction:
+  * Active synapses: `g = GABA_BASE_NS` (the swept value), `t_on = 100 ms`, `t_off = 1400 ms`.
+  * Silent synapses: `g = 0`.
+* The `(t_on, t_off) = (100 ms, 1400 ms)` window matches the trial duration minus the 100 ms
+  BASE_OFFSET buffer; effectively the GABA conductance is on throughout the entire stimulus
+  presentation interval for the active half of the synapse population.
+
+### Stimulus protocol
+
+* Identical to t0053: 12 directions, 10 trials each, bar 200 um x full arena, 1000 um/s, T =
+  1500 ms, dt = 0.025 ms.
+
+## Sweep
+
+* `GABA_BASE_NS in {0.25, 0.5, 1.0, 1.5, 2.0}` nS — five conductance values.
+* Total: 12 directions x 10 trials x 3 modes (FULL / AMPA_ONLY / GABA_ONLY) x 5 conductances =
+  1800 trials.
+* Estimated wall-clock: ~25-30 min on local CPU per the t0052 / t0053 wall-clock data (19m 13s
+  for 360 trials / 17m 11s for 360 trials respectively).
+
+## Outputs
+
+For each conductance value in the sweep:
+
+1. Soma V(t) per direction (12 PNGs).
+2. Aggregate EPSP at soma per direction (12 PNGs).
+3. Aggregate IPSP at soma per direction (12 PNGs) — the new headline observable; should now
+   span the full trial window 100-1400 ms instead of collapsing at ~200 ms.
+4. Firing-rate PSTH per direction (12 PNGs).
+5. Polar tuning curve (peak Hz, primary DSI, vector-sum DSI, preferred direction).
+6. Per-synapse activation-time histogram per direction (still informative — synapse onset
+   times match t0053 even though the conductance envelope differs).
+7. Polar plot of "fraction of I synapses active vs direction" (carried over from t0053; should
+   match t0053's 0.34-0.66 modulation since the spatial gating rule is unchanged).
+
+Cross-conductance summary plots:
+
+* DSI (primary) vs `GABA_BASE_NS` — single curve.
+* DSI (vector-sum) vs `GABA_BASE_NS` — single curve.
+* Peak Hz vs `GABA_BASE_NS` — preferred-direction firing rate as a function of inhibition
+  mass.
+* Null Hz vs `GABA_BASE_NS` — null-direction firing rate as a function of inhibition mass.
+* HWHM vs `GABA_BASE_NS` — tuning sharpness as a function of inhibition mass.
+* RMSE vs t0004 target curve at each `GABA_BASE_NS` — distance from project target tuning
+  curve.
+
+## Library Asset
+
+Produce one library asset: **`minimal_dsgc_tonic_gaba_sweep`** (or similar slug). Same
+component structure as `minimal_dsgc_spatial_gaba` except the inhibition driver uses the new
+`gaba_tonic` point process instead of Exp2Syn. The library should expose `GABA_BASE_NS` as a
+public parameter so the sweep harness can vary it without re-importing.
+
+## Key Questions
+
+1. Does the tonic-GABA mechanism produce a non-zero FULL-mode tuning curve at any of the swept
+   conductance values? If so, at which value(s)?
+2. How does direction selectivity (primary DSI, vector-sum DSI) scale with `GABA_BASE_NS`?
+   Specifically, is there a window of conductances where DSI is both non-trivial (not 1.0
+   single-spike-degenerate, not 0.0 fully-suppressed) and biologically plausible?
+3. Does the IPSP somatic voltage envelope now span the full stimulus window (100-1400 ms) as
+   intended, or does driving-force saturation still cause the IPSP voltage to collapse early?
+4. At the conductance value matching t0053's 2 nS, does the tonic mechanism produce any
+   spiking (vs t0053's 0 Hz across all directions), and if so what DSI does it report? This is
+   the direct head-to-head against t0053.
+5. How does the cross-conductance peak Hz vs target tuning curve compare? Does any single
+   `GABA_BASE_NS` value land within an order of magnitude of the t0004 target peak (32 Hz)?
+
+## Compute and Budget
+
+Local CPU only. Estimated wall-clock: ~25-30 min for the simulation sweep, plus implementation
+and verification time. Cost: $0.00.
+
+## Out of Scope
+
+* NMDA receptors (AMPA-only minimal model by design, matching t0053).
+* Active dendritic conductances (passive dendrites by design).
+* Synaptic noise (deterministic NetStim trials).
+* Propagation of the tonic-GABA mechanism back to t0052 (scalar gabaMOD) — deferred to a
+  future brainstorm if t0057 results justify it.
+* Network-level inputs.
+
+## Verification Criteria
+
+* Library asset validates against `meta/asset_types/library/specification.md`.
+* All 12 directions x 5 conductances produce per-direction PNG plots in `results/images/` and
+  selected representatives are embedded in `results_detailed.md`.
+* Cross-conductance summary plots (DSI / Peak Hz / Null Hz / HWHM / RMSE vs `GABA_BASE_NS`)
+  exist and are embedded in `results_detailed.md`.
+* `results/metrics.json` contains, for each `GABA_BASE_NS` value: primary DSI, vector-sum DSI,
+  preferred direction, peak Hz, null Hz, HWHM, RMSE vs t0004 target.
+* IPSP voltage trace at the tonic window matches the tonic-GABA design (sustained over
+  100-1400 ms, modulo driving-force saturation effects); regression test asserts the IPSP
+  voltage at t = 1300 ms is at least 50% of the IPSP voltage at t = 200 ms in the most-active
+  direction.
+* Same fixed placement seed (0) as t0052 / t0053; placement_seed0_match test passes
+  bit-for-bit against t0053's placement_seed0.json.
+* AMPA_ONLY mode produces the same 0.667 Hz uniform peak rate as t0052 / t0053 (regression
+  gate on the unchanged AMPA path).
+* `verify_research_code.py`, `verify_plan.py`, `verify_task_metrics.py`, and the library asset
+  verificator all pass with 0 errors.
+
+</details>
 
 <details>
 <summary>⏹ 0045 — <strong>CoreNEURON Vast.ai RTX 4090 speedup benchmark</strong></summary>
@@ -612,6 +810,113 @@ follow-up tasks and must not be performed here.
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0056 — <strong>Brainstorm results session 10</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0056_brainstorm_results_10` |
+| **Status** | completed |
+| **Effective date** | 2026-04-28 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-28T12:00:00Z |
+| **End time** | 2026-04-28T13:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 10](../../overview/tasks/task_pages/t0056_brainstorm_results_10.md) |
+| **Task folder** | [`t0056_brainstorm_results_10/`](../../tasks/t0056_brainstorm_results_10/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0056_brainstorm_results_10/results/results_detailed.md) |
+
+# Brainstorm Session 10: Tonic GABA Window Fix on t0053
+
+Tenth brainstorming session. Run on 2026-04-28 after the from-scratch minimal DSGC wave
+(t0052, t0053, t0054) completed and t0055 (Mg-block NMDA recovery test) started. The session
+is triggered by a researcher observation while reviewing t0053's traces: GABA conductance is
+only present in a narrow ~100-200 ms window per trial because each spatial-gating GABA synapse
+fires exactly once at the bar-arrival time and the Exp2Syn decay is only `tau2 = 20 ms`. With
+a 1500 ms trial duration, this leaves the cell uninhibited for the remaining ~1100 ms —
+biologically wrong (real SAC→DSGC IPSCs envelope over 100-300 ms via multiple release events)
+and a likely contributor to the amplitude-calibration sensitivity that produced t0053's
+degenerate flat-zero FULL tuning.
+
+## Decision
+
+* **Create t0057** — `tonic_gaba_sweep_t0053`. Replace t0053's per-event Exp2Syn GABA
+  mechanism with a new `gaba_tonic.mod` point process that delivers a sustained conductance
+  over a configurable `(t_on, t_off)` window. Default window: `t_on = 100 ms`, `t_off = 1400
+  ms` (full trial minus 100 ms BASE_OFFSET buffer). Preserve t0053's spatial
+  centripetal-gating rule (`cos(theta_stim - theta_centrifugal) < 0` selects active synapses);
+  replace amplitude. Sweep `GABA_BASE_NS in {0.25, 0.5, 1.0, 1.5, 2.0}` nS to locate the
+  operating point that produces a non-zero FULL-mode tuning curve. Source suggestion:
+  S-0053-01 (covered).
+
+## Suggestion Cleanup
+
+* **Reject four high-priority suggestions** as covered or superseded by completed work:
+  S-0015-04 (covered by t0052), S-0016-03 (covered by t0054 + t0055), S-0017-03 (AIS+NMDA done
+  in t0052/t0054 and voltage-clamp block in t0049), S-0018-03 (AMPA+NMDA+GABA done in
+  t0053+t0054, temporal co-tuning piece deferred to a future fresh suggestion).
+
+* **Reprioritise nineteen high-priority suggestions to medium**:
+
+  * t0022 testbed lineage (de-emphasised by brainstorm 9 pivot): S-0022-01, S-0022-02,
+    S-0022-03.
+  * t0024 testbed follow-ups: S-0026-02, S-0026-06, S-0034-01, S-0034-02, S-0034-07,
+    S-0035-02, S-0039-01.
+  * t0033 optimiser prerequisites (deferred until from-scratch substrate is mature):
+    S-0033-02, S-0033-03, S-0033-06.
+  * Sheffield paywalled-paper retrievals (already bundled into not-started t0031): S-0015-01,
+    S-0016-01, S-0017-01, S-0018-01, S-0019-01.
+  * Retired deposited-DSGC line: S-0048-01.
+
+## Tasks Cancelled or Updated
+
+None.
+
+## Assets Produced
+
+No assets in this brainstorm task. The new task t0057 will produce a library asset (the new
+`gaba_tonic.mod` mechanism wrapped in a Python builder) and an experiment-results bundle when
+executed.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 10**
+>
+> **Summary**
+>
+> Tenth strategic brainstorm, run on 2026-04-28 after the from-scratch minimal DSGC wave
+> (t0052,
+> t0053, t0054) completed and t0055 (Mg-block NMDA recovery test) started. Triggered by a
+> researcher
+> observation that t0053's GABA conductance is only present in a narrow ~100-200 ms window per
+> trial
+> because each spatial-gating GABA synapse fires exactly once at the bar-arrival time and the
+> Exp2Syn
+> decay is only `tau2 = 20 ms`. Decision: commission a single new task (t0057) that replaces
+> the
+> per-event Exp2Syn GABA mechanism with a tonic conductance gated by stimulus window and
+> sweeps the
+> per-synapse peak conductance to recover non-zero FULL-mode tuning curves; reject four
+> covered
+> high-priority suggestions; reprioritise nineteen high-priority suggestions to medium where
+> the
+> brainstorm-9 pivot or recent results have de-urgented them.
+>
+> **Session Overview**
+>
+> Date: 2026-04-28. Triggered by the researcher reading t0053's traces and noticing that GABA
+> inhibition collapses ~200 ms into the trial, leaving the cell uninhibited for the remaining
+> ~1100
+> ms. The session opened with an independent priority reassessment of the 50 high-priority
+> active
+> suggestions in light of the t0052-t0054 findings (t0052's perfect-but-trivial single-spike
+> DSI;
+
+</details>
 
 <details>
 <summary>✅ 0054 — <strong>Minimal DSGC with AMPA + NMDA excitation and scalar

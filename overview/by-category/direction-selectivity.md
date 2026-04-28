@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (127 open, 18 closed)
+## Suggestions (126 open, 19 closed)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -2439,26 +2439,6 @@ types: correction.
 </details>
 
 <details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
 halve active-fraction on t0053</strong> (S-0053-02)</summary>
 
@@ -2564,7 +2544,7 @@ on disk) without re-simulating. Recommended task types: write-library, experimen
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
 DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-25 | **Source**:
 [t0048_voff_nmda1_dsi_test](../../tasks/t0048_voff_nmda1_dsi_test/)
 
 t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
@@ -2784,7 +2764,7 @@ t0022 closer to the canonical DSGC E-I motif rather than relying on a single nul
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
 testbed comparison</strong> (S-0039-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
 t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
@@ -2901,7 +2881,7 @@ brainstorming, correction.
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
 cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
@@ -2922,7 +2902,7 @@ resolve the effect). Recommended task types: experiment-run.
 <summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
 stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
@@ -3024,7 +3004,7 @@ compare-literature.md as a concrete limitation. Recommended task types: experime
 substrate (not vector-sum) and drop monotonic-length priors</strong>
 (S-0034-07)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
@@ -3044,7 +3024,7 @@ task types: comparative-analysis, answer-question.
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
 Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
@@ -3420,7 +3400,7 @@ option. Recommended task types: write-library, answer-question.
 <summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
 t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
 
 The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
@@ -3440,7 +3420,7 @@ write-library.
 <summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
 training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
 
 The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
@@ -3499,7 +3479,7 @@ model before the 25-dim run. Recommended task types: experiment-run, comparative
 <summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
 separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
 
 The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
@@ -3518,7 +3498,7 @@ single evaluator. Recommended task types: write-library, feature-engineering.
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
 testbed</strong> (S-0022-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
@@ -3536,7 +3516,7 @@ Recommended task type: experiment-run.
 <summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
 peak-rate gap</strong> (S-0022-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
@@ -3555,7 +3535,7 @@ comparative-analysis.
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
 surface</strong> (S-0022-03)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 The t0022 driver has three free per-dendrite parameters fixed at single points:
@@ -3668,7 +3648,7 @@ REQ-6 partial-coverage caveat.
 <summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
 from depolarisation effects</strong> (S-0026-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
 
 The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
@@ -3713,7 +3693,7 @@ is a universal signature or specific to starburst-driven models.
 <summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
 isolate biophysical mechanism</strong> (S-0026-06)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
 
 Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while

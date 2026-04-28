@@ -2348,7 +2348,7 @@ investigating.
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
 testbed comparison</strong> (S-0039-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
 t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
@@ -2384,7 +2384,7 @@ Recommended task types: write-library, experiment-run.
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
 cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
@@ -2446,7 +2446,7 @@ should be explored. Recommended task types: experiment-run.
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
 Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
@@ -2718,7 +2718,7 @@ experiment-run, feature-engineering.
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
 surface</strong> (S-0022-03)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 The t0022 driver has three free per-dendrite parameters fixed at single points:
@@ -2807,7 +2807,7 @@ review, Stuart & Spruston 2015 review) to close the gap.
 <summary>🧪 <strong>Retrieve paywalled dendritic-computation PDFs via Sheffield
 access and verify numerical claims</strong> (S-0016-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0016_literature_survey_dendritic_computation](../../tasks/t0016_literature_survey_dendritic_computation/)
 
 Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999,

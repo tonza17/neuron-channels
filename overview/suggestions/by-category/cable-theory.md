@@ -1,40 +1,13 @@
 # Suggestions: `cable-theory`
 
 28 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **24
-open** (5 high, 16 medium, 3 low), **4 closed**.
+open** (2 high, 19 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
-cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
-vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
-fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
-electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
-(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
-alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
-length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
-1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
-and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
-from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
-resolve the effect). Recommended task types: experiment-run.
-
-</details>
 
 <details>
 <summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
@@ -87,54 +60,34 @@ against Schachter's tree. Recommended task types: feature-engineering, experimen
 
 </details>
 
-<details>
-<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
-testbed comparison</strong> (S-0039-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0039-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
-Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
-AR(2) stochastic release) at its equivalent operational GABA level to test whether the
-Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
-t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
-testbed-level discrimination between the two mechanisms the project has produced. If both show
-passive_filtering, that rules out Schachter2010 across the substrates the project has
-available.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
-verify numerical claims</strong> (S-0015-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0015-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/) |
-
-Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski
-1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but
-were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
-paper asset's download_status to 'success', replace summary Overview disclaimers with
-PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
-length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
-papers.
-
-</details>
-
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Add a path-distance helper to t0046's modeldb_189347_dsgc_exact
@@ -449,6 +402,53 @@ a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validat
 t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
 falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
+verify numerical claims</strong> (S-0015-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0015-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/) |
+
+Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski
+1996, Taylor 2000, Dhingra-Smith 2004) are documented in intervention/paywalled_papers.md but
+were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
+paper asset's download_status to 'success', replace summary Overview disclaimers with
+PDF-verified content, and cross-check the numerical claims in the synthesis (electrotonic
+length L ≈ 0.5-0.8, contrast thresholds 1.5% / 3.8%, ~60% gray-level loss) against the actual
+papers.
 
 </details>
 

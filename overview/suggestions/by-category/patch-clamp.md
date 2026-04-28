@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
 14 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **12
-open** (5 high, 6 medium, 1 low), **2 closed**.
+open** (2 high, 9 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -38,55 +38,6 @@ target DSGC subtype.
 </details>
 
 <details>
-<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
-testbed</strong> (S-0022-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
-proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
-gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
-dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
-should drop excitability and test whether DSI survives reduced spike-initiation margin.
-Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
-intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
-Recommended task type: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
-peak-rate gap</strong> (S-0022-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
-(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
-the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
-Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
-Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
-distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
-inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
-Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
 <summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
 targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
 
@@ -109,30 +60,6 @@ over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=1
 intervals. This turns a single spike-output check into a multi-level subthreshold validation
 that exercises the cell's passive and NMDA-block biophysics independently of spike
 thresholding. Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
-verify numerical claims</strong> (S-0017-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0017-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
-| **Source paper** | — |
-| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
-2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are
-documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs
-through Sheffield institutional access, update each paper asset's download_status to
-'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the
-numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
-Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
-OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
 
 </details>
 
@@ -212,6 +139,55 @@ Recommended task type: experiment-run, comparative-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
+peak-rate gap</strong> (S-0022-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
+(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
+the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
+Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
+Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
+distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
+inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
+Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Repeat SEClamp Fig 3A-E re-measurement at exptype=2
 (Voff_bipNMDA=1) for canonical-control baseline</strong> (S-0049-03)</summary>
 
@@ -256,6 +232,30 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
+verify numerical claims</strong> (S-0017-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0017-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
+2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) are
+documented in intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs
+through Sheffield institutional access, update each paper asset's download_status to
+'success', replace summary Overview disclaimers with PDF-verified content, and cross-check the
+numerical claims in the synthesis (~80% signal loss on thin distal dendrites, 7x AIS-to-soma
+Na+ density ratio, AMPA/NMDA charge ratios during preferred and null motion, proportion of
+OFF-cell maintained activity that survives synaptic blockade) against the actual papers.
 
 </details>
 

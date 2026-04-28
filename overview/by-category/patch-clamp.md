@@ -1265,7 +1265,7 @@ Complementary to S-0049-01's static spatial audit. Recommended task types: exper
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
 testbed</strong> (S-0022-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
@@ -1283,7 +1283,7 @@ Recommended task type: experiment-run.
 <summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
 peak-rate gap</strong> (S-0022-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
@@ -1321,7 +1321,7 @@ Recommended task type: experiment-run, comparative-analysis.
 <summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
 verify numerical claims</strong> (S-0017-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
 
 Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.

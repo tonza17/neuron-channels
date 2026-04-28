@@ -949,7 +949,7 @@ should be explored. Recommended task types: experiment-run.
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0035_distal_dendrite_diameter_sweep_t0024](../../tasks/t0035_distal_dendrite_diameter_sweep_t0024/)
 
 Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
@@ -1043,7 +1043,7 @@ experiment-run.
 <summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
 t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-22 | **Source**:
 [t0033_plan_dsgc_morphology_channel_optimisation](../../tasks/t0033_plan_dsgc_morphology_channel_optimisation/)
 
 The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
@@ -1082,7 +1082,7 @@ model before the 25-dim run. Recommended task types: experiment-run, comparative
 <summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
 testbed</strong> (S-0022-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
@@ -1100,7 +1100,7 @@ Recommended task type: experiment-run.
 <summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
 peak-rate gap</strong> (S-0022-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0022_modify_dsgc_channel_testbed](../../tasks/t0022_modify_dsgc_channel_testbed/)
 
 Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
@@ -1191,7 +1191,7 @@ SAC network.
 <summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
 isolate biophysical mechanism</strong> (S-0026-06)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0026_vrest_sweep_tuning_curves_dsgc](../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/)
 
 Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
@@ -1258,7 +1258,7 @@ burst rate and compare with published DSGC spiking statistics.
 <summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
 access and verify numerical priors</strong> (S-0019-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
 
 Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,

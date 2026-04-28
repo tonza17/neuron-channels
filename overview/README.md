@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-55-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-57-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-216-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (20K)
-| [full](llm-context/full.xml) (299K) | [roadmap](llm-context/roadmap.xml) (72K) |
-[results](llm-context/results-deep-dive.xml) (208K) |
-[assets](llm-context/literature-and-assets.xml) (38K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (21K)
+| [full](llm-context/full.xml) (304K) | [roadmap](llm-context/roadmap.xml) (74K) |
+[results](llm-context/results-deep-dive.xml) (211K) |
+[assets](llm-context/literature-and-assets.xml) (39K)
 
-*Last updated: 2026-04-28 11:16 UTC*
+*Last updated: 2026-04-28 12:08 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -58,12 +58,13 @@
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
+| 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`description`](../tasks/t0057_tonic_gaba_sweep_t0053/task_description.md) | 2026-04-28 |
 
 ---
 
@@ -81,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (48 total)](tasks/by-status/completed.md)
+## [Recently Completed (49 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0056 | [Brainstorm results session 10](../overview/tasks/task_pages/t0056_brainstorm_results_10.md) | [`results`](../tasks/t0056_brainstorm_results_10/results/results_detailed.md) | 2026-04-28 13:00 |
 | 0054 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | [`results`](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/results_detailed.md) | 2026-04-28 05:00 |
 | 0053 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | [`results`](../tasks/t0053_minimal_dsgc_spatial_gaba/results/results_detailed.md) | 2026-04-27 14:10 |
 | 0052 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | [`results`](../tasks/t0052_minimal_dsgc_scalar_gaba/results/results_detailed.md) | 2026-04-27 12:20 |
@@ -94,9 +96,8 @@ No blocked tasks.
 | 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
 | 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
 | 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
-| 0040 | [Brainstorm results session 8](../overview/tasks/task_pages/t0040_brainstorm_results_8.md) | [`results`](../tasks/t0040_brainstorm_results_8/results/results_detailed.md) | 2026-04-24 15:30 |
 
-*38 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*39 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -120,7 +121,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (189 open)](suggestions/)
+## [Recent Suggestions (188 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -322,11 +323,11 @@ types: correction.
 
 </details>
 
-*179 more open suggestions → [open suggestions](suggestions/)*
+*178 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (52)](suggestions/)
+## [High Priority Suggestions (32)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -409,26 +410,6 @@ otherwise identical from-scratch substrate. Recommended task types: comparative-
 </details>
 
 <details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
 halve active-fraction on t0053</strong> (S-0053-02)</summary>
 
@@ -469,44 +450,6 @@ question at matched mean drive. Recommended task types: comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
-DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-25 | **Source**:
-[t0048_voff_nmda1_dsi_test](../tasks/t0048_voff_nmda1_dsi_test/)
-
-t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
-gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
-must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
-deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
-gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
-0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
-at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
-scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
-Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
-range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
-testbed comparison</strong> (S-0039-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
-
-t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
-Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
-AR(2) stochastic release) at its equivalent operational GABA level to test whether the
-Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
-t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
-testbed-level discrimination between the two mechanisms the project has produced. If both show
-passive_filtering, that rules out Schachter2010 across the substrates the project has
-available.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
 189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
 
@@ -524,7 +467,62 @@ Recommended task types: experiment-run, code-reproduction.
 
 </details>
 
-*42 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
+blend instead of pure primary DSI</strong> (S-0030-06)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
+
+t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
+sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
+optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
+the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
+Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
+peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
+S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
+keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
+vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
+option. Recommended task types: write-library, answer-question.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0024_port_de_rosenroll_2026_dsgc](../tasks/t0024_port_de_rosenroll_2026_dsgc/)
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
+discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+[t0027_literature_survey_morphology_ds_modeling](../tasks/t0027_literature_survey_morphology_ds_modeling/)
+
+Run t0024 (de Rosenroll 2026 port) with bipolar-cell kinetic identities swapped: assign
+sustained kinetics to distal terminals and transient kinetics to proximal terminals, opposite
+to the wild-type tiling. Prediction (creative_thinking.md #2): if [Srivastava2022]
+kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred direction; if
+[Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping
+preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms
+before committing to a morphology sweep design.
+
+</details>
+
+*22 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

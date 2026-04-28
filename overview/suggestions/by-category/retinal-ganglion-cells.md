@@ -2,13 +2,13 @@
 
 1 suggestion(s) in category
 [`retinal-ganglion-cells`](../../../meta/categories/retinal-ganglion-cells/) **1 open** (1
-high).
+medium).
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## High Priority
+## Medium Priority
 
 <details>
 <summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and

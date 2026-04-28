@@ -706,7 +706,7 @@ required. Recommended task types: write-library.
 <summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
 testbed comparison</strong> (S-0039-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0039_distal_dendrite_diameter_sweep_t0022_gaba4](../../tasks/t0039_distal_dendrite_diameter_sweep_t0022_gaba4/)
 
 t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
@@ -767,7 +767,7 @@ simulation data is already in hand.
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
 cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-23 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-23 | **Source**:
 [t0034_distal_dendrite_length_sweep_t0024](../../tasks/t0034_distal_dendrite_length_sweep_t0024/)
 
 t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
@@ -1020,7 +1020,7 @@ write-library, comparative-analysis.
 <summary>🧪 <strong>Retrieve paywalled cable-theory PDFs via Sheffield access and
 verify numerical claims</strong> (S-0015-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0015_literature_survey_cable_theory](../../tasks/t0015_literature_survey_cable_theory/)
 
 Five foundational cable-theory papers (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski

@@ -1928,7 +1928,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (50 open, 5 closed)
+## Suggestions (49 open, 6 closed)
 
 <details>
 <summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
@@ -1985,26 +1985,6 @@ brainstorm results document(s) that quoted the 0.40-0.60 band, using the correct
 (corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
 across the project so downstream tasks do not inherit the wrong target. Recommended task
 types: correction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 
@@ -2648,7 +2628,7 @@ directly informs S-0013-03. Recommended task types: answer-question.
 <summary>🧪 <strong>Retrieve paywalled patch-clamp PDFs via Sheffield access and
 verify numerical claims</strong> (S-0017-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0017_literature_survey_patch_clamp](../../tasks/t0017_literature_survey_patch_clamp/)
 
 Five patch-clamp / voltage-clamp / space-clamp papers (Poleg-Polsky & Diamond 2011, To et al.
@@ -2666,7 +2646,7 @@ OFF-cell maintained activity that survives synaptic blockade) against the actual
 <summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
 and verify numerical priors</strong> (S-0018-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0018_literature_survey_synaptic_integration](../../tasks/t0018_literature_survey_synaptic_integration/)
 
 Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
@@ -2686,7 +2666,7 @@ targets.
 <summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
 access and verify numerical priors</strong> (S-0019-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0019_literature_survey_voltage_gated_channels](../../tasks/t0019_literature_survey_voltage_gated_channels/)
 
 Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,

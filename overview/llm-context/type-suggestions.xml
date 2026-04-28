@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-28T11:16:32Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-28T12:08:51Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>227793</char_count>
-    <byte_count>227810</byte_count>
-    <estimated_tokens>56948</estimated_tokens>
+    <char_count>227839</char_count>
+    <byte_count>227856</byte_count>
+    <estimated_tokens>56959</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -993,7 +993,7 @@ The provenance decision in this task (source_paper_id = 10.1016_j.cub.2018.03.00
 ## Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims
 ID: S-0015-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0015_literature_survey_cable_theory
 Categories: cable-theory, retinal-ganglion-cells
@@ -1024,7 +1024,7 @@ The answer asset verificator emits AA-W001 warnings because categories &#x27;ret
 
 ## Build a minimal DSGC compartmental model implementing the 6-point specification
 ID: S-0015-04
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0015_literature_survey_cable_theory
@@ -1036,7 +1036,7 @@ The answer asset cable-theory-implications-for-dsgc-modelling produces a concret
 ## Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims
 ID: S-0016-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0016_literature_survey_dendritic_computation
 Categories: dendritic-computation
@@ -1057,7 +1057,7 @@ The scoped-down 5-paper survey covers cortical and hippocampal dendritic-computa
 
 ## Experimentally test NMDA-spike contribution to DSGC direction selectivity via compartmental simulation
 ID: S-0016-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0016_literature_survey_dendritic_computation
@@ -1082,7 +1082,7 @@ The answer asset identifies the cortical-style Ca2+-plateau initiation zone (Lar
 ## Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims
 ID: S-0017-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0017_literature_survey_patch_clamp
 Categories: patch-clamp, retinal-ganglion-cell
@@ -1103,7 +1103,7 @@ The scaled-down 5-paper survey covers the four DSGC-modelling sub-areas identifi
 
 ## Implement AIS compartment, NMDARs, and simulated voltage-clamp block in the downstream DSGC model build task
 ID: S-0017-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0017_literature_survey_patch_clamp
@@ -1125,7 +1125,7 @@ The paper assets in this task use category slugs `patch-clamp`, `voltage-gated-c
 ## Retrieve paywalled synaptic-integration PDFs via Sheffield access and verify numerical priors
 ID: S-0018-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0018_literature_survey_synaptic_integration
 Categories: synaptic-integration, retinal-ganglion-cell
@@ -1146,7 +1146,7 @@ The scaled-down 5-paper survey covers the five canonical themes (AMPA/NMDA/GABA 
 
 ## Implement AMPA + NMDA + GABA_A synapses with E-I temporal co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC model
 ID: S-0018-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0018_literature_survey_synaptic_integration
@@ -1168,7 +1168,7 @@ The paper assets in this task use category slugs `synaptic-integration`, `recept
 ## Retrieve paywalled voltage-gated-channel PDFs via Sheffield access and verify numerical priors
 ID: S-0019-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0019_literature_survey_voltage_gated_channels
 Categories: voltage-gated-channels, retinal-ganglion-cell
@@ -1291,7 +1291,7 @@ t0011&#x27;s tuning_curve_viz library supports angle-based rasters (one column p
 ## Nav1.1 proximal-AIS knockout channel-swap on the t0022 testbed
 ID: S-0022-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0022_modify_dsgc_channel_testbed
 Source paper: 10.1016_j.neuron.2007.07.031
@@ -1303,7 +1303,7 @@ Use the t0022 modeldb_189347_dsgc_dendritic library&#x27;s AIS_PROXIMAL forsec b
 ## Nav1.6 distal-AIS density sweep to close the 15 Hz -&gt; 30-40 Hz peak-rate gap
 ID: S-0022-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0022_modify_dsgc_channel_testbed
 Source paper: 10.1523_jneurosci.0130-07.2007
@@ -1315,7 +1315,7 @@ Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 1
 ## Per-dendrite E-I parameter sweep to map the DSI response surface
 ID: S-0022-03
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0022_modify_dsgc_channel_testbed
 Source paper: 10.1523_JNEUROSCI.5017-13.2014
@@ -1464,7 +1464,7 @@ This task produced direction_selectivity_index and peak firing rate per V_rest b
 ## Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects
 ID: S-0026-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0026_vrest_sweep_tuning_curves_dsgc
 Categories: direction-selectivity, synaptic-integration
@@ -1510,7 +1510,7 @@ Hanson2019 reports DSI 0.33 in the absence of asymmetric starburst amacrine cell
 ## Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism
 ID: S-0026-06
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0026_vrest_sweep_tuning_curves_dsgc
 Source paper: 10.1016_j.neuron.2016.04.041
@@ -1770,7 +1770,7 @@ The t0033 cost envelope rests on an unvalidated 5x CoreNEURON-over-stock-CPU-NEU
 ## Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on t0022 as a t0033 optimiser prerequisite
 ID: S-0033-02
 Status: active
-Priority: high
+Priority: medium
 Kind: library
 Source task: t0033_plan_dsgc_morphology_channel_optimisation
 Categories: compartmental-modeling, voltage-gated-channels, direction-selectivity
@@ -1781,7 +1781,7 @@ The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set ho
 ## Multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended optimiser cell
 ID: S-0033-03
 Status: active
-Priority: high
+Priority: medium
 Kind: technique
 Source task: t0033_plan_dsgc_morphology_channel_optimisation
 Categories: compartmental-modeling, direction-selectivity
@@ -1814,7 +1814,7 @@ The t0033 cost model commits literature-derived sample counts (CMA-ES=1,300, BO=
 ## Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop
 ID: S-0033-06
 Status: active
-Priority: high
+Priority: medium
 Kind: library
 Source task: t0033_plan_dsgc_morphology_channel_optimisation
 Categories: compartmental-modeling, direction-selectivity
@@ -1825,7 +1825,7 @@ The t0033 plan repeatedly treats evaluate(parameter_vector) -&gt; DSI_scalar as 
 ## 2-D distal length x diameter sweep on t0024 to disambiguate cable-filtering vs local-spike-failure
 ID: S-0034-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0034_distal_dendrite_length_sweep_t0024
 Categories: cable-theory, compartmental-modeling, direction-selectivity, dendritic-computation
@@ -1836,7 +1836,7 @@ t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean mo
 ## AR(2) rho sweep at t0024 baseline morphology to isolate stochastic-release smoothing from cable biophysics
 ID: S-0034-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0034_distal_dendrite_length_sweep_t0024
 Categories: compartmental-modeling, direction-selectivity, synaptic-integration
@@ -1892,7 +1892,7 @@ t0034&#x27;s non-monotonicity hinges on two preferred-angle jumps: 0 deg -&gt; 3
 ## Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors
 ID: S-0034-07
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0034_distal_dendrite_length_sweep_t0024
 Categories: compartmental-modeling, direction-selectivity
@@ -1914,7 +1914,7 @@ Re-plot DSI from all existing t0034 (length sweep) and t0035 (diameter sweep) tr
 ## Surface-density-rescaled Nav diameter sweep on t0024 to test surface-vs-volume compensation
 ID: S-0035-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0035_distal_dendrite_diameter_sweep_t0024
 Categories: voltage-gated-channels, compartmental-modeling, dendritic-computation, direction-selectivity
@@ -2079,7 +2079,7 @@ t0022 applies only null-direction GABA. Published DSGC models (Park2014, Schacht
 ## Rerun t0039 7-diameter sweep on t0024 for active-vs-passive testbed comparison
 ID: S-0039-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0039_distal_dendrite_diameter_sweep_t0022_gaba4
 Categories: direction-selectivity, compartmental-modeling, cable-theory, dendritic-computation
@@ -2306,7 +2306,7 @@ t0047&#x27;s `code/run_with_conductances.py` attaches `Vector.record(syn._ref_gA
 ## GABA conductance scan at Voff_bipNMDA=1 to close the residual DSI gap to paper&#x27;s 0.30 line
 ID: S-0048-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0048_voff_nmda1_dsi_test
 Source paper: 10.1016_j.neuron.2016.02.013

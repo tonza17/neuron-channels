@@ -1,41 +1,14 @@
 # Suggestions: `dendritic-computation`
 
 46 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (7
-high, 24 medium, 4 low), **11 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (2
+high, 29 medium, 4 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
-cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
-vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
-fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
-electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
-(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
-alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
-length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
-1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
-and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
-from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
-resolve the effect). Recommended task types: experiment-run.
-
-</details>
 
 <details>
 <summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
@@ -84,104 +57,34 @@ currently lacks. Recommended task types: experiment-run.
 
 </details>
 
+## Medium Priority
+
 <details>
-<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
-surface</strong> (S-0022-03)</summary>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0022-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0022 driver has three free per-dendrite parameters fixed at single points:
-EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
-conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
-3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
-measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
-response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
-is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
-tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
-hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
-data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
-testbed comparison</strong> (S-0039-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0039-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
-Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
-AR(2) stochastic release) at its equivalent operational GABA level to test whether the
-Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
-t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
-testbed-level discrimination between the two mechanisms the project has produced. If both show
-passive_filtering, that rules out Schachter2010 across the substrates the project has
-available.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled dendritic-computation PDFs via Sheffield
-access and verify numerical claims</strong> (S-0016-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0016-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
-| **Source paper** | — |
-| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999,
-Bittner 2017, London & Hausser 2005) are documented in intervention/paywalled_papers.md but
-were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
-paper asset's download_status to 'success', replace summary Overview disclaimers with
-PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike
-threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
-duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
-actual papers.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
-surface-vs-volume compensation</strong> (S-0035-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0035-02` |
+| **ID** | `S-0034-01` |
 | **Kind** | experiment |
 | **Date added** | 2026-04-23 |
-| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
 | **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
 
-Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
-by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
-varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
-arises because NEURON's surface-density gbar scales total channel current by d while axial
-load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
-trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
-Recommended task types: experiment-run.
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
 
 </details>
-
-## Medium Priority
 
 <details>
 <summary>📚 <strong>Add an iMK801 analogue MOD modification (selective dendritic
@@ -603,6 +506,32 @@ should be explored. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
 sweep on t0022</strong> (S-0030-02)</summary>
 
@@ -730,6 +659,77 @@ matplotlib (or NEURON's PlotShape) and register the figures plus the rendering s
 answer asset describing what was checked. Flag any visible reconstruction artefacts (dangling
 branches, axon stubs, soma asymmetry) for downstream tasks. Recommended task types:
 data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled dendritic-computation PDFs via Sheffield
+access and verify numerical claims</strong> (S-0016-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0016-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Five foundational dendritic-computation papers (Schiller 2000, Polsky 2004, Larkum 1999,
+Bittner 2017, London & Hausser 2005) are documented in intervention/paywalled_papers.md but
+were not downloaded. Retrieve their PDFs through Sheffield institutional access, update each
+paper asset's download_status to 'success', replace summary Overview disclaimers with
+PDF-verified content, and cross-check the numerical claims in the synthesis (NMDA-spike
+threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
+duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
+actual papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
 
 </details>
 

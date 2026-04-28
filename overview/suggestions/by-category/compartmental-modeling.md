@@ -1,41 +1,14 @@
 # Suggestions: `compartmental-modeling`
 
 161 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **141 open** (39
-high, 89 medium, 13 low), **20 closed**.
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **140 open** (26
+high, 101 medium, 13 low), **21 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
-cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
-vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
-fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
-electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
-(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
-alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
-length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
-1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
-and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
-from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
-resolve the effect). Recommended task types: experiment-run.
-
-</details>
 
 <details>
 <summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
@@ -63,33 +36,6 @@ biologically informative. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
-stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
-temporally smooths the null-direction noise floor, potentially contributing to the observed
-primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
-in or out before the cable-filtering interpretation is credible. Run the 12-direction x
-10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
-{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
-trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
-DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
-crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
-fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
 models</strong> (S-0010-05)</summary>
 
@@ -107,31 +53,6 @@ GUI and hardcode paths/angles. A small library in assets/library/ that provides 
 NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
 and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
 driver-rewrite step and go straight to P2/P3 scoring.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
-separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0033-06` |
-| **Kind** | library |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
-across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
-t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
-library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
-evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
-pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
-Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
-JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
-single evaluator. Recommended task types: write-library, feature-engineering.
 
 </details>
 
@@ -335,58 +256,6 @@ currently lacks. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
-DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0048-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
-gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
-must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
-deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
-gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
-0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
-at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
-scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
-Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
-range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0053-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
 saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
 
@@ -487,32 +356,6 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
-
-</details>
-
-<details>
-<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
-t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0033-02` |
-| **Kind** | library |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
-modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
-axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
-Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
-Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
-2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
-Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
-t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
-sibling library asset. Recommended task types: infrastructure-setup, build-model,
-write-library.
 
 </details>
 
@@ -620,107 +463,6 @@ regime. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
-training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0033-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
-one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
-multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
-full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
-fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
-coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
-compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
-25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
-and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
-types: experiment-run, feature-engineering.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
-testbed</strong> (S-0022-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
-proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
-gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
-dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
-should drop excitability and test whether DSI survives reduced spike-initiation margin.
-Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
-intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
-Recommended task type: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
-peak-rate gap</strong> (S-0022-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
-(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
-the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
-Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
-Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
-distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
-inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
-Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
-surface</strong> (S-0022-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0022 driver has three free per-dendrite parameters fixed at single points:
-EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
-conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
-3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
-measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
-response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
-is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
-tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
-hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
-data-analysis.
-
-</details>
-
-<details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
 library</strong> (S-0008-01)</summary>
 
@@ -816,30 +558,6 @@ thresholding. Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
-testbed comparison</strong> (S-0039-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0039-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
-Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
-AR(2) stochastic release) at its equivalent operational GABA level to test whether the
-Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
-t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
-testbed-level discrimination between the two mechanisms the project has produced. If both show
-passive_filtering, that rules out Schachter2010 across the substrates the project has
-available.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
 189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
 
@@ -860,33 +578,6 @@ the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesi
 PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
 reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
 Recommended task types: experiment-run, code-reproduction.
-
-</details>
-
-<details>
-<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
-substrate (not vector-sum) and drop monotonic-length priors</strong>
-(S-0034-07)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-07` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
-design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
-p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
-vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
-with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
-NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
-pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
-length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
-(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
-task types: comparative-analysis, answer-question.
 
 </details>
 
@@ -914,29 +605,6 @@ per synapse and report peak Hz, DSI, HWHM, active-fraction polar curve, and aggr
 T. Goal: test whether a stricter threshold recovers a measurable DSI without changing
 per-synapse conductance, isolating the active-fraction-vs-amplitude contributions to
 suppression. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
-surface-vs-volume compensation</strong> (S-0035-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0035-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
-by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
-varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
-arises because NEURON's surface-density gbar scales total channel current by d while axial
-load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
-trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
-Recommended task types: experiment-run.
 
 </details>
 
@@ -985,6 +653,33 @@ spikes before downstream retinal tasks depend on it.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
+cable-filtering vs local-spike-failure</strong> (S-0034-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0034 produced a non-monotonic primary DSI (0.545-0.774, p=0.038) and a clean monotonic
+vector-sum DSI decline (R^2=0.91) that falsified Dan2018's passive-TR prediction and did not
+fit Sivyer2013's plateau. Creative-thinking flagged passive cable filtering past an optimal
+electrotonic length (Tukker2004, Hausselt2007) as the best fit, with local-spike-failure
+(Schachter2010) explaining the preferred-angle jumps at 1.5x and 2.0x. A marginal length sweep
+alone cannot distinguish these two mechanisms because lambda = sqrt(d*Rm/(4*Ra)) couples
+length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x diameter in {0.5,
+1.0, 2.0}) on the t0024 port with AR(2) rho=0.6, 12-direction x 10-trial protocol per cell,
+and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
+from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
+resolve the effect). Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to
@@ -1190,6 +885,33 @@ task types: correction.
 </details>
 
 <details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📊 <strong>Benchmark NetPyNE harness overhead vs raw NEURON across problem
 sizes</strong> (S-0007-03)</summary>
 
@@ -1228,6 +950,31 @@ Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's work
 Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
 actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
 as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable DSI-objective evaluation-harness library
+separating scoring from the optimiser loop</strong> (S-0033-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-06` |
+| **Kind** | library |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0033 plan repeatedly treats evaluate(parameter_vector) -> DSI_scalar as the atomic unit
+across CMA-ES / BO / surrogate-NN-GA strategies, but no library asset exposes this signature.
+t0012 tuning_curve_loss scores full 12-angle rate vectors, not a DSI-objective scalar. Build a
+library asset dsgc_dsi_objective that (a) wraps the t0022 or t0024 port behind a pure-function
+evaluate_dsi(parameters, protocol, n_trials) -> DsiResult API, (b) batches (angle, trial)
+pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass with DSI, peak
+Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
+JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
+single evaluator. Recommended task types: write-library, feature-engineering.
 
 </details>
 
@@ -1802,6 +1549,32 @@ side - this wraps the schedule-parameter side. Recommended task types: write-lib
 </details>
 
 <details>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0048-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA-to-AMPA timing offset sweep on t0022 diameter testbed to
 test timing-dominates-conductance hypothesis</strong> (S-0036-02)</summary>
 
@@ -2019,6 +1792,32 @@ asset. Effort ~8 hours. Recommended task type: experiment-run.
 </details>
 
 <details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Intermediate-gabaMOD sensitivity sweep to map the PD-ND
 transition curve</strong> (S-0020-03)</summary>
 
@@ -2143,6 +1942,32 @@ task types: download-paper, correction.
 </details>
 
 <details>
+<summary>🔧 <strong>Multi-fidelity surrogate-NN prototype to reduce the $41.56
+training burn on the recommended optimiser cell</strong> (S-0033-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The recommended Surrogate-NN-GA cell in t0033 has central cost $50.54, of which $41.56 is the
+one-shot 5,000-sample training burn. Creative-thinking alternative #1 argued that a
+multi-fidelity surrogate (train on coarse-dt or shallow-AR(2), filter, re-score top decile on
+full fidelity) should cut training USD 2-3x. Build a prototype task that (a) defines two
+fidelities on the existing t0022 or t0024 port — full (dt=0.1 ms, AR(2) rho=0.6, 10 trials) vs
+coarse (dt=0.25 ms, deterministic or AR(1), 3 trials) — while keeping the Jain 2020 5-10 um
+compartment floor, (b) trains a 3-layer MLP surrogate on a 500-sample Latin-hypercube over the
+25 committed parameters at coarse fidelity, (c) measures regret between coarse-filtered top-k
+and full-fidelity top-k, and (d) reports realised training-USD reduction. Recommended task
+types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Narrow-bar stimulus sweep (50, 100, 150 um) on minimal DSGC to
 break the synchronous-firing regime</strong> (S-0053-04)</summary>
 
@@ -2166,6 +1991,55 @@ trial epoch. Report peak Hz, DSI, HWHM, reliability, and per-direction PSTH bin 
 test whether a narrower stimulus produces graded firing rates (multiple spikes per trial) and
 a more biologically informative tuning curve under both inhibition mechanisms, decoupling DSI
 dynamics from synchronous-volley artefacts. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
+peak-rate gap</strong> (S-0022-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
+(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
+the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
+Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
+Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
+distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
+inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
+Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -2382,6 +2256,32 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
 
 </details>
 
@@ -2884,6 +2784,30 @@ task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Rerun t0039 7-diameter sweep on t0024 for active-vs-passive
+testbed comparison</strong> (S-0039-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0039-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0039 on t0022 at GABA=4 nS produced a passive_filtering signature (slope=-0.034, p=0.008).
+Rerun the same 7-diameter sweep on t0024 (de_rosenroll_2026_dsgc, richer channel inventory,
+AR(2) stochastic release) at its equivalent operational GABA level to test whether the
+Schachter2010 concave-down signature emerges when active dendritic machinery is available. If
+t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanest
+testbed-level discrimination between the two mechanisms the project has produced. If both show
+passive_filtering, that rules out Schachter2010 across the substrates the project has
+available.
+
+</details>
+
+<details>
 <summary>📚 <strong>Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter
 studies</strong> (S-0003-04)</summary>
 
@@ -2993,6 +2917,56 @@ synaptic input drive and biophysics, and re-run the DSI-vs-speed protocol. Predi
 DSGCs, the collapsed model reproduces full-model DSI-vs-speed; if the de Rosenroll local-DSI
 mechanism is load-bearing, it fails. Cheapest of the five testbed experiments and a strong
 null-hypothesis test for the necessity of dendritic geometry.
+
+</details>
+
+<details>
+<summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
+substrate (not vector-sum) and drop monotonic-length priors</strong>
+(S-0034-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0034 establishes two facts that directly constrain the t0033 joint morphology+VGC optimiser
+design: (1) primary DSI on t0024 has measurable dynamic range (0.545-0.774, spread 0.229,
+p=0.038), so the optimiser CAN use primary DSI as the objective - no need to fall back to
+vector-sum DSI as S-0030-06 proposed for t0022; (2) the DSI-vs-length curve is non-monotonic
+with a net negative slope, opposite to Dan2018's monotonic-increase prior - the optimiser must
+NOT assume longer distal dendrites yield higher DSI. Register as a t0033 planning correction:
+pick t0024 as the optimisation testbed, use primary DSI as the objective, and seed the
+length-axis initial distribution near 0.75x-1.0x (observed peak). Distinct from S-0030-06
+(vector-sum DSI on t0022) - this clarifies that t0024 is the correct substrate. Recommended
+task types: comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -3617,6 +3591,34 @@ under stock NEURON and under CoreNEURON back-to-back, and (d) reports measured s
 per-sim USD. Outcome replaces the assumed 5x with a measured value and tightens or widens the
 $23-$119 sensitivity band before the joint optimiser is commissioned. Recommended task types:
 experiment-run, baseline-evaluation.
+
+</details>
+
+<details>
+<summary>✅ <s>GABA peak-conductance sweep on t0053 spatial DSGC to recover a
+non-zero FULL tuning curve</s> — covered by <a
+href="../../../tasks/t0057_tonic_gaba_sweep_t0053/"><code>t0057_tonic_gaba_sweep_t0053</code></a>
+(S-0053-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
+(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
+AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
+crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
+(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
+{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
+conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
+vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
+spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
+to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 

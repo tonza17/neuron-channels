@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
 60 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **51 open** (19 high,
-29 medium, 3 low), **9 closed**.
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **50 open** (13 high,
+34 medium, 3 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -32,33 +32,6 @@ count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and rep
 vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
 the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
 biologically informative. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
-stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0034-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
-temporally smooths the null-direction noise floor, potentially contributing to the observed
-primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
-in or out before the cable-filtering interpretation is credible. Run the 12-direction x
-10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
-{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
-trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
-DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
-crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
-fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
-Recommended task types: experiment-run.
 
 </details>
 
@@ -135,58 +108,6 @@ config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70
 Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
 protocol); this is excitation-only under the native driver, addressable only now that t0020
 localised the gap. Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
-DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0048-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-25 |
-| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
-gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
-must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
-deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
-gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
-0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
-at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
-scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
-Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
-range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA peak-conductance sweep on t0053 spatial DSGC to recover
-a non-zero FULL tuning curve</strong> (S-0053-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0053-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
-(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
-AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
-crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
-(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
-{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
-conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
-vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
-spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
-to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 
@@ -294,32 +215,6 @@ regime. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
-surface</strong> (S-0022-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0022 driver has three free per-dendrite parameters fixed at single points:
-EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
-conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
-3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
-measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
-response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
-is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
-tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
-hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
-data-analysis.
-
-</details>
-
-<details>
 <summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
 reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
 
@@ -366,32 +261,6 @@ over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=1
 intervals. This turns a single spike-output check into a multi-level subthreshold validation
 that exercises the cell's passive and NMDA-block biophysics independently of spike
 thresholding. Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
-and verify numerical priors</strong> (S-0018-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0018-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
-| **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
-2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
-intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
-Sheffield institutional access, update each paper asset's download_status to 'success',
-replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
-priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
-ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
-lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
-0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
-targets.
 
 </details>
 
@@ -469,27 +338,6 @@ before committing to a morphology sweep design.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
-from depolarisation effects</strong> (S-0026-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0026-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
-pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
-tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
-outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
-Na-inactivation-independent peak firing behaviour.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -564,6 +412,33 @@ residual selectivity GABA provides. This is an essential negative control for S-
 AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
 4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
 types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
+stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0034-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Creative-thinking (alternative 5) proposed that AR(2)-correlated release with rho=0.6
+temporally smooths the null-direction noise floor, potentially contributing to the observed
+primary-DSI non-monotonicity independently of cable filtering. This hypothesis must be ruled
+in or out before the cable-filtering interpretation is credible. Run the 12-direction x
+10-trial protocol on t0024 at baseline morphology (length=1.0x, diameter=1.0x) with rho in
+{0.0, 0.3, 0.6, 0.9} (four points) and compare primary-DSI, vector-sum DSI, null Hz, and HWHM
+trajectories. If DSI is flat across rho, stochastic-release smoothing is not the driver; if
+DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-02 (which
+crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
+fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -713,6 +588,32 @@ gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a 
 asserting the override survived a fresh import and that the null/preferred ratio matches the
 requested value. Distinct from S-0033-06 (DSI objective evaluator) which wraps the scoring
 side - this wraps the schedule-parameter side. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
+DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0048-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-25 |
+| **Source task** | [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0048_voff_nmda1_dsi_test/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0048 confirmed that switching to voltage-independent NMDA (exptype=2) flattens the DSI vs
+gNMDA curve to 0.04-0.10 but never reaches the paper's claimed flat ~0.30. The residual gap
+must come from non-NMDA mechanisms; the leading candidate is GABA, where t0047 measured
+deposited PD ~106 / ND ~216 nS summed conductance vs paper's PD ~12.5 / ND ~30 nS (8x over) at
+gNMDA = 0.5 nS. Run a parameter sweep at exptype=2 over a GABA scale factor in {1.0, 0.5,
+0.25, 0.125, 0.06} (ratios chosen to bracket paper's 12.5x reduction toward biological values)
+at the same 7 gNMDA grid points x 4 trials per direction used here. Track DSI vs (gNMDA, GABA
+scale) and report whether any GABA setting produces flat DSI ~0.30 across the gNMDA range.
+Pass criterion: identify a GABA scale (if any) that simultaneously satisfies the H1
+range/slope thresholds and a mean-DSI > 0.20 target. Recommended task types: experiment-run.
 
 </details>
 
@@ -986,6 +887,32 @@ CPU. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
+surface</strong> (S-0022-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.5017-13.2014`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_JNEUROSCI.5017-13.2014/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0022 driver has three free per-dendrite parameters fixed at single points:
+EI_OFFSET_PREFERRED_MS = 10 ms, GABA_NULL/GABA_PREF ratio = 4x (12 nS / 3 nS), AMPA
+conductance = 6 nS. Run a factorial sweep over EI_OFFSET in {5, 10, 15} ms, GABA ratio in {2,
+3, 4, 6}, and AMPA in {0.15, 0.3, 0.6} nS (the last anchored to Park2014's 0.31 nS somatic
+measurement) to quantify mechanism robustness. Expected outcome: a (3 x 4 x 3) = 36-point DSI
+response surface showing which E-I corner of the parameter space saturates DSI at 1.0 (driver
+is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
+tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
+hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Poisson-noise desaturation rerun of the distal-dendrite diameter
 sweep on t0022</strong> (S-0030-02)</summary>
 
@@ -1163,6 +1090,32 @@ experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Retrieve paywalled synaptic-integration PDFs via Sheffield access
+and verify numerical priors</strong> (S-0018-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0018-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five synaptic-integration papers (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador
+2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Prior Distribution Table of the answer asset (NMDAR tau_decay 100-200
+ms at 22-32 degC, AMPA tau_rise 0.2-0.4 ms / tau_decay 1-3 ms, GABA_A tau_decay 5-20 ms,
+lambda_DC 100-300 um for RGC dendrites, DSGC E-I lag 15-50 ms, SAC dendritic Ca2+ DS index
+0.3-0.5) against the actual papers before adopting them as tight compartmental-model fitting
+targets.
+
+</details>
+
+<details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement across multiple V_clamp levels
 (-85, -65, -45 mV) to vary GABA driving force</strong> (S-0049-04)</summary>
 
@@ -1183,6 +1136,27 @@ AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force si
 increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across
 V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on
 holding voltage. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep AR(2) rho x V_rest for t0024 to separate noise correlation
+from depolarisation effects</strong> (S-0026-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 V_rest sweep ran only at rho=0.6 and showed a 1.9x U-shaped DSI curve with HWHM
+pinned at 65-83 deg. Repeat the sweep at rho in {0.0, 0.3, 0.6, 0.9} to test whether the
+tuning-smoothing is dominated by AR(2) correlation or by the depolarisation itself. Expected
+outcome: rho=0.0 should recover tuning sharpness closer to t0022 while preserving the
+Na-inactivation-independent peak firing behaviour.
 
 </details>
 
@@ -1370,6 +1344,34 @@ and compare the distribution against paper text and figure descriptions. This ex
 somatic asymmetry collapse and informs whether the deposited model needs a spatial
 redistribution correction or a per-side conductance scaling. Recommended task types:
 data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>GABA peak-conductance sweep on t0053 spatial DSGC to recover a
+non-zero FULL tuning curve</s> — covered by <a
+href="../../../tasks/t0057_tonic_gaba_sweep_t0053/"><code>t0057_tonic_gaba_sweep_t0053</code></a>
+(S-0053-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0053 reports DSI = 0.0 / peak Hz = 0.0 in FULL mode because 2 nS GABA on ~50% of 100 synapses
+(100 nS mean total per trial) fully suppresses spiking on the t0009-calibrated morphology.
+AMPA-only fires at 0.667 Hz uniformly, so excitation is at threshold and any inhibition
+crosses below threshold. Re-run the 12-direction x 10-trial FULL sweep on the t0053 substrate
+(same placement seed 0, same centripetal-gating rule) at GABA peak conductances g_GABA in
+{0.5, 1.0, 1.32, 1.5, 2.0} nS while holding everything else fixed. The 1.32 nS point is
+conductance-matched to t0052's 66 nS mean total per trial. Report peak Hz, primary and
+vector-sum DSI, HWHM, and reliability per g_GABA. Goal: locate the operating point where
+spatial gating produces a measurable DSI on this morphology so it can be compared meaningfully
+to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experiment-run.
 
 </details>
 

@@ -1,34 +1,14 @@
 # Suggestions: `voltage-gated-channels`
 
 30 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **24 open** (9
-high, 13 medium, 2 low), **6 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **24 open** (3
+high, 19 medium, 2 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
-isolate biophysical mechanism</strong> (S-0026-06)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0026-06` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.04.041`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1016_j.neuron.2016.04.041/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
-t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
-Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
-(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
-
-</details>
 
 <details>
 <summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
@@ -76,129 +56,6 @@ S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseli
 morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
-t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0033-02` |
-| **Kind** | library |
-| **Date added** | 2026-04-22 |
-| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
-modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
-axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
-Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
-Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
-2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
-Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
-t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
-sibling library asset. Recommended task types: infrastructure-setup, build-model,
-write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
-testbed</strong> (S-0022-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
-proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
-gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
-dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
-should drop excitability and test whether DSI survives reduced spike-initiation margin.
-Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
-intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
-Recommended task type: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
-peak-rate gap</strong> (S-0022-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0022-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
-| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
-(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
-the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
-Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
-Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
-distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
-inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
-Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
-access and verify numerical priors</strong> (S-0019-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0019-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
-Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
-intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
-Sheffield institutional access, update each paper asset's download_status to 'success',
-replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
-priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
--45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
-Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
-before adopting them as tight compartmental-model fitting targets.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
-surface-vs-volume compensation</strong> (S-0035-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0035-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-23 |
-| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
-by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
-varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
-arises because NEURON's surface-density gbar scales total channel current by d while axial
-load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
-trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
 Recommended task types: experiment-run.
 
 </details>
@@ -272,6 +129,26 @@ AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preser
 Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
 AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
 Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add NMDA-block and TTX-sensitivity sweeps at each V_rest to
+isolate biophysical mechanism</strong> (S-0026-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0026-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.04.041`](../../../tasks/t0026_vrest_sweep_tuning_curves_dsgc/assets/paper/10.1016_j.neuron.2016.04.041/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=-30 mV) while
+t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
+Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
+(g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
 
 </details>
 
@@ -403,6 +280,32 @@ which targeted Ih calibration, not ablation. Recommended task types: experiment-
 </details>
 
 <details>
+<summary>📚 <strong>Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on
+t0022 as a t0033 optimiser prerequisite</strong> (S-0033-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0033-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-22 |
+| **Source task** | [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0022 testbed exposes AIS_PROXIMAL, AIS_DISTAL, and THIN_AXON channel-set hooks in its
+modular architecture, but all three are empty because the Poleg-Polsky 2026 backbone has no
+axon. The t0033 joint optimiser plans per-region gbar for Nav1.1, Nav1.6, Kv1.2, Kv2.1,
+Kv3.1/3.2 and Km/KCNQ across these regions, which is impossible until the hooks are live.
+Build a task that (a) adds a short axon hillock + AIS + thin-axon trunk to t0022 using Werginz
+2020 / Van Wart 2007 geometry, (b) populates AIS_PROXIMAL with Nav1.1+Kv1.2, AIS_DISTAL with
+Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c) reruns the
+t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
+sibling library asset. Recommended task types: infrastructure-setup, build-model,
+write-library.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007
 repolarisation prior</strong> (S-0022-06)</summary>
 
@@ -424,6 +327,55 @@ sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; c
 drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
 either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
 Recommended task type: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.1 proximal-AIS knockout channel-swap on the t0022
+testbed</strong> (S-0022-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1016_j.neuron.2007.07.031`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1016_j.neuron.2007.07.031/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Use the t0022 modeldb_189347_dsgc_dendritic library's AIS_PROXIMAL forsec block to append a
+proximal axon segment populated with Nav1.1 at ~7x somatic density, then knock it out (set
+gbar to 0) and rerun the canonical 12-angle x 10-trial sweep. VanWart2006 reports Nav1.1
+dominates the proximal AIS while Nav1.6 dominates the distal AIS; removing proximal Nav1.1
+should drop excitability and test whether DSI survives reduced spike-initiation margin.
+Expected outcome: peak rate drops below 10 Hz while DSI holds above 0.5 (inhibitory shunt
+intact, spike threshold only moved). Dependencies: t0022 library asset. Effort ~6 hours.
+Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz
+peak-rate gap</strong> (S-0022-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0022-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |
+| **Source paper** | [`10.1523_jneurosci.0130-07.2007`](../../../tasks/t0022_modify_dsgc_channel_testbed/assets/paper/10.1523_jneurosci.0130-07.2007/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Sweep Nav1.6 density in the AIS_DISTAL forsec block over {4, 6, 8, 10, 12, 14, 16} S/cm^2
+(centred on the Kole-Stuart 2008 ~8 S/cm^2 published anchor) with Kv1.2 held constant, rerun
+the 12-angle x 10-trial sweep at each setting, and report peak firing rate vs Nav1.6 density.
+Peak-rate cap at 10-20 Hz is shared across t0008 (18.1 Hz), t0020 (14.85 Hz), and t0022 (15
+Hz) and is inherited from the unchanged t0008 HHst Na/K density, so the fix lives in the
+distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density and lands
+inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
+Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -474,6 +426,54 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retrieve paywalled voltage-gated-channel PDFs via Sheffield
+access and verify numerical priors</strong> (S-0019-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0019-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Five voltage-gated-channel papers (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007,
+Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) are documented in
+intervention/paywalled_papers.md but were not downloaded. Retrieve their PDFs through
+Sheffield institutional access, update each paper asset's download_status to 'success',
+replace summary Overview disclaimers with PDF-verified content, and cross-check the numerical
+priors tabulated in the Nav/Kv Combinations Table of the answer asset (Nav1.6 V_half around
+-45 mV, Nav1.2 V_half around -32 mV, AIS Nav gbar 2500-5000 pS/um2, Kv1 V_half -40 to -50 mV,
+Fohlmeister-Miller alpha/beta coefficients at 22 degC, Q10 near 3) against the actual papers
+before adopting them as tight compartmental-model fitting targets.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
+surface-vs-volume compensation</strong> (S-0035-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0035-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-23 |
+| **Source task** | [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Re-run a small diameter sweep (0.5x, 1.0x, 2.0x) on the t0024 DSGC with gnabar_HHst rescaled
+by 1/d in the distal compartments so the total per-section Nav count is held fixed as diameter
+varies. Creative_thinking hypothesis 2 proposes that the flat DSI-vs-diameter result (t0035)
+arises because NEURON's surface-density gbar scales total channel current by d while axial
+load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
+trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
+Recommended task types: experiment-run.
 
 </details>
 
