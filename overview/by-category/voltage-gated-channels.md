@@ -1281,7 +1281,7 @@ depolarisation-insensitive (suggesting NMDA-dominated signalling).
 <summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
 2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
 
 Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
@@ -1376,7 +1376,7 @@ Recommended task types: experiment-run.
 <summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
 simulation</strong> (S-0007-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0007_install_neuron_netpyne](../../tasks/t0007_install_neuron_netpyne/)
 
 The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as

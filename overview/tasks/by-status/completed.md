@@ -1,12 +1,120 @@
 # ✅ Tasks: Completed
 
-51 tasks. ✅ **51 completed**.
+52 tasks. ✅ **52 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0058 — <strong>Brainstorm results session 11</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0058_brainstorm_results_11` |
+| **Status** | completed |
+| **Effective date** | 2026-04-29 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-04-29T10:00:00Z |
+| **End time** | 2026-04-29T12:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 11](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md) |
+| **Task folder** | [`t0058_brainstorm_results_11/`](../../../tasks/t0058_brainstorm_results_11/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0058_brainstorm_results_11/results/results_detailed.md) |
+
+# Brainstorm Session 11: Bar-Arrival-Locked GABA + AMPA Escape on t0057 Substrate
+
+Eleventh brainstorming session. Run on 2026-04-29 after t0055 (Mg-block NMDA recovery test)
+and t0057 (tonic-GABA amplitude sweep on t0053 spatial substrate) both completed. The session
+is triggered by the convergent finding across the from-scratch minimal DSGC family (t0052,
+t0053, t0054, t0055, t0057) that every variant is locked in a binary regime — either
+single-spike-per-trial (DSI = 1.0 trivially, peak Hz = 0.667) or full inhibitory suppression
+(DSI = 0). The cell needs to escape this binary regime into the 5-50 Hz multi-spike band
+before DSI metrics are biologically informative.
+
+## Decision
+
+* **Create t0059** — `bar_locked_gaba_ampa_sweep_t0057`. Forks t0057's
+  `minimal_dsgc_tonic_gaba_sweep` library and (a) replaces the global `(t_on, t_off) = (100,
+  1400)` ms tonic GABA window with a per-synapse bar-arrival-locked window (`t_on_i = (x_i
+  cos(theta) + y_i sin(theta)) / v + 100 ms`, `t_off_i = t_on_i + 200 ms`), (b) bundles the
+  project-wide measurement-protocol fix (drop `E_ONLY` / `GABA_ONLY` legacy modes, add
+  `EPSP_PASSIVE` / `IPSP_PASSIVE` modes that save-and-zero `gnabar_hh` / `gkbar_hh` on soma +
+  AIS so synaptic envelopes are spike-free; drop the per-synapse activation histogram; fix
+  trial length at 1400 ms), and (c) sweeps a 5x5 (gAMPA, GABA_BASE_NS) grid covering both the
+  sub-veto and multi-spike regimes. Source suggestions: S-0057-01, S-0057-02, S-0057-04,
+  S-0055-01 (all four covered).
+
+## Suggestion Cleanup
+
+* **Reject seven high-priority suggestions** as covered or superseded by completed work:
+  S-0011-01 (deposited-DSGC line retired; plot_angle_raster_psth exercised on from-scratch
+  wave), S-0012-01 (verify_library_asset.py exists and is in active use across
+  t0052/t0053/t0054/t0057), S-0012-03 (deposited-DSGC line retired; tuning_curve_loss already
+  integrated via metrics.json RMSE on the from-scratch lineage), S-0055-01 (covered by t0059's
+  bundled protocol fix), S-0057-01 (covered by t0059's GABA grid including 0.1 / 0.2 nS),
+  S-0057-02 (covered by t0059's AMPA grid axis), S-0057-04 (covered by t0059's
+  bar-arrival-locked window mechanism).
+
+* **Reprioritise eighteen high-priority suggestions to medium** where the brainstorm-9
+  from-scratch pivot or recent results have de-urgented them:
+
+  * Deposited-DSGC and deRosenroll port lineage (retired): S-0003-02, S-0008-01, S-0010-02,
+    S-0010-05, S-0024-01, S-0027-02, S-0046-02, S-0020-01, S-0020-02.
+  * Morphology and active-channel calibration (deferred to RQ2 / RQ4 follow-ups once a working
+    multi-spike substrate exists): S-0009-01, S-0009-02, S-0009-03.
+  * Channel/tooling infrastructure (no longer top-of-queue): S-0007-01, S-0013-01, S-0013-02.
+  * From-scratch comparisons (defer until working spatial operating point exists): S-0052-04,
+    S-0053-02, S-0053-03.
+
+## Tasks Cancelled or Updated
+
+None.
+
+## Assets Produced
+
+No assets in this brainstorm task. The new task t0059 will produce one library asset
+(`minimal_dsgc_bar_locked_gaba_ampa_sweep` or similar slug) and an experiment-results bundle
+when executed downstream.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 11**
+>
+> **Summary**
+>
+> Eleventh strategic brainstorm, run on 2026-04-29 after t0055 (Mg-block NMDA recovery test)
+> and t0057
+> (tonic-GABA amplitude sweep on t0053 spatial substrate) completed. The session is triggered
+> by the
+> convergent finding across the from-scratch minimal DSGC family (t0052/t0053/t0054/t0055/
+> t0057) that
+> every variant is locked in a binary regime — either single-spike-per-trial (peak Hz = 0.667,
+> DSI =
+> 1.0 trivially) or full inhibitory suppression (peak Hz = 0, DSI = 0). Decision: commission a
+> single
+> combined task (t0059 — bar-arrival-locked tonic GABA + AMPA escape sweep + bundled
+> measurement-protocol fix) covering S-0057-01, S-0057-02, S-0057-04, and S-0055-01 in one
+> experimental run; reject seven covered or superseded high-priority suggestions; reprioritise
+> eighteen high-priority suggestions to medium where the brainstorm-9 from-scratch pivot or
+> recent
+> results have de-urgented them.
+>
+> **Session Overview**
+>
+> Date: 2026-04-29. Triggered by the convergent binary-regime finding across t0052-t0057. The
+> session
+> opened with an independent priority reassessment of the 32 high-priority active suggestions
+> in light
+> of the new t0055 / t0057 evidence (Mg-block NMDA recovers DSI but peak Hz stays at 0.667
+> under
+
+</details>
 
 <details>
 <summary>✅ 0057 — <strong>Tonic GABA + amplitude sweep on t0053 spatial

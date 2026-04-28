@@ -1928,7 +1928,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (57 open, 6 closed)
+## Suggestions (56 open, 7 closed)
 
 <details>
 <summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
@@ -2030,27 +2030,6 @@ band. Recommended task types: build-model, experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on
-t0057 to model bar-arrival-locked inhibition</strong> (S-0057-04)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0057_tonic_gaba_sweep_t0053](../../tasks/t0057_tonic_gaba_sweep_t0053/)
-
-t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
-dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
-only as the bar passes its dendritic field, producing a synapse-specific window of width
-~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
-each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
-and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
-bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
-(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
-~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
-produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
-Hz). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Sustained-envelope gabaMOD on t0052 minimal scalar architecture
 (tonic-mechanism back-port)</strong> (S-0057-05)</summary>
 
@@ -2115,7 +2094,7 @@ biologically informative. Recommended task types: experiment-run.
 <summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
 PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
 [t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
 
 t0053 (not_started, dependencies = same morphology + library-asset substrate as t0052)
@@ -2154,7 +2133,7 @@ types: correction.
 <summary>📊 <strong>Conductance-matched t0052 vs t0053 comparison at fixed mean GABA
 mass per trial</strong> (S-0053-03)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
 [t0053_minimal_dsgc_spatial_gaba](../../tasks/t0053_minimal_dsgc_spatial_gaba/)
 
 S-0052-04 proposes a t0052 vs t0053 side-by-side comparison at matched placement, but does not
@@ -2308,7 +2287,7 @@ does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N satura
 <summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
 189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-24 | **Source**:
 [t0046_reproduce_poleg_polsky_2016_exact](../../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
 
 Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
@@ -2444,7 +2423,7 @@ task type: data-analysis, write-library.
 <summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
 reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-21 | **Source**:
 [t0024_port_de_rosenroll_2026_dsgc](../../tasks/t0024_port_de_rosenroll_2026_dsgc/)
 
 The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
@@ -2527,7 +2506,7 @@ sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinkin
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
 library</strong> (S-0008-01)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0008_port_modeldb_189347](../../tasks/t0008_port_modeldb_189347/)
 
 Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
@@ -2560,7 +2539,7 @@ write-library.
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
 proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
 
 The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
@@ -2579,7 +2558,7 @@ against Schachter's tree. Recommended task types: feature-engineering, experimen
 <summary>🔧 <strong>Interpolate soma pt3dadd diameters along the principal axis to
 replace the uniform 4.118 um soma radius</strong> (S-0009-02)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
 
 All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the
@@ -2598,7 +2577,7 @@ feature-engineering, correction.
 <summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
 2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
 
 Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
@@ -2847,7 +2826,7 @@ before adopting them as tight compartmental-model fitting targets.
 <summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
 the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
 
 Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
@@ -2921,7 +2900,7 @@ download-dataset, data-analysis.
 <summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
 the project as a library asset</strong> (S-0003-02)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
 
 Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and

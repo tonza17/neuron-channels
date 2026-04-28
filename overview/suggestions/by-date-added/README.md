@@ -88,33 +88,6 @@ regime. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on
-t0057 to model bar-arrival-locked inhibition</strong> (S-0057-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0057-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-28 |
-| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
-dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
-only as the bar passes its dendritic field, producing a synapse-specific window of width
-~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
-each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
-and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
-bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
-(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
-~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
-produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
-Hz). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
 <summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
 IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
 
@@ -513,6 +486,35 @@ headline negative result of t0054. Recommended task types: build-model, experime
 
 </details>
 
+<details>
+<summary>✅ <s>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on t0057 to
+model bar-arrival-locked inhibition</s> — covered by <a
+href="../../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/"><code>t0059_bar_locked_gaba_ampa_sweep_t0057</code></a>
+(S-0057-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
+dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
+only as the bar passes its dendritic field, producing a synapse-specific window of width
+~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
+each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
+and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
+bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
+(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
+~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
+produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
+Hz). Recommended task types: build-model, experiment-run.
+
+</details>
+
 ## 2026-04-27 (12)
 
 ## High Priority
@@ -543,6 +545,34 @@ biologically informative. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
+saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
+substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
+E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
+= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
+{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
+design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
+gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
+Goal: produce a quantitative voltage-vs-conductance saturation curve that future
+scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
+suppression. Recommended task types: experiment-run.
+
+</details>
+
+## Medium Priority
+
+<details>
 <summary>📊 <strong>Conductance-matched t0052 vs t0053 comparison at fixed mean GABA
 mass per trial</strong> (S-0053-03)</summary>
 
@@ -564,6 +594,31 @@ all six output classes (V(t), EPSP, IPSP, PSTH, tuning curve, active-fraction) p
 per-direction trial-for-trial diffs in soma V(t). Goal: isolate the spatial-vs-amplitude
 mechanism contribution to DSI from the GABA-mass confound, settling the graded-vs-binary
 question at matched mean drive. Recommended task types: comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
+with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
+in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
+Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
+0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
+band is not attributable to Park2014 from the paper text. File a correction against the t0051
+brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
+(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
+across the project so downstream tasks do not inherit the wrong target. Recommended task
+types: correction.
 
 </details>
 
@@ -590,86 +645,6 @@ in tasks/t0052_minimal_dsgc_scalar_gaba/results/placement_seed0.json) so synapse
 exactly matched. Goal: quantify the DS / firing-rate / IPSP-saturation differences
 attributable to the inhibition-mechanism choice (scalar mod vs spatial asymmetry) on an
 otherwise identical from-scratch substrate. Recommended task types: comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
-saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0052-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/) |
-
-The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
-substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
-E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
-= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
-{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
-design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
-gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
-Goal: produce a quantitative voltage-vs-conductance saturation curve that future
-scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
-suppression. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
-halve active-fraction on t0053</strong> (S-0053-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0053-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0053's centripetal-gating rule fires every I synapse whose centrifugal vector is anywhere on
-the bar-incoming hemisphere (cos(theta_stim - theta_centrifugal) < 0), giving a roughly 50%
-active fraction averaged over directions and a 0.34-0.66 per-direction spread. With 2 nS GABA
-per active synapse this is enough to fully suppress spiking. Tighten the threshold to T in
-{-0.3, -0.5, -0.7, -0.866} so only synapses whose centrifugal vector is within (90 - acos|T|)
-of being directly anti-aligned with the bar fire. T = -0.5 reduces mean active fraction to
-~0.33; T = -0.866 to ~0.17. Re-run the 12-direction x 10-trial FULL sweep at fixed 2 nS GABA
-per synapse and report peak Hz, DSI, HWHM, active-fraction polar curve, and aggregate IPSP per
-T. Goal: test whether a stricter threshold recovers a measurable DSI without changing
-per-synapse conductance, isolating the active-fraction-vs-amplitude contributions to
-suppression. Recommended task types: experiment-run.
-
-</details>
-
-## Medium Priority
-
-<details>
-<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
-with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0052-06` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
-in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
-Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
-0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
-band is not attributable to Park2014 from the paper text. File a correction against the t0051
-brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
-(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
-across the project so downstream tasks do not inherit the wrong target. Recommended task
-types: correction.
 
 </details>
 
@@ -750,6 +725,33 @@ trial epoch. Report peak Hz, DSI, HWHM, reliability, and per-direction PSTH bin 
 test whether a narrower stimulus produces graded firing rates (multiple spikes per trial) and
 a more biologically informative tuning curve under both inhibition mechanisms, decoupling DSI
 dynamics from synchronous-volley artefacts. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
+halve active-fraction on t0053</strong> (S-0053-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0053-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0053's centripetal-gating rule fires every I synapse whose centrifugal vector is anywhere on
+the bar-incoming hemisphere (cos(theta_stim - theta_centrifugal) < 0), giving a roughly 50%
+active fraction averaged over directions and a 0.34-0.66 per-direction spread. With 2 nS GABA
+per active synapse this is enough to fully suppress spiking. Tighten the threshold to T in
+{-0.3, -0.5, -0.7, -0.866} so only synapses whose centrifugal vector is within (90 - acos|T|)
+of being directly anti-aligned with the bar fire. T = -0.5 reduces mean active fraction to
+~0.33; T = -0.866 to ~0.17. Re-run the 12-direction x 10-trial FULL sweep at fixed 2 nS GABA
+per synapse and report peak Hz, DSI, HWHM, active-fraction polar curve, and aggregate IPSP per
+T. Goal: test whether a stricter threshold recovers a measurable DSI without changing
+per-synapse conductance, isolating the active-fraction-vs-amplitude contributions to
+suppression. Recommended task types: experiment-run.
 
 </details>
 
@@ -1307,32 +1309,6 @@ model modification — only an exptype choice. Re-uses t0046 library and t0047's
 
 ## 2026-04-24 (22)
 
-## High Priority
-
-<details>
-<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
-189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0046-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-24 |
-| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
-determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
-Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
-sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
-the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
-PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
-reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
-Recommended task types: experiment-run, code-reproduction.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -1647,6 +1623,30 @@ t0024 shows concave-down and t0022 shows monotonic decrease, that is the cleanes
 testbed-level discrimination between the two mechanisms the project has produced. If both show
 passive_filtering, that rules out Schachter2010 across the substrates the project has
 available.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0046-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-24 |
+| **Source task** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
 
 </details>
 
@@ -2764,55 +2764,6 @@ cost: local CPU, ~2 h wall time. Recommended task types: experiment-run.
 
 ## 2026-04-21 (28)
 
-## High Priority
-
-<details>
-<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
-reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0024-01` |
-| **Kind** | technique |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
-| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
-[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
-correlation was applied at per-terminal Exp2Syn drivers rather than across the
-spatially-distributed SAC varicosity release network that the paper identifies as the causal
-substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
-geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
-cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
-~0.25 DSI drop.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
-discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0027-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-21 |
-| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Run t0024 (de Rosenroll 2026 port) with bipolar-cell kinetic identities swapped: assign
-sustained kinetics to distal terminals and transient kinetics to proximal terminals, opposite
-to the wild-type tiling. Prediction (creative_thinking.md #2): if [Srivastava2022]
-kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred direction; if
-[Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping
-preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms
-before committing to a morphology sweep design.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -3100,6 +3051,30 @@ is a universal signature or specific to starburst-driven models.
 </details>
 
 <details>
+<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
+reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0024-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
+[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
+correlation was applied at per-terminal Exp2Syn drivers rather than across the
+spatially-distributed SAC varicosity release network that the paper identifies as the causal
+substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
+geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
+cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
+~0.25 DSI drop.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Random terminal-branch ablation (25%) on t0022 to test branch
 independence</strong> (S-0027-04)</summary>
 
@@ -3163,6 +3138,29 @@ synaptic input drive and biophysics, and re-run the DSI-vs-speed protocol. Predi
 DSGCs, the collapsed model reproduces full-model DSI-vs-speed; if the de Rosenroll local-DSI
 mechanism is load-bearing, it fails. Cheapest of the five testbed experiments and a strong
 null-hypothesis test for the necessity of dendritic geometry.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
+discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0027-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-21 |
+| **Source task** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Run t0024 (de Rosenroll 2026 port) with bipolar-cell kinetic identities swapped: assign
+sustained kinetics to distal terminals and transient kinetics to proximal terminals, opposite
+to the wild-type tiling. Prediction (creative_thinking.md #2): if [Srivastava2022]
+kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred direction; if
+[Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping
+preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms
+before committing to a morphology sweep design.
 
 </details>
 
@@ -3426,33 +3424,6 @@ passive contribution that the corpus does not separate cleanly.
 ## High Priority
 
 <details>
-<summary>📚 <strong>Add a plan-stage DOI-nomination verificator that checks each
-candidate DOI matches its human-written label</strong> (S-0013-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0013-02` |
-| **Kind** | library |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
-| **Source paper** | — |
-| **Categories** | — |
-
-The Neuron-vs-CB mix-up in the t0005 plan (DOI 10.1016/j.neuron.2018.05.028 labelled 'Morrie &
-Feller 2018 Neuron' when it actually belongs to Li et al. 2018 CSHL viral tracing) made it
-through planning and into the t0005 implementation, triggering an entire follow-up task (this
-one) to correct the downstream impact. Build a verificator under
-arf/scripts/verificators/verify_plan_dois.py that scans plan/plan.md for every DOI-like
-string, resolves each via the arf.scripts.utils.resolve_doi helper (S-0013-01), and
-cross-checks the returned first-author last name, year, and venue against the label the plan
-uses near the DOI. Report a warning when the label and resolved metadata disagree on author,
-year, or venue, and an error when the DOI itself fails to resolve. Wire this verificator into
-the planning-stage check so subsequent plans cannot silently mis-cite a DOI. Recommended task
-types: write-library, experiment-run.
-
-</details>
-
-<details>
 <summary>📚 <strong>Add a verify_library_asset.py framework verificator for library
 asset structure and metadata</strong> (S-0012-01)</summary>
 
@@ -3479,27 +3450,6 @@ re-run it against existing library assets. Recommended task types: infrastructur
 </details>
 
 <details>
-<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
-models</strong> (S-0010-05)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0010-05` |
-| **Kind** | library |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
-GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
-NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
-and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
-driver-rewrite step and go straight to P2/P3 scoring.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Build a minimal DSGC compartmental model implementing the 6-point
 specification</strong> (S-0015-04)</summary>
 
@@ -3518,57 +3468,6 @@ parameters, validation suite, spike-generator tuning). A follow-up experiment ta
 implement a minimal working DSGC model in NEURON/NetPyNE following the specification, using a
 publicly-available DSGC morphology (e.g. NeuroMorpho.org) and validate it with the four-part
 test battery (shape-index, graded DS, inhibition block, contrast-response).
-
-</details>
-
-<details>
-<summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
-2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0009-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
-passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like
-Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so
-that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches
-Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at
-distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct
-from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation):
-it tunes channel densities against single-cell electrophysiological waveforms, not tuning
-curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
-experiments. Recommended task types: experiment-run, feature-engineering.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
-the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0020-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
-PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
-shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
-{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
-{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
-config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
-Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
-protocol); this is excitation-only under the native driver, addressable only now that t0020
-localised the gap. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -3592,27 +3491,6 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
-grid to 12 angles</strong> (S-0010-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0010-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
-| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
-Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
-minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
-to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
-budget 4-6 hours for full P3.
 
 </details>
 
@@ -3700,80 +3578,6 @@ Recommended task types: experiment-run, comparative-analysis.
 </details>
 
 <details>
-<summary>🔧 <strong>Interpolate soma pt3dadd diameters along the principal axis to
-replace the uniform 4.118 um soma radius</strong> (S-0009-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0009-02` |
-| **Kind** | technique |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the
-bell-shaped taper (~3.07 um to 5.31 um) visible in the five central Poleg-Polsky pt3dadd soma
-contour points. Run PCA on the 19 soma xyz coordinates, project each row onto the first
-principal component, and assign a radius by linear interpolation over the 7 Poleg-Polsky
-pt3dadd values mapped onto the same axis. Emit a corrections file that overrides the 19
-soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current-density
-distribution for downstream spike-initiation simulations without changing the mean soma radius
-or any dendritic row. Creative_thinking.md section F4. Recommended task types:
-feature-engineering, correction.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
-proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0009-01` |
-| **Kind** | technique |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
-2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature
-Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid /
-terminal) structure but treat the three radii as free parameters; fit them in a NEURON
-passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in
-150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means
-(3.694/1.653/0.439 um) and emit a corrections file that overrides
-dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
-against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
-library</strong> (S-0008-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0008-01` |
-| **Kind** | library |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
-| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0008_port_modeldb_189347/assets/paper/10.7554_eLife.42392/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
-(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
-proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
-ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
-mechanism that matches the rotation-based protocol used in t0008 more directly than
-Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
-asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
-task types: code-reproduction, write-library.
-
-</details>
-
-<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -3795,58 +3599,6 @@ baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smo
 to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
 correction, replacing the synthetic fixture outputs. Recommended task types:
 feature-engineering, code-reproduction.
-
-</details>
-
-<details>
-<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
-targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0020-02` |
-| **Kind** | evaluation |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-compare_literature.md flags that the paper reports concrete subthreshold validation targets
-that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
-2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
-additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
-traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
-amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
-over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
-intervals. This turns a single spike-output check into a multi-level subthreshold validation
-that exercises the cell's passive and NMDA-block biophysics independently of spike
-thresholding. Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Write a shared arf.scripts.utils.resolve_doi helper that returns
-title, authors, venue, year, PMID, and PMCID</strong> (S-0013-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0013-01` |
-| **Kind** | library |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
-| **Source paper** | — |
-| **Categories** | — |
-
-This task discovered that the t0005 plan nominated DOI 10.1016/j.neuron.2018.05.028 as 'Morrie
-& Feller 2018 Neuron' but that DOI actually resolves to Li, Vaughan, Sturgill & Kepecs (2018),
-an unrelated CSHL viral-tracing paper. The /add-paper skill already performs DOI resolution
-internally via CrossRef and PubMed, but that logic is not exposed as a reusable utility, so
-planning-stage agents have no cheap way to sanity-check a candidate DOI before locking it into
-a plan. Build arf.scripts.utils.resolve_doi as a thin wrapper over CrossRef and PubMed
-E-utilities that returns a typed dataclass with title, first-author last name, venue, year,
-PMID, and PMCID; wire it into /add-paper to replace the inline resolution; and document the
-callable interface so the verificator in S-0013-02 and other planning-time validators can
-import it. Recommended task types: write-library.
 
 </details>
 
@@ -3875,6 +3627,33 @@ N_pd_pass PD trials fire above a biological minimum threshold (e.g., 5 Hz). Repo
 per-trial floor result alongside the mean-based envelope. Rerun scoring over t0020's existing
 40-trial CSV to verify the new gate flags the current run as failed on the floor (baseline
 expectation). Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a plan-stage DOI-nomination verificator that checks each
+candidate DOI matches its human-written label</strong> (S-0013-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+The Neuron-vs-CB mix-up in the t0005 plan (DOI 10.1016/j.neuron.2018.05.028 labelled 'Morrie &
+Feller 2018 Neuron' when it actually belongs to Li et al. 2018 CSHL viral tracing) made it
+through planning and into the t0005 implementation, triggering an entire follow-up task (this
+one) to correct the downstream impact. Build a verificator under
+arf/scripts/verificators/verify_plan_dois.py that scans plan/plan.md for every DOI-like
+string, resolves each via the arf.scripts.utils.resolve_doi helper (S-0013-01), and
+cross-checks the returned first-author last name, year, and venue against the label the plan
+uses near the DOI. Report a warning when the label and resolved metadata disagree on author,
+year, or venue, and an error when the DOI itself fails to resolve. Wire this verificator into
+the planning-stage check so subsequent plans cannot silently mis-cite a DOI. Recommended task
+types: write-library, experiment-run.
 
 </details>
 
@@ -3981,6 +3760,53 @@ write-library, comparative-analysis.
 </details>
 
 <details>
+<summary>📚 <strong>Build a headless-port scaffold library that wraps upstream NEURON
+models</strong> (S-0010-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-05` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The three P2 failures all share the same root cause: upstream drivers assume a headful NEURON
+GUI and hardcode paths/angles. A small library in assets/library/ that provides (a) a headless
+NEURON loader that stubs out 'from neuron import gui', (b) a configurable output-path layer,
+and (c) a canonical 12-angle stimulus generator would let future port tasks skip the
+driver-rewrite step and go straight to P2/P3 scoring.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
+2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0009-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
+passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like
+Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so
+that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches
+Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at
+distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct
+from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation):
+it tunes channel densities against single-cell electrophysiological waveforms, not tuning
+curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
+experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
 <summary>📂 <strong>Download the Morrie & Feller 2018 SAC reconstructions from
 NeuroMorpho and build a paired SAC+DSGC morphology asset</strong>
 (S-0013-03)</summary>
@@ -4004,6 +3830,31 @@ neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and reg
 dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
 anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
 S-0002-08. Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Excitation-side sensitivity sweep under gabaMOD-swap to close
+the 25 Hz peak-firing-rate gap</strong> (S-0020-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Under the native gabaMOD-swap protocol, DSI (0.7838) sits inside the [0.70, 0.85] envelope but
+PD peak (14.85 Hz) is 25.15 Hz below the 40 Hz floor. Protocol is now ruled out, so the
+shortfall must live on the excitation side. Run a factorial sweep over (a) BIP synapse count
+{88, 177, 354}, (b) excMOD on AMPA+NMDA in {0.5, 1.0, 1.5, 2.0, 3.0}, (c) stimulus drive
+{baseline, +50%, +100%}, holding gabaMOD at the 0.33/0.99 PD/ND pair. Report the smallest
+config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70, 0.85].
+Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
+protocol); this is excitation-only under the native driver, addressable only now that t0020
+localised the gap. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -4175,6 +4026,27 @@ voltage-gated-channel theory and DSGC-specific parameters.
 </details>
 
 <details>
+<summary>🧪 <strong>Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle
+grid to 12 angles</strong> (S-0010-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0010-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+| **Source paper** | [`10.1016_j.celrep.2025.116833`](../../../tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1016_j.celrep.2025.116833/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Port geoffder/ds-circuit-ei-microarchitecture (Zenodo 10.5281/zenodo.17666157, MIT LICENSE).
+Requires adding statsmodels, h5py, fastparquet, oiffile as optional deps (or extracting a
+minimal driver subset without them), then extending the hardcoded 8-direction ANGLES_DEG list
+to the canonical 12-angle protocol before scoring. t0010 exited at P2 within the 90-min cap;
+budget 4-6 hours for full P3.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Hand-port Hanson2019 Spatial-Offset-DSGC model to headless
 12-angle sweep</strong> (S-0010-01)</summary>
 
@@ -4218,6 +4090,56 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Interpolate soma pt3dadd diameters along the principal axis to
+replace the uniform 4.118 um soma radius</strong> (S-0009-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0009-02` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+All 19 CNG soma rows currently receive the same averaged 4.118 um radius, flattening the
+bell-shaped taper (~3.07 um to 5.31 um) visible in the five central Poleg-Polsky pt3dadd soma
+contour points. Run PCA on the 19 soma xyz coordinates, project each row onto the first
+principal component, and assign a radius by linear interpolation over the 7 Poleg-Polsky
+pt3dadd values mapped onto the same axis. Emit a corrections file that overrides the 19
+soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current-density
+distribution for downstream spike-initiation simulations without changing the mean soma radius
+or any dendritic row. Creative_thinking.md section F4. Recommended task types:
+feature-engineering, correction.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
+proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0009-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
+2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature
+Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid /
+terminal) structure but treat the three radii as free parameters; fit them in a NEURON
+passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in
+150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means
+(3.694/1.653/0.439 um) and emit a corrections file that overrides
+dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
+against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
 
 </details>
 
@@ -4290,6 +4212,30 @@ smoke test. This will surface any layout bugs (legend clipping, colour collision
 preferred-direction arrow overlap) that single- or double-model overlays never exercise and
 will give the project a real cross-model comparison figure. Recommended task types:
 code-reproduction, write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
+library</strong> (S-0008-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0008-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |
+| **Source paper** | [`10.7554_eLife.42392`](../../../tasks/t0008_port_modeldb_189347/assets/paper/10.7554_eLife.42392/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Port the Hanson et al. 2019 Spatial-Offset-DSGC-NEURON-Model
+(github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model) using the same HOC-driver pattern
+proven in t0008. Hanson 2019 shares RGCmodel.hoc and HHst.mod with ModelDB 189347 and already
+ships a Python driver (offsetDSGC.py); it implements DS via an explicit spatial-offset
+mechanism that matches the rotation-based protocol used in t0008 more directly than
+Poleg-Polsky's gabaMOD parameter swap. Expected effort ~8 hours; outcome is a second library
+asset and a sanity comparison of the envelope miss pattern across two DSGC models. Recommended
+task types: code-reproduction, write-library.
 
 </details>
 
@@ -4436,6 +4382,32 @@ The answer asset verificator emits AA-W001 warnings because categories
 These categories are used by all five literature-survey tasks (t0015-t0019) and should be
 formally registered to silence the warnings and enable category-based aggregation across those
 tasks.
+
+</details>
+
+<details>
+<summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
+targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0020-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0020_port_modeldb_189347_gabamod/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+compare_literature.md flags that the paper reports concrete subthreshold validation targets
+that this task did not measure: PD NMDAR-mediated PSP component 5.8 +/- 3.1 mV and ND 3.3 +/-
+2.8 mV (Fig 1D, n=19), and NMDAR multiplicative scaling slope angle 62.5 +/- 14.2 deg (Fig 1H,
+additive baseline 45 deg). Extend the gabaMOD-swap driver to record somatic whole-cell voltage
+traces (v_soma, not just spike count) across the 40-trial sweep, compute (1) the peak PSP
+amplitude in a 0-200 ms post-stimulus window per condition and (2) the slope-angle regression
+over a scan of AMPA vs NMDA drive ratios, then gate each against the paper's n=19 mean +/- SD
+intervals. This turns a single spike-output check into a multi-level subthreshold validation
+that exercises the cell's passive and NMDA-block biophysics independently of spike
+thresholding. Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -4657,6 +4629,32 @@ run_gabamod_sweep.py with --n-trials 80). Output: (1) a CSV
 trial_count,dsi_mean,dsi_ci_low,dsi_ci_high,peak_mean,peak_ci_low,peak_ci_high; (2) a plot of
 DSI CI width vs trial count; (3) a recommended N_trials for each sensitivity-analysis budget
 tier. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Write a shared arf.scripts.utils.resolve_doi helper that returns
+title, authors, venue, year, PMID, and PMCID</strong> (S-0013-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0013-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+This task discovered that the t0005 plan nominated DOI 10.1016/j.neuron.2018.05.028 as 'Morrie
+& Feller 2018 Neuron' but that DOI actually resolves to Li, Vaughan, Sturgill & Kepecs (2018),
+an unrelated CSHL viral-tracing paper. The /add-paper skill already performs DOI resolution
+internally via CrossRef and PubMed, but that logic is not exposed as a reusable utility, so
+planning-stage agents have no cheap way to sanity-check a candidate DOI before locking it into
+a plan. Build arf.scripts.utils.resolve_doi as a thin wrapper over CrossRef and PubMed
+E-utilities that returns a typed dataclass with title, first-author last name, venue, year,
+PMID, and PMCID; wire it into /add-paper to replace the inline resolution; and document the
+callable interface so the verificator in S-0013-02 and other planning-time validators can
+import it. Recommended task types: write-library.
 
 </details>
 
@@ -5049,47 +5047,6 @@ currently lacks. Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
-the project as a library asset</strong> (S-0003-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0003-02` |
-| **Kind** | library |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
-register the resulting Python package as a library asset under `assets/library/`. This makes
-the DSGC reference implementation available to every downstream simulation task without
-re-download.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
-simulation</strong> (S-0007-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0007-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
-a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
-1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
-against the built-in hh to confirm the custom mechanism produces physiologically plausible
-spikes before downstream retinal tasks depend on it.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -5279,6 +5236,26 @@ states but does not isolate experimentally. Recommended task types: experiment-r
 </details>
 
 <details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
+<details>
 <summary>📚 <strong>Register SAC presynaptic drive model as an asset for downstream
 DSGC input construction</strong> (S-0002-08)</summary>
 
@@ -5394,6 +5371,27 @@ drives the install with the correct prefix (either by default-install-then-move 
 chocolatey recipe), (c) writes the .pth file into the uv venv, and (d) runs nrnivmodl + both
 sanity sims end-to-end. This unblocks automated reproduction on a fresh Windows machine and
 Linux / macOS CI runners.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
+simulation</strong> (S-0007-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0007-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
+a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
+1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
+against the built-in hh to confirm the custom mechanism produces physiologically plausible
+spikes before downstream retinal tasks depend on it.
 
 </details>
 

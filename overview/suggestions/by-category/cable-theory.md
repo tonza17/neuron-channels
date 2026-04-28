@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
 29 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **25
-open** (2 high, 20 medium, 3 low), **4 closed**.
+open** (1 high, 21 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -32,31 +32,6 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
-proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0009-01` |
-| **Kind** | technique |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1371_journal.pcbi.1000899/) |
-| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
-2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature
-Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid /
-terminal) structure but treat the three radii as free parameters; fit them in a NEURON
-passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in
-150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means
-(3.694/1.653/0.439 um) and emit a corrections file that overrides
-dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
-against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
 
 </details>
 
@@ -298,6 +273,31 @@ distal morphology (primary r=0.42, vector-sum r=-0.68). Re-run the collapse test
 impedance-loading-corrected electrotonic length that accounts for sealed-end vs open-end
 boundary conditions and tapered branching. If the corrected formula recovers r > 0.9, the 1-D
 parameterisation could still be feasible with a slightly more sophisticated single scalar.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
+proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0009-01` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000899`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1371_journal.pcbi.1000899/) |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter
+2010's 150-200 MOhm proximal and >1 GOhm distal targets because the pure-literature
+Poleg-Polsky three-bin radii are not tuned to our cell. Keep the three-bin (primary / mid /
+terminal) structure but treat the three radii as free parameters; fit them in a NEURON
+passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin lands in
+150-200 MOhm and distal-tip Rin >= 1 GOhm. Seed the optimiser with the Poleg-Polsky means
+(3.694/1.653/0.439 um) and emit a corrections file that overrides
+dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
+against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
 
 </details>
 

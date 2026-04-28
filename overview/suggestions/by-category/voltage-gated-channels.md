@@ -1,40 +1,14 @@
 # Suggestions: `voltage-gated-channels`
 
 33 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **27 open** (5
-high, 19 medium, 3 low), **6 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **27 open** (3
+high, 21 medium, 3 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
-2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0009-03` |
-| **Kind** | technique |
-| **Date added** | 2026-04-20 |
-| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
-passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like
-Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so
-that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches
-Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at
-distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct
-from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation):
-it tunes channel densities against single-cell electrophysiological waveforms, not tuning
-curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
-experiments. Recommended task types: experiment-run, feature-engineering.
-
-</details>
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -114,27 +88,6 @@ Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (
 
 </details>
 
-<details>
-<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
-simulation</strong> (S-0007-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0007-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
-a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
-1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
-against the built-in hh to confirm the custom mechanism produces physiologically plausible
-spikes before downstream retinal tasks depend on it.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -203,6 +156,32 @@ Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=
 t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
 Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
 (g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky
+2016 spike shape and distal Ih sag</strong> (S-0009-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0009-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-20 |
+| **Source task** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0009_calibrate_dendritic_diameters/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Geometry alone does not recover the Schachter Rin targets; the residual gap needs active and
+passive membrane parameters. On dsgc-baseline-morphology-calibrated, install Fohlmeister-like
+Nav, delayed-rectifier Kv, and Ih channels and fit their densities (somatic vs dendritic) so
+that (1) the somatic action-potential shape (halfwidth, peak, afterhyperpolarisation) matches
+Poleg-Polsky 2016 Figure 2, and (2) the voltage-sag response to hyperpolarising current at
+distal tips matches the Ih-driven sag amplitude reported in Schachter 2010. This is distinct
+from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active DSI ablation):
+it tunes channel densities against single-cell electrophysiological waveforms, not tuning
+curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
+experiments. Recommended task types: experiment-run, feature-engineering.
 
 </details>
 
@@ -597,6 +576,27 @@ maximise DSI via morphology alone, the maximum achievable lift from the baseline
 the headroom is much smaller than originally planned. Consider adding a channel-density
 dimension to the optimiser search space, since DSI has more potential room through Nav/Cav
 density than through morphology alone.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate custom khhchan.mod biophysics with a dedicated sanity
+simulation</strong> (S-0007-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0007-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0007 sanity sims only exercise NEURON's built-in hh mechanism. khhchan.mod is compiled as
+a smoke test but its biophysics are never run. Add a short task that inserts khhchan on a
+1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
+against the built-in hh to confirm the custom mechanism produces physiologically plausible
+spikes before downstream retinal tasks depend on it.
 
 </details>
 

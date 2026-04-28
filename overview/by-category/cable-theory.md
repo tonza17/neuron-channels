@@ -983,7 +983,7 @@ task type: experiment-run.
 <summary>🔧 <strong>Inverse-fit three-bin dendritic radii against the Schachter 2010
 proximal/distal input-resistance gradient</strong> (S-0009-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0009_calibrate_dendritic_diameters](../../tasks/t0009_calibrate_dendritic_diameters/)
 
 The calibrated proximal Rin (0.52 MOhm) and distal Rin (54 MOhm) are far below Schachter

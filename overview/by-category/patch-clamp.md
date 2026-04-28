@@ -1379,7 +1379,7 @@ target DSGC subtype.
 <summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
 targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-20 | **Source**:
 [t0020_port_modeldb_189347_gabamod](../../tasks/t0020_port_modeldb_189347_gabamod/)
 
 compare_literature.md flags that the paper reports concrete subthreshold validation targets

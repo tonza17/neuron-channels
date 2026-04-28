@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-57-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-59-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-229-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (21K)
-| [full](llm-context/full.xml) (312K) | [roadmap](llm-context/roadmap.xml) (72K) |
-[results](llm-context/results-deep-dive.xml) (222K) |
+| [full](llm-context/full.xml) (317K) | [roadmap](llm-context/roadmap.xml) (74K) |
+[results](llm-context/results-deep-dive.xml) (225K) |
 [assets](llm-context/literature-and-assets.xml) (40K)
 
-*Last updated: 2026-04-28 18:07 UTC*
+*Last updated: 2026-04-28 23:47 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,12 +56,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
+| 0059 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | [`description`](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/task_description.md) | 2026-04-29 |
 
 ---
 
@@ -79,10 +80,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (51 total)](tasks/by-status/completed.md)
+## [Recently Completed (52 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0058 | [Brainstorm results session 11](../overview/tasks/task_pages/t0058_brainstorm_results_11.md) | [`results`](../tasks/t0058_brainstorm_results_11/results/results_detailed.md) | 2026-04-29 12:00 |
 | 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`results`](../tasks/t0057_tonic_gaba_sweep_t0053/results/results_detailed.md) | 2026-04-28 18:02 |
 | 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | [`results`](../tasks/t0055_nmda_mg_block_dsi_recovery/results/results_detailed.md) | 2026-04-28 13:55 |
 | 0056 | [Brainstorm results session 10](../overview/tasks/task_pages/t0056_brainstorm_results_10.md) | [`results`](../tasks/t0056_brainstorm_results_10/results/results_detailed.md) | 2026-04-28 13:00 |
@@ -92,9 +94,8 @@ No blocked tasks.
 | 0051 | [Brainstorm results session 9](../overview/tasks/task_pages/t0051_brainstorm_results_9.md) | [`results`](../tasks/t0051_brainstorm_results_9/results/results_detailed.md) | 2026-04-25 15:00 |
 | 0050 | [Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper](../overview/tasks/task_pages/t0050_audit_syn_distribution.md) | [`results`](../tasks/t0050_audit_syn_distribution/results/results_detailed.md) | 2026-04-25 12:11 |
 | 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`results`](../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) | 2026-04-25 10:42 |
-| 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
 
-*41 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*42 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +120,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (201 open)](suggestions/)
+## [Recent Suggestions (200 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -320,11 +321,11 @@ gNMDA >= 0.25. Recommended task type: experiment-run.
 
 </details>
 
-*191 more open suggestions → [open suggestions](suggestions/)*
+*190 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (38)](suggestions/)
+## [High Priority Suggestions (19)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -426,27 +427,6 @@ the sustained-envelope regime. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on
-t0057 to model bar-arrival-locked inhibition</strong> (S-0057-04)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0057_tonic_gaba_sweep_t0053](../tasks/t0057_tonic_gaba_sweep_t0053/)
-
-t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
-dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
-only as the bar passes its dendritic field, producing a synapse-specific window of width
-~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
-each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
-and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
-bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
-(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
-~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
-produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
-Hz). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
 architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
 
@@ -507,26 +487,45 @@ suppression. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
-PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
+<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
+blend instead of pure primary DSI</strong> (S-0030-06)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
+[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
 
-t0053 (not_started, dependencies = same morphology + library-asset substrate as t0052)
-implements spatial PD/ND-asymmetric SAC inhibition rather than scalar gabaMOD. Once t0053 is
-completed, run a comparison task that side-by-side analyses the two minimal DSGCs at matched
-100 E + 100 I synapse counts: peak Hz, primary and vector-sum DSI, HWHM, reliability, ND/PD
-IPSP voltage ratio, ND/PD IPSP conductance ratio (where applicable), per-direction soma V(t)
-overlays, and polar tuning overlays. Use the same placement seed (PLACEMENT_SEED = 0, recorded
-in tasks/t0052_minimal_dsgc_scalar_gaba/results/placement_seed0.json) so synapse placement is
-exactly matched. Goal: quantify the DS / firing-rate / IPSP-saturation differences
-attributable to the inhibition-mechanism choice (scalar mod vs spatial asymmetry) on an
-otherwise identical from-scratch substrate. Recommended task types: comparative-analysis.
+t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
+sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
+optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
+the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
+Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
+peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
+S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
+keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
+vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
+option. Recommended task types: write-library, answer-question.
 
 </details>
 
-*28 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
+exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-04-20 | **Source**:
+[t0011_response_visualization_library](../tasks/t0011_response_visualization_library/)
+
+The tuning_curve_viz raster+PSTH plot is currently exercised only by a deterministic synthetic
+Poisson fixture (seed 42) because neither t0004 nor t0008 emits spike times. Extend the t0008
+Poleg-Polsky NEURON driver to record soma membrane voltage, threshold-detect action
+potentials, and write a spike-time CSV with columns (angle_deg, trial_seed, spike_time_s)
+alongside the existing tuning-curve CSV. Target: 12 angles x 8 trials of spike times for the
+baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smoke.raster_psth
+to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
+correction, replacing the synthetic fixture outputs. Recommended task types:
+feature-engineering, code-reproduction.
+
+</details>
+
+*9 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
