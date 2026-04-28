@@ -1,0 +1,5 @@
+branch: task/t0057_tonic_gaba_sweep_t0053
+base_branch: main
+base_commit: 281eac1c3b2a1bce9a981ef182842e894d73a8bc
+worktree_path: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0057_tonic_gaba_sweep_t0053
+created_at: 2026-04-28T14:20:09Z
