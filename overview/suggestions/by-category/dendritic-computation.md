@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 46 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **36 open** (8
-high, 24 medium, 4 low), **10 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **35 open** (7
+high, 24 medium, 4 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,32 +34,6 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
-minimal AMPA + NMDA + scalar gabaMOD architecture</strong> (S-0054-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0054-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-28 |
-| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
-DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
-PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
-multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
-process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
-all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
-gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
-sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
-gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
-headline negative result of t0054. Recommended task types: build-model, experiment-run.
 
 </details>
 
@@ -910,6 +884,34 @@ sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinkin
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
+minimal AMPA + NMDA + scalar gabaMOD architecture</s> — covered by <a
+href="../../../tasks/t0055_nmda_mg_block_dsi_recovery/"><code>t0055_nmda_mg_block_dsi_recovery</code></a>
+(S-0054-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
+DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
+PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
+multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
+process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
+all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
+gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
+sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
+gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
+headline negative result of t0054. Recommended task types: build-model, experiment-run.
+
+</details>
 
 <details>
 <summary>✅ <s>Calibrate realistic dendritic diameters for dsgc-baseline-morphology
