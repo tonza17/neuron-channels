@@ -5,14 +5,14 @@
   "name": "Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate",
   "short_description": "Replace t0057's global tonic GABA window with per-synapse bar-arrival-locked windows; sweep AMPA x GABA conductance grid; bundle the project-wide EPSP_PASSIVE/IPSP_PASSIVE measurement-protocol fix.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0009_calibrate_dendritic_diameters",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library",
     "t0057_tonic_gaba_sweep_t0053"
   ],
-  "start_time": null,
+  "start_time": "2026-04-28T23:58:19Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
