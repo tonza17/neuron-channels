@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-10",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0034_distal_dendrite_length_sweep_t0024",
+  "target_kind": "suggestion",
+  "target_id": "S-0034-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0034-01 proposes a 2-D distal length x diameter sweep on the t0024 DSGC. The t0024 testbed has been de-emphasised since brainstorm 9; morphology variation experiments (research question Q2) should now be designed against the from-scratch substrate so that results are directly comparable to the rest of the from-scratch wave. The 2-D sweep idea remains valuable but should be re-formulated. Reprioritising from high to medium."
+}

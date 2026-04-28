@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-12",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0034_distal_dendrite_length_sweep_t0024",
+  "target_kind": "suggestion",
+  "target_id": "S-0034-07",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0034-07 specifies the t0033 optimiser objective as primary DSI on the t0024 substrate. The t0033 optimiser remains deferred until a working from-scratch substrate is in hand (per brainstorm 9), and the substrate choice has shifted from t0024 to the from-scratch minimal DSGC family. This suggestion's t0024-anchored objective specification is no longer the primary direction. Reprioritising from high to medium pending the t0033 optimiser revival on the from-scratch substrate."
+}

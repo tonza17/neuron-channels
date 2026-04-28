@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-20",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0017_literature_survey_patch_clamp",
+  "target_kind": "suggestion",
+  "target_id": "S-0017-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0017-01 proposes retrieving paywalled patch-clamp PDFs (Poleg-Polsky & Diamond 2011, To et al. 2022, Werginz et al. 2020, Sethuramanujam et al. 2017, Margolis & Detwiler 2007) via Sheffield access. Already bundled into not-started task t0031. Reprioritising from high to medium to reflect the from-scratch wave's critical path."
+}

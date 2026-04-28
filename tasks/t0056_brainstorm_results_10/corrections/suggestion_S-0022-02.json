@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-06",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0022_modify_dsgc_channel_testbed",
+  "target_kind": "suggestion",
+  "target_id": "S-0022-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0022-02 proposes a Nav1.6 distal-AIS density sweep on the t0022 testbed to close the 15 Hz -> 30-40 Hz peak-rate gap. The from-scratch wave (t0052 / t0053 / t0054) supersedes the t0022 substrate as the primary platform; the peak-rate gap is now being addressed via t0054's NMDA scaling and the upcoming t0057 tonic-GABA work. The Nav1.6 channel question itself remains scientifically valid but is no longer on the from-scratch-wave critical path. Reprioritising from high to medium."
+}

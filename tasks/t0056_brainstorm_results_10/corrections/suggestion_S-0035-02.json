@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-13",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0035_distal_dendrite_diameter_sweep_t0024",
+  "target_kind": "suggestion",
+  "target_id": "S-0035-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0035-02 proposes a surface-density-rescaled Nav diameter sweep on the t0024 DSGC. The t0024 substrate has been de-emphasised since brainstorm 9; the surface-vs-volume Nav compensation question (research question Q4 active dendrites) should be re-formulated against the from-scratch substrate once active dendrites are added. Reprioritising from high to medium."
+}

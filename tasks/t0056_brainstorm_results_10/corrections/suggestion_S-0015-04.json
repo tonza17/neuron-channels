@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-01",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0015_literature_survey_cable_theory",
+  "target_kind": "suggestion",
+  "target_id": "S-0015-04",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0015-04 proposes building a minimal DSGC compartmental model implementing the t0015 6-point specification (morphology, d_lambda, DS mechanism, passive parameters, validation, etc.). t0052 (minimal_dsgc_scalar_gaba) and t0053 (minimal_dsgc_spatial_gaba) have built minimal from-scratch DSGC models on the dsgc-baseline-morphology-calibrated, with classical EPSP / IPSP kinetics, two parallel inhibition mechanisms (scalar gabaMOD and spatial centripetal-only), passive dendrites, and soma + AIS HH. The 6-point cable-theory specification is satisfied across the t0052 / t0053 implementations. Rejecting as covered."
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-04",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0018_literature_survey_synaptic_integration",
+  "target_kind": "suggestion",
+  "target_id": "S-0018-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0018-03 proposes implementing AMPA + NMDA + GABA_A synapses with E-I temporal co-tuning and SAC-to-DSGC asymmetric inhibition in the downstream DSGC model. AMPA + GABA_A done in t0052/t0053; AMPA + NMDA + GABA done in t0054; SAC-to-DSGC asymmetric (centripetal) inhibition done in t0053. The remaining piece - explicit E-I temporal co-tuning (i.e., per-synapse E and I onset times offset by a direction-dependent delta) - is not covered by t0053's identical-onset-time scheme and not currently on the critical path. The temporal co-tuning piece belongs in a future fresh suggestion that can specify the exact protocol; the original S-0018-03 is too broad to act on now. Rejecting; future fresh suggestion will replace it if needed."
+}

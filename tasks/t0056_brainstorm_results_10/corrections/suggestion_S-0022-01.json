@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-05",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0022_modify_dsgc_channel_testbed",
+  "target_kind": "suggestion",
+  "target_id": "S-0022-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0022-01 proposes a Nav1.1 proximal-AIS knockout channel-swap on the t0022 testbed. Brainstorm session 9 explicitly de-emphasised the t0022 channel-testbed lineage in favour of the from-scratch minimal DSGC substrate (t0052 / t0053 / t0054 / t0057). The Nav1.1 knockout question may still be valuable for a future axon-channel-variation track, but is no longer on the critical path. Reprioritising from high to medium."
+}

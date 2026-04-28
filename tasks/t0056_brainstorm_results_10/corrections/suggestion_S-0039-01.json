@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-14",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0039_distal_dendrite_diameter_sweep_t0022_gaba4",
+  "target_kind": "suggestion",
+  "target_id": "S-0039-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0039-01 proposes rerunning the t0039 7-diameter sweep on t0024 for active-vs-passive testbed comparison. Both t0022 and t0024 substrates have been de-emphasised since brainstorm 9. The active-vs-passive dendrite question (research question Q4) should be addressed on the from-scratch substrate with explicit per-segment Nav/Kv toggling. Reprioritising from high to medium pending that future active-dendrite track on the from-scratch substrate."
+}

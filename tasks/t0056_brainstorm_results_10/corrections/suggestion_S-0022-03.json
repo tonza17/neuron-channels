@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-07",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0022_modify_dsgc_channel_testbed",
+  "target_kind": "suggestion",
+  "target_id": "S-0022-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0022-03 proposes a per-dendrite E-I parameter sweep on the t0022 testbed to map the DSI response surface. The from-scratch minimal DSGC substrate now serves as the canonical platform for E-I sweeps (t0054 has begun the gNMDA dimension; t0057 will add the tonic-GABA dimension). The t0022 testbed lineage has been de-emphasised since brainstorm 9. The 3-D E-I sweep idea is still useful but should be re-formulated against the from-scratch substrate. Reprioritising from high to medium."
+}
