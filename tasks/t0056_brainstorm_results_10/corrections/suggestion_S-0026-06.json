@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-09",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0026-06",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0026-06 proposes NMDA-block and TTX-sensitivity sweeps at each V_rest on t0022 and t0024. Both substrate lineages have been de-emphasised since brainstorm 9. The NMDA-block question is being addressed differently in the from-scratch wave (t0054 with voltage-independent NMDA, t0055 with Mg-block NMDA); the TTX (Na channel inactivation) question is connected to the un-yet-touched research question Q1 (g_Na/g_K combinations). Reprioritising from high to medium pending the from-scratch wave reaching the active-conductance variation track."
+}

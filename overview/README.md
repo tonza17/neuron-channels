@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-54-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-55-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-216-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (20K)
-| [full](llm-context/full.xml) (296K) | [roadmap](llm-context/roadmap.xml) (69K) |
+| [full](llm-context/full.xml) (299K) | [roadmap](llm-context/roadmap.xml) (72K) |
 [results](llm-context/results-deep-dive.xml) (208K) |
 [assets](llm-context/literature-and-assets.xml) (38K)
 
-*Last updated: 2026-04-28 04:59 UTC*
+*Last updated: 2026-04-28 11:16 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -50,9 +50,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | 2026-04-28 10:48 |
 
 ---
 
@@ -118,27 +120,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (190 open)](suggestions/)
-
-<details>
-<summary>🧪 <strong>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
-minimal AMPA + NMDA + scalar gabaMOD architecture</strong> (S-0054-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
-DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
-PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
-multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
-process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
-all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
-gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
-sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
-gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
-headline negative result of t0054. Recommended task types: build-model, experiment-run.
-
-</details>
+## [Recent Suggestions (189 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -321,31 +303,30 @@ with voltage modulation. Recommended task types: write-library.
 
 </details>
 
-*180 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
+with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
+[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
+
+The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
+in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
+Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
+0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
+band is not attributable to Park2014 from the paper text. File a correction against the t0051
+brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
+(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
+across the project so downstream tasks do not inherit the wrong target. Recommended task
+types: correction.
+
+</details>
+
+*179 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (53)](suggestions/)
-
-<details>
-<summary>🧪 <strong>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
-minimal AMPA + NMDA + scalar gabaMOD architecture</strong> (S-0054-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
-DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
-PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
-multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
-process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
-all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
-gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
-sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
-gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
-headline negative result of t0054. Recommended task types: build-model, experiment-run.
-
-</details>
+## [High Priority Suggestions (52)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -525,7 +506,25 @@ available.
 
 </details>
 
-*43 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
+189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
+[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
+
+Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
+determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
+Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
+sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
+the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
+PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
+reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
+Recommended task types: experiment-run, code-reproduction.
+
+</details>
+
+*42 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-11",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0034_distal_dendrite_length_sweep_t0024",
+  "target_kind": "suggestion",
+  "target_id": "S-0034-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0034-02 proposes an AR(2) rho sweep at the t0024 baseline morphology. Like S-0026-02, this is a t0024-substrate noise-correlation experiment. The from-scratch wave currently uses deterministic NetStim trials (no noise); a future task to add AR(2) noise to the from-scratch substrate would supersede this. Reprioritising from high to medium pending that future noise-injection task."
+}

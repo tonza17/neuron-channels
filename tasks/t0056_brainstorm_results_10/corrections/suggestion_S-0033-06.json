@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-17",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "target_kind": "suggestion",
+  "target_id": "S-0033-06",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0033-06 proposes a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop. The t0033 optimiser remains deferred per brainstorm 9 / brainstorm 10; the harness library is a useful infrastructure investment but is not on the from-scratch wave's critical path. Reprioritising from high to medium pending the t0033 optimiser revival."
+}

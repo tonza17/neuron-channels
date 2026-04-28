@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-03",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0017_literature_survey_patch_clamp",
+  "target_kind": "suggestion",
+  "target_id": "S-0017-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0017-03 proposes implementing AIS compartment, NMDARs, and simulated voltage-clamp block in the downstream DSGC model build task. AIS implementation done in t0052 (synthetic 1 um x 30 um axon initial segment with NEURON hh, AIS_GNABAR_S_PER_CM2 = 1.2). NMDA mechanism done in t0054 (co-located voltage-independent Exp2Syn NMDA at every E synapse) and being extended to Mg-block in t0055. Voltage-clamp block (somatic SEClamp re-measurement of conductances) done in t0049 (seclamp_cond_remeasure). All three pieces of the 7-point patch-clamp specification covered. Rejecting as covered."
+}

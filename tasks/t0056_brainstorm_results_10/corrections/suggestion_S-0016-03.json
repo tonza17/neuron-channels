@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-02",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0016_literature_survey_dendritic_computation",
+  "target_kind": "suggestion",
+  "target_id": "S-0016-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0016-03 proposes experimentally testing NMDA-spike contribution to DSGC direction selectivity via compartmental simulation. t0054 (minimal_dsgc_ampa_nmda_scalar_gaba) ran a four-value gNMDA sweep on the from-scratch minimal architecture, reporting that voltage-independent NMDA dramatically closes the peak-rate gap (0.667 -> 8.0 Hz) but collapses DSI (0.746 -> 0.082 -> 0.029 -> 0.017). t0055 (in flight) is testing whether voltage-dependent Mg-block NMDA recovers DSI. Together these two tasks cover the NMDA-spike contribution test end-to-end. Rejecting as covered."
+}

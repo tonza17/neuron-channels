@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-08",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0026_vrest_sweep_tuning_curves_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0026-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0026-02 proposes an AR(2) rho x V_rest sweep on the t0024 (de Rosenroll port) DSGC. The t0024 testbed has been de-emphasised since brainstorm 9 in favour of the from-scratch substrate. The AR(2) noise question remains scientifically valid but is no longer on the critical path; should be re-considered after the from-scratch wave gives a stable baseline DSI to compare noise sensitivity against. Reprioritising from high to medium."
+}

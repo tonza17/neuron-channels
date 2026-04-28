@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-18",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0015_literature_survey_cable_theory",
+  "target_kind": "suggestion",
+  "target_id": "S-0015-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0015-01 proposes retrieving paywalled cable-theory PDFs (Rall 1967, Koch-Poggio-Torre 1982, Mainen-Sejnowski 1996, Taylor 2000, Dhingra-Smith 2004) via Sheffield access. Already bundled into not-started task t0031 (fetch_paywalled_morphology_papers, kept deferred per brainstorm 9). Keeping the individual suggestion as a low-friction record but reprioritising from high to medium so the high-priority shelf reflects the from-scratch wave's true critical path."
+}

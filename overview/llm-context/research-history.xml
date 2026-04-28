@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-28T04:59:31Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-28T11:16:32Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
     <section_count>96</section_count>
-    <char_count>1728204</char_count>
-    <byte_count>1732465</byte_count>
-    <estimated_tokens>432051</estimated_tokens>
+    <char_count>1728809</char_count>
+    <byte_count>1733070</byte_count>
+    <estimated_tokens>432202</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -460,9 +460,10 @@ Result summary: Results Summary: Minimal DSGC with AMPA + NMDA Excitation and Sc
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0055_nmda_mg_block_dsi_recovery</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -483,6 +484,13 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
+
+## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
+ID: t0055_nmda_mg_block_dsi_recovery
+Status: in_progress
+Effective date: 2026-04-28
+Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
+Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0046_reproduce_poleg_polsky_2016_exact, t0054_minimal_dsgc_ampa_nmda_scalar_gaba
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

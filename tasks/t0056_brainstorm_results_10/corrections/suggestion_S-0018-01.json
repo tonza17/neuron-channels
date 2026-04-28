@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-21",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0018_literature_survey_synaptic_integration",
+  "target_kind": "suggestion",
+  "target_id": "S-0018-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0018-01 proposes retrieving paywalled synaptic-integration PDFs (Lester et al. 1990, Koch-Poggio-Torre 1983, Wehr & Zador 2003, Hausser & Mel 2003, Euler-Detwiler-Denk 2002) via Sheffield access. Already bundled into not-started task t0031. Reprioritising from high to medium to reflect the from-scratch wave's critical path."
+}

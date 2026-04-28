@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-22",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0019_literature_survey_voltage_gated_channels",
+  "target_kind": "suggestion",
+  "target_id": "S-0019-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0019-01 proposes retrieving paywalled voltage-gated-channel PDFs (Van Wart-Trimmer-Matthews 2006, Kole-Letzkus-Stuart 2007, Fohlmeister & Miller 1997, Hu et al. 2009, Kole et al. 2008) via Sheffield access. Already bundled into not-started task t0031. Reprioritising from high to medium to reflect the from-scratch wave's critical path."
+}

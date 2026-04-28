@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-16",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0033_plan_dsgc_morphology_channel_optimisation",
+  "target_kind": "suggestion",
+  "target_id": "S-0033-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0033-03 proposes a multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended t0033 optimiser cell. The t0033 optimiser remains deferred per brainstorm 9 / brainstorm 10. The surrogate-NN cost-reduction idea remains valid but is not on the critical path until the optimiser itself is revived. Reprioritising from high to medium."
+}

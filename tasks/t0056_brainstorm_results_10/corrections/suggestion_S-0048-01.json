@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0056-23",
+  "correcting_task": "t0056_brainstorm_results_10",
+  "target_task": "t0048_voff_nmda1_dsi_test",
+  "target_kind": "suggestion",
+  "target_id": "S-0048-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0048-01 proposes a GABA conductance scan at Voff_bipNMDA = 1 to close the residual DSI gap to the paper's 0.30 line on the deposited Poleg-Polsky 2016 ModelDB 189347 substrate. Brainstorm session 9 retired the deposited-DSGC line as the canonical platform. The closely related question - what GABA operating point preserves DSI under NMDA-amplified excitation - is now being addressed on the from-scratch substrate by t0054 + t0055 + (forthcoming) S-0054-02. Reprioritising from high to medium."
+}
