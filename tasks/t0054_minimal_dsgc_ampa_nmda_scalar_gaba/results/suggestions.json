@@ -3,63 +3,83 @@
   "suggestions": [
     {
       "id": "S-0054-01",
-      "title": "Add voltage-dependent NMDA Mg block to recover DSI in the AMPA + NMDA + scalar gabaMOD minimal DSGC",
-      "description": "t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming PolegPolsky2016's prediction that the Boltzmann Mg block is required for multiplicative DSI. Replace Exp2Syn with a custom MOD file implementing the Jahr-Stevens Mg block (e.g., bipolarNMDA.mod from PolegPolsky2016 or a stripped t0046 version), keeping all other t0054 parameters fixed. Sweep the same 4 gNMDA values and 12 directions. Acceptance: vector-sum DSI at gNMDA=0.25 must exceed 0.30 to be considered a recovery.",
+      "title": "Add voltage-dependent NMDA Mg block to recover DSI in the t0054 minimal AMPA + NMDA + scalar gabaMOD architecture",
+      "description": "t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the headline negative result of t0054. Recommended task types: build-model, experiment-run.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "direction-selectivity",
+        "compartmental-modeling",
+        "synaptic-integration",
+        "dendritic-computation"
+      ]
+    },
+    {
+      "id": "S-0054-02",
+      "title": "Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal architecture to locate a DSI-preserving operating point",
+      "description": "t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0), varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged, voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01). Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells = 2880 trials. Apply early stop on cells where E_ONLY peak Hz > 30 Hz to prune the saturated subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI >= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent regime. Recommended task types: experiment-run.",
       "kind": "experiment",
       "priority": "high",
       "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
       "source_paper": null,
-      "categories": ["direction-selectivity", "compartmental-modeling", "synaptic-integration"]
-    },
-    {
-      "id": "S-0054-02",
-      "title": "Denser gNMDA sweep (0-0.4 nS in 0.025 nS steps) to localize the DSI-collapse transition",
-      "description": "t0054's 4-point gNMDA sweep ({0, 0.25, 0.5, 1.0} nS) shows DSI is intact at gNMDA=0 (vector-sum 0.746) and collapsed at gNMDA=0.25 (0.082). The transition is uncharacterised. Run a 17-point sweep at gNMDA = {0, 0.025, 0.05, ..., 0.4} nS with 12 directions x 5 trials (1020 trials, ~3 h CPU at t0054's 10.8 s/trial). Identify the critical gNMDA at which vector-sum DSI first drops below 0.5. This pins down the operating margin and informs the GABA-strength compensation needed in S-0054-04.",
-      "kind": "experiment",
-      "priority": "medium",
-      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
-      "source_paper": null,
-      "categories": ["direction-selectivity", "compartmental-modeling"]
+      "categories": [
+        "direction-selectivity",
+        "synaptic-integration",
+        "compartmental-modeling"
+      ]
     },
     {
       "id": "S-0054-03",
-      "title": "Conductance-matched cross-comparison of t0048 gNMDA sweep on the t0054 minimal cell",
-      "description": "t0054 (100-syn minimal cell, Exp2Syn NMDA tau2=80 ms) produced DSI ranges 0-0.143; t0048 (282-syn deposited DSGC, bipolarNMDA.mod with Voff=1) produced 0.04-0.10. The two studies disagree quantitatively because synapse counts and per-synapse conductances differ. Re-run t0054's sweep with per-synapse gAMPA scaled to match t0048's aggregate gAMPA (i.e., 282/100 x t0048's per-syn value), then compare vector-sum DSI directly. Acceptance: DSI ranges should agree within 0.05 once aggregate conductances are matched, isolating the architectural difference.",
-      "kind": "experiment",
+      "title": "Replace 1/e-crossing EPSP-decay metric with an exponential fit and lengthen the post-stimulus window",
+      "description": "REQ-20 (epsp_decay_to_1e_ms per gNMDA) returned null at all four gNMDA values because the 1500 ms trial window is shorter than the time the cell needs to drop below V_rest + (V_peak - V_rest)/e once 100 simultaneous NMDA Exp2Syn events with tau2=80 ms keep Vm depolarised. The headline numerical answer to 'how does EPSP tau scale with gNMDA?' is missing -- this is a metric implementation gap, not a biological null result. Implement two changes: (1) extend the recorded E_ONLY trace to 3000-5000 ms post-stimulus, (2) replace the 1/e-crossing search with a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validate against t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values, falls in 30-300 ms, and rises monotonically. Recommended task types: write-library, experiment-run.",
+      "kind": "technique",
       "priority": "medium",
       "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
       "source_paper": null,
-      "categories": ["direction-selectivity", "compartmental-modeling", "synaptic-integration"]
+      "categories": [
+        "synaptic-integration",
+        "cable-theory"
+      ]
     },
     {
       "id": "S-0054-04",
-      "title": "GABA conductance sweep at fixed gNMDA=0.25 nS to find the inhibition strength that restores DSI",
-      "description": "t0054 held GABA fixed at the t0052 base (2.0 nS per synapse, gabaMOD ratio 3.0). With NMDA active, scalar gabaMOD cannot maintain DSI even at the lowest tested gNMDA. Sweep base GABA conductance at {2, 4, 8, 16, 32} nS with gNMDA fixed at 0.25 nS, gabaMOD ratio fixed at 3.0, 12 directions x 5 trials (300 trials per setting, ~9 min CPU each). Find the GABA strength at which vector-sum DSI returns above 0.5 -- this quantifies whether the DSI collapse is fundamentally about Mg-block absence or whether stronger uniform inhibition can compensate.",
-      "kind": "experiment",
-      "priority": "medium",
+      "title": "Promote the t0052<->t0054 gNMDA=0 regression gate into a reusable cross-task baseline-equivalence verificator",
+      "description": "t0054's compute_metrics.py contains an ad-hoc hard-fail gate that compares the gNMDA=0 FULL tuning_curve_full.csv row-by-row against t0052's tuning_curve_full.csv (passed at max |rate diff| = 0.000e+00 Hz across 120 rows). This validates that placement, AMPA, GABA, and HH soma+AIS are bit-identical between t0052 and t0054 baselines. Promote this comparison to a reusable utility in arf/scripts/utils that takes (task_a_id, task_b_id, csv_filename, parameter-equivalence-config) and produces a structured pass/fail report. Wire it into a verificator-style entry point so downstream minimal-DSGC tasks (Mg-block follow-up S-0054-01, joint sweep S-0054-02, tau2 sweep S-0054-05) can declare 'this task's gNMDA=0 baseline must equal t0052' as a CI prerequisite. Acceptance: the helper exists in arf/scripts/utils, reproduces the t0054 0e+00 Hz max-diff verdict, and is invoked in the new task's compute step. Recommended task types: write-library.",
+      "kind": "evaluation",
+      "priority": "low",
       "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
       "source_paper": null,
-      "categories": ["direction-selectivity", "synaptic-integration"]
+      "categories": [
+        "compartmental-modeling"
+      ]
     },
     {
       "id": "S-0054-05",
-      "title": "Extend trial window to 2500 ms to capture full NMDA-driven EPSP decay tail and yield a numerical epsp_decay_to_1e_ms",
-      "description": "t0054's EPSP-decay-to-1/e metric returned null for all 4 gNMDA values because the 1500 ms trial window does not span the full NMDA tail (tau2=80 ms x 100 synapses superposition keeps Vm above 1/e of peak through trial end). Extend the trial window to 2500 ms with bar still passing in the first 800 ms, post-bar quiet period of 1700 ms. Re-run the gNMDA sweep (4 values x 12 directions x 5 trials = 240 trials, ~45 min CPU). Acceptance: epsp_decay_to_1e_ms must be a finite positive value for all 4 gNMDA values, falling within the biological NMDA decay range of 50-200 ms.",
+      "title": "NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle conductance amplitude from kinetic time constant",
+      "description": "t0054 fixed NMDA tau2 at 80 ms and varied only gNMDA, conflating conductance amplitude with kinetic time constant. Biological NMDA decay tau spans 50-200 ms across DSGC literature (PolegPolsky2016 reports tau1NMDA = 50 ms; t0018 cites 100-200 ms). Hold gNMDA fixed at 0.25 nS (the 12x peak-rate-boost point) and sweep tau2 in {30, 60, 80, 120, 200} ms x 12 directions x 10 trials x 2 modes (FULL, E_ONLY) = 1200 trials, on the t0054 minimal architecture with placement seed 0, voltage-independent NMDA kept. Report per-tau2 EPSP decay tau (using the improved metric from S-0054-03), peak Hz, and vector-sum DSI. Pass criterion: identify whether tau2 alone (independent of gNMDA) drives the DSI collapse, or whether the collapse is dominated by gNMDA. Recommended task types: experiment-run.",
       "kind": "experiment",
-      "priority": "low",
+      "priority": "medium",
       "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
-      "source_paper": null,
-      "categories": ["compartmental-modeling", "synaptic-integration"]
+      "source_paper": "10.1016_j.neuron.2016.02.013",
+      "categories": [
+        "synaptic-integration",
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
     },
     {
       "id": "S-0054-06",
-      "title": "Add AR(2) correlated release noise on top of t0054's deterministic NMDA sweep to test noise-amplified DSI degradation",
-      "description": "t0054 uses deterministic single-event-per-synapse trials (reliability=1.0 by construction). deRosenroll2026 emphasises AR(2) correlated release with rho=0.6 to match in vitro noise; uncorrelated release degrades DSI from 0.39 to 0.25. Add the t0024 AR(2) release process to t0054's E synapses (both AMPA and NMDA), keeping all other t0054 parameters fixed. Sweep gNMDA at {0, 0.25, 0.5, 1.0} nS x 12 directions x 20 trials (960 trials, ~3 h CPU). Acceptance: report vector-sum DSI mean and stddev across the 20-trial population per direction; quantify how much of the t0054 DSI collapse is amplified by noise.",
-      "kind": "experiment",
-      "priority": "low",
+      "title": "Per-trial ProcessPool parallelisation for the minimal-DSGC sweep runner (t0052/t0053/t0054)",
+      "description": "t0054's 1440-trial sweep took 4 h 19 min wall-clock on a single CPU thread (~10.8 s/trial), 3.5x over the 75-minute plan target. Adding Mg-block NMDA (S-0054-01), the joint conductance sweep (S-0054-02), and the tau2 sweep (S-0054-05) will each be 5-15x larger and infeasible on a single thread. Each (gNMDA, direction, trial, mode) combination is embarrassingly parallel because NEURON state is rebuilt per trial. Build a ProcessPoolExecutor wrapper for the minimal-DSGC sweep loop in t0054/code/run_tuning_curve.py (and equivalent t0052/t0053 paths) that farms trials across N_workers = max(1, cpu_count - 2). Validate: gNMDA=0 regression gate against t0052 still passes at 0e+00 Hz max diff. Distinct from t0045 (CoreNEURON-on-GPU for t0022) and S-0026-04 (t0024-specific) because it targets the CPU runner shared by t0052/t0053/t0054. Recommended task types: write-library, baseline-evaluation.",
+      "kind": "library",
+      "priority": "medium",
       "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
       "source_paper": null,
-      "categories": ["direction-selectivity", "compartmental-modeling"]
+      "categories": [
+        "compartmental-modeling"
+      ]
     }
   ]
 }
