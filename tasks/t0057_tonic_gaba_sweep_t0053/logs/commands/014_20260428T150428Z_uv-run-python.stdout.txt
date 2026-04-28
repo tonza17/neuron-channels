@@ -1,0 +1,4 @@
+[bootstrap] Building GabaTonic.mod via run_nrnivmodl.cmd ...
+[bootstrap] Built nrnmech.dll
+[bootstrap] gaba_tonic mechanism registered.
+OK

@@ -1,0 +1,15 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 5 items
+
+tasks/t0057_tonic_gaba_sweep_t0053/code/test_spatial_gating.py::test_pd_side_does_not_fire PASSED [ 20%]
+tasks/t0057_tonic_gaba_sweep_t0053/code/test_spatial_gating.py::test_nd_side_fires PASSED [ 40%]
+tasks/t0057_tonic_gaba_sweep_t0053/code/test_spatial_gating.py::test_perpendicular_does_not_fire PASSED [ 60%]
+tasks/t0057_tonic_gaba_sweep_t0053/code/test_spatial_gating.py::test_uniform_random_active_fraction_near_half PASSED [ 80%]
+tasks/t0057_tonic_gaba_sweep_t0053/code/test_quiescent_rest.py::test_quiescent_rest PASSED [100%]
+
+============================= 5 passed in 18.26s ==============================
