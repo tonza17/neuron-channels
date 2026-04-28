@@ -23,10 +23,10 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create the mandatory task folder structure and .gitkeep markers.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-28T10:53:10Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\003_init-folders/"
     },
     {
       "step": 4,
