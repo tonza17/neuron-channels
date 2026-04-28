@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare per-conductance DSI, peak rate, HWHM, and tuning shape against t0053 (parent), t0052 (scalar gabaMOD sibling), Park 2014, and de Rosenroll 2026 published benchmarks.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-28T17:49:29Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
