@@ -1,0 +1,65 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0054-01",
+      "title": "Add voltage-dependent NMDA Mg block to recover DSI in the AMPA + NMDA + scalar gabaMOD minimal DSGC",
+      "description": "t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming PolegPolsky2016's prediction that the Boltzmann Mg block is required for multiplicative DSI. Replace Exp2Syn with a custom MOD file implementing the Jahr-Stevens Mg block (e.g., bipolarNMDA.mod from PolegPolsky2016 or a stripped t0046 version), keeping all other t0054 parameters fixed. Sweep the same 4 gNMDA values and 12 directions. Acceptance: vector-sum DSI at gNMDA=0.25 must exceed 0.30 to be considered a recovery.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["direction-selectivity", "compartmental-modeling", "synaptic-integration"]
+    },
+    {
+      "id": "S-0054-02",
+      "title": "Denser gNMDA sweep (0-0.4 nS in 0.025 nS steps) to localize the DSI-collapse transition",
+      "description": "t0054's 4-point gNMDA sweep ({0, 0.25, 0.5, 1.0} nS) shows DSI is intact at gNMDA=0 (vector-sum 0.746) and collapsed at gNMDA=0.25 (0.082). The transition is uncharacterised. Run a 17-point sweep at gNMDA = {0, 0.025, 0.05, ..., 0.4} nS with 12 directions x 5 trials (1020 trials, ~3 h CPU at t0054's 10.8 s/trial). Identify the critical gNMDA at which vector-sum DSI first drops below 0.5. This pins down the operating margin and informs the GABA-strength compensation needed in S-0054-04.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["direction-selectivity", "compartmental-modeling"]
+    },
+    {
+      "id": "S-0054-03",
+      "title": "Conductance-matched cross-comparison of t0048 gNMDA sweep on the t0054 minimal cell",
+      "description": "t0054 (100-syn minimal cell, Exp2Syn NMDA tau2=80 ms) produced DSI ranges 0-0.143; t0048 (282-syn deposited DSGC, bipolarNMDA.mod with Voff=1) produced 0.04-0.10. The two studies disagree quantitatively because synapse counts and per-synapse conductances differ. Re-run t0054's sweep with per-synapse gAMPA scaled to match t0048's aggregate gAMPA (i.e., 282/100 x t0048's per-syn value), then compare vector-sum DSI directly. Acceptance: DSI ranges should agree within 0.05 once aggregate conductances are matched, isolating the architectural difference.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["direction-selectivity", "compartmental-modeling", "synaptic-integration"]
+    },
+    {
+      "id": "S-0054-04",
+      "title": "GABA conductance sweep at fixed gNMDA=0.25 nS to find the inhibition strength that restores DSI",
+      "description": "t0054 held GABA fixed at the t0052 base (2.0 nS per synapse, gabaMOD ratio 3.0). With NMDA active, scalar gabaMOD cannot maintain DSI even at the lowest tested gNMDA. Sweep base GABA conductance at {2, 4, 8, 16, 32} nS with gNMDA fixed at 0.25 nS, gabaMOD ratio fixed at 3.0, 12 directions x 5 trials (300 trials per setting, ~9 min CPU each). Find the GABA strength at which vector-sum DSI returns above 0.5 -- this quantifies whether the DSI collapse is fundamentally about Mg-block absence or whether stronger uniform inhibition can compensate.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["direction-selectivity", "synaptic-integration"]
+    },
+    {
+      "id": "S-0054-05",
+      "title": "Extend trial window to 2500 ms to capture full NMDA-driven EPSP decay tail and yield a numerical epsp_decay_to_1e_ms",
+      "description": "t0054's EPSP-decay-to-1/e metric returned null for all 4 gNMDA values because the 1500 ms trial window does not span the full NMDA tail (tau2=80 ms x 100 synapses superposition keeps Vm above 1/e of peak through trial end). Extend the trial window to 2500 ms with bar still passing in the first 800 ms, post-bar quiet period of 1700 ms. Re-run the gNMDA sweep (4 values x 12 directions x 5 trials = 240 trials, ~45 min CPU). Acceptance: epsp_decay_to_1e_ms must be a finite positive value for all 4 gNMDA values, falling within the biological NMDA decay range of 50-200 ms.",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["compartmental-modeling", "synaptic-integration"]
+    },
+    {
+      "id": "S-0054-06",
+      "title": "Add AR(2) correlated release noise on top of t0054's deterministic NMDA sweep to test noise-amplified DSI degradation",
+      "description": "t0054 uses deterministic single-event-per-synapse trials (reliability=1.0 by construction). deRosenroll2026 emphasises AR(2) correlated release with rho=0.6 to match in vitro noise; uncorrelated release degrades DSI from 0.39 to 0.25. Add the t0024 AR(2) release process to t0054's E synapses (both AMPA and NMDA), keeping all other t0054 parameters fixed. Sweep gNMDA at {0, 0.25, 0.5, 1.0} nS x 12 directions x 20 trials (960 trials, ~3 h CPU). Acceptance: report vector-sum DSI mean and stddev across the 20-trial population per direction; quantify how much of the t0054 DSI collapse is amplified by noise.",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+      "source_paper": null,
+      "categories": ["direction-selectivity", "compartmental-modeling"]
+    }
+  ]
+}
