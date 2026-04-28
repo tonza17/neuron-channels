@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0057_tonic_gaba_sweep_t0053 branch from main and write step_tracker.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T14:20:09Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T14:23:03Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
