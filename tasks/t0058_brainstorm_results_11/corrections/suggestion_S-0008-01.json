@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-10",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0008_port_modeldb_189347",
+  "target_kind": "suggestion",
+  "target_id": "S-0008-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0008-01 proposes porting Hanson 2019 Spatial-Offset-DSGC as a second DSGC library. t0023 (port_hanson_2019_dsgc) is intervention_blocked (paywalled paper retrieval). The deposited / second-DSGC line is de-emphasised by the brainstorm-9 from-scratch pivot. Reprioritising from high to medium; the suggestion stays on the shelf as a low-friction record but is no longer top-of-queue."
+}

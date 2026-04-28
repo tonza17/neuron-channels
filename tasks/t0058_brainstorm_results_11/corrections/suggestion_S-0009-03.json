@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-13",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0009_calibrate_dendritic_diameters",
+  "target_kind": "suggestion",
+  "target_id": "S-0009-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0009-03 proposes calibrating active Nav / Kv / Ih densities to match Poleg-Polsky 2016 spike shape and distal Ih sag. Active dendritic conductances are the explicit RQ4 focus, which the project sequencing places after a working multi-spike substrate exists. The from-scratch wave currently uses passive dendrites by design. Reprioritising from high to medium until RQ4 becomes the active focus."
+}

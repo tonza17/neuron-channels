@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-23",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0052_minimal_dsgc_scalar_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0052-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0052-04 proposes a t0052 (scalar gabaMOD) vs t0053 (spatial PD/ND-asymmetric inhibition) cross-comparison. t0057 demonstrated the spatial substrate has a degenerate FULL tuning curve at every swept conductance; the cross-comparison is less informative until the spatial substrate has a working operating point with non-zero peak Hz. t0059 may produce that operating point on the bar-locked variant; the comparison can be revisited then. Reprioritising from high to medium."
+}

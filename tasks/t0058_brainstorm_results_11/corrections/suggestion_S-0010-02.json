@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-14",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0010_hunt_missed_dsgc_models",
+  "target_kind": "suggestion",
+  "target_id": "S-0010-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0010-02 proposes hand-porting deRosenroll 2026 ds-circuit-ei and remapping the 8-angle grid to 12 angles. The t0024 deRosenroll lineage was de-emphasised by brainstorm 9 in favour of the from-scratch substrate. Reprioritising from high to medium."
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-24",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0053_minimal_dsgc_spatial_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0053-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0053-02 proposes a stricter centripetal-gating threshold sweep (cos < -0.3, -0.5, -0.7, -0.866) to halve the active-fraction on t0053. t0057 already demonstrated that the active-fraction modulation (0.34-0.66 across directions) is intact and that the failure mode is amplitude-driven (single-spike below 1.5 nS, full suppression at/above), not gating-geometry-driven. The AMPA escape and bar-locked-window axes (t0059) are higher-leverage. Reprioritising from high to medium."
+}

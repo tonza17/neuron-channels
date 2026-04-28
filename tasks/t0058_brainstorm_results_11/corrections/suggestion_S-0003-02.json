@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-08",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0003_simulator_library_survey",
+  "target_kind": "suggestion",
+  "target_id": "S-0003-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0003-02 proposes porting the Poleg-Polsky & Diamond 2016 ModelDB 189347 DSGC into the project as a library asset. The deposited ModelDB 189347 has been ported and exercised across t0008, t0020, t0046, t0047, t0048, t0049, t0050; brainstorm 9 then pivoted off the deposited-DSGC line in favour of the from-scratch substrate (t0052/t0053/t0054/t0055/t0057). A clean re-port as a top-level library asset is no longer top-of-queue. Reprioritising from high to medium so the high-priority shelf reflects the from-scratch wave's true critical path."
+}

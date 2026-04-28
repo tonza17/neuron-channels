@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-12",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0009_calibrate_dendritic_diameters",
+  "target_kind": "suggestion",
+  "target_id": "S-0009-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0009-02 proposes interpolating soma pt3dadd diameters along the principal axis to replace the uniform 4.118 um soma radius. Same rationale as S-0009-01: morphology refinement belongs to RQ2 follow-ups once a working multi-spike substrate exists. Reprioritising from high to medium."
+}

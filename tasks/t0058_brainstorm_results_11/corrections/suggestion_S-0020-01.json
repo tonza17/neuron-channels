@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-18",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0020_port_modeldb_189347_gabamod",
+  "target_kind": "suggestion",
+  "target_id": "S-0020-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0020-01 proposes an excitation-side sensitivity sweep under gabaMOD-swap on the deposited-DSGC port to close the 25 Hz peak-firing-rate gap. The deposited-DSGC line is retired in favour of the from-scratch substrate. The same AMPA-escape question is being answered on the from-scratch substrate via t0059. Reprioritising from high to medium."
+}

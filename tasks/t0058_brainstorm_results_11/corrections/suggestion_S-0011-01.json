@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-01",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0011_response_visualization_library",
+  "target_kind": "suggestion",
+  "target_id": "S-0011-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0011-01 proposes recording per-trial soma spike times from the deposited modeldb_189347_dsgc to exercise plot_angle_raster_psth on real spike data. The deposited-DSGC line was retired in brainstorm 9; the from-scratch wave (t0052/t0053/t0054/t0055/t0057) has been exercising plot_angle_raster_psth on real spike data across multiple tasks, so the original validation goal is satisfied on a more strategically relevant substrate. Rejecting as covered."
+}

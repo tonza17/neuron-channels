@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-20",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0024_port_de_rosenroll_2026_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0024-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0024-01 proposes porting the full upstream SacNetwork (with bp_locs / probs / deltas) to reproduce the deRosenroll correlation-drop effect. The t0024 lineage is de-emphasised by brainstorm 9. Reprioritising from high to medium."
+}
