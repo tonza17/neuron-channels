@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare per-gNMDA primary DSI / peak rate against Park 2014, Poleg-Polsky 2016, t0052 baseline.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T04:40:00Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T04:45:10Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
