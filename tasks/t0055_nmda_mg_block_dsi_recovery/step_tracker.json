@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json (12 variants), derived_quantities.json, costs.json with PASS/FAIL on the S-0054-01 criterion.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-28T13:43:16Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
