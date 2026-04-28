@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0055_nmda_mg_block_dsi_recovery\assets\library\tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda
+
+[31m[1mERRORS:[0m
+[31m  LA-E001 error: details.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0055_nmda_mg_block_dsi_recovery\assets\library\tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda\details.json[0m
+[31m  LA-E002 error: description.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0055_nmda_mg_block_dsi_recovery\assets\library\tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda\description.md[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

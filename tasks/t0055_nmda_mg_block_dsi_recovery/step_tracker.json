@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Author NMDA_MgBlock.mod, fork t0054 codebase to t0055, run validation gates and full 1440-trial sweep, compute metrics, render figures.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-28T11:15:28Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

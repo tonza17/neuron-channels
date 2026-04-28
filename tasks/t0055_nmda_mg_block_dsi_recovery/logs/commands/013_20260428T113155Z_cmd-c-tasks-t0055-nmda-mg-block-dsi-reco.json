@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0055_nmda_mg_block_dsi_recovery",
+  "command": "cmd C:/ tasks/t0055_nmda_mg_block_dsi_recovery/code/run_nrnivmodl.cmd",
+  "exit_code": 1,
+  "duration_seconds": 0.038,
+  "started_at": "2026-04-28T11:31:55Z",
+  "completed_at": "2026-04-28T11:31:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0055_nmda_mg_block_dsi_recovery",
+  "stdout_file": "013_20260428T113155Z_cmd-c-tasks-t0055-nmda-mg-block-dsi-reco.stdout.txt",
+  "stderr_file": "013_20260428T113155Z_cmd-c-tasks-t0055-nmda-mg-block-dsi-reco.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

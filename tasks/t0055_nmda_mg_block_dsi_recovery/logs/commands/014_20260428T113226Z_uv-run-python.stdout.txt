@@ -1,0 +1,3 @@
+[bootstrap] NMDA_MgBlock mechanism registered.
+h.NMDA_MgBlock present: True
+tau1= 5.0 tau2= 80.0 e= 0.0 n= 0.25 gama= 0.08 Voff= 0.0 Vset= -60.0

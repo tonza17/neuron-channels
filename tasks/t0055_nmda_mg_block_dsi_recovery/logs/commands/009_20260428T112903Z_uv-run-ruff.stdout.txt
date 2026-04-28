@@ -1,0 +1,21 @@
+E501 Line too long (101 > 100)
+   --> tasks\t0055_nmda_mg_block_dsi_recovery\code\compute_metrics.py:232:101
+    |
+231 | def _check_gnmda0_regression(*, full_csv: Path) -> None:
+232 |     """Hard-fail if t0055 gnmda_ns=0 FULL rates differ from t0054's tuning_curve_full.csv at gnmda=0.
+    |                                                                                                     ^
+233 |
+234 |     Reads both CSVs, sorts by (angle_deg, trial_seed), and asserts row-by-row equality within
+    |
+
+E501 Line too long (101 > 100)
+   --> tasks\t0055_nmda_mg_block_dsi_recovery\code\compute_metrics.py:416:101
+    |
+414 |     )
+415 |     pass_dsi: bool = dsi_at_025 is not None and dsi_at_025 > PASS_CRITERION_DSI_THRESHOLD
+416 |     pass_hz: bool = peak_hz_at_025 is not None and peak_hz_at_025 >= PASS_CRITERION_PEAK_HZ_THRESHOLD
+    |                                                                                                     ^
+417 |     pass_overall: bool = bool(pass_dsi and pass_hz)
+    |
+
+Found 2 errors.

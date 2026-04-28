@@ -1,0 +1,2 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0055_nmda_mg_block_dsi_recovery\tasks\t0055_nmda_mg_block_dsi_recovery\code\render_figures.py:352: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(loc="best", frameon=False)

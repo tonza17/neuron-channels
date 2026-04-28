@@ -1,0 +1,144 @@
+{
+  "variants": [
+    {
+      "variant_id": "gnmda_0.00_full",
+      "label": "gNMDA = 0.00 nS, FULL",
+      "dimensions": {
+        "gnmda_ns": 0.0,
+        "mode": "full"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.980414819835936
+      }
+    },
+    {
+      "variant_id": "gnmda_0.00_e_only",
+      "label": "gNMDA = 0.00 nS, E_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.0,
+        "mode": "e_only"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gnmda_0.00_gaba_only",
+      "label": "gNMDA = 0.00 nS, GABA_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.0,
+        "mode": "gaba_only"
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "gnmda_0.25_full",
+      "label": "gNMDA = 0.25 nS, FULL",
+      "dimensions": {
+        "gnmda_ns": 0.25,
+        "mode": "full"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.980414819835936
+      }
+    },
+    {
+      "variant_id": "gnmda_0.25_e_only",
+      "label": "gNMDA = 0.25 nS, E_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.25,
+        "mode": "e_only"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.333333,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "gnmda_0.25_gaba_only",
+      "label": "gNMDA = 0.25 nS, GABA_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.25,
+        "mode": "gaba_only"
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "gnmda_0.50_full",
+      "label": "gNMDA = 0.50 nS, FULL",
+      "dimensions": {
+        "gnmda_ns": 0.5,
+        "mode": "full"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.980414819835936
+      }
+    },
+    {
+      "variant_id": "gnmda_0.50_e_only",
+      "label": "gNMDA = 0.50 nS, E_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.5,
+        "mode": "e_only"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.333333,
+        "tuning_curve_reliability": 0.9999999999999998
+      }
+    },
+    {
+      "variant_id": "gnmda_0.50_gaba_only",
+      "label": "gNMDA = 0.50 nS, GABA_ONLY",
+      "dimensions": {
+        "gnmda_ns": 0.5,
+        "mode": "gaba_only"
+      },
+      "metrics": {}
+    },
+    {
+      "variant_id": "gnmda_1.00_full",
+      "label": "gNMDA = 1.00 nS, FULL",
+      "dimensions": {
+        "gnmda_ns": 1.0,
+        "mode": "full"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.980414819835936
+      }
+    },
+    {
+      "variant_id": "gnmda_1.00_e_only",
+      "label": "gNMDA = 1.00 nS, E_ONLY",
+      "dimensions": {
+        "gnmda_ns": 1.0,
+        "mode": "e_only"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.333333,
+        "tuning_curve_reliability": 1.0
+      }
+    },
+    {
+      "variant_id": "gnmda_1.00_gaba_only",
+      "label": "gNMDA = 1.00 nS, GABA_ONLY",
+      "dimensions": {
+        "gnmda_ns": 1.0,
+        "mode": "gaba_only"
+      },
+      "metrics": {}
+    }
+  ]
+}
