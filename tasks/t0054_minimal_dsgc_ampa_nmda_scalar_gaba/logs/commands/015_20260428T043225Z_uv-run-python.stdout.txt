@@ -1,0 +1,10 @@
+[metrics] Running gNMDA = 0 regression gate first...
+[gnmda0-gate] max |rate diff| = 0.000e+00 Hz (n=120 rows)
+[gnmda0-gate] OK: t0054 gnmda=0 FULL rates match t0052 within tolerance.
+[metrics] gabaMOD(0)=0.3300  gabaMOD(180)=0.9900  conductance_ratio=3.0000
+[metrics] === gNMDA = 0.00 nS ===
+[metrics] === gNMDA = 0.25 nS ===
+[metrics] === gNMDA = 0.50 nS ===
+[metrics] === gNMDA = 1.00 nS ===
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\results\metrics.json (12 variants)
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\results\derived_quantities.json

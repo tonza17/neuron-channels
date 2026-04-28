@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "command": "uv run python -u tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/code/test_gaba_mod.py",
+  "exit_code": 0,
+  "duration_seconds": 0.491,
+  "started_at": "2026-04-27T21:53:17Z",
+  "completed_at": "2026-04-27T21:53:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "stdout_file": "008_20260427T215317Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260427T215317Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

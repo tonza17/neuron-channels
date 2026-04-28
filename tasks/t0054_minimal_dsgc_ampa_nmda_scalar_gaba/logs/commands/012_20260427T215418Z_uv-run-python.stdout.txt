@@ -1,0 +1,10 @@
+[setup] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[setup] cell built: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24
+[setup] Sampling 100 dendritic locations (seed=0)
+[setup] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\results\placement_seed0.json
+[setup] Building 100 co-located E+I+NMDA pairs
+[inert-check] first_pair.nmda_netcon.weight[0] = 0.0 uS
+[inert-check] PASS: NMDA NetCon weights are 0.0 after build_ei_pairs
+[inert-sim] trial_seed=1 t0054_rate=0.666667 Hz t0052_rate=0.666667 Hz diff=3.333e-07 Hz
+[inert-sim] trial_seed=2 t0054_rate=0.666667 Hz t0052_rate=0.666667 Hz diff=3.333e-07 Hz
+[inert-sim] PASS: gNMDA=0 FULL theta=0 matches t0052 within 1e-6 Hz

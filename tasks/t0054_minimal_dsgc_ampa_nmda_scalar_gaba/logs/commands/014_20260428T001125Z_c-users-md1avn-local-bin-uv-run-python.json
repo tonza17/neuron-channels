@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "command": "C:/Users/md1avn/.local/bin/uv run python -u tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/code/run_tuning_curve.py",
+  "exit_code": 0,
+  "duration_seconds": 15622.848,
+  "started_at": "2026-04-28T00:11:25Z",
+  "completed_at": "2026-04-28T04:31:48Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "stdout_file": "014_20260428T001125Z_c-users-md1avn-local-bin-uv-run-python.stdout.txt",
+  "stderr_file": "014_20260428T001125Z_c-users-md1avn-local-bin-uv-run-python.stderr.txt",
+  "stdout_lines": 163,
+  "stderr_lines": 1491,
+  "truncated": false
+}

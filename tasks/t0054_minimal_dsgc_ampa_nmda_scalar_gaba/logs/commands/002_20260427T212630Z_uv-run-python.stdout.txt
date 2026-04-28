@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0047] has no matching Task Index entry[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

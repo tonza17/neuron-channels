@@ -1,0 +1,9 @@
+Folders created by init_task_folders for t0054_minimal_dsgc_ampa_nmda_scalar_gaba:
+
+results/, results/images/, corrections/, intervention/, code/,
+logs/commands/, logs/searches/, logs/sessions/, logs/steps/, assets/library/
+
+Files created:
+__init__.py
+code/__init__.py
+.gitkeep files in all empty directories above.

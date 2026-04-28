@@ -1,0 +1,234 @@
+{
+  "ipsp_conductance_ratio_null_over_pref": 3.0,
+  "gaba_mod_pd": 0.33,
+  "gaba_mod_nd": 0.99,
+  "per_variant": {
+    "gnmda_0.00_full": {
+      "peak_hz": 0.6666670000000001,
+      "null_hz": 0.0,
+      "vector_sum_dsi": 0.7464101615137754,
+      "preferred_direction_deg": 360.0,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.00_e_only": {
+      "peak_hz": 0.6666670000000001,
+      "null_hz": 0.6666670000000001,
+      "vector_sum_dsi": 3.231729517986563e-17,
+      "preferred_direction_deg": 205.43093022090383,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.00_gaba_only": {
+      "peak_hz": 0.0,
+      "null_hz": 0.0,
+      "vector_sum_dsi": 0.0,
+      "preferred_direction_deg": 0.0,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.25_full": {
+      "peak_hz": 8.0,
+      "null_hz": 6.0,
+      "vector_sum_dsi": 0.08156921668676048,
+      "preferred_direction_deg": 359.99999999999994,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.25_e_only": {
+      "peak_hz": 6.666667000000001,
+      "null_hz": 6.0,
+      "vector_sum_dsi": 0.008403365157827646,
+      "preferred_direction_deg": 359.9999999999997,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.25_gaba_only": {
+      "peak_hz": 0.0,
+      "null_hz": 0.0,
+      "vector_sum_dsi": 0.0,
+      "preferred_direction_deg": 0.0,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.50_full": {
+      "peak_hz": 7.333332999999999,
+      "null_hz": 6.0,
+      "vector_sum_dsi": 0.028598852858338096,
+      "preferred_direction_deg": 134.999981837969,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.50_e_only": {
+      "peak_hz": 4.666667000000001,
+      "null_hz": 4.666667000000001,
+      "vector_sum_dsi": 0.024148156523891767,
+      "preferred_direction_deg": 165.00000000000006,
+      "active_fraction": 1.0
+    },
+    "gnmda_0.50_gaba_only": {
+      "peak_hz": 0.0,
+      "null_hz": 0.0,
+      "vector_sum_dsi": 0.0,
+      "preferred_direction_deg": 0.0,
+      "active_fraction": 1.0
+    },
+    "gnmda_1.00_full": {
+      "peak_hz": 4.666667000000001,
+      "null_hz": 4.666667000000001,
+      "vector_sum_dsi": 0.017246514429845223,
+      "preferred_direction_deg": 254.9999999999999,
+      "active_fraction": 1.0
+    },
+    "gnmda_1.00_e_only": {
+      "peak_hz": 4.666667000000001,
+      "null_hz": 4.0,
+      "vector_sum_dsi": 0.01369863689247514,
+      "preferred_direction_deg": 269.9999999999999,
+      "active_fraction": 1.0
+    },
+    "gnmda_1.00_gaba_only": {
+      "peak_hz": 0.0,
+      "null_hz": 0.0,
+      "vector_sum_dsi": 0.0,
+      "preferred_direction_deg": 0.0,
+      "active_fraction": 1.0
+    }
+  },
+  "per_gnmda": {
+    "0.00": {
+      "epsp_decay_to_1e_ms": null,
+      "preferred_direction_deg": 360.0,
+      "aggregate_epsp_peak_per_direction_mv": {
+        "angle_000": 83.96430000000001,
+        "angle_030": 83.8177,
+        "angle_060": 84.0468,
+        "angle_090": 83.7128,
+        "angle_120": 84.4856,
+        "angle_150": 84.5861,
+        "angle_180": 84.3152,
+        "angle_210": 84.0874,
+        "angle_240": 84.3426,
+        "angle_270": 84.0047,
+        "angle_300": 83.7229,
+        "angle_330": 83.6754
+      },
+      "aggregate_ipsp_peak_per_direction_mv": {
+        "angle_000": 5.302099999999996,
+        "angle_030": 5.503299999999996,
+        "angle_060": 5.998099999999994,
+        "angle_090": 6.813900000000004,
+        "angle_120": 7.543400000000005,
+        "angle_150": 7.9298,
+        "angle_180": 8.159899999999993,
+        "angle_210": 7.975499999999997,
+        "angle_240": 7.678299999999993,
+        "angle_270": 7.124399999999994,
+        "angle_300": 6.3833000000000055,
+        "angle_330": 5.609399999999994
+      },
+      "ipsp_pd_mv": 5.302099999999996,
+      "ipsp_nd_mv": 8.159899999999993,
+      "ipsp_voltage_ratio_null_over_pref": 1.5389939835159654
+    },
+    "0.25": {
+      "epsp_decay_to_1e_ms": null,
+      "preferred_direction_deg": 359.99999999999994,
+      "aggregate_epsp_peak_per_direction_mv": {
+        "angle_000": 84.0338,
+        "angle_030": 83.9488,
+        "angle_060": 84.0891,
+        "angle_090": 84.1835,
+        "angle_120": 84.0382,
+        "angle_150": 84.4822,
+        "angle_180": 84.4036,
+        "angle_210": 84.0001,
+        "angle_240": 84.2399,
+        "angle_270": 84.0348,
+        "angle_300": 83.7652,
+        "angle_330": 83.7667
+      },
+      "aggregate_ipsp_peak_per_direction_mv": {
+        "angle_000": 5.302099999999996,
+        "angle_030": 5.503299999999996,
+        "angle_060": 5.998099999999994,
+        "angle_090": 6.813900000000004,
+        "angle_120": 7.543400000000005,
+        "angle_150": 7.9298,
+        "angle_180": 8.159899999999993,
+        "angle_210": 7.975499999999997,
+        "angle_240": 7.678299999999993,
+        "angle_270": 7.124399999999994,
+        "angle_300": 6.3833000000000055,
+        "angle_330": 5.609399999999994
+      },
+      "ipsp_pd_mv": 5.302099999999996,
+      "ipsp_nd_mv": 8.159899999999993,
+      "ipsp_voltage_ratio_null_over_pref": 1.5389939835159654
+    },
+    "0.50": {
+      "epsp_decay_to_1e_ms": null,
+      "preferred_direction_deg": 134.999981837969,
+      "aggregate_epsp_peak_per_direction_mv": {
+        "angle_000": 84.0363,
+        "angle_030": 83.962,
+        "angle_060": 83.4477,
+        "angle_090": 84.242,
+        "angle_120": 84.4043,
+        "angle_150": 84.405,
+        "angle_180": 84.3305,
+        "angle_210": 83.74080000000001,
+        "angle_240": 84.1505,
+        "angle_270": 83.8682,
+        "angle_300": 83.6668,
+        "angle_330": 83.714
+      },
+      "aggregate_ipsp_peak_per_direction_mv": {
+        "angle_000": 5.302099999999996,
+        "angle_030": 5.503299999999996,
+        "angle_060": 5.998099999999994,
+        "angle_090": 6.813900000000004,
+        "angle_120": 7.543400000000005,
+        "angle_150": 7.9298,
+        "angle_180": 8.159899999999993,
+        "angle_210": 7.975499999999997,
+        "angle_240": 7.678299999999993,
+        "angle_270": 7.124399999999994,
+        "angle_300": 6.3833000000000055,
+        "angle_330": 5.609399999999994
+      },
+      "ipsp_pd_mv": 5.302099999999996,
+      "ipsp_nd_mv": 8.159899999999993,
+      "ipsp_voltage_ratio_null_over_pref": 1.5389939835159654
+    },
+    "1.00": {
+      "epsp_decay_to_1e_ms": null,
+      "preferred_direction_deg": 254.9999999999999,
+      "aggregate_epsp_peak_per_direction_mv": {
+        "angle_000": 83.9492,
+        "angle_030": 83.9837,
+        "angle_060": 83.7437,
+        "angle_090": 83.7337,
+        "angle_120": 84.2436,
+        "angle_150": 84.2107,
+        "angle_180": 84.1571,
+        "angle_210": 83.8961,
+        "angle_240": 83.8326,
+        "angle_270": 83.1632,
+        "angle_300": 83.6637,
+        "angle_330": 83.643
+      },
+      "aggregate_ipsp_peak_per_direction_mv": {
+        "angle_000": 5.302099999999996,
+        "angle_030": 5.503299999999996,
+        "angle_060": 5.998099999999994,
+        "angle_090": 6.813900000000004,
+        "angle_120": 7.543400000000005,
+        "angle_150": 7.9298,
+        "angle_180": 8.159899999999993,
+        "angle_210": 7.975499999999997,
+        "angle_240": 7.678299999999993,
+        "angle_270": 7.124399999999994,
+        "angle_300": 6.3833000000000055,
+        "angle_330": 5.609399999999994
+      },
+      "ipsp_pd_mv": 5.302099999999996,
+      "ipsp_nd_mv": 8.159899999999993,
+      "ipsp_voltage_ratio_null_over_pref": 1.5389939835159654
+    }
+  },
+  "rmse_target_note": "tuning_curve_rmse computed against t0004 target curve"
+}

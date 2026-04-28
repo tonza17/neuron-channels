@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\assets\library\minimal_dsgc_ampa_nmda_scalar_gaba
+
+[32m[1mPASSED[0m — no errors or warnings

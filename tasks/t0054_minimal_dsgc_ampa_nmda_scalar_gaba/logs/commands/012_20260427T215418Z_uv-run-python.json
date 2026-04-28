@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "command": "uv run python -u -c \nfrom tasks.t0054_minimal_dsgc_ampa_nmda_scalar_gaba.code.run_tuning_curve import setup_sweep_artifacts\nfrom tasks.t0054_minimal_dsgc_ampa_nmda_scalar_gaba.code.constants import TrialMode\nfrom tasks.t0054_minimal_dsgc_ampa_nmda_scalar_gaba.code.trial import run_one_trial\n\nartifacts = setup_sweep_artifacts()\n# First inert check: weights at construction time.\nfirst_pair = artifacts.pairs[0]\nprint(f'[inert-check] first_pair.nmda_netcon.weight[0] = {float(first_pair.nmda_netcon.weight[0])} uS', flush=True)\nassert float(first_pair.nmda_netcon.weight[0]) == 0.0, 'NMDA NetCon weight should be 0 at construction'\nprint('[inert-check] PASS: NMDA NetCon weights are 0.0 after build_ei_pairs', flush=True)\n\nfrom neuron import h\nexpected_t0052_rate = 0.666667\nfor trial_idx in range(2):\n    trial_seed = 1000 * 0 + trial_idx + 1\n    r = run_one_trial(\n        h=h,\n        cell=artifacts.cell,\n        pairs=artifacts.pairs,\n        mode=TrialMode.FULL,\n        angle_deg=0.0,\n        trial_seed=trial_seed,\n        gnmda_ns=0.0,\n    )\n    diff = abs(r.firing_rate_hz - expected_t0052_rate)\n    print(f'[inert-sim] trial_seed={trial_seed} t0054_rate={r.firing_rate_hz:.6f} Hz t0052_rate={expected_t0052_rate:.6f} Hz diff={diff:.3e} Hz', flush=True)\n    assert diff < 1e-6, f'gNMDA=0 mismatch at trial_seed={trial_seed}: diff={diff}'\nprint('[inert-sim] PASS: gNMDA=0 FULL theta=0 matches t0052 within 1e-6 Hz', flush=True)\n",
+  "exit_code": 0,
+  "duration_seconds": 10.2,
+  "started_at": "2026-04-27T21:54:18Z",
+  "completed_at": "2026-04-27T21:54:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "stdout_file": "012_20260427T215418Z_uv-run-python.stdout.txt",
+  "stderr_file": "012_20260427T215418Z_uv-run-python.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}
