@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-25",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0053_minimal_dsgc_spatial_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0053-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0053-03 proposes a conductance-matched t0052 vs t0053 comparison at fixed mean GABA mass per trial. Same rationale as S-0052-04: defer until the spatial substrate has a working operating point. t0059's bar-locked grid is the most likely route to such an operating point; the conductance-matched comparison can be revisited then. Reprioritising from high to medium."
+}

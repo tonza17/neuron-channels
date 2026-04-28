@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-19",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0020_port_modeldb_189347_gabamod",
+  "target_kind": "suggestion",
+  "target_id": "S-0020-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0020-02 proposes reproducing Poleg-Polsky 2016 Fig 1D/H subthreshold validation targets (PSP amplitude, NMDAR slope angle) on the deposited-DSGC port. Deposited-DSGC line retired; subthreshold validation may be revived on the from-scratch substrate later but is not currently top-of-queue. Reprioritising from high to medium."
+}

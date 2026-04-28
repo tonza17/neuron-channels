@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-06",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0057_tonic_gaba_sweep_t0053",
+  "target_kind": "suggestion",
+  "target_id": "S-0057-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0057-02 proposes an AMPA conductance escape sweep on the t0057 tonic-GABA substrate to enter the multi-spike regime. t0059 covers this directly: its gAMPA axis spans {0.5, 1.0, 2.0, 3.0, 4.0} nS at fixed GABA_BASE_NS in {0.1, 0.2, 0.5, 1.0, 2.0} nS on the bar-arrival-locked window mechanism, providing the AMPA escape sweep on a strictly more biologically realistic substrate than S-0057-02's globally-windowed proposal. Rejecting as covered by t0059 (with AMPA top trimmed from 5.0 to 4.0 nS per researcher decision)."
+}

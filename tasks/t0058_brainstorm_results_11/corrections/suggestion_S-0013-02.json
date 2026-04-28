@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-17",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0013_resolve_morphology_provenance",
+  "target_kind": "suggestion",
+  "target_id": "S-0013-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0013-02 proposes a plan-stage DOI-nomination verificator that checks each candidate DOI matches its human-written label. Tooling utility; same rationale as S-0013-01. Reprioritising from high to medium."
+}

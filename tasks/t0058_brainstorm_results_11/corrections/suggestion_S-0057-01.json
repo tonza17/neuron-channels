@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-05",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0057_tonic_gaba_sweep_t0053",
+  "target_kind": "suggestion",
+  "target_id": "S-0057-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0057-01 proposes a sub-0.25 nS finer GABA sweep on t0057 to test a graded-suppression hypothesis below the AMPA-spike-veto threshold. t0059 covers this directly: its GABA_BASE_NS axis includes 0.1 nS and 0.2 nS, both in the sub-veto regime that S-0057-01 targets, on a more biologically realistic per-synapse bar-arrival-locked window mechanism. Rejecting as covered by t0059."
+}

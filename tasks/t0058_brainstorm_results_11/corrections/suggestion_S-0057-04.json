@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-07",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0057_tonic_gaba_sweep_t0053",
+  "target_kind": "suggestion",
+  "target_id": "S-0057-04",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0057-04 proposes per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on t0057 to model bar-arrival-locked inhibition. t0059 implements this mechanism as its baseline architecture: each centripetally-active I synapse gets t_on_i = (x_i cos(theta) + y_i sin(theta)) / v + 100 ms and t_off_i = t_on_i + window_ms with window_ms = 200 ms (biologically motivated midpoint of the 100-300 ms SAC IPSC envelope range). Per researcher decision, window_ms is fixed at one biologically defensible value rather than swept (the {50, 100, 200, 400} ms sweep proposed in S-0057-04 is collapsed to 200 ms). Rejecting as covered by t0059."
+}

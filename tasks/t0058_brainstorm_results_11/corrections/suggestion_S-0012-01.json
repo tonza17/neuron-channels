@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-02",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0012_tuning_curve_scoring_loss_library",
+  "target_kind": "suggestion",
+  "target_id": "S-0012-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0012-01 proposes adding a verify_library_asset.py framework verificator for library asset structure and metadata. The verificator already exists and is in active use as a hard-fail pass gate across t0052/t0053/t0054/t0057 library assets. Rejecting as already implemented."
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-03",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0012_tuning_curve_scoring_loss_library",
+  "target_kind": "suggestion",
+  "target_id": "S-0012-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0012-03 proposes integrating tuning_curve_loss into the t0008 Poleg-Polsky DSGC reproduction (deposited model) to score the ported ModelDB 189347 curve. The deposited-DSGC line was retired in brainstorm 9. The tuning_curve_loss is integrated into the from-scratch lineage instead via the metrics.json RMSE entries that t0052/t0053/t0054/t0057 each report against the t0004 target. Rejecting as the deposited integration target is no longer relevant and the loss function is in active use elsewhere."
+}

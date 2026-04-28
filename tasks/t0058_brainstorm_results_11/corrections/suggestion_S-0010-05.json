@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-15",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0010_hunt_missed_dsgc_models",
+  "target_kind": "suggestion",
+  "target_id": "S-0010-05",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0010-05 proposes a headless-port scaffold library wrapping upstream NEURON models. The deposited / upstream-port lineage is de-emphasised by the brainstorm-9 from-scratch pivot; demand for a generic headless-port scaffold is consequently low. Reprioritising from high to medium."
+}

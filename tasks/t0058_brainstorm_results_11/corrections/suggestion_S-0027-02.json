@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-21",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0027_literature_survey_morphology_ds_modeling",
+  "target_kind": "suggestion",
+  "target_id": "S-0027-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0027-02 proposes swapping bipolar-cell sustained vs transient kinetics on t0024 to discriminate kinetic tiling from cable delay. t0024 lineage de-emphasised by brainstorm 9; the kinetic-tiling question is also addressable later on the from-scratch substrate as a focused follow-up. Reprioritising from high to medium."
+}

@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-09",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0007_install_neuron_netpyne",
+  "target_kind": "suggestion",
+  "target_id": "S-0007-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0007-01 proposes a dedicated sanity simulation to validate the custom khhchan.mod biophysics. The from-scratch wave (t0052/t0053/t0054/t0055/t0057) uses standard NEURON `hh` channel mechanism on soma and AIS; khhchan.mod is no longer on the active substrate's channel path. The validation may matter again if the deposited-DSGC line is revived or active dendritic conductances (RQ4) require a custom HH variant, but it is not gating any current research line. Reprioritising from high to medium."
+}

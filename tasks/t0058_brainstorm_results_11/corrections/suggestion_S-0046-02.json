@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-22",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0046_reproduce_poleg_polsky_2016_exact",
+  "target_kind": "suggestion",
+  "target_id": "S-0046-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0046-02 proposes root-causing the 282-vs-177 synapse-count discrepancy in ModelDB 189347 vs the Poleg-Polsky 2016 paper text. Deposited-DSGC line retired; the from-scratch substrate uses 100 E + 100 I synapses by explicit design and the discrepancy is no longer load-bearing for any active research path. Reprioritising from high to medium."
+}

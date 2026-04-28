@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-16",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0013_resolve_morphology_provenance",
+  "target_kind": "suggestion",
+  "target_id": "S-0013-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0013-01 proposes a shared arf.scripts.utils.resolve_doi helper returning title, authors, venue, year, PMID, PMCID. Tooling utility; useful but not gating any active research line. Reprioritising from high to medium."
+}

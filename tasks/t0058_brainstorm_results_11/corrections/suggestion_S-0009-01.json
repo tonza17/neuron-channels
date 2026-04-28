@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0058-11",
+  "correcting_task": "t0058_brainstorm_results_11",
+  "target_task": "t0009_calibrate_dendritic_diameters",
+  "target_kind": "suggestion",
+  "target_id": "S-0009-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0009-01 proposes inverse-fitting three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient. Deeper morphology calibration is RQ2 work; the from-scratch wave currently uses the t0009 calibrated morphology and the immediate strategic question (escape the binary single-spike / full-suppression regime) sits on AMPA / GABA conductance and inhibition timing rather than morphology refinement. Reprioritising from high to medium until a working multi-spike substrate exists and morphology sensitivity becomes the active focus."
+}
