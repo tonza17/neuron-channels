@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions covering tonic-GABA propagation back to t0052 / t0054 architectures, biophysical refinements (e.g., variable t_on/t_off windows, hybrid tonic + transient), and any operating-point insights from the sweep.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T17:55:04Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T18:01:55Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
