@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053\tasks\t0057_tonic_gaba_sweep_t0053\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260428T142606Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260428T150138Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260428T150226Z_uv-run-mypy.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 010_20260428T150233Z_uv-run-mypy.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 012_20260428T150314Z_uv-run-mypy.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 020_20260428T174135Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[33m[1mPASSED[0m — 0 error(s), 7 warning(s)
