@@ -5,14 +5,14 @@
   "name": "Tonic GABA + amplitude sweep on t0053 spatial DSGC",
   "short_description": "Replace t0053's per-event Exp2Syn GABA with a tonic conductance gated by stimulus window; sweep per-synapse peak conductance to recover non-zero FULL-mode tuning curves.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0009_calibrate_dendritic_diameters",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library",
     "t0053_minimal_dsgc_spatial_gaba"
   ],
-  "start_time": null,
+  "start_time": "2026-04-28T14:18:58Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
