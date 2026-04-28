@@ -5,7 +5,7 @@
   "name": "Add Mg-block NMDA to recover DSI in t0054 minimal architecture",
   "short_description": "Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0009_calibrate_dendritic_diameters",
     "t0011_response_visualization_library",
@@ -14,7 +14,7 @@
     "t0054_minimal_dsgc_ampa_nmda_scalar_gaba"
   ],
   "start_time": "2026-04-28T10:48:52Z",
-  "end_time": null,
+  "end_time": "2026-04-28T13:55:30Z",
   "expected_assets": {
     "library": 1
   },
