@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053\tasks\t0057_tonic_gaba_sweep_t0053\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1186 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1145 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1182 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1120 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1270 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 5 warning(s)

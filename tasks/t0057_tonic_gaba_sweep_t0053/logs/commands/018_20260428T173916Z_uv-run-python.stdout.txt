@@ -1,0 +1,10 @@
+[metrics] Loading per-(gaba, mode) tuning curves...
+[regression] AMPA_ONLY peak_hz at gaba_base_ns=0.25 = 0.666667 Hz (within 0.001000 of 0.666700); REQ-14 PASS.
+[regression] AMPA_ONLY peak_hz at gaba_base_ns=0.50 = 0.666667 Hz (within 0.001000 of 0.666700); REQ-14 PASS.
+[regression] AMPA_ONLY peak_hz at gaba_base_ns=1.00 = 0.666667 Hz (within 0.001000 of 0.666700); REQ-14 PASS.
+[regression] AMPA_ONLY peak_hz at gaba_base_ns=1.50 = 0.666667 Hz (within 0.001000 of 0.666700); REQ-14 PASS.
+[regression] AMPA_ONLY peak_hz at gaba_base_ns=2.00 = 0.666667 Hz (within 0.001000 of 0.666700); REQ-14 PASS.
+[metrics] Computing per-(gaba, angle) peak EPSP / IPSP magnitudes...
+[metrics] mean_active_fraction = 0.5000 (soft band [0.4, 0.6])
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053\tasks\t0057_tonic_gaba_sweep_t0053\results\metrics.json with 15 variants
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0057_tonic_gaba_sweep_t0053\tasks\t0057_tonic_gaba_sweep_t0053\results\derived_quantities.json

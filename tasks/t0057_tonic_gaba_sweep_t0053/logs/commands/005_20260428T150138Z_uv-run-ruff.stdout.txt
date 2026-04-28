@@ -1,0 +1,22 @@
+E501 Line too long (105 > 100)
+   --> tasks\t0057_tonic_gaba_sweep_t0053\code\run_tuning_curve.py:419:101
+    |
+417 |             f"IPSP-sustained-window gate failed at theta={IPSP_SUSTAINED_THETA_DEG} deg, "
+418 |             f"gaba={gaba_base_ns:.2f}: |v(1300ms) - V_init|={delta_late:.4f} mV is less than "
+419 |             f"{IPSP_SUSTAINED_RATIO} * |v(200ms) - V_init|={IPSP_SUSTAINED_RATIO * delta_early:.4f} mV. "
+    |                                                                                                     ^^^^^
+420 |             f"The tonic mechanism is not sustaining inhibition through the stimulus window.",
+421 |         )
+    |
+
+E501 Line too long (112 > 100)
+   --> tasks\t0057_tonic_gaba_sweep_t0053\code\test_gaba_tonic_envelope.py:100:101
+    |
+ 98 |         f"IPSP-sustained-window regression failed at gaba={gaba_base_ns:.2f}, "
+ 99 |         f"theta={IPSP_SUSTAINED_THETA_DEG}: |v(1300ms) - V_init|={delta_late:.4f} mV "
+100 |         f"is less than {IPSP_SUSTAINED_RATIO} * |v(200ms) - V_init|={IPSP_SUSTAINED_RATIO * delta_early:.4f} mV"
+    |                                                                                                     ^^^^^^^^^^^^
+101 |     )
+    |
+
+Found 2 errors.

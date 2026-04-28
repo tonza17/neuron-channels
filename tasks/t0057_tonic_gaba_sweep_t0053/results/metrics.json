@@ -1,0 +1,190 @@
+{
+  "variants": [
+    {
+      "variant_id": "gaba_0.25_full",
+      "label": "GABA=0.25 nS / FULL",
+      "dimensions": {
+        "mode": "full",
+        "gaba_base_ns": 0.25
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 16.66947867777781
+      }
+    },
+    {
+      "variant_id": "gaba_0.25_ampa_only",
+      "label": "GABA=0.25 nS / AMPA_ONLY",
+      "dimensions": {
+        "mode": "ampa_only",
+        "gaba_base_ns": 0.25
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_0.25_gaba_only",
+      "label": "GABA=0.25 nS / GABA_ONLY",
+      "dimensions": {
+        "mode": "gaba_only",
+        "gaba_base_ns": 0.25
+      },
+      "metrics": {
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_0.50_full",
+      "label": "GABA=0.50 nS / FULL",
+      "dimensions": {
+        "mode": "full",
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 16.66947867777781
+      }
+    },
+    {
+      "variant_id": "gaba_0.50_ampa_only",
+      "label": "GABA=0.50 nS / AMPA_ONLY",
+      "dimensions": {
+        "mode": "ampa_only",
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_0.50_gaba_only",
+      "label": "GABA=0.50 nS / GABA_ONLY",
+      "dimensions": {
+        "mode": "gaba_only",
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_1.00_full",
+      "label": "GABA=1.00 nS / FULL",
+      "dimensions": {
+        "mode": "full",
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 16.66947867777781
+      }
+    },
+    {
+      "variant_id": "gaba_1.00_ampa_only",
+      "label": "GABA=1.00 nS / AMPA_ONLY",
+      "dimensions": {
+        "mode": "ampa_only",
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_1.00_gaba_only",
+      "label": "GABA=1.00 nS / GABA_ONLY",
+      "dimensions": {
+        "mode": "gaba_only",
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_1.50_full",
+      "label": "GABA=1.50 nS / FULL",
+      "dimensions": {
+        "mode": "full",
+        "gaba_base_ns": 1.5
+      },
+      "metrics": {
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 17.178292988536434
+      }
+    },
+    {
+      "variant_id": "gaba_1.50_ampa_only",
+      "label": "GABA=1.50 nS / AMPA_ONLY",
+      "dimensions": {
+        "mode": "ampa_only",
+        "gaba_base_ns": 1.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_1.50_gaba_only",
+      "label": "GABA=1.50 nS / GABA_ONLY",
+      "dimensions": {
+        "mode": "gaba_only",
+        "gaba_base_ns": 1.5
+      },
+      "metrics": {
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_2.00_full",
+      "label": "GABA=2.00 nS / FULL",
+      "dimensions": {
+        "mode": "full",
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 17.178292988536434
+      }
+    },
+    {
+      "variant_id": "gaba_2.00_ampa_only",
+      "label": "GABA=2.00 nS / AMPA_ONLY",
+      "dimensions": {
+        "mode": "ampa_only",
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "gaba_2.00_gaba_only",
+      "label": "GABA=2.00 nS / GABA_ONLY",
+      "dimensions": {
+        "mode": "gaba_only",
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "tuning_curve_reliability": null
+      }
+    }
+  ]
+}
