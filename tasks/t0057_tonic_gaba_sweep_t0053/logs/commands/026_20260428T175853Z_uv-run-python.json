@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0057_tonic_gaba_sweep_t0053",
+  "command": "uv run python -m arf.scripts.verificators.verify_suggestions t0057_tonic_gaba_sweep_t0053",
+  "exit_code": 0,
+  "duration_seconds": 0.311,
+  "started_at": "2026-04-28T17:58:53Z",
+  "completed_at": "2026-04-28T17:58:53Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0057_tonic_gaba_sweep_t0053",
+  "stdout_file": "026_20260428T175853Z_uv-run-python.stdout.txt",
+  "stderr_file": "026_20260428T175853Z_uv-run-python.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}
