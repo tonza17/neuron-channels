@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Build minimal_dsgc_ampa_nmda_scalar_gaba library; run 4 gNMDA values x 12 directions x 10 trials x 3 modes (1440 trials).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-27T21:37:22Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T04:36:19Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
