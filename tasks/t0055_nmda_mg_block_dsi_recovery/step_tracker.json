@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify all 5 dependencies (t0009, t0011, t0012, t0046, t0054) are completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T10:52:25Z",
-      "completed_at": null,
+      "completed_at": "2026-04-28T10:52:56Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
