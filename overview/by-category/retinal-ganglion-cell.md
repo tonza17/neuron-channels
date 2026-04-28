@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(55)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(57)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (6)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -1928,7 +1928,44 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (49 open, 6 closed)
+## Suggestions (51 open, 6 closed)
+
+<details>
+<summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
+EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
+recovery</strong> (S-0055-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture
+using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic
+envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA
+(regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP
+envelope's true peak (no spike contamination) per direction. Pass criterion: FULL DSI
+bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
+and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
+lineage and produces re-publishable EPSP/IPSP figures.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
+DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz
+peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33,
+gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at
+{2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The
+S-0054-01 pass criterion (DSI > 0.50 AND peak Hz >= 5 Hz) should become reachable somewhere on
+this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full
+S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one
+GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close

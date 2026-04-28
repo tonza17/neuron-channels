@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(28)](../suggestions/by-category/cable-theory.md) | [Datasets
+(29)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,7 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (24 open, 4 closed)
+## Suggestions (25 open, 4 closed)
 
 <details>
 <summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit
@@ -621,6 +621,27 @@ a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validat
 t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
 falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Analytic Mg-block-vs-gabaMOD operating-point map: predict the
+gAMPA/gGABA ratio that opens the unblock window</strong> (S-0055-04)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+The bit-identical DSI = 0.7464 across all gNMDA values in t0055 FULL mode is mechanistically
+explained by a single inequality: peak EPSP Vm under inhibition < Mg-unblock voltage (~-40 to
+-20 mV). Derive a closed-form (or numeric) prediction from a single-compartment cable-theory
+model: given AMPA peak conductance gAMPA, GABA peak conductance gGABA, gabaMOD direction
+modulation, and the Jahr-Stevens Boltzmann (n=0.25, gamma=0.08, Vset, e=-65), what (gAMPA,
+gGABA) ratio places the preferred-direction peak Vm right at the unblock knee? Validate
+against the t0055 numbers (gAMPA = 0.5 nS, gGABA = 2 nS x 0.33, peak Vm ~= -55 mV — below
+knee, predicting NMDA does not contribute). The output is a 2D heat-map predicting the
+operating point that S-0055-03 / S-0054-02 should target empirically. Pass criterion:
+theoretical prediction matches the t0055 NMDA-inert regime within +/-5 mV at the preferred
+direction. Recommended task type: answer-question, comparative-analysis.
 
 </details>
 

@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-10-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-11-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-18-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-57-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-216-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-223-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (21K)
-| [full](llm-context/full.xml) (304K) | [roadmap](llm-context/roadmap.xml) (74K) |
-[results](llm-context/results-deep-dive.xml) (211K) |
+| [full](llm-context/full.xml) (308K) | [roadmap](llm-context/roadmap.xml) (73K) |
+[results](llm-context/results-deep-dive.xml) (217K) |
 [assets](llm-context/literature-and-assets.xml) (39K)
 
-*Last updated: 2026-04-28 12:08 UTC*
+*Last updated: 2026-04-28 14:00 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -50,11 +50,9 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | 2026-04-28 10:48 |
+No tasks in progress.
 
 ---
 
@@ -82,10 +80,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (49 total)](tasks/by-status/completed.md)
+## [Recently Completed (50 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | [`results`](../tasks/t0055_nmda_mg_block_dsi_recovery/results/results_detailed.md) | 2026-04-28 13:55 |
 | 0056 | [Brainstorm results session 10](../overview/tasks/task_pages/t0056_brainstorm_results_10.md) | [`results`](../tasks/t0056_brainstorm_results_10/results/results_detailed.md) | 2026-04-28 13:00 |
 | 0054 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | [`results`](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/results_detailed.md) | 2026-04-28 05:00 |
 | 0053 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | [`results`](../tasks/t0053_minimal_dsgc_spatial_gaba/results/results_detailed.md) | 2026-04-27 14:10 |
@@ -95,9 +94,8 @@ No blocked tasks.
 | 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`results`](../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) | 2026-04-25 10:42 |
 | 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
 | 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
-| 0046 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | [`results`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/results/results_detailed.md) | 2026-04-24 17:45 |
 
-*39 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*40 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -110,18 +108,19 @@ No blocked tasks.
 | 1 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | Full E+I (spatial centripetal gating) | **17.178292988536434** |
 | 2 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
 | 3 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
-| 4 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |  | **15.489547768408103** |
-| 5 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 1.00 nS, FULL | **14.052154566782137** |
-| 6 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
-| 7 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.50 nS, FULL | **12.670774228141049** |
-| 8 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.25 nS, FULL | **12.64879045948517** |
-| 9 | [Modify DSGC port with spatially-asymmetric inhibition for channel testbed](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) |  | **10.478802654331396** |
+| 4 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
+| 5 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.25 nS, FULL | **16.980414819835936** |
+| 6 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.50 nS, FULL | **16.980414819835936** |
+| 7 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 1.00 nS, FULL | **16.980414819835936** |
+| 8 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |  | **15.489547768408103** |
+| 9 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 1.00 nS, FULL | **14.052154566782137** |
+| 10 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
 
-*12 more results → [all results](metrics-results/)*
+*15 more results → [all results](metrics-results/)*
 
 ---
 
-## [Recent Suggestions (188 open)](suggestions/)
+## [Recent Suggestions (195 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -225,109 +224,108 @@ t0052/t0053/t0054. Recommended task types: write-library, baseline-evaluation.
 </details>
 
 <details>
-<summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
-the 30-150x peak-rate gap</strong> (S-0052-01)</summary>
+<summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
+IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
+**Kind**: library | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
 
-t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 target (30 Hz)
-and 30-150x below the in vivo / in vitro DSGC range (30-100 Hz, Park2014 / PolegPolsky2016).
-The current AMPA conductance is 0.5 nS x 100 synapses (AMPA-only by design) and the cell is
-locked in a single-spike-per-trial regime that makes DSI = 1.0 trivially. Sweep the
-per-synapse AMPA peak conductance over {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed synapse
-count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and report peak Hz,
-vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
-the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
-biologically informative. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
-saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
-
-The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x)
-substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V -
-E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA
-= -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in
-{10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta)
-design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage /
-gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I.
-Goal: produce a quantitative voltage-vs-conductance saturation curve that future
-scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
-suppression. Recommended task types: experiment-run.
+Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the
+legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and
+IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP
+traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that
+made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse
+activation-time histogram. Confirm and standardize the trial length with the user (1400 vs
+1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass
+criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes; HH-on FULL
+trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
+infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
+DSGC task.
 
 </details>
 
 <details>
-<summary>📊 <strong>Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial
-PD/ND-asymmetric inhibition) once t0053 finishes</strong> (S-0052-04)</summary>
+<summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
+EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
+recovery</strong> (S-0055-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
 
-t0053 (not_started, dependencies = same morphology + library-asset substrate as t0052)
-implements spatial PD/ND-asymmetric SAC inhibition rather than scalar gabaMOD. Once t0053 is
-completed, run a comparison task that side-by-side analyses the two minimal DSGCs at matched
-100 E + 100 I synapse counts: peak Hz, primary and vector-sum DSI, HWHM, reliability, ND/PD
-IPSP voltage ratio, ND/PD IPSP conductance ratio (where applicable), per-direction soma V(t)
-overlays, and polar tuning overlays. Use the same placement seed (PLACEMENT_SEED = 0, recorded
-in tasks/t0052_minimal_dsgc_scalar_gaba/results/placement_seed0.json) so synapse placement is
-exactly matched. Goal: quantify the DS / firing-rate / IPSP-saturation differences
-attributable to the inhibition-mechanism choice (scalar mod vs spatial asymmetry) on an
-otherwise identical from-scratch substrate. Recommended task types: comparative-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Driving-force-corrected gabaMOD: calibrate conductance ratio to
-target somatic-voltage IPSP modulation depth</strong> (S-0052-05)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
-
-t0052 establishes that scalar gabaMOD models systematically over-promise somatic IPSP
-suppression: the nominal conductance ratio 3.0x (gabaMOD(180)/gabaMOD(0)) produces only a
-1.54x somatic IPSP voltage ratio under realistic 100-synapse crowding, because driving force
-(V - E_GABA) saturates locally. Define and document a corrected `gabaMOD_eff(theta)` whose
-conductance ratio is calibrated to produce the intended somatic-voltage IPSP modulation depth
-(e.g., 3.0x somatic IPSP requires ~5-7x conductance ratio under crowding). Add a small library
-helper that, given target voltage modulation depth and synapse count, returns the calibrated
-gabaMOD curve via a one-time calibration run on the placement, and recommends using that curve
-in downstream tasks (this would be applied via correction overlay or as a successor library
-asset). Goal: future scalar-gabaMOD reports do not silently confuse conductance modulation
-with voltage modulation. Recommended task types: write-library.
+After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture
+using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic
+envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA
+(regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP
+envelope's true peak (no spike contamination) per direction. Pass criterion: FULL DSI
+bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
+and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
+lineage and produces re-publishable EPSP/IPSP figures.
 
 </details>
 
 <details>
-<summary>📊 <strong>Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60
-with paper-verified 0.65 / 0.73</strong> (S-0052-06)</summary>
+<summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
+DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
 
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
 
-The t0051 brainstorm session and the orchestrator hand-off message for t0052 cited a Park2014
-in vivo DSGC DSI band of 0.40-0.60. t0052's compare_literature.md verified the original
-Park2014 paper text directly (10.1523/JNEUROSCI.4038-13.2014, p. 3978): CART-Cre cells DSI =
-0.65 +/- 0.05 (n=14) and TRHR-GFP / wild-type cells DSI = 0.73 +/- 0.03 (n=38). The 0.40-0.60
-band is not attributable to Park2014 from the paper text. File a correction against the t0051
-brainstorm results document(s) that quoted the 0.40-0.60 band, using the corrections mechanism
-(corrections_specification.md), to set the canonical Park2014 DSI band to 0.65 / 0.73 +/- 0.05
-across the project so downstream tasks do not inherit the wrong target. Recommended task
-types: correction.
+t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz
+peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33,
+gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at
+{2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The
+S-0054-01 pass criterion (DSI > 0.50 AND peak Hz >= 5 Hz) should become reachable somewhere on
+this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full
+S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one
+GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experiment-run.
 
 </details>
 
-*178 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🔧 <strong>Analytic Mg-block-vs-gabaMOD operating-point map: predict the
+gAMPA/gGABA ratio that opens the unblock window</strong> (S-0055-04)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+The bit-identical DSI = 0.7464 across all gNMDA values in t0055 FULL mode is mechanistically
+explained by a single inequality: peak EPSP Vm under inhibition < Mg-unblock voltage (~-40 to
+-20 mV). Derive a closed-form (or numeric) prediction from a single-compartment cable-theory
+model: given AMPA peak conductance gAMPA, GABA peak conductance gGABA, gabaMOD direction
+modulation, and the Jahr-Stevens Boltzmann (n=0.25, gamma=0.08, Vset, e=-65), what (gAMPA,
+gGABA) ratio places the preferred-direction peak Vm right at the unblock knee? Validate
+against the t0055 numbers (gAMPA = 0.5 nS, gGABA = 2 nS x 0.33, peak Vm ~= -55 mV — below
+knee, predicting NMDA does not contribute). The output is a 2D heat-map predicting the
+operating point that S-0055-03 / S-0054-02 should target empirically. Pass criterion:
+theoretical prediction matches the t0055 NMDA-inert regime within +/-5 mV at the preferred
+direction. Recommended task type: answer-question, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Voff_NMDA = 1 ablation on t0055 architecture as a controlled
+regression vs voltage-dependent (Voff = 0) Mg-block</strong> (S-0055-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+The t0055 NMDA_MgBlock.mod has a Voff parameter (default 0 = voltage-dependent) that, when set
+to 1 with Vset = -60, fixes the Mg factor at a constant value and effectively reproduces the
+t0054 voltage-independent regime within the new MOD. Re-run the gNMDA = {0, 0.25, 0.5, 1.0} nS
+sweep with Voff = 1 to confirm: (a) DSI collapses to ~0.082 at gNMDA = 0.25 (matching t0054
+within rounding), (b) peak Hz does NOT remain at 0.667 Hz in FULL mode (NMDA contributes,
+unlike t0055 Voff = 0 case). This isolates the Mg-block voltage-gating as the sole cause of
+the t0055 NMDA-inert behavior and gives a controlled within-task ablation. Pass criterion: DSI
+at gNMDA = 0.25, FULL with Voff = 1 matches t0054 within +/-0.05; peak Hz exceeds 0.667 Hz at
+gNMDA >= 0.25. Recommended task type: experiment-run.
+
+</details>
+
+*185 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (32)](suggestions/)
+## [High Priority Suggestions (35)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -347,6 +345,64 @@ Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 
 subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI
 >= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent
 regime. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
+IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the
+legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and
+IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP
+traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that
+made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse
+activation-time histogram. Confirm and standardize the trial length with the user (1400 vs
+1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass
+criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes; HH-on FULL
+trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
+infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
+DSGC task.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
+EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
+recovery</strong> (S-0055-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture
+using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic
+envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA
+(regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP
+envelope's true peak (no spike contamination) per direction. Pass criterion: FULL DSI
+bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
+and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
+lineage and produces re-publishable EPSP/IPSP figures.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
+DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz
+peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33,
+gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at
+{2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The
+S-0054-01 pass criterion (DSI > 0.50 AND peak Hz >= 5 Hz) should become reachable somewhere on
+this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full
+S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one
+GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experiment-run.
 
 </details>
 
@@ -467,62 +523,7 @@ Recommended task types: experiment-run, code-reproduction.
 
 </details>
 
-<details>
-<summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
-blend instead of pure primary DSI</strong> (S-0030-06)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-22 | **Source**:
-[t0030_distal_dendrite_diameter_sweep_dsgc](../tasks/t0030_distal_dendrite_diameter_sweep_dsgc/)
-
-t0029 and t0030 both pinned primary DSI at 1.000 and only vector-sum DSI retained weak
-sensitivity (ranges 0.021 and 0.012 respectively). The t0033 joint morphology-channel
-optimisation plan currently proposes primary DSI as the objective; under the t0022 schedule
-the optimiser will see a flat landscape and cannot discover morphology-channel interactions.
-Change the t0033 objective to a weighted blend (e.g., 0.5 * vector_sum_DSI + 0.3 *
-peak_Hz_match + 0.2 * HWHM_match) OR switch to vector-sum DSI outright. Distinct from
-S-0029-07 which proposes promoting peak-Hz and HWHM to co-primary outcomes - this proposal
-keeps DSI as the headline objective but replaces its pinned primary form with its unpinned
-vector-sum form. Update tasks/t0012 tuning_curve_loss to expose a loss_kind='vector_sum_dsi'
-option. Recommended task types: write-library, answer-question.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Port the full upstream SacNetwork with bp_locs/probs/deltas to
-reproduce the deRosenroll correlation-drop effect</strong> (S-0024-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0024_port_de_rosenroll_2026_dsgc](../tasks/t0024_port_de_rosenroll_2026_dsgc/)
-
-The t0024 port misses REQ-5 on all three sub-criteria (corr DSI 0.82 vs paper target
-[0.30,0.50]; uncorr DSI 0.84 vs [0.18,0.35]; drop fraction 0.000 vs >=0.20) because the AR(2)
-correlation was applied at per-terminal Exp2Syn drivers rather than across the
-spatially-distributed SAC varicosity release network that the paper identifies as the causal
-substrate. Port the upstream SacNetwork class (bp_locs, probs, deltas) from
-geoffder/ds-circuit-ei-microarchitecture into a new sibling library asset, drive the same
-cell, and rerun the 8-direction correlated/uncorrelated sweep. Target: reproduce the ~0.39 ->
-~0.25 DSI drop.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Swap bipolar-cell sustained vs transient kinetics on t0024 to
-discriminate kinetic tiling from cable delay</strong> (S-0027-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-21 | **Source**:
-[t0027_literature_survey_morphology_ds_modeling](../tasks/t0027_literature_survey_morphology_ds_modeling/)
-
-Run t0024 (de Rosenroll 2026 port) with bipolar-cell kinetic identities swapped: assign
-sustained kinetics to distal terminals and transient kinetics to proximal terminals, opposite
-to the wild-type tiling. Prediction (creative_thinking.md #2): if [Srivastava2022]
-kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred direction; if
-[Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping
-preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms
-before committing to a morphology sweep design.
-
-</details>
-
-*22 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1333,10 +1334,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (10 total)](libraries/)
+## [Latest Libraries (11 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Minimal DSGC AMPA + Mg-Block NMDA + Scalar gabaMOD](../tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda\description.md) | [55](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | 2026-04-28 |
 | [Minimal DSGC with Spatial Centripetal-Gating GABA](../tasks\t0053_minimal_dsgc_spatial_gaba\assets\library\minimal_dsgc_spatial_gaba\description.md) | [53](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | 2026-04-25 |
 | [Minimal DSGC with Scalar gabaMOD](../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) | [52](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | 2026-04-25 |
 | [Minimal DSGC AMPA + NMDA Scalar gabaMOD](../tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\assets\library\minimal_dsgc_ampa_nmda_scalar_gaba\description.md) | [54](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | 2026-04-25 |
@@ -1346,7 +1348,8 @@ No models yet.
 | [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |
 | [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |
 | [ModelDB 189347 DSGC Port -- gabaMOD-swap protocol](../tasks\t0020_port_modeldb_189347_gabamod\assets\library\modeldb_189347_dsgc_gabamod\description.md) | [20](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | 2026-04-20 |
-| [ModelDB 189347 DSGC Port](../tasks\t0008_port_modeldb_189347\assets\library\modeldb_189347_dsgc\description.md) | [8](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) | 2026-04-20 |
+
+*1 more librarie → [libraries](libraries/)*
 
 ---
 

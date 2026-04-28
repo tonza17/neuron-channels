@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(30)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(32)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,47 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (24 open, 6 closed)
+## Suggestions (26 open, 6 closed)
+
+<details>
+<summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
+IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the
+legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and
+IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP
+traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that
+made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse
+activation-time histogram. Confirm and standardize the trial length with the user (1400 vs
+1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass
+criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes; HH-on FULL
+trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
+infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
+DSGC task.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add NMDA_MgBlock voltage-clamp sanity test as a reusable
+verificator across all NMDA-bearing DSGC tasks</strong> (S-0055-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-04-28 | **Source**:
+[t0055_nmda_mg_block_dsi_recovery](../../tasks/t0055_nmda_mg_block_dsi_recovery/)
+
+t0055 introduced a single-synapse SEClamp sanity test (`test_nmda_mg_block_voltage_dep.py`)
+that validated the Jahr-Stevens Boltzmann at v in {-80, -60, -40, -20, 0, +20} mV (peak g
+monotonic; peak g(-80)/peak g(-20) = 0.0167). Promote this into a reusable
+arf/scripts/verificators/ check that any DSGC task using NMDA_MgBlock can invoke as a
+precondition. The check loads the task's compiled NMDA mechanism, runs the 6-voltage clamp,
+and asserts the monotonicity + threshold pattern within tolerance. Companion to S-0054-04
+(gNMDA = 0 baseline-equivalence verificator). Pass criterion: verificator script exists, runs
+against t0055 and passes; documentation describes when downstream tasks should invoke it.
+Recommended task type: write-library, infrastructure-setup.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06

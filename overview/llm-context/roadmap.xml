@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-28T12:08:51Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-28T14:00:47Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>294093</char_count>
-    <byte_count>294374</byte_count>
-    <estimated_tokens>73523</estimated_tokens>
+    <char_count>290300</char_count>
+    <byte_count>290535</byte_count>
+    <estimated_tokens>72575</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -160,10 +160,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0052_minimal_dsgc_scalar_gaba</id>
         <id>t0053_minimal_dsgc_spatial_gaba</id>
         <id>t0054_minimal_dsgc_ampa_nmda_scalar_gaba</id>
+        <id>t0055_nmda_mg_block_dsi_recovery</id>
         <id>t0056_brainstorm_results_10</id>
       </source_ids>
       <content>
-Completed tasks: 49
+Completed tasks: 50
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -453,6 +454,12 @@ Completed: 2026-04-28
 Short description: Extend t0052 by adding co-located NMDA Exp2Syn (tau1=5, tau2=80, e=0) at each E synapse; sweep gNMDA at {0, 0.25, 0.5, 1.0} nS; characterise EPSP decay, peak rate, and DSI vs gNMDA.
 Result summary: Results Summary: Minimal DSGC with AMPA + NMDA Excitation and Scalar gabaMOD Summary Built a minimal DSGC extending t0052 with co-located NMDA `Exp2Syn` (tau1=5 ms, tau2=80 ms, e=0 mV) at every E synapse and ran a 4-value gNMDA sweep (`{0.0, 0.25, 0.5, 1.0}` nS) × 12 directions × 10 trials × 3 modes (1440 trials, 4 h 19 min wall-clock on local CPU). The gNMDA=0 regression gate against t0052&#x27;s `tuning_curve_full.csv` passed at **max |rate diff| = 0.000e+00 Hz** across all 120 rows. Headline finding: NMDA dramatically closes the peak-rate gap (peak Hz at preferred direction goes from 0.667 (t0052) to 8.0 at gNMDA=0.25 nS), but scalar `gabaMOD` inhibition is too weak to maintain direction...
 
+## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
+ID: t0055_nmda_mg_block_dsi_recovery
+Completed: 2026-04-28
+Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
+Result summary: t0055 Results Summary — Mg-Block NMDA DSI Recovery Summary Voltage-dependent (Jahr-Stevens Mg-block) NMDA at every E synapse **recovers vector-sum DSI** from t0054&#x27;s collapsed 0.082 (gNMDA = 0.25 nS, voltage-independent) back to **0.7464**, a 9× recovery and bit-identical to the gNMDA = 0 baseline. **Peak rate stays at 0.667 Hz** at every gNMDA value because the scalar gabaMOD inhibition prevents the soma from depolarising above the Mg-unblock threshold. The S-0054-01 pass criterion (DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz at gNMDA = 0.25, FULL) is **PARTIAL: PASS on DSI, FAIL on peak-Hz**. Metrics * **Vector-sum DSI at gNMDA = 0.25 nS, FULL = 0.7464** vs t0054&#x27;s 0.082 — a **9.1× recovery** and...
+
 ## Brainstorm results session 10
 ID: t0056_brainstorm_results_10
 Completed: 2026-04-28
@@ -467,11 +474,10 @@ Result summary: Results Summary: Brainstorm Session 10 Summary Tenth strategic b
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0055_nmda_mg_block_dsi_recovery</id>
         <id>t0057_tonic_gaba_sweep_t0053</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -733,232 +739,6 @@ answer asset capturing the measured speedup and its implications for the t0033 c
 * At least one answer asset is produced per the answer specification.
 * If the measured speedup differs from 5x by more than 20%, a correction-proposal suggestion is
   filed in `results/suggestions.json` against t0033&#x27;s answer asset.
-
-## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
-ID: t0055_nmda_mg_block_dsi_recovery
-Status: in_progress
-Effective date: 2026-04-28
-Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0046_reproduce_poleg_polsky_2016_exact, t0054_minimal_dsgc_ampa_nmda_scalar_gaba
-
-#### Source
-
-Suggestion S-0054-01 (high priority): &quot;Add voltage-dependent NMDA Mg block to recover DSI in the
-t0054 minimal AMPA + NMDA + scalar gabaMOD architecture.&quot;
-
-#### Motivation
-
-t0054 demonstrated that adding a voltage-independent NMDA Exp2Syn (`tau1 = 5 ms`, `tau2 = 80 ms`,
-`e = 0 mV`) at every AMPA location collapses vector-sum DSI from **0.746** at `gNMDA = 0` to
-**0.082** at `gNMDA = 0.25 nS` and to **0.017** at `gNMDA = 1.0 nS`. Peak rate also degrades because
-the long-tail NMDA depolarisation removes the directional gating that the scalar gabaMOD relies on
-(PD `gaba_mod = 0.33`, ND `gaba_mod = 0.99`). The DSI collapse is expected from PolegPolsky 2016
-(Fig 5) — without a voltage-dependent Mg block, NMDA conductance fires regardless of postsynaptic
-voltage and washes out the inhibition-driven directional asymmetry. Mg block restores multiplicative
-gain by suppressing NMDA conductance at hyperpolarised voltages and unblocking it once the cell is
-already depolarised by AMPA.
-
-This task replaces the t0054 voltage-independent NMDA Exp2Syn with a Jahr-Stevens Mg-block point
-process at every E synapse, keeps every other parameter identical, and re-runs the same gNMDA sweep.
-The headline question is: does Mg block recover the DSI that t0054 lost?
-
-#### Model Specification
-
-Identical to t0054 unless explicitly noted. The change is **only** the NMDA point process; AMPA,
-GABA, morphology, HH soma+AIS, placement seed, and stimulus protocol are bit-identical to t0054.
-
-##### Morphology
-
-* Asset: `dsgc-baseline-morphology-calibrated` (same as t0054).
-* 100 dendritic locations sampled with seed = 0 (bit-identical placement to t0054 — enforced by a
-  placement-match test against
-  `tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/placement_seed0.json`).
-
-##### Sections and channels
-
-* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` with the same boosted AIS parameters
-  as t0054 (`AIS_LENGTH_UM=30`, `AIS_DIAMETER_UM=2`, `AIS_GNABAR=1.2`, `AIS_GKBAR=0.04`,
-  `AIS_GL=0.008`, `AIS_EL_HH=-65`).
-* All dendritic sections passive: `Rm = 5999 Ω·cm²`, `Ra = 100 Ω·cm`, `cm = 1 µF/cm²`,
-  `V_rest = -65 mV`.
-
-##### Synapses
-
-* 100 E + 100 I co-located pairs (identical to t0054).
-
-* **AMPA**: `Exp2Syn` with `tau1 = 0.5 ms`, `tau2 = 2.5 ms`, `e = 0 mV`, peak `0.5 nS`. Driven by
-  the same `NetStim` event as the NMDA point process (one event per synapse per trial).
-
-* **NMDA (CHANGED)**: a custom `NMDA_MgBlock` point process replacing the t0054 `Exp2Syn`. Same
-  dual-exponential gating kinetics (`tau1 = 5 ms`, `tau2 = 80 ms`, `e = 0 mV`) but multiplied by the
-  Jahr-Stevens Mg-block factor:
-
-  ```text
-  g_NMDA(v, t) = gNMDA_max * s(t) * 1 / (1 + n * exp(-gamma * v))
-  ```
-
-  with `n = 0.25 / mM`, `gamma = 0.08 / mV` (the values used in `bipolarNMDA.mod` in t0046&#x27;s ModelDB
-  189347 reproduction). `s(t)` is the standard Exp2Syn dual-exponential gating variable driven by
-  `NetCon` events. `[Mg2+]` is folded into the `n` constant. A `Voff` parameter (default `0`)
-  preserves the option to compare against the voltage-independent regime.
-
-* **Inhibition**: scalar gabaMOD identical to t0054. `theta_PD = 0`, `theta_ND = 180`, peak
-  `2 nS × gaba_mod(theta)` where `gaba_mod(0) = 0.33` and `gaba_mod(180) = 0.99`.
-
-##### Stimulus protocol
-
-* 12 directions × 10 trials × 3 trial modes × 4 `gNMDA` values = **1440 trials total** (same as
-  t0054).
-* Bar 200 µm × full arena, 1.0 µm/ms (= 1000 µm/s), 1500 ms per trial.
-* `BASE_OFFSET_MS = 100` (bar enters arena at t = 100 ms).
-
-##### gNMDA sweep
-
-Four values: `{0.0, 0.25, 0.5, 1.0}` nS — identical to t0054 to enable direct DSI deltas.
-
-* `gNMDA = 0` reproduces t0052 / t0054 within rounding (validation gate).
-* `gNMDA = 0.25` is the failure point in t0054 (DSI 0.082); the pass criterion targets this point.
-* `gNMDA = 0.5` matches the Poleg-Polsky 2016 baseline.
-* `gNMDA = 1.0` is twice the Poleg-Polsky baseline; a coarse high-end probe.
-
-##### Trial modes
-
-* `FULL` — AMPA + NMDA + GABA active.
-* `E_ONLY` — AMPA + NMDA active, GABA `NetCon` weights zeroed.
-* `GABA_ONLY` — AMPA + NMDA `NetCon` weights zeroed, GABA active.
-
-#### Pass / Fail Criterion
-
-The headline gate from S-0054-01:
-
-* **Vector-sum DSI at `gNMDA = 0.25 nS` must exceed 0.50** (vs t0054 result 0.082).
-* **Peak Hz at `gNMDA = 0.25 nS` (preferred direction, FULL) must reach &gt;= 5 Hz**.
-
-Reporting must explicitly state PASS or FAIL against this criterion in the headline summary.
-
-#### Outputs
-
-##### Per `gNMDA` value × per direction (4 × 12 = 48 panels per output type)
-
-* Soma `V(t)` (FULL mode), mean ± SD across 10 trials.
-* Aggregate EPSP (`E_ONLY`), mean ± SD.
-* Aggregate IPSP (`GABA_ONLY`), mean ± SD.
-* PSTH (5 ms bins, FULL mode).
-* Per-synapse activation-time histogram.
-
-##### Sweep summary (the headline plots)
-
-1. **Vector-sum DSI vs gNMDA** with t0054 (no-Mg) curve overlaid as a baseline — directly
-   visualises the recovery (or lack thereof). X-axis: `gNMDA` (4 points). Y-axis: DSI. Two curves:
-   this task vs t0054.
-2. **Peak Hz vs gNMDA** with t0054 overlaid.
-3. **EPSP decay-time-constant vs gNMDA** with t0054 overlaid (note: t0054 reports null for this
-   metric due to the 1500 ms window; this task may inherit the same limitation).
-4. **NMDA Mg-block g(v) curve** at the synapse — sanity plot showing the Boltzmann factor at
-   `v ∈ [-80, +20] mV`.
-
-##### `metrics.json` (multi-variant format)
-
-One variant per `(gNMDA, mode)` combination = 12 variants. Each variant carries the registered keys
-`direction_selectivity_index`, `tuning_curve_hwhm_deg`, `tuning_curve_reliability`,
-`tuning_curve_rmse`. Variant `id` schema: `gnmda_&lt;value&gt;_&lt;mode&gt;` (e.g., `gnmda_0.50_full`).
-
-##### `derived_quantities.json`
-
-Per-variant: `peak_hz`, `null_hz`, `vector_sum_dsi`, `preferred_direction_deg`, `active_fraction`.
-Per-`gNMDA`: `epsp_decay_to_1e_ms` for the `E_ONLY` variant at the preferred direction. Plus
-`pass_criterion_dsi_at_gnmda_025`, `pass_criterion_peak_hz_at_gnmda_025`, `pass_criterion_overall`
-(boolean).
-
-#### Library Asset
-
-`minimal_dsgc_mg_block_nmda` under `tasks/t0055_nmda_mg_block_dsi_recovery/assets/library/`.
-Includes:
-
-* The new `NMDA_MgBlock.mod` MOD file.
-* The full Python codebase (forked from t0054 with NMDA-only changes).
-* A README documenting the Mg-block formula, parameter choices, and provenance (derived from
-  bipolarNMDA.mod in t0046 / ModelDB 189347).
-
-#### Code Design
-
-##### Modules to copy verbatim from t0054 (with import-path rewrite to `tasks.t0055_*` and bootstrap sentinel renamed to `_T0055_NEURONHOME_BOOTSTRAPPED`)
-
-`paths.py`, `swc_io.py`, `cell.py`, `placement.py`, `neuron_bootstrap.py`, `trial.py`,
-`metrics_extra.py`, `test_quiescent_rest.py`, `test_gaba_mod.py`, `__init__.py`,
-`run_tuning_curve.py`, `compute_metrics.py`, `render_figures.py`. (13 files.)
-
-##### New files
-
-* **`code/mod/NMDA_MgBlock.mod`** — the new NMDA point process with Mg-block. Provenance noted in
-  the file header (derived from bipolarNMDA.mod, ModelDB 189347).
-
-##### Modules to extend
-
-* **`constants.py`** — copy from t0054, then rename references such that NMDA point process is
-  `NMDA_MgBlock` rather than `Exp2Syn`. Add `MG_BLOCK_N = 0.25` (per-mM coefficient),
-  `MG_BLOCK_GAMMA = 0.08` (per-mV coefficient), `MG_BLOCK_VOFF = 0` (0 = voltage-dependent).
-* **`synapses.py`** — replace `h.Exp2Syn` for NMDA with `h.NMDA_MgBlock`. Set `tau1`, `tau2`, `e`,
-  `n`, `gamma`, `Voff` from constants. The `NetCon.weight[0] = gnmda_ns * 1e-3` mechanism is
-  unchanged. Keep AMPA `Exp2Syn` exactly as in t0054.
-* **`neuron_bootstrap.py`** — extend the `nrnivmodl` step to compile `mod/NMDA_MgBlock.mod`
-  alongside the existing MODs (this task is the first to introduce a custom MOD into the minimal
-  architecture).
-
-##### Validation gates (run before the full sweep)
-
-* **Quiescent rest test**: `V_rest = -65 ± 0.5 mV` with no synapses (same as t0054).
-* **`gNMDA = 0` cross-task regression gate**: `tuning_curve_full` rows at `gNMDA = 0` must match
-  t0054&#x27;s `tuning_curve_full.csv` row-by-row at `gNMDA = 0` within 1e-6 Hz tolerance. With
-  `gNMDA = 0` the Mg-block factor evaluates to a finite number but multiplies a zero conductance, so
-  the result must be bit-identical to t0054 at gNMDA = 0 (which itself was bit-identical to t0052).
-* **Placement bit-identical to t0054**: read
-  `tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/placement_seed0.json` and assert
-  per-synapse coordinates match.
-* **NMDA voltage-dependence sanity test**: with a single NMDA_MgBlock point process voltage-clamped
-  at v ∈ {-80, -60, -40, -20, 0, +20} mV, drive a single NetCon event and record peak gNMDA.
-  Expected pattern: peak gNMDA at -80 mV is ~5x smaller than at -20 mV; peak gNMDA monotonically
-  increases with depolarisation up to the asymptote.
-
-#### Compute and Budget
-
-Local CPU only. Estimated wall-clock ≈ 75 minutes for 1440 trials at ~3 s/trial (matching t0054).
-$0 cost. No remote machines.
-
-If wall-clock exceeds 4 hours (as t0054&#x27;s actual run did), abort and create a separate
-parallelisation task (S-0054-06 covers exactly this).
-
-#### Out of Scope
-
-* Joint (gAMPA, gNMDA, gGABA) conductance sweep (covered by S-0054-02).
-* NMDA tau2 sweep at fixed gNMDA (covered by S-0054-05).
-* Switching back to voltage-independent NMDA (`Voff = 1`) — kept available as a parameter for
-  future ablation, not exercised in this task&#x27;s sweep.
-* Spatial PD/ND-asymmetric inhibition (covered by t0053).
-* Any morphology, AMPA, GABA, or HH parameter changes.
-* Improved EPSP-decay metric (covered by S-0054-03).
-
-#### Key Questions
-
-1. Does the Mg-block NMDA recover vector-sum DSI at `gNMDA = 0.25 nS` to &gt;= 0.50 (PASS) or does the
-   collapse persist (FAIL)?
-2. Does peak rate at `gNMDA = 0.25 nS` reach the &gt;= 5 Hz threshold?
-3. How does the DSI vs gNMDA curve compare to t0054&#x27;s voltage-independent curve at every `gNMDA`
-   value?
-4. Does the Boltzmann gating work as expected in single-synapse voltage-clamp tests (sanity gate
-   above)?
-
-#### Verification Criteria
-
-* Library asset structure validates against `meta/asset_types/library/specification.md`.
-* `metrics.json` contains 12 variants (4 × 3); all use the registered metric keys.
-* All gates pass (quiescent rest, gNMDA=0 cross-task regression vs t0054, placement match, NMDA
-  voltage-dependence sanity).
-* The `gNMDA = 0` FULL variant reproduces t0054&#x27;s gNMDA=0 row at 0e+00 Hz max diff across 120 rows.
-* Headline summary in `results_summary.md` explicitly states PASS or FAIL on the S-0054-01 pass
-  criterion (`vector-sum DSI &gt; 0.50` and `peak Hz &gt;= 5 Hz` at `gNMDA = 0.25 nS`, FULL).
-* All 240+ per-direction PNGs and 11+ sweep-summary PNGs exist and are embedded in
-  `results_detailed.md` (sample of headline figures inline; rest linked).
 
 ## Tonic GABA + amplitude sweep on t0053 spatial DSGC
 ID: t0057_tonic_gaba_sweep_t0053
@@ -1356,6 +1136,9 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0053-03</id>
         <id>S-0054-01</id>
         <id>S-0054-02</id>
+        <id>S-0055-01</id>
+        <id>S-0055-02</id>
+        <id>S-0055-03</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1489,6 +1272,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0054-03</id>
         <id>S-0054-05</id>
         <id>S-0054-06</id>
+        <id>S-0055-04</id>
+        <id>S-0055-05</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1515,9 +1300,11 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0049-05</id>
         <id>S-0050-04</id>
         <id>S-0054-04</id>
+        <id>S-0055-06</id>
+        <id>S-0055-07</id>
       </source_ids>
       <content>
-Open suggestions: 210
+Open suggestions: 217
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1875,6 +1662,27 @@ Priority: high
 Kind: experiment
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0), varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged, voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01). Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells = 2880 trials. Apply early stop on cells where E_ONLY peak Hz &gt; 30 Hz to prune the saturated subgrid. Pass criterion: locate at least one...
+
+## Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE / IPSP_PASSIVE / FULL trial modes with HH save-and-zero
+ID: S-0055-01
+Priority: high
+Kind: library
+Source task: t0055_nmda_mg_block_dsi_recovery
+Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse activation-time histogram. Confirm and standardize the trial length with the user (1400 vs 1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass criterion: EPSP/IPSP traces from a representative gNMDA...
+
+## Re-run t0055 Mg-block sweep on the corrected EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI recovery
+ID: S-0055-02
+Priority: high
+Kind: experiment
+Source task: t0055_nmda_mg_block_dsi_recovery
+After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA (regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP envelope&#x27;s true peak (no spike contamination) per direction. Pass criterion: FULL DSI bit-identical to t0055; EPSP_PASSIVE peak Vm &lt; spike threshold (~-50 mV) at every direction and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block lineage and produces re-publishable EPSP/IPSP figures.
+
+## GABA-reduction ladder on Mg-block t0055 architecture to find a DSI-preserving operating point with peak Hz &gt;= 5
+ID: S-0055-03
+Priority: high
+Kind: experiment
+Source task: t0055_nmda_mg_block_dsi_recovery
+t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33, gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at {2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The S-0054-01 pass criterion (DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz) should become reachable somewhere on this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one GABA value yields DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2807,6 +2615,20 @@ Kind: library
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 t0054&#x27;s 1440-trial sweep took 4 h 19 min wall-clock on a single CPU thread (~10.8 s/trial), 3.5x over the 75-minute plan target. Adding Mg-block NMDA (S-0054-01), the joint conductance sweep (S-0054-02), and the tau2 sweep (S-0054-05) will each be 5-15x larger and infeasible on a single thread. Each (gNMDA, direction, trial, mode) combination is embarrassingly parallel because NEURON state is rebuilt per trial. Build a ProcessPoolExecutor wrapper for the minimal-DSGC sweep loop in t0054/code/run_tuning_curve.py (and equivalent t0052/t0053 paths) that farms trials across N_workers = max(1, cpu_count - 2). Validate: gNMDA=0 regression gate against t0052 still passes at 0e+00 Hz max diff...
 
+## Analytic Mg-block-vs-gabaMOD operating-point map: predict the gAMPA/gGABA ratio that opens the unblock window
+ID: S-0055-04
+Priority: medium
+Kind: technique
+Source task: t0055_nmda_mg_block_dsi_recovery
+The bit-identical DSI = 0.7464 across all gNMDA values in t0055 FULL mode is mechanistically explained by a single inequality: peak EPSP Vm under inhibition &lt; Mg-unblock voltage (~-40 to -20 mV). Derive a closed-form (or numeric) prediction from a single-compartment cable-theory model: given AMPA peak conductance gAMPA, GABA peak conductance gGABA, gabaMOD direction modulation, and the Jahr-Stevens Boltzmann (n=0.25, gamma=0.08, Vset, e=-65), what (gAMPA, gGABA) ratio places the preferred-direction peak Vm right at the unblock knee? Validate against the t0055 numbers (gAMPA = 0.5 nS, gGABA = 2 nS x 0.33, peak Vm ~= -55 mV — below knee, predicting NMDA does not contribute). The output is a 2D...
+
+## Voff_NMDA = 1 ablation on t0055 architecture as a controlled regression vs voltage-dependent (Voff = 0) Mg-block
+ID: S-0055-05
+Priority: medium
+Kind: experiment
+Source task: t0055_nmda_mg_block_dsi_recovery
+The t0055 NMDA_MgBlock.mod has a Voff parameter (default 0 = voltage-dependent) that, when set to 1 with Vset = -60, fixes the Mg factor at a constant value and effectively reproduces the t0054 voltage-independent regime within the new MOD. Re-run the gNMDA = {0, 0.25, 0.5, 1.0} nS sweep with Voff = 1 to confirm: (a) DSI collapses to ~0.082 at gNMDA = 0.25 (matching t0054 within rounding), (b) peak Hz does NOT remain at 0.667 Hz in FULL mode (NMDA contributes, unlike t0055 Voff = 0 case). This isolates the Mg-block voltage-gating as the sole cause of the t0055 NMDA-inert behavior and gives a controlled within-task ablation. Pass criterion: DSI at gNMDA = 0.25, FULL with Voff = 1 matches...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2988,6 +2810,20 @@ Priority: low
 Kind: evaluation
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 t0054&#x27;s compute_metrics.py contains an ad-hoc hard-fail gate that compares the gNMDA=0 FULL tuning_curve_full.csv row-by-row against t0052&#x27;s tuning_curve_full.csv (passed at max |rate diff| = 0.000e+00 Hz across 120 rows). This validates that placement, AMPA, GABA, and HH soma+AIS are bit-identical between t0052 and t0054 baselines. Promote this comparison to a reusable utility in arf/scripts/utils that takes (task_a_id, task_b_id, csv_filename, parameter-equivalence-config) and produces a structured pass/fail report. Wire it into a verificator-style entry point so downstream minimal-DSGC tasks (Mg-block follow-up S-0054-01, joint sweep S-0054-02, tau2 sweep S-0054-05) can declare &#x27;this...
+
+## Multi-seed placement variability sweep on t0055 Mg-block architecture (10 seeds at gNMDA = 0.5)
+ID: S-0055-06
+Priority: low
+Kind: experiment
+Source task: t0055_nmda_mg_block_dsi_recovery
+t0055 used a single placement seed (= 0) for cross-task regression with t0054. The bit-identical DSI = 0.7464 across all gNMDA is mechanistically interpretable but rests on a single placement. Re-run the FULL/EPSP_PASSIVE/IPSP_PASSIVE trio at gNMDA = 0.5 nS for 10 placement seeds {0..9} and report mean +/- SD of vector-sum DSI, peak Hz, EPSP peak, and Mg-block g(v) summary. This hardens the t0055 conclusion by showing the NMDA-inert regime is a structural property of the architecture, not a coincidence of one synapse layout. Pass criterion: DSI mean - SD remains &gt; 0.50 (i.e., the Mg-block DSI recovery is robust across placement seeds). Recommended task type: experiment-run.
+
+## Add NMDA_MgBlock voltage-clamp sanity test as a reusable verificator across all NMDA-bearing DSGC tasks
+ID: S-0055-07
+Priority: low
+Kind: library
+Source task: t0055_nmda_mg_block_dsi_recovery
+t0055 introduced a single-synapse SEClamp sanity test (`test_nmda_mg_block_voltage_dep.py`) that validated the Jahr-Stevens Boltzmann at v in {-80, -60, -40, -20, 0, +20} mV (peak g monotonic; peak g(-80)/peak g(-20) = 0.0167). Promote this into a reusable arf/scripts/verificators/ check that any DSGC task using NMDA_MgBlock can invoke as a precondition. The check loads the task&#x27;s compiled NMDA mechanism, runs the 6-voltage clamp, and asserts the monotonicity + threshold pattern within tolerance. Companion to S-0054-04 (gNMDA = 0 baseline-equivalence verificator). Pass criterion: verificator script exists, runs against t0055 and passes; documentation describes when downstream tasks should...
       </content>
     </section>
   </sections>

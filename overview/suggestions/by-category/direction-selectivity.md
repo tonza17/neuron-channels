@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-145 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **126 open** (23
-high, 94 medium, 9 low), **19 closed**.
+150 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **131 open** (25
+high, 96 medium, 10 low), **19 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -248,6 +248,30 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
+DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz
+peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33,
+gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at
+{2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The
+S-0054-01 pass criterion (DSI > 0.50 AND peak Hz >= 5 Hz) should become reachable somewhere on
+this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full
+S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one
+GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
 saturation of scalar gabaMOD IPSPs</strong> (S-0052-02)</summary>
 
@@ -469,6 +493,31 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
+EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
+recovery</strong> (S-0055-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture
+using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic
+envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA
+(regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP
+envelope's true peak (no spike contamination) per direction. Pass criterion: FULL DSI
+bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
+and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
+lineage and produces re-publishable EPSP/IPSP figures.
 
 </details>
 
@@ -851,6 +900,33 @@ residual selectivity GABA provides. This is an essential negative control for S-
 AMPA reduction matches GABA reduction in DSI effect, the gap is symmetric and not purely GABA.
 4 trials per direction x 7 gNMDA x 4 AMPA scales = 224 trials, ~30 min CPU. Recommended task
 types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Analytic Mg-block-vs-gabaMOD operating-point map: predict the
+gAMPA/gGABA ratio that opens the unblock window</strong> (S-0055-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-04` |
+| **Kind** | technique |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The bit-identical DSI = 0.7464 across all gNMDA values in t0055 FULL mode is mechanistically
+explained by a single inequality: peak EPSP Vm under inhibition < Mg-unblock voltage (~-40 to
+-20 mV). Derive a closed-form (or numeric) prediction from a single-compartment cable-theory
+model: given AMPA peak conductance gAMPA, GABA peak conductance gGABA, gabaMOD direction
+modulation, and the Jahr-Stevens Boltzmann (n=0.25, gamma=0.08, Vset, e=-65), what (gAMPA,
+gGABA) ratio places the preferred-direction peak Vm right at the unblock knee? Validate
+against the t0055 numbers (gAMPA = 0.5 nS, gGABA = 2 nS x 0.33, peak Vm ~= -55 mV — below
+knee, predicting NMDA does not contribute). The output is a 2D heat-map predicting the
+operating point that S-0055-03 / S-0054-02 should target empirically. Pass criterion:
+theoretical prediction matches the t0055 NMDA-inert regime within +/-5 mV at the preferred
+direction. Recommended task type: answer-question, comparative-analysis.
 
 </details>
 
@@ -2818,6 +2894,31 @@ density than through morphology alone.
 </details>
 
 <details>
+<summary>🧪 <strong>Voff_NMDA = 1 ablation on t0055 architecture as a controlled
+regression vs voltage-dependent (Voff = 0) Mg-block</strong> (S-0055-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0055 NMDA_MgBlock.mod has a Voff parameter (default 0 = voltage-dependent) that, when set
+to 1 with Vset = -60, fixes the Mg factor at a constant value and effectively reproduces the
+t0054 voltage-independent regime within the new MOD. Re-run the gNMDA = {0, 0.25, 0.5, 1.0} nS
+sweep with Voff = 1 to confirm: (a) DSI collapses to ~0.082 at gNMDA = 0.25 (matching t0054
+within rounding), (b) peak Hz does NOT remain at 0.667 Hz in FULL mode (NMDA contributes,
+unlike t0055 Voff = 0 case). This isolates the Mg-block voltage-gating as the sole cause of
+the t0055 NMDA-inert behavior and gives a controlled within-task ablation. Pass criterion: DSI
+at gNMDA = 0.25, FULL with Voff = 1 matches t0054 within +/-0.05; peak Hz exceeds 0.667 Hz at
+gNMDA >= 0.25. Recommended task type: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Wider distal-diameter sweep (0.25x to 4.0x) after the schedule
 fix to probe extreme impedance regimes</strong> (S-0030-03)</summary>
 
@@ -3005,6 +3106,30 @@ first record per-trial spike times (not just rates) from run_gabamod_sweep.py. C
 S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
 analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
 produce a publication-quality raster. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed placement variability sweep on t0055 Mg-block
+architecture (10 seeds at gNMDA = 0.5)</strong> (S-0055-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0055 used a single placement seed (= 0) for cross-task regression with t0054. The
+bit-identical DSI = 0.7464 across all gNMDA is mechanistically interpretable but rests on a
+single placement. Re-run the FULL/EPSP_PASSIVE/IPSP_PASSIVE trio at gNMDA = 0.5 nS for 10
+placement seeds {0..9} and report mean +/- SD of vector-sum DSI, peak Hz, EPSP peak, and
+Mg-block g(v) summary. This hardens the t0055 conclusion by showing the NMDA-inert regime is a
+structural property of the architecture, not a coincidence of one synapse layout. Pass
+criterion: DSI mean - SD remains > 0.50 (i.e., the Mg-block DSI recovery is robust across
+placement seeds). Recommended task type: experiment-run.
 
 </details>
 

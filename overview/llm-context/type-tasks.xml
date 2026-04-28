@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-28T12:08:51Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-28T14:00:47Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>490022</char_count>
-    <byte_count>492283</byte_count>
-    <estimated_tokens>122505</estimated_tokens>
+    <char_count>492472</char_count>
+    <byte_count>494768</byte_count>
+    <estimated_tokens>123118</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -8381,13 +8381,14 @@ to 0.082 (gNMDA=0.25) and approaches 0 at higher gNMDA.
 
 ## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
 ID: t0055_nmda_mg_block_dsi_recovery
-Status: in_progress
+Status: completed
 Effective date: 2026-04-28
 Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
 Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0046_reproduce_poleg_polsky_2016_exact, t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 Task types: build-model, experiment-run
 Source suggestion: S-0054-01
 Start time: 2026-04-28T10:48:52Z
+End time: 2026-04-28T13:55:30Z
 
 #### Source
 
@@ -8607,6 +8608,48 @@ parallelisation task (S-0054-06 covers exactly this).
   criterion (`vector-sum DSI &gt; 0.50` and `peak Hz &gt;= 5 Hz` at `gNMDA = 0.25 nS`, FULL).
 * All 240+ per-direction PNGs and 11+ sweep-summary PNGs exist and are embedded in
   `results_detailed.md` (sample of headline figures inline; rest linked).
+
+### Results Summary
+
+#### Summary
+
+Voltage-dependent (Jahr-Stevens Mg-block) NMDA at every E synapse **recovers vector-sum DSI** from
+t0054&#x27;s collapsed 0.082 (gNMDA = 0.25 nS, voltage-independent) back to **0.7464**, a 9× recovery
+and bit-identical to the gNMDA = 0 baseline. **Peak rate stays at 0.667 Hz** at every gNMDA value
+because the scalar gabaMOD inhibition prevents the soma from depolarising above the Mg-unblock
+threshold. The S-0054-01 pass criterion (DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz at gNMDA = 0.25, FULL) is
+**PARTIAL: PASS on DSI, FAIL on peak-Hz**.
+
+#### Metrics
+
+* **Vector-sum DSI at gNMDA = 0.25 nS, FULL = 0.7464** vs t0054&#x27;s 0.082 — a **9.1× recovery** and
+  identical to gNMDA = 0 (PASS, threshold &gt; 0.50)
+* **Peak Hz at gNMDA = 0.25 nS, FULL = 0.667 Hz** — unchanged from gNMDA = 0 baseline (FAIL,
+  threshold &gt;= 5 Hz)
+* **DSI is gNMDA-invariant in FULL mode**: 0.7464 at every gNMDA in {0, 0.25, 0.5, 1.0} nS — Mg
+  block keeps NMDA fully blocked under inhibition
+* **E_ONLY mode reveals NMDA does activate without GABA**: peak Hz rises from 0.667 (gNMDA = 0) to
+  1.333 (gNMDA &gt;= 0.25), confirming the Mg-block kinetics work — they are simply outpaced by the
+  strong gabaMOD when GABA is restored
+* **gNMDA = 0 cross-task regression vs t0054**: max |rate diff| = **0.000e+00 Hz across 120 rows**
+  — placement, AMPA, GABA, and HH soma + AIS are bit-identical
+* **NMDA voltage-dependence sanity (single-synapse SEClamp at v ∈ {-80, -60, -40, -20, 0, +20}
+  mV)**: peak gNMDA monotonic across voltages; ratio peak(-80) / peak(-20) = 0.0167 — Mg block
+  strongly attenuates conductance at hyperpolarised voltages as predicted
+
+#### Verification
+
+* `verify_task_metrics.py` — PASSED (0 errors, 0 warnings)
+* `verify_task_folder.py` — PASSED (0 errors, 1 minor warning: `logs/searches/` empty)
+* `verify_research_code.py` — PASSED (0 errors, 0 warnings)
+* `verify_plan.py` — PASSED (0 errors, 0 warnings)
+* gNMDA = 0 cross-task regression gate — PASSED (0.000e+00 Hz max diff vs t0054)
+* Quiescent rest test — PASSED (V_rest = -64.5611 mV, within ±0.5 mV)
+* Placement bit-identity vs t0054 — PASSED (all 100 pairs match within 1e-9)
+* NMDA voltage-dependence sanity — PASSED (monotonic, ratio &lt; 0.25 at v_clamp=-80 mV)
+* gabaMOD scalar — PASSED (PD = 0.33, ND = 0.99, ratio = 3.0)
+
+For the full requirement-level coverage and detailed numbers, see `results_detailed.md`.
 
 ## Brainstorm results session 10
 ID: t0056_brainstorm_results_10

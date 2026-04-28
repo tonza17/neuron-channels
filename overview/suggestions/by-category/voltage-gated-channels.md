@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-30 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **24 open** (3
-high, 19 medium, 2 low), **6 closed**.
+32 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **26 open** (4
+high, 19 medium, 3 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -57,6 +57,33 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
+IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the
+legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and
+IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP
+traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that
+made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse
+activation-time histogram. Confirm and standardize the trial length with the user (1400 vs
+1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass
+criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes; HH-on FULL
+trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
+infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
+DSGC task.
 
 </details>
 
@@ -571,6 +598,31 @@ window narrows (only tight E-I offsets produce DSI, long offsets stop working), 
 the dendritic-integration timescale imposed by Ih. Dependencies: t0022 library asset,
 S-0022-03 infrastructure for EI offset sweeps if already done. Effort ~10 hours. Recommended
 task type: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add NMDA_MgBlock voltage-clamp sanity test as a reusable
+verificator across all NMDA-bearing DSGC tasks</strong> (S-0055-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-07` |
+| **Kind** | library |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0055 introduced a single-synapse SEClamp sanity test (`test_nmda_mg_block_voltage_dep.py`)
+that validated the Jahr-Stevens Boltzmann at v in {-80, -60, -40, -20, 0, +20} mV (peak g
+monotonic; peak g(-80)/peak g(-20) = 0.0167). Promote this into a reusable
+arf/scripts/verificators/ check that any DSGC task using NMDA_MgBlock can invoke as a
+precondition. The check loads the task's compiled NMDA mechanism, runs the 6-voltage clamp,
+and asserts the monotonicity + threshold pattern within tolerance. Companion to S-0054-04
+(gNMDA = 0 baseline-equivalence verificator). Pass criterion: verificator script exists, runs
+against t0055 and passes; documentation describes when downstream tasks should invoke it.
+Recommended task type: write-library, infrastructure-setup.
 
 </details>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-28T12:08:51Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-28T14:00:47Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>352154</char_count>
-    <byte_count>352626</byte_count>
-    <estimated_tokens>88038</estimated_tokens>
+    <char_count>352647</char_count>
+    <byte_count>353125</byte_count>
+    <estimated_tokens>88161</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -159,10 +159,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0052_minimal_dsgc_scalar_gaba</id>
         <id>t0053_minimal_dsgc_spatial_gaba</id>
         <id>t0054_minimal_dsgc_ampa_nmda_scalar_gaba</id>
+        <id>t0055_nmda_mg_block_dsi_recovery</id>
         <id>t0056_brainstorm_results_10</id>
       </source_ids>
       <content>
-Completed tasks: 49
+Completed tasks: 50
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -452,6 +453,12 @@ Completed: 2026-04-28
 Short description: Extend t0052 by adding co-located NMDA Exp2Syn (tau1=5, tau2=80, e=0) at each E synapse; sweep gNMDA at {0, 0.25, 0.5, 1.0} nS; characterise EPSP decay, peak rate, and DSI vs gNMDA.
 Result summary: Results Summary: Minimal DSGC with AMPA + NMDA Excitation and Scalar gabaMOD Summary Built a minimal DSGC extending t0052 with co-located NMDA `Exp2Syn` (tau1=5 ms, tau2=80 ms, e=0 mV) at every E synapse and ran a 4-value gNMDA sweep (`{0.0, 0.25, 0.5, 1.0}` nS) × 12 directions × 10 trials × 3 modes (1440 trials, 4 h 19 min wall-clock on local CPU). The gNMDA=0 regression gate against t0052&#x27;s `tuning_curve_full.csv` passed at **max |rate diff| = 0.000e+00 Hz** across all 120 rows. Headline finding: NMDA dramatically closes the peak-rate gap (peak Hz at preferred direction goes from 0.667 (t0052) to 8.0 at gNMDA=0.25 nS), but scalar `gabaMOD` inhibition is too weak to maintain direction...
 
+## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
+ID: t0055_nmda_mg_block_dsi_recovery
+Completed: 2026-04-28
+Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
+Result summary: t0055 Results Summary — Mg-Block NMDA DSI Recovery Summary Voltage-dependent (Jahr-Stevens Mg-block) NMDA at every E synapse **recovers vector-sum DSI** from t0054&#x27;s collapsed 0.082 (gNMDA = 0.25 nS, voltage-independent) back to **0.7464**, a 9× recovery and bit-identical to the gNMDA = 0 baseline. **Peak rate stays at 0.667 Hz** at every gNMDA value because the scalar gabaMOD inhibition prevents the soma from depolarising above the Mg-unblock threshold. The S-0054-01 pass criterion (DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz at gNMDA = 0.25, FULL) is **PARTIAL: PASS on DSI, FAIL on peak-Hz**. Metrics * **Vector-sum DSI at gNMDA = 0.25 nS, FULL = 0.7464** vs t0054&#x27;s 0.082 — a **9.1× recovery** and...
+
 ## Brainstorm results session 10
 ID: t0056_brainstorm_results_10
 Completed: 2026-04-28
@@ -466,11 +473,10 @@ Result summary: Results Summary: Brainstorm Session 10 Summary Tenth strategic b
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0055_nmda_mg_block_dsi_recovery</id>
         <id>t0057_tonic_gaba_sweep_t0053</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -491,13 +497,6 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-## Add Mg-block NMDA to recover DSI in t0054 minimal architecture
-ID: t0055_nmda_mg_block_dsi_recovery
-Status: in_progress
-Effective date: 2026-04-28
-Short description: Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0046_reproduce_poleg_polsky_2016_exact, t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 
 ## Tonic GABA + amplitude sweep on t0053 spatial DSGC
 ID: t0057_tonic_gaba_sweep_t0053

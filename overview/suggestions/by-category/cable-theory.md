@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-28 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **24
-open** (2 high, 19 medium, 3 low), **4 closed**.
+29 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **25
+open** (2 high, 20 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -110,6 +110,33 @@ wrapping the robust form, plus a docstring note explaining the API quirk. Other 
 computing path distances (e.g., S-0049-05's intermediate SEClamp dendritic locations, future
 spatial audits) will then avoid silent miscomputation. Pure code/library task; no experiments
 required. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Analytic Mg-block-vs-gabaMOD operating-point map: predict the
+gAMPA/gGABA ratio that opens the unblock window</strong> (S-0055-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0055-04` |
+| **Kind** | technique |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) |
+| **Source paper** | — |
+| **Categories** | [`cable-theory`](../../../meta/categories/cable-theory/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The bit-identical DSI = 0.7464 across all gNMDA values in t0055 FULL mode is mechanistically
+explained by a single inequality: peak EPSP Vm under inhibition < Mg-unblock voltage (~-40 to
+-20 mV). Derive a closed-form (or numeric) prediction from a single-compartment cable-theory
+model: given AMPA peak conductance gAMPA, GABA peak conductance gGABA, gabaMOD direction
+modulation, and the Jahr-Stevens Boltzmann (n=0.25, gamma=0.08, Vset, e=-65), what (gAMPA,
+gGABA) ratio places the preferred-direction peak Vm right at the unblock knee? Validate
+against the t0055 numbers (gAMPA = 0.5 nS, gGABA = 2 nS x 0.33, peak Vm ~= -55 mV — below
+knee, predicting NMDA does not contribute). The output is a 2D heat-map predicting the
+operating point that S-0055-03 / S-0054-02 should target empirically. Pass criterion:
+theoretical prediction matches the t0055 NMDA-inert regime within +/-5 mV at the preferred
+direction. Recommended task type: answer-question, comparative-analysis.
 
 </details>
 
