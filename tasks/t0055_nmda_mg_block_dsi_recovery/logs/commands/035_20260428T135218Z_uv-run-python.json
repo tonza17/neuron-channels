@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0055_nmda_mg_block_dsi_recovery",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_tasks --format markdown --detail short",
+  "exit_code": 0,
+  "duration_seconds": 1.448,
+  "started_at": "2026-04-28T13:52:18Z",
+  "completed_at": "2026-04-28T13:52:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0055_nmda_mg_block_dsi_recovery",
+  "stdout_file": "035_20260428T135218Z_uv-run-python.stdout.txt",
+  "stderr_file": "035_20260428T135218Z_uv-run-python.stderr.txt",
+  "stdout_lines": 555,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,122 @@
+{
+  "spec_version": "2",
+  "library_id": "minimal_dsgc_mg_block_nmda",
+  "name": "Minimal DSGC AMPA + Mg-Block NMDA + Scalar gabaMOD",
+  "version": "0.1.0",
+  "short_description": "NEURON library for a minimal DSGC with co-located AMPA Exp2Syn and a custom Jahr-Stevens Mg-block NMDA POINT_PROCESS, scalar gabaMOD inhibition, and a 12-direction x 4-gNMDA x 3-mode moving-bar sweep harness.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/constants.py",
+    "code/paths.py",
+    "code/swc_io.py",
+    "code/neuron_bootstrap.py",
+    "code/cell.py",
+    "code/placement.py",
+    "code/synapses.py",
+    "code/trial.py",
+    "code/run_tuning_curve.py",
+    "code/render_figures.py",
+    "code/compute_metrics.py",
+    "code/metrics_extra.py"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc_from_swc",
+      "kind": "function",
+      "module": "code/cell.py",
+      "description": "Parse a calibrated SWC, collapse the soma into one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial segment, and return a CellHandles dataclass."
+    },
+    {
+      "name": "sample_dendritic_locations",
+      "kind": "function",
+      "module": "code/placement.py",
+      "description": "Sample N dendritic locations uniformly along total dendritic length using numpy.random.default_rng(seed)."
+    },
+    {
+      "name": "build_ei_pairs",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Construct one AMPA Exp2Syn + NMDA_MgBlock + GABA Exp2Syn triplet per Location; AMPA and NMDA share a single NetStim driven by two NetCons."
+    },
+    {
+      "name": "schedule_ei_onsets",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Per-trial scheduler: set NetStim.start times from bar-leading-edge geometry; write per-trial AMPA, NMDA (gnmda_ns x 1e-3), and GABA NetCon weights."
+    },
+    {
+      "name": "gaba_mod",
+      "kind": "function",
+      "module": "code/synapses.py",
+      "description": "Scalar gabaMOD multiplier: returns 0.33 at preferred direction (theta=0) and 0.99 at null direction (theta=180)."
+    },
+    {
+      "name": "TrialMode",
+      "kind": "class",
+      "module": "code/constants.py",
+      "description": "StrEnum with members FULL, E_ONLY, GABA_ONLY for selecting which synaptic drive is active."
+    },
+    {
+      "name": "run_one_trial",
+      "kind": "function",
+      "module": "code/trial.py",
+      "description": "Run one trial at a given (mode, angle, gnmda_ns); returns TrialResult carrying V(t), spike times, synapse onset times, and gnmda_ns."
+    },
+    {
+      "name": "run_full_sweep",
+      "kind": "function",
+      "module": "code/run_tuning_curve.py",
+      "description": "End-to-end 4 gNMDA x 12 directions x 10 trials x 3 modes = 1,440-trial sweep with dry-run validation gate; writes per-mode tuning-curve / spike-time / voltage-trace CSVs and an activation-time CSV."
+    },
+    {
+      "name": "ensure_nmda_mg_block_compiled",
+      "kind": "function",
+      "module": "code/neuron_bootstrap.py",
+      "description": "Build code/mod/NMDA_MgBlock.mod into nrnmech.dll via run_nrnivmodl.cmd if needed, then h.nrn_load_dll the result so h.NMDA_MgBlock becomes available."
+    },
+    {
+      "name": "compute_vector_sum_dsi",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Vector-sum DSI from per-angle mean firing rates: |sum r_k * exp(i theta_k)| / sum r_k."
+    },
+    {
+      "name": "compute_preferred_direction_deg",
+      "kind": "function",
+      "module": "code/metrics_extra.py",
+      "description": "Preferred direction in degrees from the complex sum of rate-weighted unit vectors."
+    },
+    {
+      "name": "compute_metrics_main",
+      "kind": "script",
+      "module": "code/compute_metrics.py",
+      "description": "Compute 12-variant metrics (one per gNMDA x mode) with the gNMDA = 0 cross-task regression hard-fail gate against t0054, the IPSP-conductance-ratio sanity check, and the S-0054-01 PASS/FAIL evaluation."
+    },
+    {
+      "name": "render_figures_main",
+      "kind": "script",
+      "module": "code/render_figures.py",
+      "description": "Render all per-direction figures (soma V, EPSP, IPSP, PSTH, activation histogram) for each gNMDA, plus polar/Cartesian overviews and four sweep-summary plots including the Mg-block g(v) sanity curve."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "tqdm"
+  ],
+  "test_paths": [
+    "code/test_quiescent_rest.py",
+    "code/test_gaba_mod.py",
+    "code/test_placement_seed0_match.py",
+    "code/test_nmda_mg_block_voltage_dep.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "synaptic-integration"
+  ],
+  "created_by_task": "t0055_nmda_mg_block_dsi_recovery",
+  "date_created": "2026-04-28"
+}

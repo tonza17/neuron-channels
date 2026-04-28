@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0055_nmda_mg_block_dsi_recovery",
+  "command": "uv run python -u tasks/t0055_nmda_mg_block_dsi_recovery/code/test_gaba_mod.py",
+  "exit_code": 0,
+  "duration_seconds": 0.423,
+  "started_at": "2026-04-28T11:33:22Z",
+  "completed_at": "2026-04-28T11:33:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0055_nmda_mg_block_dsi_recovery",
+  "stdout_file": "019_20260428T113322Z_uv-run-python.stdout.txt",
+  "stderr_file": "019_20260428T113322Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

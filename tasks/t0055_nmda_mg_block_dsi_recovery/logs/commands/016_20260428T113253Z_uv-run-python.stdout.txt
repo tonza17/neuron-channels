@@ -1,0 +1,11 @@
+[bootstrap] NMDA_MgBlock mechanism registered.
+[mg-sanity] sweeping NMDA_MgBlock under SEClamp at ['-80 mV', '-60 mV', '-40 mV', '-20 mV', '+0 mV', '+20 mV']
+[mg-sanity]  v_clamp= -80.0 mV  peak_g=5.362784e-06 uS
+[mg-sanity]  v_clamp= -60.0 mV  peak_g=2.598673e-05 uS
+[mg-sanity]  v_clamp= -40.0 mV  peak_g=9.994187e-05 uS
+[mg-sanity]  v_clamp= -20.0 mV  peak_g=3.202887e-04 uS
+[mg-sanity]  v_clamp=  +0.0 mV  peak_g=6.505578e-04 uS
+[mg-sanity]  v_clamp= +20.0 mV  peak_g=6.828918e-04 uS
+[mg-sanity] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0055_nmda_mg_block_dsi_recovery\tasks\t0055_nmda_mg_block_dsi_recovery\results\mg_block_g_v_empirical.json
+[mg-sanity] peak_g(-80) / peak_g(-20) = 0.0167 (must be <= 0.2500)
+[mg-sanity] PASS

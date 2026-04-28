@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0055_nmda_mg_block_dsi_recovery",
+  "command": "uv run ruff check tasks/t0055_nmda_mg_block_dsi_recovery/code/",
+  "exit_code": 1,
+  "duration_seconds": 0.343,
+  "started_at": "2026-04-28T11:29:03Z",
+  "completed_at": "2026-04-28T11:29:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0055_nmda_mg_block_dsi_recovery",
+  "stdout_file": "009_20260428T112903Z_uv-run-ruff.stdout.txt",
+  "stderr_file": "009_20260428T112903Z_uv-run-ruff.stderr.txt",
+  "stdout_lines": 21,
+  "stderr_lines": 0,
+  "truncated": false
+}
