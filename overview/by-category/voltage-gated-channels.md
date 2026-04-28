@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(32)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(33)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (26 open, 6 closed)
+## Suggestions (27 open, 6 closed)
 
 <details>
 <summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
@@ -926,6 +926,27 @@ and asserts the monotonicity + threshold pattern within tolerance. Companion to 
 (gNMDA = 0 baseline-equivalence verificator). Pass criterion: verificator script exists, runs
 against t0055 and passes; documentation describes when downstream tasks should invoke it.
 Recommended task type: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
+architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0057_tonic_gaba_sweep_t0053](../../tasks/t0057_tonic_gaba_sweep_t0053/)
+
+Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016's argument that
+voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA
+but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only
+excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA +
+Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via
+gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse.
+Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed
+gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at least one
+(gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
+Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
++ scalar GABA ladder). Recommended task types: build-model, experiment-run.
 
 </details>
 

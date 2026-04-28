@@ -1,7 +1,7 @@
 # Suggestions: `voltage-gated-channels`
 
-32 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **26 open** (4
+33 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **27 open** (5
 high, 19 medium, 3 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
@@ -84,6 +84,33 @@ criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes
 trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
 infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
 DSGC task.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
+architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0057_tonic_gaba_sweep_t0053/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016's argument that
+voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA
+but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only
+excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA +
+Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via
+gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse.
+Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed
+gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at least one
+(gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
+Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
++ scalar GABA ladder). Recommended task types: build-model, experiment-run.
 
 </details>
 

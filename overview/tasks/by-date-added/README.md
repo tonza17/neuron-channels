@@ -8,23 +8,27 @@
 
 ## 2026-04-28 (4)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0057 — <strong>Tonic GABA + amplitude sweep on t0053 spatial
+<summary>✅ 0057 — <strong>Tonic GABA + amplitude sweep on t0053 spatial
 DSGC</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0057_tonic_gaba_sweep_t0053` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-28 |
 | **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | `S-0053-01` |
 | **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-28T14:18:58Z |
+| **End time** | 2026-04-28T18:02:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
 | **Task folder** | [`t0057_tonic_gaba_sweep_t0053/`](../../../tasks/t0057_tonic_gaba_sweep_t0053/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0057_tonic_gaba_sweep_t0053/results/results_detailed.md) |
 
 # Tonic GABA + Amplitude Sweep on t0053 Spatial DSGC
 
@@ -197,9 +201,41 @@ and verification time. Cost: $0.00.
 * `verify_research_code.py`, `verify_plan.py`, `verify_task_metrics.py`, and the library asset
   verificator all pass with 0 errors.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Tonic GABA + Amplitude Sweep on t0053 Spatial DSGC**
+>
+> **Summary**
+>
+> Replaced t0053's per-event Exp2Syn GABA with a sustained `gaba_tonic` POINT_PROCESS
+> (conductance
+> held over a configurable `(t_on, t_off) = (100 ms, 1400 ms)` window) and ran a 1800-trial
+> sweep
+> across `GABA_BASE_NS in {0.25, 0.5, 1.0, 1.5, 2.0}` nS. Headline negative finding: no
+> operating
+> point in the swept grid produces non-trivial direction selectivity. Below 1.5 nS the cell
+> fires its
+> single-spike-per-trial regime uniformly across all directions (peak = null = 0.667 Hz,
+> identical to
+> AMPA_ONLY); at 1.5 and 2.0 nS the cell is fully suppressed (peak = null = 0 Hz). The
+> active-fraction
+> modulation (0.34 → 0.66 across directions) confirms the spatial centripetal-gating rule is
+> intact;
+> the failure is amplitude calibration interacting with the sustained mechanism, not the
+> gating.
+>
+> **Metrics**
+>
+> * **Primary DSI (FULL) at all 5 conductances**: **0.0** (degenerate — peak = null at every
+>   swept
+> value).
+> * **Vector-sum DSI (FULL) at all 5 conductances**: **0.0** (3.2e-17 numerical floor for the
+>   three
+> sub-threshold-suppression values; 0.0 exact for the two fully-suppressed values).
+> * **Peak Hz at gaba in {0.25, 0.5, 1.0} nS**: **0.667 Hz** (identical to AMPA_ONLY
+>   single-spike
+
+</details>
 
 <details>
 <summary>✅ 0056 — <strong>Brainstorm results session 10</strong></summary>

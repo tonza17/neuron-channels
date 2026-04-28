@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-28T14:00:47Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-28T18:07:49Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>3277</char_count>
-    <byte_count>3277</byte_count>
-    <estimated_tokens>819</estimated_tokens>
+    <char_count>3315</char_count>
+    <byte_count>3315</byte_count>
+    <estimated_tokens>828</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -80,6 +80,7 @@ Spent: 0.0%
 * t0054_minimal_dsgc_ampa_nmda_scalar_gaba: $0.00
 * t0055_nmda_mg_block_dsi_recovery: $0.00
 * t0056_brainstorm_results_10: $0.00
+* t0057_tonic_gaba_sweep_t0053: $0.00
       </content>
     </section>
   </sections>

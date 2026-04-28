@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-28T14:00:47Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-28T18:07:49Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>156569</char_count>
-    <byte_count>156785</byte_count>
-    <estimated_tokens>39142</estimated_tokens>
+    <char_count>158435</char_count>
+    <byte_count>158653</byte_count>
+    <estimated_tokens>39608</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -165,9 +165,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0054_minimal_dsgc_ampa_nmda_scalar_gaba</id>
         <id>t0055_nmda_mg_block_dsi_recovery</id>
         <id>t0056_brainstorm_results_10</id>
+        <id>t0057_tonic_gaba_sweep_t0053</id>
       </source_ids>
       <content>
-Completed tasks: 50
+Completed tasks: 51
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -468,6 +469,12 @@ ID: t0056_brainstorm_results_10
 Completed: 2026-04-28
 Short description: Tenth brainstorm: commission t0057 tonic-GABA + amplitude sweep on t0053; reject four covered suggestions; reprioritise nineteen high-priority suggestions to medium.
 Result summary: Results Summary: Brainstorm Session 10 Summary Tenth strategic brainstorm, run on 2026-04-28 after the from-scratch minimal DSGC wave (t0052, t0053, t0054) completed and t0055 (Mg-block NMDA recovery test) started. Triggered by a researcher observation that t0053&#x27;s GABA conductance is only present in a narrow ~100-200 ms window per trial because each spatial-gating GABA synapse fires exactly once at the bar-arrival time and the Exp2Syn decay is only `tau2 = 20 ms`. Decision: commission a single new task (t0057) that replaces the per-event Exp2Syn GABA mechanism with a tonic conductance gated by stimulus window and sweeps the per-synapse peak conductance to recover non-zero FULL-mode tuning...
+
+## Tonic GABA + amplitude sweep on t0053 spatial DSGC
+ID: t0057_tonic_gaba_sweep_t0053
+Completed: 2026-04-28
+Short description: Replace t0053&#x27;s per-event Exp2Syn GABA with a tonic conductance gated by stimulus window; sweep per-synapse peak conductance to recover non-zero FULL-mode tuning curves.
+Result summary: Results Summary: Tonic GABA + Amplitude Sweep on t0053 Spatial DSGC Summary Replaced t0053&#x27;s per-event Exp2Syn GABA with a sustained `gaba_tonic` POINT_PROCESS (conductance held over a configurable `(t_on, t_off) = (100 ms, 1400 ms)` window) and ran a 1800-trial sweep across `GABA_BASE_NS in {0.25, 0.5, 1.0, 1.5, 2.0}` nS. Headline negative finding: no operating point in the swept grid produces non-trivial direction selectivity. Below 1.5 nS the cell fires its single-spike-per-trial regime uniformly across all directions (peak = null = 0.667 Hz, identical to AMPA_ONLY); at 1.5 and 2.0 nS the cell is fully suppressed (peak = null = 0 Hz). The active-fraction modulation (0.34 → 0.66 across...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -477,10 +484,9 @@ Result summary: Results Summary: Brainstorm Session 10 Summary Tenth strategic b
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0057_tonic_gaba_sweep_t0053</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -501,13 +507,6 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-## Tonic GABA + amplitude sweep on t0053 spatial DSGC
-ID: t0057_tonic_gaba_sweep_t0053
-Status: not_started
-Effective date: 2026-04-28
-Short description: Replace t0053&#x27;s per-event Exp2Syn GABA with a tonic conductance gated by stimulus window; sweep per-synapse peak conductance to recover non-zero FULL-mode tuning curves.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0053_minimal_dsgc_spatial_gaba
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1243,9 +1242,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>minimal_dsgc_scalar_gaba</id>
         <id>minimal_dsgc_spatial_gaba</id>
         <id>minimal_dsgc_mg_block_nmda</id>
+        <id>minimal_dsgc_tonic_gaba_sweep</id>
       </source_ids>
       <content>
-Libraries: 11
+Libraries: 12
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1323,6 +1323,13 @@ Version: 0.1.0
 Created by task: t0055_nmda_mg_block_dsi_recovery
 Module paths: tasks\t0055_nmda_mg_block_dsi_recovery\code\constants.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\paths.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\swc_io.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\neuron_bootstrap.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\cell.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\placement.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\synapses.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\trial.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\run_tuning_curve.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\render_figures.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\compute_metrics.py, tasks\t0055_nmda_mg_block_dsi_recovery\code\metrics_extra.py
 This library is the implementation backbone of t0055. It extends the t0054 minimal DSGC by substituting the voltage-INDEPENDENT NMDA `Exp2Syn` with a custom voltage-DEPENDENT `NMDA_MgBlock` POINT_PROCESS while keeping every other parameter — morphology, AMPA, GABA, HH soma + AIS, placement seed, stimulus protocol, per-trial seeds — bit-identical to t0054. The Mg-block formula and parameter values are taken verbatim...
+
+## Minimal DSGC with Tonic GABA Sweep
+ID: minimal_dsgc_tonic_gaba_sweep
+Version: 0.1.0
+Created by task: t0057_tonic_gaba_sweep_t0053
+Module paths: tasks\t0057_tonic_gaba_sweep_t0053\code\constants.py, tasks\t0057_tonic_gaba_sweep_t0053\code\paths.py, tasks\t0057_tonic_gaba_sweep_t0053\code\swc_io.py, tasks\t0057_tonic_gaba_sweep_t0053\code\neuron_bootstrap.py, tasks\t0057_tonic_gaba_sweep_t0053\code\cell.py, tasks\t0057_tonic_gaba_sweep_t0053\code\placement.py, tasks\t0057_tonic_gaba_sweep_t0053\code\synapses.py, tasks\t0057_tonic_gaba_sweep_t0053\code\trial.py, tasks\t0057_tonic_gaba_sweep_t0053\code\run_tuning_curve.py, tasks\t0057_tonic_gaba_sweep_t0053\code\render_figures.py, tasks\t0057_tonic_gaba_sweep_t0053\code\compute_metrics.py, tasks\t0057_tonic_gaba_sweep_t0053\code\metrics_extra.py, tasks\t0057_tonic_gaba_sweep_t0053\code\mod\GabaTonic.mod
+The `minimal_dsgc_tonic_gaba_sweep` library extends the t0053 minimal DSGC with a custom tonic GABA POINT_PROCESS that decouples conductance amplitude from event-decay-tau interactions. The library exposes `GABA_BASE_NS_VALUES` as a public sweep parameter and writes 15-variant `metrics.json` (5 conductances x 3 modes) plus 312 PNG figures to `tasks/t0057_tonic_gaba_sweep_t0053/results/`. The new `gaba_tonic.mod`...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">

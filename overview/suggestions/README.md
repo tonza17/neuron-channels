@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-223 suggestions **195 open** (35 high, 132 medium, 28 low), **28 closed**.
+229 suggestions **201 open** (38 high, 135 medium, 28 low), **28 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -68,6 +68,32 @@ the ^[a-z][a-z0-9]*(_[a-z0-9]+)*$ regex, module_paths resolve, description.md ha
 mandatory sections, and categories exist in meta/categories/. Port the checks already
 performed by hand on t0012 into a reusable verificator, wire it into step_registry.py, and
 re-run it against existing library assets. Recommended task types: infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AMPA conductance escape sweep on t0057 tonic-GABA substrate to
+enter multi-spike regime first</strong> (S-0057-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0057 confirmed (alongside t0052, t0053, t0054) that AMPA = 0.5 nS x 100 synapses gives at
+most one spike per trial; this binary regime cannot produce graded DSI under any inhibition
+mechanism. S-0052-01 proposes the AMPA escape on the t0052 scalar-gabaMOD substrate; this
+suggestion proposes the matching experiment on the t0057 tonic substrate so the AMPA-escape
+and tonic-GABA-amplitude axes are directly cross-comparable. Sweep AMPA per-synapse
+conductance in {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed GABA_BASE_NS in {0.5, 1.0, 1.5}
+nS (21 grid cells, 7560 trials). Report peak Hz, FULL-mode primary and vector-sum DSI, HWHM,
+and reliability per cell. Pass criterion: locate at least one (gAMPA, gGABA) point on the
+tonic substrate with peak Hz in 5-50 Hz AND vector-sum DSI > 0.3, or rule out such a point in
+the sustained-envelope regime. Recommended task types: experiment-run.
 
 </details>
 
@@ -590,6 +616,33 @@ regime. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on
+t0057 to model bar-arrival-locked inhibition</strong> (S-0057-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
+dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
+only as the bar passes its dendritic field, producing a synapse-specific window of width
+~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
+each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
+and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
+bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
+(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
+~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
+produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
+Hz). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
 <summary>📚 <strong>Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC
 library</strong> (S-0008-01)</summary>
 
@@ -831,6 +884,33 @@ kinetic-tiling is causally responsible for SAC DS, the swap reverses preferred d
 [Kim2014] cable delay is causal, the swap only reduces DSI magnitude without flipping
 preferred direction. Critical for choosing between two competing centrifugal-DS mechanisms
 before committing to a morphology sweep design.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
+architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../tasks/t0057_tonic_gaba_sweep_t0053/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+
+Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016's argument that
+voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA
+but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only
+excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA +
+Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via
+gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse.
+Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed
+gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at least one
+(gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
+Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
++ scalar GABA ladder). Recommended task types: build-model, experiment-run.
 
 </details>
 
@@ -2255,6 +2335,33 @@ amplitude floor in {0.33, 0.5, 0.66, 1.0} at fixed centripetal threshold cos < 0
 DSI, peak Hz, HWHM, IPSP modulation, and active-fraction per floor. Goal: test whether
 combining the two mechanisms produces a tuning curve closer to Park2014 / deRosenroll2026
 bands than either alone. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Hybrid tonic + transient GABA envelope on minimal DSGC to model
+multi-event SAC release</strong> (S-0057-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+Real SAC->DSGC IPSCs envelope over 100-300 ms via multiple GABA release events per varicosity,
+between t0057's single 1300 ms pulse and t0053's single ~80 ms decay tail. Build a hybrid
+mechanism whose conductance envelope is the sum of a low-amplitude tonic floor (g_tonic over
+[t_on, t_off]) and a sequence of transient Exp2Syn events (rise 1 ms, decay 20 ms) at rate r
+in {25, 50, 100} Hz over the same window. Keep the t0053 spatial centripetal gating rule and
+t0057 placement seed unchanged so this isolates envelope-shape effects. Sweep g_tonic in {0.0,
+0.05, 0.1, 0.2} nS x g_event in {0.5, 1.0, 2.0} nS x rate r in {25, 50, 100} Hz (36 grid
+cells, 12960 trials). Report peak Hz, primary and vector-sum DSI, IPSP envelope variance, and
+IPSP autocorrelation timescale. Pass criterion: locate at least one (g_tonic, g_event, r)
+triple with peak Hz != null Hz in FULL mode AND IPSP envelope tau within 100-300 ms biological
+band. Recommended task types: build-model, experiment-run.
 
 </details>
 
@@ -3774,6 +3881,33 @@ task types: comparative-analysis, answer-question.
 </details>
 
 <details>
+<summary>🧪 <strong>Sub-0.25 nS tonic GABA finer sweep on t0057 to test
+graded-suppression hypothesis</strong> (S-0057-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0057 swept GABA_BASE_NS in {0.25, 0.5, 1.0, 1.5, 2.0} nS and found a binary regime: gaba <=
+1.0 nS produces uniform 0.667 Hz single-spike-per-trial (tonic too weak to override AMPA
+spike) and gaba >= 1.5 nS produces 0 Hz full suppression. The sub-0.25 nS regime is
+uncharacterised and may host a graded-suppression operating point where the tonic envelope
+partially vetoes the AMPA spike on subset of trials, producing a probabilistic firing-rate
+signal that could carry direction information. Run a finer sweep at GABA_BASE_NS in {0.05,
+0.10, 0.125, 0.15, 0.175, 0.20, 0.225} nS on the t0057 minimal_dsgc_tonic_gaba_sweep library
+at 12 directions x 10 trials x 3 modes (2520 trials, ~75 min wall-clock). Pass criterion:
+identify any conductance with FULL-mode peak Hz != null Hz (i.e., non-degenerate primary DSI),
+or rule out the existence of such a graded operating point in the sub-AMPA-spike-veto regime.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
@@ -3793,6 +3927,33 @@ arises because NEURON's surface-density gbar scales total channel current by d w
 load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
 trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sustained-envelope gabaMOD on t0052 minimal scalar architecture
+(tonic-mechanism back-port)</strong> (S-0057-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0057-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0057_tonic_gaba_sweep_t0053`](../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0057 introduced a sustained (1300 ms) tonic envelope on the t0053 spatial substrate; the
+back-port question is whether applying the same envelope to t0052's scalar gabaMOD inhibition
+(graded amplitude, all 100 synapses fire) breaks t0052's binary single-spike DSI usefully.
+Build a t0052 variant that replaces per-event Exp2Syn(rise=1, decay=20 ms) inhibition with a
+sustained gabaMOD-envelope using gaba_tonic.mod from t0057, holding g(theta) = gabaMOD(theta)
+* GABA_BASE_NS over (t_on, t_off) = (100, 1400) ms per synapse. Sweep GABA_BASE_NS in {0.05,
+0.1, 0.25, 0.5, 1.0, 2.0} nS at gabaMOD_PD = 0.33, gabaMOD_ND = 0.99 (matching t0052). Run 12
+dir x 10 trials x 3 modes per conductance (2160 trials, ~2 h). Pass criterion: identify a
+GABA_BASE_NS where FULL-mode peak Hz is non-zero AND primary DSI is non-degenerate, or rule it
+out. Decomposes inhibition-envelope-shape from spatial-pattern. Recommended task types:
+build-model, experiment-run.
 
 </details>
 

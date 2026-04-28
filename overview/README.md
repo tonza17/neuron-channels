@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-11-20B2AA" alt="Libraries"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-12-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-18-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-57-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-223-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-229-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (21K)
-| [full](llm-context/full.xml) (308K) | [roadmap](llm-context/roadmap.xml) (73K) |
-[results](llm-context/results-deep-dive.xml) (217K) |
-[assets](llm-context/literature-and-assets.xml) (39K)
+| [full](llm-context/full.xml) (312K) | [roadmap](llm-context/roadmap.xml) (72K) |
+[results](llm-context/results-deep-dive.xml) (222K) |
+[assets](llm-context/literature-and-assets.xml) (40K)
 
-*Last updated: 2026-04-28 14:00 UTC*
+*Last updated: 2026-04-28 18:07 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,13 +56,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
-| 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`description`](../tasks/t0057_tonic_gaba_sweep_t0053/task_description.md) | 2026-04-28 |
 
 ---
 
@@ -80,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (50 total)](tasks/by-status/completed.md)
+## [Recently Completed (51 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`results`](../tasks/t0057_tonic_gaba_sweep_t0053/results/results_detailed.md) | 2026-04-28 18:02 |
 | 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | [`results`](../tasks/t0055_nmda_mg_block_dsi_recovery/results/results_detailed.md) | 2026-04-28 13:55 |
 | 0056 | [Brainstorm results session 10](../overview/tasks/task_pages/t0056_brainstorm_results_10.md) | [`results`](../tasks/t0056_brainstorm_results_10/results/results_detailed.md) | 2026-04-28 13:00 |
 | 0054 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | [`results`](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/results_detailed.md) | 2026-04-28 05:00 |
@@ -93,9 +93,8 @@ No blocked tasks.
 | 0050 | [Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper](../overview/tasks/task_pages/t0050_audit_syn_distribution.md) | [`results`](../tasks/t0050_audit_syn_distribution/results/results_detailed.md) | 2026-04-25 12:11 |
 | 0049 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | [`results`](../tasks/t0049_seclamp_cond_remeasure/results/results_detailed.md) | 2026-04-25 10:42 |
 | 0048 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | [`results`](../tasks/t0048_voff_nmda1_dsi_test/results/results_detailed.md) | 2026-04-25 09:32 |
-| 0047 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | [`results`](../tasks/t0047_validate_pp16_fig3_cond_noise/results/results_detailed.md) | 2026-04-25 00:00 |
 
-*40 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*41 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -106,21 +105,21 @@ No blocked tasks.
 | # | Task | Variant | Value |
 |---|------|---------|-------|
 | 1 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | Full E+I (spatial centripetal gating) | **17.178292988536434** |
-| 2 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
-| 3 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
-| 4 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
-| 5 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.25 nS, FULL | **16.980414819835936** |
-| 6 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.50 nS, FULL | **16.980414819835936** |
-| 7 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 1.00 nS, FULL | **16.980414819835936** |
-| 8 | [Port de Rosenroll 2026 DSGC model](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) |  | **15.489547768408103** |
-| 9 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 1.00 nS, FULL | **14.052154566782137** |
-| 10 | [Port ModelDB 189347 and similar DSGC compartmental models to NEURON](../overview/tasks/task_pages/t0008_port_modeldb_189347.md) |  | **13.726223262294535** |
+| 2 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.50 nS / FULL | **17.178292988536434** |
+| 3 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=2.00 nS / FULL | **17.178292988536434** |
+| 4 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
+| 5 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
+| 6 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.00 nS, FULL | **16.980414819835936** |
+| 7 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.25 nS, FULL | **16.980414819835936** |
+| 8 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.50 nS, FULL | **16.980414819835936** |
+| 9 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 1.00 nS, FULL | **16.980414819835936** |
+| 10 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.25 nS / FULL | **16.66947867777781** |
 
-*15 more results → [all results](metrics-results/)*
+*20 more results → [all results](metrics-results/)*
 
 ---
 
-## [Recent Suggestions (195 open)](suggestions/)
+## [Recent Suggestions (201 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -321,11 +320,11 @@ gNMDA >= 0.25. Recommended task type: experiment-run.
 
 </details>
 
-*185 more open suggestions → [open suggestions](suggestions/)*
+*191 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (35)](suggestions/)
+## [High Priority Suggestions (38)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
@@ -407,6 +406,68 @@ GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experim
 </details>
 
 <details>
+<summary>🧪 <strong>AMPA conductance escape sweep on t0057 tonic-GABA substrate to
+enter multi-spike regime first</strong> (S-0057-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0057_tonic_gaba_sweep_t0053](../tasks/t0057_tonic_gaba_sweep_t0053/)
+
+t0057 confirmed (alongside t0052, t0053, t0054) that AMPA = 0.5 nS x 100 synapses gives at
+most one spike per trial; this binary regime cannot produce graded DSI under any inhibition
+mechanism. S-0052-01 proposes the AMPA escape on the t0052 scalar-gabaMOD substrate; this
+suggestion proposes the matching experiment on the t0057 tonic substrate so the AMPA-escape
+and tonic-GABA-amplitude axes are directly cross-comparable. Sweep AMPA per-synapse
+conductance in {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed GABA_BASE_NS in {0.5, 1.0, 1.5}
+nS (21 grid cells, 7560 trials). Report peak Hz, FULL-mode primary and vector-sum DSI, HWHM,
+and reliability per cell. Pass criterion: locate at least one (gAMPA, gGABA) point on the
+tonic substrate with peak Hz in 5-50 Hz AND vector-sum DSI > 0.3, or rule out such a point in
+the sustained-envelope regime. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-synapse stimulus-window-tied (t_on, t_off) tonic GABA on
+t0057 to model bar-arrival-locked inhibition</strong> (S-0057-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0057_tonic_gaba_sweep_t0053](../tasks/t0057_tonic_gaba_sweep_t0053/)
+
+t0057 used a global (t_on, t_off) = (100 ms, 1400 ms) for every active synapse regardless of
+dendritic position. Biological SAC inhibition is bar-arrival-locked: each SAC outputs GABA
+only as the bar passes its dendritic field, producing a synapse-specific window of width
+~100-300 ms. On t0057's minimal_dsgc_tonic_gaba_sweep substrate, modify schedule_ei_onsets so
+each centripetally-active I synapse gets t_on = (x*cos(theta) + y*sin(theta))/v + offset_ms
+and t_off = t_on + window_ms, where (x, y) is synapse coordinate, theta is bar direction, v is
+bar velocity, and window_ms is swept in {50, 100, 200, 400} ms. Keep GABA_BASE_NS at 1.0 nS
+(borderline single-spike regime). Run 12 dir x 10 trials x 3 modes per window (1440 trials,
+~85 min). Pass criterion: locate at least one window where the per-synapse onset gradient
+produces direction-dependent IPSP timing that breaks the FULL-mode degeneracy (peak Hz != null
+Hz). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
+architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0057_tonic_gaba_sweep_t0053](../tasks/t0057_tonic_gaba_sweep_t0053/)
+
+Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016's argument that
+voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA
+but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only
+excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA +
+Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via
+gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse.
+Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed
+gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at least one
+(gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
+Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
++ scalar GABA ladder). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
 the 30-150x peak-rate gap</strong> (S-0052-01)</summary>
 
@@ -465,65 +526,7 @@ otherwise identical from-scratch substrate. Recommended task types: comparative-
 
 </details>
 
-<details>
-<summary>🧪 <strong>Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to
-halve active-fraction on t0053</strong> (S-0053-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-t0053's centripetal-gating rule fires every I synapse whose centrifugal vector is anywhere on
-the bar-incoming hemisphere (cos(theta_stim - theta_centrifugal) < 0), giving a roughly 50%
-active fraction averaged over directions and a 0.34-0.66 per-direction spread. With 2 nS GABA
-per active synapse this is enough to fully suppress spiking. Tighten the threshold to T in
-{-0.3, -0.5, -0.7, -0.866} so only synapses whose centrifugal vector is within (90 - acos|T|)
-of being directly anti-aligned with the bar fire. T = -0.5 reduces mean active fraction to
-~0.33; T = -0.866 to ~0.17. Re-run the 12-direction x 10-trial FULL sweep at fixed 2 nS GABA
-per synapse and report peak Hz, DSI, HWHM, active-fraction polar curve, and aggregate IPSP per
-T. Goal: test whether a stricter threshold recovers a measurable DSI without changing
-per-synapse conductance, isolating the active-fraction-vs-amplitude contributions to
-suppression. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Conductance-matched t0052 vs t0053 comparison at fixed mean GABA
-mass per trial</strong> (S-0053-03)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0053_minimal_dsgc_spatial_gaba](../tasks/t0053_minimal_dsgc_spatial_gaba/)
-
-S-0052-04 proposes a t0052 vs t0053 side-by-side comparison at matched placement, but does not
-control for total GABA mass (t0052 = 66 nS mean / trial, t0053 = 100 nS mean / trial; 1.5x
-difference fully accounts for t0053's flat-zero result). Run a dedicated comparative task at
-conductance-matched mean GABA mass: e.g., t0052 standard gabaMOD (66 nS) vs t0053 at 1.32 nS x
-50 active = 66 nS, or matched at 100 nS. Use placement_seed0.json shared between tasks. Report
-all six output classes (V(t), EPSP, IPSP, PSTH, tuning curve, active-fraction) plus
-per-direction trial-for-trial diffs in soma V(t). Goal: isolate the spatial-vs-amplitude
-mechanism contribution to DSI from the GABA-mass confound, settling the graded-vs-binary
-question at matched mean drive. Recommended task types: comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB
-189347 vs Poleg-Polsky 2016 paper text</strong> (S-0046-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-24 | **Source**:
-[t0046_reproduce_poleg_polsky_2016_exact](../tasks/t0046_reproduce_poleg_polsky_2016_exact/)
-
-Inspect `RGCmodel.hoc`'s ON/OFF cut plane (`z >= -0.16 * y + 46`) and `placeBIP()` to
-determine why the deposited code instantiates 282 BIP/SACinhib/SACexc terminals when the paper
-Methods text states 177 synapses. Test alternative cut-plane thresholds, density-based
-sub-sampling, or supplementary-text geometry rules to find a code configuration that matches
-the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesis for the ~4x
-PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
-reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
-Recommended task types: experiment-run, code-reproduction.
-
-</details>
-
-*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*28 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1334,10 +1337,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (11 total)](libraries/)
+## [Latest Libraries (12 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Minimal DSGC with Tonic GABA Sweep](../tasks\t0057_tonic_gaba_sweep_t0053\assets\library\minimal_dsgc_tonic_gaba_sweep\description.md) | [57](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | 2026-04-28 |
 | [Minimal DSGC AMPA + Mg-Block NMDA + Scalar gabaMOD](../tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda\description.md) | [55](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | 2026-04-28 |
 | [Minimal DSGC with Spatial Centripetal-Gating GABA](../tasks\t0053_minimal_dsgc_spatial_gaba\assets\library\minimal_dsgc_spatial_gaba\description.md) | [53](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | 2026-04-25 |
 | [Minimal DSGC with Scalar gabaMOD](../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) | [52](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | 2026-04-25 |
@@ -1347,9 +1351,8 @@ No models yet.
 | [ModelDB 189347 DSGC -- Dendritic-Computation Driver](../tasks\t0022_modify_dsgc_channel_testbed\assets\library\modeldb_189347_dsgc_dendritic\description.md) | [22](../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md) | 2026-04-21 |
 | [Tuning Curve Visualizer](../tasks\t0011_response_visualization_library\assets\library\tuning_curve_viz\description.md) | [11](../overview/tasks/task_pages/t0011_response_visualization_library.md) | 2026-04-20 |
 | [Tuning Curve Loss](../tasks\t0012_tuning_curve_scoring_loss_library\assets\library\tuning_curve_loss\description.md) | [12](../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) | 2026-04-20 |
-| [ModelDB 189347 DSGC Port -- gabaMOD-swap protocol](../tasks\t0020_port_modeldb_189347_gabamod\assets\library\modeldb_189347_dsgc_gabamod\description.md) | [20](../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) | 2026-04-20 |
 
-*1 more librarie → [libraries](libraries/)*
+*2 more libraries → [libraries](libraries/)*
 
 ---
 

@@ -1,12 +1,12 @@
 # Libraries by Date Added
 
-11 librar(y/ies) grouped by creation date.
+12 librar(y/ies) grouped by creation date.
 
 [Back to all libraries](../README.md)
 
 ---
 
-## 2026-04-28 (1)
+## 2026-04-28 (2)
 
 <details>
 <summary>📦 <strong>Minimal DSGC AMPA + Mg-Block NMDA + Scalar gabaMOD</strong>
@@ -61,6 +61,102 @@
 NEURON library for a minimal DSGC with co-located AMPA Exp2Syn and a custom Jahr-Stevens
 Mg-block NMDA POINT_PROCESS, scalar gabaMOD inhibition, and a 12-direction x 4-gNMDA x 3-mode
 moving-bar sweep harness.
+
+</details>
+
+<details>
+<summary>📦 <strong>Minimal DSGC with Tonic GABA Sweep</strong>
+(<code>minimal_dsgc_tonic_gaba_sweep</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `minimal_dsgc_tonic_gaba_sweep` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0057_tonic_gaba_sweep_t0053\code\constants.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\paths.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\swc_io.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\neuron_bootstrap.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\cell.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\placement.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\synapses.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\trial.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\run_tuning_curve.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\render_figures.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\compute_metrics.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\metrics_extra.py`, `tasks\t0057_tonic_gaba_sweep_t0053\code\mod\GabaTonic.mod` |
+| **Dependencies** | neuron, numpy, matplotlib, pandas, tqdm |
+| **Date created** | 2026-04-28 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Created by** | [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0057_tonic_gaba_sweep_t0053\assets\library\minimal_dsgc_tonic_gaba_sweep\description.md) |
+
+**Entry points:**
+
+* `GABA_BASE_NS_VALUES` (function) — Public 5-tuple of swept per-synapse peak GABA conductance
+  values in nS (0.25, 0.5, 1.0, 1.5, 2.0). The sweep harness iterates over these values in
+  run_full_sweep; downstream callers can override by importing the constant and rebuilding the
+  GABA_BASE_NS_VALUES module-level binding before invoking the sweep.
+* `T_ON_MS` (function) — Public per-synapse tonic-window start time in ms (default 100).
+  Active GABA synapses receive g = GABA_BASE_NS * 1e-3 (uS) over [T_ON_MS, T_OFF_MS].
+* `T_OFF_MS` (function) — Public per-synapse tonic-window end time in ms (default 1400).
+  Together with T_ON_MS, defines the 1300 ms tonic interval covering the full stimulus window
+  minus the 100 ms BASE_OFFSET buffer.
+* `gaba_tonic` (class) — Custom NEURON POINT_PROCESS registered as h.gaba_tonic after
+  ensure_gaba_tonic_compiled() runs. RANGE attributes: g (uS), e (mV), t_on (ms), t_off (ms),
+  ramp_ms (ms; default 1). Conductance envelope is g * envelope(t) where envelope is 0 outside
+  [t_on, t_off], a 1 ms cosine ramp at each edge, and 1.0 in the middle. NONSPECIFIC_CURRENT i
+  = envelope * g * (v - e). No NET_RECEIVE block; conductance is set by direct attribute write
+  per trial.
+* `ensure_gaba_tonic_compiled` (function) — Build code/mod/nrnmech.dll from
+  code/mod/GabaTonic.mod via the run_nrnivmodl.cmd shim if missing, then load the DLL via
+  h.nrn_load_dll so h.gaba_tonic becomes available. Idempotent across multiple calls within
+  the same process. Must be called AFTER ensure_neuron_importable + load_stdrun and BEFORE any
+  h.gaba_tonic(seg) construction.
+* `build_dsgc_from_swc` (function) — Parse a calibrated SWC, collapse the 19 soma rows into
+  one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial
+  segment, and return a CellHandles dataclass that includes soma_origin_um for the spatial
+  driver.
+* `sample_dendritic_locations` (function) — Sample N dendritic locations uniformly along total
+  dendritic length using numpy.random.default_rng(seed); seed=0 reproduces t0052 / t0053
+  placement bit-for-bit.
+* `build_ei_pairs` (function) — Construct one AMPA Exp2Syn + tonic gaba_tonic instance per
+  Location; each pair carries theta_centrifugal_rad = atan2(y - y_soma, x - x_soma)
+  precomputed from soma_origin_um. AMPA path is bit-identical to t0053 (Exp2Syn + NetStim +
+  NetCon, peak 0.5 nS); GABA branch uses no NetStim or NetCon.
+* `schedule_ei_onsets` (function) — Per-trial scheduler: set AMPA NetStim.start at bar-arrival
+  time; for each I synapse evaluate i_synapse_fires(theta_stim, theta_centrifugal); when fired
+  set pair.gaba_syn.g = gaba_base_ns * 1e-3 (uS) and (t_on, t_off) = (T_ON_MS, T_OFF_MS),
+  otherwise zero g and collapse the window. Returns ScheduleResult with onset_times_ms and
+  i_fired_mask.
+* `i_synapse_fires` (function) — Pure boolean predicate: returns cos(radians(theta_stim_deg -
+  theta_centrifugal_deg)) < 0 (strict; perpendicular does not fire). Bit-identical to t0053's
+  spatial centripetal-gating rule.
+* `ScheduleResult` (class) — Frozen dataclass returned by schedule_ei_onsets, with
+  onset_times_ms: list[float] and i_fired_mask: list[bool] aligned with the pair list.
+* `TrialMode` (class) — StrEnum with members FULL, AMPA_ONLY, GABA_ONLY for selecting which
+  synaptic drive is active.
+* `run_one_trial` (function) — Run one trial: schedule onsets via the spatial gate at the
+  supplied gaba_base_ns, apply mode-specific weight overrides, finitialize+continuerun, return
+  TrialResult with V(t), spike times, synapse onset times, i_fired_mask, i_active_fraction,
+  and gaba_base_ns.
+* `run_full_sweep` (function) — End-to-end 5 GABA values x 12 directions x 10 trials x 3 modes
+  = 1,800-trial sweep with dry-run validation gate (including the IPSP-sustained-window check
+  at theta = 210 deg). Writes per-mode tuning-curve / spike-time / voltage-trace CSVs each
+  carrying a leading gaba_base_ns column, an activation-time CSV with is_fired column, an
+  active_fraction_per_direction CSV, and a wall-clock log.
+* `compute_vector_sum_dsi` (function) — Vector-sum DSI from the per-angle mean firing rates:
+  |sum r_k * exp(i theta_k)| / sum r_k.
+* `compute_preferred_direction_deg` (function) — Preferred direction in degrees from the
+  complex sum of rate-weighted unit vectors.
+* `render_active_fraction_polar` (function) — Render the per-direction active-fraction polar
+  plot (closed polygon with reference circle at 0.5).
+* `render_cross_conductance_summary` (function) — Render the 6 cross-conductance summary PNGs
+  (DSI primary, DSI vector-sum, peak Hz, null Hz, HWHM, RMSE vs t0004 target) from
+  derived_quantities.json. Each is a single-curve scalar-vs-GABA_BASE_NS line plot with
+  markers.
+* `compute_metrics_main` (script) — Compute per-(gaba, mode) tuning-curve metrics and write
+  metrics.json (15-variant explicit format: 5 conductances x 3 modes) plus
+  derived_quantities.json (cross-conductance summary arrays + per-variant peak/null/vector-sum
+  DSI + per-(gaba) aggregate EPSP/IPSP envelopes). Enforces the AMPA_ONLY peak-Hz regression
+  sentinel (REQ-14).
+* `render_figures_main` (script) — Render all per-(gaba, direction) figures (soma V, EPSP,
+  IPSP, PSTH, activation histograms) plus per-(gaba) polar / Cartesian tuning curves,
+  raster+PSTH per (gaba, direction), the active-fraction polar plot, and the 6
+  cross-conductance summary plots.
+
+Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located
+E + I synapses where the GABA branch uses a custom tonic POINT_PROCESS (gaba_tonic) gated by a
+(t_on, t_off) window per synapse instead of t0053's per-event Exp2Syn; exposes
+GABA_BASE_NS_VALUES so the sweep harness can vary peak conductance without re-importing.
 
 </details>
 
