@@ -1,0 +1,17 @@
+Created via arf.scripts.utils.init_task_folders at 2026-04-28T14:26:06Z:
+
+* plan/
+* research/
+* results/
+* results/images/
+* corrections/
+* intervention/
+* code/
+* logs/commands/
+* logs/searches/
+* logs/sessions/
+* logs/steps/
+* assets/library/
+
+12 directories with .gitkeep files.
+Also created: __init__.py (task package), code/__init__.py (code package).
