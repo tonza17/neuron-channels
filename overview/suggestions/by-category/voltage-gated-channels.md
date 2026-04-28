@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 30 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **25 open** (9
-high, 14 medium, 2 low), **5 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **24 open** (9
+high, 13 medium, 2 low), **6 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -272,32 +272,6 @@ AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preser
 Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
 AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
 Recommended task types: write-library, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add NMDA component to t0052 minimal DSGC and measure DSI /
-peak-rate response</strong> (S-0052-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0052-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
-mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
-Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
-voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
-and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
-gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
-PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
-t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
-minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
-Recommended task types: experiment-run.
 
 </details>
 
@@ -622,6 +596,34 @@ depolarisation-insensitive (suggesting NMDA-dominated signalling).
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>Add NMDA component to t0052 minimal DSGC and measure DSI / peak-rate
+response</s> — covered by <a
+href="../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/"><code>t0054_minimal_dsgc_ampa_nmda_scalar_gaba</code></a>
+(S-0052-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
+mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
+Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
+voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
+and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
+gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
+PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
+t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
+minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
+Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>✅ <s>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with AIS-specific

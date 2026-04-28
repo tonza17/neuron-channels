@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-27 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **23
-open** (5 high, 15 medium, 3 low), **4 closed**.
+28 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **24
+open** (5 high, 16 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -423,6 +423,32 @@ the fitted lambda at peak DSI), and (c) Hausselt2007's cable-length-to-DSI scali
 fitted parameter set with 95% CIs and a residual plot. This converts t0034's categorical
 'cable-filtering best fit' into a falsifiable quantitative claim and enables direct
 cross-paper comparison. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit
+and lengthen the post-stimulus window</strong> (S-0054-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+REQ-20 (epsp_decay_to_1e_ms per gNMDA) returned null at all four gNMDA values because the 1500
+ms trial window is shorter than the time the cell needs to drop below V_rest + (V_peak -
+V_rest)/e once 100 simultaneous NMDA Exp2Syn events with tau2=80 ms keep Vm depolarised. The
+headline numerical answer to 'how does EPSP tau scale with gNMDA?' is missing -- this is a
+metric implementation gap, not a biological null result. Implement two changes: (1) extend the
+recorded E_ONLY trace to 3000-5000 ms post-stimulus, (2) replace the 1/e-crossing search with
+a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validate against
+t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
+falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
+experiment-run.
 
 </details>
 

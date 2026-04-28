@@ -887,27 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (25 open, 5 closed)
-
-<details>
-<summary>🧪 <strong>Add NMDA component to t0052 minimal DSGC and measure DSI /
-peak-rate response</strong> (S-0052-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../../tasks/t0052_minimal_dsgc_scalar_gaba/)
-
-t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
-mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
-Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
-voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
-and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
-gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
-PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
-t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
-minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
-Recommended task types: experiment-run.
-
-</details>
+## Suggestions (24 open, 6 closed)
 
 <details>
 <summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06

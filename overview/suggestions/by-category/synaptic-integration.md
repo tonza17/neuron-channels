@@ -1,14 +1,40 @@
 # Suggestions: `synaptic-integration`
 
-56 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **49 open** (18 high,
-28 medium, 3 low), **7 closed**.
+60 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **52 open** (20 high,
+29 medium, 3 low), **8 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
+minimal AMPA + NMDA + scalar gabaMOD architecture</strong> (S-0054-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
+DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
+PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
+multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
+process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
+all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
+gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
+sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
+gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
+headline negative result of t0054. Recommended task types: build-model, experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
@@ -267,6 +293,33 @@ balance during null-direction motion.
 </details>
 
 <details>
+<summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
+architecture to locate a DSI-preserving operating point</strong>
+(S-0054-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0),
+varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances
+jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base
+gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged,
+voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01).
+Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells =
+2880 trials. Apply early stop on cells where E_ONLY peak Hz > 30 Hz to prune the saturated
+subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI
+>= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent
+regime. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-dendrite E-I parameter sweep to map the DSI response
 surface</strong> (S-0022-03)</summary>
 
@@ -512,32 +565,6 @@ AP5); the paper's iMK801 leaves PD spiking, allowing the qualitative 'DSI preser
 Fig 8 claim to be reproduced. This unblocks a faithful Fig 8 AP5 reproduction and resolves the
 AP5-vs-iMK801 mechanistic divergence catalogued as discrepancy 1 of 12 in t0046's audit.
 Recommended task types: write-library, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add NMDA component to t0052 minimal DSGC and measure DSI /
-peak-rate response</strong> (S-0052-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0052-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-27 |
-| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
-| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
-mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
-Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
-voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
-and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
-gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
-PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
-t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
-minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
-Recommended task types: experiment-run.
 
 </details>
 
@@ -911,6 +938,31 @@ Important for characterising how fragile the operational window really is.
 </details>
 
 <details>
+<summary>🧪 <strong>NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle
+conductance amplitude from kinetic time constant</strong> (S-0054-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0054 fixed NMDA tau2 at 80 ms and varied only gNMDA, conflating conductance amplitude with
+kinetic time constant. Biological NMDA decay tau spans 50-200 ms across DSGC literature
+(PolegPolsky2016 reports tau1NMDA = 50 ms; t0018 cites 100-200 ms). Hold gNMDA fixed at 0.25
+nS (the 12x peak-rate-boost point) and sweep tau2 in {30, 60, 80, 120, 200} ms x 12 directions
+x 10 trials x 2 modes (FULL, E_ONLY) = 1200 trials, on the t0054 minimal architecture with
+placement seed 0, voltage-independent NMDA kept. Report per-tau2 EPSP decay tau (using the
+improved metric from S-0054-03), peak Hz, and vector-sum DSI. Pass criterion: identify whether
+tau2 alone (independent of gNMDA) drives the DSI collapse, or whether the collapse is
+dominated by gNMDA. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>NMDA multiplicative-gain ablation to isolate its contribution
 to DSI</strong> (S-0002-06)</summary>
 
@@ -1111,6 +1163,32 @@ conductance time courses. Recommended task types: write-library, feature-enginee
 </details>
 
 <details>
+<summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit
+and lengthen the post-stimulus window</strong> (S-0054-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0054-03` |
+| **Kind** | technique |
+| **Date added** | 2026-04-28 |
+| **Source task** | [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+
+REQ-20 (epsp_decay_to_1e_ms per gNMDA) returned null at all four gNMDA values because the 1500
+ms trial window is shorter than the time the cell needs to drop below V_rest + (V_peak -
+V_rest)/e once 100 simultaneous NMDA Exp2Syn events with tau2=80 ms keep Vm depolarised. The
+headline numerical answer to 'how does EPSP tau scale with gNMDA?' is missing -- this is a
+metric implementation gap, not a biological null result. Implement two changes: (1) extend the
+recorded E_ONLY trace to 3000-5000 ms post-stimulus, (2) replace the 1/e-crossing search with
+a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validate against
+t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
+falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
+experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement across multiple V_clamp levels
 (-85, -65, -45 mV) to vary GABA driving force</strong> (S-0049-04)</summary>
 
@@ -1237,6 +1315,34 @@ Recommended task types: experiment-run.
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>Add NMDA component to t0052 minimal DSGC and measure DSI / peak-rate
+response</s> — covered by <a
+href="../../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/"><code>t0054_minimal_dsgc_ampa_nmda_scalar_gaba</code></a>
+(S-0052-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0052-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-27 |
+| **Source task** | [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) |
+| **Source paper** | [`10.1016_j.neuron.2016.02.013`](../../../tasks/t0052_minimal_dsgc_scalar_gaba/assets/paper/10.1016_j.neuron.2016.02.013/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0052 is AMPA-only by design; PolegPolsky2016 attributes ~35% of PD PSP magnitude to NMDA (5.8
+mV / 16.5 mV total) and shows NMDARs contribute multiplicatively at depolarised potentials.
+Add a NEURON Exp2Syn-based NMDA component (rise 5 ms, decay 50 ms, e=0, Mg-block via
+voltage-dependent gating or a simplified gating function) co-located with each AMPA synapse,
+and sweep gNMDA in {0, 0.1, 0.25, 0.5, 1.0, 1.5} nS at the t0052 baseline (100 E + 100 I,
+gAMPA = 0.5 nS, scalar gabaMOD). Report peak Hz, primary and vector-sum DSI, HWHM, and PD/ND
+PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate gap toward the
+t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
+minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
+Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>✅ <s>Audit deposited GABA and NMDA spatial synapse coordinates against

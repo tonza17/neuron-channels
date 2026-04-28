@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(45)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(46)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2287,7 +2287,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (35 open, 10 closed)
+## Suggestions (36 open, 10 closed)
+
+<details>
+<summary>🧪 <strong>Add voltage-dependent NMDA Mg block to recover DSI in the t0054
+minimal AMPA + NMDA + scalar gabaMOD architecture</strong> (S-0054-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
+
+t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum
+DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming
+PolegPolsky2016's prediction [Fig 5] that the Boltzmann Mg block is required for
+multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point
+process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping
+all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar
+gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA
+sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
+gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
+headline negative result of t0054. Recommended task types: build-model, experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic

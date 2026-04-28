@@ -6,7 +6,7 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 **Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
-(27)](../suggestions/by-category/cable-theory.md) | [Datasets
+(28)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -602,7 +602,27 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (23 open, 4 closed)
+## Suggestions (24 open, 4 closed)
+
+<details>
+<summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit
+and lengthen the post-stimulus window</strong> (S-0054-03)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
+[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
+
+REQ-20 (epsp_decay_to_1e_ms per gNMDA) returned null at all four gNMDA values because the 1500
+ms trial window is shorter than the time the cell needs to drop below V_rest + (V_peak -
+V_rest)/e once 100 simultaneous NMDA Exp2Syn events with tau2=80 ms keep Vm depolarised. The
+headline numerical answer to 'how does EPSP tau scale with gNMDA?' is missing -- this is a
+metric implementation gap, not a biological null result. Implement two changes: (1) extend the
+recorded E_ONLY trace to 3000-5000 ms post-stimulus, (2) replace the 1/e-crossing search with
+a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validate against
+t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
+falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>GABA-synapse-count sweep on t0052 to characterise driving-force
