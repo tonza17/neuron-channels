@@ -1,14 +1,20 @@
 {
   "task_id": "t0062_nmda_escape_with_ampa_priming",
   "steps": [
-    {
-      "step": 1,
-      "name": "create-branch",
-      "description": "Create task/t0062_nmda_escape_with_ampa_priming branch from main.",
-      "status": "completed",
-      "started_at": "2026-04-29T22:47:48Z",
-      "completed_at": "2026-04-29T22:48:23Z",
-      "log_file": "logs\\steps\\001_create-branch/"
-    }
+    {"step": 1, "name": "create-branch", "description": "Create task branch.", "status": "completed", "started_at": "2026-04-29T22:47:48Z", "completed_at": "2026-04-29T22:48:23Z", "log_file": "logs/steps/001_create-branch/"},
+    {"step": 2, "name": "check-deps", "description": "Verify dependencies.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null},
+    {"step": 3, "name": "init-folders", "description": "Create folders.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null},
+    {"step": 4, "name": "research-papers", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/004_research-papers/"},
+    {"step": 5, "name": "research-internet", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/005_research-internet/"},
+    {"step": 6, "name": "research-code", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/006_research-code/"},
+    {"step": 7, "name": "planning", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/007_planning/"},
+    {"step": 8, "name": "setup-machines", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/008_setup-machines/"},
+    {"step": 9, "name": "implementation", "description": "Run NMDA + AMPA-priming sweep.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null},
+    {"step": 10, "name": "teardown", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/010_teardown/"},
+    {"step": 11, "name": "creative-thinking", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/011_creative-thinking/"},
+    {"step": 12, "name": "results", "description": "Write results.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null},
+    {"step": 13, "name": "compare-literature", "description": "Skipped.", "status": "skipped", "started_at": null, "completed_at": null, "log_file": "logs/steps/013_compare-literature/"},
+    {"step": 14, "name": "suggestions", "description": "Empty.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null},
+    {"step": 15, "name": "reporting", "description": "Verifiers, status, PR, merge.", "status": "pending", "started_at": null, "completed_at": null, "log_file": null}
   ]
 }
