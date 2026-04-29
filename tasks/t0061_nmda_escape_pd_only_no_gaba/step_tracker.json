@@ -122,10 +122,10 @@
       "step": 14,
       "name": "suggestions",
       "description": "Empty \u2014 diagnostic feeds existing follow-ups.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-29T22:29:37Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\014_suggestions/"
     },
     {
       "step": 15,
