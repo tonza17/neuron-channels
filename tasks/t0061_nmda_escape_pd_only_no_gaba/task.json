@@ -5,14 +5,14 @@
   "name": "Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0",
   "short_description": "GABA=0, theta=0 only, NMDA-only excitation (Mg-block); sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0055_nmda_mg_block_dsi_recovery",
     "t0059_bar_locked_gaba_ampa_sweep_t0057",
     "t0060_ampa_escape_pd_only_no_gaba"
   ],
   "start_time": "2026-04-29T22:15:49Z",
-  "end_time": null,
+  "end_time": "2026-04-29T22:32:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
