@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0061_nmda_escape_pd_only_no_gaba",
+  "command": "uv run python -m tasks.t0061_nmda_escape_pd_only_no_gaba.code.plot_traces",
+  "exit_code": 0,
+  "duration_seconds": 6.998,
+  "started_at": "2026-04-29T22:25:06Z",
+  "completed_at": "2026-04-29T22:25:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0061_nmda_escape_pd_only_no_gaba",
+  "stdout_file": "003_20260429T222506Z_uv-run-python.stdout.txt",
+  "stderr_file": "003_20260429T222506Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
