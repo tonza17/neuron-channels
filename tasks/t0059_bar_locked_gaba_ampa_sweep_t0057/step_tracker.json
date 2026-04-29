@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json (multi-variant, one variant per (gAMPA, GABA_BASE_NS) grid cell), costs.json, remote_machines_used.json; embed cross-grid heatmaps and selected per-grid-cell representatives.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-29T20:30:38Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
