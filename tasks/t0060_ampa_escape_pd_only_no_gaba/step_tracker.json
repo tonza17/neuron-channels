@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions if the diagnostic informs the next strategic step.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T21:55:38Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T21:56:02Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
