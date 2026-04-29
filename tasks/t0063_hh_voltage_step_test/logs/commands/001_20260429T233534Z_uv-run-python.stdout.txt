@@ -1,0 +1,15 @@
+[t0063] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0063_hh_voltage_step_test\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[t0063] Running 6 target voltages x 2 modes = 12 trials
+[t0063] target= -60.0 mV  mode=full           peak_iclamp=-4999.872 nA  steady_iclamp=-174.060 nA  dt=0.95 s
+[t0063] target= -60.0 mV  mode=epsp_passive   peak_iclamp=-4999.847 nA  steady_iclamp=-173.943 nA  dt=0.91 s
+[t0063] target= -50.0 mV  mode=full           peak_iclamp=-14999.760 nA  steady_iclamp=-685.642 nA  dt=1.97 s
+[t0063] target= -50.0 mV  mode=epsp_passive   peak_iclamp=-14999.527 nA  steady_iclamp=-685.401 nA  dt=1.09 s
+[t0063] target= -40.0 mV  mode=full           peak_iclamp=-24999.360 nA  steady_iclamp=-1258.825 nA  dt=1.90 s
+[t0063] target= -40.0 mV  mode=epsp_passive   peak_iclamp=-24999.206 nA  steady_iclamp=-1258.456 nA  dt=2.18 s
+[t0063] target= -30.0 mV  mode=full           peak_iclamp=-34997.928 nA  steady_iclamp=-1895.544 nA  dt=2.94 s
+[t0063] target= -30.0 mV  mode=epsp_passive   peak_iclamp=-34998.886 nA  steady_iclamp=-1895.566 nA  dt=1.99 s
+[t0063] target= -20.0 mV  mode=full           peak_iclamp=-44995.997 nA  steady_iclamp=-2603.673 nA  dt=2.38 s
+[t0063] target= -20.0 mV  mode=epsp_passive   peak_iclamp=-44998.566 nA  steady_iclamp=-2604.255 nA  dt=2.19 s
+[t0063] target= -10.0 mV  mode=full           peak_iclamp=-54993.919 nA  steady_iclamp=-2482.883 nA  dt=3.47 s
+[t0063] target= -10.0 mV  mode=epsp_passive   peak_iclamp=-54998.245 nA  steady_iclamp=-3028.146 nA  dt=2.63 s
+[t0063] Done. wall-clock = 24.60 s.

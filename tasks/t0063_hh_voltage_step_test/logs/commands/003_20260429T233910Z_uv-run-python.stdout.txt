@@ -1,0 +1,1 @@
+[t0063] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0063_hh_voltage_step_test\tasks\t0063_hh_voltage_step_test\results\images\voltage_step_grid.png
