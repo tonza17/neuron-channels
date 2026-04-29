@@ -1,0 +1,23 @@
+[t0061-bootstrap] NMDA_MgBlock mechanism registered.
+[t0061] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[t0061] Sampling 100 dendritic locations (seed=0)
+[t0061] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0061_nmda_escape_pd_only_no_gaba\results\placement_seed0.json
+[t0061] Built 100 NMDA-only synapses
+[t0061] Running 8 gNMDA x 2 modes x 1 trial = 16 trials at theta = 0 deg, GABA = 0, AMPA = 0 (NMDA-only)
+[t0061] gnmda=0.10 nS  mode=full           peak_vm=-64.22 mV  n_spikes= 0  dt=2.46 s
+[t0061] gnmda=0.10 nS  mode=epsp_passive   peak_vm=-64.47 mV  n_spikes= 0  dt=1.96 s
+[t0061] gnmda=0.50 nS  mode=full           peak_vm=-62.61 mV  n_spikes= 0  dt=2.66 s
+[t0061] gnmda=0.50 nS  mode=epsp_passive   peak_vm=-63.10 mV  n_spikes= 0  dt=3.88 s
+[t0061] gnmda=1.00 nS  mode=full           peak_vm=-58.89 mV  n_spikes= 0  dt=5.20 s
+[t0061] gnmda=1.00 nS  mode=epsp_passive   peak_vm=-60.97 mV  n_spikes= 0  dt=4.18 s
+[t0061] gnmda=2.00 nS  mode=full           peak_vm= 11.29 mV  n_spikes= 3  dt=10.46 s
+[t0061] gnmda=2.00 nS  mode=epsp_passive   peak_vm=-52.58 mV  n_spikes= 0  dt=4.50 s
+[t0061] gnmda=5.00 nS  mode=full           peak_vm= 13.12 mV  n_spikes= 3  dt=11.18 s
+[t0061] gnmda=5.00 nS  mode=epsp_passive   peak_vm= -8.59 mV  n_spikes= 1  dt=5.99 s
+[t0061] gnmda=10.00 nS  mode=full           peak_vm= 13.21 mV  n_spikes= 3  dt=13.06 s
+[t0061] gnmda=10.00 nS  mode=epsp_passive   peak_vm= -4.67 mV  n_spikes= 1  dt=7.62 s
+[t0061] gnmda=15.00 nS  mode=full           peak_vm= 13.15 mV  n_spikes= 2  dt=19.47 s
+[t0061] gnmda=15.00 nS  mode=epsp_passive   peak_vm= -3.37 mV  n_spikes= 1  dt=7.30 s
+[t0061] gnmda=20.00 nS  mode=full           peak_vm= 13.21 mV  n_spikes= 1  dt=11.12 s
+[t0061] gnmda=20.00 nS  mode=epsp_passive   peak_vm= -2.70 mV  n_spikes= 1  dt=7.10 s
+[t0061] Done. wall-clock = 118.14 s.

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0061_nmda_escape_pd_only_no_gaba\code\run_pd_only.py", line 304, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0061_nmda_escape_pd_only_no_gaba\code\run_pd_only.py", line 242, in main
+    h, cell, pairs = _setup()
+                     ~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0061_nmda_escape_pd_only_no_gaba\code\run_pd_only.py", line 137, in _setup
+    pairs: list[NmdaPair] = build_nmda_pairs(
+                            ~~~~~~~~~~~~~~~~^
+        h=h,
+        ^^^^
+    ...<2 lines>...
+        soma_origin_um=cell.soma_origin_um,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0061_nmda_escape_pd_only_no_gaba\tasks\t0061_nmda_escape_pd_only_no_gaba\code\nmda_synapse.py", line 45, in build_nmda_pairs
+    seg = section(loc.segment_x)
+                  ^^^^^^^^^^^^^
+AttributeError: 'Location' object has no attribute 'segment_x'
