@@ -1,0 +1,3 @@
+Created 12 directories with .gitkeep files (assets, code, corrections, intervention,
+logs/{commands,searches,sessions,steps}, plan, research, results, results/images).
+Created __init__.py and code/__init__.py.
