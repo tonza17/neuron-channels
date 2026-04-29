@@ -5,7 +5,7 @@
   "name": "NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0",
   "short_description": "GABA=0, theta=0 only, AMPA fixed at 0.5 nS (priming) + NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0055_nmda_mg_block_dsi_recovery",
     "t0059_bar_locked_gaba_ampa_sweep_t0057",
@@ -13,7 +13,7 @@
     "t0061_nmda_escape_pd_only_no_gaba"
   ],
   "start_time": "2026-04-29T22:46:47Z",
-  "end_time": null,
+  "end_time": "2026-04-29T23:04:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
