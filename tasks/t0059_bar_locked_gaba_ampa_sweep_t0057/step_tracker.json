@@ -1,0 +1,140 @@
+{
+  "task_id": "t0059_bar_locked_gaba_ampa_sweep_t0057",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0059_bar_locked_gaba_ampa_sweep_t0057 branch from main and write step_tracker.json.",
+      "status": "in_progress",
+      "started_at": "2026-04-28T23:59:34Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0009, t0011, t0012, t0057 are completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure including assets/library/ for the expected library asset.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: prior literature surveys (t0017 patch-clamp, t0018 synaptic integration, t0027 morphology DS modeling) and the brainstorm-11 specification supply the literature context for bar-arrival-locked SAC inhibition and AMPA escape; no new paper research is needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: NEURON MOD file syntax and the bar-arrival-locked timing formula are well-established from t0057's gaba_tonic.mod implementation; task is implementation-focused with explicit specification.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0057 (parent task with same morphology, placement, E-mechanism, AIS, HH, and gaba_tonic.mod; bar-arrival-locked window mechanism and EPSP_PASSIVE/IPSP_PASSIVE protocol fix replace the global window and legacy mode trio respectively), t0011 visualisation library, and t0012 scoring library to identify direct reuse and the swap surface.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesize research-code into plan/plan.md with concrete code design for the per-synapse bar-arrival-locked window mechanism, EPSP_PASSIVE/IPSP_PASSIVE save-and-zero protocol, the 5x5 (gAMPA, GABA_BASE_NS) sweep harness, and the cross-grid heatmap plotting pipeline.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: task runs on local CPU only ($0 budget).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Build the minimal_dsgc_bar_locked_gaba_ampa_sweep library asset with per-synapse bar-arrival-locked GABA windows and the corrected EPSP_PASSIVE/IPSP_PASSIVE/FULL protocol; run 12 directions x 10 trials x 3 modes x 25 (gAMPA, GABA_BASE_NS) grid cells = 9000 trials; produce per-direction plots and metrics for each grid cell, plus cross-grid heatmap summary plots.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were used.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: task design is fully specified by brainstorm 11; the 5x5 sweep grid and reporting structure leave no room for exploratory analysis at this stage.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json (multi-variant, one variant per (gAMPA, GABA_BASE_NS) grid cell), costs.json, remote_machines_used.json; embed cross-grid heatmaps and selected per-grid-cell representatives.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare grid-cell DSI, peak rate, HWHM, and tuning shape against t0057 (parent), t0052/t0053/t0054/t0055 (siblings), and published DSGC benchmarks (Park 2014, Poleg-Polsky 2016, de Rosenroll 2026).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions covering propagation of the bar-locked GABA + corrected protocol back to t0054 (NMDA architecture) and t0052 (scalar gabaMOD), any operating-point insights from the 5x5 sweep, and active-dendrite (RQ4) or g_Na/g_K (RQ1) follow-ups depending on outcome.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, set status=completed, push branch, open PR, run pre-merge verificator, merge.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
