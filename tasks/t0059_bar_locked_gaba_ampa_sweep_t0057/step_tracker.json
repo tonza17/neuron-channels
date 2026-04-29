@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0059_bar_locked_gaba_ampa_sweep_t0057 branch from main and write step_tracker.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-28T23:59:34Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T00:03:09Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
