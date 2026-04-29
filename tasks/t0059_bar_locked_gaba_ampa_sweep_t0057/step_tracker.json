@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Synthesize research-code into plan/plan.md with concrete code design for the per-synapse bar-arrival-locked window mechanism, EPSP_PASSIVE/IPSP_PASSIVE save-and-zero protocol, the 5x5 (gAMPA, GABA_BASE_NS) sweep harness, and the cross-grid heatmap plotting pipeline.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T00:17:12Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T00:32:07Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
