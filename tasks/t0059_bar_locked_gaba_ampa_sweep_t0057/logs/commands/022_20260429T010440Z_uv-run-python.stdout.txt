@@ -1,0 +1,34 @@
+[bootstrap] gaba_tonic mechanism registered.
+[setup] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[setup] cell built: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24 soma_origin_um=(0.0, 0.0, 0.0)
+[setup] Sampling 100 dendritic locations (seed=0)
+[setup] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\placement_seed0.json
+[setup] Building 100 co-located E+tonic-I pairs
+[sweep] About to run 9000 trials across 25 grid cells x 3 modes x 120 trials/mode/cell.
+[sweep] ampa_values=(0.5, 1.0, 2.0, 3.0, 4.0) gaba_values=(0.1, 0.2, 0.5, 1.0, 2.0) angles=(0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330) n_trials=10
+[sweep] === gampa=0.50 nS, gaba=0.10 nS ===
+[sweep] === gampa=0.50 nS, gaba=0.20 nS ===
+[sweep] === gampa=0.50 nS, gaba=0.50 nS ===
+[sweep] === gampa=0.50 nS, gaba=1.00 nS ===
+[sweep] === gampa=0.50 nS, gaba=2.00 nS ===
+[sweep] === gampa=1.00 nS, gaba=0.10 nS ===
+[sweep] === gampa=1.00 nS, gaba=0.20 nS ===
+[sweep] === gampa=1.00 nS, gaba=0.50 nS ===
+[sweep] === gampa=1.00 nS, gaba=1.00 nS ===
+[sweep] === gampa=1.00 nS, gaba=2.00 nS ===
+[sweep] === gampa=2.00 nS, gaba=0.10 nS ===
+[sweep] === gampa=2.00 nS, gaba=0.20 nS ===
+[sweep] === gampa=2.00 nS, gaba=0.50 nS ===
+[sweep] === gampa=2.00 nS, gaba=1.00 nS ===
+[sweep] === gampa=2.00 nS, gaba=2.00 nS ===
+[sweep] === gampa=3.00 nS, gaba=0.10 nS ===
+[sweep] === gampa=3.00 nS, gaba=0.20 nS ===
+[sweep] === gampa=3.00 nS, gaba=0.50 nS ===
+[sweep] === gampa=3.00 nS, gaba=1.00 nS ===
+[sweep] === gampa=3.00 nS, gaba=2.00 nS ===
+[sweep] === gampa=4.00 nS, gaba=0.10 nS ===
+[sweep] === gampa=4.00 nS, gaba=0.20 nS ===
+[sweep] === gampa=4.00 nS, gaba=0.50 nS ===
+[sweep] === gampa=4.00 nS, gaba=1.00 nS ===
+[sweep] === gampa=4.00 nS, gaba=2.00 nS ===
+[sweep] Running EPSP_PASSIVE peak-Vm gate...

@@ -1,0 +1,5 @@
+branch: task/t0059_bar_locked_gaba_ampa_sweep_t0057
+base_branch: main
+base_commit: c8731bc53a2faa61821e5d02e05cbf008467ff18
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057
+created_at: 2026-04-28T23:59:34Z

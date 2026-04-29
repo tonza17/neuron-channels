@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0059_bar_locked_gaba_ampa_sweep_t0057",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_compare_literature t0059_bar_locked_gaba_ampa_sweep_t0057",
+  "exit_code": 0,
+  "duration_seconds": 0.4,
+  "started_at": "2026-04-29T20:46:33Z",
+  "completed_at": "2026-04-29T20:46:33Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0059_bar_locked_gaba_ampa_sweep_t0057",
+  "stdout_file": "042_20260429T204633Z_uv-run-python.stdout.txt",
+  "stderr_file": "042_20260429T204633Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

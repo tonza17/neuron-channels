@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E001 error: results_summary.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\results_summary.md[0m
+[31m  TR-E002 error: results_detailed.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\results_detailed.md[0m
+[31m  TR-E004 error: costs.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\costs.json[0m
+[31m  TR-E005 error: remote_machines_used.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\remote_machines_used.json[0m
+
+[31m[1mFAILED[0m — 4 error(s), 0 warning(s)

@@ -1,0 +1,16 @@
+[WARNING] Unstaged files detected.
+[INFO] Stashing unstaged files to C:\Users\md1avn\.cache\pre-commit\patch1777421048-71812.
+check yaml...........................................(no files to check)Skipped
+check toml...........................................(no files to check)Skipped
+check for merge conflicts................................................Passed
+fix end of files.........................................................Failed
+- hook id: end-of-file-fixer
+- exit code: 1
+- files were modified by this hook
+
+Fixing tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/logs/commands/002_20260429T000348Z_uv-run-python.stdout.txt
+
+trim trailing whitespace.................................................Passed
+ruff (legacy alias)..................................(no files to check)Skipped
+ruff format..........................................(no files to check)Skipped
+[INFO] Restored changes from C:\Users\md1avn\.cache\pre-commit\patch1777421048-71812.

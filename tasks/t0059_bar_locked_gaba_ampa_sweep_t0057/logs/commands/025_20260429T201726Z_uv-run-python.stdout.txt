@@ -1,0 +1,6 @@
+[metrics] Loading per-(gampa, gaba, mode) tuning curves...
+[metrics] Running EPSP_PASSIVE peak-Vm gate (REQ-15)...
+[metrics] REQ-15 gate PASSED: all EPSP_PASSIVE peak Vm < EPSP_PASSIVE_PEAK_VM_GATE_MV.
+[metrics] mean_active_fraction = 0.5000 (soft band [0.4, 0.6])
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\metrics.json with 75 variants
+[metrics] Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\derived_quantities.json

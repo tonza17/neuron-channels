@@ -1,0 +1,11 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 1 item
+
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_hh_save_and_zero.py::test_hh_save_and_zero_full_trace_matches_reference PASSED [100%]
+
+============================== 1 passed in 4.94s ==============================
