@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-60-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-61-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-235-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (22K)
-| [full](llm-context/full.xml) (330K) | [roadmap](llm-context/roadmap.xml) (73K) |
-[results](llm-context/results-deep-dive.xml) (241K) |
+| [full](llm-context/full.xml) (333K) | [roadmap](llm-context/roadmap.xml) (73K) |
+[results](llm-context/results-deep-dive.xml) (243K) |
 [assets](llm-context/literature-and-assets.xml) (41K)
 
-*Last updated: 2026-04-29 22:00 UTC*
+*Last updated: 2026-04-29 22:33 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (54 total)](tasks/by-status/completed.md)
+## [Recently Completed (55 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0061 | [Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0061_nmda_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:32 |
 | 0060 | [Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0060_ampa_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:00 |
 | 0059 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | [`results`](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/results/results_detailed.md) | 2026-04-29 20:55 |
 | 0058 | [Brainstorm results session 11](../overview/tasks/task_pages/t0058_brainstorm_results_11.md) | [`results`](../tasks/t0058_brainstorm_results_11/results/results_detailed.md) | 2026-04-29 12:00 |
@@ -92,9 +93,8 @@ No blocked tasks.
 | 0054 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | [`results`](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/results/results_detailed.md) | 2026-04-28 05:00 |
 | 0053 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | [`results`](../tasks/t0053_minimal_dsgc_spatial_gaba/results/results_detailed.md) | 2026-04-27 14:10 |
 | 0052 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | [`results`](../tasks/t0052_minimal_dsgc_scalar_gaba/results/results_detailed.md) | 2026-04-27 12:20 |
-| 0051 | [Brainstorm results session 9](../overview/tasks/task_pages/t0051_brainstorm_results_9.md) | [`results`](../tasks/t0051_brainstorm_results_9/results/results_detailed.md) | 2026-04-25 15:00 |
 
-*44 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*45 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 

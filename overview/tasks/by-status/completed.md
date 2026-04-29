@@ -1,12 +1,128 @@
 # ✅ Tasks: Completed
 
-54 tasks. ✅ **54 completed**.
+55 tasks. ✅ **55 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0061 — <strong>Quick NMDAR-escape test on t0059 substrate at preferred
+direction with GABA=0</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0061_nmda_escape_pd_only_no_gaba` |
+| **Status** | completed |
+| **Effective date** | 2026-04-29 |
+| **Dependencies** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-29T22:15:49Z |
+| **End time** | 2026-04-29T22:32:00Z |
+| **Step progress** | 7/15 |
+| **Task page** | [Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) |
+| **Task folder** | [`t0061_nmda_escape_pd_only_no_gaba/`](../../../tasks/t0061_nmda_escape_pd_only_no_gaba/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0061_nmda_escape_pd_only_no_gaba/results/results_detailed.md) |
+
+# Quick NMDAR-Escape Test on t0059 Substrate at Preferred Direction with GABA = 0
+
+## Source
+
+User-commissioned diagnostic, parallel to t0060 but with NMDAR (Mg-block) replacing AMPA.
+Goal: characterise how the from-scratch DSGC's somatic V(t) responds to a single bar moving in
+the preferred direction when inhibition is fully removed (GABA = 0) and **NMDA**-only
+excitation is swept across a wide range — both with HH active (FULL mode) and disabled
+(EPSP_PASSIVE mode).
+
+## Mechanism Choice
+
+This task uses the biologically correct **Mg-block NMDA** (Jahr-Stevens) mechanism inherited
+from t0055's `NMDA_MgBlock.mod`. The Mg-block formula and parameter values are taken verbatim
+from ModelDB 189347 (Poleg-Polsky 2016): `n = 0.25 /mM`, `gamma = 0.08 /mV`, `tau1 = 5 ms`,
+`tau2 = 80 ms`, `e = 0 mV`, `Voff = 0` (voltage-dependent). Without AMPA priming, low-gNMDA
+trials are expected to produce minimal response (Mg block is engaged at V_rest = -65 mV); the
+sweep tests whether sufficiently high gNMDA can self-prime via leaky Mg-block conductance.
+
+## Sweep
+
+| Axis | Values |
+| --- | --- |
+| `GABA_BASE_NS` | **0** (no inhibition) |
+| AMPA | **0** (no AMPA — NMDA-only excitation) |
+| Direction | **theta = 0 deg** only (preferred direction) |
+| Trials per condition | **1** |
+| `gNMDA` (nS) | {0.1, 0.5, 1.0, 2.0, 5.0, 10.0, 15.0, 20.0} (8 values) |
+| Mode | `FULL` (HH on, soma + AIS) and `EPSP_PASSIVE` (HH off, save-and-zero gnabar / gkbar) |
+
+Total: **8 gNMDA x 2 modes x 1 trial x 1 direction = 16 trials**. Wall-clock estimate: ~1-3
+minutes on local CPU under CVODE.
+
+## Outputs
+
+* `results/voltage_traces_pd_only.csv` — 16 traces (one row group per (gNMDA, mode) cell),
+  full V_soma(t).
+* `results/summary_pd_only.csv` — per-(gNMDA, mode) peak / min Vm and spike count.
+* `results/images/voltage_response_grid.png` — 8 panels (one per gNMDA), each panel overlays
+  FULL (HH-on) and EPSP_PASSIVE (HH-off) trace at theta = 0 deg.
+* `results/images/voltage_response_overlay.png` — single combined panel with all 16 traces.
+* `results/results_summary.md` and `results_detailed.md`.
+
+## Architecture
+
+Reuses t0059's morphology, placement (seed 0), neuron bootstrap, and trial-mode dispatcher.
+The synapse layer is replaced wholesale: each E location gets ONE `NMDA_MgBlock` POINT_PROCESS
+plus a NetStim + NetCon (no AMPA Exp2Syn, no GABA tonic). Spatial gating is preserved but with
+`GABA = 0` and no AMPA, only the NMDA mechanism is active.
+
+The `NMDA_MgBlock.mod` source is copied verbatim from t0055 (provenance: ModelDB 189347
+`bipolarNMDA.mod`) and recompiled in t0061's `code/mod/` for this task's NEURON kernel.
+
+## Out of Scope
+
+* AMPA + NMDA combination (that's t0054 / S-0057-06 territory).
+* Voltage-independent NMDA (`Voff = 1`) — fixed `Voff = 0` (Mg-block on).
+* Multi-trial statistics, DSI, compare-literature, suggestions.
+* Asset production (no library produced).
+
+## Verification Criteria
+
+* Both `voltage_traces_pd_only.csv` and the two PNGs exist.
+* `verify_task_file.py`, `verify_task_folder.py`, `verify_task_results.py`, `verify_logs.py`
+  all pass with 0 errors.
+
+**Results summary:**
+
+> **Results Summary: t0061 NMDA-Only PD Diagnostic**
+>
+> **Summary**
+>
+> Ran 16 trials (8 gNMDA values × 2 modes × 1 trial) at theta = 0 deg with GABA = 0, AMPA = 0,
+> NMDA-only excitation (Mg-block, Jahr-Stevens). Wall-clock 118.14 s on local CPU under CVODE.
+> Headline: **regenerative Mg-block escape between gNMDA = 1.0 nS** (peak Vm = -58.89 mV, 0
+> spikes)
+> **and gNMDA = 2.0 nS** (peak Vm = +11.29 mV, **3 spikes**). The NMDA plateau widens to
+> ~200-400 ms
+> at gNMDA >= 5 nS, far longer than the AMPA EPSP in t0060 (~10 ms).
+>
+> **Metrics**
+>
+> * **gNMDA = 0.1 nS**: FULL peak Vm = -64.22 mV, 0 spikes; EPSP_PASSIVE peak Vm = -64.47 mV,
+>   0
+> spikes. Mg block fully engaged.
+> * **gNMDA = 0.5 nS**: FULL peak = -62.61 mV, 0 spikes. Tiny depolarization.
+> * **gNMDA = 1.0 nS**: FULL peak = -58.89 mV, 0 spikes. Below the regenerative threshold.
+> * **gNMDA = 2.0 nS (Mg-block escape)**: FULL peak = +11.29 mV, **3 spikes**; EPSP_PASSIVE
+>   peak =
+> -52.58 mV, 0 spikes. Sudden transition: depolarization unblocks Mg, NMDA opens, drives more
+> depolarization, fires action potentials.
+> * **gNMDA = 5.0 nS**: FULL = +13.12 mV / 3 spikes; EPSP_PASSIVE = -8.59 mV / 1 (false
+>   threshold
+
+</details>
 
 <details>
 <summary>✅ 0060 — <strong>Quick AMPA-escape test on t0059 substrate at preferred
