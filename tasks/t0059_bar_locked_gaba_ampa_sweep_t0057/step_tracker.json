@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare grid-cell DSI, peak rate, HWHM, and tuning shape against t0057 (parent), t0052/t0053/t0054/t0055 (siblings), and published DSGC benchmarks (Park 2014, Poleg-Polsky 2016, de Rosenroll 2026).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T20:42:22Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T20:47:36Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
