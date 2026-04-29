@@ -4,11 +4,137 @@
     {
       "step": 1,
       "name": "create-branch",
-      "description": "Create task/t0060_ampa_escape_pd_only_no_gaba branch from main.",
+      "description": "Create task/t0060_ampa_escape_pd_only_no_gaba branch from main and write step_tracker.json.",
       "status": "completed",
       "started_at": "2026-04-29T21:40:23Z",
       "completed_at": "2026-04-29T21:41:05Z",
-      "log_file": "logs\\steps\\001_create-branch/"
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0059 is completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: trivial diagnostic, no literature needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: no external info needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Skipped: t0059 substrate already understood; this task only changes runtime parameters.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Skipped: design is fully specified by task_description.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: local CPU only.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Run a 16-trial sweep using t0059's substrate (GABA=0, theta=0 only, gAMPA in {0.1, 0.5, 1, 2, 5, 10, 15, 20}, FULL+EPSP_PASSIVE), produce voltage_traces_pd_only.csv plus 2 plot PNGs.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: diagnostic test, no exploratory analysis.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md with embedded plots, costs.json, remote_machines_used.json.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: diagnostic test, no published baseline match.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions if the diagnostic informs the next strategic step.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark status=completed, push branch, open PR, merge.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
     }
   ]
 }
