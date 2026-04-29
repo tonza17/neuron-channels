@@ -1,0 +1,24 @@
+[t0062-bootstrap] Building NMDA_MgBlock.mod via run_nrnivmodl.cmd
+[t0062-bootstrap] Built nrnmech.dll
+[t0062-bootstrap] NMDA_MgBlock registered.
+[t0062] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0062_nmda_escape_with_ampa_priming\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[t0062] Sampling 100 dendritic locations (seed=0)
+[t0062] Built 100 co-located AMPA + NMDA synapses
+[t0062] Running 8 gNMDA x 2 modes x 1 trial = 16 trials at theta = 0 deg, GABA = 0, AMPA = 0.5 nS (priming)
+[t0062] gnmda=0.10 nS  mode=full           peak_vm= 15.84 mV  n_spikes= 2  dt=96.29 s
+[t0062] gnmda=0.10 nS  mode=epsp_passive   peak_vm=-52.56 mV  n_spikes= 0  dt=9.87 s
+[t0062] gnmda=0.50 nS  mode=full           peak_vm= 15.78 mV  n_spikes= 2  dt=10.10 s
+[t0062] gnmda=0.50 nS  mode=epsp_passive   peak_vm=-51.85 mV  n_spikes= 0  dt=9.35 s
+[t0062] gnmda=1.00 nS  mode=full           peak_vm= 15.71 mV  n_spikes= 2  dt=11.67 s
+[t0062] gnmda=1.00 nS  mode=epsp_passive   peak_vm=-49.54 mV  n_spikes= 0  dt=9.40 s
+[t0062] gnmda=2.00 nS  mode=full           peak_vm= 15.58 mV  n_spikes= 4  dt=14.13 s
+[t0062] gnmda=2.00 nS  mode=epsp_passive   peak_vm=-33.43 mV  n_spikes= 0  dt=9.35 s
+[t0062] gnmda=5.00 nS  mode=full           peak_vm= 15.28 mV  n_spikes= 2  dt=13.12 s
+[t0062] gnmda=5.00 nS  mode=epsp_passive   peak_vm= -8.54 mV  n_spikes= 1  dt=9.95 s
+[t0062] gnmda=10.00 nS  mode=full           peak_vm= 14.92 mV  n_spikes= 3  dt=15.09 s
+[t0062] gnmda=10.00 nS  mode=epsp_passive   peak_vm= -4.65 mV  n_spikes= 1  dt=9.09 s
+[t0062] gnmda=15.00 nS  mode=full           peak_vm= 14.71 mV  n_spikes= 3  dt=15.27 s
+[t0062] gnmda=15.00 nS  mode=epsp_passive   peak_vm= -3.36 mV  n_spikes= 1  dt=9.31 s
+[t0062] gnmda=20.00 nS  mode=full           peak_vm= 14.56 mV  n_spikes= 3  dt=17.64 s
+[t0062] gnmda=20.00 nS  mode=epsp_passive   peak_vm= -2.70 mV  n_spikes= 1  dt=10.17 s
+[t0062] Done. wall-clock = 269.80 s.

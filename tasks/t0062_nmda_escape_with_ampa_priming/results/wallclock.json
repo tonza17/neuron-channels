@@ -1,0 +1,19 @@
+{
+  "wallclock_seconds": 269.79879390005954,
+  "n_trials": 16,
+  "tstop_ms": 1400.0,
+  "gnmda_ns_values": [
+    0.1,
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    15.0,
+    20.0
+  ],
+  "gaba_base_ns": 0.0,
+  "gampa_priming_ns": 0.5,
+  "angle_deg": 0,
+  "n_trials_per_condition": 1
+}
