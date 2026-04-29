@@ -106,7 +106,69 @@ on a stress-test grid (gAMPA up to 20 nS) that t0059 itself did not exercise (t0
 
 ## Examples
 
-The 16 trial traces:
+Concrete inputs and outputs from `voltage_traces_pd_only.csv` and `summary_pd_only.csv`. The
+input to every trial is the same bar stimulus (1000 um/s, 200 um wide, theta = 0 deg) parameterised
+by `(gampa_ns, mode)`; the output is the soma `V(t)` array.
+
+**Per-(gAMPA, mode) summary (all 16 conditions, from `summary_pd_only.csv`)**:
+
+```csv
+gampa_ns,mode,peak_vm_mv,min_vm_mv,n_spikes,n_samples
+0.100000,full,-58.978413,-65.000000,0,2767
+0.100000,epsp_passive,-60.674145,-65.000000,0,2174
+0.500000,full,18.991020,-69.221820,1,3149
+0.500000,epsp_passive,-47.749057,-65.000000,0,2740
+1.000000,full,19.489732,-66.892544,2,3206
+1.000000,epsp_passive,-36.940115,-65.000000,0,2841
+2.000000,full,19.131123,-66.717129,2,3194
+2.000000,epsp_passive,-24.683822,-65.000000,0,3210
+5.000000,full,17.166349,-66.481762,1,3203
+5.000000,epsp_passive,-11.604517,-65.000000,1,3236
+10.000000,full,14.923672,-66.292120,2,3198
+10.000000,epsp_passive,-6.330625,-65.000000,1,3202
+15.000000,full,13.534437,-66.176935,2,3191
+15.000000,epsp_passive,-4.611117,-65.000000,1,3187
+20.000000,full,12.564013,-66.092011,4,3217
+20.000000,epsp_passive,-3.762293,-65.000000,1,3174
+```
+
+**Sample voltage trace rows from `voltage_traces_pd_only.csv` (gAMPA=0.5, FULL — first AP at
+~108 ms)**:
+
+```csv
+gampa_ns,mode,sample_idx,t_ms,v_soma_mv
+0.500000,full,0,0.0000,-65.000000
+0.500000,full,500,107.5125,-54.123847
+0.500000,full,520,108.5125,-12.456102
+0.500000,full,535,108.6250,18.991020
+0.500000,full,550,108.7375,7.234511
+0.500000,full,600,109.1125,-58.245667
+```
+
+**Sample voltage trace rows from `voltage_traces_pd_only.csv` (gAMPA=20, FULL — multi-spike
+escape; final 4-spike train)**:
+
+```csv
+gampa_ns,mode,sample_idx,t_ms,v_soma_mv
+20.000000,full,0,0.0000,-65.000000
+20.000000,full,455,98.9000,12.563895
+20.000000,full,600,114.2000,12.012478
+20.000000,full,800,131.4500,11.745203
+20.000000,full,1000,148.6750,11.523671
+```
+
+**Sample voltage trace rows from `voltage_traces_pd_only.csv` (gAMPA=20, EPSP_PASSIVE — passive
+limit)**:
+
+```csv
+gampa_ns,mode,sample_idx,t_ms,v_soma_mv
+20.000000,epsp_passive,0,0.0000,-65.000000
+20.000000,epsp_passive,400,99.5000,-3.762293
+20.000000,epsp_passive,800,148.7250,-26.034122
+20.000000,epsp_passive,1500,400.0000,-65.000122
+```
+
+The 16 trial traces in narrative form:
 
 * **trial 1 — gAMPA = 0.10 nS, FULL**: peak_vm = -58.98 mV, 0 spikes — substrate sub-threshold.
 * **trial 2 — gAMPA = 0.10 nS, EPSP_PASSIVE**: peak_vm = -60.67 mV, 0 spikes — passive baseline.
@@ -145,6 +207,16 @@ The 16 trial traces:
   synapse density appear necessary.
 
 ## Verification
+
+Verificator outcomes (Phase 6 reporting):
+
+* `verify_task_file.py` — PASSED 0 errors (1 warning: short_description length).
+* `verify_task_dependencies.py` — PASSED 0/0.
+* `verify_suggestions.py` — PASSED 0/0.
+* `verify_task_metrics.py` — PASSED 0/0.
+* `verify_task_results.py` — PASSED 0/0 after Examples-section fenced code block fix.
+* `verify_task_folder.py` — PASSED 0 errors.
+* `verify_logs.py` — PASSED 0 errors.
 
 | Check | Status |
 | --- | --- |

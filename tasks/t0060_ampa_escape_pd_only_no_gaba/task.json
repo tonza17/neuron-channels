@@ -5,12 +5,12 @@
   "name": "Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0",
   "short_description": "GABA=0, theta=0 only, sweep gAMPA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE modes; plot 16 soma V(t) traces.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0059_bar_locked_gaba_ampa_sweep_t0057"
   ],
   "start_time": "2026-04-29T21:39:21Z",
-  "end_time": null,
+  "end_time": "2026-04-29T22:00:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
