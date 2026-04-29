@@ -1,0 +1,22 @@
+[bootstrap] gaba_tonic mechanism registered.
+[t0060] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0060_ampa_escape_pd_only_no_gaba\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[t0060] Sampling 100 dendritic locations (seed=0)
+[t0060] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0060_ampa_escape_pd_only_no_gaba\tasks\t0060_ampa_escape_pd_only_no_gaba\results\placement_seed0.json
+[t0060] Running 8 gAMPA x 2 modes x 1 trial = 16 trials at theta = 0 deg, GABA = 0.0 nS
+[t0060] gampa=0.10 nS  mode=full           trial=0  peak_vm=-58.98 mV  n_spikes= 0  dt=4.67 s
+[t0060] gampa=0.10 nS  mode=epsp_passive   trial=0  peak_vm=-60.67 mV  n_spikes= 0  dt=3.64 s
+[t0060] gampa=0.50 nS  mode=full           trial=0  peak_vm= 18.99 mV  n_spikes= 1  dt=7.58 s
+[t0060] gampa=0.50 nS  mode=epsp_passive   trial=0  peak_vm=-47.75 mV  n_spikes= 0  dt=6.46 s
+[t0060] gampa=1.00 nS  mode=full           trial=0  peak_vm= 19.49 mV  n_spikes= 2  dt=7.63 s
+[t0060] gampa=1.00 nS  mode=epsp_passive   trial=0  peak_vm=-36.94 mV  n_spikes= 0  dt=6.76 s
+[t0060] gampa=2.00 nS  mode=full           trial=0  peak_vm= 19.13 mV  n_spikes= 2  dt=9.75 s
+[t0060] gampa=2.00 nS  mode=epsp_passive   trial=0  peak_vm=-24.68 mV  n_spikes= 0  dt=6.39 s
+[t0060] gampa=5.00 nS  mode=full           trial=0  peak_vm= 17.17 mV  n_spikes= 1  dt=9.09 s
+[t0060] gampa=5.00 nS  mode=epsp_passive   trial=0  peak_vm=-11.60 mV  n_spikes= 1  dt=7.59 s
+[t0060] gampa=10.00 nS  mode=full           trial=0  peak_vm= 14.92 mV  n_spikes= 2  dt=11.19 s
+[t0060] gampa=10.00 nS  mode=epsp_passive   trial=0  peak_vm= -6.33 mV  n_spikes= 1  dt=7.40 s
+[t0060] gampa=15.00 nS  mode=full           trial=0  peak_vm= 13.53 mV  n_spikes= 2  dt=10.61 s
+[t0060] gampa=15.00 nS  mode=epsp_passive   trial=0  peak_vm= -4.61 mV  n_spikes= 1  dt=8.44 s
+[t0060] gampa=20.00 nS  mode=full           trial=0  peak_vm= 12.56 mV  n_spikes= 4  dt=11.46 s
+[t0060] gampa=20.00 nS  mode=epsp_passive   trial=0  peak_vm= -3.76 mV  n_spikes= 1  dt=8.69 s
+[t0060] Done. wall-clock = 127.36 s. Wrote voltage_traces_pd_only.csv, summary_pd_only.csv, wallclock.json.

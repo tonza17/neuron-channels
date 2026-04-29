@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0060_ampa_escape_pd_only_no_gaba",
+  "command": "uv run python -u -m arf.scripts.utils.capture_task_sessions --task-id t0060_ampa_escape_pd_only_no_gaba",
+  "exit_code": 0,
+  "duration_seconds": 1.624,
+  "started_at": "2026-04-29T21:57:46Z",
+  "completed_at": "2026-04-29T21:57:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0060_ampa_escape_pd_only_no_gaba",
+  "stdout_file": "004_20260429T215746Z_uv-run-python.stdout.txt",
+  "stderr_file": "004_20260429T215746Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
