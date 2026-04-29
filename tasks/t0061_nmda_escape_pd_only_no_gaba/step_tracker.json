@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results files.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T22:28:47Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T22:29:11Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
