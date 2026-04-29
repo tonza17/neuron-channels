@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-29T23:09:58Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-29T23:47:21Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>165394</char_count>
-    <byte_count>165628</byte_count>
-    <estimated_tokens>41348</estimated_tokens>
+    <char_count>166450</char_count>
+    <byte_count>166684</byte_count>
+    <estimated_tokens>41612</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -171,9 +171,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0060_ampa_escape_pd_only_no_gaba</id>
         <id>t0061_nmda_escape_pd_only_no_gaba</id>
         <id>t0062_nmda_escape_with_ampa_priming</id>
+        <id>t0063_hh_voltage_step_test</id>
       </source_ids>
       <content>
-Completed tasks: 56
+Completed tasks: 57
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -510,6 +511,12 @@ ID: t0062_nmda_escape_with_ampa_priming
 Completed: 2026-04-29
 Short description: GABA=0, theta=0 only, AMPA fixed at 0.5 nS (priming) + NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.
 Result summary: Results Summary: t0062 NMDA + AMPA-Priming PD Diagnostic Summary Ran 16 trials (8 gNMDA values × 2 modes × 1 trial × 1 direction) at theta = 0 deg with GABA = 0 and AMPA fixed at 0.5 nS as priming on every E synapse, NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS. Wall-clock 269.80 s. Headline: **AMPA priming abolishes the silent regime seen in t0061** — the cell fires 2-4 spikes at every gNMDA value. Peak spike count **4 at gNMDA = 2.0 nS** (AMPA-NMDA synergy point), plateau of 2-3 spikes at gNMDA in [0.1, 1.0] (AMPA-only-like) and [5, 20] (AMPA + NMDA plateau). Metrics * **gNMDA = 0.1 / 0.5 / 1.0 nS**: FULL = +15.84 / +15.78 / +15.71 mV, **2 spikes** each; EPSP_PASSIVE...
+
+## HH voltage-step diagnostic on t0059 substrate (no synapses)
+ID: t0063_hh_voltage_step_test
+Completed: 2026-04-29
+Short description: SEClamp voltage steps to {-60, -50, -40, -30, -20, -10} mV for 200 ms each on the t0059 cell (no synaptic input); HH on vs HH off; plot Vm and clamp current.
+Result summary: Results Summary: t0063 HH Voltage-Step Diagnostic Summary Stepped the soma from -65 mV to {-60, -50, -40, -30, -20, -10} mV via SEClamp for 200 ms each, 12 trials (6 targets x 2 modes) in 24.60 s. SEClamp held Vm tight to target across all conditions. The FULL-vs-PASSIVE clamp current difference reveals classic HH dynamics: transient inward Na+ current at step onset (-13 to -15 nA) at all depolarised levels; sustained outward residual at -30 to -10 mV (persistent K+ delayed-rectifier minus residual Na+) growing from ~+1 to +5 nA. Metrics * **Tight clamp**: Vm tracks target voltage within 1 mV at all 6 targets in both modes (clamp rs = 0.001 MOhm). * **Capacitive transients**: clamp current...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
