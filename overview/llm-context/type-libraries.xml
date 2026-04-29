@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="libraries" generated_at_utc="2026-04-28T23:47:51Z">
+<llm_context_archive type_id="libraries" generated_at_utc="2026-04-29T21:07:39Z">
   <archive_summary>
     <title>All Libraries</title>
     <description>Complete library registry with full descriptions, module paths, and entry points.</description>
     <section_count>1</section_count>
-    <char_count>193533</char_count>
-    <byte_count>193988</byte_count>
-    <estimated_tokens>48383</estimated_tokens>
+    <char_count>212425</char_count>
+    <byte_count>212950</byte_count>
+    <estimated_tokens>53106</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -29,9 +29,10 @@
         <id>minimal_dsgc_spatial_gaba</id>
         <id>minimal_dsgc_mg_block_nmda</id>
         <id>minimal_dsgc_tonic_gaba_sweep</id>
+        <id>minimal_dsgc_bar_locked_gaba_ampa_sweep</id>
       </source_ids>
       <content>
-Libraries: 12
+Libraries: 13
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -3642,6 +3643,301 @@ the cosine ramp width is hardcoded to 1 ms via `GABA_RAMP_MS` in `constants.py`;
 `ramp_ms = 0` on a `gaba_tonic` instance falls back to a piecewise-constant envelope. The library
 does not currently support multiple concurrent tonic windows per synapse — only one active window
 per pair is honoured.
+
+## Minimal DSGC with Bar-Arrival-Locked Tonic GABA + AMPA Sweep
+ID: minimal_dsgc_bar_locked_gaba_ampa_sweep
+Version: 0.1.0
+Created by task: t0059_bar_locked_gaba_ampa_sweep_t0057
+Date created: 2026-04-29
+Module paths: tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\constants.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\paths.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\swc_io.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\neuron_bootstrap.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\cell.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\placement.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\synapses.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\trial.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\run_tuning_curve.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\render_figures.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\compute_metrics.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\metrics_extra.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\mod\GabaTonic.mod
+Dependencies: neuron, numpy, matplotlib, pandas, tqdm
+Test paths: tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_quiescent_rest.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_spatial_gating.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_placement_seed0_match.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_bar_locked_ipsp_envelope.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_hh_save_and_zero.py
+Categories: compartmental-modeling, direction-selectivity, synaptic-integration
+Entry point: AMPA_PEAK_NS_VALUES (function) — Public 5-tuple of swept per-synapse AMPA peak conductance values in nS (0.5, 1.0, 2.0, 3.0, 4.0). The outer loop in run_full_sweep iterates over these; threaded as ``gampa_ns: float`` through schedule_ei_onsets and run_one_trial.
+Entry point: GABA_BASE_NS_VALUES (function) — Public 5-tuple of swept per-synapse peak GABA conductance values in nS (0.1, 0.2, 0.5, 1.0, 2.0). The inner loop in run_full_sweep iterates over these.
+Entry point: WINDOW_MS (function) — Public per-synapse tonic-window width in ms (default 200). Active GABA synapses receive g = gaba_base_ns * 1e-3 (uS) over [t_on_i, t_on_i + WINDOW_MS] where t_on_i is the per-synapse bar-arrival time.
+Entry point: TrialMode (class) — StrEnum with members FULL, EPSP_PASSIVE, IPSP_PASSIVE. EPSP_PASSIVE / IPSP_PASSIVE save-and-zero HH gnabar / gkbar on soma + AIS so the soma trace is the pure synaptic envelope (no spikes).
+Entry point: gaba_tonic (class) — NEURON POINT_PROCESS registered as h.gaba_tonic after ensure_gaba_tonic_compiled() runs. RANGE attributes: g (uS), e (mV), t_on (ms), t_off (ms), ramp_ms (ms; default 1). Conductance envelope is g * envelope(t) where envelope is 0 outside [t_on, t_off], a 1 ms cosine ramp at each edge, and 1.0 in the middle. NONSPECIFIC_CURRENT i = envelope * g * (v - e). No NET_RECEIVE block; conductance is set by direct attribute write per trial. Unchanged from t0057.
+Entry point: ensure_gaba_tonic_compiled (function) — Build code/mod/nrnmech.dll from code/mod/GabaTonic.mod via the run_nrnivmodl.cmd shim if missing, then load the DLL via h.nrn_load_dll so h.gaba_tonic becomes available. Idempotent. Must be called AFTER ensure_neuron_importable + load_stdrun and BEFORE any h.gaba_tonic(seg) construction.
+Entry point: build_dsgc_from_swc (function) — Parse a calibrated SWC, collapse the 19 soma rows into one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial segment, and return a CellHandles dataclass. HH only on soma + AIS; pas everywhere else.
+Entry point: sample_dendritic_locations (function) — Sample N dendritic locations uniformly along total dendritic length using numpy.random.default_rng(seed); seed=0 reproduces t0052 / t0053 / t0057 placement bit-for-bit.
+Entry point: build_ei_pairs (function) — Construct one AMPA Exp2Syn + tonic gaba_tonic instance per Location; each pair carries theta_centrifugal_rad. AMPA NetCon weight is set per trial by schedule_ei_onsets (was hard-coded at AMPA_PEAK_NS * 1e-3 in t0057).
+Entry point: i_synapse_fires (function) — Pure boolean predicate: returns cos(radians(theta_stim_deg - theta_centrifugal_deg)) &lt; 0 (strict; perpendicular does not fire). Bit-identical to t0053 / t0057.
+Entry point: schedule_ei_onsets (function) — Per-trial scheduler: set AMPA NetStim.start AND ampa_netcon.weight[0] = gampa_ns * 1e-3 (REQ-7); for each I synapse evaluate i_synapse_fires; when fired set pair.gaba_syn.g = gaba_base_ns * 1e-3 (uS) and (t_on, t_off) = (onset_ms, onset_ms + WINDOW_MS) per REQ-1, otherwise zero g and collapse the window. Returns ScheduleResult with onset_times_ms and i_fired_mask.
+Entry point: ScheduleResult (class) — Frozen dataclass returned by schedule_ei_onsets, with onset_times_ms: list[float] and i_fired_mask: list[bool] aligned with the pair list.
+Entry point: HhConductanceSnapshot (class) — Frozen dataclass of per-segment HH gnabar / gkbar values on soma + AIS, captured by _save_and_zero_hh and consumed by _restore_hh.
+Entry point: _save_and_zero_hh (function) — Save HH gnabar / gkbar on every segment of soma and axon_initial_segment, then zero them. Returns an HhConductanceSnapshot. Dendrites are NOT touched (no hh mechanism). Used by run_one_trial for EPSP_PASSIVE / IPSP_PASSIVE modes.
+Entry point: _restore_hh (function) — Restore HH gnabar / gkbar from a snapshot. Always called from a try/finally inside run_one_trial so HH is restored even if NEURON raises.
+Entry point: run_one_trial (function) — Run one trial: schedule onsets via the spatial gate at the supplied (gampa_ns, gaba_base_ns), apply mode-specific weight overrides, save-and-zero HH for passive modes (try/finally), finitialize + continuerun, return TrialResult with V(t), spike times, i_fired_mask, i_active_fraction, gampa_ns and gaba_base_ns.
+Entry point: run_full_sweep (function) — End-to-end 5 (gampa) x 5 (gaba) x 12 directions x 10 trials x 3 modes = 9,000-trial sweep with dry-run validation gate (including the bar-locked IPSP centre-of-mass shift check). Writes per-mode tuning-curve / spike-time / voltage-trace CSVs each carrying leading (gampa_ns, gaba_base_ns) columns, active_fraction_per_direction CSV, placement_seed0.json, and wallclock.json. Activation-time CSV is dropped per REQ-5.
+Entry point: compute_vector_sum_dsi (function) — Vector-sum DSI from the per-angle mean firing rates: |sum r_k * exp(i theta_k)| / sum r_k.
+Entry point: compute_preferred_direction_deg (function) — Preferred direction in degrees from the complex sum of rate-weighted unit vectors.
+Entry point: compute_metrics_main (script) — Compute per-(gampa, gaba, mode) tuning-curve metrics and write metrics.json (75-variant explicit format: 5 gampa x 5 gaba x 3 modes) plus derived_quantities.json (cross-grid 5x5 arrays for peak Hz, null Hz, primary DSI, vector-sum DSI, HWHM, RMSE; per-(gampa, gaba, angle) EPSP / IPSP envelopes; EPSP-decay grid). Enforces the EPSP_PASSIVE peak-Vm soft gate (REQ-15).
+Entry point: render_figures_main (script) — Render all per-(gampa, gaba, direction) figures (soma V, EPSP, IPSP, PSTH) plus per-(gampa, gaba) polar tuning curves, the active-fraction polar plot, the 6 cross-grid heatmaps, and the regime-boundary contour overlay. Total ~1233 PNGs across the 5x5 grid.
+
+#### Metadata
+
+* **Name**: Minimal DSGC with Bar-Arrival-Locked Tonic GABA + AMPA Sweep
+* **Version**: 0.1.0
+* **Task**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Dependencies**: neuron, numpy, matplotlib, pandas, tqdm
+* **Modules**: `code/constants.py`, `code/paths.py`, `code/swc_io.py`, `code/cell.py`,
+  `code/placement.py`, `code/synapses.py`, `code/trial.py`, `code/run_tuning_curve.py`,
+  `code/compute_metrics.py`, `code/render_figures.py`, `code/metrics_extra.py`,
+  `code/neuron_bootstrap.py`, `code/mod/GabaTonic.mod`
+
+#### Overview
+
+This library forks `minimal_dsgc_tonic_gaba_sweep` (from task `t0057_tonic_gaba_sweep_t0053`) and
+applies three bundled changes on the same calibrated DSGC morphology that t0052 / t0053 / t0057 have
+used:
+
+1. **Per-synapse bar-arrival-locked GABA window.** The global tonic window
+   `(t_on, t_off) = (100, 1400)` ms in t0057 is replaced by a per-synapse window
+   `t_on_i = (x_i cos theta + y_i sin theta) / v + 100 ms`, `t_off_i = t_on_i + WINDOW_MS` (ms),
+   gated by the same centripetal-gating predicate from t0053. The `gaba_tonic.mod` POINT_PROCESS is
+   **unchanged** — only the Python caller writes different attribute values per pair per trial.
+
+2. **EPSP_PASSIVE / IPSP_PASSIVE measurement protocol fix (S-0055-01).** The legacy `AMPA_ONLY` /
+   `GABA_ONLY` modes are replaced by `EPSP_PASSIVE` / `IPSP_PASSIVE`. Both passive modes save and
+   zero the HH `gnabar` / `gkbar` conductances on the soma and axon initial segment (dendrites have
+   no HH mechanism), then run the trial, and restore via try/finally. This guarantees the soma trace
+   is the pure synaptic envelope (no spikes), which downstream metrics need for the EPSP-decay
+   quantity to be well-defined.
+
+3. **5x5 (gAMPA, GABA_BASE_NS) sweep.** The previously hard-coded `AMPA_PEAK_NS = 0.5 nS` is
+   replaced by a public `AMPA_PEAK_NS_VALUES = (0.5, 1.0, 2.0, 3.0, 4.0)` constant; the GABA sweep
+   values are also rebound to `(0.1, 0.2, 0.5, 1.0, 2.0)`. Total trial budget: 5 x 5 x 12 x 10 x 3 =
+   9,000 trials.
+
+The trial length is also standardised at `TSTOP_MS = 1400.0` ms (was 1500 ms in t0057), per the
+S-0055-01 protocol specification.
+
+#### API Reference
+
+##### `code/constants.py`
+
+```python
+TSTOP_MS: float = 1400.0
+WINDOW_MS: float = 200.0
+AMPA_PEAK_NS_VALUES: tuple[float, ...] = (0.5, 1.0, 2.0, 3.0, 4.0)
+GABA_BASE_NS_VALUES: tuple[float, ...] = (0.1, 0.2, 0.5, 1.0, 2.0)
+
+class TrialMode(StrEnum):
+    FULL = &quot;full&quot;
+    EPSP_PASSIVE = &quot;epsp_passive&quot;
+    IPSP_PASSIVE = &quot;ipsp_passive&quot;
+```
+
+##### `code/synapses.py`
+
+```python
+def i_synapse_fires(*, theta_stim_deg: float, theta_centrifugal_deg: float) -&gt; bool:
+    &quot;&quot;&quot;cos(radians(theta_stim - theta_centrifugal)) &lt; 0 (strict; perpendicular silent).&quot;&quot;&quot;
+
+def build_ei_pairs(
+    *,
+    h: Any,
+    locations: list[Location],
+    sections: list[Any],
+    soma_origin_um: tuple[float, float, float],
+) -&gt; list[EiPair]:
+    &quot;&quot;&quot;One AMPA Exp2Syn + one h.gaba_tonic per Location.&quot;&quot;&quot;
+
+def schedule_ei_onsets(
+    *,
+    pairs: list[EiPair],
+    angle_deg: float,
+    velocity_um_per_ms: float,
+    gampa_ns: float,
+    gaba_base_ns: float,
+) -&gt; ScheduleResult:
+    &quot;&quot;&quot;Set AMPA NetStim.start, AMPA NetCon.weight[0] = gampa_ns * 1e-3, and per-pair tonic GABA
+    (g, t_on, t_off) where t_on_i is the bar-arrival time and t_off_i = t_on_i + WINDOW_MS.&quot;&quot;&quot;
+```
+
+##### `code/trial.py`
+
+```python
+@dataclass(frozen=True, slots=True)
+class HhConductanceSnapshot:
+    soma_gnabar: list[float]
+    soma_gkbar: list[float]
+    ais_gnabar: list[float]
+    ais_gkbar: list[float]
+
+
+def _save_and_zero_hh(*, cell: CellHandles) -&gt; HhConductanceSnapshot:
+    &quot;&quot;&quot;Save HH conductances on every soma + AIS segment, then zero them.&quot;&quot;&quot;
+
+def _restore_hh(*, cell: CellHandles, snapshot: HhConductanceSnapshot) -&gt; None:
+    &quot;&quot;&quot;Restore HH conductances; always called from try/finally.&quot;&quot;&quot;
+
+def run_one_trial(
+    *,
+    h: Any,
+    cell: CellHandles,
+    pairs: list[EiPair],
+    mode: TrialMode,
+    angle_deg: float,
+    trial_seed: int,
+    gampa_ns: float,
+    gaba_base_ns: float,
+) -&gt; TrialResult:
+    &quot;&quot;&quot;One trial; for passive modes, HH is saved-and-zeroed inside a try/finally.&quot;&quot;&quot;
+```
+
+##### `code/run_tuning_curve.py`
+
+```python
+def setup_sweep_artifacts() -&gt; SweepArtifacts:
+    &quot;&quot;&quot;Bootstrap NEURON, build cell, place synapses, build EI pairs.&quot;&quot;&quot;
+
+def run_dry_run_validation(
+    *,
+    artifacts: SweepArtifacts,
+    gampa_ns: float = 1.0,
+    gaba_base_ns: float = 0.5,
+) -&gt; None:
+    &quot;&quot;&quot;1 angle x 2 trials x 3 modes dry-run gate at the centre grid cell.&quot;&quot;&quot;
+
+def run_full_sweep(*, voltage_sample_stride: int = 8) -&gt; None:
+    &quot;&quot;&quot;Full 9000-trial sweep across the 5x5 (gampa, gaba) grid.&quot;&quot;&quot;
+```
+
+##### `code/compute_metrics.py` and `code/render_figures.py`
+
+Each is invokable as a module
+(`uv run python -u -m tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.compute_metrics`) after the
+sweep produces the per-mode CSVs. `compute_metrics` writes `results/metrics.json` (75 variants) and
+`results/derived_quantities.json`; `render_figures` writes 1225 per-cell PNGs plus the 6 cross-grid
+heatmaps and the regime-boundary contour overlay.
+
+#### Usage Examples
+
+End-to-end sweep:
+
+```python
+from tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.run_tuning_curve import run_full_sweep
+
+run_full_sweep()
+### Outputs:
+###   results/tuning_curve_full.csv (300 rows)
+###   results/tuning_curve_epsp_passive.csv (300 rows)
+###   results/tuning_curve_ipsp_passive.csv (300 rows)
+###   results/spike_times_*.csv, results/voltage_traces_*.csv
+###   results/active_fraction_per_direction.csv (12 rows)
+###   results/placement_seed0.json, results/wallclock.json
+```
+
+Single trial at a single grid cell:
+
+```python
+from tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.constants import TrialMode
+from tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.run_tuning_curve import (
+    setup_sweep_artifacts,
+)
+from tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.trial import run_one_trial
+
+artifacts = setup_sweep_artifacts()
+from neuron import h
+result = run_one_trial(
+    h=h,
+    cell=artifacts.cell,
+    pairs=artifacts.pairs,
+    mode=TrialMode.FULL,
+    angle_deg=180.0,
+    trial_seed=1,
+    gampa_ns=2.0,
+    gaba_base_ns=0.5,
+)
+print(result.firing_rate_hz, result.i_active_fraction)
+```
+
+Just the dry-run gate from the CLI:
+
+```bash
+uv run python -u -m tasks.t0059_bar_locked_gaba_ampa_sweep_t0057.code.run_tuning_curve --dry-run
+```
+
+#### Dependencies
+
+* **neuron** — compartmental simulation kernel; the C runtime is loaded via the `neuron_bootstrap`
+  helpers and the custom POINT_PROCESS is compiled by `nrnivmodl`.
+* **numpy** — array math; required by `placement.py` (length-weighted sampling) and `trial.py`
+  (V(t) traces).
+* **matplotlib** — figure rendering; `Agg` backend used in batch mode.
+* **pandas** — CSV I/O and pivot operations in `compute_metrics.py` and `render_figures.py`.
+* **tqdm** — progress bars during the 9000-trial sweep.
+
+The library also imports two registered cross-task libraries (`tuning_curve_loss` from t0012 and
+`tuning_curve_viz` from t0011); these are listed as task dependencies in `task.json` rather than
+under `dependencies` here because they are intra-repo and resolve via the `tasks.tNNNN_*.code.*`
+import path.
+
+#### Testing
+
+Run all five regression tests:
+
+```bash
+uv run pytest tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_*.py -v
+```
+
+What each test covers:
+
+* **`test_quiescent_rest.py`** — passive 200 ms run with no synapses; soma rests at
+  `V_INIT_MV = -65 mV +/- 0.5 mV`.
+* **`test_spatial_gating.py`** — 4 unit tests of the centripetal-gating predicate.
+* **`test_placement_seed0_match.py`** — bit-identity vs t0057&#x27;s seed-0 placement
+  (`POSITION_TOLERANCE = 1e-9`).
+* **`test_bar_locked_ipsp_envelope.py`** — bar-arrival-locked IPSP centre-of-mass shift between
+  `theta = 0` and `theta = 90` exceeds the predicted lower bound (REQ-13).
+* **`test_hh_save_and_zero.py`** — runs one EPSP_PASSIVE trial then one FULL reference trial; the
+  FULL trace must match the stored reference at `atol = 1e-6` mV (REQ-14). On first run, the test
+  writes the reference and skips comparison.
+
+#### Main Ideas
+
+* **Bar-locked windows are a one-line change at the synapse layer.** The `gaba_tonic.mod`
+  POINT_PROCESS already exposes per-instance `t_on` / `t_off` RANGE attributes; the t0057 -&gt; t0059
+  surgical edit is replacing two constant writes in `schedule_ei_onsets` with
+  `(onset_ms, onset_ms + WINDOW_MS)`. This is the cleanest possible direction-dependent IPSP timing
+  within the same simulation substrate.
+* **HH save-and-zero is per-segment and try/finally-wrapped.** NEURON&#x27;s `seg.hh.gnabar` is
+  segment-scoped, so the snapshot iterates `for seg in section`. Dendrites have no HH mechanism and
+  must NOT be touched. The try/finally guarantees HH is restored even if the integrator raises
+  mid-trial — without this, a single bad trial would silently disable HH for the rest of the
+  9000-trial sweep.
+* **CVODE is mandatory for the 9000-trial sweep.** With `cvode.atol = 1e-3`, per-trial wall-clock
+  drops from ~75 s (fixed-step at dt = 0.025 ms) to ~3-8 s. Without CVODE, the sweep would take ~7.8
+  days; with CVODE, ~8.75 h on local CPU.
+* **Placement seed 0 is bit-identical to t0052 / t0053 / t0057.** This is the project&#x27;s invariant
+  for cross-task comparability — the `test_placement_seed0_match.py` test guards it at
+  floating-point precision (1e-9 tolerance).
+* **No correction overlays are needed.** Both DOI- and downstream-task-corrections paths in the
+  parent are already in their canonical state; t0059 forks the substrate, not the metadata.
+
+#### Summary
+
+`minimal_dsgc_bar_locked_gaba_ampa_sweep` is a forked, surgically-edited version of t0057&#x27;s
+minimal-DSGC tonic-GABA library. The fork replaces t0057&#x27;s global GABA window with a per-synapse
+bar-arrival-locked window, swaps the legacy `AMPA_ONLY` / `GABA_ONLY` measurement modes for an
+HH-save-and-zero `EPSP_PASSIVE` / `IPSP_PASSIVE` pair, and exposes `gAMPA` as a public per-synapse
+parameter so the simulation can sweep a 5x5 (gAMPA, GABA_BASE_NS) grid in one go. The library is the
+substrate for the t0059 task&#x27;s experiment-run: 9000 trials produce a 75-variant `metrics.json` and a
+1233-PNG figure set, with the headline question being whether any operating point on the (gAMPA,
+GABA_BASE_NS) plane produces direction-selective multi-spike firing.
+
+The library inherits t0057&#x27;s MOD compilation pipeline (`run_nrnivmodl.cmd` + `GabaTonic.mod`)
+unchanged — the headline change is in Python (where it belongs), not in NEURON&#x27;s C kernel. This
+keeps the integration surface narrow and the cross-task bit-identity guarantees (placement seed,
+AMPA path, HH parameters) intact.
+
+Downstream tasks consuming this library can either run the full sweep, sweep a sub-grid by
+restricting `AMPA_PEAK_NS_VALUES` and `GABA_BASE_NS_VALUES`, or call `run_one_trial` directly for
+one-off perturbation experiments. The HH save-and-zero is exposed via `_save_and_zero_hh` /
+`_restore_hh` so derived libraries that wrap their own simulation harnesses can opt into the
+S-0055-01 protocol fix without re-implementing it.
       </content>
     </section>
   </sections>

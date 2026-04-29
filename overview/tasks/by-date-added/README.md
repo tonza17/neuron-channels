@@ -8,23 +8,27 @@
 
 ## 2026-04-29 (2)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0059 — <strong>Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057
+<summary>✅ 0059 — <strong>Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057
 substrate</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0059_bar_locked_gaba_ampa_sweep_t0057` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-04-29 |
 | **Dependencies** | [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | `S-0057-04` |
 | **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-28T23:58:19Z |
+| **End time** | 2026-04-29T20:55:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) |
 | **Task folder** | [`t0059_bar_locked_gaba_ampa_sweep_t0057/`](../../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/results/results_detailed.md) |
 
 # Bar-Arrival-Locked Tonic GABA + AMPA Escape Sweep on t0057 Substrate
 
@@ -253,9 +257,38 @@ unit testing, and reporting time. Cost: $0.00.
 * `verify_research_code.py`, `verify_plan.py`, `verify_task_metrics.py`, and the library asset
   verificator all pass with 0 errors.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Bar-Arrival-Locked Tonic GABA + AMPA Escape Sweep on t0057 Substrate**
+>
+> **Summary**
+>
+> Forked t0057's `minimal_dsgc_tonic_gaba_sweep` library, replaced the global
+> `(t_on, t_off) = (100, 1400) ms` tonic-GABA window with per-synapse bar-arrival-locked
+> windows
+> `t_on_i = (x_i cos theta + y_i sin theta) / v + 100 ms`, `t_off_i = t_on_i + 200 ms`, swept
+> a 5x5
+> `(gAMPA, GABA_BASE_NS)` grid over `gAMPA in {0.5, 1.0, 2.0, 3.0, 4.0}` nS x
+> `GABA_BASE_NS in {0.1, 0.2, 0.5, 1.0, 2.0}` nS, and bundled the project-wide S-0055-01
+> measurement-protocol fix (drop `AMPA_ONLY` / `GABA_ONLY`; add `EPSP_PASSIVE` /
+> `IPSP_PASSIVE` with
+> HH save-and-zero on soma + AIS; standardise trial length at 1400 ms). Headline negative
+> finding:
+> **no operating point in the swept grid produces multi-spike firing or non-trivial direction
+> selectivity**. The maximum FULL-mode peak rate across all 25 cells is **2.143 Hz** (3 spikes
+> / 1.4
+> s, four cells); the maximum primary DSI is **0.5** at gAMPA=3.0/gaba=0.10 and 0.20; the
+> maximum
+> vector-sum DSI is **0.209** at gAMPA=1.0/gaba=0.10. The bar-locked window mechanism and HH
+> save-and-zero protocol are both validated independently (REQ-13 IPSP centre-of-mass shift =
+> 8.5 ms
+> between theta=0 and theta=90; REQ-15 worst-case EPSP_PASSIVE peak Vm = -9.04 mV << +5 mV
+> gate
+> threshold).
+>
+> **Metrics**
+
+</details>
 
 <details>
 <summary>✅ 0058 — <strong>Brainstorm results session 11</strong></summary>

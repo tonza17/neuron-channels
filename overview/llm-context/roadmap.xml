@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-28T23:47:51Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-29T21:07:39Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>294699</char_count>
-    <byte_count>294952</byte_count>
-    <estimated_tokens>73674</estimated_tokens>
+    <char_count>288992</char_count>
+    <byte_count>289207</byte_count>
+    <estimated_tokens>72248</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -164,9 +164,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0056_brainstorm_results_10</id>
         <id>t0057_tonic_gaba_sweep_t0053</id>
         <id>t0058_brainstorm_results_11</id>
+        <id>t0059_bar_locked_gaba_ampa_sweep_t0057</id>
       </source_ids>
       <content>
-Completed tasks: 52
+Completed tasks: 53
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -479,6 +480,12 @@ ID: t0058_brainstorm_results_11
 Completed: 2026-04-29
 Short description: Eleventh brainstorm: commission t0059 bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate; reject seven covered suggestions; reprioritise eighteen high-priority suggestions to medium.
 Result summary: Results Summary: Brainstorm Session 11 Summary Eleventh strategic brainstorm, run on 2026-04-29 after t0055 (Mg-block NMDA recovery test) and t0057 (tonic-GABA amplitude sweep on t0053 spatial substrate) completed. The session is triggered by the convergent finding across the from-scratch minimal DSGC family (t0052/t0053/t0054/t0055/ t0057) that every variant is locked in a binary regime — either single-spike-per-trial (peak Hz = 0.667, DSI = 1.0 trivially) or full inhibitory suppression (peak Hz = 0, DSI = 0). Decision: commission a single combined task (t0059 — bar-arrival-locked tonic GABA + AMPA escape sweep + bundled measurement-protocol fix) covering S-0057-01, S-0057-02, S-0057-04...
+
+## Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate
+ID: t0059_bar_locked_gaba_ampa_sweep_t0057
+Completed: 2026-04-29
+Short description: Replace t0057&#x27;s global tonic GABA window with per-synapse bar-arrival-locked windows; sweep AMPA x GABA conductance grid; bundle the project-wide EPSP_PASSIVE/IPSP_PASSIVE measurement-protocol fix.
+Result summary: Results Summary: Bar-Arrival-Locked Tonic GABA + AMPA Escape Sweep on t0057 Substrate Summary Forked t0057&#x27;s `minimal_dsgc_tonic_gaba_sweep` library, replaced the global `(t_on, t_off) = (100, 1400) ms` tonic-GABA window with per-synapse bar-arrival-locked windows `t_on_i = (x_i cos theta + y_i sin theta) / v + 100 ms`, `t_off_i = t_on_i + 200 ms`, swept a 5x5 `(gAMPA, GABA_BASE_NS)` grid over `gAMPA in {0.5, 1.0, 2.0, 3.0, 4.0}` nS x `GABA_BASE_NS in {0.1, 0.2, 0.5, 1.0, 2.0}` nS, and bundled the project-wide S-0055-01 measurement-protocol fix (drop `AMPA_ONLY` / `GABA_ONLY`; add `EPSP_PASSIVE` / `IPSP_PASSIVE` with HH save-and-zero on soma + AIS; standardise trial length at 1400 ms)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -488,10 +495,9 @@ Result summary: Results Summary: Brainstorm Session 11 Summary Eleventh strategi
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0059_bar_locked_gaba_ampa_sweep_t0057</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -753,229 +759,6 @@ answer asset capturing the measured speedup and its implications for the t0033 c
 * At least one answer asset is produced per the answer specification.
 * If the measured speedup differs from 5x by more than 20%, a correction-proposal suggestion is
   filed in `results/suggestions.json` against t0033&#x27;s answer asset.
-
-## Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate
-ID: t0059_bar_locked_gaba_ampa_sweep_t0057
-Status: not_started
-Effective date: 2026-04-29
-Short description: Replace t0057&#x27;s global tonic GABA window with per-synapse bar-arrival-locked windows; sweep AMPA x GABA conductance grid; bundle the project-wide EPSP_PASSIVE/IPSP_PASSIVE measurement-protocol fix.
-Dependencies: t0009_calibrate_dendritic_diameters, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0057_tonic_gaba_sweep_t0053
-
-#### Source
-
-Approved in brainstorm session 11 (t0058) and covers four high-priority suggestions in one combined
-experimental task:
-
-* **S-0057-04** (primary `source_suggestion`) — per-synapse stimulus-window-tied `(t_on, t_off)`
-  tonic GABA on t0057 to model bar-arrival-locked inhibition.
-* **S-0057-02** — AMPA conductance escape sweep on the t0057 tonic-GABA substrate.
-* **S-0057-01** — sub-0.25 nS finer GABA sweep on t0057 (graded-suppression hypothesis).
-* **S-0055-01** — project-wide DSGC measurement-protocol fix (drop legacy E_ONLY / GABA_ONLY trio
-  in favour of EPSP_PASSIVE / IPSP_PASSIVE / FULL with HH save-and-zero on the passive modes; drop
-  per-synapse activation-time histogram; standardise trial length at 1400 ms).
-
-#### Motivation
-
-Five completed from-scratch minimal DSGCs (t0052, t0053, t0054, t0055, t0057) all converge on a
-binary regime: either **single-spike-per-trial** (peak Hz = 0.667, vector-sum DSI = 0.7464 with
-scalar gabaMOD or 1.0 trivially with full PD/ND inhibition) **or full inhibitory suppression** (peak
-Hz = 0, DSI = 0). The cell never enters the 5-50 Hz multi-spike band where DSI metrics become
-biologically informative.
-
-The convergent diagnosis from this body of work:
-
-1. **AMPA at 0.5 nS x 100 synapses is too weak** to drive multi-spike trains on the t0009 calibrated
-   morphology. t0052/t0053/t0054/t0055/t0057 all top out at 0.667 Hz under any non-saturating
-   inhibition.
-2. **Tonic GABA at the per-synapse amplitudes already swept** (0.25-2.0 nS in t0057) either does not
-   engage at all (sub-veto, 0.667 Hz uniform) or fully suppresses (0 Hz uniform). No intermediate
-   operating point exists in the t0057 grid.
-3. **Sustained tonic GABA over a 1300 ms window per active synapse is not biologically realistic**
-   either. SAC outputs onto a DSGC dendrite arrive in a brief 100-300 ms envelope as the stimulus
-   bar passes the SAC&#x27;s dendritic field — not as a constant 1.3-second leak.
-
-This task addresses all three issues simultaneously on one combined substrate. It (a) implements
-biologically plausible **per-synapse bar-arrival-locked GABA windows** (each active SAC fires a 200
-ms tonic conductance starting at the stimulus&#x27;s geometric arrival time at that synapse), (b) sweeps
-**AMPA conductance** to break the single-spike regime, (c) sweeps **GABA conductance** including
-sub-0.25 nS values to characterise the graded-suppression regime, and (d) ships the **EPSP_PASSIVE /
-IPSP_PASSIVE / FULL** measurement protocol so synaptic envelope traces are spike-free and the
-EPSP-decay metric stops returning null.
-
-#### Objective
-
-Build the new bar-arrival-locked tonic GABA mechanism, integrate it into a fork of t0057&#x27;s minimal
-DSGC code, ship the corrected measurement-protocol trio, sweep a 5x5 (gAMPA, GABA_BASE_NS) grid, and
-report whether any operating point on the swept grid produces non-trivial direction selectivity in
-the multi-spike regime — or rule it out.
-
-#### Model Specification
-
-##### Morphology
-
-* Asset: `dsgc-baseline-morphology-calibrated` (t0009 Strahler-calibrated 141009_Pair1DSGC
-  reconstruction). Identical to t0052 / t0053 / t0054 / t0055 / t0057.
-
-##### Sections and Channels
-
-* `soma` and `axon_initial_segment` (AIS): standard NEURON `hh` channel mechanism.
-* All dendritic sections: passive only. `Rm = 5999 ohm.cm^2`, `Ra = 100 ohm.cm`, `cm = 1 uF/cm^2`.
-* V_rest: -65 mV.
-* Identical to t0057.
-
-##### Synapses
-
-* 100 E + 100 I synapses, **co-located in pairs**, uniform random over dendrites with the same fixed
-  seed (0) as t0052 / t0053 / t0057. Identical placement so the placement_seed0 fixture from t0057
-  applies bit-for-bit.
-
-##### Excitatory mechanism
-
-* `Exp2Syn`: rise = 0.5 ms, decay = 2.5 ms, e = 0 mV.
-* Position-gated firing: each E synapse fires once when the bar&#x27;s leading edge crosses it;
-  direction-independent waveform.
-* **Per-synapse peak conductance is the swept variable** — see Sweep section below.
-
-##### Inhibitory mechanism (NEW — bar-arrival-locked tonic windows)
-
-* Reuses t0057&#x27;s `gaba_tonic.mod` POINT_PROCESS with parameters `(g, e, t_on, t_off)`:
-  * Sustained conductance `g` (in microsiemens) between `t_on` and `t_off`.
-  * Zero conductance outside that window.
-  * Reversal `e = -75 mV`.
-  * Rise / fall envelope at the window edges as in t0057 (piecewise constant or 1-2 ms cosine ramp).
-* Per-synapse instance: each I synapse pair gets one `gaba_tonic` mechanism.
-* **Spatial gating preserved from t0053 / t0057**: gated synapses are those whose
-  `cos(theta_stim - theta_centrifugal_synapse) &lt; 0`. Silent synapses get `g = 0` throughout.
-* **NEW per-synapse bar-arrival-locked window** (replaces t0057&#x27;s global `(100, 1400)` window):
-  * For each active synapse `i` at coordinate `(x_i, y_i)`:
-    * `t_on_i = (x_i * cos(theta_stim) + y_i * sin(theta_stim)) / v + 100 ms`
-    * `t_off_i = t_on_i + window_ms`
-  * `v` is bar velocity (1000 um/s as in t0053 / t0057).
-  * `window_ms = 200` ms (FIXED — biologically motivated midpoint of the 100-300 ms SAC IPSC
-    envelope range; not swept in this task).
-* Total inhibition envelope per trial: a moving wave of GABA windows that tracks the stimulus bar&#x27;s
-  progression across the dendritic arbor.
-
-##### Stimulus protocol
-
-* 12 directions x 10 trials per direction, bar 200 um x full arena, 1000 um/s.
-* **Trial length T = 1400 ms** (was 1500 ms in t0052 / t0053 / t0054 / t0055 / t0057; this task
-  ships the standardised 1400 ms per S-0055-01 / researcher memory note).
-* `dt = 0.025 ms`.
-
-##### Measurement-protocol fix (S-0055-01 bundled)
-
-* **Drop** the legacy `E_ONLY` and `GABA_ONLY` modes from the trial code.
-* **Add** two new passive modes that share the same synapse activation but disable spike generation:
-  * `EPSP_PASSIVE` — keep AMPA active, set GABA `g = 0`, save and zero `gnabar_hh` and `gkbar_hh`
-    on `soma` and `axon_initial_segment` (restore at end of trial). Records the clean EPSP envelope
-    at the soma without spike contamination.
-  * `IPSP_PASSIVE` — keep GABA active, set AMPA peak conductance to 0, save and zero `gnabar_hh`
-    and `gkbar_hh` on `soma` and `axon_initial_segment` (restore at end of trial). Records the clean
-    IPSP envelope at the soma without spike contamination.
-* Keep `FULL` with HH active for spike rates / DSI / firing-rate PSTH metrics.
-* **Drop** the per-synapse activation-time histogram output (no longer informative once the
-  bar-arrival-locked windows are explicit in the design).
-
-#### Sweep
-
-| Axis | Values | Units |
-| --- | --- | --- |
-| `gAMPA` | {0.5, 1.0, 2.0, 3.0, 4.0} | nS per E synapse |
-| `GABA_BASE_NS` | {0.1, 0.2, 0.5, 1.0, 2.0} | nS per active I synapse |
-| `window_ms` | 200 (FIXED) | ms |
-
-* Total grid: 5 x 5 = **25 grid cells**.
-* Per cell: 12 directions x 10 trials x 3 modes (FULL / EPSP_PASSIVE / IPSP_PASSIVE) = 360 trials.
-* Total: **9000 trials**.
-* Estimated wall-clock: 9000 / 1800 x 105 min ≈ 8.75 h on local CPU (extrapolating t0057&#x27;s
-  measured 6318 s for 1800 trials).
-
-#### Outputs
-
-For each `(gAMPA, GABA_BASE_NS)` grid cell:
-
-1. Soma `V(t)` per direction (12 PNGs, FULL mode).
-2. Aggregate EPSP at soma per direction (12 PNGs, EPSP_PASSIVE mode — clean envelope, no spikes).
-3. Aggregate IPSP at soma per direction (12 PNGs, IPSP_PASSIVE mode — clean envelope, no spikes;
-   each direction&#x27;s plot should show the moving wave of GABA windows).
-4. Firing-rate PSTH per direction (12 PNGs, FULL mode).
-5. Polar tuning curve (peak Hz, primary DSI, vector-sum DSI, preferred direction).
-
-Cross-grid summary plots:
-
-* DSI (primary) heatmap over `(gAMPA, GABA_BASE_NS)`.
-* DSI (vector-sum) heatmap over `(gAMPA, GABA_BASE_NS)`.
-* Peak Hz heatmap over `(gAMPA, GABA_BASE_NS)` — for locating multi-spike regime.
-* Null Hz heatmap over `(gAMPA, GABA_BASE_NS)`.
-* HWHM heatmap over `(gAMPA, GABA_BASE_NS)`.
-* RMSE vs t0004 target heatmap over `(gAMPA, GABA_BASE_NS)`.
-* Regime-boundary contour overlay: single-spike-degenerate vs multi-spike vs full-suppression bands
-  on the `(gAMPA, GABA_BASE_NS)` plane.
-
-#### Library Asset
-
-Produce one library asset: `minimal_dsgc_bar_locked_gaba_ampa_sweep` (or similar slug). Same
-component structure as `minimal_dsgc_tonic_gaba_sweep` from t0057, with three substantive changes:
-
-1. The GABA driver computes per-synapse `(t_on_i, t_off_i)` from synapse coordinate and stimulus
-   direction (replacing t0057&#x27;s global window).
-2. The trial-mode dispatcher exposes `FULL`, `EPSP_PASSIVE`, `IPSP_PASSIVE` (replacing t0057&#x27;s
-   `FULL`, `AMPA_ONLY`, `GABA_ONLY`); HH save-and-zero is implemented inside the passive-mode entry
-   points.
-3. `gAMPA` is exposed as a public per-synapse parameter (was hard-coded at 0.5 nS in t0057).
-
-#### Key Questions
-
-1. Does any `(gAMPA, GABA_BASE_NS)` grid cell produce FULL-mode peak Hz in the **5-50 Hz** band?
-2. Among grid cells in the multi-spike regime, does any one produce **vector-sum DSI &gt; 0.3**?
-3. Does the bar-arrival-locked window mechanism produce direction-dependent IPSP timing that the
-   global-window t0057 mechanism could not (i.e., does the IPSP envelope shift with `theta`)?
-4. Where does the regime boundary lie between single-spike-degenerate, multi-spike, and
-   full-suppression behaviour on the `(gAMPA, GABA_BASE_NS)` plane?
-5. With clean spike-free EPSP and IPSP traces from EPSP_PASSIVE / IPSP_PASSIVE modes, does the
-   EPSP-decay metric (which returned null on t0054 / t0055 due to spike contamination) become
-   well-defined and produce useful per-direction values?
-
-#### Compute and Budget
-
-Local CPU only. Estimated wall-clock: ~8.75 h for the simulation sweep, plus implementation, unit
-testing, and reporting time. Cost: $0.00.
-
-#### Out of Scope
-
-* NMDA receptors (AMPA-only on the E pathway; the AMPA + Mg-block-NMDA combination on this
-  bar-locked substrate is the natural next task, covered by the still-active S-0057-06).
-* Active dendritic conductances (passive dendrites by design — RQ4 follow-up territory).
-* Synaptic noise (deterministic NetStim trials).
-* Network-level inputs.
-* `window_ms` sweep — fixed at 200 ms in this task.
-* AMPA values above 4.0 nS — the top of the swept range was trimmed from S-0057-02&#x27;s 5.0 nS to 4.0
-  nS by researcher decision; if the multi-spike regime is not entered at 4.0 nS, a follow-up task
-  can extend.
-
-#### Verification Criteria
-
-* Library asset validates against `meta/asset_types/library/specification.md`.
-* All 25 grid cells produce per-direction PNG plots in `results/images/` and selected
-  representatives are embedded in `results_detailed.md`.
-* Cross-grid summary heatmaps (DSI / Peak Hz / Null Hz / HWHM / RMSE / regime contour) exist and are
-  embedded in `results_detailed.md`.
-* `results/metrics.json` contains, for each `(gAMPA, GABA_BASE_NS)` cell: primary DSI, vector-sum
-  DSI, preferred direction, peak Hz, null Hz, HWHM, RMSE vs t0004 target.
-* Per-synapse bar-arrival-locked window mechanism unit-tested: a regression test asserts that the
-  IPSP envelope&#x27;s centre of mass shifts with bar direction by an amount consistent with the stimulus
-  geometry (i.e., centre-of-mass `theta = 0` differs from `theta = 90` by a predictable amount given
-  the synapse coordinates).
-* HH save-and-zero correctness regression test: at one representative `(gAMPA, GABA_BASE_NS)` point,
-  the FULL trace under the new code is bit-identical (within 1e-6 mV) to a reference produced from
-  the old t0057 code path with HH active throughout.
-* EPSP_PASSIVE peak Vm &lt; spike threshold (~ -50 mV) at every direction and grid cell — gates that
-  the save-and-zero is working.
-* Same fixed placement seed (0) as t0052 / t0053 / t0057; placement_seed0 match test passes
-  bit-for-bit against t0057&#x27;s placement_seed0.json.
-* `verify_research_code.py`, `verify_plan.py`, `verify_task_metrics.py`, and the library asset
-  verificator all pass with 0 errors.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1184,6 +967,9 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0055-02</id>
         <id>S-0055-03</id>
         <id>S-0057-06</id>
+        <id>S-0059-01</id>
+        <id>S-0059-02</id>
+        <id>S-0059-03</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1339,6 +1125,9 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0055-05</id>
         <id>S-0057-03</id>
         <id>S-0057-05</id>
+        <id>S-0059-04</id>
+        <id>S-0059-05</id>
+        <id>S-0059-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1369,7 +1158,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0055-07</id>
       </source_ids>
       <content>
-Open suggestions: 216
+Open suggestions: 222
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1601,6 +1390,27 @@ Priority: high
 Kind: experiment
 Source task: t0057_tonic_gaba_sweep_t0053
 Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016&#x27;s argument that voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA + Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse. Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760...
+
+## Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059 bar-locked GABA + AMPA-escape substrate
+ID: S-0059-01
+Priority: high
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209) most plausibly stems from passive dendrites capping local depolarisation; Park2014 [p. 3977] and PolegPolsky2016 [p. 1278] both implicitly assume active dendritic mechanisms. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, install Nav1.6 (g_Nabar in {0.05, 0.10, 0.20} S/cm^2) and Kv3 (g_Kv3bar in {0.05, 0.10} S/cm^2) on dendritic sections, and run a focused 3x2x3 (gNa_dend x gKv3_dend x gAMPA in {1.0, 2.0, 4.0}) sweep at GABA_BASE_NS = 0.10 nS (the t0059 vector-sum DSI optimum). Pass criterion: at least one operating point with peak Hz &gt;= 5 Hz AND vector-sum DSI &gt; 0.3. Distinct from S-0009-03 (calibrates densities...
+
+## Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination sweep on the t0059 substrate
+ID: S-0059-02
+Priority: high
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057&#x27;s global (100, 1400) ms tonic window and fixed gAMPA = 0.5 nS. t0059 demonstrates the bar-locked window mechanism delivers an 8.5 ms direction-dependent IPSP centre-of-mass shift (REQ-13 PASS) the global window cannot. Layering Mg-block NMDA on the bar-locked substrate combines all three plausible gap-closers identified in compare-literature: voltage-dependent NMDA gain (PolegPolsky2016), per-synapse bar-arrival timing (deRosenroll2026), and AMPA escape. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, install the Jahr-Stevens NMDA_MgBlock mechanism from t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0...
+
+## Synapse-count scaling sweep on t0059 substrate (100 -&gt; 200 -&gt; 300 E + I) to break the single-spike regime
+ID: S-0059-03
+Priority: high
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction uses 282, deRosenroll2026 [p. 5] uses &gt;1000 SAC varicosities. The compare-literature Synapse-count comparison identifies this &gt;2.8x to &gt;10x mismatch as a structural drive bottleneck consistent with the 2.143 Hz peak ceiling. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300} (re-running the placement_seed0 generator to produce three larger placement bundles), and sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz &gt;= 5 Hz...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2686,6 +2496,27 @@ Priority: medium
 Kind: experiment
 Source task: t0057_tonic_gaba_sweep_t0053
 t0057 introduced a sustained (1300 ms) tonic envelope on the t0053 spatial substrate; the back-port question is whether applying the same envelope to t0052&#x27;s scalar gabaMOD inhibition (graded amplitude, all 100 synapses fire) breaks t0052&#x27;s binary single-spike DSI usefully. Build a t0052 variant that replaces per-event Exp2Syn(rise=1, decay=20 ms) inhibition with a sustained gabaMOD-envelope using gaba_tonic.mod from t0057, holding g(theta) = gabaMOD(theta) * GABA_BASE_NS over (t_on, t_off) = (100, 1400) ms per synapse. Sweep GABA_BASE_NS in {0.05, 0.1, 0.25, 0.5, 1.0, 2.0} nS at gabaMOD_PD = 0.33, gabaMOD_ND = 0.99 (matching t0052). Run 12 dir x 10 trials x 3 modes per conductance (2160...
+
+## Synaptic noise (NetStim jitter + AR(2) correlated release) on t0059 substrate for trial-to-trial DSI characterisation
+ID: S-0059-04
+Priority: medium
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+t0059 has reliability = 1.0 across all FULL cells because each NetStim emits a single deterministic event per direction. deRosenroll2026 [p. 6] requires AR(2) correlated release with rho = 0.6 to match in vitro DSGC reliability and reaches vector-sum DSI = 0.39 (3.1x our 0.209). Determinism may be the dominant DSI suppressor. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, add (1) per-trial NetStim noise = 0.1 (~1 ms jitter) on each AMPA and tonic-GABA driver, then (2) implement the deRosenroll2026 AR(2) correlated release schedule (rho in {0.0, 0.6}, n=20 trials per direction). Operate at the t0059 optimum (gAMPA=1.0/gaba=0.10) across 4 noise cells. Pass criterion: vector-sum DSI &gt; 0.3 in at...
+
+## Stricter AMPA escape range (gAMPA in {5, 7, 10} nS) and sub-0.1 nS bar-locked GABA on t0059 substrate
+ID: S-0059-05
+Priority: medium
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+The t0059 sweep limits gAMPA to {0.5, 1.0, 2.0, 3.0, 4.0} nS (trimmed from 5 nS by researcher decision). The compare-literature Limitations section flags the diminishing-returns shape suggests extending to 6-10 nS is unlikely to break the multi-spike wall but should be confirmed. Symmetrically, 10 of 25 cells already at GABA_BASE_NS = 0.10 nS show no escape, but sub-0.1 nS values (0.025, 0.05) were not tested. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, run gAMPA in {5.0, 7.0, 10.0} nS x GABA_BASE_NS in {0.025, 0.05, 0.10} nS (9 cells, 3240 trials). Pass criterion: locate at least one operating point with peak Hz &gt;= 5 Hz AND vector-sum DSI &gt; 0.3, OR confirm the 4 nS / 0.1 nS ceiling rules...
+
+## Bar-locked window-length sweep (window_ms in {100, 200, 300, 500}) on t0059 substrate
+ID: S-0059-06
+Priority: medium
+Kind: experiment
+Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
+t0059 fixes window_ms = 200 (midpoint of the published 100-300 ms SAC-&gt;DSGC IPSC envelope range). Compare-literature Limitations flags this as untested; PolegPolsky2016 [p. 1280] uses tau ~50-150 ms and deRosenroll2026 implies shorter envelopes match in vitro better. The 8.5 ms IPSP centre-of-mass shift demonstrated at window_ms = 200 may sharpen substantially at window_ms = 100 (more direction-tuned suppression) or smear out at window_ms = 500 (back toward t0057 global behaviour). Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, sweep window_ms in {100, 200, 300, 500} ms x GABA_BASE_NS in {0.10, 0.50, 1.0} nS at fixed gAMPA = 2.0 nS (12 cells, 4320 trials). Pass criterion: detect a...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

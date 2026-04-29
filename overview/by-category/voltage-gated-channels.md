@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(33)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(35)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,49 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (27 open, 6 closed)
+## Suggestions (29 open, 6 closed)
+
+<details>
+<summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
+bar-locked GABA + AMPA-escape substrate</strong> (S-0059-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
+[t0059_bar_locked_gaba_ampa_sweep_t0057](../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
+
+The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209) most
+plausibly stems from passive dendrites capping local depolarisation; Park2014 [p. 3977] and
+PolegPolsky2016 [p. 1278] both implicitly assume active dendritic mechanisms. Fork
+minimal_dsgc_bar_locked_gaba_ampa_sweep, install Nav1.6 (g_Nabar in {0.05, 0.10, 0.20} S/cm^2)
+and Kv3 (g_Kv3bar in {0.05, 0.10} S/cm^2) on dendritic sections, and run a focused 3x2x3
+(gNa_dend x gKv3_dend x gAMPA in {1.0, 2.0, 4.0}) sweep at GABA_BASE_NS = 0.10 nS (the t0059
+vector-sum DSI optimum). Pass criterion: at least one operating point with peak Hz >= 5 Hz AND
+vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against PolegPolsky2016
+spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
+addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
+sweep on the t0059 substrate</strong> (S-0059-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
+[t0059_bar_locked_gaba_ampa_sweep_t0057](../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
+
+S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057's global (100, 1400) ms tonic
+window and fixed gAMPA = 0.5 nS. t0059 demonstrates the bar-locked window mechanism delivers
+an 8.5 ms direction-dependent IPSP centre-of-mass shift (REQ-13 PASS) the global window
+cannot. Layering Mg-block NMDA on the bar-locked substrate combines all three plausible
+gap-closers identified in compare-literature: voltage-dependent NMDA gain (PolegPolsky2016),
+per-synapse bar-arrival timing (deRosenroll2026), and AMPA escape. Fork
+minimal_dsgc_bar_locked_gaba_ampa_sweep, install the Jahr-Stevens NMDA_MgBlock mechanism from
+t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0, 2.0, 4.0} nS
+at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
+criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
+window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /

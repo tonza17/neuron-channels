@@ -1,10 +1,108 @@
 # Libraries by Date Added
 
-12 librar(y/ies) grouped by creation date.
+13 librar(y/ies) grouped by creation date.
 
 [Back to all libraries](../README.md)
 
 ---
+
+## 2026-04-29 (1)
+
+<details>
+<summary>📦 <strong>Minimal DSGC with Bar-Arrival-Locked Tonic GABA + AMPA
+Sweep</strong> (<code>minimal_dsgc_bar_locked_gaba_ampa_sweep</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `minimal_dsgc_bar_locked_gaba_ampa_sweep` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\constants.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\paths.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\swc_io.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\neuron_bootstrap.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\cell.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\placement.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\synapses.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\trial.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\run_tuning_curve.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\render_figures.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\compute_metrics.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\metrics_extra.py`, `tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\mod\GabaTonic.mod` |
+| **Dependencies** | neuron, numpy, matplotlib, pandas, tqdm |
+| **Date created** | 2026-04-29 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Created by** | [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\assets\library\minimal_dsgc_bar_locked_gaba_ampa_sweep\description.md) |
+
+**Entry points:**
+
+* `AMPA_PEAK_NS_VALUES` (function) — Public 5-tuple of swept per-synapse AMPA peak conductance
+  values in nS (0.5, 1.0, 2.0, 3.0, 4.0). The outer loop in run_full_sweep iterates over
+  these; threaded as ``gampa_ns: float`` through schedule_ei_onsets and run_one_trial.
+* `GABA_BASE_NS_VALUES` (function) — Public 5-tuple of swept per-synapse peak GABA conductance
+  values in nS (0.1, 0.2, 0.5, 1.0, 2.0). The inner loop in run_full_sweep iterates over
+  these.
+* `WINDOW_MS` (function) — Public per-synapse tonic-window width in ms (default 200). Active
+  GABA synapses receive g = gaba_base_ns * 1e-3 (uS) over [t_on_i, t_on_i + WINDOW_MS] where
+  t_on_i is the per-synapse bar-arrival time.
+* `TrialMode` (class) — StrEnum with members FULL, EPSP_PASSIVE, IPSP_PASSIVE. EPSP_PASSIVE /
+  IPSP_PASSIVE save-and-zero HH gnabar / gkbar on soma + AIS so the soma trace is the pure
+  synaptic envelope (no spikes).
+* `gaba_tonic` (class) — NEURON POINT_PROCESS registered as h.gaba_tonic after
+  ensure_gaba_tonic_compiled() runs. RANGE attributes: g (uS), e (mV), t_on (ms), t_off (ms),
+  ramp_ms (ms; default 1). Conductance envelope is g * envelope(t) where envelope is 0 outside
+  [t_on, t_off], a 1 ms cosine ramp at each edge, and 1.0 in the middle. NONSPECIFIC_CURRENT i
+  = envelope * g * (v - e). No NET_RECEIVE block; conductance is set by direct attribute write
+  per trial. Unchanged from t0057.
+* `ensure_gaba_tonic_compiled` (function) — Build code/mod/nrnmech.dll from
+  code/mod/GabaTonic.mod via the run_nrnivmodl.cmd shim if missing, then load the DLL via
+  h.nrn_load_dll so h.gaba_tonic becomes available. Idempotent. Must be called AFTER
+  ensure_neuron_importable + load_stdrun and BEFORE any h.gaba_tonic(seg) construction.
+* `build_dsgc_from_swc` (function) — Parse a calibrated SWC, collapse the 19 soma rows into
+  one Section, build one h.Section per non-soma compartment, attach a synthetic axon initial
+  segment, and return a CellHandles dataclass. HH only on soma + AIS; pas everywhere else.
+* `sample_dendritic_locations` (function) — Sample N dendritic locations uniformly along total
+  dendritic length using numpy.random.default_rng(seed); seed=0 reproduces t0052 / t0053 /
+  t0057 placement bit-for-bit.
+* `build_ei_pairs` (function) — Construct one AMPA Exp2Syn + tonic gaba_tonic instance per
+  Location; each pair carries theta_centrifugal_rad. AMPA NetCon weight is set per trial by
+  schedule_ei_onsets (was hard-coded at AMPA_PEAK_NS * 1e-3 in t0057).
+* `i_synapse_fires` (function) — Pure boolean predicate: returns cos(radians(theta_stim_deg -
+  theta_centrifugal_deg)) < 0 (strict; perpendicular does not fire). Bit-identical to t0053 /
+  t0057.
+* `schedule_ei_onsets` (function) — Per-trial scheduler: set AMPA NetStim.start AND
+  ampa_netcon.weight[0] = gampa_ns * 1e-3 (REQ-7); for each I synapse evaluate
+  i_synapse_fires; when fired set pair.gaba_syn.g = gaba_base_ns * 1e-3 (uS) and (t_on, t_off)
+  = (onset_ms, onset_ms + WINDOW_MS) per REQ-1, otherwise zero g and collapse the window.
+  Returns ScheduleResult with onset_times_ms and i_fired_mask.
+* `ScheduleResult` (class) — Frozen dataclass returned by schedule_ei_onsets, with
+  onset_times_ms: list[float] and i_fired_mask: list[bool] aligned with the pair list.
+* `HhConductanceSnapshot` (class) — Frozen dataclass of per-segment HH gnabar / gkbar values
+  on soma + AIS, captured by _save_and_zero_hh and consumed by _restore_hh.
+* `_save_and_zero_hh` (function) — Save HH gnabar / gkbar on every segment of soma and
+  axon_initial_segment, then zero them. Returns an HhConductanceSnapshot. Dendrites are NOT
+  touched (no hh mechanism). Used by run_one_trial for EPSP_PASSIVE / IPSP_PASSIVE modes.
+* `_restore_hh` (function) — Restore HH gnabar / gkbar from a snapshot. Always called from a
+  try/finally inside run_one_trial so HH is restored even if NEURON raises.
+* `run_one_trial` (function) — Run one trial: schedule onsets via the spatial gate at the
+  supplied (gampa_ns, gaba_base_ns), apply mode-specific weight overrides, save-and-zero HH
+  for passive modes (try/finally), finitialize + continuerun, return TrialResult with V(t),
+  spike times, i_fired_mask, i_active_fraction, gampa_ns and gaba_base_ns.
+* `run_full_sweep` (function) — End-to-end 5 (gampa) x 5 (gaba) x 12 directions x 10 trials x
+  3 modes = 9,000-trial sweep with dry-run validation gate (including the bar-locked IPSP
+  centre-of-mass shift check). Writes per-mode tuning-curve / spike-time / voltage-trace CSVs
+  each carrying leading (gampa_ns, gaba_base_ns) columns, active_fraction_per_direction CSV,
+  placement_seed0.json, and wallclock.json. Activation-time CSV is dropped per REQ-5.
+* `compute_vector_sum_dsi` (function) — Vector-sum DSI from the per-angle mean firing rates:
+  |sum r_k * exp(i theta_k)| / sum r_k.
+* `compute_preferred_direction_deg` (function) — Preferred direction in degrees from the
+  complex sum of rate-weighted unit vectors.
+* `compute_metrics_main` (script) — Compute per-(gampa, gaba, mode) tuning-curve metrics and
+  write metrics.json (75-variant explicit format: 5 gampa x 5 gaba x 3 modes) plus
+  derived_quantities.json (cross-grid 5x5 arrays for peak Hz, null Hz, primary DSI, vector-sum
+  DSI, HWHM, RMSE; per-(gampa, gaba, angle) EPSP / IPSP envelopes; EPSP-decay grid). Enforces
+  the EPSP_PASSIVE peak-Vm soft gate (REQ-15).
+* `render_figures_main` (script) — Render all per-(gampa, gaba, direction) figures (soma V,
+  EPSP, IPSP, PSTH) plus per-(gampa, gaba) polar tuning curves, the active-fraction polar
+  plot, the 6 cross-grid heatmaps, and the regime-boundary contour overlay. Total ~1233 PNGs
+  across the 5x5 grid.
+
+Pure-Python NEURON library for a minimal direction-selective ganglion cell with 100 co-located
+E + I synapses; the GABA branch uses the t0057 gaba_tonic POINT_PROCESS gated by a per-synapse
+bar-arrival-locked (t_on_i, t_off_i) window; trial-mode dispatcher exposes FULL / EPSP_PASSIVE
+/ IPSP_PASSIVE with HH save-and-zero on soma + AIS for the passive modes; sweeps a 5x5 (gAMPA,
+GABA_BASE_NS) grid via public AMPA_PEAK_NS_VALUES and GABA_BASE_NS_VALUES constants.
+
+</details>
 
 ## 2026-04-28 (2)
 

@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(46)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(47)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2287,7 +2287,28 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (35 open, 11 closed)
+## Suggestions (36 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
+bar-locked GABA + AMPA-escape substrate</strong> (S-0059-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
+[t0059_bar_locked_gaba_ampa_sweep_t0057](../../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
+
+The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209) most
+plausibly stems from passive dendrites capping local depolarisation; Park2014 [p. 3977] and
+PolegPolsky2016 [p. 1278] both implicitly assume active dendritic mechanisms. Fork
+minimal_dsgc_bar_locked_gaba_ampa_sweep, install Nav1.6 (g_Nabar in {0.05, 0.10, 0.20} S/cm^2)
+and Kv3 (g_Kv3bar in {0.05, 0.10} S/cm^2) on dendritic sections, and run a focused 3x2x3
+(gNa_dend x gKv3_dend x gAMPA in {1.0, 2.0, 4.0}) sweep at GABA_BASE_NS = 0.10 nS (the t0059
+vector-sum DSI optimum). Pass criterion: at least one operating point with peak Hz >= 5 Hz AND
+vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against PolegPolsky2016
+spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
+addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>SEClamp Fig 3A-E re-measurement at intermediate dendritic
