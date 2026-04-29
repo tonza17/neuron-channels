@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions covering propagation of the bar-locked GABA + corrected protocol back to t0054 (NMDA architecture) and t0052 (scalar gabaMOD), any operating-point insights from the 5x5 sweep, and active-dendrite (RQ4) or g_Na/g_K (RQ1) follow-ups depending on outcome.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T20:47:50Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T20:52:57Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
