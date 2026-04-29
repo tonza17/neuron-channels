@@ -5,12 +5,12 @@
   "name": "HH voltage-step diagnostic on t0059 substrate (no synapses)",
   "short_description": "SEClamp voltage steps to {-60, -50, -40, -30, -20, -10} mV for 200 ms each on the t0059 cell (no synaptic input); HH on vs HH off; plot Vm and clamp current.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0059_bar_locked_gaba_ampa_sweep_t0057"
   ],
   "start_time": "2026-04-29T23:31:00Z",
-  "end_time": null,
+  "end_time": "2026-04-29T23:46:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
