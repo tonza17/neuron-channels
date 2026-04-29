@@ -1,0 +1,20 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 1 item
+
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_bar_locked_ipsp_envelope.py::test_bar_locked_ipsp_envelope_shifts_with_direction [bootstrap] gaba_tonic mechanism registered.
+[setup] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[setup] cell built: n_dendrites=6717 total_dendritic_length_um=1528.62 soma_L_um=8.74 soma_diam_um=8.24 soma_origin_um=(0.0, 0.0, 0.0)
+[setup] Sampling 100 dendritic locations (seed=0)
+[setup] Wrote placement to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\results\placement_seed0.json
+[setup] Building 100 co-located E+tonic-I pairs
+[bar-locked-ipsp] Running IPSP_PASSIVE trial at theta=0...
+[bar-locked-ipsp] Running IPSP_PASSIVE trial at theta=90...
+[bar-locked-ipsp] COM(theta=0)=142.86 ms, COM(theta=90)=151.36 ms, |shift|=8.50 ms, predicted_lower_bound=0.00 ms
+PASSED
+
+============================== 1 passed in 3.50s ==============================

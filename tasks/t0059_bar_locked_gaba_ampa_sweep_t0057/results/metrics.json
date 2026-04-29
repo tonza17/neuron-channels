@@ -1,0 +1,1129 @@
+{
+  "variants": [
+    {
+      "variant_id": "gampa_0.50_gaba_0.10_full",
+      "label": "gAMPA=0.50/GABA=0.10/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.10_epsp_passive",
+      "label": "gAMPA=0.50/GABA=0.10/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.10_ipsp_passive",
+      "label": "gAMPA=0.50/GABA=0.10/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.20_full",
+      "label": "gAMPA=0.50/GABA=0.20/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.20_epsp_passive",
+      "label": "gAMPA=0.50/GABA=0.20/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.20_ipsp_passive",
+      "label": "gAMPA=0.50/GABA=0.20/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.50_full",
+      "label": "gAMPA=0.50/GABA=0.50/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.50_epsp_passive",
+      "label": "gAMPA=0.50/GABA=0.50/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_0.50_ipsp_passive",
+      "label": "gAMPA=0.50/GABA=0.50/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_1.00_full",
+      "label": "gAMPA=0.50/GABA=1.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_1.00_epsp_passive",
+      "label": "gAMPA=0.50/GABA=1.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_1.00_ipsp_passive",
+      "label": "gAMPA=0.50/GABA=1.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_2.00_full",
+      "label": "gAMPA=0.50/GABA=2.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": 17.178292988536434
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_2.00_epsp_passive",
+      "label": "gAMPA=0.50/GABA=2.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_0.50_gaba_2.00_ipsp_passive",
+      "label": "gAMPA=0.50/GABA=2.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 0.5,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.10_full",
+      "label": "gAMPA=1.00/GABA=0.10/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 90.00000000000001,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.43165333512899
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.10_epsp_passive",
+      "label": "gAMPA=1.00/GABA=0.10/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.10_ipsp_passive",
+      "label": "gAMPA=1.00/GABA=0.10/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.20_full",
+      "label": "gAMPA=1.00/GABA=0.20/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 97.5,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.49602079302769
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.20_epsp_passive",
+      "label": "gAMPA=1.00/GABA=0.20/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.20_ipsp_passive",
+      "label": "gAMPA=1.00/GABA=0.20/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.50_full",
+      "label": "gAMPA=1.00/GABA=0.50/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.50_epsp_passive",
+      "label": "gAMPA=1.00/GABA=0.50/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_0.50_ipsp_passive",
+      "label": "gAMPA=1.00/GABA=0.50/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_1.00_full",
+      "label": "gAMPA=1.00/GABA=1.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_1.00_epsp_passive",
+      "label": "gAMPA=1.00/GABA=1.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_1.00_ipsp_passive",
+      "label": "gAMPA=1.00/GABA=1.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_2.00_full",
+      "label": "gAMPA=1.00/GABA=2.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_2.00_epsp_passive",
+      "label": "gAMPA=1.00/GABA=2.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_1.00_gaba_2.00_ipsp_passive",
+      "label": "gAMPA=1.00/GABA=2.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 1.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.10_full",
+      "label": "gAMPA=2.00/GABA=0.10/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.20000011200001785,
+        "tuning_curve_hwhm_deg": 37.499999999999986,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.063965238280947
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.10_epsp_passive",
+      "label": "gAMPA=2.00/GABA=0.10/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.10_ipsp_passive",
+      "label": "gAMPA=2.00/GABA=0.10/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.20_full",
+      "label": "gAMPA=2.00/GABA=0.20/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.20000011200001785,
+        "tuning_curve_hwhm_deg": 29.999999999999993,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.129800056257512
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.20_epsp_passive",
+      "label": "gAMPA=2.00/GABA=0.20/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.20_ipsp_passive",
+      "label": "gAMPA=2.00/GABA=0.20/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.50_full",
+      "label": "gAMPA=2.00/GABA=0.50/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.506134016848044
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.50_epsp_passive",
+      "label": "gAMPA=2.00/GABA=0.50/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_0.50_ipsp_passive",
+      "label": "gAMPA=2.00/GABA=0.50/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_1.00_full",
+      "label": "gAMPA=2.00/GABA=1.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 75.00000000000001,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.60337240214017
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_1.00_epsp_passive",
+      "label": "gAMPA=2.00/GABA=1.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_1.00_ipsp_passive",
+      "label": "gAMPA=2.00/GABA=1.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_2.00_full",
+      "label": "gAMPA=2.00/GABA=2.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_2.00_epsp_passive",
+      "label": "gAMPA=2.00/GABA=2.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": 75.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_2.00_gaba_2.00_ipsp_passive",
+      "label": "gAMPA=2.00/GABA=2.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 2.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.10_full",
+      "label": "gAMPA=3.00/GABA=0.10/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4999998250000087,
+        "tuning_curve_hwhm_deg": 104.99992650002943,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.222909011117306
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.10_epsp_passive",
+      "label": "gAMPA=3.00/GABA=0.10/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.10_ipsp_passive",
+      "label": "gAMPA=3.00/GABA=0.10/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.20_full",
+      "label": "gAMPA=3.00/GABA=0.20/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4999998250000087,
+        "tuning_curve_hwhm_deg": 104.99992650002943,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.222909011117306
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.20_epsp_passive",
+      "label": "gAMPA=3.00/GABA=0.20/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.20_ipsp_passive",
+      "label": "gAMPA=3.00/GABA=0.20/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.50_full",
+      "label": "gAMPA=3.00/GABA=0.50/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 75.00000000000001,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.468449219806864
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.50_epsp_passive",
+      "label": "gAMPA=3.00/GABA=0.50/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_0.50_ipsp_passive",
+      "label": "gAMPA=3.00/GABA=0.50/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_1.00_full",
+      "label": "gAMPA=3.00/GABA=1.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_1.00_epsp_passive",
+      "label": "gAMPA=3.00/GABA=1.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_1.00_ipsp_passive",
+      "label": "gAMPA=3.00/GABA=1.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_2.00_full",
+      "label": "gAMPA=3.00/GABA=2.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.633561719902207
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_2.00_epsp_passive",
+      "label": "gAMPA=3.00/GABA=2.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_3.00_gaba_2.00_ipsp_passive",
+      "label": "gAMPA=3.00/GABA=2.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 3.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.10_full",
+      "label": "gAMPA=4.00/GABA=0.10/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 67.50000000000001,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.53315809009725
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.10_epsp_passive",
+      "label": "gAMPA=4.00/GABA=0.10/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.10_ipsp_passive",
+      "label": "gAMPA=4.00/GABA=0.10/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.1
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.20_full",
+      "label": "gAMPA=4.00/GABA=0.20/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 67.50000000000001,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.53315809009725
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.20_epsp_passive",
+      "label": "gAMPA=4.00/GABA=0.20/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.20_ipsp_passive",
+      "label": "gAMPA=4.00/GABA=0.20/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.50_full",
+      "label": "gAMPA=4.00/GABA=0.50/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": 16.421429515011837
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.50_epsp_passive",
+      "label": "gAMPA=4.00/GABA=0.50/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_0.50_ipsp_passive",
+      "label": "gAMPA=4.00/GABA=0.50/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 0.5
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_1.00_full",
+      "label": "gAMPA=4.00/GABA=1.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 75.00000000000001,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.56972856783266
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_1.00_epsp_passive",
+      "label": "gAMPA=4.00/GABA=1.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_1.00_ipsp_passive",
+      "label": "gAMPA=4.00/GABA=1.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_2.00_full",
+      "label": "gAMPA=4.00/GABA=2.00/FULL",
+      "dimensions": {
+        "mode": "full",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33333302222220157,
+        "tuning_curve_hwhm_deg": 75.00000000000001,
+        "tuning_curve_reliability": 0.9999999999999999,
+        "tuning_curve_rmse": 16.536500855616172
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_2.00_epsp_passive",
+      "label": "gAMPA=4.00/GABA=2.00/EPSP_PASSIVE",
+      "dimensions": {
+        "mode": "epsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": 180.0,
+        "tuning_curve_reliability": 1.0,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "gampa_4.00_gaba_2.00_ipsp_passive",
+      "label": "gAMPA=4.00/GABA=2.00/IPSP_PASSIVE",
+      "dimensions": {
+        "mode": "ipsp_passive",
+        "gampa_ns": 4.0,
+        "gaba_base_ns": 2.0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

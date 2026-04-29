@@ -1,0 +1,18 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 8 items
+
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_bar_locked_ipsp_envelope.py::test_bar_locked_ipsp_envelope_shifts_with_direction PASSED [ 12%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_hh_save_and_zero.py::test_hh_save_and_zero_full_trace_matches_reference PASSED [ 25%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_placement_seed0_match.py::test_placement_seed0_matches_t0057 PASSED [ 37%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_quiescent_rest.py::test_quiescent_rest PASSED [ 50%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_pd_side_does_not_fire PASSED [ 62%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_nd_side_fires PASSED [ 75%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_perpendicular_does_not_fire PASSED [ 87%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_uniform_random_active_fraction_near_half PASSED [100%]
+
+============================= 8 passed in 14.15s ==============================

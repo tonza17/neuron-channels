@@ -1,0 +1,55 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0059_bar_locked_gaba_ampa_sweep_t0057
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 8 items
+
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_bar_locked_ipsp_envelope.py::test_bar_locked_ipsp_envelope_shifts_with_direction PASSED [ 12%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_hh_save_and_zero.py::test_hh_save_and_zero_full_trace_matches_reference FAILED [ 25%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_placement_seed0_match.py::test_placement_seed0_matches_t0057 PASSED [ 37%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_quiescent_rest.py::test_quiescent_rest PASSED [ 50%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_pd_side_does_not_fire PASSED [ 62%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_nd_side_fires PASSED [ 75%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_perpendicular_does_not_fire PASSED [ 87%]
+tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_spatial_gating.py::test_uniform_random_active_fraction_near_half PASSED [100%]
+
+================================== FAILURES ===================================
+_____________ test_hh_save_and_zero_full_trace_matches_reference ______________
+
+    def test_hh_save_and_zero_full_trace_matches_reference() -> None:
+        """Run one FULL reference trial and assert match against the stored reference array."""
+>       artifacts: SweepArtifacts = setup_sweep_artifacts()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\test_hh_save_and_zero.py:53:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\run_tuning_curve.py:152: in setup_sweep_artifacts
+    ensure_gaba_tonic_compiled()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def ensure_gaba_tonic_compiled() -> None:
+        """Build (if needed) and load ``code/mod/nrnmech.dll`` so ``h.gaba_tonic`` is available.
+
+        Order: this MUST be called AFTER ``ensure_neuron_importable`` and AFTER ``load_stdrun``,
+        and BEFORE any code constructs an ``h.gaba_tonic(seg)`` handle. Idempotent across multiple
+        invocations within the same process: the DLL is rebuilt only if missing, and re-loading an
+        already-loaded mechanism is a no-op for the NEURON kernel.
+        """
+        if not NRNMECH_DLL.exists():
+            _build_gaba_tonic_dll()
+        from neuron import h  # noqa: PLC0415
+
+>       h.nrn_load_dll(str(NRNMECH_DLL))
+E       RuntimeError: hocobj_call error
+
+tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\neuron_bootstrap.py:132: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: gaba_tonic
+ near line 0
+ ^
+        nrn_load_dll("C:\Users\m...")
+=========================== short test summary info ===========================
+FAILED tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/code/test_hh_save_and_zero.py::test_hh_save_and_zero_full_trace_matches_reference
+========================= 1 failed, 7 passed in 4.24s =========================

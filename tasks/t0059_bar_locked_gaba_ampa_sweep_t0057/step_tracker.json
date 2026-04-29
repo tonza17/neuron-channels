@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Build the minimal_dsgc_bar_locked_gaba_ampa_sweep library asset with per-synapse bar-arrival-locked GABA windows and the corrected EPSP_PASSIVE/IPSP_PASSIVE/FULL protocol; run 12 directions x 10 trials x 3 modes x 25 (gAMPA, GABA_BASE_NS) grid cells = 9000 trials; produce per-direction plots and metrics for each grid cell, plus cross-grid heatmap summary plots.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-29T00:32:49Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,
