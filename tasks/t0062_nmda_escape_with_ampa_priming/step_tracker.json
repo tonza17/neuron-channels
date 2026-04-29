@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Run NMDA + AMPA-priming sweep.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-29T22:53:57Z",
-      "completed_at": null,
+      "completed_at": "2026-04-29T23:01:46Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
