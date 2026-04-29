@@ -1,0 +1,20 @@
+{
+  "spec_version": 4,
+  "task_id": "t0064_hh_current_step_test",
+  "task_index": 64,
+  "name": "HH current-step diagnostic on t0059 substrate (no synapses)",
+  "short_description": "IClamp current steps {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA for 200 ms each on the t0059 cell (no synapses); HH on vs HH off; plot Vm response.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0059_bar_locked_gaba_ampa_sweep_t0057",
+    "t0063_hh_voltage_step_test"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {},
+  "task_types": [
+    "experiment-run"
+  ],
+  "source_suggestion": null
+}
