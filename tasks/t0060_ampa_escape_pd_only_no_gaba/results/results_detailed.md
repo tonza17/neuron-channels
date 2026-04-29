@@ -37,10 +37,10 @@ on local CPU under CVODE.
 | 0.5 | +18.99 | 1 | -47.75 | 0 | +66.74 |
 | 1.0 | +19.49 | 2 | -36.94 | 0 | +56.43 |
 | 2.0 | +19.13 | 2 | -24.68 | 0 | +43.81 |
-| 5.0 | +17.17 | 1 | -11.60 | 1 (false†) | +28.77 |
-| 10.0 | +14.92 | 2 | -6.33 | 1 (false†) | +21.25 |
-| 15.0 | +13.53 | 2 | -4.61 | 1 (false†) | +18.14 |
-| 20.0 | +12.56 | 4 | -3.76 | 1 (false†) | +16.32 |
+| 5.0 | +17.17 | 1 | -11.60 | 1 (false) | +28.77 |
+| 10.0 | +14.92 | 2 | -6.33 | 1 (false) | +21.25 |
+| 15.0 | +13.53 | 2 | -4.61 | 1 (false) | +18.14 |
+| 20.0 | +12.56 | 4 | -3.76 | 1 (false) | +16.32 |
 
 *False spike: the NetCon spike detector uses `AP_THRESHOLD_MV = -20 mV` from t0059's `constants.py`
 to record threshold crossings. With HH off and very strong AMPA (gAMPA ≥ 5 nS), the passive Vm can
@@ -48,7 +48,7 @@ cross -20 mV without firing a real action potential — the recorded "spike" is 
 crossing of the passive depolarization. Inspect the trace shape (smooth rise / fall, no sharp +0 mV
 peak) to distinguish from a real AP.
 
-� Confirmed false-positive: at gAMPA = 5 nS / 10 nS / 15 nS / 20 nS the EPSP_PASSIVE peak Vm stays
+Confirmed false-positive: at gAMPA = 5 nS / 10 nS / 15 nS / 20 nS the EPSP_PASSIVE peak Vm stays
 well below 0 mV (the AMPA reversal), confirming HH is properly disabled — no real spike occurred,
 only a threshold-crossing on the passive trace.
 
