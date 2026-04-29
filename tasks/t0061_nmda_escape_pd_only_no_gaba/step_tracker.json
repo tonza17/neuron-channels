@@ -121,7 +121,7 @@
     {
       "step": 14,
       "name": "suggestions",
-      "description": "Empty — diagnostic feeds existing follow-ups.",
+      "description": "Empty \u2014 diagnostic feeds existing follow-ups.",
       "status": "pending",
       "started_at": null,
       "completed_at": null,
