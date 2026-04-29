@@ -1,14 +1,111 @@
 # Tasks by Date Added
 
-61 tasks grouped by effective task date.
+62 tasks grouped by effective task date.
 
 [Back to all tasks](../README.md)
 
 ---
 
-## 2026-04-29 (4)
+## 2026-04-29 (5)
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0062 — <strong>NMDAR-escape test with AMPA priming on t0059 substrate
+at PD with GABA=0</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0062_nmda_escape_with_ampa_priming` |
+| **Status** | completed |
+| **Effective date** | 2026-04-29 |
+| **Dependencies** | [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-29T22:46:47Z |
+| **End time** | 2026-04-29T23:04:00Z |
+| **Step progress** | 7/15 |
+| **Task page** | [NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md) |
+| **Task folder** | [`t0062_nmda_escape_with_ampa_priming/`](../../../tasks/t0062_nmda_escape_with_ampa_priming/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0062_nmda_escape_with_ampa_priming/results/results_detailed.md) |
+
+# NMDAR-Escape Test with AMPA Priming on t0059 Substrate at PD with GABA = 0
+
+## Source
+
+User-commissioned diagnostic, parallel to t0061 but with AMPA priming. Goal: characterise how
+co-located AMPA + NMDA (no GABA) responds to PD bar input across the same gNMDA range as
+t0061.
+
+## Mechanism Choice
+
+* **AMPA**: standard `Exp2Syn` (rise 0.5 ms, decay 2.5 ms, e = 0 mV), fixed at **gAMPA = 0.5
+  nS**.
+* **NMDA**: t0055's `NMDA_MgBlock` (Jahr-Stevens voltage-dependent), swept gNMDA in {0.1, 0.5,
+  1, 2, 5, 10, 15, 20} nS.
+* Both AMPA and NMDA at the same dendritic locations, driven by a shared NetStim. AMPA primes
+  the cell with a fast (~10 ms) depolarization, partially unblocking Mg from the NMDA channel.
+
+## Sweep
+
+| Axis | Values |
+| --- | --- |
+| `GABA_BASE_NS` | **0** |
+| `gAMPA_PRIMING_NS` | **0.5** (fixed) |
+| Direction | theta = 0 deg only |
+| Trials per condition | 1 |
+| `gNMDA` (nS) | {0.1, 0.5, 1.0, 2.0, 5.0, 10.0, 15.0, 20.0} |
+| Mode | `FULL` and `EPSP_PASSIVE` |
+
+Total: 8 gNMDA × 2 modes × 1 trial × 1 direction = **16 trials**.
+
+## Outputs
+
+Same shape as t0061: `voltage_traces_pd_only.csv`, `summary_pd_only.csv`, `wallclock.json`,
+`placement_seed0.json`, `voltage_response_grid.png` (8 panels), `voltage_response_overlay.png`
+(all 16 traces).
+
+## Architecture
+
+Reuses t0059's library for cell + placement and t0055's NMDA_MgBlock.mod (copied verbatim).
+Each E location gets both an AMPA `Exp2Syn` and an `NMDA_MgBlock` POINT_PROCESS, both wired to
+the same NetStim that fires once at bar-arrival time.
+
+## Verification Criteria
+
+* CSVs and 2 PNGs exist; verifiers pass.
+
+**Results summary:**
+
+> **Results Summary: t0062 NMDA + AMPA-Priming PD Diagnostic**
+>
+> **Summary**
+>
+> Ran 16 trials (8 gNMDA values × 2 modes × 1 trial × 1 direction) at theta = 0 deg with GABA
+> = 0
+> and AMPA fixed at 0.5 nS as priming on every E synapse, NMDA Mg-block sweep gNMDA in {0.1,
+> 0.5, 1,
+> 2, 5, 10, 15, 20} nS. Wall-clock 269.80 s. Headline: **AMPA priming abolishes the silent
+> regime seen
+> in t0061** — the cell fires 2-4 spikes at every gNMDA value. Peak spike count **4 at gNMDA =
+> 2.0
+> nS** (AMPA-NMDA synergy point), plateau of 2-3 spikes at gNMDA in [0.1, 1.0]
+> (AMPA-only-like) and
+> [5, 20] (AMPA + NMDA plateau).
+>
+> **Metrics**
+>
+> * **gNMDA = 0.1 / 0.5 / 1.0 nS**: FULL = +15.84 / +15.78 / +15.71 mV, **2 spikes** each;
+> EPSP_PASSIVE peak = -52.56 / -51.85 / -49.54 mV. AMPA dominates the response.
+> * **gNMDA = 2.0 nS (synergy peak)**: FULL = +15.58 mV, **4 spikes**; EPSP_PASSIVE = -33.43
+>   mV. AMPA
+> primes, NMDA Mg-block opens, sustained depolarization supports multi-spike train.
+> * **gNMDA = 5.0 nS**: FULL = +15.28 mV / 2 spikes; EPSP_PASSIVE = -8.54 mV / 1 (false).
+> * **gNMDA = 10.0 nS**: FULL = +14.92 mV / 3 spikes; EPSP_PASSIVE = -4.65 mV / 1 (false).
+> * **gNMDA = 15.0 nS**: FULL = +14.71 mV / 3 spikes; EPSP_PASSIVE = -3.36 mV / 1 (false).
+
+</details>
 
 <details>
 <summary>✅ 0061 — <strong>Quick NMDAR-escape test on t0059 substrate at preferred

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-29T22:33:55Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-29T23:09:58Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
     <section_count>105</section_count>
-    <char_count>1847155</char_count>
-    <byte_count>1851606</byte_count>
-    <estimated_tokens>461788</estimated_tokens>
+    <char_count>1848243</char_count>
+    <byte_count>1852699</byte_count>
+    <estimated_tokens>462060</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -167,9 +167,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0059_bar_locked_gaba_ampa_sweep_t0057</id>
         <id>t0060_ampa_escape_pd_only_no_gaba</id>
         <id>t0061_nmda_escape_pd_only_no_gaba</id>
+        <id>t0062_nmda_escape_with_ampa_priming</id>
       </source_ids>
       <content>
-Completed tasks: 55
+Completed tasks: 56
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -500,6 +501,12 @@ ID: t0061_nmda_escape_pd_only_no_gaba
 Completed: 2026-04-29
 Short description: GABA=0, theta=0 only, NMDA-only excitation (Mg-block); sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.
 Result summary: Results Summary: t0061 NMDA-Only PD Diagnostic Summary Ran 16 trials (8 gNMDA values × 2 modes × 1 trial) at theta = 0 deg with GABA = 0, AMPA = 0, NMDA-only excitation (Mg-block, Jahr-Stevens). Wall-clock 118.14 s on local CPU under CVODE. Headline: **regenerative Mg-block escape between gNMDA = 1.0 nS** (peak Vm = -58.89 mV, 0 spikes) **and gNMDA = 2.0 nS** (peak Vm = +11.29 mV, **3 spikes**). The NMDA plateau widens to ~200-400 ms at gNMDA &gt;= 5 nS, far longer than the AMPA EPSP in t0060 (~10 ms). Metrics * **gNMDA = 0.1 nS**: FULL peak Vm = -64.22 mV, 0 spikes; EPSP_PASSIVE peak Vm = -64.47 mV, 0 spikes. Mg block fully engaged. * **gNMDA = 0.5 nS**: FULL peak = -62.61 mV, 0 spikes. Tiny...
+
+## NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0
+ID: t0062_nmda_escape_with_ampa_priming
+Completed: 2026-04-29
+Short description: GABA=0, theta=0 only, AMPA fixed at 0.5 nS (priming) + NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.
+Result summary: Results Summary: t0062 NMDA + AMPA-Priming PD Diagnostic Summary Ran 16 trials (8 gNMDA values × 2 modes × 1 trial × 1 direction) at theta = 0 deg with GABA = 0 and AMPA fixed at 0.5 nS as priming on every E synapse, NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS. Wall-clock 269.80 s. Headline: **AMPA priming abolishes the silent regime seen in t0061** — the cell fires 2-4 spikes at every gNMDA value. Peak spike count **4 at gNMDA = 2.0 nS** (AMPA-NMDA synergy point), plateau of 2-3 spikes at gNMDA in [0.1, 1.0] (AMPA-only-like) and [5, 20] (AMPA + NMDA plateau). Metrics * **gNMDA = 0.1 / 0.5 / 1.0 nS**: FULL = +15.84 / +15.78 / +15.71 mV, **2 spikes** each; EPSP_PASSIVE...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
