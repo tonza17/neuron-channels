@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Initialize the standard task folder structure.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T15:51:49Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T15:52:53Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
