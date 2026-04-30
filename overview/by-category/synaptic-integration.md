@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(77)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(81)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2164,7 +2164,90 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (66 open, 11 closed)
+## Suggestions (70 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
+substrate</strong> (S-0065-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
+in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
+opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
+is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
+= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
+(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
+whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
+shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
+can be ported to the from-scratch cell builder with minimal changes. Expected output: six
+traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
+binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Match the from-scratch GABA reversal to resting potential and
+re-test direction selectivity</strong> (S-0065-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+The deposited cell places e_SACinhib = -60 mV which equals the cell's leak-driven quiescent
+potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below
+resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i),
+inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off
+threshold across all directions. Conversely, if e_GABA > v_rest, inhibition can depolarise
+toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch
+substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse
+mechanism's reversal). This directly tests whether the deposited cell's success is
+structurally dependent on its e_GABA = v_rest design choice. Expected output: from-scratch
+family with e_GABA = v_rest produces a graded tuning curve with 5-15 Hz peak in PD and DSI in
+[0.5, 0.85], matching the deposited cell's behaviour.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
+deposited cell</strong> (S-0065-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the
+inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory
+conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp
+infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory
+drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any
+non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS
+as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is
+essential for quantifying the differential shunting magnitude that drives FULL-mode DSI: the
+integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
+time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
+integrated charge per direction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Eight-direction EPSP/IPSP/FULL tuning curve on the deposited
+cell</strong> (S-0065-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 only tests gabaMOD = 0.33 (PD) and 0.99 (ND). The Poleg-Polsky 2016 paper has a smooth
+tuning curve over 8 directions, which the deposited model simulates by sweeping gabaMOD across
+[0.33, 0.99]. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 8 directions would produce an
+EPSP/IPSP decomposition for the entire tuning curve, not just the two anchor points. Most
+informative for understanding how shunting modulates the EPSP envelope at intermediate
+directions: does the relationship between gabaMOD and FULL-mode envelope compression scale
+linearly, or is there a threshold around gabaMOD ~ 0.6 where the cell transitions from spiking
+to non-spiking? Sweep cost: 24 trials (3 modes x 8 directions x 1 seed) ≈ 75 s. Expected
+output: 24-trial dataset with gabaMOD-modulated tuning curve in spike counts and the
+corresponding (constant) EPSP_PASSIVE and (constant-flat) IPSP_PASSIVE traces.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination

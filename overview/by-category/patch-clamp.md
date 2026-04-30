@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(14)](../suggestions/by-category/patch-clamp.md)
+(15)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,7 +1185,28 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (12 open, 2 closed)
+## Suggestions (13 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
+deposited cell</strong> (S-0065-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the
+inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory
+conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp
+infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory
+drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any
+non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS
+as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is
+essential for quantifying the differential shunting magnitude that drives FULL-mode DSI: the
+integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
+time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
+integrated charge per direction.
+
+</details>
 
 <details>
 <summary>🧪 <strong>GABA conductance scan under SEClamp toward paper PD 12.5 / ND

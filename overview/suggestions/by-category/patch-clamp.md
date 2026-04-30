@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-14 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **12
-open** (1 high, 10 medium, 1 low), **2 closed**.
+15 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **13
+open** (1 high, 11 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -232,6 +232,33 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
+deposited cell</strong> (S-0065-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0065-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the
+inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory
+conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp
+infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory
+drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any
+non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS
+as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is
+essential for quantifying the differential shunting magnitude that drives FULL-mode DSI: the
+integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
+time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
+integrated charge per direction.
 
 </details>
 

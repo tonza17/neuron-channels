@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T00:08:14Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T15:21:00Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>294310</char_count>
-    <byte_count>294537</byte_count>
-    <estimated_tokens>73577</estimated_tokens>
+    <char_count>299956</char_count>
+    <byte_count>300193</byte_count>
+    <estimated_tokens>74989</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -170,9 +170,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0062_nmda_escape_with_ampa_priming</id>
         <id>t0063_hh_voltage_step_test</id>
         <id>t0064_hh_current_step_test</id>
+        <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
       </source_ids>
       <content>
-Completed tasks: 58
+Completed tasks: 59
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -521,6 +522,12 @@ ID: t0064_hh_current_step_test
 Completed: 2026-04-30
 Short description: IClamp current steps {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA for 200 ms each on the t0059 cell (no synapses); HH on vs HH off; plot Vm response.
 Result summary: Results Summary: t0064 HH Current-Step Diagnostic Summary IClamp 200 ms current steps at {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA on soma, no synapses. 12 trials in 79 s. The HH model produces a clean F-I curve with rheobase between 0.1 and 0.2 nA, peak firing rate of 18 spikes / 200 ms (= 90 Hz) at 1.0 nA, and characteristic **depolarization block at 2.0 nA** (only 1 initial spike, then sustained Vm plateau ~-30 mV). Metrics | I (nA) | FULL peak Vm | FULL spikes | EPSP_PASSIVE peak Vm | F-I rate (Hz) | | --- | --- | --- | --- | --- | | 0.1 | -60.53 mV | 0 | -61.65 mV | 0 | | 0.2 | +14.48 mV | **7** | -58.53 mV | 35 | | 0.3 | +17.27 mV | **10** | -55.41 mV | 50 | | 0.5 | +19.74 mV | **13** | -49.17...
+
+## Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+ID: t0065_t0020_epsp_ipsp_vm_protocol
+Completed: 2026-04-30
+Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.
+Result summary: Results Summary: Test t0020 deposited DSGC under EPSP/IPSP/FULL protocol Summary The deposited Poleg-Polsky &amp; Diamond 2016 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — six trials (3 modes × 2 directions × 1 seed) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s direction selectivity is produced almost entirely by shunting inhibition, not hyperpolarising inhibition**. The IPSP_PASSIVE traces stay flat at the inhibitory reversal potential e_SACinhib = -60 mV in both PD and ND, while the EPSP_PASSIVE traces are bit-identical between directions (gabaMOD = 0). The FULL trace shows a 15× spike...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1005,6 +1012,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0059-01</id>
         <id>S-0059-02</id>
         <id>S-0059-03</id>
+        <id>S-0065-01</id>
+        <id>S-0065-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1163,6 +1172,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0059-04</id>
         <id>S-0059-05</id>
         <id>S-0059-06</id>
+        <id>S-0065-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1191,9 +1201,11 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0054-04</id>
         <id>S-0055-06</id>
         <id>S-0055-07</id>
+        <id>S-0065-04</id>
+        <id>S-0065-05</id>
       </source_ids>
       <content>
-Open suggestions: 222
+Open suggestions: 227
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1446,6 +1458,20 @@ Priority: high
 Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
 t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction uses 282, deRosenroll2026 [p. 5] uses &gt;1000 SAC varicosities. The compare-literature Synapse-count comparison identifies this &gt;2.8x to &gt;10x mismatch as a structural drive bottleneck consistent with the 2.143 Hz peak ceiling. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300} (re-running the placement_seed0 generator to produce three larger placement bundles), and sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz &gt;= 5 Hz...
+
+## Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family substrate
+ID: S-0065-01
+Priority: high
+Kind: experiment
+Source task: t0065_t0020_epsp_ipsp_vm_protocol
+t0065 isolated the deposited cell&#x27;s EPSP and IPSP shapes and showed that direction selectivity in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059) is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI = 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate (using t0057&#x27;s library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than shunting inhibition, or HH miscalibration. The same...
+
+## Match the from-scratch GABA reversal to resting potential and re-test direction selectivity
+ID: S-0065-02
+Priority: high
+Kind: experiment
+Source task: t0065_t0020_epsp_ipsp_vm_protocol
+The deposited cell places e_SACinhib = -60 mV which equals the cell&#x27;s leak-driven quiescent potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i), inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off threshold across all directions. Conversely, if e_GABA &gt; v_rest, inhibition can depolarise toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse mechanism&#x27;s reversal). This directly tests whether the deposited...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2553,6 +2579,13 @@ Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
 t0059 fixes window_ms = 200 (midpoint of the published 100-300 ms SAC-&gt;DSGC IPSC envelope range). Compare-literature Limitations flags this as untested; PolegPolsky2016 [p. 1280] uses tau ~50-150 ms and deRosenroll2026 implies shorter envelopes match in vitro better. The 8.5 ms IPSP centre-of-mass shift demonstrated at window_ms = 200 may sharpen substantially at window_ms = 100 (more direction-tuned suppression) or smear out at window_ms = 500 (back toward t0057 global behaviour). Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, sweep window_ms in {100, 200, 300, 500} ms x GABA_BASE_NS in {0.10, 0.50, 1.0} nS at fixed gAMPA = 2.0 nS (12 cells, 4320 trials). Pass criterion: detect a...
 
+## Resolve inhibitory conductance time-course via SEClamp on the deposited cell
+ID: S-0065-03
+Priority: medium
+Kind: experiment
+Source task: t0065_t0020_epsp_ipsp_vm_protocol
+t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is essential for quantifying the differential shunting magnitude that...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2748,6 +2781,20 @@ Priority: low
 Kind: library
 Source task: t0055_nmda_mg_block_dsi_recovery
 t0055 introduced a single-synapse SEClamp sanity test (`test_nmda_mg_block_voltage_dep.py`) that validated the Jahr-Stevens Boltzmann at v in {-80, -60, -40, -20, 0, +20} mV (peak g monotonic; peak g(-80)/peak g(-20) = 0.0167). Promote this into a reusable arf/scripts/verificators/ check that any DSGC task using NMDA_MgBlock can invoke as a precondition. The check loads the task&#x27;s compiled NMDA mechanism, runs the 6-voltage clamp, and asserts the monotonicity + threshold pattern within tolerance. Companion to S-0054-04 (gNMDA = 0 baseline-equivalence verificator). Pass criterion: verificator script exists, runs against t0055 and passes; documentation describes when downstream tasks should...
+
+## Multi-seed average of the t0065 protocol to add error bars on FULL spike counts
+ID: S-0065-04
+Priority: low
+Kind: experiment
+Source task: t0065_t0020_epsp_ipsp_vm_protocol
+t0065 ran one seed per (mode, direction) cell. The FULL-mode 15-PD vs 1-ND spike count is consistent with t0020&#x27;s 20-trial mean (14.85 vs 1.80 Hz) but has no statistical band of its own. Running 10-20 seeds per cell would give SD/SE on each metric and let us state the DSI with a confidence interval. EPSP_PASSIVE and IPSP_PASSIVE traces are deterministic given seed (verified bit-identicality of EPSP_PASSIVE PD vs ND in t0065), so multi-seed for those modes is unnecessary - only FULL needs the seed sweep. Sweep cost: ~40 trials x 3 s ≈ 2 minutes additional, no new infrastructure. Expected output: FULL-mode spike-count distribution per direction (mean ± SD across 20 seeds) and DSI 95%...
+
+## Eight-direction EPSP/IPSP/FULL tuning curve on the deposited cell
+ID: S-0065-05
+Priority: low
+Kind: experiment
+Source task: t0065_t0020_epsp_ipsp_vm_protocol
+t0065 only tests gabaMOD = 0.33 (PD) and 0.99 (ND). The Poleg-Polsky 2016 paper has a smooth tuning curve over 8 directions, which the deposited model simulates by sweeping gabaMOD across [0.33, 0.99]. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 8 directions would produce an EPSP/IPSP decomposition for the entire tuning curve, not just the two anchor points. Most informative for understanding how shunting modulates the EPSP envelope at intermediate directions: does the relationship between gabaMOD and FULL-mode envelope compression scale linearly, or is there a threshold around gabaMOD ~ 0.6 where the cell transitions from spiking to non-spiking? Sweep cost: 24 trials (3 modes x 8...
       </content>
     </section>
   </sections>

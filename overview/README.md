@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-64-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-235-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-65-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-240-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (23K)
-| [full](llm-context/full.xml) (339K) | [roadmap](llm-context/roadmap.xml) (74K) |
-[results](llm-context/results-deep-dive.xml) (249K) |
+| [full](llm-context/full.xml) (345K) | [roadmap](llm-context/roadmap.xml) (75K) |
+[results](llm-context/results-deep-dive.xml) (255K) |
 [assets](llm-context/literature-and-assets.xml) (42K)
 
-*Last updated: 2026-04-30 00:08 UTC*
+*Last updated: 2026-04-30 15:21 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (58 total)](tasks/by-status/completed.md)
+## [Recently Completed (59 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0065 | [Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 15:16 |
 | 0064 | [HH current-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0064_hh_current_step_test.md) | [`results`](../tasks/t0064_hh_current_step_test/results/results_detailed.md) | 2026-04-30 00:06 |
 | 0063 | [HH voltage-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0063_hh_voltage_step_test.md) | [`results`](../tasks/t0063_hh_voltage_step_test/results/results_detailed.md) | 2026-04-29 23:46 |
 | 0062 | [NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0](../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md) | [`results`](../tasks/t0062_nmda_escape_with_ampa_priming/results/results_detailed.md) | 2026-04-29 23:04 |
@@ -92,9 +93,8 @@ No blocked tasks.
 | 0058 | [Brainstorm results session 11](../overview/tasks/task_pages/t0058_brainstorm_results_11.md) | [`results`](../tasks/t0058_brainstorm_results_11/results/results_detailed.md) | 2026-04-29 12:00 |
 | 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`results`](../tasks/t0057_tonic_gaba_sweep_t0053/results/results_detailed.md) | 2026-04-28 18:02 |
 | 0055 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | [`results`](../tasks/t0055_nmda_mg_block_dsi_recovery/results/results_detailed.md) | 2026-04-28 13:55 |
-| 0056 | [Brainstorm results session 10](../overview/tasks/task_pages/t0056_brainstorm_results_10.md) | [`results`](../tasks/t0056_brainstorm_results_10/results/results_detailed.md) | 2026-04-28 13:00 |
 
-*48 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*49 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +119,108 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (206 open)](suggestions/)
+## [Recent Suggestions (211 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
+substrate</strong> (S-0065-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
+in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
+opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
+is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
+= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
+(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
+whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
+shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
+can be ported to the from-scratch cell builder with minimal changes. Expected output: six
+traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
+binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Match the from-scratch GABA reversal to resting potential and
+re-test direction selectivity</strong> (S-0065-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+The deposited cell places e_SACinhib = -60 mV which equals the cell's leak-driven quiescent
+potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below
+resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i),
+inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off
+threshold across all directions. Conversely, if e_GABA > v_rest, inhibition can depolarise
+toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch
+substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse
+mechanism's reversal). This directly tests whether the deposited cell's success is
+structurally dependent on its e_GABA = v_rest design choice. Expected output: from-scratch
+family with e_GABA = v_rest produces a graded tuning curve with 5-15 Hz peak in PD and DSI in
+[0.5, 0.85], matching the deposited cell's behaviour.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
+deposited cell</strong> (S-0065-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the
+inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory
+conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp
+infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory
+drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any
+non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS
+as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is
+essential for quantifying the differential shunting magnitude that drives FULL-mode DSI: the
+integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
+time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
+integrated charge per direction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed average of the t0065 protocol to add error bars on
+FULL spike counts</strong> (S-0065-04)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 ran one seed per (mode, direction) cell. The FULL-mode 15-PD vs 1-ND spike count is
+consistent with t0020's 20-trial mean (14.85 vs 1.80 Hz) but has no statistical band of its
+own. Running 10-20 seeds per cell would give SD/SE on each metric and let us state the DSI
+with a confidence interval. EPSP_PASSIVE and IPSP_PASSIVE traces are deterministic given seed
+(verified bit-identicality of EPSP_PASSIVE PD vs ND in t0065), so multi-seed for those modes
+is unnecessary - only FULL needs the seed sweep. Sweep cost: ~40 trials x 3 s ≈ 2 minutes
+additional, no new infrastructure. Expected output: FULL-mode spike-count distribution per
+direction (mean ± SD across 20 seeds) and DSI 95% confidence interval.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Eight-direction EPSP/IPSP/FULL tuning curve on the deposited
+cell</strong> (S-0065-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 only tests gabaMOD = 0.33 (PD) and 0.99 (ND). The Poleg-Polsky 2016 paper has a smooth
+tuning curve over 8 directions, which the deposited model simulates by sweeping gabaMOD across
+[0.33, 0.99]. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 8 directions would produce an
+EPSP/IPSP decomposition for the entire tuning curve, not just the two anchor points. Most
+informative for understanding how shunting modulates the EPSP envelope at intermediate
+directions: does the relationship between gabaMOD and FULL-mode envelope compression scale
+linearly, or is there a threshold around gabaMOD ~ 0.6 where the cell transitions from spiking
+to non-spiking? Sweep cost: 24 trials (3 modes x 8 directions x 1 seed) ≈ 75 s. Expected
+output: 24-trial dataset with gabaMOD-modulated tuning curve in spike counts and the
+corresponding (constant) EPSP_PASSIVE and (constant-flat) IPSP_PASSIVE traces.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
@@ -225,112 +326,53 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Bar-locked window-length sweep (window_ms in {100, 200, 300,
-500}) on t0059 substrate</strong> (S-0059-06)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-29 | **Source**:
-[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
-
-t0059 fixes window_ms = 200 (midpoint of the published 100-300 ms SAC->DSGC IPSC envelope
-range). Compare-literature Limitations flags this as untested; PolegPolsky2016 [p. 1280] uses
-tau ~50-150 ms and deRosenroll2026 implies shorter envelopes match in vitro better. The 8.5 ms
-IPSP centre-of-mass shift demonstrated at window_ms = 200 may sharpen substantially at
-window_ms = 100 (more direction-tuned suppression) or smear out at window_ms = 500 (back
-toward t0057 global behaviour). Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, sweep window_ms
-in {100, 200, 300, 500} ms x GABA_BASE_NS in {0.10, 0.50, 1.0} nS at fixed gAMPA = 2.0 nS (12
-cells, 4320 trials). Pass criterion: detect a non-monotonic vector-sum DSI vs window_ms
-relationship (i.e., the 200 ms midpoint is not a local optimum), OR confirm the 200 ms choice
-is robust. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
-architecture to locate a DSI-preserving operating point</strong>
-(S-0054-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0),
-varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances
-jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base
-gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged,
-voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01).
-Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells =
-2880 trials. Apply early stop on cells where E_ONLY peak Hz > 30 Hz to prune the saturated
-subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI
->= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent
-regime. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit
-and lengthen the post-stimulus window</strong> (S-0054-03)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-REQ-20 (epsp_decay_to_1e_ms per gNMDA) returned null at all four gNMDA values because the 1500
-ms trial window is shorter than the time the cell needs to drop below V_rest + (V_peak -
-V_rest)/e once 100 simultaneous NMDA Exp2Syn events with tau2=80 ms keep Vm depolarised. The
-headline numerical answer to 'how does EPSP tau scale with gNMDA?' is missing -- this is a
-metric implementation gap, not a biological null result. Implement two changes: (1) extend the
-recorded E_ONLY trace to 3000-5000 ms post-stimulus, (2) replace the 1/e-crossing search with
-a least-squares exponential fit V(t) = V_rest + A * exp(-t / tau_decay). Validate against
-t0052 baseline (expected tau_decay ~ 30 ms). Acceptance: tau is finite for all 4 gNMDA values,
-falls in 30-300 ms, and rises monotonically. Recommended task types: write-library,
-experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Promote the t0052<->t0054 gNMDA=0 regression gate into a reusable
-cross-task baseline-equivalence verificator</strong> (S-0054-04)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054's compute_metrics.py contains an ad-hoc hard-fail gate that compares the gNMDA=0 FULL
-tuning_curve_full.csv row-by-row against t0052's tuning_curve_full.csv (passed at max |rate
-diff| = 0.000e+00 Hz across 120 rows). This validates that placement, AMPA, GABA, and HH
-soma+AIS are bit-identical between t0052 and t0054 baselines. Promote this comparison to a
-reusable utility in arf/scripts/utils that takes (task_a_id, task_b_id, csv_filename,
-parameter-equivalence-config) and produces a structured pass/fail report. Wire it into a
-verificator-style entry point so downstream minimal-DSGC tasks (Mg-block follow-up S-0054-01,
-joint sweep S-0054-02, tau2 sweep S-0054-05) can declare 'this task's gNMDA=0 baseline must
-equal t0052' as a CI prerequisite. Acceptance: the helper exists in arf/scripts/utils,
-reproduces the t0054 0e+00 Hz max-diff verdict, and is invoked in the new task's compute step.
-Recommended task types: write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle
-conductance amplitude from kinetic time constant</strong> (S-0054-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054 fixed NMDA tau2 at 80 ms and varied only gNMDA, conflating conductance amplitude with
-kinetic time constant. Biological NMDA decay tau spans 50-200 ms across DSGC literature
-(PolegPolsky2016 reports tau1NMDA = 50 ms; t0018 cites 100-200 ms). Hold gNMDA fixed at 0.25
-nS (the 12x peak-rate-boost point) and sweep tau2 in {30, 60, 80, 120, 200} ms x 12 directions
-x 10 trials x 2 modes (FULL, E_ONLY) = 1200 trials, on the t0054 minimal architecture with
-placement seed 0, voltage-independent NMDA kept. Report per-tau2 EPSP decay tau (using the
-improved metric from S-0054-03), peak Hz, and vector-sum DSI. Pass criterion: identify whether
-tau2 alone (independent of gNMDA) drives the DSI collapse, or whether the collapse is
-dominated by gNMDA. Recommended task types: experiment-run.
-
-</details>
-
-*196 more open suggestions → [open suggestions](suggestions/)*
+*201 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (22)](suggestions/)
+## [High Priority Suggestions (24)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
+substrate</strong> (S-0065-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
+in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
+opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
+is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
+= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
+(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
+whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
+shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
+can be ported to the from-scratch cell builder with minimal changes. Expected output: six
+traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
+binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Match the from-scratch GABA reversal to resting potential and
+re-test direction selectivity</strong> (S-0065-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
+[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+
+The deposited cell places e_SACinhib = -60 mV which equals the cell's leak-driven quiescent
+potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below
+resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i),
+inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off
+threshold across all directions. Conversely, if e_GABA > v_rest, inhibition can depolarise
+toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch
+substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse
+mechanism's reversal). This directly tests whether the deposited cell's success is
+structurally dependent on its e_GABA = v_rest design choice. Expected output: from-scratch
+family with e_GABA = v_rest produces a graded tuning curve with 5-15 Hz peak in PD and DSI in
+[0.5, 0.85], matching the deposited cell's behaviour.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
@@ -494,47 +536,7 @@ the sustained-envelope regime. Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
-architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0057_tonic_gaba_sweep_t0053](../tasks/t0057_tonic_gaba_sweep_t0053/)
-
-Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016's argument that
-voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA
-but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only
-excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA +
-Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via
-gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse.
-Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed
-gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at least one
-(gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
-Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
-+ scalar GABA ladder). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>AMPA per-synapse conductance sweep on t0052 minimal DSGC to close
-the 30-150x peak-rate gap</strong> (S-0052-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-27 | **Source**:
-[t0052_minimal_dsgc_scalar_gaba](../tasks/t0052_minimal_dsgc_scalar_gaba/)
-
-t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 target (30 Hz)
-and 30-150x below the in vivo / in vitro DSGC range (30-100 Hz, Park2014 / PolegPolsky2016).
-The current AMPA conductance is 0.5 nS x 100 synapses (AMPA-only by design) and the cell is
-locked in a single-spike-per-trial regime that makes DSI = 1.0 trivially. Sweep the
-per-synapse AMPA peak conductance over {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed synapse
-count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and report peak Hz,
-vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
-the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
-biologically informative. Recommended task types: experiment-run.
-
-</details>
-
-*12 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*14 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

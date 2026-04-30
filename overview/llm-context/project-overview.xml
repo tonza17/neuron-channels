@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-30T00:08:14Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-30T15:21:00Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>91683</char_count>
-    <byte_count>91849</byte_count>
-    <estimated_tokens>22920</estimated_tokens>
+    <char_count>92794</char_count>
+    <byte_count>92967</byte_count>
+    <estimated_tokens>23198</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -169,9 +169,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0062_nmda_escape_with_ampa_priming</id>
         <id>t0063_hh_voltage_step_test</id>
         <id>t0064_hh_current_step_test</id>
+        <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
       </source_ids>
       <content>
-Completed tasks: 58
+Completed tasks: 59
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -520,6 +521,12 @@ ID: t0064_hh_current_step_test
 Completed: 2026-04-30
 Short description: IClamp current steps {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA for 200 ms each on the t0059 cell (no synapses); HH on vs HH off; plot Vm response.
 Result summary: Results Summary: t0064 HH Current-Step Diagnostic Summary IClamp 200 ms current steps at {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA on soma, no synapses. 12 trials in 79 s. The HH model produces a clean F-I curve with rheobase between 0.1 and 0.2 nA, peak firing rate of 18 spikes / 200 ms (= 90 Hz) at 1.0 nA, and characteristic **depolarization block at 2.0 nA** (only 1 initial spike, then sustained Vm plateau ~-30 mV). Metrics | I (nA) | FULL peak Vm | FULL spikes | EPSP_PASSIVE peak Vm | F-I rate (Hz) | | --- | --- | --- | --- | --- | | 0.1 | -60.53 mV | 0 | -61.65 mV | 0 | | 0.2 | +14.48 mV | **7** | -58.53 mV | 35 | | 0.3 | +17.27 mV | **10** | -55.41 mV | 50 | | 0.5 | +19.74 mV | **13** | -49.17...
+
+## Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+ID: t0065_t0020_epsp_ipsp_vm_protocol
+Completed: 2026-04-30
+Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.
+Result summary: Results Summary: Test t0020 deposited DSGC under EPSP/IPSP/FULL protocol Summary The deposited Poleg-Polsky &amp; Diamond 2016 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — six trials (3 modes × 2 directions × 1 seed) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s direction selectivity is produced almost entirely by shunting inhibition, not hyperpolarising inhibition**. The IPSP_PASSIVE traces stay flat at the inhibitory reversal potential e_SACinhib = -60 mV in both PD and ND, while the EPSP_PASSIVE traces are bit-identical between directions (gabaMOD = 0). The FULL trace shows a 15× spike...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
