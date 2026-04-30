@@ -77,9 +77,9 @@
       "step": 9,
       "name": "reporting",
       "description": "Run all verificators, mark task completed, push branch, open PR, merge.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T15:15:31Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T15:17:40Z",
       "log_file": "logs\\steps\\009_reporting/"
     },
     {
