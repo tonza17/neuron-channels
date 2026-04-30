@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-code",
       "description": "Survey t0024 code (build_dsgc_cell, ar2_noise, run_tuning_curve) to identify exact reusable helpers and the per-synapse silencing knobs (Exp2Syn weight, NetCon weight[0], HHst_noiseless gnabar/gkbar).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T15:53:15Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T15:58:29Z",
       "log_file": "logs\\steps\\004_research-code/"
     },
     {
