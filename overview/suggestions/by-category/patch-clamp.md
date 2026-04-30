@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-16 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **14
-open** (1 high, 12 medium, 1 low), **2 closed**.
+17 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **15
+open** (1 high, 13 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -38,6 +38,30 @@ target DSGC subtype.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
+sweep</strong> (S-0067-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
+Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
+Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
+almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
+section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
+the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
+show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
+more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN

@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(171)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(174)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (13)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2297,7 +2297,58 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (151 open, 20 closed)
+## Suggestions (154 open, 20 closed)
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family

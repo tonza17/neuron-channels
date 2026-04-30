@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(16)](../suggestions/by-category/patch-clamp.md)
+(17)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,7 +1185,25 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (14 open, 2 closed)
+## Suggestions (15 open, 2 closed)
+
+<details>
+<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
+sweep</strong> (S-0067-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
+Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
+Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
+almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
+section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
+the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
+show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
+more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the

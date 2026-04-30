@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-30T16:51:47Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-30T23:38:18Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>263764</char_count>
-    <byte_count>263801</byte_count>
-    <estimated_tokens>65941</estimated_tokens>
+    <char_count>268706</char_count>
+    <byte_count>268756</byte_count>
+    <estimated_tokens>67176</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -262,9 +262,14 @@
         <id>S-0066-03</id>
         <id>S-0066-04</id>
         <id>S-0066-05</id>
+        <id>S-0067-01</id>
+        <id>S-0067-02</id>
+        <id>S-0067-03</id>
+        <id>S-0067-04</id>
+        <id>S-0067-05</id>
       </source_ids>
       <content>
-Suggestions: 245
+Suggestions: 250
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3025,6 +3030,61 @@ Categories: direction-selectivity, compartmental-modeling, synaptic-integration
 Date added: 2026-04-30
 
 t0066 only tested PD (0°) and ND (180°). The de Rosenroll model&#x27;s bar-geometry direction encoding produces continuous tuning across angles. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 12 angles (0°, 30°, 60°, ..., 330°) would produce an EPSP/IPSP decomposition for the entire tuning curve, showing how the bar-geometry contribution to direction sensitivity (visible as ~1.6 mV PD-vs-ND difference in EPSP_PASSIVE) varies with angle. Most informative for: identifying the angle where the bar-geometry contribution maximises (probably ~90° from preferred), and characterising whether the GABA shunt-driven DS scales linearly across angles or has a threshold. Sweep cost: 12 angles x 3 modes x 20 trials x ~30 s/trial = ~6 hours. Could parallelise across CPU cores (each angle independent) to reduce wall-clock to ~1.5 hours.
+
+## Find the NaP density at which DSI crosses zero
+ID: S-0067-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
+Date added: 2026-05-01
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer 5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the threshold density at which directional inversion becomes statistically robust. This is the most surprising finding from t0067 and warrants quantitative refinement.
+
+## Test channel co-expression: Nav1.6 + Kv3 jointly
+ID: S-0067-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
+Date added: 2026-05-01
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065 substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND × 5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to recover from Nav1.6&#x27;s depolarising drive faster, restoring the inhibitory shunt&#x27;s modulatory power. If true, this is a proof-of-concept that biological &#x27;fast-spiking design&#x27; is intrinsically DS-friendly.
+
+## Add a virtual AIS to the deposited cell and re-run the channel sweep
+ID: S-0067-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+Categories: voltage-gated-channels, compartmental-modeling, patch-clamp
+Date added: 2026-05-01
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels show much larger DSI effects (because the AIS, being smaller and electrically isolated, is more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+## Replace simplified MOD kinetics with ModelDB-sourced canonical implementations
+ID: S-0067-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+Categories: voltage-gated-channels, compartmental-modeling
+Date added: 2026-05-01
+
+t0067&#x27;s 5 MOD files use simplified HH-style m/h gates with V_half and time constants from published values, but lose features specific to each channel: NaR&#x27;s blocking-particle mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics (Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997 has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular showed almost no effect in t0067, possibly because the simplified kinetics miss their distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching the deposited cell&#x27;s USEION conventions or wrapping in NONSPECIFIC_CURRENT shells) and re-run the sweep. Expected: NaR/Kv3/Kv4 show real DSI effects, especially at high firing rates (&gt;40 Hz).
+
+## Investigate biological NaP overexpression as a directional-selectivity disorder model
+ID: S-0067-05
+Status: active
+Priority: low
+Kind: evaluation
+Source task: t0067_t0065_soma_channel_addition_sweep
+Categories: voltage-gated-channels, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-05-01
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC. Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding becomes a candidate computational model for a real disease state. Output: an answer asset summarising the literature on NaP dysregulation in DSGCs / retinal disease.
       </content>
     </section>
   </sections>

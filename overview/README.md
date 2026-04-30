@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-66-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-245-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-67-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-250-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (23K)
-| [full](llm-context/full.xml) (351K) | [roadmap](llm-context/roadmap.xml) (76K) |
-[results](llm-context/results-deep-dive.xml) (261K) |
-[assets](llm-context/literature-and-assets.xml) (42K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (24K)
+| [full](llm-context/full.xml) (355K) | [roadmap](llm-context/roadmap.xml) (78K) |
+[results](llm-context/results-deep-dive.xml) (265K) |
+[assets](llm-context/literature-and-assets.xml) (43K)
 
-*Last updated: 2026-04-30 16:51 UTC*
+*Last updated: 2026-04-30 23:38 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (60 total)](tasks/by-status/completed.md)
+## [Recently Completed (61 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0067 | [Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change](../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) | [`results`](../tasks/t0067_t0065_soma_channel_addition_sweep/results/results_detailed.md) | 2026-05-01 01:05 |
 | 0066 | [Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 16:48 |
 | 0065 | [Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 15:16 |
 | 0064 | [HH current-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0064_hh_current_step_test.md) | [`results`](../tasks/t0064_hh_current_step_test/results/results_detailed.md) | 2026-04-30 00:06 |
@@ -92,9 +93,8 @@ No blocked tasks.
 | 0060 | [Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0060_ampa_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:00 |
 | 0059 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | [`results`](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/results/results_detailed.md) | 2026-04-29 20:55 |
 | 0058 | [Brainstorm results session 11](../overview/tasks/task_pages/t0058_brainstorm_results_11.md) | [`results`](../tasks/t0058_brainstorm_results_11/results/results_detailed.md) | 2026-04-29 12:00 |
-| 0057 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | [`results`](../tasks/t0057_tonic_gaba_sweep_t0053/results/results_detailed.md) | 2026-04-28 18:02 |
 
-*50 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*51 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +119,96 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (216 open)](suggestions/)
+## [Recent Suggestions (221 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
+sweep</strong> (S-0067-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
+Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
+Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
+almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
+section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
+the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
+show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
+more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Replace simplified MOD kinetics with ModelDB-sourced canonical
+implementations</strong> (S-0067-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067's 5 MOD files use simplified HH-style m/h gates with V_half and time constants from
+published values, but lose features specific to each channel: NaR's blocking-particle
+mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics
+(Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997
+has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular
+showed almost no effect in t0067, possibly because the simplified kinetics miss their
+distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching
+the deposited cell's USEION conventions or wrapping in NONSPECIFIC_CURRENT shells) and re-run
+the sweep. Expected: NaR/Kv3/Kv4 show real DSI effects, especially at high firing rates (>40
+Hz).
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
@@ -222,109 +311,45 @@ corresponding (constant) EPSP_PASSIVE and (constant-flat) IPSP_PASSIVE traces.
 
 </details>
 
-<details>
-<summary>📊 <strong>Audit project DSGC family for systemic e_GABA = v_rest design
-choice</strong> (S-0066-01)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-t0066 confirmed that both deposited Poleg-Polsky 2016 (t0065) and de Rosenroll 2026 (t0066)
-DSGC implementations independently use e_GABA = v_rest = -60 mV, producing pure shunting
-inhibition. This is a recurring DSGC modelling pattern, not an idiosyncrasy. Conduct a
-project-wide audit: read constants/parameter files for ALL DSGC ports (t0008, t0023 if
-completed, the from-scratch family t0052-t0059) and record (V_INIT, ELEAK, GABA_EREV) tuples.
-Map the design choice across ports. If any port uses e_GABA != v_rest, that becomes a useful
-comparison point for testing whether direction selectivity persists when inhibition is
-hyperpolarising. Output: a single answer asset summarising the audit with recommendations on
-which port (if any) implements biologically realistic Cl- reversal physics.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family
-substrate (t0052-t0059)</strong> (S-0066-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed
-flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is
-trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct
-EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us
-whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from
-a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the
-IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is
-portable: copy run_protocol.py, swap the cell builder import, adjust HH knob names. Cost: ~1
-hour code + ~30 min sweep (the from-scratch family is faster — fewer trials needed because
-lower noise variance). This is the natural successor to S-0065-01, now made more urgent by the
-t0066 findings.
-
-</details>
-
-<details>
-<summary>🧪 <strong>SEClamp inhibitory conductance measurement on de Rosenroll
-cell</strong> (S-0066-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of
-g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set
-ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset
-from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD
-(gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated
-charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob
-translates to mean conductance. Reuses t0049's SEClamp infrastructure (which was developed for
-the deposited cell — would need a small port for the de Rosenroll synapse model). Parallel to
-S-0065-03 for the deposited cell; together they give cross-model conductance benchmarks.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Sensitivity sweep: re-run t0066 with paper-text e_LEAK = -70
-mV</strong> (S-0066-04)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-The t0024 constants file documents that the de Rosenroll 2026 paper text specifies
-ELEAK_PAPER_TEXT = -70 mV (a true hyperpolarising rest below e_GABA = -60), but the upstream
-code authority used -60 mV. Re-run the t0066 EPSP/IPSP/FULL protocol with ELEAK = -70 mV (and
-V_INIT = -70 mV) to test the paper-text variant. Prediction: IPSP_PASSIVE will become a real
-hyperpolarising trace (PD ~-65 mV, ND ~-69 mV — closer to e_GABA = -60 mV with proportional
-displacement); FULL DSI may change because the cell now sits 5 mV further from spike
-threshold. This both quantifies the paper-vs-code discrepancy and gives us a reference
-'hyperpolarising IPSP' DSGC for cross-comparison. Cost: re-run the same 120-trial sweep with
-two constants changed = 1 line of code + 1 hour compute.
-
-</details>
-
-<details>
-<summary>🧪 <strong>12-angle EPSP/IPSP/FULL tuning curve on de Rosenroll
-cell</strong> (S-0066-05)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-t0066 only tested PD (0°) and ND (180°). The de Rosenroll model's bar-geometry direction
-encoding produces continuous tuning across angles. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL
-at all 12 angles (0°, 30°, 60°, ..., 330°) would produce an EPSP/IPSP decomposition for the
-entire tuning curve, showing how the bar-geometry contribution to direction sensitivity
-(visible as ~1.6 mV PD-vs-ND difference in EPSP_PASSIVE) varies with angle. Most informative
-for: identifying the angle where the bar-geometry contribution maximises (probably ~90° from
-preferred), and characterising whether the GABA shunt-driven DS scales linearly across angles
-or has a threshold. Sweep cost: 12 angles x 3 modes x 20 trials x ~30 s/trial = ~6 hours.
-Could parallelise across CPU cores (each angle independent) to reduce wall-clock to ~1.5
-hours.
-
-</details>
-
-*206 more open suggestions → [open suggestions](suggestions/)*
+*211 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (25)](suggestions/)
+## [High Priority Suggestions (27)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
@@ -494,44 +519,7 @@ DSGC task.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
-EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
-recovery</strong> (S-0055-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
-
-After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture
-using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic
-envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA
-(regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP
-envelope's true peak (no spike contamination) per direction. Pass criterion: FULL DSI
-bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
-and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
-lineage and produces re-publishable EPSP/IPSP figures.
-
-</details>
-
-<details>
-<summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
-DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
-
-t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz
-peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33,
-gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at
-{2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The
-S-0054-01 pass criterion (DSI > 0.50 AND peak Hz >= 5 Hz) should become reachable somewhere on
-this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full
-S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one
-GABA value yields DSI > 0.50 AND peak Hz >= 5 Hz. Recommended task type: experiment-run.
-
-</details>
-
-*15 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*17 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-245 suggestions **216 open** (25 high, 159 medium, 32 low), **29 closed**.
+250 suggestions **221 open** (27 high, 161 medium, 33 low), **29 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -312,6 +312,28 @@ orders, mean segment length, mean segment diameter) on an orthogonal grid, recor
 per point, and test whether segment diameter has the largest effect (as cable theory
 predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
 currently lacks. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
 
 </details>
 
@@ -634,6 +656,30 @@ t0052, no bar-lock). Recommended task types: build-model, experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
 architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
 
@@ -814,6 +860,30 @@ step) and peak firing rate may rise because SAC inhibition is timed to bar arriv
 global half-plane rule. This is a library extension not just a channel swap; produces a fourth
 DSGC library asset modeldb_189347_dsgc_sac. Dependencies: t0022 library asset, Euler2002
 paper. Effort ~40 hours. Recommended task type: write-library, code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
+sweep</strong> (S-0067-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
+Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
+Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
+almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
+section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
+the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
+show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
+more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
 
 </details>
 
@@ -3585,6 +3655,32 @@ experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Replace simplified MOD kinetics with ModelDB-sourced canonical
+implementations</strong> (S-0067-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0067's 5 MOD files use simplified HH-style m/h gates with V_half and time constants from
+published values, but lose features specific to each channel: NaR's blocking-particle
+mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics
+(Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997
+has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular
+showed almost no effect in t0067, possibly because the simplified kinetics miss their
+distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching
+the deposited cell's USEION conventions or wrapping in NONSPECIFIC_CURRENT shells) and re-run
+the sweep. Expected: NaR/Kv3/Kv4 show real DSI effects, especially at high firing rates (>40
+Hz).
+
+</details>
+
+<details>
 <summary>📊 <strong>Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation
 targets (PSP amplitude, NMDAR slope angle)</strong> (S-0020-02)</summary>
 
@@ -4931,6 +5027,29 @@ bimodal failures). Currently metrics_per_diameter.csv reports only the mean; add
 spike-count histograms would separate 'failure rate' from 'timing shift' in cable-theory
 interpretation. Low effort: reuse existing sweep_results.csv, add a standalone analysis script
 that writes a histogram per diameter.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
 
 </details>
 

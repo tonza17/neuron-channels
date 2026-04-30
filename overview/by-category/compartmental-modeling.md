@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (27)](../papers/by-category/compartmental-modeling.md) | [Answers
 (14)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(188)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(192)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (11)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -1739,7 +1739,79 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (166 open, 22 closed)
+## Suggestions (170 open, 22 closed)
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
+sweep</strong> (S-0067-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
+Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
+Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
+almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
+section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
+the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
+show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
+more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Replace simplified MOD kinetics with ModelDB-sourced canonical
+implementations</strong> (S-0067-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067's 5 MOD files use simplified HH-style m/h gates with V_half and time constants from
+published values, but lose features specific to each channel: NaR's blocking-particle
+mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics
+(Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997
+has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular
+showed almost no effect in t0067, possibly because the simplified kinetics miss their
+distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching
+the deposited cell's USEION conventions or wrapping in NONSPECIFIC_CURRENT shells) and re-run
+the sweep. Expected: NaR/Kv3/Kv4 show real DSI effects, especially at high firing rates (>40
+Hz).
+
+</details>
 
 <details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family

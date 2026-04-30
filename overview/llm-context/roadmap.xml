@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T16:51:47Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T23:38:18Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>305544</char_count>
-    <byte_count>305800</byte_count>
-    <estimated_tokens>76386</estimated_tokens>
+    <char_count>310963</char_count>
+    <byte_count>311236</byte_count>
+    <estimated_tokens>77740</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -172,9 +172,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0064_hh_current_step_test</id>
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
+        <id>t0067_t0065_soma_channel_addition_sweep</id>
       </source_ids>
       <content>
-Completed tasks: 60
+Completed tasks: 61
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -535,6 +536,12 @@ ID: t0066_t0024_epsp_ipsp_vm_protocol
 Completed: 2026-04-30
 Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.
 Result summary: Results Summary: Test t0024 de Rosenroll DSGC under EPSP/IPSP/FULL protocol Summary The de Rosenroll 2026 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — 120 trials (3 modes × 2 directions × 20 seeds) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s IPSP_PASSIVE trace is flat at -60 mV in both PD and ND**, exactly as in t0065&#x27;s deposited Poleg-Polsky cell. Two structurally independent DSGC implementations therefore converge on the same design pattern (`e_GABA = v_rest = -60 mV` → pure shunting inhibition); the t0065 finding is **not** a Poleg-Polsky idiosyncrasy. Metrics *...
+
+## Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change
+ID: t0067_t0065_soma_channel_addition_sweep
+Completed: 2026-05-01
+Short description: Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
+Result summary: Results Summary: Add 5 voltage-gated channels to the t0065 soma; sweep densities Summary Added each of {Nav1.6, NaP, NaR, Kv3, Kv4} to the deposited Poleg-Polsky DSGC soma, one at a time, at low / medium / high densities (3-fold steps), and ran the t0065 FULL-mode gabaMOD-swap protocol with 5 seeds per (condition, direction). 16 conditions × 2 directions × 5 seeds = 160 trials, ~10 minutes wall-clock. Headline finding: **NaP at high density inverts direction selectivity** (DSI = -0.18, cell fires more in null than preferred); **Nav1.6 monotonically erodes DSI** as density rises (0.80 → 0.23 across the density grid); **NaR / Kv3 / Kv4 produce only modest changes** at the chosen densities...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1022,6 +1029,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0065-01</id>
         <id>S-0065-02</id>
         <id>S-0066-02</id>
+        <id>S-0067-01</id>
+        <id>S-0067-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1183,6 +1192,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0065-03</id>
         <id>S-0066-01</id>
         <id>S-0066-03</id>
+        <id>S-0067-03</id>
+        <id>S-0067-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1215,9 +1226,10 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0065-05</id>
         <id>S-0066-04</id>
         <id>S-0066-05</id>
+        <id>S-0067-05</id>
       </source_ids>
       <content>
-Open suggestions: 232
+Open suggestions: 237
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1491,6 +1503,20 @@ Priority: high
 Kind: experiment
 Source task: t0066_t0024_epsp_ipsp_vm_protocol
 t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is portable: copy run_protocol.py, swap the cell...
+
+## Find the NaP density at which DSI crosses zero
+ID: S-0067-01
+Priority: high
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer 5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the threshold density at which directional inversion becomes statistically robust. This is the most surprising finding from t0067 and warrants quantitative refinement.
+
+## Test channel co-expression: Nav1.6 + Kv3 jointly
+ID: S-0067-02
+Priority: high
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065 substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND × 5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to recover from Nav1.6&#x27;s depolarising drive faster, restoring the inhibitory shunt&#x27;s modulatory power. If true, this is a proof-of-concept that biological &#x27;fast-spiking design&#x27; is intrinsically DS-friendly.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2619,6 +2645,20 @@ Kind: experiment
 Source task: t0066_t0024_epsp_ipsp_vm_protocol
 Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD (gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob translates to mean conductance. Reuses t0049&#x27;s SEClamp infrastructure (which was developed for the deposited cell — would need a small port...
 
+## Add a virtual AIS to the deposited cell and re-run the channel sweep
+ID: S-0067-03
+Priority: medium
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels show much larger DSI effects (because the AIS, being smaller and electrically isolated, is more sensitive to gnabar additions). Cost: ~1 hour code +...
+
+## Replace simplified MOD kinetics with ModelDB-sourced canonical implementations
+ID: S-0067-04
+Priority: medium
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+t0067&#x27;s 5 MOD files use simplified HH-style m/h gates with V_half and time constants from published values, but lose features specific to each channel: NaR&#x27;s blocking-particle mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics (Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997 has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular showed almost no effect in t0067, possibly because the simplified kinetics miss their distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching the deposited cell&#x27;s USEION conventions or wrapping in NONSPECIFIC_CURRENT...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2842,6 +2882,13 @@ Priority: low
 Kind: experiment
 Source task: t0066_t0024_epsp_ipsp_vm_protocol
 t0066 only tested PD (0°) and ND (180°). The de Rosenroll model&#x27;s bar-geometry direction encoding produces continuous tuning across angles. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 12 angles (0°, 30°, 60°, ..., 330°) would produce an EPSP/IPSP decomposition for the entire tuning curve, showing how the bar-geometry contribution to direction sensitivity (visible as ~1.6 mV PD-vs-ND difference in EPSP_PASSIVE) varies with angle. Most informative for: identifying the angle where the bar-geometry contribution maximises (probably ~90° from preferred), and characterising whether the GABA shunt-driven DS scales linearly across angles or has a threshold. Sweep cost: 12 angles x 3 modes x 20...
+
+## Investigate biological NaP overexpression as a directional-selectivity disorder model
+ID: S-0067-05
+Priority: low
+Kind: evaluation
+Source task: t0067_t0065_soma_channel_addition_sweep
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC. Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding becomes a candidate computational model for a real disease state. Output: an answer asset summarising the literature on NaP dysregulation in DSGCs / retinal disease.
       </content>
     </section>
   </sections>

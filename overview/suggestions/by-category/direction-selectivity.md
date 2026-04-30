@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-171 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **151 open** (22
-high, 115 medium, 14 low), **20 closed**.
+174 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **154 open** (24
+high, 115 medium, 15 low), **20 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -254,6 +254,28 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
 
 </details>
 
@@ -545,6 +567,30 @@ x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point
 >= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
 validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
 t0052, no bar-lock). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
+(S-0067-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
 
 </details>
 
@@ -3585,6 +3631,29 @@ first record per-trial spike times (not just rates) from run_gabamod_sweep.py. C
 S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
 analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
 produce a publication-quality raster. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
 
 </details>
 

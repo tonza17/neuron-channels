@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-04-30T16:51:47Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-04-30T23:38:18Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>3689</char_count>
-    <byte_count>3689</byte_count>
-    <estimated_tokens>922</estimated_tokens>
+    <char_count>3738</char_count>
+    <byte_count>3738</byte_count>
+    <estimated_tokens>934</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -90,6 +90,7 @@ Spent: 0.0%
 * t0064_hh_current_step_test: $0.00
 * t0065_t0020_epsp_ipsp_vm_protocol: $0.00
 * t0066_t0024_epsp_ipsp_vm_protocol: $0.00
+* t0067_t0065_soma_channel_addition_sweep: $0.00
       </content>
     </section>
   </sections>

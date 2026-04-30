@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-68 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **61 open** (11
-high, 42 medium, 8 low), **7 closed**.
+69 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **62 open** (11
+high, 42 medium, 9 low), **7 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1420,6 +1420,29 @@ first record per-trial spike times (not just rates) from run_gabamod_sweep.py. C
 S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
 analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
 produce a publication-quality raster. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
 
 </details>
 

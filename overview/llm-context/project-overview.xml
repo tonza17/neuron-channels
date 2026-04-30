@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-30T16:51:47Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-04-30T23:38:18Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>93894</char_count>
-    <byte_count>94075</byte_count>
-    <estimated_tokens>23473</estimated_tokens>
+    <char_count>95073</char_count>
+    <byte_count>95258</byte_count>
+    <estimated_tokens>23768</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -171,9 +171,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0064_hh_current_step_test</id>
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
+        <id>t0067_t0065_soma_channel_addition_sweep</id>
       </source_ids>
       <content>
-Completed tasks: 60
+Completed tasks: 61
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -534,6 +535,12 @@ ID: t0066_t0024_epsp_ipsp_vm_protocol
 Completed: 2026-04-30
 Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.
 Result summary: Results Summary: Test t0024 de Rosenroll DSGC under EPSP/IPSP/FULL protocol Summary The de Rosenroll 2026 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — 120 trials (3 modes × 2 directions × 20 seeds) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s IPSP_PASSIVE trace is flat at -60 mV in both PD and ND**, exactly as in t0065&#x27;s deposited Poleg-Polsky cell. Two structurally independent DSGC implementations therefore converge on the same design pattern (`e_GABA = v_rest = -60 mV` → pure shunting inhibition); the t0065 finding is **not** a Poleg-Polsky idiosyncrasy. Metrics *...
+
+## Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change
+ID: t0067_t0065_soma_channel_addition_sweep
+Completed: 2026-05-01
+Short description: Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
+Result summary: Results Summary: Add 5 voltage-gated channels to the t0065 soma; sweep densities Summary Added each of {Nav1.6, NaP, NaR, Kv3, Kv4} to the deposited Poleg-Polsky DSGC soma, one at a time, at low / medium / high densities (3-fold steps), and ran the t0065 FULL-mode gabaMOD-swap protocol with 5 seeds per (condition, direction). 16 conditions × 2 directions × 5 seeds = 160 trials, ~10 minutes wall-clock. Headline finding: **NaP at high density inverts direction selectivity** (DSI = -0.18, cell fires more in null than preferred); **Nav1.6 monotonically erodes DSI** as density rises (0.80 → 0.23 across the density grid); **NaR / Kv3 / Kv4 produce only modest changes** at the chosen densities...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

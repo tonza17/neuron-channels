@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (32)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(68)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(69)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (6)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -1928,7 +1928,24 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (61 open, 7 closed)
+## Suggestions (62 open, 7 closed)
+
+<details>
+<summary>📊 <strong>Investigate biological NaP overexpression as a
+directional-selectivity disorder model</strong> (S-0067-05)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC.
+Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A
+gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic
+pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports
+of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
+becomes a candidate computational model for a real disease state. Output: an answer asset
+summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
