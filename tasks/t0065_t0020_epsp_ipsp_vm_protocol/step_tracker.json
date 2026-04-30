@@ -41,9 +41,9 @@
       "step": 5,
       "name": "planning",
       "description": "Write plan/plan.md detailing the 6-trial protocol, file layout, and per-mode override sequencing.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T08:10:00Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T08:12:04Z",
       "log_file": "logs\\steps\\005_planning/"
     },
     {
