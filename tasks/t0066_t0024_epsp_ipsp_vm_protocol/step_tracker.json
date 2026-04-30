@@ -59,9 +59,9 @@
       "step": 7,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md (spec_version 2 with all mandatory sections), metrics.json, costs.json, remote_machines_used.json with embedded plots.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T16:40:58Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T16:45:20Z",
       "log_file": "logs\\steps\\007_results/"
     },
     {
