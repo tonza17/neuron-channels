@@ -1,0 +1,64 @@
+{
+  "trials": [
+    {
+      "trial_key": "FULL_PD",
+      "mode": "FULL",
+      "direction": "PD",
+      "peak_v_mv": 43.180414457262486,
+      "baseline_v_mv": -58.86898190857541,
+      "peak_minus_baseline_mv": 102.0493963658379,
+      "spike_count": 15,
+      "n_samples": 10001
+    },
+    {
+      "trial_key": "FULL_ND",
+      "mode": "FULL",
+      "direction": "ND",
+      "peak_v_mv": 43.29083844472788,
+      "baseline_v_mv": -59.31327241140737,
+      "peak_minus_baseline_mv": 102.60411085613525,
+      "spike_count": 1,
+      "n_samples": 10001
+    },
+    {
+      "trial_key": "EPSP_PASSIVE_PD",
+      "mode": "EPSP_PASSIVE",
+      "direction": "PD",
+      "peak_v_mv": -29.82722120333135,
+      "baseline_v_mv": -58.466089509963666,
+      "peak_minus_baseline_mv": 28.638868306632315,
+      "spike_count": null,
+      "n_samples": 10001
+    },
+    {
+      "trial_key": "EPSP_PASSIVE_ND",
+      "mode": "EPSP_PASSIVE",
+      "direction": "ND",
+      "peak_v_mv": -29.82722120333135,
+      "baseline_v_mv": -58.466089509963666,
+      "peak_minus_baseline_mv": 28.638868306632315,
+      "spike_count": null,
+      "n_samples": 10001
+    },
+    {
+      "trial_key": "IPSP_PASSIVE_PD",
+      "mode": "IPSP_PASSIVE",
+      "direction": "PD",
+      "peak_v_mv": -60.01896134757762,
+      "baseline_v_mv": -60.12301947850915,
+      "peak_minus_baseline_mv": 0.10405813093152716,
+      "spike_count": null,
+      "n_samples": 10001
+    },
+    {
+      "trial_key": "IPSP_PASSIVE_ND",
+      "mode": "IPSP_PASSIVE",
+      "direction": "ND",
+      "peak_v_mv": -60.01498364469448,
+      "baseline_v_mv": -60.12291826642813,
+      "peak_minus_baseline_mv": 0.10793462173364787,
+      "spike_count": null,
+      "n_samples": 10001
+    }
+  ]
+}
