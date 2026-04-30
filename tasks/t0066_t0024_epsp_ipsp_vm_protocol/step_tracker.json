@@ -50,9 +50,9 @@
       "step": 6,
       "name": "implementation",
       "description": "Implement code/run_protocol.py + plotting; run the 120-trial sweep (~2h10m) and emit voltage_traces CSV plus PNGs (including cross-model t0065 vs t0066 IPSP comparison).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T16:01:51Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T16:40:37Z",
       "log_file": "logs\\steps\\006_implementation/"
     },
     {
