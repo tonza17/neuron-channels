@@ -59,10 +59,10 @@
       "step": 7,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md (spec_version 2 with all mandatory sections), metrics.json, costs.json, remote_machines_used.json.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-30T23:28:25Z",
       "completed_at": null,
-      "log_file": "logs/steps/007_results/"
+      "log_file": "logs\\steps\\007_results/"
     },
     {
       "step": 8,
