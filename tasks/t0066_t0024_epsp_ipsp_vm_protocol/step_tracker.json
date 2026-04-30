@@ -41,9 +41,9 @@
       "step": 5,
       "name": "planning",
       "description": "Write plan/plan.md detailing the 6-cell x 20-trial protocol, file layout, and per-mode override sequencing on the de Rosenroll substrate.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T15:58:51Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T16:01:00Z",
       "log_file": "logs\\steps\\005_planning/"
     },
     {
