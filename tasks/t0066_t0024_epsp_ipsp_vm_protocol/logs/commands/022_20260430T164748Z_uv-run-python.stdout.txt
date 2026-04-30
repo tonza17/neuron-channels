@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\logs\sessions\capture_report.json.
