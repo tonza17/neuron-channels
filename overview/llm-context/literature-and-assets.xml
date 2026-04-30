@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-30T15:21:00Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-04-30T16:51:47Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>168600</char_count>
-    <byte_count>168841</byte_count>
-    <estimated_tokens>42150</estimated_tokens>
+    <char_count>169700</char_count>
+    <byte_count>169949</byte_count>
+    <estimated_tokens>42425</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -174,9 +174,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0063_hh_voltage_step_test</id>
         <id>t0064_hh_current_step_test</id>
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
+        <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
       </source_ids>
       <content>
-Completed tasks: 59
+Completed tasks: 60
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -531,6 +532,12 @@ ID: t0065_t0020_epsp_ipsp_vm_protocol
 Completed: 2026-04-30
 Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.
 Result summary: Results Summary: Test t0020 deposited DSGC under EPSP/IPSP/FULL protocol Summary The deposited Poleg-Polsky &amp; Diamond 2016 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — six trials (3 modes × 2 directions × 1 seed) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s direction selectivity is produced almost entirely by shunting inhibition, not hyperpolarising inhibition**. The IPSP_PASSIVE traces stay flat at the inhibitory reversal potential e_SACinhib = -60 mV in both PD and ND, while the EPSP_PASSIVE traces are bit-identical between directions (gabaMOD = 0). The FULL trace shows a 15× spike...
+
+## Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+ID: t0066_t0024_epsp_ipsp_vm_protocol
+Completed: 2026-04-30
+Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.
+Result summary: Results Summary: Test t0024 de Rosenroll DSGC under EPSP/IPSP/FULL protocol Summary The de Rosenroll 2026 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — 120 trials (3 modes × 2 directions × 20 seeds) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s IPSP_PASSIVE trace is flat at -60 mV in both PD and ND**, exactly as in t0065&#x27;s deposited Poleg-Polsky cell. Two structurally independent DSGC implementations therefore converge on the same design pattern (`e_GABA = v_rest = -60 mV` → pure shunting inhibition); the t0065 finding is **not** a Poleg-Polsky idiosyncrasy. Metrics *...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

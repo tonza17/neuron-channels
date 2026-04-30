@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(15)](../suggestions/by-category/patch-clamp.md)
+(16)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,7 +1185,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (13 open, 2 closed)
+## Suggestions (14 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
@@ -1205,6 +1205,25 @@ essential for quantifying the differential shunting magnitude that drives FULL-m
 integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
 time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
 integrated charge per direction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>SEClamp inhibitory conductance measurement on de Rosenroll
+cell</strong> (S-0066-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
+[t0066_t0024_epsp_ipsp_vm_protocol](../../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
+
+Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of
+g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set
+ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset
+from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD
+(gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated
+charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob
+translates to mean conductance. Reuses t0049's SEClamp infrastructure (which was developed for
+the deposited cell — would need a small port for the de Rosenroll synapse model). Parallel to
+S-0065-03 for the deposited cell; together they give cross-model conductance benchmarks.
 
 </details>
 

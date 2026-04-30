@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T15:21:00Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T16:51:47Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>299956</char_count>
-    <byte_count>300193</byte_count>
-    <estimated_tokens>74989</estimated_tokens>
+    <char_count>305544</char_count>
+    <byte_count>305800</byte_count>
+    <estimated_tokens>76386</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -171,9 +171,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0063_hh_voltage_step_test</id>
         <id>t0064_hh_current_step_test</id>
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
+        <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
       </source_ids>
       <content>
-Completed tasks: 59
+Completed tasks: 60
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -528,6 +529,12 @@ ID: t0065_t0020_epsp_ipsp_vm_protocol
 Completed: 2026-04-30
 Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.
 Result summary: Results Summary: Test t0020 deposited DSGC under EPSP/IPSP/FULL protocol Summary The deposited Poleg-Polsky &amp; Diamond 2016 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — six trials (3 modes × 2 directions × 1 seed) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s direction selectivity is produced almost entirely by shunting inhibition, not hyperpolarising inhibition**. The IPSP_PASSIVE traces stay flat at the inhibitory reversal potential e_SACinhib = -60 mV in both PD and ND, while the EPSP_PASSIVE traces are bit-identical between directions (gabaMOD = 0). The FULL trace shows a 15× spike...
+
+## Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+ID: t0066_t0024_epsp_ipsp_vm_protocol
+Completed: 2026-04-30
+Short description: Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.
+Result summary: Results Summary: Test t0024 de Rosenroll DSGC under EPSP/IPSP/FULL protocol Summary The de Rosenroll 2026 DSGC was driven through the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol — 120 trials (3 modes × 2 directions × 20 seeds) — decomposing the somatic Vm into pure-excitatory and pure-inhibitory components. Headline finding: **the model&#x27;s IPSP_PASSIVE trace is flat at -60 mV in both PD and ND**, exactly as in t0065&#x27;s deposited Poleg-Polsky cell. Two structurally independent DSGC implementations therefore converge on the same design pattern (`e_GABA = v_rest = -60 mV` → pure shunting inhibition); the t0065 finding is **not** a Poleg-Polsky idiosyncrasy. Metrics *...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1014,6 +1021,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0059-03</id>
         <id>S-0065-01</id>
         <id>S-0065-02</id>
+        <id>S-0066-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1173,6 +1181,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0059-05</id>
         <id>S-0059-06</id>
         <id>S-0065-03</id>
+        <id>S-0066-01</id>
+        <id>S-0066-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1203,9 +1213,11 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0055-07</id>
         <id>S-0065-04</id>
         <id>S-0065-05</id>
+        <id>S-0066-04</id>
+        <id>S-0066-05</id>
       </source_ids>
       <content>
-Open suggestions: 227
+Open suggestions: 232
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1472,6 +1484,13 @@ Priority: high
 Kind: experiment
 Source task: t0065_t0020_epsp_ipsp_vm_protocol
 The deposited cell places e_SACinhib = -60 mV which equals the cell&#x27;s leak-driven quiescent potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i), inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off threshold across all directions. Conversely, if e_GABA &gt; v_rest, inhibition can depolarise toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse mechanism&#x27;s reversal). This directly tests whether the deposited...
+
+## Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family substrate (t0052-t0059)
+ID: S-0066-02
+Priority: high
+Kind: experiment
+Source task: t0066_t0024_epsp_ipsp_vm_protocol
+t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is portable: copy run_protocol.py, swap the cell...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2586,6 +2605,20 @@ Kind: experiment
 Source task: t0065_t0020_epsp_ipsp_vm_protocol
 t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is essential for quantifying the differential shunting magnitude that...
 
+## Audit project DSGC family for systemic e_GABA = v_rest design choice
+ID: S-0066-01
+Priority: medium
+Kind: evaluation
+Source task: t0066_t0024_epsp_ipsp_vm_protocol
+t0066 confirmed that both deposited Poleg-Polsky 2016 (t0065) and de Rosenroll 2026 (t0066) DSGC implementations independently use e_GABA = v_rest = -60 mV, producing pure shunting inhibition. This is a recurring DSGC modelling pattern, not an idiosyncrasy. Conduct a project-wide audit: read constants/parameter files for ALL DSGC ports (t0008, t0023 if completed, the from-scratch family t0052-t0059) and record (V_INIT, ELEAK, GABA_EREV) tuples. Map the design choice across ports. If any port uses e_GABA != v_rest, that becomes a useful comparison point for testing whether direction selectivity persists when inhibition is hyperpolarising. Output: a single answer asset summarising the audit...
+
+## SEClamp inhibitory conductance measurement on de Rosenroll cell
+ID: S-0066-03
+Priority: medium
+Kind: experiment
+Source task: t0066_t0024_epsp_ipsp_vm_protocol
+Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD (gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob translates to mean conductance. Reuses t0049&#x27;s SEClamp infrastructure (which was developed for the deposited cell — would need a small port...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2795,6 +2828,20 @@ Priority: low
 Kind: experiment
 Source task: t0065_t0020_epsp_ipsp_vm_protocol
 t0065 only tests gabaMOD = 0.33 (PD) and 0.99 (ND). The Poleg-Polsky 2016 paper has a smooth tuning curve over 8 directions, which the deposited model simulates by sweeping gabaMOD across [0.33, 0.99]. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 8 directions would produce an EPSP/IPSP decomposition for the entire tuning curve, not just the two anchor points. Most informative for understanding how shunting modulates the EPSP envelope at intermediate directions: does the relationship between gabaMOD and FULL-mode envelope compression scale linearly, or is there a threshold around gabaMOD ~ 0.6 where the cell transitions from spiking to non-spiking? Sweep cost: 24 trials (3 modes x 8...
+
+## Sensitivity sweep: re-run t0066 with paper-text e_LEAK = -70 mV
+ID: S-0066-04
+Priority: low
+Kind: experiment
+Source task: t0066_t0024_epsp_ipsp_vm_protocol
+The t0024 constants file documents that the de Rosenroll 2026 paper text specifies ELEAK_PAPER_TEXT = -70 mV (a true hyperpolarising rest below e_GABA = -60), but the upstream code authority used -60 mV. Re-run the t0066 EPSP/IPSP/FULL protocol with ELEAK = -70 mV (and V_INIT = -70 mV) to test the paper-text variant. Prediction: IPSP_PASSIVE will become a real hyperpolarising trace (PD ~-65 mV, ND ~-69 mV — closer to e_GABA = -60 mV with proportional displacement); FULL DSI may change because the cell now sits 5 mV further from spike threshold. This both quantifies the paper-vs-code discrepancy and gives us a reference &#x27;hyperpolarising IPSP&#x27; DSGC for cross-comparison. Cost: re-run the same...
+
+## 12-angle EPSP/IPSP/FULL tuning curve on de Rosenroll cell
+ID: S-0066-05
+Priority: low
+Kind: experiment
+Source task: t0066_t0024_epsp_ipsp_vm_protocol
+t0066 only tested PD (0°) and ND (180°). The de Rosenroll model&#x27;s bar-geometry direction encoding produces continuous tuning across angles. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 12 angles (0°, 30°, 60°, ..., 330°) would produce an EPSP/IPSP decomposition for the entire tuning curve, showing how the bar-geometry contribution to direction sensitivity (visible as ~1.6 mV PD-vs-ND difference in EPSP_PASSIVE) varies with angle. Most informative for: identifying the angle where the bar-geometry contribution maximises (probably ~90° from preferred), and characterising whether the GABA shunt-driven DS scales linearly across angles or has a threshold. Sweep cost: 12 angles x 3 modes x 20...
       </content>
     </section>
   </sections>

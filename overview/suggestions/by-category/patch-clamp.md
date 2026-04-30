@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-15 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **13
-open** (1 high, 11 medium, 1 low), **2 closed**.
+16 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **14
+open** (1 high, 12 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -307,6 +307,31 @@ AMPA/NMDA driving force; the -45 mV condition reverses the GABA driving force si
 increases NMDA Mg-block relief. Tests (a) whether the GABA PD/ND symmetry persists across
 V_clamp (ruling out driving-force noise), (b) whether NMDA over-amplification depends on
 holding voltage. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>SEClamp inhibitory conductance measurement on de Rosenroll
+cell</strong> (S-0066-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of
+g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set
+ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset
+from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD
+(gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated
+charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob
+translates to mean conductance. Reuses t0049's SEClamp infrastructure (which was developed for
+the deposited cell — would need a small port for the de Rosenroll synapse model). Parallel to
+S-0065-03 for the deposited cell; together they give cross-model conductance benchmarks.
 
 </details>
 

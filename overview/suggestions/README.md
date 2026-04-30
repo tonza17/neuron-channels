@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-240 suggestions **211 open** (24 high, 157 medium, 30 low), **29 closed**.
+245 suggestions **216 open** (25 high, 159 medium, 32 low), **29 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -119,6 +119,33 @@ count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and rep
 vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
 the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
 biologically informative. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family
+substrate (t0052-t0059)</strong> (S-0066-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed
+flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is
+trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct
+EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us
+whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from
+a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the
+IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is
+portable: copy run_protocol.py, swap the cell builder import, adjust HH knob names. Cost: ~1
+hour code + ~30 min sweep (the from-scratch family is faster — fewer trials needed because
+lower noise variance). This is the natural successor to S-0065-01, now made more urgent by the
+t0066 findings.
 
 </details>
 
@@ -1040,6 +1067,31 @@ DSI varies with rho, the effect is release-noise-mediated. Distinct from S-0026-
 crosses rho with V_rest to disambiguate noise vs depolarisation) because this sweeps rho at
 fixed V_rest and fixed morphology to isolate the release-noise-vs-cable-biophysics axis.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit project DSGC family for systemic e_GABA = v_rest design
+choice</strong> (S-0066-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+t0066 confirmed that both deposited Poleg-Polsky 2016 (t0065) and de Rosenroll 2026 (t0066)
+DSGC implementations independently use e_GABA = v_rest = -60 mV, producing pure shunting
+inhibition. This is a recurring DSGC modelling pattern, not an idiosyncrasy. Conduct a
+project-wide audit: read constants/parameter files for ALL DSGC ports (t0008, t0023 if
+completed, the from-scratch family t0052-t0059) and record (V_INIT, ELEAK, GABA_EREV) tuples.
+Map the design choice across ports. If any port uses e_GABA != v_rest, that becomes a useful
+comparison point for testing whether direction selectivity persists when inhibition is
+hyperpolarising. Output: a single answer asset summarising the audit with recommendations on
+which port (if any) implements biologically realistic Cl- reversal physics.
 
 </details>
 
@@ -3871,6 +3923,31 @@ holding voltage. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>SEClamp inhibitory conductance measurement on de Rosenroll
+cell</strong> (S-0066-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of
+g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set
+ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset
+from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD
+(gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated
+charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob
+translates to mean conductance. Reuses t0049's SEClamp infrastructure (which was developed for
+the deposited cell — would need a small port for the de Rosenroll synapse model). Parallel to
+S-0065-03 for the deposited cell; together they give cross-model conductance benchmarks.
+
+</details>
+
+<details>
 <summary>📊 <strong>Sensitivity analysis: re-run DSGC simulations under alternative
 Strahler tie-break rules and bin boundaries</strong> (S-0009-05)</summary>
 
@@ -4476,6 +4553,32 @@ re-analysis of existing CSVs. Recommended task types: data-analysis.
 </details>
 
 ## Low Priority
+
+<details>
+<summary>🧪 <strong>12-angle EPSP/IPSP/FULL tuning curve on de Rosenroll
+cell</strong> (S-0066-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+t0066 only tested PD (0°) and ND (180°). The de Rosenroll model's bar-geometry direction
+encoding produces continuous tuning across angles. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL
+at all 12 angles (0°, 30°, 60°, ..., 330°) would produce an EPSP/IPSP decomposition for the
+entire tuning curve, showing how the bar-geometry contribution to direction sensitivity
+(visible as ~1.6 mV PD-vs-ND difference in EPSP_PASSIVE) varies with angle. Most informative
+for: identifying the angle where the bar-geometry contribution maximises (probably ~90° from
+preferred), and characterising whether the GABA shunt-driven DS scales linearly across angles
+or has a threshold. Sweep cost: 12 angles x 3 modes x 20 trials x ~30 s/trial = ~6 hours.
+Could parallelise across CPU cores (each angle independent) to reduce wall-clock to ~1.5
+hours.
+
+</details>
 
 <details>
 <summary>📂 <strong>Add a Poisson-noise variant of the target trials</strong>
@@ -5168,6 +5271,31 @@ side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic 
 asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
 persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
 Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sensitivity sweep: re-run t0066 with paper-text e_LEAK = -70
+mV</strong> (S-0066-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0066-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-30 |
+| **Source task** | [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+
+The t0024 constants file documents that the de Rosenroll 2026 paper text specifies
+ELEAK_PAPER_TEXT = -70 mV (a true hyperpolarising rest below e_GABA = -60), but the upstream
+code authority used -60 mV. Re-run the t0066 EPSP/IPSP/FULL protocol with ELEAK = -70 mV (and
+V_INIT = -70 mV) to test the paper-text variant. Prediction: IPSP_PASSIVE will become a real
+hyperpolarising trace (PD ~-65 mV, ND ~-69 mV — closer to e_GABA = -60 mV with proportional
+displacement); FULL DSI may change because the cell now sits 5 mV further from spike
+threshold. This both quantifies the paper-vs-code discrepancy and gives us a reference
+'hyperpolarising IPSP' DSGC for cross-comparison. Cost: re-run the same 120-trial sweep with
+two constants changed = 1 line of code + 1 hour compute.
 
 </details>
 
