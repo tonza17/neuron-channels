@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-code",
       "description": "Survey t0008/t0019/t0065 code and answer assets to identify reusable cell builder, channel kinetic priors, and trial-driver template.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-30T23:11:36Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-code/"
+      "log_file": "logs\\steps\\004_research-code/"
     },
     {
       "step": 5,
