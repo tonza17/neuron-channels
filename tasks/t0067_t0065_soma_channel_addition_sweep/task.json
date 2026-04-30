@@ -5,13 +5,13 @@
   "name": "Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change",
   "short_description": "Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0019_literature_survey_voltage_gated_channels",
     "t0065_t0020_epsp_ipsp_vm_protocol"
   ],
-  "start_time": null,
+  "start_time": "2026-04-30T23:07:09Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
