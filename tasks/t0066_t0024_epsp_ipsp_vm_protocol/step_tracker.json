@@ -68,10 +68,10 @@
       "step": 8,
       "name": "suggestions",
       "description": "Author suggestions.json with follow-up tasks driven by the de Rosenroll EPSP/IPSP decomposition findings and the cross-model comparison.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-30T16:45:34Z",
       "completed_at": null,
-      "log_file": "logs/steps/008_suggestions/"
+      "log_file": "logs\\steps\\008_suggestions/"
     },
     {
       "step": 9,
