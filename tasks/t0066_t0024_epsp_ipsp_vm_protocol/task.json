@@ -5,12 +5,12 @@
   "name": "Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol",
   "short_description": "Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0065_t0020_epsp_ipsp_vm_protocol"
   ],
-  "start_time": null,
+  "start_time": "2026-04-30T15:47:25Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
