@@ -1,10 +1,97 @@
 # Tasks by Date Added
 
-63 tasks grouped by effective task date.
+64 tasks grouped by effective task date.
 
 [Back to all tasks](../README.md)
 
 ---
+
+## 2026-04-30 (1)
+
+## ✅ Completed
+
+<details>
+<summary>✅ 0064 — <strong>HH current-step diagnostic on t0059 substrate (no
+synapses)</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0064_hh_current_step_test` |
+| **Status** | completed |
+| **Effective date** | 2026-04-30 |
+| **Dependencies** | [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-04-29T23:54:52Z |
+| **End time** | 2026-04-30T00:06:00Z |
+| **Step progress** | 7/15 |
+| **Task page** | [HH current-step diagnostic on t0059 substrate (no synapses)](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md) |
+| **Task folder** | [`t0064_hh_current_step_test/`](../../../tasks/t0064_hh_current_step_test/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0064_hh_current_step_test/results/results_detailed.md) |
+
+# HH Current-Step Diagnostic on t0059 Substrate (No Synapses)
+
+## Source
+
+User-commissioned diagnostic, follow-up to t0063 (voltage clamp). Switches to current clamp so
+APs can fire. Tests the HH model's spiking output as a function of injected current.
+
+## Protocol
+
+* No synaptic input. IClamp on `soma(0.5)`.
+* IClamp protocol:
+  * `delay = 50 ms` (initial rest period).
+  * `dur = 200 ms` (current step).
+  * `amp = target_na` (one of 6 values).
+* Total trial: 300 ms.
+* Currents: **{0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA**.
+* Modes: **FULL** (HH on, soma + AIS) and **EPSP_PASSIVE** (HH save-and-zero on soma + AIS).
+* 6 currents × 2 modes × 1 trial = **12 trials**. Wall-clock ~30-60 s.
+
+## Outputs
+
+* `results/voltage_traces.csv` — Vm and current trace per (target, mode).
+* `results/summary.csv` — peak Vm, spike count per (target, mode).
+* `results/images/voltage_response_grid.png` — 6 panels (one per current), Vm in both modes.
+* `results/images/voltage_response_overlay.png` — all 12 traces overlaid.
+
+## Architecture
+
+Same as t0063 (cell from t0059, soma + AIS HH, passive dendrites) but with IClamp instead of
+SEClamp. HH save-and-zero protocol same as before.
+
+## Verification Criteria
+
+* CSVs and 2 PNGs exist; verifiers pass.
+
+**Results summary:**
+
+> **Results Summary: t0064 HH Current-Step Diagnostic**
+>
+> **Summary**
+>
+> IClamp 200 ms current steps at {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA on soma, no synapses. 12
+> trials in
+> 79 s. The HH model produces a clean F-I curve with rheobase between 0.1 and 0.2 nA, peak
+> firing rate
+> of 18 spikes / 200 ms (= 90 Hz) at 1.0 nA, and characteristic **depolarization block at 2.0
+> nA**
+> (only 1 initial spike, then sustained Vm plateau ~-30 mV).
+>
+> **Metrics**
+>
+> | I (nA) | FULL peak Vm | FULL spikes | EPSP_PASSIVE peak Vm | F-I rate (Hz) |
+> | --- | --- | --- | --- | --- |
+> | 0.1 | -60.53 mV | 0 | -61.65 mV | 0 |
+> | 0.2 | +14.48 mV | **7** | -58.53 mV | 35 |
+> | 0.3 | +17.27 mV | **10** | -55.41 mV | 50 |
+> | 0.5 | +19.74 mV | **13** | -49.17 mV | 65 |
+> | 1.0 | +23.13 mV | **18** | -33.56 mV | 90 |
+> | 2.0 | +28.00 mV | **1 (depol-block)** | -2.34 mV | 5 |
+>
+
+</details>
 
 ## 2026-04-29 (6)
 

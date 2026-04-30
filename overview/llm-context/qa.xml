@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-04-29T23:47:21Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-04-30T00:08:14Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>359663</char_count>
-    <byte_count>360159</byte_count>
-    <estimated_tokens>89915</estimated_tokens>
+    <char_count>360702</char_count>
+    <byte_count>361198</byte_count>
+    <estimated_tokens>90175</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -168,9 +168,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0061_nmda_escape_pd_only_no_gaba</id>
         <id>t0062_nmda_escape_with_ampa_priming</id>
         <id>t0063_hh_voltage_step_test</id>
+        <id>t0064_hh_current_step_test</id>
       </source_ids>
       <content>
-Completed tasks: 57
+Completed tasks: 58
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -513,6 +514,12 @@ ID: t0063_hh_voltage_step_test
 Completed: 2026-04-29
 Short description: SEClamp voltage steps to {-60, -50, -40, -30, -20, -10} mV for 200 ms each on the t0059 cell (no synaptic input); HH on vs HH off; plot Vm and clamp current.
 Result summary: Results Summary: t0063 HH Voltage-Step Diagnostic Summary Stepped the soma from -65 mV to {-60, -50, -40, -30, -20, -10} mV via SEClamp for 200 ms each, 12 trials (6 targets x 2 modes) in 24.60 s. SEClamp held Vm tight to target across all conditions. The FULL-vs-PASSIVE clamp current difference reveals classic HH dynamics: transient inward Na+ current at step onset (-13 to -15 nA) at all depolarised levels; sustained outward residual at -30 to -10 mV (persistent K+ delayed-rectifier minus residual Na+) growing from ~+1 to +5 nA. Metrics * **Tight clamp**: Vm tracks target voltage within 1 mV at all 6 targets in both modes (clamp rs = 0.001 MOhm). * **Capacitive transients**: clamp current...
+
+## HH current-step diagnostic on t0059 substrate (no synapses)
+ID: t0064_hh_current_step_test
+Completed: 2026-04-30
+Short description: IClamp current steps {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA for 200 ms each on the t0059 cell (no synapses); HH on vs HH off; plot Vm response.
+Result summary: Results Summary: t0064 HH Current-Step Diagnostic Summary IClamp 200 ms current steps at {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA on soma, no synapses. 12 trials in 79 s. The HH model produces a clean F-I curve with rheobase between 0.1 and 0.2 nA, peak firing rate of 18 spikes / 200 ms (= 90 Hz) at 1.0 nA, and characteristic **depolarization block at 2.0 nA** (only 1 initial spike, then sustained Vm plateau ~-30 mV). Metrics | I (nA) | FULL peak Vm | FULL spikes | EPSP_PASSIVE peak Vm | F-I rate (Hz) | | --- | --- | --- | --- | --- | | 0.1 | -60.53 mV | 0 | -61.65 mV | 0 | | 0.2 | +14.48 mV | **7** | -58.53 mV | 35 | | 0.3 | +17.27 mV | **10** | -55.41 mV | 50 | | 0.5 | +19.74 mV | **13** | -49.17...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
