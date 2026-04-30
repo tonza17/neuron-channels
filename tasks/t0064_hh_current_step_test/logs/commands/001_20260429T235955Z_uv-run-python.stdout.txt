@@ -1,0 +1,15 @@
+[t0064] Building cell from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0064_hh_current_step_test\tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\files\141009_Pair1DSGC_calibrated.CNG.swc
+[t0064] Running 6 currents x 2 modes = 12 trials
+[t0064] I=0.10 nA  mode=full           peak_vm=-60.53 mV  n_spikes= 0  dt=1.09 s
+[t0064] I=0.10 nA  mode=epsp_passive   peak_vm=-61.65 mV  n_spikes= 0  dt=0.57 s
+[t0064] I=0.20 nA  mode=full           peak_vm= 14.48 mV  n_spikes= 7  dt=9.07 s
+[t0064] I=0.20 nA  mode=epsp_passive   peak_vm=-58.53 mV  n_spikes= 0  dt=1.38 s
+[t0064] I=0.30 nA  mode=full           peak_vm= 17.27 mV  n_spikes=10  dt=14.62 s
+[t0064] I=0.30 nA  mode=epsp_passive   peak_vm=-55.41 mV  n_spikes= 0  dt=1.32 s
+[t0064] I=0.50 nA  mode=full           peak_vm= 19.74 mV  n_spikes=13  dt=18.07 s
+[t0064] I=0.50 nA  mode=epsp_passive   peak_vm=-49.17 mV  n_spikes= 0  dt=1.57 s
+[t0064] I=1.00 nA  mode=full           peak_vm= 23.13 mV  n_spikes=18  dt=21.74 s
+[t0064] I=1.00 nA  mode=epsp_passive   peak_vm=-33.56 mV  n_spikes= 0  dt=1.72 s
+[t0064] I=2.00 nA  mode=full           peak_vm= 28.00 mV  n_spikes= 1  dt=6.34 s
+[t0064] I=2.00 nA  mode=epsp_passive   peak_vm= -2.34 mV  n_spikes= 1  dt=1.48 s
+[t0064] Done. wall-clock = 78.98 s.
