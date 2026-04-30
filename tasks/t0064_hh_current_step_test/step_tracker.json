@@ -131,10 +131,10 @@
       "step": 15,
       "name": "reporting",
       "description": "Verifiers, status, PR, merge.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-30T00:05:31Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\015_reporting/"
     }
   ]
 }
