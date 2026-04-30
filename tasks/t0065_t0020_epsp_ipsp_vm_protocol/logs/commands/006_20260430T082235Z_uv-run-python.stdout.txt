@@ -1,0 +1,7 @@
+Loading traces from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\data\voltage_traces.csv...
+  60006 samples loaded.
+  Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\images\vm_full_pd_vs_nd.png
+  Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\images\epsp_pd_vs_nd.png
+  Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\images\ipsp_pd_vs_nd.png
+  Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\images\three_mode_pd_overlay.png
+  Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\images\three_mode_nd_overlay.png
