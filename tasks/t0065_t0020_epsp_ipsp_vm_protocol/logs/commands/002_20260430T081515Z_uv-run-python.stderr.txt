@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\code\run_protocol.py", line 331, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\code\run_protocol.py", line 299, in main
+    h: Any = load_neuron()
+             ~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 108, in load_neuron
+    dll_path = _nrnmech_dll_path()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 89, in _nrnmech_dll_path
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: nrnmech.dll not found at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0008_port_modeldb_189347\build\modeldb_189347\nrnmech.dll. Run nrnivmodl on C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0008_port_modeldb_189347\assets\library\modeldb_189347_dsgc\sources via code/run_nrnivmodl.cmd first.

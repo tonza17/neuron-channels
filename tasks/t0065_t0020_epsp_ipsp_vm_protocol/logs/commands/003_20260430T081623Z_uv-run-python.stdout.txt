@@ -1,0 +1,7 @@
+Bootstrapping NEURON and building deposited DSGC...
+	0
+	1
+	1
+	1
+  countON=282 numsyn=282
+Running 6 trials (mode x direction).

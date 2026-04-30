@@ -1,0 +1,20 @@
+Bootstrapping NEURON and building deposited DSGC...
+	0
+	1
+	1
+	1
+  countON=282 numsyn=282
+Running 6 trials (mode x direction).
+
+Per-trial summary:
+mode           dir  peak_v_mv  base_v_mv   amp_mv spikes      n
+---------------------------------------------------------------
+FULL           PD      43.180    -58.869  102.049     15  10001
+FULL           ND      43.291    -59.313  102.604      1  10001
+EPSP_PASSIVE   PD     -29.827    -58.466   28.639      -  10001
+EPSP_PASSIVE   ND     -29.827    -58.466   28.639      -  10001
+IPSP_PASSIVE   PD     -60.019    -60.123    0.104      -  10001
+IPSP_PASSIVE   ND     -60.015    -60.123    0.108      -  10001
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\data\voltage_traces.csv
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0065_t0020_epsp_ipsp_vm_protocol\tasks\t0065_t0020_epsp_ipsp_vm_protocol\results\metrics.json
