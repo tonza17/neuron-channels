@@ -5,11 +5,11 @@
   "name": "Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol",
   "short_description": "Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0020_port_modeldb_189347_gabamod"
   ],
-  "start_time": null,
+  "start_time": "2026-04-30T07:58:16Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
