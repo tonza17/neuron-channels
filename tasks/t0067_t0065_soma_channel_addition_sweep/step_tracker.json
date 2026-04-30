@@ -41,18 +41,18 @@
       "step": 5,
       "name": "planning",
       "description": "Write plan/plan.md detailing channel-density sweep, MOD vendoring strategy, trial-loop structure, plot inventory.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
+      "status": "completed",
+      "started_at": "2026-05-01T00:18:30Z",
+      "completed_at": "2026-05-01T00:22:00Z",
       "log_file": "logs/steps/005_planning/"
     },
     {
       "step": 6,
       "name": "implementation",
       "description": "Vendor 5 MOD files, recompile DLL, implement run_sweep.py + plot_results.py, run 160-trial sweep, generate 3 PNGs.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
+      "status": "completed",
+      "started_at": "2026-05-01T00:22:30Z",
+      "completed_at": "2026-05-01T00:35:00Z",
       "log_file": "logs/steps/006_implementation/"
     },
     {
