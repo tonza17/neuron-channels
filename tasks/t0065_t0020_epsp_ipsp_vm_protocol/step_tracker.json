@@ -50,9 +50,9 @@
       "step": 6,
       "name": "implementation",
       "description": "Implement code/run_protocol.py + plotting; run the 6-trial sweep and emit voltage_traces CSV plus PNGs.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T08:12:18Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T08:26:18Z",
       "log_file": "logs\\steps\\006_implementation/"
     },
     {
