@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E002 error: YAML frontmatter is missing or has invalid delimiters[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)
