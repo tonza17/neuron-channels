@@ -68,9 +68,9 @@
       "step": 8,
       "name": "suggestions",
       "description": "Author suggestions.json with follow-up tasks driven by the EPSP/IPSP decomposition findings.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T15:14:37Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T15:15:18Z",
       "log_file": "logs\\steps\\008_suggestions/"
     },
     {
