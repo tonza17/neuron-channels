@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0067_t0065_soma_channel_addition_sweep\tasks\t0067_t0065_soma_channel_addition_sweep\task.json
+
+[33m[1mWARNINGS:[0m
+[33m  TF-W001 warning: short_description is 221 characters (maximum: 200)[0m
+[33m  TF-W002 warning: name is 95 characters (maximum: 80)[0m
+[33m  TF-W005 warning: expected_assets is empty (task produces no assets)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)

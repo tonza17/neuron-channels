@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0067_t0065_soma_channel_addition_sweep\tasks\t0067_t0065_soma_channel_addition_sweep\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W001 warning: Section 'Cost Estimation' has 15 words (minimum: 20)[0m
+[33m  PL-W001 warning: Section 'Step by Step' has 81 words (minimum: 100)[0m
+[33m  PL-W001 warning: Section 'Remote Machines' has 5 words (minimum: 10)[0m
+[33m  PL-W001 warning: Section 'Expected Assets' has 10 words (minimum: 20)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 4 warning(s)

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0067_t0065_soma_channel_addition_sweep",
+  "command": "uv run python -u -m tasks.t0067_t0065_soma_channel_addition_sweep.code.plot_results",
+  "exit_code": 0,
+  "duration_seconds": 3.94,
+  "started_at": "2026-04-30T23:23:35Z",
+  "completed_at": "2026-04-30T23:23:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0067_t0065_soma_channel_addition_sweep",
+  "stdout_file": "004_20260430T232335Z_uv-run-python.stdout.txt",
+  "stderr_file": "004_20260430T232335Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
