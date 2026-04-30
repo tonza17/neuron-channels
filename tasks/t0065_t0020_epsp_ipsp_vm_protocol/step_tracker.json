@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0020 dependency is completed and its assets are available.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T08:01:36Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T08:02:36Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
