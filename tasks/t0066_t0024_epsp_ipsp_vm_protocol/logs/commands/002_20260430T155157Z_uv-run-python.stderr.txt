@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0066_t0024_epsp_ipsp_vm_protocol/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\logs\steps\003_init-folders

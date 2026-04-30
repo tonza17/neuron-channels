@@ -1,0 +1,19 @@
+{
+  "task_id": "t0066_t0024_epsp_ipsp_vm_protocol",
+  "checked_at": "2026-04-30T15:50:30Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0024_port_de_rosenroll_2026_dsgc",
+      "status": "completed",
+      "satisfied": true
+    },
+    {
+      "task_id": "t0065_t0020_epsp_ipsp_vm_protocol",
+      "status": "completed",
+      "satisfied": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 0
+}
