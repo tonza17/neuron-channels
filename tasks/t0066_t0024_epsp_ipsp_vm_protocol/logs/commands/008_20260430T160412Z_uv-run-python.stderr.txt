@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 348, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 316, in main
+    output = _run_one_trial(h=h, key=key)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 129, in _run_one_trial
+    cell = build_dsgc_cell(h)
+TypeError: build_dsgc_cell() takes 0 positional arguments but 1 was given

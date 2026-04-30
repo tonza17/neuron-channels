@@ -1,0 +1,1 @@
+Total trials to run: 6 (n_trials_per_cell=1)

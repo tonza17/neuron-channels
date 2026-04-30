@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0066_t0024_epsp_ipsp_vm_protocol",
+  "command": "uv run python -u -m tasks.t0066_t0024_epsp_ipsp_vm_protocol.code.run_protocol --smoke",
+  "exit_code": 1,
+  "duration_seconds": 13.588,
+  "started_at": "2026-04-30T16:04:59Z",
+  "completed_at": "2026-04-30T16:05:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0066_t0024_epsp_ipsp_vm_protocol",
+  "stdout_file": "009_20260430T160459Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260430T160459Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 20,
+  "truncated": false
+}

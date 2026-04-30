@@ -1,0 +1,20 @@
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 314, in main
+    output = _run_one_trial(key=key)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0066_t0024_epsp_ipsp_vm_protocol\code\run_protocol.py", line 127, in _run_one_trial
+    cell = build_dsgc_cell()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py", line 253, in build_dsgc_cell
+    h = load_neuron()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0066_t0024_epsp_ipsp_vm_protocol\tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py", line 77, in load_neuron
+    h.nrn_load_dll(dll_path)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+RuntimeError: hocobj_call error

@@ -1,0 +1,2 @@
+Total trials to run: 6 (n_trials_per_cell=1)
+[  1/6] FULL          PD trial= 0 peak= +37.89 mV  base= -51.98 mV  spikes=5  [ 12.4s]

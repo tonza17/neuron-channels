@@ -1,0 +1,12 @@
+Total trials to run: 6 (n_trials_per_cell=1)
+Building cell + synapses (one-shot)...
+Cell ready: 177 terminal dendrites, 177 ACh + 177 GABA NetCons.
+[  1/6] FULL          PD trial= 0 peak= +37.89 mV  base= -51.98 mV  spikes=5  [ 13.5s]
+[  2/6] FULL          ND trial= 0 peak= +36.60 mV  base= -56.46 mV  spikes=1  [ 17.6s]
+[  3/6] EPSP_PASSIVE  PD trial= 0 peak=  -3.57 mV  base= -29.13 mV  spikes=n/a  [ 15.7s]
+[  4/6] EPSP_PASSIVE  ND trial= 0 peak=  -4.47 mV  base= -27.48 mV  spikes=n/a  [ 15.1s]
+[  5/6] IPSP_PASSIVE  PD trial= 0 peak= -59.62 mV  base= -59.75 mV  spikes=n/a  [ 14.6s]
+[  6/6] IPSP_PASSIVE  ND trial= 0 peak= -59.62 mV  base= -59.91 mV  spikes=n/a  [ 14.3s]
+
+Sweep complete: 6 trials in 90.9s (mean 15.14s/trial)
+FULL DSI = 0.6667
