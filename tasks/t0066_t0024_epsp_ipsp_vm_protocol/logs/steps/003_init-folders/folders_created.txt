@@ -1,0 +1,5 @@
+Created 12 directories + Python package files.
+
+Directories: assets/, code/, corrections/, data/, intervention/, plan/, research/, results/,
+results/images/, logs/commands/, logs/searches/, logs/sessions/.
+Python package files: __init__.py at task root, code/__init__.py.
