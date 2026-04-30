@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-code",
       "description": "Survey t0008/t0020/t0046/t0049 code to identify exact reusable helpers (build_dsgc, apply_params, channel-isolation pattern, _assert_bip_positions_baseline).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-30T08:04:28Z",
-      "completed_at": null,
+      "completed_at": "2026-04-30T08:09:46Z",
       "log_file": "logs\\steps\\004_research-code/"
     },
     {
