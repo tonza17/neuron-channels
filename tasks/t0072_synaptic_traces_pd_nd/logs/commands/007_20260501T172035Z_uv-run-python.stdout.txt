@@ -1,0 +1,20 @@
+Building Bed A cell (Poleg-Polsky 2016 deposited)...
+	0
+	1
+	1
+	1
+Bed A cell ready: numsyn=282
+
+=== Bed A PD (gabaMOD=0.33) ===
+  wrote bed_a_pd_ampa.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3347305 B
+  wrote bed_a_pd_nmda.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3955027 B
+  wrote bed_a_pd_gaba.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=-60.0 mV, size=3846005 B
+  wrote bed_a_pd_ach.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3384728 B
+
+=== Bed A ND (gabaMOD=0.99) ===
+  wrote bed_a_nd_ampa.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3339917 B
+  wrote bed_a_nd_nmda.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3939252 B
+  wrote bed_a_nd_gaba.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=-60.0 mV, size=3920395 B
+  wrote bed_a_nd_ach.npz: g_traces=(282, 1000), v_local_traces=(282, 1000), t_ms=(1000,), e_rev=0.0 mV, size=3327557 B
+
+Bed A trials complete.

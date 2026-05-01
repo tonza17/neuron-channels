@@ -1,0 +1,15 @@
+Aggregating 12 input .npz files...
+  bed_a_pd_ampa.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.0238 nS |I|_peak_mean=0.97 pA
+  bed_a_pd_nmda.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.3031 nS |I|_peak_mean=8.89 pA
+  bed_a_pd_gaba.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.3752 nS |I|_peak_mean=8.85 pA
+  bed_a_pd_ach.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.0320 nS |I|_peak_mean=1.32 pA
+  bed_a_nd_ampa.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.0245 nS |I|_peak_mean=1.24 pA
+  bed_a_nd_nmda.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.1945 nS |I|_peak_mean=6.77 pA
+  bed_a_nd_gaba.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.7010 nS |I|_peak_mean=8.91 pA
+  bed_a_nd_ach.npz: n_syn=282 n_samples=1000 g_peak_mean=+0.0360 nS |I|_peak_mean=1.73 pA
+  bed_b_pd_ach.npz: n_syn=177 n_samples=1000 g_peak_mean=+0.1028 nS |I|_peak_mean=5.05 pA
+  bed_b_pd_gaba.npz: n_syn=177 n_samples=1000 g_peak_mean=+0.1643 nS |I|_peak_mean=3.79 pA
+  bed_b_nd_ach.npz: n_syn=177 n_samples=1000 g_peak_mean=+0.1069 nS |I|_peak_mean=5.42 pA
+  bed_b_nd_gaba.npz: n_syn=177 n_samples=1000 g_peak_mean=+1.2549 nS |I|_peak_mean=9.05 pA
+
+Wrote aggregated.npz: 49 arrays, size=377748 B

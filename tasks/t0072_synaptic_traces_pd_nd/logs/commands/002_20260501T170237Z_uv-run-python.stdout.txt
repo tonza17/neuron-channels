@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0011] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0012] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0022] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0072] has no matching Task Index entry[0m
+
+[31m[1mFAILED[0m — 4 error(s), 0 warning(s)
