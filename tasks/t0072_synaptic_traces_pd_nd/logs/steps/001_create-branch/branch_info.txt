@@ -1,0 +1,5 @@
+branch: task/t0072_synaptic_traces_pd_nd
+base_branch: main
+base_commit: 7dacdf841d20fca22d7029494350ad2b34cac3f7
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd
+created_at: 2026-05-01T16:47:49Z
