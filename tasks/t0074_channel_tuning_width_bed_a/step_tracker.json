@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing project papers for BK/SK/Kv7 kinetic models, RGC channel literature, and tuning-width metric conventions.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T23:09:26Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
