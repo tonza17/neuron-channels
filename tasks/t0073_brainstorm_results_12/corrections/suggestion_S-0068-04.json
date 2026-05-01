@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-04",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0068_t0067_nav16_kv3_coexpression_rescue",
+  "target_kind": "suggestion",
+  "target_id": "S-0068-04",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0068-04 proposes moving Nav1.6 + Kv3 to a virtual AIS instead of soma. t0075 (bio_realistic_ais_param_sweep) covers this directly: the AIS channel-set baseline includes Nav1.6 at medium density and Kv3 at medium density on the AIS, and Stage 2 axes 5 and 6 sweep AIS Nav1.6 and AIS Kv3 densities respectively across {0, low, medium, high}. The biologically-realistic AIS framing of t0075 supersedes the simpler 'just relocate Nav1.6 + Kv3' framing of S-0068-04. Rejecting as covered."
+}

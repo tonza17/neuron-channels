@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-08",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0069_t0067_ais_localised_channel_sweep",
+  "target_kind": "suggestion",
+  "target_id": "S-0069-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0069-03 proposes probing the AIS+axon's electrical-sink contribution by varying the axon-stub length. t0075 (bio_realistic_ais_param_sweep) covers this directly as Stage 2 axis 8: axon length is swept across {0.1, 0.5, 1.0, 2.0} mm. The 0.1 mm value is short enough to materially reduce the sink the t0069 1 mm axon imposed; the 2.0 mm value extends in the opposite direction; t0075 measures the resulting HWHM, vector-sum DSI, and peak rate sensitivity directly. Rejecting as covered."
+}

@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (167 open, 21 closed)
+## Suggestions (166 open, 22 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -2329,26 +2329,6 @@ pain (NaP upregulation in DRG neurons). Survey the literature for clinical/precl
 of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
 becomes a candidate computational model for a real disease state. Output: an answer asset
 summarising the literature on NaP dysregulation in DSGCs / retinal disease.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -2464,7 +2444,7 @@ comparative-analysis.
 <summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
 B behind one Python API</strong> (S-0070-02)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
 
 Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
@@ -5249,7 +5229,7 @@ produce a publication-quality raster. Recommended task types: write-library, exp
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
 
 No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,

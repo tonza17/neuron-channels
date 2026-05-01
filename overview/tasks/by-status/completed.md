@@ -1,12 +1,144 @@
 # ✅ Tasks: Completed
 
-66 tasks. ✅ **66 completed**.
+67 tasks. ✅ **67 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0073 — <strong>Brainstorm results session 12</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0073_brainstorm_results_12` |
+| **Status** | completed |
+| **Effective date** | 2026-05-01 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md), [`t0058_brainstorm_results_11`](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md), [`t0062_nmda_escape_with_ampa_priming`](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md), [`t0064_hh_current_step_test`](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-01T17:00:00Z |
+| **End time** | 2026-05-01T18:55:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 12](../../../overview/tasks/task_pages/t0073_brainstorm_results_12.md) |
+| **Task folder** | [`t0073_brainstorm_results_12/`](../../../tasks/t0073_brainstorm_results_12/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0073_brainstorm_results_12/results/results_detailed.md) |
+
+# Brainstorm Session 12: Channel Tuning-Width and Biologically-Realistic AIS Parameter Sweeps on Bed A
+
+Twelfth brainstorming session. Run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset
+PDF + synaptic-current equations), and t0072 (synaptic conductance/current traces for PD and
+ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067 /
+t0068 / t0069 voltage-gated-channel arc on Bed A (the deposited Poleg-Polsky 2016 ON-OFF DRD4
+DSGC):
+
+* **Tuning-width gap**: t0067 measured DSI as a point estimate from PD vs ND only. Whether the
+  channels {Nav1.6, NaP, NaR, Kv3, Kv4} also reshape the *width* of the angle-to-AP-rate
+  tuning curve has not been measured. The biologically more interesting question is whether
+  channels broaden or sharpen tuning, not just whether they raise or lower DSI at the two
+  cardinal angles.
+
+* **Biologically-realistic AIS gap**: t0069 falsified the AIS-channel-relocation hypothesis on
+  the 4 0 0 mS/cm² somatic Na background, but did so by collapsing the cell into a regime
+  where ND firing = 0 and DSI = 1 trivially. We therefore have no DSGC + AIS configuration
+  that simultaneously contains all the channels biologically present in a vertebrate AIS (HHst
+  basal Na+K, Nav1.6, Kv3, Kv7) while keeping DSI in the [0.3, 0.95] band and the peak rate in
+  the [5, 50] Hz band. Finding such a configuration via one-axis-at-a-time parameter sweeps
+  (not optimisation) is a prerequisite for any future AIS-localised-channel hypothesis test.
+
+## Decisions
+
+* **Create t0074** — `channel_tuning_width_bed_a`. Forks t0067's somatic channel-addition
+  layer on Bed A and runs a 12-angle bar-rotation tuning-curve protocol per condition. Channel
+  set is the five existing channels {Nav1.6, NaP, NaR, Kv3, Kv4} plus three newly vendored
+  channels {BK, SK, Kv7/M-current} at low/medium/high densities. 8 channel types times 3
+  densities plus 1 baseline = 25 conditions; 25 times 12 angles times 5 seeds = 1500 FULL
+  trials, plus 25 times 12 angles times 1 seed times 2 passive modes = 600 EPSP_PASSIVE /
+  IPSP_PASSIVE diagnostic trials; total ~2.2 h wall-clock on local CPU under CVODE. Width
+  metrics: HWHM (deg), vector-sum DSI, peak rate at PD, RMSE vs the t0004 cosine target.
+  Vendoring overhead (~3-4 h coding) covers BK + SK + Kv7 MOD files, a calcium-pool mechanism
+  for BK / SK, and unzeroing CaL / CaT in Bed A's `init_active` with a regression gate that
+  reproduces t0067's baseline DSI = 0.797 within 1e-3 before any new channel is added.
+
+* **Create t0075** — `bio_realistic_ais_param_sweep`. Forks t0069's AIS attachment code on Bed
+  A. AIS channel set: {HHst basal Na+K, Nav1.6, Kv3, Kv7} (NaP, BK, and SK explicitly excluded
+  — NaP inverts DSI per t0067 and is controversial in AIS; BK / SK are more soma / dendrite
+  than AIS in RGCs). Two-stage design: Stage 1 calibrates a working baseline by running 6
+  candidate soma-gnabar settings at a literature-informed AIS configuration (diameter 0.8
+  micrometre, length 3 0 micrometre, axon stub 1 mm) at 12 angles times 1 seed = 72 trials;
+  the candidate that lands inside {peak Hz in [5, 50], DSI in [0.3, 0.95]} is selected. Stage
+  2 runs 8 one-at-a-time axes from that baseline (soma `gnabar_HHst`, AIS `gnabar_HHst`, AIS
+  diameter, AIS length, AIS Nav1.6 density, AIS Kv3 density, AIS Kv7 density, axon length); 27
+  conditions times 12 angles times 5 seeds = 1620 FULL trials, ~100 min wall-clock. Total
+  compute ~2 h. Outputs: per-axis HWHM / DSI / peak Hz sensitivity plots and a
+  "biologically-plausible AIS recommendation" table. t0075 depends on t0074 (Kv7 vendoring
+  lands in t0074); the two are commissioned in this brainstorm but serialised by dependency.
+
+## Suggestion Cleanup
+
+* **Reject nine high-priority suggestions** as covered by the new tasks or as duplicates:
+  S-0068-01 (BK / SK with Nav1.6 — covered by t0074), S-0068-02 (Kv7 with Nav1.6 — covered by
+  t0074), S-0068-04 (move Nav1.6 + Kv3 to AIS — covered by t0075), S-0068-05 (Kv3 alone
+  validation — superseded by t0074's per-channel tuning-width sweep), S-0069-01 (halve somatic
+  gnabar — covered by t0075 axis 1), S-0069-02 (shrink AIS diameter to 0.5 micrometre —
+  covered by t0075 axis 3), S-0069-03 (vary axon length to probe sink — covered by t0075 axis
+  8), S-0069-04 (Nav1.6 + Kv3 on AIS at biological densities — covered by t0075 baseline plus
+  axes 5 + 6), S-0065-01 (apply EPSP / IPSP / FULL to from-scratch family — duplicate of
+  S-0066-02; the more recent S-0066-02 is kept).
+
+* **Reprioritise three high-priority suggestions to medium** where the t0065 / t0066 / t0067
+  shunting-inhibition discovery has changed the strategic frame: S-0002-01 (factorial g_Na x
+  g_K grid search) and S-0002-04 (factorial morphology sweep) — both pre-shunting-discovery
+  framing, the project has moved on; S-0070-02 (unified model-bed-runner library) — pure
+  infrastructure, not blocking any current experiment.
+
+## Tasks Cancelled or Updated
+
+None.
+
+## Assets Produced
+
+No assets in this brainstorm task. The two new tasks (t0074 and t0075) will produce one
+library asset each (channel-vendoring library plus tuning-width sweep code in t0074;
+biologically-realistic AIS variant of Bed A plus per-axis sweep code in t0075) and a results
+bundle each when executed downstream.
+
+**Results summary:**
+
+> **Results Summary: Brainstorm Session 12**
+>
+> **Summary**
+>
+> Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071
+> (typeset PDF +
+> synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND
+> on both
+> beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069
+> voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition
+> (t0067
+> measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that
+> simultaneously
+> contains all biologically-present AIS channels and produces non-trivial DSI at a
+> biologically
+> reasonable peak rate. Decision: commission two new tasks (t0074 `channel_tuning_width_bed_a`
+> —
+> 12-angle bar-rotation tuning curves on Bed A with 8-channel set including newly vendored BK
+> / SK /
+> Kv7; t0075 `bio_realistic_ais_param_sweep` — biologically-realistic AIS one-axis-at-a-time
+> parameter sweep on Bed A with channel set {HHst, Nav1.6, Kv3, Kv7}); reject nine covered or
+> duplicate suggestions; reprioritise three high-priority suggestions to medium where the
+> t0065 /
+> t0066 shunting-inhibition discovery has changed the strategic frame.
+>
+> **Session Overview**
+>
+> Date: 2026-05-01. Triggered by the convergent t0067-t0069 channel-arc findings: NaP_high
+> inverts DSI
+
+</details>
 
 <details>
 <summary>✅ 0072 — <strong>Plot synaptic conductances and currents for PD and ND

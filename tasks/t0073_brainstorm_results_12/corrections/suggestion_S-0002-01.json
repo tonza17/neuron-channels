@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-10",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "target_kind": "suggestion",
+  "target_id": "S-0002-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0002-01 proposes a factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge — the canonical RQ1 experiment. Pre-shunting-discovery framing. t0065 / t0066 demonstrated cross-model convergence on e_GABA = v_rest = -60 mV producing pure shunting inhibition, and t0067 showed that adding individual voltage-gated channels to the soma either erodes (Nav1.6) or inverts (NaP) DSI without rescuing it; the inhibition / excitation conductance ratio dominates the DSI mechanism, not the somatic VGC repertoire. The factorial g_Na x g_K sweep remains a useful follow-up once the e_GABA hypothesis is settled and a working multi-spike substrate exists, but is no longer top-of-queue. Reprioritising from high to medium so the high-priority shelf reflects the post-shunting-discovery critical path."
+}

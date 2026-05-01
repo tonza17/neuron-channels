@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-07",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0069_t0067_ais_localised_channel_sweep",
+  "target_kind": "suggestion",
+  "target_id": "S-0069-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0069-02 proposes shrinking AIS diameter to 0.5 micrometre and re-running the t0069 channel-insertion sweep, on the hypothesis that a narrower AIS has higher input resistance per area and therefore amplifies AIS-localised channel effects. t0075 (bio_realistic_ais_param_sweep) covers this directly as Stage 2 axis 3: AIS diameter is swept across {0.4, 0.6, 0.8, 1.0, 1.5} micrometre. The 0.4 and 0.6 micrometre values bracket the original 0.5 micrometre target and extend below it; the 1.0 and 1.5 micrometre values let us measure the diameter sensitivity over a biologically informed range. Rejecting as covered."
+}

@@ -2985,7 +2985,7 @@ produce a publication-quality raster. Recommended task types: write-library, exp
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
 segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
 
 ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic

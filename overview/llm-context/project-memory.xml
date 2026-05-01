@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-01T17:50:43Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-01T18:07:23Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>157046</char_count>
-    <byte_count>157307</byte_count>
-    <estimated_tokens>39261</estimated_tokens>
+    <char_count>158673</char_count>
+    <byte_count>158932</byte_count>
+    <estimated_tokens>39668</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -182,9 +182,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0070_writeup_two_model_beds</id>
         <id>t0071_t0070_synaptic_eqs_pdf</id>
         <id>t0072_synaptic_traces_pd_nd</id>
+        <id>t0073_brainstorm_results_12</id>
       </source_ids>
       <content>
-Completed tasks: 66
+Completed tasks: 67
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -581,6 +582,12 @@ ID: t0072_synaptic_traces_pd_nd
 Completed: 2026-05-01
 Short description: Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_traces_pd_nd&quot; date_completed: &quot;2026-05-01&quot; status: &quot;complete&quot; --- Synaptic Conductance and Current Traces (PD vs ND) Summary Recorded `g(t)` and `v_local(t)` from every synapse on each model bed (Bed A: 282 BIPsyn + SACinhibsyn + SACexcsyn = 4 synapse types; Bed B: 177 Exp2Syn ACh + GABA = 2 types) for one PD and one ND trial each at 1 ms resolution, computed `I = g · (v_local − E_rev)` post-hoc, and plotted population mean ± 1 SD per synapse type with PD and ND overlaid. Two multi-panel figures (Bed A: 4×2; Bed B: 2×2) plus a 1.0 MB Typst-typeset PDF embedding both figures and the full methodology. Metrics * **Bed A GABA peak conductance**: PD...
+
+## Brainstorm results session 12
+ID: t0073_brainstorm_results_12
+Completed: 2026-05-01
+Short description: Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
+Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset PDF + synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069 voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition (t0067 measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that simultaneously contains all biologically-present AIS channels and produces non-trivial DSI at a biologically reasonable peak rate. Decision: commission two new tasks (t0074...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -590,9 +597,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_tr
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -613,6 +622,20 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
+
+## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+ID: t0074_channel_tuning_width_bed_a
+Status: not_started
+Effective date: unknown
+Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+Dependencies: t0008_port_modeldb_189347, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0067_t0065_soma_channel_addition_sweep
+
+## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
+ID: t0075_bio_realistic_ais_param_sweep
+Status: not_started
+Effective date: unknown
+Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
+Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -788,10 +811,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
       <title>Open Suggestions</title>
       <source_name>aggregate_suggestions_full</source_name>
       <source_ids>
-        <id>S-0002-01</id>
         <id>S-0002-02</id>
         <id>S-0002-03</id>
-        <id>S-0002-04</id>
         <id>S-0002-09</id>
         <id>S-0003-01</id>
         <id>S-0005-01</id>
@@ -808,16 +829,11 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0033-01</id>
         <id>S-0035-01</id>
         <id>S-0036-01</id>
+        <id>S-0037-01</id>
+        <id>S-0037-02</id>
       </source_ids>
       <content>
 Open suggestions: 20
-
-## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
-ID: S-0002-01
-Priority: high
-Kind: experiment
-Source task: t0002_literature_survey_dsgc_compartmental_models
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null &lt; 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -832,13 +848,6 @@ Priority: high
 Kind: technique
 Source task: t0002_literature_survey_dsgc_compartmental_models
 PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this project&#x27;s goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the ModelDB code, run the original published stimulus, and verify the reproduced tuning curve lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null &lt; 10 Hz / HWHM 60-90 deg envelope. This creates the reference implementation the later parameter-variation tasks (Na/K grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types: code-reproduction.
-
-## Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
-ID: S-0002-04
-Priority: high
-Kind: experiment
-Source task: t0002_literature_survey_dsgc_compartmental_models
-ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.
 
 ## Implement the tuning-curve scoring loss combining DSI, peak rate, null residual, and HWHM targets
 ID: S-0002-09
@@ -951,6 +960,20 @@ Priority: high
 Kind: experiment
 Source task: t0036_rerun_t0030_halved_null_gaba
 t0036 halved GABA_CONDUCTANCE_NULL_NS from 12 nS to 6 nS and null firing stayed pinned at 0.0 Hz at every diameter multiplier, falsifying the Schachter2010 ~6 nS compound-inhibition rescue. The classifier auto-recommendation was &#x27;reduce null-GABA further to ~4 nS&#x27;. Rerun the t0036 diameter sweep at 4 nS, 2 nS, and 1 nS (stop as soon as mean null firing exceeds 0.1 Hz at 1.0x); each rerun is ~30 min CPU so worst case ~1.5 h. If null firing unpins at 4 or 2 nS, primary DSI becomes measurable and the Schachter2010-vs-passive slope discriminator is rescued on deterministic t0022. If it stays 0 Hz down to 1 nS, the testbed is structurally incompatible with primary DSI on morphology axes and the...
+
+## Rerun t0030&#x27;s 7-diameter sweep at GABA=4 nS on t0022
+ID: S-0037-01
+Priority: high
+Kind: experiment
+Source task: t0037_null_gaba_reduction_ladder_t0022
+t0030&#x27;s diameter sweep was uninformative because DSI was pinned at 1.000 (null firing = 0 Hz at 12 nS GABA). With 4 nS, the t0037 sweet spot, the t0022 testbed produces biologically realistic DSI (0.429) and preferred direction (40 deg). Rerun the original 7-diameter sweep (0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0 um) with GABA_CONDUCTANCE_NULL_NS=4.0 to measure the Schachter2010-vs-passive-filtering slope that has been the project&#x27;s headline discriminator target since t0030.
+
+## Update t0033 optimiser base GABA on t0022 variant to 4.0 nS
+ID: S-0037-02
+Priority: high
+Kind: technique
+Source task: t0037_null_gaba_reduction_ladder_t0022
+t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With GABA_CONDUCTANCE_NULL_NS=12 the objective is pinned and the optimiser sees no gradient. Update t0033&#x27;s t0022 variant to set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter; this is the first point at which the t0022 primary-DSI landscape can be optimised meaningfully. Without this change the Vast.ai optimisation runs on t0022 will be wasted compute.
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">

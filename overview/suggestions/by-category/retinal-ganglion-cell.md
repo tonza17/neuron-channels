@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 69 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **62 open** (11
-high, 42 medium, 9 low), **7 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **62 open** (10
+high, 43 medium, 9 low), **7 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -85,30 +85,6 @@ count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and rep
 vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
 the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
 biologically informative. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
-segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1523_ENEURO.0261-21.2021`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic
-E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the
-three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky
-177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch
-orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM
-per point, and test whether segment diameter has the largest effect (as cable theory
-predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
-currently lacks. Recommended task types: experiment-run.
 
 </details>
 
@@ -572,6 +548,30 @@ config shift that moves peak into [40, 80] Hz without dragging DSI outside [0.70
 Distinct from S-0008-04 (sweeps all parameters including GABA side under the rotation-proxy
 protocol); this is excitation-only under the native driver, addressable only now that t0020
 localised the gap. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
+segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1523_ENEURO.0261-21.2021`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic
+E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the
+three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky
+177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch
+orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM
+per point, and test whether segment diameter has the largest effect (as cable theory
+predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
+currently lacks. Recommended task types: experiment-run.
 
 </details>
 

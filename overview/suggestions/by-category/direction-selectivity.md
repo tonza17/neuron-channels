@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
 188 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **167 open** (26
-high, 125 medium, 16 low), **21 closed**.
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **166 open** (23
+high, 127 medium, 16 low), **22 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -185,33 +185,6 @@ reproducible from parameters alone.
 </details>
 
 <details>
-<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
-B behind one Python API</strong> (S-0070-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0070-02` |
-| **Kind** | library |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
-t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
-uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
-`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
-on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
-`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
-Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
-direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
-synapse handles, recordings, mode metadata). The library must internally translate the FULL /
-EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
-its specification. Recommended task types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
 <summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
 blend instead of pure primary DSI</strong> (S-0030-06)</summary>
 
@@ -257,30 +230,6 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
-to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1152_jn.00123.2009`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
-Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
-the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
-S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
-morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
-tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
-with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
 
 </details>
 
@@ -621,32 +570,6 @@ x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point
 >= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
 validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
 t0052, no bar-lock). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0068-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -1081,6 +1004,33 @@ pairs across an embarrassingly parallel pool, (c) returns a frozen dataclass wit
 Hz, null Hz, HWHM and a provenance dict, and (d) ships a thin CLI that accepts a parameter
 JSON and emits a results JSON. Every strategy row in the t0033 cost model can then call a
 single evaluator. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
+B behind one Python API</strong> (S-0070-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0070-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
+t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
+uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
+`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
+on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
+Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
+direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
+synapse handles, recordings, mode metadata). The library must internally translate the FULL /
+EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
+its specification. Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -1706,6 +1656,30 @@ gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a 
 asserting the override survived a fresh import and that the null/preferred ratio matches the
 requested value. Distinct from S-0033-06 (DSI objective evaluator) which wraps the scoring
 side - this wraps the schedule-parameter side. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
+to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1152_jn.00123.2009`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
+Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
+the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
+S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
+morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
+tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
+with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -4615,6 +4589,34 @@ dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI
 10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
 corpus and directly informs whether morphology-sweep design must preserve cable geometry or
 only branch topology.
+
+</details>
+
+<details>
+<summary>✅ <s>Test BK / SK calcium-activated K+ co-expression with Nav1.6</s> —
+covered by <a
+href="../../../tasks/t0074_channel_tuning_width_bed_a/"><code>t0074_channel_tuning_width_bed_a</code></a>
+(S-0068-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 

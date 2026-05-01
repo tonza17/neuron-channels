@@ -1185,7 +1185,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (17 open, 3 closed)
+## Suggestions (16 open, 4 closed)
 
 <details>
 <summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
@@ -1202,24 +1202,6 @@ rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show 
 because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
 more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
 across substrates.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
 
 </details>
 

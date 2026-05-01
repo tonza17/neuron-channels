@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-72-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-75-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-273-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (25K)
-| [full](llm-context/full.xml) (402K) | [roadmap](llm-context/roadmap.xml) (84K) |
-[results](llm-context/results-deep-dive.xml) (312K) |
-[assets](llm-context/literature-and-assets.xml) (44K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (26K)
+| [full](llm-context/full.xml) (409K) | [roadmap](llm-context/roadmap.xml) (87K) |
+[results](llm-context/results-deep-dive.xml) (315K) |
+[assets](llm-context/literature-and-assets.xml) (45K)
 
-*Last updated: 2026-05-01 17:50 UTC*
+*Last updated: 2026-05-01 18:07 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -56,18 +56,21 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0074 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | [`description`](../tasks/t0074_channel_tuning_width_bed_a/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
 
 ---
 
-## [Blocked Tasks (0)](tasks/)
+## [Blocked Tasks (1)](tasks/)
 
-No blocked tasks.
+| # | Task | Blocked By |
+|---|------|------------|
+| 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`t0074_channel_tuning_width_bed_a`](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
 
 ---
 
@@ -79,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (66 total)](tasks/by-status/completed.md)
+## [Recently Completed (67 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0073 | [Brainstorm results session 12](../overview/tasks/task_pages/t0073_brainstorm_results_12.md) | [`results`](../tasks/t0073_brainstorm_results_12/results/results_detailed.md) | 2026-05-01 18:55 |
 | 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
 | 0071 | [t0070 v2 - synaptic-current equations + typeset PDF](../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) | [`results`](../tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md) | 2026-05-01 15:25 |
 | 0070 | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) | [`results`](../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) | 2026-05-01 14:05 |
@@ -92,9 +96,8 @@ No blocked tasks.
 | 0066 | [Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 16:48 |
 | 0065 | [Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 15:16 |
 | 0064 | [HH current-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0064_hh_current_step_test.md) | [`results`](../tasks/t0064_hh_current_step_test/results/results_detailed.md) | 2026-04-30 00:06 |
-| 0063 | [HH voltage-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0063_hh_voltage_step_test.md) | [`results`](../tasks/t0063_hh_voltage_step_test/results/results_detailed.md) | 2026-04-29 23:46 |
 
-*56 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*57 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (242 open)](suggestions/)
+## [Recent Suggestions (240 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -171,26 +174,6 @@ pain (NaP upregulation in DRG neurons). Survey the literature for clinical/precl
 of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
 becomes a candidate computational model for a real disease state. Output: an answer asset
 summarising the literature on NaP dysregulation in DSGCs / retinal disease.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -264,24 +247,6 @@ still does nothing, our simplified Kv3 MOD likely needs revision to a richer kin
 </details>
 
 <details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
 insertions</strong> (S-0069-02)</summary>
 
@@ -297,11 +262,46 @@ that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
 
 </details>
 
-*232 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Probe the AIS+axon's electrical-sink contribution by varying
+axon length</strong> (S-0069-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+The AIS+axon attachment dropped baseline PD spikes from 14.2 to 6.4 — a 55% reduction caused
+by passive sink, not channel pharmacology. To characterise the sink contribution, sweep axon
+length L_axon ∈ {0, 100, 300, 1000, 3000} μm at fixed AIS (30 μm × 1 μm), no extra channels,
+and measure baseline PD/ND firing and DSI. Hypothesis: PD spike count and DSI are monotonic
+functions of L_axon (more axon → more sink → fewer spikes → ND collapses to 0 first, then PD
+follows). This will both calibrate the t0069 baseline against axon geometry and tell us how
+much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5
+axon-length conditions × 2 directions × 5 seeds = 50 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Co-insert Nav1.6 + Kv3 on the AIS at biological
+densities</strong> (S-0069-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+S-0068-04 already proposed AIS Nav1.6 + Kv3 co-insertion. t0069's baseline-quenching means a
+naive co-insertion sweep on the unweakened soma will likely also be inert. So this should run
+AFTER S-0069-01 (somatic Na halved). Test 4 conditions on the t0069 substrate with halved
+somatic Na: {Nav1.6_med + Kv3_med, Nav1.6_med + Kv3_high, Nav1.6_high + Kv3_med, Nav1.6_high +
+Kv3_high} on AIS × PD/ND × 5 seeds = 40 trials. Hypothesis: with a weakened soma and the
+natural fast-spiking AIS recipe (Nav1.6 + Kv3), the cell becomes more like a real fast-firing
+RGC and DSI becomes higher (or more controllable) than the t0067 single-channel sweep showed.
+
+</details>
+
+*230 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (31)](suggestions/)
+## [High Priority Suggestions (26)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -316,44 +316,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
 
 </details>
 
@@ -391,27 +353,6 @@ spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by
 gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
 effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
 comparative-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
-B behind one Python API</strong> (S-0070-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0070_writeup_two_model_beds](../tasks/t0070_writeup_two_model_beds/)
-
-Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
-t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
-uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
-`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
-on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
-`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
-Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
-direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
-synapse handles, recordings, mode metadata). The library must internally translate the FULL /
-EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
-its specification. Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -499,7 +440,70 @@ experiment-run.
 
 </details>
 
-*21 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
+sweep on the t0059 substrate</strong> (S-0059-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
+[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
+
+S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057's global (100, 1400) ms tonic
+window and fixed gAMPA = 0.5 nS. t0059 demonstrates the bar-locked window mechanism delivers
+an 8.5 ms direction-dependent IPSP centre-of-mass shift (REQ-13 PASS) the global window
+cannot. Layering Mg-block NMDA on the bar-locked substrate combines all three plausible
+gap-closers identified in compare-literature: voltage-dependent NMDA gain (PolegPolsky2016),
+per-synapse bar-arrival timing (deRosenroll2026), and AMPA escape. Fork
+minimal_dsgc_bar_locked_gaba_ampa_sweep, install the Jahr-Stevens NMDA_MgBlock mechanism from
+t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0, 2.0, 4.0} nS
+at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
+criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
+window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Synapse-count scaling sweep on t0059 substrate (100 -> 200 -> 300
+E + I) to break the single-spike regime</strong> (S-0059-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
+[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
+
+t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction
+uses 282, deRosenroll2026 [p. 5] uses >1000 SAC varicosities. The compare-literature
+Synapse-count comparison identifies this >2.8x to >10x mismatch as a structural drive
+bottleneck consistent with the 2.143 Hz peak ceiling. Fork
+minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300}
+(re-running the placement_seed0 generator to produce three larger placement bundles), and
+sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N
+x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz
+>= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
+validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
+t0052, no bar-lock). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
+architecture to locate a DSI-preserving operating point</strong>
+(S-0054-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
+[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
+
+t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0),
+varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances
+jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base
+gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged,
+voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01).
+Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells =
+2880 trials. Apply early stop on cells where E_ONLY peak Hz > 30 Hz to prune the saturated
+subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI
+>= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent
+regime. Recommended task types: experiment-run.
+
+</details>
+
+*16 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

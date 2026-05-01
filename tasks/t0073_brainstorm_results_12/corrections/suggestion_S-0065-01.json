@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-01",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0065_t0020_epsp_ipsp_vm_protocol",
+  "target_kind": "suggestion",
+  "target_id": "S-0065-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0065-01 proposes applying the EPSP_PASSIVE / IPSP_PASSIVE / FULL trial-mode protocol to the from-scratch DSGC family substrate (t0052-t0059). The more recent S-0066-02 (raised after t0066 confirmed cross-bed convergence on the e_GABA = v_rest = -60 mV shunting design) articulates the same experiment more clearly and motivates it more sharply (it explicitly contrasts a from-scratch e_GABA != v_rest binary-trap hypothesis against a from-scratch e_GABA = v_rest shunting hypothesis). Keeping S-0066-02 and rejecting S-0065-01 as a duplicate so the high-priority shelf does not contain both."
+}
