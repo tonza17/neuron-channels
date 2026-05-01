@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-265 suggestions **234 open** (31 high, 168 medium, 35 low), **31 closed**.
+269 suggestions **238 open** (31 high, 171 medium, 36 low), **31 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -1927,6 +1927,33 @@ review, Stuart & Spruston 2015 review) to close the gap.
 </details>
 
 <details>
+<summary>📚 <strong>Extend corrections spec v4 with `target_kind: result_document` to
+track result-document supersedings</strong> (S-0071-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0071-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0071_t0070_synaptic_eqs_pdf`](../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+This task is a SEMANTIC correction of t0070's `results/results_detailed.md` because
+corrections spec v3 (`arf/specifications/corrections_specification.md`) restricts
+`target_kind` to asset kinds (suggestion, paper, answer, dataset, library, model,
+predictions). Result documents (`results_summary.md`, `results_detailed.md`,
+`compare_literature.md`, `metrics.json`) are not covered. Consequence: aggregators still
+surface t0070's v1 writeup as canonical even though t0071's v2 supersedes it; the only signal
+is a `## Note` paragraph at the top. Bump corrections spec to v4 by adding `result_document`
+to `target_kind`, with `target_id` of the filename (`results_detailed.md`, etc.); update
+`arf/scripts/aggregators/aggregate_*.py` to apply the overlay; update `verify_corrections.py`;
+backfill a v4 correction file for t0071 superseding t0070's `results_detailed.md`. Recommended
+task types: infrastructure-setup, write-library, correction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Extend dendritic-computation survey to cerebellar Purkinje and
 STDP papers</strong> (S-0016-02)</summary>
 
@@ -3407,6 +3434,60 @@ functions of L_axon (more axon → more sink → fewer spikes → ND collapses t
 follows). This will both calibrate the t0069 baseline against axon geometry and tell us how
 much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5
 axon-length conditions × 2 directions × 5 seeds = 50 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the Typst markdown-to-PDF pipeline into a reusable
+project library `arf_typst_writeup`</strong> (S-0071-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0071-01` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0071_t0070_synaptic_eqs_pdf`](../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+This task introduced a one-off Typst pipeline (`code/render_pdf.py` +
+`results/results_detailed.typ` + `pyproject.toml` `typst>=0.14.8` dep) that compiles a
+markdown writeup with LaTeX math into a typeset PDF — no LaTeX install required because the
+`typst` Python wheel bundles the Rust binary. Several recent tasks (t0008/t0024 paper ports,
+t0070 two-bed writeup, every brainstorm) produce markdown that would benefit from a typeset
+PDF for reports and presentations. Build a project library `arf_typst_writeup` exposing one
+CLI: `python -m arf_typst_writeup --md <md> --out <pdf>` that auto-translates LaTeX math to
+Typst math (`\frac` -> `frac()`, `\cdot` -> `dot.c`, `\mathrm{...}` -> `op("...")`,
+`\bigl`/`\bigr` -> `lr(...)`), bundles a default Typst template, and runs the same 50 KB
+size-floor check used here. Acceptance: re-render t0070 and t0071 `results_detailed.md` from
+one library invocation. Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Quantify Bed A vs Bed B `celsius` and `v_init` divergence
+revealed by the side-by-side equation table</strong> (S-0071-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0071-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0071_t0070_synaptic_eqs_pdf`](../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+Authoring all equations side-by-side in one document made four numeric divergences between Bed
+A and Bed B unambiguous (rows 7, 9, 16, 17 of the comparison table in
+`results_detailed.md:L778-L799`): `celsius` 32 vs 36.9 deg C (HHst gating tau differs ~2x via
+Q10), `v_init` -65 vs -60 mV (shifts Mg-block operating point and Na inactivation), NMDA
+on/off (S-0070-04 wires it on but does NOT pick a target value), CaL+CaT zeroed/default
+(S-0070-03 turns Bed A's Ca on but does NOT pick a target). Run a 4-condition factorial sweep
+on Bed A's t0065 protocol toggling `celsius in {32, 36.9}` x `v_init in {-65, -60}` to
+quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope difference is
+attributable to these two non-Ca, non-NMDA conventions alone — the result decides whether
+project-wide convention harmonisation is needed before S-0070-01..04 can be interpreted.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -4949,6 +5030,32 @@ preferred), and characterising whether the GABA shunt-driven DS scales linearly 
 or has a threshold. Sweep cost: 12 angles x 3 modes x 20 trials x ~30 s/trial = ~6 hours.
 Could parallelise across CPU cores (each angle independent) to reduce wall-clock to ~1.5
 hours.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add `verify_results_equations.py` to round-trip every `$$...$$`
+block through Typst</strong> (S-0071-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0071-04` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0071_t0070_synaptic_eqs_pdf`](../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+While transcribing t0070's prose equations into LaTeX math for this v2, several Typst-vs-LaTeX
+subtleties (`dot.c` vs `\cdot`, `op("syn")` vs `\mathrm{syn}`, `\bigl`/`\bigr` not supported
+in Typst math, `frac(d V, d t)` vs `\frac{dV}{dt}`) caused multiple PDF compile failures only
+caught visually after `code/render_pdf.py` finished. Future tasks editing equation-heavy
+markdown will hit the same class of bug. Add
+`arf/scripts/verificators/verify_results_equations.py <task_id>` that scans
+`tasks/<task_id>/results/results_detailed.md` for every `$...$` and `$$...$$` block, attempts
+to compile each in isolation through the `typst` Python wheel using a minimal stub document,
+and reports per-block PASS/FAIL with line number and Typst error message. Wire it into the
+standard verification cascade. Recommended task types: infrastructure-setup, write-library.
 
 </details>
 

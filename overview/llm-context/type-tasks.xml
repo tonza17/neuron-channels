@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-01T14:06:42Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-01T15:25:40Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>624115</char_count>
-    <byte_count>627290</byte_count>
-    <estimated_tokens>156028</estimated_tokens>
+    <char_count>640646</char_count>
+    <byte_count>643907</byte_count>
+    <estimated_tokens>160161</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -87,9 +87,10 @@
         <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
         <id>t0069_t0067_ais_localised_channel_sweep</id>
         <id>t0070_writeup_two_model_beds</id>
+        <id>t0071_t0070_synaptic_eqs_pdf</id>
       </source_ids>
       <content>
-Total tasks: 70
+Total tasks: 71
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -11360,6 +11361,246 @@ committed source tree.
   also zero errors when run with `--strict --explicit-package-bases` outside the project config).
 * All four schematic PNGs were generated and exceed the size thresholds in the plan (morphology PNGs
   ≥ 30 KB, synaptic-diagram PNGs ≥ 20 KB).
+
+## t0070 v2 - synaptic-current equations + typeset PDF
+ID: t0071_t0070_synaptic_eqs_pdf
+Status: completed
+Effective date: 2026-05-01
+Short description: Supersede t0070&#x27;s writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).
+Dependencies: t0070_writeup_two_model_beds
+Task types: correction
+Start time: 2026-05-01T14:40:52Z
+End time: 2026-05-01T15:25:00Z
+
+#### Motivation
+
+t0070 produced a research-paper writeup of the project&#x27;s two DSGC model beds (Bed A: t0008 deposited
+Poleg-Polsky 2016; Bed B: t0024 de Rosenroll 2026 port). The writeup is otherwise thorough but it
+has two gaps:
+
+1. **Missing canonical synaptic-current equations.** The HH membrane equation is written explicitly
+   at the top of each bed&#x27;s section, and every active conductance is enumerated as
+   `Iᵢ = gᵢ · ... · (V − Eᵢ)`. But for synaptic currents (AMPA, NMDA, GABA, ACh in Bed A; Exp2Syn
+   ACh and GABA in Bed B) the parameters and kinetics are described in prose and parameter tables
+   only — the canonical `I_syn = g_syn(t,V) · (V − E_syn)` blocks are absent. The user explicitly
+   noted this gap.
+2. **No typeset PDF.** t0070 produced markdown only. The user wants a PDF with proper math
+   typesetting (italic Greek, real subscripts/superscripts, real fractions) for use in a written
+   report and a presentation.
+
+The corrections specification (`arf/specifications/corrections_specification.md` v3) restricts
+formal correction files to asset kinds (suggestion, paper, answer, dataset, library, model,
+predictions). It does not cover result documents. So this task is a **semantic** correction
+implemented as a new `correction`-type task: t0071&#x27;s `results/results_detailed.md` is the v2 of the
+writeup and supersedes t0070&#x27;s. Readers should use t0071&#x27;s version.
+
+#### Scope
+
+This task does NOT re-derive any equations or change any biophysical parameter values. Every
+parameter cited in t0071 is the same parameter cited in t0070, with the same `code/&lt;file&gt;:&lt;line&gt;`
+provenance. The only changes are:
+
+* **Add** the missing synaptic-current equation blocks under each bed&#x27;s &quot;Synaptic excitation&quot; and
+  &quot;Synaptic inhibition&quot; subsections. Five blocks total:
+  * Bed A `BIPsyn` AMPA (single-decay; `bipolarNMDA.mod:103, 156`)
+  * Bed A `BIPsyn` NMDA (bi-exponential rise/decay × Mg block; `bipolarNMDA.mod:102-104`)
+  * Bed A `SACinhibsyn` GABA (single-decay + presynaptic envelope × `gabaMOD`; `SAC2RGCinhib.mod`)
+  * Bed A `SACexcsyn` ACh (single-decay + presynaptic envelope × `achMOD`; `SAC2RGCexc.mod`)
+  * Bed B Exp2Syn ACh + Exp2Syn GABA (NEURON&#x27;s standard `Exp2Syn` form, normalised bi-exponential) —
+    one block per channel, with the GABA block adding the per-event Bernoulli direction-encoding and
+    AR(2) noise envelope from `tasks/t0066_t0024_epsp_ipsp_vm_protocol/`.
+* **Rewrite** every equation block (existing HH equations, Mg-block, vesicular release, and the new
+  synaptic blocks) in LaTeX math syntax (`$...$` inline, `$$...$$` display) so that Typst (and any
+  future pandoc/MathJax/KaTeX renderer) typesets them properly.
+* **Produce** `results/results_detailed.pdf` via the Typst compiler (`pip install typst`,
+  pure-Python wheel that bundles the Rust binary — no LaTeX install required).
+* **Produce** `results/results_detailed.typ` (Typst source) so the PDF is reproducible.
+* **Update** `results/results_summary.md` to reference the new PDF and equation additions.
+
+The four schematic PNGs from t0070 (`bed_a_morphology.png`, `bed_b_morphology.png`,
+`bed_a_synaptic_diagram.png`, `bed_b_synaptic_diagram.png`) are reused verbatim — copied into this
+task&#x27;s `results/images/` so the v2 document is fully self-contained.
+
+#### Approach
+
+1. Add `typst` as a dependency in `pyproject.toml`.
+2. Write `code/render_pdf.py` — small script that compiles `results/results_detailed.typ` to
+   `results/results_detailed.pdf` via the `typst` Python API.
+3. Author `results/results_detailed.md` (v2 markdown) by:
+   * Copying t0070&#x27;s `results/results_detailed.md` text verbatim as the starting point.
+   * Replacing every fenced-text equation block with LaTeX math (`$$...$$`).
+   * Adding the 5 new synaptic-current equation blocks under the appropriate subsections.
+   * Updating the frontmatter to reference t0071 and noting the supersession of t0070.
+4. Author `results/results_detailed.typ` — same content as the markdown but in Typst syntax.
+   Equations in Typst use `$ ... $` (display) and `$...$` (inline) with Typst&#x27;s math notation.
+5. Run `code/render_pdf.py` to produce `results/results_detailed.pdf`. Verify visually (open the
+   PDF, confirm equations render with proper math fonts).
+6. Copy the 4 PNGs from t0070 into `results/images/`.
+7. Write `results/results_summary.md` referencing the PDF.
+8. Standard task closure: metrics.json (`{}`), costs.json, remote_machines_used.json,
+   suggestions.json (likely 1-2 suggestions about the PDF pipeline becoming a project library).
+
+#### Outputs
+
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md` — v2 markdown with all equations
+  (HH + 5 new synaptic blocks + existing) in LaTeX math syntax.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.typ` — Typst source.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.pdf` — typeset PDF.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/results_summary.md` — abstract pointing at the PDF.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/images/{bed_a,bed_b}_morphology.png` and
+  `{bed_a,bed_b}_synaptic_diagram.png` — copied verbatim from t0070.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/code/render_pdf.py` — Typst→PDF compile script.
+* `tasks/t0071_t0070_synaptic_eqs_pdf/results/{metrics,costs,remote_machines_used}.json`
+  + `suggestions.json` — standard bookkeeping.
+
+#### Compute and budget
+
+* Local Windows workstation. ~$0 external cost. Adds one Python wheel (`typst`).
+* Time: ~1.5-2 hours (most of it is the careful equation transcription).
+
+#### Dependencies
+
+Only `t0070_writeup_two_model_beds`. The starting point is t0070&#x27;s `results/results_detailed.md`.
+
+#### Risks and fallbacks
+
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | Typst Python wheel not available for Windows / Python 3.13. | `pip install typst` fails. | Install Quarto (`winget install --id Posit.Quarto`) or use `pandoc + tectonic` instead. Document the chosen pipeline in the task. |
+| 2 | Typst&#x27;s math syntax differs subtly from LaTeX (e.g., `dot.c` vs `\cdot`, `op(&quot;...&quot;)` for multi-letter function names). | PDF compiles but equations look wrong. | Use Typst&#x27;s own math reference; for any equation that won&#x27;t render correctly in Typst, fall back to a rendered SVG via matplotlib mathtext and embed as image. |
+| 3 | PDF includes the schematic PNGs but Typst can&#x27;t find them at compile time. | Compile error or missing-image placeholder. | Use absolute paths in the Typst source; verify with a smoke test on one image before adding all four. |
+| 4 | The corrections-spec restriction means there&#x27;s no formal way to mark t0070&#x27;s writeup as superseded. | Aggregators may still surface t0070 as the canonical writeup. | The user is informed — t0071&#x27;s results_detailed.md is the new canonical version and t0070 stays as historical record. Add a clear note at the top of t0071&#x27;s results document. |
+| 5 | Equation transcription introduces a numerical error vs t0070. | Manual cross-check against t0070&#x27;s parameter tables. | Diff t0071 against t0070 on every numerical value before commit; only structural and syntactic changes should differ. |
+
+#### Verification criteria
+
+* `results/results_detailed.md` exists with all standard sections per the results specification,
+  contains every equation block from t0070 in LaTeX math syntax, and has the 5 new synaptic-current
+  equation blocks.
+* `results/results_detailed.typ` exists and compiles to PDF without errors.
+* `results/results_detailed.pdf` exists, is non-empty, and renders the equations with proper math
+  fonts (visual check).
+* All standard verificators pass (verify_task_results, verify_task_metrics, verify_suggestions,
+  verify_logs, verify_task_complete).
+
+#### Task Requirement Checklist
+
+* **REQ-1 (5 synaptic-current equation blocks present)**: BIPsyn AMPA, BIPsyn NMDA, SACinhibsyn
+  GABA, SACexcsyn ACh, Exp2Syn ACh+GABA on bed B.
+* **REQ-2 (HH equation in LaTeX math)**: each bed&#x27;s `C_m · dV/dt = -Σ I_i - I_syn - I_inj` block
+  converted to `$$C_m \frac{dV}{dt} = ...$$` form.
+* **REQ-3 (every equation in LaTeX math syntax)**: no fenced-text equations remain; all are `$...$`
+  or `$$...$$`.
+* **REQ-4 (Typst PDF rendered)**: `results_detailed.pdf` exists, non-empty, equations visibly
+  typeset in math fonts.
+* **REQ-5 (typst dep added)**: `typst` listed in `pyproject.toml`.
+* **REQ-6 (PNGs preserved)**: 4 PNGs copied from t0070 into `results/images/`.
+* **REQ-7 (results_summary.md updated)**: references the new PDF and notes the additions.
+* **REQ-8 (every numeric parameter unchanged from t0070)**: structural and syntactic changes only;
+  no biophysical value changed.
+* **REQ-9 (note in results_detailed.md that this supersedes t0070)**: clear notice in the Summary or
+  front-matter.
+* **REQ-10 (PDF compile script in code/)**: `code/render_pdf.py` reproducible.
+
+### Results Summary
+
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0071_t0070_synaptic_eqs_pdf&quot;
+date: &quot;2026-05-01&quot;
+---
+### Results Summary: Two Standard DSGC Model Beds (v2 — synaptic-current equations + typeset PDF)
+
+#### Summary
+
+This task delivers the **v2 writeup** of the project&#x27;s two standard DSGC model beds and
+**supersedes** [t0070]&#x27;s `results/results_detailed.md`. The v1 writeup was thorough but had two
+gaps: (1) the canonical synaptic-current ohmic blocks (one per mechanism, of the form
+$I_\mathrm{syn} = g_\mathrm{syn}(t,V)\,(V - E_\mathrm{syn})$) for the AMPA, NMDA, GABA, and ACh
+point-process mechanisms in Bed A and the Exp2Syn ACh + GABA mechanisms in Bed B were never spelled
+out (only the parameters appeared, in prose and tables); (2) there was no typeset PDF — equations
+lived inside fenced `text` blocks and rendered in monospace. Both gaps are now closed. Bed A is the
+deposited Poleg-Polsky 2016 ON-OFF DRD4 DSGC ported in [t0008] (ModelDB 189347, library
+`modeldb_189347_dsgc`), used by [t0020], [t0065], [t0067], [t0068], and [t0069]. Bed B is the de
+Rosenroll 2026 DSGC ported in [t0024] (library `de_rosenroll_2026_dsgc`), used by [t0066]. Each bed
+section opens with the canonical Hodgkin-Huxley membrane equation $C_m \,dV/dt = -\sum_i I_i -
+I_\mathrm{syn} - I_\mathrm{inj}$ rendered identically in LaTeX display math, then enumerates every
+active conductance with `gbar`, `V_half`, kinetics, and reversal potential in a markdown table, then
+defines the synaptic excitation and inhibition models for the preferred direction (PD) and null
+direction (ND). A side-by-side comparison table at the end summarises the headline differences
+across **18 dimensions**. Every numerical parameter carries a `code/&lt;file&gt;:line` citation back to
+the committed source so the document is fully auditable.
+
+The five new synaptic-current equation blocks added in this v2 are:
+
+* **Bed A BIPsyn AMPA** — $I_\mathrm{AMPA} = 10^{-3} g_\mathrm{AMPA} (V - 0)$ with single-decay
+  evolution $\dot g_\mathrm{AMPA} = -g_\mathrm{AMPA}/\tau_\mathrm{AMPA}$ ($\tau = 2$ ms) and
+  per-vesicle Bernoulli release rule (`bipolarNMDA.mod:L103, L156, L143`).
+* **Bed A BIPsyn NMDA** — $I_\mathrm{NMDA} = 10^{-3} g_\mathrm{NMDA}(t,V) (V - 0)$ with the
+  Jahr-Stevens-style Mg block $g_\mathrm{NMDA} = (A - B)/(1 + n e^{-\gamma V_\mathrm{loc}})$,
+  bi-exponential rise/decay states $A, B$ ($\tau_1 = 60$ ms decay, $\tau_2 = 2$ ms rise), $n = 0.30$
+  mM⁻¹, $\gamma = 0.07$ mV⁻¹ (`bipolarNMDA.mod:L102, L104`).
+* **Bed A SACinhibsyn GABA** — $I_\mathrm{GABA} = 10^{-3} g_\mathrm{GABA} (V - (-60))$ with
+  $\tau_\mathrm{GABA} = 30$ ms, vesicular release with `gabaMOD = 0.33` (PD) / `0.99` (ND) scaling
+  the presynaptic envelope (`SAC2RGCinhib.mod:L55, L92, L83`; `dsgc_model.hoc:L242-L243`).
+* **Bed A SACexcsyn ACh** — same kinetic form as the GABA mechanism, with $\tau_\mathrm{ACh} = 3$
+  ms, $E_\mathrm{ACh} = 0$ mV, and `achMOD = 0.25` (held constant across PD and ND in [t0020];
+  zeroed in [t0065]&#x27;s IPSP_PASSIVE mode).
+* **Bed B Exp2Syn ACh and GABA** — NEURON&#x27;s standard `Exp2Syn` form $g(t) = f(B(t) - A(t))$ with the
+  normalisation factor $f = 1/(-e^{-t_p/\tau_1} + e^{-t_p/\tau_2})$. ACh: $\tau_1 = 0.1$ ms, $\tau_2
+  = 4$ ms, $E = 0$ mV, NetCon weight 0.001 µS. GABA: $\tau_1 = 0.5$ ms, $\tau_2 = 12$ ms, $E = -60$
+  mV, NetCon weight 0.003 µS, with per-event Bernoulli release at $p_\mathrm{rel}(\theta)$ via the
+  sigmoid $p_\mathrm{rel} \approx 0.05$ (PD) / $0.80$ (ND) and an AR(2) noise envelope
+  (`tasks/t0066_t0024_epsp_ipsp_vm_protocol/code/`).
+
+The task also produces a typeset PDF (`results/results_detailed.pdf`, ~1.09 MB, 10 pages) compiled
+from the Typst source `results/results_detailed.typ` via `code/render_pdf.py`. The PDF renders
+equations with proper math fonts (italic Greek, real subscripts/superscripts, real fractions) and
+embeds the four schematic PNGs reused verbatim from [t0070]. **The recommended way to consume this
+writeup is to read the PDF.** The markdown source remains the single source of truth for all
+parameter citations and downstream aggregator views; `results_detailed.md` is a strict superset of
+[t0070]&#x27;s markdown plus the five new equation blocks plus the LaTeX rewrites of every existing
+equation.
+
+No biophysical parameter value has changed between [t0070] and this v2: the conductance tables,
+synaptic parameter tables, gabaMOD PD/ND values, sigmoidal release-probability constants, AR(2)
+noise parameters, bar geometry, temperature, resting potential, and passive cable values are all
+preserved verbatim with the same `code/&lt;file&gt;:L&lt;line&gt;` citations. Only the surrounding markup has
+changed and the five new equation blocks are added.
+
+#### Metrics
+
+* **Beds documented**: 2 (Bed A — t0008 deposited Poleg-Polsky 2016; Bed B — t0024 de Rosenroll 2026
+  port).
+* **Active conductances tabulated per bed**: **4** in Bed A (Na, Kdr, Km, Leak — Ca-L and Ca-T
+  zeroed); **7** in Bed B (Na, Kdr, Km, Leak, CaL, CaT, plus `cad` calcium-decay shell).
+* **Synapse types tabulated per bed**: **3** in Bed A (BIPsyn AMPA+NMDA, SACinhibsyn GABA, SACexcsyn
+  ACh); **2 active + 1 latent** in Bed B (Exp2Syn ACh and Exp2Syn GABA active; Exp2NMDA vendored but
+  not wired).
+* **Side-by-side comparison rows**: **18** dimensions.
+* **Schematic PNGs (copied verbatim from t0070)**: **4** (`bed_a_morphology.png` 345 KB,
+  `bed_b_morphology.png` 146 KB, `bed_a_synaptic_diagram.png` 150 KB, `bed_b_synaptic_diagram.png`
+  159 KB).
+* **New synaptic-current equation blocks added in v2**: **5** (Bed A AMPA, Bed A NMDA, Bed A GABA,
+  Bed A ACh, Bed B Exp2Syn ACh + GABA).
+* **Typeset PDF size**: **1 091 129 bytes** (~1.09 MB), 10 pages; size-floor threshold is **50 000
+  bytes** (the script exits non-zero if the PDF is below this).
+* **Quantitative project metrics measured**: **0** (this is a documentation-only correction task; no
+  NEURON simulations were run, so `results/metrics.json` is `{}` by design).
+
+#### Verification
+
+* `verify_task_results t0071_t0070_synaptic_eqs_pdf` — see the orchestrator&#x27;s post-implementation
+  step report; the implementation document includes the mandatory frontmatter, the `## Note`
+  superseding-statement, all required sections per
+  `arf/specifications/task_results_specification.md`, and a `## Task Requirement Coverage` last
+  section listing all `REQ-*` items as `Done`.
+* `ruff check --fix tasks/t0071_t0070_synaptic_eqs_pdf/code/` — PASSED (zero errors).
+* `ruff format tasks/t0071_t0070_synaptic_eqs_pdf/code/` — PASSED (idempotent).
+* `mypy -p tasks.t0071_t0070_synaptic_eqs_pdf.code` — PASSED (zero errors).
+* `code/render_pdf.py` — invoked under `run_with_logs.py`; returned 0 (PDF size above the 50 KB
+  size-floor check); produced `results/results_detailed.pdf`.
+* The four schematic PNGs match [t0070]&#x27;s files byte-for-byte (copied via `shutil.copyfile`).
       </content>
     </section>
   </sections>

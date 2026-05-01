@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-50 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **42 open** (9
-high, 27 medium, 6 low), **8 closed**.
+51 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **43 open** (9
+high, 28 medium, 6 low), **8 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -682,6 +682,33 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Quantify Bed A vs Bed B `celsius` and `v_init` divergence
+revealed by the side-by-side equation table</strong> (S-0071-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0071-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Authoring all equations side-by-side in one document made four numeric divergences between Bed
+A and Bed B unambiguous (rows 7, 9, 16, 17 of the comparison table in
+`results_detailed.md:L778-L799`): `celsius` 32 vs 36.9 deg C (HHst gating tau differs ~2x via
+Q10), `v_init` -65 vs -60 mV (shifts Mg-block operating point and Na inactivation), NMDA
+on/off (S-0070-04 wires it on but does NOT pick a target value), CaL+CaT zeroed/default
+(S-0070-03 turns Bed A's Ca on but does NOT pick a target). Run a 4-condition factorial sweep
+on Bed A's t0065 protocol toggling `celsius in {32, 36.9}` x `v_init in {-65, -60}` to
+quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope difference is
+attributable to these two non-Ca, non-NMDA conventions alone — the result decides whether
+project-wide convention harmonisation is needed before S-0070-01..04 can be interpreted.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 

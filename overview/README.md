@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-70-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-265-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-71-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-269-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (25K)
-| [full](llm-context/full.xml) (379K) | [roadmap](llm-context/roadmap.xml) (82K) |
-[results](llm-context/results-deep-dive.xml) (289K) |
+| [full](llm-context/full.xml) (395K) | [roadmap](llm-context/roadmap.xml) (83K) |
+[results](llm-context/results-deep-dive.xml) (306K) |
 [assets](llm-context/literature-and-assets.xml) (44K)
 
-*Last updated: 2026-05-01 14:06 UTC*
+*Last updated: 2026-05-01 15:25 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (64 total)](tasks/by-status/completed.md)
+## [Recently Completed (65 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0071 | [t0070 v2 - synaptic-current equations + typeset PDF](../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) | [`results`](../tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md) | 2026-05-01 15:25 |
 | 0070 | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) | [`results`](../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) | 2026-05-01 14:05 |
 | 0069 | [Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS](../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) | [`results`](../tasks/t0069_t0067_ais_localised_channel_sweep/results/results_detailed.md) | 2026-05-01 03:10 |
 | 0068 | [Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?](../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) | [`results`](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/results/results_detailed.md) | 2026-05-01 03:05 |
@@ -92,9 +93,8 @@ No blocked tasks.
 | 0064 | [HH current-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0064_hh_current_step_test.md) | [`results`](../tasks/t0064_hh_current_step_test/results/results_detailed.md) | 2026-04-30 00:06 |
 | 0063 | [HH voltage-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0063_hh_voltage_step_test.md) | [`results`](../tasks/t0063_hh_voltage_step_test/results/results_detailed.md) | 2026-04-29 23:46 |
 | 0062 | [NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0](../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md) | [`results`](../tasks/t0062_nmda_escape_with_ampa_priming/results/results_detailed.md) | 2026-04-29 23:04 |
-| 0061 | [Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0061_nmda_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:32 |
 
-*54 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*55 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +119,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (234 open)](suggestions/)
+## [Recent Suggestions (238 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -297,7 +297,7 @@ that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
 
 </details>
 
-*224 more open suggestions → [open suggestions](suggestions/)*
+*228 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 

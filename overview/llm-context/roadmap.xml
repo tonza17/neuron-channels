@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T14:06:42Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T15:25:40Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>327692</char_count>
-    <byte_count>328044</byte_count>
-    <estimated_tokens>81923</estimated_tokens>
+    <char_count>332647</char_count>
+    <byte_count>333003</byte_count>
+    <estimated_tokens>83161</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -176,9 +176,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
         <id>t0069_t0067_ais_localised_channel_sweep</id>
         <id>t0070_writeup_two_model_beds</id>
+        <id>t0071_t0070_synaptic_eqs_pdf</id>
       </source_ids>
       <content>
-Completed tasks: 64
+Completed tasks: 65
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -563,6 +564,12 @@ ID: t0070_writeup_two_model_beds
 Completed: 2026-05-01
 Short description: Write a research-paper / presentation-ready document describing the project&#x27;s two standard DSGC model beds (t0008 deposited Poleg-Polsky 2016 and t0024 de Rosenroll 2026 port). Start each bed with the canonical Hodgkin-Huxley membrane equation, then enumerate every conductance and define excitation and inhibition for PD and ND directions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0070_writeup_two_model_beds&quot; --- Results Summary: Writeup of Two Standard DSGC Model Beds Summary This task delivers a single, self-contained, presentation-ready research-paper document (`results/results_detailed.md`) describing the two canonical direction-selective ganglion cell (DSGC) model substrates that every other modelling task in the project uses as a backbone. **Bed A** is the deposited Poleg-Polsky 2016 ON-OFF DRD4 DSGC ported in [t0008] (ModelDB 189347, library `modeldb_189347_dsgc`), used by [t0020], [t0065], [t0067], [t0068], and [t0069]; **Bed B** is the de Rosenroll 2026 DSGC ported in [t0024], used by [t0066]. Each bed section opens with the...
+
+## t0070 v2 - synaptic-current equations + typeset PDF
+ID: t0071_t0070_synaptic_eqs_pdf
+Completed: 2026-05-01
+Short description: Supersede t0070&#x27;s writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0071_t0070_synaptic_eqs_pdf&quot; date: &quot;2026-05-01&quot; --- Results Summary: Two Standard DSGC Model Beds (v2 — synaptic-current equations + typeset PDF) Summary This task delivers the **v2 writeup** of the project&#x27;s two standard DSGC model beds and **supersedes** [t0070]&#x27;s `results/results_detailed.md`. The v1 writeup was thorough but had two gaps: (1) the canonical synaptic-current ohmic blocks (one per mechanism, of the form $I_\mathrm{syn} = g_\mathrm{syn}(t,V)\,(V - E_\mathrm{syn})$) for the AMPA, NMDA, GABA, and ACh point-process mechanisms in Bed A and the Exp2Syn ACh + GABA mechanisms in Bed B were never spelled out (only the parameters appeared, in prose and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1228,6 +1235,9 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0070-03</id>
         <id>S-0070-04</id>
         <id>S-0070-05</id>
+        <id>S-0071-01</id>
+        <id>S-0071-02</id>
+        <id>S-0071-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1263,9 +1273,10 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0067-05</id>
         <id>S-0068-05</id>
         <id>S-0069-05</id>
+        <id>S-0071-04</id>
       </source_ids>
       <content>
-Open suggestions: 252
+Open suggestions: 256
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -2786,6 +2797,27 @@ Kind: library
 Source task: t0070_writeup_two_model_beds
 The t0070 research_code.md and writeup both flag a cross-library namespace collision: both `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/HHst.mod` (Linaro-Storace-Giugliano stochastic) and `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/HHst_noiseless.mod` (deterministic) declare `SUFFIX HHst`. Any code that says `seg.HHst.gnabar` references different mechanisms depending on which `nrnivmodl` directory was loaded last, with no warning. The kinetics happen to be identical so the bug is currently latent, but mid-flight library swaps in cross-bed runners (S-0070-02) will silently change noise behaviour. Rename Bed B&#x27;s SUFFIX...
 
+## Promote the Typst markdown-to-PDF pipeline into a reusable project library `arf_typst_writeup`
+ID: S-0071-01
+Priority: medium
+Kind: library
+Source task: t0071_t0070_synaptic_eqs_pdf
+This task introduced a one-off Typst pipeline (`code/render_pdf.py` + `results/results_detailed.typ` + `pyproject.toml` `typst&gt;=0.14.8` dep) that compiles a markdown writeup with LaTeX math into a typeset PDF — no LaTeX install required because the `typst` Python wheel bundles the Rust binary. Several recent tasks (t0008/t0024 paper ports, t0070 two-bed writeup, every brainstorm) produce markdown that would benefit from a typeset PDF for reports and presentations. Build a project library `arf_typst_writeup` exposing one CLI: `python -m arf_typst_writeup --md &lt;md&gt; --out &lt;pdf&gt;` that auto-translates LaTeX math to Typst math (`\frac` -&gt; `frac()`, `\cdot` -&gt; `dot.c`, `\mathrm{...}` -&gt;...
+
+## Extend corrections spec v4 with `target_kind: result_document` to track result-document supersedings
+ID: S-0071-02
+Priority: medium
+Kind: library
+Source task: t0071_t0070_synaptic_eqs_pdf
+This task is a SEMANTIC correction of t0070&#x27;s `results/results_detailed.md` because corrections spec v3 (`arf/specifications/corrections_specification.md`) restricts `target_kind` to asset kinds (suggestion, paper, answer, dataset, library, model, predictions). Result documents (`results_summary.md`, `results_detailed.md`, `compare_literature.md`, `metrics.json`) are not covered. Consequence: aggregators still surface t0070&#x27;s v1 writeup as canonical even though t0071&#x27;s v2 supersedes it; the only signal is a `## Note` paragraph at the top. Bump corrections spec to v4 by adding `result_document` to `target_kind`, with `target_id` of the filename (`results_detailed.md`, etc.); update...
+
+## Quantify Bed A vs Bed B `celsius` and `v_init` divergence revealed by the side-by-side equation table
+ID: S-0071-03
+Priority: medium
+Kind: experiment
+Source task: t0071_t0070_synaptic_eqs_pdf
+Authoring all equations side-by-side in one document made four numeric divergences between Bed A and Bed B unambiguous (rows 7, 9, 16, 17 of the comparison table in `results_detailed.md:L778-L799`): `celsius` 32 vs 36.9 deg C (HHst gating tau differs ~2x via Q10), `v_init` -65 vs -60 mV (shifts Mg-block operating point and Na inactivation), NMDA on/off (S-0070-04 wires it on but does NOT pick a target value), CaL+CaT zeroed/default (S-0070-03 turns Bed A&#x27;s Ca on but does NOT pick a target). Run a 4-condition factorial sweep on Bed A&#x27;s t0065 protocol toggling `celsius in {32, 36.9}` x `v_init in {-65, -60}` to quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -3030,6 +3062,13 @@ Priority: low
 Kind: experiment
 Source task: t0069_t0067_ais_localised_channel_sweep
 NaP at high density on the AIS gave the largest signal (-0.78 ΔDSI), 80% of the soma version&#x27;s effect. Persistent Na is interesting because it survives the AIS+axon&#x27;s electrical sink — its non-inactivating depolarisation accumulates over the trial duration, so even a small AIS can pump enough current. Question: does the AIS NaP effect scale predictably with AIS geometry, or does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed (L=30 μm, diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar × AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP current). 9 conditions × 2 directions × 5 seeds =...
+
+## Add `verify_results_equations.py` to round-trip every `$$...$$` block through Typst
+ID: S-0071-04
+Priority: low
+Kind: library
+Source task: t0071_t0070_synaptic_eqs_pdf
+While transcribing t0070&#x27;s prose equations into LaTeX math for this v2, several Typst-vs-LaTeX subtleties (`dot.c` vs `\cdot`, `op(&quot;syn&quot;)` vs `\mathrm{syn}`, `\bigl`/`\bigr` not supported in Typst math, `frac(d V, d t)` vs `\frac{dV}{dt}`) caused multiple PDF compile failures only caught visually after `code/render_pdf.py` finished. Future tasks editing equation-heavy markdown will hit the same class of bug. Add `arf/scripts/verificators/verify_results_equations.py &lt;task_id&gt;` that scans `tasks/&lt;task_id&gt;/results/results_detailed.md` for every `$...$` and `$$...$$` block, attempts to compile each in isolation through the `typst` Python wheel using a minimal stub document, and reports per-block...
       </content>
     </section>
   </sections>

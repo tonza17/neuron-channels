@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-01T14:06:42Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-01T15:25:40Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>98705</char_count>
-    <byte_count>98905</byte_count>
-    <estimated_tokens>24676</estimated_tokens>
+    <char_count>99943</char_count>
+    <byte_count>100145</byte_count>
+    <estimated_tokens>24985</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -175,9 +175,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
         <id>t0069_t0067_ais_localised_channel_sweep</id>
         <id>t0070_writeup_two_model_beds</id>
+        <id>t0071_t0070_synaptic_eqs_pdf</id>
       </source_ids>
       <content>
-Completed tasks: 64
+Completed tasks: 65
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -562,6 +563,12 @@ ID: t0070_writeup_two_model_beds
 Completed: 2026-05-01
 Short description: Write a research-paper / presentation-ready document describing the project&#x27;s two standard DSGC model beds (t0008 deposited Poleg-Polsky 2016 and t0024 de Rosenroll 2026 port). Start each bed with the canonical Hodgkin-Huxley membrane equation, then enumerate every conductance and define excitation and inhibition for PD and ND directions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0070_writeup_two_model_beds&quot; --- Results Summary: Writeup of Two Standard DSGC Model Beds Summary This task delivers a single, self-contained, presentation-ready research-paper document (`results/results_detailed.md`) describing the two canonical direction-selective ganglion cell (DSGC) model substrates that every other modelling task in the project uses as a backbone. **Bed A** is the deposited Poleg-Polsky 2016 ON-OFF DRD4 DSGC ported in [t0008] (ModelDB 189347, library `modeldb_189347_dsgc`), used by [t0020], [t0065], [t0067], [t0068], and [t0069]; **Bed B** is the de Rosenroll 2026 DSGC ported in [t0024], used by [t0066]. Each bed section opens with the...
+
+## t0070 v2 - synaptic-current equations + typeset PDF
+ID: t0071_t0070_synaptic_eqs_pdf
+Completed: 2026-05-01
+Short description: Supersede t0070&#x27;s writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0071_t0070_synaptic_eqs_pdf&quot; date: &quot;2026-05-01&quot; --- Results Summary: Two Standard DSGC Model Beds (v2 — synaptic-current equations + typeset PDF) Summary This task delivers the **v2 writeup** of the project&#x27;s two standard DSGC model beds and **supersedes** [t0070]&#x27;s `results/results_detailed.md`. The v1 writeup was thorough but had two gaps: (1) the canonical synaptic-current ohmic blocks (one per mechanism, of the form $I_\mathrm{syn} = g_\mathrm{syn}(t,V)\,(V - E_\mathrm{syn})$) for the AMPA, NMDA, GABA, and ACh point-process mechanisms in Bed A and the Exp2Syn ACh + GABA mechanisms in Bed B were never spelled out (only the parameters appeared, in prose and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(184)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(185)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (13)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (163 open, 21 closed)
+## Suggestions (164 open, 21 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -2519,6 +2519,27 @@ multiplicative-gain mechanism for DS. Extend `_setup_synapses` to place one Exp2
 terminal dendrite paired with the existing Exp2Syn ACh, wire it into the Poisson event queue,
 and re-run the t0066 EPSP/IPSP/FULL protocol with NMDA on vs off. Report DSI, peak Hz, and
 EPSP/IPSP envelope changes. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Quantify Bed A vs Bed B `celsius` and `v_init` divergence
+revealed by the side-by-side equation table</strong> (S-0071-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0071_t0070_synaptic_eqs_pdf](../../tasks/t0071_t0070_synaptic_eqs_pdf/)
+
+Authoring all equations side-by-side in one document made four numeric divergences between Bed
+A and Bed B unambiguous (rows 7, 9, 16, 17 of the comparison table in
+`results_detailed.md:L778-L799`): `celsius` 32 vs 36.9 deg C (HHst gating tau differs ~2x via
+Q10), `v_init` -65 vs -60 mV (shifts Mg-block operating point and Na inactivation), NMDA
+on/off (S-0070-04 wires it on but does NOT pick a target value), CaL+CaT zeroed/default
+(S-0070-03 turns Bed A's Ca on but does NOT pick a target). Run a 4-condition factorial sweep
+on Bed A's t0065 protocol toggling `celsius in {32, 36.9}` x `v_init in {-65, -60}` to
+quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope difference is
+attributable to these two non-Ca, non-NMDA conventions alone — the result decides whether
+project-wide convention harmonisation is needed before S-0070-01..04 can be interpreted.
+Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
