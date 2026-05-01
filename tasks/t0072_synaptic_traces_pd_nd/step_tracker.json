@@ -50,9 +50,9 @@
       "step": 6,
       "name": "implementation",
       "description": "Write driver scripts, run 4 trials (2 beds x PD/ND), record traces, compute pop mean +/- SD, plot 2 figures, render Typst PDF.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T17:12:27Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T17:33:12Z",
       "log_file": "logs\\steps\\006_implementation/"
     },
     {
