@@ -50,10 +50,10 @@
       "step": 6,
       "name": "implementation",
       "description": "Produce schematic morphology + synaptic-timing PNGs and write results/results_summary.md and results/results_detailed.md (HH-equation research-paper format).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T13:36:11Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_implementation/"
+      "log_file": "logs\\steps\\006_implementation/"
     },
     {
       "step": 7,

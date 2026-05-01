@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0070_writeup_two_model_beds",
+  "command": "uv run python -u -m tasks.t0070_writeup_two_model_beds.code.plot_morphology",
+  "exit_code": 0,
+  "duration_seconds": 4.859,
+  "started_at": "2026-05-01T13:40:56Z",
+  "completed_at": "2026-05-01T13:41:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0070_writeup_two_model_beds",
+  "stdout_file": "006_20260501T134056Z_uv-run-python.stdout.txt",
+  "stderr_file": "006_20260501T134056Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
