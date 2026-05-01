@@ -5,11 +5,11 @@
   "name": "t0070 v2 - synaptic-current equations + typeset PDF",
   "short_description": "Supersede t0070's writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0070_writeup_two_model_beds"
   ],
-  "start_time": null,
+  "start_time": "2026-05-01T14:40:52Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
