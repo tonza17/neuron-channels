@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for published BK/SK/Kv7 MOD source models (ModelDB), RGC-specific kinetic parameter sets, and per-channel reference biological densities.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T23:19:58Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T23:37:29Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
