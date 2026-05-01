@@ -50,9 +50,9 @@
       "step": 6,
       "name": "suggestions",
       "description": "Author results/suggestions.json (e.g., promote PDF pipeline to a project library).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T15:15:09Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T15:20:33Z",
       "log_file": "logs\\steps\\006_suggestions/"
     },
     {
