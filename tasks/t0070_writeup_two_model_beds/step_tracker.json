@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-code",
       "description": "Read both beds' code (t0008 + t0020 for bed A; t0024 for bed B; t0065/t0066 for protocols) and extract every conductance / synapse parameter with file:line citations.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T13:12:49Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-code/"
+      "log_file": "logs\\steps\\004_research-code/"
     },
     {
       "step": 5,
