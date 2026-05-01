@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0069_t0067_ais_localised_channel_sweep\tasks\t0069_t0067_ais_localised_channel_sweep\task.json
+
+[32m[1mPASSED[0m — no errors or warnings

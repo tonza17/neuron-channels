@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0069_t0067_ais_localised_channel_sweep",
+  "command": "uv run python -m arf.scripts.verificators.verify_research_code t0069_t0067_ais_localised_channel_sweep",
+  "exit_code": 0,
+  "duration_seconds": 0.804,
+  "started_at": "2026-05-01T02:25:14Z",
+  "completed_at": "2026-05-01T02:25:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0069_t0067_ais_localised_channel_sweep",
+  "stdout_file": "003_20260501T022514Z_uv-run-python.stdout.txt",
+  "stderr_file": "003_20260501T022514Z_uv-run-python.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}
