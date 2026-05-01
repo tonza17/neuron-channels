@@ -59,10 +59,10 @@
       "step": 7,
       "name": "reporting",
       "description": "Run all verificators, capture sessions, mark task.json status=completed, push, PR, merge.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T15:20:54Z",
       "completed_at": null,
-      "log_file": "logs/steps/007_reporting/"
+      "log_file": "logs\\steps\\007_reporting/"
     },
     {
       "step": 8,
