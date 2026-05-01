@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-04-30T23:38:18Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-01T02:03:18Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>108</section_count>
-    <char_count>1887983</char_count>
-    <byte_count>1892605</byte_count>
-    <estimated_tokens>471995</estimated_tokens>
+    <section_count>109</section_count>
+    <char_count>1893761</char_count>
+    <byte_count>1898444</byte_count>
+    <estimated_tokens>473440</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -173,9 +173,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
         <id>t0067_t0065_soma_channel_addition_sweep</id>
+        <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
       </source_ids>
       <content>
-Completed tasks: 61
+Completed tasks: 62
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -542,6 +543,12 @@ ID: t0067_t0065_soma_channel_addition_sweep
 Completed: 2026-05-01
 Short description: Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
 Result summary: Results Summary: Add 5 voltage-gated channels to the t0065 soma; sweep densities Summary Added each of {Nav1.6, NaP, NaR, Kv3, Kv4} to the deposited Poleg-Polsky DSGC soma, one at a time, at low / medium / high densities (3-fold steps), and ran the t0065 FULL-mode gabaMOD-swap protocol with 5 seeds per (condition, direction). 16 conditions × 2 directions × 5 seeds = 160 trials, ~10 minutes wall-clock. Headline finding: **NaP at high density inverts direction selectivity** (DSI = -0.18, cell fires more in null than preferred); **Nav1.6 monotonically erodes DSI** as density rises (0.80 → 0.23 across the density grid); **NaR / Kv3 / Kv4 produce only modest changes** at the chosen densities...
+
+## Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?
+ID: t0068_t0067_nav16_kv3_coexpression_rescue
+Completed: 2026-05-01
+Short description: Test whether co-inserting Kv3 with Nav1.6 on the t0065 soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 DSI = 0.23 at Nav1.6_high). 9 conditions x PD/ND x 5 seeds = 90 FULL trials.
+Result summary: Results Summary: Nav1.6 + Kv3 co-expression rescue test Summary Tested whether co-inserting Kv3 with Nav1.6 on the deposited Poleg-Polsky DSGC soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 anchors: DSI = 0.48 at Nav1.6_med, 0.23 at Nav1.6_high). 9 conditions × 2 directions × 5 seeds = 90 FULL trials, ~~10 min compute. **Hypothesis FALSIFIED**: Kv3 does NOT rescue DSI. Across all 8 co-expression conditions DSI changes by less than ±0.025 from the Nav1.6-only anchor. Instead, Kv3 slightly *boosts* firing rate (~~+10% at high Kv3), scaling PD and ND equally. Metrics | Condition | PD spikes (mean ± SD) | ND spikes (mean ± SD) | DSI | ΔDSI vs Nav1.6 anchor | | --- | --- |...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -32346,6 +32353,113 @@ Prior tasks reviewed for this research stage:
 
 t0024 (de Rosenroll) and t0066 (Rosenroll EPSP/IPSP) were NOT used — t0067 is on the Poleg-Polsky
 substrate per user spec.
+      </content>
+    </section>
+    <section id="t0068_t0067_nav16_kv3_coexpression_rescue-research_code" source_kind="file">
+      <title>t0068_t0067_nav16_kv3_coexpression_rescue — Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6? — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0068_t0067_nav16_kv3_coexpression_rescue/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0068_t0067_nav16_kv3_coexpression_rescue&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 2
+tasks_cited: 2
+libraries_found: 1
+libraries_relevant: 1
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research: Code Survey for t0068
+
+#### Task Objective
+
+Identify the t0067 code surface that t0068 reuses and the minimal modifications needed to support
+simultaneous Nav1.6 + Kv3 density configuration per trial (instead of one channel at a time).
+
+#### Library Landscape
+
+Same as t0067: the deposited modeldb_189347_dsgc library asset (cell builder + HHst + bipNMDA
++ SAC mechanisms) plus t0067&#x27;s vendored 5 channel MOD files. t0068 reuses the t0067 MOD files
+  verbatim — same kinetics, same NONSPECIFIC_CURRENT pattern, same suffixes — and recompiles
+  them into a t0068-local DLL.
+
+#### Methodology Review
+
+Read in full:
+
+* `tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py` — trial driver with
+  `_set_active_channel` (single-channel case).
+* `tasks/t0067_t0065_soma_channel_addition_sweep/code/constants.py` — CHANNEL_DEFS.
+* `tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/{nav16t67,kv3t67}.mod` — the two
+  channels we will co-express.
+
+#### Key Findings
+
+##### 1. t0067 trial driver structure
+
+* `_set_active_channel(soma, key)` zeros all 5 channels&#x27; gbar then sets ONE channel&#x27;s gbar per
+  trial. For t0068 we need to set TWO channels (Nav1.6 + Kv3) — straightforward generalisation:
+  take a list of (suffix, density) pairs.
+* `_run_one_trial(h, baseline_coords, key)` does the apply_params → gabaMOD → exptype=1 →
+  init_active → update → placeBIP → set channel gbars → finitialize → continuerun
+  pipeline. Reusable verbatim with the multi-channel set helper swap.
+
+##### 2. MOD file reuse
+
+Vendor the same 5 MOD files from `tasks/t0067_*/code/mods/` into `tasks/t0068_*/code/mods/` (copy,
+not symlink — for git portability). Compile a t0068-local DLL via the same `run_nrnivmodl.cmd`
+script.
+
+##### 3. Plot adaptation
+
+t0067 had 5 channels × 3 densities. t0068 has 2 fixed Nav1.6 levels × 4 Kv3 levels (0, low, med,
+high) = 8 + baseline = 9 conditions. Plot shape differs:
+
+* `dsi_rescue_curve.png`: x = Kv3 density level (none/low/med/high), y = DSI; two lines (one per
+  Nav1.6 level), with horizontal dashed reference for baseline DSI = 0.80.
+* `firing_rate_rescue.png`: 2-panel (Nav1.6_med, Nav1.6_high), each showing PD and ND firing rate vs
+  Kv3 density.
+
+#### Reusable Code and Assets
+
+* t0008 cell builder + HOC template (deposited cell).
+* t0067 MOD files (5 — but only Nav1.6 + Kv3 will have non-zero gbar in this task).
+* t0067 trial driver pattern (apply_params → gabaMOD → exptype → init_active → ...
+  pipeline).
+* t0067 idempotent NEURON loader pattern (cached DLL load).
+
+#### Lessons Learned
+
+* From t0067: 160 trials in ~10 min wall-clock. 90 trials in t0068 ≈ 5 min.
+* From t0067 lifecycle: be careful to commit BEFORE poststep to avoid dirty-tree errors.
+* From t0067/t0066: `git checkout -- tasks/t0008/` before each commit to revert any compile
+  artefacts that the nrnivmodl run leaves in t0008&#x27;s source dir.
+
+#### Recommendations for This Task
+
+1. Copy 5 MOD files from t0067/code/mods into t0068/code/mods.
+2. Compile t0068-local DLL via t0008&#x27;s run_nrnivmodl.cmd.
+3. Rewrite paths.py and constants.py for t0068&#x27;s 9-condition schema.
+4. run_sweep.py: copy t0067&#x27;s driver, generalise `_set_active_channel` to `_set_active_channels`
+   taking `[(suffix, density_S_cm2), ...]`. New `_enumerate_trials()` produces the 9 × 2 × 5 = 90
+   trial schedule.
+5. plot_results.py: 2 PNGs per Recommendations § 3.
+
+#### Task Index
+
+* **t0008_port_modeldb_189347** — cell builder.
+* **t0067_t0065_soma_channel_addition_sweep** — primary parent task; MOD files, driver pattern,
+  baseline DSI = 0.80, anchor DSIs (Nav1.6_med = 0.48, Nav1.6_high = 0.23).
+
+t0019 was used by t0067 for kinetic priors but is not directly referenced here (t0067&#x27;s MOD files
+already encode those priors).
       </content>
     </section>
   </sections>

@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(86)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(87)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2164,7 +2164,25 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (75 open, 11 closed)
+## Suggestions (76 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
+density</strong> (S-0068-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt's leverage is
+fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to
+scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x)
+and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale
+restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sense, but it
+shows what would be required to compensate for a Nav-side gain change at the network level —
+relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
+patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family

@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-86 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **75 open** (14 high,
-54 medium, 7 low), **11 closed**.
+87 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **76 open** (14 high,
+55 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1685,6 +1685,30 @@ release schedule (rho in {0.0, 0.6}, n=20 trials per direction). Operate at the 
 (gAMPA=1.0/gaba=0.10) across 4 noise cells. Pass criterion: vector-sum DSI > 0.3 in at least
 one noise configuration, OR rule out with CIs over n=20 trials. Recommended task types:
 build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
+density</strong> (S-0068-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt's leverage is
+fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to
+scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x)
+and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale
+restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sense, but it
+shows what would be required to compensate for a Nav-side gain change at the network level —
+relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
+patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
 
 </details>
 

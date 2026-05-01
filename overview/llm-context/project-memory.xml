@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-30T23:38:18Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-01T02:03:18Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>150917</char_count>
-    <byte_count>151155</byte_count>
-    <estimated_tokens>37729</estimated_tokens>
+    <char_count>152065</char_count>
+    <byte_count>152309</byte_count>
+    <estimated_tokens>38016</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -177,9 +177,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
         <id>t0067_t0065_soma_channel_addition_sweep</id>
+        <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
       </source_ids>
       <content>
-Completed tasks: 61
+Completed tasks: 62
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -546,6 +547,12 @@ ID: t0067_t0065_soma_channel_addition_sweep
 Completed: 2026-05-01
 Short description: Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
 Result summary: Results Summary: Add 5 voltage-gated channels to the t0065 soma; sweep densities Summary Added each of {Nav1.6, NaP, NaR, Kv3, Kv4} to the deposited Poleg-Polsky DSGC soma, one at a time, at low / medium / high densities (3-fold steps), and ran the t0065 FULL-mode gabaMOD-swap protocol with 5 seeds per (condition, direction). 16 conditions × 2 directions × 5 seeds = 160 trials, ~10 minutes wall-clock. Headline finding: **NaP at high density inverts direction selectivity** (DSI = -0.18, cell fires more in null than preferred); **Nav1.6 monotonically erodes DSI** as density rises (0.80 → 0.23 across the density grid); **NaR / Kv3 / Kv4 produce only modest changes** at the chosen densities...
+
+## Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?
+ID: t0068_t0067_nav16_kv3_coexpression_rescue
+Completed: 2026-05-01
+Short description: Test whether co-inserting Kv3 with Nav1.6 on the t0065 soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 DSI = 0.23 at Nav1.6_high). 9 conditions x PD/ND x 5 seeds = 90 FULL trials.
+Result summary: Results Summary: Nav1.6 + Kv3 co-expression rescue test Summary Tested whether co-inserting Kv3 with Nav1.6 on the deposited Poleg-Polsky DSGC soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 anchors: DSI = 0.48 at Nav1.6_med, 0.23 at Nav1.6_high). 9 conditions × 2 directions × 5 seeds = 90 FULL trials, ~~10 min compute. **Hypothesis FALSIFIED**: Kv3 does NOT rescue DSI. Across all 8 co-expression conditions DSI changes by less than ±0.025 from the Nav1.6-only anchor. Instead, Kv3 slightly *boosts* firing rate (~~+10% at high Kv3), scaling PD and ND equally. Metrics | Condition | PD spikes (mean ± SD) | ND spikes (mean ± SD) | DSI | ΔDSI vs Nav1.6 anchor | | --- | --- |...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

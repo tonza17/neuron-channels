@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(174)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(177)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (13)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (154 open, 20 closed)
+## Suggestions (156 open, 21 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -2316,24 +2316,6 @@ most surprising finding from t0067 and warrants quantitative refinement.
 </details>
 
 <details>
-<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
-(S-0067-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
-with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
-sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
-substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
-5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
-recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
-power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
-intrinsically DS-friendly.
-
-</details>
-
-<details>
 <summary>📊 <strong>Investigate biological NaP overexpression as a
 directional-selectivity disorder model</strong> (S-0067-05)</summary>
 
@@ -2347,6 +2329,60 @@ pain (NaP upregulation in DRG neurons). Survey the literature for clinical/precl
 of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
 becomes a candidate computational model for a real disease state. Output: an answer asset
 summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
+Nav1.6</strong> (S-0068-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test M-current (KCNQ / Kv7) co-expression with Nav1.6</strong>
+(S-0068-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with
+V_half around -40 to -45 mV. Unlike Kv3 it doesn't repolarise fast APs; it provides a tonic
+outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime,
+M-current would provide steady hyperpolarisation that reduces the cell's mean depolarisation,
+possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a
+simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
+density</strong> (S-0068-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt's leverage is
+fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to
+scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x)
+and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale
+restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sense, but it
+shows what would be required to compensate for a Nav-side gain change at the network level —
+relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
+patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
 
 </details>
 

@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-67-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-250-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-68-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-255-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (24K)
-| [full](llm-context/full.xml) (355K) | [roadmap](llm-context/roadmap.xml) (78K) |
-[results](llm-context/results-deep-dive.xml) (265K) |
+| [full](llm-context/full.xml) (358K) | [roadmap](llm-context/roadmap.xml) (79K) |
+[results](llm-context/results-deep-dive.xml) (269K) |
 [assets](llm-context/literature-and-assets.xml) (43K)
 
-*Last updated: 2026-04-30 23:38 UTC*
+*Last updated: 2026-05-01 02:03 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (61 total)](tasks/by-status/completed.md)
+## [Recently Completed (62 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0068 | [Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?](../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) | [`results`](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/results/results_detailed.md) | 2026-05-01 03:05 |
 | 0067 | [Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change](../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) | [`results`](../tasks/t0067_t0065_soma_channel_addition_sweep/results/results_detailed.md) | 2026-05-01 01:05 |
 | 0066 | [Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 16:48 |
 | 0065 | [Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 15:16 |
@@ -92,9 +93,8 @@ No blocked tasks.
 | 0061 | [Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0061_nmda_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:32 |
 | 0060 | [Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0060_ampa_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:00 |
 | 0059 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | [`results`](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/results/results_detailed.md) | 2026-04-29 20:55 |
-| 0058 | [Brainstorm results session 11](../overview/tasks/task_pages/t0058_brainstorm_results_11.md) | [`results`](../tasks/t0058_brainstorm_results_11/results/results_detailed.md) | 2026-04-29 12:00 |
 
-*51 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*52 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +119,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (221 open)](suggestions/)
+## [Recent Suggestions (225 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -134,24 +134,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
-(S-0067-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
-with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
-sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
-substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
-5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
-recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
-power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
-intrinsically DS-friendly.
 
 </details>
 
@@ -211,6 +193,95 @@ summarising the literature on NaP dysregulation in DSGCs / retinal disease.
 </details>
 
 <details>
+<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
+Nav1.6</strong> (S-0068-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test M-current (KCNQ / Kv7) co-expression with Nav1.6</strong>
+(S-0068-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with
+V_half around -40 to -45 mV. Unlike Kv3 it doesn't repolarise fast APs; it provides a tonic
+outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime,
+M-current would provide steady hyperpolarisation that reduces the cell's mean depolarisation,
+possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a
+simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
+density</strong> (S-0068-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt's leverage is
+fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to
+scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x)
+and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale
+restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sense, but it
+shows what would be required to compensate for a Nav-side gain change at the network level —
+relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
+patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
+(S-0068-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3
+co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as
+understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 +
+Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the
+rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue
+because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
+more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
+across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep Kv3 alone (no Nav1.6) to validate the kinetic-model
+effect</strong> (S-0068-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0067 sweep showed Kv3 alone (without Nav1.6) had essentially no effect on firing rate or DSI
+(DSI = 0.80 → 0.82 across low/med/high). t0068 shows Kv3 also has no rescue effect on top of
+Nav1.6. To confirm that this isn't a model artefact (e.g., Kv3 not engaging because of an MOD
+bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2) and check
+whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2
+still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme
+(e.g., Wang-Buzsaki with two-component decay).
+
+</details>
+
+<details>
 <summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
 substrate</strong> (S-0065-01)</summary>
 
@@ -231,87 +302,7 @@ binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothes
 
 </details>
 
-<details>
-<summary>🧪 <strong>Match the from-scratch GABA reversal to resting potential and
-re-test direction selectivity</strong> (S-0065-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-The deposited cell places e_SACinhib = -60 mV which equals the cell's leak-driven quiescent
-potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below
-resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i),
-inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off
-threshold across all directions. Conversely, if e_GABA > v_rest, inhibition can depolarise
-toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch
-substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse
-mechanism's reversal). This directly tests whether the deposited cell's success is
-structurally dependent on its e_GABA = v_rest design choice. Expected output: from-scratch
-family with e_GABA = v_rest produces a graded tuning curve with 5-15 Hz peak in PD and DSI in
-[0.5, 0.85], matching the deposited cell's behaviour.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Resolve inhibitory conductance time-course via SEClamp on the
-deposited cell</strong> (S-0065-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-t0065 IPSP_PASSIVE traces are flat at e_SACinhib = -60 mV because the cell sits at the
-inhibitory reversal under no excitation. The voltage trace cannot reveal the inhibitory
-conductance time-course; only a voltage clamp can resolve g_inh(t). t0049 already has SEClamp
-infrastructure for this cell. Combining the t0065 channel-isolation pattern (zero excitatory
-drives via b2gampa = b2gnmda = s2gach = achMOD = 0) with a SEClamp at -65 mV (or any
-non-equilibrium voltage offset from e_SACinhib) would resolve the inhibitory conductance in nS
-as a function of time, separately for PD (gabaMOD = 0.33) and ND (gabaMOD = 0.99). This is
-essential for quantifying the differential shunting magnitude that drives FULL-mode DSI: the
-integral of g_inh(t) should be ~3x larger in ND than in PD. Expected output: two conductance
-time-courses showing g_inhibitory(t) over the 1000 ms trial in PD vs ND, with peak g_inh and
-integrated charge per direction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Multi-seed average of the t0065 protocol to add error bars on
-FULL spike counts</strong> (S-0065-04)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-t0065 ran one seed per (mode, direction) cell. The FULL-mode 15-PD vs 1-ND spike count is
-consistent with t0020's 20-trial mean (14.85 vs 1.80 Hz) but has no statistical band of its
-own. Running 10-20 seeds per cell would give SD/SE on each metric and let us state the DSI
-with a confidence interval. EPSP_PASSIVE and IPSP_PASSIVE traces are deterministic given seed
-(verified bit-identicality of EPSP_PASSIVE PD vs ND in t0065), so multi-seed for those modes
-is unnecessary - only FULL needs the seed sweep. Sweep cost: ~40 trials x 3 s ≈ 2 minutes
-additional, no new infrastructure. Expected output: FULL-mode spike-count distribution per
-direction (mean ± SD across 20 seeds) and DSI 95% confidence interval.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Eight-direction EPSP/IPSP/FULL tuning curve on the deposited
-cell</strong> (S-0065-05)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-t0065 only tests gabaMOD = 0.33 (PD) and 0.99 (ND). The Poleg-Polsky 2016 paper has a smooth
-tuning curve over 8 directions, which the deposited model simulates by sweeping gabaMOD across
-[0.33, 0.99]. Running EPSP_PASSIVE / IPSP_PASSIVE / FULL at all 8 directions would produce an
-EPSP/IPSP decomposition for the entire tuning curve, not just the two anchor points. Most
-informative for understanding how shunting modulates the EPSP envelope at intermediate
-directions: does the relationship between gabaMOD and FULL-mode envelope compression scale
-linearly, or is there a threshold around gabaMOD ~ 0.6 where the cell transitions from spiking
-to non-spiking? Sweep cost: 24 trials (3 modes x 8 directions x 1 seed) ≈ 75 s. Expected
-output: 24-trial dataset with gabaMOD-modulated tuning curve in spike counts and the
-corresponding (constant) EPSP_PASSIVE and (constant-flat) IPSP_PASSIVE traces.
-
-</details>
-
-*211 more open suggestions → [open suggestions](suggestions/)*
+*215 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
@@ -334,20 +325,22 @@ most surprising finding from t0067 and warrants quantitative refinement.
 </details>
 
 <details>
-<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
-(S-0067-02)</summary>
+<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
+Nav1.6</strong> (S-0068-01)</summary>
 
 **Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+[t0068_t0067_nav16_kv3_coexpression_rescue](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
 
-t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
-with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
-sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
-substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
-5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
-recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
-power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
-intrinsically DS-friendly.
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 

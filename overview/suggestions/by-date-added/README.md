@@ -1,12 +1,12 @@
 # Suggestions by Date Added
 
-250 suggestion(s) grouped by derived added date.
+255 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-05-01 (5)
+## 2026-05-01 (10)
 
 ## High Priority
 
@@ -33,26 +33,28 @@ most surprising finding from t0067 and warrants quantitative refinement.
 </details>
 
 <details>
-<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
-(S-0067-02)</summary>
+<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
+Nav1.6</strong> (S-0068-01)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0067-02` |
+| **ID** | `S-0068-01` |
 | **Kind** | experiment |
 | **Date added** | 2026-05-01 |
-| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
 | **Source paper** | — |
 | **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
 
-t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
-with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
-sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
-substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
-5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
-recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
-power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
-intrinsically DS-friendly.
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -83,6 +85,30 @@ more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
 </details>
 
 <details>
+<summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
+(S-0068-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3
+co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as
+understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 +
+Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the
+rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue
+because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
+more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
+across substrates.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Replace simplified MOD kinetics with ModelDB-sourced canonical
 implementations</strong> (S-0067-04)</summary>
 
@@ -108,6 +134,52 @@ Hz).
 
 </details>
 
+<details>
+<summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
+density</strong> (S-0068-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt's leverage is
+fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to
+scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x)
+and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale
+restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sense, but it
+shows what would be required to compensate for a Nav-side gain change at the network level —
+relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
+patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test M-current (KCNQ / Kv7) co-expression with Nav1.6</strong>
+(S-0068-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with
+V_half around -40 to -45 mV. Unlike Kv3 it doesn't repolarise fast APs; it provides a tonic
+outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime,
+M-current would provide steady hyperpolarisation that reduces the cell's mean depolarisation,
+possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a
+simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
+
+</details>
+
 ## Low Priority
 
 <details>
@@ -130,6 +202,56 @@ pain (NaP upregulation in DRG neurons). Survey the literature for clinical/precl
 of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
 becomes a candidate computational model for a real disease state. Output: an answer asset
 summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep Kv3 alone (no Nav1.6) to validate the kinetic-model
+effect</strong> (S-0068-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0067 sweep showed Kv3 alone (without Nav1.6) had essentially no effect on firing rate or DSI
+(DSI = 0.80 → 0.82 across low/med/high). t0068 shows Kv3 also has no rescue effect on top of
+Nav1.6. To confirm that this isn't a model artefact (e.g., Kv3 not engaging because of an MOD
+bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2) and check
+whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2
+still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme
+(e.g., Wang-Buzsaki with two-component decay).
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Test channel co-expression: Nav1.6 + Kv3 jointly</s> — covered by <a
+href="../../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/"><code>t0068_t0067_nav16_kv3_coexpression_rescue</code></a>
+(S-0067-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
+with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
+sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
+substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
+5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
+recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
+power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
+intrinsically DS-friendly.
 
 </details>
 

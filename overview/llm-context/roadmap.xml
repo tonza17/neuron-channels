@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-04-30T23:38:18Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T02:03:18Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>310963</char_count>
-    <byte_count>311236</byte_count>
-    <estimated_tokens>77740</estimated_tokens>
+    <char_count>316336</char_count>
+    <byte_count>316633</byte_count>
+    <estimated_tokens>79084</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -173,9 +173,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0065_t0020_epsp_ipsp_vm_protocol</id>
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
         <id>t0067_t0065_soma_channel_addition_sweep</id>
+        <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
       </source_ids>
       <content>
-Completed tasks: 61
+Completed tasks: 62
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -542,6 +543,12 @@ ID: t0067_t0065_soma_channel_addition_sweep
 Completed: 2026-05-01
 Short description: Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
 Result summary: Results Summary: Add 5 voltage-gated channels to the t0065 soma; sweep densities Summary Added each of {Nav1.6, NaP, NaR, Kv3, Kv4} to the deposited Poleg-Polsky DSGC soma, one at a time, at low / medium / high densities (3-fold steps), and ran the t0065 FULL-mode gabaMOD-swap protocol with 5 seeds per (condition, direction). 16 conditions × 2 directions × 5 seeds = 160 trials, ~10 minutes wall-clock. Headline finding: **NaP at high density inverts direction selectivity** (DSI = -0.18, cell fires more in null than preferred); **Nav1.6 monotonically erodes DSI** as density rises (0.80 → 0.23 across the density grid); **NaR / Kv3 / Kv4 produce only modest changes** at the chosen densities...
+
+## Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?
+ID: t0068_t0067_nav16_kv3_coexpression_rescue
+Completed: 2026-05-01
+Short description: Test whether co-inserting Kv3 with Nav1.6 on the t0065 soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 DSI = 0.23 at Nav1.6_high). 9 conditions x PD/ND x 5 seeds = 90 FULL trials.
+Result summary: Results Summary: Nav1.6 + Kv3 co-expression rescue test Summary Tested whether co-inserting Kv3 with Nav1.6 on the deposited Poleg-Polsky DSGC soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 anchors: DSI = 0.48 at Nav1.6_med, 0.23 at Nav1.6_high). 9 conditions × 2 directions × 5 seeds = 90 FULL trials, ~~10 min compute. **Hypothesis FALSIFIED**: Kv3 does NOT rescue DSI. Across all 8 co-expression conditions DSI changes by less than ±0.025 from the Nav1.6-only anchor. Instead, Kv3 slightly *boosts* firing rate (~~+10% at high Kv3), scaling PD and ND equally. Metrics | Condition | PD spikes (mean ± SD) | ND spikes (mean ± SD) | DSI | ΔDSI vs Nav1.6 anchor | | --- | --- |...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1031,6 +1038,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0066-02</id>
         <id>S-0067-01</id>
         <id>S-0067-02</id>
+        <id>S-0068-01</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1194,6 +1202,9 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0066-03</id>
         <id>S-0067-03</id>
         <id>S-0067-04</id>
+        <id>S-0068-02</id>
+        <id>S-0068-03</id>
+        <id>S-0068-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1227,9 +1238,10 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0066-04</id>
         <id>S-0066-05</id>
         <id>S-0067-05</id>
+        <id>S-0068-05</id>
       </source_ids>
       <content>
-Open suggestions: 237
+Open suggestions: 242
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -1517,6 +1529,13 @@ Priority: high
 Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065 substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND × 5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to recover from Nav1.6&#x27;s depolarising drive faster, restoring the inhibitory shunt&#x27;s modulatory power. If true, this is a proof-of-concept that biological &#x27;fast-spiking design&#x27; is intrinsically DS-friendly.
+
+## Test BK / SK calcium-activated K+ co-expression with Nav1.6
+ID: S-0068-01
+Priority: high
+Kind: experiment
+Source task: t0068_t0067_nav16_kv3_coexpression_rescue
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn&#x27;t differentially suppress firing at high rates because its activation depends on V, not on cumulative Ca2+. The natural alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels&#x27; open probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing. Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced more than ND firing → DSI restored. This is mechanistically coherent and biologically plausible (DSGCs express both BK and SK in vivo)...
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2659,6 +2678,27 @@ Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067&#x27;s 5 MOD files use simplified HH-style m/h gates with V_half and time constants from published values, but lose features specific to each channel: NaR&#x27;s blocking-particle mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics (Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997 has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular showed almost no effect in t0067, possibly because the simplified kinetics miss their distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching the deposited cell&#x27;s USEION conventions or wrapping in NONSPECIFIC_CURRENT...
 
+## Test M-current (KCNQ / Kv7) co-expression with Nav1.6
+ID: S-0068-02
+Priority: medium
+Kind: experiment
+Source task: t0068_t0067_nav16_kv3_coexpression_rescue
+Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with V_half around -40 to -45 mV. Unlike Kv3 it doesn&#x27;t repolarise fast APs; it provides a tonic outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime, M-current would provide steady hyperpolarisation that reduces the cell&#x27;s mean depolarisation, possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
+
+## Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6 density
+ID: S-0068-03
+Priority: medium
+Kind: experiment
+Source task: t0068_t0067_nav16_kv3_coexpression_rescue
+t0068 makes clear that channel-level rescue may not be possible — the GABA shunt&#x27;s leverage is fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x) and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale restores DSI to baseline. This isn&#x27;t a &#x27;rescue&#x27; in the channel-pharmacology sense, but it shows what would be required to compensate for a Nav-side gain change at the network level — relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line patch to t0065&#x27;s apply_params, then 6...
+
+## Move Nav1.6 + Kv3 to a virtual AIS instead of soma
+ID: S-0068-04
+Priority: medium
+Kind: experiment
+Source task: t0068_t0067_nav16_kv3_coexpression_rescue
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3 co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 + Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue because the AIS&#x27;s smaller diameter makes per-segment conductance changes leverage the AP shape more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null across substrates.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -2889,6 +2929,13 @@ Priority: low
 Kind: evaluation
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC. Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding becomes a candidate computational model for a real disease state. Output: an answer asset summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+## Sweep Kv3 alone (no Nav1.6) to validate the kinetic-model effect
+ID: S-0068-05
+Priority: low
+Kind: experiment
+Source task: t0068_t0067_nav16_kv3_coexpression_rescue
+t0067 sweep showed Kv3 alone (without Nav1.6) had essentially no effect on firing rate or DSI (DSI = 0.80 → 0.82 across low/med/high). t0068 shows Kv3 also has no rescue effect on top of Nav1.6. To confirm that this isn&#x27;t a model artefact (e.g., Kv3 not engaging because of an MOD bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2) and check whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2 still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme (e.g., Wang-Buzsaki with two-component decay).
       </content>
     </section>
   </sections>

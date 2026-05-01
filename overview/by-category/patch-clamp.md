@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(17)](../suggestions/by-category/patch-clamp.md)
+(18)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,7 +1185,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (15 open, 2 closed)
+## Suggestions (16 open, 2 closed)
 
 <details>
 <summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
@@ -1202,6 +1202,24 @@ section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, 
 the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
 show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
 more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
+(S-0068-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3
+co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as
+understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 +
+Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the
+rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue
+because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
+more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
+across substrates.
 
 </details>
 

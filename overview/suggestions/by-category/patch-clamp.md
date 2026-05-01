@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-17 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **15
-open** (1 high, 13 medium, 1 low), **2 closed**.
+18 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **16
+open** (1 high, 14 medium, 1 low), **2 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -133,6 +133,30 @@ sweep for each condition. Expected outcome: condition (a) peaks near 30-40 Hz; c
 drops peak because distal Kv1 fails to fast-repolarise; conditions (c) and (d) test whether
 either K-channel alone suffices. Dependencies: t0022 library asset. Effort ~16 hours.
 Recommended task type: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
+(S-0068-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3
+co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as
+understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 +
+Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the
+rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue
+because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
+more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
+across substrates.
 
 </details>
 

@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(40)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(44)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (34 open, 6 closed)
+## Suggestions (37 open, 7 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -902,24 +902,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test channel co-expression: Nav1.6 + Kv3 jointly</strong>
-(S-0067-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na
-with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables
-sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065
-substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND ×
-5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to
-recover from Nav1.6's depolarising drive faster, restoring the inhibitory shunt's modulatory
-power. If true, this is a proof-of-concept that biological 'fast-spiking design' is
-intrinsically DS-friendly.
 
 </details>
 
@@ -975,6 +957,77 @@ pain (NaP upregulation in DRG neurons). Survey the literature for clinical/precl
 of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding
 becomes a candidate computational model for a real disease state. Output: an answer asset
 summarising the literature on NaP dysregulation in DSGCs / retinal disease.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
+Nav1.6</strong> (S-0068-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test M-current (KCNQ / Kv7) co-expression with Nav1.6</strong>
+(S-0068-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with
+V_half around -40 to -45 mV. Unlike Kv3 it doesn't repolarise fast APs; it provides a tonic
+outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime,
+M-current would provide steady hyperpolarisation that reduces the cell's mean depolarisation,
+possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a
+simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
+(S-0068-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3
+co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as
+understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 +
+Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the
+rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue
+because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
+more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
+across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Sweep Kv3 alone (no Nav1.6) to validate the kinetic-model
+effect</strong> (S-0068-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
+
+t0067 sweep showed Kv3 alone (without Nav1.6) had essentially no effect on firing rate or DSI
+(DSI = 0.80 → 0.82 across low/med/high). t0068 shows Kv3 also has no rescue effect on top of
+Nav1.6. To confirm that this isn't a model artefact (e.g., Kv3 not engaging because of an MOD
+bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2) and check
+whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2
+still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme
+(e.g., Wang-Buzsaki with two-component decay).
 
 </details>
 
