@@ -275,24 +275,187 @@ no individual synapse looks like that mean.
 
 ## Examples
 
-To make the population statistics concrete, six high-variance individual single-synapse traces are
-tabulated below. Each row reports the input parameters (synapse index, direction, bed, channel) and
-the per-trace output (peak conductance, peak |I|, time of peak). These are the top-amplitude
-single-synapse traces from each (bed, direction, type) combination.
+Ten top-amplitude individual single-synapse traces, one per (bed, direction, channel) combination
+that exists in the data. Each example shows the input parameters fed into the recorder (bed,
+direction, channel, synapse index, reversal potential) and the raw output read from the recorded
+.npz arrays (peak conductance, peak |current|, time of peak g, time of peak |I|). These are
+extracted from `data/bed_*_{pd,nd}_*.npz` by `argmax`-ing across the synapse axis.
 
-| Bed | Direction | Channel | Synapse idx | Peak g | Peak \|I\| | t at peak g | t at peak \|I\| |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| A | PD | GABA | 221 | 1.41 nS | 84.9 pA | 226 ms | 226 ms |
-| A | ND | GABA | 54 | 1.80 nS | 53.1 pA | 288 ms | 290 ms |
-| A | PD | NMDA | 34 | 1.34 nS | 49.6 pA | 373 ms | 373 ms |
-| B | PD | GABA | 140 | 3.00 nS | 178.1 pA | 53 ms | 55 ms |
-| B | ND | GABA | 13 | 10.21 nS | 269.0 pA | 44 ms | 7 ms |
-| B | PD | ACh | 144 | 1.80 nS | 88.4 pA | 58 ms | 58 ms |
+### Example 1 — Bed A, PD, GABA, top synapse
 
-The Bed B GABA ND single-synapse peak (10.21 nS) is over 60× the population mean peak (0.16 nS PD;
-1.25 nS ND). This is the Bernoulli release model in action: most of the 177 GABA terminals fire 0-1
-events per trial; a handful of high-rate terminals near the bar's arrival window fire several events
-that summate to large momentary conductances. The population mean averages this out.
+```text
+Input:
+  bed             = A (Poleg-Polsky, t0008/t0020)
+  direction       = PD (gabaMOD = 0.33)
+  channel         = GABA (SACinhibsyn)
+  synapse_idx     = 221  (h.RGC.SACinhibsyn[221])
+  E_rev_mV        = -60.0
+
+Output:
+  peak_g_nS       = 1.41
+  peak_I_abs_pA   = 84.9
+  t_at_peak_g_ms  = 226
+  t_at_peak_I_ms  = 226
+```
+
+### Example 2 — Bed A, ND, GABA, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = ND (gabaMOD = 0.99)
+  channel         = GABA (SACinhibsyn)
+  synapse_idx     = 54
+  E_rev_mV        = -60.0
+
+Output:
+  peak_g_nS       = 1.80
+  peak_I_abs_pA   = 53.1
+  t_at_peak_g_ms  = 288
+  t_at_peak_I_ms  = 290
+```
+
+### Example 3 — Bed A, PD, NMDA, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = PD
+  channel         = NMDA (BIPsyn._ref_gNMDA)
+  synapse_idx     = 34
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 1.34
+  peak_I_abs_pA   = 49.6
+  t_at_peak_g_ms  = 373
+  t_at_peak_I_ms  = 373
+```
+
+### Example 4 — Bed A, PD, AMPA, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = PD
+  channel         = AMPA (BIPsyn._ref_gAMPA)
+  synapse_idx     = 71
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 0.50
+  peak_I_abs_pA   = 19.28
+  t_at_peak_g_ms  = 141
+  t_at_peak_I_ms  = 141
+```
+
+### Example 5 — Bed A, ND, AMPA, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = ND
+  channel         = AMPA
+  synapse_idx     = 234
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 0.45
+  peak_I_abs_pA   = 22.52
+  t_at_peak_g_ms  = 141
+  t_at_peak_I_ms  = 141
+```
+
+### Example 6 — Bed A, PD, ACh, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = PD
+  channel         = ACh (SACexcsyn)
+  synapse_idx     = 178
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 0.74
+  peak_I_abs_pA   = 28.49
+  t_at_peak_g_ms  = 286
+  t_at_peak_I_ms  = 288
+```
+
+### Example 7 — Bed A, ND, ACh, top synapse
+
+```text
+Input:
+  bed             = A
+  direction       = ND
+  channel         = ACh
+  synapse_idx     = 188
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 0.97
+  peak_I_abs_pA   = 42.94
+  t_at_peak_g_ms  = 190
+  t_at_peak_I_ms  = 190
+```
+
+### Example 8 — Bed B, PD, GABA, top synapse
+
+```text
+Input:
+  bed             = B (de Rosenroll, t0024)
+  direction       = PD (bar at 0°, GABA release prob ≈ 0.084)
+  channel         = GABA (Exp2Syn)
+  synapse_idx     = 140
+  E_rev_mV        = -60.0
+
+Output:
+  peak_g_nS       = 3.00
+  peak_I_abs_pA   = 178.1
+  t_at_peak_g_ms  = 53
+  t_at_peak_I_ms  = 55
+```
+
+### Example 9 — Bed B, ND, GABA, top synapse
+
+```text
+Input:
+  bed             = B
+  direction       = ND (bar at 180°, GABA release prob ≈ 0.780)
+  channel         = GABA (Exp2Syn)
+  synapse_idx     = 13
+  E_rev_mV        = -60.0
+
+Output:
+  peak_g_nS       = 10.21
+  peak_I_abs_pA   = 269.0
+  t_at_peak_g_ms  = 44
+  t_at_peak_I_ms  = 7
+```
+
+### Example 10 — Bed B, PD, ACh, top synapse
+
+```text
+Input:
+  bed             = B
+  direction       = PD (BASE_ACH_PROB = 0.5, direction-independent)
+  channel         = ACh (Exp2Syn)
+  synapse_idx     = 144
+  E_rev_mV        = 0.0
+
+Output:
+  peak_g_nS       = 1.80
+  peak_I_abs_pA   = 88.4
+  t_at_peak_g_ms  = 58
+  t_at_peak_I_ms  = 58
+```
+
+The Bed B GABA ND single-synapse peak in Example 9 (10.21 nS) is over 60× the population mean peak
+(0.16 nS PD; 1.25 nS ND). This is the Bernoulli release model in action: most of the 177 GABA
+terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar's arrival window
+fire several events that summate to large momentary conductances. The population mean averages this
+out.
 
 ## Task Requirement Coverage
 

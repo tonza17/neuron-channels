@@ -153,9 +153,9 @@ mean smooths most of this; what's left is essentially the same trace.
 
 = Single-synapse examples
 
-To make the population statistics concrete, six high-variance individual single-synapse
-traces are tabulated below. Each row reports the input parameters and the per-trace
-output.
+Ten top-amplitude individual single-synapse traces, one per (bed, direction, channel)
+combination that exists in the data. Tabulated for compactness; per-example input/output
+detail is in `results_detailed.md`.
 
 #table(
   columns: (auto, auto, auto, auto, auto, auto, auto, auto),
@@ -166,16 +166,19 @@ output.
   [A], [PD], [GABA], [221], [1.41 nS], [84.9 pA], [226 ms], [226 ms],
   [A], [ND], [GABA], [54], [1.80 nS], [53.1 pA], [288 ms], [290 ms],
   [A], [PD], [NMDA], [34], [1.34 nS], [49.6 pA], [373 ms], [373 ms],
+  [A], [PD], [AMPA], [71], [0.50 nS], [19.28 pA], [141 ms], [141 ms],
+  [A], [ND], [AMPA], [234], [0.45 nS], [22.52 pA], [141 ms], [141 ms],
+  [A], [PD], [ACh], [178], [0.74 nS], [28.49 pA], [286 ms], [288 ms],
+  [A], [ND], [ACh], [188], [0.97 nS], [42.94 pA], [190 ms], [190 ms],
   [B], [PD], [GABA], [140], [3.00 nS], [178.1 pA], [53 ms], [55 ms],
   [B], [ND], [GABA], [13], [10.21 nS], [269.0 pA], [44 ms], [7 ms],
   [B], [PD], [ACh], [144], [1.80 nS], [88.4 pA], [58 ms], [58 ms],
 )
 
 The Bed B GABA ND single-synapse peak (10.21 nS) is over 60× the population mean peak
-(0.16 nS PD; 1.25 nS ND). This is the Bernoulli release model in action: most of the
-177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near
-the bar's arrival window fire several events that summate to large momentary
-conductances. The population mean averages this out.
+(0.16 nS PD; 1.25 nS ND). Most of the 177 GABA terminals fire 0-1 events per trial;
+a handful of high-rate terminals near the bar's arrival window fire several events
+that summate to large momentary conductances. The population mean averages this out.
 
 = Verification
 
