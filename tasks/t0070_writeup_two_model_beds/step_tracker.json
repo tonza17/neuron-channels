@@ -59,9 +59,9 @@
       "step": 7,
       "name": "results",
       "description": "Finalise results files (metrics.json, costs.json, remote_machines_used.json) and ensure both result markdowns pass verify_task_results.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T13:53:17Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T13:54:07Z",
       "log_file": "logs\\steps\\007_results/"
     },
     {
