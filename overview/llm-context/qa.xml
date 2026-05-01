@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-01T17:50:43Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-01T18:07:23Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>370221</char_count>
-    <byte_count>370759</byte_count>
-    <estimated_tokens>92555</estimated_tokens>
+    <char_count>372422</char_count>
+    <byte_count>372960</byte_count>
+    <estimated_tokens>93105</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -177,9 +177,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0070_writeup_two_model_beds</id>
         <id>t0071_t0070_synaptic_eqs_pdf</id>
         <id>t0072_synaptic_traces_pd_nd</id>
+        <id>t0073_brainstorm_results_12</id>
       </source_ids>
       <content>
-Completed tasks: 66
+Completed tasks: 67
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -576,6 +577,12 @@ ID: t0072_synaptic_traces_pd_nd
 Completed: 2026-05-01
 Short description: Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_traces_pd_nd&quot; date_completed: &quot;2026-05-01&quot; status: &quot;complete&quot; --- Synaptic Conductance and Current Traces (PD vs ND) Summary Recorded `g(t)` and `v_local(t)` from every synapse on each model bed (Bed A: 282 BIPsyn + SACinhibsyn + SACexcsyn = 4 synapse types; Bed B: 177 Exp2Syn ACh + GABA = 2 types) for one PD and one ND trial each at 1 ms resolution, computed `I = g · (v_local − E_rev)` post-hoc, and plotted population mean ± 1 SD per synapse type with PD and ND overlaid. Two multi-panel figures (Bed A: 4×2; Bed B: 2×2) plus a 1.0 MB Typst-typeset PDF embedding both figures and the full methodology. Metrics * **Bed A GABA peak conductance**: PD...
+
+## Brainstorm results session 12
+ID: t0073_brainstorm_results_12
+Completed: 2026-05-01
+Short description: Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
+Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset PDF + synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069 voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition (t0067 measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that simultaneously contains all biologically-present AIS channels and produces non-trivial DSI at a biologically reasonable peak rate. Decision: commission two new tasks (t0074...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -585,9 +592,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_tr
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -608,6 +617,20 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
+
+## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+ID: t0074_channel_tuning_width_bed_a
+Status: not_started
+Effective date: unknown
+Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+Dependencies: t0008_port_modeldb_189347, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0067_t0065_soma_channel_addition_sweep
+
+## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
+ID: t0075_bio_realistic_ais_param_sweep
+Status: not_started
+Effective date: unknown
+Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
+Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

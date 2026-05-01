@@ -1,37 +1,13 @@
 # Suggestions: `patch-clamp`
 
-20 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **17
-open** (3 high, 13 medium, 1 low), **3 closed**.
+20 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **16
+open** (2 high, 13 medium, 1 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0069-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
-
-</details>
 
 <details>
 <summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
@@ -458,6 +434,32 @@ section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, 
 the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
 show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
 more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
+
+</details>
+
+<details>
+<summary>✅ <s>Halve somatic gnabar_HHst before attaching the AIS, then re-run the
+sweep</s> — covered by <a
+href="../../../tasks/t0075_bio_realistic_ais_param_sweep/"><code>t0075_bio_realistic_ais_param_sweep</code></a>
+(S-0069-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0069-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
 
 </details>
 

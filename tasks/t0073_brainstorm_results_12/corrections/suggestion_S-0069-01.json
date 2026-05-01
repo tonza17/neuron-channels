@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-06",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0069_t0067_ais_localised_channel_sweep",
+  "target_kind": "suggestion",
+  "target_id": "S-0069-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0069-01 proposes halving somatic gnabar_HHst before attaching the AIS, then re-running the t0069 sweep, on the hypothesis that a weakened soma lets the AIS dominate spike initiation. t0075 (bio_realistic_ais_param_sweep) covers this directly as Stage 2 axis 1: soma gnabar_HHst is swept across {100, 200, 300, 400} mS / cm^2 at the literature-informed AIS baseline. Stage 1 of t0075 also explicitly searches for a soma-gnabar value that lands the cell inside {peak Hz in [5, 50], DSI in [0.3, 0.95]}, which is exactly the regime S-0069-01 was probing. Rejecting as covered."
+}

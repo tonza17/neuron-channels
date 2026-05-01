@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T17:50:43Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T18:07:23Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>337602</char_count>
-    <byte_count>337964</byte_count>
-    <estimated_tokens>84400</estimated_tokens>
+    <char_count>349787</char_count>
+    <byte_count>350163</byte_count>
+    <estimated_tokens>87446</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -178,9 +178,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0070_writeup_two_model_beds</id>
         <id>t0071_t0070_synaptic_eqs_pdf</id>
         <id>t0072_synaptic_traces_pd_nd</id>
+        <id>t0073_brainstorm_results_12</id>
       </source_ids>
       <content>
-Completed tasks: 66
+Completed tasks: 67
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -577,6 +578,12 @@ ID: t0072_synaptic_traces_pd_nd
 Completed: 2026-05-01
 Short description: Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_traces_pd_nd&quot; date_completed: &quot;2026-05-01&quot; status: &quot;complete&quot; --- Synaptic Conductance and Current Traces (PD vs ND) Summary Recorded `g(t)` and `v_local(t)` from every synapse on each model bed (Bed A: 282 BIPsyn + SACinhibsyn + SACexcsyn = 4 synapse types; Bed B: 177 Exp2Syn ACh + GABA = 2 types) for one PD and one ND trial each at 1 ms resolution, computed `I = g · (v_local − E_rev)` post-hoc, and plotted population mean ± 1 SD per synapse type with PD and ND overlaid. Two multi-panel figures (Bed A: 4×2; Bed B: 2×2) plus a 1.0 MB Typst-typeset PDF embedding both figures and the full methodology. Metrics * **Bed A GABA peak conductance**: PD...
+
+## Brainstorm results session 12
+ID: t0073_brainstorm_results_12
+Completed: 2026-05-01
+Short description: Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
+Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset PDF + synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069 voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition (t0067 measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that simultaneously contains all biologically-present AIS channels and produces non-trivial DSI at a biologically reasonable peak rate. Decision: commission two new tasks (t0074...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -586,9 +593,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_tr
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
+        <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -850,6 +859,314 @@ answer asset capturing the measured speedup and its implications for the t0033 c
 * At least one answer asset is produced per the answer specification.
 * If the measured speedup differs from 5x by more than 20%, a correction-proposal suggestion is
   filed in `results/suggestions.json` against t0033&#x27;s answer asset.
+
+## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+ID: t0074_channel_tuning_width_bed_a
+Status: not_started
+Effective date: unknown
+Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+Dependencies: t0008_port_modeldb_189347, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0067_t0065_soma_channel_addition_sweep
+
+#### Motivation
+
+The t0067 soma-channel-addition sweep on Bed A (deposited Poleg-Polsky DSGC, library
+`modeldb_189347_dsgc` from t0008) measured DSI as a point estimate from PD vs ND only — a 2-angle
+protocol. That left the more biologically interesting question unanswered: do the tested channels
+also reshape the *width* of the angle-to-AP-rate tuning curve, and if so, do they sharpen or broaden
+it? t0067 reported NaP_high inverts DSI (sign flip), Nav1.6_high erodes DSI from 0.80 to 0.23, and
+{NaR, Kv3, Kv4} are nearly inert at the chosen densities; t0068 then falsified the Nav1.6 + Kv3
+co-expression rescue. Three biologically natural rescue candidates remain untested because their MOD
+mechanisms are not yet vendored in the project: BK (KCa1.1 / KCNMA1), SK (KCa2 / KCNN), and Kv7
+(KCNQ2 + KCNQ3, the M-current). All three are calcium-activated or slow-activating and could in
+principle differentially suppress the high-firing-rate PD direction and rescue DSI without flipping
+it. Adding them to the channel sweep and measuring tuning width across all eight channels at three
+densities each closes both gaps in one task.
+
+This task addresses RQ1 (somatic VGC combinations) and provides a tuning-width baseline that any
+future RQ4 active-dendrite test will compare against. Source suggestions covered: S-0068-01 (BK / SK
+with Nav1.6), S-0068-02 (Kv7 with Nav1.6), S-0068-05 (Kv3 alone validation).
+
+#### Scope
+
+* Substrate: Bed A only (deposited Poleg-Polsky DSGC, t0008 library `modeldb_189347_dsgc`).
+* Encoding: 12-angle bar-rotation protocol (the model&#x27;s native protocol per t0046 reproduction).
+  Bar-arrival times sweep through 12 angles in 30-degree steps.
+* Channel set: 8 channels — 5 already vendored {Nav1.6, NaP, NaR, Kv3, Kv4} plus 3 newly vendored
+  {BK, SK, Kv7}. Each channel inserted on the soma at low / medium / high density (3 densities each,
+  matching the t0067 grid). Plus a baseline condition with no extra channels.
+* **Conditions**: 1 baseline + 8 channels x 3 densities = **25 conditions**.
+* **Trials**: 25 conditions x 12 angles x 5 seeds in FULL mode = 1500 trials. Plus 25 x 12 angles x
+  1 seed x 2 passive modes (EPSP_PASSIVE / IPSP_PASSIVE) = 600 diagnostic trials. **Total: 2100
+  trials**, ~2.2 h wall-clock on local CPU under CVODE at the t0067 measured rate of ~3.75 s /
+  trial.
+
+#### Approach
+
+##### Stage 1 — vendor 3 new MOD files plus calcium-pool mechanism
+
+* Vendor a BK (KCa1.1) MOD file, sourced from a standard published model (e.g., Migliore CA1, Hines
+  &amp; Carnevale Purkinje). Validate kinetics against expected V- and Ca-dependence.
+* Vendor an SK (KCa2 / SK2) MOD file from the same kind of source.
+* Vendor a Kv7 / M-current MOD file (KCNQ2 + KCNQ3 mixture or composite Kv7) from a standard
+  published model.
+* Vendor a calcium-pool mechanism (single-shell `cad`-style decay model, mirrors Bed B&#x27;s existing
+  `cad`) to provide [Ca]_i for BK and SK.
+* Un-zero CaL and CaT in Bed A&#x27;s `init_active` so that the calcium pool has a current source. This
+  is the only change to the existing Bed A model and must pass a regression gate (see Stage 2).
+
+##### Stage 2 — regression gate
+
+* Run the t0067 baseline (no extra channels, no BK / SK / Kv7) under the new code path with CaL +
+  CaT un-zeroed and the calcium-pool mechanism live but at zero density (BK = 0, SK = 0, Kv7 = 0).
+* Pass criterion: baseline DSI matches t0067&#x27;s reported DSI = 0.797 within 1e-3 (allowing sampling
+  noise across the 5-seed mean). Failure means the un-zeroing introduced unintended dynamics; fix
+  before proceeding to Stage 3.
+
+##### Stage 3 — 12-angle tuning-curve sweep
+
+* For each of 25 conditions (1 baseline + 5 existing channels x 3 densities + 3 new channels x 3
+  densities) run 12 angles x 5 seeds in FULL mode. Save:
+  * Per-trial soma spike times.
+  * Per-trial peak Vm and baseline Vm.
+  * Per-condition tuning curve (mean +/- SD spike count per angle).
+* Same channel insertion code as t0067 with three new branches for BK, SK, Kv7. Holds all other
+  parameters at the t0067 baseline.
+
+##### Stage 4 — passive diagnostics (EPSP_PASSIVE / IPSP_PASSIVE)
+
+* For each of 25 conditions run 12 angles x 1 seed x 2 passive modes = 600 trials.
+* Save per-trial peak Vm in the EPSP_PASSIVE and IPSP_PASSIVE traces. These should be flat at -60 mV
+  in IPSP_PASSIVE for all conditions (cross-checks with t0065&#x27;s shunting-design finding) and
+  direction-invariant in EPSP_PASSIVE under Bed A&#x27;s gabaMOD = 0 zeroing.
+
+##### Stage 5 — width metrics and visualisation
+
+* Per condition, compute:
+  * **HWHM** (half-width at half-max) in degrees, by linear interpolation around the half-max points
+    of the 12-angle tuning curve.
+  * **Vector-sum DSI** = `|sum_i rate(theta_i) * exp(i * theta_i)| / sum_i rate(theta_i)` —
+    circular concentration metric.
+  * **Peak rate (Hz)** at the angle with maximum mean rate.
+  * **Rate at PD** and **rate at PD + 180 deg** (ND).
+  * **RMSE vs t0004 cosine target** — the canonical project tuning-curve loss, computed using the
+    t0012 library.
+* For any condition where the tuning curve has no clear peak (mean rate &lt; 1 Hz at every angle),
+  report HWHM as `null` rather than fabricating a value.
+* Produce a per-channel sensitivity plot (HWHM, vector-sum DSI, peak rate vs density) using the
+  t0011 visualisation library.
+
+#### Expected Outputs
+
+* **Library asset**: a vendored channel pack containing the BK, SK, Kv7 MODs plus the calcium-pool
+  mechanism, registered as a project library. This becomes a dependency for t0075 and any future
+  task that needs these channels.
+* **Per-condition tuning curves** (25 CSVs, one per condition) and a combined `tuning_curves.csv`
+  with all 25 x 12 = 300 (condition, angle) rows.
+* **Width metrics table** (`results/metrics_summary.csv`): 25 rows x 6 columns (HWHM, vector-sum
+  DSI, peak rate, PD rate, ND rate, RMSE vs cosine target).
+* **Per-channel sensitivity plots** (8 PNGs in `results/images/`): HWHM, vector-sum DSI, peak rate
+  vs density per channel.
+* **Cross-channel comparison plot** (`results/images/all_channels_dsi_vs_density.png`): vector-sum
+  DSI vs density for all 8 channels overlaid.
+* `results/metrics.json` with the registered project metrics applied per condition.
+
+#### Pass Criteria
+
+* Stage 2 regression gate passes (baseline DSI within 1e-3 of t0067 = 0.797).
+* All 2100 trials complete with no instability flags.
+* Width metrics table is fully populated (HWHM may be `null` for low-rate conditions; vector-sum DSI
+  and peak rate must be defined for all 25 conditions).
+* For each channel, at least one density produces a measurable change in either HWHM or vector-sum
+  DSI (delta &gt; 5 deg HWHM or delta &gt; 0.05 vector-sum DSI relative to baseline). Channels that
+  produce no measurable change at any density are reported as inert in the conclusion section.
+
+#### Compute Estimate
+
+* ~2.2 h wall-clock on local CPU under CVODE for the 2100 trials.
+* ~3-4 h coding time for the 3 channel MOD vendoring + calcium-pool mechanism + Stage 2 regression
+  gate.
+* Local-CPU only. No remote machine. No paid API.
+
+#### Dependencies
+
+* `t0008_port_modeldb_189347` — Bed A library `modeldb_189347_dsgc`.
+* `t0011_response_visualization_library` — tuning-curve visualisation.
+* `t0012_tuning_curve_scoring_loss_library` — RMSE vs cosine target.
+* `t0067_t0065_soma_channel_addition_sweep` — channel-insertion code is forkable; baseline DSI =
+  0.797 reference for the regression gate.
+
+#### Risks and Fallbacks
+
+* **Calcium-pool kinetics drift**: the un-zeroing of CaL / CaT in Bed A&#x27;s `init_active` is the most
+  disruptive change. If the regression gate (Stage 2) fails, fall back to a closed-form external
+  calcium-pool mechanism that does not depend on CaL / CaT (e.g., feed [Ca]_i directly from a
+  precomputed time series). This preserves BK / SK kinetics while leaving Bed A&#x27;s existing HHst
+  dynamics untouched.
+* **BK / SK MOD source discrepancy**: if the chosen source MOD has different kinetics from the
+  canonical RGC literature, validate against published whole-cell recordings (e.g., Pfeiffer &amp;
+  Friedrich 2012 mouse RGC BK; Wang et al. 2014 RGC SK). Document the source paper for each MOD in
+  the library asset&#x27;s `details.json`.
+* **Kv7 expression density unclear**: Kv7 in DSGC AIS is documented but somatic Kv7 in DSGC is less
+  studied. If the t0067 &quot;low / medium / high&quot; density grid produces only inert results across the
+  Kv7 row, log the negative result and recommend an AIS-localised follow-up (deferring to t0075).
+
+## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
+ID: t0075_bio_realistic_ais_param_sweep
+Status: not_started
+Effective date: unknown
+Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
+Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+#### Motivation
+
+t0069 attached a virtual AIS plus 1 mm axon stub to Bed A (deposited Poleg-Polsky DSGC) and re-ran
+the t0067 channel-addition sweep with each of {Nav1.6, NaP, NaR, Kv3, Kv4} on the AIS instead of the
+soma. The sweep falsified S-0067-03&#x27;s prediction (AIS-localised channels show *larger* DSI effects
+than soma-localised) — it actually showed the opposite, with 11 of 15 channel conditions producing
+zero detectable DSI change. The cause was identified clearly: the AIS+axon halved baseline PD firing
+(14.2 → 6.4 spikes) and silenced ND firing (1.6 → 0.0), pushing baseline DSI to the trivial
+computational ceiling 1.0. The passive AIS+axon adds an electrical sink that quenches the cell
+rather than relocating spike initiation; AIS-localised channels at our densities cannot overcome the
+somatic 400 mS/cm² HHst Na drive.
+
+The follow-up question this task answers: is there *any* DSGC + AIS configuration that
+simultaneously contains all the channels biologically present in a vertebrate AIS (HHst basal Na+K,
+Nav1.6, Kv3, Kv7 — the canonical RGC AIS quartet) and produces non-trivial DSI at a biologically
+reasonable peak rate? &quot;Decent DSI, not 1, and reasonable firing rate&quot; maps to the operational pass
+band {DSI in [0.3, 0.95], peak Hz in [5, 50]}. The right tool is not optimisation — it is one axis
+at a time. NaP is excluded from the AIS channel set on two grounds: (a) AIS NaP expression in RGCs
+is controversial; (b) the t0067 NaP-high finding (DSI sign flip) suggests NaP destabilises the DSI
+mechanism rather than supporting it. BK and SK are excluded because they localise primarily to soma
+and dendrites in RGCs, not to the AIS.
+
+This task addresses RQ1 (somatic + AIS VGC combinations) and RQ4 (active vs passive components).
+Source suggestions covered: S-0068-04 (move Nav1.6 + Kv3 to AIS), S-0069-01 (halve somatic gnabar
+before AIS), S-0069-02 (shrink AIS diameter to 0.5 micrometre), S-0069-03 (vary axon length to probe
+sink), S-0069-04 (Nav1.6 + Kv3 on AIS at biological densities).
+
+#### Scope
+
+* Substrate: Bed A only (deposited Poleg-Polsky DSGC) plus virtual AIS + axon stub.
+* AIS channel set: **{HHst basal Na + K, Nav1.6, Kv3, Kv7}**. NaP, BK, SK explicitly excluded.
+* Encoding: 12-angle bar-rotation protocol (same as t0074 — cross-task comparable).
+* Two-stage design: Stage 1 baseline calibration; Stage 2 per-axis sweep.
+
+##### Stage 1 — Baseline calibration
+
+* Literature-informed AIS configuration (Wang et al. 2011, Carter et al. 2008 on mouse RGC AIS): AIS
+  diameter 0.8 micrometre, AIS length 30 micrometre, axon stub 1.0 mm, AIS gnabar_HHst 4 0 0
+  mS/cm^2, AIS Nav1.6 medium density (~0.3 S/cm^2 from t0067 medium), AIS Kv3 medium density (~0.3
+  S/cm^2), AIS Kv7 low density (~0.1 S/cm^2; distal AIS, weaker than Nav and Kv3).
+* Sweep soma `gnabar_HHst` across 6 candidates: {100, 150, 200, 250, 300, 400} mS/cm^2 (the t0069
+  baseline = 400).
+* 6 candidates x 12 angles x 1 seed = 72 trials, ~5 min wall-clock.
+* Pick the candidate that lands inside {peak Hz in [5, 50], DSI in [0.3, 0.95]}. If multiple
+  candidates qualify, pick the one closest to the centre of the band ({peak ~ 20 Hz, DSI ~ 0.6}).
+* If no candidate qualifies, the task halts at Stage 1 and reports a negative result with a
+  recommendation for a follow-up that loosens the AIS configuration further (e.g., reduce AIS Nav1.6
+  density first, then re-attempt).
+
+##### Stage 2 — Per-axis sweep
+
+From the Stage-1 baseline, vary one parameter at a time with all others held at baseline:
+
+| # | Axis | Values | Non-baseline points |
+| --- | --- | --- | --- |
+| 1 | Soma `gnabar_HHst` (mS / cm^2) | {100, 200, 300, 400} | 3 |
+| 2 | AIS `gnabar_HHst` (mS / cm^2) | {0, 100, 200, 400, 800} | 4 |
+| 3 | AIS diameter (micrometre) | {0.4, 0.6, 0.8, 1.0, 1.5} | 4 |
+| 4 | AIS length (micrometre) | {15, 30, 45, 60} | 3 |
+| 5 | AIS Nav1.6 density | {0, low, medium, high} | 3 |
+| 6 | AIS Kv3 density | {0, low, medium, high} | 3 |
+| 7 | AIS Kv7 density | {0, low, medium, high} | 3 |
+| 8 | Axon length (mm) | {0.1, 0.5, 1.0, 2.0} | 3 |
+
+Total Stage-2 conditions: 1 baseline + 26 non-baseline = **27 conditions x 12 angles x 5 seeds =
+1620 FULL trials**, ~100 min wall-clock at the t0067 measured ~3.75 s / trial under CVODE.
+
+##### Width metrics per axis (cross-comparable with t0074)
+
+For each condition, compute:
+
+* **HWHM** in degrees from the 12-angle tuning curve.
+* **Vector-sum DSI** (circular concentration).
+* **Peak rate (Hz)** at the angle with maximum mean rate.
+* Rate at PD (axis-1 peak angle) and at the opposite angle.
+* RMSE vs the t0004 cosine target.
+
+##### Outputs
+
+* **Library asset**: `bed_a_with_bio_realistic_ais` — Bed A + AIS + axon model variant with the
+  {HHst, Nav1.6, Kv3, Kv7} channel set wired in. Reusable by future tasks that need a working DSGC
+  + AIS substrate.
+* **Stage 1 candidate table** (`results/baseline_candidates.csv`) with 6 rows showing
+  soma_gnabar_HHst, peak Hz, DSI, in-band y/n.
+* **Stage 2 per-axis sensitivity plots** (8 PNGs in `results/images/`): HWHM, vector-sum DSI, peak
+  rate, RMSE vs cosine target, plotted against axis values.
+* **Biologically-plausible AIS recommendation table** (`results/biological_ais_recommendation.md`):
+  the band-constrained range for each axis (the values that keep the cell inside {DSI [0.3, 0.95],
+  peak [5, 50] Hz}), plus a recommended canonical configuration.
+* `results/metrics.json` with registered project metrics per condition.
+
+#### Approach
+
+1. Fork t0069&#x27;s AIS-attachment code into this task&#x27;s `code/`. Replace the t0069 channel-addition
+   loop with the {HHst, Nav1.6, Kv3, Kv7} baseline channel set (with t0074-vendored Kv7).
+2. Implement Stage 1 calibration as a 6-candidate sweep with explicit pass-band check and automated
+   baseline selection.
+3. Implement Stage 2 as 8 per-axis sweep functions sharing a common driver.
+4. Run Stage 1, log selected baseline, run Stage 2.
+5. Compute width metrics, generate per-axis plots, write the recommendation table.
+6. Validate against t0069 sanity checks: trials with instability flags = 0, peak Vm bounded.
+
+#### Pass Criteria
+
+* Stage 1 finds at least one in-band baseline (peak Hz in [5, 50] AND DSI in [0.3, 0.95]).
+* All 1620 + 72 trials complete with no instability flags.
+* Per-axis sensitivity plots show monotonic or unimodal sensitivity for at least 6 of the 8 axes
+  (the axes that don&#x27;t are flagged as candidates for re-investigation; not a hard fail).
+* Recommendation table produced with the band-constrained range for each axis.
+
+#### Compute Estimate
+
+* ~2 h wall-clock on local CPU. 72 trials Stage 1 (~5 min) + 1620 trials Stage 2 (~100 min) + ~10
+  min plotting / metrics extraction.
+* Local-CPU only. No remote machine. No paid API.
+
+#### Dependencies
+
+* `t0008_port_modeldb_189347` — Bed A library.
+* `t0067_t0065_soma_channel_addition_sweep` — channel-insertion code (Nav1.6, Kv3 implementation
+  patterns).
+* `t0069_t0067_ais_localised_channel_sweep` — AIS attachment code; baseline characterisation of
+  the passive-AIS sink effect.
+* `t0074_channel_tuning_width_bed_a` — Kv7 MOD vendoring lands in t0074. This task inherits the
+  vendored Kv7 mechanism and the calcium-pool unification (the latter is not actively used here but
+  must remain compatible).
+
+#### Risks and Fallbacks
+
+* **Stage 1 finds no in-band baseline**: the task halts after Stage 1 and reports a negative result
+  with a follow-up recommendation. Time-cheap (~5 min). The follow-up would probably be a 2D Stage
+  1.5 sweep over {soma gnabar, AIS gnabar} or a baseline that further reduces AIS Nav1.6 density.
+* **Stage 1 is over-fitted to soma_gnabar**: if the baseline soma_gnabar value is borderline (e.g.,
+  exactly at the edge of the in-band region), small parameter changes in Stage 2 may push the cell
+  out of band rapidly. Mitigation: pick the Stage-1 baseline closest to the band centre, not the
+  band edge.
+* **Axes interact strongly**: the one-axis-at-a-time design assumes weak interactions. If a Stage-2
+  axis sweep produces non-monotonic behaviour (e.g., DSI rises then falls), report the
+  non-monotonicity explicitly and flag the axis for a future joint sweep with one neighbouring axis.
+* **AIS+axon discretisation artefacts**: if the segment count along the AIS or axon is too low,
+  spike initiation and propagation may be artefactual. Mitigation: use NEURON&#x27;s `lambda_f`-based
+  segment-count rule (`d_lambda = 0.1` at 100 Hz) and validate that the chosen segment count doubles
+  without changing peak Vm by more than 1 mV at the t0069 baseline.
+
+#### Out of Scope
+
+* Bed B (de Rosenroll) — explicitly out of scope per researcher decision; this task is Bed A only.
+* Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
+* Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
+  channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1025,10 +1342,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
       <title>Open Suggestions</title>
       <source_name>aggregate_suggestions_full</source_name>
       <source_ids>
-        <id>S-0002-01</id>
         <id>S-0002-02</id>
         <id>S-0002-03</id>
-        <id>S-0002-04</id>
         <id>S-0002-09</id>
         <id>S-0003-01</id>
         <id>S-0005-01</id>
@@ -1061,16 +1376,13 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0059-01</id>
         <id>S-0059-02</id>
         <id>S-0059-03</id>
-        <id>S-0065-01</id>
         <id>S-0065-02</id>
         <id>S-0066-02</id>
         <id>S-0067-01</id>
         <id>S-0067-02</id>
-        <id>S-0068-01</id>
-        <id>S-0069-01</id>
-        <id>S-0069-02</id>
         <id>S-0070-01</id>
-        <id>S-0070-02</id>
+        <id>S-0002-01</id>
+        <id>S-0002-04</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
@@ -1234,11 +1546,8 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0066-03</id>
         <id>S-0067-03</id>
         <id>S-0067-04</id>
-        <id>S-0068-02</id>
         <id>S-0068-03</id>
-        <id>S-0068-04</id>
-        <id>S-0069-03</id>
-        <id>S-0069-04</id>
+        <id>S-0070-02</id>
         <id>S-0070-03</id>
         <id>S-0070-04</id>
         <id>S-0070-05</id>
@@ -1282,19 +1591,11 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0066-04</id>
         <id>S-0066-05</id>
         <id>S-0067-05</id>
-        <id>S-0068-05</id>
         <id>S-0069-05</id>
         <id>S-0071-04</id>
       </source_ids>
       <content>
-Open suggestions: 260
-
-## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
-ID: S-0002-01
-Priority: high
-Kind: experiment
-Source task: t0002_literature_survey_dsgc_compartmental_models
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null &lt; 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.
+Open suggestions: 251
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -1309,13 +1610,6 @@ Priority: high
 Kind: technique
 Source task: t0002_literature_survey_dsgc_compartmental_models
 PolegPolsky2016 (paper 10.1016_j.neuron.2016.02.013) is the closest published match to this project&#x27;s goal — a NEURON multi-compartmental mouse ON-OFF DSGC model with 177 AMPA + 177 GABA synapses and NMDA multiplicative gain — with public code at ModelDB entry 189347. Download the ModelDB code, run the original published stimulus, and verify the reproduced tuning curve lands inside the published DSI 0.7-0.85 / peak 40-80 Hz / null &lt; 10 Hz / HWHM 60-90 deg envelope. This creates the reference implementation the later parameter-variation tasks (Na/K grid, morphology sweep, E/I ratio scan) will fork from. Recommended task types: code-reproduction.
-
-## Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
-ID: S-0002-04
-Priority: high
-Kind: experiment
-Source task: t0002_literature_survey_dsgc_compartmental_models
-ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.
 
 ## Implement the tuning-curve scoring loss combining DSI, peak rate, null residual, and HWHM targets
 ID: S-0002-09
@@ -1541,13 +1835,6 @@ Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
 t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction uses 282, deRosenroll2026 [p. 5] uses &gt;1000 SAC varicosities. The compare-literature Synapse-count comparison identifies this &gt;2.8x to &gt;10x mismatch as a structural drive bottleneck consistent with the 2.143 Hz peak ceiling. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300} (re-running the placement_seed0 generator to produce three larger placement bundles), and sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz &gt;= 5 Hz...
 
-## Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family substrate
-ID: S-0065-01
-Priority: high
-Kind: experiment
-Source task: t0065_t0020_epsp_ipsp_vm_protocol
-t0065 isolated the deposited cell&#x27;s EPSP and IPSP shapes and showed that direction selectivity in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059) is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI = 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate (using t0057&#x27;s library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than shunting inhibition, or HH miscalibration. The same...
-
 ## Match the from-scratch GABA reversal to resting potential and re-test direction selectivity
 ID: S-0065-02
 Priority: high
@@ -1576,27 +1863,6 @@ Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065 substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND × 5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to recover from Nav1.6&#x27;s depolarising drive faster, restoring the inhibitory shunt&#x27;s modulatory power. If true, this is a proof-of-concept that biological &#x27;fast-spiking design&#x27; is intrinsically DS-friendly.
 
-## Test BK / SK calcium-activated K+ co-expression with Nav1.6
-ID: S-0068-01
-Priority: high
-Kind: experiment
-Source task: t0068_t0067_nav16_kv3_coexpression_rescue
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn&#x27;t differentially suppress firing at high rates because its activation depends on V, not on cumulative Ca2+. The natural alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels&#x27; open probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing. Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced more than ND firing → DSI restored. This is mechanistically coherent and biologically plausible (DSGCs express both BK and SK in vivo)...
-
-## Halve somatic gnabar_HHst before attaching the AIS, then re-run the sweep
-ID: S-0069-01
-Priority: high
-Kind: experiment
-Source task: t0069_t0067_ais_localised_channel_sweep
-t0069 falsified S-0067-03 because the AIS+axon couldn&#x27;t dominate spike initiation against the deposited cell&#x27;s 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200 mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 / NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline. Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel test on this cell.
-
-## Shrink AIS diameter to 0.5 μm and re-test channel insertions
-ID: S-0069-02
-Priority: high
-Kind: experiment
-Source task: t0069_t0067_ais_localised_channel_sweep
-Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction × 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
-
 ## Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable
 ID: S-0070-01
 Priority: high
@@ -1604,12 +1870,19 @@ Kind: experiment
 Source task: t0070_writeup_two_model_beds
 The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar `gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) / `0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended: spatial bar rotation, biophysically grounded) and either...
 
-## Build a unified model-bed-runner library exposing Bed A and Bed B behind one Python API
-ID: S-0070-02
-Priority: high
-Kind: library
-Source task: t0070_writeup_two_model_beds
-Every downstream task touching both beds (t0065, t0066, future cross-bed ports of t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via `tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`. Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode, direction_deg, **overrides) -&gt; CellBundle` API returning a uniformly-shaped bundle (cell, synapse...
+## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
+ID: S-0002-01
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016, Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20 S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85 with peak 40-80 Hz and null &lt; 10 Hz. This directly supplies the RQ1 answer the project needs. Recommended task types: experiment-run.
+
+## Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
+ID: S-0002-04
+Priority: medium
+Kind: experiment
+Source task: t0002_literature_survey_dsgc_compartmental_models
+ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky 177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM per point, and test whether segment diameter has the largest effect (as cable theory predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project currently lacks. Recommended task types: experiment-run.
 
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
@@ -2752,13 +3025,6 @@ Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067&#x27;s 5 MOD files use simplified HH-style m/h gates with V_half and time constants from published values, but lose features specific to each channel: NaR&#x27;s blocking-particle mechanism (Khaliq-Raman 2003 uses a 5-state Markov scheme), Kv3 inactivation kinetics (Wang-Buzsaki 1996 has a two-component decay), Kv4 voltage-dependent recovery (Hoffman 1997 has a recovery time constant tau_h(v) that varies 5-fold across V). NaR/Kv3/Kv4 in particular showed almost no effect in t0067, possibly because the simplified kinetics miss their distinctive features. Vendor the canonical ModelDB MOD files for these 3 channels (matching the deposited cell&#x27;s USEION conventions or wrapping in NONSPECIFIC_CURRENT...
 
-## Test M-current (KCNQ / Kv7) co-expression with Nav1.6
-ID: S-0068-02
-Priority: medium
-Kind: experiment
-Source task: t0068_t0067_nav16_kv3_coexpression_rescue
-Another rescue candidate: M-current is a slowly-activating, non-inactivating K+ current with V_half around -40 to -45 mV. Unlike Kv3 it doesn&#x27;t repolarise fast APs; it provides a tonic outward current that opposes sustained depolarisation. In a Nav1.6-driven high-firing regime, M-current would provide steady hyperpolarisation that reduces the cell&#x27;s mean depolarisation, possibly restoring the regime where the GABA shunt has more leverage. Implementation: write a simple m^1 MOD with V_half = -45 mV, tau ~50 ms, sweep at Nav1.6_med + Nav1.6_high.
-
 ## Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6 density
 ID: S-0068-03
 Priority: medium
@@ -2766,26 +3032,12 @@ Kind: experiment
 Source task: t0068_t0067_nav16_kv3_coexpression_rescue
 t0068 makes clear that channel-level rescue may not be possible — the GABA shunt&#x27;s leverage is fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x) and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale restores DSI to baseline. This isn&#x27;t a &#x27;rescue&#x27; in the channel-pharmacology sense, but it shows what would be required to compensate for a Nav-side gain change at the network level — relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line patch to t0065&#x27;s apply_params, then 6...
 
-## Move Nav1.6 + Kv3 to a virtual AIS instead of soma
-ID: S-0068-04
+## Build a unified model-bed-runner library exposing Bed A and Bed B behind one Python API
+ID: S-0070-02
 Priority: medium
-Kind: experiment
-Source task: t0068_t0067_nav16_kv3_coexpression_rescue
-Real RGCs concentrate Nav1.6 and Kv3 at the AIS at ~50x somatic densities. The Nav1.6 + Kv3 co-localisation we modelled here is somatic, which the t0067 / t0068 limitations document as understating the joint effect. Add a 30-um AIS section to the deposited cell, place Nav1.6 + Kv3 there at 30 / 90 mS/cm^2 (and a wider Kv3 density grid up to ~200 mS/cm^2), re-run the rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show DSI rescue because the AIS&#x27;s smaller diameter makes per-segment conductance changes leverage the AP shape more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null across substrates.
-
-## Probe the AIS+axon&#x27;s electrical-sink contribution by varying axon length
-ID: S-0069-03
-Priority: medium
-Kind: experiment
-Source task: t0069_t0067_ais_localised_channel_sweep
-The AIS+axon attachment dropped baseline PD spikes from 14.2 to 6.4 — a 55% reduction caused by passive sink, not channel pharmacology. To characterise the sink contribution, sweep axon length L_axon ∈ {0, 100, 300, 1000, 3000} μm at fixed AIS (30 μm × 1 μm), no extra channels, and measure baseline PD/ND firing and DSI. Hypothesis: PD spike count and DSI are monotonic functions of L_axon (more axon → more sink → fewer spikes → ND collapses to 0 first, then PD follows). This will both calibrate the t0069 baseline against axon geometry and tell us how much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5 axon-length conditions × 2 directions × 5 seeds = 50...
-
-## Co-insert Nav1.6 + Kv3 on the AIS at biological densities
-ID: S-0069-04
-Priority: medium
-Kind: experiment
-Source task: t0069_t0067_ais_localised_channel_sweep
-S-0068-04 already proposed AIS Nav1.6 + Kv3 co-insertion. t0069&#x27;s baseline-quenching means a naive co-insertion sweep on the unweakened soma will likely also be inert. So this should run AFTER S-0069-01 (somatic Na halved). Test 4 conditions on the t0069 substrate with halved somatic Na: {Nav1.6_med + Kv3_med, Nav1.6_med + Kv3_high, Nav1.6_high + Kv3_med, Nav1.6_high + Kv3_high} on AIS × PD/ND × 5 seeds = 40 trials. Hypothesis: with a weakened soma and the natural fast-spiking AIS recipe (Nav1.6 + Kv3), the cell becomes more like a real fast-firing RGC and DSI becomes higher (or more controllable) than the t0067 single-channel sweep showed.
+Kind: library
+Source task: t0070_writeup_two_model_beds
+Every downstream task touching both beds (t0065, t0066, future cross-bed ports of t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via `tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`. Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode, direction_deg, **overrides) -&gt; CellBundle` API returning a uniformly-shaped bundle (cell, synapse...
 
 ## Re-enable Bed A L-type and T-type Ca currents and quantify the effect on tuning curves and DSI
 ID: S-0070-03
@@ -3087,13 +3339,6 @@ Priority: low
 Kind: evaluation
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067 showed that NaP at 2.4 mS/cm² INVERTS direction selectivity in the deposited DSGC. Persistent sodium currents are dysregulated in several pathologies: epilepsy (SCN1A gain-of-function increases NaP), motor neuron disease (NaP downregulation in ALS), and chronic pain (NaP upregulation in DRG neurons). Survey the literature for clinical/preclinical reports of altered NaP in retinal pathologies or DSGCs specifically. If found, this t0067 finding becomes a candidate computational model for a real disease state. Output: an answer asset summarising the literature on NaP dysregulation in DSGCs / retinal disease.
-
-## Sweep Kv3 alone (no Nav1.6) to validate the kinetic-model effect
-ID: S-0068-05
-Priority: low
-Kind: experiment
-Source task: t0068_t0067_nav16_kv3_coexpression_rescue
-t0067 sweep showed Kv3 alone (without Nav1.6) had essentially no effect on firing rate or DSI (DSI = 0.80 → 0.82 across low/med/high). t0068 shows Kv3 also has no rescue effect on top of Nav1.6. To confirm that this isn&#x27;t a model artefact (e.g., Kv3 not engaging because of an MOD bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2) and check whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2 still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme (e.g., Wang-Buzsaki with two-component decay).
 
 ## Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22) is robust to AIS geometry
 ID: S-0069-05

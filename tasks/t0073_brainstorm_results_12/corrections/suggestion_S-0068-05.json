@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-05",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0068_t0067_nav16_kv3_coexpression_rescue",
+  "target_kind": "suggestion",
+  "target_id": "S-0068-05",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0068-05 proposes sweeping Kv3 alone (no Nav1.6) at low / medium / high densities on the deposited Poleg-Polsky DSGC soma to validate that the Kv3 effect (essentially inert in t0067) is a kinetic-model artefact rather than a co-expression artefact. t0074 (channel_tuning_width_bed_a) covers this more cleanly: Kv3 is one of the eight channels swept individually at low / medium / high on the same soma, and the 12-angle tuning-curve protocol (vs t0067's 2-angle PD / ND-only protocol) gives a stricter test of whether Kv3 alone reshapes any aspect of the angle-to-rate response, not just the PD-vs-ND DSI. Rejecting as superseded by the broader t0074 sweep."
+}

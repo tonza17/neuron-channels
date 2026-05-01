@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-12",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0070_writeup_two_model_beds",
+  "target_kind": "suggestion",
+  "target_id": "S-0070-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0070-02 proposes building a unified model-bed-runner library exposing Bed A and Bed B behind one Python API. Pure infrastructure work — high quality-of-life value but not blocking any current experiment. The two new tasks commissioned in this brainstorm (t0074 channel tuning-width sweep and t0075 biologically-realistic AIS one-axis sweep) both run on Bed A only, and the cross-bed harmonisation question (S-0070-01) is itself ahead of the unified-runner question in the dependency chain. Reprioritising from high to medium so the high-priority shelf reflects the experiments actually on the critical path."
+}

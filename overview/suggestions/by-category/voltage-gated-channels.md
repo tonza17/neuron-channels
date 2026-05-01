@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 52 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **44 open** (9
-high, 29 medium, 6 low), **8 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **42 open** (6
+high, 30 medium, 6 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -38,30 +38,6 @@ experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
-to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1152_jn.00123.2009`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
-Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
-the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
-S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
-morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
-tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
-with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
 (S-0067-01)</summary>
 
@@ -80,30 +56,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0069-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
 
 </details>
 
@@ -180,32 +132,6 @@ produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 �
 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
 that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0068-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -486,6 +412,30 @@ AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) develo
 channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
 fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
 voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
+to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1152_jn.00123.2009`](../../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
+Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
+the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
+S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
+morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
+tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
+with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -1153,6 +1103,32 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>✅ <s>Halve somatic gnabar_HHst before attaching the AIS, then re-run the
+sweep</s> — covered by <a
+href="../../../tasks/t0075_bio_realistic_ais_param_sweep/"><code>t0075_bio_realistic_ais_param_sweep</code></a>
+(S-0069-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0069-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
+
+</details>
+
+<details>
 <summary>✅ <s>Implement Nav1.6/Nav1.2/Kv1/Kv3 channel mechanisms with AIS-specific
 conductance densities in downstream DSGC model</s> — covered by <a
 href="../../../tasks/t0043_nav16_kv3_nmda_restoration_t0022/"><code>t0043_nav16_kv3_nmda_restoration_t0022</code></a>
@@ -1256,6 +1232,34 @@ paper's biological NMDA is voltage-INDEPENDENT. Direct test: re-execute the same
 instead of `exptype = 1`. Expected: DSI flattens toward ~0.20-0.30 across the sweep. Not a
 model modification — only an exptype choice. Re-uses t0046 library and t0047's
 `code/run_with_conductances.py` directly. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Test BK / SK calcium-activated K+ co-expression with Nav1.6</s> —
+covered by <a
+href="../../../tasks/t0074_channel_tuning_width_bed_a/"><code>t0074_channel_tuning_width_bed_a</code></a>
+(S-0068-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 

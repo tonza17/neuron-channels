@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-02",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0068_t0067_nav16_kv3_coexpression_rescue",
+  "target_kind": "suggestion",
+  "target_id": "S-0068-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0068-01 proposes BK / SK calcium-activated K+ co-expression with Nav1.6 on the deposited Poleg-Polsky DSGC soma to test whether Ca-dependent K+ adaptation rescues the DSI loss caused by Nav1.6. t0074 (channel_tuning_width_bed_a) covers this by including BK and SK in the eight-channel set (alongside Nav1.6, NaP, NaR, Kv3, Kv4, Kv7) at low / medium / high densities each, with a 12-angle bar-rotation tuning curve per condition. The vendoring of BK and SK MOD files plus a calcium-pool mechanism (a prerequisite for testing this hypothesis) is part of the t0074 implementation scope, so S-0068-01 is fully covered. Rejecting as covered."
+}

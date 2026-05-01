@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-273 suggestions **242 open** (31 high, 175 medium, 36 low), **31 closed**.
+273 suggestions **240 open** (26 high, 178 medium, 36 low), **33 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -219,33 +219,6 @@ reproducible from parameters alone.
 </details>
 
 <details>
-<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
-B behind one Python API</strong> (S-0070-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0070-02` |
-| **Kind** | library |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0070_writeup_two_model_beds`](../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
-
-Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
-t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
-uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
-`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
-on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
-`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
-Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
-direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
-synapse handles, recordings, mode metadata). The library must internally translate the FULL /
-EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
-its specification. Recommended task types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
 <summary>📊 <strong>Change the t0033 optimiser objective to a vector-sum-DSI-weighted
 blend instead of pure primary DSI</strong> (S-0030-06)</summary>
 
@@ -291,54 +264,6 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
-to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1152_jn.00123.2009`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
-| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
-
-No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
-Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
-the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
-S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
-morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
-tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
-with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
-segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0002-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-04-19 |
-| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
-| **Source paper** | [`10.1523_ENEURO.0261-21.2021`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/) |
-| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
-
-ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic
-E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the
-three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky
-177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch
-orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM
-per point, and test whether segment diameter has the largest effect (as cable theory
-predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
-currently lacks. Recommended task types: experiment-run.
 
 </details>
 
@@ -411,30 +336,6 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0069-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
 
 </details>
 
@@ -752,32 +653,6 @@ x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point
 >= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
 validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
 t0052, no bar-lock). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0068-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -1381,6 +1256,33 @@ loaders for NEURON, NetPyNE, and Arbor, plus a smoke test that compares total pa
 compartment count across loaders against validate_swc.py. This eliminates per-task SWC-loading
 bugs and keeps morphology choice swappable when S-0005-03 lands. Recommended task types:
 write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
+B behind one Python API</strong> (S-0070-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0070-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0070_writeup_two_model_beds`](../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
+t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
+uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
+`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
+on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
+Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
+direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
+synapse handles, recordings, mode metadata). The library must internally translate the FULL /
+EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
+its specification. Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -2198,6 +2100,54 @@ gaba_to_ampa_lead_ms, returning a provenance dict logged at task start. Ships a 
 asserting the override survived a fresh import and that the null/preferred ratio matches the
 requested value. Distinct from S-0033-06 (DSI objective evaluator) which wraps the scoring
 side - this wraps the schedule-parameter side. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
+to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1152_jn.00123.2009`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/) |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
+Vaney2012) reports a factorial grid search over somatic (g_Na, g_K) pairs for a DSGC — this is
+the central gap identified for RQ1 by the survey. Run a grid with g_Na swept across 0.02-0.20
+S/cm^2 and g_K (delayed rectifier) swept across 0.003-0.050 S/cm^2 on the baseline DSGC
+morphology and 177+177 synaptic budget, record DSI, preferred peak, null residual, and
+tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
+with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
+segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0002-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+| **Source paper** | [`10.1523_ENEURO.0261-21.2021`](../../tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1523_ENEURO.0261-21.2021/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+
+ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic
+E/I distribution, but the survey finds no paper that runs a clean factorial sweep over the
+three local-electrotonic knobs separately. With synaptic count fixed at the PolegPolsky
+177+177 baseline and dendrites set to active (Schachter2010 densities), vary (number of branch
+orders, mean segment length, mean segment diameter) on an orthogonal grid, record DSI and HWHM
+per point, and test whether segment diameter has the largest effect (as cable theory
+predicts). This directly answers RQ2 and provides the morphology-sensitivity map the project
+currently lacks. Recommended task types: experiment-run.
 
 </details>
 
@@ -6202,6 +6152,32 @@ to t0052 and to in vivo / in vitro DSGC bands. Recommended task types: experimen
 </details>
 
 <details>
+<summary>✅ <s>Halve somatic gnabar_HHst before attaching the AIS, then re-run the
+sweep</s> — covered by <a
+href="../../tasks/t0075_bio_realistic_ais_param_sweep/"><code>t0075_bio_realistic_ais_param_sweep</code></a>
+(S-0069-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0069-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0069_t0067_ais_localised_channel_sweep`](../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
+
+</details>
+
+<details>
 <summary>✅ <s>Implement gabaMOD parameter-swap protocol for ModelDB 189347</s> —
 covered by <a
 href="../../tasks/t0020_port_modeldb_189347_gabamod/"><code>t0020_port_modeldb_189347_gabamod</code></a>
@@ -6687,6 +6663,34 @@ dendritic-spike branch independence [Sivyer2013, 10.1038_nn.3565] dominates, DSI
 10%. High-information-gain experiment that resolves a core mechanism ambiguity in the surveyed
 corpus and directly informs whether morphology-sweep design must preserve cable geometry or
 only branch topology.
+
+</details>
+
+<details>
+<summary>✅ <s>Test BK / SK calcium-activated K+ co-expression with Nav1.6</s> —
+covered by <a
+href="../../tasks/t0074_channel_tuning_width_bed_a/"><code>t0074_channel_tuning_width_bed_a</code></a>
+(S-0068-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0068-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
+at high rates because its activation depends on V, not on cumulative Ca2+. The natural
+alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
+probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
+Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
+firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
+more than ND firing → DSI restored. This is mechanistically coherent and biologically
+plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
+Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
+Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 

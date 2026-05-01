@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-11",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "target_kind": "suggestion",
+  "target_id": "S-0002-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0002-04 proposes a factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count — the canonical RQ2 experiment. Pre-shunting-discovery framing. t0065 / t0066 showed that direction selectivity in both deposited model beds is dominated by the e_GABA = v_rest shunting design, not by morphology variation per se; morphology effects are downstream of that architectural choice. The factorial morphology sweep remains useful once a working from-scratch substrate exists (per S-0065-02) but is no longer top-of-queue. Reprioritising from high to medium so the high-priority shelf reflects the post-shunting-discovery critical path."
+}

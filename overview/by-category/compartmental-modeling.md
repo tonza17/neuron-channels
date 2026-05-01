@@ -1739,7 +1739,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (185 open, 24 closed)
+## Suggestions (183 open, 26 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -1774,26 +1774,6 @@ distinctive features. Vendor the canonical ModelDB MOD files for these 3 channel
 the deposited cell's USEION conventions or wrapping in NONSPECIFIC_CURRENT shells) and re-run
 the sweep. Expected: NaR/Kv3/Kv4 show real DSI effects, especially at high firing rates (>40
 Hz).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test BK / SK calcium-activated K+ co-expression with
-Nav1.6</strong> (S-0068-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0068_t0067_nav16_kv3_coexpression_rescue](../../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/)
-
-t0068 falsified the Nav1.6 + Kv3 rescue hypothesis: Kv3 doesn't differentially suppress firing
-at high rates because its activation depends on V, not on cumulative Ca2+. The natural
-alternative is a Ca2+-activated K+ channel (BK / KCa1.1 or SK / KCa2). These channels' open
-probability scales with intracellular [Ca2+], which itself scales with cumulative AP firing.
-Therefore: ND (low firing, low [Ca2+]) → BK/SK barely active → cell fires normally. PD (high
-firing, high [Ca2+]) → BK/SK strongly activated → cell is clamped down → PD firing reduced
-more than ND firing → DSI restored. This is mechanistically coherent and biologically
-plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
-Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
-Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
 
 </details>
 
@@ -1847,24 +1827,6 @@ bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2)
 whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2
 still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme
 (e.g., Wang-Buzsaki with two-component decay).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
-the sweep</strong> (S-0069-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
-
-t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
-deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
-mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
-weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
-NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
-Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
-t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
-test on this cell.
 
 </details>
 
@@ -1962,7 +1924,7 @@ comparative-analysis.
 <summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
 B behind one Python API</strong> (S-0070-02)</summary>
 
-**Kind**: library | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
 
 Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
@@ -4971,7 +4933,7 @@ produce a publication-quality raster. Recommended task types: write-library, exp
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
 
 No paper in the 20-paper corpus (including Fohlmeister2010, Schachter2010, PolegPolsky2016,
@@ -4989,7 +4951,7 @@ Recommended task types: experiment-run.
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
 segment diameter) at fixed synapse count</strong> (S-0002-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
 [t0002_literature_survey_dsgc_compartmental_models](../../tasks/t0002_literature_survey_dsgc_compartmental_models/)
 
 ElQuessny2021 concludes that global DSGC morphology has only a minor effect on the synaptic

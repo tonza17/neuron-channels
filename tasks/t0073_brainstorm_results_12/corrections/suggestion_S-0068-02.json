@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0073-03",
+  "correcting_task": "t0073_brainstorm_results_12",
+  "target_task": "t0068_t0067_nav16_kv3_coexpression_rescue",
+  "target_kind": "suggestion",
+  "target_id": "S-0068-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0068-02 proposes M-current (KCNQ / Kv7) co-expression with Nav1.6 on the deposited Poleg-Polsky DSGC soma. t0074 (channel_tuning_width_bed_a) covers this by including Kv7 in the eight-channel set at low / medium / high densities, with the same 12-angle tuning curve per condition. The Kv7 MOD file vendoring is part of t0074's implementation scope; t0075 (bio_realistic_ais_param_sweep) inherits the vendored Kv7 mechanism for AIS-localised insertion. Rejecting as covered."
+}
