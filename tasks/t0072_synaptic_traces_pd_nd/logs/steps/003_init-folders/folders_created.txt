@@ -1,0 +1,14 @@
+tasks/t0072_synaptic_traces_pd_nd/assets/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/code/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/code/__init__.py
+tasks/t0072_synaptic_traces_pd_nd/corrections/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/intervention/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/logs/commands/
+tasks/t0072_synaptic_traces_pd_nd/logs/searches/
+tasks/t0072_synaptic_traces_pd_nd/logs/sessions/
+tasks/t0072_synaptic_traces_pd_nd/logs/steps/
+tasks/t0072_synaptic_traces_pd_nd/plan/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/research/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/results/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/results/images/.gitkeep
+tasks/t0072_synaptic_traces_pd_nd/__init__.py
