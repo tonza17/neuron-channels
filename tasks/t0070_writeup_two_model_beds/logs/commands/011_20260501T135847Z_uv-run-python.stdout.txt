@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[0]: description is 1195 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1087 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1015 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1153 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 4 warning(s)
