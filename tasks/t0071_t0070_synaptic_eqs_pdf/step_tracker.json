@@ -41,10 +41,10 @@
       "step": 5,
       "name": "results",
       "description": "Write metrics.json (empty), costs.json, remote_machines_used.json; re-verify task_results.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T15:14:06Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_results/"
+      "log_file": "logs\\steps\\005_results/"
     },
     {
       "step": 6,
