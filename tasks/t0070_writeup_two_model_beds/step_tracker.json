@@ -41,10 +41,10 @@
       "step": 5,
       "name": "planning",
       "description": "Write plan/plan.md with section-by-section outline of the writeup.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T13:26:43Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_planning/"
+      "log_file": "logs\\steps\\005_planning/"
     },
     {
       "step": 6,
