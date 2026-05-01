@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-code",
       "description": "Reference t0067 code; minimal new research needed.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T01:45:12Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-code/"
+      "log_file": "logs\\steps\\004_research-code/"
     },
     {
       "step": 5,

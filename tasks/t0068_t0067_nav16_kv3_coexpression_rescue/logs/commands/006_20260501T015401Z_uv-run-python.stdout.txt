@@ -1,0 +1,2 @@
+Loaded 9 conditions
+Wrote 2 PNGs to results/images/.
