@@ -5,7 +5,7 @@
   "name": "Plot synaptic conductances and currents for PD and ND on both model beds",
   "short_description": "Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0020_port_modeldb_189347_gabamod",
@@ -15,7 +15,7 @@
     "t0070_writeup_two_model_beds",
     "t0071_t0070_synaptic_eqs_pdf"
   ],
-  "start_time": null,
+  "start_time": "2026-05-01T16:46:03Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
