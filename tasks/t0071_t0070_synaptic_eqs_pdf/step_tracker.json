@@ -32,9 +32,9 @@
       "step": 4,
       "name": "implementation",
       "description": "Add typst dep, write code/render_pdf.py, author results_detailed.md (LaTeX math + 5 new g_syn blocks), author results_detailed.typ, compile to PDF, copy 4 PNGs from t0070, write results_summary.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T14:46:58Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T15:13:50Z",
       "log_file": "logs\\steps\\004_implementation/"
     },
     {
