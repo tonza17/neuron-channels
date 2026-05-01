@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0008/t0019/t0065/t0067 deps.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T02:17:01Z",
       "completed_at": null,
-      "log_file": "logs/steps/002_check-deps/"
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
