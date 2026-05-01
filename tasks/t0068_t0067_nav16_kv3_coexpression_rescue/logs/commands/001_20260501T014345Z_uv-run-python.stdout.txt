@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0068_t0067_nav16_kv3_coexpression_rescue\tasks\t0068_t0067_nav16_kv3_coexpression_rescue\task.json
+
+[32m[1mPASSED[0m — no errors or warnings
