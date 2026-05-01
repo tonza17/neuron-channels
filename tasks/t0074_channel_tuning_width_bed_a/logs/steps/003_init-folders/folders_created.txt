@@ -1,0 +1,17 @@
+created_at: 2026-05-01T23:08:30Z
+directories:
+  - assets/library
+  - code
+  - corrections
+  - intervention
+  - logs/commands
+  - logs/searches
+  - logs/sessions
+  - logs/steps
+  - plan
+  - research
+  - results
+files:
+  - __init__.py
+  - code/__init__.py
+notes: 12 standard directories created with .gitkeep files; __init__.py at task root and in code/.
