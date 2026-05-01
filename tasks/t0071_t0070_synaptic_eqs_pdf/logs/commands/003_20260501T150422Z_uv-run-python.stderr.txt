@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0071_t0070_synaptic_eqs_pdf\tasks\t0071_t0070_synaptic_eqs_pdf\code\render_pdf.py", line 59, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0071_t0070_synaptic_eqs_pdf\tasks\t0071_t0070_synaptic_eqs_pdf\code\render_pdf.py", line 41, in main
+    result: CompileResult = compile_typst(
+                            ~~~~~~~~~~~~~^
+        source_path=TYPST_SOURCE_PATH,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_path=PDF_OUTPUT_PATH,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0071_t0070_synaptic_eqs_pdf\tasks\t0071_t0070_synaptic_eqs_pdf\code\render_pdf.py", line 30, in compile_typst
+    typst.compile(str(source_path), output=str(output_path))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+typst.TypstError: unknown symbol modifier
