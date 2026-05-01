@@ -5,14 +5,14 @@
   "name": "Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring",
   "short_description": "12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0011_response_visualization_library",
     "t0012_tuning_curve_scoring_loss_library",
     "t0067_t0065_soma_channel_addition_sweep"
   ],
-  "start_time": null,
+  "start_time": "2026-05-01T21:51:44Z",
   "end_time": null,
   "expected_assets": {
     "library": 1
