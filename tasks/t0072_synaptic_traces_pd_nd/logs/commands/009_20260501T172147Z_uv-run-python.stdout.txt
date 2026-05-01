@@ -1,0 +1,15 @@
+Building Bed B cell (de Rosenroll 2026 port)...
+Bed B cell ready: 177 terminal dendrites
+Bed B synapses: 177 ACh + 177 GABA Exp2Syn instances
+
+=== Bed B PD (direction_deg=0.0) ===
+  n_syn=177 n_bins=1000 gaba_prob=0.0838 ach_prob=0.5000
+  wrote bed_b_pd_ach.npz: g_traces=(177, 1000), v_local_traces=(177, 1000), t_ms=(1000,), e_rev=0.0 mV, size=2026920 B
+  wrote bed_b_pd_gaba.npz: g_traces=(177, 1000), v_local_traces=(177, 1000), t_ms=(1000,), e_rev=-60.0 mV, size=1353168 B
+
+=== Bed B ND (direction_deg=180.0) ===
+  n_syn=177 n_bins=1000 gaba_prob=0.7797 ach_prob=0.5000
+  wrote bed_b_nd_ach.npz: g_traces=(177, 1000), v_local_traces=(177, 1000), t_ms=(1000,), e_rev=0.0 mV, size=2056981 B
+  wrote bed_b_nd_gaba.npz: g_traces=(177, 1000), v_local_traces=(177, 1000), t_ms=(1000,), e_rev=-60.0 mV, size=2294825 B
+
+Bed B trials complete.

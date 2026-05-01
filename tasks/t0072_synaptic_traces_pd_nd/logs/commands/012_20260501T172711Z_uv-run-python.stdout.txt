@@ -1,0 +1,3 @@
+Compiled: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\results\results_detailed.typ
+Output:   C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\results\results_detailed.pdf
+Size:     1005654 bytes

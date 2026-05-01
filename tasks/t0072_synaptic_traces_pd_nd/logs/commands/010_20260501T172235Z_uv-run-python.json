@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0072_synaptic_traces_pd_nd",
+  "command": "uv run python -u -m tasks.t0072_synaptic_traces_pd_nd.code.aggregate",
+  "exit_code": 0,
+  "duration_seconds": 0.809,
+  "started_at": "2026-05-01T17:22:35Z",
+  "completed_at": "2026-05-01T17:22:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0072_synaptic_traces_pd_nd",
+  "stdout_file": "010_20260501T172235Z_uv-run-python.stdout.txt",
+  "stderr_file": "010_20260501T172235Z_uv-run-python.stderr.txt",
+  "stdout_lines": 15,
+  "stderr_lines": 0,
+  "truncated": false
+}
