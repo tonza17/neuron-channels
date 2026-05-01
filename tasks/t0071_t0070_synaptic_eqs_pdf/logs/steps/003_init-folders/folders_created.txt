@@ -1,0 +1,14 @@
+tasks/t0071_t0070_synaptic_eqs_pdf/assets/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/code/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/code/__init__.py
+tasks/t0071_t0070_synaptic_eqs_pdf/corrections/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/intervention/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/logs/commands/
+tasks/t0071_t0070_synaptic_eqs_pdf/logs/searches/
+tasks/t0071_t0070_synaptic_eqs_pdf/logs/sessions/
+tasks/t0071_t0070_synaptic_eqs_pdf/logs/steps/
+tasks/t0071_t0070_synaptic_eqs_pdf/plan/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/research/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/results/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/results/images/.gitkeep
+tasks/t0071_t0070_synaptic_eqs_pdf/__init__.py
