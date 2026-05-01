@@ -1,0 +1,74 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0069-01",
+      "title": "Halve somatic gnabar_HHst before attaching the AIS, then re-run the sweep",
+      "description": "t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200 mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 / NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline. Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel test on this cell.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0069_t0067_ais_localised_channel_sweep",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "patch-clamp"
+      ]
+    },
+    {
+      "id": "S-0069-02",
+      "title": "Shrink AIS diameter to 0.5 μm and re-test channel insertions",
+      "description": "Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction × 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0069_t0067_ais_localised_channel_sweep",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "compartmental-modeling",
+        "patch-clamp"
+      ]
+    },
+    {
+      "id": "S-0069-03",
+      "title": "Probe the AIS+axon's electrical-sink contribution by varying axon length",
+      "description": "The AIS+axon attachment dropped baseline PD spikes from 14.2 to 6.4 — a 55% reduction caused by passive sink, not channel pharmacology. To characterise the sink contribution, sweep axon length L_axon ∈ {0, 100, 300, 1000, 3000} μm at fixed AIS (30 μm × 1 μm), no extra channels, and measure baseline PD/ND firing and DSI. Hypothesis: PD spike count and DSI are monotonic functions of L_axon (more axon → more sink → fewer spikes → ND collapses to 0 first, then PD follows). This will both calibrate the t0069 baseline against axon geometry and tell us how much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5 axon-length conditions × 2 directions × 5 seeds = 50 trials, ~3 min.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0069_t0067_ais_localised_channel_sweep",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0069-04",
+      "title": "Co-insert Nav1.6 + Kv3 on the AIS at biological densities",
+      "description": "S-0068-04 already proposed AIS Nav1.6 + Kv3 co-insertion. t0069's baseline-quenching means a naive co-insertion sweep on the unweakened soma will likely also be inert. So this should run AFTER S-0069-01 (somatic Na halved). Test 4 conditions on the t0069 substrate with halved somatic Na: {Nav1.6_med + Kv3_med, Nav1.6_med + Kv3_high, Nav1.6_high + Kv3_med, Nav1.6_high + Kv3_high} on AIS × PD/ND × 5 seeds = 40 trials. Hypothesis: with a weakened soma and the natural fast-spiking AIS recipe (Nav1.6 + Kv3), the cell becomes more like a real fast-firing RGC and DSI becomes higher (or more controllable) than the t0067 single-channel sweep showed.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0069_t0067_ais_localised_channel_sweep",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0069-05",
+      "title": "Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22) is robust to AIS geometry",
+      "description": "NaP at high density on the AIS gave the largest signal (-0.78 ΔDSI), 80% of the soma version's effect. Persistent Na is interesting because it survives the AIS+axon's electrical sink — its non-inactivating depolarisation accumulates over the trial duration, so even a small AIS can pump enough current. Question: does the AIS NaP effect scale predictably with AIS geometry, or does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed (L=30 μm, diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar × AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.",
+      "kind": "experiment",
+      "priority": "low",
+      "source_task": "t0069_t0067_ais_localised_channel_sweep",
+      "source_paper": null,
+      "categories": [
+        "voltage-gated-channels",
+        "direction-selectivity",
+        "compartmental-modeling"
+      ]
+    }
+  ]
+}
