@@ -41,10 +41,10 @@
       "step": 5,
       "name": "planning",
       "description": "Write plan/plan.md (driver design, recording strategy, plotting layout).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T17:04:52Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_planning/"
+      "log_file": "logs\\steps\\005_planning/"
     },
     {
       "step": 6,
