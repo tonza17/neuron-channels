@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0071_t0070_synaptic_eqs_pdf",
+  "command": "uv run mypy --strict --explicit-package-bases tasks/t0071_t0070_synaptic_eqs_pdf/code/render_pdf.py tasks/t0071_t0070_synaptic_eqs_pdf/code/paths.py",
+  "exit_code": 0,
+  "duration_seconds": 0.804,
+  "started_at": "2026-05-01T15:09:19Z",
+  "completed_at": "2026-05-01T15:09:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0071_t0070_synaptic_eqs_pdf",
+  "stdout_file": "011_20260501T150919Z_uv-run-mypy.stdout.txt",
+  "stderr_file": "011_20260501T150919Z_uv-run-mypy.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
