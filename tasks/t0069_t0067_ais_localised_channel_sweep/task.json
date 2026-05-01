@@ -5,7 +5,7 @@
   "name": "Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS",
   "short_description": "Append a 30 um AIS + 1 mm passive axon to the deposited Poleg-Polsky cell and re-run the t0067 channel-density sweep with all 5 channels (Nav1.6, NaP, NaR, Kv3, Kv4) inserted on the AIS instead of the soma. 16 conditions x 2 directions x 5 seeds = 160 FULL trials.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0019_literature_survey_voltage_gated_channels",
@@ -13,7 +13,7 @@
     "t0067_t0065_soma_channel_addition_sweep"
   ],
   "start_time": "2026-05-01T02:13:59Z",
-  "end_time": null,
+  "end_time": "2026-05-01T03:10:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"

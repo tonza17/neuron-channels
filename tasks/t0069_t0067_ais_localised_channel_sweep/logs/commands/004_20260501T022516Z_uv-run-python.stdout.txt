@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0069_t0067_ais_localised_channel_sweep\tasks\t0069_t0067_ais_localised_channel_sweep\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W001 warning: Section 'Cost Estimation' has 12 words (minimum: 20)[0m
+[33m  PL-W001 warning: Section 'Step by Step' has 58 words (minimum: 100)[0m
+[33m  PL-W001 warning: Section 'Remote Machines' has 1 words (minimum: 10)[0m
+[33m  PL-W001 warning: Section 'Expected Assets' has 1 words (minimum: 20)[0m
+[33m  PL-W001 warning: Section 'Verification Criteria' has 29 words (minimum: 30)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 5 warning(s)

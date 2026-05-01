@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0069_t0067_ais_localised_channel_sweep",
+  "command": "uv run python -u -m tasks.t0069_t0067_ais_localised_channel_sweep.code.run_sweep",
+  "exit_code": 0,
+  "duration_seconds": 1214.128,
+  "started_at": "2026-05-01T02:22:16Z",
+  "completed_at": "2026-05-01T02:42:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0069_t0067_ais_localised_channel_sweep",
+  "stdout_file": "003_20260501T022216Z_uv-run-python.stdout.txt",
+  "stderr_file": "003_20260501T022216Z_uv-run-python.stderr.txt",
+  "stdout_lines": 173,
+  "stderr_lines": 0,
+  "truncated": false
+}
