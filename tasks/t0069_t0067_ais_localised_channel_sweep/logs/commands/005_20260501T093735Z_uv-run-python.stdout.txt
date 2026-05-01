@@ -1,0 +1,2 @@
+t0069 conditions: 16; t0067 conditions: 16
+Wrote 3 PNGs to results/images/.
