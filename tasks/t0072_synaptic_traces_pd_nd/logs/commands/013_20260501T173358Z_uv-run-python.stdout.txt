@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E006 error: results_summary.md is missing mandatory section: ## Summary[0m
+[31m  TR-E006 error: results_summary.md is missing mandatory section: ## Metrics[0m
+[31m  TR-E006 error: results_summary.md is missing mandatory section: ## Verification[0m
+[31m  TR-E020 error: ## Examples section contains no fenced code blocks — examples must show actual inputs and outputs in code blocks[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W014 warning: ## Examples section has 0 examples (bullets, code blocks, numbered items), minimum is 10[0m
+
+[31m[1mFAILED[0m — 4 error(s), 1 warning(s)
