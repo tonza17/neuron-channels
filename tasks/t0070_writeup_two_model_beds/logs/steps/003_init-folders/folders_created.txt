@@ -1,0 +1,14 @@
+tasks/t0070_writeup_two_model_beds/assets/.gitkeep
+tasks/t0070_writeup_two_model_beds/code/.gitkeep
+tasks/t0070_writeup_two_model_beds/code/__init__.py
+tasks/t0070_writeup_two_model_beds/corrections/.gitkeep
+tasks/t0070_writeup_two_model_beds/intervention/.gitkeep
+tasks/t0070_writeup_two_model_beds/logs/commands/
+tasks/t0070_writeup_two_model_beds/logs/searches/
+tasks/t0070_writeup_two_model_beds/logs/sessions/
+tasks/t0070_writeup_two_model_beds/logs/steps/
+tasks/t0070_writeup_two_model_beds/plan/.gitkeep
+tasks/t0070_writeup_two_model_beds/research/.gitkeep
+tasks/t0070_writeup_two_model_beds/results/.gitkeep
+tasks/t0070_writeup_two_model_beds/results/images/.gitkeep
+tasks/t0070_writeup_two_model_beds/__init__.py
