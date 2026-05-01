@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Aradi1999-DGC] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Chen2009] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Fohlmeister1997] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Oesch2005] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Tabata1996-Ih] has no matching Source Index entry[0m
+
+[31m[1mFAILED[0m â€” 5 error(s), 0 warning(s)
