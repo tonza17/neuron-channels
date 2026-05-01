@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-code",
       "description": "Identify per-synapse recording surfaces and PD/ND mechanisms in t0008/t0020/t0024 + t0066 driver.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T16:51:09Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T17:04:31Z",
       "log_file": "logs\\steps\\004_research-code/"
     },
     {
