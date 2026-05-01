@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(177)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(184)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (13)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2297,7 +2297,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (156 open, 21 closed)
+## Suggestions (163 open, 21 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -2383,6 +2383,142 @@ restores DSI to baseline. This isn't a 'rescue' in the channel-pharmacology sens
 shows what would be required to compensate for a Nav-side gain change at the network level —
 relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line
 patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Probe the AIS+axon's electrical-sink contribution by varying
+axon length</strong> (S-0069-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+The AIS+axon attachment dropped baseline PD spikes from 14.2 to 6.4 — a 55% reduction caused
+by passive sink, not channel pharmacology. To characterise the sink contribution, sweep axon
+length L_axon ∈ {0, 100, 300, 1000, 3000} μm at fixed AIS (30 μm × 1 μm), no extra channels,
+and measure baseline PD/ND firing and DSI. Hypothesis: PD spike count and DSI are monotonic
+functions of L_axon (more axon → more sink → fewer spikes → ND collapses to 0 first, then PD
+follows). This will both calibrate the t0069 baseline against axon geometry and tell us how
+much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5
+axon-length conditions × 2 directions × 5 seeds = 50 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Co-insert Nav1.6 + Kv3 on the AIS at biological
+densities</strong> (S-0069-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+S-0068-04 already proposed AIS Nav1.6 + Kv3 co-insertion. t0069's baseline-quenching means a
+naive co-insertion sweep on the unweakened soma will likely also be inert. So this should run
+AFTER S-0069-01 (somatic Na halved). Test 4 conditions on the t0069 substrate with halved
+somatic Na: {Nav1.6_med + Kv3_med, Nav1.6_med + Kv3_high, Nav1.6_high + Kv3_med, Nav1.6_high +
+Kv3_high} on AIS × PD/ND × 5 seeds = 40 trials. Hypothesis: with a weakened soma and the
+natural fast-spiking AIS recipe (Nav1.6 + Kv3), the cell becomes more like a real fast-firing
+RGC and DSI becomes higher (or more controllable) than the t0067 single-channel sweep showed.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22)
+is robust to AIS geometry</strong> (S-0069-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+NaP at high density on the AIS gave the largest signal (-0.78 ΔDSI), 80% of the soma version's
+effect. Persistent Na is interesting because it survives the AIS+axon's electrical sink — its
+non-inactivating depolarisation accumulates over the trial duration, so even a small AIS can
+pump enough current. Question: does the AIS NaP effect scale predictably with AIS geometry, or
+does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed (L=30 μm,
+diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar ×
+AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP
+current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
+sweep results are directly comparable</strong> (S-0070-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
+different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
+`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
+conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
+per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
+`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
+of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
+spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
+gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
+effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
+B behind one Python API</strong> (S-0070-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
+t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
+uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
+`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
+on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
+Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
+direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
+synapse handles, recordings, mode metadata). The library must internally translate the FULL /
+EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
+its specification. Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-enable Bed A L-type and T-type Ca currents and quantify the
+effect on tuning curves and DSI</strong> (S-0070-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 writeup documents that Bed A's `init_active` zeros `RGCcaL` and `RGCcaT`
+(`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/main.hoc:L155-L156`),
+removing the L-type and T-type Ca currents that are present in the original Poleg-Polsky 2016
+paper. Bed B inherits the same `glbar_HHst = 3e-4` and `gtbar_HHst = 3e-4 S/cm^2` PARAMETER
+defaults (`HHst_noiseless.mod:L57-L58`) on every section because its Python builder never
+overrides them. This is the single most visible biophysical divergence between the two beds.
+Run a controlled experiment: re-enable Bed A's Ca currents at the `HHst.mod` defaults (and at
+the Bed B densities), re-run the t0065 EPSP/IPSP/FULL protocol, and report changes in DSI,
+peak firing rate, and EPSP/IPSP envelopes. The result either justifies harmonising the two
+beds on the same Ca configuration or documents a biophysically motivated reason to keep them
+divergent. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Wire Exp2NMDA into Bed B's tuning-curve and EPSP/IPSP/FULL
+drivers and re-run t0066</strong> (S-0070-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 writeup confirms Bed B vendors `Exp2NMDA.mod` (103 lines) and parameterises NMDA in
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py:L57-L61` (NMDA_TAU1_MS=2,
+NMDA_TAU2_MS=7, NMDA_E_MV=0, NMDA_N_PER_MM=0.25, NMDA_GAMA_PER_MV=0.08, NMDA_WEIGHT_US=0.0015)
+but `_setup_synapses` (`run_tuning_curve.py:L189-L226`) never instantiates an Exp2NMDA point
+process. Bed A always runs with NMDA, Bed B never does. Project literature (Poleg-Polsky 2016,
+t0048, t0054, t0055, t0057) identifies voltage-dependent NMDA Mg-block as a critical
+multiplicative-gain mechanism for DS. Extend `_setup_synapses` to place one Exp2NMDA per
+terminal dendrite paired with the existing Exp2Syn ACh, wire it into the Poisson event queue,
+and re-run the t0066 EPSP/IPSP/FULL protocol with NMDA on vs off. Report DSI, peak Hz, and
+EPSP/IPSP envelope changes. Recommended task types: experiment-run.
 
 </details>
 

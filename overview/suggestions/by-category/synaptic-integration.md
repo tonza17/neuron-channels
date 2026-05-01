@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-87 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **76 open** (14 high,
-55 medium, 7 low), **11 closed**.
+89 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **78 open** (15 high,
+56 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -162,6 +162,33 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
+sweep results are directly comparable</strong> (S-0070-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0070-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
+different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
+`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
+conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
+per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
+`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
+of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
+spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
+gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
+effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -1760,6 +1787,32 @@ unlike t0055 Voff = 0 case). This isolates the Mg-block voltage-gating as the so
 the t0055 NMDA-inert behavior and gives a controlled within-task ablation. Pass criterion: DSI
 at gNMDA = 0.25, FULL with Voff = 1 matches t0054 within +/-0.05; peak Hz exceeds 0.667 Hz at
 gNMDA >= 0.25. Recommended task type: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Wire Exp2NMDA into Bed B's tuning-curve and EPSP/IPSP/FULL
+drivers and re-run t0066</strong> (S-0070-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0070-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0070 writeup confirms Bed B vendors `Exp2NMDA.mod` (103 lines) and parameterises NMDA in
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py:L57-L61` (NMDA_TAU1_MS=2,
+NMDA_TAU2_MS=7, NMDA_E_MV=0, NMDA_N_PER_MM=0.25, NMDA_GAMA_PER_MV=0.08, NMDA_WEIGHT_US=0.0015)
+but `_setup_synapses` (`run_tuning_curve.py:L189-L226`) never instantiates an Exp2NMDA point
+process. Bed A always runs with NMDA, Bed B never does. Project literature (Poleg-Polsky 2016,
+t0048, t0054, t0055, t0057) identifies voltage-dependent NMDA Mg-block as a critical
+multiplicative-gain mechanism for DS. Extend `_setup_synapses` to place one Exp2NMDA per
+terminal dendrite paired with the existing Exp2Syn ACh, wire it into the Poisson event queue,
+and re-run the t0066 EPSP/IPSP/FULL protocol with NMDA on vs off. Report DSI, peak Hz, and
+EPSP/IPSP envelope changes. Recommended task types: experiment-run.
 
 </details>
 

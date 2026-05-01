@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-01T02:03:18Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-01T14:06:42Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>96221</char_count>
-    <byte_count>96412</byte_count>
-    <estimated_tokens>24055</estimated_tokens>
+    <char_count>98705</char_count>
+    <byte_count>98905</byte_count>
+    <estimated_tokens>24676</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -173,9 +173,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0066_t0024_epsp_ipsp_vm_protocol</id>
         <id>t0067_t0065_soma_channel_addition_sweep</id>
         <id>t0068_t0067_nav16_kv3_coexpression_rescue</id>
+        <id>t0069_t0067_ais_localised_channel_sweep</id>
+        <id>t0070_writeup_two_model_beds</id>
       </source_ids>
       <content>
-Completed tasks: 62
+Completed tasks: 64
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -548,6 +550,18 @@ ID: t0068_t0067_nav16_kv3_coexpression_rescue
 Completed: 2026-05-01
 Short description: Test whether co-inserting Kv3 with Nav1.6 on the t0065 soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 DSI = 0.23 at Nav1.6_high). 9 conditions x PD/ND x 5 seeds = 90 FULL trials.
 Result summary: Results Summary: Nav1.6 + Kv3 co-expression rescue test Summary Tested whether co-inserting Kv3 with Nav1.6 on the deposited Poleg-Polsky DSGC soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 anchors: DSI = 0.48 at Nav1.6_med, 0.23 at Nav1.6_high). 9 conditions × 2 directions × 5 seeds = 90 FULL trials, ~~10 min compute. **Hypothesis FALSIFIED**: Kv3 does NOT rescue DSI. Across all 8 co-expression conditions DSI changes by less than ±0.025 from the Nav1.6-only anchor. Instead, Kv3 slightly *boosts* firing rate (~~+10% at high Kv3), scaling PD and ND equally. Metrics | Condition | PD spikes (mean ± SD) | ND spikes (mean ± SD) | DSI | ΔDSI vs Nav1.6 anchor | | --- | --- |...
+
+## Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS
+ID: t0069_t0067_ais_localised_channel_sweep
+Completed: 2026-05-01
+Short description: Append a 30 um AIS + 1 mm passive axon to the deposited Poleg-Polsky cell and re-run the t0067 channel-density sweep with all 5 channels (Nav1.6, NaP, NaR, Kv3, Kv4) inserted on the AIS instead of the soma. 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
+Result summary: Results Summary: Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS Summary Appended a 30 μm AIS + 1 mm passive axon to the deposited Poleg-Polsky DSGC, then re-ran the t0067 channel sweep with each of {Nav1.6, NaP, NaR, Kv3, Kv4} inserted on the AIS instead of the soma at the same low/med/high densities. 16 conditions × 2 directions × 5 seeds = 160 FULL trials, ~8 min wall-clock. **Hypothesis S-0067-03 (AIS-localised channels show substantially LARGER DSI effects than soma-localised) is falsified.** Adding the AIS+axon halved baseline PD firing (14.2 → 6.4 spikes) and silenced ND firing entirely (1.6 → 0.0), pushing baseline DSI from **0.80 → 1.00**. On this quieter...
+
+## Writeup of two standard DSGC model beds in HH-equation research-paper format
+ID: t0070_writeup_two_model_beds
+Completed: 2026-05-01
+Short description: Write a research-paper / presentation-ready document describing the project&#x27;s two standard DSGC model beds (t0008 deposited Poleg-Polsky 2016 and t0024 de Rosenroll 2026 port). Start each bed with the canonical Hodgkin-Huxley membrane equation, then enumerate every conductance and define excitation and inhibition for PD and ND directions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0070_writeup_two_model_beds&quot; --- Results Summary: Writeup of Two Standard DSGC Model Beds Summary This task delivers a single, self-contained, presentation-ready research-paper document (`results/results_detailed.md`) describing the two canonical direction-selective ganglion cell (DSGC) model substrates that every other modelling task in the project uses as a backbone. **Bed A** is the deposited Poleg-Polsky 2016 ON-OFF DRD4 DSGC ported in [t0008] (ModelDB 189347, library `modeldb_189347_dsgc`), used by [t0020], [t0065], [t0067], [t0068], and [t0069]; **Bed B** is the de Rosenroll 2026 DSGC ported in [t0024], used by [t0066]. Each bed section opens with the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

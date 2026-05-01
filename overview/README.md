@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-68-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-255-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-70-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-265-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (24K)
-| [full](llm-context/full.xml) (358K) | [roadmap](llm-context/roadmap.xml) (79K) |
-[results](llm-context/results-deep-dive.xml) (269K) |
-[assets](llm-context/literature-and-assets.xml) (43K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (25K)
+| [full](llm-context/full.xml) (379K) | [roadmap](llm-context/roadmap.xml) (82K) |
+[results](llm-context/results-deep-dive.xml) (289K) |
+[assets](llm-context/literature-and-assets.xml) (44K)
 
-*Last updated: 2026-05-01 02:03 UTC*
+*Last updated: 2026-05-01 14:06 UTC*
 
 * **Budget**: **$0** spent of $1
 * **Remaining**: **$1**
@@ -79,10 +79,12 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (62 total)](tasks/by-status/completed.md)
+## [Recently Completed (64 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0070 | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) | [`results`](../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) | 2026-05-01 14:05 |
+| 0069 | [Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS](../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) | [`results`](../tasks/t0069_t0067_ais_localised_channel_sweep/results/results_detailed.md) | 2026-05-01 03:10 |
 | 0068 | [Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?](../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) | [`results`](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/results/results_detailed.md) | 2026-05-01 03:05 |
 | 0067 | [Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change](../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) | [`results`](../tasks/t0067_t0065_soma_channel_addition_sweep/results/results_detailed.md) | 2026-05-01 01:05 |
 | 0066 | [Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 16:48 |
@@ -91,10 +93,8 @@ No blocked tasks.
 | 0063 | [HH voltage-step diagnostic on t0059 substrate (no synapses)](../overview/tasks/task_pages/t0063_hh_voltage_step_test.md) | [`results`](../tasks/t0063_hh_voltage_step_test/results/results_detailed.md) | 2026-04-29 23:46 |
 | 0062 | [NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0](../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md) | [`results`](../tasks/t0062_nmda_escape_with_ampa_priming/results/results_detailed.md) | 2026-04-29 23:04 |
 | 0061 | [Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0061_nmda_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:32 |
-| 0060 | [Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0](../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md) | [`results`](../tasks/t0060_ampa_escape_pd_only_no_gaba/results/results_detailed.md) | 2026-04-29 22:00 |
-| 0059 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | [`results`](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/results/results_detailed.md) | 2026-04-29 20:55 |
 
-*52 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*54 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -119,7 +119,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (225 open)](suggestions/)
+## [Recent Suggestions (234 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -134,24 +134,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
-sweep</strong> (S-0067-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
-Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
-Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
-almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
-section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
-the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
-show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
-more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
 
 </details>
 
@@ -282,31 +264,44 @@ still does nothing, our simplified Kv3 MOD likely needs revision to a richer kin
 </details>
 
 <details>
-<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
-substrate</strong> (S-0065-01)</summary>
+<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
+the sweep</strong> (S-0069-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
 
-t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
-in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
-opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
-is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
-= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
-(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
-whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
-shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
-can be ported to the from-scratch cell builder with minimal changes. Expected output: six
-traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
-binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
 
 </details>
 
-*215 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
+insertions</strong> (S-0069-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher
+input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel
+produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30
+μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
+5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
+that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+*224 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (27)](suggestions/)
+## [High Priority Suggestions (31)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -341,6 +336,82 @@ more than ND firing → DSI restored. This is mechanistically coherent and biolo
 plausible (DSGCs express both BK and SK in vivo). Implementation: vendor a BK MOD (e.g., from
 Hines & Carnevale's Purkinje model) AND a Ca2+ pool mechanism, then sweep BK density at fixed
 Nav1.6 = high. Cost: 1-2 hours code + ~5 min compute per density.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
+the sweep</strong> (S-0069-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
+insertions</strong> (S-0069-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher
+input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel
+produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30
+μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
+5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
+that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
+sweep results are directly comparable</strong> (S-0070-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
+different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
+`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
+conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
+per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
+`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
+of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
+spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
+gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
+effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a unified model-bed-runner library exposing Bed A and Bed
+B behind one Python API</strong> (S-0070-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../tasks/t0070_writeup_two_model_beds/)
+
+Every downstream task touching both beds (t0065, t0066, future cross-bed ports of
+t0067/t0068/t0069) re-implements its own builder, override path, and trial-mode toggle. Bed A
+uses HOC globals (`h.exptype`, `h.gabaMOD`, `h.s2ggaba`) via
+`tasks/t0008_port_modeldb_189347/code/build_cell.py:apply_params`. Bed B uses Python overrides
+on the constructed cell via `_snapshot_canonical_state` / `_apply_mode_overrides` and
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:_configure_soma`/`_configure_dends`.
+Build a library asset `dsgc_model_bed_runner` exposing one `build_bed(bed, mode,
+direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bundle (cell,
+synapse handles, recordings, mode metadata). The library must internally translate the FULL /
+EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
+its specification. Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -428,91 +499,7 @@ experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
-sweep on the t0059 substrate</strong> (S-0059-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
-[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
-
-S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057's global (100, 1400) ms tonic
-window and fixed gAMPA = 0.5 nS. t0059 demonstrates the bar-locked window mechanism delivers
-an 8.5 ms direction-dependent IPSP centre-of-mass shift (REQ-13 PASS) the global window
-cannot. Layering Mg-block NMDA on the bar-locked substrate combines all three plausible
-gap-closers identified in compare-literature: voltage-dependent NMDA gain (PolegPolsky2016),
-per-synapse bar-arrival timing (deRosenroll2026), and AMPA escape. Fork
-minimal_dsgc_bar_locked_gaba_ampa_sweep, install the Jahr-Stevens NMDA_MgBlock mechanism from
-t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0, 2.0, 4.0} nS
-at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
-criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
-window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Synapse-count scaling sweep on t0059 substrate (100 -> 200 -> 300
-E + I) to break the single-spike regime</strong> (S-0059-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
-[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
-
-t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction
-uses 282, deRosenroll2026 [p. 5] uses >1000 SAC varicosities. The compare-literature
-Synapse-count comparison identifies this >2.8x to >10x mismatch as a structural drive
-bottleneck consistent with the 2.143 Hz peak ceiling. Fork
-minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300}
-(re-running the placement_seed0 generator to produce three larger placement bundles), and
-sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N
-x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz
->= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
-validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
-t0052, no bar-lock). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal
-architecture to locate a DSI-preserving operating point</strong>
-(S-0054-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0054_minimal_dsgc_ampa_nmda_scalar_gaba](../tasks/t0054_minimal_dsgc_ampa_nmda_scalar_gaba/)
-
-t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0),
-varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances
-jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base
-gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged,
-voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01).
-Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells =
-2880 trials. Apply early stop on cells where E_ONLY peak Hz > 30 Hz to prune the saturated
-subgrid. Pass criterion: locate at least one (gAMPA, gNMDA, gGABA) triple with vector-sum DSI
->= 0.5 and peak Hz in 10-50 Hz, or rule out such an operating point in the voltage-independent
-regime. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Project-wide DSGC measurement-protocol fix: EPSP_PASSIVE /
-IPSP_PASSIVE / FULL trial modes with HH save-and-zero</strong> (S-0055-01)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-04-28 | **Source**:
-[t0055_nmda_mg_block_dsi_recovery](../tasks/t0055_nmda_mg_block_dsi_recovery/)
-
-Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to replace the
-legacy FULL/E_ONLY/GABA_ONLY trio with a FULL/EPSP_PASSIVE/IPSP_PASSIVE trio. EPSP_PASSIVE and
-IPSP_PASSIVE must save-and-zero soma+AIS gnabar_hh and gkbar_hh so the recorded EPSP and IPSP
-traces are clean synaptic envelopes, not spike-contaminated traces (the user-flagged bug that
-made t0054 REQ-20 and t0055 REQ-20 return null at every gNMDA). Drop the per-synapse
-activation-time histogram. Confirm and standardize the trial length with the user (1400 vs
-1500 ms vs longer window for EPSP-decay metrics; 3000-5000 ms recommended by S-0054-03). Pass
-criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes; HH-on FULL
-trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
-infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
-DSGC task.
-
-</details>
-
-*17 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*21 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (16)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(44)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(50)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (1)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (37 open, 7 closed)
+## Suggestions (42 open, 8 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -902,24 +902,6 @@ DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm
 (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
 threshold density at which directional inversion becomes statistically robust. This is the
 most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
-sweep</strong> (S-0067-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
-Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
-Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
-almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
-section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
-the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
-show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
-more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
 
 </details>
 
@@ -1028,6 +1010,118 @@ bug), run a finer Kv3-only sweep with very high densities (60, 200, 500 mS/cm^2)
 whether SOME density level produces a measurable firing-rate effect. If Kv3 at 500 mS/cm^2
 still does nothing, our simplified Kv3 MOD likely needs revision to a richer kinetic scheme
 (e.g., Wang-Buzsaki with two-component decay).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
+the sweep</strong> (S-0069-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
+insertions</strong> (S-0069-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher
+input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel
+produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30
+μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
+5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
+that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Co-insert Nav1.6 + Kv3 on the AIS at biological
+densities</strong> (S-0069-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+S-0068-04 already proposed AIS Nav1.6 + Kv3 co-insertion. t0069's baseline-quenching means a
+naive co-insertion sweep on the unweakened soma will likely also be inert. So this should run
+AFTER S-0069-01 (somatic Na halved). Test 4 conditions on the t0069 substrate with halved
+somatic Na: {Nav1.6_med + Kv3_med, Nav1.6_med + Kv3_high, Nav1.6_high + Kv3_med, Nav1.6_high +
+Kv3_high} on AIS × PD/ND × 5 seeds = 40 trials. Hypothesis: with a weakened soma and the
+natural fast-spiking AIS recipe (Nav1.6 + Kv3), the cell becomes more like a real fast-firing
+RGC and DSI becomes higher (or more controllable) than the t0067 single-channel sweep showed.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22)
+is robust to AIS geometry</strong> (S-0069-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+NaP at high density on the AIS gave the largest signal (-0.78 ΔDSI), 80% of the soma version's
+effect. Persistent Na is interesting because it survives the AIS+axon's electrical sink — its
+non-inactivating depolarisation accumulates over the trial duration, so even a small AIS can
+pump enough current. Question: does the AIS NaP effect scale predictably with AIS geometry, or
+does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed (L=30 μm,
+diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar ×
+AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP
+current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-enable Bed A L-type and T-type Ca currents and quantify the
+effect on tuning curves and DSI</strong> (S-0070-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 writeup documents that Bed A's `init_active` zeros `RGCcaL` and `RGCcaT`
+(`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/main.hoc:L155-L156`),
+removing the L-type and T-type Ca currents that are present in the original Poleg-Polsky 2016
+paper. Bed B inherits the same `glbar_HHst = 3e-4` and `gtbar_HHst = 3e-4 S/cm^2` PARAMETER
+defaults (`HHst_noiseless.mod:L57-L58`) on every section because its Python builder never
+overrides them. This is the single most visible biophysical divergence between the two beds.
+Run a controlled experiment: re-enable Bed A's Ca currents at the `HHst.mod` defaults (and at
+the Bed B densities), re-run the t0065 EPSP/IPSP/FULL protocol, and report changes in DSI,
+peak firing rate, and EPSP/IPSP envelopes. The result either justifies harmonising the two
+beds on the same Ca configuration or documents a biophysically motivated reason to keep them
+divergent. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Disambiguate the silently-overloaded HHst mechanism name across
+the two libraries via SUFFIX rename</strong> (S-0070-05)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
+
+The t0070 research_code.md and writeup both flag a cross-library namespace collision: both
+`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/HHst.mod`
+(Linaro-Storace-Giugliano stochastic) and
+`tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/HHst_noiseless.mod`
+(deterministic) declare `SUFFIX HHst`. Any code that says `seg.HHst.gnabar` references
+different mechanisms depending on which `nrnivmodl` directory was loaded last, with no
+warning. The kinetics happen to be identical so the bug is currently latent, but mid-flight
+library swaps in cross-bed runners (S-0070-02) will silently change noise behaviour. Rename
+Bed B's SUFFIX (e.g., to `HHst_det`) via corrections on the t0024 library, recompile, update
+`build_cell.py` and downstream protocol code, and add a verificator scanning
+`tasks/*/assets/library/*/sources/*.mod` for duplicate SUFFIX. Recommended task types:
+write-library, infrastructure-setup, correction.
 
 </details>
 

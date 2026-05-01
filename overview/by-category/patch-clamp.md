@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(18)](../suggestions/by-category/patch-clamp.md)
+(20)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,25 +1185,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (16 open, 2 closed)
-
-<details>
-<summary>🧪 <strong>Add a virtual AIS to the deposited cell and re-run the channel
-sweep</strong> (S-0067-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-The deposited Poleg-Polsky cell has no axon initial segment (AIS). Real RGCs concentrate
-Nav1.6 / Kv1 at the AIS at ~50× somatic densities (per t0019 priors: 2500-5000 pS/μm² for
-Nav1.6 at distal AIS). Putting these channels on the soma in t0067 is a simplification that
-almost certainly understates their effect on AP initiation timing and shape. Add a 30 μm AIS
-section between soma and a virtual axon (1 mm passive cable) to the build_dsgc, then re-run
-the t0067 channel sweep with insertion on the AIS instead of the soma. Expected: same channels
-show much larger DSI effects (because the AIS, being smaller and electrically isolated, is
-more sensitive to gnabar additions). Cost: ~1 hour code + ~10 min compute.
-
-</details>
+## Suggestions (17 open, 3 closed)
 
 <details>
 <summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>
@@ -1220,6 +1202,40 @@ rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show 
 because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
 more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
 across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Halve somatic gnabar_HHst before attaching the AIS, then re-run
+the sweep</strong> (S-0069-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+t0069 falsified S-0067-03 because the AIS+axon couldn't dominate spike initiation against the
+deposited cell's 400 mS/cm² somatic gnabar_HHst. The natural fix: reduce somatic gnabar to 200
+mS/cm² (or 100), re-attach the same AIS+axon, and re-run the t0069 sweep. Hypothesis: with a
+weakened soma, the AIS becomes the dominant spike-initiation zone and AIS-localised Nav1.6 /
+NaP / NaR / Kv3 / Kv4 show ≥2× larger |ΔDSI| than at the unweakened-soma baseline.
+Implementation is a 1-line patch to apply_params (or a new HOC override) plus the existing
+t0069 sweep code; ~10 min compute. This is the prerequisite for any meaningful AIS channel
+test on this cell.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
+insertions</strong> (S-0069-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0069_t0067_ais_localised_channel_sweep](../../tasks/t0069_t0067_ais_localised_channel_sweep/)
+
+Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher
+input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel
+produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30
+μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
+5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
+that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
 
 </details>
 

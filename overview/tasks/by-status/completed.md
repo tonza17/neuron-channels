@@ -1,12 +1,419 @@
 # ✅ Tasks: Completed
 
-62 tasks. ✅ **62 completed**.
+64 tasks. ✅ **64 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0070 — <strong>Writeup of two standard DSGC model beds in HH-equation
+research-paper format</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0070_writeup_two_model_beds` |
+| **Status** | completed |
+| **Effective date** | 2026-05-01 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`comparative-analysis`](../../../meta/task_types/comparative-analysis/) |
+| **Start time** | 2026-05-01T13:07:47Z |
+| **End time** | 2026-05-01T14:05:00Z |
+| **Step progress** | 9/15 |
+| **Task page** | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Task folder** | [`t0070_writeup_two_model_beds/`](../../../tasks/t0070_writeup_two_model_beds/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) |
+
+# Writeup of two standard DSGC model beds in HH-equation research-paper format
+
+## Motivation
+
+The project routinely runs experiments on two distinct DSGC model substrates:
+
+* **Bed A — t0008 deposited Poleg-Polsky 2016 DSGC** (ModelDB 189347), used as the substrate
+  for t0020 (gabaMOD-swap protocol), t0065 (EPSP/IPSP/FULL Vm protocol), t0067 (soma channel
+  sweep), t0068 (Nav1.6 + Kv3 co-expression rescue), and t0069 (AIS-localised channel sweep).
+* **Bed B — t0024 de Rosenroll 2026 DSGC port**, used as the substrate for t0066
+  (EPSP/IPSP/FULL Vm protocol on de Rosenroll cell).
+
+A single canonical writeup of both beds — with the standard Hodgkin-Huxley membrane equation
+up front and every conductance defined explicitly, plus the excitation and inhibition models
+for PD and ND directions — does not exist in one place in the project. Each task references
+its substrate but assumes prior familiarity. The user needs this writeup as both a
+self-contained report and as the basis for a presentation; the writeup must therefore stand
+alone, be printable, and avoid implicit assumptions about which task did what.
+
+## Scope
+
+* Two model beds, treated symmetrically: same section structure, same equation conventions,
+  same level of detail.
+* For each bed:
+  1. **Cell morphology** — section list, lengths, diameters, electrotonic structure, and
+     source of the morphology (deposited file, generated, scaled, etc.).
+  2. **Membrane equation** — start with the canonical HH form and then enumerate every current
+     term Iᵢ that appears in the model, with V_half, time constants, and gbar values where
+     applicable. Use the same notation in both beds for cross-comparison.
+  3. **Synaptic excitation in PD vs ND** — bipolar drive (AMPA + NMDA where present), Mg-block
+     parameters, peak conductance, timing pattern, source of asymmetry between PD and ND.
+  4. **Synaptic inhibition in PD vs ND** — SAC GABA model, spatial pattern, gabaMOD or
+     equivalent direction-encoding mechanism, e_GABA, peak conductance, timing pattern.
+* A short side-by-side comparison table at the end, summarising the headline differences
+  (e.g., number of compartments, presence of NMDA, AIS or no AIS, gabaMOD vs spatial
+  inhibition).
+* Output is a single research-paper-format document under
+  `tasks/t0070_writeup_two_model_beds/results/results_detailed.md` plus a brief
+  `results/results_summary.md` (per the standard task file structure).
+
+## Approach
+
+1. Read the t0008, t0020, t0024 task code (NEURON `.hoc`, MOD files, Python wrappers) and
+   confirm every conductance with cited file/line references.
+2. Read the t0065, t0066 protocol code to extract the exact PD vs ND encoding for each bed
+   (gabaMOD-swap for bed A; whatever t0066 uses for bed B).
+3. Cross-check against the original papers (Poleg-Polsky 2016 and de Rosenroll 2026) where
+   available in the project's paper assets — but the canonical source for the writeup is the
+   project's own ported code, not the original papers.
+4. Write the document section by section, alternating per bed for parallel structure. Use
+   LaTeX- style equations rendered as fenced inline blocks (GitHub markdown tolerates `$...$`
+   math).
+5. Include a small morphology diagram per bed (axial schematic of compartments, not 3D), saved
+   as PNG under `results/images/`. Use NEURON's section topology to generate or hand-draw the
+   schematic.
+6. Cross-reference every quoted parameter back to a file path and (where stable) a line
+   number, so the writeup is auditable.
+
+## Expected outputs
+
+* `results/results_detailed.md` — the full writeup, research-paper format, all mandatory
+  sections from `arf/specifications/results_specification.md` plus the bed-by-bed equation
+  blocks.
+* `results/results_summary.md` — 2-3 paragraph summary suitable as a presentation abstract.
+* `results/images/bed_a_morphology.png`, `results/images/bed_b_morphology.png` — schematic
+  morphology diagrams.
+* `results/images/bed_a_synaptic_diagram.png`, `results/images/bed_b_synaptic_diagram.png` —
+  PD vs ND excitation / inhibition timing diagrams.
+* `results/metrics.json`, `results/costs.json`, `results/remote_machines_used.json` — standard
+  bookkeeping (no external costs, no remote machines, no registered metrics produced).
+* `results/suggestions.json` — follow-on tasks (e.g., a unified model-bed-runner library).
+
+## Document format
+
+Each bed section follows this template:
+
+```markdown
+## Bed X: <name>
+
+### Morphology
+
+* Compartment list with L (μm), diam (μm), nseg
+* Electrotonic length and connectivity diagram
+
+### Membrane equation
+
+The Hodgkin-Huxley membrane equation governs each compartment:
+
+C_m · dV/dt = -Σᵢ Iᵢ - I_syn - I_inj
+
+where Iᵢ enumerates the active conductances:
+
+I_Na    = g_Na · m³ · h · (V - E_Na)        -- HHst Na
+I_K     = g_K  · n⁴   · (V - E_K)            -- HHst K (delayed rectifier)
+I_Km    = g_Km · w    · (V - E_K)            -- HHst K_m
+I_leak  = g_leak      · (V - E_leak)
+... (one line per channel, with parameters in a separate table)
+
+### Conductance table
+
+| Channel | gbar (S/cm²) | E_rev (mV) | V_half_act (mV) | τ_m (ms) | V_half_inact (mV) | τ_h (ms) | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ... | ... | ... | ... | ... | ... | ... | code/HHst.mod L<n> |
+
+### Synaptic excitation (PD vs ND)
+
+* AMPA: peak g_AMPA, τ_rise, τ_decay, E_rev = 0 mV
+* NMDA: peak g_NMDA, τ_rise, τ_decay, Mg-block parameters, V_off
+* Bipolar drive: timing of activations, spatial pattern across dendrites
+* PD encoding: <how PD is set>
+* ND encoding: <how ND is set>
+
+### Synaptic inhibition (PD vs ND)
+
+* SAC GABA: peak g_GABA, τ, E_rev = e_GABA
+* Spatial pattern across dendrites
+* PD encoding: gabaMOD = ... or asymmetric SAC drive
+* ND encoding: gabaMOD = ... or asymmetric SAC drive
+
+### Differences from the original paper
+
+(brief notes on simplifications, missing features, known divergences)
+```
+
+## Stages
+
+* `research-code` — read both beds' code in full, extract every conductance and synapse
+  parameter with file:line citations.
+* `planning` — write `plan/plan.md` with the section-by-section outline.
+* `implementation` — produce the schematic PNGs and write the `results/*` documents.
+* `results` + `suggestions` + `reporting` — finalise.
+
+## Compute and budget
+
+* Local Windows workstation. No remote machines, no external API costs.
+* Time estimate: 2-3 hours total. No simulation runs (the data is read from existing code).
+
+## Dependencies
+
+The five dependencies above are needed because the writeup *describes* them. None of these are
+"data dependencies" in the experiment sense — they are source dependencies: the writeup must
+reference their committed code.
+
+## Risks and fallbacks
+
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | Bed B (t0024) uses different mechanism naming than bed A; cross-bed table doesn't align cleanly. | The bed-A and bed-B conductance tables don't share a column structure. | Use two separate tables with explicit column headers, then a third "shared parameters" table. |
+| 2 | NMDA / GABA peak conductance values aren't directly readable from the code (set via HOC params). | grep for `gNMDA`, `s2gampa`, `s2ggaba`, `gabaMOD` returns ambiguous results. | Trace via t0008.code.build_cell.apply_params and t0024 equivalent; cite the params dict. |
+| 3 | Morphology PNGs require a NEURON GUI session that doesn't run in headless mode. | matplotlib can't fall back. | Produce a hand-drawn schematic in matplotlib (rectangles + lines) showing the topology, not the 3D morphology. |
+
+## Verification criteria
+
+* Both `results_summary.md` and `results_detailed.md` exist and pass `verify_task_results`.
+* Every conductance / synapse parameter has a `code/<file>:<line>` citation.
+* The HH membrane equation appears as the first equation in each bed's section.
+* Side-by-side comparison table is present.
+* All standard verificators pass.
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0070_writeup_two_model_beds"
+> ---
+> **Results Summary: Writeup of Two Standard DSGC Model Beds**
+>
+> **Summary**
+>
+> This task delivers a single, self-contained, presentation-ready research-paper document
+> (`results/results_detailed.md`) describing the two canonical direction-selective ganglion
+> cell
+> (DSGC) model substrates that every other modelling task in the project uses as a backbone.
+> **Bed A**
+> is the deposited Poleg-Polsky 2016 ON-OFF DRD4 DSGC ported in [t0008] (ModelDB 189347,
+> library
+> `modeldb_189347_dsgc`), used by [t0020], [t0065], [t0067], [t0068], and [t0069]; **Bed B**
+> is the de
+> Rosenroll 2026 DSGC ported in [t0024], used by [t0066]. Each bed section opens with the
+> canonical
+> Hodgkin-Huxley membrane equation `C_m · dV/dt = -Σᵢ Iᵢ - I_syn - I_inj` rendered identically
+> in
+> fenced math blocks, then enumerates every active conductance with `gbar`, `V_half`,
+> kinetics, and
+> reversal potential in a markdown table, then defines the synaptic excitation and inhibition
+> models
+> for the preferred direction (PD) and null direction (ND). A side-by-side comparison table at
+> the end
+> summarises the headline differences across **18 dimensions**. Every numerical parameter
+> carries a
+> `code/<file>:line` citation back to the committed source so the document is fully auditable.
+
+</details>
+
+<details>
+<summary>✅ 0069 — <strong>Add virtual AIS to deposited DSGC and re-run t0067 channel
+sweep on AIS</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0069_t0067_ais_localised_channel_sweep` |
+| **Status** | completed |
+| **Effective date** | 2026-05-01 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Expected assets** | — |
+| **Source suggestion** | `S-0067-03` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-05-01T02:13:59Z |
+| **End time** | 2026-05-01T03:10:00Z |
+| **Step progress** | 9/15 |
+| **Task page** | [Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) |
+| **Task folder** | [`t0069_t0067_ais_localised_channel_sweep/`](../../../tasks/t0069_t0067_ais_localised_channel_sweep/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0069_t0067_ais_localised_channel_sweep/results/results_detailed.md) |
+
+# Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS
+
+## Motivation
+
+t0067 inserted 5 voltage-gated channels (Nav1.6, NaP, NaR, Kv3, Kv4) on the deposited
+Poleg-Polsky DSGC soma. Three of the five (NaR, Kv3, Kv4) had essentially no effect on firing
+rate or DSI at any density. The strongest plausible explanation: these channels are normally
+AIS-localised in real RGCs (per t0019 priors), and putting them on the soma puts them in a
+compartment where the existing massive HHst Na (~400 mS/cm²) drowns out their contribution
+plus the soma's electrotonic geometry doesn't favour AP-shape modulation. t0019 documents
+distal-AIS Nav densities of 2500-5000 pS/μm² (~25-50 mS/cm²) — the AIS is a much smaller
+compartment with much higher input resistance per area.
+
+This task tests S-0067-03: append a virtual AIS + axon cable to the deposited cell, then
+re-run the t0067 channel-density sweep with the 5 channels inserted on the **AIS** instead of
+the soma. Hypothesis: the AIS-localised channels show substantially larger effects on firing
+rate and DSI than the soma-localised versions, because the AIS is a high-input-resistance
+spike-initiation zone.
+
+## Scope
+
+* Cell: deposited Poleg-Polsky 2016 DSGC (t0008) PLUS a new virtual AIS section (30 μm × 1 μm,
+  5 segments) PLUS a passive axon cable (1000 μm × 1 μm, 50 segments). AIS connects to
+  soma(1); axon connects to AIS(1).
+* AIS active conductances: HHst at biologically-realistic AIS density — `gnabar = 30 mS/cm²`,
+  `gkbar = 20 mS/cm²`, `gkmbar = 3 mS/cm²` (per t0019 priors).
+* Axon active conductances: HHst at low density — `gnabar = 5 mS/cm²`, `gkbar = 3 mS/cm²` —
+  sufficient for AP propagation, low enough to not affect somatic firing significantly.
+* Mode: only `FULL` (HH on, all synapses at canonical defaults).
+* Direction: PD (`gabaMOD = 0.33`) and ND (`gabaMOD = 0.99`).
+* Seeds per condition: 5.
+* Channels on AIS (one per experiment, 3 densities each): same as t0067.
+
+## Conditions
+
+16 conditions × 2 directions × 5 seeds = **160 FULL trials**.
+
+| condition_id | channel | density (mS/cm²) | Notes |
+| --- | --- | --- | --- |
+| baseline_ais | (none) | — | AIS+axon attached, no extra channels — t0069 reference |
+| nav16_low_ais | Nav1.6 | 10 | t0067-equivalent on AIS |
+| nav16_med_ais | Nav1.6 | 30 |  |
+| nav16_high_ais | Nav1.6 | 90 |  |
+| nap_low_ais | NaP | 0.3 |  |
+| nap_med_ais | NaP | 0.8 |  |
+| nap_high_ais | NaP | 2.4 |  |
+| nar_low_ais | NaR | 3 |  |
+| nar_med_ais | NaR | 8 |  |
+| nar_high_ais | NaR | 24 |  |
+| kv3_low_ais | Kv3 | 7 |  |
+| kv3_med_ais | Kv3 | 20 |  |
+| kv3_high_ais | Kv3 | 60 |  |
+| kv4_low_ais | Kv4 | 4 |  |
+| kv4_med_ais | Kv4 | 12 |  |
+| kv4_high_ais | Kv4 | 36 |  |
+
+Densities match t0067's exactly so we can directly compare effect sizes between soma and AIS
+insertion.
+
+## Approach
+
+1. Build the cell via t0008's `build_dsgc()` unchanged.
+2. After build, add 2 new sections from Python:
+   * `ais` section, 30 μm × 1 μm, 5 segments, HHst inserted with realistic AIS densities.
+   * `axon` section, 1000 μm × 1 μm, 50 segments, HHst inserted at lower density.
+3. Connect: `ais.connect(soma, 1, 0)`, then `axon.connect(ais, 1, 0)`.
+4. Insert the 5 t0067 mechanisms on the AIS at gbar=0; per-trial set the active channel's gbar
+   to the target density.
+5. Run 160 trials using the t0067 driver template adapted for AIS-localised insertion.
+6. Compute DSI per condition; compare to t0067 anchors (soma-localised counterparts).
+
+## Outputs
+
+* `data/per_trial_metrics.json` — 160 trial records.
+* `data/dsi_by_condition.json` — 16 conditions.
+* `results/metrics.json` — registered DSI for the t0069 baseline.
+* `results/images/firing_rate_vs_density.png` — 5 panels (per channel), PD/ND firing rate with
+  t0069-baseline reference.
+* `results/images/dsi_vs_density.png` — 5 panels (per channel), DSI vs density with
+  t0069-baseline reference.
+* `results/images/soma_vs_ais_comparison.png` — for each channel, side-by-side bar chart of
+  DSI change at low/med/high (soma from t0067 vs AIS from t0069).
+* `results/results_summary.md`, `results/results_detailed.md` (spec_version 2).
+
+## Failure-mode policy
+
+Same as t0067/t0068: peak Vm > +60 mV or < -80 mV → flag `is_unstable = true`. Trial data
+still saved.
+
+## Key Questions
+
+1. Does the t0069 baseline (AIS+axon attached, no extra channels) reproduce the t0067 baseline
+   firing rate and DSI? If yes: AIS topology change is benign. If no: the AIS itself reshapes
+   the cell's behaviour and we need to account for that before comparing channel effects.
+2. For each of the 5 channels: is the |Δ DSI| at AIS substantially larger than at soma?
+   Rule-of-thumb: ≥2× larger.
+3. Do the 3 channels that were inert in t0067 (NaR, Kv3, Kv4) become active when relocated to
+   the AIS?
+4. Does Nav1.6 still erode DSI on the AIS, or does the smaller compartment change the
+   directionality of the effect?
+5. Does NaP still invert DSI on the AIS, or does the more isolated compartment change the
+   sign?
+
+## Compute and Budget
+
+* Local Windows workstation. ~3 s/trial × 160 = ~10 min (same as t0067).
+* External costs: $0.
+
+## Time Estimation
+
+* Implementation (cell-extension code, AIS construction, port channel-set logic): 1 hour.
+* Sweep: 10 min.
+* Plotting + reporting: 1 hour (3 plots + cross-task comparison).
+* Verification + PR: 30 min.
+* Total: ~3 hours.
+
+## Dependencies
+
+* `t0008_port_modeldb_189347` — cell builder.
+* `t0019_literature_survey_voltage_gated_channels` — AIS Nav/Kv density priors.
+* `t0065_t0020_epsp_ipsp_vm_protocol` — gabaMOD-swap protocol.
+* `t0067_t0065_soma_channel_addition_sweep` — MOD files (vendored verbatim), trial driver
+  template, soma-anchor DSIs for cross-comparison.
+
+## Risks and Fallbacks
+
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | Adding HHst-bearing AIS changes the cell's spike-initiation site, making the t0069 baseline very different from t0067 baseline. | t0069 baseline DSI < 0.5 or > 1.0; or PD spike count < 5 or > 30. | This IS expected — biologically correct cells initiate at AIS. Document the new baseline; comparisons are done relative to t0069 baseline, not t0067 baseline, for fair within-task contrast. The cross-task soma-vs-AIS comparison is then "channel effect on top of each task's own baseline." |
+| 2 | Axon HHst at low density doesn't propagate APs, causing reflection at AIS-axon junction. | Axon Vm shows damped APs (<+10 mV peak). | Increase axon `gnabar` to 10 mS/cm². |
+| 3 | t0067 MOD files are still incompatible after mechanism re-insertion on AIS. | nrnivmodl error or runtime AttributeError. | Reuse t0068's recipe (which worked); only the section target changes. |
+
+## Verification Criteria
+
+* All 160 trials complete without instability.
+* `data/per_trial_metrics.json` has 160 entries.
+* `data/dsi_by_condition.json` has 16 entries.
+* All 3 PNG plots exist and embedded in `results_detailed.md`.
+* All standard verificators pass.
+
+**Results summary:**
+
+> **Results Summary: Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS**
+>
+> **Summary**
+>
+> Appended a 30 μm AIS + 1 mm passive axon to the deposited Poleg-Polsky DSGC, then re-ran the
+> t0067
+> channel sweep with each of {Nav1.6, NaP, NaR, Kv3, Kv4} inserted on the AIS instead of the
+> soma at
+> the same low/med/high densities. 16 conditions × 2 directions × 5 seeds = 160 FULL trials,
+> ~8 min
+> wall-clock. **Hypothesis S-0067-03 (AIS-localised channels show substantially LARGER DSI
+> effects
+> than soma-localised) is falsified.** Adding the AIS+axon halved baseline PD firing (14.2 →
+> 6.4
+> spikes) and silenced ND firing entirely (1.6 → 0.0), pushing baseline DSI from **0.80 →
+> 1.00**.
+> On this quieter AIS-anchored baseline, **11 of 15 channel conditions produced zero
+> detectable DSI
+> change**; only NaP (med, high) and Nav1.6 (high) moved DSI at all, and **|ΔDSI| was strictly
+> smaller on the AIS than on the soma for every channel that had any effect**. The AIS+axon
+> adds a
+> large electrical sink that quenches the cell rather than relocating spike initiation.
+>
+> **Metrics**
+>
+> | Condition | PD spikes (mean ± SD) | ND spikes (mean ± SD) | DSI | Δ DSI vs t0069 baseline |
+> | --- | --- | --- | --- | --- |
+> | baseline_ais | 6.4 ± 0.5 | 0.0 ± 0.0 | 1.000 | (reference) |
+
+</details>
 
 <details>
 <summary>✅ 0068 — <strong>Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss
