@@ -68,9 +68,9 @@
       "step": 8,
       "name": "suggestions",
       "description": "Author results/suggestions.json with follow-on tasks (e.g., unified model-bed-runner library).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-01T13:54:24Z",
-      "completed_at": null,
+      "completed_at": "2026-05-01T14:01:03Z",
       "log_file": "logs\\steps\\008_suggestions/"
     },
     {
