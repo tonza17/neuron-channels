@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (27)](../papers/by-category/compartmental-modeling.md) | [Answers
 (14)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(207)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(209)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (11)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -1739,7 +1739,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (183 open, 24 closed)
+## Suggestions (185 open, 24 closed)
 
 <details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
@@ -2060,6 +2060,48 @@ quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope d
 attributable to these two non-Ca, non-NMDA conventions alone — the result decides whether
 project-wide convention harmonisation is needed before S-0070-01..04 can be interpreted.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-trial t0072 extension to decompose SD bands into
+across-trial vs across-synapse variance</strong> (S-0072-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072's Limitations section flags single-seed-per-direction as the main caveat: the SD bands
+in the Bed A 4x2 and Bed B 2x2 figures conflate across-synapse spatial heterogeneity with
+across-trial stochastic-release variability. Re-run the t0072 protocol at N = 20 trials per
+direction per bed (matching t0020 and t0066 cadence), keep the per-synapse g(t) + v_local(t)
+recorders, and decompose sigma2_total = sigma2_across_trials_per_synapse +
+sigma2_across_synapses_at_fixed_trial. Produce updated figures with thin SD band for
+across-trial variance at the median synapse and thicker SD band for across-synapse variance at
+the median trial. Expected: Bed A SDs dominated by across-synapse heterogeneity; Bed B SDs
+dominated by across-trial Bernoulli stochastics. Cost: ~10 min wall-clock. Distinct from
+S-0065-04 (t0065 spike-count multi-seed) and S-0055-06 (t0055 placement-seed sweep).
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote t0072's cross-bed per-synapse (g, v_local) recorder +
+post-hoc current pipeline into a library</strong> (S-0072-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn /
+SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends
+t0048's BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along
+three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than
+only g, (2) automatic uS->nS unit conversion when the mechanism uses uS (Bed B Exp2Syn
+convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with
+E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists,
+dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and aggregate_population helpers,
+(c) uS->nS boundary helper, (d) smoke tests on both bed builder fixtures. Distinct from
+S-0047-04 (Bed A only, no v_local, no uS->nS, no I) and S-0070-02 (bed-runner library covers
+builders, not trace recording). Recommended task types: write-library.
 
 </details>
 

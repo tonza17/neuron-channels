@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-207 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **183 open** (28
-high, 134 medium, 21 low), **24 closed**.
+209 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **185 open** (28
+high, 136 medium, 21 low), **24 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -2422,6 +2422,33 @@ types: experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>🧪 <strong>Multi-trial t0072 extension to decompose SD bands into
+across-trial vs across-synapse variance</strong> (S-0072-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0072-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0072's Limitations section flags single-seed-per-direction as the main caveat: the SD bands
+in the Bed A 4x2 and Bed B 2x2 figures conflate across-synapse spatial heterogeneity with
+across-trial stochastic-release variability. Re-run the t0072 protocol at N = 20 trials per
+direction per bed (matching t0020 and t0066 cadence), keep the per-synapse g(t) + v_local(t)
+recorders, and decompose sigma2_total = sigma2_across_trials_per_synapse +
+sigma2_across_synapses_at_fixed_trial. Produce updated figures with thin SD band for
+across-trial variance at the median synapse and thicker SD band for across-synapse variance at
+the median trial. Expected: Bed A SDs dominated by across-synapse heterogeneity; Bed B SDs
+dominated by across-trial Bernoulli stochastics. Cost: ~10 min wall-clock. Distinct from
+S-0065-04 (t0065 spike-count multi-seed) and S-0055-06 (t0055 placement-seed sweep).
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Narrow-bar stimulus sweep (50, 100, 150 um) on minimal DSGC to
 break the synchronous-firing regime</strong> (S-0053-04)</summary>
 
@@ -2955,6 +2982,33 @@ functions of L_axon (more axon → more sink → fewer spikes → ND collapses t
 follows). This will both calibrate the t0069 baseline against axon geometry and tell us how
 much of the t0069 null result is sink-driven rather than insertion-site-driven. Compute: 5
 axon-length conditions × 2 directions × 5 seeds = 50 trials, ~3 min.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote t0072's cross-bed per-synapse (g, v_local) recorder +
+post-hoc current pipeline into a library</strong> (S-0072-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0072-04` |
+| **Kind** | library |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn /
+SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends
+t0048's BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along
+three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than
+only g, (2) automatic uS->nS unit conversion when the mechanism uses uS (Bed B Exp2Syn
+convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with
+E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists,
+dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and aggregate_population helpers,
+(c) uS->nS boundary helper, (d) smoke tests on both bed builder fixtures. Distinct from
+S-0047-04 (Bed A only, no v_local, no uS->nS, no I) and S-0070-02 (bed-runner library covers
+builders, not trace recording). Recommended task types: write-library.
 
 </details>
 

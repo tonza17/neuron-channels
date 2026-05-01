@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-51 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **43 open** (9
-high, 28 medium, 6 low), **8 closed**.
+52 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **44 open** (9
+high, 29 medium, 6 low), **8 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -682,6 +682,33 @@ baseline (reliable distal spikes) and drop below 1 at 1.5x and 2.0x where cable 
 decouples distal tips. If the ratio stays constant, the angle jumps are not a
 local-spike-failure signature and another mechanism (NMDA recruitment, Kv3 rectification)
 should be explored. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Quantify Bed A NMDA ND-suppression as a function of joint
+(gabaMOD, Mg2+) on the t0072 substrate</strong> (S-0072-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0072-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0072's per-synapse recordings surfaced a counter-intuitive Bed A finding: mean peak g_NMDA is
+0.30 nS at PD vs 0.19 nS at ND (~37% drop) despite identical BIPsyn release envelopes between
+directions. The mechanism is the Jahr-Stevens Mg block: stronger ND inhibition keeps dendritic
+v more hyperpolarised, deepening the voltage-dependent block and lowering realised gNMDA. Run
+a focused 2-D sweep on the Bed A substrate (t0008/t0020 builder) varying (gabaMOD, [Mg2+]_o)
+over a 5x5 grid at fixed PD/ND bar geometry, recording per-synapse g_NMDA and v_local with the
+same recorder pattern as t0072, and producing the surface (g_NMDA_ND - g_NMDA_PD) vs (gabaMOD
+ratio, [Mg2+]_o). Cross-check against a Voff_bipNMDA = 1 control (voltage-independent NMDA
+from t0048) which should flatten the surface to ~0. Distinct from S-0026-06 (V_rest
+TTX/NMDA-block sweep on t0022/t0024) and S-0048-* (DSI-vs-gNMDA at fixed Mg2+). Recommended
+task types: experiment-run.
 
 </details>
 

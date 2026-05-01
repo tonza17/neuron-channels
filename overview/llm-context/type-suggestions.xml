@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-01T15:25:40Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-01T17:50:43Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>289928</char_count>
-    <byte_count>290046</byte_count>
-    <estimated_tokens>72482</estimated_tokens>
+    <char_count>295153</char_count>
+    <byte_count>295271</byte_count>
+    <estimated_tokens>73788</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -286,9 +286,13 @@
         <id>S-0071-02</id>
         <id>S-0071-03</id>
         <id>S-0071-04</id>
+        <id>S-0072-01</id>
+        <id>S-0072-02</id>
+        <id>S-0072-03</id>
+        <id>S-0072-04</id>
       </source_ids>
       <content>
-Suggestions: 269
+Suggestions: 273
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3310,6 +3314,50 @@ Source task: t0071_t0070_synaptic_eqs_pdf
 Date added: 2026-05-01
 
 While transcribing t0070&#x27;s prose equations into LaTeX math for this v2, several Typst-vs-LaTeX subtleties (`dot.c` vs `\cdot`, `op(&quot;syn&quot;)` vs `\mathrm{syn}`, `\bigl`/`\bigr` not supported in Typst math, `frac(d V, d t)` vs `\frac{dV}{dt}`) caused multiple PDF compile failures only caught visually after `code/render_pdf.py` finished. Future tasks editing equation-heavy markdown will hit the same class of bug. Add `arf/scripts/verificators/verify_results_equations.py &lt;task_id&gt;` that scans `tasks/&lt;task_id&gt;/results/results_detailed.md` for every `$...$` and `$$...$$` block, attempts to compile each in isolation through the `typst` Python wheel using a minimal stub document, and reports per-block PASS/FAIL with line number and Typst error message. Wire it into the standard verification cascade. Recommended task types: infrastructure-setup, write-library.
+
+## Quantify Bed A NMDA ND-suppression as a function of joint (gabaMOD, Mg2+) on the t0072 substrate
+ID: S-0072-01
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+Categories: voltage-gated-channels, synaptic-integration, direction-selectivity
+Date added: 2026-05-01
+
+t0072&#x27;s per-synapse recordings surfaced a counter-intuitive Bed A finding: mean peak g_NMDA is 0.30 nS at PD vs 0.19 nS at ND (~37% drop) despite identical BIPsyn release envelopes between directions. The mechanism is the Jahr-Stevens Mg block: stronger ND inhibition keeps dendritic v more hyperpolarised, deepening the voltage-dependent block and lowering realised gNMDA. Run a focused 2-D sweep on the Bed A substrate (t0008/t0020 builder) varying (gabaMOD, [Mg2+]_o) over a 5x5 grid at fixed PD/ND bar geometry, recording per-synapse g_NMDA and v_local with the same recorder pattern as t0072, and producing the surface (g_NMDA_ND - g_NMDA_PD) vs (gabaMOD ratio, [Mg2+]_o). Cross-check against a Voff_bipNMDA = 1 control (voltage-independent NMDA from t0048) which should flatten the surface to ~0. Distinct from S-0026-06 (V_rest TTX/NMDA-block sweep on t0022/t0024) and S-0048-* (DSI-vs-gNMDA at fixed Mg2+). Recommended task types: experiment-run.
+
+## Multi-trial t0072 extension to decompose SD bands into across-trial vs across-synapse variance
+ID: S-0072-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+Categories: synaptic-integration, direction-selectivity, compartmental-modeling
+Date added: 2026-05-01
+
+t0072&#x27;s Limitations section flags single-seed-per-direction as the main caveat: the SD bands in the Bed A 4x2 and Bed B 2x2 figures conflate across-synapse spatial heterogeneity with across-trial stochastic-release variability. Re-run the t0072 protocol at N = 20 trials per direction per bed (matching t0020 and t0066 cadence), keep the per-synapse g(t) + v_local(t) recorders, and decompose sigma2_total = sigma2_across_trials_per_synapse + sigma2_across_synapses_at_fixed_trial. Produce updated figures with thin SD band for across-trial variance at the median synapse and thicker SD band for across-synapse variance at the median trial. Expected: Bed A SDs dominated by across-synapse heterogeneity; Bed B SDs dominated by across-trial Bernoulli stochastics. Cost: ~10 min wall-clock. Distinct from S-0065-04 (t0065 spike-count multi-seed) and S-0055-06 (t0055 placement-seed sweep). Recommended task types: experiment-run, data-analysis.
+
+## Spatial hot-spot analysis of Bed B GABA Bernoulli release vs bar-arrival projection
+ID: S-0072-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+Categories: synaptic-integration, direction-selectivity, dendritic-computation
+Date added: 2026-05-01
+
+t0072&#x27;s Example 9 single-synapse Bed B GABA peak (10.21 nS at synapse_idx=13, ND) is over 60x the population mean peak (0.16 nS PD; 1.25 nS ND). The Bernoulli release model means most of 177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar&#x27;s arrival window summate to large momentary conductances. Test whether these hot-spots cluster spatially: project each terminal&#x27;s centroid onto the bar-projection axis (0 deg vs 180 deg), bin into N=10 bands. For each band compute (a) Bernoulli release probability per trial (analytic from _gaba_prob_for_direction sigmoid + AR(2) envelope), (b) realised mean peak g from t0072 raw .npz, (c) band-mean to population-mean ratio. Plot peak-g-band vs projected-distance for PD and ND. Expected: ND smooth gradient (high p engages all bands); PD sharp leading-edge peak (low p only engages early-arrival terminals). Pure post-hoc on existing data plus t0024 morphology; ~1 hour. Recommended task types: data-analysis.
+
+## Promote t0072&#x27;s cross-bed per-synapse (g, v_local) recorder + post-hoc current pipeline into a library
+ID: S-0072-04
+Status: active
+Priority: medium
+Kind: library
+Source task: t0072_synaptic_traces_pd_nd
+Categories: compartmental-modeling, synaptic-integration
+Date added: 2026-05-01
+
+t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn / SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends t0048&#x27;s BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than only g, (2) automatic uS-&gt;nS unit conversion when the mechanism uses uS (Bed B Exp2Syn convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists, dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and aggregate_population helpers, (c) uS-&gt;nS boundary helper, (d) smoke tests on both bed builder fixtures. Distinct from S-0047-04 (Bed A only, no v_local, no uS-&gt;nS, no I) and S-0070-02 (bed-runner library covers builders, not trace recording). Recommended task types: write-library.
       </content>
     </section>
   </sections>

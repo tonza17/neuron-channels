@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(47)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(48)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2287,7 +2287,28 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (36 open, 11 closed)
+## Suggestions (37 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Spatial hot-spot analysis of Bed B GABA Bernoulli release vs
+bar-arrival projection</strong> (S-0072-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072's Example 9 single-synapse Bed B GABA peak (10.21 nS at synapse_idx=13, ND) is over 60x
+the population mean peak (0.16 nS PD; 1.25 nS ND). The Bernoulli release model means most of
+177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar's
+arrival window summate to large momentary conductances. Test whether these hot-spots cluster
+spatially: project each terminal's centroid onto the bar-projection axis (0 deg vs 180 deg),
+bin into N=10 bands. For each band compute (a) Bernoulli release probability per trial
+(analytic from _gaba_prob_for_direction sigmoid + AR(2) envelope), (b) realised mean peak g
+from t0072 raw .npz, (c) band-mean to population-mean ratio. Plot peak-g-band vs
+projected-distance for PD and ND. Expected: ND smooth gradient (high p engages all bands); PD
+sharp leading-edge peak (low p only engages early-arrival terminals). Pure post-hoc on
+existing data plus t0024 morphology; ~1 hour. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059

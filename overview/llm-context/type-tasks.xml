@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-01T15:25:40Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-01T17:50:43Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>640646</char_count>
-    <byte_count>643907</byte_count>
-    <estimated_tokens>160161</estimated_tokens>
+    <char_count>653156</char_count>
+    <byte_count>656505</byte_count>
+    <estimated_tokens>163289</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -88,9 +88,10 @@
         <id>t0069_t0067_ais_localised_channel_sweep</id>
         <id>t0070_writeup_two_model_beds</id>
         <id>t0071_t0070_synaptic_eqs_pdf</id>
+        <id>t0072_synaptic_traces_pd_nd</id>
       </source_ids>
       <content>
-Total tasks: 71
+Total tasks: 72
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -11601,6 +11602,201 @@ changed and the five new equation blocks are added.
 * `code/render_pdf.py` — invoked under `run_with_logs.py`; returned 0 (PDF size above the 50 KB
   size-floor check); produced `results/results_detailed.pdf`.
 * The four schematic PNGs match [t0070]&#x27;s files byte-for-byte (copied via `shutil.copyfile`).
+
+## Plot synaptic conductances and currents for PD and ND on both model beds
+ID: t0072_synaptic_traces_pd_nd
+Status: completed
+Effective date: 2026-05-01
+Short description: Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
+Dependencies: t0008_port_modeldb_189347, t0020_port_modeldb_189347_gabamod, t0024_port_de_rosenroll_2026_dsgc, t0065_t0020_epsp_ipsp_vm_protocol, t0066_t0024_epsp_ipsp_vm_protocol, t0070_writeup_two_model_beds, t0071_t0070_synaptic_eqs_pdf
+Task types: data-analysis
+Start time: 2026-05-01T16:46:03Z
+End time: 2026-05-01T17:50:00Z
+
+#### Motivation
+
+The t0070 / t0071 writeups document every synaptic-current equation analytically (canonical
+`I_syn(t,V) = g_syn(t,V) · (V − E_syn)` form per channel, with parameters and direction-encoding
+mechanism). What they do NOT show is the actual time-domain shape of these conductances and currents
+during a real trial — i.e., what does `g_AMPA(t)` actually look like across the bar sweep, and how
+does the PD vs ND swap reshape `g_GABA(t)`? Visual traces make the direction-encoding mechanism
+viscerally obvious in a way the equations alone cannot.
+
+This task records every synaptic state variable (`gAMPA`, `gNMDA`, `g` for SACinhib/SACexc, `g` for
+Exp2Syn) during one PD and one ND trial on each model bed, then plots the population mean ± SD per
+synapse type. Result: a presentation-ready figure pair (one per bed) showing exactly how each
+synaptic conductance (and the resulting current) evolves over time, and how PD vs ND differ.
+
+#### Scope
+
+* **Two model beds**:
+  * **Bed A** — t0008 deposited Poleg-Polsky, with the t0020 gabaMOD-swap protocol applied (PD:
+    `gabaMOD = 0.33`; ND: `gabaMOD = 0.99`). 282 ON dendrites, each carrying one BIPsyn (AMPA +
+    NMDA), one SACinhibsyn (GABA), and one SACexcsyn (ACh). 4 synapse types to plot.
+  * **Bed B** — t0024 de Rosenroll port. Uses moving-bar angle for direction encoding, with
+    per-event Bernoulli release sigmoid (PD: bar at preferred angle; ND: bar at null angle, i.e.
+    rotated 180°). Active synapses on this bed are Exp2Syn ACh and Exp2Syn GABA. 2 synapse types to
+    plot.
+* **Two directions per bed**: PD and ND, single trial each, fixed seed for reproducibility.
+* **Trial duration**: full bar-sweep duration as defined by each bed&#x27;s existing driver (~1000 ms for
+  Bed A; whatever t0066&#x27;s protocol uses for Bed B).
+* **Quantities recorded per synapse**:
+  * Conductance state: `g(t)` in nS (or µS for Bed B; converted to nS for plotting consistency).
+  * Local membrane voltage at the synapse insertion point: `v_local(t)` in mV.
+  * Current: `I(t) = g(t) · (v_local(t) − E_rev)` computed post-hoc, in pA.
+* **Aggregation**: across all synapse instances of a given type, compute mean and SD at each
+  recorded time point. Plot mean as a solid line, ±1 SD as a shaded band.
+
+#### Approach
+
+1. For each bed, write a driver script that:
+   * Builds the cell using the existing dependency-task code (no modification of t0008 / t0020 /
+     t0024 source files).
+   * Sets the direction (PD or ND) via the canonical mechanism for that bed.
+   * Iterates over every synapse instance of every type, attaches NEURON Vector recorders to the
+     relevant `_ref_g` (or `_ref_gAMPA` / `_ref_gNMDA` for Bed A&#x27;s BIPsyn) plus the local membrane
+     voltage `_ref_v` at the synapse&#x27;s section.
+   * Runs `h.continuerun(tstop)`.
+   * Saves raw traces to `data/` as compressed numpy arrays (one .npz per
+     `bed × direction × synapse_type`).
+2. Compute population mean ± SD across synapses for each synapse type, in each direction.
+3. Compute currents from g(t) and v_local(t) post-hoc, then average across synapses.
+4. Generate two figures (one per bed):
+   * Bed A figure: 4 rows (AMPA, NMDA, GABA, ACh), 2 columns (g(t), I(t)), PD and ND overlaid in
+     each panel as solid lines with shaded ±SD bands.
+   * Bed B figure: 2 rows (ACh, GABA), 2 columns (g(t), I(t)), same overlay format.
+5. Optionally add a third &quot;comparison&quot; figure showing the dendritic spatial pattern of per-synapse
+   mean conductance (e.g., heatmap over the dendritic tree) — only if it doesn&#x27;t significantly
+   increase task time.
+6. Author a `results/results_detailed.md` writeup describing methodology and the visible PD vs ND
+   structure (e.g., &quot;Bed A: AMPA/NMDA/ACh traces are identical between PD and ND because excitation
+   is direction-symmetric on this bed; only g_GABA differs, scaled by gabaMOD&quot;). Render to
+   `results/results_detailed.pdf` via Typst (consistent with t0071).
+
+#### Outputs
+
+* `tasks/t0072_synaptic_traces_pd_nd/code/{paths,constants,record_synapses,plot_traces, render_pdf}.py`
+  — driver, plot generator, PDF compiler.
+* `tasks/t0072_synaptic_traces_pd_nd/data/bed_a_{pd,nd}_{ampa,nmda,gaba,ach}.npz` and
+  `bed_b_{pd,nd}_{ach,gaba}.npz` — raw per-synapse traces (compressed numpy).
+* `tasks/t0072_synaptic_traces_pd_nd/results/images/bed_a_synaptic_traces.png` — Bed A figure (4
+  rows × 2 cols).
+* `tasks/t0072_synaptic_traces_pd_nd/results/images/bed_b_synaptic_traces.png` — Bed B figure (2
+  rows × 2 cols).
+* `tasks/t0072_synaptic_traces_pd_nd/results/results_summary.md` — abstract.
+* `tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md` + `.typ` + `.pdf` — full writeup.
+* `tasks/t0072_synaptic_traces_pd_nd/results/{metrics,costs,remote_machines_used}.json` +
+  `suggestions.json` — standard bookkeeping.
+
+#### Compute and budget
+
+* Local Windows workstation. Each bed simulation is ~1-3 seconds for one trial; with recorders on
+  every synapse (282 × 3 types for Bed A, plus voltage on each section), expect 10-30 seconds per
+  trial. Total: &lt; 5 minutes wall-clock.
+* External costs: $0.
+* Disk: raw .npz traces ~10-50 MB total; PDF ~1 MB.
+* Time estimate: 2-3 hours (most of it is the driver code + plotting).
+
+#### Dependencies
+
+Six tasks: t0008 (Bed A cell builder), t0020 (Bed A gabaMOD protocol), t0024 (Bed B cell builder),
+t0065 / t0066 (EPSP/IPSP/FULL protocol drivers — for tstop and direction conventions), t0070 (the
+writeup these traces complement), t0071 (the Typst PDF pipeline reused here).
+
+#### Risks and fallbacks
+
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | Recording vectors on 282 synapses × 3 types × 4 sections each may consume &gt;2 GB RAM. | OOM error or slow execution. | Reduce recording dt from default `h.dt` (~25 µs) to 1 ms; subsample to 1 sample per ms. |
+| 2 | Bed B&#x27;s Exp2Syn `g` accessor returns the post-factor conductance directly (not the raw A/B states). | g(t) shape doesn&#x27;t match the canonical bi-exponential. | Document: Bed B&#x27;s `g` is the post-factor conductance, ready for the I = g·(v-e) computation. No bug. |
+| 3 | Bed A&#x27;s BIPsyn release model is stochastic; per-synapse traces are noisy. | Individual traces look like sparse spikes. | Population mean ± SD across 282 synapses smooths this out (this is the whole point of plotting the population, not one synapse). |
+| 4 | Bed B&#x27;s PD/ND encoding requires correctly-set bar angle in the t0024 driver; misconfiguring it yields wrong asymmetry. | Bed B GABA traces look identical between PD and ND. | Mirror t0066&#x27;s PD/ND configuration exactly; cite source line. |
+| 5 | Typst PDF compilation fails on the new figures. | Compile error. | Fallback to embedding PNGs as raster only (no MathML) or use t0071&#x27;s working render_pdf.py verbatim. |
+
+#### Verification criteria
+
+* All 6 (Bed A: 4 + Bed B: 2) synapse types have raw .npz traces in `data/`.
+* Both PNG figures exist and are non-trivial (&gt;50 KB each, &gt; 5 panels each).
+* PD and ND lines are visibly different on at least the GABA channel (Bed A) and the GABA channel
+  (Bed B).
+* `results_detailed.md`, `.typ`, and `.pdf` all exist.
+* All standard verificators pass.
+
+#### Task Requirement Checklist
+
+* **REQ-1**: Bed A — record `gAMPA(t)`, `gNMDA(t)` from every BIPsyn instance, in PD and ND.
+* **REQ-2**: Bed A — record `g(t)` from every SACinhibsyn (GABA) and SACexcsyn (ACh), PD and ND.
+* **REQ-3**: Bed B — record `g(t)` from every Exp2Syn ACh and Exp2Syn GABA instance, PD and ND.
+* **REQ-4**: Compute `I(t) = g(t) · (v_local(t) − E_rev)` post-hoc for every synapse.
+* **REQ-5**: Aggregate to population mean ± SD per synapse type per direction.
+* **REQ-6**: Bed A figure: 4 rows × 2 cols (g and I per synapse type), PD and ND overlaid.
+* **REQ-7**: Bed B figure: 2 rows × 2 cols, PD and ND overlaid.
+* **REQ-8**: Both figures embedded in `results_detailed.md` with descriptive captions.
+* **REQ-9**: Typst-typeset PDF produced (consistent with t0071 pipeline).
+* **REQ-10**: Discussion in `results_detailed.md` highlighting which traces differ between PD and ND
+  for each bed, and what that reveals about the direction-encoding mechanism.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0072_synaptic_traces_pd_nd&quot;
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Synaptic Conductance and Current Traces (PD vs ND)
+
+#### Summary
+
+Recorded `g(t)` and `v_local(t)` from every synapse on each model bed (Bed A: 282 BIPsyn +
+SACinhibsyn + SACexcsyn = 4 synapse types; Bed B: 177 Exp2Syn ACh + GABA = 2 types) for one PD and
+one ND trial each at 1 ms resolution, computed `I = g · (v_local − E_rev)` post-hoc, and plotted
+population mean ± 1 SD per synapse type with PD and ND overlaid. Two multi-panel figures (Bed A:
+4×2; Bed B: 2×2) plus a 1.0 MB Typst-typeset PDF embedding both figures and the full methodology.
+
+#### Metrics
+
+* **Bed A GABA peak conductance**: PD = **0.38 nS** vs ND = **0.70 nS** (1.87× ratio, matches the
+  `gabaMOD = 0.99 / 0.33` envelope ratio diluted by post-synaptic v feedback).
+* **Bed A NMDA peak conductance**: PD = **0.30 nS** vs ND = **0.19 nS** — counter-intuitive
+  ND-suppression because stronger ND inhibition keeps dendritic v hyperpolarised, deepening the
+  voltage-dependent Mg block on `g_NMDA`.
+* **Bed A AMPA + ACh**: essentially identical between PD and ND (excitatory drive and cholinergic
+  SAC drive are direction-symmetric on this bed).
+* **Bed B GABA peak conductance**: PD = **0.16 nS** vs ND = **1.25 nS** (7.6× ratio driven by the
+  per-event Bernoulli sigmoid going from p = 0.084 at 0° to p = 0.780 at 180°).
+* **Bed B ACh peak conductance**: PD = **0.103 nS** vs ND = **0.107 nS** (well within the SD band;
+  `BASE_ACH_PROB = 0.5` is direction-independent).
+* **Recorded data volume**: 12 raw `.npz` per-synapse trace files in `data/` (~36 MB); shape (282,
+  1000\) for Bed A and (177, 1000) for Bed B. Aggregated 49-key `.npz` for plotting.
+
+#### Verification
+
+* `verify_research_code` — PASSED (0 errors, 0 warnings).
+* `verify_plan` — PASSED (0 errors, 0 warnings).
+* `verify_task_results` — PASSED (after Examples section was rewritten with 10 fenced-code
+  Input/Output blocks per the task_results spec).
+* `verify_task_metrics` — PASSED (`metrics.json = {}`; no registered metric applies).
+* `verify_suggestions` — PASSED.
+* `verify_task_dependencies` — PASSED (all 7 deps completed).
+* `ruff check`, `ruff format`, `mypy -p tasks.t0072_synaptic_traces_pd_nd.code` — all PASSED.
+* No upstream task source files modified; both NEURON cells built via registered library entry
+  points (`build_dsgc` from t0008&#x27;s `modeldb_189347_dsgc`, `build_dsgc_cell` from t0024&#x27;s
+  `de_rosenroll_2026_dsgc`).
+
+#### Key takeaways
+
+The two figures (`results/images/bed_a_synaptic_traces.png` and
+`results/images/bed_b_synaptic_traces.png`) make the direction-encoding mechanism viscerally
+obvious. On Bed A, only the GABA channel changes shape between PD and ND — confirming the
+gabaMOD-scalar mechanism. On Bed B, both ACh and GABA can change in principle (per-event sigmoid),
+but in practice only GABA shows a strong PD/ND asymmetry because `BASE_ACH_PROB` is fixed at 0.5.
+The Bed A NMDA&#x27;s mild ND-suppression (Mg block deepens under stronger inhibition) is a real
+biophysical consequence of the v-dependence of the NMDA channel — surfaced here for the first time
+by per-synapse recording.
+
+For full methodology, per-figure analysis, ten single-synapse examples, and the REQ-1..REQ-10
+coverage table, see `results_detailed.md` and the typeset PDF at `results_detailed.pdf`.
       </content>
     </section>
   </sections>

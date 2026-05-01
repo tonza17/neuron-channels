@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-47 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **36 open** (3
-high, 29 medium, 4 low), **11 closed**.
+48 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **37 open** (3
+high, 30 medium, 4 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -734,6 +734,33 @@ PDF-verified content, and cross-check the numerical claims in the synthesis (NMD
 threshold -50 mV, NMDA-spike duration 20-40 ms, 2-3x supralinear amplification, Ca2+ plateau
 duration 30-50 ms, BAC burst 100-200 Hz, BTSP eligibility window of seconds) against the
 actual papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Spatial hot-spot analysis of Bed B GABA Bernoulli release vs
+bar-arrival projection</strong> (S-0072-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0072-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0072's Example 9 single-synapse Bed B GABA peak (10.21 nS at synapse_idx=13, ND) is over 60x
+the population mean peak (0.16 nS PD; 1.25 nS ND). The Bernoulli release model means most of
+177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar's
+arrival window summate to large momentary conductances. Test whether these hot-spots cluster
+spatially: project each terminal's centroid onto the bar-projection axis (0 deg vs 180 deg),
+bin into N=10 bands. For each band compute (a) Bernoulli release probability per trial
+(analytic from _gaba_prob_for_direction sigmoid + AR(2) envelope), (b) realised mean peak g
+from t0072 raw .npz, (c) band-mean to population-mean ratio. Plot peak-g-band vs
+projected-distance for PD and ND. Expected: ND smooth gradient (high p engages all bands); PD
+sharp leading-edge peak (low p only engages early-arrival terminals). Pure post-hoc on
+existing data plus t0024 morphology; ~1 hour. Recommended task types: data-analysis.
 
 </details>
 

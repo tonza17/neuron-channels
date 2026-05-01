@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T15:25:40Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-01T17:50:43Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>332647</char_count>
-    <byte_count>333003</byte_count>
-    <estimated_tokens>83161</estimated_tokens>
+    <char_count>337602</char_count>
+    <byte_count>337964</byte_count>
+    <estimated_tokens>84400</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -177,9 +177,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0069_t0067_ais_localised_channel_sweep</id>
         <id>t0070_writeup_two_model_beds</id>
         <id>t0071_t0070_synaptic_eqs_pdf</id>
+        <id>t0072_synaptic_traces_pd_nd</id>
       </source_ids>
       <content>
-Completed tasks: 65
+Completed tasks: 66
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -570,6 +571,12 @@ ID: t0071_t0070_synaptic_eqs_pdf
 Completed: 2026-05-01
 Short description: Supersede t0070&#x27;s writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0071_t0070_synaptic_eqs_pdf&quot; date: &quot;2026-05-01&quot; --- Results Summary: Two Standard DSGC Model Beds (v2 — synaptic-current equations + typeset PDF) Summary This task delivers the **v2 writeup** of the project&#x27;s two standard DSGC model beds and **supersedes** [t0070]&#x27;s `results/results_detailed.md`. The v1 writeup was thorough but had two gaps: (1) the canonical synaptic-current ohmic blocks (one per mechanism, of the form $I_\mathrm{syn} = g_\mathrm{syn}(t,V)\,(V - E_\mathrm{syn})$) for the AMPA, NMDA, GABA, and ACh point-process mechanisms in Bed A and the Exp2Syn ACh + GABA mechanisms in Bed B were never spelled out (only the parameters appeared, in prose and...
+
+## Plot synaptic conductances and currents for PD and ND on both model beds
+ID: t0072_synaptic_traces_pd_nd
+Completed: 2026-05-01
+Short description: Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0072_synaptic_traces_pd_nd&quot; date_completed: &quot;2026-05-01&quot; status: &quot;complete&quot; --- Synaptic Conductance and Current Traces (PD vs ND) Summary Recorded `g(t)` and `v_local(t)` from every synapse on each model bed (Bed A: 282 BIPsyn + SACinhibsyn + SACexcsyn = 4 synapse types; Bed B: 177 Exp2Syn ACh + GABA = 2 types) for one PD and one ND trial each at 1 ms resolution, computed `I = g · (v_local − E_rev)` post-hoc, and plotted population mean ± 1 SD per synapse type with PD and ND overlaid. Two multi-panel figures (Bed A: 4×2; Bed B: 2×2) plus a 1.0 MB Typst-typeset PDF embedding both figures and the full methodology. Metrics * **Bed A GABA peak conductance**: PD...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1238,6 +1245,10 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0071-01</id>
         <id>S-0071-02</id>
         <id>S-0071-03</id>
+        <id>S-0072-01</id>
+        <id>S-0072-02</id>
+        <id>S-0072-03</id>
+        <id>S-0072-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1276,7 +1287,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0071-04</id>
       </source_ids>
       <content>
-Open suggestions: 256
+Open suggestions: 260
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -2817,6 +2828,34 @@ Priority: medium
 Kind: experiment
 Source task: t0071_t0070_synaptic_eqs_pdf
 Authoring all equations side-by-side in one document made four numeric divergences between Bed A and Bed B unambiguous (rows 7, 9, 16, 17 of the comparison table in `results_detailed.md:L778-L799`): `celsius` 32 vs 36.9 deg C (HHst gating tau differs ~2x via Q10), `v_init` -65 vs -60 mV (shifts Mg-block operating point and Na inactivation), NMDA on/off (S-0070-04 wires it on but does NOT pick a target value), CaL+CaT zeroed/default (S-0070-03 turns Bed A&#x27;s Ca on but does NOT pick a target). Run a 4-condition factorial sweep on Bed A&#x27;s t0065 protocol toggling `celsius in {32, 36.9}` x `v_init in {-65, -60}` to quantify how much of the observed Bed A vs Bed B DSI / peak-Hz / EPSP-envelope...
+
+## Quantify Bed A NMDA ND-suppression as a function of joint (gabaMOD, Mg2+) on the t0072 substrate
+ID: S-0072-01
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+t0072&#x27;s per-synapse recordings surfaced a counter-intuitive Bed A finding: mean peak g_NMDA is 0.30 nS at PD vs 0.19 nS at ND (~37% drop) despite identical BIPsyn release envelopes between directions. The mechanism is the Jahr-Stevens Mg block: stronger ND inhibition keeps dendritic v more hyperpolarised, deepening the voltage-dependent block and lowering realised gNMDA. Run a focused 2-D sweep on the Bed A substrate (t0008/t0020 builder) varying (gabaMOD, [Mg2+]_o) over a 5x5 grid at fixed PD/ND bar geometry, recording per-synapse g_NMDA and v_local with the same recorder pattern as t0072, and producing the surface (g_NMDA_ND - g_NMDA_PD) vs (gabaMOD ratio, [Mg2+]_o). Cross-check against a...
+
+## Multi-trial t0072 extension to decompose SD bands into across-trial vs across-synapse variance
+ID: S-0072-02
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+t0072&#x27;s Limitations section flags single-seed-per-direction as the main caveat: the SD bands in the Bed A 4x2 and Bed B 2x2 figures conflate across-synapse spatial heterogeneity with across-trial stochastic-release variability. Re-run the t0072 protocol at N = 20 trials per direction per bed (matching t0020 and t0066 cadence), keep the per-synapse g(t) + v_local(t) recorders, and decompose sigma2_total = sigma2_across_trials_per_synapse + sigma2_across_synapses_at_fixed_trial. Produce updated figures with thin SD band for across-trial variance at the median synapse and thicker SD band for across-synapse variance at the median trial. Expected: Bed A SDs dominated by across-synapse...
+
+## Spatial hot-spot analysis of Bed B GABA Bernoulli release vs bar-arrival projection
+ID: S-0072-03
+Priority: medium
+Kind: experiment
+Source task: t0072_synaptic_traces_pd_nd
+t0072&#x27;s Example 9 single-synapse Bed B GABA peak (10.21 nS at synapse_idx=13, ND) is over 60x the population mean peak (0.16 nS PD; 1.25 nS ND). The Bernoulli release model means most of 177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar&#x27;s arrival window summate to large momentary conductances. Test whether these hot-spots cluster spatially: project each terminal&#x27;s centroid onto the bar-projection axis (0 deg vs 180 deg), bin into N=10 bands. For each band compute (a) Bernoulli release probability per trial (analytic from _gaba_prob_for_direction sigmoid + AR(2) envelope), (b) realised mean peak g from t0072 raw .npz, (c) band-mean to population-mean...
+
+## Promote t0072&#x27;s cross-bed per-synapse (g, v_local) recorder + post-hoc current pipeline into a library
+ID: S-0072-04
+Priority: medium
+Kind: library
+Source task: t0072_synaptic_traces_pd_nd
+t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn / SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends t0048&#x27;s BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than only g, (2) automatic uS-&gt;nS unit conversion when the mechanism uses uS (Bed B Exp2Syn convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists, dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

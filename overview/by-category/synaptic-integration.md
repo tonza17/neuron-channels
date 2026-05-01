@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(89)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(93)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2164,7 +2164,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (78 open, 11 closed)
+## Suggestions (82 open, 11 closed)
 
 <details>
 <summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6
@@ -2222,6 +2222,90 @@ multiplicative-gain mechanism for DS. Extend `_setup_synapses` to place one Exp2
 terminal dendrite paired with the existing Exp2Syn ACh, wire it into the Poisson event queue,
 and re-run the t0066 EPSP/IPSP/FULL protocol with NMDA on vs off. Report DSI, peak Hz, and
 EPSP/IPSP envelope changes. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Quantify Bed A NMDA ND-suppression as a function of joint
+(gabaMOD, Mg2+) on the t0072 substrate</strong> (S-0072-01)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072's per-synapse recordings surfaced a counter-intuitive Bed A finding: mean peak g_NMDA is
+0.30 nS at PD vs 0.19 nS at ND (~37% drop) despite identical BIPsyn release envelopes between
+directions. The mechanism is the Jahr-Stevens Mg block: stronger ND inhibition keeps dendritic
+v more hyperpolarised, deepening the voltage-dependent block and lowering realised gNMDA. Run
+a focused 2-D sweep on the Bed A substrate (t0008/t0020 builder) varying (gabaMOD, [Mg2+]_o)
+over a 5x5 grid at fixed PD/ND bar geometry, recording per-synapse g_NMDA and v_local with the
+same recorder pattern as t0072, and producing the surface (g_NMDA_ND - g_NMDA_PD) vs (gabaMOD
+ratio, [Mg2+]_o). Cross-check against a Voff_bipNMDA = 1 control (voltage-independent NMDA
+from t0048) which should flatten the surface to ~0. Distinct from S-0026-06 (V_rest
+TTX/NMDA-block sweep on t0022/t0024) and S-0048-* (DSI-vs-gNMDA at fixed Mg2+). Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-trial t0072 extension to decompose SD bands into
+across-trial vs across-synapse variance</strong> (S-0072-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072's Limitations section flags single-seed-per-direction as the main caveat: the SD bands
+in the Bed A 4x2 and Bed B 2x2 figures conflate across-synapse spatial heterogeneity with
+across-trial stochastic-release variability. Re-run the t0072 protocol at N = 20 trials per
+direction per bed (matching t0020 and t0066 cadence), keep the per-synapse g(t) + v_local(t)
+recorders, and decompose sigma2_total = sigma2_across_trials_per_synapse +
+sigma2_across_synapses_at_fixed_trial. Produce updated figures with thin SD band for
+across-trial variance at the median synapse and thicker SD band for across-synapse variance at
+the median trial. Expected: Bed A SDs dominated by across-synapse heterogeneity; Bed B SDs
+dominated by across-trial Bernoulli stochastics. Cost: ~10 min wall-clock. Distinct from
+S-0065-04 (t0065 spike-count multi-seed) and S-0055-06 (t0055 placement-seed sweep).
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Spatial hot-spot analysis of Bed B GABA Bernoulli release vs
+bar-arrival projection</strong> (S-0072-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072's Example 9 single-synapse Bed B GABA peak (10.21 nS at synapse_idx=13, ND) is over 60x
+the population mean peak (0.16 nS PD; 1.25 nS ND). The Bernoulli release model means most of
+177 GABA terminals fire 0-1 events per trial; a handful of high-rate terminals near the bar's
+arrival window summate to large momentary conductances. Test whether these hot-spots cluster
+spatially: project each terminal's centroid onto the bar-projection axis (0 deg vs 180 deg),
+bin into N=10 bands. For each band compute (a) Bernoulli release probability per trial
+(analytic from _gaba_prob_for_direction sigmoid + AR(2) envelope), (b) realised mean peak g
+from t0072 raw .npz, (c) band-mean to population-mean ratio. Plot peak-g-band vs
+projected-distance for PD and ND. Expected: ND smooth gradient (high p engages all bands); PD
+sharp leading-edge peak (low p only engages early-arrival terminals). Pure post-hoc on
+existing data plus t0024 morphology; ~1 hour. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote t0072's cross-bed per-synapse (g, v_local) recorder +
+post-hoc current pipeline into a library</strong> (S-0072-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
+[t0072_synaptic_traces_pd_nd](../../tasks/t0072_synaptic_traces_pd_nd/)
+
+t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn /
+SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends
+t0048's BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along
+three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than
+only g, (2) automatic uS->nS unit conversion when the mechanism uses uS (Bed B Exp2Syn
+convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with
+E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists,
+dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and aggregate_population helpers,
+(c) uS->nS boundary helper, (d) smoke tests on both bed builder fixtures. Distinct from
+S-0047-04 (Bed A only, no v_local, no uS->nS, no I) and S-0070-02 (bed-runner library covers
+builders, not trace recording). Recommended task types: write-library.
 
 </details>
 
