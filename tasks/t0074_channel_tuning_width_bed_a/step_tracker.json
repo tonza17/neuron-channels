@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0067 channel-addition layer, t0008 Bed A init_active and HHst configuration, t0024 Bed B `cad` calcium-pool mechanism, t0011 visualisation library, and t0012 tuning-curve loss library.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-01T23:38:06Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
