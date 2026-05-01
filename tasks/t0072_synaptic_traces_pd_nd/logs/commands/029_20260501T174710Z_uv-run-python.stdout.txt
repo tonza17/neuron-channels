@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0072_synaptic_traces_pd_nd\tasks\t0072_synaptic_traces_pd_nd\logs\sessions\capture_report.json.
