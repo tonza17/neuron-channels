@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0068_t0067_nav16_kv3_coexpression_rescue\tasks\t0068_t0067_nav16_kv3_coexpression_rescue\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0068_t0067_nav16_kv3_coexpression_rescue\tasks\t0068_t0067_nav16_kv3_coexpression_rescue\logs\sessions\capture_report.json.
