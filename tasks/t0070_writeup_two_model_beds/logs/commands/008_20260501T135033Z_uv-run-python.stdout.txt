@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E003 error: metrics.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\metrics.json[0m
+[31m  TR-E004 error: costs.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\costs.json[0m
+[31m  TR-E005 error: remote_machines_used.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\remote_machines_used.json[0m
+
+[31m[1mFAILED[0m — 3 error(s), 0 warning(s)

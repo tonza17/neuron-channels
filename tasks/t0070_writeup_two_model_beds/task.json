@@ -5,7 +5,7 @@
   "name": "Writeup of two standard DSGC model beds in HH-equation research-paper format",
   "short_description": "Write a research-paper / presentation-ready document describing the project's two standard DSGC model beds (t0008 deposited Poleg-Polsky 2016 and t0024 de Rosenroll 2026 port). Start each bed with the canonical Hodgkin-Huxley membrane equation, then enumerate every conductance and define excitation and inhibition for PD and ND directions.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0020_port_modeldb_189347_gabamod",
@@ -14,7 +14,7 @@
     "t0066_t0024_epsp_ipsp_vm_protocol"
   ],
   "start_time": "2026-05-01T13:07:47Z",
-  "end_time": null,
+  "end_time": "2026-05-01T14:05:00Z",
   "expected_assets": {},
   "task_types": [
     "comparative-analysis"

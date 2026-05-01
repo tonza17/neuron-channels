@@ -1,0 +1,2 @@
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\images\bed_a_synaptic_diagram.png (150030 bytes)
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\results\images\bed_b_synaptic_diagram.png (159834 bytes)

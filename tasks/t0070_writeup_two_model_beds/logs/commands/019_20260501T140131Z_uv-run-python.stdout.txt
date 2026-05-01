@@ -1,0 +1,19 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0070_writeup_two_model_beds\tasks\t0070_writeup_two_model_beds\logs
+
+[31m[1mERRORS:[0m
+[31m  LG-E008 error: Step 10 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 11 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 12 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 13 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 14 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 15 has status 'skipped' but no step log was found[0m
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260501T131130Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 008_20260501T135033Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260501T135052Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[31m[1mFAILED[0m — 6 error(s), 5 warning(s)
