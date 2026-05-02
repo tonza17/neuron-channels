@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0076_bedb_dsi_firing_rate_mobo",
+  "command": "vastai label instance 36033536 neuron-channels/t0076_bedb_dsi_firing_rate_mobo",
+  "exit_code": 0,
+  "duration_seconds": 1.841,
+  "started_at": "2026-05-02T21:20:45Z",
+  "completed_at": "2026-05-02T21:20:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0076_bedb_dsi_firing_rate_mobo",
+  "stdout_file": "016_20260502T212045Z_vastai-label-instance.stdout.txt",
+  "stderr_file": "016_20260502T212045Z_vastai-label-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
