@@ -15,11 +15,14 @@ from __future__ import annotations
 from typing import Any
 
 from tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell import DSGCCell
+from tasks.t0076_bedb_dsi_firing_rate_mobo.code import bootstrap as _bootstrap  # noqa: F401
 from tasks.t0076_bedb_dsi_firing_rate_mobo.code.constants import (
     CHANNEL_SUFFIXES,
     ParameterVector,
 )
-from tasks.t0076_bedb_dsi_firing_rate_mobo.code.paths import resolve_t76_mod_library
+from tasks.t0076_bedb_dsi_firing_rate_mobo.code.paths import (
+    resolve_t76_mod_library,
+)
 
 _T76_DLL_LOADED: dict[int, bool] = {}
 

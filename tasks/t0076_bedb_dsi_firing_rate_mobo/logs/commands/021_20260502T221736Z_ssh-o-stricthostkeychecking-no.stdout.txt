@@ -1,0 +1,8 @@
+From https://github.com/tonza17/neuron-channels
+ * [new branch]        task/t0076_bedb_dsi_firing_rate_mobo -> origin/task/t0076_bedb_dsi_firing_rate_mobo
+Switched to a new branch 'task/t0076_bedb_dsi_firing_rate_mobo'
+branch 'task/t0076_bedb_dsi_firing_rate_mobo' set up to track 'origin/task/t0076_bedb_dsi_firing_rate_mobo'.
+From https://github.com/tonza17/neuron-channels
+ * branch              task/t0076_bedb_dsi_firing_rate_mobo -> FETCH_HEAD
+Already up to date.
+86c6ba15 t0076_bedb_dsi_firing_rate_mobo [implementation]: code + 12 t76 MODs

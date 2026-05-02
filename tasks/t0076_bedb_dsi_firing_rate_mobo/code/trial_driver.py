@@ -26,6 +26,7 @@ from tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell import (
     DSGCCell,
     build_dsgc_cell,
 )
+from tasks.t0076_bedb_dsi_firing_rate_mobo.code import bootstrap as _bootstrap  # noqa: F401
 from tasks.t0076_bedb_dsi_firing_rate_mobo.code.apply_params import (
     apply_parameter_vector,
 )
