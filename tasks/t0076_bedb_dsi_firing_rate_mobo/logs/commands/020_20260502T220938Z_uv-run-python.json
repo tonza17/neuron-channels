@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0076_bedb_dsi_firing_rate_mobo",
+  "command": "uv run python -u -m tasks.t0076_bedb_dsi_firing_rate_mobo.code.mobo_loop --n-iterations 2 --n-sobol 3 --n-seeds 1 --n-directions 2 --workers 1 --checkpoint-every 1",
+  "exit_code": 0,
+  "duration_seconds": 317.198,
+  "started_at": "2026-05-02T22:09:38Z",
+  "completed_at": "2026-05-02T22:14:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0076_bedb_dsi_firing_rate_mobo",
+  "stdout_file": "020_20260502T220938Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260502T220938Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 22,
+  "truncated": false
+}

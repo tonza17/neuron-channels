@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0076_bedb_dsi_firing_rate_mobo",
+  "command": "cmd /c tasks\\t0076_bedb_dsi_firing_rate_mobo\\code\\run_nrnivmodl.cmd",
+  "exit_code": 0,
+  "duration_seconds": 17.147,
+  "started_at": "2026-05-02T22:03:44Z",
+  "completed_at": "2026-05-02T22:04:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0076_bedb_dsi_firing_rate_mobo",
+  "stdout_file": "018_20260502T220344Z_cmd-c-tasks-t0076-bedb-dsi-firing-rate-m.stdout.txt",
+  "stderr_file": "018_20260502T220344Z_cmd-c-tasks-t0076-bedb-dsi-firing-rate-m.stderr.txt",
+  "stdout_lines": 30,
+  "stderr_lines": 24,
+  "truncated": false
+}

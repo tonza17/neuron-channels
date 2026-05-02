@@ -1,0 +1,9 @@
+[mobo_loop] N_PARAMS=25  bounds shape=(2, 25)
+[mobo_loop] n_sobol=3  n_iterations=2  n_seeds=1  n_dirs=2  workers=1
+[sobol 1/3]  DSI=+0.000  PD=  1.00 Hz  n_err=0  trial_t=84.4s  cost=$0.00
+[sobol 2/3]  DSI=+0.000  PD=  0.00 Hz  n_err=0  trial_t=50.9s  cost=$0.01
+[sobol 3/3]  DSI=+0.000  PD=  1.00 Hz  n_err=0  trial_t=57.4s  cost=$0.01
+[mobo_loop] Sobol DoE done; HV=0.0000
+[acq 1/2]  DSI=+0.067  PD= 16.00 Hz  HV=1.0667  trial_t=44.8s  cost=$0.01
+[acq 2/2]  DSI=+0.000  PD=104.00 Hz  HV=1.0667  trial_t=42.6s  cost=$0.01
+[mobo_loop] DONE. 5 evaluations in 4.8 min (0.08 h); best HV=1.0667; cost=$0.01

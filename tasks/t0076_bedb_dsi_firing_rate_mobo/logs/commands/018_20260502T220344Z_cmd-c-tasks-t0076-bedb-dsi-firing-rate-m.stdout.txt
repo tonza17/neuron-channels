@@ -1,0 +1,30 @@
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c mod_func.c
+nocmodl bkt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c bkt76.c
+nocmodl calt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c calt76.c
+nocmodl catt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c catt76.c
+nocmodl iht76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c iht76.c
+nocmodl kdrt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kdrt76.c
+nocmodl kv3t76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv3t76.c
+nocmodl kv4t76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv4t76.c
+nocmodl kv7t76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv7t76.c
+nocmodl napt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c napt76.c
+nocmodl nart76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c nart76.c
+nocmodl nav16t76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c nav16t76.c
+nocmodl skt76
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c skt76.c
+x86_64-w64-mingw32-gcc.exe  -shared mod_func.o bkt76.o calt76.o catt76.o iht76.o kdrt76.o kv3t76.o kv4t76.o kv7t76.o napt76.o nart76.o nav16t76.o skt76.o \
+  -L/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../bin -lnrniv -lpthread -o 198.nrnmech.dll
+#rebase -b 0x64000000 -v nrnmech.dll
+
+nrnmech.dll was built successfully.

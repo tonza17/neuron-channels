@@ -46,6 +46,10 @@ dependencies = [
     "numpy>=2.4.4",
     "scipy>=1.17.1",
     "typst>=0.14.8",
+    "botorch>=0.12",
+    "gpytorch>=1.13",
+    "torch>=2.4",
+    "pyarrow>=15.0",
 ]
 
 [project.urls]

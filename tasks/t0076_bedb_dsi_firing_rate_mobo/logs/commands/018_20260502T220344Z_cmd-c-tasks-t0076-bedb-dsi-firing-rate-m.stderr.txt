@@ -1,0 +1,24 @@
+Translating bkt76.mod into bkt76.c
+Thread Safe
+Translating calt76.mod into calt76.c
+Thread Safe
+Translating catt76.mod into catt76.c
+Thread Safe
+Translating iht76.mod into iht76.c
+Thread Safe
+Translating kdrt76.mod into kdrt76.c
+Thread Safe
+Translating kv3t76.mod into kv3t76.c
+Thread Safe
+Translating kv4t76.mod into kv4t76.c
+Thread Safe
+Translating kv7t76.mod into kv7t76.c
+Thread Safe
+Translating napt76.mod into napt76.c
+Thread Safe
+Translating nart76.mod into nart76.c
+Thread Safe
+Translating nav16t76.mod into nav16t76.c
+Thread Safe
+Translating skt76.mod into skt76.c
+Thread Safe
