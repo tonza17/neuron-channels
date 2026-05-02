@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W005 warning: '## Verification Criteria' has 0 bullet points (minimum: 3)[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 1 warning(s)

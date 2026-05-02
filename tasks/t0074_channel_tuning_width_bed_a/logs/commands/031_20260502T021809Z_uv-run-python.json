@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0074_channel_tuning_width_bed_a",
+  "command": "uv run python -u tasks/t0074_channel_tuning_width_bed_a/code/run_sweep.py",
+  "exit_code": 0,
+  "duration_seconds": 4217.086,
+  "started_at": "2026-05-02T02:18:09Z",
+  "completed_at": "2026-05-02T03:28:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0074_channel_tuning_width_bed_a",
+  "stdout_file": "031_20260502T021809Z_uv-run-python.stdout.txt",
+  "stderr_file": "031_20260502T021809Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2189,
+  "stderr_lines": 0,
+  "truncated": false
+}

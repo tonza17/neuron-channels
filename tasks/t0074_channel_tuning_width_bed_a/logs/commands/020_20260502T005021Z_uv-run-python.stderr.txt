@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\regression_gate.py", line 243, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\regression_gate.py", line 175, in main
+    _insert_all_channels_with_zero_gbar(soma=h.RGC.soma)
+                                             ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'soma'

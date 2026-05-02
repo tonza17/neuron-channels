@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0074_channel_tuning_width_bed_a",
+  "command": "uv run python -u tasks/t0074_channel_tuning_width_bed_a/code/compute_width_metrics.py",
+  "exit_code": 0,
+  "duration_seconds": 4.696,
+  "started_at": "2026-05-02T03:28:50Z",
+  "completed_at": "2026-05-02T03:28:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0074_channel_tuning_width_bed_a",
+  "stdout_file": "032_20260502T032850Z_uv-run-python.stdout.txt",
+  "stderr_file": "032_20260502T032850Z_uv-run-python.stderr.txt",
+  "stdout_lines": 33,
+  "stderr_lines": 0,
+  "truncated": false
+}

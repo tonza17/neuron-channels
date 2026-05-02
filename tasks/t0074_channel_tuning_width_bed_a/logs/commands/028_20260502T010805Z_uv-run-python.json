@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0074_channel_tuning_width_bed_a",
+  "command": "uv run python -m arf.scripts.verificators.verify_library_asset --task-id t0074_channel_tuning_width_bed_a dsgc_active_channel_pack",
+  "exit_code": 1,
+  "duration_seconds": 0.233,
+  "started_at": "2026-05-02T01:08:05Z",
+  "completed_at": "2026-05-02T01:08:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0074_channel_tuning_width_bed_a",
+  "stdout_file": "028_20260502T010805Z_uv-run-python.stdout.txt",
+  "stderr_file": "028_20260502T010805Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

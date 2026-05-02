@@ -1,0 +1,56 @@
+// t0074 fork: redefine ONLY proc init_active() to un-zero CaT and CaL densities,
+// leaving every other parameter, object, and procedure from the deposited
+// dsgc_model.hoc untouched. This is loaded AFTER build_dsgc() returns, so the
+// existing RGC instance, synapses, recorders, etc. survive intact.
+//
+// Diff vs the deposited dsgc_model.hoc proc init_active() (lines 144-145):
+//   RGCcaT=0*active     ->  RGCcaT=0.0001*active   (HHst gtbar reduced S/cm^2)
+//   RGCcaL=0.0*active   ->  RGCcaL=0.0001*active   (HHst glbar reduced S/cm^2)
+// All other lines verbatim. The change feeds CaL/CaT current to the cad calcium
+// pool so BK / SK kinetics observe a physical [Ca]_i. See plan REQ-5.
+//
+// Note: 0.0001 (vs 0.0003 HHst published default) chosen as fallback after 0.0003
+// produced a +1.2% baseline DSI deviation outside the regression-gate 1e-3
+// tolerance. 0.0001 still feeds physically-meaningful Ca current to cad while
+// restoring the t0067 baseline DSI fingerprint within tolerance. Per plan
+// Risks & Fallbacks row 1.
+
+proc init_active(){
+	//***initialization of active voltages parameters
+	doingVC=0
+	if (exptype>=3){
+		doingVC=1
+	}
+	TTX=0
+	if (exptype==2){
+		TTX=1
+	}
+	VOLClamp=new OClamp(0.5)
+	VOLClamp.on=0
+	VOLClamp.off=100000
+	VOLClamp.rs=20
+	VOLClamp.switched_on=doingVC
+	VOLClamp.vc=-60
+	if (exptype==4){
+		VOLClamp.vc=0
+	}
+
+	active=1-doingVC
+
+	//SOMA
+	RGCsomana=00.4*active*(1-TTX)
+	RGCsomakv=0.07*active
+	RGCsomakm=00.0005*active
+	//DEND
+	RGCdendna=0.0002*(1-TTX)
+	RGCdendkv=0.007*active
+	RGCdendkm=0*active
+	RGCcaT=0.0001*active		// t0074: un-zeroed CaT to feed cad calcium pool (HHst gtbar default)
+	RGCcaL=0.0001*active		// t0074: un-zeroed CaL to feed cad calcium pool (HHst glbar default)
+	RGCcaP=0*active
+	RGCih=0*active
+	RGCkca=0*active
+
+	RGCgpas=5e-5*(1+active*10)
+	RGCepas	=-60
+}

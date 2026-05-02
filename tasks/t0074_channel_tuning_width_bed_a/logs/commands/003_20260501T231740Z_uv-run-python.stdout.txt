@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [Ca] has no matching Paper Index entry[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

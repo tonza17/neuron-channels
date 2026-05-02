@@ -1,0 +1,11 @@
+Building cell via t0008.build_dsgc()...
+	0
+	1
+	1
+	1
+Sourcing forked HOC: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\dsgc_model_t74.hoc
+	1
+	1
+	1
+Loading t0074 DLL: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\build\nrnmech.dll
+Inserting all 8 channels + cad on soma with gbar = 0...

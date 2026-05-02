@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Local-CPU only. NEURON simulation using existing project Python env. No paid API. No cloud compute. Total wall-clock: 70.3 min for the 2100-trial sweep on the researcher's Windows workstation."
+}

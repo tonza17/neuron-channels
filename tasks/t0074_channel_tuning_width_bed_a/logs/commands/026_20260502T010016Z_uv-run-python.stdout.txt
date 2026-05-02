@@ -1,0 +1,20 @@
+Smoke test: building cell + 12 baseline trials in FULL mode...
+	0
+	1
+	1
+	1
+[ 1/12] a=  0.0 n= 15 peak= +43.24 mV [ 2.07s] OK
+[ 2/12] a= 30.0 n= 15 peak= +43.24 mV [ 2.02s] OK
+[ 3/12] a= 60.0 n= 15 peak= +43.24 mV [ 2.02s] OK
+[ 4/12] a= 90.0 n= 15 peak= +43.24 mV [ 2.02s] OK
+[ 5/12] a=120.0 n= 15 peak= +43.24 mV [ 2.04s] OK
+[ 6/12] a=150.0 n= 15 peak= +43.24 mV [ 2.07s] OK
+[ 7/12] a=180.0 n= 15 peak= +43.24 mV [ 2.00s] OK
+[ 8/12] a=210.0 n= 15 peak= +43.24 mV [ 2.01s] OK
+[ 9/12] a=240.0 n= 15 peak= +43.24 mV [ 1.99s] OK
+[10/12] a=270.0 n= 15 peak= +43.24 mV [ 2.08s] OK
+[11/12] a=300.0 n= 15 peak= +43.24 mV [ 2.00s] OK
+[12/12] a=330.0 n= 15 peak= +43.24 mV [ 2.03s] OK
+
+Smoke test complete: 12 trials in 24.3s (mean 2.03s/trial)
+Estimated full sweep wall-clock: 71.0 min

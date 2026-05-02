@@ -1,0 +1,33 @@
+Loading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\results\data\per_trial_full.csv...
+  1500 (condition, angle, seed) rows
+  baseline       peak= 17.40 Hz vec_DSI=0.193 hwhm= 83.54 deg
+  nav16_low      peak= 22.40 Hz vec_DSI=0.203 hwhm= 77.76 deg
+  nav16_med      peak= 33.00 Hz vec_DSI=0.228 hwhm= 80.24 deg
+  nav16_high     peak= 66.20 Hz vec_DSI=0.199 hwhm= 81.24 deg
+  nap_low        peak= 27.40 Hz vec_DSI=0.227 hwhm= 69.58 deg
+  nap_med        peak= 39.60 Hz vec_DSI=0.226 hwhm= 86.33 deg
+  nap_high       peak= 74.20 Hz vec_DSI=0.050 hwhm= 49.09 deg
+  nar_low        peak= 17.60 Hz vec_DSI=0.197 hwhm= 83.09 deg
+  nar_med        peak= 18.00 Hz vec_DSI=0.197 hwhm=120.00 deg
+  nar_high       peak= 20.00 Hz vec_DSI=0.191 hwhm=117.69 deg
+  kv3_low        peak= 17.80 Hz vec_DSI=0.190 hwhm= 83.88 deg
+  kv3_med        peak= 18.80 Hz vec_DSI=0.197 hwhm= 82.83 deg
+  kv3_high       peak= 20.20 Hz vec_DSI=0.185 hwhm= 83.57 deg
+  kv4_low        peak= 17.20 Hz vec_DSI=0.183 hwhm= 83.33 deg
+  kv4_med        peak= 17.60 Hz vec_DSI=0.193 hwhm= 83.29 deg
+  kv4_high       peak= 16.80 Hz vec_DSI=0.171 hwhm= 83.16 deg
+  bk_low         peak= 16.80 Hz vec_DSI=0.177 hwhm= 83.38 deg
+  bk_med         peak= 15.60 Hz vec_DSI=0.148 hwhm= 76.75 deg
+  bk_high        peak= 12.60 Hz vec_DSI=0.150 hwhm= 74.64 deg
+  sk_low         peak= 17.40 Hz vec_DSI=0.191 hwhm= 82.50 deg
+  sk_med         peak= 16.60 Hz vec_DSI=0.169 hwhm= 82.50 deg
+  sk_high        peak= 15.60 Hz vec_DSI=0.124 hwhm= 41.12 deg
+  kv7_low        peak= 17.40 Hz vec_DSI=0.190 hwhm= 83.54 deg
+  kv7_med        peak= 17.40 Hz vec_DSI=0.190 hwhm= 83.54 deg
+  kv7_high       peak= 17.40 Hz vec_DSI=0.190 hwhm= 83.31 deg
+
+Writing C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\results\metrics_summary.csv...
+Writing C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\results\metrics.json...
+Writing C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\results\data\tuning_curves.csv...
+
+Done. 25 conditions processed.

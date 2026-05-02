@@ -1,0 +1,28 @@
+NEURON: DSGC : a template cannot be redefined
+ in RGCmodel.hoc near line 2
+ begintemplate DSGC
+                  ^
+        xopen("RGCmodel.hoc")
+      execute1("{xopen("RG...")
+    load_file(1, "RGCmodel.hoc")
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\run_sweep.py", line 494, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\run_sweep.py", line 467, in main
+    pass2_outputs: list[TrialOutput] = _run_pass(
+                                       ~~~~~~~~~^
+        pass_label="2",
+        ^^^^^^^^^^^^^^^
+        with_cad=True,
+        ^^^^^^^^^^^^^^
+        conditions=pass2_conditions,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\run_sweep.py", line 407, in _run_pass
+    h = build_dsgc()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0008_port_modeldb_189347\code\build_cell.py", line 155, in build_dsgc
+    assert loaded_rgc == 1.0, "h.load_file('RGCmodel.hoc') failed"
+           ^^^^^^^^^^^^^^^^^
+AssertionError: h.load_file('RGCmodel.hoc') failed

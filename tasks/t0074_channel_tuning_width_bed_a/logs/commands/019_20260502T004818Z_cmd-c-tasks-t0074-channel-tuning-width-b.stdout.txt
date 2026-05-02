@@ -1,0 +1,24 @@
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c mod_func.c
+nocmodl bk74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c bk74.c
+nocmodl cadecay
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c cadecay.c
+nocmodl kv3t74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv3t74.c
+nocmodl kv4t74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv4t74.c
+nocmodl kv7t74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c kv7t74.c
+nocmodl napt74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c napt74.c
+nocmodl nart74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c nart74.c
+nocmodl nav16t74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c nav16t74.c
+nocmodl sk74
+x86_64-w64-mingw32-gcc.exe -DDLL_EXPORT -DPIC -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../include -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/scopmath -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/nrnoc -I/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../src/oc  -c sk74.c
+x86_64-w64-mingw32-gcc.exe  -shared mod_func.o bk74.o cadecay.o kv3t74.o kv4t74.o kv7t74.o napt74.o nart74.o nav16t74.o sk74.o \
+  -L/cygdrive/C/Users/md1avn/nrn-8.2.7/bin//../bin -lnrniv -lpthread -o 1271.nrnmech.dll
+#rebase -b 0x64000000 -v nrnmech.dll
+
+nrnmech.dll was built successfully.

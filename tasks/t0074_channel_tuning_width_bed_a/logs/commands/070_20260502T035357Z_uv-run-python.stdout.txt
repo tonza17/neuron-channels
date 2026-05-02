@@ -1,0 +1,19 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260501T230830Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260501T231657Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260501T231740Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260501T233400Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260501T233519Z_uv-run-flowmark.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260501T235138Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 020_20260502T005021Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 021_20260502T005100Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260502T005159Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260502T010805Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 030_20260502T012040Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 13 warning(s)
