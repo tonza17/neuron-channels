@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E007 error: Source Index has 22 entries but frontmatter says sources_cited=19[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

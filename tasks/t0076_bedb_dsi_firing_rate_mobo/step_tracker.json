@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-internet",
       "description": "Find canonical MOD-file sources (ModelDB, Allen Institute) for the 6-7 new channels (Kdr, KM, HCN, CaL, CaT, BK, SK).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-02T20:33:29Z",
       "completed_at": null,
-      "log_file": "logs/steps/004_research-internet/"
+      "log_file": "logs\\steps\\004_research-internet/"
     },
     {
       "step": 5,
