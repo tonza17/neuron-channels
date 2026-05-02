@@ -80,7 +80,7 @@ objective function.
 
 1. **Vendor 6-7 new MOD files** from canonical published sources (ModelDB, Allen Institute) into
    `code/mods/`: Kdr, KM (Kv7), HCN (Ih), CaL (CaV1.x), CaT (CaV3.x), BK (KCa1.1), SK (KCa2). Plus
-   the existing 5 from t0067 (Nav1.6, NaP, NaR, Kv3, Kv4) copied verbatim. Compile to a t0073-local
+   the existing 5 from t0067 (Nav1.6, NaP, NaR, Kv3, Kv4) copied verbatim. Compile to a t0076-local
    `nrnmech.dll`.
 2. **Add the `cad` calcium-accumulation mechanism** if not already in the de Rosenroll port (needed
    because BK and SK depend on intracellular [Ca²⁺]).
@@ -99,7 +99,7 @@ objective function.
 7. **Render writeup as markdown + Typst PDF** (consistent with t0070-t0072).
 
 The orchestrator wraps steps 1-7 between a `setup-machines` step (provisions the Vast.ai node,
-installs NEURON + uv-managed deps, compiles the t0073 MOD library on the remote) and a `teardown`
+installs NEURON + uv-managed deps, compiles the t0076 MOD library on the remote) and a `teardown`
 step (downloads all results back to the local task folder, destroys the Vast.ai instance, updates
 `results/costs.json` and `results/remote_machines_used.json` with the actual billed amount).
 
