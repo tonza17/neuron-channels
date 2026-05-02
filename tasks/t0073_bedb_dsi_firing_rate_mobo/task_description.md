@@ -23,9 +23,17 @@ synapses are the search space.
 * **Objectives**: 2 (DSI and PD firing rate) — both maximised.
 * **Optimisation algorithm**: multi-objective Bayesian optimisation via BoTorch's qNEHVI acquisition
   function (q-noisy expected hypervolume improvement). Multi-output Gaussian Process surrogate.
-* **Per-iteration cost**: 8 directions × 20 seeds = 160 trials × ~3 s wall = ~30 s on a 64-core CPU
-  (`ProcessPoolExecutor` over trials), or ~8 minutes on 1 core.
-* **Total budget**: 300-500 iterations. ~2.5-4 h on 64 cores; ~40-65 h on 1 core (impractical).
+* **Compute platform** (REQUIRED): **Vast.ai 64-core CPU node**. Local-workstation execution is not
+  acceptable for this task — the optimisation needs ~64-way trial-level parallelism to keep
+  per-iteration wall time at ~30 s. The task plan therefore includes the canonical `setup-machines`
+  and `teardown` steps; the `/setup-remote-machine` skill provisions the Vast.ai instance, installs
+  the project's NEURON + Python environment via the standard `uv sync` flow, runs the optimisation,
+  downloads results, and destroys the instance. No work runs on the local workstation beyond
+  orchestration of the SSH session.
+* **Per-iteration cost**: 8 directions × 20 seeds = 160 trials × ~3 s wall ≈ ~30 s on the Vast.ai
+  64-core node (`ProcessPoolExecutor` over trials).
+* **Total compute budget**: 300-500 iterations × ~30 s ≈ **2.5-4 h wall on the Vast.ai 64-core
+  node**.
 
 ## Parameters (25 free)
 
@@ -90,17 +98,31 @@ objective function.
    curves, spike rasters, synaptic conductance traces — reusing the t0072 recorder).
 7. **Render writeup as markdown + Typst PDF** (consistent with t0070-t0072).
 
+The orchestrator wraps steps 1-7 between a `setup-machines` step (provisions the Vast.ai node,
+installs NEURON + uv-managed deps, compiles the t0073 MOD library on the remote) and a `teardown`
+step (downloads all results back to the local task folder, destroys the Vast.ai instance, updates
+`results/costs.json` and `results/remote_machines_used.json` with the actual billed amount).
+
 ## Cost estimation
 
-* External costs: $0 if run on a local 64-core workstation. ~$0.50-$2 if run on a Vast.ai 64-core
-  node for the 2.5-4 hours of compute.
+* **Compute platform**: Vast.ai 64-core CPU instance (no GPU needed — see Risk #2 if 64-core CPU
+  nodes are unavailable in the chosen region).
+* **External costs**:
+  * Vast.ai 64-core CPU node typical pricing: $0.20 - $0.60 / hr (varies by host, region, bid vs
+    on-demand).
+  * Run duration: 2.5-4 h compute + ~10-20 min provisioning/install + ~5 min teardown.
+  * **Expected billed total: $0.75 - $3.00 for the optimisation run**, plus ~$0.10 - $0.30 for the
+    provisioning overhead.
+  * Budget cap: $5.00 (conservative — if the run exceeds this, the implementation step halts and
+    writes an intervention file).
 * Disk: ~50-200 MB for raw per-iteration trial summaries (no per-synapse traces saved per iteration
-  to keep size down — only the 3-5 best Pareto cells get full traces).
+  to keep size down — only the 3-5 best Pareto cells get full traces). Output is rsync-pulled back
+  to the local task folder during teardown.
 * Time:
-  * MOD vendoring + driver code: ~6-10 h human-time.
-  * Optimisation run: 2.5-4 h on 64 cores; ~40-65 h on 1 core (impractical).
-  * Plotting + analysis + PDF: ~2-3 h.
-  * Total: ~12-18 h human-time + 4 h compute on 64 cores.
+  * MOD vendoring + driver code (local human time): ~6-10 h.
+  * Optimisation run on Vast.ai 64-core: ~2.5-4 h wall, billed.
+  * Plotting + analysis + PDF (local human time, post-teardown): ~2-3 h.
+  * Total: ~12-18 h human-time + ~$1-3 cloud spend.
 
 ## Dependencies
 
@@ -117,7 +139,7 @@ objective function.
 | # | Risk | Detection | Fallback |
 | --- | --- | --- | --- |
 | 1 | One or more of the 6 new MOD files (Kdr, KM, HCN, CaL, CaT, BK, SK) cannot be sourced from a clean published implementation. | Vendor step fails on a specific channel. | Drop to 8 channels (HHst's built-in Na/Kdr/leak + the 5 t0067 channels) and document the reduction in the writeup. The optimisation framework (BoTorch + driver) doesn't care about the channel count — only the parameter dimension changes. |
-| 2 | Local machine has < 64 cores. | `os.cpu_count()` reports < 32. | Reduce per-iteration parallelism; increase wall time linearly. Document in the writeup that running on Vast.ai 64-core node would have given the quoted speedups. Or: reduce the iteration count to 100-200 (still gives a coarse Pareto front). |
+| 2 | Vast.ai has no 64-core CPU node available in the requested region/price tier at provisioning time. | `setup-machines` step's instance search returns 0 matches. | Try adjacent regions; relax the price cap (typical 64-core nodes are $0.20-$0.60/hr); or accept a 32-core node (run wall doubles to ~5-8 h, still tractable). Do NOT fall back to local-workstation execution — this task is explicitly cloud-compute. If no remote node is available within the $5 budget cap, write an `intervention/` file and stop. |
 | 3 | BoTorch qNEHVI fails to converge in 500 iterations (Pareto front still expanding). | Manually inspect the front at iter 100, 200, 400; check the hypervolume metric for monotonic increase. | Switch to NSGA-II via DEAP/pymoo (more iterations needed but more robust). Cap at 5000 trials. |
 | 4 | Calcium dynamics make the cell numerically unstable at extreme channel-density combinations. | Trial errors out with NaN voltage or NEURON solver complaint. | Catch the exception, return a worst-case score (DSI = -1, rate = 0) so the optimiser learns to avoid that region. |
 | 5 | Stochastic per-trial noise on DSI is large enough that the GP can't learn (DSI estimates have SE > 0.1). | High GP residual variance after 50 iterations. | Increase seeds per direction from 20 to 40 (doubles per-iteration time). Or use a noise-aware GP kernel (BoTorch's HeteroscedasticGP). |
@@ -154,3 +176,9 @@ objective function.
   cleanly.
 * **REQ-10** — A documented "next steps" suggestion: tier-stratify the channel densities of the best
   3 Pareto cells and re-optimise locally (extends the search to ~40 dim).
+* **REQ-11** — All compute (cell builds, NEURON sims, BoTorch acquisition steps) runs on the Vast.ai
+  64-core node, NOT on the local workstation. The local workstation only orchestrates the SSH
+  session, holds the task folder, and pulls results back during teardown.
+* **REQ-12** — `results/costs.json` records the actual Vast.ai bill (≤ $5.00) and
+  `results/remote_machines_used.json` records the instance ID, GPU/CPU specs (no GPU expected),
+  hourly rate, total billed time, and provisioning + teardown timestamps.
