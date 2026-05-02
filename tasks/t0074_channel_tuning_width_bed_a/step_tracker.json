@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare measured BK/SK/Kv7 effects against published RGC and DSGC channel literature; identify expected vs surprising findings.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-02T03:47:04Z",
-      "completed_at": null,
+      "completed_at": "2026-05-02T03:49:34Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
