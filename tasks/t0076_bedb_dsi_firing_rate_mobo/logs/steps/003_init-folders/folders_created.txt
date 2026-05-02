@@ -1,0 +1,14 @@
+tasks/t0076_bedb_dsi_firing_rate_mobo/assets/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/code/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/code/__init__.py
+tasks/t0076_bedb_dsi_firing_rate_mobo/corrections/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/intervention/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/
+tasks/t0076_bedb_dsi_firing_rate_mobo/logs/searches/
+tasks/t0076_bedb_dsi_firing_rate_mobo/logs/sessions/
+tasks/t0076_bedb_dsi_firing_rate_mobo/logs/steps/
+tasks/t0076_bedb_dsi_firing_rate_mobo/plan/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/research/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/results/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/results/images/.gitkeep
+tasks/t0076_bedb_dsi_firing_rate_mobo/__init__.py
