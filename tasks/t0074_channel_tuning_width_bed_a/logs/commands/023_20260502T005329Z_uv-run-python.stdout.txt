@@ -1,0 +1,64 @@
+Building cell A: t0008 vanilla (no fork, no insert, no cad)...
+	0
+	1
+	1
+	1
+  A_vanilla PD seed=1 n=15 [ 1.99s]
+  A_vanilla PD seed=2 n=11 [ 2.01s]
+  A_vanilla PD seed=3 n=15 [ 1.97s]
+  A_vanilla PD seed=4 n=14 [ 1.99s]
+  A_vanilla PD seed=5 n=16 [ 2.00s]
+  A_vanilla ND seed=1 n=1 [ 1.98s]
+  A_vanilla ND seed=2 n=1 [ 1.97s]
+  A_vanilla ND seed=3 n=1 [ 1.97s]
+  A_vanilla ND seed=4 n=4 [ 2.00s]
+  A_vanilla ND seed=5 n=1 [ 2.01s]
+  A_vanilla: PD_mean=14.20 ND_mean=1.60 DSI=0.7974683544
+
+Loading t0074 DLL...
+
+B: insert cad only on soma...
+  B_cad PD seed=1 n=18 [ 2.03s]
+  B_cad PD seed=2 n=12 [ 1.98s]
+  B_cad PD seed=3 n=15 [ 1.98s]
+  B_cad PD seed=4 n=14 [ 1.99s]
+  B_cad PD seed=5 n=17 [ 2.02s]
+  B_cad ND seed=1 n=1 [ 1.99s]
+  B_cad ND seed=2 n=1 [ 1.97s]
+  B_cad ND seed=3 n=1 [ 1.98s]
+  B_cad ND seed=4 n=4 [ 1.96s]
+  B_cad ND seed=5 n=1 [ 1.97s]
+  B_cad: PD_mean=15.20 ND_mean=1.60 DSI=0.8095238095
+
+C: also insert 8 channels at gbar=0 on soma (cad already inserted)...
+  D_cad+channels PD seed=1 n=18 [ 2.01s]
+  D_cad+channels PD seed=2 n=12 [ 2.05s]
+  D_cad+channels PD seed=3 n=15 [ 2.02s]
+  D_cad+channels PD seed=4 n=14 [ 2.02s]
+  D_cad+channels PD seed=5 n=17 [ 2.04s]
+  D_cad+channels ND seed=1 n=1 [ 2.22s]
+  D_cad+channels ND seed=2 n=1 [ 2.08s]
+  D_cad+channels ND seed=3 n=1 [ 2.01s]
+  D_cad+channels ND seed=4 n=4 [ 2.09s]
+  D_cad+channels ND seed=5 n=1 [ 1.99s]
+  D_cad+channels: PD_mean=15.20 ND_mean=1.60 DSI=0.8095238095
+
+E: source forked HOC to redefine init_active (un-zero CaT/CaL)...
+  E_cad+ch+fork PD seed=1 n=18 [ 2.02s]
+  E_cad+ch+fork PD seed=2 n=12 [ 2.01s]
+  E_cad+ch+fork PD seed=3 n=15 [ 2.09s]
+  E_cad+ch+fork PD seed=4 n=14 [ 2.08s]
+  E_cad+ch+fork PD seed=5 n=17 [ 1.99s]
+  E_cad+ch+fork ND seed=1 n=1 [ 1.99s]
+  E_cad+ch+fork ND seed=2 n=1 [ 2.03s]
+  E_cad+ch+fork ND seed=3 n=1 [ 1.96s]
+  E_cad+ch+fork ND seed=4 n=4 [ 2.02s]
+  E_cad+ch+fork ND seed=5 n=1 [ 1.97s]
+  E_cad+ch+fork: PD_mean=15.20 ND_mean=1.60 DSI=0.8095238095
+
+Summary:
+  A_vanilla            = 0.7974683544
+  B_cad                = 0.8095238095
+  D_cad+channels       = 0.8095238095
+  E_cad+ch+fork        = 0.8095238095
+  Target (t0067)       = 0.7974683544303798

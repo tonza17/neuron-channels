@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0074_channel_tuning_width_bed_a",
+  "command": "uv run python -u tasks/t0074_channel_tuning_width_bed_a/code/smoke_test_sweep.py",
+  "exit_code": 0,
+  "duration_seconds": 28.315,
+  "started_at": "2026-05-02T01:19:57Z",
+  "completed_at": "2026-05-02T01:20:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0074_channel_tuning_width_bed_a",
+  "stdout_file": "029_20260502T011957Z_uv-run-python.stdout.txt",
+  "stderr_file": "029_20260502T011957Z_uv-run-python.stderr.txt",
+  "stdout_lines": 20,
+  "stderr_lines": 0,
+  "truncated": false
+}

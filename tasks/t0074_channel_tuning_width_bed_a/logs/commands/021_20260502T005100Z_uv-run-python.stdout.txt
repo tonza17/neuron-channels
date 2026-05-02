@@ -1,0 +1,26 @@
+Building cell via t0008.build_dsgc()...
+	0
+	1
+	1
+	1
+Sourcing forked HOC: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\dsgc_model_t74.hoc
+Loading t0074 DLL: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\code\build\nrnmech.dll
+Inserting all 8 channels + cad on soma with gbar = 0...
+[  1/10] PD repeat= 0 seed=1 spikes= 18 peak= +43.19 mV [ 2.02s]
+[  2/10] PD repeat= 0 seed=2 spikes= 12 peak= +42.99 mV [ 2.02s]
+[  3/10] PD repeat= 0 seed=3 spikes= 15 peak= +43.81 mV [ 2.03s]
+[  4/10] PD repeat= 0 seed=4 spikes= 14 peak= +43.07 mV [ 2.00s]
+[  5/10] PD repeat= 0 seed=5 spikes= 17 peak= +43.81 mV [ 2.04s]
+[  6/10] ND repeat= 0 seed=1 spikes=  1 peak= +43.04 mV [ 1.98s]
+[  7/10] ND repeat= 0 seed=2 spikes=  1 peak= +42.47 mV [ 2.01s]
+[  8/10] ND repeat= 0 seed=3 spikes=  1 peak= +42.96 mV [ 2.03s]
+[  9/10] ND repeat= 0 seed=4 spikes=  4 peak= +42.75 mV [ 2.03s]
+[ 10/10] ND repeat= 0 seed=5 spikes=  1 peak= +42.71 mV [ 2.08s]
+
+Measured DSI = 0.8095238095
+Target DSI   = 0.7974683544
+Delta        = 1.205546e-02 (tolerance 1e-03)
+Passed       = False
+Wall clock   = 20.2s (2.02 s/trial)
+Unstable     = 0/10
+REGRESSION GATE FAILED. Stopping.

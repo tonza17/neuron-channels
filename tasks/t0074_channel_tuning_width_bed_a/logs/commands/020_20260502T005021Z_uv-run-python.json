@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0074_channel_tuning_width_bed_a",
+  "command": "uv run python -u -m tasks.t0074_channel_tuning_width_bed_a.code.regression_gate",
+  "exit_code": 1,
+  "duration_seconds": 1.229,
+  "started_at": "2026-05-02T00:50:21Z",
+  "completed_at": "2026-05-02T00:50:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0074_channel_tuning_width_bed_a",
+  "stdout_file": "020_20260502T005021Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260502T005021Z_uv-run-python.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 10,
+  "truncated": false
+}

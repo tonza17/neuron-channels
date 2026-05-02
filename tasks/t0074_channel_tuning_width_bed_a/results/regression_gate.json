@@ -1,0 +1,104 @@
+{
+  "measured_dsi": 0.7974683544303798,
+  "target_dsi": 0.7974683544303798,
+  "tolerance": 0.001,
+  "delta": 0.0,
+  "passed": true,
+  "n_trials": 10,
+  "n_unstable_trials": 0,
+  "pd_mean_spikes": 14.2,
+  "nd_mean_spikes": 1.6,
+  "wall_clock_seconds": 20.03517739987001,
+  "trials": [
+    {
+      "direction": "PD",
+      "seed": 1,
+      "repeat_idx": 0,
+      "spike_count": 15,
+      "peak_v_mv": 43.23899201961238,
+      "baseline_v_mv": -58.8685824686552,
+      "is_unstable": false
+    },
+    {
+      "direction": "PD",
+      "seed": 2,
+      "repeat_idx": 0,
+      "spike_count": 11,
+      "peak_v_mv": 43.22297338576252,
+      "baseline_v_mv": -58.99230370481656,
+      "is_unstable": false
+    },
+    {
+      "direction": "PD",
+      "seed": 3,
+      "repeat_idx": 0,
+      "spike_count": 15,
+      "peak_v_mv": 43.41818292488728,
+      "baseline_v_mv": -59.0182512663378,
+      "is_unstable": false
+    },
+    {
+      "direction": "PD",
+      "seed": 4,
+      "repeat_idx": 0,
+      "spike_count": 14,
+      "peak_v_mv": 43.19366301409711,
+      "baseline_v_mv": -58.982546760005754,
+      "is_unstable": false
+    },
+    {
+      "direction": "PD",
+      "seed": 5,
+      "repeat_idx": 0,
+      "spike_count": 16,
+      "peak_v_mv": 43.98062073408247,
+      "baseline_v_mv": -59.11833615627562,
+      "is_unstable": false
+    },
+    {
+      "direction": "ND",
+      "seed": 1,
+      "repeat_idx": 0,
+      "spike_count": 1,
+      "peak_v_mv": 43.31047573669346,
+      "baseline_v_mv": -59.31290444764759,
+      "is_unstable": false
+    },
+    {
+      "direction": "ND",
+      "seed": 2,
+      "repeat_idx": 0,
+      "spike_count": 1,
+      "peak_v_mv": 42.02909660614741,
+      "baseline_v_mv": -59.37470894416221,
+      "is_unstable": false
+    },
+    {
+      "direction": "ND",
+      "seed": 3,
+      "repeat_idx": 0,
+      "spike_count": 1,
+      "peak_v_mv": 43.64133158753897,
+      "baseline_v_mv": -59.38412708200752,
+      "is_unstable": false
+    },
+    {
+      "direction": "ND",
+      "seed": 4,
+      "repeat_idx": 0,
+      "spike_count": 4,
+      "peak_v_mv": 42.92682549117184,
+      "baseline_v_mv": -59.30838826090142,
+      "is_unstable": false
+    },
+    {
+      "direction": "ND",
+      "seed": 5,
+      "repeat_idx": 0,
+      "spike_count": 1,
+      "peak_v_mv": 41.8656173857754,
+      "baseline_v_mv": -59.42564288062445,
+      "is_unstable": false
+    }
+  ]
+}

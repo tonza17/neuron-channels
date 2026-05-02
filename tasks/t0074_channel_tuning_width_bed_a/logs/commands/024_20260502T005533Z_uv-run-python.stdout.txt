@@ -1,0 +1,64 @@
+Building cell A: t0008 vanilla (no fork, no insert, no cad)...
+	0
+	1
+	1
+	1
+  A_vanilla PD seed=1 n=15 [ 2.03s]
+  A_vanilla PD seed=2 n=11 [ 2.05s]
+  A_vanilla PD seed=3 n=15 [ 1.98s]
+  A_vanilla PD seed=4 n=14 [ 1.98s]
+  A_vanilla PD seed=5 n=16 [ 1.97s]
+  A_vanilla ND seed=1 n=1 [ 2.02s]
+  A_vanilla ND seed=2 n=1 [ 1.99s]
+  A_vanilla ND seed=3 n=1 [ 1.99s]
+  A_vanilla ND seed=4 n=4 [ 1.96s]
+  A_vanilla ND seed=5 n=1 [ 2.03s]
+  A_vanilla: PD_mean=14.20 ND_mean=1.60 DSI=0.7974683544
+
+Loading t0074 DLL...
+
+C: insert 8 channels at gbar=0 (NO cad, NO fork)...
+  C_channels_only PD seed=1 n=15 [ 2.00s]
+  C_channels_only PD seed=2 n=11 [ 2.01s]
+  C_channels_only PD seed=3 n=15 [ 2.00s]
+  C_channels_only PD seed=4 n=14 [ 1.99s]
+  C_channels_only PD seed=5 n=16 [ 2.01s]
+  C_channels_only ND seed=1 n=1 [ 2.01s]
+  C_channels_only ND seed=2 n=1 [ 2.01s]
+  C_channels_only ND seed=3 n=1 [ 2.08s]
+  C_channels_only ND seed=4 n=4 [ 2.11s]
+  C_channels_only ND seed=5 n=1 [ 2.01s]
+  C_channels_only: PD_mean=14.20 ND_mean=1.60 DSI=0.7974683544
+
+F: also source forked HOC (un-zero CaT/CaL, NO cad)...
+  F_channels+fork_no_cad PD seed=1 n=15 [ 2.00s]
+  F_channels+fork_no_cad PD seed=2 n=11 [ 2.04s]
+  F_channels+fork_no_cad PD seed=3 n=15 [ 2.01s]
+  F_channels+fork_no_cad PD seed=4 n=14 [ 1.99s]
+  F_channels+fork_no_cad PD seed=5 n=16 [ 2.01s]
+  F_channels+fork_no_cad ND seed=1 n=1 [ 2.07s]
+  F_channels+fork_no_cad ND seed=2 n=1 [ 2.00s]
+  F_channels+fork_no_cad ND seed=3 n=1 [ 2.05s]
+  F_channels+fork_no_cad ND seed=4 n=4 [ 2.54s]
+  F_channels+fork_no_cad ND seed=5 n=1 [ 2.58s]
+  F_channels+fork_no_cad: PD_mean=14.20 ND_mean=1.60 DSI=0.7974683544
+
+G: now insert cad on soma...
+  G_channels+fork+cad PD seed=1 n=18 [ 2.56s]
+  G_channels+fork+cad PD seed=2 n=12 [ 2.33s]
+  G_channels+fork+cad PD seed=3 n=15 [ 2.37s]
+  G_channels+fork+cad PD seed=4 n=14 [ 2.30s]
+  G_channels+fork+cad PD seed=5 n=17 [ 2.57s]
+  G_channels+fork+cad ND seed=1 n=1 [ 2.27s]
+  G_channels+fork+cad ND seed=2 n=1 [ 2.23s]
+  G_channels+fork+cad ND seed=3 n=1 [ 2.14s]
+  G_channels+fork+cad ND seed=4 n=4 [ 2.18s]
+  G_channels+fork+cad ND seed=5 n=1 [ 2.21s]
+  G_channels+fork+cad: PD_mean=15.20 ND_mean=1.60 DSI=0.8095238095
+
+Summary:
+  A_vanilla            = 0.7974683544
+  C_channels_only      = 0.7974683544
+  F_channels+fork_nocad= 0.7974683544
+  G_channels+fork+cad  = 0.8095238095
+  Target (t0067)       = 0.7974683544303798

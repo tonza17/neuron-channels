@@ -1,0 +1,31 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0074_channel_tuning_width_bed_a\tasks\t0074_channel_tuning_width_bed_a\results\metrics.json
+
+[33m[1mWARNINGS:[0m
+[33m  TM-W001 warning: Variant 'baseline' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nav16_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nav16_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nav16_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nap_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nap_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nap_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nar_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nar_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'nar_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv3_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv3_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv3_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv4_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv4_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv4_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'bk_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'bk_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'bk_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'sk_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'sk_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'sk_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv7_low' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv7_med' dimensions key 'density_mS_cm2' is not snake_case[0m
+[33m  TM-W001 warning: Variant 'kv7_high' dimensions key 'density_mS_cm2' is not snake_case[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 25 warning(s)

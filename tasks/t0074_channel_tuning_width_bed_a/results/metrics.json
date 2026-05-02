@@ -1,0 +1,379 @@
+{
+  "variants": [
+    {
+      "variant_id": "baseline",
+      "label": "baseline",
+      "dimensions": {
+        "channel_kind": "baseline",
+        "density_label": "<NA>",
+        "density_ms_cm2": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3082706766917293,
+        "tuning_curve_hwhm_deg": 83.54166666666667,
+        "tuning_curve_reliability": 0.8544092440151678,
+        "tuning_curve_rmse": 13.830314052212216
+      }
+    },
+    {
+      "variant_id": "nav16_low",
+      "label": "nav16_low",
+      "dimensions": {
+        "channel_kind": "Nav1.6",
+        "density_label": "low",
+        "density_ms_cm2": 10.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3099415204678362,
+        "tuning_curve_hwhm_deg": 77.7576923076923,
+        "tuning_curve_reliability": 0.8801620291470948,
+        "tuning_curve_rmse": 14.964244354542847
+      }
+    },
+    {
+      "variant_id": "nav16_med",
+      "label": "nav16_med",
+      "dimensions": {
+        "channel_kind": "Nav1.6",
+        "density_label": "med",
+        "density_ms_cm2": 30.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.40425531914893614,
+        "tuning_curve_hwhm_deg": 80.24175824175825,
+        "tuning_curve_reliability": 0.9369318495075218,
+        "tuning_curve_rmse": 19.708001753357035
+      }
+    },
+    {
+      "variant_id": "nav16_high",
+      "label": "nav16_high",
+      "dimensions": {
+        "channel_kind": "Nav1.6",
+        "density_label": "high",
+        "density_ms_cm2": 90.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.32400000000000007,
+        "tuning_curve_hwhm_deg": 81.24214734437464,
+        "tuning_curve_reliability": 0.9827729855089121,
+        "tuning_curve_rmse": 41.563760068393464
+      }
+    },
+    {
+      "variant_id": "nap_low",
+      "label": "nap_low",
+      "dimensions": {
+        "channel_kind": "NaP",
+        "density_label": "low",
+        "density_ms_cm2": 0.3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.38383838383838387,
+        "tuning_curve_hwhm_deg": 69.58237327188942,
+        "tuning_curve_reliability": 0.9572451235831391,
+        "tuning_curve_rmse": 17.39511287843679
+      }
+    },
+    {
+      "variant_id": "nap_med",
+      "label": "nap_med",
+      "dimensions": {
+        "channel_kind": "NaP",
+        "density_label": "med",
+        "density_ms_cm2": 0.8
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.37024221453287204,
+        "tuning_curve_hwhm_deg": 86.33367929423976,
+        "tuning_curve_reliability": 0.9767146695014279,
+        "tuning_curve_rmse": 23.9926045782086
+      }
+    },
+    {
+      "variant_id": "nap_high",
+      "label": "nap_high",
+      "dimensions": {
+        "channel_kind": "NaP",
+        "density_label": "high",
+        "density_ms_cm2": 2.4
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.008152173913043499,
+        "tuning_curve_hwhm_deg": 49.09090909090967,
+        "tuning_curve_reliability": 0.8879462339572252,
+        "tuning_curve_rmse": 55.43785019144071
+      }
+    },
+    {
+      "variant_id": "nar_low",
+      "label": "nar_low",
+      "dimensions": {
+        "channel_kind": "NaR",
+        "density_label": "low",
+        "density_ms_cm2": 3.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.30370370370370375,
+        "tuning_curve_hwhm_deg": 83.09210526315789,
+        "tuning_curve_reliability": 0.8489960639000257,
+        "tuning_curve_rmse": 13.91168423383124
+      }
+    },
+    {
+      "variant_id": "nar_med",
+      "label": "nar_med",
+      "dimensions": {
+        "channel_kind": "NaR",
+        "density_label": "med",
+        "density_ms_cm2": 8.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2857142857142857,
+        "tuning_curve_hwhm_deg": 120.0,
+        "tuning_curve_reliability": 0.8633534413660204,
+        "tuning_curve_rmse": 13.926718336550543
+      }
+    },
+    {
+      "variant_id": "nar_high",
+      "label": "nar_high",
+      "dimensions": {
+        "channel_kind": "NaR",
+        "density_label": "high",
+        "density_ms_cm2": 24.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2987012987012987,
+        "tuning_curve_hwhm_deg": 117.69230769230771,
+        "tuning_curve_reliability": 0.8875605934006968,
+        "tuning_curve_rmse": 14.326762043271863
+      }
+    },
+    {
+      "variant_id": "kv3_low",
+      "label": "kv3_low",
+      "dimensions": {
+        "channel_kind": "Kv3",
+        "density_label": "low",
+        "density_ms_cm2": 7.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3383458646616541,
+        "tuning_curve_hwhm_deg": 83.88157894736842,
+        "tuning_curve_reliability": 0.8625719658751727,
+        "tuning_curve_rmse": 13.879077932523264
+      }
+    },
+    {
+      "variant_id": "kv3_med",
+      "label": "kv3_med",
+      "dimensions": {
+        "channel_kind": "Kv3",
+        "density_label": "med",
+        "density_ms_cm2": 20.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3333333333333333,
+        "tuning_curve_hwhm_deg": 82.83333333333333,
+        "tuning_curve_reliability": 0.859256515126447,
+        "tuning_curve_rmse": 13.97849616606247
+      }
+    },
+    {
+      "variant_id": "kv3_high",
+      "label": "kv3_high",
+      "dimensions": {
+        "channel_kind": "Kv3",
+        "density_label": "high",
+        "density_ms_cm2": 60.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3116883116883117,
+        "tuning_curve_hwhm_deg": 83.57142857142857,
+        "tuning_curve_reliability": 0.8714349621118183,
+        "tuning_curve_rmse": 14.225391098575026
+      }
+    },
+    {
+      "variant_id": "kv4_low",
+      "label": "kv4_low",
+      "dimensions": {
+        "channel_kind": "Kv4",
+        "density_label": "low",
+        "density_ms_cm2": 4.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.30303030303030304,
+        "tuning_curve_hwhm_deg": 83.33333333333333,
+        "tuning_curve_reliability": 0.8470863547085111,
+        "tuning_curve_rmse": 13.663798227816283
+      }
+    },
+    {
+      "variant_id": "kv4_med",
+      "label": "kv4_med",
+      "dimensions": {
+        "channel_kind": "Kv4",
+        "density_label": "med",
+        "density_ms_cm2": 12.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3134328358208956,
+        "tuning_curve_hwhm_deg": 83.28947368421052,
+        "tuning_curve_reliability": 0.875145117757204,
+        "tuning_curve_rmse": 13.814880387326994
+      }
+    },
+    {
+      "variant_id": "kv4_high",
+      "label": "kv4_high",
+      "dimensions": {
+        "channel_kind": "Kv4",
+        "density_label": "high",
+        "density_ms_cm2": 36.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.282442748091603,
+        "tuning_curve_hwhm_deg": 83.16176470588235,
+        "tuning_curve_reliability": 0.8323376259952872,
+        "tuning_curve_rmse": 13.460534356691824
+      }
+    },
+    {
+      "variant_id": "bk_low",
+      "label": "bk_low",
+      "dimensions": {
+        "channel_kind": "BK",
+        "density_label": "low",
+        "density_ms_cm2": 0.3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2923076923076924,
+        "tuning_curve_hwhm_deg": 83.38235294117646,
+        "tuning_curve_reliability": 0.8401119761403617,
+        "tuning_curve_rmse": 13.512604207397949
+      }
+    },
+    {
+      "variant_id": "bk_med",
+      "label": "bk_med",
+      "dimensions": {
+        "channel_kind": "BK",
+        "density_label": "med",
+        "density_ms_cm2": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.26829268292682923,
+        "tuning_curve_hwhm_deg": 76.75384615384614,
+        "tuning_curve_reliability": 0.8095412688169267,
+        "tuning_curve_rmse": 13.078754043913735
+      }
+    },
+    {
+      "variant_id": "bk_high",
+      "label": "bk_high",
+      "dimensions": {
+        "channel_kind": "BK",
+        "density_label": "high",
+        "density_ms_cm2": 3.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2857142857142857,
+        "tuning_curve_hwhm_deg": 74.64285714285714,
+        "tuning_curve_reliability": 0.8508335813339833,
+        "tuning_curve_rmse": 13.085761048429358
+      }
+    },
+    {
+      "variant_id": "sk_low",
+      "label": "sk_low",
+      "dimensions": {
+        "channel_kind": "SK",
+        "density_label": "low",
+        "density_ms_cm2": 0.06
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2700729927007299,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.8583686688605503,
+        "tuning_curve_rmse": 13.707415075268601
+      }
+    },
+    {
+      "variant_id": "sk_med",
+      "label": "sk_med",
+      "dimensions": {
+        "channel_kind": "SK",
+        "density_label": "med",
+        "density_ms_cm2": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2388059701492538,
+        "tuning_curve_hwhm_deg": 82.5,
+        "tuning_curve_reliability": 0.7639807035607473,
+        "tuning_curve_rmse": 13.366055302897413
+      }
+    },
+    {
+      "variant_id": "sk_high",
+      "label": "sk_high",
+      "dimensions": {
+        "channel_kind": "SK",
+        "density_label": "high",
+        "density_ms_cm2": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.19083969465648856,
+        "tuning_curve_hwhm_deg": 41.118421052631575,
+        "tuning_curve_reliability": 0.7739076182606202,
+        "tuning_curve_rmse": 12.54505066475881
+      }
+    },
+    {
+      "variant_id": "kv7_low",
+      "label": "kv7_low",
+      "dimensions": {
+        "channel_kind": "Kv7",
+        "density_label": "low",
+        "density_ms_cm2": 0.0001
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3082706766917293,
+        "tuning_curve_hwhm_deg": 83.54166666666667,
+        "tuning_curve_reliability": 0.8486520734658136,
+        "tuning_curve_rmse": 13.790579639116649
+      }
+    },
+    {
+      "variant_id": "kv7_med",
+      "label": "kv7_med",
+      "dimensions": {
+        "channel_kind": "Kv7",
+        "density_label": "med",
+        "density_ms_cm2": 0.001
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3082706766917293,
+        "tuning_curve_hwhm_deg": 83.54166666666667,
+        "tuning_curve_reliability": 0.8533487805133438,
+        "tuning_curve_rmse": 13.796017062283546
+      }
+    },
+    {
+      "variant_id": "kv7_high",
+      "label": "kv7_high",
+      "dimensions": {
+        "channel_kind": "Kv7",
+        "density_label": "high",
+        "density_ms_cm2": 0.005
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3082706766917293,
+        "tuning_curve_hwhm_deg": 83.3108108108108,
+        "tuning_curve_reliability": 0.8498176736413783,
+        "tuning_curve_rmse": 13.77789560906381
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "spec_version": "2",
+  "library_id": "dsgc_active_channel_pack",
+  "name": "DSGC Active Channel Pack",
+  "version": "0.1.0",
+  "short_description": "Vendored 8-channel pack (Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7) plus cad calcium pool plus a forked Bed A HOC with un-zeroed CaT/CaL, for active-conductance sweeps on the deposited Poleg-Polsky DSGC (t0008 modeldb_189347_dsgc).",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/mods/nav16t74.mod",
+    "code/mods/napt74.mod",
+    "code/mods/nart74.mod",
+    "code/mods/kv3t74.mod",
+    "code/mods/kv4t74.mod",
+    "code/mods/bk74.mod",
+    "code/mods/sk74.mod",
+    "code/mods/kv7t74.mod",
+    "code/mods/cadecay.mod",
+    "code/mods/mod_func.c",
+    "code/dsgc_model_t74.hoc",
+    "code/run_nrnivmodl.cmd"
+  ],
+  "entry_points": [
+    {
+      "name": "nav16t74",
+      "kind": "class",
+      "module": "code/mods/nav16t74.mod",
+      "description": "Nav1.6 fast transient sodium NEURON SUFFIX (NONSPECIFIC_CURRENT). V_half_act ~ -43 mV, V_half_inact ~ -65 mV. Carter-Bean 2009."
+    },
+    {
+      "name": "napt74",
+      "kind": "class",
+      "module": "code/mods/napt74.mod",
+      "description": "Persistent sodium NEURON SUFFIX (NONSPECIFIC_CURRENT). Single-gate m^1, V_half ~ -50 mV. Magistretti-Alonso 1999."
+    },
+    {
+      "name": "nart74",
+      "kind": "class",
+      "module": "code/mods/nart74.mod",
+      "description": "Resurgent sodium NEURON SUFFIX (NONSPECIFIC_CURRENT). m^3*h*s with slow s gate reactivating around -50 mV. Khaliq 2003."
+    },
+    {
+      "name": "kv3t74",
+      "kind": "class",
+      "module": "code/mods/kv3t74.mod",
+      "description": "Kv3 fast delayed-rectifier potassium NEURON SUFFIX (NONSPECIFIC_CURRENT). m^4 kinetics, V_half ~ -15 mV. Erisir 1999."
+    },
+    {
+      "name": "kv4t74",
+      "kind": "class",
+      "module": "code/mods/kv4t74.mod",
+      "description": "Kv4 / IA transient A-type potassium NEURON SUFFIX (NONSPECIFIC_CURRENT). m^4*h, V_half_act ~ -50 mV. Hoffman 1997."
+    },
+    {
+      "name": "bk74",
+      "kind": "class",
+      "module": "code/mods/bk74.mod",
+      "description": "BK / KCa1.1 voltage- and Ca-dependent K channel NEURON SUFFIX (USEION ca READ cai; NONSPECIFIC_CURRENT). V_half ~ -28 mV, K_d = 0.18 uM (Hill exponent 1), Q10 = 2.3. Mainen-Sejnowski 1996 (ModelDB 2488), DOI 10.1038/382363a0."
+    },
+    {
+      "name": "sk74",
+      "kind": "class",
+      "module": "code/mods/sk74.mod",
+      "description": "SK / KCa2 voltage-independent Ca-driven K channel NEURON SUFFIX (USEION ca READ cai; NONSPECIFIC_CURRENT). EC50 = 0.43 uM, Hill = 4.8, tau = 1 ms. Hay 2011 (ModelDB 139653, SK_E2.mod), DOI 10.1371/journal.pcbi.1002107."
+    },
+    {
+      "name": "kv7t74",
+      "kind": "class",
+      "module": "code/mods/kv7t74.mod",
+      "description": "Kv7 / M-current NEURON SUFFIX (NONSPECIFIC_CURRENT). Adams 1982 alpha/beta formalism, V_half ~ -35 mV, Q10 = 2.3. Hay 2011 (ModelDB 139653, Im.mod), DOI 10.1371/journal.pcbi.1002107."
+    },
+    {
+      "name": "cad",
+      "kind": "class",
+      "module": "code/mods/cadecay.mod",
+      "description": "Single-shell calcium pool. depth = 0.1 um, taur = 5 ms, cainf = 2e-4 mM. Destexhe 1995 formalism. Reused verbatim from t0024 de_rosenroll_2026_dsgc library."
+    },
+    {
+      "name": "init_active",
+      "kind": "function",
+      "module": "code/dsgc_model_t74.hoc",
+      "description": "Forked HOC procedure that overrides Bed A's init_active to un-zero RGCcaT and RGCcaL (set to 0.0001 S/cm^2) so the cad calcium pool has a current source. Source after build_dsgc() and before init_active is called per trial."
+    },
+    {
+      "name": "run_nrnivmodl",
+      "kind": "script",
+      "module": "code/run_nrnivmodl.cmd",
+      "description": "Windows CMD script that compiles the 9 MOD files in code/mods/ into code/build/nrnmech.dll using NEURON's canonical nrnivmodl wrapper."
+    }
+  ],
+  "dependencies": [],
+  "test_paths": [],
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0074_channel_tuning_width_bed_a",
+  "date_created": "2026-05-02"
+}
