@@ -50,9 +50,9 @@
       "step": 6,
       "name": "planning",
       "description": "Write plan/plan.md: 25-d parameter space, BoTorch qNEHVI design, parametric synapse placer, trial driver, MOD-vendor list with sources, Vast.ai instance spec.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-02T21:00:35Z",
-      "completed_at": null,
+      "completed_at": "2026-05-02T21:10:07Z",
       "log_file": "logs\\steps\\006_planning/"
     },
     {
