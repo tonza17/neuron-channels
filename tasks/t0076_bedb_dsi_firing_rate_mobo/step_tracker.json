@@ -59,9 +59,9 @@
       "step": 7,
       "name": "setup-machines",
       "description": "Provision the Vast.ai 64-core CPU node, install NEURON + project deps via uv sync, compile the t0076 MOD library on the remote, smoke-test one trial.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-02T21:14:56Z",
-      "completed_at": null,
+      "completed_at": "2026-05-02T21:44:04Z",
       "log_file": "logs\\steps\\007_setup-machines/"
     },
     {
