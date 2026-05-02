@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-code",
       "description": "Map reusable code from t0024 (cell builder + parametric synapse placer scaffolding), t0066 (PD/ND bar-angle protocol + tuning curve), t0067 (5 vendored MODs), t0072 (per-synapse recorder + Typst PDF pipeline).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-02T20:47:34Z",
-      "completed_at": null,
+      "completed_at": "2026-05-02T21:00:13Z",
       "log_file": "logs\\steps\\005_research-code/"
     },
     {
