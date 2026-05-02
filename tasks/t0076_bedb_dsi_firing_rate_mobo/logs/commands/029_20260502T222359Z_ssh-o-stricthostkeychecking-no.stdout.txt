@@ -1,0 +1,28 @@
+    PID     ELAPSED CMD
+   3034       01:36 /root/neuron-channels/.venv/bin/python -u -m tasks.t0076_bedb_dsi_firing_rate_mobo.code.mobo_loop --n-iterations 400 --n-sobol 30 --n-seeds 20 --n-directions 8 --workers 64 --checkpoint-every 10
+---LOG (filtered)---
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.
+--No graphics will be displayed.

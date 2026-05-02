@@ -1,0 +1,20 @@
+ create mode 100644 tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/024_20260502T221823Z_ssh-o-stricthostkeychecking-no.stderr.txt
+ create mode 100644 tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/024_20260502T221823Z_ssh-o-stricthostkeychecking-no.stdout.txt
+ create mode 100644 tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/025_20260502T221838Z_ssh-o-stricthostkeychecking-no.json
+ create mode 100644 tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/025_20260502T221838Z_ssh-o-stricthostkeychecking-no.stderr.txt
+ create mode 100644 tasks/t0076_bedb_dsi_firing_rate_mobo/logs/commands/025_20260502T221838Z_ssh-o-stricthostkeychecking-no.stdout.txt
+Notice: This mechanism cannot be used with CVODE
+Thread Safe
+ -> [32mCompiling[0m cadecay.c
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+Running 2 dir x 1 seeds at workers=1
+Default param vector: [3.000e-02 5.000e-03 5.000e-03 5.000e-03 1.000e-02 5.000e-03 3.000e-03
+ 1.000e-03 1.000e-04 1.000e-04 1.000e-03 1.000e-03 1.000e+02 1.000e+00
+ 1.667e-04 1.000e-01 5.000e+00 1.770e+02 1.770e+02 1.000e+00 2.000e+02
+ 1.000e+00 2.000e+02 1.000e-03 3.000e-03]
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+DSI=0.000  PD_rate_hz=1.00  n_trials=2  n_errors=0  elapsed=14.0s
