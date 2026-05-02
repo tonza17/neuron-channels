@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-188 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **166 open** (23
-high, 127 medium, 16 low), **22 closed**.
+194 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **172 open** (26
+high, 130 medium, 16 low), **22 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,30 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AIS-localised Kv7 follow-up (t0075 candidate)</strong>
+(S-0074-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta < 0.003 at
+every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008's prediction
+that Kv7's canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30
+µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density
+Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the
+t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
+mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
+accumulation is well-suited to the AIS firing regime.
 
 </details>
 
@@ -497,6 +521,31 @@ window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
+flat-top clipping</strong> (S-0074-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep).
+Creative-thinking flagged that this could be a flat-top clipping artefact rather than true
+narrowing: if SK acts as a firing-rate ceiling, the curve becomes flat-topped near the peak
+and HWHM becomes ill-defined. Resolution requires a per-condition polar curve plot for SK_high
+(and as a control, SK_med, SK_low, baseline). Cost: ~30 min coding using the existing t0011
+plot_polar_tuning_curve. If polar plot shows flat-top with sharp shoulders, the narrowing is a
+clipping artefact; if it shows a true narrow bell, the effect is real and SK_high is
+biologically interesting. This is purely an analysis task on the existing per_trial_full.csv —
+no new sim runs.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
 EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
 recovery</strong> (S-0055-02)</summary>
@@ -597,6 +646,31 @@ gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at l
 (gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
 Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
 + scalar GABA ladder). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
+sub-threshold angles</strong> (S-0074-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
+DSI. Creative-thinking hypothesised NaR's slow `s` reactivation gate creates a sub-threshold
+floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test:
+load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and
+angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes > 0. Hypothesis
+confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost:
+pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
+AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
+affecting PD.
 
 </details>
 
@@ -1684,6 +1758,30 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Find the NaP density at which vector-sum DSI crosses 0.1</strong>
+(S-0074-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+NaP_low gives vector-sum DSI = 0.227 (delta +0.034). NaP_med gives 0.226 (delta +0.033).
+NaP_high gives 0.050 (delta -0.143). The DSI-loss transition between NaP_med (0.01 mS/cm²) and
+NaP_high (0.05 mS/cm²) is sharp; the exact threshold density is between 0.01 and 0.05. Run a
+5-density sweep (e.g., 0.01, 0.015, 0.02, 0.03, 0.05 mS/cm²) × 12 angles × 5 seeds × 5
+conditions = 300 trials, ~12 min compute. Hypothesis: there's a critical density d* in (0.01,
+0.03) above which vector-sum DSI drops sharply; characterising d* exactly is needed for any
+future NaP-modulation experiments. Updated version of S-0067-01 using vector-sum DSI rather
+than legacy DSI as the metric.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6,
 0.7} at GABA=4 nS on t0022</strong> (S-0039-02)</summary>
 
@@ -2116,6 +2214,29 @@ schedule-fixed testbed (S-0030-01 prerequisite). Distinct from S-0002-04 (broad 
 including branch orders at fixed synapse count) because it is 2-D, focused, and scheduled
 after the desaturation fix. Expected local CPU wall time ~7 h. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Kv3 + NaP co-expression: high-rate firing regime</strong>
+(S-0074-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Kv3 was inert at all 3 densities at our peak rates (~20 Hz baseline). Literature (Rudy &
+McBain 2001) says Kv3 engages strongly above 100 Hz. NaP_high produced a 74 Hz peak rate — the
+highest in the sweep. Co-expression of Kv3 with NaP should put us in Kv3's effective regime.
+Test: 4 conditions {NaP_high, NaP_high + Kv3_low, NaP_high + Kv3_med, NaP_high + Kv3_high} ×
+12 angles × 5 seeds = 240 trials, ~10 min compute. Hypothesis: Kv3 co-expression with NaP_high
+partially rescues DSI by providing fast repolarisation, allowing the cell to recover between
+PD spikes and reducing the depolarisation block we hypothesised in creative-thinking.
 
 </details>
 
@@ -2986,6 +3107,30 @@ NMDA over-amplification (SEClamp PD 13.89 vs paper 7.0) and direction-asymmetry 
 persist under voltage-independent NMDA. This locks the canonical SEClamp baseline alongside
 the canonical exptype convention before downstream parameter-tuning work begins. Recommended
 task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Repeat t0074 sweep on Bed B (de-Rosenroll DSGC)</strong>
+(S-0074-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0074 covered Bed A only. Bed B (de-Rosenroll 2026, t0024 library) has different morphology,
+different synapse placement, and a built-in Ca pool — meaning the channel-level findings here
+may not generalise to Bed B. Repeat the same 25-condition × 12-angle × 5-seed sweep on Bed B.
+Cost: same ~70 min compute as t0074. Comparison points: which channels remain inert; whether
+NaP-induced DSI loss reproduces; whether SK_high HWHM narrowing reproduces (or is a
+Bed-A-specific artefact); whether the with-cad baseline DSI shift seen in Bed A is also seen
+in Bed B (where cad is native). This is a cross-substrate validation that strengthens any
+conclusions drawn from t0074.
 
 </details>
 

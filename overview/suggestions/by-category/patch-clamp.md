@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-20 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **16
-open** (2 high, 13 medium, 1 low), **4 closed**.
+21 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **17
+open** (2 high, 13 medium, 2 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -406,6 +406,30 @@ side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic 
 asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
 persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
 Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Validate vendored BK/SK MOD kinetics against published RGC
+patch-clamp data</strong> (S-0074-09)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-09` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+The vendored BK MOD comes from Mainen-Sejnowski 1996 (cortical pyramidal); SK from Hay 2011
+(L5 pyramidal). Their kinetics may not match RGC patch-clamp recordings. Run voltage-clamp
+simulations on a single soma in NEURON for each MOD (step protocol from -90 to +40 mV in 10 mV
+steps, 100 ms duration) and compare resulting current traces against Pfeiffer-Friedrich 2012
+(mouse RGC BK) and Wang 2014 (mouse RGC SK). If the activation V_half or time constants
+deviate by > 20%, retune the MOD parameters or vendor an RGC-specific MOD instead. Cost: ~1
+hour coding + 10 min sim + 30 min comparison plotting. Outcome: either a validation note in
+the library description, or a v0.2.0 of the channel pack with retuned RGC-specific kinetics.
 
 </details>
 

@@ -16,7 +16,7 @@ sweep on Bed A</strong></summary>
 |---|---|
 | **ID** | `t0075_bio_realistic_ais_param_sweep` |
 | **Status** | not_started |
-| **Effective date** | — |
+| **Effective date** | 2026-05-01 |
 | **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
 | **Expected assets** | 1 library |
 | **Source suggestion** | `S-0069-01` |
@@ -190,171 +190,209 @@ For each condition, compute:
 </details>
 
 <details>
-<summary>⏹ 0074 — <strong>Channel tuning-width sweep on Bed A with BK/SK/Kv7
-vendoring</strong></summary>
+<summary>⏹ 0073 — <strong>Multi-objective BO of channels + synapse placement on
+Bed B (max DSI + max firing rate)</strong></summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `t0074_channel_tuning_width_bed_a` |
+| **ID** | `t0073_bedb_dsi_firing_rate_mobo` |
 | **Status** | not_started |
-| **Effective date** | — |
-| **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
-| **Expected assets** | 1 library |
-| **Source suggestion** | `S-0068-01` |
-| **Task types** | [`build-model`](../../../meta/task_types/build-model/), [`experiment-run`](../../../meta/task_types/experiment-run/) |
-| **Task page** | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
-| **Task folder** | [`t0074_channel_tuning_width_bed_a/`](../../../tasks/t0074_channel_tuning_width_bed_a/) |
+| **Effective date** | 2026-05-02 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../../../overview/tasks/task_pages/t0073_bedb_dsi_firing_rate_mobo.md) |
+| **Task folder** | [`t0073_bedb_dsi_firing_rate_mobo/`](../../../tasks/t0073_bedb_dsi_firing_rate_mobo/) |
 
-# Channel Tuning-Width Sweep on Bed A with BK / SK / Kv7 Vendoring
+# Multi-objective Bayesian optimisation of channels + synapse placement on Bed B
 
 ## Motivation
 
-The t0067 soma-channel-addition sweep on Bed A (deposited Poleg-Polsky DSGC, library
-`modeldb_189347_dsgc` from t0008) measured DSI as a point estimate from PD vs ND only — a
-2-angle protocol. That left the more biologically interesting question unanswered: do the
-tested channels also reshape the *width* of the angle-to-AP-rate tuning curve, and if so, do
-they sharpen or broaden it? t0067 reported NaP_high inverts DSI (sign flip), Nav1.6_high
-erodes DSI from 0.80 to 0.23, and {NaR, Kv3, Kv4} are nearly inert at the chosen densities;
-t0068 then falsified the Nav1.6 + Kv3 co-expression rescue. Three biologically natural rescue
-candidates remain untested because their MOD mechanisms are not yet vendored in the project:
-BK (KCa1.1 / KCNMA1), SK (KCa2 / KCNN), and Kv7 (KCNQ2 + KCNQ3, the M-current). All three are
-calcium-activated or slow-activating and could in principle differentially suppress the
-high-firing-rate PD direction and rescue DSI without flipping it. Adding them to the channel
-sweep and measuring tuning width across all eight channels at three densities each closes both
-gaps in one task.
+The project has two well-characterised DSGC model beds (Bed A: t0008 deposited Poleg-Polsky;
+Bed B: t0024 de Rosenroll port) and a thorough understanding of how individual channels and
+synapse subsystems behave (t0019 literature survey, t0067 single-channel soma sweep, t0068
+co-expression rescue test, t0069 AIS sweep, t0070/t0071 writeup, t0072 per-synapse traces).
+None of this work has yet asked the headline scientific question: **what combination of
+voltage-gated channels and synaptic input placement gives the best joint trade-off between
+direction selectivity (DSI) and firing rate?** This task answers that for Bed B.
 
-This task addresses RQ1 (somatic VGC combinations) and provides a tuning-width baseline that
-any future RQ4 active-dendrite test will compare against. Source suggestions covered:
-S-0068-01 (BK / SK with Nav1.6), S-0068-02 (Kv7 with Nav1.6), S-0068-05 (Kv3 alone
-validation).
+We fix the de Rosenroll morphology (the geometric structure has already been characterised in
+the t0029/t0034 dendrite sweeps — it is not the bottleneck for direction selectivity).
+Channels and synapses are the search space.
 
 ## Scope
 
-* Substrate: Bed A only (deposited Poleg-Polsky DSGC, t0008 library `modeldb_189347_dsgc`).
-* Encoding: 12-angle bar-rotation protocol (the model's native protocol per t0046
-  reproduction). Bar-arrival times sweep through 12 angles in 30-degree steps.
-* Channel set: 8 channels — 5 already vendored {Nav1.6, NaP, NaR, Kv3, Kv4} plus 3 newly
-  vendored {BK, SK, Kv7}. Each channel inserted on the soma at low / medium / high density (3
-  densities each, matching the t0067 grid). Plus a baseline condition with no extra channels.
-* **Conditions**: 1 baseline + 8 channels x 3 densities = **25 conditions**.
-* **Trials**: 25 conditions x 12 angles x 5 seeds in FULL mode = 1500 trials. Plus 25 x 12
-  angles x 1 seed x 2 passive modes (EPSP_PASSIVE / IPSP_PASSIVE) = 600 diagnostic trials.
-  **Total: 2100 trials**, ~2.2 h wall-clock on local CPU under CVODE at the t0067 measured
-  rate of ~3.75 s / trial.
+* **Cell substrate**: Bed B (t0024 de Rosenroll port). Morphology fixed (1 soma + 350
+  dendrites, 10,649 `pt3dadd` points; built once via `build_dsgc_cell()` from the registered
+  `de_rosenroll_2026_dsgc` library asset).
+* **Search dimensions**: 25 free parameters (see Parameters section).
+* **Objectives**: 2 (DSI and PD firing rate) — both maximised.
+* **Optimisation algorithm**: multi-objective Bayesian optimisation via BoTorch's qNEHVI
+  acquisition function (q-noisy expected hypervolume improvement). Multi-output Gaussian
+  Process surrogate.
+* **Compute platform** (REQUIRED): **Vast.ai 64-core CPU node**. Local-workstation execution
+  is not acceptable for this task — the optimisation needs ~64-way trial-level parallelism to
+  keep per-iteration wall time at ~30 s. The task plan therefore includes the canonical
+  `setup-machines` and `teardown` steps; the `/setup-remote-machine` skill provisions the
+  Vast.ai instance, installs the project's NEURON + Python environment via the standard `uv
+  sync` flow, runs the optimisation, downloads results, and destroys the instance. No work
+  runs on the local workstation beyond orchestration of the SSH session.
+* **Per-iteration cost**: 8 directions × 20 seeds = 160 trials × ~3 s wall ≈ ~30 s on the
+  Vast.ai 64-core node (`ProcessPoolExecutor` over trials).
+* **Total compute budget**: 300-500 iterations × ~30 s ≈ **2.5-4 h wall on the Vast.ai 64-core
+  node**.
+
+## Parameters (25 free)
+
+| # | Category | Parameter | Range | Notes |
+| --- | --- | --- | --- | --- |
+| 1-12 | **Channel densities** (`gbar`, S/cm²) | One per channel, log-uniform: Nav1.6, NaP, NaR, Kdr, Kv3, Kv4, KM, HCN, CaL, CaT, BK, SK | 1e-5 - 0.5 | Single density across the cell; tier-stratification deferred. |
+| 13 | **Passive** | `Ra` (Ω·cm) | 50 - 250 | Linear |
+| 14 | **Passive** | `cm` (µF/cm²) | 0.5 - 2.0 | Linear |
+| 15 | **Passive** | `gleak` (S/cm²) | 1e-5 - 1e-3 | Log-uniform |
+| 16 | **Calcium** | `cad.depth` (µm) | 0.05 - 0.5 | Internal Ca shell depth |
+| 17 | **Calcium** | `cad.taur` (ms) | 5 - 100 | Ca extrusion time constant |
+| 18 | **Synapse count** | `N_ACh` (int) | 50 - 350 | Total ACh terminals; default 177 |
+| 19 | **Synapse count** | `N_GABA` (int) | 50 - 350 | Total GABA terminals; default 177 |
+| 20 | **Synapse spatial rule** | `rho_0_ACh` (rel.) | 0.1 - 5.0 | Density at soma for ρ(d) = ρ_0 · exp(-d/λ) |
+| 21 | **Synapse spatial rule** | `lambda_ACh` (µm) | 30 - 500 | Spatial decay length for ACh |
+| 22 | **Synapse spatial rule** | `rho_0_GABA` (rel.) | 0.1 - 5.0 | Density at soma for GABA |
+| 23 | **Synapse spatial rule** | `lambda_GABA` (µm) | 30 - 500 | Spatial decay length for GABA |
+| 24 | **Synapse weight** | `w_ACh` (µS) | 1e-4 - 1e-2 | NetCon weight for ACh; default 0.003 |
+| 25 | **Synapse weight** | `w_GABA` (µS) | 1e-4 - 1e-2 | NetCon weight for GABA; default 0.003 |
+
+Channel kinetics (V_half, τ) are NOT optimised — they are fixed at literature values per
+t0019, with MOD files vendored from t0067 (5 channels: Nav1.6, NaP, NaR, Kv3, Kv4) plus 6 new
+MODs to vendor in this task (Kdr, KM, HCN, CaL, CaT, BK, SK — see Risks fallback if any prove
+hard to source).
+
+Reversal potentials (E_Na, E_K, E_Ca, E_GABA) are fixed by physics and NOT optimised.
+
+## Objectives (2)
+
+| Objective | Direction | Definition |
+| --- | --- | --- |
+| **DSI** (direction selectivity index) | **maximise** | `(spike_pd - spike_nd) / (spike_pd + spike_nd)`, where `spike_pd` and `spike_nd` are mean spike counts across 20 seeds at the preferred direction (0°) and null direction (180°) respectively. Range: [-1, +1]; perfect DSGC ≈ 1. |
+| **PD firing rate** | **maximise** | Mean spike count over 1000 ms at the PD direction (0°), averaged across 20 seeds. In Hz: divide by 1.0 s. |
+
+The optimiser produces a **Pareto front** — the set of cell configurations where no other
+configuration is simultaneously better on both DSI and firing rate. The user picks the
+operating point afterward based on biological constraints (e.g., "I need DSI ≥ 0.7 with firing
+rate ≥ 30 Hz" → the Pareto front shows whether that point is achievable and what configuration
+reaches it).
+
+Although the user is NOT optimising for cytoplasm volume (morphology is fixed → cytoplasm
+volume is constant), the task records cytoplasm volume per cell for completeness; it just
+doesn't enter the objective function.
 
 ## Approach
 
-### Stage 1 — vendor 3 new MOD files plus calcium-pool mechanism
+1. **Vendor 6-7 new MOD files** from canonical published sources (ModelDB, Allen Institute)
+   into `code/mods/`: Kdr, KM (Kv7), HCN (Ih), CaL (CaV1.x), CaT (CaV3.x), BK (KCa1.1), SK
+   (KCa2). Plus the existing 5 from t0067 (Nav1.6, NaP, NaR, Kv3, Kv4) copied verbatim.
+   Compile to a t0073-local `nrnmech.dll`.
+2. **Add the `cad` calcium-accumulation mechanism** if not already in the de Rosenroll port
+   (needed because BK and SK depend on intracellular [Ca²⁺]).
+3. **Write the parametric synapse placer**: given (`N_type`, `ρ_0`, `λ`), draw N positions
+   along the dendritic tree with density proportional to `exp(-d/λ)` where `d` is the path
+   distance from the soma. Use `sec.distance()` to compute path distance per section midpoint.
+4. **Write the trial driver**: takes a 25-d parameter vector → builds the parametric cell →
+   runs 8 directions × 20 seeds (160 trials) via `ProcessPoolExecutor` over directions × seeds
+   on a 64-core CPU → returns (DSI, PD firing rate).
+5. **Wire up BoTorch qNEHVI**: 25-d input space, 2-d output space, multi-task GP, qNEHVI
+   acquisition with reference point at (DSI=0, rate=0). Initial design-of-experiments: 30
+   Sobol-sampled cells. Optimisation loop: 300-500 acquisition steps.
+6. **Plot the Pareto front** at iteration 50, 100, 200, 300, ..., final. Show how the front
+   converges. Highlight 3-5 representative cells from the front in detail (parameter values,
+   tuning curves, spike rasters, synaptic conductance traces — reusing the t0072 recorder).
+7. **Render writeup as markdown + Typst PDF** (consistent with t0070-t0072).
 
-* Vendor a BK (KCa1.1) MOD file, sourced from a standard published model (e.g., Migliore CA1,
-  Hines & Carnevale Purkinje). Validate kinetics against expected V- and Ca-dependence.
-* Vendor an SK (KCa2 / SK2) MOD file from the same kind of source.
-* Vendor a Kv7 / M-current MOD file (KCNQ2 + KCNQ3 mixture or composite Kv7) from a standard
-  published model.
-* Vendor a calcium-pool mechanism (single-shell `cad`-style decay model, mirrors Bed B's
-  existing `cad`) to provide [Ca]_i for BK and SK.
-* Un-zero CaL and CaT in Bed A's `init_active` so that the calcium pool has a current source.
-  This is the only change to the existing Bed A model and must pass a regression gate (see
-  Stage 2).
+The orchestrator wraps steps 1-7 between a `setup-machines` step (provisions the Vast.ai node,
+installs NEURON + uv-managed deps, compiles the t0073 MOD library on the remote) and a
+`teardown` step (downloads all results back to the local task folder, destroys the Vast.ai
+instance, updates `results/costs.json` and `results/remote_machines_used.json` with the actual
+billed amount).
 
-### Stage 2 — regression gate
+## Cost estimation
 
-* Run the t0067 baseline (no extra channels, no BK / SK / Kv7) under the new code path with
-  CaL + CaT un-zeroed and the calcium-pool mechanism live but at zero density (BK = 0, SK = 0,
-  Kv7 = 0).
-* Pass criterion: baseline DSI matches t0067's reported DSI = 0.797 within 1e-3 (allowing
-  sampling noise across the 5-seed mean). Failure means the un-zeroing introduced unintended
-  dynamics; fix before proceeding to Stage 3.
-
-### Stage 3 — 12-angle tuning-curve sweep
-
-* For each of 25 conditions (1 baseline + 5 existing channels x 3 densities + 3 new channels x
-  3 densities) run 12 angles x 5 seeds in FULL mode. Save:
-  * Per-trial soma spike times.
-  * Per-trial peak Vm and baseline Vm.
-  * Per-condition tuning curve (mean +/- SD spike count per angle).
-* Same channel insertion code as t0067 with three new branches for BK, SK, Kv7. Holds all
-  other parameters at the t0067 baseline.
-
-### Stage 4 — passive diagnostics (EPSP_PASSIVE / IPSP_PASSIVE)
-
-* For each of 25 conditions run 12 angles x 1 seed x 2 passive modes = 600 trials.
-* Save per-trial peak Vm in the EPSP_PASSIVE and IPSP_PASSIVE traces. These should be flat at
-  -60 mV in IPSP_PASSIVE for all conditions (cross-checks with t0065's shunting-design
-  finding) and direction-invariant in EPSP_PASSIVE under Bed A's gabaMOD = 0 zeroing.
-
-### Stage 5 — width metrics and visualisation
-
-* Per condition, compute:
-  * **HWHM** (half-width at half-max) in degrees, by linear interpolation around the half-max
-    points of the 12-angle tuning curve.
-  * **Vector-sum DSI** = `|sum_i rate(theta_i) * exp(i * theta_i)| / sum_i rate(theta_i)` —
-    circular concentration metric.
-  * **Peak rate (Hz)** at the angle with maximum mean rate.
-  * **Rate at PD** and **rate at PD + 180 deg** (ND).
-  * **RMSE vs t0004 cosine target** — the canonical project tuning-curve loss, computed using
-    the t0012 library.
-* For any condition where the tuning curve has no clear peak (mean rate < 1 Hz at every
-  angle), report HWHM as `null` rather than fabricating a value.
-* Produce a per-channel sensitivity plot (HWHM, vector-sum DSI, peak rate vs density) using
-  the t0011 visualisation library.
-
-## Expected Outputs
-
-* **Library asset**: a vendored channel pack containing the BK, SK, Kv7 MODs plus the
-  calcium-pool mechanism, registered as a project library. This becomes a dependency for t0075
-  and any future task that needs these channels.
-* **Per-condition tuning curves** (25 CSVs, one per condition) and a combined
-  `tuning_curves.csv` with all 25 x 12 = 300 (condition, angle) rows.
-* **Width metrics table** (`results/metrics_summary.csv`): 25 rows x 6 columns (HWHM,
-  vector-sum DSI, peak rate, PD rate, ND rate, RMSE vs cosine target).
-* **Per-channel sensitivity plots** (8 PNGs in `results/images/`): HWHM, vector-sum DSI, peak
-  rate vs density per channel.
-* **Cross-channel comparison plot** (`results/images/all_channels_dsi_vs_density.png`):
-  vector-sum DSI vs density for all 8 channels overlaid.
-* `results/metrics.json` with the registered project metrics applied per condition.
-
-## Pass Criteria
-
-* Stage 2 regression gate passes (baseline DSI within 1e-3 of t0067 = 0.797).
-* All 2100 trials complete with no instability flags.
-* Width metrics table is fully populated (HWHM may be `null` for low-rate conditions;
-  vector-sum DSI and peak rate must be defined for all 25 conditions).
-* For each channel, at least one density produces a measurable change in either HWHM or
-  vector-sum DSI (delta > 5 deg HWHM or delta > 0.05 vector-sum DSI relative to baseline).
-  Channels that produce no measurable change at any density are reported as inert in the
-  conclusion section.
-
-## Compute Estimate
-
-* ~2.2 h wall-clock on local CPU under CVODE for the 2100 trials.
-* ~3-4 h coding time for the 3 channel MOD vendoring + calcium-pool mechanism + Stage 2
-  regression gate.
-* Local-CPU only. No remote machine. No paid API.
+* **Compute platform**: Vast.ai 64-core CPU instance (no GPU needed — see Risk #2 if 64-core
+  CPU nodes are unavailable in the chosen region).
+* **External costs**:
+  * Vast.ai 64-core CPU node typical pricing: $0.20 - $0.60 / hr (varies by host, region, bid
+    vs on-demand).
+  * Run duration: 2.5-4 h compute + ~10-20 min provisioning/install + ~5 min teardown.
+  * **Expected billed total: $0.75 - $3.00 for the optimisation run**, plus ~$0.10 - $0.30 for
+    the provisioning overhead.
+  * Budget cap: $5.00 (conservative — if the run exceeds this, the implementation step halts
+    and writes an intervention file).
+* Disk: ~50-200 MB for raw per-iteration trial summaries (no per-synapse traces saved per
+  iteration to keep size down — only the 3-5 best Pareto cells get full traces). Output is
+  rsync-pulled back to the local task folder during teardown.
+* Time:
+  * MOD vendoring + driver code (local human time): ~6-10 h.
+  * Optimisation run on Vast.ai 64-core: ~2.5-4 h wall, billed.
+  * Plotting + analysis + PDF (local human time, post-teardown): ~2-3 h.
+  * Total: ~12-18 h human-time + ~$1-3 cloud spend.
 
 ## Dependencies
 
-* `t0008_port_modeldb_189347` — Bed A library `modeldb_189347_dsgc`.
-* `t0011_response_visualization_library` — tuning-curve visualisation.
-* `t0012_tuning_curve_scoring_loss_library` — RMSE vs cosine target.
-* `t0067_t0065_soma_channel_addition_sweep` — channel-insertion code is forkable; baseline DSI
-  = 0.797 reference for the regression gate.
+* `t0008_port_modeldb_189347` — Bed B reuses Poleg-Polsky's morphology.
+* `t0019_literature_survey_voltage_gated_channels` — V_half / τ priors for the 12 channels.
+* `t0024_port_de_rosenroll_2026_dsgc` — Bed B itself; entry point `build_dsgc_cell()`.
+* `t0066_t0024_epsp_ipsp_vm_protocol` — direction-encoding mechanism on Bed B (bar angle).
+* `t0067_t0065_soma_channel_addition_sweep` — provides 5 vendored MODs to copy verbatim.
+* `t0070_writeup_two_model_beds` — reference writeup (cite for context).
+* `t0072_synaptic_traces_pd_nd` — per-synapse recorder pattern + Typst PDF pipeline.
 
-## Risks and Fallbacks
+## Risks and fallbacks
 
-* **Calcium-pool kinetics drift**: the un-zeroing of CaL / CaT in Bed A's `init_active` is the
-  most disruptive change. If the regression gate (Stage 2) fails, fall back to a closed-form
-  external calcium-pool mechanism that does not depend on CaL / CaT (e.g., feed [Ca]_i
-  directly from a precomputed time series). This preserves BK / SK kinetics while leaving Bed
-  A's existing HHst dynamics untouched.
-* **BK / SK MOD source discrepancy**: if the chosen source MOD has different kinetics from the
-  canonical RGC literature, validate against published whole-cell recordings (e.g., Pfeiffer &
-  Friedrich 2012 mouse RGC BK; Wang et al. 2014 RGC SK). Document the source paper for each
-  MOD in the library asset's `details.json`.
-* **Kv7 expression density unclear**: Kv7 in DSGC AIS is documented but somatic Kv7 in DSGC is
-  less studied. If the t0067 "low / medium / high" density grid produces only inert results
-  across the Kv7 row, log the negative result and recommend an AIS-localised follow-up
-  (deferring to t0075).
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | One or more of the 6 new MOD files (Kdr, KM, HCN, CaL, CaT, BK, SK) cannot be sourced from a clean published implementation. | Vendor step fails on a specific channel. | Drop to 8 channels (HHst's built-in Na/Kdr/leak + the 5 t0067 channels) and document the reduction in the writeup. The optimisation framework (BoTorch + driver) doesn't care about the channel count — only the parameter dimension changes. |
+| 2 | Vast.ai has no 64-core CPU node available in the requested region/price tier at provisioning time. | `setup-machines` step's instance search returns 0 matches. | Try adjacent regions; relax the price cap (typical 64-core nodes are $0.20-$0.60/hr); or accept a 32-core node (run wall doubles to ~5-8 h, still tractable). Do NOT fall back to local-workstation execution — this task is explicitly cloud-compute. If no remote node is available within the $5 budget cap, write an `intervention/` file and stop. |
+| 3 | BoTorch qNEHVI fails to converge in 500 iterations (Pareto front still expanding). | Manually inspect the front at iter 100, 200, 400; check the hypervolume metric for monotonic increase. | Switch to NSGA-II via DEAP/pymoo (more iterations needed but more robust). Cap at 5000 trials. |
+| 4 | Calcium dynamics make the cell numerically unstable at extreme channel-density combinations. | Trial errors out with NaN voltage or NEURON solver complaint. | Catch the exception, return a worst-case score (DSI = -1, rate = 0) so the optimiser learns to avoid that region. |
+| 5 | Stochastic per-trial noise on DSI is large enough that the GP can't learn (DSI estimates have SE > 0.1). | High GP residual variance after 50 iterations. | Increase seeds per direction from 20 to 40 (doubles per-iteration time). Or use a noise-aware GP kernel (BoTorch's HeteroscedasticGP). |
+| 6 | The parametric synapse placer (exponential decay) is too restrictive; the optimal cell needs a non-monotonic spatial pattern. | Best-Pareto cells cluster at parameter-bound extremes. | Add a quadratic term to the spatial rule (`ρ(d) = ρ_0 · exp(-d/λ) · (1 + α · d²)`) — adds 2 params per type, total dim = 29. |
+| 7 | Adding `botorch` + `gpytorch` + `torch` to `pyproject.toml` is a large dependency footprint (~2 GB). | uv sync slow / disk concern. | Acceptable cost for the gain; document in the writeup. Alternative: use Ax (lighter wrapper around BoTorch) or scikit-optimize (much smaller, less powerful). |
+
+## Verification criteria
+
+* All 25 free parameters have explicit log/linear bounds documented.
+* The driver handles a NaN/error trial gracefully (worst-case-score fallback).
+* The Pareto front contains at least 5 distinct cell configurations after 200 iterations.
+* Hypervolume metric is monotonically increasing across iterations (modulo small noise).
+* At least 3 representative Pareto cells have full diagnostic traces saved (tuning curve,
+  spike raster, synaptic conductances).
+* All standard verificators pass.
+* The writeup PDF embeds the Pareto front figure and at least 3 representative-cell figures.
+
+## Task Requirement Checklist
+
+* **REQ-1** — 12 voltage-gated channel mechanisms vendored or implemented (or 8 if MOD-vendor
+  fallback is invoked, with documented justification).
+* **REQ-2** — Parametric synapse placer takes (N, ρ_0, λ) and produces a valid synapse
+  placement with the requested density pattern.
+* **REQ-3** — Trial driver runs 8 directions × 20 seeds for any 25-d parameter vector and
+  returns (DSI, PD firing rate). Handles NaN errors gracefully.
+* **REQ-4** — BoTorch qNEHVI optimiser wired up and runs ≥ 300 iterations.
+* **REQ-5** — Pareto front + hypervolume trajectory plotted; saved to `results/images/`.
+* **REQ-6** — At least 3 representative Pareto cells documented in detail (parameter values,
+  tuning curves, spike traces).
+* **REQ-7** — `results/results_summary.md` + `results_detailed.md` (with the mandatory
+  sections per the results spec) + Typst PDF.
+* **REQ-8** — All standard verificators pass.
+* **REQ-9** — `pyproject.toml` updated with `botorch`, `gpytorch`, `torch` (and any related
+  deps) cleanly.
+* **REQ-10** — A documented "next steps" suggestion: tier-stratify the channel densities of
+  the best 3 Pareto cells and re-optimise locally (extends the search to ~40 dim).
+* **REQ-11** — All compute (cell builds, NEURON sims, BoTorch acquisition steps) runs on the
+  Vast.ai 64-core node, NOT on the local workstation. The local workstation only orchestrates
+  the SSH session, holds the task folder, and pulls results back during teardown.
+* **REQ-12** — `results/costs.json` records the actual Vast.ai bill (≤ $5.00) and
+  `results/remote_machines_used.json` records the instance ID, GPU/CPU specs (no GPU
+  expected), hourly rate, total billed time, and provisioning + teardown timestamps.
 
 </details>
 

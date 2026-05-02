@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-01T18:07:23Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-02T04:00:31Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>115</section_count>
-    <char_count>1994463</char_count>
-    <byte_count>1999559</byte_count>
-    <estimated_tokens>498615</estimated_tokens>
+    <section_count>118</section_count>
+    <char_count>2114618</char_count>
+    <byte_count>2120220</byte_count>
+    <estimated_tokens>528654</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -179,9 +179,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0071_t0070_synaptic_eqs_pdf</id>
         <id>t0072_synaptic_traces_pd_nd</id>
         <id>t0073_brainstorm_results_12</id>
+        <id>t0074_channel_tuning_width_bed_a</id>
       </source_ids>
       <content>
-Completed tasks: 67
+Completed tasks: 68
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -584,6 +585,12 @@ ID: t0073_brainstorm_results_12
 Completed: 2026-05-01
 Short description: Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
 Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset PDF + synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069 voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition (t0067 measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that simultaneously contains all biologically-present AIS channels and produces non-trivial DSI at a biologically reasonable peak rate. Decision: commission two new tasks (t0074...
+
+## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+ID: t0074_channel_tuning_width_bed_a
+Completed: 2026-05-02
+Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tuning_width_bed_a&quot; date_completed: &quot;2026-05-02&quot; status: &quot;complete&quot; --- Results Summary: Channel Tuning-Width Sweep on Bed A Summary Across 25 conditions (1 baseline + 8 channels × 3 densities) × 12 angles × 5 seeds = 1500 FULL + 600 passive = 2100 trials, **NaP_high collapses vector-sum DSI from 0.193 to 0.050** (legacy DSI_PD-ND from 0.308 to 0.008) and produces the highest peak rate in the sweep (74.2 Hz vs 17.4 Hz baseline); **SK_high cuts HWHM in half** (83.5 deg → 41.1 deg) while suppressing peak rate; **Kv3, Kv4, and Kv7 are inert at all three densities tested** (no condition trips the |delta_HWHM| &gt; 5 deg or |delta_vec_DSI| &gt; 0.05...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -593,7 +600,7 @@ Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0073_bedb_dsi_firing_rate_mobo</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
@@ -619,17 +626,17 @@ Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
 
-## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
-ID: t0074_channel_tuning_width_bed_a
+## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
+ID: t0073_bedb_dsi_firing_rate_mobo
 Status: not_started
-Effective date: unknown
-Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
-Dependencies: t0008_port_modeldb_189347, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0067_t0065_soma_channel_addition_sweep
+Effective date: 2026-05-02
+Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
+Dependencies: t0008_port_modeldb_189347, t0019_literature_survey_voltage_gated_channels, t0024_port_de_rosenroll_2026_dsgc, t0066_t0024_epsp_ipsp_vm_protocol, t0067_t0065_soma_channel_addition_sweep, t0070_writeup_two_model_beds, t0072_synaptic_traces_pd_nd
 
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
       </content>
@@ -34116,6 +34123,1969 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0074_channel_tuning_width_bed_a-research_papers" source_kind="file">
+      <title>t0074_channel_tuning_width_bed_a — Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0074_channel_tuning_width_bed_a</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0074_channel_tuning_width_bed_a/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0074_channel_tuning_width_bed_a&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 14
+papers_cited: 11
+categories_consulted:
+  - &quot;voltage-gated-channels&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;compartmental-modeling&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;patch-clamp&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;synaptic-integration&quot;
+  - &quot;cable-theory&quot;
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research Papers: Channel Tuning-Width Sweep on Bed A with BK / SK / Kv7
+
+#### Task Objective
+
+Run a 12-angle bar-rotation tuning-curve sweep on Bed A (the deposited Poleg-Polsky DSGC,
+[PolegPolsky2016], ported in t0008) with each of eight somatic voltage-gated channels added at low,
+medium, and high density (25 conditions, 2100 trials). Extend the t0067 2-angle sweep — which only
+measured DSI from PD vs ND — to characterise the *width* of the angle-to-AP-rate tuning curve via
+HWHM and vector-sum DSI, and rescue the unanswered Nav1.6 / NaP DSI-erosion gap by adding three
+calcium-activated or slow channels (BK / KCa1.1, SK / KCa2, Kv7 / M-current) that the project has
+not yet vendored. The task vendors three new MOD files plus a `cad`-style calcium-pool mechanism,
+un-zeros CaL/CaT in Bed A&#x27;s `init_active`, and gates progress through a Stage-2 regression check
+that the no-extra-channels baseline still reproduces t0067&#x27;s DSI = 0.797 within 1e-3. This research
+review surveys what the project corpus tells us about (i) RGC HH-family channel kinetics already
+used by Bed A, (ii) calcium-pool conventions and Ca-activated K (BK, SK) priors, (iii) Kv7 / M-
+current priors, (iv) angle-resolved tuning-curve metrics (HWHM, vector-sum DSI, half-width) used in
+the published DSGC literature, and (v) prior compartmental-model channel sweeps comparable to this
+task&#x27;s design.
+
+#### Category Selection Rationale
+
+The primary category is `voltage-gated-channels` because the task&#x27;s central manipulation is the
+addition of new ion-channel mechanisms to a compartmental DSGC model. `retinal-ganglion-cell` was
+consulted because the substrate is an ON-OFF DSGC and we need RGC-specific channel-density priors
+where they exist. `compartmental-modeling` was consulted because the entire pipeline is a NEURON
+multi-compartment simulation and prior compartmental models supply the methodological template for
+channel insertion, calcium pools, and vendoring conventions. `direction-selectivity` and
+`patch-clamp` were consulted because the dependent variables (HWHM, vector-sum DSI, peak rate) are
+defined and measured in the DSGC literature using both modelling and patch-clamp recordings.
+`dendritic-computation`, `synaptic-integration`, and `cable-theory` were consulted because the
+Stage-4 passive-diagnostic protocol (EPSP_PASSIVE / IPSP_PASSIVE traces) and Bed A&#x27;s space-clamp and
+dendritic-spike behaviour interact with the channel additions. Excluded: no asset-type categories
+(e.g., dataset-specific tags) are relevant — this task does not introduce new datasets.
+
+The voltage-gated-channels corpus captured by t0019 is small (5 papers) and dominated by AIS Nav /
+Kv1 priors that were the focus of that survey rather than BK / SK / Kv7 priors. The DSGC
+compartmental-model corpus from t0002 is much richer and supplies the angle-resolved tuning metrics,
+dendritic-spike DSI-amplification context, and the specific ON-OFF DSGC firing-rate benchmarks used
+in Bed A. None of the existing assets contain a published BK, SK, or Kv7 MOD file or a direct
+measurement of these channels&#x27; kinetics in DSGCs — this is documented as a gap below and motivates
+the Stage-1 vendoring step.
+
+#### Key Findings
+
+##### RGC Channel Repertoire and Kinetic Priors Already in the Corpus
+
+The canonical RGC HH model is the Fohlmeister-Miller &quot;Five-channel&quot; mechanism: Hodgkin-Huxley-style
+fast Nav (m^3 h), delayed-rectifier Kv (n^4), voltage-gated Ca (c^3), A-type Kv4 (a^3 b), and a
+Ca-activated K (Hill-type activation in [Ca²⁺]^2 / (K_d^2 + [Ca²⁺]^2))
+[FohlmeisterMiller1997, Fohlmeister2010]. [Fohlmeister2010] reports cell-type-specific peak
+conductance maps at 35 °C across (dendrite / soma / IS / TS / axon) compartments, with cat-α soma
+Nav reaching **158 mS/cm²**, Kv up to **36 mS/cm²**, and a peak Nav density of **448.5 mS/cm²** on
+the thin axonal segment 50-130 µm distal to the soma; it also pins gating-kinetic Q10 to **~1.95**
+and permeability Q10 to **~1.64** between 23 and 37 °C [Fohlmeister2010, Results]. The Bed A library
+`modeldb_189347_dsgc` from t0008 inherits this kinetic class via the deposited Poleg-Polsky `HHst`
+and `Cadyn` mechanisms; its t0067-baseline soma Nav is HHst with a high g_Na so additions of 3-90
+mS/cm² of an extra channel are a small perturbation [Fohlmeister2010, FohlmeisterMiller1997].
+
+The `nav-kv-combinations-for-dsgc-modelling` answer asset from t0019
+[VanWart2006, Hu2009, Kole2008, Kole2007, FohlmeisterMiller1997] establishes that Nav1.6 activates
+**~10-15 mV more hyperpolarised** than Nav1.2 (V_½ ≈ -45 mV vs ≈ -32 mV), that AIS peak Nav density
+is **~50×** the somatic value (~2500-5000 pS/µm² ≈ 250-500 mS/cm²), and that Kv1 at the AIS
+activates near **V_½ ≈ -40 to -50 mV** with **τ ≈ 0.5-1 ms**. None of these canonical sources cover
+BK, SK, or Kv7 in RGCs, so MOD-file vendoring for this task must rely on published models from
+neighbouring cell types (CA1 pyramidal, Purkinje, cortical layer-5) and validate against general RGC
+firing- pattern constraints.
+
+##### Calcium-Pool and Ca-Activated K Conventions in Compartmental DSGC Models
+
+The Fohlmeister-Miller K(Ca) mechanism uses a **submembrane shell with first-order [Ca²⁺] removal**
+plus a Hill-type activation `[Ca²⁺]^2 / (K_d^2 + [Ca²⁺]^2)`
+[Fohlmeister2010, FohlmeisterMiller1997]. This is the canonical &quot;single-shell&quot; `cad`-style decay
+model — the same form that Bed B already uses in this project (per the t0070 two-bed write-up
+referenced in the task description) and that the Schachter-Smith-Taylor DSGC model adopts
+[Schachter2010, Architecture]. [Schachter2010] reports physiological dendritic [Ca²⁺] transients and
+a Ca-activated K current paired with their Cav source as a sufficient basis for repolarisation in
+their NEURON DSGC, but does not tabulate K(Ca) kinetic constants. Vendoring a `cad`-style pool
+mechanism for Bed A is therefore standard practice; the Stage-1 plan to feed [Ca²⁺]_i from un-zeroed
+CaL + CaT into a single-shell pool with first-order removal mirrors both Bed B&#x27;s existing convention
+and [Fohlmeister2010, Architecture]. The Stage-2 regression gate (baseline DSI must match t0067 =
+0.797 within 1e-3) is the project-specific safeguard that this kinetic addition does not perturb
+resting dynamics.
+
+##### Direction-Tuning Width Metrics in the DSGC Literature
+
+The DSGC literature uses three width-related metrics that appear repeatedly across studies:
+
+* **Direction-Selectivity Index (DSI)** = (R_PD − R_ND) / (R_PD + R_ND), the 2-angle ratio used by
+  t0067, [Oesch2005, Methods], [Chen2009, Methods], and [PolegPolsky2016, Methods]. [Oesch2005]
+  reports spike-DSI = **0.67 ± 0.13 (ON)** and **0.74 ± 0.13 (OFF)** in rabbit ON-OFF DSGCs and
+  PSP-DSI = **0.09 ± 0.05 (ON)** / **0.14 ± 0.08 (OFF)** in the same cells, illustrating the
+  spike-generation amplification that this task&#x27;s HWHM metric is designed to characterise.
+* **Vector-sum DSI** = |Σᵢ rate(θᵢ) · exp(i·θᵢ)| / Σᵢ rate(θᵢ), the circular-concentration metric
+  used by [Hanson2019, Methods] and [Oesch2005, Methods] (the latter with a von Mises fit).
+  [Hanson2019] reports that vector-sum DSI in mouse Trhr-EGFP DSGCs falls from approximately 0.33
+  (wild-type, asymmetric SAC GABA) to **0.07** when SAC inhibition is rendered non-directional, with
+  the residual DS produced by E/I temporal asymmetry — establishing that vector-sum DSI is the
+  appropriate width metric for distinguishing residual mechanisms when the headline
+  preferred-direction firing rate is preserved.
+* **Half-width at half-maximum (HWHM)** of the polar tuning curve, used by [Chen2009, Methods] in
+  the form &quot;half-width of the directional tuning curve&quot;. [Chen2009] reports that HWHM is **not
+  significantly different** between P11 (early postnatal) and adult mouse ON-OFF DSGCs (p &gt; 0.05)
+  even though peak rate is **~107 Hz at P11 vs ~190 Hz in adults**, demonstrating that HWHM
+  decouples from peak firing rate — a critical observation for our task because we expect some
+  channel additions (e.g., NaP) to drive large peak-rate changes without necessarily reshaping
+  width.
+
+[Oesch2005] used **12 evenly spaced directions across 360°** with a 250-µm-wide bar at 800-1200 µm/s
+— the same 12-angle protocol Bed A uses (per the t0046 reproduction). [Chen2009] also used a
+12-direction protocol (30-degree spacing) with a 100 × 500 µm bar at ~750 µm/s. This convergence
+across rabbit (Oesch) and mouse (Chen, Hanson) means the t0074 12-angle protocol is directly
+comparable to published DSGC tuning curves.
+
+##### Spike-Generation Amplifies Tuning Width Beyond Subthreshold Selectivity
+
+[Oesch2005] established that spike DSI is **~6× higher** than subthreshold-PSP DSI in DSGCs (0.67 /
+0.09 in the ON arbor), and that this enhancement requires **TTX-sensitive dendritic Na⁺ channels**:
+bath TTX collapses PSP DSI to 0.04 and abolishes the ON-OFF preferred-direction alignment.
+[Schachter2010] reproduced this in a NEURON DSGC: PSP DSI ~0.2 → spike DSI ~0.8 (a 4× amplification)
+via local dendritic-spike thresholds, with the local spike threshold acting as a non-linear
+amplifier of small (a few nS) PSP differences. The implication for t0074 is that any soma-channel
+manipulation that affects spike threshold (Nav1.6, NaP, Kv3, BK) can in principle shift this
+amplification in either direction — towards sharpening (Kv3/BK that raise threshold preferentially
+during high-frequency PD trains) or towards erosion (NaP that lowers threshold and allows ND
+firing). This frames the BK / SK / Kv7 hypothesis the task tests.
+
+##### NaP and Nav1.6 are the Dominant DSI-Eroding Additions in Bed A
+
+The t0067 results [PolegPolsky2016 substrate] showed that **NaP at high density flips DSI sign**
+(DSI = -0.179, cell fires more in ND than PD) and **Nav1.6 erodes DSI monotonically** (0.797 → 0.229
+across the density grid). NaR, Kv3, Kv4 produced essentially no change (|ΔDSI| &lt; 0.1 at all tested
+densities). The t0067 data are direction-selectivity-only; this task asks the larger question of how
+each channel reshapes the entire 12-angle tuning curve. Two predictions follow directly from the
+t0019 priors and from the Schachter and Oesch DSGC literature:
+
+* **NaP_high should produce a broad, near-flat tuning curve** (HWHM → 90°, vector-sum DSI ~0) rather
+  than a true &quot;inverted&quot; tuning curve, because the persistent depolarisation prevents the ND
+  inhibition shunt from keeping the cell sub-threshold and decouples spike output from the
+  angle-dependent E/I balance [PolegPolsky2016, Vaney2012].
+* **Nav1.6_high should produce a moderately broadened tuning curve** with a still-identifiable
+  preferred direction, because Nav1.6 lowers spike threshold uniformly across angles and erodes the
+  dendritic-spike-threshold non-linearity that gives DSGCs their sharp tuning
+  [Oesch2005, Schachter2010].
+
+##### BK, SK, and Kv7 Are Plausible DSI-Sharpening Rescues
+
+BK (KCa1.1 / KCNMA1), SK (KCa2), and Kv7 (KCNQ2 + KCNQ3, the M-current) are biophysically distinct
+from the five channels already tested in t0067 in three ways that directly motivate this task:
+
+* **They activate slowly relative to a single AP** (Kv7 τ_act ~10-100 ms; SK/BK Ca²⁺-dependent
+  activation gated by Ca²⁺ accumulation over multiple APs). The Fohlmeister K(Ca) mechanism is the
+  canonical reference for this class [Fohlmeister2010, Architecture].
+* **They are activity-dependent**: BK and SK require Ca²⁺ entry through Cav channels; Kv7 is
+  voltage-dependent but with strong steady-state inactivation that selectively suppresses
+  high-firing-rate trains.
+* **They are biologically expressed in or near RGCs** at densities documented in the literature
+  (training-knowledge claim — the project corpus does not yet contain a paper that quantifies BK /
+  SK / Kv7 density specifically in DSGCs, see Gaps and Limitations).
+
+The hypothesis the task tests is that adding any one of these slow / activity-dependent channels
+will preferentially suppress the high-firing-rate PD direction (where Ca²⁺ accumulation activates
+BK/SK and where Kv7 voltage-dependent inactivation removes its damping effect more slowly) while
+leaving the lower-rate ND direction unaffected — sharpening the tuning curve and rescuing or
+exceeding the baseline DSI = 0.797. This is the rescue analogue of the [Schachter2010] dendritic-
+spike threshold mechanism applied at the somatic compartment.
+
+##### Calibrated Reproduction Targets from the Project Corpus
+
+The Bed A baseline DSI = **0.797**
+[t0067 results, replicated in this task&#x27;s Stage-2 regression gate to 1e-3] sits between the rabbit
+ON-OFF spike DSI of **0.67-0.74** [Oesch2005, Results] and the [Schachter2010] modelled spike DSI of
+**~0.8** [Schachter2010, Results]. Peak firing rates in adult mouse ON-OFF DSGCs are **~166-190 Hz**
+[Chen2009, Results] and **~148 Hz** in rabbit [Oesch2005, Results]; these set the upper bound for
+&quot;biologically sensible&quot; peak rates that NaP_high and Nav1.6_high will be tested against (NaP_high in
+t0067 produced 95.8 ND spikes in a ~1.4 s trial, ≈ 68 Hz mean — already well above the no-DS
+baseline). HWHM in adult mouse ON-OFF DSGCs is reported by [Chen2009] but the specific degree value
+is not extracted in the corpus — this is a known reproduction-target gap for the
+comparison-to-literature stage.
+
+#### Methodology Insights
+
+* **Use the 12-angle 30-degree-spaced protocol consistent with [Oesch2005, Chen2009]**. Both studies
+  use 12 directions; Bed A&#x27;s native protocol matches. This gives sufficient angular resolution for
+  HWHM via linear interpolation around the half-max points.
+* **Compute vector-sum DSI in addition to PD-vs-ND DSI**. [Hanson2019] demonstrates that vector- sum
+  DSI reveals residual directional information that PD-vs-ND DSI cannot detect (vector-sum DSI =
+  0.07 even when SAC GABA is non-directional). For this task, vector-sum DSI is the appropriate
+  metric for low-firing-rate conditions where PD/ND are not well-defined.
+* **Set HWHM to `null` for low-rate conditions** (peak mean rate &lt; ~1 Hz across all 12 angles)
+  rather than reporting fabricated values. This follows the project Python style guide (use `None`
+  for missing data, never `0.0` or fake values) and the [Chen2009] convention that HWHM is only
+  defined when there is an identifiable peak.
+* **Use the Fohlmeister-Miller `cad`-style single-shell calcium pool with first-order removal** for
+  the new mechanism [Fohlmeister2010, Architecture]. This matches Bed B&#x27;s existing pool and is the
+  convention for Ca-activated K channels in NEURON DSGC models [Schachter2010, Architecture].
+* **Vendor BK / SK MODs from a published cortical or hippocampal model** rather than fitting from
+  scratch. [Fohlmeister2010] notes that Q10 ≈ 1.9 is sufficient to extrapolate cortical /
+  hippocampal kinetics from ~22 °C to mammalian body temperature, matching Bed A&#x27;s 35-37 °C
+  protocol. The vendoring source must be recorded in the library asset&#x27;s `details.json` per the
+  paper-asset specification.
+* **Hold Bed A&#x27;s existing HHst Na, K, and synaptic parameters fixed** at t0067 baseline values
+  during the channel sweep. The only change to the existing mechanism is un-zeroing CaL/CaT in
+  `init_active`; everything else (synaptic conductances, gabaMOD, leak) stays exactly as t0065.
+* **Run the Stage-2 regression gate (baseline DSI within 1e-3 of 0.797) before any other Stage 3
+  trials**. If it fails, the un-zeroing of CaL/CaT has perturbed resting dynamics; the documented
+  fallback (feed `Ca_i` from a precomputed time series instead) preserves BK/SK kinetics without
+  altering Bed A&#x27;s HHst dynamics — this is the lower-risk path.
+* **Use a 5-seed mean for FULL-mode trials to reduce sampling noise on DSI**, exactly as t0067. The
+  ±0.05 confidence interval on DSI from 5 seeds is sufficient to detect the |ΔDSI| &gt; 0.05 threshold
+  for &quot;measurable change&quot; in the pass criteria.
+* **Run EPSP_PASSIVE / IPSP_PASSIVE diagnostics with HH off**
+  [memory: DSGC simulation measurement protocol]. The passive traces should be flat at ~−60 mV in
+  IPSP_PASSIVE and direction-invariant in EPSP_PASSIVE (gabaMOD = 0); deviation indicates the
+  channel addition is affecting subthreshold integration, not just spike output.
+* **Compute RMSE vs the t0004 cosine target** using the t0012 library [project description]. This is
+  the canonical project tuning-curve loss and allows direct comparison to other tasks (t0026, t0034,
+  t0042, etc.) that report the same metric.
+
+##### Hypotheses to Test
+
+1. **NaP_high produces a near-flat tuning curve** (HWHM &gt; 60°, |vector-sum DSI| &lt; 0.10) rather than
+   an inverted curve. Falsifiable by checking whether ND-firing-rate exceeds PD-firing-rate at every
+   single angle (true inversion) or only in a narrow ND band (broadening) — t0067 data averaged over
+   angles cannot distinguish these.
+2. **Nav1.6_high produces moderate broadening** (HWHM increased by 15-30°, vector-sum DSI in range
+   0.15-0.30) — i.e., the curve shape is preserved but widened. Falsifiable by comparing HWHM at low
+   / medium / high Nav1.6 densities.
+3. **BK or SK at medium / high density rescues vector-sum DSI** to within 0.10 of the baseline 0.797
+   (a |ΔDSI| &lt; 0.10 deviation), or even sharpens it (vector-sum DSI &gt; 0.85). Falsifiable by the pass
+   criteria&#x27;s |ΔDSI| &gt; 0.05 threshold.
+4. **Kv7 at any density produces no measurable change** in HWHM (|Δ HWHM| &lt; 5°) — because somatic
+   Kv7 expression in DSGCs is poorly documented and the AIS-localised Kv7 hypothesis would require
+   an AIS placement, not a soma placement [task description risks section]. If this hypothesis
+   holds, it strengthens the case for the t0075 AIS-localised follow-up.
+
+##### Best Practices
+
+* Source published MODs and document their provenance — the paper-asset specification requires the
+  source paper&#x27;s DOI in the library asset&#x27;s `details.json` for any vendored MOD file.
+* Run a regression gate before any new science. The Stage-2 baseline-DSI gate is the cheapest way to
+  detect that the Ca-pool addition has broken the existing model; failure should trigger the
+  closed-form `Ca_i` fallback.
+* Use multiple width metrics (HWHM, vector-sum DSI, peak rate, RMSE vs cosine target) rather than a
+  single DSI value. [Chen2009] demonstrates HWHM and DSI can decouple; the task should report all
+  three plus RMSE for comparability with other tasks.
+
+#### Gaps and Limitations
+
+* **No paper in the project corpus contains a measurement or model of BK, SK, or Kv7 channel
+  kinetics specifically in DSGCs**. [VanWart2006] documents Nav1.6 / Nav1.1 / Kv1.2 at the RGC AIS
+  but does not cover Ca-activated K or Kv7. The vendoring step must therefore source MODs from a
+  non-DSGC published model and validate behaviourally (Stage-2 regression + Stage-3 tuning curves
+  consistent with adult ON-OFF DSGC firing rates of ~150-190 Hz [Oesch2005, Chen2009]).
+* **No paper in the project corpus contains a published HWHM value in degrees for adult mouse ON-OFF
+  DSGCs**. [Chen2009] uses HWHM and reports it is not significantly different across age groups, but
+  the corpus summary does not extract the specific degree value. This is a known reproduction-target
+  gap that the comparison-to-literature stage of this task may need to address by reading the
+  [Chen2009] PDF directly (currently download-failed in t0002 — see the paywalled-papers
+  intervention list).
+* **Five t0019 voltage-gated-channel papers are paywalled and have CrossRef-only summaries**
+  [VanWart2006, Kole2007, FohlmeisterMiller1997, Hu2009, Kole2008]. Numerical values cited in the
+  t0019 answer asset are training-knowledge canonical values rather than verified-from-PDF numbers;
+  the task&#x27;s library-asset documentation should record this provenance honestly.
+* **No prior task in the project has done a comparable channel-density sweep with multiple width
+  metrics**. t0067 only measured DSI from PD vs ND; t0026 / t0029-t0042 swept morphology not
+  channels; t0043 added a single Nav1.6 + Kv3 combination. This is a methodological novelty — there
+  is no internal benchmark for HWHM × channel-density curves to compare against. The Stage-5
+  sensitivity plots (HWHM, vector-sum DSI, peak rate vs density) will define the methodological
+  baseline for any future width-vs-channel sweep.
+* **The t0067 baseline used FULL mode with the gabaMOD-swap protocol from t0065**; this task must
+  use the same protocol exactly, otherwise the Stage-2 regression gate is meaningless. This is
+  documented in the t0067 task but not explicitly in the corpus literature — internal to the
+  project.
+* **Calcium-pool kinetic constants for the new pool mechanism (decay τ, shell depth)** are not
+  uniquely specified by the corpus. [Fohlmeister2010] uses &quot;first-order removal&quot; without publishing
+  the time constant; [Schachter2010] uses a Ca-activated K mechanism without tabulating its pool.
+  The vendoring must use published values from the source MOD&#x27;s paper and document them in the
+  library asset&#x27;s `details.json`.
+
+#### Recommendations for This Task
+
+1. **Vendor BK / SK from Migliore-Hines / Hines-Carnevale-style CA1 or Purkinje MODs** as suggested
+   in the task description, and validate kinetics against the Fohlmeister K(Ca) activation function
+   `Ca^2 / (K_d^2 + Ca^2)` [Fohlmeister2010] — i.e., confirm Ca- sensitivity is in the 0.1-10 µM
+   range typical of mammalian K(Ca) channels.
+
+2. **Vendor Kv7 from a published cortical Kv7 / KCNQ MOD** with a known M-current activation range
+   (V_½ ≈ -45 to -30 mV depending on KCNQ2 vs KCNQ3 subunit). Document the source DOI in the library
+   asset.
+
+3. **Use a Fohlmeister-Miller-style single-shell `cad` mechanism** for the calcium pool, with
+   first-order [Ca²⁺] removal time constant in the 30-100 ms range typical of submembrane shells in
+   NEURON RGC models [Fohlmeister2010, Schachter2010]. Mirror Bed B&#x27;s existing `cad` so the two beds
+   use the same calcium-pool convention.
+
+4. **Run the Stage-2 regression gate as the first Stage-3-allowing check**. Any deviation from
+   t0067&#x27;s DSI = 0.797 by more than 1e-3 (the task&#x27;s pass criterion) means the un-zeroed CaL / CaT
+   have perturbed resting dynamics; switch to the closed-form `Ca_i` fallback before running any of
+   the 1500 FULL-mode trials.
+
+5. **Compute four width-quality metrics for every condition**: HWHM (degrees), vector-sum DSI, peak
+   rate (Hz), and RMSE vs the t0004 cosine target. Set HWHM = `null` when peak mean rate &lt; 1 Hz
+   [Chen2009 convention]. Plus retain the t0067 PD-vs-ND DSI for cross-task comparison.
+
+6. **Build per-channel sensitivity plots** (HWHM, vector-sum DSI, peak rate vs density) using the
+   t0011 visualisation library. The cross-channel overlay (vector-sum DSI vs density for all 8
+   channels) is the headline figure; expect Nav1.6 / NaP to show monotonic erosion and BK / SK / Kv7
+   to show either no effect (Kv7 at soma) or non-monotonic rescue (BK / SK).
+
+7. **Compare against [Oesch2005] spike DSI = 0.67-0.74** and [Chen2009] HWHM (verify in the PDF if
+   accessible) as the literature-comparison anchor. Bed A&#x27;s 0.797 baseline already exceeds the Oesch
+   range, so the task&#x27;s primary comparison is &quot;by how much does each channel push DSI above or below
+   this band?&quot;.
+
+8. **If Kv7 produces only inert results** at the soma (no measurable HWHM or vector-sum DSI change
+   at any density), record this as a clean negative result and recommend the AIS- localised Kv7
+   follow-up to t0075 [task description risks section]. The literature is consistent with this
+   outcome — somatic Kv7 expression in DSGCs is poorly documented relative to AIS Kv7 in cortical
+   neurons [Kole2007 by extension].
+
+9. **Document MOD-file provenance in the library asset&#x27;s `details.json`** for each of BK, SK, Kv7,
+   and the calcium pool. Per the paper-asset specification, this means recording the source paper&#x27;s
+   DOI, the parameter values inherited, and any modifications made. This is the dependency hook for
+   t0075 and any future Ca-activated-K or Kv7-related task.
+
+#### Paper Index
+
+##### [PolegPolsky2016]
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`,
+  `dendritic-computation`, `retinal-ganglion-cell`
+* **Relevance**: Source of the deposited DSGC NEURON model that Bed A is built on (t0008 library
+  `modeldb_189347_dsgc`). Defines the synaptic input distribution, Mg²⁺ block formulation, and
+  8-direction tuning protocol (extended to 12 angles in this task) that the channel-addition sweep
+  is run on top of.
+
+##### [Oesch2005]
+
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `voltage-gated-channels`,
+  `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Canonical 12-direction protocol, von-Mises-fit tuning curves, and spike-DSI vs
+  PSP-DSI quantification (0.67 vs 0.09 ON; 0.74 vs 0.14 OFF). Provides the rabbit ON-OFF DSGC
+  firing-rate benchmark (148 Hz peak) and dendritic-spike threshold mechanism that any channel
+  addition must respect.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Most-relevant prior compartmental DSGC model with a Ca-activated K channel and a
+  calcium pool. Establishes the 4× spike-DSI amplification (PSP DSI 0.2 → spike DSI 0.8) via local
+  dendritic-spike thresholds — the mechanism that channel additions can either sharpen or erode.
+
+##### [Vaney2012]
+
+* **Title**: Direction selectivity in the retina: symmetry and asymmetry in structure and function
+* **Authors**: Vaney, D. I., Sivyer, B., Taylor, W. R.
+* **Year**: 2012
+* **DOI**: `10.1038/nrn3165`
+* **Asset**: `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nrn3165/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`,
+  `synaptic-integration`
+* **Relevance**: Decadal review establishing the DSGC microcircuit; supplies the bistratified ON-OFF
+  DSGC morphology and ~9× null-side GABA asymmetry that Bed A&#x27;s synaptic input matches. Frames the
+  dendritic-spike vs passive-shunt debate that is directly relevant to the
+  channel-addition-vs-baseline comparison.
+
+##### [Chen2009]
+
+* **Title**: Physiological properties of direction-selective ganglion cells in early postnatal and
+  adult mouse retina
+* **Authors**: Chen, M., Weng, S., Deng, Q., Xu, Z., He, S.
+* **Year**: 2009
+* **DOI**: `10.1113/jphysiol.2008.161240`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Defines HWHM as &quot;half-width at half-maximum of the polar response curve&quot; with a
+  12-direction × 30°-spaced protocol. Demonstrates HWHM is not significantly different between P11
+  and adult mouse ON-OFF DSGCs despite a 2× peak-rate difference (~107 vs ~190 Hz) — the empirical
+  justification for using HWHM as a metric independent of peak rate.
+
+##### [Hanson2019]
+
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, L., Sethuramanujam, S., deRosenroll, G., Jain, V., Awatramani, G. B.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.7554_eLife.42392/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`,
+  `compartmental-modeling`, `dendritic-computation`, `patch-clamp`
+* **Relevance**: Uses vector-sum DSI on 8-direction tuning curves and reports residual DSI of
+  **0.07** when SAC GABA is rendered non-directional. Establishes vector-sum DSI as the appropriate
+  metric for low-rate or near-flat tuning conditions where simple PD-vs-ND DSI becomes ill-defined.
+  Modifies the [PolegPolsky2016] NEURON model — directly relevant to Bed A.
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Original Fohlmeister-Miller five-channel RGC HH model: Nav (m³h), Kdr (n⁴), Cav
+  (c³), Kv4-A (a³b), and a Ca-activated K channel with `Ca^2 / (K_d^2 + Ca^2)` activation. Defines
+  the canonical RGC channel kinetics and the single-shell calcium-pool convention that this task&#x27;s
+  `cad`-style mechanism inherits. Note: full-text PDF was not accessible for the t0019 summary
+  (CrossRef-only); numerical claims here are the project&#x27;s training-knowledge canonical values and
+  should be verified against the published methods section before citation in the library asset.
+
+##### [Fohlmeister2010]
+
+* **Title**: Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using
+  Temperature as an Independent Variable
+* **Authors**: Fohlmeister, J. F., Cohen, E. D., Newman, E. A.
+* **Year**: 2010
+* **DOI**: `10.1152/jn.00123.2009`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1152_jn.00123.2009/`
+* **Categories**: `retinal-ganglion-cell`, `compartmental-modeling`, `voltage-gated-channels`,
+  `patch-clamp`
+* **Relevance**: Cell-type-specific RGC channel-density maps at 35 °C across (dendrite / soma / IS /
+  TS / axon), Q10 = 1.95 (gating) and 1.64 (permeability) for 23-37 °C. Directly supplies the
+  temperature-correction prior for any vendored cortical / hippocampal MOD — BK, SK, and Kv7
+  published kinetics typically come from 22-25 °C recordings and need this Q10 to scale to Bed A&#x27;s
+  35-37 °C runtime.
+
+##### [VanWart2006]
+
+* **Title**: Polarized distribution of ion channels within microdomains of the axon initial segment
+* **Authors**: Van Wart, A., Trimmer, J. S., Matthews, G.
+* **Year**: 2007 (published online 2006)
+* **DOI**: `10.1002/cne.21173`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1002_cne.21173/`
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Relevance**: RGC AIS Nav1.6 / Nav1.1 / Kv1.2 microdomain map. Explicitly does not cover BK, SK,
+  or Kv7 in DSGCs — making this paper one of the corpus&#x27;s clearest gap markers for the vendoring
+  step. Note: the t0019 summary is CrossRef-only (paywalled).
+
+##### [Hu2009]
+
+* **Title**: Distinct contributions of Nav1.6 and Nav1.2 in action potential initiation and
+  backpropagation
+* **Authors**: Hu, W., Tian, C., Li, T., Yang, M., Hou, H., Shu, Y.
+* **Year**: 2009
+* **DOI**: `10.1038/nn.2359`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn.2359/`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: V_½ separation between Nav1.6 (~~-45 mV) and Nav1.2 (~~-32 mV). Frames why Nav1.6
+  addition in t0067 erodes DSI more aggressively than other Nav species and grounds the Nav1.6_high
+  tuning-curve broadening prediction in this task. Note: t0019 summary is CrossRef-only (paywalled).
+
+##### [Branco2010]
+
+* **Title**: Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons
+* **Authors**: Branco, T., Clark, B. A., Häusser, M.
+* **Year**: 2010
+* **DOI**: `10.1126/science.1189664`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/`
+* **Categories**: `cable-theory`, `compartmental-modeling`, `dendritic-computation`,
+  `synaptic-integration`
+* **Relevance**: Direction selectivity from dendritic impedance gradients plus NMDA-receptor voltage
+  dependence (no active dendritic conductances required). Establishes that the EPSP_PASSIVE
+  diagnostic in Stage 4 of this task is principled — passive-dendrite tuning is a measurable
+  phenomenon and must be controlled for when interpreting active-channel additions.
+
+* * *
+
+The remaining three reviewed-but-uncited papers (Kole2007 on AIS Kv1 expression, Kole2008 on AIS Nav
+conductance density, and Sivyer2010 on ON DSGC velocity tuning) were consulted in the t0019
+voltage-gated-channels survey and the t0002 DSGC compartmental-models corpus, but their specific
+findings do not bear directly on the BK / SK / Kv7 vendoring or HWHM-measurement steps of this task.
+They are tracked in `papers_reviewed: 14` for transparency but not cited in the body, to keep the
+Paper Index focused on load-bearing references.
+      </content>
+    </section>
+    <section id="t0074_channel_tuning_width_bed_a-research_internet" source_kind="file">
+      <title>t0074_channel_tuning_width_bed_a — Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0074_channel_tuning_width_bed_a</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0074_channel_tuning_width_bed_a/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0074_channel_tuning_width_bed_a&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 17
+sources_cited: 21
+papers_discovered: 8
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research Internet: BK / SK / Kv7 MOD Vendoring and Tuning-Width Metrics
+
+#### Task Objective
+
+This task vendors three new NEURON MOD mechanisms — BK (KCa1.1 / KCNMA1), SK (KCa2 / SK2), and Kv7 /
+M-current — plus a single-shell `cad`-style calcium-pool mechanism, then runs a 12-angle
+tuning-curve sweep on Bed A (deposited Poleg-Polsky DSGC) with each of eight somatic channels
+inserted at low / medium / high density across 25 conditions and 2100 trials. The internet research
+below identifies authoritative published MOD-file sources, retinal validation references, kinetic-
+parameter ranges, calcium-pool conventions, and tuning-width metric definitions that the project
+corpus does not contain.
+
+#### Gaps Addressed
+
+The `research/research_papers.md` Gaps and Limitations section identified six gaps. Internet
+research resolves each as follows:
+
+1. **No paper in the project corpus contains a measurement or model of BK, SK, or Kv7 channel
+   kinetics specifically in DSGCs** — **Partially resolved**. No DSGC-specific kinetic dataset
+   exists in the published literature either; the closest mammalian-RGC validation references are
+   [Wang1998-Ferret], [Lipton1987-Rat], and [Grimes2012-MouseBK]. These document the existence and
+   pharmacology of BKCa and SKCa in mammalian RGCs (118 pS BK, 22 pS SK by [Wang1998-Ferret]
+   single-channel) but do not quantify whole-cell kinetic parameters at the level needed for direct
+   MOD fitting. The vendoring will therefore source MODs from non-RGC published models with strong
+   citation history and validate via t0074&#x27;s Stage-2 regression gate plus general RGC firing-rate
+   ranges (peak ~150-190 Hz, [Chen2009-PMC] from `research_papers.md`).
+
+2. **No paper in the project corpus contains a published HWHM value in degrees for adult mouse
+   ON-OFF DSGCs** — **Partially resolved**. The mouse DSGC literature consistently reports &quot;tuning
+   width and DSI of P11 / P13 / P18 / adult DSGCs were very similar&quot; with HWHM defined as &quot;the
+   full-width at half-maximum of the fitted tuning curve&quot; [Chen2009-PMC] but specific degree values
+   are reported per-figure rather than as a tabulated number. [Hanson2019-eLife] reports vector-sum
+   DSI ≈ 0.33 (wild-type) → 0.07 (with non-directional SAC GABA), establishing vector-sum DSI as the
+   appropriate residual-DSI metric. [Rivlin2012-Neuron] and others define &quot;vector sum &gt; 0.2 and DSI*
+   \&gt; 0.3&quot; as the standard directional-classification threshold.
+
+3. **Five t0019 voltage-gated-channel papers are paywalled (CrossRef-only summaries)** —
+   **Unchanged** by internet research; this task does not require re-downloading those papers
+   because the BK / SK / Kv7 MOD vendoring relies on hippocampal / cortical sources that are
+   independently documented.
+
+4. **No prior task in the project has done a comparable channel-density sweep with multiple width
+   metrics** — **Resolved-as-methodological-novelty**. Internet review confirms no published
+   compartmental-model paper has run a HWHM × density grid for the eight-channel set this task
+   sweeps. The Hay 2011 L5 pyramidal model [Hay2011-L5] is the closest precedent for systematic
+   channel-density variation but uses a different metric set.
+
+5. **The t0067 baseline used FULL mode with the gabaMOD-swap protocol from t0065** — **Internal** to
+   the project; not addressed by internet research.
+
+6. **Calcium-pool kinetic constants for the new pool mechanism (decay τ, shell depth) are not
+   uniquely specified by the corpus** — **Resolved**. Internet review of the canonical published
+   `cad.mod` files yields three concrete options:
+   * Mainen-Sejnowski 1996 `cad.mod` (ModelDB 2488): τ = 200 ms, depth = 0.1 µm, cainf = 100 nM,
+     based on [Destexhe1993-Thalamic] [MS1996-cad-Github].
+   * Hay 2011 `CaDynamics_E2.mod` (ModelDB 139653): τ = 80 ms, gamma = 0.05, depth = 0.1 µm, minCai
+     = 100 nM [Hay2011-CaDyn-Github].
+   * RGC-specific [F&amp;M1997-PMC]: tau_Ca = 50 ms, single-shell, used in cat-alpha and rat RGC models.
+     The Fohlmeister τ = 50 ms is the RGC-specific anchor; Hay 2011 τ = 80 ms is in the same range;
+     Mainen-Sejnowski τ = 200 ms is at the high end. Bed B&#x27;s existing `cad` should be the first
+     reference; the task description notes this explicitly.
+
+#### Search Strategy
+
+**Sources searched**: ModelDB (modeldb.science / senselab.med.yale.edu), Google Scholar via
+WebSearch, PubMed, GitHub (ModelDBRepository organization, OpenSourceBrain), PNAS, Journal of
+Neuroscience, Journal of Physiology, Science, eLife, Frontiers, Nature journals, Wiley Online
+Library, ScienceDirect.
+
+**Date range**: 1982-2026 for canonical channel-cloning and MOD-file deposit papers; 2009-2026 for
+mouse-DSGC tuning-width benchmarks.
+
+**Inclusion criteria**: A source is relevant if it (a) provides a published NEURON MOD-file
+implementation of BK, SK, or Kv7 with kinetic parameters and source citation, (b) provides a
+single-shell calcium-pool decay convention with documented τ, (c) measures BK / SK / Kv7 in
+mammalian RGCs even without compartmental-model parameters, or (d) defines HWHM, vector-sum DSI, or
+related width metrics in the mammalian DSGC literature with reproducible computation.
+
+**Exclusion criteria**: Non-mammalian retina (goldfish, salamander) for channel-density priors;
+tau-protein papers; unrelated KCNQ pharmacology papers.
+
+**Queries executed (17 total)**:
+
+*Pass 1 — Gap-targeted MOD-file source queries*:
+
+1. `ModelDB BK channel KCa1.1 KCNMA1 NEURON MOD file Migliore CA1 hippocampal`
+2. `ModelDB SK channel KCa2 SK2 NEURON MOD file calcium-activated potassium small conductance`
+3. `ModelDB Kv7 KCNQ M-current NEURON MOD file Hu Gulledge Stuart 2007 cortical`
+4. `Mainen Sejnowski 1996 cortical pyramidal NEURON model ModelDB BK calcium-activated potassium kca.mod`
+5. `Migliore 1995 CA1 pyramidal NEURON model BK channel mod file ModelDB accession`
+
+*Pass 2 — RGC validation queries*:
+
+6. `Pfeiffer Friedrich 2012 BK channel retinal ganglion cell mouse`
+7. `&quot;BK channel&quot; &quot;retinal ganglion cell&quot; rat OR mouse patch-clamp kinetics whole-cell`
+8. `&quot;SK channel&quot; &quot;retinal ganglion cell&quot; calcium-activated potassium afterhyperpolarization mammalian`
+9. `&quot;M-current&quot; OR &quot;Kv7&quot; &quot;retinal ganglion cell&quot; KCNQ patch-clamp recording`
+10. `&quot;Calcium-Activated Potassium Conductances in Retinal Ganglion Cells&quot; Wang 1998 ferret apamin`
+11. `&quot;M-Channels&quot; &quot;perisomatic region&quot; CA1 Shah Storm 2008 ModelDB Kv7 KCNQ NEURON`
+
+*Pass 3 — Snowball and benchmark queries*:
+
+12. `Hay 2011 Segev cortical L5 pyramidal SK_E2.mod NEURON ModelDB BK CaT CaL channels accession`
+13. `&quot;Kohler&quot; 1996 Science 273 SK channels small conductance &quot;1709&quot; cloning DOI`
+14. `&quot;Adams&quot; Brown Constanti 1982 J Physiol M-current &quot;I-M&quot; bullfrog sympathetic neurone activation`
+15. `&quot;Fohlmeister&quot; &quot;Miller&quot; 1997 J Neurophysiol RGC five-channel cad pool &quot;tau&quot; decay milliseconds`
+16. `&quot;vector sum&quot; direction selectivity index DSGC mouse &quot;half-width&quot; degrees tuning curve Briggman Borst`
+17. `&quot;Chen 2009&quot; &quot;half-width&quot; direction tuning DSGC mouse postnatal degrees full-width`
+
+**Search iterations**: Pass 1 surfaced specific ModelDB accession candidates (2796, 2488, 112546,
+139653). Pass 2 confirmed mammalian-RGC BK/SK existence ([Wang1998-Ferret], [Grimes2012-MouseBK])
+but no DSGC-specific kinetic dataset. Pass 3 fetched MOD-file content via the GitHub API for direct
+inspection of kinetic parameters in `kca.mod`, `cad.mod`, `km.mod` (Mainen-Sejnowski 1996), and
+`SK_E2.mod`, `Im.mod`, `CaDynamics_E2.mod` (Hay 2011), plus `DGC_M.mod` and `DGC_sAHP.mod`
+(Mateos-Aparicio et al. 2014, ModelDB 169240).
+
+#### Key Findings
+
+##### Three Vendoring Triplets — Recommended MOD-File Sources
+
+Internet research yields three coherent, published MOD-file packages where the BK / SK / Kv7 / Ca-
+pool mechanisms are mutually consistent (same temperature convention, same ion-balance assumptions,
+same NEURON formalism). The three packages differ in maturity and citation count.
+
+**Package A — Mainen &amp; Sejnowski 1996 (ModelDB 2488)** [MS1996-modeldb][MS1996-cad-Github]:
+
+* `kca.mod` — Calcium-activated K+ channel (BK-style, voltage- and Ca-dependent), citing
+  [Pennefather1990-Sympath, Reuveni1993-Cortical]. Voltage-dependent gating with explicit Ca
+  dependence: `a = Ra × cai^caix` with `Ra = 0.01 (/ms), caix = 1`. Operates at 37 °C.
+* `cad.mod` — Single-shell Ca pool: τ = 200 ms, depth = 0.1 µm, cainf = 100 nM, citing
+  [Destexhe1993-Thalamic].
+* `km.mod` — M-current / Kv7 with V_½ = -30 mV (parameter `tha`), slope = 9 mV (parameter `qa`), Q10
+  = 2.3 (reference 23 °C), max activation rate = 0.001 /ms. No explicit Adams citation in the file,
+  but matches Adams-Yamada-Koch formalism.
+
+**Package B — Hay et al. 2011 (ModelDB 139653)** [Hay2011-L5][Hay2011-CaDyn-Github]:
+
+* `SK_E2.mod` — Pure SK / KCa2.2: voltage-independent, Ca-driven Hill activation
+  `zInf = 1 / (1 + (0.00043 / cai)^4.8)`. Time constant τ = 1 ms. Cites [Kohler1996-SKclone] (DOI
+  10.1126/science.273.5282.1709). EC50 = 0.43 µM.
+* `CaDynamics_E2.mod` — Single-shell Ca pool: τ_decay = 80 ms (default), gamma = 0.05 (free Ca
+  fraction), depth = 0.1 µm, minCai = 100 nM.
+* `Im.mod` — M-current / Kv7 (Adams 1982 formulation):
+  `mAlpha = 3.3e-3 × exp(2.5 × 0.04 × (v + 35))`, V_½ ≈ -35 mV, Q10 = 2.3, reference temp = 21 °C.
+  Cites [Adams1982-MCurrent].
+* No separate BK file — Hay et al. 2011 used SK as the only Ca-activated K (K(Ca)) mechanism in the
+  L5 model.
+
+**Package C — Mateos-Aparicio, Murphy &amp; Storm 2014 (ModelDB 169240)** [MMS2014-DGC][MMS2014-Github]:
+
+* `DGC_sAHP.mod` — Slow AHP / SK-like, two-state Ca-dependent kinetic scheme with `cah = 10 µM`, τ ≈
+  9-200 ms (state-dependent). Less canonical than Hay&#x27;s `SK_E2.mod`.
+* `DGC_M.mod` — Kv7 / M-current with V_½ ≈ -49.8 to -25.3 mV (subtype-dependent), slope = 9 mV, Q10
+  = 5, reference 22 °C, multi-component τ from 20-1473 ms. Models granule-cell-specific M-current.
+* `Aradi_Ca.mod` and `Aradi_CadepK.mod` — Calcium dynamics and Ca-dependent K from the Aradi
+  dentate-granule-cell convention referenced inside the file.
+
+**Recommended hybrid for t0074**: take BK from Mainen-Sejnowski 1996 `kca.mod`, SK from Hay 2011
+`SK_E2.mod`, Kv7 from Hay 2011 `Im.mod` (peer-reviewed Adams 1982 formalism, simplest), and the
+calcium pool from Hay 2011 `CaDynamics_E2.mod` (τ = 80 ms is in the 50-100 ms RGC-typical range
+[F&amp;M1997-PMC] and matches Bed B&#x27;s existing convention closer than 200 ms). All four are released
+under standard ModelDB terms with peer-reviewed source papers.
+
+##### BK Channel Kinetic Parameters (V_half, Slope, Ca-Sensitivity)
+
+The Mainen-Sejnowski 1996 `kca.mod` is the de-facto BK template in ModelDB; it cites
+[Pennefather1990-Sympath, Reuveni1993-Cortical]. Numerical parameters extracted from the source
+file: V_½ ≈ -28 mV (effective), Q10 = 2.3, Ca-half EC50 in the 1-10 µM range with single-Hill
+exponent. [Grimes2012-MouseBK] (J Neurosci 2012, DOI 10.1523/JNEUROSCI.4654-11.2012) reports BK in
+the in-vivo mouse retina but does not tabulate kinetic constants — it confirms BK function without
+supplying compartmental-model parameters. [Wang1998-Ferret] reports BK single-channel conductance of
+**118 pS** in ferret RGC, consistent with the canonical mammalian BK range (150-260 pS in symmetric
+K) reported by [Lipton1987-Rat] and [Grimes2012-MouseBK].
+
+##### SK Channel Kinetic Parameters
+
+Hay 2011 `SK_E2.mod` is the cleanest published SK template in ModelDB: voltage-independent,
+Ca-driven, **EC50 = 0.43 µM** with **Hill coefficient = 4.8**, τ = 1 ms, citing the foundational
+[Kohler1996-SKclone] paper. [Wang1998-Ferret] reports apamin-sensitive 22 pS SK in ferret RGC,
+consistent with the 10 pS unit conductance reported by [Kohler1996-SKclone] for heterologously
+expressed SK1/2/3 in HEK293 cells. The general SK Ca half-activation EC50 is **~300-400 nM** when
+measured via calmodulin-Ca binding [Kohler1996-SKclone]. Hay&#x27;s 0.43 µM is at the upper end of this
+range, biophysically consistent.
+
+##### Kv7 / M-Current Kinetic Parameters
+
+Three published sources have well-cited Kv7 / M-current MODs:
+
+* Hay 2011 `Im.mod` — V_½ ≈ -35 mV, slope embedded in α/β rate functions, Q10 = 2.3, cites
+  [Adams1982-MCurrent].
+* Mainen-Sejnowski 1996 `km.mod` — V_½ ≈ -30 mV, slope = 9 mV, Q10 = 2.3, max rates 0.001 /ms.
+* Mateos-Aparicio 2014 `DGC_M.mod` — V_½ adjustable -49.8 to -25.3 mV, slope = 9 mV, Q10 = 5,
+  multi-component τ.
+
+[Hu2002-MResonance] (J Physiol DOI 10.1113/jphysiol.2002.029249) characterises the M-current in rat
+hippocampal pyramidal cells: peak θ-resonance at 2-5 Hz at 33 °C → 7 Hz at 38 °C. M-current kinetics
+extrapolated to 37 °C should give τ at -40 mV in the **40-80 ms** range — consistent with Hay 2011&#x27;s
+Adams formalism. [Shah2008-Axonal] (PNAS DOI 10.1073/pnas.0802805105, ModelDB 112546) specifically
+locates Kv7 in the AIS, foreshadowing the t0075 AIS-localised follow-up flagged in the task
+description risks.
+
+[Hu2007-Perisomatic] (J Neurosci, DOI 10.1523/JNEUROSCI.4463-06.2007) localises Kv7 to the
+perisomatic compartment in CA1 — consistent with t0074&#x27;s somatic-only insertion strategy. The
+Kv7.2/Kv7.3 heteromer carries the bulk of the M-current in pyramidal cells [Brown2009-Review].
+
+##### Calcium-Pool Conventions for RGC Single-Shell Decay
+
+The canonical RGC convention is a single-shell sub-membrane pool with first-order Ca removal.
+Documented decay time constants:
+
+* [F&amp;M1997-PMC] (Fohlmeister-Miller 1997 RGC five-channel model): **tau_Ca = 50 ms** (explicitly
+  stated in the methods).
+* Hay 2011 `CaDynamics_E2.mod`: τ = 80 ms, depth = 0.1 µm, gamma = 0.05.
+* Mainen-Sejnowski 1996 `cad.mod`: τ = 200 ms, depth = 0.1 µm.
+* Destexhe 1993 thalamic relay: τ ~10 ms (faster, with Michaelis-Menten pump).
+
+All use shell depth = 0.1 µm. **Recommended for t0074**: τ_decay = 80 ms (Hay 2011 default), shell
+depth = 0.1 µm, gamma = 0.05, minCai = 100 nM. This is in the 50-100 ms range that matches
+[F&amp;M1997-PMC] for RGCs and is the convention closest to what Bed B&#x27;s existing `cad` likely uses.
+Document source DOI in the library asset&#x27;s `details.json` per the paper-asset specification.
+
+##### Tuning-Width Metric Definitions in the Mammalian Retina Literature
+
+Across 5+ DSGC studies surveyed, three width-related metrics dominate:
+
+* **Vector-sum DSI** = `|Σᵢ rᵢ exp(i·θᵢ)| / Σᵢ rᵢ` — circular concentration. [Rivlin2012-Neuron]
+  defines the standard DSGC classification threshold as **vector sum &gt; 0.2 AND DSI* &gt; 0.3**.
+  [Hanson2019-eLife] uses vector-sum DSI = 0.33 (wild-type) → 0.07 (without SAC asymmetry) on an
+  8-direction protocol. The vector-sum length distinguishes tuning *strength*; its angle gives PD.
+* **DSI** = (R_PD - R_ND) / (R_PD + R_ND) — point-estimate, used by t0067 and the [Chen2009-PMC]
+  protocol that already exists in the project corpus.
+* **HWHM (half-width at half-maximum)** = full-width-at-half-maximum / 2, fitted from the polar
+  tuning curve. [Chen2009-PMC] reports adult mouse ON-OFF DSGC HWHM &quot;is not significantly different
+  from P11&quot; but does not tabulate degrees in text; figures suggest typical HWHM around 40-70°. The
+  [Hanson2019-eLife] vector-sum bandwidth is consistent.
+
+For t0074, all three should be reported: HWHM via linear interpolation around half-max, vector-sum
+DSI, and PD-vs-ND DSI. The vector-sum DSI is the metric most robust to flat tuning curves and is the
+appropriate primary metric for low-rate conditions [Hanson2019-eLife, Rivlin2012-Neuron].
+
+##### Mammalian-RGC BK / SK Existence Confirmed; Direct Kinetic Parameters Absent
+
+Across the entire mammalian-retina literature, there is **no DSGC-specific** BK / SK / Kv7
+whole-cell kinetic dataset. Closest validation references:
+
+* [Wang1998-Ferret] (J Neurophysiol DOI 10.1152/jn.1998.79.1.151): Both BKCa (118 pS) and SKCa (22
+  pS) channels expressed in ferret RGC; apamin and CTX block produce shortened time-to- threshold
+  and reduced post-spike hyperpolarisation.
+* [Lipton1987-Rat] (J Physiol vol 385, pp 361-391): BKCa identified in single-channel recordings
+  from rat RGC; first identification.
+* [Grimes2012-MouseBK] (J Neurosci 32:4861, DOI 10.1523/JNEUROSCI.4654-11.2012): BK channels
+  modulate visual signals pathway-specifically in vivo mouse retina; functional but not kinetic.
+* Goldfish RGC Ih recordings (Tabata &amp; Ishida 1996, not directly applicable to mammalian BK/SK
+  kinetics; cited only for general RGC biophysics context).
+
+The **biophysically plausible inference**: vendor MODs from Hay 2011 / Mainen-Sejnowski 1996 with
+Q10 correction to 35-37 °C, validate that the resulting Bed A model produces RGC-like firing
+patterns (peak rate 100-200 Hz, post-spike AHP, no instability), and document explicitly in the
+library asset that DSGC-specific kinetic data does not exist.
+
+#### Methodology Insights
+
+* **Use Hay 2011 (ModelDB 139653) `SK_E2.mod` and `Im.mod` as the SK and Kv7 templates** — both are
+  released under standard ModelDB terms, well-cited (300+ Hay 2011 citations), and have clear source
+  papers ([Kohler1996-SKclone] for SK; [Adams1982-MCurrent] for M-current).
+* **Use Mainen-Sejnowski 1996 (ModelDB 2488) `kca.mod` as the BK template** — it is the canonical
+  voltage-and-Ca-activated K mechanism in ModelDB, cited by Hay 2011 themselves for the same
+  formalism.
+* **Use Hay 2011 `CaDynamics_E2.mod` as the calcium-pool template** with τ_decay = 80 ms, depth =
+  0.1 µm, gamma = 0.05. This sits between Fohlmeister-Miller&#x27;s RGC-specific 50 ms [F&amp;M1997-PMC] and
+  Mainen-Sejnowski&#x27;s cortical 200 ms.
+* **Document MOD provenance in `details.json`**: source ModelDB accession (2488 / 139653), source
+  paper DOI ([MS1996-modeldb], [Hay2011-L5]), parameter modifications (Q10-corrected to 37 °C), and
+  any custom edits.
+* **Apply Q10 ~ 2.3 for kinetic temperature correction** when going from the Adams 21 °C reference
+  to Bed A&#x27;s 35-37 °C runtime. This matches the Hay 2011 internal default and the [F&amp;M1997-PMC] Q10
+  = 1.95 for gating kinetics in RGCs.
+* **Set BK density grid in the same low/medium/high tier as t0067** — for canonical pyramidal cells,
+  `gbar_kca = 0.3-3.0 mS/cm²` (Mainen-Sejnowski 1996 defaults). For RGCs, scale by 0.5-1.5× this
+  range (no published RGC-specific anchor).
+* **Set SK density grid lower** than BK: typical pyramidal `gbar_SK_E2 = 0.06-0.6 mS/cm²` (Hay 2011
+  default range). [Wang1998-Ferret] suggests SK in RGCs is the dominant contributor to mAHP but
+  quantitatively comparable or smaller than BK.
+* **Set Kv7 density grid lowest**: typical pyramidal `gbar_Im = 0.0001-0.005 mS/cm²` (Hay 2011). Kv7
+  at the soma is small in pyramidal cells [Hu2007-Perisomatic, Shah2008-Axonal]; for RGCs no somatic
+  anchor exists, so use this range and expect mostly inert results — consistent with the task
+  description&#x27;s risks-and-fallbacks section that flags AIS-localised Kv7 as a t0075 deferral.
+* **Compute vector-sum DSI as the primary residual-DSI metric** [Hanson2019-eLife] alongside HWHM
+  for the polar tuning curve [Chen2009-PMC]. PD-vs-ND DSI is retained for cross-task comparison with
+  t0067.
+* **For HWHM calculation** use linear interpolation around the half-max points of the 12-angle polar
+  curve. Set HWHM to `null` for low-rate conditions (peak mean rate &lt; 1 Hz).
+* **Report tuning-width sensitivity per channel** as recommended by [Hay2011-L5] (their per-channel
+  density-density grid is the methodological precedent for systematic channel sweeps).
+
+##### Hypotheses to Test
+
+1. **The vendored BK at high density rescues vector-sum DSI within 0.10 of baseline 0.797** because
+   BK&#x27;s Ca-dependent activation preferentially suppresses high-firing PD trains where Ca²⁺
+   accumulation is highest [Wang1998-Ferret, Pennefather1990-Sympath]. Falsifiable by the t0074 |Δ
+   vector-sum DSI| &gt; 0.05 threshold from the pass criteria.
+2. **The vendored SK at medium / high density produces measurable broadening (HWHM delta &gt; 5
+   degrees)** because [Wang1998-Ferret] reports SK underlies the mAHP responsible for
+   spike-frequency adaptation; reducing peak PD rate reshapes width. Falsifiable by direct HWHM
+   measurement.
+3. **The vendored Kv7 produces no measurable somatic effect** at any density because somatic Kv7 in
+   RGCs is not well-documented [Shah2008-Axonal, Hu2007-Perisomatic]; the AIS is the canonical Kv7
+   site. Falsifiable by the |delta HWHM| &lt; 5 degrees AND |delta vector-sum DSI| &lt; 0.05 threshold.
+4. **Vector-sum DSI tracks HWHM linearly only in the high-firing-rate regime** (peak &gt; 50 Hz)
+   [Hanson2019-eLife, Chen2009-PMC]. Below this rate, the metrics decouple — vector-sum DSI may stay
+   above 0.10 even when HWHM widens beyond 60 degrees because ND firing remains low.
+
+##### Best Practices
+
+* Use ModelDB-deposited MOD files with peer-reviewed source citations (Hay 2011, Mainen-Sejnowski
+  1996, Mateos-Aparicio 2014). Do not hand-fit channel kinetics from scratch.
+* Document every parameter modification (Q10, density, V_½ shift) in the library asset&#x27;s
+  `details.json` with the source DOI.
+* Record the calcium-pool τ explicitly (80 ms is recommended) — not following a published value is
+  the most common silent breakage in cross-cell-type Ca-pool ports.
+* Run the Stage-2 regression gate before any new channel sweep [task description Stage 2]: this
+  catches calcium-pool-induced disturbance of the baseline DSGC dynamics before 1500 trials are
+  burned.
+
+#### Discovered Papers
+
+These are papers discovered during internet search that should be added to the project corpus.
+Cross-checked against the existing 64-paper corpus via direct DOI / title comparison; none of the
+following are present.
+
+##### [Hay2011-L5]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schürmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Source paper for ModelDB 139653 — the primary source of `SK_E2.mod`,
+  `CaDynamics_E2.mod`, and `Im.mod` MOD files vendored in this task. Documents the kinetic parameter
+  values, conductance density tiers, and Ca-pool conventions that t0074&#x27;s Stage-1 vendoring follows
+  verbatim.
+
+##### [Wang1998-Ferret]
+
+* **Title**: Calcium-Activated Potassium Conductances in Retinal Ganglion Cells of the Ferret
+* **Authors**: Wang, G.-Y., Robinson, D. W., Chalupa, L. M.
+* **Year**: 1998
+* **DOI**: `10.1152/jn.1998.79.1.151`
+* **URL**: https://journals.physiology.org/doi/full/10.1152/jn.1998.79.1.151
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`, `patch-clamp`
+* **Why download**: First quantitative demonstration of both BKCa (118 pS) and SKCa (22 pS) in
+  mammalian RGC. Provides the canonical reference for &quot;BK and SK in RGC&quot; — the validation anchor for
+  t0074&#x27;s vendored MODs. CTX and apamin pharmacology directly relevant to the channel-
+  identification logic.
+
+##### [Grimes2012-MouseBK]
+
+* **Title**: BK Channels Mediate Pathway-Specific Modulation of Visual Signals in the In Vivo Mouse
+  Retina
+* **Authors**: Grimes, W. N., Li, W., Chávez, A. E., Diamond, J. S.
+* **Year**: 2012
+* **DOI**: `10.1523/JNEUROSCI.4654-11.2012`
+* **URL**: https://www.jneurosci.org/content/32/14/4861
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Why download**: Demonstrates BK function in mouse retina in vivo using a BK-knockout mouse.
+  Confirms BK is functionally significant in the rod/cone pathway. Directly relevant to t0074&#x27;s
+  hypothesis that BK density at the soma can rescue or reshape DSGC tuning.
+
+##### [Kohler1996-SKclone]
+
+* **Title**: Small-Conductance, Calcium-Activated Potassium Channels from Mammalian Brain
+* **Authors**: Köhler, M., Hirschberg, B., Bond, C. T., Kinzie, J. M., Marrion, N. V., Maylie, J.,
+  Adelman, J. P.
+* **Year**: 1996
+* **DOI**: `10.1126/science.273.5282.1709`
+* **URL**: https://www.science.org/doi/10.1126/science.273.5282.1709
+* **Suggested categories**: `voltage-gated-channels`
+* **Why download**: Foundational SK1/SK2/SK3 cloning paper. Directly cited by Hay 2011&#x27;s `SK_E2.mod`
+  MOD file as the source of EC50 = 0.43 µM and Hill = 4.8. Required citation in the vendored library
+  asset&#x27;s `details.json`.
+
+##### [Adams1982-MCurrent]
+
+* **Title**: M-currents and other potassium currents in bullfrog sympathetic neurones
+* **Authors**: Adams, P. R., Brown, D. A., Constanti, A.
+* **Year**: 1982
+* **DOI**: `10.1113/jphysiol.1982.sp014102`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.1982.sp014102
+* **Suggested categories**: `voltage-gated-channels`, `patch-clamp`
+* **Why download**: Foundational M-current characterisation paper. Cited verbatim in Hay 2011&#x27;s
+  `Im.mod` and Mainen-Sejnowski 1996&#x27;s `km.mod` MOD files. The kinetic formalism used in both
+  vendored Kv7 candidates derives directly from this 1982 voltage-clamp study.
+
+##### [Shah2008-Axonal]
+
+* **Title**: Functional significance of axonal Kv7 channels in hippocampal pyramidal neurons
+* **Authors**: Shah, M. M., Migliore, M., Valencia, I., Cooper, E. C., Brown, D. A.
+* **Year**: 2008
+* **DOI**: `10.1073/pnas.0802805105`
+* **URL**: https://www.pnas.org/doi/abs/10.1073/pnas.0802805105
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Establishes the AIS-localised Kv7 hypothesis and provides the published NEURON
+  model (ModelDB 112546) for axonal Kv7. Direct precedent for t0074&#x27;s &quot;if Kv7-at-soma is inert,
+  defer to t0075 AIS-localised follow-up&quot; risk-mitigation plan.
+
+##### [MMS2014-DGC]
+
+* **Title**: Complementary functions of SK and Kv7/M potassium channels in excitability control and
+  synaptic integration in rat hippocampal dentate granule cells
+* **Authors**: Mateos-Aparicio, P., Murphy, R., Storm, J. F.
+* **Year**: 2014
+* **DOI**: `10.1113/jphysiol.2013.267872`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/jphysiol.2013.267872
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`, `patch-clamp`
+* **Why download**: Models BOTH SK and Kv7 in the same compartmental model (ModelDB 169240).
+  Provides the second-line option for SK / Kv7 vendoring if Hay 2011&#x27;s `SK_E2.mod` is found
+  inconsistent with RGC firing constraints in Stage-2 regression.
+
+##### [Hu2002-MResonance]
+
+* **Title**: Two forms of electrical resonance at theta frequencies, generated by M-current,
+  h-current and persistent Na+ current in rat hippocampal pyramidal cells
+* **Authors**: Hu, H., Vervaeke, K., Storm, J. F.
+* **Year**: 2002
+* **DOI**: `10.1113/jphysiol.2002.029249`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.2002.029249
+* **Suggested categories**: `voltage-gated-channels`, `patch-clamp`
+* **Why download**: Provides whole-cell M-current kinetics in rat hippocampal pyramidal cells
+  including temperature dependence (peak resonance 2-5 Hz at 33 °C → 7 Hz at 38 °C). Empirical
+  anchor for the Q10 correction applied to the vendored Kv7 MOD when scaling from 21-23 °C to Bed
+  A&#x27;s 35-37 °C runtime.
+
+#### Recommendations for This Task
+
+1. **Vendor BK from Mainen-Sejnowski 1996 `kca.mod` (ModelDB 2488)** — the canonical voltage-and-
+   Ca-activated K MOD in NEURON. Document in `details.json`: source DOI 10.1038/382363a0, ModelDB
+   accession 2488, Q10 = 2.3 corrected to 37 °C, Pennefather 1990 + Reuveni 1993 as upstream
+   citations.
+
+2. **Vendor SK from Hay 2011 `SK_E2.mod` (ModelDB 139653)** — voltage-independent, Ca-driven SK with
+   EC50 = 0.43 µM and Hill = 4.8. Document in `details.json`: source DOI
+   10.1371/journal.pcbi.1002107, ModelDB accession 139653, [Kohler1996-SKclone] as the upstream
+   biophysical citation.
+
+3. **Vendor Kv7 from Hay 2011 `Im.mod` (ModelDB 139653)** — Adams 1982 formalism with V_½ ≈ -35 mV,
+   Q10 = 2.3. Document in `details.json`: same source DOI as SK, [Adams1982-MCurrent] as upstream
+   citation.
+
+4. **Use Hay 2011 `CaDynamics_E2.mod` for the calcium pool** with τ_decay = 80 ms, depth = 0.1 µm,
+   gamma = 0.05, minCai = 100 nM. Mirror Bed B&#x27;s existing `cad` parameters where they overlap; if
+   Bed B uses τ ≠ 80 ms, prefer Bed B&#x27;s value for consistency. Update from `research_papers.md`&#x27;s
+   &quot;30-100 ms&quot; range — Hay&#x27;s 80 ms is in the upper half of that range and is RGC-compatible per
+   [F&amp;M1997-PMC] (50 ms).
+
+5. **Set the Stage-1 channel-density grid** at the canonical Hay 2011 values, scaled to Bed A&#x27;s
+   compartment surface area:
+   * BK: low = 0.3, medium = 1.0, high = 3.0 mS/cm² (Mainen-Sejnowski 1996 range).
+   * SK: low = 0.06, medium = 0.2, high = 0.6 mS/cm² (Hay 2011 range).
+   * Kv7: low = 0.0001, medium = 0.001, high = 0.005 mS/cm² (Hay 2011 range — soma is low). These
+     are starting points only; the t0067 grid was scaled from a similar published-pyramidal
+     convention.
+
+6. **Adopt the [Rivlin2012-Neuron] vector-sum &gt; 0.2 AND DSI &gt; 0.3 criterion** for &quot;directionally
+   selective&quot; classification of any condition. Conditions falling below either threshold are
+   reported as non-DS in the conclusion section and the vector-sum DSI carries the residual
+   information [Hanson2019-eLife].
+
+7. **Compute three width metrics per condition** (HWHM, vector-sum DSI, peak rate) plus the legacy
+   PD-vs-ND DSI for cross-task comparison with t0067. Update from `research_papers.md`&#x27;s
+   recommendation #5: vector-sum DSI is the primary residual metric, PD-vs-ND DSI the cross-task
+   anchor.
+
+8. **Pre-register the Stage-2 regression-gate threshold at 1e-3** as already specified in the task
+   description. If the un-zeroed CaL/CaT pushes baseline DSI off 0.797 by more than this threshold,
+   switch to the closed-form `Ca_i` fallback — internet research did not surface a simpler
+   alternative.
+
+9. **Cite [Wang1998-Ferret] and [Grimes2012-MouseBK]** in the library asset&#x27;s documentation as the
+   mammalian-RGC validation anchors for the existence (not kinetics) of BK and SK in RGCs. This
+   honestly represents the state of the literature: existence is established; DSGC-specific kinetics
+   are not.
+
+10. **If Kv7-at-soma is inert at all three densities**, log this as a clean negative result in
+    Stage-5 analysis and recommend the t0075 AIS-localised Kv7 follow-up per [Shah2008-Axonal]. The
+    literature is consistent with this outcome.
+
+#### Source Index
+
+##### [Hay2011-L5]
+
+* **Type**: paper
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schürmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107
+* **Peer-reviewed**: yes (PLOS Comp Biol)
+* **Relevance**: Source paper for ModelDB 139653 — the primary vendoring source for `SK_E2.mod`,
+  `CaDynamics_E2.mod`, and `Im.mod` used in t0074 Stage 1.
+
+##### [MS1996-modeldb]
+
+* **Type**: paper
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **URL**: https://www.nature.com/articles/382363a0
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Source paper for ModelDB 2488 — provides the BK template (`kca.mod`), the M-current
+  template (`km.mod`), and the calcium-pool template (`cad.mod`) inspected by this research task.
+  Note: this paper IS already in the project corpus (t0015) — included here as a source for the MOD
+  files only.
+
+##### [MS1996-cad-Github]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/2488 — Mainen and Sejnowski 1996 NEURON code
+* **Author/Org**: ModelDB Repository (curated by Yale CNBC)
+* **Date**: 2016-2024 (most recent commits)
+* **URL**: https://github.com/ModelDBRepository/2488
+* **Last updated**: 2024 (per ModelDB metadata)
+* **Peer-reviewed**: no (associated with peer-reviewed [MS1996-modeldb])
+* **Relevance**: Direct source of `kca.mod`, `km.mod`, and `cad.mod` MOD files. Allows direct
+  inspection of kinetic parameters without paywall access.
+
+##### [Hay2011-CaDyn-Github]
+
+* **Type**: repository
+* **Title**: OpenSourceBrain/L5bPyrCellHayEtAl2011
+* **Author/Org**: Open Source Brain (curated)
+* **Date**: 2024 (last commit)
+* **URL**: https://github.com/OpenSourceBrain/L5bPyrCellHayEtAl2011
+* **Last updated**: 2024
+* **Peer-reviewed**: no (associated with peer-reviewed [Hay2011-L5])
+* **Relevance**: Open Source Brain replication of ModelDB 139653 with all .mod files publicly
+  accessible. Allows direct inspection of `SK_E2.mod`, `CaDynamics_E2.mod`, and `Im.mod` parameters.
+
+##### [MMS2014-DGC]
+
+* **Type**: paper
+* **Title**: Complementary functions of SK and Kv7/M potassium channels in excitability control and
+  synaptic integration in rat hippocampal dentate granule cells
+* **Authors**: Mateos-Aparicio, P., Murphy, R., Storm, J. F.
+* **Year**: 2014
+* **DOI**: `10.1113/jphysiol.2013.267872`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/jphysiol.2013.267872
+* **Peer-reviewed**: yes (J Physiol)
+* **Relevance**: Source paper for ModelDB 169240 — provides a third MOD-file package combining SK
+  and Kv7 in one model, used as a fallback option for t0074 vendoring.
+
+##### [MMS2014-Github]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/169240 — Mateos-Aparicio et al. 2014 dentate granule cell model
+* **Author/Org**: ModelDB Repository
+* **Date**: 2018
+* **URL**: https://github.com/ModelDBRepository/169240
+* **Last updated**: 2018
+* **Peer-reviewed**: no (associated with peer-reviewed [MMS2014-DGC])
+* **Relevance**: Direct source of `DGC_M.mod` (Kv7) and `DGC_sAHP.mod` (SK / sAHP) inspected during
+  this research task. Provides the kinetic parameters reported in the Key Findings section above.
+
+##### [Wang1998-Ferret]
+
+* **Type**: paper
+* **Title**: Calcium-Activated Potassium Conductances in Retinal Ganglion Cells of the Ferret
+* **Authors**: Wang, G.-Y., Robinson, D. W., Chalupa, L. M.
+* **Year**: 1998
+* **DOI**: `10.1152/jn.1998.79.1.151`
+* **URL**: https://journals.physiology.org/doi/full/10.1152/jn.1998.79.1.151
+* **Peer-reviewed**: yes (J Neurophysiol)
+* **Relevance**: First demonstration of both BKCa and SKCa in mammalian RGC. Validation anchor for
+  t0074&#x27;s vendored channels. Confirms the channels exist in mammalian retina even though
+  DSGC-specific kinetics are not measured.
+
+##### [Lipton1987-Rat]
+
+* **Type**: paper
+* **Title**: Voltage-dependent conductances of solitary ganglion cells dissociated from the rat
+  retina
+* **Authors**: Lipton, S. A., Tauck, D. L.
+* **Year**: 1987
+* **DOI**: `10.1113/jphysiol.1987.sp016497`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.1987.sp016497
+* **Peer-reviewed**: yes (J Physiol)
+* **Relevance**: Earliest single-channel identification of BKCa in rat RGC. Background reference for
+  the existence of mammalian-RGC Ca-activated K channels.
+
+##### [Grimes2012-MouseBK]
+
+* **Type**: paper
+* **Title**: BK Channels Mediate Pathway-Specific Modulation of Visual Signals in the In Vivo Mouse
+  Retina
+* **Authors**: Grimes, W. N., Li, W., Chávez, A. E., Diamond, J. S.
+* **Year**: 2012
+* **DOI**: `10.1523/JNEUROSCI.4654-11.2012`
+* **URL**: https://www.jneurosci.org/content/32/14/4861
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: Functional demonstration of BK in mouse retina in vivo; confirms BK matters for
+  visual processing. Most-recent mouse-RGC anchor for the vendored BK MOD.
+
+##### [Kohler1996-SKclone]
+
+* **Type**: paper
+* **Title**: Small-Conductance, Calcium-Activated Potassium Channels from Mammalian Brain
+* **Authors**: Köhler, M., Hirschberg, B., Bond, C. T., Kinzie, J. M., Marrion, N. V., Maylie, J.,
+  Adelman, J. P.
+* **Year**: 1996
+* **DOI**: `10.1126/science.273.5282.1709`
+* **URL**: https://www.science.org/doi/10.1126/science.273.5282.1709
+* **Peer-reviewed**: yes (Science)
+* **Relevance**: Foundational SK-channel cloning paper. Cited by Hay 2011&#x27;s `SK_E2.mod` as the
+  source of the EC50 = 0.43 µM and Hill = 4.8 calcium-binding parameters.
+
+##### [Adams1982-MCurrent]
+
+* **Type**: paper
+* **Title**: M-currents and other potassium currents in bullfrog sympathetic neurones
+* **Authors**: Adams, P. R., Brown, D. A., Constanti, A.
+* **Year**: 1982
+* **DOI**: `10.1113/jphysiol.1982.sp014102`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.1982.sp014102
+* **Peer-reviewed**: yes (J Physiol)
+* **Relevance**: Foundational M-current characterisation. Direct source of the Adams-Yamada-Koch
+  formalism implemented in Hay 2011&#x27;s `Im.mod` and Mainen-Sejnowski&#x27;s `km.mod`.
+
+##### [Shah2008-Axonal]
+
+* **Type**: paper
+* **Title**: Functional significance of axonal Kv7 channels in hippocampal pyramidal neurons
+* **Authors**: Shah, M. M., Migliore, M., Valencia, I., Cooper, E. C., Brown, D. A.
+* **Year**: 2008
+* **DOI**: `10.1073/pnas.0802805105`
+* **URL**: https://www.pnas.org/doi/abs/10.1073/pnas.0802805105
+* **Peer-reviewed**: yes (PNAS)
+* **Relevance**: Establishes AIS-localised Kv7 in pyramidal cells. Direct precedent for t0074&#x27;s
+  &quot;Kv7-at-soma is inert → t0075 AIS follow-up&quot; risk-mitigation logic. ModelDB 112546 is the
+  associated NEURON model.
+
+##### [Hu2002-MResonance]
+
+* **Type**: paper
+* **Title**: Two forms of electrical resonance at theta frequencies, generated by M-current,
+  h-current and persistent Na+ current in rat hippocampal pyramidal cells
+* **Authors**: Hu, H., Vervaeke, K., Storm, J. F.
+* **Year**: 2002
+* **DOI**: `10.1113/jphysiol.2002.029249`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.2002.029249
+* **Peer-reviewed**: yes (J Physiol)
+* **Relevance**: Whole-cell M-current kinetics in rat pyramidal cells with explicit temperature
+  dependence (33-38 °C). Anchor for the Q10 correction applied to vendored Kv7.
+
+##### [Hu2007-Perisomatic]
+
+* **Type**: paper
+* **Title**: M-Channels (Kv7/KCNQ Channels) That Regulate Synaptic Integration, Excitability, and
+  Spike Pattern of CA1 Pyramidal Cells Are Located in the Perisomatic Region
+* **Authors**: Hu, H., Vervaeke, K., Storm, J. F.
+* **Year**: 2007
+* **DOI**: `10.1523/JNEUROSCI.4463-06.2007`
+* **URL**: https://www.jneurosci.org/content/27/8/1853
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: Localises Kv7 to the perisomatic compartment — supports the somatic insertion
+  strategy in t0074 Stage-3.
+
+##### [Brown2009-Review]
+
+* **Type**: paper
+* **Title**: Neural KCNQ (Kv7) channels
+* **Authors**: Brown, D. A., Passmore, G. M.
+* **Year**: 2009
+* **DOI**: `10.1111/j.1476-5381.2009.00111.x`
+* **URL**: https://bpspubs.onlinelibrary.wiley.com/doi/10.1111/j.1476-5381.2009.00111.x
+* **Peer-reviewed**: yes (Br J Pharmacol)
+* **Relevance**: Comprehensive review of KCNQ neuronal physiology including subunit composition
+  (Kv7.2/Kv7.3 heteromer dominant) and pharmacology. Background reference for the vendored Kv7.
+
+##### [Destexhe1993-Thalamic]
+
+* **Type**: paper
+* **Title**: Ionic mechanisms for intrinsic slow oscillations in thalamic relay neurons
+* **Authors**: Destexhe, A., Babloyantz, A., Sejnowski, T. J.
+* **Year**: 1993
+* **DOI**: `10.1016/S0006-3495(93)81190-1`
+* **URL**: https://www.cell.com/biophysj/fulltext/S0006-3495(93)81190-1
+* **Peer-reviewed**: yes (Biophys J)
+* **Relevance**: Source of the single-shell `cad.mod` calcium-pool decay formalism used by
+  Mainen-Sejnowski 1996 and adapted by Hay 2011&#x27;s `CaDynamics_E2.mod`.
+
+##### [F&amp;M1997-PMC]
+
+* **Type**: paper
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/full/10.1152/jn.1997.78.4.1948
+* **Peer-reviewed**: yes (J Neurophysiol)
+* **Relevance**: RGC-specific calcium-pool τ_Ca = 50 ms anchor; the canonical RGC five-channel
+  model. Already in the project corpus (t0019); referenced here for the τ value extracted via
+  internet search.
+
+##### [Pennefather1990-Sympath]
+
+* **Type**: paper
+* **Title**: Two distinct Ca-dependent K currents in bullfrog sympathetic ganglion cells
+* **Authors**: Pennefather, P. S., Lancaster, B., Adams, P. R., Nicoll, R. A.
+* **Year**: 1985
+* **DOI**: `10.1073/pnas.82.9.3040`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.82.9.3040
+* **Peer-reviewed**: yes (PNAS)
+* **Relevance**: Cited by Mainen-Sejnowski 1996&#x27;s `kca.mod` as the source of the BK kinetic
+  parameters. Note: the precise file citation is &quot;Pennefather (1990)&quot; but the most-cited Pennefather
+  BK paper is the 1985 PNAS paper; the file may refer to a 1990 follow-up not located via search.
+
+##### [Reuveni1993-Cortical]
+
+* **Type**: paper
+* **Title**: Stepwise repolarization from Ca2+ plateaus in neocortical pyramidal cells: evidence for
+  nonhomogeneous distribution of HVA Ca2+ channels in dendrites
+* **Authors**: Reuveni, I., Friedman, A., Amitai, Y., Gutnick, M. J.
+* **Year**: 1993
+* **DOI**: `10.1523/JNEUROSCI.13-11-04609.1993`
+* **URL**: https://www.jneurosci.org/content/13/11/4609
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: Cited by Mainen-Sejnowski 1996&#x27;s `kca.mod` as a parameter source for cortical
+  pyramidal BK kinetics.
+
+##### [Hanson2019-eLife]
+
+* **Type**: paper
+* **Title**: Retinal direction selectivity in the absence of asymmetric starburst amacrine cell
+  responses
+* **Authors**: Hanson, L., Sethuramanujam, S., deRosenroll, G., Jain, V., Awatramani, G. B.
+* **Year**: 2019
+* **DOI**: `10.7554/eLife.42392`
+* **URL**: https://elifesciences.org/articles/42392
+* **Peer-reviewed**: yes (eLife)
+* **Relevance**: Already in the project corpus (t0002); referenced here for the vector-sum DSI
+  metric definition (vector-sum DSI = 0.33 → 0.07 transition with non-directional SAC GABA). This is
+  the residual-metric anchor for low-firing-rate t0074 conditions.
+
+##### [Chen2009-PMC]
+
+* **Type**: paper
+* **Title**: Physiological properties of direction-selective ganglion cells in early postnatal and
+  adult mouse retina
+* **Authors**: Chen, M., Weng, S., Deng, Q., Xu, Z., He, S.
+* **Year**: 2009
+* **DOI**: `10.1113/jphysiol.2008.161240`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC2669973/
+* **Peer-reviewed**: yes (J Physiol)
+* **Relevance**: Already in the project corpus (t0002); referenced here for the HWHM definition
+  (full-width-at-half-maximum of the fitted polar tuning curve) and the empirical observation that
+  HWHM is preserved across postnatal development despite peak-rate change.
+
+##### [Rivlin2012-Neuron]
+
+* **Type**: paper
+* **Title**: Visual stimulation reverses the directional preference of direction-selective retinal
+  ganglion cells
+* **Authors**: Rivlin-Etzion, M., Wei, W., Feller, M. B.
+* **Year**: 2012
+* **DOI**: `10.1016/j.neuron.2012.09.020`
+* **URL**: https://www.cell.com/neuron/fulltext/S0896-6273(12)00865-7
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Establishes the standard mouse-DSGC directional-classification thresholds:
+  vector-sum magnitude &gt; 0.2 AND DSI* &gt; 0.3. Directly informs t0074&#x27;s Stage-5 metric reporting and
+  pass-criteria interpretation.
+      </content>
+    </section>
+    <section id="t0074_channel_tuning_width_bed_a-research_code" source_kind="file">
+      <title>t0074_channel_tuning_width_bed_a — Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0074_channel_tuning_width_bed_a</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0074_channel_tuning_width_bed_a/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0074_channel_tuning_width_bed_a&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 14
+tasks_cited: 11
+libraries_found: 13
+libraries_relevant: 4
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Channel Tuning-Width Sweep on Bed A with BK / SK / Kv7
+
+#### Task Objective
+
+Vendor three new MOD mechanisms (BK / KCa1.1, SK / KCa2, Kv7 / M-current) plus a `cad`-style
+single-shell calcium-pool mechanism, attach them to Bed A (deposited Poleg-Polsky DSGC, library
+`modeldb_189347_dsgc` from [t0008]), un-zero the dormant CaL and CaT channels in Bed A&#x27;s HOC
+`init_active` so the calcium pool has a current source, then re-run a regression gate against the
+[t0067] reference baseline DSI = 0.797 (5-seed mean, FULL mode). Once the gate passes, run a
+12-angle bar-rotation tuning-curve sweep across 25 conditions (1 baseline + 8 channels x 3
+densities), 5 seeds per condition for FULL mode (1500 trials) plus 1 seed per condition for two
+passive-diagnostic modes (600 trials, EPSP_PASSIVE / IPSP_PASSIVE), and compute HWHM, vector-sum
+DSI, peak rate, and RMSE-vs-cosine-target per condition using the t0011 / t0012 libraries. This
+research review surveys the project&#x27;s vendored libraries, the existing channel-insertion sweep, the
+existing 12-angle bar-rotation driver on Bed A, the existing `cad`-style calcium-pool MOD on Bed B,
+and the EPSP_PASSIVE / IPSP_PASSIVE / FULL mode-toggle protocol so the implementation stage can fork
+the right code and import the right libraries.
+
+#### Library Landscape
+
+The project&#x27;s `tasks/*/assets/library/*/details.json` registry contains 13 libraries (no
+project-wide library aggregator exists yet, so they were enumerated by globbing
+`tasks/*/assets/library/*/details.json` against the worktree). Four are directly relevant.
+
+* **`modeldb_189347_dsgc`** ([t0008],
+  `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/details.json`): the deposited
+  Poleg-Polsky DSGC port (Bed A). Provides `build_dsgc()` and `run_one_trial()` Python entry points
+  plus the verbatim NEURON HOC sources in `assets/library/modeldb_189347_dsgc/sources/` (HHst.mod,
+  dsgc_model.hoc, RGCmodel.hoc, etc.). This is the substrate for the entire t0074 sweep. Import
+  path:
+  `from tasks.t0008_port_modeldb_189347.code.build_cell import build_dsgc, apply_params, read_synapse_coords`.
+  Relevant — direct dependency of t0074.
+
+* **`tuning_curve_viz`** ([t0011],
+  `tasks/t0011_response_visualization_library/assets/library/tuning_curve_viz/details.json`):
+  matplotlib library for Cartesian / polar / multi-model overlay / raster+PSTH PNGs. Entry points:
+  `plot_cartesian_tuning_curve`, `plot_polar_tuning_curve`, `plot_multi_model_overlay`,
+  `plot_angle_raster_psth`. Import path:
+  `from tasks.t0011_response_visualization_library.code.tuning_curve_viz import plot_cartesian_tuning_curve, plot_polar_tuning_curve, plot_multi_model_overlay`.
+  Reads the canonical `(angle_deg, trial_seed, firing_rate_hz)` CSV schema. Relevant — direct
+  dependency of t0074 for the per-channel sensitivity plots and the cross-channel comparison plot.
+
+* **`tuning_curve_loss`** ([t0012],
+  `tasks/t0012_tuning_curve_scoring_loss_library/assets/library/tuning_curve_loss/details.json`):
+  canonical 12-angle scorer that returns `ScoreReport` with DSI / peak / null / HWHM /
+  RMSE-vs-target / reliability + envelope pass/fail. Entry points:
+  `score(simulated_curve_csv, target_curve_csv)`, `score_curves(target, candidate)`, `compute_dsi`,
+  `compute_hwhm_deg`, `compute_peak_hz`, `compute_null_hz`. Import path:
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.scoring import score, score_curves, ScoreReport`
+  and
+  `from tasks.t0012_tuning_curve_scoring_loss_library.code.tuning_curve_loss.metrics import compute_hwhm_deg, compute_dsi`.
+  Default target is `t0004` curve_mean.csv resolved internally via `TARGET_MEAN_CSV`. Relevant —
+  direct dependency of t0074 for HWHM and RMSE-vs-cosine-target.
+
+* **`de_rosenroll_2026_dsgc`** ([t0024],
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/details.json`): Bed
+  B port. Its `sources/cadecay.mod` is the canonical `cad`-style single-shell calcium-pool mechanism
+  that t0074 will copy as a reference template into the new vendored MOD pack (relevant template
+  only — t0074 will not import this library directly). Located at
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod`.
+
+The remaining nine libraries are not directly relevant: `modeldb_189347_dsgc_gabamod` ([t0020]) is a
+gabaMOD-swap variant of Bed A used by the EPSP/IPSP protocol but its mechanism set is identical to
+t0008&#x27;s; `modeldb_189347_dsgc_dendritic` (t0022) and `modeldb_189347_dsgc_exact` ([t0046]) are
+alternate Bed-A variants; `minimal_dsgc_*` libraries (t0052, t0053, t0054, t0055, t0057, t0059) are
+minimal-cell tonic-GABA / NMDA explorations and use a different mechanism set. None of them ship BK
+/ SK / Kv7 MOD files; that gap is addressed by t0074&#x27;s Stage-1 vendoring step.
+
+No library-aggregator script exists in `arf/scripts/aggregators/` yet (only `aggregate_tasks.py`,
+`aggregate_metrics.py`, `aggregate_costs.py`, and a few others); the library survey above was
+performed via direct filesystem enumeration with the same effective result because no
+library-correction overlay exists in `corrections/`.
+
+#### Key Findings
+
+##### Bed A&#x27;s HOC `init_active` Zeroes CaL / CaT and the Calcium Pool Has No Current Source
+
+The deposited Poleg-Polsky DSGC&#x27;s `init_active` proc lives in the HOC source bundled inside the
+[t0008] library asset:
+`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/dsgc_model.hoc:114-152`.
+Lines 144-145 read `RGCcaT=0*active` and `RGCcaL=0.0*active`; the `*active` factor is set elsewhere
+in `init_active` (line 134) via `active=1-doingVC`, which means CaT and CaL are also zeroed in
+voltage-clamp mode. These two HOC variables are then bound to the `glbar_HHst` and `gtbar_HHst`
+mechanism parameters inside `proc update()` at
+`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/dsgc_model.hoc:288-289`
+(`forsec RGC.all { glbar_HHst=RGCcaL; gtbar_HHst=RGCcaT; ... }`). The `HHst.mod` mechanism at
+`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/HHst.mod` carries the L-
+and T-type calcium currents internally (lines 26 `USEION ca READ eca WRITE ica`, 31-32
+`RANGE lm, lh, gl, glbar` / `RANGE tm, th, gt, gtbar`, 219 `ica = il+it`); `glbar` and `gtbar`
+default to `0.0003 S/cm2` (lines 57-58) but are overwritten to zero by `init_active` at every trial.
+Consequently the existing model has no calcium current at all and adding a `cad`-style calcium pool
+by itself would produce a flat `cai = cainf` trace, defeating the BK / SK biophysics. The
+single-line edit needed is to replace the two zero literals at lines 144-145 with non-zero defaults;
+values around the HHst defaults (`0.0003`) are biologically reasonable as a starting point per
+[t0019]&#x27;s VGC literature survey. Because the HOC source is bundled inside an immutable library
+asset, t0074 must **fork** the HOC into its task-local code/ folder rather than edit the [t0008]
+library in place — this is the mechanism by which the un-zeroing becomes task-isolated and
+reversible.
+
+##### t0067 Provides a Forkable Channel-Insertion Pipeline
+
+[t0067] is the closest precedent and the explicit fork target for t0074. Its sweep driver is
+`tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:1-327` and the channel-pack MODs
+live in `tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/` (nav16t67.mod, napt67.mod,
+nart67.mod, kv3t67.mod, kv4t67.mod plus `mod_func.c` registration). The density-application function
+`_set_active_channel(*, soma, key)` at
+`tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:131-148` zeroes all five channel
+densities, then sets the active one (in S/cm^2 = mS/cm^2 * 1e-3); it relies on
+`_insert_all_channels_with_zero_gbar(*, h, soma)` at lines 123-128 inserting every mechanism once at
+build time. The mechanism `SUFFIX` and density grid live in the typed
+`CHANNEL_DEFS: tuple[ChannelDef, ...]` registry in
+`tasks/t0067_t0065_soma_channel_addition_sweep/code/constants.py:30-63` (3-fold density steps per
+channel; e.g. Nav1.6 low/med/high = 10/30/90 mS/cm^2, Kv3 = 7/20/60 mS/cm^2). Each MOD uses
+`NONSPECIFIC_CURRENT i` (e.g.
+`tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/nav16t67.mod:8`) to avoid `USEION`
+collisions with HHst&#x27;s `USEION na/k/ca`. The DLL is loaded via `_ensure_t67_dll_loaded` at
+`run_sweep.py:107-120` after `build_dsgc()`; NEURON allows multiple `nrn_load_dll` calls so long as
+no SUFFIX collides. All five t67 MODs are NONSPECIFIC, so the new `cad` calcium-pool MOD t0074
+vendors will need a `USEION ca READ ica WRITE cai` declaration that does NOT collide with HHst
+(which writes `ica` but does not write `cai`); HHst writes ica and `cad` reads ica + writes cai;
+this is exactly the pattern Bed B uses (see Findings below).
+
+##### t0067&#x27;s FULL-Mode Protocol Uses a 2-Direction gabaMOD Swap
+
+[t0067] is **not** a 12-angle bar-rotation; it is a 2-direction gabaMOD swap inherited from [t0065].
+The trial schedule at `tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:72-104`
+enumerates `Direction.PD` and `Direction.ND` only. The PD/ND swap is implemented at
+`run_sweep.py:162-163` via `h.gabaMOD = GABA_MOD_PD (0.33)` for PD and `GABA_MOD_ND (0.99)` for ND,
+using the constants in `tasks/t0067_t0065_soma_channel_addition_sweep/code/constants.py:65-66`. The
+`exptype` field is set at `run_sweep.py:164` (`h.exptype = 1` for FULL mode, HH on); FULL is the
+only mode this task covers. The 5-seed protocol (5 per direction per condition, base seed
+1. lives at `tasks/t0067_t0065_soma_channel_addition_sweep/code/constants.py:67-68`
+   (`N_SEEDS_PER_CONDITION: int = 5; SEED_BASE: int = 1`). Trial length is 1000 ms
+   (`TSTOP_MS: float = 1000.0` at line 69) and `AP_THRESHOLD_MV: float = -10.0` (line 71) is the
+   spike threshold. The order of operations in `_run_one_trial(*, h, baseline_coords, key)` at
+   `run_sweep.py:158-205` is critical:
+   `apply_params -&gt; set h.gabaMOD -&gt; set h.exptype = 1 -&gt; h(&quot;init_active()&quot;) -&gt; h(&quot;access RGC.soma&quot;) -&gt; h(&quot;update()&quot;) -&gt; h(&quot;placeBIP()&quot;) -&gt; _set_active_channel`.
+   The comment at `run_sweep.py:171-172` warns that `init_active` rebinds `RGCsomana` onto
+   `gnabar_HHst` so the new-channel gbars must be set AFTER `init_active`. The recorded baseline DSI
+   is **0.7974683544303798** in
+   `tasks/t0067_t0065_soma_channel_addition_sweep/results/metrics.json`.
+
+##### Bed A Already Has a 12-Angle Bar-Rotation Driver in [t0008]
+
+Despite t0067 using only PD / ND, Bed A **does** have a working 12-angle protocol — it lives in
+the upstream [t0008] task itself and is the canonical entry path for the project&#x27;s tuning- curve
+loss library. The driver is `tasks/t0008_port_modeldb_189347/code/run_tuning_curve.py:1-100` and the
+angle iteration is the inner loop at
+`tasks/t0008_port_modeldb_189347/code/run_tuning_curve.py:56-65`:
+`for angle_idx in range(N_ANGLES): angle_deg = angle_idx * ANGLE_STEP_DEG; for trial_idx in range(N_TRIALS): rate = run_one_trial(h=h, angle_deg=angle_deg, seed=seed, ...)`.
+Constants in `tasks/t0008_port_modeldb_189347/code/constants.py:49-51` define `N_ANGLES: int = 12`,
+`N_TRIALS: int = 20`, `ANGLE_STEP_DEG: float = 30.0` — exactly the 12-angle 30-degree-step
+schedule t0074 needs. The angle is encoded by **rotating BIP synapse coordinates** around the soma
+rather than by rotating the bar — see `tasks/t0008_port_modeldb_189347/code/build_cell.py:211-262`
+(`rotate_synapse_coords_in_place`). The function takes a baseline snapshot (captured once via
+`read_synapse_coords` at lines 192-208) and applies a 2-D rotation matrix per BIP synapse, keeping
+the SAC inhib / SAC exc coords pinned (the comment at lines 219-238 explains this preserves the
+bipolar-SAC arrival-time asymmetry that produces direction selectivity). Trial output is a single
+firing rate (Hz) computed by counting upward threshold crossings of soma Vm above `AP_THRESHOLD_MV`
+at lines 348-358 of `build_cell.py`. **t0074 should fork this driver and replace the inner FULL-only
+loop with the t0067 channel-density / mode-toggle structure while keeping the [t0008] angle-rotation
+idiom.** Conclusion for the task description&#x27;s &quot;12-angle bar-rotation protocol per t0046
+reproduction&quot; reference: t0046 itself uses 2-direction (`Direction.PREFERRED / Direction.NULL`)
+protocol via `simplerun()` at
+`tasks/t0046_reproduce_poleg_polsky_2016_exact/code/run_simplerun.py:1-100`; the actual 12-angle
+driver is t0008&#x27;s `run_tuning_curve.py`.
+
+##### t0024&#x27;s `cadecay.mod` Is the Canonical `cad`-Style Calcium Pool
+
+The Destexhe 1995 single-shell first-order calcium pool already exists in the [t0024] Bed B library
+at
+`tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod`.
+The MOD declares `SUFFIX cad` (line 25), `USEION ca READ ica, cai WRITE cai` (line 26), and
+`RANGE depth, kt, kd, cainf, taur` (line 27); it implements the standard
+`drive_channel = -10000 * ica / (2 * FARADAY * depth)` calcium-influx-from-current at line 70 plus
+`cai&#x27; = drive_channel + (cainf - cai) / taur` first-order decay at line 74; defaults are
+`depth=0.1 um`, `taur=5 ms`, `cainf=2e-4 mM` (lines 44-46). t0024 inserts this pool on the soma and
+every dendrite via `soma.insert(&quot;cad&quot;)` and per-dendrite `dend.insert(&quot;cad&quot;)` calls at
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:194, 219, 230, 241`. **This is the exact
+MOD that t0074 should copy** — verbatim file copy into t0074&#x27;s task-local `code/mods/cadecay.mod`
+— since it already follows the project&#x27;s `USEION ca` convention and will compose cleanly with the
+deposited HHst&#x27;s `WRITE ica` declaration in
+`tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/HHst.mod:26`. No
+mechanism-name collision because HHst does not write `cai`.
+
+##### EPSP_PASSIVE / IPSP_PASSIVE / FULL Mode Toggling Lives in [t0065]
+
+The Stage-4 passive-diagnostic protocol the t0074 task description asks for is exactly the [t0065]
+three-mode protocol. The mode enum and exptype constants are in
+`tasks/t0065_t0020_epsp_ipsp_vm_protocol/code/constants.py:8-32`:
+`TrialMode { FULL, EPSP_PASSIVE, IPSP_PASSIVE }`, `EXPTYPE_HH_ON = 1`, `EXPTYPE_HH_OFF = 2`,
+`GABA_MOD_PD = 0.33`, `GABA_MOD_ND = 0.99`, `GABA_MOD_OFF = 0.0`, plus per-mode synaptic-conductance
+overrides (`B_AMPA_OFF_NS = 0.0`, `B_NMDA_OFF_NS = 0.0`, `S_GABA_OFF_NS = 0.0`,
+`S_ACH_OFF_NS = 0.0`, `ACH_MOD_OFF = 0.0`). The mode-toggle function is
+`_apply_mode_override(*, h, mode)` at
+`tasks/t0065_t0020_epsp_ipsp_vm_protocol/code/run_protocol.py:144-167`; FULL is a no-op,
+EPSP_PASSIVE silences GABA via `gabaMOD = 0` and `s2ggaba = 0`, IPSP_PASSIVE silences both bipolar
+(`b2gampa = 0`, `b2gnmda = 0`) and SAC cholinergic (`s2gach = 0`, `achMOD = 0`) pathways. The trial
+executor at `run_protocol.py:171-219` runs
+`apply_params -&gt; set h.gabaMOD -&gt; set h.exptype -&gt; _apply_mode_override -&gt; init_active -&gt; update -&gt; placeBIP -&gt; finitialize -&gt; continuerun`.
+The `BASELINE_END_MS: float = 100.0` window in `constants.py:68` is the t &lt; 100 ms baseline-Vm
+window. **t0074 should copy this `_apply_mode_override` function verbatim into its run_sweep.py and
+gate it behind a per-trial `TrialMode` field**, applying it between `set h.exptype` and
+`init_active`. See related project memory note (`feedback_dsgc_measurement_protocol`) which records
+that the standard mode trio is EPSP_PASSIVE / IPSP_PASSIVE / FULL with HH-off-for-traces and
+HH-on-for-firing-rate, fixed 1400 ms trial length; the [t0065] implementation uses
+`TSTOP_MS = 1000.0` per the deposited model so t0074 should follow t0065 unless the
+measurement-protocol note requires extending to 1400 ms.
+
+##### t0011 / t0012 Loaders Expect Canonical CSV Schema `(angle_deg, trial_seed, firing_rate_hz)`
+
+The t0011 viz library re-exports t0012&#x27;s loader at
+`tasks/t0011_response_visualization_library/code/tuning_curve_viz/loaders.py:17-37` so both
+libraries consume the same CSV. The schema-detection function `_detect_schema(*, columns)` at
+`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/loader.py:43-55` accepts three
+column-set variants: `canonical_trials = (angle_deg, trial_seed, firing_rate_hz)`,
+`t0004_trials = (angle_deg, trial_index, rate_hz)`, and `t0004_mean = (angle_deg, mean_rate_hz)`.
+The angle-grid validator at lines 58-69 enforces exactly 12 angles with 30-deg uniform spacing;
+`tuning_curve_viz.loaders.validate_angle_grid` is a permissive 8/12/16-angle variant. Per-trial data
+is folded into a `(n_angles, n_trials)` matrix for bootstrap CI plotting; the `firing_rates_hz`
+field on the `TuningCurve` dataclass at lines 34-40 is the per-angle mean. The HWHM computation at
+`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/metrics.py:50-100` rotates the
+rate vector so the peak sits at index `n // 2` then linearly interpolates the half-max crossing on
+each side and averages — for a flat curve it returns `180.0`. **Per the task description&#x27;s &quot;report
+HWHM as null for low-rate conditions&quot; rule, t0074 must guard the call with a peak-rate check (e.g. &lt;
+1 Hz) BEFORE calling `compute_hwhm_deg`** since the library itself never returns null. The score
+function at
+`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/scoring.py:199-225` defaults
+the target to `t0004` `curve_mean.csv` resolved internally, but t0074 should pass the t0004 mean
+curve explicitly to make the dependency visible (the t0004 cosine target is `peak = 32 Hz`,
+`r_base = 2 Hz`, `θ_pref = 90 deg`, `n = 2`, see t0004 results_summary).
+
+##### Vector-Sum DSI and Per-Condition Tuning Curves Are New Computations
+
+Neither t0011, t0012, nor any prior task implements vector-sum DSI
+(`|sum_i rate_i * exp(i*theta_i)| / sum_i rate_i`). [t0012] only computes the standard DSI =
+`(peak - null) / (peak + null)` at
+`tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/metrics.py:41-47`. **t0074
+must implement vector-sum DSI as a new function in its task-local code**; it should live in the same
+module as the per-condition aggregator. The Hanson 2019 / Rivlin 2012 vector-sum convention
+identified in `research_internet.md` is the canonical mouse-DSGC residual metric.
+
+##### Project Memory Note: Drop Per-Synapse Activation Histograms; Use Fixed 1400 ms Trial
+
+The `feedback_dsgc_measurement_protocol` user-memory note records that the standard mode trio is
+EPSP_PASSIVE / IPSP_PASSIVE / FULL with HH off for EPSP/IPSP traces and HH on for
+Vm/firing-rate/DSI; trial length is fixed at 1400 ms; per-synapse activation histograms should be
+dropped. t0074&#x27;s stage 3 / stage 4 protocols match this except for the trial length ([t0065] /
+[t0067] use `TSTOP_MS = 1000.0`). The implementation should default to 1000 ms (to preserve the
+[t0067] regression-gate fingerprint) and treat 1400 ms as a follow-up extension. Per-synapse
+activation histograms are not in the t0074 outputs anyway.
+
+##### Project Memory Note: Consolidated Task Design
+
+The `feedback_consolidated_task_design` user-memory note records the researcher&#x27;s preference for
+combined tasks with biological-plausibility motivation. t0074&#x27;s bundling of {Nav1.6, NaP, NaR, Kv3,
+Kv4, BK, SK, Kv7} sweep + tuning-width metrics + calcium-pool + CaL/CaT un-zeroing matches this
+preference and addresses suggestions {S-0068-01, S-0068-02, S-0068-05} in one go.
+
+#### Reusable Code and Assets
+
+##### From [t0008] Bed A library
+
+* **Source**: `tasks/t0008_port_modeldb_189347/code/build_cell.py:96-176` (`build_dsgc`,
+  `load_neuron`, `apply_params`).
+
+* **What it does**: bootstraps NEURON, loads HHst / bipNMDA / SACinhib / SACexc DLL, sources
+  RGCmodel.hoc + dsgc_model.hoc, returns initialised `h` with `h.RGC` cell template.
+
+* **Reuse method**: **import via library** (`modeldb_189347_dsgc`).
+
+* **Function signatures**: `build_dsgc() -&gt; Any`, `apply_params(h: Any, *, seed: int) -&gt; None`,
+  `read_synapse_coords(h: Any) -&gt; list[SynapseCoords]`.
+
+* **Adaptation needed**: none for the import; but t0074 must override `init_active` after build by
+  sourcing a forked HOC (see &quot;copy into task&quot; below) BEFORE the first trial.
+
+* **Line count**: 0 (import).
+
+* **Source**: `tasks/t0008_port_modeldb_189347/code/build_cell.py:211-277`
+  (`rotate_synapse_coords_in_place`, `reset_synapse_coords`).
+
+* **What it does**: 12-angle rotation of BIP synapse coordinates around the soma; preserves SAC
+  coords pinned to baseline.
+
+* **Reuse method**: **import via library**.
+
+* **Function signatures**:
+  `rotate_synapse_coords_in_place(*, h: Any, angle_deg: float, baseline: list[SynapseCoords], rotate_sac: bool = False) -&gt; None`,
+  `reset_synapse_coords(*, h: Any, baseline: list[SynapseCoords]) -&gt; None`.
+
+* **Adaptation needed**: none.
+
+* **Line count**: 0 (import).
+
+* **Source**:
+  `tasks/t0008_port_modeldb_189347/assets/library/modeldb_189347_dsgc/sources/dsgc_model.hoc:114-152`
+  (`proc init_active`).
+
+* **What it does**: HOC proc that sets channel-density globals
+  `RGCsomana / RGCsomakv / RGCsomakm / RGCdendna / RGCdendkv / RGCdendkm / RGCcaT / RGCcaL / RGCcaP / RGCih / RGCkca / RGCgpas / RGCepas`
+  based on `exptype`.
+
+* **Reuse method**: **copy into task** with edits to lines 144-145 to replace `RGCcaT=0*active` and
+  `RGCcaL=0.0*active` with non-zero defaults (e.g. `0.0003*active`) and re-source the forked HOC
+  after `build_dsgc()`. Alternatively the full HOC file can be task-local with a
+  `proc override_init_active()` that t0074 calls each trial before `init_active()` and which sets
+  RGCcaT / RGCcaL post-hoc.
+
+* **Adaptation needed**: replace two HOC literals; preserve all other logic.
+
+* **Line count**: ~40 lines for the proc itself; the surrounding HOC file is ~600 lines but only the
+  proc body needs forking.
+
+##### From [t0067] channel-insertion pipeline
+
+* **Source**: `tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:107-205`
+  (`_ensure_t67_dll_loaded`, `_insert_all_channels_with_zero_gbar`, `_set_active_channel`,
+  `_run_one_trial`).
+
+* **What it does**: loads the channel-pack DLL, inserts all mechanisms once with gbar=0, toggles the
+  active channel per trial via `setattr(seg, f&quot;gbar_{ch.suffix}&quot;, g_s_cm2)`, runs one FULL-mode
+  trial.
+
+* **Reuse method**: **copy into task** (NOT a registered library; t0067 has no library asset).
+
+* **Adaptation needed**: extend `CHANNEL_DEFS` registry to add `BK`, `SK`, `KV7` mechanism suffixes;
+  rename DLL path to t0074-local; insert `cad` mechanism on the soma at build time alongside the
+  BK/SK/Kv7 mechanisms; add `TrialMode` field to `TrialKey` and call `_apply_mode_override` between
+  `set h.exptype` and `init_active()`.
+
+* **Line count**: ~100 lines (sweep driver + helper functions).
+
+* **Source**: `tasks/t0067_t0065_soma_channel_addition_sweep/code/constants.py:9-77` (`ChannelKind`,
+  `DensityLabel`, `Direction`, `ChannelDef`, `CHANNEL_DEFS`, `GABA_MOD_PD/ND`,
+  `N_SEEDS_PER_CONDITION`, `SEED_BASE`, `TSTOP_MS`, `AP_THRESHOLD_MV`).
+
+* **What it does**: typed constants and channel registry.
+
+* **Reuse method**: **copy into task**.
+
+* **Adaptation needed**: add `BK`, `SK`, `KV7` enum values and `ChannelDef` rows; add `TrialMode`
+  enum import from t0065&#x27;s pattern; densities for new channels per `research_internet.md`
+  recommendations.
+
+* **Line count**: ~80 lines (constants only).
+
+* **Source**: `tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/*.mod` and `mod_func.c`.
+
+* **What it does**: 5 NONSPECIFIC_CURRENT MOD mechanisms (Nav1.6, NaP, NaR, Kv3, Kv4) plus the
+  modl_reg registration boilerplate.
+
+* **Reuse method**: **copy into task** (verbatim; t67 MODs are needed in the t0074 channel pack
+  alongside the new BK / SK / Kv7).
+
+* **Adaptation needed**: rename SUFFIX from `nav16t67` -&gt; `nav16t74` (or keep t67 names) to avoid
+  DLL name collision if both DLLs are loaded; update `mod_func.c` to register the new BK / SK / Kv7
+  / cad mechanisms in addition.
+
+* **Line count**: ~50 lines per MOD x 5 = 250 lines plus 30 for mod_func.c.
+
+##### From [t0024] Bed B `cad` calcium pool
+
+* **Source**:
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod:1-75`.
+* **What it does**: Destexhe 1995 single-shell first-order calcium pool, `SUFFIX cad`,
+  `USEION ca READ ica, cai WRITE cai`, defaults `depth=0.1 um`, `taur=5 ms`, `cainf=2e-4 mM`.
+* **Reuse method**: **copy into task** (despite living inside [t0024]&#x27;s library asset, it is not
+  exported as a Python entry point; the MOD file itself must be vendored into t0074&#x27;s channel pack
+  alongside BK / SK / Kv7).
+* **Adaptation needed**: none for the MOD; just include it in t0074&#x27;s `code/mods/cadecay.mod` and
+  register in `mod_func.c`.
+* **Line count**: 75 lines.
+
+##### From [t0065] EPSP / IPSP / FULL mode-toggle protocol
+
+* **Source**: `tasks/t0065_t0020_epsp_ipsp_vm_protocol/code/constants.py:8-68` (`TrialMode`,
+  `EXPTYPE_*`, `GABA_MOD_*`, `B_*OFF_NS`, `S_*OFF_NS`, `ACH_MOD_OFF`, `BASELINE_END_MS`).
+
+* **What it does**: typed mode enum, exptype mapping, per-mode synaptic-conductance overrides.
+
+* **Reuse method**: **copy into task**.
+
+* **Adaptation needed**: merge with the t0067-derived constants module (single `constants.py` for
+  t0074).
+
+* **Line count**: ~60 lines.
+
+* **Source**: `tasks/t0065_t0020_epsp_ipsp_vm_protocol/code/run_protocol.py:144-167`
+  (`_apply_mode_override`).
+
+* **What it does**: zeroes the right synaptic conductance globals per `TrialMode`.
+
+* **Reuse method**: **copy into task**.
+
+* **Adaptation needed**: none.
+
+* **Line count**: ~25 lines.
+
+##### From [t0011] viz library
+
+* **Source**: `tasks/t0011_response_visualization_library/code/tuning_curve_viz/cartesian.py`,
+  `polar.py`, `overlay.py`.
+* **What it does**: Cartesian / polar / multi-model overlay tuning-curve plots with optional target
+  overlay.
+* **Reuse method**: **import via library** (`tuning_curve_viz`).
+* **Function signatures**:
+  `plot_cartesian_tuning_curve(curve_csv: Path, out_png: Path, *, show_trials: bool = True, target_csv: Path | None = None) -&gt; None`,
+  `plot_polar_tuning_curve(curve_csv: Path, out_png: Path, *, target_csv: Path | None = None) -&gt; None`,
+  `plot_multi_model_overlay(curve_csvs: list[Path], labels: list[str], out_png: Path, *, target_csv: Path | None = None) -&gt; None`.
+* **Adaptation needed**: none for the library; t0074 must emit canonical
+  `(angle_deg, trial_seed, firing_rate_hz)` CSVs per condition before calling.
+* **Line count**: 0 (import).
+
+##### From [t0012] tuning-curve loss library
+
+* **Source**:
+  `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/scoring.py:199-225`
+  (`score`),
+  `tasks/t0012_tuning_curve_scoring_loss_library/code/tuning_curve_loss/metrics.py:32-100`
+  (`compute_dsi`, `compute_peak_hz`, `compute_null_hz`, `compute_hwhm_deg`).
+* **What it does**: load, score, and compute DSI / HWHM / RMSE-vs-target on a 12-angle CSV.
+* **Reuse method**: **import via library** (`tuning_curve_loss`).
+* **Function signatures**:
+  `score(simulated_curve_csv: Path, target_curve_csv: Path | None = None, *, weights: dict[str, float] | None = None) -&gt; ScoreReport`,
+  `compute_hwhm_deg(*, curve: TuningCurve) -&gt; float`, `compute_dsi(*, curve: TuningCurve) -&gt; float`.
+* **Adaptation needed**: per-condition wrapper that gates `compute_hwhm_deg` behind a peak-rate &lt; 1
+  Hz check and returns `None` when the curve is sub-threshold.
+* **Line count**: 0 (import).
+
+##### New code t0074 must write (no prior precedent)
+
+* **Vector-sum DSI**: `vector_sum_dsi(rates_hz: NDArray, angles_rad: NDArray) -&gt; float`, ~10 lines,
+  lives in t0074&#x27;s task-local metrics module.
+* **BK / SK / Kv7 MOD files**: 3 new MODs, ~50 lines each, sourced from published hippocampal /
+  cortical models per `research_internet.md` (Migliore CA1 BK, Hines/Carnevale Purkinje SK,
+  classical Kv7 / M-current).
+* **Per-condition tuning-curve aggregator**: pivots a per-trial DataFrame of
+  `(condition_id, channel, density_label, angle_deg, seed, firing_rate_hz)` into 25 per-condition
+  CSVs in canonical schema; ~60 lines.
+* **HOC `init_active` fork**: a task-local copy of dsgc_model.hoc with CaL/CaT un-zeroed, loaded
+  after `build_dsgc()` to override the library&#x27;s HOC; ~600 lines verbatim with two edits.
+* **Stage-2 regression gate**: small driver that runs the no-extra-channels baseline, computes
+  5-seed mean DSI, asserts `abs(dsi - 0.797) &lt; 1e-3`, and exits non-zero on failure. ~40 lines.
+
+#### Lessons Learned
+
+* **[t0008] tuning-curve driver is correct** — `run_tuning_curve.py` produces a canonical-schema
+  CSV that scores cleanly against t0004 via t0012; the 12-angle 30-deg-step protocol is the
+  project&#x27;s de facto standard.
+* **[t0067] sweep is robust** — 160/160 trials completed with 0 instabilities; the
+  `_set_active_channel` zero-then-set pattern reliably swaps the active channel per trial without
+  requiring rebuild. Baseline DSI = 0.7975 reproducibly. Use this exact pattern unchanged for t0074.
+* **NONSPECIFIC_CURRENT is required** — every t67 MOD declares `NONSPECIFIC_CURRENT i` to avoid
+  `USEION` SUFFIX conflicts with HHst&#x27;s three USEIONs (na/k/ca). The new BK / SK MODs may need to
+  USEION ca READ cai (because BK/SK kinetics are calcium-dependent) but they must NOT WRITE ica or
+  any HHst-controlled ion. Only the `cad` MOD should WRITE cai. This composition matches Bed B&#x27;s
+  pattern.
+* **`init_active` rebinds gbar globals** — calling `h(&quot;init_active()&quot;)` after a per-trial setup
+  will overwrite the just-set gbar values for HHst (`gnabar_HHst`, etc.). t0067 documents this and
+  sets `gbar_&lt;new&gt;` AFTER `init_active`. t0074 must follow the same ordering for any new mechanism
+  whose density is hand-set.
+* **CaL / CaT zeroing was deliberate in the deposited model** — Poleg-Polsky 2016 ran the model
+  TTX-on (`exptype=2 / TTX=1`) for some figures and chose to zero L/T to avoid calcium-current
+  contamination of the predominantly Na/K spike. Un-zeroing risks shifting the spike threshold and
+  AP shape. This is the rationale for the Stage-2 regression gate.
+* **Library imports work cleanly** — [t0011] imports [t0012]&#x27;s loader at
+  `tuning_curve_viz/loaders.py:17-20` without trouble. The t0074 task can rely on both libraries
+  being importable simultaneously.
+* **DLL load order matters** — t0067&#x27;s `_ensure_t67_dll_loaded` is called AFTER `build_dsgc()`.
+  NEURON allows multiple `nrn_load_dll` calls only when SUFFIXes don&#x27;t collide; t0074&#x27;s new DLL must
+  use unique SUFFIXes (e.g. `bk74`, `sk74`, `kv7t74`, `cad`) and not reuse t67&#x27;s `nav16t67`/etc.
+
+#### Recommendations for This Task
+
+* **Fork [t0067]&#x27;s `run_sweep.py` wholesale** into
+  `tasks/t0074_channel_tuning_width_bed_a/code/run_sweep.py` and extend with a `TrialMode` field on
+  `TrialKey`, copying [t0065]&#x27;s `_apply_mode_override` for the EPSP_PASSIVE / IPSP_PASSIVE branches.
+  Keep the FULL branch byte-identical to t0067&#x27;s.
+* **Replace the 2-direction PD/ND iteration with the [t0008] 12-angle rotation**. Concretely the
+  trial-enumeration in `_enumerate_trials` should iterate over
+  `range(N_ANGLES) * N_TRIALS_PER_CONDITION * N_MODES * N_CHANNELS * N_DENSITIES` per-mode schedule
+  (1500 FULL + 600 passive); per trial, set `angle_deg = idx * 30.0` and call [t0008]&#x27;s
+  `rotate_synapse_coords_in_place` after `apply_params`. Don&#x27;t use [t0067]&#x27;s `gabaMOD_PD/ND` swap;
+  let the BIP-rotation idiom encode direction.
+* **Copy [t0024]&#x27;s `cadecay.mod` verbatim** into
+  `tasks/t0074_channel_tuning_width_bed_a/code/mods/cadecay.mod` and add it to the new channel
+  pack&#x27;s `mod_func.c`. Insert `cad` on the soma immediately after the t0067 channel-pack
+  `_insert_all_channels_with_zero_gbar` call so it has a current source available when CaL/CaT are
+  un-zeroed.
+* **Fork the [t0008] `dsgc_model.hoc` proc `init_active` rather than monkey-patch**. Place the fork
+  at `tasks/t0074_channel_tuning_width_bed_a/code/dsgc_model_t74.hoc` with lines 144-145 set to
+  `RGCcaT=0.0003*active` and `RGCcaL=0.0003*active` (match HHst defaults). After `build_dsgc()`
+  returns h, `h.load_file(1, &quot;.../dsgc_model_t74.hoc&quot;)` to replace the proc; verify the override by
+  reading `h.RGCcaL` after `init_active()`.
+* **Use [t0012]&#x27;s `score()` per condition** for the RMSE-vs-cosine-target metric, but write a thin
+  wrapper that gates `compute_hwhm_deg` behind `peak_hz &lt; 1.0` and returns `None` per the task
+  description&#x27;s null-HWHM rule.
+* **Implement vector-sum DSI in a task-local metrics module** since neither [t0011] nor [t0012]
+  provides it. The function is one line of math and should not pollute either library.
+* **Stage-2 regression gate**: implement as a standalone Python script
+  `tasks/t0074_.../code/run_regression_gate.py` that runs the baseline-only condition with 5 seeds
+  (`SEED_BASE = 1`, `N_SEEDS_PER_CONDITION = 5`, FULL mode, 12 angles, BIP rotation), aggregates
+  spike counts at angle = 0 deg (PD) and angle = 180 deg (ND), computes DSI = (PD - ND) / (PD + ND),
+  and asserts `abs(DSI - 0.7974683544303798) &lt; 1e-3`. This is the [t0067] reference. Note the
+  [t0067] DSI was computed with the gabaMOD swap, not BIP rotation; the comparison may need to use
+  the gabaMOD swap protocol for the gate alone, then switch to BIP rotation for the main sweep.
+* **Per-channel sensitivity plots**: use [t0011]&#x27;s `plot_cartesian_tuning_curve` per channel with
+  the three densities overlaid (call once per channel with multi-curve overlay).
+* **Cross-channel comparison plot**: use [t0011]&#x27;s `plot_multi_model_overlay` with up to 8 curves;
+  the Okabe-Ito palette has 8 colours so 8 channels fit cleanly.
+* **Mind the user-memory note**: keep the trial length at the [t0067] standard `TSTOP_MS = 1000.0`
+  for the regression gate (so the t0067 fingerprint reproduces); flag the 1400 ms alternative as a
+  follow-up if `feedback_dsgc_measurement_protocol` is enforced strictly. Drop any per-synapse
+  activation histograms.
+
+#### Task Index
+
+##### [t0004]
+
+* **Task ID**: `t0004_generate_target_tuning_curve`
+* **Name**: Generate Canonical Target Tuning Curve
+* **Status**: completed
+* **Relevance**: Provides the cosine target curve at peak = 32 Hz, peak at 90 deg, used as the RMSE
+  reference by t0074. Lives in `assets/dataset/target-tuning-curve/files/` (`curve_mean.csv` and
+  `curve_trials.csv`).
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 (Poleg-Polsky DSGC)
+* **Status**: completed
+* **Relevance**: Bed A library `modeldb_189347_dsgc`; provides `build_dsgc()`, `apply_params`,
+  `read_synapse_coords`, `rotate_synapse_coords_in_place`, `run_one_trial`, the canonical 12-angle
+  bar-rotation driver in `run_tuning_curve.py`, and the bundled HOC sources where `init_active` and
+  the CaL/CaT zeroing live.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response Visualization Library
+* **Status**: completed
+* **Relevance**: Library `tuning_curve_viz` for Cartesian / polar / overlay tuning-curve plots;
+  t0074&#x27;s per-channel sensitivity and cross-channel comparison plots use this.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning Curve Scoring Loss Library
+* **Status**: completed
+* **Relevance**: Library `tuning_curve_loss` for DSI / HWHM / RMSE-vs-cosine-target / score metrics
+  on the canonical 12-angle CSV; t0074 uses `score`, `compute_dsi`, `compute_hwhm_deg`.
+
+##### [t0019]
+
+* **Task ID**: `t0019_literature_survey_voltage_gated_channels`
+* **Name**: Literature Survey: Voltage-Gated Channels
+* **Status**: completed
+* **Relevance**: Source of channel-density priors (already used by [t0067] for the original 5
+  channels); BK / SK / Kv7 priors not present, motivating the Stage-1 vendoring step.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: Port ModelDB 189347 with GABA Modulation
+* **Status**: completed
+* **Relevance**: Bed A variant providing the gabaMOD swap that [t0065] / [t0067] use as the PD/ND
+  encoding; not directly imported by t0074 but documents the protocol fork.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC
+* **Status**: completed
+* **Relevance**: Bed B port whose `cadecay.mod` (Destexhe 1995 single-shell first-order Ca pool) is
+  the canonical `cad` mechanism that t0074 will copy verbatim into its channel pack.
+
+##### [t0046]
+
+* **Task ID**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Name**: Reproduce Poleg-Polsky 2016 Exact
+* **Status**: completed
+* **Relevance**: Exact reproduction of Bed A; uses the 2-direction `simplerun()` protocol rather
+  than the 12-angle bar-rotation. Documents the Direction.PREFERRED / Direction.NULL convention and
+  the integer `exptype` argument.
+
+##### [t0065]
+
+* **Task ID**: `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Name**: EPSP / IPSP / FULL Vm Protocol on Bed A
+* **Status**: completed
+* **Relevance**: Source of the `TrialMode { FULL, EPSP_PASSIVE, IPSP_PASSIVE }` enum, exptype
+  mapping, and `_apply_mode_override` mode-toggle function that t0074 will copy for its Stage-4
+  passive-diagnostic protocol.
+
+##### [t0067]
+
+* **Task ID**: `t0067_t0065_soma_channel_addition_sweep`
+* **Name**: Soma Channel-Addition Sweep on Bed A
+* **Status**: completed
+* **Relevance**: Direct fork target. Provides the 5-channel pack (Nav1.6, NaP, NaR, Kv3, Kv4) MOD
+  files plus the `_set_active_channel` density-toggle pattern, the `_ensure_t67_dll_loaded` DLL-load
+  helper, the typed `CHANNEL_DEFS` registry, the `_run_one_trial` FULL-mode trial executor, and the
+  reference baseline DSI = 0.7975 for the Stage-2 regression gate.
+
+##### [t0072]
+
+* **Task ID**: `t0072_synaptic_traces_pd_nd`
+* **Name**: Synaptic Traces PD vs ND on Bed A and Bed B
+* **Status**: completed
+* **Relevance**: Latest task that imports
+  `from tasks.t0008_port_modeldb_189347.code.build_cell import apply_params, build_dsgc`. Confirms
+  the Bed A library API is stable and the per-trial seed / coords / rotation pattern works for
+  t0074&#x27;s purposes.
       </content>
     </section>
   </sections>

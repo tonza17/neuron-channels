@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-01T18:07:23Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-02T04:00:31Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>158673</char_count>
-    <byte_count>158932</byte_count>
-    <estimated_tokens>39668</estimated_tokens>
+    <char_count>161410</char_count>
+    <byte_count>161674</byte_count>
+    <estimated_tokens>40352</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -183,9 +183,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0071_t0070_synaptic_eqs_pdf</id>
         <id>t0072_synaptic_traces_pd_nd</id>
         <id>t0073_brainstorm_results_12</id>
+        <id>t0074_channel_tuning_width_bed_a</id>
       </source_ids>
       <content>
-Completed tasks: 67
+Completed tasks: 68
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -588,6 +589,12 @@ ID: t0073_brainstorm_results_12
 Completed: 2026-05-01
 Short description: Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
 Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic brainstorm, run on 2026-05-01 after t0070 (two-bed writeup), t0071 (typeset PDF + synaptic-current equations), and t0072 (synaptic conductance / current traces for PD and ND on both beds) all completed. The session is triggered by two convergent gaps in the t0067-t0069 voltage-gated-channel arc on Bed A: the unmeasured tuning-width effect of channel addition (t0067 measured DSI at PD and ND only), and the absence of any DSGC + AIS configuration that simultaneously contains all biologically-present AIS channels and produces non-trivial DSI at a biologically reasonable peak rate. Decision: commission two new tasks (t0074...
+
+## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+ID: t0074_channel_tuning_width_bed_a
+Completed: 2026-05-02
+Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tuning_width_bed_a&quot; date_completed: &quot;2026-05-02&quot; status: &quot;complete&quot; --- Results Summary: Channel Tuning-Width Sweep on Bed A Summary Across 25 conditions (1 baseline + 8 channels × 3 densities) × 12 angles × 5 seeds = 1500 FULL + 600 passive = 2100 trials, **NaP_high collapses vector-sum DSI from 0.193 to 0.050** (legacy DSI_PD-ND from 0.308 to 0.008) and produces the highest peak rate in the sweep (74.2 Hz vs 17.4 Hz baseline); **SK_high cuts HWHM in half** (83.5 deg → 41.1 deg) while suppressing peak rate; **Kv3, Kv4, and Kv7 are inert at all three densities tested** (no condition trips the |delta_HWHM| &gt; 5 deg or |delta_vec_DSI| &gt; 0.05...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -597,7 +604,7 @@ Result summary: Results Summary: Brainstorm Session 12 Summary Twelfth strategic
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0073_bedb_dsi_firing_rate_mobo</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
@@ -623,17 +630,17 @@ Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
 
-## Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
-ID: t0074_channel_tuning_width_bed_a
+## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
+ID: t0073_bedb_dsi_firing_rate_mobo
 Status: not_started
-Effective date: unknown
-Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
-Dependencies: t0008_port_modeldb_189347, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0067_t0065_soma_channel_addition_sweep
+Effective date: 2026-05-02
+Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
+Dependencies: t0008_port_modeldb_189347, t0019_literature_survey_voltage_gated_channels, t0024_port_de_rosenroll_2026_dsgc, t0066_t0024_epsp_ipsp_vm_protocol, t0067_t0065_soma_channel_addition_sweep, t0070_writeup_two_model_beds, t0072_synaptic_traces_pd_nd
 
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
       </content>
@@ -1198,9 +1205,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>minimal_dsgc_mg_block_nmda</id>
         <id>minimal_dsgc_tonic_gaba_sweep</id>
         <id>minimal_dsgc_bar_locked_gaba_ampa_sweep</id>
+        <id>dsgc_active_channel_pack</id>
       </source_ids>
       <content>
-Libraries: 13
+Libraries: 14
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1292,6 +1300,13 @@ Version: 0.1.0
 Created by task: t0059_bar_locked_gaba_ampa_sweep_t0057
 Module paths: tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\constants.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\paths.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\swc_io.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\neuron_bootstrap.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\cell.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\placement.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\synapses.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\trial.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\run_tuning_curve.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\render_figures.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\compute_metrics.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\metrics_extra.py, tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\code\mod\GabaTonic.mod
 `minimal_dsgc_bar_locked_gaba_ampa_sweep` is a forked, surgically-edited version of t0057&#x27;s minimal-DSGC tonic-GABA library. The fork replaces t0057&#x27;s global GABA window with a per-synapse bar-arrival-locked window, swaps the legacy `AMPA_ONLY` / `GABA_ONLY` measurement modes for an HH-save-and-zero `EPSP_PASSIVE` / `IPSP_PASSIVE` pair, and exposes `gAMPA` as a public per-synapse parameter so the simulation can sweep...
+
+## DSGC Active Channel Pack
+ID: dsgc_active_channel_pack
+Version: 0.1.0
+Created by task: t0074_channel_tuning_width_bed_a
+Module paths: tasks\t0074_channel_tuning_width_bed_a\code\mods\nav16t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\napt74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\nart74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv3t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv4t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\bk74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\sk74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv7t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\cadecay.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\mod_func.c, tasks\t0074_channel_tuning_width_bed_a\code\dsgc_model_t74.hoc, tasks\t0074_channel_tuning_width_bed_a\code\run_nrnivmodl.cmd
+This library packages every NEURON-side artefact required to run active-conductance sweeps on the deposited Poleg-Polsky DSGC. It bundles eight ion-channel MODs (five forked from t0067 with SUFFIX renames, three new for BK / SK / Kv7), a calcium-pool MOD reused from t0024, a forked HOC procedure that un-zeroes the latent CaT and CaL conductances, a Windows compile script, and the registration C file that wires all...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">

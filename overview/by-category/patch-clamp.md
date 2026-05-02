@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(20)](../suggestions/by-category/patch-clamp.md)
+(21)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1185,7 +1185,25 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (16 open, 4 closed)
+## Suggestions (17 open, 4 closed)
+
+<details>
+<summary>📊 <strong>Validate vendored BK/SK MOD kinetics against published RGC
+patch-clamp data</strong> (S-0074-09)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-02 | **Source**:
+[t0074_channel_tuning_width_bed_a](../../tasks/t0074_channel_tuning_width_bed_a/)
+
+The vendored BK MOD comes from Mainen-Sejnowski 1996 (cortical pyramidal); SK from Hay 2011
+(L5 pyramidal). Their kinetics may not match RGC patch-clamp recordings. Run voltage-clamp
+simulations on a single soma in NEURON for each MOD (step protocol from -90 to +40 mV in 10 mV
+steps, 100 ms duration) and compare resulting current traces against Pfeiffer-Friedrich 2012
+(mouse RGC BK) and Wang 2014 (mouse RGC SK). If the activation V_half or time constants
+deviate by > 20%, retune the MOD parameters or vendor an RGC-specific MOD instead. Cost: ~1
+hour coding + 10 min sim + 30 min comparison plotting. Outcome: either a validation note in
+the library description, or a v0.2.0 of the channel pack with retuned RGC-specific kinetics.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Move Nav1.6 + Kv3 to a virtual AIS instead of soma</strong>

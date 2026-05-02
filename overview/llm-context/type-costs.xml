@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-01T18:07:23Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-02T04:00:31Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>3988</char_count>
-    <byte_count>3988</byte_count>
-    <estimated_tokens>997</estimated_tokens>
+    <char_count>4031</char_count>
+    <byte_count>4031</byte_count>
+    <estimated_tokens>1007</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -97,6 +97,7 @@ Spent: 0.0%
 * t0071_t0070_synaptic_eqs_pdf: $0.00
 * t0072_synaptic_traces_pd_nd: $0.00
 * t0073_brainstorm_results_12: $0.00
+* t0074_channel_tuning_width_bed_a: $0.00
       </content>
     </section>
   </sections>
