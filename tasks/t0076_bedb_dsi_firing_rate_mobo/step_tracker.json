@@ -95,10 +95,10 @@
       "step": 11,
       "name": "results",
       "description": "Author results_summary.md + results_detailed.md (with Pareto figure, hypervolume trajectory, 3-5 representative-cell figures, REQ-1..REQ-12 coverage). Render Typst PDF.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-03T03:58:14Z",
       "completed_at": null,
-      "log_file": "logs/steps/011_results/"
+      "log_file": "logs\\steps\\011_results/"
     },
     {
       "step": 12,
