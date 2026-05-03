@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\logs
+
+[31m[1mERRORS:[0m
+[31m  LG-E008 error: Step 14 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 15 has status 'skipped' but no step log was found[0m
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260502T204457Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260502T205819Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 017_20260502T220257Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 031_20260503T034708Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 036_20260503T034803Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 037_20260503T034821Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[31m[1mFAILED[0m — 2 error(s), 8 warning(s)

@@ -5,7 +5,7 @@
   "name": "Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)",
   "short_description": "Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0019_literature_survey_voltage_gated_channels",
@@ -16,7 +16,7 @@
     "t0072_synaptic_traces_pd_nd"
   ],
   "start_time": "2026-05-02T20:20:04Z",
-  "end_time": null,
+  "end_time": "2026-05-03T04:18:00Z",
   "expected_assets": {},
   "task_types": [
     "experiment-run"
