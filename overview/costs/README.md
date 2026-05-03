@@ -1,32 +1,35 @@
 # Project Costs
 
-Spent $0.00 of $1.00 USD. $1.00 remains overall and $1.00 remains before the 100% stop
+Spent $1.06 of $10.00 USD. $8.94 remains overall and $8.94 remains before the 100% stop
 threshold.
 
 ## Budget Summary
 
 | Field | Value |
 |-------|-------|
-| Total budget | $1.00 USD |
-| Total spent | $0.00 USD |
-| Budget left | $1.00 USD |
-| Budget left before stop threshold | $1.00 USD |
-| Spent percent | 0.00% |
-| Warn threshold | 80% ($0.80) |
-| Stop threshold | 100% ($1.00) |
-| Default per-task limit | $1.00 USD |
-| Tasks with cost records | 68 |
-| Tasks with non-zero spend | 0 |
-| Skipped tasks | 8 |
+| Total budget | $10.00 USD |
+| Total spent | $1.06 USD |
+| Budget left | $8.94 USD |
+| Budget left before stop threshold | $8.94 USD |
+| Spent percent | 10.58% |
+| Warn threshold | 80% ($8.00) |
+| Stop threshold | 100% ($10.00) |
+| Default per-task limit | $5.00 USD |
+| Tasks with cost records | 69 |
+| Tasks with non-zero spend | 1 |
+| Skipped tasks | 7 |
 
 ## Service Totals
 
-No entries found.
+| Key | Cost (USD) |
+|-----|------------|
+| `vast_ai` | $1.06 |
 
 ## Breakdown Totals
 
 | Key | Cost (USD) |
 |-----|------------|
+| `vast-ai-quadro-p4000` | $1.06 |
 | `api` | $0.00 |
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
@@ -35,7 +38,9 @@ No entries found.
 
 ## Task Spend
 
-No task cost records found.
+| Task | Status | Total (USD) | Limit (USD) | Over limit |
+|------|--------|-------------|-------------|------------|
+| [`t0076_bedb_dsi_firing_rate_mobo`](../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | completed | $1.06 | $5.00 | no |
 
 ## Skipped Tasks
 
@@ -47,5 +52,4 @@ No task cost records found.
 | `t0043_nav16_kv3_nmda_restoration_t0022` | results/costs.json is missing or invalid |
 | `t0044_schachter_retest_on_t0043` | results/costs.json is missing or invalid |
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
-| `t0073_bedb_dsi_firing_rate_mobo` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |

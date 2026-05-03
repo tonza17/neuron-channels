@@ -6,25 +6,29 @@
 
 ---
 
-## 2026-05-02 (2)
+## 2026-05-03 (1)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0073 — <strong>Multi-objective BO of channels + synapse placement on
+<summary>✅ 0076 — <strong>Multi-objective BO of channels + synapse placement on
 Bed B (max DSI + max firing rate)</strong></summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `t0073_bedb_dsi_firing_rate_mobo` |
-| **Status** | not_started |
-| **Effective date** | 2026-05-02 |
+| **ID** | `t0076_bedb_dsi_firing_rate_mobo` |
+| **Status** | completed |
+| **Effective date** | 2026-05-03 |
 | **Dependencies** | [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) |
 | **Expected assets** | — |
 | **Source suggestion** | — |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
-| **Task page** | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../../../overview/tasks/task_pages/t0073_bedb_dsi_firing_rate_mobo.md) |
-| **Task folder** | [`t0073_bedb_dsi_firing_rate_mobo/`](../../../tasks/t0073_bedb_dsi_firing_rate_mobo/) |
+| **Start time** | 2026-05-02T20:20:04Z |
+| **End time** | 2026-05-03T04:18:00Z |
+| **Step progress** | 13/15 |
+| **Task page** | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Task folder** | [`t0076_bedb_dsi_firing_rate_mobo/`](../../../tasks/t0076_bedb_dsi_firing_rate_mobo/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0076_bedb_dsi_firing_rate_mobo/results/results_detailed.md) |
 
 # Multi-objective Bayesian optimisation of channels + synapse placement on Bed B
 
@@ -112,7 +116,7 @@ doesn't enter the objective function.
 1. **Vendor 6-7 new MOD files** from canonical published sources (ModelDB, Allen Institute)
    into `code/mods/`: Kdr, KM (Kv7), HCN (Ih), CaL (CaV1.x), CaT (CaV3.x), BK (KCa1.1), SK
    (KCa2). Plus the existing 5 from t0067 (Nav1.6, NaP, NaR, Kv3, Kv4) copied verbatim.
-   Compile to a t0073-local `nrnmech.dll`.
+   Compile to a t0076-local `nrnmech.dll`.
 2. **Add the `cad` calcium-accumulation mechanism** if not already in the de Rosenroll port
    (needed because BK and SK depend on intracellular [Ca²⁺]).
 3. **Write the parametric synapse placer**: given (`N_type`, `ρ_0`, `λ`), draw N positions
@@ -130,7 +134,7 @@ doesn't enter the objective function.
 7. **Render writeup as markdown + Typst PDF** (consistent with t0070-t0072).
 
 The orchestrator wraps steps 1-7 between a `setup-machines` step (provisions the Vast.ai node,
-installs NEURON + uv-managed deps, compiles the t0073 MOD library on the remote) and a
+installs NEURON + uv-managed deps, compiles the t0076 MOD library on the remote) and a
 `teardown` step (downloads all results back to the local task folder, destroys the Vast.ai
 instance, updates `results/costs.json` and `results/remote_machines_used.json` with the actual
 billed amount).
@@ -215,7 +219,39 @@ billed amount).
   `results/remote_machines_used.json` records the instance ID, GPU/CPU specs (no GPU
   expected), hourly rate, total billed time, and provisioning + teardown timestamps.
 
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0076_bedb_dsi_firing_rate_mobo"
+> date_completed: "2026-05-03"
+> status: "complete"
+> ---
+> **Multi-Objective BO of Channels + Synapse Placement on Bed B**
+>
+> **Summary**
+>
+> Ran a 25-parameter BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de
+> Rosenroll
+> 2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index
+> (DSI) and
+> preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 total cell
+> evaluations × 8 directions × 20 seeds = **68,800** NEURON simulations) on a Vast.ai 72-core
+> CPU
+> instance for **$1.0583**. Hypervolume climbed monotonically from **3.4083** (Sobol baseline)
+> to
+> **8.4129** (final, **+147%**), and the converged Pareto front spans DSI ∈ **[0.003, 1.0]** ×
+> PD rate
+> ∈ **[0.4, 127.75 Hz]**. The headline finding is that the 25-d Bed B search **cannot reach a
+> biologically realistic joint operating point of DSI ≥ 0.4 AND PD rate ≥ 30 Hz**: every
+> Pareto cell
+> with DSI ≥ 0.4 has PD rate ≤ **5.0 Hz**, and every cell with PD rate ≥ 30 Hz has DSI ≤
+> **0.07**,
+> revealing an inherent architectural trade-off in the substrate.
+
 </details>
+
+## 2026-05-02 (1)
 
 ## ✅ Completed
 

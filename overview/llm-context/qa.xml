@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-02T04:00:31Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-03T04:19:13Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>373824</char_count>
-    <byte_count>374367</byte_count>
-    <estimated_tokens>93456</estimated_tokens>
+    <char_count>374301</char_count>
+    <byte_count>374846</byte_count>
+    <estimated_tokens>93575</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -179,9 +179,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0072_synaptic_traces_pd_nd</id>
         <id>t0073_brainstorm_results_12</id>
         <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0076_bedb_dsi_firing_rate_mobo</id>
       </source_ids>
       <content>
-Completed tasks: 68
+Completed tasks: 69
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -590,6 +591,12 @@ ID: t0074_channel_tuning_width_bed_a
 Completed: 2026-05-02
 Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tuning_width_bed_a&quot; date_completed: &quot;2026-05-02&quot; status: &quot;complete&quot; --- Results Summary: Channel Tuning-Width Sweep on Bed A Summary Across 25 conditions (1 baseline + 8 channels × 3 densities) × 12 angles × 5 seeds = 1500 FULL + 600 passive = 2100 trials, **NaP_high collapses vector-sum DSI from 0.193 to 0.050** (legacy DSI_PD-ND from 0.308 to 0.008) and produces the highest peak rate in the sweep (74.2 Hz vs 17.4 Hz baseline); **SK_high cuts HWHM in half** (83.5 deg → 41.1 deg) while suppressing peak rate; **Kv3, Kv4, and Kv7 are inert at all three densities tested** (no condition trips the |delta_HWHM| &gt; 5 deg or |delta_vec_DSI| &gt; 0.05...
+
+## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
+ID: t0076_bedb_dsi_firing_rate_mobo
+Completed: 2026-05-03
+Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot; date_completed: &quot;2026-05-03&quot; status: &quot;complete&quot; --- Multi-Objective BO of Channels + Synapse Placement on Bed B Summary Ran a 25-parameter BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de Rosenroll 2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 total cell evaluations × 8 directions × 20 seeds = **68,800** NEURON simulations) on a Vast.ai 72-core CPU instance for **$1.0583**. Hypervolume climbed monotonically from **3.4083** (Sobol baseline) to **8.4129** (final, **+147%**), and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -599,11 +606,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tun
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0073_bedb_dsi_firing_rate_mobo</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -624,13 +630,6 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
-ID: t0073_bedb_dsi_firing_rate_mobo
-Status: not_started
-Effective date: 2026-05-02
-Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
-Dependencies: t0008_port_modeldb_189347, t0019_literature_survey_voltage_gated_channels, t0024_port_de_rosenroll_2026_dsgc, t0066_t0024_epsp_ipsp_vm_protocol, t0067_t0065_soma_channel_addition_sweep, t0070_writeup_two_model_beds, t0072_synaptic_traces_pd_nd
 
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep

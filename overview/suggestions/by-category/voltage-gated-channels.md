@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-62 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **52 open** (9
-high, 35 medium, 8 low), **10 closed**.
+66 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **56 open** (12
+high, 36 medium, 8 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,6 +58,31 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
+Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
+25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
+combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
+Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
+parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
+best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
+(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
+background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
+away from t0068 defaults? Recommended task types: experiment-run.
 
 </details>
 
@@ -163,6 +188,30 @@ DSGC task.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run Bed B MOBO with an AIS section added, to test whether AIS
+unlocks the DSI>=0.4 + rate>=30Hz operating point</strong> (S-0076-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
+simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
+machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
+delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
+parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
+spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
+complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
+joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
 insertions</strong> (S-0069-02)</summary>
 
@@ -181,6 +230,29 @@ produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 �
 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
 that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
+soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
+soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
+Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
+4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
+~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
+Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
+25-d search. Recommended task types: experiment-run.
 
 </details>
 
@@ -260,6 +332,31 @@ sequential BO, (c) compare the DSI converged-to-within-1% sample count against t
 extrapolations, and (d) report whether either method actually converges on DSGC landscapes or
 hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost
 model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add a slow Kv-mediated AHP mechanism to Bed B and quantify its
+effect on the firing-rate ceiling and DSI</strong> (S-0076-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0076 high-rate Pareto extreme (iter 319, 127.75 Hz) exceeds biological mean PD rates
+(30-80 Hz) precisely because Bed B lacks a slow-adaptation mechanism. The vendored SK and BK
+mechanisms (from cortical/Purkinje sources) and the single-shell `cad` Ca pool (taur=5 ms)
+collectively fail to cap firing on the timescale real RGCs use. Vendor a slow-AHP (e.g., SK_E2
+with longer Ca-binding time, or a dedicated KAHP mechanism) and re-evaluate a 5-cell subsample
+of the t0076 Pareto front: does the high-rate end of the Pareto front contract toward
+physiological rates? Does a slow AHP open a new DSI>=0.4 + rate>=30 Hz region? This is a
+focussed mechanism-addition test, not a full MOBO re-run. Recommended task types:
+experiment-run.
 
 </details>
 

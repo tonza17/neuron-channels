@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-76-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-283-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-289-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,15 +29,16 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (26K)
-| [full](llm-context/full.xml) (417K) | [roadmap](llm-context/roadmap.xml) (91K) |
-[results](llm-context/results-deep-dive.xml) (321K) |
-[assets](llm-context/literature-and-assets.xml) (45K)
+| [full](llm-context/full.xml) (422K) | [roadmap](llm-context/roadmap.xml) (89K) |
+[results](llm-context/results-deep-dive.xml) (330K) |
+[assets](llm-context/literature-and-assets.xml) (46K)
 
-*Last updated: 2026-05-02 04:00 UTC*
+*Last updated: 2026-05-03 04:19 UTC*
 
-* **Budget**: **$0** spent of $1
-* **Remaining**: **$1**
-* **Usage**: `░░░░░░░░░░░░░░░░░░░░` 0.0%
+* **Budget**: **$1** spent of $10
+* **Remaining**: **$9**
+* **Usage**: `██░░░░░░░░░░░░░░░░░░` 10.6%
+* **GPU Machines**: **1** provisioned across 1 tasks · **$1** GPU spend ([details](machines/))
 
 ---
 
@@ -56,14 +57,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (4)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0045 | [CoreNEURON Vast.ai RTX 4090 speedup benchmark](../overview/tasks/task_pages/t0045_coreneuron_vastai_speedup_benchmark.md) | [`description`](../tasks/t0045_coreneuron_vastai_speedup_benchmark/task_description.md) | 2026-04-24 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0073 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0073_bedb_dsi_firing_rate_mobo.md) | [`description`](../tasks/t0073_bedb_dsi_firing_rate_mobo/task_description.md) | 2026-05-02 |
 
 ---
 
@@ -81,10 +81,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (68 total)](tasks/by-status/completed.md)
+## [Recently Completed (69 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0076 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`results`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/results_detailed.md) | 2026-05-03 04:18 |
 | 0074 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | [`results`](../tasks/t0074_channel_tuning_width_bed_a/results/results_detailed.md) | 2026-05-02 03:55 |
 | 0073 | [Brainstorm results session 12](../overview/tasks/task_pages/t0073_brainstorm_results_12.md) | [`results`](../tasks/t0073_brainstorm_results_12/results/results_detailed.md) | 2026-05-01 18:55 |
 | 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
@@ -94,9 +95,8 @@ No blocked tasks.
 | 0068 | [Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?](../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md) | [`results`](../tasks/t0068_t0067_nav16_kv3_coexpression_rescue/results/results_detailed.md) | 2026-05-01 03:05 |
 | 0067 | [Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change](../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) | [`results`](../tasks/t0067_t0065_soma_channel_addition_sweep/results/results_detailed.md) | 2026-05-01 01:05 |
 | 0066 | [Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 16:48 |
-| 0065 | [Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol](../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md) | [`results`](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/results_detailed.md) | 2026-04-30 15:16 |
 
-*58 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*59 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -121,7 +121,118 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (250 open)](suggestions/)
+## [Recent Suggestions (256 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
+soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
+soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
+Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
+4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
+~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
+Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
+25-d search. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run Bed B MOBO with an AIS section added, to test whether AIS
+unlocks the DSI>=0.4 + rate>=30Hz operating point</strong> (S-0076-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
+simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
+machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
+delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
+parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
+spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
+complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
+joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Correction task to fix three t0076 implementation issues: NEURON
+re-init, qNEHVI deprecation, GP input normalisation</strong> (S-0076-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+Three concrete defects identified in the t0076 implementation block additional value from the
+existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python
+process, hitting NEURON's `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of
+3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution
+requires the script to run from the project root, not the task folder. Fix: anchor paths via
+`arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated
+qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a
+Normalize input transform -- BoTorch warned the fit is suboptimal. Fix: migrate to qLogNEHVI
+and wrap inputs in [0, 1]^d. Replay the 430-cell history through the corrected stack and
+confirm Pareto front is unchanged or expands. Recommended task types: correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
+Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
+25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
+combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
+Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
+parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
+best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
+(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
+background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
+away from t0068 defaults? Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add a slow Kv-mediated AHP mechanism to Bed B and quantify its
+effect on the firing-rate ceiling and DSI</strong> (S-0076-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+The t0076 high-rate Pareto extreme (iter 319, 127.75 Hz) exceeds biological mean PD rates
+(30-80 Hz) precisely because Bed B lacks a slow-adaptation mechanism. The vendored SK and BK
+mechanisms (from cortical/Purkinje sources) and the single-shell `cad` Ca pool (taur=5 ms)
+collectively fail to cap firing on the timescale real RGCs use. Vendor a slow-AHP (e.g., SK_E2
+with longer Ca-binding time, or a dedicated KAHP mechanism) and re-evaluate a 5-cell subsample
+of the t0076 Pareto front: does the high-rate end of the Pareto front contract toward
+physiological rates? Does a slow AHP open a new DSI>=0.4 + rate>=30 Hz region? This is a
+focussed mechanism-addition test, not a full MOBO re-run. Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0076 BoTorch MOBO + ProcessPoolExecutor trial-driver
+harness into a reusable optimisation library</strong> (S-0076-06)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+t0076 produced ~1,200 LOC of MOBO infrastructure (`mobo_loop.py`, `parametric_placer.py`,
+`trial_driver.py`, `apply_params.py`, `plot_pareto.py`, `recorder.py`, checkpointing) that
+worked end-to-end on Vast.ai. Future MOBO tasks (S-0076-01 tier-stratification, S-0076-02
+AIS-on-Bed-B, hypothetical Bed A MOBO) will reuse 80% of this code. Promote it into a
+project-level library asset `dsgc_mobo` with: (i) substrate-agnostic trial driver that accepts
+any DSGC bed; (ii) pluggable parameter-space spec (Pydantic model with bounds and log/linear
+flags); (iii) BoTorch wrapper supporting qLogNEHVI + Normalize transform + checkpoint-resume;
+(iv) Vast.ai launch helper. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
@@ -198,119 +309,85 @@ follow-up.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Kv4 retest with hyperpolarising prepulse to remove
-inactivation</strong> (S-0074-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-Kv4 / IA was inert at all 3 densities. Compare-literature: Kv4's V_half_h is -50 mV; the
-DSGC's resting potential is -60 mV, which is below V_half_h, so Kv4 sits inactivated at rest.
-To engage Kv4, a brief hyperpolarising prepulse (~50 ms at -80 mV) before the bar-rotation
-stimulus would remove inactivation. Modify the run_sweep.py protocol to include a 50 ms
-pre-pulse window; re-run the 3-density Kv4 sweep (3 conditions × 12 angles × 5 seeds = 180
-trials, ~6 min compute). Hypothesis: with the prepulse, Kv4 produces measurable HWHM narrowing
-and peak-rate suppression at high density. If confirmed, Kv4 is biologically active in DSGCs
-but only after recent hyperpolarisation — relevant for understanding ON-OFF DSGCs that
-experience hyperpolarising rebounds between stimulus presentations.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Kv3 + NaP co-expression: high-rate firing regime</strong>
-(S-0074-06)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-Kv3 was inert at all 3 densities at our peak rates (~20 Hz baseline). Literature (Rudy &
-McBain 2001) says Kv3 engages strongly above 100 Hz. NaP_high produced a 74 Hz peak rate — the
-highest in the sweep. Co-expression of Kv3 with NaP should put us in Kv3's effective regime.
-Test: 4 conditions {NaP_high, NaP_high + Kv3_low, NaP_high + Kv3_med, NaP_high + Kv3_high} ×
-12 angles × 5 seeds = 240 trials, ~10 min compute. Hypothesis: Kv3 co-expression with NaP_high
-partially rescues DSI by providing fast repolarisation, allowing the cell to recover between
-PD spikes and reducing the depolarisation block we hypothesised in creative-thinking.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Find the NaP density at which vector-sum DSI crosses 0.1</strong>
-(S-0074-07)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-NaP_low gives vector-sum DSI = 0.227 (delta +0.034). NaP_med gives 0.226 (delta +0.033).
-NaP_high gives 0.050 (delta -0.143). The DSI-loss transition between NaP_med (0.01 mS/cm²) and
-NaP_high (0.05 mS/cm²) is sharp; the exact threshold density is between 0.01 and 0.05. Run a
-5-density sweep (e.g., 0.01, 0.015, 0.02, 0.03, 0.05 mS/cm²) × 12 angles × 5 seeds × 5
-conditions = 300 trials, ~12 min compute. Hypothesis: there's a critical density d* in (0.01,
-0.03) above which vector-sum DSI drops sharply; characterising d* exactly is needed for any
-future NaP-modulation experiments. Updated version of S-0067-01 using vector-sum DSI rather
-than legacy DSI as the metric.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Repeat t0074 sweep on Bed B (de-Rosenroll DSGC)</strong>
-(S-0074-08)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-t0074 covered Bed A only. Bed B (de-Rosenroll 2026, t0024 library) has different morphology,
-different synapse placement, and a built-in Ca pool — meaning the channel-level findings here
-may not generalise to Bed B. Repeat the same 25-condition × 12-angle × 5-seed sweep on Bed B.
-Cost: same ~70 min compute as t0074. Comparison points: which channels remain inert; whether
-NaP-induced DSI loss reproduces; whether SK_high HWHM narrowing reproduces (or is a
-Bed-A-specific artefact); whether the with-cad baseline DSI shift seen in Bed A is also seen
-in Bed B (where cad is native). This is a cross-substrate validation that strengthens any
-conclusions drawn from t0074.
-
-</details>
-
-<details>
-<summary>📊 <strong>Validate vendored BK/SK MOD kinetics against published RGC
-patch-clamp data</strong> (S-0074-09)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-The vendored BK MOD comes from Mainen-Sejnowski 1996 (cortical pyramidal); SK from Hay 2011
-(L5 pyramidal). Their kinetics may not match RGC patch-clamp recordings. Run voltage-clamp
-simulations on a single soma in NEURON for each MOD (step protocol from -90 to +40 mV in 10 mV
-steps, 100 ms duration) and compare resulting current traces against Pfeiffer-Friedrich 2012
-(mouse RGC BK) and Wang 2014 (mouse RGC SK). If the activation V_half or time constants
-deviate by > 20%, retune the MOD parameters or vendor an RGC-specific MOD instead. Cost: ~1
-hour coding + 10 min sim + 30 min comparison plotting. Outcome: either a validation note in
-the library description, or a v0.2.0 of the channel pack with retuned RGC-specific kinetics.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Test cad insertion on dendrites only (not soma)</strong>
-(S-0074-10)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-Inserting cad on the soma shifted Bed A's baseline DSI from 0.7975 (no-cad regression) to
-0.308 legacy / 0.193 vector-sum (with-cad). This shift is a structural artefact of soma-only
-Ca-pool insertion. Real DSGCs have distributed Ca channels and Ca pools throughout the
-dendrites. Test: insert cad on the dendritic compartments (not the soma), then re-run a small
-validation sweep (baseline + 3 BK densities × 12 angles × 5 seeds = 240 trials). Hypothesis:
-dendritic cad insertion preserves the no-cad baseline DSI more closely while still providing
-functional Ca for BK / SK channels in the dendrites. If confirmed, this is the right substrate
-design for t0075 active-dendrite work and improves t0074's biological plausibility post-hoc.
-
-</details>
-
-*240 more open suggestions → [open suggestions](suggestions/)*
+*246 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (29)](suggestions/)
+## [High Priority Suggestions (33)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
+soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
+soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
+Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
+4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
+~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
+Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
+25-d search. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run Bed B MOBO with an AIS section added, to test whether AIS
+unlocks the DSI>=0.4 + rate>=30Hz operating point</strong> (S-0076-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
+simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
+machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
+delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
+parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
+spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
+complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
+joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Correction task to fix three t0076 implementation issues: NEURON
+re-init, qNEHVI deprecation, GP input normalisation</strong> (S-0076-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+Three concrete defects identified in the t0076 implementation block additional value from the
+existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python
+process, hitting NEURON's `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of
+3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution
+requires the script to run from the project root, not the task folder. Fix: anchor paths via
+`arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated
+qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a
+Normalize input transform -- BoTorch warned the fit is suboptimal. Fix: migrate to qLogNEHVI
+and wrap inputs in [0, 1]^d. Replay the 430-cell history through the corrected stack and
+confirm Pareto front is unchanged or expands. Recommended task types: correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
+Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
+25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
+combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
+Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
+parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
+best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
+(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
+background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
+away from t0068 defaults? Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
@@ -421,91 +498,7 @@ comparative-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
-substrate</strong> (S-0065-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
-in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
-opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
-is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
-= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
-(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
-whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
-shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
-can be ported to the from-scratch cell builder with minimal changes. Expected output: six
-traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
-binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Match the from-scratch GABA reversal to resting potential and
-re-test direction selectivity</strong> (S-0065-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-The deposited cell places e_SACinhib = -60 mV which equals the cell's leak-driven quiescent
-potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below
-resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i),
-inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off
-threshold across all directions. Conversely, if e_GABA > v_rest, inhibition can depolarise
-toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch
-substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse
-mechanism's reversal). This directly tests whether the deposited cell's success is
-structurally dependent on its e_GABA = v_rest design choice. Expected output: from-scratch
-family with e_GABA = v_rest produces a graded tuning curve with 5-15 Hz peak in PD and DSI in
-[0.5, 0.85], matching the deposited cell's behaviour.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family
-substrate (t0052-t0059)</strong> (S-0066-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0066_t0024_epsp_ipsp_vm_protocol](../tasks/t0066_t0024_epsp_ipsp_vm_protocol/)
-
-t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed
-flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is
-trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct
-EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us
-whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from
-a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the
-IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is
-portable: copy run_protocol.py, swap the cell builder import, adjust HH knob names. Cost: ~1
-hour code + ~30 min sweep (the from-scratch family is faster — fewer trials needed because
-lower noise variance). This is the natural successor to S-0065-01, now made more urgent by the
-t0066 findings.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
-bar-locked GABA + AMPA-escape substrate</strong> (S-0059-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-29 | **Source**:
-[t0059_bar_locked_gaba_ampa_sweep_t0057](../tasks/t0059_bar_locked_gaba_ampa_sweep_t0057/)
-
-The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209) most
-plausibly stems from passive dendrites capping local depolarisation; Park2014 [p. 3977] and
-PolegPolsky2016 [p. 1278] both implicitly assume active dendritic mechanisms. Fork
-minimal_dsgc_bar_locked_gaba_ampa_sweep, install Nav1.6 (g_Nabar in {0.05, 0.10, 0.20} S/cm^2)
-and Kv3 (g_Kv3bar in {0.05, 0.10} S/cm^2) on dendritic sections, and run a focused 3x2x3
-(gNa_dend x gKv3_dend x gAMPA in {1.0, 2.0, 4.0}) sweep at GABA_BASE_NS = 0.10 nS (the t0059
-vector-sum DSI optimum). Pass criterion: at least one operating point with peak Hz >= 5 Hz AND
-vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against PolegPolsky2016
-spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
-addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
-experiment-run.
-
-</details>
-
-*19 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*23 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1335,6 +1328,8 @@ No models yet.
 
 ---
 
-## [Cost Leaders (0 tasks with spend)](costs/)
+## [Cost Leaders (1 tasks with spend)](costs/)
 
-No tasks with non-zero spend.
+| Task | Cost | Date |
+|------|------|------|
+| [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-02T04:00:31Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-03T04:19:13Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4031</char_count>
-    <byte_count>4031</byte_count>
-    <estimated_tokens>1007</estimated_tokens>
+    <char_count>4153</char_count>
+    <byte_count>4153</byte_count>
+    <estimated_tokens>1038</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,16 +17,21 @@
       <title>Project Costs (Full Detail)</title>
       <source_name>aggregate_costs_full</source_name>
       <content>
-Total budget: $1.00
-Total spent: $0.00
-Budget remaining: $1.00
-Spent: 0.0%
+Total budget: $10.00
+Total spent: $1.06
+Budget remaining: $8.94
+Spent: 10.6%
 
 ### Cost Breakdown by Category
 
+* vast-ai-quadro-p4000: $1.06
 * api: $0.00
 * local_compute: $0.00
 * remote_compute: $0.00
+
+### Cost Breakdown by Service
+
+* vast_ai: $1.06
 
 ### Per-Task Costs
 
@@ -98,6 +103,7 @@ Spent: 0.0%
 * t0072_synaptic_traces_pd_nd: $0.00
 * t0073_brainstorm_results_12: $0.00
 * t0074_channel_tuning_width_bed_a: $0.00
+* t0076_bedb_dsi_firing_rate_mobo: $1.06
       </content>
     </section>
   </sections>

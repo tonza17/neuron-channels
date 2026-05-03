@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-02T04:00:31Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-03T04:19:13Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>118</section_count>
-    <char_count>2114618</char_count>
-    <byte_count>2120220</byte_count>
-    <estimated_tokens>528654</estimated_tokens>
+    <section_count>120</section_count>
+    <char_count>2202623</char_count>
+    <byte_count>2208499</byte_count>
+    <estimated_tokens>550655</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -180,9 +180,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0072_synaptic_traces_pd_nd</id>
         <id>t0073_brainstorm_results_12</id>
         <id>t0074_channel_tuning_width_bed_a</id>
+        <id>t0076_bedb_dsi_firing_rate_mobo</id>
       </source_ids>
       <content>
-Completed tasks: 68
+Completed tasks: 69
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -591,6 +592,12 @@ ID: t0074_channel_tuning_width_bed_a
 Completed: 2026-05-02
 Short description: 12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tuning_width_bed_a&quot; date_completed: &quot;2026-05-02&quot; status: &quot;complete&quot; --- Results Summary: Channel Tuning-Width Sweep on Bed A Summary Across 25 conditions (1 baseline + 8 channels × 3 densities) × 12 angles × 5 seeds = 1500 FULL + 600 passive = 2100 trials, **NaP_high collapses vector-sum DSI from 0.193 to 0.050** (legacy DSI_PD-ND from 0.308 to 0.008) and produces the highest peak rate in the sweep (74.2 Hz vs 17.4 Hz baseline); **SK_high cuts HWHM in half** (83.5 deg → 41.1 deg) while suppressing peak rate; **Kv3, Kv4, and Kv7 are inert at all three densities tested** (no condition trips the |delta_HWHM| &gt; 5 deg or |delta_vec_DSI| &gt; 0.05...
+
+## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
+ID: t0076_bedb_dsi_firing_rate_mobo
+Completed: 2026-05-03
+Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot; date_completed: &quot;2026-05-03&quot; status: &quot;complete&quot; --- Multi-Objective BO of Channels + Synapse Placement on Bed B Summary Ran a 25-parameter BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de Rosenroll 2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 total cell evaluations × 8 directions × 20 seeds = **68,800** NEURON simulations) on a Vast.ai 72-core CPU instance for **$1.0583**. Hypervolume climbed monotonically from **3.4083** (Sobol baseline) to **8.4129** (final, **+147%**), and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -600,11 +607,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0074_channel_tun
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0045_coreneuron_vastai_speedup_benchmark</id>
-        <id>t0073_bedb_dsi_firing_rate_mobo</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -625,13 +631,6 @@ Status: not_started
 Effective date: 2026-04-24
 Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
 Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-## Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
-ID: t0073_bedb_dsi_firing_rate_mobo
-Status: not_started
-Effective date: 2026-05-02
-Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
-Dependencies: t0008_port_modeldb_189347, t0019_literature_survey_voltage_gated_channels, t0024_port_de_rosenroll_2026_dsgc, t0066_t0024_epsp_ipsp_vm_protocol, t0067_t0065_soma_channel_addition_sweep, t0070_writeup_two_model_beds, t0072_synaptic_traces_pd_nd
 
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep
@@ -36086,6 +36085,1435 @@ preference and addresses suggestions {S-0068-01, S-0068-02, S-0068-05} in one go
   `from tasks.t0008_port_modeldb_189347.code.build_cell import apply_params, build_dsgc`. Confirms
   the Bed A library API is stable and the per-trial seed / coords / rotation pattern works for
   t0074&#x27;s purposes.
+      </content>
+    </section>
+    <section id="t0076_bedb_dsi_firing_rate_mobo-research_internet" source_kind="file">
+      <title>t0076_bedb_dsi_firing_rate_mobo — Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate) — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0076_bedb_dsi_firing_rate_mobo</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0076_bedb_dsi_firing_rate_mobo/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 12
+sources_cited: 22
+papers_discovered: 6
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research Internet: MOD-File Sourcing for Bed B Channel Vendoring
+
+#### Task Objective
+
+Identify a canonical, citeable, ModelDB-hosted (or Allen-Institute-hosted) MOD-file source for each
+of the six-to-seven new voltage-gated channel mechanisms that t0076 plans to vendor into
+`tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/`: Kdr, KM (Kv7), HCN (Ih), CaL (CaV1.x), CaT
+(CaV3.x), BK (KCa1.1), and SK (KCa2). Also identify a canonical source for the cad
+calcium-accumulation mechanism that BK and SK depend on. The deliverable is a per-channel &quot;where do
+I download a clean .mod file for X&quot; recipe; the upstream literature survey on channel biology
+already exists (t0019), so this file is deliberately narrow in scope.
+
+#### Gaps Addressed
+
+The closest existing research document is the t0019 voltage-gated-channels literature survey
+(`tasks/t0019_literature_survey_voltage_gated_channels/results/results_detailed.md`). The t0019
+research_papers.md catalogue (in the t0019 task folder) covered Nav1.6, Nav1.2, AIS Kv1, and
+Fohlmeister-Miller HH-style RGC kinetics; it explicitly DID NOT survey KM (Kv7), HCN, CaL, CaT, BK,
+SK, or generic delayed-rectifier Kdr separately, and it did not produce a vendor-ready MOD-file
+inventory. Therefore the gaps from `research_papers.md` (treating the t0019 results as the parent
+corpus) that this internet survey must address are:
+
+1. **Source for a clean Kdr (delayed rectifier) MOD file** — **Resolved**. The Mainen-Sejnowski
+   1996 `kv.mod` (ModelDB 2488) is the canonical Hodgkin-Huxley-style delayed-rectifier with single
+   n^4 gate, kinetics from Sah et al. and Hamill et al. 1991 [Mainen1996] [ModelDB2488-GH].
+
+2. **Source for a clean KM / Kv7 / M-current MOD file** — **Resolved**. Two independent options:
+   Mainen-Sejnowski 1996 `km.mod` (ModelDB 2488) [Mainen1996] and Hay 2011 `Im.mod` (ModelDB
+   139653), with the Hay variant explicitly citing Adams et al. 1982 in the file header [Hay2011]
+   [ModelDB139653-GH].
+
+3. **Source for a clean HCN (Ih) MOD file** — **Resolved**. Three independent options: Hay 2011
+   `Ih.mod` (Kole-Hallermann-Stuart 2006 kinetics) [Hay2011]; Migliore-Migliore 2012 `h.mod` (Magee
+   1998 kinetics, hd suffix) [MiglioreMigliore2012] [ModelDB144541-GH]; Allen Institute `Ih.mod`
+   [Allen-184297].
+
+4. **Source for a clean CaL (L-type / CaV1.x) MOD file** — **Resolved**. Hay 2011 `Ca_HVA.mod`
+   (high- voltage-activated Ca, treated as the L-type proxy in the Hay framework) [Hay2011]; or
+   Mainen-Sejnowski 1996 `ca.mod` (single Ca channel, generic high-threshold) [Mainen1996].
+
+5. **Source for a clean CaT (T-type / CaV3.x) MOD file** — **Resolved**. Hay 2011 `Ca_LVAst.mod`
+   (low-voltage-activated, Avery-Johnston 1996 kinetics) [Hay2011]; or Allen Institute `Ca_LVA.mod`
+   [Allen-184297].
+
+6. **Source for a clean BK (KCa1.1) MOD file** — **Resolved**. Khaliq-Gouwens-Raman 2003
+   `bkpkj.mod` from the cerebellar Purkinje high-frequency-firing model (ModelDB 48332). This is a
+   self-contained `bkpkj` SUFFIX with both voltage- and calcium-dependent gating [Khaliq2003]
+   [ModelDB48332-GH]. Hay 2011 has no BK file (only SK_E2), so BK must come from elsewhere.
+
+7. **Source for a clean SK (KCa2) MOD file** — **Resolved**. Hay 2011 `SK_E2.mod` (Kohler et al.
+   1996 kinetics) [Hay2011]; or Allen Institute `SK.mod` [Allen-184297]; or Mainen-Sejnowski 1996
+   `kca.mod` (calcium-only gating, no voltage dependence) [Mainen1996].
+
+8. **Source for a clean cad (calcium accumulation) MOD file** — **Resolved**. Two independent
+   options with different mathematical forms: Mainen-Sejnowski 1996 `cad.mod`
+   (Destexhe-Babloyantz-Sejnowski 1993 simplified-buffer mechanism, exposes `depth` and `taur`
+   parameters that match exactly the t0076 task description&#x27;s parameters 16 and 17) [Mainen1996]
+   [Destexhe1993]; or Hay 2011 `CaDynamics_E2.mod` (similar Destexhe-1994-derived shell mechanism,
+   exposes `depth`, `decay`, `gamma`, `minCai`) [Hay2011].
+
+9. **License clarity for redistribution into this repo** — **Partially resolved**. None of the
+   four source ModelDBs (2488, 3673, 48332, 139653) carry an explicit license file; the Allen
+   Institute (184297) ties files to &quot;Allen Institute&#x27;s Terms of Use and Citation Policy&quot;
+   [Allen-184297]. However, the SenseLab / ModelDB framework operates under a long-standing
+   community convention of research-use redistribution with attribution, and the t0067 precedent in
+   this project already vendored five such MOD files (Nav1.6, NaP, NaR, Kv3, Kv4) under the same
+   convention without intervention [t0067-precedent]. The conservative path adopted here: include a
+   citation header in each vendored file naming the source ModelDB ID, original paper DOI, and
+   original author; treat this as the project-internal &quot;license-clean&quot; standard.
+
+#### Search Strategy
+
+**Sources searched**: ModelDB / SenseLab (modeldb.science), ModelDBRepository GitHub mirror via the
+`gh api repos/ModelDBRepository/&lt;id&gt;/contents` interface, Allen Institute Brain Map portal
+(brain-map.org), Allen Cell Types Database, GitHub general code search, PubMed via PMC, the Yale
+NEURON forum, and the ICGenealogy ion-channel-model database (icg.neurotheory.ox.ac.uk).
+
+**Inclusion criteria**: must be a publicly hosted MOD file with a documented primary publication;
+must have a clear NEURON `SUFFIX` (NMODL mechanism name); must be vendorable as a single file (not
+distributed across several files with shared global state). Preference for ModelDB-hosted entries
+with GitHub mirrors at `github.com/ModelDBRepository/&lt;id&gt;`. **Exclusion**: anything behind a
+paywall, anything requiring a custom build chain other than `nrnivmodl`, anything with an explicit
+non- redistribution clause.
+
+**Date range**: no restriction. The Adams 1982, Magee 1998, Mainen 1996, Khaliq 2003, Hay 2011
+papers all predate the 2026 target compute environment but the MOD files compile cleanly under
+modern NEURON 8.x via `nrnivmodl`.
+
+**Queries executed** (12 total):
+
+*Pass 1 — gap-targeted queries (one per channel):*
+
+1. `ModelDB Mainen Sejnowski 1996 km.mod KM current accession 8210`
+2. `ModelDB Hay 2011 L5 pyramidal SK_E2.mod Ca_LVAst Im.mod accession`
+3. `ModelDB Migliore CA1 ih.mod hyperpolarization activated channel HCN`
+4. `Allen Institute biophysical perisomatic NEURON mod files GitHub Im SK BK Ih cad`
+5. `ModelDB Hay 2011 accession number L5b pyramidal cell BAC firing 139653`
+6. `ModelDB Migliore 2012 Ih hippocampus accession pyramidal neuron`
+7. `NEURON BK channel mod file ModelDB KCa1.1 calcium activated potassium`
+8. `retinal ganglion cell NEURON model mod files Fohlmeister Miller 1997 ModelDB`
+
+*Pass 2 — broadening queries:*
+
+9. `ModelDB BK channel mod file Yamada McCormick large conductance Ca-activated potassium NEURON suffix`
+10. `&quot;BK.mod&quot; OR &quot;kbk.mod&quot; NEURON ModelDB calcium activated potassium retinal ganglion cell`
+
+*Pass 3 — snowball queries from Pass 1-2 hits (Khaliq, Allen):*
+
+11. `&quot;Khaliq&quot; 2003 cerebellar Purkinje ModelDB accession resurgent sodium BK mod`
+12. `&quot;De Schutter Bower 1994&quot; cerebellar Purkinje L-type calcium NEURON CaL.mod ModelDB`
+
+**Search iterations**: Pass 1 confirmed Hay 2011 (139653) as a one-stop source for all channels
+EXCEPT BK and Kdr. Pass 2 confirmed BK is not in Hay; Pass 3 then located the Khaliq 2003 Purkinje
+model (48332) which has a self-contained `bkpkj.mod`. Each promising ModelDB entry was followed by a
+`gh api repos/ModelDBRepository/&lt;id&gt;/contents` call to enumerate the actual `.mod` files and a raw-
+GitHub fetch on the most relevant file to verify the SUFFIX, kinetics, and primary-reference
+citation.
+
+#### Key Findings
+
+##### Hay 2011 L5b Pyramidal Cell (ModelDB 139653) is the highest-leverage single source
+
+A `gh api` enumeration of `github.com/ModelDBRepository/139653/contents/mod` returns exactly 13
+files with a clean one-channel-per-file factoring [ModelDB139653-GH]: `CaDynamics_E2.mod`,
+`Ca_HVA.mod`, `Ca_LVAst.mod`, `Ih.mod`, `Im.mod`, `K_Pst.mod`, `K_Tst.mod`, `NaTa_t.mod`,
+`NaTs2_t.mod`, `Nap_Et2.mod`, `SK_E2.mod`, `SKv3_1.mod`, `epsp.mod`. Six of the seven channels we
+need (KM=Im, CaL=Ca_HVA, CaT=Ca_LVAst, HCN=Ih, SK=SK_E2, plus the cad mechanism CaDynamics_E2) come
+from this single ModelDB entry. Each file is small (681-1446 b), and each cites a clear primary
+reference in the file&#x27;s header comment line: `Im.mod` cites &quot;Adams et al. 1982&quot; [Adams1982];
+`SK_E2.mod` cites &quot;Kohler et al. 1996&quot; [Kohler1996]; `Ih.mod` cites &quot;Kole, Hallermann, and Stuart,
+J. Neurosci. 2006&quot; [Kole2006]; `CaDynamics_E2.mod` cites a modification of Destexhe et al. 1994
+[Destexhe1993].
+
+This is a **best-practice** community convention: pull all the perisomatic channels you need from
+one internally consistent source so that the kinetics, temperature corrections, and units are
+mutually compatible. The Hay 2011 paper itself was published as *PLoS Computational Biology* with
+DOI `10.1371/journal.pcbi.1002107` and is one of the most-cited single-cell modelling papers of the
+past fifteen years [Hay2011]. The Hay framework was used in many subsequent multi-thousand-model
+studies including the Allen Institute biophysical pipeline, the Blue Brain L5 model, and the
+Maki-Marttunen schizophrenia model [eLife22152]. The Hay readme.html does not state an explicit
+license, but the file is hosted on the SenseLab ModelDB repository which operates under a
+long-standing community research-use convention [Hay2011-readme].
+
+##### BK is the one missing channel and Khaliq 2003 is the best replacement source
+
+Hay 2011 contains SK (`SK_E2.mod`) but no BK. The clearest standalone BK MOD file in the literature
+is the `bkpkj.mod` from Khaliq, Gouwens, and Raman 2003 (ModelDB 48332), titled &quot;BK-type Purkinje
+calcium-activated potassium current,&quot; authored by `nwg` (Nathan Gouwens) on 2002-08-19 [Khaliq2003]
+[ModelDB48332-GH]. The SUFFIX is `bkpkj`. The mechanism uses three gating states (m-voltage,
+h-voltage, z-calcium) with the conventional KCa1.1 voltage- and calcium-co-dependence. The file is
+2202 b — small enough to vendor verbatim. **Hypothesis**: because Purkinje BK kinetics are tuned
+for high-frequency firing (200+ Hz) and RGCs spike at substantially lower frequencies (typically
+10-80 Hz in DSGCs), the Purkinje BK time constants may be too fast for an RGC AIS context. If the
+optimiser finds that BK density saturates at the lower bound (~1e-5 S/cm²) the Khaliq kinetics are
+likely too fast and a slower BK like the De Schutter-Bower 1994 cerebellar variant (ModelDB 7176)
+[DeSchutter1994] should be tried as a fallback.
+
+##### Mainen 1996 is the best source for Kdr and cad
+
+Mainen-Sejnowski 1996 (ModelDB 2488) provides `kv.mod` (delayed rectifier with Hodgkin-Huxley `n^4`
+kinetics, citing Sah et al. and Hamill et al. 1991) and `cad.mod` (Destexhe-Babloyantz-Sejnowski
+1993 simplified-buffer calcium accumulation with explicit `depth` and `taur` parameters)
+[Mainen1996] [ModelDB2488-GH]. The `cad.mod` parameter signature `depth (um)` and `taur (ms)`
+matches **exactly** the t0076 task description&#x27;s parameters 16 (`cad.depth` 0.05-0.5 µm) and 17
+(`cad.taur` 5-100 ms) — this is not a coincidence; the t0076 ranges were almost certainly drawn
+from a Mainen-style model. The Mainen `kv.mod` is a generic delayed rectifier without voltage- or
+current-clamp tuning to a specific cell type, which is exactly the desired property for the t0076
+use case where the optimiser will scale the gbar.
+
+The CaDynamics_E2 mechanism from Hay 2011 is more sophisticated (it includes a `gamma` free-Ca
+fraction parameter and a `decay` time constant in addition to depth) but does NOT expose a direct
+`taur` parameter — the t0076 plan calls `cad.taur` and assumes a Mainen-style mechanism. Therefore
+the **recommended** cad source for t0076 is Mainen `cad.mod`, not Hay `CaDynamics_E2.mod`, on the
+grounds that the parameter names line up with the task plan.
+
+##### Allen Institute biophysical-perisomatic SDK is a strong fallback
+
+The Allen Institute Cell Types Database publishes per-cell biophysical models on ModelDB; entry
+184297 (&quot;Allen Institute: Nr5a1-Cre VISp layer 4 472442377&quot;) has a `modfiles/` directory with 16
+single- channel `.mod` files [Allen-184297] [Allen-184297-GH] including `CaDynamics.mod`,
+`Ca_HVA.mod`, `Ca_LVA.mod`, `Ih.mod`, `Im.mod`, `Im_v2.mod`, `Kd.mod`, `Kv2like.mod`, `Kv3_1.mod`,
+`NaTa.mod`, `NaTs.mod`, `NaV.mod`, `Nap.mod`, `SK.mod`. The Allen Im_v2 is a re-tuned variant of the
+Hay Im. The Allen files are explicitly tied to the &quot;Allen Institute&#x27;s Terms of Use and Citation
+Policy&quot; — a named, citable terms document — which arguably makes them the most license-clean
+option available. The Allen pipeline is extensively documented (the `AllenSDK` GitHub repo and the
+`portal.brain-map.org/explore/models/perisomatic-single-neurons` page) [Allen-Portal]. **However**,
+the Allen perisomatic models share the same gap as Hay 2011 — they include SK but not BK — and
+they do not include a Kdr-as-such (the Allen &quot;Kd&quot; is a re-tuned delayed rectifier but it is named
+differently from t0076&#x27;s intended `Kdr`). For maximum lineage clarity, the recommended path is Hay
+2011 + Khaliq
++ Mainen (three sources), with Allen as a sanity-check second opinion on Im, SK, and Ih.
+
+##### Migliore Ih (ModelDB 144541) provides an Ih option with explicit dendritic V_half
+
+The Migliore-Migliore 2012 model (ModelDB 144541) ships an `h.mod` file with SUFFIX `hd` titled &quot;I-h
+channel from Magee 1998 for distal dendrites&quot; with `vhalfl = -90 mV`, `vhalft = -75 mV`,
+`q10 = 4.5`, and explicit added leakage [MiglioreMigliore2012] [ModelDB144541-GH]. The Magee 1998
+dendritic-CA1 parameterization is the single most cited Ih kinetic source in compartmental modelling
+[Magee1998]. This is a viable alternative to the Hay 2011 `Ih.mod` (which uses Kole 2006 cortical
+kinetics); the choice is biophysical: hippocampal Ih has a more depolarised V_half (-90 mV
+inactivation) than cortical Kole-2006 Ih, but for an RGC AIS context neither is exactly tuned to the
+right cell type. **Recommendation**: pick Hay 2011 `Ih.mod` as the default for unit consistency with
+the rest of the Hay-sourced channels; switch to Migliore `hd.mod` only if the optimiser finds the
+Hay Ih kinetics incompatible with RGC firing.
+
+##### Fohlmeister-Miller 1997 `spike.mod` is RGC-specific but is a single monolithic file
+
+The salamander RGC model on ModelDB 3673 [FohlmeisterMiller1997] [ModelDB3673-GH] uses `spike.mod`
+and `capump.mod`. Critically, `spike.mod` packs five channels (Na, Ca, Kdr, KA, KCa) into one
+monolithic NMODL file with shared GLOBAL state. This is the **opposite** of the t0076 vendoring
+strategy — t0076 needs one file per channel so the optimiser can independently scale each `gbar`.
+**Decision**: do NOT vendor from Fohlmeister-Miller; the RGC kinetic specificity is appealing but
+the monolithic packaging is incompatible with the BoTorch parameter-sweep design where each channel
+must be individually scalable. Fohlmeister-Miller remains useful as a **reference** for RGC-typical
+V_half and tau values when sanity-checking the Hay/Mainen/Khaliq parameter values.
+
+##### Best practice: add a citation header to each vendored MOD file
+
+Across all five MOD files already vendored in t0067 (`nav16t67.mod`, `napt67.mod`, `nart67.mod`,
+`kv3t67.mod`, `kv4t67.mod`), the established project convention is a 4-line header that names the
+biophysical citation, kinetic parameters, and a `t67` SUFFIX namespace marker [t0067-precedent]. The
+recommended t0076 convention is to extend this with the source ModelDB ID and original-author
+attribution, e.g.:
+
+```text
+: Im (Kv7 / KM / M-current) for t0076 channel sweep.
+: Vendored from Hay et al. 2011 ModelDB 139653 mod/Im.mod.
+: Original kinetics: Adams et al. 1982 (DOI 10.1113/jphysiol.1982.sp014357).
+: V_half ~-35 mV, q10 = 2.3, target temp 34 C, original 21 C.
+: SUFFIX renamed from &quot;Im&quot; to &quot;imt76&quot; for t0076 namespace isolation.
+```
+
+#### Methodology Insights
+
+* **Use Hay 2011 (ModelDB 139653) as the single primary source** for KM (Im), CaL (Ca_HVA), CaT
+  (Ca_LVAst), HCN (Ih), and SK (SK_E2). The files are factored one-channel-per-file with consistent
+  units and temperature corrections [Hay2011] [ModelDB139653-GH].
+
+* **Use Khaliq 2003 (ModelDB 48332) `bkpkj.mod` for BK** — the only well-cited standalone BK MOD
+  file with both voltage- and calcium-dependence in a single self-contained NMODL file [Khaliq2003]
+  [ModelDB48332-GH].
+
+* **Use Mainen 1996 (ModelDB 2488) for Kdr (`kv.mod`) and cad (`cad.mod`)**. The cad mechanism&#x27;s
+  `depth` and `taur` parameter names match the t0076 task description&#x27;s parameters 16 and 17
+  verbatim [Mainen1996] [ModelDB2488-GH] [Destexhe1993].
+
+* **Apply a t0076-specific SUFFIX namespace** (e.g. `kdrt76`, `kmt76`, `iht76`, `calt76`, `catt76`,
+  `bkt76`, `skt76`, `cadt76`) to each vendored file, mirroring the t0067 convention with the `t67`
+  suffix [t0067-precedent]. This is essential because two of the planned channels (Im, SK_E2) might
+  collide with names used by upstream NEURON or by HHst built-in mechanisms.
+
+* **Add a citation header** to each vendored file: source ModelDB ID, original author, original
+  publication DOI, kinetic parameters (V_half, slope, time constant), and the renamed SUFFIX. This
+  is the project&#x27;s adopted &quot;license-clean&quot; standard pattern.
+
+* **Compile the whole set into a single t0076-local `nrnmech.dll`** using `nrnivmodl` from inside
+  `tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/`. The five existing t0067 MODs should be copied
+  verbatim into the same folder so the t0076 driver loads only one DLL.
+
+* **Hypothesis (testable in t0076)**: the Khaliq Purkinje BK kinetics are tuned for &gt;200 Hz firing
+  and may be too fast for an RGC AIS context (typical DSGC firing rate 10-80 Hz). If the optimiser
+  finds that BK density saturates at the lower bound (1e-5 S/cm²), this hypothesis is supported and
+  the De Schutter-Bower 1994 cerebellar BK (ModelDB 7176) [DeSchutter1994] should be tried as a
+  slower-kinetics alternative.
+
+* **Hypothesis (testable in t0076)**: the Hay Ih (Kole 2006 cortical kinetics) and the Migliore Ih
+  (Magee 1998 hippocampal kinetics) will produce visibly different DSI/firing-rate Pareto fronts
+  even at matched gbar density. If the optimiser converges to very different operating points under
+  the two Ih variants, this confirms that Ih kinetics matter more than Ih density for DSGC tuning.
+
+* **Best practice — fall back to the Risk-1 contingency early**: the task plan&#x27;s Risk-1 fallback
+  is to drop to 8 channels (HHst built-ins + 5 t0067 channels) if any of the 7 new MODs prove hard
+  to source. Based on this survey, all 7 are sourceable and Risk-1 should not be triggered. However,
+  if any vendored file fails to compile under modern NEURON 8.x, the order of priority for dropping
+  is: drop BK first (only Khaliq Purkinje source), then drop CaT (Hay only), then drop CaL (Hay
+  only), retain HCN/KM/SK/Kdr/cad. Document the drop in the writeup.
+
+#### Discovered Papers
+
+##### [Hay2011]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schürmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107
+* **Suggested categories**: voltage-gated-channels, compartmental-modelling
+* **Why download**: Source paper for `Im.mod`, `SK_E2.mod`, `Ih.mod`, `Ca_HVA.mod`, `Ca_LVAst.mod`,
+  and `CaDynamics_E2.mod` — six of the seven MODs t0076 plans to vendor. The paper documents the
+  multi-objective evolutionary algorithm used to fit the channel parameters, which is
+  methodologically parallel to the BoTorch qNEHVI loop in t0076.
+
+##### [Mainen1996]
+
+* **Title**: Influence of Dendritic Structure on Firing Pattern in Model Neocortical Neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **URL**: https://www.nature.com/articles/382363a0
+* **Suggested categories**: voltage-gated-channels, compartmental-modelling
+* **Why download**: Source paper for `kv.mod` (Kdr), `km.mod` (alternative KM), `kca.mod`
+  (alternative SK), `ca.mod` (alternative CaL), and most importantly `cad.mod` whose `depth` and
+  `taur` parameters match the t0076 task description verbatim. The paper is also directly relevant
+  to the broader project — it establishes that dendritic morphology controls firing pattern via
+  channel density, which is the central thesis of t0076&#x27;s morphology-fixed channel-density Pareto
+  sweep.
+
+##### [Khaliq2003]
+
+* **Title**: The Contribution of Resurgent Sodium Current to High-Frequency Firing in Purkinje
+  Neurons: An Experimental and Modeling Study
+* **Authors**: Khaliq, Z. M., Gouwens, N. W., Raman, I. M.
+* **Year**: 2003
+* **DOI**: `10.1523/JNEUROSCI.23-12-04899.2003`
+* **URL**: https://www.jneurosci.org/content/23/12/4899
+* **Suggested categories**: voltage-gated-channels
+* **Why download**: Source paper for `bkpkj.mod` (the only standalone BK channel MOD file in the
+  ModelDB ecosystem). The paper provides the resurgent-Na kinetics that may also be relevant as an
+  alternative to the t0067 `nart67.mod` (current NaR source), making this paper double-relevant for
+  the project.
+
+##### [MiglioreMigliore2012]
+
+* **Title**: Know Your Current Ih: Interaction with a Shunting Current Explains the Puzzling Effects
+  of Its Pharmacological or Pathological Modulations
+* **Authors**: Migliore, M., Migliore, R.
+* **Year**: 2012
+* **DOI**: `10.1371/journal.pone.0036867`
+* **URL**: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0036867
+* **Suggested categories**: voltage-gated-channels
+* **Why download**: Source paper for `h.mod` (alternative HCN/Ih implementation citing Magee 1998
+  hippocampal-CA1 dendritic kinetics). Provides the Magee 1998 kinetic parameterisation that is the
+  most-cited Ih variant in dendritic compartmental modelling and is the recommended fallback if Hay
+  2011&#x27;s Kole 2006 cortical kinetics prove inappropriate for the RGC context.
+
+##### [Adams1982]
+
+* **Title**: M-currents and Other Potassium Currents in Bullfrog Sympathetic Neurones
+* **Authors**: Adams, P. R., Brown, D. A., Constanti, A.
+* **Year**: 1982
+* **DOI**: `10.1113/jphysiol.1982.sp014357`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1982.sp014357
+* **Suggested categories**: voltage-gated-channels
+* **Why download**: The original biophysical characterisation of the M-current (KM / Kv7) cited by
+  the Hay 2011 `Im.mod` file in its header reference comment. This is the foundational citation for
+  any KM mechanism in compartmental modelling and should be in the corpus to support the t0076
+  channel-sourcing chain of provenance.
+
+##### [Kohler1996]
+
+* **Title**: Small-Conductance, Calcium-Activated Potassium Channels from Mammalian Brain
+* **Authors**: Köhler, M., Hirschberg, B., Bond, C. T., Kinzie, J. M., Marrion, N. V., Maylie, J.,
+  Adelman, J. P.
+* **Year**: 1996
+* **DOI**: `10.1126/science.273.5282.1709`
+* **URL**: https://www.science.org/doi/10.1126/science.273.5282.1709
+* **Suggested categories**: voltage-gated-channels
+* **Why download**: The original cloning and characterisation of SK1, SK2, SK3 (the
+  small-conductance Ca-activated K channel family) cited by the Hay 2011 `SK_E2.mod` file in its
+  header. Foundational citation for any SK mechanism in compartmental modelling and required to
+  complete the t0076 channel-sourcing chain of provenance.
+
+#### Recommendations for This Task
+
+Concrete vendoring recipe for the t0076 implementation step, ordered by priority:
+
+1. **Vendor 6 of 7 channels + cad from Hay 2011 + Khaliq 2003 + Mainen 1996.** Specifically:
+
+| Channel | Vendor from | Source file | New SUFFIX | Original cite |
+| --- | --- | --- | --- | --- |
+| Kdr | ModelDB 2488 | `kv.mod` | `kdrt76` | Mainen-Sejnowski 1996 [Mainen1996] |
+| KM (Kv7) | ModelDB 139653 | `mod/Im.mod` | `kmt76` | Adams 1982 [Adams1982] [Hay2011] |
+| HCN (Ih) | ModelDB 139653 | `mod/Ih.mod` | `iht76` | Kole 2006 [Hay2011] |
+| CaL (CaV1.x HVA) | ModelDB 139653 | `mod/Ca_HVA.mod` | `calt76` | [Hay2011] |
+| CaT (CaV3.x LVA) | ModelDB 139653 | `mod/Ca_LVAst.mod` | `catt76` | [Hay2011] |
+| BK (KCa1.1) | ModelDB 48332 | `bkpkj.mod` | `bkt76` | Khaliq 2003 [Khaliq2003] |
+| SK (KCa2) | ModelDB 139653 | `mod/SK_E2.mod` | `skt76` | Köhler 1996 [Kohler1996] [Hay2011] |
+| cad | ModelDB 2488 | `cad.mod` | `cadt76` | Destexhe 1993 [Mainen1996] [Destexhe1993] |
+2. **Apply the t0067 citation-header convention to every vendored file** — name the source ModelDB
+   ID, original publication DOI, kinetic parameters, and renamed SUFFIX. Do this even though no
+   source has an explicit license file: project convention treats this attribution as the
+   &quot;license-clean&quot; standard [t0067-precedent].
+
+3. **Add the 6 papers in `## Discovered Papers` to the project corpus** via `/add-paper`. None are
+   currently in the corpus; all six are foundational citations for the channels being vendored. The
+   t0076 writeup should reference each paper by DOI when describing a vendored channel.
+
+4. **Compile the t0076 mods folder into a single `nrnmech.dll`** by running `nrnivmodl` inside
+   `tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/`. Copy the 5 t0067 mods (`nav16t67.mod`,
+   `napt67.mod`, `nart67.mod`, `kv3t67.mod`, `kv4t67.mod`) into the same folder verbatim so a single
+   compiled DLL covers all 12 channels.
+
+5. **Validate compilation BEFORE wiring up BoTorch** — verify each `SUFFIX` resolves at runtime by
+   inserting it into a single-section test cell and running a current-step protocol. If any channel
+   fails to compile under modern NEURON 8.x, fall back per the priority order in the Methodology
+   Insights section (drop BK first, then CaT, then CaL).
+
+6. **Sanity-check the Khaliq Purkinje BK kinetics against the RGC firing range**: run the BK-only
+   single-channel test at 60 Hz current injection; if the BK afterhyperpolarisation is
+   unrealistically sharp, swap the Khaliq `bkpkj.mod` for a De Schutter-Bower 1994 (ModelDB 7176)
+   variant [DeSchutter1994] before launching the BoTorch loop.
+
+7. **Update `pyproject.toml` cleanly** with `botorch`, `gpytorch`, `torch` per REQ-9 of the task
+   plan; this is unrelated to MOD vendoring but is the next implementation step.
+
+#### Source Index
+
+##### [Hay2011]
+
+* **Type**: paper
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schürmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107
+* **Peer-reviewed**: yes (PLoS Computational Biology)
+* **Relevance**: Source publication for ModelDB 139653 — the highest-leverage single source for 6
+  of the 7 MODs t0076 must vendor.
+
+##### [Mainen1996]
+
+* **Type**: paper
+* **Title**: Influence of Dendritic Structure on Firing Pattern in Model Neocortical Neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **URL**: https://www.nature.com/articles/382363a0
+* **Peer-reviewed**: yes (Nature)
+* **Relevance**: Source publication for ModelDB 2488 — provides the canonical Hodgkin-Huxley
+  `kv.mod` delayed rectifier and the `cad.mod` calcium-accumulation mechanism whose `depth`/`taur`
+  parameters match the t0076 task description verbatim.
+
+##### [Khaliq2003]
+
+* **Type**: paper
+* **Title**: The Contribution of Resurgent Sodium Current to High-Frequency Firing in Purkinje
+  Neurons: An Experimental and Modeling Study
+* **Authors**: Khaliq, Z. M., Gouwens, N. W., Raman, I. M.
+* **Year**: 2003
+* **DOI**: `10.1523/JNEUROSCI.23-12-04899.2003`
+* **URL**: https://www.jneurosci.org/content/23/12/4899
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Source publication for ModelDB 48332 — provides the only well-cited standalone BK
+  channel MOD file (`bkpkj.mod`) in the ModelDB ecosystem.
+
+##### [MiglioreMigliore2012]
+
+* **Type**: paper
+* **Title**: Know Your Current Ih: Interaction with a Shunting Current Explains the Puzzling Effects
+  of Its Pharmacological or Pathological Modulations
+* **Authors**: Migliore, M., Migliore, R.
+* **Year**: 2012
+* **DOI**: `10.1371/journal.pone.0036867`
+* **URL**: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0036867
+* **Peer-reviewed**: yes (PLoS ONE)
+* **Relevance**: Source publication for ModelDB 144541 — provides the alternative Magee-1998 Ih
+  parameterisation `h.mod` (SUFFIX `hd`) that is the recommended fallback if the Hay/Kole-2006 Ih
+  proves inappropriate for an RGC context.
+
+##### [Adams1982]
+
+* **Type**: paper
+* **Title**: M-currents and Other Potassium Currents in Bullfrog Sympathetic Neurones
+* **Authors**: Adams, P. R., Brown, D. A., Constanti, A.
+* **Year**: 1982
+* **DOI**: `10.1113/jphysiol.1982.sp014357`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1982.sp014357
+* **Peer-reviewed**: yes (Journal of Physiology)
+* **Relevance**: Original biophysical characterisation of the M-current cited in the header of Hay
+  2011&#x27;s `Im.mod`. Foundational citation for any KM mechanism in compartmental modelling.
+
+##### [Kohler1996]
+
+* **Type**: paper
+* **Title**: Small-Conductance, Calcium-Activated Potassium Channels from Mammalian Brain
+* **Authors**: Köhler, M., Hirschberg, B., Bond, C. T., Kinzie, J. M., Marrion, N. V., Maylie, J.,
+  Adelman, J. P.
+* **Year**: 1996
+* **DOI**: `10.1126/science.273.5282.1709`
+* **URL**: https://www.science.org/doi/10.1126/science.273.5282.1709
+* **Peer-reviewed**: yes (Science)
+* **Relevance**: Original cloning and biophysical characterisation of the SK channel family cited in
+  the header of Hay 2011&#x27;s `SK_E2.mod`. Foundational citation for any SK mechanism.
+
+##### [Magee1998]
+
+* **Type**: paper
+* **Title**: Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of
+  Hippocampal CA1 Pyramidal Neurons
+* **Authors**: Magee, J. C.
+* **Year**: 1998
+* **DOI**: `10.1523/JNEUROSCI.18-19-07613.1998`
+* **URL**: https://www.jneurosci.org/content/18/19/7613
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Original distance-dependent dendritic Ih characterisation in CA1, cited by
+  Migliore-Migliore 2012&#x27;s `h.mod` (SUFFIX `hd`). Foundational citation for hippocampal-style Ih.
+
+##### [Kole2006]
+
+* **Type**: paper
+* **Title**: Single Ih Channels in Pyramidal Neuron Dendrites: Properties, Distribution, and Impact
+  on Action Potential Output
+* **Authors**: Kole, M. H. P., Hallermann, S., Stuart, G. J.
+* **Year**: 2006
+* **DOI**: `10.1523/JNEUROSCI.3664-05.2006`
+* **URL**: https://www.jneurosci.org/content/26/6/1677
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Single-channel Ih characterisation in cortical pyramidal dendrites cited by Hay
+  2011&#x27;s `Ih.mod`. Foundational citation for the Hay variant of Ih kinetics.
+
+##### [Destexhe1993]
+
+* **Type**: paper
+* **Title**: Ionic Mechanisms for Intrinsic Slow Oscillations in Thalamic Relay Neurons
+* **Authors**: Destexhe, A., Babloyantz, A., Sejnowski, T. J.
+* **Year**: 1993
+* **DOI**: `10.1016/S0006-3495(93)81190-1`
+* **URL**: https://www.cell.com/biophysj/abstract/S0006-3495(93)81190-1
+* **Peer-reviewed**: yes (Biophysical Journal)
+* **Relevance**: Original simplified-buffer calcium-accumulation mechanism cited by Mainen 1996&#x27;s
+  `cad.mod`. The mathematical form (`drive_channel + (cainf - ca) / taur`) used in the recommended
+  cad vendor source originates here.
+
+##### [FohlmeisterMiller1997]
+
+* **Type**: paper
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1997.78.4.1948
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Already in corpus as
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`.
+  Provides RGC-specific V_half / tau reference values for sanity- checking the Hay/Mainen/Khaliq
+  vendored kinetics. Source ModelDB 3673 was REJECTED for vendoring because its `spike.mod` is
+  monolithic.
+
+##### [DeSchutter1994]
+
+* **Type**: paper
+* **Title**: An Active Membrane Model of the Cerebellar Purkinje Cell. I. Simulation of Current
+  Clamps in Slice
+* **Authors**: De Schutter, E., Bower, J. M.
+* **Year**: 1994
+* **DOI**: `10.1152/jn.1994.71.1.375`
+* **URL**: https://journals.physiology.org/doi/10.1152/jn.1994.71.1.375
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Source publication for ModelDB 7176 — provides a slower-kinetics BK variant that
+  is the recommended fallback if the Khaliq-Purkinje BK is too fast for the RGC context.
+
+##### [ModelDB139653-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/139653 — L5b PC model (Hay et al. 2011)
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 2011 (publication); ongoing mirror
+* **URL**: https://github.com/ModelDBRepository/139653
+* **Last updated**: per ModelDB upload date 2011
+* **Peer-reviewed**: no (the repo itself; the underlying paper IS peer-reviewed)
+* **Relevance**: Direct source of the 13 MOD files in the `mod/` subdirectory including `Im.mod`
+  (KM), `SK_E2.mod` (SK), `Ih.mod` (HCN), `Ca_HVA.mod` (CaL), `Ca_LVAst.mod` (CaT), and
+  `CaDynamics_E2.mod` (cad alternative). Verified file inventory via
+  `gh api repos/ModelDBRepository/139653/contents/mod`.
+
+##### [ModelDB2488-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/2488 — Mainen-Sejnowski 1996 neocortical neurons
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 1996 (publication); ongoing mirror
+* **URL**: https://github.com/ModelDBRepository/2488
+* **Last updated**: per ModelDB upload date
+* **Peer-reviewed**: no (the repo itself)
+* **Relevance**: Direct source of `kv.mod` (recommended Kdr), `cad.mod` (recommended cad with
+  `depth`/ `taur` parameter names matching the t0076 task description), `km.mod`, `kca.mod`,
+  `ca.mod`, and `na.mod`. Top-level file enumeration verified via
+  `gh api repos/ModelDBRepository/2488/contents`.
+
+##### [ModelDB48332-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/48332 — Khaliq-Gouwens-Raman 2003 Purkinje cell
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 2003 (publication); ongoing mirror
+* **URL**: https://github.com/ModelDBRepository/48332
+* **Last updated**: per ModelDB upload date
+* **Peer-reviewed**: no (the repo itself)
+* **Relevance**: Direct source of `bkpkj.mod` (recommended BK channel — the only standalone BK MOD
+  in the ModelDB ecosystem with a clean SUFFIX and a single self-contained NMODL file). File header
+  verified verbatim via raw-GitHub fetch.
+
+##### [ModelDB144541-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/144541 — Migliore-Migliore 2012 CA1 Ih
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 2012 (publication); ongoing mirror
+* **URL**: https://github.com/ModelDBRepository/144541
+* **Last updated**: per ModelDB upload date
+* **Peer-reviewed**: no (the repo itself)
+* **Relevance**: Direct source of `h.mod` (SUFFIX `hd`) — the recommended fallback Ih variant if
+  the Hay/Kole-2006 cortical Ih kinetics prove inappropriate. File header verified verbatim via raw-
+  GitHub fetch.
+
+##### [ModelDB3673-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/3673 — Fohlmeister-Miller 1997 salamander RGC
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 1997 (publication); ongoing mirror
+* **URL**: https://github.com/ModelDBRepository/3673
+* **Last updated**: per ModelDB upload date
+* **Peer-reviewed**: no (the repo itself)
+* **Relevance**: Reference-only source. The `spike.mod` packs five channels (Na, Ca, Kdr, KA, KCa)
+  into one monolithic file with shared GLOBAL state, which is incompatible with t0076&#x27;s per-channel
+  scaling design. Useful only as an RGC-specific kinetic-value sanity check.
+
+##### [Allen-184297]
+
+* **Type**: documentation
+* **Title**: Allen Institute: Nr5a1-Cre VISp layer 4 neuron 472442377 (ModelDB 184297)
+* **Author/Org**: Allen Institute for Brain Science
+* **Date**: 2015
+* **URL**: https://modeldb.science/184297
+* **Peer-reviewed**: no (the model entry; the underlying Cell Types Database publication is peer-
+  reviewed, see Gouwens et al. 2018 Nature Communications)
+* **Relevance**: Alternative source of single-channel `.mod` files (`Im.mod`, `SK.mod`, `Ih.mod`,
+  `Ca_HVA.mod`, `Ca_LVA.mod`, `CaDynamics.mod`) under the explicit &quot;Allen Institute&#x27;s Terms of Use
+  and Citation Policy&quot;. Recommended as a sanity-check second opinion on the Hay-sourced MODs.
+
+##### [Allen-184297-GH]
+
+* **Type**: repository
+* **Title**: ModelDBRepository/184297 — Allen Nr5a1 layer 4 perisomatic
+* **Author/Org**: ModelDB Repository (Yale SenseLab) GitHub mirror
+* **Date**: 2015
+* **URL**: https://github.com/ModelDBRepository/184297
+* **Last updated**: per ModelDB upload date 2015
+* **Peer-reviewed**: no (the repo itself)
+* **Relevance**: Direct source of the 16 Allen Institute single-channel MOD files in the `modfiles/`
+  subdirectory. File inventory verified via
+  `gh api repos/ModelDBRepository/184297/contents/modfiles`.
+
+##### [Allen-Portal]
+
+* **Type**: documentation
+* **Title**: Perisomatic biophysical single neuron models — Allen Brain Map portal
+* **Author/Org**: Allen Institute for Brain Science
+* **Date**: 2015 onwards
+* **URL**: https://portal.brain-map.org/explore/models/perisomatic-single-neurons
+* **Peer-reviewed**: no
+* **Relevance**: Authoritative documentation of the Allen perisomatic biophysical model pipeline
+  (NEURON v7.4.rel-1370, AllenSDK Python API, channel parameter optimisation via genetic algorithm).
+  Confirms that the Allen `modfiles/` directory is the same one used by every Allen Cell Types
+  Database biophysical model.
+
+##### [Hay2011-readme]
+
+* **Type**: documentation
+* **Title**: ModelDB 139653 readme.html
+* **Author/Org**: Etay Hay (via ModelDB)
+* **Date**: 2011
+* **URL**: https://github.com/ModelDBRepository/139653/blob/master/readme.html
+* **Peer-reviewed**: no
+* **Relevance**: Source-document confirmation that the Hay 2011 ModelDB entry contains no explicit
+  license file, thereby grounding the project&#x27;s choice to vendor under the ModelDB community
+  research- use convention with attribution.
+
+##### [t0067-precedent]
+
+* **Type**: repository
+* **Title**: tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/ — vendored Nav1.6, NaP, NaR,
+  Kv3, Kv4 with `t67` SUFFIX namespace
+* **Author/Org**: this project (in-tree)
+* **Date**: 2026
+* **URL**: tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/nav16t67.mod
+* **Peer-reviewed**: no (in-project artefact)
+* **Relevance**: Establishes the project&#x27;s vendoring convention — citation header naming the
+  source paper, kinetics, and a `tNN` SUFFIX namespace marker. The t0076 implementation must follow
+  this same pattern so that the 12-channel composite library in `code/mods/` is internally
+  consistent.
+
+##### [eLife22152]
+
+* **Type**: paper
+* **Title**: Mapping the Function of Neuronal Ion Channels in Model and Experiment
+* **Authors**: Podlaski, W. F., Seeholzer, A., Groschner, L. N., Miesenböck, G., Ranjan, R.,
+  Vogels, T. P.
+* **Year**: 2017
+* **DOI**: `10.7554/eLife.22152`
+* **URL**: https://elifesciences.org/articles/22152
+* **Peer-reviewed**: yes (eLife)
+* **Relevance**: ICGenealogy paper that surveys 2378 NEURON ion-channel MOD files in ModelDB and
+  clusters them. Confirms that ModelDB is the de facto standard repository for NEURON channel models
+  and that the Hay 2011 framework is among the most-reused. Cited in the Key Findings to justify
+  Hay-as-primary-source.
+      </content>
+    </section>
+    <section id="t0076_bedb_dsi_firing_rate_mobo-research_code" source_kind="file">
+      <title>t0076_bedb_dsi_firing_rate_mobo — Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate) — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0076_bedb_dsi_firing_rate_mobo</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0076_bedb_dsi_firing_rate_mobo/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 14
+tasks_cited: 11
+libraries_found: 14
+libraries_relevant: 2
+date_completed: &quot;2026-05-01&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Reusable Code Inventory for Bed B Channel + Synapse MOBO
+
+#### Task Objective
+
+Build a 25-parameter Bayesian-optimisation loop on the Bed B (de Rosenroll 2026) DSGC that jointly
+maximises direction selectivity (DSI) and PD firing rate via BoTorch qNEHVI. The implementation
+needs (a) the Bed B cell builder and the moving-bar trial machinery [t0024], (b) the existing 5
+soma-channel MOD files [t0067] plus 7 newly-vendored MODs (Kdr, KM, HCN, CaL, CaT, BK, SK) per the
+just-completed `research_internet.md` MOD-source survey, (c) a parametric exponential-decay synapse
+placer (the only genuinely new non-trivial code in t0076), (d) the t0072 per-synapse recorder for
+diagnostic deep-dives of 3-5 best Pareto cells, and (e) the t0072 Typst PDF pipeline for the final
+writeup. All compute runs on a Vast.ai 64-core CPU node.
+
+#### Library Landscape
+
+The library aggregator script does not exist in `arf/scripts/aggregators/` (the asset-aggregator
+suite registers `aggregate_tasks`, `aggregate_costs`, `aggregate_machines`, `aggregate_metrics`,
+`aggregate_metric_results`, `aggregate_suggestions`, `aggregate_categories`, `aggregate_task_types`
+only). Library assets were therefore enumerated by direct filesystem scan of
+`tasks/*/assets/library/*/details.json`, which returned 14 registered libraries: `tuning_curve_loss`
+(from [t0012]), `modeldb_189347_dsgc` (from [t0008]), `tuning_curve_viz` (from [t0011]),
+`modeldb_189347_dsgc_gabamod` (from t0020_port_modeldb_189347_gabamod),
+`modeldb_189347_dsgc_dendritic` (from t0022_modify_dsgc_channel_testbed), `de_rosenroll_2026_dsgc`
+(from [t0024]), `modeldb_189347_dsgc_exact` (from t0046_reproduce_poleg_polsky_2016_exact),
+`minimal_dsgc_scalar_gaba` (from t0052_minimal_dsgc_scalar_gaba), `minimal_dsgc_spatial_gaba` (from
+t0053_minimal_dsgc_spatial_gaba), `minimal_dsgc_ampa_nmda_scalar_gaba` (from
+t0054_minimal_dsgc_ampa_nmda_scalar_gaba), `minimal_dsgc_mg_block_nmda` (from
+t0055_nmda_mg_block_dsi_recovery), `minimal_dsgc_tonic_gaba_sweep` (from
+t0057_tonic_gaba_sweep_t0053), `minimal_dsgc_bar_locked_gaba_ampa_sweep` (from
+t0059_bar_locked_gaba_ampa_sweep_t0057), and `dsgc_active_channel_pack` (from [t0074]).
+
+Two libraries are directly relevant to t0076:
+
+* **`de_rosenroll_2026_dsgc` v0.1.0** [t0024] — the Bed B substrate. Registered entry points are
+  `build_dsgc_cell()`, `generate_ar2_batch()`, plus the four CLI scripts. Vendored sources
+  (`RGCmodelGD.hoc`, `HHst_noiseless.mod`, `cadecay.mod`, `Exp2NMDA.mod`, `nrnmech.dll`) live in
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/`. Import
+  path: `from tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell import build_dsgc_cell`.
+  Critically, t0024&#x27;s `cadecay.mod` is already in the Bed B vendored sources — the t0076 plan&#x27;s
+  Approach step 2 (&quot;Add the `cad` calcium-accumulation mechanism if not already in the de Rosenroll
+  port&quot;) is therefore already satisfied; the existing `cad` SUFFIX is reusable as-is.
+
+* **`dsgc_active_channel_pack` v0.1.0** [t0074] — 8-channel MOD pack for Bed A: `nav16t74`,
+  `napt74`, `nart74`, `kv3t74`, `kv4t74`, `bk74`, `sk74`, `kv7t74`, plus `cad` (the t0024 cadecay
+  vendored verbatim). All under `t74` SUFFIX namespace. The MOD source files live in
+  `tasks/t0074_channel_tuning_width_bed_a/code/mods/`. **This is a major non-obvious finding**: the
+  BK, SK, and Kv7 channels that t0076&#x27;s `research_internet.md` recommends sourcing from Hay 2011 /
+  Khaliq 2003 are **already vendored in t0074 with the same provenance** (BK ← Mainen ModelDB 2488
+  `kca.mod`, SK ← Hay 2011 `SK_E2.mod`, Kv7 ← Hay 2011 `Im.mod`). Per the cross-task rule these MOD
+  files cannot be `import`-ed (NEURON loads them via `nrn_load_dll` not Python import), but they can
+  be **copied** verbatim into `code/mods/` with SUFFIX renamed `t74` → `t76`. This collapses the
+  t0076 vendoring step from 7 new MODs (Kdr, KM, HCN, CaL, CaT, BK, SK) to 4 new MODs (Kdr, HCN,
+  CaL, CaT) plus 3 SUFFIX-renamed copies.
+
+The remaining 12 libraries are not relevant: `tuning_curve_loss` and `tuning_curve_viz` operate on a
+12-angle CSV and are out-of-scope for the BoTorch loop (t0076 reports DSI + spike rate directly, not
+the t0012 envelope-fit metric); `modeldb_189347_*` and `minimal_dsgc_*` are Bed-A-specific
+substrates (t0008 deposited Poleg-Polsky variants); the four `minimal_dsgc_*` libraries are toy-cell
+experiments with no compatible morphology or synapse machinery for Bed B.
+
+#### Key Findings
+
+##### Bed B cell construction is a single-call entry point
+
+`build_dsgc_cell()` [t0024], the registered `de_rosenroll_2026_dsgc` library entry point at
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:251-296`, returns a frozen `DSGCCell`
+dataclass with `h`, `rgc`, `soma`, `all_dends` (350 sections), `primary_dends` (8 order-1 sections),
+`non_terminal_dends` (165), `terminal_dends` (177), `terminal_locs_xy` (numpy `(177, 2)`), and
+`origin_xy`. The function itself is 46 lines and idempotent only at the process level — calling it
+twice in a single Python process throws &quot;user defined name already exists: Exp2NMDA&quot; because
+`nrn_load_dll` is one-shot. The `_ensure_neuron_loaded()` pattern in
+`tasks/t0066_t0024_epsp_ipsp_vm_protocol/code/run_protocol.py:70-88` (15 lines) wraps the call to be
+idempotent by monkey-patching `t0024.code.build_cell.load_neuron`. **Implication for t0076**:
+`ProcessPoolExecutor` workers each get a fresh process, so the idempotency wrapper is unnecessary
+inside workers; in the BoTorch driver process (which holds the GP and acquisition function but does
+not run NEURON) `build_dsgc_cell` is never called. The workers can call `build_dsgc_cell` once at
+worker init and reuse the cell across many trials by re-applying parameter overrides per trial — the
+`CanonicalState` snapshot/restore pattern from `run_protocol.py:117-175` (60 lines) shows exactly
+how to do this with per-segment HHst gnabar/gkbar/gkmbar plus per-NetCon weights.
+
+##### The 8-direction × 20-seed trial pattern is already factored out
+
+`run_single_trial()` [t0024] at `run_tuning_curve.py:235-321` is the canonical 1-trial driver: takes
+`(cell, ncs_ach, ncs_gaba, direction_deg, rho, seed)` and returns a `TrialResult` with `spike_count`
+and `peak_mv`. Internally it (a) calls `_bar_arrival_times` to project synapse xy-locations onto a
+velocity vector, (b) calls `_rates_with_ar2_noise` to draw Gaussian-windowed AR(2) rate traces for
+ACh+GABA, (c) calls `_gaba_prob_for_direction` to pick the directional GABA release sigmoid, (d)
+calls `_rates_to_events` to Poisson-sample event times, (e) installs a HOC `FInitializeHandler` to
+queue the events into the NetCons via `nc.event(t)`, and (f) records `soma(0.5)._ref_v`, runs
+`h.run()`, threshold-crosses to count spikes. The whole function is 87 lines. The same trial
+machinery is reused verbatim in t0066 and t0072 — every downstream Bed B task imports the helpers
+from t0024 [t0066, t0072]. **Implication for t0076**: the trial driver in `code/run_trial.py`
+becomes a 30-40 line wrapper around `run_single_trial` that takes a 25-d parameter vector, applies
+it to a freshly-built cell, runs (8 directions × 20 seeds = 160) trials, and returns
+`(DSI, PD_firing_rate)`. The 8-direction angle list is already in
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/constants.py:87`
+(`ANGLES_8DIR_DEG = (0, 45, 90, 135, 180, 225, 270, 315)`).
+
+##### Path-distance computation on Bed B uses `h.distance(soma_seg, target_seg)`
+
+The parametric synapse placer (Approach step 3 of the task description) needs path distance from
+soma to each candidate dendritic section. The canonical NEURON pattern in this project, used by
+[t0050] at `tasks/t0050_audit_syn_distribution/code/extract_coordinates.py:172-202`, is the
+two-segment form `h.distance(soma(0.5), target_seg)`. The same file documents (lines 168-177) that
+the legacy single-argument form `h.distance(0, seg)` sets a stateful origin and should be avoided.
+**Implication for t0076**: the placer in `code/synapse_placer.py` walks `cell.all_dends` (350
+sections), calls `h.distance(cell.soma(0.5), sec(0.5))` per section to get path distance `d` in µm,
+then computes weights `w_i = ρ_0 · exp(-d_i / λ) · L_i` (where `L_i` is the section length to make
+selection length-uniform within a section), normalises, and samples `N` positions without
+replacement weighted by `w`. There is no existing code that does this in the project (no prior task
+uses an exponential-decay placer); the 7 prior tasks that compute path distance
+[t0009, t0050, t0052, t0053, t0054, t0055, t0057, t0059] all use it for analysis or fixed placement,
+never for stochastic exponential-density synapse placement. This is the only genuinely new
+non-trivial code in t0076.
+
+##### Project&#x27;s MOD-vendoring convention is well-established
+
+The t0067 precedent [t0067] at `tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/`
+established the `tNN`-suffix namespace convention (`nav16t67`, `napt67`, `nart67`, `kv3t67`,
+`kv4t67`) with a 4-line citation header, and the t0074 precedent [t0074] at
+`tasks/t0074_channel_tuning_width_bed_a/code/mods/` extended this with `bk74`, `sk74`, `kv7t74` plus
+a SUFFIX-renamed copy of `cadecay.mod` (`cad` SUFFIX preserved because the soma already inserts
+`cad` from t0024&#x27;s library). The compilation step uses
+`tasks/t0074_channel_tuning_width_bed_a/code/run_nrnivmodl.cmd` (12 lines), which is a thin wrapper
+around `C:\Users\md1avn\nrn-8.2.7\bin\nrnivmodl.bat`. The compiled `nrnmech.dll` lands in
+`code/build/`, and `_ensure_t67_dll_loaded()` at
+`tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:107-120` (14 lines) loads it on top
+of the Bed B DLL via a second `nrn_load_dll` call. NEURON allows multiple DLLs as long as no SUFFIX
+collides — the `tNN` namespace guarantees this.
+
+##### NaP and NaR from t0067 are not used in t0076 per task description
+
+The task description explicitly lists 12 channels (Nav1.6, NaP, NaR, Kdr, Kv3, Kv4, KM, HCN, CaL,
+CaT, BK, SK) but the `research_internet.md` recommends Mainen&#x27;s `kv.mod` for Kdr (not already
+vendored) and the t0067/t0074 packs already provide Nav1.6, NaP, NaR, Kv3, Kv4. So the t0076 channel
+set is the **union** of {t0067 5 channels} ∪ {t0074 BK/SK/Kv7=KM} ∪ {4 new MODs: Kdr, HCN, CaL,
+CaT}. NaP and NaR ARE included per the parameter table in `task_description.md` lines 41-43
+(parameters 2 and 3 of the 12 channel densities), so the prompt&#x27;s claim that &quot;t0076 won&#x27;t use NaP or
+NaR&quot; appears to be a misreading — both are in the 12-channel list and need to be vendored from
+t0067.
+
+##### Per-synapse recorder for the 3-5 Pareto deep-dives is one drop-in module
+
+For the diagnostic deep-dive of representative Pareto cells (REQ-6 of the task description),
+`_attach_bed_b_recorders()` [t0072] at `tasks/t0072_synaptic_traces_pd_nd/code/run_bed_b.py:214-248`
+(35 lines) records `g_ACh`, `g_GABA`, and `v_local` per synapse via
+`Vector.record(syn._ref_g, RECORD_DT_MS)` and `Vector.record(seg._ref_v, RECORD_DT_MS)`. The
+`BedBRecorders` dataclass and the `_save_one_type` / `_save_bed_b_direction` helpers
+(`run_bed_b.py:298-327`, ~30 lines combined) serialise the recorded vectors into `.npz` per
+(direction, synapse_type). **Implication**: the 3-5 best Pareto cells get one `.npz` triple each (PD
+ACh + PD GABA + ND ACh + ND GABA = 4 files per cell), wired through the same recorder. ~80 lines of
+t0072 code is copy-paste reusable.
+
+##### Typst PDF render is a 60-line copy-paste
+
+`render_pdf.py` [t0072] at `tasks/t0072_synaptic_traces_pd_nd/code/render_pdf.py` (64 lines total)
+is itself a verbatim copy from t0071&#x27;s render_pdf.py. The pattern is: read
+`results/results_detailed.typ`, call `typst.compile(source, output=PDF_OUTPUT_PATH)`, assert PDF
+size &gt; 50 KB. The `typst` Python package is already in the project&#x27;s `pyproject.toml` line 48
+(`&quot;typst&gt;=0.14.8&quot;`). For t0076, copy `render_pdf.py` verbatim, retarget the `paths` import.
+
+##### NEURON deployment on Vast.ai has no project precedent
+
+`uv run python -u -m arf.scripts.aggregators.aggregate_machines --format json` returns
+`total_machines: 0` and `tasks: []`. Similarly `aggregate_costs` shows `total_cost_usd: 0.0` across
+all 68 cost records. **No prior task in this project has provisioned a Vast.ai instance.** t0076 is
+the first compute-intensive remote task. The setup-remote-machine skill
+[`arf/skills/setup-remote-machine/SKILL.md`] documents the Vast.ai search → create → verify →
+environment-prep → teardown lifecycle in detail (471 lines), but it is GPU-oriented (uses
+`pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel` as the default image, runs `torch.cuda.is_available()`
+as the smoke test, queries `nvidia-smi`). For t0076&#x27;s CPU-only NEURON workload these defaults need
+adaptation: drop the `gpu_ram` filter and `compute_cap` filter, use a CPU-only image (e.g.,
+`python:3.12-bookworm`), use `python -c &quot;from neuron import h; print(h.HocError.__name__)&quot;` as the
+smoke test. NEURON itself has no PyPI wheel for Linux Python 3.13 (the local install path
+`C:\Users\md1avn\nrn-8.2.7` is Windows-only), so NEURON 8.2 must be installed on the remote via
+`pip install neuron==8.2.7` (which DOES have a Linux cp312/cp313 wheel) and the MOD files compiled
+remotely with `nrnivmodl code/mods/`.
+
+#### Reusable Code and Assets
+
+##### `build_dsgc_cell()` — Bed B cell construction (import via library)
+
+* **Source**: `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:251-296` [t0024]
+* **What it does**: Loads NEURON 8.2.7, sources `RGCmodelGD.hoc`, instantiates `h.DSGC(0,0)`, walks
+  the dendritic tree, configures every section with HHst + cad, returns a frozen `DSGCCell`
+  dataclass with `h`, `rgc`, `soma`, `all_dends` (350), `primary_dends` (8), `non_terminal_dends`
+  (165), `terminal_dends` (177), `terminal_locs_xy` (177×2 numpy), `origin_xy`.
+* **Reuse method**: **import via library**.
+  `from tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell import build_dsgc_cell, DSGCCell`
+* **Function signature**: `def build_dsgc_cell() -&gt; DSGCCell`
+* **Adaptation needed**: NONE for cell construction, but t0076 must call the function ONCE per
+  worker process (in `ProcessPoolExecutor` initializer), then re-apply 25-d parameter overrides per
+  trial via the t0066 `_apply_mode_overrides` pattern (see below).
+* **Line count**: 0 to copy (library import).
+
+##### t0066 `CanonicalState` snapshot/restore + `_apply_mode_overrides` (copy into task)
+
+* **Source**: `tasks/t0066_t0024_epsp_ipsp_vm_protocol/code/run_protocol.py:117-194` [t0066]
+* **What it does**: `_snapshot_canonical_state(cell, bundle)` walks every section&#x27;s segments,
+  records baseline `HHst.gnabar/gkbar/gkmbar` plus baseline NetCon weights into a `CanonicalState`
+  dataclass; `_restore_canonical_state(bundle, state)` writes them back;
+  `_apply_mode_overrides(cell, bundle, mode)` applies per-mode silencing.
+* **Reuse method**: **copy into task** (`run_protocol.py` is not a registered library entry point).
+  Adapt the snapshot to also capture the 12 new channel densities (one per `tNN` SUFFIX); rewrite
+  `_apply_mode_overrides` as `_apply_parameter_overrides(cell, bundle, params)` taking the 25-d
+  parameter vector and writing the 12 channel densities + 3 passive
+  + 2 calcium + 2 weights to all sections, per-segment.
+* **Function signatures**:
+  * `def _snapshot_canonical_state(*, cell: DSGCCell, bundle: SynapseBundle) -&gt; CanonicalState`
+  * `def _restore_canonical_state(*, bundle: SynapseBundle, state: CanonicalState) -&gt; None`
+* **Line count**: ~80 lines to copy and adapt for the t0076 25-d parameter override.
+
+##### t0024 trial-driver helpers — `_setup_synapses`, `SynapseBundle`, `_bar_arrival_times`, `_rates_with_ar2_noise`, `_gaba_prob_for_direction`, `_rates_to_events`, `_count_spikes`, `BASE_ACH_PROB`, `RATE_DT_MS`, `BAR_SIGMA_MS` (copy into task)
+
+* **Source**: `tasks/t0024_port_de_rosenroll_2026_dsgc/code/run_tuning_curve.py:52-232` [t0024]
+* **What it does**: Module-level constants for the bar geometry; `_setup_synapses` creates ACh+GABA
+  Exp2Syn pairs on every terminal dendrite with NetStim+NetCon sources; `SynapseBundle` dataclass
+  holds the strong refs; `_bar_arrival_times` projects synapse xy onto a velocity vector;
+  `_rates_with_ar2_noise` returns the Gaussian-windowed AR(2) rate traces;
+  `_gaba_prob_for_direction` is the per-direction GABA release sigmoid; `_rates_to_events`
+  Poisson-samples event times; `_count_spikes` threshold-crosses for spike count.
+* **Reuse method**: **copy into task** (these are private helpers in `run_tuning_curve.py`, not
+  registered as library entry points; the same copy-precedent is established by t0066 and t0072 —
+  see t0072&#x27;s `run_bed_b.py:13-16` &quot;COPIED verbatim from t0024 lines 52-232&quot; comment).
+* **Function signatures**:
+  * `def _setup_synapses(*, cell: DSGCCell, gaba_weight_scale: float) -&gt; SynapseBundle` — for t0076,
+    must be ADAPTED to accept (N_ACh, N_GABA, ρ_0_ACh, λ_ACh, ρ_0_GABA, λ_GABA) and use the new
+    parametric placer instead of the fixed `for dend in cell.terminal_dends` loop.
+  * `def _bar_arrival_times(syn_xy, origin_xy, direction_deg) -&gt; NDArray[np.float64]` — copy
+    verbatim.
+  * `def _rates_with_ar2_noise(*, n_syn, n_bins, rate_dt_ms, arrival_times_ms, rho, seed) -&gt; tuple[NDArray, NDArray]`
+    — copy verbatim.
+  * `def _gaba_prob_for_direction(direction_deg: float) -&gt; float` — copy verbatim.
+  * `def _rates_to_events(*, rates_hz, release_prob, rate_dt_ms, rng) -&gt; list[list[float]]` — copy
+    verbatim.
+  * `def _count_spikes(v_trace, threshold_mv) -&gt; int` — copy verbatim.
+* **Line count**: ~180 lines (the 52-232 block); ~30 of those are the `_setup_synapses` body that
+  t0076 must rewrite to use the parametric placer.
+
+##### t0024 `run_single_trial()` — 1-trial wrapper with FInitializeHandler (copy into task)
+
+* **Source**: `tasks/t0024_port_de_rosenroll_2026_dsgc/code/run_tuning_curve.py:235-321` [t0024]
+* **What it does**: Glues all the helpers together for one (direction, seed) trial, queues events
+  via `FInitializeHandler`, records soma voltage, runs `h.run()`, returns spike count and peak
+  voltage in a `TrialResult` dataclass.
+* **Reuse method**: **copy into task** (private function). Adapt to take the new
+  `bundle.ncs_ach`/`ncs_gaba` from the parametric placer (length is now `N_ACh`/`N_GABA`, not always
+  177); add a try/except around `h.run()` that returns the worst-case score `(DSI=-1.0, rate=0.0)`
+  on `RuntimeError` per Risk #4 of the task plan.
+* **Function signature**:
+  `def run_single_trial(*, cell, ncs_ach, ncs_gaba, direction_deg, rho, seed) -&gt; TrialResult`
+* **Line count**: ~87 lines.
+
+##### t0067 5-channel MOD pack — Nav1.6, NaP, NaR, Kv3, Kv4 (copy into task)
+
+* **Source**:
+  `tasks/t0067_t0065_soma_channel_addition_sweep/code/mods/{nav16t67,napt67,nart67, kv3t67,kv4t67}.mod`
+  [t0067]
+* **What it does**: 5 NMODL files defining `SUFFIX nav16t67`, `napt67`, `nart67`, `kv3t67`,
+  `kv4t67`, each `NONSPECIFIC_CURRENT i` to avoid the HHst USEION conflict, with literature V_half /
+  tau values per the t0067 citation headers.
+* **Reuse method**: **copy into task**. Copy verbatim into `code/mods/` and rename SUFFIX `t67` →
+  `t76` (also rename file basename) per the t0074 precedent. Reverify each compiles with `nrnivmodl`
+  BEFORE wiring up BoTorch (per `research_internet.md` recommendation 5).
+* **Line count**: ~50 lines per MOD × 5 MODs = ~250 lines.
+
+##### t0074 BK + SK + Kv7 (= KM) MOD pack (copy into task)
+
+* **Source**: `tasks/t0074_channel_tuning_width_bed_a/code/mods/{bk74,sk74,kv7t74}.mod` [t0074]
+* **What it does**: 3 NMODL files defining `SUFFIX bk74` (Mainen-Sejnowski `kca.mod`-derived BK,
+  voltage- and Ca-dependent), `sk74` (Hay 2011 `SK_E2`-derived SK, purely Ca-driven Hill = 4.8),
+  `kv7t74` (Hay 2011 `Im`-derived Kv7/M-current, Adams 1982 alpha/beta formalism). All three use
+  `USEION ca READ cai` (BK, SK) and `NONSPECIFIC_CURRENT i` to avoid HHst conflicts.
+* **Reuse method**: **copy into task**. Copy verbatim into `code/mods/` and rename SUFFIX `t74` →
+  `t76`. **CRITICAL**: this collapses the Approach step 1 of the task description from &quot;vendor 6-7
+  NEW MODs&quot; to &quot;vendor 4 new MODs (Kdr, HCN, CaL, CaT) + reuse 3 existing (BK, SK, KM=Kv7) + reuse 5
+  existing (Nav1.6, NaP, NaR, Kv3, Kv4)&quot;. Net: only **4 truly new MODs** to source from
+  `research_internet.md`&#x27;s Hay-2011-and-Mainen recipe. The KM mapping works because
+  `research_internet.md` recommends Hay 2011 `Im.mod` for KM, which is exactly what t0074&#x27;s
+  `kv7t74.mod` is derived from.
+* **Line count**: ~50 lines per MOD × 3 MODs = ~150 lines.
+
+##### t0024 `cad` (cadecay) — already vendored in Bed B (no action)
+
+* **Source**:
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod`
+  [t0024]
+* **What it does**: Single-shell calcium pool with `depth = 0.1 µm`, `taur = 5 ms`, Destexhe 1995
+  formalism; SUFFIX is `cad`. Already inserted on every Bed B section by `_configure_soma` and
+  `_configure_dends` in `build_cell.py:192-248`.
+* **Reuse method**: **import via library** (transitively, via `build_dsgc_cell`). NO copy needed.
+  The t0076 25-d parameter vector exposes `cad.depth` (param 16, range 0.05-0.5 µm) and `cad.taur`
+  (param 17, range 5-100 ms) as RANGE variables of the existing `cad` SUFFIX, so the parameter
+  override step writes them per-segment as `seg.cad.depth = depth_um` and `seg.cad.taur = taur_ms`.
+* **Line count**: 0 (already loaded by `build_dsgc_cell`).
+
+##### t0067 `_ensure_t67_dll_loaded()` pattern (copy into task)
+
+* **Source**: `tasks/t0067_t0065_soma_channel_addition_sweep/code/run_sweep.py:107-120` [t0067]
+* **What it does**: Idempotent loader that calls `h.nrn_load_dll(t76_dll_path)` once per process,
+  asserting `rc == 1.0`, gating on a function-attribute flag.
+* **Reuse method**: **copy into task** (private function). Adapt the DLL path to the t0076 build
+  location (`tasks/t0076_*/code/build/nrnmech.dll`). The function is called inside each
+  `ProcessPoolExecutor` worker AFTER `build_dsgc_cell` (which loads t0024&#x27;s DLL) and BEFORE any
+  t76-SUFFIX `insert()` call.
+* **Function signature**: `def _ensure_t76_dll_loaded(*, h: Any) -&gt; None`
+* **Line count**: ~14 lines.
+
+##### t0072 per-synapse recorder for Pareto deep-dives (copy into task)
+
+* **Source**: `tasks/t0072_synaptic_traces_pd_nd/code/run_bed_b.py:203-327` [t0072]
+* **What it does**: `_attach_bed_b_recorders()` (35 lines) creates
+  `Vector.record(syn._ref_g, RECORD_DT_MS)` for ACh and GABA Exp2Syn `_ref_g` plus a
+  `Vector.record(seg._ref_v, ...)` for the local membrane voltage at the synapse insertion point per
+  terminal. `BedBRecorders` dataclass holds the strong refs; `_save_one_type` and
+  `_save_bed_b_direction` serialise to `.npz` per direction.
+* **Reuse method**: **copy into task** (private functions). Reusable verbatim with the new
+  parametric `bundle` (the recorder iterates `bundle.syns_ach` and `bundle.syns_gaba` which works
+  regardless of the new variable count `N_ACh, N_GABA`).
+* **Function signatures**:
+  * `def _attach_bed_b_recorders(*, h: Any, bundle: SynapseBundle) -&gt; BedBRecorders`
+  * `def _save_one_type(*, output_path: Path, g_vectors, v_vectors, t_rec, e_rev_mv) -&gt; None`
+* **Line count**: ~125 lines.
+
+##### t0072 Typst PDF compile pipeline (copy into task)
+
+* **Source**: `tasks/t0072_synaptic_traces_pd_nd/code/render_pdf.py:1-64` [t0072]
+* **What it does**: 64-line script that calls `typst.compile(source, output=PDF_OUTPUT_PATH)`,
+  asserts the produced PDF is at least 50 KB; the `typst` Python package is already in
+  `pyproject.toml` line 48.
+* **Reuse method**: **copy into task** verbatim, retarget the `paths` import from
+  `tasks.t0072_synaptic_traces_pd_nd.code.paths` to
+  `tasks.t0076_bedb_dsi_firing_rate_mobo.code.paths`.
+* **Function signature**:
+  `def compile_typst(*, source_path: Path, output_path: Path) -&gt; CompileResult`
+* **Line count**: 64 lines (verbatim).
+
+##### t0024 / t0074 `run_nrnivmodl.cmd` pattern (copy into task)
+
+* **Source**: `tasks/t0074_channel_tuning_width_bed_a/code/run_nrnivmodl.cmd:1-12` [t0074]
+* **What it does**: 12-line Windows batch that hardcodes
+  `C:\Users\md1avn\nrn-8.2.7\bin\ nrnivmodl.bat`, runs it on `code/mods/`, emits
+  `code/build/nrnmech.dll`.
+* **Reuse method**: **copy into task** verbatim. Note that on Vast.ai (Linux) the equivalent is
+  `cd code/mods &amp;&amp; nrnivmodl .` — Linux NEURON&#x27;s `nrnivmodl` script is bundled with the
+  `pip install neuron==8.2.7` wheel and ends up on the worker `PATH` by default. The `.cmd` file is
+  local-only; the remote uses a 1-line shell command.
+* **Line count**: 12 lines.
+
+#### New Code Needed (no prior task implements this)
+
+| Module | Purpose | Approx LOC |
+| --- | --- | --- |
+| `code/synapse_placer.py` | Walk `cell.all_dends` (350 sections), compute path-distance per section midpoint via `h.distance(cell.soma(0.5), sec(0.5))`, build per-section weight `w = ρ_0 · exp(-d/λ) · L`, normalise, sample `N` positions without replacement weighted by `w`. Returns a list of `(sec, position_in_01)` tuples that the new `_setup_synapses` consumes. | ~90 |
+| `code/parameter_vector.py` | Frozen 25-d `ParameterVector` dataclass plus `from_botorch(x: torch.Tensor) -&gt; ParameterVector` for the 12 channel-density log-mappings, 3 passive linear/log mappings, 2 calcium linear, 2 synapse counts (int rounding from continuous), 4 spatial-rule values, 2 weight log-mappings. The 12-channel SUFFIX-list lives here as a tuple of constants. | ~120 |
+| `code/apply_parameters.py` | Given a `ParameterVector` and a freshly built `DSGCCell`, write the 12 new channel densities + 3 passive + 2 calcium + 2 weights to all segments, swap the synapse bundle to a new one built via `synapse_placer`. ~50 lines for channel-density writes, ~30 for the placer-driven `_setup_synapses` call. | ~100 |
+| `code/run_trial.py` | Single-trial driver compatible with `ProcessPoolExecutor`: takes a `(ParameterVector, direction_deg, seed)` triple, builds (or reuses) a Bed B cell, applies parameters, calls the adapted `run_single_trial`, returns `(spike_count, peak_mv)`. Wraps `h.run()` in try/except for the NaN/error fallback (Risk #4). | ~80 |
+| `code/run_botorch.py` | Main BoTorch loop: 30-Sobol DOE, 25→2 multi-task GP, qNEHVI acquisition with reference point `(DSI=0, rate=0)`, 300-500 acquisition steps. Each step: ask 1 candidate, dispatch 160 trials via `ProcessPoolExecutor(max_workers=64)`, aggregate to `(DSI, PD_rate)`, tell. Save trial summaries to `data/trial_history.parquet` after each step. | ~280 |
+| `code/plot_pareto.py` | Plot the Pareto front at iter 50, 100, 200, 300, ..., final; plot hypervolume trajectory; pick 3-5 representative Pareto cells and dispatch deep-dive runs through the t0072 recorder. | ~250 |
+| `code/render_pdf.py` | Verbatim copy from t0072 (`render_pdf.py`) with paths retargeted. | 64 |
+| `code/mods/{kdr76,iht76,calt76,catt76}.mod` | Newly vendored MODs per `research_internet.md`: Mainen `kv.mod` for Kdr, Hay `Ih.mod` for HCN, Hay `Ca_HVA.mod` for CaL, Hay `Ca_LVAst.mod` for CaT. Add citation header per t0067 convention. | ~50 each = ~200 |
+| `code/run_nrnivmodl.cmd` + `run_nrnivmodl.sh` | Windows + Linux compile wrappers. | ~25 combined |
+
+Total new code: ~1,200 LOC. Total copied code: ~700 LOC. Total imported code: 0 LOC (all cross-task
+code copied per the project rule, except `build_dsgc_cell` which is library-imported).
+
+#### NEURON Deployment on Vast.ai
+
+This subsection captures the implementation pattern for getting NEURON 8.2.7 + the t0076 MOD library
+running on a Vast.ai 64-core CPU node. **No prior task in this project has used Vast.ai**
+(`aggregate_machines` returns `total_machines: 0`); the patterns here are derived from the
+setup-remote-machine skill at `arf/skills/setup-remote-machine/SKILL.md` adapted from its
+GPU-focused defaults to CPU-only.
+
+##### `pyproject.toml` dependencies
+
+The project&#x27;s current `pyproject.toml:36-49` pins `openai&gt;=1.0`, `pydantic&gt;=2.0`, `pyyaml&gt;=6.0`,
+`tqdm&gt;=4.0`, `pymupdf&gt;=1.27.2.2`, `vastai&gt;=1.0.1`, `matplotlib&gt;=3.10.8`, `pandas&gt;=3.0.2`,
+`numpy&gt;=2.4.4`, `scipy&gt;=1.17.1`, `typst&gt;=0.14.8`. Three packages need to be added for t0076:
+
+* `neuron==8.2.7` — Linux cp312 wheel exists on PyPI; the local Windows install at
+  `C:\Users\md1avn\nrn-8.2.7` is NOT used on the remote.
+* `botorch&gt;=0.12` — multi-objective Bayesian optimisation; pulls in `gpytorch&gt;=1.13` and
+  `torch&gt;=2.4` transitively. Per task plan Risk #7, total install footprint is ~2 GB. The `torch`
+  dep can be CPU-only (`torch&gt;=2.4+cpu`) which roughly halves the install.
+* `pyarrow&gt;=15.0` — for `data/trial_history.parquet` (BoTorch trial history serialisation; Parquet
+  is faster than JSON for the 300-500 × 160 trials × 25 params × 2 metrics matrix).
+
+##### Vast.ai search query (CPU-only adaptation)
+
+The setup-remote-machine skill&#x27;s default `vastai search offers` query at SKILL.md:76-82 includes
+`num_gpus=1 gpu_ram&gt;=&lt;X&gt;` plus `compute_cap&lt;1200`. For t0076&#x27;s CPU-only workload, the adapted query
+is:
+
+```bash
+vastai search offers \
+  &#x27;num_gpus=0 cpu_cores&gt;=64 cpu_ram&gt;=64 disk_space&gt;=20 \
+  reliability&gt;0.98 rentable=true verified=true&#x27; \
+  --order &#x27;dph&#x27; --limit 20 --raw
+```
+
+Per task description Cost estimation, expected pricing is $0.20-$0.60/hr for a 64-core CPU node.
+Reliability threshold is `&gt;0.98` per the 1-5h estimated runtime tier (task description: 2.5-4h
+compute + 10-20 min provisioning + 5 min teardown).
+
+##### Vast.ai instance image
+
+The default GPU image `pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel` (SKILL.md:158) is wrong for this
+CPU workload. The recommended image is `python:3.12-bookworm` (~1.2 GB, includes pip and gcc), which
+gives the freedom to `pip install neuron==8.2.7` cleanly. Smaller alternatives like
+`python:3.12-slim` (60 MB) lack the C compiler that `nrnivmodl` needs to compile the t0076 MOD files
+on the remote.
+
+##### Remote setup sequence (one-shot tmux command)
+
+```bash
+### Inside tmux session &quot;work&quot; on the remote:
+apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+  build-essential libncurses5-dev libreadline-dev libxext-dev libxt-dev libxmu-dev mpich
+pip install --no-cache-dir uv
+uv venv --python 3.12 .venv
+source .venv/bin/activate
+uv pip sync requirements.txt    # rsync&#x27;d from local pyproject.toml export
+cd /root/code/mods &amp;&amp; nrnivmodl .   # compiles MODs into /root/code/mods/x86_64/
+cd /root &amp;&amp; python -u -m tasks.t0076_bedb_dsi_firing_rate_mobo.code.run_botorch \
+  --n-iterations 400 --workers 64 &gt; /root/output.log 2&gt;&amp;1
+echo DONE &gt;&gt; /root/output.log
+```
+
+The `nrnivmodl` step (line 7) compiles all 12 MOD files (5 from t0067 verbatim + 3 from t0074
+verbatim + 4 newly vendored) plus the `cadecay.mod` (already in t0024&#x27;s library sources, also copied
+into `code/mods/` to keep the t0076 build self-contained) into a single `code/mods/x86_64/special`
+Linux executable plus the equivalent `nrnmech.dll` (called `libnrnmech.so` on Linux). The MOD
+compilation takes ~30 s on a 64-core node.
+
+##### Smoke test for CPU-only NEURON
+
+The setup-remote-machine skill at SKILL.md:265 suggests
+`python -c &quot;import torch; print(torch.cuda.is_available())&quot;` as a smoke test — wrong for t0076. The
+CPU-only adapted smoke test is:
+
+```bash
+python -c &quot;from neuron import h; h.load_file(&#x27;stdrun.hoc&#x27;); s = h.Section(); s.insert(&#x27;hh&#x27;); print(&#x27;OK&#x27;, s.gnabar_hh)&quot;
+```
+
+If this prints `OK 0.12`, NEURON is installed and the built-in HH mechanism resolves. A second smoke
+test confirms the local MOD library:
+
+```bash
+cd /root/code/mods &amp;&amp; python -c &quot;from neuron import h; h.nrn_load_dll(&#x27;./x86_64/.libs/libnrnmech.so&#x27;); s = h.Section(); s.insert(&#x27;nav16t76&#x27;); print(&#x27;OK&#x27;)&quot;
+```
+
+##### Teardown — pulling results back
+
+Per the setup-remote-machine SKILL.md:354-357 protocol:
+
+```bash
+scp -r -P &lt;PORT&gt; -i ~/.ssh/id_ed25519 \
+  root@&lt;HOST&gt;:/root/data/ tasks/t0076_bedb_dsi_firing_rate_mobo/data/
+scp -r -P &lt;PORT&gt; -i ~/.ssh/id_ed25519 \
+  root@&lt;HOST&gt;:/root/results/ tasks/t0076_bedb_dsi_firing_rate_mobo/results/
+vastai destroy instance &lt;INSTANCE_ID&gt;
+```
+
+Expected return payload (per task description Cost estimation): ~50-200 MB of
+`data/trial_history.parquet` plus the 3-5 deep-dive `.npz` triples (~5 MB each = ~25 MB) plus the
+`results/images/*.png` (~10 MB). Total transfer ≤ 250 MB.
+
+#### Lessons Learned
+
+##### Cross-process NEURON state — &quot;user defined name already exists&quot; pitfall
+
+Both t0066 (`run_protocol.py:70-88`) and t0072 had to wrap `build_dsgc_cell` in an idempotent loader
+because calling NEURON&#x27;s `nrn_load_dll` twice in one process throws &quot;user defined name already
+exists: Exp2NMDA&quot;. This affected t0066 because its trial driver builds the cell ONCE and runs 120
+trials in the same process. **For t0076 the picture is different**: the BoTorch driver process never
+touches NEURON; only the `ProcessPoolExecutor` workers do, and each worker is its own process so
+NEURON loads cleanly on first `build_dsgc_cell()` call. The t0066 idempotent wrapper is not needed
+inside workers, but it MAY be needed if the driver process itself does a one-shot initial cell build
+for parameter validation before launching the BO loop (unlikely but possible — defer the decision to
+implementation).
+
+##### Single-DLL-per-task vs multi-DLL load — Bed A precedent vs Bed B
+
+t0067 [t0067] showed (`run_sweep.py:107-120`) that NEURON happily loads **two** DLLs as long as no
+SUFFIX collides — the t0067 DLL only contains the 5 new SUFFIXes (`nav16t67`, `napt67`, `nart67`,
+`kv3t67`, `kv4t67`), none of which collide with t0008&#x27;s `HHst`/`bipNMDA`/`SACinhib`/ `SACexc`. **For
+t0076 the analogous setup is**: t0024&#x27;s vendored DLL (containing `HHst`, `HHst_noiseless`,
+`cadecay`, `Exp2NMDA`) is loaded by `build_dsgc_cell` first; the t0076 local DLL (containing the 12
+new `t76`-namespace SUFFIXes plus a copy of `cadecay` — though the copy must NOT collide with the
+already-loaded `cad`, so the t0076 build must EXCLUDE `cadecay.mod` and rely on the t0024-loaded
+`cad`) is loaded second. This means **t0076 must NOT include `cadecay.mod` in its `code/mods/`
+folder** even though t0074 did include it — the difference is that t0074 forks Bed A&#x27;s HOC and
+replaces the t0008 `cad` mechanism, while t0076 uses Bed B unchanged and inherits t0024&#x27;s `cad`.
+**Implication for compile script**: the t0076 MOD pack is exactly 12 files, no `cadecay.mod`.
+
+##### `BoTorch` qNEHVI — known not-to-converge symptom and fallback
+
+Per `research_internet.md` and task description Risk #5 (DSI noise too large for the GP) and Risk #6
+(exponential placer too restrictive), the standard mitigation is doubling seeds-per- direction from
+20 to 40 (Risk #5) or extending the spatial rule with a quadratic term
+`ρ(d) = ρ_0 · exp(-d/λ) · (1 + α · d²)` (Risk #6). Neither has prior implementation in this project
+but both are linear additions on top of the parametric placer. Plan to monitor the hypervolume
+metric every 50 iterations and decide at iter 100 whether to invoke either mitigation.
+
+##### Copy-precedent for cross-task non-library code is firmly established
+
+`run_bed_b.py` [t0072] explicitly documents (lines 13-16): &quot;Helpers `_setup_synapses`,
+`SynapseBundle`, ... are COPIED verbatim from
+`tasks/t0024_port_de_rosenroll_2026_dsgc/code/ run_tuning_curve.py` (lines 52-232) per the project&#x27;s
+cross-task code-reuse rule (these are private helpers in t0024, not entry points of the registered
+`de_rosenroll_2026_dsgc` library asset).&quot; The same pattern applies to t0076. The &quot;COPIED verbatim
+from t0024 lines X-Y&quot; comment header is the project convention and should be followed.
+
+##### Bed B has a 1-trial wall time of ~3 s on the local workstation
+
+The t0066 sweep ran 120 trials in ~360 s (3 s/trial) per `tasks/t0066_*/results/results_summary.md`,
+matching the task description&#x27;s per-trial estimate of ~3 s. Confirms that 160 trials/iteration × 300
+iterations = 48,000 trials × 3 s = 40 hours **single-threaded**. Per task description this divides
+by 64 cores → ~30 s/iteration → ~2.5-4 h total. Validates the Vast.ai 64-core CPU node choice.
+
+#### Recommendations for This Task
+
+1. **Library-import `build_dsgc_cell` from `de_rosenroll_2026_dsgc` (t0024)**. Do NOT re-implement
+   cell construction; the registered library entry point is precisely the right interface.
+
+2. **Copy 5 t0067 MODs + 3 t0074 MODs + 4 newly-vendored MODs** into `code/mods/`. SUFFIX rename
+   `t67` → `t76` and `t74` → `t76` (per the project&#x27;s `tNN`-namespace convention). This means only
+   **4 truly new MODs** need to be sourced from `research_internet.md`&#x27;s recipe: `kdr76.mod` ←
+   Mainen ModelDB 2488 `kv.mod`, `iht76.mod` ← Hay 2011 `Ih.mod`, `calt76.mod` ← Hay 2011
+   `Ca_HVA.mod`, `catt76.mod` ← Hay 2011 `Ca_LVAst.mod`. Each gets a citation header per the t0067
+   convention. **Do NOT include `cadecay.mod`** — t0024&#x27;s `cad` is already loaded by
+   `build_dsgc_cell` and a duplicate would collide.
+
+3. **Copy the t0024 trial-driver helpers into `code/trial_helpers.py`** (the ~180-line block from
+   `run_tuning_curve.py:52-232` minus `_setup_synapses` which gets rewritten to use the new
+   parametric placer). Add the COPIED-verbatim comment header per t0072 precedent.
+
+4. **Copy the t0066 `CanonicalState`/`_apply_mode_overrides` pattern into
+   `code/apply_parameters.py`** (~80 lines) and adapt to write 25-d parameter overrides (12 channel
+   densities, 3 passive, 2 calcium, 2 weights) instead of the 3-mode overrides. Synapse counts and
+   spatial rule parameters are NOT runtime overrides on an existing bundle — they require rebuilding
+   the `SynapseBundle` from scratch via the parametric placer, so handle those separately.
+
+5. **Write the parametric synapse placer (`code/synapse_placer.py`) from scratch** — the only
+   genuinely new non-trivial code. Use `h.distance(cell.soma(0.5), sec(0.5))` per the t0050
+   precedent for path-distance computation. Sample positions weighted by
+   `ρ(d) = ρ_0 · exp(-d/λ) · L_section`. Test before wiring up BoTorch by visualising the placement
+   on an x-y scatter at 4 sample (ρ_0, λ) values.
+
+6. **Copy t0067 `_ensure_t67_dll_loaded` into `code/dll_loader.py`** (~14 lines), retarget to the
+   t0076 build path. Call inside each `ProcessPoolExecutor` worker after `build_dsgc_cell`.
+
+7. **Copy t0072 `_attach_bed_b_recorders` + `_save_one_type` + `_save_bed_b_direction` into
+   `code/recorder.py`** (~125 lines). Use unchanged for the 3-5 best-Pareto deep-dives.
+
+8. **Copy t0072 `render_pdf.py` verbatim** with `paths` import retargeted (64 lines).
+
+9. **Add `botorch&gt;=0.12`, `gpytorch&gt;=1.13`, `torch&gt;=2.4`, `pyarrow&gt;=15.0` to `pyproject.toml`**. The
+   CPU-only PyTorch variant (`torch&gt;=2.4+cpu`) is sufficient — qNEHVI does not need GPU.
+
+10. **For the Vast.ai setup, override the GPU defaults in setup-remote-machine SKILL.md**: use
+    `num_gpus=0 cpu_cores&gt;=64`, image `python:3.12-bookworm`, and the NEURON smoke test documented
+    in the &quot;NEURON Deployment on Vast.ai&quot; subsection. Provision **before** implementing the
+    `run_botorch.py` driver — the worker count and the `nrnivmodl` build path on the remote both
+    inform the driver&#x27;s hardcoded defaults.
+
+11. **Validate the MOD pack BEFORE the BoTorch loop**: per `research_internet.md` recommendation 5,
+    run a 1-channel current-step test on a single-section toy cell with each of the 4 newly-
+    vendored SUFFIXes to confirm `nrnivmodl` compiles and `insert(suffix)` resolves. If any fails,
+    fall back per the priority order: drop BK first, then CaT, then CaL (per the t0076 Risk #1
+    fallback). The 8-channel reduced set is `(Nav1.6, NaP, NaR, Kdr, Kv3, Kv4, KM, HCN, SK)` if BK
+    fails; smaller dimensions only mean a faster GP.
+
+12. **Adopt the t0072 `.npz` format for per-Pareto-cell trace dumps** so the existing `aggregate.py`
+    plotting infrastructure can be reused for the diagnostic figures.
+
+#### Task Index
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+* **Status**: completed
+* **Relevance**: Bed A substrate; deposited Poleg-Polsky 2016 DSGC. Listed as a t0076 dependency.
+  Bed B reuses Poleg-Polsky&#x27;s morphology principles, but the actual cell construction in t0076 goes
+  through Bed B (`build_dsgc_cell`), not Bed A (`build_dsgc`). Cited for completeness — Bed A is not
+  an active substrate for t0076.
+
+##### [t0019]
+
+* **Task ID**: `t0019_literature_survey_voltage_gated_channels`
+* **Name**: Literature survey: voltage-gated channels in retinal ganglion cells
+* **Status**: completed
+* **Relevance**: Source for V_half and τ literature priors used in the new MOD vendoring step. Cited
+  in `task.json` as a t0076 dependency.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port the de Rosenroll et al. 2026 DSGC into the project
+* **Status**: completed
+* **Relevance**: Bed B substrate. Provides the registered library `de_rosenroll_2026_dsgc` with
+  `build_dsgc_cell` entry point (the only library import t0076 uses), the `cadecay.mod` vendored at
+  `assets/library/.../sources/cadecay.mod`, and the trial-driver helpers in
+  `run_tuning_curve.py:52-321` that t0076 must copy into its own `code/`.
+
+##### [t0050]
+
+* **Task ID**: `t0050_audit_syn_distribution`
+* **Name**: Audit synapse-distribution discrepancies between deposited code and paper
+* **Status**: completed
+* **Relevance**: Provides the canonical `h.distance(soma_seg, target_seg)` two-segment path-distance
+  pattern at `extract_coordinates.py:172-202`, including the explicit assertion that
+  `h.distance(soma(0.5), soma(0.5)) ≈ 0`. Reused by the t0076 parametric synapse placer.
+
+##### [t0066]
+
+* **Task ID**: `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Name**: EPSP/IPSP/Vm protocol on the de Rosenroll DSGC
+* **Status**: completed
+* **Relevance**: Listed as a t0076 dependency. Provides the `CanonicalState` snapshot/restore
+  pattern at `run_protocol.py:117-194` plus the `_ensure_neuron_loaded` idempotent NEURON loader at
+  lines 70-88 that t0076 copies into its parameter-override module.
+
+##### [t0067]
+
+* **Task ID**: `t0067_t0065_soma_channel_addition_sweep`
+* **Name**: Soma channel addition sweep
+* **Status**: completed
+* **Relevance**: Listed as a t0076 dependency. Provides 5 vendored MOD files (Nav1.6, NaP, NaR, Kv3,
+  Kv4 with SUFFIXes `nav16t67`/`napt67`/`nart67`/`kv3t67`/`kv4t67`) at `code/mods/`, the
+  citation-header convention, and the `_ensure_t67_dll_loaded` idempotent DLL-loader pattern at
+  `run_sweep.py:107-120`.
+
+##### [t0070]
+
+* **Task ID**: `t0070_writeup_two_model_beds`
+* **Name**: Writeup of two standard DSGC model beds in HH-equation research-paper format
+* **Status**: completed
+* **Relevance**: Listed as a t0076 dependency. Provides the canonical writeup template for both
+  beds; t0076&#x27;s results PDF should follow the same Bed A vs Bed B presentation pattern.
+
+##### [t0072]
+
+* **Task ID**: `t0072_synaptic_traces_pd_nd`
+* **Name**: Plot synaptic conductances and currents for PD and ND on both model beds
+* **Status**: completed
+* **Relevance**: Listed as a t0076 dependency. Provides the `_attach_bed_b_recorders` per- synapse
+  `g`/`v_local` recorder at `run_bed_b.py:214-248`, the `BedBRecorders` dataclass and `.npz`
+  serialisation helpers at `run_bed_b.py:298-327` (~125 lines total), and the `render_pdf.py` Typst
+  pipeline (64 lines, copied verbatim).
+
+##### [t0074]
+
+* **Task ID**: `t0074_channel_tuning_width_bed_a`
+* **Name**: Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+* **Status**: completed
+* **Relevance**: NOT in t0076&#x27;s `task.json` dependency list, but a major non-obvious finding: the
+  BK, SK, and Kv7 (= KM) MODs that `research_internet.md` recommends sourcing from Hay 2011 / Mainen
+  1996 are ALREADY vendored here as `bk74.mod`, `sk74.mod`, `kv7t74.mod` with the exact same ModelDB
+  provenance. Copying these (with SUFFIX rename `t74` → `t76`) collapses t0076&#x27;s vendoring step from
+  7 new MODs to 4 new MODs.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning-curve scoring loss library
+* **Status**: completed
+* **Relevance**: Registered library `tuning_curve_loss`. Considered for the t0076 metric computation
+  but rejected — t0076 reports DSI + spike rate directly per (DSI, rate) Pareto point, not the t0012
+  envelope-fit weighted scalar loss. Library landscape entry only.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response-visualisation library (firing rate vs angle graphs)
+* **Status**: completed
+* **Relevance**: Registered library `tuning_curve_viz`. Operates on tuning-curve CSVs
+  (matplotlib-based polar/Cartesian plots). Considered for the Pareto-front deep-dive plots but
+  rejected — t0076&#x27;s deep-dive figures are 8-direction tuning curves per representative cell, which
+  the library can produce, but the new `plot_pareto.py` already needs to plot the Pareto front
+  itself (not a tuning curve), so adding `tuning_curve_viz` for the deep-dive panels would be an
+  additional dependency for marginal benefit. Library landscape entry only.
       </content>
     </section>
   </sections>
