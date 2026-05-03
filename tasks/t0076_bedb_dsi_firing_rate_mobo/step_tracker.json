@@ -77,9 +77,9 @@
       "step": 9,
       "name": "teardown",
       "description": "Rsync results back to local task folder, destroy Vast.ai instance, write costs.json (actual billed amount) + remote_machines_used.json (instance specs + timestamps).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-03T03:46:14Z",
-      "completed_at": null,
+      "completed_at": "2026-05-03T03:50:22Z",
       "log_file": "logs\\steps\\009_teardown/"
     },
     {
