@@ -1,0 +1,25 @@
+-rw-r--r-- 1 root root  13414 May  2 22:18 kv3t76.c
+-rw-r--r-- 1 root root  12224 May  2 22:18 kv3t76.o
+-rw-r--r-- 1 root root  14444 May  2 22:18 kv4t76.c
+-rw-r--r-- 1 root root  12824 May  2 22:18 kv4t76.o
+-rw-r--r-- 1 root root  14241 May  2 22:18 kv7t76.c
+-rw-r--r-- 1 root root  13440 May  2 22:18 kv7t76.o
+-rwxr-xr-x 1 root root 109168 May  2 22:23 libnrnmech.so
+-rw-r--r-- 1 root root   4123 May  2 22:23 makemod2c_inc
+-rw-r--r-- 1 root root   1403 May  2 22:23 mod_func.cpp
+-rw-r--r-- 1 root root   4032 May  2 22:23 mod_func.o
+-rw-r--r-- 1 root root  13371 May  2 22:18 napt76.c
+-rw-r--r-- 1 root root  12160 May  2 22:18 napt76.o
+-rw-r--r-- 1 root root  15549 May  2 22:18 nart76.c
+-rw-r--r-- 1 root root  14160 May  2 22:18 nart76.o
+-rw-r--r-- 1 root root  14740 May  2 22:18 nav16t76.c
+-rw-r--r-- 1 root root  13096 May  2 22:18 nav16t76.o
+-rw-r--r-- 1 root root  14926 May  2 22:18 skt76.c
+-rw-r--r-- 1 root root  13792 May  2 22:18 skt76.o
+-rwxr-xr-x 1 root root   4469 May  2 22:23 special
+-rwxr-xr-x 1 root root   4469 May  2 22:18 special.nrn
+[run_remote] launching mobo_loop in background; tail /root/mobo_loop.log
+[run_remote] PID=3034
+    PID TTY          TIME CMD
+   3034 ?        00:00:09 python
+[run_remote] First lines of log:

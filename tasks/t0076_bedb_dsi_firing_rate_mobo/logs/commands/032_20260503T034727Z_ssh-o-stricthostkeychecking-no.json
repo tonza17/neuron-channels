@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0076_bedb_dsi_firing_rate_mobo",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 33536 root@ssh7.vast.ai ps -p 3034 -o pid,cmd 2>/dev/null || echo PROCESS_GONE",
+  "exit_code": 0,
+  "duration_seconds": 3.819,
+  "started_at": "2026-05-03T03:47:27Z",
+  "completed_at": "2026-05-03T03:47:30Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0076_bedb_dsi_firing_rate_mobo",
+  "stdout_file": "032_20260503T034727Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "032_20260503T034727Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 2,
+  "truncated": false
+}

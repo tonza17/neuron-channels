@@ -1,0 +1,68 @@
+[
+  {
+    "provider": "vast.ai",
+    "instance_id": "36033536",
+    "offer_id": 35372365,
+    "search_criteria": {
+      "gpu_name": null,
+      "num_gpus": 0,
+      "min_gpu_ram": null,
+      "min_cpu_ram": 64.0,
+      "min_disk": 20.0,
+      "min_reliability": 0.98,
+      "extra_filters": "cpu_cores_effective>=64 dph<1.0"
+    },
+    "selected_offer": {
+      "offer_id": 35372365,
+      "gpu": "Quadro P4000",
+      "gpu_count": 3,
+      "gpu_ram_gb": 0.0,
+      "cpu_ram_gb": 96.5,
+      "disk_gb": 1437.0,
+      "price_per_hour": 0.1543,
+      "reliability": 0.9926,
+      "location": "California, US"
+    },
+    "selection_rationale": "CPU-only NEURON+BoTorch task (no GPU needed). Selected offer 35372365: Xeon E5-2686 v4 with 72 effective cores, 96.5 GB host RAM, $0.1543/hr in California (0.9926 reliability). 4h estimated runtime = $0.62 of CPU + $0.046 of disk = ~$0.67 total, well under the $5.00 task cap. Cheapest qualifying offer with cpu_cores_effective>=64 cpu_ram>=64 reliability>0.98 dph<1.0. The 3 idle Quadro P4000 GPUs are not used by this task; we pay for the host slice.",
+    "image": "python:3.12-bookworm",
+    "disk_gb": 25,
+    "label": "neuron-channels/t0076_bedb_dsi_firing_rate_mobo",
+    "ssh_host": "ssh7.vast.ai",
+    "ssh_port": 33536,
+    "gpu_verified": "N/A (CPU-only task)",
+    "cuda_version": "12.2 (driver present, GPUs unused)",
+    "created_at": "2026-05-02T21:19:50Z",
+    "ready_at": "2026-05-02T21:22:00Z",
+    "destroyed_at": "2026-05-03T03:48:01Z",
+    "total_duration_hours": 6.4697,
+    "total_cost_usd": 1.0583,
+    "search_started_at": "2026-05-02T21:16:43Z",
+    "total_provisioning_seconds": 317.0,
+    "failed_attempts": [],
+    "checkpoint_path": null,
+    "heartbeat_path": null,
+    "cpu_verification": {
+      "cpu_verified": true,
+      "nproc": 72,
+      "free_g_total_gb": 94,
+      "free_g_available_gb": 83,
+      "df_root_size": "25G",
+      "python_version": "3.12.13"
+    },
+    "environment_setup": {
+      "uv_version": "0.11.8",
+      "torch_version": "2.11.0+cu130",
+      "botorch_version": "0.17.2",
+      "gpytorch_version": "1.15.2",
+      "pyarrow_version": "24.0.0",
+      "neuron_version": "8.2.7 HEAD (34cf696c4) 2025-05-21",
+      "neuron_hh_smoke_test": "OK (gnabar_hh = 0.12)",
+      "nrnivmodl_smoke_test": "OK (compiled smoke.mod -> libnrnmech.so, loadable via h.nrn_load_dll)",
+      "nrnivmodl_path": "/root/neuron-channels/.venv/bin/nrnivmodl",
+      "repo_clone_path": "/root/neuron-channels",
+      "current_branch": "main",
+      "branch_checkout_pending": "task/t0076_bedb_dsi_firing_rate_mobo (will be checked out by implementation step after orchestrator pushes the branch)"
+    },
+    "ssh_notes": "Vast.ai SSH proxy auto-attaches a tmux session by default. Disabled for this instance via 'touch /root/.no_auto_tmux' so plain ssh -T works for stdin-piped commands. SCP works via 'ssh7.vast.ai:33536'. The implementation step can SSH directly with 'ssh -i ~/.ssh/id_ed25519 -p 33536 root@ssh7.vast.ai'."
+  }
+]

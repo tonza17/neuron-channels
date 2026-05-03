@@ -1,0 +1,22 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\pyro\ops\stats.py:527: SyntaxWarning: invalid escape sequence '\g'
+  we have :math:`ES^{*}(P,Q) \ge ES^{*}(Q,Q)` with equality holding if and only if :math:`P=Q`, i.e.
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\mobo_loop.py:83: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_new.cpp:256.)
+  return torch.tensor([lo, hi], dtype=torch.double)
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\botorch\models\utils\assorted.py:276: InputDataWarning: Data (input features) is not contained to the unit cube. Please consider min-max scaling the input data.
+  check_min_max_scaling(
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\botorch\models\utils\assorted.py:279: InputDataWarning: Data (outcome observations) is not standardized (std = tensor([0.], dtype=torch.float64), mean = tensor([0.], dtype=torch.float64)).Please consider scaling the input to zero mean and unit variance.
+  check_standardization(Y=train_Y, raise_on_fail=raise_on_fail)
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\botorch\acquisition\multi_objective\monte_carlo.py:321: NumericsWarning: qNoisyExpectedHypervolumeImprovement has known numerical issues that lead to suboptimal optimization performance. It is strongly recommended to simply replace
+
+	 qNoisyExpectedHypervolumeImprovement 	 --> 	 qLogNoisyExpectedHypervolumeImprovement
+
+instead, which fixes the issues and has the same API. See https://arxiv.org/abs/2310.20708 for details.
+  legacy_ei_numerics_warning(legacy_name=type(self).__name__)
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\botorch\models\utils\assorted.py:276: InputDataWarning: Data (input features) is not contained to the unit cube. Please consider min-max scaling the input data.
+  check_min_max_scaling(
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\.venv\Lib\site-packages\botorch\acquisition\multi_objective\monte_carlo.py:321: NumericsWarning: qNoisyExpectedHypervolumeImprovement has known numerical issues that lead to suboptimal optimization performance. It is strongly recommended to simply replace
+
+	 qNoisyExpectedHypervolumeImprovement 	 --> 	 qLogNoisyExpectedHypervolumeImprovement
+
+instead, which fixes the issues and has the same API. See https://arxiv.org/abs/2310.20708 for details.
+  legacy_ei_numerics_warning(legacy_name=type(self).__name__)

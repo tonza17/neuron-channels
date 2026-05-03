@@ -1,0 +1,14 @@
+    PID     ELAPSED %CPU CMD
+   3034       01:49 18.8 /root/neuron-channels/.venv/bin/python -u -m tasks.t0076_bedb_dsi_firing_rate_mobo.code.mobo_loop --n-iterations 400 --n-sobol 30 --n-seeds 20 --n-directions 8 --workers 64 --checkpoint-every 10
+---LOG (mobo_loop only)---
+  return torch.tensor([lo, hi], dtype=torch.double)
+[mobo_loop] N_PARAMS=25  bounds shape=(2, 25)
+[mobo_loop] n_sobol=30  n_iterations=400  n_seeds=20  n_dirs=8  workers=64
+[sobol 1/30]  DSI=+0.000  PD=  1.00 Hz  n_err=0  trial_t=41.5s  cost=$0.00
+[sobol 2/30]  DSI=+0.000  PD=  0.00 Hz  n_err=0  trial_t=49.1s  cost=$0.00
+---SIZE---
+390 /root/mobo_loop.log
+total 4
+drwxr-xr-x  3 root root   25 May  2 22:23 .
+drwxr-xr-x 12 root root 4096 May  2 22:23 ..
+drwxr-xr-x  2 root root    6 May  2 22:23 checkpoints

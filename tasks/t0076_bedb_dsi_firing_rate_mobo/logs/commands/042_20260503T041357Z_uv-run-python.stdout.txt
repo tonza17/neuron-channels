@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\task.json
+
+[33m[1mWARNINGS:[0m
+[33m  TF-W001 warning: short_description is 321 characters (maximum: 200)[0m
+[33m  TF-W002 warning: name is 87 characters (maximum: 80)[0m
+[33m  TF-W005 warning: expected_assets is empty (task produces no assets)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)

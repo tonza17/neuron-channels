@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\trial_driver.py", line 389, in <module>
+    res = evaluate_parameter_vector(
+        params=pv,
+    ...<2 lines>...
+        max_workers=args.max_workers,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\trial_driver.py", line 325, in evaluate_parameter_vector
+    cell, bundle = _worker_prepare(
+                   ~~~~~~~~~~~~~~~^
+        params=params,
+        ^^^^^^^^^^^^^^
+        placer_seed=placer_seed,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\trial_driver.py", line 107, in _worker_prepare
+    apply_parameter_vector(cell=cell, params=params)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\apply_params.py", line 69, in apply_parameter_vector
+    ensure_t76_dll_loaded(h=h)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\apply_params.py", line 32, in ensure_t76_dll_loaded
+    dll_path = str(resolve_t76_mod_library()).replace("\\", "/")
+                   ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\paths.py", line 35, in resolve_t76_mod_library
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: Compiled t0076 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0076_bedb_dsi_firing_rate_mobo\tasks\t0076_bedb_dsi_firing_rate_mobo\code\build\nrnmech.dll.

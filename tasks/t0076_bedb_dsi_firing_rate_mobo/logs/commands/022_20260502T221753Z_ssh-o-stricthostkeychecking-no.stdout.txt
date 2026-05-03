@@ -1,0 +1,10 @@
+ Downloaded setuptools
+      Built glite-arf @ file:///root/neuron-channels
+Prepared 2 packages in 2.39s
+Uninstalled 4 packages in 89ms
+Installed 2 packages in 91ms
+ - find-libpython==0.5.1
+ ~ glite-arf==0.1.0 (from file:///root/neuron-channels)
+ - neuron==8.2.7
+ - setuptools==82.0.1
+ + setuptools==81.0.0

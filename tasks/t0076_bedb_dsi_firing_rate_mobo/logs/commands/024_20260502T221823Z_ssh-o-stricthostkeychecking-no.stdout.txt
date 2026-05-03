@@ -1,0 +1,30 @@
+Thread Safe
+ -> [32mNMODL[0m .././nart76.mod
+ -> [32mNMODL[0m .././nav16t76.mod
+ -> [32mNMODL[0m .././skt76.mod
+Translating nart76.mod into /root/neuron-channels/tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/x86_64/nart76.c
+Translating nav16t76.mod into /root/neuron-channels/tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/x86_64/nav16t76.c
+Translating skt76.mod into /root/neuron-channels/tasks/t0076_bedb_dsi_firing_rate_mobo/code/mods/x86_64/skt76.c
+Thread Safe
+Thread Safe
+Thread Safe
+ -> [32mCompiling[0m bkt76.c
+ -> [32mCompiling[0m calt76.c
+ -> [32mCompiling[0m catt76.c
+ -> [32mCompiling[0m iht76.c
+ -> [32mCompiling[0m kdrt76.c
+ -> [32mCompiling[0m kv3t76.c
+ -> [32mCompiling[0m kv4t76.c
+ -> [32mCompiling[0m kv7t76.c
+ -> [32mCompiling[0m napt76.c
+ -> [32mCompiling[0m nart76.c
+ -> [32mCompiling[0m nav16t76.c
+ -> [32mCompiling[0m skt76.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+---
+total 112
+drwxr-xr-x 2 root root     27 May  2 22:18 .
+drwxr-xr-x 3 root root   4096 May  2 22:18 ..
+-rwxr-xr-x 1 root root 109168 May  2 22:18 libnrnmech.so

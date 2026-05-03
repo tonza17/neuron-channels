@@ -1,0 +1,21 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36033536",
+    "gpu": "Quadro-P4000",
+    "gpu_count": 3,
+    "ram_gb": 96,
+    "duration_hours": 6.4697,
+    "cost_usd": 1.0583,
+    "instance_id": "36033536",
+    "hourly_rate_usd": 0.16357,
+    "elapsed_hours": 6.4697,
+    "total_cost_usd": 1.0583,
+    "cpu_cores": 72,
+    "cpu_ram_gb": 96,
+    "image": "python:3.12-bookworm",
+    "region": "California, US",
+    "provisioned_at": "2026-05-02T21:19:50Z",
+    "destroyed_at": "2026-05-03T03:48:01Z"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "variants": [
+    {
+      "variant_id": "highest_dsi",
+      "label": "Pareto-optimal cell with highest DSI (iter 412)",
+      "dimensions": {
+        "pareto_pick": "highest_dsi",
+        "iteration": 412,
+        "pd_rate_hz": 0.4
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "second_highest_dsi",
+      "label": "Pareto cell with second-highest DSI (iter 276)",
+      "dimensions": {
+        "pareto_pick": "second_highest_dsi",
+        "iteration": 276,
+        "pd_rate_hz": 3.1
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9682539682539684
+      }
+    },
+    {
+      "variant_id": "joint_dsi_rate",
+      "label": "Pareto knee cell (best joint DSI + PD rate, iter 424)",
+      "dimensions": {
+        "pareto_pick": "joint_knee",
+        "iteration": 424,
+        "pd_rate_hz": 4.95
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4244604316546763
+      }
+    },
+    {
+      "variant_id": "moderate_rate_dsi",
+      "label": "Pareto cell at iter 288 (DSI 0.28, PD 7.15 Hz)",
+      "dimensions": {
+        "pareto_pick": "moderate_rate",
+        "iteration": 288,
+        "pd_rate_hz": 7.15
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.27678571428571436
+      }
+    },
+    {
+      "variant_id": "physiological_rate",
+      "label": "Pareto cell closest to physiological PD rate (iter 315)",
+      "dimensions": {
+        "pareto_pick": "physiological_rate",
+        "iteration": 315,
+        "pd_rate_hz": 26.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.06885919835560127
+      }
+    },
+    {
+      "variant_id": "highest_rate",
+      "label": "Pareto cell with highest PD firing rate (iter 319)",
+      "dimensions": {
+        "pareto_pick": "highest_rate",
+        "iteration": 319,
+        "pd_rate_hz": 127.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.002944062806673209
+      }
+    }
+  ]
+}

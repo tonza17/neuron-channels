@@ -1,0 +1,10 @@
+  File "/root/neuron-channels/tasks/t0076_bedb_dsi_firing_rate_mobo/code/trial_driver.py", line 88, in _worker_get_cell
+    _WORKER_CELL = build_dsgc_cell()
+  File "/root/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py", line 253, in build_dsgc_cell
+    h = load_neuron()
+  File "/root/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py", line 66, in load_neuron
+    _ensure_neuron_on_path()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py", line 43, in _ensure_neuron_on_path
+    raise RuntimeError(f"NEURONHOME not found at {neuron_home}. Set NEURONHOME env var.")
+RuntimeError: NEURONHOME not found at C:\Users\md1avn\nrn-8.2.7. Set NEURONHOME env var.
