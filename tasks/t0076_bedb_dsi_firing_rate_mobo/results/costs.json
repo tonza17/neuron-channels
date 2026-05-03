@@ -1,0 +1,14 @@
+{
+  "total_cost_usd": 1.0583,
+  "breakdown": {
+    "vast-ai-quadro-p4000": {
+      "description": "Vast.ai instance 36033536 (CPU-only host slice; 3x idle Quadro P4000 GPUs unused). Xeon E5-2686 v4, 72 cores, 96.5 GB RAM, California, US. Provisioned 2026-05-02T21:19:50Z, destroyed 2026-05-03T03:48:01Z. dph_total=$0.16357/hr x 6.4697 hr.",
+      "cost_usd": 1.0583
+    }
+  },
+  "services": {
+    "vast_ai": 1.0583
+  },
+  "budget_limit": 5.0,
+  "note": "Single Vast.ai instance ran provisioning, BoTorch MOBO loop (40 iterations, ~$0.81 per acq line), plot_pareto, deepdive analysis, and rsync. Final billed total = $1.0583 = 6.4697 hr * $0.16357/hr (slightly above the ~$0.93 pre-teardown estimate due to additional billing time during teardown). All 3 GPUs were idle throughout (CPU-only NEURON+BoTorch task)."
+}
