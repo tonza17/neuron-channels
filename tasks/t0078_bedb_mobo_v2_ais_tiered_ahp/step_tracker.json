@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for SK_E2 with extended Ca-binding implementations, qLogNEHVI BoTorch examples, AIS attachment NEURON patterns, and recent RGC tier-stratification literature.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-03T13:50:16Z",
-      "completed_at": null,
+      "completed_at": "2026-05-03T14:07:41Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
