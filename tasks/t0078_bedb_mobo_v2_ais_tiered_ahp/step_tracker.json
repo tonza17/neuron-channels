@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review papers in the corpus for AIS biology, RGC channel densities, slow Kv-AHP mechanisms.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-03T13:39:35Z",
-      "completed_at": null,
+      "completed_at": "2026-05-03T13:50:03Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
