@@ -1,0 +1,12 @@
+{
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "checked_at": "2026-05-03T13:37:46Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0024_port_de_rosenroll_2026_dsgc", "status": "completed", "satisfied": true},
+    {"task_id": "t0069_t0067_ais_localised_channel_sweep", "status": "completed", "satisfied": true},
+    {"task_id": "t0076_bedb_dsi_firing_rate_mobo", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}
