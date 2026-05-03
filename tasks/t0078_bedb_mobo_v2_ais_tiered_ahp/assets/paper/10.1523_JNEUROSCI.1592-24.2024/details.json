@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.1592-24.2024",
+  "doi": "10.1523/JNEUROSCI.1592-24.2024",
+  "title": "Differential Intrinsic Firing Properties in Sustained and Transient Mouse αRGCs Match Their Light Response Characteristics and Persist during Retinal Degeneration",
+  "url": "https://www.jneurosci.org/content/45/2/e1592242024",
+  "pdf_url": "https://europepmc.org/articles/PMC11714343?pdf=render",
+  "date_published": "2024-11-08",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Paul Werginz",
+      "country": "AT",
+      "institution": "Institute of Biomedical Electronics, TU Wien",
+      "orcid": "0000-0002-3441-3167"
+    },
+    {
+      "name": "Viktoria Király",
+      "country": "AT",
+      "institution": "Institute of Biomedical Electronics, TU Wien",
+      "orcid": null
+    },
+    {
+      "name": "Guenther Zeck",
+      "country": "AT",
+      "institution": "Institute of Biomedical Electronics, TU Wien",
+      "orcid": "0000-0003-3998-9883"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Institute of Biomedical Electronics, TU Wien",
+      "country": "AT"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "retinal-ganglion-cell",
+    "patch-clamp"
+  ],
+  "abstract": "Retinal ganglion cells (RGCs) are the neuronal connections between the eye and the brain conveying multiple features of the outside world through parallel pathways. While there is a large body of literature on how these pathways arise in the retinal network, the process of converting presynaptic inputs into RGC spiking output is little understood. In this study, we show substantial differences in the spike generator across three types of αRGCs in female and male mice, the αON sustained, αOFF sustained, and αOFF transient RGC. The differences in their intrinsic spiking responses match the differences in the light responses across RGC types. While sustained RGC types have spike generators that are able to generate sustained trains of action potentials at high rates, the transient RGC type fired shortest action potentials enabling it to fire high-frequency transient bursts. The observed differences were also present in late-stage photoreceptor-degenerated retina demonstrating long-term functional stability of RGC responses even when presynaptic circuitry is deteriorated for long periods of time. Our results demonstrate that intrinsic cell properties support the presynaptic retinal computation and are, once established, independent of them.",
+  "citation_key": "Werginz2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/werginz_2024_alpha-rgc-firing.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "date_added": "2026-05-03"
+}
