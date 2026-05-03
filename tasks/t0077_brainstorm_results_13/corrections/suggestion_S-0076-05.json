@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-04",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0076_bedb_dsi_firing_rate_mobo",
+  "target_kind": "suggestion",
+  "target_id": "S-0076-05",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0076-05 proposes adding a slow Kv-mediated AHP mechanism to Bed B and quantifying its effect on the firing-rate ceiling and DSI, to test whether a slow AHP opens a new DSI >= 0.4 + rate >= 30 Hz region by capping the iter-319 127.75 Hz over-firing observed in t0076. This is folded into t0078 as the slow-AHP optimisation parameter, implemented as SK_E2 with extended Ca-binding time (per researcher decision; smallest change, reuses Hay 2011 SK code path). t0078 inserts the slow AHP at soma + AIS only and treats its peak conductance (and possibly its time constant) as 1 - 2 free MOBO parameters under the same pass criterion. Rejecting as covered by t0078."
+}

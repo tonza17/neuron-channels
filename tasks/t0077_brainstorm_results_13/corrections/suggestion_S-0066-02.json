@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-16",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0066_t0024_epsp_ipsp_vm_protocol",
+  "target_kind": "suggestion",
+  "target_id": "S-0066-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0066-02 proposes applying the EPSP / IPSP / FULL protocol to the from-scratch DSGC family substrate (t0052 - t0059) to determine whether the family also has e_GABA = v_rest (explaining the binary regime) or e_GABA != v_rest (explaining a hyperpolarising-IPSP trap). The from-scratch family has been deprioritised. The EPSP / IPSP / FULL protocol has already produced the cross-bed comparison the project needs (t0065 on Bed A, t0066 on Bed B); a third application on the from-scratch substrate would not unblock any deposited-bed experiment. Rejecting as stale."
+}

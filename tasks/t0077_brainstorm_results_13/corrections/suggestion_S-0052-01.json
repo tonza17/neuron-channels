@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-06",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0052_minimal_dsgc_scalar_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0052-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0052-01 proposes an AMPA per-synapse conductance sweep on the t0052 minimal DSGC to close the 30-150x peak-rate gap. The from-scratch DSGC family (t0052 - t0059) has been pivoted away from in favour of the deposited Bed A (t0008 / t0020) and Bed B (t0024) substrates, where biological grounding is stronger and the recent project arc (t0067 - t0076) operates exclusively. The from-scratch family is stuck in a binary regime (single-spike trivial DSI or full-suppression zero DSI) and an AMPA conductance sweep at fixed scalar gabaMOD inhibition is unlikely to escape this trap. The AMPA / NMDA / GABA conductance question is being answered on Bed B inside t0078's bundled MOBO. Rejecting as stale relative to the project's current critical path."
+}

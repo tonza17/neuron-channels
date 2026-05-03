@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-01",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0076_bedb_dsi_firing_rate_mobo",
+  "target_kind": "suggestion",
+  "target_id": "S-0076-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0076-01 proposes tier-stratifying channel densities in a follow-up Bed B MOBO across soma / proximal / mid / terminal dendritic regions, expanding the input to ~40-50 d, to test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the t0076 25-d uniform-density search. This is folded into t0078 (bedb_mobo_v2_ais_tiered_ahp) as the 5-tier stratification (soma, proximal, mid, terminal, AIS) for Nav1.6 / Kv3 / NaP / BK / SK, expanding the parameter space to the same 40-50 d range. Rejecting as covered by t0078."
+}

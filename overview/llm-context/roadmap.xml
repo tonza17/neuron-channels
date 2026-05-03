@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-03T04:19:13Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-03T12:41:25Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>357416</char_count>
-    <byte_count>357801</byte_count>
-    <estimated_tokens>89354</estimated_tokens>
+    <char_count>355516</char_count>
+    <byte_count>355925</byte_count>
+    <estimated_tokens>88879</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -181,9 +181,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0073_brainstorm_results_12</id>
         <id>t0074_channel_tuning_width_bed_a</id>
         <id>t0076_bedb_dsi_firing_rate_mobo</id>
+        <id>t0077_brainstorm_results_13</id>
       </source_ids>
       <content>
-Completed tasks: 69
+Completed tasks: 70
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -598,6 +599,12 @@ ID: t0076_bedb_dsi_firing_rate_mobo
 Completed: 2026-05-03
 Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot; date_completed: &quot;2026-05-03&quot; status: &quot;complete&quot; --- Multi-Objective BO of Channels + Synapse Placement on Bed B Summary Ran a 25-parameter BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de Rosenroll 2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 total cell evaluations × 8 directions × 20 seeds = **68,800** NEURON simulations) on a Vast.ai 72-core CPU instance for **$1.0583**. Hypervolume climbed monotonically from **3.4083** (Sobol baseline) to **8.4129** (final, **+147%**), and...
+
+## Brainstorm results session 13
+ID: t0077_brainstorm_results_13
+Completed: 2026-05-03
+Short description: Thirteenth brainstorm: commission t0078 (Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP); reject 16 covered/stale suggestions; cancel t0045 (CoreNEURON benchmark superseded).
+Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strategic brainstorm, run on 2026-05-03 after t0074 (channel tuning-width sweep on Bed A) and t0076 (25-d Bed B BoTorch qNEHVI multi-objective Bayesian optimisation) both completed. The session is triggered by the t0076 headline negative result: the bare 25-d Bed B substrate cannot reach DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz simultaneously, with every Pareto cell trading off severely between the two objectives. The t0076 compare-literature analysis identified three architectural omissions that plausibly explain the trade-off: no AIS section, uniform-density channels, and absent slow-AHP machinery. Decision: commission a single bundled MOBO...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -606,8 +613,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_fi
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0045_coreneuron_vastai_speedup_benchmark</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
 Planned or active tasks: 4
@@ -776,103 +783,6 @@ paper.
 * Skip `compare-literature` (no quantitative results).
 * Run paper asset verificator on each downloaded paper before committing.
 
-## CoreNEURON Vast.ai RTX 4090 speedup benchmark
-ID: t0045_coreneuron_vastai_speedup_benchmark
-Status: not_started
-Effective date: 2026-04-24
-Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
-#### Source Suggestion
-
-S-0033-01 (CoreNEURON Vast.ai RTX 4090 benchmark to validate or replace the assumed 5x speedup in
-the t0033 cost model).
-
-#### Motivation
-
-The t0033 planning task estimated a $50.54 central Vast.ai budget for the future joint DSGC
-morphology + top-10 VGC DSI-maximisation optimiser. That estimate rests on an unvalidated
-CoreNEURON-on-GPU-over-stock-CPU-NEURON speedup factor of 5x (91 s deterministic sim on RTX 4090 vs
-456 s on single CPU core). The corpus documents Hines 1997 O(N) cable-solver scaling but predates
-GPU NEURON variants, so the 5x figure is a literature-less guess that drives the largest
-sensitivity-band column ($23–$119 under 0.5x–2x perturbations).
-
-Brainstorm session 8 (t0040) considered offloading t0041–t0044 to Vast.ai to cut wall-clock, and
-rejected that plan because the per-task compute is small and the 5x speedup is unvalidated. This
-task directly addresses the validation gap: run a short, well-scoped Vast.ai experiment that
-replaces the 5x assumption with a measured value and tightens (or widens) the $23–$119 sensitivity
-band before the joint optimiser is commissioned.
-
-This also exercises the project&#x27;s Vast.ai provisioning workflow for the first time (total project
-spend to date: $0.00 / $1.00), surfacing any setup issues before the far more expensive t0033
-optimiser run.
-
-#### Objective
-
-Provision one Vast.ai RTX 4090 instance under the existing `setup-remote-machine` filters. Build
-CoreNEURON against NEURON 8.2.7 with OpenACC / CUDA. Run the t0022 deterministic 12-angle x 10-trial
-protocol (same sim used in t0022 baseline) under:
-
-1. Stock NEURON on CPU (single core).
-2. CoreNEURON on GPU (RTX 4090).
-
-Report wall-clock per sim, throughput (sims/hour), measured speedup factor, cost per sim in USD at
-RTX 4090 Vast.ai rate, and a recommended replacement value for t0033&#x27;s 5x assumption. Produce one
-answer asset capturing the measured speedup and its implications for the t0033 cost envelope.
-
-#### Scope
-
-* One Vast.ai RTX 4090 instance. Estimated wall-clock 1–3 h; estimated cost $2–5 at $0.50/h.
-* Use t0022&#x27;s `trial_runner` unchanged; do not modify biophysics or protocol.
-* Match stock-NEURON and CoreNEURON runs trial-for-trial for apples-to-apples comparison.
-* Record provisioning time and setup friction separately so the t0033 plan can budget for it.
-
-#### Out of Scope
-
-* Multi-GPU scaling (t0033 assumes single-GPU).
-* A100 / H100 benchmarks (cost column in t0033 already recomputes from measured RTX 4090 speedup).
-* CPU-96 many-core benchmark (t0033 already recommends ignoring that column).
-* Any morphology or channel modifications (pure runtime benchmark).
-
-#### Deliverables
-
-* `assets/answer/coreneuron-rtx4090-speedup-vs-stock-neuron/` — full answer asset with measured
-  speedup, per-sim cost, and recommended t0033 budget update.
-* `results/results_summary.md` and `results/results_detailed.md` with Methodology, Metrics,
-  Comparison vs Baselines (5x assumption), and Next Steps.
-* `results/metrics.json` with: `stock_neuron_s_per_sim`, `coreneuron_s_per_sim`, `speedup_factor`,
-  `coreneuron_usd_per_sim`, `provisioning_minutes`, `setup_minutes`.
-* `results/compare_literature.md` comparing the measured speedup to Hines 1997 cable-solver scaling
-  expectations and any CoreNEURON GPU benchmarks found in the corpus.
-* `results/suggestions.json` with at minimum a follow-up proposing a correction to t0033&#x27;s answer
-  asset if the measured speedup differs from 5x by more than 20%.
-* `results/costs.json` and `results/remote_machines_used.json` with the full Vast.ai provisioning
-  record.
-
-#### Anticipated Risks
-
-* **Vast.ai provisioning may fail or block on verification**: the project has never provisioned a
-  Vast.ai instance; the `setup-remote-machine` skill may hit unexpected friction. Budget extra time
-  for first-run troubleshooting and record every setup step for future tasks.
-* **CoreNEURON build may require NEURON 8.2.7 patch or a newer version**: if CoreNEURON does not
-  build cleanly against the project&#x27;s NEURON version, document the workaround or flag the task as
-  intervention_blocked rather than silently bumping the NEURON version.
-* **Deterministic-reproducibility caveat**: stock NEURON on CPU and CoreNEURON on GPU may not
-  produce bit-identical spike trains due to floating-point ordering differences; report the
-  max-spike-time-deviation and any DSI delta explicitly so the t0033 optimiser knows whether GPU and
-  CPU runs are substitutable.
-* **Cost overrun**: hard-cap the instance runtime at 3 hours. If the benchmark cannot finish within
-  the cap, post-mortem the provisioning and setup overhead and re-scope before a second attempt.
-
-#### Verification Criteria
-
-* `measured_speedup_factor` is reported with both mean and 95% CI.
-* `coreneuron_usd_per_sim` is reported at the actual Vast.ai instance rate at runtime (not the
-  snapshot rate from t0033).
-* At least one answer asset is produced per the answer specification.
-* If the measured speedup differs from 5x by more than 20%, a correction-proposal suggestion is
-  filed in `results/suggestions.json` against t0033&#x27;s answer asset.
-
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep
 Status: not_started
@@ -1030,6 +940,280 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
+
+## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
+ID: t0078_bedb_mobo_v2_ais_tiered_ahp
+Status: not_started
+Effective date: unknown
+Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo
+
+#### Motivation
+
+t0076 ran a 25-d BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de Rosenroll
+2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and
+preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 cell evaluations,
+68,800 NEURON simulations). The headline finding is a **smooth monotone trade-off** on the Pareto
+front spanning DSI in [0.003, 1.0] and PD rate in [0.4, 127.75 Hz], with **no operating point
+satisfying DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz** simultaneously. Every Pareto cell with DSI &gt;= 0.4 has
+PD rate &lt;= 5.0 Hz; every cell with PD rate &gt;= 30 Hz has DSI &lt;= 0.07. The matched cell at iter 424
+(DSI 0.42, PD rate 4.95 Hz) reproduces the published deRosenroll2026 baseline (DSI 0.39) within
++0.03, validating the substrate.
+
+The t0076 compare-literature analysis identifies **three architectural omissions** that plausibly
+explain the trade-off:
+
+1. **No AIS section**. Real RGCs initiate spikes at the AIS, where Nav density is ~7x soma per Kole
+   2008 / Van Wart 2007. Bed B applies all sodium uniformly to the soma + 350 dendrites; the
+   high-rate Pareto extremes (iter 319, 127.75 Hz, DSI 0.003) reflect saturated dendritic spiking
+   without a directional gate.
+2. **Uniform-density channels**. Real RGCs have graded Ih / Kv / Nav distributions across soma and
+   dendritic tiers. The 25-d t0076 search collapses each channel to a single density applied
+   everywhere, which cannot exploit the tier-specific gradients that biological cells use to compute
+   direction.
+3. **Absent slow-AHP machinery**. The t0076 high-rate Pareto extreme (iter 319, 127.75 Hz) exceeds
+   biologically plausible mean PD rates (30 - 80 Hz per Trenholm / Borst literature) precisely
+   because Bed B lacks slow Ca-activated K+ adaptation. The vendored SK and BK mechanisms (from Hay
+   2011 / Khaliq 2003 cortical / Purkinje sources) and the single-shell `cad` Ca pool (taur 5 ms)
+   collectively fail to cap firing on the timescale real RGCs use.
+
+This task closes all three architectural gaps in a single bundled MOBO run, plus folds in the three
+implementation defects identified during the t0076 retrospective so the new BO loop runs on a clean
+stack.
+
+The goal is binary: locate at least one Pareto cell with **DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz** on the
+augmented Bed B substrate, OR rule out the joint operating point even with AIS + tier-stratification
++ slow AHP. Either outcome is a strong project result. A success would establish the AIS-augmented
+  Bed B as the project&#x27;s standard substrate for further joint-optimisation work; a clean negative
+  result would clarify that dendritic-spike machinery is the remaining missing ingredient,
+  redirecting the project toward dendritic-spike modelling.
+
+This task addresses RQ1 (somatic + AIS VGC combinations for DSI / firing rate trade-off), RQ3 (AMPA
+/ GABA ratio and spatial distribution effects), and RQ4 (active vs passive components, now with AIS
+active). Source suggestion: **S-0076-02** (primary). Also covers: S-0076-01 (tier-stratified channel
+densities), S-0076-03 (qLogNEHVI / GP-normalise / NEURON re-init fixes), S-0076-05 (slow Kv-mediated
+AHP via SK_E2), S-0024-03 (Van Wart + Werginz AIS overlay on the deRosenroll morphology as a new
+library asset).
+
+#### Scope
+
+##### Substrate: AIS-augmented Bed B
+
+Build a new library asset by forking the de Rosenroll 2026 DSGC builder from t0024 and attaching a
+two-subsegment AIS at the soma:
+
+* **AIS geometry priors (Van Wart 2007 / Werginz 2020 / Kole 2008)**:
+  * AIS length 25 - 50 um (default 30 um)
+  * AIS diameter ~0.8 um
+  * Two subsegments: proximal (Nav1.2 + Nav1.1) and distal (Nav1.6 + Kv1.2)
+  * AIS-to-soma Na ratio ~7x (the strongest single Kole 2008 prior)
+* **AIS channel set**: HHst basal Na+K, Nav1.6, Kv3, Kv7. NaP, BK, SK explicitly excluded from the
+  AIS section (biologically not at AIS in RGCs).
+* **AIS attachment code**: lift the architecture from t0069 (which built a virtual AIS on Bed A);
+  port the segment-count rule (`d_lambda = 0.1` at 100 Hz) and the section-naming convention.
+
+##### Slow Kv-AHP mechanism
+
+* **Implementation**: SK_E2 with **extended Ca-binding time constant** (per researcher decision —
+  smallest change, reuses the Hay 2011 SK code path that t0074 already vendored). Add an
+  `extended_tau_ca` parameter to the SK_E2 MOD that lengthens the Ca-binding kinetics by a factor
+  configurable per simulation (treat the multiplier as a free MOBO parameter).
+* **Insertion sites**: soma + AIS only. Not all dendrites — the Hu 2007 / Shah 2008 literature and
+  the t0074 result both put SK / KAHP machinery at soma + AIS-adjacent compartments rather than
+  distal dendrites.
+
+##### Tier-stratified channel densities
+
+Stratify a subset of channels (those where the literature predicts strong gradients) across 5 region
+tiers; keep other channels uniform:
+
+* **Stratified channels** (5 channels x 5 tiers = 25 density parameters):
+  * Nav1.6 — soma, proximal-dendrite, mid-dendrite, terminal-dendrite, AIS
+  * Kv3 — same 5 tiers
+  * NaP — same 5 tiers (NaP at AIS is controversial; allow the optimiser to drive it to zero)
+  * BK — same 5 tiers
+  * SK — same 5 tiers (orthogonal to the slow-Kv-AHP SK_E2 mechanism, which has its own peak
+    conductance + tau multiplier parameters)
+* **Uniform channels** (kept as in t0076): the remaining channels in the t0076 12-channel set (~7
+  channels, ~7 density parameters).
+* **Slow Kv-AHP** (SK_E2 with extended Ca-binding): peak conductance + Ca-binding multiplier (2
+  parameters; insertion at soma + AIS only).
+* **Synaptic placement parameters** (kept as in t0076): ~13 parameters covering AMPA / NMDA / GABA
+  spatial distribution, density ratios, and per-synapse drive scaling.
+
+**Total parameter dimensionality**: ~25 + ~7 + 2 + ~13 = **~47 d**. This sits in the 40 - 50 d band
+agreed with the researcher.
+
+##### Optimiser
+
+* **Acquisition**: `qLogNEHVI` (migrating off the deprecated `qNoisyExpectedHypervolumeImprovement`
+  used in t0076). Numerically stabler than qNEHVI on high-dimensional inputs.
+* **Input transform**: wrap GP inputs in a `Normalize` transform on `[0, 1]^d`. t0076 passed
+  natural-units bounds directly to the GP and BoTorch warned the fit was suboptimal.
+* **DoE**: Sobol initial design of 50 - 100 cells (larger than t0076&#x27;s 30 to compensate for the
+  larger input dimensionality). **Fresh restart** — no warm start from the t0076 12-cell Pareto
+  front, per researcher decision.
+* **Total budget**: 600 - 800 acquisition iterations after the Sobol DoE.
+* **NEURON re-init fix**: launch a fresh subprocess per cell evaluation in a `ProcessPoolExecutor`
+  worker, bypassing the `Exp2NMDA name already exists` non-idempotent loader bug. This was
+  identified as a bug in t0076 where `plot_pareto.py` called `build_dsgc_cell()` multiple times in
+  one Python process and only 1 of 3 deep-dive PNGs was produced.
+
+##### Stimulus protocol
+
+* Same as t0076: 8-direction bar at 1 mm/s width 250 um with 20 seeds per direction. Per-trial
+  trial_length 1400 ms (matches the standard mode trio EPSP_PASSIVE / IPSP_PASSIVE / FULL).
+* Trial mode: FULL (HH on for Vm / firing rate / DSI per the project&#x27;s measurement protocol).
+
+##### Width metrics (cross-comparable with t0076 + t0074)
+
+For each cell, compute:
+
+* `direction_selectivity_index` (registered metric)
+* PD firing rate (Hz)
+* `tuning_curve_hwhm_deg`
+* `tuning_curve_reliability`
+* `tuning_curve_rmse` vs the t0004 cosine target
+
+##### Outputs
+
+* **Library asset**: `de_rosenroll_2026_dsgc_ais` (or similar) — Bed B + AIS variant of the de
+  Rosenroll cell builder, with the AIS channel set wired in. Reusable by future tasks that need a
+  working AIS-augmented Bed B substrate.
+* **Pareto front**: list of non-dominated (DSI, PD rate) cells across the entire BO trajectory.
+* **Hypervolume trajectory** plot showing convergence vs the t0076 final HV of 8.4129 (sanity check
+  on the ablation).
+* **Per-axis sensitivity plots**: marginal effect of each tier-stratified channel density on DSI and
+  PD rate at the Pareto-best operating point.
+* **Compare-literature deep-dive** comparing the AIS-augmented Bed B Pareto front to the t0076
+  uniform-density front, plus to the published mouse / rabbit DSI + firing-rate values (Sivyer2010,
+  PolegPolsky2016, Oesch2005, deRosenroll2026, Park2014).
+* `results/metrics.json` with per-cell registered project metrics.
+* `results/costs.json` with full Vast.ai cost breakdown.
+* `results/remote_machines_used.json` with the Vast.ai instance metadata.
+
+#### Approach
+
+1. **Build AIS-augmented Bed B library asset**: fork t0024&#x27;s de_rosenroll_2026_dsgc cell builder;
+   import the AIS-attachment architecture from t0069&#x27;s Bed A AIS code; wire in HHst, Nav1.6, Kv3,
+   Kv7 on the AIS section with the Van Wart 2007 priors; register as a new library asset.
+2. **Vendor SK_E2-with-extended-Ca-binding**: clone the t0074-vendored SK_E2 MOD; add a
+   `tau_ca_multiplier` parameter that scales the Ca-binding rate constants; sanity-check at
+   multiplier = 1 reproduces the t0074 SK behaviour exactly.
+3. **Define the 47-d parameter space**: parameter ranges for each of the 25 tier-stratified channel
+   densities, 7 uniform channel densities, 2 slow-Kv-AHP parameters, 13 synaptic placement
+   parameters. Use t0076 ranges for the uniform-density channels and the synaptic parameters; use
+   biologically informed priors for the AIS-tier ranges (e.g., Nav1.6_AIS in [0.0, 1.0] S/cm^2 to
+   span the Kole 2008 AIS prior).
+4. **Migrate the BoTorch loop to qLogNEHVI**: replace `qNoisyExpectedHypervolumeImprovement` with
+   `qLogNoisyExpectedHypervolumeImprovement`; wrap inputs in `Normalize`; verify GP fit messages are
+   warning-free.
+5. **Fix the NEURON re-init bug**: launch each cell evaluation in a fresh subprocess (already the
+   default for the trial-driver; ensure `plot_pareto.py` and other deep-dive scripts also use
+   subprocess-per-deep-dive).
+6. **Run the BO loop**: provision a Vast.ai 72-core CPU instance similar to the t0076 instance; run
+   50 - 100 Sobol DoE cells, then 600 - 800 qLogNEHVI iterations. Total ~650 - 900 cell evaluations
+   x 8 dirs x 20 seeds = 104,000 - 144,000 NEURON simulations; ~9 - 12 h wall-clock.
+7. **Generate the Pareto front and hypervolume trajectory**: use the same scripts as t0076 with the
+   subprocess-per-deep-dive fix.
+8. **Generate per-axis sensitivity plots and compare-literature**: identify the Pareto-best joint
+   operating point (max DSI s.t. PD rate &gt;= 30 Hz, or max PD rate s.t. DSI &gt;= 0.4); for each
+   tier-stratified channel, plot DSI / rate / HWHM as a function of that channel&#x27;s density at the
+   best-joint values of all other parameters.
+9. **Validate against the t0076 Pareto front**: confirm hypervolume monotonically increases over the
+   t0076 final HV of 8.4129 by the end of the run; if not, the new architecture has not improved on
+   the bare 25-d substrate and the negative result is reported with that diagnostic.
+
+#### Pass Criteria
+
+**Primary (binary)**: locate at least one Pareto cell with **DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz**, OR
+rule it out by demonstrating the Pareto front converges with no such cell after &gt;= 600 acquisition
+iterations and HV &gt;= 1.5x the t0076 final HV.
+
+**Secondary**:
+
+* All cell evaluations complete with `is_unstable = False` (peak Vm in [-80, +60] mV at every
+  trial).
+* Hypervolume monotonically increases from the Sobol baseline through the qLogNEHVI iterations.
+* The matched cell at the Pareto-best joint operating point reproduces the t0076 best-joint cell
+  (iter 424 DSI 0.42 PD rate 4.95 Hz) within +/-0.05 DSI and +/-1 Hz at matching parameter values
+  — a sanity check that the new AIS / slow-AHP / tier-stratification machinery does not regress on
+  the t0076 baseline at trivial parameter settings.
+* `verify_machines_destroyed` passes after the Vast.ai instance teardown.
+* `verify_pr_premerge` passes with 0 errors.
+
+#### Compute Estimate
+
+Extrapolating from the t0076 measurement ($1.0583 over 6.4697 h on Vast.ai 72-core CPU for 430 cells
+x 8 dirs x 20 seeds = 68,800 NEURON simulations at 25 d):
+
+* New cell count: 650 - 900 cells (50 - 100 Sobol + 600 - 800 qLogNEHVI).
+* New trial count: 104,000 - 144,000 NEURON simulations.
+* Per-trial wall-clock: similar to t0076 (~3.4 s per trial including AIS overhead, ~10% slower than
+  t0076&#x27;s ~3.1 s).
+* Total NEURON wall-clock: 104,000 - 144,000 trials / 72 cores * 3.4 s/trial ~= 4900 - 6800 s of
+  per-core trial time, parallelised across 72 cores ~= 9.7 - 13.6 h.
+* Total Vast.ai cost at $0.16357 /hr (t0076 instance type): **$1.59 - $2.22**.
+* Add 20% contingency for BoTorch acquisition computation time on the larger input dimensionality
+  and for any retry / restart overhead: **$1.91 - $2.66**.
+* Round up to budget cap: **$3.50** (well within the $8.94 remaining project budget).
+
+#### Dependencies
+
+* `t0024_port_de_rosenroll_2026_dsgc` — Bed B substrate (de_rosenroll_2026_dsgc library asset; the
+  cell builder that this task forks).
+* `t0069_t0067_ais_localised_channel_sweep` — Bed A AIS attachment architecture and segment-count
+  conventions.
+* `t0076_bedb_dsi_firing_rate_mobo` — BoTorch MOBO harness, ProcessPoolExecutor trial driver,
+  Vast.ai provisioning scripts.
+
+#### Remote Machines
+
+One Vast.ai 72-core CPU instance (matching t0076&#x27;s instance type: Xeon E5-2686 v4 or similar at
+~$0.16 /hr) for ~9 - 12 h of BO loop wall-clock plus ~30 min provisioning + ~30 min teardown +
+deep-dive plotting.
+
+#### Risks and Fallbacks
+
+* **AIS section adds significant per-trial wall-clock overhead**: mitigation via NEURON&#x27;s
+  `lambda_f`-based segment-count rule (`d_lambda = 0.1` at 100 Hz) — discretise the AIS just
+  enough to capture spike initiation without inflating compartment count beyond ~5 - 10 segments. If
+  wall-clock grows by more than 25%, reduce DoE size from 100 to 50 and target 600 acquisition
+  iterations.
+* **GP fit becomes unstable on 47 d**: BoTorch qLogNEHVI is more numerically stable than qNEHVI on
+  high dimensions. If the GP fit still warns or fails, drop the per-tier stratification on channels
+  with weak literature gradients (NaP, BK) — keeping only Nav1.6, Kv3, SK stratified brings the
+  count to ~35 d, restoring t0076-like behaviour.
+* **No DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz Pareto cell found**: this is a clean negative result. The
+  task records the result, generates a compare-literature deep-dive identifying which architectural
+  ingredient (AIS / tier-stratification / slow Kv-AHP) was insufficient, and proposes
+  dendritic-spike machinery as the next architectural extension for a follow-up task.
+* **NEURON `Exp2NMDA name already exists` re-init bug returns**: ensure subprocess-per-deep-dive is
+  in place for plot_pareto.py and any post-hoc scripts that re-instantiate the cell. Verify by
+  running plot_pareto.py at &gt;= 3 deep-dive cells and confirming all PNGs are produced.
+* **Vast.ai instance availability or pricing shifts**: fall back to a different 72-core CPU instance
+  type at &lt;= $0.20 /hr; if no comparable instance is available, run on local CPU at reduced
+  iteration count (300 acquisitions) and report the partial result with the truncation documented.
+* **AIS Nav1.6 density priors do not match Kole 2008 in any Pareto cell**: report the optimiser&#x27;s
+  preferred density range; flag cells where AIS Nav1.6 falls outside [0.25, 0.5] S/cm^2 (the Kole
+  2008 prior) as biologically marginal in compare-literature; do not constrain the search space to
+  the prior, since one of the questions is whether biologically plausible densities reach the joint
+  operating point.
+
+#### Out of Scope
+
+* **Bed A** — t0078 is Bed B only. The t0075 task (still not_started at the time of t0077) covers
+  the equivalent AIS extension on Bed A under one-axis-at-a-time sensitivity analysis.
+* **Joint optimisation of synaptic mechanism types** — t0078 keeps the deRosenroll 2026 synaptic
+  protocol fixed (correlated SAC release model); only the synaptic placement parameters are free.
+* **Dendritic-spike machinery (Nav1.2 / Nav1.6 / NaP on dendrites at high density)** — the
+  tier-stratified Nav1.6 and NaP densities are free, but no explicit &quot;dendritic-spike enabling&quot; code
+  path is added. If the negative result indicates dendritic spikes are required, that architectural
+  extension is the natural follow-up.
+* **t0076 contradiction-test isolation experiment (S-0076-04)** — the contradiction between t0068
+  (Nav1.6 + Kv3 jointly rescues DSI + rate on Bed A) and t0076 (no such cell on Bed B 25-d) is not
+  directly tested here; t0078&#x27;s tier-stratified search may or may not reveal a Bed B Nav1.6 + Kv3
+  rescue, but that is an emergent finding rather than the task&#x27;s primary goal.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1228,28 +1412,14 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0047-01</id>
         <id>S-0047-02</id>
         <id>S-0049-01</id>
-        <id>S-0052-01</id>
-        <id>S-0052-02</id>
         <id>S-0053-01</id>
         <id>S-0054-01</id>
-        <id>S-0054-02</id>
-        <id>S-0055-02</id>
-        <id>S-0055-03</id>
-        <id>S-0057-06</id>
-        <id>S-0059-01</id>
-        <id>S-0059-02</id>
-        <id>S-0059-03</id>
-        <id>S-0065-02</id>
-        <id>S-0066-02</id>
         <id>S-0067-01</id>
         <id>S-0067-02</id>
         <id>S-0070-01</id>
         <id>S-0074-01</id>
         <id>S-0074-02</id>
         <id>S-0074-03</id>
-        <id>S-0076-01</id>
-        <id>S-0076-02</id>
-        <id>S-0076-03</id>
         <id>S-0076-04</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
@@ -1321,7 +1491,6 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0022-07</id>
         <id>S-0024-01</id>
         <id>S-0024-02</id>
-        <id>S-0024-03</id>
         <id>S-0024-04</id>
         <id>S-0024-06</id>
         <id>S-0026-01</id>
@@ -1433,7 +1602,6 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0074-06</id>
         <id>S-0074-07</id>
         <id>S-0074-08</id>
-        <id>S-0076-05</id>
         <id>S-0076-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
@@ -1474,7 +1642,7 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>S-0074-10</id>
       </source_ids>
       <content>
-Open suggestions: 267
+Open suggestions: 251
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -1637,20 +1805,6 @@ Kind: evaluation
 Source task: t0049_seclamp_cond_remeasure
 Under SEClamp at -65 mV, the deposited code&#x27;s GABA shows PD/ND symmetry (47.47 vs 48.04 nS, DSI -0.006) instead of the paper&#x27;s clear ND-bias (12.5 vs 30 nS, DSI -0.41). NMDA also collapses to symmetry (DSI 0.006 vs paper +0.17). Modality alone does not reconcile this. Audit `placeBIP()` and any GABA-placement HOC code in the deposited DSGC: extract per-synapse 3D coordinates and section assignments, classify each synapse by PD-side vs ND-side dendrite, and compare the distribution against paper text and figure descriptions. This explains the somatic asymmetry collapse and informs whether the deposited model needs a spatial redistribution correction or a per-side conductance scaling...
 
-## AMPA per-synapse conductance sweep on t0052 minimal DSGC to close the 30-150x peak-rate gap
-ID: S-0052-01
-Priority: high
-Kind: experiment
-Source task: t0052_minimal_dsgc_scalar_gaba
-t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 target (30 Hz) and 30-150x below the in vivo / in vitro DSGC range (30-100 Hz, Park2014 / PolegPolsky2016). The current AMPA conductance is 0.5 nS x 100 synapses (AMPA-only by design) and the cell is locked in a single-spike-per-trial regime that makes DSI = 1.0 trivially. Sweep the per-synapse AMPA peak conductance over {0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0} nS at fixed synapse count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and report peak Hz, vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters the 30-100 Hz band and the cell leaves the binary...
-
-## GABA-synapse-count sweep on t0052 to characterise driving-force saturation of scalar gabaMOD IPSPs
-ID: S-0052-02
-Priority: high
-Kind: experiment
-Source task: t0052_minimal_dsgc_scalar_gaba
-The headline secondary finding of t0052 is that the somatic IPSP voltage ratio (1.54x) substantially under-predicts the gabaMOD conductance ratio (3.0x) because driving force (V - E_GABA) saturates as ~100 GABA synapses fire near-synchronously and local Vm approaches E_GABA = -75 mV. Characterise this saturation curve by sweeping the number of GABA synapses N_I in {10, 25, 50, 75, 100, 150, 200, 300} at fixed per-synapse peak (2 nS) and fixed gabaMOD(theta) design, holding 100 AMPA synapses constant. Report somatic IPSP voltage ratio (gNULL_voltage / gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak Hz per N_I. Goal: produce a quantitative voltage-vs-conductance...
-
 ## GABA peak-conductance sweep on t0053 spatial DSGC to recover a non-zero FULL tuning curve
 ID: S-0053-01
 Priority: high
@@ -1664,69 +1818,6 @@ Priority: high
 Kind: experiment
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming PolegPolsky2016&#x27;s prediction [Fig 5] that the Boltzmann Mg block is required for multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion...
-
-## Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal architecture to locate a DSI-preserving operating point
-ID: S-0054-02
-Priority: high
-Kind: experiment
-Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
-t0054 fixed AMPA at 0.5 nS and used the unchanged t0052 scalar gabaMOD (2 nS base, ratio 3.0), varying only gNMDA. The DSI collapse may be recoverable by rebalancing the three conductances jointly. Run a 3-D grid: gAMPA in {0.25, 0.5, 1.0} nS, gNMDA in {0.0, 0.1, 0.25, 0.5} nS, base gGABA in {2, 4, 8, 16} nS, all on the t0054 codebase with placement seed 0 unchanged, voltage-independent NMDA kept (so this is the no-Mg-block control complementary to S-0054-01). Use 12 dirs x 5 trials per cell = 60 trials per (gAMPA, gNMDA, gGABA) point; 48 grid cells = 2880 trials. Apply early stop on cells where E_ONLY peak Hz &gt; 30 Hz to prune the saturated subgrid. Pass criterion: locate at least one...
-
-## Re-run t0055 Mg-block sweep on the corrected EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI recovery
-ID: S-0055-02
-Priority: high
-Kind: experiment
-Source task: t0055_nmda_mg_block_dsi_recovery
-After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-block architecture using the corrected trial-mode trio so EPSP and IPSP traces become spike-free synaptic envelopes. Verify that vector-sum DSI = 0.7464 (FULL) is preserved across all gNMDA (regression), record clean EPSP envelopes for the EPSP-decay metric, and report the EPSP envelope&#x27;s true peak (no spike contamination) per direction. Pass criterion: FULL DSI bit-identical to t0055; EPSP_PASSIVE peak Vm &lt; spike threshold (~-50 mV) at every direction and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block lineage and produces re-publishable EPSP/IPSP figures.
-
-## GABA-reduction ladder on Mg-block t0055 architecture to find a DSI-preserving operating point with peak Hz &gt;= 5
-ID: S-0055-03
-Priority: high
-Kind: experiment
-Source task: t0055_nmda_mg_block_dsi_recovery
-t0055 established that Mg-block NMDA recovers DSI to 0.7464 but the cell stays at 0.667 Hz peak in FULL mode because the scalar gabaMOD inhibition (peak 2 nS, gaba_mod_PD = 0.33, gaba_mod_ND = 0.99) clamps Vm below the Mg-unblock voltage. Sweep peak GABA conductance at {2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS (mid-sweep) and trace DSI and peak Hz. The S-0054-01 pass criterion (DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz) should become reachable somewhere on this ladder. This is a tighter, faster, and conceptually cleaner experiment than the full S-0054-02 3D sweep, and it directly answers the t0055 finding. Pass criterion: at least one GABA value yields DSI &gt; 0.50 AND peak Hz &gt;= 5 Hz...
-
-## Tonic GABA + Mg-block NMDA combination on t0054-style architecture to test multiplicative gain rescue
-ID: S-0057-06
-Priority: high
-Kind: experiment
-Source task: t0057_tonic_gaba_sweep_t0053
-Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016&#x27;s argument that voltage-dependent NMDA Mg-block is necessary for non-trivial DSI. t0055 added Mg-block NMDA but kept scalar gabaMOD inhibition; t0057 swapped inhibition to tonic but kept AMPA-only excitation. Neither tested the combination. Build a minimal architecture combining (a) AMPA + Jahr-Stevens Mg-block NMDA (t0055 NMDA_MgBlock.mod) on each E synapse and (b) tonic GABA via gaba_tonic.mod (t0057) with the t0053 spatial centripetal gating predicate on each I synapse. Sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x GABA_BASE_NS in {0.1, 0.25, 0.5, 1.0} nS at fixed gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760...
-
-## Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059 bar-locked GABA + AMPA-escape substrate
-ID: S-0059-01
-Priority: high
-Kind: experiment
-Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
-The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209) most plausibly stems from passive dendrites capping local depolarisation; Park2014 [p. 3977] and PolegPolsky2016 [p. 1278] both implicitly assume active dendritic mechanisms. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, install Nav1.6 (g_Nabar in {0.05, 0.10, 0.20} S/cm^2) and Kv3 (g_Kv3bar in {0.05, 0.10} S/cm^2) on dendritic sections, and run a focused 3x2x3 (gNa_dend x gKv3_dend x gAMPA in {1.0, 2.0, 4.0}) sweep at GABA_BASE_NS = 0.10 nS (the t0059 vector-sum DSI optimum). Pass criterion: at least one operating point with peak Hz &gt;= 5 Hz AND vector-sum DSI &gt; 0.3. Distinct from S-0009-03 (calibrates densities...
-
-## Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination sweep on the t0059 substrate
-ID: S-0059-02
-Priority: high
-Kind: experiment
-Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
-S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057&#x27;s global (100, 1400) ms tonic window and fixed gAMPA = 0.5 nS. t0059 demonstrates the bar-locked window mechanism delivers an 8.5 ms direction-dependent IPSP centre-of-mass shift (REQ-13 PASS) the global window cannot. Layering Mg-block NMDA on the bar-locked substrate combines all three plausible gap-closers identified in compare-literature: voltage-dependent NMDA gain (PolegPolsky2016), per-synapse bar-arrival timing (deRosenroll2026), and AMPA escape. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, install the Jahr-Stevens NMDA_MgBlock mechanism from t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0...
-
-## Synapse-count scaling sweep on t0059 substrate (100 -&gt; 200 -&gt; 300 E + I) to break the single-spike regime
-ID: S-0059-03
-Priority: high
-Kind: experiment
-Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
-t0059 uses 100 E + 100 I synapses; PolegPolsky2016 [p. 1280] uses ~177, t0046 reproduction uses 282, deRosenroll2026 [p. 5] uses &gt;1000 SAC varicosities. The compare-literature Synapse-count comparison identifies this &gt;2.8x to &gt;10x mismatch as a structural drive bottleneck consistent with the 2.143 Hz peak ceiling. Fork minimal_dsgc_bar_locked_gaba_ampa_sweep, parameterise N_AMPA = N_GABA in {100, 200, 300} (re-running the placement_seed0 generator to produce three larger placement bundles), and sweep at gAMPA in {1.0, 2.0} nS, GABA_BASE_NS = 0.10 nS, holding bar-locked windows fixed (3 N x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point with peak Hz &gt;= 5 Hz...
-
-## Match the from-scratch GABA reversal to resting potential and re-test direction selectivity
-ID: S-0065-02
-Priority: high
-Kind: experiment
-Source task: t0065_t0020_epsp_ipsp_vm_protocol
-The deposited cell places e_SACinhib = -60 mV which equals the cell&#x27;s leak-driven quiescent potential, making inhibition purely shunting. If the from-scratch family uses an e_GABA below resting potential (e.g., -75 mV which is biologically plausible for Cl- with low [Cl-]_i), inhibition becomes hyperpolarising and can collapse the DSI to 0 by pulling the cell off threshold across all directions. Conversely, if e_GABA &gt; v_rest, inhibition can depolarise toward threshold and generate spurious spikes. Setting e_GABA = v_rest in the from-scratch substrate is a single-line change (modify the gaba_tonic.mod e parameter or the synapse mechanism&#x27;s reversal). This directly tests whether the deposited...
-
-## Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family substrate (t0052-t0059)
-ID: S-0066-02
-Priority: high
-Kind: experiment
-Source task: t0066_t0024_epsp_ipsp_vm_protocol
-t0065 ran the protocol on deposited Poleg-Polsky; t0066 ran it on de Rosenroll. Both showed flat IPSP_PASSIVE because of e_GABA = v_rest design. The from-scratch family (t0052-t0059) is trapped in a binary regime (single-spike-trivial-DSI or full-suppression-zero-DSI). A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate would tell us whether (a) the from-scratch family also has e_GABA = v_rest (if so, the binary regime is from a different cause), or (b) the from-scratch family uses e_GABA != v_rest (in which case the IPSP would be hyperpolarising and could explain the binary trap). The same protocol code is portable: copy run_protocol.py, swap the cell...
 
 ## Find the NaP density at which DSI crosses zero
 ID: S-0067-01
@@ -1769,27 +1860,6 @@ Priority: high
 Kind: experiment
 Source task: t0074_channel_tuning_width_bed_a
 Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta &lt; 0.003 at every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008&#x27;s prediction that Kv7&#x27;s canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30 µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current&#x27;s slow accumulation is well-suited to the AIS firing regime.
-
-## Tier-stratify channel densities in a follow-up Bed B MOBO (per soma / proximal / distal / terminal)
-ID: S-0076-01
-Priority: high
-Kind: experiment
-Source task: t0076_bedb_dsi_firing_rate_mobo
-REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into 4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to ~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions). Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the 25-d search. Recommended task types: experiment-run.
-
-## Re-run Bed B MOBO with an AIS section added, to test whether AIS unlocks the DSI&gt;=0.4 + rate&gt;=30Hz operating point
-ID: S-0076-02
-Priority: high
-Kind: experiment
-Source task: t0076_bedb_dsi_firing_rate_mobo
-t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI&gt;=0.4 AND PD rate&gt;=30 Hz simultaneously. Compare-literature concluded the substrate is missing dendritic-spike machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -&gt; 27-d search. Hypothesis: AIS-localised spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under joint optimisation rather than one-axis-at-a-time. Recommended...
-
-## Correction task to fix three t0076 implementation issues: NEURON re-init, qNEHVI deprecation, GP input normalisation
-ID: S-0076-03
-Priority: high
-Kind: technique
-Source task: t0076_bedb_dsi_firing_rate_mobo
-Three concrete defects identified in the t0076 implementation block additional value from the existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python process, hitting NEURON&#x27;s `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of 3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution requires the script to run from the project root, not the task folder. Fix: anchor paths via `arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a Normalize input transform -- BoTorch warned the fit is suboptimal. Fix...
 
 ## Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
 ID: S-0076-04
@@ -2287,13 +2357,6 @@ Priority: medium
 Kind: experiment
 Source task: t0024_port_de_rosenroll_2026_dsgc
 Peak firing rate is 5.15 Hz in t0024 versus the paper&#x27;s qualitative ~30-40 Hz and the t0004 envelope of 40-80 Hz. The paper text and the companion repository disagree on Ra, eleak, and Na/K densities; the repository values were used as authoritative. Run a 2x2x3 sensitivity sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate) with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
-
-## Overlay a Van Wart + Werginz AIS on the deRosenroll morphology to test peak-rate recovery
-ID: S-0024-03
-Priority: medium
-Kind: experiment
-Source task: t0024_port_de_rosenroll_2026_dsgc
-Research-internet gap 2 showed that the upstream repository has no explicit AIS section, but research-papers (Werginz 2020, Van Wart 2007) pins the AIS-to-soma Na ratio at ~7x and names AIS length as the dominant predictor of maximum sustained firing rate. Fork t0024 into a new library asset, add a two-subsegment AIS (proximal Nav1.2/Nav1.1, distal Nav1.6 + Kv1.2) with Na ratio 7x and AIS length 25-50 um, rerun the 8-direction correlated/uncorrelated protocol, and compare peak firing rate and HWHM to the t0024 baseline. Does not require rebuilding the SAC network.
 
 ## Parameterize t0011/t0012 tuning-curve plotter and scorer to support N_ANGLES != 12
 ID: S-0024-04
@@ -3071,13 +3134,6 @@ Priority: medium
 Kind: experiment
 Source task: t0074_channel_tuning_width_bed_a
 t0074 covered Bed A only. Bed B (de-Rosenroll 2026, t0024 library) has different morphology, different synapse placement, and a built-in Ca pool — meaning the channel-level findings here may not generalise to Bed B. Repeat the same 25-condition × 12-angle × 5-seed sweep on Bed B. Cost: same ~70 min compute as t0074. Comparison points: which channels remain inert; whether NaP-induced DSI loss reproduces; whether SK_high HWHM narrowing reproduces (or is a Bed-A-specific artefact); whether the with-cad baseline DSI shift seen in Bed A is also seen in Bed B (where cad is native). This is a cross-substrate validation that strengthens any conclusions drawn from t0074.
-
-## Add a slow Kv-mediated AHP mechanism to Bed B and quantify its effect on the firing-rate ceiling and DSI
-ID: S-0076-05
-Priority: medium
-Kind: experiment
-Source task: t0076_bedb_dsi_firing_rate_mobo
-The t0076 high-rate Pareto extreme (iter 319, 127.75 Hz) exceeds biological mean PD rates (30-80 Hz) precisely because Bed B lacks a slow-adaptation mechanism. The vendored SK and BK mechanisms (from cortical/Purkinje sources) and the single-shell `cad` Ca pool (taur=5 ms) collectively fail to cap firing on the timescale real RGCs use. Vendor a slow-AHP (e.g., SK_E2 with longer Ca-binding time, or a dedicated KAHP mechanism) and re-evaluate a 5-cell subsample of the t0076 Pareto front: does the high-rate end of the Pareto front contract toward physiological rates? Does a slow AHP open a new DSI&gt;=0.4 + rate&gt;=30 Hz region? This is a focussed mechanism-addition test, not a full MOBO re-run...
 
 ## Promote the t0076 BoTorch MOBO + ProcessPoolExecutor trial-driver harness into a reusable optimisation library
 ID: S-0076-06

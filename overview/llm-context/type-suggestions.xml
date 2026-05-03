@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-03T04:19:13Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-03T12:41:25Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>311931</char_count>
-    <byte_count>312079</byte_count>
-    <estimated_tokens>77982</estimated_tokens>
+    <char_count>311963</char_count>
+    <byte_count>312111</byte_count>
+    <estimated_tokens>77990</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -1481,7 +1481,7 @@ Peak firing rate is 5.15 Hz in t0024 versus the paper&#x27;s qualitative ~30-40 
 
 ## Overlay a Van Wart + Werginz AIS on the deRosenroll morphology to test peak-rate recovery
 ID: S-0024-03
-Status: active
+Status: rejected
 Priority: medium
 Kind: experiment
 Source task: t0024_port_de_rosenroll_2026_dsgc
@@ -2544,7 +2544,7 @@ t0050 used three midline-x conventions (soma_x, zero, BIPsyn-locx-median) to cla
 
 ## AMPA per-synapse conductance sweep on t0052 minimal DSGC to close the 30-150x peak-rate gap
 ID: S-0052-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0052_minimal_dsgc_scalar_gaba
@@ -2555,7 +2555,7 @@ t0052 hits primary DSI 1.0 but peak rate is only 0.667 Hz, ~22x below the t0004 
 
 ## GABA-synapse-count sweep on t0052 to characterise driving-force saturation of scalar gabaMOD IPSPs
 ID: S-0052-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0052_minimal_dsgc_scalar_gaba
@@ -2691,7 +2691,7 @@ t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapse
 
 ## Joint (gAMPA, gNMDA, gGABA) conductance sweep on t0054 minimal architecture to locate a DSI-preserving operating point
 ID: S-0054-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
@@ -2758,7 +2758,7 @@ Refactor the minimal-DSGC trial code (forked across t0052/t0053/t0054/t0055) to 
 
 ## Re-run t0055 Mg-block sweep on the corrected EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI recovery
 ID: S-0055-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0055_nmda_mg_block_dsi_recovery
@@ -2769,7 +2769,7 @@ After S-0055-01 lands, re-run the gNMDA={0,0.25,0.5,1.0} nS sweep on the Mg-bloc
 
 ## GABA-reduction ladder on Mg-block t0055 architecture to find a DSI-preserving operating point with peak Hz &gt;= 5
 ID: S-0055-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0055_nmda_mg_block_dsi_recovery
@@ -2879,7 +2879,7 @@ t0057 introduced a sustained (1300 ms) tonic envelope on the t0053 spatial subst
 
 ## Tonic GABA + Mg-block NMDA combination on t0054-style architecture to test multiplicative gain rescue
 ID: S-0057-06
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0057_tonic_gaba_sweep_t0053
@@ -2891,7 +2891,7 @@ Cumulative project evidence (t0054, t0055, t0057) converges on PolegPolsky2016&#
 
 ## Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059 bar-locked GABA + AMPA-escape substrate
 ID: S-0059-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
@@ -2903,7 +2903,7 @@ The t0059 negative result (max FULL peak Hz = 2.143, max vector-sum DSI = 0.209)
 
 ## Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination sweep on the t0059 substrate
 ID: S-0059-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
@@ -2915,7 +2915,7 @@ S-0057-06 covers Mg-block NMDA + tonic GABA but uses t0057&#x27;s global (100, 1
 
 ## Synapse-count scaling sweep on t0059 substrate (100 -&gt; 200 -&gt; 300 E + I) to break the single-spike regime
 ID: S-0059-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0059_bar_locked_gaba_ampa_sweep_t0057
@@ -2973,7 +2973,7 @@ t0065 isolated the deposited cell&#x27;s EPSP and IPSP shapes and showed that di
 
 ## Match the from-scratch GABA reversal to resting potential and re-test direction selectivity
 ID: S-0065-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0065_t0020_epsp_ipsp_vm_protocol
@@ -3028,7 +3028,7 @@ t0066 confirmed that both deposited Poleg-Polsky 2016 (t0065) and de Rosenroll 2
 
 ## Apply EPSP/IPSP/FULL protocol to from-scratch DSGC family substrate (t0052-t0059)
 ID: S-0066-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0066_t0024_epsp_ipsp_vm_protocol
@@ -3487,7 +3487,7 @@ Inserting cad on the soma shifted Bed A&#x27;s baseline DSI from 0.7975 (no-cad 
 
 ## Tier-stratify channel densities in a follow-up Bed B MOBO (per soma / proximal / distal / terminal)
 ID: S-0076-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0076_bedb_dsi_firing_rate_mobo
@@ -3498,7 +3498,7 @@ REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uni
 
 ## Re-run Bed B MOBO with an AIS section added, to test whether AIS unlocks the DSI&gt;=0.4 + rate&gt;=30Hz operating point
 ID: S-0076-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0076_bedb_dsi_firing_rate_mobo
@@ -3509,7 +3509,7 @@ t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI&gt;=0.4 AND PD
 
 ## Correction task to fix three t0076 implementation issues: NEURON re-init, qNEHVI deprecation, GP input normalisation
 ID: S-0076-03
-Status: active
+Status: rejected
 Priority: high
 Kind: technique
 Source task: t0076_bedb_dsi_firing_rate_mobo
@@ -3531,7 +3531,7 @@ t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but
 
 ## Add a slow Kv-mediated AHP mechanism to Bed B and quantify its effect on the firing-rate ceiling and DSI
 ID: S-0076-05
-Status: active
+Status: rejected
 Priority: medium
 Kind: experiment
 Source task: t0076_bedb_dsi_firing_rate_mobo

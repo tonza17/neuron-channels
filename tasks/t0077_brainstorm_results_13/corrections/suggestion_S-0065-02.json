@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-15",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0065_t0020_epsp_ipsp_vm_protocol",
+  "target_kind": "suggestion",
+  "target_id": "S-0065-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0065-02 proposes matching the from-scratch DSGC family's GABA reversal to the resting potential (e_GABA = v_rest = -60 mV pure shunting design) and re-testing direction selectivity, on the hypothesis that the deposited cell's success is structurally dependent on its e_GABA = v_rest design choice and the from-scratch family with e_GABA below v_rest is hyperpolarising itself off threshold. Despite being flagged in brainstorm 12 as the highest-leverage uncommissioned experiment, the project has since pivoted definitively to the deposited Bed A and Bed B substrates and the recent task arc (t0067 - t0076) operates exclusively on those. The hypothesis remains scientifically interesting but is not on the current critical path; the e_GABA = v_rest shunting mechanism is now well-characterised in the deposited beds and the from-scratch family is no longer load-bearing. Rejecting as stale."
+}

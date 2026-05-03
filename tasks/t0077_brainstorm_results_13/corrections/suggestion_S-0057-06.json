@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-11",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0057_tonic_gaba_sweep_t0053",
+  "target_kind": "suggestion",
+  "target_id": "S-0057-06",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0057-06 proposes a tonic GABA + Mg-block NMDA combination on the t0054-style architecture (16 grid cells, 5760 trials) to test multiplicative-gain rescue. The from-scratch family (t0052 - t0059) has been deprioritised; the AMPA + Mg-block NMDA + GABA combination question is being answered on Bed B inside t0078's bundled MOBO, where Mg-block NMDA (deRosenroll 2026 substrate already includes it), tonic GABA (Bed B's bar-rotation protocol), AIS spike initiation, and slow Kv-AHP all interact under joint optimisation rather than a 16-cell grid on a binary-regime substrate. Rejecting as stale."
+}
