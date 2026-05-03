@@ -18,14 +18,44 @@ SK_E2 with an `extended_tau_ca` parameter that scales the Ca-binding kinetics. T
 maximises direction selectivity index (DSI) and preferred-direction (PD) firing rate.
 
 The pass criterion is **binary**: locate at least one Pareto cell with **DSI at or above 0.4 AND PD
-rate at or above 10 Hz** (primary, biologically grounded by Rivlin-Etzion 2012 mean PD rate of 10.4
-Hz at DSI 0.78 in mouse ON-OFF DSGCs), with **DSI at or above 0.4 AND PD rate at or above 30 Hz**
-retained as a stretch goal, OR rule out the joint operating point architecturally with hypervolume
+rate at or above 10 Hz**, biologically grounded by Rivlin-Etzion 2012 mean PD rate of 10.4 Hz at DSI
+0.78 in mouse ON-OFF DSGCs, OR rule out the joint operating point architecturally with hypervolume
 at least 1.5x the t0076 final HV (8.4129) after at least 600 acquisition iterations and no
 qualifying cell observed. Either outcome is a strong project result. Done = a single library asset
 (`de_rosenroll_2026_dsgc_ais`), full Pareto-front and hypervolume-trajectory plots, per-axis
 sensitivity panels, registered project metrics for every non-dominated Pareto cell, and a clean
 Vast.ai cost / teardown record.
+
+## Researcher Decisions Update (post-planning, 2026-05-03)
+
+These decisions, made after the planning step completed, override the corresponding parts of the
+plan body wherever they conflict. The implementation step must honor these:
+
+1. **Pass criterion is single-tier, not two-tier**: only `DSI >= 0.4 AND PD rate >= 10 Hz`. The
+   previously documented `>= 30 Hz` stretch goal is dropped. Researcher rationale: the 30 Hz target
+   conflates peak (sub-second) and mean (1-s) firing rates, and the literature does not support 30
+   Hz as a biologically meaningful mean PD rate target for mouse DSGCs.
+2. **AIS Nav1.2 vendoring decision**: keep at 47 d for the Nav modelling axis (use HHst + Nav1.6
+   stand-in for the proximal AIS subsegment; do not vendor a separate Nav1.2 MOD).
+3. **AIS length and diameter are free MOBO parameters** (not fixed). Add 2 free parameters
+   (`ais_length_um` in [25.0, 50.0] um, `ais_diameter_um` in [0.5, 1.2] um). This brings total
+   parameter space from 47 d to **49 d**. Update `ParamIndex`, parameter bounds tables, Sobol DoE
+   definition, qLogNEHVI input dimensionality, and the `apply_parameter_vector` AIS geometry write
+   (modify `h.L` and `h.diam` on `ais_proximal_t78` / `ais_distal_t78` per sampled value before
+   channel insertion).
+4. **`tau_ca_multiplier` upper bound is `[1, 20x]`** (not `[1, 200x]`). The 5 - 100 ms range is
+   conservative relative to the Larsson 2013 sAHP timescale, but the researcher prefers the
+   conservative bound; if the optimiser pushes `tau_ca_multiplier` to its upper bound (20x), that is
+   treated as a positive saturation finding warranting a follow-up extension.
+5. **Add the 7 discovered papers (Hay2011, Khaliq2003, Ament2023, RivlinEtzion2012, Trenholm2013,
+   Wienbar2022, Werginz2024) to the corpus during the implementation step**, while the BO loop runs
+   on Vast.ai. Spawn 7 `/add-paper` subagents in parallel (max 3 concurrent per the skill spec) once
+   the BoTorch loop is launched on the remote instance and the local agent is idle awaiting BO
+   completion.
+
+The plan body below is otherwise unchanged. Where the body says "47 d", read "49 d". Where the body
+says "stretch goal" or "30 Hz threshold", treat it as removed. Where the body says
+"`tau_ca_multiplier` range [1, 200x]", read "[1, 20x]".
 
 ## Task Requirement Checklist
 
