@@ -104,10 +104,10 @@
       "step": 12,
       "name": "suggestions",
       "description": "Author results/suggestions.json (e.g., tier-stratify the best 3 Pareto cells; spatial morphology re-optimisation; add NaP/etc to the parameter set).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-03T04:08:40Z",
       "completed_at": null,
-      "log_file": "logs/steps/012_suggestions/"
+      "log_file": "logs\\steps\\012_suggestions/"
     },
     {
       "step": 13,
