@@ -1,0 +1,140 @@
+{
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0078_bedb_mobo_v2_ais_tiered_ahp branch from main and plan the 15-step lifecycle.",
+      "status": "in_progress",
+      "started_at": "2026-05-03T13:03:45Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0024 / t0069 / t0076 are completed and confirm their outputs are available.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure and gitkeep files.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review papers in the corpus for AIS biology, RGC channel densities, slow Kv-AHP mechanisms.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search for SK_E2 with extended Ca-binding implementations, qLogNEHVI BoTorch examples, AIS attachment NEURON patterns, and recent RGC tier-stratification literature.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0076 BoTorch MOBO harness, t0024 de_rosenroll_2026_dsgc cell builder, t0069 AIS attachment code, and t0074 SK_E2 vendoring.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesize the 47-d parameter space, AIS construction, SK_E2 extended-Ca-binding vendoring, and the qLogNEHVI / Normalize / subprocess-per-deep-dive fixes into plan.md.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision a Vast.ai 72-core CPU instance similar to the t0076 instance for the BO loop.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Build AIS-augmented Bed B library asset; vendor SK_E2 extended-Ca-binding; migrate to qLogNEHVI + Normalize; run 600-800-iteration BoTorch MOBO; collect Pareto front.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy the Vast.ai instance, finalise machine_log.json and costs.json.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Out-of-the-box analysis of the Pareto front shape, AIS effects, and channel-tier interactions.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json with Pareto front and hypervolume trajectory.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare the AIS-augmented Bed B Pareto front to the t0076 uniform-density front and to published mouse / rabbit DSI + firing-rate values.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up task suggestions: dendritic-spike machinery if joint operating point not reached, tier expansion for other channels, etc.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, set task.json status to completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
