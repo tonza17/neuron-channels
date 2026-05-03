@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-08",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0054_minimal_dsgc_ampa_nmda_scalar_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0054-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0054-02 proposes a 3-D (gAMPA, gNMDA, gGABA) conductance sweep on the t0054 minimal architecture (48 grid cells, 2880 trials) to locate a DSI-preserving operating point in the voltage-independent NMDA regime. The from-scratch family (t0052 - t0059) has been deprioritised. The 3-D conductance question is being answered on Bed B inside t0078's bundled MOBO with the more biologically grounded Mg-block NMDA, AIS spike initiation, tier-stratified channels, and slow Kv-AHP. The voltage-independent NMDA control (without Mg block) is a special-case ablation not on the project's critical path. Rejecting as stale."
+}

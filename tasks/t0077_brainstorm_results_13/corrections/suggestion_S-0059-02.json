@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-13",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0059_bar_locked_gaba_ampa_sweep_t0057",
+  "target_kind": "suggestion",
+  "target_id": "S-0059-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0059-02 proposes a Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination sweep on the t0059 substrate (12 cells, 4320 trials) to layer all three plausible gap-closers from compare-literature simultaneously. The from-scratch family (t0052 - t0059) has been deprioritised; the Mg-block NMDA + bar-locked GABA + AMPA-escape combination is being answered on Bed B (which already has the deRosenroll 2026 bar-arrival timing model and Mg-block NMDA built in) inside t0078's bundled MOBO. Replicating the combination on the from-scratch substrate is no longer load-bearing. Rejecting as stale."
+}

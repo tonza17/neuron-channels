@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-05",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0024_port_de_rosenroll_2026_dsgc",
+  "target_kind": "suggestion",
+  "target_id": "S-0024-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0024-03 proposes overlaying a Van Wart + Werginz AIS on the deRosenroll morphology (AIS-to-soma Na ratio ~7x, AIS length 25-50 um, two-subsegment proximal Nav1.2 / Nav1.1 plus distal Nav1.6 + Kv1.2) as a new library asset to test peak-rate recovery. This is folded into t0078 (bedb_mobo_v2_ais_tiered_ahp): t0078 builds the AIS section onto Bed B with the same Van Wart 2007 / Werginz 2020 priors, registers it as a new library asset (`de_rosenroll_2026_dsgc_ais` or similar), and uses it as the substrate for the bundled MOBO. Rejecting as covered by t0078."
+}

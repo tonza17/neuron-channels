@@ -1,4 +1,4 @@
-# ⏹ CoreNEURON Vast.ai RTX 4090 speedup benchmark
+# ❌ CoreNEURON Vast.ai RTX 4090 speedup benchmark
 
 [Back to all tasks](../README.md)
 
@@ -7,7 +7,8 @@
 | Field | Value |
 |---|---|
 | **ID** | `t0045_coreneuron_vastai_speedup_benchmark` |
-| **Status** | ⏹ not_started |
+| **Status** | ❌ cancelled |
+| **Completed** | 2026-05-03T12:55:00Z |
 | **Dependencies** | [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
 | **Source suggestion** | `S-0033-01` |
 | **Task types** | `experiment-run`, `baseline-evaluation` |

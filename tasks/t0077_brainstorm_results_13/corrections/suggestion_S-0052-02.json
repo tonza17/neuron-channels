@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-07",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0052_minimal_dsgc_scalar_gaba",
+  "target_kind": "suggestion",
+  "target_id": "S-0052-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0052-02 proposes a GABA-synapse-count sweep on t0052 to characterise driving-force saturation of scalar gabaMOD IPSPs (somatic IPSP voltage ratio under-predicts conductance ratio because driving force saturates near E_GABA). The from-scratch family (t0052 - t0059) has been deprioritised: the project pivoted to deposited Bed A and Bed B substrates, and the scalar gabaMOD design itself is being superseded by deposited beds' synaptic protocols. The driving-force saturation finding from t0052 stands as recorded; characterising the saturation curve quantitatively in the from-scratch substrate adds limited value to the deposited-bed critical path. Rejecting as stale."
+}

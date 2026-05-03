@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-10",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0055_nmda_mg_block_dsi_recovery",
+  "target_kind": "suggestion",
+  "target_id": "S-0055-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0055-03 proposes a GABA-reduction ladder on the Mg-block t0055 architecture {2.0, 1.5, 1.0, 0.7, 0.5, 0.3} nS at gNMDA = 0.5 nS to find a DSI-preserving operating point with peak Hz >= 5. The from-scratch family (t0052 - t0059) has been deprioritised. The GABA-reduction question on a Mg-block-NMDA substrate is being answered on Bed B inside t0078's bundled MOBO, where the GABA effective strength and NMDA voltage-dependent gain interact under tier-stratified channels and AIS spike initiation. Rejecting as stale."
+}

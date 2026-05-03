@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-03",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0076_bedb_dsi_firing_rate_mobo",
+  "target_kind": "suggestion",
+  "target_id": "S-0076-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0076-03 proposes a correction task to fix three t0076 implementation issues: (a) NEURON re-init bug causing `Exp2NMDA name already exists` when build_dsgc_cell() is called multiple times in one Python process; (b) deprecated qNoisyExpectedHypervolumeImprovement; (c) GP input normalisation missing. These three fixes are required for the new t0078 MOBO to run cleanly on the AIS-augmented Bed B substrate, so they are folded into t0078's scope: subprocess-per-deep-dive for the NEURON re-init, qLogNEHVI migration, and Normalize input transform on [0, 1]^d. Replaying the 430-cell t0076 history through the corrected stack is no longer needed because t0078 restarts fresh from Sobol per researcher decision. Rejecting as covered by t0078."
+}

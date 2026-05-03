@@ -5,13 +5,13 @@
   "name": "CoreNEURON Vast.ai RTX 4090 speedup benchmark",
   "short_description": "Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033's cost model.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "cancelled",
   "dependencies": [
     "t0022_modify_dsgc_channel_testbed",
     "t0033_plan_dsgc_morphology_channel_optimisation"
   ],
   "start_time": null,
-  "end_time": null,
+  "end_time": "2026-05-03T12:55:00Z",
   "expected_assets": {
     "answer": 1
   },

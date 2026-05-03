@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-03T04:19:13Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-03T12:41:25Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>120</section_count>
-    <char_count>2202623</char_count>
-    <byte_count>2208499</byte_count>
-    <estimated_tokens>550655</estimated_tokens>
+    <section_count>123</section_count>
+    <char_count>2206419</char_count>
+    <byte_count>2212307</byte_count>
+    <estimated_tokens>551604</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -181,9 +181,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0073_brainstorm_results_12</id>
         <id>t0074_channel_tuning_width_bed_a</id>
         <id>t0076_bedb_dsi_firing_rate_mobo</id>
+        <id>t0077_brainstorm_results_13</id>
       </source_ids>
       <content>
-Completed tasks: 69
+Completed tasks: 70
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -598,6 +599,12 @@ ID: t0076_bedb_dsi_firing_rate_mobo
 Completed: 2026-05-03
 Short description: Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_firing_rate_mobo&quot; date_completed: &quot;2026-05-03&quot; status: &quot;complete&quot; --- Multi-Objective BO of Channels + Synapse Placement on Bed B Summary Ran a 25-parameter BoTorch qNEHVI multi-objective Bayesian optimisation on the Bed B (de Rosenroll 2026\) DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction firing rate over 30 Sobol DoE + 400 acquisition steps (430 total cell evaluations × 8 directions × 20 seeds = **68,800** NEURON simulations) on a Vast.ai 72-core CPU instance for **$1.0583**. Hypervolume climbed monotonically from **3.4083** (Sobol baseline) to **8.4129** (final, **+147%**), and...
+
+## Brainstorm results session 13
+ID: t0077_brainstorm_results_13
+Completed: 2026-05-03
+Short description: Thirteenth brainstorm: commission t0078 (Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP); reject 16 covered/stale suggestions; cancel t0045 (CoreNEURON benchmark superseded).
+Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strategic brainstorm, run on 2026-05-03 after t0074 (channel tuning-width sweep on Bed A) and t0076 (25-d Bed B BoTorch qNEHVI multi-objective Bayesian optimisation) both completed. The session is triggered by the t0076 headline negative result: the bare 25-d Bed B substrate cannot reach DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz simultaneously, with every Pareto cell trading off severely between the two objectives. The t0076 compare-literature analysis identified three architectural omissions that plausibly explain the trade-off: no AIS section, uniform-density channels, and absent slow-AHP machinery. Decision: commission a single bundled MOBO...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -606,8 +613,8 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0076_bedb_dsi_fi
       <source_ids>
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
-        <id>t0045_coreneuron_vastai_speedup_benchmark</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
 Planned or active tasks: 4
@@ -625,19 +632,19 @@ Status: not_started
 Effective date: 2026-04-22
 Short description: Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
 
-## CoreNEURON Vast.ai RTX 4090 speedup benchmark
-ID: t0045_coreneuron_vastai_speedup_benchmark
-Status: not_started
-Effective date: 2026-04-24
-Short description: Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033&#x27;s cost model.
-Dependencies: t0022_modify_dsgc_channel_testbed, t0033_plan_dsgc_morphology_channel_optimisation
-
 ## Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
 ID: t0075_bio_realistic_ais_param_sweep
 Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
+ID: t0078_bedb_mobo_v2_ais_tiered_ahp
+Status: not_started
+Effective date: unknown
+Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -37514,6 +37521,111 @@ by 64 cores → ~30 s/iteration → ~2.5-4 h total. Validates the Vast.ai 64-cor
   the library can produce, but the new `plot_pareto.py` already needs to plot the Pareto front
   itself (not a tuning curve), so adding `tuning_curve_viz` for the deep-dive panels would be an
   additional dependency for marginal benefit. Library landscape entry only.
+      </content>
+    </section>
+    <section id="t0077_brainstorm_results_13-research_papers" source_kind="file">
+      <title>t0077_brainstorm_results_13 — Brainstorm results session 13 — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0077_brainstorm_results_13</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0077_brainstorm_results_13/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0077_brainstorm_results_13-research_internet" source_kind="file">
+      <title>t0077_brainstorm_results_13 — Brainstorm results session 13 — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0077_brainstorm_results_13</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0077_brainstorm_results_13/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0077_brainstorm_results_13-research_code" source_kind="file">
+      <title>t0077_brainstorm_results_13 — Brainstorm results session 13 — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0077_brainstorm_results_13</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0077_brainstorm_results_13/research/research_code.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
       </content>
     </section>
   </sections>

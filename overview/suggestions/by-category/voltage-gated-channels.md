@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 66 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **56 open** (12
-high, 36 medium, 8 low), **10 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **55 open** (11
+high, 36 medium, 8 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -184,30 +184,6 @@ criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes
 trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
 infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
 DSGC task.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run Bed B MOBO with an AIS section added, to test whether AIS
-unlocks the DSI>=0.4 + rate>=30Hz operating point</strong> (S-0076-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0076-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-03 |
-| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
-simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
-machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
-delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
-parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
-spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
-complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
-joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
 
 </details>
 
@@ -1545,6 +1521,32 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Re-run Bed B MOBO with an AIS section added, to test whether AIS
+unlocks the DSI>=0.4 + rate>=30Hz operating point</s> — covered by <a
+href="../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/"><code>t0078_bedb_mobo_v2_ais_tiered_ahp</code></a>
+(S-0076-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
+simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
+machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
+delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
+parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
+spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
+complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
+joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
 
 </details>
 

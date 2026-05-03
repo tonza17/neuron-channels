@@ -887,7 +887,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (56 open, 10 closed)
+## Suggestions (55 open, 11 closed)
 
 <details>
 <summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
@@ -903,24 +903,6 @@ Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels st
 ~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
 Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
 25-d search. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run Bed B MOBO with an AIS section added, to test whether AIS
-unlocks the DSI>=0.4 + rate>=30Hz operating point</strong> (S-0076-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../../tasks/t0076_bedb_dsi_firing_rate_mobo/)
-
-t0076 demonstrated the bare 25-d Bed B substrate cannot reach DSI>=0.4 AND PD rate>=30 Hz
-simultaneously. Compare-literature concluded the substrate is missing dendritic-spike
-machinery and there is no AIS. After S-0024-03 (add AIS to Bed B as a library asset) is
-delivered, re-run the t0076 25-d MOBO on the AIS-equipped Bed B with 2 extra channel-density
-parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS) -> 27-d search. Hypothesis: AIS-localised
-spike initiation will let high-Nav cells reach physiological rates without quenching DSI. This
-complements t0075 (AIS sweep on Bed A) by porting the question to the second substrate under
-joint optimisation rather than one-axis-at-a-time. Recommended task types: experiment-run.
 
 </details>
 

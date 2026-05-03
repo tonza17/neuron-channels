@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-02",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0076_bedb_dsi_firing_rate_mobo",
+  "target_kind": "suggestion",
+  "target_id": "S-0076-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0076-02 proposes re-running the Bed B MOBO with an AIS section added, to test whether AIS unlocks the DSI >= 0.4 + rate >= 30 Hz operating point. This is the primary scope of t0078 (bedb_mobo_v2_ais_tiered_ahp): build an AIS section onto Bed B (covering S-0024-03 as the AIS library asset), with two extra channel-density parameters for the AIS tier (Nav1.6_AIS, Kv3_AIS), and run the MOBO under the explicit pass criterion of locating at least one Pareto cell with DSI >= 0.4 AND PD rate >= 30 Hz, or ruling it out architecturally. t0078 records S-0076-02 as its primary source_suggestion. Rejecting as covered by t0078."
+}

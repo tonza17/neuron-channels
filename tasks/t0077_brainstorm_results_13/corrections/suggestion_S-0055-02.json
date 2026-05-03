@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0077-09",
+  "correcting_task": "t0077_brainstorm_results_13",
+  "target_task": "t0055_nmda_mg_block_dsi_recovery",
+  "target_kind": "suggestion",
+  "target_id": "S-0055-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0055-02 proposes re-running the t0055 Mg-block sweep on the corrected EPSP_PASSIVE / IPSP_PASSIVE protocol so EPSP and IPSP traces become spike-free synaptic envelopes. The from-scratch family (t0052 - t0059) has been deprioritised; the corrected measurement protocol has already been applied to the deposited Bed A and Bed B substrates in t0065 and t0066, providing the cleaner cross-bed comparison the project actually needs. Re-validating the t0055 finding inside the from-scratch substrate adds limited value to the current critical path. Rejecting as stale."
+}
