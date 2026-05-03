@@ -86,9 +86,9 @@
       "step": 10,
       "name": "compare-literature",
       "description": "Compare best Pareto cells' DSI and firing rates to published mouse RGC measurements; flag any cell that exceeds the biologically plausible range.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-03T03:50:39Z",
-      "completed_at": null,
+      "completed_at": "2026-05-03T03:57:58Z",
       "log_file": "logs\\steps\\010_compare-literature/"
     },
     {
