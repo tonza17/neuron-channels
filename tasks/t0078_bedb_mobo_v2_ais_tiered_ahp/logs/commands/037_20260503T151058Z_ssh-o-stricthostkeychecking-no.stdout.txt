@@ -1,0 +1,5 @@
+INSTALL_UV
+PATH_CHECK
+-rwxr-xr-x 1 root root 59853688 Apr 27 12:29 /root/.local/bin/uv
+UV_VERSION
+uv 0.11.8 (x86_64-unknown-linux-gnu)

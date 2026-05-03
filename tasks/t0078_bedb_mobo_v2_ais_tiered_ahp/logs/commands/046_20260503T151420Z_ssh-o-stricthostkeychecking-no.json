@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai cd /tmp/smoke_mod && /root/neuron-channels/.venv/bin/python -c \"\nimport os\nos.chdir(\\\"/tmp/smoke_mod\\\")\nfrom neuron import h\n# NEURON auto-loads x86_64/.libs/libnrnmech.so when run from the parent dir\nsec = h.Section(name=\\\"sec\\\")\nsec.insert(\\\"smoke\\\")\nprint(\\\"smoke insertion gbar=\\\", sec(0.5).smoke.g)\n\" 2>&1 | tail -5",
+  "exit_code": 0,
+  "duration_seconds": 2.928,
+  "started_at": "2026-05-03T15:14:20Z",
+  "completed_at": "2026-05-03T15:14:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "046_20260503T151420Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "046_20260503T151420Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 2,
+  "truncated": false
+}

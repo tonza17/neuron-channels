@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai set -e; export PATH=/root/.local/bin:$PATH; cd /root/neuron-channels; mkdir -p /tmp/smoke_mod && cd /tmp/smoke_mod && cat > smoke.mod << \"EOF\"\nNEURON {\n    SUFFIX smoke\n    RANGE g\n}\nPARAMETER {\n    g = 1.0 (S/cm2)\n}\nASSIGNED {}\nSTATE {}\nEOF\n/root/neuron-channels/.venv/bin/nrnivmodl . 2>&1 | tail -10; echo SMOKE_COMPILE_DONE; ls -la x86_64/.libs/libnrnmech.so 2>&1 | head -2; /root/neuron-channels/.venv/bin/python -c \"\nfrom neuron import h\nimport os\nh.nrn_load_dll(\\\"/tmp/smoke_mod/x86_64/.libs/libnrnmech.so\\\")\nsec = h.Section(name=\\\"sec\\\")\nsec.insert(\\\"smoke\\\")\nprint(\\\"smoke insertion gbar=\\\", sec(0.5).smoke.g)\n\" 2>&1 | tail -5",
+  "exit_code": 0,
+  "duration_seconds": 4.677,
+  "started_at": "2026-05-03T15:14:06Z",
+  "completed_at": "2026-05-03T15:14:11Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "045_20260503T151406Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "045_20260503T151406Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 2,
+  "truncated": false
+}

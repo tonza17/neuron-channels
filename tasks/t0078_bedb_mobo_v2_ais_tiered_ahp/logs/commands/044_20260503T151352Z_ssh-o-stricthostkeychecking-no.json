@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai set -e; export PATH=/root/.local/bin:$PATH; cd /root/neuron-channels; .venv/bin/python -c \"\nfrom neuron import h\nsoma = h.Section(name=\\\"soma\\\")\nsoma.insert(\\\"hh\\\")\nprint(\\\"NEURON HHst smoke test gnabar_hh =\\\", soma(0.5).hh.gnabar)\n\" 2>&1 | tail -5; echo HH_SMOKE_DONE",
+  "exit_code": 0,
+  "duration_seconds": 3.104,
+  "started_at": "2026-05-03T15:13:52Z",
+  "completed_at": "2026-05-03T15:13:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "044_20260503T151352Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "044_20260503T151352Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai echo CGROUP_CPU=$(cat /sys/fs/cgroup/cpu.max 2>/dev/null || echo unavailable); echo NPROC=$(nproc); echo OPENBLAS=$(python3 -c \"import os; print(os.cpu_count())\" 2>&1)",
+  "exit_code": 0,
+  "duration_seconds": 2.984,
+  "started_at": "2026-05-03T15:10:42Z",
+  "completed_at": "2026-05-03T15:10:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "036_20260503T151042Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "036_20260503T151042Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 2,
+  "truncated": false
+}

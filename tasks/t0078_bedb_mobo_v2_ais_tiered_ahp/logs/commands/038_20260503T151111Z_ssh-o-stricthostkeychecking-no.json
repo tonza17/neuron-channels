@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai set -e; export PATH=/root/.local/bin:$PATH; cd /root; if [ -d neuron-channels ]; then echo REPO_ALREADY_EXISTS; else git clone --depth 1 https://github.com/tonza17/neuron-channels.git neuron-channels 2>&1 | tail -5; fi; cd /root/neuron-channels; git fetch origin task/t0078_bedb_mobo_v2_ais_tiered_ahp 2>&1 | tail -5 || echo BRANCH_NOT_PUSHED_YET; echo CURRENT_BRANCH=$(git branch --show-current); echo HEAD=$(git rev-parse --short HEAD)",
+  "exit_code": 0,
+  "duration_seconds": 14.377,
+  "started_at": "2026-05-03T15:11:11Z",
+  "completed_at": "2026-05-03T15:11:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "038_20260503T151111Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "038_20260503T151111Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 72,
+  "stderr_lines": 2,
+  "truncated": false
+}
