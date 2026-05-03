@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0076 BoTorch MOBO harness, t0024 de_rosenroll_2026_dsgc cell builder, t0069 AIS attachment code, and t0074 SK_E2 vendoring.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-03T14:07:55Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
