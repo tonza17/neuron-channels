@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "curl -L -A Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15 -e https://www.biorxiv.org/ -o tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/files/wienbar_2022_spike-generation-rgc.pdf https://www.biorxiv.org/content/10.1101/2021.10.19.464988v1.full.pdf --compressed",
+  "exit_code": 0,
+  "duration_seconds": 0.178,
+  "started_at": "2026-05-03T16:16:03Z",
+  "completed_at": "2026-05-03T16:16:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "112_20260503T161603Z_curl-l-a.stdout.txt",
+  "stderr_file": "112_20260503T161603Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

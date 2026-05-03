@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u -c \nimport os, json, urllib.request\nemail = os.environ.get('SCHOLAR_EMAIL', 'a.nikolaev@sheffield.ac.uk')\ndoi = '10.1523/JNEUROSCI.0808-13.2013'\nurl = f'https://api.crossref.org/works/{doi}'\nreq = urllib.request.Request(url, headers={'User-Agent': f'paper-downloader/1.0 (mailto:{email})'})\nwith urllib.request.urlopen(req, timeout=30) as resp:\n    data = json.loads(resp.read().decode())\nm = data['message']\nprint('TITLE:', m.get('title', ['(none)'])[0])\nprint('PUBLISHER:', m.get('publisher'))\nprint('YEAR:', m.get('issued', {}).get('date-parts', [[None]])[0][0])\nprint('PUBDATE:', m.get('published-print') or m.get('published-online'))\nprint('JOURNAL:', m.get('container-title', ['(none)'])[0])\nprint('VOLUME:', m.get('volume'))\nprint('ISSUE:', m.get('issue'))\nprint('PAGES:', m.get('page'))\nprint('TYPE:', m.get('type'))\nprint('ABSTRACT:', m.get('abstract', '(none)')[:500])\nprint('AUTHORS:')\nfor a in m.get('author', []):\n    affs = [aff.get('name', '') for aff in a.get('affiliation', [])]\n    print(f\"  - {a.get('given', '')} {a.get('family', '')}\", '| ORCID:', a.get('ORCID'), '| AFF:', affs)\nprint('LINKS:')\nfor l in m.get('link', []):\n    print(f\"  - {l.get('content-type')} | {l.get('URL')} | {l.get('intended-application')}\")\n",
+  "exit_code": 0,
+  "duration_seconds": 0.83,
+  "started_at": "2026-05-03T16:11:31Z",
+  "completed_at": "2026-05-03T16:11:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "089_20260503T161131Z_python-u-c.stdout.txt",
+  "stderr_file": "089_20260503T161131Z_python-u-c.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,64 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.0808-13.2013",
+  "doi": "10.1523/JNEUROSCI.0808-13.2013",
+  "title": "Dynamic Tuning of Electrical and Chemical Synaptic Transmission in a Network of Motion Coding Retinal Neurons",
+  "url": "https://www.jneurosci.org/content/33/37/14927",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/33/37/14927.full.pdf",
+  "date_published": "2013-09-11",
+  "year": 2013,
+  "authors": [
+    {
+      "name": "Stuart Trenholm",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Amanda J. McLaughlin",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "David J. Schwab",
+      "country": "US",
+      "institution": "Princeton University",
+      "orcid": null
+    },
+    {
+      "name": "Gautam B. Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    },
+    {
+      "name": "Princeton University",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "patch-clamp",
+    "synaptic-integration"
+  ],
+  "abstract": "Recently, we demonstrated that gap junction coupling in the population of superior coding ON-OFF directionally selective ganglion cells (DSGCs) genetically labeled in the Hb9::eGFP mouse retina allows the passage of lateral anticipatory signals that help track moving stimuli. Here, we examine the properties of gap junctions in the DSGC network, and address how interactions between electrical and chemical synapses and intrinsic membrane properties contribute to the dynamic tuning of lateral anticipatory signals. When DSGC subtypes coding all four cardinal directions were individually loaded with the gap junction-permeable tracer Neurobiotin, only superior coding DSGCs exhibited homologous coupling. Consistent with these anatomical findings, gap junction-dependent feedback spikelets were only observed in Hb9+ DSGCs. Recordings from pairs of neighboring Hb9+ DSGCs revealed that coupling was reciprocal, non-inactivating, and relatively weak, and provided a substrate for an extensive subthreshold excitatory receptive field around each cell. This subthreshold activity appeared to boost coincident light-driven chemical synaptic responses. However, during responses to moving stimuli, gap junction-mediated boosting appeared to be dynamically modulated such that upstream DSGCs primed downstream cells, but not vice versa, giving rise to highly skewed responses in individual cells. We show that the asymmetry in priming arises from a combination of spatially offset GABAergic inhibition and activity-dependent changes in intrinsic membrane properties of DSGCs. Thus, dynamic interactions between electrical and chemical synapses and intrinsic membrane properties allow the network of DSGCs to propagate anticipatory responses most effectively along their preferred direction without leading to runaway excitation.",
+  "citation_key": "Trenholm2013",
+  "summary_path": "summary.md",
+  "files": [
+    "files/trenholm_2013_dsgc-electrical-coupling.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "date_added": "2026-05-03"
+}

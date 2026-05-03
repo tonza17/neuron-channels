@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u -c \nimport pdfplumber\npdf = r'C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp\\tasks\\t0078_bedb_mobo_v2_ais_tiered_ahp\\assets\\paper\\10.1523_JNEUROSCI.0808-13.2013\\files\\trenholm_2013_dsgc-electrical-coupling.pdf'\nout = r'C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp\\tasks\\t0078_bedb_mobo_v2_ais_tiered_ahp\\assets\\paper\\10.1523_JNEUROSCI.0808-13.2013\\files\\_fulltext.txt'\nparts = []\nwith pdfplumber.open(pdf) as p:\n    print('PAGES:', len(p.pages))\n    for pg in p.pages:\n        parts.append(pg.extract_text() or '')\nfull = '\\n'.join(parts)\nwith open(out, 'w', encoding='utf-8') as f:\n    f.write(full)\nprint('chars:', len(full))\nprint(full[:2500])\n",
+  "exit_code": 1,
+  "duration_seconds": 0.085,
+  "started_at": "2026-05-03T16:12:45Z",
+  "completed_at": "2026-05-03T16:12:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "096_20260503T161245Z_python-u-c.stdout.txt",
+  "stderr_file": "096_20260503T161245Z_python-u-c.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

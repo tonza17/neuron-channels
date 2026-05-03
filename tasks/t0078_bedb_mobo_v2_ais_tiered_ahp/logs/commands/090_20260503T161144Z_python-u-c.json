@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u -c \nimport os, json, urllib.request\nemail = 'a.nikolaev@sheffield.ac.uk'\ndoi = '10.1523/JNEUROSCI.0808-13.2013'\n\n# Unpaywall\ntry:\n    url = f'https://api.unpaywall.org/v2/{doi}?email={email}'\n    req = urllib.request.Request(url, headers={'User-Agent': f'paper-downloader/1.0 (mailto:{email})'})\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read().decode())\n    print('UNPAYWALL is_oa:', data.get('is_oa'))\n    print('UNPAYWALL best_oa:', data.get('best_oa_location'))\n    for loc in data.get('oa_locations', []):\n        print(' OA loc:', loc.get('url_for_pdf'), '|', loc.get('version'), '|', loc.get('host_type'))\nexcept Exception as e:\n    print('UNPAYWALL ERR:', e)\n\n# PubMed/PMC ID conversion for this DOI\ntry:\n    url = f'https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids={doi}&format=json&tool=arf&email={email}'\n    req = urllib.request.Request(url, headers={'User-Agent': f'paper-downloader/1.0 (mailto:{email})'})\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read().decode())\n    print('PMC IDCONV:', data)\nexcept Exception as e:\n    print('PMC IDCONV ERR:', e)\n",
+  "exit_code": 0,
+  "duration_seconds": 1.062,
+  "started_at": "2026-05-03T16:11:44Z",
+  "completed_at": "2026-05-03T16:11:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "090_20260503T161144Z_python-u-c.stdout.txt",
+  "stderr_file": "090_20260503T161144Z_python-u-c.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

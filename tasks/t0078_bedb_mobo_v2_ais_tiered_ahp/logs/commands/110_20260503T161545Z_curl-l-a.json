@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "curl -L -A Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -H Accept: application/pdf,*/* -o tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/files/wienbar_2022_spike-generation-rgc.pdf https://www.cell.com/neuron/pdfExtended/S0896-6273(22)00357-9",
+  "exit_code": 0,
+  "duration_seconds": 0.245,
+  "started_at": "2026-05-03T16:15:45Z",
+  "completed_at": "2026-05-03T16:15:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "110_20260503T161545Z_curl-l-a.stdout.txt",
+  "stderr_file": "110_20260503T161545Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

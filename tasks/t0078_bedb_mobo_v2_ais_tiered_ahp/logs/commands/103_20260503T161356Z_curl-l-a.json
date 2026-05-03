@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "curl -L -A Mozilla/5.0 -o tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/files/khaliq_2003_resurgent-na-purkinje.pdf https://cdn.ncbi.nlm.nih.gov/pmc/blobs/66a6/6741194/pdf/0234899.pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.363,
+  "started_at": "2026-05-03T16:13:56Z",
+  "completed_at": "2026-05-03T16:13:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "103_20260503T161356Z_curl-l-a.stdout.txt",
+  "stderr_file": "103_20260503T161356Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

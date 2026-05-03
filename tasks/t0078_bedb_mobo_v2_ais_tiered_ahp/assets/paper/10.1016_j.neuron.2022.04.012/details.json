@@ -1,0 +1,46 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2022.04.012",
+  "doi": "10.1016/j.neuron.2022.04.012",
+  "title": "Differences in spike generation instead of synaptic inputs determine the feature selectivity of two retinal cell types",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(22)00357-9",
+  "pdf_url": "https://www.cell.com/neuron/pdfExtended/S0896-6273(22)00357-9",
+  "date_published": "2022-05-03",
+  "year": 2022,
+  "authors": [
+    {
+      "name": "Sophia Wienbar",
+      "country": "US",
+      "institution": "Northwestern University",
+      "orcid": null
+    },
+    {
+      "name": "Gregory William Schwartz",
+      "country": "US",
+      "institution": "Northwestern University",
+      "orcid": "0000-0001-8909-4397"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Northwestern University",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "Retinal ganglion cells (RGCs) are the spiking projection neurons of the eye that encode different features of the visual environment. The circuits providing synaptic input to different RGC types to drive feature selectivity have been studied extensively, but there has been less research aimed at understanding on the intrinsic properties and how they impact feature selectivity. We introduce an RGC type in the mouse, the Bursty Suppressed-by-Contrast (bSbC) RGC and compared it to the OFF sustained Alpha (OFFsA). Differences in their contrast response functions arose not from differences in synaptic inputs but in their intrinsic properties. Spike generation was the key intrinsic property behind this functional difference; the bSbC RGC undergoes depolarization block while the OFFsA RGC maintains a high spike rate. Our results demonstrate that differences in intrinsic properties allow these two RGC types to detect and relay distinct features of an identical visual stimulus to the brain.",
+  "citation_key": "Wienbar2022",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Automated PDF download failed across all open-access mirrors. The published Cell/Neuron PDF (cell.com/neuron/pdfExtended/S0896-6273(22)00357-9) and the bioRxiv preprint (10.1101/2021.10.19.464988) are protected by Cloudflare bot challenges. The PMC mirror (PMC9262831) requires a JavaScript Proof-of-Work cookie before serving PDF bytes. The Europe PMC PDF render endpoint returned 'Failed to retrieve PDF for pmcid: PMC9262831'. Unpaywall reports url_for_pdf is null. Paper is fully open-access via PMC for human visitors but requires browser-execution capabilities not available in this environment. Summary was constructed from the PMC HTML article text (abstract, key methods, quantitative AIS and ionic-conductance parameters) extracted via the WebFetch tool.",
+  "added_by_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "date_added": "2026-05-03"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u -c \nimport importlib\nfor mod in ['fitz','pypdf','PyPDF2','pdfminer','pdfminer.high_level','pdftotext','PyMuPDF','pikepdf']:\n    try:\n        importlib.import_module(mod)\n        print('OK', mod)\n    except Exception as e:\n        print('NO', mod, e)\n",
+  "exit_code": 0,
+  "duration_seconds": 0.065,
+  "started_at": "2026-05-03T16:12:51Z",
+  "completed_at": "2026-05-03T16:12:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "099_20260503T161251Z_python-u-c.stdout.txt",
+  "stderr_file": "099_20260503T161251Z_python-u-c.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

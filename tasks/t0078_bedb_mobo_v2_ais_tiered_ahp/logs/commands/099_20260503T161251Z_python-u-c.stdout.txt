@@ -1,0 +1,8 @@
+NO fitz No module named 'fitz'
+NO pypdf No module named 'pypdf'
+NO PyPDF2 No module named 'PyPDF2'
+NO pdfminer No module named 'pdfminer'
+NO pdfminer.high_level No module named 'pdfminer'
+NO pdftotext No module named 'pdftotext'
+NO PyMuPDF No module named 'PyMuPDF'
+NO pikepdf No module named 'pikepdf'

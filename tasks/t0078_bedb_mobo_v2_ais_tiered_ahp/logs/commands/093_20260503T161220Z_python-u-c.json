@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u -c \nimport urllib.request\nemail = 'a.nikolaev@sheffield.ac.uk'\nurl = 'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6705162/fullTextXML'\nreq = urllib.request.Request(url, headers={'User-Agent': f'paper-downloader/1.0 (mailto:{email})'})\nwith urllib.request.urlopen(req, timeout=60) as resp:\n    data = resp.read().decode('utf-8', errors='replace')\nprint('Size:', len(data))\n# Save XML for downstream extraction\nout = r'C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp\\tasks\\t0078_bedb_mobo_v2_ais_tiered_ahp\\assets\\paper\\10.1523_JNEUROSCI.0808-13.2013\\files\\_fulltext.xml'\nwith open(out, 'w', encoding='utf-8') as f:\n    f.write(data)\nprint('Saved XML:', out)\n",
+  "exit_code": 1,
+  "duration_seconds": 0.411,
+  "started_at": "2026-05-03T16:12:20Z",
+  "completed_at": "2026-05-03T16:12:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "093_20260503T161220Z_python-u-c.stdout.txt",
+  "stderr_file": "093_20260503T161220Z_python-u-c.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 20,
+  "truncated": false
+}

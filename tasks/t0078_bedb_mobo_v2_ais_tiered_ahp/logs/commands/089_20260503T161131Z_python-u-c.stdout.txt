@@ -1,0 +1,17 @@
+TITLE: Dynamic Tuning of Electrical and Chemical Synaptic Transmission in a Network of Motion Coding Retinal Neurons
+PUBLISHER: Society for Neuroscience
+YEAR: 2013
+PUBDATE: {'date-parts': [[2013, 9, 11]]}
+JOURNAL: The Journal of Neuroscience
+VOLUME: 33
+ISSUE: 37
+PAGES: 14927-14938
+TYPE: journal-article
+ABSTRACT: <jats:p>Recently, we demonstrated that gap junction coupling in the population of superior coding ON-OFF directionally selective ganglion cells (DSGCs) genetically labeled in the Hb9::eGFP mouse retina allows the passage of lateral anticipatory signals that help track moving stimuli. Here, we examine the properties of gap junctions in the DSGC network, and address how interactions between electrical and chemical synapses and intrinsic membrane properties contribute to the dynamic tuning of later
+AUTHORS:
+  - Stuart Trenholm | ORCID: None | AFF: []
+  - Amanda J. McLaughlin | ORCID: None | AFF: []
+  - David J. Schwab | ORCID: None | AFF: []
+  - Gautam B. Awatramani | ORCID: None | AFF: []
+LINKS:
+  - unspecified | https://syndication.highwire.org/content/doi/10.1523/JNEUROSCI.0808-13.2013 | similarity-checking
