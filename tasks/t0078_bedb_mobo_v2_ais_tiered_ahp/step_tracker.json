@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision a Vast.ai 72-core CPU instance similar to the t0076 instance for the BO loop.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-03T14:54:21Z",
-      "completed_at": null,
+      "completed_at": "2026-05-03T15:18:35Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
