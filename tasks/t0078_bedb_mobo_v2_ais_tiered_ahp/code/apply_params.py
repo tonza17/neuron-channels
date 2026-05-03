@@ -81,6 +81,12 @@ def _insert_channels_once(*, cell: DSGCCellWithAIS) -> None:
             sec.insert(suffix)
             for seg in sec:
                 setattr(seg, f"gbar_{suffix}", 0.0)
+        # Slow-AHP SK_E2 (skahpt78) is permitted on the AIS per task description
+        # ("Insertion sites: soma + AIS only"). Inserted here so apply_params can
+        # write gbar + tau_ca_multiplier on AIS segments.
+        sec.insert(SLOW_AHP_SUFFIX)
+        for seg in sec:
+            setattr(seg, f"gbar_{SLOW_AHP_SUFFIX}", 0.0)
     _INSERTED_CELLS.add(cell_id)
 
 
