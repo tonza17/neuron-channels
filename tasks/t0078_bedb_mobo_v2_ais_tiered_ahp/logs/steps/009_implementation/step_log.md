@@ -80,7 +80,7 @@ running stably on the remote instance (PID 2366), checkpointed every 10 cells.
     completed: DSI 0.000 / 0.000, PD 9.79 / 5.00 Hz, n_err 0 / 0, trial_t 46.2 / 45.0 s. Projected
     wall-clock for the full 775-cell run: 9.9 hours, in line with the planning estimate.
 
-## Files Produced
+## Outputs
 
 * `code/bootstrap.py` (~117 LOC; copied from t0076 unchanged except docstring)
 * `code/paths.py` (~80 LOC; copied + retargeted to t0078 paths)
