@@ -1,0 +1,10 @@
+VALIDATION RESULTS
+==================
+Errors: 0
+Warnings: 0
+
+Asset summary:
+  paper_id: 10.1016_j.neuron.2012.08.041
+  files: ['files/rivlin-etzion_2012_directional-preference-reversal.xml', 'files/rivlin-etzion_2012_directional-preference-reversal.md']
+  total file size: 121400 bytes
+  summary.md word count: 2507

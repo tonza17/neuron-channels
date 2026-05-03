@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "curl -L -A Mozilla/5.0 -o tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.pdf https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3496185/pdf/nihms406734.pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.847,
+  "started_at": "2026-05-03T15:53:38Z",
+  "completed_at": "2026-05-03T15:53:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "054_20260503T155338Z_curl-l-a.stdout.txt",
+  "stderr_file": "054_20260503T155338Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 8,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \nimport urllib.request\nimport urllib.parse\n# Find an alternative source via Unpaywall API with email param\nurl = 'https://api.unpaywall.org/v2/10.1016%2Fj.neuron.2012.08.041?email=a.nikolaev@sheffield.ac.uk'\nreq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\ntry:\n    with urllib.request.urlopen(req, timeout=60) as r:\n        data = r.read().decode('utf-8')\n        import json\n        d = json.loads(data)\n        oa = d.get('best_oa_location', {})\n        print(f'Best OA URL: {oa.get(\"url\") if oa else None}')\n        print(f'PDF URL: {oa.get(\"url_for_pdf\") if oa else None}')\n        # Also list other locations\n        for loc in d.get('oa_locations', []):\n            print(f'  - {loc.get(\"host_type\")}: pdf={loc.get(\"url_for_pdf\")} landing={loc.get(\"url_for_landing_page\")}')\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.486,
+  "started_at": "2026-05-03T15:56:13Z",
+  "completed_at": "2026-05-03T15:56:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "068_20260503T155613Z_python-c-import-urllib-request-import-ur.stdout.txt",
+  "stderr_file": "068_20260503T155613Z_python-c-import-urllib-request-import-ur.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

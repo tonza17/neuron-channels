@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \nimport re\nwith open('tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.xml', 'rb') as f:\n    data = f.read().decode('utf-8', errors='replace')\ntext = re.sub(r'<[^>]+>', ' ', data)\ntext = re.sub(r'\\s+', ' ', text).strip()\nprint(text[3000:9000])\n",
+  "exit_code": 0,
+  "duration_seconds": 0.073,
+  "started_at": "2026-05-03T15:55:10Z",
+  "completed_at": "2026-05-03T15:55:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "062_20260503T155510Z_python-c-import-re-with-open-tasks-t0078.stdout.txt",
+  "stderr_file": "062_20260503T155510Z_python-c-import-re-with-open-tasks-t0078.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

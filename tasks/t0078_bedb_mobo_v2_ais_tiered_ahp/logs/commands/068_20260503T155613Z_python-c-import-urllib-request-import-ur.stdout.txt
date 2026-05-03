@@ -1,0 +1,4 @@
+Best OA URL: http://www.cell.com/article/S0896627312008070/pdf
+PDF URL: http://www.cell.com/article/S0896627312008070/pdf
+  - publisher: pdf=http://www.cell.com/article/S0896627312008070/pdf landing=https://doi.org/10.1016/j.neuron.2012.08.041
+  - repository: pdf=None landing=https://www.ncbi.nlm.nih.gov/pmc/articles/3496185
