@@ -5,16 +5,15 @@ citation_key: "Tworig2024"
 summarized_by_task: "t0080_bedb_mobo_v3_dendritic_spike_nsga2"
 date_summarized: "2026-05-04"
 ---
-
 # Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring Direction-Selective Circuits in the Retina
 
 ## Metadata
 
 * **File**: `files/tworig_2024_cbln4-dsgc-wiring.pdf`
 * **Published**: 2024-03-21
-* **Authors**: Joshua M. Tworig 🇺🇸, Ryan D. Morrie 🇺🇸, Karina Bistrong 🇺🇸,
-  Rachana D. Somaiya 🇺🇸, Shaw Hsu 🇺🇸, Jocelyn Liang 🇺🇸, Karen G. Cornejo 🇺🇸,
-  Marla B. Feller 🇺🇸
+* **Authors**: Joshua M. Tworig 🇺🇸, Ryan D. Morrie 🇺🇸, Karina Bistrong 🇺🇸, Rachana
+  D. Somaiya 🇺🇸, Shaw Hsu 🇺🇸, Jocelyn Liang 🇺🇸, Karen G. Cornejo 🇺🇸, Marla
+  B. Feller 🇺🇸
 * **Venue**: The Journal of Neuroscience 44(18):e1461232024
 * **DOI**: `10.1523/JNEUROSCI.1461-23.2024`
 
@@ -31,11 +30,11 @@ isolated mouse retinas of both sexes to determine that postnatal day 10 (P10) re
 which asymmetric synapses form. Second, we performed RNA sequencing and differential expression
 analysis on isolated P10 ON-OFF DSGCs tuned for either nasal or ventral motion and identified
 candidates which may promote direction-specific wiring. We then used a conditional knock-out
-strategy to test the role of one candidate, the secreted synaptic organizer cerebellin-4 (Cbln4),
-in the development of DS tuning. Using two-photon calcium imaging, we observed a small deficit in
+strategy to test the role of one candidate, the secreted synaptic organizer cerebellin-4 (Cbln4), in
+the development of DS tuning. Using two-photon calcium imaging, we observed a small deficit in
 directional tuning among ventral-preferring DSGCs lacking Cbln4, though whole-cell voltage-clamp
-recordings did not identify a significant change in inhibitory inputs. This suggests that Cbln4
-does not function primarily via a cell-autonomous mechanism to instruct wiring of DS circuits.
+recordings did not identify a significant change in inhibitory inputs. This suggests that Cbln4 does
+not function primarily via a cell-autonomous mechanism to instruct wiring of DS circuits.
 Nevertheless, our transcriptomic analysis identified unique candidate factors for gaining insights
 into the molecular mechanisms that instruct wiring specificity in the DS circuit.
 
@@ -43,21 +42,21 @@ into the molecular mechanisms that instruct wiring specificity in the DS circuit
 
 Tworig et al. tackle the developmental question of how each DSGC subtype acquires its asymmetric
 SAC-to-DSGC inhibitory wiring during a brief postnatal window. The work proceeds in three stages:
-(1) paired patch-clamp recordings between SACs and ON-OFF DSGCs across P7-P14 to localize the day
-on which null-side asymmetric inhibition emerges; (2) bulk RNA sequencing of FACS-isolated
-GFP-labeled DSGCs from three transgenic lines (Drd4-GFP and Trhr-GFP for nasal-preferring
-populations, Hb9-GFP for the ventral-preferring population) at the identified critical day P10;
-and (3) a conditional RGC-targeted knockout of one top-ranked candidate, the C1q-family secreted
-synaptic organizer Cbln4, with two-photon calcium imaging and whole-cell voltage-clamp readouts of
-DS tuning and synaptic currents.
+(1) paired patch-clamp recordings between SACs and ON-OFF DSGCs across P7-P14 to localize the day on
+which null-side asymmetric inhibition emerges; (2) bulk RNA sequencing of FACS-isolated GFP-labeled
+DSGCs from three transgenic lines (Drd4-GFP and Trhr-GFP for nasal-preferring populations, Hb9-GFP
+for the ventral-preferring population) at the identified critical day P10; and (3) a conditional
+RGC-targeted knockout of one top-ranked candidate, the C1q-family secreted synaptic organizer Cbln4,
+with two-photon calcium imaging and whole-cell voltage-clamp readouts of DS tuning and synaptic
+currents.
 
-The transcriptomic screen identifies hundreds of differentially expressed transcripts between
-nasal- and ventral-preferring DSGCs, including members of the C1q/cerebellin family, protein
-tyrosine phosphatases, clustered protocadherins, and splice isoforms of teneurin-3 (Tenm3). Cbln4
-is one of the strongest hits, with ~100-fold enrichment in ventral-preferring (Hb9-GFP) DSGCs and
-effectively absent expression in nasal-preferring DSGCs. The functional knockout nonetheless yields
-a comparatively modest phenotype: a small DSI reduction across all ventral-preferring DSGCs imaged
-via population two-photon calcium imaging, with no detectable change in EPSC or IPSC amplitude,
+The transcriptomic screen identifies hundreds of differentially expressed transcripts between nasal-
+and ventral-preferring DSGCs, including members of the C1q/cerebellin family, protein tyrosine
+phosphatases, clustered protocadherins, and splice isoforms of teneurin-3 (Tenm3). Cbln4 is one of
+the strongest hits, with ~100-fold enrichment in ventral-preferring (Hb9-GFP) DSGCs and effectively
+absent expression in nasal-preferring DSGCs. The functional knockout nonetheless yields a
+comparatively modest phenotype: a small DSI reduction across all ventral-preferring DSGCs imaged via
+population two-photon calcium imaging, with no detectable change in EPSC or IPSC amplitude,
 asymmetry, timing, or dendritic morphology in voltage-clamp recordings. The authors interpret this
 as evidence that Cbln4 does not act cell-autonomously in DSGCs to instruct asymmetric SAC->DSGC
 inhibitory wiring, while still validating the screen as a discovery tool for candidate synaptogenic
@@ -80,18 +79,18 @@ transcriptomics. No compartmental modelling is performed.
 * **FACS RNA-seq**: P10 retinas dissociated with papain (1 U/ul, 21 min at 37 C); single cells
   sorted on BD FACSAria Fusion; cDNA libraries prepared via Smart-Seq. Three biological replicates
   per genotype. Sequencing on Illumina HiSeq 4000, 100 bp paired-end. ~64.5M fragments per sample,
-  77.8% genomic alignment via Hisat2 + featureCounts; parallel Kallisto pseudoalignment to the
-  mouse transcriptome (mm10) with Sleuth Wald tests for differential expression. Significance cuts
-  applied at adjusted p < 0.01 and beta effect size > 2 or < -2; Benjamini-Hochberg FDR. GO
-  enrichment via GO::TermFinder.
+  77.8% genomic alignment via Hisat2 + featureCounts; parallel Kallisto pseudoalignment to the mouse
+  transcriptome (mm10) with Sleuth Wald tests for differential expression. Significance cuts applied
+  at adjusted p < 0.01 and beta effect size > 2 or < -2; Benjamini-Hochberg FDR. GO enrichment via
+  GO::TermFinder.
 * **Cbln4 conditional knockout**: Cbln4^fl/fl x VGlut2-Cre to delete Cbln4 from RGCs, with
   IRES-mVenus reporter in floxed allele and tdTomato switch in Cre-recombined allele.
 * **Two-photon calcium imaging**: AAV-syn-GCaMP6f population imaging; moving bar stimuli in 8
-  directions; DSI = (R_PD - R_ND) / (R_PD + R_ND); permutation test for direction selectivity at
-  the 95th percentile cutoff; k-means clustering by preferred direction.
+  directions; DSI = (R_PD - R_ND) / (R_PD + R_ND); permutation test for direction selectivity at the
+  95th percentile cutoff; k-means clustering by preferred direction.
 * **Voltage-clamp**: whole-cell EPSCs (V_h = -60 mV) and IPSCs (V_h = 0 mV) during drifting bars at
-  250 um/s and 1,000 um/s; Alexa-594 dye fills for 3D morphology reconstruction; Sholl analysis
-  with 5 um concentric rings; dendritic asymmetry index from convex-hull soma offset.
+  250 um/s and 1,000 um/s; Alexa-594 dye fills for 3D morphology reconstruction; Sholl analysis with
+  5 um concentric rings; dendritic asymmetry index from convex-hull soma offset.
 
 ## Results
 
@@ -104,9 +103,9 @@ transcriptomics. No compartmental modelling is performed.
   null-side conductance increases significantly at P10, t-test p = 0.014); SAC varicosities first
   rise at P10 and reach mature levels by P12 (Kruskal-Wallis p < 0.01).
 * Bulk RNA-seq identifies **2,270 transcripts and 979 genes** differentially expressed between
-  nasal- and ventral-preferring DSGCs at P10 (adj p < 0.01, |beta| > 2). GO enrichment includes
-  cell periphery (659 genes, p = 8.7e-25), plasma membrane (602 genes, p = 1.4e-22), neuron
-  projection (242 genes, p = 1.4e-11), and neuron->neuron synapse (98 genes, p = 2.2e-9).
+  nasal- and ventral-preferring DSGCs at P10 (adj p < 0.01, |beta| > 2). GO enrichment includes cell
+  periphery (659 genes, p = 8.7e-25), plasma membrane (602 genes, p = 1.4e-22), neuron projection
+  (242 genes, p = 1.4e-11), and neuron->neuron synapse (98 genes, p = 2.2e-9).
 * RGC-targeted Cbln4 KO produces a **small but significant reduction in DSI/vector sum** across all
   ventral-preferring DSGCs in two-photon calcium imaging, but **no significant DSI difference** in
   the Hb9-GFP subset (Hb9 = 28% of all ventral DSGCs in WT, 30% in KO).
@@ -115,9 +114,9 @@ transcriptomics. No compartmental modelling is performed.
   either 250 um/s or 1,000 um/s drifting-bar speeds; cell counts n = 35 WT vs n = 17 KO
   ventral-preferring DSGCs (10 vs 8 mice).
 * **Dendritic morphology preserved**: total dendrite length, dendrite-soma center-of-mass offset,
-  number of branch points, ON-OFF index, ON and OFF Sholl profiles all unchanged between
-  Cbln4^fl/fl and VGlut2-Cre;Cbln4^fl/fl ventral-preferring DSGCs (n = 16 WT vs n = 18 KO;
-  mixed-ANOVA over Sholl radii non-significant).
+  number of branch points, ON-OFF index, ON and OFF Sholl profiles all unchanged between Cbln4^fl/fl
+  and VGlut2-Cre;Cbln4^fl/fl ventral-preferring DSGCs (n = 16 WT vs n = 18 KO; mixed-ANOVA over
+  Sholl radii non-significant).
 * Cbln4 KO reduces inhibitory **center-surround index** in small-receptive-field ON-OFF RGCs and
   increases OFF-pathway speed-tuning index in suppressed-by-contrast RGCs (both p < 0.05), but
   EPSC/IPSC amplitudes during full-field flashes are otherwise unchanged in non-DS RGC types.
@@ -133,8 +132,8 @@ transcriptomics. No compartmental modelling is performed.
 
 Direct paired-recording evidence that null-side SAC->DSGC inhibitory conductance asymmetry appears
 between P9 and P10, combined with sparse-label varicosity counting that pins SAC presynaptic-
-structure formation to the same window. This dual electrophysiology + morphology calibration
-anchors the choice of P10 as the molecular-screen sampling time point.
+structure formation to the same window. This dual electrophysiology + morphology calibration anchors
+the choice of P10 as the molecular-screen sampling time point.
 
 ### Subtype-Resolved P10 Bulk RNA-seq of Three DSGC Lines
 
@@ -161,8 +160,8 @@ not required for asymmetric SAC->DSGC inhibitory synaptogenesis.
 * **Paired patch-clamp**: SAC->DSGC pairs at P9 (n = 4 DSGCs), P10 (n = 5 DSGCs); reference adult
   data from Wei et al. 2010.
 * **Two-photon calcium imaging**: 265 Hb9-GFP DSGCs from 5 Cbln4^fl/fl mice; 252 Hb9-GFP DSGCs from
-  4 VGlut2-Cre;Cbln4^fl/fl mice; 163 ventral-preferring + 171 nasal-preferring DS cells in WT vs
-  96 + 133 in KO.
+  4 VGlut2-Cre;Cbln4^fl/fl mice; 163 ventral-preferring + 171 nasal-preferring DS cells in WT vs 96
+  \+ 133 in KO.
 * **Voltage-clamp**: 35 ventral-preferring DSGCs from 10 WT mice and 17 from 8 KO mice; total
   population includes 65 mVenus+ and 68 tdTomato+ Cbln4-expressing RGCs across all subtypes.
 * **Morphology**: 16 WT and 18 KO ventral-preferring DSGC dendritic reconstructions.
@@ -181,9 +180,9 @@ not required for asymmetric SAC->DSGC inhibitory synaptogenesis.
   the broader k-means-clustered ventral DSGC population and the molecularly defined Hb9-GFP subset
   -- the two diverge in the Cbln4 KO phenotype.
 * **Cbln4 is not the bottleneck for asymmetric inhibition**: voltage-clamp IPSC magnitude,
-  asymmetry, and timing are unchanged in the KO. Project plans should not assume that perturbing
-  one C1q-family synaptic-organiser gene will substantially reshape the inhibitory tuning curve
-  that is the t0080 target reference.
+  asymmetry, and timing are unchanged in the KO. Project plans should not assume that perturbing one
+  C1q-family synaptic-organiser gene will substantially reshape the inhibitory tuning curve that is
+  the t0080 target reference.
 * **Excitatory inputs onto ventral-preferring DSGCs are weakly directional with a ventral
   preference**, with peak EPSCs larger in the ventral direction but tuning much weaker than IPSCs
   (consistent with Park 2014, Pei 2015, Percival 2019, El-Quessny 2020, Summers 2021). This matters
@@ -212,8 +211,8 @@ Statistical testing uses Wald tests with Benjamini-Hochberg FDR for differential
 permutation tests for direction-selective cell classification.
 
 The screen yields **2,270 differentially expressed transcripts** including strong candidates from
-the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and Tenm3
-splice isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs, but the
+the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and Tenm3 splice
+isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs, but the
 RGC-targeted KO produces only a **small DSI reduction** in the broader ventral-preferring DSGC
 population and **no detectable difference** in IPSC amplitude, asymmetry, or timing, EPSC
 properties, or dendritic morphology in voltage-clamp recordings. The authors conclude that Cbln4
@@ -224,11 +223,10 @@ For this project, the paper is tangential to t0080 optimisation aims because t00
 fixed deposited E/I substrate rather than reshaping it. The relevance is contextual: it documents
 the developmental origin of the asymmetric inhibitory wiring that t0080 takes as a fixed biological
 prior, validates that ventral-preferring DSGCs receive stronger inhibition for dorsal motion (a
-hallmark feature already encoded in our target tuning curve), and reports that excitation onto
-these cells is weakly direction-tuned with a ventral preference -- supporting the project
-continued treatment of the AMPA input distribution as approximately symmetric. The ~100-fold Cbln4
-enrichment hit with a small DSI phenotype is also a useful negative-result anchor: it shows that
-single-gene perturbations of synaptic organisers do not substantially redistribute the inhibitory
-tuning curve, so future tasks should keep the project E/I substrate fixed at the canonical
-t0078/t0080 levels rather than attempting biologically motivated perturbations of single
-synaptogenic molecules.
+hallmark feature already encoded in our target tuning curve), and reports that excitation onto these
+cells is weakly direction-tuned with a ventral preference -- supporting the project continued
+treatment of the AMPA input distribution as approximately symmetric. The ~100-fold Cbln4 enrichment
+hit with a small DSI phenotype is also a useful negative-result anchor: it shows that single-gene
+perturbations of synaptic organisers do not substantially redistribute the inhibitory tuning curve,
+so future tasks should keep the project E/I substrate fixed at the canonical t0078/t0080 levels
+rather than attempting biologically motivated perturbations of single synaptogenic molecules.
