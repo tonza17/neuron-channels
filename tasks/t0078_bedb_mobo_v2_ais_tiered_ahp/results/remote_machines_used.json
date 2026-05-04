@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36068067",
+    "gpu": "RTX-5060-Ti-idle-unused",
+    "gpu_count": 1,
+    "ram_gb": 503,
+    "duration_hours": 24.8578,
+    "cost_usd": 3.9335
+  }
+]

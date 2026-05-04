@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "vastai destroy instance 36068067 -y",
+  "exit_code": 0,
+  "duration_seconds": 2.064,
+  "started_at": "2026-05-04T15:51:47Z",
+  "completed_at": "2026-05-04T15:51:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "168_20260504T155147Z_vastai-destroy-instance.stdout.txt",
+  "stderr_file": "168_20260504T155147Z_vastai-destroy-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
