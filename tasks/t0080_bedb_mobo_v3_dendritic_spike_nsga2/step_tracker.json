@@ -94,11 +94,11 @@
     {
       "step": 11,
       "name": "creative-thinking",
-      "description": "Out-of-the-box analysis on the v3 Pareto front and dendritic-spike contribution.",
-      "status": "pending",
+      "description": "Skipped: clean negative-result framing already evident from the 5-cell Pareto front.",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/011_creative-thinking/"
     },
     {
       "step": 12,
