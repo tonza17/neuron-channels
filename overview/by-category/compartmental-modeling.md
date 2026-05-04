@@ -4,16 +4,16 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (31)](../papers/by-category/compartmental-modeling.md) | [Answers
-(14)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(233)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+**Detail pages**: [Papers (32)](../papers/by-category/compartmental-modeling.md) | [Answers
+(15)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(241)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (13)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
 
 ---
 
-## Papers (31)
+## Papers (32)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -430,6 +430,57 @@ morphology-sweep tasks that embed a DSGC in a SAC network. A limitation is that 
 passive-only (no ion channels), so claims about the role of SAC intrinsic properties versus
 input layout are by construction bounded - this is explicitly acknowledged in the Discussion,
 and the authors note RSME can implement active channels in future studies.
+
+</details>
+
+<details>
+<summary>📝 <strong>Electrical match between initial segment and somatodendritic
+compartment for action potential backpropagation in retinal ganglion
+cells</strong> — Goethals et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2020.09.15.297937` |
+| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2020.09.15.297937` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse
+retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
+the action potential to the much larger soma. The AIS must produce an axial current strong
+enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
+demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
+estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
+AP shape; this paper provides the first direct functional measurement via the axial current
+itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
+= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
+AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
+potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
+reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
+over a 20 mV depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
+density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
+from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
+**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
+charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
+estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
+mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
+minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
+~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
+critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
+capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
+size in t0080 MOBO optimization.
 
 </details>
 
@@ -1651,7 +1702,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 
 </details>
 
-## Tasks (6)
+## Tasks (7)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1661,8 +1712,30 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
+| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (14)
+## Answers (15)
+
+<details>
+<summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
+the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior
+checklist prevents this failure mode in future MOBO-on-biophysics
+tasks?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-04 | **Full answer**:
+[`mobo-on-biophysics-ais-disabled-corner`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/)
+
+The optimiser exploited a soft-prior loophole. t0078's per-tier search bounds let `nav16_ais`
+go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008's measured cortical AIS Nav
+range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024's mouse alpha-RGC measurement of
+1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a
+fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than
+a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard
+parameter bounds, not soft penalties: pre-register `nav16_ais >= 0.25` S/cm^2 (Kole 2008) and
+AIS-to-soma Nav ratio `>= 5` (Werginz 2024) as inviolable constraints, plus equivalent priors
+on every biophysical parameter where measurement-grounded ranges exist.
+
+</details>
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -1960,7 +2033,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (205 open, 28 closed)
+## Suggestions (213 open, 28 closed)
 
 <details>
 <summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
@@ -2108,6 +2181,155 @@ parameters; (b) propose log-uniform priors with hard biological lower bounds as 
 future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
 checklist of biological priors to enforce as hard constraints in future MOBO tasks.
 Recommended task types: answer-question, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
+scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
+cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
+192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
+practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
+50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
+determine whether the negative architectural result holds at the planned budget. Estimated
+cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
+saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
+to the v3 54-d parameter space</strong> (S-0080-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
+Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
+regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
+compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
+25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
+dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
+locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
+~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
+types: experiment-run, baseline-evaluation.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
+54-d parameter space</strong> (S-0080-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
+9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
+Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
+near-Pareto starting population, dramatically reducing the generations needed to converge.
+Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
+~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
+warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
+Vast.ai 64-core. Recommended task types: experiment-run, build-model.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Parameter-space pruning to ~30-40 d before re-running NSGA-II
+on the Bed B substrate</strong> (S-0080-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0078's 49-d run revealed that several parameters consistently land at floors or ceilings
+across the full BoTorch trajectory, suggesting they carry little Pareto information. Audit
+t0078's per-parameter posterior-quantile distributions and t0080's per-parameter Pareto-cell
+values; drop the 10-15 parameters with the narrowest effective ranges (e.g., parameters whose
+5th-95th percentile across feasible cells spans <10% of bounded range). Re-run NSGA-II on the
+pruned 30-40 d substrate at pop=24 / gen=8 to confirm that the dimensionality-vs-budget
+mismatch is the dominant negative-result driver. Cost ~$0.75 (similar budget to t0080 but
+smaller search space should converge faster). Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Hybrid BoTorch-warmup + NSGA-II-refinement optimiser for high-d
+MOBO on biophysics</strong> (S-0080-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0078 hit O(N^3) GP-fit scaling at ~480 cells; t0080's NSGA-II at pop=24 was
+sample-inefficient in 54-d. A hybrid approach exploits both methods' strengths: run BoTorch
+qLogNEHVI for the first 50 cells (where the GP scales fine) to generate a sample-efficient
+seed population, then switch to NSGA-II at pop=50 / gen=20 starting from those 50 BoTorch
+cells plus 50 LHS cells. The BoTorch warmup biases the initial population toward
+Pareto-relevant regions; NSGA-II then explores without the GP-fit blow-up. Implement as a
+wrapper around the t0080 `nsga2_loop.py` and t0078's BoTorch driver. Cost ~$1.50 on Vast.ai
+64-core. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Standardise hypervolume reference-point convention across t0076
+/ t0078 / t0080 MOBO runs</strong> (S-0080-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080's `nsga2_loop.py` uses `utopia_point = (0.7, 80)` for HV scaling; t0076 and t0078 used
+`[0, 0]` reference points. HV values across the three tasks are on different scales and not
+directly numerically comparable, breaking cross-task progress narratives. Pick a single
+convention (recommended: reference point [0, 0] matching the t0076/t0078 baseline;
+alternative: nadir-based reference point recomputed per run) and document it in a project
+methodology note. Re-compute HV on the t0080 stored cells under the chosen convention and
+amend `results/metrics.json` via a correction. Apply the convention prospectively to all
+future MOBO tasks. No new compute needed. Recommended task types: data-analysis,
+infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Benchmark NSGA-III + restart strategies vs NSGA-II at small pop
+in high-d biophysics MOBO</strong> (S-0080-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080's 5-cell Pareto front is sparse (4 of 5 cells from gen 1; only cell 58 from gen 0);
+inspection of the all_evaluations.json shows many cells in similar parameter clusters across
+gen 0 -> 1, suggesting NSGA-II's selection pressure converged the small pop=24 prematurely.
+Test three diversity-preserving alternatives at the same evaluation budget (192 cells): (a)
+NSGA-III with reference-point-based survival (better for >=3-objective MOBO and high-d); (b)
+NSGA-II with restart-on-stagnation (re-LHS half the population every 4 generations of HV
+plateau); (c) larger pop=64 / gen=3 (same total cells but much wider parent pool). Compare
+Pareto-front diversity, HV at termination, and DSI/PD reach. Cost ~$0.75 per variant; ~$2.25
+total or run as one bundled task. Recommended task types: experiment-run,
+comparative-analysis.
 
 </details>
 

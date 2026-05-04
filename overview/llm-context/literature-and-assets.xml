@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-04T17:39:30Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-04T22:48:44Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>193930</char_count>
-    <byte_count>194219</byte_count>
-    <estimated_tokens>48482</estimated_tokens>
+    <char_count>201658</char_count>
+    <byte_count>201949</byte_count>
+    <estimated_tokens>50414</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -187,9 +187,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0077_brainstorm_results_13</id>
         <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
         <id>t0079_brainstorm_results_14</id>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 72
+Completed tasks: 73
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -622,6 +623,12 @@ ID: t0079_brainstorm_results_14
 Completed: 2026-05-04
 Short description: Fourteenth brainstorm: commission t0080 (Bed B v3 MOBO with dendritic-spike machinery + NSGA-II); reject 3 suggestions covered by t0080.
 Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strategic brainstorm, run on 2026-05-04 after t0078 (49-d AIS-augmented Bed B v2 BoTorch qLogNEHVI MOBO with tier-stratified channels and slow Kv-AHP) completed. The session is triggered by the t0078 architectural diagnostic: the AIS-augmented substrate expanded the achievable Pareto front by **+36% in hypervolume** over t0076 but still missed the joint pass criterion `DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz` -- the closest cell (iter 81) sits at DSI 0.316 / PD 9.68 Hz, short by 0.084 on DSI and 0.32 Hz on PD. The compare-literature analysis identified two follow-on diagnostics: passive dendrites are the bottleneck on the high-DSI rail (PD...
+
+## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Completed: 2026-05-04
+Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II Summary Built a 54-d AIS+dendritic-spike-augmented Bed B substrate (de Rosenroll 2026 DSGC) by extending t0078&#x27;s `de_rosenroll_2026_dsgc_ais` library with Mg-block NMDA at all dendritic compartments and Nav1.6 + NaP at distal-dendrite densities, then ran a small NSGA-II via pymoo (pop=24, gen=8 = **192 evaluations**) on a Vast.ai 64-core EPYC 7B13 instance for **$0.7458**. Hard biological lower bounds (`nav16_ais` &gt;= 0.25 S/cm² per Kole 2008; AIS-to-soma Nav ratio &gt;= 5 per Werginz 2024 /...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -631,10 +638,9 @@ Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strate
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -655,13 +661,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
-ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
-Status: not_started
-Effective date: unknown
-Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo, t0078_bedb_mobo_v2_ais_tiered_ahp
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -686,9 +685,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_chann
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
         <id>synapse-distribution-audit-deposited-vs-paper</id>
+        <id>mobo-on-biophysics-ais-disabled-corner</id>
       </source_ids>
       <content>
-Answers: 18
+Answers: 19
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -831,12 +831,24 @@ Created by: t0050_audit_syn_distribution on 2026-04-25
 Confidence: high
 
 The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 + 0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct...
+
+## Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future MOBO-on-biophysics tasks?
+ID: mobo-on-biophysics-ais-disabled-corner
+Created by: t0080_bedb_mobo_v3_dendritic_spike_nsga2 on 2026-05-04
+Confidence: high
+Categories: voltage-gated-channels, compartmental-modeling, patch-clamp
+
+The optimiser exploited a soft-prior loophole. t0078&#x27;s per-tier search bounds let `nav16_ais` go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008&#x27;s measured cortical AIS Nav range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024&#x27;s mouse alpha-RGC measurement of 1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard parameter bounds, not soft penalties: pre-register `nav16_ais &gt;= 0.25` S/cm^2 (Kole 2008) and AIS-to-soma Nav ratio `&gt;= 5` (Werginz 2024) as...
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.64898_2026.02.02.701812</id>
+        <id>10.1073_pnas.2415223122</id>
+        <id>10.1523_JNEUROSCI.1461-23.2024</id>
+        <id>10.1101_2020.09.15.297937</id>
         <id>10.1523_JNEUROSCI.1592-24.2024</id>
         <id>no-doi_Ament2023_logei-bo</id>
         <id>10.1016_j.neuron.2022.04.012</id>
@@ -909,7 +921,35 @@ The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and num
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 70
+Papers: 74
+
+## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
+ID: 10.64898_2026.02.02.701812
+Year: 2026
+Authors: Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through a local dendritic computation, using developing mouse SACs as a model. The work spans calcium imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions across the same ages. The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with quadrant-resolved DSI metrics for moving bars and propagating waves, plus...
+
+## Retinal ganglion cells encode the direction of motion outside their classical receptive field
+ID: 10.1073_pnas.2415223122
+Year: 2025
+Authors: Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the canonical direction-selective ganglion cells, or whether it is also computed at the population level by RGCs through the so-called extraclassical receptive field. They tackle this with large-scale ex vivo MEA recordings of dorsal mouse retinas plus complementary in vivo Neuropixels recordings in the LGN, and supplement the recordings with static-bar mapping, central-area occlusion masks, multiple bar speeds, glycinergic-amacrine pharmacology, and gap-junction...
+
+## Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring Direction-Selective Circuits in the Retina
+ID: 10.1523_JNEUROSCI.1461-23.2024
+Year: 2024
+Authors: Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Tworig and colleagues address one specific developmental question: which molecules instruct the asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF DSGC subtypes during the brief P9-P10 critical period? Prior work had shown that the asymmetric inhibitory pattern emerges within roughly two postnatal days and persists in the absence of visual input, suggesting an instructive molecular code, but the responsible molecules were unknown. The authors target the postsynaptic side of this wiring problem in mouse retina with...
+
+## Electrical match between initial segment and somatodendritic compartment for action potential backpropagation in retinal ganglion cells
+ID: 10.1101_2020.09.15.297937
+Year: 2020
+Authors: Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Goethals et al. study the biophysical organization of the axon initial segment in mouse retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits the action potential to the much larger soma. The AIS must produce an axial current strong enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior estimates of AIS Nav conductance density in RGCs came only from computational model fitting to AP...
 
 ## Differential Intrinsic Firing Properties in Sustained and Transient Mouse αRGCs Match Their Light Response Characteristics and Persist during Retinal Degeneration
 ID: 10.1523_JNEUROSCI.1592-24.2024
@@ -1457,9 +1497,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>minimal_dsgc_bar_locked_gaba_ampa_sweep</id>
         <id>dsgc_active_channel_pack</id>
         <id>de_rosenroll_2026_dsgc_ais</id>
+        <id>de_rosenroll_2026_dsgc_ais_dendritic_spike</id>
       </source_ids>
       <content>
-Libraries: 15
+Libraries: 16
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1565,6 +1606,13 @@ Version: 0.1.0
 Created by task: t0078_bedb_mobo_v2_ais_tiered_ahp
 Module paths: tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\build_cell_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\extend_with_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\apply_params.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\constants.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\paths.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\bootstrap.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\parametric_placer.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_helpers.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_driver.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\recorder.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skahpt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nav16t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\napt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nart78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kdrt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv3t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv4t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv7t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\iht78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\calt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\catt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\bkt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skt78.mod
 This library is the AIS-augmented Bed B DSGC substrate that t0078 uses as the search space for a multi-objective Bayesian optimisation over channel densities, slow-AHP kinetics, and synaptic placement. It forks the t0024 `de_rosenroll_2026_dsgc` library and attaches a two-subsegment AIS with the appropriate channel set per the Van Wart / Werginz / Kole biological priors; it stratifies five channels across five...
+
+## De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery
+ID: de_rosenroll_2026_dsgc_ais_dendritic_spike
+Version: 0.1.0
+Created by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Module paths: tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\extend_with_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\constants.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_helpers.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\parametric_placer.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_driver.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\recorder.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\bootstrap.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\nsga2_loop.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\bkt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\calt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\catt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\iht80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kdrt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv3t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv4t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv7t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\napt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nart80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nav16t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skahpt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skt80.mod
+The library packages the v3 Bed B substrate and the NSGA-II MOBO harness used to search it. It extends the t0078 substrate with dendritic-spike machinery (Mg-block NMDA, distal Nav1.6 + NaP) and replaces the BoTorch qLogNEHVI optimiser with pymoo NSGA-II, eliminating the O(N^3) scaling that bottlenecked t0078. Hard biological bounds on the AIS Nav parameters are enforced through the parameter bounds and a single...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">

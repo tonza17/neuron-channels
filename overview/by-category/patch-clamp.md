@@ -4,13 +4,68 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (27)](../papers/by-category/patch-clamp.md) | [Answers
-(2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(22)](../suggestions/by-category/patch-clamp.md)
+**Detail pages**: [Papers (29)](../papers/by-category/patch-clamp.md) | [Answers
+(3)](../answers/by-category/patch-clamp.md) | [Suggestions
+(23)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
-## Papers (27)
+## Papers (29)
+
+<details>
+<summary>📖 <strong>Retinal ganglion cells encode the direction of motion outside
+their classical receptive field</strong> — Riccitelli et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1073_pnas.2415223122` |
+| **Authors** | Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri, Michal Rivlin-Etzion |
+| **Venue** | Proceedings of the National Academy of Sciences (journal) |
+| **DOI** | `10.1073/pnas.2415223122` |
+| **URL** | https://www.pnas.org/doi/10.1073/pnas.2415223122 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1073_pnas.2415223122/summary.md) |
+
+Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the
+canonical direction-selective ganglion cells, or whether it is also computed at the population
+level by RGCs through the so-called extraclassical receptive field. They tackle this with
+large-scale ex vivo MEA recordings of dorsal mouse retinas plus complementary in vivo
+Neuropixels recordings in the LGN, and supplement the recordings with static-bar mapping,
+central-area occlusion masks, multiple bar speeds, glycinergic-amacrine pharmacology, and
+gap-junction pharmacology.
+
+Their methodology centres on a 350 um radius Central area mask that defines the classical RF
+boundary and a Distancemin filter (450 um to retinal edge) that ensures every cell has a
+measurable extraclassical annulus. Two motion-asymmetry metrics (mAI > 0.3, NVS > 0.15) plus
+permutation shuffling identify the asymmetric PRE response. Static flashed bars locate the
+asymmetric activation zone; centre masking dissociates desensitization from an inherent DS
+component; strychnine and MFA reveal a wide-field-amacrine plus glycinergic plus gap-junction
+circuit; multi-speed bars demonstrate speed invariance.
+
+The headline findings are that **12.7%** of mouse RGCs (and a corresponding subset of LGN
+neurons) encode motion direction outside their classical RF through an asymmetric activation
+zone, that their preferred directions form a centripetal population code pointing toward the
+optic disc, that direction tuning relies jointly on classical-RF desensitization and on an
+inherent DS component inside the activation zone, and that glycinergic amacrine cells plus
+gap-junction coupling are necessary for the full effect. The signal survives to dLGN, vLGN,
+and IGL.
+
+For this project, the paper is broader population-coding context rather than a direct model
+target. The neuron-channels project simulates an explicitly direction-selective DRD4 ON-OFF
+DSGC in NEURON, so Riccitelli et al. occupy a complementary niche; they describe DS
+computations in non-DS RGCs that arise from circuit-level interactions outside any single
+cell. The paper is relevant for framing the t0080 v3 substrate (single-DSGC model) within the
+wider population-level direction-encoding literature, for noting that the 5-fold
+AIS-Nav-density scaling debate concerns DRD4 DSGCs specifically rather than the broader RGC
+population, and as a Zenodo data source if a later task ever needs out-of-DSGC RGC firing
+benchmarks. It does not change the t0080 NSGA-II parameter bounds, the dendritic-spike
+conductance ranges, or the AHP-tail metrics, but it strengthens the rationale for the project
+narrow focus on the DRD4 cell type rather than generalising claims to RGC direction encoding
+as a whole.
+
+</details>
 
 <details>
 <summary>📖 <strong>Differential Intrinsic Firing Properties in Sustained and
@@ -221,6 +276,57 @@ and (iv) reproducing the gap between stationary-map and drifting-bar offsets req
 stimulus-dependent recruitment of lateral inhibition. These quantitative constraints directly
 feed into the AMPA/GABA placement, synaptic density maps, and stimulus protocols used to tune
 the project’s DSGC compartmental model.
+
+</details>
+
+<details>
+<summary>📝 <strong>Electrical match between initial segment and somatodendritic
+compartment for action potential backpropagation in retinal ganglion
+cells</strong> — Goethals et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2020.09.15.297937` |
+| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2020.09.15.297937` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse
+retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
+the action potential to the much larger soma. The AIS must produce an axial current strong
+enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
+demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
+estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
+AP shape; this paper provides the first direct functional measurement via the axial current
+itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
+= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
+AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
+potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
+reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
+over a 20 mV depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
+density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
+from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
+**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
+charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
+estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
+mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
+minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
+~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
+critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
+capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
+size in t0080 MOBO optimization.
 
 </details>
 
@@ -1403,7 +1509,7 @@ means and standard deviations.
 
 </details>
 
-## Tasks (6)
+## Tasks (7)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1413,8 +1519,30 @@ means and standard deviations.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
+| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (2)
+## Answers (3)
+
+<details>
+<summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
+the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior
+checklist prevents this failure mode in future MOBO-on-biophysics
+tasks?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-04 | **Full answer**:
+[`mobo-on-biophysics-ais-disabled-corner`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/)
+
+The optimiser exploited a soft-prior loophole. t0078's per-tier search bounds let `nav16_ais`
+go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008's measured cortical AIS Nav
+range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024's mouse alpha-RGC measurement of
+1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a
+fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than
+a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard
+parameter bounds, not soft penalties: pre-register `nav16_ais >= 0.25` S/cm^2 (Kole 2008) and
+AIS-to-soma Nav ratio `>= 5` (Werginz 2024) as inviolable constraints, plus equivalent priors
+on every biophysical parameter where measurement-grounded ranges exist.
+
+</details>
 
 <details>
 <summary><strong>What does the patch-clamp / voltage-clamp / space-clamp literature
@@ -1466,7 +1594,7 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (18 open, 4 closed)
+## Suggestions (19 open, 4 closed)
 
 <details>
 <summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
@@ -1486,6 +1614,24 @@ parameters; (b) propose log-uniform priors with hard biological lower bounds as 
 future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
 checklist of biological priors to enforce as hard constraints in future MOBO tasks.
 Recommended task types: answer-question, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
 
 </details>
 

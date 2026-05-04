@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-233 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **205 open** (29
-high, 150 medium, 26 low), **28 closed**.
+241 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **213 open** (32
+high, 154 medium, 27 low), **28 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -582,6 +582,30 @@ DSGC task.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
+scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
+cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
+192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
+practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
+50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
+determine whether the negative architectural result holds at the planned budget. Estimated
+cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
+saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
 EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
 recovery</strong> (S-0055-02)</summary>
@@ -650,6 +674,31 @@ produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 �
 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
 that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
+to the v3 54-d parameter space</strong> (S-0080-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
+Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
+regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
+compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
+25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
+dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
+locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
+~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
+types: experiment-run, baseline-evaluation.
 
 </details>
 
@@ -752,6 +801,30 @@ confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline
 pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
 AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
 affecting PD.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
+54-d parameter space</strong> (S-0080-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
+9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
+Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
+near-Pareto starting population, dramatically reducing the generations needed to converge.
+Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
+~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
+warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
+Vast.ai 64-core. Recommended task types: experiment-run, build-model.
 
 </details>
 
@@ -1156,6 +1229,32 @@ Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's work
 Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
 actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
 as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📊 <strong>Benchmark NSGA-III + restart strategies vs NSGA-II at small pop
+in high-d biophysics MOBO</strong> (S-0080-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0080's 5-cell Pareto front is sparse (4 of 5 cells from gen 1; only cell 58 from gen 0);
+inspection of the all_evaluations.json shows many cells in similar parameter clusters across
+gen 0 -> 1, suggesting NSGA-II's selection pressure converged the small pop=24 prematurely.
+Test three diversity-preserving alternatives at the same evaluation budget (192 cells): (a)
+NSGA-III with reference-point-based survival (better for >=3-objective MOBO and high-d); (b)
+NSGA-II with restart-on-stagnation (re-LHS half the population every 4 generations of HV
+plateau); (c) larger pop=64 / gen=3 (same total cells but much wider parent pool). Compare
+Pareto-front diversity, HV at termination, and DSI/PD reach. Cost ~$0.75 per variant; ~$2.25
+total or run as one bundled task. Recommended task types: experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -2223,6 +2322,30 @@ compare-literature.md as a concrete limitation. Recommended task types: experime
 </details>
 
 <details>
+<summary>🔧 <strong>Hybrid BoTorch-warmup + NSGA-II-refinement optimiser for high-d
+MOBO on biophysics</strong> (S-0080-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-05` |
+| **Kind** | technique |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0078 hit O(N^3) GP-fit scaling at ~480 cells; t0080's NSGA-II at pop=24 was
+sample-inefficient in 54-d. A hybrid approach exploits both methods' strengths: run BoTorch
+qLogNEHVI for the first 50 cells (where the GP scales fine) to generate a sample-efficient
+seed population, then switch to NSGA-II at pop=50 / gen=20 starting from those 50 BoTorch
+cells plus 50 LHS cells. The BoTorch warmup biases the initial population toward
+Pareto-relevant regions; NSGA-II then explores without the GP-fit blow-up. Implement as a
+wrapper around the t0080 `nsga2_loop.py` and t0078's BoTorch driver. Cost ~$1.50 on Vast.ai
+64-core. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Hybrid spatial-gating + amplitude-scaling inhibition mechanism
 on minimal DSGC</strong> (S-0053-05)</summary>
 
@@ -2912,6 +3035,31 @@ The t0024 sweep took 11,562 s (3.21 h) because NEURON ran single-threaded on one
 (V_rest, direction, trial) combination is embarrassingly parallel. Build a ProcessPoolExecutor
 wrapper that farms out trials across cores; with 8 workers we expect wall time to drop below 1
 h. This will make V_rest x rho and V_rest x velocity sweeps practical.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Parameter-space pruning to ~30-40 d before re-running NSGA-II
+on the Bed B substrate</strong> (S-0080-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0078's 49-d run revealed that several parameters consistently land at floors or ceilings
+across the full BoTorch trajectory, suggesting they carry little Pareto information. Audit
+t0078's per-parameter posterior-quantile distributions and t0080's per-parameter Pareto-cell
+values; drop the 10-15 parameters with the narrowest effective ranges (e.g., parameters whose
+5th-95th percentile across feasible cells spans <10% of bounded range). Re-run NSGA-II on the
+pruned 30-40 d substrate at pop=24 / gen=8 to confirm that the dimensionality-vs-budget
+mismatch is the dominant negative-result driver. Cost ~$0.75 (similar budget to t0080 but
+smaller search space should converge faster). Recommended task types: experiment-run,
+data-analysis.
 
 </details>
 
@@ -4005,6 +4153,31 @@ task types: comparative-analysis, answer-question.
 </details>
 
 <details>
+<summary>📊 <strong>Standardise hypervolume reference-point convention across t0076
+/ t0078 / t0080 MOBO runs</strong> (S-0080-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0080's `nsga2_loop.py` uses `utopia_point = (0.7, 80)` for HV scaling; t0076 and t0078 used
+`[0, 0]` reference points. HV values across the three tasks are on different scales and not
+directly numerically comparable, breaking cross-task progress narratives. Pick a single
+convention (recommended: reference point [0, 0] matching the t0076/t0078 baseline;
+alternative: nadir-based reference point recomputed per run) and document it in a project
+methodology note. Re-compute HV on the t0080 stored cells under the chosen convention and
+amend `results/metrics.json` via a correction. Apply the convention prospectively to all
+future MOBO tasks. No new compute needed. Recommended task types: data-analysis,
+infrastructure-setup.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Stricter AMPA escape range (gAMPA in {5, 7, 10} nS) and sub-0.1
 nS bar-locked GABA on t0059 substrate</strong> (S-0059-05)</summary>
 
@@ -5088,6 +5261,30 @@ validation sweep (baseline + 3 BK densities × 12 angles × 5 seeds = 240 trials
 dendritic cad insertion preserves the no-cad baseline DSI more closely while still providing
 functional Ca for BK / SK channels in the dendrites. If confirmed, this is the right substrate
 design for t0075 active-dendrite work and improves t0074's biological plausibility post-hoc.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
 
 </details>
 

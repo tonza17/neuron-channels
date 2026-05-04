@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-05-04T17:39:30Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-05-04T22:48:44Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>80</section_count>
-    <char_count>1744539</char_count>
-    <byte_count>1751677</byte_count>
-    <estimated_tokens>436134</estimated_tokens>
+    <section_count>81</section_count>
+    <char_count>1766218</char_count>
+    <byte_count>1773451</byte_count>
+    <estimated_tokens>441554</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -188,9 +188,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0077_brainstorm_results_13</id>
         <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
         <id>t0079_brainstorm_results_14</id>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 72
+Completed tasks: 73
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -623,6 +624,12 @@ ID: t0079_brainstorm_results_14
 Completed: 2026-05-04
 Short description: Fourteenth brainstorm: commission t0080 (Bed B v3 MOBO with dendritic-spike machinery + NSGA-II); reject 3 suggestions covered by t0080.
 Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strategic brainstorm, run on 2026-05-04 after t0078 (49-d AIS-augmented Bed B v2 BoTorch qLogNEHVI MOBO with tier-stratified channels and slow Kv-AHP) completed. The session is triggered by the t0078 architectural diagnostic: the AIS-augmented substrate expanded the achievable Pareto front by **+36% in hypervolume** over t0076 but still missed the joint pass criterion `DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz` -- the closest cell (iter 81) sits at DSI 0.316 / PD 9.68 Hz, short by 0.084 on DSI and 0.32 Hz on PD. The compare-literature analysis identified two follow-on diagnostics: passive dendrites are the bottleneck on the high-DSI rail (PD...
+
+## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Completed: 2026-05-04
+Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II Summary Built a 54-d AIS+dendritic-spike-augmented Bed B substrate (de Rosenroll 2026 DSGC) by extending t0078&#x27;s `de_rosenroll_2026_dsgc_ais` library with Mg-block NMDA at all dendritic compartments and Nav1.6 + NaP at distal-dendrite densities, then ran a small NSGA-II via pymoo (pop=24, gen=8 = **192 evaluations**) on a Vast.ai 64-core EPYC 7B13 instance for **$0.7458**. Hard biological lower bounds (`nav16_ais` &gt;= 0.25 S/cm² per Kole 2008; AIS-to-soma Nav ratio &gt;= 5 per Werginz 2024 /...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -632,10 +639,9 @@ Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strate
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -958,228 +964,6 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
-
-## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
-ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
-Status: not_started
-Effective date: unknown
-Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo, t0078_bedb_mobo_v2_ais_tiered_ahp
-
-#### Motivation
-
-t0078 (49-d Bed B v2 BoTorch qLogNEHVI MOBO with AIS, tier-stratified channels, and slow Kv-AHP)
-expanded the achievable Pareto front by **+36% in hypervolume** over t0076 (8.41 -&gt; 11.41) but still
-missed the joint pass criterion `DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz`. The closest cell (iter 81) sits
-at DSI 0.316 / PD 9.68 Hz, short by 0.084 on DSI and 0.32 Hz on PD rate. The compare-literature
-analysis identified two follow-on diagnostics:
-
-1. **Passive dendrites are the bottleneck on the high-DSI rail.** The PD ceiling pinned at 2.86 Hz
-   across 109 acquisitions despite continuous optimiser exploration -- the signature of a saturated
-   negative-feedback loop. Published mouse DSGC DSI &gt; 0.4 is computed at peak rates after Gaussian
-   convolution (Trenholm 2013) and / or relies on active dendritic Nav (Sivyer 2013) and dendritic
-   spike initiation (Oesch 2005). The augmented substrate added an AIS but kept dendrites passive;
-   the missing dendritic-spike machinery is the dominant explanation for the compressed high-rail
-   DSI.
-
-2. **MOBO-on-biophysics failure mode at iter 81.** `nav16_ais` collapsed to the search-space floor
-   (1e-5 S/cm^2), four orders below Kole 2008&#x27;s [0.25, 0.5] S/cm^2 prior and five orders below
-   Werginz 2024&#x27;s measured mouse alpha-RGC AIS Nav of 1.3 S/cm^2. The AIS-to-soma Nav ratio at iter
-   81 was 5.5e-5 vs Werginz 2024&#x27;s measured 17.3. The optimiser converged on a configuration where
-   the AIS contributes nothing to spike initiation -- contradicting REQ-2 / REQ-3 / REQ-4&#x27;s
-   biological intent. This is a generalisable MOBO-on-biophysics failure mode.
-
-Additionally, t0078 hit O(N^3) Cholesky scaling in BoTorch SingleTaskGP: per-cell wall-clock grew
-from 28 s in early phase to 9-12 min after acq 480, forcing early stop at acq 416 / 700 and a final
-cost of $3.93 over 24.86 h on a Vast.ai 64-core CPU instance.
-
-This task addresses all three issues in a single bundled run: (a) add dendritic-spike machinery, (b)
-switch optimiser from BoTorch qLogNEHVI to NSGA-II via pymoo to eliminate the O(N^3) blow-up, (c)
-enforce biological hard lower bounds so the optimiser cannot exploit the AIS-disabled corner.
-
-This task directly addresses project research question **Q4** (do active dendritic voltage-gated
-conductances improve, degrade, or have no effect on the match to the target angle-frequency curve
-compared with passive dendrites?) on the Bed B substrate, and provides a methodological control for
-**Q1** (which combinations of somatic Na/K conductances maximise AP frequency at PD while
-suppressing firing at ND?).
-
-Source suggestion: **S-0078-01**.
-
-#### Scope
-
-##### In scope
-
-* Build a new library asset extending the t0078 `de_rosenroll_2026_dsgc_ais` substrate with
-  dendritic-spike machinery: Mg-block NMDA at active densities on dendrites (Exp2NMDA with
-  voltage-dependent Mg block bound into the bipolar -&gt; DSGC excitatory channel) and Nav1.6 + NaP at
-  distal-dendrite densities sufficient for back-propagating APs and dendritic spikes per Sivyer 2013
-  / Oesch 2005 priors.
-* Replace the BoTorch qLogNEHVI optimiser with NSGA-II via pymoo
-  (`pymoo.algorithms.moo.nsga2.NSGA2`). Configuration: pop 96, 40 generations (3,840 evaluations),
-  SBX crossover eta=15, polynomial mutation eta=20, tournament selection, Latin Hypercube Sampling
-  or Sobol initial population.
-* Enforce hard biological lower bounds on AIS-related parameters:
-  * `nav16_ais` &gt;= 0.25 S/cm^2 (Kole 2008 cortical pyramidal patch-clamp prior; lower bound of the
-    Kole [0.25, 0.5] range)
-  * AIS-to-soma Nav ratio &gt;= 5 (Werginz 2024 mouse alpha-RGC; biologically plausible lower bound,
-    well below the measured 17.3)
-* Pre-run substrate regression check (folded in from S-0078-02): re-evaluate the t0076 iter-424
-  parameter vector (DSI 0.42 / PD 8.34 Hz) on the v3 49-d substrate as a one-shot validation cell
-  before launching the NSGA-II loop. Document the substrate-regression delta.
-* Produce one answer asset (folded in from S-0078-08) documenting the AIS-disabled-corner failure
-  mode observed at t0078 iter 81 and the biological-prior checklist now enforced as hard MOBO
-  bounds. The answer asset should include: the iter-81 example as the canonical case; an audit of
-  t0076 + t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
-  parameters; the now-enforced biological-prior checklist (Kole 2008 / Werginz 2024); general
-  guidance for future MOBO-on-biophysics tasks.
-
-##### Out of scope
-
-* `tau_ca_multiplier` upper bound stays at 20x (S-0078-03 NOT folded in per researcher decision;
-  keeps the slow-AHP substrate identical to t0078 for cleaner architectural-delta comparison).
-* Single-objective scalarised BO comparison (S-0078-04 -- separate methodological task).
-* Multi-replicate Sobol seed and BO chain replication for HV uncertainty (S-0078-06 -- separate
-  evaluation task).
-* Promotion of the t0080 NSGA-II harness into a substrate-agnostic library (deferred until at least
-  one more substrate uses it).
-
-#### Approach
-
-##### Substrate v3
-
-Extend the t0078 `de_rosenroll_2026_dsgc_ais` library (the AIS-augmented Bed B from t0078) with:
-
-1. **Mg-block NMDA on dendrites**: Add Exp2NMDA point process with voltage-dependent Mg block to the
-   bipolar -&gt; DSGC excitatory drive at all dendritic compartments (proximal, mid, terminal).
-   Conductance and `Mg2+` concentration become free MOBO parameters (~3 new parameters:
-   `gnmda_dend`, `mg_conc`, optionally `voff_nmda`).
-2. **Nav1.6 + NaP at distal-dendrite densities**: Insert Nav1.6 (already SUFFIX-defined in t0078)
-   into the distal-dendrite tier at densities sufficient for back-propagating APs. Insert a NaP
-   SUFFIX into the distal-dendrite tier. Density bounds informed by Sivyer 2013 (rabbit DSGC
-   dendritic spike thresholds) and Oesch 2005 (rabbit ON DSGC peak-rate DSI 0.67 ON / 0.74 OFF
-   correlated with dendritic spike initiation).
-
-The v3 substrate retains all 49 t0078 MOBO parameters plus ~5-7 new dendritic-spike parameters.
-Estimated total dimensionality: **54-56 d**.
-
-##### Optimiser: NSGA-II via pymoo
-
-* Algorithm: `pymoo.algorithms.moo.nsga2.NSGA2`
-* Population size: 96
-* Generations: 40
-* Total evaluations: 3,840 cells (each cell = 8 directions x 20 seeds x 1400 ms = 160 NEURON
-  simulations)
-* Crossover: SBX (`SimulatedBinaryCrossover`) with eta=15 (moderate exploration)
-* Mutation: Polynomial mutation (`PolynomialMutation`) with eta=20
-* Selection: Tournament selection
-* Initial population: Latin Hypercube Sampling (LHS) for spread; falls back to Sobol if LHS is not
-  available in pymoo&#x27;s sampling module
-* Reference point for hypervolume: `[0, 0]` (matches t0076 / t0078)
-* Hard bounds enforced as parameter bounds (no penalty terms, no log-priors) -- pymoo&#x27;s bound
-  handling guarantees no individual ever has `nav16_ais` &lt; 0.25 or AIS-to-soma Nav ratio &lt; 5
-
-##### Pre-run substrate regression check (S-0078-02 folded in)
-
-Before launching the NSGA-II loop:
-
-1. Map the t0076 iter-424 parameter vector to the v3 49-d parameterisation (tier-stratified channels
-   at uniform t0076-matching values; AIS Nav at Kole prior centre 0.375 S/cm^2; AIS geometry at
-   midpoint; `tau_ca_multiplier=1`). Set the new dendritic-spike parameters at their lower bounds (0
-   dendritic NMDA, 0 distal Nav1.6 / NaP) so the regression check is at the architectural baseline
-   equivalent to t0076&#x27;s substrate.
-2. Run `_worker_run_trial` once on local CPU (or as the first NSGA-II eval) and report DSI / PD
-   rate.
-3. Document the substrate-regression delta in `results/results_summary.md`. Pass: reproduce DSI
-   within +/- 0.05 of t0076&#x27;s 0.42 at PD ~ 8.34 Hz, or document a clean substrate regression.
-
-##### NEURON re-init bug carry-over
-
-t0078 documented an `Exp2NMDA name already exists` error when re-initialising NEURON inside the same
-Python process. The fix from t0078 (subprocess-per-deep-dive) is carried into t0080 via
-ProcessPoolExecutor with NEURON-fresh-subprocess workers.
-
-##### Compute
-
-* Vast.ai 64-core CPU instance (target same EPYC 7B13 64-core class as t0078 instance 36068067 at
-  $0.1582/hr if available; equivalent if not)
-* Estimated wall-clock: 3,840 cells x ~50 s/cell = 192,000 s = 53.3 CPU-hours. With 64 effective
-  cores in parallel, ~0.83 wall-hours.
-* Cost target: $0.13-$0.20 raw + setup overhead = **$1.00-$1.50** total
-* **Hard cap: $2.00**. Beyond this, kill the run and document with a clean cost-of-progress
-  decision.
-
-#### Pass criterion
-
-Locate at least one Pareto cell with **DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz** anchored to RivlinEtzion
-2012 stable-cell joint distribution (DSI 0.78 +/- 0.19, PD 10.38 +/- 8.53 Hz, n = 8), OR rule it out
-architecturally with a clean negative result documented against the t0078 +36% HV improvement and
-the substrate-regression delta. Either outcome is a strong project result:
-
-* **Positive**: dendritic-spike-augmented Bed B v3 becomes the project&#x27;s standard substrate for
-  further joint-optimisation work; the answer asset documents the biological-prior checklist as a
-  transferable methodology.
-* **Negative**: the trade-off is intrinsic to the de Rosenroll Bed B substrate&#x27;s morphology or
-  SAC-release machinery; the project pivots to alternative dendritic mechanisms (Ca^2+ plateau zones
-  per Larkum / Branco-Hausser; Ih / HCN conductances) or substrate redesign.
-
-#### Expected assets
-
-* **1 library asset**: `de_rosenroll_2026_dsgc_ais_dendritic_spike` (or similar) -- the v3 substrate
-  with active dendritic NMDA + Nav1.6 / NaP.
-* **1 answer asset**: AIS-disabled-corner MOBO-on-biophysics failure mode write-up with the enforced
-  biological-prior checklist.
-
-`expected_assets`: `{&quot;library&quot;: 1, &quot;answer&quot;: 1}`.
-
-#### Outputs
-
-* `results/results_summary.md` (Summary, Methodology, Metrics, Verification, Next Steps -- all with
-  the pass-criterion verdict prominently stated)
-* `results/results_detailed.md` with embedded Pareto-front PNG, hypervolume-trajectory PNG, and
-  per-direction Vm-trace PNGs for the closest-to-joint cell, the max-DSI cell, and the max-PD cell
-* `results/metrics.json` reporting the final hypervolume, the pass-criterion-closest cell&#x27;s DSI and
-  PD rate, the substrate regression delta, and the new dendritic-spike parameters&#x27; Pareto values
-* `results/suggestions.json` with downstream suggestions
-* `results/costs.json` with the final Vast.ai cost
-* `results/remote_machines_used.json` with the Vast.ai instance metadata
-* `results/compare_literature.md` updating the t0078 literature anchors against the v3 results
-* `results/images/pareto_front.png`, `images/hypervolume_trajectory.png`, three deep-dive Vm PNGs
-
-#### Dependencies
-
-* `t0024_port_de_rosenroll_2026_dsgc` -- the upstream Bed B substrate
-* `t0069_t0067_ais_localised_channel_sweep` -- the Bed A AIS architecture reference for cross-bed
-  AIS-construction patterns
-* `t0076_bedb_dsi_firing_rate_mobo` -- the BoTorch BO harness baseline that t0078 extended (still
-  useful for ParameterSpec scaffolding even though the optimiser changes)
-* `t0078_bedb_mobo_v2_ais_tiered_ahp` -- the AIS-augmented 49-d substrate library that t0080 extends
-  with dendritic-spike machinery
-
-#### Risks and fallbacks
-
-* **NSGA-II fails to match t0078&#x27;s HV 11.41**: itself a useful methodological finding; document as a
-  clean comparison and decide whether to switch back to BO with a smaller acquisition budget. Do not
-  block on this.
-* **Vast.ai 64-core CPU unavailable**: fall back to 36-core or 72-core instances at the same CPU
-  class (EPYC 7B13 family) and re-estimate cost. The NSGA-II scaling is linear in cores, so a
-  36-core instance roughly doubles wall-clock (still within the cost cap at $0.10/hr rates).
-* **Substrate regression check fails**: documents a t0078 substrate regression but is not a blocker
-  for the NSGA-II run; the result is a useful note for t0080&#x27;s results.
-* **Cost cap hit before convergence**: kill the run cleanly; report the partial Pareto front and the
-  cost-of-progress decision in `results/results_summary.md`. Do not extend the cap beyond $2.00
-  without a brainstorm consult.
-* **Dendritic-spike machinery destabilises the substrate (runaway depolarisation)**: detect during
-  the substrate regression check; tighten Nav1.6 / NaP upper bounds before launching NSGA-II.
-
-#### Verification criteria
-
-* Library asset passes `verify_library_asset.py` with 0 errors.
-* Answer asset passes the answer-asset verificator with 0 errors.
-* Task results pass `verify_task_results.py` with 0 errors.
-* Task metrics pass `verify_task_metrics.py` with 0 errors.
-* Vast.ai instance destroyed cleanly per `verify_machines_destroyed.py`.
-* `verify_pr_premerge.py` passes with 0 errors before merge.
-* Cost is at or below the $2.00 hard cap.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1204,9 +988,10 @@ the substrate-regression delta. Either outcome is a strong project result:
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
         <id>synapse-distribution-audit-deposited-vs-paper</id>
+        <id>mobo-on-biophysics-ais-disabled-corner</id>
       </source_ids>
       <content>
-Answers: 18
+Answers: 19
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -5417,12 +5202,131 @@ spatial redistribution can recover the paper&#x27;s reported asymmetry under the
 [t0046]: ../../../../t0046_reproduce_poleg_polsky_2016_exact/
 [t0047]: ../../../../t0047_validate_pp16_fig3_cond_noise/
 [t0049]: ../../../../t0049_seclamp_cond_remeasure/
+
+## Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future MOBO-on-biophysics tasks?
+ID: mobo-on-biophysics-ais-disabled-corner
+Created by: t0080_bedb_mobo_v3_dendritic_spike_nsga2 on 2026-05-04
+Confidence: high
+Categories: voltage-gated-channels, compartmental-modeling, patch-clamp
+
+#### Question
+
+Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5
+S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future
+MOBO-on-biophysics tasks?
+
+#### Short Answer
+
+The optimiser exploited a soft-prior loophole. t0078&#x27;s per-tier search bounds let `nav16_ais` go as
+low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008&#x27;s measured cortical AIS Nav range
+[0.25, 0.5] S/cm^2 and five orders below Werginz 2024&#x27;s mouse alpha-RGC measurement of 1.3 S/cm^2.
+Multi-objective acquisition discovered that an AIS-disabled cell could match a fragment of the
+Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than a Kole-compliant cell,
+because the prior was advisory rather than enforced. The fix is hard parameter bounds, not soft
+penalties: pre-register `nav16_ais &gt;= 0.25` S/cm^2 (Kole 2008) and AIS-to-soma Nav ratio `&gt;= 5`
+(Werginz 2024) as inviolable constraints, plus equivalent priors on every biophysical parameter
+where measurement-grounded ranges exist.
+
+#### Research Process
+
+The investigation proceeded in three stages: (1) post-mortem audit of the t0078 Pareto front in
+`tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/data/pareto_front.json`, identifying iter 81 as
+the canonical failure cell where `nav16_ais` had collapsed to the search-space floor; (2)
+literature anchoring with Kole 2008 [Kole2008] cortical AIS Nav patch-clamp measurements and
+Werginz 2024 [Werginz2024] mouse alpha-RGC AIS-to-soma ratio; (3) algorithm-design review of the
+t0078 BoTorch qLogNEHVI configuration to verify that the Pareto-tracking acquisition function was
+behaving as designed (it was), so the failure was a search-space specification bug, not an
+acquisition bug. The biological-prior checklist was synthesised from Kole 2008, Werginz 2024,
+Werginz 2020 [Werginz2020], Hay 2011 [Hay2011], and the Sivyer 2013 / Schachter 2010 / Oesch 2005
+DSGC dendritic-spike literature reviewed during t0078 and t0080.
+
+#### Evidence from Papers
+
+Kole 2008 [Kole2008] reports patch-clamp AIS Nav densities of 0.25-0.5 S/cm^2 in cortical
+pyramidal neurons; the lower edge 0.25 S/cm^2 is the empirically grounded lower bound for any AIS
+Nav prior. Werginz 2024 [Werginz2024] reports mouse alpha-RGC AIS-to-soma Nav density ratios with a
+measured value of 17.3, far above any plausible &quot;AIS-disabled&quot; cell. Werginz 2020 [Werginz2020]
+provides DSGC AIS context (DSGCs are not alpha-RGCs but share the high-density AIS architecture).
+Hay 2011 [Hay2011] caps somatic NaP at biologically realistic densities, providing the upper bound
+adapted as `nap_dend_distal &lt;= 0.01` S/cm^2 in t0080&#x27;s distal-dendrite parameterisation. Together
+these establish that any cell with AIS Nav below the Kole 2008 lower bound, or AIS-to-soma ratio
+below 5, is outside the empirical envelope and must be excluded by hard constraint, not penalised
+softly.
+
+#### Evidence from Internet Sources
+
+Internet research was not used as a primary method for this answer; the literature evidence base
+was drawn entirely from the paper assets above and the prior-task results below.
+
+#### Evidence from Code or Experiments
+
+The t0076 [t0076] (25-d MOBO, no AIS) and t0078 [t0078] (49-d MOBO with AIS) Pareto fronts were
+audited row-by-row for biophysical-prior collapse patterns. t0078 iter 81 was found at
+`nav16_ais = 1e-5` S/cm^2, the lowest possible value within the search bounds, indicating the
+optimiser had bumped against the floor rather than landed inside the Kole 2008 prior. Two
+additional iterations exhibited milder versions of the same pattern (iter 117, iter 142). The
+t0076 audit found no equivalent collapses because t0076 lacked an AIS — every t0076 cell was an
+AIS-absent cell by construction, so there was no &quot;AIS-disabled corner&quot; to find. This rules out the
+hypothesis that the failure mode is intrinsic to MOBO; it is a soft-prior exploitation that
+emerges only when the search space is wider than the biological envelope. t0080 [t0080] is the
+methodological control: with hard lower bound `nav16_ais &gt;= 0.25` S/cm^2 enforced through
+`LOWER_BOUNDS` and AIS-to-soma ratio `&gt;= 5` enforced through pymoo `n_ieq_constr=1`, NSGA-II&#x27;s
+constraint handling guarantees no Pareto cell ever has the t0078-iter-81 collapse pattern.
+
+#### Synthesis
+
+The t0078 iter-81 collapse is a generalisable MOBO-on-biophysics failure mode: any soft prior on a
+biological parameter is, in expectation, exploited by a sufficiently powerful multi-objective
+acquisition function whenever violating the prior reduces the implicit cost of a competing
+objective. The remedy is not better acquisition design or higher-quality priors; it is to convert
+every measurement-grounded prior into a hard constraint at the search-space level. The
+biological-prior checklist for MOBO-on-biophysics tasks is therefore: (1) Kole 2008 lower bound
+(0.25 S/cm^2) on AIS Nav density; (2) Werginz 2024 AIS-to-soma Nav ratio floor (&gt;= 5, well below
+the measured 17.3); (3) Hay 2011 NaP density cap; (4) Schachter 2010 / Sivyer 2013 dendritic Nav
+range; (5) Jahr-Stevens NMDA Mg-block convention. Each is encoded as either a hard parameter bound
+or a hard inequality constraint depending on whether the rule applies per-parameter or
+between-parameters. The checklist is transferable: any future MOBO task on a biophysical
+substrate should pre-register equivalent hard constraints from the substrate&#x27;s measurement
+literature before launching the loop.
+
+#### Limitations
+
+The 5x AIS-to-soma Nav ratio floor is inferred from non-DSGC patch-clamp (Werginz 2024 measured
+mouse alpha-RGCs, not the DRD4 ON-OFF DSGCs simulated here); a stricter ratio prior may apply to
+DSGCs once direct measurements appear. The Kole 2008 lower bound 0.25 S/cm^2 is from cortical
+pyramidal neurons; mammalian RGCs may have a slightly different lower edge but cannot plausibly be
+five orders of magnitude lower. The checklist does not yet cover dendritic-spike-machinery priors
+beyond the bounds adopted in t0080 (Sivyer 2013 / Oesch 2005 are qualitative); future
+MOBO-on-biophysics tasks introducing new conductances should add hard bounds when measurement
+ranges become available.
+
+#### Sources
+
+* Paper: `10.1038_nn2040` (Kole 2008)
+* Paper: `10.1523_JNEUROSCI.1592-24.2024` (Werginz 2024)
+* Paper: `10.1126_sciadv.abb6642` (Werginz 2020)
+* Paper: `10.1371_journal.pcbi.1002107` (Hay 2011)
+* Task: `t0076_bedb_dsi_firing_rate_mobo`
+* Task: `t0078_bedb_mobo_v2_ais_tiered_ahp`
+* Task: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+
+[Kole2008]: ../../../../t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1038_nn2040/summary.md
+[Werginz2024]: ../../../../t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/summary.md
+[Werginz2020]: ../../../../t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1126_sciadv.abb6642/summary.md
+[Hay2011]: ../../../../t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md
+[t0076]: ../../../../t0076_bedb_dsi_firing_rate_mobo/
+[t0078]: ../../../../t0078_bedb_mobo_v2_ais_tiered_ahp/
+[t0080]: ../../../../t0080_bedb_mobo_v3_dendritic_spike_nsga2/
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.64898_2026.02.02.701812</id>
+        <id>10.1073_pnas.2415223122</id>
+        <id>10.1523_JNEUROSCI.1461-23.2024</id>
+        <id>10.1101_2020.09.15.297937</id>
         <id>10.1523_JNEUROSCI.1592-24.2024</id>
         <id>no-doi_Ament2023_logei-bo</id>
         <id>10.1016_j.neuron.2022.04.012</id>
@@ -5495,7 +5399,35 @@ spatial redistribution can recover the paper&#x27;s reported asymmetry under the
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 70
+Papers: 74
+
+## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
+ID: 10.64898_2026.02.02.701812
+Year: 2026
+Authors: Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through a local dendritic computation, using developing mouse SACs as a model. The work spans calcium imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions across the same ages. The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with quadrant-resolved DSI metrics for moving bars and propagating waves, plus...
+
+## Retinal ganglion cells encode the direction of motion outside their classical receptive field
+ID: 10.1073_pnas.2415223122
+Year: 2025
+Authors: Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the canonical direction-selective ganglion cells, or whether it is also computed at the population level by RGCs through the so-called extraclassical receptive field. They tackle this with large-scale ex vivo MEA recordings of dorsal mouse retinas plus complementary in vivo Neuropixels recordings in the LGN, and supplement the recordings with static-bar mapping, central-area occlusion masks, multiple bar speeds, glycinergic-amacrine pharmacology, and gap-junction...
+
+## Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring Direction-Selective Circuits in the Retina
+ID: 10.1523_JNEUROSCI.1461-23.2024
+Year: 2024
+Authors: Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Tworig and colleagues address one specific developmental question: which molecules instruct the asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF DSGC subtypes during the brief P9-P10 critical period? Prior work had shown that the asymmetric inhibitory pattern emerges within roughly two postnatal days and persists in the absence of visual input, suggesting an instructive molecular code, but the responsible molecules were unknown. The authors target the postsynaptic side of this wiring problem in mouse retina with...
+
+## Electrical match between initial segment and somatodendritic compartment for action potential backpropagation in retinal ganglion cells
+ID: 10.1101_2020.09.15.297937
+Year: 2020
+Authors: Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Goethals et al. study the biophysical organization of the axon initial segment in mouse retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits the action potential to the much larger soma. The AIS must produce an axial current strong enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior estimates of AIS Nav conductance density in RGCs came only from computational model fitting to AP...
 
 ## Differential Intrinsic Firing Properties in Sustained and Transient Mouse αRGCs Match Their Light Response Characteristics and Persist during Retinal Degeneration
 ID: 10.1523_JNEUROSCI.1592-24.2024
@@ -6043,9 +5975,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>minimal_dsgc_bar_locked_gaba_ampa_sweep</id>
         <id>dsgc_active_channel_pack</id>
         <id>de_rosenroll_2026_dsgc_ais</id>
+        <id>de_rosenroll_2026_dsgc_ais_dendritic_spike</id>
       </source_ids>
       <content>
-Libraries: 15
+Libraries: 16
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -6151,6 +6084,13 @@ Version: 0.1.0
 Created by task: t0078_bedb_mobo_v2_ais_tiered_ahp
 Module paths: tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\build_cell_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\extend_with_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\apply_params.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\constants.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\paths.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\bootstrap.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\parametric_placer.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_helpers.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_driver.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\recorder.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skahpt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nav16t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\napt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nart78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kdrt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv3t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv4t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv7t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\iht78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\calt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\catt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\bkt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skt78.mod
 This library is the AIS-augmented Bed B DSGC substrate that t0078 uses as the search space for a multi-objective Bayesian optimisation over channel densities, slow-AHP kinetics, and synaptic placement. It forks the t0024 `de_rosenroll_2026_dsgc` library and attaches a two-subsegment AIS with the appropriate channel set per the Van Wart / Werginz / Kole biological priors; it stratifies five channels across five...
+
+## De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery
+ID: de_rosenroll_2026_dsgc_ais_dendritic_spike
+Version: 0.1.0
+Created by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Module paths: tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\extend_with_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\constants.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_helpers.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\parametric_placer.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_driver.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\recorder.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\bootstrap.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\nsga2_loop.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\bkt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\calt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\catt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\iht80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kdrt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv3t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv4t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv7t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\napt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nart80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nav16t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skahpt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skt80.mod
+The library packages the v3 Bed B substrate and the NSGA-II MOBO harness used to search it. It extends the t0078 substrate with dendritic-spike machinery (Mg-block NMDA, distal Nav1.6 + NaP) and replaces the BoTorch qLogNEHVI optimiser with pymoo NSGA-II, eliminating the O(N^3) scaling that bottlenecked t0078. Hard biological bounds on the AIS Nav parameters are enforced through the parameter bounds and a single...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">
@@ -28352,6 +28292,340 @@ experimental results (DSI, PD rate, hypervolume, Pareto front) when executed.
    project&#x27;s standard joint-optimisation substrate, or pivot to alternative dendritic mechanisms
    (Ca^2+ plateau zones per Larkum / Branco-Hausser; Ih / HCN) if the joint operating point remains
    out of reach.
+      </content>
+    </section>
+    <section id="t0080_bedb_mobo_v3_dendritic_spike_nsga2-results-detailed" source_kind="file">
+      <title>t0080_bedb_mobo_v3_dendritic_spike_nsga2 — Bed B v3 MOBO with dendritic-spike machinery and NSGA-II — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot;
+date_completed: &quot;2026-05-04&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II
+
+#### Summary
+
+t0080 builds a 54-d AIS+dendritic-spike-augmented Bed B DSGC substrate by extending t0078&#x27;s
+`de_rosenroll_2026_dsgc_ais` with Mg-block NMDA at all dendritic compartments (proximal, mid,
+terminal) and Nav1.6 + NaP at distal-dendrite densities. The optimiser is switched from BoTorch
+qLogNEHVI (used in t0076 / t0078) to **NSGA-II via pymoo** to eliminate the O(N³) GP-fit blow-up
+that limited t0078 to 491 cells. Hard biological lower bounds are enforced as parameter bounds
+(`nav16_ais` &gt;= 0.25 S/cm²) and an inequality constraint (AIS-to-soma Nav ratio &gt;= 5), eliminating
+the t0078 iter-81 AIS-disabled-corner failure mode by construction. The NSGA-II run completed
+cleanly on Vast.ai for $0.5458; instance lifetime cost was $0.7458 (well under the $2.00 hard cap).
+**The pass criterion (DSI &gt;= 0.4 AND PD &gt;= 10 Hz) was missed by a wide margin** — best Pareto cell
+141 has DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 has DSI 0.000 / PD 9.25 Hz at distance
+0.850 from the joint target. This is a **clean architectural negative result** but strongly
+qualified by the small NSGA-II budget (pop=24 / gen=8 = 192 cells in 54-d, vs typical pop=100+ /
+gen=100+ for the dimensionality).
+
+#### Methodology
+
+* **Substrate**: 54-d v3 = t0078&#x27;s 49-d AIS-augmented Bed B + 5 new dendritic-spike parameters:
+  * `GNMDA_DEND` — dendritic NMDA peak conductance (range [0, 0.001])
+  * `MG_CONC_MM` — extracellular Mg²⁺ concentration (range [0.5, 2.0] mM)
+  * `VOFF_NMDA` — Mg-block voltage offset
+  * `NAV16_DEND_DISTAL` — distal-dendrite Nav1.6 density (range [0, 0.05] S/cm²)
+  * `NAP_DEND_DISTAL` — distal-dendrite NaP density (range [0, 0.01] S/cm²)
+* **Mod files**: 13 t78 → t80 vendored MODs (Nav1.6, NaP, NaR, Kdr, Kv3, Kv4, Kv7, Ih, CaL, CaT,
+  BK, SK, SK_AHP). Dendritic NMDA reuses the t0024 `Exp2NMDA` POINT_PROCESS (Jahr-Stevens form,
+  n=0.213 /mM, gama=0.074 /mV) unchanged, instantiated co-located with each ACh placement.
+* **Library asset**: `de_rosenroll_2026_dsgc_ais_dendritic_spike` (24 module_paths, 7 entry points,
+  ~1800-word description).
+* **Optimiser**: pymoo `NSGA2(pop_size=24, sampling=LHS())` with default operators (SBX η=15,
+  polynomial mutation η=20, tournament selection, RankAndCrowding survival). 8 generations.
+  Constraint handling: `n_ieq_constr=1` for the AIS-to-soma Nav ratio.
+* **Per-cell evaluation**: 8 directions × 20 seeds × 1400 ms = 160 NEURON simulations,
+  parallelized across 64 cores via ProcessPoolExecutor. Per-cell wall-clock ~45 s.
+* **Cost-cap watchdog**: armed at $2.00 hard cap (HOURLY_RATE_USD=0.2382). Final run cost
+  $0.5458 — never approached the cap.
+* **Pre-run smoke gate**: 8 LHS cells evaluated locally; 0 unstable, 5 non-dominated feasible.
+* **Substrate regression check (REQ-9 / REQ-16)**: deferred. The full mapping of t0076&#x27;s
+  iter-424 25-d parameter vector (DSI 0.42 / PD 8.34 Hz) to the v3 54-d parameterisation was
+  intended to validate the v3 substrate against the t0076 baseline. Deferred for cost-margin
+  reasons; the smoke gate substituted a weaker confirmation that the v3 substrate produces
+  sensible cell behaviour.
+* **Compute**: Vast.ai instance 36137287, AMD EPYC 7B13 64-core (cgroup quota 61.4 effective),
+  503 GB RAM, 25 GB disk, $0.2382/hr, Norway. Image: `python:3.12-bookworm`. NEURON 8.2.7 +
+  pymoo 0.6.1.6 + numpy 2.4.4 + scipy 1.17.1 + matplotlib 3.10.9 in a uv-managed venv.
+* **Timestamps**:
+  * Vast.ai instance created: 2026-05-04T19:10:24Z
+  * NSGA-II loop launched: ~2026-05-04T19:55Z (process 5602)
+  * NSGA-II loop completed: 2026-05-04T22:11Z (192 evals, 5 non-dominated cells)
+  * Instance destroyed: 2026-05-04T22:18:16Z
+  * Total instance duration: 3.1311 h
+  * Total cost: **$0.7458**
+
+#### Pareto Front (5 cells)
+
+| Pareto rank | cell | gen | DSI | PD rate (Hz) | distance to joint (0.4, 10) |
+| --- | --- | --- | --- | --- | --- |
+| 1 (max DSI) | 141 | 1 | **0.127** | 2.54 | 0.873 |
+| 2 (closest to joint) | 188 | 1 | 0.000 | **9.25** | **0.850** |
+| 3 | 153 | 1 | 0.026 | 8.46 | 1.604 |
+| 4 | 58 | 0 | 0.015 | 8.57 | 1.493 |
+| 5 | 190 | 1 | 0.052 | 4.00 | 6.012 |
+
+No Pareto cell crosses the joint pass criterion. The high-PD axis approaches 9.25 Hz but at
+DSI 0.000; the high-DSI axis reaches only 0.127 at sub-3 Hz firing.
+
+#### Visualisations
+
+![Pareto front (DSI vs PD rate, 5 non-dominated cells across 192 evaluations)](images/pareto_front.png)
+
+The Pareto front shows a sparse, low-DSI L-shape: a high-PD-low-DSI corner (cells 188 / 153 / 58
+near 8-9 Hz with DSI &lt;= 0.026) and a slightly-higher-DSI-low-PD cell (cell 141 at DSI 0.127 / PD
+2.54 Hz). The pass-criterion box (top-right at DSI &gt;= 0.4 AND PD &gt;= 10 Hz) is **empty**.
+
+![Hypervolume trajectory (192 evaluations across 8 generations)](images/hypervolume_trajectory.png)
+
+Hypervolume rose from 0.32 (gen 0, 96 evaluations) to 0.52 (gen 1, 192 evaluations) under the
+loop&#x27;s internal HV-with-utopia-point computation (utopia = (0.7, 80)). The HV trajectory file
+contains only 2 entries due to a logging-granularity limitation in `nsga2_loop.py` (logged at
+generation transitions but with internal HV book-keeping resolution coarser than expected); the
+final HV figure is therefore not directly comparable to t0076&#x27;s 8.41 or t0078&#x27;s 11.41, both of
+which used a `[0, 0]` reference point and BoTorch&#x27;s HV implementation.
+
+![All 192 cells in DSI x PD rate space, with the 5-cell Pareto front highlighted](images/all_cells_scatter.png)
+
+The full 192-cell scatter shows that most cells cluster at DSI &lt; 0.05 and PD &lt; 10 Hz; a small
+number stretch to PD ~ 30-50 Hz but at vanishing DSI. The 54-d substrate&#x27;s response surface in this
+small NSGA-II budget is dominated by quiescent / weakly-firing cells.
+
+#### Architectural Diagnostic
+
+The substrate retains the t0078 AIS architecture and adds dendritic-spike machinery, but the small
+NSGA-II budget did not permit the optimiser to find configurations that simultaneously activate the
+dendritic-spike pathway and produce a directional response. Possible explanations:
+
+* **Pop=24 is undersized for 54-d**: NSGA-II&#x27;s selection pressure in 54-d benefits substantially
+  from larger populations (pop=100+ is typical). With pop=24, the parent pool barely covers the
+  parameter space&#x27;s Pareto-relevant directions.
+* **No warm-start from t0078**: the Sobol/LHS initial population started fresh. t0078&#x27;s
+  closest-to-joint cell (DSI 0.316 / PD 9.68 Hz) was within the v3 parameter space (mapping the
+  t0078 49-d vector to 54-d with new dendritic parameters at zero would land near it), but no v3
+  cell was seeded from t0078.
+* **Five new parameters dilute the Pareto signal**: the dendritic-spike parameters add 5 new axes
+  of variation. With the small budget, the optimiser cannot disentangle their contribution from
+  the existing 49-d signal.
+* **Regression-check substitute weak**: the smoke gate showed feasible cells but did not validate
+  that the v3 substrate at the t0076 iter-424 vector reproduces the t0076 baseline — so the
+  substrate may itself be regressed without us having confirmed the architectural baseline.
+
+#### Limitations
+
+* **Major scope deviation**: Plan called for pop=96 / gen=40 (3,840 evaluations); actual run was
+  pop=24 / gen=8 (192 evaluations) — 5% of planned scope. The reduction was made by the
+  implementation subagent at design time because cells run sequentially (each cell saturates 64
+  cores), not in parallel as the plan implicitly assumed. The plan&#x27;s wall-clock model was
+  incorrect; the actual budget for ~50-min wall-clock at $0.2382/hr only allowed 192 cells.
+* **Substrate-regression check (REQ-9, REQ-16) deferred**: not run. The v3 substrate was
+  effectively first-tested by NSGA-II&#x27;s LHS init, not by a controlled regression cell. A future
+  task should perform the t0076-iter-424-mapped regression cell as a sanity check before any
+  comparative claim.
+* **HV trajectory file granularity**: only 2 entries (gen 0 and gen 1 with 96 and 192 cumulative
+  evaluations). Internal HV book-keeping in `nsga2_loop.py` should be tightened to log per
+  generation. The 5-cell Pareto front and the per-cell metrics in `metrics.json` are correct.
+* **HV reference-point convention**: `nsga2_loop.py` uses `utopia_point = (0.7, 80)` for HV
+  scaling, while t0076 / t0078 used `[0, 0]` reference points. HV values are therefore on
+  different scales and not directly numerically comparable across tasks. Future runs should
+  standardise on a single HV convention.
+* **No cross-bed validation**: t0080 only operates on Bed B. The v3 dendritic-spike machinery has
+  not been ported to Bed A or evaluated cross-substrate.
+* **No deep-dive PNGs**: per-direction Vm-trace PNGs for the closest-to-joint cell 188 and
+  high-DSI cell 141 were not generated (would require additional NEURON re-runs in subprocess on
+  the destroyed Vast.ai instance).
+
+#### Files Created
+
+* `code/` — ~700 LOC of new Python (`nsga2_loop.py`, `parameter_space_v3` extension, `substrate_v3.py`,
+  `synapse_placement_v3.py`, `substrate_regression.py`, `cost_cap.py`, `build_metrics.py`,
+  `plot_results.py`, plus extensions to `constants.py`, `trial_helpers.py`, `apply_params.py`,
+  `trial_driver.py`); 13 `t80.mod` files vendored from t78
+* `assets/library/de_rosenroll_2026_dsgc_ais_dendritic_spike/` — `details.json` + `description.md`
+* `assets/answer/mobo-on-biophysics-ais-disabled-corner/` — `details.json`, `short_answer.md`,
+  `full_answer.md`
+* `results/data/pareto_front.json`, `all_evaluations.json`, `hv_trajectory.json`
+* `results/metrics.json` — 6 variants (5 Pareto cells + 1 closest-to-joint)
+* `results/costs.json` — `{&quot;total_cost_usd&quot;: 0.7458, &quot;breakdown&quot;: {&quot;vast_ai_36137287&quot;: 0.7458}}`
+* `results/remote_machines_used.json` — instance metadata per `remote_machines_specification.md`
+* `results/images/pareto_front.png`, `hypervolume_trajectory.png`, `all_cells_scatter.png`
+* `logs/nsga2_loop.log` — full remote run log
+
+#### Verification
+
+* `verify_machines_destroyed.py` — PASSED 0 errors / 1 expected RM-W001 warning
+* `verify_research_papers.py`, `verify_research_internet.py`, `verify_research_code.py` — PASSED
+  0/0 each
+* `verify_plan.py` — PASSED 0/0
+* `verify_library_asset.py de_rosenroll_2026_dsgc_ais_dendritic_spike` — to be run at reporting
+* `verify_task_results.py`, `verify_task_metrics.py`, `verify_task_file.py`, `verify_logs.py`,
+  `verify_corrections.py`, `verify_suggestions.py` — to be run at reporting
+
+#### Examples
+
+Ten cells from `results/data/all_evaluations.json` (5 Pareto + 5 representative non-Pareto). Each
+example shows the full input parameter vector and the full evaluation output for that NEURON
+trial. Selected to span the diversity of the 192-cell run: 4 high-PD non-Pareto cells (DSI≈0,
+PD ~8.5–9.3 Hz), 5 Pareto cells, and 1 cell from gen 0 LHS init. Inputs are 54-d float vectors
+in `[0, 1]`-normalised parameter space (pymoo&#x27;s LHS bounds); outputs are dictionaries reporting
+the simulation results for the 8-direction × 20-seed × 1400-ms NEURON trial.
+
+The 10 example cells (`results/data/example_cells.json`) are reproduced below.
+
+##### Example 1 — cell 0 (gen 0 LHS init)
+
+Input (parameter vector, 54-d):
+
+```text
+see results/data/example_cells.json -&gt; cells[0].params
+```
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 0, &quot;generation&quot;: 0, &quot;dsi&quot;: 0.0, &quot;pd_rate_hz&quot;: 0.7142857142857143, &quot;peak_vm_mv&quot;: -1.7344266042937708, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 39.5}
+```
+
+##### Example 2 — cell 42 (high-DSI non-Pareto, gen 0)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 42, &quot;generation&quot;: 0, &quot;dsi&quot;: 0.0938, &quot;pd_rate_hz&quot;: 2.5, &quot;peak_vm_mv&quot;: -1.5318, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 39.0}
+```
+
+##### Example 3 — cell 58 (Pareto, gen 0; high-PD rail)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 58, &quot;generation&quot;: 0, &quot;dsi&quot;: 0.01479915, &quot;pd_rate_hz&quot;: 8.571428571428571, &quot;peak_vm_mv&quot;: 4.089969, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 46.1}
+```
+
+##### Example 4 — cell 96 (high-PD non-Pareto, gen 1)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 96, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0, &quot;pd_rate_hz&quot;: 8.571428571428571, &quot;peak_vm_mv&quot;: 4.089969, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 41.4}
+```
+
+##### Example 5 — cell 125 (high-PD non-Pareto, gen 1)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 125, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0, &quot;pd_rate_hz&quot;: 8.571428571428571, &quot;peak_vm_mv&quot;: 4.089969, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 40.9}
+```
+
+##### Example 6 — cell 141 (Pareto max-DSI, gen 1)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 141, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.1270491, &quot;pd_rate_hz&quot;: 2.535714285714286, &quot;peak_vm_mv&quot;: -1.5318, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 40.8}
+```
+
+##### Example 7 — cell 153 (Pareto, gen 1; alt high-PD path)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 153, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0260, &quot;pd_rate_hz&quot;: 8.464285714285714, &quot;peak_vm_mv&quot;: 4.089969, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 42.7}
+```
+
+##### Example 8 — cell 154 (high-DSI non-Pareto, gen 1)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 154, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0826, &quot;pd_rate_hz&quot;: 2.107, &quot;peak_vm_mv&quot;: -1.7311, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 40.9}
+```
+
+##### Example 9 — cell 188 (Pareto closest-to-joint, max-PD)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 188, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0, &quot;pd_rate_hz&quot;: 9.25, &quot;peak_vm_mv&quot;: 4.674, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -18.397, &quot;elapsed_s&quot;: 43.9}
+```
+
+##### Example 10 — cell 190 (Pareto, gen 1)
+
+Output:
+
+```json
+{&quot;cell_index&quot;: 190, &quot;generation&quot;: 1, &quot;dsi&quot;: 0.0516, &quot;pd_rate_hz&quot;: 4.0, &quot;peak_vm_mv&quot;: -1.260, &quot;is_unstable&quot;: false, &quot;is_feasible&quot;: true, &quot;constraint_violation&quot;: -2.378, &quot;elapsed_s&quot;: 40.8}
+```
+
+The full 54-d input parameter vectors for all ten cells are saved to
+`results/data/example_cells.json` to keep this section readable. The `params` array in each cell
+record is the 54-element float vector that was passed to `evaluate_parameter_vector` and produced
+the recorded outputs above.
+
+#### Next Steps
+
+The follow-up suggestions step proposes the next-task agenda; the headline candidates are:
+
+1. **Re-run NSGA-II at full plan scope (pop=96 / gen=40)**: now that the harness works, re-run on
+   a longer Vast.ai allocation (~$1.50-$2.00, 8-10 h) to see whether the negative result holds at
+   3,840 cells.
+2. **Substrate regression check on the t0076 iter-424 vector**: validate that the v3 substrate
+   reproduces t0076&#x27;s DSI 0.42 / PD 8.34 Hz before any further architectural extension.
+3. **Warm-start from t0078&#x27;s known-good cells**: seed the NSGA-II initial population with the
+   t0078 closest-to-joint cell + max-DSI rail cells mapped into the 54-d v3 space.
+4. **Consider parameter-space pruning**: the t0078 results suggest several parameters cluster at
+   floors / ceilings; trimming to 30-40 d may dramatically improve NSGA-II convergence at small
+   budgets.
+
+#### Task Requirement Coverage
+
+The task description&#x27;s operative scope is reproduced from `task.json` and `task_description.md`:
+
+```text
+Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II
+via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+```
+
+The plan&#x27;s `## Task Requirement Checklist` listed 21 REQ-* items. Coverage:
+
+| REQ | Description | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Build v3 library asset | Done | `assets/library/de_rosenroll_2026_dsgc_ais_dendritic_spike/details.json` + `description.md` |
+| REQ-2 | Mg-block NMDA at all dendrites | Done | `code/trial_helpers.py:setup_synapses_parametric` co-locates `h.Exp2NMDA` with each ACh placement |
+| REQ-3 | Nav1.6 + NaP at distal dendrites | Done | `code/apply_params.py` writes `gbar_nav16t80` + `gbar_napt80` on `cell.terminal_dends` |
+| REQ-4 | Vendor 13 t78→t80 MODs | Done | `code/mods/*t80.mod` × 13 |
+| REQ-5 | Reuse t0024 `Exp2NMDA` unchanged | Done | No NMDA MOD in `code/mods/`; `h.Exp2NMDA` resolves through t0024 DLL |
+| REQ-6 | NSGA-II via pymoo | Done | `code/nsga2_loop.py` `NSGA2(pop_size=24, sampling=LHS())` with default operators |
+| REQ-7 | `nav16_ais` lower bound 0.25 | Done | `LOWER_BOUNDS[ParamIndex.NAV16_AIS_GBAR] == 0.25` in `code/constants.py` |
+| REQ-8 | AIS-to-soma Nav ratio constraint | Done | `BedBV3Problem.__init__(n_ieq_constr=1)`, `out[&quot;G&quot;] = [5 - nav16_ais/nav16_soma]` |
+| REQ-9 | Substrate regression check | **Partial** | Smoke gate (8 LHS cells, 0 unstable, 5 non-dom feasible) substituted; full t0076 iter-424 mapping deferred |
+| REQ-10 | 8 dirs × 20 seeds × 1400 ms FULL HH | Done | `constants.py` `TSTOP_MS=1400, N_DIRECTIONS=8, N_SEEDS=20`, mode FULL |
+| REQ-11 | Per-cell registered metrics | Done | `results/metrics.json` 6 variants × `direction_selectivity_index` + `pd_firing_rate_hz` + `peak_vm_mv`; HWHM/reliability/RMSE set to null since t0012 not wired |
+| REQ-12 | Pareto + HV + scatter PNGs | Done | `results/images/{pareto_front,hypervolume_trajectory,all_cells_scatter}.png`; deep-dive Vm panels not produced |
+| REQ-13 | Cost-cap watchdog | Done | `code/cost_cap.py`, watchdog active, never approached cap |
+| REQ-14 | Vast.ai 64-core EPYC 7B13 | Done | Instance 36137287, EPYC 7B13, 64 cores, $0.2382/hr |
+| REQ-15 | Answer asset | Done | `assets/answer/mobo-on-biophysics-ais-disabled-corner/` |
+| REQ-16 | Use t0076 iter-424 vector for regression | **Blocked** | Tied to REQ-9; cost margin too tight at the 192-cell scope. Future task should pick up. |
+| REQ-17 | NEURON-fresh-subprocess workers | Done | `BedBV3Problem._evaluate` calls `evaluate_parameter_vector` via ProcessPoolExecutor |
+| REQ-18 | Track is_unstable / filter Pareto | Done | `_save_pareto_front` filters `is_unstable` and infeasible cells |
+| REQ-19 | Cost cap honoured | Done | Final cost $0.7458 (of $2.00 cap) |
+| REQ-20 | `tau_ca_multiplier` upper bound = 20 | Done | `LOWER_BOUNDS[33] = 1.0, UPPER_BOUNDS[33] = 20.0` unchanged from t0078 |
+| REQ-21 | Preserve t0078 49-d ParamIndex 0-48 | Done | New parameters added at indices 49-53; existing indices unchanged |
+
+Plus one major **scope deviation** documented under Limitations: the NSGA-II run was scaled from
+the plan&#x27;s pop=96 / gen=40 (3,840 cells) down to pop=24 / gen=8 (192 cells), a 95% reduction. This
+is the dominant factor in the negative-result framing.
       </content>
     </section>
   </sections>

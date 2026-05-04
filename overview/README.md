@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-70-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-74-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-15-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-18-CD853F" alt="Answers"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-16-20B2AA" alt="Libraries"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-19-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-80-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-297-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-305-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,18 +28,18 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (27K)
-| [full](llm-context/full.xml) (436K) | [roadmap](llm-context/roadmap.xml) (90K) |
-[results](llm-context/results-deep-dive.xml) (340K) |
-[assets](llm-context/literature-and-assets.xml) (48K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (28K)
+| [full](llm-context/full.xml) (442K) | [roadmap](llm-context/roadmap.xml) (89K) |
+[results](llm-context/results-deep-dive.xml) (346K) |
+[assets](llm-context/literature-and-assets.xml) (50K)
 
-*Last updated: 2026-05-04 17:39 UTC*
+*Last updated: 2026-05-04 22:48 UTC*
 
-* **Budget**: **$5** spent of $10
-* **Remaining**: **$5**
-* **Usage**: `██████████░░░░░░░░░░` 49.9%
-* **GPU Machines**: **2** provisioned across 2 tasks · **$5** GPU spend ([details](machines/))
-* **Provisioning**: 1 failed attempts · $0.00 wasted · 33% failure rate
+* **Budget**: **$6** spent of $10
+* **Remaining**: **$4**
+* **Usage**: `███████████░░░░░░░░░` 57.4%
+* **GPU Machines**: **3** provisioned across 3 tasks · **$6** GPU spend ([details](machines/))
+* **Provisioning**: 2 failed attempts · $0.00 wasted · 40% failure rate
 
 ---
 
@@ -58,11 +58,10 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`description`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -82,10 +81,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (72 total)](tasks/by-status/completed.md)
+## [Recently Completed (73 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
 | 0077 | [Brainstorm results session 13](../overview/tasks/task_pages/t0077_brainstorm_results_13.md) | [`results`](../tasks/t0077_brainstorm_results_13/results/results_detailed.md) | 2026-05-03 12:55 |
@@ -95,9 +95,8 @@ No blocked tasks.
 | 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
 | 0071 | [t0070 v2 - synaptic-current equations + typeset PDF](../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) | [`results`](../tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md) | 2026-05-01 15:25 |
 | 0070 | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) | [`results`](../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) | 2026-05-01 14:05 |
-| 0069 | [Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS](../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md) | [`results`](../tasks/t0069_t0067_ais_localised_channel_sweep/results/results_detailed.md) | 2026-05-01 03:10 |
 
-*62 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*63 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -118,11 +117,11 @@ No blocked tasks.
 | 9 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | **17.178292988536434** |
 | 10 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
 
-*120 more results → [all results](metrics-results/)*
+*126 more results → [all results](metrics-results/)*
 
 ---
 
-## [Recent Suggestions (262 open)](suggestions/)
+## [Recent Suggestions (270 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
@@ -274,66 +273,120 @@ Recommended task types: answer-question, comparative-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
-soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
+<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
+scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
 
-REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
-soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
-Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
-4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
-~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
-Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
-25-d search. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Correction task to fix three t0076 implementation issues: NEURON
-re-init, qNEHVI deprecation, GP input normalisation</strong> (S-0076-03)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
-
-Three concrete defects identified in the t0076 implementation block additional value from the
-existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python
-process, hitting NEURON's `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of
-3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution
-requires the script to run from the project root, not the task folder. Fix: anchor paths via
-`arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated
-qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a
-Normalize input transform -- BoTorch warned the fit is suboptimal. Fix: migrate to qLogNEHVI
-and wrap inputs in [0, 1]^d. Replay the 430-cell history through the corrected stack and
-confirm Pareto front is unchanged or expands. Recommended task types: correction.
+t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
+cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
+192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
+practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
+50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
+determine whether the negative architectural result holds at the planned budget. Estimated
+cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
+saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
-Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
+<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
+to the v3 54-d parameter space</strong> (S-0080-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
 
-t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
-25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
-combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
-Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
-parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
-best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
-(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
-background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
-away from t0068 defaults? Recommended task types: experiment-run.
+REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
+Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
+regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
+compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
+25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
+dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
+locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
+~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
+types: experiment-run, baseline-evaluation.
 
 </details>
 
-*252 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
+54-d parameter space</strong> (S-0080-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
+9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
+Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
+near-Pareto starting population, dramatically reducing the generations needed to converge.
+Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
+~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
+warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
+Vast.ai 64-core. Recommended task types: experiment-run, build-model.
+
+</details>
+
+*260 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (32)](suggestions/)
+## [High Priority Suggestions (35)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
+scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
+cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
+192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
+practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
+50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
+determine whether the negative architectural result holds at the planned budget. Estimated
+cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
+saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
+to the v3 54-d parameter space</strong> (S-0080-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
+Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
+regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
+compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
+25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
+dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
+locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
+~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
+types: experiment-run, baseline-evaluation.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
+54-d parameter space</strong> (S-0080-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
+9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
+Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
+near-Pareto starting population, dramatically reducing the generations needed to converge.
+Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
+~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
+warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
+Vast.ai 64-core. Recommended task types: experiment-run, build-model.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
@@ -463,69 +516,32 @@ most surprising finding from t0067 and warrants quantitative refinement.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
-insertions</strong> (S-0069-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0069_t0067_ais_localised_channel_sweep](../tasks/t0069_t0067_ais_localised_channel_sweep/)
-
-Real RGC AIS diameters cluster around 0.4-0.8 μm; t0069 used 1 μm. A narrower AIS has higher
-input resistance per unit area, so the same gbar of an AIS-localised Nav or Kv channel
-produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 μm (keep L=30
-μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
-5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
-that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
-sweep results are directly comparable</strong> (S-0070-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0070_writeup_two_model_beds](../tasks/t0070_writeup_two_model_beds/)
-
-The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
-different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
-`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
-conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
-per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
-`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
-of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
-spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
-gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
-effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Apply EPSP/IPSP/FULL protocol to the from-scratch DSGC family
-substrate</strong> (S-0065-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-04-30 | **Source**:
-[t0065_t0020_epsp_ipsp_vm_protocol](../tasks/t0065_t0020_epsp_ipsp_vm_protocol/)
-
-t0065 isolated the deposited cell's EPSP and IPSP shapes and showed that direction selectivity
-in that cell comes from differential shunting inhibition (e_SACinhib = v_rest = -60 mV, so
-opening Cl- channels produces zero net Vm deflection). The from-scratch family (t0052-t0059)
-is trapped in a binary regime: single-spike-per-trial trivial DSI = 1, or full suppression DSI
-= 0. A direct EPSP_PASSIVE / IPSP_PASSIVE / FULL decomposition on the from-scratch substrate
-(using t0057's library wiring: 100 E + 100 I synapses on t0009 morphology) would tell us
-whether the binary-regime failure is excitatory under-drive, hyperpolarising rather than
-shunting inhibition, or HH miscalibration. The same six-trial protocol from tasks/t0065_*/code
-can be ported to the from-scratch cell builder with minimal changes. Expected output: six
-traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
-binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
-
-</details>
-
-*22 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (18 total)](answers/)
+## [Recent Answers (19 total)](answers/)
+
+<details>
+<summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
+the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior
+checklist prevents this failure mode in future MOBO-on-biophysics
+tasks?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-04 | **Full answer**:
+[`mobo-on-biophysics-ais-disabled-corner`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/)
+
+The optimiser exploited a soft-prior loophole. t0078's per-tier search bounds let `nav16_ais`
+go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008's measured cortical AIS Nav
+range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024's mouse alpha-RGC measurement of
+1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a
+fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than
+a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard
+parameter bounds, not soft penalties: pre-register `nav16_ais >= 0.25` S/cm^2 (Kole 2008) and
+AIS-to-soma Nav ratio `>= 5` (Werginz 2024) as inviolable constraints, plus equivalent priors
+on every biophysical parameter where measurement-grounded ranges exist.
+
+</details>
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -714,34 +730,223 @@ class.
 
 </details>
 
-<details>
-<summary><strong>What DSGC compartmental models published in public literature were
-missed by tasks t0002 and t0008, and which of them are viable ports for
-this project?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`dsgc-missed-models-survey`](../tasks/t0010_hunt_missed_dsgc_models/assets/answer/dsgc-missed-models-survey/)
-
-Two brand-new DSGC compartmental-model papers were missed by the prior corpus: deRosenroll et
-al. 2026 (Cell Reports, DOI `10.1016/j.celrep.2025.116833`) and Poleg-Polsky 2026 (Nature
-Communications, DOI `10.1038/s41467-026-70288-4`); Hanson 2019 (`10.7554/eLife.42392`) was in
-the t0002 corpus but had never been ported. None of the three HIGH-priority candidates
-completed a 12-angle canonical sweep within the 90-minute-per-candidate port budget — each
-failed at the P2 upstream-demo gate for a different structural reason (Hanson: headfull Python
-driver with hardcoded Windows paths; deRosenroll: hardcoded 8-direction stimulus grid plus
-heavy out-of-env dependencies; Poleg-Polsky: genetic-algorithm training driver with `numDir=2`
-and no LICENSE). Zero library assets were registered per the "never leave a broken library
-behind" rule, and all three candidates are recorded as `p2_failed` in `data/candidates.csv`.
-Deeper investment (hand-rewriting each driver) would very plausibly succeed; the 90-minute cap
-is the binding constraint, not a definitive portability verdict.
-
-</details>
-
-*8 more answers → [answers](answers/)*
+*9 more answers → [answers](answers/)*
 
 ---
 
-## [Latest Papers (70 total)](papers/)
+## [Latest Papers (74 total)](papers/)
+
+<details>
+<summary>📖 <strong>Differential Expression Analysis Identifies Candidate
+Synaptogenic Molecules for Wiring Direction-Selective Circuits in the
+Retina</strong> — Tworig et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1461-23.2024` |
+| **Authors** | Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya, Shaw Hsu, Jocelyn Liang, Karen G. Cornejo, Marla B. Feller |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1461-23.2024` |
+| **URL** | https://www.jneurosci.org/content/44/18/e1461232024 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1523_JNEUROSCI.1461-23.2024/summary.md) |
+
+Tworig and colleagues address one specific developmental question: which molecules instruct
+the asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF
+DSGC subtypes during the brief P9-P10 critical period? Prior work had shown that the
+asymmetric inhibitory pattern emerges within roughly two postnatal days and persists in the
+absence of visual input, suggesting an instructive molecular code, but the responsible
+molecules were unknown. The authors target the postsynaptic side of this wiring problem in
+mouse retina with a transcriptomic screen and a single conditional knockout follow-up.
+
+The methodology combines paired patch-clamp (to time-stamp the wiring-onset day at P10), bulk
+RNA-seq on FACS-isolated GFP-labelled nasal- vs ventral-preferring DSGCs from three transgenic
+lines, and a Cbln4 conditional RGC knockout (Cbln4^fl/fl x VGlut2-Cre). Functional readouts
+use two-photon population calcium imaging and whole-cell voltage-clamp during 8-direction
+drifting-bar stimuli at 250 and 1,000 um/s, plus 3D dye-fill morphology reconstruction with
+Sholl analysis. Statistical testing uses Wald tests with Benjamini-Hochberg FDR for
+differential expression and permutation tests for direction-selective cell classification.
+
+The screen yields **2,270 differentially expressed transcripts** including strong candidates
+from the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and
+Tenm3 splice isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs,
+but the RGC-targeted KO produces only a **small DSI reduction** in the broader
+ventral-preferring DSGC population and **no detectable difference** in IPSC amplitude,
+asymmetry, or timing, EPSC properties, or dendritic morphology in voltage-clamp recordings.
+The authors conclude that Cbln4 does not function cell-autonomously in DSGCs to instruct
+asymmetric SAC->DSGC wiring, while still validating the differential-expression screen as a
+discovery tool for other candidate molecules.
+
+For this project, the paper is tangential to t0080 optimisation aims because t0080 operates on
+a fixed deposited E/I substrate rather than reshaping it. The relevance is contextual: it
+documents the developmental origin of the asymmetric inhibitory wiring that t0080 takes as a
+fixed biological prior, validates that ventral-preferring DSGCs receive stronger inhibition
+for dorsal motion (a hallmark feature already encoded in our target tuning curve), and reports
+that excitation onto these cells is weakly direction-tuned with a ventral preference --
+supporting the project continued treatment of the AMPA input distribution as approximately
+symmetric. The ~100-fold Cbln4 enrichment hit with a small DSI phenotype is also a useful
+negative-result anchor: it shows that single-gene perturbations of synaptic organisers do not
+substantially redistribute the inhibitory tuning curve, so future tasks should keep the
+project E/I substrate fixed at the canonical t0078/t0080 levels rather than attempting
+biologically motivated perturbations of single synaptogenic molecules.
+
+</details>
+
+<details>
+<summary>📖 <strong>Retinal ganglion cells encode the direction of motion outside
+their classical receptive field</strong> — Riccitelli et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1073_pnas.2415223122` |
+| **Authors** | Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri, Michal Rivlin-Etzion |
+| **Venue** | Proceedings of the National Academy of Sciences (journal) |
+| **DOI** | `10.1073/pnas.2415223122` |
+| **URL** | https://www.pnas.org/doi/10.1073/pnas.2415223122 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`patch-clamp`](../meta/categories/patch-clamp/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1073_pnas.2415223122/summary.md) |
+
+Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the
+canonical direction-selective ganglion cells, or whether it is also computed at the population
+level by RGCs through the so-called extraclassical receptive field. They tackle this with
+large-scale ex vivo MEA recordings of dorsal mouse retinas plus complementary in vivo
+Neuropixels recordings in the LGN, and supplement the recordings with static-bar mapping,
+central-area occlusion masks, multiple bar speeds, glycinergic-amacrine pharmacology, and
+gap-junction pharmacology.
+
+Their methodology centres on a 350 um radius Central area mask that defines the classical RF
+boundary and a Distancemin filter (450 um to retinal edge) that ensures every cell has a
+measurable extraclassical annulus. Two motion-asymmetry metrics (mAI > 0.3, NVS > 0.15) plus
+permutation shuffling identify the asymmetric PRE response. Static flashed bars locate the
+asymmetric activation zone; centre masking dissociates desensitization from an inherent DS
+component; strychnine and MFA reveal a wide-field-amacrine plus glycinergic plus gap-junction
+circuit; multi-speed bars demonstrate speed invariance.
+
+The headline findings are that **12.7%** of mouse RGCs (and a corresponding subset of LGN
+neurons) encode motion direction outside their classical RF through an asymmetric activation
+zone, that their preferred directions form a centripetal population code pointing toward the
+optic disc, that direction tuning relies jointly on classical-RF desensitization and on an
+inherent DS component inside the activation zone, and that glycinergic amacrine cells plus
+gap-junction coupling are necessary for the full effect. The signal survives to dLGN, vLGN,
+and IGL.
+
+For this project, the paper is broader population-coding context rather than a direct model
+target. The neuron-channels project simulates an explicitly direction-selective DRD4 ON-OFF
+DSGC in NEURON, so Riccitelli et al. occupy a complementary niche; they describe DS
+computations in non-DS RGCs that arise from circuit-level interactions outside any single
+cell. The paper is relevant for framing the t0080 v3 substrate (single-DSGC model) within the
+wider population-level direction-encoding literature, for noting that the 5-fold
+AIS-Nav-density scaling debate concerns DRD4 DSGCs specifically rather than the broader RGC
+population, and as a Zenodo data source if a later task ever needs out-of-DSGC RGC firing
+benchmarks. It does not change the t0080 NSGA-II parameter bounds, the dendritic-spike
+conductance ranges, or the AHP-tail metrics, but it strengthens the rationale for the project
+narrow focus on the DRD4 cell type rather than generalising claims to RGC direction encoding
+as a whole.
+
+</details>
+
+<details>
+<summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
+through a direction-selective dendritic computation</strong> — Pitcher
+et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.64898_2026.02.02.701812` |
+| **Authors** | Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.64898/2026.02.02.701812` |
+| **URL** | https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.64898_2026.02.02.701812/summary.md) |
+
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through
+a local dendritic computation, using developing mouse SACs as a model. The work spans calcium
+imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO
+for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions
+across the same ages.
+
+The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with
+quadrant-resolved DSI metrics for moving bars and propagating waves, plus reconstruction-based
+quantification of nasal-vs-temporal dendrite length and distal complexity. The experimental
+design is elegant: it shows that the dendritic computation is present (P10 imaging), that it
+depends on K+-channel-based compartmentalisation (TEA experiment), that activity is required
+for outgrowth (b2-nAChR-KO), and that wave *direction*, not just wave existence, is required
+for the morphological asymmetry (FRMD7tm).
+
+The headline finding is that SAC dendrites at P9-P11 exhibit centrifugal-preferred direction
+selectivity to retinal waves; that dendritic tuning rises with distance from the soma; that
+TEA abolishes this tuning; and that wild-type SACs have nasal dendrites longer than temporal
+dendrites (a difference absent when wave propagation bias is removed). Together these results
+identify SACs as the earliest known cellular decoder of retinal-wave propagation bias and link
+that decoding to a structural morphological asymmetry that persists into the adult
+direction-selective circuit.
+
+For this project the paper is upstream context, not a direct input. t0080 (Bed B v3) treats
+the SAC drive onto the DSGC as a fixed, idealised null-side inhibitory waveform; it does not
+model SAC morphology development. Pitcher 2026 is therefore relevant only as developmental
+background for *why* the SAC inhibitory drive has its asymmetric form in the mature retina,
+and as a flagged source of biological asymmetry that future tasks could optionally model if
+the inhibitory machinery onto the DSGC is ever brought back into the optimisation.
+
+</details>
+
+<details>
+<summary>📝 <strong>Electrical match between initial segment and somatodendritic
+compartment for action potential backpropagation in retinal ganglion
+cells</strong> — Goethals et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2020.09.15.297937` |
+| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2020.09.15.297937` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse
+retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
+the action potential to the much larger soma. The AIS must produce an axial current strong
+enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
+demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
+estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
+AP shape; this paper provides the first direct functional measurement via the axial current
+itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
+= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
+AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
+potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
+reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
+over a 20 mV depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
+density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
+from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
+**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
+charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
+estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
+mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
+minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
+~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
+critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
+capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
+size in t0080 MOBO optimization.
+
+</details>
 
 <details>
 <summary>📖 <strong>Differences in spike generation instead of synaptic inputs
@@ -1079,225 +1284,7 @@ in the t0078 substrate documentation is therefore mandatory.
 
 </details>
 
-<details>
-<summary>🏤 <strong>Unexpected Improvements to Expected Improvement for Bayesian
-Optimization</strong> — Ament et al., 2023</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `no-doi_Ament2023_logei-bo` |
-| **Authors** | Sebastian Ament, Samuel Daulton, David Eriksson, Maximilian Balandat, Eytan Bakshy |
-| **Venue** | NeurIPS 2023 (conference) |
-| **DOI** | — |
-| **URL** | https://arxiv.org/abs/2310.20708 |
-| **Date added** | 2026-05-03 |
-| **Categories** | — |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/no-doi_Ament2023_logei-bo/summary.md) |
-
-This paper identifies and corrects a numerical pathology that has silently degraded the entire
-Expected Improvement family of BO acquisition functions for over two decades. The authors
-prove (Theorem 1) that as a BO algorithm closes the optimality gap and the GP posterior
-becomes informative, EI's argument `(mu - y*)/sigma` falls into a regime where naive
-floating-point implementations evaluate to exactly zero across most of the search space. Once
-the value is zero, the gradient is zero, so multi-start gradient-based optimizers — the
-standard practice in BoTorch and most BO packages — degenerate into random search precisely
-when one needs them most.
-
-The fix is a careful reformulation of every EI variant in log-space. Analytic LogEI uses a
-piecewise stable `log_h` with an asymptotically quadratic branch for very negative arguments.
-Monte Carlo qLogEI replaces the discrete `max_j [.]+` of qEI with a softplus + L^(1/tau)-norm
-smoothing inside a log-space estimator, with bounded approximation error (Lemma 2). The same
-recipe is applied to constrained EI (LogCEI, qLogCEI), expected hypervolume improvement
-(qLogEHVI), and noisy expected hypervolume improvement (qLogNEHVI). Fat-tailed non-linearities
-(fatplus) are introduced to keep large-batch parallel BO numerically well-behaved.
-
-Empirically the LogEI family wins or ties everywhere it is tested. On 10D Sum-of-Squares
-canonical EI stalls after about 75 evaluations while LogEI continues to descend. On Ackley at
-d=16 the gap between LogEI and EI is the entire range of the function. LogCEI matches or beats
-SCBO on constrained engineering benchmarks while sometimes improving on the best results in
-the original engineering literature using three orders of magnitude fewer evaluations.
-qLogNEHVI dominates qNEHVI on multi-objective benchmarks including the 30D cell-network
-coverage problem, and joint batch optimization at q=32 becomes competitive with
-sequential-greedy strategies. Crucially the methods are drop-in replacements: same APIs, same
-compute cost, identical-or-near-identical optima.
-
-For this project, this paper is the methodology reference for the t0076-to-t0078 migration
-from the deprecated `qNoisyExpectedHypervolumeImprovement` (qNEHVI) to
-`qLogNoisyExpectedHypervolumeImprovement` (qLogNEHVI). t0078 inherits exactly the conditions
-where qLogNEHVI is expected to dominate canonical qNEHVI: a multi-objective
-DSI-and-firing-rate optimization over a tiered, multi-channel AIS parameter space with
-comparatively high dimensionality, where canonical qNEHVI's vanishing-gradient regime is
-reached early. Citing Ament et al. (2023) is therefore mandatory whenever t0078 reports the
-optimiser switch, and practical recommendations from the paper — keep BoTorch's default
-temperature schedule, prefer joint batch optimization at the worker counts t0078 uses, and
-treat any apparent qLogNEHVI under-performance as either a surrogate-model issue or evidence
-the entire EI family is mis-specified for this objective — should guide implementation choices
-in t0078 plan.md and results_detailed.md.
-
-</details>
-
-<details>
-<summary>📖 <strong>Two mechanisms for direction selectivity in a model of the
-primate starburst amacrine cell</strong> — Wu et al., 2023</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1017_S0952523823000019` |
-| **Authors** | Jiajia Wu, Yeon Jin Kim, Dennis M. Dacey, John B. Troy, Robert G. Smith |
-| **Venue** | Visual Neuroscience (journal) |
-| **DOI** | `10.1017/S0952523823000019` |
-| **URL** | https://www.cambridge.org/core/journals/visual-neuroscience/article/two-mechanisms-for-direction-selectivity-in-a-model-of-the-primate-starburst-amacrine-cell/6C688BA235ED1FE58BBD8BCDDB8C5B59 |
-| **Date added** | 2026-04-21 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
-| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Full summary** | [`summary.md`](../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523823000019/summary.md) |
-
-Wu et al. (2023) build a compartmental macaque ON starburst amacrine cell (SAC) model in
-NeuronC based on a connectomic reconstruction (Kim et al. 2022) and use it to resolve a
-two-decade debate about the origin of direction selectivity (DS) in SAC dendrites. They
-compare two mechanisms: the "morphological" mechanism (electrotonic delay along thin medial
-dendrites plus a sealed-cable effect at thick distal tips), and the "space-time" mechanism
-(spatially segregated sustained midget and transient DB4/5 bipolar inputs). By constructing
-matched sustained-only and sustained+transient models they cleanly partition the two
-contributions.
-
-Methodologically, the model is dense enough to be realistic but simple enough to be
-interpretable: 400-700 compartments, biophysically parameterised bipolar cells, a 2D stimulus
-grid of bar widths (50-500 um) x velocities (100-10,000 um/s), and 30 random replicates per
-cell. Voltage-gated Na and Ca channels are deliberately omitted from the SAC in the main
-analysis to isolate the subthreshold origin of DS. A separate morphology sweep varies distal
-(0.2-1.2 um) and medial (0.1-0.35 um) dendritic diameters, and a mouse SAC model (Ding et al.
-2016 morphology) is run alongside as a cross-species morphology manipulation.
-
-The headline result is a clean phase diagram: the morphological mechanism dominates for small,
-fast objects (peak DSI ~0.32 at bar width 50 um, velocity 2000 um/s) while the space-time
-mechanism dominates for large, slow objects (DSI goes from ~0.16 sustained-only to ~0.22
-sustained+transient at 500 um bars, 200 um/s). DSI is maximised when medial diameter sits at
-0.2-0.25 um (matching the EM anatomy) and distal diameter >=0.8 um. Dendritic N/P/Q Ca
-channels regeneratively amplify the subthreshold DS signal (voltage DSI 0.28 -> 0.46, [Ca] DSI
-0.78 in a single run). The mouse model reproduces the same phase structure despite different
-bipolar input densities and spatial distribution.
-
-For our t0027 literature survey on computational models linking neuronal morphology to DS,
-this paper is a strong positive example of the sweep-morphology-measure-DS paradigm we are
-documenting. The morphology variable is SAC dendritic geometry (not DSGC), and the outcome is
-DSI at the distal varicosity. It provides a concrete anchor for (a) the expected DSI range in
-SAC-only compartmental models (~0.1-0.4 in voltage, up to ~0.8 in dendritic Ca), (b) the
-velocity-tuning curve of the morphological mechanism (peak near 2000 um/s in macaque), and (c)
-the quantitative impact of medial vs distal diameter on DSI. Limitations to note for our
-survey: the model omits GABAergic, glycinergic, and cholinergic network interactions; DSGC
-morphology is absent; only one tree topology is used (diameters are swept but branching
-pattern and total dendritic length are not). These gaps will need to be filled by other papers
-in the survey that sweep DSGC morphology or vary branching asymmetry.
-
-</details>
-
-<details>
-<summary>📖 <strong>A Role for Synaptic Input Distribution in a Dendritic Computation
-of Motion Direction in the Retina</strong> — Vlasits et al., 2016</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2016.02.020` |
-| **Authors** | Anna L. Vlasits, Ryan D. Morrie, Alexandra Tran-Van-Minh, Adam Bleckert, Christian F. Gainer, David A. DiGregorio, Marla B. Feller |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2016.02.020` |
-| **URL** | https://doi.org/10.1016/j.neuron.2016.02.020 |
-| **Date added** | 2026-04-21 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
-| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Full summary** | [`summary.md`](../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1016_j.neuron.2016.02.020/summary.md) |
-
-Vlasits et al. (2016) address a longstanding question in retinal direction selectivity:
-whether the *location* of excitatory inputs along a starburst amacrine cell dendrite matters,
-separately from morphology and network inhibition. They combine four experimental techniques —
-visual receptive field mapping with spots and rings, MNI-glutamate uncaging, PSD95-YFP genetic
-labeling, and re-analysis of the Briggman et al. connectome — to show that excitatory bipolar
-inputs are concentrated on the proximal ~70% of the SAC dendrite, while neurotransmitter
-release sites (varicosities) occupy the distal third. Inputs and outputs are spatially
-displaced.
-
-Methodologically, the authors build a passive ball-and-stick NEURON model of a reconstructed
-SAC dendrite and drive it with simulated moving bars under four synaptic-input distributions
-matched in total synapse count and mean density but differing only in spatial placement: the
-empirical skewed distribution and a symmetric full-length distribution, each in two variants.
-This **morphology-matched symmetric-input control** isolates the effect of input geometry from
-cable properties, producing a clean comparison that has become the reference design in the
-field. Two-photon Ca2+ imaging of individual varicosities and pharmacological isolation of the
-GABA-A component provide the in-tissue test of the model predictions.
-
-The key finding is that the measured proximal-restricted input distribution produces robust
-outward-motion-preferring voltage at the distal release zone (varicosity DSI = 0.34 ± 0.23, n
-= 25), whereas a density-matched symmetric input distribution does not. Only ~25% of
-DSGC-directed release sites overlap with the excitatory receptive field. GABA-A blockade with
-gabazine reduces but does not abolish the computation, confirming that dendritic mechanisms
-and circuit inhibition act synergistically. Adding voltage-gated Ca2+ channels to the
-varicosities amplifies DS multiplicatively but is not required to generate it.
-
-For this project literature survey on how morphology-driven models shape DS, Vlasits2016 is
-the canonical reference for two reasons. First, it is the clearest demonstration that
-synaptic-input spatial statistics are a morphology-independent degree of freedom that must be
-respected by any compartmental DS model. Second, its morphology-matched symmetric-input design
-is the methodological template we should import when our own tasks compare cable theory, input
-placement, and active channels as DS determinants. Any compartmental SAC or DSGC model we
-build that matches morphology alone but ignores input placement should be expected to
-underestimate DS or distribute DS incorrectly across the dendrite, and the numerical targets
-in this paper (varicosity DSI ~ 0.3, input field extending to ~70% of dendritic radius, ~25%
-input-output overlap) are the benchmarks our simulations should hit.
-
-</details>
-
-<details>
-<summary>📖 <strong>Direction selectivity in a model of the starburst amacrine
-cell</strong> — Tukker et al., 2004</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1017_S0952523804214109` |
-| **Authors** | John J. Tukker, W. Rowland Taylor, Robert G. Smith |
-| **Venue** | Visual Neuroscience (journal) |
-| **DOI** | `10.1017/S0952523804214109` |
-| **URL** | https://www.cambridge.org/core/journals/visual-neuroscience/article/abs/direction-selectivity-in-a-model-of-the-starburst-amacrine-cell/BEFF3097D9C22BE07CFA6F5AA3BE4095 |
-| **Date added** | 2026-04-21 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`cable-theory`](../meta/categories/cable-theory/) |
-| **Added by** | [`t0027_literature_survey_morphology_ds_modeling`](../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
-| **Full summary** | [`summary.md`](../tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1017_S0952523804214109/summary.md) |
-
-Tukker, Taylor, and Smith address a specific puzzle raised by Euler et al. (2002): SBAC
-dendritic tips show direction-selective calcium signals even with GABAa/c blocked, so where
-does the DS come from? The authors hypothesize that the answer is geometry. Their scope is a
-passive, excitatory-only SBAC with realistic or parameterizable morphology; their motivation
-is that the SBAC is the dominant source of directional inhibition onto DSGCs, so explaining
-SBAC DS bounds the morphology-to-DSGC mapping.
-
-The method is a full Neuron-C compartmental simulation built on two digitized rabbit SBACs and
-a procedural artificial-morphology generator, driven by a semirandom bipolar array (200-300
-synapses) with physiological cone and synaptic dynamics. They systematically manipulate
-independent geometric variables — first-branch distance, distal branching density,
-dendritic-tree radius, electrotonic length constant, compartment resolution, and per-dendrite
-length variability — and read out DSI at 16 dendritic tips and the soma for bars, spots,
-annuli, and gratings. An optional Q-type Ca2+ channel layer provides the voltage-to-release
-amplification step.
-
-The headline findings are that (a) morphology alone generates DSI ~ 0.2 at dendritic tips for
-bars and DSI up to ~0.9 for gratings; (b) the mechanism is the direction-dependent summation
-of a local tip-EPSP with a soma-mediated global EPSP, with optimal electrotonic length ~
-dendritic spread; (c) DS is surprisingly robust to branching detail but sensitive to distal
-synapse count and to symmetry-breaking in dendritic length; and (d) a Ca2+-channel threshold
-can amplify the voltage DSI roughly threefold in intracellular calcium concentration.
-
-For this project, Tukker 2004 is the canonical starting point for morphology as a causal
-variable for DS. It fits the inclusion criteria with the caveat that the cell modeled is the
-SBAC rather than the DSGC itself (borderline — flagged in Overview). Its artificial-morphology
-methodology, DSI definition, and local-global summation framing should be treated as reference
-points when comparing to downstream DSGC-centric modeling work, and its demonstration that
-passive-only, inhibition-free morphology can yield strong DS establishes the baseline any more
-complex retinal DS model must improve upon.
-
-</details>
-
-*60 more papers → [papers](papers/)*
+*64 more papers → [papers](papers/)*
 
 ---
 
@@ -1326,10 +1313,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (15 total)](libraries/)
+## [Latest Libraries (16 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery](../tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\assets\library\de_rosenroll_2026_dsgc_ais_dendritic_spike\description.md) | [80](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | 2026-05-04 |
 | [De Rosenroll 2026 DSGC with AIS](../tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\assets\library\de_rosenroll_2026_dsgc_ais\description.md) | [78](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | 2026-05-03 |
 | [DSGC Active Channel Pack](../tasks\t0074_channel_tuning_width_bed_a\assets\library\dsgc_active_channel_pack\description.md) | [74](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | 2026-05-02 |
 | [Minimal DSGC with Bar-Arrival-Locked Tonic GABA + AMPA Sweep](../tasks\t0059_bar_locked_gaba_ampa_sweep_t0057\assets\library\minimal_dsgc_bar_locked_gaba_ampa_sweep\description.md) | [59](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | 2026-04-29 |
@@ -1339,15 +1327,15 @@ No models yet.
 | [Minimal DSGC with Scalar gabaMOD](../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) | [52](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | 2026-04-25 |
 | [Minimal DSGC AMPA + NMDA Scalar gabaMOD](../tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\assets\library\minimal_dsgc_ampa_nmda_scalar_gaba\description.md) | [54](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | 2026-04-25 |
 | [ModelDB 189347 DSGC (exact reproduction)](../tasks\t0046_reproduce_poleg_polsky_2016_exact\assets\library\modeldb_189347_dsgc_exact\description.md) | [46](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | 2026-04-24 |
-| [de Rosenroll 2026 DSGC](../tasks\t0024_port_de_rosenroll_2026_dsgc\assets\library\de_rosenroll_2026_dsgc\description.md) | [24](../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md) | 2026-04-21 |
 
-*5 more libraries → [libraries](libraries/)*
+*6 more libraries → [libraries](libraries/)*
 
 ---
 
-## [Cost Leaders (2 tasks with spend)](costs/)
+## [Cost Leaders (3 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |
 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |
+| [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`$0.75`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/costs.json) | 2026-05-04 22:45 |

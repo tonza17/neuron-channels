@@ -1,6 +1,6 @@
 # Tuning Curve RMSE (Hz)
 
-**Key**: `tuning_curve_rmse` | **Unit**: none | **Results**: 130
+**Key**: `tuning_curve_rmse` | **Unit**: none | **Results**: 136
 
 [Back to all metrics](README.md)
 
@@ -136,3 +136,9 @@
 | 128 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=1.00/IPSP_PASSIVE | — |
 | 129 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/EPSP_PASSIVE | — |
 | 130 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/IPSP_PASSIVE | — |
+| 131 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 58 (gen 0) | — |
+| 132 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 141 (gen 1) | — |
+| 133 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 153 (gen 1) | — |
+| 134 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 188 (gen 1) | — |
+| 135 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 190 (gen 1) | — |
+| 136 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Closest to joint target (DSI=0.4, PD=10.0Hz); distance=0.850 | — |

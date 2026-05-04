@@ -4,15 +4,15 @@ Ion channels whose opening probability depends on membrane voltage.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (20)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(4)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(69)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+**Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
+(5)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(71)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
 ---
 
-## Papers (20)
+## Papers (21)
 
 <details>
 <summary>📖 <strong>Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
@@ -172,6 +172,57 @@ strengthens the biological-plausibility case for tiered AHP plus tiered AIS in t
 model. Third, it demonstrates depolarisation block as a meaningful coding mechanism, which
 means t0078's firing-rate metrics need to remain well-defined when the AIS enters block under
 strong drive.
+
+</details>
+
+<details>
+<summary>📝 <strong>Electrical match between initial segment and somatodendritic
+compartment for action potential backpropagation in retinal ganglion
+cells</strong> — Goethals et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2020.09.15.297937` |
+| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2020.09.15.297937` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse
+retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
+the action potential to the much larger soma. The AIS must produce an axial current strong
+enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
+demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
+estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
+AP shape; this paper provides the first direct functional measurement via the axial current
+itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
+= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
+AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
+potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
+reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
+over a 20 mV depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
+density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
+from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
+**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
+charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
+estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
+mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
+minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
+~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
+critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
+capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
+size in t0080 MOBO optimization.
 
 </details>
 
@@ -998,7 +1049,7 @@ dendritic transients.
 
 </details>
 
-## Tasks (7)
+## Tasks (8)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1009,8 +1060,30 @@ dendritic transients.
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
+| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (4)
+## Answers (5)
+
+<details>
+<summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
+the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior
+checklist prevents this failure mode in future MOBO-on-biophysics
+tasks?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-04 | **Full answer**:
+[`mobo-on-biophysics-ais-disabled-corner`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/)
+
+The optimiser exploited a soft-prior loophole. t0078's per-tier search bounds let `nav16_ais`
+go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008's measured cortical AIS Nav
+range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024's mouse alpha-RGC measurement of
+1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a
+fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than
+a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard
+parameter bounds, not soft penalties: pre-register `nav16_ais >= 0.25` S/cm^2 (Kole 2008) and
+AIS-to-soma Nav ratio `>= 5` (Werginz 2024) as inviolable constraints, plus equivalent priors
+on every biophysical parameter where measurement-grounded ranges exist.
+
+</details>
 
 <details>
 <summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
@@ -1108,7 +1181,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (57 open, 12 closed)
+## Suggestions (59 open, 12 closed)
 
 <details>
 <summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
@@ -1150,6 +1223,43 @@ parameters; (b) propose log-uniform priors with hard biological lower bounds as 
 future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
 checklist of biological priors to enforce as hard constraints in future MOBO tasks.
 Recommended task types: answer-question, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Parameter-space pruning to ~30-40 d before re-running NSGA-II
+on the Bed B substrate</strong> (S-0080-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0078's 49-d run revealed that several parameters consistently land at floors or ceilings
+across the full BoTorch trajectory, suggesting they carry little Pareto information. Audit
+t0078's per-parameter posterior-quantile distributions and t0080's per-parameter Pareto-cell
+values; drop the 10-15 parameters with the narrowest effective ranges (e.g., parameters whose
+5th-95th percentile across feasible cells spans <10% of bounded range). Re-run NSGA-II on the
+pruned 30-40 d substrate at pop=24 / gen=8 to confirm that the dimensionality-vs-budget
+mismatch is the dominant negative-result driver. Cost ~$0.75 (similar budget to t0080 but
+smaller search space should converge faster). Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
 
 </details>
 

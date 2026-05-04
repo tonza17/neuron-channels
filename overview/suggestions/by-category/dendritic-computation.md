@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-49 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **37 open** (2
+51 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **39 open** (4
 high, 31 medium, 4 low), **12 closed**.
 
 [Back to all suggestions](../README.md)
@@ -57,6 +57,55 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
+scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
+cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
+192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
+practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
+50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
+determine whether the negative architectural result holds at the planned budget. Estimated
+cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
+saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
+to the v3 54-d parameter space</strong> (S-0080-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
+Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
+regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
+compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
+25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
+dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
+locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
+~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
+types: experiment-run, baseline-evaluation.
 
 </details>
 

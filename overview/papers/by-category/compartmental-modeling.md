@@ -1,6 +1,6 @@
-# Papers: `compartmental-modeling` (31)
+# Papers: `compartmental-modeling` (32)
 
-31 papers across 17 year(s).
+32 papers across 17 year(s).
 
 [Back to all papers](../README.md)
 
@@ -431,7 +431,58 @@ and the authors note RSME can implement active channels in future studies.
 
 </details>
 
-## 2020 (2)
+## 2020 (3)
+
+<details>
+<summary>📝 Electrical match between initial segment and somatodendritic compartment
+for action potential backpropagation in retinal ganglion cells — Goethals
+et al., 2020</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2020.09.15.297937` |
+| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2020.09.15.297937` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse
+retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
+the action potential to the much larger soma. The AIS must produce an axial current strong
+enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
+demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
+estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
+AP shape; this paper provides the first direct functional measurement via the axial current
+itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
+= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
+AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
+potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
+reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
+over a 20 mV depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
+density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
+from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
+**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
+charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
+estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
+mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
+minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
+~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
+critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
+capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
+size in t0080 MOBO optimization.
+
+</details>
 
 <details>
 <summary>📖 Tailoring of the axon initial segment shapes the conversion of synaptic

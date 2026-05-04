@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-69 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **57 open** (11
-high, 38 medium, 8 low), **12 closed**.
+71 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **59 open** (11
+high, 39 medium, 9 low), **12 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -880,6 +880,31 @@ SAC network.
 </details>
 
 <details>
+<summary>🧪 <strong>Parameter-space pruning to ~30-40 d before re-running NSGA-II
+on the Bed B substrate</strong> (S-0080-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0078's 49-d run revealed that several parameters consistently land at floors or ceilings
+across the full BoTorch trajectory, suggesting they carry little Pareto information. Audit
+t0078's per-parameter posterior-quantile distributions and t0080's per-parameter Pareto-cell
+values; drop the 10-15 parameters with the narrowest effective ranges (e.g., parameters whose
+5th-95th percentile across feasible cells spans <10% of bounded range). Re-run NSGA-II on the
+pruned 30-40 d substrate at pop=24 / gen=8 to confirm that the dimensionality-vs-budget
+mismatch is the dominant negative-result driver. Cost ~$0.75 (similar budget to t0080 but
+smaller search space should converge faster). Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
 verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
 (S-0034-04)</summary>
@@ -1390,6 +1415,30 @@ validation sweep (baseline + 3 BK densities × 12 angles × 5 seeds = 240 trials
 dendritic cad insertion preserves the no-cad baseline DSI more closely while still providing
 functional Ca for BK / SK channels in the dendrites. If confirmed, this is the right substrate
 design for t0075 active-dendrite work and improves t0074's biological plausibility post-hoc.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
 
 </details>
 

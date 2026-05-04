@@ -1,6 +1,6 @@
-# Answers: `voltage-gated-channels` (4)
+# Answers: `voltage-gated-channels` (5)
 
-4 answer(s).
+5 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -151,5 +151,39 @@ for reproducing fast, reliable AP initiation in compartmental models.
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) |
+
+</details>
+
+<details>
+<summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
+the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior
+checklist prevents this failure mode in future MOBO-on-biophysics
+tasks?</strong></summary>
+
+**Confidence**: high
+
+The optimiser exploited a soft-prior loophole. t0078's per-tier search bounds let `nav16_ais`
+go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008's measured cortical AIS Nav
+range S/cm^2 and five orders below Werginz 2024's mouse alpha-RGC measurement of 1.3 S/cm^2.
+Multi-objective acquisition discovered that an AIS-disabled cell could match a fragment of the
+Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than a Kole-compliant
+cell, because the prior was advisory rather than enforced. The fix is hard parameter bounds,
+not soft penalties: pre-register `nav16_ais >= 0.25` S/cm^2 (Kole 2008) and AIS-to-soma Nav
+ratio `>= 5` (Werginz 2024) as inviolable constraints, plus equivalent priors on every
+biophysical parameter where measurement-grounded ranges exist.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/full_answer.md) |
+| **ID** | [`mobo-on-biophysics-ais-disabled-corner`](../../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/answer/mobo-on-biophysics-ais-disabled-corner/) |
+| **Question** | Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future MOBO-on-biophysics tasks? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | high |
+| **Date created** | 2026-05-04 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Paper sources** | `10.1038_nn2040`, `10.1523_JNEUROSCI.1592-24.2024`, `10.1126_sciadv.abb6642`, `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **URL sources** | — |
+| **Created by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
 
 </details>

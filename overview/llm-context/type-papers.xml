@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-05-04T17:39:30Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-05-04T22:48:44Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>919812</char_count>
-    <byte_count>921788</byte_count>
-    <estimated_tokens>229953</estimated_tokens>
+    <char_count>978014</char_count>
+    <byte_count>980069</byte_count>
+    <estimated_tokens>244503</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,6 +17,10 @@
       <title>All Papers (Full Detail)</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.64898_2026.02.02.701812</id>
+        <id>10.1073_pnas.2415223122</id>
+        <id>10.1523_JNEUROSCI.1461-23.2024</id>
+        <id>10.1101_2020.09.15.297937</id>
         <id>10.1523_JNEUROSCI.1592-24.2024</id>
         <id>no-doi_Ament2023_logei-bo</id>
         <id>10.1016_j.neuron.2022.04.012</id>
@@ -89,7 +93,867 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 70
+Papers: 74
+
+## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
+ID: 10.64898_2026.02.02.701812
+Year: 2026
+Authors: Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller
+Venue: bioRxiv
+Venue type: preprint
+DOI: 10.64898/2026.02.02.701812
+URL: https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1
+Categories: direction-selectivity, dendritic-computation, retinal-ganglion-cell, synaptic-integration
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Date added: 2026-05-04
+
+#### Metadata
+
+* **File**: `files/pitcher_2026_sac-dendrite-retinal-waves.pdf`
+* **Published**: 2026-02-04 (bioRxiv preprint)
+* **Authors**: Miah N. Pitcher (US), Aanica S. B. Gonzales (US), Raul Habib (US),
+  Marla B. Feller (US)
+* **Venue**: bioRxiv
+* **DOI**: `10.64898/2026.02.02.701812`
+
+#### Abstract
+
+During development, dendrites undergo structural plasticity in response to neural activity;
+however, whether spatiotemporal activity patterns can instruct dendritic growth remains unclear.
+Prior to vision, the developing mouse retina exhibits spontaneous retinal waves with a nasal
+propagation bias that mimics forward optic flow. Here, we reveal that starburst amacrine cells use
+direction-selective dendritic computations to transform this propagation bias into asymmetric
+dendrite growth, linking activity patterns to structural development.
+
+#### Overview
+
+This paper shows that starburst amacrine cell (SAC) dendrites perform direction-selective dendritic
+computations during development, not just in adulthood, and that this computation reads out the
+nasal propagation bias of stage-3 retinal waves to drive asymmetric dendrite outgrowth. The work
+ties together two previously separate findings: that SACs have compartmentalised, centrifugally
+tuned dendrites in the adult, and that retinal waves before P11 propagate preferentially in a
+nasal direction.
+
+The authors show with two-photon calcium imaging in mouse retina aged P7-P13 that SAC dendrites
+already exhibit centrifugal-preferred direction selectivity to retinal waves by P10, with tuning
+strength rising as a function of distance from the soma. Disrupting wave activity (b2-nAChR
+knockout) reduces SAC dendrite length and complexity at P8; disrupting wave propagation bias
+(FRMD7tm) abolishes the nasal-versus-temporal asymmetry in dendritic outgrowth at P9-P11.
+Pharmacologically blocking the K+ channel Kv3.1 (with TEA), which normally electrically
+compartmentalises adult SAC dendrites, abolishes the direction selectivity in young SAC dendrites
+as well, establishing that the same biophysical mechanism (compartmentalisation plus
+spatiotemporal summation) underlies both the developmental and adult computation.
+
+The paper does not measure DSGC firing or DSGC IPSC amplitudes directly. It is a SAC morphology
+and SAC dendritic-Ca2+ paper, with implications for downstream DSGC tuning that the authors note
+in the discussion but do not test.
+
+#### Architecture, Models and Methods
+
+The study is an experimental neuroscience paper, not a modelling paper. Methods cover:
+
+* **Mouse models**: ChAT-Cre/nGFP for SAC labeling, b2-nAChR knockout (disrupts cholinergic
+  retinal waves), FRMD7tm (loss-of-function in *FRMD7*; reduces wave propagation bias without
+  abolishing waves themselves). Ages P7 to P120, both sexes.
+* **Two-photon calcium imaging** of single SAC dendrites at 5.92 Hz, 128 x 128 pixels, with
+  920 nm excitation. SACs filled with 8 mM Calbryte 520 via sharp-electrode iontophoresis
+  (100-150 MOhm pipettes, -10 to -20 nA, 500 ms pulses). Recordings at ~32 deg C in oxygenated
+  Ames media (light experiments) or ACSF (wave experiments).
+* **Stimuli**: moving bars (25 x 500 um) at 500 um/s in 8 pseudorandomised directions, delivered
+  via DMD with UV LED (375 nm) on the fast-axis scan flyback to avoid PMT contamination.
+* **Direction selective index for waves (DSI_wave)**: normalised difference in calcium response
+  between centrifugal-propagating and centripetal-propagating waves per dendritic quadrant.
+* **Pharmacology**: bath TEA to block multiple K+ channels including Kv3.1, the channel known
+  to electrically compartmentalise adult SAC dendrites near the soma.
+* **Morphology**: SACs filled with 2 mM Alexa Fluor 594 and reconstructed in 3D for total
+  dendrite length, distal complexity (Sholl-style), and per-quadrant dendritic density.
+* **Statistics**: per-cell DSI distributions, with cell size and dendrite distance as
+  continuous predictors. Sample sizes are reported per figure (typically n = 5-15 cells per
+  condition, dendrite-level n in the tens).
+
+The relevant biophysical claim for compartmental modelling is that **Kv3.1 in proximal SAC
+dendrites is necessary and (in combination with cable summation) sufficient** for the
+direction-selective dendritic computation in young SACs, just as in adults, because TEA
+abolishes the directional tuning while leaving the wave stimulus intact.
+
+#### Results
+
+* SAC dendrites first exhibit consistent direction-selective responses to moving bars at **P12**,
+  prior to eye opening. Tuning at P12-P13 is comparable to adult.
+* SAC dendrites show direction-selective responses to retinal **waves** by **P10**, with stronger
+  centrifugal than centripetal responses.
+* DSI_wave correlates with cell size: **larger SACs show stronger directional tuning**, consistent
+  with cable-theory summation along the dendrite.
+* In P9-P11 SACs, tuning strength **increases monotonically with distance from the soma** along
+  individual dendrites, due to selective enhancement of the centrifugal response. This mirrors
+  the distance-dependent tuning seen in adult SACs.
+* **TEA bath application** abolishes the directional tuning of SAC dendrites at P9-P11; they
+  respond equally to all wave directions, without changing wave propagation statistics or
+  saturating the calcium sensor. Implicates Kv3.1 (and other K+ channels) in the developmental
+  computation.
+* **b2-nAChR knockout** SACs (no cholinergic waves) show significantly reduced spontaneous
+  calcium transients at P8 and significantly **reduced total dendrite length and complexity at
+  P8** versus littermate controls.
+* In wild-type P9-P11 SACs the **nasal quadrant has greater dendritic length and distal
+  complexity than the temporal quadrant**, consistent with preferential activation by
+  nasalward-propagating waves.
+* **FRMD7tm** SACs (reduced wave propagation bias) show no nasal-vs-temporal asymmetry in
+  dendrite length or density, while still computing wave direction at the dendrite level. This
+  decouples the direction-selective dendritic computation from the wave bias and shows that the
+  bias is required to translate the computation into asymmetric growth.
+* In wild-type SACs, nasal dendrites have higher peak DSI_wave than temporal dendrites due to
+  their greater length; in FRMD7tm there is no such peak-tuning difference.
+
+#### Innovations
+
+##### Direction-selective dendritic computation appears before light responses
+
+First demonstration that the canonical SAC centrifugal-preferred dendritic computation is
+operational at P10, days before the retina becomes light-responsive at P12, using spontaneous
+retinal waves as the natural drive.
+
+##### Activity propagation bias as an instructive signal for dendrite morphology
+
+First evidence that the spatiotemporal *direction* of population activity (not just rate or
+correlation) instructs dendritic structural development. Hebbian-style covariance rules cannot
+explain the nasal-vs-temporal asymmetry; a subcellular direction-selective decoder is required.
+
+##### Mechanistic chain from waves to DSGC circuitry
+
+Connects the previously isolated facts that (a) waves have a nasal bias, (b) FRMD7tm and
+b2-nAChR-KO mice have abnormal direction-selective ganglion-cell circuitry along the
+horizontal axis, and (c) SAC dendrites compartmentalise via Kv3.1, into a single causal chain
+in which SAC dendrite asymmetry is the developmental hinge between wave statistics and adult
+DSGC tuning.
+
+#### Datasets
+
+This is a primary experimental neuroscience paper using new mouse retinal recordings. No public
+datasets were used or released as such. Reagents: ChAT-Cre (Jackson #031661), nGFP (Jackson
+#008516), FRMD7tm (MMRRC #047759-UCD), and an in-house b2-nAChR knockout line. Calcium-imaging
+movies and SAC reconstructions are not stated to be deposited in a public repository in the
+preprint.
+
+#### Main Ideas
+
+* SAC dendritic direction-selectivity is in place before vision and is driven by the same
+  Kv3.1-mediated compartmentalisation plus cable summation that operates in the adult, so any
+  compartmental SAC model in this project should expect the centrifugal-preferred computation
+  to be present at the developmental ages of the source data.
+* The nasal-temporal asymmetry in SAC dendritic outgrowth provides an *anatomical* asymmetry
+  upstream of DSGC inhibition that the t0080 substrate (Bed B) holds fixed via a stylised
+  symmetric SAC drive. This paper does not change t0080&#x27;s substrate but flags that the assumed
+  symmetry is a developmental simplification that becomes inaccurate in mouse models with
+  altered waves.
+* Directly relevant *biological prior* for follow-up tasks: if a future task ever varies the
+  inhibitory machinery onto the DSGC, the asymmetric SAC dendrite reach reported here is a
+  candidate source for asymmetric IPSC amplitude/kinetics on the null-side dendrite, but
+  reproducing this would require modelling SAC growth, not the DSGC itself.
+
+#### Summary
+
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through a
+local dendritic computation, using developing mouse SACs as a model. The work spans calcium
+imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO
+for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions
+across the same ages.
+
+The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with
+quadrant-resolved DSI metrics for moving bars and propagating waves, plus reconstruction-based
+quantification of nasal-vs-temporal dendrite length and distal complexity. The experimental
+design is elegant: it shows that the dendritic computation is present (P10 imaging), that it
+depends on K+-channel-based compartmentalisation (TEA experiment), that activity is required
+for outgrowth (b2-nAChR-KO), and that wave *direction*, not just wave existence, is required
+for the morphological asymmetry (FRMD7tm).
+
+The headline finding is that SAC dendrites at P9-P11 exhibit centrifugal-preferred direction
+selectivity to retinal waves; that dendritic tuning rises with distance from the soma; that
+TEA abolishes this tuning; and that wild-type SACs have nasal dendrites longer than temporal
+dendrites (a difference absent when wave propagation bias is removed). Together these results
+identify SACs as the earliest known cellular decoder of retinal-wave propagation bias and link
+that decoding to a structural morphological asymmetry that persists into the adult
+direction-selective circuit.
+
+For this project the paper is upstream context, not a direct input. t0080 (Bed B v3) treats the
+SAC drive onto the DSGC as a fixed, idealised null-side inhibitory waveform; it does not model
+SAC morphology development. Pitcher 2026 is therefore relevant only as developmental background
+for *why* the SAC inhibitory drive has its asymmetric form in the mature retina, and as a
+flagged source of biological asymmetry that future tasks could optionally model if the
+inhibitory machinery onto the DSGC is ever brought back into the optimisation.
+
+## Retinal ganglion cells encode the direction of motion outside their classical receptive field
+ID: 10.1073_pnas.2415223122
+Year: 2025
+Authors: Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri, Michal Rivlin-Etzion
+Venue: Proceedings of the National Academy of Sciences
+Venue type: journal
+DOI: 10.1073/pnas.2415223122
+URL: https://www.pnas.org/doi/10.1073/pnas.2415223122
+Categories: retinal-ganglion-cell, direction-selectivity, patch-clamp
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Date added: 2026-05-04
+
+#### Metadata
+
+* **File**: `files/riccitelli_2025_rgc-direction-extraclassical.pdf`
+* **Published**: 2025 (online December 30, 2024; print January 7, 2025)
+* **Authors**: Serena Riccitelli 🇮🇱, Hadar Yaakov 🇮🇱, Alina S. Heukamp 🇮🇱, Lea
+  Ankri 🇮🇱, Michal Rivlin-Etzion 🇮🇱
+* **Venue**: PNAS 2025, Vol. 122 No. 1, e2415223122
+* **DOI**: `10.1073/pnas.2415223122`
+
+#### Abstract
+
+Retinal ganglion cells (RGCs) typically respond to light stimulation over their spatially restricted
+receptive field. Using large-scale recordings in the mouse retina, we show that a subset of
+non-direction-selective (DS) RGCs exhibit asymmetric activity, selective to motion direction, in
+response to a stimulus crossing an area far beyond the classic receptive field. The extraclassical
+response arises via inputs from an asymmetric distal zone and is enhanced by desensitization
+mechanisms and an inherent DS component, creating a network of neurons responding to motion toward
+the optic disc. Pharmacological manipulations revealed the necessity of glycinergic amacrine cells
+for this response. Using in vivo recordings, we identified similar extraclassical responses in
+lateral geniculate nucleus neurons, suggesting such non conventional DS information is transferred
+to downstream structures. Our results suggest a complex integration of motion direction processing
+across the visual field, which arises beyond the classical receptive field boundaries.
+
+#### Overview
+
+Riccitelli et al. demonstrate that direction selectivity in the mouse retina is not exclusive to the
+canonical direction-selective ganglion cells (DSGCs). Using large-scale multielectrode array (MEA)
+recordings on isolated mouse dorsal retinas, they identify a population of non-DS RGCs (about 12.7%
+of recordings) that show asymmetric, direction-tuned firing to bars moving across an extraclassical
+region well outside the classical center-surround receptive field. They name the firing that emerges
+before the bar enters the classical RF the PRE response and the asymmetric distal source the
+activation zone.
+
+The authors show that PRE responses are predominantly carried by ON sustained RGCs, including
+ON-alpha (M4), M2, and PixON types. The preferred directions of PRE responses are organized
+centripetally; they point toward the optic disc, biasing population activity to detect motion moving
+inward. Using static-bar mapping, central-area masking, and pharmacology, they dissect two
+mechanisms behind direction tuning in the extraclassical RF: (i) desensitization of the classical
+RF, which suppresses the response when the bar approaches from the null side after passing through
+the center, and (ii) an inherent DS component within the activation zone itself, which survives
+masking. Glycinergic amacrine cells (blocked by strychnine) and gap junctions (blocked by MFA) are
+required for full PRE responses, pointing to a circuit involving wide-field amacrine cells.
+
+Finally, in vivo Neuropixels recordings in anesthetized mice demonstrate that asymmetric PRE
+responses are also present in dLGN, vLGN, and intergeniculate-leaflet neurons, showing the
+extraclassical direction signal is propagated to downstream visual targets and is not pruned at the
+retinal output stage.
+
+#### Architecture, Models and Methods
+
+This is an experimental electrophysiology and pharmacology study, not a modelling paper. Subjects
+are C57BL/6JOlaHsd wildtype mice. Two recording modalities are used.
+
+Ex vivo MEA recordings: isolated dorsal retinas placed on multielectrode arrays. Visual stimuli
+include (1) full-field flashed spots (polarity classification), (2) spatiotemporal white-noise
+checkerboards (RF center estimation), (3) square-wave moving gratings, (4) moving bars (white on
+black, 900 um and 300 um wide, moving at 400, 600, 800, 1000 um/s in 8 directions), (5) static
+flashed bars (300 um wide, 500 ms duration, pseudorandom positions and orientations), and (6) moving
+bars with central-area occlusion masks (700 um wide). The Central area is a 350 um radius disc
+around each cell RF center; only cells with RF centers at least 450 um from the nearest retinal edge
+(Distancemin) are included so that an extraclassical annulus exists.
+
+Asymmetric PRE responses are quantified using the motion asymmetry index (mAI &gt; 0.3), normalized
+vector summation (NVS &gt; 0.15), a minimal spike-count threshold per repetition, and a permutation
+shuffling test. Pharmacology uses strychnine (1 uM, glycine receptors) and meclofenamic acid (MFA,
+100 uM, gap junctions). RGC type assignment uses clustering on full-field-spot responses
+cross-referenced to rgctypes.org and the EyeWire mouse RGC catalogue (cluster IDs 8w, 9w, 9n).
+
+In vivo recordings: Neuropixels 1.0 probe inserted into the LGN of anesthetized head-fixed mice.
+Stimuli are restricted to white-noise checkerboards and moving bars. Cells with RF centers near
+screen edges are excluded. Statistics use two-sided Wilcoxon signed-rank tests, chi-square tests,
+Fisher exact tests, Kuiper two-sample tests, Friedman with Tukey-Kramer correction, and Rao spacing
+test. Data and code are deposited at Zenodo (`10.5281/zenodo.13119490`).
+
+#### Results
+
+* **12.7 +/- 2.0%** of recorded mouse RGCs (mean +/- SEM, n = 2207 cells across 15 experiments)
+  exhibit asymmetric PRE responses outside the classical RF
+* **179 of 272** PRE RGCs are ON cells (P &lt; 0.001, chi-square test); ON sustained RGCs dominate,
+  including ONalpha/M4, M2, and PixON types (8w, 9w, 9n in EyeWire)
+* PRE preferred directions are centripetal: temporal-dorsal mean vector **333.5 +/- 1.3 deg**,
+  nasal-dorsal **182.8 +/- 1.1 deg** (P &lt; 0.01, Kuiper test), pointing toward the optic disc
+* Static flashed bars: preferred-side firing rate **16.67 +/- 0.98 spikes/s** vs. null-side **11.61
+  +/- 0.72 spikes/s** (P &lt; 0.001, n = 108)
+* For 300 um moving bars in PRE-PD vs. POST-ND: **15.96 +/- 1.02 spikes/s** vs. **5.07 +/- 0.51
+  spikes/s** (P &lt; 0.001)
+* Moving asymmetric index (mAI) **0.52 +/- 0.03** vs. static asymmetric index (sAI) **0.18 +/-
+  0.02**, P &lt; 0.001, indicating motion-specific enhancement
+* **37 of 179** ON PRE RGCs (about 20%) show oppositely tuned POST responses (delta-PD = 176.83 +/-
+  37.54 deg)
+* Desensitization: spike rate to a static bar in the activation zone is **4.38 +/- 0.45 spikes/s**
+  after central-area stimulation vs. **6.01 +/- 0.41 spikes/s** with no previous stimulation (P &lt;
+  0.001, n = 87)
+* With central-area masked (desensitization removed): PRE-PD masked **15.98 +/- 1.47 spikes/s** vs.
+  POST-ND masked **10.82 +/- 1.04 spikes/s** (P &lt; 0.05, n = 70); confirms an inherent DS component
+* Cluster 4 has the highest proportion (**75%**) of cells with an inherent DS component in the
+  activation zone (P = 0.0136, Fisher exact test)
+* Strychnine reduces PRE preferred-direction spikes from **8.09 +/- 0.85** to **3.63 +/- 1.34** (P &lt;
+  0.05, n = 15); MFA blocks PRE responses and reduces classical RF responses
+* PRE preferred direction is stable across speeds 400-1000 um/s (delta-PD &lt; 3 deg vs. 600 um/s
+  reference); mAI lower at 400 um/s (**0.41**) than at 600/800/1000 um/s (**0.56, 0.51, 0.52**)
+* In vivo LGN: **19/55** dLGN-region and **13/71** other-LGN cells show asymmetric PRE responses
+  across dLGN, vLGN, and intergeniculate leaflet
+
+#### Innovations
+
+##### Direction selectivity outside the classical receptive field
+
+The paper extends the concept of retinal direction selectivity beyond the canonical DSGC. It is the
+first systematic demonstration that non-DS ON sustained RGCs encode motion direction specifically
+through an extraclassical activation zone hundreds of micrometres outside their center-surround RF,
+with a centripetal population code pointing toward the optic disc.
+
+##### Activation zone as a discrete RF substructure
+
+The asymmetric activation zone is introduced as a distinct, spatially confined RF subregion (stable
+for 250-350 um radii, shrinking for larger central exclusions). The paper provides explicit masking
+and static-bar protocols to map it.
+
+##### Two-mechanism account: desensitization plus inherent DS
+
+By combining central masking with directionally varied moving and static bars, the authors separate
+two mechanisms; classical-RF desensitization that suppresses POST-ND responses, and an inherent DS
+component intrinsic to the activation zone. This dissociation rules out either mechanism alone.
+
+##### Glycinergic-amacrine plus gap-junction circuit model
+
+A circuit hypothesis (Fig. 6E) is proposed in which narrow-field ON glycinergic amacrine cells
+provide tonic inhibition to ON PRE RGCs, wide-field amacrine cells in the activation zone disinhibit
+them, and gap junctions provide direct electrical coupling. Strychnine and MFA pharmacology
+corroborate both pathways.
+
+##### In vivo confirmation in LGN
+
+Demonstrates that the asymmetric extraclassical direction signal survives transmission to dLGN,
+vLGN, and IGL, refuting the assumption that LGN direction encoding is restricted to DSGC inputs in
+the LGN shell.
+
+#### Datasets
+
+* **Mouse multi-electrode array dataset**: light-evoked spike trains from C57BL/6JOlaHsd mouse
+  dorsal retinas. 2207 RGCs across 15 experiments form the main RGC dataset; subsets of 272 PRE
+  cells, 179 ON PRE RGCs, 108 mixed-bar-width cells, 87 PRE-only cells for desensitization tests, 70
+  cells in masked-condition tests, 45 cells for speed tuning, 37 cells with paired PRE/POST, 15
+  cells for strychnine pharmacology
+* **Mouse in vivo Neuropixels LGN dataset**: 126 LGN units across dLGN, vLGN, and IGL with
+  asymmetric PRE response data on a subset (19/55 in one region, 13/71 in another)
+* **Availability**: All MEA data and figure-generation code are deposited at Zenodo
+  (`10.5281/zenodo.13119490`) under the paper CC-BY 4.0 license. Cross-referenced cell-type
+  identities draw on rgctypes.org and the EyeWire mouse RGC project (Bae et al. 2018; Goetz et al.
+  2022\)
+
+#### Main Ideas
+
+* Direction selectivity in the mouse retina is broader than the DRD4/Hb9 DSGC literature suggests;
+  about 12.7% of RGCs encode motion direction through an extraclassical activation zone, providing
+  population-level context for any single-cell DSGC model
+* Even in DSGC compartmental modelling, sustained ON RGC types (ON-alpha/M4, M2, PixON) carry
+  direction information through circuit-level wide-field-amacrine and gap-junction inputs that lie
+  outside a single-cell biophysical substrate; this should be acknowledged as a limitation when
+  fitting one cell to a single tuning curve
+* Glycinergic-amacrine and gap-junction inputs can shape RGC spike output; project models that
+  include only AMPA and GABA-A inputs (the t0080 substrate) may underestimate the diversity of
+  direction-tuning mechanisms in non-DSGC types; relevant when comparing tuning-width metrics to
+  general RGC literature
+* The 350 um activation-zone radius and 450 um Distancemin define experimental scales for any future
+  in-silico extraclassical-RF stimulus design that this project might explore
+* The Zenodo dataset (`10.5281/zenodo.13119490`) is a candidate source for population-level mouse
+  RGC firing-rate distributions if a project task ever needs out-of-DSGC RGC firing-rate benchmarks
+
+#### Summary
+
+Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the
+canonical direction-selective ganglion cells, or whether it is also computed at the population level
+by RGCs through the so-called extraclassical receptive field. They tackle this with large-scale ex
+vivo MEA recordings of dorsal mouse retinas plus complementary in vivo Neuropixels recordings in the
+LGN, and supplement the recordings with static-bar mapping, central-area occlusion masks, multiple
+bar speeds, glycinergic-amacrine pharmacology, and gap-junction pharmacology.
+
+Their methodology centres on a 350 um radius Central area mask that defines the classical RF
+boundary and a Distancemin filter (450 um to retinal edge) that ensures every cell has a measurable
+extraclassical annulus. Two motion-asymmetry metrics (mAI &gt; 0.3, NVS &gt; 0.15) plus permutation
+shuffling identify the asymmetric PRE response. Static flashed bars locate the asymmetric activation
+zone; centre masking dissociates desensitization from an inherent DS component; strychnine and MFA
+reveal a wide-field-amacrine plus glycinergic plus gap-junction circuit; multi-speed bars
+demonstrate speed invariance.
+
+The headline findings are that **12.7%** of mouse RGCs (and a corresponding subset of LGN neurons)
+encode motion direction outside their classical RF through an asymmetric activation zone, that their
+preferred directions form a centripetal population code pointing toward the optic disc, that
+direction tuning relies jointly on classical-RF desensitization and on an inherent DS component
+inside the activation zone, and that glycinergic amacrine cells plus gap-junction coupling are
+necessary for the full effect. The signal survives to dLGN, vLGN, and IGL.
+
+For this project, the paper is broader population-coding context rather than a direct model target.
+The neuron-channels project simulates an explicitly direction-selective DRD4 ON-OFF DSGC in NEURON,
+so Riccitelli et al. occupy a complementary niche; they describe DS computations in non-DS RGCs that
+arise from circuit-level interactions outside any single cell. The paper is relevant for framing the
+t0080 v3 substrate (single-DSGC model) within the wider population-level direction-encoding
+literature, for noting that the 5-fold AIS-Nav-density scaling debate concerns DRD4 DSGCs
+specifically rather than the broader RGC population, and as a Zenodo data source if a later task
+ever needs out-of-DSGC RGC firing benchmarks. It does not change the t0080 NSGA-II parameter bounds,
+the dendritic-spike conductance ranges, or the AHP-tail metrics, but it strengthens the rationale
+for the project narrow focus on the DRD4 cell type rather than generalising claims to RGC direction
+encoding as a whole.
+
+## Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring Direction-Selective Circuits in the Retina
+ID: 10.1523_JNEUROSCI.1461-23.2024
+Year: 2024
+Authors: Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya, Shaw Hsu, Jocelyn Liang, Karen G. Cornejo, Marla B. Feller
+Venue: The Journal of Neuroscience
+Venue type: journal
+DOI: 10.1523/JNEUROSCI.1461-23.2024
+URL: https://www.jneurosci.org/content/44/18/e1461232024
+Categories: direction-selectivity, retinal-ganglion-cell, synaptic-integration
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Date added: 2026-05-04
+
+#### Metadata
+
+* **File**: `files/tworig_2024_cbln4-dsgc-wiring.pdf`
+* **Published**: 2024-03-21
+* **Authors**: Joshua M. Tworig 🇺🇸, Ryan D. Morrie 🇺🇸, Karina Bistrong 🇺🇸, Rachana
+  D. Somaiya 🇺🇸, Shaw Hsu 🇺🇸, Jocelyn Liang 🇺🇸, Karen G. Cornejo 🇺🇸, Marla
+  B. Feller 🇺🇸
+* **Venue**: The Journal of Neuroscience 44(18):e1461232024
+* **DOI**: `10.1523/JNEUROSCI.1461-23.2024`
+
+#### Abstract
+
+An organizational feature of neural circuits is the specificity of synaptic connections. A striking
+example is the direction-selective (DS) circuit of the retina. There are multiple subtypes of DS
+retinal ganglion cells (DSGCs) that prefer motion along one of four preferred directions. This
+computation is mediated by selective wiring of a single inhibitory interneuron, the starburst
+amacrine cell (SAC), with each DSGC subtype preferentially receiving input from a subset of SAC
+processes. We hypothesize that the molecular basis of this wiring is mediated in part by unique
+expression profiles of DSGC subtypes. To test this, we first performed paired recordings from
+isolated mouse retinas of both sexes to determine that postnatal day 10 (P10) represents the age at
+which asymmetric synapses form. Second, we performed RNA sequencing and differential expression
+analysis on isolated P10 ON-OFF DSGCs tuned for either nasal or ventral motion and identified
+candidates which may promote direction-specific wiring. We then used a conditional knock-out
+strategy to test the role of one candidate, the secreted synaptic organizer cerebellin-4 (Cbln4), in
+the development of DS tuning. Using two-photon calcium imaging, we observed a small deficit in
+directional tuning among ventral-preferring DSGCs lacking Cbln4, though whole-cell voltage-clamp
+recordings did not identify a significant change in inhibitory inputs. This suggests that Cbln4 does
+not function primarily via a cell-autonomous mechanism to instruct wiring of DS circuits.
+Nevertheless, our transcriptomic analysis identified unique candidate factors for gaining insights
+into the molecular mechanisms that instruct wiring specificity in the DS circuit.
+
+#### Overview
+
+Tworig et al. tackle the developmental question of how each DSGC subtype acquires its asymmetric
+SAC-to-DSGC inhibitory wiring during a brief postnatal window. The work proceeds in three stages:
+(1) paired patch-clamp recordings between SACs and ON-OFF DSGCs across P7-P14 to localize the day on
+which null-side asymmetric inhibition emerges; (2) bulk RNA sequencing of FACS-isolated GFP-labeled
+DSGCs from three transgenic lines (Drd4-GFP and Trhr-GFP for nasal-preferring populations, Hb9-GFP
+for the ventral-preferring population) at the identified critical day P10; and (3) a conditional
+RGC-targeted knockout of one top-ranked candidate, the C1q-family secreted synaptic organizer Cbln4,
+with two-photon calcium imaging and whole-cell voltage-clamp readouts of DS tuning and synaptic
+currents.
+
+The transcriptomic screen identifies hundreds of differentially expressed transcripts between nasal-
+and ventral-preferring DSGCs, including members of the C1q/cerebellin family, protein tyrosine
+phosphatases, clustered protocadherins, and splice isoforms of teneurin-3 (Tenm3). Cbln4 is one of
+the strongest hits, with ~100-fold enrichment in ventral-preferring (Hb9-GFP) DSGCs and effectively
+absent expression in nasal-preferring DSGCs. The functional knockout nonetheless yields a
+comparatively modest phenotype: a small DSI reduction across all ventral-preferring DSGCs imaged via
+population two-photon calcium imaging, with no detectable change in EPSC or IPSC amplitude,
+asymmetry, timing, or dendritic morphology in voltage-clamp recordings. The authors interpret this
+as evidence that Cbln4 does not act cell-autonomously in DSGCs to instruct asymmetric SAC-&gt;DSGC
+inhibitory wiring, while still validating the screen as a discovery tool for candidate synaptogenic
+molecules.
+
+#### Architecture, Models and Methods
+
+This is an experimental wet-lab paper combining electrophysiology, molecular biology, and
+transcriptomics. No compartmental modelling is performed.
+
+* **Animals**: mixed C57BL/6 mice of both sexes, P15-35 for adult experiments and P7-P14 for
+  developmental experiments. Transgenic lines: Drd4-GFP and Trhr-GFP (nasal-preferring DSGCs),
+  Hb9-GFP (ventral-preferring DSGCs), Chat-Cre, Chat-CreER, VGlut2-Cre, Cbln4-flox (JAX 032960).
+* **Paired patch-clamp**: SAC-&gt;DSGC paired recordings in Chat-Cre;nGFP;Trhr-GFP whole-mount retinas
+  in oxygenated Ames medium at 32-34 C. SACs depolarized to 0 mV, DSGCs voltage-clamped at varying
+  holding potentials. n = 4 DSGCs at P9, n = 5 DSGCs at P10.
+* **Varicosity imaging**: sparse SAC tdTomato labeling via Chat-CreER x Ai9 with low-dose tamoxifen
+  (200 ug in 125 ul sunflower oil at P4); confocal Z-stacks with Plan-Apochromat 40x/60x oil
+  objectives at 100 nm pixel size; varicosities marked manually in Imaris.
+* **FACS RNA-seq**: P10 retinas dissociated with papain (1 U/ul, 21 min at 37 C); single cells
+  sorted on BD FACSAria Fusion; cDNA libraries prepared via Smart-Seq. Three biological replicates
+  per genotype. Sequencing on Illumina HiSeq 4000, 100 bp paired-end. ~64.5M fragments per sample,
+  77.8% genomic alignment via Hisat2 + featureCounts; parallel Kallisto pseudoalignment to the mouse
+  transcriptome (mm10) with Sleuth Wald tests for differential expression. Significance cuts applied
+  at adjusted p &lt; 0.01 and beta effect size &gt; 2 or &lt; -2; Benjamini-Hochberg FDR. GO enrichment via
+  GO::TermFinder.
+* **Cbln4 conditional knockout**: Cbln4^fl/fl x VGlut2-Cre to delete Cbln4 from RGCs, with
+  IRES-mVenus reporter in floxed allele and tdTomato switch in Cre-recombined allele.
+* **Two-photon calcium imaging**: AAV-syn-GCaMP6f population imaging; moving bar stimuli in 8
+  directions; DSI = (R_PD - R_ND) / (R_PD + R_ND); permutation test for direction selectivity at the
+  95th percentile cutoff; k-means clustering by preferred direction.
+* **Voltage-clamp**: whole-cell EPSCs (V_h = -60 mV) and IPSCs (V_h = 0 mV) during drifting bars at
+  250 um/s and 1,000 um/s; Alexa-594 dye fills for 3D morphology reconstruction; Sholl analysis with
+  5 um concentric rings; dendritic asymmetry index from convex-hull soma offset.
+
+#### Results
+
+* **Cbln4 mRNA enrichment** in ventral-preferring DSGCs is ~100-fold over nasal-preferring DSGCs
+  (Drd4-GFP **19.96 +/- 5.29** counts, Trhr-GFP **11.03 +/- 3.33**, Hb9-GFP **2,654 +/- 71.25**;
+  Wald q = 1.97e-47, n = 3 biological replicates per genotype).
+* **FISH puncta per cell at P10** confirms differential expression: Drd4-GFP **4.6 +/- 2.1**,
+  Trhr-GFP **3.0 +/- 1.5**, Hb9-GFP **25.8 +/- 3.1** (one-way ANOVA p = 1.14e-6).
+* Asymmetric inhibitory SAC-&gt;DSGC connectivity emerges between **P9 and P10** (paired-recording
+  null-side conductance increases significantly at P10, t-test p = 0.014); SAC varicosities first
+  rise at P10 and reach mature levels by P12 (Kruskal-Wallis p &lt; 0.01).
+* Bulk RNA-seq identifies **2,270 transcripts and 979 genes** differentially expressed between
+  nasal- and ventral-preferring DSGCs at P10 (adj p &lt; 0.01, |beta| &gt; 2). GO enrichment includes cell
+  periphery (659 genes, p = 8.7e-25), plasma membrane (602 genes, p = 1.4e-22), neuron projection
+  (242 genes, p = 1.4e-11), and neuron-&gt;neuron synapse (98 genes, p = 2.2e-9).
+* RGC-targeted Cbln4 KO produces a **small but significant reduction in DSI/vector sum** across all
+  ventral-preferring DSGCs in two-photon calcium imaging, but **no significant DSI difference** in
+  the Hb9-GFP subset (Hb9 = 28% of all ventral DSGCs in WT, 30% in KO).
+* Whole-cell voltage-clamp shows **no significant difference** in IPSC magnitude (preferred or null
+  direction), IPSC DSI, EPSC magnitude, or EPSC/IPSC timing offset in Cbln4 KO ventral DSGCs at
+  either 250 um/s or 1,000 um/s drifting-bar speeds; cell counts n = 35 WT vs n = 17 KO
+  ventral-preferring DSGCs (10 vs 8 mice).
+* **Dendritic morphology preserved**: total dendrite length, dendrite-soma center-of-mass offset,
+  number of branch points, ON-OFF index, ON and OFF Sholl profiles all unchanged between Cbln4^fl/fl
+  and VGlut2-Cre;Cbln4^fl/fl ventral-preferring DSGCs (n = 16 WT vs n = 18 KO; mixed-ANOVA over
+  Sholl radii non-significant).
+* Cbln4 KO reduces inhibitory **center-surround index** in small-receptive-field ON-OFF RGCs and
+  increases OFF-pathway speed-tuning index in suppressed-by-contrast RGCs (both p &lt; 0.05), but
+  EPSC/IPSC amplitudes during full-field flashes are otherwise unchanged in non-DS RGC types.
+* Other top differentially expressed gene families with biological-prior synaptogenic relevance
+  include C1q/TNF (Cbln4, C1qtnf1, C1qtnf6, C1ra, C1s1), protein tyrosine phosphatases (Ptprs,
+  Ptpru, Ptprd, Ptprj, Ptprk, Ptprf, Ptprh), and clustered protocadherins (Pcdhga4, Pcdhgb6,
+  Pcdhgb2, Pcdhga10, Pcdhgb7, Pcdh1, Pcdhga3, Pcdhgb8, Pcdha6, Pcdh11x), plus distinct Tenm3 splice
+  isoforms (Tenm3-201 in nasal, Tenm3-206 in ventral DSGCs).
+
+#### Innovations
+
+##### P10 Critical-Window Identification
+
+Direct paired-recording evidence that null-side SAC-&gt;DSGC inhibitory conductance asymmetry appears
+between P9 and P10, combined with sparse-label varicosity counting that pins SAC presynaptic-
+structure formation to the same window. This dual electrophysiology + morphology calibration anchors
+the choice of P10 as the molecular-screen sampling time point.
+
+##### Subtype-Resolved P10 Bulk RNA-seq of Three DSGC Lines
+
+First differential-expression screen of three orthogonal-direction DSGC populations (Drd4-GFP,
+Trhr-GFP, Hb9-GFP) at the P10 wiring-onset day. Bulk read depth allows splice-isoform-level
+discovery (e.g. Tenm3-201 vs Tenm3-206), which is not feasible with shallower scRNA-seq datasets
+covering the same cell types.
+
+##### RGC-Specific Cbln4 Conditional Knockout Tool
+
+Crossing the Cbln4^fl/fl reporter line with VGlut2-Cre yields RGC-targeted Cbln4 deletion with
+mVenus/tdTomato reporter switching, enabling targeted live-cell electrophysiology and morphology on
+Cbln4-positive vs Cbln4-null RGCs in the same retina. This is the first published use of this tool
+combination in the retinal DS circuit and establishes a negative-result control: Cbln4 in RGCs is
+not required for asymmetric SAC-&gt;DSGC inhibitory synaptogenesis.
+
+#### Datasets
+
+* **Bulk RNA-seq**: 9 samples (3 biological replicates x 3 genotypes), Illumina HiSeq 4000, 100 bp
+  paired-end, ~64.5M fragments per sample. Aligned to GRCm38/mm10 via Hisat2 and pseudoaligned to
+  the mouse transcriptome via Kallisto. Reference scRNA-seq: GSE185671 (Shekhar et al. 2022),
+  GSE137400 (Tran et al. 2019), GSE149715 (Yan et al. 2020), accessed via the Broad Single Cell
+  Portal.
+* **Paired patch-clamp**: SAC-&gt;DSGC pairs at P9 (n = 4 DSGCs), P10 (n = 5 DSGCs); reference adult
+  data from Wei et al. 2010.
+* **Two-photon calcium imaging**: 265 Hb9-GFP DSGCs from 5 Cbln4^fl/fl mice; 252 Hb9-GFP DSGCs from
+  4 VGlut2-Cre;Cbln4^fl/fl mice; 163 ventral-preferring + 171 nasal-preferring DS cells in WT vs 96
+  \+ 133 in KO.
+* **Voltage-clamp**: 35 ventral-preferring DSGCs from 10 WT mice and 17 from 8 KO mice; total
+  population includes 65 mVenus+ and 68 tdTomato+ Cbln4-expressing RGCs across all subtypes.
+* **Morphology**: 16 WT and 18 KO ventral-preferring DSGC dendritic reconstructions.
+* All transgenic mouse lines are publicly available (JAX/MMRRC strain numbers reported in the
+  Materials and Methods section).
+
+#### Main Ideas
+
+* **Wiring-specificity molecules act developmentally on a fixed substrate**, distinct from the
+  electrophysiological-property optimisation that t0080 performs. This paper addresses how the
+  asymmetric SAC-&gt;DSGC inhibitory pattern is laid down between P9 and P10; t0080 takes that pattern
+  as given and instead optimises Na/K conductance distributions, AIS geometry, and dendritic-spike
+  parameters on top of it.
+* **Hb9-GFP subset is not representative of all ventral-preferring DSGCs** (28-30% of the
+  population). When citing ventral-preferring DSGC properties from this paper, distinguish between
+  the broader k-means-clustered ventral DSGC population and the molecularly defined Hb9-GFP subset
+  -- the two diverge in the Cbln4 KO phenotype.
+* **Cbln4 is not the bottleneck for asymmetric inhibition**: voltage-clamp IPSC magnitude,
+  asymmetry, and timing are unchanged in the KO. Project plans should not assume that perturbing one
+  C1q-family synaptic-organiser gene will substantially reshape the inhibitory tuning curve that is
+  the t0080 target reference.
+* **Excitatory inputs onto ventral-preferring DSGCs are weakly directional with a ventral
+  preference**, with peak EPSCs larger in the ventral direction but tuning much weaker than IPSCs
+  (consistent with Park 2014, Pei 2015, Percival 2019, El-Quessny 2020, Summers 2021). This matters
+  for any future task that revisits the t0080 fixed E/I substrate -- the model can keep a near-
+  symmetric AMPA input distribution as a reasonable first-order approximation.
+* **Splice-isoform-level differences (Tenm3-201 vs Tenm3-206) discriminate nasal- from
+  ventral-preferring DSGCs**, hinting that future morphology-coupled studies should treat these as
+  separate cell types, not as a single bucket of ON-OFF DSGCs.
+
+#### Summary
+
+Tworig and colleagues address one specific developmental question: which molecules instruct the
+asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF DSGC
+subtypes during the brief P9-P10 critical period? Prior work had shown that the asymmetric
+inhibitory pattern emerges within roughly two postnatal days and persists in the absence of visual
+input, suggesting an instructive molecular code, but the responsible molecules were unknown. The
+authors target the postsynaptic side of this wiring problem in mouse retina with a transcriptomic
+screen and a single conditional knockout follow-up.
+
+The methodology combines paired patch-clamp (to time-stamp the wiring-onset day at P10), bulk
+RNA-seq on FACS-isolated GFP-labelled nasal- vs ventral-preferring DSGCs from three transgenic
+lines, and a Cbln4 conditional RGC knockout (Cbln4^fl/fl x VGlut2-Cre). Functional readouts use
+two-photon population calcium imaging and whole-cell voltage-clamp during 8-direction drifting-bar
+stimuli at 250 and 1,000 um/s, plus 3D dye-fill morphology reconstruction with Sholl analysis.
+Statistical testing uses Wald tests with Benjamini-Hochberg FDR for differential expression and
+permutation tests for direction-selective cell classification.
+
+The screen yields **2,270 differentially expressed transcripts** including strong candidates from
+the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and Tenm3 splice
+isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs, but the
+RGC-targeted KO produces only a **small DSI reduction** in the broader ventral-preferring DSGC
+population and **no detectable difference** in IPSC amplitude, asymmetry, or timing, EPSC
+properties, or dendritic morphology in voltage-clamp recordings. The authors conclude that Cbln4
+does not function cell-autonomously in DSGCs to instruct asymmetric SAC-&gt;DSGC wiring, while still
+validating the differential-expression screen as a discovery tool for other candidate molecules.
+
+For this project, the paper is tangential to t0080 optimisation aims because t0080 operates on a
+fixed deposited E/I substrate rather than reshaping it. The relevance is contextual: it documents
+the developmental origin of the asymmetric inhibitory wiring that t0080 takes as a fixed biological
+prior, validates that ventral-preferring DSGCs receive stronger inhibition for dorsal motion (a
+hallmark feature already encoded in our target tuning curve), and reports that excitation onto these
+cells is weakly direction-tuned with a ventral preference -- supporting the project continued
+treatment of the AMPA input distribution as approximately symmetric. The ~100-fold Cbln4 enrichment
+hit with a small DSI phenotype is also a useful negative-result anchor: it shows that single-gene
+perturbations of synaptic organisers do not substantially redistribute the inhibitory tuning curve,
+so future tasks should keep the project E/I substrate fixed at the canonical t0078/t0080 levels
+rather than attempting biologically motivated perturbations of single synaptogenic molecules.
+
+## Electrical match between initial segment and somatodendritic compartment for action potential backpropagation in retinal ganglion cells
+ID: 10.1101_2020.09.15.297937
+Year: 2020
+Authors: Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette
+Venue: bioRxiv
+Venue type: preprint
+DOI: 10.1101/2020.09.15.297937
+URL: https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2
+Categories: voltage-gated-channels, retinal-ganglion-cell, patch-clamp, compartmental-modeling
+Added by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Date added: 2026-05-04
+
+#### Metadata
+
+* **File**: `files/goethals_2020_axial-current-ais-nav-rgc.pdf`
+* **Published**: 2020 (bioRxiv v2, 2020-12-10)
+* **Authors**: Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Reaux-Le Goazigo, Romain
+  Brette
+* **Venue**: bioRxiv (preprint, not peer-reviewed)
+* **DOI**: `10.1101/2020.09.15.297937`
+#### Abstract
+
+The action potential of most vertebrate neurons initiates in the axon initial segment (AIS), and is
+then transmitted to the soma where it is regenerated by somatodendritic sodium channels. For
+successful transmission, the AIS must produce a strong axial current, so as to depolarize the soma
+to the threshold for somatic regeneration. Theoretically, this axial current depends on AIS geometry
+and Na+ conductance density. We measured the axial current of mouse RGCs using whole-cell recordings
+with post-hoc AIS labeling. We found that this current is large, implying high Na+ conductance
+density, and carries a charge that co-varies with capacitance so as to depolarize the soma by ~30
+mV. Additionally, we observed that the axial current attenuates strongly with depolarization,
+consistent with sodium channel inactivation, but temporally broadens so as to preserve the
+transmitted charge. Thus, the AIS appears to be organized so as to reliably backpropagate the axonal
+action potential.
+
+#### Overview
+
+This paper addresses the biophysical question of how the axon initial segment (AIS) of mouse retinal
+ganglion cells (RGCs) ensures reliable transmission of the action potential (AP) to the soma. The
+AIS is a narrow structure (~1 um diameter, ~30 um long) that must produce an axial current large
+enough to depolarize the much larger somatodendritic compartment by about 30 mV to reach the
+threshold for somatic AP regeneration. The theoretical framework of resistive coupling (Brette,
+2013; Kole and Brette, 2018) predicts that this requires a high Na+ conductance density in the AIS,
+but direct functional measurements in RGCs were lacking.
+
+Goethals et al. combine whole-cell voltage-clamp recordings from RGCs in acutely isolated mouse
+retina (P10-12) with post-hoc ankyrin-G immunolabeling to measure AIS geometry in the same cells.
+This paired approach allows the authors to apply resistive coupling theory directly to the measured
+current-geometry data to estimate AIS Na+ conductance density. The study reaches two major
+conclusions: first, the AIS produces a large axial current (~6.7 nA mean) requiring a Na+
+conductance density of at least ~1000 S/m2 (conservative) and most plausibly ~5000-5500 S/m2 (best
+fit); second, this current is organized to reliably transmit the AP even under partial sodium
+channel inactivation, through compensatory temporal broadening of the current pulse.
+
+The paper provides the first direct experimental validation of resistive coupling theory in RGCs:
+the inverse relation between axial current and AIS start distance is confirmed (p = 0.04), the
+quadratic current-voltage relation near threshold matches predictions (slope beta ~4.2 +/- 1.7 mV),
+and axial current adaptation co-varies with voltage threshold adaptation in a manner consistent with
+AIS Na+ channel inactivation. Kv1 channel inactivation in the distal AIS (Kv1.2 expressed in RGC
+AIS) likely produces the temporal broadening that compensates the 12-fold amplitude reduction.
+#### Architecture, Models and Methods
+
+**Experimental preparation**: Acutely dissected mouse retinas from P10-12 Swiss and C57BL/6NRj mice.
+Whole-cell patch-clamp from visually identified RGCs, retina mounted RGC-layer-up, perfused with
+oxygenated Ringer solution at 32 degrees Celsius. Patch pipettes: borosilicate glass, 2.5-4 MOhm
+open-tip resistance, K-gluconate internal solution (128 mM K-gluconate, 10 mM HEPES, 16 mM KCl, 1 mM
+EGTA, 2 mM Mg-ATP, 0.5 mM Na2-GTP, pH 7.25, 275 mOsm) plus 1-2 mg/mL biocytin. Liquid junction
+potential correction: -11 mV.
+
+**Amplifier and data acquisition**: Multiclamp 700B; filtered at 10 kHz, digitized at 50 kHz
+(DigiData 1440A). Series resistance compensated 80-95% electronically (18 us lag). Recordings
+excluded if Rs &gt; 25 MOhm (raw) or residual Rs &gt; 5 MOhm after compensation.
+
+**Axial current measurement (voltage clamp)**: Soma stepped from V0 = -60 mV to variable target
+potentials in 0.5-1 mV increments. Above threshold a large abrupt inward current appears reflecting
+the AIS action potential current flowing resistively to the clamped soma. Sodium channel origin
+confirmed by 1 uM tetrodotoxin block (98 +/- 0.4% eliminated; n = 4). Peak current Ip and total
+charge Q extracted after offline series-resistance correction (Traynelis, 1998).
+
+**AIS geometry measurement**: Post-recording, retinas fixed in 4% PFA, immunolabeled with
+anti-ankyrin-G (clone N106/36, 1:250) plus streptavidin-Alexa 594 and donkey anti-mouse-Alexa 488.
+Confocal imaging (Olympus FV1000, 40x oil NA 1.3, 0.155 um x-y pixel, 0.5 um z-step). AIS start
+position (Delta), length (L), proximal diameter, distal diameter measured. Mean: L = 31 +/- 6 um,
+Delta = 8.6 +/- 3.3 um, proximal d = 0.9 +/- 0.3 um, distal d = 0.5 +/- 0.2 um (n = 14 cells with
+paired geometry and electrophysiology).
+
+**Resistive coupling theory for conductance density estimation**: Predicted axial current: Ip = (ENa
+\- Vt) / (ra * (Delta + delta)), where delta = sqrt(d / (4 * Ri * g)) captures finite conductance
+density g. Parameters: ENa ~ 70 mV, Ri = 100 Ohm.cm, d = 1 um. Mean squared error between predicted
+and measured Ip minimized over g, yielding best-fit g ~ 5500 S/m2 (broad minimum ~3000-10000 S/m2).
+Conservative lower bound by maximizing current over all AIS geometries: gmin = 1200 S/m2 (d = 1 um)
+or 2467 S/m2 (d = 0.8 um), independent of AIS position.
+
+**Adaptation protocols**: V0 stepped from -70 to -40 mV in 5 mV increments (0.5 s hold), followed by
+activation voltage step. Voltage threshold, axial current amplitude, and current duration t50
+measured at each V0.
+
+**Sample sizes**: n = 10 cells (AP properties); n = 14 (AIS geometry); n = 15-17 (charge-
+capacitance relation); n = 9 (threshold adaptation); n = 6-7 (threshold current adaptation). Data:
+Zenodo record 4005629; code: github.com/romainbrette/AIS-geometry-and-axial-current.
+
+#### Results
+
+* Mean axial current at spike initiation: **Ip = -6.7 +/- 1.8 nA** (n = 14 cells, SD).
+* Conservative lower bound (AIS area only, ignoring cable geometry): **~814 S/m2** (d = 1 um) or
+  **~1159 S/m2** (d = 0.7 um average diameter).
+* Cable-theory lower bound (maximize current over all AIS geometries): **gmin = 1200 S/m2** (d = 1
+  um) or **gmin = 2467 S/m2** (d = 0.8 um), independent of AIS position.
+* Best-fit conductance density from resistive coupling theory: **g ~ 5000-5500 S/m2** (50-55 mS/cm2,
+  d = 1 um), consistent with Guo et al. 2013 RGC model (5000 S/m2) and Lorincz and Nusser 2010
+  structural estimate in CA1 (1870-3740 S/m2).
+* Transmitted charge co-varies with somatic capacitance: slope = **31 mV** (Pearson r = 0.56, p =
+  0.02; n = 17 cells), matching measured spike-to-regeneration gap of **33 +/- 5 mV**.
+* Spike threshold: **-49 +/- 3.8 mV**; somatic regeneration threshold: **-16 +/- 4.6 mV**; gap: **33
+  +/- 5 mV** (n = 10 cells).
+* Threshold axial current: measured **~92 pA** (vs. theoretical prediction ~160 pA, d = 1 um, AIS
+  midpoint 24 um from soma).
+* Axial current attenuation with depolarization (V0: -60 to -40 mV): peak Ip factor **12.3 +/- 5.1**
+  (n = 7); total charge Q factor **3.1 +/- 1.4** (broadening compensation).
+* Threshold current attenuation (V0: -60 to -40 mV): factor &lt; **2.5** (n = 6), confirming theory:
+  threshold current It = k/Ra is geometry-determined, not conductance-dependent.
+* Sodium channel half-inactivation voltage: **Vi ~ -55.8 +/- 3.1 mV** (n = 9); activation slope **ka
+  ~ 4.1 +/- 2.2 mV**; ki/ka ~ **0.9 +/- 0.18**.
+* AIS geometry: mean length **31 +/- 6 um**, start distance **8.6 +/- 3.3 um**, proximal diameter
+  **0.9 +/- 0.3 um** (n = 14 cells).
+
+#### Innovations
+
+##### Direct Functional Measurement of AIS Nav Conductance Density in Mouse RGCs
+
+Prior estimates in RGCs came from structural immunocytochemistry (Lorincz and Nusser, 2010: 187
+Nav1.6 channels/um2 in CA1, implying 1870-3740 S/m2) or model optimization to AP shape (Kole et al.,
+2008: 2500 S/m2; Guo et al., 2013: 5000 S/m2 in RGCs). This paper provides the first direct
+functional estimate in mouse RGCs from axial current measurements, independent of kinetic model
+assumptions, testing the biophysical constraint of soma-charging current rather than AP waveform
+shape.
+
+##### Experimental Validation of Resistive Coupling Theory in RGCs
+
+Resistive coupling theory had been validated primarily in cortical pyramidal cells and via
+simulations. This paper directly tests predictions in mouse RGCs: inverse relation between axial
+current and AIS position (p = 0.04, Pearson), quadratic IV near threshold (slope beta = 4.2 +/- 1.7
+mV vs. theoretical ~4 mV), and best-fit g (5000-5500 S/m2) matching independent estimates from model
+optimization.
+
+##### Discovery of Axial Current Adaptation and Compensation by Temporal Broadening
+
+The first paper to directly measure adaptation of the axial current. A 12-fold amplitude reduction
+over 20 mV depolarization is compensated by temporal broadening (t50 increases above -50 mV),
+reducing effective charge attenuation to only ~3-fold. Kv1 inactivation in the distal AIS (Kv1.2
+expressed in RGC AIS, Van Wart et al., 2007) is the proposed mechanism, analogous to AP broadening
+in layer 5 pyramidal cells (Kole et al., 2007).
+
+##### Direct Demonstration of the Charge Matching Principle in RGCs
+
+Hamada et al. (2016) provided only indirect evidence that AIS position covaries with somatodendritic
+capacitance. This paper provides the first direct measurement: Q linearly proportional to C with
+slope ~31 mV, matching the spike-to-regeneration gap in the same cells.
+
+#### Datasets
+
+* **Mouse RGC electrophysiology**: Whole-cell patch-clamp from P10-12 mouse retinas (n = 10-17 cells
+  per measurement type). Publicly available at Zenodo record 4005629
+  (https://zenodo.org/record/4005629). MATLAB and Python format.
+* **Confocal imaging**: Ankyrin-G and biocytin co-labeled retinal sections, n = 14 cells with
+  matched geometry and electrophysiology. Available at the same Zenodo record.
+* **Analysis and simulation code**: github.com/romainbrette/AIS-geometry-and-axial-current
+* Animal procedures approved by C2EA-05 (Comite Charles Darwin) and EU Directive 2010/63/UE. No
+  human subjects.
+
+#### Main Ideas
+
+* AIS Na+ conductance density in mouse RGCs is at minimum **~1000-1260 S/m2 (~10-12.6 mS/cm2)**
+  (conservative cable theory) and most plausibly **~5000-5500 S/m2 (~50-55 mS/cm2)** (resistive
+  coupling theory best fit). Both far exceed t0080 hard floor (nav16_ais &gt;= 0.25 S/cm2), confirming
+  it is biologically conservative by ~40-200x.
+* AIS diameter dominates axial current through d-squared dependence of axial resistance: a 200 nm
+  error (~20% of d = 1 um) causes ~50% resistance error. Compartmental models should treat AIS
+  diameter as a free bounded variable, not fix it arbitrarily.
+* The charge-capacitance matching principle (slope ~31 mV) implies co-regulation of AIS structural
+  parameters with soma size across RGC subtypes. t0080 MOBO bounds for AIS geometry should reflect
+  this biological coupling.
+* Temporal broadening of the axial current (likely via Kv1 inactivation) preserves total charge
+  transmission under depolarization (3-fold vs. 12-fold peak attenuation). Models tracking only peak
+  Nav conductance may underestimate spike transmission robustness.
+* The P10-12 mouse RGC sample yields AIS Nav density estimates in the same order of magnitude as
+  adult RGC measurements (Werginz 2020 Sci. Adv.), confirming high AIS Nav density is established
+  early in postnatal development.
+
+#### Summary
+
+Goethals et al. study the biophysical organization of the axon initial segment in mouse retinal
+ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits the action
+potential to the much larger soma. The AIS must produce an axial current strong enough to depolarize
+the soma by ~30 mV to reach somatic spike regeneration threshold, a demanding requirement given the
+geometric impedance mismatch at the axosomatic junction. Prior estimates of AIS Nav conductance
+density in RGCs came only from computational model fitting to AP shape; this paper provides the
+first direct functional measurement via the axial current itself.
+
+The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
+ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n =
+14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate AIS Nav
+conductance density. Additionally, the adaptation of the axial current with membrane potential is
+characterized, revealing that temporal broadening by Kv1 channel inactivation reduces effective
+charge attenuation from 12-fold (peak current) to only 3-fold (total charge) over a 20 mV
+depolarization.
+
+Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance density
+from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit from resistive
+coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope **31 mV** matching the
+spike-to-regeneration gap; **12-fold peak current** versus **3-fold charge attenuation** over 20 mV
+depolarization. These converge with Guo et al. 2013 model estimates (5000 S/m2) and Werginz 2020
+Sci. Adv. values (~1300 mS/cm2).
+
+For t0080, this paper provides an independent empirical lower bound on AIS Nav density in mouse RGCs
+supporting the hard biological floor nav16_ais &gt;= 0.25 S/cm2. The conservative minimum (~10-12.6
+mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by ~200x, confirming the floor
+is conservative. The paper establishes that AIS diameter is a critical free parameter (0.7-1.2 um
+proximal range from measurements) and that the charge- capacitance coupling principle should inform
+how AIS geometry bounds are set relative to soma size in t0080 MOBO optimization.
 
 ## Differential Intrinsic Firing Properties in Sustained and Transient Mouse αRGCs Match Their Light Response Characteristics and Persist during Retinal Degeneration
 ID: 10.1523_JNEUROSCI.1592-24.2024

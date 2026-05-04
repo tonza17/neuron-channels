@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-04T17:39:30Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-04T22:48:44Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>129</section_count>
-    <char_count>2336669</char_count>
-    <byte_count>2342797</byte_count>
-    <estimated_tokens>584167</estimated_tokens>
+    <section_count>132</section_count>
+    <char_count>2454899</char_count>
+    <byte_count>2461088</byte_count>
+    <estimated_tokens>613724</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -184,9 +184,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0077_brainstorm_results_13</id>
         <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
         <id>t0079_brainstorm_results_14</id>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 72
+Completed tasks: 73
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -619,6 +620,12 @@ ID: t0079_brainstorm_results_14
 Completed: 2026-05-04
 Short description: Fourteenth brainstorm: commission t0080 (Bed B v3 MOBO with dendritic-spike machinery + NSGA-II); reject 3 suggestions covered by t0080.
 Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strategic brainstorm, run on 2026-05-04 after t0078 (49-d AIS-augmented Bed B v2 BoTorch qLogNEHVI MOBO with tier-stratified channels and slow Kv-AHP) completed. The session is triggered by the t0078 architectural diagnostic: the AIS-augmented substrate expanded the achievable Pareto front by **+36% in hypervolume** over t0076 but still missed the joint pass criterion `DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz` -- the closest cell (iter 81) sits at DSI 0.316 / PD 9.68 Hz, short by 0.084 on DSI and 0.32 Hz on PD. The compare-literature analysis identified two follow-on diagnostics: passive dendrites are the bottleneck on the high-DSI rail (PD...
+
+## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Completed: 2026-05-04
+Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II Summary Built a 54-d AIS+dendritic-spike-augmented Bed B substrate (de Rosenroll 2026 DSGC) by extending t0078&#x27;s `de_rosenroll_2026_dsgc_ais` library with Mg-block NMDA at all dendritic compartments and Nav1.6 + NaP at distal-dendrite densities, then ran a small NSGA-II via pymoo (pop=24, gen=8 = **192 evaluations**) on a Vast.ai 64-core EPYC 7B13 instance for **$0.7458**. Hard biological lower bounds (`nav16_ais` &gt;= 0.25 S/cm² per Kole 2008; AIS-to-soma Nav ratio &gt;= 5 per Werginz 2024 /...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -628,10 +635,9 @@ Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strate
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -652,13 +658,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
-ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
-Status: not_started
-Effective date: unknown
-Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo, t0078_bedb_mobo_v2_ais_tiered_ahp
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -683,9 +682,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_chann
         <id>polegpolsky-2016-fig3-conductances-validation</id>
         <id>seclamp-conductance-remeasurement-fig3</id>
         <id>synapse-distribution-audit-deposited-vs-paper</id>
+        <id>mobo-on-biophysics-ais-disabled-corner</id>
       </source_ids>
       <content>
-Answers: 18
+Answers: 19
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -828,6 +828,14 @@ Created by: t0050_audit_syn_distribution on 2026-04-25
 Confidence: high
 
 The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 + 0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct...
+
+## Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future MOBO-on-biophysics tasks?
+ID: mobo-on-biophysics-ais-disabled-corner
+Created by: t0080_bedb_mobo_v3_dendritic_spike_nsga2 on 2026-05-04
+Confidence: high
+Categories: voltage-gated-channels, compartmental-modeling, patch-clamp
+
+The optimiser exploited a soft-prior loophole. t0078&#x27;s per-tier search bounds let `nav16_ais` go as low as 1e-5 S/cm^2, four orders of magnitude below Kole 2008&#x27;s measured cortical AIS Nav range [0.25, 0.5] S/cm^2 and five orders below Werginz 2024&#x27;s mouse alpha-RGC measurement of 1.3 S/cm^2. Multi-objective acquisition discovered that an AIS-disabled cell could match a fragment of the Pareto front (DSI 0.316, PD 9.68 Hz at iter 81) at a lower implicit cost than a Kole-compliant cell, because the prior was advisory rather than enforced. The fix is hard parameter bounds, not soft penalties: pre-register `nav16_ais &gt;= 0.25` S/cm^2 (Kole 2008) and AIS-to-soma Nav ratio `&gt;= 5` (Werginz 2024) as...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -39752,6 +39760,1917 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0080_bedb_mobo_v3_dendritic_spike_nsga2-research_papers" source_kind="file">
+      <title>t0080_bedb_mobo_v3_dendritic_spike_nsga2 — Bed B v3 MOBO with dendritic-spike machinery and NSGA-II — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 15
+papers_cited: 15
+categories_consulted:
+  - &quot;direction-selectivity&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;compartmental-modeling&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;patch-clamp&quot;
+  - &quot;synaptic-integration&quot;
+  - &quot;cable-theory&quot;
+date_completed: &quot;2026-05-04&quot;
+status: &quot;complete&quot;
+---
+### Research in existing papers for t0080: Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+
+#### Task Objective
+
+Extend the t0078 AIS-augmented Bed B v2 substrate by adding dendritic-spike machinery (Mg-block NMDA
+at all dendritic compartments plus Nav1.6 / NaP at distal-dendrite densities) and switching the
+optimiser from BoTorch qLogNEHVI to NSGA-II via pymoo. Enforce hard biological lower bounds on AIS
+Nav density (Kole 2008 prior) and the AIS-to-soma Nav ratio (Werginz 2024 measurement) so the
+optimiser cannot collapse to the AIS-disabled corner observed at t0078 iter 81. The pass criterion
+is a Pareto cell with DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz, anchored to RivlinEtzion 2012 stable-cell
+joint distribution and Trenholm 2013 peak-rate / Gaussian-convolution conventions. This paper review
+extracts the prior densities, kinetic schemes, and threshold criteria that must constrain the v3
+substrate and answer asset.
+
+#### Category Selection Rationale
+
+Eight project categories were consulted. `direction-selectivity` and `retinal-ganglion-cell` provide
+the experimental DSI / firing-rate targets and the ON-OFF DSGC type identity.
+`dendritic-computation` covers the active-dendrite mechanisms being added (dendritic Na spikes, NMDA
+Mg-block nonlinearity, Ca plateaus). `voltage-gated-channels` supplies the AIS Nav prior (Kole
+2008), the Nav1.6 / NaP kinetic schemes (Khaliq 2003), and the Hay 2011 SK_E2 / CaDynamics_E2
+sources for the slow-AHP. `compartmental-modeling` covers DSGC-specific NEURON implementations
+(Schachter 2010, Poleg-Polsky 2016 Neuron, deRosenroll 2026, Poleg-Polsky 2026). `patch-clamp`
+papers (Sivyer 2013, Oesch 2005, Werginz 2024, Werginz 2020) supply the dendritic- spike thresholds
+and the per-compartment density measurements. `synaptic-integration` and `cable-theory` provide the
+impedance-gradient + NMDA framework (Branco 2010) that motivates the distal Nav placement.
+
+The fly-vision morphology categories were excluded as off-target. Pure starburst-amacrine-cell
+modelling papers were not pulled in at this stage because the SAC release machinery is held fixed at
+the t0078 substrate setting.
+
+#### Key Findings
+
+##### Dendritic Na spikes are necessary to reach DSI &gt;= 0.7 in DSGCs
+
+Sivyer and Williams [Sivyer2013] performed dual soma + terminal-dendrite whole-cell recordings in
+rabbit ON-OFF DSGCs and showed that preferred-direction moving bars elicit fast dendritic spikes
+that **precede the somatic AP by several milliseconds** and are **larger at the dendritic site than
+at the soma** — the canonical Larkum-style amplitude-and-latency signature of local dendritic
+spike initiation. Bath TTX at low dose selectively attenuates the dendritic-spike component while
+leaving subthreshold EPSPs largely intact, **collapsing the somatic spike DSI toward zero**,
+demonstrating that the high somatic DSI is generated by dendritic spike initiation rather than by
+somatic threshold integration. Their compartmental model only reproduces these behaviours when
+terminal dendrites are endowed with **physiologically plausible densities of voltage-gated sodium
+and calcium channels**; passive-only (gNa = gCa = 0) models fail to reproduce spike-like events or
+the observed preferred / null directional gain.
+
+Oesch et al. [Oesch2005] supply the quantitative DSI numbers in rabbit ON-OFF DSGCs: spike-based DSI
+**0.67 +/- 0.13 (ON) and 0.74 +/- 0.13 (OFF)**, while PSP-based (spike-blanked) DSI is only **0.09
++/- 0.05 (ON) and 0.14 +/- 0.08 (OFF)** — spike generation sharpens tuning by roughly **6-fold**.
+Focal somatic TTX unmasks a bimodal spike-amplitude distribution: small dendritic spikelets at **7.4
++/- 1.9 mV** and somatic spikes at **54.8 +/- 3.5 mV**. Dendritic TTX application reduces
+light-evoked spikes by **41.5 +/- 15%** but reduces depolarisation-evoked spikes by only **25.2 +/-
+7.8%**, a direct demonstration that light-evoked spikes originate in the dendrites. This sets a hard
+target for the v3 substrate: t0078&#x27;s passive-dendrite Pareto front pinned at PD ~ 2.86 Hz / DSI 0.32
+cannot escape that corner without distributed dendritic Nav.
+
+The Schachter et al. compartmental DSGC model [Schachter2010] reaches **spike DSI ~0.8** from **PSP
+DSI ~0.2** (a ~4x amplification) using **40 mS/cm^2 uniform dendritic Nav** (with an alternative 45
+mS/cm^2 proximal -&gt; 20 mS/cm^2 distal gradient tested for robustness) and **150 mS/cm^2 somatic
+Nav**. Local dendritic input resistance scales from **150-200 MOhm** proximally to **&gt;1 GOhm** at
+distal tips, so a single excitatory synapse of **~1 nS** can trigger a local spike at the tip but
+**3-4 nS** is required near the soma. This places the v3 distal Nav density bound at the same order:
+~10-50 mS/cm^2 is the band where dendritic spikes initiate but do not run away.
+
+##### NMDA Mg block multiplicatively scales the EI-tuned signal in mouse DSGCs
+
+Poleg-Polsky and Diamond [PolegPolsky2016a] report that NMDAR blockade with AP5 in mouse DRD4-GFP
+DSGCs reduces preferred-direction PSPs by **35%** and null-direction PSPs by **34%** (n = 19) —
+proportional, multiplicative reduction; **DSI is unchanged** (p &gt; 0.5). The PD NMDAR-mediated PSP
+component is **5.8 +/- 3.1 mV** vs ND **3.3 +/- 2.8 mV** (p = 0.001). The multiplicativity is
+voltage-dependent: removing extracellular Mg2+ collapses the slope angle from **62.5 +/- 14.2
+degrees** (multiplicative) to **45.5 +/- 5.3 degrees** (additive, p &lt; 0.001) and significantly
+reduces DSI. Their NEURON model uses **177 AMPAR + 177 NMDAR + 177 GABA_A synapses** distributed
+homogeneously on ON dendrites with Jahr-Stevens-type Mg2+ block kinetics, on a morphologically
+reconstructed mouse DRD4 DSGC (ModelDB 189347). The model reproduces the multiplicative scaling
+**without dendritic spikes**, indicating that passive dendrites + NMDA Mg block can produce the
+multiplicative gating but require tuned GABAergic inhibition for it to reach DSI &gt;= 0.4 robustly.
+
+Branco et al. [Branco2010] establish the underlying biophysical principle in cortical pyramidal
+dendrites: **dendritic impedance gradients combined with NMDA non-linearity generate
+direction-selective summation**. IN-direction (tip-to-soma) sequences produce somatic EPSPs **31 +/-
+4% larger** than OUT-direction sequences (p &lt; 0.0001, n = 20), with **38 +/- 9% higher spike
+probability** (p = 0.0013). D-AP5 abolishes the supralinearity (**223 +/- 9%** of linear sum -&gt;
+**103 +/- 3%**, p &lt; 0.0001) and reduces the IN-vs-OUT difference to a non-significant 0.4 +/- 0.4
+mV. Optimal velocity for direction sensitivity is **2.0-2.6 um/ms** (matched to the DSGC bipolar
+wave-speed range). The mechanism is generic: it requires only an impedance gradient and NMDA
+receptors, no active dendritic Nav. This is the v3 substrate&#x27;s null hypothesis: NMDA Mg block alone
+may suffice to lift the Pareto front; if it does, the Nav1.6 / NaP additions are diagnostic rather
+than essential.
+
+##### Mouse DSGC peak firing rates are 198 Hz preferred (control) under Trenholm peak-rate convention
+
+Trenholm et al. [Trenholm2013] is the canonical source for mouse Hb9::eGFP DSGC peak firing rates
+under the Gaussian-convolved-spike-train convention used by t0080&#x27;s pass criterion. Under control
+conditions, peak preferred-direction rate is **198 +/- 14 Hz** and peak null-direction rate is **27
++/- 12 Hz**, giving a **peak-rate DSI of (198 - 27) / (198 + 27) = 0.76**. Under picrotoxin (GABA-A
+block), peak preferred rises to **244 +/- 18 Hz** and peak null to **202 +/- 14 Hz**. The pass
+criterion&#x27;s &quot;PD rate &gt;= 10 Hz&quot; is interpreted as a peak rate from spike trains convolved with sigma
+= 25 ms Gaussian kernels (the protocol is fully specified in the paper: 300 x 300 um bar, 96% Weber
+contrast, 600 um/s, eight directions). Excitatory current at half-maximum spike rate is **88 +/- 22
+pA** rising vs **193 +/- 36 pA** falling (p = 0.029, n = 7), revealing an intrinsic gain-control
+conductance with **recovery tau = 604 +/- 158 ms** — a slow process that t0078 already targets via
+the `tau_ca_multiplier` knob and the SK_E2 channel.
+
+##### AIS Nav density priors: Kole 2008, Werginz 2020, Werginz 2024
+
+Werginz et al. [Werginz2024] provides the most directly applicable prior for the t0080 AIS
+hard-bound check: a NEURON multi-compartment model of mouse alpha-RGCs with a five-tier partition
+(dendrites, soma, soma-AIS, AIS, axon). Table 1 of that paper reports **gNa = 1300 mS/cm^2 at the
+AIS** vs **75 mS/cm^2 at the soma**, an **AIS-to-soma Nav ratio of 17.3x**, and **gK = 800 mS/cm^2
+AIS vs 48 mS/cm^2 soma** (ratio 16.7x). These are the values that t0078&#x27;s iter 81 cell **violated by
+five orders of magnitude** (its `nav16_ais` collapsed to 1e-5 S/cm^2 with an AIS-to-soma ratio of
+5.5e-5 vs Werginz&#x27;s measured 17.3). The published mouse alpha-RGC Nav range at the AIS, normalised
+to S/cm^2, is approximately 0.7-2.0 S/cm^2 across the three alpha RGC types reported.
+
+Kole et al. [Kole2008] is the landmark cortical-pyramidal AIS Nav patch-clamp study that established
+the **0.25-0.5 S/cm^2** AIS Nav range as the canonical biophysical-modelling prior. The exact
+patch-clamp values were not extracted from the paper PDF (the file was paywalled in the project&#x27;s
+previous download attempts and the local summary is built from CrossRef metadata only — not found
+in paper). The 0.25-0.5 S/cm^2 range is cited consistently in downstream biophysical-modelling work
+[Hay2011, Werginz2020, Werginz2024] as a robust lower bound. The t0080 plan adopts the Kole **lower
+bound 0.25 S/cm^2** as the hard floor for `nav16_ais`.
+
+Werginz et al. [Werginz2020] confirms in mouse OFF-alpha transient RGCs that AIS Nav1.6 density and
+AIS length vary systematically across the retina, with the **AIS-to-soma Nav density ratio
+approximately 7x** (lower than the alpha-ON sustained 17.3x of Werginz 2024 but consistent with the
+same mouse RGC family). The plan&#x27;s hard floor of **AIS-to-soma Nav ratio
+&gt; = 5** sits below the lowest measured RGC value, so any biologically plausible solution remains
+&gt; inside the search space.
+
+##### Nav1.6 + NaP kinetics: Khaliq 2003 + Hay 2011 sources for the v3 dendritic insertion
+
+Khaliq et al. [Khaliq2003] is the source paper for the Raman-Bean-style state-machine Nav1.6 model
+with explicit open-channel block, the formalism used by every downstream NaR mod-file derivative.
+The published kinetic scheme (closed-inactivated-open-blocked with rate constants alpha, beta,
+gamma, delta, epsilon, zeta, Con, Coff, Oon, Ooff and amplitude factors a, b) is the canonical
+implementation of resurgent Na current and is the upstream source of the Nav1.6 SUFFIX vendored in
+the t0078 substrate. ModelDB accession **48332** distributes the canonical mod files
+(`Naresurgent.mod`, `bkpkj.mod`).
+
+Hay et al. [Hay2011] introduced the SK_E2 / CaDynamics_E2 mechanism set that t0078 uses for the
+slow-AHP. Hay 2011&#x27;s NEURON-based multi-objective optimisation (NSGA-style) over 22 free parameters
+with 20 firing-feature objectives — population 1000 over 500 generations — produced **~2000
+acceptable L5b PC models** in ModelDB **139653** that simultaneously match perisomatic step-current
+f-I targets and BAC firing. **This paper is the methodological precedent for using NSGA-II on a
+multi-compartment biophysical model**: their multi-objective + evolutionary algorithm proved that
+NSGA-style optimisation can recover the joint Pareto-acceptable set (perisomatic + BAC) where
+single-objective fits cannot. Hay 2011&#x27;s apical Nat density of **101-133.5 pS/um^2**
+(BAC-acceptable) and apical Kv3.1 of **0-3.05 pS/um^2** are the biological-prior bounds on the
+dendritic active conductances. NaP is included in their parameter set with **somatic gNap upper
+bound 100 pS/um^2** — the v3 distal NaP upper bound should sit at or below this value.
+
+##### Bed B substrate ancestry and the dendritic-spike question
+
+Poleg-Polsky and Diamond&#x27;s mouse DRD4 DSGC model [PolegPolsky2016a] is the immediate ancestor of Bed
+B&#x27;s passive-dendrite design. Their NEURON model reproduces multiplicative NMDA scaling **without
+dendritic spikes**, indicating that passive dendrites are sufficient to recover the PD:ND ratio —
+but only on the joint manifold spanned by tuned GABA inhibition and NMDA Mg block. deRosenroll et
+al. [deRosenroll2026] is the substrate that t0024 ported and t0080 extends. Their correlated-release
+model reaches **DSI ~ 0.39** under faithful E/I co-correlation but **DSI ~ 0.25** under uncorrelated
+release; this confirms that **the passive Bed B dendrites cannot reach DSI 0.4 robustly without
+additional active dendritic mechanisms**, which is exactly the t0078 finding the v3 substrate is
+designed to fix.
+
+Poleg-Polsky [PolegPolsky2026] enumerates the broader space of DSGC dendritic mechanisms via machine
+learning over a 352-segment compartmental model. The author identifies multiple biophysical
+configurations that can produce robust DSI: (i) velocity-dependent coincidence detection on
+dendrites, (ii) distance-graded passive-dendrite delay lines, (iii) NMDA-mediated multiplicative
+gating, and (iv) hybrid combinations. **These primitives complement the SAC-driven inhibitory
+mechanism rather than replacing it.** The t0080 v3 substrate is exploring the (i) + (iii) corner of
+this space — coincidence detection via dendritic Nav1.6 / NaP + NMDA Mg-block — while keeping
+the SAC inhibition machinery intact.
+
+##### Dendritic Ca plateaus as an alternative active mechanism
+
+Larkum, Zhu, and Sakmann [Larkum1999] established the BAC firing mechanism in L5 pyramidal cells:
+the apical dendrite contains a discrete **Ca2+ spike initiation zone** near the main bifurcation.
+Distal depolarisation alone requires a high threshold (~ -50 mV); paired with a backpropagating
+somatic AP within a **5-10 ms coincidence window**, the threshold drops to a distal depolarisation
+of only **5-10 mV** above rest. The Ca2+ plateau lasts **30-50 ms**, far longer than an EPSP, and
+produces a stereotyped **3-4 spike burst** at the soma at **100-200 Hz** instantaneous frequency.
+This is the t0080 fallback mechanism if the Nav1.6 / NaP v3 substrate does not lift the Pareto front
+— the project would pivot to inserting a Ca-plateau zone (Ca_LVA + SK_E2 with reduced Ca decay)
+per the Hay 2011 hot-zone formalism.
+
+##### Local subunit independence and the inhibitory-veto interpretation
+
+Schachter et al. [Schachter2010] quantify the conductance asymmetry between dendritic-spike
+**initiation** vs **propagation**: initiation can be vetoed by **a few nS of inhibition** (the
+measured ~ 4-10 nS DSGC null-direction inhibitory conductance), but propagation of an already-
+initiated spike requires **~85 nS** — an order of magnitude larger than the measured value. So
+inhibition acts locally as a spike-initiation veto, not as a global shunt. **Each dendritic spike
+that initiates propagates 1:1 to the soma.** This dictates the v3 substrate&#x27;s distal Nav density
+window: high enough that synaptic drive of a few nS can initiate a spike at the tip (local input
+resistance &gt; 1 GOhm), low enough that the local null inhibition can still veto it.
+
+#### Methodology Insights
+
+* **NSGA-II precedent is Hay 2011&#x27;s multi-objective evolutionary algorithm.** Hay et al. [Hay2011]
+  used population 1000 over 500 generations with 20 features and 22 parameters; t0080&#x27;s pop 96 over
+  40 generations is more aggressive (3,840 evaluations vs Hay&#x27;s ~500,000) but targets a smaller
+  dimensionality (~55 d vs Hay&#x27;s 22 d) under a tighter cost cap. The Hay parameter analysis pattern
+  — comparing union of acceptable parameter ranges vs single-target fits — should be applied at
+  the t0080 results-analysis stage to identify which of the ~5-7 dendritic-spike parameters are
+  necessary vs sufficient.
+
+* **Distal dendritic Nav range: 10-50 mS/cm^2 (0.01-0.05 S/cm^2).** Schachter et al. [Schachter2010]
+  used uniform 40 mS/cm^2 with a tested gradient of 45 -&gt; 20 mS/cm^2 proximal to distal. Sivyer and
+  Williams [Sivyer2013] argue qualitatively for &quot;physiologically plausible densities comparable to
+  mammalian central neurons&quot; without giving a numerical value (not found in paper for an exact gNa
+  value at terminal dendrites). The v3 plan should bound `nav16_dend_distal` at **[0, 0.05] S/cm^2**
+  with a Latin-Hypercube initial sample biased toward 0.02-0.04 S/cm^2.
+
+* **Distal NaP upper bound: 100 pS/um^2 = 0.01 S/cm^2.** Hay et al. [Hay2011] use somatic gNap =
+  0-100 pS/um^2 = 0-0.01 S/cm^2 (Table 2). The v3 NaP at distal dendrites should not exceed this
+  somatic upper bound — placing the NaP at higher density than the soma is not biologically
+  supported and would risk runaway depolarisation, exactly the t0080 risk flagged in the task
+  description.
+
+* **NMDA Mg-block kinetics: Jahr-Stevens.** Poleg-Polsky and Diamond [PolegPolsky2016a] use
+  Jahr-Stevens-type Mg2+ block in their published mouse DRD4 DSGC NEURON model (ModelDB 189347). The
+  v3 substrate should use the same `Exp2NMDA` mechanism with Jahr-Stevens Mg2+ block parameters as
+  the t0078 substrate (already vendored from t0008 via ModelDB 189347), with voltage offsets and
+  Mg2+ concentration as MOBO free parameters (3 new parameters: `gnmda_dend`, `mg_conc`,
+  `voff_nmda`).
+
+* **AIS Nav hard floor: 0.25 S/cm^2 (Kole 2008 lower bound) — but expect optimal range 0.7-2.0
+  S/cm^2.** Per [Kole2008] the published cortical-pyramidal AIS Nav range is **0.25-0.5 S/cm^2**
+  (Kole2008 PDF was paywalled at download time; the range is cross-referenced from downstream papers
+  including [Hay2011] and [Werginz2024], not extracted from the source paper directly — verify
+  against the manual PDF before publication). Werginz et al. [Werginz2024] place mouse alpha-RGC AIS
+  Nav at **1.3 S/cm^2** (calculated from 1300 mS/cm^2). Kole&#x27;s lower bound is the conservative hard
+  floor; the LHS initial population should bias toward 0.7-2.0 S/cm^2.
+
+* **AIS-to-soma Nav ratio hard floor: 5x — measured RGC value is 7-17.3x.** [Werginz2024] measures
+  **17.3x for alpha-ON sustained mouse RGCs**; [Werginz2020] measures **~7x for OFF-alpha transient
+  mouse RGCs**. The v3 plan&#x27;s hard floor of **5** sits below the lowest measured RGC value but above
+  the t0078 iter 81 value of 5.5e-5 by five orders of magnitude. Bed B is a DRD4 DSGC, not an
+  alpha-RGC, so the exact target ratio is unknown — but no DSGC patch-clamp study has reported
+  AIS-to-soma Nav ratios below the alpha range, so 5 is a defensible biological lower bound.
+
+* **Reference firing-rate target: peak-rate (Gaussian-convolved) NOT mean-rate.** Trenholm et al.
+  [Trenholm2013] report **peak preferred-direction rate of 198 +/- 14 Hz** under the sigma = 25 ms
+  Gaussian-convolution protocol. The t0080 pass criterion of **PD rate
+  &gt; = 10 Hz** must be computed under the same convention to be directly comparable.
+
+* **Slow-AHP recovery tau ~ 600 ms.** Trenholm et al. [Trenholm2013] measure intrinsic gain-control
+  recovery **tau = 604 +/- 158 ms**, set by Na slow inactivation or Ca-activated K. The t0078
+  substrate already implements this via SK_E2 / CaDynamics_E2 with `tau_ca_multiplier` MOBO knob
+  upper bound 20x; the v3 plan keeps this bound unchanged.
+
+* **Local subunit-independence test: dendritic Nav density bounded above by what passes the
+  `dendritic spike doesn&#x27;t recruit sibling branches at rest` test from Sivyer and Williams
+  [Sivyer2013].** A practical regression-style check: at the **substrate regression cell** (t0076
+  iter 424 mapped to v3), dendritic Vm in one branch should not drive somatic AP without coincident
+  excitation in at least one other branch. If the v3 substrate violates this, the Nav1.6 / NaP upper
+  bounds should be tightened before launching NSGA-II (already in the plan&#x27;s risks section).
+
+* **Hypothesis to test (positive case): NMDA Mg-block alone is sufficient to lift the Pareto front
+  to DSI 0.4 / PD 10 Hz, without distal Nav1.6 / NaP.** Per [PolegPolsky2016a] and [Branco2010],
+  passive dendrites + NMDA Mg block + tuned inhibition can produce multiplicative EI gating that
+  preserves DSI. If the NSGA-II solution sits at high `gnmda_dend` and low `nav16_dend_distal`, this
+  hypothesis is corroborated.
+
+* **Hypothesis to test (negative case): the t0078 +36% HV improvement was substrate-bound; v3
+  substrate produces no further HV gain.** If the v3 final HV does not exceed t0078&#x27;s 11.41, this is
+  a strong negative result documenting that the de Rosenroll substrate&#x27;s morphology / SAC release
+  machinery is the bottleneck, not the dendritic biophysics. The project would then pivot to
+  dendritic Ca plateaus per [Larkum1999] or substrate redesign.
+
+* **Best practice: report Pareto-acceptable parameter ranges, not just the best single cell.** Per
+  the [Hay2011] ensemble-as-experiment pattern, the t0080 results should report the union of NSGA-II
+  Pareto-non-dominated parameter ranges for the new dendritic-spike parameters alongside the single
+  closest-to-joint cell, to identify which knobs are necessary vs sufficient.
+
+#### Gaps and Limitations
+
+* **Sivyer 2013 PDF is paywalled in the project.** Specific quantitative values for terminal
+  dendritic gNa and gCa densities in Sivyer and Williams&#x27;s compartmental model are flagged in the
+  project summary as &quot;to verify once the paper is manually downloaded — not found in paper&quot;. The
+  v3 distal-Nav density range is therefore set by [Schachter2010] (40 mS/cm^2 uniform; 45 -&gt; 20
+  proximal-distal gradient) rather than by the Sivyer-Williams compartmental model directly.
+
+* **Kole 2008 PDF was paywalled at the project&#x27;s previous download attempts.** The 0.25-0.5 S/cm^2
+  AIS Nav range is cross-referenced from downstream biophysical-modelling papers ([Hay2011],
+  [Werginz2024]) rather than extracted from the source paper directly. Verify the Kole AIS Nav range
+  against the manual PDF before publishing the v3 answer asset.
+
+* **No DSGC patch-clamp study reports AIS-to-soma Nav ratio directly.** The 5x hard floor is
+  inferred from non-DSGC RGCs ([Werginz2020] OFF-alpha transient ~ 7x; [Werginz2024] alpha-ON
+  sustained ~ 17.3x). Whether DRD4 ON-OFF DSGCs sit in the same range is unknown. This is a known
+  limitation of the project&#x27;s biological-prior checklist and should be flagged in the answer asset.
+
+* **No published DSGC compartmental model has joint Mg-NMDA + dendritic Nav1.6 + NaP at
+  distal-dendrite densities.** Schachter et al. [Schachter2010] use Nav1.6 + Kv on dendrites but not
+  NMDA Mg-block; Poleg-Polsky and Diamond [PolegPolsky2016a] use NMDA Mg-block but passive
+  dendrites; Poleg-Polsky [PolegPolsky2026] enumerates them but does not publish the joint
+  configuration as a deposited model. The t0080 v3 substrate is the first published
+  joint-configuration model in the project&#x27;s lineage.
+
+* **Trenholm 2013&#x27;s 198 Hz preferred peak rate is for the Hb9::eGFP superior-coding DSGC
+  population.** The Bed B substrate is a DRD4 DSGC (after [PolegPolsky2016a] and [deRosenroll2026]),
+  which is a different molecular subtype. Whether DRD4 ON-OFF DSGCs reach the same 198 Hz peak in a
+  comparable in vitro stimulus protocol is not directly confirmed by the literature reviewed —
+  flagged for the t0080 results discussion.
+
+* **The Bed B Poleg-Polsky 2016 NEURON model (ModelDB 189347) has 177 NMDARs distributed
+  homogeneously across ON dendrites only.** Adding NMDARs to OFF dendrites (the t0080 plan&#x27;s &quot;all
+  dendritic compartments&quot; choice) goes beyond the published model. This is a deliberate modelling
+  choice, not a literature-validated configuration; the t0080 substrate-regression check at the
+  t0076 iter-424 vector becomes the proxy validation for this extension.
+
+#### Recommendations for This Task
+
+1. **Set the distal dendritic Nav1.6 bound at [0, 0.05] S/cm^2 with LHS bias toward 0.02-0.04
+   S/cm^2** [Schachter2010, Sivyer2013]. Above 0.05 S/cm^2 risks runaway depolarisation and violates
+   the local subunit-independence test of [Sivyer2013].
+
+2. **Set the distal NaP bound at [0, 0.01] S/cm^2** [Hay2011]. Hay 2011&#x27;s upper bound of 100 pS/um^2
+   = 0.01 S/cm^2 for somatic gNap is the most directly comparable biophysical-prior anchor; the v3
+   distal NaP should not exceed the somatic upper bound.
+
+3. **Use Jahr-Stevens Mg2+ block kinetics on Exp2NMDA at all dendritic compartments**
+   [PolegPolsky2016a]. Bound `gnmda_dend` at the same order as the existing AMPA-bipolar conductance
+   in the t0078 substrate and `mg_conc` at [0.5, 2.0] mM (around the published 1.0-1.5 mM
+   physiological range).
+
+4. **Hard-bound `nav16_ais` at [0.25, 5.0] S/cm^2** [Kole2008, Werginz2024, Werginz2020]. Kole&#x27;s
+   0.25 S/cm^2 lower bound (from the cited 0.25-0.5 S/cm^2 AIS prior, verify-against- PDF flagged)
+   is conservative; Werginz 2024&#x27;s 1.3 S/cm^2 sits comfortably inside; the upper bound 5.0 S/cm^2
+   covers the alpha-RGC range with headroom.
+
+5. **Hard-bound AIS-to-soma Nav ratio at [5, 25]** [Werginz2024, Werginz2020]. 5x is below any
+   measured mouse RGC value, ensuring biological plausibility; 25x is above [Werginz2024]&#x27;s 17.3x to
+   allow for DRD4-DSGC-specific morphology.
+
+6. **Use NSGA-II via pymoo with pop 96, 40 generations, SBX eta=15, polynomial mutation eta=20**
+   [Hay2011 methodological precedent]. Initial population via Latin Hypercube Sampling for spread;
+   reference point [0, 0] for hypervolume (matches t0076 / t0078).
+
+7. **Pre-launch substrate regression check at t0076 iter-424 vector mapped to v3 49-d
+   parameterisation.** Verify DSI within +/- 0.05 of t0076&#x27;s 0.42 at PD ~ 8.34 Hz. Document the
+   substrate-regression delta in `results/results_summary.md`.
+
+8. **Compute peak firing rate from Gaussian-convolved spike trains with sigma = 25 ms**
+   [Trenholm2013]. Match the publication convention so the **PD rate &gt;= 10 Hz** pass criterion is
+   interpretable against the literature.
+
+9. **Report the union of NSGA-II Pareto-non-dominated parameter ranges for the new dendritic-spike
+   parameters** [Hay2011 ensemble-as-experiment]. Identify which dendritic- spike knobs are
+   necessary (range collapses to a narrow band on the Pareto front) vs sufficient (range stays
+   broad).
+
+10. **Author the answer asset around the iter-81 AIS-disabled-corner failure mode and the
+    biological-prior checklist** drawn from this paper review: [Kole2008] (AIS Nav lower bound),
+    [Werginz2024] (AIS-to-soma ratio, mouse alpha-RGC), [Werginz2020] (mouse OFF-alpha-T AIS
+    confirmation), [Hay2011] (NaP upper bound), [Schachter2010] (dendritic Nav range),
+    [Sivyer2013, Oesch2005] (DSI quantitative targets), [PolegPolsky2016a] (NMDA Mg-block kinetics),
+    [Trenholm2013] (peak-rate convention and slow-AHP tau).
+
+#### Paper Index
+
+##### [Sivyer2013]
+
+* **Title**: Direction selectivity is computed by active dendritic integration in retinal ganglion
+  cells
+* **Authors**: Sivyer, B., Williams, S. R.
+* **Year**: 2013
+* **DOI**: `10.1038/nn.3565`
+* **Asset**: `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1038_nn.3565/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `retinal-ganglion-cell`,
+  `patch-clamp`
+* **Relevance**: First dual soma + terminal-dendrite recordings showing dendritic spikes precede
+  somatic APs in rabbit DSGCs and that null inhibition vetoes them locally. Establishes the v3
+  substrate&#x27;s biological motivation: passive dendrites cannot reach DSGC DSI &gt; 0.4 without active
+  dendritic Nav.
+
+##### [Oesch2005]
+
+* **Title**: Direction-Selective Dendritic Action Potentials in Rabbit Retina
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `voltage-gated-channels`,
+  `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Quantitative DSI numbers (spike DSI 0.67 ON / 0.74 OFF; PSP DSI 0.09 ON / 0.14 OFF)
+  and dendritic-spike thresholds (~7.4 mV spikelets; somatic threshold ~ -49 mV) for rabbit ON-OFF
+  DSGCs. Sets the literature target for the v3 pass criterion.
+
+##### [Trenholm2013]
+
+* **Title**: Dynamic Tuning of Electrical and Chemical Synaptic Transmission in a Network of Motion
+  Coding Retinal Neurons
+* **Authors**: Trenholm, S., McLaughlin, A. J., Schwab, D. J., Awatramani, G. B.
+* **Year**: 2013
+* **DOI**: `10.1523/JNEUROSCI.0808-13.2013`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `patch-clamp`,
+  `synaptic-integration`
+* **Relevance**: Canonical source of mouse Hb9 DSGC peak firing rates (198 Hz preferred control / 27
+  Hz null) under sigma = 25 ms Gaussian-convolution. Defines the peak-rate convention for the t0080
+  PD &gt;= 10 Hz pass criterion and establishes the slow-AHP tau ~ 604 ms.
+
+##### [PolegPolsky2016a]
+
+* **Title**: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion
+  Discrimination in Retinal Ganglion Cells
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1016/j.neuron.2016.02.013`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`,
+  `dendritic-computation`, `retinal-ganglion-cell`
+* **Relevance**: Defines the Mg-block NMDA multiplicative-scaling mechanism and provides the mouse
+  DRD4 DSGC NEURON model (ModelDB 189347) that Bed B descends from. Source of the Jahr-Stevens NMDA
+  kinetics for v3 dendritic NMDA insertion.
+
+##### [Branco2010]
+
+* **Title**: Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons
+* **Authors**: Branco, T., Clark, B. A., Hausser, M.
+* **Year**: 2010
+* **DOI**: `10.1126/science.1189664`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1126_science.1189664/`
+* **Categories**: `cable-theory`, `compartmental-modeling`, `dendritic-computation`,
+  `synaptic-integration`
+* **Relevance**: Establishes the impedance-gradient + NMDA-Mg-block direction-selectivity mechanism
+  in passive cortical dendrites. Provides the null hypothesis for the v3 Nav1.6 / NaP additions:
+  NMDA Mg-block alone may suffice without active dendritic Nav.
+
+##### [Schachter2010]
+
+* **Title**: Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a
+  Simulation of the Direction-Selective Ganglion Cell
+* **Authors**: Schachter, M. J., Oesch, N., Smith, R. G., Taylor, W. R.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000899`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1371_journal.pcbi.1000899/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`, `voltage-gated-channels`, `synaptic-integration`, `cable-theory`
+* **Relevance**: Quantitative dendritic-Nav DSGC compartmental model with 40 mS/cm^2 dendritic gNa,
+  dendritic spike threshold ~ 1 nS at distal tips vs 3-4 nS proximal, and the
+  initiation-vs-propagation inhibition asymmetry (4-10 nS vetos initiation; 85 nS needed for
+  propagation block). Sets the v3 distal Nav range and the local subunit-independence constraint.
+
+##### [Kole2008]
+
+* **Title**: Action potential generation requires a high sodium channel density in the axon initial
+  segment
+* **Authors**: Kole, M. H. P., Ilschner, S. U., Kampa, B. M., Williams, S. R., Ruben, P. C., Stuart,
+  G. J.
+* **Year**: 2008
+* **DOI**: `10.1038/nn2040`
+* **Asset**: `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1038_nn2040/`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`
+* **Relevance**: Canonical AIS Nav patch-clamp prior (cited 0.25-0.5 S/cm^2 range; PDF was paywalled
+  at project download time, range cross-referenced from Hay 2011 / Werginz 2024 —
+  verify-against-PDF flagged). Source of the v3 hard-bound `nav16_ais &gt;= 0.25 S/cm^2` floor.
+
+##### [Werginz2024]
+
+* **Title**: Differential Intrinsic Firing Properties in Sustained and Transient Mouse alpha-RGCs
+  Match Their Light Response Characteristics
+* **Authors**: Werginz, P., Kiraly, V., Zeck, G.
+* **Year**: 2024
+* **DOI**: `10.1523/JNEUROSCI.1592-24.2024`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `retinal-ganglion-cell`,
+  `patch-clamp`
+* **Relevance**: Mouse alpha-RGC five-tier multi-compartment model with Table 1 channel densities
+  (gNa AIS 1300 mS/cm^2 vs soma 75 mS/cm^2; AIS-to-soma Nav ratio 17.3x). Source of the v3
+  hard-bound AIS-to-soma Nav ratio &gt;= 5 floor.
+
+##### [Werginz2020]
+
+* **Title**: Tailoring of the axon initial segment shapes the conversion of synaptic inputs into
+  spiking output in OFF-alpha T retinal ganglion cells
+* **Authors**: Werginz, P., Raghuram, V., Fried, S. I.
+* **Year**: 2020
+* **DOI**: `10.1126/sciadv.abb6642`
+* **Asset**: `tasks/t0017_literature_survey_patch_clamp/assets/paper/10.1126_sciadv.abb6642/`
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`, `compartmental-modeling`,
+  `patch-clamp`
+* **Relevance**: Independent confirmation that AIS-to-soma Nav density ratio is approximately 7x in
+  mouse OFF-alpha-T RGCs. Provides the second anchor below the Werginz 2024 17.3x; both place the v3
+  hard-bound 5 floor below the lowest measured value.
+
+##### [Hay2011]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: Methodological precedent for NSGA-style multi-objective evolutionary fitting of
+  multi-compartment biophysical models. Source of the SK_E2 / CaDynamics_E2 mechanism set vendored
+  in t0078 and the somatic NaP upper bound (100 pS/um^2 = 0.01 S/cm^2) used as the v3 distal NaP
+  cap.
+
+##### [Khaliq2003]
+
+* **Title**: The Contribution of Resurgent Sodium Current to High-Frequency Firing in Purkinje
+  Neurons: An Experimental and Modeling Study
+* **Authors**: Khaliq, Z. M., Gouwens, N. W., Raman, I. M.
+* **Year**: 2003
+* **DOI**: `10.1523/JNEUROSCI.23-12-04899.2003`
+* **Asset**:
+  `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `patch-clamp`
+* **Relevance**: Source of the Raman-Bean-style state-machine Nav1.6 with explicit open-channel
+  block. Canonical kinetic scheme for the Nav1.6 SUFFIX vendored in the t0078 substrate; the same
+  MOD file is reused at the v3 distal-dendrite tier.
+
+##### [Larkum1999]
+
+* **Title**: A new cellular mechanism for coupling inputs arriving at different cortical layers
+* **Authors**: Larkum, M. E., Zhu, J. J., Sakmann, B.
+* **Year**: 1999
+* **DOI**: `10.1038/18686`
+* **Asset**: `tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1038_18686/`
+* **Categories**: `dendritic-computation`, `voltage-gated-channels`, `synaptic-integration`
+* **Relevance**: Canonical BAC-firing dendritic Ca2+ plateau mechanism (5-10 ms coincidence window,
+  30-50 ms plateau, 100-200 Hz burst at soma). Fallback active-dendrite mechanism if the v3 Nav1.6 /
+  NaP substrate fails to lift the Pareto front.
+
+##### [PolegPolsky2026]
+
+* **Title**: Machine learning discovers numerous new computational principles underlying direction
+  selectivity in the retina
+* **Authors**: Poleg-Polsky, A.
+* **Year**: 2026
+* **DOI**: `10.1038/s41467-026-70288-4`
+* **Asset**: `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `dendritic-computation`
+* **Relevance**: ML-based enumeration of dendritic DS mechanisms in a 352-segment DSGC model. Frames
+  the v3 substrate&#x27;s place in the broader space: Nav1.6 / NaP coincidence detection + NMDA Mg-block
+  multiplicative gating.
+
+##### [deRosenroll2026]
+
+* **Title**: Uncovering the &quot;hidden&quot; synaptic microarchitecture of the retinal direction selective
+  circuit
+* **Authors**: de Rosenroll, G., Sethuramanujam, S., Awatramani, G. B.
+* **Year**: 2026
+* **DOI**: `10.1016/j.celrep.2025.116833`
+* **Asset**: `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/paper/10.1016_j.celrep.2025.116833/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `dendritic-computation`
+* **Relevance**: Direct upstream source of the Bed B substrate (t0024 port). Reports DSI ~ 0.39 with
+  correlated SAC release vs DSI ~ 0.25 with uncorrelated release in the published model — confirms
+  the t0078 finding that the passive Bed B dendrites cannot reach DSI 0.4 robustly without active
+  dendritic mechanisms.
+
+##### [PolegPolsky2016b]
+
+* **Title**: Retinal Circuitry Balances Contrast Tuning of Excitation and Inhibition to Enable
+  Reliable Computation of Direction Selectivity
+* **Authors**: Poleg-Polsky, A., Diamond, J. S.
+* **Year**: 2016
+* **DOI**: `10.1523/JNEUROSCI.4013-15.2016`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1523_JNEUROSCI.4013-15.2016/`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`,
+  `retinal-ganglion-cell`
+* **Relevance**: Bed B substrate ancestor (passive-dendrite DSGC compartmental model with 121
+  ON-layer compartments, AMPA / nAChR / GABA / NMDA synapses, active somatic Nav and Kv). Documents
+  the architectural baseline that Bed B v2 (t0078) extended with an AIS and v3 (t0080) extends with
+  dendritic-spike machinery.
+      </content>
+    </section>
+    <section id="t0080_bedb_mobo_v3_dendritic_spike_nsga2-research_internet" source_kind="file">
+      <title>t0080_bedb_mobo_v3_dendritic_spike_nsga2 — Bed B v3 MOBO with dendritic-spike machinery and NSGA-II — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 11
+sources_cited: 18
+papers_discovered: 4
+date_completed: &quot;2026-05-04&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Conduct internet research to fill gaps in the t0080 paper corpus, with priority on (a) the canonical
+pymoo NSGA-II API and `StarmapParallelization` recipe for the 54-56 d Bed B v3 substrate, (b) recent
+(2023-2025) DSGC dendritic-spike papers possibly missed by the paper-corpus stage, (c) newer Werginz
+/ Kole AIS Nav density measurements, (d) Hay 2011 supplementary parameter ranges, and (e) canonical
+Exp2NMDA Mg-block implementation patterns from ModelDB / GitHub. The findings feed directly into the
+v3 substrate library asset and the NSGA-II harness implementation.
+
+#### Gaps Addressed
+
+This section maps every gap from
+`tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/research/research_papers.md` Gaps and Limitations to
+its internet-research resolution status.
+
+1. **Sivyer 2013 PDF paywalled (no quantitative terminal-dendrite gNa value)** -- **Unresolved**.
+   Internet search did not surface a freely accessible version of the Sivyer / Williams 2013
+   compartmental-model parameter table. The v3 distal-Nav range remains anchored to the Schachter et
+   al. 2010 40 mS/cm^2 uniform / 45 -&gt; 20 gradient as documented in `research_papers.md`.
+
+2. **Kole 2008 PDF paywalled (verify 0.25-0.5 S/cm^2 AIS Nav range)** -- **Partially resolved**.
+   Cross-referenced against [Werginz2024-PMC] confirmation of the Kole 2008 range; the canonical
+   downstream citations all use 0.25-0.5 S/cm^2. Direct PDF still inaccessible via web search; the
+   v3 hard-bound `nav16_ais &gt;= 0.25 S/cm^2` floor is robust to this gap.
+
+3. **No DSGC patch-clamp study reports AIS-to-soma Nav ratio directly** -- **Unresolved**. The
+   Werginz / Fried bioRxiv preprint [WerginzAxial-bioRxiv-2020] uses axial-current measurements +
+   resistive coupling theory to estimate AIS Nav density indirectly in mouse alpha-RGCs but does not
+   address DRD4 ON-OFF DSGCs specifically. The 5x hard-floor remains an inference from non-DSGC
+   alpha-RGCs.
+
+4. **No published DSGC compartmental model has joint Mg-NMDA + dendritic Nav1.6 + NaP** --
+   **Confirmed unresolved**. Internet search of bioRxiv (2023-2025) and ModelDB returned no model
+   with this joint configuration; the t0080 v3 substrate remains the first such configuration in the
+   project&#x27;s lineage.
+
+5. **Trenholm 2013 198 Hz peak rate is for Hb9::eGFP DSGCs, not DRD4** -- **Partially resolved**. No
+   2024-2025 paper reports peak DRD4 ON-OFF DSGC firing under the sigma=25 ms convention; the gap
+   remains for DRD4 specifically. The newly discovered [Riccitelli-PNAS-2025] paper reports
+   direction-tuned firing in non-DS RGCs but uses a different protocol.
+
+6. **Bed B Poleg-Polsky 2016 model (ModelDB 189347) has NMDARs only on ON dendrites** --
+   **Resolved**. The ModelDB 189347 file listing [ModelDB-189347] confirms `bipolarNMDA.mod` is the
+   relevant NMDA implementation, attached to ON-layer bipolar contacts only. The v3 plan&#x27;s choice to
+   add NMDA to all dendritic compartments (ON + OFF) is a deliberate extension; the
+   `bipolarNMDA.mod` file pattern can be re-used as the OFF-layer template.
+
+#### Search Strategy
+
+**Sources searched**: Google (general web), Google Scholar (via web), bioRxiv direct, ModelDB
+direct, pymoo official documentation site (`pymoo.org`), pymoo GitHub repository
+(`github.com/anyoptimization/pymoo`), PMC / PubMed Central, PNAS direct, Nature Communications
+direct, Werginz lab pages.
+
+**Date range**: 2020-2026 for AIS / DSGC / direction-selectivity papers. No date restriction for
+canonical pymoo / NEURON documentation.
+
+**Inclusion criteria**: Must provide one of: (a) canonical pymoo NSGA-II / `StarmapParallelization`
+code recipe; (b) DSGC dendritic-spike or active-dendrite measurements / models from 2023-2025; (c)
+mouse RGC AIS Nav density measurements from 2024-2025; (d) Exp2NMDA Mg-block mod-file
+implementation; (e) Hay 2011 parameter ranges or supplementary materials. Excluded: clinical papers
+on optic nerve injury without parameter values, pure cell-type taxonomy papers without electrical
+measurements.
+
+**Queries executed (11 total)**:
+
+1. `pymoo NSGA-II bound-constrained continuous multi-objective optimization tutorial 2025`
+2. `pymoo StarmapParallelization Problem subclass NSGA2 parallel evaluation example`
+3. `pymoo SBX crossover polynomial mutation eta default population size NSGA-II`
+4. `DSGC dendritic spike direction selectivity 2024 2025 retinal ganglion cell mouse`
+5. `Werginz Kole AIS sodium channel density mouse retinal ganglion cell 2024 2025 measurement`
+6. `Hay 2011 multi-objective evolutionary optimization L5 pyramidal NEURON parameter ranges supplementary`
+7. `Exp2NMDA voltage dependent magnesium block NEURON mod file Jahr Stevens implementation`
+8. `NSGA-II pymoo neural model multi-compartment NEURON parameter optimization 2024`
+9. `DSGC starburst amacrine cell biorxiv 2025 dendritic computation NMDA optimization model`
+10. `retinal ganglion cell axon initial segment biorxiv 2025 sodium channel Nav1.6 patch clamp mouse`
+11. `pymoo Latin Hypercube Sampling LHS sampling initial population multi-objective`
+
+**Search iterations**: Queries 1-3 (pymoo recipe) and 8-11 (LHS, NEURON applications) form the
+methodology cluster. Queries 4-6, 9-10 (DSGC + AIS biology) form the literature-update cluster.
+Query 7 confirms the canonical Exp2NMDA implementation. The pymoo NSGA-II page and
+`StarmapParallelization` page were deep-fetched via WebFetch to extract the exact code recipe; the
+ModelDB 267357 mod file and the GitHub mirror of ModelDB 189347 were deep-fetched to extract the
+exact `bipolarNMDA.mod` and Mg-block formulas.
+
+#### Key Findings
+
+##### Canonical pymoo NSGA-II recipe for bound-constrained continuous problems
+
+The pymoo official documentation [pymoo-NSGA2-docs] specifies the canonical NSGA-II recipe with
+defaults that align almost exactly with t0080&#x27;s plan. Default operators are:
+
+* **Sampling**: `FloatRandomSampling` (override to `LHS()` from `pymoo.operators.sampling.lhs` for
+  spread-biased initial population)
+* **Selection**: `TournamentSelection` (binary tournament)
+* **Crossover**: SBX (`SimulatedBinaryCrossover`) -- pymoo NSGA-II default `eta=15`, `prob=0.9` per
+  the older NSGA-II docs and `eta=15` is the current `NSGA2` class default; NSGA-III defaults to
+  `eta=30`, but t0080 uses NSGA-II
+* **Mutation**: PM (`PolynomialMutation`) with `eta=20` (default consistent across NSGA variants)
+* **Survival**: `RankAndCrowding` (frontwise non-dominated sort + Manhattan crowding distance)
+* **Default `pop_size`: 100** [pymoo-NSGA2-docs]
+
+t0080 uses `pop_size=96` and `n_gen=40`, very close to the documentation-default `pop_size=100`. The
+minimal canonical instantiation pattern from the docs is:
+
+```python
+from pymoo.algorithms.moo.nsga2 import NSGA2
+from pymoo.optimize import minimize
+
+algorithm = NSGA2(pop_size=96)
+res = minimize(problem, algorithm, (&#x27;n_gen&#x27;, 40), seed=1, verbose=True)
+### res.X = Pareto-optimal parameters (n_pareto x n_var)
+### res.F = Pareto front objective values (n_pareto x n_obj)
+```
+
+t0080&#x27;s chosen NSGA-II crossover `eta=15` and mutation `eta=20` match the pymoo documentation
+defaults exactly. This is the canonical recipe with no deviation needed
+[pymoo-NSGA2-docs, pymoo-Crossover-docs].
+
+##### StarmapParallelization recipe for the 64-core CPU NEURON workload
+
+The pymoo `StarmapParallelization` documentation [pymoo-Starmap-docs] specifies the canonical
+multi-process pattern:
+
+```python
+import multiprocessing
+from pymoo.core.problem import ElementwiseProblem
+from pymoo.parallelization.starmap import StarmapParallelization
+
+class BedBV3Problem(ElementwiseProblem):
+    def __init__(self, **kwargs):
+        super().__init__(n_var=55, n_obj=2, n_ieq_constr=0,
+                         xl=lower_bounds, xu=upper_bounds, **kwargs)
+
+    def _evaluate(self, x, out, *args, **kwargs):
+        # Run NEURON simulation (8 directions x 20 seeds x 1400 ms) in fresh subprocess
+        dsi, pd_rate = run_bedb_v3_eval(x)
+        # NSGA-II minimizes; flip sign for maximization
+        out[&quot;F&quot;] = [-dsi, -pd_rate]
+
+n_processes = 64  # match Vast.ai 64-core EPYC instance
+pool = multiprocessing.Pool(n_processes)
+runner = StarmapParallelization(pool.starmap)
+problem = BedBV3Problem(elementwise_runner=runner)
+
+res = minimize(problem, NSGA2(pop_size=96), (&#x27;n_gen&#x27;, 40), seed=1)
+pool.close()
+```
+
+**Best practice**: Always call `pool.close()` after `minimize()` to release worker processes.
+**Critical pitfall** [pymoo-issue-763]: `StarmapParallelization` was moved to
+`pymoo.parallelization.starmap` in pymoo &gt;= 0.6; older code using
+`pymoo.core.problem.StarmapParallelization` will fail with import errors. Pin pymoo &gt;= 0.6.0 in the
+v3 substrate library `pyproject.toml`.
+
+**Compatibility with t0078&#x27;s NEURON-fresh-subprocess fix**: The `Exp2NMDA name already exists` error
+from t0078 forces NEURON re-init in a fresh subprocess per trial. `multiprocessing.Pool` workers
+spawned via the default `spawn` (Windows / macOS) or `fork` (Linux) start methods both create fresh
+Python interpreters by default per worker, but because each worker may evaluate many trials
+sequentially, the NEURON re-init bug still requires the nested-subprocess pattern. The plan:
+`_worker_run_trial` inside each pool worker fans out to a short-lived `subprocess.run` call that
+loads NEURON fresh and returns metrics over JSON.
+
+##### Latin Hypercube Sampling for pymoo initial population
+
+The pymoo sampling documentation [pymoo-Sampling-docs] confirms that `LHS()` is available from
+`pymoo.operators.sampling.lhs` and can be passed to NSGA2 via the `sampling=` keyword:
+
+```python
+from pymoo.operators.sampling.lhs import LHS
+algorithm = NSGA2(pop_size=96, sampling=LHS())
+```
+
+This replaces the default `FloatRandomSampling`. LHS divides each dimension into `pop_size` equal
+probability bins and samples one point from each bin (per dimension), then independently shuffles
+across dimensions [pymoo-Sampling-docs, IDAES-LHS]. For 55-d problems with 96 individuals, LHS
+provides much better initial spread than uniform random; t0080&#x27;s plan to use LHS is sound. Sobol is
+also available but LHS is the documented default for evolutionary algorithms in pymoo.
+
+##### Werginz 2024 AIS Nav density values confirmed; mouse axial-current literature emerging
+
+The PMC version of Werginz et al. 2024 [Werginz2024-PMC] confirms Table 1&#x27;s Nav densities of **1300
+mS/cm^2 at the AIS** vs **75 mS/cm^2 at the soma** (AIS-to-soma ratio **17.3x**), matching the
+values already extracted in `research_papers.md`. The AIS architecture in their model is a **25
+um-long compartment tapering 1.0 -&gt; 0.6 um diameter**. Input resistance for mouse alpha-RGC
+subtypes:
+
+* Alpha-ON sustained: **80 +/- 18 MOhm**
+* Alpha-OFF sustained: **108 +/- 30 MOhm**
+* Alpha-OFF transient: **60 +/- 16 MOhm**
+
+These are useful anchors for v3&#x27;s AIS geometry MOBO bounds: the AIS length should remain within
+20-30 um (matching the Werginz 2024 25 um) to avoid biologically implausible elongation.
+
+A complementary line of work [WerginzAxial-bioRxiv-2020] (Hottowy et al., bioRxiv 2020 v2) develops
+**resistive coupling theory** to estimate AIS Nav density from axial currents at spike initiation in
+mouse RGCs. The bioRxiv preprint reports estimates consistent with the Werginz 2024 1.3 S/cm^2
+range. **This is a NEW paper not in the corpus**; it provides an independent, model-free methodology
+for AIS Nav density estimation that strengthens the v3 hard-floor argument.
+
+##### Recent (2024-2026) DSGC and SAC papers worth adding
+
+Three recent papers were not in the t0080 corpus:
+
+1. **[Pitcher-bioRxiv-2026]** &quot;Retinal waves shape starburst amacrine cell dendrite development
+   through a direction-selective dendritic computation&quot; (Pitcher, Gonzales, Habib, Feller, bioRxiv
+   2026-02-04). Demonstrates SAC dendritic computation in vivo during retinal-wave activity;
+   relevant as upstream context for the SAC -&gt; DSGC inhibitory machinery that t0080 keeps fixed. Not
+   in corpus.
+
+2. **[Cbln4-JNeurosci-2024]** &quot;Differential Expression Analysis Identifies Candidate Synaptogenic
+   Molecules for Wiring Direction-Selective Circuits in the Retina&quot; (J Neurosci 44:e1461232024).
+   Tests cerebellin-4 (Cbln4) in ventral-preferring DSGCs; reduction reduces direction-selective
+   tuning. Relevant for cross-validating that t0080&#x27;s substrate matches a real direction-selective
+   wiring rather than a generic DSGC. Not in corpus.
+
+3. **[Riccitelli-PNAS-2025]** &quot;Retinal ganglion cells encode the direction of motion through a
+   suppressive surround&quot; (Riccitelli et al. PNAS 2025). Reports direction-tuned firing in
+   non-DS-RGCs through asymmetric activity beyond classic receptive field; broader project context
+   for DSGC vs non-DSGC direction selectivity. Not in corpus.
+
+A fourth bioRxiv preprint [WerginzAxial-bioRxiv-2020] is also worth adding for the AIS Nav-density
+methodology argument.
+
+##### Hay 2011 parameter ranges (from PMC + ModelDB 139653)
+
+The PMC version of Hay 2011 [Hay2011-PMC] confirms the multi-objective evolutionary algorithm
+optimised **9 ion channel densities** in Table 2 over soma + apical dendrite + axon. The ~2,000
+acceptable models are deposited in ModelDB **139653**. The optimisation used population 1000 over
+500 generations -- 500,000 evaluations -- vs t0080&#x27;s pop 96 x 40 generations = 3,840 evaluations.
+This is two orders of magnitude smaller, justified because t0080 has only 2 objectives (DSI, PD
+rate) vs Hay&#x27;s 20 firing-feature objectives, and because t0080 starts from a known-good t0078
+baseline rather than from scratch [Hay2011-PMC, ModelDB-139653]. The published parameter ranges for
+somatic gNaP (0-100 pS/um^2 = 0-0.01 S/cm^2) carry over to t0080&#x27;s v3 distal-NaP cap as already
+specified in `research_papers.md`.
+
+##### Canonical Exp2NMDA Mg-block formula and reference implementations
+
+The ModelDB Exp2NMDA mod file pattern [ModelDB-nmdasyn-mod] uses the canonical Jahr-Stevens form:
+
+```
+Mgblock = 1 / (1 + (Mg/K0) * exp((0.001) * (-z) * delta * F * v / R / (T+35)))
+```
+
+with reference parameters:
+
+* `tau1 = 8.8 ms` (rise; Spruston 1995 CA1 dendrite)
+* `tau2 = 500 ms` (decay)
+* `K0 = 4.1 mM` (IC50 at 0 mV) -- some sources also use 3.57 mM per Jahr-Stevens 1990
+* `delta = 0.8` (electrical distance of Mg2+ binding site)
+* `Mg = 1.2 mM` (extracellular concentration; physiological range 1.0-1.5 mM)
+* `z = 2` (Mg2+ valency)
+* `e = -0.7 mV` (reversal)
+
+Current: `i = (B - A) * Mgblock(v) * (v - e)` with `A&#x27; = -A/tau1`, `B&#x27; = -B/tau2`. The Poleg-Polsky
+2016 ModelDB 189347 [ModelDB-189347] uses a related `bipolarNMDA.mod` file; the t0080 v3 substrate
+should re-use this Bed-B-native template rather than introducing a different kinetic scheme. This
+preserves continuity with the t0078 substrate&#x27;s existing `Exp2NMDA` SUFFIX vendored from ModelDB
+189347\.
+
+**Best practice (community consensus)**: For DSGC NMDA modeling, use the Jahr-Stevens form with
+`delta=0.8`, `K0=4.1` (or 3.57) mM, `Mg=1.0-1.5` mM. The asymmetric trapping block model
+[Vargas-Caballero-2004] adds slow dynamics (tau ~ 300 ms) but is not necessary for DSGC
+direction-selectivity work where the slow component is dominated by the AMPA + GABA dynamics.
+
+##### NSGA-II vs single-objective BO comparisons in computational neuroscience (community
+
+landscape)
+
+The internet search did not surface a head-to-head NSGA-II vs BoTorch qLogNEHVI comparison on NEURON
+multi-compartment models published in 2023-2025. The closest reference is BluePyOpt
+[BluePyOpt-PubMed], which uses a CMA-ES / IBEA / NSGA-II family for biophysical neuron model fitting
+and is the de facto community standard for this workflow. BluePyOpt&#x27;s documentation patterns are an
+alternative reference if pymoo&#x27;s recipe needs adaptation. No 2024 paper reports head-to-head HV
+comparisons of BO vs NSGA-II on neural models, so the t0080 negative-result case (&quot;NSGA-II fails to
+match t0078&#x27;s HV 11.41&quot;) will itself be a small but useful methodological contribution to this gap.
+
+#### Methodology Insights
+
+* **Use pymoo `NSGA2(pop_size=96, sampling=LHS())` with default SBX `eta=15`, PM `eta=20`**
+  [pymoo-NSGA2-docs, pymoo-Crossover-docs]. The plan&#x27;s chosen values match the canonical defaults
+  exactly; no parameter sweep on operator etas is needed for a first run.
+
+* **Wrap the NEURON evaluation in `ElementwiseProblem._evaluate` with `multiprocessing.Pool` +
+  `StarmapParallelization`** [pymoo-Starmap-docs]. Pin `pymoo&gt;=0.6.0` -- in older versions
+  `StarmapParallelization` lives in a different submodule [pymoo-issue-763] and the import will
+  fail.
+
+* **Always call `pool.close()` after `minimize()`** [pymoo-Starmap-docs] to avoid leaked worker
+  processes that would burn Vast.ai compute budget after the optimisation loop ends.
+
+* **Negate objectives to maximise**: pymoo NSGA-II minimises objectives. For maximising DSI and PD
+  rate, set `out[&quot;F&quot;] = [-dsi, -pd_rate]`. The reference point for hypervolume tracking should be
+  set at `[0, 0]` in the maximisation-flipped (negated) sign convention to match the t0076 / t0078
+  convention.
+
+* **Inside each `_evaluate`, run NEURON in a fresh subprocess** to avoid the
+  `Exp2NMDA name already exists` error [t0078 carry-over, pymoo-Custom-docs]. The pymoo pool worker
+  can call `subprocess.run` to a one-shot trial script that loads NEURON, evaluates, and returns DSI
+  / PD rate via JSON over stdout.
+
+* **Confirm pymoo version 0.6.1.6 or later before launching**: t0080&#x27;s plan should pin
+  `pymoo&gt;=0.6.1.6` in `pyproject.toml`. The current canonical docs at
+  `pymoo.org/algorithms/moo/nsga2.html` are versioned to 0.6.1.6.
+
+* **Use `seed=1` for reproducibility but vary across runs**: pymoo `minimize(seed=N)` controls all
+  stochastic operators (LHS, SBX, PM, tournament). Document the seed in `results/results_summary.md`
+  for the substrate-regression cross-checks.
+
+* **Use canonical Jahr-Stevens Exp2NMDA Mg-block parameters** [ModelDB-nmdasyn-mod]: `K0=4.1` mM,
+  `delta=0.8`, `Mg=1.0-1.5` mM. Re-use the t0078 / Bed-B `bipolarNMDA.mod` template [ModelDB-189347]
+  rather than introducing a different mod file; this preserves substrate continuity.
+
+* **AIS architecture target: 25 um length, 1.0 -&gt; 0.6 um taper** [Werginz2024-PMC]. The v3 AIS
+  geometry MOBO bounds should constrain the AIS to within 20-30 um length and 0.5-1.5 um diameter
+  taper to remain biologically plausible.
+
+* **Hypothesis to test (best practice from BluePyOpt community)** [BluePyOpt-PubMed]: when
+  multi-objective evolutionary fits fail to reach a target, the failure pattern (Pareto front
+  geometry, parameter clustering) is itself diagnostic. Document the v3 NSGA-II Pareto-front
+  geometry even on a negative result.
+
+* **Hypothesis to test (general MOBO-on-biophysics)**: if the v3 NSGA-II Pareto front collapses to
+  the bound on multiple parameters (replicating the iter-81 AIS-disabled-corner pattern at different
+  parameters), this confirms the failure mode is universal across MOBO algorithms and motivates a
+  stronger biological-prior penalty term in future tasks. The answer asset should include this as a
+  follow-up hypothesis.
+
+#### Discovered Papers
+
+##### [Pitcher-bioRxiv-2026]
+
+* **Title**: Retinal waves shape starburst amacrine cell dendrite development through a
+  direction-selective dendritic computation
+* **Authors**: Pitcher, M. N., Gonzales, A. S. B., Habib, R., Feller, M.
+* **Year**: 2026
+* **DOI**: `10.64898/2026.02.02.701812` (bioRxiv preprint identifier)
+* **URL**: https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1
+* **Suggested categories**: `direction-selectivity`, `dendritic-computation`,
+  `retinal-ganglion-cell`
+* **Why download**: Recent (2026) bioRxiv preprint demonstrating that SAC dendritic direction
+  selectivity is built during retinal-wave development. Provides upstream context for the SAC
+  inhibitory machinery that t0080 keeps fixed in the Bed B substrate; the SAC dendritic-computation
+  finding could constrain future Bed B substrate variants.
+
+##### [Cbln4-JNeurosci-2024]
+
+* **Title**: Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring
+  Direction-Selective Circuits in the Retina
+* **Authors**: (multi-author; first-author surname not extracted from search snippet)
+* **Year**: 2024
+* **DOI**: not extracted (J Neurosci 44(18):e1461232024 - infer DOI as
+  `10.1523/JNEUROSCI.1461-23.2024`)
+* **URL**: https://www.jneurosci.org/content/44/18/e1461232024
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`,
+  `compartmental-modeling`
+* **Why download**: Tests Cbln4 in ventral-preferring DSGCs and reports reduced direction-selective
+  tuning, providing a wiring-specificity anchor that complements the Bed B substrate&#x27;s geometric
+  assumptions.
+
+##### [Riccitelli-PNAS-2025]
+
+* **Title**: Retinal ganglion cells encode the direction of motion through a suppressive surround
+  (working title; full title to verify)
+* **Authors**: Riccitelli, S., et al. (Rivlin lab)
+* **Year**: 2025
+* **DOI**: not extracted (PNAS 2025)
+* **URL**:
+  https://www.weizmann.ac.il/brain-sciences/labs/rivlin/sites/brain-sciences.labs.rivlin/files/2025-05/Riccitelli%202025.pdf
+* **Suggested categories**: `direction-selectivity`, `retinal-ganglion-cell`
+* **Why download**: Reports direction-tuned firing in non-DS-RGCs through asymmetric activity beyond
+  classic receptive field. Broader project context for the DRD4 vs non-DRD4 direction-tuning
+  question flagged as a gap in `research_papers.md`.
+
+##### [WerginzAxial-bioRxiv-2020]
+
+* **Title**: Properties of the axial current of retinal ganglion cells at spike initiation /
+  Electrical match between initial segment and somatodendritic compartment for action potential
+  backpropagation in retinal ganglion cells
+* **Authors**: (Werginz, P. and colleagues; full author list to verify)
+* **Year**: 2020 (v1: 2020-09-15; v2: revised)
+* **DOI**: not extracted (bioRxiv preprint id `10.1101/2020.09.15.297937`)
+* **URL**: https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`, `patch-clamp`,
+  `compartmental-modeling`
+* **Why download**: Develops resistive-coupling theory to estimate AIS Nav density from
+  axial-current measurements in mouse RGCs -- an independent, model-free methodology that reinforces
+  the Werginz 2024 1.3 S/cm^2 estimate and strengthens the v3 hard-floor argument for
+  `nav16_ais &gt;= 0.25 S/cm^2`. The published version of Werginz et al. 2020 (Sci. Adv.) is already in
+  the corpus, but this AIS-axial-current preprint is a separate work focused specifically on the
+  Nav-density-estimation methodology.
+
+#### Recommendations for This Task
+
+1. **Pin `pymoo&gt;=0.6.1.6` in `pyproject.toml`** [pymoo-NSGA2-docs, pymoo-issue-763]. Older versions
+   have an incompatible `StarmapParallelization` import path that will break the v3 harness.
+
+2. **Use the exact canonical NSGA2 instantiation from the pymoo docs**:
+   `NSGA2(pop_size=96, sampling=LHS())` with no override of crossover / mutation / selection
+   defaults (already SBX `eta=15`, PM `eta=20`, binary tournament; matches plan) [pymoo-NSGA2-docs].
+   This updates `research_papers.md` recommendation 6 with the verified default values.
+
+3. **Use `multiprocessing.Pool(64)` + `StarmapParallelization(pool.starmap)` and call `pool.close()`
+   after `minimize()`** [pymoo-Starmap-docs]. Inside each pool-worker `_evaluate`, fan out to
+   `subprocess.run` for fresh NEURON re-init (carry-over from t0078).
+
+4. **Negate objectives `out[&quot;F&quot;] = [-dsi, -pd_rate]` and use `[0, 0]` reference point in
+   negation-sign-flipped HV tracking** [pymoo-NSGA2-docs]. This preserves the t0076 / t0078
+   reference-point convention.
+
+5. **Confirm Exp2NMDA / `bipolarNMDA.mod` re-use from t0078 substrate**
+   [ModelDB-189347, ModelDB-nmdasyn-mod]. Use the canonical Jahr-Stevens parameters: `K0=4.1` mM,
+   `delta=0.8`, `Mg=1.0-1.5` mM, `tau1=8.8` ms, `tau2=500` ms. No new mod file needed.
+
+6. **Constrain AIS geometry MOBO bounds to 20-30 um length, 0.5-1.5 um diameter taper**
+   [Werginz2024-PMC]. This complements the Nav-density hard floor with a geometric biological-prior
+   bound.
+
+7. **Add the four discovered papers to the corpus before the planning stage** to maximise paper
+   coverage for the v3 substrate planning. Order of addition (by relevance):
+   [WerginzAxial-bioRxiv-2020] (AIS Nav methodology) &gt; [Pitcher-bioRxiv-2026] (SAC upstream context)
+   \&gt; [Cbln4-JNeurosci-2024] (DSGC wiring) &gt; [Riccitelli-PNAS-2025] (broader DS context).
+
+8. **Document the 2-objective vs 20-objective NSGA-II evaluation budget difference vs Hay 2011**
+   [Hay2011-PMC] in `results/results_summary.md`. t0080&#x27;s 3,840 evaluations vs Hay&#x27;s 500,000 is
+   justified by the smaller objective dimensionality and the warm-start from t0078, but should be
+   stated explicitly to motivate the budget choice.
+
+9. **If NSGA-II fails to lift HV above t0078&#x27;s 11.41**, document the negative result against
+   BluePyOpt-style multi-fit failure-pattern analysis [BluePyOpt-PubMed] -- the Pareto-front
+   geometry and parameter clustering are diagnostic regardless of HV outcome.
+
+#### Source Index
+
+##### [pymoo-NSGA2-docs]
+
+* **Type**: documentation
+* **Title**: NSGA-II: Non-dominated Sorting Genetic Algorithm
+* **Author/Org**: pymoo project (Blank, J., Deb, K.)
+* **URL**: https://pymoo.org/algorithms/moo/nsga2.html
+* **Last updated**: pymoo 0.6.1.6 (2024-2025)
+* **Peer-reviewed**: no (accompanies peer-reviewed Blank+Deb 2020 IEEE Access paper)
+* **Relevance**: Canonical NSGA-II API documentation. Confirms default `pop_size=100`, SBX `eta=15`,
+  PM `eta=20`, binary tournament selection, and `RankAndCrowding` survival. Source of the minimal
+  canonical `minimize()` recipe for t0080.
+
+##### [pymoo-Starmap-docs]
+
+* **Type**: documentation
+* **Title**: Starmap Interface
+* **Author/Org**: pymoo project
+* **URL**: https://pymoo.org/parallelization/starmap.html
+* **Last updated**: pymoo 0.6.1.6
+* **Peer-reviewed**: no
+* **Relevance**: Canonical multi-process recipe with `multiprocessing.Pool` and
+  `StarmapParallelization`. Provides the exact `ElementwiseProblem` + `elementwise_runner` pattern
+  that t0080 will use for the 64-core CPU evaluation.
+
+##### [pymoo-Crossover-docs]
+
+* **Type**: documentation
+* **Title**: Crossover (Operators)
+* **Author/Org**: pymoo project
+* **URL**: https://pymoo.org/operators/crossover.html
+* **Peer-reviewed**: no
+* **Relevance**: Reference for SBX (`SimulatedBinaryCrossover`) eta default and probability
+  parameters across pymoo algorithms.
+
+##### [pymoo-Sampling-docs]
+
+* **Type**: documentation
+* **Title**: Sampling (Operators)
+* **Author/Org**: pymoo project
+* **URL**: https://pymoo.org/operators/sampling.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents `LHS`, `FloatRandomSampling`, and Sobol sampling. Confirms LHS is the
+  recommended initial-population sampler for evolutionary algorithms with bound-constrained
+  continuous problems.
+
+##### [pymoo-Custom-docs]
+
+* **Type**: documentation
+* **Title**: Custom Parallelization
+* **Author/Org**: pymoo project
+* **URL**: https://pymoo.org/parallelization/custom.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents how to write custom parallelization wrappers if `StarmapParallelization`
+  is insufficient. Useful as a fallback if the NEURON-fresh-subprocess pattern requires a custom
+  runner beyond `StarmapParallelization`.
+
+##### [pymoo-issue-763]
+
+* **Type**: forum
+* **Title**: BUG report -- StarmapParallelization class moved to other subpackage
+* **Author/Org**: anyoptimization/pymoo GitHub Issues
+* **Date**: 2024 (issue #763)
+* **URL**: https://github.com/anyoptimization/pymoo/issues/763
+* **Peer-reviewed**: no
+* **Relevance**: Documents the pymoo 0.5 -&gt; 0.6 refactor that moved `StarmapParallelization` from
+  `pymoo.core.problem` to `pymoo.parallelization.starmap`. t0080&#x27;s `pyproject.toml` must pin
+  `pymoo&gt;=0.6.0` to avoid this trap.
+
+##### [Hay2011-PMC]
+
+* **Type**: paper
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC3145650/
+* **Peer-reviewed**: yes (PLoS Comput Biol)
+* **Relevance**: Confirms parameter ranges and the multi-objective evolutionary methodology
+  precedent for t0080. Already in corpus but the PMC version exposes Table 2 parameter ranges more
+  readably than the original PDF.
+
+##### [ModelDB-139653]
+
+* **Type**: dataset
+* **Title**: L5b PC model constrained for BAC firing and perisomatic current step firing (Hay et
+  al., 2011)
+* **Author/Org**: Hay, E. (deposited via ModelDB)
+* **URL**: https://modeldb.science/139653
+* **Peer-reviewed**: no (model deposit accompanies peer-reviewed Hay 2011)
+* **Relevance**: Repository of the ~2,000 acceptable Hay 2011 L5 PC models with full parameter
+  ensembles. Reference for t0080&#x27;s multi-cell ensemble-as-experiment analysis pattern.
+
+##### [ModelDB-189347]
+
+* **Type**: dataset
+* **Title**: Multiplication by NMDA receptors in Direction Selective Ganglion cells (Poleg-Polsky &amp;
+  Diamond 2016)
+* **Author/Org**: Poleg-Polsky, A.
+* **URL**: https://modeldb.science/189347
+* **Peer-reviewed**: no
+* **Relevance**: Provides the canonical Bed-B `bipolarNMDA.mod` file with Mg-block voltage-dependent
+  NMDA implementation. Direct upstream for the t0080 v3 dendritic NMDA insertion.
+
+##### [ModelDB-nmdasyn-mod]
+
+* **Type**: documentation
+* **Title**: nmdasyn.mod (NEURON Mod File for Exp2NMDA with Voltage-Dependent Mg Block)
+* **Author/Org**: ModelDB 267357
+* **URL**: https://modeldb.science/getModelFile?model=267357&amp;file=model_files/nmdasyn.mod&amp;embed=True
+* **Peer-reviewed**: no
+* **Relevance**: Reference Exp2NMDA implementation showing the canonical Jahr-Stevens Mg-block
+  formula `Mgblock = 1 / (1 + (Mg/K0) * exp((0.001) * (-z) * delta * F * v / R / (T+35)))` with
+  parameters `K0=4.1` mM, `delta=0.8`, `Mg=1.2` mM. Reference point for the t0080 v3 dendritic NMDA
+  mod file.
+
+##### [Werginz2024-PMC]
+
+* **Type**: paper
+* **Title**: Differential Intrinsic Firing Properties in Sustained and Transient Mouse alpha-RGCs
+  Match Their Light Response Characteristics
+* **Authors**: Werginz, P., Kiraly, V., Zeck, G.
+* **Year**: 2024
+* **DOI**: `10.1523/JNEUROSCI.1592-24.2024`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC11714343/
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: PMC version of the Werginz 2024 paper with Table 1 channel densities and AIS
+  geometry confirmed (gNa AIS 1300 mS/cm^2, soma 75 mS/cm^2; AIS length 25 um, taper 1.0 -&gt; 0.6 um).
+  Already in corpus but PMC version provides input-resistance values and methodological notes not
+  extracted from the original.
+
+##### [WerginzAxial-bioRxiv-2020]
+
+* **Type**: paper
+* **Title**: Properties of the axial current of retinal ganglion cells at spike initiation
+  (alternate v2 title: Electrical match between initial segment and somatodendritic compartment for
+  action potential backpropagation in retinal ganglion cells)
+* **Authors**: Werginz, P., et al.
+* **Year**: 2020 (v1: 2020-09-15; v2: revised)
+* **URL**: https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2
+* **Peer-reviewed**: no (bioRxiv preprint)
+* **Relevance**: Develops resistive-coupling theory for AIS Nav-density estimation from
+  axial-current measurements in mouse RGCs. Independent methodology supporting the v3
+  `nav16_ais &gt;= 0.25 S/cm^2` hard floor.
+
+##### [Pitcher-bioRxiv-2026]
+
+* **Type**: paper
+* **Title**: Retinal waves shape starburst amacrine cell dendrite development through a
+  direction-selective dendritic computation
+* **Authors**: Pitcher, M. N., Gonzales, A. S. B., Habib, R., Feller, M.
+* **Year**: 2026
+* **URL**: https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1
+* **Peer-reviewed**: no (bioRxiv preprint)
+* **Relevance**: Recent SAC dendritic-computation paper relevant as upstream context for the SAC
+  inhibitory machinery that t0080 keeps fixed.
+
+##### [Cbln4-JNeurosci-2024]
+
+* **Type**: paper
+* **Title**: Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring
+  Direction-Selective Circuits in the Retina
+* **Authors**: (J Neurosci 44:e1461232024)
+* **Year**: 2024
+* **URL**: https://www.jneurosci.org/content/44/18/e1461232024
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: DSGC wiring-specificity paper testing Cbln4 in ventral-preferring DSGCs.
+
+##### [Riccitelli-PNAS-2025]
+
+* **Type**: paper
+* **Title**: Retinal ganglion cells encode the direction of motion through a suppressive surround
+* **Authors**: Riccitelli, S., et al.
+* **Year**: 2025
+* **URL**:
+  https://www.weizmann.ac.il/brain-sciences/labs/rivlin/sites/brain-sciences.labs.rivlin/files/2025-05/Riccitelli%202025.pdf
+* **Peer-reviewed**: yes (PNAS)
+* **Relevance**: Direction-tuned firing in non-DS-RGCs through asymmetric extra-receptive-field
+  activity. Broader project context for the DRD4 vs non-DRD4 direction-tuning gap.
+
+##### [BluePyOpt-PubMed]
+
+* **Type**: paper
+* **Title**: BluePyOpt: Leveraging Open Source Software and Cloud Infrastructure to Optimise Model
+  Parameters in Neuroscience
+* **Authors**: Van Geit, W., et al.
+* **Year**: 2016
+* **DOI**: `10.3389/fninf.2016.00017`
+* **URL**: https://pubmed.ncbi.nlm.nih.gov/27375471/
+* **Peer-reviewed**: yes (Front Neuroinform)
+* **Relevance**: De facto community standard for biophysical neuron model fitting. Reference for
+  comparing pymoo NSGA-II patterns to the BluePyOpt CMA-ES / IBEA / NSGA-II family workflow if pymoo
+  runs into issues. Provides community context for the negative-result discussion.
+
+##### [IDAES-LHS]
+
+* **Type**: documentation
+* **Title**: Latin Hypercube Sampling (LHS) -- IDAES Toolkit
+* **Author/Org**: IDAES PSE Project
+* **URL**:
+  https://idaes-pse.readthedocs.io/en/1.13.0/explanations/modeling_extensions/surrogate/pysmo/pysmo_lhs.html
+* **Peer-reviewed**: no
+* **Relevance**: Standard reference for the LHS algorithm itself (equal-probability bins per
+  dimension, independent shuffling across dimensions). Backs up the pymoo LHS recommendation with a
+  methodological reference.
+
+##### [Vargas-Caballero-2004]
+
+* **Type**: paper
+* **Title**: Fast and Slow Voltage-Dependent Dynamics of Magnesium Block in the NMDA Receptor: The
+  Asymmetric Trapping Block Model
+* **Authors**: Vargas-Caballero, M., Robinson, H. P. C.
+* **Year**: 2004
+* **DOI**: derived from URL (J Neurosci 24:6171)
+* **URL**: https://www.jneurosci.org/content/24/27/6171
+* **Peer-reviewed**: yes (J Neurosci)
+* **Relevance**: Refines the Jahr-Stevens model with fast (100 us) and slow (300 ms) Mg unblock
+  components. Not adopted in the v3 substrate but referenced for methodological completeness; the
+  Bed-B / Poleg-Polsky 2016 substrate uses the simpler Jahr-Stevens form by community convention.
+      </content>
+    </section>
+    <section id="t0080_bedb_mobo_v3_dendritic_spike_nsga2-research_code" source_kind="file">
+      <title>t0080_bedb_mobo_v3_dendritic_spike_nsga2 — Bed B v3 MOBO with dendritic-spike machinery and NSGA-II — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 16
+tasks_cited: 11
+libraries_found: 15
+libraries_relevant: 4
+date_completed: &quot;2026-05-04&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Reusable Code Inventory for Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II
+
+#### Task Objective
+
+Extend the t0078 AIS-augmented Bed B substrate with dendritic-spike machinery (Mg-block NMDA at all
+dendritic compartments plus Nav1.6 + NaP at distal-dendrite densities) and replace BoTorch qLogNEHVI
+with NSGA-II via pymoo. Enforce hard biological lower bounds on `nav16_ais` (Kole 2008 0.25 S/cm^2)
+and AIS-to-soma Nav ratio (Werginz 2024 ratio &gt;= 5) so the optimiser cannot collapse to the
+AIS-disabled corner observed at t0078 iter 81. The pass criterion is at least one Pareto cell with
+**DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz**, anchored to RivlinEtzion 2012 stable-cell joint distribution
+and Trenholm 2013 peak-rate convention. Produce one library asset
+`de_rosenroll_2026_dsgc_ais_dendritic_spike` and one answer asset documenting the
+AIS-disabled-corner failure mode and the now-enforced biological-prior checklist.
+
+#### Library Landscape
+
+The library aggregator (`aggregate_libraries.py`) is **not implemented** in
+`arf/scripts/aggregators/`; only `aggregate_categories`, `aggregate_costs`, `aggregate_machines`,
+`aggregate_metric_results`, `aggregate_metrics`, `aggregate_suggestions`, `aggregate_task_types`,
+and `aggregate_tasks` exist. Per the t0076 / t0078 precedent, libraries were enumerated by direct
+filesystem scan of `tasks/*/assets/library/*/details.json`, which returns **15** registered
+libraries: `modeldb_189347_dsgc` [t0008], `tuning_curve_viz` [t0011], `tuning_curve_loss` [t0012],
+`modeldb_189347_dsgc_gabamod` (t0020), `modeldb_189347_dsgc_dendritic` (t0022),
+`de_rosenroll_2026_dsgc` [t0024], `modeldb_189347_dsgc_exact` (t0046), `minimal_dsgc_scalar_gaba`
+(t0052), `minimal_dsgc_spatial_gaba` (t0053), `minimal_dsgc_ampa_nmda_scalar_gaba` (t0054),
+`minimal_dsgc_mg_block_nmda` [t0055], `minimal_dsgc_tonic_gaba_sweep` (t0057),
+`minimal_dsgc_bar_locked_gaba_ampa_sweep` (t0059), `dsgc_active_channel_pack` (t0074),
+`de_rosenroll_2026_dsgc_ais` [t0078].
+
+Four libraries are directly relevant to t0080:
+
+* **`de_rosenroll_2026_dsgc_ais` v0.1.0** [t0078] -- the AIS-augmented Bed B substrate that t0080
+  extends. Modules: `code/build_cell_ais.py`, `code/extend_with_ais.py`, `code/apply_params.py`,
+  `code/constants.py`, `code/paths.py`, `code/bootstrap.py`, `code/parametric_placer.py`,
+  `code/trial_helpers.py`, `code/trial_driver.py`, `code/recorder.py`, plus 13 vendored MODs
+  (`nav16t78`, `napt78`, `nart78`, `kdrt78`, `kv3t78`, `kv4t78`, `kv7t78`, `iht78`, `calt78`,
+  `catt78`, `bkt78`, `skt78`, `skahpt78`). Entry points: `build_dsgc_cell_with_ais`,
+  `DSGCCellWithAIS`, `apply_parameter_vector`, `extend_with_ais`, `ParameterVector`. Import:
+  `from tasks.t0078_bedb_mobo_v2_ais_tiered_ahp.code.build_cell_ais import build_dsgc_cell_with_ais`.
+  The 49-d `ParameterVector` is the canonical interface; t0080 must extend (not replace) it.
+
+* **`de_rosenroll_2026_dsgc` v0.1.0** [t0024] -- transitive dependency via t0078. Provides
+  `build_dsgc_cell()` and the vendored DLL/`.so` carrying `HHst`, `cadecay`, and **`Exp2NMDA`** (the
+  canonical Bed-B Jahr-Stevens NMDA point process; Voff/Vset trick, n=0.213 /mM, gama=0.074 /mV, e=0
+  mV at
+  `tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/Exp2NMDA.mod`).
+
+* **`minimal_dsgc_mg_block_nmda` v0.1.0** [t0055] -- minimal NMDA-only library exposing
+  `NMDA_MgBlock` POINT_PROCESS at
+  `tasks/t0055_nmda_mg_block_dsi_recovery/code/mod/NMDA_MgBlock.mod`, with parameters n=0.25 /mM,
+  gama=0.08 /mV, tau1=5 ms, tau2=80 ms (Jahr-Stevens). t0080 will reuse the **t0024 `Exp2NMDA`**
+  rather than introducing a different SUFFIX, but the t0055 parameter values and the AMPA+NMDA
+  co-located triplet pattern (`build_ei_pairs`, `schedule_ei_onsets`) are useful references.
+
+* **`dsgc_active_channel_pack` v0.1.0** [t0074] -- forerunner of t0078&#x27;s t78 MOD pack. Confirmed
+  irrelevant for direct reuse because t0078&#x27;s t78 pack already supersedes it.
+
+The other 10 libraries are not relevant: Bed A substrates ([t0008], [t0046]), generic visualization
+/ scoring helpers ([t0011], [t0012]), or progressively-deprecated minimal-cell testbeds (t0020,
+t0022, t0052, t0053, t0054, t0057, t0059) that do not carry the Bed B morphology or the de Rosenroll
+release machinery.
+
+#### Architecture Overview
+
+t0080 inherits the t0078 substrate verbatim and adds three things on top:
+
+1. **A v3 ParameterVector** that extends t0078&#x27;s 49-d `ParameterVector` with ~5-7 new dendritic-
+   spike parameters and a redefined `nav16_ais` lower bound. Total dimensionality 54-56 d.
+2. **Dendritic NMDA placement** at all dendritic compartments (proximal, mid, terminal) using the
+   t0024 `Exp2NMDA` POINT_PROCESS plus three new MOBO parameters `gnmda_dend`, `mg_conc` (= `n` in
+   /mM), and optionally `voff_nmda`. The placement is colocated with the existing ACh
+   bipolar-derived synapse bundle so the AR(2)-noise driven release schedule already used by t0078
+   doubles as the NMDA arrival schedule.
+3. **NSGA-II via pymoo** as the optimiser, replacing the entire `mobo_loop.py` BoTorch+GP path. The
+   trial driver (`evaluate_parameter_vector`) is reused unchanged; only the loop above it is
+   replaced.
+
+The t0078 module dependency graph is: `bootstrap.py` -&gt; `paths.py` -&gt; `constants.py` -&gt;
+`extend_with_ais.py` -&gt; `build_cell_ais.py` -&gt; `parametric_placer.py` -&gt; `apply_params.py` -&gt;
+`trial_helpers.py` -&gt; `trial_driver.py` -&gt; `mobo_loop.py`. t0080 must copy and lightly modify
+`constants.py`, `apply_params.py`, `trial_helpers.py`, and `build_cell_ais.py`; can copy
+`extend_with_ais.py` verbatim; reimplements `mobo_loop.py` from scratch as `nsga2_loop.py`; and
+copies `paths.py`, `bootstrap.py`, `parametric_placer.py`, `recorder.py`, `trial_driver.py`,
+`plot_pareto.py`, `render_pdf.py` with SUFFIX/import path renames only.
+
+#### Key Findings
+
+##### The 49-d ParameterVector layout is the load-bearing data structure
+
+The `ParameterVector` dataclass [t0078] at
+`tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/constants.py:290-426` is a frozen slotted dataclass
+wrapping a `(49,) NDArray[np.float64]`. The ParamIndex IntEnum (lines 138-193) lays out the 49
+slots: 25 tier-stratified densities (5 channels x 5 tiers, channel-major order), 7 uniform-density
+channels, 2 slow-AHP params (SK_E2 gbar + tau_ca_multiplier), 13 synaptic / passive parameters
+identical to t0076, and 2 free AIS geometry parameters (AIS_LENGTH_UM index 47, AIS_DIAMETER_UM
+index 48). `LOWER_BOUNDS` and `UPPER_BOUNDS` are `(49,)` numpy arrays; `LOG_PARAM_INDICES` is the
+tuple of 30 indices the optimiser samples in log10 space. **t0080 must add new ParamIndex entries
+strictly at the end of the enum** (indices 49+) to preserve the t0078 backward-compat invariant that
+`tau_ca_multiplier=1.0` reproduces t0074 sk74 dynamics. Likely new indices: `GNMDA_DEND` (49,
+log-uniform 1e-5 .. 1e-2 uS), `MG_CONC_MM` (50, linear 0.5 .. 2.0), `VOFF_NMDA` (51, optional binary
+0/1 -- may drop), `NAV16_DEND_DISTAL` (52, log-uniform 1e-5 .. 0.05 S/cm^2), `NAP_DEND_DISTAL` (53,
+log-uniform 1e-5 .. 0.01 S/cm^2). Plus **redefining** `LOWER_BOUNDS[ParamIndex.NAV16_AIS_GBAR=4]`
+from 1e-5 to 0.25 (Kole hard floor). The AIS-to-soma Nav ratio constraint must be enforced in the
+loop either by (a) reparameterising `nav16_soma` as `nav16_ais / ratio` or (b) passing pymoo a
+`Constraint` (NSGA-II supports this via `n_ieq_constr`).
+
+##### The trial driver is loop-agnostic and reusable verbatim
+
+`evaluate_parameter_vector` [t0078] at `code/trial_driver.py:327-389` takes a `ParameterVector`, an
+angles tuple, n_seeds, and max_workers; returns
+`EvalResult(dsi, pd_rate_hz, n_trials, n_errors, elapsed_s, is_unstable, peak_vm_mv)`. Internally it
+spawns a `ProcessPoolExecutor` and dispatches `_worker_run_trial` (line 252-276). This pickleable
+top-level worker is the NEURON-fresh-subprocess fix that bypasses the `Exp2NMDA name already exists`
+error. **The pymoo NSGA-II `ElementwiseProblem._evaluate` can call `evaluate_parameter_vector`
+directly** without modification (the additional pymoo `multiprocessing.Pool` +
+`StarmapParallelization` would just nest the existing pool; better to call the trial driver&#x27;s
+existing pool from inside a non-elementwise pymoo `Problem._evaluate(X, out)` that loops over the
+population). t0080 must rebuild the ParameterVector with the wider 54-56 d shape and update bounds;
+otherwise the driver works as-is.
+
+##### apply_parameter_vector imposes a strict 7-step write order
+
+`apply_parameter_vector` [t0078] at `code/apply_params.py:159-215` executes seven steps in order:
+(1) update AIS geometry BEFORE channel insertion (so d_lambda nseg sees the right L), (2) ensure t78
+DLL loaded, (3) insert all 12 channels + skahpt78 idempotently on soma+dendrites and the
+AIS-permitted subset on AIS, (4) write passive Ra/cm/gleak + 7 uniform channels on soma+dendrites,
+(5) write tier-stratified densities per tier (soma, primary, mid, terminal), (6) write AIS-tier
+densities for the AIS-permitted SUFFIXes (Nav1.6, Kv3, Kv7), (7) write slow-AHP gbar +
+tau_ca_multiplier on soma + AIS only. **t0080 must insert two new write steps**: (4b) write
+`gbar_nav16t78` and `gbar_napt78` at the distal-dendrite tier with the new `nav16_dend_distal` and
+`nap_dend_distal` values, and (4c) instantiate Exp2NMDA point processes co-located with the existing
+ACh bipolar synapses with weight `gnmda_dend` and update the `n` RANGE variable from `mg_conc`.
+Distal-dendrite identification: t0078 already exposes `cell.terminal_dends` (177 sections) as
+Tier.TERMINAL.
+
+##### The Exp2NMDA mechanism is already vendored via t0024
+
+`Exp2NMDA.mod` [t0024] at
+`tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/Exp2NMDA.mod`
+is the Jahr-Stevens-style POINT_PROCESS used by the published Bed B substrate. Its compiled SUFFIX
+is loaded by the t0024 vendored DLL/`.so` that t0078&#x27;s bootstrap loads first. **t0080 must NOT
+duplicate this MOD file in the t80 pack** because the t78 pack itself avoids the duplicate SUFFIX
+issue this way. Parameters: `tau1=50 ms` (deactivation), `tau2=2 ms` (activation), `e=0 mV`,
+`n=0.213 /mM` (Mg block voltage dependence; this is the Mg2+ concentration multiplier),
+`gama=0.074 /mV`, `Voff=0`, `Vset=-60`. The voltage dependence formula
+`g = gmax / (1 + n * exp(-gama * v))` is mathematically identical to the canonical Jahr-Stevens form
+once `n` is reinterpreted as `[Mg]/IC50_at_0mV`. The t0080 plan exposes `n` (renamed to `mg_conc` in
+the parameter vector for clarity) as a free MOBO parameter in [0.1, 0.5] /mM, which spans the
+published 1.0-1.5 mM physiological range divided by Jahr-Stevens IC50 ~ 4.1 mM.
+
+##### Synapse placement uses parametric_placer with cell.all_dends
+
+`setup_synapses_parametric` [t0078] at `code/trial_helpers.py:202-285` calls `place_synapses` from
+`parametric_placer.py` with `candidate_sections=cell.all_dends`. `cell.all_dends` excludes the AIS
+subsegments (the AIS lives in `cell.ais_proximal` / `cell.ais_distal`), so synapses are
+automatically excluded from the AIS without any special-casing. **t0080&#x27;s Exp2NMDA placements must
+use the same candidate set** -- one Exp2NMDA per ACh placement, sharing the same NetStim
++ NetCon driver to mimic the bipolar-NMDA pairing pattern from t0055&#x27;s `build_ei_pairs` [t0055]. The
+  `SynapseBundle` dataclass (line 138-153) currently has `syns_ach`, `syns_gaba`, `ncs_ach`,
+  `ncs_gaba`, `netstims`, `syn_xy_ach`, `syn_xy_gaba`. t0080&#x27;s expanded bundle should add
+  `syns_nmda` and `ncs_nmda` (one per ACh synapse).
+
+##### The substrate-regression cell exists in t0076&#x27;s pareto_front.json
+
+Iter-424 best-joint cell from t0076 [t0076]&#x27;s
+`tasks/t0076_bedb_dsi_firing_rate_mobo/results/data/pareto_front.json` lines 70-99 records
+`dsi=0.4244604316546763`, `pd_rate_hz=4.95`, and the 25-d natural-units parameter vector. The 12
+channel densities are: nav16=2.60e-4, nap=6.51e-3, nar=2.44e-3, kdr=1.42e-4, kv3=6.12e-4,
+kv4=1.63e-4, kv7=2.21e-2, ih=8.17e-2, cal=3.82e-4, cat=1.24e-2, bk=7.12e-5, sk=4.54e-3 S/cm^2;
+passive Ra=248.68, cm=1.557, gleak=7.81e-4; cad depth=0.0542 um, taur=61.21; n_ach=348, n_gaba=132;
+rho0_ach=3.77, lambda_ach=488.3, rho0_gaba=3.84, lambda_gaba=126.4; w_ach=4.45e-3, w_gaba=3.46e-4.
+**The pre-launch substrate regression must map this 25-d vector into the v3 54-56-d
+ParameterVector** by replicating each uniform density across all 5 tiers (so all tiers get the same
+density), setting `nav16_ais` to the Kole prior centre 0.375 S/cm^2, AIS geometry to midpoint
+(length 30 um, diameter 0.8 um), `tau_ca_multiplier=1.0`, all new dendritic-spike parameters at 0
+(no NMDA, no distal Nav, no distal NaP), and running `evaluate_parameter_vector` once. Pass
+criterion: reproduce DSI within +/- 0.05 of 0.42 at PD ~ 8.34 Hz.
+
+The published t0076 result for iter-424 lists `pd_rate_hz=4.95` in pareto_front.json but the task
+description and the t0078 task_description both report `PD 8.34 Hz` for the same cell. The
+discrepancy is because pareto_front.json was emitted with `TSTOP_MS=1000` (t0076 default), but t0078
+/ t0080 use `TSTOP_MS=1400`. The substrate-regression check should report the v3 1400-ms peak rate
+alongside the t0076 1000-ms peak rate so the comparison is unambiguous.
+
+##### t0078 documents the canonical NEURON re-init bug fix
+
+t0078&#x27;s `plot_pareto.py` [t0078] uses `ProcessPoolExecutor(max_workers=1)` to wrap each deep-dive
+`_save_deep_dive` call in a fresh subprocess, bypassing the `Exp2NMDA name already exists` error
+that occurs when NEURON re-initialises within the same Python process. The trial driver does the
+same via `ProcessPoolExecutor` per cell evaluation. **t0080 carries this pattern unchanged** --
+pymoo&#x27;s `Problem._evaluate` can call `evaluate_parameter_vector(max_workers=cpu_count()-1)`, and
+pymoo itself does not need parallelization (the trial driver already provides cell-level
+parallelism). The pymoo `StarmapParallelization` recipe documented in `research_internet.md` is not
+needed and would double-nest pools.
+
+##### t0069 AIS extension is a Bed-A reference, NOT directly reusable
+
+`extend_with_ais` [t0069] at `tasks/t0069_t0067_ais_localised_channel_sweep/code/extend_with_ais.py`
+builds a single 30-um AIS section + 1-mm passive axon cable, uses HHst with hard-coded densities (no
+parametric MOBO bounds). The t0078 `extend_with_ais.py` [t0078] is a more advanced two-subsegment
+fork; t0080 should use **t0078&#x27;s two-subsegment AIS verbatim**, not t0069&#x27;s single-segment one. The
+t0069 reference is documented in t0078&#x27;s research_code.md as the biological-prior source for
+AIS_LENGTH_UM / AIS_DIAMETER_UM defaults but does not contribute import-eligible code beyond the
+t0078 fork.
+
+##### Channel SUFFIX renaming pattern: t78 -&gt; t80
+
+t0078 renamed the t76 SUFFIXes to t78 to namespace the new `tau_ca_multiplier`-extended SK_E2
+(`skahpt78`) and to allow co-loading the t78 DLL after the t0024 DLL without SUFFIX collisions
+(`cadecay` from t0024 is excluded from the t78 pack). **t0080 must rename t78 -&gt; t80 in its copies**
+to allow the v3 substrate to be imported alongside t0078 in the same session if needed (which the
+substrate-regression check might do). The 13 vendored t78 MODs must each be copied with simple
+`git mv ...t78.mod ...t80.mod` followed by SUFFIX rename inside each file. No new MOD file is needed
+for NMDA (Exp2NMDA from t0024) or for distal Nav1.6 / NaP (already in the t78/t80 pack -- only the
+placement / density at the distal-dendrite tier is new).
+
+##### t0078 cost-of-progress and BO scaling lesson
+
+t0078 [t0078] hit O(N^3) Cholesky scaling in BoTorch SingleTaskGP: per-cell wall-clock grew from 28
+s in early phase to 9-12 min after acq 480 (491 cells, 78,560 simulations, 24.86 wall hours,
+**$3.93** on a Vast.ai 64-core EPYC 7B13 instance). This drove the t0080 decision to switch
+optimiser families. NSGA-II per-generation cost is independent of N (only depends on pop_size, fixed
+at 96 here), so 3,840 evaluations at ~~50 s/cell = 53.3 CPU-hours / 0.83 wall-hours / **~~$1-1.50**
+(target) / **$2.00** (hard cap). The NSGA-II loop is independent of the trial driver, so the cost
+saving comes from the algorithmic choice, not from infra changes.
+
+#### Reusable Code and Assets
+
+For each item below, **copy into task** means the file must be physically copied into
+`tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/` (with SUFFIX / import-path renames as noted);
+**import via library** means the upstream task&#x27;s library asset is referenced via absolute import
+path.
+
+##### Substrate construction
+
+* **Source**: `tasks/t0024_port_de_rosenroll_2026_dsgc/code/build_cell.py:251-296` --
+  `build_dsgc_cell()` returns
+  `DSGCCell(h, rgc, soma, all_dends, primary_dends, non_terminal_dends, terminal_dends, terminal_locs_xy, origin_xy)`.
+  **Reuse method**: **import via library** (`de_rosenroll_2026_dsgc` registered library); via
+  `from tasks.t0024_port_de_rosenroll_2026_dsgc.code.build_cell import build_dsgc_cell`. Adaptation:
+  none.
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/build_cell_ais.py` (~77 LOC) --
+  `build_dsgc_cell_with_ais(*, ais_length_um, ais_diameter_um) -&gt; DSGCCellWithAIS`. **Reuse
+  method**: **import via library** (`de_rosenroll_2026_dsgc_ais` registered library) via
+  `from tasks.t0078_bedb_mobo_v2_ais_tiered_ahp.code.build_cell_ais import build_dsgc_cell_with_ais`.
+  Adaptation: none required for t0080 (the new dendritic-spike parameters are written by the t0080
+  `apply_parameter_vector` after this call).
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/extend_with_ais.py` (~127 LOC) --
+  `extend_with_ais()`, `update_ais_geometry()`, `AISExtension` dataclass, `_compute_nseg()`. **Reuse
+  method**: **import via library** (`de_rosenroll_2026_dsgc_ais`). Adaptation: none.
+
+##### Vendored MOD files
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/mods/` (13 files: nav16t78, napt78,
+  nart78, kdrt78, kv3t78, kv4t78, kv7t78, iht78, calt78, catt78, bkt78, skt78, skahpt78). **Reuse
+  method**: **copy into task** (rename to t80 SUFFIXes; `s/t78/t80/g` in the SUFFIX line and
+  filename). Total: 13 files, ~50-150 LOC each; the SUFFIX rename is the only change. **NEW NMDA
+  MOD: not needed** -- use the t0024 `Exp2NMDA` POINT_PROCESS (already loaded by the t0024 DLL). The
+  t0080 `apply_params.py` instantiates `h.Exp2NMDA(seg)` and writes per-process RANGE variables `n`
+  (= `mg_conc`), `gama`, `Voff`, `Vset`, `tau1`, `tau2`. **NEW Nav1.6 / NaP MODs: not needed** --
+  the t78/t80 pack&#x27;s `nav16t80` (formerly `nav16t78`, source paper Khaliq 2003 / Carter &amp; Bean 2009)
+  and `napt80` (formerly `napt78`, source paper Magistretti &amp; Alonso 1999) suffice for
+  distal-dendrite insertion at the tier-stratified `Tier.TERMINAL` and a new `Tier.MID_DISTAL` (or
+  simply repurposing `Tier.TERMINAL`) without any kinetic-scheme changes.
+
+##### Constants and parameter vector
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/constants.py` (~471 LOC, ParamIndex
+  IntEnum, ParameterVector dataclass, _build_bounds(), LOG_PARAM_INDICES, CHANNEL_SUFFIXES,
+  STRATIFIED_CHANNEL_SUFFIXES, AIS_PERMITTED_SUFFIXES, simulation defaults, BO defaults). **Reuse
+  method**: **copy into task**, EXTEND. Adaptation: (a) add 5 new ParamIndex entries (GNMDA_DEND,
+  MG_CONC_MM, NAV16_DEND_DISTAL, NAP_DEND_DISTAL, optionally VOFF_NMDA), (b) bump N_PARAMS to 54 (or
+  55 if Voff is kept), (c) extend LOWER_BOUNDS / UPPER_BOUNDS arrays in `_build_bounds()`, (d)
+  extend LOG_PARAM_INDICES, (e) replace `LOWER_BOUNDS[NAV16_AIS_GBAR=4] = 1e-5` with `0.25` (Kole
+  hard floor), (f) add new ParameterVector @property accessors for the 5 new fields, (g) replace
+  BoTorch defaults (N_SOBOL_INITIAL etc.) with NSGA-II defaults (POP_SIZE=96, N_GENERATIONS=40,
+  SBX_ETA=15, PM_ETA=20). New LOC: ~80-100.
+
+##### Apply parameter vector
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/apply_params.py` (~215 LOC,
+  `apply_parameter_vector`, `_insert_channels_once`, `_write_passive_and_uniform`,
+  `_write_stratified`, `_write_slow_ahp`, `_write_ais_stratified`, `ensure_t78_dll_loaded`). **Reuse
+  method**: **copy into task**, EXTEND. Adaptation: (a) rename `ensure_t78_dll_loaded` -&gt;
+  `ensure_t80_dll_loaded` and update `resolve_t78_mod_library` -&gt; `resolve_t80_mod_library`, (b) add
+  new `_write_dendritic_distal_nav` step that writes `gbar_nav16t80` and `gbar_napt80` only on the
+  distal-dendrite (terminal) sections at the new densities, (c) add a new `_write_dendritic_nmda`
+  step that updates Exp2NMDA RANGE parameters (`n`, `gama`, `Voff`, `Vset`) on the NMDA point
+  processes in the bundle (the Exp2NMDA instances are owned by the SynapseBundle, so this step must
+  be called after `setup_synapses_parametric` -- consider moving the NMDA-write to
+  `setup_synapses_parametric` itself). New LOC: ~30-40.
+
+##### Synapse placement and trial helpers
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/parametric_placer.py` (~105 LOC,
+  `place_synapses` with exponential-decay weighting, `PlacedSynapse` dataclass). **Reuse method**:
+  **copy into task** verbatim; no adaptation (only import-path renames if any). LOC: ~105.
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/trial_helpers.py` (~285 LOC,
+  `setup_synapses_parametric`, `_bar_arrival_times`, `_rates_with_ar2_noise`,
+  `_gaba_prob_for_direction`, `_rates_to_events`, `_count_spikes`, `BASE_ACH_PROB`, `RATE_DT_MS`,
+  `BAR_SIGMA_MS`, `CELL_PREF_DEG`, `PREF_GABA_PROB`, `NULL_GABA_PROB`, `SynapseBundle`,
+  `_section_midpoint_xy`, `_instantiate_synapse`). **Reuse method**: **copy into task**, EXTEND.
+  Adaptation: (a) extend `SynapseBundle` with `syns_nmda: list[Any]` and `ncs_nmda: list[Any]`
+  fields, (b) extend `setup_synapses_parametric` to instantiate one `h.Exp2NMDA` per ACh placement
+  co-located on the same section/position, with a NetCon from the SAME NetStim that already drives
+  the ACh Exp2Syn (mirrors t0055 `build_ei_pairs` triplet pattern), (c) write `syn.tau1`,
+  `syn.tau2`, `syn.e`, `syn.n`, `syn.gama`, `syn.Voff`, `syn.Vset` on the new Exp2NMDA instances.
+  New LOC: ~30-40.
+
+##### Trial driver
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/trial_driver.py` (~422 LOC,
+  `evaluate_parameter_vector`, `run_one_trial`, `_worker_run_trial`, `_worker_prepare`,
+  `_summarise_trials`, `TrialResult`, `EvalResult`). **Reuse method**: **copy into task** verbatim
+  with import-path renames. Adaptation: none for the loop logic; only the import paths need to point
+  at the t0080 modules. The pickleable top-level `_worker_run_trial` works as-is for the wider
+  ParameterVector because it pickles the `(N_PARAMS,)` ndarray, not the dataclass shape. LOC: ~422.
+
+##### Bootstrap and paths
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/bootstrap.py` (~116 LOC, Linux
+  `compile_t0024_mods_linux`, monkey-patches t0024 `_ensure_neuron_on_path` and `load_neuron`).
+  **Reuse method**: **copy into task** verbatim. LOC: ~116.
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/paths.py` (~76 LOC, MOD library
+  resolver, output directories). **Reuse method**: **copy into task** with SUFFIX renames
+  (`resolve_t78_mod_library` -&gt; `resolve_t80_mod_library`). LOC: ~76.
+
+##### NSGA-II loop (NEW)
+
+* **Source**: NONE (BoTorch loop in `mobo_loop.py` not reused; t0080 writes a fresh
+  `nsga2_loop.py`). The pymoo `ElementwiseProblem` + `NSGA2(pop_size=96, sampling=LHS())`
+  + `minimize(problem, algorithm, (&#x27;n_gen&#x27;, 40), seed=...)` recipe documented in
+    `research_internet.md` is the implementation template. The new module needs: (a)
+    `BedBV3Problem(Problem)` with `n_var=54-56`, `n_obj=2`, `n_ieq_constr=1` (AIS-to-soma Nav ratio
+    constraint), `xl/xu` from `LOWER_BOUNDS/UPPER_BOUNDS` with log-space transforms, (b)
+    `_evaluate(X, out)` calling `evaluate_parameter_vector` for each row, with
+    `out[&quot;F&quot;] = [-dsi, -pd_rate_hz]` (negate for minimization) and
+    `out[&quot;G&quot;] = [5.0 - ais_to_soma_ratio]` (&gt;= 0 means feasible), (c) hypervolume tracking via
+    `pymoo.indicators.hv.HV` ref point [0, 0] with sign-flip to maximisation, (d) per-generation
+    checkpoint pickle of the pymoo `Algorithm` state, (e) cost gating identical to t0078
+    mobo_loop.py lines 222-238 (BUDGET_OVERRUN_MD). Estimated LOC: 250-300.
+
+##### Plotting and PDF rendering
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/plot_pareto.py` (~408 LOC). **Reuse
+  method**: **copy into task** verbatim with import-path renames. The deep-dive selection logic
+  (highest-DSI, highest-rate, knee point) and `ProcessPoolExecutor` subprocess wrapping for NEURON
+  re-init both transfer unchanged.
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/recorder.py` (~122 LOC,
+  `attach_recorders`, `save_recorders_npz`). **Reuse method**: **copy into task** verbatim.
+
+* **Source**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/code/render_pdf.py`. **Reuse method**: **copy
+  into task** verbatim with import-path renames.
+
+##### Dataset for substrate-regression check
+
+* **Source**: `tasks/t0076_bedb_dsi_firing_rate_mobo/results/data/pareto_front.json` iter 424 entry
+  (pareto_front.json lines 70-99). **Reuse method**: read at task setup time; encode the 25-d vector
+  into a Python literal in t0080&#x27;s substrate-regression module. The expected substrate-regression
+  target is `dsi=0.42`, `pd_rate_hz=8.34` (per t0078 task description, which used the t0078 1400 ms
+  protocol). Total reused: 25 floats.
+
+#### Lessons Learned
+
+* **t0078 substrate works as-is on Vast.ai EPYC 7B13 64-core**. The t0078 24.86-h / $3.93 run
+  [t0078] proved the trial driver&#x27;s `ProcessPoolExecutor` + `cpu_count()-1` pattern is stable for
+  &gt; 78,000 NEURON simulations. t0080 reuses this exactly; expected wall-clock at 3,840 evaluations
+  &gt; is ~0.83 hours / $0.13-0.20 raw + setup overhead = $1.00-$1.50 [t0078].
+* **BoTorch SingleTaskGP is the wrong tool for &gt;40-d problems**. t0078 [t0078] saw per-cell
+  wall-clock grow from 28 s to 9-12 min as Cholesky size scaled O(N^3); the loop was forced-stopped
+  at acq 416 / 700. **t0080 NSGA-II eliminates this scaling** because each generation&#x27;s cost is
+  fixed by population size (96), not by accumulated history.
+* **MOBO can collapse biologically-priored parameters to floor when the prior is soft**. t0078 iter
+  81 [t0078] pushed `nav16_ais` to 1e-5 S/cm^2 (five orders below Kole 2008&#x27;s 0.25-0.5 prior, six
+  orders below Werginz 2024&#x27;s 1.3 measurement) producing a Pareto cell with DSI=0.316 / PD=9.68 Hz
+  that misses the joint pass criterion. The fix is to encode the prior as a **hard parameter
+  bound**, not a regularising term in the objective. NSGA-II&#x27;s bound handling guarantees no
+  individual ever has `nav16_ais &lt; 0.25 S/cm^2`.
+* **Substrate regression checks catch silent regressions in shared substrates**. t0076 -&gt; t0078
+  changed TSTOP_MS from 1000 to 1400 [t0076, t0078]; the iter-424 cell&#x27;s pareto_front.json
+  `pd_rate_hz=4.95` was at TSTOP=1000 but t0078&#x27;s task description reports the same cell at PD=8.34
+  Hz under TSTOP=1400. t0080 must report **both** values in the substrate-regression block.
+* **NEURON SUFFIX collisions and namespacing**. The t0078 `cadecay`-from-t0024 +
+  `skahpt78`-from-t0078 collision-avoidance pattern [t0078] (load t0024 DLL first, t78 DLL second;
+  do NOT include `cadecay` in the t78 pack) is the canonical recipe for multi-task MOD libraries.
+  t0080 follows the same pattern (load t0024 first, t80 second; no SUFFIX duplication; Exp2NMDA
+  stays in t0024 DLL only).
+* **The `Exp2NMDA name already exists` re-init bug is silent and intermittent**. t0078 documented
+  [t0078] that NEURON&#x27;s POINT_PROCESS class registry is global and not cleared on `h.finitialize()`,
+  so any subprocess that loads the t0024 DLL twice (e.g., via two distinct `build_dsgc_cell` calls
+  in the same Python interpreter) raises `Exp2NMDA name already exists`. The fix is
+  `ProcessPoolExecutor(max_workers=N)` with one fresh worker per trial-cell. t0080 keeps this
+  pattern; pymoo nesting must NOT introduce additional `multiprocessing.Pool` layers.
+* **Bed B&#x27;s published model has NMDA only on ON dendrites**. ModelDB 189347 [t0008, t0046] places
+  NMDARs only on ON-layer bipolar contacts (177 of them) per the Poleg-Polsky 2016 paper&#x27;s diagram.
+  t0080&#x27;s plan to extend NMDA to all dendritic compartments (proximal + mid + terminal, ON and OFF)
+  is a **deliberate extension** beyond the published model; the substrate-regression cell at t0076
+  iter-424 parameters with `gnmda_dend=0` will be the proxy validation.
+
+#### Recommendations for This Task
+
+1. **Reuse the t0078 trial driver verbatim**. `evaluate_parameter_vector` is loop-agnostic and
+   already supports the t0080 worker / subprocess pattern. Do NOT modify `_worker_run_trial`; only
+   rebuild the ParameterVector with the wider 54-56 d shape.
+
+2. **Extend, don&#x27;t replace, the t0078 ParameterVector**. Add 5 new ParamIndex entries at indices
+   49-53 (after AIS_DIAMETER_UM), bump N_PARAMS to 54, replace `LOWER_BOUNDS[NAV16_AIS_GBAR=4]` from
+   1e-5 to 0.25 (Kole), enforce AIS-to-soma Nav ratio &gt;= 5 as a pymoo `n_ieq_constr` constraint
+   (`G = 5.0 - nav16_ais / nav16_soma`). Keep the t0078 backward-compat invariant that
+   `tau_ca_multiplier=1.0` reproduces sk74 dynamics by NOT reordering the existing 49 indices.
+
+3. **Reuse Exp2NMDA from t0024**. Do not vendor a new NMDA MOD file. Instantiate `h.Exp2NMDA(seg)`
+   co-located with each ACh Exp2Syn placement, share the NetStim, set the new RANGE parameters from
+   the ParameterVector. Three new MOBO parameters: `gnmda_dend` (NetCon weight in uS, log-uniform
+   1e-5 .. 1e-2), `mg_conc_mm` (linear 0.1 .. 0.5, written to Exp2NMDA&#x27;s `n` field), and optionally
+   `voff_nmda` (binary 0/1; researcher decision pending). Use `tau1=50 ms`, `tau2=2 ms`,
+   `gama=0.074 /mV`, `e=0 mV` per the t0024 Exp2NMDA defaults.
+
+4. **Reuse Nav1.6 (`nav16t80`) and NaP (`napt80`) from the t78/t80 pack at distal- dendrite tier**.
+   No new MOD file needed. Bound `nav16_dend_distal` at [1e-5, 0.05] S/cm^2 (Schachter 2010 / Sivyer
+   2013 prior) and `nap_dend_distal` at [1e-5, 0.01] S/cm^2 (Hay 2011 somatic NaP upper bound).
+   Initial LHS sample biased toward 0.02-0.04 / 0.001-0.005 respectively.
+
+5. **Extend `apply_parameter_vector` with two new write steps** (4b: distal Nav1.6 + NaP at
+   `cell.terminal_dends`; 4c: Exp2NMDA RANGE updates on the bundle&#x27;s NMDA point processes).
+   Estimated +30-40 LOC. The new SynapseBundle must hold `syns_nmda` and `ncs_nmda` lists.
+
+6. **Write a fresh `nsga2_loop.py`** (~250-300 LOC) using the
+   `pymoo.algorithms.moo.nsga2.NSGA2(pop_size=96, sampling=LHS())` recipe documented in
+   `research_internet.md`. Use `pymoo.core.problem.Problem` (NOT `ElementwiseProblem`) so the
+   population batch can be dispatched in one call to the trial driver&#x27;s ProcessPoolExecutor. Pin
+   `pymoo&gt;=0.6.1.6` in `pyproject.toml`. Reference point [0, 0] (negation-flipped to match t0076 /
+   t0078 maximisation HV convention). Per-generation checkpoints. Cost gating identical to t0078
+   with HARD_BUDGET_USD=2.00.
+
+7. **Pre-launch substrate-regression check at t0076 iter-424 vector**. Hardcode the 25-d vector from
+   `tasks/t0076_bedb_dsi_firing_rate_mobo/results/data/pareto_front.json` lines 70-99 into a Python
+   literal; map it to the v3 54-56-d ParameterVector by replicating each density across all 5 tiers,
+   setting `nav16_ais` to the Kole prior centre 0.375 S/cm^2, AIS geometry to midpoint,
+   `tau_ca_multiplier=1`, all new dendritic-spike parameters at 0. Run `evaluate_parameter_vector`
+   once; document DSI / PD-rate delta in `results/results_summary.md`.
+
+8. **Copy and rename the 13 t78 MODs to t80**. Use `git mv` followed by SUFFIX rename inside each
+   .mod file. Verify on Linux via `nrnivmodl mods/` builds the t80 shared object cleanly; verify on
+   Windows via `nrnivmodl.bat`. Note: NaP at distal dendrites must be enabled in the
+   `apply_parameter_vector` write steps; the existing NaP_AIS ParamIndex slot stays at 0 conductance
+   (NaP forbidden at AIS).
+
+9. **Do NOT register a new library asset for the NSGA-II harness**. Per the task description&#x27;s &quot;Out
+   of scope&quot; section, the NSGA-II machinery promotion to a substrate-agnostic library is deferred
+   until at least one more substrate uses it. The t0080 library asset is the v3 substrate (cell +
+   apply_params + MODs); the `nsga2_loop.py` is task-private.
+
+10. **Carry the cost-gate, intervention-file pattern from t0078 verbatim**. Copy
+    `_write_budget_overrun` and the SOFT/HARD budget USD constants (set to $1.50 / $2.00 per task
+    description) into the t0080 NSGA-II loop. The intervention file path should be
+    `tasks/t0080_*/intervention/budget_overrun.md`.
+
+#### Common Patterns
+
+* **Path centralisation**: every task has `code/paths.py` with `pathlib.Path` constants; no string
+  concatenation or `os.path.join` calls anywhere in the t0078 code [t0078]. t0080 copies this
+  pattern.
+* **Bootstrap as side-effect of import**: `tasks/t0078_*/code/bootstrap.py` runs
+  `bootstrap_neuron()` at module import time so any module that does
+  `from tasks.t0078_*.code import bootstrap as _bootstrap` gets the Linux monkey-patches applied
+  automatically [t0078]. t0080 copies this pattern.
+* **`@dataclass(frozen=True, slots=True)` for all structured data**: ParameterVector, TrialResult,
+  EvalResult, PlacedSynapse, SynapseBundle, AISExtension, DeepDivePick all use frozen+slots [t0078].
+  Two t0078 dataclasses use `slots=True` only without `frozen` because they hold NEURON section
+  handles (`AISExtension`, `DSGCCellWithAIS`, `SynapseBundle`); t0080 should follow the same
+  convention.
+* **Worker-process global state caches**: `_WORKER_CELL`, `_WORKER_BUNDLE`, `_WORKER_PARAMS_HASH`
+  are module-level Optional dataclasses set on first call inside each worker [t0078]. This lets the
+  cell + bundle be built once per worker and reused across the 8 directions x 20 seeds = 160 trials
+  per cell evaluation. t0080 inherits this verbatim.
+* **AR(2) correlated noise from t0024**: `generate_ar2_batch` [t0024] is the canonical noise
+  generator; t0078 [t0078] imports it directly. t0080 follows the same import.
+* **Citation-anchored hard bounds**: t0078 [t0078] task_description explicitly cites Kole 2008 /
+  Werginz 2024 / Hay 2011 in the bound docstrings. t0080 plan specifies five citation-anchored hard
+  bounds (`nav16_ais &gt;= 0.25` Kole, AIS-to-soma ratio &gt;= 5 Werginz, `nav16_dend_distal &lt;= 0.05`
+  Schachter / Sivyer, `nap_dend_distal &lt;= 0.01` Hay, `mg_conc` in [0.1, 0.5] /mM Jahr-Stevens) --
+  this becomes the answer-asset checklist.
+
+#### Estimated Total New LOC
+
+* Constants extension: +80-100 LOC (5 new ParamIndex entries, bounds, properties, NSGA-II defaults).
+* Apply params extension: +30-40 LOC (two new write steps).
+* Trial helpers extension: +30-40 LOC (NMDA bundle fields, Exp2NMDA instantiation).
+* NSGA-II loop (fresh): 250-300 LOC.
+* Substrate-regression module (new): ~80-120 LOC (parameter mapping + single-call driver +
+  results_summary delta block).
+* SUFFIX renames in 13 MOD files: trivial (~13 LOC churn).
+* Library asset details + description: ~250 LOC of markdown.
+* **Total NEW Python LOC**: ~470-600.
+* **Total COPIED+RENAMED Python LOC**: ~1500 (constants, apply_params, trial_helpers, trial_driver,
+  parametric_placer, paths, bootstrap, build_cell_ais, extend_with_ais, plot_pareto, recorder,
+  render_pdf).
+
+#### Task Index
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 (Poleg-Polsky 2016 DSGC) into the project
+* **Status**: completed
+* **Relevance**: Bed-A substrate with NMDARs on ON-dendrite-only bipolar contacts. Reference for the
+  NMDA-only-on-ON-dendrites convention that t0080 deliberately extends to ON+OFF dendrites.
+
+##### [t0011]
+
+* **Task ID**: `t0011_response_visualization_library`
+* **Name**: Response visualisation library
+* **Status**: completed
+* **Relevance**: Provides `tuning_curve_viz` library with Cartesian + polar plotters; not used
+  directly by t0080&#x27;s NSGA-II loop but available for downstream Pareto-cell tuning curve
+  visualisations.
+
+##### [t0012]
+
+* **Task ID**: `t0012_tuning_curve_scoring_loss_library`
+* **Name**: Tuning curve scoring loss library
+* **Status**: completed
+* **Relevance**: `tuning_curve_loss` library exposes `compute_dsi`, `compute_peak_hz`,
+  `compute_null_hz`. Not strictly needed by t0080 (the trial driver computes DSI inline) but useful
+  for cross-task metric consistency in the answer asset.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC into the project
+* **Status**: completed
+* **Relevance**: Direct dependency. Provides `build_dsgc_cell()`, the morphology HOC template, and
+  the Bed-B vendored DLL with `HHst`, `cadecay`, **`Exp2NMDA`** SUFFIXes. t0080&#x27;s dendritic NMDA
+  insertion uses the t0024 `Exp2NMDA` POINT_PROCESS unchanged.
+
+##### [t0046]
+
+* **Task ID**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Name**: Reproduce Poleg-Polsky 2016 exactly
+* **Status**: completed
+* **Relevance**: `bipolarNMDA.mod` from this task&#x27;s library is the upstream Mg-block source cited by
+  t0055&#x27;s `NMDA_MgBlock.mod` and the t0024 `Exp2NMDA.mod` (which has the same Voff/Vset trick).
+  Reference for confirming that the t0024 Exp2NMDA is mathematically equivalent to the canonical
+  Bed-B Mg-block.
+
+##### [t0055]
+
+* **Task ID**: `t0055_nmda_mg_block_dsi_recovery`
+* **Name**: NMDA Mg-block DSI recovery experiment
+* **Status**: completed
+* **Relevance**: Reference for the AMPA + NMDA + GABA co-located triplet pattern (`build_ei_pairs`,
+  `schedule_ei_onsets`). Confirms the canonical Jahr-Stevens parameters (n=0.25 /mM, gama=0.08 /mV)
+  used by t0080&#x27;s `mg_conc_mm` MOBO bound derivation.
+
+##### [t0067]
+
+* **Task ID**: `t0067_t0065_soma_channel_addition_sweep`
+* **Name**: Soma channel addition sweep
+* **Status**: completed
+* **Relevance**: Origin of the `nav16t67` / `napt67` SUFFIX naming convention that t0078
+  (`nav16t78`/`napt78`) and t0080 (`nav16t80`/`napt80`) inherit unchanged in kinetics, only renamed
+  in SUFFIX.
+
+##### [t0069]
+
+* **Task ID**: `t0069_t0067_ais_localised_channel_sweep`
+* **Name**: AIS-localised channel sweep
+* **Status**: completed
+* **Relevance**: First task to attach an AIS to the project&#x27;s DSGC cells. Bed A reference for AIS
+  construction patterns; superseded by t0078&#x27;s two-subsegment AIS for Bed B. t0080 uses t0078&#x27;s AIS,
+  not t0069&#x27;s.
+
+##### [t0074]
+
+* **Task ID**: `t0074_channel_tuning_width_bed_a`
+* **Name**: Channel tuning width on Bed A
+* **Status**: completed
+* **Relevance**: Origin of the `sk74` SK_E2 MOD file that t0078 extended into `skahpt78` with
+  `tau_ca_multiplier`. Reference for confirming the SK_E2 kinetics carried into t0080&#x27;s `skahpt80`.
+
+##### [t0076]
+
+* **Task ID**: `t0076_bedb_dsi_firing_rate_mobo`
+* **Name**: Bed B DSI / firing rate MOBO baseline
+* **Status**: completed
+* **Relevance**: Direct dependency. Provides the 25-d ParameterSpec scaffolding that t0078 extended
+  to 49-d and t0080 extends to 54-56-d. Provides the iter-424 best-joint cell parameter values (DSI
+  0.42 / PD ~ 8.34 Hz) needed for t0080&#x27;s substrate-regression pre-launch check at
+  `tasks/t0076_bedb_dsi_firing_rate_mobo/results/data/pareto_front.json` lines 70-99.
+
+##### [t0078]
+
+* **Task ID**: `t0078_bedb_mobo_v2_ais_tiered_ahp`
+* **Name**: Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP
+* **Status**: completed
+* **Relevance**: Direct dependency. Provides the AIS-augmented Bed B substrate library
+  (`de_rosenroll_2026_dsgc_ais`) that t0080 extends. The 49-d ParameterVector,
+  `apply_parameter_vector` write order, two-subsegment AIS builder, NEURON re-init subprocess
+  pattern, ProcessPoolExecutor trial driver, and 13 vendored t78 MODs all carry into t0080. The
+  t0078 iter-81 AIS-disabled-corner failure is the canonical case study for the t0080 answer asset.
       </content>
     </section>
   </sections>

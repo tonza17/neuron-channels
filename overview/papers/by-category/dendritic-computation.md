@@ -1,12 +1,12 @@
-# Papers: `dendritic-computation` (42)
+# Papers: `dendritic-computation` (43)
 
-42 papers across 28 year(s).
+43 papers across 28 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2026 (2)
+## 2026 (3)
 
 <details>
 <summary>📖 Machine learning discovers numerous new computational principles
@@ -50,6 +50,53 @@ kinetics, NMDA strength, and dendritic biophysics. The ML-discovered configurati
 library of distinct tuning-curve shapes to include in comparative analyses. The primary
 porting risk is the absent LICENSE file; a licence clarification intervention or
 fork-under-MIT may be required before the code can be redistributed.
+
+</details>
+
+<details>
+<summary>📝 Retinal waves shape starburst amacrine cell dendrite development through
+a direction-selective dendritic computation — Pitcher et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.64898_2026.02.02.701812` |
+| **Authors** | Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.64898/2026.02.02.701812` |
+| **URL** | https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.64898_2026.02.02.701812/summary.md) |
+
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through
+a local dendritic computation, using developing mouse SACs as a model. The work spans calcium
+imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO
+for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions
+across the same ages.
+
+The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with
+quadrant-resolved DSI metrics for moving bars and propagating waves, plus reconstruction-based
+quantification of nasal-vs-temporal dendrite length and distal complexity. The experimental
+design is elegant: it shows that the dendritic computation is present (P10 imaging), that it
+depends on K+-channel-based compartmentalisation (TEA experiment), that activity is required
+for outgrowth (b2-nAChR-KO), and that wave *direction*, not just wave existence, is required
+for the morphological asymmetry (FRMD7tm).
+
+The headline finding is that SAC dendrites at P9-P11 exhibit centrifugal-preferred direction
+selectivity to retinal waves; that dendritic tuning rises with distance from the soma; that
+TEA abolishes this tuning; and that wild-type SACs have nasal dendrites longer than temporal
+dendrites (a difference absent when wave propagation bias is removed). Together these results
+identify SACs as the earliest known cellular decoder of retinal-wave propagation bias and link
+that decoding to a structural morphological asymmetry that persists into the adult
+direction-selective circuit.
+
+For this project the paper is upstream context, not a direct input. t0080 (Bed B v3) treats
+the SAC drive onto the DSGC as a fixed, idealised null-side inhibitory waveform; it does not
+model SAC morphology development. Pitcher 2026 is therefore relevant only as developmental
+background for *why* the SAC inhibitory drive has its asymmetric form in the mature retina,
+and as a flagged source of biological asymmetry that future tasks could optionally model if
+the inhibitory machinery onto the DSGC is ever brought back into the optimisation.
 
 </details>
 

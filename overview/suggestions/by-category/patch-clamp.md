@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-22 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **18
-open** (2 high, 14 medium, 2 low), **4 closed**.
+23 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **19
+open** (2 high, 14 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -433,6 +433,30 @@ side) and re-run the per-channel isolation sweep at gNMDA = 0.5 nS. A monotonic 
 asymmetry from distal-dendrite to soma supports the cable-filtering hypothesis (b ruled out);
 persistence at all locations supports the spatial-distribution hypothesis (a ruled out).
 Complementary to S-0049-01's static spatial audit. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten AIS-to-soma Nav ratio hard floor from >=5 to >=7
+(matching Werginz 2020 RGC point estimate)</strong> (S-0080-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0080-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+t0080 enforces an AIS-to-soma Nav ratio >= 5 hard floor, justified primarily by Werginz 2024's
+measured 17.3x for mouse alpha-ON-sustained RGCs and a conservative interpretation of Werginz
+2020's RGC ratio (~7x for mouse OFF-alpha-T RGCs, in metadata only because the PDF is
+paywalled). Tighten the floor to >=7 to match the Werginz 2020 point estimate and re-run
+NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor still permits
+configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
+Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
+~$0.75. Recommended task types: experiment-run.
 
 </details>
 

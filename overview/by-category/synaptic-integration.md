@@ -4,7 +4,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (41)](../papers/by-category/synaptic-integration.md) | [Answers
+**Detail pages**: [Papers (43)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
 (93)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
@@ -12,7 +12,55 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 ---
 
-## Papers (41)
+## Papers (43)
+
+<details>
+<summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
+through a direction-selective dendritic computation</strong> — Pitcher
+et al., 2026</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.64898_2026.02.02.701812` |
+| **Authors** | Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.64898/2026.02.02.701812` |
+| **URL** | https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.64898_2026.02.02.701812/summary.md) |
+
+Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through
+a local dendritic computation, using developing mouse SACs as a model. The work spans calcium
+imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO
+for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions
+across the same ages.
+
+The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with
+quadrant-resolved DSI metrics for moving bars and propagating waves, plus reconstruction-based
+quantification of nasal-vs-temporal dendrite length and distal complexity. The experimental
+design is elegant: it shows that the dendritic computation is present (P10 imaging), that it
+depends on K+-channel-based compartmentalisation (TEA experiment), that activity is required
+for outgrowth (b2-nAChR-KO), and that wave *direction*, not just wave existence, is required
+for the morphological asymmetry (FRMD7tm).
+
+The headline finding is that SAC dendrites at P9-P11 exhibit centrifugal-preferred direction
+selectivity to retinal waves; that dendritic tuning rises with distance from the soma; that
+TEA abolishes this tuning; and that wild-type SACs have nasal dendrites longer than temporal
+dendrites (a difference absent when wave propagation bias is removed). Together these results
+identify SACs as the earliest known cellular decoder of retinal-wave propagation bias and link
+that decoding to a structural morphological asymmetry that persists into the adult
+direction-selective circuit.
+
+For this project the paper is upstream context, not a direct input. t0080 (Bed B v3) treats
+the SAC drive onto the DSGC as a fixed, idealised null-side inhibitory waveform; it does not
+model SAC morphology development. Pitcher 2026 is therefore relevant only as developmental
+background for *why* the SAC inhibitory drive has its asymmetric form in the mature retina,
+and as a flagged source of biological asymmetry that future tasks could optionally model if
+the inhibitory machinery onto the DSGC is ever brought back into the optimisation.
+
+</details>
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -159,6 +207,64 @@ Kv3, dendritic mGluR2), and it quantifies the DS-relevant observables (calcium t
 shifts, somatic Vm variance, directional calcium onset at fractional radius ~0.5) that such a
 model must reproduce. Use it as a validation target when sweeping morphology or channel
 distribution in a SAC model; do not cite it as a morphology-sweep example.
+
+</details>
+
+<details>
+<summary>📖 <strong>Differential Expression Analysis Identifies Candidate
+Synaptogenic Molecules for Wiring Direction-Selective Circuits in the
+Retina</strong> — Tworig et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1461-23.2024` |
+| **Authors** | Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya, Shaw Hsu, Jocelyn Liang, Karen G. Cornejo, Marla B. Feller |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1461-23.2024` |
+| **URL** | https://www.jneurosci.org/content/44/18/e1461232024 |
+| **Date added** | 2026-05-04 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1523_JNEUROSCI.1461-23.2024/summary.md) |
+
+Tworig and colleagues address one specific developmental question: which molecules instruct
+the asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF
+DSGC subtypes during the brief P9-P10 critical period? Prior work had shown that the
+asymmetric inhibitory pattern emerges within roughly two postnatal days and persists in the
+absence of visual input, suggesting an instructive molecular code, but the responsible
+molecules were unknown. The authors target the postsynaptic side of this wiring problem in
+mouse retina with a transcriptomic screen and a single conditional knockout follow-up.
+
+The methodology combines paired patch-clamp (to time-stamp the wiring-onset day at P10), bulk
+RNA-seq on FACS-isolated GFP-labelled nasal- vs ventral-preferring DSGCs from three transgenic
+lines, and a Cbln4 conditional RGC knockout (Cbln4^fl/fl x VGlut2-Cre). Functional readouts
+use two-photon population calcium imaging and whole-cell voltage-clamp during 8-direction
+drifting-bar stimuli at 250 and 1,000 um/s, plus 3D dye-fill morphology reconstruction with
+Sholl analysis. Statistical testing uses Wald tests with Benjamini-Hochberg FDR for
+differential expression and permutation tests for direction-selective cell classification.
+
+The screen yields **2,270 differentially expressed transcripts** including strong candidates
+from the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and
+Tenm3 splice isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs,
+but the RGC-targeted KO produces only a **small DSI reduction** in the broader
+ventral-preferring DSGC population and **no detectable difference** in IPSC amplitude,
+asymmetry, or timing, EPSC properties, or dendritic morphology in voltage-clamp recordings.
+The authors conclude that Cbln4 does not function cell-autonomously in DSGCs to instruct
+asymmetric SAC->DSGC wiring, while still validating the differential-expression screen as a
+discovery tool for other candidate molecules.
+
+For this project, the paper is tangential to t0080 optimisation aims because t0080 operates on
+a fixed deposited E/I substrate rather than reshaping it. The relevance is contextual: it
+documents the developmental origin of the asymmetric inhibitory wiring that t0080 takes as a
+fixed biological prior, validates that ventral-preferring DSGCs receive stronger inhibition
+for dorsal motion (a hallmark feature already encoded in our target tuning curve), and reports
+that excitation onto these cells is weakly direction-tuned with a ventral preference --
+supporting the project continued treatment of the AMPA input distribution as approximately
+symmetric. The ~100-fold Cbln4 enrichment hit with a small DSI phenotype is also a useful
+negative-result anchor: it shows that single-gene perturbations of synaptic organisers do not
+substantially redistribute the inhibitory tuning curve, so future tasks should keep the
+project E/I substrate fixed at the canonical t0078/t0080 levels rather than attempting
+biologically motivated perturbations of single synaptogenic molecules.
 
 </details>
 
@@ -2090,7 +2196,7 @@ simulation.
 
 </details>
 
-## Tasks (9)
+## Tasks (10)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2103,6 +2209,7 @@ simulation.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
+| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
 ## Answers (8)
 
