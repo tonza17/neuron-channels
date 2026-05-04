@@ -1,0 +1,32 @@
+{
+  "spec_version": "2",
+  "answer_id": "mobo-on-biophysics-ais-disabled-corner",
+  "question": "Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to the search-space floor (1e-5 S/cm^2) at iter 81, and what biological-prior checklist prevents this failure mode in future MOBO-on-biophysics tasks?",
+  "short_title": "MOBO-on-biophysics AIS-disabled-corner failure mode",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "ais",
+    "evaluation"
+  ],
+  "answer_methods": [
+    "existing_papers",
+    "prior_tasks",
+    "code_experiments"
+  ],
+  "source_paper_ids": [
+    "10.1038_nn2040",
+    "10.1523_JNEUROSCI.1592-24.2024",
+    "10.1126_sciadv.abb6642",
+    "10.1371_journal.pcbi.1002107"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0076_bedb_dsi_firing_rate_mobo",
+    "t0078_bedb_mobo_v2_ais_tiered_ahp",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "date_created": "2026-05-04"
+}

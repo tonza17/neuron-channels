@@ -50,6 +50,7 @@ dependencies = [
     "gpytorch>=1.13",
     "torch>=2.4",
     "pyarrow>=15.0",
+    "pymoo>=0.6.1.6",
 ]
 
 [project.urls]
