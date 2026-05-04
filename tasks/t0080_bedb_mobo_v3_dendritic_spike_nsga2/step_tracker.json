@@ -32,19 +32,19 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing papers on dendritic spikes (Sivyer 2013, Oesch 2005), Mg-block NMDA in DSGCs, and NSGA-II benchmarking on neural compartmental models.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-04T18:14:11Z",
-      "completed_at": null,
+      "completed_at": "2026-05-04T18:25:15Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
       "name": "research-internet",
       "description": "Search for pymoo NSGA-II API conventions, recent dendritic-spike NEURON models, and any newer Werginz / Kole AIS Nav measurements.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-04T18:25:30Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
