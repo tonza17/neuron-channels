@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up task suggestions: dendritic-spike machinery if joint operating point not reached, tier expansion for other channels, etc.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-04T16:10:11Z",
-      "completed_at": null,
+      "completed_at": "2026-05-04T16:17:57Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
