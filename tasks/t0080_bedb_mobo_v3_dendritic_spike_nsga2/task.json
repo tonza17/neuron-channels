@@ -5,14 +5,14 @@
   "name": "Bed B v3 MOBO with dendritic-spike machinery and NSGA-II",
   "short_description": "Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0069_t0067_ais_localised_channel_sweep",
     "t0076_bedb_dsi_firing_rate_mobo",
     "t0078_bedb_mobo_v2_ais_tiered_ahp"
   ],
-  "start_time": null,
+  "start_time": "2026-05-04T18:02:48Z",
   "end_time": null,
   "expected_assets": {
     "library": 1,
