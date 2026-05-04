@@ -8,36 +8,6 @@
 
 ## 2026-05-04 (8)
 
-## High Priority
-
-<details>
-<summary>🧪 <strong>Add dendritic-spike machinery to AIS-augmented Bed B and
-re-optimise with NSGA-II under an AIS Nav lower-bound prior</strong>
-(S-0078-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0078-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-04 |
-| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
-(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
-109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
-densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
-back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
-at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
-81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
-64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
-at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
-Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
-experiment-run.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -230,6 +200,37 @@ library that supports either qLogNEHVI (BoTorch) or NSGA-II (pymoo) optimisers b
 unified ParameterSpec API, parameterised compartment-tier definitions, and Vast.ai launch
 helper. Bundles with S-0076-06; this is the v2 follow-up. Cost estimate: zero compute
 (refactor only). Recommended task types: write-library.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Add dendritic-spike machinery to AIS-augmented Bed B and re-optimise
+with NSGA-II under an AIS Nav lower-bound prior</s> — covered by <a
+href="../../../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/"><code>t0080_bedb_mobo_v3_dendritic_spike_nsga2</code></a>
+(S-0078-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
+(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
+109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
+densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
+back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
+at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
+81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
+64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
+at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
+Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
+experiment-run.
 
 </details>
 

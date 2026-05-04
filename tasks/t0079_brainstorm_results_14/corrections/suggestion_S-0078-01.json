@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0079-01",
+  "correcting_task": "t0079_brainstorm_results_14",
+  "target_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "target_kind": "suggestion",
+  "target_id": "S-0078-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0078-01 proposes adding dendritic-spike machinery (Mg-block NMDA at active densities on dendrites; Nav1.6 / NaP at distal-dendrite densities for back-propagating APs and dendritic spikes per Sivyer 2013 / Oesch 2005 priors) to the AIS-augmented Bed B substrate from t0078, switching the optimiser from BoTorch qLogNEHVI to NSGA-II via pymoo to avoid the O(N^3) GP-fit scaling that pushed t0078 to $3.93 at 60% of planned acquisitions, and enforcing a hard biological lower bound on AIS Nav (Kole 2008 prior >= 0.25 S/cm^2) so the optimiser cannot exploit the AIS-disabled corner that t0078's iter-81 collapsed to. This is the primary scope of t0080 (bedb_mobo_v3_dendritic_spike_nsga2): add dendritic-spike machinery on top of the t0078 AIS-augmented substrate, run NSGA-II via pymoo (pop 96, 40 gens, SBX crossover eta=15, polynomial mutation eta=20, tournament selection, LHS or Sobol initial population), and enforce hard biological lower bounds per Kole 2008 / Werginz 2024 (nav16_ais >= 0.25 S/cm^2; AIS-to-soma Nav ratio >= 5). Pass criterion: locate at least one Pareto cell with DSI >= 0.4 AND PD rate >= 10 Hz, OR rule it out architecturally. Compute estimate ~$1.00 - $1.50 with hard cap $2.00 on Vast.ai 64-core CPU. t0080 records S-0078-01 as its primary source_suggestion. Rejecting as covered by t0080."
+}

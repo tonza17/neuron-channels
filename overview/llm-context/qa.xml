@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-04T16:24:25Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-04T17:39:30Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>376001</char_count>
-    <byte_count>376548</byte_count>
-    <estimated_tokens>94000</estimated_tokens>
+    <char_count>377559</char_count>
+    <byte_count>378106</byte_count>
+    <estimated_tokens>94389</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -182,9 +182,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0076_bedb_dsi_firing_rate_mobo</id>
         <id>t0077_brainstorm_results_13</id>
         <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
+        <id>t0079_brainstorm_results_14</id>
       </source_ids>
       <content>
-Completed tasks: 71
+Completed tasks: 72
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -611,6 +612,12 @@ ID: t0078_bedb_mobo_v2_ais_tiered_ahp
 Completed: 2026-05-04
 Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0078_bedb_mobo_v2_ais_tiered_ahp&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v2 MOBO with AIS, Tier-Stratified Channels, and Slow Kv-AHP Summary Ran a 49-d BoTorch qLogNEHVI multi-objective Bayesian optimisation on the AIS-augmented de Rosenroll 2026 Bed B DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction (PD) firing rate over 75 Sobol DoE + 416 acquisition iterations (491 total cell evaluations × 8 directions × 20 seeds = **78,560** NEURON simulations) on a Vast.ai 64-core CPU instance for **$3.93** (24.86 h total). The loop was stopped early via SIGTERM at acq 416...
+
+## Brainstorm results session 14
+ID: t0079_brainstorm_results_14
+Completed: 2026-05-04
+Short description: Fourteenth brainstorm: commission t0080 (Bed B v3 MOBO with dendritic-spike machinery + NSGA-II); reject 3 suggestions covered by t0080.
+Result summary: Results Summary: Brainstorm Session 14 Summary Fourteenth strategic brainstorm, run on 2026-05-04 after t0078 (49-d AIS-augmented Bed B v2 BoTorch qLogNEHVI MOBO with tier-stratified channels and slow Kv-AHP) completed. The session is triggered by the t0078 architectural diagnostic: the AIS-augmented substrate expanded the achievable Pareto front by **+36% in hypervolume** over t0076 but still missed the joint pass criterion `DSI &gt;= 0.4 AND PD rate &gt;= 10 Hz` -- the closest cell (iter 81) sits at DSI 0.316 / PD 9.68 Hz, short by 0.084 on DSI and 0.32 Hz on PD. The compare-literature analysis identified two follow-on diagnostics: passive dendrites are the bottleneck on the high-DSI rail (PD...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -620,9 +627,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0078_bedb_mobo_v
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -643,6 +651,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
+Status: not_started
+Effective date: unknown
+Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo, t0078_bedb_mobo_v2_ais_tiered_ahp
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
