@@ -1,0 +1,140 @@
+{
+  "task_id": "t0081_bedb_v3_warmstart_nsga2",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0081_bedb_v3_warmstart_nsga2 branch from main and initialize step tracker.",
+      "status": "in_progress",
+      "started_at": "2026-05-04T23:22:00Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0024, t0069, t0076, t0078, t0080 all completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: pure re-run of t0080 on the same substrate; no new literature engagement needed beyond t0080's research_papers.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: pymoo NSGA-II API and warm-start patterns already covered in t0080 research_internet.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Document reuse of t0080 v3 substrate library and harness; identify the warm_start.py module that needs to be added.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Concise plan covering warm-start initial population generation, NSGA-II re-launch protocol, Vast.ai compute envelope, and pass criterion.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision a Vast.ai 64-core CPU instance (EPYC 7B13 class).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Add warm_start.py to assemble the 96-cell initial population (5 t0080 + 17 t0078 + 74 LHS); launch NSGA-II at pop=96 / gen=8 = 768 cells; pull results.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy the Vast.ai instance and finalize cost tracking.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: same negative-result framing as t0080; no out-of-the-box reframe needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json; produce Pareto / HV / scatter charts.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare the t0081 Pareto front to t0078, t0080, and the published baselines.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions for the next brainstorm.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task completed, prepare for PR.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
