@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json with Pareto front and hypervolume trajectory.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-04T15:57:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-04T16:01:32Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
