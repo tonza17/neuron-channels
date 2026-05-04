@@ -1,0 +1,13 @@
+[acq 1/700]  DSI=+0.000  PD=  0.00 Hz  HV=1.6544  trial_t=44.9s  cost=$0.16
+[acq 25/700]  DSI=+0.006  PD= 42.07 Hz  HV=4.5902  trial_t=44.4s  cost=$0.33
+[acq 50/700]  DSI=+0.028  PD=  8.00 Hz  HV=7.5136  trial_t=44.5s  cost=$0.51
+[acq 75/700]  DSI=+0.000  PD=110.82 Hz  HV=7.6208  trial_t=47.2s  cost=$0.86
+[acq 100/700]  DSI=-0.001  PD= 62.11 Hz  HV=7.7039  trial_t=25.6s  cost=$1.13
+[acq 150/700]  DSI=+0.000  PD=  0.00 Hz  HV=8.0953  trial_t=27.3s  cost=$1.40
+[acq 200/700]  DSI=+0.007  PD=134.00 Hz  HV=8.7579  trial_t=28.6s  cost=$1.68
+[acq 250/700]  DSI=+0.001  PD=133.21 Hz  HV=9.5760  trial_t=28.2s  cost=$2.00
+[acq 300/700]  DSI=-0.001  PD=120.07 Hz  HV=10.1260  trial_t=28.3s  cost=$2.33
+[acq 350/700]  DSI=-0.000  PD=142.43 Hz  HV=10.5991  trial_t=29.8s  cost=$2.68
+[acq 400/700]  DSI=+0.011  PD=142.71 Hz  HV=10.8551  trial_t=50.9s  cost=$3.26
+[acq 410/700]  DSI=+0.001  PD=132.04 Hz  HV=11.3720  trial_t=52.2s  cost=$3.56
+[acq 415/700]  DSI=+0.006  PD=163.50 Hz  HV=11.4144  trial_t=57.1s  cost=$3.75
