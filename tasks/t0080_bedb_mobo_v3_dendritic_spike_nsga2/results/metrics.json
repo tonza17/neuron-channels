@@ -1,0 +1,121 @@
+{
+  "spec_version": "2",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "format": "explicit",
+  "n_total_cells": 192,
+  "n_pareto_cells": 5,
+  "joint_target": {
+    "dsi": 0.4,
+    "pd_rate_hz": 10.0
+  },
+  "variants": [
+    {
+      "variant_id": "pareto_cell_0058",
+      "label": "Pareto cell 58 (gen 0)",
+      "dimensions": {
+        "cell_index": 58,
+        "generation": 0,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.01479915433403804,
+        "pd_firing_rate_hz": 8.571428571428571,
+        "peak_vm_mv": 4.089968768025159,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0141",
+      "label": "Pareto cell 141 (gen 1)",
+      "dimensions": {
+        "cell_index": 141,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.12698412698412695,
+        "pd_firing_rate_hz": 2.5357142857142856,
+        "peak_vm_mv": -1.5281599675163449,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0153",
+      "label": "Pareto cell 153 (gen 1)",
+      "dimensions": {
+        "cell_index": 153,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.02597402597402596,
+        "pd_firing_rate_hz": 8.464285714285715,
+        "peak_vm_mv": 4.089968956935717,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0188",
+      "label": "Pareto cell 188 (gen 1)",
+      "dimensions": {
+        "cell_index": 188,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "pd_firing_rate_hz": 9.25,
+        "peak_vm_mv": 4.665037747534836,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0190",
+      "label": "Pareto cell 190 (gen 1)",
+      "dimensions": {
+        "cell_index": 190,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0516431924882629,
+        "pd_firing_rate_hz": 4.0,
+        "peak_vm_mv": -1.2587333301387496,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_best_joint",
+      "label": "Closest to joint target (DSI=0.4, PD=10.0Hz); distance=0.850",
+      "dimensions": {
+        "cell_index": 188,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "pd_firing_rate_hz": 9.25,
+        "peak_vm_mv": 4.665037747534836,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

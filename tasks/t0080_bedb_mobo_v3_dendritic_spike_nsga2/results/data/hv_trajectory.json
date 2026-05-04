@@ -1,0 +1,18 @@
+{
+  "utopia_point": [
+    0.7,
+    80.0
+  ],
+  "trajectory": [
+    {
+      "generation": 0,
+      "n_evaluations": 96,
+      "hypervolume": 0.3242270084566595
+    },
+    {
+      "generation": 1,
+      "n_evaluations": 192,
+      "hypervolume": 0.5151569506302554
+    }
+  ]
+}
