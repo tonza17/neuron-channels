@@ -5,14 +5,14 @@
   "name": "Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP",
   "short_description": "Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI >= 0.4 AND PD rate >= 30 Hz, or rule out.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0069_t0067_ais_localised_channel_sweep",
     "t0076_bedb_dsi_firing_rate_mobo"
   ],
   "start_time": "2026-05-03T13:02:20Z",
-  "end_time": null,
+  "end_time": "2026-05-04T16:25:00Z",
   "expected_assets": {
     "library": 1
   },
