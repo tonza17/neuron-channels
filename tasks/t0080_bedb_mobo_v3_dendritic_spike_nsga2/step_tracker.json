@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0078 BoTorch harness, t0069 Bed A AIS implementation, t0076 BO baseline, NMDA MOD files, and Nav1.6/NaP MOD implementations.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-04T18:36:38Z",
-      "completed_at": null,
+      "completed_at": "2026-05-04T18:49:33Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
