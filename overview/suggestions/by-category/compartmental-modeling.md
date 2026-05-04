@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-225 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **198 open** (29
-high, 146 medium, 23 low), **27 closed**.
+233 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **206 open** (30
+high, 150 medium, 26 low), **27 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -33,6 +33,34 @@ vector-sum DSI optimum). Pass criterion: at least one operating point with peak 
 vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against PolegPolsky2016
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add dendritic-spike machinery to AIS-augmented Bed B and
+re-optimise with NSGA-II under an AIS Nav lower-bound prior</strong>
+(S-0078-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
+(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
+109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
+densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
+back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
+at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
+81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
+64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
+at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
+Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
 experiment-run.
 
 </details>
@@ -2446,6 +2474,33 @@ against Schachter's tree. Recommended task types: feature-engineering, experimen
 </details>
 
 <details>
+<summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
+MOBO-on-biophysics failure mode</strong> (S-0078-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.1592-24.2024`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0078 compare_literature step found iter 81's nav16_ais collapsed to the search floor
+(1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below
+Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. AIS-to-soma Nav ratio at iter 81 was
+5.5e-5 vs Werginz 2024's measured 17.3. The optimiser found a configuration where the AIS
+contributes nothing to spike initiation, contradicting REQ-2 / REQ-3 / REQ-4's biological
+intent. This may be a generalisable MOBO-on-biophysics failure mode. Document: (a) audit t0076
++ t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
+parameters; (b) propose log-uniform priors with hard biological lower bounds as default for
+future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
+checklist of biological priors to enforce as hard constraints in future MOBO tasks.
+Recommended task types: answer-question, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
 GABA-suppressed active amplification</strong> (S-0039-03)</summary>
 
@@ -3462,6 +3517,34 @@ experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
+from [1, 20x] to [1, 200x] to test the slow-Kv AHP regime</strong>
+(S-0078-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0078 high-DSI rail's PD ceiling at 2.86 Hz held flat across 109 acquisitions despite
+optimiser exploration, the signature of a saturated negative-feedback loop. The 20x upper
+bound corresponds to tau_ca ~ 100 ms; Larsson 2013 reports mammalian sAHP decay on the 1-3 s
+timescale, equivalent to multiplier values of ~ 100-300x. The originally-proposed [1, 200x]
+bound was reduced to [1, 20x] by researcher decision pre-launch as a simulation-budget safety
+margin. Hypothesis: at multiplier > 20x the slow-Kv regime engages and may (a) free the PD
+ceiling on the high-DSI rail or (b) not change behaviour (confirming saturation is
+mechanistic, not parametric). Bundle with S-0078-01 if NSGA-II is run, or run as a focused
+5-cell re-evaluation of t0078 high-DSI Pareto cells (iter 290, 283, 442, 371, 380) with
+multiplier expanded to 200x. Cost: $0.20-$0.50 focused or rolled into S-0078-01. Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0046 figure sweeps at paper-N (12-19 trials per
 condition, full 8-direction sweep)</strong> (S-0046-01)</summary>
 
@@ -3895,6 +3978,34 @@ null-hypothesis test for the necessity of dendritic geometry.
 </details>
 
 <details>
+<summary>🧪 <strong>Single-objective scalarised BO comparison on the 49-d Bed B
+substrate (qLogNEI with DSI - lambda x max(0, 10 - PD))</strong>
+(S-0078-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | [`no-doi_Ament2023_logei-bo`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/no-doi_Ament2023_logei-bo/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Methodological comparison motivated by the t0078 Pareto-front geometry. The 17 t0078 Pareto
+cells exhibit a clean monotonic concave-down DSI-vs-PD trade-off with no obvious knee,
+suggesting cells lie on a 1-D manifold in 49-d parameter space. If true, scalarised
+single-objective BO using qLogNoisyExpectedImprovement with `DSI - lambda x max(0, 10 -
+PD_rate)` and lambda in [0.001, 0.01, 0.1, 1.0] could explore the same Pareto coverage at
+O(N^2) instead of O(N^3) and complete 700 acquisitions within the $4 envelope. Run lambda scan
+as 4 independent BO chains of 175 acquisitions each (total 700 cells) on the existing 49-d
+substrate. Pass criterion: union of the 4 single-objective fronts achieves HV >= 11.41
+(matching t0078) and ideally HV > 12.62 (1.5x rule-out). Document whether the scalarised front
+crosses the joint pass criterion that t0078 missed. Cost: $1.00-$2.00 on Vast.ai 64-core CPU.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>📊 <strong>Specify primary DSI as t0033 optimiser objective on t0024
 substrate (not vector-sum) and drop monotonic-length priors</strong>
 (S-0034-07)</summary>
@@ -3998,6 +4109,33 @@ at 12 directions x 10 trials x 3 modes (2520 trials, ~75 min wall-clock). Pass c
 identify any conductance with FULL-mode peak Hz != null Hz (i.e., non-degenerate primary DSI),
 or rule out the existence of such a graded operating point in the sub-AMPA-spike-veto regime.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
+on the AIS-augmented 49-d Bed B substrate</strong> (S-0078-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Closes the t0078 deferred REQ-16. The compare_literature step flagged a substrate regression:
+iter 81 on the augmented substrate produces DSI 0.316 vs t0076 iter-424's DSI 0.42 at
+comparable PD rate, but no t0076 parameter vector was ever evaluated on the augmented
+substrate. Without this check we cannot disentangle (a) substrate regression of high-rail DSI
+from (b) qLogNEHVI 49-d exploration not finding t0076's best-joint operating point in 491
+cells. Cheap: 1 cell x 8 dirs x 20 seeds at TSTOP_MS 1400 is ~50 s on local CPU. Re-run
+_worker_run_trial with the t0076 iter-424 vector extended to 49-d (tier-stratified channels at
+uniform t0076-matching values, AIS Nav at Kole prior centre 0.375 S/cm^2, AIS geometry at
+midpoint, tau_ca_multiplier=1). Pass criterion: reproduce DSI within +/- 0.05 of t0076's 0.42
+at PD ~ 8.34 Hz, or document substrate regression delta. Cost: < $0.05 local CPU or
+$0.05-$0.10 Vast.ai. Recommended task types: experiment-run.
 
 </details>
 
@@ -4542,6 +4680,33 @@ produce a publication-quality raster. Recommended task types: write-library, exp
 </details>
 
 <details>
+<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
+closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
+(S-0078-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
+library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
+PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
+document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
+cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
+substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
+compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
+PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
+recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📊 <strong>Introduce per-trial spike-count distribution metric to
 distinguish failures from timing shifts</strong> (S-0039-06)</summary>
 
@@ -4584,6 +4749,32 @@ does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed 
 diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar ×
 AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP
 current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
+
+</details>
+
+<details>
+<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
+Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
+one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
+trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
+independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
+per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
+quantifies the BO methodology's contribution to apparent improvement vs the architectural
+contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
+bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
+t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
+experiment-run, evaluation.
 
 </details>
 
@@ -4778,6 +4969,34 @@ joint sweep S-0054-02, tau2 sweep S-0054-05) can declare 'this task's gNMDA=0 ba
 equal t0052' as a CI prerequisite. Acceptance: the helper exists in arf/scripts/utils,
 reproduces the t0054 0e+00 Hz max-diff verdict, and is invoked in the new task's compute step.
 Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0078 BoTorch qLogNEHVI + 49-d AIS-augmented
+substrate harness into a reusable dsgc_mobo_v2 library asset</strong>
+(S-0078-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-07` |
+| **Kind** | library |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Builds on t0076's S-0076-06 (dsgc_mobo library promotion) which targets the t0076 25-d
+harness. t0078 added approximately 1,300 LOC of net new optimisation infrastructure:
+qLogNoisyExpectedHypervolumeImprovement migration, Normalize(d=49) input transform,
+ProcessPoolExecutor with NEURON-fresh-subprocess workers, AIS-extended substrate builder
+(extend_with_ais.py / build_cell_ais.py), 5-tier channel stratification engine, slow-AHP MOD
+vendoring (skahpt78.mod with tau_ca_multiplier PARAMETER), checkpointing every 10 cells,
+plot_pareto.py with --skip-deep-dives, render_pdf.py. Promote into a substrate-agnostic
+library that supports either qLogNEHVI (BoTorch) or NSGA-II (pymoo) optimisers behind a
+unified ParameterSpec API, parameterised compartment-tier definitions, and Vast.ai launch
+helper. Bundles with S-0076-06; this is the v2 follow-up. Cost estimate: zero compute
+(refactor only). Recommended task types: write-library.
 
 </details>
 

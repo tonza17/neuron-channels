@@ -4,7 +4,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (39)](../papers/by-category/synaptic-integration.md) | [Answers
+**Detail pages**: [Papers (41)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
 (93)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
@@ -12,7 +12,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 ---
 
-## Papers (39)
+## Papers (41)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -1076,6 +1076,122 @@ parameter.
 </details>
 
 <details>
+<summary>📖 <strong>Dynamic Tuning of Electrical and Chemical Synaptic Transmission
+in a Network of Motion Coding Retinal Neurons</strong> — Trenholm et al.,
+2013</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.0808-13.2013` |
+| **Authors** | Stuart Trenholm, Amanda J. McLaughlin, David J. Schwab, Gautam B. Awatramani |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.0808-13.2013` |
+| **URL** | https://www.jneurosci.org/content/33/37/14927 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/summary.md) |
+
+This paper asks how a network of mouse retinal direction-selective ganglion cells (DSGCs)
+combines weak electrical coupling, chemical synapses, and intrinsic membrane properties to
+produce direction-tuned, anticipatory responses without runaway excitation. The motivation is
+that earlier work (Trenholm et al. 2013, Nat. Neurosci.) had shown that the same
+Hb9::eGFP-labelled superior- coding DSGCs perform "lag normalisation" - they detect a moving
+edge at the same retinal location regardless of speed - but the mechanistic basis for the
+asymmetric, leading-edge-skewed response underlying that computation was unknown.
+
+The methodology pairs Neurobiotin tracer-coupling, two-photon-targeted whole-cell and
+cell-attached patch-clamp from single and paired DSGCs, voltage- and current-clamp
+characterisation of gap junctions (TTX, 18-beta-glycyrrhetinic acid), receptive-field mapping
+with stationary spots and moving bars, and pharmacological dissection of GABAergic inhibition
+with picrotoxin and intrinsic gain control with preconditioning current pulses. The key design
+choice is to distinguish three mutually exclusive explanations for response skew -
+gap-junction rectification, GABAergic inhibition, intrinsic gain control - and test each
+independently.
+
+The headline findings are: (i) only Hb9+ (superior-coding) DSGCs are strongly coupled, with ~1
+nS symmetric reciprocal gap junctions and ~10 Hz low-pass filtering; (ii) gap junctions
+provide a ~50-100 um subthreshold excitatory surround that primes coincident chemical synaptic
+input, extending the effective receptive field and producing leading-edge-skewed motion
+responses (SI **1.6 +/- 0.1** vs **1.1 +/- 0.1** in uncoupled cells); (iii) the leading-edge
+skew survives picrotoxin in both preferred and null directions, ruling out GABA as the sole
+cause; (iv) preconditioning spike trains attenuate initial-response spikes by **70 +/- 6%**
+and abolish skew, with **tau ~604 ms** recovery, implicating activity-dependent intrinsic gain
+control as the dominant rectifying mechanism. Reported peak rates are **198 +/- 14 Hz**
+(preferred, control), **27 +/- 12 Hz** (null, control), and **244 +/- 18 Hz** / **202 +/- 14
+Hz** under picrotoxin.
+
+For this project, the paper is a primary literature anchor for the firing-rate target of
+Hb9::eGFP mouse DSGCs and clarifies a critical interpretation issue: the project
+domain-knowledge "30-80 Hz" preferred-direction figure most likely originates from mean /
+trial-averaged rates (consistent with Rivlin-Etzion et al. 2012's ~10 Hz), whereas this
+paper's 198 Hz preferred and 27 Hz null are peak rates from Gaussian-convolved spike trains,
+and the corresponding peak-rate DSI is 0.76. The MOBO objective for the AIS-tiered AHP task
+should explicitly state which metric (peak vs mean) it targets to avoid mixing scales. The
+paper also constrains AIS / soma model choices: a realistic Hb9 DSGC model needs slow (~600
+ms) intrinsic gain control (Na slow inactivation or Ca-activated K), spatially offset GABA
+inhibition (~52 um null-side, E_GABA near -60 mV), and weak symmetric reciprocal gap-junction
+coupling - all properties that bias which ion-channel parameter sets and AHP regimes can
+simultaneously hit the peak-rate target and the DSI target.
+
+</details>
+
+<details>
+<summary>📖 <strong>Visual Stimulation Reverses the Directional Preference of
+Direction-Selective Retinal Ganglion Cells</strong> — Rivlin-Etzion et
+al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2012.08.041` |
+| **Authors** | Michal Rivlin-Etzion, Wei Wei, Marla B. Feller |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2012.08.041` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(12)00807-0 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/summary.md) |
+
+Rivlin-Etzion, Wei, and Feller (2012, Neuron) ask whether the direction-selective response of
+mouse ON-OFF retinal ganglion cells is rigidly determined by the asymmetric SAC-DSGC wiring
+revealed by EM reconstruction, or whether it can be reshaped by recent visual experience.
+Their work targets the dominant "hardwired retina" view of direction selectivity and tests it
+directly by applying brief drifting-grating adaptation protocols and measuring whether DSGC
+preferred direction remains stable.
+
+The methodology combines two-photon-targeted loose-patch recordings from genetically labelled
+posterior-preferring ON-OFF DSGCs (DRD4-GFP and TRHR-GFP lines, P14-P88, both sexes) with
+whole-cell voltage clamp to dissect synaptic mechanisms, plus pharmacology with gabazine to
+test GABA-A involvement and L-AP4 to test ON-pathway involvement. Directional tuning is
+quantified with DSI and vector-sum metrics computed from 3 s grating responses in 12
+directions, using a pre/adaptation/post design with four adaptation protocols (P-N, Null, P-O,
+counter-phase) plus a no-stimulus control.
+
+The authors find that drifting-grating adaptation can fully reverse the PD of a substantial
+fraction of ON-OFF DSGCs (41% of 74 cells across protocols) and that this reversal is robust,
+long-lasting (persisting up to 23 min), GABA-A dependent, and mediated by a redistribution of
+asymmetric inhibition rather than by new wiring. ON-pathway crossover circuits are necessary
+for the reversal: L-AP4 blockade reduces reversal probability and reveals a delayed OFF
+response normally masked by the ON pathway. Critically, the paper reports paired DSI plus mean
+preferred-direction firing rate from the same cells: **DSI 0.78 +/- 0.19 with mean PD rate
+10.38 +/- 8.53 Hz** for stable cells (n = 8\) and **DSI 0.63 +/- 0.23 with 9.95 +/- 5.42 Hz**
+for reversed cells (n = 8), measured over the 3 s grating window.
+
+For task t0078, this paper is the primary literature anchor for revising the project's pass
+criterion from "PD rate >= 30 Hz" to "PD rate >= 10 Hz". The previously assumed 30-80 Hz mean
+PD firing rate range conflated peak rates over sub-second windows with mean rates over
+multi-second windows; this paper establishes that the mean PD firing rate of mouse ON-OFF
+DSGCs is approximately 10 Hz when measured over a 3 s window, with paired DSI of 0.78. The
+result also informs the Bayesian-optimisation utopia point used to compute hypervolume in
+t0078 and downstream model selection. A secondary implication for downstream tasks is that
+DSGC tuning is plastic on a minutes timescale, so model-fitting tasks should treat
+pre-adaptation values as the canonical target and not aggregate them with post-adaptation
+states.
+
+</details>
+
+<details>
 <summary>📖 <strong>Direction selectivity in the retina: symmetry and asymmetry in
 structure and function</strong> — Vaney et al., 2012</summary>
 
@@ -1974,7 +2090,7 @@ simulation.
 
 </details>
 
-## Tasks (8)
+## Tasks (9)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1986,6 +2102,7 @@ simulation.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 
 ## Answers (8)
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-03T12:41:25Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-04T16:24:25Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4190</char_count>
-    <byte_count>4190</byte_count>
-    <estimated_tokens>1047</estimated_tokens>
+    <char_count>4285</char_count>
+    <byte_count>4285</byte_count>
+    <estimated_tokens>1071</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,12 +18,13 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $10.00
-Total spent: $1.06
-Budget remaining: $8.94
-Spent: 10.6%
+Total spent: $4.99
+Budget remaining: $5.01
+Spent: 49.9%
 
 ### Cost Breakdown by Category
 
+* vast-ai-rtx5060ti: $3.93
 * vast-ai-quadro-p4000: $1.06
 * api: $0.00
 * local_compute: $0.00
@@ -31,6 +32,7 @@ Spent: 10.6%
 
 ### Cost Breakdown by Service
 
+* vast_ai_compute: $3.93
 * vast_ai: $1.06
 
 ### Per-Task Costs
@@ -105,6 +107,7 @@ Spent: 10.6%
 * t0074_channel_tuning_width_bed_a: $0.00
 * t0076_bedb_dsi_firing_rate_mobo: $1.06
 * t0077_brainstorm_results_13: $0.00
+* t0078_bedb_mobo_v2_ais_tiered_ahp: $3.93
       </content>
     </section>
   </sections>

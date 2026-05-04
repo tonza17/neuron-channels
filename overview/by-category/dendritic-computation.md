@@ -4,15 +4,15 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (41)](../papers/by-category/dendritic-computation.md) | [Answers
+**Detail pages**: [Papers (42)](../papers/by-category/dendritic-computation.md) | [Answers
 (6)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(48)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(49)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (41)
+## Papers (42)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -1065,6 +1065,62 @@ against the ~9:1 null/preferred IPSC amplitude and isotropic EPSC), and Research
 (active vs passive dendrites should be compared against the dendritic-spike substrate the
 authors endorse). Its voltage-clamp-error argument is a direct caution against over-fitting to
 published excitatory-current directionality.
+
+</details>
+
+<details>
+<summary>📖 <strong>Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide
+Range of Dendritic and Perisomatic Active Properties</strong> — Hay et
+al., 2011</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1002107` |
+| **Authors** | Etay Hay, Sean Hill, Felix Schurmann, Henry Markram, Idan Segev |
+| **Venue** | PLoS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1002107` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md) |
+
+Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical
+pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current
+f-I behavior and the BAP-activated dendritic Ca2+ ("BAC") firing observed in adult-rat slice
+recordings. The paper's research question is whether a single conductance-based model in a
+reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell
+variability, and which channel densities and Ca2+-dynamics parameters are necessary or
+sufficient for each regime.
+
+Methodologically, the authors define 20 firing features (10 perisomatic, 10 BAC), each with an
+experimental mean and SD computed across several cells. They use multi-objective optimization
+with an elitist non-dominated sorting evolutionary algorithm — population 1000, 500
+generations, 240 to 1024 CPU cores, 2-5 days runtime — to optimize 22 free parameters. The
+free parameters are the maximal densities of nine ion channels (Nat, Nap, Kp, Kt, Kv3.1,
+Ca_HVA, Ca_LVA, SK, Im) in soma and apical compartments, plus the Ca2+ buffer parameters gamma
+and tdecay. The Ih distribution is fixed to preserve subthreshold properties. Models are
+accepted when every feature falls within 2-3 SD of the experimental mean. Mechanism kinetics
+use Hodgkin-Huxley formalism with Q10 = 2.3 and a -10 mV junction-potential shift where
+applicable.
+
+The headline result is a set of about 2000 acceptable L5b PC models published in ModelDB
+(accession 139653). Single-target fits are easier (899 BAC-only, 52 perisomatic-only) but
+typically fail the other target. Joint fits achieve every feature within 2-3 SD: e.g. BAP
+amplitude **45 +/- 10 mV** at 620 um, Ca2+ spike peak **6.73 +/- 2.54 mV**, perisomatic spike
+frequencies of **9 / 14.5 / 22.5 Hz**, AP half-width of **1.31 ms**, slow AHP depth around
+**-60 mV**. Cross-target parameter analysis identifies apical Nat and apical Kv3.1 densities
+as the dominant levers controlling BAP propagation, and shows that morphology swaps degrade
+BAC features more than perisomatic features.
+
+For this project, Hay 2011 is a direct upstream dependency of t0074 and t0078: the SK_E2 and
+CaDynamics_E2 MOD files vendored under t0074 originate here, and t0078's `tau_ca_multiplier`
+extension to CaDynamics_E2 is an additional knob on the same gamma + tdecay sub-membrane shell
+formalism defined in this paper. The cited parameter ranges (gamma in 0.0005-0.05; soma tdecay
+20-1000 ms; apical tdecay 20-200 ms) provide the prior box that t0078's MOBO should explore.
+The multi-objective + per-feature-SD scoring + Pareto-acceptable-ensemble methodology is also
+the template t0078 inherits for reporting and analyzing its own MOBO results. Citing Hay 2011
+in the t0078 substrate documentation is therefore mandatory.
 
 </details>
 
@@ -2142,7 +2198,7 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (8)
+## Tasks (9)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2154,6 +2210,7 @@ than reduced analytical models.
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 
 ## Answers (6)
 
@@ -2287,7 +2344,29 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (37 open, 11 closed)
+## Suggestions (38 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Add dendritic-spike machinery to AIS-augmented Bed B and
+re-optimise with NSGA-II under an AIS Nav lower-bound prior</strong>
+(S-0078-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
+(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
+109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
+densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
+back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
+at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
+81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
+64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
+at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
+Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Spatial hot-spot analysis of Bed B GABA Bernoulli release vs

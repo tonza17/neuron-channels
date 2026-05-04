@@ -1,6 +1,6 @@
-# Papers: `dendritic-computation` (41)
+# Papers: `dendritic-computation` (42)
 
-41 papers across 28 year(s).
+42 papers across 28 year(s).
 
 [Back to all papers](../README.md)
 
@@ -1082,7 +1082,62 @@ published excitatory-current directionality.
 
 </details>
 
-## 2011 (1)
+## 2011 (2)
+
+<details>
+<summary>📖 Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of
+Dendritic and Perisomatic Active Properties — Hay et al., 2011</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1002107` |
+| **Authors** | Etay Hay, Sean Hill, Felix Schurmann, Henry Markram, Idan Segev |
+| **Venue** | PLoS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1002107` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md) |
+
+Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical
+pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current
+f-I behavior and the BAP-activated dendritic Ca2+ ("BAC") firing observed in adult-rat slice
+recordings. The paper's research question is whether a single conductance-based model in a
+reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell
+variability, and which channel densities and Ca2+-dynamics parameters are necessary or
+sufficient for each regime.
+
+Methodologically, the authors define 20 firing features (10 perisomatic, 10 BAC), each with an
+experimental mean and SD computed across several cells. They use multi-objective optimization
+with an elitist non-dominated sorting evolutionary algorithm — population 1000, 500
+generations, 240 to 1024 CPU cores, 2-5 days runtime — to optimize 22 free parameters. The
+free parameters are the maximal densities of nine ion channels (Nat, Nap, Kp, Kt, Kv3.1,
+Ca_HVA, Ca_LVA, SK, Im) in soma and apical compartments, plus the Ca2+ buffer parameters gamma
+and tdecay. The Ih distribution is fixed to preserve subthreshold properties. Models are
+accepted when every feature falls within 2-3 SD of the experimental mean. Mechanism kinetics
+use Hodgkin-Huxley formalism with Q10 = 2.3 and a -10 mV junction-potential shift where
+applicable.
+
+The headline result is a set of about 2000 acceptable L5b PC models published in ModelDB
+(accession 139653). Single-target fits are easier (899 BAC-only, 52 perisomatic-only) but
+typically fail the other target. Joint fits achieve every feature within 2-3 SD: e.g. BAP
+amplitude **45 +/- 10 mV** at 620 um, Ca2+ spike peak **6.73 +/- 2.54 mV**, perisomatic spike
+frequencies of **9 / 14.5 / 22.5 Hz**, AP half-width of **1.31 ms**, slow AHP depth around
+**-60 mV**. Cross-target parameter analysis identifies apical Nat and apical Kv3.1 densities
+as the dominant levers controlling BAP propagation, and shows that morphology swaps degrade
+BAC features more than perisomatic features.
+
+For this project, Hay 2011 is a direct upstream dependency of t0074 and t0078: the SK_E2 and
+CaDynamics_E2 MOD files vendored under t0074 originate here, and t0078's `tau_ca_multiplier`
+extension to CaDynamics_E2 is an additional knob on the same gamma + tdecay sub-membrane shell
+formalism defined in this paper. The cited parameter ranges (gamma in 0.0005-0.05; soma tdecay
+20-1000 ms; apical tdecay 20-200 ms) provide the prior box that t0078's MOBO should explore.
+The multi-objective + per-feature-SD scoring + Pareto-acceptable-ensemble methodology is also
+the template t0078 inherits for reporting and analyzing its own MOBO results. Citing Hay 2011
+in the t0078 substrate documentation is therefore mandatory.
+
+</details>
 
 <details>
 <summary>📖 Two distinct types of ON directionally selective ganglion cells in the

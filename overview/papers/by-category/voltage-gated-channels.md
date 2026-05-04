@@ -1,12 +1,12 @@
-# Papers: `voltage-gated-channels` (16)
+# Papers: `voltage-gated-channels` (20)
 
-16 papers across 12 year(s).
+20 papers across 15 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2024 (1)
+## 2024 (2)
 
 <details>
 <summary>📖 Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
@@ -58,6 +58,114 @@ Kv3, dendritic mGluR2), and it quantifies the DS-relevant observables (calcium t
 shifts, somatic Vm variance, directional calcium onset at fractional radius ~0.5) that such a
 model must reproduce. Use it as a validation target when sweeping morphology or channel
 distribution in a SAC model; do not cite it as a morphology-sweep example.
+
+</details>
+
+<details>
+<summary>📖 Differential Intrinsic Firing Properties in Sustained and Transient Mouse
+αRGCs Match Their Light Response Characteristics and Persist during Retinal
+Degeneration — Werginz et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1592-24.2024` |
+| **Authors** | Paul Werginz, Viktoria Király, Guenther Zeck |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1592-24.2024` |
+| **URL** | https://www.jneurosci.org/content/45/2/e1592242024 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/summary.md) |
+
+Werginz, Kiraly, and Zeck (2024) ask whether the spike generator of mouse alpha-RGCs is itself
+tuned to each cell type downstream computational role, or whether sustained-vs-transient
+firing phenotypes arise purely from upstream synaptic circuitry. They isolate the spike
+generator pharmacologically, record from 73 wild-type and 48 rd10-degenerate alpha-RGCs across
+three subtypes (alpha-ON sustained, alpha-OFF sustained, alpha-OFF transient), and quantify
+nine spike-shape and firing-pattern features per cell.
+
+The methodology combines whole-cell current-clamp recordings (with all major synaptic
+transmission blocked) and a five-tier compartmental NEURON model. The model partitions an
+alpha-RGC into dendrites, soma, soma-AIS, AIS, and axon, each with its own densities of Nav,
+Kv, Cav, K(Ca), Ih, and leak - all calibrated to mouse rather than the historical rat/cat
+parameter sets. AIS densities are particularly high (1300 mS/cm^2 Nav, 800 mS/cm^2 Kv),
+establishing the AIS as the dominant spike-generation locus. UMAP + GMM clustering of the
+spike-feature vectors achieves an adjusted Rand index of 0.8 against the morphological
+cell-type labels.
+
+The paper finds that the three alpha-RGC types differ substantially in intrinsic spike output:
+alpha-OFF transient cells have the shortest spikes (**0.21 ms** vs **0.31 ms** for alpha-ON
+sustained), the lowest sustained-to-peak ratio (**0.32** vs **0.57**), and the highest peak
+firing rates (**346 Hz** vs **278 Hz**). The compartmental model reproduces these differences
+via small modulations of AIS Nav density and somatic leak conductance. Crucially, the same
+firing-type distinctions persist in rd10 photoreceptor-degenerated retina up to p227,
+demonstrating that alpha-RGC intrinsic properties are circuit-independent once established.
+
+For the t0078 multi-tier MOBO project, this paper is the most directly load-bearing source we
+have seen for the 49-dimensional parameter-space tier bounds. The Werginz Table 1 densities
+provide mouse-specific central tendencies for all six channels across all five compartments;
+the soma-vs-AIS ratios (17.3x Nav, 16.7x Kv) and the dendritic Ih (1.30x somatic) define the
+tier stratification structure that t0078 was designed around. The within-cell-type variance
+also provides empirical sigma values for the prior, replacing the previously assumed values
+lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of AIS Nav and
+somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
+for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
+freeing search budget for the high-leverage parameters.
+
+</details>
+
+## 2022 (1)
+
+<details>
+<summary>📖 Differences in spike generation instead of synaptic inputs determine the
+feature selectivity of two retinal cell types — Wienbar & Schwartz, 2022</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2022.04.012` |
+| **Authors** | Sophia Wienbar, Gregory William Schwartz |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2022.04.012` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(22)00357-9 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/summary.md) |
+
+Wienbar and Schwartz introduce the Bursty Suppressed-by-Contrast (bSbC) RGC of the mouse
+retina and ask why it transmits a contrast-suppression signal while the OFF sustained Alpha
+(OFFsA) RGC, which receives nearly identical synaptic input, transmits a high-rate
+sustained-contrast signal. The paper's research question is therefore explicitly about the
+contribution of cell-intrinsic spike generation machinery, rather than upstream circuitry, to
+RGC feature selectivity.
+
+The methodology combines voltage-clamp measurement of excitatory and inhibitory conductance
+traces, current-clamp recordings of spike shape, confocal imaging of the AIS labelled with
+ankyrin-G, sodium-channel pharmacology with the Nav1.6-selective blocker 49TTX, and a NEURON
+7.7 compartmental model in which the AIS is split into a proximal Nav1.2 subsegment and a
+distal Nav1.6 subsegment. The two cell types share the same dendritic and somatic architecture
+in the model, and the only systematic differences are AIS length (22 +/- 1.7 um in OFFsA vs 16
++/- 1.5 um in bSbC) and Nav1.6 fraction (~40 percent in OFFsA vs ~0 percent in bSbC).
+
+The headline finding is that the divergent contrast response functions of the two cells emerge
+from the spike generator alone. The bSbC cell's short, Nav1.2-dominated AIS is driven into
+depolarisation block by strong contrast inputs, silencing the cell, while OFFsA's longer
+Nav1.6-rich AIS sustains high firing rates under the same drive. 49TTX selectively reduces
+OFFsA spike amplitude with no effect on bSbC, confirming the Nav1.6 contribution. AIS length
+differs significantly (p = 0.018) while diameter does not (p = 0.83), localising the
+anatomical signature.
+
+For task t0078 (and the broader project) the paper matters in three ways. First, it provides a
+public, openly licensed NEURON model of a two-subsegment AIS with realistic Nav1.2/Nav1.6
+parameterisation, length 16-22 um, and diameter ~1.3 um, archived at Zenodo DOI
+10.5281/zenodo.6423531. This is the substrate that t0078 is going to port in place of the
+paywalled Werginz 2020 model. Second, it establishes that AIS heterogeneity is an empirically
+documented driver of RGC feature selectivity, not just a modelling convenience, which
+strengthens the biological-plausibility case for tiered AHP plus tiered AIS in the DSGC v2
+model. Third, it demonstrates depolarisation block as a meaningful coding mechanism, which
+means t0078's firing-rate metrics need to remain well-defined when the AIS enters block under
+strong drive.
 
 </details>
 
@@ -211,6 +319,63 @@ conductance combination that preserves somatic excitability will suffice. Active
 conductances in the DSGC (RQ4) can be evaluated against this framework, but the primary
 directional signal arrives pre-shaped by SAC compartmental computation, not generated locally
 in the DSGC dendrites.
+
+</details>
+
+## 2011 (1)
+
+<details>
+<summary>📖 Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of
+Dendritic and Perisomatic Active Properties — Hay et al., 2011</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1002107` |
+| **Authors** | Etay Hay, Sean Hill, Felix Schurmann, Henry Markram, Idan Segev |
+| **Venue** | PLoS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1002107` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md) |
+
+Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical
+pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current
+f-I behavior and the BAP-activated dendritic Ca2+ ("BAC") firing observed in adult-rat slice
+recordings. The paper's research question is whether a single conductance-based model in a
+reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell
+variability, and which channel densities and Ca2+-dynamics parameters are necessary or
+sufficient for each regime.
+
+Methodologically, the authors define 20 firing features (10 perisomatic, 10 BAC), each with an
+experimental mean and SD computed across several cells. They use multi-objective optimization
+with an elitist non-dominated sorting evolutionary algorithm — population 1000, 500
+generations, 240 to 1024 CPU cores, 2-5 days runtime — to optimize 22 free parameters. The
+free parameters are the maximal densities of nine ion channels (Nat, Nap, Kp, Kt, Kv3.1,
+Ca_HVA, Ca_LVA, SK, Im) in soma and apical compartments, plus the Ca2+ buffer parameters gamma
+and tdecay. The Ih distribution is fixed to preserve subthreshold properties. Models are
+accepted when every feature falls within 2-3 SD of the experimental mean. Mechanism kinetics
+use Hodgkin-Huxley formalism with Q10 = 2.3 and a -10 mV junction-potential shift where
+applicable.
+
+The headline result is a set of about 2000 acceptable L5b PC models published in ModelDB
+(accession 139653). Single-target fits are easier (899 BAC-only, 52 perisomatic-only) but
+typically fail the other target. Joint fits achieve every feature within 2-3 SD: e.g. BAP
+amplitude **45 +/- 10 mV** at 620 um, Ca2+ spike peak **6.73 +/- 2.54 mV**, perisomatic spike
+frequencies of **9 / 14.5 / 22.5 Hz**, AP half-width of **1.31 ms**, slow AHP depth around
+**-60 mV**. Cross-target parameter analysis identifies apical Nat and apical Kv3.1 densities
+as the dominant levers controlling BAP propagation, and shows that morphology swaps degrade
+BAC features more than perisomatic features.
+
+For this project, Hay 2011 is a direct upstream dependency of t0074 and t0078: the SK_E2 and
+CaDynamics_E2 MOD files vendored under t0074 originate here, and t0078's `tau_ca_multiplier`
+extension to CaDynamics_E2 is an additional knob on the same gamma + tdecay sub-membrane shell
+formalism defined in this paper. The cited parameter ranges (gamma in 0.0005-0.05; soma tdecay
+20-1000 ms; apical tdecay 20-200 ms) provide the prior box that t0078's MOBO should explore.
+The multi-objective + per-feature-SD scoring + Pareto-acceptable-ensemble methodology is also
+the template t0078 inherits for reporting and analyzing its own MOBO results. Citing Hay 2011
+in the t0078 substrate documentation is therefore mandatory.
 
 </details>
 
@@ -633,6 +798,64 @@ kinetics rather than adding noise to force a match. Third, the sensitivity-dynam
 trade-off means that our DSGC model cannot be validated against a single operating point — we
 must test across a realistic contrast range and verify that the model reproduces the shape of
 the sensitivity-vs-contrast curve, not just a single contrast sensitivity value.
+
+</details>
+
+## 2003 (1)
+
+<details>
+<summary>📖 The Contribution of Resurgent Sodium Current to High-Frequency Firing in
+Purkinje Neurons: An Experimental and Modeling Study — Khaliq et al., 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.23-12-04899.2003` |
+| **Authors** | Zayd M. Khaliq, Nathan W. Gouwens, Indira M. Raman |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.23-12-04899.2003` |
+| **URL** | https://www.jneurosci.org/content/23/12/4899 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/summary.md) |
+
+Khaliq, Gouwens, and Raman (2003) ask whether and how the resurgent component of NaV1.6 sodium
+current promotes high-frequency action-potential firing in cerebellar Purkinje neurons. The
+question matters because resurgent current - sodium current that flows when the channel exits
+an open-channel-block state during repolarisation - is a peculiar, structurally distinctive
+feature of NaV1.6 that had been correlated with rapid firing but never causally attributed to
+it. The authors scope is somatic firing in dissociated Purkinje cells from wild-type and
+Scn8a-med mice; they hold dendrites and synaptic input out of the analysis to focus on
+intrinsic excitability.
+
+Methodologically, the paper combines whole-cell current-clamp action-potential recordings from
+acutely dissociated Purkinje somata with voltage-clamped pharmacological isolation of seven
+non-sodium currents (Kfast, Kmid, Kslow, BK, Pca, Ih, leak) and a NEURON-based
+single-compartment model that integrates these seven currents with an explicit Raman-Bean
+state-machine model of NaV1.6 sodium current. The med phenotype - which lacks NaV1.6 and
+therefore has 90 percent reduced resurgent current - is used as a natural knockout. The model
+is validated by reproducing wild-type spontaneous firing at 27 spikes/sec (matching the 29 Hz
+experimental mean) and is then used to ask which of the changes seen in med cells (lost
+resurgent current, modified Kfast V1/2, reduced leak) actually drive the slower firing.
+
+The headline finding is that resurgent kinetics specifically and consistently accelerate
+firing. Med cells fired at 9 +/- 2 Hz spontaneously vs 35 +/- 4 Hz wild-type, and at 13 +/- 5
+vs 65 +/- 7 spikes/sec under 50 pA injection, a deficit that survived even strong current
+injection (maximum sustained rate 65 +/- 10 spikes/sec med vs 107 +/- 6 wild-type). Crucially,
+the model showed that the small Kfast V1/2 shift and reduced leak found in med cells would, if
+anything, **speed** firing \- so the observed slowdown must come from the sodium-channel
+kinetics. Replacing wild-type with med-like Na kinetics in the model slowed simulated firing
+by 19-31 percent, reproducing the experimental phenotype.
+
+For the present project this paper is the kinetic foundation of the BedB substrate
+voltage-gated channel library. The bkpkj.mod calcium-activated K channel and the NaR resurgent
+sodium mod-file vendored in t0074 trace directly to this paper Equation-1 state model and
+Table 1 parameter set. For t0078 specifically, the AIS-tiered NaR optimization treats this
+paper kinetic schemes as the fixed scaffold and varies only channel density per tier - so any
+biological plausibility argument about NaR density gradients ultimately rests on the parameter
+ranges established here. The paper 19 pF single-compartment geometry also provides a minimal
+regression-test target: vendored mod-files should reproduce ~27 Hz spontaneous firing in that
+geometry before being deployed on the multi-compartment DSGC substrate.
 
 </details>
 

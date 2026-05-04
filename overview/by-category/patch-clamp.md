@@ -4,13 +4,67 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (22)](../papers/by-category/patch-clamp.md) | [Answers
+**Detail pages**: [Papers (27)](../papers/by-category/patch-clamp.md) | [Answers
 (2)](../answers/by-category/patch-clamp.md) | [Suggestions
-(21)](../suggestions/by-category/patch-clamp.md)
+(22)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
-## Papers (22)
+## Papers (27)
+
+<details>
+<summary>📖 <strong>Differential Intrinsic Firing Properties in Sustained and
+Transient Mouse αRGCs Match Their Light Response Characteristics and
+Persist during Retinal Degeneration</strong> — Werginz et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1592-24.2024` |
+| **Authors** | Paul Werginz, Viktoria Király, Guenther Zeck |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1592-24.2024` |
+| **URL** | https://www.jneurosci.org/content/45/2/e1592242024 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/summary.md) |
+
+Werginz, Kiraly, and Zeck (2024) ask whether the spike generator of mouse alpha-RGCs is itself
+tuned to each cell type downstream computational role, or whether sustained-vs-transient
+firing phenotypes arise purely from upstream synaptic circuitry. They isolate the spike
+generator pharmacologically, record from 73 wild-type and 48 rd10-degenerate alpha-RGCs across
+three subtypes (alpha-ON sustained, alpha-OFF sustained, alpha-OFF transient), and quantify
+nine spike-shape and firing-pattern features per cell.
+
+The methodology combines whole-cell current-clamp recordings (with all major synaptic
+transmission blocked) and a five-tier compartmental NEURON model. The model partitions an
+alpha-RGC into dendrites, soma, soma-AIS, AIS, and axon, each with its own densities of Nav,
+Kv, Cav, K(Ca), Ih, and leak - all calibrated to mouse rather than the historical rat/cat
+parameter sets. AIS densities are particularly high (1300 mS/cm^2 Nav, 800 mS/cm^2 Kv),
+establishing the AIS as the dominant spike-generation locus. UMAP + GMM clustering of the
+spike-feature vectors achieves an adjusted Rand index of 0.8 against the morphological
+cell-type labels.
+
+The paper finds that the three alpha-RGC types differ substantially in intrinsic spike output:
+alpha-OFF transient cells have the shortest spikes (**0.21 ms** vs **0.31 ms** for alpha-ON
+sustained), the lowest sustained-to-peak ratio (**0.32** vs **0.57**), and the highest peak
+firing rates (**346 Hz** vs **278 Hz**). The compartmental model reproduces these differences
+via small modulations of AIS Nav density and somatic leak conductance. Crucially, the same
+firing-type distinctions persist in rd10 photoreceptor-degenerated retina up to p227,
+demonstrating that alpha-RGC intrinsic properties are circuit-independent once established.
+
+For the t0078 multi-tier MOBO project, this paper is the most directly load-bearing source we
+have seen for the 49-dimensional parameter-space tier bounds. The Werginz Table 1 densities
+provide mouse-specific central tendencies for all six channels across all five compartments;
+the soma-vs-AIS ratios (17.3x Nav, 16.7x Kv) and the dendritic Ih (1.30x somatic) define the
+tier stratification structure that t0078 was designed around. The within-cell-type variance
+also provides empirical sigma values for the prior, replacing the previously assumed values
+lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of AIS Nav and
+somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
+for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
+freeing search budget for the high-leverage parameters.
+
+</details>
 
 <details>
 <summary>📖 <strong>Voltage Clamp Errors During Estimation of Concurrent Excitatory
@@ -55,6 +109,59 @@ both passive cable attenuation and active dendritic processing. Our modelling pi
 model both: the simulated voltage-clamp block must include dendritic active channels, and we
 must expect substantially larger calibration uncertainty on distal synaptic conductance
 amplitudes than the Poleg-Polsky bounds alone would suggest.
+
+</details>
+
+<details>
+<summary>📖 <strong>Differences in spike generation instead of synaptic inputs
+determine the feature selectivity of two retinal cell types</strong> —
+Wienbar & Schwartz, 2022</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2022.04.012` |
+| **Authors** | Sophia Wienbar, Gregory William Schwartz |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2022.04.012` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(22)00357-9 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/summary.md) |
+
+Wienbar and Schwartz introduce the Bursty Suppressed-by-Contrast (bSbC) RGC of the mouse
+retina and ask why it transmits a contrast-suppression signal while the OFF sustained Alpha
+(OFFsA) RGC, which receives nearly identical synaptic input, transmits a high-rate
+sustained-contrast signal. The paper's research question is therefore explicitly about the
+contribution of cell-intrinsic spike generation machinery, rather than upstream circuitry, to
+RGC feature selectivity.
+
+The methodology combines voltage-clamp measurement of excitatory and inhibitory conductance
+traces, current-clamp recordings of spike shape, confocal imaging of the AIS labelled with
+ankyrin-G, sodium-channel pharmacology with the Nav1.6-selective blocker 49TTX, and a NEURON
+7.7 compartmental model in which the AIS is split into a proximal Nav1.2 subsegment and a
+distal Nav1.6 subsegment. The two cell types share the same dendritic and somatic architecture
+in the model, and the only systematic differences are AIS length (22 +/- 1.7 um in OFFsA vs 16
++/- 1.5 um in bSbC) and Nav1.6 fraction (~40 percent in OFFsA vs ~0 percent in bSbC).
+
+The headline finding is that the divergent contrast response functions of the two cells emerge
+from the spike generator alone. The bSbC cell's short, Nav1.2-dominated AIS is driven into
+depolarisation block by strong contrast inputs, silencing the cell, while OFFsA's longer
+Nav1.6-rich AIS sustains high firing rates under the same drive. 49TTX selectively reduces
+OFFsA spike amplitude with no effect on bSbC, confirming the Nav1.6 contribution. AIS length
+differs significantly (p = 0.018) while diameter does not (p = 0.83), localising the
+anatomical signature.
+
+For task t0078 (and the broader project) the paper matters in three ways. First, it provides a
+public, openly licensed NEURON model of a two-subsegment AIS with realistic Nav1.2/Nav1.6
+parameterisation, length 16-22 um, and diameter ~1.3 um, archived at Zenodo DOI
+10.5281/zenodo.6423531. This is the substrate that t0078 is going to port in place of the
+paywalled Werginz 2020 model. Second, it establishes that AIS heterogeneity is an empirically
+documented driver of RGC feature selectivity, not just a modelling convenience, which
+strengthens the biological-plausibility case for tiered AHP plus tiered AIS in the DSGC v2
+model. Third, it demonstrates depolarisation block as a meaningful coding mechanism, which
+means t0078's firing-rate metrics need to remain well-defined when the AIS enters block under
+strong drive.
 
 </details>
 
@@ -650,6 +757,122 @@ electrotonically collapsed input.
 </details>
 
 <details>
+<summary>📖 <strong>Dynamic Tuning of Electrical and Chemical Synaptic Transmission
+in a Network of Motion Coding Retinal Neurons</strong> — Trenholm et al.,
+2013</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.0808-13.2013` |
+| **Authors** | Stuart Trenholm, Amanda J. McLaughlin, David J. Schwab, Gautam B. Awatramani |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.0808-13.2013` |
+| **URL** | https://www.jneurosci.org/content/33/37/14927 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/summary.md) |
+
+This paper asks how a network of mouse retinal direction-selective ganglion cells (DSGCs)
+combines weak electrical coupling, chemical synapses, and intrinsic membrane properties to
+produce direction-tuned, anticipatory responses without runaway excitation. The motivation is
+that earlier work (Trenholm et al. 2013, Nat. Neurosci.) had shown that the same
+Hb9::eGFP-labelled superior- coding DSGCs perform "lag normalisation" - they detect a moving
+edge at the same retinal location regardless of speed - but the mechanistic basis for the
+asymmetric, leading-edge-skewed response underlying that computation was unknown.
+
+The methodology pairs Neurobiotin tracer-coupling, two-photon-targeted whole-cell and
+cell-attached patch-clamp from single and paired DSGCs, voltage- and current-clamp
+characterisation of gap junctions (TTX, 18-beta-glycyrrhetinic acid), receptive-field mapping
+with stationary spots and moving bars, and pharmacological dissection of GABAergic inhibition
+with picrotoxin and intrinsic gain control with preconditioning current pulses. The key design
+choice is to distinguish three mutually exclusive explanations for response skew -
+gap-junction rectification, GABAergic inhibition, intrinsic gain control - and test each
+independently.
+
+The headline findings are: (i) only Hb9+ (superior-coding) DSGCs are strongly coupled, with ~1
+nS symmetric reciprocal gap junctions and ~10 Hz low-pass filtering; (ii) gap junctions
+provide a ~50-100 um subthreshold excitatory surround that primes coincident chemical synaptic
+input, extending the effective receptive field and producing leading-edge-skewed motion
+responses (SI **1.6 +/- 0.1** vs **1.1 +/- 0.1** in uncoupled cells); (iii) the leading-edge
+skew survives picrotoxin in both preferred and null directions, ruling out GABA as the sole
+cause; (iv) preconditioning spike trains attenuate initial-response spikes by **70 +/- 6%**
+and abolish skew, with **tau ~604 ms** recovery, implicating activity-dependent intrinsic gain
+control as the dominant rectifying mechanism. Reported peak rates are **198 +/- 14 Hz**
+(preferred, control), **27 +/- 12 Hz** (null, control), and **244 +/- 18 Hz** / **202 +/- 14
+Hz** under picrotoxin.
+
+For this project, the paper is a primary literature anchor for the firing-rate target of
+Hb9::eGFP mouse DSGCs and clarifies a critical interpretation issue: the project
+domain-knowledge "30-80 Hz" preferred-direction figure most likely originates from mean /
+trial-averaged rates (consistent with Rivlin-Etzion et al. 2012's ~10 Hz), whereas this
+paper's 198 Hz preferred and 27 Hz null are peak rates from Gaussian-convolved spike trains,
+and the corresponding peak-rate DSI is 0.76. The MOBO objective for the AIS-tiered AHP task
+should explicitly state which metric (peak vs mean) it targets to avoid mixing scales. The
+paper also constrains AIS / soma model choices: a realistic Hb9 DSGC model needs slow (~600
+ms) intrinsic gain control (Na slow inactivation or Ca-activated K), spatially offset GABA
+inhibition (~52 um null-side, E_GABA near -60 mV), and weak symmetric reciprocal gap-junction
+coupling - all properties that bias which ion-channel parameter sets and AHP regimes can
+simultaneously hit the peak-rate target and the DSI target.
+
+</details>
+
+<details>
+<summary>📖 <strong>Visual Stimulation Reverses the Directional Preference of
+Direction-Selective Retinal Ganglion Cells</strong> — Rivlin-Etzion et
+al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2012.08.041` |
+| **Authors** | Michal Rivlin-Etzion, Wei Wei, Marla B. Feller |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2012.08.041` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(12)00807-0 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/summary.md) |
+
+Rivlin-Etzion, Wei, and Feller (2012, Neuron) ask whether the direction-selective response of
+mouse ON-OFF retinal ganglion cells is rigidly determined by the asymmetric SAC-DSGC wiring
+revealed by EM reconstruction, or whether it can be reshaped by recent visual experience.
+Their work targets the dominant "hardwired retina" view of direction selectivity and tests it
+directly by applying brief drifting-grating adaptation protocols and measuring whether DSGC
+preferred direction remains stable.
+
+The methodology combines two-photon-targeted loose-patch recordings from genetically labelled
+posterior-preferring ON-OFF DSGCs (DRD4-GFP and TRHR-GFP lines, P14-P88, both sexes) with
+whole-cell voltage clamp to dissect synaptic mechanisms, plus pharmacology with gabazine to
+test GABA-A involvement and L-AP4 to test ON-pathway involvement. Directional tuning is
+quantified with DSI and vector-sum metrics computed from 3 s grating responses in 12
+directions, using a pre/adaptation/post design with four adaptation protocols (P-N, Null, P-O,
+counter-phase) plus a no-stimulus control.
+
+The authors find that drifting-grating adaptation can fully reverse the PD of a substantial
+fraction of ON-OFF DSGCs (41% of 74 cells across protocols) and that this reversal is robust,
+long-lasting (persisting up to 23 min), GABA-A dependent, and mediated by a redistribution of
+asymmetric inhibition rather than by new wiring. ON-pathway crossover circuits are necessary
+for the reversal: L-AP4 blockade reduces reversal probability and reveals a delayed OFF
+response normally masked by the ON pathway. Critically, the paper reports paired DSI plus mean
+preferred-direction firing rate from the same cells: **DSI 0.78 +/- 0.19 with mean PD rate
+10.38 +/- 8.53 Hz** for stable cells (n = 8\) and **DSI 0.63 +/- 0.23 with 9.95 +/- 5.42 Hz**
+for reversed cells (n = 8), measured over the 3 s grating window.
+
+For task t0078, this paper is the primary literature anchor for revising the project's pass
+criterion from "PD rate >= 30 Hz" to "PD rate >= 10 Hz". The previously assumed 30-80 Hz mean
+PD firing rate range conflated peak rates over sub-second windows with mean rates over
+multi-second windows; this paper establishes that the mean PD firing rate of mouse ON-OFF
+DSGCs is approximately 10 Hz when measured over a 3 s window, with paired DSI of 0.78. The
+result also informs the Bayesian-optimisation utopia point used to compute hypervolume in
+t0078 and downstream model selection. A secondary implication for downstream tasks is that
+DSGC tuning is plastic on a minutes timescale, so model-fitting tasks should treat
+pre-adaptation values as the canonical target and not aggregate them with post-adaptation
+states.
+
+</details>
+
+<details>
 <summary>📖 <strong>Two distinct types of ON directionally selective ganglion cells
 in the rabbit retina</strong> — Hoshi et al., 2011</summary>
 
@@ -1074,6 +1297,63 @@ observed tuning sharpness and should be rejected on quantitative grounds.
 </details>
 
 <details>
+<summary>📖 <strong>The Contribution of Resurgent Sodium Current to High-Frequency
+Firing in Purkinje Neurons: An Experimental and Modeling Study</strong>
+— Khaliq et al., 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.23-12-04899.2003` |
+| **Authors** | Zayd M. Khaliq, Nathan W. Gouwens, Indira M. Raman |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.23-12-04899.2003` |
+| **URL** | https://www.jneurosci.org/content/23/12/4899 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/summary.md) |
+
+Khaliq, Gouwens, and Raman (2003) ask whether and how the resurgent component of NaV1.6 sodium
+current promotes high-frequency action-potential firing in cerebellar Purkinje neurons. The
+question matters because resurgent current - sodium current that flows when the channel exits
+an open-channel-block state during repolarisation - is a peculiar, structurally distinctive
+feature of NaV1.6 that had been correlated with rapid firing but never causally attributed to
+it. The authors scope is somatic firing in dissociated Purkinje cells from wild-type and
+Scn8a-med mice; they hold dendrites and synaptic input out of the analysis to focus on
+intrinsic excitability.
+
+Methodologically, the paper combines whole-cell current-clamp action-potential recordings from
+acutely dissociated Purkinje somata with voltage-clamped pharmacological isolation of seven
+non-sodium currents (Kfast, Kmid, Kslow, BK, Pca, Ih, leak) and a NEURON-based
+single-compartment model that integrates these seven currents with an explicit Raman-Bean
+state-machine model of NaV1.6 sodium current. The med phenotype - which lacks NaV1.6 and
+therefore has 90 percent reduced resurgent current - is used as a natural knockout. The model
+is validated by reproducing wild-type spontaneous firing at 27 spikes/sec (matching the 29 Hz
+experimental mean) and is then used to ask which of the changes seen in med cells (lost
+resurgent current, modified Kfast V1/2, reduced leak) actually drive the slower firing.
+
+The headline finding is that resurgent kinetics specifically and consistently accelerate
+firing. Med cells fired at 9 +/- 2 Hz spontaneously vs 35 +/- 4 Hz wild-type, and at 13 +/- 5
+vs 65 +/- 7 spikes/sec under 50 pA injection, a deficit that survived even strong current
+injection (maximum sustained rate 65 +/- 10 spikes/sec med vs 107 +/- 6 wild-type). Crucially,
+the model showed that the small Kfast V1/2 shift and reduced leak found in med cells would, if
+anything, **speed** firing \- so the observed slowdown must come from the sodium-channel
+kinetics. Replacing wild-type with med-like Na kinetics in the model slowed simulated firing
+by 19-31 percent, reproducing the experimental phenotype.
+
+For the present project this paper is the kinetic foundation of the BedB substrate
+voltage-gated channel library. The bkpkj.mod calcium-activated K channel and the NaR resurgent
+sodium mod-file vendored in t0074 trace directly to this paper Equation-1 state model and
+Table 1 parameter set. For t0078 specifically, the AIS-tiered NaR optimization treats this
+paper kinetic schemes as the fixed scaffold and varies only channel density per tier - so any
+biological plausibility argument about NaR density gradients ultimately rests on the parameter
+ranges established here. The paper 19 pF single-compartment geometry also provides a minimal
+regression-test target: vendored mod-files should reproduce ~27 Hz spontaneous firing in that
+geometry before being deployed on the multi-compartment DSGC substrate.
+
+</details>
+
+<details>
 <summary>📖 <strong>Diverse Synaptic Mechanisms Generate Direction Selectivity in
 the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
 
@@ -1123,7 +1403,7 @@ means and standard deviations.
 
 </details>
 
-## Tasks (5)
+## Tasks (6)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1132,6 +1412,7 @@ means and standard deviations.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0019 | [Literature survey: voltage-gated channels in retinal ganglion cells](../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md) | completed | 2026-04-20 13:00 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 
 ## Answers (2)
 
@@ -1185,7 +1466,28 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (17 open, 4 closed)
+## Suggestions (18 open, 4 closed)
+
+<details>
+<summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
+MOBO-on-biophysics failure mode</strong> (S-0078-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 compare_literature step found iter 81's nav16_ais collapsed to the search floor
+(1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below
+Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. AIS-to-soma Nav ratio at iter 81 was
+5.5e-5 vs Werginz 2024's measured 17.3. The optimiser found a configuration where the AIS
+contributes nothing to spike initiation, contradicting REQ-2 / REQ-3 / REQ-4's biological
+intent. This may be a generalisable MOBO-on-biophysics failure mode. Document: (a) audit t0076
++ t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
+parameters; (b) propose log-uniform priors with hard biological lower bounds as default for
+future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
+checklist of biological priors to enforce as hard constraints in future MOBO tasks.
+Recommended task types: answer-question, comparative-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Validate vendored BK/SK MOD kinetics against published RGC

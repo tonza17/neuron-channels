@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-03T12:41:25Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-04T16:24:25Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>106368</char_count>
-    <byte_count>106583</byte_count>
-    <estimated_tokens>26592</estimated_tokens>
+    <char_count>106984</char_count>
+    <byte_count>107201</byte_count>
+    <estimated_tokens>26746</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -181,9 +181,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0074_channel_tuning_width_bed_a</id>
         <id>t0076_bedb_dsi_firing_rate_mobo</id>
         <id>t0077_brainstorm_results_13</id>
+        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
-Completed tasks: 70
+Completed tasks: 71
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -604,6 +605,12 @@ ID: t0077_brainstorm_results_13
 Completed: 2026-05-03
 Short description: Thirteenth brainstorm: commission t0078 (Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP); reject 16 covered/stale suggestions; cancel t0045 (CoreNEURON benchmark superseded).
 Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strategic brainstorm, run on 2026-05-03 after t0074 (channel tuning-width sweep on Bed A) and t0076 (25-d Bed B BoTorch qNEHVI multi-objective Bayesian optimisation) both completed. The session is triggered by the t0076 headline negative result: the bare 25-d Bed B substrate cannot reach DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz simultaneously, with every Pareto cell trading off severely between the two objectives. The t0076 compare-literature analysis identified three architectural omissions that plausibly explain the trade-off: no AIS section, uniform-density channels, and absent slow-AHP machinery. Decision: commission a single bundled MOBO...
+
+## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
+ID: t0078_bedb_mobo_v2_ais_tiered_ahp
+Completed: 2026-05-04
+Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0078_bedb_mobo_v2_ais_tiered_ahp&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v2 MOBO with AIS, Tier-Stratified Channels, and Slow Kv-AHP Summary Ran a 49-d BoTorch qLogNEHVI multi-objective Bayesian optimisation on the AIS-augmented de Rosenroll 2026 Bed B DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction (PD) firing rate over 75 Sobol DoE + 416 acquisition iterations (491 total cell evaluations × 8 directions × 20 seeds = **78,560** NEURON simulations) on a Vast.ai 64-core CPU instance for **$3.93** (24.86 h total). The loop was stopped early via SIGTERM at acq 416...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -613,10 +620,9 @@ Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strate
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -637,13 +643,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
-ID: t0078_bedb_mobo_v2_ais_tiered_ahp
-Status: not_started
-Effective date: unknown
-Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

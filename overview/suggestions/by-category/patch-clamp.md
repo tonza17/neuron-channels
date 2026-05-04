@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-21 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **17
-open** (2 high, 13 medium, 2 low), **4 closed**.
+22 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **18
+open** (2 high, 14 medium, 2 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -106,6 +106,33 @@ down) to see whether the paper's ND-bias DSI -0.41 is recoverable by a spatial r
 at the soma. Distinct from S-0048-01 which scans GABA at exptype = 2 across a gNMDA sweep
 without SEClamp; this task uses SEClamp modality at single gNMDA. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
+MOBO-on-biophysics failure mode</strong> (S-0078-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0078-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-04 |
+| **Source task** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.1592-24.2024`](../../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../../meta/categories/patch-clamp/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0078 compare_literature step found iter 81's nav16_ais collapsed to the search floor
+(1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below
+Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. AIS-to-soma Nav ratio at iter 81 was
+5.5e-5 vs Werginz 2024's measured 17.3. The optimiser found a configuration where the AIS
+contributes nothing to spike initiation, contradicting REQ-2 / REQ-3 / REQ-4's biological
+intent. This may be a generalisable MOBO-on-biophysics failure mode. Document: (a) audit t0076
++ t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
+parameters; (b) propose log-uniform priors with hard biological lower bounds as default for
+future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
+checklist of biological priors to enforce as hard constraints in future MOBO tasks.
+Recommended task types: answer-question, comparative-analysis.
 
 </details>
 

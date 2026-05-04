@@ -4,16 +4,16 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (38)](../papers/by-category/direction-selectivity.md) | [Answers
+**Detail pages**: [Papers (40)](../papers/by-category/direction-selectivity.md) | [Answers
 (13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(199)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(206)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(13)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(14)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
-## Papers (38)
+## Papers (40)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -1203,6 +1203,122 @@ electrotonically collapsed input.
 </details>
 
 <details>
+<summary>📖 <strong>Dynamic Tuning of Electrical and Chemical Synaptic Transmission
+in a Network of Motion Coding Retinal Neurons</strong> — Trenholm et al.,
+2013</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.0808-13.2013` |
+| **Authors** | Stuart Trenholm, Amanda J. McLaughlin, David J. Schwab, Gautam B. Awatramani |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.0808-13.2013` |
+| **URL** | https://www.jneurosci.org/content/33/37/14927 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/summary.md) |
+
+This paper asks how a network of mouse retinal direction-selective ganglion cells (DSGCs)
+combines weak electrical coupling, chemical synapses, and intrinsic membrane properties to
+produce direction-tuned, anticipatory responses without runaway excitation. The motivation is
+that earlier work (Trenholm et al. 2013, Nat. Neurosci.) had shown that the same
+Hb9::eGFP-labelled superior- coding DSGCs perform "lag normalisation" - they detect a moving
+edge at the same retinal location regardless of speed - but the mechanistic basis for the
+asymmetric, leading-edge-skewed response underlying that computation was unknown.
+
+The methodology pairs Neurobiotin tracer-coupling, two-photon-targeted whole-cell and
+cell-attached patch-clamp from single and paired DSGCs, voltage- and current-clamp
+characterisation of gap junctions (TTX, 18-beta-glycyrrhetinic acid), receptive-field mapping
+with stationary spots and moving bars, and pharmacological dissection of GABAergic inhibition
+with picrotoxin and intrinsic gain control with preconditioning current pulses. The key design
+choice is to distinguish three mutually exclusive explanations for response skew -
+gap-junction rectification, GABAergic inhibition, intrinsic gain control - and test each
+independently.
+
+The headline findings are: (i) only Hb9+ (superior-coding) DSGCs are strongly coupled, with ~1
+nS symmetric reciprocal gap junctions and ~10 Hz low-pass filtering; (ii) gap junctions
+provide a ~50-100 um subthreshold excitatory surround that primes coincident chemical synaptic
+input, extending the effective receptive field and producing leading-edge-skewed motion
+responses (SI **1.6 +/- 0.1** vs **1.1 +/- 0.1** in uncoupled cells); (iii) the leading-edge
+skew survives picrotoxin in both preferred and null directions, ruling out GABA as the sole
+cause; (iv) preconditioning spike trains attenuate initial-response spikes by **70 +/- 6%**
+and abolish skew, with **tau ~604 ms** recovery, implicating activity-dependent intrinsic gain
+control as the dominant rectifying mechanism. Reported peak rates are **198 +/- 14 Hz**
+(preferred, control), **27 +/- 12 Hz** (null, control), and **244 +/- 18 Hz** / **202 +/- 14
+Hz** under picrotoxin.
+
+For this project, the paper is a primary literature anchor for the firing-rate target of
+Hb9::eGFP mouse DSGCs and clarifies a critical interpretation issue: the project
+domain-knowledge "30-80 Hz" preferred-direction figure most likely originates from mean /
+trial-averaged rates (consistent with Rivlin-Etzion et al. 2012's ~10 Hz), whereas this
+paper's 198 Hz preferred and 27 Hz null are peak rates from Gaussian-convolved spike trains,
+and the corresponding peak-rate DSI is 0.76. The MOBO objective for the AIS-tiered AHP task
+should explicitly state which metric (peak vs mean) it targets to avoid mixing scales. The
+paper also constrains AIS / soma model choices: a realistic Hb9 DSGC model needs slow (~600
+ms) intrinsic gain control (Na slow inactivation or Ca-activated K), spatially offset GABA
+inhibition (~52 um null-side, E_GABA near -60 mV), and weak symmetric reciprocal gap-junction
+coupling - all properties that bias which ion-channel parameter sets and AHP regimes can
+simultaneously hit the peak-rate target and the DSI target.
+
+</details>
+
+<details>
+<summary>📖 <strong>Visual Stimulation Reverses the Directional Preference of
+Direction-Selective Retinal Ganglion Cells</strong> — Rivlin-Etzion et
+al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2012.08.041` |
+| **Authors** | Michal Rivlin-Etzion, Wei Wei, Marla B. Feller |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2012.08.041` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(12)00807-0 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/summary.md) |
+
+Rivlin-Etzion, Wei, and Feller (2012, Neuron) ask whether the direction-selective response of
+mouse ON-OFF retinal ganglion cells is rigidly determined by the asymmetric SAC-DSGC wiring
+revealed by EM reconstruction, or whether it can be reshaped by recent visual experience.
+Their work targets the dominant "hardwired retina" view of direction selectivity and tests it
+directly by applying brief drifting-grating adaptation protocols and measuring whether DSGC
+preferred direction remains stable.
+
+The methodology combines two-photon-targeted loose-patch recordings from genetically labelled
+posterior-preferring ON-OFF DSGCs (DRD4-GFP and TRHR-GFP lines, P14-P88, both sexes) with
+whole-cell voltage clamp to dissect synaptic mechanisms, plus pharmacology with gabazine to
+test GABA-A involvement and L-AP4 to test ON-pathway involvement. Directional tuning is
+quantified with DSI and vector-sum metrics computed from 3 s grating responses in 12
+directions, using a pre/adaptation/post design with four adaptation protocols (P-N, Null, P-O,
+counter-phase) plus a no-stimulus control.
+
+The authors find that drifting-grating adaptation can fully reverse the PD of a substantial
+fraction of ON-OFF DSGCs (41% of 74 cells across protocols) and that this reversal is robust,
+long-lasting (persisting up to 23 min), GABA-A dependent, and mediated by a redistribution of
+asymmetric inhibition rather than by new wiring. ON-pathway crossover circuits are necessary
+for the reversal: L-AP4 blockade reduces reversal probability and reveals a delayed OFF
+response normally masked by the ON pathway. Critically, the paper reports paired DSI plus mean
+preferred-direction firing rate from the same cells: **DSI 0.78 +/- 0.19 with mean PD rate
+10.38 +/- 8.53 Hz** for stable cells (n = 8\) and **DSI 0.63 +/- 0.23 with 9.95 +/- 5.42 Hz**
+for reversed cells (n = 8), measured over the 3 s grating window.
+
+For task t0078, this paper is the primary literature anchor for revising the project's pass
+criterion from "PD rate >= 30 Hz" to "PD rate >= 10 Hz". The previously assumed 30-80 Hz mean
+PD firing rate range conflated peak rates over sub-second windows with mean rates over
+multi-second windows; this paper establishes that the mean PD firing rate of mouse ON-OFF
+DSGCs is approximately 10 Hz when measured over a 3 s window, with paired DSI of 0.78. The
+result also informs the Bayesian-optimisation utopia point used to compute hypervolume in
+t0078 and downstream model selection. A secondary implication for downstream tasks is that
+DSGC tuning is plastic on a minutes timescale, so model-fitting tasks should treat
+pre-adaptation values as the canonical target and not aggregate them with post-adaptation
+states.
+
+</details>
+
+<details>
 <summary>📖 <strong>Direction selectivity in the retina: symmetry and asymmetry in
 structure and function</strong> — Vaney et al., 2012</summary>
 
@@ -2000,7 +2116,7 @@ simulation.
 
 </details>
 
-## Tasks (7)
+## Tasks (8)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2011,6 +2127,7 @@ simulation.
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0018 | [Literature survey: synaptic integration in RGC-adjacent systems](../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md) | completed | 2026-04-20 12:15 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 
 ## Answers (13)
 
@@ -2297,7 +2414,157 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (176 open, 23 closed)
+## Suggestions (183 open, 23 closed)
+
+<details>
+<summary>🧪 <strong>Add dendritic-spike machinery to AIS-augmented Bed B and
+re-optimise with NSGA-II under an AIS Nav lower-bound prior</strong>
+(S-0078-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
+(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
+109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
+densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
+back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
+at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
+81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
+64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
+at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
+Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
+on the AIS-augmented 49-d Bed B substrate</strong> (S-0078-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Closes the t0078 deferred REQ-16. The compare_literature step flagged a substrate regression:
+iter 81 on the augmented substrate produces DSI 0.316 vs t0076 iter-424's DSI 0.42 at
+comparable PD rate, but no t0076 parameter vector was ever evaluated on the augmented
+substrate. Without this check we cannot disentangle (a) substrate regression of high-rail DSI
+from (b) qLogNEHVI 49-d exploration not finding t0076's best-joint operating point in 491
+cells. Cheap: 1 cell x 8 dirs x 20 seeds at TSTOP_MS 1400 is ~50 s on local CPU. Re-run
+_worker_run_trial with the t0076 iter-424 vector extended to 49-d (tier-stratified channels at
+uniform t0076-matching values, AIS Nav at Kole prior centre 0.375 S/cm^2, AIS geometry at
+midpoint, tau_ca_multiplier=1). Pass criterion: reproduce DSI within +/- 0.05 of t0076's 0.42
+at PD ~ 8.34 Hz, or document substrate regression delta. Cost: < $0.05 local CPU or
+$0.05-$0.10 Vast.ai. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
+from [1, 20x] to [1, 200x] to test the slow-Kv AHP regime</strong>
+(S-0078-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 high-DSI rail's PD ceiling at 2.86 Hz held flat across 109 acquisitions despite
+optimiser exploration, the signature of a saturated negative-feedback loop. The 20x upper
+bound corresponds to tau_ca ~ 100 ms; Larsson 2013 reports mammalian sAHP decay on the 1-3 s
+timescale, equivalent to multiplier values of ~ 100-300x. The originally-proposed [1, 200x]
+bound was reduced to [1, 20x] by researcher decision pre-launch as a simulation-budget safety
+margin. Hypothesis: at multiplier > 20x the slow-Kv regime engages and may (a) free the PD
+ceiling on the high-DSI rail or (b) not change behaviour (confirming saturation is
+mechanistic, not parametric). Bundle with S-0078-01 if NSGA-II is run, or run as a focused
+5-cell re-evaluation of t0078 high-DSI Pareto cells (iter 290, 283, 442, 371, 380) with
+multiplier expanded to 200x. Cost: $0.20-$0.50 focused or rolled into S-0078-01. Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Single-objective scalarised BO comparison on the 49-d Bed B
+substrate (qLogNEI with DSI - lambda x max(0, 10 - PD))</strong>
+(S-0078-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Methodological comparison motivated by the t0078 Pareto-front geometry. The 17 t0078 Pareto
+cells exhibit a clean monotonic concave-down DSI-vs-PD trade-off with no obvious knee,
+suggesting cells lie on a 1-D manifold in 49-d parameter space. If true, scalarised
+single-objective BO using qLogNoisyExpectedImprovement with `DSI - lambda x max(0, 10 -
+PD_rate)` and lambda in [0.001, 0.01, 0.1, 1.0] could explore the same Pareto coverage at
+O(N^2) instead of O(N^3) and complete 700 acquisitions within the $4 envelope. Run lambda scan
+as 4 independent BO chains of 175 acquisitions each (total 700 cells) on the existing 49-d
+substrate. Pass criterion: union of the 4 single-objective fronts achieves HV >= 11.41
+(matching t0078) and ideally HV > 12.62 (1.5x rule-out). Document whether the scalarised front
+crosses the joint pass criterion that t0078 missed. Cost: $1.00-$2.00 on Vast.ai 64-core CPU.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
+closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
+(S-0078-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
+library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
+PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
+document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
+cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
+substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
+compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
+PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
+recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
+Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
+one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
+trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
+independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
+per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
+quantifies the BO methodology's contribution to apparent improvement vs the architectural
+contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
+bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
+t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
+experiment-run, evaluation.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0078 BoTorch qLogNEHVI + 49-d AIS-augmented
+substrate harness into a reusable dsgc_mobo_v2 library asset</strong>
+(S-0078-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Builds on t0076's S-0076-06 (dsgc_mobo library promotion) which targets the t0076 25-d
+harness. t0078 added approximately 1,300 LOC of net new optimisation infrastructure:
+qLogNoisyExpectedHypervolumeImprovement migration, Normalize(d=49) input transform,
+ProcessPoolExecutor with NEURON-fresh-subprocess workers, AIS-extended substrate builder
+(extend_with_ais.py / build_cell_ais.py), 5-tier channel stratification engine, slow-AHP MOD
+vendoring (skahpt78.mod with tau_ca_multiplier PARAMETER), checkpointing every 10 cells,
+plot_pareto.py with --skip-deep-dives, render_pdf.py. Promote into a substrate-agnostic
+library that supports either qLogNEHVI (BoTorch) or NSGA-II (pymoo) optimisers behind a
+unified ParameterSpec API, parameterised compartment-tier definitions, and Vast.ai launch
+helper. Bundles with S-0076-06; this is the v2 follow-up. Cost estimate: zero compute
+(refactor only). Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per

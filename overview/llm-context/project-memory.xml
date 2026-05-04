@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-03T12:41:25Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-04T16:24:25Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>162971</char_count>
-    <byte_count>163237</byte_count>
-    <estimated_tokens>40742</estimated_tokens>
+    <char_count>165737</char_count>
+    <byte_count>166003</byte_count>
+    <estimated_tokens>41434</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -186,9 +186,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0074_channel_tuning_width_bed_a</id>
         <id>t0076_bedb_dsi_firing_rate_mobo</id>
         <id>t0077_brainstorm_results_13</id>
+        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
-Completed tasks: 70
+Completed tasks: 71
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -609,6 +610,12 @@ ID: t0077_brainstorm_results_13
 Completed: 2026-05-03
 Short description: Thirteenth brainstorm: commission t0078 (Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP); reject 16 covered/stale suggestions; cancel t0045 (CoreNEURON benchmark superseded).
 Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strategic brainstorm, run on 2026-05-03 after t0074 (channel tuning-width sweep on Bed A) and t0076 (25-d Bed B BoTorch qNEHVI multi-objective Bayesian optimisation) both completed. The session is triggered by the t0076 headline negative result: the bare 25-d Bed B substrate cannot reach DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz simultaneously, with every Pareto cell trading off severely between the two objectives. The t0076 compare-literature analysis identified three architectural omissions that plausibly explain the trade-off: no AIS section, uniform-density channels, and absent slow-AHP machinery. Decision: commission a single bundled MOBO...
+
+## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
+ID: t0078_bedb_mobo_v2_ais_tiered_ahp
+Completed: 2026-05-04
+Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0078_bedb_mobo_v2_ais_tiered_ahp&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v2 MOBO with AIS, Tier-Stratified Channels, and Slow Kv-AHP Summary Ran a 49-d BoTorch qLogNEHVI multi-objective Bayesian optimisation on the AIS-augmented de Rosenroll 2026 Bed B DSGC compartmental model in NEURON, jointly maximising direction selectivity index (DSI) and preferred-direction (PD) firing rate over 75 Sobol DoE + 416 acquisition iterations (491 total cell evaluations × 8 directions × 20 seeds = **78,560** NEURON simulations) on a Vast.ai 64-core CPU instance for **$3.93** (24.86 h total). The loop was stopped early via SIGTERM at acq 416...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -618,10 +625,9 @@ Result summary: Results Summary: Brainstorm Session 13 Summary Thirteenth strate
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -642,13 +648,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
-ID: t0078_bedb_mobo_v2_ais_tiered_ahp
-Status: not_started
-Effective date: unknown
-Short description: Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI &gt;= 0.4 AND PD rate &gt;= 30 Hz, or rule out.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0069_t0067_ais_localised_channel_sweep, t0076_bedb_dsi_firing_rate_mobo
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -993,6 +992,13 @@ t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With 
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1523_JNEUROSCI.1592-24.2024</id>
+        <id>no-doi_Ament2023_logei-bo</id>
+        <id>10.1016_j.neuron.2022.04.012</id>
+        <id>10.1523_JNEUROSCI.0808-13.2013</id>
+        <id>10.1016_j.neuron.2012.08.041</id>
+        <id>10.1371_journal.pcbi.1002107</id>
+        <id>10.1523_JNEUROSCI.23-12-04899.2003</id>
         <id>10.1038_s41467-024-46234-7</id>
         <id>10.1017_S0952523823000019</id>
         <id>10.7554_eLife.81533</id>
@@ -1006,16 +1012,58 @@ t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With 
         <id>10.1371_journal.pcbi.1000877</id>
         <id>10.1371_journal.pbio.0050185</id>
         <id>10.1017_S0952523804214109</id>
-        <id>10.1038_12194</id>
-        <id>10.1523_JNEUROSCI.17-16-06023.1997</id>
-        <id>10.1038_s41467-026-70288-4</id>
-        <id>10.1016_j.celrep.2025.116833</id>
-        <id>10.1016_j.neuroscience.2021.08.024</id>
-        <id>10.1126_sciadv.abb6642</id>
-        <id>10.1016_j.neuron.2018.05.028</id>
       </source_ids>
       <content>
 Papers: 20
+
+## Differential Intrinsic Firing Properties in Sustained and Transient Mouse αRGCs Match Their Light Response Characteristics and Persist during Retinal Degeneration
+ID: 10.1523_JNEUROSCI.1592-24.2024
+Year: 2024
+Authors: Paul Werginz, Viktoria Király, Guenther Zeck
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Werginz, Kiraly, and Zeck (2024) ask whether the spike generator of mouse alpha-RGCs is itself tuned to each cell type downstream computational role, or whether sustained-vs-transient firing phenotypes arise purely from upstream synaptic circuitry. They isolate the spike generator pharmacologically, record from 73 wild-type and 48 rd10-degenerate alpha-RGCs across three subtypes (alpha-ON sustained, alpha-OFF sustained, alpha-OFF transient), and quantify nine spike-shape and firing-pattern features per cell. The methodology combines whole-cell...
+
+## Unexpected Improvements to Expected Improvement for Bayesian Optimization
+ID: no-doi_Ament2023_logei-bo
+Year: 2023
+Authors: Sebastian Ament, Samuel Daulton, David Eriksson, Maximilian Balandat
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+This paper identifies and corrects a numerical pathology that has silently degraded the entire Expected Improvement family of BO acquisition functions for over two decades. The authors prove (Theorem 1) that as a BO algorithm closes the optimality gap and the GP posterior becomes informative, EI&#x27;s argument `(mu - y*)/sigma` falls into a regime where naive floating-point implementations evaluate to exactly zero across most of the search space. Once the value is zero, the gradient is zero, so multi-start gradient-based optimizers — the standard practice in...
+
+## Differences in spike generation instead of synaptic inputs determine the feature selectivity of two retinal cell types
+ID: 10.1016_j.neuron.2022.04.012
+Year: 2022
+Authors: Sophia Wienbar, Gregory William Schwartz
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Wienbar and Schwartz introduce the Bursty Suppressed-by-Contrast (bSbC) RGC of the mouse retina and ask why it transmits a contrast-suppression signal while the OFF sustained Alpha (OFFsA) RGC, which receives nearly identical synaptic input, transmits a high-rate sustained-contrast signal. The paper&#x27;s research question is therefore explicitly about the contribution of cell-intrinsic spike generation machinery, rather than upstream circuitry, to RGC feature selectivity. The methodology combines voltage-clamp measurement of excitatory and inhibitory...
+
+## Dynamic Tuning of Electrical and Chemical Synaptic Transmission in a Network of Motion Coding Retinal Neurons
+ID: 10.1523_JNEUROSCI.0808-13.2013
+Year: 2013
+Authors: Stuart Trenholm, Amanda J. McLaughlin, David J. Schwab, Gautam B. Awatramani
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+This paper asks how a network of mouse retinal direction-selective ganglion cells (DSGCs) combines weak electrical coupling, chemical synapses, and intrinsic membrane properties to produce direction-tuned, anticipatory responses without runaway excitation. The motivation is that earlier work (Trenholm et al. 2013, Nat. Neurosci.) had shown that the same Hb9::eGFP-labelled superior- coding DSGCs perform &quot;lag normalisation&quot; - they detect a moving edge at the same retinal location regardless of speed - but the mechanistic basis for the asymmetric...
+
+## Visual Stimulation Reverses the Directional Preference of Direction-Selective Retinal Ganglion Cells
+ID: 10.1016_j.neuron.2012.08.041
+Year: 2012
+Authors: Michal Rivlin-Etzion, Wei Wei, Marla B. Feller
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Rivlin-Etzion, Wei, and Feller (2012, Neuron) ask whether the direction-selective response of mouse ON-OFF retinal ganglion cells is rigidly determined by the asymmetric SAC-DSGC wiring revealed by EM reconstruction, or whether it can be reshaped by recent visual experience. Their work targets the dominant &quot;hardwired retina&quot; view of direction selectivity and tests it directly by applying brief drifting-grating adaptation protocols and measuring whether DSGC preferred direction remains stable. The methodology combines two-photon-targeted loose-patch...
+
+## Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and Perisomatic Active Properties
+ID: 10.1371_journal.pcbi.1002107
+Year: 2011
+Authors: Etay Hay, Sean Hill, Felix Schurmann, Henry Markram
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current f-I behavior and the BAP-activated dendritic Ca2+ (&quot;BAC&quot;) firing observed in adult-rat slice recordings. The paper&#x27;s research question is whether a single conductance-based model in a reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell variability, and which channel densities and Ca2+-dynamics parameters are necessary or sufficient...
+
+## The Contribution of Resurgent Sodium Current to High-Frequency Firing in Purkinje Neurons: An Experimental and Modeling Study
+ID: 10.1523_JNEUROSCI.23-12-04899.2003
+Year: 2003
+Authors: Zayd M. Khaliq, Nathan W. Gouwens, Indira M. Raman
+Added by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Khaliq, Gouwens, and Raman (2003) ask whether and how the resurgent component of NaV1.6 sodium current promotes high-frequency action-potential firing in cerebellar Purkinje neurons. The question matters because resurgent current - sodium current that flows when the channel exits an open-channel-block state during repolarisation - is a peculiar, structurally distinctive feature of NaV1.6 that had been correlated with rapid firing but never causally attributed to it. The authors scope is somatic firing in dissociated Purkinje cells from wild-type and...
 
 ## Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic computation of mouse starburst amacrine cells
 ID: 10.1038_s41467-024-46234-7
@@ -1107,55 +1155,6 @@ Year: 2004
 Authors: John J. Tukker, W. Rowland Taylor, Robert G. Smith
 Added by task: t0027_literature_survey_morphology_ds_modeling
 Tukker, Taylor, and Smith address a specific puzzle raised by Euler et al. (2002): SBAC dendritic tips show direction-selective calcium signals even with GABAa/c blocked, so where does the DS come from? The authors hypothesize that the answer is geometry. Their scope is a passive, excitatory-only SBAC with realistic or parameterizable morphology; their motivation is that the SBAC is the dominant source of directional inhibition onto DSGCs, so explaining SBAC DS bounds the morphology-to-DSGC mapping. The method is a full Neuron-C compartmental simulation...
-
-## Dendritic asymmetry cannot account for directional responses of neurons in visual cortex
-ID: 10.1038_12194
-Year: 1999
-Authors: J. C. Anderson, T. Binzegger, O. Kahana, K. A. C. Martin
-Added by task: t0027_literature_survey_morphology_ds_modeling
-Anderson, Binzegger, Kahana, Martin and Segev set out to test, experimentally and computationally, Livingstone’s 1998 hypothesis that the direction selectivity of neurons in primary visual cortex arises from tangential asymmetries of the basal dendritic tree acting as a delay line. The question is central to any theory that links neuronal morphology to direction-selective computation, because it asks whether the SAC/DSGC morphology-causal story generalizes to neocortex. Their method has two prongs. Experimentally, they combine in-vivo extracellular and...
-
-## Dendritic Computation of Direction Selectivity and Gain Control in Visual Interneurons
-ID: 10.1523_JNEUROSCI.17-16-06023.1997
-Year: 1997
-Authors: Sandra Single, Juergen Haag, Alexander Borst
-Added by task: t0027_literature_survey_morphology_ds_modeling
-Single, Haag, and Borst (1997) address one of the oldest questions in invertebrate visual neuroscience: where, along the chain from photoreceptor to wide-field motion-sensitive cell, is direction selectivity generated? The prevailing assumption had been that the elementary motion detectors (EMDs) feeding lobula plate tangential cells were themselves strongly direction-tuned and that the large LPTC dendrite served primarily as a spatial integrator. The authors set out to test this assumption directly by combining pharmacology with a biophysically grounded...
-
-## Machine learning discovers numerous new computational principles underlying direction selectivity in the retina
-ID: 10.1038_s41467-026-70288-4
-Year: 2026
-Authors: Alon Poleg-Polsky
-Added by task: t0010_hunt_missed_dsgc_models
-Poleg-Polsky uses a machine-learning parameter search over a 352-segment biophysical model of a mouse ON-OFF DSGC to enumerate mechanisms that can produce direction selectivity. The search space includes bipolar-cell input geometry, synaptic kinetics, NMDA receptor placement and strength, dendritic voltage-gated channel densities, and the presence or absence of SAC-derived inhibition. Thousands of candidate configurations are simulated under standardised moving-bar stimuli and scored on DSI. The search reveals that many qualitatively different mechanisms...
-
-## Uncovering the “hidden” synaptic microarchitecture of the retinal direction selective circuit
-ID: 10.1016_j.celrep.2025.116833
-Year: 2026
-Authors: Geoff deRosenroll, Santhosh Sethuramanujam, Gautam B. Awatramani
-Added by task: t0010_hunt_missed_dsgc_models
-This paper addresses how starburst amacrine cells shape direction selectivity in ON-OFF DSGCs at the subcellular scale, focusing on the differential release of GABA and ACh. The authors combine two-photon Ca2+ imaging of local DSGC dendritic subunits with a biophysically detailed NEURON network model that explicitly represents the anatomical offset between SAC-GABA and SAC-ACh synapses onto the DSGC. Using acetylcholinesterase blockade, they perturb ACh dynamics while preserving the global excitation/inhibition balance across the dendritic tree...
-
-## Voltage Clamp Errors During Estimation of Concurrent Excitatory and Inhibitory Synaptic Input to Neurons with Dendrites
-ID: 10.1016_j.neuroscience.2021.08.024
-Year: 2022
-Authors: Minh-Son To, Suraj Honnuraiah, Greg J. Stuart
-Added by task: t0017_literature_survey_patch_clamp
-To, Honnuraiah, and Stuart address a direct extension of the Poleg-Polsky and Diamond 2011 analysis: how much additional voltage-clamp error is introduced by active dendritic voltage-gated channels, which are present in every real neuron and absent from the passive-dendrite 2011 simulations? Using detailed NEURON compartmental models with realistic reconstructed morphologies and distributed voltage-gated Na+ and K+ channels, they run the standard multi-holding-potential E/I decomposition protocol and compare the recovered conductance waveforms against...
-
-## Tailoring of the axon initial segment shapes the conversion of synaptic inputs into spiking output in OFF-alpha T retinal ganglion cells
-ID: 10.1126_sciadv.abb6642
-Year: 2020
-Authors: Paul Werginz, Vineeth Raghuram, Shelley I. Fried
-Added by task: t0017_literature_survey_patch_clamp
-Werginz, Raghuram, and Fried investigate how intrinsic biophysics downstream of the dendrites shapes the spike output of OFF-alpha transient retinal ganglion cells. Their hypothesis is that the AIS is specialised to match the synaptic input that each cell type receives. Using a combined experimental and computational approach (patch-clamp current-clamp recordings, Nav1.6 and ankyrin-G immunohistochemistry, and NEURON compartmental modelling) they show that AIS morphology and sodium channel density are the primary determinants of maximum firing rate and...
-
-## A Viral Receptor Complementation Strategy to Overcome CAV-2 Tropism for Efficient Retrograde Targeting of Neurons
-ID: 10.1016_j.neuron.2018.05.028
-Year: 2018
-Authors: Shu-Jing Li, Alexander Vaughan, James Fitzhugh Sturgill, Adam Kepecs
-Added by task: t0013_resolve_morphology_provenance
-Li, Vaughan, Sturgill, and Kepecs (2018) report a receptor-complementation strategy that enables canine adenovirus type-2 (CAV-2) to retrogradely infect neurons that lack its natural receptor, the coxsackievirus and adenovirus receptor (CAR). Their motivating question is methodological: how can neuroscientists access all neurons projecting to a target region when the standard retrograde virus misses CAR-negative cell types? The scope is brain-wide retrograde tracing in rodents, with the basolateral-amygdala-to-medial-prefrontal-cortex projection named as...
       </content>
     </section>
     <section id="datasets" source_kind="aggregator">
@@ -1212,9 +1211,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>minimal_dsgc_tonic_gaba_sweep</id>
         <id>minimal_dsgc_bar_locked_gaba_ampa_sweep</id>
         <id>dsgc_active_channel_pack</id>
+        <id>de_rosenroll_2026_dsgc_ais</id>
       </source_ids>
       <content>
-Libraries: 14
+Libraries: 15
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1313,6 +1313,13 @@ Version: 0.1.0
 Created by task: t0074_channel_tuning_width_bed_a
 Module paths: tasks\t0074_channel_tuning_width_bed_a\code\mods\nav16t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\napt74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\nart74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv3t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv4t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\bk74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\sk74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\kv7t74.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\cadecay.mod, tasks\t0074_channel_tuning_width_bed_a\code\mods\mod_func.c, tasks\t0074_channel_tuning_width_bed_a\code\dsgc_model_t74.hoc, tasks\t0074_channel_tuning_width_bed_a\code\run_nrnivmodl.cmd
 This library packages every NEURON-side artefact required to run active-conductance sweeps on the deposited Poleg-Polsky DSGC. It bundles eight ion-channel MODs (five forked from t0067 with SUFFIX renames, three new for BK / SK / Kv7), a calcium-pool MOD reused from t0024, a forked HOC procedure that un-zeroes the latent CaT and CaL conductances, a Windows compile script, and the registration C file that wires all...
+
+## De Rosenroll 2026 DSGC with AIS
+ID: de_rosenroll_2026_dsgc_ais
+Version: 0.1.0
+Created by task: t0078_bedb_mobo_v2_ais_tiered_ahp
+Module paths: tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\build_cell_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\extend_with_ais.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\apply_params.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\constants.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\paths.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\bootstrap.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\parametric_placer.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_helpers.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\trial_driver.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\recorder.py, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skahpt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nav16t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\napt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\nart78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kdrt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv3t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv4t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\kv7t78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\iht78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\calt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\catt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\bkt78.mod, tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\code\mods\skt78.mod
+This library is the AIS-augmented Bed B DSGC substrate that t0078 uses as the search space for a multi-objective Bayesian optimisation over channel densities, slow-AHP kinetics, and synaptic placement. It forks the t0024 `de_rosenroll_2026_dsgc` library and attaches a two-subsegment AIS with the appropriate channel set per the Van Wart / Werginz / Kole biological priors; it stratifies five channels across five...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">

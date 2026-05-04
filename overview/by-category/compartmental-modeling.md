@@ -4,16 +4,16 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (27)](../papers/by-category/compartmental-modeling.md) | [Answers
+**Detail pages**: [Papers (31)](../papers/by-category/compartmental-modeling.md) | [Answers
 (14)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(225)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(233)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
-(12)](../libraries/by-category/compartmental-modeling.md) | [Predictions
+(13)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
 
 ---
 
-## Papers (27)
+## Papers (31)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -106,6 +106,60 @@ script, MOD files, and a HOC geometry that should be amenable to an automated po
 PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
 cited from the abstract should be re-verified once a human reviewer retrieves the article
 manually.
+
+</details>
+
+<details>
+<summary>📖 <strong>Differential Intrinsic Firing Properties in Sustained and
+Transient Mouse αRGCs Match Their Light Response Characteristics and
+Persist during Retinal Degeneration</strong> — Werginz et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1592-24.2024` |
+| **Authors** | Paul Werginz, Viktoria Király, Guenther Zeck |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1592-24.2024` |
+| **URL** | https://www.jneurosci.org/content/45/2/e1592242024 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/summary.md) |
+
+Werginz, Kiraly, and Zeck (2024) ask whether the spike generator of mouse alpha-RGCs is itself
+tuned to each cell type downstream computational role, or whether sustained-vs-transient
+firing phenotypes arise purely from upstream synaptic circuitry. They isolate the spike
+generator pharmacologically, record from 73 wild-type and 48 rd10-degenerate alpha-RGCs across
+three subtypes (alpha-ON sustained, alpha-OFF sustained, alpha-OFF transient), and quantify
+nine spike-shape and firing-pattern features per cell.
+
+The methodology combines whole-cell current-clamp recordings (with all major synaptic
+transmission blocked) and a five-tier compartmental NEURON model. The model partitions an
+alpha-RGC into dendrites, soma, soma-AIS, AIS, and axon, each with its own densities of Nav,
+Kv, Cav, K(Ca), Ih, and leak - all calibrated to mouse rather than the historical rat/cat
+parameter sets. AIS densities are particularly high (1300 mS/cm^2 Nav, 800 mS/cm^2 Kv),
+establishing the AIS as the dominant spike-generation locus. UMAP + GMM clustering of the
+spike-feature vectors achieves an adjusted Rand index of 0.8 against the morphological
+cell-type labels.
+
+The paper finds that the three alpha-RGC types differ substantially in intrinsic spike output:
+alpha-OFF transient cells have the shortest spikes (**0.21 ms** vs **0.31 ms** for alpha-ON
+sustained), the lowest sustained-to-peak ratio (**0.32** vs **0.57**), and the highest peak
+firing rates (**346 Hz** vs **278 Hz**). The compartmental model reproduces these differences
+via small modulations of AIS Nav density and somatic leak conductance. Crucially, the same
+firing-type distinctions persist in rd10 photoreceptor-degenerated retina up to p227,
+demonstrating that alpha-RGC intrinsic properties are circuit-independent once established.
+
+For the t0078 multi-tier MOBO project, this paper is the most directly load-bearing source we
+have seen for the 49-dimensional parameter-space tier bounds. The Werginz Table 1 densities
+provide mouse-specific central tendencies for all six channels across all five compartments;
+the soma-vs-AIS ratios (17.3x Nav, 16.7x Kv) and the dendritic Ih (1.30x somatic) define the
+tier stratification structure that t0078 was designed around. The within-cell-type variance
+also provides empirical sigma values for the prior, replacing the previously assumed values
+lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of AIS Nav and
+somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
+for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
+freeing search budget for the high-leverage parameters.
 
 </details>
 
@@ -266,6 +320,59 @@ both passive cable attenuation and active dendritic processing. Our modelling pi
 model both: the simulated voltage-clamp block must include dendritic active channels, and we
 must expect substantially larger calibration uncertainty on distal synaptic conductance
 amplitudes than the Poleg-Polsky bounds alone would suggest.
+
+</details>
+
+<details>
+<summary>📖 <strong>Differences in spike generation instead of synaptic inputs
+determine the feature selectivity of two retinal cell types</strong> —
+Wienbar & Schwartz, 2022</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2022.04.012` |
+| **Authors** | Sophia Wienbar, Gregory William Schwartz |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2022.04.012` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(22)00357-9 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/summary.md) |
+
+Wienbar and Schwartz introduce the Bursty Suppressed-by-Contrast (bSbC) RGC of the mouse
+retina and ask why it transmits a contrast-suppression signal while the OFF sustained Alpha
+(OFFsA) RGC, which receives nearly identical synaptic input, transmits a high-rate
+sustained-contrast signal. The paper's research question is therefore explicitly about the
+contribution of cell-intrinsic spike generation machinery, rather than upstream circuitry, to
+RGC feature selectivity.
+
+The methodology combines voltage-clamp measurement of excitatory and inhibitory conductance
+traces, current-clamp recordings of spike shape, confocal imaging of the AIS labelled with
+ankyrin-G, sodium-channel pharmacology with the Nav1.6-selective blocker 49TTX, and a NEURON
+7.7 compartmental model in which the AIS is split into a proximal Nav1.2 subsegment and a
+distal Nav1.6 subsegment. The two cell types share the same dendritic and somatic architecture
+in the model, and the only systematic differences are AIS length (22 +/- 1.7 um in OFFsA vs 16
++/- 1.5 um in bSbC) and Nav1.6 fraction (~40 percent in OFFsA vs ~0 percent in bSbC).
+
+The headline finding is that the divergent contrast response functions of the two cells emerge
+from the spike generator alone. The bSbC cell's short, Nav1.2-dominated AIS is driven into
+depolarisation block by strong contrast inputs, silencing the cell, while OFFsA's longer
+Nav1.6-rich AIS sustains high firing rates under the same drive. 49TTX selectively reduces
+OFFsA spike amplitude with no effect on bSbC, confirming the Nav1.6 contribution. AIS length
+differs significantly (p = 0.018) while diameter does not (p = 0.83), localising the
+anatomical signature.
+
+For task t0078 (and the broader project) the paper matters in three ways. First, it provides a
+public, openly licensed NEURON model of a two-subsegment AIS with realistic Nav1.2/Nav1.6
+parameterisation, length 16-22 um, and diameter ~1.3 um, archived at Zenodo DOI
+10.5281/zenodo.6423531. This is the substrate that t0078 is going to port in place of the
+paywalled Werginz 2020 model. Second, it establishes that AIS heterogeneity is an empirically
+documented driver of RGC feature selectivity, not just a modelling convenience, which
+strengthens the biological-plausibility case for tiered AHP plus tiered AIS in the DSGC v2
+model. Third, it demonstrates depolarisation block as a meaningful coding mechanism, which
+means t0078's firing-rate metrics need to remain well-defined when the AIS enters block under
+strong drive.
 
 </details>
 
@@ -868,6 +975,62 @@ input-output overlap) are the benchmarks our simulations should hit.
 </details>
 
 <details>
+<summary>📖 <strong>Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide
+Range of Dendritic and Perisomatic Active Properties</strong> — Hay et
+al., 2011</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1002107` |
+| **Authors** | Etay Hay, Sean Hill, Felix Schurmann, Henry Markram, Idan Segev |
+| **Venue** | PLoS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1002107` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md) |
+
+Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical
+pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current
+f-I behavior and the BAP-activated dendritic Ca2+ ("BAC") firing observed in adult-rat slice
+recordings. The paper's research question is whether a single conductance-based model in a
+reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell
+variability, and which channel densities and Ca2+-dynamics parameters are necessary or
+sufficient for each regime.
+
+Methodologically, the authors define 20 firing features (10 perisomatic, 10 BAC), each with an
+experimental mean and SD computed across several cells. They use multi-objective optimization
+with an elitist non-dominated sorting evolutionary algorithm — population 1000, 500
+generations, 240 to 1024 CPU cores, 2-5 days runtime — to optimize 22 free parameters. The
+free parameters are the maximal densities of nine ion channels (Nat, Nap, Kp, Kt, Kv3.1,
+Ca_HVA, Ca_LVA, SK, Im) in soma and apical compartments, plus the Ca2+ buffer parameters gamma
+and tdecay. The Ih distribution is fixed to preserve subthreshold properties. Models are
+accepted when every feature falls within 2-3 SD of the experimental mean. Mechanism kinetics
+use Hodgkin-Huxley formalism with Q10 = 2.3 and a -10 mV junction-potential shift where
+applicable.
+
+The headline result is a set of about 2000 acceptable L5b PC models published in ModelDB
+(accession 139653). Single-target fits are easier (899 BAC-only, 52 perisomatic-only) but
+typically fail the other target. Joint fits achieve every feature within 2-3 SD: e.g. BAP
+amplitude **45 +/- 10 mV** at 620 um, Ca2+ spike peak **6.73 +/- 2.54 mV**, perisomatic spike
+frequencies of **9 / 14.5 / 22.5 Hz**, AP half-width of **1.31 ms**, slow AHP depth around
+**-60 mV**. Cross-target parameter analysis identifies apical Nat and apical Kv3.1 densities
+as the dominant levers controlling BAP propagation, and shows that morphology swaps degrade
+BAC features more than perisomatic features.
+
+For this project, Hay 2011 is a direct upstream dependency of t0074 and t0078: the SK_E2 and
+CaDynamics_E2 MOD files vendored under t0074 originate here, and t0078's `tau_ca_multiplier`
+extension to CaDynamics_E2 is an additional knob on the same gamma + tdecay sub-membrane shell
+formalism defined in this paper. The cited parameter ranges (gamma in 0.0005-0.05; soma tdecay
+20-1000 ms; apical tdecay 20-200 ms) provide the prior box that t0078's MOBO should explore.
+The multi-objective + per-feature-SD scoring + Pareto-acceptable-ensemble methodology is also
+the template t0078 inherits for reporting and analyzing its own MOBO results. Citing Hay 2011
+in the t0078 substrate documentation is therefore mandatory.
+
+</details>
+
+<details>
 <summary>📖 <strong>Imperfect Space Clamp Permits Electrotonic Interactions between
 Inhibitory and Excitatory Synaptic Conductances, Distorting Voltage Clamp
 Recordings</strong> — Poleg-Polsky & Diamond, 2011</summary>
@@ -1326,6 +1489,63 @@ complex retinal DS model must improve upon.
 </details>
 
 <details>
+<summary>📖 <strong>The Contribution of Resurgent Sodium Current to High-Frequency
+Firing in Purkinje Neurons: An Experimental and Modeling Study</strong>
+— Khaliq et al., 2003</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.23-12-04899.2003` |
+| **Authors** | Zayd M. Khaliq, Nathan W. Gouwens, Indira M. Raman |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.23-12-04899.2003` |
+| **URL** | https://www.jneurosci.org/content/23/12/4899 |
+| **Date added** | 2026-05-03 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/summary.md) |
+
+Khaliq, Gouwens, and Raman (2003) ask whether and how the resurgent component of NaV1.6 sodium
+current promotes high-frequency action-potential firing in cerebellar Purkinje neurons. The
+question matters because resurgent current - sodium current that flows when the channel exits
+an open-channel-block state during repolarisation - is a peculiar, structurally distinctive
+feature of NaV1.6 that had been correlated with rapid firing but never causally attributed to
+it. The authors scope is somatic firing in dissociated Purkinje cells from wild-type and
+Scn8a-med mice; they hold dendrites and synaptic input out of the analysis to focus on
+intrinsic excitability.
+
+Methodologically, the paper combines whole-cell current-clamp action-potential recordings from
+acutely dissociated Purkinje somata with voltage-clamped pharmacological isolation of seven
+non-sodium currents (Kfast, Kmid, Kslow, BK, Pca, Ih, leak) and a NEURON-based
+single-compartment model that integrates these seven currents with an explicit Raman-Bean
+state-machine model of NaV1.6 sodium current. The med phenotype - which lacks NaV1.6 and
+therefore has 90 percent reduced resurgent current - is used as a natural knockout. The model
+is validated by reproducing wild-type spontaneous firing at 27 spikes/sec (matching the 29 Hz
+experimental mean) and is then used to ask which of the changes seen in med cells (lost
+resurgent current, modified Kfast V1/2, reduced leak) actually drive the slower firing.
+
+The headline finding is that resurgent kinetics specifically and consistently accelerate
+firing. Med cells fired at 9 +/- 2 Hz spontaneously vs 35 +/- 4 Hz wild-type, and at 13 +/- 5
+vs 65 +/- 7 spikes/sec under 50 pA injection, a deficit that survived even strong current
+injection (maximum sustained rate 65 +/- 10 spikes/sec med vs 107 +/- 6 wild-type). Crucially,
+the model showed that the small Kfast V1/2 shift and reduced leak found in med cells would, if
+anything, **speed** firing \- so the observed slowdown must come from the sodium-channel
+kinetics. Replacing wild-type with med-like Na kinetics in the model slowed simulated firing
+by 19-31 percent, reproducing the experimental phenotype.
+
+For the present project this paper is the kinetic foundation of the BedB substrate
+voltage-gated channel library. The bkpkj.mod calcium-activated K channel and the NaR resurgent
+sodium mod-file vendored in t0074 trace directly to this paper Equation-1 state model and
+Table 1 parameter set. For t0078 specifically, the AIS-tiered NaR optimization treats this
+paper kinetic schemes as the fixed scaffold and varies only channel density per tier - so any
+biological plausibility argument about NaR density gradients ultimately rests on the parameter
+ranges established here. The paper 19 pF single-compartment geometry also provides a minimal
+regression-test target: vendored mod-files should reproduce ~27 Hz spontaneous firing in that
+geometry before being deployed on the multi-compartment DSGC substrate.
+
+</details>
+
+<details>
 <summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
 1997</summary>
 
@@ -1431,7 +1651,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 
 </details>
 
-## Tasks (5)
+## Tasks (6)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1440,6 +1660,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0017 | [Literature survey: patch-clamp recordings of RGCs and DSGCs](../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md) | completed | 2026-04-20 11:08 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 
 ## Answers (14)
 
@@ -1739,7 +1960,178 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (198 open, 27 closed)
+## Suggestions (206 open, 27 closed)
+
+<details>
+<summary>🧪 <strong>Add dendritic-spike machinery to AIS-augmented Bed B and
+re-optimise with NSGA-II under an AIS Nav lower-bound prior</strong>
+(S-0078-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed the joint pass
+(iter 81: DSI 0.316 / PD 9.68 Hz) but the high-DSI rail's PD ceiling held at 2.86 Hz across
+109 acquisitions: passive dendrites are the bottleneck. Add: (a) Mg-block NMDA at active
+densities on dendrites; (b) Nav1.6 / NaP at distal-dendrite densities sufficient for
+back-propagating APs and dendritic spikes (Sivyer 2013, Oesch 2005). Hard lower-bound AIS Nav
+at 0.25 S/cm^2 (Kole 2008 prior) so the optimiser cannot exploit the AIS-disabled corner (iter
+81 nav16_ais 1e-5, four orders below prior). Use NSGA-II via pymoo (pop 64-128, 30-50 gens,
+64-core CPU) not BoTorch qLogNEHVI to avoid O(N^3) GP-fit scaling that pushed t0078 to $3.93
+at 60% of planned acquisitions. Pass: at least one Pareto cell with DSI >= 0.4 AND PD >= 10
+Hz. Cost: $0.50-$1.00 on Vast.ai 64-core CPU. Recommended task types: build-model,
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
+on the AIS-augmented 49-d Bed B substrate</strong> (S-0078-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Closes the t0078 deferred REQ-16. The compare_literature step flagged a substrate regression:
+iter 81 on the augmented substrate produces DSI 0.316 vs t0076 iter-424's DSI 0.42 at
+comparable PD rate, but no t0076 parameter vector was ever evaluated on the augmented
+substrate. Without this check we cannot disentangle (a) substrate regression of high-rail DSI
+from (b) qLogNEHVI 49-d exploration not finding t0076's best-joint operating point in 491
+cells. Cheap: 1 cell x 8 dirs x 20 seeds at TSTOP_MS 1400 is ~50 s on local CPU. Re-run
+_worker_run_trial with the t0076 iter-424 vector extended to 49-d (tier-stratified channels at
+uniform t0076-matching values, AIS Nav at Kole prior centre 0.375 S/cm^2, AIS geometry at
+midpoint, tau_ca_multiplier=1). Pass criterion: reproduce DSI within +/- 0.05 of t0076's 0.42
+at PD ~ 8.34 Hz, or document substrate regression delta. Cost: < $0.05 local CPU or
+$0.05-$0.10 Vast.ai. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
+from [1, 20x] to [1, 200x] to test the slow-Kv AHP regime</strong>
+(S-0078-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 high-DSI rail's PD ceiling at 2.86 Hz held flat across 109 acquisitions despite
+optimiser exploration, the signature of a saturated negative-feedback loop. The 20x upper
+bound corresponds to tau_ca ~ 100 ms; Larsson 2013 reports mammalian sAHP decay on the 1-3 s
+timescale, equivalent to multiplier values of ~ 100-300x. The originally-proposed [1, 200x]
+bound was reduced to [1, 20x] by researcher decision pre-launch as a simulation-budget safety
+margin. Hypothesis: at multiplier > 20x the slow-Kv regime engages and may (a) free the PD
+ceiling on the high-DSI rail or (b) not change behaviour (confirming saturation is
+mechanistic, not parametric). Bundle with S-0078-01 if NSGA-II is run, or run as a focused
+5-cell re-evaluation of t0078 high-DSI Pareto cells (iter 290, 283, 442, 371, 380) with
+multiplier expanded to 200x. Cost: $0.20-$0.50 focused or rolled into S-0078-01. Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Single-objective scalarised BO comparison on the 49-d Bed B
+substrate (qLogNEI with DSI - lambda x max(0, 10 - PD))</strong>
+(S-0078-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Methodological comparison motivated by the t0078 Pareto-front geometry. The 17 t0078 Pareto
+cells exhibit a clean monotonic concave-down DSI-vs-PD trade-off with no obvious knee,
+suggesting cells lie on a 1-D manifold in 49-d parameter space. If true, scalarised
+single-objective BO using qLogNoisyExpectedImprovement with `DSI - lambda x max(0, 10 -
+PD_rate)` and lambda in [0.001, 0.01, 0.1, 1.0] could explore the same Pareto coverage at
+O(N^2) instead of O(N^3) and complete 700 acquisitions within the $4 envelope. Run lambda scan
+as 4 independent BO chains of 175 acquisitions each (total 700 cells) on the existing 49-d
+substrate. Pass criterion: union of the 4 single-objective fronts achieves HV >= 11.41
+(matching t0078) and ideally HV > 12.62 (1.5x rule-out). Document whether the scalarised front
+crosses the joint pass criterion that t0078 missed. Cost: $1.00-$2.00 on Vast.ai 64-core CPU.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
+closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
+(S-0078-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
+library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
+PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
+document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
+cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
+substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
+compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
+PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
+recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
+Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
+one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
+trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
+independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
+per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
+quantifies the BO methodology's contribution to apparent improvement vs the architectural
+contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
+bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
+t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
+experiment-run, evaluation.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0078 BoTorch qLogNEHVI + 49-d AIS-augmented
+substrate harness into a reusable dsgc_mobo_v2 library asset</strong>
+(S-0078-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+Builds on t0076's S-0076-06 (dsgc_mobo library promotion) which targets the t0076 25-d
+harness. t0078 added approximately 1,300 LOC of net new optimisation infrastructure:
+qLogNoisyExpectedHypervolumeImprovement migration, Normalize(d=49) input transform,
+ProcessPoolExecutor with NEURON-fresh-subprocess workers, AIS-extended substrate builder
+(extend_with_ais.py / build_cell_ais.py), 5-tier channel stratification engine, slow-AHP MOD
+vendoring (skahpt78.mod with tau_ca_multiplier PARAMETER), checkpointing every 10 cells,
+plot_pareto.py with --skip-deep-dives, render_pdf.py. Promote into a substrate-agnostic
+library that supports either qLogNEHVI (BoTorch) or NSGA-II (pymoo) optimisers behind a
+unified ParameterSpec API, parameterised compartment-tier definitions, and Vast.ai launch
+helper. Bundles with S-0076-06; this is the v2 follow-up. Cost estimate: zero compute
+(refactor only). Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
+MOBO-on-biophysics failure mode</strong> (S-0078-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 compare_literature step found iter 81's nav16_ais collapsed to the search floor
+(1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below
+Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. AIS-to-soma Nav ratio at iter 81 was
+5.5e-5 vs Werginz 2024's measured 17.3. The optimiser found a configuration where the AIS
+contributes nothing to spike initiation, contradicting REQ-2 / REQ-3 / REQ-4's biological
+intent. This may be a generalisable MOBO-on-biophysics failure mode. Document: (a) audit t0076
++ t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
+parameters; (b) propose log-uniform priors with hard biological lower bounds as default for
+future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
+checklist of biological priors to enforce as hard constraints in future MOBO tasks.
+Recommended task types: answer-question, comparative-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
