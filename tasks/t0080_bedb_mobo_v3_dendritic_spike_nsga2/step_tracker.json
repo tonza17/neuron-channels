@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Synthesize research, design the v3 substrate, NSGA-II port, hard biological bounds, regression check, and answer asset; estimate Vast.ai compute and write plan.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-04T18:49:47Z",
-      "completed_at": null,
+      "completed_at": "2026-05-04T19:00:18Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
