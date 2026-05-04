@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "vastai create instance 31639237 --image python:3.12-bookworm --ssh --disk 25 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.974,
+  "started_at": "2026-05-04T19:10:30Z",
+  "completed_at": "2026-05-04T19:10:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "057_20260504T191030Z_vastai-create-instance.stdout.txt",
+  "stderr_file": "057_20260504T191030Z_vastai-create-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

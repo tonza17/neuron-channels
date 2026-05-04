@@ -1,0 +1,90 @@
+{
+  "spec_version": "2",
+  "library_id": "de_rosenroll_2026_dsgc_ais_dendritic_spike",
+  "name": "De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery",
+  "version": "0.1.0",
+  "short_description": "v3 extension of the t0078 AIS-augmented Bed B DSGC substrate adding dendritic Mg-block NMDA, distal Nav1.6 + NaP, and hard biological bounds on AIS Nav density.",
+  "description_path": "description.md",
+  "module_paths": [
+    "code/build_cell_ais.py",
+    "code/extend_with_ais.py",
+    "code/apply_params.py",
+    "code/constants.py",
+    "code/trial_helpers.py",
+    "code/parametric_placer.py",
+    "code/trial_driver.py",
+    "code/recorder.py",
+    "code/bootstrap.py",
+    "code/paths.py",
+    "code/nsga2_loop.py",
+    "code/mods/bkt80.mod",
+    "code/mods/calt80.mod",
+    "code/mods/catt80.mod",
+    "code/mods/iht80.mod",
+    "code/mods/kdrt80.mod",
+    "code/mods/kv3t80.mod",
+    "code/mods/kv4t80.mod",
+    "code/mods/kv7t80.mod",
+    "code/mods/napt80.mod",
+    "code/mods/nart80.mod",
+    "code/mods/nav16t80.mod",
+    "code/mods/skahpt80.mod",
+    "code/mods/skt80.mod"
+  ],
+  "entry_points": [
+    {
+      "name": "build_dsgc_cell_with_ais",
+      "kind": "function",
+      "module": "code/build_cell_ais.py",
+      "description": "Build a DSGC cell with AIS extension; v3 substrate uses the same builder but with the 5 new dendritic-spike parameters in the v3 ParameterVector."
+    },
+    {
+      "name": "apply_parameter_vector",
+      "kind": "function",
+      "module": "code/apply_params.py",
+      "description": "Write a 54-d v3 ParameterVector to all sections of the DSGC cell, including v3 distal Nav1.6 + NaP overlay on terminal dendrites."
+    },
+    {
+      "name": "DSGCCellWithAIS",
+      "kind": "class",
+      "module": "code/build_cell_ais.py",
+      "description": "Cell wrapper class re-exported from t0078; carries AIS sections and dendritic tier accessors."
+    },
+    {
+      "name": "ParameterVector",
+      "kind": "class",
+      "module": "code/constants.py",
+      "description": "54-d frozen dataclass with @property accessors for each parameter group, including the 5 v3 dendritic-spike parameters (gnmda_dend, mg_conc_mm, voff_nmda, nav16_dend_distal, nap_dend_distal)."
+    },
+    {
+      "name": "BedBV3Problem",
+      "kind": "class",
+      "module": "code/nsga2_loop.py",
+      "description": "pymoo Problem subclass with n_var=54, n_obj=2, n_ieq_constr=1 (AIS-to-soma Nav ratio constraint per Werginz 2024)."
+    },
+    {
+      "name": "run_nsga2_loop",
+      "kind": "function",
+      "module": "code/nsga2_loop.py",
+      "description": "Main entry-point for the NSGA-II MOBO loop on the v3 substrate; arms a cost-cap watchdog that exits cleanly on $2.00 hard cap trip."
+    },
+    {
+      "name": "evaluate_parameter_vector",
+      "kind": "function",
+      "module": "code/trial_driver.py",
+      "description": "Run a single 8 directions x 20 seeds evaluation of one parameter vector; returns DSI / PD rate / stability flag."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy",
+    "pymoo"
+  ],
+  "test_paths": [],
+  "categories": [
+    "ais",
+    "evaluation"
+  ],
+  "created_by_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "date_created": "2026-05-04"
+}

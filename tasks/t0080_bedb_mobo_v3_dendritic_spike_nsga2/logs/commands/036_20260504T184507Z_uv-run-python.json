@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "uv run python -u -m meta.asset_types.paper.verificator --task-id t0080_bedb_mobo_v3_dendritic_spike_nsga2 10.64898_2026.02.02.701812",
+  "exit_code": 0,
+  "duration_seconds": 0.324,
+  "started_at": "2026-05-04T18:45:07Z",
+  "completed_at": "2026-05-04T18:45:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "036_20260504T184507Z_uv-run-python.stdout.txt",
+  "stderr_file": "036_20260504T184507Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

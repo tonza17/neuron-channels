@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "curl -s https://api.crossref.org/works?query.author=Riccitelli&query.bibliographic=retinal+ganglion+cells+direction+motion+suppressive+surround&rows=5",
+  "exit_code": 0,
+  "duration_seconds": 1.088,
+  "started_at": "2026-05-04T18:37:49Z",
+  "completed_at": "2026-05-04T18:37:50Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "018_20260504T183749Z_curl-s-https-api-crossref-org-works-quer.stdout.txt",
+  "stderr_file": "018_20260504T183749Z_curl-s-https-api-crossref-org-works-quer.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0080_bedb_mobo_v3_dendritic_spike_nsga2\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\results
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W013 warning: results_detailed.md is missing ## Examples section (mandatory for experiment-type tasks)[0m
+[33m  TR-W012 warning: ## Task Requirement Coverage is not the final `##` section in results_detailed.md[0m
+
+[33m[1mPASSED[0m — 0 error(s), 2 warning(s)

@@ -1,0 +1,65 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1073_pnas.2415223122",
+  "doi": "10.1073/pnas.2415223122",
+  "title": "Retinal ganglion cells encode the direction of motion outside their classical receptive field",
+  "url": "https://www.pnas.org/doi/10.1073/pnas.2415223122",
+  "pdf_url": "https://www.weizmann.ac.il/brain-sciences/labs/rivlin/sites/brain-sciences.labs.rivlin/files/2025-05/Riccitelli%202025.pdf",
+  "date_published": "2025-01-07",
+  "year": 2025,
+  "authors": [
+    {
+      "name": "Serena Riccitelli",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0003-4369-4586"
+    },
+    {
+      "name": "Hadar Yaakov",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": null
+    },
+    {
+      "name": "Alina S. Heukamp",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": null
+    },
+    {
+      "name": "Lea Ankri",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-7622-6239"
+    },
+    {
+      "name": "Michal Rivlin-Etzion",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Weizmann Institute of Science",
+      "country": "IL"
+    }
+  ],
+  "journal": "Proceedings of the National Academy of Sciences",
+  "venue_type": "journal",
+  "categories": [
+    "retinal-ganglion-cell",
+    "direction-selectivity",
+    "patch-clamp"
+  ],
+  "abstract": "Retinal ganglion cells (RGCs) typically respond to light stimulation over their spatially restricted receptive field. Using large-scale recordings in the mouse retina, we show that a subset of non-direction-selective (DS) RGCs exhibit asymmetric activity, selective to motion direction, in response to a stimulus crossing an area far beyond the classic receptive field. The extraclassical response arises via inputs from an asymmetric distal zone and is enhanced by desensitization mechanisms and an inherent DS component, creating a network of neurons responding to motion toward the optic disc. Pharmacological manipulations revealed the necessity of glycinergic amacrine cells for this response. Using in vivo recordings, we identified similar extraclassical responses in lateral geniculate nucleus neurons, suggesting such non conventional DS information is transferred to downstream structures. Our results suggest a complex integration of motion direction processing across the visual field, which arises beyond the classical receptive field boundaries.",
+  "citation_key": "Riccitelli2025",
+  "summary_path": "summary.md",
+  "files": [
+    "files/riccitelli_2025_rgc-direction-extraclassical.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "date_added": "2026-05-04"
+}

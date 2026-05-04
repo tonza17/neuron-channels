@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "vastai execute 36137287 touch /root/.no_auto_tmux && echo READY",
+  "exit_code": 0,
+  "duration_seconds": 1.72,
+  "started_at": "2026-05-04T19:15:42Z",
+  "completed_at": "2026-05-04T19:15:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "061_20260504T191542Z_vastai-execute-36137287.stdout.txt",
+  "stderr_file": "061_20260504T191542Z_vastai-execute-36137287.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

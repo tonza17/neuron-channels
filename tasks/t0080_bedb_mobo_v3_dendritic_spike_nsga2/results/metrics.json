@@ -1,0 +1,100 @@
+{
+  "variants": [
+    {
+      "variant_id": "pareto_cell_0058",
+      "label": "Pareto cell 58 (gen 0)",
+      "dimensions": {
+        "cell_index": 58,
+        "generation": 0,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.01479915433403804,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0141",
+      "label": "Pareto cell 141 (gen 1)",
+      "dimensions": {
+        "cell_index": 141,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.12698412698412695,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0153",
+      "label": "Pareto cell 153 (gen 1)",
+      "dimensions": {
+        "cell_index": 153,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.02597402597402596,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0188",
+      "label": "Pareto cell 188 (gen 1)",
+      "dimensions": {
+        "cell_index": 188,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0190",
+      "label": "Pareto cell 190 (gen 1)",
+      "dimensions": {
+        "cell_index": 190,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0516431924882629,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_best_joint",
+      "label": "Closest to joint target (DSI=0.4, PD=10.0Hz); distance=0.850",
+      "dimensions": {
+        "cell_index": 188,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

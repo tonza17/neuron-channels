@@ -1,0 +1,60 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.64898_2026.02.02.701812",
+  "doi": "10.64898/2026.02.02.701812",
+  "title": "Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1",
+  "pdf_url": "https://europepmc.org/articles/PMC12889470?pdf=render",
+  "date_published": "2026-02-04",
+  "year": 2026,
+  "authors": [
+    {
+      "name": "Miah N. Pitcher",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0002-5463-5197"
+    },
+    {
+      "name": "Aanica S. B. Gonzales",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Raul Habib",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0002-1854-2938"
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0002-9137-5849"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    }
+  ],
+  "journal": "bioRxiv",
+  "venue_type": "preprint",
+  "categories": [
+    "direction-selectivity",
+    "dendritic-computation",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "During development, dendrites undergo structural plasticity in response to neural activity; however, whether spatiotemporal activity patterns can instruct dendritic growth remains unclear. Prior to vision, the developing mouse retina exhibits spontaneous retinal waves with a nasal propagation bias that mimics forward optic flow. Here, we reveal that starburst amacrine cells use direction-selective dendritic computations to transform this propagation bias into asymmetric dendrite growth, linking activity patterns to structural development.",
+  "citation_key": "Pitcher2026",
+  "summary_path": "summary.md",
+  "files": [
+    "files/pitcher_2026_sac-dendrite-retinal-waves.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "date_added": "2026-05-04"
+}

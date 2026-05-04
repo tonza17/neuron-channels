@@ -1,0 +1,14 @@
+Folders created by init_task_folders.py at 2026-05-04T18:09:05Z:
+results
+results/images
+corrections
+intervention
+code
+logs/commands
+logs/searches
+logs/sessions
+logs/steps
+assets/library
+assets/answer
+
+13 directories with .gitkeep files. code/__init__.py created.
