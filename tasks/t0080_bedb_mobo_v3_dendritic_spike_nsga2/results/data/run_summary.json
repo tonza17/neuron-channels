@@ -1,0 +1,8 @@
+{
+  "n_total_cells": 192,
+  "n_pareto_cells": 5,
+  "joint_target": {
+    "dsi": 0.4,
+    "pd_rate_hz": 10.0
+  }
+}

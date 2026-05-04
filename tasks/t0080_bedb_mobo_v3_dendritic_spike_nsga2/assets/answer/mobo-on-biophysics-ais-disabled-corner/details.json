@@ -6,13 +6,13 @@
   "short_answer_path": "short_answer.md",
   "full_answer_path": "full_answer.md",
   "categories": [
-    "ais",
-    "evaluation"
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "patch-clamp"
   ],
   "answer_methods": [
-    "existing_papers",
-    "prior_tasks",
-    "code_experiments"
+    "code-experiment",
+    "papers"
   ],
   "source_paper_ids": [
     "10.1038_nn2040",
