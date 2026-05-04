@@ -1,0 +1,11 @@
+{
+  "total_cost_usd": 3.9335,
+  "breakdown": {
+    "vast-ai-rtx5060ti": 3.9335
+  },
+  "services": {
+    "vast_ai_compute": 3.9335
+  },
+  "budget_limit": 5.0,
+  "note": "CPU-only NEURON+BoTorch MOBO task. Instance was an AMD EPYC 7B13 64-core CPU slice with 503 GB RAM at $0.1582/hr, bundled with an idle RTX 5060 Ti GPU that was not used. BO loop was stopped via SIGTERM at acquisition step 416/700 (491 total cells / 78,560 NEURON simulations completed; HV 11.41; 17 Pareto cells); cost-so-far at SIGTERM was $3.78. Final cost reflects 24.8578 h total uptime including provisioning (~25 min) and teardown overhead."
+}

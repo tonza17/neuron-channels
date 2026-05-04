@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -u write_summary_part2.py",
+  "exit_code": 2,
+  "duration_seconds": 0.065,
+  "started_at": "2026-05-03T16:16:23Z",
+  "completed_at": "2026-05-03T16:16:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "114_20260503T161623Z_python-u-write-summary-part2-py.stdout.txt",
+  "stderr_file": "114_20260503T161623Z_python-u-write-summary-part2-py.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

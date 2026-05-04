@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \nimport re\nwith open('tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.xml', 'rb') as f:\n    data = f.read().decode('utf-8', errors='replace')\n# Strip XML tags but preserve paragraph breaks\ntext = data\ntext = re.sub(r'</p>', '\\n\\n', text)\ntext = re.sub(r'</title>', '\\n\\n', text)\ntext = re.sub(r'<title[^>]*>', '\\n## ', text)\ntext = re.sub(r'<sec[^>]*>', '\\n', text)\ntext = re.sub(r'<[^>]+>', ' ', text)\n# Normalise whitespace within lines\nlines = []\nfor line in text.split('\\n'):\n    line = re.sub(r'[\\t ]+', ' ', line).strip()\n    lines.append(line)\ntext = '\\n'.join(lines)\ntext = re.sub(r'\\n{3,}', '\\n\\n', text)\nwith open('tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.md', 'w', encoding='utf-8') as f:\n    f.write('# Visual stimulation reverses the directional preference of direction selective retinal ganglion cells\\n\\n')\n    f.write('Source: PMC OAI fulltext (PMC3496185)\\n\\n')\n    f.write(text)\nprint('Wrote markdown')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.078,
+  "started_at": "2026-05-03T15:56:40Z",
+  "completed_at": "2026-05-03T15:56:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "070_20260503T155640Z_python-c-import-re-with-open-tasks-t0078.stdout.txt",
+  "stderr_file": "070_20260503T155640Z_python-c-import-re-with-open-tasks-t0078.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

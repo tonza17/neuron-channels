@@ -1,0 +1,10 @@
+root        2366       1 99 May03 ?        36-17:50:03 /root/neuron-channels/.venv/bin/python -u -m tasks.t0078_bedb_mobo_v2_ais_tiered_ahp.code.mobo_loop --n-iterations 700 --n-sobol 75 --n-seeds 20 --n-directions 8 --workers 64 --checkpoint-every 10
+---
+2366 /root/neuron-channels/.venv/bin/python -u -m tasks.t0078_bedb_mobo_v2_ais_tiered_ahp.code.mobo_loop --n-iterations 700 --n-sobol 75 --n-seeds 20 --n-directions 8 --workers 64 --checkpoint-every 10
+476485 bash -c ps -ef | grep -E 'mobo|python' | grep -v grep | head -10; echo ---; pgrep -af mobo_loop; echo ---; tail -5 /root/mobo_loop.log
+---
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[acq 399/700]  DSI=+0.000  PD= 46.07 Hz  HV=10.7492  trial_t=51.9s  cost=$3.23

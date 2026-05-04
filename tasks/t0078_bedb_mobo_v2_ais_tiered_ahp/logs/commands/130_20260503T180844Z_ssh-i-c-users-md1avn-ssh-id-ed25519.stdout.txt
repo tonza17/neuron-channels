@@ -1,0 +1,13 @@
+    PID     ELAPSED
+   2366    02:27:45
+---
+[acq 31/700]  DSI=+0.001  PD=128.79 Hz  HV=4.7252  trial_t=44.3s  cost=$0.36
+[acq 32/700]  DSI=+0.002  PD=127.86 Hz  HV=4.7392  trial_t=44.6s  cost=$0.37
+[acq 33/700]  DSI=+0.002  PD=120.32 Hz  HV=4.7392  trial_t=44.3s  cost=$0.37
+[acq 34/700]  DSI=+0.001  PD=130.07 Hz  HV=4.7408  trial_t=44.1s  cost=$0.38
+[acq 35/700]  DSI=+0.002  PD=112.96 Hz  HV=4.7408  trial_t=44.6s  cost=$0.39
+---
+110
+---
+2
+cells_with_DSI_above_0.4

@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0078_bedb_mobo_v2_ais_tiered_ahp\tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0078_bedb_mobo_v2_ais_tiered_ahp\tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\logs\sessions\capture_report.json.

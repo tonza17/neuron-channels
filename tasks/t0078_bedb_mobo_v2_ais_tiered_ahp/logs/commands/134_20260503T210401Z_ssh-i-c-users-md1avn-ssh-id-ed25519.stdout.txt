@@ -1,0 +1,4 @@
+[acq 2/700]  DSI=+0.818  PD=  0.36 Hz  HV=1.8822  trial_t=43.8s  cost=$0.16
+[acq 10/700]  DSI=+1.000  PD=  0.07 Hz  HV=4.2474  trial_t=44.1s  cost=$0.23
+[acq 26/700]  DSI=+0.667  PD=  0.54 Hz  HV=4.6415  trial_t=43.8s  cost=$0.34
+[acq 63/700]  DSI=+0.439  PD=  1.46 Hz  HV=7.5861  trial_t=44.8s  cost=$0.68

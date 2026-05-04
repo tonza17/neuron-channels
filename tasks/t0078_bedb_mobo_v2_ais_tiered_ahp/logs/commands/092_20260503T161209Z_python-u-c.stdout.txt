@@ -1,0 +1,2 @@
+OK https://europepmc.org/articles/PMC6705162?pdf=render | CT=application/pdf | size=2913554 | magic=b'%PDF-1.4'
+SAVED: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0078_bedb_mobo_v2_ais_tiered_ahp\tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\assets\paper\10.1523_JNEUROSCI.0808-13.2013\files\trenholm_2013_dsgc-electrical-coupling.pdf

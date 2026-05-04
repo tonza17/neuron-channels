@@ -1,0 +1,10 @@
+2026-05-04 14:01:00.107316755 +0000
+Mon May  4 14:12:04 UTC 2026
+---
+[acq 409/700]  DSI=-0.015  PD=106.29 Hz  HV=11.3720  trial_t=52.4s  cost=$3.53
+---
+-rw-r--r-- 1 root root 179365 May  4 09:02 checkpoint_0434.pt
+-rw-r--r-- 1 root root 183461 May  4 09:31 checkpoint_0444.pt
+-rw-r--r-- 1 root root 187493 May  4 10:03 checkpoint_0454.pt
+-rw-r--r-- 1 root root 191653 May  4 10:39 checkpoint_0464.pt
+-rw-r--r-- 1 root root 195685 May  4 12:17 checkpoint_0474.pt

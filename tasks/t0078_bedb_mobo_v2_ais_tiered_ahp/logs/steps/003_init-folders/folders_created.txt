@@ -1,0 +1,20 @@
+Created task folder structure for t0078_bedb_mobo_v2_ais_tiered_ahp at 2026-05-03T13:38:33Z
+
+Directories created (with .gitkeep):
+- assets/.gitkeep
+- assets/library/.gitkeep
+- code/
+- corrections/.gitkeep
+- intervention/.gitkeep
+- logs/.gitkeep
+- logs/commands/.gitkeep
+- logs/searches/.gitkeep
+- logs/sessions/.gitkeep
+- logs/steps/.gitkeep
+- plan/.gitkeep
+- research/.gitkeep
+- results/.gitkeep
+
+Python package markers:
+- __init__.py (task root)
+- code/__init__.py (code module)

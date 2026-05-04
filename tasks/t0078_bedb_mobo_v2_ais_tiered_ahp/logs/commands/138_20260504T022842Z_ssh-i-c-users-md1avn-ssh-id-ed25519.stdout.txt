@@ -1,0 +1,19 @@
+    PID     ELAPSED
+   2366    10:47:44
+---
+[acq 202/700]  DSI=+0.002  PD=120.79 Hz  HV=8.7579  trial_t=27.8s  cost=$1.69
+[acq 203/700]  DSI=+0.000  PD=  0.00 Hz  HV=8.7579  trial_t=27.3s  cost=$1.70
+[acq 204/700]  DSI=+0.579  PD=  1.61 Hz  HV=8.7651  trial_t=27.4s  cost=$1.71
+---
+279
+total_cells
+---
+[acq 2/700]  DSI=+0.818  PD=  0.36 Hz  HV=1.8822  trial_t=43.8s  cost=$0.16
+[acq 10/700]  DSI=+1.000  PD=  0.07 Hz  HV=4.2474  trial_t=44.1s  cost=$0.23
+[acq 26/700]  DSI=+0.667  PD=  0.54 Hz  HV=4.6415  trial_t=43.8s  cost=$0.34
+[acq 63/700]  DSI=+0.439  PD=  1.46 Hz  HV=7.5861  trial_t=44.8s  cost=$0.68
+[acq 108/700]  DSI=+0.795  PD=  1.25 Hz  HV=7.9813  trial_t=26.0s  cost=$1.17
+[acq 155/700]  DSI=+0.564  PD=  1.54 Hz  HV=8.1353  trial_t=26.4s  cost=$1.43
+[acq 159/700]  DSI=+0.733  PD=  1.39 Hz  HV=8.7441  trial_t=26.3s  cost=$1.45
+[acq 182/700]  DSI=+0.508  PD=  1.64 Hz  HV=8.7579  trial_t=26.4s  cost=$1.58
+[acq 204/700]  DSI=+0.579  PD=  1.61 Hz  HV=8.7651  trial_t=27.4s  cost=$1.71

@@ -1,0 +1,3 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+scp: open local "tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/data/": Is a directory

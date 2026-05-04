@@ -1,0 +1,9 @@
+/root/neuron-channels/.venv/lib/python3.12/site-packages/pyro/ops/stats.py:527: SyntaxWarning: invalid escape sequence '\g'
+  we have :math:`ES^{*}(P,Q) \ge ES^{*}(Q,Q)` with equality holding if and only if :math:`P=Q`, i.e.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+torch: 2.11.0+cu130
+botorch: 0.17.2
+gpytorch: 1.15.2
+pyarrow: 24.0.0
+neuron: 8.2.7+

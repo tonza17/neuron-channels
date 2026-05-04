@@ -1,0 +1,8 @@
+    PID     ELAPSED CMD
+   2366       06:08 /root/neuron-channels/.venv/bin/python -u -m tasks.t0078_bedb_mobo_v2_ais_tiered_ahp.code.mobo_loop --n-iterations 700 --n-sobol 75 --n-seeds 20 --n-directions 8 --workers 64 --checkpoint-every 10
+---
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.

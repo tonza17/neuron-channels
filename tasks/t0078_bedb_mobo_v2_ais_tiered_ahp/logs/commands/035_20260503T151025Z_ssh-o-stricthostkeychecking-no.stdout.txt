@@ -1,0 +1,10 @@
+HOSTNAME=7163653ae76d
+NPROC=128
+Mem:             503          27         381           0          98         476
+overlay          25G  408K   25G   1% /
+Linux 7163653ae76d 5.15.0-170-generic #180-Ubuntu SMP Fri Jan 9 16:10:31 UTC 2026 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+PYTHON=Python 3.12.13
+PYTHON3_PATH=/usr/local/bin/python3

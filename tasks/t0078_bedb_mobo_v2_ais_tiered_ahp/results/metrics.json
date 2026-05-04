@@ -1,0 +1,191 @@
+{
+  "variants": [
+    {
+      "variant_id": "pareto_iter_290",
+      "label": "Pareto cell iter 290: high-DSI sub-threshold extreme",
+      "dimensions": {
+        "iteration": 290,
+        "pareto_rank": 1
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "pareto_iter_283",
+      "label": "Pareto cell iter 283: high-DSI rail",
+      "dimensions": {
+        "iteration": 283,
+        "pareto_rank": 2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9393939393939393
+      }
+    },
+    {
+      "variant_id": "pareto_iter_442",
+      "label": "Pareto cell iter 442: high-DSI rail",
+      "dimensions": {
+        "iteration": 442,
+        "pareto_rank": 3
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.853658536585366
+      }
+    },
+    {
+      "variant_id": "pareto_iter_371",
+      "label": "Pareto cell iter 371: high-DSI rail",
+      "dimensions": {
+        "iteration": 371,
+        "pareto_rank": 4
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.7666666666666666
+      }
+    },
+    {
+      "variant_id": "pareto_iter_380",
+      "label": "Pareto cell iter 380: high-DSI rail",
+      "dimensions": {
+        "iteration": 380,
+        "pareto_rank": 5
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.7555555555555556
+      }
+    },
+    {
+      "variant_id": "pareto_iter_349",
+      "label": "Pareto cell iter 349: high-DSI rail",
+      "dimensions": {
+        "iteration": 349,
+        "pareto_rank": 6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5294117647058824
+      }
+    },
+    {
+      "variant_id": "pareto_iter_81",
+      "label": "Pareto cell iter 81: transition",
+      "dimensions": {
+        "iteration": 81,
+        "pareto_rank": 7
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3155339805825243
+      }
+    },
+    {
+      "variant_id": "pareto_iter_320",
+      "label": "Pareto cell iter 320: mid-trade-off",
+      "dimensions": {
+        "iteration": 320,
+        "pareto_rank": 8
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2974789915966387
+      }
+    },
+    {
+      "variant_id": "pareto_iter_232",
+      "label": "Pareto cell iter 232: transition",
+      "dimensions": {
+        "iteration": 232,
+        "pareto_rank": 9
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.19889502762430936
+      }
+    },
+    {
+      "variant_id": "pareto_iter_408",
+      "label": "Pareto cell iter 408: transition",
+      "dimensions": {
+        "iteration": 408,
+        "pareto_rank": 10
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.18573185731857317
+      }
+    },
+    {
+      "variant_id": "pareto_iter_382",
+      "label": "Pareto cell iter 382: high-rate slope",
+      "dimensions": {
+        "iteration": 382,
+        "pareto_rank": 11
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.11218568665377177
+      }
+    },
+    {
+      "variant_id": "pareto_iter_123",
+      "label": "Pareto cell iter 123: high-rate slope",
+      "dimensions": {
+        "iteration": 123,
+        "pareto_rank": 12
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.05867346938775512
+      }
+    },
+    {
+      "variant_id": "pareto_iter_340",
+      "label": "Pareto cell iter 340: high-rate slope",
+      "dimensions": {
+        "iteration": 340,
+        "pareto_rank": 13
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04997060552616108
+      }
+    },
+    {
+      "variant_id": "pareto_iter_437",
+      "label": "Pareto cell iter 437: high-rate slope",
+      "dimensions": {
+        "iteration": 437,
+        "pareto_rank": 14
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04329120731379402
+      }
+    },
+    {
+      "variant_id": "pareto_iter_111",
+      "label": "Pareto cell iter 111: high-rate slope",
+      "dimensions": {
+        "iteration": 111,
+        "pareto_rank": 15
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.040420371867421125
+      }
+    },
+    {
+      "variant_id": "pareto_iter_476",
+      "label": "Pareto cell iter 476: high-rate corner",
+      "dimensions": {
+        "iteration": 476,
+        "pareto_rank": 16
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0131920847491505
+      }
+    },
+    {
+      "variant_id": "pareto_iter_475",
+      "label": "Pareto cell iter 475: high-rate corner",
+      "dimensions": {
+        "iteration": 475,
+        "pareto_rank": 17
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.007207371590183358
+      }
+    }
+  ]
+}

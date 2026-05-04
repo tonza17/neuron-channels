@@ -1,0 +1,5 @@
+    PID     ELAPSED
+   2366    01:03:49
+[sobol 75/75]  DSI=-1.000  PD=  0.00 Hz  n_err=0  trial_t=44.2s  cost=$0.15
+[acq 1/700]  DSI=+0.000  PD=  0.00 Hz  HV=1.6544  trial_t=44.9s  cost=$0.16
+[acq 2/700]  DSI=+0.818  PD=  0.36 Hz  HV=1.8822  trial_t=43.8s  cost=$0.16

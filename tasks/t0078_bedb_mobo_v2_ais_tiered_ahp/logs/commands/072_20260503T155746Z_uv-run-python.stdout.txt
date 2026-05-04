@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0078_bedb_mobo_v2_ais_tiered_ahp\tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\assets\paper\10.1371_journal.pcbi.1002107
+
+[31m[1mERRORS:[0m
+[31m  PA-E012 error: summary.md is missing YAML frontmatter[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

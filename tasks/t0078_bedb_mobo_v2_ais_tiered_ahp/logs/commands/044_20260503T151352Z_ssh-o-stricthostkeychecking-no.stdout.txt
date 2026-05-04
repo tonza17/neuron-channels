@@ -1,0 +1,4 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+NEURON HHst smoke test gnabar_hh = 0.12
+HH_SMOKE_DONE

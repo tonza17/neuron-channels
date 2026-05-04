@@ -1,0 +1,42 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0078_bedb_mobo_v2_ais_tiered_ahp\tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260503T133834Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260503T134730Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 008_20260503T140445Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 011_20260503T140852Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260503T140854Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 031_20260503T150753Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 032_20260503T150803Z_ssh-t-o.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 033_20260503T150817Z_bash-c-echo-touch-root-no-auto-tmux-echo.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 056_20260503T155413Z_curl-l-a.json has non-zero exit code: 52[0m
+[33m  LG-W004 warning: Command log 072_20260503T155746Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 074_20260503T155958Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 078_20260503T160743Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 082_20260503T161105Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 084_20260503T161110Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 085_20260503T161117Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 087_20260503T161125Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 088_20260503T161128Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 091_20260503T161159Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 093_20260503T161220Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 094_20260503T161229Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 095_20260503T161237Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 096_20260503T161245Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 107_20260503T161445Z_curl-l-a.json has non-zero exit code: 52[0m
+[33m  LG-W004 warning: Command log 108_20260503T161455Z_curl-l-a.json has non-zero exit code: 52[0m
+[33m  LG-W004 warning: Command log 114_20260503T161623Z_python-u-write-summary-part2-py.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 117_20260503T161730Z_python-u-write-paper-summary-py.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 120_20260503T162353Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 133_20260503T210349Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 145_20260504T141150Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 158_20260504T154648Z_scp-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 162_20260504T155006Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 164_20260504T155036Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 170_20260504T155443Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 177_20260504T161137Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 182_20260504T161223Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[33m[1mPASSED[0m — 0 error(s), 36 warning(s)

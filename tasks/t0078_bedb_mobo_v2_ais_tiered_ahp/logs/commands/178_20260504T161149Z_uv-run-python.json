@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format ids --uncovered",
+  "exit_code": 0,
+  "duration_seconds": 0.739,
+  "started_at": "2026-05-04T16:11:49Z",
+  "completed_at": "2026-05-04T16:11:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "178_20260504T161149Z_uv-run-python.stdout.txt",
+  "stderr_file": "178_20260504T161149Z_uv-run-python.stderr.txt",
+  "stdout_lines": 221,
+  "stderr_lines": 0,
+  "truncated": false
+}

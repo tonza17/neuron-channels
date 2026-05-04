@@ -1,0 +1,55 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2012.08.041",
+  "doi": "10.1016/j.neuron.2012.08.041",
+  "title": "Visual Stimulation Reverses the Directional Preference of Direction-Selective Retinal Ganglion Cells",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(12)00807-0",
+  "pdf_url": "https://www.cell.com/article/S0896627312008070/pdf",
+  "date_published": "2012-11-08",
+  "year": 2012,
+  "authors": [
+    {
+      "name": "Michal Rivlin-Etzion",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Wei Wei",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "patch-clamp",
+    "synaptic-integration"
+  ],
+  "abstract": "Direction selectivity in the retina is mediated by direction selective ganglion cells. These cells are part of a circuit in which they are asymmetrically wired to inhibitory neurons. Thus, they respond strongly to an image moving in the preferred direction and weakly to an image moving in the opposite (null) direction. Here, for the first time, we demonstrate that adaptation with short visual stimulation of a direction selective ganglion cell using drifting gratings can reverse this cell's directional preference by 180 degrees. This reversal is robust, long-lasting, and independent of the animal's age. Our findings indicate that, even within circuits that are hardwired, the computation of direction can be altered by dynamic circuit mechanisms that are guided by visual stimulation.",
+  "citation_key": "RivlinEtzion2012",
+  "summary_path": "summary.md",
+  "files": [
+    "files/rivlin-etzion_2012_directional-preference-reversal.xml",
+    "files/rivlin-etzion_2012_directional-preference-reversal.md"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "date_added": "2026-05-03"
+}

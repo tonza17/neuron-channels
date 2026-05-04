@@ -1,0 +1,17 @@
+    PID     ELAPSED
+   2366    03:43:52
+---
+[acq 53/700]  DSI=-0.006  PD= 83.11 Hz  HV=7.5136  trial_t=44.4s  cost=$0.53
+[acq 54/700]  DSI=+0.000  PD=  0.71 Hz  HV=7.5136  trial_t=44.0s  cost=$0.55
+[acq 55/700]  DSI=+0.002  PD=143.04 Hz  HV=7.5311  trial_t=48.0s  cost=$0.56
+[acq 56/700]  DSI=-0.068  PD=  1.46 Hz  HV=7.5311  trial_t=30.7s  cost=$0.57
+[acq 57/700]  DSI=+0.004  PD=107.25 Hz  HV=7.5311  trial_t=44.7s  cost=$0.59
+---
+132
+total_cells
+---
+cells DSI>=0.4: 3, of which DSI>=0.4 AND PD>=10: 0
+top high-DSI cells (sorted by PD rate desc):
+  [acq  26] DSI=+0.667  PD=  0.54 Hz
+  [acq   2] DSI=+0.818  PD=  0.36 Hz
+  [acq  10] DSI=+1.000  PD=  0.07 Hz

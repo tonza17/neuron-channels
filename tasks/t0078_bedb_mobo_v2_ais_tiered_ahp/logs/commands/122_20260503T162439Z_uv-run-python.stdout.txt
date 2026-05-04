@@ -1,0 +1,5 @@
+=== ERRORS ===
+=== WARNINGS ===
+  lines over 100 chars: [(8, 120)]
+words=1858 results_bullets=8 main_ideas_bullets=3 summary_paragraphs=4
+PASS

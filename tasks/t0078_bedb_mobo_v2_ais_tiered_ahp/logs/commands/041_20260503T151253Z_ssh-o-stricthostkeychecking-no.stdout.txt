@@ -1,0 +1,15 @@
+Using CPython 3.12.13 interpreter at: /usr/local/bin/python3.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Python 3.12.13
+ + types-requests==2.33.0.20260408
+ + types-tqdm==4.67.3.20260408
+ + typing-extensions==4.15.0
+ + typing-inspect==0.9.0
+ + typing-inspection==0.4.2
+ + typst==0.14.8
+ + urllib3==2.6.3
+ + vastai==1.0.1
+ + xdg==6.0.0
+ + yarl==1.23.0
+Python 3.12.13

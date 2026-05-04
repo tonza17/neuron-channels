@@ -1,0 +1,5 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+no sessions
+open terminal failed: not a terminal

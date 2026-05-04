@@ -1,0 +1,35 @@
+trial_t=28.9s
+trial_t=29.9s
+trial_t=29.6s
+trial_t=29.9s
+trial_t=30.2s
+trial_t=29.4s
+trial_t=29.9s
+trial_t=29.9s
+trial_t=30.2s
+trial_t=29.1s
+trial_t=29.5s
+trial_t=28.8s
+trial_t=31.3s
+trial_t=29.4s
+trial_t=29.7s
+trial_t=29.4s
+trial_t=29.3s
+trial_t=29.7s
+trial_t=29.3s
+trial_t=28.1s
+trial_t=28.9s
+trial_t=29.1s
+trial_t=29.7s
+trial_t=29.2s
+trial_t=52.9s
+trial_t=44.4s
+trial_t=53.5s
+trial_t=51.8s
+trial_t=52.8s
+trial_t=51.9s
+---
+overlay          25G   14G   12G  54% /
+---
+               total        used        free      shared  buff/cache   available
+Mem:          515604       35517      377256          30      107218      480086

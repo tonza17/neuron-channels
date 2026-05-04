@@ -1,0 +1,5 @@
+UNPAYWALL is_oa: True
+UNPAYWALL best_oa: {'endpoint_id': None, 'evidence': 'deprecated', 'host_type': 'publisher', 'is_best': True, 'license': None, 'oa_date': '2013-09-11', 'pmh_id': None, 'repository_institution': None, 'updated': 'deprecated', 'url': 'https://www.jneurosci.org/content/jneuro/33/37/14927.full.pdf', 'url_for_landing_page': 'https://doi.org/10.1523/jneurosci.0808-13.2013', 'url_for_pdf': 'https://www.jneurosci.org/content/jneuro/33/37/14927.full.pdf', 'version': 'publishedVersion'}
+ OA loc: https://www.jneurosci.org/content/jneuro/33/37/14927.full.pdf | publishedVersion | publisher
+ OA loc: None | submittedVersion | repository
+PMC IDCONV: {'status': 'ok', 'response-date': '2026-05-03 12:11:45', 'request': {'warnings': [], 'format': 'json', 'ids': ['10.1523/JNEUROSCI.0808-13.2013'], 'email': 'a.nikolaev@sheffield.ac.uk', 'tool': 'arf', 'echo': 'ids=10.1523%2FJNEUROSCI.0808-13.2013&format=json&tool=arf&email=a.nikolaev%40sheffield.ac.uk', 'versions': 'no', 'showaiid': 'no', 'idtype': 'doi'}, 'records': [{'doi': '10.1523/JNEUROSCI.0808-13.2013', 'pmcid': 'PMC6705162', 'pmid': 24027292, 'requested-id': '10.1523/JNEUROSCI.0808-13.2013'}]}

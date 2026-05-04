@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 -o StrictHostKeyChecking=no root@ssh2.vast.ai echo '== High-DSI cells (DSI >= 0.4) ==' && grep -E 'DSI=\\+0\\.[4-9]|DSI=\\+1\\.' /root/mobo_loop.log | head -10 && echo && echo '== Cells in pass band (DSI >= 0.4 AND PD >= 10) ==' && python3 -c \"\nimport re\nhits = []\nwith open('/root/mobo_loop.log') as f:\n    for line in f:\n        m = re.search(r'\\[(sobol|acq) (\\d+)/\\d+\\]\\s+DSI=([+-][\\d.]+)\\s+PD=\\s*([\\d.]+) Hz', line)\n        if m:\n            phase, idx, dsi, pd = m.group(1), int(m.group(2)), float(m.group(3)), float(m.group(4))\n            if dsi >= 0.4 and pd >= 10.0:\n                hits.append((phase, idx, dsi, pd))\nprint(f'{len(hits)} cells meet pass criterion (DSI>=0.4 AND PD>=10 Hz):')\nfor phase, idx, dsi, pd in hits:\n    print(f'  [{phase} {idx}] DSI={dsi:+.3f}  PD={pd:6.2f} Hz')\n\"",
+  "exit_code": 0,
+  "duration_seconds": 3.018,
+  "started_at": "2026-05-03T18:09:02Z",
+  "completed_at": "2026-05-03T18:09:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "131_20260503T180902Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "131_20260503T180902Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 2,
+  "truncated": false
+}

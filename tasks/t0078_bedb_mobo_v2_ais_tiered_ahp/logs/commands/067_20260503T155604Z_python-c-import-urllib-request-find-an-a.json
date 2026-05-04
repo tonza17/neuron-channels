@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \nimport urllib.request\n# Find an alternative source via Unpaywall API\nurl = 'https://api.unpaywall.org/v2/10.1016/j.neuron.2012.08.041?email=test@example.com'\nreq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\ntry:\n    with urllib.request.urlopen(req, timeout=60) as r:\n        data = r.read().decode('utf-8')\n        print(data[:3000])\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.538,
+  "started_at": "2026-05-03T15:56:04Z",
+  "completed_at": "2026-05-03T15:56:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "067_20260503T155604Z_python-c-import-urllib-request-find-an-a.stdout.txt",
+  "stderr_file": "067_20260503T155604Z_python-c-import-urllib-request-find-an-a.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

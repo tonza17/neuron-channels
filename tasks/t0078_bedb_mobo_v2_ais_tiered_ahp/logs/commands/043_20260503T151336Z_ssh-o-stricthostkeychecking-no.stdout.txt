@@ -1,0 +1,13 @@
+Resolved 5 packages in 746ms
+Downloading neuron (14.2MiB)
+ Downloaded neuron
+Prepared 2 packages in 1.81s
+Installed 2 packages in 232ms
+ + find-libpython==0.5.1
+ + neuron==8.2.7
+NEURON_INSTALL_DONE
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+neuron_version: 8.2.7+
+NRNIVMODL_PATH=
+-rwxr-xr-x 1 root root 4468 May  3 15:13 .venv/bin/nrnivmodl

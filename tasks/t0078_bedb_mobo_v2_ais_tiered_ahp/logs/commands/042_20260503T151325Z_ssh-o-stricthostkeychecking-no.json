@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai set -e; export PATH=/root/.local/bin:$PATH; cd /root/neuron-channels; .venv/bin/pip install neuron==8.2.7 2>&1 | tail -10; echo NEURON_INSTALL_DONE; .venv/bin/python -c \"import neuron; print(\\\"neuron_version:\\\", neuron.__version__)\" 2>&1 | tail -3",
+  "exit_code": 0,
+  "duration_seconds": 2.837,
+  "started_at": "2026-05-03T15:13:25Z",
+  "completed_at": "2026-05-03T15:13:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "042_20260503T151325Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "042_20260503T151325Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,22 @@
+-rw-r--r-- 1 root root 2395532 May  4 15:36 /root/mobo_loop.log
+63344 /root/mobo_loop.log
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[acq 416/700]  DSI=+0.667  PD=  0.89 Hz  HV=11.4144  trial_t=53.4s  cost=$3.78

@@ -1,0 +1,28 @@
+    PID     ELAPSED
+   2366    22:48:46
+---
+[acq 409/700]  DSI=-0.015  PD=106.29 Hz  HV=11.3720  trial_t=52.4s  cost=$3.53
+[acq 410/700]  DSI=+0.001  PD=132.04 Hz  HV=11.3720  trial_t=52.2s  cost=$3.56
+[acq 411/700]  DSI=-0.011  PD=129.61 Hz  HV=11.3720  trial_t=52.8s  cost=$3.60
+---
+486
+total_cells
+---
+[acq 312/700]  DSI=+0.436  PD=  1.00 Hz  HV=10.4730  trial_t=28.7s  cost=$2.42
+[acq 317/700]  DSI=+0.592  PD=  1.39 Hz  HV=10.4730  trial_t=29.6s  cost=$2.46
+[acq 324/700]  DSI=+0.852  PD=  0.89 Hz  HV=10.4730  trial_t=28.9s  cost=$2.50
+[acq 327/700]  DSI=+1.000  PD=  0.04 Hz  HV=10.4730  trial_t=28.9s  cost=$2.52
+[acq 335/700]  DSI=+1.000  PD=  0.18 Hz  HV=10.5991  trial_t=28.9s  cost=$2.58
+[acq 362/700]  DSI=+0.742  PD=  0.96 Hz  HV=10.6263  trial_t=28.4s  cost=$2.76
+[acq 368/700]  DSI=+0.854  PD=  1.36 Hz  HV=10.7492  trial_t=28.3s  cost=$2.81
+[acq 380/700]  DSI=+0.584  PD=  2.18 Hz  HV=10.7492  trial_t=29.5s  cost=$2.91
+[acq 392/700]  DSI=+0.404  PD=  2.86 Hz  HV=10.7492  trial_t=29.7s  cost=$3.02
+[acq 394/700]  DSI=+0.723  PD=  2.00 Hz  HV=10.7492  trial_t=52.9s  cost=$3.07
+---
+Mon May  4 14:29:47 UTC 2026
+---
+-rw-r--r-- 1 root root 183461 May  4 09:31 checkpoint_0444.pt
+-rw-r--r-- 1 root root 187493 May  4 10:03 checkpoint_0454.pt
+-rw-r--r-- 1 root root 191653 May  4 10:39 checkpoint_0464.pt
+-rw-r--r-- 1 root root 195685 May  4 12:17 checkpoint_0474.pt
+-rw-r--r-- 1 root root 199781 May  4 14:13 checkpoint_0484.pt

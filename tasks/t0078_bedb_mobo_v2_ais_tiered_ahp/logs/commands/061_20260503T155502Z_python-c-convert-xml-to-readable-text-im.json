@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \n# Convert XML to readable text\nimport re\nwith open('tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.xml', 'rb') as f:\n    data = f.read().decode('utf-8', errors='replace')\n# Strip XML tags but keep text\ntext = re.sub(r'<[^>]+>', ' ', data)\ntext = re.sub(r'\\s+', ' ', text).strip()\nprint(f'Length: {len(text)}')\nprint(text[:3000])\n",
+  "exit_code": 0,
+  "duration_seconds": 0.096,
+  "started_at": "2026-05-03T15:55:02Z",
+  "completed_at": "2026-05-03T15:55:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "061_20260503T155502Z_python-c-convert-xml-to-readable-text-im.stdout.txt",
+  "stderr_file": "061_20260503T155502Z_python-c-convert-xml-to-readable-text-im.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 -o StrictHostKeyChecking=no root@ssh2.vast.ai ps -p 2366 -o pid,etime && echo --- && grep -E '\\[(sobol|acq)' /root/mobo_loop.log | tail -5 && echo --- && grep -cE '\\[(sobol|acq)' /root/mobo_loop.log && echo total_cells && echo --- && python3 -c \"\nimport re\nhits = []\nhigh_dsi = []\nwith open('/root/mobo_loop.log') as f:\n    for line in f:\n        m = re.search(r'\\[(sobol|acq) (\\d+)/\\d+\\]\\s+DSI=([+-][\\d.]+)\\s+PD=\\s*([\\d.]+) Hz.*HV=([\\d.]+)?', line)\n        if m:\n            phase, idx, dsi, pd = m.group(1), int(m.group(2)), float(m.group(3)), float(m.group(4))\n            if dsi >= 0.4 and pd >= 10.0:\n                hits.append((phase, idx, dsi, pd))\n            if dsi >= 0.4:\n                high_dsi.append((phase, idx, dsi, pd))\nprint(f'cells DSI>=0.4: {len(high_dsi)}, of which DSI>=0.4 AND PD>=10: {len(hits)}')\nprint('top high-DSI cells (sorted by PD rate desc):')\nfor phase, idx, dsi, pd in sorted(high_dsi, key=lambda x: -x[3])[:5]:\n    print(f'  [{phase} {idx:3d}] DSI={dsi:+.3f}  PD={pd:6.2f} Hz')\n\"",
+  "exit_code": 0,
+  "duration_seconds": 3.04,
+  "started_at": "2026-05-03T19:24:51Z",
+  "completed_at": "2026-05-03T19:24:54Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "132_20260503T192451Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "132_20260503T192451Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 2,
+  "truncated": false
+}

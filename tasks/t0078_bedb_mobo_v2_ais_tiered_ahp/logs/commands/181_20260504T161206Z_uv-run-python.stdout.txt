@@ -1,0 +1,2435 @@
+# Suggestions (221)
+
+| ID | Title | Kind | Priority | Status | Source Task | Date Added |
+|-----|-------|------|----------|--------|-------------|------------|
+| S-0002-01 | Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge | experiment | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-04 | Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count | experiment | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-05 | GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry | experiment | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-06 | NMDA multiplicative-gain ablation to isolate its contribution to DSI | experiment | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-07 | Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision) | dataset | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-08 | Register SAC presynaptic drive model as an asset for downstream DSGC input construction | library | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0002-10 | Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark | dataset | medium | active | `t0002_literature_survey_dsgc_compartmental_models` | 2026-04-19 |
+| S-0003-02 | Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into the project as a library asset | library | medium | active | `t0003_simulator_library_survey` | 2026-04-19 |
+| S-0003-03 | Benchmark NEURON vs Arbor on the project's actual DSGC morphology | experiment | medium | active | `t0003_simulator_library_survey` | 2026-04-19 |
+| S-0003-04 | Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies | library | medium | active | `t0003_simulator_library_survey` | 2026-04-19 |
+| S-0003-05 | Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption | evaluation | low | active | `t0003_simulator_library_survey` | 2026-04-19 |
+| S-0004-01 | Generate weaker-DSI variant target tuning curves | dataset | medium | active | `t0004_generate_target_tuning_curve` | 2026-04-19 |
+| S-0004-02 | Add a Poisson-noise variant of the target trials | dataset | low | active | `t0004_generate_target_tuning_curve` | 2026-04-19 |
+| S-0005-03 | Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis | dataset | medium | active | `t0005_download_dsgc_morphology` | 2026-04-19 |
+| S-0005-04 | Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology | library | medium | active | `t0005_download_dsgc_morphology` | 2026-04-19 |
+| S-0005-05 | Render and QA-check 2D/3D visualisations of dsgc-baseline-morphology for documentation and synapse placement | evaluation | medium | active | `t0005_download_dsgc_morphology` | 2026-04-19 |
+| S-0007-01 | Validate custom khhchan.mod biophysics with a dedicated sanity simulation | experiment | medium | active | `t0007_install_neuron_netpyne` | 2026-04-19 |
+| S-0007-02 | Script the full NEURON + NetPyNE install for clean-machine reproduction | library | medium | active | `t0007_install_neuron_netpyne` | 2026-04-19 |
+| S-0007-03 | Benchmark NetPyNE harness overhead vs raw NEURON across problem sizes | evaluation | medium | active | `t0007_install_neuron_netpyne` | 2026-04-19 |
+| S-0008-01 | Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC library | library | medium | active | `t0008_port_modeldb_189347` | 2026-04-20 |
+| S-0008-03 | Rebuild ModelDB 189347 port on the calibrated Horton-Strahler SWC from t0009 | experiment | medium | active | `t0008_port_modeldb_189347` | 2026-04-20 |
+| S-0008-04 | Parameter-sweep calibration of bundled 189347 toward the envelope targets | experiment | medium | active | `t0008_port_modeldb_189347` | 2026-04-20 |
+| S-0008-05 | Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC asset | library | low | active | `t0008_port_modeldb_189347` | 2026-04-20 |
+| S-0009-01 | Inverse-fit three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient | technique | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-02 | Interpolate soma pt3dadd diameters along the principal axis to replace the uniform 4.118 um soma radius | technique | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-03 | Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky 2016 spike shape and distal Ih sag | technique | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-04 | Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section diameter lookup to drop Strahler binning entirely | technique | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-05 | Sensitivity analysis: re-run DSGC simulations under alternative Strahler tie-break rules and bin boundaries | evaluation | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-06 | Re-type SWC by section role (soma / primary / mid / terminal) as a sibling dataset asset | dataset | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-07 | Per-cell ex-vivo two-photon image segmentation of 141009_Pair1DSGC to produce a cell-specific diameter ground truth | dataset | low | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0009-08 | Port the TREES-toolbox Rall 3/2 quaddiameter rule to a pure-Python calibrator and compare against the Strahler bins | library | medium | active | `t0009_calibrate_dendritic_diameters` | 2026-04-20 |
+| S-0010-01 | Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep | experiment | medium | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0010-02 | Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle grid to 12 angles | experiment | medium | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0010-03 | Write forward-only driver for PolegPolsky2026 DS-mechanisms model and pursue LICENSE | experiment | medium | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0010-04 | Extend DSGC model corpus to Arbor and NetPyNE reimplementations | experiment | medium | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0010-05 | Build a headless-port scaffold library that wraps upstream NEURON models | library | medium | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0010-06 | Add Elsevier-login fallback to the paper-download workflow | technique | low | active | `t0010_hunt_missed_dsgc_models` | 2026-04-20 |
+| S-0011-02 | Add strict angle-grid validation mode to tuning_curve_viz.loaders.validate_angle_grid | library | medium | active | `t0011_response_visualization_library` | 2026-04-20 |
+| S-0011-03 | Add combined-report function that renders all four plot types into one multi-page PDF/HTML per model | library | medium | active | `t0011_response_visualization_library` | 2026-04-20 |
+| S-0011-04 | Add statistical-comparison overlays (paired bootstrap, DSI/HWHM annotations) to multi-model plots | library | medium | active | `t0011_response_visualization_library` | 2026-04-20 |
+| S-0011-05 | Port additional DSGC models from t0010 hunt and exercise plot_multi_model_overlay with >2 models | experiment | medium | active | `t0011_response_visualization_library` | 2026-04-20 |
+| S-0011-06 | Add PNG regression testing for tuning_curve_viz via pixel-level image diff in CI | evaluation | low | active | `t0011_response_visualization_library` | 2026-04-20 |
+| S-0012-02 | Parametric curve fitting (von Mises / wrapped Gaussian) for sub-degree HWHM estimates on sparse 12-angle grids | technique | medium | active | `t0012_tuning_curve_scoring_loss_library` | 2026-04-20 |
+| S-0012-04 | Alternative loss formulations (L1, max-residual, weighted-L-infinity) benchmarked against the Euclidean default | technique | medium | active | `t0012_tuning_curve_scoring_loss_library` | 2026-04-20 |
+| S-0012-05 | Revisit envelope widening (DSI upper 0.85 to 0.9, peak lower 40 to 30 Hz) once real simulation results are in | evaluation | medium | active | `t0012_tuning_curve_scoring_loss_library` | 2026-04-20 |
+| S-0012-06 | Cross-validate compute_reliability against independent split-half implementations (odd-even, bootstrap, Spearman-Brown) | evaluation | low | active | `t0012_tuning_curve_scoring_loss_library` | 2026-04-20 |
+| S-0013-01 | Write a shared arf.scripts.utils.resolve_doi helper that returns title, authors, venue, year, PMID, and PMCID | library | medium | active | `t0013_resolve_morphology_provenance` | 2026-04-20 |
+| S-0013-02 | Add a plan-stage DOI-nomination verificator that checks each candidate DOI matches its human-written label | library | medium | active | `t0013_resolve_morphology_provenance` | 2026-04-20 |
+| S-0013-03 | Download the Morrie & Feller 2018 SAC reconstructions from NeuroMorpho and build a paired SAC+DSGC morphology asset | dataset | medium | active | `t0013_resolve_morphology_provenance` | 2026-04-20 |
+| S-0013-04 | Re-audit all existing dataset and library assets' source_paper_id fields against resolved DOI metadata | evaluation | medium | active | `t0013_resolve_morphology_provenance` | 2026-04-20 |
+| S-0013-05 | Email the Feller lab to map the 141009_Pair1DSGC session to a specific pair in Morrie & Feller 2018 CB | evaluation | low | active | `t0013_resolve_morphology_provenance` | 2026-04-20 |
+| S-0015-01 | Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims | experiment | medium | active | `t0015_literature_survey_cable_theory` | 2026-04-20 |
+| S-0015-02 | Extend cable-theory survey to frequency-domain and thin-dendrite transmission | experiment | medium | active | `t0015_literature_survey_cable_theory` | 2026-04-20 |
+| S-0015-03 | Register retinal-ganglion-cells and compartmental-modelling categories | evaluation | medium | active | `t0015_literature_survey_cable_theory` | 2026-04-20 |
+| S-0016-01 | Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims | experiment | medium | active | `t0016_literature_survey_dendritic_computation` | 2026-04-20 |
+| S-0016-02 | Extend dendritic-computation survey to cerebellar Purkinje and STDP papers | experiment | medium | active | `t0016_literature_survey_dendritic_computation` | 2026-04-20 |
+| S-0016-04 | Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees | experiment | medium | active | `t0016_literature_survey_dendritic_computation` | 2026-04-20 |
+| S-0017-01 | Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims | experiment | medium | active | `t0017_literature_survey_patch_clamp` | 2026-04-20 |
+| S-0017-02 | Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN biophysics, and AIS measurements | experiment | medium | active | `t0017_literature_survey_patch_clamp` | 2026-04-20 |
+| S-0017-04 | Register patch-clamp and compartmental-modeling categories if not already present | evaluation | low | active | `t0017_literature_survey_patch_clamp` | 2026-04-20 |
+| S-0018-01 | Retrieve paywalled synaptic-integration PDFs via Sheffield access and verify numerical priors | experiment | medium | active | `t0018_literature_survey_synaptic_integration` | 2026-04-20 |
+| S-0018-02 | Extend synaptic-integration survey with DSGC-specific receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers | experiment | medium | active | `t0018_literature_survey_synaptic_integration` | 2026-04-20 |
+| S-0018-04 | Register synaptic-integration category slugs if not already present | evaluation | low | active | `t0018_literature_survey_synaptic_integration` | 2026-04-20 |
+| S-0019-01 | Retrieve paywalled voltage-gated-channel PDFs via Sheffield access and verify numerical priors | experiment | medium | active | `t0019_literature_survey_voltage_gated_channels` | 2026-04-20 |
+| S-0019-02 | Extend voltage-gated-channel survey with recent DSGC-specific Nav/Kv patch-clamp and super-resolution AIS microdomain papers | experiment | medium | active | `t0019_literature_survey_voltage_gated_channels` | 2026-04-20 |
+| S-0019-04 | Register voltage-gated-channel category slugs if not already present | evaluation | low | active | `t0019_literature_survey_voltage_gated_channels` | 2026-04-20 |
+| S-0020-01 | Excitation-side sensitivity sweep under gabaMOD-swap to close the 25 Hz peak-firing-rate gap | experiment | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-02 | Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation targets (PSP amplitude, NMDAR slope angle) | evaluation | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-03 | Intermediate-gabaMOD sensitivity sweep to map the PD-ND transition curve | experiment | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-04 | Extend tuning_curve_loss with a two-point (PD/ND) scoring API to make t0012 usable under the native protocol | library | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-05 | Add a per-trial spike-count floor to the two-point envelope gate to catch biologically implausible passes | evaluation | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-06 | Trial-count power analysis for the PD/ND DSI estimator (bootstrap CI vs N_trials) | evaluation | medium | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0020-07 | Extend t0011 response-visualisation library with a condition-based (PD/ND) raster+PSTH plot | library | low | active | `t0020_port_modeldb_189347_gabamod` | 2026-04-20 |
+| S-0022-01 | Nav1.1 proximal-AIS knockout channel-swap on the t0022 testbed | experiment | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-02 | Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz peak-rate gap | experiment | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-03 | Per-dendrite E-I parameter sweep to map the DSI response surface | experiment | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-04 | Add a Starburst Amacrine Cell feedforward layer to drive inhibition physiologically | library | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-05 | Inject Poisson background rate on the t0022 driver to moderate DSI from 1.0 toward the 0.5-0.8 published band | experiment | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-06 | Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007 repolarisation prior | experiment | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-07 | Harmonised cross-comparison of the three ModelDB 189347 sibling ports (t0008, t0020, t0022) | evaluation | medium | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0022-08 | Add Ih (HCN) channel to dendrites and measure its effect on E-I integration window | experiment | low | active | `t0022_modify_dsgc_channel_testbed` | 2026-04-21 |
+| S-0024-01 | Port the full upstream SacNetwork with bp_locs/probs/deltas to reproduce the deRosenroll correlation-drop effect | technique | medium | active | `t0024_port_de_rosenroll_2026_dsgc` | 2026-04-21 |
+| S-0024-02 | Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to test peak firing-rate shortfall | experiment | medium | active | `t0024_port_de_rosenroll_2026_dsgc` | 2026-04-21 |
+| S-0024-04 | Parameterize t0011/t0012 tuning-curve plotter and scorer to support N_ANGLES != 12 | library | medium | active | `t0024_port_de_rosenroll_2026_dsgc` | 2026-04-21 |
+| S-0024-05 | Add a verify_library_asset.py verificator to close the framework-wide gap flagged during t0024 step 9 | library | low | active | `t0024_port_de_rosenroll_2026_dsgc` | 2026-04-21 |
+| S-0024-06 | Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can include 5/5 DSGC models instead of 4/5 | experiment | medium | active | `t0024_port_de_rosenroll_2026_dsgc` | 2026-04-21 |
+| S-0026-01 | Register dsi_at_vrest and peak_hz_at_vrest metric keys in meta/metrics/ | technique | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-02 | Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects | experiment | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-03 | Sweep bar velocity x V_rest on both DSGC ports to test velocity-V_rest interaction | experiment | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-04 | Parallelise the t0024 sweep across CPU cores to cut wall time from 3.21 h to under 1 h | library | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-05 | Port Hanson2019 DSGC model and repeat V_rest sweep to test starburst-independent DS hypothesis | experiment | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-06 | Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism | experiment | medium | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0026-07 | Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the post-collapse regime in t0024 | experiment | low | active | `t0026_vrest_sweep_tuning_curves_dsgc` | 2026-04-21 |
+| S-0027-02 | Swap bipolar-cell sustained vs transient kinetics on t0024 to discriminate kinetic tiling from cable delay | experiment | medium | active | `t0027_literature_survey_morphology_ds_modeling` | 2026-04-21 |
+| S-0027-04 | Random terminal-branch ablation (25%) on t0022 to test branch independence | experiment | medium | active | `t0027_literature_survey_morphology_ds_modeling` | 2026-04-21 |
+| S-0027-05 | Single-compartment collapse of t0024 to test whether T4-style geometry-nullity extends to DSGCs | experiment | medium | active | `t0027_literature_survey_morphology_ds_modeling` | 2026-04-21 |
+| S-0027-07 | Sweep dendritic spine density on t0022 distal terminals as an unconventional morphology variable | experiment | low | active | `t0027_literature_survey_morphology_ds_modeling` | 2026-04-21 |
+| S-0029-01 | Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022 | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-02 | Distal Nav ablation crossed with distal-dendrite length sweep on t0022 | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-03 | Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to reach Dan2018's critical regime | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-04 | Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the deterministic ceiling on t0022 | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-05 | Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to localize the peak-Hz cliff | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-06 | Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite length sweep on t0022 | experiment | medium | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0029-07 | Promote peak-Hz and HWHM to co-primary outcomes when DSI is at ceiling (evaluation methodology) | evaluation | low | active | `t0029_distal_dendrite_length_sweep_dsgc` | 2026-04-22 |
+| S-0030-02 | Poisson-noise desaturation rerun of the distal-dendrite diameter sweep on t0022 | experiment | medium | active | `t0030_distal_dendrite_diameter_sweep_dsgc` | 2026-04-22 |
+| S-0030-03 | Wider distal-diameter sweep (0.25x to 4.0x) after the schedule fix to probe extreme impedance regimes | experiment | medium | active | `t0030_distal_dendrite_diameter_sweep_dsgc` | 2026-04-22 |
+| S-0030-04 | Joint distal length x diameter 2-D sweep on t0022 to catch interactions the marginal sweeps miss | experiment | medium | active | `t0030_distal_dendrite_diameter_sweep_dsgc` | 2026-04-22 |
+| S-0030-05 | Non-uniform proximal-to-distal diameter taper sweep on t0022 to match Schachter2010 impedance gradient | experiment | medium | active | `t0030_distal_dendrite_diameter_sweep_dsgc` | 2026-04-22 |
+| S-0033-02 | Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on t0022 as a t0033 optimiser prerequisite | library | medium | active | `t0033_plan_dsgc_morphology_channel_optimisation` | 2026-04-22 |
+| S-0033-03 | Multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended optimiser cell | technique | medium | active | `t0033_plan_dsgc_morphology_channel_optimisation` | 2026-04-22 |
+| S-0033-04 | Transfer-learning surrogate warm-start from t0022 and t0024 V_rest-sweep evaluations | technique | medium | active | `t0033_plan_dsgc_morphology_channel_optimisation` | 2026-04-22 |
+| S-0033-05 | 5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to validate sample-efficiency assumptions | experiment | medium | active | `t0033_plan_dsgc_morphology_channel_optimisation` | 2026-04-22 |
+| S-0033-06 | Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop | library | medium | active | `t0033_plan_dsgc_morphology_channel_optimisation` | 2026-04-22 |
+| S-0034-01 | 2-D distal length x diameter sweep on t0024 to disambiguate cable-filtering vs local-spike-failure | experiment | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-02 | AR(2) rho sweep at t0024 baseline morphology to isolate stochastic-release smoothing from cable biophysics | experiment | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-03 | Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points) to characterise the electrotonic-length optimum | experiment | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-04 | Per-compartment distal-spike detector on t0024 length sweep to verify Schachter2010 local-spike-failure at 1.5x and 2.0x | experiment | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-05 | Quantitative cable-theory fit of t0034 DSI-vs-length curve against Rall 1/d^(3/2) and Tukker2004 predictions | evaluation | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-06 | Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials per angle) to confirm the preferred-angle jumps | experiment | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0034-07 | Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors | evaluation | medium | active | `t0034_distal_dendrite_length_sweep_t0024` | 2026-04-23 |
+| S-0035-02 | Surface-density-rescaled Nav diameter sweep on t0024 to test surface-vs-volume compensation | experiment | medium | active | `t0035_distal_dendrite_diameter_sweep_t0024` | 2026-04-23 |
+| S-0035-03 | Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points) to probe non-linear extremes | experiment | medium | active | `t0035_distal_dendrite_diameter_sweep_t0024` | 2026-04-23 |
+| S-0035-04 | Ih (HCN) conductance ablation sweep on t0024 distal dendrites to test h-current role in distal cable behaviour | experiment | medium | active | `t0035_distal_dendrite_diameter_sweep_t0024` | 2026-04-23 |
+| S-0035-05 | Zero-cost meta-analysis of primary-DSI vs vector-sum-DSI discrepancy across t0029, t0030, t0034, t0035 | evaluation | medium | active | `t0035_distal_dendrite_diameter_sweep_t0024` | 2026-04-23 |
+| S-0035-06 | Deprioritise distal-diameter parameters in the t0033 DSI optimiser search space | technique | medium | active | `t0035_distal_dendrite_diameter_sweep_t0024` | 2026-04-23 |
+| S-0036-02 | GABA-to-AMPA timing offset sweep on t0022 diameter testbed to test timing-dominates-conductance hypothesis | experiment | medium | active | `t0036_rerun_t0030_halved_null_gaba` | 2026-04-23 |
+| S-0036-03 | Distal voltage-trace capture at null direction on t0022 to confirm sub-threshold-clamp hypothesis | experiment | medium | active | `t0036_rerun_t0030_halved_null_gaba` | 2026-04-23 |
+| S-0036-04 | Extract the t0022 GABA-override monkey-patch into a reusable library asset for downstream tasks | library | medium | active | `t0036_rerun_t0030_halved_null_gaba` | 2026-04-23 |
+| S-0037-03 | Localise the GABA unpinning threshold with a fine sweep (5.0, 4.5, 4.0, 3.5, 3.0 nS) | experiment | medium | active | `t0037_null_gaba_reduction_ladder_t0022` | 2026-04-24 |
+| S-0037-04 | Diagnose and fix the low peak firing rate in t0022 (15 Hz vs 40-80 Hz Schachter2010) | experiment | medium | active | `t0037_null_gaba_reduction_ladder_t0022` | 2026-04-24 |
+| S-0037-05 | Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2) noise | experiment | medium | active | `t0037_null_gaba_reduction_ladder_t0022` | 2026-04-24 |
+| S-0037-06 | Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC offset) | technique | low | active | `t0037_null_gaba_reduction_ladder_t0022` | 2026-04-24 |
+| S-0039-01 | Rerun t0039 7-diameter sweep on t0024 for active-vs-passive testbed comparison | experiment | medium | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0039-02 | Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6, 0.7} at GABA=4 nS on t0022 | experiment | medium | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0039-03 | Joint (GABA, diameter) sweep to separate passive filtering from GABA-suppressed active amplification | experiment | medium | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0039-04 | Diagnose and fix t0022's 15 Hz peak-firing cap (inherited AMPA-only drive issue) | experiment | medium | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0039-05 | Update t0033 optimiser headroom estimate to reflect narrow (0.06 DSI) morphology dynamic range on t0022 | technique | medium | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0039-06 | Introduce per-trial spike-count distribution metric to distinguish failures from timing shifts | evaluation | low | active | `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 2026-04-24 |
+| S-0041-01 | Impedance-loading-corrected electrotonic-length collapse re-test | evaluation | medium | active | `t0041_electrotonic_length_collapse_t0034_t0035` | 2026-04-24 |
+| S-0041-02 | Denser 2-D sweep of L x d to map DSI response surface on t0024 | experiment | medium | active | `t0041_electrotonic_length_collapse_t0034_t0035` | 2026-04-24 |
+| S-0041-03 | Correct t0033 answer asset: confirm 2-D morphology parameterisation | evaluation | medium | active | `t0041_electrotonic_length_collapse_t0034_t0035` | 2026-04-24 |
+| S-0041-04 | Per-section L/lambda rather than mean-based for collapse tests | technique | low | active | `t0041_electrotonic_length_collapse_t0034_t0035` | 2026-04-24 |
+| S-0046-01 | Re-run t0046 figure sweeps at paper-N (12-19 trials per condition, full 8-direction sweep) | experiment | medium | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0046-02 | Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB 189347 vs Poleg-Polsky 2016 paper text | experiment | medium | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0046-03 | Add an iMK801 analogue MOD modification (selective dendritic NMDAR block) to enable Fig 8 AP5 reproduction | library | medium | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0046-04 | Decide the fate of t0042/t0043/t0044: rewrite motivation or cancel based on t0046 findings | evaluation | medium | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0046-05 | Manually fetch and attach the Poleg-Polsky 2016 supplementary PDF (NIHMS766337, PMC4795984) | dataset | medium | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0046-06 | Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a reusable library used by t0008/t0020/t0022 successors | library | low | active | `t0046_reproduce_poleg_polsky_2016_exact` | 2026-04-24 |
+| S-0047-03 | Redefine the ROC AUC negative class (off-direction or jitter-isolated trials) so the metric does not saturate at 1.000 | evaluation | medium | active | `t0047_validate_pp16_fig3_cond_noise` | 2026-04-25 |
+| S-0047-04 | Package per-synapse conductance recorder and qualitative-shape verdict helpers as a reusable library | library | low | active | `t0047_validate_pp16_fig3_cond_noise` | 2026-04-25 |
+| S-0048-01 | GABA conductance scan at Voff_bipNMDA=1 to close the residual DSI gap to paper's 0.30 line | experiment | medium | active | `t0048_voff_nmda1_dsi_test` | 2026-04-25 |
+| S-0048-02 | Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control for downstream tasks via correction overlay | technique | medium | active | `t0048_voff_nmda1_dsi_test` | 2026-04-25 |
+| S-0048-03 | AMPA conductance scan at Voff_bipNMDA=1 as a secondary check on the residual DSI gap | experiment | medium | active | `t0048_voff_nmda1_dsi_test` | 2026-04-25 |
+| S-0048-04 | Higher-N (12-19 trials) rerun of t0048's Voff_bipNMDA=1 gNMDA sweep to tighten H2 verdict bands | experiment | medium | active | `t0048_voff_nmda1_dsi_test` | 2026-04-25 |
+| S-0048-05 | Re-run t0047's noise (flickerVAR) sweep at Voff_bipNMDA=1 to test noise-DSI behavior under voltage-independent NMDA | experiment | low | active | `t0048_voff_nmda1_dsi_test` | 2026-04-25 |
+| S-0049-02 | GABA conductance scan under SEClamp toward paper PD 12.5 / ND 30 nS at fixed gNMDA = 0.5 nS | experiment | medium | active | `t0049_seclamp_cond_remeasure` | 2026-04-25 |
+| S-0049-03 | Repeat SEClamp Fig 3A-E re-measurement at exptype=2 (Voff_bipNMDA=1) for canonical-control baseline | experiment | medium | active | `t0049_seclamp_cond_remeasure` | 2026-04-25 |
+| S-0049-04 | SEClamp Fig 3A-E re-measurement across multiple V_clamp levels (-85, -65, -45 mV) to vary GABA driving force | experiment | medium | active | `t0049_seclamp_cond_remeasure` | 2026-04-25 |
+| S-0049-05 | SEClamp Fig 3A-E re-measurement at intermediate dendritic locations to test cable-filtering vs spatial-distribution | experiment | low | active | `t0049_seclamp_cond_remeasure` | 2026-04-25 |
+| S-0050-01 | Re-implement placeBIP() to spatially gate gabaMOD by per-synapse locx | technique | medium | active | `t0050_audit_syn_distribution` | 2026-04-25 |
+| S-0050-02 | Re-distribute SACinhib synapses asymmetrically across PD-side and ND-side dendrites in RGCmodel.hoc | technique | medium | active | `t0050_audit_syn_distribution` | 2026-04-25 |
+| S-0050-03 | Add a path-distance helper to t0046's modeldb_189347_dsgc_exact library using the two-segment h.distance form | library | medium | active | `t0050_audit_syn_distribution` | 2026-04-25 |
+| S-0050-04 | Refine spatial audit with dendritic-branch identity classification (proximal-PD / proximal-ND / distal) | evaluation | low | active | `t0050_audit_syn_distribution` | 2026-04-25 |
+| S-0052-04 | Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial PD/ND-asymmetric inhibition) once t0053 finishes | evaluation | medium | active | `t0052_minimal_dsgc_scalar_gaba` | 2026-04-27 |
+| S-0052-05 | Driving-force-corrected gabaMOD: calibrate conductance ratio to target somatic-voltage IPSP modulation depth | library | medium | active | `t0052_minimal_dsgc_scalar_gaba` | 2026-04-27 |
+| S-0052-06 | Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60 with paper-verified 0.65 / 0.73 | evaluation | medium | active | `t0052_minimal_dsgc_scalar_gaba` | 2026-04-27 |
+| S-0053-02 | Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to halve active-fraction on t0053 | experiment | medium | active | `t0053_minimal_dsgc_spatial_gaba` | 2026-04-27 |
+| S-0053-03 | Conductance-matched t0052 vs t0053 comparison at fixed mean GABA mass per trial | evaluation | medium | active | `t0053_minimal_dsgc_spatial_gaba` | 2026-04-27 |
+| S-0053-04 | Narrow-bar stimulus sweep (50, 100, 150 um) on minimal DSGC to break the synchronous-firing regime | experiment | medium | active | `t0053_minimal_dsgc_spatial_gaba` | 2026-04-27 |
+| S-0053-05 | Hybrid spatial-gating + amplitude-scaling inhibition mechanism on minimal DSGC | technique | medium | active | `t0053_minimal_dsgc_spatial_gaba` | 2026-04-27 |
+| S-0053-06 | Two-point driving-force saturation calibration library from t0052 + t0053 IPSP data | library | medium | active | `t0053_minimal_dsgc_spatial_gaba` | 2026-04-27 |
+| S-0054-03 | Replace 1/e-crossing EPSP-decay metric with an exponential fit and lengthen the post-stimulus window | technique | medium | active | `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | 2026-04-28 |
+| S-0054-04 | Promote the t0052<->t0054 gNMDA=0 regression gate into a reusable cross-task baseline-equivalence verificator | evaluation | low | active | `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | 2026-04-28 |
+| S-0054-05 | NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle conductance amplitude from kinetic time constant | experiment | medium | active | `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | 2026-04-28 |
+| S-0054-06 | Per-trial ProcessPool parallelisation for the minimal-DSGC sweep runner (t0052/t0053/t0054) | library | medium | active | `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | 2026-04-28 |
+| S-0055-04 | Analytic Mg-block-vs-gabaMOD operating-point map: predict the gAMPA/gGABA ratio that opens the unblock window | technique | medium | active | `t0055_nmda_mg_block_dsi_recovery` | 2026-04-28 |
+| S-0055-05 | Voff_NMDA = 1 ablation on t0055 architecture as a controlled regression vs voltage-dependent (Voff = 0) Mg-block | experiment | medium | active | `t0055_nmda_mg_block_dsi_recovery` | 2026-04-28 |
+| S-0055-06 | Multi-seed placement variability sweep on t0055 Mg-block architecture (10 seeds at gNMDA = 0.5) | experiment | low | active | `t0055_nmda_mg_block_dsi_recovery` | 2026-04-28 |
+| S-0055-07 | Add NMDA_MgBlock voltage-clamp sanity test as a reusable verificator across all NMDA-bearing DSGC tasks | library | low | active | `t0055_nmda_mg_block_dsi_recovery` | 2026-04-28 |
+| S-0057-03 | Hybrid tonic + transient GABA envelope on minimal DSGC to model multi-event SAC release | experiment | medium | active | `t0057_tonic_gaba_sweep_t0053` | 2026-04-28 |
+| S-0057-05 | Sustained-envelope gabaMOD on t0052 minimal scalar architecture (tonic-mechanism back-port) | experiment | medium | active | `t0057_tonic_gaba_sweep_t0053` | 2026-04-28 |
+| S-0059-04 | Synaptic noise (NetStim jitter + AR(2) correlated release) on t0059 substrate for trial-to-trial DSI characterisation | experiment | medium | active | `t0059_bar_locked_gaba_ampa_sweep_t0057` | 2026-04-29 |
+| S-0059-05 | Stricter AMPA escape range (gAMPA in {5, 7, 10} nS) and sub-0.1 nS bar-locked GABA on t0059 substrate | experiment | medium | active | `t0059_bar_locked_gaba_ampa_sweep_t0057` | 2026-04-29 |
+| S-0059-06 | Bar-locked window-length sweep (window_ms in {100, 200, 300, 500}) on t0059 substrate | experiment | medium | active | `t0059_bar_locked_gaba_ampa_sweep_t0057` | 2026-04-29 |
+| S-0065-03 | Resolve inhibitory conductance time-course via SEClamp on the deposited cell | experiment | medium | active | `t0065_t0020_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0065-04 | Multi-seed average of the t0065 protocol to add error bars on FULL spike counts | experiment | low | active | `t0065_t0020_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0065-05 | Eight-direction EPSP/IPSP/FULL tuning curve on the deposited cell | experiment | low | active | `t0065_t0020_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0066-01 | Audit project DSGC family for systemic e_GABA = v_rest design choice | evaluation | medium | active | `t0066_t0024_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0066-03 | SEClamp inhibitory conductance measurement on de Rosenroll cell | experiment | medium | active | `t0066_t0024_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0066-04 | Sensitivity sweep: re-run t0066 with paper-text e_LEAK = -70 mV | experiment | low | active | `t0066_t0024_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0066-05 | 12-angle EPSP/IPSP/FULL tuning curve on de Rosenroll cell | experiment | low | active | `t0066_t0024_epsp_ipsp_vm_protocol` | 2026-04-30 |
+| S-0067-01 | Find the NaP density at which DSI crosses zero | experiment | high | active | `t0067_t0065_soma_channel_addition_sweep` | 2026-05-01 |
+| S-0067-04 | Replace simplified MOD kinetics with ModelDB-sourced canonical implementations | experiment | medium | active | `t0067_t0065_soma_channel_addition_sweep` | 2026-05-01 |
+| S-0067-05 | Investigate biological NaP overexpression as a directional-selectivity disorder model | evaluation | low | active | `t0067_t0065_soma_channel_addition_sweep` | 2026-05-01 |
+| S-0068-03 | Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6 density | experiment | medium | active | `t0068_t0067_nav16_kv3_coexpression_rescue` | 2026-05-01 |
+| S-0069-05 | Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22) is robust to AIS geometry | experiment | low | active | `t0069_t0067_ais_localised_channel_sweep` | 2026-05-01 |
+| S-0070-01 | Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable | experiment | high | active | `t0070_writeup_two_model_beds` | 2026-05-01 |
+| S-0070-02 | Build a unified model-bed-runner library exposing Bed A and Bed B behind one Python API | library | medium | active | `t0070_writeup_two_model_beds` | 2026-05-01 |
+| S-0070-03 | Re-enable Bed A L-type and T-type Ca currents and quantify the effect on tuning curves and DSI | experiment | medium | active | `t0070_writeup_two_model_beds` | 2026-05-01 |
+| S-0070-04 | Wire Exp2NMDA into Bed B's tuning-curve and EPSP/IPSP/FULL drivers and re-run t0066 | experiment | medium | active | `t0070_writeup_two_model_beds` | 2026-05-01 |
+| S-0070-05 | Disambiguate the silently-overloaded HHst mechanism name across the two libraries via SUFFIX rename | library | medium | active | `t0070_writeup_two_model_beds` | 2026-05-01 |
+| S-0071-01 | Promote the Typst markdown-to-PDF pipeline into a reusable project library `arf_typst_writeup` | library | medium | active | `t0071_t0070_synaptic_eqs_pdf` | 2026-05-01 |
+| S-0071-02 | Extend corrections spec v4 with `target_kind: result_document` to track result-document supersedings | library | medium | active | `t0071_t0070_synaptic_eqs_pdf` | 2026-05-01 |
+| S-0071-03 | Quantify Bed A vs Bed B `celsius` and `v_init` divergence revealed by the side-by-side equation table | experiment | medium | active | `t0071_t0070_synaptic_eqs_pdf` | 2026-05-01 |
+| S-0071-04 | Add `verify_results_equations.py` to round-trip every `$$...$$` block through Typst | library | low | active | `t0071_t0070_synaptic_eqs_pdf` | 2026-05-01 |
+| S-0072-01 | Quantify Bed A NMDA ND-suppression as a function of joint (gabaMOD, Mg2+) on the t0072 substrate | experiment | medium | active | `t0072_synaptic_traces_pd_nd` | 2026-05-01 |
+| S-0072-02 | Multi-trial t0072 extension to decompose SD bands into across-trial vs across-synapse variance | experiment | medium | active | `t0072_synaptic_traces_pd_nd` | 2026-05-01 |
+| S-0072-03 | Spatial hot-spot analysis of Bed B GABA Bernoulli release vs bar-arrival projection | experiment | medium | active | `t0072_synaptic_traces_pd_nd` | 2026-05-01 |
+| S-0072-04 | Promote t0072's cross-bed per-synapse (g, v_local) recorder + post-hoc current pipeline into a library | library | medium | active | `t0072_synaptic_traces_pd_nd` | 2026-05-01 |
+| S-0074-01 | Plot polar tuning curves to distinguish SK_high narrowing from flat-top clipping | evaluation | high | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-02 | Verify NaR broadening hypothesis: ND-lobe firing rescue at sub-threshold angles | evaluation | high | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-03 | AIS-localised Kv7 follow-up (t0075 candidate) | experiment | high | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-04 | BK + SK co-expression sweep: linear-add vs saturation | experiment | medium | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-05 | Kv4 retest with hyperpolarising prepulse to remove inactivation | experiment | medium | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-06 | Kv3 + NaP co-expression: high-rate firing regime | experiment | medium | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-07 | Find the NaP density at which vector-sum DSI crosses 0.1 | experiment | medium | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-08 | Repeat t0074 sweep on Bed B (de-Rosenroll DSGC) | experiment | medium | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-09 | Validate vendored BK/SK MOD kinetics against published RGC patch-clamp data | evaluation | low | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0074-10 | Test cad insertion on dendrites only (not soma) | experiment | low | active | `t0074_channel_tuning_width_bed_a` | 2026-05-02 |
+| S-0076-04 | Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point | experiment | high | active | `t0076_bedb_dsi_firing_rate_mobo` | 2026-05-03 |
+| S-0076-06 | Promote the t0076 BoTorch MOBO + ProcessPoolExecutor trial-driver harness into a reusable optimisation library | library | medium | active | `t0076_bedb_dsi_firing_rate_mobo` | 2026-05-03 |
+
+## S-0002-01: Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1152_jn.00123.2009`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0002-04: Factorial morphology sweep (branch orders, segment length, segment diameter) at fixed synapse count
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1523_ENEURO.0261-21.2021`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `retinal-ganglion-cell`
+
+## S-0002-05: GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0002-06: NMDA multiplicative-gain ablation to isolate its contribution to DSI
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `dendritic-computation`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0002-07: Download the four discovered papers not included in the 20-paper budget (Sivyer2017, Euler2002, Enciso2010, Webvision)
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `dendritic-computation`
+
+## S-0002-08: Register SAC presynaptic drive model as an asset for downstream DSGC input construction
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1038_nature09818`
+* **Categories**: `synaptic-integration`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0002-10: Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset as a validation benchmark
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Date added**: 2026-04-19
+* **Source paper**: `10.1523_JNEUROSCI.5017-13.2014`
+* **Categories**: `patch-clamp`, `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0003-02: Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into the project as a library asset
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0003_simulator_library_survey`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`, `direction-selectivity`
+
+## S-0003-03: Benchmark NEURON vs Arbor on the project's actual DSGC morphology
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0003_simulator_library_survey`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0003-04: Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0003_simulator_library_survey`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0003-05: Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0003_simulator_library_survey`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0004-01: Generate weaker-DSI variant target tuning curves
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0004_generate_target_tuning_curve`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0004-02: Add a Poisson-noise variant of the target trials
+
+* **Kind**: dataset
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0004_generate_target_tuning_curve`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0005-03: Download additional Feller-archive DSGC reconstructions to enable cross-cell variability sensitivity analysis
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0005_download_dsgc_morphology`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `retinal-ganglion-cell`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0005-04: Build a reusable SWC -> NEURON/NetPyNE/Arbor section-translator library for dsgc-baseline-morphology
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0005_download_dsgc_morphology`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0005-05: Render and QA-check 2D/3D visualisations of dsgc-baseline-morphology for documentation and synapse placement
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0005_download_dsgc_morphology`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `retinal-ganglion-cell`, `compartmental-modeling`, `dendritic-computation`
+
+## S-0007-01: Validate custom khhchan.mod biophysics with a dedicated sanity simulation
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0007_install_neuron_netpyne`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0007-02: Script the full NEURON + NetPyNE install for clean-machine reproduction
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0007_install_neuron_netpyne`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0007-03: Benchmark NetPyNE harness overhead vs raw NEURON across problem sizes
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0007_install_neuron_netpyne`
+* **Date added**: 2026-04-19
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0008-01: Port Hanson 2019 Spatial-Offset-DSGC as a second DSGC library
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0008_port_modeldb_189347`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.7554_eLife.42392`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0008-03: Rebuild ModelDB 189347 port on the calibrated Horton-Strahler SWC from t0009
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0008_port_modeldb_189347`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0008-04: Parameter-sweep calibration of bundled 189347 toward the envelope targets
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0008_port_modeldb_189347`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0008-05: Port Jain 2020 DSGC (ModelDB 267001) as a sibling DSGC asset
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0008_port_modeldb_189347`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.7554_eLife.52949`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-01: Inverse-fit three-bin dendritic radii against the Schachter 2010 proximal/distal input-resistance gradient
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1371_journal.pcbi.1000899`
+* **Categories**: `cable-theory`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-02: Interpolate soma pt3dadd diameters along the principal axis to replace the uniform 4.118 um soma radius
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-03: Calibrate active Nav / Kv / Ih densities to match Poleg-Polsky 2016 spike shape and distal Ih sag
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-04: Re-calibrate using a Poleg-Polsky xyz-registered 1:1 per-section diameter lookup to drop Strahler binning entirely
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-05: Sensitivity analysis: re-run DSGC simulations under alternative Strahler tie-break rules and bin boundaries
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `cable-theory`
+
+## S-0009-06: Re-type SWC by section role (soma / primary / mid / terminal) as a sibling dataset asset
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0009-07: Per-cell ex-vivo two-photon image segmentation of 141009_Pair1DSGC to produce a cell-specific diameter ground truth
+
+* **Kind**: dataset
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `retinal-ganglion-cell`, `compartmental-modeling`
+
+## S-0009-08: Port the TREES-toolbox Rall 3/2 quaddiameter rule to a pure-Python calibrator and compare against the Strahler bins
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0009_calibrate_dendritic_diameters`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`
+
+## S-0010-01: Hand-port Hanson2019 Spatial-Offset-DSGC model to headless 12-angle sweep
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1038_s41467-019-09147-4`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0010-02: Hand-port deRosenroll2026 ds-circuit-ei model and remap 8-angle grid to 12 angles
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0010-03: Write forward-only driver for PolegPolsky2026 DS-mechanisms model and pursue LICENSE
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1038_s41467-026-70288-4`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0010-04: Extend DSGC model corpus to Arbor and NetPyNE reimplementations
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0010-05: Build a headless-port scaffold library that wraps upstream NEURON models
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0010-06: Add Elsevier-login fallback to the paper-download workflow
+
+* **Kind**: technique
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0010_hunt_missed_dsgc_models`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: —
+
+## S-0011-02: Add strict angle-grid validation mode to tuning_curve_viz.loaders.validate_angle_grid
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0011_response_visualization_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0011-03: Add combined-report function that renders all four plot types into one multi-page PDF/HTML per model
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0011_response_visualization_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0011-04: Add statistical-comparison overlays (paired bootstrap, DSI/HWHM annotations) to multi-model plots
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0011_response_visualization_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0011-05: Port additional DSGC models from t0010 hunt and exercise plot_multi_model_overlay with >2 models
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0011_response_visualization_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0011-06: Add PNG regression testing for tuning_curve_viz via pixel-level image diff in CI
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0011_response_visualization_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0012-02: Parametric curve fitting (von Mises / wrapped Gaussian) for sub-degree HWHM estimates on sparse 12-angle grids
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0012_tuning_curve_scoring_loss_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0012-04: Alternative loss formulations (L1, max-residual, weighted-L-infinity) benchmarked against the Euclidean default
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0012_tuning_curve_scoring_loss_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0012-05: Revisit envelope widening (DSI upper 0.85 to 0.9, peak lower 40 to 30 Hz) once real simulation results are in
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0012_tuning_curve_scoring_loss_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0012-06: Cross-validate compute_reliability against independent split-half implementations (odd-even, bootstrap, Spearman-Brown)
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0012_tuning_curve_scoring_loss_library`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`
+
+## S-0013-01: Write a shared arf.scripts.utils.resolve_doi helper that returns title, authors, venue, year, PMID, and PMCID
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0013_resolve_morphology_provenance`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0013-02: Add a plan-stage DOI-nomination verificator that checks each candidate DOI matches its human-written label
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0013_resolve_morphology_provenance`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0013-03: Download the Morrie & Feller 2018 SAC reconstructions from NeuroMorpho and build a paired SAC+DSGC morphology asset
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0013_resolve_morphology_provenance`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.cub.2018.03.001`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `compartmental-modeling`
+
+## S-0013-04: Re-audit all existing dataset and library assets' source_paper_id fields against resolved DOI metadata
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0013_resolve_morphology_provenance`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0013-05: Email the Feller lab to map the 141009_Pair1DSGC session to a specific pair in Morrie & Feller 2018 CB
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0013_resolve_morphology_provenance`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.cub.2018.03.001`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0015-01: Retrieve paywalled cable-theory PDFs via Sheffield access and verify numerical claims
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0015_literature_survey_cable_theory`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `cable-theory`, `retinal-ganglion-cells`
+
+## S-0015-02: Extend cable-theory survey to frequency-domain and thin-dendrite transmission
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0015_literature_survey_cable_theory`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `cable-theory`, `dendritic-computation`
+
+## S-0015-03: Register retinal-ganglion-cells and compartmental-modelling categories
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0015_literature_survey_cable_theory`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0016-01: Retrieve paywalled dendritic-computation PDFs via Sheffield access and verify numerical claims
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0016_literature_survey_dendritic_computation`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `dendritic-computation`
+
+## S-0016-02: Extend dendritic-computation survey to cerebellar Purkinje and STDP papers
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0016_literature_survey_dendritic_computation`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `dendritic-computation`
+
+## S-0016-04: Test whether a Larkum-style Ca2+ plateau zone can be localised in DSGC dendritic trees
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0016_literature_survey_dendritic_computation`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1038_18686`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `voltage-gated-channels`
+
+## S-0017-01: Retrieve paywalled patch-clamp PDFs via Sheffield access and verify numerical claims
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0017_literature_survey_patch_clamp`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `patch-clamp`, `retinal-ganglion-cell`
+
+## S-0017-02: Extend patch-clamp survey to DSGC-specific dynamic-clamp, Ih/HCN biophysics, and AIS measurements
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0017_literature_survey_patch_clamp`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `patch-clamp`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0017-04: Register patch-clamp and compartmental-modeling categories if not already present
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0017_literature_survey_patch_clamp`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0018-01: Retrieve paywalled synaptic-integration PDFs via Sheffield access and verify numerical priors
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0018_literature_survey_synaptic_integration`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `retinal-ganglion-cell`
+
+## S-0018-02: Extend synaptic-integration survey with DSGC-specific receptor-kinetic, dynamic-clamp, and connectomic SAC-DSGC papers
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0018_literature_survey_synaptic_integration`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0018-04: Register synaptic-integration category slugs if not already present
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0018_literature_survey_synaptic_integration`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0019-01: Retrieve paywalled voltage-gated-channel PDFs via Sheffield access and verify numerical priors
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0019_literature_survey_voltage_gated_channels`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+
+## S-0019-02: Extend voltage-gated-channel survey with recent DSGC-specific Nav/Kv patch-clamp and super-resolution AIS microdomain papers
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0019_literature_survey_voltage_gated_channels`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0019-04: Register voltage-gated-channel category slugs if not already present
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0019_literature_survey_voltage_gated_channels`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: —
+
+## S-0020-01: Excitation-side sensitivity sweep under gabaMOD-swap to close the 25 Hz peak-firing-rate gap
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0020-02: Reproduce Poleg-Polsky 2016 Fig 1D/H subthreshold validation targets (PSP amplitude, NMDAR slope angle)
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `patch-clamp`, `compartmental-modeling`
+
+## S-0020-03: Intermediate-gabaMOD sensitivity sweep to map the PD-ND transition curve
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0020-04: Extend tuning_curve_loss with a two-point (PD/ND) scoring API to make t0012 usable under the native protocol
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0020-05: Add a per-trial spike-count floor to the two-point envelope gate to catch biologically implausible passes
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0020-06: Trial-count power analysis for the PD/ND DSI estimator (bootstrap CI vs N_trials)
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0020-07: Extend t0011 response-visualisation library with a condition-based (PD/ND) raster+PSTH plot
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0020_port_modeldb_189347_gabamod`
+* **Date added**: 2026-04-20
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `compartmental-modeling`
+
+## S-0022-01: Nav1.1 proximal-AIS knockout channel-swap on the t0022 testbed
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1016_j.neuron.2007.07.031`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0022-02: Nav1.6 distal-AIS density sweep to close the 15 Hz -> 30-40 Hz peak-rate gap
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1523_jneurosci.0130-07.2007`
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`, `patch-clamp`
+
+## S-0022-03: Per-dendrite E-I parameter sweep to map the DSI response surface
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1523_JNEUROSCI.5017-13.2014`
+* **Categories**: `synaptic-integration`, `dendritic-computation`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0022-04: Add a Starburst Amacrine Cell feedforward layer to drive inhibition physiologically
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1038_nature00931`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `retinal-ganglion-cell`, `compartmental-modeling`
+
+## S-0022-05: Inject Poisson background rate on the t0022 driver to moderate DSI from 1.0 toward the 0.5-0.8 published band
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1016_j.neuron.2005.06.036`
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0022-06: Kv3 vs Kv1 AIS placement swap to test the Kole-Letzkus 2007 repolarisation prior
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1523_jneurosci.0130-07.2007`
+* **Categories**: `voltage-gated-channels`, `patch-clamp`, `compartmental-modeling`
+
+## S-0022-07: Harmonised cross-comparison of the three ModelDB 189347 sibling ports (t0008, t0020, t0022)
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0022-08: Add Ih (HCN) channel to dendrites and measure its effect on E-I integration window
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0022_modify_dsgc_channel_testbed`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `dendritic-computation`, `cable-theory`, `compartmental-modeling`
+
+## S-0024-01: Port the full upstream SacNetwork with bp_locs/probs/deltas to reproduce the deRosenroll correlation-drop effect
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `synaptic-integration`
+
+## S-0024-02: Sweep paper-text biophysics (Ra 200, eleak -65, Na 200/70/35) to test peak firing-rate shortfall
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+
+## S-0024-04: Parameterize t0011/t0012 tuning-curve plotter and scorer to support N_ANGLES != 12
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0024-05: Add a verify_library_asset.py verificator to close the framework-wide gap flagged during t0024 step 9
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: —
+
+## S-0024-06: Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can include 5/5 DSGC models instead of 4/5
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.7554_eLife.42392`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0026-01: Register dsi_at_vrest and peak_hz_at_vrest metric keys in meta/metrics/
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0026-02: Sweep AR(2) rho x V_rest for t0024 to separate noise correlation from depolarisation effects
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`
+
+## S-0026-03: Sweep bar velocity x V_rest on both DSGC ports to test velocity-V_rest interaction
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1113_jphysiol.2010.192716`
+* **Categories**: `direction-selectivity`
+
+## S-0026-04: Parallelise the t0024 sweep across CPU cores to cut wall time from 3.21 h to under 1 h
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0026-05: Port Hanson2019 DSGC model and repeat V_rest sweep to test starburst-independent DS hypothesis
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.7554_eLife.42392`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0026-06: Add NMDA-block and TTX-sensitivity sweeps at each V_rest to isolate biophysical mechanism
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: `10.1016_j.neuron.2016.04.041`
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`
+
+## S-0026-07: Extend sweep upward to V_rest in {-15, -10, -5} mV to capture the post-collapse regime in t0024
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0026_vrest_sweep_tuning_curves_dsgc`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`
+
+## S-0027-02: Swap bipolar-cell sustained vs transient kinetics on t0024 to discriminate kinetic tiling from cable delay
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0027_literature_survey_morphology_ds_modeling`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `synaptic-integration`, `direction-selectivity`
+
+## S-0027-04: Random terminal-branch ablation (25%) on t0022 to test branch independence
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0027_literature_survey_morphology_ds_modeling`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `retinal-ganglion-cell`, `direction-selectivity`
+
+## S-0027-05: Single-compartment collapse of t0024 to test whether T4-style geometry-nullity extends to DSGCs
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0027_literature_survey_morphology_ds_modeling`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0027-07: Sweep dendritic spine density on t0022 distal terminals as an unconventional morphology variable
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0027_literature_survey_morphology_ds_modeling`
+* **Date added**: 2026-04-21
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0029-01: Poisson-noise desaturation rerun of the distal-dendrite length sweep on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: `10.1371_journal.pcbi.1000899`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0029-02: Distal Nav ablation crossed with distal-dendrite length sweep on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: `10.1038_nn.3565`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0029-03: Extended distal-dendrite length sweep (1.0x to 4.0x, 8.0x) to reach Dan2018's critical regime
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: `10.1038_s41598-018-23998-9`
+* **Categories**: `cable-theory`, `dendritic-computation`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0029-04: Null-GABA conductance sweep (3, 6, 9, 12 nS) to release the deterministic ceiling on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: `10.1371_journal.pcbi.1000899`
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0029-05: Dense distal-length sweep at {1.0, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30} to localize the peak-Hz cliff
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: `10.1038_nn.3565`
+* **Categories**: `dendritic-computation`, `direction-selectivity`, `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0029-06: Re-enable NMDA (b2gnmda nonzero) crossed with distal-dendrite length sweep on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `dendritic-computation`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0029-07: Promote peak-Hz and HWHM to co-primary outcomes when DSI is at ceiling (evaluation methodology)
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0029_distal_dendrite_length_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0030-02: Poisson-noise desaturation rerun of the distal-dendrite diameter sweep on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0030-03: Wider distal-diameter sweep (0.25x to 4.0x) after the schedule fix to probe extreme impedance regimes
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `cable-theory`, `compartmental-modeling`
+
+## S-0030-04: Joint distal length x diameter 2-D sweep on t0022 to catch interactions the marginal sweeps miss
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `dendritic-computation`, `compartmental-modeling`, `cable-theory`
+
+## S-0030-05: Non-uniform proximal-to-distal diameter taper sweep on t0022 to match Schachter2010 impedance gradient
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `dendritic-computation`, `cable-theory`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0033-02: Instantiate AIS_PROXIMAL / AIS_DISTAL / THIN_AXON channel sets on t0022 as a t0033 optimiser prerequisite
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`, `direction-selectivity`
+
+## S-0033-03: Multi-fidelity surrogate-NN prototype to reduce the $41.56 training burn on the recommended optimiser cell
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0033-04: Transfer-learning surrogate warm-start from t0022 and t0024 V_rest-sweep evaluations
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0033-05: 5-parameter CMA-ES vs Bayesian-optimisation spike on t0022 to validate sample-efficiency assumptions
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `voltage-gated-channels`
+
+## S-0033-06: Build a reusable DSI-objective evaluation-harness library separating scoring from the optimiser loop
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Date added**: 2026-04-22
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0034-01: 2-D distal length x diameter sweep on t0024 to disambiguate cable-filtering vs local-spike-failure
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`
+
+## S-0034-02: AR(2) rho sweep at t0024 baseline morphology to isolate stochastic-release smoothing from cable biophysics
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`
+
+## S-0034-03: Extended distal-length sweep on t0024 (0.25x to 4.0x, 9 points) to characterise the electrotonic-length optimum
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`
+
+## S-0034-04: Per-compartment distal-spike detector on t0024 length sweep to verify Schachter2010 local-spike-failure at 1.5x and 2.0x
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: `10.1371_journal.pcbi.1000899`
+* **Categories**: `dendritic-computation`, `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0034-05: Quantitative cable-theory fit of t0034 DSI-vs-length curve against Rall 1/d^(3/2) and Tukker2004 predictions
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0034-06: Higher-statistics re-run of t0034 at 1.5x and 2.0x (30+ trials per angle) to confirm the preferred-angle jumps
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0034-07: Specify primary DSI as t0033 optimiser objective on t0024 substrate (not vector-sum) and drop monotonic-length priors
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0034_distal_dendrite_length_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0035-02: Surface-density-rescaled Nav diameter sweep on t0024 to test surface-vs-volume compensation
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `dendritic-computation`, `direction-selectivity`
+
+## S-0035-03: Extended distal-diameter sweep on t0024 (0.25x to 4.0x, 9 points) to probe non-linear extremes
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `direction-selectivity`, `cable-theory`
+
+## S-0035-04: Ih (HCN) conductance ablation sweep on t0024 distal dendrites to test h-current role in distal cable behaviour
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `dendritic-computation`, `cable-theory`, `compartmental-modeling`
+
+## S-0035-05: Zero-cost meta-analysis of primary-DSI vs vector-sum-DSI discrepancy across t0029, t0030, t0034, t0035
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0035-06: Deprioritise distal-diameter parameters in the t0033 DSI optimiser search space
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `dendritic-computation`
+
+## S-0036-02: GABA-to-AMPA timing offset sweep on t0022 diameter testbed to test timing-dominates-conductance hypothesis
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0036_rerun_t0030_halved_null_gaba`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0036-03: Distal voltage-trace capture at null direction on t0022 to confirm sub-threshold-clamp hypothesis
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0036_rerun_t0030_halved_null_gaba`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `dendritic-computation`, `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0036-04: Extract the t0022 GABA-override monkey-patch into a reusable library asset for downstream tasks
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0036_rerun_t0030_halved_null_gaba`
+* **Date added**: 2026-04-23
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `synaptic-integration`, `direction-selectivity`
+
+## S-0037-03: Localise the GABA unpinning threshold with a fine sweep (5.0, 4.5, 4.0, 3.5, 3.0 nS)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0037_null_gaba_reduction_ladder_t0022`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`
+
+## S-0037-04: Diagnose and fix the low peak firing rate in t0022 (15 Hz vs 40-80 Hz Schachter2010)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0037_null_gaba_reduction_ladder_t0022`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `compartmental-modeling`
+
+## S-0037-05: Cross-testbed DSI comparison: t0022 at 4 nS GABA vs t0024 AR(2) noise
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0037_null_gaba_reduction_ladder_t0022`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `dendritic-computation`
+
+## S-0037-06: Add preferred-direction GABA asymmetry to t0022 (cartwheel SAC offset)
+
+* **Kind**: technique
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0037_null_gaba_reduction_ladder_t0022`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`
+
+## S-0039-01: Rerun t0039 7-diameter sweep on t0024 for active-vs-passive testbed comparison
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `cable-theory`, `dendritic-computation`
+
+## S-0039-02: Fine-grained thin-end diameter sweep D in {0.3, 0.4, 0.5, 0.6, 0.7} at GABA=4 nS on t0022
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `cable-theory`
+
+## S-0039-03: Joint (GABA, diameter) sweep to separate passive filtering from GABA-suppressed active amplification
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0039-04: Diagnose and fix t0022's 15 Hz peak-firing cap (inherited AMPA-only drive issue)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `compartmental-modeling`
+
+## S-0039-05: Update t0033 optimiser headroom estimate to reflect narrow (0.06 DSI) morphology dynamic range on t0022
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `voltage-gated-channels`
+
+## S-0039-06: Introduce per-trial spike-count distribution metric to distinguish failures from timing shifts
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0041-01: Impedance-loading-corrected electrotonic-length collapse re-test
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0041_electrotonic_length_collapse_t0034_t0035`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`
+
+## S-0041-02: Denser 2-D sweep of L x d to map DSI response surface on t0024
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0041_electrotonic_length_collapse_t0034_t0035`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0041-03: Correct t0033 answer asset: confirm 2-D morphology parameterisation
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0041_electrotonic_length_collapse_t0034_t0035`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0041-04: Per-section L/lambda rather than mean-based for collapse tests
+
+* **Kind**: technique
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0041_electrotonic_length_collapse_t0034_t0035`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `cable-theory`, `compartmental-modeling`
+
+## S-0046-01: Re-run t0046 figure sweeps at paper-N (12-19 trials per condition, full 8-direction sweep)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`, `synaptic-integration`
+
+## S-0046-02: Root-cause the 282-vs-177 synapse-count discrepancy in ModelDB 189347 vs Poleg-Polsky 2016 paper text
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `compartmental-modeling`, `synaptic-integration`, `retinal-ganglion-cell`
+
+## S-0046-03: Add an iMK801 analogue MOD modification (selective dendritic NMDAR block) to enable Fig 8 AP5 reproduction
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `dendritic-computation`, `compartmental-modeling`, `voltage-gated-channels`
+
+## S-0046-04: Decide the fate of t0042/t0043/t0044: rewrite motivation or cancel based on t0046 findings
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0046-05: Manually fetch and attach the Poleg-Polsky 2016 supplementary PDF (NIHMS766337, PMC4795984)
+
+* **Kind**: dataset
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0046-06: Backport t0046's GUI-free `dsgc_model_exact.hoc` driver as a reusable library used by t0008/t0020/t0022 successors
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0046_reproduce_poleg_polsky_2016_exact`
+* **Date added**: 2026-04-24
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0047-03: Redefine the ROC AUC negative class (off-direction or jitter-isolated trials) so the metric does not saturate at 1.000
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0047_validate_pp16_fig3_cond_noise`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0047-04: Package per-synapse conductance recorder and qualitative-shape verdict helpers as a reusable library
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0047_validate_pp16_fig3_cond_noise`
+* **Date added**: 2026-04-25
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `synaptic-integration`, `retinal-ganglion-cell`
+
+## S-0048-01: GABA conductance scan at Voff_bipNMDA=1 to close the residual DSI gap to paper's 0.30 line
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0048_voff_nmda1_dsi_test`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0048-02: Adopt exptype=2 (Voff_bipNMDA=1) as the canonical DSGC control for downstream tasks via correction overlay
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0048_voff_nmda1_dsi_test`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0048-03: AMPA conductance scan at Voff_bipNMDA=1 as a secondary check on the residual DSI gap
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0048_voff_nmda1_dsi_test`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`
+
+## S-0048-04: Higher-N (12-19 trials) rerun of t0048's Voff_bipNMDA=1 gNMDA sweep to tighten H2 verdict bands
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0048_voff_nmda1_dsi_test`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`
+
+## S-0048-05: Re-run t0047's noise (flickerVAR) sweep at Voff_bipNMDA=1 to test noise-DSI behavior under voltage-independent NMDA
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0048_voff_nmda1_dsi_test`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`
+
+## S-0049-02: GABA conductance scan under SEClamp toward paper PD 12.5 / ND 30 nS at fixed gNMDA = 0.5 nS
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0049_seclamp_cond_remeasure`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `patch-clamp`
+
+## S-0049-03: Repeat SEClamp Fig 3A-E re-measurement at exptype=2 (Voff_bipNMDA=1) for canonical-control baseline
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0049_seclamp_cond_remeasure`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `compartmental-modeling`, `patch-clamp`, `direction-selectivity`
+
+## S-0049-04: SEClamp Fig 3A-E re-measurement across multiple V_clamp levels (-85, -65, -45 mV) to vary GABA driving force
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0049_seclamp_cond_remeasure`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `patch-clamp`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0049-05: SEClamp Fig 3A-E re-measurement at intermediate dendritic locations to test cable-filtering vs spatial-distribution
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0049_seclamp_cond_remeasure`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `cable-theory`, `dendritic-computation`, `patch-clamp`
+
+## S-0050-01: Re-implement placeBIP() to spatially gate gabaMOD by per-synapse locx
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0050_audit_syn_distribution`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0050-02: Re-distribute SACinhib synapses asymmetrically across PD-side and ND-side dendrites in RGCmodel.hoc
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0050_audit_syn_distribution`
+* **Date added**: 2026-04-25
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0050-03: Add a path-distance helper to t0046's modeldb_189347_dsgc_exact library using the two-segment h.distance form
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0050_audit_syn_distribution`
+* **Date added**: 2026-04-25
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `cable-theory`
+
+## S-0050-04: Refine spatial audit with dendritic-branch identity classification (proximal-PD / proximal-ND / distal)
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0050_audit_syn_distribution`
+* **Date added**: 2026-04-25
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `retinal-ganglion-cell`
+
+## S-0052-04: Cross-comparison task: t0052 (scalar gabaMOD) vs t0053 (spatial PD/ND-asymmetric inhibition) once t0053 finishes
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0052_minimal_dsgc_scalar_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`, `retinal-ganglion-cell`
+
+## S-0052-05: Driving-force-corrected gabaMOD: calibrate conductance ratio to target somatic-voltage IPSP modulation depth
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0052_minimal_dsgc_scalar_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0052-06: Correction: replace t0051 brainstorm Park2014 DSI band 0.40-0.60 with paper-verified 0.65 / 0.73
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0052_minimal_dsgc_scalar_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0053-02: Stricter centripetal-gating threshold sweep (cos < -0.5, -0.7) to halve active-fraction on t0053
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0053_minimal_dsgc_spatial_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0053-03: Conductance-matched t0052 vs t0053 comparison at fixed mean GABA mass per trial
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0053_minimal_dsgc_spatial_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0053-04: Narrow-bar stimulus sweep (50, 100, 150 um) on minimal DSGC to break the synchronous-firing regime
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0053_minimal_dsgc_spatial_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0053-05: Hybrid spatial-gating + amplitude-scaling inhibition mechanism on minimal DSGC
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0053_minimal_dsgc_spatial_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0053-06: Two-point driving-force saturation calibration library from t0052 + t0053 IPSP data
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0053_minimal_dsgc_spatial_gaba`
+* **Date added**: 2026-04-27
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `compartmental-modeling`, `cable-theory`
+
+## S-0054-03: Replace 1/e-crossing EPSP-decay metric with an exponential fit and lengthen the post-stimulus window
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `cable-theory`
+
+## S-0054-04: Promote the t0052<->t0054 gNMDA=0 regression gate into a reusable cross-task baseline-equivalence verificator
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0054-05: NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle conductance amplitude from kinetic time constant
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Date added**: 2026-04-28
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `synaptic-integration`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0054-06: Per-trial ProcessPool parallelisation for the minimal-DSGC sweep runner (t0052/t0053/t0054)
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`
+
+## S-0055-04: Analytic Mg-block-vs-gabaMOD operating-point map: predict the gAMPA/gGABA ratio that opens the unblock window
+
+* **Kind**: technique
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0055_nmda_mg_block_dsi_recovery`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `cable-theory`, `synaptic-integration`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0055-05: Voff_NMDA = 1 ablation on t0055 architecture as a controlled regression vs voltage-dependent (Voff = 0) Mg-block
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0055_nmda_mg_block_dsi_recovery`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0055-06: Multi-seed placement variability sweep on t0055 Mg-block architecture (10 seeds at gNMDA = 0.5)
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0055_nmda_mg_block_dsi_recovery`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0055-07: Add NMDA_MgBlock voltage-clamp sanity test as a reusable verificator across all NMDA-bearing DSGC tasks
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0055_nmda_mg_block_dsi_recovery`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+
+## S-0057-03: Hybrid tonic + transient GABA envelope on minimal DSGC to model multi-event SAC release
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0057_tonic_gaba_sweep_t0053`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0057-05: Sustained-envelope gabaMOD on t0052 minimal scalar architecture (tonic-mechanism back-port)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0057_tonic_gaba_sweep_t0053`
+* **Date added**: 2026-04-28
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0059-04: Synaptic noise (NetStim jitter + AR(2) correlated release) on t0059 substrate for trial-to-trial DSI characterisation
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Date added**: 2026-04-29
+* **Source paper**: `10.1016_j.celrep.2025.116833`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0059-05: Stricter AMPA escape range (gAMPA in {5, 7, 10} nS) and sub-0.1 nS bar-locked GABA on t0059 substrate
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Date added**: 2026-04-29
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0059-06: Bar-locked window-length sweep (window_ms in {100, 200, 300, 500}) on t0059 substrate
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Date added**: 2026-04-29
+* **Source paper**: `10.1016_j.neuron.2016.02.013`
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`, `retinal-ganglion-cell`
+
+## S-0065-03: Resolve inhibitory conductance time-course via SEClamp on the deposited cell
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `patch-clamp`, `synaptic-integration`, `direction-selectivity`
+
+## S-0065-04: Multi-seed average of the t0065 protocol to add error bars on FULL spike counts
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`
+
+## S-0065-05: Eight-direction EPSP/IPSP/FULL tuning curve on the deposited cell
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0066-01: Audit project DSGC family for systemic e_GABA = v_rest design choice
+
+* **Kind**: evaluation
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `synaptic-integration`
+
+## S-0066-03: SEClamp inhibitory conductance measurement on de Rosenroll cell
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `patch-clamp`, `synaptic-integration`, `direction-selectivity`
+
+## S-0066-04: Sensitivity sweep: re-run t0066 with paper-text e_LEAK = -70 mV
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `synaptic-integration`
+
+## S-0066-05: 12-angle EPSP/IPSP/FULL tuning curve on de Rosenroll cell
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Date added**: 2026-04-30
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0067-01: Find the NaP density at which DSI crosses zero
+
+* **Kind**: experiment
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0067_t0065_soma_channel_addition_sweep`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0067-04: Replace simplified MOD kinetics with ModelDB-sourced canonical implementations
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0067_t0065_soma_channel_addition_sweep`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0067-05: Investigate biological NaP overexpression as a directional-selectivity disorder model
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0067_t0065_soma_channel_addition_sweep`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `retinal-ganglion-cell`
+
+## S-0068-03: Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6 density
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0068_t0067_nav16_kv3_coexpression_rescue`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `synaptic-integration`, `compartmental-modeling`
+
+## S-0069-05: Investigate whether the t0069 NaP_high AIS effect (DSI = 0.22) is robust to AIS geometry
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0069_t0067_ais_localised_channel_sweep`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0070-01: Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable
+
+* **Kind**: experiment
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0070_writeup_two_model_beds`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `direction-selectivity`, `compartmental-modeling`, `synaptic-integration`
+
+## S-0070-02: Build a unified model-bed-runner library exposing Bed A and Bed B behind one Python API
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0070_writeup_two_model_beds`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`
+
+## S-0070-03: Re-enable Bed A L-type and T-type Ca currents and quantify the effect on tuning curves and DSI
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0070_writeup_two_model_beds`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0070-04: Wire Exp2NMDA into Bed B's tuning-curve and EPSP/IPSP/FULL drivers and re-run t0066
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0070_writeup_two_model_beds`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `compartmental-modeling`, `direction-selectivity`
+
+## S-0070-05: Disambiguate the silently-overloaded HHst mechanism name across the two libraries via SUFFIX rename
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0070_writeup_two_model_beds`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+
+## S-0071-01: Promote the Typst markdown-to-PDF pipeline into a reusable project library `arf_typst_writeup`
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0071_t0070_synaptic_eqs_pdf`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: —
+
+## S-0071-02: Extend corrections spec v4 with `target_kind: result_document` to track result-document supersedings
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0071_t0070_synaptic_eqs_pdf`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: —
+
+## S-0071-03: Quantify Bed A vs Bed B `celsius` and `v_init` divergence revealed by the side-by-side equation table
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0071_t0070_synaptic_eqs_pdf`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`, `direction-selectivity`
+
+## S-0071-04: Add `verify_results_equations.py` to round-trip every `$$...$$` block through Typst
+
+* **Kind**: library
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0071_t0070_synaptic_eqs_pdf`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: —
+
+## S-0072-01: Quantify Bed A NMDA ND-suppression as a function of joint (gabaMOD, Mg2+) on the t0072 substrate
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0072_synaptic_traces_pd_nd`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `synaptic-integration`, `direction-selectivity`
+
+## S-0072-02: Multi-trial t0072 extension to decompose SD bands into across-trial vs across-synapse variance
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0072_synaptic_traces_pd_nd`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0072-03: Spatial hot-spot analysis of Bed B GABA Bernoulli release vs bar-arrival projection
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0072_synaptic_traces_pd_nd`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `synaptic-integration`, `direction-selectivity`, `dendritic-computation`
+
+## S-0072-04: Promote t0072's cross-bed per-synapse (g, v_local) recorder + post-hoc current pipeline into a library
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0072_synaptic_traces_pd_nd`
+* **Date added**: 2026-05-01
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `synaptic-integration`
+
+## S-0074-01: Plot polar tuning curves to distinguish SK_high narrowing from flat-top clipping
+
+* **Kind**: evaluation
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-02: Verify NaR broadening hypothesis: ND-lobe firing rescue at sub-threshold angles
+
+* **Kind**: evaluation
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-03: AIS-localised Kv7 follow-up (t0075 candidate)
+
+* **Kind**: experiment
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-04: BK + SK co-expression sweep: linear-add vs saturation
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0074-05: Kv4 retest with hyperpolarising prepulse to remove inactivation
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+
+## S-0074-06: Kv3 + NaP co-expression: high-rate firing regime
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-07: Find the NaP density at which vector-sum DSI crosses 0.1
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-08: Repeat t0074 sweep on Bed B (de-Rosenroll DSGC)
+
+* **Kind**: experiment
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0074-09: Validate vendored BK/SK MOD kinetics against published RGC patch-clamp data
+
+* **Kind**: evaluation
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `patch-clamp`
+
+## S-0074-10: Test cad insertion on dendrites only (not soma)
+
+* **Kind**: experiment
+* **Priority**: low
+* **Status**: active
+* **Source task**: `t0074_channel_tuning_width_bed_a`
+* **Date added**: 2026-05-02
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+
+## S-0076-04: Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
+
+* **Kind**: experiment
+* **Priority**: high
+* **Status**: active
+* **Source task**: `t0076_bedb_dsi_firing_rate_mobo`
+* **Date added**: 2026-05-03
+* **Source paper**: —
+* **Categories**: `voltage-gated-channels`, `direction-selectivity`, `compartmental-modeling`
+
+## S-0076-06: Promote the t0076 BoTorch MOBO + ProcessPoolExecutor trial-driver harness into a reusable optimisation library
+
+* **Kind**: library
+* **Priority**: medium
+* **Status**: active
+* **Source task**: `t0076_bedb_dsi_firing_rate_mobo`
+* **Date added**: 2026-05-03
+* **Source paper**: —
+* **Categories**: `compartmental-modeling`, `direction-selectivity`

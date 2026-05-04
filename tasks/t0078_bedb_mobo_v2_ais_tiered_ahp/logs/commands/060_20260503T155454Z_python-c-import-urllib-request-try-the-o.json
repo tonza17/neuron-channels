@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "python -c \nimport urllib.request\n# Try the OAI-PMH access via NCBI\nurl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3496185&rettype=xml'\nreq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\ntry:\n    with urllib.request.urlopen(req, timeout=60) as r:\n        data = r.read()\n        print(f'Status: {r.status}, Length: {len(data)}, Type: {r.headers.get(\"Content-Type\")}')\n        print(f'First 300 bytes: {data[:300]!r}')\n        if b'<article' in data[:2000] or b'<?xml' in data[:100]:\n            with open('tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/files/rivlin-etzion_2012_directional-preference-reversal.xml', 'wb') as f:\n                f.write(data)\n            print('Saved as XML')\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.745,
+  "started_at": "2026-05-03T15:54:54Z",
+  "completed_at": "2026-05-03T15:54:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "060_20260503T155454Z_python-c-import-urllib-request-try-the-o.stdout.txt",
+  "stderr_file": "060_20260503T155454Z_python-c-import-urllib-request-try-the-o.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

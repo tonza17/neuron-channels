@@ -1,0 +1,17 @@
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././smoke.mod
+Translating smoke.mod into /tmp/smoke_mod/x86_64/smoke.c
+Thread Safe
+ -> [32mCompiling[0m smoke.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+SMOKE_COMPILE_DONE
+-rwxr-xr-x 1 root root 16880 May  3 15:14 x86_64/.libs/libnrnmech.so
+                   ^
+        nrn_load_dll("/tmp/smoke...")
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+RuntimeError: hocobj_call error

@@ -1,0 +1,61 @@
+{
+  "spec_version": "3",
+  "paper_id": "no-doi_Ament2023_logei-bo",
+  "doi": null,
+  "title": "Unexpected Improvements to Expected Improvement for Bayesian Optimization",
+  "url": "https://arxiv.org/abs/2310.20708",
+  "pdf_url": "https://arxiv.org/pdf/2310.20708.pdf",
+  "date_published": "2023-10-31",
+  "year": 2023,
+  "authors": [
+    {
+      "name": "Sebastian Ament",
+      "country": "US",
+      "institution": "Meta",
+      "orcid": null
+    },
+    {
+      "name": "Samuel Daulton",
+      "country": "US",
+      "institution": "Meta",
+      "orcid": null
+    },
+    {
+      "name": "David Eriksson",
+      "country": "US",
+      "institution": "Meta",
+      "orcid": null
+    },
+    {
+      "name": "Maximilian Balandat",
+      "country": "US",
+      "institution": "Meta",
+      "orcid": null
+    },
+    {
+      "name": "Eytan Bakshy",
+      "country": "US",
+      "institution": "Meta",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Meta",
+      "country": "US"
+    }
+  ],
+  "journal": "NeurIPS 2023",
+  "venue_type": "conference",
+  "categories": [],
+  "abstract": "Expected Improvement (EI) is arguably the most popular acquisition function in Bayesian optimization and has found countless successful applications, but its performance is often exceeded by that of more recent methods. Notably, EI and its variants, including for the parallel and multi-objective settings, are challenging to optimize because their acquisition values vanish numerically in many regions. This difficulty generally increases as the number of observations, dimensionality of the search space, or the number of constraints grow, resulting in performance that is inconsistent across the literature and most often sub-optimal. Herein, we propose LogEI, a new family of acquisition functions whose members either have identical or approximately equal optima as their canonical counterparts, but are substantially easier to optimize numerically. We demonstrate that numerical pathologies manifest themselves in \"classic\" analytic EI, Expected Hypervolume Improvement (EHVI), as well as their constrained, noisy, and parallel variants, and propose corresponding reformulations that remedy these pathologies. Our empirical results show that members of the LogEI family of acquisition functions substantially improve on the optimization performance of their canonical counterparts and surprisingly, are on par with or exceed the performance of recent state-of-the-art acquisition functions, highlighting the understated role of numerical optimization in the literature.",
+  "citation_key": "Ament2023",
+  "summary_path": "summary.md",
+  "files": [
+    "files/ament_2023_logei-bo.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "date_added": "2026-05-03"
+}

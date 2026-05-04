@@ -1,0 +1,9 @@
+[mobo_loop] n_sobol=75  n_iterations=700  n_seeds=20  n_dirs=8  workers=64
+[sobol 1/75]  DSI=+0.000  PD=  9.79 Hz  n_err=0  trial_t=46.2s  cost=$0.00
+[sobol 2/75]  DSI=+0.000  PD=  5.00 Hz  n_err=0  trial_t=45.0s  cost=$0.00
+[sobol 3/75]  DSI=+0.000  PD=  0.71 Hz  n_err=0  trial_t=44.6s  cost=$0.01
+[sobol 4/75]  DSI=+0.000  PD=  0.00 Hz  n_err=0  trial_t=45.8s  cost=$0.01
+[sobol 5/75]  DSI=+0.000  PD=  0.71 Hz  n_err=0  trial_t=46.1s  cost=$0.01
+[sobol 6/75]  DSI=+0.000  PD=  0.00 Hz  n_err=0  trial_t=44.9s  cost=$0.01
+[sobol 7/75]  DSI=+0.000  PD=  0.00 Hz  n_err=0  trial_t=44.7s  cost=$0.01
+[sobol 8/75]  DSI=+0.180  PD=  1.29 Hz  n_err=0  trial_t=46.5s  cost=$0.02

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 28066 root@ssh2.vast.ai find /root/neuron-channels/tasks/t0078_bedb_mobo_v2_ais_tiered_ahp -name 'mobo_loop.log' -ls 2>&1",
+  "exit_code": 0,
+  "duration_seconds": 2.86,
+  "started_at": "2026-05-04T15:51:02Z",
+  "completed_at": "2026-05-04T15:51:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "stdout_file": "165_20260504T155102Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "165_20260504T155102Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}
