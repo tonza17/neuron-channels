@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "python -c \nimport urllib.request, os\n\noutput_dir = 'tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/files'\nos.makedirs(output_dir, exist_ok=True)\noutput_path = os.path.join(output_dir, 'goethals_2020_axial-current-ais-nav-rgc.pdf')\n\npdf_url = 'https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2.full.pdf'\nprint(f'Downloading: {pdf_url}')\n\nreq = urllib.request.Request(pdf_url, headers={\n    'User-Agent': 'Mozilla/5.0 (compatible; research-agent/1.0; mailto:a.nikolaev@sheffield.ac.uk)',\n    'Accept': 'application/pdf,*/*'\n})\nwith urllib.request.urlopen(req, timeout=60) as r:\n    content = r.read()\n    print(f'Downloaded {len(content)} bytes, status={r.status}')\n    print(f'Content-Type: {r.headers.get(\"Content-Type\", \"unknown\")}')\n    \nwith open(output_path, 'wb') as f:\n    f.write(content)\n\nprint(f'Saved to: {output_path}')\nprint(f'Starts with PDF: {content[:4] == b\"%PDF\"}')\n",
+  "exit_code": 1,
+  "duration_seconds": 0.365,
+  "started_at": "2026-05-04T18:40:52Z",
+  "completed_at": "2026-05-04T18:40:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "033_20260504T184052Z_python-c-import-urllib-request-os-output.stdout.txt",
+  "stderr_file": "033_20260504T184052Z_python-c-import-urllib-request-os-output.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 20,
+  "truncated": false
+}

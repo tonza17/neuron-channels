@@ -1,0 +1,14 @@
+TITLE: ['Retinal ganglion cells encode the direction of motion outside their classical receptive field']
+DATE_PRINT: {'date-parts': [[2025, 1, 7]]}
+DATE_ONLINE: {'date-parts': [[2024, 12, 30]]}
+CONTAINER: ['Proceedings of the National Academy of Sciences']
+PUBLISHER: Proceedings of the National Academy of Sciences
+VOLUME: 122 ISSUE: 1
+URL: https://doi.org/10.1073/pnas.2415223122
+AUTHORS:
+  - Serena Riccitelli | affil: ['Department of Brain Sciences, Weizmann Institute of Science'] | ORCID: https://orcid.org/0000-0003-4369-4586
+  - Hadar Yaakov | affil: ['Department of Brain Sciences, Weizmann Institute of Science'] | ORCID: None
+  - Alina S. Heukamp | affil: ['Department of Brain Sciences, Weizmann Institute of Science'] | ORCID: None
+  - Lea Ankri | affil: ['Department of Brain Sciences, Weizmann Institute of Science'] | ORCID: https://orcid.org/0000-0002-7622-6239
+  - Michal Rivlin-Etzion | affil: ['Department of Brain Sciences, Weizmann Institute of Science'] | ORCID: None
+ABSTRACT: <jats:p>Retinal ganglion cells (RGCs) typically respond to light stimulation over their spatially restricted receptive field. Using large-scale recordings in the mouse retina, we show that a subset of non- direction-selective (DS) RGCs exhibit asymmetric activity, selective to motion direction, in response to a stimulus crossing an area far beyond the classic receptive field. The extraclassical response arises via inputs from an asymmetric distal zone and is enhanced by desensitization mechanisms and an inherent DS component, creating a network of neurons responding to motion toward the optic disc. Pharmacological manipulations revealed the necessity of glycinergic amacrine cells for this response. Using in vivo recordings, we identified similar extraclassical responses in lateral geniculate nucleus neurons, suggesting such non conventional DS information is transferred to downstream structures. Our results suggest a complex integration of motion direction processing across the visual field, which arises beyond the classical receptive field boundaries.</jats:p>

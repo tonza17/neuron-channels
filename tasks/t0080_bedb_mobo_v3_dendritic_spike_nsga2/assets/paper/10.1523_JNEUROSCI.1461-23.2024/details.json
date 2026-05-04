@@ -1,0 +1,83 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.1461-23.2024",
+  "doi": "10.1523/JNEUROSCI.1461-23.2024",
+  "title": "Differential Expression Analysis Identifies Candidate Synaptogenic Molecules for Wiring Direction-Selective Circuits in the Retina",
+  "url": "https://www.jneurosci.org/content/44/18/e1461232024",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/44/18/e1461232024.full.pdf",
+  "date_published": "2024-03-21",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Joshua M. Tworig",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0001-7798-4480"
+    },
+    {
+      "name": "Ryan D. Morrie",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0001-9227-4997"
+    },
+    {
+      "name": "Karina Bistrong",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0003-0972-3339"
+    },
+    {
+      "name": "Rachana D. Somaiya",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0002-1190-1192"
+    },
+    {
+      "name": "Shaw Hsu",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": null
+    },
+    {
+      "name": "Jocelyn Liang",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0002-7646-5328"
+    },
+    {
+      "name": "Karen G. Cornejo",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0009-0004-3701-645X"
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California Berkeley",
+      "orcid": "0000-0002-9137-5849"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California Berkeley",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "An organizational feature of neural circuits is the specificity of synaptic connections. A striking example is the direction-selective (DS) circuit of the retina. There are multiple subtypes of DS retinal ganglion cells (DSGCs) that prefer motion along one of four preferred directions. This computation is mediated by selective wiring of a single inhibitory interneuron, the starburst amacrine cell (SAC), with each DSGC subtype preferentially receiving input from a subset of SAC processes. We hypothesize that the molecular basis of this wiring is mediated in part by unique expression profiles of DSGC subtypes. To test this, we first performed paired recordings from isolated mouse retinas of both sexes to determine that postnatal day 10 (P10) represents the age at which asymmetric synapses form. Second, we performed RNA sequencing and differential expression analysis on isolated P10 ON-OFF DSGCs tuned for either nasal or ventral motion and identified candidates which may promote direction-specific wiring. We then used a conditional knock-out strategy to test the role of one candidate, the secreted synaptic organizer cerebellin-4 (Cbln4), in the development of DS tuning. Using two-photon calcium imaging, we observed a small deficit in directional tuning among ventral-preferring DSGCs lacking Cbln4, though whole-cell voltage-clamp recordings did not identify a significant change in inhibitory inputs. This suggests that Cbln4 does not function primarily via a cell-autonomous mechanism to instruct wiring of DS circuits. Nevertheless, our transcriptomic analysis identified unique candidate factors for gaining insights into the molecular mechanisms that instruct wiring specificity in the DS circuit.",
+  "citation_key": "Tworig2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/tworig_2024_cbln4-dsgc-wiring.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "date_added": "2026-05-04"
+}

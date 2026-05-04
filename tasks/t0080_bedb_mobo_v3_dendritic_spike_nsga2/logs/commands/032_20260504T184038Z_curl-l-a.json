@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "curl -L -A Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -o tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.64898_2026.02.02.701812/files/pitcher_2026_sac-dendrite-retinal-waves.pdf https://europepmc.org/articles/PMC12889470?pdf=render",
+  "exit_code": 0,
+  "duration_seconds": 1.545,
+  "started_at": "2026-05-04T18:40:38Z",
+  "completed_at": "2026-05-04T18:40:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "032_20260504T184038Z_curl-l-a.stdout.txt",
+  "stderr_file": "032_20260504T184038Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 8,
+  "truncated": false
+}

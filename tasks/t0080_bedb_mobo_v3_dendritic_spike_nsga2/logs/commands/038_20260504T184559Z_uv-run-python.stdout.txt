@@ -1,0 +1,24 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0080_bedb_mobo_v3_dendritic_spike_nsga2\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0022] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0052] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0053] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0054] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0057] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0059] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0008] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0011] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0012] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0024] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0046] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0055] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0067] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0069] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0074] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0076] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0078] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m — 18 error(s), 0 warning(s)

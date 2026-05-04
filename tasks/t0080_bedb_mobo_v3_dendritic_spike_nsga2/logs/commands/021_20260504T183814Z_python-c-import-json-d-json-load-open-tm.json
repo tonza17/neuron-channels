@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "python -c \nimport json\nd = json.load(open('/tmp/riccitelli.json'))['message']\nprint('TITLE:', d.get('title'))\nprint('DATE_PRINT:', d.get('published-print'))\nprint('DATE_ONLINE:', d.get('published-online'))\nprint('CONTAINER:', d.get('container-title'))\nprint('PUBLISHER:', d.get('publisher'))\nprint('VOLUME:', d.get('volume'), 'ISSUE:', d.get('issue'))\nprint('URL:', d.get('URL'))\nprint('AUTHORS:')\nfor a in d.get('author', []):\n    print('  -', a.get('given'), a.get('family'), '| affil:', [x.get('name') for x in a.get('affiliation', [])], '| ORCID:', a.get('ORCID'))\nprint('ABSTRACT:', d.get('abstract', '')[:1000])\n",
+  "exit_code": 1,
+  "duration_seconds": 0.16,
+  "started_at": "2026-05-04T18:38:14Z",
+  "completed_at": "2026-05-04T18:38:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "021_20260504T183814Z_python-c-import-json-d-json-load-open-tm.stdout.txt",
+  "stderr_file": "021_20260504T183814Z_python-c-import-json-d-json-load-open-tm.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}
