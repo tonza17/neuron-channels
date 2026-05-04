@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision a Vast.ai 64-core CPU instance (EPYC 7B13 class) and prepare the Python+NEURON+pymoo environment.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-04T19:06:30Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
       "step": 9,

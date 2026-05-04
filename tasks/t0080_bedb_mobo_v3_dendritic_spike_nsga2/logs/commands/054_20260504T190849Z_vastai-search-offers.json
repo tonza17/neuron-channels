@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "command": "vastai search offers cpu_cores_effective>=36 cpu_ram>=64 disk_space>=20 reliability>0.98 dph<0.30 rentable=true verified=true --order dph --limit 25 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.916,
+  "started_at": "2026-05-04T19:08:49Z",
+  "completed_at": "2026-05-04T19:08:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "stdout_file": "054_20260504T190849Z_vastai-search-offers.stdout.txt",
+  "stderr_file": "054_20260504T190849Z_vastai-search-offers.stderr.txt",
+  "stdout_lines": 1922,
+  "stderr_lines": 0,
+  "truncated": false
+}
