@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0079-03",
+  "correcting_task": "t0079_brainstorm_results_14",
+  "target_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "target_kind": "suggestion",
+  "target_id": "S-0078-08",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0078-08 proposes investigating AIS-disabled-corner exploitation as a general MOBO-on-biophysics failure mode, motivated by the t0078 compare-literature finding that iter-81's nav16_ais collapsed to the search floor (1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. The suggestion proposes producing an answer asset with a checklist of biological priors to enforce as hard constraints in future MOBO tasks. t0080 folds this in as an answer asset documenting (a) the iter-81 AIS-disabled corner as the canonical example, (b) audit findings of t0076 + t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored parameters, (c) the now-enforced biological-prior checklist (hard lower bounds per Kole 2008 / Werginz 2024 on AIS Nav; AIS-to-soma Nav ratio constraint per Werginz 2024's measured 17.3) that t0080 implements as MOBO bound constraints, and (d) general guidance for future MOBO-on-biophysics tasks. Rejecting as covered by t0080."
+}

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-04T16:24:25Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-04T17:39:30Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>322279</char_count>
-    <byte_count>322427</byte_count>
-    <estimated_tokens>80569</estimated_tokens>
+    <char_count>322285</char_count>
+    <byte_count>322433</byte_count>
+    <estimated_tokens>80571</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3561,7 +3561,7 @@ t0076 produced ~1,200 LOC of MOBO infrastructure (`mobo_loop.py`, `parametric_pl
 
 ## Add dendritic-spike machinery to AIS-augmented Bed B and re-optimise with NSGA-II under an AIS Nav lower-bound prior
 ID: S-0078-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0078_bedb_mobo_v2_ais_tiered_ahp
@@ -3572,7 +3572,7 @@ Bundled follow-up to the t0078 architectural diagnostic. The 49-d MOBO grazed th
 
 ## Substrate regression check: re-evaluate t0076 iter-424 parameters on the AIS-augmented 49-d Bed B substrate
 ID: S-0078-02
-Status: active
+Status: rejected
 Priority: medium
 Kind: experiment
 Source task: t0078_bedb_mobo_v2_ais_tiered_ahp
@@ -3639,7 +3639,7 @@ Builds on t0076&#x27;s S-0076-06 (dsgc_mobo library promotion) which targets the
 
 ## Investigate AIS-disabled-corner exploitation as a general MOBO-on-biophysics failure mode
 ID: S-0078-08
-Status: active
+Status: rejected
 Priority: medium
 Kind: evaluation
 Source task: t0078_bedb_mobo_v2_ais_tiered_ahp

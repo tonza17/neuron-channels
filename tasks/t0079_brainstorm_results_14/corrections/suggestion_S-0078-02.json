@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0079-02",
+  "correcting_task": "t0079_brainstorm_results_14",
+  "target_task": "t0078_bedb_mobo_v2_ais_tiered_ahp",
+  "target_kind": "suggestion",
+  "target_id": "S-0078-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0078-02 proposes a substrate regression check by re-evaluating the t0076 iter-424 parameter vector (DSI 0.42 / PD 8.34 Hz) on the AIS-augmented 49-d Bed B substrate to disentangle (a) genuine substrate regression of high-rail DSI from (b) qLogNEHVI 49-d exploration not finding t0076's best-joint operating point in 491 cells. This is a cheap, single-cell evaluation (1 cell x 8 dirs x 20 seeds at TSTOP_MS 1400). t0080 folds this in as a one-shot validation cell that runs locally before the NSGA-II loop launches: re-evaluate the t0076 iter-424 vector extended to the v3 49-d parameterisation (tier-stratified channels at uniform t0076-matching values, AIS Nav at Kole prior centre 0.375 S/cm^2, AIS geometry at midpoint, tau_ca_multiplier=1) and document the substrate-regression delta as part of t0080's results. Pass criterion: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz, or document substrate regression delta. Rejecting as covered by t0080."
+}
