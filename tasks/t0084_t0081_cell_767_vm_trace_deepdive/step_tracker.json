@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Run 24 simulations (3 cells x 8 directions) with extended recording; produce 12 figures; produce one answer asset attributing cell 767's joint-pass DSI mechanism.",
-      "status": "completed",
+      "status": "in_progress",
       "started_at": "2026-05-05T15:58:07Z",
-      "completed_at": "2026-05-05T17:30:00Z",
+      "completed_at": null,
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
