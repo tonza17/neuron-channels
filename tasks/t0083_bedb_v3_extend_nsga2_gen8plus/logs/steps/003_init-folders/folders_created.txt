@@ -1,0 +1,12 @@
+research/
+results/
+results/images/
+corrections/
+intervention/
+code/
+code/__init__.py
+logs/commands/
+logs/searches/
+logs/sessions/
+logs/steps/
+assets/
