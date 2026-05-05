@@ -1,5 +1,5 @@
 ---
-spec_version: "2"
+spec_version: "1"
 task_id: "t0082_brainstorm_results_15"
 date_completed: "2026-05-05"
 status: "complete"
