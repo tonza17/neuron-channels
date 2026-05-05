@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0080 and t0081 dependencies are completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-05T15:44:13Z",
-      "completed_at": null,
+      "completed_at": "2026-05-05T15:44:40Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
