@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Document reuse of t0081 NSGA-II harness and the t0080 v3 substrate library; identify the gen-7 final population reload mechanism and HV-plateau watchdog hooks needed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-05T13:33:32Z",
-      "completed_at": null,
+      "completed_at": "2026-05-05T13:44:42Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
