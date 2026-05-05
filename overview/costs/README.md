@@ -1,23 +1,23 @@
 # Project Costs
 
-Spent $8.13 of $10.00 USD. $1.87 remains overall and $1.87 remains before the 100% stop
+Spent $8.13 of $20.00 USD. $11.87 remains overall and $11.87 remains before the 100% stop
 threshold.
 
 ## Budget Summary
 
 | Field | Value |
 |-------|-------|
-| Total budget | $10.00 USD |
+| Total budget | $20.00 USD |
 | Total spent | $8.13 USD |
-| Budget left | $1.87 USD |
-| Budget left before stop threshold | $1.87 USD |
-| Spent percent | 81.28% |
-| Warn threshold | 80% ($8.00) |
-| Stop threshold | 100% ($10.00) |
+| Budget left | $11.87 USD |
+| Budget left before stop threshold | $11.87 USD |
+| Spent percent | 40.64% |
+| Warn threshold | 80% ($16.00) |
+| Stop threshold | 100% ($20.00) |
 | Default per-task limit | $5.00 USD |
-| Tasks with cost records | 75 |
+| Tasks with cost records | 76 |
 | Tasks with non-zero spend | 4 |
-| Skipped tasks | 9 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
@@ -38,7 +38,7 @@ threshold.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-71 task cost record(s) are zero-cost and omitted from the main spend table.
+72 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -61,4 +61,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0083_bedb_v3_extend_nsga2_gen8plus` | results/costs.json is missing or invalid |
-| `t0084_t0081_cell_767_vm_trace_deepdive` | results/costs.json is missing or invalid |

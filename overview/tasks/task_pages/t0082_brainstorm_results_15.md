@@ -127,7 +127,7 @@ confirmation at $5-10 across 3-5 replicates).
 *Source:
 [`results_summary.md`](../../../tasks/t0082_brainstorm_results_15/results/results_summary.md)*
 
---- spec_version: "2" task_id: "t0082_brainstorm_results_15" date_completed: "2026-05-05"
+--- spec_version: "1" task_id: "t0082_brainstorm_results_15" date_completed: "2026-05-05"
 status: "complete" ---
 # Results Summary: Brainstorm Session 15
 
@@ -280,7 +280,7 @@ entire remaining lifecycle through PR merge.
 *Source:
 [`results_detailed.md`](../../../tasks/t0082_brainstorm_results_15/results/results_detailed.md)*
 
---- spec_version: "2" task_id: "t0082_brainstorm_results_15" date_completed: "2026-05-05"
+--- spec_version: "1" task_id: "t0082_brainstorm_results_15" date_completed: "2026-05-05"
 status: "complete" ---
 # Results Detailed: Brainstorm Session 15
 

@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (43)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(93)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(94)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2388,7 +2388,26 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (82 open, 11 closed)
+## Suggestions (83 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Synaptic re-tuning: scale s2ggaba up proportionally with Nav1.6

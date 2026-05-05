@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-16-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-19-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-20-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-84-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-312-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-318-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,16 +28,16 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (28K)
-| [full](llm-context/full.xml) (453K) | [roadmap](llm-context/roadmap.xml) (94K) |
-[results](llm-context/results-deep-dive.xml) (353K) |
-[assets](llm-context/literature-and-assets.xml) (51K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (29K)
+| [full](llm-context/full.xml) (459K) | [roadmap](llm-context/roadmap.xml) (94K) |
+[results](llm-context/results-deep-dive.xml) (359K) |
+[assets](llm-context/literature-and-assets.xml) (52K)
 
-*Last updated: 2026-05-05 12:08 UTC*
+*Last updated: 2026-05-05 16:50 UTC*
 
-* **Budget**: **$8** spent of $10
-* **Remaining**: **$2**
-* **Usage**: `████████████████░░░░` 81.3%
+* **Budget**: **$8** spent of $20
+* **Remaining**: **$12**
+* **Usage**: `████████░░░░░░░░░░░░` 40.6%
 * **GPU Machines**: **4** provisioned across 4 tasks · **$8** GPU spend ([details](machines/))
 * **Provisioning**: 2 failed attempts · $0.00 wasted · 33% failure rate
 
@@ -52,18 +52,18 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | 2026-05-05 13:02 |
 
 ---
 
-## [Ready to Start (4)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`description`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/task_description.md) | — |
-| 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`description`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -83,11 +83,12 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (75 total)](tasks/by-status/completed.md)
+## [Recently Completed (76 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
+| 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`results`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/results/results_detailed.md) | 2026-05-05 16:45 |
 | 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
@@ -96,9 +97,8 @@ No blocked tasks.
 | 0076 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`results`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/results_detailed.md) | 2026-05-03 04:18 |
 | 0074 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | [`results`](../tasks/t0074_channel_tuning_width_bed_a/results/results_detailed.md) | 2026-05-02 03:55 |
 | 0073 | [Brainstorm results session 12](../overview/tasks/task_pages/t0073_brainstorm_results_12.md) | [`results`](../tasks/t0073_brainstorm_results_12/results/results_detailed.md) | 2026-05-01 18:55 |
-| 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
 
-*65 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*66 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,7 +123,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (274 open)](suggestions/)
+## [Recent Suggestions (280 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -212,116 +212,103 @@ optimisers. Recommended task types: write-library.
 </details>
 
 <details>
-<summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
-on the AIS-augmented 49-d Bed B substrate</strong> (S-0078-02)</summary>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
-Closes the t0078 deferred REQ-16. The compare_literature step flagged a substrate regression:
-iter 81 on the augmented substrate produces DSI 0.316 vs t0076 iter-424's DSI 0.42 at
-comparable PD rate, but no t0076 parameter vector was ever evaluated on the augmented
-substrate. Without this check we cannot disentangle (a) substrate regression of high-rail DSI
-from (b) qLogNEHVI 49-d exploration not finding t0076's best-joint operating point in 491
-cells. Cheap: 1 cell x 8 dirs x 20 seeds at TSTOP_MS 1400 is ~50 s on local CPU. Re-run
-_worker_run_trial with the t0076 iter-424 vector extended to 49-d (tier-stratified channels at
-uniform t0076-matching values, AIS Nav at Kole prior centre 0.375 S/cm^2, AIS geometry at
-midpoint, tau_ca_multiplier=1). Pass criterion: reproduce DSI within +/- 0.05 of t0076's 0.42
-at PD ~ 8.34 Hz, or document substrate regression delta. Cost: < $0.05 local CPU or
-$0.05-$0.10 Vast.ai. Recommended task types: experiment-run.
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
-from [1, 20x] to [1, 200x] to test the slow-Kv AHP regime</strong>
-(S-0078-03)</summary>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
-The t0078 high-DSI rail's PD ceiling at 2.86 Hz held flat across 109 acquisitions despite
-optimiser exploration, the signature of a saturated negative-feedback loop. The 20x upper
-bound corresponds to tau_ca ~ 100 ms; Larsson 2013 reports mammalian sAHP decay on the 1-3 s
-timescale, equivalent to multiplier values of ~ 100-300x. The originally-proposed [1, 200x]
-bound was reduced to [1, 20x] by researcher decision pre-launch as a simulation-budget safety
-margin. Hypothesis: at multiplier > 20x the slow-Kv regime engages and may (a) free the PD
-ceiling on the high-DSI rail or (b) not change behaviour (confirming saturation is
-mechanistic, not parametric). Bundle with S-0078-01 if NSGA-II is run, or run as a focused
-5-cell re-evaluation of t0078 high-DSI Pareto cells (iter 290, 283, 442, 371, 380) with
-multiplier expanded to 200x. Cost: $0.20-$0.50 focused or rolled into S-0078-01. Recommended
-task types: experiment-run.
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
+data-analysis.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Single-objective scalarised BO comparison on the 49-d Bed B
-substrate (qLogNEI with DSI - lambda x max(0, 10 - PD))</strong>
-(S-0078-04)</summary>
+<summary>🧪 <strong>Multi-section NaP/Nav1.6 decomposition across all 177 terminal
+dendrites of cell 767</strong> (S-0084-03)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
-Methodological comparison motivated by the t0078 Pareto-front geometry. The 17 t0078 Pareto
-cells exhibit a clean monotonic concave-down DSI-vs-PD trade-off with no obvious knee,
-suggesting cells lie on a 1-D manifold in 49-d parameter space. If true, scalarised
-single-objective BO using qLogNoisyExpectedImprovement with `DSI - lambda x max(0, 10 -
-PD_rate)` and lambda in [0.001, 0.01, 0.1, 1.0] could explore the same Pareto coverage at
-O(N^2) instead of O(N^3) and complete 700 acquisitions within the $4 envelope. Run lambda scan
-as 4 independent BO chains of 175 acquisitions each (total 700 cells) on the existing 49-d
-substrate. Pass criterion: union of the 4 single-objective fronts achieves HV >= 11.41
-(matching t0078) and ideally HV > 12.62 (1.5x rule-out). Document whether the scalarised front
-crosses the joint pass criterion that t0078 missed. Cost: $1.00-$2.00 on Vast.ai 64-core CPU.
-Recommended task types: experiment-run, comparative-analysis.
+t0084's attribution metric records Nav1.6 and NaP currents only at `cell.terminal_dends[0]`
+(representative section). Test whether this is representative by extending recording to all
+177 terminal dendrite sections of cell 767 and recomputing per-section fractional
+contribution. If per-section spread is small (all > 80% NaP-dominant), single-section
+attribution is robust; if some sections show NMDA-dominant or Nav1.6-dominant local
+contributions, there is dendrite-tree spatial heterogeneity that the single-section metric
+obscures, reframing t0084 from 'NaP-dominant cell-wide' to 'NaP-dominant on average with
+possible NMDA hotspots'. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task
+types: experiment-run, data-analysis.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
-closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
-(S-0078-05)</summary>
+<summary>🧪 <strong>AIS-localised NaP placement test: distal-dendrite NaP vs AIS
+NaP on cells 767 / 637 / 762</strong> (S-0084-04)</summary>
 
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
-REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
-library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
-PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
-document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
-cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
-substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
-compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
-PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
-recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
-task types: experiment-run.
+The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) places NaP on
+terminal dendrites instead. t0084 found NaP-dominant attribution at the terminal dendrite, but
+the dominant-mechanism story may differ if NaP were instead on the AIS. Test by holding cells
+767 / 637 / 762 parameters fixed but moving NaP from terminal_dends to ais_distal at the same
+density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
+NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
+Recommended task types: experiment-run.
 
 </details>
 
 <details>
-<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
-Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
+<summary>📊 <strong>Channel-knockout DSI causal-attribution variant of the t0084
+metric</strong> (S-0084-05)</summary>
 
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
-The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
-one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
-trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
-independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
-per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
-quantifies the BO methodology's contribution to apparent improvement vs the architectural
-contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
-bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
-t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
-experiment-run, evaluation.
+t0084's fractional-channel-contribution metric is correlative: it measures which channel's
+PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal
+contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4
+conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and
+compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the
+channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout
+collapses DSI by the most, t0084's NaP-dominant correlative finding is causally confirmed;
+otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
+NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
+on/off. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
-*264 more open suggestions → [open suggestions](suggestions/)*
+*270 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (35)](suggestions/)
+## [High Priority Suggestions (38)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -337,6 +324,63 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Channel-knockout DSI causal-attribution variant of the t0084
+metric</strong> (S-0084-05)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084's fractional-channel-contribution metric is correlative: it measures which channel's
+PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal
+contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4
+conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and
+compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the
+channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout
+collapses DSI by the most, t0084's NaP-dominant correlative finding is causally confirmed;
+otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
+NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
+on/off. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -452,64 +496,31 @@ no new sim runs.
 
 </details>
 
-<details>
-<summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
-sub-threshold angles</strong> (S-0074-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
-DSI. Creative-thinking hypothesised NaR's slow `s` reactivation gate creates a sub-threshold
-floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test:
-load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and
-angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes > 0. Hypothesis
-confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost:
-pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
-AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
-affecting PD.
-
-</details>
-
-<details>
-<summary>🧪 <strong>AIS-localised Kv7 follow-up (t0075 candidate)</strong>
-(S-0074-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta < 0.003 at
-every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008's prediction
-that Kv7's canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30
-µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density
-Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the
-t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
-mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
-accumulation is well-suited to the AIS firing regime.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
-(S-0067-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
-DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
-5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
-(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
-threshold density at which directional inversion becomes statistically robust. This is the
-most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*28 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (19 total)](answers/)
+## [Recent Answers (20 total)](answers/)
+
+<details>
+<summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
+a combination - is responsible for cell 767's joint-pass DSI improvement
+in the v3 Bed B substrate?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-05 | **Full answer**:
+[`cell-767-dendritic-spike-mechanism-attribution`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/assets/answer/cell-767-dendritic-spike-mechanism-attribution/)
+
+Cell 767's PD/ND difference in integrated dendritic current is attributed primarily to **NaP
+sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200,
+1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting
+NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to
+cell 767. This single-replicate deep-dive did not reproduce cell 767's original 5-seed
+joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the
+underlying biophysical signature of these parameters rather than confirming a per-trial
+joint-pass mechanism; multi-replicate confirmation requires t0083 or a follow-up multi-seed
+study.
+
+</details>
 
 <details>
 <summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
@@ -693,33 +704,7 @@ beyond the retina.
 
 </details>
 
-<details>
-<summary><strong>Can ModelDB 189347 (Poleg-Polsky & Diamond 2016 ON-OFF DRD4 DSGC)
-be reproduced locally on Windows as a headless library, does it hit the
-published direction-selectivity envelope with a canonical 12-angle x
-20-trial drifting-bar protocol, and which sibling DSGC compartmental models
-are the next-best candidates for porting in the same pipeline?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-20 | **Full answer**:
-[`dsgc-modeldb-port-reproduction-report`](../tasks/t0008_port_modeldb_189347/assets/answer/dsgc-modeldb-port-reproduction-report/)
-
-Yes, ModelDB 189347 was ported and runs headless on Windows 11 with NEURON 8.2.7 via a Python
-driver that sources the verbatim HOC and MOD files through `h.load_file`/`h.nrn_load_dll`; a
-12-angle x 20-trial sweep on the bundled morphology completed end-to-end in roughly 10 minutes
-and the four registered metrics (DSI, HWHM, reliability, RMSE vs target) were written to
-`results/metrics.json`. The tuning curve does not hit the published envelope at the bundled
-parameters (peak well below 40 Hz, DSI well below 0.7), because the paper derives DS from a
-`gabaMOD` parameter swap rather than from spatial rotation — the port's rotation-based
-protocol is only a proxy for a direction- selective stimulus. The Hanson et al. 2019
-Spatial-Offset-DSGC model (GitHub `geoffder/Spatial-Offset-DSGC-NEURON-Model`) is the
-next-best port candidate: it shares `RGCmodel.hoc` and `HHst.mod` with 189347 and already
-ships a Python driver; Jain 2020 is medium-effort; Ding 2016, Schachter 2010, Koren 2017, and
-Ezra-Tsur 2022 either lack a public compartmental model or address a different modelling
-class.
-
-</details>
-
-*9 more answers → [answers](answers/)*
+*10 more answers → [answers](answers/)*
 
 ---
 

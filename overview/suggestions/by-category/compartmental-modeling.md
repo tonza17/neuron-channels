@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-248 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **217 open** (32
-high, 157 medium, 28 low), **31 closed**.
+251 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **220 open** (32
+high, 160 medium, 28 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1081,6 +1081,29 @@ import; (c) update the project's description.md / library asset README for
 modeldb_189347_dsgc_exact to record the convention. This is correction work, not an
 experiment, but it gates every downstream DSGC task that compares to the paper. Recommended
 task types: correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AIS-localised NaP placement test: distal-dendrite NaP vs AIS
+NaP on cells 767 / 637 / 762</strong> (S-0084-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) places NaP on
+terminal dendrites instead. t0084 found NaP-dominant attribution at the terminal dendrite, but
+the dominant-mechanism story may differ if NaP were instead on the AIS. Test by holding cells
+767 / 637 / 762 parameters fixed but moving NaP from terminal_dends to ais_distal at the same
+density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
+NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -2838,6 +2861,31 @@ types: experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>🧪 <strong>Multi-section NaP/Nav1.6 decomposition across all 177 terminal
+dendrites of cell 767</strong> (S-0084-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0084's attribution metric records Nav1.6 and NaP currents only at `cell.terminal_dends[0]`
+(representative section). Test whether this is representative by extending recording to all
+177 terminal dendrite sections of cell 767 and recomputing per-section fractional
+contribution. If per-section spread is small (all > 80% NaP-dominant), single-section
+attribution is robust; if some sections show NMDA-dominant or Nav1.6-dominant local
+contributions, there is dendrite-tree spatial heterogeneity that the single-section metric
+obscures, reframing t0084 from 'NaP-dominant cell-wide' to 'NaP-dominant on average with
+possible NMDA hotspots'. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task
+types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Multi-trial t0072 extension to decompose SD bands into
 across-trial vs across-synapse variance</strong> (S-0072-02)</summary>
 
@@ -3450,6 +3498,32 @@ dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and aggregate_populati
 (c) uS->nS boundary helper, (d) smoke tests on both bed builder fixtures. Distinct from
 S-0047-04 (Bed A only, no v_local, no uS->nS, no I) and S-0070-02 (bed-runner library covers
 builders, not trace recording). Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote t0084 attribution-metric pipeline into a reusable
+mechanism_attribution_v3 library asset</strong> (S-0084-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-06` |
+| **Kind** | library |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0084 produced six well-tested code modules implementing a per-cell extended-recording
+pipeline plus fractional-channel-contribution attribution metric. The pipeline is reusable for
+any v3 substrate cell (and trivially extensible to v4 substrates) and should not have to be
+rebuilt for each follow-up task. Promote it to a library asset under
+`assets/library/mechanism_attribution_v3/` with public entry points:
+`run_deepdive_for_cell(cell_id, parameter_vector, directions, seed)`,
+`compute_fractional_attribution(traces_dir, cell_id, response_window_ms)`,
+`plot_attribution_figures(cell_id)`. Pure refactor; no new compute. Cost ~$0. Will accelerate
+follow-ups S-0084-01 / S-0084-02 / S-0084-03 / S-0084-05. Recommended task types:
+write-library, data-analysis.
 
 </details>
 

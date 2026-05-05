@@ -1,24 +1,29 @@
-# ⏳ Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
+# ⏳ Tasks: In Progress
+
+1 tasks. ⏳ **1 in_progress**.
 
 [Back to all tasks](../README.md)
 
-## Overview
+---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0083 — <strong>Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau
+stop</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0083_bedb_v3_extend_nsga2_gen8plus` |
-| **Status** | ⏳ in_progress |
-| **Started** | 2026-05-05T13:02:26Z |
+| **Status** | in_progress |
+| **Effective date** | 2026-05-05 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Expected assets** | — |
 | **Source suggestion** | `S-0081-02` |
-| **Task types** | `experiment-run` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-05-05T13:02:26Z |
+| **Task page** | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
 | **Task folder** | [`t0083_bedb_v3_extend_nsga2_gen8plus/`](../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/) |
-
-<details>
-<summary><strong>Task Description</strong></summary>
-
-*Source:
-[`task_description.md`](../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/task_description.md)*
 
 # Extend t0081 NSGA-II from gen-7 with Adaptive HV-Plateau Stop
 

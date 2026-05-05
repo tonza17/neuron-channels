@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-73 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **60 open** (11
-high, 40 medium, 9 low), **13 closed**.
+77 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **64 open** (13
+high, 42 medium, 9 low), **13 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,6 +58,32 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
+
+</details>
+
+<details>
+<summary>📊 <strong>Channel-knockout DSI causal-attribution variant of the t0084
+metric</strong> (S-0084-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084's fractional-channel-contribution metric is correlative: it measures which channel's
+PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal
+contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4
+conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and
+compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the
+channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout
+collapses DSI by the most, t0084's NaP-dominant correlative finding is causally confirmed;
+otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
+NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
+on/off. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -132,6 +158,30 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
@@ -377,6 +427,29 @@ Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=
 t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
 Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
 (g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AIS-localised NaP placement test: distal-dendrite NaP vs AIS
+NaP on cells 767 / 637 / 762</strong> (S-0084-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) places NaP on
+terminal dendrites instead. t0084 found NaP-dominant attribution at the terminal dendrite, but
+the dominant-mechanism story may differ if NaP were instead on the AIS. Test by holding cells
+767 / 637 / 762 parameters fixed but moving NaP from terminal_dends to ais_distal at the same
+density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
+NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -828,6 +901,31 @@ rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show 
 because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
 more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
 across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-section NaP/Nav1.6 decomposition across all 177 terminal
+dendrites of cell 767</strong> (S-0084-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0084's attribution metric records Nav1.6 and NaP currents only at `cell.terminal_dends[0]`
+(representative section). Test whether this is representative by extending recording to all
+177 terminal dendrite sections of cell 767 and recomputing per-section fractional
+contribution. If per-section spread is small (all > 80% NaP-dominant), single-section
+attribution is robust; if some sections show NMDA-dominant or Nav1.6-dominant local
+contributions, there is dendrite-tree spatial heterogeneity that the single-section metric
+obscures, reframing t0084 from 'NaP-dominant cell-wide' to 'NaP-dominant on average with
+possible NMDA hotspots'. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task
+types: experiment-run, data-analysis.
 
 </details>
 

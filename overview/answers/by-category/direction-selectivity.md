@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (13)
+# Answers: `direction-selectivity` (14)
 
-13 answer(s).
+14 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -424,6 +424,38 @@ beyond the retina.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
 | **URL sources** | [url 1](https://scholar.google.com/), [url 2](https://pubmed.ncbi.nlm.nih.gov/), [url 3](https://www.biorxiv.org/) |
 | **Created by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+
+</details>
+
+<details>
+<summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
+a combination - is responsible for cell 767's joint-pass DSI improvement
+in the v3 Bed B substrate?</strong></summary>
+
+**Confidence**: medium
+
+Cell 767's PD/ND difference in integrated dendritic current is attributed primarily to **NaP
+sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window ms.
+Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting NaP is a
+systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to cell 767.
+This single-replicate deep-dive did not reproduce cell 767's original 5-seed joint-pass DSI of
+0.494 (re-evaluated DSI = 0.000), so the attribution describes the underlying biophysical
+signature of these parameters rather than confirming a per-trial joint-pass mechanism;
+multi-replicate confirmation requires t0083 or a follow-up multi-seed study.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/assets/answer/cell-767-dendritic-spike-mechanism-attribution/full_answer.md) |
+| **ID** | [`cell-767-dendritic-spike-mechanism-attribution`](../../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/assets/answer/cell-767-dendritic-spike-mechanism-attribution/) |
+| **Question** | Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or a combination - is responsible for cell 767's joint-pass DSI improvement in the v3 Bed B substrate? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-05 |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **URL sources** | — |
+| **Created by** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
 
 </details>
 

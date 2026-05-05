@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-05T12:08:35Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-05T16:50:43Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>337709</char_count>
-    <byte_count>337865</byte_count>
-    <estimated_tokens>84427</estimated_tokens>
+    <char_count>344225</char_count>
+    <byte_count>344381</byte_count>
+    <estimated_tokens>86056</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -329,9 +329,15 @@
         <id>S-0081-05</id>
         <id>S-0081-06</id>
         <id>S-0081-07</id>
+        <id>S-0084-01</id>
+        <id>S-0084-02</id>
+        <id>S-0084-03</id>
+        <id>S-0084-04</id>
+        <id>S-0084-05</id>
+        <id>S-0084-06</id>
       </source_ids>
       <content>
-Suggestions: 312
+Suggestions: 318
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3828,6 +3834,72 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-05
 
 t0081&#x27;s harness combines (a) verbatim copying of prior-task Pareto cells, (b) dimension-projection of lower-d Pareto cells into the current-d space with random fill on new dims, (c) fresh LHS for diversity, and (d) pymoo NSGA-II with cost-cap watchdog. Promote this combination into a versioned library asset (`bedb_warmstart_nsga2_harness`) under the asset library type with documented APIs for the warm-start composition function and the NSGA-II driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different optimisers. Recommended task types: write-library.
+
+## NaP-density knockout sweep on cells 767 / 637 / 762 to test causal necessity of NaP-dominant attribution
+ID: S-0084-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: voltage-gated-channels, dendritic-computation, direction-selectivity
+Date added: 2026-05-05
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through 0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only. Reuse t0084&#x27;s run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types: experiment-run, data-analysis.
+
+## Per-seed mechanism decomposition of cell 767 across 5 t0081 evaluation seeds to find joint-pass-supporting seeds
+ID: S-0084-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: synaptic-integration, dendritic-computation, direction-selectivity
+Date added: 2026-05-05
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081&#x27;s 5-seed mean of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5 t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis: high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation); low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter vector and varies only per-seed evaluation noise. Recommended task types: experiment-run, data-analysis.
+
+## Multi-section NaP/Nav1.6 decomposition across all 177 terminal dendrites of cell 767
+ID: S-0084-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: compartmental-modeling, dendritic-computation, voltage-gated-channels
+Date added: 2026-05-05
+
+t0084&#x27;s attribution metric records Nav1.6 and NaP currents only at `cell.terminal_dends[0]` (representative section). Test whether this is representative by extending recording to all 177 terminal dendrite sections of cell 767 and recomputing per-section fractional contribution. If per-section spread is small (all &gt; 80% NaP-dominant), single-section attribution is robust; if some sections show NMDA-dominant or Nav1.6-dominant local contributions, there is dendrite-tree spatial heterogeneity that the single-section metric obscures, reframing t0084 from &#x27;NaP-dominant cell-wide&#x27; to &#x27;NaP-dominant on average with possible NMDA hotspots&#x27;. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task types: experiment-run, data-analysis.
+
+## AIS-localised NaP placement test: distal-dendrite NaP vs AIS NaP on cells 767 / 637 / 762
+ID: S-0084-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: voltage-gated-channels, compartmental-modeling, direction-selectivity
+Date added: 2026-05-05
+
+The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) places NaP on terminal dendrites instead. t0084 found NaP-dominant attribution at the terminal dendrite, but the dominant-mechanism story may differ if NaP were instead on the AIS. Test by holding cells 767 / 637 / 762 parameters fixed but moving NaP from terminal_dends to ais_distal at the same density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0. Recommended task types: experiment-run.
+
+## Channel-knockout DSI causal-attribution variant of the t0084 metric
+ID: S-0084-05
+Status: active
+Priority: high
+Kind: evaluation
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: voltage-gated-channels, dendritic-computation, direction-selectivity
+Date added: 2026-05-05
+
+t0084&#x27;s fractional-channel-contribution metric is correlative: it measures which channel&#x27;s PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4 conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout collapses DSI by the most, t0084&#x27;s NaP-dominant correlative finding is causally confirmed; otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps NaP density continuously; S-0084-05 tests all three channels simultaneously with binary on/off. Recommended task types: experiment-run, data-analysis.
+
+## Promote t0084 attribution-metric pipeline into a reusable mechanism_attribution_v3 library asset
+ID: S-0084-06
+Status: active
+Priority: medium
+Kind: library
+Source task: t0084_t0081_cell_767_vm_trace_deepdive
+Categories: compartmental-modeling, dendritic-computation
+Date added: 2026-05-05
+
+t0084 produced six well-tested code modules implementing a per-cell extended-recording pipeline plus fractional-channel-contribution attribution metric. The pipeline is reusable for any v3 substrate cell (and trivially extensible to v4 substrates) and should not have to be rebuilt for each follow-up task. Promote it to a library asset under `assets/library/mechanism_attribution_v3/` with public entry points: `run_deepdive_for_cell(cell_id, parameter_vector, directions, seed)`, `compute_fractional_attribution(traces_dir, cell_id, response_window_ms)`, `plot_attribution_figures(cell_id)`. Pure refactor; no new compute. Cost ~$0. Will accelerate follow-ups S-0084-01 / S-0084-02 / S-0084-03 / S-0084-05. Recommended task types: write-library, data-analysis.
       </content>
     </section>
   </sections>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-05T12:08:35Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-05T16:50:43Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4500</char_count>
-    <byte_count>4500</byte_count>
-    <estimated_tokens>1125</estimated_tokens>
+    <char_count>4549</char_count>
+    <byte_count>4549</byte_count>
+    <estimated_tokens>1137</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,10 +17,10 @@
       <title>Project Costs (Full Detail)</title>
       <source_name>aggregate_costs_full</source_name>
       <content>
-Total budget: $10.00
+Total budget: $20.00
 Total spent: $8.13
-Budget remaining: $1.87
-Spent: 81.3%
+Budget remaining: $11.87
+Spent: 40.6%
 
 ### Cost Breakdown by Category
 
@@ -114,6 +114,7 @@ Spent: 81.3%
 * t0080_bedb_mobo_v3_dendritic_spike_nsga2: $0.75
 * t0081_bedb_v3_warmstart_nsga2: $2.39
 * t0082_brainstorm_results_15: $0.00
+* t0084_t0081_cell_767_vm_trace_deepdive: $0.00
       </content>
     </section>
   </sections>

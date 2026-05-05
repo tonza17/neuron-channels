@@ -5,8 +5,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (43)](../papers/by-category/direction-selectivity.md) | [Answers
-(13)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(220)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(14)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(224)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (14)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2291,7 +2291,27 @@ simulation.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (13)
+## Answers (14)
+
+<details>
+<summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
+a combination - is responsible for cell 767's joint-pass DSI improvement
+in the v3 Bed B substrate?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-05 | **Full answer**:
+[`cell-767-dendritic-spike-mechanism-attribution`](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/assets/answer/cell-767-dendritic-spike-mechanism-attribution/)
+
+Cell 767's PD/ND difference in integrated dendritic current is attributed primarily to **NaP
+sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200,
+1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting
+NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to
+cell 767. This single-replicate deep-dive did not reproduce cell 767's original 5-seed
+joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the
+underlying biophysical signature of these parameters rather than confirming a per-trial
+joint-pass mechanism; multi-replicate confirmation requires t0083 or a follow-up multi-seed
+study.
+
+</details>
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
@@ -2576,7 +2596,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (193 open, 27 closed)
+## Suggestions (197 open, 27 closed)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -2661,6 +2681,80 @@ library type with documented APIs for the warm-start composition function and th
 driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d
 harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different
 optimisers. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>AIS-localised NaP placement test: distal-dendrite NaP vs AIS
+NaP on cells 767 / 637 / 762</strong> (S-0084-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) places NaP on
+terminal dendrites instead. t0084 found NaP-dominant attribution at the terminal dendrite, but
+the dominant-mechanism story may differ if NaP were instead on the AIS. Test by holding cells
+767 / 637 / 762 parameters fixed but moving NaP from terminal_dends to ais_distal at the same
+density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
+NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Channel-knockout DSI causal-attribution variant of the t0084
+metric</strong> (S-0084-05)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
+
+t0084's fractional-channel-contribution metric is correlative: it measures which channel's
+PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal
+contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4
+conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and
+compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the
+channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout
+collapses DSI by the most, t0084's NaP-dominant correlative finding is causally confirmed;
+otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
+NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
+on/off. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
