@@ -1,12 +1,155 @@
 # ✅ Tasks: Completed
 
-74 tasks. ✅ **74 completed**.
+75 tasks. ✅ **75 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0082 — <strong>Brainstorm results session 15</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0082_brainstorm_results_15` |
+| **Status** | completed |
+| **Effective date** | 2026-05-05 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md), [`t0058_brainstorm_results_11`](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md), [`t0062_nmda_escape_with_ampa_priming`](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md), [`t0064_hh_current_step_test`](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md), [`t0073_brainstorm_results_12`](../../../overview/tasks/task_pages/t0073_brainstorm_results_12.md), [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md), [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0077_brainstorm_results_13`](../../../overview/tasks/task_pages/t0077_brainstorm_results_13.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0079_brainstorm_results_14`](../../../overview/tasks/task_pages/t0079_brainstorm_results_14.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-05T16:00:00Z |
+| **End time** | 2026-05-05T17:30:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 15](../../../overview/tasks/task_pages/t0082_brainstorm_results_15.md) |
+| **Task folder** | [`t0082_brainstorm_results_15/`](../../../tasks/t0082_brainstorm_results_15/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0082_brainstorm_results_15/results/results_detailed.md) |
+
+# Brainstorm Session 15: Extend t0081 NSGA-II + Vm-Trace Deep-Dive of Cell 767
+
+Fifteenth brainstorming session. Run on 2026-05-05 after t0081 (`bedb_v3_warmstart_nsga2`)
+completed and **delivered the project's first joint-pass cell**: gen 7 cell 767 at **DSI 0.494
+/ PD 11.39 Hz** on a 16-cell Pareto front (768 evaluations, $2.39 on Vast.ai). t0081 satisfied
+the project's working pass criterion `DSI >= 0.4 AND PD >= 10 Hz` simultaneously for the first
+time in the project lineage, decisively answering research question Q4 (do active dendritic
+conductances enable joint DSI/PD pass on Bed B?) as **yes** when given an adequate NSGA-II
+budget plus combined t0078 + t0080 warm-start. Hypervolume grew monotonically from 6.59 (gen
+0) to 16.33 (gen 7) with **no plateau**, suggesting more generations can both characterise the
+joint-passing region and potentially find additional joint-pass cells. The researcher topped
+up the project budget by $10 (now $11.87 remaining out of an effective $20 cap) to enable
+t0081 follow-ups.
+
+## Decisions
+
+* **Create t0083** -- `bedb_v3_extend_nsga2_gen8plus`. Continue NSGA-II from t0081's gen-7
+  final population (96 surviving individuals) for **at least 5 more generations** (gen 8-12)
+  with an **adaptive HV-plateau stop rule**: terminate when relative HV improvement averaged
+  over the last 3 generations falls below **1%** (i.e., `(HV(gen N) - HV(gen N-3)) / HV(gen
+  N-3) < 0.01`). Hard cap on total additional generations: **10** (gen 8-17 maximum). Reuse
+  the t0081 harness verbatim with `n_gen` parameterised and a HV-plateau watchdog added. Pass
+  criterion: characterise the joint-passing region (count of Pareto cells with `DSI >= 0.4 AND
+  PD >= 10 Hz`; final HV; HV trajectory). Compute estimate ~$1.50 - $3.00 over ~6-12
+  wall-clock hours on Vast.ai 64-core EPYC 7B13 at $0.2382/hr; **hard cost cap $5.00**. Source
+  suggestion: S-0081-02. Dependencies: t0081 (provides gen-7 final population), t0080
+  (substrate library), t0078, t0024.
+
+* **Create t0084** -- `t0081_cell_767_vm_trace_deepdive`. Local-CPU per-direction (8 angles)
+  Vm-trace deep-dive of cell 767 (joint-pass) plus the two neighbouring near-pass cells 637
+  (distance 0.063) and 762 (distance 0.086) on the t0081 v3 substrate. Record proximal-soma,
+  mid-dendrite, and distal-dendrite traces; plot dendritic-spike onset times, NMDA conductance
+  trajectories per dendritic site, and AIS spike correlation per direction. Output: figure
+  assets and an answer asset attributing cell 767's DSI improvement to specific
+  dendritic-spike machinery (NMDA Mg-block recruitment vs distal Nav1.6 dendritic spikes vs
+  NaP sustained depolarisation, or a combination). Local CPU only, **no remote machine, $0
+  compute cost**, ~10 min runtime per cell. Source suggestion: S-0081-03. Dependencies: t0081
+  (cell 767/637/762 parameter vectors and v3 substrate library reference), t0080 (substrate
+  library `de_rosenroll_2026_dsgc_ais_dendritic_spike`).
+
+## Suggestion Cleanup
+
+* **Reject three suggestions** as covered by t0081 (the prior-task analogue of session 14's
+  S-0078-01/02/08 cleanup):
+
+  * **S-0080-01** (high) -- Re-run NSGA-II at the full plan scope (pop=96, gen=40 = 3,840
+    cells) on the v3 54-d Bed B substrate. **Covered by t0081**, which ran 768 cells at pop=96
+    / gen=8 with combined warm-start and **achieved the joint pass criterion**. The full-scope
+    re-run was successful at 4x t0080's evaluation budget; further extension is addressed by
+    t0083.
+
+  * **S-0080-02** (high) -- Substrate regression check on the t0076 iter-424 vector mapped to
+    the v3 54-d parameter space. **Covered by t0081's positive result**: t0081's
+    compare-literature analysis explicitly states "the v3 substrate is not regressed -- it
+    admits joint-pass cells when given an adequate budget plus warm-start". The regression
+    hypothesis is ruled out by direct demonstration.
+
+  * **S-0080-03** (high) -- Warm-start NSGA-II from t0078 Pareto cells mapped into the v3 54-d
+    parameter space. **Covered by t0081**, which is exactly this approach: 5 t0080 Pareto
+    cells verbatim + 17 t0078 Pareto cells projected from 49-d to 54-d + 74 fresh LHS = pop=96
+    warm-start. The deciding ingredient that produced cell 767.
+
+## Reprioritisations
+
+None.
+
+## Tasks Cancelled or Updated
+
+* **Cancelled**: none.
+* **Updated**: none.
+* t0075 (Bed A bio-realistic AIS one-axis sweep) remains queued for later opportunistic
+  pickup; researcher confirmed "leave queued" disposition. Different substrate (Bed A) from
+  t0083 / t0084 (Bed B v3) and provides complementary one-axis sensitivity analysis.
+
+## Assets Produced
+
+No assets in this brainstorm task. The two new tasks t0083 / t0084 will produce: t0083 -- one
+Pareto-front result bundle (extended HV trajectory, joint-pass cell count, cost record,
+machine log); t0084 -- Vm-trace figure assets and one answer asset attributing the cell-767
+DSI mechanism, all under the t0084 task folder.
+
+## Budget Context
+
+The researcher topped up the project budget by $10 mid-session, raising the effective cap from
+$10 to $20 with $1.87 + $10 = **$11.87 remaining**. This unlocked S-0081-02 (estimated $1.50 -
+$3.00 with $5.00 hard cap) and S-0081-03 (estimated $0). Combined estimated total $1.50 -
+$3.00; combined hard cap $5.00. Both fit comfortably in the topped-up $11.87 envelope while
+preserving runway for at least one further follow-up (e.g., S-0081-01 multi-replicate
+confirmation at $5-10 across 3-5 replicates).
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0082_brainstorm_results_15"
+> date_completed: "2026-05-05"
+> status: "complete"
+> ---
+> **Results Summary: Brainstorm Session 15**
+>
+> **Summary**
+>
+> Fifteenth strategic brainstorm, run on 2026-05-05 after t0081 (`bedb_v3_warmstart_nsga2`)
+> **delivered the project's first joint-pass cell** at gen 7 cell 767 (DSI 0.494 / PD 11.39 Hz
+> on 768
+> evaluations, $2.39). The session is triggered by the t0081 architectural milestone: the
+> project's
+> working pass criterion `DSI >= 0.4 AND PD >= 10 Hz` was satisfied simultaneously for the
+> first time,
+> decisively answering research question Q4 (active vs passive dendritic conductances) in the
+> positive
+> on Bed B. Two follow-up tasks commissioned in parallel: t0083
+> (`bedb_v3_extend_nsga2_gen8plus`)
+> extends t0081's NSGA-II from its gen-7 final population for at least 5 more generations with
+> an
+> adaptive HV-plateau stop rule (<1% relative HV improvement averaged over a 3-gen window) and
+> a $5.00
+> hard cost cap; t0084 (`t0081_cell_767_vm_trace_deepdive`) runs a local-CPU per-direction
+> Vm-trace
+> deep-dive of cells 767, 637, 762 to attribute the DSI mechanism to NMDA Mg-block, distal
+> Nav1.6,
+
+</details>
 
 <details>
 <summary>✅ 0081 — <strong>Bed B v3 NSGA-II at full scope with combined t0078+t0080

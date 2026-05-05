@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-05T09:59:30Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-05T12:08:35Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>133</section_count>
-    <char_count>2466021</char_count>
-    <byte_count>2472356</byte_count>
-    <estimated_tokens>616505</estimated_tokens>
+    <section_count>136</section_count>
+    <char_count>2470930</char_count>
+    <byte_count>2477277</byte_count>
+    <estimated_tokens>617732</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -186,9 +186,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0079_brainstorm_results_14</id>
         <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
         <id>t0081_bedb_v3_warmstart_nsga2</id>
+        <id>t0082_brainstorm_results_15</id>
       </source_ids>
       <content>
-Completed tasks: 74
+Completed tasks: 75
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -633,6 +634,12 @@ ID: t0081_bedb_v3_warmstart_nsga2
 Completed: 2026-05-05
 Short description: Re-run NSGA-II on the t0080 v3 substrate at pop=96/gen=8 (768 cells) with warm-start from 5 t0080 + 17 t0078 Pareto cells; test if joint pass becomes reachable.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0081_bedb_v3_warmstart_nsga2&quot; date_completed: &quot;2026-05-05&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start Summary Re-ran NSGA-II on the t0080 v3 dendritic-spike-augmented Bed B substrate at the originally planned scope (pop=96 / gen=8 = **768 cells**) with a combined warm-start initial population (5 t0080 Pareto cells verbatim + 17 t0078 Pareto cells projected to 54-d natural-unit space + 74 fresh LHS). Run completed cleanly on Vast.ai instance 36149741 (EPYC 7B13 64-core) for **$2.39** total ($2.207 NSGA-II + $0.18 overhead). **Pass criterion (DSI &gt;= 0.4 AND PD &gt;= 10 Hz) ACHIEVED**: gen 7 cell 767...
+
+## Brainstorm results session 15
+ID: t0082_brainstorm_results_15
+Completed: 2026-05-05
+Short description: Fifteenth brainstorm: commission t0083 (extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop) and t0084 (Vm-trace deep-dive of cell 767); reject 3 suggestions covered by t0081.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0082_brainstorm_results_15&quot; date_completed: &quot;2026-05-05&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 15 Summary Fifteenth strategic brainstorm, run on 2026-05-05 after t0081 (`bedb_v3_warmstart_nsga2`) **delivered the project&#x27;s first joint-pass cell** at gen 7 cell 767 (DSI 0.494 / PD 11.39 Hz on 768 evaluations, $2.39). The session is triggered by the t0081 architectural milestone: the project&#x27;s working pass criterion `DSI &gt;= 0.4 AND PD &gt;= 10 Hz` was satisfied simultaneously for the first time, decisively answering research question Q4 (active vs passive dendritic conductances) in the positive on Bed B. Two follow-up tasks commissioned in...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -642,9 +649,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0081_bedb_v3_war
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
+        <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -665,6 +674,20 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
+ID: t0083_bedb_v3_extend_nsga2_gen8plus
+Status: not_started
+Effective date: unknown
+Short description: Continue NSGA-II from t0081&#x27;s gen-7 final population for at least 5 more generations with adaptive HV-plateau stop (&lt;1% over 3-gen window); hard cap +10 gens, $5.00 cost.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2
+
+## Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism
+ID: t0084_t0081_cell_767_vm_trace_deepdive
+Status: not_started
+Effective date: unknown
+Short description: Per-direction Vm traces of t0081 cells 767 / 637 / 762 (proximal soma, mid dendrite, distal dendrite) to attribute cell 767&#x27;s joint-pass DSI to NMDA Mg-block, distal Nav1.6, NaP, or combination.
+Dependencies: t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -41883,6 +41906,111 @@ From t0080:
 * **t0080_bedb_mobo_v3_dendritic_spike_nsga2** — provides the v3 substrate library, the NSGA-II
   harness, the 5-cell Pareto front (54-d normalised parameter vectors) used as verbatim warm-start
   seeds, and the cost-cap watchdog reused at $3.00 cap. Status: completed.
+      </content>
+    </section>
+    <section id="t0082_brainstorm_results_15-research_papers" source_kind="file">
+      <title>t0082_brainstorm_results_15 — Brainstorm results session 15 — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0082_brainstorm_results_15</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0082_brainstorm_results_15/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0082_brainstorm_results_15-research_internet" source_kind="file">
+      <title>t0082_brainstorm_results_15 — Brainstorm results session 15 — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0082_brainstorm_results_15</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0082_brainstorm_results_15/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0082_brainstorm_results_15-research_code" source_kind="file">
+      <title>t0082_brainstorm_results_15 — Brainstorm results session 15 — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0082_brainstorm_results_15</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0082_brainstorm_results_15/research/research_code.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
       </content>
     </section>
   </sections>

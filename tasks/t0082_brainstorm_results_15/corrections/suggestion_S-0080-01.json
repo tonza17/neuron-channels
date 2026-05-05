@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0082-01",
+  "correcting_task": "t0082_brainstorm_results_15",
+  "target_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "target_kind": "suggestion",
+  "target_id": "S-0080-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0080-01 proposes re-running NSGA-II at the full plan scope (pop=96 / gen=40 = 3,840 cells) on the v3 54-d Bed B substrate after t0080's 192-cell run missed the joint pass criterion. t0081 (bedb_v3_warmstart_nsga2) directly covered this suggestion at a smaller-but-sufficient scope (pop=96 / gen=8 = 768 cells = 4x t0080's evaluation budget) by adding combined t0078 + t0080 + LHS warm-start, and **achieved the joint pass criterion** with gen 7 cell 767 at DSI 0.494 / PD 11.39 Hz on a 16-cell Pareto front. The full-scope re-run was successful at 4x t0080's evaluation budget plus warm-start; further generation extension to characterise the joint-passing region is now addressed by t0083 (bedb_v3_extend_nsga2_gen8plus, this brainstorm session's primary commission, source_suggestion S-0081-02). Rejecting as covered by t0081 with t0083 picking up the remaining characterisation scope."
+}

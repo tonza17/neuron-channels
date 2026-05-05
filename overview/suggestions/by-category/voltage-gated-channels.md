@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 73 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **61 open** (12
-high, 40 medium, 9 low), **12 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **60 open** (11
+high, 40 medium, 9 low), **13 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,30 +58,6 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0081-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
 
 </details>
 
@@ -1596,6 +1572,32 @@ PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate 
 t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
 minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</s> — covered by <a
+href="../../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/"><code>t0084_t0081_cell_767_vm_trace_deepdive</code></a>
+(S-0081-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0081-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
