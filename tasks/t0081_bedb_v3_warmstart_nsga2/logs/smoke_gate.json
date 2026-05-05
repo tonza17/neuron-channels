@@ -1,0 +1,81 @@
+{
+  "tolerance_dsi": 0.05,
+  "tolerance_pd_rate_hz": 1.0,
+  "n_cells": 5,
+  "n_pass": 3,
+  "n_fail": 2,
+  "records": [
+    {
+      "cell_index": 58,
+      "ref_dsi": 0.01479915433403804,
+      "ref_pd_rate_hz": 8.571428571428571,
+      "obs_dsi": 0.0,
+      "obs_pd_rate_hz": 8.214285714285715,
+      "delta_dsi": -0.01479915433403804,
+      "delta_pd_rate_hz": -0.3571428571428559,
+      "is_unstable": false,
+      "peak_vm_mv": 4.089965952164221,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 194.97540807724
+    },
+    {
+      "cell_index": 141,
+      "ref_dsi": 0.12698412698412695,
+      "ref_pd_rate_hz": 2.5357142857142856,
+      "obs_dsi": 0.06666666666666667,
+      "obs_pd_rate_hz": 2.857142857142857,
+      "delta_dsi": -0.060317460317460284,
+      "delta_pd_rate_hz": 0.3214285714285716,
+      "is_unstable": false,
+      "peak_vm_mv": -1.5282150724854944,
+      "is_pass": false,
+      "error": null,
+      "elapsed_s": 201.12877702713013
+    },
+    {
+      "cell_index": 153,
+      "ref_dsi": 0.02597402597402596,
+      "ref_pd_rate_hz": 8.464285714285715,
+      "obs_dsi": 0.0,
+      "obs_pd_rate_hz": 8.571428571428571,
+      "delta_dsi": -0.02597402597402596,
+      "delta_pd_rate_hz": 0.10714285714285587,
+      "is_unstable": false,
+      "peak_vm_mv": 4.089965952164221,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 199.69496250152588
+    },
+    {
+      "cell_index": 188,
+      "ref_dsi": 0.0,
+      "ref_pd_rate_hz": 9.25,
+      "obs_dsi": -0.0196078431372549,
+      "obs_pd_rate_hz": 8.928571428571429,
+      "delta_dsi": -0.0196078431372549,
+      "delta_pd_rate_hz": -0.3214285714285712,
+      "is_unstable": false,
+      "peak_vm_mv": 4.6647566583646345,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 231.35419511795044
+    },
+    {
+      "cell_index": 190,
+      "ref_dsi": 0.0516431924882629,
+      "ref_pd_rate_hz": 4.0,
+      "obs_dsi": 0.14285714285714285,
+      "obs_pd_rate_hz": 4.285714285714286,
+      "delta_dsi": 0.09121395036887994,
+      "delta_pd_rate_hz": 0.2857142857142856,
+      "is_unstable": false,
+      "peak_vm_mv": -1.2587350745931758,
+      "is_pass": false,
+      "error": null,
+      "elapsed_s": 210.91591691970825
+    }
+  ],
+  "n_seeds": 2,
+  "max_workers": 0
+}

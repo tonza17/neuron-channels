@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0081_bedb_v3_warmstart_nsga2",
+  "command": "uv run python -u -m tasks.t0081_bedb_v3_warmstart_nsga2.code.smoke_gate --n-seeds 2 --max-workers 0",
+  "exit_code": 1,
+  "duration_seconds": 1038.634,
+  "started_at": "2026-05-04T23:54:06Z",
+  "completed_at": "2026-05-05T00:11:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0081_bedb_v3_warmstart_nsga2",
+  "stdout_file": "008_20260504T235406Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260504T235406Z_uv-run-python.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 0,
+  "truncated": false
+}
