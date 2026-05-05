@@ -1,0 +1,4 @@
+APT_INSTALL_OK
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f95 (f95) in auto mode
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f77 (f77) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u13) ...

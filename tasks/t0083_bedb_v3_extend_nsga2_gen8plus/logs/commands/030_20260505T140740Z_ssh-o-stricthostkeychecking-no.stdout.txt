@@ -1,0 +1,20 @@
+=== CPU ===
+CPU(s):                               128
+Model name:                           AMD EPYC 7B13 64-Core Processor
+Thread(s) per core:                   2
+Core(s) per socket:                   64
+Socket(s):                            1
+=== RAM ===
+               total        used        free      shared  buff/cache   available
+Mem:             995          22         356           0         623         972
+Swap:              7           0           7
+=== DISK ===
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          25G  420K   25G   1% /
+=== PYTHON ===
+Python 3.12.13
+/usr/local/bin/python
+=== NPROC ===
+128
+=== IP ===
+172.17.0.5

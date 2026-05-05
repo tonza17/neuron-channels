@@ -1,0 +1,13 @@
+NEURON 8.2.7+
+hh-insert OK; gnabar_hh default = 0.12
+--- pymoo ---
+pymoo 0.6.1.6
+NSGA2 imported OK
+StarmapParallelization OK
+all-imports OK
+--- numpy/scipy/matplotlib ---
+numpy 2.4.4
+scipy 1.17.1
+matplotlib 3.10.9
+--- nrnivmodl ---
+/root/t0083_workdir/.venv/bin/nrnivmodl

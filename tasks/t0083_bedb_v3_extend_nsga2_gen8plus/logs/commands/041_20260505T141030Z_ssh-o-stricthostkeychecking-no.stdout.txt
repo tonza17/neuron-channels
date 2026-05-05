@@ -1,0 +1,23 @@
+total 4
+drwxr-xr-x 2 root root   34 May  5 14:10 .
+drwxr-xr-x 4 root root   47 May  5 14:10 ..
+-rw-r--r-- 1 root root 1380 May  5 14:10 nav16t80.mod
+/root/t0083_workdir/mod_test
+Mod files: "././nav16t80.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././nav16t80.mod
+Translating nav16t80.mod into /root/t0083_workdir/mod_test/x86_64/nav16t80.c
+Thread Safe
+ -> [32mCompiling[0m nav16t80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+--- compiled lib ---
+total 28
+drwxr-xr-x 2 root root    35 May  5 14:10 .
+drwxr-xr-x 3 root root  4096 May  5 14:10 ..
+-rwxr-xr-x 1 root root 22448 May  5 14:10 libnrnmech.so
+--- load test ---

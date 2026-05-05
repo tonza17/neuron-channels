@@ -1,0 +1,3 @@
+INSTALL_OK
+Resolved 27 packages in 489ms
+Installed 27 packages in 291ms
