@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md (with Examples section), metrics.json (empty, since this task produces an answer not a metric), costs.json (zero), remote_machines_used.json (empty).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-05T16:34:23Z",
-      "completed_at": null,
+      "completed_at": "2026-05-05T16:38:29Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
