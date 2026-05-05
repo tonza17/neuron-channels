@@ -1,0 +1,16 @@
+Generating figures for cell 767...
+  Fig 1: cell767_fig1_vm_traces.png
+  Fig 2: cell767_fig2_nmda_conductance.png
+  Fig 3: cell767_fig3_nav16_nap_current.png
+  Fig 4: cell767_fig4_ais_spikes.png
+Generating figures for cell 637...
+  Fig 1: cell637_fig1_vm_traces.png
+  Fig 2: cell637_fig2_nmda_conductance.png
+  Fig 3: cell637_fig3_nav16_nap_current.png
+  Fig 4: cell637_fig4_ais_spikes.png
+Generating figures for cell 762...
+  Fig 1: cell762_fig1_vm_traces.png
+  Fig 2: cell762_fig2_nmda_conductance.png
+  Fig 3: cell762_fig3_nav16_nap_current.png
+  Fig 4: cell762_fig4_ais_spikes.png
+[DONE] 12 figures generated.

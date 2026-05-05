@@ -1,0 +1,25 @@
+{
+  "spec_version": "2",
+  "answer_id": "cell-767-dendritic-spike-mechanism-attribution",
+  "question": "Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or a combination - is responsible for cell 767's joint-pass DSI improvement in the v3 Bed B substrate?",
+  "short_title": "Cell 767 DSI mechanism attribution",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "dendritic-computation",
+    "direction-selectivity",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0081_bedb_v3_warmstart_nsga2"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "date_created": "2026-05-05"
+}

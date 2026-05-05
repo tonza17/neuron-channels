@@ -1,0 +1,37 @@
+{
+  "variants": [
+    {
+      "variant_id": "cell-767",
+      "label": "Cell 767 (joint-pass, gen 7, 1-seed DSI)",
+      "dimensions": {
+        "cell_id": 767,
+        "generation": 7
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    },
+    {
+      "variant_id": "cell-637",
+      "label": "Cell 637 (near-pass, gen 6, 1-seed DSI)",
+      "dimensions": {
+        "cell_id": 637,
+        "generation": 6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1429
+      }
+    },
+    {
+      "variant_id": "cell-762",
+      "label": "Cell 762 (near-pass, gen 7, 1-seed DSI)",
+      "dimensions": {
+        "cell_id": 762,
+        "generation": 7
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    }
+  ]
+}

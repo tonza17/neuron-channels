@@ -1,0 +1,8 @@
+Attribution results:
+  Cell 767: dominant=NaP sustained depolarisation  NMDA=0.000  Nav1.6=0.070  NaP=0.930
+  Cell 637: dominant=NaP sustained depolarisation  NMDA=0.000  Nav1.6=0.015  NaP=0.985
+  Cell 762: dominant=NaP sustained depolarisation  NMDA=0.000  Nav1.6=0.001  NaP=0.999
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\assets\answer\cell-767-dendritic-spike-mechanism-attribution\details.json
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\assets\answer\cell-767-dendritic-spike-mechanism-attribution\short_answer.md
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\assets\answer\cell-767-dendritic-spike-mechanism-attribution\full_answer.md
+[DONE] Answer asset written.

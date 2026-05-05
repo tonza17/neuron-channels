@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\code\attribution_metric.py", line 155, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\code\attribution_metric.py", line 143, in main
+    result: AttributionResult = compute_attribution(cell_id=cell_id)
+                                ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\code\attribution_metric.py", line 93, in compute_attribution
+    int_nmda_pd: float = _integrate_channel(current_arr=i_nmda_pd, t_ms=t_ms)
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\code\attribution_metric.py", line 64, in _integrate_channel
+    return float(np.trapz(current_arr[mask], t_ms[mask]))
+                 ^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\.venv\Lib\site-packages\numpy\__init__.py", line 805, in __getattr__
+    raise AttributeError(f"module {__name__!r} has no attribute {attr!r}")
+AttributeError: module 'numpy' has no attribute 'trapz'. Did you mean: 'trace'?

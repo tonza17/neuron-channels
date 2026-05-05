@@ -1,0 +1,37 @@
+Building DSGC cell with AIS...
+Cell built: 177 terminal dends, 347 non-terminal dends
+
+Running cell 767 (gen 7)...
+  [cell 767 dir   0°] spikes=4  peak=16.4 mV  stable=True
+  [cell 767 dir  45°] spikes=7  peak=18.8 mV  stable=True
+  [cell 767 dir  90°] spikes=5  peak=18.3 mV  stable=True
+  [cell 767 dir 135°] spikes=2  peak=18.3 mV  stable=True
+  [cell 767 dir 180°] spikes=4  peak=17.2 mV  stable=True
+  [cell 767 dir 225°] spikes=3  peak=18.0 mV  stable=True
+  [cell 767 dir 270°] spikes=1  peak=-4.0 mV  stable=True
+  [cell 767 dir 315°] spikes=3  peak=1.2 mV  stable=True
+[cell 767] DSI original=0.4941  DSI measured=0.0000  PD rate=2.86 Hz
+
+Running cell 637 (gen 6)...
+  [cell 637 dir   0°] spikes=4  peak=13.7 mV  stable=True
+  [cell 637 dir  45°] spikes=3  peak=35.6 mV  stable=True
+  [cell 637 dir  90°] spikes=1  peak=15.4 mV  stable=True
+  [cell 637 dir 135°] spikes=1  peak=38.8 mV  stable=True
+  [cell 637 dir 180°] spikes=3  peak=4.1 mV  stable=True
+  [cell 637 dir 225°] spikes=4  peak=38.1 mV  stable=True
+  [cell 637 dir 270°] spikes=5  peak=37.9 mV  stable=True
+  [cell 637 dir 315°] spikes=3  peak=37.7 mV  stable=True
+[cell 637] DSI original=0.3374  DSI measured=0.1429  PD rate=2.86 Hz
+
+Running cell 762 (gen 7)...
+  [cell 762 dir   0°] spikes=4  peak=31.7 mV  stable=True
+  [cell 762 dir  45°] spikes=4  peak=32.5 mV  stable=True
+  [cell 762 dir  90°] spikes=3  peak=-5.0 mV  stable=True
+  [cell 762 dir 135°] spikes=4  peak=30.0 mV  stable=True
+  [cell 762 dir 180°] spikes=4  peak=31.1 mV  stable=True
+  [cell 762 dir 225°] spikes=2  peak=1.4 mV  stable=True
+  [cell 762 dir 270°] spikes=5  peak=31.5 mV  stable=True
+  [cell 762 dir 315°] spikes=6  peak=32.6 mV  stable=True
+[cell 762] DSI original=0.3140  DSI measured=0.0000  PD rate=2.86 Hz
+
+[DONE] 24/24 stable simulations

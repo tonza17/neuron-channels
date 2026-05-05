@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "command": "uv run python -u tasks/t0084_t0081_cell_767_vm_trace_deepdive/code/run_deepdive.py",
+  "exit_code": 0,
+  "duration_seconds": 781.796,
+  "started_at": "2026-05-05T16:06:22Z",
+  "completed_at": "2026-05-05T16:19:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0084_t0081_cell_767_vm_trace_deepdive",
+  "stdout_file": "009_20260505T160622Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260505T160622Z_uv-run-python.stderr.txt",
+  "stdout_lines": 37,
+  "stderr_lines": 0,
+  "truncated": false
+}
