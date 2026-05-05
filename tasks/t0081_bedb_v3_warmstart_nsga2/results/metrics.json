@@ -1,0 +1,276 @@
+{
+  "variants": [
+    {
+      "variant_id": "pareto_cell_0009",
+      "label": "Pareto cell 9 (gen 0)",
+      "dimensions": {
+        "cell_index": 9,
+        "generation": 0,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5963302752293578,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0112",
+      "label": "Pareto cell 112 (gen 1)",
+      "dimensions": {
+        "cell_index": 112,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.8072289156626505,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0136",
+      "label": "Pareto cell 136 (gen 1)",
+      "dimensions": {
+        "cell_index": 136,
+        "generation": 1,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.18828451882845187,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0331",
+      "label": "Pareto cell 331 (gen 3)",
+      "dimensions": {
+        "cell_index": 331,
+        "generation": 3,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2867420349434737,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0490",
+      "label": "Pareto cell 490 (gen 5)",
+      "dimensions": {
+        "cell_index": 490,
+        "generation": 5,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6326530612244897,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0571",
+      "label": "Pareto cell 571 (gen 5)",
+      "dimensions": {
+        "cell_index": 571,
+        "generation": 5,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.15594541910331386,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0627",
+      "label": "Pareto cell 627 (gen 6)",
+      "dimensions": {
+        "cell_index": 627,
+        "generation": 6,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.012898845892735914,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0637",
+      "label": "Pareto cell 637 (gen 6)",
+      "dimensions": {
+        "cell_index": 637,
+        "generation": 6,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.33737373737373744,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0664",
+      "label": "Pareto cell 664 (gen 6)",
+      "dimensions": {
+        "cell_index": 664,
+        "generation": 6,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.02865947611710327,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0699",
+      "label": "Pareto cell 699 (gen 7)",
+      "dimensions": {
+        "cell_index": 699,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0730",
+      "label": "Pareto cell 730 (gen 7)",
+      "dimensions": {
+        "cell_index": 730,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.03359758399396001,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0741",
+      "label": "Pareto cell 741 (gen 7)",
+      "dimensions": {
+        "cell_index": 741,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2530973451327433,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0744",
+      "label": "Pareto cell 744 (gen 7)",
+      "dimensions": {
+        "cell_index": 744,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.8208955223880597,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0747",
+      "label": "Pareto cell 747 (gen 7)",
+      "dimensions": {
+        "cell_index": 747,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5784753363228701,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0762",
+      "label": "Pareto cell 762 (gen 7)",
+      "dimensions": {
+        "cell_index": 762,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.31397459165154273,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0767",
+      "label": "Pareto cell 767 (gen 7) [JOINT PASS]",
+      "dimensions": {
+        "cell_index": 767,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": true
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4941451990632318,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}
