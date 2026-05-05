@@ -1,0 +1,14 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260505T154500Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260505T154702Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 011_20260505T162001Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 014_20260505T162051Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 018_20260505T162312Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260505T163014Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 8 warning(s)
