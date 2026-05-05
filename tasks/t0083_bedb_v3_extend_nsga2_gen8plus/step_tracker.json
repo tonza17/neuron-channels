@@ -1,0 +1,140 @@
+{
+  "task_id": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0083_bedb_v3_extend_nsga2_gen8plus branch from main and initialise step tracker.",
+      "status": "in_progress",
+      "started_at": "2026-05-05T13:03:41Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0024, t0078, t0080, t0081 all completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: pure extension of t0081 on the same substrate; no new literature engagement needed beyond t0081's research_papers.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: pymoo NSGA-II continuation API already covered in t0080/t0081 research_internet.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Document reuse of t0081 NSGA-II harness and the t0080 v3 substrate library; identify the gen-7 final population reload mechanism and HV-plateau watchdog hooks needed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Concise plan covering gen-7 population reload, adaptive HV-plateau watchdog (<1% over 3-gen window starting at gen 11), hard cap +10 gens, $5.00 cost cap, Vast.ai 64-core EPYC 7B13.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision a Vast.ai 64-core CPU instance (EPYC 7B13 class), reuse t0081 environment setup.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Reload t0081's gen-7 final population into pymoo NSGA-II Algorithm state; add HV-plateau watchdog and $5 cost-cap watchdog; run for >=5 generations up to gen 17 max; pull results.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy the Vast.ai instance and finalise cost tracking.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: extension is well-defined; no out-of-the-box reframe needed beyond what compare-literature will surface.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json; produce Pareto / HV-trajectory / joint-pass cluster charts.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare extended Pareto front and joint-pass cell count to t0081 baseline and published baselines.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions based on extended results.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task completed, prepare for PR.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
