@@ -1,0 +1,48 @@
+{
+  "utopia_point": [
+    0.7,
+    80.0
+  ],
+  "trajectory": [
+    {
+      "generation": 0,
+      "n_evaluations": 96,
+      "hypervolume": 6.586288584646478
+    },
+    {
+      "generation": 1,
+      "n_evaluations": 192,
+      "hypervolume": 8.991156235620112
+    },
+    {
+      "generation": 2,
+      "n_evaluations": 288,
+      "hypervolume": 9.238124250900679
+    },
+    {
+      "generation": 3,
+      "n_evaluations": 384,
+      "hypervolume": 11.075823461396622
+    },
+    {
+      "generation": 4,
+      "n_evaluations": 480,
+      "hypervolume": 11.565089253264652
+    },
+    {
+      "generation": 5,
+      "n_evaluations": 576,
+      "hypervolume": 13.141342214790516
+    },
+    {
+      "generation": 6,
+      "n_evaluations": 672,
+      "hypervolume": 15.216440372968512
+    },
+    {
+      "generation": 7,
+      "n_evaluations": 768,
+      "hypervolume": 16.330122910540975
+    }
+  ]
+}

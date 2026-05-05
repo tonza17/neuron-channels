@@ -1,0 +1,7 @@
+[smoke_gate] re-evaluating 5 t0080 Pareto cells
+[smoke_gate] cell 58: ref=(DSI=0.015, PD=8.57Hz) obs=(DSI=0.000, PD=8.21Hz) delta=(DSI=-0.015, PD=-0.36Hz) unstable=False -> PASS
+[smoke_gate] cell 141: ref=(DSI=0.127, PD=2.54Hz) obs=(DSI=0.067, PD=2.86Hz) delta=(DSI=-0.060, PD=+0.32Hz) unstable=False -> FAIL
+[smoke_gate] cell 153: ref=(DSI=0.026, PD=8.46Hz) obs=(DSI=0.000, PD=8.57Hz) delta=(DSI=-0.026, PD=+0.11Hz) unstable=False -> PASS
+[smoke_gate] cell 188: ref=(DSI=0.000, PD=9.25Hz) obs=(DSI=-0.020, PD=8.93Hz) delta=(DSI=-0.020, PD=-0.32Hz) unstable=False -> PASS
+[smoke_gate] cell 190: ref=(DSI=0.052, PD=4.00Hz) obs=(DSI=0.143, PD=4.29Hz) delta=(DSI=+0.091, PD=+0.29Hz) unstable=False -> FAIL
+[smoke_gate] 3/5 pass, 2 fail; wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0081_bedb_v3_warmstart_nsga2\tasks\t0081_bedb_v3_warmstart_nsga2\logs\smoke_gate.json

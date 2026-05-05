@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0081_bedb_v3_warmstart_nsga2",
+  "command": "vastai destroy instance 36149741 -y",
+  "exit_code": 0,
+  "duration_seconds": 3.232,
+  "started_at": "2026-05-05T09:39:33Z",
+  "completed_at": "2026-05-05T09:39:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0081_bedb_v3_warmstart_nsga2",
+  "stdout_file": "009_20260505T093933Z_vastai-destroy-instance.stdout.txt",
+  "stderr_file": "009_20260505T093933Z_vastai-destroy-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

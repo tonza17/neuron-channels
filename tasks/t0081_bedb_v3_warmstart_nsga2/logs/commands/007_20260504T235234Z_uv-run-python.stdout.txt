@@ -1,0 +1,1 @@
+[warm_start] wrote (96, 54) population to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0081_bedb_v3_warmstart_nsga2\tasks\t0081_bedb_v3_warmstart_nsga2\results\data\warm_start_population.json (t0080=5 + t0078=17 + lhs=74 = 96)
