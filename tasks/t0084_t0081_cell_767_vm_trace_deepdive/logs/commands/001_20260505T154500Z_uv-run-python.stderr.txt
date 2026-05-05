@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0084_t0081_cell_767_vm_trace_deepdive/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0084_t0081_cell_767_vm_trace_deepdive\tasks\t0084_t0081_cell_767_vm_trace_deepdive\logs\steps\003_init-folders
