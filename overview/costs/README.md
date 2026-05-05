@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $5.74 of $10.00 USD. $4.26 remains overall and $4.26 remains before the 100% stop
+Spent $8.13 of $10.00 USD. $1.87 remains overall and $1.87 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,15 +8,15 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $10.00 USD |
-| Total spent | $5.74 USD |
-| Budget left | $4.26 USD |
-| Budget left before stop threshold | $4.26 USD |
-| Spent percent | 57.38% |
+| Total spent | $8.13 USD |
+| Budget left | $1.87 USD |
+| Budget left before stop threshold | $1.87 USD |
+| Spent percent | 81.28% |
 | Warn threshold | 80% ($8.00) |
 | Stop threshold | 100% ($10.00) |
 | Default per-task limit | $5.00 USD |
-| Tasks with cost records | 73 |
-| Tasks with non-zero spend | 3 |
+| Tasks with cost records | 74 |
+| Tasks with non-zero spend | 4 |
 | Skipped tasks | 7 |
 
 ## Service Totals
@@ -31,6 +31,7 @@ threshold.
 | Key | Cost (USD) |
 |-----|------------|
 | `vast-ai-rtx5060ti` | $3.93 |
+| `vast_ai_36149741` | $2.39 |
 | `vast-ai-quadro-p4000` | $1.06 |
 | `vast_ai_36137287` | $0.75 |
 | `api` | $0.00 |
@@ -46,6 +47,7 @@ threshold.
 | [`t0076_bedb_dsi_firing_rate_mobo`](../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | completed | $1.06 | $5.00 | no |
 | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | $3.93 | $5.00 | no |
 | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | $0.75 | $5.00 | no |
+| [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | completed | $2.39 | $5.00 | no |
 
 ## Skipped Tasks
 

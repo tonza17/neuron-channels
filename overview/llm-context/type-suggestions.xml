@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-04T22:48:44Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-05T09:59:30Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>330916</char_count>
-    <byte_count>331064</byte_count>
-    <estimated_tokens>82729</estimated_tokens>
+    <char_count>337703</char_count>
+    <byte_count>337859</byte_count>
+    <estimated_tokens>84425</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -322,9 +322,16 @@
         <id>S-0080-06</id>
         <id>S-0080-07</id>
         <id>S-0080-08</id>
+        <id>S-0081-01</id>
+        <id>S-0081-02</id>
+        <id>S-0081-03</id>
+        <id>S-0081-04</id>
+        <id>S-0081-05</id>
+        <id>S-0081-06</id>
+        <id>S-0081-07</id>
       </source_ids>
       <content>
-Suggestions: 305
+Suggestions: 312
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3744,6 +3751,83 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-04
 
 t0080&#x27;s 5-cell Pareto front is sparse (4 of 5 cells from gen 1; only cell 58 from gen 0); inspection of the all_evaluations.json shows many cells in similar parameter clusters across gen 0 -&gt; 1, suggesting NSGA-II&#x27;s selection pressure converged the small pop=24 prematurely. Test three diversity-preserving alternatives at the same evaluation budget (192 cells): (a) NSGA-III with reference-point-based survival (better for &gt;=3-objective MOBO and high-d); (b) NSGA-II with restart-on-stagnation (re-LHS half the population every 4 generations of HV plateau); (c) larger pop=64 / gen=3 (same total cells but much wider parent pool). Compare Pareto-front diversity, HV at termination, and DSI/PD reach. Cost ~$0.75 per variant; ~$2.25 total or run as one bundled task. Recommended task types: experiment-run, comparative-analysis.
+
+## Multi-replicate confirmation of the t0081 joint-pass result with 3-5 independent LHS + warm-start RNG seeds
+ID: S-0081-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-05
+
+t0081&#x27;s joint-pass cell 767 (DSI 0.494 / PD 11.39 Hz) is a single-replicate observation from one NSGA-II chain with one Sobol/LHS seed (seed 43 for fresh LHS) and one warm-start RNG seed (42 for the t0078 49-d to 54-d projection). Re-run the same pop=96 / gen=8 NSGA-II configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), (46,47), (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each. Recommended task types: experiment-run.
+
+## Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to characterise the joint-passing region
+ID: S-0081-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-05
+
+Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at 0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15 generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front composition in the (DSI &gt;= 0.4, PD &gt;= 10 Hz) box, and final HV. Reuse the t0081 harness with `n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types: experiment-run.
+
+## Deep-dive Vm-trace analysis of cell 767 to identify which dendritic-spike machinery drives the joint pass
+ID: S-0081-03
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation, voltage-gated-channels
+Date added: 2026-05-05
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction (8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767 and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types: experiment-run, data-analysis.
+
+## Cell-767-anchored parameter-space pruning to identify well-tuned dims that can be clamped in future Bed B optimisation
+ID: S-0081-04
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
+Date added: 2026-05-05
+
+Compare cell 767&#x27;s 54-d natural-unit parameter vector to (a) the high-DSI rail cells (699, 744, 112) and (b) the high-PD rail cells (627, 664, 730) on the t0081 Pareto front. Identify dims whose values converge across these clusters (candidates for clamping at the median value) versus dims that vary substantially (must remain free). Pure data analysis on `results/data/all_evaluations.json`; no compute cost. Distinct from S-0080-04 which proposed generic 30-40d pruning before re-running NSGA-II — this is anchored to the joint-pass cell rather than to the t0080 Pareto. Output: a candidate clamped-parameter list and a re-run sub-task proposal. Recommended task types: data-analysis.
+
+## Cross-bed validation: re-run warm-start NSGA-II on Bed A with the v3 dendritic-spike additions
+ID: S-0081-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-05
+
+t0081 confirms that v3 dendritic-spike machinery + warm-start NSGA-II yields joint-pass DSI/PD on Bed B. Test whether the same architecture generalises to Bed A (the t0067-t0074 substrate, modelDB 189347 lineage with bio-realistic AIS). Port the 5 v3 dendritic-spike dims (`gnmda_dend`, `mg_conc_mm`, `voff_nmda`, `nav16_dend_distal`, `nap_dend_distal`) onto Bed A&#x27;s dendrites, warm-start from the closest-to-joint Bed A cells (e.g., t0074 / t0075 outputs), run NSGA-II at pop=96 / gen=8 = 768 cells. Cost ~$3 (mirroring t0081). Recommended task types: build-model, experiment-run.
+
+## Re-compute t0076 / t0078 / t0080 / t0081 hypervolume under a single reference-point convention including t0081
+ID: S-0081-06
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-05
+
+Extends S-0080-06 (which scoped t0076/t0078/t0080) to include t0081. t0076/t0078 used reference (0,0); t0080/t0081 used utopia (0.7, 80) — values are not numerically comparable across the four tasks. Re-compute HV on the saved Pareto fronts of all four tasks under both conventions and publish a single comparable HV trajectory plot. Pure data analysis, no compute. Distinct from S-0080-06 in scope: t0081&#x27;s Pareto front (16 cells) was not in existence when S-0080-06 was filed. Recommended task types: data-analysis.
+
+## Promote the t0081 warm-start NSGA-II harness into a reusable bedb_warmstart_nsga2_harness library asset
+ID: S-0081-07
+Status: active
+Priority: low
+Kind: library
+Source task: t0081_bedb_v3_warmstart_nsga2
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-05
+
+t0081&#x27;s harness combines (a) verbatim copying of prior-task Pareto cells, (b) dimension-projection of lower-d Pareto cells into the current-d space with random fill on new dims, (c) fresh LHS for diversity, and (d) pymoo NSGA-II with cost-cap watchdog. Promote this combination into a versioned library asset (`bedb_warmstart_nsga2_harness`) under the asset library type with documented APIs for the warm-start composition function and the NSGA-II driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different optimisers. Recommended task types: write-library.
       </content>
     </section>
   </sections>

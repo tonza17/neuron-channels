@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-80-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-305-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-81-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-312-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,17 +29,17 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (28K)
-| [full](llm-context/full.xml) (442K) | [roadmap](llm-context/roadmap.xml) (89K) |
-[results](llm-context/results-deep-dive.xml) (346K) |
-[assets](llm-context/literature-and-assets.xml) (50K)
+| [full](llm-context/full.xml) (446K) | [roadmap](llm-context/roadmap.xml) (90K) |
+[results](llm-context/results-deep-dive.xml) (350K) |
+[assets](llm-context/literature-and-assets.xml) (51K)
 
-*Last updated: 2026-05-04 22:48 UTC*
+*Last updated: 2026-05-05 09:59 UTC*
 
-* **Budget**: **$6** spent of $10
-* **Remaining**: **$4**
-* **Usage**: `███████████░░░░░░░░░` 57.4%
-* **GPU Machines**: **3** provisioned across 3 tasks · **$6** GPU spend ([details](machines/))
-* **Provisioning**: 2 failed attempts · $0.00 wasted · 40% failure rate
+* **Budget**: **$8** spent of $10
+* **Remaining**: **$2**
+* **Usage**: `████████████████░░░░` 81.3%
+* **GPU Machines**: **4** provisioned across 4 tasks · **$8** GPU spend ([details](machines/))
+* **Provisioning**: 2 failed attempts · $0.00 wasted · 33% failure rate
 
 ---
 
@@ -81,10 +81,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (73 total)](tasks/by-status/completed.md)
+## [Recently Completed (74 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
@@ -94,9 +95,8 @@ No blocked tasks.
 | 0073 | [Brainstorm results session 12](../overview/tasks/task_pages/t0073_brainstorm_results_12.md) | [`results`](../tasks/t0073_brainstorm_results_12/results/results_detailed.md) | 2026-05-01 18:55 |
 | 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
 | 0071 | [t0070 v2 - synaptic-current equations + typeset PDF](../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) | [`results`](../tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md) | 2026-05-01 15:25 |
-| 0070 | [Writeup of two standard DSGC model beds in HH-equation research-paper format](../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) | [`results`](../tasks/t0070_writeup_two_model_beds/results/results_detailed.md) | 2026-05-01 14:05 |
 
-*63 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*64 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -117,11 +117,133 @@ No blocked tasks.
 | 9 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | **17.178292988536434** |
 | 10 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
 
-*126 more results → [all results](metrics-results/)*
+*142 more results → [all results](metrics-results/)*
 
 ---
 
-## [Recent Suggestions (270 open)](suggestions/)
+## [Recent Suggestions (276 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
+3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+t0081's joint-pass cell 767 (DSI 0.494 / PD 11.39 Hz) is a single-replicate observation from
+one NSGA-II chain with one Sobol/LHS seed (seed 43 for fresh LHS) and one warm-start RNG seed
+(42 for the t0078 49-d to 54-d projection). Re-run the same pop=96 / gen=8 NSGA-II
+configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), (46,47),
+(48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
+replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
+characterise the joint-passing region</strong> (S-0081-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
+gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
+0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
+characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
+generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
+composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
+`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned
+dims that can be clamped in future Bed B optimisation</strong> (S-0081-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Compare cell 767's 54-d natural-unit parameter vector to (a) the high-DSI rail cells (699,
+744, 112) and (b) the high-PD rail cells (627, 664, 730) on the t0081 Pareto front. Identify
+dims whose values converge across these clusters (candidates for clamping at the median value)
+versus dims that vary substantially (must remain free). Pure data analysis on
+`results/data/all_evaluations.json`; no compute cost. Distinct from S-0080-04 which proposed
+generic 30-40d pruning before re-running NSGA-II — this is anchored to the joint-pass cell
+rather than to the t0080 Pareto. Output: a candidate clamped-parameter list and a re-run
+sub-task proposal. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Cross-bed validation: re-run warm-start NSGA-II on Bed A with
+the v3 dendritic-spike additions</strong> (S-0081-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+t0081 confirms that v3 dendritic-spike machinery + warm-start NSGA-II yields joint-pass DSI/PD
+on Bed B. Test whether the same architecture generalises to Bed A (the t0067-t0074 substrate,
+modelDB 189347 lineage with bio-realistic AIS). Port the 5 v3 dendritic-spike dims
+(`gnmda_dend`, `mg_conc_mm`, `voff_nmda`, `nav16_dend_distal`, `nap_dend_distal`) onto Bed A's
+dendrites, warm-start from the closest-to-joint Bed A cells (e.g., t0074 / t0075 outputs), run
+NSGA-II at pop=96 / gen=8 = 768 cells. Cost ~$3 (mirroring t0081). Recommended task types:
+build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-compute t0076 / t0078 / t0080 / t0081 hypervolume under a
+single reference-point convention including t0081</strong> (S-0081-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Extends S-0080-06 (which scoped t0076/t0078/t0080) to include t0081. t0076/t0078 used
+reference (0,0); t0080/t0081 used utopia (0.7, 80) — values are not numerically comparable
+across the four tasks. Re-compute HV on the saved Pareto fronts of all four tasks under both
+conventions and publish a single comparable HV trajectory plot. Pure data analysis, no
+compute. Distinct from S-0080-06 in scope: t0081's Pareto front (16 cells) was not in
+existence when S-0080-06 was filed. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0081 warm-start NSGA-II harness into a reusable
+bedb_warmstart_nsga2_harness library asset</strong> (S-0081-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+t0081's harness combines (a) verbatim copying of prior-task Pareto cells, (b)
+dimension-projection of lower-d Pareto cells into the current-d space with random fill on new
+dims, (c) fresh LHS for diversity, and (d) pymoo NSGA-II with cost-cap watchdog. Promote this
+combination into a versioned library asset (`bedb_warmstart_nsga2_harness`) under the asset
+library type with documented APIs for the warm-start composition function and the NSGA-II
+driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d
+harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different
+optimisers. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Substrate regression check: re-evaluate t0076 iter-424 parameters
@@ -188,166 +310,62 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
-closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
-(S-0078-05)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
-
-REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
-library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
-PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
-document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
-cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
-substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
-compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
-PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
-recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
-task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
-Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
-
-The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
-one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
-trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
-independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
-per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
-quantifies the BO methodology's contribution to apparent improvement vs the architectural
-contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
-bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
-t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
-experiment-run, evaluation.
-
-</details>
-
-<details>
-<summary>📚 <strong>Promote the t0078 BoTorch qLogNEHVI + 49-d AIS-augmented
-substrate harness into a reusable dsgc_mobo_v2 library asset</strong>
-(S-0078-07)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
-
-Builds on t0076's S-0076-06 (dsgc_mobo library promotion) which targets the t0076 25-d
-harness. t0078 added approximately 1,300 LOC of net new optimisation infrastructure:
-qLogNoisyExpectedHypervolumeImprovement migration, Normalize(d=49) input transform,
-ProcessPoolExecutor with NEURON-fresh-subprocess workers, AIS-extended substrate builder
-(extend_with_ais.py / build_cell_ais.py), 5-tier channel stratification engine, slow-AHP MOD
-vendoring (skahpt78.mod with tau_ca_multiplier PARAMETER), checkpointing every 10 cells,
-plot_pareto.py with --skip-deep-dives, render_pdf.py. Promote into a substrate-agnostic
-library that supports either qLogNEHVI (BoTorch) or NSGA-II (pymoo) optimisers behind a
-unified ParameterSpec API, parameterised compartment-tier definitions, and Vast.ai launch
-helper. Bundles with S-0076-06; this is the v2 follow-up. Cost estimate: zero compute
-(refactor only). Recommended task types: write-library.
-
-</details>
-
-<details>
-<summary>📊 <strong>Investigate AIS-disabled-corner exploitation as a general
-MOBO-on-biophysics failure mode</strong> (S-0078-08)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-04 | **Source**:
-[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
-
-The t0078 compare_literature step found iter 81's nav16_ais collapsed to the search floor
-(1e-5 S/cm^2), four orders below Kole 2008's [0.25, 0.5] S/cm^2 prior and five orders below
-Werginz 2024's mouse alpha-RGC value of 1.3 S/cm^2. AIS-to-soma Nav ratio at iter 81 was
-5.5e-5 vs Werginz 2024's measured 17.3. The optimiser found a configuration where the AIS
-contributes nothing to spike initiation, contradicting REQ-2 / REQ-3 / REQ-4's biological
-intent. This may be a generalisable MOBO-on-biophysics failure mode. Document: (a) audit t0076
-+ t0078 Pareto fronts for similar collapse-to-floor patterns on biologically-priored
-parameters; (b) propose log-uniform priors with hard biological lower bounds as default for
-future MOBO tasks; (c) write up as an answer asset. Pass: produce an answer asset with a
-checklist of biological priors to enforce as hard constraints in future MOBO tasks.
-Recommended task types: answer-question, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
-scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
-cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
-192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
-practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
-50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
-determine whether the negative architectural result holds at the planned budget. Estimated
-cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
-saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
-to the v3 54-d parameter space</strong> (S-0080-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
-Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
-regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
-compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
-25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
-dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
-locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
-~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
-types: experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
-54-d parameter space</strong> (S-0080-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
-9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
-Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
-near-Pareto starting population, dramatically reducing the generations needed to converge.
-Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
-~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
-warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
-Vast.ai 64-core. Recommended task types: experiment-run, build-model.
-
-</details>
-
-*260 more open suggestions → [open suggestions](suggestions/)*
+*266 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (35)](suggestions/)
+## [High Priority Suggestions (37)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan
-scope (pop=96 / gen=40 = 3,840 cells)</strong> (S-0080-01)</summary>
+<summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
+3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
 
-t0080 missed the joint pass criterion (DSI>=0.4 AND PD>=10 Hz) by a wide margin (best Pareto
-cell 141 at DSI 0.127 / PD 2.54 Hz; closest-to-joint cell 188 at DSI 0.000 / PD 9.25 Hz) on a
-192-cell run that was 5% of the plan's 3,840-cell scope. NSGA-II at pop=24 is below the
-practical floor for 54-d (Hay 2011 used pop=1000 for 22-d; pop=100 is the de-facto floor for
-50+ d). Re-run on a longer Vast.ai 64-core EPYC 7B13 allocation at pop=96 / gen=40 to
-determine whether the negative architectural result holds at the planned budget. Estimated
-cost ~$1.50-$2.00 over 8-10 wall-clock hours given that t0080 cells run sequentially
-saturating 64 cores at ~45 s each. Recommended task types: experiment-run.
+t0081's joint-pass cell 767 (DSI 0.494 / PD 11.39 Hz) is a single-replicate observation from
+one NSGA-II chain with one Sobol/LHS seed (seed 43 for fresh LHS) and one warm-start RNG seed
+(42 for the t0078 49-d to 54-d projection). Re-run the same pop=96 / gen=8 NSGA-II
+configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), (46,47),
+(48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
+replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
+characterise the joint-passing region</strong> (S-0081-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
+gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
+0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
+characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
+generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
+composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
+`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
@@ -482,41 +500,7 @@ affecting PD.
 
 </details>
 
-<details>
-<summary>🧪 <strong>AIS-localised Kv7 follow-up (t0075 candidate)</strong>
-(S-0074-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-02 | **Source**:
-[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
-
-Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta < 0.003 at
-every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008's prediction
-that Kv7's canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30
-µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density
-Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the
-t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
-mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
-accumulation is well-suited to the AIS firing regime.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
-(S-0067-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
-[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
-
-t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
-DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
-5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
-(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
-threshold density at which directional inversion becomes statistically robust. This is the
-most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*27 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1332,10 +1316,11 @@ No models yet.
 
 ---
 
-## [Cost Leaders (3 tasks with spend)](costs/)
+## [Cost Leaders (4 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |
+| [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`$2.39`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/costs.json) | 2026-05-05 09:55 |
 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |
 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`$0.75`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/costs.json) | 2026-05-04 22:45 |

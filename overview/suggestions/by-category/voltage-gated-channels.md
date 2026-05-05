@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-71 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **59 open** (11
-high, 39 medium, 9 low), **12 closed**.
+73 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **61 open** (12
+high, 40 medium, 9 low), **12 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,6 +58,30 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0081-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
@@ -428,6 +452,30 @@ from S-0002-01 (DSI-maximising g_Na/g_K grid) and S-0002-02 (passive-vs-active D
 it tunes channel densities against single-cell electrophysiological waveforms, not tuning
 curves. Output: a library asset exposing the fitted mechanism list for reuse in the DSI
 experiments. Recommended task types: experiment-run, feature-engineering.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned
+dims that can be clamped in future Bed B optimisation</strong> (S-0081-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0081-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Compare cell 767's 54-d natural-unit parameter vector to (a) the high-DSI rail cells (699,
+744, 112) and (b) the high-PD rail cells (627, 664, 730) on the t0081 Pareto front. Identify
+dims whose values converge across these clusters (candidates for clamping at the median value)
+versus dims that vary substantially (must remain free). Pure data analysis on
+`results/data/all_evaluations.json`; no compute cost. Distinct from S-0080-04 which proposed
+generic 30-40d pruning before re-running NSGA-II — this is anchored to the joint-pass cell
+rather than to the t0080 Pareto. Output: a candidate clamped-parameter list and a re-run
+sub-task proposal. Recommended task types: data-analysis.
 
 </details>
 

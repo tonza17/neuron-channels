@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-04T22:48:44Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-05T09:59:30Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>201658</char_count>
-    <byte_count>201949</byte_count>
-    <estimated_tokens>50414</estimated_tokens>
+    <char_count>202778</char_count>
+    <byte_count>203069</byte_count>
+    <estimated_tokens>50694</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -188,9 +188,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0078_bedb_mobo_v2_ais_tiered_ahp</id>
         <id>t0079_brainstorm_results_14</id>
         <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
+        <id>t0081_bedb_v3_warmstart_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 73
+Completed tasks: 74
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -629,6 +630,12 @@ ID: t0080_bedb_mobo_v3_dendritic_spike_nsga2
 Completed: 2026-05-04
 Short description: Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0080_bedb_mobo_v3_dendritic_spike_nsga2&quot; date_completed: &quot;2026-05-04&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 MOBO with Dendritic-Spike Machinery and NSGA-II Summary Built a 54-d AIS+dendritic-spike-augmented Bed B substrate (de Rosenroll 2026 DSGC) by extending t0078&#x27;s `de_rosenroll_2026_dsgc_ais` library with Mg-block NMDA at all dendritic compartments and Nav1.6 + NaP at distal-dendrite densities, then ran a small NSGA-II via pymoo (pop=24, gen=8 = **192 evaluations**) on a Vast.ai 64-core EPYC 7B13 instance for **$0.7458**. Hard biological lower bounds (`nav16_ais` &gt;= 0.25 S/cm² per Kole 2008; AIS-to-soma Nav ratio &gt;= 5 per Werginz 2024 /...
+
+## Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start
+ID: t0081_bedb_v3_warmstart_nsga2
+Completed: 2026-05-05
+Short description: Re-run NSGA-II on the t0080 v3 substrate at pop=96/gen=8 (768 cells) with warm-start from 5 t0080 + 17 t0078 Pareto cells; test if joint pass becomes reachable.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0081_bedb_v3_warmstart_nsga2&quot; date_completed: &quot;2026-05-05&quot; status: &quot;complete&quot; --- Results Summary: Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start Summary Re-ran NSGA-II on the t0080 v3 dendritic-spike-augmented Bed B substrate at the originally planned scope (pop=96 / gen=8 = **768 cells**) with a combined warm-start initial population (5 t0080 Pareto cells verbatim + 17 t0078 Pareto cells projected to 54-d natural-unit space + 74 fresh LHS). Run completed cleanly on Vast.ai instance 36149741 (EPYC 7B13 64-core) for **$2.39** total ($2.207 NSGA-II + $0.18 overhead). **Pass criterion (DSI &gt;= 0.4 AND PD &gt;= 10 Hz) ACHIEVED**: gen 7 cell 767...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

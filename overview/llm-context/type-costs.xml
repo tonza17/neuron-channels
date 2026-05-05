@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-04T22:48:44Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-05T09:59:30Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4398</char_count>
-    <byte_count>4398</byte_count>
-    <estimated_tokens>1099</estimated_tokens>
+    <char_count>4463</char_count>
+    <byte_count>4463</byte_count>
+    <estimated_tokens>1115</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,13 +18,14 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $10.00
-Total spent: $5.74
-Budget remaining: $4.26
-Spent: 57.4%
+Total spent: $8.13
+Budget remaining: $1.87
+Spent: 81.3%
 
 ### Cost Breakdown by Category
 
 * vast-ai-rtx5060ti: $3.93
+* vast_ai_36149741: $2.39
 * vast-ai-quadro-p4000: $1.06
 * vast_ai_36137287: $0.75
 * api: $0.00
@@ -111,6 +112,7 @@ Spent: 57.4%
 * t0078_bedb_mobo_v2_ais_tiered_ahp: $3.93
 * t0079_brainstorm_results_14: $0.00
 * t0080_bedb_mobo_v3_dendritic_spike_nsga2: $0.75
+* t0081_bedb_v3_warmstart_nsga2: $2.39
       </content>
     </section>
   </sections>

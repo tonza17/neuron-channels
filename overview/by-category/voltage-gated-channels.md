@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (5)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(71)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(73)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1181,7 +1181,43 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (59 open, 12 closed)
+## Suggestions (61 open, 12 closed)
+
+<details>
+<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned
+dims that can be clamped in future Bed B optimisation</strong> (S-0081-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+Compare cell 767's 54-d natural-unit parameter vector to (a) the high-DSI rail cells (699,
+744, 112) and (b) the high-PD rail cells (627, 664, 730) on the t0081 Pareto front. Identify
+dims whose values converge across these clusters (candidates for clamping at the median value)
+versus dims that vary substantially (must remain free). Pure data analysis on
+`results/data/all_evaluations.json`; no compute cost. Distinct from S-0080-04 which proposed
+generic 30-40d pruning before re-running NSGA-II — this is anchored to the joint-pass cell
+rather than to the t0080 Pareto. Output: a candidate clamped-parameter list and a re-run
+sub-task proposal. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
