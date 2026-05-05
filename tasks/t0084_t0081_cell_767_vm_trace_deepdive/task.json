@@ -5,13 +5,13 @@
   "name": "Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism",
   "short_description": "Per-direction Vm traces of t0081 cells 767 / 637 / 762 (proximal soma, mid dendrite, distal dendrite) to attribute cell 767's joint-pass DSI to NMDA Mg-block, distal Nav1.6, NaP, or combination.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
     "t0081_bedb_v3_warmstart_nsga2"
   ],
   "start_time": "2026-05-05T15:41:07Z",
-  "end_time": null,
+  "end_time": "2026-05-05T16:45:00Z",
   "expected_assets": {
     "answer": 1
   },

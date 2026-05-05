@@ -1,0 +1,79 @@
+{
+  "cell_id": 767,
+  "generation": 7,
+  "dsi_original": 0.4941451990632318,
+  "pd_rate_hz_original": 11.392857142857142,
+  "dsi_measured": 0.0,
+  "pd_rate_hz_measured": 2.857142857142857,
+  "nd_rate_hz_measured": 2.857142857142857,
+  "v3_params": {
+    "gnmda_dend": 0.006719335381190362,
+    "mg_conc_mm": 0.26074593961533227,
+    "voff_nmda": 6.280407693320694,
+    "nav16_dend_distal": 0.014921677875646352,
+    "nap_dend_distal": 9.214090238549591e-05
+  },
+  "recording_sections": {
+    "soma": "DSGC[0].soma",
+    "mid": "DSGC[0].dend[35]",
+    "distal": "DSGC[0].dend[267]"
+  },
+  "direction_results": [
+    {
+      "cell_id": 767,
+      "direction_deg": 0.0,
+      "spike_count": 4,
+      "peak_vm_mv": 16.418595493680705,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 45.0,
+      "spike_count": 7,
+      "peak_vm_mv": 18.819581199099105,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 90.0,
+      "spike_count": 5,
+      "peak_vm_mv": 18.256823751102235,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 135.0,
+      "spike_count": 2,
+      "peak_vm_mv": 18.284364404023687,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 180.0,
+      "spike_count": 4,
+      "peak_vm_mv": 17.243116220434672,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 225.0,
+      "spike_count": 3,
+      "peak_vm_mv": 17.966066230939663,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 270.0,
+      "spike_count": 1,
+      "peak_vm_mv": -3.9556518239826812,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 315.0,
+      "spike_count": 3,
+      "peak_vm_mv": 1.2215268949331,
+      "is_stable": true
+    }
+  ]
+}
