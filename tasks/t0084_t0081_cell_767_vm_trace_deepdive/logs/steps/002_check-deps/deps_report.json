@@ -1,0 +1,19 @@
+{
+  "task_id": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "checked_at": "2026-05-05T15:44:13Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+      "status": "completed",
+      "satisfied": true
+    },
+    {
+      "task_id": "t0081_bedb_v3_warmstart_nsga2",
+      "status": "completed",
+      "satisfied": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 0
+}
