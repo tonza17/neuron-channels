@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0080 v3 substrate library (de_rosenroll_2026_dsgc_ais_dendritic_spike) and t0081 evaluation harness; identify per-cell evaluation entry point and data layout for Pareto cells 767/637/762.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-05T15:46:21Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
