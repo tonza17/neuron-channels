@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Specify the 24-simulation matrix (3 cells x 8 directions), Vm/conductance/current recording plan, figure templates, and fractional-channel-contribution attribution metric.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-05T15:53:06Z",
-      "completed_at": null,
+      "completed_at": "2026-05-05T15:57:54Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
