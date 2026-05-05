@@ -5,14 +5,14 @@
   "name": "Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop",
   "short_description": "Continue NSGA-II from t0081's gen-7 final population for at least 5 more generations with adaptive HV-plateau stop (<1% over 3-gen window); hard cap +10 gens, $5.00 cost.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0078_bedb_mobo_v2_ais_tiered_ahp",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
     "t0081_bedb_v3_warmstart_nsga2"
   ],
-  "start_time": null,
+  "start_time": "2026-05-05T13:02:26Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
