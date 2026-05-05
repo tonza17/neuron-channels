@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare the t0081 Pareto front to t0078, t0080, and the published baselines.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-05T09:45:14Z",
-      "completed_at": null,
+      "completed_at": "2026-05-05T09:50:09Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
