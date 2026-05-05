@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0081_bedb_v3_warmstart_nsga2",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_suggestions t0081_bedb_v3_warmstart_nsga2",
+  "exit_code": 0,
+  "duration_seconds": 0.381,
+  "started_at": "2026-05-05T09:52:52Z",
+  "completed_at": "2026-05-05T09:52:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0081_bedb_v3_warmstart_nsga2",
+  "stdout_file": "021_20260505T095252Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260505T095252Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}
