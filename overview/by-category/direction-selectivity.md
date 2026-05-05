@@ -2576,7 +2576,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (195 open, 25 closed)
+## Suggestions (193 open, 27 closed)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -2592,42 +2592,6 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
-characterise the joint-passing region</strong> (S-0081-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
-gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
-0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
-characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
-generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
-composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
-`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
 
 </details>
 

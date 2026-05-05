@@ -1181,25 +1181,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (61 open, 12 closed)
-
-<details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
-
-</details>
+## Suggestions (60 open, 13 closed)
 
 <details>
 <summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned

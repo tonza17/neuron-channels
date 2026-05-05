@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0082-03",
+  "correcting_task": "t0082_brainstorm_results_15",
+  "target_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "target_kind": "suggestion",
+  "target_id": "S-0080-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0080-03 proposes warm-starting NSGA-II from t0078 Pareto cells mapped into the v3 54-d parameter space to seed the search with near-Pareto initial populations. t0081 (bedb_v3_warmstart_nsga2) IS exactly this approach: t0081's initial population was 5 t0080 Pareto cells verbatim + 17 t0078 Pareto cells projected from 49-d to 54-d (indices 0-48 verbatim; indices 49-53 sampled uniformly via numpy.random.default_rng(42).uniform within natural-unit bounds for the 5 new dendritic-spike dims) + 74 fresh LHS samples (seed 43) for diversity. The warm-start was the deciding ingredient: t0081's first generation already contained a t0078-projected cell at DSI 0.252 / PD 10.75 Hz (cell 12, distance 0.148 from joint), 10x closer than t0080's final closest-to-joint distance of 0.850. By gen 7 this evolved into cell 767 crossing the joint pass criterion at DSI 0.494 / PD 11.39 Hz. Rejecting as covered by t0081 (the warm-start strategy was implemented and proved decisive)."
+}

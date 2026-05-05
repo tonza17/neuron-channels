@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0082-02",
+  "correcting_task": "t0082_brainstorm_results_15",
+  "target_task": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "target_kind": "suggestion",
+  "target_id": "S-0080-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0080-02 proposes a substrate regression check on the t0076 iter-424 vector mapped to the v3 54-d parameter space, motivated by the concern that t0080's negative result might be caused by 'v3 substrate is regressed' rather than 'NSGA-II under-budgeted in 54-d'. t0081's positive result (gen 7 cell 767 at DSI 0.494 / PD 11.39 Hz crossing the joint pass criterion) directly rules out the substrate-regression hypothesis. t0081's compare_literature.md states explicitly: 'the v3 substrate is not regressed -- it admits joint-pass cells when given an adequate budget plus warm-start'. The strict iter-424-mapped regression test is no longer load-bearing because the substrate is established as the project's working substrate via direct demonstration of joint-pass capability. Rejecting as superseded by t0081's positive demonstration."
+}

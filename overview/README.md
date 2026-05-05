@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-81-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-84-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-312-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (28K)
-| [full](llm-context/full.xml) (446K) | [roadmap](llm-context/roadmap.xml) (90K) |
-[results](llm-context/results-deep-dive.xml) (350K) |
+| [full](llm-context/full.xml) (453K) | [roadmap](llm-context/roadmap.xml) (94K) |
+[results](llm-context/results-deep-dive.xml) (353K) |
 [assets](llm-context/literature-and-assets.xml) (51K)
 
-*Last updated: 2026-05-05 09:59 UTC*
+*Last updated: 2026-05-05 12:08 UTC*
 
 * **Budget**: **$8** spent of $10
 * **Remaining**: **$2**
@@ -58,10 +58,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (4)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`description`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/task_description.md) | — |
+| 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`description`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -81,10 +83,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (74 total)](tasks/by-status/completed.md)
+## [Recently Completed (75 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
 | 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
@@ -94,9 +97,8 @@ No blocked tasks.
 | 0074 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | [`results`](../tasks/t0074_channel_tuning_width_bed_a/results/results_detailed.md) | 2026-05-02 03:55 |
 | 0073 | [Brainstorm results session 12](../overview/tasks/task_pages/t0073_brainstorm_results_12.md) | [`results`](../tasks/t0073_brainstorm_results_12/results/results_detailed.md) | 2026-05-01 18:55 |
 | 0072 | [Plot synaptic conductances and currents for PD and ND on both model beds](../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md) | [`results`](../tasks/t0072_synaptic_traces_pd_nd/results/results_detailed.md) | 2026-05-01 17:50 |
-| 0071 | [t0070 v2 - synaptic-current equations + typeset PDF](../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md) | [`results`](../tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.md) | 2026-05-01 15:25 |
 
-*64 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*65 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -121,7 +123,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (276 open)](suggestions/)
+## [Recent Suggestions (274 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -137,42 +139,6 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
-characterise the joint-passing region</strong> (S-0081-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
-gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
-0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
-characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
-generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
-composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
-`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
 
 </details>
 
@@ -310,11 +276,52 @@ Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
-*266 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Generate per-direction Vm-trace deep-dive PNGs for the three
+closest-to-joint t0078 Pareto cells (iter 81, 320, 290)</strong>
+(S-0078-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+REQ-14 partial: the t0078 plot_pareto.py was run with --skip-deep-dives because the t0078 MOD
+library was not compiled on the local Windows machine. The per-direction Vm-trace deep-dive
+PNGs are needed to (a) interpret the iter-81 closest-to-joint cell mechanistically, (b)
+document the iter-290 max-DSI sub-threshold extreme, and (c) inspect the iter-320 high-PD-rate
+cell that misses joint pass on DSI only. Re-run plot_pareto.py with the existing 49-d
+substrate library on a fresh Vast.ai 16-core CPU instance (~$0.05/hr, < 30 min total) or
+compile the 13 t78 MOD files locally on the researcher's Windows machine. Output: 3 deep-dive
+PNGs (one per cell) with 8 per-direction Vm traces from soma + AIS distal + 3 dendritic
+recording sites. Cost estimate: < $0.10 (Vast.ai small instance) or zero (local). Recommended
+task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Multi-replicate Sobol seed and BO chain replication to estimate
+Pareto-front HV uncertainty on the 49-d substrate</strong> (S-0078-06)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-04 | **Source**:
+[t0078_bedb_mobo_v2_ais_tiered_ahp](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/)
+
+The t0078 +36% HV improvement over t0076 (8.41 -> 11.41) is a single-replicate observation:
+one Sobol DoE seed, one BoTorch chain. The Pareto-front structure (17 cells, bimodal
+trade-off) and the hypervolume value may shift materially with a different RNG seed. Run 3-5
+independent Sobol seeds + qLogNEHVI chains (75 Sobol + 100 acquisitions each, smaller budget
+per replicate) on the same 49-d substrate to produce an HV mean +/- SD across replicates. This
+quantifies the BO methodology's contribution to apparent improvement vs the architectural
+contribution of REQ-2 through REQ-6. Pass criterion: report HV across replicates with 95%
+bootstrap CI; rule out the +36% improvement being a single-seed artefact (lower CI bound >
+t0076's 8.41). Cost estimate: $1.00-$2.00 on a Vast.ai 64-core CPU. Recommended task types:
+experiment-run, evaluation.
+
+</details>
+
+*264 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (37)](suggestions/)
+## [High Priority Suggestions (35)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
@@ -330,42 +337,6 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
-characterise the joint-passing region</strong> (S-0081-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
-gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
-0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
-characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
-generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
-composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
-`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
 
 </details>
 
@@ -500,7 +471,41 @@ affecting PD.
 
 </details>
 
-*27 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>AIS-localised Kv7 follow-up (t0075 candidate)</strong>
+(S-0074-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-02 | **Source**:
+[t0074_channel_tuning_width_bed_a](../tasks/t0074_channel_tuning_width_bed_a/)
+
+Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta < 0.003 at
+every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008's prediction
+that Kv7's canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30
+µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density
+Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the
+t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
+mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
+accumulation is well-suited to the AIS firing regime.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+[t0067_t0065_soma_channel_addition_sweep](../tasks/t0067_t0065_soma_channel_addition_sweep/)
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
+
+</details>
+
+*25 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

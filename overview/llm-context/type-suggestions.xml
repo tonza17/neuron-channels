@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-05T09:59:30Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-05T12:08:35Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>337703</char_count>
-    <byte_count>337859</byte_count>
-    <estimated_tokens>84425</estimated_tokens>
+    <char_count>337709</char_count>
+    <byte_count>337865</byte_count>
+    <estimated_tokens>84427</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3666,7 +3666,7 @@ The t0078 compare_literature step found iter 81&#x27;s nav16_ais collapsed to th
 
 ## Re-run NSGA-II on the v3 54-d Bed B substrate at the full plan scope (pop=96 / gen=40 = 3,840 cells)
 ID: S-0080-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
@@ -3677,7 +3677,7 @@ t0080 missed the joint pass criterion (DSI&gt;=0.4 AND PD&gt;=10 Hz) by a wide m
 
 ## Substrate regression check on the t0076 iter-424 vector mapped to the v3 54-d parameter space
 ID: S-0080-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
@@ -3688,7 +3688,7 @@ REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under c
 
 ## Warm-start NSGA-II from t0078 Pareto cells mapped into the v3 54-d parameter space
 ID: S-0080-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0080_bedb_mobo_v3_dendritic_spike_nsga2

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-05T09:59:30Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-05T12:08:35Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4463</char_count>
-    <byte_count>4463</byte_count>
-    <estimated_tokens>1115</estimated_tokens>
+    <char_count>4500</char_count>
+    <byte_count>4500</byte_count>
+    <estimated_tokens>1125</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -113,6 +113,7 @@ Spent: 81.3%
 * t0079_brainstorm_results_14: $0.00
 * t0080_bedb_mobo_v3_dendritic_spike_nsga2: $0.75
 * t0081_bedb_v3_warmstart_nsga2: $2.39
+* t0082_brainstorm_results_15: $0.00
       </content>
     </section>
   </sections>

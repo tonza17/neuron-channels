@@ -1,12 +1,293 @@
 # ⏹ Tasks: Not Started
 
-2 tasks. ⏹ **2 not_started**.
+4 tasks. ⏹ **4 not_started**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ⏹ Not Started
+
+<details>
+<summary>⏹ 0084 — <strong>Vm-trace deep-dive of t0081 cell 767 to attribute the
+joint-pass DSI mechanism</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0084_t0081_cell_767_vm_trace_deepdive` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | `S-0081-03` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Task page** | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Task folder** | [`t0084_t0081_cell_767_vm_trace_deepdive/`](../../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/) |
+
+# Vm-Trace Deep-Dive of t0081 Cell 767 to Attribute the Joint-Pass DSI Mechanism
+
+## Motivation
+
+t0081 (`bedb_v3_warmstart_nsga2`) delivered the project's first joint-pass cell: **gen 7 cell
+767 at DSI 0.494 / PD 11.39 Hz** on the v3 dendritic- spike-augmented Bed B substrate. This is
+a major architectural milestone -- the first single-cell substrate in the project lineage to
+satisfy `DSI >= 0.4 AND PD >= 10 Hz` simultaneously. However, the **biophysical mechanism for
+the DSI improvement is unattributed**: cell 767's parameter vector contains non-zero values
+for all five dendritic-spike machinery dimensions added in t0080 (`gnmda_dend`, `mg_conc_mm`,
+`voff_nmda`, `nav16_dend_distal`, `nap_dend_distal`), and the joint-pass result could
+plausibly arise from any one of three mechanisms or a combination:
+
+1. **NMDA Mg-block recruitment.** Active dendritic NMDA receptors with Mg-block produce
+   voltage-dependent multiplicative gain that supercharges ND-suppressed but PD-active
+   synaptic input. This is the Sivyer 2013 / Branco-Hausser 2010 mechanism.
+2. **Distal Nav1.6 dendritic spikes.** Backpropagating APs and locally initiated dendritic
+   spikes from distal Nav1.6 produce non-linear amplification of PD-correlated input. This is
+   the Oesch 2005 mechanism.
+3. **NaP sustained depolarisation.** Persistent Na current at distal dendrites produces a
+   sustained depolarising plateau that enhances PD firing without proportionally enhancing ND
+   firing (assuming GABA asymmetry suppresses ND-direction NaP recruitment). This is the
+   Goldfinger 2000 / Stuart 1999 mechanism.
+
+Without per-direction Vm traces and per-channel current-flow analysis, we cannot distinguish
+which mechanism (or combination) drives cell 767's DSI improvement. The attribution matters
+strategically: it determines which mechanism to optimise first if t0083's extension finds
+additional joint- pass cells, and which to test on Bed A in S-0081-05's cross-bed validation.
+
+This task addresses project research question **Q4** (do active dendritic voltage-gated
+conductances improve, degrade, or have no effect on the match to the target angle-frequency
+curve compared with passive dendrites?) by mechanistically dissecting the first cell in the
+project to deliver a positive answer to Q4 in joint form. Source suggestion: **S-0081-03**.
+
+## Scope
+
+### In scope
+
+* Re-evaluate three cells from t0081's Pareto front in subprocess (eval-mode, no NSGA-II loop)
+  on the v3 substrate (`de_rosenroll_2026_dsgc_ais_dendritic_spike`):
+  * Cell 767 (joint-pass; DSI 0.494 / PD 11.39 Hz; gen 7).
+  * Cell 637 (near-pass; distance 0.063; gen 6).
+  * Cell 762 (near-pass; distance 0.086; gen 7).
+* For each cell and each of 8 stimulus directions (0, 45, 90, 135, 180, 225, 270, 315 deg),
+  record:
+  * Vm at proximal soma.
+  * Vm at one mid-dendrite section.
+  * Vm at one distal-dendrite section (the same one that carries nav16_dend_distal and
+    nap_dend_distal channel insertions).
+  * Per-segment NMDA conductance trajectories (`gnmda` over time) at the distal dendrite
+    synapses recruited during the simulation window.
+  * Per-segment Nav1.6 and NaP currents at the distal dendrite (`ina` decomposed by
+    mechanism).
+  * Per-direction AIS spike onset times (zero-crossing of Vm at the AIS threshold trigger).
+* Generate four figure assets per cell (12 figures total):
+  1. **Per-direction Vm traces** at proximal soma, mid dendrite, distal dendrite (3-row
+     stacked, 8-column grid).
+  2. **NMDA conductance trajectories** at distal dendrite per direction (8-line plot).
+  3. **Nav1.6 / NaP current decomposition** at distal dendrite per direction (8-direction
+     stacked plot).
+  4. **AIS spike onset histogram** per direction (polar plot or 8-bin bar chart).
+* Identify, per cell, which mechanism dominates the DSI difference between PD (gen direction
+  with peak rate) and ND (gen direction with minimum rate). Use a quantitative attribution
+  metric: the **fractional contribution of each channel to the integrated dendritic
+  depolarisation during the PD response window minus the same during the ND response window**.
+* Produce one **answer asset** at
+  `assets/answer/cell-767-dendritic-spike-mechanism-attribution/` with short and full answer
+  documents per the answer-asset specification, attributing cell 767's DSI mechanism to one
+  (or a combination) of the three candidates.
+
+### Out of scope
+
+* Re-running NSGA-II or any optimisation (use cell 767/637/762 parameters verbatim).
+* Modifying the substrate library asset.
+* Bed A cross-bed comparisons (S-0081-05).
+* Statistical multi-replicate confirmation across seeds (S-0081-01).
+* Comparing alternative dendritic mechanisms (Ca2+ plateau, Ih, HCN) -- scope limited to the
+  three machinery components present in the v3 substrate.
+
+## Pass Criteria
+
+* All 24 simulations (3 cells * 8 directions) complete with stable Vm traces (no numerical
+  instabilities, no NaN values).
+* All 12 figures generated and embedded in `results/results_detailed.md`.
+* The answer asset clearly identifies the dominant mechanism (or combination, with relative
+  weights) for cell 767's DSI improvement.
+* The mechanism attribution for cells 637 and 762 (near-pass neighbours) is consistent with
+  cell 767's attribution -- if not, the discrepancy is documented as a "near-pass cluster
+  heterogeneity" finding.
+
+## Estimated Compute Cost
+
+* Local CPU only. No remote machine.
+* Per-cell wall-clock: 8 directions * ~30-45 s/direction = ~3-6 min, plus per-segment
+  recording overhead = ~5-10 min per cell.
+* Total runtime: ~15-30 min for 3 cells.
+* **Compute cost: $0**.
+
+## Dependencies
+
+* **t0081_bedb_v3_warmstart_nsga2**: provides cell 767, 637, 762 parameter vectors (54-d
+  natural-unit vectors from `results/data/all_evaluations.json`), the v3 substrate evaluation
+  harness (`evaluate_cell.py` or equivalent), and the recording infrastructure for per-segment
+  Vm / conductance / current trajectories.
+* **t0080_bedb_mobo_v3_dendritic_spike_nsga2**: provides the
+  `de_rosenroll_2026_dsgc_ais_dendritic_spike` library asset and its channel-insertion API
+  (Nav1.6, NaP, NMDA Mg-block per dendritic section).
+
+## Recommended Task Types
+
+* `experiment-run` -- 24 single-cell NEURON simulations with extended recording.
+* `data-analysis` -- per-channel current decomposition and figure generation.
+* `answer-question` -- mechanism-attribution answer asset.
+
+## Notes
+
+The recording infrastructure for per-segment Vm, NMDA conductance, and Nav1.6 / NaP currents
+must be added to or wrapped around t0081's eval harness. The harness currently records spike
+counts per direction; this task adds full Vm traces and per-mechanism current decomposition.
+Keep the recording additive -- the eval harness must remain backwards-compatible with t0081's
+NSGA-II loop in case t0083 needs to re-use it.
+
+The answer asset's confidence level should reflect the single-cell-replicate nature of the
+analysis: cell 767's mechanism is attributed for that specific cell, but generalisation to
+"all joint-pass cells in the v3 substrate" requires t0083's additional joint-pass cells (or
+S-0081-01's multi-replicate study). The answer asset should state this explicitly in its `##
+Limitations` section.
+
+</details>
+
+<details>
+<summary>⏹ 0083 — <strong>Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau
+stop</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0083_bedb_v3_extend_nsga2_gen8plus` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Expected assets** | — |
+| **Source suggestion** | `S-0081-02` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Task folder** | [`t0083_bedb_v3_extend_nsga2_gen8plus/`](../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/) |
+
+# Extend t0081 NSGA-II from gen-7 with Adaptive HV-Plateau Stop
+
+## Motivation
+
+t0081 (`bedb_v3_warmstart_nsga2`) delivered the project's first joint-pass cell at gen 7 cell
+767 (DSI 0.494 / PD 11.39 Hz) on a 16-cell Pareto front across 768 evaluations ($2.39 on
+Vast.ai 64-core EPYC 7B13, $0.2382/hr). Three observations from t0081's results motivate
+continuing the run:
+
+1. **Hypervolume grew monotonically with no plateau**: 6.59 (gen 0) -> 8.99 (gen 1) -> 9.24
+   (gen 2) -> 11.08 (gen 3) -> 11.57 (gen 4) -> 13.14 (gen 5) -> 15.22 (gen 6) -> 16.33 (gen
+   7). The 7.4% increase from gen 6 to gen 7 indicates the Pareto front is still actively
+   expanding; the optimiser stopped not because it converged but because the planned gen=8
+   budget ran out.
+
+2. **Single joint-pass cell out of 768 evaluations.** Cell 767 is the only cell in the (DSI >=
+   0.4 AND PD >= 10 Hz) box. The pass region of the parameter space is **discovered but not
+   characterised**. A neighbourhood cluster (cell 637 at distance 0.063, cell 762 at distance
+   0.086) sits just outside the box. Additional generations should populate this cluster and
+   produce more joint-pass cells.
+
+3. **The natural extension preserves t0081's evolutionary trajectory.** Continuing from
+   t0081's gen-7 final population (96 surviving individuals after RankAndCrowding survival)
+   avoids the cost of re-evaluating the warm-start initial population and lets NSGA-II
+   continue evolving from a known good state.
+
+This task addresses project research question **Q4** (active vs passive dendritic conductances
+on directional tuning sharpness) by extending the search budget on the v3
+dendritic-spike-augmented Bed B substrate that t0081 established as the project's working
+substrate. Source suggestion: **S-0081-02** (extend t0081 NSGA-II to gen 12-15).
+
+## Scope
+
+### In scope
+
+* Reuse t0081's harness (`tasks/t0081_bedb_v3_warmstart_nsga2/code/`) verbatim with two
+  modifications:
+  * Replace the Sobol/LHS + projected-Pareto warm-start init with a direct load of t0081's
+    gen-7 final population (96 individuals, with objective values pre-computed and re-injected
+    into pymoo's `Algorithm` state to skip re-evaluation).
+  * Add an **adaptive HV-plateau watchdog** that terminates NSGA-II when `(HV(gen N) - HV(gen
+    N-3)) / HV(gen N-3) < 0.01` averaged over the last 3 generations, AND only after a minimum
+    of **5 additional generations** has been run (i.e., earliest possible stop is gen 12). The
+    watchdog evaluates after every generation starting at gen 11 (so gen 11 needs HV from gens
+    8, 9, 10, 11 -- a 3-gen lookback window starting at gen 8 is the first eligible window).
+* Hard cap on total additional generations: **10** (gen 8 through gen 17 maximum). If the
+  watchdog never fires, terminate at gen 17.
+* Hard cost cap: **$5.00**. Spawn a budget watchdog identical to t0081's that monitors
+  `instance_lifetime_hr * $0.2382/hr` and forces graceful termination if the projected
+  end-of-generation cost would exceed $5.00.
+* Reuse the `de_rosenroll_2026_dsgc_ais_dendritic_spike` library asset from t0080 unchanged.
+  No substrate changes.
+* Same Vast.ai instance class as t0081 (AMD EPYC 7B13 64-core, 503 GB RAM, $0.2382/hr).
+* Compare final Pareto front, joint-pass cell count, HV trajectory, and per-generation
+  parameter-distribution diagnostics against t0081 and t0080 baselines.
+
+### Out of scope
+
+* Substrate changes (no new dendritic-spike parameters; no new channels; no AIS
+  modifications).
+* Optimiser changes (NSGA-II via pymoo only; no NSGA-III, hybrid, or BO comparison).
+* Multi-replicate confirmation (S-0081-01 covers that; deferred to a later task).
+* Vm-trace analysis of cell 767 (S-0081-03 covers that; addressed in t0084 in parallel with
+  this task).
+* Bed A cross-bed replication (S-0081-05).
+
+## Pass Criteria
+
+* **Primary**: at least one **additional** Pareto cell with `DSI >= 0.4 AND PD >= 10 Hz`
+  beyond t0081's cell 767 (i.e., total joint-pass cells
+  > = 2). Characterises the joint-passing region by populating the near-pass cluster (cells 637 and
+  > 762 from t0081 should evolve into the joint-pass box if the cluster is robust).
+
+* **Secondary**: HV trajectory continues monotonically; final HV > t0081's 16.33; HV-plateau
+  stop rule fires before the gen-17 hard cap OR the budget watchdog fires.
+
+* **Acceptable negative**: zero additional joint-pass cells but final HV
+  > t0081's 16.33 with HV-plateau detected before gen 17 -- documented as evidence that t0081's cell
+  > 767 is an isolated point in the parameter space rather than a cluster, with implications for
+  > downstream multi-replicate strategy.
+
+## Estimated Compute Cost
+
+* Per-cell wall-clock on t0081's instance: ~30 s (768 cells / 10.045 h instance lifetime ~= 47
+  s/cell including overhead; NSGA-II gen 7 cells averaged ~30 s each).
+* 5 additional generations at pop 96 = 480 cells @ 30 s = 4.0 h optimiser time; with 30 min
+  Vast.ai instance overhead = 4.5 h * $0.2382 = ~$1.07.
+* 10 additional generations at pop 96 = 960 cells @ 30 s = 8.0 h optimiser time; with overhead
+  = 8.5 h * $0.2382 = ~$2.02.
+* Most-likely range: **$1.50 - $3.00** depending on when the HV-plateau rule fires.
+* **Hard cost cap: $5.00** (allows up to ~21 hours of instance lifetime, enough to absorb any
+  per-cell wall-clock variance from the v3 substrate's dendritic-spike machinery).
+
+## Dependencies
+
+* **t0081_bedb_v3_warmstart_nsga2**: provides gen-7 final population (96 individuals with
+  parameter vectors and objective values), the NSGA-II harness to extend, and the warm-start
+  projection logic to inherit unchanged.
+* **t0080_bedb_mobo_v3_dendritic_spike_nsga2**: provides the
+  `de_rosenroll_2026_dsgc_ais_dendritic_spike` library asset (54-d v3 substrate) used
+  unchanged.
+* **t0078_bedb_mobo_v2_ais_tiered_ahp**: provides the AIS-augmented parent substrate from
+  which t0080 derived the v3 substrate.
+* **t0024_port_de_rosenroll_2026_dsgc**: provides the de Rosenroll 2026 DSGC NEURON port (Bed
+  B base substrate before AIS / dendritic-spike augmentation).
+
+## Recommended Task Types
+
+* `experiment-run` -- the primary mode (NSGA-II continuation).
+
+## Notes
+
+The watchdog logic must be additive, not destructive: each new generation appends to t0081's
+saved evaluation history rather than overwriting it. The final `all_evaluations.json` should
+contain the union of t0081's 768 cells plus this task's additional cells (480-960), with
+consistent generation numbering (t0081 ends at gen 7; this task starts at gen 8).
+
+</details>
 
 <details>
 <summary>⏹ 0075 — <strong>Biologically-realistic AIS one-axis-at-a-time parameter

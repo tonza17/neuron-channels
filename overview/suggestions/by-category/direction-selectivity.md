@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
 220 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **195 open** (33
-high, 142 medium, 20 low), **25 closed**.
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **193 open** (31
+high, 142 medium, 20 low), **27 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -235,30 +235,6 @@ option. Recommended task types: write-library, answer-question.
 </details>
 
 <details>
-<summary>🧪 <strong>Deep-dive Vm-trace analysis of cell 767 to identify which
-dendritic-spike machinery drives the joint pass</strong> (S-0081-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0081-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
-mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
-spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
-(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
-and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
-conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
-cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
-experiment-run, data-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
 Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
 
@@ -303,30 +279,6 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to
-characterise the joint-passing region</strong> (S-0081-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0081-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
-gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
-0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
-characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
-generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
-composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
-`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
-experiment-run.
 
 </details>
 
@@ -4968,6 +4920,32 @@ data-analysis.
 </details>
 
 <details>
+<summary>✅ <s>Deep-dive Vm-trace analysis of cell 767 to identify which
+dendritic-spike machinery drives the joint pass</s> — covered by <a
+href="../../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/"><code>t0084_t0081_cell_767_vm_trace_deepdive</code></a>
+(S-0081-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0081-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical
+mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic
+spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction
+(8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767
+and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA
+conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single
+cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>✅ <s>Download both candidate Feller-lab 2018 source papers to resolve the
 dsgc-baseline-morphology provenance ambiguity</s> — covered by <a
 href="../../../tasks/t0013_resolve_morphology_provenance/"><code>t0013_resolve_morphology_provenance</code></a>
@@ -4991,6 +4969,32 @@ read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC r
 then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
 correct paper_id slug. This unblocks correct citation of the morphology in every downstream
 paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to characterise
+the joint-passing region</s> — covered by <a
+href="../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/"><code>t0083_bedb_v3_extend_nsga2_gen8plus</code></a>
+(S-0081-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0081-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Hypervolume grew monotonically from 6.59 (gen 0) to 16.33 (gen 7) with no plateau, and the
+gen-7 Pareto front contains a near-pass cluster (cell 637 at distance 0.063, cell 762 at
+0.086, cell 767 at 0.000). The joint-pass region is therefore discovered but not
+characterised. Re-run NSGA-II from the t0081 warm-start initial population for 12-15
+generations (1,152-1,440 cells) and report the count of joint-pass cells, Pareto-front
+composition in the (DSI >= 0.4, PD >= 10 Hz) box, and final HV. Reuse the t0081 harness with
+`n_gen` increased. Cost ~$3-4 (incremental ~5-7 hours at $0.2382/hr). Recommended task types:
+experiment-run.
 
 </details>
 
