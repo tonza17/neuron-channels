@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare cluster centroids to Kole 2008 / Werginz 2024 / Sivyer 2013 / Branco-Hausser 2010 / Oesch 2005 / Goldfinger 2000 / Stuart 1999 / de Rosenroll 2026.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T18:19:26Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T18:21:15Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
