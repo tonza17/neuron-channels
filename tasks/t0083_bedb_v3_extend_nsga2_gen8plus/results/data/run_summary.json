@@ -1,0 +1,114 @@
+{
+  "per_generation_summary": [
+    {
+      "generation": 0,
+      "n_total": 96,
+      "n_feasible": 55,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 1,
+      "n_total": 96,
+      "n_feasible": 70,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 2,
+      "n_total": 96,
+      "n_feasible": 88,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 3,
+      "n_total": 96,
+      "n_feasible": 90,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 4,
+      "n_total": 96,
+      "n_feasible": 89,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 5,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 6,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 7,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 8,
+      "n_total": 96,
+      "n_feasible": 96,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 9,
+      "n_total": 96,
+      "n_feasible": 93,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 10,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 11,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 12,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 13,
+      "n_total": 96,
+      "n_feasible": 96,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 14,
+      "n_total": 96,
+      "n_feasible": 93,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 15,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 2
+    },
+    {
+      "generation": 16,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 4
+    },
+    {
+      "generation": 17,
+      "n_total": 96,
+      "n_feasible": 91,
+      "n_joint_pass": 6
+    }
+  ],
+  "n_total_evaluations": 1728,
+  "n_pareto_cells": 18
+}

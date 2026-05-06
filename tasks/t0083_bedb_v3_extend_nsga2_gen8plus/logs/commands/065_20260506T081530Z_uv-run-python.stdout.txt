@@ -1,0 +1,4 @@
+direction_selectivity_index
+tuning_curve_hwhm_deg
+tuning_curve_reliability
+tuning_curve_rmse
