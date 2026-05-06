@@ -33,10 +33,7 @@ def main() -> None:
                     "classification": cell["classification"],
                     "n_pass": int(cell["n_pass"]),
                     "n_total": int(cell["n_total"]),
-                },
-                "metrics": {
-                    "direction_selectivity_index_mean": float(cell["dsi_mean"]),
-                    "direction_selectivity_index_sd": float(cell["dsi_sd"]),
+                    "dsi_sd": float(cell["dsi_sd"]),
                     "pd_rate_hz_mean": float(cell["pd_mean"]),
                     "pd_rate_hz_sd": float(cell["pd_sd"]),
                     "robustness_fraction": (
@@ -44,6 +41,9 @@ def main() -> None:
                         if int(cell["n_total"]) > 0
                         else None
                     ),
+                },
+                "metrics": {
+                    "direction_selectivity_index": float(cell["dsi_mean"]),
                 },
             }
         )

@@ -8,14 +8,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 3,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.4813902101942628,
-        "direction_selectivity_index_sd": 0.043899371719558516,
+        "n_total": 5,
+        "dsi_sd": 0.043899371719558516,
         "pd_rate_hz_mean": 9.91904761904762,
         "pd_rate_hz_sd": 0.8882707601349141,
         "robustness_fraction": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4813902101942628
       }
     },
     {
@@ -26,14 +26,14 @@
         "selection_reason": "near_pass",
         "classification": "Stochastic",
         "n_pass": 0,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.022423882174931218,
-        "direction_selectivity_index_sd": 0.004517311463415842,
+        "n_total": 5,
+        "dsi_sd": 0.004517311463415842,
         "pd_rate_hz_mean": 49.13333333333334,
         "pd_rate_hz_sd": 0.4831867007225086,
         "robustness_fraction": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.022423882174931218
       }
     },
     {
@@ -44,14 +44,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 3,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.40673981824275734,
-        "direction_selectivity_index_sd": 0.16750479677212254,
+        "n_total": 5,
+        "dsi_sd": 0.16750479677212254,
         "pd_rate_hz_mean": 13.452380952380954,
         "pd_rate_hz_sd": 0.1963383631246511,
         "robustness_fraction": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.40673981824275734
       }
     },
     {
@@ -62,14 +62,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 4,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.4326289983234167,
-        "direction_selectivity_index_sd": 0.03925189538940333,
+        "n_total": 5,
+        "dsi_sd": 0.03925189538940333,
         "pd_rate_hz_mean": 12.961904761904762,
         "pd_rate_hz_sd": 0.7949101120049995,
         "robustness_fraction": 0.8
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4326289983234167
       }
     },
     {
@@ -80,14 +80,14 @@
         "selection_reason": "near_pass",
         "classification": "Stochastic",
         "n_pass": 0,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.05543093664165375,
-        "direction_selectivity_index_sd": 0.003226320379170798,
+        "n_total": 5,
+        "dsi_sd": 0.003226320379170798,
         "pd_rate_hz_mean": 49.95238095238095,
         "pd_rate_hz_sd": 0.2817180849095042,
         "robustness_fraction": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.05543093664165375
       }
     },
     {
@@ -98,14 +98,14 @@
         "selection_reason": "joint_pass",
         "classification": "Stochastic",
         "n_pass": 0,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.2800600104160686,
-        "direction_selectivity_index_sd": 0.07652639267311563,
+        "n_total": 5,
+        "dsi_sd": 0.07652639267311563,
         "pd_rate_hz_mean": 15.57619047619048,
         "pd_rate_hz_sd": 0.24065292892368206,
         "robustness_fraction": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2800600104160686
       }
     },
     {
@@ -116,14 +116,14 @@
         "selection_reason": "near_pass",
         "classification": "Stochastic",
         "n_pass": 0,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.06071572361439907,
-        "direction_selectivity_index_sd": 0.0478568266394133,
+        "n_total": 5,
+        "dsi_sd": 0.0478568266394133,
         "pd_rate_hz_mean": 44.228571428571435,
         "pd_rate_hz_sd": 3.591360254934839,
         "robustness_fraction": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.06071572361439907
       }
     },
     {
@@ -134,14 +134,14 @@
         "selection_reason": "near_pass",
         "classification": "Marginal",
         "n_pass": 3,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.9269123179097267,
-        "direction_selectivity_index_sd": 0.025540389589670972,
+        "n_total": 5,
+        "dsi_sd": 0.025540389589670972,
         "pd_rate_hz_mean": 10.104761904761906,
         "pd_rate_hz_sd": 3.0724656794623306,
         "robustness_fraction": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9269123179097267
       }
     },
     {
@@ -152,14 +152,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.4398153298244093,
-        "direction_selectivity_index_sd": 0.023328309050638492,
+        "n_total": 5,
+        "dsi_sd": 0.023328309050638492,
         "pd_rate_hz_mean": 12.866666666666669,
         "pd_rate_hz_sd": 0.49040683744535263,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4398153298244093
       }
     },
     {
@@ -170,14 +170,14 @@
         "selection_reason": "joint_pass",
         "classification": "Stochastic",
         "n_pass": 1,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.38565506280549366,
-        "direction_selectivity_index_sd": 0.0129605414198579,
+        "n_total": 5,
+        "dsi_sd": 0.0129605414198579,
         "pd_rate_hz_mean": 18.21904761904762,
         "pd_rate_hz_sd": 0.4896664605937256,
         "robustness_fraction": 0.2
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.38565506280549366
       }
     },
     {
@@ -188,14 +188,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 4,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.5544849917628116,
-        "direction_selectivity_index_sd": 0.14534665627112267,
+        "n_total": 5,
+        "dsi_sd": 0.14534665627112267,
         "pd_rate_hz_mean": 39.50476190476191,
         "pd_rate_hz_sd": 0.5927376050840086,
         "robustness_fraction": 0.8
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5544849917628116
       }
     },
     {
@@ -206,14 +206,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.42761205046494766,
-        "direction_selectivity_index_sd": 0.01909521318224861,
+        "n_total": 5,
+        "dsi_sd": 0.01909521318224861,
         "pd_rate_hz_mean": 11.495238095238097,
         "pd_rate_hz_sd": 0.7021831844254002,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.42761205046494766
       }
     },
     {
@@ -224,14 +224,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 3,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.4538038437569343,
-        "direction_selectivity_index_sd": 0.22500345639956137,
+        "n_total": 5,
+        "dsi_sd": 0.22500345639956137,
         "pd_rate_hz_mean": 26.804761904761904,
         "pd_rate_hz_sd": 1.014341603646862,
         "robustness_fraction": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4538038437569343
       }
     },
     {
@@ -242,14 +242,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.6137385453861015,
-        "direction_selectivity_index_sd": 0.11064896792227945,
+        "n_total": 5,
+        "dsi_sd": 0.11064896792227945,
         "pd_rate_hz_mean": 18.704761904761906,
         "pd_rate_hz_sd": 0.2922273522393569,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6137385453861015
       }
     },
     {
@@ -260,14 +260,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.5270953250914785,
-        "direction_selectivity_index_sd": 0.026679092062500992,
+        "n_total": 5,
+        "dsi_sd": 0.026679092062500992,
         "pd_rate_hz_mean": 15.471428571428572,
         "pd_rate_hz_sd": 0.3662025510424832,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5270953250914785
       }
     },
     {
@@ -278,14 +278,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.5433624293557889,
-        "direction_selectivity_index_sd": 0.049084458632085104,
+        "n_total": 5,
+        "dsi_sd": 0.049084458632085104,
         "pd_rate_hz_mean": 12.79047619047619,
         "pd_rate_hz_sd": 0.3149343955006945,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5433624293557889
       }
     },
     {
@@ -296,14 +296,14 @@
         "selection_reason": "joint_pass",
         "classification": "Genuine",
         "n_pass": 5,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.8768589152369575,
-        "direction_selectivity_index_sd": 0.06515791432135186,
+        "n_total": 5,
+        "dsi_sd": 0.06515791432135186,
         "pd_rate_hz_mean": 40.84761904761905,
         "pd_rate_hz_sd": 0.46671525500212807,
         "robustness_fraction": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.8768589152369575
       }
     },
     {
@@ -314,14 +314,14 @@
         "selection_reason": "joint_pass",
         "classification": "Stochastic",
         "n_pass": 2,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.354903648632625,
-        "direction_selectivity_index_sd": 0.12790112157242703,
+        "n_total": 5,
+        "dsi_sd": 0.12790112157242703,
         "pd_rate_hz_mean": 19.82857142857143,
         "pd_rate_hz_sd": 0.1790628159710775,
         "robustness_fraction": 0.4
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.354903648632625
       }
     },
     {
@@ -332,14 +332,14 @@
         "selection_reason": "joint_pass",
         "classification": "Marginal",
         "n_pass": 3,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 0.6027754515897523,
-        "direction_selectivity_index_sd": 0.02180695426233837,
+        "n_total": 5,
+        "dsi_sd": 0.02180695426233837,
         "pd_rate_hz_mean": 10.376190476190477,
         "pd_rate_hz_sd": 0.6022256528590022,
         "robustness_fraction": 0.6
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6027754515897523
       }
     },
     {
@@ -350,14 +350,14 @@
         "selection_reason": "near_pass",
         "classification": "Stochastic",
         "n_pass": 0,
-        "n_total": 5
-      },
-      "metrics": {
-        "direction_selectivity_index_mean": 1.0,
-        "direction_selectivity_index_sd": 0.0,
+        "n_total": 5,
+        "dsi_sd": 0.0,
         "pd_rate_hz_mean": 6.142857142857143,
         "pd_rate_hz_sd": 0.6569012668403199,
         "robustness_fraction": 0.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
       }
     }
   ]
