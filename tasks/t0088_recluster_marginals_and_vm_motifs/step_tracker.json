@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Extend t0086's biological comparison to the new 13-cell clustering; incorporate per-cluster mechanism attribution.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T20:59:26Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T21:02:32Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
