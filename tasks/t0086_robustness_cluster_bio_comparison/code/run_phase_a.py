@@ -24,6 +24,8 @@ import time
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 
+import numpy as np
+
 from tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code import trial_driver as t80_trial
 from tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.constants import ParameterVector
 from tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.trial_driver import (
@@ -114,7 +116,7 @@ def _run_one_replication(
     max_workers: int,
 ) -> ReplicationRecord:
     t80_trial.SEED_BASE = seed  # type: ignore[attr-defined]
-    pv = ParameterVector(values=params_list)
+    pv = ParameterVector(values=np.asarray(params_list, dtype=np.float64))
     t0 = time.time()
     eval_res = evaluate_parameter_vector(
         params=pv,
