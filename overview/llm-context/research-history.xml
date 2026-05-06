@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-06T08:37:20Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-06T12:59:30Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>138</section_count>
-    <char_count>2525100</char_count>
-    <byte_count>2531746</byte_count>
-    <estimated_tokens>631275</estimated_tokens>
+    <section_count>141</section_count>
+    <char_count>2529489</char_count>
+    <byte_count>2536147</byte_count>
+    <estimated_tokens>632372</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -189,9 +189,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0082_brainstorm_results_15</id>
         <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
+        <id>t0085_brainstorm_results_16</id>
       </source_ids>
       <content>
-Completed tasks: 77
+Completed tasks: 78
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -654,6 +655,12 @@ ID: t0084_t0081_cell_767_vm_trace_deepdive
 Completed: 2026-05-05
 Short description: Per-direction Vm traces of t0081 cells 767 / 637 / 762 (proximal soma, mid dendrite, distal dendrite) to attribute cell 767&#x27;s joint-pass DSI to NMDA Mg-block, distal Nav1.6, NaP, or combination.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0084_t0081_cell_767_vm_trace_deepdive&quot; --- Results Summary: Vm-Trace Deep-Dive of t0081 Cell 767 Summary Re-evaluated t0081 Pareto cells 767 (joint-pass), 637, 762 (near-pass) on the v3 Bed B substrate with extended Vm/conductance/current recording across 8 directions and computed an integrated PD-vs-ND fractional channel contribution. Cell 767&#x27;s PD/ND integrated-current asymmetry is **NaP-dominant** (NMDA 0.0%, Nav1.6 7.0%, NaP 93.0%), and cells 637 and 762 share the same NaP-dominant signature (98.5% and 99.9%). The single-replicate run did not reproduce cell 767&#x27;s original 5-seed mean DSI (0.494 vs. measured 0.000), so the attribution describes the...
+
+## Brainstorm results session 16
+ID: t0085_brainstorm_results_16
+Completed: 2026-05-06
+Short description: Sixteenth brainstorm: commission t0086 (robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells); reject 3 covered suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0085_brainstorm_results_16&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 16 Summary Sixteenth strategic brainstorm, run on 2026-05-06 after t0083 (`bedb_v3_extend_nsga2_gen8plus`) extended t0081&#x27;s NSGA-II from gen 7 through gen 17 and **expanded the joint-pass cell population from 1 to 15 cells** (1 inherited cell 767 + 14 new in gens 13-17), with hypervolume +118% (16.330 -&gt; 35.576), and t0084 (`t0081_cell_767_vm_trace_deepdive`) produced the cell-767 mechanism-attribution answer asset at $0 cost. One consolidated follow-up task commissioned: t0086 (`robustness_cluster_bio_comparison`) bundles three open suggestions...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -663,9 +670,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0084_t0081_cell_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0086_robustness_cluster_bio_comparison</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -686,6 +694,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
+ID: t0086_robustness_cluster_bio_comparison
+Status: not_started
+Effective date: unknown
+Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -42936,6 +42951,111 @@ or refute this observation. [t0081]
   in `results/data/all_evaluations.json`, and confirms all three cells are on the 16-cell Pareto
   front in `results/data/pareto_front.json`. Also provides context on the joint-pass criterion and
   which v3 parameters are likely dominant.
+      </content>
+    </section>
+    <section id="t0085_brainstorm_results_16-research_papers" source_kind="file">
+      <title>t0085_brainstorm_results_16 — Brainstorm results session 16 — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0085_brainstorm_results_16</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0085_brainstorm_results_16/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0085_brainstorm_results_16-research_internet" source_kind="file">
+      <title>t0085_brainstorm_results_16 — Brainstorm results session 16 — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0085_brainstorm_results_16</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0085_brainstorm_results_16/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0085_brainstorm_results_16-research_code" source_kind="file">
+      <title>t0085_brainstorm_results_16 — Brainstorm results session 16 — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0085_brainstorm_results_16</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0085_brainstorm_results_16/research/research_code.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+No research required for brainstorming session.
+
+#### Methodology Review
+
+No research required for brainstorming session.
+
+#### Key Findings
+
+No research required for brainstorming session.
+
+#### Recommended Approach
+
+No research required for brainstorming session.
+
+#### References
+
+No research required for brainstorming session.
       </content>
     </section>
   </sections>

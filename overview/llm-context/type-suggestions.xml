@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T08:37:20Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T12:59:30Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>351314</char_count>
-    <byte_count>351470</byte_count>
-    <estimated_tokens>87828</estimated_tokens>
+    <char_count>351320</char_count>
+    <byte_count>351476</byte_count>
+    <estimated_tokens>87830</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3766,7 +3766,7 @@ t0080&#x27;s 5-cell Pareto front is sparse (4 of 5 cells from gen 1; only cell 5
 
 ## Multi-replicate confirmation of the t0081 joint-pass result with 3-5 independent LHS + warm-start RNG seeds
 ID: S-0081-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0081_bedb_v3_warmstart_nsga2
@@ -3920,7 +3920,7 @@ t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV 
 
 ## Parameter-cluster analysis of t0083&#x27;s 15 joint-pass and 18 Pareto cells to identify distinct biophysical motifs
 ID: S-0083-02
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0083_bedb_v3_extend_nsga2_gen8plus
@@ -3953,7 +3953,7 @@ The watchdog used by t0080 / t0081 / t0083 reads `_HOURLY_RATE_USD = 0.2382` fro
 
 ## Multi-seed smoke-gate baseline -- replace single-deterministic-reproduction with 3-5 seed reference range
 ID: S-0083-05
-Status: active
+Status: rejected
 Priority: medium
 Kind: evaluation
 Source task: t0083_bedb_v3_extend_nsga2_gen8plus

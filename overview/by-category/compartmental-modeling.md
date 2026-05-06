@@ -2033,7 +2033,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (226 open, 31 closed)
+## Suggestions (225 open, 32 closed)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -2051,26 +2051,6 @@ cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell 
 grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
 = 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
-cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
-range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
-Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
-0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
-distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
-clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
-report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
-Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
-t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
-1304's motif? Recommended task types: data-analysis.
 
 </details>
 
