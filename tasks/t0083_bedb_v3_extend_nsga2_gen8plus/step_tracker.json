@@ -86,9 +86,9 @@
       "step": 10,
       "name": "teardown",
       "description": "Destroy the Vast.ai instance and finalise cost tracking.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T08:10:12Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T08:13:14Z",
       "log_file": "logs\\steps\\010_teardown/"
     },
     {
