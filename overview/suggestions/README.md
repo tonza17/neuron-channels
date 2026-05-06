@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-318 suggestions **280 open** (38 high, 199 medium, 43 low), **38 closed**.
+324 suggestions **286 open** (41 high, 202 medium, 43 low), **38 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -369,6 +369,31 @@ no-NMDA baseline to quantify the NMDA-spike contribution to DS.
 </details>
 
 <details>
+<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
+population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
+strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
+indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
+an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
+joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
+cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
+grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
+= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
 (S-0067-01)</summary>
 
@@ -675,6 +700,58 @@ fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collaps
 nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
 Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
 experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
+cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
+range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
+Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
+0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
+distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
+clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
+report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
+Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
+t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
+1304's motif? Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
+headline cell's biophysical mechanism</strong> (S-0083-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+
+Cell 1304 (gen 13, DSI 0.7652 / PD 13.96 Hz) is the project's first cell statistically
+indistinguishable from RivlinEtzion 2012's published mouse ON-OFF DSGC stable-cell
+distribution (DSI z=-0.08, PD z=+0.42). Its biophysical mechanism has not been attributed to
+specific dendritic-spike machinery (NMDA Mg-block vs distal Nav1.6 vs NaP_dend). t0084 found
+NaP_dend dominant for cell 767 (now dominated and off-Pareto); cell 1304's parameter vector
+differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.992] vs
+[0.008, 0.018, 1.000, 1.000, 0.250, 0.000]). Re-run cell 1304 in subprocess with per-direction
+Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
+(zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -3391,6 +3468,32 @@ types: experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>📊 <strong>Multi-seed smoke-gate baseline -- replace
+single-deterministic-reproduction with 3-5 seed reference range</strong>
+(S-0083-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+The pre-launch substrate-consistency smoke gate in t0081 / t0083 uses a single reference DSI /
+PD value per cell with fixed tolerances (DSI 0.05, PD 1.0 Hz). t0083's smoke gate failed 1/5
+(cell 767 PD 9.25 Hz vs 11.39 Hz reference, 1.14 Hz over tolerance), diagnosed as Monte-Carlo
+seed-consumption variance, not substrate drift. The acceptable-negative decision was validated
+by t0083's productive 14-new-joint-pass-cell run, but the design is fragile. Replace the
+deterministic reference with a 3-5 seed multi-replicate range: for each smoke-gate cell, run
+the simulator under 5 LHS RNG seeds, record (DSI mean +/- SD, PD mean +/- SD), and accept if
+the on-instance reproduction lands within 2 SD. Recommended task types: write-library,
+experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Multi-trial t0072 extension to decompose SD bands into
 across-trial vs across-synapse variance</strong> (S-0072-02)</summary>
 
@@ -3685,6 +3788,30 @@ code-reproduction.
 </details>
 
 <details>
+<summary>📚 <strong>Parameterise the in-loop budget watchdog hourly rate so cost
+tracking matches the actual Vast.ai offer rate</strong> (S-0083-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-04` |
+| **Kind** | library |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+The watchdog used by t0080 / t0081 / t0083 reads `_HOURLY_RATE_USD = 0.2382` from
+`arf.libraries.t0080_loop`, hard-coded to t0080's Norway EPYC 7B13 rate. t0083 ran on a
+$0.3209/hr Texas offer; the watchdog tracked $4.115 at gen-17 termination while the true
+charge was ~$5.55, climbing to $5.828 at instance destruction -- a $0.83 ex-post breach of the
+$5.00 cap. Fix: add `--hourly-rate-usd` to `run_loop.py` overriding `_HOURLY_RATE_USD` at
+startup; or auto-read from `logs/steps/*setup-machines*/machine_log.json`
+`selected_offer.price_per_hour`. Verify with a 1-gen smoke test on a non-default-rate offer
+matching post-run charges within 5 percent. Recommended task types: write-library.
+
+</details>
+
+<details>
 <summary>📚 <strong>Parameterize t0011/t0012 tuning-curve plotter and scorer to
 support N_ANGLES != 12</strong> (S-0024-04)</summary>
 
@@ -3729,6 +3856,33 @@ the fitted kappa or sigma, and exposes hwhm_deg_parametric and parametric_fit_re
 ScoreReport. Compare parametric HWHM against interpolated HWHM on t0004, t0008 (ModelDB
 189347), and S-0002-01 grid-search points; document when interpolation suffices and when the
 parametric fit is required. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Peak-rate re-analysis of cells 1559 / 1677 for direct comparison
+with Trenholm 2013 / Oesch 2005</strong> (S-0083-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+
+Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the project's
+first cells to combine biologically-plausible DSI with PD firing rates above 30 Hz mean.
+Published `[Trenholm2013, Results p. 14064]` and `[Oesch2005, Results p. 754]` report peak
+rather than mean PD rates: 198 Hz Gaussian-convolved peak (Trenholm) and 148 Hz modal peak
+(Oesch). The current PD-rate metric is mean rate over 1400 ms; converting cells 1559 / 1677 to
+peak rate would resolve the mean-vs-peak metric mismatch and enable direct numerical
+comparison with Trenholm / Oesch. Re-run cells 1559 and 1677 in subprocess with
+full-resolution voltage / spike traces preserved, compute Gaussian-convolved instantaneous
+rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
+Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
+preserved; otherwise experiment-run with 2-cell budget < $0.20).
 
 </details>
 

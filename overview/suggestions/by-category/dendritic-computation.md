@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-60 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **45 open** (7
+63 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **48 open** (10
 high, 34 medium, 4 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
@@ -87,6 +87,31 @@ no-NMDA baseline to quantify the NMDA-spike contribution to DS.
 </details>
 
 <details>
+<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
+population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
+strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
+indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
+an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
+joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
+cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
+grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
+= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
 3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
 
@@ -130,6 +155,58 @@ fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collaps
 nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
 Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
 experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
+cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
+range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
+Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
+0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
+distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
+clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
+report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
+Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
+t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
+1304's motif? Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
+headline cell's biophysical mechanism</strong> (S-0083-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Cell 1304 (gen 13, DSI 0.7652 / PD 13.96 Hz) is the project's first cell statistically
+indistinguishable from RivlinEtzion 2012's published mouse ON-OFF DSGC stable-cell
+distribution (DSI z=-0.08, PD z=+0.42). Its biophysical mechanism has not been attributed to
+specific dendritic-spike machinery (NMDA Mg-block vs distal Nav1.6 vs NaP_dend). t0084 found
+NaP_dend dominant for cell 767 (now dominated and off-Pareto); cell 1304's parameter vector
+differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.992] vs
+[0.008, 0.018, 1.000, 1.000, 0.250, 0.000]). Re-run cell 1304 in subprocess with per-direction
+Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
+(zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
+Recommended task types: experiment-run.
 
 </details>
 

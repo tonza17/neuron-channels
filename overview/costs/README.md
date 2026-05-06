@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $8.13 of $20.00 USD. $11.87 remains overall and $11.87 remains before the 100% stop
+Spent $13.96 of $20.00 USD. $6.04 remains overall and $6.04 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,28 +8,29 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $20.00 USD |
-| Total spent | $8.13 USD |
-| Budget left | $11.87 USD |
-| Budget left before stop threshold | $11.87 USD |
-| Spent percent | 40.64% |
+| Total spent | $13.96 USD |
+| Budget left | $6.04 USD |
+| Budget left before stop threshold | $6.04 USD |
+| Spent percent | 69.78% |
 | Warn threshold | 80% ($16.00) |
 | Stop threshold | 100% ($20.00) |
 | Default per-task limit | $5.00 USD |
-| Tasks with cost records | 76 |
-| Tasks with non-zero spend | 4 |
-| Skipped tasks | 8 |
+| Tasks with cost records | 77 |
+| Tasks with non-zero spend | 5 |
+| Skipped tasks | 7 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
+| `vast_ai` | $6.89 |
 | `vast_ai_compute` | $3.93 |
-| `vast_ai` | $1.06 |
 
 ## Breakdown Totals
 
 | Key | Cost (USD) |
 |-----|------------|
+| `vast-ai-cpu-epyc-7b13` | $5.83 |
 | `vast-ai-rtx5060ti` | $3.93 |
 | `vast_ai_36149741` | $2.39 |
 | `vast-ai-quadro-p4000` | $1.06 |
@@ -48,6 +49,7 @@ threshold.
 | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | $3.93 | $5.00 | no |
 | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | $0.75 | $5.00 | no |
 | [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | completed | $2.39 | $5.00 | no |
+| [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | completed | $5.83 | $5.00 | yes |
 
 ## Skipped Tasks
 
@@ -60,4 +62,3 @@ threshold.
 | `t0044_schachter_retest_on_t0043` | results/costs.json is missing or invalid |
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
-| `t0083_bedb_v3_extend_nsga2_gen8plus` | results/costs.json is missing or invalid |

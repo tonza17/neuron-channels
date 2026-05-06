@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-05T16:50:43Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-06T08:37:20Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>176702</char_count>
-    <byte_count>176964</byte_count>
-    <estimated_tokens>44175</estimated_tokens>
+    <char_count>177281</char_count>
+    <byte_count>177543</byte_count>
+    <estimated_tokens>44320</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -191,10 +191,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0080_bedb_mobo_v3_dendritic_spike_nsga2</id>
         <id>t0081_bedb_v3_warmstart_nsga2</id>
         <id>t0082_brainstorm_results_15</id>
+        <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
       </source_ids>
       <content>
-Completed tasks: 76
+Completed tasks: 77
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -646,6 +647,12 @@ Completed: 2026-05-05
 Short description: Fifteenth brainstorm: commission t0083 (extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop) and t0084 (Vm-trace deep-dive of cell 767); reject 3 suggestions covered by t0081.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0082_brainstorm_results_15&quot; date_completed: &quot;2026-05-05&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 15 Summary Fifteenth strategic brainstorm, run on 2026-05-05 after t0081 (`bedb_v3_warmstart_nsga2`) **delivered the project&#x27;s first joint-pass cell** at gen 7 cell 767 (DSI 0.494 / PD 11.39 Hz on 768 evaluations, $2.39). The session is triggered by the t0081 architectural milestone: the project&#x27;s working pass criterion `DSI &gt;= 0.4 AND PD &gt;= 10 Hz` was satisfied simultaneously for the first time, decisively answering research question Q4 (active vs passive dendritic conductances) in the positive on Bed B. Two follow-up tasks commissioned in...
 
+## Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
+ID: t0083_bedb_v3_extend_nsga2_gen8plus
+Completed: 2026-05-06
+Short description: Continue NSGA-II from t0081&#x27;s gen-7 final population for at least 5 more generations with adaptive HV-plateau stop (&lt;1% over 3-gen window); hard cap +10 gens, $5.00 cost.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0083_bedb_v3_extend_nsga2_gen8plus&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0083_bedb_v3_extend_nsga2_gen8plus Summary The NSGA-II warm-start continuation extended t0081&#x27;s run from gen 7 through gen 17 on the same v3 Bed B substrate, producing **14 new joint-pass cells** (DSI &gt;= 0.4 AND PD &gt;= 10 Hz) on top of t0081&#x27;s single inherited cell 767, for a project total of **15 joint-pass cells** at completion. Hypervolume grew from **16.330 at gen 7** to **35.576 at gen 17** (+118%) over 960 additional evaluations; the run terminated under the gen-17 hard cap rather than the HV-plateau watchdog. Metrics * **15 joint-pass cells** across 1728 total...
+
 ## Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism
 ID: t0084_t0081_cell_767_vm_trace_deepdive
 Completed: 2026-05-05
@@ -660,10 +667,9 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0084_t0081_cell_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -684,13 +690,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
-ID: t0083_bedb_v3_extend_nsga2_gen8plus
-Status: in_progress
-Effective date: 2026-05-05
-Short description: Continue NSGA-II from t0081&#x27;s gen-7 final population for at least 5 more generations with adaptive HV-plateau stop (&lt;1% over 3-gen window); hard cap +10 gens, $5.00 cost.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

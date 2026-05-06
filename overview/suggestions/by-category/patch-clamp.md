@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-23 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **19
-open** (2 high, 14 medium, 3 low), **4 closed**.
+24 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **20
+open** (2 high, 15 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -231,6 +231,33 @@ distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density
 inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
 Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
 comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Peak-rate re-analysis of cells 1559 / 1677 for direct comparison
+with Trenholm 2013 / Oesch 2005</strong> (S-0083-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+
+Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the project's
+first cells to combine biologically-plausible DSI with PD firing rates above 30 Hz mean.
+Published `[Trenholm2013, Results p. 14064]` and `[Oesch2005, Results p. 754]` report peak
+rather than mean PD rates: 198 Hz Gaussian-convolved peak (Trenholm) and 148 Hz modal peak
+(Oesch). The current PD-rate metric is mean rate over 1400 ms; converting cells 1559 / 1677 to
+peak rate would resolve the mean-vs-peak metric mismatch and enable direct numerical
+comparison with Trenholm / Oesch. Re-run cells 1559 and 1677 in subprocess with
+full-resolution voltage / spike traces preserved, compute Gaussian-convolved instantaneous
+rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
+Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
+preserved; otherwise experiment-run with 2-cell budget < $0.20).
 
 </details>
 

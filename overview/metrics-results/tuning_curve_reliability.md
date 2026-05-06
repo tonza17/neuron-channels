@@ -1,6 +1,6 @@
 # Tuning Curve Reliability
 
-**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 219
+**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 238
 
 [Back to all metrics](README.md)
 
@@ -225,3 +225,22 @@
 | 217 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 747 (gen 7) | — |
 | 218 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 762 (gen 7) | — |
 | 219 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 767 (gen 7) [JOINT PASS] | — |
+| 220 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 627 (gen 6) | — |
+| 221 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 664 (gen 6) | — |
+| 222 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1238 (gen 12) | — |
+| 223 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1304 (gen 13) [JOINT PASS] | — |
+| 224 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1328 (gen 13) | — |
+| 225 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1457 (gen 15) | — |
+| 226 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1484 (gen 15) | — |
+| 227 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1494 (gen 15) | — |
+| 228 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1504 (gen 15) | — |
+| 229 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1509 (gen 15) | — |
+| 230 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1559 (gen 16) [JOINT PASS] | — |
+| 231 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1586 (gen 16) | — |
+| 232 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1617 (gen 16) | — |
+| 233 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1636 (gen 17) | — |
+| 234 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1642 (gen 17) | — |
+| 235 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1677 (gen 17) [JOINT PASS] | — |
+| 236 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1678 (gen 17) | — |
+| 237 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1723 (gen 17) | — |
+| 238 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Closest-to-joint cell 767 (gen 7) | — |

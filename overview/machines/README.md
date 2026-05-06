@@ -1,24 +1,25 @@
-# Machine Provisioning (4 machines)
+# Machine Provisioning (5 machines)
 
-**4** machines provisioned across **4** tasks. Total cost: **$8.13**.
+**5** machines provisioned across **5** tasks. Total cost: **$13.96**.
 
-**2** failed provisioning attempts wasted **$0.00** (33.3% failure rate).
+**2** failed provisioning attempts wasted **$0.00** (28.6% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 4 |
+| Total machines | 5 |
 | Total failed attempts | 2 |
-| Failure rate | 33.3% |
-| Avg provisioning time | 660s |
-| Total cost | $8.13 |
+| Failure rate | 28.6% |
+| Avg provisioning time | 690s |
+| Total cost | $13.96 |
 | Total wasted cost | $0.00 |
 
 ## Cost by GPU Tier
 
 | GPU | Total Cost (USD) |
 |-----|-----------------|
+| RTX 4060 Ti (idle, unused) | $5.83 |
 | RTX 5060 Ti (idle, unused) | $3.93 |
 | RTX PRO 4000 (idle, unused) | $3.14 |
 | Quadro P4000 | $1.06 |
@@ -38,3 +39,4 @@
 | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | 1 | $3.93 | 1 | RTX 5060 Ti (idle, unused) |
 | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | 1 | $0.75 | 1 | RTX PRO 4000 (idle, unused) |
 | [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | 1 | $2.39 | 0 | RTX PRO 4000 (idle, unused) |
+| [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | 1 | $5.83 | 0 | RTX 4060 Ti (idle, unused) |

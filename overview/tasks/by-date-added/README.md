@@ -6,26 +6,29 @@
 
 ---
 
-## 2026-05-05 (4)
+## 2026-05-06 (1)
 
-## ⏳ In Progress
+## ✅ Completed
 
 <details>
-<summary>⏳ 0083 — <strong>Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau
+<summary>✅ 0083 — <strong>Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau
 stop</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0083_bedb_v3_extend_nsga2_gen8plus` |
-| **Status** | in_progress |
-| **Effective date** | 2026-05-05 |
+| **Status** | completed |
+| **Effective date** | 2026-05-06 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
 | **Expected assets** | — |
 | **Source suggestion** | `S-0081-02` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
 | **Start time** | 2026-05-05T13:02:26Z |
+| **End time** | 2026-05-06T08:31:36Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
 | **Task folder** | [`t0083_bedb_v3_extend_nsga2_gen8plus/`](../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) |
 
 # Extend t0081 NSGA-II from gen-7 with Adaptive HV-Plateau Stop
 
@@ -144,7 +147,39 @@ saved evaluation history rather than overwriting it. The final `all_evaluations.
 contain the union of t0081's 768 cells plus this task's additional cells (480-960), with
 consistent generation numbering (t0081 ends at gen 7; this task starts at gen 8).
 
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0083_bedb_v3_extend_nsga2_gen8plus"
+> date_completed: "2026-05-06"
+> ---
+> **Results Summary -- t0083_bedb_v3_extend_nsga2_gen8plus**
+>
+> **Summary**
+>
+> The NSGA-II warm-start continuation extended t0081's run from gen 7 through gen 17 on the
+> same v3
+> Bed B substrate, producing **14 new joint-pass cells** (DSI >= 0.4 AND PD >= 10 Hz) on top
+> of
+> t0081's single inherited cell 767, for a project total of **15 joint-pass cells** at
+> completion.
+> Hypervolume grew from **16.330 at gen 7** to **35.576 at gen 17** (+118%) over 960
+> additional
+> evaluations; the run terminated under the gen-17 hard cap rather than the HV-plateau
+> watchdog.
+>
+> **Metrics**
+>
+> * **15 joint-pass cells** across 1728 total evaluations: 1 inherited from t0081 (cell 767,
+>   gen 7,
+> DSI 0.494 / PD 11.39 Hz) and 14 new ones produced in t0083 generations 13-17.
+> * **3 of those 15 joint-pass cells lie on the final Pareto front**: cell 1304 (gen 13, DSI
+>   0.7652 /
+
 </details>
+
+## 2026-05-05 (3)
 
 ## ✅ Completed
 
