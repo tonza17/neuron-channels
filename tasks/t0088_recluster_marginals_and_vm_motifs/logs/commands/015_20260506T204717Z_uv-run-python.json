@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0088_recluster_marginals_and_vm_motifs",
+  "command": "uv run python -m tasks.t0088_recluster_marginals_and_vm_motifs.code.attribution_metric",
+  "exit_code": 0,
+  "duration_seconds": 0.799,
+  "started_at": "2026-05-06T20:47:17Z",
+  "completed_at": "2026-05-06T20:47:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0088_recluster_marginals_and_vm_motifs",
+  "stdout_file": "015_20260506T204717Z_uv-run-python.stdout.txt",
+  "stderr_file": "015_20260506T204717Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

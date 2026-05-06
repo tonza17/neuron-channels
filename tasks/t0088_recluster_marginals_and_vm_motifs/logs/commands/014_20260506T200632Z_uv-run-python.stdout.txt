@@ -1,0 +1,81 @@
+[run_deepdive] 4 representative cell(s) loaded; will run 16 directions per cell.
+[run_deepdive] Building DSGC cell with AIS...
+[run_deepdive] Cell built: 177 terminal dends, 347 non-terminal dends
+
+[run_deepdive] Running cell 1604 (cluster 0, gen 16)...
+  [cell 1604 dir   0.0°] spikes=12  peak=25.1 mV  stable=True
+  [cell 1604 dir  22.5°] spikes=3  peak=18.8 mV  stable=True
+  [cell 1604 dir  45.0°] spikes=2  peak=26.8 mV  stable=True
+  [cell 1604 dir  67.5°] spikes=9  peak=25.4 mV  stable=True
+  [cell 1604 dir  90.0°] spikes=8  peak=26.3 mV  stable=True
+  [cell 1604 dir 112.5°] spikes=9  peak=27.7 mV  stable=True
+  [cell 1604 dir 135.0°] spikes=3  peak=-1.0 mV  stable=True
+  [cell 1604 dir 157.5°] spikes=2  peak=6.7 mV  stable=True
+  [cell 1604 dir 180.0°] spikes=2  peak=-0.9 mV  stable=True
+  [cell 1604 dir 202.5°] spikes=3  peak=18.1 mV  stable=True
+  [cell 1604 dir 225.0°] spikes=1  peak=-9.7 mV  stable=True
+  [cell 1604 dir 247.5°] spikes=0  peak=-10.5 mV  stable=True
+  [cell 1604 dir 270.0°] spikes=8  peak=20.9 mV  stable=True
+  [cell 1604 dir 292.5°] spikes=1  peak=-1.2 mV  stable=True
+  [cell 1604 dir 315.0°] spikes=5  peak=9.6 mV  stable=True
+  [cell 1604 dir 337.5°] spikes=4  peak=13.8 mV  stable=True
+[cell 1604 cluster 0] DSI original=0.4027  DSI(PD-ND)=0.7143  PD=8.57 Hz  ND=1.43 Hz
+
+[run_deepdive] Running cell 1634 (cluster 1, gen 17)...
+  [cell 1634 dir   0.0°] spikes=6  peak=30.8 mV  stable=True
+  [cell 1634 dir  22.5°] spikes=7  peak=22.6 mV  stable=True
+  [cell 1634 dir  45.0°] spikes=12  peak=26.6 mV  stable=True
+  [cell 1634 dir  67.5°] spikes=9  peak=20.1 mV  stable=True
+  [cell 1634 dir  90.0°] spikes=1  peak=-9.2 mV  stable=True
+  [cell 1634 dir 112.5°] spikes=4  peak=12.7 mV  stable=True
+  [cell 1634 dir 135.0°] spikes=5  peak=28.9 mV  stable=True
+  [cell 1634 dir 157.5°] spikes=1  peak=-7.9 mV  stable=True
+  [cell 1634 dir 180.0°] spikes=4  peak=28.5 mV  stable=True
+  [cell 1634 dir 202.5°] spikes=2  peak=20.1 mV  stable=True
+  [cell 1634 dir 225.0°] spikes=3  peak=-4.3 mV  stable=True
+  [cell 1634 dir 247.5°] spikes=1  peak=-9.2 mV  stable=True
+  [cell 1634 dir 270.0°] spikes=8  peak=23.1 mV  stable=True
+  [cell 1634 dir 292.5°] spikes=6  peak=31.1 mV  stable=True
+  [cell 1634 dir 315.0°] spikes=10  peak=31.0 mV  stable=True
+  [cell 1634 dir 337.5°] spikes=5  peak=12.5 mV  stable=True
+[cell 1634 cluster 1] DSI original=0.6893  DSI(PD-ND)=0.2000  PD=4.29 Hz  ND=2.86 Hz
+
+[run_deepdive] Running cell 767 (cluster 2, gen 7)...
+  [cell 767 dir   0.0°] spikes=4  peak=9.9 mV  stable=True
+  [cell 767 dir  22.5°] spikes=4  peak=21.7 mV  stable=True
+  [cell 767 dir  45.0°] spikes=6  peak=22.8 mV  stable=True
+  [cell 767 dir  67.5°] spikes=6  peak=9.6 mV  stable=True
+  [cell 767 dir  90.0°] spikes=4  peak=-3.5 mV  stable=True
+  [cell 767 dir 112.5°] spikes=3  peak=6.8 mV  stable=True
+  [cell 767 dir 135.0°] spikes=2  peak=19.3 mV  stable=True
+  [cell 767 dir 157.5°] spikes=0  peak=-12.4 mV  stable=True
+  [cell 767 dir 180.0°] spikes=1  peak=29.9 mV  stable=True
+  [cell 767 dir 202.5°] spikes=1  peak=17.3 mV  stable=True
+  [cell 767 dir 225.0°] spikes=1  peak=-4.5 mV  stable=True
+  [cell 767 dir 247.5°] spikes=2  peak=4.7 mV  stable=True
+  [cell 767 dir 270.0°] spikes=2  peak=15.9 mV  stable=True
+  [cell 767 dir 292.5°] spikes=2  peak=22.1 mV  stable=True
+  [cell 767 dir 315.0°] spikes=4  peak=14.4 mV  stable=True
+  [cell 767 dir 337.5°] spikes=6  peak=-5.6 mV  stable=True
+[cell 767 cluster 2] DSI original=0.4941  DSI(PD-ND)=0.6000  PD=2.86 Hz  ND=0.71 Hz
+
+[run_deepdive] Running cell 1639 (cluster 3, gen 17)...
+  [cell 1639 dir   0.0°] spikes=5  peak=20.2 mV  stable=True
+  [cell 1639 dir  22.5°] spikes=4  peak=17.8 mV  stable=True
+  [cell 1639 dir  45.0°] spikes=4  peak=26.5 mV  stable=True
+  [cell 1639 dir  67.5°] spikes=6  peak=25.0 mV  stable=True
+  [cell 1639 dir  90.0°] spikes=1  peak=24.7 mV  stable=True
+  [cell 1639 dir 112.5°] spikes=4  peak=32.3 mV  stable=True
+  [cell 1639 dir 135.0°] spikes=1  peak=24.8 mV  stable=True
+  [cell 1639 dir 157.5°] spikes=1  peak=13.3 mV  stable=True
+  [cell 1639 dir 180.0°] spikes=2  peak=22.8 mV  stable=True
+  [cell 1639 dir 202.5°] spikes=2  peak=24.6 mV  stable=True
+  [cell 1639 dir 225.0°] spikes=2  peak=31.7 mV  stable=True
+  [cell 1639 dir 247.5°] spikes=2  peak=-0.0 mV  stable=True
+  [cell 1639 dir 270.0°] spikes=1  peak=-6.0 mV  stable=True
+  [cell 1639 dir 292.5°] spikes=1  peak=3.6 mV  stable=True
+  [cell 1639 dir 315.0°] spikes=2  peak=21.1 mV  stable=True
+  [cell 1639 dir 337.5°] spikes=3  peak=12.1 mV  stable=True
+[cell 1639 cluster 3] DSI original=0.4876  DSI(PD-ND)=0.4286  PD=3.57 Hz  ND=1.43 Hz
+
+[run_deepdive DONE] 64/64 stable simulations (expected 64)

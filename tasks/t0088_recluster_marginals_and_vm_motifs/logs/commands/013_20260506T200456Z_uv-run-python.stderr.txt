@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\code\run_deepdive.py", line 455, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\code\run_deepdive.py", line 438, in main
+    results: list[DirectionResult] = run_cell(cell=cell, entry=entry)
+                                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\code\run_deepdive.py", line 285, in run_cell
+    apply_parameter_vector(cell=cell, params=pv)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 195, in apply_parameter_vector
+    ensure_t80_dll_loaded(h=h)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 50, in ensure_t80_dll_loaded
+    dll_path = str(resolve_t80_mod_library()).replace("\\", "/")
+                   ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py", line 34, in resolve_t80_mod_library
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build\nrnmech.dll.

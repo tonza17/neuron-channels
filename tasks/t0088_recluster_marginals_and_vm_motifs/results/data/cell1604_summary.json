@@ -1,0 +1,136 @@
+{
+  "cell_id": 1604,
+  "cluster_id": 0,
+  "generation": 16,
+  "dsi_original": 0.40265486725663713,
+  "pd_rate_hz_original": 11.321428571428571,
+  "dsi_measured_pd_minus_nd": 0.7142857142857143,
+  "pd_rate_hz_measured": 8.571428571428571,
+  "nd_rate_hz_measured": 1.4285714285714286,
+  "v3_params": {
+    "gnmda_dend": 0.008513997151042719,
+    "mg_conc_mm": 0.2909531492240751,
+    "voff_nmda": 3.7137880636973373,
+    "nav16_dend_distal": 0.008301564031923938,
+    "nap_dend_distal": 0.0007940603593525712
+  },
+  "recording_sections": {
+    "soma": "DSGC[0].soma",
+    "mid": "DSGC[0].dend[35]",
+    "distal": "DSGC[0].dend[267]"
+  },
+  "direction_results": [
+    {
+      "cell_id": 1604,
+      "direction_deg": 0.0,
+      "spike_count": 12,
+      "peak_vm_mv": 25.104172685316076,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 22.5,
+      "spike_count": 3,
+      "peak_vm_mv": 18.75480596413386,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 45.0,
+      "spike_count": 2,
+      "peak_vm_mv": 26.84727386464545,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 67.5,
+      "spike_count": 9,
+      "peak_vm_mv": 25.351244390339993,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 90.0,
+      "spike_count": 8,
+      "peak_vm_mv": 26.256821348849858,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 112.5,
+      "spike_count": 9,
+      "peak_vm_mv": 27.749371566264152,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 135.0,
+      "spike_count": 3,
+      "peak_vm_mv": -1.040260388769049,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 157.5,
+      "spike_count": 2,
+      "peak_vm_mv": 6.704035737019378,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 180.0,
+      "spike_count": 2,
+      "peak_vm_mv": -0.8671746595522194,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 202.5,
+      "spike_count": 3,
+      "peak_vm_mv": 18.128279858699784,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 225.0,
+      "spike_count": 1,
+      "peak_vm_mv": -9.736978927071286,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 247.5,
+      "spike_count": 0,
+      "peak_vm_mv": -10.457589690021877,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 270.0,
+      "spike_count": 8,
+      "peak_vm_mv": 20.884881275818213,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 292.5,
+      "spike_count": 1,
+      "peak_vm_mv": -1.2453836835744347,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 315.0,
+      "spike_count": 5,
+      "peak_vm_mv": 9.617505936183413,
+      "is_stable": true
+    },
+    {
+      "cell_id": 1604,
+      "direction_deg": 337.5,
+      "spike_count": 4,
+      "peak_vm_mv": 13.789647949654276,
+      "is_stable": true
+    }
+  ]
+}

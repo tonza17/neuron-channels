@@ -1,0 +1,94 @@
+{
+  "verdict": "shared_mechanism_different_scale",
+  "n_clusters": 4,
+  "unique_dominants": [
+    "nap"
+  ],
+  "fractional_spread_across_clusters": {
+    "nmda": 0.0,
+    "nav16": 0.12311212692459157,
+    "nap": 0.1231121269245915
+  },
+  "per_cluster_narrative": [
+    {
+      "cluster_id": 0,
+      "representative_cell_id": 1604,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.011999228379888913,
+      "frac_nap": 0.9880007716201111,
+      "dominant_mechanism": "nap",
+      "narrative": "Cluster 0 (representative cell 1604): frac NMDA = 0.000, frac Nav1.6 = 0.012, frac NaP = 0.988; dominant = nap."
+    },
+    {
+      "cluster_id": 1,
+      "representative_cell_id": 1634,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.12583883333391055,
+      "frac_nap": 0.8741611666660895,
+      "dominant_mechanism": "nap",
+      "narrative": "Cluster 1 (representative cell 1634): frac NMDA = 0.000, frac Nav1.6 = 0.126, frac NaP = 0.874; dominant = nap."
+    },
+    {
+      "cluster_id": 2,
+      "representative_cell_id": 767,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.12463090036376288,
+      "frac_nap": 0.8753690996362371,
+      "dominant_mechanism": "nap",
+      "narrative": "Cluster 2 (representative cell 767): frac NMDA = 0.000, frac Nav1.6 = 0.125, frac NaP = 0.875; dominant = nap."
+    },
+    {
+      "cluster_id": 3,
+      "representative_cell_id": 1639,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.0027267064093189804,
+      "frac_nap": 0.997273293590681,
+      "dominant_mechanism": "nap",
+      "narrative": "Cluster 3 (representative cell 1639): frac NMDA = 0.000, frac Nav1.6 = 0.003, frac NaP = 0.997; dominant = nap."
+    }
+  ],
+  "t0084_baseline_cell_767": {
+    "cell_id": 767,
+    "frac_nmda": 0.0,
+    "frac_nav16": 0.07,
+    "frac_nap": 0.93,
+    "dominant_mechanism": "nap",
+    "directions": 8,
+    "note": "t0084 attribution computed at 8-direction angular resolution on cell 767 only. t0088 extends this to 16 directions and applies to per-cluster representatives."
+  },
+  "verdict_rationale": "All clusters share the same dominant mechanism in PD-minus-ND attribution; they differ in parameter scale (parameter-vector position in 54-d space) but not in which channel drives the PD response. verdict = shared_mechanism_different_scale.",
+  "attributions": [
+    {
+      "cluster_id": 0,
+      "representative_cell_id": 1604,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.011999228379888913,
+      "frac_nap": 0.9880007716201111,
+      "dominant_mechanism": "nap"
+    },
+    {
+      "cluster_id": 1,
+      "representative_cell_id": 1634,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.12583883333391055,
+      "frac_nap": 0.8741611666660895,
+      "dominant_mechanism": "nap"
+    },
+    {
+      "cluster_id": 2,
+      "representative_cell_id": 767,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.12463090036376288,
+      "frac_nap": 0.8753690996362371,
+      "dominant_mechanism": "nap"
+    },
+    {
+      "cluster_id": 3,
+      "representative_cell_id": 1639,
+      "frac_nmda": 0.0,
+      "frac_nav16": 0.0027267064093189804,
+      "frac_nap": 0.997273293590681,
+      "dominant_mechanism": "nap"
+    }
+  ]
+}

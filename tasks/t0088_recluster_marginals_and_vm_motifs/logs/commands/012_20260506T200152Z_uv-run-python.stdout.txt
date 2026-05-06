@@ -1,0 +1,2 @@
+[biological_scorecard] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\images\biological_plausibility_heatmap.png
+[biological_scorecard] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\data\recluster_biological_scorecard.json: 4 clusters scored against 9 priors

@@ -1,0 +1,17 @@
+{
+  "cell_id": 767,
+  "cluster_id": 2,
+  "frac_nmda": 0.0,
+  "frac_nav16": 0.12463090036376288,
+  "frac_nap": 0.8753690996362371,
+  "delta_nmda_nA_ms": 0.0,
+  "delta_nav16_nA_ms": 3.175331114076141e-05,
+  "delta_nap_nA_ms": 0.00022302548808224298,
+  "dominant_mechanism": "nap",
+  "pd_int_nmda_nA_ms": 0.0,
+  "pd_int_nav16_nA_ms": -0.0027182899186605335,
+  "pd_int_nap_nA_ms": -0.036675779258005456,
+  "nd_int_nmda_nA_ms": 0.0,
+  "nd_int_nav16_nA_ms": -0.002750043229801295,
+  "nd_int_nap_nA_ms": -0.0368988047460877
+}
