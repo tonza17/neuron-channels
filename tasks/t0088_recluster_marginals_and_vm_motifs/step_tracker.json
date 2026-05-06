@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0086 biological scoring code, t0084 run_deepdive.py recording pattern, t0083/t0081 cell parameter loading; identify what to copy into code/.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T19:47:40Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T19:54:16Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
