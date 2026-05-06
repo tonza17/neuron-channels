@@ -59,10 +59,10 @@
       "step": 7,
       "name": "planning",
       "description": "Write plan with REQ-1..REQ-N covering robustness + cluster + biology phases plus REQ-X cost-watchdog rate-fix.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-06T13:17:58Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\007_planning/"
     },
     {
       "step": 8,
