@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36240604",
+    "gpu": "(idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 0,
+    "ram_gb": 503,
+    "duration_hours": 4.5911,
+    "cost_usd": 1.595
+  }
+]

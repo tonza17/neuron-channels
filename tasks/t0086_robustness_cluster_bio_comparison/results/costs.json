@@ -1,0 +1,16 @@
+{
+  "total_cost_usd": 1.595,
+  "breakdown": {
+    "vast-ai-cpu-epyc-7b13": {
+      "description": "Vast.ai instance 36240604 (AMD EPYC 7B13 64-Core, 42.67 effective cores, 503 GB RAM, no GPU). 4.5911 hours wall-clock from created_at 2026-05-06T13:36:14Z to destroyed_at 2026-05-06T18:11:42Z at $0.3474/hr. Plus ~$0.001 wasted on the failed first attempt (offer 24887406, instance 36240284) which was destroyed after Vast.ai SSH proxy port-forward failures.",
+      "cost_usd": 1.595,
+      "actual_rate_usd_per_hour": 0.3474,
+      "actual_duration_hours": 4.5911
+    }
+  },
+  "services": {
+    "vast_ai": 1.595
+  },
+  "budget_limit": 3.5,
+  "note": "REQ-X verified working. Cost watchdog read $0.3474/hr from selected_offer.price_per_hour in machine_log.json (NOT a hard-coded constant) and tracked $1.3335 in-loop at Phase A completion. Final billable cost $1.595 includes the additional ~12 minutes between Phase A completion and the teardown destroy command (Vast.ai bills until destroyed_at). Hard cap $3.50 was never approached. Compare to t0083's $0.83 overrun caused by a hard-coded $0.2382/hr rate with actual offer at $0.3209/hr -- this fix prevents that class of bug."
+}
