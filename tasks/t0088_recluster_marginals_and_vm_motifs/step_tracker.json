@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md (V2 spec_version with Examples min 10 + Task Requirement Coverage final section); metrics.json {} since this task produces an answer not metrics.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T20:51:40Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T20:59:11Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
