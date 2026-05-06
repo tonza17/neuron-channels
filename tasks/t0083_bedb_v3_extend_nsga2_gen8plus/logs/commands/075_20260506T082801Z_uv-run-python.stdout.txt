@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1011 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[2]: title is 134 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1088 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1026 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[5]: title is 137 characters, exceeds 120[0m
+
+[33m[1mPASSED[0m — 0 error(s), 5 warning(s)
