@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36186200",
+    "gpu": "RTX 4060 Ti (idle, unused; CPU-only NEURON+pymoo workload)",
+    "gpu_count": 0,
+    "ram_gb": 332,
+    "duration_hours": 18.1614,
+    "cost_usd": 5.828
+  }
+]

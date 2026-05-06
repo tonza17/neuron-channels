@@ -1,0 +1,14 @@
+{
+  "total_cost_usd": 5.828,
+  "breakdown": {
+    "vast-ai-cpu-epyc-7b13": {
+      "description": "Vast.ai instance 36186200 (AMD EPYC 7B13 64-Core, 42.67 effective cores, 332 GB RAM, RTX 4060 Ti idle/unused). 18.1614 hours wall-clock from created_at 2026-05-05T14:01:22Z to destroyed_at 2026-05-06T08:11:02Z at $0.3209/hr.",
+      "cost_usd": 5.828
+    }
+  },
+  "services": {
+    "vast_ai": 5.828
+  },
+  "budget_limit": 5.0,
+  "note": "Run cost slightly exceeded the $5.00 budget cap configured on the in-loop watchdog. Root cause: the watchdog inherited the t0080/t0081 hard-coded hourly rate of $0.2382/hr from arf.libraries.t0080_loop._HARD_BUDGET_USD, but the actual offer 24887414 selected for t0083 billed at $0.3209/hr (1.347x). The watchdog therefore reported $4.1149 spent at completion (17.3 h x $0.2382/hr) while the true Vast.ai charge was $5.55 at run-end and $5.83 at instance-destroy (additional ~50 minutes of idle billable time between gen-17 completion and the teardown step). Cell-cost accounting remains intact: 960 new evaluations / 17.3 h compute => 55.5 cells/h => $0.00578/cell, comparable to t0081's $0.00567/cell."
+}
