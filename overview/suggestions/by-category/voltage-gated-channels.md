@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 79 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **66 open** (15
-high, 42 medium, 9 low), **13 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **65 open** (14
+high, 42 medium, 9 low), **14 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -182,32 +182,6 @@ fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collaps
 nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
 Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
 experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
-cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0083-02` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
-range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
-Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
-0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
-distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
-clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
-report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
-Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
-t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
-1304's motif? Recommended task types: data-analysis.
 
 </details>
 
@@ -1854,6 +1828,34 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
+cells to identify distinct biophysical motifs</s> — covered by <a
+href="../../../tasks/t0086_robustness_cluster_bio_comparison/"><code>t0086_robustness_cluster_bio_comparison</code></a>
+(S-0083-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
+range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
+Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
+0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
+distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
+clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
+report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
+Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
+t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
+1304's motif? Recommended task types: data-analysis.
 
 </details>
 

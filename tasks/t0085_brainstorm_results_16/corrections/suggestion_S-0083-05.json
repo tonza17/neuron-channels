@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0085-02",
+  "correcting_task": "t0085_brainstorm_results_16",
+  "target_task": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "target_kind": "suggestion",
+  "target_id": "S-0083-05",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0083-05 proposes a multi-seed smoke gate / robustness check across t0083's joint-pass cells to determine whether each cell reproduces under different RNG seeds. t0086 (robustness_cluster_bio_comparison, this brainstorm session's primary commission) covers this gate exactly in its Phase A: re-evaluate the top 20 cells (15 joint-pass cells from t0081+t0083 plus 5 closest near-pass cells from the t0083 Pareto front) at 24 directions x 30 seeds x 5 outer RNG-seed replications and classify each cell as Genuine (5/5 replications joint-pass), Marginal (3-4/5), or Stochastic (<=2/5). The 30-seed x 5-outer-rep budget is larger than S-0083-05's original scope and produces the cleaner three-way classification needed for downstream cluster analysis. Rejecting as covered by t0086."
+}

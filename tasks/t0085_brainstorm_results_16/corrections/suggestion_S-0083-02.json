@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0085-01",
+  "correcting_task": "t0085_brainstorm_results_16",
+  "target_task": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "target_kind": "suggestion",
+  "target_id": "S-0083-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0083-02 proposes motif clustering on the 18-cell t0083 Pareto front in the 54-d parameter space (k-means + hierarchical clustering, silhouette + BIC for k selection). t0086 (robustness_cluster_bio_comparison, this brainstorm session's primary commission, source_suggestion S-0083-02) covers this analysis exactly in its Phase B, applied to a stricter subset (Genuine cells only, after Phase A robustness filtering at 24 dirs x 30 seeds x 5 outer-seed reps) with a richer technique stack (k-means + hierarchical with cosine and euclidean metrics + UMAP + t-SNE) and the additional biological-comparison Phase C overlaid on top. Rejecting as covered by t0086."
+}

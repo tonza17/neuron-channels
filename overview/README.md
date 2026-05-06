@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-84-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-86-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-324-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (29K)
-| [full](llm-context/full.xml) (466K) | [roadmap](llm-context/roadmap.xml) (94K) |
-[results](llm-context/results-deep-dive.xml) (368K) |
+| [full](llm-context/full.xml) (472K) | [roadmap](llm-context/roadmap.xml) (96K) |
+[results](llm-context/results-deep-dive.xml) (371K) |
 [assets](llm-context/literature-and-assets.xml) (52K)
 
-*Last updated: 2026-05-06 08:37 UTC*
+*Last updated: 2026-05-06 12:59 UTC*
 
 * **Budget**: **$14** spent of $20
 * **Remaining**: **$6**
@@ -59,10 +59,11 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`description`](../tasks/t0086_robustness_cluster_bio_comparison/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -82,10 +83,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (77 total)](tasks/by-status/completed.md)
+## [Recently Completed (78 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
 | 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`results`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) | 2026-05-06 08:31 |
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
 | 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`results`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/results/results_detailed.md) | 2026-05-05 16:45 |
@@ -95,9 +97,8 @@ No blocked tasks.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
 | 0077 | [Brainstorm results session 13](../overview/tasks/task_pages/t0077_brainstorm_results_13.md) | [`results`](../tasks/t0077_brainstorm_results_13/results/results_detailed.md) | 2026-05-03 12:55 |
 | 0076 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`results`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/results_detailed.md) | 2026-05-03 04:18 |
-| 0074 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | [`results`](../tasks/t0074_channel_tuning_width_bed_a/results/results_detailed.md) | 2026-05-02 03:55 |
 
-*67 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*68 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +123,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (286 open)](suggestions/)
+## [Recent Suggestions (285 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -140,26 +141,6 @@ cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell 
 grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
 = 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
-cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
-range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
-Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
-0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
-distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
-clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
-report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
-Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
-t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
-1304's motif? Recommended task types: data-analysis.
 
 </details>
 
@@ -310,11 +291,29 @@ existence when S-0080-06 was filed. Recommended task types: data-analysis.
 
 </details>
 
-*276 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>📚 <strong>Promote the t0081 warm-start NSGA-II harness into a reusable
+bedb_warmstart_nsga2_harness library asset</strong> (S-0081-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-05 | **Source**:
+[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+
+t0081's harness combines (a) verbatim copying of prior-task Pareto cells, (b)
+dimension-projection of lower-d Pareto cells into the current-d space with random fill on new
+dims, (c) fresh LHS for diversity, and (d) pymoo NSGA-II with cost-cap watchdog. Promote this
+combination into a versioned library asset (`bedb_warmstart_nsga2_harness`) under the asset
+library type with documented APIs for the warm-start composition function and the NSGA-II
+driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d
+harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different
+optimisers. Recommended task types: write-library.
+
+</details>
+
+*275 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (41)](suggestions/)
+## [High Priority Suggestions (40)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -332,26 +331,6 @@ cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell 
 grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
 = 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Parameter-cluster analysis of t0083's 15 joint-pass and 18 Pareto
-cells to identify distinct biophysical motifs</strong> (S-0083-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-The 15 joint-pass cells (DSI >= 0.4 AND PD >= 10 Hz) and 18 Pareto cells span a wide (DSI, PD)
-range from cell 1304 (0.77 / 14 Hz) through cell 1559 (0.71 / 39 Hz) to cell 1723 (1.00 / 7
-Hz). Comparison of the first 6 parameter dimensions (e.g. cell 1304 [0.006, 0.001, 0.999,
-0.995, 0.876, 0.992] vs cell 767 [0.008, 0.018, 1.000, 1.000, 0.250, 0.000]) suggests >=2
-distinct biophysical motifs. Cluster the 18 Pareto cells in 54-d space via hierarchical
-clustering (Ward linkage on standardised parameters); identify 2-4 motif clusters; for each
-report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend_distal), and
-Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
-t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
-1304's motif? Recommended task types: data-analysis.
 
 </details>
 
@@ -503,7 +482,27 @@ Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off obser
 
 </details>
 
-*31 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🔧 <strong>Correction task to fix three t0076 implementation issues: NEURON
+re-init, qNEHVI deprecation, GP input normalisation</strong> (S-0076-03)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
+
+Three concrete defects identified in the t0076 implementation block additional value from the
+existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python
+process, hitting NEURON's `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of
+3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution
+requires the script to run from the project root, not the task folder. Fix: anchor paths via
+`arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated
+qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a
+Normalize input transform -- BoTorch warned the fit is suboptimal. Fix: migrate to qLogNEHVI
+and wrap inputs in [0, 1]^d. Replay the 430-cell history through the corrected stack and
+confirm Pareto front is unchanged or expands. Recommended task types: correction.
+
+</details>
+
+*30 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

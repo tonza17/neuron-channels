@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0085-03",
+  "correcting_task": "t0085_brainstorm_results_16",
+  "target_task": "t0081_bedb_v3_warmstart_nsga2",
+  "target_kind": "suggestion",
+  "target_id": "S-0081-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0081-01 proposes multi-replicate confirmation of cell 767 (and other joint-pass cells) at 3-5 replicates and ~$5-10 to quantify reproducibility under different RNG seeds. The multi-replicate confirmation aspect is covered by t0086 (robustness_cluster_bio_comparison, this brainstorm session's primary commission) in its Phase A: cell 767 is included in the 20-cell set, and the 5-outer-seed-replication design with Genuine/Marginal/Stochastic classification directly answers whether 767 (and the 14 t0083 joint-pass cells) reproduce under different RNG seeds. The remaining S-0081-01 aspects (different morphologies, different conductance density realisations) are deferred to optional follow-up tasks if t0086 Phase A flags reproducibility issues. The bundled t0086 design also fits within the project's tighter cost envelope ($3.50 hard cap, $1.93-$2.57 estimated) compared to S-0081-01's original $5-10 estimate. Rejecting as covered (multi-replicate aspect) by t0086."
+}

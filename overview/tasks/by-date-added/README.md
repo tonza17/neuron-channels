@@ -1,14 +1,153 @@
 # Tasks by Date Added
 
-84 tasks grouped by effective task date.
+86 tasks grouped by effective task date.
 
 [Back to all tasks](../README.md)
 
 ---
 
-## 2026-05-06 (1)
+## 2026-05-06 (2)
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0085 — <strong>Brainstorm results session 16</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0085_brainstorm_results_16` |
+| **Status** | completed |
+| **Effective date** | 2026-05-06 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md), [`t0058_brainstorm_results_11`](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md), [`t0062_nmda_escape_with_ampa_priming`](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md), [`t0064_hh_current_step_test`](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md), [`t0073_brainstorm_results_12`](../../../overview/tasks/task_pages/t0073_brainstorm_results_12.md), [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md), [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0077_brainstorm_results_13`](../../../overview/tasks/task_pages/t0077_brainstorm_results_13.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0079_brainstorm_results_14`](../../../overview/tasks/task_pages/t0079_brainstorm_results_14.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0082_brainstorm_results_15`](../../../overview/tasks/task_pages/t0082_brainstorm_results_15.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-06T09:00:00Z |
+| **End time** | 2026-05-06T10:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 16](../../../overview/tasks/task_pages/t0085_brainstorm_results_16.md) |
+| **Task folder** | [`t0085_brainstorm_results_16/`](../../../tasks/t0085_brainstorm_results_16/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0085_brainstorm_results_16/results/results_detailed.md) |
+
+# Brainstorm Session 16: Robustness, Cluster Analysis, and Biological Plausibility of t0083 Joint-Pass Cells
+
+Sixteenth brainstorming session. Run on 2026-05-06 after t0083
+(`bedb_v3_extend_nsga2_gen8plus`) extended t0081's NSGA-II from gen 7 through gen 17 and
+**expanded the joint-pass population from 1 to 15 cells** (1 inherited cell 767 + 14 new cells
+produced in gens 13-17), with 3 of those 15 lying on the final 18-cell Pareto front
+(highest-DSI cell 1304 at DSI 0.7652 / PD 13.96 Hz). Hypervolume grew +118% from gen 7
+(16.330) to gen 17 (35.576) over 960 additional evaluations. t0083's actual cost was $5.83
+against a $5.00 cap (16% over) due to a watchdog rate-bug: the in-loop watchdog used the
+hard-coded $0.2382/hr rate inherited from t0080/t0081, but the actual instance offer billed at
+$0.3209/hr (1.347x). t0084 (`t0081_cell_767_vm_trace_deepdive`) ran in parallel at $0 and
+produced the cell-767 mechanism-attribution answer asset. Total project spend now **$13.96 /
+$20.00** with **$6.04 remaining**.
+
+## Decisions
+
+* **Create t0086** -- `robustness_cluster_bio_comparison`. Bundle three previously open
+  suggestions (S-0083-02 motif clustering, S-0083-05 multi-seed smoke gate / robustness check,
+  and the multi-replicate confirmation aspect of S-0081-01) into a single combined task that
+  runs three sequential phases on top of t0083's 18-cell Pareto front: **Phase A (robustness
+  validation)** re-evaluate the top 20 cells (15 joint-pass cells + 5 closest near-pass cells
+  from t0083's Pareto front by Euclidean distance to the (DSI 0.4, PD 10) joint corner) at 24
+  directions x 30 seeds x 5 outer RNG-seed replications and classify each cell as Genuine (5/5
+  pass), Marginal (3-4/5), or Stochastic (<=2/5); **Phase B (cluster analysis)** k-means +
+  hierarchical clustering with k=2..6 selected by silhouette + BIC on the 54-d parameter
+  vectors of Genuine cells, plus UMAP/t-SNE 2D visualisation; **Phase C (biological
+  comparison)** score each cluster centroid against published priors (Kole 2008 AIS Nav,
+  Werginz 2024 mouse alpha-RGC AIS-to-soma Nav ratio, Sivyer 2013 + Branco-Hausser 2010
+  dendritic NMDA, Oesch 2005 + Goldfinger 2000 + Stuart 1999 distal Nav1.6/NaP, de Rosenroll
+  2026 GABA/AMPA spatial distribution) producing a per-cluster biological-plausibility
+  scorecard (within +/-2 sigma = plausible; +/-2-5 sigma = stretched; >5 sigma = exotic).
+  Output: one **answer asset** per-cluster attribution + cluster characterisation tables +
+  UMAP plot + biological-plausibility scorecard. Compute estimate: 100 cell-evals @ ~720 sims
+  each = ~5-6 hours optimiser time; with overhead ~6-8 hours wall-clock on Vast.ai 64-core
+  EPYC 7B13 = **$1.93-$2.57**; **hard cost cap $3.50** (1.5x estimate). **Hard requirement
+  REQ-X (cost watchdog rate fix)**: cost watchdog MUST use actual per-instance hourly rate
+  from `machine_log.json` `selected_offer.price_per_hour`, not a hard-coded constant. Source
+  suggestions: **S-0083-02** (primary); also covers S-0083-05 and the multi-replicate aspect
+  of S-0081-01. Dependencies: t0024, t0078, t0080, t0081, t0083, t0084.
+
+## Suggestion Cleanup
+
+* **Reject three suggestions** as covered by t0086 (analogous to session 15's S-0080-01/02/03
+  cleanup):
+
+  * **S-0083-02** (motif clustering on the 18 t0083 Pareto cells) -- t0086 Phase B is exactly
+    this analysis, applied to a stricter subset (Genuine cells only, after Phase A robustness
+    filtering), with a richer technique stack (k-means + hierarchical + UMAP) and the
+    additional biological-comparison Phase C overlaid on top.
+
+  * **S-0083-05** (multi-seed smoke gate / robustness check across t0083 joint-pass cells) --
+    t0086 Phase A is exactly this gate, run at the larger 30-seed x 5-outer-rep budget that
+    cleanly separates Genuine / Marginal / Stochastic.
+
+  * **S-0081-01** (multi-replicate confirmation of cell 767 + neighbour cells) -- the
+    multi-replicate confirmation aspect is covered by t0086 Phase A's 5-replication design.
+    Cell 767 is included in the t0086 cell set; the Genuine/Marginal/Stochastic classification
+    directly answers whether 767 reproduces under different RNG seeds. The remaining S-0081-01
+    aspects (different morphologies, different conductance noise profiles) are deferred to
+    optional follow-up tasks if Phase A flags reproducibility issues.
+
+## Reprioritisations
+
+None.
+
+## Tasks Cancelled or Updated
+
+* **Cancelled**: none.
+* **Updated**: none.
+* t0075 (Bed A bio-realistic AIS one-axis sweep) remains queued.
+
+## Assets Produced
+
+No assets in this brainstorm task. The new task t0086 will produce: one answer asset
+attributing each Genuine cluster to known biology (Kole/Werginz/Sivyer/Oesch priors) or
+flagging clusters as novel/unphysical, plus cluster characterisation tables (under
+`results/`), UMAP/t-SNE plots, per-cluster centroid + variance tables, per-cluster
+biological-plausibility scorecard, and the robustness-classification table over all 20 cells.
+
+## Budget Context
+
+Project budget $20.00; $13.96 spent before t0086; **$6.04 remaining**. t0086's $3.50 hard cap
+leaves $2.54 buffer for any subsequent S-0083-* follow-ups (e.g., morphology-variation
+replicates, conductance-noise replicates, cross-bed validation). The cost-watchdog rate-fix
+REQ in t0086's plan prevents a t0083-style 16% overrun.
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0085_brainstorm_results_16"
+> date_completed: "2026-05-06"
+> status: "complete"
+> ---
+> **Results Summary: Brainstorm Session 16**
+>
+> **Summary**
+>
+> Sixteenth strategic brainstorm, run on 2026-05-06 after t0083
+> (`bedb_v3_extend_nsga2_gen8plus`)
+> extended t0081's NSGA-II from gen 7 through gen 17 and **expanded the joint-pass cell
+> population
+> from 1 to 15 cells** (1 inherited cell 767 + 14 new in gens 13-17), with hypervolume +118%
+> (16.330
+> -> 35.576), and t0084 (`t0081_cell_767_vm_trace_deepdive`) produced the cell-767
+> mechanism-attribution answer asset at $0 cost. One consolidated follow-up task commissioned:
+> t0086
+> (`robustness_cluster_bio_comparison`) bundles three open suggestions (S-0083-02 motif
+> clustering,
+> S-0083-05 multi-seed robustness gate, multi-replicate aspect of S-0081-01) into three
+> sequential
+> phases on top of t0083's 18-cell Pareto front -- (A) re-evaluate top 20 cells (15 joint-pass
+> + 5
+> closest near-pass) at 24 directions x 30 seeds x 5 outer-seed replications and classify
+> Genuine /
+> Marginal / Stochastic; (B) k-means + hierarchical clustering with k=2..6 on Genuine cells'
+> 54-d
+
+</details>
 
 <details>
 <summary>✅ 0083 — <strong>Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau
@@ -13726,5 +13865,221 @@ morphology shortlist.
 >
 > 1. **Create t0002: literature survey of DSGC compartmental models** — one broad survey
 >    covering
+
+</details>
+
+## unknown (1)
+
+## ⏹ Not Started
+
+<details>
+<summary>⏹ 0086 — <strong>Robustness + cluster + bio-comparison of t0081/t0083
+joint-pass cells</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0086_robustness_cluster_bio_comparison` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | `S-0083-02` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Task page** | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Task folder** | [`t0086_robustness_cluster_bio_comparison/`](../../../tasks/t0086_robustness_cluster_bio_comparison/) |
+
+# Robustness Validation and Parameter-Cluster + Biological-Plausibility Analysis of t0083 Joint-Pass Cells
+
+## Motivation
+
+t0083 (`bedb_v3_extend_nsga2_gen8plus`) extended t0081's NSGA-II from gen 7 through gen 17 and
+**expanded the joint-pass cell population from 1 to 15 cells** (1 inherited from t0081 cell
+767 + 14 new in gens 13-17), with 3 of those 15 lying on the final 18-cell Pareto front
+(highest-DSI cell 1304 at DSI 0.7652 / PD 13.96 Hz). Hypervolume grew +118% from gen 7
+(16.330) to gen 17 (35.576). t0084 attributed cell 767's DSI improvement to specific
+dendritic-spike machinery.
+
+Three open questions follow naturally from t0083's expansion:
+
+1. **Are the 15 joint-pass cells reproducible?** t0083's evaluation used 8 directions x 20
+   seeds per cell. Cells that satisfy the joint pass on a single 160-sim evaluation may or may
+   not reproduce under different RNG seeds. The AR(2) release noise + arrival jitter dominate
+   the stochastic variance; some joint-pass cells may be artefacts of a lucky RNG draw.
+
+2. **Are the 15 joint-pass cells distributed across distinct sub-regions of the 54-d parameter
+   space, or do they cluster around a single mode?** t0083's Pareto front spans a wide range
+   of DSI / PD values, suggesting the search is finding multiple distinct architectural
+   strategies that each satisfy joint pass. Cluster analysis can identify these strategies and
+   characterise the parameter envelope of each.
+
+3. **Are the cluster centroids biologically plausible?** The published biological priors
+   constrain key parameters (AIS Nav density per Kole 2008 / Werginz 2024; AIS-to-soma Nav
+   ratio per Werginz 2024; dendritic NMDA conductance and Mg-block voff per Sivyer 2013 /
+   Branco-Hausser 2010; distal Nav1.6 / NaP densities per Oesch 2005 / Goldfinger 2000 /
+   Stuart 1999; GABA/AMPA spatial distribution per de Rosenroll 2026). A cluster whose
+   centroid lies within +/-2 sigma of all key priors is "plausible"; one that lies +/-2-5
+   sigma is "stretched"; one that lies >5 sigma is "exotic". The scorecard tells the project
+   which strategies are biologically interpretable and which are model artefacts.
+
+This task addresses project research question Q1 (which Na / K combinations max AP frequency
+at PD with ND suppression) and Q4 (active vs passive dendrites enable joint pass) at a
+**characterisation** level rather than a **discovery** level. It bundles three previously open
+suggestions (S-0083-02 motif clustering, S-0083-05 multi-seed smoke gate, multi-replicate
+aspect of S-0081-01) into a single combined pipeline. Source suggestion: **S-0083-02**.
+
+## Scope
+
+### In scope
+
+* **Phase A -- Robustness validation.** Select 20 cells:
+  * All 15 joint-pass cells: cell 767 from t0081 + the 14 t0083 cells with DSI >= 0.4 AND PD
+    >= 10 Hz (read from
+    `tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/all_evaluations.json` and
+    `pareto_front.json`).
+  * 5 closest near-pass cells from the t0083 Pareto front (`pareto_front.json`) by Euclidean
+    distance to the (DSI 0.4, PD 10) joint corner among cells that do NOT satisfy joint-pass.
+  * Re-evaluate each cell at **24 directions x 30 seeds = 720 sims per replication x 5 outer
+    RNG seeds = 3,600 sims per cell**. Total: 100 cell-evaluations = 72,000 sims.
+  * Outer RNG seed controls AR(2) release noise + arrival jitter. The 5 replications are
+    pseudo-independent (different outer seeds; same parameter vector).
+  * Compute mean +/- SD of DSI and PD per cell across the 5 replications.
+  * Classify each cell:
+    * **Genuine**: 5/5 replications joint-pass (DSI >= 0.4 AND PD >= 10 in every replication)
+    * **Marginal**: 3-4/5 replications joint-pass
+    * **Stochastic**: <=2/5 replications joint-pass
+
+* **Phase B -- Cluster analysis on Genuine cells.**
+  * k-means with k=2..6, k selected by silhouette score + BIC.
+  * Hierarchical clustering with cosine and euclidean distance metrics for cross-validation.
+  * UMAP and t-SNE 2D visualisation overlaid with k-means and hierarchical labels.
+  * Per-cluster centroids + within/between cluster variance + cluster size.
+  * Check cluster stability via 50-sample bootstrap (re-run k-means on subsamples of Genuine
+    cells; report Adjusted Rand Index between bootstrap labels and full-sample labels).
+
+* **Phase C -- Biological comparison.**
+  * Per cluster centroid, score key parameters against published biological priors:
+    * **AIS Nav density** vs Kole 2008 (0.25-0.5 S/cm^2 cortical pyramidal AIS) and Werginz
+      2024 (1.3 S/cm^2 mouse alpha-RGC).
+    * **AIS-to-soma Nav ratio** vs Werginz 2024 (17.3x).
+    * **Dendritic NMDA conductance** and **Mg-block voff** vs Sivyer 2013, Branco-Hausser
+      2010.
+    * **Distal Nav1.6 / NaP densities** vs Oesch 2005, Goldfinger 2000, Stuart 1999.
+    * **GABA/AMPA spatial distribution** vs de Rosenroll 2026.
+  * Per parameter: report cluster centroid value, published mean +/- sigma, deviation in sigma
+    units, and verdict (plausible / stretched / exotic).
+  * Per cluster: aggregate verdict across all key parameters; flag the cluster as overall
+    plausible / stretched / exotic.
+  * Output: one **answer asset** at
+    `assets/answer/cluster-biological-plausibility-attribution/` attributing each cluster to
+    known biology or flagging as novel/unphysical.
+
+* **Cost-watchdog rate-fix REQ-X (HARD requirement).** The cost watchdog MUST source
+  per-instance hourly rate from `machine_log.json` `selected_offer.price_per_hour`, not from a
+  hard-coded constant. This protocol fix is forced by t0083's $0.83 overrun ($5.83 actual vs
+  $5.00 cap; in-loop watchdog used hard-coded $0.2382/hr but actual offer billed $0.3209/hr =
+  1.347x). Document explicitly in `plan/plan.md` and verify in implementation review.
+
+### Out of scope
+
+* New cells outside the t0081 + t0083 union (no fresh NSGA-II generations).
+* Substrate changes (no new dendritic-spike parameters; no new channels; no AIS modifications;
+  no morphology changes).
+* Different morphologies (deferred S-0081-01 follow-up).
+* Different conductance density realisations (deferred S-0081-01 follow-up).
+* Bed A cross-bed validation (S-0081-05; deferred to a later task).
+
+## Pass Criteria
+
+* **Primary**: at least one cluster of >=3 Genuine cells (3 cells, all 5/5 replications
+  joint-pass) with all key biological parameters within +/-2 sigma of published priors.
+
+* **Secondary**: identify which t0083 joint-pass cells are stochastic artefacts vs genuine --
+  even if all clusters are exotic, the robustness classification is itself useful and can be
+  used to reweight downstream NSGA-II warm-starts.
+
+* **Acceptable negative**: zero Genuine clusters (all joint-pass cells turn out to be
+  stochastic artefacts of lucky RNG draws). This would be a major project pivot but a clean
+  negative result.
+
+## Estimated Compute Cost
+
+* Per-cell evaluation budget: 24 dirs x 30 seeds = 720 sims per replication x 5 outer-seed
+  replications = 3,600 sims per cell. Total: 20 cells x 3,600 = 72,000 sims.
+
+* Per-cell wall-clock estimate: t0083 averaged ~36 s/cell at 8 dirs x 20 seeds = 160 sims;
+  4.5x sim count = ~162 s/cell at 24 dirs x 30 seeds (per replication). 5 replications x ~162
+  s = ~13.5 min/cell. With 43 effective cores parallelising over 100 cell-evals (20 cells x 5
+  replications): ~13.5 min x 100 / 43 = ~31 min, but per-replication overhead dominates;
+  empirical estimate: 5-6 hours optimiser time + ~1 hour Vast.ai instance overhead = 6-7 hours
+  wall-clock.
+
+* **Cost estimate: $1.93-$2.57** at $0.32/hr (allow up to 8 hours of EPYC 7B13 instance
+  lifetime). Hard cost cap: **$3.50** (1.5x estimate, absorbs the 16% variance observed in
+  t0083).
+
+* **Vast.ai instance class**: AMD EPYC 7B13 64-core (same as t0081 / t0083). Fallback: any 36+
+  core EPYC at <$0.40/hr if 7B13 unavailable at <$0.35/hr.
+
+## Dependencies
+
+* **t0083_bedb_v3_extend_nsga2_gen8plus**: provides `pareto_front.json` (18 cells) and
+  `all_evaluations.json` (1728 cells; 14 of 15 joint-pass cells from gens 13-17). Provides the
+  evaluation harness (the loop is `arf.libraries.t0083_loop`-style continuation of t0081's
+  harness) to be re-used for the robustness re-evaluation.
+
+* **t0081_bedb_v3_warmstart_nsga2**: provides cell 767 (the first joint-pass cell), the v3
+  substrate harness, and the NSGA-II + warm-start scaffolding.
+
+* **t0080_bedb_mobo_v3_dendritic_spike_nsga2**: provides the
+  `de_rosenroll_2026_dsgc_ais_dendritic_spike` library asset (54-d v3 substrate) used
+  unchanged.
+
+* **t0078_bedb_mobo_v2_ais_tiered_ahp**: provides the AIS-augmented parent substrate from
+  which t0080 derived the v3 substrate (informs the AIS-Nav biological prior).
+
+* **t0024_port_de_rosenroll_2026_dsgc**: provides the de Rosenroll 2026 DSGC NEURON port (Bed
+  B base substrate before AIS / dendritic-spike augmentation; informs the GABA/AMPA spatial
+  distribution biological prior).
+
+* **t0084_t0081_cell_767_vm_trace_deepdive**: provides the cell-767 mechanism-attribution
+  answer asset (informs the biological priors for the cell-767 cluster).
+
+## Recommended Task Types
+
+* `experiment-run` -- Phase A robustness re-evaluation (Vast.ai compute).
+* `data-analysis` -- Phase B cluster analysis (local CPU; sklearn + UMAP).
+* `answer-question` -- Phase C biological-plausibility scorecard (one answer asset).
+
+## Notes
+
+The 5 outer RNG seeds for Phase A must be deterministic and recorded in
+`results/data/replication_seeds.json` to enable exact reproduction. The seeds should be drawn
+from a fixed parent seed (e.g., 0..4 from `np.random.SeedSequence(42).spawn(5)`) so that the
+re-evaluation is exactly reproducible.
+
+The 5 closest near-pass cells should be selected from t0083's Pareto front (filtered to
+non-joint-pass cells) by Euclidean distance to the (DSI 0.4, PD 10) joint corner using the
+formula `sqrt((max(0, 0.4 - DSI) / DSI_scale)^2 + (max(0, 10 - PD) / PD_scale)^2)`. A
+reasonable choice for the scales is `DSI_scale = 0.1` (10% of the joint-pass DSI threshold)
+and `PD_scale = 5 Hz` (50% of the joint-pass PD threshold); this puts DSI and PD on roughly
+equal footing in the distance metric.
+
+The biological priors in Phase C should be loaded from the existing literature surveys (t0017
+/ t0018 / t0019) and confirmed via the cited papers' details / summary documents in
+`assets/paper/`. The published mean and sigma for each prior must be tabulated in
+`results/data/biological_priors.json` before the per-cluster scorecard is computed.
+
+The cluster-stability bootstrap (50 samples, ARI vs full-sample labels) is the primary
+safeguard against over-interpreting clusters that arise from the Genuine subset's small size
+(best case 15 cells). If ARI < 0.5 across the bootstrap, the cluster verdicts in the answer
+asset must explicitly disclose the instability and degrade the per-cluster confidence
+accordingly.
+
+The cost-watchdog rate-fix REQ-X requires that the watchdog reads
+`logs/steps/<NNN>_setup-machines/machine_log.json` `selected_offer.price_per_hour` at startup
+and uses that value as the hourly rate when computing accumulated cost. The watchdog MUST log
+the resolved rate at startup so that any future audit can confirm the value used.
+Implementation review must explicitly check this code path before merging the implementation
+step.
 
 </details>
