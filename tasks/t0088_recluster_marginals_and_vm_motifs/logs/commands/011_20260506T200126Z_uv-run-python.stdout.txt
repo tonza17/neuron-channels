@@ -1,0 +1,12 @@
+[select_representatives] Phase A: re-cluster 13 cells
+[select_representatives] best_k = 4
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\images\cluster_silhouette.png
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\images\cluster_dendrogram.png
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\images\cluster_pca.png
+[select_representatives] cluster 0: representative cell 1604 (distance 0.9660)
+[select_representatives] cluster 1: representative cell 1634 (distance 1.0653)
+[select_representatives] cluster 2: representative cell 767 (distance 1.1368)
+[select_representatives] cluster 3: representative cell 1639 (distance 0.8938)
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\data\recluster_assignments.json
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\data\recluster_centroids.json
+[select_representatives] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\data\representative_cells.json

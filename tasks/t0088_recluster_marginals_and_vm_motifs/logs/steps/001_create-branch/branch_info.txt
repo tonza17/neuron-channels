@@ -1,0 +1,5 @@
+branch: task/t0088_recluster_marginals_and_vm_motifs
+base_branch: main
+base_commit: 4aff076fc0123a4d57b32be6cffa5fa77ab86408
+worktree_path: /c/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0088_recluster_marginals_and_vm_motifs
+created_at: 2026-05-06T19:43:39Z

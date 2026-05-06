@@ -1,0 +1,51 @@
+{
+  "n_representatives": 4,
+  "best_k": 4,
+  "representatives": [
+    {
+      "cluster_id": 0,
+      "representative_cell_id": 1604,
+      "distance_to_centroid_normalised": 0.9659620136138384,
+      "n_cells_in_cluster": 5,
+      "all_cell_ids_in_cluster": [
+        1379,
+        1517,
+        1559,
+        1604,
+        1721
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "representative_cell_id": 1634,
+      "distance_to_centroid_normalised": 1.0652671512912133,
+      "n_cells_in_cluster": 4,
+      "all_cell_ids_in_cluster": [
+        1304,
+        1504,
+        1624,
+        1634
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "representative_cell_id": 767,
+      "distance_to_centroid_normalised": 1.1367600371874336,
+      "n_cells_in_cluster": 2,
+      "all_cell_ids_in_cluster": [
+        767,
+        1677
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "representative_cell_id": 1639,
+      "distance_to_centroid_normalised": 0.8937590810760596,
+      "n_cells_in_cluster": 2,
+      "all_cell_ids_in_cluster": [
+        1639,
+        1663
+      ]
+    }
+  ]
+}

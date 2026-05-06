@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\compare_literature.md
+
+[31m[1mERRORS:[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Comparison Table[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Methodology Differences[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Analysis[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Limitations[0m
+
+[33m[1mWARNINGS:[0m
+[33m  CL-W003 warning: No citation keys or paper references found in compare_literature.md[0m
+
+[31m[1mFAILED[0m — 4 error(s), 1 warning(s)

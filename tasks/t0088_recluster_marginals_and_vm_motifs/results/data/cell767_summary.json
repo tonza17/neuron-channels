@@ -1,0 +1,136 @@
+{
+  "cell_id": 767,
+  "cluster_id": 2,
+  "generation": 7,
+  "dsi_original": 0.4941451990632318,
+  "pd_rate_hz_original": 11.392857142857142,
+  "dsi_measured_pd_minus_nd": 0.6,
+  "pd_rate_hz_measured": 2.857142857142857,
+  "nd_rate_hz_measured": 0.7142857142857143,
+  "v3_params": {
+    "gnmda_dend": 0.006719335381190362,
+    "mg_conc_mm": 0.26074593961533227,
+    "voff_nmda": 6.280407693320694,
+    "nav16_dend_distal": 0.014921677875646352,
+    "nap_dend_distal": 9.214090238549591e-05
+  },
+  "recording_sections": {
+    "soma": "DSGC[0].soma",
+    "mid": "DSGC[0].dend[35]",
+    "distal": "DSGC[0].dend[267]"
+  },
+  "direction_results": [
+    {
+      "cell_id": 767,
+      "direction_deg": 0.0,
+      "spike_count": 4,
+      "peak_vm_mv": 9.896484492802152,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 22.5,
+      "spike_count": 4,
+      "peak_vm_mv": 21.651591428494527,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 45.0,
+      "spike_count": 6,
+      "peak_vm_mv": 22.839024687433458,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 67.5,
+      "spike_count": 6,
+      "peak_vm_mv": 9.557510996687537,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 90.0,
+      "spike_count": 4,
+      "peak_vm_mv": -3.4882559124583645,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 112.5,
+      "spike_count": 3,
+      "peak_vm_mv": 6.797596302099215,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 135.0,
+      "spike_count": 2,
+      "peak_vm_mv": 19.282857845589273,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 157.5,
+      "spike_count": 0,
+      "peak_vm_mv": -12.44798600269284,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 180.0,
+      "spike_count": 1,
+      "peak_vm_mv": 29.917218164957905,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 202.5,
+      "spike_count": 1,
+      "peak_vm_mv": 17.31487255945303,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 225.0,
+      "spike_count": 1,
+      "peak_vm_mv": -4.458643544048584,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 247.5,
+      "spike_count": 2,
+      "peak_vm_mv": 4.685585639575962,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 270.0,
+      "spike_count": 2,
+      "peak_vm_mv": 15.915208899961264,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 292.5,
+      "spike_count": 2,
+      "peak_vm_mv": 22.062530359035485,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 315.0,
+      "spike_count": 4,
+      "peak_vm_mv": 14.365818625652723,
+      "is_stable": true
+    },
+    {
+      "cell_id": 767,
+      "direction_deg": 337.5,
+      "spike_count": 6,
+      "peak_vm_mv": -5.587140788039046,
+      "is_stable": true
+    }
+  ]
+}

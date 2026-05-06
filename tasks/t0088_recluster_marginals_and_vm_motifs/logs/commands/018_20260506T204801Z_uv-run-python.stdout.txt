@@ -1,0 +1,3 @@
+[write_answer_asset] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\assets\answer\are-cluster-motifs-mechanistically-distinct\details.json
+[write_answer_asset] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\assets\answer\are-cluster-motifs-mechanistically-distinct\short_answer.md
+[write_answer_asset] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\assets\answer\are-cluster-motifs-mechanistically-distinct\full_answer.md

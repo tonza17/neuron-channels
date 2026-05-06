@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {},
+  "note": "Local-CPU only task; no external paid services. ~65 min wall-clock total (Phase A ~10 min, Phase B ~50 min for 64 NEURON simulations, Phase C ~5 min)."
+}

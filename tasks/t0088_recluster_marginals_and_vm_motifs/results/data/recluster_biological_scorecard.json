@@ -1,0 +1,491 @@
+{
+  "n_clusters": 4,
+  "n_priors": 9,
+  "thresholds": {
+    "plausible_max_sigma": 2.0,
+    "stretched_max_sigma": 5.0
+  },
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "n_cells": 5,
+      "cell_ids": [
+        1379,
+        1517,
+        1559,
+        1604,
+        1721
+      ],
+      "aggregate_verdict": "exotic",
+      "per_prior_scores": [
+        {
+          "parameter_name": "nav16_ais_gbar_kole2008",
+          "param_index": 4,
+          "centroid_value": 0.6747095394492402,
+          "published_mean": 0.375,
+          "published_sigma": 0.125,
+          "deviation_sigma": 2.3976763155939214,
+          "verdict": "stretched",
+          "paper_id": "10.1038_nn.2153",
+          "citation": "Kole 2008 (Nat Neurosci)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_ais_gbar_werginz2024",
+          "param_index": 4,
+          "centroid_value": 0.6747095394492402,
+          "published_mean": 1.3,
+          "published_sigma": 0.3,
+          "deviation_sigma": -2.0843015351691996,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024 (RGC physio update)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_dend_distal_oesch2005",
+          "param_index": 52,
+          "centroid_value": 0.01783767277327841,
+          "published_mean": 0.05,
+          "published_sigma": 0.02,
+          "deviation_sigma": -1.6081163613360794,
+          "verdict": "plausible",
+          "paper_id": "oesch_2005",
+          "citation": "Oesch 2005 (RGC dendritic spike)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nap_dend_distal_stuart1999",
+          "param_index": 53,
+          "centroid_value": 0.002416972721438193,
+          "published_mean": 0.0005,
+          "published_sigma": 0.0002,
+          "deviation_sigma": 9.584863607190965,
+          "verdict": "exotic",
+          "paper_id": "stuart_1999",
+          "citation": "Stuart 1999 / Goldfinger 2000",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "gnmda_dend_sivyer2013",
+          "param_index": 49,
+          "centroid_value": 0.00487167382482356,
+          "published_mean": 0.0001,
+          "published_sigma": 5e-05,
+          "deviation_sigma": 95.43347649647119,
+          "verdict": "exotic",
+          "paper_id": "sivyer_2013",
+          "citation": "Sivyer 2013",
+          "units": "uS"
+        },
+        {
+          "parameter_name": "voff_nmda_branco2010",
+          "param_index": 51,
+          "centroid_value": 3.9308406168822803,
+          "published_mean": 0.0,
+          "published_sigma": 5.0,
+          "deviation_sigma": 0.786168123376456,
+          "verdict": "plausible",
+          "paper_id": "branco_hausser_2010",
+          "citation": "Branco & Hausser 2010",
+          "units": "mV"
+        },
+        {
+          "parameter_name": "rho0_gaba_de_rosenroll_2026",
+          "param_index": 43,
+          "centroid_value": 3.7039428215218257,
+          "published_mean": 1.0,
+          "published_sigma": 0.5,
+          "deviation_sigma": 5.4078856430436515,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "dimensionless"
+        },
+        {
+          "parameter_name": "lambda_gaba_um_de_rosenroll_2026",
+          "param_index": 44,
+          "centroid_value": 232.71915685682688,
+          "published_mean": 80.0,
+          "published_sigma": 30.0,
+          "deviation_sigma": 5.090638561894229,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "micrometers"
+        },
+        {
+          "parameter_name": "ais_to_soma_nav_ratio_werginz2024",
+          "param_index": -1,
+          "centroid_value": 25.925801037276454,
+          "published_mean": 17.3,
+          "published_sigma": 3.0,
+          "deviation_sigma": 2.875267012425484,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024",
+          "units": "dimensionless"
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "n_cells": 4,
+      "cell_ids": [
+        1304,
+        1504,
+        1624,
+        1634
+      ],
+      "aggregate_verdict": "exotic",
+      "per_prior_scores": [
+        {
+          "parameter_name": "nav16_ais_gbar_kole2008",
+          "param_index": 4,
+          "centroid_value": 0.5703326204840689,
+          "published_mean": 0.375,
+          "published_sigma": 0.125,
+          "deviation_sigma": 1.5626609638725508,
+          "verdict": "plausible",
+          "paper_id": "10.1038_nn.2153",
+          "citation": "Kole 2008 (Nat Neurosci)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_ais_gbar_werginz2024",
+          "param_index": 4,
+          "centroid_value": 0.5703326204840689,
+          "published_mean": 1.3,
+          "published_sigma": 0.3,
+          "deviation_sigma": -2.4322245983864375,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024 (RGC physio update)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_dend_distal_oesch2005",
+          "param_index": 52,
+          "centroid_value": 0.012396774649213398,
+          "published_mean": 0.05,
+          "published_sigma": 0.02,
+          "deviation_sigma": -1.8801612675393302,
+          "verdict": "plausible",
+          "paper_id": "oesch_2005",
+          "citation": "Oesch 2005 (RGC dendritic spike)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nap_dend_distal_stuart1999",
+          "param_index": 53,
+          "centroid_value": 0.007228492034502941,
+          "published_mean": 0.0005,
+          "published_sigma": 0.0002,
+          "deviation_sigma": 33.6424601725147,
+          "verdict": "exotic",
+          "paper_id": "stuart_1999",
+          "citation": "Stuart 1999 / Goldfinger 2000",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "gnmda_dend_sivyer2013",
+          "param_index": 49,
+          "centroid_value": 0.004420450570385858,
+          "published_mean": 0.0001,
+          "published_sigma": 5e-05,
+          "deviation_sigma": 86.40901140771714,
+          "verdict": "exotic",
+          "paper_id": "sivyer_2013",
+          "citation": "Sivyer 2013",
+          "units": "uS"
+        },
+        {
+          "parameter_name": "voff_nmda_branco2010",
+          "param_index": 51,
+          "centroid_value": 4.2368912344139495,
+          "published_mean": 0.0,
+          "published_sigma": 5.0,
+          "deviation_sigma": 0.84737824688279,
+          "verdict": "plausible",
+          "paper_id": "branco_hausser_2010",
+          "citation": "Branco & Hausser 2010",
+          "units": "mV"
+        },
+        {
+          "parameter_name": "rho0_gaba_de_rosenroll_2026",
+          "param_index": 43,
+          "centroid_value": 3.7818492381403037,
+          "published_mean": 1.0,
+          "published_sigma": 0.5,
+          "deviation_sigma": 5.563698476280607,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "dimensionless"
+        },
+        {
+          "parameter_name": "lambda_gaba_um_de_rosenroll_2026",
+          "param_index": 44,
+          "centroid_value": 320.35275541518007,
+          "published_mean": 80.0,
+          "published_sigma": 30.0,
+          "deviation_sigma": 8.011758513839336,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "micrometers"
+        },
+        {
+          "parameter_name": "ais_to_soma_nav_ratio_werginz2024",
+          "param_index": -1,
+          "centroid_value": 116.04571430759887,
+          "published_mean": 17.3,
+          "published_sigma": 3.0,
+          "deviation_sigma": 32.91523810253296,
+          "verdict": "exotic",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024",
+          "units": "dimensionless"
+        }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "n_cells": 2,
+      "cell_ids": [
+        767,
+        1677
+      ],
+      "aggregate_verdict": "exotic",
+      "per_prior_scores": [
+        {
+          "parameter_name": "nav16_ais_gbar_kole2008",
+          "param_index": 4,
+          "centroid_value": 0.2504866620677342,
+          "published_mean": 0.375,
+          "published_sigma": 0.125,
+          "deviation_sigma": -0.9961067034581266,
+          "verdict": "plausible",
+          "paper_id": "10.1038_nn.2153",
+          "citation": "Kole 2008 (Nat Neurosci)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_ais_gbar_werginz2024",
+          "param_index": 4,
+          "centroid_value": 0.2504866620677342,
+          "published_mean": 1.3,
+          "published_sigma": 0.3,
+          "deviation_sigma": -3.498377793107553,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024 (RGC physio update)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_dend_distal_oesch2005",
+          "param_index": 52,
+          "centroid_value": 0.01563893075237061,
+          "published_mean": 0.05,
+          "published_sigma": 0.02,
+          "deviation_sigma": -1.7180534623814698,
+          "verdict": "plausible",
+          "paper_id": "oesch_2005",
+          "citation": "Oesch 2005 (RGC dendritic spike)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nap_dend_distal_stuart1999",
+          "param_index": 53,
+          "centroid_value": 0.002217675485738191,
+          "published_mean": 0.0005,
+          "published_sigma": 0.0002,
+          "deviation_sigma": 8.588377428690954,
+          "verdict": "exotic",
+          "paper_id": "stuart_1999",
+          "citation": "Stuart 1999 / Goldfinger 2000",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "gnmda_dend_sivyer2013",
+          "param_index": 49,
+          "centroid_value": 0.004538214631017747,
+          "published_mean": 0.0001,
+          "published_sigma": 5e-05,
+          "deviation_sigma": 88.76429262035494,
+          "verdict": "exotic",
+          "paper_id": "sivyer_2013",
+          "citation": "Sivyer 2013",
+          "units": "uS"
+        },
+        {
+          "parameter_name": "voff_nmda_branco2010",
+          "param_index": 51,
+          "centroid_value": 5.0171738768973775,
+          "published_mean": 0.0,
+          "published_sigma": 5.0,
+          "deviation_sigma": 1.0034347753794755,
+          "verdict": "plausible",
+          "paper_id": "branco_hausser_2010",
+          "citation": "Branco & Hausser 2010",
+          "units": "mV"
+        },
+        {
+          "parameter_name": "rho0_gaba_de_rosenroll_2026",
+          "param_index": 43,
+          "centroid_value": 4.112851777553892,
+          "published_mean": 1.0,
+          "published_sigma": 0.5,
+          "deviation_sigma": 6.225703555107785,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "dimensionless"
+        },
+        {
+          "parameter_name": "lambda_gaba_um_de_rosenroll_2026",
+          "param_index": 44,
+          "centroid_value": 348.43783217084524,
+          "published_mean": 80.0,
+          "published_sigma": 30.0,
+          "deviation_sigma": 8.947927739028176,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "micrometers"
+        },
+        {
+          "parameter_name": "ais_to_soma_nav_ratio_werginz2024",
+          "param_index": -1,
+          "centroid_value": 26.049892821244022,
+          "published_mean": 17.3,
+          "published_sigma": 3.0,
+          "deviation_sigma": 2.9166309404146737,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024",
+          "units": "dimensionless"
+        }
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "n_cells": 2,
+      "cell_ids": [
+        1639,
+        1663
+      ],
+      "aggregate_verdict": "exotic",
+      "per_prior_scores": [
+        {
+          "parameter_name": "nav16_ais_gbar_kole2008",
+          "param_index": 4,
+          "centroid_value": 0.2630654171320318,
+          "published_mean": 0.375,
+          "published_sigma": 0.125,
+          "deviation_sigma": -0.8954766629437456,
+          "verdict": "plausible",
+          "paper_id": "10.1038_nn.2153",
+          "citation": "Kole 2008 (Nat Neurosci)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_ais_gbar_werginz2024",
+          "param_index": 4,
+          "centroid_value": 0.2630654171320318,
+          "published_mean": 1.3,
+          "published_sigma": 0.3,
+          "deviation_sigma": -3.456448609559894,
+          "verdict": "stretched",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024 (RGC physio update)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nav16_dend_distal_oesch2005",
+          "param_index": 52,
+          "centroid_value": 0.036003463559703026,
+          "published_mean": 0.05,
+          "published_sigma": 0.02,
+          "deviation_sigma": -0.6998268220148488,
+          "verdict": "plausible",
+          "paper_id": "oesch_2005",
+          "citation": "Oesch 2005 (RGC dendritic spike)",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "nap_dend_distal_stuart1999",
+          "param_index": 53,
+          "centroid_value": 0.004405813393398123,
+          "published_mean": 0.0005,
+          "published_sigma": 0.0002,
+          "deviation_sigma": 19.529066966990612,
+          "verdict": "exotic",
+          "paper_id": "stuart_1999",
+          "citation": "Stuart 1999 / Goldfinger 2000",
+          "units": "S/cm^2"
+        },
+        {
+          "parameter_name": "gnmda_dend_sivyer2013",
+          "param_index": 49,
+          "centroid_value": 0.005880826887491714,
+          "published_mean": 0.0001,
+          "published_sigma": 5e-05,
+          "deviation_sigma": 115.61653774983428,
+          "verdict": "exotic",
+          "paper_id": "sivyer_2013",
+          "citation": "Sivyer 2013",
+          "units": "uS"
+        },
+        {
+          "parameter_name": "voff_nmda_branco2010",
+          "param_index": 51,
+          "centroid_value": 7.434895855000537,
+          "published_mean": 0.0,
+          "published_sigma": 5.0,
+          "deviation_sigma": 1.4869791710001075,
+          "verdict": "plausible",
+          "paper_id": "branco_hausser_2010",
+          "citation": "Branco & Hausser 2010",
+          "units": "mV"
+        },
+        {
+          "parameter_name": "rho0_gaba_de_rosenroll_2026",
+          "param_index": 43,
+          "centroid_value": 4.732188367721698,
+          "published_mean": 1.0,
+          "published_sigma": 0.5,
+          "deviation_sigma": 7.4643767354433965,
+          "verdict": "exotic",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "dimensionless"
+        },
+        {
+          "parameter_name": "lambda_gaba_um_de_rosenroll_2026",
+          "param_index": 44,
+          "centroid_value": 38.354705632644645,
+          "published_mean": 80.0,
+          "published_sigma": 30.0,
+          "deviation_sigma": -1.3881764789118451,
+          "verdict": "plausible",
+          "paper_id": "de_rosenroll_2026",
+          "citation": "de Rosenroll 2026",
+          "units": "micrometers"
+        },
+        {
+          "parameter_name": "ais_to_soma_nav_ratio_werginz2024",
+          "param_index": -1,
+          "centroid_value": 13.249016069544044,
+          "published_mean": 17.3,
+          "published_sigma": 3.0,
+          "deviation_sigma": -1.350327976818652,
+          "verdict": "plausible",
+          "paper_id": "werginz_2024",
+          "citation": "Werginz 2024",
+          "units": "dimensionless"
+        }
+      ]
+    }
+  ]
+}

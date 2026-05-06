@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E004 error: Missing mandatory section: '## Task Objective'[0m
+[31m  RC-E004 error: Missing mandatory section: '## Library Landscape'[0m
+[31m  RC-E004 error: Missing mandatory section: '## Reusable Code and Assets'[0m
+
+[31m[1mFAILED[0m — 3 error(s), 0 warning(s)

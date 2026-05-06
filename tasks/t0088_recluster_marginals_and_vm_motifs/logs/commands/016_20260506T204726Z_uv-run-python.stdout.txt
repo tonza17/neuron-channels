@@ -1,0 +1,21 @@
+Generating figures for cell 1604...
+  Fig 1: vm_traces_1604.png
+  Fig 2: nmda_conductance_1604.png
+  Fig 3: nav_decomp_1604.png
+  Fig 4: ais_spike_onset_1604.png
+Generating figures for cell 1634...
+  Fig 1: vm_traces_1634.png
+  Fig 2: nmda_conductance_1634.png
+  Fig 3: nav_decomp_1634.png
+  Fig 4: ais_spike_onset_1634.png
+Generating figures for cell 767...
+  Fig 1: vm_traces_767.png
+  Fig 2: nmda_conductance_767.png
+  Fig 3: nav_decomp_767.png
+  Fig 4: ais_spike_onset_767.png
+Generating figures for cell 1639...
+  Fig 1: vm_traces_1639.png
+  Fig 2: nmda_conductance_1639.png
+  Fig 3: nav_decomp_1639.png
+  Fig 4: ais_spike_onset_1639.png
+[DONE] 4 figures per representative cell generated.
