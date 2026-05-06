@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W001 warning: Section 'Remote Machines' has 4 words (minimum: 10)[0m
+[33m  PL-W002 warning: '## Risks & Fallbacks' section contains no markdown table[0m
+[33m  PL-W007 warning: '## Step by Step' does not reference any `REQ-*` items[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)

@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\results\compare_literature.md
+
+[33m[1mWARNINGS:[0m
+[33m  CL-W003 warning: No citation keys or paper references found in compare_literature.md[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

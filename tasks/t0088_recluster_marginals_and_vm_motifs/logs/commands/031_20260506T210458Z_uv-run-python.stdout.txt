@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0088_recluster_marginals_and_vm_motifs\tasks\t0088_recluster_marginals_and_vm_motifs\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260506T194613Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260506T194959Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260506T195019Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260506T195143Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260506T195227Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260506T195250Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 013_20260506T200456Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260506T205542Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260506T210046Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 11 warning(s)
