@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "cluster-biological-plausibility-attribution",
+  "question": "Which clusters of joint-pass cells in t0083's expanded population are biologically plausible vs novel/unphysical, and which dendritic-spike machinery do the plausible clusters represent?",
+  "short_title": "Cluster biological plausibility attribution",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0078_bedb_mobo_v2_ais_tiered_ahp",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0081_bedb_v3_warmstart_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0084_t0081_cell_767_vm_trace_deepdive",
+    "t0086_robustness_cluster_bio_comparison"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0086_robustness_cluster_bio_comparison",
+  "date_created": "2026-05-06"
+}
