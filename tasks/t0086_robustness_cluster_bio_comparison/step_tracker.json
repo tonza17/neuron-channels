@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0086_robustness_cluster_bio_comparison branch and worktree from main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T13:04:39Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T13:07:39Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
