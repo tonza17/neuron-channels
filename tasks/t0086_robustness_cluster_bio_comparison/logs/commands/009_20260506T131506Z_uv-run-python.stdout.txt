@@ -1,0 +1,15 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0086_robustness_cluster_bio_comparison\tasks\t0086_robustness_cluster_bio_comparison\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0017] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0018] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0019] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0024] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0078] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0080] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0081] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0083] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0084] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m — 9 error(s), 0 warning(s)
