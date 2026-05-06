@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare extended Pareto front and joint-pass cell count to t0081 baseline and published baselines.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T08:21:25Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T08:25:54Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
