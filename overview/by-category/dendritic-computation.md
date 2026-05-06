@@ -5,8 +5,8 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (43)](../papers/by-category/dendritic-computation.md) | [Answers
-(7)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(68)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(8)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(71)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2261,7 +2261,38 @@ than reduced analytical models.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (7)
+## Answers (8)
+
+<details>
+<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
+re-clustered in the t0080 54-d v3 parameter space and a t0084-style
+Vm-trace deep-dive is run at 16 directions on per-cluster representative
+cells, are the resulting clusters mechanistically distinct (different
+dominant channel mechanisms across clusters) or do they share the same
+mechanism with parameter-scale variation?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
+[`are-cluster-motifs-mechanistically-distinct`](../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/)
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
+clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
+PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
+NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
+parameter scale but not in which channel drives the PD response. This extends t0084's
+NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
+in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+[200, 1200] ms):
+
+| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
+| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
+| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
+| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
+
+</details>
 
 <details>
 <summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
@@ -2413,7 +2444,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (51 open, 17 closed)
+## Suggestions (54 open, 17 closed)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -2528,6 +2559,59 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>13-cell full deep-dive (extend Phase B to all 13 cells, not just
+representatives)</strong> (S-0088-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 Phase B ran the Vm-trace deep-dive on 4 representative cells; the 13-cell pool's other 9
+cells could have within-cluster mechanism heterogeneity invisible to the representative-only
+analysis. Extend Phase B to all 13 cells: 13 x 16 directions = 208 NEURON sims. Compare
+per-cell fractional NaP / Nav1.6 / NMDA across all cells within each cluster; report
+within-cluster spread as a measure of mechanism homogeneity per cluster. Local-CPU only: 13 x
+16 x ~60 s/sim = ~3.5 hours wall-clock, $0 cost. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Polar attribution decomposition: integrate fractional
+contributions over the direction-tuning curve</strong> (S-0088-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088's mechanism attribution uses only PD (0 deg) - ND (180 deg) integrated current. This
+discards information from the 14 other directions recorded at 22.5-deg spacing. Compute
+per-direction fractional NMDA / Nav1.6 / NaP integrals and weight by the direction-tuning
+curve (the AIS spike-onset polar histogram) to get a richer cross-direction attribution. Test
+whether the NaP-dominant verdict holds across all directions or only at PD-flanking
+directions. Pure data analysis on existing .npz files; ~1 hour wall-clock, $0 cost.
+Recommended task types: data-analysis.
 
 </details>
 

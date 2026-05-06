@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-68 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **51 open** (11
-high, 35 medium, 5 low), **17 closed**.
+71 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **54 open** (12
+high, 37 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,31 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0088-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 
@@ -289,6 +314,29 @@ cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>13-cell full deep-dive (extend Phase B to all 13 cells, not just
+representatives)</strong> (S-0088-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0088-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0088 Phase B ran the Vm-trace deep-dive on 4 representative cells; the 13-cell pool's other 9
+cells could have within-cluster mechanism heterogeneity invisible to the representative-only
+analysis. Extend Phase B to all 13 cells: 13 x 16 directions = 208 NEURON sims. Compare
+per-cell fractional NaP / Nav1.6 / NMDA across all cells within each cluster; report
+within-cluster spread as a measure of mechanism homogeneity per cluster. Local-CPU only: 13 x
+16 x ~60 s/sim = ~3.5 hours wall-clock, $0 cost. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -908,6 +956,29 @@ from 1.000 to the 0.6-0.8 Park2014 envelope, reliability drops below 1.0, and le
 discrimination power between Dan2018's monotonic-decrease and Sivyer2013's saturation
 predictions. Distinct from S-0022-05 which runs at a single length only. Recommended task
 types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Polar attribution decomposition: integrate fractional
+contributions over the direction-tuning curve</strong> (S-0088-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0088-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0088's mechanism attribution uses only PD (0 deg) - ND (180 deg) integrated current. This
+discards information from the 14 other directions recorded at 22.5-deg spacing. Compute
+per-direction fractional NMDA / Nav1.6 / NaP integrals and weight by the direction-tuning
+curve (the AIS spike-onset polar histogram) to get a richer cross-direction attribution. Test
+whether the NaP-dominant verdict holds across all directions or only at PD-flanking
+directions. Pure data analysis on existing .npz files; ~1 hour wall-clock, $0 cost.
+Recommended task types: data-analysis.
 
 </details>
 

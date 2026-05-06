@@ -1,6 +1,6 @@
-# Answers: `compartmental-modeling` (15)
+# Answers: `compartmental-modeling` (16)
 
-15 answer(s).
+16 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -421,6 +421,50 @@ beyond the retina.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
 | **URL sources** | [url 1](https://scholar.google.com/), [url 2](https://pubmed.ncbi.nlm.nih.gov/), [url 3](https://www.biorxiv.org/) |
 | **Created by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+
+</details>
+
+<details>
+<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
+re-clustered in the t0080 54-d v3 parameter space and a t0084-style
+Vm-trace deep-dive is run at 16 directions on per-cluster representative
+cells, are the resulting clusters mechanistically distinct (different
+dominant channel mechanisms across clusters) or do they share the same
+mechanism with parameter-scale variation?</strong></summary>
+
+**Confidence**: medium
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
+clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
+PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
+NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
+parameter scale but not in which channel drives the PD response. This extends t0084's
+NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
+in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+ms):
+
+| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
+| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
+| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
+| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/full_answer.md) |
+| **ID** | [`are-cluster-motifs-mechanistically-distinct`](../../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/) |
+| **Question** | When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is re-clustered in the t0080 54-d v3 parameter space and a t0084-style Vm-trace deep-dive is run at 16 directions on per-cluster representative cells, are the resulting clusters mechanistically distinct (different dominant channel mechanisms across clusters) or do they share the same mechanism with parameter-scale variation? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-06 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **URL sources** | — |
+| **Created by** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
 
 </details>
 

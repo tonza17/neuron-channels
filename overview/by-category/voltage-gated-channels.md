@@ -5,8 +5,8 @@ Ion channels whose opening probability depends on membrane voltage.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(6)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(83)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(7)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(85)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1062,7 +1062,38 @@ dendritic transients.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (6)
+## Answers (7)
+
+<details>
+<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
+re-clustered in the t0080 54-d v3 parameter space and a t0084-style
+Vm-trace deep-dive is run at 16 directions on per-cluster representative
+cells, are the resulting clusters mechanistically distinct (different
+dominant channel mechanisms across clusters) or do they share the same
+mechanism with parameter-scale variation?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
+[`are-cluster-motifs-mechanistically-distinct`](../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/)
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
+clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
+PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
+NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
+parameter scale but not in which channel drives the PD response. This extends t0084's
+NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
+in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+[200, 1200] ms):
+
+| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
+| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
+| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
+| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
+
+</details>
 
 <details>
 <summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
@@ -1201,7 +1232,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (68 open, 15 closed)
+## Suggestions (70 open, 15 closed)
 
 <details>
 <summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
@@ -1279,6 +1310,44 @@ this prior. Conduct a focused literature search for RGC-specific NaP density mea
 Hu 2009, Bender-Trussell 2009, Lewis 2014 RGC review). If an RGC-specific NaP value exists,
 replace the prior, re-run the scorecard, and re-classify the clusters. Expected cost: ~$0.10
 USD (paper search + summarisation only). Recommended task types: review-papers.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is
++33 sigma exotic)</strong> (S-0088-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 cluster 1 (cells 1304, 1504, 1624, 1634) has centroid AIS-to-soma Nav ratio = 116.04,
+deviating +32.92 sigma from Werginz 2024's published 17.3 +/- 3. This is the most extreme
+single-prior violation in t0086 + t0088. Audit the ratio computation: (a) confirm
+centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR] is in matching
+units (S/cm^2 / S/cm^2 = dimensionless); (b) check the soma Nav lower bound is not pinning the
+centroid soma value to a near-zero value, inflating the ratio; (c) check whether the 4 cells
+in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
+averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
+wall-clock, $0 cost. Recommended task types: data-analysis, correction.
 
 </details>
 

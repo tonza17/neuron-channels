@@ -15,9 +15,9 @@ threshold.
 | Warn threshold | 80% ($16.00) |
 | Stop threshold | 100% ($20.00) |
 | Default per-task limit | $5.00 USD |
-| Tasks with cost records | 80 |
+| Tasks with cost records | 81 |
 | Tasks with non-zero spend | 6 |
-| Skipped tasks | 8 |
+| Skipped tasks | 7 |
 
 ## Service Totals
 
@@ -39,7 +39,7 @@ threshold.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-74 task cost record(s) are zero-cost and omitted from the main spend table.
+75 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -63,4 +63,3 @@ threshold.
 | `t0044_schachter_retest_on_t0043` | results/costs.json is missing or invalid |
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
-| `t0088_recluster_marginals_and_vm_motifs` | results/costs.json is missing or invalid |

@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (32)](../papers/by-category/compartmental-modeling.md) | [Answers
-(15)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(262)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(16)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(268)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (13)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -1714,7 +1714,38 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (15)
+## Answers (16)
+
+<details>
+<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
+re-clustered in the t0080 54-d v3 parameter space and a t0084-style
+Vm-trace deep-dive is run at 16 directions on per-cluster representative
+cells, are the resulting clusters mechanistically distinct (different
+dominant channel mechanisms across clusters) or do they share the same
+mechanism with parameter-scale variation?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
+[`are-cluster-motifs-mechanistically-distinct`](../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/)
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
+clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
+PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
+NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
+parameter scale but not in which channel drives the PD response. This extends t0084's
+NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
+in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+[200, 1200] ms):
+
+| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
+| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
+| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
+| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
+
+</details>
 
 <details>
 <summary><strong>Why did the t0078 BoTorch qLogNEHVI MOBO collapse `nav16_ais` to
@@ -2033,7 +2064,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (229 open, 33 closed)
+## Suggestions (235 open, 33 closed)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -2207,6 +2238,111 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is
++33 sigma exotic)</strong> (S-0088-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 cluster 1 (cells 1304, 1504, 1624, 1634) has centroid AIS-to-soma Nav ratio = 116.04,
+deviating +32.92 sigma from Werginz 2024's published 17.3 +/- 3. This is the most extreme
+single-prior violation in t0086 + t0088. Audit the ratio computation: (a) confirm
+centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR] is in matching
+units (S/cm^2 / S/cm^2 = dimensionless); (b) check the soma Nav lower bound is not pinning the
+centroid soma value to a near-zero value, inflating the ratio; (c) check whether the 4 cells
+in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
+averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
+wall-clock, $0 cost. Recommended task types: data-analysis, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>13-cell full deep-dive (extend Phase B to all 13 cells, not just
+representatives)</strong> (S-0088-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 Phase B ran the Vm-trace deep-dive on 4 representative cells; the 13-cell pool's other 9
+cells could have within-cluster mechanism heterogeneity invisible to the representative-only
+analysis. Extend Phase B to all 13 cells: 13 x 16 directions = 208 NEURON sims. Compare
+per-cell fractional NaP / Nav1.6 / NMDA across all cells within each cluster; report
+within-cluster spread as a measure of mechanism homogeneity per cluster. Local-CPU only: 13 x
+16 x ~60 s/sim = ~3.5 hours wall-clock, $0 cost. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Polar attribution decomposition: integrate fractional
+contributions over the direction-tuning curve</strong> (S-0088-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088's mechanism attribution uses only PD (0 deg) - ND (180 deg) integrated current. This
+discards information from the 14 other directions recorded at 22.5-deg spacing. Compute
+per-direction fractional NMDA / Nav1.6 / NaP integrals and weight by the direction-tuning
+curve (the AIS spike-onset polar histogram) to get a richer cross-direction attribution. Test
+whether the NaP-dominant verdict holds across all directions or only at PD-flanking
+directions. Pure data analysis on existing .npz files; ~1 hour wall-clock, $0 cost.
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>GABA spatial-gradient ablation: does GABA shape
+direction-asymmetry causally?</strong> (S-0088-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 found GABA rho0 exotic (>+5 sigma) in all 4 clusters and GABA lambda exotic in 3 of 4
+clusters. The model exploits exotic GABA spatial scale to shape direction-asymmetry. Test
+causally: set rho_0_gaba = 1.0 (Rosenroll baseline) or lambda_gaba_um = 80 (Rosenroll mean)
+per representative cell and re-measure DSI at 16 directions. Expected effect: if GABA spatial
+gradient is causal for direction selectivity, DSI degrades; if NaP alone explains DSI, DSI is
+preserved. 4 cells x 2 GABA-knockout variants x 16 directions = 128 sims; ~2 hours local CPU,
+$0 cost. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add UMAP to project dependencies; re-visualise t0086 + t0088
+clusters</strong> (S-0088-06)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 fell back to PCA(n=2) for cluster visualisation because umap-learn is not in the
+project's pyproject.toml. UMAP would likely show different (potentially clearer) cluster
+structure for the small 13-cell pool. Add `umap-learn>=0.5` to pyproject.toml; re-run
+select_representatives.py (already imports umap inside try/except); re-publish
+cluster_umap.png. Apply the same to t0086's cluster_pca.png if relevant. Pure tooling change;
+<30 min wall-clock, $0 cost. Recommended task types: infrastructure-setup, data-analysis.
 
 </details>
 

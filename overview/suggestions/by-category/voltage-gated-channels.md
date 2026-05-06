@@ -1,7 +1,7 @@
 # Suggestions: `voltage-gated-channels`
 
-83 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **68 open** (16
+85 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **70 open** (18
 high, 42 medium, 10 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
@@ -58,6 +58,56 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is
++33 sigma exotic)</strong> (S-0088-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0088-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Source paper** | [`werginz_2024`](../../../tasks/t0088_recluster_marginals_and_vm_motifs/assets/paper/werginz_2024/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0088 cluster 1 (cells 1304, 1504, 1624, 1634) has centroid AIS-to-soma Nav ratio = 116.04,
+deviating +32.92 sigma from Werginz 2024's published 17.3 +/- 3. This is the most extreme
+single-prior violation in t0086 + t0088. Audit the ratio computation: (a) confirm
+centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR] is in matching
+units (S/cm^2 / S/cm^2 = dimensionless); (b) check the soma Nav lower bound is not pinning the
+centroid soma value to a near-zero value, inflating the ratio; (c) check whether the 4 cells
+in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
+averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
+wall-clock, $0 cost. Recommended task types: data-analysis, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0088-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 

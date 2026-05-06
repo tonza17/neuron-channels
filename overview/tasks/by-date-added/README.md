@@ -8,23 +8,27 @@
 
 ## 2026-05-06 (5)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0088 — <strong>Re-cluster t0086 13 cells and per-cluster Vm-trace
+<summary>✅ 0088 — <strong>Re-cluster t0086 13 cells and per-cluster Vm-trace
 deep-dive</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0088_recluster_marginals_and_vm_motifs` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-05-06 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | `S-0086-03` |
 | **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`experiment-run`](../../../meta/task_types/experiment-run/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-06T19:40:18Z |
+| **End time** | 2026-05-06T21:10:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
 | **Task folder** | [`t0088_recluster_marginals_and_vm_motifs/`](../../../tasks/t0088_recluster_marginals_and_vm_motifs/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) |
 
 # Re-cluster t0086 Genuine + Marginal cells and per-cluster Vm-trace deep-dive (S-0086-03 extension)
 
@@ -219,9 +223,40 @@ produces the answer asset.
 4. Does cell 767's NaP-dominant attribution from t0084 (single-seed 8 directions) hold up at
    16-direction resolution and after re-clustering with the 13-cell pool?
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "2"
+> task_id: "t0088_recluster_marginals_and_vm_motifs"
+> date_completed: "2026-05-06"
+> ---
+> **Results Summary -- t0088_recluster_marginals_and_vm_motifs**
+>
+> **Summary**
+>
+> Re-clustered the 13-cell pool of 6 Genuine + 7 Marginal cells from t0086 in the t0080 54-d
+> v3
+> parameter space; KMeans + silhouette selected **best_k = 4 clusters**. Ran a t0084-style
+> Vm-trace
+> deep-dive at 16 directions on the 4 representative cells (1604, 1634, 767, 1639) on local
+> CPU, all
+> 64 simulations stable. **Mechanism-distinctness verdict =
+> `shared_mechanism_different_scale`**: all
+> 4 cluster representatives are NaP-dominant in PD-minus-ND attribution (frac NaP 0.874-0.997,
+> frac
+> Nav1.6 0.003-0.126, frac NMDA = 0.000); clusters differ in parameter scale within 54-d space
+> but not
+> in which channel drives the PD response. This extends t0084's NaP-dominant cell 767 finding
+> from a
+> single cell at 8 directions to four representative cells at 16 directions and confirms the
+> v3
+> substrate's joint-pass / near-joint-pass cells systematically rely on NaP-driven sustained
+> dendritic
+> depolarisation. All 4 clusters classified exotic by the biological scorecard (extending
+> t0086's
+> exotic-NMDA verdict to the 13-cell pool).
+
+</details>
 
 <details>
 <summary>✅ 0087 — <strong>Brainstorm results session 17</strong></summary>

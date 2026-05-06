@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-16-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-21-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-22-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-88-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-330-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-336-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (30K)
-| [full](llm-context/full.xml) (481K) | [roadmap](llm-context/roadmap.xml) (98K) |
-[results](llm-context/results-deep-dive.xml) (379K) |
-[assets](llm-context/literature-and-assets.xml) (53K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (31K)
+| [full](llm-context/full.xml) (489K) | [roadmap](llm-context/roadmap.xml) (97K) |
+[results](llm-context/results-deep-dive.xml) (387K) |
+[assets](llm-context/literature-and-assets.xml) (54K)
 
-*Last updated: 2026-05-06 19:39 UTC*
+*Last updated: 2026-05-06 21:11 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -59,13 +59,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`description`](../tasks/t0088_recluster_marginals_and_vm_motifs/task_description.md) | 2026-05-06 |
 
 ---
 
@@ -83,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (80 total)](tasks/by-status/completed.md)
+## [Recently Completed (81 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
 | 0087 | [Brainstorm results session 17](../overview/tasks/task_pages/t0087_brainstorm_results_17.md) | [`results`](../tasks/t0087_brainstorm_results_17/results/results_detailed.md) | 2026-05-06 11:50 |
 | 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
@@ -96,9 +96,8 @@ No blocked tasks.
 | 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
-| 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
 
-*70 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*71 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (290 open)](suggestions/)
+## [Recent Suggestions (296 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -317,11 +316,11 @@ $0.35/hr). Recommended task types: experiment-run.
 
 </details>
 
-*280 more open suggestions → [open suggestions](suggestions/)*
+*286 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (42)](suggestions/)
+## [High Priority Suggestions (44)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -405,6 +404,44 @@ Recommended task types: data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
+(S-0088-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
+0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
+correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
+in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
+directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
+causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
+to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
+Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is
++33 sigma exotic)</strong> (S-0088-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0088_recluster_marginals_and_vm_motifs](../tasks/t0088_recluster_marginals_and_vm_motifs/)
+
+t0088 cluster 1 (cells 1304, 1504, 1624, 1634) has centroid AIS-to-soma Nav ratio = 116.04,
+deviating +32.92 sigma from Werginz 2024's published 17.3 +/- 3. This is the most extreme
+single-prior violation in t0086 + t0088. Audit the ratio computation: (a) confirm
+centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR] is in matching
+units (S/cm^2 / S/cm^2 = dimensionless); (b) check the soma Nav lower bound is not pinning the
+centroid soma value to a near-zero value, inflating the ratio; (c) check whether the 4 cells
+in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
+averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
+wall-clock, $0 cost. Recommended task types: data-analysis, correction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
 3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
 
@@ -478,48 +515,11 @@ on/off. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
-to the v3 54-d parameter space</strong> (S-0080-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
-Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
-regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
-compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
-25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
-dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
-locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
-~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
-types: experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
-54-d parameter space</strong> (S-0080-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
-9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
-Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
-near-Pareto starting population, dramatically reducing the generations needed to converge.
-Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
-~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
-warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
-Vast.ai 64-core. Recommended task types: experiment-run, build-model.
-
-</details>
-
-*32 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*34 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (21 total)](answers/)
+## [Recent Answers (22 total)](answers/)
 
 <details>
 <summary><strong>Which clusters of joint-pass cells in t0083's expanded population
@@ -535,6 +535,37 @@ Stochastic (<=2/5). The Genuine cells partition into 2 cluster(s) at k-means bes
 priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999,
 Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior
 breakdowns.
+
+</details>
+
+<details>
+<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
+re-clustered in the t0080 54-d v3 parameter space and a t0084-style
+Vm-trace deep-dive is run at 16 directions on per-cluster representative
+cells, are the resulting clusters mechanistically distinct (different
+dominant channel mechanisms across clusters) or do they share the same
+mechanism with parameter-scale variation?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
+[`are-cluster-motifs-mechanistically-distinct`](../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/)
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
+clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
+PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
+NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
+parameter scale but not in which channel drives the PD response. This extends t0084's
+NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
+in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+[200, 1200] ms):
+
+| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
+| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
+| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
+| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
 
 </details>
 
@@ -696,28 +727,7 @@ disagreements; every Figure 1-8 reproduction outcome is recorded with numerical 
 
 </details>
 
-<details>
-<summary><strong>What is the Vast.ai GPU cost and recommended organisation of a
-joint DSGC morphology + top-10 voltage-gated channel DSI-maximisation
-task?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-22 | **Full answer**:
-[`vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation`](../tasks/t0033_plan_dsgc_morphology_channel_optimisation/assets/answer/vastai-cost-of-joint-dsgc-morphology-channel-dsi-optimisation/)
-
-Run a surrogate-NN-assisted gradient-free evolutionary search (population 150 x 30 generations
-x 3 seeds after a 5,000-sample surrogate-training burn-in, 25 free parameters = 5 Cuntz
-morphology scalars + 20 channel gbar parameters) on a single RTX 4090 Vast.ai instance at a
-central USD cost of about 51 dollars, with a 0.5x-2x sensitivity envelope of roughly 23-119
-dollars. This combination is cheapest among the corpus-justified gradient-free strategies
-because the surrogate-NN cuts 18,500 evaluations to ~8 GPU-hours of surrogate inference plus a
-one-off ~83 GPU-hour CoreNEURON training burn at the RTX 4090 rate of 0.50 dollars/hour.
-Confidence is medium: the CoreNEURON CPU-to-GPU speedup and the surrogate-NN economics are
-external assumptions not quantified in the downloaded paper corpus, and the sensitivity grid
-is propagated across a 0.5x-2x band for both per-sim cost and sample count.
-
-</details>
-
-*11 more answers → [answers](answers/)*
+*12 more answers → [answers](answers/)*
 
 ---
 

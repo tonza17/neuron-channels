@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-06T19:39:02Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-06T21:11:25Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>120827</char_count>
-    <byte_count>121045</byte_count>
-    <estimated_tokens>30206</estimated_tokens>
+    <char_count>122669</char_count>
+    <byte_count>122887</byte_count>
+    <estimated_tokens>30667</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -191,9 +191,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0085_brainstorm_results_16</id>
         <id>t0086_robustness_cluster_bio_comparison</id>
         <id>t0087_brainstorm_results_17</id>
+        <id>t0088_recluster_marginals_and_vm_motifs</id>
       </source_ids>
       <content>
-Completed tasks: 80
+Completed tasks: 81
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -674,6 +675,12 @@ ID: t0087_brainstorm_results_17
 Completed: 2026-05-06
 Short description: Seventeenth brainstorm: commission t0088 (re-cluster 13 Genuine+Marginal cells from t0086 + per-cluster Vm-trace deep-dive at 16 dirs); reject S-0086-03 as covered.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0087_brainstorm_results_17&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 17 Summary Seventeenth strategic brainstorm, run on 2026-05-06 after t0086 (`robustness_cluster_bio_comparison`) classified the 20-cell test set as 6 Genuine + 7 Marginal + 7 Stochastic, found k=2 clusters on the 6 Genuine cells, both clusters classified exotic by the biological scorecard (NMDA per-synapse +85-122 sigma above Sivyer 2013, NaP +7-24 sigma above Stuart 1999). One consolidated follow-up task commissioned: t0088 (`recluster_marginals_and_vm_motifs`) extends S-0086-03&#x27;s per-cluster Vm-trace deep-dive scope by re-clustering the...
+
+## Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
+ID: t0088_recluster_marginals_and_vm_motifs
+Completed: 2026-05-06
+Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0088_recluster_marginals_and_vm_motifs&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0088_recluster_marginals_and_vm_motifs Summary Re-clustered the 13-cell pool of 6 Genuine + 7 Marginal cells from t0086 in the t0080 54-d v3 parameter space; KMeans + silhouette selected **best_k = 4 clusters**. Ran a t0084-style Vm-trace deep-dive at 16 directions on the 4 representative cells (1604, 1634, 767, 1639) on local CPU, all 64 simulations stable. **Mechanism-distinctness verdict = `shared_mechanism_different_scale`**: all 4 cluster representatives are NaP-dominant in PD-minus-ND attribution (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac NMDA =...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -683,10 +690,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0087_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0088_recluster_marginals_and_vm_motifs</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -707,13 +713,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
-ID: t0088_recluster_marginals_and_vm_motifs
-Status: not_started
-Effective date: 2026-05-06
-Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive, t0086_robustness_cluster_bio_comparison
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -740,10 +739,11 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_a
         <id>synapse-distribution-audit-deposited-vs-paper</id>
         <id>mobo-on-biophysics-ais-disabled-corner</id>
         <id>cell-767-dendritic-spike-mechanism-attribution</id>
+        <id>are-cluster-motifs-mechanistically-distinct</id>
         <id>cluster-biological-plausibility-attribution</id>
       </source_ids>
       <content>
-Answers: 21
+Answers: 22
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -902,6 +902,14 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, voltage-gated-channels
 
 Cell 767&#x27;s PD/ND difference in integrated dendritic current is attributed primarily to **NaP sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200, 1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to cell 767. This single-replicate deep-dive did not reproduce cell 767&#x27;s original 5-seed joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the underlying biophysical signature of these parameters rather than confirming a per-trial joint-pass mechanism; multi-replicate confirmation requires t0083...
+
+## When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is re-clustered in the t0080 54-d v3 parameter space and a t0084-style Vm-trace deep-dive is run at 16 directions on per-cluster representative cells, are the resulting clusters mechanistically distinct (different dominant channel mechanisms across clusters) or do they share the same mechanism with parameter-scale variation?
+ID: are-cluster-motifs-mechanistically-distinct
+Created by: t0088_recluster_marginals_and_vm_motifs on 2026-05-06
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation, voltage-gated-channels
+
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4 clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d parameter scale but not in which channel drives the PD response. This extends t0084&#x27;s NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells in the v3 substrate. Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window [200, 1200] ms): | Cluster | Rep cell | NMDA...
 
 ## Which clusters of joint-pass cells in t0083&#x27;s expanded population are biologically plausible vs novel/unphysical, and which dendritic-spike machinery do the plausible clusters represent?
 ID: cluster-biological-plausibility-attribution
