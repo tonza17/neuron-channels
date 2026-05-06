@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-79 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **65 open** (14
-high, 42 medium, 9 low), **14 closed**.
+83 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **69 open** (16
+high, 43 medium, 10 low), **14 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -264,6 +264,33 @@ DSGC task.
 </details>
 
 <details>
+<summary>📊 <strong>Resolve units mismatch between t0080 gnmda_dend NetCon weight and
+Sivyer 2013 per-spine conductance</strong> (S-0086-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's NMDA exotic verdict (>85 sigma above Sivyer 2013) is so extreme that it likely
+partially reflects a units / scope mismatch rather than a genuinely outlier biological
+mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the
+t0080 Exp2NMDA mechanism, while Sivyer 2013's value is a per-spine synaptic conductance
+measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area
+normalisation or by an effective open-channel-fraction factor. Run a calibration ablation:
+take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine
+effective open conductance (from the NEURON state during a stimulus), and produce a
+calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
+clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
 insertions</strong> (S-0069-02)</summary>
 
@@ -305,6 +332,33 @@ Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels st
 ~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
 Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
 25-d search. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
 
 </details>
 
@@ -1053,6 +1107,31 @@ data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
+Genuine cells)</strong> (S-0086-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
+was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
+are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
+NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
+recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
+per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
+one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
+~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
 verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
 (S-0034-04)</summary>
@@ -1516,6 +1595,29 @@ does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed 
 diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar ×
 AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP
 current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
+
+</details>
+
+<details>
+<summary>📊 <strong>Source RGC-specific NaP density measurement to replace Stuart
+1999 / Goldfinger 2000 cortical-pyramidal prior</strong> (S-0086-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`stuart_1999`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/stuart_1999/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's biological scorecard used Stuart 1999 / Goldfinger 2000 NaP density (0.0005 S/cm^2) as
+the prior for distal NaP, but those measurements were made in cortical pyramidal cells, not
+RGCs. Both Genuine clusters scored exotic on NaP (Cluster 0 +24 sigma, Cluster 1 +7 sigma) by
+this prior. Conduct a focused literature search for RGC-specific NaP density measurements (try
+Hu 2009, Bender-Trussell 2009, Lewis 2014 RGC review). If an RGC-specific NaP value exists,
+replace the prior, re-run the scorecard, and re-classify the clusters. Expected cost: ~$0.10
+USD (paper search + summarisation only). Recommended task types: review-papers.
 
 </details>
 

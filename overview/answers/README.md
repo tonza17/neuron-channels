@@ -1,6 +1,6 @@
-# Answers (20)
+# Answers (21)
 
-20 answer(s).
+21 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -600,6 +600,36 @@ multi-replicate confirmation requires t0083 or a follow-up multi-seed study.
 | **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
 | **URL sources** | — |
 | **Created by** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+
+</details>
+
+<details>
+<summary><strong>Which clusters of joint-pass cells in t0083's expanded population
+are biologically plausible vs novel/unphysical, and which dendritic-spike
+machinery do the plausible clusters represent?</strong></summary>
+
+**Confidence**: medium
+
+Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7
+Stochastic (<=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0
+(n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published
+priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999,
+Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior
+breakdowns.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0086_robustness_cluster_bio_comparison/assets/answer/cluster-biological-plausibility-attribution/full_answer.md) |
+| **ID** | [`cluster-biological-plausibility-attribution`](../../tasks/t0086_robustness_cluster_bio_comparison/assets/answer/cluster-biological-plausibility-attribution/) |
+| **Question** | Which clusters of joint-pass cells in t0083's expanded population are biologically plausible vs novel/unphysical, and which dendritic-spike machinery do the plausible clusters represent? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-06 |
+| **Categories** | — |
+| **Paper sources** | — |
+| **Task sources** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **URL sources** | — |
+| **Created by** | [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
 
 </details>
 

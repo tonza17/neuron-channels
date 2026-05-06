@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T13:02:16Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T18:29:42Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>351320</char_count>
-    <byte_count>351476</byte_count>
-    <estimated_tokens>87830</estimated_tokens>
+    <char_count>358126</char_count>
+    <byte_count>358282</byte_count>
+    <estimated_tokens>89531</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -341,9 +341,15 @@
         <id>S-0083-04</id>
         <id>S-0083-05</id>
         <id>S-0083-06</id>
+        <id>S-0086-01</id>
+        <id>S-0086-02</id>
+        <id>S-0086-03</id>
+        <id>S-0086-04</id>
+        <id>S-0086-05</id>
+        <id>S-0086-06</id>
       </source_ids>
       <content>
-Suggestions: 324
+Suggestions: 330
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3972,6 +3978,75 @@ Categories: compartmental-modeling, direction-selectivity, patch-clamp
 Date added: 2026-05-06
 
 Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the project&#x27;s first cells to combine biologically-plausible DSI with PD firing rates above 30 Hz mean. Published `[Trenholm2013, Results p. 14064]` and `[Oesch2005, Results p. 754]` report peak rather than mean PD rates: 198 Hz Gaussian-convolved peak (Trenholm) and 148 Hz modal peak (Oesch). The current PD-rate metric is mean rate over 1400 ms; converting cells 1559 / 1677 to peak rate would resolve the mean-vs-peak metric mismatch and enable direct numerical comparison with Trenholm / Oesch. Re-run cells 1559 and 1677 in subprocess with full-resolution voltage / spike traces preserved, compute Gaussian-convolved instantaneous rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction. Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are preserved; otherwise experiment-run with 2-cell budget &lt; $0.20).
+
+## Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013 per-synapse value, then re-run
+ID: S-0086-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0086_robustness_cluster_bio_comparison
+Source paper: sivyer_2013
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels, dendritic-computation
+Date added: 2026-05-06
+
+t0086&#x27;s biological scorecard found that both Genuine-cell clusters have NMDA per-synapse conductance 85-122 sigma above Sivyer 2013&#x27;s published 0.1 nS. The NSGA-II search routinely pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013&#x27;s value as a soft cap) and re-run NSGA-II from t0083&#x27;s gen-17 final population for 5 additional generations at population 96. Test whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the joint-pass thresholds, (b) revisiting the substrate&#x27;s NMDA implementation, or (c) revisiting Sivyer 2013&#x27;s measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96 cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+## Resolve units mismatch between t0080 gnmda_dend NetCon weight and Sivyer 2013 per-spine conductance
+ID: S-0086-02
+Status: active
+Priority: high
+Kind: evaluation
+Source task: t0086_robustness_cluster_bio_comparison
+Source paper: sivyer_2013
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+Date added: 2026-05-06
+
+t0086&#x27;s NMDA exotic verdict (&gt;85 sigma above Sivyer 2013) is so extreme that it likely partially reflects a units / scope mismatch rather than a genuinely outlier biological mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the t0080 Exp2NMDA mechanism, while Sivyer 2013&#x27;s value is a per-spine synaptic conductance measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area normalisation or by an effective open-channel-fraction factor. Run a calibration ablation: take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine effective open conductance (from the NEURON state during a stimulus), and produce a calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086 clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU). Recommended task types: data-analysis.
+
+## Per-cluster Vm trace deep-dive (extension of t0084 to all 6 Genuine cells)
+ID: S-0086-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0086_robustness_cluster_bio_comparison
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation, voltage-gated-channels
+Date added: 2026-05-06
+
+t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767 was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677) are Genuine and partition into 2 clusters. Extend t0084&#x27;s deep-dive methodology (24-direction NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce one cluster-specific mechanism attribution figure plus a comparative table. Expected cost: ~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr). Recommended task types: experiment-run, data-analysis.
+
+## 10-replication robustness extension: rerun the 6 Genuine + 7 Marginal cells at 10 outer seeds
+ID: S-0086-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0086_robustness_cluster_bio_comparison
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-06
+
+t0086 used 5 outer seeds, distinguishing Genuine (5/5) from Marginal (3-4/5) from Stochastic (&lt;=2/5). A 10-rep extension on the 13 Genuine + Marginal cells (skip the 7 Stochastic that already failed) would produce a finer 10/9-8/&lt;=7 partition that more accurately separates truly-genuine cells from borderline-Marginal cases like cell 1379 (4/5 in t0086) and cell 1559 (4/5). The bootstrap ARI would also tighten. Expected cost: ~$0.65 USD on Vast.ai EPYC 7B13 (13 cells x 5 additional reps x 135 s/rep = 2.4 h x $0.35/hr). Recommended task types: experiment-run.
+
+## Source RGC-specific NaP density measurement to replace Stuart 1999 / Goldfinger 2000 cortical-pyramidal prior
+ID: S-0086-05
+Status: active
+Priority: low
+Kind: evaluation
+Source task: t0086_robustness_cluster_bio_comparison
+Source paper: stuart_1999
+Categories: voltage-gated-channels, dendritic-computation
+Date added: 2026-05-06
+
+t0086&#x27;s biological scorecard used Stuart 1999 / Goldfinger 2000 NaP density (0.0005 S/cm^2) as the prior for distal NaP, but those measurements were made in cortical pyramidal cells, not RGCs. Both Genuine clusters scored exotic on NaP (Cluster 0 +24 sigma, Cluster 1 +7 sigma) by this prior. Conduct a focused literature search for RGC-specific NaP density measurements (try Hu 2009, Bender-Trussell 2009, Lewis 2014 RGC review). If an RGC-specific NaP value exists, replace the prior, re-run the scorecard, and re-classify the clusters. Expected cost: ~$0.10 USD (paper search + summarisation only). Recommended task types: review-papers.
+
+## Bed A cross-bed validation: re-run NSGA-II on the t0080 Bed A morphology with the same v3 substrate
+ID: S-0086-06
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0086_robustness_cluster_bio_comparison
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-06
+
+t0086 identified 6 Genuine cells in t0080&#x27;s Bed B morphology, but the v3 substrate has not been tested on Bed A. Run NSGA-II for 8 generations at population 96 on Bed A with the same v3 substrate and the same constraint (AIS-to-soma Nav ratio &gt;= 5). Compare: (a) does Bed A produce more or fewer joint-pass cells than Bed B? (b) do the Bed A joint-pass cells cluster into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) or do they discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x $0.35/hr). Recommended task types: experiment-run.
       </content>
     </section>
   </sections>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-06T13:02:16Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-06T18:29:42Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>141</section_count>
-    <char_count>2529492</char_count>
-    <byte_count>2536150</byte_count>
-    <estimated_tokens>632373</estimated_tokens>
+    <section_count>142</section_count>
+    <char_count>2547797</char_count>
+    <byte_count>2554459</byte_count>
+    <estimated_tokens>636949</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -190,9 +190,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
         <id>t0085_brainstorm_results_16</id>
+        <id>t0086_robustness_cluster_bio_comparison</id>
       </source_ids>
       <content>
-Completed tasks: 78
+Completed tasks: 79
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -661,6 +662,12 @@ ID: t0085_brainstorm_results_16
 Completed: 2026-05-06
 Short description: Sixteenth brainstorm: commission t0086 (robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells); reject 3 covered suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0085_brainstorm_results_16&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 16 Summary Sixteenth strategic brainstorm, run on 2026-05-06 after t0083 (`bedb_v3_extend_nsga2_gen8plus`) extended t0081&#x27;s NSGA-II from gen 7 through gen 17 and **expanded the joint-pass cell population from 1 to 15 cells** (1 inherited cell 767 + 14 new in gens 13-17), with hypervolume +118% (16.330 -&gt; 35.576), and t0084 (`t0081_cell_767_vm_trace_deepdive`) produced the cell-767 mechanism-attribution answer asset at $0 cost. One consolidated follow-up task commissioned: t0086 (`robustness_cluster_bio_comparison`) bundles three open suggestions...
+
+## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
+ID: t0086_robustness_cluster_bio_comparison
+Completed: 2026-05-06
+Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_cluster_bio_comparison&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0086_robustness_cluster_bio_comparison Summary Re-evaluated the top 20 cells from t0083 (15 joint-pass + 5 closest near-pass) at 24 directions x 30 inner seeds x 5 outer-seed replications on Vast.ai EPYC 7B13. **6 cells were Genuine** (5/5 reps pass DSI &gt;= 0.4 AND PD &gt;= 10 Hz), **7 Marginal** (3-4/5), **7 Stochastic** (&lt;=2/5). k-means clustering on the 6 Genuine cells in 54-d parameter space selected **best_k=2**; both clusters were classified **exotic** by the biological scorecard, driven by extreme NMDA per-synapse conductance (&gt;85 sigma above Sivyer 2013) and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -670,10 +677,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0085_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0086_robustness_cluster_bio_comparison</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -694,13 +700,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
-ID: t0086_robustness_cluster_bio_comparison
-Status: not_started
-Effective date: 2026-05-06
-Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -727,9 +726,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_a
         <id>synapse-distribution-audit-deposited-vs-paper</id>
         <id>mobo-on-biophysics-ais-disabled-corner</id>
         <id>cell-767-dendritic-spike-mechanism-attribution</id>
+        <id>cluster-biological-plausibility-attribution</id>
       </source_ids>
       <content>
-Answers: 20
+Answers: 21
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -888,6 +888,13 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, voltage-gated-channels
 
 Cell 767&#x27;s PD/ND difference in integrated dendritic current is attributed primarily to **NaP sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200, 1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to cell 767. This single-replicate deep-dive did not reproduce cell 767&#x27;s original 5-seed joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the underlying biophysical signature of these parameters rather than confirming a per-trial joint-pass mechanism; multi-replicate confirmation requires t0083...
+
+## Which clusters of joint-pass cells in t0083&#x27;s expanded population are biologically plausible vs novel/unphysical, and which dendritic-spike machinery do the plausible clusters represent?
+ID: cluster-biological-plausibility-attribution
+Created by: t0086_robustness_cluster_bio_comparison on 2026-05-06
+Confidence: medium
+
+Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7 Stochastic (&lt;=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0 (n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999, Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior breakdowns.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -43056,6 +43063,331 @@ No research required for brainstorming session.
 #### References
 
 No research required for brainstorming session.
+      </content>
+    </section>
+    <section id="t0086_robustness_cluster_bio_comparison-research_code" source_kind="file">
+      <title>t0086_robustness_cluster_bio_comparison — Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0086_robustness_cluster_bio_comparison</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0086_robustness_cluster_bio_comparison/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0086_robustness_cluster_bio_comparison&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 6
+tasks_cited: 6
+libraries_found: 1
+libraries_relevant: 1
+date_completed: &quot;2026-05-06&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Robustness + Cluster + Biological-Plausibility Analysis of t0083 Joint-Pass Cells
+
+#### Task Objective
+
+t0086 runs three sequential phases on top of t0083&#x27;s 18-cell Pareto front: (A) re-evaluate the top
+20 cells (15 joint-pass from t0081 + t0083 plus 5 closest near-pass from t0083) at 24 directions x
+30 seeds x 5 outer-seed replications and classify Genuine / Marginal / Stochastic; (B) cluster
+Genuine cells in the 54-d v3 parameter space using k-means
++ hierarchical + UMAP/t-SNE; (C) score each cluster centroid against published biological priors
+  (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Goldfinger 2000, Stuart
+  1999, de Rosenroll 2026) producing one answer asset attributing each cluster to known biology or
+  flagging as novel/unphysical. Source suggestion: S-0083-02 (also covers S-0083-05 multi-seed gate
+  and S-0081-01 multi-replicate).
+
+#### Library Landscape
+
+A single library is relevant: **`de_rosenroll_2026_dsgc_ais_dendritic_spike`** (registered under
+[t0080]). Provides the 54-d v3 substrate, the canonical per-cell evaluator
+`evaluate_parameter_vector`, the parameter-vector dataclass `ParameterVector`, and the `ParamIndex`
+Enum mapping parameter slot 0..53 to semantic name. t0086 imports this library unchanged for Phase A
+re-evaluation.
+
+No other libraries discovered are relevant: t0011 visualization library is matplotlib-only and Phase
+B/C add their own UMAP / scorecard plots.
+
+External dependencies needed for t0086 beyond the existing project deps: **`umap-learn`** (PyPI). To
+be added to `pyproject.toml` if not present.
+
+#### Architecture Overview
+
+##### Phase A re-evaluation entry points
+
+* **`tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.trial_driver.evaluate_parameter_vector`**
+  -- the canonical per-cell evaluator. Signature:
+
+  ```python
+  def evaluate_parameter_vector(
+      *,
+      params: ParameterVector,
+      angles_deg: tuple[int, ...],
+      n_seeds: int,
+      max_workers: int = 0,
+  ) -&gt; EvalResult: ...
+  ```
+
+  Returns `EvalResult` with `dsi`, `pd_rate_hz`, `n_trials`, `n_errors`, `elapsed_s`, `is_unstable`,
+  `peak_vm_mv`. With `angles_deg = tuple(range(0, 360, 15))` (24 angles) and `n_seeds = 30`,
+  evaluates 720 trials per call. Inner parallelism via `ProcessPoolExecutor` keyed on `max_workers`
+  (default = `cpu_count() - 1`).
+
+* **Outer seed mechanism**: per-trial RNG seed is computed inside `evaluate_parameter_vector` as
+  `seed = SEED_BASE + s * 10_007 + int(angle) * 13` where `SEED_BASE` is a module-level constant in
+  `tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.constants` (default value `1000`). To produce
+  5 pseudo-independent replications per cell, t0086 monkey-patches `constants.SEED_BASE` and the
+  imported `trial_driver.SEED_BASE` global per replication.
+
+* **Parameter-vector source**: 54-d parameter vectors live in
+  `tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/all_evaluations.json` (1728 records;
+  filter by `dsi &gt;= 0.4 AND pd_rate_hz &gt;= 10 AND is_feasible == True` to recover 14 t0083 joint-pass
+  cells). Cell 767 from `tasks/t0081_bedb_v3_warmstart_nsga2/results/data/all_evaluations.json`.
+  18-cell Pareto front in `pareto_front.json` (filter to non-joint-pass; rank by Euclidean distance
+  to (0.4, 10) joint corner; keep top 5 near-pass).
+
+##### Phase B cluster analysis stack
+
+* **scikit-learn** (existing dep): `KMeans`, `silhouette_score`, `AgglomerativeClustering`,
+  `adjusted_rand_score`, `TSNE(n_components=2, perplexity=5, random_state=42)`.
+* **UMAP-learn** (NEW dep):
+  `umap.UMAP(n_components=2, n_neighbors=5, min_dist=0.3, random_state=42)`.
+* **BIC for KMeans**: manual computation via `BIC = -2 * log_likelihood + k * ln(n)` (sklearn does
+  not expose this directly).
+
+##### Phase C biological scorecard
+
+* **Published priors hard-coded** in `code/biological_priors.py`, citing the primary papers (Kole
+  2008 cortical AIS Nav 0.25-0.5 S/cm^2; Werginz 2024 mouse alpha-RGC AIS Nav 1.3 S/cm^2 with 17.3x
+  soma ratio; Sivyer 2013 dendritic NMDA; Branco-Hausser 2010 Mg-block voff; Oesch 2005, Goldfinger
+  2000, Stuart 1999 distal Nav1.6 / NaP densities; de Rosenroll 2026 GABA/AMPA spatial
+  distribution).
+
+* **t0080 ParamIndex**: `tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.constants.ParamIndex`
+  is the canonical Enum mapping parameter slot (0..53) to semantic name. t0086 references these
+  names in the biological priors file and the per-cluster scorecard.
+
+##### REQ-X cost-watchdog rate-fix
+
+* **t0083&#x27;s bug**: `tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.constants.HOURLY_RATE_USD`
+  is hard-coded `0.2382`. t0083&#x27;s actual offer billed $0.3209/hr (1.347x) [t0083].
+  `_elapsed_cost_usd()` in `nsga2_loop.py` uses this constant directly. Fix for t0086: monkey-patch
+  the t0080 `HOURLY_RATE_USD` global at startup with the rate resolved from
+  `logs/steps/&lt;NNN&gt;_setup-machines/machine_log.json` `selected_offer.price_per_hour`.
+
+#### Key Findings
+
+##### Reusable per-cell evaluator is stable across tasks [t0080] [t0081] [t0083]
+
+`evaluate_parameter_vector` was authored in [t0080] and reused unchanged by [t0081] (warm-start) and
+[t0083] (continuation). It produces deterministic results given a parameter vector + angles + seeds
+\+ SEED_BASE; this is the contract t0086 relies on for the 5 outer-seed replications. Implementation
+at line 332 of `trial_driver.py`. No known bugs; [t0083] reused it for 1728 evaluations with no
+per-cell errors.
+
+##### NSGA-II saved data formats are standardised across substrate generations [t0080] [t0081] [t0083]
+
+`results/data/all_evaluations.json` and `results/data/pareto_front.json` use the same record schema
+in [t0080] (192 cells) [t0081] (768 cells) [t0083] (1728 cells): `cell_index`, `generation`,
+`params` (54-element list), `dsi`, `pd_rate_hz`, `is_unstable`, `peak_vm_mv`, `elapsed_s`,
+`constraint_violation`, `is_feasible`. t0086&#x27;s Phase A loader uses one shared schema reader for all
+three sources.
+
+##### Parameter-vector hashing is deterministic [t0080]
+
+The `placer_seed` for a parameter vector is computed as
+`SEED_BASE + (_hash_param_vector(params.values) &amp; 0xFFFF)` -- it depends on `SEED_BASE`. When t0086
+monkey-patches `SEED_BASE` per replication, the placer_seed also varies, which means synaptic
+placement varies between replications. This is desired behaviour: a &quot;Genuine&quot; cell must be robust to
+both per-trial RNG variation AND placer variation.
+
+##### Cost-watchdog rate-bug pattern [t0083]
+
+[t0083]&#x27;s `costs.json` `note` field documents the bug: in-loop watchdog reported $4.115 spent at
+completion (17.3 h x $0.2382/hr) while true Vast.ai charge was $5.55 at run-end and $5.83 at
+instance-destroy. Cell-cost accounting still intact: 960 evaluations / 17.3 h = 55.5 cells/h -&gt;
+$0.00578/cell, comparable to [t0081]&#x27;s $0.00567/cell. The fix is to read the rate from the
+machine_log.json at startup, not hard-code it.
+
+##### Pareto front + joint-pass criterion alignment [t0083]
+
+[t0083]&#x27;s 18-cell final Pareto front contains 3 joint-pass cells (1304, 1559, 1677); the other 15
+are non-joint-pass. The full 15 joint-pass cells across the 1728 evaluations are NOT all on the
+Pareto front -- 12 are dominated by other cells in the front but still satisfy
+`DSI &gt;= 0.4 AND PD &gt;= 10`. t0086 must filter on `all_evaluations.json` (not just the Pareto front)
+to recover all 14 t0083 joint-pass cells.
+
+##### Clustering on small samples needs cross-validation [t0086 design]
+
+With only 15 Genuine cells (best case), silhouette + BIC scores will be noisy. The
+hierarchical-clustering cross-validation with cosine and euclidean metrics is the primary safeguard
+against k-means artifacts. Adding a 50-sample bootstrap stability check (ARI vs full-sample labels)
+further degrades cluster confidence when needed.
+
+#### Reusable Code and Assets
+
+##### `evaluate_parameter_vector` -- import via library
+
+* **Source**: `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/trial_driver.py` line 332.
+* **What it does**: Evaluates a 54-d parameter vector at the specified angles x seeds, returns DSI /
+  PD / peak Vm / instability flag. Inner parallelism via `ProcessPoolExecutor`.
+* **Reuse method**: import via library `de_rosenroll_2026_dsgc_ais_dendritic_spike`.
+* **Adaptation**: none. t0086 calls it 5x per cell with monkey-patched `SEED_BASE` between calls.
+* **Line count**: ~80 lines (function body); imported, not copied.
+
+##### `ParameterVector` and `ParamIndex` -- import via library
+
+* **Source**: `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/trial_driver.py`
+  (`ParameterVector`), `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py`
+  (`ParamIndex` Enum).
+* **What it does**: 54-d parameter container; ParamIndex Enum provides `.NAV16_AIS_GBAR`,
+  `.NAV16_SOMA_GBAR`, `.NMDA_VOFF`, etc.
+* **Reuse method**: import via library.
+* **Adaptation**: none.
+* **Line count**: ~50 lines combined; imported.
+
+##### Result-file loaders -- copy into task
+
+* **Source**: ad-hoc readers of `all_evaluations.json` / `pareto_front.json` exist in [t0083] but
+  they are private helpers (`reload_gen7.py`).
+* **What it does**: load JSON arrays into `CellEvaluation` dataclasses.
+* **Reuse method**: copy into `code/load_evaluations.py`. Replace with own thin wrapper using
+  pydantic models for type safety per project style guide.
+* **Adaptation**: t0086 needs per-source filtering (joint-pass; near-pass). New wrapper.
+* **Line count**: ~40 lines new code.
+
+##### Cost-watchdog (REQ-X) -- copy into task with rate-fix
+
+* **Source**: `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/nsga2_loop.py` lines 99-124
+  (`_elapsed_cost_usd`, `_trip_budget_overrun_if_needed`).
+* **What it does**: tracks elapsed wall-clock since process start; multiplies by hourly rate; trips
+  the overrun flag when `cost &gt; BUDGET_USD`.
+* **Reuse method**: copy into `code/cost_watchdog.py`.
+* **Adaptation**: replace hard-coded `HOURLY_RATE_USD = 0.2382` with rate read from
+  `machine_log.json` `selected_offer.price_per_hour` at module init.
+* **Line count**: ~40 lines copied + ~15 lines for rate-resolution.
+
+##### Phase A / B / C orchestration -- new code
+
+* `code/run_phase_a.py` -- top-level CLI; loads 20 cells, runs 5 reps each, classifies. ~150 lines
+  new code.
+* `code/run_phase_b.py` -- loads Genuine cells, runs k-means / hierarchical / UMAP / t-SNE, selects
+  k via silhouette + BIC, runs bootstrap. ~200 lines.
+* `code/run_phase_c.py` -- loads cluster centroids + biological priors, computes scorecard, writes
+  answer asset. ~150 lines.
+* `code/replication_runner.py` -- per-cell 5-replication wrapper. ~80 lines.
+* `code/cluster_analysis.py` -- k-means / hierarchical / silhouette / BIC / bootstrap helpers. ~150
+  lines.
+* `code/biological_priors.py` -- hard-coded priors with paper_id citations. ~100 lines.
+* `code/biological_scorecard.py` -- per-cluster scoring helper. ~80 lines.
+* `code/paths.py` -- centralised Path constants. ~50 lines.
+* `code/constants.py` -- column names, RNG seeds. ~30 lines.
+
+#### Lessons Learned
+
+* **Watchdog rate-resolution must be data-driven** [t0083]: hard-coded constants drift from reality
+  when offers change; t0083 over-spent by 16%. t0086 reads the rate at startup.
+
+* **Per-cell wall-clock variance is non-trivial** [t0080] [t0081] [t0083]: ~30-50 s/cell on the v3
+  substrate at 8 dirs x 20 seeds. Scaling to 24 dirs x 30 seeds (4.5x) is expected to produce
+  ~135-225 s per replication; 5 replications per cell -&gt; ~11-19 min/cell; 20 cells -&gt; ~225-380 min.
+  Plan for 6-8 hours wall-clock with 1-hour buffer.
+
+* **Joint-pass count matches expectations only when filtering on full evaluation history** [t0083]:
+  filtering only on `pareto_front.json` would miss 12 of the 14 t0083 joint-pass cells. t0086&#x27;s
+  loader must filter on `all_evaluations.json`.
+
+* **Reproducibility requires recording all RNG seeds and the parameter-vector hash basis** [t0080]
+  [t0083]: SEED_BASE + parameter vector are sufficient to reproduce; t0086 records
+  `replication_seeds.json` and `cell_param_hashes.json`.
+
+* **Inner parallelism should never exceed cell budget** [t0080]: at 64 cores, the 720-sim
+  per-replication budget runs in ~150-180 s. Higher parallelism wastes spin-up overhead.
+
+#### Recommendations for This Task
+
+1. **Reuse the t0080 library unchanged** for Phase A. Import `evaluate_parameter_vector`,
+   `ParameterVector`, and `ParamIndex` directly from the t0080 package. Do not copy the per-cell
+   evaluator into t0086.
+
+2. **Monkey-patch `SEED_BASE` per replication** rather than refactoring the t0080 constants module
+   to accept a `seed_base` parameter. This is the smallest-diff path that respects the cross-task
+   immutability rule.
+
+3. **Implement the REQ-X rate-fix as a copy-into-task `code/cost_watchdog.py`** that reads
+   `machine_log.json` `selected_offer.price_per_hour` at module init and patches t0080&#x27;s
+   `HOURLY_RATE_USD` global. Log the resolved rate at startup. This is non-negotiable; the plan must
+   explicitly track REQ-X.
+
+4. **Add `umap-learn` to `pyproject.toml`** during the planning step. Verify with
+   `uv run python -c &quot;import umap&quot;` after `uv sync`.
+
+5. **Filter joint-pass cells on `all_evaluations.json` not `pareto_front.json`** to recover all 14
+   t0083 joint-pass cells. The 5 near-pass cells come from `pareto_front.json` filtered to
+   non-joint-pass.
+
+6. **Hard-code biological priors in a per-task module with explicit `paper_id` references**. Each
+   prior carries `parameter_name`, `param_index`, `published_mean`, `published_sigma`, `paper_id`,
+   `units`. This makes the scorecard reproducible and auditable.
+
+7. **Run a 50-sample bootstrap on Phase B clusters** (sub-sample Genuine cells; recompute k-means;
+   report ARI vs full-sample labels). With ~15 cells (best case), bootstrap stability is the primary
+   safeguard against k-means artifacts.
+
+#### Task Index
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC compartmental model to NEURON
+* **Status**: completed
+* **Relevance**: Provides the de Rosenroll 2026 base substrate; informs the GABA/AMPA spatial
+  distribution biological prior used in Phase C.
+
+##### [t0078]
+
+* **Task ID**: `t0078_bedb_mobo_v2_ais_tiered_ahp`
+* **Name**: Bed B v2 MOBO with AIS tiered AHP (49-d substrate)
+* **Status**: completed
+* **Relevance**: Parent substrate of t0080 v3; informs the AIS-Nav biological prior; provides the
+  warm-start Pareto cells projected into the 54-d space.
+
+##### [t0080]
+
+* **Task ID**: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+* **Name**: Bed B v3 MOBO with dendritic-spike machinery (54-d, NSGA-II)
+* **Status**: completed
+* **Relevance**: PRIMARY library source. Provides `evaluate_parameter_vector`, `ParameterVector`,
+  `ParamIndex`, the v3 substrate library `de_rosenroll_2026_dsgc_ais_dendritic_spike`, and the
+  watchdog code pattern that t0086 copies + fixes for REQ-X.
+
+##### [t0081]
+
+* **Task ID**: `t0081_bedb_v3_warmstart_nsga2`
+* **Name**: Bed B v3 NSGA-II with combined warm-start (project&#x27;s first joint-pass cell)
+* **Status**: completed
+* **Relevance**: provides cell 767 (first joint-pass cell) and the warm-start NSGA-II harness; cell
+  767 is one of the 20 cells in t0086&#x27;s Phase A re-evaluation set.
+
+##### [t0083]
+
+* **Task ID**: `t0083_bedb_v3_extend_nsga2_gen8plus`
+* **Name**: Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
+* **Status**: completed
+* **Relevance**: provides 14 additional joint-pass cells, the 18-cell final Pareto front (source for
+  the 5 near-pass cells), the all_evaluations.json (1728 records), and the cost-watchdog rate-bug
+  that motivates REQ-X.
+
+##### [t0084]
+
+* **Task ID**: `t0084_t0081_cell_767_vm_trace_deepdive`
+* **Name**: Vm-trace deep-dive of cell 767 to attribute the joint-pass DSI mechanism
+* **Status**: completed
+* **Relevance**: provides the cell-767 mechanism-attribution answer asset; informs the Phase C
+  biological priors for the cell-767 cluster (which dendritic-spike machinery dominated).
       </content>
     </section>
   </sections>

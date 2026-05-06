@@ -8,23 +8,27 @@
 
 ## 2026-05-06 (3)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0086 — <strong>Robustness + cluster + bio-comparison of t0081/t0083
+<summary>✅ 0086 — <strong>Robustness + cluster + bio-comparison of t0081/t0083
 joint-pass cells</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0086_robustness_cluster_bio_comparison` |
-| **Status** | not_started |
+| **Status** | completed |
 | **Effective date** | 2026-05-06 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | `S-0083-02` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-06T13:03:09Z |
+| **End time** | 2026-05-06T18:24:00Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
 | **Task folder** | [`t0086_robustness_cluster_bio_comparison/`](../../../tasks/t0086_robustness_cluster_bio_comparison/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) |
 
 # Robustness Validation and Parameter-Cluster + Biological-Plausibility Analysis of t0083 Joint-Pass Cells
 
@@ -220,9 +224,36 @@ the resolved rate at startup so that any future audit can confirm the value used
 Implementation review must explicitly check this code path before merging the implementation
 step.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "2"
+> task_id: "t0086_robustness_cluster_bio_comparison"
+> date_completed: "2026-05-06"
+> ---
+> **Results Summary -- t0086_robustness_cluster_bio_comparison**
+>
+> **Summary**
+>
+> Re-evaluated the top 20 cells from t0083 (15 joint-pass + 5 closest near-pass) at 24
+> directions x 30
+> inner seeds x 5 outer-seed replications on Vast.ai EPYC 7B13. **6 cells were Genuine** (5/5
+> reps
+> pass DSI >= 0.4 AND PD >= 10 Hz), **7 Marginal** (3-4/5), **7 Stochastic** (<=2/5). k-means
+> clustering on the 6 Genuine cells in 54-d parameter space selected **best_k=2**; both
+> clusters were
+> classified **exotic** by the biological scorecard, driven by extreme NMDA per-synapse
+> conductance
+> (>85 sigma above Sivyer 2013) and elevated distal NaP density (>7 sigma above Stuart 1999)
+> common to
+> both clusters.
+>
+> **Metrics**
+>
+> * **Genuine cells: 6 / 20** (cells 1517, 1604, 1634, 1639, 1663, 1677). Project pass
+>   criterion of
+
+</details>
 
 <details>
 <summary>✅ 0085 — <strong>Brainstorm results session 16</strong></summary>

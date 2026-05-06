@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-229 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **201 open** (36
-high, 145 medium, 20 low), **28 closed**.
+233 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **205 open** (37
+high, 148 medium, 20 low), **28 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -845,6 +845,33 @@ Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off obser
 </details>
 
 <details>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
 architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
 
@@ -921,6 +948,29 @@ Vast.ai 64-core. Recommended task types: experiment-run, build-model.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>10-replication robustness extension: rerun the 6 Genuine + 7
+Marginal cells at 10 outer seeds</strong> (S-0086-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0086 used 5 outer seeds, distinguishing Genuine (5/5) from Marginal (3-4/5) from Stochastic
+(<=2/5). A 10-rep extension on the 13 Genuine + Marginal cells (skip the 7 Stochastic that
+already failed) would produce a finer 10/9-8/<=7 partition that more accurately separates
+truly-genuine cells from borderline-Marginal cases like cell 1379 (4/5 in t0086) and cell 1559
+(4/5). The bootstrap ARI would also tighten. Expected cost: ~$0.65 USD on Vast.ai EPYC 7B13
+(13 cells x 5 additional reps x 135 s/rep = 2.4 h x $0.35/hr). Recommended task types:
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>2-D distal length x diameter sweep on t0024 to disambiguate
@@ -1326,6 +1376,30 @@ in {100, 200, 300, 500} ms x GABA_BASE_NS in {0.10, 0.50, 1.0} nS at fixed gAMPA
 cells, 4320 trials). Pass criterion: detect a non-monotonic vector-sum DSI vs window_ms
 relationship (i.e., the 200 ms midpoint is not a local optimum), OR confirm the 200 ms choice
 is robust. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed A cross-bed validation: re-run NSGA-II on the t0080 Bed A
+morphology with the same v3 substrate</strong> (S-0086-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086 identified 6 Genuine cells in t0080's Bed B morphology, but the v3 substrate has not
+been tested on Bed A. Run NSGA-II for 8 generations at population 96 on Bed A with the same v3
+substrate and the same constraint (AIS-to-soma Nav ratio >= 5). Compare: (a) does Bed A
+produce more or fewer joint-pass cells than Bed B? (b) do the Bed A joint-pass cells cluster
+into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) or do they
+discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
+not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
+$0.35/hr). Recommended task types: experiment-run.
 
 </details>
 
@@ -3004,6 +3078,31 @@ full-resolution voltage / spike traces preserved, compute Gaussian-convolved ins
 rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
 Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
 preserved; otherwise experiment-run with 2-cell budget < $0.20).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
+Genuine cells)</strong> (S-0086-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
+was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
+are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
+NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
+recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
+per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
+one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
+~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 

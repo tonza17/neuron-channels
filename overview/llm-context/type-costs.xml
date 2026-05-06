@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-06T13:02:16Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-06T18:29:42Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4662</char_count>
-    <byte_count>4662</byte_count>
-    <estimated_tokens>1165</estimated_tokens>
+    <char_count>4711</char_count>
+    <byte_count>4711</byte_count>
+    <estimated_tokens>1177</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,13 +18,13 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $20.00
-Total spent: $13.96
-Budget remaining: $6.04
-Spent: 69.8%
+Total spent: $15.55
+Budget remaining: $4.45
+Spent: 77.8%
 
 ### Cost Breakdown by Category
 
-* vast-ai-cpu-epyc-7b13: $5.83
+* vast-ai-cpu-epyc-7b13: $7.42
 * vast-ai-rtx5060ti: $3.93
 * vast_ai_36149741: $2.39
 * vast-ai-quadro-p4000: $1.06
@@ -35,7 +35,7 @@ Spent: 69.8%
 
 ### Cost Breakdown by Service
 
-* vast_ai: $6.89
+* vast_ai: $8.48
 * vast_ai_compute: $3.93
 
 ### Per-Task Costs
@@ -118,6 +118,7 @@ Spent: 69.8%
 * t0083_bedb_v3_extend_nsga2_gen8plus: $5.83
 * t0084_t0081_cell_767_vm_trace_deepdive: $0.00
 * t0085_brainstorm_results_16: $0.00
+* t0086_robustness_cluster_bio_comparison: $1.59
       </content>
     </section>
   </sections>

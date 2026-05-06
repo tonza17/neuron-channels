@@ -1,18 +1,18 @@
-# Machine Provisioning (5 machines)
+# Machine Provisioning (6 machines)
 
-**5** machines provisioned across **5** tasks. Total cost: **$13.96**.
+**6** machines provisioned across **6** tasks. Total cost: **$15.55**.
 
-**2** failed provisioning attempts wasted **$0.00** (28.6% failure rate).
+**3** failed provisioning attempts wasted **$0.00** (33.3% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 5 |
-| Total failed attempts | 2 |
-| Failure rate | 28.6% |
-| Avg provisioning time | 690s |
-| Total cost | $13.96 |
+| Total machines | 6 |
+| Total failed attempts | 3 |
+| Failure rate | 33.3% |
+| Avg provisioning time | 849s |
+| Total cost | $15.55 |
 | Total wasted cost | $0.00 |
 
 ## Cost by GPU Tier
@@ -22,6 +22,7 @@
 | RTX 4060 Ti (idle, unused) | $5.83 |
 | RTX 5060 Ti (idle, unused) | $3.93 |
 | RTX PRO 4000 (idle, unused) | $3.14 |
+| (idle, unused; CPU-only NEURON workload) | $1.59 |
 | Quadro P4000 | $1.06 |
 
 ## Failure Reasons
@@ -30,6 +31,7 @@
 |--------|-------|
 | Duplicate creation - first vastai create call returned no JSON to stdout under PowerShell, leading to a second create that succeeded; the first instance came up in stopped state (auto-cleaned via vastai destroy 36068056 -y). Same root cause as t0076's create-duplicate issue. | 1 |
 | Duplicate creation - the first vastai create call returned exit 0 with empty stdout under the run_with_logs subprocess pipe (no JSON visible to the caller), so a second create call was made which also returned empty stdout. Both create calls actually succeeded server-side, producing two instances on the same offer 31639237. Instance 36137287 came up running on ssh2.vast.ai:17286 (kept); instance 36137292 came up stopped on ssh7.vast.ai:17292 and was destroyed via 'vastai destroy instance 36137292 -y'. Same root cause as t0078's create-duplicate issue; the bug is in run_with_logs swallowing vastai's stdout when invoked under PowerShell or Bash on Windows. | 1 |
+| Vast.ai SSH proxy persistently failed to bind listen port 10284 (errno from logs: 'Error: remote port forwarding failed for listen port 10284'). Reboot did not resolve. Instance destroyed; provisioning retried on offer 34391256. | 1 |
 
 ## Tasks
 
@@ -40,3 +42,4 @@
 | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | 1 | $0.75 | 1 | RTX PRO 4000 (idle, unused) |
 | [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | 1 | $2.39 | 0 | RTX PRO 4000 (idle, unused) |
 | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | 1 | $5.83 | 0 | RTX 4060 Ti (idle, unused) |
+| [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | 1 | $1.59 | 1 | (idle, unused; CPU-only NEURON workload) |

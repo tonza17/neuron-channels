@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-16-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-20-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-21-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-86-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-324-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-330-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,19 +28,19 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (29K)
-| [full](llm-context/full.xml) (472K) | [roadmap](llm-context/roadmap.xml) (96K) |
-[results](llm-context/results-deep-dive.xml) (371K) |
-[assets](llm-context/literature-and-assets.xml) (52K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (30K)
+| [full](llm-context/full.xml) (476K) | [roadmap](llm-context/roadmap.xml) (95K) |
+[results](llm-context/results-deep-dive.xml) (376K) |
+[assets](llm-context/literature-and-assets.xml) (53K)
 
-*Last updated: 2026-05-06 13:02 UTC*
+*Last updated: 2026-05-06 18:29 UTC*
 
-* **Budget**: **$14** spent of $20
-* **Remaining**: **$6**
-* **Usage**: `██████████████░░░░░░` 69.8%
-* **GPU Machines**: **5** provisioned across 5 tasks · **$14** GPU spend
+* **Budget**: **$16** spent of $20
+* **Remaining**: **$4**
+* **Usage**: `████████████████░░░░` 77.8%
+* **GPU Machines**: **6** provisioned across 6 tasks · **$16** GPU spend
   ([details](machines/))
-* **Provisioning**: 2 failed attempts · $0.00 wasted · 29% failure rate
+* **Provisioning**: 3 failed attempts · $0.00 wasted · 33% failure rate
 
 ---
 
@@ -59,13 +59,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`description`](../tasks/t0086_robustness_cluster_bio_comparison/task_description.md) | 2026-05-06 |
 
 ---
 
@@ -83,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (78 total)](tasks/by-status/completed.md)
+## [Recently Completed (79 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
 | 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
 | 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`results`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) | 2026-05-06 08:31 |
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
@@ -96,9 +96,8 @@ No blocked tasks.
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
 | 0077 | [Brainstorm results session 13](../overview/tasks/task_pages/t0077_brainstorm_results_13.md) | [`results`](../tasks/t0077_brainstorm_results_13/results/results_detailed.md) | 2026-05-03 12:55 |
-| 0076 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`results`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/results_detailed.md) | 2026-05-03 04:18 |
 
-*68 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*69 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (285 open)](suggestions/)
+## [Recent Suggestions (291 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -224,96 +223,105 @@ preserved; otherwise experiment-run with 2-cell budget < $0.20).
 </details>
 
 <details>
-<summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
-3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
 
-t0081's joint-pass cell 767 (DSI 0.494 / PD 11.39 Hz) is a single-replicate observation from
-one NSGA-II chain with one Sobol/LHS seed (seed 43 for fresh LHS) and one warm-start RNG seed
-(42 for the t0078 49-d to 54-d projection). Re-run the same pop=96 / gen=8 NSGA-II
-configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), (46,47),
-(48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
-replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned
-dims that can be clamped in future Bed B optimisation</strong> (S-0081-04)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Compare cell 767's 54-d natural-unit parameter vector to (a) the high-DSI rail cells (699,
-744, 112) and (b) the high-PD rail cells (627, 664, 730) on the t0081 Pareto front. Identify
-dims whose values converge across these clusters (candidates for clamping at the median value)
-versus dims that vary substantially (must remain free). Pure data analysis on
-`results/data/all_evaluations.json`; no compute cost. Distinct from S-0080-04 which proposed
-generic 30-40d pruning before re-running NSGA-II — this is anchored to the joint-pass cell
-rather than to the t0080 Pareto. Output: a candidate clamped-parameter list and a re-run
-sub-task proposal. Recommended task types: data-analysis.
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Cross-bed validation: re-run warm-start NSGA-II on Bed A with
-the v3 dendritic-spike additions</strong> (S-0081-05)</summary>
+<summary>📊 <strong>Resolve units mismatch between t0080 gnmda_dend NetCon weight and
+Sivyer 2013 per-spine conductance</strong> (S-0086-02)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
 
-t0081 confirms that v3 dendritic-spike machinery + warm-start NSGA-II yields joint-pass DSI/PD
-on Bed B. Test whether the same architecture generalises to Bed A (the t0067-t0074 substrate,
-modelDB 189347 lineage with bio-realistic AIS). Port the 5 v3 dendritic-spike dims
-(`gnmda_dend`, `mg_conc_mm`, `voff_nmda`, `nav16_dend_distal`, `nap_dend_distal`) onto Bed A's
-dendrites, warm-start from the closest-to-joint Bed A cells (e.g., t0074 / t0075 outputs), run
-NSGA-II at pop=96 / gen=8 = 768 cells. Cost ~$3 (mirroring t0081). Recommended task types:
-build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Re-compute t0076 / t0078 / t0080 / t0081 hypervolume under a
-single reference-point convention including t0081</strong> (S-0081-06)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-Extends S-0080-06 (which scoped t0076/t0078/t0080) to include t0081. t0076/t0078 used
-reference (0,0); t0080/t0081 used utopia (0.7, 80) — values are not numerically comparable
-across the four tasks. Re-compute HV on the saved Pareto fronts of all four tasks under both
-conventions and publish a single comparable HV trajectory plot. Pure data analysis, no
-compute. Distinct from S-0080-06 in scope: t0081's Pareto front (16 cells) was not in
-existence when S-0080-06 was filed. Recommended task types: data-analysis.
+t0086's NMDA exotic verdict (>85 sigma above Sivyer 2013) is so extreme that it likely
+partially reflects a units / scope mismatch rather than a genuinely outlier biological
+mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the
+t0080 Exp2NMDA mechanism, while Sivyer 2013's value is a per-spine synaptic conductance
+measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area
+normalisation or by an effective open-channel-fraction factor. Run a calibration ablation:
+take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine
+effective open conductance (from the NEURON state during a stimulus), and produce a
+calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
+clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
+Recommended task types: data-analysis.
 
 </details>
 
 <details>
-<summary>📚 <strong>Promote the t0081 warm-start NSGA-II harness into a reusable
-bedb_warmstart_nsga2_harness library asset</strong> (S-0081-07)</summary>
+<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
+Genuine cells)</strong> (S-0086-03)</summary>
 
-**Kind**: library | **Priority**: low | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
 
-t0081's harness combines (a) verbatim copying of prior-task Pareto cells, (b)
-dimension-projection of lower-d Pareto cells into the current-d space with random fill on new
-dims, (c) fresh LHS for diversity, and (d) pymoo NSGA-II with cost-cap watchdog. Promote this
-combination into a versioned library asset (`bedb_warmstart_nsga2_harness`) under the asset
-library type with documented APIs for the warm-start composition function and the NSGA-II
-driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d
-harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different
-optimisers. Recommended task types: write-library.
+t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
+was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
+are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
+NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
+recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
+per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
+one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
+~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 
-*275 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>10-replication robustness extension: rerun the 6 Genuine + 7
+Marginal cells at 10 outer seeds</strong> (S-0086-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
+
+t0086 used 5 outer seeds, distinguishing Genuine (5/5) from Marginal (3-4/5) from Stochastic
+(<=2/5). A 10-rep extension on the 13 Genuine + Marginal cells (skip the 7 Stochastic that
+already failed) would produce a finer 10/9-8/<=7 partition that more accurately separates
+truly-genuine cells from borderline-Marginal cases like cell 1379 (4/5 in t0086) and cell 1559
+(4/5). The bootstrap ARI would also tighten. Expected cost: ~$0.65 USD on Vast.ai EPYC 7B13
+(13 cells x 5 additional reps x 135 s/rep = 2.4 h x $0.35/hr). Recommended task types:
+experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Source RGC-specific NaP density measurement to replace Stuart
+1999 / Goldfinger 2000 cortical-pyramidal prior</strong> (S-0086-05)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
+
+t0086's biological scorecard used Stuart 1999 / Goldfinger 2000 NaP density (0.0005 S/cm^2) as
+the prior for distal NaP, but those measurements were made in cortical pyramidal cells, not
+RGCs. Both Genuine clusters scored exotic on NaP (Cluster 0 +24 sigma, Cluster 1 +7 sigma) by
+this prior. Conduct a focused literature search for RGC-specific NaP density measurements (try
+Hu 2009, Bender-Trussell 2009, Lewis 2014 RGC review). If an RGC-specific NaP value exists,
+replace the prior, re-run the scorecard, and re-classify the clusters. Expected cost: ~$0.10
+USD (paper search + summarisation only). Recommended task types: review-papers.
+
+</details>
+
+*281 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (40)](suggestions/)
+## [High Priority Suggestions (42)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -351,6 +359,48 @@ differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.
 Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
 (zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
+
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Resolve units mismatch between t0080 gnmda_dend NetCon weight and
+Sivyer 2013 per-spine conductance</strong> (S-0086-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
+
+t0086's NMDA exotic verdict (>85 sigma above Sivyer 2013) is so extreme that it likely
+partially reflects a units / scope mismatch rather than a genuinely outlier biological
+mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the
+t0080 Exp2NMDA mechanism, while Sivyer 2013's value is a per-spine synaptic conductance
+measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area
+normalisation or by an effective open-channel-fraction factor. Run a calibration ablation:
+take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine
+effective open conductance (from the NEURON state during a stimulus), and produce a
+calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
+clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
+Recommended task types: data-analysis.
 
 </details>
 
@@ -465,48 +515,28 @@ Vast.ai 64-core. Recommended task types: experiment-run, build-model.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
-soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
-
-REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
-soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
-Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
-4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
-~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
-Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
-25-d search. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Correction task to fix three t0076 implementation issues: NEURON
-re-init, qNEHVI deprecation, GP input normalisation</strong> (S-0076-03)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
-
-Three concrete defects identified in the t0076 implementation block additional value from the
-existing artefacts. (a) plot_pareto.py calls build_dsgc_cell() multiple times in one Python
-process, hitting NEURON's `Exp2NMDA name already exists` non-idempotent loader bug; only 1 of
-3 deep-dive PNGs was produced. Fix: subprocess-per-deep-dive. (b) bootstrap.py path resolution
-requires the script to run from the project root, not the task folder. Fix: anchor paths via
-`arf.scripts.utils.paths`. (c) The MOBO loop used the deprecated
-qNoisyExpectedHypervolumeImprovement and passed natural-units bounds to the GP without a
-Normalize input transform -- BoTorch warned the fit is suboptimal. Fix: migrate to qLogNEHVI
-and wrap inputs in [0, 1]^d. Replay the 430-cell history through the corrected stack and
-confirm Pareto front is unchanged or expands. Recommended task types: correction.
-
-</details>
-
-*30 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*32 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (20 total)](answers/)
+## [Recent Answers (21 total)](answers/)
+
+<details>
+<summary><strong>Which clusters of joint-pass cells in t0083's expanded population
+are biologically plausible vs novel/unphysical, and which dendritic-spike
+machinery do the plausible clusters represent?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
+[`cluster-biological-plausibility-attribution`](../tasks/t0086_robustness_cluster_bio_comparison/assets/answer/cluster-biological-plausibility-attribution/)
+
+Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7
+Stochastic (<=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0
+(n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published
+priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999,
+Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior
+breakdowns.
+
+</details>
 
 <details>
 <summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
@@ -687,30 +717,7 @@ is propagated across a 0.5x-2x band for both per-sim cost and sample count.
 
 </details>
 
-<details>
-<summary><strong>What variables of neuronal morphology have been shown by
-computational modeling to affect direction selectivity, by what mechanisms,
-and what gaps remain?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-21 | **Full answer**:
-[`morphology-direction-selectivity-modeling-synthesis`](../tasks/t0027_literature_survey_morphology_ds_modeling/assets/answer/morphology-direction-selectivity-modeling-synthesis/)
-
-Computational models have shown that direction selectivity is shaped by dendritic length,
-branch-order and branching pattern, dendritic diameter (especially in starburst amacrine
-cells), spatial layout and kinetic tiling of bipolar-cell inputs, asymmetric arbors and plexus
-density, and the electrotonic compartmentalization of terminal branches. The load-bearing
-mechanisms are passive cable filtering with transfer-resistance weighting of distributed
-inputs, local-global EPSP summation along soma-to-tip dendritic gradients, space-time input
-tiling (sustained proximal, transient distal), dendritic-spike branch independence driven by
-voltage-gated Na and Ca channels, and asymmetric SAC-to-DSGC inhibition constrained by
-morphology. Gaps remain in systematic sweeps of branch order and dendritic diameter on
-realistic reconstructions, in joint manipulation of morphology with active conductances at
-DSGC tips, and in morphology-aware modeling of cortical and invertebrate direction selectivity
-beyond the retina.
-
-</details>
-
-*10 more answers → [answers](answers/)*
+*11 more answers → [answers](answers/)*
 
 ---
 
@@ -1312,12 +1319,13 @@ No models yet.
 
 ---
 
-## [Cost Leaders (5 tasks with spend)](costs/)
+## [Cost Leaders (6 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`$5.83`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/costs.json) | 2026-05-06 08:31 |
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |
 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`$2.39`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/costs.json) | 2026-05-05 09:55 |
+| [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |
 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`$0.75`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/costs.json) | 2026-05-04 22:45 |

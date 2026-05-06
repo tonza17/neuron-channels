@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-06T13:02:16Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-06T18:29:42Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>209042</char_count>
-    <byte_count>209333</byte_count>
-    <estimated_tokens>52260</estimated_tokens>
+    <char_count>210407</char_count>
+    <byte_count>210698</byte_count>
+    <estimated_tokens>52601</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -193,9 +193,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0083_bedb_v3_extend_nsga2_gen8plus</id>
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
         <id>t0085_brainstorm_results_16</id>
+        <id>t0086_robustness_cluster_bio_comparison</id>
       </source_ids>
       <content>
-Completed tasks: 78
+Completed tasks: 79
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -664,6 +665,12 @@ ID: t0085_brainstorm_results_16
 Completed: 2026-05-06
 Short description: Sixteenth brainstorm: commission t0086 (robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells); reject 3 covered suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0085_brainstorm_results_16&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 16 Summary Sixteenth strategic brainstorm, run on 2026-05-06 after t0083 (`bedb_v3_extend_nsga2_gen8plus`) extended t0081&#x27;s NSGA-II from gen 7 through gen 17 and **expanded the joint-pass cell population from 1 to 15 cells** (1 inherited cell 767 + 14 new in gens 13-17), with hypervolume +118% (16.330 -&gt; 35.576), and t0084 (`t0081_cell_767_vm_trace_deepdive`) produced the cell-767 mechanism-attribution answer asset at $0 cost. One consolidated follow-up task commissioned: t0086 (`robustness_cluster_bio_comparison`) bundles three open suggestions...
+
+## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
+ID: t0086_robustness_cluster_bio_comparison
+Completed: 2026-05-06
+Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_cluster_bio_comparison&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0086_robustness_cluster_bio_comparison Summary Re-evaluated the top 20 cells from t0083 (15 joint-pass + 5 closest near-pass) at 24 directions x 30 inner seeds x 5 outer-seed replications on Vast.ai EPYC 7B13. **6 cells were Genuine** (5/5 reps pass DSI &gt;= 0.4 AND PD &gt;= 10 Hz), **7 Marginal** (3-4/5), **7 Stochastic** (&lt;=2/5). k-means clustering on the 6 Genuine cells in 54-d parameter space selected **best_k=2**; both clusters were classified **exotic** by the biological scorecard, driven by extreme NMDA per-synapse conductance (&gt;85 sigma above Sivyer 2013) and...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -673,10 +680,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0085_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0086_robustness_cluster_bio_comparison</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -697,13 +703,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
-ID: t0086_robustness_cluster_bio_comparison
-Status: not_started
-Effective date: 2026-05-06
-Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -730,9 +729,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_a
         <id>synapse-distribution-audit-deposited-vs-paper</id>
         <id>mobo-on-biophysics-ais-disabled-corner</id>
         <id>cell-767-dendritic-spike-mechanism-attribution</id>
+        <id>cluster-biological-plausibility-attribution</id>
       </source_ids>
       <content>
-Answers: 20
+Answers: 21
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -891,6 +891,13 @@ Confidence: medium
 Categories: dendritic-computation, direction-selectivity, voltage-gated-channels
 
 Cell 767&#x27;s PD/ND difference in integrated dendritic current is attributed primarily to **NaP sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200, 1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to cell 767. This single-replicate deep-dive did not reproduce cell 767&#x27;s original 5-seed joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the underlying biophysical signature of these parameters rather than confirming a per-trial joint-pass mechanism; multi-replicate confirmation requires t0083...
+
+## Which clusters of joint-pass cells in t0083&#x27;s expanded population are biologically plausible vs novel/unphysical, and which dendritic-spike machinery do the plausible clusters represent?
+ID: cluster-biological-plausibility-attribution
+Created by: t0086_robustness_cluster_bio_comparison on 2026-05-06
+Confidence: medium
+
+Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7 Stochastic (&lt;=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0 (n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999, Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior breakdowns.
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
