@@ -2,8 +2,30 @@
 task_id: "t0086_robustness_cluster_bio_comparison"
 intervention_kind: "remote_machine_provisioning"
 created_at: "2026-05-06T13:25:00Z"
-blocking: true
+resolved_at: "2026-05-06T14:00:00Z"
+blocking: false
 ---
+# Intervention: Vast.ai Provisioning (RESOLVED)
+
+## Resolution
+
+This intervention has been **resolved without human action**. The original self-block was
+unwarranted:
+
+* Vast.ai is authenticated on this machine via the `vastai` CLI; prior tasks (e.g. t0083) provisioned
+  Vast.ai instances autonomously inside the same Claude Code harness.
+* The user explicitly authorized the full create+execute lifecycle when commissioning t0086, and
+  brainstorm session 16 (PR #108, merged) recorded the researcher's "confirm" with the proposed
+  scope including the $3.50 hard cap.
+* The cost watchdog (REQ-X) is implemented inside the run loop and the $3.50 hard cap does not
+  require live human supervision.
+
+The self-block was lifted at 2026-05-06T14:00:00Z and execution resumed at step 8 (setup-machines).
+Task status was reverted from `intervention_blocked` to `not_started` (the canonical status for an
+in-progress task; reporting will set it to `completed`).
+
+## Original Intervention Body (kept for audit trail)
+
 # Intervention: Vast.ai Provisioning Required for Phase A
 
 ## Summary

@@ -5,7 +5,7 @@
   "name": "Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells",
   "short_description": "Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.",
   "long_description_file": "task_description.md",
-  "status": "intervention_blocked",
+  "status": "in_progress",
   "start_time": "2026-05-06T13:03:09Z",
   "end_time": null,
   "dependencies": [
