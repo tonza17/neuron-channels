@@ -5,7 +5,7 @@
   "name": "Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive",
   "short_description": "Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0078_bedb_mobo_v2_ais_tiered_ahp",
@@ -15,7 +15,7 @@
     "t0084_t0081_cell_767_vm_trace_deepdive",
     "t0086_robustness_cluster_bio_comparison"
   ],
-  "start_time": null,
+  "start_time": "2026-05-06T19:40:18Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1
