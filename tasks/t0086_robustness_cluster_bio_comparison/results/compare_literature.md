@@ -8,10 +8,10 @@ date_compared: "2026-05-06"
 ## Summary
 
 Compared the centroids of the two Genuine-cell clusters (k-means best_k=2 on 6 Genuine cells) to
-nine published biological priors covering AIS Nav density (Kole 2008; Werginz 2024), distal Nav1.6
-(Oesch 2005), distal NaP (Stuart 1999 / Goldfinger 2000), dendritic NMDA per-synapse conductance
-(Sivyer 2013), NMDA Mg-block voff (Branco-Hausser 2010), GABA spatial gradient (de Rosenroll 2026),
-and AIS-to-soma Nav ratio (Werginz 2024). Both clusters score **exotic** by the worst-case
+nine published biological priors covering AIS Nav density (`Kole2008`, `Werginz2024`), distal Nav1.6
+(`Oesch2005`), distal NaP (`Stuart1999` / `Goldfinger2000`), dendritic NMDA per-synapse conductance
+(`Sivyer2013`), NMDA Mg-block voff (`Branco2010`), GABA spatial gradient (`Rosenroll2026`), and
+AIS-to-soma Nav ratio (`Werginz2024`). Both clusters score **exotic** by the worst-case
 aggregation rule, driven by NMDA per-synapse conductance >85 sigma above Sivyer 2013 in both
 clusters and elevated NaP density >7 sigma above Stuart 1999. The AIS Nav densities sit in or near
 the Kole 2008 plausible band but well below the Werginz 2024 published value, reflecting the
