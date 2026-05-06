@@ -2596,7 +2596,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (205 open, 28 closed)
+## Suggestions (204 open, 29 closed)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -2696,25 +2696,6 @@ biologically-plausible NMDA -- a major finding that would motivate either (a) re
 joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
 Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
 cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
-Genuine cells)</strong> (S-0086-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
-was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
-are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
-NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
-recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
-per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
-one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
-~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
-Recommended task types: experiment-run, data-analysis.
 
 </details>
 

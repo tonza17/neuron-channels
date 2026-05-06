@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-06T18:33:10Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-06T19:39:02Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>83</section_count>
-    <char_count>1506001</char_count>
-    <byte_count>1512874</byte_count>
-    <estimated_tokens>376500</estimated_tokens>
+    <section_count>84</section_count>
+    <char_count>1517152</char_count>
+    <byte_count>1524029</byte_count>
+    <estimated_tokens>379288</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -191,9 +191,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
         <id>t0085_brainstorm_results_16</id>
         <id>t0086_robustness_cluster_bio_comparison</id>
+        <id>t0087_brainstorm_results_17</id>
       </source_ids>
       <content>
-Completed tasks: 79
+Completed tasks: 80
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -668,6 +669,12 @@ ID: t0086_robustness_cluster_bio_comparison
 Completed: 2026-05-06
 Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_cluster_bio_comparison&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0086_robustness_cluster_bio_comparison Summary Re-evaluated the top 20 cells from t0083 (15 joint-pass + 5 closest near-pass) at 24 directions x 30 inner seeds x 5 outer-seed replications on Vast.ai EPYC 7B13. **6 cells were Genuine** (5/5 reps pass DSI &gt;= 0.4 AND PD &gt;= 10 Hz), **7 Marginal** (3-4/5), **7 Stochastic** (&lt;=2/5). k-means clustering on the 6 Genuine cells in 54-d parameter space selected **best_k=2**; both clusters were classified **exotic** by the biological scorecard, driven by extreme NMDA per-synapse conductance (&gt;85 sigma above Sivyer 2013) and...
+
+## Brainstorm results session 17
+ID: t0087_brainstorm_results_17
+Completed: 2026-05-06
+Short description: Seventeenth brainstorm: commission t0088 (re-cluster 13 Genuine+Marginal cells from t0086 + per-cluster Vm-trace deep-dive at 16 dirs); reject S-0086-03 as covered.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0087_brainstorm_results_17&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 17 Summary Seventeenth strategic brainstorm, run on 2026-05-06 after t0086 (`robustness_cluster_bio_comparison`) classified the 20-cell test set as 6 Genuine + 7 Marginal + 7 Stochastic, found k=2 clusters on the 6 Genuine cells, both clusters classified exotic by the biological scorecard (NMDA per-synapse +85-122 sigma above Sivyer 2013, NaP +7-24 sigma above Stuart 1999). One consolidated follow-up task commissioned: t0088 (`recluster_marginals_and_vm_motifs`) extends S-0086-03&#x27;s per-cluster Vm-trace deep-dive scope by re-clustering the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -677,9 +684,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0088_recluster_marginals_and_vm_motifs</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -700,6 +708,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
+ID: t0088_recluster_marginals_and_vm_motifs
+Status: not_started
+Effective date: 2026-05-06
+Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive, t0086_robustness_cluster_bio_comparison
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -25506,6 +25521,166 @@ A representative single (cell, seed) record showing the full input and output st
 | REQ-14 | Hard cost cap $3.50 enforced | Done | `costs.json` `total_cost_usd=1.595` &lt;= 3.50; no `intervention/budget_overrun.md` |
 | REQ-15 | Vast.ai 64-core EPYC 7B13 instance | Done | `machine_log.json` `cpu_model=AMD EPYC 7B13 64-Core Processor`; `price_per_hour=0.3474` (within fallback &lt;$0.40/hr); first attempt at $0.3209/hr failed due to Vast.ai SSH proxy bug, retried successfully |
 | REQ-16 | Replication seeds + per-cell parameter-vector hashes recorded | Done | `replication_seeds.json` + per-record `parameter_hash` in `replication_results.json`; `cell_classification.json` records `parameter_hash` and `parameter_hashes_match=true` for all 20 cells (every rep of a given cell used the same parameter vector) |
+      </content>
+    </section>
+    <section id="t0087_brainstorm_results_17-results-detailed" source_kind="file">
+      <title>t0087_brainstorm_results_17 — Brainstorm results session 17 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0087_brainstorm_results_17</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0087_brainstorm_results_17/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0087_brainstorm_results_17&quot;
+date_completed: &quot;2026-05-06&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Brainstorm Session 17
+
+#### Summary
+
+Seventeenth strategic brainstorm. Triggered by t0086&#x27;s classification of the 20-cell test set into 6
+Genuine + 7 Marginal + 7 Stochastic and the k=2 exotic-cluster result on the Genuine cells.
+Commissioned one consolidated task t0088 (`recluster_marginals_and_vm_motifs`) extending S-0086-03&#x27;s
+per-cluster Vm-trace deep-dive scope by re-clustering with the 7 Marginal cells included (13-cell
+pool instead of 6 Genuine cells only), running deep-dive at 16 directions on local CPU on cluster
+representatives, and producing one mechanism-distinctness answer asset. Rejected S-0086-03 as
+covered. Local-CPU only; $0 cost preserved the $4.44 buffer.
+
+#### Methodology
+
+Followed the `/human-brainstorm` skill end-to-end on the main branch, then created branch
+`task/t0087_brainstorm_results_17` for the brainstorm artefacts.
+
+1. **Phase 1 -- Review project state.** Ran `aggregate_tasks --format json --detail short` (86
+   tasks, all completed); ran `aggregate_suggestions --format json --detail short --uncovered` to
+   enumerate active uncovered suggestions; ran `aggregate_costs --format json --detail short`
+   ($15.5506 / $20.00 = 77.75% spent; warn threshold 80% close but not reached; $4.4494 remaining;
+   t0086 alone was $1.595). Read
+   `tasks/t0086_robustness_cluster_bio_comparison/results/results_summary.md` (6 Genuine + 7
+   Marginal + 7 Stochastic; k=2 clusters on 6 Genuine cells; both clusters exotic; cluster 0 AIS-Nav
+   30.5 +4 sigma vs Werginz, cluster 1 AIS-Nav 11.5 within plausible). Loaded t0086&#x27;s
+   `cell_classification.json` to enumerate the 13-cell pool (6 Genuine + 7 Marginal). Identified
+   that cell 767&#x27;s parameter vector lives in t0081&#x27;s `all_evaluations.json` (warm-start lineage) and
+   cells 1238-1727 in t0083&#x27;s. Ran `arf.scripts.overview.materialize` to refresh `overview/`.
+
+2. **Phase 1.5 -- Clarification.** Researcher provided one-shot directive (&quot;implement S-0086-03 but
+   before doing this redo the clustering including marginal cells as well. All in one task.&quot;) that
+   fully specifies the bundle; no clarification round needed.
+
+3. **Phase 2 -- Discuss decisions in three rounds.**
+   * Round 1 (new tasks): proposed t0088 (`recluster_marginals_and_vm_motifs`) bundling Phase A
+     (re-cluster 13 cells with KMeans + hierarchical + UMAP / PCA, score against biological priors
+     via t0086&#x27;s scorecard code), Phase B (per-cluster Vm-trace deep-dive at 16 directions on local
+     CPU, 2-3 representatives, t0084-style recordings), Phase C (mechanism-distinctness analysis
+     producing one answer asset). Local-CPU only; $0 cost.
+   * Round 2 (suggestion cleanup): proposed rejecting S-0086-03 as covered by t0088 with extended
+     scope (13 cells, 16 directions, local CPU). Kept S-0086-01 / -02 / -04 / -05 / -06 active.
+   * Round 3 (confirmation): the researcher&#x27;s one-shot directive served as the explicit
+     authorisation.
+
+4. **Phase 3 -- Determine next task ID.** Highest existing task index from the aggregator is 86.
+   Reserved task index 87 for this brainstorm; child task t0088 reserves index 88, satisfying the
+   ordering invariant (brainstorm index 87 &lt; child index 88).
+
+5. **Phase 4 -- Create brainstorm-results task branch and folder.** Created branch
+   `task/t0087_brainstorm_results_17` from main. Built the full mandatory folder structure
+   (`assets/`, `corrections/`, `intervention/`, `logs/{commands,searches,sessions,steps/...}`,
+   `plan/`, `research/`, `results/images/`). Wrote `__init__.py`, `task.json`,
+   `task_description.md`, `step_tracker.json`, all four step logs, three research placeholder files,
+   `plan/plan.md`, and placeholder `metrics.json`, `costs.json`, `remote_machines_used.json`,
+   `suggestions.json`.
+
+6. **Phase 5 -- Apply decisions.** Wrote one correction file
+   (`corrections/suggestion_S-0086-03.json`, `update` action setting `status: &quot;rejected&quot;` with
+   rationale citing t0088&#x27;s coverage). Created child task folder
+   `tasks/t0088_recluster_marginals_and_vm_motifs/` with `__init__.py`, `task.json`, and
+   `task_description.md`.
+
+7. **Phase 6 -- Record and finalize.** Wrote `results/results_summary.md`,
+   `results/results_detailed.md`, `logs/session_log.md`. Captured CLI session transcripts via
+   `capture_task_sessions`. Re-ran the overview materializer. Ran the four mandatory verificators
+   (`verify_task_file`, `verify_corrections`, `verify_suggestions`, `verify_logs`). Ran
+   `verify_task_file` for t0088. Ran `flowmark` on edited markdown. Committed, pushed, opened PR,
+   ran pre-merge verificator, merged.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 1 (t0088 recluster + Vm-trace deep-dive) |
+| Tasks cancelled | 0 |
+| Tasks updated (other than cancellations) | 0 |
+| Suggestions rejected | 1 (S-0086-03) |
+| Suggestions reprioritised | 0 |
+| Corrections written | 1 |
+| New suggestions created | 0 |
+| Answer assets created in this brainstorm | 0 |
+| Session duration | ~50 minutes interactive |
+| Session cost | $0.00 |
+| Estimated cost of commissioned task | $0.00 (local-CPU only) |
+| Project budget after t0086 | $20.00 cap; $15.56 spent; $4.44 remaining |
+
+#### Limitations
+
+Planning task, no experiments run. Predictions about which clusters will be mechanistically
+distinct, whether re-clustering with Marginal cells will reveal cluster heterogeneity invisible in
+the Genuine-only clustering, and whether 16-direction deep-dive will reveal direction-specific
+mechanisms invisible at 8 directions are forecasts about future work, not measured results. The
+brainstorm-results task itself produces no assets and no metric values; it produces decisions, one
+correction file, and the t0088 task folder.
+
+The proposed Phase A re-clustering on the 13-cell pool may not produce a stable cluster structure
+(13 cells in 54-d space is a small sample; silhouette and BIC scores will be noisy). Mitigation: the
+cosine + euclidean cross-validation in hierarchical clustering and the UMAP / PCA visualisation
+serve as cross-checks against k-means artefacts.
+
+The proposed Phase B 16-direction local-CPU deep-dive on 2-3 representative cells assumes 60 s per
+NEURON simulation; if the actual per-direction wall-clock exceeds 90 s, the budget could blow out to
+3-4 hours, still local-CPU and $0 cost but extending the session beyond the 1-2 hour estimate.
+
+#### Files Created
+
+* `tasks/t0087_brainstorm_results_17/__init__.py`
+* `tasks/t0087_brainstorm_results_17/task.json`
+* `tasks/t0087_brainstorm_results_17/task_description.md`
+* `tasks/t0087_brainstorm_results_17/step_tracker.json`
+* `tasks/t0087_brainstorm_results_17/plan/plan.md`
+* `tasks/t0087_brainstorm_results_17/research/research_papers.md`
+* `tasks/t0087_brainstorm_results_17/research/research_internet.md`
+* `tasks/t0087_brainstorm_results_17/research/research_code.md`
+* `tasks/t0087_brainstorm_results_17/results/results_summary.md`
+* `tasks/t0087_brainstorm_results_17/results/results_detailed.md`
+* `tasks/t0087_brainstorm_results_17/results/metrics.json`
+* `tasks/t0087_brainstorm_results_17/results/costs.json`
+* `tasks/t0087_brainstorm_results_17/results/remote_machines_used.json`
+* `tasks/t0087_brainstorm_results_17/results/suggestions.json`
+* `tasks/t0087_brainstorm_results_17/corrections/suggestion_S-0086-03.json`
+* `tasks/t0087_brainstorm_results_17/logs/session_log.md`
+* `tasks/t0087_brainstorm_results_17/logs/sessions/capture_report.json`
+* `tasks/t0087_brainstorm_results_17/logs/sessions/*.jsonl`
+* `tasks/t0087_brainstorm_results_17/logs/steps/001_review-project-state/step_log.md`
+* `tasks/t0087_brainstorm_results_17/logs/steps/002_discuss-decisions/step_log.md`
+* `tasks/t0087_brainstorm_results_17/logs/steps/003_apply-decisions/step_log.md`
+* `tasks/t0087_brainstorm_results_17/logs/steps/004_finalize/step_log.md`
+* `tasks/t0088_recluster_marginals_and_vm_motifs/__init__.py`
+* `tasks/t0088_recluster_marginals_and_vm_motifs/task.json`
+* `tasks/t0088_recluster_marginals_and_vm_motifs/task_description.md`
+* Refreshed `overview/` artefacts (rebuilt at start and end of session).
+
+#### Verification
+
+* `verify_task_file.py t0087_brainstorm_results_17` -- target 0 errors.
+* `verify_corrections.py t0087_brainstorm_results_17` -- target 0 errors for 1 correction file.
+* `verify_suggestions.py t0087_brainstorm_results_17` -- target 0 errors (empty array).
+* `verify_logs.py t0087_brainstorm_results_17` -- target 0 errors; LG-W005 / LG-W007 / LG-W008
+  acceptable per skill guidance and step-4 capture.
+* `verify_task_file.py t0088_recluster_marginals_and_vm_motifs` -- target 0 errors.
+* `verify_pr_premerge.py t0087_brainstorm_results_17 --pr-number &lt;N&gt;` -- target 0 errors.
       </content>
     </section>
   </sections>

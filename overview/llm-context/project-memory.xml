@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-06T18:33:10Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-06T19:39:02Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>180326</char_count>
-    <byte_count>180588</byte_count>
-    <estimated_tokens>45081</estimated_tokens>
+    <char_count>182081</char_count>
+    <byte_count>182343</byte_count>
+    <estimated_tokens>45520</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -195,9 +195,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
         <id>t0085_brainstorm_results_16</id>
         <id>t0086_robustness_cluster_bio_comparison</id>
+        <id>t0087_brainstorm_results_17</id>
       </source_ids>
       <content>
-Completed tasks: 79
+Completed tasks: 80
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -672,6 +673,12 @@ ID: t0086_robustness_cluster_bio_comparison
 Completed: 2026-05-06
 Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_cluster_bio_comparison&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0086_robustness_cluster_bio_comparison Summary Re-evaluated the top 20 cells from t0083 (15 joint-pass + 5 closest near-pass) at 24 directions x 30 inner seeds x 5 outer-seed replications on Vast.ai EPYC 7B13. **6 cells were Genuine** (5/5 reps pass DSI &gt;= 0.4 AND PD &gt;= 10 Hz), **7 Marginal** (3-4/5), **7 Stochastic** (&lt;=2/5). k-means clustering on the 6 Genuine cells in 54-d parameter space selected **best_k=2**; both clusters were classified **exotic** by the biological scorecard, driven by extreme NMDA per-synapse conductance (&gt;85 sigma above Sivyer 2013) and...
+
+## Brainstorm results session 17
+ID: t0087_brainstorm_results_17
+Completed: 2026-05-06
+Short description: Seventeenth brainstorm: commission t0088 (re-cluster 13 Genuine+Marginal cells from t0086 + per-cluster Vm-trace deep-dive at 16 dirs); reject S-0086-03 as covered.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0087_brainstorm_results_17&quot; date_completed: &quot;2026-05-06&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 17 Summary Seventeenth strategic brainstorm, run on 2026-05-06 after t0086 (`robustness_cluster_bio_comparison`) classified the 20-cell test set as 6 Genuine + 7 Marginal + 7 Stochastic, found k=2 clusters on the 6 Genuine cells, both clusters classified exotic by the biological scorecard (NMDA per-synapse +85-122 sigma above Sivyer 2013, NaP +7-24 sigma above Stuart 1999). One consolidated follow-up task commissioned: t0088 (`recluster_marginals_and_vm_motifs`) extends S-0086-03&#x27;s per-cluster Vm-trace deep-dive scope by re-clustering the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -681,9 +688,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0086_robustness_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0088_recluster_marginals_and_vm_motifs</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -704,6 +712,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
+ID: t0088_recluster_marginals_and_vm_motifs
+Status: not_started
+Effective date: 2026-05-06
+Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive, t0086_robustness_cluster_bio_comparison
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

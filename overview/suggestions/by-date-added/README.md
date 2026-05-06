@@ -241,31 +241,6 @@ preserved; otherwise experiment-run with 2-cell budget < $0.20).
 
 </details>
 
-<details>
-<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
-Genuine cells)</strong> (S-0086-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0086-03` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
-was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
-are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
-NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
-recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
-per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
-one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
-~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
-Recommended task types: experiment-run, data-analysis.
-
-</details>
-
 ## Low Priority
 
 <details>
@@ -318,6 +293,33 @@ report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend
 Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
 t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
 1304's motif? Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Per-cluster Vm trace deep-dive (extension of t0084 to all 6 Genuine
+cells)</s> — covered by <a
+href="../../../tasks/t0088_recluster_marginals_and_vm_motifs/"><code>t0088_recluster_marginals_and_vm_motifs</code></a>
+(S-0086-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
+was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
+are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
+NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
+recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
+per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
+one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
+~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 

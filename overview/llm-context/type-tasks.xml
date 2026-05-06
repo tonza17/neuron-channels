@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-06T18:33:10Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-06T19:39:02Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>869050</char_count>
-    <byte_count>872924</byte_count>
-    <estimated_tokens>217262</estimated_tokens>
+    <char_count>897193</char_count>
+    <byte_count>901067</byte_count>
+    <estimated_tokens>224298</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -103,9 +103,11 @@
         <id>t0084_t0081_cell_767_vm_trace_deepdive</id>
         <id>t0085_brainstorm_results_16</id>
         <id>t0086_robustness_cluster_bio_comparison</id>
+        <id>t0087_brainstorm_results_17</id>
+        <id>t0088_recluster_marginals_and_vm_motifs</id>
       </source_ids>
       <content>
-Total tasks: 86
+Total tasks: 88
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -15073,6 +15075,441 @@ both clusters.
   since the instance was already destroyed; missing failure_phase/timestamp on the failed_attempts
   entry is a known v2-spec gap; missing checkpoint_path is acceptable for a 4.6-hour run).
 * `verify_task_file`, `verify_task_dependencies`, `verify_task_folder`: PASSED.
+
+## Brainstorm results session 17
+ID: t0087_brainstorm_results_17
+Status: completed
+Effective date: 2026-05-06
+Short description: Seventeenth brainstorm: commission t0088 (re-cluster 13 Genuine+Marginal cells from t0086 + per-cluster Vm-trace deep-dive at 16 dirs); reject S-0086-03 as covered.
+Dependencies: t0001_brainstorm_results_1, t0002_literature_survey_dsgc_compartmental_models, t0003_simulator_library_survey, t0004_generate_target_tuning_curve, t0005_download_dsgc_morphology, t0006_brainstorm_results_2, t0007_install_neuron_netpyne, t0008_port_modeldb_189347, t0009_calibrate_dendritic_diameters, t0010_hunt_missed_dsgc_models, t0011_response_visualization_library, t0012_tuning_curve_scoring_loss_library, t0013_resolve_morphology_provenance, t0014_brainstorm_results_3, t0015_literature_survey_cable_theory, t0016_literature_survey_dendritic_computation, t0017_literature_survey_patch_clamp, t0018_literature_survey_synaptic_integration, t0019_literature_survey_voltage_gated_channels, t0020_port_modeldb_189347_gabamod, t0021_brainstorm_results_4, t0022_modify_dsgc_channel_testbed, t0024_port_de_rosenroll_2026_dsgc, t0025_brainstorm_results_5, t0026_vrest_sweep_tuning_curves_dsgc, t0027_literature_survey_morphology_ds_modeling, t0028_brainstorm_results_6, t0029_distal_dendrite_length_sweep_dsgc, t0030_distal_dendrite_diameter_sweep_dsgc, t0032_brainstorm_results_7, t0033_plan_dsgc_morphology_channel_optimisation, t0034_distal_dendrite_length_sweep_t0024, t0035_distal_dendrite_diameter_sweep_t0024, t0036_rerun_t0030_halved_null_gaba, t0037_null_gaba_reduction_ladder_t0022, t0038_correct_t0033_base_gaba_to_4ns, t0039_distal_dendrite_diameter_sweep_t0022_gaba4, t0040_brainstorm_results_8, t0041_electrotonic_length_collapse_t0034_t0035, t0046_reproduce_poleg_polsky_2016_exact, t0047_validate_pp16_fig3_cond_noise, t0048_voff_nmda1_dsi_test, t0049_seclamp_cond_remeasure, t0050_audit_syn_distribution, t0051_brainstorm_results_9, t0052_minimal_dsgc_scalar_gaba, t0053_minimal_dsgc_spatial_gaba, t0054_minimal_dsgc_ampa_nmda_scalar_gaba, t0055_nmda_mg_block_dsi_recovery, t0056_brainstorm_results_10, t0057_tonic_gaba_sweep_t0053, t0058_brainstorm_results_11, t0059_bar_locked_gaba_ampa_sweep_t0057, t0060_ampa_escape_pd_only_no_gaba, t0061_nmda_escape_pd_only_no_gaba, t0062_nmda_escape_with_ampa_priming, t0063_hh_voltage_step_test, t0064_hh_current_step_test, t0065_t0020_epsp_ipsp_vm_protocol, t0066_t0024_epsp_ipsp_vm_protocol, t0067_t0065_soma_channel_addition_sweep, t0068_t0067_nav16_kv3_coexpression_rescue, t0069_t0067_ais_localised_channel_sweep, t0070_writeup_two_model_beds, t0071_t0070_synaptic_eqs_pdf, t0072_synaptic_traces_pd_nd, t0073_brainstorm_results_12, t0074_channel_tuning_width_bed_a, t0076_bedb_dsi_firing_rate_mobo, t0077_brainstorm_results_13, t0078_bedb_mobo_v2_ais_tiered_ahp, t0079_brainstorm_results_14, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0082_brainstorm_results_15, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive, t0085_brainstorm_results_16, t0086_robustness_cluster_bio_comparison
+Task types: brainstorming
+Start time: 2026-05-06T11:00:00Z
+End time: 2026-05-06T11:50:00Z
+
+Seventeenth brainstorming session. Run on 2026-05-06 after t0086
+(`robustness_cluster_bio_comparison`) classified the 20-cell test set as 6 Genuine + 7 Marginal + 7
+Stochastic, k=2 clusters on the 6 Genuine cells, both clusters exotic (NMDA per-synapse +85-122
+sigma above Sivyer 2013, NaP +7-24 sigma above Stuart 1999), AIS-Nav ratios 11.5-30.5 (one cluster
+plausible, the other +4 sigma above Werginz 2024). Project spend reached **$15.56 / $20.00**;
+**$4.44 remaining**.
+
+The session is one-shot per the researcher&#x27;s verbatim directive: extend S-0086-03&#x27;s per-cluster
+Vm-trace deep-dive to a wider cell pool by re-doing clustering with the 7 Marginal cells included
+alongside the 6 Genuine cells (13 cells total instead of 6), so the new clustering rests on a
+larger, mechanistically heterogeneous pool, and the per-cluster Vm-trace deep-dive is performed on
+representatives from the new clusters at higher angular resolution (16 directions instead of t0084&#x27;s
+8). All in one task.
+
+#### Decisions
+
+* **Create t0088** -- `recluster_marginals_and_vm_motifs`. Three sequential phases:
+
+  * **Phase A (re-cluster 13 cells)**: load the 6 Genuine + 7 Marginal cells from t0086&#x27;s
+    `cell_classification.json`. Total 13 cells:
+    `[767, 1304, 1379, 1504, 1517, 1559, 1604, 1624, 1634, 1639, 1663, 1677, 1721]`. Load their 54-d
+    natural-unit parameter vectors from t0083&#x27;s `all_evaluations.json` (cells 1238-1727) and t0081&#x27;s
+    `all_evaluations.json` (cell 767&#x27;s warm-start parameters). Re-run KMeans k=2..6, hierarchical
+    (ward + cosine + euclidean), UMAP/PCA visualisation; pick best k via silhouette + BIC. Compute
+    per-cluster centroids in 54-d natural-unit space. Re-use t0086&#x27;s `biological_priors.py` and
+    `biological_scorecard.py` to score each new centroid against published priors (Kole 2008,
+    Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Goldfinger 2000, Stuart 1999, de
+    Rosenroll 2026).
+
+  * **Phase B (per-cluster Vm-trace deep-dive)**: pick a representative cell per cluster (closest to
+    centroid in 54-d Euclidean distance among cells assigned to that cluster). Run a t0084-style
+    deep-dive at higher angular resolution: **16 directions** (every 22.5 deg). Record per-segment
+    Vm at proximal soma, mid-dendrite, distal-dendrite, AIS; per-segment NMDA conductance
+    trajectories; per-segment Nav1.6 (`nav16t80._ref_i`) and NaP (`napt80._ref_i`) currents at
+    distal dendrite; AIS Vm and threshold-crossing spike onset times. Per representative, generate 4
+    figures matching t0084: per-direction Vm traces (3-row x 16-column grid: proximal soma / mid
+    dendrite / distal dendrite); NMDA conductance trajectories at distal dendrite; Nav1.6 / NaP
+    current decomposition; AIS spike onset histogram. Compute fractional channel contributions per
+    cluster representative.
+
+  * **Phase C (mechanism distinctness analysis)**: compare fractional contributions across clusters;
+    do different clusters use different dominant mechanisms (e.g., one NMDA-dominant, one
+    NaP-dominant, one Nav1.6-dominant), or do they all share the same mechanism but vary in scale?
+    Compare to t0084&#x27;s cell 767 attribution (NaP-dominant 93%, Nav1.6 7%, NMDA 0%). Per-cluster
+    narrative: which biophysical strategy does this cluster represent?
+
+  Output: one **answer asset** at `assets/answer/are-cluster-motifs-mechanistically-distinct/` per
+  the answer-asset specification, with quantitative attribution per cluster.
+
+  **Pass criteria**: Primary -- produce a clear mechanism-distinctness verdict (clusters are
+  mechanistically distinct vs share the same mechanism). Secondary -- per-cluster representative
+  Vm-trace deep-dive figures published. Acceptable negative -- clusters are NOT mechanistically
+  distinct (all use the same NMDA-dominant strategy, differing only in parameter scale) is itself a
+  useful finding aligning with t0086&#x27;s exotic-NMDA verdict.
+
+  **Compute**: Phase A pure data analysis ($0, ~10 min); Phase B per representative cell at 16
+  directions x 1 inner replication = 16 NEURON sims at ~60 s each = ~16 min per cell; with 2-3
+  cluster representatives = 32-48 min; Phase C analysis ($0). **Local CPU only. No remote machine.
+  Total wall-clock ~1-2 hours, $0 cost.**
+
+  Source suggestion: **S-0086-03** (extension scope). Dependencies: t0024, t0078, t0080, t0081,
+  t0083, t0084, t0086. `expected_assets = {&quot;answer&quot;: 1}`. Task types:
+  `[&quot;data-analysis&quot;, &quot;experiment-run&quot;, &quot;answer-question&quot;]`.
+
+#### Suggestion Cleanup
+
+* **Reject S-0086-03** -- t0088 covers the per-cluster Vm-trace deep-dive with extended scope (13
+  cells re-clustered, 16 directions instead of t0084&#x27;s 8, mechanism-distinctness narrative as the
+  answer asset). The original S-0086-03 scope (deep-dive on 6 Genuine cells only at 24 directions
+  remote-CPU) is subsumed by t0088&#x27;s extended scope; t0088 picks 16 directions for local-CPU
+  feasibility.
+
+#### Reprioritisations
+
+None.
+
+#### Tasks Cancelled or Updated
+
+* **Cancelled**: none.
+* **Updated**: none.
+* t0075 (Bed A bio-realistic AIS one-axis sweep) remains queued.
+
+#### Assets Produced
+
+No assets in this brainstorm task. The new task t0088 will produce one answer asset attributing each
+re-clustered cluster to a dominant biophysical mechanism (or, in the negative case, confirming a
+shared mechanism with parameter-scale variation).
+
+#### Budget Context
+
+Project budget $20.00; **$15.56 spent** before t0088; **$4.44 remaining**. t0088 is local-CPU only
+and estimated **$0.00**, leaving the **$4.44 buffer intact** for subsequent S-0086-* follow-ups
+(notably S-0086-01 NSGA-II re-run with tightened NMDA bounds at $1.50, S-0086-02 NMDA units
+calibration at $0.30, S-0086-04 10-rep robustness extension at $0.65, S-0086-06 Bed A cross-bed
+validation at $2.50).
+
+### Results Summary
+
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0087_brainstorm_results_17&quot;
+date_completed: &quot;2026-05-06&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Brainstorm Session 17
+
+#### Summary
+
+Seventeenth strategic brainstorm, run on 2026-05-06 after t0086
+(`robustness_cluster_bio_comparison`) classified the 20-cell test set as 6 Genuine + 7 Marginal + 7
+Stochastic, found k=2 clusters on the 6 Genuine cells, both clusters classified exotic by the
+biological scorecard (NMDA per-synapse +85-122 sigma above Sivyer 2013, NaP +7-24 sigma above Stuart
+1999). One consolidated follow-up task commissioned: t0088 (`recluster_marginals_and_vm_motifs`)
+extends S-0086-03&#x27;s per-cluster Vm-trace deep-dive scope by re-clustering the 13-cell pool of 6
+Genuine + 7 Marginal cells (instead of 6 Genuine cells only), then runs a t0084-style deep-dive at
+16 directions on local CPU on representative cells, computes fractional channel attribution per
+cluster, and produces one mechanism-distinctness answer asset. S-0086-03 rejected as covered.
+Project budget $20.00; $15.56 spent before t0088; **$4.44 remaining**; t0088 estimated $0 (local-CPU
+only) preserves the buffer for subsequent S-0086-* follow-ups.
+
+#### Session Overview
+
+Date: 2026-05-06. Triggered by t0086&#x27;s Genuine + Marginal + Stochastic classification (6 / 7 / 7)
+and the k=2 exotic-cluster result. The researcher provided a one-shot directive bundling the
+re-clustering and the per-cluster Vm-trace deep-dive into one combined task: &quot;implement S-0086-03
+but before doing this redo the clustering including marginal cells as well. All in one task.&quot; This
+directive is consistent with the recorded researcher preference for one combined task bundling
+related suggestions and infra/protocol fixes (memory: feedback_consolidated_task_design). The
+session opened with an independent priority reassessment surfacing S-0086-03 as the seed of the new
+task and the 13-cell pool (6 Genuine + 7 Marginal) as the natural extension. The directive itself
+served as the explicit confirmation, authorising the entire remaining lifecycle.
+
+#### Decisions
+
+1. **Create t0088** (`recluster_marginals_and_vm_motifs`). Three sequential phases:
+
+   * **Phase A (re-cluster 13 cells)**: load the 6 Genuine + 7 Marginal cells from t0086&#x27;s
+     `cell_classification.json`. Total 13 cells:
+     `[767, 1304, 1379, 1504, 1517, 1559, 1604, 1624, 1634, 1639, 1663, 1677, 1721]`. Load 54-d
+     natural-unit parameter vectors per cell from t0083&#x27;s `all_evaluations.json` (cells 1238-1727)
+     and t0081&#x27;s (cell 767). Re-run KMeans for k=2..6, hierarchical clustering with ward linkage and
+     both cosine + euclidean metrics, UMAP / PCA visualisation; pick best k via silhouette + BIC.
+     Compute per-cluster centroids in 54-d natural-unit space. Re-use t0086&#x27;s `biological_priors.py`
+     and `biological_scorecard.py` to score each new centroid against published priors.
+
+   * **Phase B (per-cluster Vm-trace deep-dive)**: pick a representative cell per cluster (closest
+     to centroid in 54-d Euclidean distance). Run a t0084-style deep-dive at **16 directions**
+     (every 22.5 deg). Record per-segment Vm at proximal soma, mid-dendrite, distal-dendrite, AIS;
+     per-segment NMDA conductance trajectories; per-segment Nav1.6 / NaP currents at distal
+     dendrite; AIS Vm and threshold-crossing spike onset times. Generate 4 figures matching t0084
+     per representative cell. Compute fractional channel contributions.
+
+   * **Phase C (mechanism distinctness analysis)**: compare fractional contributions across
+     clusters; do clusters use different dominant mechanisms (e.g., NMDA-dominant vs NaP-dominant vs
+     Nav1.6-dominant), or share the same mechanism but vary in scale? Compare to t0084&#x27;s cell 767
+     attribution (NaP-dominant 93%, Nav1.6 7%, NMDA 0%). Output: one **answer asset** at
+     `assets/answer/are-cluster-motifs-mechanistically-distinct/` with quantitative attribution.
+
+   **Pass criteria**: Primary -- produce a clear mechanism-distinctness verdict. Secondary --
+   per-cluster representative Vm-trace deep-dive figures published. Acceptable negative -- clusters
+   are NOT mechanistically distinct (all NMDA-dominant differing only in parameter scale) is itself
+   a useful finding aligning with t0086&#x27;s exotic-NMDA verdict.
+
+   **Compute**: Phase A pure data analysis ($0, ~10 min); Phase B per representative cell at 16
+   directions x 1 inner replication = 16 NEURON sims at ~60 s each = ~16 min per cell; with 2-3
+   cluster representatives = 32-48 min; Phase C analysis ($0). **Local CPU only. No remote machine.
+   Total wall-clock ~1-2 hours, $0 cost.**
+
+   Source suggestion: **S-0086-03** (extended scope). Dependencies: t0024, t0078, t0080, t0081,
+   t0083, t0084, t0086. `expected_assets = {&quot;answer&quot;: 1}`. Task types:
+   `[&quot;data-analysis&quot;, &quot;experiment-run&quot;, &quot;answer-question&quot;]`.
+
+2. **Reject S-0086-03** -- t0088 covers the per-cluster Vm-trace deep-dive with extended scope (13
+   cells re-clustered, 16 directions instead of 24, mechanism-distinctness narrative as the answer
+   asset, local CPU instead of remote). The original S-0086-03 deep-dive scope is fully subsumed by
+   t0088&#x27;s Phase B.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 1 (t0088 recluster + Vm-trace deep-dive) |
+| Tasks cancelled | 0 |
+| Tasks updated (other than cancellations) | 0 |
+| Suggestions rejected | 1 (S-0086-03) |
+| Suggestions reprioritised | 0 |
+| Corrections written | 1 |
+| New suggestions created | 0 |
+| Answer assets created in this brainstorm | 0 |
+| Session duration | ~50 minutes interactive |
+| Session cost | $0.00 |
+| Estimated cost of commissioned task | $0.00 (local-CPU only) |
+
+#### Verification
+
+* `verify_task_file.py t0087_brainstorm_results_17` -- target 0 errors.
+* `verify_corrections.py t0087_brainstorm_results_17` -- target 0 errors for 1 correction file.
+* `verify_suggestions.py t0087_brainstorm_results_17` -- target 0 errors (empty array).
+* `verify_logs.py t0087_brainstorm_results_17` -- target 0 errors; LG-W005 / LG-W007 / LG-W008
+  acceptable per skill guidance and step-4 capture.
+* `verify_task_file.py t0088_recluster_marginals_and_vm_motifs` -- target 0 errors.
+* `verify_pr_premerge.py t0087_brainstorm_results_17 --pr-number &lt;N&gt;` -- target 0 errors.
+
+#### Next Steps
+
+1. **t0088 execution** is the immediate follow-up: it bundles the re-clustering with the 7 Marginal
+   cells included and the per-cluster Vm-trace deep-dive at 16 directions into one combined task.
+   Expected wall-clock 1-2 hours local CPU; $0 cost. Output: one mechanism-distinctness answer
+   asset.
+
+2. **Decision point after t0088 completes**:
+   * If clusters are mechanistically distinct (e.g., NMDA-dominant cluster vs NaP-dominant cluster),
+     this confirms biophysical heterogeneity in the v3 substrate Pareto cells and opens two parallel
+     follow-ups: ablation of the dominant mechanism per cluster (cheap local-CPU experiments) and
+     targeted searches in the biologically-plausible neighbourhood of the non-NMDA-dominant cluster
+     (S-0086-01 NSGA-II re-run with tightened NMDA bounds, $1.50).
+   * If clusters share a single dominant mechanism (e.g., all NMDA-dominant differing only in
+     scale), this aligns with t0086&#x27;s exotic-NMDA verdict and motivates S-0086-02 (NMDA units
+     calibration, $0.30) and S-0086-01 (NSGA-II re-run with tightened NMDA bounds, $1.50) as primary
+     follow-ups.
+
+3. **Remaining S-0086-* follow-ups** (kept active for future brainstorms):
+   * S-0086-01 (NSGA-II re-run with tightened NMDA bounds, $1.50) -- high priority, fits the $4.44
+     buffer
+   * S-0086-02 (NMDA units calibration, $0.30) -- high priority, very cheap
+   * S-0086-04 (10-rep robustness extension, $0.65) -- medium priority
+   * S-0086-05 (RGC-specific NaP literature search, $0.10) -- low priority, very cheap
+   * S-0086-06 (Bed A cross-bed validation, $2.50) -- medium priority, fits the buffer alone but not
+     alongside S-0086-01
+
+4. **t0075** (Bed A bio-realistic AIS one-axis sweep) remains queued.
+
+## Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
+ID: t0088_recluster_marginals_and_vm_motifs
+Status: not_started
+Effective date: 2026-05-06
+Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive, t0086_robustness_cluster_bio_comparison
+Task types: data-analysis, experiment-run, answer-question
+Source suggestion: S-0086-03
+
+#### Motivation
+
+t0086 found k=2 clusters on the 6 Genuine cells with both clusters classified exotic by the
+biological scorecard (NMDA per-synapse +85-122 sigma above Sivyer 2013, NaP +7-24 sigma above Stuart
+1999). This raises two questions that S-0086-03 set out to address: (a) do different cells inside
+each cluster share a common biophysical mechanism (e.g., NaP-dominant vs NMDA-dominant), or do they
+all use the same mechanism but at different scales; (b) do clusters partition cells by mechanism.
+The original S-0086-03 scope ran the deep-dive on the 6 Genuine cells only; this extension adds the
+7 Marginal cells from t0086 (cells 767, 1304, 1379, 1504, 1559, 1624, 1721) for a 13-cell
+re-clustering pool, then deep-dives at higher angular resolution (16 directions every 22.5 deg) on a
+representative cell per cluster. The wider 13-cell pool reveals mechanism heterogeneity that the
+6-Genuine-only clustering may miss, and the 16-direction resolution exceeds t0084&#x27;s 8-direction
+deep-dive.
+
+The combined task design follows the recorded researcher preference for one consolidated task
+bundling related suggestions and infra/protocol fixes. Source suggestion: **S-0086-03** (extended
+scope).
+
+#### Cell Set
+
+13 cells from t0086:
+
+* **6 Genuine** (t0086 5/5 reps pass DSI &gt;= 0.4 AND PD &gt;= 10 Hz): 1517, 1604, 1634, 1639, 1663, 1677
+* **7 Marginal** (t0086 3-4/5 reps pass): 767, 1304, 1379, 1504, 1559, 1624, 1721
+
+Cell 767&#x27;s 54-d natural-unit parameter vector lives in
+`tasks/t0081_bedb_v3_warmstart_nsga2/results/data/all_evaluations.json` (the warm-start lineage).
+Cells 1238-1727 (which include all 12 of the remaining 13-cell pool) live in
+`tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/all_evaluations.json`. The implementation
+must verify which task contains each cell&#x27;s saved parameters before loading.
+
+#### Scope
+
+##### Phase A -- Re-cluster 13 cells
+
+* Load `tasks/t0086_robustness_cluster_bio_comparison/results/data/cell_classification.json` to
+  identify the 6 Genuine + 7 Marginal cells.
+* Load 54-d natural-unit parameter vectors per cell from t0081 / t0083 `all_evaluations.json`.
+* Re-run KMeans for k = 2..6, hierarchical clustering with ward linkage and both cosine + euclidean
+  metrics, and 2D visualisation via UMAP (or PCA fallback if UMAP fit fails).
+* Pick best k via silhouette + BIC.
+* Compute per-cluster centroids in 54-d natural-unit space.
+* Re-use `tasks/t0086_robustness_cluster_bio_comparison/code/biological_priors.py` and
+  `biological_scorecard.py` to score each new cluster centroid against published priors (Kole 2008
+  AIS Nav, Werginz 2024 mouse alpha-RGC AIS-to-soma Nav ratio, Sivyer 2013 dendritic NMDA, Oesch
+  2005 + Goldfinger 2000 + Stuart 1999 distal Nav1.6 / NaP, de Rosenroll 2026 GABA / AMPA spatial
+  distribution, Branco-Hausser 2010 NMDA Mg-block).
+* Output: `results/data/recluster_assignments.json`, `results/data/recluster_centroids.json`,
+  `results/data/recluster_biological_scorecard.json`. Plus PNGs: cluster UMAP / silhouette /
+  dendrogram / heatmap, matching t0086&#x27;s plotting style.
+
+##### Phase B -- Per-cluster Vm-trace deep-dive
+
+* For each cluster, pick a representative cell as the cell with minimum 54-d Euclidean distance to
+  the cluster centroid.
+
+* For each representative cell, run a t0084-style deep-dive at **16 directions** (every 22.5 deg)
+  instead of t0084&#x27;s 8 directions. Use 1 inner replication per direction.
+
+* Re-use t0084&#x27;s `run_deepdive.py` per-segment recording pattern. Record per-segment Vm at proximal
+  soma, mid-dendrite, distal-dendrite, AIS; per-segment NMDA conductance trajectories (`gnmda` over
+  time at each `bundle.syns_nmda` synapse, distal dendrite); per-segment Nav1.6 (`nav16t80._ref_i`)
+  and NaP (`napt80._ref_i`) currents at distal dendrite; AIS Vm and threshold-crossing spike onset
+  times.
+
+* Per representative cell, generate 4 figures matching t0084:
+
+  1. Per-direction Vm traces (3-row x 16-column grid: proximal soma / mid dendrite / distal
+     dendrite)
+  2. NMDA conductance trajectories at distal dendrite per direction (16-line plot)
+  3. Nav1.6 / NaP current decomposition at distal dendrite per direction (16-direction subplots)
+  4. AIS spike onset histogram per direction (polar or 16-bin bar)
+
+* Compute fractional channel contributions per cluster representative (matching t0084&#x27;s
+  `attribution_metric.py` pattern but applied to the new cells).
+
+##### Phase C -- Mechanism distinctness analysis
+
+* Compare fractional contributions across clusters: do different clusters use different dominant
+  mechanisms (e.g., one NMDA-dominant, one NaP-dominant, one Nav1.6-dominant), or do they all share
+  the same mechanism but vary in scale?
+* Compare to t0084&#x27;s cell 767 attribution (NaP-dominant 93%, Nav1.6 7%, NMDA 0%): does the per-seed
+  re-evaluation reveal mechanism heterogeneity that single-seed attribution missed?
+* Per-cluster narrative: which biophysical strategy does this cluster represent?
+
+##### Output
+
+Answer asset at `assets/answer/are-cluster-motifs-mechanistically-distinct/` per the answer asset
+specification (`meta/asset_types/answer/specification.md`), with quantitative attribution per
+cluster.
+
+#### Pass criteria
+
+* **Primary**: produce a clear mechanism-distinctness verdict (clusters are mechanistically distinct
+  vs share the same mechanism).
+* **Secondary**: per-cluster representative Vm-trace deep-dive figures published.
+* **Acceptable negative**: clusters are NOT mechanistically distinct (all use the same NMDA-dominant
+  strategy, differing only in parameter scale) is itself a useful finding aligning with t0086&#x27;s
+  exotic-NMDA verdict.
+
+#### Compute and Budget
+
+* Phase A: pure data analysis, $0, ~10 min.
+* Phase B: per representative cell at 16 directions x 1 inner replication = 16 NEURON sims at ~60 s
+  each per cell = ~16 min per cell. With 2-3 cluster representatives = 32-48 min total local CPU.
+* Phase C: data analysis, $0.
+
+**Local CPU only. No remote machine. Total wall-clock ~1-2 hours, $0 cost.** No remote-machine
+provisioning or Vast.ai authentication required.
+
+Project budget after t0086: ~$15.56 / $20.00 used, ~$4.44 remaining. t0088 estimated $0 -- no budget
+impact.
+
+#### Dependencies
+
+* **t0024_port_de_rosenroll_2026_dsgc** -- the de Rosenroll 2026 base port that defines the model
+  substrate.
+* **t0078_bedb_mobo_v2_ais_tiered_ahp** -- the v2 substrate predecessor.
+* **t0080_bedb_mobo_v3_dendritic_spike_nsga2** -- the v3 substrate library (active dendritic
+  conductances + tiered AHP) used for re-evaluation.
+* **t0081_bedb_v3_warmstart_nsga2** -- contains cell 767&#x27;s 54-d parameter vector in
+  `results/data/all_evaluations.json`.
+* **t0083_bedb_v3_extend_nsga2_gen8plus** -- contains the 12 remaining cells&#x27; 54-d parameter vectors
+  in `results/data/all_evaluations.json`.
+* **t0084_t0081_cell_767_vm_trace_deepdive** -- contains `code/run_deepdive.py` and the per-segment
+  recording pattern this task re-uses.
+* **t0086_robustness_cluster_bio_comparison** -- contains `code/biological_priors.py`,
+  `biological_scorecard.py`, the cell classification, and the original 6-Genuine clustering this
+  task extends.
+
+#### Cross-task code reuse
+
+Per the cross-task import rule (no direct imports across task folders; only library asset imports),
+this task copies the needed code into its own `code/` directory:
+
+* Copy `tasks/t0086_robustness_cluster_bio_comparison/code/biological_priors.py` and
+  `biological_scorecard.py` into `tasks/t0088_recluster_marginals_and_vm_motifs/code/`, rebinding
+  imports.
+* Copy `tasks/t0084_t0081_cell_767_vm_trace_deepdive/code/run_deepdive.py` (or equivalent)
+  per-segment recording pattern into `tasks/t0088_recluster_marginals_and_vm_motifs/code/`,
+  rebinding imports.
+
+The library asset `de_rosenroll_2026_dsgc_ais_dendritic_spike` (the v3 substrate from t0080) is
+imported normally.
+
+#### Expected Assets
+
+`expected_assets = {&quot;answer&quot;: 1}`. The single answer asset at
+`assets/answer/are-cluster-motifs-mechanistically-distinct/` per the answer-asset specification.
+
+#### Task Types
+
+`[&quot;data-analysis&quot;, &quot;experiment-run&quot;, &quot;answer-question&quot;]`. Phase A is data-analysis (Pandas / sklearn
+/ matplotlib); Phase B is experiment-run (NEURON simulations local CPU); Phase C produces the answer
+asset.
+
+#### Output specification
+
+* `results/data/recluster_assignments.json`: per-cell cluster id (Phase A).
+* `results/data/recluster_centroids.json`: cluster centroids in 54-d natural-unit space (Phase A).
+* `results/data/recluster_biological_scorecard.json`: per-cluster biological-plausibility scorecard
+  (Phase A).
+* `results/data/representative_cells.json`: which cell represents each cluster (Phase B).
+* `results/data/per_direction_recordings_&lt;cell_id&gt;.npz`: per-segment Vm + NMDA + Nav1.6 + NaP
+  recordings per direction per representative cell (Phase B).
+* `results/data/attribution_&lt;cell_id&gt;.json`: fractional channel contributions per representative
+  cell (Phase B).
+* `results/data/mechanism_distinctness.json`: per-cluster mechanism narrative + verdict (Phase C).
+* `results/images/cluster_umap.png`, `cluster_silhouette.png`, `cluster_dendrogram.png`,
+  `cluster_heatmap.png` (Phase A).
+* `results/images/vm_traces_&lt;cell_id&gt;.png`, `nmda_conductance_&lt;cell_id&gt;.png`,
+  `nav_decomp_&lt;cell_id&gt;.png`, `ais_spike_onset_&lt;cell_id&gt;.png` per representative cell (Phase B).
+* `assets/answer/are-cluster-motifs-mechanistically-distinct/{details.json, short_answer.md, full_answer.md}`
+  (Phase C).
+
+#### Concrete questions answered
+
+1. How many clusters does the 13-cell pool partition into (vs t0086&#x27;s k=2 on 6 cells)?
+2. What is the per-cluster fractional channel attribution at 16 directions?
+3. Are the clusters mechanistically distinct, or do they share a mechanism with parameter-scale
+   variation?
+4. Does cell 767&#x27;s NaP-dominant attribution from t0084 (single-seed 8 directions) hold up at
+   16-direction resolution and after re-clustering with the 13-cell pool?
       </content>
     </section>
   </sections>

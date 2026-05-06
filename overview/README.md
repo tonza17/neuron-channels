@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-86-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-88-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-330-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (30K)
-| [full](llm-context/full.xml) (476K) | [roadmap](llm-context/roadmap.xml) (95K) |
-[results](llm-context/results-deep-dive.xml) (376K) |
+| [full](llm-context/full.xml) (481K) | [roadmap](llm-context/roadmap.xml) (98K) |
+[results](llm-context/results-deep-dive.xml) (379K) |
 [assets](llm-context/literature-and-assets.xml) (53K)
 
-*Last updated: 2026-05-06 18:33 UTC*
+*Last updated: 2026-05-06 19:39 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -59,12 +59,13 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
+| 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`description`](../tasks/t0088_recluster_marginals_and_vm_motifs/task_description.md) | 2026-05-06 |
 
 ---
 
@@ -82,11 +83,12 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (79 total)](tasks/by-status/completed.md)
+## [Recently Completed (80 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
+| 0087 | [Brainstorm results session 17](../overview/tasks/task_pages/t0087_brainstorm_results_17.md) | [`results`](../tasks/t0087_brainstorm_results_17/results/results_detailed.md) | 2026-05-06 11:50 |
 | 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
 | 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`results`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) | 2026-05-06 08:31 |
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
@@ -95,9 +97,8 @@ No blocked tasks.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 | 0079 | [Brainstorm results session 14](../overview/tasks/task_pages/t0079_brainstorm_results_14.md) | [`results`](../tasks/t0079_brainstorm_results_14/results/results_detailed.md) | 2026-05-04 17:45 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`results`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/results_detailed.md) | 2026-05-04 16:25 |
-| 0077 | [Brainstorm results session 13](../overview/tasks/task_pages/t0077_brainstorm_results_13.md) | [`results`](../tasks/t0077_brainstorm_results_13/results/results_detailed.md) | 2026-05-03 12:55 |
 
-*69 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*70 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +123,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (291 open)](suggestions/)
+## [Recent Suggestions (290 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -265,25 +266,6 @@ Recommended task types: data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Per-cluster Vm trace deep-dive (extension of t0084 to all 6
-Genuine cells)</strong> (S-0086-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0084 produced a Vm-trace mechanism attribution for cell 767 only. t0086 found that cell 767
-was Marginal (3/5 reps pass) and that 6 different cells (1517, 1604, 1634, 1639, 1663, 1677)
-are Genuine and partition into 2 clusters. Extend t0084's deep-dive methodology (24-direction
-NEURON simulations with extended Vm + NMDA conductance + Nav1.6 / NaP current density
-recording at soma / mid-dendrite / distal dendrite / AIS) to all 6 Genuine cells. Compare
-per-cluster Vm dynamics (Cluster 0 high-NaP+high-AIS vs Cluster 1 high-GABA-lambda). Produce
-one cluster-specific mechanism attribution figure plus a comparative table. Expected cost:
-~$1.20 USD on Vast.ai EPYC 7B13 (6 cells x 24 directions x 60 s = 2.4 h x $0.35/hr).
-Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>10-replication robustness extension: rerun the 6 Genuine + 7
 Marginal cells at 10 outer seeds</strong> (S-0086-04)</summary>
 
@@ -317,7 +299,25 @@ USD (paper search + summarisation only). Recommended task types: review-papers.
 
 </details>
 
-*281 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Bed A cross-bed validation: re-run NSGA-II on the t0080 Bed A
+morphology with the same v3 substrate</strong> (S-0086-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
+[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
+
+t0086 identified 6 Genuine cells in t0080's Bed B morphology, but the v3 substrate has not
+been tested on Bed A. Run NSGA-II for 8 generations at population 96 on Bed A with the same v3
+substrate and the same constraint (AIS-to-soma Nav ratio >= 5). Compare: (a) does Bed A
+produce more or fewer joint-pass cells than Bed B? (b) do the Bed A joint-pass cells cluster
+into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) or do they
+discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
+not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
+$0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+*280 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 

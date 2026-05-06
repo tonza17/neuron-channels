@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T18:33:10Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T19:39:02Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>358126</char_count>
-    <byte_count>358282</byte_count>
-    <estimated_tokens>89531</estimated_tokens>
+    <char_count>358128</char_count>
+    <byte_count>358284</byte_count>
+    <estimated_tokens>89532</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -4005,7 +4005,7 @@ t0086&#x27;s NMDA exotic verdict (&gt;85 sigma above Sivyer 2013) is so extreme 
 
 ## Per-cluster Vm trace deep-dive (extension of t0084 to all 6 Genuine cells)
 ID: S-0086-03
-Status: active
+Status: rejected
 Priority: medium
 Kind: experiment
 Source task: t0086_robustness_cluster_bio_comparison
