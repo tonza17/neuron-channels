@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-06T12:59:30Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-06T13:02:16Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
     <section_count>82</section_count>
-    <char_count>1483563</char_count>
-    <byte_count>1490432</byte_count>
-    <estimated_tokens>370890</estimated_tokens>
+    <char_count>1483566</char_count>
+    <byte_count>1490435</byte_count>
+    <estimated_tokens>370891</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -698,7 +698,7 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
 ## Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
 ID: t0086_robustness_cluster_bio_comparison
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-06
 Short description: Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0084_t0081_cell_767_vm_trace_deepdive
       </content>

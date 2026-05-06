@@ -33,7 +33,7 @@
 [results](llm-context/results-deep-dive.xml) (371K) |
 [assets](llm-context/literature-and-assets.xml) (52K)
 
-*Last updated: 2026-05-06 12:59 UTC*
+*Last updated: 2026-05-06 13:02 UTC*
 
 * **Budget**: **$14** spent of $20
 * **Remaining**: **$6**
@@ -63,9 +63,9 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`description`](../tasks/t0086_robustness_cluster_bio_comparison/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
+| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`description`](../tasks/t0086_robustness_cluster_bio_comparison/task_description.md) | 2026-05-06 |
 
 ---
 
