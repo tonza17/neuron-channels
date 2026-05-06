@@ -1,0 +1,24 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260505T133106Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260505T133514Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260505T135225Z_python-m-arf-scripts-verificators-verify.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260505T135322Z_python-m-arf-scripts-verificators-verify.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 023_20260505T140258Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 024_20260505T140311Z_ssh-tt-o.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 024_20260505T140547Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 025_20260505T140559Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 026_20260505T140613Z_ssh-tt-o.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 027_20260505T140642Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260505T140653Z_ssh-tt-o.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 037_20260505T140910Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 038_20260505T140924Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 041_20260505T141030Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 060_20260506T081148Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 063_20260506T081338Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 18 warning(s)

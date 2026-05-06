@@ -1,0 +1,7 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: Cannot access gnabar_hh directly; it is a range variable and may be accessed via a section or segment.

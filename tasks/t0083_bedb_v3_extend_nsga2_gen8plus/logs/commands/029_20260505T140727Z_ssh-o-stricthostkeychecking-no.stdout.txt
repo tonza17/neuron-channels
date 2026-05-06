@@ -1,0 +1,6 @@
+CONNECTED
+-rw-r--r-- 1 root root 0 May  5 14:06 /root/.no_auto_tmux
+Linux d0a7cdb945df 6.8.0-52-generic #53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"

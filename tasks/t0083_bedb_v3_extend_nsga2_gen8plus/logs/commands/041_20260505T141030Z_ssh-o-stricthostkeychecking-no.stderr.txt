@@ -1,0 +1,12 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+NEURON: The user defined name already exists: nav16t80
+ near line 0
+ objref hoc_obj_[2]
+                   ^
+        nrn_load_dll("x86_64/.li...")
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+RuntimeError: hocobj_call error

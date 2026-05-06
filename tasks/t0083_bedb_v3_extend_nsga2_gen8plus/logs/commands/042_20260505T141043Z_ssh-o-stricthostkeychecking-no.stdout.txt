@@ -1,0 +1,2 @@
+nav16t80 SUFFIX loaded from explicit path OK
+gbar at center = 0.0

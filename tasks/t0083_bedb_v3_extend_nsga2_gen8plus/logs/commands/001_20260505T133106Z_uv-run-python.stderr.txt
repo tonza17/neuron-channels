@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0083_bedb_v3_extend_nsga2_gen8plus/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\logs\steps\003_init-folders

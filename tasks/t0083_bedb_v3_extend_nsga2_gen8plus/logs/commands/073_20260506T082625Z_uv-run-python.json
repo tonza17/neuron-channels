@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_tasks --format json --detail short",
+  "exit_code": 0,
+  "duration_seconds": 1.95,
+  "started_at": "2026-05-06T08:26:25Z",
+  "completed_at": "2026-05-06T08:26:27Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0083_bedb_v3_extend_nsga2_gen8plus",
+  "stdout_file": "073_20260506T082625Z_uv-run-python.stdout.txt",
+  "stderr_file": "073_20260506T082625Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1928,
+  "stderr_lines": 0,
+  "truncated": false
+}

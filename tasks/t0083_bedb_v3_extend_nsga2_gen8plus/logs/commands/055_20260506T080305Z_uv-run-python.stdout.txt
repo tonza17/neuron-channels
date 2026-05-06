@@ -1,0 +1,6 @@
+[plot] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\images\pareto_front.png
+[plot] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\images\hypervolume_trajectory.png
+[plot] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\images\all_cells_scatter.png
+[plot] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\images\parameter_distribution_per_generation.png
+[plot] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0083_bedb_v3_extend_nsga2_gen8plus\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\data\parameter_distribution.json
+[closest-to-joint] cell 1304: dsi=0.765 pd=13.96 distance=0.000

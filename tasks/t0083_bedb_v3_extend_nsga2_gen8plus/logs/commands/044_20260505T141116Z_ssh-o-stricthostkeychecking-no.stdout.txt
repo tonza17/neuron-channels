@@ -1,0 +1,28 @@
+13
+Translating nav16t80.mod into /root/t0083_workdir/v3_mods_test/x86_64/nav16t80.c
+Translating nart80.mod into /root/t0083_workdir/v3_mods_test/x86_64/nart80.c
+Thread Safe
+Translating skahpt80.mod into /root/t0083_workdir/v3_mods_test/x86_64/skahpt80.c
+ -> [32mNMODL[0m .././skt80.mod
+Thread Safe
+Thread Safe
+ -> [32mCompiling[0m bkt80.c
+Translating skt80.mod into /root/t0083_workdir/v3_mods_test/x86_64/skt80.c
+ -> [32mCompiling[0m calt80.c
+Thread Safe
+ -> [32mCompiling[0m catt80.c
+ -> [32mCompiling[0m iht80.c
+ -> [32mCompiling[0m kdrt80.c
+ -> [32mCompiling[0m kv3t80.c
+ -> [32mCompiling[0m kv4t80.c
+ -> [32mCompiling[0m kv7t80.c
+ -> [32mCompiling[0m napt80.c
+ -> [32mCompiling[0m nart80.c
+ -> [32mCompiling[0m nav16t80.c
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+--- libnrnmech.so size ---
+118704
