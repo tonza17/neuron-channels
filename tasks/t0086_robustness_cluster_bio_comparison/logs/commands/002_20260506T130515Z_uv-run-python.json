@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0086_robustness_cluster_bio_comparison",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_task_types --format json",
+  "exit_code": 0,
+  "duration_seconds": 0.37,
+  "started_at": "2026-05-06T13:05:15Z",
+  "completed_at": "2026-05-06T13:05:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0086_robustness_cluster_bio_comparison",
+  "stdout_file": "002_20260506T130515Z_uv-run-python.stdout.txt",
+  "stderr_file": "002_20260506T130515Z_uv-run-python.stderr.txt",
+  "stdout_lines": 252,
+  "stderr_lines": 0,
+  "truncated": false
+}
