@@ -16,11 +16,15 @@ variation?
 
 ## Answer
 
-The 13-cell re-cluster produces **4 clusters**, and the per-cluster Vm-trace deep-dive at 16
-directions yields the verdict **shared_mechanism_different_scale**. Unique dominant mechanisms
-across clusters: **nap**. Per-cluster fractional channel attributions are tabulated below; the
-verdict reflects whether different clusters use different dominant ion-current mechanisms in their
-PD-minus-ND integrated dendritic current.
+No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4 clusters
+(best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in PD-minus-ND
+attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac NMDA = 0.000). The
+verdict is `shared_mechanism_different_scale`: clusters differ in 54-d parameter scale but not in
+which channel drives the PD response. This extends t0084's NaP-dominant cell 767 finding to the
+wider 13-cell pool of joint-pass / near-joint-pass cells in the v3 substrate.
+
+Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
+[200, 1200] ms):
 
 | Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
 | --- | --- | --- | --- | --- | --- |
@@ -28,14 +32,6 @@ PD-minus-ND integrated dendritic current.
 | 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
 | 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
 | 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
-
-All clusters share the same dominant mechanism in PD-minus-ND attribution; they differ in parameter
-scale (parameter-vector position in 54-d space) but not in which channel drives the PD response.
-verdict = shared_mechanism_different_scale.
-
-Compare to t0084's cell 767 attribution (NaP-dominant 93%, Nav1.6 7%, NMDA 0%): the per-cluster
-re-evaluation at 16 directions reveals whether the cell-767 NaP-dominant signature generalises to
-the broader 13-cell pool's clusters.
 
 ## Sources
 
