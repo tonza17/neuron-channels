@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0083 eval harness for re-evaluation entry points; review t0084 per-cell eval entry point; review sklearn / UMAP for clustering.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T13:10:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T13:17:18Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
