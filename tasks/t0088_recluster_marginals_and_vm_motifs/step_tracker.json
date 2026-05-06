@@ -131,9 +131,9 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators; capture sessions; mark task completed; PR; merge; overview sync on main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-06T21:04:34Z",
-      "completed_at": null,
+      "completed_at": "2026-05-06T21:06:13Z",
       "log_file": "logs\\steps\\015_reporting/"
     }
   ]
