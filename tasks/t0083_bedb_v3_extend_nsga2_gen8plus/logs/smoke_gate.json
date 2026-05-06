@@ -1,0 +1,93 @@
+{
+  "tolerance_dsi": 0.05,
+  "tolerance_pd_rate_hz": 1.0,
+  "n_cells": 5,
+  "n_pass": 4,
+  "n_fail": 1,
+  "anchor_cell_index": 767,
+  "target_gens": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "cells": [
+    {
+      "cell_index": 767,
+      "generation": 7,
+      "ref_dsi": 0.4941451990632318,
+      "ref_pd_rate_hz": 11.392857142857142,
+      "obs_dsi": 0.45505617977528096,
+      "obs_pd_rate_hz": 9.25,
+      "delta_dsi": -0.03908901928795083,
+      "delta_pd_rate_hz": -2.1428571428571423,
+      "is_unstable": false,
+      "peak_vm_mv": 32.49348041759544,
+      "is_pass": false,
+      "error": null,
+      "elapsed_s": 62.15043115615845
+    },
+    {
+      "cell_index": 407,
+      "generation": 4,
+      "ref_dsi": 1.0,
+      "ref_pd_rate_hz": 0.7500000000000001,
+      "obs_dsi": 1.0,
+      "obs_pd_rate_hz": 0.6071428571428572,
+      "delta_dsi": 0.0,
+      "delta_pd_rate_hz": -0.1428571428571429,
+      "is_unstable": false,
+      "peak_vm_mv": 11.5469825835557,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 59.49358892440796
+    },
+    {
+      "cell_index": 490,
+      "generation": 5,
+      "ref_dsi": 0.6326530612244897,
+      "ref_pd_rate_hz": 2.857142857142857,
+      "obs_dsi": 0.6000000000000001,
+      "obs_pd_rate_hz": 2.5714285714285716,
+      "delta_dsi": -0.03265306122448963,
+      "delta_pd_rate_hz": -0.2857142857142856,
+      "is_unstable": false,
+      "peak_vm_mv": 29.00269261839496,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 61.88325071334839
+    },
+    {
+      "cell_index": 637,
+      "generation": 6,
+      "ref_dsi": 0.33737373737373744,
+      "ref_pd_rate_hz": 11.821428571428573,
+      "obs_dsi": 0.31237721021611,
+      "obs_pd_rate_hz": 11.928571428571429,
+      "delta_dsi": -0.024996527157627457,
+      "delta_pd_rate_hz": 0.10714285714285587,
+      "is_unstable": false,
+      "peak_vm_mv": 44.422660004524865,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 60.410012006759644
+    },
+    {
+      "cell_index": 699,
+      "generation": 7,
+      "ref_dsi": 1.0,
+      "ref_pd_rate_hz": 1.8571428571428574,
+      "obs_dsi": 1.0,
+      "obs_pd_rate_hz": 1.8571428571428574,
+      "delta_dsi": 0.0,
+      "delta_pd_rate_hz": 0.0,
+      "is_unstable": false,
+      "peak_vm_mv": 21.47727414714654,
+      "is_pass": true,
+      "error": null,
+      "elapsed_s": 62.39958882331848
+    }
+  ],
+  "n_seeds": 20,
+  "max_workers": 0
+}

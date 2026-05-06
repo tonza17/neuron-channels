@@ -1,0 +1,458 @@
+{
+  "variants": [
+    {
+      "variant_id": "pareto_cell_0627",
+      "label": "Pareto cell 627 (gen 6)",
+      "dimensions": {
+        "cell_index": 627,
+        "generation": 6,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 133.21428571428572
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.012898845892735914,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_0664",
+      "label": "Pareto cell 664 (gen 6)",
+      "dimensions": {
+        "cell_index": 664,
+        "generation": 6,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 119.21428571428572
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.02865947611710327,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1238",
+      "label": "Pareto cell 1238 (gen 12)",
+      "dimensions": {
+        "cell_index": 1238,
+        "generation": 12,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 49.85714285714286
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.043348281016442426,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1304",
+      "label": "Pareto cell 1304 (gen 13) [JOINT PASS]",
+      "dimensions": {
+        "cell_index": 1304,
+        "generation": 13,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": true,
+        "pd_rate_hz": 13.964285714285715
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.765237020316027,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1328",
+      "label": "Pareto cell 1328 (gen 13)",
+      "dimensions": {
+        "cell_index": 1328,
+        "generation": 13,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 161.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0036565096952908085,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1457",
+      "label": "Pareto cell 1457 (gen 15)",
+      "dimensions": {
+        "cell_index": 1457,
+        "generation": 15,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 49.67857142857143
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.05060422960725072,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1484",
+      "label": "Pareto cell 1484 (gen 15)",
+      "dimensions": {
+        "cell_index": 1484,
+        "generation": 15,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 47.25000000000001
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.16461267605633803,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1494",
+      "label": "Pareto cell 1494 (gen 15)",
+      "dimensions": {
+        "cell_index": 1494,
+        "generation": 15,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 104.35714285714286
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04152557476385674,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1504",
+      "label": "Pareto cell 1504 (gen 15)",
+      "dimensions": {
+        "cell_index": 1504,
+        "generation": 15,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 8.035714285714286
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.882845188284519,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1509",
+      "label": "Pareto cell 1509 (gen 15)",
+      "dimensions": {
+        "cell_index": 1509,
+        "generation": 15,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 143.71428571428572
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.00991341448111429,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1559",
+      "label": "Pareto cell 1559 (gen 16) [JOINT PASS]",
+      "dimensions": {
+        "cell_index": 1559,
+        "generation": 16,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": true,
+        "pd_rate_hz": 39.17857142857143
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.7060653188180406,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1586",
+      "label": "Pareto cell 1586 (gen 16)",
+      "dimensions": {
+        "cell_index": 1586,
+        "generation": 16,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 144.75
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.003839009287925725,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1617",
+      "label": "Pareto cell 1617 (gen 16)",
+      "dimensions": {
+        "cell_index": 1617,
+        "generation": 16,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 166.92857142857144
+      },
+      "metrics": {
+        "direction_selectivity_index": -0.0029863481228669065,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1636",
+      "label": "Pareto cell 1636 (gen 17)",
+      "dimensions": {
+        "cell_index": 1636,
+        "generation": 17,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 136.32142857142858
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.011661807580174944,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1642",
+      "label": "Pareto cell 1642 (gen 17)",
+      "dimensions": {
+        "cell_index": 1642,
+        "generation": 17,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 162.60714285714286
+      },
+      "metrics": {
+        "direction_selectivity_index": -0.001644556517925666,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1677",
+      "label": "Pareto cell 1677 (gen 17) [JOINT PASS]",
+      "dimensions": {
+        "cell_index": 1677,
+        "generation": 17,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": true,
+        "pd_rate_hz": 40.714285714285715
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.6569767441860466,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1678",
+      "label": "Pareto cell 1678 (gen 17)",
+      "dimensions": {
+        "cell_index": 1678,
+        "generation": 17,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 59.78571428571429
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.04266583618810345,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "pareto_cell_1723",
+      "label": "Pareto cell 1723 (gen 17)",
+      "dimensions": {
+        "cell_index": 1723,
+        "generation": 17,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 7.42857142857143
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "closest_to_joint_cell_0767",
+      "label": "Closest-to-joint cell 767 (gen 7)",
+      "dimensions": {
+        "cell_index": 767,
+        "generation": 7,
+        "is_feasible": true,
+        "is_unstable": false,
+        "joint_pass": false,
+        "pd_rate_hz": 11.392857142857142
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4941451990632318,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ],
+  "per_generation_summary": [
+    {
+      "generation": 0,
+      "n_total": 96,
+      "n_feasible": 55,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 1,
+      "n_total": 96,
+      "n_feasible": 70,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 2,
+      "n_total": 96,
+      "n_feasible": 88,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 3,
+      "n_total": 96,
+      "n_feasible": 90,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 4,
+      "n_total": 96,
+      "n_feasible": 89,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 5,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 6,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 7,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 8,
+      "n_total": 96,
+      "n_feasible": 96,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 9,
+      "n_total": 96,
+      "n_feasible": 93,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 10,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 11,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 12,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 0
+    },
+    {
+      "generation": 13,
+      "n_total": 96,
+      "n_feasible": 96,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 14,
+      "n_total": 96,
+      "n_feasible": 93,
+      "n_joint_pass": 1
+    },
+    {
+      "generation": 15,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 2
+    },
+    {
+      "generation": 16,
+      "n_total": 96,
+      "n_feasible": 94,
+      "n_joint_pass": 4
+    },
+    {
+      "generation": 17,
+      "n_total": 96,
+      "n_feasible": 91,
+      "n_joint_pass": 6
+    }
+  ],
+  "n_total_evaluations": 1728,
+  "n_pareto_cells": 18
+}
