@@ -1,0 +1,102 @@
+{
+  "n_genuine_cells": 6,
+  "cell_ids": [
+    1517,
+    1604,
+    1634,
+    1639,
+    1663,
+    1677
+  ],
+  "k_min": 2,
+  "k_max": 6,
+  "best_k": 2,
+  "kmeans": [
+    {
+      "k": 2,
+      "silhouette": 0.15548962018187695,
+      "bic": 8.793389118521816,
+      "inertia": 9.925344003274795,
+      "labels": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "k": 3,
+      "silhouette": -0.0082579821519999,
+      "bic": 101.0624499112775,
+      "inertia": 8.625305928619731,
+      "labels": [
+        2,
+        2,
+        0,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "k": 4,
+      "silhouette": 0.10801097448128472,
+      "bic": 15.671609855059103,
+      "inertia": 3.850462670850926,
+      "labels": [
+        2,
+        2,
+        0,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "k": 5,
+      "silhouette": 0.08000914670481153,
+      "bic": -0.21960829917338742,
+      "inertia": 1.5976105900118445,
+      "labels": [
+        2,
+        4,
+        0,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "k": 6,
+      "silhouette": null,
+      "bic": null,
+      "inertia": 0.0,
+      "labels": []
+    }
+  ],
+  "hierarchical_cosine_labels": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+  ],
+  "hierarchical_euclidean_labels": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    0
+  ],
+  "ari_kmeans_vs_hierarchical_cosine": 1.0,
+  "ari_kmeans_vs_hierarchical_euclidean": 1.0,
+  "bootstrap_ari": {
+    "mean": 0.5966666666666667,
+    "sd": 0.5229085324732552,
+    "n_bootstrap": 50
+  }
+}
