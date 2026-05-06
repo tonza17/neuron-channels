@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0087-01",
+  "correcting_task": "t0087_brainstorm_results_17",
+  "target_task": "t0086_robustness_cluster_bio_comparison",
+  "target_kind": "suggestion",
+  "target_id": "S-0086-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0086-03 proposes a per-cluster Vm-trace deep-dive on the 6 Genuine cells from t0086 at 24 directions on remote CPU. t0088 (recluster_marginals_and_vm_motifs, this brainstorm session's primary commission) covers the same scope with two extensions per researcher directive: (1) re-clusters the 13-cell pool of 6 Genuine + 7 Marginal cells (instead of 6 Genuine cells only), giving a richer mechanistically heterogeneous pool to motif-cluster; (2) runs the per-cluster Vm-trace deep-dive on representative cells at 16 directions (every 22.5 deg) on local CPU, eliminating remote-machine cost. The original S-0086-03 deep-dive scope is fully subsumed by t0088's Phase B; rejecting as covered."
+}
