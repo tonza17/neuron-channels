@@ -1,0 +1,13 @@
+
+verify:   0%|          | 0/5 [00:00<?, ?it/s]
+verify:  20%|##        | 1/5 [00:23<01:32, 23.01s/it]
+verify:  40%|####      | 2/5 [00:23<00:28,  9.65s/it]
+verify:  60%|######    | 3/5 [00:23<00:10,  5.39s/it]
+verify:  80%|########  | 4/5 [00:24<00:03,  3.62s/it]
+verify: 100%|##########| 5/5 [00:25<00:00,  2.65s/it]
+verify: 100%|##########| 5/5 [00:25<00:00,  5.10s/it]
+exp(706.659) out of range, returning exp(700)
+exp(705.861) out of range, returning exp(700)
+exp(705.062) out of range, returning exp(700)
+exp(700.003) out of range, returning exp(700)
+No more errno warnings during this execution

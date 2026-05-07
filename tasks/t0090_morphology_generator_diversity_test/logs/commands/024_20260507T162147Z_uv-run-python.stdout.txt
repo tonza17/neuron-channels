@@ -1,0 +1,24 @@
+{
+  "morph_id": "similar_00",
+  "population": "similar",
+  "morph_index": 0,
+  "stability_flag": "stable",
+  "dsi": 0.0,
+  "pd_rate_hz": 0.0,
+  "nd_rate_hz": 0.0,
+  "peak_vm_mv": -70.0,
+  "n_dendrites": 130,
+  "n_terminals": 67,
+  "elapsed_s": 82.57374215126038,
+  "error": null,
+  "per_direction_spikes": {
+    "0.0": 0,
+    "45.0": 0,
+    "90.0": 0,
+    "135.0": 0,
+    "180.0": 0,
+    "225.0": 0,
+    "270.0": 0,
+    "315.0": 0
+  }
+}

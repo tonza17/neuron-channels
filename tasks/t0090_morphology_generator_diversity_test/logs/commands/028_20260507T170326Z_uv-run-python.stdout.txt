@@ -1,0 +1,3 @@
+rendering 30 different morphologies -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\results\images\morphology_grid_different.png
+rendering 30 similar morphologies -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\results\images\morphology_grid_similar.png
+done

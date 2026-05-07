@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0090_morphology_generator_diversity_test",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0090_morphology_generator_diversity_test",
+  "exit_code": 0,
+  "duration_seconds": 0.333,
+  "started_at": "2026-05-07T15:30:21Z",
+  "completed_at": "2026-05-07T15:30:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0090_morphology_generator_diversity_test",
+  "stdout_file": "008_20260507T153021Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260507T153021Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

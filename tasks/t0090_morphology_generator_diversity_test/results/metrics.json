@@ -1,0 +1,34 @@
+{
+  "variants": [
+    {
+      "variant_id": "different_set",
+      "label": "30 LHS-sampled very-different morphologies (Phase B); aggregate over the 6 STABLE cells",
+      "dimensions": {
+        "morphology_population": "different_set"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    },
+    {
+      "variant_id": "similar_set",
+      "label": "30 +/-5 percent perturbed very-similar morphologies (Phase C); aggregate over the 3 STABLE cells",
+      "dimensions": {
+        "morphology_population": "similar_set"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    },
+    {
+      "variant_id": "bedb_repro_5",
+      "label": "Phase F BedB-equivalent procedural cell + 5 t0083 Pareto cell parameter vectors (infrastructure_only; full sweep deferred)",
+      "dimensions": {
+        "morphology_population": "bedb_repro_5"
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    }
+  ]
+}

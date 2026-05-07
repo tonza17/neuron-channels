@@ -1,0 +1,16 @@
+{
+  "ais_length_um": 32.12199560196469,
+  "branch_density_gradient_pd": 0.0,
+  "branch_length_cv": 0.09693794553439346,
+  "branch_prob_per_um": 0.03969799677394957,
+  "field_elongation_pd": 1.0343082313426806,
+  "max_strahler_depth": 5,
+  "mean_branching_angle_deg": 45.50474523028409,
+  "mean_segment_length_um": 25.753320407641127,
+  "morph_seed": 888791003,
+  "num_primary_branches": 3,
+  "primary_branch_pd_concentration": 0.0,
+  "rall_exponent": 1.447729774559952,
+  "soma_diameter_um": 15.394870556887758,
+  "soma_offset_pd_um": 0.0
+}

@@ -1,0 +1,7 @@
+collecting features for 60 morphologies ...
+  matrix shape=(60, 6)
+  PC1+PC2 variance explained: 0.829
+  similar set 95th-pct PCA radius: 1.570 (20.8 % of PC1 range)
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\results\images\morphometric_pca.png
+umap-learn not installed; PCA-only fallback
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\data\morphometric_summary.json

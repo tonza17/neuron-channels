@@ -1,0 +1,285 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 9 items
+
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_default_bedb_base_point FAILED [ 11%]
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_different_seeds_differ FAILED [ 22%]
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_round_trip_morphology_params PASSED [ 33%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_min_branches_three_primaries_depth_two FAILED [ 44%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_max_branches_seven_primaries_depth_six FAILED [ 55%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_no_nan_lengths_or_diameters_for_random_draws FAILED [ 66%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_nseg_dlambda_returns_odd_positive FAILED [ 77%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_connectivity_no_orphans FAILED [ 88%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_round_trip_via_to_from_dict PASSED [100%]
+
+================================== FAILURES ===================================
+__________________ test_determinism_default_bedb_base_point ___________________
+
+    def test_determinism_default_bedb_base_point() -> None:
+        """Two builds at the BedB base point with the same seed produce identical sections."""
+        p = MorphologyParams.from_bedb_base_point()
+>       a = generate_morphology(params=p, morph_seed=12345)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_determinism.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:517: in generate_morphology
+    ensure_t80_dll_loaded(h=h)
+tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py:50: in ensure_t80_dll_loaded
+    dll_path = str(resolve_t80_mod_library()).replace("\\", "/")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def resolve_t80_mod_library() -> Path:
+        """Return the first existing compiled MOD library for the current platform."""
+        candidates: list[Path] = (
+            [LINUX_MOD_BUILD_SO, LINUX_MOD_FALLBACK_SO]
+            if sys.platform != "win32"
+            else [WINDOWS_MOD_BUILD_DLL]
+        )
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+>       raise FileNotFoundError(
+            "Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ "
+            f"folder. Tried: {', '.join(str(c) for c in candidates)}."
+        )
+E       FileNotFoundError: Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build\nrnmech.dll.
+
+tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py:34: FileNotFoundError
+___________________ test_determinism_different_seeds_differ ___________________
+
+    def test_determinism_different_seeds_differ() -> None:
+        """Two seeds should generally produce different morphologies (not byte-identical)."""
+        p = MorphologyParams.from_bedb_base_point()
+>       a = generate_morphology(params=p, morph_seed=12345)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_determinism.py:37:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:516: in generate_morphology
+    h = load_neuron()
+        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+_________________ test_min_branches_three_primaries_depth_two _________________
+
+    def test_min_branches_three_primaries_depth_two() -> None:
+        p = _params_with(num_primary=3, max_depth=2)
+>       cell = generate_morphology(params=p, morph_seed=42)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_generator.py:30:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:516: in generate_morphology
+    h = load_neuron()
+        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+_________________ test_max_branches_seven_primaries_depth_six _________________
+
+    def test_max_branches_seven_primaries_depth_six() -> None:
+        p = _params_with(num_primary=7, max_depth=6)
+>       cell = generate_morphology(params=p, morph_seed=43)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_generator.py:37:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:516: in generate_morphology
+    h = load_neuron()
+        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+______________ test_no_nan_lengths_or_diameters_for_random_draws ______________
+
+    def test_no_nan_lengths_or_diameters_for_random_draws() -> None:
+        base = MorphologyParams.from_bedb_base_point().to_dict()
+        for trial in range(10):
+            # Mutate a few params to random plausible values.
+            d = dict(base)
+            d["mean_segment_length_um"] = float(_RNG.uniform(15.0, 50.0))
+            d["mean_branching_angle_deg"] = float(_RNG.uniform(35.0, 80.0))
+            d["rall_exponent"] = float(_RNG.uniform(0.7, 1.8))
+            d["branch_length_cv"] = float(_RNG.uniform(0.0, 0.4))
+            d["primary_branch_pd_concentration"] = float(_RNG.uniform(0.0, 4.0))
+            d["morph_seed"] = int(_RNG.integers(1, 2**31 - 1))
+            p = MorphologyParams.from_dict(data=d)
+>           cell = generate_morphology(params=p, morph_seed=int(d["morph_seed"]))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_generator.py:53:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:516: in generate_morphology
+    h = load_neuron()
+        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+___________________ test_nseg_dlambda_returns_odd_positive ____________________
+
+    def test_nseg_dlambda_returns_odd_positive() -> None:
+        """For L in [10, 600] um, _compute_nseg returns an odd integer >= 1."""
+>       h = load_neuron()
+            ^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_generator.py:65:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+________________________ test_connectivity_no_orphans _________________________
+
+    def test_connectivity_no_orphans() -> None:
+        p = MorphologyParams.from_bedb_base_point()
+>       cell = generate_morphology(params=p, morph_seed=11)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tasks\t0090_morphology_generator_diversity_test\code\test_generator.py:80:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tasks\t0090_morphology_generator_diversity_test\code\generator.py:516: in generate_morphology
+    h = load_neuron()
+        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def load_neuron() -> Any:
+        """Return the ``h`` object after loading stdrun and ``nrnmech.dll``."""
+        _ensure_neuron_on_path()
+
+        from neuron import h
+
+        if not P.NRNMECH_DLL.exists():
+            raise RuntimeError(
+                f"nrnmech.dll not found at {P.NRNMECH_DLL}. Run "
+                f"``{P.LIBRARY_NRNIVMODL_CMD}`` to compile the MOD files first."
+            )
+
+        dll_path = str(P.NRNMECH_DLL).replace("\\", "/")
+>       h.nrn_load_dll(dll_path)
+E       RuntimeError: hocobj_call error
+
+tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py:77: RuntimeError
+---------------------------- Captured stderr call -----------------------------
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+=========================== short test summary info ===========================
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_default_bedb_base_point
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_different_seeds_differ
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_min_branches_three_primaries_depth_two
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_max_branches_seven_primaries_depth_six
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_no_nan_lengths_or_diameters_for_random_draws
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_nseg_dlambda_returns_odd_positive
+FAILED tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_connectivity_no_orphans
+========================= 7 failed, 2 passed in 0.69s =========================

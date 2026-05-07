@@ -1,0 +1,5 @@
+different: 6/30 stable, DSI median=0.0, mean=0.0
+similar:   3/30 stable, DSI median=0.0, mean=0.0
+bedb_repro: 0/1 pass within 10% on both DSI and PD-rate
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\results\metrics.json
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\results\images\diversity_summary.png

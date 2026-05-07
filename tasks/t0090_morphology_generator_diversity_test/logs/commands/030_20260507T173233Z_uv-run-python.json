@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0090_morphology_generator_diversity_test",
+  "command": "uv run python -u tasks/t0090_morphology_generator_diversity_test/code/validation_g2_nmda_units.py",
+  "exit_code": 0,
+  "duration_seconds": 389.186,
+  "started_at": "2026-05-07T17:32:33Z",
+  "completed_at": "2026-05-07T17:39:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0090_morphology_generator_diversity_test",
+  "stdout_file": "030_20260507T173233Z_uv-run-python.stdout.txt",
+  "stderr_file": "030_20260507T173233Z_uv-run-python.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 5,
+  "truncated": false
+}

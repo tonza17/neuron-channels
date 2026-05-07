@@ -1,0 +1,5 @@
+branch: task/t0090_morphology_generator_diversity_test
+base_branch: main
+base_commit: e063b658bc3aed9eda18582f6e430abe0b86fc7b
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test
+created_at: 2026-05-07T14:37:02Z

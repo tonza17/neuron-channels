@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {},
+  "note": "All Phases A-G ran on the local 64-core EPYC. Vast.ai EPYC 7B13 was budgeted for Phase G.2 NMDA calibration ablation but local CPU was sufficient, so no remote provisioning was required. Phase F (Bed-B reproducibility full 5-cell sweep) and Phase G.3 (NaP knockout 4-cell x 16-direction sweep) deferred to a follow-up task; their drivers are committed and runnable but the simulations did not complete within the wall-clock budget."
+}
