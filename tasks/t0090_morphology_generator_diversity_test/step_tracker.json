@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0024 Bed B port for de Rosenroll morphology layout, t0080 v3 substrate parameter encoding, t0083 Pareto archive structure, t0086/t0088 biological_priors and biological_scorecard frameworks for re-use in Phase G.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T15:10:58Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T15:21:48Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
