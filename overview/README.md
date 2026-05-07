@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-16-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-22-CD853F" alt="Answers"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-23-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-91-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-336-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-343-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (31K)
-| [full](llm-context/full.xml) (497K) | [roadmap](llm-context/roadmap.xml) (103K) |
-[results](llm-context/results-deep-dive.xml) (389K) |
-[assets](llm-context/literature-and-assets.xml) (54K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (32K)
+| [full](llm-context/full.xml) (505K) | [roadmap](llm-context/roadmap.xml) (101K) |
+[results](llm-context/results-deep-dive.xml) (398K) |
+[assets](llm-context/literature-and-assets.xml) (55K)
 
-*Last updated: 2026-05-07 14:26 UTC*
+*Last updated: 2026-05-07 18:29 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -63,17 +63,15 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`description`](../tasks/t0090_morphology_generator_diversity_test/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
+| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`description`](../tasks/t0091_morphology_extended_nsga2_v1/task_description.md) | 2026-05-07 |
 
 ---
 
-## [Blocked Tasks (1)](tasks/)
+## [Blocked Tasks (0)](tasks/)
 
-| # | Task | Blocked By |
-|---|------|------------|
-| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`t0090_morphology_generator_diversity_test`](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+No blocked tasks.
 
 ---
 
@@ -85,10 +83,11 @@ No tasks in progress.
 
 ---
 
-## [Recently Completed (82 total)](tasks/by-status/completed.md)
+## [Recently Completed (83 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
 | 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
 | 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
@@ -98,9 +97,8 @@ No tasks in progress.
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
 | 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`results`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/results/results_detailed.md) | 2026-05-05 16:45 |
 | 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
-| 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`results`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/results_detailed.md) | 2026-05-04 22:45 |
 
-*72 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*73 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -125,7 +123,140 @@ No tasks in progress.
 
 ---
 
-## [Recent Suggestions (296 open)](suggestions/)
+## [Recent Suggestions (303 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
+spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
+STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
+partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
+produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
+deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
+analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
+current Bed-B base point and pick the (params, seed) combination whose procedural cell most
+closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
+t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
+Recommended task types: correction, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Tighten t0091 LHS morphology bounds using the 9 STABLE cells
+from the t0090 diversity sweep</strong> (S-0090-04)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083
+best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both
+ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a
+parameter-combination issue rather than a topology-size issue. Before launching t0091's joint
+68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and
+similar populations) and use those tightened bounds for the LHS warm-start sample, instead of
+the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that
+produces STABLE cells under any fixed channel set, materially improving NSGA-II sample
+efficiency on the morphology axis. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-channel-set diversity re-test of t0090 morphologies to
+disentangle morphology vs channel-set sensitivity</strong> (S-0090-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+The t0090 finding that 51/60 morphologies fail NAN_VOLTAGE rests on a single channel set
+(t0083 best-cell). To confirm Mainen 1996 morphology-determines-firing-pattern as the cause
+(rather than the t0083 channel set being uniquely fragile), re-run the 60-morphology
+verification on 3 different t0083 Pareto cells' channel sets (e.g. cells 1559, 1639, 767
+spanning the t0086 cluster representatives). If the STABLE / NAN_VOLTAGE flag is consistent
+across channel sets per morphology, the failure is morphology-specific and S-0090-04's
+tightened LHS bounds are the right fix; if STABLE-or-not depends on channel set, the joint
+68-d NSGA-II must accept that warm-start anchors are channel-set-conditional. Pure simulation;
+no remote machine; ~30 min on local 64-core. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate why t0086 / t0088 cluster 1 converges to extreme
+AIS-to-soma Nav ratios (per-cell range 42.6-270.7)</strong> (S-0090-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1
+cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 /
+270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the
+loss landscape around these 4 cells: in the t0083 archive's 54-d parameter space, restrict to
+cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS,
+Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding
+an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05's
+RGC-specific-NaP-density argument), or the loss surface is multi-modal and a tightened upper
+bound on Nav_AIS would still find joint-pass cells. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0090 procedural morphology generator into a
+top-level project library asset</strong> (S-0090-07)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+The 14-knob procedural DSGC morphology generator is committed under
+tasks/t0090_morphology_generator_diversity_test/code/ as a task-folder library asset. Once
+t0091 confirms the generator works inside an NSGA-II eval loop, promote it into a top-level
+reusable library (e.g. arf/libraries/dsgc_procedural_morphology) with a stable import path,
+packaged unit tests, and a versioned release tag. This avoids the chronic problem of
+downstream tasks (t0091, the future Option G real-cell library task, future Bed-A
+morph-extended runs) needing to import from a deeply-nested task-folder path. Recommended task
+types: write-library, infrastructure-setup.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
@@ -184,146 +315,87 @@ matching post-run charges within 5 percent. Recommended task types: write-librar
 
 </details>
 
-<details>
-<summary>📊 <strong>Multi-seed smoke-gate baseline -- replace
-single-deterministic-reproduction with 3-5 seed reference range</strong>
-(S-0083-05)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-The pre-launch substrate-consistency smoke gate in t0081 / t0083 uses a single reference DSI /
-PD value per cell with fixed tolerances (DSI 0.05, PD 1.0 Hz). t0083's smoke gate failed 1/5
-(cell 767 PD 9.25 Hz vs 11.39 Hz reference, 1.14 Hz over tolerance), diagnosed as Monte-Carlo
-seed-consumption variance, not substrate drift. The acceptable-negative decision was validated
-by t0083's productive 14-new-joint-pass-cell run, but the design is fragile. Replace the
-deterministic reference with a 3-5 seed multi-replicate range: for each smoke-gate cell, run
-the simulator under 5 LHS RNG seeds, record (DSI mean +/- SD, PD mean +/- SD), and accept if
-the on-instance reproduction lands within 2 SD. Recommended task types: write-library,
-experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Peak-rate re-analysis of cells 1559 / 1677 for direct comparison
-with Trenholm 2013 / Oesch 2005</strong> (S-0083-06)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the project's
-first cells to combine biologically-plausible DSI with PD firing rates above 30 Hz mean.
-Published `[Trenholm2013, Results p. 14064]` and `[Oesch2005, Results p. 754]` report peak
-rather than mean PD rates: 198 Hz Gaussian-convolved peak (Trenholm) and 148 Hz modal peak
-(Oesch). The current PD-rate metric is mean rate over 1400 ms; converting cells 1559 / 1677 to
-peak rate would resolve the mean-vs-peak metric mismatch and enable direct numerical
-comparison with Trenholm / Oesch. Re-run cells 1559 and 1677 in subprocess with
-full-resolution voltage / spike traces preserved, compute Gaussian-convolved instantaneous
-rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
-Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
-preserved; otherwise experiment-run with 2-cell budget < $0.20).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
-per-synapse value, then re-run</strong> (S-0086-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
-conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
-pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
-parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
-from t0083's gen-17 final population for 5 additional generations at population 96. Test
-whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
-confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
-biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
-joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
-Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
-cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Resolve units mismatch between t0080 gnmda_dend NetCon weight and
-Sivyer 2013 per-spine conductance</strong> (S-0086-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086's NMDA exotic verdict (>85 sigma above Sivyer 2013) is so extreme that it likely
-partially reflects a units / scope mismatch rather than a genuinely outlier biological
-mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the
-t0080 Exp2NMDA mechanism, while Sivyer 2013's value is a per-spine synaptic conductance
-measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area
-normalisation or by an effective open-channel-fraction factor. Run a calibration ablation:
-take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine
-effective open conductance (from the NEURON state during a stimulus), and produce a
-calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
-clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
-Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>10-replication robustness extension: rerun the 6 Genuine + 7
-Marginal cells at 10 outer seeds</strong> (S-0086-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086 used 5 outer seeds, distinguishing Genuine (5/5) from Marginal (3-4/5) from Stochastic
-(<=2/5). A 10-rep extension on the 13 Genuine + Marginal cells (skip the 7 Stochastic that
-already failed) would produce a finer 10/9-8/<=7 partition that more accurately separates
-truly-genuine cells from borderline-Marginal cases like cell 1379 (4/5 in t0086) and cell 1559
-(4/5). The bootstrap ARI would also tighten. Expected cost: ~$0.65 USD on Vast.ai EPYC 7B13
-(13 cells x 5 additional reps x 135 s/rep = 2.4 h x $0.35/hr). Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Source RGC-specific NaP density measurement to replace Stuart
-1999 / Goldfinger 2000 cortical-pyramidal prior</strong> (S-0086-05)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086's biological scorecard used Stuart 1999 / Goldfinger 2000 NaP density (0.0005 S/cm^2) as
-the prior for distal NaP, but those measurements were made in cortical pyramidal cells, not
-RGCs. Both Genuine clusters scored exotic on NaP (Cluster 0 +24 sigma, Cluster 1 +7 sigma) by
-this prior. Conduct a focused literature search for RGC-specific NaP density measurements (try
-Hu 2009, Bender-Trussell 2009, Lewis 2014 RGC review). If an RGC-specific NaP value exists,
-replace the prior, re-run the scorecard, and re-classify the clusters. Expected cost: ~$0.10
-USD (paper search + summarisation only). Recommended task types: review-papers.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed A cross-bed validation: re-run NSGA-II on the t0080 Bed A
-morphology with the same v3 substrate</strong> (S-0086-06)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086 identified 6 Genuine cells in t0080's Bed B morphology, but the v3 substrate has not
-been tested on Bed A. Run NSGA-II for 8 generations at population 96 on Bed A with the same v3
-substrate and the same constraint (AIS-to-soma Nav ratio >= 5). Compare: (a) does Bed A
-produce more or fewer joint-pass cells than Bed B? (b) do the Bed A joint-pass cells cluster
-into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) or do they
-discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
-not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
-$0.35/hr). Recommended task types: experiment-run.
-
-</details>
-
-*286 more open suggestions → [open suggestions](suggestions/)*
+*293 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (41)](suggestions/)
+## [High Priority Suggestions (45)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
+spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
+STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
+partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
+produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
+deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
+analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
+current Bed-B base point and pick the (params, seed) combination whose procedural cell most
+closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
+t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
+Recommended task types: correction, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Tighten t0091 LHS morphology bounds using the 9 STABLE cells
+from the t0090 diversity sweep</strong> (S-0090-04)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+
+51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083
+best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both
+ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a
+parameter-combination issue rather than a topology-size issue. Before launching t0091's joint
+68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and
+similar populations) and use those tightened bounds for the LHS warm-start sample, instead of
+the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that
+produces STABLE cells under any fixed channel set, materially improving NSGA-II sample
+efficiency on the morphology axis. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
@@ -442,85 +514,36 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>📊 <strong>Channel-knockout DSI causal-attribution variant of the t0084
-metric</strong> (S-0084-05)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0084_t0081_cell_767_vm_trace_deepdive](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
-
-t0084's fractional-channel-contribution metric is correlative: it measures which channel's
-PD-vs-ND integrated current differs most in absolute magnitude, but does not establish causal
-contribution to DSI. Replace it with a counterfactual knockout metric: for each cell, run 4
-conditions (full / NMDA-knockout / Nav1.6-knockout / NaP-knockout) across 8 directions and
-compute `delta_DSI = DSI_full - DSI_knockout` per channel. The dominant mechanism is the
-channel whose knockout collapses DSI the most. Apply to cells 767 / 637 / 762; if NaP-knockout
-collapses DSI by the most, t0084's NaP-dominant correlative finding is causally confirmed;
-otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
-NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
-on/off. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
-to the v3 54-d parameter space</strong> (S-0080-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-REQ-9 / REQ-16 of the t0080 plan deferred the substrate-regression check under cost pressure.
-Without it, the t0080 negative result cannot conclusively distinguish 'v3 substrate is
-regressed' from 'NSGA-II under-budgeted in 54-d' as the dominant cause of the dramatic Pareto
-compression (94% DSI regression vs t0076 at the comparable PD regime). Map t0076's iter-424
-25-d vector to the v3 54-d parameterisation with new dendritic-spike parameters at zero (no
-dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed evaluation
-locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
-~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
-types: experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Warm-start NSGA-II from t0078 Pareto cells mapped into the v3
-54-d parameter space</strong> (S-0080-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-04 | **Source**:
-[t0080_bedb_mobo_v3_dendritic_spike_nsga2](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/)
-
-The t0080 LHS init started fresh; t0078's known-good cells (closest-to-joint at DSI 0.316 / PD
-9.68 Hz; max-DSI rail at DSI 1.000) were not seeded into the v3 search. Mapping the t0078 49-d
-Pareto cells into 54-d (new dendritic-spike parameters set near zero) would give NSGA-II a
-near-Pareto starting population, dramatically reducing the generations needed to converge.
-Implement a `seed_population` hook in `nsga2_loop.py` that mixes ~12 t0078 Pareto cells with
-~12 LHS cells for the initial pop=24, then re-run for at least gen=20. Direct test: does
-warm-start recover t0078's DSI 0.316 within the first generation? Cost: ~$1.00-$1.50 on
-Vast.ai 64-core. Recommended task types: experiment-run, build-model.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Tier-stratify channel densities in a follow-up Bed B MOBO (per
-soma / proximal / distal / terminal)</strong> (S-0076-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
-[t0076_bedb_dsi_firing_rate_mobo](../tasks/t0076_bedb_dsi_firing_rate_mobo/)
-
-REQ-10 follow-up. The t0076 25-d search applied each of 12 channel densities uniformly across
-soma + 350 dendrites. Real RGCs have ~50x higher Nav at AIS than soma (Kole 2008) and graded
-Ih/Kv distributions per dendritic tier. Re-run the BoTorch MOBO with channels stratified into
-4 region tiers (soma, proximal-dendrite, mid-dendrite, terminal), expanding the input to
-~40-50 d. Seed the new GP with the 12-cell t0076 Pareto front (uniform-density solutions).
-Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off observed in the
-25-d search. Recommended task types: experiment-run.
-
-</details>
-
-*31 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*35 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (22 total)](answers/)
+## [Recent Answers (23 total)](answers/)
+
+<details>
+<summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
+G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the
+biological-plausibility flags raised in t0086 and t0088?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-07 | **Full answer**:
+[`validation-triplet-implications-for-biological-plausibility`](../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/)
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real
+biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the
+soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the
++33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather
+than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance
+calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the
+conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3
+quantifies the causal contribution of distal NaP to the direction-selectivity index of the
+four cluster representatives by comparing knockout DSI against the original t0083 DSI,
+providing a per-cell verdict (NaP-dominant, NaP-partial, or NaP-minor). Taken together, the
+triplet confirms two of the t0086 / t0088 flags as real biological signals (cluster-1
+AIS-to-soma ratio, NaP attribution where the knockout collapses DSI) and leaves the
+NMDA-exotic flag in the conditional category pending an independent measurement of per-spine
+open conductance in the t0024 voltage-clamp regime.
+
+</details>
 
 <details>
 <summary><strong>Which clusters of joint-pass cells in t0083's expanded population
@@ -709,26 +732,7 @@ because the direction of the DSI response is not determined by L/lambda alone.
 
 </details>
 
-<details>
-<summary><strong>Does ModelDB 189347 (Poleg-Polsky and Diamond 2016) reproduce every
-quantitative claim in Figures 1-8 of the Neuron paper when re-run
-faithfully under NEURON 8.2.7, and where do the paper text and the ModelDB
-code disagree?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
-[`poleg-polsky-2016-reproduction-audit`](../tasks/t0046_reproduce_poleg_polsky_2016_exact/assets/answer/poleg-polsky-2016-reproduction-audit/)
-
-Partially. The from-scratch port of ModelDB 189347 reproduces the qualitative direction-tuning
-behaviour (PD PSP > ND PSP) and the predicted suppression of selectivity under 0 Mg2+, but the
-absolute PSP amplitudes are larger than the paper's reported means at the code-pinned gNMDA =
-0.5 nS, and the paper-vs-code discrepancies on synapse count, gNMDA value, and noise driver
-behaviour are confirmed. Ten or more discrepancies are catalogued in the full answer including
-six MOD-default-vs-main.hoc-override mismatches and four pre-flagged paper-vs-code
-disagreements; every Figure 1-8 reproduction outcome is recorded with numerical evidence.
-
-</details>
-
-*12 more answers → [answers](answers/)*
+*13 more answers → [answers](answers/)*
 
 ---
 
@@ -1311,10 +1315,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (16 total)](libraries/)
+## [Latest Libraries (17 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Procedural DSGC Morphology Generator](../tasks\t0090_morphology_generator_diversity_test\assets\library\procedural_dsgc_morphology_generator\description.md) | [90](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 2026-05-07 |
 | [De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery](../tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\assets\library\de_rosenroll_2026_dsgc_ais_dendritic_spike\description.md) | [80](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | 2026-05-04 |
 | [De Rosenroll 2026 DSGC with AIS](../tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\assets\library\de_rosenroll_2026_dsgc_ais\description.md) | [78](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | 2026-05-03 |
 | [DSGC Active Channel Pack](../tasks\t0074_channel_tuning_width_bed_a\assets\library\dsgc_active_channel_pack\description.md) | [74](../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | 2026-05-02 |
@@ -1324,9 +1329,8 @@ No models yet.
 | [Minimal DSGC with Spatial Centripetal-Gating GABA](../tasks\t0053_minimal_dsgc_spatial_gaba\assets\library\minimal_dsgc_spatial_gaba\description.md) | [53](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | 2026-04-25 |
 | [Minimal DSGC with Scalar gabaMOD](../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) | [52](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | 2026-04-25 |
 | [Minimal DSGC AMPA + NMDA Scalar gabaMOD](../tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\assets\library\minimal_dsgc_ampa_nmda_scalar_gaba\description.md) | [54](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | 2026-04-25 |
-| [ModelDB 189347 DSGC (exact reproduction)](../tasks\t0046_reproduce_poleg_polsky_2016_exact\assets\library\modeldb_189347_dsgc_exact\description.md) | [46](../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | 2026-04-24 |
 
-*6 more libraries → [libraries](libraries/)*
+*7 more libraries → [libraries](libraries/)*
 
 ---
 

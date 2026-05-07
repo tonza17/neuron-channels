@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (43)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(94)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(95)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2388,7 +2388,25 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (83 open, 11 closed)
+## Suggestions (84 open, 11 closed)
+
+<details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081

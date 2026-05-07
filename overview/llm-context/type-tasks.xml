@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-07T14:26:57Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-07T18:29:58Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>953687</char_count>
-    <byte_count>957625</byte_count>
-    <estimated_tokens>238421</estimated_tokens>
+    <char_count>956840</char_count>
+    <byte_count>960790</byte_count>
+    <estimated_tokens>239210</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -15624,8 +15624,8 @@ covering topology, asymmetry, and geometry, called inside the NSGA-II evaluation
   * **Phase B (30 very-different morphologies)**: wide Latin Hypercube sample over the 14-d morph
     param space; generate in parallel on 64-core EPYC.
 
-  * **Phase C (30 very-similar morphologies)**: tight perturbations (+/- 5%) around a Bed-B-equivalent
-    base point; generate in parallel.
+  * **Phase C (30 very-similar morphologies)**: tight perturbations (+/- 5%) around a
+    Bed-B-equivalent base point; generate in parallel.
 
   * **Phase D (verification simulation)**: build each morphology in NEURON, run a 50 ms no-stim
     stability check + 8-direction bar protocol with default t0083 best-cell channels; catch
@@ -15654,8 +15654,8 @@ covering topology, asymmetry, and geometry, called inside the NSGA-II evaluation
   morphologies for t0091. **Cost ~$0.30, ~3-4 days wall-clock, mostly local 64-core CPU.**
 
   Source suggestions: covers S-0088-02, S-0086-02, S-0088-01 in Phase G; t0090 is otherwise a new
-  direction with no source suggestion. Dependencies: t0024, t0078, t0080, t0081, t0083, t0086, t0088.
-  `expected_assets = {&quot;library&quot;: 1, &quot;answer&quot;: 1}`. Task types:
+  direction with no source suggestion. Dependencies: t0024, t0078, t0080, t0081, t0083, t0086,
+  t0088. `expected_assets = {&quot;library&quot;: 1, &quot;answer&quot;: 1}`. Task types:
   `[&quot;library-implementation&quot;, &quot;data-analysis&quot;, &quot;answer-question&quot;]`.
 
 * **Create t0091** -- first joint 68-d NSGA-II optimisation with morphology generated inside the
@@ -15665,33 +15665,33 @@ covering topology, asymmetry, and geometry, called inside the NSGA-II evaluation
     variants each. Anchors: (1) **Bed-B-like** (matches existing t0083 substrate); (2) **symmetric**
     (`soma_offset_pd_um=0`, `field_elongation_pd=1.0`, `branch_density_gradient_pd=0`,
     `primary_branch_pd_concentration=0`); (3) **PD-asymmetric** (soma offset +100 um toward PD,
-    field elongated 2x along PD, branches biased toward PD); (4) **ND-asymmetric** mirror of #3;
-    (5) **alternative-topology** (more primary branches, deeper Strahler depth, smaller field).
+    field elongated 2x along PD, branches biased toward PD); (4) **ND-asymmetric** mirror of #3; (5)
+    **alternative-topology** (more primary branches, deeper Strahler depth, smaller field).
 
   * **Phase B (joint NSGA-II)**: pop 96, &lt;=8 generations, generator inside eval loop; adaptive
     HV-plateau stop + cost watchdog (post-S-0083-04 fix). On Vast.ai EPYC 7B13 64-core. Each
     evaluation: NSGA-II proposes 68-d vector -&gt; generator builds NEURON model from 14 morph params
     + morph_seed -&gt; 54 channel/synapse params inserted into generated sections -&gt; bar-rotation
-    simulation -&gt; objectives returned (DSI, PD firing rate, robustness).
+      simulation -&gt; objectives returned (DSI, PD firing rate, robustness).
 
   * **Phase C (Pareto + biological-plausibility analysis)**: extend t0086 / t0088 framework to 68-d
     cells; do morph-extended Pareto cells reach biologically-plausible NMDA / NaP regimes that 54-d
     cells could not?
 
-  * **Phase D (anchor-tracking analysis)**: which of the 5 anchors are over- vs under-represented
-    in the final Pareto? If anchor #3 (PD-asymmetric) is preserved more than anchor #4
-    (ND-asymmetric), that is strong evidence for soma-displacement-toward-PD as a functional DS
-    mechanism (Schachter 2010, Trenholm 2013).
+  * **Phase D (anchor-tracking analysis)**: which of the 5 anchors are over- vs under-represented in
+    the final Pareto? If anchor #3 (PD-asymmetric) is preserved more than anchor #4 (ND-asymmetric),
+    that is strong evidence for soma-displacement-toward-PD as a functional DS mechanism (Schachter
+    2010, Trenholm 2013).
 
   * **Phase E (answer asset)**: &quot;Does in-loop morphology optimisation open biologically-plausible
     joint-pass regions, and which morphological asymmetries does the optimiser favour?&quot;
 
-  **Pass criteria**: Phase B converges with HV plateau or 8-gen cap; Phase C extends t0086
-  framework cleanly; Phase D produces a definitive yes/no on whether morphology variation reaches
-  biologically plausible cells; anchor-tracking yields a clear PD-vs-ND asymmetry verdict.
-  **Acceptable negative**: optimiser pegs all anchors back toward Bed-B-like -&gt; conclusion is the v3
-  substrate&#x27;s biological-plausibility ceiling is not raised by this morphology parametrisation,
-  motivating Option G (NeuroMorpho real-cell library) in a future task.
+  **Pass criteria**: Phase B converges with HV plateau or 8-gen cap; Phase C extends t0086 framework
+  cleanly; Phase D produces a definitive yes/no on whether morphology variation reaches biologically
+  plausible cells; anchor-tracking yields a clear PD-vs-ND asymmetry verdict. **Acceptable
+  negative**: optimiser pegs all anchors back toward Bed-B-like -&gt; conclusion is the v3 substrate&#x27;s
+  biological-plausibility ceiling is not raised by this morphology parametrisation, motivating
+  Option G (NeuroMorpho real-cell library) in a future task.
 
   **Cost ~$3.00-3.50, ~14-16 hours Vast.ai. Buffer remaining ~$0.94-1.44.**
 
@@ -15708,24 +15708,24 @@ covering topology, asymmetry, and geometry, called inside the NSGA-II evaluation
 * **S-0088-02** (AIS-to-soma Nav ratio audit) -- covered by t0090 Phase G.
 * **S-0084-05** (channel-knockout DSI causal-attribution variant) -- duplicate of S-0088-01 (which
   itself is now covered by t0090 Phase G).
-* **S-0083-03** (per-direction Vm-trace deep-dive of cell 1304) -- covered by t0088 (cell 1304 is
-  a member of cluster 1 with representative cell 1634; mechanism attribution NaP 87.4% / Nav1.6
-  12.6% / NMDA 0.0% applies to all cluster-1 cells including 1304).
+* **S-0083-03** (per-direction Vm-trace deep-dive of cell 1304) -- covered by t0088 (cell 1304 is a
+  member of cluster 1 with representative cell 1634; mechanism attribution NaP 87.4% / Nav1.6 12.6%
+  / NMDA 0.0% applies to all cluster-1 cells including 1304).
 
 ##### Reprioritised (high -&gt; medium)
 
-* **S-0083-01** (extend NSGA-II from t0083 gen 17 to gen 25 with pop 144) -- estimated $8-12, out
-  of remaining $4.44 budget; superseded by the morphology-extended NSGA-II direction in t0091.
-* **S-0084-01** (NaP density sweep on cells 767 / 637 / 762) -- superseded by S-0088-01-style
-  binary knockout in t0090 Phase G; older single-cell scope.
-* **S-0084-02** (per-seed mechanism decomposition of cell 767) -- older single-cell scope;
-  mechanism attribution at population level already established by t0088.
+* **S-0083-01** (extend NSGA-II from t0083 gen 17 to gen 25 with pop 144) -- estimated $8-12, out of
+  remaining $4.44 budget; superseded by the morphology-extended NSGA-II direction in t0091.
+* **S-0084-01** (NaP density sweep on cells 767 / 637 / 762) -- superseded by S-0088-01-style binary
+  knockout in t0090 Phase G; older single-cell scope.
+* **S-0084-02** (per-seed mechanism decomposition of cell 767) -- older single-cell scope; mechanism
+  attribution at population level already established by t0088.
 
 ##### Stays high
 
-* **S-0086-01** (NSGA-II re-run with tightened NMDA bounds, $1.50) -- natural follow-up after
-  t0091; if t0091 finds biologically plausible joint-pass cells under morphology variation, may
-  also benefit from tightened-bounds variant.
+* **S-0086-01** (NSGA-II re-run with tightened NMDA bounds, $1.50) -- natural follow-up after t0091;
+  if t0091 finds biologically plausible joint-pass cells under morphology variation, may also
+  benefit from tightened-bounds variant.
 * **S-0070-01** (harmonise PD / ND encoding across Bed A and Bed B) -- independent infra; not
   affected by morphology direction.
 
@@ -15743,8 +15743,8 @@ generator library + a mechanism-distinctness answer asset; t0091 a Pareto-front 
 #### Budget Context
 
 Project budget $20.00; **$15.56 spent** before t0090 / t0091; **$4.44 remaining**. t0090 estimated
-**$0.30** (validation bundle in Phase G). t0091 estimated **$3.00-3.50** (Vast.ai EPYC 7B13).
-Buffer remaining after both: **$0.94-1.44**.
+**$0.30** (validation bundle in Phase G). t0091 estimated **$3.00-3.50** (Vast.ai EPYC 7B13). Buffer
+remaining after both: **$0.94-1.44**.
 
 ### Results Summary
 
@@ -15767,19 +15767,19 @@ big and important part of cells - cell morphology.&quot; After four iterations o
 strategy, the agreed approach is a procedural DSGC morphology generator with 14 explicit knobs
 spanning topology + asymmetry + geometry, called inside the NSGA-II evaluation loop. The work is
 split into two tasks: t0090 (`morphology_generator_diversity_test`, ~$0.30, ~3-4 days local) builds
-and validates the generator with 30 different + 30 similar morphologies and bundles three
-validation suggestions; t0091 (`morphology_extended_nsga2_v1`, ~$3.00-3.50, ~14-16 hours Vast.ai)
-runs the first joint 68-d NSGA-II with 5-anchor warm-start (Bed-B-like + symmetric + PD-asymmetric
+and validates the generator with 30 different + 30 similar morphologies and bundles three validation
+suggestions; t0091 (`morphology_extended_nsga2_v1`, ~$3.00-3.50, ~14-16 hours Vast.ai) runs the
+first joint 68-d NSGA-II with 5-anchor warm-start (Bed-B-like + symmetric + PD-asymmetric
 + ND-asymmetric + alt-topology). Cleaned 5 covered / duplicate suggestions and reprioritised 3 high
-suggestions to medium. Project budget $20.00; $15.56 spent; **$4.44 remaining** before t0090 /
-t0091; estimated **$0.94-1.44 buffer remaining** after both tasks complete.
+  suggestions to medium. Project budget $20.00; $15.56 spent; **$4.44 remaining** before t0090 /
+  t0091; estimated **$0.94-1.44 buffer remaining** after both tasks complete.
 
 #### Session Overview
 
 Date: 2026-05-07. Triggered by t0088&#x27;s `shared_mechanism_different_scale` verdict (all 4 clusters
 NaP-dominant) and the surfacing of cluster 1&#x27;s AIS-to-soma Nav ratio = 116x as the most extreme
-single-prior violation in the project. The researcher provided an explicit strategic-pivot
-directive to add cell morphology to the optimisation. The session went through four iterations on
+single-prior violation in the project. The researcher provided an explicit strategic-pivot directive
+to add cell morphology to the optimisation. The session went through four iterations on
 parametrisation strategy:
 
 1. Option A (tier-based geometric scaling, 8 params) -- rejected by researcher: &quot;It has to reflect
@@ -15792,14 +15792,14 @@ parametrisation strategy:
    morphologies during optimisation? Or is it what you propose?&quot;) -- explicitly contrasted the
    proposed in-loop architecture against alternatives, walked through per-evaluation pseudocode.
 
-The researcher then specified the two-task split: &quot;Let&#x27;s split it into two tasks. 1 - write and
-test generator - generate and visualise say 30 random very different morphologies and 30 very
-similar ones. ... And then second task - first optimisation attempt. Use one seed that we currently
-have (WITH MORPHOLOGY SIMILAR TO WHAT WE HAVE) and few more very different seeds - symmetric and
+The researcher then specified the two-task split: &quot;Let&#x27;s split it into two tasks. 1 - write and test
+generator - generate and visualise say 30 random very different morphologies and 30 very similar
+ones. ... And then second task - first optimisation attempt. Use one seed that we currently have
+(WITH MORPHOLOGY SIMILAR TO WHAT WE HAVE) and few more very different seeds - symmetric and
 asymmetric.&quot; Pushed back on a 3-4 day Phase A estimate (&quot;Why phase A takes 4 days?&quot;); revised
-honestly to ~1.5-2 days based on a sub-step breakdown. Final confirmation: &quot;all approved. fire
-away&quot; -- the explicit Phase 2 Round 3 confirmation authorising the entire remaining lifecycle
-including push, PR, premerge, and merge.
+honestly to ~1.5-2 days based on a sub-step breakdown. Final confirmation: &quot;all approved. fire away&quot;
+-- the explicit Phase 2 Round 3 confirmation authorising the entire remaining lifecycle including
+push, PR, premerge, and merge.
 
 #### Decisions
 
@@ -15811,8 +15811,8 @@ including push, PR, premerge, and merge.
      `max_strahler_depth` 2-6, `mean_branching_angle_deg` 30-90, `rall_exponent` 0.5-2.0); 4
      asymmetry (`soma_offset_pd_um` -150 to +150, `field_elongation_pd` 1.0-3.0,
      `branch_density_gradient_pd` -1 to +1, `primary_branch_pd_concentration` 0-5 von Mises kappa);
-     3 geometry (`mean_segment_length_um` 10-60, `soma_diameter_um` 8-18, `ais_length_um` 15-60);
-     2 stochastic control (`morph_seed`, `branch_length_cv` 0-0.5).
+     3 geometry (`mean_segment_length_um` 10-60, `soma_diameter_um` 8-18, `ais_length_um` 15-60); 2
+     stochastic control (`morph_seed`, `branch_length_cv` 0-0.5).
    * **Phase B (30 very-different morphologies)**: wide LHS over 14-d morph space, parallel on
      64-core EPYC.
    * **Phase C (30 very-similar morphologies)**: tight +/- 5 percent perturbations around a
@@ -15820,8 +15820,8 @@ including push, PR, premerge, and merge.
    * **Phase D (verification simulation)**: build each morphology in NEURON, run 50 ms no-stim
      stability + 8-direction bar protocol with default t0083 best-cell channels; catch NaN /
      divergence / disconnected sections.
-   * **Phase E (visualisation)**: 2D dendrograms for all 60 morphologies; PCA / UMAP of
-     morphometric features; side-by-side panels of 30-different vs 30-similar.
+   * **Phase E (visualisation)**: 2D dendrograms for all 60 morphologies; PCA / UMAP of morphometric
+     features; side-by-side panels of 30-different vs 30-similar.
    * **Phase F (Bed-B reproducibility)**: 5 t0083 Pareto cells through the generator at the
      Bed-B-equivalent point, DSI / PD within 5 percent.
    * **Phase G (validation bundle)**: bundle covering S-0088-02 (AIS-to-soma Nav ratio audit),
@@ -15840,14 +15840,14 @@ including push, PR, premerge, and merge.
 
 2. **Create t0091** (`morphology_extended_nsga2_v1`). Five phases:
 
-   * **Phase A (warm-start population)**: pop 96 = 5 anchors x ~19 t0083 Pareto electrophys
-     variants per anchor + 1 random sample. Anchors: (1) Bed-B-like; (2) symmetric; (3)
-     PD-asymmetric (soma offset +100 um, field elongated 2x along PD); (4) ND-asymmetric (mirror
-     of #3); (5) alternative topology.
+   * **Phase A (warm-start population)**: pop 96 = 5 anchors x ~19 t0083 Pareto electrophys variants
+     per anchor + 1 random sample. Anchors: (1) Bed-B-like; (2) symmetric; (3) PD-asymmetric (soma
+     offset +100 um, field elongated 2x along PD); (4) ND-asymmetric (mirror of #3); (5) alternative
+     topology.
    * **Phase B (joint NSGA-II)**: pop 96 x &lt;=8 generations, generator inside eval loop, adaptive
      HV-plateau stop, $4.00 cost watchdog. Vast.ai EPYC 7B13.
-   * **Phase C (Pareto + biological-plausibility analysis)**: extend t0086 / t0088 framework to
-     68-d cells; do morph-extended cells reach biologically-plausible NMDA / NaP regimes?
+   * **Phase C (Pareto + biological-plausibility analysis)**: extend t0086 / t0088 framework to 68-d
+     cells; do morph-extended cells reach biologically-plausible NMDA / NaP regimes?
    * **Phase D (anchor-tracking analysis)**: which anchors over- vs under-represented in final
      Pareto? PD- vs ND-asymmetric preservation as evidence for soma-displacement-toward-PD as DS
      mechanism.
@@ -15875,8 +15875,8 @@ including push, PR, premerge, and merge.
      morphology-extended NSGA-II direction.
    * **S-0084-01** (NaP density sweep on cells 767 / 637 / 762) -- superseded by S-0088-01-style
      binary knockout in t0090 Phase G; older single-cell scope.
-   * **S-0084-02** (per-seed mechanism decomposition of cell 767) -- superseded by population-
-     level mechanism attribution from t0088; older single-cell scope.
+   * **S-0084-02** (per-seed mechanism decomposition of cell 767) -- superseded by population- level
+     mechanism attribution from t0088; older single-cell scope.
 
 5. **Stays high**:
    * **S-0086-01** (NSGA-II re-run with tightened NMDA bounds, $1.50) -- post-t0091 follow-up.
@@ -15913,23 +15913,22 @@ including push, PR, premerge, and merge.
 
 1. **t0090 execution** is the immediate follow-up: generator implementation + 30 different + 30
    similar morphologies + visualisation + Bed-B reproducibility + validation triplet bundle.
-   Expected wall-clock ~3-4 days, mostly local 64-core CPU; ~$0.30 cost. Output: validated
-   generator library + curated warm-start anchor archive for t0091 + 1 mechanism-distinctness
-   answer asset on the validation triplet.
+   Expected wall-clock ~3-4 days, mostly local 64-core CPU; ~$0.30 cost. Output: validated generator
+   library + curated warm-start anchor archive for t0091 + 1 mechanism-distinctness answer asset on
+   the validation triplet.
 
-2. **t0091 execution** follows t0090 completion: first joint 68-d NSGA-II with morphology
-   generator inside eval loop and 5-anchor warm-start. Expected wall-clock ~14-16 hours Vast.ai;
-   ~$3.00-3.50 cost. Output: 68-d Pareto-front predictions asset + biological-plausibility
-   answer asset.
+2. **t0091 execution** follows t0090 completion: first joint 68-d NSGA-II with morphology generator
+   inside eval loop and 5-anchor warm-start. Expected wall-clock ~14-16 hours Vast.ai; ~$3.00-3.50
+   cost. Output: 68-d Pareto-front predictions asset + biological-plausibility answer asset.
 
 3. **Decision point after t0091 completes**:
    * If morphology extension opens biologically-plausible joint-pass cells (any cell scoring
      &quot;plausible&quot; or &quot;stretched&quot; on all 9 priors simultaneously), this confirms morphology as a
-     functional DS mechanism on top of the channel mechanism; opens cross-bed validation
-     follow-ups (S-0070-01 PD / ND encoding harmonisation; Bed A morphology-extended NSGA-II).
+     functional DS mechanism on top of the channel mechanism; opens cross-bed validation follow-ups
+     (S-0070-01 PD / ND encoding harmonisation; Bed A morphology-extended NSGA-II).
    * If anchor 3 (PD-asymmetric) is preserved more than anchor 4 (ND-asymmetric), this is strong
-     evidence for soma-displacement-toward-PD as a functional DS mechanism (Schachter 2010,
-     Trenholm 2013).
+     evidence for soma-displacement-toward-PD as a functional DS mechanism (Schachter 2010, Trenholm
+     2013).
    * If morphology pegs at near-Bed-B defaults across the entire Pareto, motivates Option G
      (NeuroMorpho real-cell library + categorical selector + parametric deformation) as a future
      task.
@@ -15937,8 +15936,8 @@ including push, PR, premerge, and merge.
 4. **Remaining S-0086-* / S-0070-* follow-ups** (kept active for future brainstorms):
    * **S-0086-01** (NSGA-II re-run with tightened NMDA bounds, $1.50) -- high priority, fits the
      ~$0.94-1.44 buffer if t0091 negative result motivates revisiting 54-d search.
-   * **S-0070-01** (harmonise PD / ND encoding across Bed A and Bed B) -- high priority, infra
-     work; not affected by morphology direction.
+   * **S-0070-01** (harmonise PD / ND encoding across Bed A and Bed B) -- high priority, infra work;
+     not affected by morphology direction.
    * **S-0086-04** (10-rep robustness extension, $0.65) -- medium priority.
    * **S-0086-05** (RGC-specific NaP literature search, $0.10) -- low priority.
    * **S-0086-06** (Bed A cross-bed validation, $2.50) -- medium priority.
@@ -15947,11 +15946,13 @@ including push, PR, premerge, and merge.
 
 ## Procedural DSGC morphology generator + diversity test + validation bundle
 ID: t0090_morphology_generator_diversity_test
-Status: not_started
-Effective date: unknown
+Status: completed
+Effective date: 2026-05-07
 Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs
 Task types: write-library, data-analysis, answer-question
+Start time: 2026-05-07T14:35:43Z
+End time: 2026-05-07T18:25:00Z
 
 #### Motivation
 
@@ -16247,10 +16248,59 @@ parameter ranges are too wide; tighten before t0091.
 * Source suggestions covered: **S-0088-02** (Phase G.1), **S-0086-02** (Phase G.2), **S-0088-01**
   (Phase G.3).
 
+### Results Summary
+
+#### Summary
+
+Delivered a deterministic 14-knob procedural DSGC morphology generator (library asset
+`procedural_dsgc_morphology_generator`) plus a 60-morphology diversity sweep, a Phase G validation
+triplet (G.1 done, G.2 / G.3 partial), and the
+`validation-triplet-implications-for-biological-plausibility` answer asset. **13/16 REQs done, 3
+partial** — partial REQs (REQ-9 Bed-B reproducibility, REQ-11 G.2 NMDA calibration, REQ-12 G.3 NaP
+knockout) all share the same root cause: the procedural Bed-B-equivalent cell paired with the t0083
+best-cell channel set is silent (DSI=0), so the downstream simulations cannot produce informative
+deltas. Drivers and infrastructure are committed for all phases; a follow-up correction task should
+retune `BEDB_BASE_POINT` so the procedural cell elicits spikes under the t0083 channel set before
+re-running F / G.2 / G.3.
+
+#### Metrics
+
+* **Generator unit tests**: **9 / 9** passing (`uv run pytest tasks/t0090_.../code/`).
+* **Different-set verification stability**: **6 / 30** STABLE (24/30 NAN_VOLTAGE; consistent with
+  Mainen 1996 morphology-determines-firing-pattern when applying a fixed channel set to morphologies
+  it was not fitted on).
+* **Similar-set verification stability**: **3 / 30** STABLE (27/30 NAN_VOLTAGE).
+* **Direction selectivity index, different_set (STABLE cells)**: **0.000** (synaptic input does not
+  drive spikes on the procedural topologies under the t0083 channel set).
+* **Direction selectivity index, similar_set (STABLE cells)**: **0.000**.
+* **Morphometric PCA variance explained (PC1+PC2)**: **82.9 percent** of variance over a 6-feature
+  morphometric matrix; similar-set cluster radius (95th percentile) is **20.8 percent** of the PC1
+  range — within the plan&#x27;s &quot;tight cluster&quot; target.
+* **G.1 cluster-1 AIS-to-soma Nav ratio audit**: cluster-1 centroid ratio = **116.0**; per-cell
+  ratios **139.4 / 42.6 / 270.7 / 141.2** for cells 1304, 1504, 1624, 1634; **0 / 4** floor-pinned;
+  verdict: **`real_signal`**.
+* **G.2 NMDA calibration**: 7-point sweep ran but **0/7 valid recordings** because the procedural
+  cell diverges during stimulus when paired with t0083 params; cluster re-score values null.
+* **G.3 NaP knockout**: driver complete, **0 / 4 cells** with completed simulations
+  (`infrastructure_only`).
+* **Bed-B reproducibility**: **0 / 5** cells with completed deltas (`infrastructure_only`).
+* **Library + answer assets**: 1 + 1 produced; both pass their schema requirements.
+
+#### Verification
+
+* `uv run pytest tasks/t0090_morphology_generator_diversity_test/code/` — **9 / 9** PASS
+* `verify_research_papers.py`, `verify_research_internet.py`, `verify_research_code.py`,
+  `verify_plan.py` — PASSED in earlier steps
+* `verify_task_metrics.py` — to be run during the reporting step (only registered metric keys
+  retained in `metrics.json`)
+* `verify_logs.py`, `verify_task_file.py`, `verify_task_folder.py`, `verify_task_results.py`,
+  `verify_assets.py`, `verify_corrections.py`, `verify_pr_premerge.py` — to be run during the
+  reporting step
+
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-07
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
 Task types: experiment-run, data-analysis, answer-question

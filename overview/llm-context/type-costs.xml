@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-07T14:26:57Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-07T18:29:58Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>4834</char_count>
-    <byte_count>4834</byte_count>
-    <estimated_tokens>1208</estimated_tokens>
+    <char_count>4885</char_count>
+    <byte_count>4885</byte_count>
+    <estimated_tokens>1221</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -122,6 +122,7 @@ Spent: 77.8%
 * t0087_brainstorm_results_17: $0.00
 * t0088_recluster_marginals_and_vm_motifs: $0.00
 * t0089_brainstorm_results_18: $0.00
+* t0090_morphology_generator_diversity_test: $0.00
       </content>
     </section>
   </sections>

@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-94 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **83 open** (15 high,
+95 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **84 open** (16 high,
 61 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
@@ -326,6 +326,30 @@ criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes
 trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
 infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
 DSGC task.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

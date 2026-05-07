@@ -5,8 +5,8 @@ Ion channels whose opening probability depends on membrane voltage.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(7)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(85)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(8)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(88)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1062,7 +1062,32 @@ dendritic transients.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (7)
+## Answers (8)
+
+<details>
+<summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
+G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the
+biological-plausibility flags raised in t0086 and t0088?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-07 | **Full answer**:
+[`validation-triplet-implications-for-biological-plausibility`](../../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/)
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real
+biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the
+soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the
++33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather
+than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance
+calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the
+conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3
+quantifies the causal contribution of distal NaP to the direction-selectivity index of the
+four cluster representatives by comparing knockout DSI against the original t0083 DSI,
+providing a per-cell verdict (NaP-dominant, NaP-partial, or NaP-minor). Taken together, the
+triplet confirms two of the t0086 / t0088 flags as real biological signals (cluster-1
+AIS-to-soma ratio, NaP attribution where the knockout collapses DSI) and leaves the
+NMDA-exotic flag in the conditional category pending an independent measurement of per-spine
+open conductance in the t0024 voltage-clamp regime.
+
+</details>
 
 <details>
 <summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
@@ -1232,7 +1257,65 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (70 open, 15 closed)
+## Suggestions (73 open, 15 closed)
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-channel-set diversity re-test of t0090 morphologies to
+disentangle morphology vs channel-set sensitivity</strong> (S-0090-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+The t0090 finding that 51/60 morphologies fail NAN_VOLTAGE rests on a single channel set
+(t0083 best-cell). To confirm Mainen 1996 morphology-determines-firing-pattern as the cause
+(rather than the t0083 channel set being uniquely fragile), re-run the 60-morphology
+verification on 3 different t0083 Pareto cells' channel sets (e.g. cells 1559, 1639, 767
+spanning the t0086 cluster representatives). If the STABLE / NAN_VOLTAGE flag is consistent
+across channel sets per morphology, the failure is morphology-specific and S-0090-04's
+tightened LHS bounds are the right fix; if STABLE-or-not depends on channel set, the joint
+68-d NSGA-II must accept that warm-start anchors are channel-set-conditional. Pure simulation;
+no remote machine; ~30 min on local 64-core. Recommended task types: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Investigate why t0086 / t0088 cluster 1 converges to extreme
+AIS-to-soma Nav ratios (per-cell range 42.6-270.7)</strong> (S-0090-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1
+cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 /
+270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the
+loss landscape around these 4 cells: in the t0083 archive's 54-d parameter space, restrict to
+cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS,
+Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding
+an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05's
+RGC-specific-NaP-density argument), or the loss surface is multi-modal and a tightened upper
+bound on Nav_AIS would still find joint-pass cells. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the

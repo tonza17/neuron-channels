@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (15)
+# Answers: `direction-selectivity` (16)
 
-15 answer(s).
+16 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -75,6 +75,44 @@ because the direction of the DSI response is not determined by L/lambda alone.
 | **Task sources** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
 | **URL sources** | — |
 | **Created by** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+
+</details>
+
+<details>
+<summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
+G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the
+biological-plausibility flags raised in t0086 and t0088?</strong></summary>
+
+**Confidence**: medium
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real
+biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the
+soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the
++33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather
+than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance
+calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the
+conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3
+quantifies the causal contribution of distal NaP to the direction-selectivity index of the
+four cluster representatives by comparing knockout DSI against the original t0083 DSI,
+providing a per-cell verdict (NaP-dominant, NaP-partial, or NaP-minor). Taken together, the
+triplet confirms two of the t0086 / t0088 flags as real biological signals (cluster-1
+AIS-to-soma ratio, NaP attribution where the knockout collapses DSI) and leaves the
+NMDA-exotic flag in the conditional category pending an independent measurement of per-spine
+open conductance in the t0024 voltage-clamp regime.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/full_answer.md) |
+| **ID** | [`validation-triplet-implications-for-biological-plausibility`](../../../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/) |
+| **Question** | Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit, G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the biological-plausibility flags raised in t0086 and t0088? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-07 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **URL sources** | — |
+| **Created by** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
 
 </details>
 

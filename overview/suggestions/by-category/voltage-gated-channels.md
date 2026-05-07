@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-85 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **70 open** (17
-high, 43 medium, 10 low), **15 closed**.
+88 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **73 open** (18
+high, 45 medium, 10 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -313,6 +313,31 @@ effective open conductance (from the NEURON state during a stimulus), and produc
 calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
 clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
 Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -914,6 +939,31 @@ Recommended task types: answer-question, comparative-analysis.
 </details>
 
 <details>
+<summary>📊 <strong>Investigate why t0086 / t0088 cluster 1 converges to extreme
+AIS-to-soma Nav ratios (per-cell range 42.6-270.7)</strong> (S-0090-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1
+cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 /
+270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the
+loss landscape around these 4 cells: in the t0083 archive's 54-d parameter space, restrict to
+cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS,
+Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding
+an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05's
+RGC-specific-NaP-density argument), or the loss surface is multi-modal and a tightened upper
+bound on Nav_AIS would still find joint-pass cells. Recommended task types: data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Kv3 + NaP co-expression: high-rate firing regime</strong>
 (S-0074-06)</summary>
 
@@ -1007,6 +1057,32 @@ rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show 
 because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
 more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
 across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-channel-set diversity re-test of t0090 morphologies to
+disentangle morphology vs channel-set sensitivity</strong> (S-0090-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The t0090 finding that 51/60 morphologies fail NAN_VOLTAGE rests on a single channel set
+(t0083 best-cell). To confirm Mainen 1996 morphology-determines-firing-pattern as the cause
+(rather than the t0083 channel set being uniquely fragile), re-run the 60-morphology
+verification on 3 different t0083 Pareto cells' channel sets (e.g. cells 1559, 1639, 767
+spanning the t0086 cluster representatives). If the STABLE / NAN_VOLTAGE flag is consistent
+across channel sets per morphology, the failure is morphology-specific and S-0090-04's
+tightened LHS bounds are the right fix; if STABLE-or-not depends on channel set, the joint
+68-d NSGA-II must accept that warm-start anchors are channel-set-conditional. Pure simulation;
+no remote machine; ~30 min on local 64-core. Recommended task types: experiment-run,
+data-analysis.
 
 </details>
 

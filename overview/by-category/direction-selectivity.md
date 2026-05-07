@@ -5,10 +5,10 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (43)](../papers/by-category/direction-selectivity.md) | [Answers
-(15)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(237)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(16)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(240)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(14)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
 
 ---
@@ -2291,7 +2291,32 @@ simulation.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (15)
+## Answers (16)
+
+<details>
+<summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
+G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the
+biological-plausibility flags raised in t0086 and t0088?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-07 | **Full answer**:
+[`validation-triplet-implications-for-biological-plausibility`](../../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/)
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real
+biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the
+soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the
++33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather
+than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance
+calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the
+conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3
+quantifies the causal contribution of distal NaP to the direction-selectivity index of the
+four cluster representatives by comparing knockout DSI against the original t0083 DSI,
+providing a per-cell verdict (NaP-dominant, NaP-partial, or NaP-minor). Taken together, the
+triplet confirms two of the t0086 / t0088 flags as real biological signals (cluster-1
+AIS-to-soma ratio, NaP attribution where the knockout collapses DSI) and leaves the
+NMDA-exotic flag in the conditional category pending an independent measurement of per-spine
+open conductance in the t0024 voltage-clamp regime.
+
+</details>
 
 <details>
 <summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
@@ -2627,7 +2652,65 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (208 open, 29 closed)
+## Suggestions (211 open, 29 closed)
+
+<details>
+<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
+spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
+STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
+partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
+produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
+deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
+analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
+current Bed-B base point and pick the (params, seed) combination whose procedural cell most
+closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
+t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
+Recommended task types: correction, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Tighten t0091 LHS morphology bounds using the 9 STABLE cells
+from the t0090 diversity sweep</strong> (S-0090-04)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+
+51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083
+best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both
+ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a
+parameter-combination issue rather than a topology-size issue. Before launching t0091's joint
+68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and
+similar populations) and use those tightened bounds for the LHS warm-start sample, instead of
+the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that
+produces STABLE cells under any fixed channel set, materially improving NSGA-II sample
+efficiency on the morphology axis. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger

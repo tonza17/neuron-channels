@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-07T14:26:57Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-07T18:29:58Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>411746</char_count>
-    <byte_count>412192</byte_count>
-    <estimated_tokens>102936</estimated_tokens>
+    <char_count>405331</char_count>
+    <byte_count>405737</byte_count>
+    <estimated_tokens>101332</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -194,9 +194,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0087_brainstorm_results_17</id>
         <id>t0088_recluster_marginals_and_vm_motifs</id>
         <id>t0089_brainstorm_results_18</id>
+        <id>t0090_morphology_generator_diversity_test</id>
       </source_ids>
       <content>
-Completed tasks: 82
+Completed tasks: 83
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -689,6 +690,12 @@ ID: t0089_brainstorm_results_18
 Completed: 2026-05-07
 Short description: Eighteenth brainstorm: pivot to morphology-extended optimisation. Commission t0090 (14-knob morph generator + diversity test) and t0091 (first joint 68-d NSGA-II); 5 rejections + 3 reprioritisations.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_results_18&quot; date_completed: &quot;2026-05-07&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 18 Summary Eighteenth strategic brainstorm, run on 2026-05-07 after t0088 (`recluster_marginals_and_vm_motifs`) extended t0086&#x27;s biological-plausibility analysis to a 13-cell pool and confirmed `shared_mechanism_different_scale` across 4 clusters (all NaP-dominant in PD-minus-ND attribution). The researcher&#x27;s strategic directive was a pivot from electrophys-only optimisation (t0080-t0088) to **morphology-extended optimisation**: &quot;Optimisation technique seems to work. We now need to add a big and important part of cells - cell morphology.&quot; After...
+
+## Procedural DSGC morphology generator + diversity test + validation bundle
+ID: t0090_morphology_generator_diversity_test
+Completed: 2026-05-07
+Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
+Result summary: Results Summary: Procedural DSGC Morphology Generator + Diversity Test + Validation Bundle Summary Delivered a deterministic 14-knob procedural DSGC morphology generator (library asset `procedural_dsgc_morphology_generator`) plus a 60-morphology diversity sweep, a Phase G validation triplet (G.1 done, G.2 / G.3 partial), and the `validation-triplet-implications-for-biological-plausibility` answer asset. **13/16 REQs done, 3 partial** — partial REQs (REQ-9 Bed-B reproducibility, REQ-11 G.2 NMDA calibration, REQ-12 G.3 NaP knockout) all share the same root cause: the procedural Bed-B-equivalent cell paired with the t0083 best-cell channel set is silent (DSI=0), so the downstream simulations...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -698,11 +705,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0090_morphology_generator_diversity_test</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1026,311 +1032,10 @@ For each condition, compute:
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
 
-## Procedural DSGC morphology generator + diversity test + validation bundle
-ID: t0090_morphology_generator_diversity_test
-Status: not_started
-Effective date: unknown
-Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs
-
-#### Motivation
-
-The project is making a strategic pivot from electrophys-only optimisation (t0080-t0088) to
-**morphology-extended optimisation**. Up to t0088, all NSGA-II runs (t0076 through t0083) used the
-fixed Bed B morphology (de Rosenroll 2026 port from t0024). Morphology was sensitivity-tested
-one-axis-at-a-time (t0029, t0030, t0034, t0035, t0041) but was never inside the optimisation vector.
-
-Brainstorm session 18 (t0089) commissioned a procedural DSGC morphology generator that exposes
-explicit knobs for topology, asymmetry, and geometry. Once validated, the generator will be called
-inside t0091&#x27;s NSGA-II evaluation loop, producing a 68-d joint optimisation (54-d v3 electrophys
-+ 14-d morphology) warm-started from 5 distinct morph anchors.
-
-This task delivers the validated generator, a diversity test demonstrating it covers the intended
-morphology space, a Bed-B reproducibility check, and three bundled validation suggestions that
-sharpen the biological interpretation of t0091&#x27;s results.
-
-#### Scope
-
-##### In Scope
-
-* Procedural Python generator emitting NEURON sections + connectivity from 14 morphology parameters
-* Deterministic given (`params`, `morph_seed`) — same inputs produce identical sections
-* 30 very-different morphologies generated via wide Latin Hypercube over the 14-d parameter space
-* 30 very-similar morphologies generated via tight perturbations (+/- 5 percent) around a
-  Bed-B-equivalent base point
-* Verification simulation per morphology (50 ms no-stim stability + 8-direction bar protocol with
-  default t0083 best-cell channels)
-* 2D dendrogram visualisation for all 60 morphologies + PCA / UMAP of morphometric features
-* Bed-B reproducibility check on 5 t0083 Pareto cells
-* Validation bundle (S-0088-02 AIS-to-soma Nav ratio audit, S-0086-02 NMDA units calibration,
-  S-0088-01 causal NaP-knockout per cluster representative)
-* One library asset (the generator) and one answer asset (mechanism distinctness across the
-  validation triplet)
-
-##### Out of Scope
-
-* The joint 68-d NSGA-II run itself (deferred to t0091)
-* Topology-changing perturbations beyond the generator&#x27;s parametric knobs (e.g., stochastic L-system
-  extensions, real-cell library)
-* Alternative simulators (NetPyNE / Brian2 / Arbor); NEURON only
-
-#### Approach
-
-##### Phase A — Implement procedural generator
-
-Implement a Python module under `tasks/t0090_morphology_generator_diversity_test/code/` that
-exposes:
-
-```python
-def generate_morphology(
-    params: MorphologyParams,
-    morph_seed: int,
-) -&gt; MorphologyResult:
-    ...
-```
-
-The 14 morphology parameters:
-
-| Group | Parameter | Range | Type |
-| --- | --- | --- | --- |
-| Topology | `num_primary_branches` | 3-7 | int |
-| Topology | `branch_prob_per_um` | 0.005-0.05 | float |
-| Topology | `max_strahler_depth` | 2-6 | int |
-| Topology | `mean_branching_angle_deg` | 30-90 | float |
-| Topology | `rall_exponent` | 0.5-2.0 | float |
-| Asymmetry | `soma_offset_pd_um` | -150 to +150 | float |
-| Asymmetry | `field_elongation_pd` | 1.0-3.0 | float |
-| Asymmetry | `branch_density_gradient_pd` | -1 to +1 | float |
-| Asymmetry | `primary_branch_pd_concentration` | 0-5 (von Mises kappa) | float |
-| Geometry | `mean_segment_length_um` | 10-60 | float |
-| Geometry | `soma_diameter_um` | 8-18 | float |
-| Geometry | `ais_length_um` | 15-60 | float |
-| Stochastic | `morph_seed` | int | int |
-| Stochastic | `branch_length_cv` | 0-0.5 | float |
-
-Sampling primary branches at angles drawn from a von Mises distribution biased by
-`primary_branch_pd_concentration`; recursive branching constrained by `branch_prob_per_um`,
-`mean_branching_angle_deg`, `max_strahler_depth`; daughter / parent diameter scaling by
-`rall_exponent` (Rall&#x27;s law); asymmetry transforms applied post-hoc (soma offset, field elongation,
-branch density gradient).
-
-Unit tests (in `code/test_*.py`):
-* Determinism: same `(params, seed)` produces identical sections (compare section count, lengths,
-  diameters)
-* Edge cases: `num_primary_branches=3` (minimum) and `=7` (maximum), `max_strahler_depth=2`
-  (shallow) and `=6` (deep)
-* Round-trip: serialise NEURON sections to dict, reconstruct, confirm electrical-equivalence
-* No-NaN: all section lengths &gt; 0, all diameters &gt; 0, no disconnected sections
-
-Style: follow `arf/styleguide/python_styleguide.md`. Centralise paths in `paths.py`, constants in
-`constants.py`. Use frozen dataclasses for `MorphologyParams` and `MorphologyResult`.
-
-**Time**: ~1.5-2 days local development.
-
-##### Phase B — Generate 30 very-different morphologies
-
-Wide Latin Hypercube sample over the 14-d morph parameter space. Each LHS row is a complete
-parameter vector; generation is embarrassingly parallel across 64 cores using a
-`ProcessPoolExecutor`.
-
-Output: 30 morphology specifications saved to
-`tasks/t0090_morphology_generator_diversity_test/data/different_morphologies/`.
-
-**Time**: seconds (generation only).
-
-##### Phase C — Generate 30 very-similar morphologies
-
-Define a Bed-B-equivalent base point (matches de Rosenroll 2026 morphology approximately). Generate
-30 perturbations: each parameter independently jittered uniform +/- 5 percent of its range. Same
-parallel infrastructure as Phase B.
-
-Output: 30 morphology specifications saved to `data/similar_morphologies/`.
-
-**Time**: seconds.
-
-##### Phase D — Verification simulation per morphology
-
-For each of the 60 morphologies (30 different + 30 similar):
-
-1. Build the morphology as NEURON sections.
-2. Run a 50 ms no-stim stability check at V_rest = -70 mV; confirm no NaN voltages, no divergence,
-   no disconnected sections.
-3. Run an 8-direction bar protocol with default t0083 best-cell channels (1400 ms trial length per
-   the recorded researcher protocol; HH on for Vm / firing rate / DSI mode); confirm DSI is
-   computable, simulation does not diverge.
-
-Parallelise on 64 cores. Catch NaN / divergence / disconnected sections per morphology and write a
-per-morphology stability flag.
-
-**Cost**: $0 if local 64-core CPU; ~$0.10-0.20 if Vast.ai. **Time**: ~5-10 min on 64 cores.
-
-##### Phase E — Visualisation
-
-Per morphology:
-* 2D dendrogram (parent-segment radial layout)
-* Morphometric features: total dendritic length (um), branch count, max Strahler depth, electrotonic
-  length, soma displacement (sqrt of `soma_offset_pd_um^2`), dendritic field major-axis length
-
-Across morphologies:
-* Side-by-side panel: 30 different morphologies in a 5x6 grid; 30 similar morphologies in a 5x6
-  grid; visual comparison of diversity coverage.
-* Morphometric PCA: scatter of all 60 morphologies in PC1-PC2 with different / similar colour-coded.
-* UMAP if `umap-learn` is available; PCA fallback if not (per t0088 precedent).
-
-**Charts** (saved to `results/images/`):
-* `morphology_grid_different.png` — 5x6 panel of 30 different morphologies
-* `morphology_grid_similar.png` — 5x6 panel of 30 similar morphologies
-* `morphometric_pca.png` — PCA of morphometric features
-* `morphometric_umap.png` — UMAP if available
-
-**Time**: ~1 hour local.
-
-##### Phase F — Bed-B reproducibility
-
-Identify the `morph_params` point that approximates the de Rosenroll 2026 / Bed B port from t0024:
-* Use `num_primary_branches` matching the published value
-* `mean_segment_length_um` calibrated to the published total dendritic length
-* `soma_offset_pd_um=0` (Bed B is symmetric in the absence of explicit asymmetry)
-* `field_elongation_pd=1.0`, `branch_density_gradient_pd=0`, `primary_branch_pd_concentration=0`
-* `rall_exponent` matching Bed B&#x27;s diameter taper
-* `soma_diameter_um` matching Bed B&#x27;s soma
-* `ais_length_um` matching Bed B&#x27;s AIS
-
-Run 5 t0083 Pareto cells through the generator at this point; compare DSI / PD firing rate to their
-original Bed B values (from t0083&#x27;s `all_evaluations.json`). Pass criterion: within 5 percent.
-
-**Time**: ~1 hour on 64 cores.
-
-##### Phase G — Validation bundle
-
-Three bundled validation suggestions:
-
-###### G.1 — S-0088-02: AIS-to-soma Nav ratio audit (cluster 1)
-
-t0088 reported cluster 1 (cells 1304, 1504, 1624, 1634) has an AIS-to-soma Nav ratio = 116, +33
-sigma above Werginz 2024&#x27;s 17.3 +/- 3 — the most extreme single-prior violation in t0086 or t0088.
-Audit the ratio computation:
-
-* Confirm `centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR]` is in
-  matching units (S/cm^2 / S/cm^2 = dimensionless).
-* Check the soma Nav lower bound is not pinning the centroid soma value to a near-zero value,
-  inflating the ratio.
-* Check whether the 4 cluster-1 cells individually have AIS-to-soma ratios near 116, or whether the
-  centroid is averaging across heterogeneous values.
-
-Pure data analysis on existing JSON outputs from t0088 / t0086. **Time**: ~30 min, **cost**: $0.
-
-###### G.2 — S-0086-02: NMDA units calibration ablation
-
-t0086&#x27;s NMDA exotic verdict (&gt;=85 sigma above Sivyer 2013) is so extreme that it likely partially
-reflects a units / scope mismatch rather than a genuinely outlier biological mechanism. The t0080
-ParameterVector encoding `gnmda_dend` is the NetCon weight used in the Exp2NMDA mechanism, while
-Sivyer 2013&#x27;s value is a per-spine synaptic conductance measured in voltage-clamp on RGC dendritic
-spines. These may differ by a per-cell area normalisation or by an effective open-channel-fraction
-factor.
-
-Run a calibration ablation: take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS,
-measure the per-spine effective open conductance from the NEURON state during a stimulus, and
-produce a calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
-/ t0088 clusters against Sivyer 2013 in the corrected units. **Time**: ~1 hour, **cost**: ~$0.30.
-
-###### G.3 — S-0088-01: Causal NaP-knockout per cluster representative
-
-t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6 0.3-12.6%,
-NaP 87.4-99.7% across the 4 cluster representatives). To causally confirm NaP as the dominant
-mechanism, set `nap_dend_distal = 0` in each of the 4 representative cells (1604, 1634, 767, 1639)
-and re-measure DSI at the 16 directions used by t0088. Expected effect: DSI collapses to &lt;0.2 in all
-4 cells if NaP is causally responsible; DSI partially preserved if NMDA + Nav1.6
-+ GABA also contribute.
-
-Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, **cost** $0.
-
-###### G — Synthesis answer asset
-
-One answer asset at `assets/answer/validation-triplet-implications-for-biological-plausibility/`
-synthesising the three findings: (a) does the cluster-1 AIS-to-soma Nav ratio reflect a units bug or
-a real biological signal? (b) does the NMDA units calibration shift the cluster-NMDA-exotic verdict?
-(c) does causal NaP-knockout confirm NaP-dominance, or does the attribution shift? Confidence rating
-based on which findings converge.
-
-#### Pass Criteria
-
-* Generator deterministic: 100 random `(params, seed)` pairs produce byte-identical NEURON section
-  dumps when re-run.
-* 60 / 60 morphologies (30 different + 30 similar) build successfully and pass the 50 ms no-stim
-  stability check.
-* &quot;Different&quot; set covers visibly distinct morphology classes when laid out in
-  `morphology_grid_different.png`.
-* &quot;Similar&quot; set produces tight clusters in morphometric PCA (cluster radius &lt;= 10 percent of PC1-PC2
-  axis range).
-* Bed-B reproducibility: 5 / 5 t0083 Pareto cells reproduce DSI / PD within 5 percent.
-* All 3 validation suggestions produce concrete answers with quantitative verdicts.
-
-**Acceptable negative**: if the Bed-B reproducibility check fails, fall back to the TREES toolbox
-(Cuntz 2010) for the generator. If 60 / 60 morphologies do not all simulate cleanly, the generator&#x27;s
-parameter ranges are too wide; tighten before t0091.
-
-#### Compute and Budget
-
-* **Local 64-core EPYC** for Phases B, C, D, E, F (generation and verification simulations).
-* **No remote machine for t0090 Phases A-F**.
-* **Vast.ai EPYC 7B13** optional for Phase G.2 (NMDA units calibration ablation, ~$0.30).
-
-**Total estimated cost**: ~$0.30 (Phase G.2 only). Buffer remaining after t0090: ~$4.14.
-
-#### Time Estimation
-
-* Phase A (generator implementation): 1.5-2 days local
-* Phase B (30 different): seconds
-* Phase C (30 similar): seconds
-* Phase D (verification sims): ~5-10 min on 64 cores
-* Phase E (visualisation): ~1 hour
-* Phase F (Bed-B reproducibility): ~1 hour
-* Phase G (validation bundle): ~3-4 hours total
-
-**Total wall-clock**: ~3-4 days.
-
-#### Expected Assets
-
-* **Library asset**: the procedural DSGC morphology generator (`expected_assets[&quot;library&quot;] = 1`)
-* **Answer asset**: validation-triplet biological-plausibility synthesis
-  (`expected_assets[&quot;answer&quot;] = 1`)
-
-#### Risks and Fallbacks
-
-* **Generator implementation slips beyond 3 days**: fall back to TREES toolbox (Cuntz 2010) with
-  asymmetry knobs added post-hoc.
-* **Some morphologies fail to simulate**: mark them in the `verification_summary.json`, exclude from
-  the warm-start anchor archive for t0091, narrow the LHS bounds for the next run.
-* **Bed-B reproducibility outside 5 percent**: investigate before t0091; the generator may need a
-  diameter-taper correction or an axial connectivity fix.
-* **NMDA units calibration shows the Sivyer 2013 prior is correctly applied (no units bug)**: the
-  &gt;=85 sigma exotic verdict is genuine, motivating S-0086-01 (NSGA-II re-run with tightened NMDA
-  bounds) as a higher-priority follow-up after t0091.
-
-#### Verification Criteria
-
-* All unit tests pass (`uv run pytest tasks/t0090_morphology_generator_diversity_test/code/`).
-* `verify_logs.py t0090_morphology_generator_diversity_test` passes.
-* `verify_task_file.py t0090_morphology_generator_diversity_test` passes.
-* `verify_research_code.py`, `verify_plan.py`, `verify_assets.py` pass.
-* The answer asset passes `verify_answer.py`.
-
-#### Cross-References
-
-* **t0089_brainstorm_results_18** — commissioning brainstorm session.
-* **t0086_robustness_cluster_bio_comparison**, **t0088_recluster_marginals_and_vm_motifs** —
-  biological-plausibility framework re-used for cluster scoring.
-* **t0024_port_de_rosenroll_2026_dsgc** — Bed B reference for reproducibility check.
-* **t0080_bedb_mobo_v3_dendritic_spike_nsga2**, **t0083_bedb_v3_extend_nsga2_gen8plus** — source
-  of the 5 t0083 Pareto cells used in Phase F and the cluster representatives used in Phase G.3.
-* Source suggestions covered: **S-0088-02** (Phase G.1), **S-0086-02** (Phase G.2), **S-0088-01**
-  (Phase G.3).
-
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-07
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
 
@@ -1573,9 +1278,10 @@ exceeds threshold).
         <id>cell-767-dendritic-spike-mechanism-attribution</id>
         <id>are-cluster-motifs-mechanistically-distinct</id>
         <id>cluster-biological-plausibility-attribution</id>
+        <id>validation-triplet-implications-for-biological-plausibility</id>
       </source_ids>
       <content>
-Answers: 22
+Answers: 23
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1749,6 +1455,14 @@ Created by: t0086_robustness_cluster_bio_comparison on 2026-05-06
 Confidence: medium
 
 Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7 Stochastic (&lt;=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0 (n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999, Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior breakdowns.
+
+## Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit, G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the biological-plausibility flags raised in t0086 and t0088?
+ID: validation-triplet-implications-for-biological-plausibility
+Created by: t0090_morphology_generator_diversity_test on 2026-05-07
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the +33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3 quantifies the causal contribution of distal NaP to the...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1790,6 +1504,10 @@ Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Margin
         <id>S-0081-02</id>
         <id>S-0081-03</id>
         <id>S-0086-01</id>
+        <id>S-0090-01</id>
+        <id>S-0090-02</id>
+        <id>S-0090-03</id>
+        <id>S-0090-04</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1994,6 +1712,8 @@ Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Margin
         <id>S-0088-03</id>
         <id>S-0088-04</id>
         <id>S-0088-05</id>
+        <id>S-0090-05</id>
+        <id>S-0090-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2038,9 +1758,10 @@ Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Margin
         <id>S-0081-07</id>
         <id>S-0086-05</id>
         <id>S-0088-06</id>
+        <id>S-0090-07</id>
       </source_ids>
       <content>
-Open suggestions: 283
+Open suggestions: 290
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2286,6 +2007,34 @@ Priority: high
 Kind: experiment
 Source task: t0086_robustness_cluster_bio_comparison
 t0086&#x27;s biological scorecard found that both Genuine-cell clusters have NMDA per-synapse conductance 85-122 sigma above Sivyer 2013&#x27;s published 0.1 nS. The NSGA-II search routinely pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013&#x27;s value as a soft cap) and re-run NSGA-II from t0083&#x27;s gen-17 final population for 5 additional generations at population 96. Test whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using biologically-plausible NMDA -- a major finding that would motivate...
+
+## Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits spikes under the t0083 channel set
+ID: S-0090-01
+Priority: high
+Kind: experiment
+Source task: t0090_morphology_generator_diversity_test
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the current Bed-B base point and pick the (params, seed) combination whose procedural cell most closely reproduces the de Rosenroll 2026 / t0024 Bed B port&#x27;s...
+
+## Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with ProcessPoolExecutor
+ID: S-0090-02
+Priority: high
+Kind: experiment
+Source task: t0090_morphology_generator_diversity_test
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours) plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01 retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4 cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090 plan): DSI collapses to &lt;0.2 in all 4 cluster representatives if NaP is causally responsible for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 /...
+
+## Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune to land the cluster re-score
+ID: S-0090-03
+Priority: high
+Kind: evaluation
+Source task: t0090_morphology_generator_diversity_test
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 / t0088 cluster centroids&#x27; NMDA per-synapse exotic-ness against Sivyer 2013&#x27;s published 0.1 nS in the corrected units. The output is a definitive verdict on whether t0086 / t0088&#x27;s NMDA ~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier biological mechanism. Recommended task types...
+
+## Tighten t0091 LHS morphology bounds using the 9 STABLE cells from the t0090 diversity sweep
+ID: S-0090-04
+Priority: high
+Kind: evaluation
+Source task: t0090_morphology_generator_diversity_test
+51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083 best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a parameter-combination issue rather than a topology-size issue. Before launching t0091&#x27;s joint 68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and similar populations) and use those tightened bounds for the LHS warm-start sample, instead of the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that produces STABLE cells under any fixed channel set...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3715,6 +3464,20 @@ Kind: experiment
 Source task: t0088_recluster_marginals_and_vm_motifs
 t0088 found GABA rho0 exotic (&gt;+5 sigma) in all 4 clusters and GABA lambda exotic in 3 of 4 clusters. The model exploits exotic GABA spatial scale to shape direction-asymmetry. Test causally: set rho_0_gaba = 1.0 (Rosenroll baseline) or lambda_gaba_um = 80 (Rosenroll mean) per representative cell and re-measure DSI at 16 directions. Expected effect: if GABA spatial gradient is causal for direction selectivity, DSI degrades; if NaP alone explains DSI, DSI is preserved. 4 cells x 2 GABA-knockout variants x 16 directions = 128 sims; ~2 hours local CPU, $0 cost. Recommended task types: experiment-run, data-analysis.
 
+## Multi-channel-set diversity re-test of t0090 morphologies to disentangle morphology vs channel-set sensitivity
+ID: S-0090-05
+Priority: medium
+Kind: experiment
+Source task: t0090_morphology_generator_diversity_test
+The t0090 finding that 51/60 morphologies fail NAN_VOLTAGE rests on a single channel set (t0083 best-cell). To confirm Mainen 1996 morphology-determines-firing-pattern as the cause (rather than the t0083 channel set being uniquely fragile), re-run the 60-morphology verification on 3 different t0083 Pareto cells&#x27; channel sets (e.g. cells 1559, 1639, 767 spanning the t0086 cluster representatives). If the STABLE / NAN_VOLTAGE flag is consistent across channel sets per morphology, the failure is morphology-specific and S-0090-04&#x27;s tightened LHS bounds are the right fix; if STABLE-or-not depends on channel set, the joint 68-d NSGA-II must accept that warm-start anchors are...
+
+## Investigate why t0086 / t0088 cluster 1 converges to extreme AIS-to-soma Nav ratios (per-cell range 42.6-270.7)
+ID: S-0090-06
+Priority: medium
+Kind: evaluation
+Source task: t0090_morphology_generator_diversity_test
+t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1 cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 / 270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the loss landscape around these 4 cells: in the t0083 archive&#x27;s 54-d parameter space, restrict to cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS, Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05&#x27;s RGC-specific-NaP-density argument), or the loss...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -4022,6 +3785,13 @@ Priority: low
 Kind: library
 Source task: t0088_recluster_marginals_and_vm_motifs
 t0088 fell back to PCA(n=2) for cluster visualisation because umap-learn is not in the project&#x27;s pyproject.toml. UMAP would likely show different (potentially clearer) cluster structure for the small 13-cell pool. Add `umap-learn&gt;=0.5` to pyproject.toml; re-run select_representatives.py (already imports umap inside try/except); re-publish cluster_umap.png. Apply the same to t0086&#x27;s cluster_pca.png if relevant. Pure tooling change; &lt;30 min wall-clock, $0 cost. Recommended task types: infrastructure-setup, data-analysis.
+
+## Promote the t0090 procedural morphology generator into a top-level project library asset
+ID: S-0090-07
+Priority: low
+Kind: library
+Source task: t0090_morphology_generator_diversity_test
+The 14-knob procedural DSGC morphology generator is committed under tasks/t0090_morphology_generator_diversity_test/code/ as a task-folder library asset. Once t0091 confirms the generator works inside an NSGA-II eval loop, promote it into a top-level reusable library (e.g. arf/libraries/dsgc_procedural_morphology) with a stable import path, packaged unit tests, and a versioned release tag. This avoids the chronic problem of downstream tasks (t0091, the future Option G real-cell library task, future Bed-A morph-extended runs) needing to import from a deeply-nested task-folder path. Recommended task types: write-library, infrastructure-setup.
       </content>
     </section>
   </sections>

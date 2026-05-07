@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-07T14:26:57Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-07T18:29:58Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>186433</char_count>
-    <byte_count>186695</byte_count>
-    <estimated_tokens>46608</estimated_tokens>
+    <char_count>189111</char_count>
+    <byte_count>189375</byte_count>
+    <estimated_tokens>47277</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -198,9 +198,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0087_brainstorm_results_17</id>
         <id>t0088_recluster_marginals_and_vm_motifs</id>
         <id>t0089_brainstorm_results_18</id>
+        <id>t0090_morphology_generator_diversity_test</id>
       </source_ids>
       <content>
-Completed tasks: 82
+Completed tasks: 83
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -693,6 +694,12 @@ ID: t0089_brainstorm_results_18
 Completed: 2026-05-07
 Short description: Eighteenth brainstorm: pivot to morphology-extended optimisation. Commission t0090 (14-knob morph generator + diversity test) and t0091 (first joint 68-d NSGA-II); 5 rejections + 3 reprioritisations.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_results_18&quot; date_completed: &quot;2026-05-07&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 18 Summary Eighteenth strategic brainstorm, run on 2026-05-07 after t0088 (`recluster_marginals_and_vm_motifs`) extended t0086&#x27;s biological-plausibility analysis to a 13-cell pool and confirmed `shared_mechanism_different_scale` across 4 clusters (all NaP-dominant in PD-minus-ND attribution). The researcher&#x27;s strategic directive was a pivot from electrophys-only optimisation (t0080-t0088) to **morphology-extended optimisation**: &quot;Optimisation technique seems to work. We now need to add a big and important part of cells - cell morphology.&quot; After...
+
+## Procedural DSGC morphology generator + diversity test + validation bundle
+ID: t0090_morphology_generator_diversity_test
+Completed: 2026-05-07
+Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
+Result summary: Results Summary: Procedural DSGC Morphology Generator + Diversity Test + Validation Bundle Summary Delivered a deterministic 14-knob procedural DSGC morphology generator (library asset `procedural_dsgc_morphology_generator`) plus a 60-morphology diversity sweep, a Phase G validation triplet (G.1 done, G.2 / G.3 partial), and the `validation-triplet-implications-for-biological-plausibility` answer asset. **13/16 REQs done, 3 partial** — partial REQs (REQ-9 Bed-B reproducibility, REQ-11 G.2 NMDA calibration, REQ-12 G.3 NaP knockout) all share the same root cause: the procedural Bed-B-equivalent cell paired with the t0083 best-cell channel set is silent (DSI=0), so the downstream simulations...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -702,11 +709,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0090_morphology_generator_diversity_test</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -728,17 +734,10 @@ Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
 
-## Procedural DSGC morphology generator + diversity test + validation bundle
-ID: t0090_morphology_generator_diversity_test
-Status: not_started
-Effective date: unknown
-Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs
-
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-07
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
       </content>
@@ -769,9 +768,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_a
         <id>cell-767-dendritic-spike-mechanism-attribution</id>
         <id>are-cluster-motifs-mechanistically-distinct</id>
         <id>cluster-biological-plausibility-attribution</id>
+        <id>validation-triplet-implications-for-biological-plausibility</id>
       </source_ids>
       <content>
-Answers: 22
+Answers: 23
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -945,6 +945,14 @@ Created by: t0086_robustness_cluster_bio_comparison on 2026-05-06
 Confidence: medium
 
 Of 20 re-evaluated cells 6 are Genuine (5/5 reps pass joint criterion), 7 Marginal (3-4/5), 7 Stochastic (&lt;=2/5). The Genuine cells partition into 2 cluster(s) at k-means best_k. Cluster 0 (n=3): exotic; Cluster 1 (n=3): exotic. Cluster centroids were scored against eight published priors (Kole 2008, Werginz 2024, Sivyer 2013, Branco-Hausser 2010, Oesch 2005, Stuart 1999, Goldfinger 2000, de Rosenroll 2026). See full_answer.md for per-cluster and per-prior breakdowns.
+
+## Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit, G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the biological-plausibility flags raised in t0086 and t0088?
+ID: validation-triplet-implications-for-biological-plausibility
+Created by: t0090_morphology_generator_diversity_test on 2026-05-07
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
+
+Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the +33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3 quantifies the causal contribution of distal NaP to the...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1341,9 +1349,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>dsgc_active_channel_pack</id>
         <id>de_rosenroll_2026_dsgc_ais</id>
         <id>de_rosenroll_2026_dsgc_ais_dendritic_spike</id>
+        <id>procedural_dsgc_morphology_generator</id>
       </source_ids>
       <content>
-Libraries: 16
+Libraries: 17
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1456,6 +1465,13 @@ Version: 0.1.0
 Created by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
 Module paths: tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\extend_with_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\constants.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_helpers.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\parametric_placer.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_driver.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\recorder.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\bootstrap.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\nsga2_loop.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\bkt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\calt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\catt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\iht80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kdrt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv3t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv4t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv7t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\napt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nart80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nav16t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skahpt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skt80.mod
 The library packages the v3 Bed B substrate and the NSGA-II MOBO harness used to search it. It extends the t0078 substrate with dendritic-spike machinery (Mg-block NMDA, distal Nav1.6 + NaP) and replaces the BoTorch qLogNEHVI optimiser with pymoo NSGA-II, eliminating the O(N^3) scaling that bottlenecked t0078. Hard biological bounds on the AIS Nav parameters are enforced through the parameter bounds and a single...
+
+## Procedural DSGC Morphology Generator
+ID: procedural_dsgc_morphology_generator
+Version: 0.1.0
+Created by task: t0090_morphology_generator_diversity_test
+Module paths: tasks\t0090_morphology_generator_diversity_test\code\morphology_params.py, tasks\t0090_morphology_generator_diversity_test\code\generator.py, tasks\t0090_morphology_generator_diversity_test\code\verification.py, tasks\t0090_morphology_generator_diversity_test\code\constants.py, tasks\t0090_morphology_generator_diversity_test\code\paths.py, tasks\t0090_morphology_generator_diversity_test\code\load_default_params.py
+`procedural_dsgc_morphology_generator` is the deliverable library of t0090 and the input substrate for t0091&#x27;s joint 68-d NSGA-II run. It exposes 14 explicit knobs spanning topology, asymmetry, and geometry; produces deterministic NEURON sections; and emits a `MorphologyResult` that is structurally compatible with the t0080 `apply_parameter_vector` harness without any changes to upstream code. The library was...
       </content>
     </section>
     <section id="metrics" source_kind="aggregator">

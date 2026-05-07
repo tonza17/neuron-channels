@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-268 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **235 open** (37
-high, 169 medium, 29 low), **33 closed**.
+274 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **241 open** (40
+high, 171 medium, 30 low), **33 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -681,6 +681,30 @@ DSGC task.
 </details>
 
 <details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
 EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
 recovery</strong> (S-0055-02)</summary>
@@ -754,6 +778,32 @@ effective open conductance (from the NEURON state during a stimulus), and produc
 calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
 clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
 Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
+spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
+STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
+partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
+produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
+deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
+analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
+current Bed-B base point and pick the (params, seed) combination whose procedural cell most
+closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
+t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
+Recommended task types: correction, experiment-run.
 
 </details>
 
@@ -878,6 +928,31 @@ biologically-plausible NMDA -- a major finding that would motivate either (a) re
 joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
 Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
 cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Tighten t0091 LHS morphology bounds using the 9 STABLE cells
+from the t0090 diversity sweep</strong> (S-0090-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083
+best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both
+ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a
+parameter-combination issue rather than a topology-size issue. Before launching t0091's joint
+68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and
+similar populations) and use those tightened bounds for the LHS warm-start sample, instead of
+the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that
+produces STABLE cells under any fixed channel set, materially improving NSGA-II sample
+efficiency on the morphology axis. Recommended task types: data-analysis.
 
 </details>
 
@@ -2913,6 +2988,31 @@ Recommended task types: answer-question, comparative-analysis.
 </details>
 
 <details>
+<summary>📊 <strong>Investigate why t0086 / t0088 cluster 1 converges to extreme
+AIS-to-soma Nav ratios (per-cell range 42.6-270.7)</strong> (S-0090-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1
+cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 /
+270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the
+loss landscape around these 4 cells: in the t0083 archive's 54-d parameter space, restrict to
+cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS,
+Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding
+an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05's
+RGC-specific-NaP-density argument), or the loss surface is multi-modal and a tightened upper
+bound on Nav_AIS would still find joint-pass cells. Recommended task types: data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Joint (GABA, diameter) sweep to separate passive filtering from
 GABA-suppressed active amplification</strong> (S-0039-03)</summary>
 
@@ -3079,6 +3179,32 @@ rescue sweep. Expected: AIS-localised Kv3 at very high density may finally show 
 because the AIS's smaller diameter makes per-segment conductance changes leverage the AP shape
 more strongly. If still no rescue, the channel-pharmacology approach to DSI rescue is null
 across substrates.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-channel-set diversity re-test of t0090 morphologies to
+disentangle morphology vs channel-set sensitivity</strong> (S-0090-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+The t0090 finding that 51/60 morphologies fail NAN_VOLTAGE rests on a single channel set
+(t0083 best-cell). To confirm Mainen 1996 morphology-determines-firing-pattern as the cause
+(rather than the t0083 channel set being uniquely fragile), re-run the 60-morphology
+verification on 3 different t0083 Pareto cells' channel sets (e.g. cells 1559, 1639, 767
+spanning the t0086 cluster representatives). If the STABLE / NAN_VOLTAGE flag is consistent
+across channel sets per morphology, the failure is morphology-specific and S-0090-04's
+tightened LHS bounds are the right fix; if STABLE-or-not depends on channel set, the joint
+68-d NSGA-II must accept that warm-start anchors are channel-set-conditional. Pure simulation;
+no remote machine; ~30 min on local 64-core. Recommended task types: experiment-run,
+data-analysis.
 
 </details>
 
@@ -5678,6 +5804,30 @@ library type with documented APIs for the warm-start composition function and th
 driver. Refactor only — no new compute. Distinct from S-0078-07 (BoTorch qLogNEHVI 49-d
 harness) and S-0076-06 (BoTorch + ProcessPoolExecutor 25-d harness) — those are different
 optimisers. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0090 procedural morphology generator into a
+top-level project library asset</strong> (S-0090-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-07` |
+| **Kind** | library |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The 14-knob procedural DSGC morphology generator is committed under
+tasks/t0090_morphology_generator_diversity_test/code/ as a task-folder library asset. Once
+t0091 confirms the generator works inside an NSGA-II eval loop, promote it into a top-level
+reusable library (e.g. arf/libraries/dsgc_procedural_morphology) with a stable import path,
+packaged unit tests, and a versioned release tag. This avoids the chronic problem of
+downstream tasks (t0091, the future Option G real-cell library task, future Bed-A
+morph-extended runs) needing to import from a deeply-nested task-folder path. Recommended task
+types: write-library, infrastructure-setup.
 
 </details>
 
