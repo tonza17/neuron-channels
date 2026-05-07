@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\research\research_code.md
+
+[33m[1mWARNINGS:[0m
+[33m  RC-W002 warning: Task Index entry [t0091] references task '(planned, not yet created)' which does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
