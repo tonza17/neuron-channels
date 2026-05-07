@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0090_morphology_generator_diversity_test branch from main and create worktree.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T14:37:02Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T14:39:35Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
