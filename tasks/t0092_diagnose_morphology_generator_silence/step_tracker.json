@@ -41,9 +41,9 @@
       "step": 5,
       "name": "planning",
       "description": "Synthesise research-code findings into plan/plan.md with all 11 mandatory sections; specify Phase A-G sub-step file structure, expected per-phase outputs, root-cause-candidate ranking method, and post-fix validation criterion.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T22:16:50Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T22:24:10Z",
       "log_file": "logs\\steps\\005_planning/"
     },
     {
