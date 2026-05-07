@@ -1,12 +1,225 @@
 # ✅ Tasks: Completed
 
-81 tasks. ✅ **81 completed**.
+82 tasks. ✅ **82 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0089 — <strong>Brainstorm results session 18</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0089_brainstorm_results_18` |
+| **Status** | completed |
+| **Effective date** | 2026-05-07 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md), [`t0058_brainstorm_results_11`](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md), [`t0062_nmda_escape_with_ampa_priming`](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md), [`t0064_hh_current_step_test`](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md), [`t0073_brainstorm_results_12`](../../../overview/tasks/task_pages/t0073_brainstorm_results_12.md), [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md), [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0077_brainstorm_results_13`](../../../overview/tasks/task_pages/t0077_brainstorm_results_13.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0079_brainstorm_results_14`](../../../overview/tasks/task_pages/t0079_brainstorm_results_14.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0082_brainstorm_results_15`](../../../overview/tasks/task_pages/t0082_brainstorm_results_15.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0085_brainstorm_results_16`](../../../overview/tasks/task_pages/t0085_brainstorm_results_16.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0087_brainstorm_results_17`](../../../overview/tasks/task_pages/t0087_brainstorm_results_17.md), [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-07T10:00:00Z |
+| **End time** | 2026-05-07T11:30:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 18](../../../overview/tasks/task_pages/t0089_brainstorm_results_18.md) |
+| **Task folder** | [`t0089_brainstorm_results_18/`](../../../tasks/t0089_brainstorm_results_18/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0089_brainstorm_results_18/results/results_detailed.md) |
+
+# Brainstorm Session 18: Strategic pivot to morphology-extended optimisation
+
+Eighteenth brainstorming session. Run on 2026-05-07 after t0088
+(`recluster_marginals_and_vm_motifs`) extended t0086's biological-plausibility analysis to a
+13-cell pool (6 Genuine + 7 Marginal), confirmed `shared_mechanism_different_scale` across all
+4 clusters (NaP-dominant in PD-minus-ND attribution at 87.4-99.7%, NMDA frac 0.000), and
+surfaced a new extreme prior violation (Cluster 1 AIS-to-soma Nav ratio 116x = +33 sigma above
+Werginz 2024). Project spend $15.56 / $20.00; **$4.44 remaining**.
+
+The researcher's directive was a strategic pivot: "Optimisation technique seems to work. We
+now need to add a big and important part of cells - cell morphology." After two iterations on
+parametrisation strategy, the agreed approach is a **procedural DSGC morphology generator with
+14 explicit knobs** covering topology, asymmetry, and geometry, called inside the NSGA-II
+evaluation loop.
+
+## Decisions
+
+* **Create t0090** -- procedural DSGC morphology generator + 30-different + 30-similar
+  diversity test + Bed-B reproducibility check + validation bundle. Phases:
+
+  * **Phase A (generator implementation)**: implement procedural generator in Python that
+    takes 14 morphology parameters plus a `morph_seed` and emits NEURON sections +
+    connectivity. Parameters: 5 topology (`num_primary_branches` 3-7, `branch_prob_per_um`
+    0.005-0.05, `max_strahler_depth` 2-6, `mean_branching_angle_deg` 30-90, `rall_exponent`
+    0.5-2.0); 4 asymmetry (`soma_offset_pd_um` -150 to +150, `field_elongation_pd` 1.0-3.0,
+    `branch_density_gradient_pd` -1 to +1, `primary_branch_pd_concentration` 0-5 von Mises
+    kappa); 3 geometry (`mean_segment_length_um` 10-60, `soma_diameter_um` 8-18,
+    `ais_length_um` 15-60); 2 stochastic control (`morph_seed`, `branch_length_cv` 0-0.5).
+    Deterministic given (`params`, `seed`).
+
+  * **Phase B (30 very-different morphologies)**: wide Latin Hypercube sample over the 14-d
+    morph param space; generate in parallel on 64-core EPYC.
+
+  * **Phase C (30 very-similar morphologies)**: tight perturbations (+/- 5%) around a
+    Bed-B-equivalent base point; generate in parallel.
+
+  * **Phase D (verification simulation)**: build each morphology in NEURON, run a 50 ms
+    no-stim stability check + 8-direction bar protocol with default t0083 best-cell channels;
+    catch degenerate geometries (NaN, divergence, disconnected sections). Parallelise on 64
+    cores.
+
+  * **Phase E (visualisation)**: 2D dendrograms for all 60 morphologies, PCA / UMAP of
+    morphometric features (total dendritic length, branch count, electrotonic length, soma
+    displacement, max Strahler depth); side-by-side panels of 30-different vs 30-similar so
+    the diversity coverage is visually obvious.
+
+  * **Phase F (Bed-B reproducibility)**: pick a `morph_params` point that approximates de
+    Rosenroll 2026 / Bed B; run 5 t0083 Pareto cells through the generator at that point;
+    confirm DSI / PD within 5% of original Bed B.
+
+  * **Phase G (validation bundle)**: bundle three cheap validation suggestions that sharpen
+    biological interpretation in t0091. (1) **S-0088-02** AIS-to-soma Nav ratio audit (cluster
+    1's 116x is suspicious; 30 min, $0). (2) **S-0086-02** NMDA units calibration ablation (1
+    hour, ~$0.30). (3) **S-0088-01** causal NaP-knockout per cluster representative (4 cells x
+    16 dirs; ~64 min, $0).
+
+  **Pass criteria**: generator deterministic; 60 / 60 morphologies simulate without errors;
+  "different" set covers visibly distinct morphology classes; "similar" set produces tight
+  clusters in morphometric PCA; Bed-B reproducibility within 5%; all 3 validation suggestions
+  answered.
+
+  **Output**: validated generator library + a curated warm-start anchor archive of viable
+  diverse morphologies for t0091. **Cost ~$0.30, ~3-4 days wall-clock, mostly local 64-core
+  CPU.**
+
+  Source suggestions: covers S-0088-02, S-0086-02, S-0088-01 in Phase G; t0090 is otherwise a
+  new direction with no source suggestion. Dependencies: t0024, t0078, t0080, t0081, t0083,
+  t0086, t0088. `expected_assets = {"library": 1, "answer": 1}`. Task types:
+  `["library-implementation", "data-analysis", "answer-question"]`.
+
+* **Create t0091** -- first joint 68-d NSGA-II optimisation with morphology generated inside
+  the evaluation loop, warm-started from 5 distinct morphology anchor points. Phases:
+
+  * **Phase A (warm-start population)**: build pop 96 from 5 anchors x ~19 t0083 Pareto
+    electrophys variants each. Anchors: (1) **Bed-B-like** (matches existing t0083 substrate);
+    (2) **symmetric** (`soma_offset_pd_um=0`, `field_elongation_pd=1.0`,
+    `branch_density_gradient_pd=0`, `primary_branch_pd_concentration=0`); (3)
+    **PD-asymmetric** (soma offset +100 um toward PD, field elongated 2x along PD, branches
+    biased toward PD); (4) **ND-asymmetric** mirror of #3; (5) **alternative-topology** (more
+    primary branches, deeper Strahler depth, smaller field).
+
+  * **Phase B (joint NSGA-II)**: pop 96, <=8 generations, generator inside eval loop; adaptive
+    HV-plateau stop + cost watchdog (post-S-0083-04 fix). On Vast.ai EPYC 7B13 64-core. Each
+    evaluation: NSGA-II proposes 68-d vector -> generator builds NEURON model from 14 morph
+    params + morph_seed -> 54 channel/synapse params inserted into generated sections ->
+    bar-rotation simulation -> objectives returned (DSI, PD firing rate, robustness).
+
+  * **Phase C (Pareto + biological-plausibility analysis)**: extend t0086 / t0088 framework to
+    68-d cells; do morph-extended Pareto cells reach biologically-plausible NMDA / NaP regimes
+    that 54-d cells could not?
+
+  * **Phase D (anchor-tracking analysis)**: which of the 5 anchors are over- vs
+    under-represented in the final Pareto? If anchor #3 (PD-asymmetric) is preserved more than
+    anchor #4 (ND-asymmetric), that is strong evidence for soma-displacement-toward-PD as a
+    functional DS mechanism (Schachter 2010, Trenholm 2013).
+
+  * **Phase E (answer asset)**: "Does in-loop morphology optimisation open
+    biologically-plausible joint-pass regions, and which morphological asymmetries does the
+    optimiser favour?"
+
+  **Pass criteria**: Phase B converges with HV plateau or 8-gen cap; Phase C extends t0086
+  framework cleanly; Phase D produces a definitive yes/no on whether morphology variation
+  reaches biologically plausible cells; anchor-tracking yields a clear PD-vs-ND asymmetry
+  verdict. **Acceptable negative**: optimiser pegs all anchors back toward Bed-B-like ->
+  conclusion is the v3 substrate's biological-plausibility ceiling is not raised by this
+  morphology parametrisation, motivating Option G (NeuroMorpho real-cell library) in a future
+  task.
+
+  **Cost ~$3.00-3.50, ~14-16 hours Vast.ai. Buffer remaining ~$0.94-1.44.**
+
+  Source suggestions: none directly (new direction). Dependencies: t0024, t0078, t0080, t0081,
+  t0083, t0086, t0088, t0090. `expected_assets = {"answer": 1, "predictions": 1}`. Task types:
+  `["experiment-run", "data-analysis", "answer-question"]`.
+
+## Suggestion Cleanup
+
+### Rejected (covered by new tasks)
+
+* **S-0086-02** (NMDA units calibration) -- covered by t0090 Phase G.
+* **S-0088-01** (causal NaP-knockout per cluster representative) -- covered by t0090 Phase G.
+* **S-0088-02** (AIS-to-soma Nav ratio audit) -- covered by t0090 Phase G.
+* **S-0084-05** (channel-knockout DSI causal-attribution variant) -- duplicate of S-0088-01
+  (which itself is now covered by t0090 Phase G).
+* **S-0083-03** (per-direction Vm-trace deep-dive of cell 1304) -- covered by t0088 (cell 1304
+  is a member of cluster 1 with representative cell 1634; mechanism attribution NaP 87.4% /
+  Nav1.6 12.6% / NMDA 0.0% applies to all cluster-1 cells including 1304).
+
+### Reprioritised (high -> medium)
+
+* **S-0083-01** (extend NSGA-II from t0083 gen 17 to gen 25 with pop 144) -- estimated $8-12,
+  out of remaining $4.44 budget; superseded by the morphology-extended NSGA-II direction in
+  t0091.
+* **S-0084-01** (NaP density sweep on cells 767 / 637 / 762) -- superseded by S-0088-01-style
+  binary knockout in t0090 Phase G; older single-cell scope.
+* **S-0084-02** (per-seed mechanism decomposition of cell 767) -- older single-cell scope;
+  mechanism attribution at population level already established by t0088.
+
+### Stays high
+
+* **S-0086-01** (NSGA-II re-run with tightened NMDA bounds, $1.50) -- natural follow-up after
+  t0091; if t0091 finds biologically plausible joint-pass cells under morphology variation,
+  may also benefit from tightened-bounds variant.
+* **S-0070-01** (harmonise PD / ND encoding across Bed A and Bed B) -- independent infra; not
+  affected by morphology direction.
+
+## Tasks Cancelled or Updated
+
+* **Cancelled**: none.
+* **Updated**: none.
+
+## Assets Produced
+
+No assets in this brainstorm task. The new tasks t0090 and t0091 will produce: t0090 a
+morphology generator library + a mechanism-distinctness answer asset; t0091 a Pareto-front
+predictions asset + an answer asset on morphology-extended biological plausibility.
+
+## Budget Context
+
+Project budget $20.00; **$15.56 spent** before t0090 / t0091; **$4.44 remaining**. t0090
+estimated **$0.30** (validation bundle in Phase G). t0091 estimated **$3.00-3.50** (Vast.ai
+EPYC 7B13). Buffer remaining after both: **$0.94-1.44**.
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0089_brainstorm_results_18"
+> date_completed: "2026-05-07"
+> status: "complete"
+> ---
+> **Results Summary: Brainstorm Session 18**
+>
+> **Summary**
+>
+> Eighteenth strategic brainstorm, run on 2026-05-07 after t0088
+> (`recluster_marginals_and_vm_motifs`)
+> extended t0086's biological-plausibility analysis to a 13-cell pool and confirmed
+> `shared_mechanism_different_scale` across 4 clusters (all NaP-dominant in PD-minus-ND
+> attribution).
+> The researcher's strategic directive was a pivot from electrophys-only optimisation
+> (t0080-t0088) to
+> **morphology-extended optimisation**: "Optimisation technique seems to work. We now need to
+> add a
+> big and important part of cells - cell morphology." After four iterations on parametrisation
+> strategy, the agreed approach is a procedural DSGC morphology generator with 14 explicit
+> knobs
+> spanning topology + asymmetry + geometry, called inside the NSGA-II evaluation loop. The
+> work is
+> split into two tasks: t0090 (`morphology_generator_diversity_test`, ~$0.30, ~3-4 days local)
+> builds
+> and validates the generator with 30 different + 30 similar morphologies and bundles three
+
+</details>
 
 <details>
 <summary>✅ 0088 — <strong>Re-cluster t0086 13 cells and per-cluster Vm-trace

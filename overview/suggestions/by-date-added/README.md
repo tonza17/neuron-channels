@@ -61,31 +61,6 @@ task types: experiment-run, data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
-population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0083-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
-strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
-indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
-an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
-joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
-cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
-grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
-= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
 headline cell's biophysical mechanism</strong> (S-0083-03)</summary>
 
@@ -234,6 +209,31 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
+population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
+strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
+indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
+an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
+joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
+cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
+grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
+= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -517,55 +517,6 @@ Recommended task types: experiment-run.
 
 </details>
 
-<details>
-<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
-causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0084-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
-sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
-correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
-0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
-fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
-nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
-Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
-experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
-evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0084-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
-| **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
-of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
-t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
-seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
-high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
-low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
-varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
-vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
-data-analysis.
-
-</details>
-
 ## Medium Priority
 
 <details>
@@ -660,6 +611,55 @@ contributions, there is dendrite-tree spatial heterogeneity that the single-sect
 obscures, reframing t0084 from 'NaP-dominant cell-wide' to 'NaP-dominant on average with
 possible NMDA hotspots'. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task
 types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
+data-analysis.
 
 </details>
 

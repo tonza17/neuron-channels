@@ -1373,7 +1373,7 @@ sub-task proposal. Recommended task types: data-analysis.
 <summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
 causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
 [t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
 t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP

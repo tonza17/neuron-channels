@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-03",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0088_recluster_marginals_and_vm_motifs",
+  "target_kind": "suggestion",
+  "target_id": "S-0088-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0088-02 proposes auditing the AIS-to-soma Nav ratio computation for cluster 1 (cells 1304/1504/1624/1634), where t0088 reported a 116x ratio = +33 sigma above Werginz 2024's 17.3 +/- 3 (the most extreme single-prior violation in either t0086 or t0088). t0090 (morphology generator + diversity test) covers this scope in Phase G as part of the bundled validation triplet, ahead of t0091's morphology-extended NSGA-II so the audited ratio is available for biological-plausibility scoring. Rejecting as covered."
+}

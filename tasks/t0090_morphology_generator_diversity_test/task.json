@@ -1,0 +1,30 @@
+{
+  "spec_version": 4,
+  "task_id": "t0090_morphology_generator_diversity_test",
+  "task_index": 90,
+  "name": "Procedural DSGC morphology generator + diversity test + validation bundle",
+  "short_description": "Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0078_bedb_mobo_v2_ais_tiered_ahp",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0081_bedb_v3_warmstart_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0086_robustness_cluster_bio_comparison",
+    "t0088_recluster_marginals_and_vm_motifs"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "library": 1,
+    "answer": 1
+  },
+  "task_types": [
+    "write-library",
+    "data-analysis",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}

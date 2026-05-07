@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-06T21:11:25Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-07T14:26:57Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>85</section_count>
-    <char_count>1547866</char_count>
-    <byte_count>1554747</byte_count>
-    <estimated_tokens>386966</estimated_tokens>
+    <section_count>86</section_count>
+    <char_count>1556360</char_count>
+    <byte_count>1563245</byte_count>
+    <estimated_tokens>389090</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -193,9 +193,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0086_robustness_cluster_bio_comparison</id>
         <id>t0087_brainstorm_results_17</id>
         <id>t0088_recluster_marginals_and_vm_motifs</id>
+        <id>t0089_brainstorm_results_18</id>
       </source_ids>
       <content>
-Completed tasks: 81
+Completed tasks: 82
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -682,6 +683,12 @@ ID: t0088_recluster_marginals_and_vm_motifs
 Completed: 2026-05-06
 Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0088_recluster_marginals_and_vm_motifs&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0088_recluster_marginals_and_vm_motifs Summary Re-clustered the 13-cell pool of 6 Genuine + 7 Marginal cells from t0086 in the t0080 54-d v3 parameter space; KMeans + silhouette selected **best_k = 4 clusters**. Ran a t0084-style Vm-trace deep-dive at 16 directions on the 4 representative cells (1604, 1634, 767, 1639) on local CPU, all 64 simulations stable. **Mechanism-distinctness verdict = `shared_mechanism_different_scale`**: all 4 cluster representatives are NaP-dominant in PD-minus-ND attribution (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac NMDA =...
+
+## Brainstorm results session 18
+ID: t0089_brainstorm_results_18
+Completed: 2026-05-07
+Short description: Eighteenth brainstorm: pivot to morphology-extended optimisation. Commission t0090 (14-knob morph generator + diversity test) and t0091 (first joint 68-d NSGA-II); 5 rejections + 3 reprioritisations.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_results_18&quot; date_completed: &quot;2026-05-07&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 18 Summary Eighteenth strategic brainstorm, run on 2026-05-07 after t0088 (`recluster_marginals_and_vm_motifs`) extended t0086&#x27;s biological-plausibility analysis to a 13-cell pool and confirmed `shared_mechanism_different_scale` across 4 clusters (all NaP-dominant in PD-minus-ND attribution). The researcher&#x27;s strategic directive was a pivot from electrophys-only optimisation (t0080-t0088) to **morphology-extended optimisation**: &quot;Optimisation technique seems to work. We now need to add a big and important part of cells - cell morphology.&quot; After...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -691,9 +698,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0088_recluster_m
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0090_morphology_generator_diversity_test</id>
+        <id>t0091_morphology_extended_nsga2_v1</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -714,6 +723,20 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Procedural DSGC morphology generator + diversity test + validation bundle
+ID: t0090_morphology_generator_diversity_test
+Status: not_started
+Effective date: unknown
+Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs
+
+## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
+ID: t0091_morphology_extended_nsga2_v1
+Status: not_started
+Effective date: unknown
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -26270,6 +26293,142 @@ vs Cluster 1 0.874); spread on Nav1.6 = 0.123 (Cluster 1 0.126 vs Cluster 3 0.00
 | REQ-11 | 4 figures per representative cell | Done | 16 PNGs total under `results/images/{vm_traces,nmda_conductance,nav_decomp,ais_spike_onset}_&lt;cell&gt;.png` |
 | REQ-12 | Mechanism-distinctness verdict + narrative | Done | `mechanism_distinctness.json` verdict = `shared_mechanism_different_scale`; per-cluster narratives |
 | REQ-13 | Answer asset | Done | `assets/answer/are-cluster-motifs-mechanistically-distinct/{details.json, short_answer.md, full_answer.md}` |
+      </content>
+    </section>
+    <section id="t0089_brainstorm_results_18-results-detailed" source_kind="file">
+      <title>t0089_brainstorm_results_18 — Brainstorm results session 18 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0089_brainstorm_results_18</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0089_brainstorm_results_18/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0089_brainstorm_results_18&quot;
+date_completed: &quot;2026-05-07&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Brainstorm Session 18
+
+#### Summary
+
+This task is a planning-only brainstorming session. No experiments run; no metrics computed
+beyond decision-tracking metadata. The session ran on 2026-05-07 after t0088 completed and
+established a `shared_mechanism_different_scale` verdict across the 4 t0088 clusters. The
+researcher&#x27;s strategic directive triggered a project pivot from electrophys-only optimisation to
+morphology-extended optimisation; the session designed the parametrisation, split the work into
+two tasks, cleaned suggestion backlog, and recorded the explicit &quot;fire away&quot; confirmation.
+
+#### Methodology
+
+The session followed the `/human-brainstorm` skill end-to-end:
+
+1. **Phase 1 (review project state)**: ran the task / suggestion / cost aggregators; read
+   t0088&#x27;s `results_summary.md`, `compare_literature.md`, and the
+   `are-cluster-motifs-mechanistically-distinct` answer asset; performed an independent priority
+   reassessment of the 15 active high-priority suggestions, identifying candidates for
+   rejection / reprioritisation ahead of the discussion.
+
+2. **Phase 1.5 (clarification)**: skipped explicit clarification questions because the
+   researcher&#x27;s strategic-pivot directive was specific enough to drive the discussion directly.
+
+3. **Phase 2 (discussion -- four iterations)**:
+   * Iteration 1: Option A tier-based scaling (8 params) -- rejected by researcher.
+   * Iteration 2: Option H procedural generator (14 explicit knobs spanning topology + asymmetry
+     + geometry) -- proposed in response to feedback.
+   * Iterations 3-4: architectural clarification on in-loop morphology generation; confirmed
+     Plan A (in-loop) is the architecture.
+   * Round 1 (new tasks): t0090 + t0091 design agreed.
+   * Round 2 (suggestion cleanup): 5 rejections + 3 reprioritisations agreed.
+   * Round 3 (confirmation): &quot;all approved. fire away&quot; -- explicit Phase 2 Round 3 confirmation.
+
+4. **Phase 3 (determine next task ID)**: highest existing index 88; brainstorm task index 89;
+   child tasks 90 and 91.
+
+5. **Phase 4 (create brainstorm task branch and folder)**: branch
+   `task/t0089_brainstorm_results_18` from main; full folder structure scaffolded; all required
+   files written.
+
+6. **Phase 5 (apply decisions)**: 8 correction files written; 2 new task folders created via
+   `/create-task` skill; both new tasks pass `verify_task_file.py` with 0 errors.
+
+7. **Phase 6 (record and finalize)**: results files + session log + step logs written;
+   verificators run; materialiser re-run; markdown formatted via flowmark; commit + push + PR +
+   premerge + merge.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 2 |
+| Tasks cancelled | 0 |
+| Tasks updated | 0 |
+| Suggestions rejected | 5 |
+| Suggestions reprioritised | 3 |
+| Corrections written | 8 |
+| New suggestions created | 0 |
+| Session duration | ~90 minutes |
+| Session cost | $0.00 |
+| Estimated cost of commissioned tasks | $3.30-3.80 |
+
+#### Limitations
+
+Planning task only; no experiments run. No quantitative measurements. The decision quality
+depends on the depth of the priority reassessment and the parametrisation discussion; both are
+fully captured in the session log for audit.
+
+#### Files Created
+
+In this brainstorm task (`tasks/t0089_brainstorm_results_18/`):
+
+* `__init__.py`, `task.json`, `task_description.md`, `step_tracker.json`
+* `plan/plan.md`
+* `research/research_papers.md`, `research/research_internet.md`, `research/research_code.md`
+* `corrections/suggestion_S-0086-02.json` (C-0089-01)
+* `corrections/suggestion_S-0088-01.json` (C-0089-02)
+* `corrections/suggestion_S-0088-02.json` (C-0089-03)
+* `corrections/suggestion_S-0084-05.json` (C-0089-04)
+* `corrections/suggestion_S-0083-03.json` (C-0089-05)
+* `corrections/suggestion_S-0083-01.json` (C-0089-06)
+* `corrections/suggestion_S-0084-01.json` (C-0089-07)
+* `corrections/suggestion_S-0084-02.json` (C-0089-08)
+* `results/results_summary.md`, `results/results_detailed.md`
+* `results/metrics.json`, `results/costs.json`, `results/remote_machines_used.json`,
+  `results/suggestions.json`
+* `logs/session_log.md`
+* `logs/steps/001_review-project-state/step_log.md`
+* `logs/steps/002_discuss-decisions/step_log.md`
+* `logs/steps/003_apply-decisions/step_log.md`
+* `logs/steps/004_finalize/step_log.md`
+* `logs/sessions/capture_report.json` (plus 0+ JSONL transcripts)
+
+In t0090 (`tasks/t0090_morphology_generator_diversity_test/`):
+
+* `task.json`
+* `task_description.md`
+
+In t0091 (`tasks/t0091_morphology_extended_nsga2_v1/`):
+
+* `task.json`
+* `task_description.md`
+
+#### Verification
+
+* `verify_task_file.py t0089_brainstorm_results_18` -- PASSED with 0 errors.
+* `verify_corrections.py t0089_brainstorm_results_18` -- PASSED with 0 errors for 8 correction
+  files.
+* `verify_suggestions.py t0089_brainstorm_results_18` -- PASSED with 0 errors.
+* `verify_logs.py t0089_brainstorm_results_18` -- PASSED with 0 errors.
+* `verify_task_file.py t0090_morphology_generator_diversity_test` -- PASSED with 0 errors.
+* `verify_task_file.py t0091_morphology_extended_nsga2_v1` -- PASSED with 0 errors.
+* `verify_pr_premerge.py t0089_brainstorm_results_18 --pr-number &lt;N&gt;` -- PASSED.
+
+#### Next Steps
+
+See `results_summary.md` for the prioritised follow-up plan. Immediate next is t0090 execution.
       </content>
     </section>
   </sections>

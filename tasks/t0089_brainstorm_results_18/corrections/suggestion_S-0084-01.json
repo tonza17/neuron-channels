@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-07",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "target_kind": "suggestion",
+  "target_id": "S-0084-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0084-01 proposes a NaP-density knockout sweep on cells 767 / 637 / 762 (5 logarithmic steps per cell). This older 3-cell scope is largely superseded by S-0088-01-style binary NaP-knockout on the 4 cluster representatives from t0088 (cells 1604, 1634, 767, 1639), which is itself covered by t0090 Phase G's validation bundle. The continuous-density sweep aspect of S-0084-01 (5 steps per cell, vs S-0088-01's binary on/off) remains potentially valuable as a finer-resolution follow-up if t0090 Phase G binary knockouts indicate causal NaP-dominance. Reprioritising from high to medium; not rejecting because the density-resolution scope is not strictly covered."
+}

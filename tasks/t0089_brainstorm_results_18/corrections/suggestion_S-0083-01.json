@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-06",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "target_kind": "suggestion",
+  "target_id": "S-0083-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0083-01 proposes extending NSGA-II from t0083's gen-17 final population to gen 25 with population 144 (vs t0083's 96), estimated $8-12 USD on Vast.ai. The estimated cost exceeds the project's remaining budget ($4.44) by 2-3x. The strategic direction agreed in this brainstorm is to extend NSGA-II in the morphology-augmented 68-d space (t0091, ~$3.00-3.50) rather than continue search in the same 54-d space. S-0083-01 is not rejected because a tightened-bounds variant of the 54-d search may still be valuable as a follow-up after t0091, but reprioritising from high to medium given (a) the budget gap and (b) the strategic pivot to morphology variation."
+}

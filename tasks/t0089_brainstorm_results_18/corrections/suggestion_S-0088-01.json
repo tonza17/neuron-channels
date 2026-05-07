@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-02",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0088_recluster_marginals_and_vm_motifs",
+  "target_kind": "suggestion",
+  "target_id": "S-0088-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0088-01 proposes a causal NaP-knockout ablation per cluster representative (4 cells x 16 directions, ~64 min local CPU, $0) to confirm NaP as the dominant PD-vs-ND mechanism. t0090 (morphology generator + diversity test) covers this scope in Phase G as part of the bundled validation triplet. The validation bundle sharpens the biological-plausibility interpretation of t0091's morphology-extended Pareto front. Rejecting as covered."
+}

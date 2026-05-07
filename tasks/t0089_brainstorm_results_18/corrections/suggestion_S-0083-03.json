@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-05",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0083_bedb_v3_extend_nsga2_gen8plus",
+  "target_kind": "suggestion",
+  "target_id": "S-0083-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0083-03 proposes a per-direction Vm-trace deep-dive of cell 1304 (the project's first cell statistically indistinguishable from RivlinEtzion 2012's published mouse ON-OFF DSGC stable-cell distribution) to identify its dominant biophysical mechanism. t0088 (recluster_marginals_and_vm_motifs) clusters cell 1304 into cluster 1 alongside cells 1504, 1624, 1634, with cluster representative cell 1634. The Phase B Vm-trace deep-dive at 16 directions on cell 1634 produces NaP frac 0.874 / Nav1.6 frac 0.126 / NMDA frac 0.000, which applies to all cluster-1 cells per the `shared_mechanism_different_scale` verdict. Cell 1304's mechanism is therefore identified as NaP-dominant (cluster-1 representative attribution), with parameter-scale variation differentiating it from cells 1504 / 1624 / 1634 within the same dominant-mechanism family. Rejecting as covered by t0088's cluster-1 attribution."
+}

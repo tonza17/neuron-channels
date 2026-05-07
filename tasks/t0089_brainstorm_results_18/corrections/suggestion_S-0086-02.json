@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-01",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0086_robustness_cluster_bio_comparison",
+  "target_kind": "suggestion",
+  "target_id": "S-0086-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0086-02 proposes an NMDA units calibration ablation to resolve the units mismatch between t0080's `gnmda_dend` NetCon weight and Sivyer 2013's per-spine synaptic conductance. t0090 (morphology generator + diversity test, this brainstorm session's first commission) covers this scope in Phase G as part of a bundled validation triplet (S-0088-02 + S-0086-02 + S-0088-01). The bundling matches the recorded researcher preference for consolidated tasks (memory: feedback_consolidated_task_design) and sharpens the biological-plausibility interpretation of t0091's morphology-extended Pareto front. Rejecting as covered."
+}

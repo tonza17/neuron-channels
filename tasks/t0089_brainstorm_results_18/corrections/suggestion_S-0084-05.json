@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-04",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "target_kind": "suggestion",
+  "target_id": "S-0084-05",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0084-05 proposes a channel-knockout DSI causal-attribution variant of t0084's correlation-based fractional-channel-contribution metric (4 conditions: full / NMDA-knockout / Nav1.6-knockout / NaP-knockout x 8 directions per cell on cells 767 / 637 / 762). This scope is a strict subset of S-0088-01's binary knockout per cluster representative (4 cluster reps x 16 directions, broader cell-pool coverage), which is itself covered by t0090 Phase G. S-0084-05's older 3-cell scope is fully subsumed by S-0088-01's t0088-cluster-representative scope. Rejecting as duplicate of a covered suggestion."
+}

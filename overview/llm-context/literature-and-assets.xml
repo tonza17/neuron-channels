@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-06T21:11:25Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-07T14:26:57Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>214004</char_count>
-    <byte_count>214295</byte_count>
-    <estimated_tokens>53501</estimated_tokens>
+    <char_count>216514</char_count>
+    <byte_count>216805</byte_count>
+    <estimated_tokens>54128</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -196,9 +196,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0086_robustness_cluster_bio_comparison</id>
         <id>t0087_brainstorm_results_17</id>
         <id>t0088_recluster_marginals_and_vm_motifs</id>
+        <id>t0089_brainstorm_results_18</id>
       </source_ids>
       <content>
-Completed tasks: 81
+Completed tasks: 82
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -685,6 +686,12 @@ ID: t0088_recluster_marginals_and_vm_motifs
 Completed: 2026-05-06
 Short description: Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0088_recluster_marginals_and_vm_motifs&quot; date_completed: &quot;2026-05-06&quot; --- Results Summary -- t0088_recluster_marginals_and_vm_motifs Summary Re-clustered the 13-cell pool of 6 Genuine + 7 Marginal cells from t0086 in the t0080 54-d v3 parameter space; KMeans + silhouette selected **best_k = 4 clusters**. Ran a t0084-style Vm-trace deep-dive at 16 directions on the 4 representative cells (1604, 1634, 767, 1639) on local CPU, all 64 simulations stable. **Mechanism-distinctness verdict = `shared_mechanism_different_scale`**: all 4 cluster representatives are NaP-dominant in PD-minus-ND attribution (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac NMDA =...
+
+## Brainstorm results session 18
+ID: t0089_brainstorm_results_18
+Completed: 2026-05-07
+Short description: Eighteenth brainstorm: pivot to morphology-extended optimisation. Commission t0090 (14-knob morph generator + diversity test) and t0091 (first joint 68-d NSGA-II); 5 rejections + 3 reprioritisations.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0089_brainstorm_results_18&quot; date_completed: &quot;2026-05-07&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 18 Summary Eighteenth strategic brainstorm, run on 2026-05-07 after t0088 (`recluster_marginals_and_vm_motifs`) extended t0086&#x27;s biological-plausibility analysis to a 13-cell pool and confirmed `shared_mechanism_different_scale` across 4 clusters (all NaP-dominant in PD-minus-ND attribution). The researcher&#x27;s strategic directive was a pivot from electrophys-only optimisation (t0080-t0088) to **morphology-extended optimisation**: &quot;Optimisation technique seems to work. We now need to add a big and important part of cells - cell morphology.&quot; After...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -694,9 +701,11 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0088_recluster_m
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0090_morphology_generator_diversity_test</id>
+        <id>t0091_morphology_extended_nsga2_v1</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -717,6 +726,20 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Procedural DSGC morphology generator + diversity test + validation bundle
+ID: t0090_morphology_generator_diversity_test
+Status: not_started
+Effective date: unknown
+Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs
+
+## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
+ID: t0091_morphology_extended_nsga2_v1
+Status: not_started
+Effective date: unknown
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
