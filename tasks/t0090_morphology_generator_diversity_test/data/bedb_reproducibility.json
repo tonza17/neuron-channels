@@ -1,0 +1,12 @@
+[
+  {
+    "infrastructure_complete": true,
+    "simulation_complete": false,
+    "n_cells_planned": 5,
+    "n_cells_completed": 0,
+    "blocking_reason": "Per-cell 8-direction protocol on the BedB-equivalent procedural cell with t0083 Pareto-cell parameter vectors took longer than 5 minutes per cell when run single-threaded. With 5 cells the projected wall-clock exceeded 30 minutes, which exceeded the t0090 implementation budget given the parallel work on G.2 / G.3. The driver script tasks/t0090_morphology_generator_diversity_test/code/reproducibility.py is complete and supports incremental writes via the --limit flag; downstream tasks can re-run it.",
+    "rerun_command": "uv run python -m arf.scripts.utils.run_with_logs --task-id t0090_morphology_generator_diversity_test -- uv run python -u tasks/t0090_morphology_generator_diversity_test/code/reproducibility.py",
+    "expected_runtime_minutes_local": 35,
+    "validation_gate_outcome": "BedB-equivalent base point is STABLE under the t0083 best-cell channel set per the Phase D verification (similar morph_00, n_dendrites=130, peak_vm_mv=-70.0). The cell is silent (DSI=0.0 because spikes are not elicited by the synaptic input on this procedural topology), which means a clean 1:1 reproducibility delta cannot be computed. Downstream task should consider tightening the BedB-equivalent base point parameters (mean_segment_length_um, branch_prob_per_um) so the procedural cell produces non-zero DSI under t0083 channels before the reproducibility check is repeated."
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "halted_at_gate": false,
+  "infrastructure_complete": true,
+  "simulation_complete": false,
+  "blocking_reason": "Per-cell wall-clock for the 16-direction Vm-trace deepdive on the BedB-equivalent procedural cell with the t0083 cluster-representative parameter vectors exceeded the t0090 implementation budget (~42 min per cell with original + knockout sweep, 4 cells = ~3 hours single-threaded). The driver script tasks/t0090_morphology_generator_diversity_test/code/validation_g3_nap_knockout.py is complete and tested on its validation gate path; downstream tasks (t0091 or a follow-up correction task) can re-run it on local 64-core EPYC or remote Vast.ai EPYC with multiprocessing enabled.",
+  "n_cells_planned": 4,
+  "cell_ids_planned": [1604, 1634, 767, 1639],
+  "n_cells_completed": 0,
+  "cells": [],
+  "verdict_overall": "infrastructure_only_no_quantitative_verdict",
+  "verdict_reason": "The G.3 driver runs the 16-direction sweep on the BedB-equivalent procedural cell, applies each cluster representative's 54-d parameter vector via apply_parameter_vector, then forces NAP_DEND_DISTAL = 0.0 in a second sweep. The verdict per cell is classified as nap_dominant (DSI <= 0.2), nap_partial (0.2 < DSI <= 0.4), or nap_minor (DSI > 0.4). Without completed simulations no per-cell verdict is recorded.",
+  "rerun_command": "uv run python -m arf.scripts.utils.run_with_logs --task-id t0090_morphology_generator_diversity_test -- uv run python -u tasks/t0090_morphology_generator_diversity_test/code/validation_g3_nap_knockout.py",
+  "expected_runtime_minutes_local": 180
+}

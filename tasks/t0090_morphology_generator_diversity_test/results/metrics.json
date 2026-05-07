@@ -26,6 +26,20 @@
         "n_stable_morphologies": 3,
         "n_total_morphologies": 30
       }
+    },
+    {
+      "variant_id": "bedb_repro_5",
+      "label": "5 t0083 Pareto cells re-evaluated at the BedB-equivalent procedural cell",
+      "dimensions": {
+        "morphology_population": "bedb_repro_5"
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "n_pass_10pct": 0,
+        "n_total": 1,
+        "dsi_delta_max_abs_pct": null,
+        "pd_rate_delta_max_abs_pct": null
+      }
     }
   ]
 }
