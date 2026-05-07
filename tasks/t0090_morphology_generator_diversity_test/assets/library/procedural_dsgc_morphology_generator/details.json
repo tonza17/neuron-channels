@@ -1,0 +1,84 @@
+{
+  "spec_version": "2",
+  "library_id": "procedural_dsgc_morphology_generator",
+  "name": "Procedural DSGC Morphology Generator",
+  "version": "0.1.0",
+  "short_description": "Pure-Python deterministic procedural DSGC morphology generator with 14 explicit knobs (5 topology + 4 asymmetry + 3 geometry + 2 stochastic), structurally compatible with the t0080 apply_parameter_vector harness.",
+  "description_path": "description.md",
+  "module_paths": [
+    "tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/generator.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/verification.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/constants.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/paths.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/load_default_params.py"
+  ],
+  "entry_points": [
+    {
+      "name": "generate_morphology",
+      "kind": "function",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/generator.py",
+      "description": "Build a procedural DSGC cell from MorphologyParams + morph_seed; returns a MorphologyResult duck-typed as t0080 DSGCCellWithAIS."
+    },
+    {
+      "name": "MorphologyParams",
+      "kind": "class",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py",
+      "description": "Frozen dataclass with 14 typed fields (3 ints + 11 floats) describing one morphology spec; supports to_dict / from_dict serialisation."
+    },
+    {
+      "name": "MorphologyResult",
+      "kind": "class",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py",
+      "description": "Frozen dataclass mirroring the t0080 DSGCCellWithAIS interface: soma, all_dends, primary_dends, non_terminal_dends, terminal_dends, ais_proximal, ais_distal plus stability_flag, morphometric_summary, connectivity, section_endpoints_xy."
+    },
+    {
+      "name": "MorphometricSummary",
+      "kind": "class",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py",
+      "description": "Frozen dataclass with 6 morphometric features (total_dendritic_length_um, branch_count, max_strahler_depth, electrotonic_length_lambda, soma_displacement_um, field_major_axis_length_um)."
+    },
+    {
+      "name": "StabilityKind",
+      "kind": "class",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/constants.py",
+      "description": "Enum classifying simulation stability outcomes (STABLE, NAN_VOLTAGE, DIVERGED, DISCONNECTED)."
+    },
+    {
+      "name": "verify_one_morphology",
+      "kind": "function",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/verification.py",
+      "description": "Build, stability-check, and 8-direction-protocol one morphology under a 54-d ParameterVector; returns a VerificationResult."
+    },
+    {
+      "name": "BEDB_BASE_POINT",
+      "kind": "function",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/constants.py",
+      "description": "Constant dict mapping each of the 14 parameter names to its BedB-equivalent (de Rosenroll 2026) value."
+    },
+    {
+      "name": "PARAM_BOUNDS",
+      "kind": "function",
+      "module": "tasks/t0090_morphology_generator_diversity_test/code/constants.py",
+      "description": "Constant dict mapping each parameter name to its (lo, hi) bounds for LHS or NSGA-II sampling."
+    }
+  ],
+  "dependencies": [
+    "numpy",
+    "scipy",
+    "neuron",
+    "matplotlib"
+  ],
+  "test_paths": [
+    "tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py",
+    "tasks/t0090_morphology_generator_diversity_test/code/test_generator.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "dendritic-computation"
+  ],
+  "created_by_task": "t0090_morphology_generator_diversity_test",
+  "date_created": "2026-05-07"
+}

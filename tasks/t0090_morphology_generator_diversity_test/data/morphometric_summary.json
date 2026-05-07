@@ -1,0 +1,878 @@
+{
+  "n_morphologies": 60,
+  "feature_columns": [
+    "total_dendritic_length_um",
+    "branch_count",
+    "max_strahler_depth",
+    "electrotonic_length_lambda",
+    "soma_displacement_um",
+    "field_major_axis_length_um"
+  ],
+  "pc1_variance_explained": 0.13817322172917978,
+  "pc1_pc2_variance_explained": 0.8290393303750794,
+  "pca_loadings": [
+    [
+      0.5100937028961671,
+      0.49347875348879044,
+      0.47379688277033316,
+      0.37288398375088033,
+      -0.2898892252458289,
+      0.22072929063988592
+    ],
+    [
+      -0.0830162423659414,
+      -0.2606186701894466,
+      -0.03969009635828935,
+      0.5194259245766084,
+      0.49836849455455573,
+      0.6367389268894708
+    ]
+  ],
+  "similar_cluster_radius_p95": 1.5697866290165905,
+  "different_cluster_radius_p95": 4.110442642435929,
+  "similar_radius_pct_of_pc1_range": 20.780797654430515,
+  "pc1_range": 7.554024898952367,
+  "umap_available": false,
+  "per_morph_records": [
+    {
+      "morph_id": "morph_00",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 141.6681138799821,
+        "branch_count": 1.0,
+        "max_strahler_depth": 2.0,
+        "electrotonic_length_lambda": 0.10627916571634262,
+        "soma_displacement_um": 0.7487988162320391,
+        "field_major_axis_length_um": 58.37570507022936
+      },
+      "pc1": -2.680427313833613,
+      "pc2": -1.478740016810108
+    },
+    {
+      "morph_id": "morph_01",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 3318.997313273287,
+        "branch_count": 27.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.8291500970893789,
+        "soma_displacement_um": 66.31664399122064,
+        "field_major_axis_length_um": 576.8372416970436
+      },
+      "pc1": 0.08360588916808881,
+      "pc2": 1.859706716589269
+    },
+    {
+      "morph_id": "morph_02",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 390.6302334267565,
+        "branch_count": 4.0,
+        "max_strahler_depth": 2.0,
+        "electrotonic_length_lambda": 0.1783278270688432,
+        "soma_displacement_um": 19.5888024590908,
+        "field_major_axis_length_um": 102.66880276371776
+      },
+      "pc1": -2.561114210008567,
+      "pc2": -1.032873841869217
+    },
+    {
+      "morph_id": "morph_03",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 6653.739057229649,
+        "branch_count": 96.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.7396938361243203,
+        "soma_displacement_um": 45.226317755131234,
+        "field_major_axis_length_um": 431.8086888906012
+      },
+      "pc1": 1.6039717626569812,
+      "pc2": 0.5657960544945676
+    },
+    {
+      "morph_id": "morph_04",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 237.50922679209586,
+        "branch_count": 2.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.283863123608125,
+        "soma_displacement_um": 124.6923040940095,
+        "field_major_axis_length_um": 86.88521801059181
+      },
+      "pc1": -2.7523762683958672,
+      "pc2": 0.23058828747106538
+    },
+    {
+      "morph_id": "morph_05",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 212.21412127337675,
+        "branch_count": 3.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.1688616714656924,
+        "soma_displacement_um": 56.42483275995548,
+        "field_major_axis_length_um": 57.013895461482456
+      },
+      "pc1": -2.547276010943677,
+      "pc2": -0.8105806763960713
+    },
+    {
+      "morph_id": "morph_06",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 2047.0158373564147,
+        "branch_count": 16.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.7140413521238167,
+        "soma_displacement_um": 115.2890379385687,
+        "field_major_axis_length_um": 614.5041695858806
+      },
+      "pc1": -0.7124524410818387,
+      "pc2": 2.306803950889483
+    },
+    {
+      "morph_id": "morph_07",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 647.2414758715109,
+        "branch_count": 10.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.48213989218411235,
+        "soma_displacement_um": 97.0464097465591,
+        "field_major_axis_length_um": 237.99980780181295
+      },
+      "pc1": -1.304967356096821,
+      "pc2": 0.667911233165927
+    },
+    {
+      "morph_id": "morph_08",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1566.3469079537272,
+        "branch_count": 14.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 1.0397039743586238,
+        "soma_displacement_um": 107.19462955950937,
+        "field_major_axis_length_um": 274.823841785704
+      },
+      "pc1": 0.10404821090017428,
+      "pc2": 2.024308107945168
+    },
+    {
+      "morph_id": "morph_09",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 635.0695809546996,
+        "branch_count": 19.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.4367258050377971,
+        "soma_displacement_um": 10.243776483632445,
+        "field_major_axis_length_um": 167.80517183941362
+      },
+      "pc1": -0.49618681645601287,
+      "pc2": -0.5871018984012872
+    },
+    {
+      "morph_id": "morph_10",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 475.71366786273813,
+        "branch_count": 14.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.21117193949543878,
+        "soma_displacement_um": 112.66975663091894,
+        "field_major_axis_length_um": 137.92499201138804
+      },
+      "pc1": -2.247547480658792,
+      "pc2": -0.020045590106527164
+    },
+    {
+      "morph_id": "morph_11",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1593.6287623080243,
+        "branch_count": 15.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.45508723628356373,
+        "soma_displacement_um": 68.94102596249246,
+        "field_major_axis_length_um": 184.47419338529028
+      },
+      "pc1": -1.6676438329473025,
+      "pc2": 0.17833030298596553
+    },
+    {
+      "morph_id": "morph_12",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1078.4153427834797,
+        "branch_count": 18.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.3122848852315254,
+        "soma_displacement_um": 139.36043570048963,
+        "field_major_axis_length_um": 250.69702543865608
+      },
+      "pc1": -2.324879214747081,
+      "pc2": 0.7620373396194112
+    },
+    {
+      "morph_id": "morph_13",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 94.26243887965181,
+        "branch_count": 0.0,
+        "max_strahler_depth": 1.0,
+        "electrotonic_length_lambda": 0.04635772987180424,
+        "soma_displacement_um": 90.94466668061514,
+        "field_major_axis_length_um": 36.57168915505028
+      },
+      "pc1": -3.6909889799877655,
+      "pc2": -0.7031858440472585
+    },
+    {
+      "morph_id": "morph_14",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 226.81168692556977,
+        "branch_count": 1.0,
+        "max_strahler_depth": 2.0,
+        "electrotonic_length_lambda": 0.20800013608293694,
+        "soma_displacement_um": 23.67511810115127,
+        "field_major_axis_length_um": 169.64389874562892
+      },
+      "pc1": -2.53927238606164,
+      "pc2": -0.7287956366554973
+    },
+    {
+      "morph_id": "morph_15",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 443.93425708965094,
+        "branch_count": 4.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.663970737898405,
+        "soma_displacement_um": 140.30823622652275,
+        "field_major_axis_length_um": 131.0946463988481
+      },
+      "pc1": -1.4720240320434634,
+      "pc2": 1.2748574369048673
+    },
+    {
+      "morph_id": "morph_16",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 275.82115971722016,
+        "branch_count": 2.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.34344750500353394,
+        "soma_displacement_um": 83.49874984441203,
+        "field_major_axis_length_um": 202.54884636414596
+      },
+      "pc1": -2.298410626622584,
+      "pc2": 0.2389674281015002
+    },
+    {
+      "morph_id": "morph_17",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 3926.0457399892416,
+        "branch_count": 44.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.7890289669822939,
+        "soma_displacement_um": 136.2954029396513,
+        "field_major_axis_length_um": 771.35006872453
+      },
+      "pc1": 0.39913640210710355,
+      "pc2": 2.8641687278680608
+    },
+    {
+      "morph_id": "morph_18",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 56.282300762699975,
+        "branch_count": 1.0,
+        "max_strahler_depth": 2.0,
+        "electrotonic_length_lambda": 0.05968140470589864,
+        "soma_displacement_um": 38.94721920145878,
+        "field_major_axis_length_um": 53.22287981843229
+      },
+      "pc1": -3.0045516713402867,
+      "pc2": -1.1986756813000616
+    },
+    {
+      "morph_id": "morph_19",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 11840.997909639706,
+        "branch_count": 105.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 1.1757532220573759,
+        "soma_displacement_um": 31.746414709358532,
+        "field_major_axis_length_um": 878.452080501419
+      },
+      "pc1": 3.8630359189646013,
+      "pc2": 2.3509191352901517
+    },
+    {
+      "morph_id": "morph_20",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 355.47111600472647,
+        "branch_count": 2.0,
+        "max_strahler_depth": 2.0,
+        "electrotonic_length_lambda": 0.2680261421297021,
+        "soma_displacement_um": 21.01633452638461,
+        "field_major_axis_length_um": 153.38358360148803
+      },
+      "pc1": -2.408118013999684,
+      "pc2": -0.675305790260467
+    },
+    {
+      "morph_id": "morph_21",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1234.1944856693367,
+        "branch_count": 12.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.4734941094474507,
+        "soma_displacement_um": 82.81383892021996,
+        "field_major_axis_length_um": 559.3187297922494
+      },
+      "pc1": -1.4804927309607636,
+      "pc2": 1.370025968497458
+    },
+    {
+      "morph_id": "morph_22",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 2996.508458646354,
+        "branch_count": 39.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.9492105224118275,
+        "soma_displacement_um": 77.38984003915542,
+        "field_major_axis_length_um": 666.4576377295507
+      },
+      "pc1": 1.0193442668420944,
+      "pc2": 2.3639013306964403
+    },
+    {
+      "morph_id": "morph_23",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 2307.486159564089,
+        "branch_count": 17.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 1.125409061725301,
+        "soma_displacement_um": 44.67277723934262,
+        "field_major_axis_length_um": 1587.7577318874587
+      },
+      "pc1": 1.6423524301718593,
+      "pc2": 4.9933868157451515
+    },
+    {
+      "morph_id": "morph_24",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1001.0863356434229,
+        "branch_count": 7.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.9156181151580397,
+        "soma_displacement_um": 9.718264260609686,
+        "field_major_axis_length_um": 447.56009887771626
+      },
+      "pc1": -0.20077380604111641,
+      "pc2": 1.3074638735652897
+    },
+    {
+      "morph_id": "morph_25",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1209.4923929538056,
+        "branch_count": 11.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.6268480272436453,
+        "soma_displacement_um": 122.88328103930243,
+        "field_major_axis_length_um": 802.3113157559128
+      },
+      "pc1": -1.2717632670689363,
+      "pc2": 2.7643776741708743
+    },
+    {
+      "morph_id": "morph_26",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 436.9404511518296,
+        "branch_count": 4.0,
+        "max_strahler_depth": 3.0,
+        "electrotonic_length_lambda": 0.2606972530721087,
+        "soma_displacement_um": 55.837375742968106,
+        "field_major_axis_length_um": 151.42874321096852
+      },
+      "pc1": -2.2593202401915704,
+      "pc2": -0.3787728409796924
+    },
+    {
+      "morph_id": "morph_27",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 2185.8553968581696,
+        "branch_count": 27.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.7837777788662099,
+        "soma_displacement_um": 144.7936956412454,
+        "field_major_axis_length_um": 411.927064846039
+      },
+      "pc1": -0.1542694618536598,
+      "pc2": 2.1162554202069637
+    },
+    {
+      "morph_id": "morph_28",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 264.72045966412315,
+        "branch_count": 6.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.19254538848386396,
+        "soma_displacement_um": 104.98955224896639,
+        "field_major_axis_length_um": 132.86937141850044
+      },
+      "pc1": -2.356554846226416,
+      "pc2": -0.10453778252779515
+    },
+    {
+      "morph_id": "morph_29",
+      "population": "different",
+      "features": {
+        "total_dendritic_length_um": 1357.5810676038432,
+        "branch_count": 27.0,
+        "max_strahler_depth": 4.0,
+        "electrotonic_length_lambda": 0.3548197851342066,
+        "soma_displacement_um": 72.31352508082341,
+        "field_major_axis_length_um": 145.44391222847125
+      },
+      "pc1": -1.471161792478711,
+      "pc2": -0.1954562173342128
+    },
+    {
+      "morph_id": "morph_00",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 3215.609725040785,
+        "branch_count": 63.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5414929163852567,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 276.62884624039486
+      },
+      "pc1": 0.7663954099262108,
+      "pc2": -0.4907011621892966
+    },
+    {
+      "morph_id": "morph_01",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 7208.843639652014,
+        "branch_count": 136.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.573932185117599,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 315.23906344425563
+      },
+      "pc1": 2.3509523875385607,
+      "pc2": -0.830631966343738
+    },
+    {
+      "morph_id": "morph_02",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 1367.59487450876,
+        "branch_count": 26.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4263783232842549,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 183.189340100072
+      },
+      "pc1": -0.5622422169230405,
+      "pc2": -0.7073155570273688
+    },
+    {
+      "morph_id": "morph_03",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 5985.785583693739,
+        "branch_count": 117.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5602662598093495,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 293.0589273561812
+      },
+      "pc1": 1.8841760959818088,
+      "pc2": -0.7797434817384722
+    },
+    {
+      "morph_id": "morph_04",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 1712.2759131184546,
+        "branch_count": 31.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.45764318961439726,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 164.1513182654213
+      },
+      "pc1": -0.41367670863913464,
+      "pc2": -0.7252976983938589
+    },
+    {
+      "morph_id": "morph_05",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2236.5657401701346,
+        "branch_count": 43.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4447659407864462,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 182.78981786360964
+      },
+      "pc1": -0.19618440113615543,
+      "pc2": -0.7851921674399451
+    },
+    {
+      "morph_id": "morph_06",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 5846.929591039995,
+        "branch_count": 114.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5686117595923288,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 298.5325344884012
+      },
+      "pc1": 1.8456486059079527,
+      "pc2": -0.7266759630362222
+    },
+    {
+      "morph_id": "morph_07",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 6146.70517636807,
+        "branch_count": 120.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5580363004490019,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 259.4561736460952
+      },
+      "pc1": 1.9111118034032553,
+      "pc2": -0.8935673521304546
+    },
+    {
+      "morph_id": "morph_08",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 8161.3457135965955,
+        "branch_count": 153.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5875000886558354,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 290.3064134950897
+      },
+      "pc1": 2.703045838886581,
+      "pc2": -0.9859537776431148
+    },
+    {
+      "morph_id": "morph_09",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2290.7867263104527,
+        "branch_count": 44.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.44258074233900946,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 217.9676497434385
+      },
+      "pc1": -0.14731861357752493,
+      "pc2": -0.7049931264365772
+    },
+    {
+      "morph_id": "morph_10",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 5332.996599886664,
+        "branch_count": 108.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5414615601086626,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 265.48428770232465
+      },
+      "pc1": 1.613993013591015,
+      "pc2": -0.8252923972491109
+    },
+    {
+      "morph_id": "morph_11",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 4222.955544075104,
+        "branch_count": 81.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5635626689136296,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 245.24466076480593
+      },
+      "pc1": 1.1466856057354007,
+      "pc2": -0.6511249624459567
+    },
+    {
+      "morph_id": "morph_12",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 7955.787765770958,
+        "branch_count": 153.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5728368862554492,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 269.05734664174236
+      },
+      "pc1": 2.621260699880051,
+      "pc2": -1.0676014856878224
+    },
+    {
+      "morph_id": "morph_13",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 7062.958886611075,
+        "branch_count": 142.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5516245056113127,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 292.30059073477753
+      },
+      "pc1": 2.327374726504402,
+      "pc2": -0.9674094886198372
+    },
+    {
+      "morph_id": "morph_14",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2013.361354776849,
+        "branch_count": 39.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4370508301272293,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 199.91474190958138
+      },
+      "pc1": -0.27582574216733796,
+      "pc2": -0.7292211771798685
+    },
+    {
+      "morph_id": "morph_15",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 4733.16693584651,
+        "branch_count": 93.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5443362813901049,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 300.45807850754886
+      },
+      "pc1": 1.384583003010649,
+      "pc2": -0.6289298393713212
+    },
+    {
+      "morph_id": "morph_16",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 6604.04804058748,
+        "branch_count": 128.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5832550666122452,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 306.19927063645923
+      },
+      "pc1": 2.1614859481274284,
+      "pc2": -0.7722826413751835
+    },
+    {
+      "morph_id": "morph_17",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2412.007418764227,
+        "branch_count": 45.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.46670933675625176,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 208.65530934089944
+      },
+      "pc1": -0.08423531290469555,
+      "pc2": -0.6850757123790381
+    },
+    {
+      "morph_id": "morph_18",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2371.989008222152,
+        "branch_count": 45.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4522633033882453,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 186.56146634393775
+      },
+      "pc1": -0.13485089765201913,
+      "pc2": -0.7735946921982128
+    },
+    {
+      "morph_id": "morph_19",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 1806.6274942329565,
+        "branch_count": 36.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4272407745296326,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 214.9405794687936
+      },
+      "pc1": -0.3474726164183181,
+      "pc2": -0.6892123346973265
+    },
+    {
+      "morph_id": "morph_20",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 5584.252227664196,
+        "branch_count": 109.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5647347209657925,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 298.4513557243889
+      },
+      "pc1": 1.7388810939414836,
+      "pc2": -0.7006837553552102
+    },
+    {
+      "morph_id": "morph_21",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 7161.978805144133,
+        "branch_count": 144.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.553726903171108,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 257.09445836966285
+      },
+      "pc1": 2.3378411350348873,
+      "pc2": -1.0685984780087894
+    },
+    {
+      "morph_id": "morph_22",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 4300.510005042142,
+        "branch_count": 83.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5614641221003464,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 260.81259967820324
+      },
+      "pc1": 1.192437334138718,
+      "pc2": -0.6280917553587714
+    },
+    {
+      "morph_id": "morph_23",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 3913.8991576214057,
+        "branch_count": 78.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5567314236926646,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 292.5655732722719
+      },
+      "pc1": 1.0895339565848443,
+      "pc2": -0.5168505804817798
+    },
+    {
+      "morph_id": "morph_24",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 2238.890468000561,
+        "branch_count": 42.0,
+        "max_strahler_depth": 5.0,
+        "electrotonic_length_lambda": 0.4613218009401028,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 208.29064754736663
+      },
+      "pc1": -0.15640352028049392,
+      "pc2": -0.6765969136724181
+    },
+    {
+      "morph_id": "morph_25",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 4612.952698221144,
+        "branch_count": 88.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5801594992392527,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 311.0343572575872
+      },
+      "pc1": 1.3777103210078963,
+      "pc2": -0.4916612212722583
+    },
+    {
+      "morph_id": "morph_26",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 5765.271197302264,
+        "branch_count": 116.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5581408223119011,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 286.35074789802667
+      },
+      "pc1": 1.8225527424892676,
+      "pc2": -0.7898233439290393
+    },
+    {
+      "morph_id": "morph_27",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 3706.6309161501126,
+        "branch_count": 72.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5651744013746655,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 276.1455323775039
+      },
+      "pc1": 0.9880025526793546,
+      "pc2": -0.5027529925185206
+    },
+    {
+      "morph_id": "morph_28",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 6553.0648886869485,
+        "branch_count": 124.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5875468406311394,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 315.5012888069337
+      },
+      "pc1": 2.126681315180325,
+      "pc2": -0.7155697339266668
+    },
+    {
+      "morph_id": "morph_29",
+      "population": "similar",
+      "features": {
+        "total_dendritic_length_um": 6539.212865281515,
+        "branch_count": 127.0,
+        "max_strahler_depth": 6.0,
+        "electrotonic_length_lambda": 0.5751626848872865,
+        "soma_displacement_um": 0.0,
+        "field_major_axis_length_um": 293.7994692292
+      },
+      "pc1": 2.114934359383904,
+      "pc2": -0.8152882294132472
+    }
+  ]
+}
