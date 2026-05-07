@@ -1,0 +1,31 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\logs
+
+[31m[1mERRORS:[0m
+[31m  LG-E008 error: Step 12 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 13 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 14 has status 'skipped' but no step log was found[0m
+[31m  LG-E008 error: Step 15 has status 'skipped' but no step log was found[0m
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260507T144039Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260507T145434Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260507T150616Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260507T150753Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260507T160702Z_uv-run-pytest.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260507T160752Z_uv-run-pytest.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 016_20260507T161449Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 017_20260507T161515Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 018_20260507T161530Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260507T161610Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 020_20260507T161708Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 026_20260507T165140Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 033_20260507T181142Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W006 warning: Step 12 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W006 warning: Step 13 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W006 warning: Step 14 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W006 warning: Step 15 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[31m[1mFAILED[0m — 4 error(s), 19 warning(s)

@@ -5,7 +5,7 @@
   "name": "Procedural DSGC morphology generator + diversity test + validation bundle",
   "short_description": "Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0078_bedb_mobo_v2_ais_tiered_ahp",
@@ -16,7 +16,7 @@
     "t0088_recluster_marginals_and_vm_motifs"
   ],
   "start_time": "2026-05-07T14:35:43Z",
-  "end_time": null,
+  "end_time": "2026-05-07T18:25:00Z",
   "expected_assets": {
     "library": 1,
     "answer": 1
