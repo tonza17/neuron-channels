@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 9 items
+
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_default_bedb_base_point PASSED [ 11%]
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_determinism_different_seeds_differ PASSED [ 22%]
+tasks/t0090_morphology_generator_diversity_test/code/test_determinism.py::test_round_trip_morphology_params PASSED [ 33%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_min_branches_three_primaries_depth_two PASSED [ 44%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_max_branches_seven_primaries_depth_six PASSED [ 55%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_no_nan_lengths_or_diameters_for_random_draws PASSED [ 66%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_nseg_dlambda_returns_odd_positive PASSED [ 77%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_connectivity_no_orphans PASSED [ 88%]
+tasks/t0090_morphology_generator_diversity_test/code/test_generator.py::test_round_trip_via_to_from_dict PASSED [100%]
+
+============================== 9 passed in 0.39s ==============================
