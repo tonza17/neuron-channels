@@ -68,10 +68,10 @@
       "step": 8,
       "name": "implementation",
       "description": "Implement procedural DSGC morphology generator (14 params); generate 30 different + 30 similar morphologies; verification simulation per morphology; visualisation; Bed-B reproducibility check; validation bundle (S-0088-02 + S-0086-02 + S-0088-01); produce library and answer assets.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-07T15:58:50Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_implementation/"
     },
     {
       "step": 9,
