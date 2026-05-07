@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [NAV16_AIS_GBAR] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [NAV16_SOMA_GBAR] has no matching Paper Index entry[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RP-W007 warning: Paper Index has 26 entries but frontmatter says papers_cited=22[0m
+
+[31m[1mFAILED[0m — 2 error(s), 1 warning(s)
