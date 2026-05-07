@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 from tasks.t0090_morphology_generator_diversity_test.code.generator import (
     generate_morphology,
 )
@@ -10,12 +12,12 @@ from tasks.t0090_morphology_generator_diversity_test.code.morphology_params impo
 )
 
 
-def _section_lengths(*, sections: list[object]) -> list[float]:
-    return [float(s.L) for s in sections]  # type: ignore[attr-defined]
+def _section_lengths(*, sections: list[Any]) -> list[float]:
+    return [float(s.L) for s in sections]
 
 
-def _section_diams(*, sections: list[object]) -> list[float]:
-    return [float(s.diam) for s in sections]  # type: ignore[attr-defined]
+def _section_diams(*, sections: list[Any]) -> list[float]:
+    return [float(s.diam) for s in sections]
 
 
 def test_determinism_default_bedb_base_point() -> None:

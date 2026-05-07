@@ -1,0 +1,2 @@
+wrote 30 different morphologies to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\data\different_morphologies
+first: morph_00.json, last: morph_29.json

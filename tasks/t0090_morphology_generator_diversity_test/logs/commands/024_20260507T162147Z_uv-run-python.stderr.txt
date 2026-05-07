@@ -1,0 +1,5 @@
+exp(700.149) out of range, returning exp(700)
+exp(700.15) out of range, returning exp(700)
+exp(700.149) out of range, returning exp(700)
+exp(700.15) out of range, returning exp(700)
+No more errno warnings during this execution

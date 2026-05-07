@@ -52,19 +52,16 @@ def test_no_nan_lengths_or_diameters_for_random_draws() -> None:
         p = MorphologyParams.from_dict(data=d)
         cell = generate_morphology(params=p, morph_seed=int(d["morph_seed"]))
         for sec in cell.all_dends:
-            assert sec.L > 0.0, f"section L <= 0 at trial {trial}"  # type: ignore[attr-defined]
-            assert sec.diam > 0.0, f"section diam <= 0 at trial {trial}"  # type: ignore[attr-defined]
-            assert not math.isnan(sec.L), f"section L NaN at trial {trial}"  # type: ignore[attr-defined]
-            assert not math.isnan(sec.diam), (  # type: ignore[attr-defined]
-                f"section diam NaN at trial {trial}"
-            )
+            assert sec.L > 0.0, f"section L <= 0 at trial {trial}"
+            assert sec.diam > 0.0, f"section diam <= 0 at trial {trial}"
+            assert not math.isnan(sec.L), f"section L NaN at trial {trial}"
+            assert not math.isnan(sec.diam), f"section diam NaN at trial {trial}"
 
 
 def test_nseg_dlambda_returns_odd_positive() -> None:
     """For L in [10, 600] um, _compute_nseg returns an odd integer >= 1."""
     h = _get_neuron_h()
-    h_any: object = h
-    sec = h_any.Section(name="t90_nseg_probe")  # type: ignore[attr-defined]
+    sec = h.Section(name="t90_nseg_probe")
     sec.diam = 1.0
     sec.Ra = 100.0
     sec.cm = 1.0
@@ -78,7 +75,7 @@ def test_nseg_dlambda_returns_odd_positive() -> None:
 def test_connectivity_no_orphans() -> None:
     p = MorphologyParams.from_bedb_base_point()
     cell = generate_morphology(params=p, morph_seed=11)
-    section_names = {s.name() for s in cell.all_dends}  # type: ignore[attr-defined]
+    section_names = {s.name() for s in cell.all_dends}
     section_names.add("soma_t90")
     for child_name, parent_name in cell.connectivity.items():
         # In NEURON the "name()" is e.g. "dend_p0_d1_n0_t90", we strip off the suffix.

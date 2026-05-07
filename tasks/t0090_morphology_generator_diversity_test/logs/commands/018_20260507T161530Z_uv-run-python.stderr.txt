@@ -1,0 +1,38 @@
+
+verify:   0%|          | 0/5 [00:00<?, ?it/s]
+verify:  20%|##        | 1/5 [00:23<01:32, 23.05s/it]
+verify:  20%|##        | 1/5 [00:23<01:32, 23.06s/it]
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 479, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 475, in main
+    run_verification(limit=args.limit, max_workers=int(args.max_workers))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 427, in run_verification
+    d = _worker_verify(
+        morph_path_str=str(morph_path),
+    ...<2 lines>...
+        morph_index=morph_index,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 372, in _worker_verify
+    result = verify_one_morphology(
+        morph_id=morph_path.stem,
+    ...<3 lines>...
+        default_params=default_params,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 231, in verify_one_morphology
+    apply_parameter_vector(cell=cell, params=default_params)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 204, in apply_parameter_vector
+    _write_passive_and_uniform(sections=soma_dend_sections, params=params)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 105, in _write_passive_and_uniform
+    seg.HHst.gleak = params.gleak_s_cm2
+    ^^^^^^^^
+AttributeError: HHst, the mechanism does not exist at soma_t90(0.5)
+exp(702.823) out of range, returning exp(700)
+exp(702.044) out of range, returning exp(700)
+exp(701.266) out of range, returning exp(700)
+exp(712.647) out of range, returning exp(700)
+No more errno warnings during this execution

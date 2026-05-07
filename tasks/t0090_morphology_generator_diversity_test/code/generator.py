@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
+from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
@@ -66,10 +67,10 @@ from tasks.t0090_morphology_generator_diversity_test.code.morphology_params impo
 # ``NEURON: The user defined name already exists: Exp2NMDA``.
 # ---------------------------------------------------------------------------
 
-_LOADED_H: object | None = None
+_LOADED_H: Any | None = None
 
 
-def _get_neuron_h() -> object:
+def _get_neuron_h() -> Any:
     """Return a process-singleton ``h`` with both t0024 and t0080 DLLs loaded.
 
     All loads are guarded so repeat calls are no-ops. NEURON raises
@@ -82,7 +83,7 @@ def _get_neuron_h() -> object:
 
     _ensure_neuron_on_path()
 
-    from neuron import h
+    from neuron import h  # type: ignore[import-untyped]
 
     # Source stdrun. NEURON also complains about duplicate template definitions
     # when stdrun.hoc is loaded twice; we silently ignore the second load attempt.
@@ -127,17 +128,16 @@ class _Node:
     is_primary: bool = False
 
 
-def _compute_nseg(*, h: object, section: object) -> int:
+def _compute_nseg(*, h: Any, section: Any) -> int:
     """Compute nseg per d_lambda=0.1 rule at 100 Hz, rounded to nearest odd."""
-    sec_any: object = section
-    sec_any.push()  # type: ignore[attr-defined]
+    section.push()
     try:
-        lam = float(h.lambda_f(LAMBDA_F_FREQ_HZ, sec=sec_any))  # type: ignore[attr-defined]
+        lam = float(h.lambda_f(LAMBDA_F_FREQ_HZ, sec=section))
     finally:
-        h.pop_section()  # type: ignore[attr-defined]
+        h.pop_section()
     if lam <= 0.0 or math.isnan(lam):
         return 5
-    raw = float(sec_any.L) / (D_LAMBDA * lam)  # type: ignore[attr-defined]
+    raw = float(section.L) / (D_LAMBDA * lam)
     return max(1, int(raw / 2.0) * 2 + 1)
 
 
@@ -357,18 +357,18 @@ def _apply_asymmetry(*, soma: _Node, all_dends: list[_Node], params: MorphologyP
 
 def _materialise_neuron_sections(
     *,
-    h: object,
+    h: Any,
     soma_node: _Node,
     all_dend_nodes: list[_Node],
     params: MorphologyParams,
 ) -> tuple[
-    object,
-    list[object],
-    list[object],
-    list[object],
-    list[object],
-    object,
-    object,
+    Any,
+    list[Any],
+    list[Any],
+    list[Any],
+    list[Any],
+    Any,
+    Any,
     dict[str, str],
     dict[str, tuple[float, float, float, float]],
 ]:
@@ -377,17 +377,34 @@ def _materialise_neuron_sections(
     Returns: ``(soma, all_dends, primary_dends, non_terminal_dends, terminal_dends,
     ais_proximal, ais_distal, connectivity, section_endpoints_xy)``.
     """
-    h_any: object = h
-
     # Soma.
-    soma_sec = h_any.Section(name="soma_t90")  # type: ignore[attr-defined]
+    soma_sec = h.Section(name="soma_t90")
     soma_sec.L = float(params.soma_diameter_um)
     soma_sec.diam = float(params.soma_diameter_um)
     soma_sec.Ra = DEFAULT_RA_OHM_CM
     soma_sec.cm = DEFAULT_CM_UF_CM2
     soma_sec.nseg = _compute_nseg(h=h, section=soma_sec)
 
-    sections_by_node: dict[str, object] = {soma_node.name: soma_sec}
+    # Add pt3dadd for the soma so h.n3d() works downstream. Soma is a single
+    # spheroid: emit start and end at the same xy with the soma diameter.
+    soma_sec.push()
+    try:
+        h.pt3dadd(
+            float(soma_node.start_xy[0]),
+            float(soma_node.start_xy[1]),
+            0.0,
+            float(soma_node.diameter_um),
+        )
+        h.pt3dadd(
+            float(soma_node.end_xy[0]),
+            float(soma_node.end_xy[1]),
+            0.0,
+            float(soma_node.diameter_um),
+        )
+    finally:
+        h.pop_section()
+
+    sections_by_node: dict[str, Any] = {soma_node.name: soma_sec}
     section_endpoints_xy: dict[str, tuple[float, float, float, float]] = {
         soma_node.name: (
             soma_node.start_xy[0],
@@ -396,19 +413,36 @@ def _materialise_neuron_sections(
             soma_node.end_xy[1],
         )
     }
-    all_dend_secs: list[object] = []
-    primary_secs: list[object] = []
-    non_terminal_secs: list[object] = []
-    terminal_secs: list[object] = []
+    all_dend_secs: list[Any] = []
+    primary_secs: list[Any] = []
+    non_terminal_secs: list[Any] = []
+    terminal_secs: list[Any] = []
     connectivity: dict[str, str] = {}
 
     for node in all_dend_nodes:
-        sec = h_any.Section(name=f"{node.name}_t90")  # type: ignore[attr-defined]
+        sec = h.Section(name=f"{node.name}_t90")
         sec.L = float(node.length_um)
         sec.diam = float(node.diameter_um)
         sec.Ra = DEFAULT_RA_OHM_CM
         sec.cm = DEFAULT_CM_UF_CM2
         sec.nseg = _compute_nseg(h=h, section=sec)
+        # Add pt3dadd for the start and end of this dendritic section.
+        sec.push()
+        try:
+            h.pt3dadd(
+                float(node.start_xy[0]),
+                float(node.start_xy[1]),
+                0.0,
+                float(node.diameter_um),
+            )
+            h.pt3dadd(
+                float(node.end_xy[0]),
+                float(node.end_xy[1]),
+                0.0,
+                float(node.diameter_um),
+            )
+        finally:
+            h.pop_section()
         sections_by_node[node.name] = sec
         all_dend_secs.append(sec)
         section_endpoints_xy[node.name] = (
@@ -442,7 +476,7 @@ def _materialise_neuron_sections(
     proximal_length = max(1.0, total_ais_length * AIS_PROXIMAL_FRACTION)
     distal_length = max(1.0, total_ais_length - proximal_length)
 
-    ais_proximal = h_any.Section(name="ais_proximal_t90")  # type: ignore[attr-defined]
+    ais_proximal = h.Section(name="ais_proximal_t90")
     ais_proximal.L = float(proximal_length)
     ais_proximal.diam = float(AIS_DEFAULT_DIAMETER_UM)
     ais_proximal.Ra = DEFAULT_RA_OHM_CM
@@ -450,7 +484,7 @@ def _materialise_neuron_sections(
     ais_proximal.nseg = _compute_nseg(h=h, section=ais_proximal)
     ais_proximal.connect(soma_sec, PARENT_TIP_LOC, CHILD_BASE_LOC)
 
-    ais_distal = h_any.Section(name="ais_distal_t90")  # type: ignore[attr-defined]
+    ais_distal = h.Section(name="ais_distal_t90")
     ais_distal.L = float(distal_length)
     ais_distal.diam = float(AIS_DEFAULT_DIAMETER_UM)
     ais_distal.Ra = DEFAULT_RA_OHM_CM

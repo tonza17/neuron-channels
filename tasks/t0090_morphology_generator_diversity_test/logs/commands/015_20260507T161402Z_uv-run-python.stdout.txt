@@ -1,0 +1,3 @@
+verifying 5 morphologies (max_workers=1)
+wrote 5 entries to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\data\verification_summary.json
+stable: 0/5

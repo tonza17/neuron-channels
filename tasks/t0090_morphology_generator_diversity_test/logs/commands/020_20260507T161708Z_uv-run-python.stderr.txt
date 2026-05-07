@@ -1,0 +1,32 @@
+
+verify:   0%|          | 0/5 [00:00<?, ?it/s]
+verify:  20%|##        | 1/5 [00:23<01:32, 23.04s/it]
+verify:  20%|##        | 1/5 [00:23<01:32, 23.04s/it]
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 478, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 474, in main
+    run_verification(limit=args.limit, max_workers=int(args.max_workers))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 426, in run_verification
+    d = _worker_verify(
+        morph_path_str=str(morph_path),
+    ...<2 lines>...
+        morph_index=morph_index,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 371, in _worker_verify
+    result = verify_one_morphology(
+        morph_id=morph_path.stem,
+    ...<3 lines>...
+        default_params=default_params,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\code\verification.py", line 229, in verify_one_morphology
+    _ = cell.soma(0.5).HHst.gleak
+        ^^^^^^^^^^^^^^^^^^^
+AttributeError: HHst, the mechanism does not exist at soma_t90(0.5)
+exp(707.783) out of range, returning exp(700)
+exp(707.784) out of range, returning exp(700)
+exp(707.783) out of range, returning exp(700)
+exp(707.784) out of range, returning exp(700)
+No more errno warnings during this execution

@@ -1,0 +1,70 @@
+{
+  "cluster_centroid_ratios": [
+    {
+      "cluster_id": 0,
+      "n_cells": 5,
+      "ais_gbar_s_cm2": 0.6747095394492402,
+      "soma_gbar_s_cm2": 0.02602463617147775,
+      "ratio_ais_to_soma": 25.925801037276454
+    },
+    {
+      "cluster_id": 1,
+      "n_cells": 4,
+      "ais_gbar_s_cm2": 0.5703326204840689,
+      "soma_gbar_s_cm2": 0.004914723683567541,
+      "ratio_ais_to_soma": 116.04571430759887
+    },
+    {
+      "cluster_id": 2,
+      "n_cells": 2,
+      "ais_gbar_s_cm2": 0.2504866620677342,
+      "soma_gbar_s_cm2": 0.009615650390064526,
+      "ratio_ais_to_soma": 26.049892821244022
+    },
+    {
+      "cluster_id": 3,
+      "n_cells": 2,
+      "ais_gbar_s_cm2": 0.2630654171320318,
+      "soma_gbar_s_cm2": 0.019855468191086963,
+      "ratio_ais_to_soma": 13.249016069544044
+    }
+  ],
+  "per_cell_ratios": [
+    {
+      "cell_id": 1304,
+      "ais_gbar_s_cm2": 0.8756080965826925,
+      "soma_gbar_s_cm2": 0.006279638690438806,
+      "ratio_ais_to_soma": 139.43606308367197,
+      "is_floor_pinned": false
+    },
+    {
+      "cell_id": 1504,
+      "ais_gbar_s_cm2": 0.2638484065345248,
+      "soma_gbar_s_cm2": 0.006196216575049088,
+      "ratio_ais_to_soma": 42.582179518545075,
+      "is_floor_pinned": false
+    },
+    {
+      "cell_id": 1624,
+      "ais_gbar_s_cm2": 0.2662658822363661,
+      "soma_gbar_s_cm2": 0.0009837195451083249,
+      "ratio_ais_to_soma": 270.6725545511506,
+      "is_floor_pinned": false
+    },
+    {
+      "cell_id": 1634,
+      "ais_gbar_s_cm2": 0.8756080965826925,
+      "soma_gbar_s_cm2": 0.006199319923673945,
+      "ratio_ais_to_soma": 141.24260521527899,
+      "is_floor_pinned": false
+    }
+  ],
+  "cluster_1_centroid_ratio": 116.04571430759887,
+  "floor_pinned_cell_ids": [],
+  "n_floor_pinned": 0,
+  "n_total_cluster_1_cells": 4,
+  "verdict": "real_signal",
+  "verdict_reason": "Only 0/4 cluster-1 cells are floor-pinned but 3/4 have AIS-to-soma ratios above 50. The cluster's high ratio reflects a biological pattern, not a floor artifact.",
+  "lower_bound_s_cm2": 1e-05,
+  "floor_threshold_s_cm2": 1.0500000000000001e-05
+}

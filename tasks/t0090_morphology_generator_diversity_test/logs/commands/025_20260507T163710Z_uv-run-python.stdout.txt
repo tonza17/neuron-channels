@@ -1,0 +1,5 @@
+read 4 cluster centroids from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0088_recluster_marginals_and_vm_motifs\results\data\recluster_centroids.json
+NAV16 soma lower bound from t0080: 1e-05, floor-pin threshold: 1.0500000000000001e-05
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\data\g1_nav_ratio_audit.json
+verdict: real_signal
+reason: Only 0/4 cluster-1 cells are floor-pinned but 3/4 have AIS-to-soma ratios above 50. The cluster's high ratio reflects a biological pattern, not a floor artifact.

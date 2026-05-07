@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0090_morphology_generator_diversity_test",
+  "command": "uv run python -u -c \nimport json\nfrom pathlib import Path\nfrom tasks.t0090_morphology_generator_diversity_test.code.verification import verify_one_morphology, _to_dict\nfrom tasks.t0090_morphology_generator_diversity_test.code.morphology_params import MorphologyParams\nfrom tasks.t0090_morphology_generator_diversity_test.code.load_default_params import load_t0083_best_cell_param_vector\nfrom tasks.t0090_morphology_generator_diversity_test.code.paths import DATA_SIMILAR_DIR\n\np = DATA_SIMILAR_DIR / 'morph_00.json'\ndata = json.loads(p.read_text())\nparams = MorphologyParams.from_dict(data=data)\ndefault_params = load_t0083_best_cell_param_vector()\nresult = verify_one_morphology(\n    morph_id='similar_00',\n    population='similar',\n    morph_index=0,\n    params=params,\n    default_params=default_params,\n)\nprint(json.dumps(_to_dict(r=result), indent=2))\n",
+  "exit_code": 0,
+  "duration_seconds": 48.441,
+  "started_at": "2026-05-07T16:19:47Z",
+  "completed_at": "2026-05-07T16:20:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0090_morphology_generator_diversity_test",
+  "stdout_file": "022_20260507T161947Z_uv-run-python.stdout.txt",
+  "stderr_file": "022_20260507T161947Z_uv-run-python.stderr.txt",
+  "stdout_lines": 24,
+  "stderr_lines": 5,
+  "truncated": false
+}
