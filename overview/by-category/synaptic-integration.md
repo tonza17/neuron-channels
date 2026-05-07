@@ -2394,7 +2394,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 <summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
 evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
 [t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
 t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean

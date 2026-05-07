@@ -2450,7 +2450,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
 population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
 [t0083_bedb_v3_extend_nsga2_gen8plus](../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
 
 t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
@@ -2653,7 +2653,7 @@ build-model, experiment-run.
 <summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
 causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
 [t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
 t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
@@ -2671,7 +2671,7 @@ experiment-run, data-analysis.
 <summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
 evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-05 | **Source**:
 [t0084_t0081_cell_767_vm_trace_deepdive](../../tasks/t0084_t0081_cell_767_vm_trace_deepdive/)
 
 t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean

@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
 268 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **235 open** (38
-high, 168 medium, 29 low), **33 closed**.
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **235 open** (37
+high, 169 medium, 29 low), **33 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -313,31 +313,6 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
-population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0083-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
-strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
-indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
-an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
-joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
-cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
-grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
-= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
-Recommended task types: experiment-run.
 
 </details>
 
@@ -2165,6 +2140,31 @@ All three candidates hunted in t0010 use NEURON; t0010's DROP list includes Scha
 (NeuronC). A follow-up survey task should hunt for Arbor-based and NetPyNE-based DSGC
 compartmental models specifically, since those simulators are becoming standard for
 large-scale retinal circuit work. Extends REQ-1 of t0010 to a second simulator axis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
+population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0083-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
+strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
+indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
+an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
+joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
+cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
+grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
+= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
+Recommended task types: experiment-run.
 
 </details>
 

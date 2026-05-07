@@ -2070,7 +2070,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
 population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
 [t0083_bedb_v3_extend_nsga2_gen8plus](../../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
 
 t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing

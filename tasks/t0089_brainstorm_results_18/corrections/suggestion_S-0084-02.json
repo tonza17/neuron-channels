@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0089-08",
+  "correcting_task": "t0089_brainstorm_results_18",
+  "target_task": "t0084_t0081_cell_767_vm_trace_deepdive",
+  "target_kind": "suggestion",
+  "target_id": "S-0084-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "file_changes": null,
+  "rationale": "S-0084-02 proposes a per-seed mechanism decomposition of cell 767 across 5 t0081 evaluation seeds (0-4) to find joint-pass-supporting seeds. t0088's Phase B re-evaluates cell 767 with seed 1000 at 16 directions producing NaP 0.875 / Nav1.6 0.125 / NMDA 0.000, consistent with t0084's 8-direction attribution at the same cell. Cell 767 is in cluster 2 of t0088's k=4 partition, with the same NaP-dominant attribution shared across all 4 clusters. The original per-seed scope of S-0084-02 (cell-767 single-cell variability across 5 seeds) is older than t0088's population-level mechanism attribution, which already establishes the NaP-dominant signature is robust across cluster representatives. Reprioritising from high to medium; not rejecting because per-seed variance characterisation is not strictly covered by t0088's population analysis."
+}

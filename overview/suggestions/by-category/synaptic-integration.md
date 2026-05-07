@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
 94 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **83 open** (16 high,
-60 medium, 7 low), **11 closed**.
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **83 open** (15 high,
+61 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -299,31 +299,6 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
-evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0084-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
-| **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
-of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
-t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
-seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
-high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
-low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
-varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
-vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
-data-analysis.
 
 </details>
 
@@ -1232,6 +1207,31 @@ response surface showing which E-I corner of the parameter space saturates DSI a
 is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 band (mechanism
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
+data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed mechanism decomposition of cell 767 across 5 t0081
+evaluation seeds to find joint-pass-supporting seeds</strong> (S-0084-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084 ran cell 767 with a single seed (1000) and measured DSI = 0.000 vs t0081's 5-seed mean
+of 0.494, indicating joint-pass depends on a subset of seeds. Re-run cell 767 across the 5
+t0081 evaluation seeds (0-4), apply the same fractional-channel-contribution attribution per
+seed, and report per-seed DSI plus per-seed NMDA / Nav1.6 / NaP contributions. Hypothesis:
+high-DSI seeds will show non-zero NMDA contribution (Mg-unblocking gain on PD depolarisation);
+low-DSI seeds will look like seed 1000. Local CPU; ~40 runs. Distinct from S-0081-01 which
+varies LHS/warm-start RNG seeds at the NSGA-II population level; S-0084-02 fixes the parameter
+vector and varies only per-seed evaluation noise. Recommended task types: experiment-run,
 data-analysis.
 
 </details>

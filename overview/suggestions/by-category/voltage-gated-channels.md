@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 85 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **70 open** (18
-high, 42 medium, 10 low), **15 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **70 open** (17
+high, 43 medium, 10 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -208,30 +208,6 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
-causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0084-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-05 |
-| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
-sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
-correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
-0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
-fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
-nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
-Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
-experiment-run, data-analysis.
 
 </details>
 
@@ -1056,6 +1032,30 @@ contributions, there is dendrite-tree spatial heterogeneity that the single-sect
 obscures, reframing t0084 from 'NaP-dominant cell-wide' to 'NaP-dominant on average with
 possible NMDA hotspots'. Local CPU; runtime increase ~10 minutes. Cost ~$0. Recommended task
 types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NaP-density knockout sweep on cells 767 / 637 / 762 to test
+causal necessity of NaP-dominant attribution</strong> (S-0084-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0084-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-05 |
+| **Source task** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmetry to NaP
+sustained depolarisation (93.0% / 98.5% / 99.9% fractional contributions) but the metric is
+correlative. Test causality by sweeping `nap_dend_distal` from its measured value down through
+0 in 5 logarithmic steps for each of the three cells while holding all other 53 parameters
+fixed; re-evaluate per-direction spike counts and DSI. If joint-pass DSI collapses when
+nap_dend_distal=0, NaP is causally necessary; if DSI is preserved, NaP is correlative only.
+Reuse t0084's run_deepdive driver. ~45 runs locally on CPU. Cost ~$0. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 

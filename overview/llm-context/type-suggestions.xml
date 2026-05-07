@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-06T21:11:25Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-07T14:26:57Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>363968</char_count>
-    <byte_count>364124</byte_count>
-    <estimated_tokens>90992</estimated_tokens>
+    <char_count>363984</char_count>
+    <byte_count>364140</byte_count>
+    <estimated_tokens>90996</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3856,7 +3856,7 @@ t0081&#x27;s harness combines (a) verbatim copying of prior-task Pareto cells, (
 ## NaP-density knockout sweep on cells 767 / 637 / 762 to test causal necessity of NaP-dominant attribution
 ID: S-0084-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0084_t0081_cell_767_vm_trace_deepdive
 Categories: voltage-gated-channels, dendritic-computation, direction-selectivity
@@ -3867,7 +3867,7 @@ t0084 attributed cells 767/637/762 PD-vs-ND integrated dendritic current asymmet
 ## Per-seed mechanism decomposition of cell 767 across 5 t0081 evaluation seeds to find joint-pass-supporting seeds
 ID: S-0084-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0084_t0081_cell_767_vm_trace_deepdive
 Categories: synaptic-integration, dendritic-computation, direction-selectivity
@@ -3899,7 +3899,7 @@ The de Rosenroll 2026 schema places NaP on the AIS but the v3 substrate (t0080) 
 
 ## Channel-knockout DSI causal-attribution variant of the t0084 metric
 ID: S-0084-05
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0084_t0081_cell_767_vm_trace_deepdive
@@ -3922,7 +3922,7 @@ t0084 produced six well-tested code modules implementing a per-cell extended-rec
 ## Extend NSGA-II from t0083&#x27;s gen-17 to gen 25 with 1.5x larger population (144) and parameter-clustering analysis
 ID: S-0083-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0083_bedb_v3_extend_nsga2_gen8plus
 Categories: compartmental-modeling, direction-selectivity, dendritic-computation
@@ -3943,7 +3943,7 @@ The 15 joint-pass cells (DSI &gt;= 0.4 AND PD &gt;= 10 Hz) and 18 Pareto cells s
 
 ## Per-direction Vm-trace deep-dive of cell 1304 to identify the headline cell&#x27;s biophysical mechanism
 ID: S-0083-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0083_bedb_v3_extend_nsga2_gen8plus
@@ -3999,7 +3999,7 @@ t0086&#x27;s biological scorecard found that both Genuine-cell clusters have NMD
 
 ## Resolve units mismatch between t0080 gnmda_dend NetCon weight and Sivyer 2013 per-spine conductance
 ID: S-0086-02
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0086_robustness_cluster_bio_comparison
@@ -4056,7 +4056,7 @@ t0086 identified 6 Genuine cells in t0080&#x27;s Bed B morphology, but the v3 su
 
 ## Causal NaP-knockout ablation per cluster representative
 ID: S-0088-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0088_recluster_marginals_and_vm_motifs
@@ -4067,7 +4067,7 @@ t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, 
 
 ## Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is +33 sigma exotic)
 ID: S-0088-02
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0088_recluster_marginals_and_vm_motifs
