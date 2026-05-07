@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0090_morphology_generator_diversity_test\tasks\t0090_morphology_generator_diversity_test\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Cuntz2010] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Hines1997] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [McInnes2024] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Sivyer2013] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [TorbenNielsen2018-nGauge] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 23 entries but frontmatter says sources_cited=22[0m
+
+[31m[1mFAILED[0m — 6 error(s), 0 warning(s)
