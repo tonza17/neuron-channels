@@ -228,9 +228,17 @@ def _plot_polar_panel(*, entries: list[ReproEntry], output_png: str | None = Non
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--limit", type=int, default=None, help="Limit cell count (gate=1).")
+    args = parser.parse_args()
+
     ensure_directories()
     bedb_params = MorphologyParams.from_bedb_base_point()
     cells = select_5_pareto_cells()
+    if args.limit is not None:
+        cells = cells[: args.limit]
     print(f"loaded {len(cells)} t0083 Pareto cells: {[int(c['cell_index']) for c in cells]}")
 
     entries: list[ReproEntry] = []
@@ -243,11 +251,11 @@ def main() -> None:
             f"(delta {e.pd_rate_delta_pct:+.1f}%), pass={e.pass_10pct}"
         )
         entries.append(e)
+        # Write incrementally so partial runs leave a valid JSON behind.
+        out = [_to_dict(e=ent) for ent in entries]
+        DATA_BEDB_REPRO_JSON.write_text(json.dumps(out, indent=2))
 
-    out = [_to_dict(e=e) for e in entries]
-    DATA_BEDB_REPRO_JSON.write_text(json.dumps(out, indent=2))
     print(f"wrote {DATA_BEDB_REPRO_JSON}")
-
     polar_png = RESULTS_IMAGES_DIR / "bedb_polar_comparison.png"
     _plot_polar_panel(entries=entries, output_png=str(polar_png))
     print(f"wrote {polar_png}")

@@ -1,0 +1,57 @@
+{
+  "sweep_levels_us": [
+    1e-05,
+    5e-05,
+    0.0001,
+    0.0005,
+    0.001,
+    0.005,
+    0.01
+  ],
+  "ns_per_spine_peak": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "cluster_rescore": [
+    {
+      "cluster_id": 0,
+      "gnmda_dend_us": 0.00487167382482356,
+      "ns_calibrated": null,
+      "sivyer_mean_ns": 0.1,
+      "sivyer_sigma_ns": 0.05,
+      "sigma_deviation": null
+    },
+    {
+      "cluster_id": 1,
+      "gnmda_dend_us": 0.004420450570385858,
+      "ns_calibrated": null,
+      "sivyer_mean_ns": 0.1,
+      "sivyer_sigma_ns": 0.05,
+      "sigma_deviation": null
+    },
+    {
+      "cluster_id": 2,
+      "gnmda_dend_us": 0.004538214631017747,
+      "ns_calibrated": null,
+      "sivyer_mean_ns": 0.1,
+      "sivyer_sigma_ns": 0.05,
+      "sigma_deviation": null
+    },
+    {
+      "cluster_id": 3,
+      "gnmda_dend_us": 0.005880826887491714,
+      "ns_calibrated": null,
+      "sivyer_mean_ns": 0.1,
+      "sivyer_sigma_ns": 0.05,
+      "sigma_deviation": null
+    }
+  ],
+  "elapsed_s": 387.69945335388184,
+  "sivyer_mean_ns": 0.1,
+  "sivyer_sigma_ns": 0.05
+}

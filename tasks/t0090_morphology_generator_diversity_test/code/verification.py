@@ -394,17 +394,24 @@ def _worker_verify(
         }
 
 
-def collect_morph_paths(*, limit: int | None = None) -> list[tuple[str, int, Path]]:
-    """Return ``(population, morph_index, morph_path)`` tuples for all 60 morphs."""
+def collect_morph_paths(
+    *, limit: int | None = None, per_population: bool = True
+) -> list[tuple[str, int, Path]]:
+    """Return ``(population, morph_index, morph_path)`` tuples.
+
+    ``limit`` caps the per-population count when ``per_population=True``, else the total.
+    """
     out: list[tuple[str, int, Path]] = []
     for population, directory in (
         ("different", DATA_DIFFERENT_DIR),
         ("similar", DATA_SIMILAR_DIR),
     ):
         all_paths = sorted(directory.glob("morph_*.json"))
+        if limit is not None and per_population:
+            all_paths = all_paths[:limit]
         for i, p in enumerate(all_paths):
             out.append((population, i, p))
-    if limit is not None:
+    if limit is not None and not per_population:
         out = out[:limit]
     return out
 
