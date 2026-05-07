@@ -1,0 +1,140 @@
+{
+  "task_id": "t0090_morphology_generator_diversity_test",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0090_morphology_generator_diversity_test branch from main and create worktree.",
+      "status": "in_progress",
+      "started_at": "2026-05-07T14:37:02Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all 7 dependency tasks are completed (t0024, t0078, t0080, t0081, t0083, t0086, t0088).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create task folder structure including code/, assets/library/, assets/answer/, results/images/, data/different_morphologies/, data/similar_morphologies/.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review existing papers on DSGC morphology, asymmetry (Schachter 2010, Trenholm 2013, Briggman 2011), procedural morphology generators (Cuntz TREES 2010), and Rall's law.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search for current morphology generator libraries (TREES toolbox, NeuroMaC, NeuroMorpho.Org), NEURON Python idioms for procedural section building, and von Mises sampling for branch angles.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0024 Bed B port for de Rosenroll morphology layout, t0080 v3 substrate parameter encoding, t0083 Pareto archive structure, t0086/t0088 biological_priors and biological_scorecard frameworks for re-use in Phase G.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesise research findings into plan/plan.md with all 11 mandatory sections; specify generator API, file structure, validation triplet design, Bed-B reproducibility procedure.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Implement procedural DSGC morphology generator (14 params); generate 30 different + 30 similar morphologies; verification simulation per morphology; visualisation; Bed-B reproducibility check; validation bundle (S-0088-02 + S-0086-02 + S-0088-01); produce library and answer assets.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed visualisation charts; cover all task requirements.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "suggestions",
+      "description": "Formulate suggestions.json based on findings; specifically what t0091 should leverage from the generator and validation triplet.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "reporting",
+      "description": "Run all verificators; capture session transcripts; update task.json status to completed; PR + premerge + merge.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 12,
+      "name": "creative-thinking",
+      "description": "Skipped: implementation-focused task (write-library + data-analysis); creative-thinking does not apply.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: this task produces a generator library and 60 morphology specs, not quantitative metrics comparable to published results. Phase G validation triplet is its own analysis, not literature comparison.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "setup-machines",
+      "description": "Skipped: local 64-core CPU only. Phase G.2 NMDA units calibration may run on Vast.ai but is small enough to use a single short-lived machine handled inline if needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "teardown",
+      "description": "Skipped: no remote machines provisioned via setup-machines step.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
