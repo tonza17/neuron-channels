@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-code",
       "description": "Re-read t0024 hand-coded Bed B build, t0080 apply_parameter_vector and synapse setup, t0090 generator pt3dadd / asymmetry transform, t0083 best-cell parameter vector loader. Identify the exact code sites where pt3d, sec.L, and synapse XY interact.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T22:04:17Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T22:16:36Z",
       "log_file": "logs\\steps\\004_research-code/"
     },
     {
