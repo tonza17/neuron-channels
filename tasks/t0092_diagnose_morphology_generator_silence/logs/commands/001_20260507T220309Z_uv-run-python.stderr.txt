@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0092_diagnose_morphology_generator_silence/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\logs\steps\003_init-folders
