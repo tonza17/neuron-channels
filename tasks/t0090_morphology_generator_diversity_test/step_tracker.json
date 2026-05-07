@@ -86,9 +86,9 @@
       "step": 10,
       "name": "suggestions",
       "description": "Formulate suggestions.json based on findings; specifically what t0091 should leverage from the generator and validation triplet.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T18:13:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T18:18:49Z",
       "log_file": "logs\\steps\\010_suggestions/"
     },
     {
