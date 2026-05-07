@@ -77,10 +77,10 @@
       "step": 9,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed visualisation charts; cover all task requirements.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-07T18:05:34Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_results/"
     },
     {
       "step": 10,

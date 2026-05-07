@@ -1,44 +1,33 @@
 {
-  "spec_version": "1",
-  "task_id": "t0090_morphology_generator_diversity_test",
-  "format": "explicit_variant",
   "variants": [
     {
       "variant_id": "different_set",
-      "label": "30 LHS-sampled very-different morphologies (Phase B)",
+      "label": "30 LHS-sampled very-different morphologies (Phase B); aggregate over the 6 STABLE cells",
       "dimensions": {
         "morphology_population": "different_set"
       },
       "metrics": {
-        "direction_selectivity_index": 0.0,
-        "n_stable_morphologies": 6,
-        "n_total_morphologies": 30
+        "direction_selectivity_index": 0.0
       }
     },
     {
       "variant_id": "similar_set",
-      "label": "30 +/-5 percent perturbed very-similar morphologies (Phase C)",
+      "label": "30 +/-5 percent perturbed very-similar morphologies (Phase C); aggregate over the 3 STABLE cells",
       "dimensions": {
         "morphology_population": "similar_set"
       },
       "metrics": {
-        "direction_selectivity_index": 0.0,
-        "n_stable_morphologies": 3,
-        "n_total_morphologies": 30
+        "direction_selectivity_index": 0.0
       }
     },
     {
       "variant_id": "bedb_repro_5",
-      "label": "5 t0083 Pareto cells re-evaluated at the BedB-equivalent procedural cell",
+      "label": "Phase F BedB-equivalent procedural cell + 5 t0083 Pareto cell parameter vectors (infrastructure_only; full sweep deferred)",
       "dimensions": {
         "morphology_population": "bedb_repro_5"
       },
       "metrics": {
-        "direction_selectivity_index": null,
-        "n_pass_10pct": 0,
-        "n_total": 1,
-        "dsi_delta_max_abs_pct": null,
-        "pd_rate_delta_max_abs_pct": null
+        "direction_selectivity_index": null
       }
     }
   ]
