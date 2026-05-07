@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for current morphology generator libraries (TREES toolbox, NeuroMaC, NeuroMorpho.Org), NEURON Python idioms for procedural section building, and von Mises sampling for branch angles.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-07T14:57:01Z",
-      "completed_at": null,
+      "completed_at": "2026-05-07T15:10:35Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
